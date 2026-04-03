@@ -2,6 +2,35 @@
 
 ---
 
+## RESEARCH 006 — 2026-04-03 | AI Strategy Failures · EU Deepfake Rules · Enterprise Adoption · Workforce Impact
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-04-03.md](reports/research-digest-2026-04-03.md)
+**Topics searched:** AI strategy failures, Gartner agentic AI, EU AI Act Article 50, enterprise AI adoption March 2026, AI workforce layoffs reskilling, AI tools for executives
+
+### Key Findings (summary)
+
+1. **Gartner: 40%+ agentic AI projects cancelled by 2027** — costs, unclear ROI, "agent washing" by vendors rebranding chatbots as agents
+2. **EU Article 50 deepfake labelling active August 2, 2026** — AI-generated video/audio/images in professional content must be labelled; Code of Practice finalises May–June
+3. **72% of Global 2000 run AI agents in production** — but scaling fails because operating models aren't built for it; buying tools ≠ outcomes
+4. **20.4% of tech layoffs now AI-attributed** (up from <8% in 2025); workers with AI skills earn 56% more (PwC); 67% of workers say company has done nothing to train them
+5. **AI Vantage launches "AiBook" for executives** (April 2) — first book with embedded AI learning assistant; signals executive AI literacy is a product category
+
+### Signals worth acting on
+- "AI Studio" centralised governance model emerging as the enterprise answer to the pilot trap
+- 50-point action gap in reskilling (54% say skills critical, 4% training) — not yet a board conversation
+- "Agent washing" distrust building — non-technical buyers need red-flag literacy
+- AiBook format = new channel for advisory content distribution
+
+### Content angles (3 ready to use)
+1. "Your AI agents will be cancelled — here's why" (Gartner stat + understanding-first framing)
+2. "Your marketing content will be illegal in 4 months" (EU Article 50, August 2026)
+3. "Your team earns 56% less because you haven't trained them" (PwC wage premium data)
+
+**Status:** NOTED
+
+---
+
 ### 27/03/2026 | Building Wealth in Times of Crisis
 
 **Key findings:**
