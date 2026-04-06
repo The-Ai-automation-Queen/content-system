@@ -3,108 +3,264 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plugin Demo — How Customers Use It</title>
+  <title>Plugin Demo — How Customers Customize It</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      max-width: 720px;
+      max-width: 800px;
       margin: 40px auto;
       padding: 0 20px;
       color: #333;
       line-height: 1.6;
     }
     h1 { color: #6c5ce7; }
-    .embed-code {
+    h2 { margin-top: 48px; }
+    .code-block {
       background: #1e1e2e;
       color: #a6e3a1;
-      padding: 16px;
+      padding: 16px 20px;
       border-radius: 8px;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Courier New', monospace;
       font-size: 13px;
       overflow-x: auto;
-      margin: 20px 0;
+      margin: 16px 0;
+      line-height: 1.6;
+      white-space: pre;
     }
-    .section { margin: 40px 0; }
-    hr { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+    .label {
+      display: inline-block;
+      background: #6c5ce7;
+      color: #fff;
+      padding: 2px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    hr { border: none; border-top: 1px solid #eee; margin: 48px 0; }
+    .note {
+      background: #f0f0ff;
+      border-left: 4px solid #6c5ce7;
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
 
   <h1>Plugin Demo</h1>
-  <p>This page simulates what your <strong>customer's website</strong> looks like after they embed your plugin.</p>
+  <p>This page shows <strong>3 real examples</strong> of how customers customize the plugin with their own content, branding, and metrics.</p>
 
-  <div class="section">
-    <h2>What the customer pastes:</h2>
-    <div class="embed-code">
-      &lt;div id="my-plugin"&gt;&lt;/div&gt;<br>
-      &lt;script<br>
-      &nbsp;&nbsp;src="plugin.js"<br>
-      &nbsp;&nbsp;data-license="DEMO"<br>
-      &nbsp;&nbsp;data-container="#my-plugin"<br>
-      &nbsp;&nbsp;data-theme="light"<br>
-      &gt;&lt;/script&gt;
-    </div>
-  </div>
+  <!-- ══════════════════════════════════════════════════════════
+       EXAMPLE 1: Default / Minimal Setup
+       ══════════════════════════════════════════════════════════ -->
 
   <hr>
+  <span class="label">EXAMPLE 1</span>
+  <h2>Minimal Setup (just paste and go)</h2>
+  <p>Customer adds two lines — zero configuration needed:</p>
+  <div class="code-block">&lt;div id="my-plugin"&gt;&lt;/div&gt;
+&lt;script src="plugin.js" data-license="DEMO" data-container="#my-plugin"&gt;&lt;/script&gt;</div>
 
-  <h2>Light Theme</h2>
-  <div id="my-plugin"></div>
+  <div id="demo-minimal"></div>
 
-  <hr>
-
-  <h2>Dark Theme</h2>
-  <div id="my-plugin-dark"></div>
-
-  <!-- ═══════════════════════════════════════════
-       THIS IS THE EMBED — one script tag per instance
-       ═══════════════════════════════════════════ -->
-
-  <!-- Light theme instance -->
   <script
     src="../src/plugin.js"
     data-license="DEMO"
-    data-container="#my-plugin"
+    data-container="#demo-minimal"
     data-theme="light"
   ></script>
 
-  <!-- Dark theme instance (loaded separately to demo multi-instance) -->
+
+  <!-- ══════════════════════════════════════════════════════════
+       EXAMPLE 2: Fully Branded with Custom Content
+       ══════════════════════════════════════════════════════════ -->
+
+  <hr>
+  <span class="label">EXAMPLE 2</span>
+  <h2>Branded with Custom Content</h2>
+  <p>Customer personalizes every label, adds their branding, and hooks into results:</p>
+  <div class="code-block">&lt;script&gt;
+window.MyPluginConfig = {
+  title: "Blog Post Checker",
+  subtitle: "Make sure your post is ready to publish",
+  placeholder: "Drop your blog post draft here...",
+  buttonText: "Check My Post",
+  emptyText: "Drop your draft above first!",
+  poweredBy: false,
+
+  onAnalyze: function(results) {
+    console.log("Post stats:", results);
+  }
+};
+&lt;/script&gt;
+&lt;div id="blog-checker"&gt;&lt;/div&gt;
+&lt;script src="plugin.js" data-license="KEY" data-container="#blog-checker" data-accent="#e84393"&gt;&lt;/script&gt;</div>
+
+  <div class="note">
+    The customer changed: title, subtitle, placeholder, button text, empty message, accent color, and turned off the "Powered by" footer.
+  </div>
+
+  <!-- We need a fresh instance, so we reset the guard -->
+  <div id="demo-branded"></div>
   <script>
-    // For a second instance, we manually init since plugin.js guards against double-load.
-    // In production, each customer only has ONE instance, so this isn't needed.
-    (function () {
-      var container = document.getElementById('my-plugin-dark');
-      var root = document.createElement('div');
-      root.className = 'myplugin-root';
-      root.setAttribute('data-theme', 'dark');
-      root.style.setProperty('--myplugin-accent', '#a29bfe');
-      root.innerHTML =
-        '<h3 class="myplugin-title">Content Analyzer</h3>' +
-        '<textarea class="myplugin-textarea" placeholder="Paste your content here..."></textarea>' +
-        '<button class="myplugin-btn">Analyze</button>' +
-        '<div class="myplugin-result"></div>';
+    // Reset guard for demo purposes (customers only have 1 instance)
+    window.__MYPLUGIN_LOADED__ = false;
+    window.MyPluginConfig = {
+      title: "Blog Post Checker",
+      subtitle: "Make sure your post is ready to publish",
+      placeholder: "Drop your blog post draft here...",
+      buttonText: "Check My Post",
+      emptyText: "Drop your draft above first!",
+      poweredBy: false,
 
-      var textarea = root.querySelector('.myplugin-textarea');
-      var btn = root.querySelector('.myplugin-btn');
-      var result = root.querySelector('.myplugin-result');
-
-      btn.addEventListener('click', function () {
-        var text = textarea.value;
-        if (!text.trim()) { result.textContent = 'Please enter some text.'; return; }
-        var words = text.trim().split(/\s+/).length;
-        var sentences = text.split(/[.!?]+/).filter(function (s) { return s.trim(); }).length;
-        var readingTime = Math.ceil(words / 200);
-        var avg = sentences > 0 ? Math.round(words / sentences) : 0;
-        result.innerHTML =
-          '<strong>' + words + '</strong> words · ' +
-          '<strong>' + sentences + '</strong> sentences · ' +
-          '<strong>' + readingTime + ' min</strong> read · ' +
-          '<strong>' + avg + '</strong> words/sentence';
-      });
-
-      container.appendChild(root);
-    })();
+      onAnalyze: function(results, text) {
+        console.log("Customer's callback fired!", results);
+      }
+    };
   </script>
+  <script
+    src="../src/plugin.js"
+    data-license="DEMO"
+    data-container="#demo-branded"
+    data-theme="light"
+    data-accent="#e84393"
+  ></script>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       EXAMPLE 3: Custom Metrics + Dark Theme
+       ══════════════════════════════════════════════════════════ -->
+
+  <hr>
+  <span class="label">EXAMPLE 3</span>
+  <h2>Custom Metrics + Dark Theme</h2>
+  <p>Customer adds their own calculated fields — no code changes to the plugin needed:</p>
+  <div class="code-block">&lt;script&gt;
+window.MyPluginConfig = {
+  title: "SEO Content Scorer",
+  subtitle: "Optimize your content for search engines",
+  buttonText: "Score It",
+  showAvgLength: false,
+
+  customMetrics: [
+    {
+      label: "paragraphs",
+      compute: function(text) {
+        return text.split(/\n\n+/).filter(function(p) {
+          return p.trim();
+        }).length;
+      }
+    },
+    {
+      label: "keyword density",
+      compute: function(text) {
+        var words = text.toLowerCase().split(/\s+/);
+        var freq = {};
+        words.forEach(function(w) { freq[w] = (freq[w]||0) + 1; });
+        var top = Object.entries(freq).sort(function(a,b) {
+          return b[1] - a[1];
+        })[0];
+        return top ? top[0] + " (" + top[1] + "x)" : "—";
+      }
+    }
+  ]
+};
+&lt;/script&gt;</div>
+
+  <div id="demo-custom"></div>
+  <script>
+    window.__MYPLUGIN_LOADED__ = false;
+    window.MyPluginConfig = {
+      title: "SEO Content Scorer",
+      subtitle: "Optimize your content for search engines",
+      buttonText: "Score It",
+      showAvgLength: false,
+
+      customMetrics: [
+        {
+          label: "paragraphs",
+          compute: function(text) {
+            return text.split(/\n\n+/).filter(function(p) { return p.trim(); }).length;
+          }
+        },
+        {
+          label: "top keyword",
+          compute: function(text) {
+            var words = text.toLowerCase().replace(/[^a-z\s]/g, '').split(/\s+/).filter(function(w) { return w.length > 3; });
+            var freq = {};
+            words.forEach(function(w) { freq[w] = (freq[w]||0) + 1; });
+            var sorted = Object.entries(freq).sort(function(a,b) { return b[1] - a[1]; });
+            return sorted[0] ? sorted[0][0] + ' (' + sorted[0][1] + 'x)' : '—';
+          }
+        }
+      ]
+    };
+  </script>
+  <script
+    src="../src/plugin.js"
+    data-license="DEMO"
+    data-container="#demo-custom"
+    data-theme="dark"
+    data-accent="#00b894"
+  ></script>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       CONFIGURATION REFERENCE
+       ══════════════════════════════════════════════════════════ -->
+
+  <hr>
+  <h2>Full Configuration Reference</h2>
+  <div class="code-block">&lt;script&gt;
+window.MyPluginConfig = {
+  // ── Content & Labels ──────────────────────
+  title:       "Your Tool Name",        // heading text
+  subtitle:    "A helpful description",  // optional subheading
+  placeholder: "Enter text here...",     // textarea placeholder
+  buttonText:  "Go",                     // button label
+  emptyText:   "Nothing to analyze.",    // shown when input is empty
+
+  // ── Branding ──────────────────────────────
+  logo:        "https://yoursite.com/logo.png",
+  poweredBy:   false,                    // hide "Powered by" footer
+
+  // ── Feature Toggles ──────────────────────
+  showWords:       true,
+  showSentences:   true,
+  showReadingTime: true,
+  showAvgLength:   false,
+
+  // ── Custom Metrics ────────────────────────
+  customMetrics: [
+    {
+      label: "characters",
+      compute: function(text) { return text.length; }
+    }
+  ],
+
+  // ── Callbacks ─────────────────────────────
+  onAnalyze: function(results, text) {
+    // Do something with the results
+    // e.g. send to analytics, update other UI
+  },
+  onReady: function(rootElement) {
+    // Plugin is rendered and ready
+  }
+};
+&lt;/script&gt;
+
+&lt;!-- Then load the plugin --&gt;
+&lt;div id="my-plugin"&gt;&lt;/div&gt;
+&lt;script
+  src="https://cdn.yoursite.com/plugin.min.js"
+  data-license="CUSTOMER-KEY"
+  data-container="#my-plugin"
+  data-theme="light"
+  data-accent="#6c5ce7"
+&gt;&lt;/script&gt;</div>
 
 </body>
 </html>
