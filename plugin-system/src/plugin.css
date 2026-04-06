@@ -1,0 +1,83 @@
+/* ============================================
+   Plugin Styles — Scoped to .myplugin-root
+   All selectors are prefixed to avoid conflicts
+   with the customer's existing CSS.
+   ============================================ */
+
+.myplugin-root {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+  border: 2px solid var(--myplugin-accent, #6c5ce7);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 100%;
+  color: #333;
+  background: var(--myplugin-bg, #fff);
+}
+
+.myplugin-root *,
+.myplugin-root *::before,
+.myplugin-root *::after {
+  box-sizing: inherit;
+}
+
+.myplugin-root .myplugin-title {
+  margin: 0 0 16px 0;
+  font-size: 1.25rem;
+  color: var(--myplugin-accent, #6c5ce7);
+}
+
+.myplugin-root .myplugin-textarea {
+  width: 100%;
+  height: 100px;
+  margin: 0 0 12px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.myplugin-root .myplugin-btn {
+  background: var(--myplugin-accent, #6c5ce7);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: opacity 0.2s;
+}
+
+.myplugin-root .myplugin-btn:hover {
+  opacity: 0.85;
+}
+
+.myplugin-root .myplugin-result {
+  margin-top: 16px;
+  padding: 12px;
+  background: #f8f8ff;
+  border-radius: 6px;
+  min-height: 40px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Dark theme override */
+.myplugin-root[data-theme="dark"] {
+  background: #1e1e2e;
+  color: #eee;
+  border-color: #a29bfe;
+}
+
+.myplugin-root[data-theme="dark"] .myplugin-textarea {
+  background: #2d2d44;
+  color: #eee;
+  border-color: #444;
+}
+
+.myplugin-root[data-theme="dark"] .myplugin-result {
+  background: #2d2d44;
+  color: #ddd;
+}
