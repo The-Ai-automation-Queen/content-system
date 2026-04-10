@@ -2,6 +2,36 @@
 
 ---
 
+## RESEARCH 007 — 2026-04-10 | AI ROI Reality · FOBO Workforce Anxiety · AI Washing Layoffs · Trendslop · Enterprise Friction
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-04-10.md](reports/research-digest-2026-04-10.md)
+**Topics searched:** Gartner AI ROI stall April 2026, FOBO fear of becoming obsolete, AI washing layoffs CEO attribution, HBR trendslop LLM strategic advice, enterprise AI adoption challenges C-suite, AI chief of staff tools executives
+
+### Key Findings (summary)
+
+1. **Gartner: Only 28% of AI infrastructure/ops projects deliver ROI** (April 7) — 782 I&O leaders surveyed; 57% of failures from over-ambitious expectations; success correlates with full executive involvement, not tool choice
+2. **FOBO crystallises as dominant workforce anxiety** (Fortune, April 5) — 4 in 10 workers fear AI-driven obsolescence (doubled in one year, KPMG); 63% say AI will make workplace feel less human; producing quiet resistance: apparent compliance without genuine integration
+3. **AI washing layoffs: Benioff, Andreessen, Jassey all push back** (April 7) — 47.9% of Q1 2026 tech layoffs attributed to AI, but major CEOs call it cover for overhiring corrections; Bloomberg: "corrosive and confusing"; real driver = companies self-funding $650B AI infrastructure via payroll cuts
+4. **HBR "trendslop": LLMs give every CEO the same generic strategy** (March 16, now circulating) — LLMs bias toward trendy, context-free advice regardless of situation; "hybrid trap" produces conflicting recommendations; leaders outsourcing strategic judgment to AI are getting homogenised outputs
+5. **54% of C-suite say AI adoption is tearing their company apart** (Writer 2026) — 79% face significant challenges (double-digit increase from 2025); gap between stated readiness (42% "highly prepared") and operational reality on data, risk, and talent
+
+### Signals worth acting on
+- "Quiet AI resistance" — FOBO producing surface-level adoption compliance; no enterprise measurement framework exists yet
+- "AI ROI auditor" emerging as demand signal — post-deployment accountability, not just pre-deployment strategy
+- Executive burnout from AI transformation pace — fastest-growing private conversation among C-suite; white space in advisory market
+
+### Content angles (3 ready to use)
+1. "You asked AI for your strategy — you got everyone else's strategy" (HBR trendslop + understanding-first framing)
+2. "Your team has FOBO and you're the last to know it" (quiet resistance, FOBO data, leadership responsibility)
+3. "Is your company using AI to get efficient — or using it as cover?" (Benioff, AI washing, ethics positioning)
+
+**Contrarian take logged:** The adoption failure isn't pace — it's that companies measure deployment, not capability. The 28% ROI success factor isn't the tool, it's sustained executive involvement. Nobody is selling this yet.
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 006 — 2026-04-03 | AI Strategy Failures · EU Deepfake Rules · Enterprise Adoption · Workforce Impact
 
 **Status:** NOTED
