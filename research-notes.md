@@ -2,6 +2,36 @@
 
 ---
 
+## RESEARCH 008 — 2026-04-17 | AI Proof Gap · Stanford AI Index · Shadow AI · Executive-Manager Gap · Q1 Layoffs
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-04-17.md](reports/research-digest-2026-04-17.md)
+**Topics searched:** Grant Thornton AI governance audit 2026, Stanford AI Index 2026 key findings, HBR hidden demand AI enterprise shadow AI, HBR managers executives disagree AI, EU AI Act transparency code of practice deepfakes April 2026, AI workforce layoffs reskilling Q1 2026, AI tools executives non-technical leaders April 2026
+
+### Key Findings (summary)
+
+1. **Grant Thornton "AI Proof Gap" (April 13)** — 78% of executives can't pass an independent AI governance audit in 90 days; 75% of boards approved major AI investments but 48% haven't set governance expectations; well-governed orgs are 4x more likely to report revenue growth (58% vs 15%)
+2. **Stanford AI Index 2026 (April 13–15)** — AI incidents up 55% (362 vs 233 in 2024); Foundation Model Transparency Index dropped from 58 to 40; only 23% of the public trusts AI on jobs (vs 73% of experts); the "jagged frontier" — models solve PhD science but fail at reading analog clocks half the time
+3. **HBR: "The Hidden Demand for AI Inside Your Company" (April 14)** — employees at a central bank were using personal laptops/LLMs beside their secure work PCs; BBVA followed employee demand instead of mandating → 11,000 users, 4,800 custom tools, 2–5 hrs saved/week/employee
+4. **HBR: "Managers and Executives Disagree on AI — and It's Costing Companies" (April 8)** — executives see strategic advantage; managers confront workflow friction; the gap between those two realities is where adoption dies; fix is structural not communicational
+5. **Q1 2026 tech layoffs** — 80,000 workers laid off; 47.9% attributed to AI automation; CFOs privately admit AI cuts will run 9x higher than public numbers; LinkedIn shows AI job postings up 340%, traditional software engineering roles down 15%
+
+### Signals worth acting on
+- "Shadow AI" as enterprise compliance crisis — employees self-adopting consumer LLMs inside regulated organisations; not yet a boardroom agenda item but will be
+- Governance as revenue driver — Grant Thornton 4x revenue growth stat is sitting unused in the mainstream narrative; reframe from compliance to competitive strategy
+- The "jagged frontier" as executive decision risk — vendor benchmark claims ≠ production performance; gap not yet being discussed at board level
+
+### Content angles (3 ready to use)
+1. "Your board approved the money. They didn't approve the controls." (Grant Thornton governance gap + data/security positioning)
+2. "Your employees have an AI strategy. It just doesn't include you." (HBR shadow AI / BBVA + data governance angle)
+3. "AI is failing in your company — your managers know why, your executives don't." (HBR exec-manager gap + Gartner ROI data from last week)
+
+**Contrarian take logged:** The AI governance gap isn't an education problem — it's an incentive problem. Leaders who greenlight $1M+ investments aren't confused about oversight; they're skipping it because there's no cost to skipping it yet. Selling more literacy to people already comfortable acting without governance is not the fix.
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 007 — 2026-04-10 | AI ROI Reality · FOBO Workforce Anxiety · AI Washing Layoffs · Trendslop · Enterprise Friction
 
 **Status:** NOTED
