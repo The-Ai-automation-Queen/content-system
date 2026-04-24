@@ -2,6 +2,36 @@
 
 ---
 
+## RESEARCH 009 — 2026-04-24 | Meta Employee Surveillance · Anthropic Mythos Breach · PwC Winner-Take-Most · BCG Job Reshaping · Agentic AI Mixed Results
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-04-24.md](reports/research-digest-2026-04-24.md)
+**Topics searched:** AI strategy business leaders April 2026, EU AI Act Code of Practice deepfakes April 2026, enterprise AI adoption April 2026, AI tools executives non-technical leaders April 2026, AI workforce impact hiring reskilling April 2026, Anthropic Mythos cybersecurity breach, Meta employee monitoring AI training, PwC 2026 AI performance study, BCG AI jobs reshape report, agentic AI enterprise April 2026
+
+### Key Findings (summary)
+
+1. **Meta Model Capability Initiative (April 21–23)** — Meta deploying mandatory keylogger/screen-tracking software on all US employee computers to train AI models; no opt-out; worker protests; Bloomberg: "Meta Is Making Workers Train Their AI Replacements"; legal category doesn't exist yet — existing monitoring law doesn't cover commercial AI training data
+2. **Anthropic Mythos breach (April 7 withheld → April 21 breached)** — Anthropic's most powerful model withheld because it autonomously discovers zero-day vulnerabilities and writes exploits; ASL-3 threshold triggered; restricted to ~50 orgs under Project Glasswing; unauthorized group accessed it via third-party vendor on announcement day; CISA doesn't have access
+3. **PwC 2026 AI Performance Study (April 13–20)** — 1,217 senior executives across 25 sectors; 74% of AI economic gains captured by 20% of companies; top performers generate 7.2x more AI-driven value; differentiator is not tools — it's using AI for growth/reinvention vs efficiency; winner-take-most dynamic already in effect
+4. **BCG "AI Will Reshape More Jobs Than It Replaces" (April 20)** — 165M jobs analyzed across 1,500 roles; 50–55% reshaped within 3 years; 10–15% eliminated (16–25M jobs); six role categories (Divergent, Substituted, Rebalanced, Resilient, Transformed, Redefined); BCG warning: cutting beyond AI's actual delivery = productivity drop, talent walkout
+5. **Agentic AI: EY goes all-in / industry reports mixed (April 2026)** — EY first Big Four firm to embed agents across all global audit phases via EY Canvas; CIO.com: early agentic deployments producing data exposure incidents and costly outages; Salesforce Headless 360 allows agents to operate full platform without human opening a browser
+
+### Signals worth acting on
+- Employee behavioral data as AI training fuel — no legal framework yet; first companies to build explicit policy will be ahead of a near-certain employment law crisis
+- Vendor AI as new supply chain risk — Mythos breach was through a vendor channel, not Anthropic directly; mirrors SolarWinds pattern applied to AI model access
+- BCG's six-role taxonomy as the only granular workforce planning tool available — nobody in C-suite using it yet; operationally superior to generic "X% of jobs at risk" statistics
+
+### Content angles (3 ready to use)
+1. "Meta is making its employees train their own replacements — with no choice." (Ethics + employee data + her data/security lane)
+2. "74% of AI's economic value is flowing to 20% of companies. Which side of that line are you on?" (PwC data + BCG framework + her understanding-first positioning)
+3. "Anthropic's most powerful AI was too dangerous to release — then someone got in through a vendor." (Mythos breach + vendor security + her data/security differentiator)
+
+**Contrarian take logged:** The "AI transforms everything for everyone" consensus is masking a consolidation event. PwC shows 74% of gains to 20% of firms, BCG shows most job impact is reshaping not replacement, Fortune's CEO survey echoes the IT productivity paradox. The real question isn't "how do we adopt more AI?" — it's "are we in the 20% or the 80%, and do we understand the difference well enough to change it?"
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 008 — 2026-04-17 | AI Proof Gap · Stanford AI Index · Shadow AI · Executive-Manager Gap · Q1 Layoffs
 
 **Status:** NOTED
