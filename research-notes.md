@@ -2,6 +2,36 @@
 
 ---
 
+## RESEARCH 010 — 2026-05-01 | EU AI Act Omnibus Collapse · Microsoft Agent 365 Launch · Vercel/Context.ai Supply Chain Breach · Yale Entry-Level Pipeline Data · AI Layoffs ≠ AI Transformation
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-05-01.md](reports/research-digest-2026-05-01.md)
+**Topics searched:** AI strategy business leaders May 2026, EU AI Act omnibus trilogue breakdown April 28 2026, Microsoft Agent 365 launch enterprise May 2026, Vercel Context.ai supply chain breach April 2026, Fortune Yale entry-level jobs agentic AI April 29 2026, AI workforce impact layoffs transformation May 2026, AI tools executives non-technical leaders April May 2026, CNBC AI deepfake whistleblower bill April 27 2026
+
+### Key Findings (summary)
+
+1. **EU AI Act Omnibus Trilogue Collapsed (April 28)** — Second and final scheduled trilogue failed after ~12 hours with no deal. Sticking point: whether AI in regulated products (medical devices, machinery, connected cars) is governed solely by existing sectoral law or also by the AI Act. Without the Omnibus passing, the original August 2, 2026 high-risk AI compliance deadline remains binding. Extended deadlines (Dec 2027, Aug 2028) that negotiators had broadly aligned on are not legally in force. Next session: ~May 13.
+2. **Microsoft Agent 365 Goes GA May 1 ($15/user)** — First major enterprise product treating agent governance as a distinct category: centralised inventory of all agents across an org, audit logging (Purview), security (Defender), identity (Entra). Bundled into new Microsoft 365 E7 at $99/user/month. The product's existence is the signal: Microsoft is betting enterprises don't know how many agents they're running.
+3. **Vercel Breached via Context.ai (April 19–20) + Mercor via LiteLLM (April 2026)** — Two AI-tool supply chain attacks in one month. Vercel hacked via a third-party AI productivity tool used by one employee; data listed on BreachForums at $2M. Mercor ($10B AI startup) hit via LiteLLM open-source library. AI tools require wide permissions by design → high-value entry point for attackers. Mirrors SolarWinds pattern applied to AI integrations.
+4. **Yale/Fortune: Agentic AI Killing Entry-Level Pathways, Not Just Jobs (April 29)** — Banks: 20–60% productivity gains, fewer hires. Telecoms: 60%+ reduction in manual ops. C.H. Robinson: 29% more LTL volume, 30% fewer employees than 2019. 41% of university leaders "highly concerned" about entry-level white-collar vulnerability. The deeper problem: eliminating entry-level roles destroys the talent pipeline that produces future senior leaders.
+5. **Fortune: AI Layoffs ≠ AI Transformation (April 25) + Infor Adoption Index (April 22)** — Fortune op-ed argues mass layoffs framed as AI transformation are optimisation with a better story; companies truly transforming are retraining/redeploying (ServiceNow example). Infor survey (1,000 decision-makers across US/UK/Germany/France): majority struggle to scale AI. Fortune April 28: why AI disruption is concentrated in tech but barely touched the rest of corporate America.
+
+### Signals worth acting on
+- AI tool supply chain attacks are now a named threat category — no mature defence playbooks yet; first boardroom conversations about "AI tool vendor risk" as a distinct security domain haven't happened
+- Agent governance crossing from IT to CFO budgets — Microsoft pricing Agent 365 at $15/user means enterprise budgets will include "agent governance" as a line item within 12–18 months; the organisations that understand this now will write the RFPs
+- Leadership pipeline fracture — agentic AI eliminating entry-level roles = destroying the training ground for tomorrow's executives; no one is measuring this; no governance framework addresses it
+
+### Content angles (3 ready to use)
+1. "Your AI agents are running your business. You just don't know how many there are." (Microsoft Agent 365 + her agent visibility/security lane)
+2. "The August 2 deadline is real. The safety net just collapsed." (EU Act omnibus failure + 93-day compliance clock)
+3. "Cutting people to fund your AI strategy is not an AI strategy." (Fortune April 25 op-ed + ServiceNow counterexample + her understanding-first positioning)
+
+**Contrarian take logged:** The "regulation is coming, prepare gradually" posture is wrong for 2026. The EU AI Act Omnibus collapse shows that regulators themselves disagree on what compliance means for AI in products. Companies that planned around extended deadlines are planning for a legal outcome that doesn't exist. August 2 is binding and unresolved. The US has no federal framework and no timeline for one. The space between "rules almost finalised" and "rules binding and unclear" is where companies get caught. This is a literacy problem, not a compliance problem — which is exactly where her positioning lands.
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 009 — 2026-04-24 | Meta Employee Surveillance · Anthropic Mythos Breach · PwC Winner-Take-Most · BCG Job Reshaping · Agentic AI Mixed Results
 
 **Status:** NOTED
