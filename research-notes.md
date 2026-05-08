@@ -2,6 +2,36 @@
 
 ---
 
+## RESEARCH 011 — 2026-05-08 | EU AI Act Omnibus Deal · Anthropic/Blackstone/Goldman Enterprise JV · Freshworks Beats Earnings + Cuts 11% · OpenAI Frontier Firm Gap · PayPal AI-Native Pivot
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-05-08.md](reports/research-digest-2026-05-08.md)
+**Topics searched:** EU AI Act omnibus agreement May 7 2026, Anthropic enterprise AI services Blackstone Goldman Sachs May 2026, Freshworks PayPal AI layoffs May 2026, OpenAI B2B signals frontier firms May 2026, AI deepfakes regulation May 2026, enterprise AI adoption May 2026, AI workforce impact May 2026, AI tools executives non-technical leaders May 2026
+
+### Key Findings (summary)
+
+1. **EU AI Act Omnibus Deal — May 7, 2026** — One week after the April 28 collapse, Council and Parliament reached a provisional agreement. High-risk standalone AI systems now face December 2, 2027 deadline; embedded AI in products (medical devices, machinery, cars): August 2, 2028. New explicit prohibition on AI-generated non-consensual sexual imagery and CSAM. Sting in the fine print: AI-generated content transparency (deepfake labelling, Article 50) grace period was *shortened* from 6 months to 3 months — creating a December 2, 2026 deadline most companies are not tracking.
+2. **Anthropic + Blackstone + Goldman Sachs + Hellman & Friedman — $1.5B Enterprise AI Services Firm (May 4)** — Standalone entity embedding Anthropic engineers inside mid-size businesses to redesign workflows. OpenAI announced a parallel JV the same day. AI labs are vertically integrating into consulting/implementation — direct competition with McKinsey, BCG, Deloitte.
+3. **Freshworks: "Over Half Our Code Is Written by AI" — Cuts 500 Jobs While Beating Earnings (May 5–6)** — Revenue up 16% YoY, beat analyst estimates, two largest contracts in company history — and 11% headcount reduction. Structurally different from "AI layoffs as cover" pattern. Profitable company genuinely needing fewer people. Total 2026 tech layoffs: ~127,000 across 283 companies.
+4. **OpenAI B2B Signals Report** — Frontier firms (95th percentile) now use 3.5x more AI per worker than typical firms, up from 2x a year ago. Volume explains only 36% of the gap — richer, more complex use is the differentiator. Frontier firms send 16x as many Codex (agentic coding) messages. Education/enablement is where the largest task-level advantage shows.
+5. **PayPal Cuts 4,760 Jobs (20%) for "AI-Native Operating Model" (May 5)** — New CEO Enrique Lores explicitly frames the restructuring as building an AI-native operation from scratch. Largest fintech workforce cut of 2026 by headcount. "AI-native" marks a linguistic shift from "AI-enhanced" — signals next wave of board-level org design conversations.
+
+### Signals worth acting on
+- AI labs becoming the new consulting industry — Anthropic + OpenAI both launching enterprise implementation JVs on same day; within 18–24 months every major lab will have a direct implementation arm; advisory market restructuring from the supply side
+- "AI-native" entering board vocabulary — PayPal framing 20% headcount cuts as "AI-native operating model"; no governance framework or vocabulary guide exists for this term yet; first-mover opportunity for advisors who can define it
+- Frontier/mainstream gap hardening — OpenAI data shows gap grew from 2x to 3.5x in one year, compounding; window to cross to frontier side is narrowing faster than most CEOs realise
+
+### Content angles (3 ready to use)
+1. "The EU deal says delay. The fine print says December 2026." (Deepfake labelling deadline shortened, not extended — the footnote most companies will miss)
+2. "Anthropic just became your consulting firm's competitor. What that means for you." (AI labs vertically integrating into advisory market + her understanding-first positioning as the alternative to dependency)
+3. "Freshworks beat earnings, signed their biggest deals, and cut 11% of staff. Welcome to the hard version." (The profitable-company-still-cutting narrative — harder than the "AI as cover" argument)
+
+**Contrarian take logged:** The "EU Omnibus is good news — compliance delayed" consensus is obscuring a tightening where it matters most commercially. The AI-generated content transparency deadline was shortened from 6 months to 3 months, landing on December 2, 2026. Every marketing team, every communications function, every company using AI content tools now has seven months to implement Article 50 labelling — not longer. The high-risk AI delay is for developers. The AI-generated content deadline is for everyone. Leaders reading summaries will miss this entirely.
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 010 — 2026-05-01 | EU AI Act Omnibus Collapse · Microsoft Agent 365 Launch · Vercel/Context.ai Supply Chain Breach · Yale Entry-Level Pipeline Data · AI Layoffs ≠ AI Transformation
 
 **Status:** NOTED
