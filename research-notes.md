@@ -2,6 +2,36 @@
 
 ---
 
+## RESEARCH 012 — 2026-05-15 | Gartner AI Layoffs Kill ROI · OpenAI Deployment Company $4B Launch · SAP Autonomous Enterprise · EU Article 50 Draft Guidelines · TAKE IT DOWN Act Deadline
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-05-15.md](reports/research-digest-2026-05-15.md)
+**Topics searched:** AI strategy business leaders frameworks case studies failures May 2026, EU AI Act regulation safety deepfakes May 2026, enterprise AI adoption companies announcements May 2026, AI workforce impact layoffs reskilling May 2026, AI tools products non-technical executives May 2026, Gartner AI layoffs ROI study May 2026, SAP Sapphire autonomous enterprise May 2026, EU Article 50 transparency guidelines draft May 12 2026, OpenAI Deployment Company enterprise tipping point May 2026, TAKE IT DOWN Act signed deepfakes May 2026, US AI policy executive order Senate bill May 2026, AI model releases GPT-5.5 Claude Gemini May 2026
+
+### Key Findings (summary)
+
+1. **Gartner: AI Layoffs Don't Deliver Returns (May 5/11)** — 350 global executives ($1B+ revenue). 80% reduced workforce. No statistical correlation to higher ROI. "People amplification" (making workers more productive) delivers returns; workforce replacement does not. Gartner VP Helen Poitevin: "Workforce reductions may create budget room, but they do not create return." Directly undercuts the PayPal/Freshworks narrative from last week.
+2. **OpenAI Deployment Company Formally Launches at $4B (May 11)** — 19 global investment firms, consultancies and system integrators (TPG lead, Bain Capital, Brookfield, Advent, Capgemini). 150 Forward Deployed Engineers embedded inside client organisations. OpenAI acquires Tomoro. CRO Denise Dresser: enterprise now >40% of OpenAI revenue, heading to parity with consumer. Distinct from the May 4 parallel JV announced in last digest — this is the full commercial operational launch.
+3. **SAP Sapphire: Autonomous Enterprise Unveiled (May 12–13)** — 50+ domain-specific Joule AI agents for ERP (finance, HR, procurement, supply chain). Autonomous Suite executes processes independently. Industry AI: seven sector-specific autonomous solution sets. Partners: Anthropic, AWS, Google, Microsoft, NVIDIA. Joule Work replaces menus with intent-driven agent delegation. Language shift: SAP drops "AI-enabled" and goes to "autonomous."
+4. **EU Article 50 Draft Implementation Guidelines Published (May 8)** — First Commission guidance covering full scope of Article 50: interactive AI disclosure, emotion recognition/biometric categorisation, deepfake labelling. Covers providers AND deployers. Consultation open until June 3. August 2, 2026 compliance deadline is 79 days away. Code of Practice on AI-generated content labelling finalising in parallel.
+5. **TAKE IT DOWN Act — US Platform Compliance Deadline May 19** — One-year implementation window (signed May 19, 2025) requires covered platforms to have notice-and-removal processes for AI deepfake intimate imagery, with 48-hour removal SLA. Deadline: May 19, 2026. First conviction issued April 2026 (Ohio). US parallel to EU's new Omnibus prohibition on AI-generated nonconsensual intimate imagery.
+
+### Signals worth acting on
+- "Autonomous" vocabulary entering enterprise software — SAP, PayPal both using it this week; board governance vocabulary hasn't caught up; no framework distinguishes "AI-assisted" from "AI-autonomous" for accountability purposes
+- AI labs locking in embedded enterprise relationships before consulting firms adapt — Anthropic JV (May 4) + OpenAI Deployment Co. (May 11) + SAP Anthropic integration (May 12): three implementation-side moves in eight days; client dependence risk not being discussed
+- Personal director liability for AI decisions approaching — 66% of directors use AI for board work, only 22% have governance processes; regulators and legal analysts explicitly predicting first lawsuits against executives for AI-driven operational failures
+
+### Content angles (3 ready to use)
+1. "Gartner just ended the argument. Cutting people to fund AI is not a strategy." (350-company study, zero ROI correlation — contrarian data point against PayPal/Freshworks narrative)
+2. "SAP just called itself autonomous. Your board hasn't had that meeting yet." (SAP agents in ERP + accountability gap + her data/security lane)
+3. "The August 2 rulebook just dropped. You have 79 days." (Article 50 guidelines now published, deployers in scope, specific commercial use cases named)
+
+**Contrarian take logged:** "Tipping point" (OpenAI CRO's exact phrase, May 11) is being applied simultaneously to two contradictory situations — accelerating adoption AND zero-ROI workforce cuts. The real tipping point isn't adoption. It's accountability: AI is making autonomous decisions in ERP systems at Global 2000 companies, EU/US deepfake law is enforcing this Sunday, and 78% of executives can't pass a governance audit. The tipping point that matters is the one where absence of accountability infrastructure stops being invisible.
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 011 — 2026-05-08 | EU AI Act Omnibus Deal · Anthropic/Blackstone/Goldman Enterprise JV · Freshworks Beats Earnings + Cuts 11% · OpenAI Frontier Firm Gap · PayPal AI-Native Pivot
 
 **Status:** NOTED
