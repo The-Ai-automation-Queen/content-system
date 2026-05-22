@@ -2,6 +2,36 @@
 
 ---
 
+## RESEARCH 013 — 2026-05-22 | Meta 8,000 Layoffs + $135B AI Bet · Microsoft-EY $1B Pilot-to-Production · BoE/FCA/Treasury Frontier AI Board Directive · Google I/O Agentic Era · EU Omnibus Misread
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-05-22.md](reports/research-digest-2026-05-22.md)
+**Topics searched:** AI strategy business leaders frameworks case studies May 2026, EU AI Act regulation US AI policy safety deepfakes May 2026, enterprise AI adoption companies announcements May 2026, AI workforce layoffs reskilling job displacement data May 2026, AI tools products non-technical executives May 2026, Microsoft EY partnership AI enterprise May 21 2026, Meta layoffs 8000 May 20 2026, EU AI Act omnibus simplified May 21 2026, AI CEO boardroom governance accountability May 2026, Google IO 2026 AI announcements enterprise, FCA Bank of England AI frontier models cyber resilience May 2026, AI fluency tools not enough business leaders May 2026
+
+### Key Findings (summary)
+
+1. **Meta Cuts 8,000 Jobs + Cancels 6,000 Open Roles While Committing $135B to AI (May 20)** — 10% of Meta's global workforce; more cuts confirmed for August and fall; AI infrastructure spend up 73% YoY to $115–135B. Not cutting because AI automated roles — cutting *to fund* AI. Pattern matches PayPal, Freshworks, Cisco this quarter. Sits in direct tension with last week's Gartner finding (zero correlation between workforce cuts and AI ROI).
+2. **Microsoft + EY $1 Billion AI Initiative: "From Pilots to Production" (May 21)** — Five-year, $1B+ partnership combining Microsoft Forward Deployed Engineers with EY industry professionals. Explicit problem statement: enterprise AI stuck in pilots, can't scale. EY is "client zero" — 150K Copilot users, 15% productivity boost, scaling to 400K+ staff. Third major embedded-engineer model in three weeks (after OpenAI $4B May 11, Anthropic $1.5B May 4).
+3. **BoE + FCA + HM Treasury Joint Statement: Frontier AI Is a Board-Level Systemic Risk (May 15)** — First tri-regulator document naming frontier AI governance as a board accountability requirement. Five specific areas: governance/strategy, vulnerability management, third-party and supply-chain risk, protection, response/recovery. Financial services is the template sector — others will follow.
+4. **Google I/O 2026: "Agentic Era" Declared, Gemini 3.5 + Agent Orchestration Platform (May 19–20)** — $180–190B capex; Gemini 3.5, Gemini Omni, Gemini Spark, Antigravity agent platform for enterprise. Google, SAP, OpenAI, Microsoft all simultaneously naming a new "era" — vocabulary is moving faster than any executive translation layer.
+5. **EU AI Omnibus Explained: Most Leaders Are Misreading the Relief (May 21)** — High-risk AI and product AI deadlines extended (Dec 2027, Aug 2028). But Article 50 content-labelling (chatbots, deepfakes, AI-generated images) stays on August 2, 2026 with enforcement grace to December 2, 2026. New "nudifier" app ban also lands December 2, 2026. Leaders reading headlines this week are concluding they have more time. They don't — for the rules that affect them most.
+
+### Signals worth acting on
+- "Agentic era" vocabulary war: Google, SAP, OpenAI, and Microsoft all naming a new phase simultaneously. Non-technical leaders can't distinguish marketing from material change. Translation demand is building.
+- Financial regulators setting the AI governance accountability template: BoE/FCA/Treasury joint statement will be the model other sectors adopt. Board liability trail is forming.
+- $1B+ embedded engineer model becoming dominant enterprise AI sales motion: creates operational dependency and rising exit costs. Clients who accept without understanding face lock-in. Fatiha's positioning is the alternative.
+
+### Content angles (3 ready to use)
+1. "Meta just cut 8,000 people while committing $135 billion to AI. That's not a strategy — it's a bet with other people's careers." (Gartner ROI data + Meta announcement + the pattern across PayPal/Freshworks/Cisco this quarter)
+2. "Microsoft and EY just committed $1 billion to solve one problem: your AI never leaves the pilot stage. Before you write the cheque, ask why." (Pilot failure as leadership literacy problem, not engineering problem)
+3. "Your bank's regulator just named frontier AI a systemic risk and told your board it's accountable. Is your board ready for that conversation?" (BoE/FCA/Treasury five governance areas + Grant Thornton 78% governance gap data)
+
+**Contrarian take logged:** Everyone is saying enterprise AI is stuck in pilots because of an engineering and implementation problem — that's why $1B solutions full of embedded engineers are being sold. What might be wrong: pilots fail because the business leader who approved them can't evaluate whether they're working. They can't ask the right questions, can't assess the team's claims, and approve scale-up without being able to distinguish a real result from a well-presented one. More engineers won't fix that. More leader understanding will. The $1B cheques being written this week are accidentally proving the gap that advisory for understanding — not implementation — is built to fill.
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 012 — 2026-05-15 | Gartner AI Layoffs Kill ROI · OpenAI Deployment Company $4B Launch · SAP Autonomous Enterprise · EU Article 50 Draft Guidelines · TAKE IT DOWN Act Deadline
 
 **Status:** NOTED
