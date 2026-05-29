@@ -2,6 +2,36 @@
 
 ---
 
+## RESEARCH 014 — 2026-05-29 | Axios AI Cost Reckoning · Gartner Agent Governance Failure · 74% Agent Rollback Paradox · Fortune Boardroom AI Gap · No FAKES Act Coalition
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-05-29.md](reports/research-digest-2026-05-29.md)
+**Topics searched:** AI strategy business leaders enterprise May 2026, EU AI Act regulation US AI policy safety deepfakes May 2026, enterprise AI adoption companies announcements May 2026, AI workforce jobs layoffs reskilling May 2026, AI tools products executives non-technical leaders May 2026, Gartner AI agent governance failure May 26 2026, Axios corporate America AI reckoning ROI spending May 28 2026, Fortune boardroom AI governance committee May 28 2026, No FAKES Act Congress May 2026, AI agent rollback Sinch Nasuni production paradox May 2026, Cloudflare Upwork BILL Coinbase AI layoffs May 2026
+
+### Key Findings (summary)
+
+1. **Axios: "Corporate America Enters Its AI Reckoning" (May 28)** — One CFO accidentally spent $500M in a month on Claude licenses with no usage limits. Microsoft canceled most Claude Code licenses over costs. Uber COO says AI costs "harder to justify." Former Microsoft chief AI officer: people automate tasks they hate, not tasks most valuable to the company. Token-based pricing compounding at enterprise scale without leadership cost architecture awareness is producing its own category of financial damage.
+2. **Gartner: Uniform AI Agent Governance = Enterprise AI Agent Failure (May 26)** — By 2027, 40% of enterprises will decommission autonomous agents due to governance gaps found only after production incidents. Root cause: treating governance as binary (locked vs. trusted) rather than proportional to agent autonomy level and trust boundary. Applies across customer service, ERP, finance, and operational agents.
+3. **The Agent Production Paradox: 97% Deployed, 74% Rolled Back (Sinch/Nasuni, May 2026)** — 97% deployed agents; 74% have already rolled back at least one live agent due to governance failure. Rollback rate rises to 81% among organisations with mature governance — the more capable the organisation, the more aggressively it shuts down agents that don't meet the bar. 88% confirmed security incidents related to AI agents; only 14.4% sent agents to production with full security approval.
+4. **Fortune: "The Boardroom Wants Answers on AI. Are You Ready?" (May 28)** — 70% of Fortune 500 execs claim AI risk committees; only 14% are fully deployment-ready. Only 39% of Fortune 100 boards have any AI oversight at all. 75% of executives admit AI strategy is "more for show." Board engagement predicts AI governance maturity by a 26–28 point margin on every metric.
+5. **No FAKES Act Reintroduced With Major Coalition (May 20–21)** — Bipartisan bill gives all individuals federal right to control AI use of voice and likeness; right doesn't expire at death. Coalition: Google, OpenAI, Spotify, Getty, UMG, Sony, Warner, RIAA. Strongest version of this bill to date; passage now materially more likely.
+
+### Signals worth acting on
+- "Token economics" arriving as an unmanaged CFO-level risk — enterprise AI is not flat-rate; usage without cost governance produces $500M surprises; no standard framework yet for enterprise token budgeting
+- AI agent governance fragmenting from general AI governance — Gartner's proportional governance framework signals that "AI governance" as a single category is becoming too broad; agent-specific governance is the next specialist discipline
+- AI labs co-designing the legal frameworks that govern them — Google and OpenAI supporting No FAKES Act signals the era of labs opposing content regulation is ending; leaders not following this process will be governed by rules they didn't see coming
+
+### Content angles (3 ready to use)
+1. "A CFO accidentally spent half a billion dollars in one month on AI. The tool wasn't broken. The understanding was." (Axios $500M accidental bill + token economics + her literacy-is-a-financial-control argument)
+2. "Gartner says 40% of enterprise AI agents will be shut down by 2027. Not because they didn't work — because nobody built governance proportionate to what they were doing." (Gartner May 26 + Sinch 74% rollback + her data/security differentiator)
+3. "The No FAKES Act is back — and this time Google, OpenAI, and Spotify are all on the same side. If your marketing team uses AI voices or likenesses, this one is for you." (No FAKES Act + EU December 2 deadline + her ethics and data protection positioning)
+
+**Contrarian take logged:** Everyone is saying the 74% AI agent rollback rate is evidence of immaturity — enterprises deploying before they're ready, problems that better tooling will fix. What might be wrong: rollback rate is highest (81%) among the most governance-mature organisations. Better governance produces more rollbacks, not fewer, because it surfaces what was always there. The 26% that haven't rolled back anything are not success stories — they are the organisations without the oversight to know whether they should. The framing of rollbacks as failure is itself the problem.
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 013 — 2026-05-22 | Meta 8,000 Layoffs + $135B AI Bet · Microsoft-EY $1B Pilot-to-Production · BoE/FCA/Treasury Frontier AI Board Directive · Google I/O Agentic Era · EU Omnibus Misread
 
 **Status:** NOTED
