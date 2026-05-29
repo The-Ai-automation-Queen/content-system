@@ -8,6 +8,7 @@ Private mirror of local content system for remote Claude agents.
 - `research-notes.md` — Research findings from last30days searches
 - `inspiration-library/` — Creator patterns, hooks, and tracking
 - `positioning/` — Brand positioning and voice guidelines
+- `video-highlights/` — Turn a video (URL, upload, or pasted transcript) into brand-tuned content seeds
 
 ## Sync
 
