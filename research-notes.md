@@ -2,6 +2,36 @@
 
 ---
 
+## RESEARCH 015 — 2026-06-05 | Bain "Circular Bet" · Trump Frontier AI EO · 142K Tech Layoffs Milestone · Snowflake/Anthropic Governed AI · 88%/12% AI Value Split
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-06-05.md](reports/research-digest-2026-06-05.md)
+**Topics searched:** AI strategy business leaders frameworks case studies failures June 2026, EU AI Act regulation US AI policy safety deepfakes June 2026, enterprise AI adoption companies announcements June 2026, AI workforce jobs layoffs reskilling displacement data June 2026, AI tools products executives non-technical leaders June 2026, tech layoffs 142000 2026 AI infrastructure profitable companies May June, Snowflake Anthropic enterprise AI partnership governed AI June 2026, EU AI Act Code of Practice final version June 2026 deepfake labelling deadline, Marlabs 2026 AI adoption report enterprise playbook findings June, AI ROI failure enterprise survey June 2026, Trump AI executive order June 2 2026 frontier models pre-release government access, Bain AI ROI circular bet disappointing June 2026
+
+### Key Findings (summary)
+
+1. **Bain: "The Value Didn't Arrive" + The Circular Bet (June 1)** — 40% of companies tracking AI spending saw <10% cost savings. 44% are funding current AI investment using savings from prior automation programs that also underdelivered. 90% who missed targets plan to increase AI budgets next year. Bain conclusion: "The technology worked. The value didn't arrive." Structural leak: approval for new AI spend is being authorised without accountability for prior wave performance.
+2. **Trump AI Executive Order: "Promoting Advanced AI Innovation and Security" (June 2)** — Asks AI companies to voluntarily submit frontier models to government review 30 days before public release. NSA runs classified benchmarking process to determine "covered frontier model" threshold. Government selects "trusted partners" for early access. Voluntary participation, classified designation mechanism. EU Code of Practice finalising this same week — two parallel frameworks now active.
+3. **Tech Layoffs Hit 142,000 in 2026; May Was Steepest Month Since 2023 (May 29)** — 38,242 US tech jobs cut in May alone. Meta, Amazon, Oracle, Alphabet collectively committing $700B AI capex while cutting headcount. Meta: Q1 revenue $56.3B (+33% YoY), net income $26.8B, still cut 8,000 jobs. Explicit capital reallocation from payroll to GPU/infrastructure. Goldman Sachs: 16,000 US jobs displaced monthly by AI. Entry-level software developer employment down ~20% since 2024.
+4. **Snowflake + Anthropic $200M Partnership: "Governed AI" Becomes Demand Driver (June 2)** — Multi-year $200M deal at Snowflake Summit 26. Claude Sonnet 4.5 powers Snowflake Intelligence enterprise agent. 12,600+ customers. Framing: "governed, production-ready AI" — first time a major partnership is explicitly named around governance demand, not adoption. Regulated industries (financial services, healthcare, life sciences) as primary target.
+5. **Marlabs Meta-Analysis: 88% Deploying AI, 12% Capturing Full Value (June 2)** — Aggregated 10 major 2026 enterprise AI surveys, 30,000+ leaders across 100 countries. 88% deploying AI; 79% face major scaling challenges; only 12% of CEOs report both lower costs AND higher revenue. Headline: "The AI Divide Is Becoming a Competitive Moat — And Widening Fast." Cross-survey validation of PwC April 80/20 finding.
+
+### Signals worth acting on
+- "Governed AI" entering commercial product vocabulary (Snowflake/Anthropic naming) faster than boardroom vocabulary — gap between what vendors are selling and what boards are governing is widening
+- EU Code of Practice final version due this month — August 2 compliance deadline binding; most marketing teams not tracking this; December 2 enforcement grace period ending
+- Bain's 90% pattern: enterprises who missed ROI increasing budgets without accountability for prior failure — investment decisions driven by narrative and competitive pressure, not performance data
+
+### Content angles (3 ready to use)
+1. "Bain just found the AI investment paradox no one wants to admit: 44% of companies are funding this year's AI with savings from last year's AI that also didn't deliver." (Bain circular bet + Marlabs 12% capturing value + her accountability-before-investment positioning)
+2. "Two AI regulatory frameworks just landed in the same week. One asks nicely. One has enforcement teeth. Do you know which is which?" (Trump EO voluntary framing vs EU Code of Practice binding August 2 deadline — both landed same week; regulatory literacy is her lane)
+3. "The language changed. 'AI adoption' is over. 'Governed AI' is the new bar — and most pilots don't meet it." (Snowflake/Anthropic naming shift + 79% scaling failure + her understanding/governance differentiator)
+
+**Contrarian take logged:** "The US executive order is a light-touch, voluntary approach" is the consensus read. What might be wrong: the "voluntary" framing applies only to participation in the early access partnership. The NSA's classification mechanism — which determines when a model becomes a "covered frontier model" subject to review — is classified, uses non-public criteria, and is not appealable. An AI lab that declines to participate doesn't opt out of being designated. It just loses the trusted partner channel. The headline says voluntary. The architecture says otherwise.
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 014 — 2026-05-29 | Axios AI Cost Reckoning · Gartner Agent Governance Failure · 74% Agent Rollback Paradox · Fortune Boardroom AI Gap · No FAKES Act Coalition
 
 **Status:** NOTED
