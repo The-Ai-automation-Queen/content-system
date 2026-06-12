@@ -2,6 +2,36 @@
 
 ---
 
+## RESEARCH 016 — 2026-06-12 | EU Code of Practice Live · Great American AI Act Draft · Anthropic FAA-Level Testing + $350M · GitLab Org Redesign for Agents · CMU/Accenture: 95% See No Returns
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-06-12.md](reports/research-digest-2026-06-12.md)
+**Topics searched:** AI strategy business leaders frameworks case studies failures June 2026, EU AI Act regulation US AI policy safety deepfakes June 2026, enterprise AI adoption companies announcements June 2026, AI workforce jobs layoffs reskilling displacement data June 2026, AI tools products executives non-technical leaders June 2026, EU AI Act Code of Practice AI-generated content published June 10 2026, SEI Accenture AI adoption maturity model June 8 2026, AI enterprise strategy news CEO boardroom June 9 10 11 12 2026, AI safety regulation news June 2026 OpenAI Anthropic Google, tech layoffs June 2026 AI automation companies, Anthropic Economic Futures Research Fund $200 million mandatory AI testing, GitLab layoffs June 2026 agentic AI management layers restructuring, Obernolte Trahan Great American AI Act mandatory audits June 4 2026
+
+### Key Findings (summary)
+
+1. **EU AI Code of Practice on AI-Generated Content Published (June 10)** — European AI Office released the final compliance instrument for Article 50 of the EU AI Act. Providers must add machine-readable watermarks/metadata to AI outputs; deployers must display standardised EU disclosure icons. August 2, 2026 deadline is now 51 days away. Signing the Code gives a compliance safe harbour; not signing doesn't remove the underlying Article 50 obligation. December 2, 2026 is the enforcement grace period end. Any company generating AI content for European audiences is in scope.
+2. **Great American AI Act Discussion Draft Released (June 4)** — 269-page bipartisan bill (Obernolte/Trahan) proposes mandatory semi-annual third-party audits for frontier AI labs and freezes new state AI development regulations for three years. States retain authority over AI deployment in civil rights, privacy, child safety. Immediate backlash from labor unions and consumer advocates over preemption clause. Not yet law — discussion draft status.
+3. **Anthropic: Mandatory AI Testing (FAA-Level) + $200M Economic Futures Fund (June 10)** — Dario Amodei essay called for mandatory government testing for models above a compute threshold, with authority to block dangerous releases. Pledged $200M Economic Futures Research Fund for AI labor impact research and $150M National Fellowship Program. Came 5 days after AI lab CEOs jointly wrote Congress warning AI lowers bioweapon barriers (June 5).
+4. **GitLab "Act 2": 14% Layoffs + Management Layers Reduced 8→5 (June 2)** — 350 jobs cut, management hierarchy restructured specifically because AI agents now handle internal reviews, approvals, and handoffs that middle management performed. Exiting 22 countries, reorganising into ~60 autonomous R&D units. Revenue $264.2M (+23% YoY) — profitable company, not a turnaround. First company to publicly redesign org structure for an agentic operating model rather than general cost-cutting.
+5. **SEI + Accenture AI Adoption Maturity Model (June 8)** — Carnegie Mellon and Accenture launched 8-dimension framework. Supporting data: 95% of organisations see no AI returns; only 8% have scaled AI at enterprise level. Informed by 24+ executive interviews, 600 practitioner surveys, 100+ existing maturity models. Free download from SEI Digital Library. More severe finding than prior surveys (Marlabs 88%, Writer 79%).
+
+### Signals worth acting on
+- Management hierarchy redesign (not headcount reduction) as next phase of agentic deployment — GitLab is the first public case; every org running agents in core workflows faces the same structural logic; no CEO advisory framework addresses this yet
+- AI labs writing the governance frameworks they'll be audited against — Anthropic's mandatory testing proposal and $350M safety fund position them as "responsible actor" in the regulatory battle; who defines responsible AI standards determines who wins the next enterprise sales cycle
+- State vs. federal AI governance battle is now the operative compliance risk — GAAIA preemption provision could invalidate state-based compliance programs; companies need to track both tracks simultaneously
+
+### Content angles (3 ready to use)
+1. "The EU published the AI content labelling rulebook on Tuesday. August 2 is 51 days away. Your marketing team is 51 days from a compliance problem they probably don't know they have." (Code of Practice final + Article 50 scope + her regulatory literacy lane)
+2. "GitLab just removed three management layers — not because they were struggling, but because agents took the work. Revenue up 23%. They still restructured. The org chart conversation is coming." (GitLab agentic redesign + her understanding-not-just-tools positioning + leadership layer question)
+3. "The Great American AI Act would freeze state AI regulation for three years. That sounds like relief. What it actually does is remove the only regulators who've been active." (GAAIA preemption + state compliance programs + regulatory literacy as leadership competence)
+
+**Contrarian take logged:** Everyone is reading the Great American AI Act's mandatory audit requirement as stronger US AI oversight. What might be wrong: the audit requirement applies to five or six frontier labs. The three-year state preemption provision applies to every company in every state. The bill simultaneously tightens oversight at the very top of the market and removes the only active governance infrastructure for the rest of it — California employment AI rules, Colorado algorithmic accountability, New York City hiring AI rules, all frozen for three years. The bill looks like oversight. For everyone except the top labs, it functions like deregulation. Reading "mandatory audits" and concluding the bill is about accountability is exactly the headline literacy that leads leaders into compliance gaps.
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 015 — 2026-06-05 | Bain "Circular Bet" · Trump Frontier AI EO · 142K Tech Layoffs Milestone · Snowflake/Anthropic Governed AI · 88%/12% AI Value Split
 
 **Status:** NOTED
