@@ -28,10 +28,13 @@
 html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 
-.ribbon{display:block;width:100%;background:var(--navy);color:var(--canvas);font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;padding:11px 32px;text-align:center;text-decoration:none}
-.ribbon strong{color:#7FA0FF;font-weight:700;margin-left:6px}
-.ribbon-count{display:inline-flex;gap:6px;margin-left:10px;font-variant-numeric:tabular-nums}
-.ribbon-count span{background:rgba(255,255,255,0.1);padding:2px 7px;border-radius:2px}
+.ribbon{display:flex;width:100%;background:var(--navy);color:var(--canvas);font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;padding:11px 32px;text-align:center;text-decoration:none;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.ribbon label{cursor:default}
+.ribbon input[type="email"]{padding:7px 14px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);color:var(--canvas);font-family:'Inter',sans-serif;font-size:13px;border-radius:3px;letter-spacing:0.02em;text-transform:none;width:220px}
+.ribbon input[type="email"]::placeholder{color:rgba(255,255,255,0.45)}
+.ribbon input[type="email"]:focus{outline:none;border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.15)}
+.ribbon button{background:transparent;border:1px solid rgba(255,255,255,0.3);color:#7FA0FF;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:7px 16px;border-radius:3px;cursor:pointer}
+.ribbon button:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.5)}
 
 .nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
 .nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
@@ -151,9 +154,9 @@ img{max-width:100%;height:auto}
 
 @media (max-width:560px){
   html,body{font-size:16px}
-  .ribbon{padding:10px 16px;font-size:11px;letter-spacing:0.12em}
-  .ribbon strong{display:block;margin-left:0;margin-top:4px}
-  .ribbon-count{margin-left:6px}
+  .ribbon{padding:10px 16px;font-size:11px;letter-spacing:0.12em;gap:8px}
+  .ribbon input[type="email"]{width:170px;font-size:12px;padding:6px 10px}
+  .ribbon button{padding:6px 12px;font-size:11px}
   .nav-inner{padding:14px 16px;flex-wrap:wrap;gap:10px;justify-content:center}
   .nav-logo{font-size:19px}
   .nav-links{gap:12px;font-size:10px;flex-wrap:wrap;justify-content:center}
@@ -193,10 +196,11 @@ img{max-width:100%;height:auto}
 </head>
 <body>
 
-<div class="ribbon">
-  Get every new guide in your inbox
-  <strong>Subscribe free</strong>
-</div>
+<form class="ribbon" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+  <label for="ribbon-email">Get every new guide in your inbox</label>
+  <input id="ribbon-email" name="email" type="email" placeholder="your@email.com" required>
+  <button type="submit"><strong>Subscribe free</strong></button>
+</form>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="#">Shift &amp; Lead</a>
