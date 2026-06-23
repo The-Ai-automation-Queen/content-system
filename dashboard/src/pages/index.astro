@@ -60,6 +60,11 @@ const totalCost = COSTS.reduce((s, c) => {
   return s + (m ? parseInt(m[1]) : 0);
 }, 0);
 
+// Machine groups + filter tabs
+const machineGroups = [...new Set(d.machines.map((m) => m.group))];
+const liveCount = d.machines.filter((m) => m.status === 'live').length;
+const buildCount = d.machines.filter((m) => m.status !== 'live').length;
+
 const dataPayload = JSON.stringify({ entries: d.entries, calendar: d.calendar, machines: d.machines });
 ---
 
@@ -514,29 +519,59 @@ const dataPayload = JSON.stringify({ entries: d.entries, calendar: d.calendar, m
       <div class="page" id="p-machines">
         <div class="page-head">
           <h2>Machines</h2>
-          <span class="breadcrumb">Content OS / <span>{d.machines.length} machines</span></span>
+          <span class="breadcrumb">Content OS / <span>{d.machines.length} machines · {liveCount} live · {buildCount} en build · 0 à corriger</span></span>
         </div>
 
-        <div class="m-grid" id="machines-grid">
-          {d.machines.map((m) => {
-            const s = MSTATUS[m.status] || MSTATUS.partial;
+        <!-- Filter tabs -->
+        <div class="filters" id="machine-filters" style="margin-bottom:12px">
+          <button class="filter active" data-mfilter="all">All <span class="cnt">{d.machines.length}</span></button>
+          {machineGroups.map((g) => {
+            const cnt = d.machines.filter(m => m.group === g).length;
+            return <button class="filter" data-mfilter={g}>{g.split('(')[0].trim()} <span class="cnt">{cnt}</span></button>;
+          })}
+        </div>
+
+        <!-- Search -->
+        <div style="margin-bottom:20px">
+          <input type="text" id="machine-search" placeholder="Rechercher..." style="width:280px;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:14px;outline:none" />
+        </div>
+
+        <!-- Grouped machine grid -->
+        <div id="machines-grid">
+          {machineGroups.map((g) => {
+            const groupMachines = d.machines.filter(m => m.group === g);
             return (
-              <div class="m-card" data-machine={m.skill} data-machine-name={m.name} data-machine-id={m.id} data-machine-note={m.note} data-machine-status={m.status}>
-                <div class="m-head">
-                  <span class="m-dot" style={`background:${s.c}`}></span>
-                  <span class="m-name">{m.name}</span>
-                  <span class="m-id">{m.id}</span>
+              <div class="machine-group" data-group={g}>
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;margin-top:20px">
+                  <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mut)">{g}</span>
+                  <span style="font-size:11px;color:var(--mut)">{groupMachines.length}</span>
+                  <span style="flex:1;height:1px;background:var(--line)"></span>
                 </div>
-                <div class="m-note">{m.note}</div>
-                <div class="m-foot">
-                  <code>{m.skill}</code>
-                  <span class="m-status" style={`color:${s.c}`}>{s.t}</span>
+                <div class="m-grid">
+                  {groupMachines.map((m) => {
+                    const s = MSTATUS[m.status] || MSTATUS.partial;
+                    return (
+                      <div class="m-card" data-machine={m.skill} data-machine-name={m.name} data-machine-id={m.id} data-machine-note={m.note} data-machine-status={m.status} data-machine-group={m.group}>
+                        <div class="m-head">
+                          <span class="m-dot" style={`background:${s.c}`}></span>
+                          <span class="m-name">{m.name}</span>
+                          <span class="m-id">{m.id}</span>
+                        </div>
+                        <div class="m-note">{m.note}</div>
+                        <div class="m-foot">
+                          <code>{m.skill}</code>
+                          <span class="m-status" style={`color:${s.c}`}>{s.t}</span>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             );
           })}
         </div>
 
+        <!-- Machine detail (hidden until click) -->
         <div class="machine-detail" id="machine-detail">
           <div class="md-header">
             <button class="md-back" id="md-back">← Back</button>
@@ -910,6 +945,34 @@ const dataPayload = JSON.stringify({ entries: d.entries, calendar: d.calendar, m
         });
       });
 
+      // ── Machine filter tabs ──
+      document.querySelectorAll('#machine-filters .filter').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#machine-filters .filter').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const f = btn.dataset.mfilter;
+          document.querySelectorAll('.machine-group').forEach(g => {
+            g.style.display = (f === 'all' || g.dataset.group === f) ? 'block' : 'none';
+          });
+        });
+      });
+
+      // ── Machine search ──
+      document.getElementById('machine-search').addEventListener('input', (e) => {
+        const q = e.target.value.toLowerCase();
+        document.querySelectorAll('.m-card').forEach(card => {
+          const text = (card.dataset.machineName + ' ' + card.dataset.machineNote + ' ' + card.dataset.machine).toLowerCase();
+          card.style.display = text.includes(q) ? '' : 'none';
+        });
+        // Show group headers that have visible cards
+        document.querySelectorAll('.machine-group').forEach(g => {
+          const visibleCards = g.querySelectorAll('.m-card[style=""], .m-card:not([style])');
+          const hasHidden = g.querySelectorAll('.m-card[style*="none"]').length;
+          const total = g.querySelectorAll('.m-card').length;
+          g.style.display = (total - hasHidden > 0 || !q) ? 'block' : 'none';
+        });
+      });
+
       // ── Machine detail ──
       const STATUSES = [
         { key: 'DRAFT', short: 'Draft', color: '#8b949e' },
@@ -926,6 +989,8 @@ const dataPayload = JSON.stringify({ entries: d.entries, calendar: d.calendar, m
           const note = card.dataset.machineNote;
 
           document.getElementById('machines-grid').style.display = 'none';
+          document.getElementById('machine-filters').style.display = 'none';
+          document.getElementById('machine-search').parentElement.style.display = 'none';
           const detail = document.getElementById('machine-detail');
           detail.classList.add('active');
 
@@ -1011,7 +1076,9 @@ const dataPayload = JSON.stringify({ entries: d.entries, calendar: d.calendar, m
 
       document.getElementById('md-back').addEventListener('click', () => {
         document.getElementById('machine-detail').classList.remove('active');
-        document.getElementById('machines-grid').style.display = 'grid';
+        document.getElementById('machines-grid').style.display = 'block';
+        document.getElementById('machine-filters').style.display = 'flex';
+        document.getElementById('machine-search').parentElement.style.display = 'block';
       });
 
       document.querySelectorAll('#md-tabs .tab').forEach(tab => {

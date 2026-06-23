@@ -212,17 +212,40 @@ export function getChannels() {
   return channels;
 }
 
-// The 5 machines + their live-wiring status. Env presence flips ⚙️ → live.
+// Platform-grouped machines (Romain AFFISEO style: per-platform, not per-workflow).
 export function getMachines() {
   const has = (k) => !!process.env[k];
   return [
-    { id: 'M01·data', name: 'Signal Harvester', skill: 'signal-harvester', status: 'live', note: 'X/IG/YouTube via Apify (no paid X API) + Tavily web search' },
-    { id: 'M01·script', name: 'Content Engine', skill: 'content-engine', status: 'live', note: 'In-voice drafts, critic-scored' },
-    { id: 'M02·visual', name: 'Visual Engine', skill: 'visual-engine', status: 'live', note: 'Blotato AI images + narrated video (open egress on VPS)' },
-    { id: 'M02·face', name: 'HeyGen Talking-Head', skill: 'heygen', status: has('HEYGEN_API_KEY') ? 'live' : 'needs-key', note: 'Set HEYGEN_API_KEY (the one paid tool) + record avatar/voice IDs' },
-    { id: 'M03·reels', name: 'Reels Factory', skill: 'reels-factory', status: 'live', note: 'Reap MCP (virality-scored, no key) + Blotato fallback — no Opus Clip' },
-    { id: 'M04·post', name: 'Distribution', skill: 'distribution', status: 'live', note: 'Blotato queue across platforms (connect TikTok to add it)' },
-    { id: 'M05·leads', name: 'DM Responder', skill: 'dm-responder', status: 'partial', note: 'Runs on GoHighLevel (replaces ManyChat); activate lead-magnet URLs' },
+    // ── REELS (INSTAGRAM / TIKTOK) ──
+    { id: 'M01', name: 'Reels Script Generator', group: 'REELS (INSTAGRAM / TIKTOK)', skill: 'content-engine', status: 'live', note: '7 short-form scripts / run, auto-scored' },
+    { id: 'M02', name: 'Reels Visual Production', group: 'REELS (INSTAGRAM / TIKTOK)', skill: 'visual-engine', status: 'live', note: 'AI images + narrated video via Blotato' },
+    { id: 'M02', name: 'Avatar Reels (HeyGen)', group: 'REELS (INSTAGRAM / TIKTOK)', skill: 'heygen', status: has('HEYGEN_API_KEY') ? 'live' : 'needs-key', note: 'Clone video HeyGen + B-rolls' },
+    { id: 'M03', name: 'Reels Factory', group: 'REELS (INSTAGRAM / TIKTOK)', skill: 'reels-factory', status: 'live', note: 'Clips Reels auto via Reap + hook + CTA' },
+
+    // ── LINKEDIN ──
+    { id: 'M01', name: 'LinkedIn Content Factory', group: 'LINKEDIN', skill: 'content-engine', status: 'live', note: 'In-voice posts, carousels, thought leadership' },
+    { id: 'M02', name: 'LinkedIn Carousel Generator', group: 'LINKEDIN', skill: 'visual-engine', status: 'live', note: 'Visual carousels via Canva integration' },
+    { id: 'M04', name: 'LinkedIn Distribution', group: 'LINKEDIN', skill: 'distribution', status: 'live', note: 'Queue to LinkedIn via Blotato' },
+    { id: 'M05', name: 'LinkedIn DM Responder', group: 'LINKEDIN', skill: 'dm-responder', status: 'partial', note: 'Comment-keyword → DM lead magnet via GHL' },
+
+    // ── YOUTUBE ──
+    { id: 'M01', name: 'YouTube Script Generator', group: 'YOUTUBE', skill: 'content-engine', status: 'live', note: 'Long-form + Shorts scripts, critic-scored' },
+    { id: 'M02', name: 'YouTube Thumbnails', group: 'YOUTUBE', skill: 'visual-engine', status: 'live', note: 'Thumbnails via Canva / visual engine' },
+    { id: 'M03', name: 'YouTube Shorts Factory', group: 'YOUTUBE', skill: 'reels-factory', status: 'live', note: 'Clips from long videos with hooks + CTA' },
+
+    // ── X (TWITTER) ──
+    { id: 'M01', name: 'X Content Factory', group: 'X (TWITTER)', skill: 'content-engine', status: 'live', note: 'Short text posts + threads, auto-repurposed' },
+    { id: 'M04', name: 'X Distribution', group: 'X (TWITTER)', skill: 'distribution', status: 'live', note: 'Queue to @aiautomatik via Blotato' },
+
+    // ── CROSS-PLATFORM ──
+    { id: 'M01', name: 'Signal Harvester', group: 'CROSS-PLATFORM', skill: 'signal-harvester', status: 'live', note: 'Multi-source daily: X/IG/YouTube + Tavily + RSS' },
+    { id: 'M04', name: 'Multi-Platform Distribution', group: 'CROSS-PLATFORM', skill: 'distribution', status: 'live', note: 'Simultaneous queue to all connected channels' },
+
+    // ── SYSTEM ──
+    { id: 'SYS', name: 'Weekly Ops', group: 'SYSTEM', skill: 'weekly-ops', status: 'live', note: 'Full pipeline loop orchestrator' },
+    { id: 'SYS', name: 'Vault Audit', group: 'SYSTEM', skill: 'vault-audit', status: 'live', note: 'Pipeline health check + stale content report' },
+    { id: 'SYS', name: 'Competitor Watch', group: 'SYSTEM', skill: 'competitor-watch', status: 'live', note: 'Creator/competitor movement scan' },
+    { id: 'SYS', name: 'Supadata Transcript', group: 'SYSTEM', skill: 'supadata-transcript', status: 'live', note: 'Pull transcripts from any video URL' },
   ];
 }
 
