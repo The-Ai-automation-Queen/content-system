@@ -106,6 +106,11 @@ The voice changed. Use this, not the old rules.
   not some untouchable expert."
 - **No corporate jargon, no engagement bait.** Keep it human and specific.
 - **Punchy for short-form** — short lines, fast hooks, one idea per piece.
+- **Credibility without name-dropping.** Public content does **not** need to name
+  former employers (Dell, Intel, Microsoft) or state exact tenure. Default to vague
+  references — "years in big corporate tech," "a long career inside corporate." The
+  specifics live in her LinkedIn About/bio for anyone who wants the receipts; they
+  do not belong in every post.
 
 **Tone test:** warm best friend who happens to be brilliant at AI and is a little
 impatient with you wasting time doing things by hand.

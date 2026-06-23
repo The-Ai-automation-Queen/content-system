@@ -116,9 +116,9 @@ Want the exact setup I use for lead follow-up? Comment "FOLLOW UP" and I'll send
 details (the moment you decided, how you actually felt) so it's true to you.
 
 ---
-For 20 years, I was really good at building other people's companies.
+For years, I was really good at building other people's companies.
 
-Dell. Intel. Microsoft. Big titles, big teams, the kind of CV that makes people nod.
+Big corporate tech. Big titles, big teams, the kind of CV that makes people nod.
 
 And every Sunday around 7pm, the same thing crept in. That quiet dread of Monday.
 
@@ -132,7 +132,7 @@ So I left.
 
 Not in a blaze of glory. Quietly. Honestly? Terrified. But I left.
 
-Here's what nobody tells you about leaving corporate to build your own thing: the skills that made you valuable in there still count. You're not starting from zero. You're starting from 20 years of knowing how things actually work — plus tools that didn't exist three years ago.
+Here's what nobody tells you about leaving corporate to build your own thing: the skills that made you valuable in there still count. You're not starting from zero. You're starting from years of knowing how things actually work — plus tools that didn't exist three years ago.
 
 If you're reading this on a Sunday night and you know exactly the feeling I'm describing… you're not stuck. You're just early.
 
