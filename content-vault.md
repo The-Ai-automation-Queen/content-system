@@ -13,53 +13,51 @@
 
 ## Most recent (quick reference)
 
-- 23/06/2026 | Short-form video (Reel/TikTok/Short) | "Build It Once, It Runs Forever" — welcome-email automation | READY TO POST
+- 23/06/2026 | Short-form video (Reel/TikTok/Short) | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
 
 ---
 
-## ENTRY 003 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Build It Once, It Runs Forever | READY TO POST
+## ENTRY 003 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | I Haven't Built a Slide Deck in 9 Months | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** Instagram Reels / TikTok / YouTube Shorts (vertical 9:16)
 **Format:** ~35s talking-head + on-screen text + caption
-**Topic:** The point of automation isn't saving 5 minutes today — it's never doing the task again.
+**Topic:** You don't have to build the busywork by hand anymore — describe it, let AI draft it, you just tweak.
 **Pattern used:** Result-First Demo (10) + Provocation-First (1)
-**Pillar:** Build Once, Runs Forever
-**Critic score:** 8.6/10 — APPROVED FOR REVIEW
-**Source:** Experiential (no external claims). ⚠️ **PERSONALIZE:** confirm the real
-details before filming (the "8 months / welcome email" example — swap in a true one).
+**Pillar:** Time Wins (+ Stop Doing That by Hand)
+**Critic score:** 8.7/10 — APPROVED FOR REVIEW
+**Source:** True (operator: "9 months, haven't built a slide deck myself"). Optional:
+name the tool you use if you want to be more concrete.
 
 ---
 ### SPOKEN SCRIPT
 
 **[0–3s — HOOK]** *(on camera, direct)*
-"I haven't written a 'welcome' email in eight months. Here's why."
-`[ON SCREEN: "0 welcome emails in 8 months"]`
+"I haven't built a slide deck myself in nine months."
+`[ON SCREEN: "9 months. 0 decks built by hand."]`
 
 **[3–25s — BODY]**
-"Eight months ago, I spent one afternoon setting up a system.
-Now every time someone joins my list, they get a welcome, a free resource, and a follow-up — automatically. While I sleep. While I'm filming this.
-`[ON SCREEN: "Build it once →"]`
-That's the whole game. You're not trying to save five minutes today. You're trying to never do the task again.
-Build it once. It runs forever.
-`[ON SCREEN: "…runs forever"]`
-And no — you don't need to be technical. If you can fill in a form, you can build this."
+"I used to lose entire evenings to this. Dragging boxes around. Hunting for the right font. Lining things up at midnight before a talk.
+Now? I just describe what I want — the topic, the vibe, the key points — and AI drafts the whole deck in minutes.
+`[ON SCREEN: "Describe it → AI drafts it"]`
+I tweak it instead of building it. Ten minutes instead of three hours.
+And no, you don't need to be technical. If you can explain your idea out loud, you can do this."
 
 **[25–35s — CLOSE]**
-"Pick one task you do every single week. Just one. Automate it this weekend.
-Want to see exactly how I'd set it up? Follow — I'm posting the full build next."
-`[ON SCREEN: "Follow for the full build"]`
+"What's the task you're still doing by hand that AI could draft for you?
+Tell me in the comments — and follow, I show one of these every week."
+`[ON SCREEN: "Follow for one time-saver a week"]`
 
 ---
 ### CAPTION
-The task you never have to do again beats the task you did fast today. 👑
-What's the one thing you'd automate first? 👇
-#AIautomation #automation #solopreneur #worksmarter
+Three hours of slide-deck busywork → ten minutes. 👑
+What would you hand off first? 👇
+#AIautomation #timesaver #solopreneur #worksmarter
 
-> **Production note:** this promises a "full build" follow-up — only post if you'll
-> make that next piece (good — it starts a series, Pattern 4).
+> **Production note:** the close promises "one of these every week" — only keep that
+> line if you'll post weekly (it starts a series, Patterns 4 + 9). Drop it otherwise.
 
 ---
 
