@@ -108,11 +108,35 @@ const STATUSES = [
       .links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
       .btn { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 9px 14px; color: var(--ink); font-weight: 600; font-size: 13.5px; }
       .btn:hover { border-color: var(--gold); text-decoration: none; }
-      .actions { display: flex; gap: 4px; margin-top: 9px; flex-wrap: wrap; }
-      .sbtn { font: inherit; font-size: 10.5px; padding: 3px 8px; border-radius: 7px; background: #1a2030; color: var(--mut); border: 1px solid var(--line); cursor: pointer; }
-      .sbtn:hover { border-color: var(--gold); color: var(--ink); }
-      .sbtn.cur { background: #221d10; color: var(--gold2); border-color: #4a3d18; cursor: default; }
+      .actions { display: flex; gap: 6px; margin-top: 11px; flex-wrap: wrap; }
+      .sbtn { font: inherit; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 9px; background: #1a2030; color: var(--mut); border: 1px solid var(--line); cursor: pointer; transition: all 0.15s; }
+      .sbtn:hover { border-color: var(--gold); color: var(--ink); background: #222a3a; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+      .sbtn:active { transform: translateY(0); }
+      .sbtn.cur { background: var(--gold); color: #000; border-color: var(--gold2); cursor: default; font-weight: 700; }
+      .sbtn.cur:hover { transform: none; box-shadow: none; }
       .sbtn:disabled { opacity: 0.5; cursor: wait; }
+      .runbtn { font: inherit; font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 10px; border: 1px solid var(--line); cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 8px; width: 100%; }
+      .runbtn:hover { transform: translateY(-1px); box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+      .runbtn:active { transform: translateY(0); }
+      .runbtn.green { background: linear-gradient(135deg, #1a3a23, #11261a); color: var(--green); border-color: #1d3a23; }
+      .runbtn.green:hover { border-color: var(--green); background: linear-gradient(135deg, #1d4428, #142e1e); }
+      .runbtn.gold { background: linear-gradient(135deg, #2a2210, #221d10); color: var(--gold2); border-color: #4a3d18; }
+      .runbtn.gold:hover { border-color: var(--gold2); background: linear-gradient(135deg, #332a14, #2a2210); }
+      .runbtn.blue { background: linear-gradient(135deg, #18202e, #141c28); color: var(--blue); border-color: #1e3050; }
+      .runbtn.blue:hover { border-color: var(--blue); background: linear-gradient(135deg, #1e2836, #18202e); }
+      .runbtn.purple { background: linear-gradient(135deg, #1c1430, #181028); color: var(--purple); border-color: #33244a; }
+      .runbtn.purple:hover { border-color: var(--purple); background: linear-gradient(135deg, #241a3a, #1c1430); }
+      .runbtn.red { background: linear-gradient(135deg, #2a1413, #221010); color: var(--red); border-color: #4a1f1d; }
+      .runbtn.red:hover { border-color: var(--red); background: linear-gradient(135deg, #341a18, #2a1413); }
+      .runbtn .ico { font-size: 18px; }
+      .runbtn .rlabel { font-size: 13px; }
+      .runbtn .rdesc { font-size: 11px; color: var(--mut); font-weight: 400; }
+      .rungrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
+      .cmdbox { background: #0a0e14; border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font-family: ui-monospace, monospace; font-size: 12px; color: var(--green); margin-top: 12px; display: none; word-break: break-all; }
+      .cmdbox.show { display: block; }
+      .toast { position: fixed; bottom: 24px; right: 24px; background: var(--green); color: #000; font-weight: 700; padding: 12px 20px; border-radius: 10px; font-size: 14px; z-index: 999; display: none; box-shadow: 0 4px 20px rgba(63,185,80,0.3); }
+      .toast.show { display: block; animation: slideUp 0.3s ease; }
+      @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
       .tenants { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; }
       .tchip { font-size: 12px; padding: 4px 11px; border-radius: 999px; background: var(--panel); color: var(--mut); border: 1px solid var(--line); }
       .tchip.cur { color: var(--gold2); border-color: #4a3d18; background: #221d10; }
@@ -184,6 +208,38 @@ const STATUSES = [
           </div>
         );
       })}
+    </div>
+
+    <h2>Quick Actions</h2>
+    <div class="rungrid">
+      <button class="runbtn green" data-cmd='claude -p "Run /signal-harvester"' onclick="showCmd(this)">
+        <span class="ico">📡</span>
+        <span><span class="rlabel">Run Signal Harvest</span><br><span class="rdesc">Pull today's signals from X, IG, YouTube, RSS</span></span>
+      </button>
+      <button class="runbtn gold" data-cmd='claude -p "Run /content-engine"' onclick="showCmd(this)">
+        <span class="ico">✍️</span>
+        <span><span class="rlabel">Generate Scripts</span><br><span class="rdesc">Turn signals into ready-to-review drafts</span></span>
+      </button>
+      <button class="runbtn blue" data-cmd='claude -p "Run /visual-engine"' onclick="showCmd(this)">
+        <span class="ico">🎨</span>
+        <span><span class="rlabel">Create Visuals</span><br><span class="rdesc">AI images + narrated video via Blotato</span></span>
+      </button>
+      <button class="runbtn purple" data-cmd='claude -p "Run /distribution"' onclick="showCmd(this)">
+        <span class="ico">📤</span>
+        <span><span class="rlabel">Distribute to Queue</span><br><span class="rdesc">Push ready posts to Blotato queue</span></span>
+      </button>
+      <button class="runbtn red" data-cmd='claude -p "Run /reels-factory next"' onclick="showCmd(this)">
+        <span class="ico">🎬</span>
+        <span><span class="rlabel">Reels Factory</span><br><span class="rdesc">Long video → short clips via Reap</span></span>
+      </button>
+      <button class="runbtn green" data-cmd='claude -p "Run /weekly-ops"' onclick="showCmd(this)">
+        <span class="ico">🔄</span>
+        <span><span class="rlabel">Full Weekly Loop</span><br><span class="rdesc">Signal → Script → Visual → Queue → DM (all machines)</span></span>
+      </button>
+    </div>
+    <div class="cmdbox" id="cmdbox">
+      <span id="cmdtext"></span>
+      <button style="float:right; background:var(--green); color:#000; border:none; padding:4px 12px; border-radius:6px; cursor:pointer; font-weight:700; font-size:12px;" onclick="copyCmd()">Copy</button>
     </div>
 
     <h2>Pipeline</h2>
@@ -291,11 +347,31 @@ const STATUSES = [
       Generated {new Date(d.generatedAt).toLocaleString()} · reads <code>content-vault.md</code>,
       <code>reports/</code>, <code>research-notes.md</code> · refresh the page after an agent run.
     </footer>
-    <script type="module">
+    <div class="toast" id="toast"></div>
+    <script is:inline>
+      function showToast(msg) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 2500);
+      }
+      function showCmd(btn) {
+        const box = document.getElementById('cmdbox');
+        const txt = document.getElementById('cmdtext');
+        txt.textContent = btn.dataset.cmd;
+        box.classList.add('show');
+        box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      function copyCmd() {
+        const txt = document.getElementById('cmdtext').textContent;
+        navigator.clipboard.writeText(txt).then(() => showToast('Command copied — paste in terminal'));
+      }
       for (const b of document.querySelectorAll('.sbtn')) {
         b.addEventListener('click', async () => {
           if (b.classList.contains('cur')) return;
           b.disabled = true;
+          const origText = b.textContent;
+          b.textContent = '...';
           try {
             const r = await fetch('/api/update', {
               method: 'POST',
@@ -303,9 +379,19 @@ const STATUSES = [
               body: JSON.stringify({ num: b.dataset.num, status: b.dataset.status }),
             });
             const j = await r.json();
-            if (j.ok) location.reload();
-            else { alert('Update failed: ' + (j.error || 'unknown')); b.disabled = false; }
-          } catch (err) { alert('Update failed: ' + err); b.disabled = false; }
+            if (j.ok) {
+              showToast('Moved #' + j.num + ' → ' + j.status);
+              setTimeout(() => location.reload(), 800);
+            } else {
+              alert('Update failed: ' + (j.error || 'unknown'));
+              b.textContent = origText;
+              b.disabled = false;
+            }
+          } catch (err) {
+            alert('Update failed: ' + err);
+            b.textContent = origText;
+            b.disabled = false;
+          }
         });
       }
     </script>
