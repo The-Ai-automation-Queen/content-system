@@ -3,18 +3,12 @@ import { getDashboard } from '../lib/data.js';
 
 const tenant = Astro.url.searchParams.get('tenant') || 'root';
 const d = getDashboard(tenant);
-const MSTATUS = {
-  live: { c: '#3fb950', t: 'live' },
-  partial: { c: '#d4a72c', t: 'partial' },
-  'needs-key': { c: '#f85149', t: 'needs key' },
-  'needs-setup': { c: '#f85149', t: 'needs setup' },
-};
 
-const REPORT_META = {
-  'research-digest': { label: 'Research sweep', icon: '🔎' },
-  'competitor-watch': { label: 'Competitor watch', icon: '🛰️' },
-  'vault-audit': { label: 'Vault audit', icon: '🩺' },
-  'distribution': { label: 'Distribution', icon: '📤' },
+const MSTATUS = {
+  live: { c: '#3fb950', t: 'LIVE' },
+  partial: { c: '#d4a72c', t: 'PARTIAL' },
+  'needs-key': { c: '#f85149', t: 'NEEDS KEY' },
+  'needs-setup': { c: '#f85149', t: 'NEEDS SETUP' },
 };
 
 const FLAG_LABEL = {
@@ -25,241 +19,312 @@ const FLAG_LABEL = {
   'NEEDS VISUAL': 'Needs visual',
 };
 
-const maxPillar = Math.max(1, ...d.pillars.map((p) => p.n));
-const platformChip = (p) => (p || '').split('(')[0].trim();
 const STATUSES = [
-  { key: 'DRAFT', short: 'Draft' },
-  { key: 'READY TO POST', short: 'Ready' },
-  { key: 'SCHEDULED', short: 'Sched' },
-  { key: 'POSTED', short: 'Posted' },
+  { key: 'DRAFT', short: 'Draft', color: '#8b949e' },
+  { key: 'READY TO POST', short: 'Ready', color: '#3fb950' },
+  { key: 'SCHEDULED', short: 'Scheduled', color: '#d4a72c' },
+  { key: 'POSTED', short: 'Posted', color: '#a371f7' },
 ];
+
+const platformChip = (p) => (p || '').split('(')[0].trim();
+const maxPillar = Math.max(1, ...d.pillars.map((p) => p.n));
+
+const CRONS = [
+  { machine: 'M01', name: 'Signal Harvester', schedule: 'Every day at 02:00', retry: 'Retry at 04:00 if failed', check: 'Verify at 02:30, alert if missing' },
+  { machine: 'M01', name: 'Content Engine', schedule: 'Weekly Monday 06:00', retry: 'Retry at 08:00 if failed', check: 'Part of weekly-ops loop' },
+  { machine: 'M05', name: 'DM Responder', schedule: 'Every 5 minutes', retry: 'Auto-restart', check: 'Continuous polling' },
+];
+
+const REPORT_META = {
+  'research-digest': { label: 'Research sweep', icon: '🔎' },
+  'competitor-watch': { label: 'Competitor watch', icon: '🛰️' },
+  'vault-audit': { label: 'Vault audit', icon: '🩺' },
+  'distribution': { label: 'Distribution', icon: '📤' },
+  'architecture-analysis': { label: 'Architecture analysis', icon: '🏗️' },
+};
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mission Control · The AI Automation Queen</title>
+    <title>Content OS · The AI Automation Queen</title>
     <style>
       :root {
-        --bg: #0d1117; --panel: #161b22; --panel2: #1c2230; --line: #2a3140;
-        --ink: #e6edf3; --mut: #9aa7b6; --gold: #d4a72c; --gold2: #f2c94c;
-        --green: #3fb950; --blue: #58a6ff; --purple: #a371f7; --red: #f85149;
+        --bg: #0c0f14; --sidebar: #111520; --panel: #161b25; --panel2: #1a2030;
+        --line: #232b3a; --ink: #e6edf3; --mut: #8b95a7; --gold: #d4a72c; --gold2: #f2c94c;
+        --green: #3fb950; --blue: #58a6ff; --purple: #a371f7; --red: #f85149; --cyan: #39d2c0;
       }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0; background: radial-gradient(1200px 600px at 80% -10%, #1a2030 0, var(--bg) 55%);
-        color: var(--ink); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        padding: 28px clamp(16px, 4vw, 48px) 64px;
-      }
+      * { box-sizing: border-box; margin: 0; }
+      body { background: var(--bg); color: var(--ink); font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; height: 100vh; overflow: hidden; }
       a { color: var(--blue); text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      header { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 4px; }
-      h1 { font-size: clamp(22px, 3vw, 30px); margin: 0; letter-spacing: -0.4px; }
-      .crown { color: var(--gold2); }
-      .sub { color: var(--mut); margin: 2px 0 26px; }
-      .sub b { color: var(--ink); font-weight: 600; }
 
-      .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-bottom: 30px; }
-      .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
-      .kpi .n { font-size: 30px; font-weight: 700; line-height: 1; }
-      .kpi .l { color: var(--mut); font-size: 12.5px; margin-top: 7px; text-transform: uppercase; letter-spacing: 0.5px; }
+      /* ── Sidebar ── */
+      .sidebar { width: 220px; min-width: 220px; background: var(--sidebar); border-right: 1px solid var(--line); display: flex; flex-direction: column; overflow-y: auto; }
+      .sidebar .logo { padding: 20px 18px 16px; border-bottom: 1px solid var(--line); }
+      .sidebar .logo h1 { font-size: 15px; font-weight: 700; letter-spacing: -0.3px; color: var(--gold2); }
+      .sidebar .logo span { font-size: 11px; color: var(--mut); display: block; margin-top: 2px; }
+      .sidebar nav { padding: 10px 8px; flex: 1; }
+      .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; cursor: pointer; color: var(--mut); font-size: 13px; font-weight: 500; transition: all 0.12s; border: none; background: none; width: 100%; text-align: left; }
+      .nav-item:hover { background: var(--panel); color: var(--ink); }
+      .nav-item.active { background: var(--panel2); color: var(--gold2); border: 1px solid var(--line); }
+      .nav-item .ico { font-size: 16px; width: 22px; text-align: center; }
+      .nav-sep { height: 1px; background: var(--line); margin: 8px 12px; }
+      .sidebar-foot { padding: 12px 14px; border-top: 1px solid var(--line); font-size: 11px; color: var(--mut); }
+
+      /* ── Main ── */
+      .main { flex: 1; overflow-y: auto; padding: 0; }
+      .page { display: none; padding: 28px 32px 48px; }
+      .page.active { display: block; }
+      .page-head { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+      .page-head h2 { font-size: 20px; font-weight: 700; }
+      .page-head .breadcrumb { font-size: 12px; color: var(--mut); }
+      .page-head .breadcrumb span { color: var(--ink); }
+
+      /* ── Dashboard / Cockpit ── */
+      .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 28px; }
+      .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+      .kpi .n { font-size: 28px; font-weight: 700; line-height: 1; }
+      .kpi .l { color: var(--mut); font-size: 11.5px; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
       .kpi.gold .n { color: var(--gold2); } .kpi.green .n { color: var(--green); }
       .kpi.blue .n { color: var(--blue); } .kpi.purple .n { color: var(--purple); }
       .kpi.red .n { color: var(--red); }
 
-      h2 { font-size: 15px; text-transform: uppercase; letter-spacing: 1px; color: var(--mut); margin: 34px 0 14px; }
+      .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+      @media (max-width: 900px) { .grid2 { grid-template-columns: 1fr; } }
+      .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; margin-bottom: 20px; }
+      .panel h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--mut); margin-bottom: 14px; }
 
-      .board { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
-      .col { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
-      .col h3 { margin: 0 0 12px; font-size: 13px; display: flex; align-items: center; gap: 8px; }
-      .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
-      .col .count { margin-left: auto; color: var(--mut); font-weight: 600; }
-      .card { background: var(--panel2); border: 1px solid var(--line); border-radius: 11px; padding: 11px 12px; margin-bottom: 10px; }
-      .card:last-child { margin-bottom: 0; }
-      .card .t { font-weight: 600; font-size: 14px; }
-      .card .meta { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-top: 9px; }
-      .chip { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: #20283a; color: var(--mut); border: 1px solid var(--line); white-space: nowrap; }
-      .chip.entry { color: var(--gold2); border-color: #4a3d18; background: #221d10; }
-      .chip.score { color: var(--green); border-color: #1d3a23; background: #11261a; }
-      .chip.score.low { color: var(--gold2); }
-      .chip.flag { color: var(--red); border-color: #4a1f1d; background: #2a1413; }
-      .chip.vis { color: var(--purple); border-color: #33244a; background: #1c1430; }
-      .empty { color: var(--mut); font-size: 13px; font-style: italic; padding: 6px 2px; }
+      /* ── Machines list ── */
+      .m-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+      .m-card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; cursor: pointer; transition: all 0.15s; }
+      .m-card:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+      .m-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+      .m-dot { width: 10px; height: 10px; border-radius: 50%; }
+      .m-name { font-weight: 600; font-size: 14px; flex: 1; }
+      .m-id { font-size: 10px; color: var(--mut); font-family: monospace; }
+      .m-note { color: var(--mut); font-size: 12px; line-height: 1.5; margin-bottom: 12px; }
+      .m-foot { display: flex; justify-content: space-between; align-items: center; }
+      .m-foot code { color: var(--blue); background: #141c28; padding: 3px 8px; border-radius: 6px; font-size: 11px; }
+      .m-status { font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 10px; }
 
-      .grid2 { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 22px; align-items: start; }
-      @media (max-width: 820px) { .grid2 { grid-template-columns: 1fr; } }
-      .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+      /* ── Machine detail view ── */
+      .machine-detail { display: none; }
+      .machine-detail.active { display: block; }
+      .md-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+      .md-back { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; cursor: pointer; color: var(--mut); font-size: 12px; }
+      .md-back:hover { border-color: var(--gold); color: var(--ink); }
+      .md-title { font-size: 18px; font-weight: 700; }
+      .md-subtitle { font-size: 12px; color: var(--mut); }
 
+      .md-stats { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+      .md-stat { padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; border: 1px solid; }
+
+      /* ── Tabs ── */
+      .tabs { display: flex; gap: 4px; margin-bottom: 18px; background: var(--panel); border-radius: 10px; padding: 4px; border: 1px solid var(--line); width: fit-content; }
+      .tab { padding: 7px 16px; border-radius: 7px; cursor: pointer; font-size: 12.5px; font-weight: 600; color: var(--mut); background: none; border: none; transition: all 0.12s; }
+      .tab:hover { color: var(--ink); }
+      .tab.active { background: var(--gold); color: #000; }
+
+      /* ── Calendar strip ── */
+      .cal-strip { display: flex; gap: 6px; margin-bottom: 18px; overflow-x: auto; padding-bottom: 4px; }
+      .cal-day { min-width: 52px; text-align: center; padding: 8px 6px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; cursor: pointer; transition: all 0.12s; flex-shrink: 0; }
+      .cal-day:hover { border-color: var(--gold); }
+      .cal-day.today { border-color: var(--gold); background: #221d10; }
+      .cal-day.has-items { border-color: var(--green); }
+      .cal-day .dow { font-size: 10px; color: var(--mut); text-transform: uppercase; }
+      .cal-day .dom { font-size: 16px; font-weight: 700; margin-top: 2px; }
+      .cal-day.today .dom { color: var(--gold2); }
+      .cal-day .count-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); margin: 4px auto 0; }
+
+      /* ── Filter chips ── */
+      .filters { display: flex; gap: 6px; margin-bottom: 18px; flex-wrap: wrap; }
+      .filter { padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid var(--line); background: var(--panel); color: var(--mut); transition: all 0.12s; }
+      .filter:hover { border-color: var(--gold); color: var(--ink); }
+      .filter.active { background: var(--gold); color: #000; border-color: var(--gold); }
+      .filter .cnt { opacity: 0.7; margin-left: 4px; }
+
+      /* ── Content cards (entry list) ── */
+      .entry-list { display: flex; flex-direction: column; gap: 8px; }
+      .entry-card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 14px; transition: all 0.12s; }
+      .entry-card:hover { border-color: #3a4560; }
+      .entry-num { font-size: 11px; color: var(--gold2); background: #221d10; border: 1px solid #4a3d18; padding: 3px 8px; border-radius: 6px; font-weight: 700; font-family: monospace; white-space: nowrap; }
+      .entry-body { flex: 1; min-width: 0; }
+      .entry-title { font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .entry-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; align-items: center; }
+      .chip { font-size: 11px; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+      .chip.cat { background: #141c28; color: var(--blue); border: 1px solid #1e3050; }
+      .chip.plat { background: #1a1428; color: var(--purple); border: 1px solid #33244a; }
+      .chip.score { background: #11261a; color: var(--green); border: 1px solid #1d3a23; }
+      .chip.flag { background: #2a1413; color: var(--red); border: 1px solid #4a1f1d; }
+      .chip.vis { background: #1c1430; color: var(--purple); border: 1px solid #33244a; }
+      .entry-status { display: flex; gap: 4px; flex-shrink: 0; }
+      .sbtn { font: inherit; font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 8px; background: #1a2030; color: var(--mut); border: 1px solid var(--line); cursor: pointer; transition: all 0.12s; }
+      .sbtn:hover { border-color: var(--gold); color: var(--ink); }
+      .sbtn.cur { background: var(--gold); color: #000; border-color: var(--gold2); }
+      .sbtn:disabled { opacity: 0.4; cursor: wait; }
+
+      /* ── Pillar bars ── */
       .pillar { margin-bottom: 12px; }
-      .pillar .row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 5px; }
-      .bar { height: 8px; background: #20283a; border-radius: 999px; overflow: hidden; }
-      .bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold2)); }
+      .pillar .row { display: flex; justify-content: space-between; font-size: 12.5px; margin-bottom: 4px; }
+      .bar { height: 6px; background: #1a2030; border-radius: 999px; overflow: hidden; }
+      .bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold2)); border-radius: 999px; }
 
-      .runs { list-style: none; padding: 0; margin: 0; }
-      .runs li { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px dashed var(--line); font-size: 13.5px; }
+      /* ── Runs list ── */
+      .runs { list-style: none; padding: 0; }
+      .runs li { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 13px; }
       .runs li:last-child { border-bottom: 0; }
       .runs .date { margin-left: auto; color: var(--mut); font-variant-numeric: tabular-nums; }
 
-      .attn { display: flex; flex-direction: column; gap: 10px; }
-      .attn .item { display: flex; gap: 10px; align-items: center; background: var(--panel2); border: 1px solid var(--line); border-left: 3px solid var(--red); border-radius: 9px; padding: 9px 11px; font-size: 13.5px; }
-      .attn .item .t { font-weight: 600; }
+      /* ── Crons table ── */
+      .cron-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+      .cron-table th { text-align: left; padding: 8px 12px; color: var(--mut); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--line); }
+      .cron-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); }
+      .cron-table tr:last-child td { border-bottom: 0; }
 
-      .links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
-      .btn { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 9px 14px; color: var(--ink); font-weight: 600; font-size: 13.5px; }
-      .btn:hover { border-color: var(--gold); text-decoration: none; }
-      .actions { display: flex; gap: 6px; margin-top: 11px; flex-wrap: wrap; }
-      .sbtn { font: inherit; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 9px; background: #1a2030; color: var(--mut); border: 1px solid var(--line); cursor: pointer; transition: all 0.15s; }
-      .sbtn:hover { border-color: var(--gold); color: var(--ink); background: #222a3a; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
-      .sbtn:active { transform: translateY(0); }
-      .sbtn.cur { background: var(--gold); color: #000; border-color: var(--gold2); cursor: default; font-weight: 700; }
-      .sbtn.cur:hover { transform: none; box-shadow: none; }
-      .sbtn:disabled { opacity: 0.5; cursor: wait; }
-      .runbtn { font: inherit; font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 10px; border: 1px solid var(--line); cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 8px; width: 100%; }
-      .runbtn:hover { transform: translateY(-1px); box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-      .runbtn:active { transform: translateY(0); }
-      .runbtn.green { background: linear-gradient(135deg, #1a3a23, #11261a); color: var(--green); border-color: #1d3a23; }
-      .runbtn.green:hover { border-color: var(--green); background: linear-gradient(135deg, #1d4428, #142e1e); }
-      .runbtn.gold { background: linear-gradient(135deg, #2a2210, #221d10); color: var(--gold2); border-color: #4a3d18; }
-      .runbtn.gold:hover { border-color: var(--gold2); background: linear-gradient(135deg, #332a14, #2a2210); }
-      .runbtn.blue { background: linear-gradient(135deg, #18202e, #141c28); color: var(--blue); border-color: #1e3050; }
-      .runbtn.blue:hover { border-color: var(--blue); background: linear-gradient(135deg, #1e2836, #18202e); }
-      .runbtn.purple { background: linear-gradient(135deg, #1c1430, #181028); color: var(--purple); border-color: #33244a; }
-      .runbtn.purple:hover { border-color: var(--purple); background: linear-gradient(135deg, #241a3a, #1c1430); }
-      .runbtn.red { background: linear-gradient(135deg, #2a1413, #221010); color: var(--red); border-color: #4a1f1d; }
-      .runbtn.red:hover { border-color: var(--red); background: linear-gradient(135deg, #341a18, #2a1413); }
-      .runbtn .ico { font-size: 18px; }
-      .runbtn .rlabel { font-size: 13px; }
-      .runbtn .rdesc { font-size: 11px; color: var(--mut); font-weight: 400; }
-      .rungrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
-      .cmdbox { background: #0a0e14; border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font-family: ui-monospace, monospace; font-size: 12px; color: var(--green); margin-top: 12px; display: none; word-break: break-all; }
-      .cmdbox.show { display: block; }
+      /* ── Alerts ── */
+      .attn-item { display: flex; gap: 10px; align-items: center; background: var(--panel2); border: 1px solid var(--line); border-left: 3px solid var(--red); border-radius: 8px; padding: 10px 12px; font-size: 13px; margin-bottom: 8px; }
+      .attn-item .t { font-weight: 600; flex: 1; }
+
+      /* ── Toast ── */
       .toast { position: fixed; bottom: 24px; right: 24px; background: var(--green); color: #000; font-weight: 700; padding: 12px 20px; border-radius: 10px; font-size: 14px; z-index: 999; display: none; box-shadow: 0 4px 20px rgba(63,185,80,0.3); }
       .toast.show { display: block; animation: slideUp 0.3s ease; }
       @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-      .tenants { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; }
-      .tchip { font-size: 12px; padding: 4px 11px; border-radius: 999px; background: var(--panel); color: var(--mut); border: 1px solid var(--line); }
-      .tchip.cur { color: var(--gold2); border-color: #4a3d18; background: #221d10; }
-      .tchip:hover { text-decoration: none; border-color: var(--gold); }
-      .cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
-      @media (max-width: 760px) { .cal { grid-template-columns: repeat(2, 1fr); } }
-      .cell { background: var(--panel); border: 1px solid var(--line); border-radius: 11px; padding: 9px 9px 7px; min-height: 78px; }
-      .cell.today { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset; }
-      .cell .d { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; color: var(--mut); margin-bottom: 7px; }
-      .cell .d .dom { font-weight: 700; font-size: 14px; color: var(--ink); }
-      .cell.today .d .dom { color: var(--gold2); }
-      .cev { display: block; font-size: 10.5px; padding: 3px 6px; border-radius: 6px; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-      .cev.sched { background: #221d10; color: var(--gold2); border: 1px solid #4a3d18; }
-      .cev.posted { background: #1c1430; color: var(--purple); border: 1px solid #33244a; }
-      .callegend { display: flex; gap: 16px; color: var(--mut); font-size: 12px; margin: 0 2px 12px; }
-      .callegend i { font-style: normal; } .callegend .sw { display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 5px; vertical-align: middle; }
-      .machines { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
-      .machine { background: var(--panel); border: 1px solid var(--line); border-radius: 13px; padding: 14px; }
-      .mhead { display: flex; align-items: center; gap: 8px; }
-      .mdot { width: 9px; height: 9px; border-radius: 50%; }
-      .mname { font-weight: 600; font-size: 14px; }
-      .mid { margin-left: auto; font-size: 10.5px; color: var(--mut); font-family: ui-monospace, monospace; }
-      .mnote { color: var(--mut); font-size: 12.5px; margin: 9px 0 11px; line-height: 1.45; min-height: 34px; }
-      .mfoot { display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; }
-      .mfoot code { color: var(--blue); background: #18202e; padding: 2px 7px; border-radius: 6px; }
-      .mstatus { font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 10.5px; }
-      footer { color: var(--mut); font-size: 12px; margin-top: 40px; }
+
+      .empty { color: var(--mut); font-size: 13px; font-style: italic; padding: 12px 0; }
+      .links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+      .btn { background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; color: var(--ink); font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.12s; display: inline-flex; align-items: center; gap: 6px; }
+      .btn:hover { border-color: var(--gold); text-decoration: none; }
     </style>
   </head>
   <body>
-    <header>
-      <h1><span class="crown">👑</span> Mission Control</h1>
-      <span class="sub" style="margin:0">The AI Automation Queen · content Business OS</span>
-      <span class="tenants">
-        {d.tenants.map((t) => (
-          <a class={`tchip ${ (tenant === t || (tenant === 'root' && t === 'root')) ? 'cur' : ''}`} href={t === 'root' ? '/' : `/?tenant=${t}`}>{t === 'root' ? 'Fatiha' : t}</a>
-        ))}
-      </span>
-    </header>
-    <p class="sub">
-      Live view of the <b>second brain</b> — the markdown files <i>are</i> the database.
-      The agent loop (research → draft → visual → queue) writes here; <b>click a status on any
-      card</b> to move it through the pipeline yourself.
-    </p>
 
-    <div class="kpis">
-      <div class="kpi"><div class="n">{d.kpis.total}</div><div class="l">Total pieces</div></div>
-      <div class="kpi green"><div class="n">{d.kpis.ready}</div><div class="l">Ready to post</div></div>
-      <div class="kpi gold"><div class="n">{d.kpis.scheduled}</div><div class="l">Scheduled</div></div>
-      <div class="kpi purple"><div class="n">{d.kpis.posted}</div><div class="l">Posted</div></div>
-      <div class="kpi"><div class="n">{d.kpis.draft}</div><div class="l">Drafts</div></div>
-      <div class="kpi red"><div class="n">{d.kpis.flagged}</div><div class="l">Need your input</div></div>
-      <div class="kpi blue"><div class="n">{d.kpis.withVisual}</div><div class="l">With visual</div></div>
-    </div>
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h1>CONTENT OS</h1>
+        <span>The AI Automation Queen</span>
+      </div>
+      <nav>
+        <button class="nav-item active" data-page="dashboard"><span class="ico">📊</span> Dashboard</button>
+        <button class="nav-item" data-page="brain"><span class="ico">🧠</span> Second Brain</button>
+        <button class="nav-item" data-page="machines"><span class="ico">⚙️</span> Machines</button>
+        <button class="nav-item" data-page="calendar"><span class="ico">📅</span> Calendar</button>
+        <button class="nav-item" data-page="crons"><span class="ico">⏰</span> Crons</button>
+        <div class="nav-sep"></div>
+        <button class="nav-item" data-page="alerts"><span class="ico">🔔</span> Alerts</button>
+        <button class="nav-item" data-page="settings"><span class="ico">⚡</span> Settings</button>
+      </nav>
+      <div class="sidebar-foot">
+        tenant: <b>{d.tenant}</b><br>
+        {new Date(d.generatedAt).toLocaleString()}
+      </div>
+    </aside>
 
-    <h2>The Engine — 5 machines</h2>
-    <div class="machines">
-      {d.machines.map((m) => {
-        const s = MSTATUS[m.status] || MSTATUS.partial;
-        return (
-          <div class="machine">
-            <div class="mhead">
-              <span class="mdot" style={`background:${s.c}`}></span>
-              <span class="mname">{m.name}</span>
-              <span class="mid">{m.id}</span>
+    <!-- ── Main content ── -->
+    <div class="main">
+
+      <!-- ════ PAGE: Dashboard ════ -->
+      <div class="page active" id="p-dashboard">
+        <div class="page-head">
+          <h2>Dashboard</h2>
+          <span class="breadcrumb">Content OS / <span>Overview</span></span>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi"><div class="n">{d.kpis.total}</div><div class="l">Total pieces</div></div>
+          <div class="kpi green"><div class="n">{d.kpis.ready}</div><div class="l">Ready to post</div></div>
+          <div class="kpi gold"><div class="n">{d.kpis.scheduled}</div><div class="l">Scheduled</div></div>
+          <div class="kpi purple"><div class="n">{d.kpis.posted}</div><div class="l">Posted</div></div>
+          <div class="kpi red"><div class="n">{d.kpis.flagged}</div><div class="l">Need input</div></div>
+          <div class="kpi blue"><div class="n">{d.kpis.withVisual}</div><div class="l">With visual</div></div>
+        </div>
+
+        <div class="grid2">
+          <div>
+            <div class="panel">
+              <h3>Content Pillars</h3>
+              {d.pillars.map((p) => (
+                <div class="pillar">
+                  <div class="row"><span>{p.name}</span><span>{p.n}</span></div>
+                  <div class="bar"><span style={`width:${(p.n / maxPillar) * 100}%`}></span></div>
+                </div>
+              ))}
             </div>
-            <div class="mnote">{m.note}</div>
-            <div class="mfoot"><code>{m.skill}</code><span class="mstatus" style={`color:${s.c}`}>{s.t}</span></div>
+            <div class="panel">
+              <h3>Needs Your Input</h3>
+              {d.flagged.length === 0 && <div class="empty">Nothing blocked.</div>}
+              {d.flagged.map((e) => (
+                <div class="attn-item">
+                  <span class="entry-num">#{e.num}</span>
+                  <span class="t">{e.title}</span>
+                  {e.flags.map((f) => <span class="chip flag">{FLAG_LABEL[f] || f}</span>)}
+                </div>
+              ))}
+            </div>
           </div>
-        );
-      })}
-    </div>
-
-    <h2>Quick Actions</h2>
-    <div class="rungrid">
-      <button class="runbtn green" data-cmd='claude -p "Run /signal-harvester"' onclick="showCmd(this)">
-        <span class="ico">📡</span>
-        <span><span class="rlabel">Run Signal Harvest</span><br><span class="rdesc">Pull today's signals from X, IG, YouTube, RSS</span></span>
-      </button>
-      <button class="runbtn gold" data-cmd='claude -p "Run /content-engine"' onclick="showCmd(this)">
-        <span class="ico">✍️</span>
-        <span><span class="rlabel">Generate Scripts</span><br><span class="rdesc">Turn signals into ready-to-review drafts</span></span>
-      </button>
-      <button class="runbtn blue" data-cmd='claude -p "Run /visual-engine"' onclick="showCmd(this)">
-        <span class="ico">🎨</span>
-        <span><span class="rlabel">Create Visuals</span><br><span class="rdesc">AI images + narrated video via Blotato</span></span>
-      </button>
-      <button class="runbtn purple" data-cmd='claude -p "Run /distribution"' onclick="showCmd(this)">
-        <span class="ico">📤</span>
-        <span><span class="rlabel">Distribute to Queue</span><br><span class="rdesc">Push ready posts to Blotato queue</span></span>
-      </button>
-      <button class="runbtn red" data-cmd='claude -p "Run /reels-factory next"' onclick="showCmd(this)">
-        <span class="ico">🎬</span>
-        <span><span class="rlabel">Reels Factory</span><br><span class="rdesc">Long video → short clips via Reap</span></span>
-      </button>
-      <button class="runbtn green" data-cmd='claude -p "Run /weekly-ops"' onclick="showCmd(this)">
-        <span class="ico">🔄</span>
-        <span><span class="rlabel">Full Weekly Loop</span><br><span class="rdesc">Signal → Script → Visual → Queue → DM (all machines)</span></span>
-      </button>
-    </div>
-    <div class="cmdbox" id="cmdbox">
-      <span id="cmdtext"></span>
-      <button style="float:right; background:var(--green); color:#000; border:none; padding:4px 12px; border-radius:6px; cursor:pointer; font-weight:700; font-size:12px;" onclick="copyCmd()">Copy</button>
-    </div>
-
-    <h2>Pipeline</h2>
-    <div class="board">
-      {d.columns.map((col) => (
-        <div class="col">
-          <h3><span class="dot" style={`background:${col.color}`}></span>{col.label}<span class="count">{col.items.length}</span></h3>
-          {col.items.length === 0 && <div class="empty">Nothing here.</div>}
-          {col.items.map((e) => (
-            <div class="card">
-              <div class="t">{e.title}</div>
-              <div class="meta">
-                <span class="chip entry">#{e.num}</span>
-                {platformChip(e.platform) && <span class="chip">{platformChip(e.platform)}</span>}
-                {e.pillar && <span class="chip">{e.pillar.split('(')[0].trim()}</span>}
-                {e.critic != null && <span class={`chip score ${e.critic < 8 ? 'low' : ''}`}>{e.critic.toFixed(1)}</span>}
-                {e.hasVisual && (e.visualUrl ? <a class="chip vis" href={e.visualUrl} target="_blank">🎬 visual</a> : <span class="chip vis">🎬 visual</span>)}
-                {e.flags.map((f) => <span class="chip flag">{FLAG_LABEL[f] || f}</span>)}
+          <div>
+            <div class="panel">
+              <h3>Recent Runs</h3>
+              <ul class="runs">
+                {d.reports.slice(0, 10).map((r) => {
+                  const meta = REPORT_META[r.type] || { label: r.type, icon: '📄' };
+                  return <li><span>{meta.icon}</span><span>{meta.label}</span><span class="date">{r.date}</span></li>;
+                })}
+                {d.reports.length === 0 && <li class="empty">No reports yet.</li>}
+              </ul>
+            </div>
+            <div class="panel">
+              <h3>Control Room</h3>
+              <div style="color:var(--mut); font-size:13px; margin-bottom:10px">
+                {d.researchCount} research entries · {d.leads.active}/{d.leads.total} lead magnets active
               </div>
-              <div class="actions">
+              <div class="links">
+                <a class="btn" href="https://my.blotato.com" target="_blank">📤 Blotato queue</a>
+                <a class="btn" href="https://github.com/the-ai-automation-queen/content-system" target="_blank">🧠 GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ PAGE: Second Brain ════ -->
+      <div class="page" id="p-brain">
+        <div class="page-head">
+          <h2>Second Brain</h2>
+          <span class="breadcrumb">Content OS / <span>Vault &amp; Research</span></span>
+        </div>
+
+        <div class="md-stats">
+          <span class="md-stat" style={`color:var(--green);border-color:#1d3a23;background:#11261a`}>Ready to Post <b>{d.kpis.ready}</b></span>
+          <span class="md-stat" style={`color:var(--gold2);border-color:#4a3d18;background:#221d10`}>Scheduled <b>{d.kpis.scheduled}</b></span>
+          <span class="md-stat" style={`color:var(--purple);border-color:#33244a;background:#1c1430`}>Posted <b>{d.kpis.posted}</b></span>
+          <span class="md-stat" style={`color:#8b949e;border-color:var(--line);background:var(--panel)`}>Draft <b>{d.kpis.draft}</b></span>
+        </div>
+
+        <div class="filters" id="brain-filters">
+          <button class="filter active" data-filter="all">All <span class="cnt">{d.entries.length}</span></button>
+          {STATUSES.map((s) => {
+            const cnt = d.entries.filter(e => e.status === s.key).length;
+            return <button class="filter" data-filter={s.key}>{s.short} <span class="cnt">{cnt}</span></button>;
+          })}
+        </div>
+
+        <div class="entry-list" id="brain-list">
+          {d.entries.map((e) => (
+            <div class="entry-card" data-entry-status={e.status}>
+              <span class="entry-num">#{e.num}</span>
+              <div class="entry-body">
+                <div class="entry-title">{e.title}</div>
+                <div class="entry-meta">
+                  {platformChip(e.platform) && <span class="chip plat">{platformChip(e.platform)}</span>}
+                  {e.pillar && <span class="chip cat">{e.pillar.split('(')[0].trim()}</span>}
+                  {e.critic != null && <span class="chip score">{e.critic.toFixed(1)}</span>}
+                  {e.flags.map((f) => <span class="chip flag">{FLAG_LABEL[f] || f}</span>)}
+                  {e.hasVisual && <span class="chip vis">Visual</span>}
+                </div>
+              </div>
+              <div class="entry-status">
                 {STATUSES.map((s) => (
                   <button class={`sbtn ${e.status === s.key ? 'cur' : ''}`} data-num={e.num} data-status={s.key}>{s.short}</button>
                 ))}
@@ -267,111 +332,274 @@ const STATUSES = [
             </div>
           ))}
         </div>
-      ))}
-    </div>
+      </div>
 
-    <h2>Editorial calendar · next 14 days</h2>
-    <div class="callegend">
-      <span><i class="sw" style="background:var(--gold2)"></i>Scheduled</span>
-      <span><i class="sw" style="background:var(--purple)"></i>Posted</span>
-    </div>
-    <div class="cal">
-      {d.calendar.map((c) => (
-        <div class={`cell ${c.isToday ? 'today' : ''}`}>
-          <div class="d"><span>{c.dow}</span><span class="dom">{c.dom}</span></div>
-          {c.items.map((e) => (
-            <span class={`cev ${e.status === 'POSTED' ? 'posted' : 'sched'}`} title={`#${e.num} ${e.title} · ${platformChip(e.platform)}`}>#{e.num} {e.title}</span>
-          ))}
+      <!-- ════ PAGE: Machines ════ -->
+      <div class="page" id="p-machines">
+        <div class="page-head">
+          <h2>Machines</h2>
+          <span class="breadcrumb">Content OS / <span>{d.machines.length} machines</span></span>
         </div>
-      ))}
-    </div>
 
-    <div class="grid2">
-      <div>
-        <h2>Needs your input</h2>
-        <div class="panel">
-          {d.flagged.length === 0 && <div class="empty">Nothing blocked — everything's clear to move. 🎉</div>}
-          <div class="attn">
-            {d.flagged.map((e) => (
-              <div class="item">
-                <span class="chip entry">#{e.num}</span>
-                <span class="t">{e.title}</span>
-                <span style="margin-left:auto; display:flex; gap:6px; flex-wrap:wrap">
-                  {e.flags.map((f) => <span class="chip flag">{FLAG_LABEL[f] || f}</span>)}
-                </span>
+        <!-- Machines grid (overview) -->
+        <div class="m-grid" id="machines-grid">
+          {d.machines.map((m) => {
+            const s = MSTATUS[m.status] || MSTATUS.partial;
+            const entries = d.entries.filter(e => {
+              const p = (e.platform || '').toLowerCase();
+              const sk = m.skill.toLowerCase();
+              if (sk.includes('content-engine') || sk.includes('signal')) return true;
+              if (sk.includes('visual')) return e.hasVisual;
+              if (sk.includes('distribution')) return e.status === 'SCHEDULED' || e.status === 'POSTED';
+              if (sk.includes('reels')) return p.includes('reel') || p.includes('tiktok') || p.includes('short');
+              return false;
+            });
+            return (
+              <div class="m-card" data-machine={m.skill} data-machine-name={m.name} data-machine-id={m.id} data-machine-note={m.note} data-machine-status={m.status}>
+                <div class="m-head">
+                  <span class="m-dot" style={`background:${s.c}`}></span>
+                  <span class="m-name">{m.name}</span>
+                  <span class="m-id">{m.id}</span>
+                </div>
+                <div class="m-note">{m.note}</div>
+                <div class="m-foot">
+                  <code>{m.skill}</code>
+                  <span class="m-status" style={`color:${s.c}`}>{s.t}</span>
+                </div>
               </div>
-            ))}
+            );
+          })}
+        </div>
+
+        <!-- Machine detail (hidden until click) -->
+        <div class="machine-detail" id="machine-detail">
+          <div class="md-header">
+            <button class="md-back" id="md-back">← Back</button>
+            <div>
+              <div class="md-title" id="md-title"></div>
+              <div class="md-subtitle" id="md-subtitle"></div>
+            </div>
+          </div>
+
+          <div class="md-stats" id="md-stats"></div>
+
+          <div class="tabs" id="md-tabs">
+            <button class="tab active" data-tab="content">Content</button>
+            <button class="tab" data-tab="calendar">Calendar</button>
+            <button class="tab" data-tab="run">Run Machine</button>
+          </div>
+
+          <div id="md-tab-content">
+            <div class="filters" id="md-filters"></div>
+            <div class="entry-list" id="md-entries"></div>
+          </div>
+          <div id="md-tab-calendar" style="display:none">
+            <div class="cal-strip" id="md-cal-strip"></div>
+            <div id="md-cal-entries" class="entry-list"></div>
+          </div>
+          <div id="md-tab-run" style="display:none">
+            <div class="panel">
+              <h3>Run this machine</h3>
+              <p style="color:var(--mut); font-size:13px; margin-bottom:14px">Copy the command below and paste it in your terminal to run this machine.</p>
+              <div style="background:#0a0e14; border:1px solid var(--line); border-radius:8px; padding:12px 16px; font-family:monospace; font-size:13px; color:var(--green); display:flex; align-items:center; justify-content:space-between;">
+                <span id="md-cmd"></span>
+                <button class="btn" style="margin-left:12px;padding:4px 12px;font-size:11px" onclick="navigator.clipboard.writeText(document.getElementById('md-cmd').textContent).then(()=>showToast('Copied!'))">Copy</button>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
-        <h2>Content pillars</h2>
-        <div class="panel">
-          {d.pillars.map((p) => (
-            <div class="pillar">
-              <div class="row"><span>{p.name}</span><span>{p.n}</span></div>
-              <div class="bar"><span style={`width:${(p.n / maxPillar) * 100}%`}></span></div>
+      <!-- ════ PAGE: Calendar ════ -->
+      <div class="page" id="p-calendar">
+        <div class="page-head">
+          <h2>Editorial Calendar</h2>
+          <span class="breadcrumb">Content OS / <span>Next 14 days</span></span>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-bottom:16px;font-size:12px;color:var(--mut)">
+          <span><span style="display:inline-block;width:9px;height:9px;border-radius:3px;background:var(--gold2);margin-right:5px;vertical-align:middle"></span>Scheduled</span>
+          <span><span style="display:inline-block;width:9px;height:9px;border-radius:3px;background:var(--purple);margin-right:5px;vertical-align:middle"></span>Posted</span>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px">
+          {d.calendar.map((c) => (
+            <div style={`background:var(--panel);border:1px solid ${c.isToday ? 'var(--gold)' : 'var(--line)'};border-radius:11px;padding:10px;min-height:90px;${c.isToday ? 'box-shadow:0 0 0 1px var(--gold) inset' : ''}`}>
+              <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--mut);margin-bottom:8px">
+                <span>{c.dow}</span>
+                <span style={`font-weight:700;font-size:14px;color:${c.isToday ? 'var(--gold2)' : 'var(--ink)'}`}>{c.dom}</span>
+              </div>
+              {c.items.map((e) => (
+                <div style={`font-size:10px;padding:3px 6px;border-radius:5px;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${e.status === 'POSTED' ? 'background:#1c1430;color:var(--purple);border:1px solid #33244a' : 'background:#221d10;color:var(--gold2);border:1px solid #4a3d18'}`}>
+                  #{e.num} {e.title}
+                </div>
+              ))}
             </div>
           ))}
         </div>
       </div>
 
-      <div>
-        <h2>Recent runs (audit trail)</h2>
-        <div class="panel">
-          <ul class="runs">
-            {d.reports.slice(0, 12).map((r) => {
-              const meta = REPORT_META[r.type] || { label: r.type, icon: '📄' };
-              return (
-                <li><span>{meta.icon}</span><span>{meta.label}</span><span class="date">{r.date}</span></li>
-              );
-            })}
-            {d.reports.length === 0 && <li class="empty">No reports yet.</li>}
-          </ul>
+      <!-- ════ PAGE: Crons ════ -->
+      <div class="page" id="p-crons">
+        <div class="page-head">
+          <h2>Crons</h2>
+          <span class="breadcrumb">Content OS / <span>Scheduled automations</span></span>
         </div>
-
-        <h2>Control room</h2>
         <div class="panel">
-          <div style="color:var(--mut); font-size:13.5px">
-            {d.researchCount} research entries · {d.kpis.withVisual} with a visual ·
-            {d.leads.active}/{d.leads.total} lead magnets active · tenant: <b>{d.tenant}</b>
-          </div>
-          <div class="links">
-            <a class="btn" href="https://my.blotato.com" target="_blank">📤 Blotato queue</a>
-            <a class="btn" href="https://github.com/the-ai-automation-queen/content-system" target="_blank">🧠 GitHub repo</a>
+          <table class="cron-table">
+            <thead><tr><th>Machine</th><th>Schedule</th><th>Retry</th><th>Check</th></tr></thead>
+            <tbody>
+              {CRONS.map((c) => (
+                <tr>
+                  <td><b>{c.machine}</b> {c.name}</td>
+                  <td>{c.schedule}</td>
+                  <td>{c.retry}</td>
+                  <td style="color:var(--mut)">{c.check}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div class="panel" style="margin-top:16px">
+          <h3>How to install</h3>
+          <div style="background:#0a0e14;border:1px solid var(--line);border-radius:8px;padding:12px 16px;font-family:monospace;font-size:12px;color:var(--green);line-height:1.8">
+            sed -i "s|__REPO__|$PWD|g" deploy/crontab.example<br>
+            crontab deploy/crontab.example<br>
+            crontab -l
           </div>
         </div>
       </div>
+
+      <!-- ════ PAGE: Alerts ════ -->
+      <div class="page" id="p-alerts">
+        <div class="page-head">
+          <h2>Alerts &amp; Monitoring</h2>
+          <span class="breadcrumb">Content OS / <span>Telegram alerts</span></span>
+        </div>
+        <div class="panel">
+          <h3>Alert channels</h3>
+          <div class="attn-item" style="border-left-color:var(--green)">
+            <span>🤖</span>
+            <span class="t">Telegram Bot — run success/failure alerts</span>
+            <span class="chip" style="background:#11261a;color:var(--green);border:1px solid #1d3a23">{d.machines.length > 0 ? 'Configured' : 'Not set'}</span>
+          </div>
+          <div class="attn-item" style="border-left-color:var(--blue)">
+            <span>📊</span>
+            <span class="t">Daily summary — what ran, key figures</span>
+            <span class="chip" style="background:#141c28;color:var(--blue);border:1px solid #1e3050">Via cron</span>
+          </div>
+          <div class="attn-item" style="border-left-color:var(--gold)">
+            <span>🔒</span>
+            <span class="t">Security monitoring — suspicious login detection</span>
+            <span class="chip" style="background:#221d10;color:var(--gold2);border:1px solid #4a3d18">VPS only</span>
+          </div>
+        </div>
+        <div class="panel" style="margin-top:16px">
+          <h3>Flagged items needing your input</h3>
+          {d.flagged.length === 0 && <div class="empty">All clear — nothing blocked.</div>}
+          {d.flagged.map((e) => (
+            <div class="attn-item">
+              <span class="entry-num">#{e.num}</span>
+              <span class="t">{e.title}</span>
+              {e.flags.map((f) => <span class="chip flag">{FLAG_LABEL[f] || f}</span>)}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- ════ PAGE: Settings ════ -->
+      <div class="page" id="p-settings">
+        <div class="page-head">
+          <h2>Settings</h2>
+          <span class="breadcrumb">Content OS / <span>Configuration</span></span>
+        </div>
+        <div class="grid2">
+          <div class="panel">
+            <h3>Tenant</h3>
+            <p style="color:var(--mut);font-size:13px;margin-bottom:10px">Current: <b style="color:var(--ink)">{d.tenant}</b></p>
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+              {d.tenants.map((t) => (
+                <a class={`btn ${(tenant === t || (tenant === 'root' && t === 'root')) ? 'cur' : ''}`}
+                   href={t === 'root' ? '/' : `/?tenant=${t}`}
+                   style={(tenant === t || (tenant === 'root' && t === 'root')) ? 'border-color:var(--gold);color:var(--gold2)' : ''}>
+                  {t === 'root' ? 'Fatiha' : t}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div class="panel">
+            <h3>API Keys Status</h3>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;justify-content:space-between;font-size:13px">
+                <span>HEYGEN_API_KEY</span>
+                <span style={`color:${d.machines.find(m=>m.skill==='heygen')?.status === 'live' ? 'var(--green)' : 'var(--red)'}`}>
+                  {d.machines.find(m=>m.skill==='heygen')?.status === 'live' ? 'Set' : 'Missing'}
+                </span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:13px">
+                <span>TELEGRAM_BOT_TOKEN</span>
+                <span style="color:var(--mut)">Check .env</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:13px">
+                <span>GHL_API_KEY</span>
+                <span style="color:var(--mut)">Optional</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel" style="margin-top:16px">
+          <h3>Lead Magnets</h3>
+          <p style="color:var(--mut);font-size:13px">{d.leads.active}/{d.leads.total} active</p>
+          <div style="margin-top:10px;display:flex;flex-direction:column;gap:6px">
+            {d.leads.rows.map((r) => (
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:6px 0;border-bottom:1px dashed var(--line)">
+                <span><b>{r.keyword}</b> — {r.label}</span>
+                <span style={`color:${r.active ? 'var(--green)' : 'var(--red)'};font-size:11px;font-weight:700`}>{r.active ? 'ACTIVE' : 'INACTIVE'}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <footer>
-      Generated {new Date(d.generatedAt).toLocaleString()} · reads <code>content-vault.md</code>,
-      <code>reports/</code>, <code>research-notes.md</code> · refresh the page after an agent run.
-    </footer>
     <div class="toast" id="toast"></div>
-    <script is:inline>
+
+    <script is:inline define:vars={{ entries: d.entries, calendar: d.calendar, machines: d.machines }}>
       function showToast(msg) {
         const t = document.getElementById('toast');
         t.textContent = msg;
         t.classList.add('show');
         setTimeout(() => t.classList.remove('show'), 2500);
       }
-      function showCmd(btn) {
-        const box = document.getElementById('cmdbox');
-        const txt = document.getElementById('cmdtext');
-        txt.textContent = btn.dataset.cmd;
-        box.classList.add('show');
-        box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-      function copyCmd() {
-        const txt = document.getElementById('cmdtext').textContent;
-        navigator.clipboard.writeText(txt).then(() => showToast('Command copied — paste in terminal'));
-      }
-      for (const b of document.querySelectorAll('.sbtn')) {
+
+      // ── Sidebar navigation ──
+      document.querySelectorAll('.nav-item[data-page]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+          document.getElementById('p-' + btn.dataset.page).classList.add('active');
+        });
+      });
+
+      // ── Brain filters ──
+      document.querySelectorAll('#brain-filters .filter').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#brain-filters .filter').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const f = btn.dataset.filter;
+          document.querySelectorAll('#brain-list .entry-card').forEach(card => {
+            card.style.display = (f === 'all' || card.dataset.entryStatus === f) ? 'flex' : 'none';
+          });
+        });
+      });
+
+      // ── Status buttons ──
+      document.querySelectorAll('.sbtn').forEach(b => {
         b.addEventListener('click', async () => {
           if (b.classList.contains('cur')) return;
           b.disabled = true;
-          const origText = b.textContent;
-          b.textContent = '...';
           try {
             const r = await fetch('/api/update', {
               method: 'POST',
@@ -379,21 +607,120 @@ const STATUSES = [
               body: JSON.stringify({ num: b.dataset.num, status: b.dataset.status }),
             });
             const j = await r.json();
-            if (j.ok) {
-              showToast('Moved #' + j.num + ' → ' + j.status);
-              setTimeout(() => location.reload(), 800);
-            } else {
-              alert('Update failed: ' + (j.error || 'unknown'));
-              b.textContent = origText;
-              b.disabled = false;
-            }
-          } catch (err) {
-            alert('Update failed: ' + err);
-            b.textContent = origText;
-            b.disabled = false;
-          }
+            if (j.ok) { showToast('Moved #' + j.num + ' → ' + j.status); setTimeout(() => location.reload(), 600); }
+            else { alert('Failed: ' + (j.error || 'unknown')); b.disabled = false; }
+          } catch (err) { alert('Failed: ' + err); b.disabled = false; }
+        });
+      });
+
+      // ── Machine detail ──
+      const STATUSES = [
+        { key: 'DRAFT', short: 'Draft', color: '#8b949e' },
+        { key: 'READY TO POST', short: 'Ready', color: '#3fb950' },
+        { key: 'SCHEDULED', short: 'Scheduled', color: '#d4a72c' },
+        { key: 'POSTED', short: 'Posted', color: '#a371f7' },
+      ];
+
+      document.querySelectorAll('.m-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const skill = card.dataset.machine;
+          const name = card.dataset.machineName;
+          const id = card.dataset.machineId;
+          const note = card.dataset.machineNote;
+
+          document.getElementById('machines-grid').style.display = 'none';
+          const detail = document.getElementById('machine-detail');
+          detail.classList.add('active');
+
+          document.getElementById('md-title').textContent = name;
+          document.getElementById('md-subtitle').textContent = id + ' · ' + note;
+          document.getElementById('md-cmd').textContent = `claude -p "Run /${skill}"`;
+
+          const mEntries = entries;
+          const byStatus = {};
+          STATUSES.forEach(s => { byStatus[s.key] = mEntries.filter(e => e.status === s.key).length; });
+
+          const statsEl = document.getElementById('md-stats');
+          statsEl.innerHTML = STATUSES.map(s =>
+            `<span class="md-stat" style="color:${s.color};border-color:${s.color}33;background:${s.color}11">${s.short} <b>${byStatus[s.key]}</b></span>`
+          ).join('');
+
+          const filtersEl = document.getElementById('md-filters');
+          filtersEl.innerHTML = `<button class="filter active" data-mf="all">All <span class="cnt">${mEntries.length}</span></button>` +
+            STATUSES.map(s => `<button class="filter" data-mf="${s.key}">${s.short} <span class="cnt">${byStatus[s.key]}</span></button>`).join('');
+
+          renderMachineEntries(mEntries);
+
+          filtersEl.querySelectorAll('.filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+              filtersEl.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+              btn.classList.add('active');
+              const f = btn.dataset.mf;
+              const filtered = f === 'all' ? mEntries : mEntries.filter(e => e.status === f);
+              renderMachineEntries(filtered);
+            });
+          });
+
+          // Calendar strip
+          const calStrip = document.getElementById('md-cal-strip');
+          calStrip.innerHTML = calendar.map(c =>
+            `<div class="cal-day ${c.isToday ? 'today' : ''} ${c.items.length ? 'has-items' : ''}">
+              <div class="dow">${c.dow}</div>
+              <div class="dom">${c.dom}</div>
+              ${c.items.length ? '<div class="count-dot"></div>' : ''}
+            </div>`
+          ).join('');
+        });
+      });
+
+      function renderMachineEntries(list) {
+        const el = document.getElementById('md-entries');
+        if (list.length === 0) { el.innerHTML = '<div class="empty">No entries.</div>'; return; }
+        el.innerHTML = list.map(e => `
+          <div class="entry-card">
+            <span class="entry-num">#${e.num}</span>
+            <div class="entry-body">
+              <div class="entry-title">${e.title}</div>
+              <div class="entry-meta">
+                ${e.platform ? `<span class="chip plat">${e.platform.split('(')[0].trim()}</span>` : ''}
+                ${e.pillar ? `<span class="chip cat">${e.pillar.split('(')[0].trim()}</span>` : ''}
+                ${e.critic != null ? `<span class="chip score">${e.critic.toFixed(1)}</span>` : ''}
+              </div>
+            </div>
+            <div class="entry-status">
+              ${STATUSES.map(s => `<button class="sbtn ${e.status === s.key ? 'cur' : ''}" data-num="${e.num}" data-status="${s.key}">${s.short}</button>`).join('')}
+            </div>
+          </div>
+        `).join('');
+        el.querySelectorAll('.sbtn').forEach(b => {
+          b.addEventListener('click', async () => {
+            if (b.classList.contains('cur')) return;
+            b.disabled = true;
+            try {
+              const r = await fetch('/api/update', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ num: b.dataset.num, status: b.dataset.status }) });
+              const j = await r.json();
+              if (j.ok) { showToast('Moved #' + j.num + ' → ' + j.status); setTimeout(() => location.reload(), 600); }
+              else { alert('Failed: ' + (j.error || 'unknown')); b.disabled = false; }
+            } catch (err) { alert('Failed: ' + err); b.disabled = false; }
+          });
         });
       }
+
+      document.getElementById('md-back').addEventListener('click', () => {
+        document.getElementById('machine-detail').classList.remove('active');
+        document.getElementById('machines-grid').style.display = 'grid';
+      });
+
+      // Machine detail tabs
+      document.querySelectorAll('#md-tabs .tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('#md-tabs .tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          ['content', 'calendar', 'run'].forEach(t => {
+            document.getElementById('md-tab-' + t).style.display = t === tab.dataset.tab ? 'block' : 'none';
+          });
+        });
+      });
     </script>
   </body>
 </html>
