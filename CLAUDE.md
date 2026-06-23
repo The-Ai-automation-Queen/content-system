@@ -36,11 +36,12 @@ the database. Never invent content that contradicts them.
   `## ENTRY NNN` at the top, with a quick-reference list of the most recent
   pieces above the first entry. Each entry carries: date, platform, format,
   topic, **Status** (`DRAFT` → `READY TO POST` → `POSTED`), and a **Critic
-  score**. The current highest entry is **ENTRY 019**; new drafts continue the
-  sequence.
+  score**. The vault was reset for the brand rebuild (22/06/2026); the current
+  highest entry is **ENTRY 010** and new drafts continue the sequence. The old
+  ENTRY 001–019 live in `content-vault-archive.md` (obsolete).
 - **`research-notes.md`** — dated research findings (`## RESEARCH NNN`), each with
   topics searched, key findings, signals, ready-to-use content angles, and one
-  logged contrarian take. Current highest is **RESEARCH 017**.
+  logged contrarian take. Current highest is **RESEARCH 018**.
 
 ---
 

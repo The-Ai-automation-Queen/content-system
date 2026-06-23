@@ -13,6 +13,8 @@
 
 ## Most recent (quick reference)
 
+- 23/06/2026 | Short-form video | "My One-Person Business Runs Like a Team of Five" — your digital team | READY TO POST
+- 23/06/2026 | LinkedIn | "AI Doesn't Fix Chaos. It Scales It." — fix the workflow first | READY TO POST
 - 23/06/2026 | Short-form video | "You're the Bottleneck" — hand off one task this week | READY TO POST
 - 23/06/2026 | LinkedIn carousel | "The Freedom Business Test" — 4 things that must run without you | READY TO POST
 - 23/06/2026 | Short-form video | "Turn One Idea Into a Week of Content" — 1 idea → 5 pieces | READY TO POST
@@ -21,6 +23,90 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 010 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | My One-Person Business Runs Like a Team of Five | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** Instagram Reels / TikTok / YouTube Shorts (vertical 9:16)
+**Format:** ~40s talking-head + on-screen text + caption
+**Topic:** A one-person business doesn't mean doing everything yourself — it means a team of AI "employees" doing the parts that aren't you.
+**Pattern used:** Result-First Demo (10) + Named Series potential (4)
+**Pillar:** The Freedom Business
+**Critic score:** 8.6/10 — APPROVED FOR REVIEW
+**Source:** RESEARCH 018 (digital-workers / mini-team finding). ⚠️ **PERSONALIZE:**
+confirm these four "employees" match your real setup, or swap for the ones you
+actually run.
+
+---
+### SPOKEN SCRIPT
+
+**[0–4s — HOOK]** *(on camera)*
+"I run my business like I've got a team of five. There's just one of me."
+`[ON SCREEN: "Team of 5. Employees: 0."]`
+
+**[4–32s — BODY]**
+"Here's my team — and none of them sleep.
+One handles my inbox and tells me what actually needs me. `[ON SCREEN: "1. Inbox"]`
+One turns every video into posts, captions, and a newsletter. `[ON SCREEN: "2. Content"]`
+One follows up with every new lead, so none slip through. `[ON SCREEN: "3. Follow-up"]`
+One books my calls and sends the reminders. `[ON SCREEN: "4. Scheduling"]`
+And me? I do the part only I can do. The thinking. The face. The decisions.
+That's the whole point of automation — not to do more, but to finally do *only* your part."
+
+**[32–40s — CLOSE]**
+"Want me to break down how I set up one of these 'employees'? Comment the number you want first.
+Follow — I'm building this team in public."
+`[ON SCREEN: "Which one first? 👇"]`
+
+---
+### CAPTION
+A one-person business doesn't mean doing everything yourself. 👑
+Which "employee" would you hire first — 1, 2, 3, or 4? 👇
+#AIautomation #solopreneur #FreedomBusiness #automation
+
+> **Production note:** strong series starter — each "employee" becomes its own
+> follow-up build video (Patterns 4 + 9).
+
+---
+
+## ENTRY 009 — 23/06/2026 | LinkedIn | AI Doesn't Fix Chaos. It Scales It. | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Contrarian text post + soft CTA
+**Topic:** The reason most people get nothing from AI isn't the tools — it's automating a broken, undocumented process. Fix the workflow first.
+**Pattern used:** Contrarian Operational Hook (14) + Specific Number (11)
+**Pillar:** Build Once, Runs Forever (+ Stop Doing That by Hand)
+**Critic score:** 8.7/10 — APPROVED FOR REVIEW
+**Source:** RESEARCH 018. ⚠️ **VERIFY** the "95%" stat reads as current before
+posting (sourced 06/2026: ~95% of custom AI pilots fail on P&L).
+
+---
+Here's why most people get nothing out of AI — and it's not the tools.
+
+Something like 95% of AI projects fail to make a business any money. Ninety-five percent.
+
+Everyone blames the tech. The tech is fine.
+
+The real problem? Most people point AI at a mess and hope.
+
+If your process is chaos — undocumented, "it's all in my head," different every time — then automating it just gives you faster chaos. Now the mess runs at scale, around the clock, without you even watching.
+
+AI doesn't fix a broken process. It scales it.
+
+So before you buy one more tool, do the boring thing first:
+
+Pick one task you do all the time. Write down every step, exactly the way you do it. That's it. That's the unlock.
+
+Once it's on paper, automating it is the easy part. Skip that step, and no tool on earth will save you.
+
+The people winning with AI in 2026 aren't the ones with the most tools. They're the ones who fixed the workflow first.
+
+What's one process in your business that only exists "in your head" right now? That's where I'd start.
+
+#AIautomation #Productivity #Solopreneur
 
 ---
 
