@@ -9,6 +9,19 @@
 
 ## Build log
 
+### 2026-06-23 (later) — Film-free video + AI imagery wired into visual-engine
+The avatar/voice/image layers were already available **inside Blotato's visual
+engine** — wired them in (`visual-engine` v1.1.0):
+- `blotato_create_visual` now drives **film-free video** (narrated AI-voice with
+  ElevenLabs voices + AI images via Flux/Imagen/Seedream) and **AI
+  images/infographics** — no separate HeyGen/Midjourney/ElevenLabs hookup needed.
+- Real template IDs baked into `visual-engine` (ai-story-video, ai-selfie-video,
+  ai-avatar-broll, infographics, carousels) + a brand-safety guardrail: a generic
+  AI avatar is never presented as her face (`NEEDS HER FACE`).
+- Default brand voice set to `Alice (British, confident)`; one voice across all
+  video for audio consistency.
+- `inventory.md` MISSING list narrowed to: a real avatar of *her* + TikTok.
+
 ### 2026-06-23 — Closed the loop: visuals + queued publishing wired in
 Wired the back-half of the Romain-shape stack so content no longer dead-ends at
 `READY TO POST`:
@@ -74,11 +87,12 @@ To automate the rhythm, run the harness `/loop` skill on `weekly-ops`, or trigge
    `distribution`); the next action is to build visuals for the ready carousel/video
    entries and queue the 3 unflagged ready posts into Blotato. Resolve the
    `PERSONALIZE`/`VERIFY`/`PREP` flags on the rest so they become queueable.
-2. **Connect the missing stack layers** (operator action — needs new MCP/API):
-   - **AI image generation** (Midjourney / Flux / Ideogram / Gemini image) — for
-     thumbnails and photoreal/stylized images Canva/Gamma don't cover.
-   - **AI avatar video + voice** (HeyGen-type + ElevenLabs-type) — to blast
-     short-form video without filming every time.
+2. **The last stack gaps** (operator action). _AI image-gen, infographics, and
+   narrated AI-voice video are now wired via Blotato's visual engine — done._
+   What's left:
+   - **A real avatar of *her*** — a HeyGen/ElevenLabs clone of Fatiha's own face +
+     voice, fed to Blotato's `ai-avatar-broll` template, for on-brand talking-head
+     at scale. (Faceless narrated video already ships via `visual-engine`.)
    - **Connect a TikTok account to Blotato** — the plan wants it; it's not wired.
 3. **Reconcile the Instagram identity** — Blotato has `@thefatihachikh`;
    `inventory.md` had `@fati_chic_`. Decide the brand home and align everywhere.

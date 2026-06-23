@@ -89,7 +89,7 @@ Not offered: 1:1 advisory/consulting; time-consuming beginner training.
 
 | Layer | Tool | Role in the system | Skill |
 |---|---|---|---|
-| 5. Visuals | **Canva, Gamma** | Carousels/infographics (Canva) + decks/cards (Gamma) from a draft | `visual-engine` |
+| 5. Visuals + video | **Canva, Gamma, Blotato** | Carousels/infographics (Canva) + decks/cards (Gamma) + AI images, infographics & **film-free video** — narrated AI-voice + avatars (Blotato visual engine) | `visual-engine` |
 | 6. Distribution | **Blotato** | Schedule to the multi-platform **queue** (6 platforms); writes status back | `distribution` |
 
 **Connected but not yet wired in** (integration backlog, per `security.md` / `ROADMAP.md`):
@@ -102,16 +102,21 @@ Not offered: 1:1 advisory/consulting; time-consuming beginner training.
 | Granola | Meeting notes → content raw material | 1 |
 | GitHub | Hosting / sync / automation triggers | 6 |
 
-**MISSING from the stack — not connected, would need new MCP/API + operator OK:**
+**MISSING from the stack — still needs operator action:**
 
-| Capability | Typical tool | Why it matters |
+| Gap | What's needed | Why it matters |
 |---|---|---|
-| AI image generation | Midjourney / Flux / Ideogram / Gemini image | Photoreal/stylized images + thumbnails (Canva/Gamma do text-slides, not this) |
-| AI avatar video | HeyGen / Argil | "Blast short-form video" without filming every time (how Sabrina Ramonov scales) |
-| AI voiceover | ElevenLabs | Voice for faceless/avatar video |
+| Talking video of *her real face* | A HeyGen/ElevenLabs clone of Fatiha → fed to Blotato's `ai-avatar-broll` template | Faceless + narrated video ships now; a face-matched avatar is the on-brand way to scale talking-head without filming |
+| TikTok publishing | Connect a TikTok account to Blotato | The plan wants TikTok; no account is wired |
 
-> Decision (2026-06-23): the system is now **wired for visuals + queued publishing**
-> (Canva, Gamma, Blotato). Publishing is **queue-only** — Blotato schedules, the
-> operator releases. The next highest-value adds are the **image-gen** and
-> **AI-video/voice** layers above (operator must connect them), then Notion as a
-> visual calendar.
+> **Note:** AI **image generation** (Flux/Imagen/Seedream/Ideogram-class), AI
+> **infographics**, and AI **video + voiceover** (ElevenLabs voices, AI avatars)
+> are **already wired** — they live inside **Blotato's visual engine**
+> (`blotato_create_visual`), driven by `visual-engine`. No separate
+> Midjourney/HeyGen/ElevenLabs connection is required for faceless/narrated work.
+
+> Decision (2026-06-23, updated): the system is **wired for AI visuals, film-free
+> video, and queued publishing** — Canva + Gamma + Blotato's visual engine.
+> Publishing stays **queue-only** (Blotato schedules, the operator releases).
+> Remaining adds: a real avatar of *her*, a TikTok connection, then Notion as a
+> visual calendar. Default brand voice: `Alice (British, confident)`.

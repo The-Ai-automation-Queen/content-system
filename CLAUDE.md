@@ -61,7 +61,9 @@ Skills are reusable, version-controlled instructions. Two kinds live here:
 - **`content-engine`** — turns research + signals into ready-to-review drafts in
   the vault, in voice, scored by an internal critic. *The core new automation.*
 - **`visual-engine`** — turns a draft into its visual asset: carousels/infographics
-  via Canva, decks/cards via Gamma. On brand, post-ready. (Step 3/5 — visuals.)
+  via Canva, decks/cards via Gamma, and **film-free video + AI imagery** via
+  Blotato's visual engine (narrated AI-voice video, AI avatars, AI images). On
+  brand, post-ready. (Step 3/5 — visuals.)
 - **`distribution`** — pushes `READY TO POST` entries into the **Blotato queue**
   across the 6 connected platforms, then writes status back to the vault.
   **Queue-only — never publishes instantly.** (Step 8 — distribution.)

@@ -1,14 +1,16 @@
 ---
 name: visual-engine
-version: 1.0.0
+version: 1.1.0
 description: |
-  The visuals layer of Fatiha Chikh's Business OS — the piece that turns a text
-  draft into a post-ready visual asset. Generates carousels and infographics with
-  Canva and decks / social cards with Gamma, on brand, from a vault entry. Use
-  after content-engine produces a carousel or video entry and before distribution
-  queues it, or whenever the operator asks for the visual for a specific ENTRY.
-  Produces image/PDF assets and records their location on the entry. Does NOT
-  publish.
+  The visuals + video layer of Fatiha Chikh's Business OS — turns a text draft
+  into the post-ready asset it needs. Three engines: Canva (brand carousels /
+  infographics), Gamma (decks / social cards), and the Blotato visual engine
+  (AI images via Flux/Imagen/Seedream, AI infographics, and FILM-FREE video —
+  narrated AI-voice videos with ElevenLabs voices, plus AI avatar / character
+  videos). Use after content-engine produces an entry and before distribution
+  queues it, or whenever the operator asks for the visual/video for a specific
+  ENTRY. Produces image/PDF/MP4 assets and records their location + URL on the
+  entry. Does NOT publish.
 argument-hint: "[ENTRY number to build visuals for — e.g. '007'; or 'next' for the next entry that needs a visual]"
 allowed-tools:
   - Read
@@ -27,6 +29,9 @@ allowed-tools:
   - mcp__Gamma__generate_from_template
   - mcp__Gamma__get_themes
   - mcp__Gamma__get_generation_status
+  - mcp__Blotato__blotato_list_visual_templates
+  - mcp__Blotato__blotato_create_visual
+  - mcp__Blotato__blotato_get_visual_status
 ---
 
 # Visual Engine
@@ -46,13 +51,15 @@ You produce assets. **You never publish.** (Distribution does that, into a queue
 | **LinkedIn carousel / infographic** (text-heavy slides) | **Canva** | Brand-kit colors + templates; cleanest text-on-slide; exports PDF/PNG |
 | **Slide deck / multi-slide social post** | **Gamma** | Fast prompt → structured slides; good for "Freedom Business Test"-style decks |
 | **On-screen text cards for a video** (the `[ON SCREEN: …]` cues) | **Canva** | One branded card per cue, exported as PNG sequence |
+| **Film-free short-form VIDEO** (narrated, no camera) | **Blotato** `create_visual` | AI images + ElevenLabs voiceover → finished 9:16 MP4 — see the video section below |
+| **AI image / infographic** (photoreal or stylized, on demand) | **Blotato** `create_visual` | Flux / Imagen / Seedream / nano-banana via template — no Midjourney needed |
 | **Quick visual variations to choose from** | **Gamma** then refine in Canva | Gamma for speed, Canva for brand polish |
 
-> **What this engine does NOT generate:** photoreal or stylized AI *images*
-> (Midjourney/Flux/Ideogram-type) and AI *avatar video* (HeyGen-type) + *voice*
-> (ElevenLabs-type). Those tools are **not connected** in this environment. If an
-> entry needs one of them, mark the entry `NEEDS EXTERNAL VISUAL` and tell the
-> operator which capability is missing — do not fake it.
+> **What changed (v1.1.0):** AI *images* (Flux/Imagen/Seedream/Ideogram-class) and
+> AI *video + voice* (HeyGen/ElevenLabs-class) are **now connected — inside
+> Blotato's visual engine** (`blotato_create_visual`). The old "not connected"
+> disclaimer is retired. The one capability still gated is a talking video of
+> *her actual face*: see the brand-safety note in the video section.
 
 ---
 
@@ -66,6 +73,57 @@ You produce assets. **You never publish.** (Distribution does that, into a queue
    motif where it fits, no corporate stock-photo energy.
 3. Match the copy on the slide to the copy in the vault entry **exactly** — do not
    rewrite the approved lines. You are formatting, not re-authoring.
+
+---
+
+## Film-free video & AI imagery — the Blotato visual engine
+
+This is the layer that lets her ship short-form **video without filming** and
+generate imagery on demand. It all runs through `blotato_create_visual`:
+**pick a template → render → poll `blotato_get_visual_status` (≥15s between
+polls) until `done` → grab `mediaUrl` (video) / `imageUrls` (slides) → record
+on the entry → hand the URL to `distribution`.** Watch for `insufficient-credits`
+and report it. The IDs below were live on 2026-06-23 — if one 404s, re-discover
+with `blotato_list_visual_templates`.
+
+### Film-free video (the HeyGen + ElevenLabs combo, built in)
+
+| Use it for | Template id | Notes |
+|---|---|---|
+| **Narrated faceless video** — script + AI images + AI voice (great for Time Wins, What's Worth It, explainer/list reels) | `/base/v2/ai-story-video/5903fe43-514d-40ee-a060-0d6628c5f8fd/v1` | One scene per beat: each scene = an AI image prompt + the voiceover line. Feed the vault script lines as `script`. 9:16, captions, crown-yellow highlight (`#FFD700`). |
+| **AI talking character / selfie video** | `/base/v2/ai-selfie-video/57f5a565-fd17-458b-be43-4a2d8ccaca75/v1` | Consistent character across scenes. ⚠️ Not *her* face — see brand-safety note. |
+| **Avatar + auto B-roll** (you supply an avatar clip) | `/base/v2/ai-avatar-broll/7c26a1cd-d5b3-42da-9c73-2413333873b3/v1` | Feed a real avatar video URL (e.g. a HeyGen export of *her* avatar) → adds AI B-roll. The on-brand way to go faceless. |
+
+**Default brand voice:** `Alice (British, confident)` — warm, authoritative, with
+edge; matches her voice spec. (Also fitting: `Jessica (American, expressive)`,
+`Lily (British, warm)`.) Use **one** voice across every video — audio consistency
+is the brand's scroll-stopper the way Donnelly's green is his.
+
+**Brand-safety note (do not skip):** this is a *personal* brand. A generic AI
+avatar that is not Fatiha must **never** be presented as her. For now, ship
+**narrated faceless video** (no face, or a real avatar of her). If a draft truly
+needs a talking face that looks like her, mark the entry `NEEDS HER FACE` — she
+films a take, or supplies a real HeyGen/ElevenLabs clone of *herself* for the
+avatar-broll template. That clone is the endgame; narrated faceless is the
+ship-now option.
+
+### AI images & infographics
+
+| Use it for | Template id |
+|---|---|
+| **Single AI infographic** (one striking image from a description) | Whiteboard `ae868019-820d-434c-8fe1-74c9da99129a`, Newspaper `07a5b5c5-387c-49e3-86b1-de822cd2dfc7`, Billboard `76b3b959-bdbe-440d-8428-984219353f18`, Breaking News `8800be71-52df-4ac7-ac94-df9d8a494d0f` (+ ~20 more styles via `list_visual_templates`) |
+| **AI image carousel** (one generated image per slide) | `53cfec04-2500-41cf-8cc1-ba670d2c341a` (Instagram Carousel, nano-banana-pro) |
+| **Image slideshow with text overlays** | `/base/v2/image-slideshow/5903b592-1255-43b4-b9ac-f8ed7cbf6a5f/v1` |
+| **Quote / tweet-card / tutorial carousel** | `/base/v2/quote-card/77f65d2b-48cc-4adb-bfbb-5bc86f8c01bd/v1`, `/base/v2/tweet-card/ba413be6-a840-4e60-8fd6-0066d3b427df/v1`, `/base/v2/tutorial-carousel/e095104b-e6c5-4a81-a89d-b0df3d7c5baf/v1` |
+
+Always replace the template's default footer CTA ("Follow me for more…") with the
+**entry's real CTA**, and carry the brand color/voice. You are formatting approved
+copy, not re-authoring it.
+
+> **Canva/Gamma vs Blotato:** use Canva/Gamma when she wants a hand-polished,
+> brand-kit carousel/deck she'll tweak. Use Blotato when she wants a *finished,
+> hands-off* asset (especially video) that flows straight into the queue. For the
+> autonomous loop, Blotato is the default; Canva/Gamma is the craft option.
 
 ---
 
@@ -95,8 +153,8 @@ ask once with `AskUserQuestion`.
 
 End with:
 - which entry, what was built (tool, format, count), and where the asset lives
-- whether it's now ready for `distribution`, or still blocked (`NEEDS EXTERNAL
-  VISUAL` for image-gen/avatar/voice gaps)
+- whether it's now ready for `distribution`, or still blocked (`NEEDS HER FACE`
+  for talking-head-of-her content, or `insufficient-credits` on Blotato)
 - one line on what to do next (usually: "run `distribution` to queue it")
 
 ## What this skill does not do
@@ -104,4 +162,5 @@ End with:
 - Does not publish or schedule — that's `distribution`.
 - Does not rewrite approved copy; it formats existing approved lines.
 - Does not invent off-brand visuals or ignore the brand kit.
-- Does not generate AI photos/avatars/voice (not connected) — it flags the gap.
+- Generates AI photos/voice/faceless video via Blotato — but never presents a
+  generic AI avatar as Fatiha's real face (flags `NEEDS HER FACE` instead).
