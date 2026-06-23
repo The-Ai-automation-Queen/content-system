@@ -37,14 +37,17 @@ _Last reviewed: 2026-06-22 (rebuilt for the new positioning)_
 
 Multi-platform by design — publish everywhere, let engagement data pick the winners.
 
-| Channel | Role | Notes |
-|---|---|---|
-| Instagram (@fati_chic_) | Test + grow | Short-form video; provocative + practical |
-| TikTok | Test + grow | Short-form; payoff-first openings |
-| LinkedIn | **Warm-network anchor** | Where the bridge (corporate) audience lives; lead with insight + the corporate-exit angle |
-| YouTube Shorts | Test + grow | Repurposed short-form |
-| Keynote / stage | Authority anchor | Clips reused as credibility signals |
-| (Long-form: YouTube/Substack) | Optional later | Only if it earns its effort |
+| Channel | Role | Blotato-connected? | Notes |
+|---|---|---|---|
+| Instagram | Test + grow | ✅ `@thefatihachikh` | Short-form video; reel/story. ⚠️ Blotato handle is `@thefatihachikh`, not `@fati_chic_` — reconcile which account is the brand home |
+| LinkedIn | **Warm-network anchor** | ✅ Fatiha Chikh (+ company page) | Where the bridge audience lives; lead with insight + corporate-exit angle |
+| YouTube Shorts | Test + grow | ✅ AI-Automation-Queen | Repurposed short-form |
+| Facebook | Repurpose | ✅ Page "AI Automation Queen" | Mirror of LinkedIn/IG |
+| Threads | Test + grow | ✅ `@fati_chic_` | Short text / repurpose |
+| Twitter / X | Test + grow | ✅ `@aiautomatik` | Short text / repurpose |
+| TikTok | Test + grow | ❌ **NOT connected** | The plan wants TikTok but no account is wired to Blotato — connect it to close the gap |
+| Keynote / stage | Authority anchor | n/a | Clips reused as credibility signals |
+| (Long-form: YouTube/Substack) | Optional later | n/a | Only if it earns its effort |
 
 > No single "home base" is declared yet — the data decides. Reassess after a few
 > weeks of cross-platform posting.
@@ -78,23 +81,37 @@ Not offered: 1:1 advisory/consulting; time-consuming beginner training.
 - `inspiration-library/creators.csv` — tracked creators (format/hook reference)
 - Web research (Tavily / WebSearch) at run time
 
-## 7. Tools available in this environment
+## 7. Tools — the stack (Romain-shape: brain → research → draft → visual → publish)
 
 **Used now (repo-native):** Claude Code, git, markdown files, web search.
 
-**Connected but not yet wired in** (MCP servers seen in session — integrate later
-per `security.md` and `ROADMAP.md`):
+**WIRED INTO THE LOOP (2026-06-23):**
+
+| Layer | Tool | Role in the system | Skill |
+|---|---|---|---|
+| 5. Visuals | **Canva, Gamma** | Carousels/infographics (Canva) + decks/cards (Gamma) from a draft | `visual-engine` |
+| 6. Distribution | **Blotato** | Schedule to the multi-platform **queue** (6 platforms); writes status back | `distribution` |
+
+**Connected but not yet wired in** (integration backlog, per `security.md` / `ROADMAP.md`):
 
 | Tool | Potential role | Step |
 |---|---|---|
-| Blotato | Multi-platform scheduling & publishing (key for the "blast everywhere" plan) | 8 |
-| Canva, Gamma | Short-form / carousel / slide visuals | 3 |
-| Notion | External content calendar / brain | 1 |
-| Tavily, Apify | Research + trend/competitor scraping | 7 |
-| Google Drive | Asset storage | 6 |
+| Notion | External content calendar / board mirrored from the vault | 1 |
+| Tavily, Apify | Sharper research + trend/competitor scraping (upgrade research-digest) | 7 |
+| Google Drive | Asset storage for generated visuals | 6 |
 | Granola | Meeting notes → content raw material | 1 |
 | GitHub | Hosting / sync / automation triggers | 6 |
 
-> Decision (2026-06-22): the system stays **repo-only** for now. This table is the
-> integration backlog. Blotato (multi-platform publishing) is the highest-value
-> first integration given the cross-platform + volume-via-automation goals.
+**MISSING from the stack — not connected, would need new MCP/API + operator OK:**
+
+| Capability | Typical tool | Why it matters |
+|---|---|---|
+| AI image generation | Midjourney / Flux / Ideogram / Gemini image | Photoreal/stylized images + thumbnails (Canva/Gamma do text-slides, not this) |
+| AI avatar video | HeyGen / Argil | "Blast short-form video" without filming every time (how Sabrina Ramonov scales) |
+| AI voiceover | ElevenLabs | Voice for faceless/avatar video |
+
+> Decision (2026-06-23): the system is now **wired for visuals + queued publishing**
+> (Canva, Gamma, Blotato). Publishing is **queue-only** — Blotato schedules, the
+> operator releases. The next highest-value adds are the **image-gen** and
+> **AI-video/voice** layers above (operator must connect them), then Notion as a
+> visual calendar.

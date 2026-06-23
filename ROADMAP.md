@@ -9,6 +9,23 @@
 
 ## Build log
 
+### 2026-06-23 — Closed the loop: visuals + queued publishing wired in
+Wired the back-half of the Romain-shape stack so content no longer dead-ends at
+`READY TO POST`:
+- `skills/visual-engine/` — Canva (carousels/infographics) + Gamma (decks/cards)
+  generate on-brand assets from a draft (Step 3/5 — visuals).
+- `skills/distribution/` — schedules unflagged ready entries into the **Blotato
+  queue** across 6 connected platforms (LinkedIn, Instagram, Facebook, YouTube,
+  Threads, Twitter/X), writes `SCHEDULED`/`POSTED` + Blotato IDs back to the vault,
+  logs a `reports/distribution-*.md` audit trail (Step 8 — distribution).
+- `weekly-ops` extended to the full six-step loop (… → visual-engine → distribution).
+- Policy change in `security.md` §3.1 / §5: from "never publish" to **queue-only**
+  (Blotato schedules; the operator releases). Flagged entries are never queued.
+- `inventory.md` updated: Blotato/Canva/Gamma marked WIRED; flagged the **no-TikTok**
+  connection and the IG handle mismatch (`@thefatihachikh` vs `@fati_chic_`);
+  documented the still-**missing** image-gen + AI-video/voice layers.
+- Inspiration library re-anchored to the new lane (v1.3.0).
+
 ### 2026-06-22 — Business OS foundation laid (8-step framework)
 Implemented the architecture and the core automation layer:
 - `CLAUDE.md` — operating manual mapping all 8 steps (Architecture, Step 2)
@@ -53,18 +70,27 @@ To automate the rhythm, run the harness `/loop` skill on `weekly-ops`, or trigge
 
 ## Backlog (next increments, roughly prioritized)
 
-1. **Close the posting gap.** The standing vault audit shows 15 `READY TO POST`
-   pieces and 0 `POSTED`. The highest-leverage next step is publishing the
-   backlog and recording `POSTED` + date in the vault — not generating more
-   drafts. The engine should respect this and avoid over-producing.
-2. **Cross-platform sync.** `sync-to-github.bat` is Windows-only and one-way
-   (local → GitHub, local wins). Add a pull step / shell equivalent so changes
-   made by remote/web agents flow back before the next local sync overwrites them.
-3. **POSTED tracking + metrics.** Add post date and a light performance note
-   (reposts/shares as the real metric, per `inspiration-library` Pattern 15) so
-   `vault-audit` can report on what actually worked.
-4. **Wire in MCP tools, read-only first** (per `security.md` §5): Notion as
-   external calendar/brain, Tavily/Apify for richer research, Canva/Gamma for
-   carousels, Blotato for scheduling. Each is an increment, not a big bang.
-5. **Named frameworks as content assets** (Pattern 12) — capture the operator's
-   repeatable client methodologies as named, citeable assets the engine reuses.
+1. **Run the closed loop on the backlog.** The wiring exists (`visual-engine` +
+   `distribution`); the next action is to build visuals for the ready carousel/video
+   entries and queue the 3 unflagged ready posts into Blotato. Resolve the
+   `PERSONALIZE`/`VERIFY`/`PREP` flags on the rest so they become queueable.
+2. **Connect the missing stack layers** (operator action — needs new MCP/API):
+   - **AI image generation** (Midjourney / Flux / Ideogram / Gemini image) — for
+     thumbnails and photoreal/stylized images Canva/Gamma don't cover.
+   - **AI avatar video + voice** (HeyGen-type + ElevenLabs-type) — to blast
+     short-form video without filming every time.
+   - **Connect a TikTok account to Blotato** — the plan wants it; it's not wired.
+3. **Reconcile the Instagram identity** — Blotato has `@thefatihachikh`;
+   `inventory.md` had `@fati_chic_`. Decide the brand home and align everywhere.
+4. **POSTED tracking + metrics.** Once posts are released, record post date and a
+   light performance note (reposts/shares as the real metric, per
+   `inspiration-library` Pattern 15) so `vault-audit` reports what actually worked.
+5. **Notion content calendar** — mirror the vault pipeline (Backlog → Ready →
+   Scheduled → Posted) into a Notion board for a phone-friendly calendar view.
+6. **Research upgrade** — wire Tavily (deep research) + Apify (trend scraping) into
+   `research-digest` for sharper front-of-loop signals.
+7. **Cross-platform sync.** `sync-to-github.bat` is Windows-only and one-way
+   (local → GitHub, local wins). Add a pull step so remote/web-agent changes flow
+   back before the next local sync overwrites them.
+8. **Named frameworks as content assets** (Pattern 12) — capture the operator's
+   repeatable methodologies as named, citeable assets the engine reuses.

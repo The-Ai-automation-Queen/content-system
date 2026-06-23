@@ -60,6 +60,11 @@ Skills are reusable, version-controlled instructions. Two kinds live here:
 **Action skills** (in `skills/`, each a folder with a `SKILL.md`):
 - **`content-engine`** — turns research + signals into ready-to-review drafts in
   the vault, in voice, scored by an internal critic. *The core new automation.*
+- **`visual-engine`** — turns a draft into its visual asset: carousels/infographics
+  via Canva, decks/cards via Gamma. On brand, post-ready. (Step 3/5 — visuals.)
+- **`distribution`** — pushes `READY TO POST` entries into the **Blotato queue**
+  across the 6 connected platforms, then writes status back to the vault.
+  **Queue-only — never publishes instantly.** (Step 8 — distribution.)
 - **`weekly-ops`** — the orchestrator. Runs the full maintenance loop (Step 7/8).
 - **`research-digest`** — last-30-days research sweep → `reports/` + a
   `research-notes.md` entry.
@@ -74,16 +79,21 @@ Skills are reusable, version-controlled instructions. Two kinds live here:
 
 ## Agentics (Step 8) & Maintenance (Step 7) — the loop
 
-The system stays alive through a recurring loop, not one-off prompts:
+The system stays alive through a recurring loop, not one-off prompts. As of
+2026-06-23 the loop runs the **full Romain-shape** — research → draft → visual →
+queue → track:
 
 ```
-research-digest  →  competitor-watch  →  vault-audit  →  content-engine
-   (what's new)      (what others do)     (what's stale)   (new drafts)
+research-digest → competitor-watch → vault-audit → content-engine → visual-engine → distribution
+  (what's new)     (what others do)   (what's stale)   (new drafts)    (the assets)    (→ Blotato queue)
 ```
 
 `skills/weekly-ops` runs this end to end and writes a dated set of reports to
-`reports/`. To schedule it autonomously, use the harness `/loop` skill (e.g.
-weekly), or run `weekly-ops` manually. See `ROADMAP.md` for cadence targets.
+`reports/`. **Publishing is queue-only:** `distribution` schedules unflagged ready
+posts into Blotato; the operator reviews and releases them in the Blotato
+dashboard (see `security.md` §3.1). To schedule the loop autonomously, use the
+harness `/loop` skill (e.g. weekly), or run `weekly-ops` manually. See `ROADMAP.md`
+for cadence targets.
 
 ---
 
