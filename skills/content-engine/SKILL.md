@@ -34,7 +34,7 @@ You produce drafts. **You never publish.** (See `security.md`.)
 This is non-negotiable. Read these every run, in this order:
 
 1. **`positioning/SKILL.md`** — who she is, who she serves, the
-   confusion→confidence promise, and the voice. This is the identity layer.
+   win-back-your-time promise, the six pillars, and the voice. The identity layer.
 2. **`inspiration-library/SKILL.md`** — the 15 hook/format patterns, the Script
    Application Rules, the banned-words list, and platform adaptation rules.
 3. **`research-notes.md`** — the latest findings and, critically, the
@@ -72,16 +72,19 @@ Follow the Script Application Rules from `inspiration-library` in order:
    no title restatement.
 2. **Pick a named pattern** from the playbook that fits the topic. State which
    one you chose (internally, in the entry's production notes).
-3. **Anchor to the positioning** — mid-market CEOs, internal AI capability, the
-   independence promise, confusion→confidence. Every draft must serve one of the
-   content pillars in `inventory.md`.
+3. **Anchor to the positioning** — everyday entrepreneurs, AI + automation to win
+   back their time, "you don't need to be technical," automation as freedom. Every
+   draft must serve exactly one of the six content pillars (Time Wins · Build Once,
+   Runs Forever · The Freedom Business · Stop Doing That by Hand · What's Worth It ·
+   Real Talk).
 4. **Adapt to the platform** — LinkedIn opens with the business insight; Instagram
    Reels open with a visual/physical action; X/Substack long-form earns a
    different rhythm. One platform per draft.
 5. **End with an earned CTA** — a comment trigger or a specific next step, never
    "follow for more."
-6. **Voice check** — non-contracted English, short sentences, experiential
-   authority, no corporate jargon, no banned words, no engagement bait.
+6. **Voice check** — casual and conversational (contractions welcome), warm with a
+   provocative edge, authority + relatability, specific, no corporate jargon, no
+   engagement bait.
 7. **Series check** — if it belongs to a series, name it and number it.
 
 Ground every claim. Any statistic or strong factual claim must trace to a logged
@@ -99,7 +102,7 @@ Score 0–10 on:
   "Is that good enough to stop someone mid-scroll?")
 - **Positioning fit** — does it sound like *her*, serving *her* audience?
 - **Specificity** — concrete numbers, named frameworks, real stakes (not vague)?
-- **Voice** — non-contracted, jargon-free, short sentences?
+- **Voice** — casual, conversational, warm-with-edge, jargon-free?
 - **CTA** — earned and specific?
 
 Average to a single **Critic score**. Then:

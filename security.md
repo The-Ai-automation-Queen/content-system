@@ -3,8 +3,8 @@
 > The video's Step 4 is about connecting APIs *safely* — keys, access, and the
 > blast radius if something goes wrong. For a content OS run by an AI agent, the
 > security surface is three things: **secrets**, **data**, and **the brand
-> itself**. This matters doubly here because data and security awareness is part
-> of the operator's positioning — the system must practice what she advises.
+> itself**. The brand runs on trust and on the operator's name, so a bad or
+> off-brand post is the real "incident" to guard against — more than any leaked key.
 
 _Last reviewed: 2026-06-22_
 

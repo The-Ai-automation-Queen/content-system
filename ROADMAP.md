@@ -40,9 +40,11 @@ Run the loop on a fixed rhythm so the system stays alive. Targets:
 | Draft generation | `content-engine` | Weekly (after the three above) |
 | Full loop | `weekly-ops` | Weekly (runs all four) |
 
-**Publishing cadence target** (from the latest vault audit, to confirm with the
-operator): 3× LinkedIn/week, 1× Instagram/week, 2× Substack/month. The engine
-should keep enough `READY TO POST` inventory to sustain this.
+**Publishing cadence target** (to confirm with the operator): short-form video
+blasted across Instagram, TikTok, LinkedIn, and YouTube Shorts — publish
+everywhere, watch where engagement lands, double down there. Volume scales with
+automation; until then, fewer/stronger pieces. The engine should keep enough
+`READY TO POST` inventory to sustain the chosen cadence.
 
 To automate the rhythm, run the harness `/loop` skill on `weekly-ops`, or trigger
 `weekly-ops` manually each week.

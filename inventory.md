@@ -4,81 +4,91 @@
 > what you already have. This is the asset map the rest of the system reasons
 > over. Keep it current — when a channel, offer, or tool changes, update it here.
 
-_Last reviewed: 2026-06-22_
+_Last reviewed: 2026-06-22 (rebuilt for the new positioning)_
 
 ---
 
 ## 1. The operator
 
 - **Name:** Fatiha Chikh
-- **Personal brand:** AI Strategic Advisor — "the AI Automation Queen"
-- **Community brand:** AI Automation Queen (distinct from the personal brand —
-  see `positioning/SKILL.md`; do not collapse the two)
+- **Brand:** **The AI Automation Queen** — automation for *freedom*
+- **Background:** 20+ years in tech (Dell, Intel, Microsoft); has personally built
+  the AI/automation systems she teaches. Moving out of building → into teaching,
+  packaging, and automating.
 - **Location:** Dubai, UAE
-- **Background:** 20+ years in tech (Dell, Intel, Microsoft), keynote speaker
-- **Core promise:** moves CEOs from AI *confusion* to AI *confidence* — building
-  understanding, efficient use, and data/security awareness, not tool dependency
+- **Core promise:** helps everyday entrepreneurs use AI and automation to **win back
+  their time** — a business that runs without running their life.
 
 ## 2. Audience
 
-- **Primary:** mid-market CEOs and founders ($5M–$100M companies) who want
-  internal AI capability, not ongoing consulting dependency
-- **Secondary:** business leaders 35+ who are afraid of doing AI wrong or
-  wasting money on shiny tools
-- **The intersection (the moat):** AI strategy × mid-market leaders × internal
-  capability building
+- **Primary:** everyday **entrepreneurs, solopreneurs, and creators** building their
+  own thing — smart, capable, but **overwhelmed by AI** and mostly **non-technical**.
+- **Wants:** results, leverage, time back — not a technical education.
+- **Not:** executives/enterprise, not gender-specific.
+- **Growth stance:** reach through **leverage** (scalable content + products), not
+  by trading hours one client at a time.
 
 ## 3. Channels
 
-| Channel | Handle | Status | Notes |
-|---|---|---|---|
-| LinkedIn | (primary) | Active focus | Best-stocked pipeline; business-insight-first |
-| Instagram | @fati_chic_ | Early stage (~749) | Talking-head reels; provocative AI-ethics angle wins |
-| X / Substack | — | Long-form | Two near-complete drafts in the vault |
-| Keynote / stage | — | Authority engine | Clips signal credibility before credentials |
-| Pivot Mode Podcast | collaborator | Reach extender | Borrowed-audience distribution |
+Multi-platform by design — publish everywhere, let engagement data pick the winners.
+
+| Channel | Role | Notes |
+|---|---|---|
+| Instagram (@fati_chic_) | Test + grow | Short-form video; provocative + practical |
+| TikTok | Test + grow | Short-form; payoff-first openings |
+| LinkedIn | Test + grow | Short-form + text; insight-first openings |
+| YouTube Shorts | Test + grow | Repurposed short-form |
+| Keynote / stage | Authority anchor | Clips reused as credibility signals |
+| (Long-form: YouTube/Substack) | Optional later | Only if it earns its effort |
+
+> No single "home base" is declared yet — the data decides. Reassess after a few
+> weeks of cross-platform posting.
 
 ## 4. Content pillars
 
-Per `inspiration-library` Pattern 15 (fixed pillars), every piece should map to
-one pillar. Confirm/refine these with the operator:
+Every piece maps to one (see `positioning/SKILL.md`):
 
-1. AI ethics & risk (deepfakes, data, security) — historically her best performer
-2. Internal AI capability vs. consulting dependency
-3. AI strategy & literacy for leaders / boards
-4. Regulation & governance literacy
-5. Women + AI / reclaiming time
-6. Origin story & experiential authority
+1. **Time Wins** — quick AI/automation moves that save real hours
+2. **Build Once, Runs Forever** — systems that run while you sleep (show the build)
+3. **The Freedom Business** — work less, live more; business that runs without you
+4. **Stop Doing That by Hand** — provocative "you're still doing this manually?"
+5. **What's Worth It** — curated AI tools/news that actually matter (not daily)
+6. **Real Talk** — relatable founder lessons from having built it
 
-## 5. Offers / outcomes
+## 5. Offers / how it monetizes (active now)
 
-- Advisory: builds clients' *own* AI capability ("the kind that runs without me")
-- Keynotes / speaking
-- Community: AI Automation Queen
+1. Paid **community / membership** (core)
+2. **Digital products / courses**
+3. **Speaking / keynotes**
+4. A packaged **system / "OS"** to sell (roadmap)
+5. **Affiliate / sponsorships** (opportunistic)
+
+Not offered: 1:1 advisory/consulting; time-consuming beginner training.
 
 ## 6. Data sources (what feeds the engine)
 
 - `research-notes.md` — last-30-days research sweeps
 - `reports/` — research digests, competitor watches, vault audits
-- `inspiration-library/creators.csv` — 21 tracked creators
+- `inspiration-library/creators.csv` — tracked creators (format/hook reference)
 - Web research (Tavily / WebSearch) at run time
 
 ## 7. Tools available in this environment
 
 **Used now (repo-native):** Claude Code, git, markdown files, web search.
 
-**Connected but not yet wired into the system** (MCP servers seen in session —
-integrate later per `security.md` and `ROADMAP.md`):
+**Connected but not yet wired in** (MCP servers seen in session — integrate later
+per `security.md` and `ROADMAP.md`):
 
-| Tool | Potential role | Step it would serve |
+| Tool | Potential role | Step |
 |---|---|---|
-| Notion | External second brain / content calendar | 1 |
-| Blotato | Multi-platform scheduling & publishing | 8 |
-| Canva, Gamma | Carousel / slide / visual generation | 3 |
-| Tavily, Apify | Research & trend/competitor scraping | 7 |
+| Blotato | Multi-platform scheduling & publishing (key for the "blast everywhere" plan) | 8 |
+| Canva, Gamma | Short-form / carousel / slide visuals | 3 |
+| Notion | External content calendar / brain | 1 |
+| Tavily, Apify | Research + trend/competitor scraping | 7 |
 | Google Drive | Asset storage | 6 |
 | Granola | Meeting notes → content raw material | 1 |
 | GitHub | Hosting / sync / automation triggers | 6 |
 
-> Decision (2026-06-22): the system stays **repo-only** for now. The table above
-> is the integration backlog, not current dependencies.
+> Decision (2026-06-22): the system stays **repo-only** for now. This table is the
+> integration backlog. Blotato (multi-platform publishing) is the highest-value
+> first integration given the cross-platform + volume-via-automation goals.

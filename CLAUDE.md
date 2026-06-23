@@ -50,7 +50,8 @@ Skills are reusable, version-controlled instructions. Two kinds live here:
 
 **Context skills** (loaded *before* writing, never run standalone):
 - **`positioning/SKILL.md`** — brand positioning, voice, audience, the
-  confusion→confidence promise. The non-negotiable identity layer.
+  win-back-your-time promise, and the six content pillars. The non-negotiable
+  identity layer.
 - **`inspiration-library/SKILL.md`** + `creators.csv` — 21 studied creators,
   15 named hook/format patterns, and the script application rules. Load this
   before writing any script, hook, or outline.
@@ -113,5 +114,7 @@ weekly), or run `weekly-ops` manually. See `ROADMAP.md` for cadence targets.
 5. **Drafts are drafts.** The engine produces `DRAFT` / `READY TO POST` items
    for human approval. It does not publish, and (for now) does not call external
    posting tools — see `security.md`.
-6. **Voice:** non-contracted English, short sentences, experiential authority,
-   no corporate jargon. The banned-words list lives in `inspiration-library`.
+6. **Voice:** casual and conversational (contractions welcome), warm with a
+   provocative edge, specific, no corporate jargon, no engagement bait. The full
+   voice spec lives in `positioning/SKILL.md`. (The old "non-contracted English"
+   rule is retired.)

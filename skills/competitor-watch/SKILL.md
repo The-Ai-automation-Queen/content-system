@@ -31,7 +31,8 @@ she can own**. Read `CLAUDE.md`, `positioning/SKILL.md`, and
 
 The tracked set in `inspiration-library/creators.csv` plus the creators named in
 recent `reports/competitor-watch-*.md` files. Focus on those most relevant to her
-lane (AI strategy, AI for leaders, AI ethics/security, women + AI). Look at what
+lane (AI tools & automation, time-saving/productivity, the freedom-business and
+solopreneur space). Look at what
 they published this week — the hook, the format, the topic, the engagement signal.
 
 ---
@@ -46,8 +47,8 @@ they published this week — the hook, the format, the topic, the engagement sig
 4. **Trending topics** — what multiple creators converged on.
 5. **Format trends** — what format is getting engagement right now.
 6. **Gaps she could own** — the most valuable section: topics none of them are
-   covering that fit her intersection (AI strategy × mid-market × internal
-   capability × data/security). These become content-engine briefs.
+   covering that fit her lane (AI + automation for everyday entrepreneurs to win
+   back time and build a freedom business). These become content-engine briefs.
 7. **Creator momentum notes** — who is rising/changing approach.
 
 ---

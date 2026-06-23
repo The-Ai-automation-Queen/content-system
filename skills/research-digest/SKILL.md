@@ -22,7 +22,8 @@ allowed-tools:
 
 You run the weekly research sweep for Fatiha Chikh ("the AI Automation Queen").
 Your job is to find what changed in the AI world in the **last 30 days** that her
-audience of mid-market CEOs cares about, and turn it into usable raw material.
+audience of everyday entrepreneurs and solopreneurs cares about, and turn it into
+usable raw material.
 Read `CLAUDE.md` and `positioning/SKILL.md` first so you filter for *her* lane.
 
 ---
@@ -30,11 +31,11 @@ Read `CLAUDE.md` and `positioning/SKILL.md` first so you filter for *her* lane.
 ## What to search
 
 Run focused, recent searches across her territory (adapt to what is live):
-- AI strategy / frameworks / case studies / failures for business leaders
-- AI regulation & governance (EU AI Act, US state + federal, compliance deadlines)
-- Enterprise AI adoption: announcements, ROI data, layoffs/reskilling, org redesign
-- AI ethics, data, and security (her sharpest-performing lane)
-- Tools and shifts relevant to non-technical leaders
+- New AI tools / automations a solopreneur can actually use to save time
+- Automation workflows & agents for small businesses and creators
+- "Build it once, runs forever" systems, no-code/low-code wins
+- Time-saving + freedom-business angles (work less, live more)
+- What's genuinely worth attention vs. hype (curated, for non-technical builders)
 
 Always scope to the last ~30 days. Log every source URL/date so claims are
 traceable (see `security.md` §2). Prefer primary sources over commentary.
@@ -44,9 +45,10 @@ traceable (see `security.md` §2). Prefer primary sources over commentary.
 ## How to rank
 
 Select the **Top 5 stories** by: relevance to her audience, freshness, and how
-well they connect to her positioning (confusion→confidence, internal capability,
-data/security literacy). A story she can say something *differentiated* about
-beats a bigger story she can only repeat.
+well they map to her pillars (Time Wins, Build Once/Runs Forever, The Freedom
+Business, Stop Doing That by Hand, What's Worth It). Favor practical, usable items
+over abstract news. A story she can turn into a concrete time-saving tip beats a
+bigger story she can only repeat.
 
 ---
 
