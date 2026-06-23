@@ -39,11 +39,11 @@ Multi-platform by design — publish everywhere, let engagement data pick the wi
 
 | Channel | Role | Blotato-connected? | Notes |
 |---|---|---|---|
-| Instagram | Test + grow | ✅ `@thefatihachikh` | Short-form video; reel/story. ⚠️ Blotato handle is `@thefatihachikh`, not `@fati_chic_` — reconcile which account is the brand home |
+| Instagram | Test + grow | ✅ `@thefatihachikh` | Short-form video; reel/story |
 | LinkedIn | **Warm-network anchor** | ✅ Fatiha Chikh (+ company page) | Where the bridge audience lives; lead with insight + corporate-exit angle |
 | YouTube Shorts | Test + grow | ✅ AI-Automation-Queen | Repurposed short-form |
 | Facebook | Repurpose | ✅ Page "AI Automation Queen" | Mirror of LinkedIn/IG |
-| Threads | Test + grow | ✅ `@fati_chic_` | Short text / repurpose |
+| Threads | Test + grow | ✅ `@thefatihachikh` | Short text / repurpose |
 | Twitter / X | Test + grow | ✅ `@aiautomatik` | Short text / repurpose |
 | TikTok | Test + grow | ❌ **NOT connected** | The plan wants TikTok but no account is wired to Blotato — connect it to close the gap |
 | Keynote / stage | Authority anchor | n/a | Clips reused as credibility signals |

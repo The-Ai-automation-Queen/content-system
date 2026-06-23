@@ -54,8 +54,7 @@ Wired the back-half of the Romain-shape stack so content no longer dead-ends at
 - Policy change in `security.md` §3.1 / §5: from "never publish" to **queue-only**
   (Blotato schedules; the operator releases). Flagged entries are never queued.
 - `inventory.md` updated: Blotato/Canva/Gamma marked WIRED; flagged the **no-TikTok**
-  connection and the IG handle mismatch (`@thefatihachikh` vs `@fati_chic_`);
-  documented the still-**missing** image-gen + AI-video/voice layers.
+  connection; documented the still-**missing** image-gen + AI-video/voice layers.
 - Inspiration library re-anchored to the new lane (v1.3.0).
 
 ### 2026-06-22 — Business OS foundation laid (8-step framework)
@@ -116,8 +115,7 @@ To automate the rhythm, run the harness `/loop` skill on `weekly-ops`, or trigge
      the environment's network access settings. Once done, `visual-engine` can
      upload the avatar → run `ai-avatar-broll` → queue, fully autonomously.
    - **Connect a TikTok account to Blotato** — the plan wants it; it's not wired.
-3. **Reconcile the Instagram identity** — Blotato has `@thefatihachikh`;
-   `inventory.md` had `@fati_chic_`. Decide the brand home and align everywhere.
+3. ~~Reconcile the Instagram identity~~ — resolved: `@thefatihachikh` everywhere.
 4. **POSTED tracking + metrics.** Once posts are released, record post date and a
    light performance note (reposts/shares as the real metric, per
    `inspiration-library` Pattern 15) so `vault-audit` reports what actually worked.

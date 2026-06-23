@@ -80,8 +80,7 @@ If more than ~5 entries are ready and unblocked, ask the operator once (with
 
 > **Known gaps (flag, don't fix silently):** there is **no TikTok account
 > connected** even though the positioning wants TikTok — note this in the run
-> report. The Instagram handle on Blotato is `@thefatihachikh`, which differs from
-> `@fati_chic_` in `inventory.md` — flag the mismatch for the operator.
+> report.
 
 ---
 

@@ -23,7 +23,7 @@ patterns. Do not default to generic content structures — use this library firs
 ## Who This Creator Is
 
 **Name:** Fatiha Chikh
-**Instagram handle:** @fati_chic_ (749 followers — early stage)
+**Instagram handle:** @thefatihachikh (early stage)
 **Current Instagram tagline:** "The AI Automation Queen"
 **Location:** Dubai, UAE
 **Role:** Creator + educator — "the AI Automation Queen." Has built the systems she teaches; now teaching, packaging, and automating.
