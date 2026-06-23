@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
+import node from '@astrojs/node';
 
-// Mission Control runs on localhost:4321 and reads the markdown files in the
-// repo root (one level up) at request time. host:true so the remote/web
-// harness can preview the port.
 export default defineConfig({
+  output: 'server',
+  adapter: node({ mode: 'standalone' }),
   server: { port: 4321, host: true },
 });
