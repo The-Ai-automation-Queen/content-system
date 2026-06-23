@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is a prompt &mdash; Shift &amp; Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#F8F7F5;--cream:#F4F0FA;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
+  --muted:#5C5A57;--accent:#6B35C2;--accent-deep:#4A1F8F;--accent-tint:#EEE5FA;
+  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+a:hover{color:var(--accent-deep)}
+strong{font-weight:700;color:var(--ink)}
+
+.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+
+.wrap{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,100px) clamp(24px,5vw,72px)}
+
+.chips{margin-bottom:28px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff}
+.chip-track0{background:var(--accent)}
+.chip-time{background:transparent;color:var(--muted);border:1px solid var(--rule);padding:4px 10px}
+
+.kicker{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);display:flex;align-items:center;margin-bottom:20px}
+.kicker-rule{display:inline-block;width:32px;height:1px;background:var(--ink);margin-right:10px}
+
+h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,5.5vw,56px);line-height:1.08;letter-spacing:-0.5px;color:var(--ink);margin-bottom:24px}
+h1 em{font-style:italic;color:var(--electric)}
+h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.18;letter-spacing:-0.3px;margin:64px 0 16px}
+h3{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);margin:32px 0 12px}
+p{margin-bottom:18px;color:var(--ink)}
+p.lead{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:20px;line-height:1.55;color:var(--muted);margin-bottom:32px}
+
+.rule{border:0;border-top:2px solid var(--ink);margin:80px 0 40px}
+
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:28px 32px;margin:24px 0}
+.card.accent{border-color:var(--accent);background:var(--accent-tint)}
+
+.pullquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:24px;line-height:1.35;color:var(--muted);border-left:3px solid var(--accent);padding-left:24px;margin:40px 0}
+
+blockquote{background:var(--accent-tint);border-left:3px solid var(--accent);padding:16px 24px;margin:20px 0;border-radius:0 4px 4px 0;color:var(--muted)}
+blockquote p{margin-bottom:0;color:var(--muted)}
+
+.prompt-part{padding:20px 0;border-bottom:1px solid var(--rule-light)}
+.prompt-part:last-of-type{border-bottom:none}
+.prompt-part .label{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin-bottom:6px}
+
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.vs-col{padding:20px 24px;border-radius:6px}
+.vs-col.bad{background:#FDF2F2;border:1px solid #E8C4C4}
+.vs-col.good{background:#F0F4E8;border:1px solid #C4D4A8}
+.vs-col h3{margin-top:0}
+
+ul,ol{margin:12px 0 20px 24px}
+li{margin-bottom:8px;color:var(--ink)}
+
+.cta-bar{margin:48px 0;padding:32px;background:var(--navy);border-radius:6px;text-align:center;color:var(--canvas)}
+.cta-bar h3{color:var(--canvas);margin-top:0}
+.cta-bar p{color:rgba(255,255,255,0.85)}
+.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:13px 32px;background:var(--canvas);color:var(--ink);text-decoration:none;border-radius:4px;margin-top:12px}
+.btn:hover{background:#fff;color:var(--ink)}
+
+.guide-nav{display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:32px;border-top:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em}
+.guide-nav a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
+.guide-nav a:hover{color:var(--accent);border-color:var(--accent)}
+
+.footer{margin-top:120px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+
+@media(max-width:560px){
+  html,body{font-size:16px}
+  .wrap{padding:40px 16px}
+  h1{font-size:32px;line-height:1.1}
+  .pullquote{font-size:20px}
+  .vs{grid-template-columns:1fr}
+  .guide-nav{flex-direction:column;gap:16px;align-items:flex-start}
+  .nav-inner{padding:14px 16px}
+  .nav-links{gap:16px;font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="#">Community</a><a href="#">About</a></div>
+</div></nav>
+
+<div class="wrap">
+
+  <div class="chips">
+    <span class="chip chip-track0">PROMPT</span>
+    <span class="chip chip-time">5 min read</span>
+  </div>
+
+  <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; AI Basics</div>
+
+  <h1>Heard &ldquo;prompt&rdquo; 50 times. <em>Still no idea what it is?</em></h1>
+
+  <p class="lead">Every AI article tells you to write better prompts. Nobody tells you what a prompt is. It&rsquo;s the thing you type. Here&rsquo;s what makes one actually work.</p>
+
+  <hr class="rule">
+
+  <h2>The full definition</h2>
+
+  <p>A prompt is what you write to the AI. The AI reads it and writes back. Every message you send is a new prompt. Every reply you get is the response.</p>
+
+  <p>That&rsquo;s all.</p>
+
+  <p>&ldquo;Prompt engineering&rdquo; is just writing it well. There&rsquo;s no secret vocabulary. No magic word that unlocks a hidden mode. There are 4 things to do well &mdash; and when you do all 4, you get useful answers every time.</p>
+
+  <hr class="rule">
+
+  <h2>The 4 things a good prompt does</h2>
+
+  <div class="prompt-part">
+    <div class="label">1. Role</div>
+    <p>Tell the AI who it&rsquo;s being.</p>
+    <blockquote><p>&ldquo;You are a small business accountant.&rdquo;</p></blockquote>
+  </div>
+
+  <div class="prompt-part">
+    <div class="label">2. Context</div>
+    <p>Give it the situation.</p>
+    <blockquote><p>&ldquo;I run a 4-person agency, monthly revenue around $30K, no in-house bookkeeping.&rdquo;</p></blockquote>
+  </div>
+
+  <div class="prompt-part">
+    <div class="label">3. Task</div>
+    <p>Say exactly what you want.</p>
+    <blockquote><p>&ldquo;Draft 5 questions I should ask before hiring a bookkeeper.&rdquo;</p></blockquote>
+  </div>
+
+  <div class="prompt-part">
+    <div class="label">4. Format</div>
+    <p>Say how you want it back.</p>
+    <blockquote><p>&ldquo;Numbered list. One sentence each.&rdquo;</p></blockquote>
+  </div>
+
+  <div class="pullquote">That&rsquo;s the entire skill.</div>
+
+  <hr class="rule">
+
+  <h2>Bad vs good &mdash; the actual difference</h2>
+
+  <div class="vs">
+    <div class="vs-col bad">
+      <h3>Bad prompt</h3>
+      <p>&ldquo;Help me hire a bookkeeper.&rdquo;</p>
+      <p style="margin-bottom:0"><strong>5 words. Vague, generic output.</strong></p>
+    </div>
+    <div class="vs-col good">
+      <h3>Good prompt</h3>
+      <p>&ldquo;You are a small business accountant. I run a 4-person agency, monthly revenue around $30K, no in-house bookkeeping. Draft 5 questions I should ask before hiring a bookkeeper. Numbered list. One sentence each.&rdquo;</p>
+      <p style="margin-bottom:0"><strong>50 words. Specific, usable output.</strong></p>
+    </div>
+  </div>
+
+  <p>The difference isn&rsquo;t engineering. It&rsquo;s specificity.</p>
+
+  <hr class="rule">
+
+  <h2>What this buys your business</h2>
+
+  <div class="card accent">
+    <p>AI pattern-matches the shape of your request. Vague in, vague out. Role + context + task + format = specific, usable answer.</p>
+    <p style="margin-bottom:0">Run 20 prompts using this template. That&rsquo;s the complete skill. There&rsquo;s genuinely nothing further to learn at this level.</p>
+  </div>
+
+  <p>The next level is chaining prompts so the AI builds a whole workflow &mdash; where the same job runs on a schedule, without you starting it each time. That&rsquo;s where the real hours come back.</p>
+
+  <div class="cta-bar">
+    <h3>Next: the 12 AI words everyone uses</h3>
+    <p>Agent, MCP, RAG, token, hallucination &mdash; explained in one sentence each.</p>
+    <a href="ai-jargon-guide.html" class="btn">Read the next guide &rarr;</a>
+  </div>
+
+  <div class="guide-nav">
+    <a href="chatgpt-vs-ai.html">&larr; Prev: ChatGPT vs AI</a>
+    <a href="ai-jargon-guide.html">Next: 12 AI words &rarr;</a>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>Shift &amp; Lead &middot; Free guide &middot; &copy; 2026</p>
+</div>
+
+</body>
+</html>

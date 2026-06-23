@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>12 AI words explained &mdash; Shift &amp; Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#F8F7F5;--cream:#F4F0FA;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
+  --muted:#5C5A57;--accent:#6B35C2;--accent-deep:#4A1F8F;--accent-tint:#EEE5FA;
+  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+a:hover{color:var(--accent-deep)}
+strong{font-weight:700;color:var(--ink)}
+
+.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+
+.wrap{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,100px) clamp(24px,5vw,72px)}
+
+.chips{margin-bottom:28px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff}
+.chip-literacy{background:#E63955}
+.chip-time{background:transparent;color:var(--muted);border:1px solid var(--rule);padding:4px 10px}
+
+.kicker{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);display:flex;align-items:center;margin-bottom:20px}
+.kicker-rule{display:inline-block;width:32px;height:1px;background:var(--ink);margin-right:10px}
+
+h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,5.5vw,56px);line-height:1.08;letter-spacing:-0.5px;color:var(--ink);margin-bottom:24px}
+h1 em{font-style:italic;color:var(--electric)}
+h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.18;letter-spacing:-0.3px;margin:64px 0 16px}
+h3{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);margin:32px 0 12px}
+p{margin-bottom:18px;color:var(--ink)}
+p.lead{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:20px;line-height:1.55;color:var(--muted);margin-bottom:32px}
+
+.rule{border:0;border-top:2px solid var(--ink);margin:80px 0 40px}
+
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:28px 32px;margin:24px 0}
+.card.accent{border-color:var(--accent);background:var(--accent-tint)}
+
+.pullquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:24px;line-height:1.35;color:var(--muted);border-left:3px solid var(--accent);padding-left:24px;margin:40px 0}
+
+.word{padding:20px 0;border-bottom:1px solid var(--rule-light)}
+.word:last-of-type{border-bottom:none}
+.word-num{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:0.1em;margin-bottom:4px}
+.word-name{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:400;margin-bottom:8px}
+
+ul,ol{margin:12px 0 20px 24px}
+li{margin-bottom:8px;color:var(--ink)}
+
+.cta-bar{margin:48px 0;padding:32px;background:var(--navy);border-radius:6px;text-align:center;color:var(--canvas)}
+.cta-bar h3{color:var(--canvas);margin-top:0}
+.cta-bar p{color:rgba(255,255,255,0.85)}
+.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:13px 32px;background:var(--canvas);color:var(--ink);text-decoration:none;border-radius:4px;margin-top:12px}
+.btn:hover{background:#fff;color:var(--ink)}
+
+.guide-nav{display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:32px;border-top:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em}
+.guide-nav a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
+.guide-nav a:hover{color:var(--accent);border-color:var(--accent)}
+
+.footer{margin-top:120px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+
+@media(max-width:560px){
+  html,body{font-size:16px}
+  .wrap{padding:40px 16px}
+  h1{font-size:32px;line-height:1.1}
+  .pullquote{font-size:20px}
+  .guide-nav{flex-direction:column;gap:16px;align-items:flex-start}
+  .nav-inner{padding:14px 16px}
+  .nav-links{gap:16px;font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="#">Community</a><a href="#">About</a></div>
+</div></nav>
+
+<div class="wrap">
+
+  <div class="chips">
+    <span class="chip chip-literacy">WORDS</span>
+    <span class="chip chip-time">6 min read</span>
+  </div>
+
+  <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; AI Vocabulary</div>
+
+  <h1>12 AI words everyone uses. <em>Nobody explains them.</em></h1>
+
+  <p class="lead">Agents, skills, MCP, RAG, embedding, fine-tune, token, context window, temperature, hallucination, open weights, multimodal. One sentence each. Bookmark this and stop translating.</p>
+
+  <hr class="rule">
+
+  <h2>The 12 words</h2>
+
+  <div class="word">
+    <div class="word-num">01</div>
+    <div class="word-name"><strong>Agent</strong></div>
+    <p>A chatbot that can take <em>actions</em> &mdash; click buttons, send emails, read your calendar, run code.</p>
+  </div>
+
+  <div class="word">
+    <div class="word-num">02</div>
+    <div class="word-name"><strong>Skill</strong></div>
+    <p>A reusable instruction set you trigger by name &mdash; a prompt + tools + steps, packaged and ready to run.</p>
+  </div>
+
+  <div class="word">
+    <div class="word-num">03</div>
+    <div class="word-name"><strong>MCP</strong> (Model Context Protocol)</div>
+    <p>A standard plug that lets AI tools connect to other apps. Like USB-C, but for AI. &ldquo;Claude connected to Google Drive via MCP&rdquo; means they speak the same plug language.</p>
+  </div>
+
+  <div class="word">
+    <div class="word-num">04</div>
+    <div class="word-name"><strong>RAG</strong> (Retrieval-Augmented Generation)</div>
+    <p>A technique where the AI looks something up in <em>your</em> documents before answering. Cuts hallucinations. Used when you want answers from your own data, not the AI&rsquo;s general training.</p>
+  </div>
+
+  <div class="word">
+    <div class="word-num">05</div>
+    <div class="word-name"><strong>Embedding</strong></div>
+    <p>The math version of a word or sentence. Two sentences with similar meaning have similar embeddings. Powers search inside AI tools. Just recognise the word &mdash; you don&rsquo;t need to think about it.</p>
+  </div>
+
+  <div class="word">
+    <div class="word-num">06</div>
+    <div class="word-name"><strong>Fine-tune</strong></div>
+    <p>Train a general model on your specific data so it behaves a certain way. Expensive and slow &mdash; and often replaced by good prompting + RAG.</p>
+  </div>
+
+  <div class="word">
+    <div class="word-num">07</div>
+    <div class="word-name"><strong>Token</strong></div>
+    <p>A chunk of text, roughly 4 characters or &frac34; of a word. AI charges by tokens. 1,000 tokens is about 750 words. Now you can read the pricing page.</p>
+  </div>
+
+  <div class="word">
+    <div class="word-num">08</div>
+    <div class="word-name"><strong>Context window</strong></div>
+    <p>How much text the AI can hold in its head at once. Claude&rsquo;s is around 1 million tokens. Once you go over, it starts forgetting the beginning of your conversation.</p>
+  </div>
+
+  <div class="word">
+    <div class="word-num">09</div>
+    <div class="word-name"><strong>Temperature</strong></div>
+    <p>A number from 0 to 1 controlling how &ldquo;creative&rdquo; the AI is. 0 = same answer every time. 1 = different answer every time. Default is usually around 0.7. You&rsquo;ll rarely change it.</p>
+  </div>
+
+  <div class="word">
+    <div class="word-num">10</div>
+    <div class="word-name"><strong>Hallucination</strong></div>
+    <p>When AI confidently invents wrong information. The single biggest reason to verify AI answers on legal, medical, or financial topics.</p>
+  </div>
+
+  <div class="word">
+    <div class="word-num">11</div>
+    <div class="word-name"><strong>Open weights / open source</strong></div>
+    <p>The model file is publicly downloadable &mdash; you can run it on your own hardware. Mistral, Llama, DeepSeek are open. ChatGPT, Claude, Gemini are not. Matters for privacy, cost, and customisation.</p>
+  </div>
+
+  <div class="word">
+    <div class="word-num">12</div>
+    <div class="word-name"><strong>Multimodal</strong></div>
+    <p>AI that handles text + images + audio + video together. Most major models are multimodal. Paste a screenshot; get a paragraph back.</p>
+  </div>
+
+  <hr class="rule">
+
+  <h2>How it sounds in practice</h2>
+
+  <p>A colleague says: <em>&ldquo;We&rsquo;re RAG-ing our customer service docs into a Claude agent with an MCP connection to Zendesk &mdash; fine-tune might come later if quality slips.&rdquo;</em></p>
+
+  <div class="card">
+    <p><strong>Translation:</strong></p>
+    <ul>
+      <li>Their docs are searched in real time so the AI quotes from them (<strong>RAG</strong>)</li>
+      <li>They&rsquo;re using Claude as the AI engine</li>
+      <li>It takes actions inside Zendesk (<strong>agent</strong> + <strong>MCP</strong>)</li>
+      <li>If answers get bad, they&rsquo;ll retrain Claude on their data (<strong>fine-tune</strong>)</li>
+    </ul>
+    <p style="margin-bottom:0">You now follow that sentence. You can ask: <em>&ldquo;What happens when it can&rsquo;t find the answer in your docs?&rdquo;</em> &mdash; and sound like you&rsquo;ve been in 30 of these conversations.</p>
+  </div>
+
+  <div class="pullquote">These 12 words cover roughly 90% of the AI jargon you&rsquo;ll hear in any business conversation. The other 10% you look up the moment you need it.</div>
+
+  <div class="cta-bar">
+    <h3>Ready to use the tools, not just the words?</h3>
+    <p>The 3-tool AI setup I actually run &mdash; the brain, the megaphone, and the net.</p>
+    <a href="../free-resources.html" class="btn">Browse all guides &rarr;</a>
+  </div>
+
+  <div class="guide-nav">
+    <a href="what-is-a-prompt.html">&larr; Prev: What is a prompt</a>
+    <a href="voice-clone-pipeline.html">Next: Voice clone pipeline &rarr;</a>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>Shift &amp; Lead &middot; Free guide &middot; &copy; 2026</p>
+</div>
+
+</body>
+</html>

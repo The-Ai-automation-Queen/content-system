@@ -1,13 +1,31 @@
 # Lead Magnets — the resources behind the comment-keyword CTAs
 
 These are the actual resources the DM responder (Machine M05) hands out when
-someone comments a keyword. Three are written and ready:
+someone comments a keyword. Eight are written and ready:
 
 | Keyword | Resource | Pillar | Source file |
 |---|---|---|---|
 | `STACK` | The 3-Tool AI Stack I Actually Use | What's Worth It | `stack-3-tool-ai-stack.md` |
 | `FOLLOW UP` | The Lead Follow-Up Setup | Stop Doing That by Hand | `follow-up-setup.md` |
 | `TEAM` | How to Set Up Your First AI Employee | The Freedom Business | `first-ai-employee.md` |
+| `WHAT` | What AI Actually Is — Plain English | What's Worth It | `what-is-ai.md` |
+| `DIFF` | ChatGPT vs AI — 6 Words That Always Get Mixed Up | What's Worth It | `chatgpt-vs-ai.md` |
+| `PROMPT` | What Is a Prompt — and How to Write One That Works | Time Wins | `what-is-a-prompt.md` |
+| `WORDS` | 12 AI Words Everyone Uses — Explained in Plain English | What's Worth It | `ai-jargon-guide.md` |
+| `PIPELINE` | Voice Clone Pipeline — Build Once, Post in Your Voice Forever | Build Once Runs Forever | `voice-clone-pipeline.md` |
+
+### The literacy chain
+
+The WHAT → DIFF → PROMPT → WORDS sequence is a deliberate funnel for
+non-technical newcomers. Each guide cross-links to the next, and WORDS
+exits to STACK — the bridge from vocabulary into the practical tool setup.
+PIPELINE exits to TEAM (the AI employee guide).
+
+```
+WHAT → DIFF → PROMPT → WORDS → STACK → FOLLOW UP
+                                           ↓
+                              PIPELINE → TEAM
+```
 
 The text is the deliverable. What's missing is a **public URL** for each — that's
 the only thing blocking the DM machine. You host them; the loop does the rest.
