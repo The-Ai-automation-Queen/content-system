@@ -2,6 +2,65 @@
 
 ---
 
+## RESEARCH 018 — 2026-06-23 | One-Person Business Runs Like a Team of Five · 95% Still Get Zero ROI (They Automate Chaos) · The $45 Stack · No-Code Agents Cross the Line · 51% of Leaders Don't Get AI
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-06-23.md](reports/research-digest-2026-06-23.md)
+**Topics searched:** best new AI automation tools solopreneurs small business June 2026; AI agents no-code automation trends creators entrepreneurs 2026; top AI automation creators influencers solopreneurs Instagram TikTok 2026; AI automation overwhelm hype vs reality small business why most fail 2026
+
+### Key Findings (summary)
+1. Agent market $7.84B (2025) → projected $52.62B (2030); the framing shifted from "copilots" to autonomous "teammates." A solo founder can now run a mini-team of digital workers (leads / follow-ups / content / monitoring).
+2. ~95% of custom AI pilots fail to move the P&L; 56% of CEOs report zero benefit. Cause: 80%+ add tools without redesigning workflow — "AI automates your chaos, not your efficiency."
+3. Minimal solopreneur AI stack pegged ~$45/mo — the "tool-rich, system-poor" problem, quantified.
+4. Plain-English / no-code automation crossed the line (Zapier AI, MindStudio); non-technical people ship agents in hours.
+5. Confidence gap: 51% of leaders admit they don't understand how AI works; 67% of non-adopters unsure; ~3 in 4 SME users still beginners. Huge underserved bridge audience.
+
+### Signals worth acting on
+- Narrow, documented, single-workflow automation wins; general-purpose agents fail for lack of context → teach one workflow at a time.
+- The beginner/confidence gap is real demand for approachable, practical, non-technical guidance — her exact lane.
+- Faceless/AI creators are flooding feeds → a real face + real story is now a differentiator.
+
+### Content angles (3 ready to use)
+1. "AI doesn't fix chaos. It scales it." (workflow-before-tools; anti-hype)
+2. "A one-person business can run like a team of five — meet the team." (digital workers; Freedom Business; series potential)
+3. "You're paying for 30 tools and using 3 — here's the stack that runs my week." (anti-sprawl; What's Worth It)
+
+**Contrarian take logged:** Everyone's selling "more agents, more tools." The failure data says tool count was never the bottleneck — pointing automation at undocumented chaos is. The ownable position: *fewer* moving parts, not more. Map one workflow, automate that, stop. "Add another AI tool" keeps people busy and broke; "fix the workflow first" buys back time — and it sits right on top of "you don't need to be technical, you need a system."
+
+**Status:** NOTED
+
+---
+
+## RESEARCH 017 — 2026-06-19 | Trump Blocks Anthropic Access · 1,115 Layoffs/Day · OpenAI $150M Partner Network · State AI Bill Wave · Colorado Repeals Its AI Act
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-06-19.md](reports/research-digest-2026-06-19.md)
+**Topics searched:** Trump Anthropic model export controls June 2026, tech layoffs per day AI attribution June 16 2026, OpenAI partner network $150M Accenture BCG McKinsey June 14 2026, state AI regulation chatbot bills Vermont Rhode Island Arizona June 2026, Senate TRUMP AMERICA AI Act Blackburn preemption hurdles June 17 2026, Colorado AI Act SB 189 repealed replaced June 30 deadline 2026, MIT 95 percent generative AI pilots fail enterprise 2026, AI workers sabotaging rollouts enterprise survey 2026
+
+### Key Findings (summary)
+
+1. **Trump Admin Blocks Foreign Access to Anthropic's Most Powerful AI (June 12)** — Commerce Department ordered Anthropic to cut off all foreign nationals (including employees) from Fable 5 and Mythos 5, immediately, after a jailbreak claim. Directive received 5:21 PM ET June 12; Anthropic pulled all access rather than filter by nationality. Chinese AI providers — already 2× US rivals on token volume on OpenRouter — widened the gap the same week, with DeepSeek V4 Pro running at ~60× lower cost than Anthropic.
+2. **Tech Layoffs Now Average 1,115 Jobs Per Day — Still No ROI** (June 16) — 185,894 workers cut in 267 events in 2026; Oracle's 30,000-person cut is largest; May was worst month since 2023. Gartner May 2026 study of 350 firms found zero statistical correlation between workforce cuts and improved financial returns.
+3. **OpenAI Launches $150M Global Partner Network: 300,000 Consultants by Year-End (June 14)** — Accenture, BCG, McKinsey, Bain, PwC as founding partners. OpenAI's own announcement: "The limiting factor is no longer model capabilities — it's workflow redesign and change management." Labs are vertically integrating into the consulting layer they disrupted.
+4. **State AI Regulation Wave: 78 Bills in 27 States, 3 Therapy Chatbot Bans This Week** (June 17–19) — Vermont signed therapy chatbot ban June 17; Rhode Island approved same; Arizona passed 3 AI bills. Senate's TRUMP AMERICA AI Act stalling on youth safety provision. Federal preemption deal not imminent; states are not waiting.
+5. **Colorado Repealed Its Landmark AI Act Before It Took Effect** (signed May 14, 2026) — SB 189 replaced the original Colorado AI Act before its June 30 enforcement date. Strips algorithmic discrimination protections, risk assessments, impact assessments. Pivots to transparency-only framework. Effective January 1, 2027. Sets precedent: business pressure can dismantle comprehensive state AI law before enforcement ever begins.
+
+### Signals worth acting on
+- AI model export controls are a new enterprise risk category with no existing framework — the Anthropic block shows that a government directive can terminate production AI access overnight with zero transition period; multi-model strategies and jurisdiction-aware procurement are now necessary conversations
+- The implementation consulting land grab: OpenAI ($150M network), Anthropic/Blackstone ($1.5B JV), Microsoft-EY ($1B) — all labs now racing to lock in enterprise implementation relationships before model differentiation narrows; advisory firms without lab partnerships will be disintermediated
+- Therapy chatbot regulation is an overlooked compliance category moving faster than EU/federal tracks — 78 state bills, 3 enacted in one week; any company with AI in employee wellness, mental health, or EAP context is inside this scope
+
+### Content angles (3 ready to use)
+1. "OpenAI just admitted the model isn't the problem. You are." (OpenAI partner network announcement quote + MIT 95% pilot failure + her understanding-first positioning as the alternative to the implementation services layer)
+2. "What a jailbreak looks like from inside an enterprise." (Anthropic block + 5:21 PM directive + no warning + what multinationals need to audit now + her data/security lane)
+3. "Colorado was first. Colorado just gave up." (SB 189 repeal before enforcement + state preemption battle + regulatory literacy as leadership responsibility, not compliance department problem)
+
+**Contrarian take logged:** Everyone is reading OpenAI's $150M partner network as validation that enterprise AI is maturing — crossing from pilot to production. What might be wrong: OpenAI's own announcement is a confession. They built the most capable AI model and are now spending $150M to rebuild the consulting industry because without it, the product stalls. The certified consultants being deployed are from the same firms that failed to deliver AI ROI in the last cycle — now with an OpenAI logo on their credential. The partner network isn't "AI working at scale." It's the tax labs pay for the gap between model capability and organizational readiness. The distinction between an OpenAI-certified consultant and an advisor who builds the client's own evaluation capacity is exactly what every board conversation is missing.
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 016 — 2026-06-12 | EU Code of Practice Live · Great American AI Act Draft · Anthropic FAA-Level Testing + $350M · GitLab Org Redesign for Agents · CMU/Accenture: 95% See No Returns
 
 **Status:** NOTED
