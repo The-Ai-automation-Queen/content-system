@@ -50,8 +50,12 @@ Next steps (see deploy/README.md for the full runbook):
   1. nano deploy/.env                      # paste keys (Telegram + machine APIs)
   2. claude login                          # ONLY if you left ANTHROPIC_API_KEY blank
   3. ./deploy/telegram-notify.sh "hello"   # confirm Telegram works
-  4. ./deploy/run-machine.sh "/vault-audit" 0 0   # smoke-test one machine
-  5. sed -i "s|__REPO__|$REPO|g" deploy/crontab.example && crontab deploy/crontab.example
+  4. ssh-copy-id $USER@<vps-ip>            # make sure your SSH key is installed, then:
+     ./deploy/harden-vps.sh                # PLAN the security hardening (read it)
+     sudo ./deploy/harden-vps.sh apply     # APPLY, then test SSH in a 2nd session (see SECURITY.md)
+  5. ./deploy/run-machine.sh "/vault-audit" 0 0   # smoke-test one machine
+  6. sed -i "s|__REPO__|$REPO|g" deploy/crontab.example && crontab deploy/crontab.example
 
-Dashboard:  http://<your-vps-ip>:4321   (systemctl status content-os-dashboard)
+Dashboard:  http://localhost:4321  via SSH tunnel  (ssh -L 4321:localhost:4321 $USER@<vps-ip>)
+            UFW keeps :4321 private — see deploy/SECURITY.md.
 EOF

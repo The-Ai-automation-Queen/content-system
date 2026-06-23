@@ -19,6 +19,7 @@ system. You have a **VPS** and **Telegram** — that's exactly what this kit nee
 | `telegram-notify.sh` | Sends a Telegram message (used by `run-machine.sh`) |
 | `crontab.example` | The schedule (mirrors `scheduler.config.json`) |
 | `content-os-dashboard.service` | systemd unit keeping Mission Control up 24/7 |
+| `harden-vps.sh` + `SECURITY.md` | VPS security hardening (SSH/UFW/fail2ban/auto-updates) — plan-first |
 
 ---
 
@@ -32,6 +33,9 @@ git checkout main                       # run the synced mirror, not a feature b
 bash deploy/install.sh                  # installs everything + starts the dashboard
 nano deploy/.env                        # paste keys (Telegram + the machine APIs you use)
 ./deploy/telegram-notify.sh "OS online" # you should get a Telegram ping
+ssh-copy-id $USER@<vps-ip>              # ensure your SSH key is installed, then harden:
+./deploy/harden-vps.sh                   # PLAN the hardening (changes nothing) — read it
+sudo ./deploy/harden-vps.sh apply        # APPLY, then TEST ssh in a 2nd session (SECURITY.md)
 sed -i "s|__REPO__|$PWD|g" deploy/crontab.example && crontab deploy/crontab.example
 crontab -l                              # confirm the 3 schedules are installed
 ```
@@ -90,6 +94,27 @@ failure (and on success). Edit times/timezone in `crontab.example` to taste.
 > and-Telegram layer that `scheduler.config.json` only describes. Flip
 > `scheduler.config.json`'s `alerts.telegram.wired` to `true` once 1a is done, so
 > the doc matches reality.
+
+### 1f. Harden the VPS (do this before treating the box as production)
+
+A server that runs your brand unattended must be locked down. `deploy/harden-vps.sh`
+does base hardening — SSH (root off, key-only, sane limits), **UFW** firewall,
+**fail2ban**, and **automatic security updates** — adapted from the affiseo.fr
+*"Audit Sécurité — VPS & Agents IA"* guide. It's **plan-first** so it can't
+surprise-lock you out:
+
+```bash
+ssh-copy-id $USER@<vps-ip>            # make sure your key is installed FIRST
+./deploy/harden-vps.sh                # PLAN — prints what it would do, changes nothing
+sudo ./deploy/harden-vps.sh apply     # APPLY — backs up every file it edits
+# then, in a SECOND terminal, confirm `ssh $USER@<vps-ip>` still works before logging out
+```
+
+A useful side effect: UFW closes everything except SSH, so the **dashboard
+(:4321) becomes private** — reach it through a tunnel:
+`ssh -L 4321:localhost:4321 $USER@<vps-ip>`. Full details, the manual extras
+(SSH port change, disabling unused users), and how to revert are in
+**`deploy/SECURITY.md`**.
 
 ---
 

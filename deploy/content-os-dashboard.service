@@ -11,7 +11,9 @@ User=__USER__
 WorkingDirectory=__REPO__/dashboard
 # `npm run dev` serves on :4321 and renders the markdown second-brain live,
 # including the write-back API the status buttons use. Fine for an internal,
-# single-operator cockpit. Put a reverse proxy + auth in front if you expose it.
+# single-operator cockpit. After harden-vps.sh, UFW keeps :4321 private — reach
+# it via SSH tunnel (ssh -L 4321:localhost:4321 user@vps) or Tailscale. See
+# deploy/SECURITY.md.
 ExecStart=/usr/bin/env npm run dev
 Restart=always
 RestartSec=5
