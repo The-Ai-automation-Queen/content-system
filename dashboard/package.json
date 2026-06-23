@@ -1,0 +1,15 @@
+{
+  "name": "content-system-dashboard",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mission Control — a local cockpit for the AI Automation Queen content Business OS. Reads the markdown second-brain (vault, reports, research) and renders pipeline status.",
+  "scripts": {
+    "dev": "astro dev --host --port 4321",
+    "build": "astro build",
+    "preview": "astro preview --host --port 4321"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}
