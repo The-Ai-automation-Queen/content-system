@@ -97,6 +97,38 @@ export function getVault(base) {
   return entries;
 }
 
+// 14-day editorial calendar (Romain-style): SCHEDULED + POSTED entries placed
+// on their vault date. Vault dates are DD/MM/YYYY (CLAUDE.md convention).
+export function getCalendar(entries, days = 14) {
+  const toKey = (d) => {
+    const m = (d || '').match(/(\d{2})\/(\d{2})\/(\d{4})/);
+    return m ? `${m[3]}-${m[2]}-${m[1]}` : '';
+  };
+  const byDate = {};
+  for (const e of entries) {
+    if (e.status !== 'SCHEDULED' && e.status !== 'POSTED') continue;
+    const key = toKey(e.date);
+    if (!key) continue;
+    (byDate[key] ||= []).push(e);
+  }
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const cells = [];
+  for (let i = 0; i < days; i++) {
+    const dt = new Date(today);
+    dt.setDate(today.getDate() + i);
+    const key = `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, '0')}-${String(dt.getDate()).padStart(2, '0')}`;
+    cells.push({
+      key,
+      dow: dt.toLocaleDateString('en-US', { weekday: 'short' }),
+      dom: dt.getDate(),
+      isToday: i === 0,
+      items: byDate[key] || [],
+    });
+  }
+  return cells;
+}
+
 export function getReports(base) {
   let files = [];
   try {
@@ -166,6 +198,7 @@ export function getDashboard(tenant) {
     flagged,
     pillars,
     reports: getReports(base),
+    calendar: getCalendar(entries),
     researchCount: getResearchCount(base),
     machines: getMachines(),
     leads,
