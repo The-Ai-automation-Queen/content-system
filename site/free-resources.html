@@ -193,11 +193,10 @@ img{max-width:100%;height:auto}
 </head>
 <body>
 
-<a class="ribbon" href="#">
-  Next free guide drops in
-  <span class="ribbon-count"><span>1d</span><span>04h</span><span>22m</span></span>
-  <strong>50 guides, 1 every 2 days</strong>
-</a>
+<div class="ribbon">
+  Get every new guide in your inbox
+  <strong>Subscribe free</strong>
+</div>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="#">Shift &amp; Lead</a>
@@ -772,10 +771,6 @@ img{max-width:100%;height:auto}
       row.style.display = 'none';
     }
   });
-  // Update the visible guide count in the ribbon
-  var visible = document.querySelectorAll('.row:not([style*="display: none"])').length;
-  var ribbon = document.querySelector('.ribbon strong');
-  if(ribbon) ribbon.textContent = visible + ' guides live, new ones every 2 days';
 })();
 </script>
 </body></html>
