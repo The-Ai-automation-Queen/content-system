@@ -9,7 +9,20 @@
 
 ## Build log
 
-### 2026-06-23 (latest) — Full engine: all 5 machines + HeyGen + multi-brand
+### 2026-06-23 (latest) — M06 performance tracker + dashboard intelligence
+Added the feedback loop so the system measures what it ships:
+- **`performance-tracker`** (M06) — scrapes all connected platforms (Meta Graph
+  API for IG/FB when tokens set, Apify fallback for everything) for follower
+  counts + post-level engagement. Writes `performance-log.md`, annotates POSTED
+  vault entries. Supports `competitors` mode and `linkedin-update` manual paste.
+- **Dashboard intelligence panels** — Performance (follower KPIs + top-5 posts),
+  Competitor Intel (creators + hooks + gaps from latest scan), Hook Scorecard
+  (pattern usage bar chart). All wired into Mission Control (`dashboard/`).
+- IG handle consolidated to `@thefatihachikh` across all files.
+- Scheduler updated: performance-tracker runs daily at 03:00 GST (1h after
+  signal-harvester). Architecture docs (CLAUDE.md, inventory.md) updated for M06.
+
+### 2026-06-23 — Full engine: all 5 machines + HeyGen + multi-brand
 Built the missing machines from the Romain architecture teardown
 (`reports/architecture-analysis-2026-06-23.md`) so the OS runs end-to-end:
 - **`heygen`** — talking-head of HER real cloned avatar + voice (HeyGen v2 API).
@@ -86,7 +99,8 @@ Run the loop on a fixed rhythm so the system stays alive. Targets:
 | Competitor / creator scan | `competitor-watch` | Weekly |
 | Pipeline health check | `vault-audit` | Weekly |
 | Draft generation | `content-engine` | Weekly (after the three above) |
-| Full loop | `weekly-ops` | Weekly (runs all four) |
+| Performance scrape | `performance-tracker` | Daily (03:00 GST, after signal-harvester) |
+| Full loop | `weekly-ops` | Weekly (runs all five) |
 
 **Publishing cadence target** (to confirm with the operator): short-form video
 blasted across Instagram, TikTok, LinkedIn, and YouTube Shorts — publish
@@ -116,9 +130,10 @@ To automate the rhythm, run the harness `/loop` skill on `weekly-ops`, or trigge
      upload the avatar → run `ai-avatar-broll` → queue, fully autonomously.
    - **Connect a TikTok account to Blotato** — the plan wants it; it's not wired.
 3. ~~Reconcile the Instagram identity~~ — resolved: `@thefatihachikh` everywhere.
-4. **POSTED tracking + metrics.** Once posts are released, record post date and a
-   light performance note (reposts/shares as the real metric, per
-   `inspiration-library` Pattern 15) so `vault-audit` reports what actually worked.
+4. ~~**POSTED tracking + metrics.**~~ — _mostly resolved:_ `performance-tracker`
+   (M06) scrapes all platforms for post-level engagement, writes
+   `performance-log.md`, and annotates POSTED vault entries. Remaining: set
+   `META_ACCESS_TOKEN` + `IG_BUSINESS_ID` + `FB_PAGE_ID` for richer IG/FB data.
 5. **Notion content calendar** — mirror the vault pipeline (Backlog → Ready →
    Scheduled → Posted) into a Notion board for a phone-friendly calendar view.
 6. **Research upgrade** — wire Tavily (deep research) + Apify (trend scraping) into

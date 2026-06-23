@@ -79,6 +79,12 @@ Romain's 5 machines:
 - **`dm-responder`** — *M05, the money engine.* Auto-replies to comment-keyword
   CTAs with the lead-magnet link and captures the lead (ManyChat for IG; Blotato/
   native APIs for FB+YT). Backed by `lead-magnets.csv`.
+- **`performance-tracker`** — *M06, the feedback loop.* Scrapes all connected
+  platforms (Meta Graph API for IG/FB when tokens set, Apify fallback for all)
+  for follower counts + post-level engagement, writes `performance-log.md`,
+  annotates POSTED vault entries, and feeds the dashboard intelligence panels.
+  Supports `competitors` mode (scrapes creators.csv handles) and `linkedin-update`
+  mode (manual paste for LinkedIn post analytics).
 - **`weekly-ops`** — the orchestrator. Runs the full machine loop (Step 7/8).
 - **`research-digest`** — last-30-days research sweep → `reports/` + a
   `research-notes.md` entry. (Lighter fallback for `signal-harvester`.)
@@ -98,12 +104,12 @@ Romain's 5 machines:
 ## Agentics (Step 8) & Maintenance (Step 7) — the loop
 
 The system stays alive through a recurring loop, not one-off prompts. As of
-2026-06-23 the loop runs the **full Romain-shape across all 5 machines** —
-signal → script → visual → queue → DM/lead:
+2026-06-23 the loop runs the **full Romain-shape across all 6 machines** —
+signal → script → visual → queue → DM/lead → measure:
 
 ```
-signal-harvester → competitor-watch → vault-audit → content-engine → visual-engine(+heygen) → reels-factory → distribution → dm-responder
-   (M01 data)        (what others do)   (what's stale)  (M01 scripts)     (M02 visuals/face)      (M03 shorts)    (M04 → queue)   (M05 → leads)
+signal-harvester → competitor-watch → vault-audit → content-engine → visual-engine(+heygen) → reels-factory → distribution → dm-responder → performance-tracker
+   (M01 data)        (what others do)   (what's stale)  (M01 scripts)     (M02 visuals/face)      (M03 shorts)    (M04 → queue)   (M05 → leads)   (M06 → measure)
 ```
 
 `skills/weekly-ops` runs this end to end and writes a dated set of reports to

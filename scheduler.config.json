@@ -19,6 +19,15 @@
       "alert_on_fail": "telegram"
     },
     {
+      "name": "daily-performance-tracker",
+      "skill": "/performance-tracker",
+      "cron": "0 3 * * *",
+      "timezone": "Asia/Dubai",
+      "retry": { "max": 1, "after_minutes": 120 },
+      "alert_on_fail": "telegram",
+      "_note": "Runs 1 hour after signal-harvester (02:00). Scrapes all platforms for follower counts + post engagement, writes performance-log.md."
+    },
+    {
       "name": "dm-poll",
       "skill": "/dm-responder",
       "cron": "*/5 * * * *",

@@ -96,6 +96,7 @@ Not offered: 1:1 advisory/consulting; time-consuming beginner training.
 | M03 reels | **Opus Clip** ⚙️ (Blotato fallback) | Long video → many shorts with hooks + CTAs | `reels-factory` |
 | M04 distribution | **Blotato** | Schedule to the multi-platform **queue**; writes status back | `distribution` |
 | M05 DM/leads | **ManyChat** ⚙️ (IG) + Blotato/native API (FB/YT) | Comment-keyword → DM resource → capture lead | `dm-responder` |
+| M06 performance | **Meta Graph API** + **Apify** scrapers | Scrape all platforms for followers + post engagement; feed dashboard | `performance-tracker` |
 
 **Connected but not yet wired in** (integration backlog):
 

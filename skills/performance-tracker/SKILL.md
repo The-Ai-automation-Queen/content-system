@@ -7,7 +7,13 @@ description: |
   with real engagement numbers. Runs daily on the cron. No API keys needed
   (Apify + Blotato are MCP-connected). Tracks: Instagram, YouTube, TikTok,
   LinkedIn (profile-level). Competitors optional via handles.
-argument-hint: "[nothing needed — runs against inventory.md handles; or 'competitors' to also scrape tracked creators]"
+
+  Preferred source hierarchy per platform:
+    Instagram/Facebook — Meta Graph API (when META_ACCESS_TOKEN is set) → Apify scraper fallback
+    YouTube — Apify scraper (free tier)
+    LinkedIn — Apify curious_coder/linkedin-profile-scraper ($0.004/scrape, max 1/day) + manual paste
+    TikTok — Apify clockworks/tiktok-scraper (when connected)
+argument-hint: "[nothing needed | 'competitors' to also scrape tracked creators | 'linkedin-update' for manual LinkedIn stats paste]"
 allowed-tools:
   - Read
   - Edit
@@ -17,17 +23,19 @@ allowed-tools:
   - mcp__APIFY_-_Trends_listener__call-actor
   - mcp__APIFY_-_Trends_listener__get-dataset-items
   - mcp__APIFY_-_Trends_listener__fetch-actor-details
+  - mcp__APIFY_-_Trends_listener__search-actors
   - mcp__Blotato__blotato_list_posts
   - mcp__Blotato__blotato_get_post_status
 ---
 
 # Performance Tracker — Machine M06
 
-You are the **measurement layer** for the content pipeline. You scrape real
-engagement data from social platforms via Apify and cross-reference it with the
-Blotato publishing queue, then write the numbers into `performance-log.md` so
-the system (and the operator) can see what is actually working. Read `CLAUDE.md`
-and `positioning/SKILL.md` first.
+You are the **measurement layer** for the content pipeline. You pull real
+engagement data from social platforms — preferring first-party APIs where
+available, falling back to Apify scrapers — and cross-reference it with the
+Blotato publishing queue. Results go into `performance-log.md` so the system
+(and the operator) can see what is actually working. Read `CLAUDE.md` and
+`positioning/SKILL.md` first.
 
 Every other skill produces — this one **measures**. Without it the loop is
 flying blind: content-engine drafts, distribution queues, but nobody knows
@@ -46,18 +54,46 @@ whether a piece got 40 views or 40,000. This skill closes that feedback loop.
 
 ---
 
+## Source hierarchy — preferred vs. fallback for every platform
+
+Each platform has a **preferred** data source (cheaper, richer, or first-party)
+and a **fallback** (Apify scraper). At run time, try the preferred source first;
+if it errors or is not configured, fall back silently and log which path was
+taken.
+
+| Platform | Preferred source | Fallback source | Cost note |
+|---|---|---|---|
+| **Instagram** | Meta Graph API (`/me/media`, `/me` insights) — requires `META_ACCESS_TOKEN` + `IG_BUSINESS_ID` in env | Apify `apify/instagram-profile-scraper` + `apify/instagram-post-scraper` | Graph API = free (rate-limited); Apify ~$0.01/run |
+| **Facebook** | Meta Graph API (`/{page-id}/published_posts`, `/{page-id}` insights) — requires `META_ACCESS_TOKEN` + `FB_PAGE_ID` in env | Apify `apify/facebook-posts-scraper` ($0.005/post) | Graph API = free; Apify = pay-per-post |
+| **YouTube** | Apify `streamers/youtube-channel-scraper` (channel) + `bernardo/youtube-scraper` (videos) | Apify `bernardo/youtube-scraper` keyword search | ~$0.005/run |
+| **LinkedIn** | Apify `curious_coder/linkedin-profile-scraper` ($0.004/scrape, **max 1/day**) | Manual paste via `linkedin-update` argument | Scraper is cheap but rate-limited; manual is free |
+| **TikTok** | Apify `clockworks/tiktok-scraper` | *(none — flag NOT CONNECTED)* | Only when operator wires a TikTok account |
+| **Twitter / X** | Apify `apidojo/twitter-user-scraper` | Apify `apify/twitter-scraper` | ~$0.01/run |
+| **Threads** | Apify `apify/threads-scraper` | *(none)* | ~$0.005/run |
+
+---
+
 ## Handles to track (canonical source: `inventory.md`)
 
-| Platform | Handle / ID | Apify actor |
+| Platform | Handle / ID | Env vars needed (preferred path) |
 |---|---|---|
-| Instagram | `thefatihachikh` | `apify/instagram-profile-scraper` (profile) + `apify/instagram-post-scraper` (posts) |
-| YouTube | `AI-Automation-Queen` | `streamers/youtube-channel-scraper` (channel) + `bernardo/youtube-scraper` (recent videos) |
-| Twitter / X | `aiautomatik` | `apidojo/twitter-user-scraper` (profile + tweets) |
-| Threads | `thefatihachikh` | `apify/threads-scraper` (profile + posts) |
-| TikTok | *(not yet connected)* | `clockworks/tiktok-scraper` — flag as unavailable until wired |
+| Instagram | `thefatihachikh` | `META_ACCESS_TOKEN`, `IG_BUSINESS_ID` |
+| Facebook | Page "AI Automation Queen" | `META_ACCESS_TOKEN`, `FB_PAGE_ID` |
+| YouTube | `AI-Automation-Queen` | *(none — Apify only)* |
+| LinkedIn | Fatiha Chikh | *(none — Apify + manual)* |
+| Twitter / X | `aiautomatik` | *(none — Apify only)* |
+| Threads | `thefatihachikh` | *(none — Apify only)* |
+| TikTok | *(not yet connected)* | *(connect to Blotato first)* |
 
 Always re-read `inventory.md` at run time for the live handle list. If a handle
 changes there, follow it — do not hardcode.
+
+> **Env-var placeholders for `inventory.md`** (the operator fills these once):
+> `META_ACCESS_TOKEN`, `IG_BUSINESS_ID`, `FB_PAGE_ID`. Until they are set,
+> the Meta Graph API path is skipped and the Apify fallback runs instead.
+> These tokens must **never** be committed to the repo — they live in the
+> shell environment or a `.env` file excluded by `.gitignore` (see
+> `security.md`).
 
 ---
 
@@ -66,41 +102,60 @@ changes there, follow it — do not hardcode.
 ### 0. Pre-flight
 
 1. Read `CLAUDE.md` (system orientation).
-2. Read `inventory.md` — extract the handles from the Channels table (§3).
-3. Read `performance-log.md` — find the most recent `## PERFORMANCE` entry to
+2. Read `inventory.md` — extract the handles from the Channels table (section 3).
+3. **Check environment** — test whether `META_ACCESS_TOKEN` is set (Bash:
+   `[ -n "$META_ACCESS_TOKEN" ] && echo "meta-ok"`). Record the result so you
+   know which source path to take for Instagram and Facebook.
+4. Read `performance-log.md` — find the most recent `## PERFORMANCE` entry to
    know the prior snapshot (needed for deltas). If the file does not exist,
-   create it with the header shown in §Output below.
-4. Read `content-vault.md` — collect every entry with status `POSTED` (or
+   create it with the header shown in the Output section below.
+5. Read `content-vault.md` — collect every entry with status `POSTED` (or
    `SCHEDULED` that may have gone live). You will match scraped post data back
    to vault entries in step 3.
 
-### 1. Scrape profile-level stats (followers / totals)
+### 1. Scrape profile-level stats + recent posts
 
-For each platform, call the corresponding Apify actor. Use
-`fetch-actor-details` the first time to confirm the input schema, then
-`call-actor` with `waitSecs: 45`.
+For each platform, try the **preferred** source first. If it fails or is not
+configured, fall back. Use `fetch-actor-details` the first time you call an
+Apify actor to confirm its input schema, then `call-actor` with
+`waitSecs: 45`. Read results via `get-dataset-items` with a `fields=`
+projection to keep token cost low.
 
-#### Instagram — profile
+---
+
+#### Instagram
+
+**Preferred — Meta Graph API** (when `META_ACCESS_TOKEN` + `IG_BUSINESS_ID` are set):
+
+```bash
+# Profile
+curl -s "https://graph.facebook.com/v21.0/${IG_BUSINESS_ID}?fields=followers_count,follows_count,media_count,biography,name&access_token=${META_ACCESS_TOKEN}"
+
+# Recent posts (last 12)
+curl -s "https://graph.facebook.com/v21.0/${IG_BUSINESS_ID}/media?fields=id,caption,timestamp,like_count,comments_count,media_type,permalink,insights.metric(impressions,reach,video_views)&limit=12&access_token=${META_ACCESS_TOKEN}"
+```
+
+Extract from profile: `followers_count`, `follows_count`, `media_count`.
+Extract per post: `permalink`, `timestamp`, `caption` (first 80 chars),
+`like_count`, `comments_count`, `impressions`, `reach`, `video_views`.
+
+**Fallback — Apify** (when Meta token is not set or API errors):
 
 ```
 Actor: apify/instagram-profile-scraper
 Input: { "usernames": ["thefatihachikh"] }
 ```
 
-From the result, extract:
-- `followersCount`, `followsCount`, `postsCount`, `biography`
+Extract: `followersCount`, `followsCount`, `postsCount`, `biography`.
 
-#### Instagram — recent posts
+For recent posts:
 
 ```
 Actor: apify/instagram-post-scraper
-Input: {
-  "username": "thefatihachikh",
-  "resultsLimit": 12
-}
+Input: { "username": "thefatihachikh", "resultsLimit": 12 }
 ```
 
-**If `apify/instagram-post-scraper` does not exist or errors**, fall back:
+If that actor does not exist, try:
 
 ```
 Actor: apify/instagram-scraper
@@ -111,11 +166,51 @@ Input: {
 }
 ```
 
-From each post extract:
-- `shortCode`, `url`, `timestamp`, `caption` (first 80 chars),
-  `likesCount`, `commentsCount`, `videoViewCount`, `videoPlayCount`
+Extract per post: `shortCode`, `url`, `timestamp`, `caption` (first 80 chars),
+`likesCount`, `commentsCount`, `videoViewCount`, `videoPlayCount`.
 
-#### YouTube — channel
+---
+
+#### Facebook
+
+**Preferred — Meta Graph API** (when `META_ACCESS_TOKEN` + `FB_PAGE_ID` are set):
+
+```bash
+# Page profile
+curl -s "https://graph.facebook.com/v21.0/${FB_PAGE_ID}?fields=followers_count,fan_count,name&access_token=${META_ACCESS_TOKEN}"
+
+# Recent posts (last 12)
+curl -s "https://graph.facebook.com/v21.0/${FB_PAGE_ID}/published_posts?fields=id,message,created_time,permalink_url,likes.summary(true),comments.summary(true),shares,insights.metric(post_impressions,post_video_views)&limit=12&access_token=${META_ACCESS_TOKEN}"
+```
+
+Extract from profile: `followers_count`, `fan_count` (page likes).
+Extract per post: `permalink_url`, `created_time`, `message` (first 80 chars),
+likes count (`likes.summary.total_count`), comments count
+(`comments.summary.total_count`), `shares.count`, `post_impressions`,
+`post_video_views`.
+
+**Fallback — Apify** (when Meta token is not set or API errors):
+
+```
+Actor: apify/facebook-posts-scraper
+Input: {
+  "startUrls": [{ "url": "https://www.facebook.com/AIAutomationQueen" }],
+  "resultsLimit": 12
+}
+```
+
+Cost: ~$0.005 per post returned.
+
+Extract per post: `url`, `time`, `text` (first 80 chars), `likes`,
+`comments`, `shares`, `reactions`, `viewsCount`.
+
+For profile-level follower count when the Graph API is unavailable and
+`facebook-posts-scraper` does not return it, log
+`(Facebook followers: unavailable — set META_ACCESS_TOKEN for this metric)`.
+
+---
+
+#### YouTube — channel + recent videos
 
 ```
 Actor: streamers/youtube-channel-scraper
@@ -125,12 +220,13 @@ Input: { "channelUrls": ["https://www.youtube.com/@AI-Automation-Queen"] }
 Extract: `subscriberCount`, `videoCount`, `viewCount` (lifetime).
 
 If that actor is unavailable, try:
+
 ```
 Actor: bernardo/youtube-scraper
 Input: { "searchKeywords": "AI-Automation-Queen", "maxResults": 1 }
 ```
 
-#### YouTube — recent videos
+**Recent videos:**
 
 ```
 Actor: bernardo/youtube-scraper
@@ -143,6 +239,50 @@ Input: {
 
 Extract per video: `title`, `url`, `viewCount`, `likes`, `date`.
 
+---
+
+#### LinkedIn
+
+LinkedIn has no public API for creator analytics. Two-tier approach:
+
+**Auto — Apify scraper** (max 1 scrape per day to stay within rate limits):
+
+```
+Actor: curious_coder/linkedin-profile-scraper
+Input: { "profileUrls": ["https://www.linkedin.com/in/fatihachikh/"] }
+```
+
+Cost: ~$0.004 per scrape. Returns public profile data only.
+
+Extract: `connectionsCount` (or `followersCount` if available), `headline`,
+`summary`, `postsCount` (if returned).
+
+> **Rate limit:** this actor is capped at 1 call/day for the same profile.
+> If the skill runs more than once per day, skip the LinkedIn scrape on
+> subsequent runs and reuse the last snapshot from `performance-log.md`.
+
+**Manual — `linkedin-update` argument:**
+
+When the operator passes `linkedin-update`, prompt them (via terminal input or
+a pasted block) to provide their LinkedIn analytics for the week. Expected
+format:
+
+```
+Followers: 12,345
+Post impressions (7d): 45,000
+Profile views (7d): 1,200
+Top post URL: https://www.linkedin.com/posts/...
+Top post impressions: 8,500
+Top post reactions: 234
+Top post comments: 47
+```
+
+Parse whatever they paste and merge it into the performance-log entry under the
+LinkedIn row + a `### LinkedIn analytics (manual)` subsection. This is the only
+way to get post-level LinkedIn data until a first-party API is available.
+
+---
+
 #### Twitter / X — profile + recent tweets
 
 ```
@@ -150,7 +290,8 @@ Actor: apidojo/twitter-user-scraper
 Input: { "handles": ["aiautomatik"], "tweetsDesired": 10 }
 ```
 
-If that actor is unavailable, try:
+If that actor is unavailable, fall back:
+
 ```
 Actor: apify/twitter-scraper
 Input: {
@@ -163,6 +304,8 @@ Extract profile: `followersCount`, `followingCount`.
 Extract per tweet: `text` (first 80 chars), `url`, `retweetCount`,
 `likeCount`, `replyCount`, `viewCount`.
 
+---
+
 #### Threads — profile + recent posts
 
 ```
@@ -172,6 +315,8 @@ Input: { "usernames": ["thefatihachikh"], "resultsLimit": 10 }
 
 Extract: `followersCount` (profile-level), and per post: `text` (first 80
 chars), `likesCount`, `repliesCount`.
+
+---
 
 #### TikTok (when connected)
 
@@ -186,6 +331,8 @@ Extract per video: `desc` (first 80 chars), `playCount`, `diggCount`
 
 **Until TikTok is wired**, log: `TikTok: NOT CONNECTED — skipped (see
 inventory.md gap)`.
+
+---
 
 ### 2. Check Blotato for published posts
 
@@ -217,7 +364,7 @@ note `(no vault match)`.
 If a prior `## PERFORMANCE` entry exists in `performance-log.md`:
 
 - For each profile metric (followers, total views, etc.), compute:
-  `delta = current − previous`, `delta_pct = (delta / previous) * 100`.
+  `delta = current - previous`, `delta_pct = (delta / previous) * 100`.
 - Format as `+N (+X.X%)` or `-N (-X.X%)`.
 
 If no prior entry exists, write `(first snapshot — no delta)`.
@@ -234,8 +381,8 @@ If the file does not exist, create it with this header:
 # Performance Log — Fatiha Chikh
 
 > Real engagement data scraped from social platforms. One entry per run,
-> newest at the top. Date format: `YYYY-MM-DD`. Data source: Apify MCP +
-> Blotato MCP. Do not edit manually — this file is machine-written.
+> newest at the top. Date format: `YYYY-MM-DD`. Data sources: Meta Graph API,
+> Apify MCP, Blotato MCP. Do not edit manually — this file is machine-written.
 
 ---
 ```
@@ -246,14 +393,17 @@ Then prepend the new entry (newest at top, below the header):
 ## PERFORMANCE YYYY-MM-DD
 
 **Run date:** YYYY-MM-DD HH:MM UTC
-**Sources scraped:** Instagram, YouTube, Twitter/X, Threads [, TikTok]
+**Sources scraped:** Instagram (Graph API|Apify), Facebook (Graph API|Apify), YouTube (Apify), LinkedIn (Apify|manual), Twitter/X (Apify), Threads (Apify) [, TikTok (Apify)]
+**Data path:** [list which platform used preferred vs. fallback]
 
 ### Profile snapshot
 
 | Platform | Handle | Followers | Delta | Posts/Videos | Other |
 |---|---|---|---|---|---|
 | Instagram | @thefatihachikh | 1,234 | +56 (+4.8%) | 89 posts | — |
+| Facebook | AI Automation Queen | 2,100 | +34 (+1.6%) | 45 posts | 1,800 page likes |
 | YouTube | @AI-Automation-Queen | 456 subs | +12 (+2.7%) | 23 videos | 12,345 lifetime views |
+| LinkedIn | Fatiha Chikh | 5,678 | +89 (+1.6%) | — | (auto-scraped) |
 | Twitter/X | @aiautomatik | 789 | +23 (+3.0%) | — | — |
 | Threads | @thefatihachikh | 321 | +8 (+2.6%) | — | — |
 | TikTok | — | NOT CONNECTED | — | — | — |
@@ -262,13 +412,22 @@ Then prepend the new entry (newest at top, below the header):
 
 | # | Platform | Caption (excerpt) | Likes | Comments | Views | Eng. rate | Vault match |
 |---|---|---|---|---|---|---|---|
-| 1 | IG Reel | "I run my business like…" | 847 | 63 | 12,400 | 7.4% | ENTRY 010 |
-| 2 | IG Reel | "Stop using AI like a…" | 612 | 41 | 9,200 | 7.1% | ENTRY 004 |
-| 3 | YT Short | "You're the bottleneck…" | 234 | 18 | 5,600 | 4.5% | ENTRY 008 |
-| … | | | | | | | |
+| 1 | IG Reel | "I run my business like..." | 847 | 63 | 12,400 | 7.4% | ENTRY 010 |
+| 2 | FB | "Stop doing robot work..." | 312 | 28 | 4,800 | 7.1% | ENTRY 001 |
+| 3 | YT Short | "You're the bottleneck..." | 234 | 18 | 5,600 | 4.5% | ENTRY 008 |
+| ... | | | | | | | |
 
-> **Engagement rate** = (likes + comments) / views × 100, or
-> (likes + comments) / followers × 100 when views are unavailable.
+> **Engagement rate** = (likes + comments) / views x 100, or
+> (likes + comments) / followers x 100 when views are unavailable.
+
+### LinkedIn analytics (manual)
+
+> Only present when operator provides data via `linkedin-update`.
+
+- Followers: 5,678
+- Post impressions (7d): 45,000
+- Profile views (7d): 1,200
+- Top post: [URL] — 8,500 impressions, 234 reactions, 47 comments
 
 ### Blotato queue status
 
@@ -278,8 +437,10 @@ Then prepend the new entry (newest at top, below the header):
 
 ### Week-over-week summary
 
-- Instagram followers: +56 (+4.8%) ← strongest growth
+- Instagram followers: +56 (+4.8%) <-- strongest growth
+- Facebook followers: +34 (+1.6%)
 - YouTube subscribers: +12 (+2.7%)
+- LinkedIn connections: +89 (+1.6%)
 - Top-performing piece: ENTRY 010 — 12,400 views, 7.4% eng. rate
 - Weakest platform: [platform] — [observation]
 - Content signal: [one sentence — e.g., "talking-head reels outperform carousels 3:1 on IG"]
@@ -302,7 +463,7 @@ For every vault entry that matched a scraped post, edit its block in
 If the entry was posted to multiple platforms, list each:
 
 ```markdown
-**Performance:** IG — 847 likes, 63 comments, 12,400 views | YT — 234 likes, 18 comments, 5,600 views (scraped YYYY-MM-DD)
+**Performance:** IG — 847 likes, 63 comments, 12,400 views | FB — 312 likes, 28 comments, 4,800 views | YT — 234 likes, 18 comments, 5,600 views (scraped YYYY-MM-DD)
 ```
 
 Rules:
@@ -327,19 +488,20 @@ they outperform carousels 3:1 on engagement rate").
 If the operator passes `competitors` as the argument:
 
 1. Read `inspiration-library/creators.csv`.
-2. For each row where `platform_primary` is Instagram or TikTok, scrape their
-   profile via the same Apify actors (profile-level only — not their individual
-   posts, to keep costs low).
+2. For each row where `platform_primary` is Instagram or TikTok **and** the
+   `handle` column is not `—`, scrape their profile via the same Apify actors
+   (profile-level only — not their individual posts, to keep costs low).
 3. Add a `### Competitor snapshot` section to the performance-log entry:
 
 ```markdown
 ### Competitor snapshot
 
-| # | Creator | Platform | Followers | Delta | Content focus |
-|---|---|---|---|---|---|
-| 1 | Sabrina Ramonov | IG @sabrina_ramonov | 518K | — | AI tools + productivity |
-| 2 | Riley Brown | TikTok @rileybrown.ai | 634.5K | — | AI tool demos |
-| … | | | | | |
+| # | Creator | Platform | Handle | Followers | Delta | Content focus |
+|---|---|---|---|---|---|---|
+| 1 | Sabrina Ramonov | IG | @sabrina_ramonov | 518K | — | AI tools + productivity |
+| 2 | Riley Brown | TikTok | @rileybrown.ai | 634.5K | — | AI tool demos |
+| 3 | Allie K. Miller | LinkedIn | @alliekmiller | 1.5M | — | AI for business |
+| ... | | | | | | |
 ```
 
 This is the bridge to `competitor-watch` — lightweight follower-level
@@ -347,12 +509,46 @@ comparison alongside our own numbers.
 
 ---
 
+## LinkedIn-update mode
+
+If the operator passes `linkedin-update` as the argument:
+
+1. Print a prompt asking the operator to paste their weekly LinkedIn analytics.
+   Provide the expected format:
+   ```
+   Followers: NNN
+   Post impressions (7d): NNN
+   Profile views (7d): NNN
+   Top post URL: https://...
+   Top post impressions: NNN
+   Top post reactions: NNN
+   Top post comments: NNN
+   ```
+2. Parse the pasted text (be lenient — accept variations in labels, commas in
+   numbers, missing fields).
+3. Write or update the `### LinkedIn analytics (manual)` subsection in the
+   current day's `## PERFORMANCE` entry in `performance-log.md`. If no entry
+   exists for today, create one (run the full scrape pipeline first, then
+   append the LinkedIn manual data).
+4. Compute deltas against the previous entry's LinkedIn manual data if available.
+
+This is the **only** way to get post-level LinkedIn data. The auto-scraper gives
+follower count only; everything else requires the operator's analytics export.
+
+---
+
 ## Failure modes
 
+- **Meta Graph API returns 401/403** → token expired or missing. Log
+  `(Instagram/Facebook: META_ACCESS_TOKEN invalid or missing — falling back to
+  Apify)` and proceed with the Apify fallback. Do not block the run.
 - **An Apify actor fails or is not found** → run `search-actors` with a keyword
   (e.g., "instagram profile scraper") to find the current best actor. If no
   actor works, log `(Instagram scrape FAILED: <error>)` in that row and
   continue. Do not block the entire run.
+- **LinkedIn scraper rate-limited** → if the skill already ran today, reuse the
+  last LinkedIn snapshot from `performance-log.md` and note `(LinkedIn: reused
+  prior snapshot — max 1 scrape/day)`.
 - **A scraper returns empty data** → write `(no data returned)` rather than
   fabricate numbers. Never invent metrics.
 - **Blotato returns no published posts** → note `(Blotato: 0 published posts —
@@ -368,7 +564,8 @@ comparison alongside our own numbers.
 
 Give the operator a tight summary:
 
-- Follower counts across platforms (one line)
+- Follower counts across all platforms (one line)
+- Which data path was used per platform (Graph API vs. Apify vs. manual)
 - The single best-performing post (entry number, platform, engagement rate)
 - The single weakest signal (platform or content type underperforming)
 - One content recommendation for the next content-engine run
@@ -381,7 +578,8 @@ Give the operator a tight summary:
 - Does not draft or edit content — that is `content-engine`.
 - Does not publish or schedule — that is `distribution`.
 - Does not invent metrics when a scraper fails.
-- Does not store API keys in the repo.
+- Does not store API keys or tokens in the repo (env vars only, see `security.md`).
 - Does not scrape private accounts or DMs.
 - Does not delete or renumber vault entries.
 - Does not overwrite past performance-log entries (append only, newest at top).
+- Does not scrape LinkedIn more than once per day (rate-limit guard).
