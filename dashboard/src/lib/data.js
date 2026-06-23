@@ -115,6 +115,7 @@ export function getVault(base) {
       hasVisual,
       visualUrl,
       body,
+      patterns: parsePatterns(block),
     });
   }
   return entries;
@@ -183,6 +184,157 @@ export function getLeadMagnets(base) {
   return { total: rows.length, active: rows.filter((r) => r.active).length, rows };
 }
 
+// Parse performance-log.md → { entries: [...], latest }
+export function getPerformanceLog(base) {
+  const raw = readSafe(base, 'performance-log.md');
+  if (!raw.trim()) return { entries: [], latest: null };
+
+  const re = /^## PERFORMANCE\s+(\d{4}-\d{2}-\d{2})/gm;
+  const headers = [];
+  let m;
+  while ((m = re.exec(raw)) !== null) {
+    headers.push({ index: m.index, date: m[1] });
+  }
+  if (headers.length === 0) return { entries: [], latest: null };
+
+  const entries = [];
+  for (let i = 0; i < headers.length; i++) {
+    const start = headers[i].index;
+    const end = i + 1 < headers.length ? headers[i + 1].index : raw.length;
+    const block = raw.slice(start, end);
+
+    // Parse profile stats: look for lines like "- **Instagram:** 1,234 followers, 56 posts"
+    const profiles = {};
+    const profRe = /[-*]\s*\*\*(\w[\w\s]*?)\*\*[:\s]+(.+)/g;
+    let pm;
+    while ((pm = profRe.exec(block)) !== null) {
+      const key = pm[1].trim().toLowerCase().replace(/\s+/g, '');
+      const line = pm[2];
+      const nums = {};
+      const follMatch = line.match(/([\d,]+)\s*follower/i);
+      const subMatch = line.match(/([\d,]+)\s*sub/i);
+      const postMatch = line.match(/([\d,]+)\s*post/i);
+      const viewMatch = line.match(/([\d,]+)\s*view/i);
+      if (follMatch) nums.followers = parseInt(follMatch[1].replace(/,/g, ''), 10);
+      if (subMatch) nums.subs = parseInt(subMatch[1].replace(/,/g, ''), 10);
+      if (postMatch) nums.posts = parseInt(postMatch[1].replace(/,/g, ''), 10);
+      if (viewMatch) nums.views = parseInt(viewMatch[1].replace(/,/g, ''), 10);
+      if (Object.keys(nums).length > 0) profiles[key] = nums;
+    }
+
+    // Parse top posts: lines under a "Top posts" heading
+    const topPosts = [];
+    const tpSection = block.match(/#+\s*Top\s+posts[\s\S]*?(?=\n#|\n## |$)/i);
+    if (tpSection) {
+      const tpRe = /[-\d.]+\s*[.)]\s*\*?\*?(.+?)(?:\*?\*?)?\s*(?:[-–—]|:)\s*(.+)/g;
+      let tp;
+      while ((tp = tpRe.exec(tpSection[0])) !== null) {
+        const title = tp[1].replace(/\*\*/g, '').trim();
+        const rest = tp[2];
+        const platM = rest.match(/\b(Instagram|IG|YouTube|YT|TikTok|LinkedIn|Facebook|FB|X|Twitter)\b/i);
+        const likesM = rest.match(/([\d,]+)\s*like/i);
+        const commM = rest.match(/([\d,]+)\s*comment/i);
+        const viewsM = rest.match(/([\d,]+)\s*view/i);
+        topPosts.push({
+          title,
+          platform: platM ? platM[1] : '',
+          likes: likesM ? parseInt(likesM[1].replace(/,/g, ''), 10) : 0,
+          comments: commM ? parseInt(commM[1].replace(/,/g, ''), 10) : 0,
+          views: viewsM ? parseInt(viewsM[1].replace(/,/g, ''), 10) : 0,
+        });
+      }
+    }
+
+    entries.push({ date: headers[i].date, profiles, topPosts });
+  }
+
+  // Most recent = first entry (file convention: newest at top).
+  // But sort by date descending to be safe.
+  entries.sort((a, b) => b.date.localeCompare(a.date));
+  return { entries, latest: entries[0] || null };
+}
+
+// Parse the most recent competitor-watch report → { date, creators, hooks, gaps }
+export function getCompetitorHighlights(base) {
+  let files = [];
+  try {
+    files = fs
+      .readdirSync(path.join(base, 'reports'))
+      .filter((f) => f.startsWith('competitor-watch-') && f.endsWith('.md'));
+  } catch {
+    /* none */
+  }
+  if (files.length === 0) return { date: '', creators: [], hooks: [], gaps: [] };
+
+  files.sort((a, b) => b.localeCompare(a)); // newest first by filename date
+  const raw = readSafe(base, path.join('reports', files[0]));
+  const dateM = files[0].match(/(\d{4}-\d{2}-\d{2})/);
+  const date = dateM ? dateM[1] : '';
+
+  // Creator breakdown: lines starting with "- **Name**" (may include handle)
+  const creators = [];
+  const crRe = /^- \*\*(.+?)\*\*\s*[-–—]\s*(.+)/gm;
+  let cr;
+  while ((cr = crRe.exec(raw)) !== null) {
+    creators.push({ name: cr[1].trim(), insight: cr[2].trim() });
+  }
+
+  // Top hooks: numbered list under "Top hooks" heading
+  const hooks = [];
+  const hookSection = raw.match(/#+\s*Top hooks[^\n]*\n([\s\S]*?)(?=\n## |\n$)/i);
+  if (hookSection) {
+    const hRe = /^\d+\.\s+\*?\*?(.+)/gm;
+    let h;
+    while ((h = hRe.exec(hookSection[1])) !== null) {
+      hooks.push(h[1].replace(/\*\*/g, '').trim());
+    }
+  }
+
+  // Gaps: numbered list under "Gaps" heading
+  const gaps = [];
+  const gapSection = raw.match(/#+\s*Gaps[^\n]*\n([\s\S]*?)(?=\n## |\n$)/i);
+  if (gapSection) {
+    const gRe = /^\d+\.\s+\*?\*?(.+)/gm;
+    let g;
+    while ((g = gRe.exec(gapSection[1])) !== null) {
+      gaps.push(g[1].replace(/\*\*/g, '').trim());
+    }
+  }
+
+  return { date, creators, hooks, gaps };
+}
+
+// Count hook pattern usage across vault entries → [{pattern, count}] sorted desc.
+export function getHookScorecard(entries) {
+  const counts = {};
+  for (const e of entries) {
+    // Patterns live in the body or in the raw vault; we stored the full block
+    // but body strips it. Re-extract from the vault text is expensive, so we
+    // rely on the entries' raw data. However getVault strips `Pattern used`.
+    // Instead, we'll re-read the vault once in getDashboard and pass the raw.
+    // For now, accept entries that carry a `patterns` array.
+    if (e.patterns) {
+      for (const p of e.patterns) {
+        counts[p] = (counts[p] || 0) + 1;
+      }
+    }
+  }
+  return Object.entries(counts)
+    .map(([pattern, count]) => ({ pattern, count }))
+    .sort((a, b) => b.count - a.count);
+}
+
+// Parse pattern names from a "**Pattern used:**" line.
+function parsePatterns(block) {
+  const m = block.match(/\*\*Pattern used:\*\*\s*(.+)/);
+  if (!m) return [];
+  // Pattern line looks like: "Result-First Demo (10) + Contrarian Operational Hook (14)"
+  return m[1]
+    .split('+')
+    .map((s) => s.replace(/\(\d+\)/g, '').trim())
+    .filter(Boolean);
+}
+
 // The 5 machines + their live-wiring status. Env presence flips ⚙️ → live.
 export function getMachines() {
   const has = (k) => !!process.env[k];
@@ -212,6 +364,9 @@ export function getDashboard(tenant) {
   const flagged = entries.filter((e) => e.flags.length > 0);
   const pillars = PILLARS.map((p) => ({ name: p.name, n: entries.filter((e) => e.pillar.includes(p.token)).length }));
   const leads = getLeadMagnets(base);
+  const performance = getPerformanceLog(base);
+  const competitor = getCompetitorHighlights(base);
+  const hookScorecard = getHookScorecard(entries);
 
   return {
     tenant: tenant && tenant !== 'root' ? tenant : 'Fatiha (root)',
@@ -225,6 +380,9 @@ export function getDashboard(tenant) {
     researchCount: getResearchCount(base),
     machines: getMachines(),
     leads,
+    performance,
+    competitor,
+    hookScorecard,
     kpis: {
       total: entries.length,
       ready: byStatus('READY TO POST').length,
