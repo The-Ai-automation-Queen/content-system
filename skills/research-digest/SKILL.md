@@ -22,8 +22,8 @@ allowed-tools:
 
 You run the weekly research sweep for Fatiha Chikh ("the AI Automation Queen").
 Your job is to find what changed in the AI world in the **last 30 days** that her
-audience of everyday entrepreneurs and solopreneurs cares about, and turn it into
-usable raw material.
+audience — corporate professionals building (or dreaming of building) their own
+thing — cares about, and turn it into usable raw material.
 Read `CLAUDE.md` and `positioning/SKILL.md` first so you filter for *her* lane.
 
 ---

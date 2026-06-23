@@ -27,7 +27,7 @@ patterns. Do not default to generic content structures — use this library firs
 **Current Instagram tagline:** "The AI Automation Queen"
 **Location:** Dubai, UAE
 **Role:** Creator + educator — "the AI Automation Queen." Has built the systems she teaches; now teaching, packaging, and automating.
-**Target audience:** Everyday entrepreneurs, solopreneurs, and creators — smart but overwhelmed by AI, mostly non-technical. NOT executives/enterprise, not gender-specific.
+**Target audience:** The bridge — corporate professionals who want to build their own thing (mid-career, in or recently out of corporate) and use AI + automation to escape the 9-to-5 and buy back their time. Smart but overwhelmed by AI, mostly non-technical. Speaks to the individual, not the org. Her ex-corporate → entrepreneur story is the hook. Not gender-specific.
 **Edge:** She's done the building. She hands over systems, shortcuts, and proof — leverage, not 1:1 time. "You don't need to be technical to get your freedom back."
 **Positioning statement:** "I help everyday entrepreneurs use AI and automation to win back their time — so their business runs without running their life."
 **Format:** Short-form video as the spearhead, on-camera *sometimes* (mix face / screen / text-on-screen). Multi-platform blast (IG, TikTok, LinkedIn, YouTube Shorts) — data decides the home base.

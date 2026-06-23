@@ -19,14 +19,19 @@ _Last reviewed: 2026-06-22 (rebuilt for the new positioning)_
 - **Core promise:** helps everyday entrepreneurs use AI and automation to **win back
   their time** — a business that runs without running their life.
 
-## 2. Audience
+## 2. Audience — the bridge
 
-- **Primary:** everyday **entrepreneurs, solopreneurs, and creators** building their
-  own thing — smart, capable, but **overwhelmed by AI** and mostly **non-technical**.
-- **Wants:** results, leverage, time back — not a technical education.
-- **Not:** executives/enterprise, not gender-specific.
-- **Growth stance:** reach through **leverage** (scalable content + products), not
-  by trading hours one client at a time.
+- **Primary:** **corporate professionals who want to build their own thing** —
+  mid-career people (in or recently out of corporate) who want to escape the
+  9-to-5 and use AI + automation to build a business that buys back their time.
+  Smart, but **overwhelmed by AI** and mostly **non-technical**.
+- **Why this audience:** it's the **bridge** — they live in her warm corporate
+  LinkedIn network *and* convert into her scalable creator offers. Her own
+  corporate → entrepreneur story (Dell/Intel/Microsoft → founder) is the hook.
+- **She speaks to the individual, not the org.** Not enterprise/advisory sales.
+- **Not** gender-specific.
+- **Growth stance:** reach through **leverage** (scalable content + products),
+  plus high-ticket corporate **speaking** on the side from the same authority.
 
 ## 3. Channels
 
@@ -36,7 +41,7 @@ Multi-platform by design — publish everywhere, let engagement data pick the wi
 |---|---|---|
 | Instagram (@fati_chic_) | Test + grow | Short-form video; provocative + practical |
 | TikTok | Test + grow | Short-form; payoff-first openings |
-| LinkedIn | Test + grow | Short-form + text; insight-first openings |
+| LinkedIn | **Warm-network anchor** | Where the bridge (corporate) audience lives; lead with insight + the corporate-exit angle |
 | YouTube Shorts | Test + grow | Repurposed short-form |
 | Keynote / stage | Authority anchor | Clips reused as credibility signals |
 | (Long-form: YouTube/Substack) | Optional later | Only if it earns its effort |
@@ -57,9 +62,10 @@ Every piece maps to one (see `positioning/SKILL.md`):
 
 ## 5. Offers / how it monetizes (active now)
 
-1. Paid **community / membership** (core)
+1. Paid **community / membership** (core, scalable)
 2. **Digital products / courses**
-3. **Speaking / keynotes**
+3. **Corporate speaking / workshops** — high-ticket, warm-network, near-term cash
+   (fed by the LinkedIn authority; productized one-to-many, not 1:1 time)
 4. A packaged **system / "OS"** to sell (roadmap)
 5. **Affiliate / sponsorships** (opportunistic)
 

@@ -72,11 +72,12 @@ Follow the Script Application Rules from `inspiration-library` in order:
    no title restatement.
 2. **Pick a named pattern** from the playbook that fits the topic. State which
    one you chose (internally, in the entry's production notes).
-3. **Anchor to the positioning** — everyday entrepreneurs, AI + automation to win
-   back their time, "you don't need to be technical," automation as freedom. Every
-   draft must serve exactly one of the six content pillars (Time Wins · Build Once,
-   Runs Forever · The Freedom Business · Stop Doing That by Hand · What's Worth It ·
-   Real Talk).
+3. **Anchor to the positioning** — the bridge audience (corporate professionals who
+   want to build their own thing / escape the 9-to-5), AI + automation to win back
+   their time, "you don't need to be technical," automation as freedom. The
+   corporate → entrepreneur transition is a recurring hook. Every draft must serve
+   exactly one of the six content pillars (Time Wins · Build Once, Runs Forever ·
+   The Freedom Business · Stop Doing That by Hand · What's Worth It · Real Talk).
 4. **Adapt to the platform** — LinkedIn opens with the business insight; Instagram
    Reels open with a visual/physical action; X/Substack long-form earns a
    different rhythm. One platform per draft.
