@@ -81,6 +81,28 @@ export function getVault(base) {
     const hasVisual = /\*\*Visual:\*\*/.test(block);
     const visualUrl = (block.match(/\*\*Visual:\*\*[\s\S]*?(https?:\/\/\S+)/) || [])[1] || '';
 
+    // Extract the body content for dashboard review.
+    // Strip the metadata header (everything up to and including the first ---)
+    // and spoken-script / caption sections are preserved for reading.
+    let body = '';
+    const bodyMatch = block.match(/^---\s*$([\s\S]*)/m);
+    if (bodyMatch) {
+      body = bodyMatch[1]
+        .replace(/^### (SPOKEN SCRIPT|CAPTION)\s*$/gm, '\n**$1**\n')
+        .replace(/\*\*Status:\*\*.+\n?/g, '')
+        .replace(/\*\*Platform:\*\*.+\n?/g, '')
+        .replace(/\*\*Format:\*\*.+\n?/g, '')
+        .replace(/\*\*Topic:\*\*.+\n?/g, '')
+        .replace(/\*\*Pattern used:\*\*.+\n?/g, '')
+        .replace(/\*\*Pillar:\*\*.+\n?/g, '')
+        .replace(/\*\*Critic score:\*\*.+\n?/g, '')
+        .replace(/\*\*Source:\*\*.+\n?/g, '')
+        .replace(/^---\s*$/gm, '')
+        .replace(/^\s*>\s+\*\*Production note.+$/gm, '')
+        .replace(/\n{3,}/g, '\n\n')
+        .trim();
+    }
+
     entries.push({
       num: headers[i].num,
       date,
@@ -92,6 +114,7 @@ export function getVault(base) {
       flags,
       hasVisual,
       visualUrl,
+      body,
     });
   }
   return entries;

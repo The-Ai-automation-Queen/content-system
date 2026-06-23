@@ -68,9 +68,10 @@ Romain's 5 machines:
 - **`visual-engine`** — *M02 visuals.* Carousels/infographics via Canva, decks via
   Gamma, and **film-free video + AI imagery** via Blotato (narrated AI-voice,
   AI images). On brand, post-ready. (Step 3/5.)
-- **`heygen`** — *M02 talking-head.* Renders a video of HER real cloned avatar +
-  voice from a script (HeyGen API), for entries that need her face. Pairs with
-  Blotato `ai-avatar-broll` (HeyGen speaks → Blotato adds B-roll).
+- **`heygen`** (talking-head) — *M02 talking-head.* Renders a video of HER real
+  cloned avatar + voice from a script. Primary engine: **Higgsfield** (paid, MCP).
+  Fallback: HeyGen (API). Pairs with Blotato `ai-avatar-broll` (talking-head
+  speaks → Blotato adds B-roll). Generic AI avatars are never presented as her.
 - **`reels-factory`** — *M03.* Long-video → many shorts (Opus Clip API, or Blotato
   fallback) with hooks + comment CTAs, landed as vault drafts.
 - **`distribution`** — *M04.* Pushes `READY TO POST` entries into the **Blotato

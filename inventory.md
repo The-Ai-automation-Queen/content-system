@@ -92,7 +92,7 @@ Not offered: 1:1 advisory/consulting; time-consuming beginner training.
 | M01 data | **Apify, Tavily, X, RSS** ⚙️ | Multi-source daily signal harvest (IG/X scrapes, YouTube virality, blogs, news) | `signal-harvester` |
 | M01 scripts | **Claude Code** | Signals → in-voice drafts, critic-scored | `content-engine` |
 | M02 visuals | **Canva, Gamma, Blotato** | Carousels/decks + AI images/infographics + film-free narrated video | `visual-engine` |
-| M02 face | **HeyGen** ⚙️ | Talking-head of HER cloned avatar + voice from a script | `heygen` |
+| M02 face | **Higgsfield** (paid, MCP) / HeyGen fallback | Talking-head of HER cloned avatar + voice from a script | `heygen` (talking-head) |
 | M03 reels | **Opus Clip** ⚙️ (Blotato fallback) | Long video → many shorts with hooks + CTAs | `reels-factory` |
 | M04 distribution | **Blotato** | Schedule to the multi-platform **queue**; writes status back | `distribution` |
 | M05 DM/leads | **ManyChat** ⚙️ (IG) + Blotato/native API (FB/YT) | Comment-keyword → DM resource → capture lead | `dm-responder` |
@@ -111,14 +111,16 @@ Not offered: 1:1 advisory/consulting; time-consuming beginner training.
 | Gap | What's needed | Unblocks |
 |---|---|---|
 | Blotato media egress | Allowlist `database.blotato.io` (+ `*.blotato.io`) in env network egress — currently **blocked** | Uploading the HeyGen MP4, `ai-avatar-broll` |
-| HeyGen | `HEYGEN_API_KEY` env + allowlist `api.heygen.com`, `resource.heygen.ai` + record avatar/voice IDs in this file | `heygen` (talking-head of her) |
+| Higgsfield MCP | Add Higgsfield MCP server to Claude Code env settings + record avatar/voice IDs in this file | `heygen` (talking-head of her — Higgsfield is primary) |
+| HeyGen (fallback) | `HEYGEN_API_KEY` env + allowlist `api.heygen.com`, `resource.heygen.ai` — only needed if Higgsfield unavailable | `heygen` (talking-head fallback) |
 | Opus Clip | `OPUS_CLIP_API_KEY` env + allowlist `api.opus.pro` | `reels-factory` |
 | ManyChat | `MANYCHAT_API_KEY` env + IG automations per `lead-magnets.csv` + a webhook host | `dm-responder` (IG leads) |
 | Signal sources | X/Grok API key; confirm Apify/Tavily MCP usable from `signal-harvester` | `signal-harvester` live |
 | Always-on host | A small VPS (or scheduled web sessions) for crons + the DM webhook | M05 + every-N-min crons |
 | TikTok | Connect a TikTok account to Blotato | TikTok publishing |
 
-**HeyGen IDs (fill after a clone session):** avatar_id = `____`, voice_id = `____`.
+**Higgsfield IDs (fill after a clone session):** avatar_id = `____`, voice_id = `____`.
+**HeyGen IDs (fallback — fill if using HeyGen):** avatar_id = `____`, voice_id = `____`.
 
 > **Note:** AI **image gen**, **infographics**, and **narrated AI-voice video**
 > are already wired inside **Blotato** (`blotato_create_visual`). HeyGen is added

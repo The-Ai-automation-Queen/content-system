@@ -1,14 +1,13 @@
 ---
-name: heygen
-version: 1.0.0
+name: talking-head
+version: 2.0.0
 description: |
-  HeyGen engine — turns an approved video script into a talking-head video of
-  HER REAL cloned avatar speaking with HER REAL voice clone. This is the
-  on-brand talking-head pipeline (the alternative to Blotato's generic AI
-  characters). Calls HeyGen v2 API: list avatars/voices, generate from text,
-  poll until done, return the MP4 URL. Records the asset on the vault entry.
-  Pairs with visual-engine + Blotato's ai-avatar-broll template (HeyGen makes
-  her speak; Blotato wraps with AI B-roll and queues). Does NOT publish.
+  Talking-head engine — turns an approved video script into a video of HER REAL
+  cloned avatar speaking with HER REAL voice clone. Primary engine: Higgsfield
+  (paid, MCP-wired). Fallback: HeyGen (API). Both clone her real face + voice.
+  Blotato's generic AI avatars are NEVER presented as her (brand-safety rule).
+  Pairs with visual-engine + Blotato's ai-avatar-broll template (talking-head
+  speaks → Blotato wraps with AI B-roll). Does NOT publish.
 argument-hint: "[ENTRY number — e.g. '008'; or 'list-avatars' / 'list-voices' to inspect what's connected]"
 allowed-tools:
   - Read
@@ -18,7 +17,7 @@ allowed-tools:
   - AskUserQuestion
 ---
 
-# HeyGen — talking-head engine
+# Talking-Head Engine (Higgsfield + HeyGen)
 
 You turn an approved spoken script into a **talking video of Fatiha's real
 cloned avatar speaking with her real cloned voice**. Read `CLAUDE.md`,
@@ -29,56 +28,81 @@ You produce assets. **You never publish.** (Distribution does that, into a queue
 
 ---
 
-## Why HeyGen, not Blotato, for talking-head
+## Engine priority
+
+| # | Engine | When to use | Status |
+|---|---|---|---|
+| 1 | **Higgsfield** (MCP) | Primary — paid, MCP-connected in Claude env | Connect MCP server, then use directly |
+| 2 | **HeyGen** (API) | Fallback — if Higgsfield is unavailable | Needs `HEYGEN_API_KEY` env var |
+| 3 | **Blotato `ai-story-video`** | Faceless narrated video (NO face) | Already wired — use for explainer reels |
+
+Try Higgsfield first. If the MCP tools aren't available in the session, fall
+back to HeyGen API. If neither is available, use Blotato faceless video and
+flag the entry as `NEEDS HER FACE` for later.
+
+---
+
+## The brand-safety rule
+
+**A generic AI face is never her.** Only Higgsfield or HeyGen (with her real
+clone) produce talking-head videos presented as Fatiha. Blotato's
+`ai-selfie-video` creates a "consistent AI character" — it is NOT her and must
+never be labeled as her.
 
 | Need | Tool | Why |
 |---|---|---|
-| **Talking video of HER face + voice** | **HeyGen** | The only tool here that clones her real avatar + voice. The on-brand way to ship talking-head without filming. |
-| Talking video of a generic AI character | Blotato (`ai-selfie-video`) | Cheap "consistent character" but it is NOT her — never present it as Fatiha. |
-| Narrated faceless video (script + AI images + AI voice) | Blotato (`ai-story-video`) | Faceless explainer reels. Use Alice voice for brand consistency. |
-| Talking-head + AI B-roll (the Romain stack) | **HeyGen → Blotato `ai-avatar-broll`** | HeyGen renders her talking; the MP4 URL is fed into Blotato's avatar-broll template which adds AI B-roll. Best of both. |
-
-This is the brand-safety rule: **a generic AI face is never her**. HeyGen is the
-only engine that has been licensed her face/voice; route every "her talking"
-piece through it.
+| **Talking video of HER face + voice** | **Higgsfield** or **HeyGen** | Real clone of her avatar + voice |
+| Talking video of a generic AI character | Blotato (`ai-selfie-video`) | NOT her — never present as Fatiha |
+| Narrated faceless video (script + AI images + AI voice) | Blotato (`ai-story-video`) | Faceless explainer reels. Alice voice for brand consistency. |
+| Talking-head + AI B-roll (the Romain stack) | **Higgsfield/HeyGen → Blotato `ai-avatar-broll`** | Talking-head renders her speaking; MP4 goes to Blotato's avatar-broll template for B-roll. Best of both. |
 
 ---
 
-## What this skill needs (operator setup — one-time)
+## Engine 1 — Higgsfield (MCP, primary)
 
-The HeyGen API is reached over HTTPS. Two operator actions before this skill
-runs:
+Higgsfield is connected as an MCP server in the Claude Code environment. The
+operator has a paid account.
 
-1. **API key.** In HeyGen dashboard → Settings → Subaccount API → create a
-   key. Set it in the environment as `HEYGEN_API_KEY`. Never commit it
-   (see `security.md` §1).
-2. **Network egress allowlist.** Add `api.heygen.com` (and `resource.heygen.ai`
-   for video download URLs) to the environment's network access settings, the
-   same way Blotato is being allowlisted. Without this, the curl calls fail
-   with "Host not in allowlist".
+### Setup (one-time)
+1. Add the Higgsfield MCP server to your Claude Code settings (`.claude/settings.json`
+   or the web environment's MCP configuration).
+2. Record the avatar ID and voice ID in `inventory.md` once the clone is created.
 
-After both: `bash -c 'curl -sS -H "X-Api-Key: $HEYGEN_API_KEY" https://api.heygen.com/v2/avatars | head -c 200'` should return a JSON list.
+### How to generate
+When the Higgsfield MCP tools are available in the session:
+
+1. **Read the vault entry.** Extract the spoken text — strip `(stage directions)`
+   and `[ON SCREEN: …]` cues. That stripped text is the input.
+2. **List avatars/voices** via the Higgsfield MCP tools to find her cloned
+   avatar + voice (match against the IDs in `inventory.md`).
+3. **Generate the video** — pass the script text, her avatar ID, her voice ID,
+   and 9:16 portrait dimensions.
+4. **Poll for completion** and grab the video URL.
+5. **Record on the entry** (see "Close the loop" below).
+
+If the Higgsfield MCP tools are not loaded in the current session, fall back
+to Engine 2 (HeyGen API).
 
 ---
 
-## How to generate a talking video (the happy path)
+## Engine 2 — HeyGen (API, fallback)
 
-For a given vault entry that has a `### SPOKEN SCRIPT` block:
+### Setup (one-time)
+1. **API key.** HeyGen dashboard → Settings → Subaccount API → create a key.
+   Set as `HEYGEN_API_KEY` in env. Never commit it.
+2. **Network egress.** Add `api.heygen.com` + `resource.heygen.ai` to
+   allowlist (only needed in Claude web sandbox; open on VPS).
 
-1. **Read the entry** in `content-vault.md`. Extract the spoken text only —
-   strip stage directions in `(parentheses)` and `[ON SCREEN: …]` cues. That
-   stripped text is the HeyGen `input_text`.
-2. **Pick the avatar.** List avatars once with
-   `curl -sS -H "X-Api-Key: $HEYGEN_API_KEY" https://api.heygen.com/v2/avatars`,
-   pick the one she has tagged as the brand default (look ID in
-   `inventory.md` once recorded). If multiple, rotate or ask once via
-   `AskUserQuestion`.
-3. **Pick the voice.** List voices with
-   `curl -sS -H "X-Api-Key: $HEYGEN_API_KEY" https://api.heygen.com/v2/voices`,
-   pick her cloned voice (the one named after her). Fall back to a brand-spec
-   voice from the inventory only if the clone is unavailable.
-4. **Generate.** POST to `https://api.heygen.com/v2/video/generate` with:
+### How to generate (HeyGen v2 API)
+
+1. **Read the vault entry.** Extract spoken text (same as above).
+2. **List avatars:**
+   `curl -sS -H "X-Api-Key: $HEYGEN_API_KEY" https://api.heygen.com/v2/avatars`
+3. **List voices:**
+   `curl -sS -H "X-Api-Key: $HEYGEN_API_KEY" https://api.heygen.com/v2/voices`
+4. **Generate:**
    ```
+   POST https://api.heygen.com/v2/video/generate
    {
      "video_inputs": [{
        "character":   {"type":"avatar","avatar_id":"<HER_AVATAR_ID>","avatar_style":"normal"},
@@ -89,48 +113,43 @@ For a given vault entry that has a `### SPOKEN SCRIPT` block:
      "test": false
    }
    ```
-   The response includes `data.video_id`.
-5. **Poll** `GET https://api.heygen.com/v1/video_status.get?video_id=<id>` every
-   ~15s until `status` is `completed`. On `failed`, log the error and stop —
-   do not retry blindly.
+5. **Poll** `GET https://api.heygen.com/v1/video_status.get?video_id=<id>`
+   every ~15s until `completed`. On `failed`, log and stop.
 6. **Grab `video_url`** from the completed response.
-
-For an entry that needs the **avatar + AI B-roll** finishing pass, hand the
-resulting `video_url` straight to `visual-engine`'s Blotato `ai-avatar-broll`
-template; do not duplicate work.
 
 ---
 
-## Record on the entry (close the loop)
+## Close the loop (both engines)
 
 Edit the vault entry to add a `**Visual:**` line:
 
 ```
-**Visual:** HeyGen talking-head — avatar <name/id>, voice <name/id>, 9:16, built DD/MM/YYYY.
-<MP4 URL>
+**Visual:** Talking-head (<engine>) — avatar <name/id>, voice <name/id>, 9:16, built DD/MM/YYYY.
+<video URL>
 ```
 
-If the entry was waiting on `NEEDS HER FACE`, clear that flag once the asset is
-recorded. Update the quick-reference line at the top of the vault file too.
+If the entry had a `NEEDS HER FACE` flag, clear it. Update the quick-reference
+line at the top of the vault file.
+
+For entries that need the **avatar + AI B-roll** finishing pass, hand the
+video URL to `visual-engine`'s Blotato `ai-avatar-broll` template.
 
 ---
 
 ## `list-avatars` / `list-voices` modes
 
-Fast inspection — print the connected avatars / voices in a small table so the
-operator can confirm which one is "the brand default" (and update the
-`inventory.md` HeyGen section with the chosen IDs). No vault changes.
+Fast inspection — print connected avatars / voices from whichever engine is
+available. Update `inventory.md` with the chosen IDs.
 
 ## After saving
 
-Report: which entry, which avatar + voice used, MP4 URL, whether it's now ready
-for `distribution` or still blocked (e.g. needs B-roll wrap via `visual-engine`).
+Report: which entry, which engine + avatar + voice used, video URL, whether
+it's ready for `distribution` or still needs B-roll wrap.
 
 ## What this skill does not do
 
 - Does not present a generic AI avatar as Fatiha (brand-safety rule).
-- Does not generate faceless / explainer video — that is Blotato `ai-story-video`
-  (see `visual-engine`).
+- Does not generate faceless / explainer video — that is Blotato `ai-story-video`.
 - Does not publish or schedule — `distribution` does that.
-- Does not commit the API key — environment variable only.
+- Does not commit API keys.
 - Does not rewrite approved script copy; it only narrates it.
