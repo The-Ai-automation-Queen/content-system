@@ -30,9 +30,9 @@ const platformChip = (p) => (p || '').split('(')[0].trim();
 const maxPillar = Math.max(1, ...d.pillars.map((p) => p.n));
 
 const CRONS = [
-  { machine: 'M01', name: 'Signal Harvester', schedule: 'Every day at 02:00', retry: 'Retry at 04:00 if failed', check: 'Verify at 02:30, alert if missing' },
-  { machine: 'M01', name: 'Content Engine', schedule: 'Weekly Monday 06:00', retry: 'Retry at 08:00 if failed', check: 'Part of weekly-ops loop' },
-  { machine: 'M05', name: 'DM Responder', schedule: 'Every 5 minutes', retry: 'Auto-restart', check: 'Continuous polling' },
+  { machine: 'M01', name: 'Signal Harvester', schedule: 'Every day 02:00', retry: 'Retry 04:00', check: 'Verify 02:30' },
+  { machine: 'M01', name: 'Content Engine', schedule: 'Weekly Mon 06:00', retry: 'Retry 08:00', check: 'Part of weekly-ops' },
+  { machine: 'M05', name: 'DM Responder', schedule: 'Every 5 min', retry: 'Auto-restart', check: 'Continuous' },
 ];
 
 const REPORT_META = {
@@ -42,6 +42,25 @@ const REPORT_META = {
   'distribution': { label: 'Distribution', icon: '📤' },
   'architecture-analysis': { label: 'Architecture analysis', icon: '🏗️' },
 };
+
+const COSTS = [
+  { tool: 'Claude Code', plan: 'Max ($200/mo)', type: 'Core', note: 'Powers the entire system' },
+  { tool: 'Blotato', plan: 'Pro ($29/mo)', type: 'Publishing', note: 'Multi-platform queue + AI visuals' },
+  { tool: 'Canva', plan: 'Pro ($13/mo)', type: 'Visual', note: 'Carousels, thumbnails' },
+  { tool: 'SupaData', plan: 'Starter ($9/mo)', type: 'Research', note: 'Video transcripts' },
+  { tool: 'HeyGen', plan: 'Creator ($29/mo)', type: 'Video', note: 'Talking-head avatar (optional)' },
+  { tool: 'Apify', plan: 'Free tier', type: 'Research', note: 'Social scraping' },
+  { tool: 'Tavily', plan: 'Free tier', type: 'Research', note: 'Web search' },
+  { tool: 'GoHighLevel', plan: 'Starter ($97/mo)', type: 'Leads', note: 'DM responder + CRM' },
+  { tool: 'VPS', plan: '~$10/mo', type: 'Hosting', note: 'Crons + webhook host' },
+];
+
+const totalCost = COSTS.reduce((s, c) => {
+  const m = (c.plan || '').match(/\$(\d+)/);
+  return s + (m ? parseInt(m[1]) : 0);
+}, 0);
+
+const dataPayload = JSON.stringify({ entries: d.entries, calendar: d.calendar, machines: d.machines });
 ---
 
 <html lang="en">
@@ -52,11 +71,11 @@ const REPORT_META = {
     <style>
       :root {
         --bg: #0c0f14; --sidebar: #111520; --panel: #161b25; --panel2: #1a2030;
-        --line: #232b3a; --ink: #e6edf3; --mut: #8b95a7; --gold: #d4a72c; --gold2: #f2c94c;
+        --line: #232b3a; --ink: #e6edf3; --mut: #9ca8bc; --gold: #d4a72c; --gold2: #f2c94c;
         --green: #3fb950; --blue: #58a6ff; --purple: #a371f7; --red: #f85149; --cyan: #39d2c0;
       }
       * { box-sizing: border-box; margin: 0; }
-      body { background: var(--bg); color: var(--ink); font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; height: 100vh; overflow: hidden; }
+      body { background: var(--bg); color: var(--ink); font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; height: 100vh; overflow: hidden; }
       a { color: var(--blue); text-decoration: none; }
 
       /* ── Sidebar ── */
@@ -78,14 +97,14 @@ const REPORT_META = {
       .page.active { display: block; }
       .page-head { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
       .page-head h2 { font-size: 20px; font-weight: 700; }
-      .page-head .breadcrumb { font-size: 12px; color: var(--mut); }
+      .page-head .breadcrumb { font-size: 13px; color: var(--mut); }
       .page-head .breadcrumb span { color: var(--ink); }
 
       /* ── Dashboard / Cockpit ── */
       .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 28px; }
       .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
       .kpi .n { font-size: 28px; font-weight: 700; line-height: 1; }
-      .kpi .l { color: var(--mut); font-size: 11.5px; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+      .kpi .l { color: var(--mut); font-size: 12px; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
       .kpi.gold .n { color: var(--gold2); } .kpi.green .n { color: var(--green); }
       .kpi.blue .n { color: var(--blue); } .kpi.purple .n { color: var(--purple); }
       .kpi.red .n { color: var(--red); }
@@ -101,28 +120,28 @@ const REPORT_META = {
       .m-card:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
       .m-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
       .m-dot { width: 10px; height: 10px; border-radius: 50%; }
-      .m-name { font-weight: 600; font-size: 14px; flex: 1; }
-      .m-id { font-size: 10px; color: var(--mut); font-family: monospace; }
-      .m-note { color: var(--mut); font-size: 12px; line-height: 1.5; margin-bottom: 12px; }
+      .m-name { font-weight: 600; font-size: 15px; flex: 1; }
+      .m-id { font-size: 11px; color: var(--mut); font-family: monospace; }
+      .m-note { color: var(--mut); font-size: 13px; line-height: 1.5; margin-bottom: 12px; }
       .m-foot { display: flex; justify-content: space-between; align-items: center; }
-      .m-foot code { color: var(--blue); background: #141c28; padding: 3px 8px; border-radius: 6px; font-size: 11px; }
-      .m-status { font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 10px; }
+      .m-foot code { color: var(--blue); background: #141c28; padding: 3px 8px; border-radius: 6px; font-size: 12px; }
+      .m-status { font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 11px; }
 
       /* ── Machine detail view ── */
       .machine-detail { display: none; }
       .machine-detail.active { display: block; }
       .md-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
-      .md-back { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; cursor: pointer; color: var(--mut); font-size: 12px; }
+      .md-back { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; cursor: pointer; color: var(--mut); font-size: 13px; }
       .md-back:hover { border-color: var(--gold); color: var(--ink); }
       .md-title { font-size: 18px; font-weight: 700; }
-      .md-subtitle { font-size: 12px; color: var(--mut); }
+      .md-subtitle { font-size: 13px; color: var(--mut); }
 
       .md-stats { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
       .md-stat { padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; border: 1px solid; }
 
       /* ── Tabs ── */
       .tabs { display: flex; gap: 4px; margin-bottom: 18px; background: var(--panel); border-radius: 10px; padding: 4px; border: 1px solid var(--line); width: fit-content; }
-      .tab { padding: 7px 16px; border-radius: 7px; cursor: pointer; font-size: 12.5px; font-weight: 600; color: var(--mut); background: none; border: none; transition: all 0.12s; }
+      .tab { padding: 7px 16px; border-radius: 7px; cursor: pointer; font-size: 13px; font-weight: 600; color: var(--mut); background: none; border: none; transition: all 0.12s; }
       .tab:hover { color: var(--ink); }
       .tab.active { background: var(--gold); color: #000; }
 
@@ -139,62 +158,84 @@ const REPORT_META = {
 
       /* ── Filter chips ── */
       .filters { display: flex; gap: 6px; margin-bottom: 18px; flex-wrap: wrap; }
-      .filter { padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid var(--line); background: var(--panel); color: var(--mut); transition: all 0.12s; }
+      .filter { padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer; border: 1px solid var(--line); background: var(--panel); color: var(--mut); transition: all 0.12s; }
       .filter:hover { border-color: var(--gold); color: var(--ink); }
       .filter.active { background: var(--gold); color: #000; border-color: var(--gold); }
       .filter .cnt { opacity: 0.7; margin-left: 4px; }
 
       /* ── Content cards (entry list) ── */
       .entry-list { display: flex; flex-direction: column; gap: 8px; }
-      .entry-card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 14px; transition: all 0.12s; }
+      .entry-card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: flex; align-items: flex-start; gap: 14px; transition: all 0.12s; }
       .entry-card:hover { border-color: #3a4560; }
-      .entry-num { font-size: 11px; color: var(--gold2); background: #221d10; border: 1px solid #4a3d18; padding: 3px 8px; border-radius: 6px; font-weight: 700; font-family: monospace; white-space: nowrap; }
+      .entry-num { font-size: 12px; color: var(--gold2); background: #221d10; border: 1px solid #4a3d18; padding: 3px 8px; border-radius: 6px; font-weight: 700; font-family: monospace; white-space: nowrap; margin-top: 2px; }
       .entry-body { flex: 1; min-width: 0; }
-      .entry-title { font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .entry-title { font-weight: 600; font-size: 15px; line-height: 1.4; }
       .entry-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; align-items: center; }
-      .chip { font-size: 11px; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+      .chip { font-size: 12px; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
       .chip.cat { background: #141c28; color: var(--blue); border: 1px solid #1e3050; }
       .chip.plat { background: #1a1428; color: var(--purple); border: 1px solid #33244a; }
       .chip.score { background: #11261a; color: var(--green); border: 1px solid #1d3a23; }
       .chip.flag { background: #2a1413; color: var(--red); border: 1px solid #4a1f1d; }
       .chip.vis { background: #1c1430; color: var(--purple); border: 1px solid #33244a; }
-      .entry-status { display: flex; gap: 4px; flex-shrink: 0; }
-      .sbtn { font: inherit; font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 8px; background: #1a2030; color: var(--mut); border: 1px solid var(--line); cursor: pointer; transition: all 0.12s; }
+      .entry-status { display: flex; gap: 4px; flex-shrink: 0; margin-top: 2px; }
+      .sbtn { font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 8px; background: #1a2030; color: var(--mut); border: 1px solid var(--line); cursor: pointer; transition: all 0.12s; }
       .sbtn:hover { border-color: var(--gold); color: var(--ink); }
       .sbtn.cur { background: var(--gold); color: #000; border-color: var(--gold2); }
       .sbtn:disabled { opacity: 0.4; cursor: wait; }
 
       /* ── Pillar bars ── */
       .pillar { margin-bottom: 12px; }
-      .pillar .row { display: flex; justify-content: space-between; font-size: 12.5px; margin-bottom: 4px; }
+      .pillar .row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px; }
       .bar { height: 6px; background: #1a2030; border-radius: 999px; overflow: hidden; }
       .bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold2)); border-radius: 999px; }
 
       /* ── Runs list ── */
       .runs { list-style: none; padding: 0; }
-      .runs li { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 13px; }
+      .runs li { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 14px; }
       .runs li:last-child { border-bottom: 0; }
       .runs .date { margin-left: auto; color: var(--mut); font-variant-numeric: tabular-nums; }
 
-      /* ── Crons table ── */
-      .cron-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-      .cron-table th { text-align: left; padding: 8px 12px; color: var(--mut); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--line); }
-      .cron-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); }
-      .cron-table tr:last-child td { border-bottom: 0; }
+      /* ── Tables ── */
+      .data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+      .data-table th { text-align: left; padding: 10px 12px; color: var(--mut); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--line); }
+      .data-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); }
+      .data-table tr:last-child td { border-bottom: 0; }
+      .data-table tr:hover td { background: var(--panel2); }
 
       /* ── Alerts ── */
-      .attn-item { display: flex; gap: 10px; align-items: center; background: var(--panel2); border: 1px solid var(--line); border-left: 3px solid var(--red); border-radius: 8px; padding: 10px 12px; font-size: 13px; margin-bottom: 8px; }
+      .attn-item { display: flex; gap: 10px; align-items: center; background: var(--panel2); border: 1px solid var(--line); border-left: 3px solid var(--red); border-radius: 8px; padding: 10px 12px; font-size: 14px; margin-bottom: 8px; }
       .attn-item .t { font-weight: 600; flex: 1; }
+
+      /* ── Skill card ── */
+      .skill-card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; margin-bottom: 8px; display: flex; align-items: center; gap: 14px; }
+      .skill-card:hover { border-color: #3a4560; }
+      .skill-name { font-weight: 700; font-size: 14px; color: var(--gold2); font-family: monospace; min-width: 180px; }
+      .skill-desc { color: var(--mut); font-size: 13px; flex: 1; line-height: 1.4; }
+
+      /* ── CLI block ── */
+      .cli-block { background: #0a0e14; border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; font-family: monospace; font-size: 14px; color: var(--green); margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; }
+      .cli-label { font-size: 13px; color: var(--mut); margin-bottom: 6px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+      /* ── Channel row ── */
+      .ch-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
 
       /* ── Toast ── */
       .toast { position: fixed; bottom: 24px; right: 24px; background: var(--green); color: #000; font-weight: 700; padding: 12px 20px; border-radius: 10px; font-size: 14px; z-index: 999; display: none; box-shadow: 0 4px 20px rgba(63,185,80,0.3); }
       .toast.show { display: block; animation: slideUp 0.3s ease; }
       @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-      .empty { color: var(--mut); font-size: 13px; font-style: italic; padding: 12px 0; }
+      .empty { color: var(--mut); font-size: 14px; font-style: italic; padding: 12px 0; }
       .links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
       .btn { background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; color: var(--ink); font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.12s; display: inline-flex; align-items: center; gap: 6px; }
       .btn:hover { border-color: var(--gold); text-decoration: none; }
+
+      /* ── Architecture diagram ── */
+      .arch-flow { display: flex; align-items: center; gap: 0; flex-wrap: wrap; margin: 20px 0; }
+      .arch-node { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; text-align: center; min-width: 130px; }
+      .arch-node .an-id { font-size: 11px; color: var(--gold2); font-weight: 700; font-family: monospace; }
+      .arch-node .an-name { font-size: 13px; font-weight: 600; margin-top: 2px; }
+      .arch-node .an-sub { font-size: 11px; color: var(--mut); margin-top: 2px; }
+      .arch-arrow { color: var(--gold); font-size: 20px; padding: 0 6px; }
     </style>
   </head>
   <body>
@@ -208,9 +249,15 @@ const REPORT_META = {
       <nav>
         <button class="nav-item active" data-page="dashboard"><span class="ico">📊</span> Dashboard</button>
         <button class="nav-item" data-page="brain"><span class="ico">🧠</span> Second Brain</button>
+        <button class="nav-item" data-page="inventory"><span class="ico">📦</span> Inventory</button>
+        <button class="nav-item" data-page="architecture"><span class="ico">🏗️</span> Architecture</button>
         <button class="nav-item" data-page="machines"><span class="ico">⚙️</span> Machines</button>
         <button class="nav-item" data-page="calendar"><span class="ico">📅</span> Calendar</button>
         <button class="nav-item" data-page="crons"><span class="ico">⏰</span> Crons</button>
+        <div class="nav-sep"></div>
+        <button class="nav-item" data-page="agents"><span class="ico">🤖</span> Agents</button>
+        <button class="nav-item" data-page="costs"><span class="ico">💰</span> Costs</button>
+        <button class="nav-item" data-page="cli"><span class="ico">💻</span> CLI</button>
         <div class="nav-sep"></div>
         <button class="nav-item" data-page="alerts"><span class="ico">🔔</span> Alerts</button>
         <button class="nav-item" data-page="settings"><span class="ico">⚡</span> Settings</button>
@@ -276,7 +323,7 @@ const REPORT_META = {
             </div>
             <div class="panel">
               <h3>Control Room</h3>
-              <div style="color:var(--mut); font-size:13px; margin-bottom:10px">
+              <div style="color:var(--mut); font-size:14px; margin-bottom:10px">
                 {d.researchCount} research entries · {d.leads.active}/{d.leads.total} lead magnets active
               </div>
               <div class="links">
@@ -334,6 +381,135 @@ const REPORT_META = {
         </div>
       </div>
 
+      <!-- ════ PAGE: Inventory ════ -->
+      <div class="page" id="p-inventory">
+        <div class="page-head">
+          <h2>Inventory</h2>
+          <span class="breadcrumb">Content OS / <span>Channels, offers &amp; tools</span></span>
+        </div>
+
+        <div class="panel">
+          <h3>Channels</h3>
+          <table class="data-table">
+            <thead><tr><th></th><th>Channel</th><th>Role</th><th>Handle</th><th>Notes</th></tr></thead>
+            <tbody>
+              {d.channels.map((ch) => (
+                <tr>
+                  <td><span class="ch-dot" style={`background:${ch.connected ? 'var(--green)' : 'var(--red)'}`}></span></td>
+                  <td><b>{ch.name}</b></td>
+                  <td>{ch.role}</td>
+                  <td style="font-size:13px;color:var(--mut)">{ch.handle}</td>
+                  <td style="font-size:13px;color:var(--mut)">{ch.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid2">
+          <div class="panel">
+            <h3>Offers</h3>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="color:var(--gold2)">1.</span> Paid community / membership <span class="chip" style="background:#221d10;color:var(--gold2);border:1px solid #4a3d18">Core</span></div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="color:var(--gold2)">2.</span> Digital products / courses</div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="color:var(--gold2)">3.</span> Corporate speaking / workshops <span class="chip" style="background:#221d10;color:var(--gold2);border:1px solid #4a3d18">High-ticket</span></div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="color:var(--gold2)">4.</span> Packaged OS to sell <span class="chip" style="background:#141c28;color:var(--blue);border:1px solid #1e3050">Roadmap</span></div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="color:var(--gold2)">5.</span> Affiliate / sponsorships <span class="chip" style="background:var(--panel);color:var(--mut);border:1px solid var(--line)">Opportunistic</span></div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Data Sources</h3>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+              <div>📄 <b>research-notes.md</b> — {d.researchCount} research entries</div>
+              <div>📁 <b>reports/</b> — {d.reports.length} reports</div>
+              <div>📋 <b>inspiration-library/creators.csv</b> — 21 tracked creators</div>
+              <div>🌐 Web research (Tavily / WebSearch) at runtime</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Live-wiring gaps</h3>
+          <table class="data-table">
+            <thead><tr><th>Gap</th><th>What's needed</th><th>Unblocks</th></tr></thead>
+            <tbody>
+              <tr><td>HeyGen</td><td>HEYGEN_API_KEY + avatar/voice IDs</td><td style="color:var(--blue)">heygen (talking-head)</td></tr>
+              <tr><td>TikTok</td><td>Connect account to Blotato</td><td style="color:var(--blue)">TikTok publishing</td></tr>
+              <tr><td>ManyChat</td><td>MANYCHAT_API_KEY + IG automations</td><td style="color:var(--blue)">dm-responder (IG leads)</td></tr>
+              <tr><td>Always-on host</td><td>VPS for crons + webhook</td><td style="color:var(--blue)">M05 + crons</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ════ PAGE: Architecture ════ -->
+      <div class="page" id="p-architecture">
+        <div class="page-head">
+          <h2>Architecture</h2>
+          <span class="breadcrumb">Content OS / <span>System map (Romain 8-step)</span></span>
+        </div>
+
+        <div class="panel">
+          <h3>The pipeline</h3>
+          <div class="arch-flow">
+            <div class="arch-node"><div class="an-id">M01</div><div class="an-name">Signal Harvester</div><div class="an-sub">data layer</div></div>
+            <span class="arch-arrow">→</span>
+            <div class="arch-node"><div class="an-id">M01</div><div class="an-name">Content Engine</div><div class="an-sub">scripts</div></div>
+            <span class="arch-arrow">→</span>
+            <div class="arch-node"><div class="an-id">M02</div><div class="an-name">Visual Engine</div><div class="an-sub">visuals</div></div>
+            <span class="arch-arrow">→</span>
+            <div class="arch-node"><div class="an-id">M02</div><div class="an-name">HeyGen</div><div class="an-sub">face</div></div>
+            <span class="arch-arrow">→</span>
+            <div class="arch-node"><div class="an-id">M03</div><div class="an-name">Reels Factory</div><div class="an-sub">shorts</div></div>
+            <span class="arch-arrow">→</span>
+            <div class="arch-node"><div class="an-id">M04</div><div class="an-name">Distribution</div><div class="an-sub">queue</div></div>
+            <span class="arch-arrow">→</span>
+            <div class="arch-node"><div class="an-id">M05</div><div class="an-name">DM Responder</div><div class="an-sub">leads</div></div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="panel">
+            <h3>Romain 8-step model</h3>
+            <table class="data-table">
+              <thead><tr><th>#</th><th>Step</th><th>Maps to</th></tr></thead>
+              <tbody>
+                <tr><td style="color:var(--gold2)">0</td><td>Inventory</td><td><code>inventory.md</code></td></tr>
+                <tr><td style="color:var(--gold2)">1</td><td>Second Brain</td><td><code>content-vault.md</code>, <code>research-notes.md</code></td></tr>
+                <tr><td style="color:var(--gold2)">2</td><td>Architecture</td><td><code>CLAUDE.md</code></td></tr>
+                <tr><td style="color:var(--gold2)">3</td><td>AI Engine</td><td><code>skills/</code>, <code>positioning/</code></td></tr>
+                <tr><td style="color:var(--gold2)">4</td><td>API &amp; Security</td><td><code>security.md</code></td></tr>
+                <tr><td style="color:var(--gold2)">5</td><td>Incremental Build</td><td><code>ROADMAP.md</code></td></tr>
+                <tr><td style="color:var(--gold2)">6</td><td>Hosting</td><td>Claude Code + GitHub</td></tr>
+                <tr><td style="color:var(--gold2)">7</td><td>Deployment</td><td><code>skills/weekly-ops/</code></td></tr>
+                <tr><td style="color:var(--gold2)">8</td><td>Agentics</td><td>The autonomous loop</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="panel">
+            <h3>Source of truth</h3>
+            <div style="display:flex;flex-direction:column;gap:12px;font-size:14px">
+              <div>
+                <div style="font-weight:600;margin-bottom:4px">Storage</div>
+                <div style="color:var(--mut)">Markdown files ARE the database. Git is the version history.</div>
+              </div>
+              <div>
+                <div style="font-weight:600;margin-bottom:4px">Runtime</div>
+                <div style="color:var(--mut)">Claude Code (CLI, desktop, or web). No server, no build step.</div>
+              </div>
+              <div>
+                <div style="font-weight:600;margin-bottom:4px">Sync</div>
+                <div style="color:var(--mut)">Local machine → GitHub mirror. Local files win on conflict.</div>
+              </div>
+              <div>
+                <div style="font-weight:600;margin-bottom:4px">Brand brain</div>
+                <div style="color:var(--mut)">positioning/ + inspiration-library/ loaded before every draft.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- ════ PAGE: Machines ════ -->
       <div class="page" id="p-machines">
         <div class="page-head">
@@ -341,19 +517,9 @@ const REPORT_META = {
           <span class="breadcrumb">Content OS / <span>{d.machines.length} machines</span></span>
         </div>
 
-        <!-- Machines grid (overview) -->
         <div class="m-grid" id="machines-grid">
           {d.machines.map((m) => {
             const s = MSTATUS[m.status] || MSTATUS.partial;
-            const entries = d.entries.filter(e => {
-              const p = (e.platform || '').toLowerCase();
-              const sk = m.skill.toLowerCase();
-              if (sk.includes('content-engine') || sk.includes('signal')) return true;
-              if (sk.includes('visual')) return e.hasVisual;
-              if (sk.includes('distribution')) return e.status === 'SCHEDULED' || e.status === 'POSTED';
-              if (sk.includes('reels')) return p.includes('reel') || p.includes('tiktok') || p.includes('short');
-              return false;
-            });
             return (
               <div class="m-card" data-machine={m.skill} data-machine-name={m.name} data-machine-id={m.id} data-machine-note={m.note} data-machine-status={m.status}>
                 <div class="m-head">
@@ -371,7 +537,6 @@ const REPORT_META = {
           })}
         </div>
 
-        <!-- Machine detail (hidden until click) -->
         <div class="machine-detail" id="machine-detail">
           <div class="md-header">
             <button class="md-back" id="md-back">← Back</button>
@@ -400,10 +565,10 @@ const REPORT_META = {
           <div id="md-tab-run" style="display:none">
             <div class="panel">
               <h3>Run this machine</h3>
-              <p style="color:var(--mut); font-size:13px; margin-bottom:14px">Copy the command below and paste it in your terminal to run this machine.</p>
-              <div style="background:#0a0e14; border:1px solid var(--line); border-radius:8px; padding:12px 16px; font-family:monospace; font-size:13px; color:var(--green); display:flex; align-items:center; justify-content:space-between;">
+              <p style="color:var(--mut); font-size:14px; margin-bottom:14px">Copy the command below and paste it in your terminal to run this machine.</p>
+              <div class="cli-block">
                 <span id="md-cmd"></span>
-                <button class="btn" style="margin-left:12px;padding:4px 12px;font-size:11px" onclick="navigator.clipboard.writeText(document.getElementById('md-cmd').textContent).then(()=>showToast('Copied!'))">Copy</button>
+                <button class="btn" style="margin-left:12px;padding:4px 12px;font-size:12px" onclick="navigator.clipboard.writeText(document.getElementById('md-cmd').textContent).then(()=>showToast('Copied!'))">Copy</button>
               </div>
             </div>
           </div>
@@ -417,7 +582,7 @@ const REPORT_META = {
           <span class="breadcrumb">Content OS / <span>Next 14 days</span></span>
         </div>
 
-        <div style="display:flex;gap:12px;margin-bottom:16px;font-size:12px;color:var(--mut)">
+        <div style="display:flex;gap:12px;margin-bottom:16px;font-size:13px;color:var(--mut)">
           <span><span style="display:inline-block;width:9px;height:9px;border-radius:3px;background:var(--gold2);margin-right:5px;vertical-align:middle"></span>Scheduled</span>
           <span><span style="display:inline-block;width:9px;height:9px;border-radius:3px;background:var(--purple);margin-right:5px;vertical-align:middle"></span>Posted</span>
         </div>
@@ -425,12 +590,12 @@ const REPORT_META = {
         <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px">
           {d.calendar.map((c) => (
             <div style={`background:var(--panel);border:1px solid ${c.isToday ? 'var(--gold)' : 'var(--line)'};border-radius:11px;padding:10px;min-height:90px;${c.isToday ? 'box-shadow:0 0 0 1px var(--gold) inset' : ''}`}>
-              <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--mut);margin-bottom:8px">
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--mut);margin-bottom:8px">
                 <span>{c.dow}</span>
                 <span style={`font-weight:700;font-size:14px;color:${c.isToday ? 'var(--gold2)' : 'var(--ink)'}`}>{c.dom}</span>
               </div>
               {c.items.map((e) => (
-                <div style={`font-size:10px;padding:3px 6px;border-radius:5px;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${e.status === 'POSTED' ? 'background:#1c1430;color:var(--purple);border:1px solid #33244a' : 'background:#221d10;color:var(--gold2);border:1px solid #4a3d18'}`}>
+                <div style={`font-size:12px;padding:4px 7px;border-radius:5px;margin-bottom:3px;line-height:1.3;${e.status === 'POSTED' ? 'background:#1c1430;color:var(--purple);border:1px solid #33244a' : 'background:#221d10;color:var(--gold2);border:1px solid #4a3d18'}`}>
                   #{e.num} {e.title}
                 </div>
               ))}
@@ -446,7 +611,7 @@ const REPORT_META = {
           <span class="breadcrumb">Content OS / <span>Scheduled automations</span></span>
         </div>
         <div class="panel">
-          <table class="cron-table">
+          <table class="data-table">
             <thead><tr><th>Machine</th><th>Schedule</th><th>Retry</th><th>Check</th></tr></thead>
             <tbody>
               {CRONS.map((c) => (
@@ -462,10 +627,123 @@ const REPORT_META = {
         </div>
         <div class="panel" style="margin-top:16px">
           <h3>How to install</h3>
-          <div style="background:#0a0e14;border:1px solid var(--line);border-radius:8px;padding:12px 16px;font-family:monospace;font-size:12px;color:var(--green);line-height:1.8">
-            sed -i "s|__REPO__|$PWD|g" deploy/crontab.example<br>
-            crontab deploy/crontab.example<br>
-            crontab -l
+          <div class="cli-block" style="line-height:1.8;flex-direction:column;align-items:flex-start">
+            <span>sed -i "s|__REPO__|$PWD|g" deploy/crontab.example</span>
+            <span>crontab deploy/crontab.example</span>
+            <span>crontab -l</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ PAGE: Agents ════ -->
+      <div class="page" id="p-agents">
+        <div class="page-head">
+          <h2>Agents</h2>
+          <span class="breadcrumb">Content OS / <span>{d.skills.length} skills</span></span>
+        </div>
+
+        <div style="color:var(--mut);font-size:14px;margin-bottom:18px">
+          Each skill is a reusable instruction set in <code style="color:var(--blue)">skills/&lt;name&gt;/SKILL.md</code>. Run them via Claude Code or the CLI tab in Machines.
+        </div>
+
+        {d.skills.map((sk) => (
+          <div class="skill-card">
+            <span class="skill-name">{sk.name}</span>
+            <span class="skill-desc">{sk.desc || 'No description'}</span>
+          </div>
+        ))}
+
+        <div class="panel" style="margin-top:20px">
+          <h3>Context skills (loaded before writing)</h3>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:14px">
+            <div><code style="color:var(--gold2)">positioning/SKILL.md</code> — Brand positioning, voice, audience, the win-back-your-time promise, 6 content pillars</div>
+            <div><code style="color:var(--gold2)">inspiration-library/SKILL.md</code> — 21 studied creators, 15 hook/format patterns, script application rules</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ PAGE: Costs ════ -->
+      <div class="page" id="p-costs">
+        <div class="page-head">
+          <h2>Costs</h2>
+          <span class="breadcrumb">Content OS / <span>Monthly tool spend</span></span>
+        </div>
+
+        <div class="kpis" style="margin-bottom:24px">
+          <div class="kpi gold"><div class="n">~${totalCost}</div><div class="l">Est. monthly</div></div>
+          <div class="kpi"><div class="n">{COSTS.length}</div><div class="l">Tools</div></div>
+          <div class="kpi green"><div class="n">{COSTS.filter(c=>c.plan.includes('Free')).length}</div><div class="l">Free tier</div></div>
+        </div>
+
+        <div class="panel">
+          <table class="data-table">
+            <thead><tr><th>Tool</th><th>Plan / Cost</th><th>Type</th><th>Note</th></tr></thead>
+            <tbody>
+              {COSTS.map((c) => (
+                <tr>
+                  <td><b>{c.tool}</b></td>
+                  <td style={`color:${c.plan.includes('Free') ? 'var(--green)' : 'var(--gold2)'}`}>{c.plan}</td>
+                  <td><span class="chip cat">{c.type}</span></td>
+                  <td style="color:var(--mut)">{c.note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ════ PAGE: CLI ════ -->
+      <div class="page" id="p-cli">
+        <div class="page-head">
+          <h2>CLI</h2>
+          <span class="breadcrumb">Content OS / <span>Quick commands</span></span>
+        </div>
+
+        <div class="panel">
+          <h3>Run a skill</h3>
+          {d.machines.map((m) => (
+            <div style="margin-bottom:12px">
+              <div class="cli-label"><b>{m.name}</b> <span style="color:var(--mut)">({m.id})</span></div>
+              <div class="cli-block">
+                <span>claude -p "Run /{m.skill}"</span>
+                <button class="btn copy-btn" style="padding:4px 12px;font-size:12px" data-copy={`claude -p "Run /${m.skill}"`}>Copy</button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="grid2" style="margin-top:16px">
+          <div class="panel">
+            <h3>Full loop (weekly-ops)</h3>
+            <div class="cli-block">
+              <span>claude -p "Run /weekly-ops"</span>
+              <button class="btn copy-btn" style="padding:4px 12px;font-size:12px" data-copy='claude -p "Run /weekly-ops"'>Copy</button>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Transcript (SupaData)</h3>
+            <div class="cli-block" style="font-size:13px">
+              <span>python skills/supadata-transcript/transcript.py "&lt;URL&gt;"</span>
+              <button class="btn copy-btn" style="padding:4px 12px;font-size:12px" data-copy='python skills/supadata-transcript/transcript.py "URL"'>Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:16px">
+          <h3>Dashboard</h3>
+          <div style="margin-bottom:12px">
+            <div class="cli-label">Start dev server</div>
+            <div class="cli-block">
+              <span>cd dashboard && npm run dev</span>
+              <button class="btn copy-btn" style="padding:4px 12px;font-size:12px" data-copy="cd dashboard && npm run dev">Copy</button>
+            </div>
+          </div>
+          <div>
+            <div class="cli-label">Sync to GitHub</div>
+            <div class="cli-block">
+              <span>git add -A && git commit -m "update" && git push</span>
+              <button class="btn copy-btn" style="padding:4px 12px;font-size:12px" data-copy='git add -A && git commit -m "update" && git push'>Copy</button>
+            </div>
           </div>
         </div>
       </div>
@@ -516,7 +794,7 @@ const REPORT_META = {
         <div class="grid2">
           <div class="panel">
             <h3>Tenant</h3>
-            <p style="color:var(--mut);font-size:13px;margin-bottom:10px">Current: <b style="color:var(--ink)">{d.tenant}</b></p>
+            <p style="color:var(--mut);font-size:14px;margin-bottom:10px">Current: <b style="color:var(--ink)">{d.tenant}</b></p>
             <div style="display:flex;gap:6px;flex-wrap:wrap">
               {d.tenants.map((t) => (
                 <a class={`btn ${(tenant === t || (tenant === 'root' && t === 'root')) ? 'cur' : ''}`}
@@ -530,17 +808,21 @@ const REPORT_META = {
           <div class="panel">
             <h3>API Keys Status</h3>
             <div style="display:flex;flex-direction:column;gap:8px">
-              <div style="display:flex;justify-content:space-between;font-size:13px">
+              <div style="display:flex;justify-content:space-between;font-size:14px">
                 <span>HEYGEN_API_KEY</span>
                 <span style={`color:${d.machines.find(m=>m.skill==='heygen')?.status === 'live' ? 'var(--green)' : 'var(--red)'}`}>
                   {d.machines.find(m=>m.skill==='heygen')?.status === 'live' ? 'Set' : 'Missing'}
                 </span>
               </div>
-              <div style="display:flex;justify-content:space-between;font-size:13px">
+              <div style="display:flex;justify-content:space-between;font-size:14px">
+                <span>SUPADATA_API_KEY</span>
+                <span style="color:var(--mut)">Check .env</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:14px">
                 <span>TELEGRAM_BOT_TOKEN</span>
                 <span style="color:var(--mut)">Check .env</span>
               </div>
-              <div style="display:flex;justify-content:space-between;font-size:13px">
+              <div style="display:flex;justify-content:space-between;font-size:14px">
                 <span>GHL_API_KEY</span>
                 <span style="color:var(--mut)">Optional</span>
               </div>
@@ -549,12 +831,12 @@ const REPORT_META = {
         </div>
         <div class="panel" style="margin-top:16px">
           <h3>Lead Magnets</h3>
-          <p style="color:var(--mut);font-size:13px">{d.leads.active}/{d.leads.total} active</p>
+          <p style="color:var(--mut);font-size:14px">{d.leads.active}/{d.leads.total} active</p>
           <div style="margin-top:10px;display:flex;flex-direction:column;gap:6px">
             {d.leads.rows.map((r) => (
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:6px 0;border-bottom:1px dashed var(--line)">
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px;padding:6px 0;border-bottom:1px dashed var(--line)">
                 <span><b>{r.keyword}</b> — {r.label}</span>
-                <span style={`color:${r.active ? 'var(--green)' : 'var(--red)'};font-size:11px;font-weight:700`}>{r.active ? 'ACTIVE' : 'INACTIVE'}</span>
+                <span style={`color:${r.active ? 'var(--green)' : 'var(--red)'};font-size:12px;font-weight:700`}>{r.active ? 'ACTIVE' : 'INACTIVE'}</span>
               </div>
             ))}
           </div>
@@ -565,7 +847,15 @@ const REPORT_META = {
 
     <div class="toast" id="toast"></div>
 
-    <script is:inline define:vars={{ entries: d.entries, calendar: d.calendar, machines: d.machines }}>
+    <!-- Data payload (safe JSON, avoids define:vars issues with special chars) -->
+    <script id="app-data" type="application/json" set:html={dataPayload}></script>
+
+    <script is:inline>
+      const APP = JSON.parse(document.getElementById('app-data').textContent);
+      const entries = APP.entries;
+      const calendar = APP.calendar;
+      const machines = APP.machines;
+
       function showToast(msg) {
         const t = document.getElementById('toast');
         t.textContent = msg;
@@ -613,6 +903,13 @@ const REPORT_META = {
         });
       });
 
+      // ── Copy buttons ──
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          navigator.clipboard.writeText(btn.dataset.copy).then(() => showToast('Copied!'));
+        });
+      });
+
       // ── Machine detail ──
       const STATUSES = [
         { key: 'DRAFT', short: 'Draft', color: '#8b949e' },
@@ -634,7 +931,7 @@ const REPORT_META = {
 
           document.getElementById('md-title').textContent = name;
           document.getElementById('md-subtitle').textContent = id + ' · ' + note;
-          document.getElementById('md-cmd').textContent = `claude -p "Run /${skill}"`;
+          document.getElementById('md-cmd').textContent = 'claude -p "Run /' + skill + '"';
 
           const mEntries = entries;
           const byStatus = {};
@@ -642,12 +939,12 @@ const REPORT_META = {
 
           const statsEl = document.getElementById('md-stats');
           statsEl.innerHTML = STATUSES.map(s =>
-            `<span class="md-stat" style="color:${s.color};border-color:${s.color}33;background:${s.color}11">${s.short} <b>${byStatus[s.key]}</b></span>`
+            '<span class="md-stat" style="color:' + s.color + ';border-color:' + s.color + '33;background:' + s.color + '11">' + s.short + ' <b>' + byStatus[s.key] + '</b></span>'
           ).join('');
 
           const filtersEl = document.getElementById('md-filters');
-          filtersEl.innerHTML = `<button class="filter active" data-mf="all">All <span class="cnt">${mEntries.length}</span></button>` +
-            STATUSES.map(s => `<button class="filter" data-mf="${s.key}">${s.short} <span class="cnt">${byStatus[s.key]}</span></button>`).join('');
+          filtersEl.innerHTML = '<button class="filter active" data-mf="all">All <span class="cnt">' + mEntries.length + '</span></button>' +
+            STATUSES.map(s => '<button class="filter" data-mf="' + s.key + '">' + s.short + ' <span class="cnt">' + byStatus[s.key] + '</span></button>').join('');
 
           renderMachineEntries(mEntries);
 
@@ -661,37 +958,43 @@ const REPORT_META = {
             });
           });
 
-          // Calendar strip
           const calStrip = document.getElementById('md-cal-strip');
           calStrip.innerHTML = calendar.map(c =>
-            `<div class="cal-day ${c.isToday ? 'today' : ''} ${c.items.length ? 'has-items' : ''}">
-              <div class="dow">${c.dow}</div>
-              <div class="dom">${c.dom}</div>
-              ${c.items.length ? '<div class="count-dot"></div>' : ''}
-            </div>`
+            '<div class="cal-day ' + (c.isToday ? 'today' : '') + ' ' + (c.items.length ? 'has-items' : '') + '">' +
+              '<div class="dow">' + c.dow + '</div>' +
+              '<div class="dom">' + c.dom + '</div>' +
+              (c.items.length ? '<div class="count-dot"></div>' : '') +
+            '</div>'
           ).join('');
         });
       });
 
+      function escapeHtml(s) {
+        return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      }
+
       function renderMachineEntries(list) {
         const el = document.getElementById('md-entries');
         if (list.length === 0) { el.innerHTML = '<div class="empty">No entries.</div>'; return; }
-        el.innerHTML = list.map(e => `
-          <div class="entry-card">
-            <span class="entry-num">#${e.num}</span>
-            <div class="entry-body">
-              <div class="entry-title">${e.title}</div>
-              <div class="entry-meta">
-                ${e.platform ? `<span class="chip plat">${e.platform.split('(')[0].trim()}</span>` : ''}
-                ${e.pillar ? `<span class="chip cat">${e.pillar.split('(')[0].trim()}</span>` : ''}
-                ${e.critic != null ? `<span class="chip score">${e.critic.toFixed(1)}</span>` : ''}
-              </div>
-            </div>
-            <div class="entry-status">
-              ${STATUSES.map(s => `<button class="sbtn ${e.status === s.key ? 'cur' : ''}" data-num="${e.num}" data-status="${s.key}">${s.short}</button>`).join('')}
-            </div>
-          </div>
-        `).join('');
+        el.innerHTML = list.map(e => {
+          const title = escapeHtml(e.title);
+          const plat = e.platform ? escapeHtml(e.platform.split('(')[0].trim()) : '';
+          const pillar = e.pillar ? escapeHtml(e.pillar.split('(')[0].trim()) : '';
+          return '<div class="entry-card">' +
+            '<span class="entry-num">#' + escapeHtml(e.num) + '</span>' +
+            '<div class="entry-body">' +
+              '<div class="entry-title">' + title + '</div>' +
+              '<div class="entry-meta">' +
+                (plat ? '<span class="chip plat">' + plat + '</span>' : '') +
+                (pillar ? '<span class="chip cat">' + pillar + '</span>' : '') +
+                (e.critic != null ? '<span class="chip score">' + e.critic.toFixed(1) + '</span>' : '') +
+              '</div>' +
+            '</div>' +
+            '<div class="entry-status">' +
+              STATUSES.map(s => '<button class="sbtn ' + (e.status === s.key ? 'cur' : '') + '" data-num="' + escapeHtml(e.num) + '" data-status="' + s.key + '">' + s.short + '</button>').join('') +
+            '</div>' +
+          '</div>';
+        }).join('');
         el.querySelectorAll('.sbtn').forEach(b => {
           b.addEventListener('click', async () => {
             if (b.classList.contains('cur')) return;
@@ -711,7 +1014,6 @@ const REPORT_META = {
         document.getElementById('machines-grid').style.display = 'grid';
       });
 
-      // Machine detail tabs
       document.querySelectorAll('#md-tabs .tab').forEach(tab => {
         tab.addEventListener('click', () => {
           document.querySelectorAll('#md-tabs .tab').forEach(t => t.classList.remove('active'));

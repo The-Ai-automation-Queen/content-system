@@ -160,6 +160,58 @@ export function getLeadMagnets(base) {
   return { total: rows.length, active: rows.filter((r) => r.active).length, rows };
 }
 
+export function getSkillsList() {
+  const skillsDir = path.join(REPO_ROOT, 'skills');
+  let dirs = [];
+  try {
+    dirs = fs.readdirSync(skillsDir, { withFileTypes: true })
+      .filter((d) => d.isDirectory() && !d.name.startsWith('_'))
+      .map((d) => d.name);
+  } catch { return []; }
+  return dirs.map((name) => {
+    let desc = '';
+    try {
+      const raw = fs.readFileSync(path.join(skillsDir, name, 'SKILL.md'), 'utf8');
+      const fm = raw.match(/description:\s*(.+)/);
+      if (fm) { desc = fm[1].trim(); }
+      else {
+        for (const line of raw.split('\n')) {
+          const t = line.trim();
+          if (t && !t.startsWith('#') && !t.startsWith('---') && !t.startsWith('name:')) {
+            desc = t.replace(/^>\s*/, '').slice(0, 120);
+            break;
+          }
+        }
+      }
+    } catch {}
+    return { name, desc };
+  });
+}
+
+export function getChannels() {
+  const raw = readSafe(REPO_ROOT, 'inventory.md');
+  const channels = [];
+  const lines = raw.split('\n');
+  let inTable = false;
+  for (const line of lines) {
+    if (line.startsWith('| Channel')) { inTable = true; continue; }
+    if (inTable && line.startsWith('|---')) continue;
+    if (inTable && line.startsWith('|')) {
+      const cols = line.split('|').map((c) => c.trim()).filter(Boolean);
+      if (cols.length >= 3) {
+        channels.push({
+          name: cols[0],
+          role: cols[1],
+          connected: cols[2].includes('✅'),
+          handle: cols[2].replace(/[✅❌]/g, '').trim(),
+          notes: cols[3] || '',
+        });
+      }
+    } else if (inTable) break;
+  }
+  return channels;
+}
+
 // The 5 machines + their live-wiring status. Env presence flips ⚙️ → live.
 export function getMachines() {
   const has = (k) => !!process.env[k];
@@ -201,6 +253,8 @@ export function getDashboard(tenant) {
     calendar: getCalendar(entries),
     researchCount: getResearchCount(base),
     machines: getMachines(),
+    skills: getSkillsList(),
+    channels: getChannels(),
     leads,
     kpis: {
       total: entries.length,
