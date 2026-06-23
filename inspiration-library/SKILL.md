@@ -1,6 +1,6 @@
 ---
 name: my-inspiration-library
-version: 1.2.0
+version: 1.3.0
 description: |
   Creator inspiration library for "the AI Automation Queen" — a creator/educator helping
   everyday entrepreneurs use AI + automation to win back their time. Encodes format analysis,
@@ -136,7 +136,7 @@ Examples: "Guaranteed you MUST learn these AI skills to get rich." / "Most creat
 
 **Identity intersection principle:** Generic AI = competing with everyone. Specific intersection = owned lane. She named her niche so precisely that her ideal client self-selects immediately.
 
-**Apply when:** Helping the user define or sharpen what makes her the ONLY option for a specific person. Also apply when her topics naturally touch governance, ethics, or underrepresented leaders — she can reference this angle authentically.
+**Apply when:** Helping the user define or sharpen what makes her the ONLY option for a specific person — the intersection of AI + automation × everyday entrepreneurs × winning back their time. That intersection is the moat; reinforce it, don't dilute it into generic "AI tips."
 
 ---
 
@@ -168,7 +168,7 @@ Leads with "I had zero formal tech background" before establishing what she buil
 4. Social proof embedded naturally (not bolted on at the end)
 5. Soft CTA to community or next step
 
-**Apply when:** Opening any script. Start with the CEO's fear in second person before pivoting to the solution. "You are already behind on AI governance" hits harder than "AI governance is important."
+**Apply when:** Opening any script. Name the entrepreneur's fear in second person before pivoting to the solution. "You're terrified that if you step away for a week, it all falls apart" hits harder than "automation is important."
 
 ---
 
@@ -384,7 +384,7 @@ Examples: "I saved 4 hours a week using this one AI workflow." / "Every professi
 - Content angle: AI as an operations tool, not a strategy concept
 - Strong personal brand tied to one specific audience (small biz ops) and one promise (simpler systems)
 
-**The operations angle:** She makes AI feel like a relief from chaos, not an addition to it. Every video answers: "This is the chaos you are in. Here is the system that fixes it." That framing is especially resonant for mid-market CEOs who are operationally stretched.
+**The operations angle:** She makes AI feel like a relief from chaos, not an addition to it. Every video answers: "This is the chaos you are in. Here is the system that fixes it." That framing is especially resonant for overwhelmed solopreneurs and corporate professionals drowning in manual work.
 
 **One-audience specificity:** ProcessDriven content is so specific to small business operations that there is almost no audience ambiguity. The specificity creates very high conversion from viewer to subscriber to buyer.
 
@@ -423,7 +423,7 @@ Examples: "I saved 4 hours a week using this one AI workflow." / "Every professi
 **The before/after contrast format:**
 "This used to take me 3 hours. Now it takes 8 minutes." Show both. The contrast is the content.
 
-**Apply when:** Writing comparison or transformation content. The before/after structure is highly transferable to AI capability building — "Here is what your team is doing manually. Here is what they could be doing with the right AI capability."
+**Apply when:** Writing comparison or transformation content. The before/after structure is highly transferable to automation — "Here's what you're still doing manually. Here's the same thing running on autopilot."
 
 ---
 
@@ -443,7 +443,7 @@ Examples: "I saved 4 hours a week using this one AI workflow." / "Every professi
 
 **Multi-channel syndication model:** He publishes the same core ideas across blog, podcast, YouTube, and LinkedIn — each adapted to the platform format. His blog is the source of record; everything else is a distribution channel.
 
-**Apply when:** Writing data-backed content. Lead with a specific, surprising statistic relevant to the CEO's world. The stat earns the explanation.
+**Apply when:** Writing data-backed content. Lead with a specific, surprising statistic relevant to the everyday entrepreneur's world (time lost, tools wasted, automation ROI). The stat earns the explanation.
 
 ---
 
@@ -460,9 +460,9 @@ Examples: "I saved 4 hours a week using this one AI workflow." / "Every professi
 - Community-building behaviour: she responds to comments, acknowledges her audience by name
 - Consistent voice that is recognisable across every post
 
-**The loyalty signal:** High average likes from a smaller audience means the audience is evangelists, not casual followers. They share, they return, they recommend. This is the audience quality that converts to high-ticket consulting.
+**The loyalty signal:** High average likes from a smaller audience means the audience is evangelists, not casual followers. They share, they return, they recommend. This is the audience quality that converts into a paid community and products.
 
-**Apply when:** The user asks about engagement strategy or wants to understand why some smaller accounts outperform larger ones. Clare's model is the proof that depth of resonance > breadth of reach for high-ticket consulting pipelines.
+**Apply when:** The user asks about engagement strategy or wants to understand why some smaller accounts outperform larger ones. Clare's model is the proof that depth of resonance > breadth of reach for building a loyal paid community and product audience.
 
 ---
 
@@ -602,7 +602,7 @@ The AI-water-consumption angle is almost entirely unoccupied in the creator spac
 **Audience sentiment:**
 Comments show alarm about environmental costs, resource waste, and governance failures. This is an activated, concerned audience — not passive learners. High comment engagement (748/post peak) signals the content provokes real conversation, not just consumption.
 
-**Apply when:** Writing content that challenges AI industry assumptions or holds a critical perspective. The Naqvi model shows that a watchdog voice — surfacing receipts rather than offering solutions — can generate massive engagement. Also apply her named-series mechanic for any recurring content format where the accumulation of episodes builds narrative momentum. Note: her audience is progressively-minded and environmentally concerned — distinct from this user's mid-market CEO audience. Use her format, not her angle.
+**Apply when:** Writing content that challenges AI industry assumptions or holds a critical perspective. The Naqvi model shows that a watchdog voice — surfacing receipts rather than offering solutions — can generate massive engagement. Also apply her named-series mechanic for any recurring content format where the accumulation of episodes builds narrative momentum. Note: her audience is progressively-minded and environmentally concerned — distinct from this user's audience of everyday entrepreneurs winning back their time. Use her format, not her angle.
 
 ---
 
@@ -614,23 +614,23 @@ These patterns appear across multiple creators. Apply them actively when writing
 First sentence of the video IS the take. No intro, no context-setting, no warm-up.
 **Format:** "[Uncomfortable truth about the audience's situation]."
 **Examples for this user's audience:**
-- "Your team is already using AI without you knowing."
-- "Most AI strategies fail at the people problem, not the technology."
-- "You do not need an AI consultant. You need AI capability."
-- "Every Fortune 500 is building internal AI teams. You are renting strategy."
+- "You're still copy-pasting the same DMs by hand, aren't you?"
+- "Your business stops the second you stop. That's not a business — it's a job."
+- "You don't need another AI tool. You need one system that runs without you."
+- "You're working nights to look 'available.' The smart ones automated that part."
 
 ### Pattern 2: Fear-First Hook (Brooke Wright + Allie K. Miller)
 Name the client's specific fear in second person before the reframe.
 **Format:** "You [fear state]. Here is what is actually happening / what to do instead."
 **Examples for this user's audience:**
-- "You hired an AI consultant. They are still here 18 months later."
-- "Your board is asking about your AI strategy. You do not have one yet."
-- "Your team is using ChatGPT for work. You have no idea what they are sharing."
+- "You keep buying courses and you're still doing everything manually."
+- "You want out of the 9-to-5, but the side hustle eats every evening you have."
+- "You're scared that if you step away for a week, the whole thing falls apart."
 
 ### Pattern 3: Teach Your System, Not the Tool (Sabrina Ramonov)
 Show the process for developing AI strategy, not just the output. The method IS the content.
 **Format:** "Here is how I [built / designed / solved] [specific thing] — step by step."
-**Apply:** Frame videos around your methodology, not just the topic. "Here is the framework I use with every CEO client in the first 90 days" > "here is why AI strategy matters."
+**Apply:** Frame videos around your methodology, not just the topic. "Here's the exact setup I use to turn one video into a week of content" > "here's why repurposing matters."
 
 ### Pattern 4: Named Numbered Series (Harper Carroll)
 Group topics into a named, numbered series. Creates completion urgency, forces follow, builds recurring distribution events.
@@ -671,9 +671,9 @@ Show the finished output in the first 10-15 seconds, then walk back through how 
 Open with a concrete, specific statistic before making any argument.
 **Format:** "[Specific %] of [audience] are [doing/not doing X]. Here is why that is a problem."
 **Examples for this user's audience:**
-- "74% of mid-market companies have an AI strategy. Fewer than 20% have internal capability to run it."
-- "The average AI consulting engagement lasts 14 months. Most clients still cannot operate without the consultant."
-**Apply:** When the script topic has supporting data, lead with the number. The stat earns the explanation.
+- "Around 95% of AI projects never make a business a penny. Here's what the few that work do differently."
+- "Most solopreneurs lose hours every week to work AI could do in seconds. Here's the first task to hand off."
+**Apply:** When the script topic has supporting data, lead with the number — and verify the stat is current before posting. The stat earns the explanation.
 
 ### Pattern 12: Named Framework as Content Asset (Paul Roetzer + Brooke Wright)
 Every methodology or approach gets a name. Named frameworks become searchable, citeable, and self-distributing.
@@ -684,10 +684,10 @@ Open with a direct statement that contradicts conventional wisdom, using operati
 **Format:** "[What most people believe] is wrong. Here is what actually works: [operational reframe]."
 **Internal test before publishing:** "Is that good enough to stop someone mid-scroll?"
 **Examples for this user's audience:**
-- "Most AI strategies fail at the people problem, not the technology."
-- "Your team does not need AI training. They need AI permission."
-- "Building internal AI capability is not an IT project. It is a leadership decision."
-**Operational language rule:** Replace aspirational words with operational ones. Not "transform your business with AI" — "here is the three-step sequence I use in the first 90 days with every CEO client."
+- "AI doesn't fix chaos. It scales it."
+- "You don't have a tool problem. You have a too-many-tools problem."
+- "Using AI saves you a minute. Building with it gives you your week back."
+**Operational language rule:** Replace aspirational words with operational ones. Not "transform your business with AI" — "here's the exact 10-minute setup that turns one idea into a week of content."
 
 ### Pattern 15: Fixed Content Pillars + Topic Authority (Chris Donnelly)
 Define six (or fewer) content pillars and never deviate. Every piece of content belongs to one pillar. Repetition of pillars trains both the algorithm and the audience to associate you with specific expertise.
@@ -697,7 +697,7 @@ Define six (or fewer) content pillars and never deviate. Every piece of content 
 ### Pattern 13: Before/After Contrast (Adam Digital + Angelica Automates)
 Show the old way, then show the AI way. The contrast IS the argument.
 **Format:** "This used to take [time/effort]. Now it takes [less time/effort]. Here is what changed."
-**Apply:** Use for any content that demonstrates AI capability building in practice — show the team's workflow before implementing AI capability, then after. The contrast makes the ROI concrete without needing a spreadsheet.
+**Apply:** Use for any content that shows an automation in practice — show your manual workflow before, then the automated version after. The contrast makes the time saved concrete without needing a spreadsheet.
 
 ---
 

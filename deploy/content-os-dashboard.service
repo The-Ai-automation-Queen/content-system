@@ -1,0 +1,22 @@
+# Mission Control dashboard as an always-on service.
+# install.sh substitutes __REPO__ and __USER__ and installs this to
+# /etc/systemd/system/. Manage with:  systemctl {status|restart} content-os-dashboard
+[Unit]
+Description=Content OS — Mission Control dashboard (Astro)
+After=network.target
+
+[Service]
+Type=simple
+User=__USER__
+WorkingDirectory=__REPO__/dashboard
+# `npm run dev` serves on :4321 and renders the markdown second-brain live,
+# including the write-back API the status buttons use. Fine for an internal,
+# single-operator cockpit. After harden-vps.sh, UFW keeps :4321 private — reach
+# it via SSH tunnel (ssh -L 4321:localhost:4321 user@vps) or Tailscale. See
+# deploy/SECURITY.md.
+ExecStart=/usr/bin/env npm run dev
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
