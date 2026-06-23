@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test B, Close-up portrait (4:5)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#F8F7F5;
+  --cream:#F4F0FA;
+  --ink:#1A1A1A;
+  --rule:#D8D6D2;
+  --muted:#5C5A57;
+  --accent:#6B35C2;
+  --accent-deep:#4A1F8F;
+  --accent-tint:#EEE5FA;
+  --electric:#2C4BE0;
+  --navy:#1B2EA0;
+  --chip-setup:#1A1A1A;
+  --chip-literacy:#E63955;
+  --chip-data:#2C4BE0;
+  --chip-track0:#6B35C2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+.ribbon{display:block;width:100%;background:var(--navy);color:var(--canvas);font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;padding:11px 32px;text-align:center;text-decoration:none}
+.ribbon strong{color:#7FA0FF;font-weight:700;margin-left:6px}
+.ribbon-count{display:inline-flex;gap:6px;margin-left:10px;font-variant-numeric:tabular-nums}
+.ribbon-count span{background:rgba(255,255,255,0.1);padding:2px 7px;border-radius:2px}
+
+.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700}
+.nav-links{display:flex;gap:28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+
+.hero{background:var(--canvas);padding:88px 32px 96px}
+.hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:72px;align-items:center}
+.hero-kicker{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent-deep);margin-bottom:24px}
+.hero h1{font-family:'Playfair Display',Georgia,serif;font-size:104px;line-height:0.96;font-weight:400;letter-spacing:-0.03em;margin-bottom:32px;font-style:italic;color:var(--electric)}
+.hero h1 .block{font-style:normal;display:block;color:var(--ink)}
+.hero-sub{font-size:22px;line-height:1.5;color:var(--muted);max-width:560px}
+.hero-portrait{aspect-ratio:4/5;position:relative;overflow:hidden;background:#1A1A1A}
+.hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+
+.pull{background:var(--canvas);color:var(--ink);padding:88px 32px;text-align:center;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);margin:0 32px}
+.pull-inner{max-width:880px;margin:0 auto}
+.pull-mark{font-family:'Playfair Display',Georgia,serif;font-size:96px;line-height:0.4;color:var(--accent);opacity:0.6;display:block;margin-bottom:8px}
+.pull-text{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:38px;line-height:1.28;font-weight:400;color:var(--ink)}
+.pull-text em{color:var(--electric);font-style:italic}
+.pull-attrib{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.22em;margin-top:32px;color:var(--muted)}
+
+.spotlight{background:var(--cream);padding:80px 32px}
+.spotlight-inner{max-width:1240px;margin:0 auto}
+.spotlight-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:36px;border-bottom:1px solid var(--rule);padding-bottom:18px}
+.spotlight-eyebrow{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent-deep)}
+.spotlight-title{font-family:'Playfair Display',Georgia,serif;font-size:42px;font-weight:400;letter-spacing:-0.01em}
+.spotlight-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:24px}
+.spot-feat{background:#fff;border:1px solid var(--rule);padding:40px;display:flex;flex-direction:column;justify-content:space-between;min-height:360px}
+.spot-feat .chip{align-self:flex-start;margin-bottom:18px}
+.spot-feat h3{font-family:'Playfair Display',Georgia,serif;font-size:42px;line-height:1.1;font-weight:400;margin-bottom:16px;letter-spacing:-0.01em}
+.spot-feat p{color:var(--muted);font-size:18px;line-height:1.5;margin-bottom:32px;max-width:540px}
+.spot-side{display:grid;grid-template-rows:1fr 1fr;gap:24px}
+.spot-mini{background:#fff;border:1px solid var(--rule);padding:24px;display:flex;flex-direction:column;justify-content:space-between}
+.spot-mini .chip{align-self:flex-start;margin-bottom:12px}
+.spot-mini h4{font-family:'Playfair Display',Georgia,serif;font-size:22px;line-height:1.25;font-weight:400;margin-bottom:8px}
+.spot-mini p{color:var(--muted);font-size:14px;line-height:1.5;margin-bottom:18px}
+
+.controls{max-width:1240px;margin:0 auto;padding:80px 32px 24px;display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.controls-head{width:100%;display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid var(--rule);padding-bottom:18px;margin-bottom:8px}
+.controls-eyebrow{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent-deep)}
+.controls-title{font-family:'Playfair Display',Georgia,serif;font-size:42px;font-weight:400;letter-spacing:-0.01em}
+.search{flex:1;min-width:280px;padding:14px 18px;border:1px solid var(--rule);background:#fff;font-family:'Inter',sans-serif;font-size:14px}
+.filter-group{display:flex;gap:8px;align-items:center}
+.filter-label{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--muted);margin-right:8px}
+.pill{padding:8px 14px;border:1px solid var(--rule);background:#fff;font-family:'Inter',sans-serif;font-size:13px;cursor:pointer}
+.pill.active{background:var(--ink);color:var(--canvas);border-color:var(--ink)}
+
+.library{max-width:1240px;margin:0 auto;padding:24px 32px 96px}
+.row{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;padding:36px 0;border-bottom:1px solid var(--rule)}
+.row:hover{background:rgba(107,53,194,0.04)}
+.row-meta{display:flex;gap:14px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff}
+.chip-setup{background:var(--chip-setup)}
+.chip-literacy{background:var(--chip-literacy)}
+.chip-data{background:var(--chip-data)}
+.chip-track0{background:var(--chip-track0)}
+.row-kicker{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted)}
+.row-date{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);margin-left:auto}
+.row-title{font-family:'Playfair Display',Georgia,serif;font-size:30px;line-height:1.2;font-weight:400;margin-bottom:10px;letter-spacing:-0.01em}
+.row-summary{font-size:17px;color:var(--muted);max-width:760px;line-height:1.55}
+.row-cta{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.18em;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px;white-space:nowrap}
+
+.cta-band{background:var(--navy);color:var(--canvas);padding:96px 32px}
+.cta-inner{max-width:1240px;margin:0 auto}
+.cta-head{text-align:center;margin-bottom:48px}
+.cta-eyebrow{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.22em;opacity:0.8;margin-bottom:14px}
+.cta-title{font-family:'Playfair Display',Georgia,serif;font-size:54px;font-weight:400;font-style:italic;letter-spacing:-0.02em}
+.cta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cta-card{background:var(--electric);border:1px solid rgba(255,255,255,0.18);padding:36px}
+.cta-card .kicker{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;opacity:0.7;margin-bottom:14px}
+.cta-card h3{font-family:'Playfair Display',Georgia,serif;font-size:28px;line-height:1.2;font-weight:400;margin-bottom:14px}
+.cta-card p{font-size:15px;opacity:0.85;margin-bottom:24px;line-height:1.55}
+.btn-cream{display:inline-block;padding:14px 24px;background:var(--canvas);color:var(--ink);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em}
+
+.footer{background:var(--ink);color:var(--canvas);padding:64px 32px 32px}
+.footer-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;align-items:start}
+.footer-brand{font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:700;margin-bottom:10px}
+.footer-tag{opacity:0.75;font-size:14px;max-width:380px}
+.footer-col-head{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;opacity:0.6;margin-bottom:12px}
+.footer-link{display:block;font-size:14px;padding:4px 0;color:var(--canvas);opacity:0.9}
+.footer-legal{max-width:1240px;margin:48px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,0.12);font-size:11px;opacity:0.5;font-family:'Space Mono',monospace;letter-spacing:0.18em;text-transform:uppercase;text-align:center}
+
+img{max-width:100%;height:auto}
+
+@media (max-width:900px){
+  .nav-inner{padding:16px 20px}
+  .nav-links{gap:16px;font-size:11px}
+  .hero{padding:56px 20px 64px}
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:48px}
+  .hero-sub{font-size:18px}
+  .hero-portrait{aspect-ratio:auto;max-width:360px;margin:0 auto;width:100%;background:transparent}
+  .hero-portrait img{height:auto;object-fit:contain}
+  .pull{padding:64px 20px;margin:0 20px}
+  .pull-text{font-size:28px}
+  .spotlight{padding:64px 20px}
+  .spotlight-grid{grid-template-columns:1fr}
+  .spotlight-title{font-size:34px}
+  .spot-feat{padding:28px;min-height:0}
+  .spot-feat h3{font-size:32px}
+  .controls{padding:64px 20px 24px;gap:16px}
+  .controls-title{font-size:34px}
+  .controls-head{flex-wrap:wrap;gap:12px}
+  .library{padding:24px 20px 72px}
+  .row{grid-template-columns:1fr;gap:14px;padding:28px 0}
+  .row-cta{justify-self:start}
+  .row-title{font-size:24px}
+  .row-date{margin-left:0}
+  .cta-band{padding:72px 20px}
+  .cta-title{font-size:38px}
+  .cta-grid{grid-template-columns:1fr}
+  .cta-card{padding:28px}
+  .footer{padding:48px 20px 24px}
+  .footer-inner{grid-template-columns:1fr;gap:32px}
+}
+
+@media (max-width:560px){
+  html,body{font-size:16px}
+  .ribbon{padding:10px 16px;font-size:11px;letter-spacing:0.12em}
+  .ribbon strong{display:block;margin-left:0;margin-top:4px}
+  .ribbon-count{margin-left:6px}
+  .nav-inner{padding:14px 16px;flex-wrap:wrap;gap:10px;justify-content:center}
+  .nav-logo{font-size:19px}
+  .nav-links{gap:12px;font-size:10px;flex-wrap:wrap;justify-content:center}
+  .hero{padding:40px 16px 48px}
+  .hero-inner{gap:32px}
+  .hero-kicker{font-size:11px;margin-bottom:18px}
+  .hero h1{font-size:34px;margin-bottom:20px;line-height:1.05}
+  .hero-sub{font-size:16px}
+  .hero-portrait{max-width:240px}
+  .pull{padding:48px 18px;margin:0 16px}
+  .pull-mark{font-size:72px}
+  .pull-text{font-size:22px;line-height:1.32}
+  .pull-attrib{font-size:10px;margin-top:24px}
+  .spotlight{padding:48px 16px}
+  .spotlight-head{flex-direction:column;align-items:flex-start;gap:12px}
+  .spotlight-title{font-size:28px}
+  .spot-feat{padding:22px}
+  .spot-feat h3{font-size:26px}
+  .spot-feat p{font-size:16px}
+  .spot-mini{padding:20px}
+  .controls{padding:48px 16px 16px}
+  .controls-title{font-size:28px}
+  .filter-group{flex-wrap:wrap}
+  .search{min-width:0;width:100%;font-size:15px}
+  .library{padding:16px 16px 56px}
+  .row{padding:24px 0}
+  .row-title{font-size:21px}
+  .row-summary{font-size:15px}
+  .cta-band{padding:56px 16px}
+  .cta-title{font-size:30px}
+  .cta-card h3{font-size:24px}
+  .cta-card{padding:24px}
+  .footer{padding:40px 16px 20px}
+  .footer-legal{font-size:10px;letter-spacing:0.14em}
+}
+</style>
+</head>
+<body>
+
+<a class="ribbon" href="#">
+  Next free guide drops in
+  <span class="ribbon-count"><span>1d</span><span>04h</span><span>22m</span></span>
+  <strong>50 guides, 1 every 2 days</strong>
+</a>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-logo" href="#">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="#">Home</a><a href="#">Free Resources</a><a href="#">Community</a><a href="#">About</a></div>
+</div></nav>
+
+<section class="hero"><div class="hero-inner">
+  <div>
+    <div class="hero-kicker">Free Library, Updated every 2 days</div>
+    <h1>Real AI<br>guides<br><span class="block">for real</span><span class="block">businesses.</span></h1>
+    <p class="hero-sub">Tested in actual companies before they ship. Step by step. Plain English. No vendor pitches, no hype, no fluff.</p>
+  </div>
+  <div class="hero-portrait"><img src="../portrait%20close%20up.jpg" alt="Fatiha Chikh"></div>
+</div></section>
+
+<section class="pull"><div class="pull-inner">
+  <span class="pull-mark">&ldquo;</span>
+  <p class="pull-text">The people who learn this now will look back at this moment as <em>the turning point.</em></p>
+  <div class="pull-attrib">Fatiha Chikh</div>
+</div></section>
+
+<section class="spotlight"><div class="spotlight-inner">
+  <div class="spotlight-head">
+    <div>
+      <div class="spotlight-eyebrow" id="spotlight-eyebrow">This week</div>
+      <div class="spotlight-title">Start here.</div>
+    </div>
+    <a class="row-cta" href="#library">All guides →</a>
+  </div>
+  <div class="spotlight-grid" id="spotlight-grid">
+    <!-- Spotlight slots populated by JS on page load. Fallback HTML below in case JS fails. -->
+    <div class="spot-feat" id="spotlight-featured">
+      <div>
+        <span class="chip chip-setup">DECIDE</span>
+        <h3>Agent vs workflow vs chatbot. Which one do you actually need?</h3>
+        <p>Your team says "AI agent". 8 times out of 10 they mean workflow. Here is the 3-question filter that tells you which one your project actually needs.</p>
+      </div>
+      <a class="row-cta" href="/opt-in.html?guide=agent-vs-workflow-chatbot&src=free-resources">Read →</a>
+    </div>
+    <div class="spot-side" id="spotlight-side">
+      <div class="spot-mini">
+        <div>
+          <span class="chip chip-literacy">FILTER</span>
+          <h4>Are you ready for AI? The 5-question filter.</h4>
+          <p>5 questions before you spend on tools.</p>
+        </div>
+        <a class="row-cta" href="/opt-in.html?guide=are-you-ai-ready&src=free-resources">Read →</a>
+      </div>
+      <div class="spot-mini">
+        <div>
+          <span class="chip chip-data">TRUST</span>
+          <h4>The trust ladder. When to verify AI output.</h4>
+          <p>4 levels. Each has a verification cost.</p>
+        </div>
+        <a class="row-cta" href="/opt-in.html?guide=trust-ladder&src=free-resources">Read →</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<script>
+// Spotlight rotation. Reads current.json (override) or spotlight.json (weekly rotation).
+// ISO week per ISO-8601. All DOM construction via textContent + createElement (no innerHTML).
+(async function() {
+  function getISOWeek(d) {
+    var date = new Date(d.getTime());
+    date.setHours(0, 0, 0, 0);
+    date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
+    var week1 = new Date(date.getFullYear(), 0, 4);
+    var weekNum = 1 + Math.round(((date - week1) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
+    return date.getFullYear() + '-W' + String(weekNum).padStart(2, '0');
+  }
+
+  function clearNode(node) {
+    while (node.firstChild) node.removeChild(node.firstChild);
+  }
+
+  function makeEl(tag, className, text) {
+    var el = document.createElement(tag);
+    if (className) el.className = className;
+    if (text != null) el.textContent = text;
+    return el;
+  }
+
+  function renderFeatured(slot, guide, slug) {
+    clearNode(slot);
+    var inner = document.createElement('div');
+    inner.appendChild(makeEl('span', 'chip ' + (guide.chip_class || 'chip-setup'), guide.chip || 'GUIDE'));
+    inner.appendChild(makeEl('h3', null, guide.title || ''));
+    inner.appendChild(makeEl('p', null, guide.summary || ''));
+    var cta = makeEl('a', 'row-cta', 'Read →');
+    cta.href = '/opt-in.html?guide=' + encodeURIComponent(slug) + '&src=free-resources';
+    slot.appendChild(inner);
+    slot.appendChild(cta);
+  }
+
+  function renderSide(slot, items) {
+    clearNode(slot);
+    items.forEach(function(item) {
+      var mini = makeEl('div', 'spot-mini');
+      var inner = document.createElement('div');
+      inner.appendChild(makeEl('span', 'chip ' + (item.data.chip_class || 'chip-literacy'), item.data.chip || 'GUIDE'));
+      inner.appendChild(makeEl('h4', null, item.data.title || ''));
+      inner.appendChild(makeEl('p', null, item.data.side_summary || item.data.summary || ''));
+      var cta = makeEl('a', 'row-cta', 'Read →');
+      cta.href = '/opt-in.html?guide=' + encodeURIComponent(item.slug) + '&src=free-resources';
+      mini.appendChild(inner);
+      mini.appendChild(cta);
+      slot.appendChild(mini);
+    });
+  }
+
+  try {
+    var override = null;
+    try {
+      var overrideRes = await fetch('current.json', { cache: 'no-store' });
+      if (overrideRes.ok) override = await overrideRes.json();
+    } catch (e) { /* no override is fine */ }
+
+    var spotRes = await fetch('spotlight.json', { cache: 'no-store' });
+    if (!spotRes.ok) return;
+    var data = await spotRes.json();
+
+    var featuredSlug, sideSlugs;
+    if (override && override.active === true && override.featured) {
+      featuredSlug = override.featured;
+      sideSlugs = (override.side && override.side.length === 2) ? override.side : data.default.side_slugs;
+    } else {
+      var week = getISOWeek(new Date());
+      var weekConfig = data.weeks[week];
+      if (weekConfig) {
+        featuredSlug = weekConfig.featured;
+        sideSlugs = weekConfig.side;
+      } else {
+        featuredSlug = data.default.featured_slug;
+        sideSlugs = data.default.side_slugs;
+      }
+    }
+
+    var featuredGuide = data.guide_data[featuredSlug];
+    var sideGuides = sideSlugs.map(function(s) { return { slug: s, data: data.guide_data[s] }; })
+                              .filter(function(item) { return item.data; });
+
+    if (featuredGuide) {
+      renderFeatured(document.getElementById('spotlight-featured'), featuredGuide, featuredSlug);
+    }
+    if (sideGuides.length === 2) {
+      renderSide(document.getElementById('spotlight-side'), sideGuides);
+    }
+
+    var eyebrow = document.getElementById('spotlight-eyebrow');
+    if (eyebrow) {
+      eyebrow.textContent = override && override.active ? 'Featured pick' : 'This week';
+    }
+  } catch (err) {
+    console.warn('Spotlight rotation failed, using baked HTML:', err);
+  }
+})();
+</script>
+
+<section class="controls">
+  <div class="controls-head">
+    <div>
+      <div class="controls-eyebrow">The full library</div>
+      <div class="controls-title">Every guide, every track.</div>
+    </div>
+  </div>
+  <input class="search" type="search" placeholder="Search guides...">
+  <div class="filter-group"><span class="filter-label">Tool</span>
+    <button class="pill active">All</button><button class="pill">Claude</button><button class="pill">ChatGPT</button><button class="pill">Gemini</button>
+  </div>
+  <div class="filter-group"><span class="filter-label">Topic</span>
+    <button class="pill active">All</button><button class="pill">Content</button><button class="pill">Sales</button><button class="pill">Automation</button>
+  </div>
+</section>
+
+<section class="library" id="library">
+
+  <!-- CHEZ_SERIES_START -->
+  <!-- The Kitchen Maps series: 12 AI tools walked through like restaurants -->
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Anthropic · Kitchen Map</span><span class="row-date">30 Jun 2026</span></div>
+      <h2 class="row-title">Chez Claude. The Anthropic ecosystem as a restaurant.</h2>
+      <p class="row-summary">Long-form reasoning, Artifacts, computer-use, Projects, Claude Code. Walked through like a restaurant. Door, kitchen, plate.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=chez-claude&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">OpenAI · Kitchen Map</span><span class="row-date">29 Jun 2026</span></div>
+      <h2 class="row-title">Chez ChatGPT. The OpenAI ecosystem as a restaurant.</h2>
+      <p class="row-summary">GPTs, Operator, Agents, Voice, image gen, the whole OpenAI ecosystem as one walkthrough. Door, kitchen, plate.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=chez-openai&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Google · Kitchen Map</span><span class="row-date">28 Jun 2026</span></div>
+      <h2 class="row-title">Chez Gemini. The Google ecosystem as a restaurant.</h2>
+      <p class="row-summary">Gemini, Workspace, Deep Research, NotebookLM, Astra, the Google AI stack as a restaurant.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=chez-gemini&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Microsoft · Kitchen Map</span><span class="row-date">27 Jun 2026</span></div>
+      <h2 class="row-title">Chez Copilot. The Microsoft ecosystem as a restaurant.</h2>
+      <p class="row-summary">Copilot Chat, Cowork, Studio, Agent 365, Foundry. Microsoft's AI restaurant from door to plate.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=chez-copilot&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Perplexity · Kitchen Map</span><span class="row-date">26 Jun 2026</span></div>
+      <h2 class="row-title">Chez Perplexity. The Perplexity ecosystem as a restaurant.</h2>
+      <p class="row-summary">Sonar, Pro Search, Deep Research, Spaces, Comet. Citation-first answer engine as a restaurant.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=chez-perplexity&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">xAI · Kitchen Map</span><span class="row-date">25 Jun 2026</span></div>
+      <h2 class="row-title">Chez Grok. The xAI ecosystem as a restaurant.</h2>
+      <p class="row-summary">Grok 4.3, Big Brain, Aurora, X live search, SuperGrok Heavy. xAI's loud kitchen walked through.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=chez-grok&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Mistral · Kitchen Map</span><span class="row-date">24 Jun 2026</span></div>
+      <h2 class="row-title">Chez Mistral. The Mistral ecosystem as a restaurant.</h2>
+      <p class="row-summary">Le Chat, Mistral Large, Magistral, Vibe coding, No Telemetry Mode. The Paris kitchen at $14.99/mo.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=chez-mistral&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">DeepSeek · Kitchen Map</span><span class="row-date">23 Jun 2026</span></div>
+      <h2 class="row-title">Chez DeepSeek. The DeepSeek ecosystem as a restaurant.</h2>
+      <p class="row-summary">V4 Flash, V4 Pro, 1M context, the dirt-cheap open-source kitchen from China, mapped clean.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=chez-deepseek&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Moonshot · Kitchen Map</span><span class="row-date">22 Jun 2026</span></div>
+      <h2 class="row-title">Chez Kimi. The Moonshot ecosystem as a restaurant.</h2>
+      <p class="row-summary">K2.6, 300-agent swarm, Kimi Code, Cursor under the hood. Moonshot AI's parallel brigade.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=chez-kimi&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Alibaba · Kitchen Map</span><span class="row-date">21 Jun 2026</span></div>
+      <h2 class="row-title">Chez Qwen. The Alibaba ecosystem as a restaurant.</h2>
+      <p class="row-summary">100+ models, Qwen-Flash, Plus, Max, OCR, Vision, voice, Alibaba Cloud regional. The broadest single-vendor menu.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=chez-qwen&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Meta · Kitchen Map</span><span class="row-date">20 Jun 2026</span></div>
+      <h2 class="row-title">Chez Meta AI. The Meta ecosystem as a restaurant.</h2>
+      <p class="row-summary">Llama, WhatsApp + IG + Messenger integration, Ray-Ban Meta glasses, AI Studio creator characters.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=chez-meta-ai&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Manus · Kitchen Map</span><span class="row-date">19 Jun 2026</span></div>
+      <h2 class="row-title">Chez Manus. The Manus ecosystem as a restaurant.</h2>
+      <p class="row-summary">Autonomous multi-agent brigade. Planner, executor, verifier. Browser, code, file. Hours of unsupervised work.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=chez-manus&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <!-- CHEZ_SERIES_END -->
+
+
+  <!-- EVERGREEN BATCH: decisions, diagnostics, trust, patterns. Tool-agnostic, will not age. -->
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-setup">DECIDE</span><span class="row-kicker">Decisions</span><span class="row-date">24 Jun 2026</span></div>
+      <h2 class="row-title">Agent vs workflow vs chatbot. Which one do you actually need?</h2>
+      <p class="row-summary">Your team says "AI agent". 8 out of 10 times they mean workflow. 3-question filter that tells you which architecture your project actually needs.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=agent-vs-workflow-chatbot&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-literacy">FILTER</span><span class="row-kicker">Diagnostics</span><span class="row-date">23 Jun 2026</span></div>
+      <h2 class="row-title">Are you ready for AI? The 5-question filter.</h2>
+      <p class="row-summary">5 questions before you spend a dollar on tools. Score yourself. Most failed AI projects fail because the business was not ready, not because the AI was bad.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=are-you-ai-ready&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">TRUST</span><span class="row-kicker">Verification</span><span class="row-date">22 Jun 2026</span></div>
+      <h2 class="row-title">The trust ladder. When to verify AI output, when not to.</h2>
+      <p class="row-summary">4 levels of trust. Each has a verification cost. Stop over-verifying low-stakes work. Stop under-verifying the work that matters.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=trust-ladder&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-literacy">PATTERN</span><span class="row-kicker">Failure Modes</span><span class="row-date">21 Jun 2026</span></div>
+      <h2 class="row-title">5 reasons AI rollouts fail at month 3</h2>
+      <p class="row-summary">Same 5 patterns kill AI projects in real businesses. Not vendor blame. Not tech debt. Real reasons, real fixes.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=5-reasons-ai-fails&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-setup">DECIDE</span><span class="row-kicker">Build vs Buy</span><span class="row-date">20 Jun 2026</span></div>
+      <h2 class="row-title">Buy a tool vs build it yourself. The honest matrix.</h2>
+      <p class="row-summary">Every vendor wants you to buy. Every dev wants you to build. 4-question framework that tells you which call is right for your business.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=buy-vs-build&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">TRUST</span><span class="row-kicker">Boundaries</span><span class="row-date">19 Jun 2026</span></div>
+      <h2 class="row-title">What you should never automate. 5 tasks AI cannot own.</h2>
+      <p class="row-summary">AI handles a lot. These 5 tasks it cannot. Automate them and you damage the part of your business that makes it human.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=what-never-automate&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <!-- END EVERGREEN BATCH -->
+
+  <!-- NEW BATCH: Kyle AI inspiration adapted to her voice -->
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-setup">SETUP</span><span class="row-kicker">ChatGPT</span><span class="row-date">18 Jun 2026</span></div>
+      <h2 class="row-title">Build your Business Brain GPT</h2>
+      <p class="row-summary">Stop re-explaining your business to ChatGPT every single time. Build a Custom GPT that knows your voice, your offers, your audience.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=business-brain-gpt&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">BUILD</span><span class="row-kicker">CRM</span><span class="row-date">17 Jun 2026</span></div>
+      <h2 class="row-title">Build your own CRM with Claude Code</h2>
+      <p class="row-summary">Stop paying $79/mo for a CRM you use 10% of. Build your own in an afternoon. Form, dashboard, follow-ups, tracking. You own the database.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=build-your-own-crm&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">BUILD</span><span class="row-kicker">Content Ops</span><span class="row-date">16 Jun 2026</span></div>
+      <h2 class="row-title">Build a visual content calendar</h2>
+      <p class="row-summary">Plan and schedule every post from one screen. Connects to Google Drive so you pick videos directly. Stop juggling Sheets, Notion, and your camera roll.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=content-calendar&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">BUILD</span><span class="row-kicker">Analytics</span><span class="row-date">15 Jun 2026</span></div>
+      <h2 class="row-title">Real-time content dashboard</h2>
+      <p class="row-summary">Track every Instagram and YouTube post on one screen. Auto-updates every 6 hours. Stop checking 3 different apps to see how your content performed.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=content-dashboard&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">BUILD</span><span class="row-kicker">Email</span><span class="row-date">14 Jun 2026</span></div>
+      <h2 class="row-title">Build your own email platform</h2>
+      <p class="row-summary">Replace Mailchimp, ConvertKit, or Klaviyo with software you own. $20/mo to send 50,000 emails. Account flagged? You keep your list.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=email-marketing-platform&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-track0">BUILD</span><span class="row-kicker">Claude Skills</span><span class="row-date">13 Jun 2026</span></div>
+      <h2 class="row-title">Build a content plan skill in Claude Code</h2>
+      <p class="row-summary">Turn any topic into 10 hooks, 3 video scripts, a carousel plan, a freebie outline, and a ManyChat flow. All from one slash command.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=content-plan-skill&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-literacy">ANALYZE</span><span class="row-kicker">Reels</span><span class="row-date">12 Jun 2026</span></div>
+      <h2 class="row-title">Reverse-engineer any viral reel</h2>
+      <p class="row-summary">3 frameworks to break down any reel into a reusable playbook. Paste a link, get the analysis in 90 seconds. Hook, format, shot list, all of it.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=reel-analysis&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">BUILD</span><span class="row-kicker">Claude Skills</span><span class="row-date">11 Jun 2026</span></div>
+      <h2 class="row-title">Build a code audit skill</h2>
+      <p class="row-summary">Audit any codebase in 5 minutes. AI checks for bugs, security issues, performance, and maintainability. Saved as a Claude Code skill.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=code-audit-skill&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">BUILD</span><span class="row-kicker">Paid Ads</span><span class="row-date">10 Jun 2026</span></div>
+      <h2 class="row-title">Deploy Google Ads in 30 minutes</h2>
+      <p class="row-summary">Stop paying agencies $3K/mo to launch Google Ads. Build a deployment system that takes you from keyword research to live campaign.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=google-ads-deployment&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-track0">BUILD</span><span class="row-kicker">Automation</span><span class="row-date">09 Jun 2026</span></div>
+      <h2 class="row-title">Browser automation with Playwright</h2>
+      <p class="row-summary">Automate any repetitive browser task. Form filling, data scraping, screenshot pipelines, end-to-end testing. Tell Claude Code what you want.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=playwright-automation&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-literacy">BUILD</span><span class="row-kicker">Video</span><span class="row-date">08 Jun 2026</span></div>
+      <h2 class="row-title">Programmatic video with Remotion</h2>
+      <p class="row-summary">Render branded videos from code. Same template, infinite content. 100 reels with consistent branding in one afternoon.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=remotion-video&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-setup">BUILD</span><span class="row-kicker">Video Ops</span><span class="row-date">07 Jun 2026</span></div>
+      <h2 class="row-title">Video transcription pipeline</h2>
+      <p class="row-summary">Turn any video into a transcript in 30 seconds. Then auto-generate captions, blog posts, social hooks. All from one upload. $0.60 per video.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=video-transcription&src=free-resources">Read &rarr;</a>
+  </article>
+
+  <!-- END NEW BATCH -->
+
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-setup">SETUP</span><span class="row-kicker">ChatGPT</span><span class="row-date">08 Jun 2026</span></div>
+      <h2 class="row-title">What ChatGPT actually does for business owners</h2>
+      <p class="row-summary">Same conversation with ChatGPT for 3 years. Same 3 prompts every week. Here is the ground floor before agents and skills.</p>
+    </div>
+    <a class="row-cta" href="/opt-in.html?guide=what-chatgpt-actually-does&src=free-resources">Read &rarr;</a>
+  </article>
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-literacy">WORDS</span><span class="row-kicker">AI Vocabulary</span><span class="row-date">09 Apr 2026</span></div>
+      <h2 class="row-title">&ldquo;Agents&rdquo;, &ldquo;skills&rdquo;, &ldquo;MCP&rdquo;, everyone uses words you do not know?</h2>
+      <p class="row-summary">Every meeting now has agents, skills, MCP, RAG, embedding. 12 words, plain English, next meeting makes sense.</p>
+    </div>
+    <a class="row-cta" href="guides/ai-jargon-guide.html">Read &rarr;</a>
+  </article>
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">DATA</span><span class="row-kicker">Data Safety</span><span class="row-date">01 Apr 2026</span></div>
+      <h2 class="row-title">Worried AI will see things it should not?</h2>
+      <p class="row-summary">You paused before pasting a client email into ChatGPT. Good instinct. 4 rules, simpler than the 60-page terms of service.</p>
+    </div>
+    <a class="row-cta" href="#">Read &rarr;</a>
+  </article>
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-track0">PROMPT</span><span class="row-kicker">AI Basics</span><span class="row-date">20 Mar 2026</span></div>
+      <h2 class="row-title">Heard &ldquo;prompt&rdquo; 50 times, still no idea what it is?</h2>
+      <p class="row-summary">Every AI article tells you to write better prompts. Nobody tells you what a prompt is. Here is what makes one work.</p>
+    </div>
+    <a class="row-cta" href="guides/what-is-a-prompt.html">Read &rarr;</a>
+  </article>
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-track0">DIFF</span><span class="row-kicker">AI Basics</span><span class="row-date">10 Mar 2026</span></div>
+      <h2 class="row-title">Confused if ChatGPT and AI are the same thing?</h2>
+      <p class="row-summary">ChatGPT. AI. LLM. Chatbot. Agent. Model. None mean the same thing. Here is what each one is.</p>
+    </div>
+    <a class="row-cta" href="guides/chatgpt-vs-ai.html">Read &rarr;</a>
+  </article>
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-track0">WHAT</span><span class="row-kicker">AI Basics</span><span class="row-date">02 Mar 2026</span></div>
+      <h2 class="row-title">Everyone says &ldquo;AI&rdquo; 100 times a day. Nobody says what it is.</h2>
+      <p class="row-summary">You are not behind. You were never told. Here is what it is, in 4 lines.</p>
+    </div>
+    <a class="row-cta" href="guides/what-is-ai.html">Read &rarr;</a>
+  </article>
+  <article class="row">
+    <div>
+      <div class="row-meta"><span class="chip chip-setup">SETUP</span><span class="row-kicker">Build Once</span><span class="row-date">01 Mar 2026</span></div>
+      <h2 class="row-title">Clone your voice. Auto-render Reels. $0 per audio.</h2>
+      <p class="row-summary">VoxCPM + Google Colab + ReelStack. Your voice, 30 languages, overnight batches, finished 9:16 Reels. 45 min setup, then it runs.</p>
+    </div>
+    <a class="row-cta" href="guides/voice-clone-pipeline.html">Read &rarr;</a>
+  </article>
+</section>
+
+<section class="cta-band"><div class="cta-inner">
+  <div class="cta-head">
+    <div class="cta-eyebrow">Three ways to go further</div>
+    <div class="cta-title">When the free guides are not enough.</div>
+  </div>
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="kicker">Community</div>
+      <h3>How I build everything.</h3>
+      <p>My actual workflow, swipe vault, and live calls when I run them. Discussion-first community.</p>
+      <a class="btn-cream" href="#">Join, $49/mo</a>
+    </div>
+    <div class="cta-card">
+      <div class="kicker">Course</div>
+      <h3>Fast Forward.</h3>
+      <p>Structured curriculum to build, ship, and install AI. 30-day community trial bundled.</p>
+      <a class="btn-cream" href="#">Enroll, $499</a>
+    </div>
+    <div class="cta-card">
+      <div class="kicker">Custom</div>
+      <h3>Custom requests.</h3>
+      <p>Bespoke setup, advisory, or workflow design. Quoted per scope.</p>
+      <a class="btn-cream" href="#">Request scope</a>
+    </div>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="footer-inner">
+  <div>
+    <div class="footer-brand">Shift &amp; Lead</div>
+    <p class="footer-tag">For everyone quietly overwhelmed by AI. Real guides. Tested in real businesses.</p>
+  </div>
+  <div>
+    <div class="footer-col-head">Library</div>
+    <a class="footer-link" href="#">All guides</a><a class="footer-link" href="#">Latest</a><a class="footer-link" href="#">Most-saved</a>
+  </div>
+  <div>
+    <div class="footer-col-head">Work With Her</div>
+    <a class="footer-link" href="#">Community, $49/mo</a><a class="footer-link" href="#">Fast Forward, $499</a><a class="footer-link" href="#">About</a>
+  </div>
+</div>
+<div class="footer-legal">&copy; 2026 Shift &amp; Lead, All rights reserved</div>
+</footer>
+
+</body></html>
