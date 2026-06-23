@@ -9,6 +9,25 @@
 
 ## Build log
 
+### 2026-06-23 (latest) — Full engine: all 5 machines + HeyGen + multi-brand
+Built the missing machines from the Romain architecture teardown
+(`reports/architecture-analysis-2026-06-23.md`) so the OS runs end-to-end:
+- **`heygen`** — talking-head of HER real cloned avatar + voice (HeyGen v2 API).
+  The on-brand alternative to Blotato's generic avatars; pairs with Blotato
+  `ai-avatar-broll` (HeyGen speaks → Blotato adds B-roll).
+- **`signal-harvester`** (M01 data) — multi-source daily harvest (Apify IG/X,
+  YouTube virality, RSS, Tavily) with source-mix + ≥2-lead-magnet rules.
+- **`reels-factory`** (M03) — long video → many shorts (Opus Clip API; Blotato
+  `combine-clips` fallback), landed as critic-scored vault drafts.
+- **`dm-responder`** (M05, the money engine) — comment-keyword → DM resource →
+  lead capture (ManyChat for IG; Blotato/native APIs for FB+YT), backed by the
+  new `lead-magnets.csv` registry.
+- **`weekly-ops`** extended to chain all machines (signal → … → distribution → DM).
+- **Multi-brand:** `tenants/` with a `_template` (tenant.json + brain files) so
+  the OS can run for clients — same engine, different brain (`tenants/README.md`).
+- `inventory.md` now has a live-wiring checklist (the env keys/allowlists each
+  machine needs). Skills exist; ⚙️ ones await operator keys to run live.
+
 ### 2026-06-23 (later) — Film-free video + AI imagery wired into visual-engine
 The avatar/voice/image layers were already available **inside Blotato's visual
 engine** — wired them in (`visual-engine` v1.1.0):

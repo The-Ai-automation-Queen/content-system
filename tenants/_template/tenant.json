@@ -1,0 +1,52 @@
+{
+  "slug": "REPLACE-WITH-CLIENT-SLUG",
+  "display_name": "Client Brand Name",
+  "owner_email": "client@example.com",
+  "timezone": "Europe/Paris",
+
+  "connections": {
+    "blotato": {
+      "wired": false,
+      "workspace_hint": "blotato workspace name (the agent looks up accounts at run time)"
+    },
+    "heygen": {
+      "wired": false,
+      "avatar_id": "",
+      "voice_id": "",
+      "api_key_env": "HEYGEN_API_KEY_REPLACE_SLUG"
+    },
+    "manychat": {
+      "wired": false,
+      "workspace_id": "",
+      "api_key_env": "MANYCHAT_API_KEY_REPLACE_SLUG"
+    },
+    "opus_clip": {
+      "wired": false,
+      "api_key_env": "OPUS_CLIP_API_KEY_REPLACE_SLUG"
+    },
+    "apify": {
+      "wired": true,
+      "note": "uses the shared Apify MCP — no per-tenant key needed yet"
+    },
+    "tavily": {
+      "wired": true,
+      "note": "uses the shared Tavily MCP"
+    }
+  },
+
+  "schedule": {
+    "signal_harvester": "daily 02:00",
+    "weekly_ops": "weekly Mon 06:00",
+    "reels_factory": "on YouTube publish (manual until webhook is wired)",
+    "dm_responder": "every 5 minutes (requires always-on host)"
+  },
+
+  "paths": {
+    "vault": "content-vault.md",
+    "research_notes": "research-notes.md",
+    "positioning": "positioning/SKILL.md",
+    "inspiration_library": "inspiration-library/SKILL.md",
+    "lead_magnets": "lead-magnets.csv",
+    "reports": "reports/"
+  }
+}

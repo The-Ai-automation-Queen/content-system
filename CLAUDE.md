@@ -57,21 +57,36 @@ Skills are reusable, version-controlled instructions. Two kinds live here:
   15 named hook/format patterns, and the script application rules. Load this
   before writing any script, hook, or outline.
 
-**Action skills** (in `skills/`, each a folder with a `SKILL.md`):
-- **`content-engine`** — turns research + signals into ready-to-review drafts in
-  the vault, in voice, scored by an internal critic. *The core new automation.*
-- **`visual-engine`** — turns a draft into its visual asset: carousels/infographics
-  via Canva, decks/cards via Gamma, and **film-free video + AI imagery** via
-  Blotato's visual engine (narrated AI-voice video, AI avatars, AI images). On
-  brand, post-ready. (Step 3/5 — visuals.)
-- **`distribution`** — pushes `READY TO POST` entries into the **Blotato queue**
-  across the 6 connected platforms, then writes status back to the vault.
-  **Queue-only — never publishes instantly.** (Step 8 — distribution.)
-- **`weekly-ops`** — the orchestrator. Runs the full maintenance loop (Step 7/8).
+**Action skills** (in `skills/`, each a folder with a `SKILL.md`). Mapped to
+Romain's 5 machines:
+- **`signal-harvester`** — *M01 data layer.* Multi-source daily signal harvest
+  (Apify IG/X scrapes, YouTube virality, RSS blogs, Tavily) with a source-mix +
+  ≥2-lead-magnet rule → a `research-notes.md` entry. The richer alternative to
+  `research-digest`.
+- **`content-engine`** — *M01 scripts.* Turns signals into ready-to-review drafts
+  in the vault, in voice, scored by an internal critic. *The core automation.*
+- **`visual-engine`** — *M02 visuals.* Carousels/infographics via Canva, decks via
+  Gamma, and **film-free video + AI imagery** via Blotato (narrated AI-voice,
+  AI images). On brand, post-ready. (Step 3/5.)
+- **`heygen`** — *M02 talking-head.* Renders a video of HER real cloned avatar +
+  voice from a script (HeyGen API), for entries that need her face. Pairs with
+  Blotato `ai-avatar-broll` (HeyGen speaks → Blotato adds B-roll).
+- **`reels-factory`** — *M03.* Long-video → many shorts (Opus Clip API, or Blotato
+  fallback) with hooks + comment CTAs, landed as vault drafts.
+- **`distribution`** — *M04.* Pushes `READY TO POST` entries into the **Blotato
+  queue** across the connected platforms, writes status back. **Queue-only.**
+- **`dm-responder`** — *M05, the money engine.* Auto-replies to comment-keyword
+  CTAs with the lead-magnet link and captures the lead (ManyChat for IG; Blotato/
+  native APIs for FB+YT). Backed by `lead-magnets.csv`.
+- **`weekly-ops`** — the orchestrator. Runs the full machine loop (Step 7/8).
 - **`research-digest`** — last-30-days research sweep → `reports/` + a
-  `research-notes.md` entry.
+  `research-notes.md` entry. (Lighter fallback for `signal-harvester`.)
 - **`competitor-watch`** — creator/competitor movement scan → `reports/`.
 - **`vault-audit`** — pipeline health check → `reports/`.
+
+> **Multi-brand:** the engine is brand-agnostic. Additional clients live under
+> `tenants/<slug>/` with their own brain + connections; skills take `--tenant`.
+> See `tenants/README.md`. (The "plug-and-play for clients" path.)
 
 > The `positioning` and `inspiration-library` skills are the **brand brain**.
 > Every word the engine produces must pass through them. If a draft drifts from
@@ -82,12 +97,12 @@ Skills are reusable, version-controlled instructions. Two kinds live here:
 ## Agentics (Step 8) & Maintenance (Step 7) — the loop
 
 The system stays alive through a recurring loop, not one-off prompts. As of
-2026-06-23 the loop runs the **full Romain-shape** — research → draft → visual →
-queue → track:
+2026-06-23 the loop runs the **full Romain-shape across all 5 machines** —
+signal → script → visual → queue → DM/lead:
 
 ```
-research-digest → competitor-watch → vault-audit → content-engine → visual-engine → distribution
-  (what's new)     (what others do)   (what's stale)   (new drafts)    (the assets)    (→ Blotato queue)
+signal-harvester → competitor-watch → vault-audit → content-engine → visual-engine(+heygen) → reels-factory → distribution → dm-responder
+   (M01 data)        (what others do)   (what's stale)  (M01 scripts)     (M02 visuals/face)      (M03 shorts)    (M04 → queue)   (M05 → leads)
 ```
 
 `skills/weekly-ops` runs this end to end and writes a dated set of reports to

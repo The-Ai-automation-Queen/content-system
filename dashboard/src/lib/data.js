@@ -1,18 +1,41 @@
-// Reads the markdown "second brain" in the repo root and turns it into
-// structured data for the dashboard. No database — the markdown IS the database
-// (see CLAUDE.md, Step 6). Pure Node, zero parsing deps.
+// Reads the markdown "second brain" and turns it into structured data for the
+// dashboard. No database — the markdown IS the database (CLAUDE.md, Step 6).
+// Multi-brand aware: pass a tenant slug to read from tenants/<slug>/ instead of
+// the repo root. Pure Node, zero parsing deps.
 import fs from 'node:fs';
 import path from 'node:path';
 
 // dashboard/ runs with cwd = dashboard/, so the repo root is one level up.
-const ROOT = path.resolve(process.cwd(), '..');
+const REPO_ROOT = path.resolve(process.cwd(), '..');
 
-function readSafe(rel) {
+// Resolve the base folder for a tenant (root = the default tenant, Fatiha).
+export function baseFor(tenant) {
+  if (!tenant || tenant === 'root' || tenant === 'fatiha') return REPO_ROOT;
+  const candidate = path.join(REPO_ROOT, 'tenants', tenant);
+  // Fail closed: unknown tenant → root, never crash.
+  return fs.existsSync(candidate) ? candidate : REPO_ROOT;
+}
+
+function readSafe(base, rel) {
   try {
-    return fs.readFileSync(path.join(ROOT, rel), 'utf8');
+    return fs.readFileSync(path.join(base, rel), 'utf8');
   } catch {
     return '';
   }
+}
+
+export function getTenants() {
+  const dir = path.join(REPO_ROOT, 'tenants');
+  let names = [];
+  try {
+    names = fs
+      .readdirSync(dir, { withFileTypes: true })
+      .filter((d) => d.isDirectory() && !d.name.startsWith('_'))
+      .map((d) => d.name);
+  } catch {
+    /* no tenants dir yet */
+  }
+  return ['root', ...names];
 }
 
 const KNOWN_FLAGS = ['PERSONALIZE', 'VERIFY', 'PREP', 'NEEDS HER FACE', 'NEEDS VISUAL'];
@@ -26,9 +49,8 @@ const PILLARS = [
   { name: 'Real Talk', token: 'Real Talk' },
 ];
 
-// Parse content-vault.md into a list of entries.
-export function getVault() {
-  const raw = readSafe('content-vault.md');
+export function getVault(base) {
+  const raw = readSafe(base, 'content-vault.md');
   const re = /^## ENTRY\s+(\d+)\s+—\s+(.+)$/gm;
   const headers = [];
   let m;
@@ -42,7 +64,6 @@ export function getVault() {
     const end = i + 1 < headers.length ? headers[i + 1].index : raw.length;
     const block = raw.slice(start, end);
 
-    // header: "DD/MM/YYYY | Platform | Title | STATUS"
     const parts = headers[i].rest.split('|').map((s) => s.trim());
     const date = parts[0] || '';
     let platform = parts[1] || '';
@@ -76,15 +97,12 @@ export function getVault() {
   return entries;
 }
 
-// List dated reports in reports/ (the run log / audit trail).
-export function getReports() {
+export function getReports(base) {
   let files = [];
   try {
-    files = fs
-      .readdirSync(path.join(ROOT, 'reports'))
-      .filter((f) => f.endsWith('.md'));
+    files = fs.readdirSync(path.join(base, 'reports')).filter((f) => f.endsWith('.md'));
   } catch {
-    /* no reports dir */
+    /* none */
   }
   const reports = files.map((f) => {
     const mm = f.match(/^(.*?)-(\d{4}-\d{2}-\d{2})\.md$/);
@@ -94,15 +112,39 @@ export function getReports() {
   return reports;
 }
 
-export function getResearchCount() {
-  const raw = readSafe('research-notes.md');
+export function getResearchCount(base) {
+  const raw = readSafe(base, 'research-notes.md');
   const m = raw.match(/^## RESEARCH\s+\d+/gm);
   return m ? m.length : 0;
 }
 
-// Roll everything up into the shape the dashboard renders.
-export function getDashboard() {
-  const entries = getVault();
+export function getLeadMagnets(base) {
+  const raw = readSafe(base, 'lead-magnets.csv');
+  const lines = raw.split('\n').slice(1).filter((l) => l.trim() && !l.startsWith('#'));
+  const rows = lines.map((l) => {
+    const c = l.split(',');
+    return { keyword: (c[0] || '').trim(), label: (c[1] || '').replace(/"/g, '').trim(), active: /yes/i.test(c[5] || '') };
+  });
+  return { total: rows.length, active: rows.filter((r) => r.active).length, rows };
+}
+
+// The 5 machines + their live-wiring status. Env presence flips ⚙️ → live.
+export function getMachines() {
+  const has = (k) => !!process.env[k];
+  return [
+    { id: 'M01·data', name: 'Signal Harvester', skill: 'signal-harvester', status: 'partial', note: 'Apify/Tavily MCP ready; X/Grok key + RSS list pending' },
+    { id: 'M01·script', name: 'Content Engine', skill: 'content-engine', status: 'live', note: 'In-voice drafts, critic-scored' },
+    { id: 'M02·visual', name: 'Visual Engine', skill: 'visual-engine', status: 'partial', note: 'Blotato visuals live; media upload needs egress allowlist' },
+    { id: 'M02·face', name: 'HeyGen Talking-Head', skill: 'heygen', status: has('HEYGEN_API_KEY') ? 'live' : 'needs-key', note: 'Needs HEYGEN_API_KEY + allowlist api.heygen.com' },
+    { id: 'M03·reels', name: 'Reels Factory', skill: 'reels-factory', status: has('OPUS_CLIP_API_KEY') ? 'live' : 'needs-key', note: 'Needs OPUS_CLIP_API_KEY + allowlist api.opus.pro (Blotato fallback)' },
+    { id: 'M04·post', name: 'Distribution', skill: 'distribution', status: 'live', note: 'Blotato queue across 6 platforms (no TikTok yet)' },
+    { id: 'M05·leads', name: 'DM Responder', skill: 'dm-responder', status: has('MANYCHAT_API_KEY') ? 'live' : 'needs-setup', note: 'Needs ManyChat (IG) + always-on host for webhook' },
+  ];
+}
+
+export function getDashboard(tenant) {
+  const base = baseFor(tenant);
+  const entries = getVault(base);
   const byStatus = (s) => entries.filter((e) => e.status === s);
 
   const columns = [
@@ -113,21 +155,20 @@ export function getDashboard() {
   ];
 
   const flagged = entries.filter((e) => e.flags.length > 0);
-
-  const pillars = PILLARS.map((p) => ({
-    name: p.name,
-    n: entries.filter((e) => e.pillar.includes(p.token)).length,
-  }));
-
-  const reports = getReports();
+  const pillars = PILLARS.map((p) => ({ name: p.name, n: entries.filter((e) => e.pillar.includes(p.token)).length }));
+  const leads = getLeadMagnets(base);
 
   return {
+    tenant: tenant && tenant !== 'root' ? tenant : 'Fatiha (root)',
+    tenants: getTenants(),
     entries,
     columns,
     flagged,
     pillars,
-    reports,
-    researchCount: getResearchCount(),
+    reports: getReports(base),
+    researchCount: getResearchCount(base),
+    machines: getMachines(),
+    leads,
     kpis: {
       total: entries.length,
       ready: byStatus('READY TO POST').length,

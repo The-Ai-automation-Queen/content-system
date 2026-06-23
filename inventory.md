@@ -85,29 +85,46 @@ Not offered: 1:1 advisory/consulting; time-consuming beginner training.
 
 **Used now (repo-native):** Claude Code, git, markdown files, web search.
 
-**WIRED INTO THE LOOP (2026-06-23):**
+**WIRED INTO THE LOOP (skills exist; ⚙️ = needs operator key/allowlist to run live):**
 
-| Layer | Tool | Role in the system | Skill |
+| Machine | Tool | Role in the system | Skill |
 |---|---|---|---|
-| 5. Visuals + video | **Canva, Gamma, Blotato** | Carousels/infographics (Canva) + decks/cards (Gamma) + AI images, infographics & **film-free video** — narrated AI-voice + avatars (Blotato visual engine) | `visual-engine` |
-| 6. Distribution | **Blotato** | Schedule to the multi-platform **queue** (6 platforms); writes status back | `distribution` |
+| M01 data | **Apify, Tavily, X, RSS** ⚙️ | Multi-source daily signal harvest (IG/X scrapes, YouTube virality, blogs, news) | `signal-harvester` |
+| M01 scripts | **Claude Code** | Signals → in-voice drafts, critic-scored | `content-engine` |
+| M02 visuals | **Canva, Gamma, Blotato** | Carousels/decks + AI images/infographics + film-free narrated video | `visual-engine` |
+| M02 face | **HeyGen** ⚙️ | Talking-head of HER cloned avatar + voice from a script | `heygen` |
+| M03 reels | **Opus Clip** ⚙️ (Blotato fallback) | Long video → many shorts with hooks + CTAs | `reels-factory` |
+| M04 distribution | **Blotato** | Schedule to the multi-platform **queue**; writes status back | `distribution` |
+| M05 DM/leads | **ManyChat** ⚙️ (IG) + Blotato/native API (FB/YT) | Comment-keyword → DM resource → capture lead | `dm-responder` |
 
-**Connected but not yet wired in** (integration backlog, per `security.md` / `ROADMAP.md`):
+**Connected but not yet wired in** (integration backlog):
 
 | Tool | Potential role | Step |
 |---|---|---|
 | Notion | External content calendar / board mirrored from the vault | 1 |
-| Tavily, Apify | Sharper research + trend/competitor scraping (upgrade research-digest) | 7 |
 | Google Drive | Asset storage for generated visuals | 6 |
 | Granola | Meeting notes → content raw material | 1 |
 | GitHub | Hosting / sync / automation triggers | 6 |
 
-**MISSING from the stack — still needs operator action:**
+**MISSING — still needs operator action (the live-wiring checklist):**
 
-| Gap | What's needed | Why it matters |
+| Gap | What's needed | Unblocks |
 |---|---|---|
-| Upload local media to Blotato | Allowlist `database.blotato.io` (+ `*.blotato.io`) in the environment's network egress — currently **blocked** | The operator has a HeyGen avatar MP4, but the agent can't upload it or run `ai-avatar-broll` until egress is allowed |
-| TikTok publishing | Connect a TikTok account to Blotato | The plan wants TikTok; no account is wired |
+| Blotato media egress | Allowlist `database.blotato.io` (+ `*.blotato.io`) in env network egress — currently **blocked** | Uploading the HeyGen MP4, `ai-avatar-broll` |
+| HeyGen | `HEYGEN_API_KEY` env + allowlist `api.heygen.com`, `resource.heygen.ai` + record avatar/voice IDs in this file | `heygen` (talking-head of her) |
+| Opus Clip | `OPUS_CLIP_API_KEY` env + allowlist `api.opus.pro` | `reels-factory` |
+| ManyChat | `MANYCHAT_API_KEY` env + IG automations per `lead-magnets.csv` + a webhook host | `dm-responder` (IG leads) |
+| Signal sources | X/Grok API key; confirm Apify/Tavily MCP usable from `signal-harvester` | `signal-harvester` live |
+| Always-on host | A small VPS (or scheduled web sessions) for crons + the DM webhook | M05 + every-N-min crons |
+| TikTok | Connect a TikTok account to Blotato | TikTok publishing |
+
+**HeyGen IDs (fill after a clone session):** avatar_id = `____`, voice_id = `____`.
+
+> **Note:** AI **image gen**, **infographics**, and **narrated AI-voice video**
+> are already wired inside **Blotato** (`blotato_create_visual`). HeyGen is added
+> specifically for **talking-head of her real face** (Blotato's avatars are
+> generic and must never be presented as her). Default faceless brand voice:
+> `Alice (British, confident)`.
 
 > **Note:** AI **image generation** (Flux/Imagen/Seedream/Ideogram-class), AI
 > **infographics**, and AI **video + voiceover** (ElevenLabs voices, AI avatars)

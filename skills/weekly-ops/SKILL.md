@@ -36,23 +36,33 @@ for the operator to release.
 
 ---
 
-## The loop (full Romain-shape: research → draft → visual → queue → track)
+## The loop (full Romain-shape, all 5 machines: signal → script → visual → queue → DM)
 
-Run these in order. Each writes a dated artifact to `reports/` (and the research
-step also appends to `research-notes.md`):
+Run these in order. Each writes a dated artifact to `reports/` (signal/research
+steps also append to `research-notes.md`):
 
 ```
-1. research-digest    →  what changed in the world (last 30 days)
+1. signal-harvester   →  M01 data: 7 fresh signals (Apify/X/YT/RSS/Tavily)
+                          (fall back to research-digest if sources aren't wired)
 2. competitor-watch   →  what the tracked creators/competitors are doing
 3. vault-audit        →  pipeline health: what is ready, stale, missing, POSTED
-4. content-engine     →  new drafts that fill the gaps the audit found
-5. visual-engine      →  builds carousels/cards for ready visual entries (Canva/Gamma)
-6. distribution       →  schedules ready+unflagged posts into the Blotato QUEUE
+4. content-engine     →  M01 scripts: new drafts that fill the gaps the audit found
+5. visual-engine      →  M02 visuals + film-free video (Canva/Gamma/Blotato)
+   └─ heygen          →  M02 talking-head of HER avatar for entries flagged NEEDS HER FACE
+6. reels-factory      →  M03 long-video → many shorts (only when a new long video exists)
+7. distribution       →  M04 schedules ready+unflagged posts into the Blotato QUEUE
+8. dm-responder       →  M05 comment→DM→lead capture (continuous cron, not weekly —
+                          report its status only)
 ```
 
+Steps 1-4 run every pass. Steps 5-7 act only on entries that are `READY TO POST`
+with no flag. Step 8 runs on its own fast cron once a host is live; in the weekly
+run, just report its lead count + connection status.
+
 Each step's output feeds the next. The audit shapes what `content-engine` makes;
-`visual-engine` makes the assets `distribution` needs; `distribution` writes
-`SCHEDULED`/`POSTED` back so the next `vault-audit` sees real pipeline movement.
+`visual-engine`/`heygen` make the assets `distribution` needs; `distribution`
+writes `SCHEDULED`/`POSTED` back so the next `vault-audit` sees real movement;
+`dm-responder` turns the published CTAs into captured leads.
 
 Invoke each step as a skill. If skill invocation is unavailable in the current
 environment, open each skill's `SKILL.md` under `skills/` and execute its
