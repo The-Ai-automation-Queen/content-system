@@ -1,0 +1,41 @@
+{
+  "_comment": "REFERENCE config for the autonomous cadence — NOT auto-executed. Nothing here runs on its own yet. To make a loop live you must EITHER invoke the harness `/loop` skill on the skill (e.g. `/loop weekly /weekly-ops`) OR run these on an always-on host (a VPS cron calling Claude Code). This file documents the intended schedule + alerts so whoever wires the runner has a single source of truth. See ROADMAP.md backlog: 'always-on host' decision.",
+
+  "loops": [
+    {
+      "name": "daily-signal-harvest",
+      "skill": "/signal-harvester",
+      "cron": "0 2 * * *",
+      "timezone": "Asia/Dubai",
+      "retry": { "max": 1, "after_minutes": 120 },
+      "alert_on_fail": "telegram"
+    },
+    {
+      "name": "weekly-full-loop",
+      "skill": "/weekly-ops",
+      "cron": "0 6 * * 1",
+      "timezone": "Asia/Dubai",
+      "retry": { "max": 1, "after_minutes": 240 },
+      "alert_on_fail": "telegram"
+    },
+    {
+      "name": "dm-poll",
+      "skill": "/dm-responder",
+      "cron": "*/5 * * * *",
+      "timezone": "Asia/Dubai",
+      "retry": { "max": 0 },
+      "alert_on_fail": "telegram",
+      "_note": "Every 5 min — only works with an always-on host (the DM webhook needs to be reachable too)."
+    }
+  ],
+
+  "alerts": {
+    "telegram": {
+      "wired": false,
+      "chat_id_env": "TELEGRAM_CHAT_ID",
+      "bot_token_env": "TELEGRAM_BOT_TOKEN",
+      "_note": "Create a Telegram bot, save token + chat id as env vars, set wired=true. Mirrors Romain's Telegram failure alerts."
+    },
+    "email": { "wired": false, "to_env": "ALERT_EMAIL_TO" }
+  }
+}
