@@ -20,6 +20,12 @@ const FLAG_LABEL = {
 
 const maxPillar = Math.max(1, ...d.pillars.map((p) => p.n));
 const platformChip = (p) => (p || '').split('(')[0].trim();
+const STATUSES = [
+  { key: 'DRAFT', short: 'Draft' },
+  { key: 'READY TO POST', short: 'Ready' },
+  { key: 'SCHEDULED', short: 'Sched' },
+  { key: 'POSTED', short: 'Posted' },
+];
 ---
 
 <html lang="en">
@@ -95,6 +101,11 @@ const platformChip = (p) => (p || '').split('(')[0].trim();
       .links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
       .btn { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 9px 14px; color: var(--ink); font-weight: 600; font-size: 13.5px; }
       .btn:hover { border-color: var(--gold); text-decoration: none; }
+      .actions { display: flex; gap: 4px; margin-top: 9px; flex-wrap: wrap; }
+      .sbtn { font: inherit; font-size: 10.5px; padding: 3px 8px; border-radius: 7px; background: #1a2030; color: var(--mut); border: 1px solid var(--line); cursor: pointer; }
+      .sbtn:hover { border-color: var(--gold); color: var(--ink); }
+      .sbtn.cur { background: #221d10; color: var(--gold2); border-color: #4a3d18; cursor: default; }
+      .sbtn:disabled { opacity: 0.5; cursor: wait; }
       footer { color: var(--mut); font-size: 12px; margin-top: 40px; }
     </style>
   </head>
@@ -105,7 +116,8 @@ const platformChip = (p) => (p || '').split('(')[0].trim();
     </header>
     <p class="sub">
       Live view of the <b>second brain</b> — the markdown files <i>are</i> the database.
-      The agent loop (research → draft → visual → queue) writes here; you steer from this page.
+      The agent loop (research → draft → visual → queue) writes here; <b>click a status on any
+      card</b> to move it through the pipeline yourself.
     </p>
 
     <div class="kpis">
@@ -134,6 +146,11 @@ const platformChip = (p) => (p || '').split('(')[0].trim();
                 {e.critic != null && <span class={`chip score ${e.critic < 8 ? 'low' : ''}`}>{e.critic.toFixed(1)}</span>}
                 {e.hasVisual && (e.visualUrl ? <a class="chip vis" href={e.visualUrl} target="_blank">🎬 visual</a> : <span class="chip vis">🎬 visual</span>)}
                 {e.flags.map((f) => <span class="chip flag">{FLAG_LABEL[f] || f}</span>)}
+              </div>
+              <div class="actions">
+                {STATUSES.map((s) => (
+                  <button class={`sbtn ${e.status === s.key ? 'cur' : ''}`} data-num={e.num} data-status={s.key}>{s.short}</button>
+                ))}
               </div>
             </div>
           ))}
@@ -201,5 +218,23 @@ const platformChip = (p) => (p || '').split('(')[0].trim();
       Generated {new Date(d.generatedAt).toLocaleString()} · reads <code>content-vault.md</code>,
       <code>reports/</code>, <code>research-notes.md</code> · refresh the page after an agent run.
     </footer>
+    <script type="module">
+      for (const b of document.querySelectorAll('.sbtn')) {
+        b.addEventListener('click', async () => {
+          if (b.classList.contains('cur')) return;
+          b.disabled = true;
+          try {
+            const r = await fetch('/api/update', {
+              method: 'POST',
+              headers: { 'content-type': 'application/json' },
+              body: JSON.stringify({ num: b.dataset.num, status: b.dataset.status }),
+            });
+            const j = await r.json();
+            if (j.ok) location.reload();
+            else { alert('Update failed: ' + (j.error || 'unknown')); b.disabled = false; }
+          } catch (err) { alert('Update failed: ' + err); b.disabled = false; }
+        });
+      }
+    </script>
   </body>
 </html>
