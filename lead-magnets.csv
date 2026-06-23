@@ -2,4 +2,9 @@ keyword,resource_label,resource_url,pillar,entry_ref,active,notes
 STACK,"The 3-Tool AI Stack I Actually Use",,What's Worth It,ENTRY 005,no,"content ready in lead-magnets/stack-3-tool-ai-stack.md — host in GHL, paste URL, set active=yes"
 FOLLOW UP,"The Lead Follow-Up Setup",,Stop Doing That by Hand,ENTRY 002,no,"content ready in lead-magnets/follow-up-setup.md — host in GHL, paste URL, set active=yes"
 TEAM,"How to Set Up Your First AI Employee",,The Freedom Business,ENTRY 010,no,"content ready in lead-magnets/first-ai-employee.md — host in GHL, paste URL, set active=yes"
+WHAT,"What AI Actually Is — Plain English",,What's Worth It,,no,"content ready in lead-magnets/what-is-ai.md — host in GHL, paste URL, set active=yes. Entry point for literacy chain."
+DIFF,"ChatGPT vs AI — 6 Words That Always Get Mixed Up",,What's Worth It,,no,"content ready in lead-magnets/chatgpt-vs-ai.md — host in GHL, paste URL, set active=yes. Step 2 of literacy chain."
+PROMPT,"What Is a Prompt — and How to Write One That Works",,Time Wins,,no,"content ready in lead-magnets/what-is-a-prompt.md — host in GHL, paste URL, set active=yes. Step 3 of literacy chain."
+WORDS,"12 AI Words Everyone Uses — Explained in Plain English",,What's Worth It,,no,"content ready in lead-magnets/ai-jargon-guide.md — host in GHL, paste URL, set active=yes. Step 4 of literacy chain; exits to STACK."
+PIPELINE,"Voice Clone Pipeline — Build Once, Post in Your Voice Forever",,Build Once Runs Forever,,no,"content ready in lead-magnets/voice-clone-pipeline.md — host in GHL, paste URL, set active=yes. Exits to TEAM."
 
