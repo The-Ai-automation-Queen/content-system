@@ -168,7 +168,7 @@ export function getMachines() {
     { id: 'M01·script', name: 'Content Engine', skill: 'content-engine', status: 'live', note: 'In-voice drafts, critic-scored' },
     { id: 'M02·visual', name: 'Visual Engine', skill: 'visual-engine', status: 'live', note: 'Blotato AI images + narrated video (open egress on VPS)' },
     { id: 'M02·face', name: 'HeyGen Talking-Head', skill: 'heygen', status: has('HEYGEN_API_KEY') ? 'live' : 'needs-key', note: 'Set HEYGEN_API_KEY (the one paid tool) + record avatar/voice IDs' },
-    { id: 'M03·reels', name: 'Reels Factory', skill: 'reels-factory', status: has('REAP_API_KEY') ? 'live' : 'partial', note: has('REAP_API_KEY') ? 'Reap.video clipper wired' : 'Blotato clips for free (default); set REAP_API_KEY to use Reap' },
+    { id: 'M03·reels', name: 'Reels Factory', skill: 'reels-factory', status: 'live', note: 'Reap MCP (virality-scored, no key) + Blotato fallback — no Opus Clip' },
     { id: 'M04·post', name: 'Distribution', skill: 'distribution', status: 'live', note: 'Blotato queue across platforms (connect TikTok to add it)' },
     { id: 'M05·leads', name: 'DM Responder', skill: 'dm-responder', status: 'partial', note: 'Runs on GoHighLevel (replaces ManyChat); activate lead-magnet URLs' },
   ];

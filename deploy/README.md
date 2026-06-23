@@ -127,15 +127,13 @@ the rest are covered by tools you already have. Paste what you use into
 | Key in `.env` | Unlocks | Notes |
 |---|---|---|
 | `HEYGEN_API_KEY` | M02 talking-head of *you* (`skills/heygen`) | **The one paid tool worth it.** HeyGen → Settings → API. After your first clone, paste the **avatar_id + voice_id** into `inventory.md`. |
-| `REAP_API_KEY` *(optional)* | M03 long-video → shorts via Reap (`skills/reels-factory`) | You have app.reap.video. Set the key to use it as the clipper; otherwise Blotato clips for **free** by default. |
 | `GHL_API_KEY` *(optional)* | M05 lead writes into GoHighLevel (`skills/dm-responder`) | Only if you want the skill to push leads into GHL directly. GHL already does comment→DM→capture→nurture **natively** — no key strictly required. |
 
 ### Tools you can SKIP (don't pay for these)
 - **ManyChat** → **GoHighLevel** does it. You already run GHL; it catches the
   comment, sends the DM, captures the email, and runs your nurture flow. One tool.
-- **Opus Clip** → **Blotato** (and **Reap**, which you have) clip for free.
-  Blotato turns a transcript into captioned vertical shorts; the content-engine
-  critic picks the best moments (that was Opus Clip's only real edge).
+- **Opus Clip** → **Reap** is MCP-wired (no key) and returns virality scores —
+  the one thing Opus Clip charged for. **Blotato** is the free fallback. Skip Opus.
 - **X / Twitter API** → **Apify** already scrapes X inside `signal-harvester`
   (`apidojo/twitter-scraper`). No paid X developer account.
 
