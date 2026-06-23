@@ -2,9 +2,10 @@
 name: my-inspiration-library
 version: 1.2.0
 description: |
-  Creator inspiration library for an AI Strategic Advisor building an on-camera personal brand.
-  Encodes format analysis, best practices, and hook patterns from 20 studied creators in the
-  AI techfluence space. Reference this every time you write a script, video hook, or content outline.
+  Creator inspiration library for "the AI Automation Queen" — a creator/educator helping
+  everyday entrepreneurs use AI + automation to win back their time. Encodes format analysis,
+  best practices, and hook patterns from 21 studied creators in the AI/automation creator space.
+  Reference this every time you write a script, video hook, or content outline.
   Do NOT invoke this as a standalone skill — load it as context before writing scripts.
 argument-hint: (no arguments — loaded as context by other skills, not invoked directly)
 allowed-tools:
@@ -13,7 +14,7 @@ allowed-tools:
 
 # My Inspiration Library
 
-This library encodes creator research from 20 studied creators in the AI techfluence space.
+This library encodes creator research from 21 studied creators in the AI/automation creator space.
 When writing scripts, hooks, series outlines, or video content for this user, apply these
 patterns. Do not default to generic content structures — use this library first.
 
@@ -25,12 +26,16 @@ patterns. Do not default to generic content structures — use this library firs
 **Instagram handle:** @fati_chic_ (749 followers — early stage)
 **Current Instagram tagline:** "The AI Automation Queen"
 **Location:** Dubai, UAE
-**Role:** AI Strategic Advisor, keynote speaker, on-camera content creator
-**Target audience:** Mid-market CEOs and founders ($5M–$100M companies) who need internal AI capability, not ongoing consulting dependency
-**Edge:** Builds internal AI capability so clients can run without her — the opposite of the dependency model most AI consultants sell
-**Positioning statement:** "I help $5M–$100M companies build their own AI capability — the kind that runs without me."
-**Format:** Talking-head, on-camera. No faceless content. Face = credibility signal.
-**Voice:** Non-contracted English. Practitioner-grounded. Short paragraphs. Experiential authority. Personal moral stakes. No corporate jargon.
+**Role:** Creator + educator — "the AI Automation Queen." Has built the systems she teaches; now teaching, packaging, and automating.
+**Target audience:** The bridge — corporate professionals who want to build their own thing (mid-career, in or recently out of corporate) and use AI + automation to escape the 9-to-5 and buy back their time. Smart but overwhelmed by AI, mostly non-technical. Speaks to the individual, not the org. Her ex-corporate → entrepreneur story is the hook. Not gender-specific.
+**Edge:** She's done the building. She hands over systems, shortcuts, and proof — leverage, not 1:1 time. "You don't need to be technical to get your freedom back."
+**Positioning statement:** "I help everyday entrepreneurs use AI and automation to win back their time — so their business runs without running their life."
+**Format:** Short-form video as the spearhead, on-camera *sometimes* (mix face / screen / text-on-screen). Multi-platform blast (IG, TikTok, LinkedIn, YouTube Shorts) — data decides the home base.
+**Voice:** Casual and conversational — contractions welcome (the old non-contracted rule is RETIRED). Warm and in their corner, with a provocative edge. Authority + relatability blended. No corporate jargon, no engagement bait.
+
+> See `positioning/SKILL.md` for the full identity layer and the six content
+> pillars (Time Wins · Build Once, Runs Forever · The Freedom Business · Stop Doing
+> That by Hand · What's Worth It · Real Talk). Load it before writing anything.
 
 ### Current Content Reality (from Instagram data, Dec 2025 – Jan 2026)
 
@@ -58,26 +63,36 @@ patterns. Do not default to generic content structures — use this library firs
 - No CTAs — zero comment triggers, no "follow for more," no DM mechanics
 - Inconsistent cadence — big gaps in October and November
 
-### Brand Tension (resolve before publishing)
+### Brand Direction (RESOLVED — 22/06/2026)
 
-**Current brand:** "The AI Automation Queen" — implies tools, efficiency, women's productivity, automation how-to
-**Target brand:** "AI Strategic Advisor" — implies capability building, leadership transformation, mid-market CEOs
+The old brand tension (Strategic Advisor vs. Automation Queen) is **resolved.** There
+is now **one lane**: **The AI Automation Queen — automation for freedom**, for
+everyday entrepreneurs. Hold it everywhere. Do not reintroduce the CEO/enterprise
+or AI-ethics/governance lanes.
 
-These are two different audiences and two different promises. Scripts must choose one and hold it. Do not blend them in the same piece of content.
+**Single positioning for every script:**
+- Audience = non-technical entrepreneurs/solopreneurs/creators who want their time back.
+- Promise = use AI + automation to work less and live more; a business that runs
+  without running your life.
+- Every script serves one of the six pillars (see `positioning/SKILL.md`).
 
-**Resolution rule for scripts:**
-- If writing for **LinkedIn or CEO audience** → use Strategic Advisor positioning. Drop "automation queen" language entirely. Lead with business transformation, internal capability, AI sovereignty.
-- If writing for **Instagram/women's audience** → the AI Automation Queen angle has authenticity (her mission statement: "help women automate, reclaim hours, and honor life beyond work"). This is a valid secondary lane but must be kept separate.
-- **Never mix the lanes in one script.** A CEO does not want to hear about reclaiming time for family. A woman looking to automate her business does not need a governance framework.
+**Voice for every script:** casual, conversational, contractions welcome; warm with a
+provocative edge; specific, never vague.
 
-**The bridge content** — the one topic that works for BOTH audiences: AI safety and ethics. Her Artificial Intimacy keynote and deepfakes/brain rot content resonates across both lanes. This is the safest topic for cross-platform publishing while the positioning solidifies.
+> **Note on the playbook below:** the Creator Reference Library and Pattern Playbook
+> that follow are still valid *format/hook mechanics* — keep using them. But any
+> example lines written for the old "CEO / mid-market / internal capability"
+> audience are **legacy**. Re-anchor every example to the new audience and pillars
+> before using it (e.g. swap "Your board is asking about your AI strategy" for
+> "You're still copy-pasting the same DMs by hand, aren't you?").
 
-**Recommended transition path (based on data):**
-1. Retire lifestyle content (Ramadan, travel, city shots) — contributes nothing to either lane
-2. Double down on AI ethics/risk content — her best engagement signal
-3. Add CEO-specific framing to the same topics for LinkedIn: "Your team is already forming attachments with AI tools. Here is what that means for your culture."
-4. Use speaker/stage clips as credibility anchors on both platforms
-5. Build comment-trigger CTA into every video (currently zero CTAs — biggest missed opportunity)
+**Distribution priorities (based on the new plan):**
+1. Short-form video first; multi-platform blast (IG, TikTok, LinkedIn, YouTube Shorts).
+2. Watch where engagement lands; double down there.
+3. Build an earned CTA into every piece (comment trigger, free resource, or join the
+   community) — this was the single biggest past gap.
+4. Use speaker/stage clips as credibility anchors.
+5. Scale volume only as automation allows; otherwise fewer, stronger pieces.
 
 ---
 
@@ -629,7 +644,7 @@ End videos with a comment trigger instead of a link click.
 
 ### Pattern 6: Identity Intersection Positioning (Dr. Nici Sweaney)
 Name the specific intersection you occupy so precisely that your ideal client self-selects.
-**Apply:** Content should consistently reinforce: AI strategy + mid-market leaders + internal capability building. The intersection is the moat.
+**Apply:** Content should consistently reinforce: AI + automation × everyday entrepreneurs × winning back your time. The intersection is the moat.
 
 ### Pattern 7: Vulnerability Before Credentials (Brooke Wright)
 Lead with the relatable struggle before the expertise. Removes the "that is not for me" objection.
@@ -694,13 +709,13 @@ When writing a script for this user, apply these rules in order:
 
 2. **Pick a pattern** — identify which pattern from the playbook fits the topic. State it internally before writing.
 
-3. **Reference the positioning** — every script should be anchored to: mid-market CEOs, internal AI capability, and the independence promise. If a script drifts from this, redirect.
+3. **Reference the positioning** — every script is anchored to: everyday entrepreneurs, AI + automation to win back their time, and exactly one of the six pillars. If a script drifts from this, redirect.
 
 4. **Check the platform** — adapt opening and pacing for the platform this video is for. TikTok ≠ LinkedIn ≠ YouTube.
 
 5. **End with a comment trigger or clear next step** — not a vague "follow for more." A specific, earned CTA.
 
-6. **Voice check** — non-contracted English, short sentences, experiential authority. No corporate jargon. Read aloud before delivering.
+6. **Voice check** — casual and conversational (contractions welcome), warm with a provocative edge, authority + relatability. No corporate jargon. Read aloud before delivering.
 
 7. **Series check** — is this a standalone or part of a series? If part of a series, reference the series name and episode number in the script.
 

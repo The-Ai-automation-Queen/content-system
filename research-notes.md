@@ -2,6 +2,35 @@
 
 ---
 
+## RESEARCH 018 — 2026-06-23 | One-Person Business Runs Like a Team of Five · 95% Still Get Zero ROI (They Automate Chaos) · The $45 Stack · No-Code Agents Cross the Line · 51% of Leaders Don't Get AI
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-06-23.md](reports/research-digest-2026-06-23.md)
+**Topics searched:** best new AI automation tools solopreneurs small business June 2026; AI agents no-code automation trends creators entrepreneurs 2026; top AI automation creators influencers solopreneurs Instagram TikTok 2026; AI automation overwhelm hype vs reality small business why most fail 2026
+
+### Key Findings (summary)
+1. Agent market $7.84B (2025) → projected $52.62B (2030); the framing shifted from "copilots" to autonomous "teammates." A solo founder can now run a mini-team of digital workers (leads / follow-ups / content / monitoring).
+2. ~95% of custom AI pilots fail to move the P&L; 56% of CEOs report zero benefit. Cause: 80%+ add tools without redesigning workflow — "AI automates your chaos, not your efficiency."
+3. Minimal solopreneur AI stack pegged ~$45/mo — the "tool-rich, system-poor" problem, quantified.
+4. Plain-English / no-code automation crossed the line (Zapier AI, MindStudio); non-technical people ship agents in hours.
+5. Confidence gap: 51% of leaders admit they don't understand how AI works; 67% of non-adopters unsure; ~3 in 4 SME users still beginners. Huge underserved bridge audience.
+
+### Signals worth acting on
+- Narrow, documented, single-workflow automation wins; general-purpose agents fail for lack of context → teach one workflow at a time.
+- The beginner/confidence gap is real demand for approachable, practical, non-technical guidance — her exact lane.
+- Faceless/AI creators are flooding feeds → a real face + real story is now a differentiator.
+
+### Content angles (3 ready to use)
+1. "AI doesn't fix chaos. It scales it." (workflow-before-tools; anti-hype)
+2. "A one-person business can run like a team of five — meet the team." (digital workers; Freedom Business; series potential)
+3. "You're paying for 30 tools and using 3 — here's the stack that runs my week." (anti-sprawl; What's Worth It)
+
+**Contrarian take logged:** Everyone's selling "more agents, more tools." The failure data says tool count was never the bottleneck — pointing automation at undocumented chaos is. The ownable position: *fewer* moving parts, not more. Map one workflow, automate that, stop. "Add another AI tool" keeps people busy and broke; "fix the workflow first" buys back time — and it sits right on top of "you don't need to be technical, you need a system."
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 017 — 2026-06-19 | Trump Blocks Anthropic Access · 1,115 Layoffs/Day · OpenAI $150M Partner Network · State AI Bill Wave · Colorado Repeals Its AI Act
 
 **Status:** NOTED

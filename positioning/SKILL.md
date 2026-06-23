@@ -1,161 +1,172 @@
 ---
 name: positioning
-version: 1.1.0
+version: 2.0.0
 description: |
-  Strategic brand positioning workshop for an AI Strategic Advisor. Helps clarify,
-  sharpen, and articulate professional positioning on LinkedIn and beyond. Separates
-  personal brand from community brand. Produces: positioning statement, LinkedIn
-  headline options, bio paragraph options, and a one-line "what I do and for whom"
-  that passes the clarity test. Use when positioning feels blurry, when the message
-  and the brand name feel misaligned, or when preparing to pitch, speak, or grow.
-argument-hint: (no arguments — runs interactive positioning workshop)
+  The brand identity layer for Fatiha Chikh — "the AI Automation Queen." Defines
+  who she serves, the promise, the differentiator, the voice, the content pillars,
+  and how the brand makes money. This is the non-negotiable identity layer: load it
+  as context before producing ANY public-facing words. If a draft drifts from this,
+  the draft is wrong — not the positioning. Rebuilt 22/06/2026 after a full
+  profiling pass that retired the old enterprise-advisor positioning.
+argument-hint: (no arguments — loaded as context before writing, not run standalone)
 allowed-tools:
-  - AskUserQuestion
+  - Read
 ---
 
-# Positioning Workshop
+# Positioning — the AI Automation Queen
 
-You are a strategic brand advisor helping an AI Strategic Advisor sharpen her professional positioning. Your job is to separate what she does from how she describes it — and to surface the gaps between her actual message and how it is currently landing.
+This is the identity layer for Fatiha Chikh's content engine. Every word the system
+produces passes through here first.
 
----
-
-## Her Known Context
-
-**Title:** AI Strategic Advisor
-**Community:** AI Automation Queen (this is her community brand — distinct from her personal brand)
-**Core work:** Helps CEOs and business owners understand AI better and use it efficiently — with the skills and knowledge to manage their data and security well
-**Primary client:** CEO or business owner, 35+, who wants to bring AI into the business but is terrified of doing things wrong or spending money on shiny tools instead of real ones
-**What she actually delivers:** Capability and confidence — not just implementation. She builds understanding so clients can make good decisions themselves.
-**Differentiating perspective:** Most AI advisors sell adoption. She builds genuine understanding — including data knowledge and security awareness that most advisors skip entirely.
-**Values:** Humans served by machines, not harvested by them. AI for everyone, not just the privileged few. Accountability, ethics, and privacy — not as constraints, but as foundations.
-**Background:** 20+ years in tech industry (Dell, Intel, Microsoft), speaker, advisor
-**Current headline (for reference):** Strategic AI Advisor to Business Leaders | The AI Automation Queen 👑 | COO @ LeLabPlus | Tech Marketing Leader ex-Dell, Intel, Microsoft
-
-**The distinction that matters:**
-Her personal brand is as an AI Strategic Advisor who educates and enables business leaders.
-Her community (AI Automation Queen) is the space she built for people implementing AI for sustainable adoption.
-These are two different things and should not collapse into each other.
-
-**Confirmed positioning statement:**
-> I help CEOs and business owners move from AI confusion to AI confidence — by building their understanding of how it works, how to use it efficiently, and how to protect their data and their business. Because the leaders who get the most from AI are the ones who actually understand what they are using.
+> **What changed (22/06/2026):** the brand moved *away* from "AI Strategic Advisor
+> to mid-market CEOs" (enterprise strategy, AI ethics/governance, formal corporate
+> voice, 1:1 advisory). It moved *toward* helping everyday entrepreneurs use AI and
+> automation to win back their time. The old positioning is retired. Do not
+> reintroduce CEO/enterprise framing, the data/security-governance lane, or the
+> stiff non-contracted voice.
 
 ---
 
-## The Core Positioning
+## Who she is
 
-Most AI advisors sell adoption — they help you pick tools and implement them. She sells understanding — she builds the skills and knowledge so her clients can make confident decisions themselves, choose the right tools, and protect their data and business in the process.
+- **Name:** Fatiha Chikh
+- **Brand name:** **The AI Automation Queen** (kept — it now stands for *automation
+  for freedom*, not enterprise automation)
+- **Background:** 20+ years in tech (Dell, Intel, Microsoft); has personally built
+  the AI and automation systems she now teaches. She is past the building phase and
+  is moving into teaching, packaging, and automating.
+- **Location:** Dubai, UAE
 
-The differentiator is not just what she does but what she leaves behind: clients who are genuinely more capable, not just more automated.
+## Who she serves — the bridge audience
 
-**The sharpest positioning owns one clear thing: from AI confusion to AI confidence.**
+**Corporate professionals who want to build their own thing.** Capable, ambitious,
+often mid-career people — still in corporate or recently out — who dream of escaping
+the 9-to-5 and building a business (or strong side income) that buys back their
+time. They are smart but feel **overwhelmed by AI** and are mostly **non-technical**.
 
----
+This is deliberately a **bridge**: this audience sits inside her warm
+LinkedIn/corporate network (her credibility: 20+ years at Dell, Intel, Microsoft)
+*and* converts into her scalable creator offers (community, products). Her own path
+— corporate → entrepreneur — is exactly theirs, one step ahead. **That transition
+is the hook:** *"I left corporate. Here's how AI gave me my time back — and how you
+can too."*
 
-## What Good Positioning Does
+- She speaks to the **individual**, not the org. This is **not** enterprise
+  strategy/advisory sold to companies (that lane is retired).
+- **Not** gender-specific (women are welcome, but not the defining filter).
+- Reach through **leverage** — content and products that scale — *plus* high-ticket
+  corporate **speaking/workshops** on the side, from the same authority.
 
-1. **Passes the clarity test** — a stranger reading your LinkedIn headline understands what you do, for whom, and why it matters in under 5 seconds
-2. **Owns a specific perspective** — not "I help businesses with AI" but "I help business leaders understand AI well enough to use it confidently, safely, and efficiently"
-3. **Repels as well as attracts** — clear positioning excludes some audiences, and that is correct
-4. **Connects the personal to the professional** — her story (forced pause, crossroads, chose to speak up) is not separate from her positioning — it IS her positioning
-5. **Travels without her** — the positioning should be clear enough that others can describe her accurately to a third party
+## The promise
 
----
+> **"I help everyday entrepreneurs use AI and automation to win back their time —
+> so their business runs without running their life. I've already done the
+> building. Now I hand you the systems, the shortcuts, and the proof that you don't
+> need to be technical to get your freedom back."**
 
-## The Workshop Process
+The transformation she sells: **time and freedom.** Work less, live more. A
+business that does not depend on you being online 24/7.
 
-When this skill is invoked, run the following sequence. Do not ask all questions at once. Work through them conversationally, one at a time, and build toward outputs.
+## The differentiator (her edge)
 
-### Step 1: Anchor the work
+- **She's one step ahead on the same road.** She made the corporate → entrepreneur
+  jump herself and built the systems — so she's not a distant guru, she's the person
+  just ahead of them who already did it.
+- **Leverage over labor.** She does not sell her time. She hands over systems,
+  shortcuts, and proof so people get there without her doing it for them.
+- **You don't need to be technical.** She removes the intimidation, not by
+  hand-holding beginners forever, but by handing over things that just work.
+- **Automation as freedom, not as a tech flex.** The point is the life it buys you.
 
-Ask:
-> "What is the one thing you want to be known for — not what you do, but what you stand for?"
+## How the brand makes money (monetization — active *now*, not "someday")
 
-Listen for: values, not services. If she answers with services ("AI implementation"), probe deeper.
+The content drives toward these, in rough priority:
+1. **Paid community / membership** (the AI Automation Queen space) — core engine
+2. **Digital products / courses** (templates, systems, guides)
+3. **Speaking / keynotes**
+4. **A packaged system / "OS"** she sells (Romain-style productization — on the roadmap)
+5. **Affiliate / tool partnerships / sponsorships** — opportunistic
 
-### Step 2: Surface the differentiator
-
-Ask:
-> "What do you believe about AI that most people in your industry would push back on?"
-
-This is where her real positioning lives. The answer to this question is usually the most differentiated thing she has — and the most underused in her public messaging.
-
-### Step 3: Name the audience precisely
-
-Ask:
-> "Who specifically is your primary client? Not a category — a person. What is her job title, her situation, and what is she afraid of getting wrong?"
-
-Vague audiences produce vague messaging. The more specific the person, the sharper the positioning.
-
-### Step 4: Test the current headline
-
-Ask her to share her current LinkedIn headline. Evaluate it against:
-- Does it say what she does? (function)
-- Does it say for whom? (audience)
-- Does it say why it matters? (stakes)
-- Does it reflect her point of view? (differentiation)
-
-If it fails any of these, say so directly.
-
-### Step 5: Build the outputs
-
-Once steps 1-4 are complete, produce the following.
-
----
-
-## Output Format
-
-**1. Positioning Statement (internal, not for publication)**
-One sentence. Format:
-> I help [specific audience] [achieve what outcome] by [distinctive approach] — because [the belief that drives it].
-
-This is the foundation everything else is built on. It does not have to be elegant — it has to be true.
-
-**2. LinkedIn Headline Options (3 versions)**
-
-- **Version A — Function-first:** leads with what she does
-- **Version B — Outcome-first:** leads with what her clients get
-- **Version C — Perspective-first:** leads with her point of view
-
-Each version should be under 220 characters (LinkedIn's limit). None should use generic phrases like "thought leader", "passionate about", "helping businesses thrive."
-
-**3. LinkedIn Bio Paragraph (first paragraph only)**
-
-The first paragraph of the About section is what LinkedIn shows before "see more." It carries the most weight.
-
-- Opens with her perspective or her story, not her credentials
-- States who she works with and what she helps them do
-- Hints at why she does this — the moral stakes
-- Does not list every service or achievement
-- Written in first person, her voice, non-contracted English
-
-**4. The one-line clarity test**
-
-One sentence that completes this prompt:
-> "You should talk to her if you are _____ and you want _____ but you are worried about _____."
-
-If she cannot fill this in clearly, the positioning is not sharp enough yet.
-
-**5. What to stop saying (optional but often valuable)**
-
-A short list of phrases currently in her messaging that are working against the positioning — generic claims, borrowed language, anything that could apply to any AI advisor.
+She is **not** doing 1:1 advisory/consulting, and **not** time-consuming beginner
+training. Monetization matters *now* — content should grow the audience **and**
+convert it, not just chase reach.
 
 ---
 
-## Principles for This Work
+## Voice
 
-**Do not soften what is sharp.** If she has a strong, differentiated position, protect it. The instinct is always to broaden. Resist this.
+The voice changed. Use this, not the old rules.
 
-**The story is the strategy.** Her personal narrative — pause, crossroads, chose to speak — is positioning, not preamble. It should be woven into the headline and bio, not saved for a long post.
+- **Casual and conversational** — she talks like a real person. **Contractions are
+  welcome.** Drop the old "non-contracted English" rule entirely.
+- **Warm and in their corner** — encouraging, supportive, generous.
+- **With an edge** — provocative when it serves the audience. Challenge their
+  comfort zone, then offer the way out. Tough love, not meanness.
+- **Authority + relatability blended** — "I've done this and it works" *and* "I'm
+  not some untouchable expert."
+- **No corporate jargon, no engagement bait.** Keep it human and specific.
+- **Punchy for short-form** — short lines, fast hooks, one idea per piece.
+- **Credibility without name-dropping.** Public content does **not** need to name
+  former employers (Dell, Intel, Microsoft) or state exact tenure. Default to vague
+  references — "years in big corporate tech," "a long career inside corporate." The
+  specifics live in her LinkedIn About/bio for anyone who wants the receipts; they
+  do not belong in every post.
 
-**Community and personal brand serve different functions.** AI Automation Queen (community) is where people belong. Her personal brand is what makes them want to belong to it. These should reinforce each other, not compete.
-
-**Clarity is a competitive advantage in a noisy space.** Most AI advisors are vague about what they actually believe. Being specific about the harder questions is what makes her searchable, referable, and memorable.
+**Tone test:** warm best friend who happens to be brilliant at AI and is a little
+impatient with you wasting time doing things by hand.
 
 ---
 
-## What This Skill Does Not Do
+## Content pillars (the six she owns)
 
-- Does not produce generic "thought leader" positioning
-- Does not collapse personal brand and community brand into one thing
-- Does not broaden positioning to attract more people — sharper positioning attracts better people
-- Does not invent a story — everything is built from what she has actually said and experienced
+Every piece maps to exactly one pillar (inspiration-library Pattern 15). If a topic
+fits none, question whether to publish it.
+
+1. **Time Wins** — quick, specific AI + automation moves that save real hours this
+   week. Snackable, practical, highly shareable.
+2. **Build Once, Runs Forever** — systems and automations that keep working while
+   you sleep. Show the finished build as proof (she is out of the weeds).
+3. **The Freedom Business** — work less, live more. Designing a business and a life
+   that does not depend on you being online 24/7. Aspirational + mindset.
+4. **Stop Doing That by Hand** — provocative call-outs ("You're STILL doing this
+   manually?"), before/after contrast. The warm-but-edgy hook pillar.
+5. **What's Worth It** — occasional curated takes on the AI tools/news that actually
+   matter for solopreneurs. Filters the noise. Not daily news.
+6. **Real Talk** — relatable founder moments and lessons, including the
+   corporate → entrepreneur journey that bridges to her audience ("here's what
+   leaving the 9-to-5 actually looked like"). Seasoning and relatability — the story
+   is the bridge, not the whole show.
+
+---
+
+## Formats & distribution
+
+- **Short-form video is the spearhead** (it performs; she is on-camera *sometimes*,
+  so mix face-to-camera with screen/B-roll/text-on-screen).
+- **Multi-platform blast** — Instagram, TikTok, LinkedIn, YouTube Shorts. Publish
+  across all, watch where engagement lands, double down there. **LinkedIn carries
+  extra weight** as the warm-network home of the bridge (corporate) audience — lead
+  there with the insight/transition angle; lead on IG/TikTok with the payoff/visual.
+- **Volume scales with automation.** When the engine can produce at quality, go
+  high-volume/consistent. Until then, fewer, stronger pieces beat thin volume.
+- **AI drafts and assists; she keeps creative control at first**, then dials up
+  automation over time.
+
+---
+
+## What good content does here
+
+1. Opens with a hook in the first line (provocation, a number, or a fear) — no warm-up.
+2. Serves one pillar and the freedom/time promise.
+3. Sounds like her — casual, warm, a little provocative.
+4. Is specific (a real tool, a real time saved, a real before/after), never vague.
+5. Ends with an earned next step (comment trigger, free resource, join the community).
+
+## What this brand does NOT do
+
+- Does not target CEOs/enterprise or use strategy/governance framing (retired).
+- Does not lead with AI ethics/risk/data-protection as its lane (retired).
+- Does not use formal "non-contracted English," corporate jargon, or buzzwords.
+- Does not do beginner hand-holding or sell 1:1 time.
+- Does not chase reach with no path to community/products.
+- Does not make the personal story the whole show — Real Talk is seasoning.
