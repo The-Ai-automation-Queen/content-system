@@ -283,6 +283,8 @@ Want to know which ones I keep open every day? Comment "STACK" and I'll share my
 **Pillar:** Build Once, Runs Forever
 **Critic score:** 8.5/10 — APPROVED FOR REVIEW
 **Source:** Principle-based (no personal claims).
+**Visual:** Blotato faceless video — ai-story-video template, Alice (British, confident) voice, 9:16, 6 scenes, built 23/06/2026.
+https://database.blotato.io/storage/v1/object/public/public_media/b8860e70-38a4-4608-a767-5f67f6708503/videogen2-render-a6ffd7f4-d289-4a3d-b035-f94646cbfbeb.mp4
 
 ---
 ### SPOKEN SCRIPT
