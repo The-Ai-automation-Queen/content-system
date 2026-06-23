@@ -7,8 +7,8 @@ description: |
   podcast clip), generates 5–15 short clips with hooks and comment-keyword CTAs,
   and lands them in content-vault.md as DRAFT entries scored by content-engine's
   critic gate. Auto-triggers after a new long video is published; can also run
-  on-demand. Uses Opus Clip API (preferred) or Blotato's combine-clips template
-  as a fallback.
+  on-demand. Default engine is Blotato (no extra subscription); Reap.video is the
+  preferred dedicated clipper when wired; Opus Clip is an optional alternative.
 argument-hint: "[long video URL, or 'next' to scan inventory.md for unprocessed long videos]"
 allowed-tools:
   - Read
@@ -36,37 +36,54 @@ You produce DRAFTs in the vault. **You never publish.**
 
 ---
 
-## Two engines
+## Three engines (use what's wired — no paid tool required)
 
-### Preferred — Opus Clip API
-Opus Clip auto-detects the best moments in a long video (virality score per
-clip) and exports vertical 9:16 shorts with captions. Operator setup (one-time):
+Pick the first one that's available. **No Opus Clip subscription is needed** —
+Blotato (already wired) and Reap (the operator has it) both do the job.
 
-1. Subscribe to Opus Clip API (Business plan or higher).
-2. Set `OPUS_CLIP_API_KEY` in env. Never commit.
-3. Allowlist `api.opus.pro` in the environment's network egress.
+### Default — Blotato `combine-clips` template (already wired, free to us)
+The zero-extra-cost path, and the one to use unless a dedicated clipper is wired:
 
-Then this skill runs over Bash + curl:
+1. Pull the long video's transcript with the Apify YouTube-transcript actor.
+2. **Pick the best moments with judgment, not a black box:** read the transcript
+   and select the 5–10 strongest ~30–60s spans (a clean hook + one complete idea
+   + a payoff). This *is* the "virality scoring" Opus Clip sells — done by the
+   content-engine critic instead of a paid model.
+3. Feed each chosen span's timecodes to Blotato's `combine-clips` template
+   (`blotato_create_visual`) with captions enabled; poll with
+   `blotato_get_visual_status`.
+
+> **This is how Blotato replaces Opus Clip:** transcript → smart segment pick →
+> captioned vertical export. The only thing Opus Clip added was auto-ranking the
+> moments; we do that with the critic, for free.
+
+### Preferred dedicated clipper — Reap (app.reap.video), when wired
+Reap auto-clips a long video into captioned vertical shorts (Opus-Clip-class) and
+the operator already has access. Use it ahead of Blotato when its key is set.
+
+1. Set `REAP_API_KEY` in env (from the Reap dashboard → API/settings). Never commit.
+2. Submit the long video and retrieve the rendered clips. Confirm the exact
+   endpoint shape in the operator's Reap dashboard, then call over Bash + curl:
 
 ```bash
-# Submit
-curl -sS -X POST https://api.opus.pro/v1/clips \
-  -H "Authorization: Bearer $OPUS_CLIP_API_KEY" -H "content-type: application/json" \
-  -d '{"video_url":"<LONG_URL>","aspect_ratio":"9:16","clip_count":10,"add_captions":true}'
+# Submit (verify path/fields against your Reap dashboard's API reference)
+curl -sS -X POST https://api.reap.video/v1/clips \
+  -H "Authorization: Bearer $REAP_API_KEY" -H "content-type: application/json" \
+  -d '{"video_url":"<LONG_URL>","aspect_ratio":"9:16","captions":true}'
 
-# Poll status
-curl -sS https://api.opus.pro/v1/clips/$JOB_ID \
-  -H "Authorization: Bearer $OPUS_CLIP_API_KEY"
+# Poll status / fetch resulting clip URLs
+curl -sS https://api.reap.video/v1/clips/$JOB_ID \
+  -H "Authorization: Bearer $REAP_API_KEY"
 ```
 
-(Endpoint shape may evolve — check the operator's Opus Clip dashboard for the
-current API reference and adjust here.)
+If Reap has no public API on the operator's plan, use it **manually** (upload in
+the Reap UI, download the clips) and feed the resulting MP4s into the vault via
+the steps below — the rest of the pipeline is identical.
 
-### Fallback — Blotato `combine-clips` template
-If Opus Clip is unavailable, scrape the long video's transcript (via Apify's
-YouTube-transcript actor) → segment into ~30-60s spans → feed each span's
-timecodes to Blotato's `combine-clips` template with captions enabled. Less
-intelligent than Opus Clip's virality scoring, but it works.
+### Optional alternative — Opus Clip API
+Only if the operator ever subscribes. Set `OPUS_CLIP_API_KEY`, then
+`POST https://api.opus.pro/v1/clips` with `{video_url, aspect_ratio:"9:16",
+clip_count, add_captions:true}` and poll `…/v1/clips/$JOB_ID`. Not required.
 
 ---
 
@@ -74,8 +91,9 @@ intelligent than Opus Clip's virality scoring, but it works.
 
 1. **Read the source** — title, description, transcript (Apify
    `starvibe/youtube-video-transcript` for YouTube).
-2. **Generate the clips** — Opus Clip API call returns N clips with `start`,
-   `end`, `virality_score`, `mp4_url`, `caption_text`.
+2. **Generate the clips** — whichever engine is wired (Blotato / Reap / Opus
+   Clip) returns N clips with a `start`, `end`, `mp4_url`, and caption text.
+   With Blotato, *you* choose the spans from the transcript (the smart pick).
 3. **For each clip** (top 5–10 by score):
    - Write a hook line in her voice (use Pattern 10, Result-First Demo, or
      Pattern 14, Contrarian Operational, from `inspiration-library`).

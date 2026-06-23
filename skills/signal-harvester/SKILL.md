@@ -4,8 +4,8 @@ version: 1.0.0
 description: |
   Machine M01 (data layer) — multi-source daily signal harvest, modeled on
   Romain Brunel's script-generator data backbone. Pulls fresh "signals of the
-  day" from Apify (Instagram + competitor scrapes), Tavily (web + news search),
-  the X/Twitter API, YouTube (virality-scored), and curated RSS blogs.
+  day" from Apify (Instagram, X/Twitter + competitor scrapes — no paid X API),
+  Tavily (web + news search), YouTube (virality-scored), and curated RSS blogs.
   Distributes the source mix and writes the harvest as a numbered RESEARCH
   entry that content-engine then drafts from. Source-mix rule: 2 from Twitter,
   2 from Instagram, 3 from blogs/RSS/YouTube, ≥2 must be lead-magnet shaped.

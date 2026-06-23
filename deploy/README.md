@@ -120,22 +120,31 @@ A useful side effect: UFW closes everything except SSH, so the **dashboard
 
 ## Gap 2 — Live API keys (paste, don't allowlist)
 
-**On the VPS there is nothing to allowlist.** Just paste the keys for the
-machines you want live, in `deploy/.env`. Each is independent — wire them as you
-get to them.
+**On the VPS there is nothing to allowlist.** And you only *need* one paid key —
+the rest are covered by tools you already have. Paste what you use into
+`deploy/.env`.
 
-| Key in `.env` | Unlocks | Where to get it |
+| Key in `.env` | Unlocks | Notes |
 |---|---|---|
-| `HEYGEN_API_KEY` | M02 talking-head of *you* (`skills/heygen`) | HeyGen → Settings → API. After your first clone, paste the **avatar_id + voice_id** into `inventory.md`. |
-| `OPUS_CLIP_API_KEY` | M03 long-video → many shorts (`skills/reels-factory`) | Opus Clip → API. (Blotato is the built-in fallback if you skip this.) |
-| `MANYCHAT_API_KEY` | M05 IG comment→DM→lead (`skills/dm-responder`) | ManyChat → Settings → API. Also build the IG automations per `lead-magnets.csv`. |
-| `X_API_KEY` | M01 X/Grok signals (`skills/signal-harvester`) | X developer portal. (Apify + Tavily are already MCP-wired in the Claude env.) |
+| `HEYGEN_API_KEY` | M02 talking-head of *you* (`skills/heygen`) | **The one paid tool worth it.** HeyGen → Settings → API. After your first clone, paste the **avatar_id + voice_id** into `inventory.md`. |
+| `REAP_API_KEY` *(optional)* | M03 long-video → shorts via Reap (`skills/reels-factory`) | You have app.reap.video. Set the key to use it as the clipper; otherwise Blotato clips for **free** by default. |
+| `GHL_API_KEY` *(optional)* | M05 lead writes into GoHighLevel (`skills/dm-responder`) | Only if you want the skill to push leads into GHL directly. GHL already does comment→DM→capture→nurture **natively** — no key strictly required. |
 
-The dashboard's machine panel flips a machine from **needs-key** (red) to
-**live** (green) automatically once its env var is present — so you get instant
-visual confirmation each key landed.
+### Tools you can SKIP (don't pay for these)
+- **ManyChat** → **GoHighLevel** does it. You already run GHL; it catches the
+  comment, sends the DM, captures the email, and runs your nurture flow. One tool.
+- **Opus Clip** → **Blotato** (and **Reap**, which you have) clip for free.
+  Blotato turns a transcript into captioned vertical shorts; the content-engine
+  critic picks the best moments (that was Opus Clip's only real edge).
+- **X / Twitter API** → **Apify** already scrapes X inside `signal-harvester`
+  (`apidojo/twitter-scraper`). No paid X developer account.
 
-> **Verify a key end to end:** run that machine alone, e.g.
+> Apify / Tavily / Blotato / Canva / Gamma are MCP servers in the Claude env —
+> not keys in this file.
+
+The dashboard's machine panel reflects each machine's status automatically.
+
+> **Verify end to end:** run a machine alone, e.g.
 > `./deploy/run-machine.sh "/heygen" 0 0`, and watch `deploy/logs/`.
 
 ---
@@ -175,14 +184,18 @@ Two of three sub-items are **already done in this repo**:
 
 The remaining sub-items are **operator data** only you can supply:
 
-1. **Lead-magnet URLs** (`lead-magnets.csv` — currently 0/3 active). For each row,
-   paste the real resource link into `resource_url` and set `active` to `yes`.
-   The DM responder won't hand out a link until its row is active.
+1. **Lead-magnet URLs.** The three resources are now **written** (in
+   `lead-magnets/`). You just need to host each and paste its URL. Easiest:
+   host in **GoHighLevel** (page + opt-in + nurture, all in one) — full steps in
+   `lead-magnets/README.md`. Then in `lead-magnets.csv`, paste the URL into
+   `resource_url` and set `active` to `yes`. The DM responder won't hand out a
+   link until its row is active.
    ```
-   STACK,"My 3-tool AI stack short list",https://your.link/stack,What's Worth It,ENTRY 005,yes,
+   STACK,"The 3-Tool AI Stack I Actually Use",https://your.ghl/stack,What's Worth It,ENTRY 005,yes,...
    ```
-2. **Connect TikTok to Blotato** (the one missing publishing channel). Do it in
-   the Blotato dashboard; no code change needed.
+2. **Connect TikTok to Blotato** (you have the account, it's not linked yet):
+   Blotato dashboard → **Accounts → Add/Connect → TikTok** → log in and authorize.
+   No code change — `distribution` will include it on the next run.
 
 After editing `lead-magnets.csv`, the dashboard's "lead magnets active" count
 updates on the next page refresh.

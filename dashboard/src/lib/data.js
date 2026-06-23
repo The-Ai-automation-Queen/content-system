@@ -164,13 +164,13 @@ export function getLeadMagnets(base) {
 export function getMachines() {
   const has = (k) => !!process.env[k];
   return [
-    { id: 'M01·data', name: 'Signal Harvester', skill: 'signal-harvester', status: 'partial', note: 'Apify/Tavily MCP ready; X/Grok key + RSS list pending' },
+    { id: 'M01·data', name: 'Signal Harvester', skill: 'signal-harvester', status: 'live', note: 'X/IG/YouTube via Apify (no paid X API) + Tavily web search' },
     { id: 'M01·script', name: 'Content Engine', skill: 'content-engine', status: 'live', note: 'In-voice drafts, critic-scored' },
-    { id: 'M02·visual', name: 'Visual Engine', skill: 'visual-engine', status: 'partial', note: 'Blotato visuals live; media upload needs egress allowlist' },
-    { id: 'M02·face', name: 'HeyGen Talking-Head', skill: 'heygen', status: has('HEYGEN_API_KEY') ? 'live' : 'needs-key', note: 'Needs HEYGEN_API_KEY + allowlist api.heygen.com' },
-    { id: 'M03·reels', name: 'Reels Factory', skill: 'reels-factory', status: has('OPUS_CLIP_API_KEY') ? 'live' : 'needs-key', note: 'Needs OPUS_CLIP_API_KEY + allowlist api.opus.pro (Blotato fallback)' },
-    { id: 'M04·post', name: 'Distribution', skill: 'distribution', status: 'live', note: 'Blotato queue across 6 platforms (no TikTok yet)' },
-    { id: 'M05·leads', name: 'DM Responder', skill: 'dm-responder', status: has('MANYCHAT_API_KEY') ? 'live' : 'needs-setup', note: 'Needs ManyChat (IG) + always-on host for webhook' },
+    { id: 'M02·visual', name: 'Visual Engine', skill: 'visual-engine', status: 'live', note: 'Blotato AI images + narrated video (open egress on VPS)' },
+    { id: 'M02·face', name: 'HeyGen Talking-Head', skill: 'heygen', status: has('HEYGEN_API_KEY') ? 'live' : 'needs-key', note: 'Set HEYGEN_API_KEY (the one paid tool) + record avatar/voice IDs' },
+    { id: 'M03·reels', name: 'Reels Factory', skill: 'reels-factory', status: has('REAP_API_KEY') ? 'live' : 'partial', note: has('REAP_API_KEY') ? 'Reap.video clipper wired' : 'Blotato clips for free (default); set REAP_API_KEY to use Reap' },
+    { id: 'M04·post', name: 'Distribution', skill: 'distribution', status: 'live', note: 'Blotato queue across platforms (connect TikTok to add it)' },
+    { id: 'M05·leads', name: 'DM Responder', skill: 'dm-responder', status: 'partial', note: 'Runs on GoHighLevel (replaces ManyChat); activate lead-magnet URLs' },
   ];
 }
 

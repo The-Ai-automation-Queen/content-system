@@ -5,9 +5,10 @@ description: |
   Machine M05 — the monetization engine. Auto-replies to comments and DMs on
   Instagram, Facebook, and YouTube with the matching lead-magnet resource link
   whenever someone comments her CTA keyword (e.g. "STACK", "FOLLOW UP",
-  "CLAUDE"). Captures the lead into a logbook. ManyChat handles Instagram;
-  Blotato / native APIs handle Facebook + YouTube. This is the difference
-  between "reach" and "revenue."
+  "CLAUDE"). Captures the lead into a logbook and into her CRM. GoHighLevel (GHL)
+  handles Instagram comment→DM→capture→nurture in one tool; Blotato / native
+  APIs handle Facebook + YouTube. This is the difference between "reach" and
+  "revenue."
 argument-hint: "[setup | list-magnets | log <platform> <keyword> <username>]"
 allowed-tools:
   - Read
@@ -48,17 +49,28 @@ post goes out with a keyword that has no row, this is a leak — flag it loudly.
 
 ## Operator setup (one-time, per platform)
 
-### Instagram → ManyChat
-1. Connect ManyChat to her IG (`@thefatihachikh`).
-2. For each active row in `lead-magnets.csv`, create one ManyChat automation:
-   - Trigger: "Comment contains exactly `<KEYWORD>`"
-   - Action 1: Webhook POST to `https://<her-vps>/dm-webhook` with
-     `{username, keyword, ig_post_id}` (the VPS responds with the resource URL)
-   - Action 2: DM the user `Voici ta ressource → <resource_url>`
-3. Save the ManyChat workspace ID + access token to env (`MANYCHAT_API_KEY`).
+### Instagram → GoHighLevel (GHL)
+She already runs GHL, so it replaces ManyChat entirely — it catches the comment,
+sends the DM, captures the email, and runs the nurture flow, all in one tool.
 
-(Pattern from Romain's M05: ManyChat handles the IG bot, the webhook into a
-small VPS lets you change the resource URL without re-editing every automation.)
+1. Connect IG to GHL: *Settings → Integrations → Facebook/Instagram* (connect
+   `@thefatihachikh`). This unlocks IG DMs inside GHL Conversations + workflows.
+2. For each active row in `lead-magnets.csv`, build one GHL workflow:
+   - **Trigger:** *Social → Instagram comment* contains `<KEYWORD>` (case-insensitive).
+   - **Action 1 — DM:** send the IG DM in her voice, e.g.
+     `Sending it! 👉 <resource_url>. Tell me what you build with it.`
+   - **Action 2 — capture:** when they opt in on the resource page, create/update
+     the contact, apply tag `lm-<keyword>` (e.g. `lm-stack`), and drop them into
+     her existing nurture flow (the *Follow-Up Setup* lead magnet is that flow).
+3. *(Optional)* For change-the-URL-without-editing-every-workflow flexibility,
+   point the GHL DM action at a single short link per keyword that you can
+   re-target later. Otherwise just paste the `resource_url` straight in.
+
+No `MANYCHAT_API_KEY` and no separate VPS webhook are required — GHL does the
+comment→DM→capture loop natively. This skill's job for IG is to **monitor**:
+verify every active keyword has a live GHL workflow, and log leads so
+`vault-audit` can report conversions. Set `GHL_API_KEY` in env only if you want
+this skill to write leads into GHL directly (otherwise GHL captures them itself).
 
 ### Facebook + YouTube → Blotato or native API
 1. Use Blotato's `blotato_list_posts` + comment-poll endpoint (where available),
