@@ -106,7 +106,7 @@ Not offered: 1:1 advisory/consulting; time-consuming beginner training.
 
 | Gap | What's needed | Why it matters |
 |---|---|---|
-| Talking video of *her real face* | A HeyGen/ElevenLabs clone of Fatiha → fed to Blotato's `ai-avatar-broll` template | Faceless + narrated video ships now; a face-matched avatar is the on-brand way to scale talking-head without filming |
+| Upload local media to Blotato | Allowlist `database.blotato.io` (+ `*.blotato.io`) in the environment's network egress — currently **blocked** | The operator has a HeyGen avatar MP4, but the agent can't upload it or run `ai-avatar-broll` until egress is allowed |
 | TikTok publishing | Connect a TikTok account to Blotato | The plan wants TikTok; no account is wired |
 
 > **Note:** AI **image generation** (Flux/Imagen/Seedream/Ideogram-class), AI

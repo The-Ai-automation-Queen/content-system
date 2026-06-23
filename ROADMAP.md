@@ -88,11 +88,14 @@ To automate the rhythm, run the harness `/loop` skill on `weekly-ops`, or trigge
    entries and queue the 3 unflagged ready posts into Blotato. Resolve the
    `PERSONALIZE`/`VERIFY`/`PREP` flags on the rest so they become queueable.
 2. **The last stack gaps** (operator action). _AI image-gen, infographics, and
-   narrated AI-voice video are now wired via Blotato's visual engine — done._
+   narrated AI-voice video are now wired via Blotato's visual engine — done. The
+   operator now also has a HeyGen/ElevenLabs talking avatar of herself — done._
    What's left:
-   - **A real avatar of *her*** — a HeyGen/ElevenLabs clone of Fatiha's own face +
-     voice, fed to Blotato's `ai-avatar-broll` template, for on-brand talking-head
-     at scale. (Faceless narrated video already ships via `visual-engine`.)
+   - **Allowlist `blotato.io` egress.** This environment's network policy blocks
+     `database.blotato.io`, so the agent can't upload local media (e.g. the avatar
+     MP4) or fetch render files. Add `database.blotato.io` (and `*.blotato.io`) to
+     the environment's network access settings. Once done, `visual-engine` can
+     upload the avatar → run `ai-avatar-broll` → queue, fully autonomously.
    - **Connect a TikTok account to Blotato** — the plan wants it; it's not wired.
 3. **Reconcile the Instagram identity** — Blotato has `@thefatihachikh`;
    `inventory.md` had `@fati_chic_`. Decide the brand home and align everywhere.
