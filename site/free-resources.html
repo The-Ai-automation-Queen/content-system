@@ -98,6 +98,8 @@ a{color:inherit;text-decoration:none}
 .row-title{font-family:'Playfair Display',Georgia,serif;font-size:30px;line-height:1.2;font-weight:400;margin-bottom:10px;letter-spacing:-0.01em}
 .row-summary{font-size:17px;color:var(--muted);max-width:760px;line-height:1.55}
 .row-cta{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.18em;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px;white-space:nowrap}
+.row.coming-soon{opacity:0.45;pointer-events:none}
+.row.coming-soon .row-cta{border-bottom-color:transparent;color:var(--muted)}
 
 .cta-band{background:var(--navy);color:var(--canvas);padding:96px 32px}
 .cta-inner{max-width:1240px;margin:0 auto}
@@ -569,7 +571,12 @@ img{max-width:100%;height:auto}
   var today = new Date().toISOString().slice(0,10);
   document.querySelectorAll('.row[data-publish]').forEach(function(row){
     if(row.getAttribute('data-publish') > today){
-      row.style.display = 'none';
+      row.classList.add('coming-soon');
+      var cta = row.querySelector('.row-cta');
+      if(cta){
+        cta.removeAttribute('href');
+        cta.textContent = 'Coming soon';
+      }
     }
   });
 })();
