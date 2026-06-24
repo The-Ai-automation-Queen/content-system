@@ -238,7 +238,7 @@ img{max-width:100%;height:auto}
         <h3>Everyone says &ldquo;AI&rdquo; 100 times a day. Nobody says what it is.</h3>
         <p>You're not behind. You were never told. Here is what it is, in 4 lines.</p>
       </div>
-      <a class="row-cta" href="guides/what-is-ai.html">Read →</a>
+      <a class="row-cta" href="opt-in.html?guide=what-is-ai">Read →</a>
     </div>
     <div class="spot-side" id="spotlight-side">
       <div class="spot-mini">
@@ -247,7 +247,7 @@ img{max-width:100%;height:auto}
           <h4>ChatGPT and AI are not the same thing.</h4>
           <p>6 words, sorted biggest to smallest.</p>
         </div>
-        <a class="row-cta" href="guides/chatgpt-vs-ai.html">Read →</a>
+        <a class="row-cta" href="opt-in.html?guide=chatgpt-vs-ai">Read →</a>
       </div>
       <div class="spot-mini">
         <div>
@@ -255,7 +255,7 @@ img{max-width:100%;height:auto}
           <h4>Chez Claude. The one that reads the whole room.</h4>
           <p>Door, kitchen, plate. The restaurant walkthrough.</p>
         </div>
-        <a class="row-cta" href="guides/chez-claude.html">Read →</a>
+        <a class="row-cta" href="opt-in.html?guide=chez-claude">Read →</a>
       </div>
     </div>
   </div>
@@ -292,7 +292,7 @@ img{max-width:100%;height:auto}
     inner.appendChild(makeEl('h3', null, guide.title || ''));
     inner.appendChild(makeEl('p', null, guide.summary || ''));
     var cta = makeEl('a', 'row-cta', 'Read →');
-    cta.href = 'guides/' + encodeURIComponent(slug) + '.html';
+    cta.href = 'opt-in.html?guide=' + encodeURIComponent(slug);
     slot.appendChild(inner);
     slot.appendChild(cta);
   }
@@ -306,7 +306,7 @@ img{max-width:100%;height:auto}
       inner.appendChild(makeEl('h4', null, item.data.title || ''));
       inner.appendChild(makeEl('p', null, item.data.side_summary || item.data.summary || ''));
       var cta = makeEl('a', 'row-cta', 'Read →');
-      cta.href = 'guides/' + encodeURIComponent(item.slug) + '.html';
+      cta.href = 'opt-in.html?guide=' + encodeURIComponent(item.slug);
       mini.appendChild(inner);
       mini.appendChild(cta);
       slot.appendChild(mini);
@@ -391,7 +391,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Chez Claude. The one that reads the whole room before it answers.</h2>
       <p class="row-summary">Long-form reasoning, Artifacts, computer-use, Projects, Claude Code. Walked through like a restaurant. Door, kitchen, plate.</p>
     </div>
-    <a class="row-cta" href="guides/chez-claude.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-claude">Read &rarr;</a>
   </article>
 
   <article class="row" data-publish="2026-06-23">
@@ -400,7 +400,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Chez ChatGPT. The one everyone tried first. Here's what's actually on the menu.</h2>
       <p class="row-summary">GPTs, Operator, Agents, Voice, image gen, the whole OpenAI ecosystem as one walkthrough. Door, kitchen, plate.</p>
     </div>
-    <a class="row-cta" href="guides/chez-openai.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-openai">Read &rarr;</a>
   </article>
 
   <article class="row" data-publish="2026-06-23">
@@ -409,7 +409,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Chez Gemini. It already knows your calendar, your Drive, your inbox.</h2>
       <p class="row-summary">Gemini, Workspace, Deep Research, NotebookLM, Astra, the Google AI stack as a restaurant.</p>
     </div>
-    <a class="row-cta" href="guides/chez-gemini.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-gemini">Read &rarr;</a>
   </article>
 
   <article class="row" data-publish="2026-06-25">
@@ -418,7 +418,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Chez Copilot. It's been sitting in your Office toolbar this whole time.</h2>
       <p class="row-summary">Copilot Chat, Cowork, Studio, Agent 365, Foundry. Microsoft's AI restaurant from door to plate.</p>
     </div>
-    <a class="row-cta" href="guides/chez-copilot.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-copilot">Read &rarr;</a>
   </article>
 
   <article class="row" data-publish="2026-06-29">
@@ -427,7 +427,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Chez Grok. Real-time ingredients. No filter on the chef.</h2>
       <p class="row-summary">Grok 4.3, Big Brain, Aurora, X live search, SuperGrok Heavy. xAI's loud kitchen walked through.</p>
     </div>
-    <a class="row-cta" href="guides/chez-grok.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-grok">Read &rarr;</a>
   </article>
 
   <article class="row" data-publish="2026-07-01">
@@ -436,7 +436,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Chez Mistral. Open kitchen. Nothing leaves the building.</h2>
       <p class="row-summary">Le Chat, Mistral Large, Magistral, Vibe coding, No Telemetry Mode. The Paris kitchen at $14.99/mo.</p>
     </div>
-    <a class="row-cta" href="guides/chez-mistral.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-mistral">Read &rarr;</a>
   </article>
 
   <article class="row" data-publish="2026-07-03">
@@ -445,7 +445,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Chez DeepSeek. Same plates. A fraction of the price.</h2>
       <p class="row-summary">V4 Flash, V4 Pro, 1M context, the dirt-cheap open-source kitchen from China, mapped clean.</p>
     </div>
-    <a class="row-cta" href="guides/chez-deepseek.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-deepseek">Read &rarr;</a>
   </article>
 
   <article class="row" data-publish="2026-07-05">
@@ -454,7 +454,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Chez Kimi. 300 chefs in parallel. Nobody's heard of this place yet.</h2>
       <p class="row-summary">K2.6, 300-agent swarm, Kimi Code, Cursor under the hood. Moonshot AI's parallel brigade.</p>
     </div>
-    <a class="row-cta" href="guides/chez-kimi.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-kimi">Read &rarr;</a>
   </article>
 
   <article class="row" data-publish="2026-07-09">
@@ -463,7 +463,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Chez Meta AI. Free tables on every app you already use.</h2>
       <p class="row-summary">Llama, WhatsApp + IG + Messenger integration, Ray-Ban Meta glasses, AI Studio creator characters.</p>
     </div>
-    <a class="row-cta" href="guides/chez-meta-ai.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-meta-ai">Read &rarr;</a>
   </article>
 
   <article class="row" data-publish="2026-07-11">
@@ -472,7 +472,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Chez Manus. You sit down. The kitchen runs itself.</h2>
       <p class="row-summary">Autonomous multi-agent brigade. Planner, executor, verifier. Browser, code, file. Hours of unsupervised work.</p>
     </div>
-    <a class="row-cta" href="guides/chez-manus.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-manus">Read &rarr;</a>
   </article>
 
   <!-- CHEZ_SERIES_END -->
@@ -482,7 +482,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">You sat through that meeting. You smiled. You understood nothing.</h2>
       <p class="row-summary">Someone said RAG, MCP, and hallucination in the same sentence. You nodded. Everyone nodded. Here&rsquo;s the pause button.</p>
     </div>
-    <a class="row-cta" href="guides/ai-jargon-guide.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=ai-jargon-guide">Read &rarr;</a>
   </article>
   <article class="row" data-publish="2026-03-20">
     <div>
@@ -490,7 +490,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Heard &ldquo;prompt&rdquo; 50 times, still no idea what it is?</h2>
       <p class="row-summary">Every AI article tells you to write better prompts. Nobody tells you what a prompt is. Here is what makes one work.</p>
     </div>
-    <a class="row-cta" href="guides/what-is-a-prompt.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=what-is-a-prompt">Read &rarr;</a>
   </article>
   <article class="row" data-publish="2026-03-10">
     <div>
@@ -498,7 +498,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Confused if ChatGPT and AI are the same thing?</h2>
       <p class="row-summary">ChatGPT. AI. LLM. Chatbot. Agent. Model. None mean the same thing. Here is what each one is.</p>
     </div>
-    <a class="row-cta" href="guides/chatgpt-vs-ai.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chatgpt-vs-ai">Read &rarr;</a>
   </article>
   <article class="row" data-publish="2026-03-02">
     <div>
@@ -506,7 +506,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Everyone says &ldquo;AI&rdquo; 100 times a day. Nobody says what it is.</h2>
       <p class="row-summary">You are not behind. You were never told. Here is what it is, in 4 lines.</p>
     </div>
-    <a class="row-cta" href="guides/what-is-ai.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=what-is-ai">Read &rarr;</a>
   </article>
   <article class="row" data-publish="2026-03-01">
     <div>
@@ -514,7 +514,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Everyone says &ldquo;agentic.&rdquo; Here&rsquo;s what it actually means.</h2>
       <p class="row-summary">Agentic AI. AI agents. Agentic workflows. 4 levels of autonomy, explained without the hype.</p>
     </div>
-    <a class="row-cta" href="guides/what-is-agentic.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=what-is-agentic">Read &rarr;</a>
   </article>
 </section>
 
@@ -559,7 +559,7 @@ img{max-width:100%;height:auto}
     <a class="footer-link" href="#">Community, $49/mo</a><a class="footer-link" href="#">Fast Forward, $499</a><a class="footer-link" href="#">About</a>
   </div>
 </div>
-<div class="footer-legal">&copy; 2026 Shift &amp; Lead, All rights reserved</div>
+<div class="footer-legal">&copy; 2026 Shift &amp; Lead. All rights reserved. All content is original work. Reproduction without written consent is prohibited.</div>
 </footer>
 
 <script>
