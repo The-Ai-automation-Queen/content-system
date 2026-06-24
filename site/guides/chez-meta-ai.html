@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chez Meta AI · The Full Kitchen Map | Shift &amp; Lead</title>
+<meta name="description" content="The whole Meta AI ecosystem walked through like a restaurant. Door, kitchen, plate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&family=Source+Serif+4:wght@400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="../lib/lucide.min.js" defer></script>
+<style>
+:root { --canvas: #F8F7F5; --ink: #1A1A1A; --muted: #5C5A57; --hairline: #D8D6D2; --surface: #FFFFFF; --accent: #6B35C2; --navy: #1B2EA0; --accent-light: rgba(107, 53, 194, 0.08); --navy-light: rgba(27, 46, 160, 0.08); --pastel-lilac: #9B8FB8; --pastel-ochre: #C9A876; --pastel-sage: #8FA890; --pastel-slate: #8FA4BC; --pastel-rose: #C490A0; --pastel-grey: #A8A39C; --pastel-mixed: #A99BC6; --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif; --font-body: 'Source Serif 4', Georgia, serif; --font-mono: 'Space Mono', ui-monospace, monospace; }
+  --electric: #2C4BE0;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--canvas); color: var(--ink); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; line-height: 1.5; }
+.header { text-align: center; padding: 56px 20px 12px; }
+.header h1 { font-family: var(--font-heading); font-style: italic; font-weight: 400; font-size: 2.8em; color: var(--ink); margin-bottom: 14px; letter-spacing: -0.01em; }
+.header .subtitle { color: var(--muted); font-size: 1em; max-width: 640px; margin: 0 auto 14px; line-height: 1.55; }
+.header .reading-guide { font-family: var(--font-body); font-style: italic; font-size: 1.05em; font-weight: 700; color: var(--ink); display: inline-block; margin-top: 4px; }
+.header .reading-guide::before, .header .reading-guide::after { content: "·"; margin: 0 10px; color: var(--hairline); font-style: normal; font-weight: 400; }
+.legend { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; padding: 18px 20px 6px; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.7em; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+.where-legend { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; padding: 6px 20px 10px; }
+.wl { font-family: var(--font-mono); font-size: 0.65em; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 4px; color: var(--ink); text-transform: uppercase; font-weight: 700; border: 1px solid var(--hairline); background: var(--surface); }
+.map { max-width: 1100px; margin: 0 auto; padding: 14px 20px 50px; }
+.zone { background: var(--surface); border: 1px solid var(--hairline); border-radius: 16px; padding: 24px; transition: border-color 0.3s; }
+.zone:hover { border-color: var(--pastel-lilac); }
+.zone-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 6px; }
+.zone-num { font-family: var(--font-mono); font-size: 0.85em; color: var(--canvas); font-weight: 700; background: var(--ink); width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.zone-titles { flex: 1; }
+.zone-label { font-family: var(--font-heading); font-style: italic; font-size: 1.25em; color: var(--accent); font-weight: 400; }
+.zone-subtitle { font-size: 0.85em; color: var(--muted); margin-top: 3px; line-height: 1.45; }
+.zone-narrative { font-style: italic; font-size: 0.95em; color: var(--ink); line-height: 1.7; margin: 16px 0 22px; }
+.zone-narrative em { color: var(--navy); font-style: normal; font-weight: 700; }
+.flow-bridge { display: flex; align-items: center; gap: 16px; padding: 18px 0; max-width: 720px; margin: 0 auto; }
+.flow-bridge::before, .flow-bridge::after { content: ""; flex: 1; height: 1px; background: var(--hairline); }
+.flow-bridge .flow-label { font-family: var(--font-mono); font-size: 0.7em; color: var(--ink); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; text-align: center; max-width: 480px; }
+.items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.item { background: var(--canvas); border: 1px solid var(--hairline); border-radius: 10px; padding: 14px; cursor: pointer; transition: all 0.25s; position: relative; }
+.item:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(107, 53, 194, 0.08); border-color: var(--pastel-lilac); }
+.item-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.item-icon { width: 22px; height: 22px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; color: var(--ink); }
+.item-icon svg { width: 100%; height: 100%; stroke-width: 1.5; }
+.item-name { font-family: var(--font-heading); font-size: 0.98em; font-weight: 400; color: var(--ink); line-height: 1.25; }
+.item-analogy { font-size: 0.82em; color: var(--accent); font-weight: 600; margin-bottom: 4px; line-height: 1.35; }
+.item-desc { font-size: 0.78em; color: var(--muted); line-height: 1.45; }
+.cat-dot { width: 8px; height: 8px; border-radius: 50%; position: absolute; top: 12px; right: 12px; }
+.wb { font-family: var(--font-mono); font-size: 0.6em; padding: 2px 7px; border-radius: 4px; display: inline-block; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: var(--ink); border: 1px solid var(--hairline); background: var(--surface); }
+.overlay { display: none; position: fixed; inset: 0; background: rgba(26, 26, 26, 0.55); z-index: 100; justify-content: center; align-items: center; padding: 20px; }
+.overlay.active { display: flex; }
+.detail-card { background: var(--surface); border: 1px solid var(--hairline); border-radius: 16px; padding: 32px; max-width: 460px; width: 100%; position: relative; animation: popIn 0.25s ease; box-shadow: 0 20px 60px rgba(26, 26, 26, 0.20); }
+@keyframes popIn { from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.detail-close { position: absolute; top: 14px; right: 18px; background: none; border: none; font-size: 1.6em; cursor: pointer; color: var(--muted); }
+.detail-icon { width: 32px; height: 32px; margin-bottom: 14px; color: var(--ink); display: inline-flex; align-items: center; justify-content: center; }
+.detail-icon svg { width: 100%; height: 100%; stroke-width: 1.5; }
+.dw svg { width: 12px; height: 12px; stroke-width: 2; vertical-align: -2px; margin-right: 5px; }
+.detail-title { font-family: var(--font-heading); font-style: italic; font-size: 1.4em; font-weight: 400; color: var(--ink); margin-bottom: 4px; }
+.detail-analogy { font-size: 1em; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+.dw { font-family: var(--font-mono); font-size: 0.7em; display: inline-block; padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--ink); border: 1px solid var(--hairline); background: var(--surface); }
+.detail-desc { font-size: 0.92em; color: var(--ink); line-height: 1.65; margin-bottom: 14px; }
+.detail-example { font-style: italic; font-size: 0.88em; color: var(--ink); padding: 12px 0 0; border-top: 1px solid var(--hairline); margin-top: 4px; line-height: 1.6; }
+.detail-example strong { color: var(--ink); font-weight: 700; font-style: normal; font-family: var(--font-mono); font-size: 0.85em; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+.series-nav { max-width: 1100px; margin: 64px auto 0; padding: 0 20px; }
+.series-head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--hairline); padding-bottom: 14px; gap: 24px; flex-wrap: wrap; }
+.series-head-left { flex: 1; min-width: 280px; }
+.series-eyebrow { font-family: var(--font-mono); font-size: 0.72em; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--navy); margin-bottom: 6px; }
+.series-title { font-family: var(--font-heading); font-style: italic; font-size: 1.7em; font-weight: 400; color: var(--ink); line-height: 1.2; }
+.series-sub { font-size: 0.92em; color: var(--muted); line-height: 1.55; max-width: 380px; text-align: right; }
+.series-list { margin-bottom: 48px; }
+.series-row { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--hairline); text-decoration: none; color: inherit; transition: background 0.2s; }
+.series-row:hover { background: rgba(155, 143, 184, 0.06); }
+.series-row-left { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.series-row-kicker { font-family: var(--font-mono); font-size: 0.68em; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
+.series-row-title { font-family: var(--font-heading); font-style: italic; font-size: 1.3em; line-height: 1.25; font-weight: 400; color: var(--ink); }
+.series-row-cta { font-family: var(--font-mono); font-size: 0.7em; text-transform: uppercase; letter-spacing: 0.16em; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 2px; white-space: nowrap; }
+.series-row.current { background: rgba(155, 143, 184, 0.06); }
+.series-row.current .series-row-kicker { color: var(--accent); }
+.series-row.current .series-row-cta { color: var(--muted); border-bottom-color: var(--muted); }
+.series-row.soon { opacity: 0.5; pointer-events: none; }
+.series-row.soon .series-row-cta { color: var(--muted); border-bottom-color: var(--muted); }
+.footer-cta { max-width: 1100px; margin: 0 auto 50px; padding: 56px 40px; background: var(--ink); color: var(--canvas); text-align: center; }
+.footer-cta-eyebrow { font-family: var(--font-mono); font-size: 0.7em; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.7; margin-bottom: 16px; }
+.footer-cta-title { font-family: var(--font-heading); font-style: italic; font-size: 1.8em; font-weight: 400; margin-bottom: 14px; line-height: 1.25; }
+.footer-cta-sub { font-size: 1em; opacity: 0.85; margin-bottom: 28px; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.55; }
+.footer-cta-button { display: inline-block; background: var(--canvas); color: var(--ink); font-family: var(--font-mono); font-size: 0.78em; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 32px; text-decoration: none; border: 1px solid var(--canvas); transition: background 0.2s, color 0.2s; }
+.footer-cta-button:hover { background: transparent; color: var(--canvas); }
+.brand-foot { text-align: center; padding: 24px 20px 40px; font-family: var(--font-mono); font-size: 0.68em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.brand-foot a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--hairline); }
+.topbar { position: absolute; top: 22px; left: 28px; font-family: var(--font-heading); font-style: italic; font-size: 1.15em; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; z-index: 10; }
+.topbar:hover { border-bottom: 1px solid var(--ink); }
+.copyright-bar { max-width: 1100px; margin: 24px auto 0; padding: 22px 24px 6px; text-align: center; font-family: var(--font-mono); font-size: 0.62em; letter-spacing: 0.10em; line-height: 1.85; color: var(--muted); text-transform: uppercase; border-top: 1px solid var(--hairline); }
+.copyright-bar .cr-line { display: block; }
+.copyright-bar strong { color: var(--ink); font-weight: 700; }
+@media (max-width: 600px) { .topbar { top: 14px; left: 16px; font-size: 1em; } .header { padding-top: 70px; } .copyright-bar { font-size: 0.58em; padding: 18px 16px 4px; } }
+@media (max-width: 600px) { .header h1 { font-size: 2em; } .header { padding: 36px 18px 8px; } .items-grid { grid-template-columns: 1fr; } .zone { padding: 16px; } .detail-card { padding: 22px; } .series-head { flex-direction: column; align-items: flex-start; gap: 8px; } .series-sub { text-align: left; } .series-row { grid-template-columns: 1fr; gap: 8px; padding: 18px 0; } .footer-cta { padding: 28px 20px; } }
+</style>
+</head>
+<body>
+
+<a class="topbar" href="https://shiftandlead.com" target="_blank" rel="noopener">Shift &amp; Lead</a>
+
+<div class="header">
+  <h1>Chez Meta AI</h1>
+  <div class="subtitle">You hear AI names everywhere and never know which does what. This walks you through Meta AI like a restaurant: door, kitchen, plate.</div>
+  <div class="reading-guide">Read and click through the tiles for more details, follow the order and enjoy!</div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#9B8FB8"></div> Core Brain</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#C9A876"></div> Interface / Input</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#8FA890"></div> Execution</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#C490A0"></div> Infrastructure</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#8FA4BC"></div> Connections</div>
+</div>
+<div class="where-legend">
+  <span class="wl" style="border-color:#1B2EA0;background:rgba(27,46,160,0.10)">All Meta AI</span>
+  <span class="wl" style="border-color:#C9A876;background:rgba(201,168,118,0.12)">meta.ai + app</span>
+  <span class="wl" style="border-color:#9B8FB8;background:rgba(155,143,184,0.10)">WhatsApp / IG / Messenger</span>
+  <span class="wl" style="border-color:#C490A0;background:rgba(196,144,160,0.12)">Ray-Ban Meta glasses</span>
+  <span class="wl" style="border-color:#8FA890;background:rgba(143,168,144,0.12)">AI Studio characters</span>
+  <span class="wl" style="border-color:#8FA4BC;background:rgba(143,164,188,0.12)">Llama API (devs)</span>
+  <span class="wl" style="border-color:#A99BC6;background:rgba(169,155,198,0.10)">Llama open weights</span>
+  <span class="wl" style="border-color:#A8A39C;background:rgba(168,163,156,0.12)">General AI concept</span>
+</div>
+
+<div class="map">
+  <div class="zone"><div class="zone-top"><span class="zone-num">1</span><div class="zone-titles"><div class="zone-label">Know Before You Eat</div><div class="zone-subtitle">The chef is brilliant, but not perfect. Read this before you order.</div></div></div><div class="zone-narrative">Before you sit down, know this: even the best chef makes mistakes. Sometimes they confidently say "this is nut-free" when it's not, that's a <em>hallucination</em>. Sometimes they fill gaps with a convincing story instead of saying "I don't know", that's <em>confabulation</em>. They might agree with everything you say even when you're wrong, that's <em>sycophancy</em>. Someone could slip a fake ticket into the kitchen to hijack your order, that's <em>prompt injection</em>. The chef might accidentally reveal another table's secrets, that's <em>data leakage</em>. They carry unconscious habits from their training, that's <em>bias</em>. And sometimes they state things as certain when they're actually guessing, that's <em>overconfidence</em>. Knowing these risks makes you a smarter customer. Now let's meet the chef.</div><div class="items-grid" id="zone-warnings"></div></div>
+  <div class="flow-bridge"><span class="flow-label">Now meet this restaurant's chef</span></div>
+
+  <div class="zone"><div class="zone-top"><span class="zone-num">2</span><div class="zone-titles"><div class="zone-label">The Chef &amp; Their Brain</div><div class="zone-subtitle">Before anyone walks in, the chef already exists. This is who they are.</div></div></div><div class="zone-narrative">The chef is the <em>Llama family</em>, Meta's flagship model series. <em>Llama 4</em> is the current generation: multi-modal (text, image, voice), competitive with GPT-class. The <em>context window</em> reaches long-document scale. Every word is a <em>token</em>. The signature edge: <em>Llama is open-source</em>. Anyone can download the weights, audit them, run them privately, build on them. It powers the largest open-source AI ecosystem in the world. The hosted Meta AI experience uses Llama under the hood plus social-platform context (your contacts, group chats, posts) for personalisation.</div><div class="items-grid" id="zone-foundation"></div></div>
+  <div class="flow-bridge"><span class="flow-label">A customer walks in through one of these doors</span></div>
+
+  <div class="zone"><div class="zone-top"><span class="zone-num">3</span><div class="zone-titles"><div class="zone-label">The Front Door</div><div class="zone-subtitle">Multiple ways to enter this restaurant</div></div></div><div class="zone-narrative">Meta AI lives in many places at once. The <em>standalone app</em> + <em>meta.ai web</em> is the main dedicated interface. It is embedded directly in <em>WhatsApp</em>, <em>Instagram</em>, <em>Messenger</em>, <em>Facebook</em>, type @MetaAI in any chat. <em>Ray-Ban Meta smart glasses</em> bring voice-first Meta AI to your face for hands-free. Developers connect via <em>Llama API</em>. And the <em>open-source Llama weights</em> are downloadable from Meta + Hugging Face for self-host.</div><div class="items-grid" id="zone-entrance"></div></div>
+  <div class="flow-bridge"><span class="flow-label">You place your order, how it's written matters</span></div>
+
+  <div class="zone"><div class="zone-top"><span class="zone-num">4</span><div class="zone-titles"><div class="zone-label">The Order Slip</div><div class="zone-subtitle">Instructions and context that shape every dish</div></div></div><div class="zone-narrative">Every order has layers. <em>Voice or text</em> input on the app and glasses. <em>Social context</em>: in WhatsApp or IG, Meta AI sees the chat thread and may use it for context. <em>Imagine prompts</em> trigger image generation. <em>AI Studio character prompts</em> let creators define custom AI personalities. <em>Llama API system prompts</em> for developers. And <em>prompt engineering</em> for clearer tickets.</div><div class="items-grid" id="zone-order"></div></div>
+  <div class="flow-bridge"><span class="flow-label">The order slip goes to the kitchen</span></div>
+
+  <div class="zone"><div class="zone-top"><span class="zone-num">5</span><div class="zone-titles"><div class="zone-label">The Kitchen</div><div class="zone-subtitle">Where the real work happens, chat, image, voice, search</div></div></div><div class="zone-narrative">The order arrives. <em>Conversational chat</em> across all surfaces. <em>Imagine</em> generates images from descriptions, inside WhatsApp, IG, Messenger directly. <em>Voice mode</em> via the app or glasses. <em>Real-time web search</em> for current info, the integration is increasing. <em>Group chat assistance</em>: Meta AI can answer questions in a group thread, summarise, draft. <em>Image understanding</em>: ask about photos you send.</div><div class="items-grid" id="zone-kitchen"></div></div>
+  <div class="flow-bridge"><span class="flow-label">For complex workflows, the team system kicks in</span></div>
+
+  <div class="zone"><div class="zone-top"><span class="zone-num">6</span><div class="zone-titles"><div class="zone-label">The Kitchen Team</div><div class="zone-subtitle">Custom AI characters and creator tools</div></div></div><div class="zone-narrative"><em>AI Studio</em> is Meta's creator tool: anyone can build a custom AI character with its own persona, voice, behaviour. Useful for creators answering fan messages, customer-service bots, educational personas. <em>Creator AI</em> lets influencers train an AI version of themselves on their content. <em>WhatsApp Business AI</em> for SMB customer service. <em>Llama Stack</em> for developers to build agents.</div><div class="items-grid" id="zone-team"></div></div>
+  <div class="flow-bridge"><span class="flow-label">The kitchen connects to outside suppliers</span></div>
+
+  <div class="zone"><div class="zone-top"><span class="zone-num">7</span><div class="zone-titles"><div class="zone-label">The Supply Chain</div><div class="zone-subtitle">How the kitchen connects to the outside world</div></div></div><div class="zone-narrative"><em>Social-platform data</em> is the unique supplier: your contacts, group chats, recent posts feed personalisation. <em>Web search</em> brings live info. <em>Image uploads</em> from WhatsApp / IG camera roll. <em>Llama open weights</em> are downloadable, the largest open-source AI distribution in the world (hundreds of millions of downloads). <em>Llama API</em> for plugging Llama into your own software. <em>Limited third-party connectors</em> compared to ChatGPT.</div><div class="items-grid" id="zone-supply"></div></div>
+  <div class="flow-bridge"><span class="flow-label">The dish gets plated and delivered to you</span></div>
+
+  <div class="zone"><div class="zone-top"><span class="zone-num">8</span><div class="zone-titles"><div class="zone-label">Plating &amp; Delivery</div><div class="zone-subtitle">How the finished dish reaches you</div></div></div><div class="zone-narrative">The dish lands inside whatever app you used. <em>Text replies</em> in WhatsApp, IG, Messenger, the app. <em>Generated images</em> directly in your chat. <em>Voice replies</em> through glasses or the app. <em>Group-chat answers</em> visible to the group. <em>Character interactions</em> for creator-built personas. <em>Sticker generation</em> from Imagine inside WhatsApp.</div><div class="items-grid" id="zone-delivery"></div></div>
+  <div class="flow-bridge"><span class="flow-label">After service, the restaurant reviews and improves</span></div>
+
+  <div class="zone"><div class="zone-top"><span class="zone-num">9</span><div class="zone-titles"><div class="zone-label">Where Meta AI Fits</div><div class="zone-subtitle">When to pick this kitchen over the others</div></div></div><div class="zone-narrative">Meta AI wins on <em>distribution</em>: it is already in WhatsApp, IG, Messenger, Facebook, smart glasses. Billions of users already have it. It wins on <em>open-source ecosystem</em>: Llama is the most-downloaded open AI in the world. It wins on <em>casual creative use</em>: Imagine for chat stickers, group photo prompts, voice through glasses. It wins on <em>creator personas</em> via AI Studio. It loses on <em>professional polish</em> vs ChatGPT or Claude for serious work. It loses on <em>privacy</em>: data lives inside Meta's broader ad ecosystem unless you self-host Llama. Pick Meta AI for social-app casual use, image fun, glasses interaction, or for self-hosted Llama in serious dev.</div><div class="items-grid" id="zone-training"></div></div>
+  <div class="flow-bridge"><span class="flow-label">Wrapping around everything, the rules, limits, and the bill</span></div>
+
+  <div class="zone"><div class="zone-top"><span class="zone-num">10</span><div class="zone-titles"><div class="zone-label">Health, Safety &amp; The Bill</div><div class="zone-subtitle">The non-negotiables that wrap around everything</div></div></div><div class="zone-narrative">This zone wraps around everything. <em>Hosted product is free</em>: Meta AI on apps + web is free, supported by Meta's ad business. <em>Data use</em>: subject to Meta's broader privacy framework, factor for sensitive prompts. <em>EU opt-out</em> exists under GDPR. <em>Llama API</em> is paid per token for devs. <em>Llama open weights</em> are free under a community license (some restrictions for very large platforms). <em>Ray-Ban Meta glasses</em> are a hardware purchase (~$300+) with AI included.</div><div class="items-grid" id="zone-gov"></div></div>
+
+  <div style="margin-top:28px;background:var(--surface);border:1px solid var(--hairline);border-radius:16px;padding:24px;overflow-x:auto;">
+    <div style="font-family:var(--font-heading);font-style:italic;font-size:1.3em;color:var(--accent);font-weight:400;margin-bottom:4px;">Chez Meta AI · Plans at a Glance</div>
+    <div style="font-family:var(--font-mono);font-size:0.7em;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Based on meta.ai &amp; llama.com · June 2026 · USD, subject to change, verify current rates</div>
+    <table style="width:100%;border-collapse:collapse;font-size:0.85em;">
+      <thead><tr style="background:var(--canvas);text-align:left;"><th style="padding:10px 12px;border-bottom:2px solid var(--hairline);font-family:var(--font-mono);font-size:0.72em;letter-spacing:0.08em;text-transform:uppercase;">How you use it</th><th style="padding:10px 12px;border-bottom:2px solid var(--hairline);font-family:var(--font-mono);font-size:0.72em;letter-spacing:0.08em;text-transform:uppercase;">Cost</th><th style="padding:10px 12px;border-bottom:2px solid var(--hairline);font-family:var(--font-mono);font-size:0.72em;letter-spacing:0.08em;text-transform:uppercase;">Best for</th><th style="padding:10px 12px;border-bottom:2px solid var(--hairline);font-family:var(--font-mono);font-size:0.72em;letter-spacing:0.08em;text-transform:uppercase;">Key features</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);font-weight:600;">meta.ai + Meta AI app</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Free</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Everyone</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Chat, Imagine, voice, web search</td></tr>
+        <tr style="background:var(--canvas);"><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);font-weight:600;">WhatsApp / IG / Messenger / FB</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Free</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Casual users + creators</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">@MetaAI in any chat, Imagine stickers, group-thread answers</td></tr>
+        <tr><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);font-weight:600;">Ray-Ban Meta smart glasses</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">~$300+ hardware</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Hands-free + creators</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Voice-first Meta AI, "Hey Meta", point-and-ask, live capture</td></tr>
+        <tr style="background:var(--canvas);"><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);font-weight:600;">AI Studio</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Free</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Creators</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Build custom AI characters, deploy in IG / Messenger</td></tr>
+        <tr><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);font-weight:600;">Llama API</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Pay per use</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Developers</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Token-based API, competitive with major labs</td></tr>
+        <tr style="background:var(--canvas);"><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);font-weight:600;">Llama open weights</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Free download</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Self-hosters + researchers</td><td style="padding:10px 12px;border-bottom:1px solid var(--hairline);">Largest open-source AI ecosystem in the world, community license</td></tr>
+      </tbody>
+    </table>
+    <div style="font-family:var(--font-body);font-size:0.78em;color:var(--muted);margin-top:10px;line-height:1.55;">Meta AI hosted product is free, supported by Meta's ad model. Llama community license has limits for very large platforms (>700M monthly users).</div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay" onclick="if(event.target===this)hide()">
+  <div class="detail-card">
+    <button class="detail-close" onclick="hide()" aria-label="Close">&times;</button>
+    <div class="detail-icon" id="dIcon"></div>
+    <div class="detail-title" id="dTitle"></div>
+    <div class="detail-analogy" id="dAnalogy"></div>
+    <div class="dw" id="dWhere"></div>
+    <div class="detail-desc" id="dDesc"></div>
+    <div class="detail-example" id="dExample"></div>
+  </div>
+</div>
+
+<div class="series-nav">
+  <div class="series-head">
+    <div class="series-head-left"><div class="series-eyebrow">The Kitchen Maps · The series</div><div class="series-title">12 AI ecosystems, walked through like restaurants</div></div>
+    <div class="series-sub">Same map, every major AI tool. Pick one, compare, decide which fits your work.</div>
+  </div>
+  <div class="series-list">
+    <a class="series-row" href="./chez-claude.html"><div class="series-row-left"><div class="series-row-kicker">01 · Anthropic</div><div class="series-row-title">Chez Claude</div></div><div class="series-row-cta">Open the map</div></a>
+    <a class="series-row" href="./chez-openai.html"><div class="series-row-left"><div class="series-row-kicker">02 · OpenAI</div><div class="series-row-title">Chez ChatGPT</div></div><div class="series-row-cta">Open the map</div></a>
+    <a class="series-row" href="./chez-gemini.html"><div class="series-row-left"><div class="series-row-kicker">03 · Google</div><div class="series-row-title">Chez Gemini</div></div><div class="series-row-cta">Open the map</div></a>
+    <a class="series-row" href="./chez-copilot.html"><div class="series-row-left"><div class="series-row-kicker">04 · Microsoft</div><div class="series-row-title">Chez Copilot</div></div><div class="series-row-cta">Open the map</div></a>
+    <a class="series-row" href="./chez-perplexity.html"><div class="series-row-left"><div class="series-row-kicker">05 · Perplexity</div><div class="series-row-title">Chez Perplexity</div></div><div class="series-row-cta">Open the map</div></a>
+    <a class="series-row" href="./chez-grok.html"><div class="series-row-left"><div class="series-row-kicker">06 · xAI</div><div class="series-row-title">Chez Grok</div></div><div class="series-row-cta">Open the map</div></a>
+    <a class="series-row" href="./chez-mistral.html"><div class="series-row-left"><div class="series-row-kicker">07 · Mistral</div><div class="series-row-title">Chez Mistral</div></div><div class="series-row-cta">Open the map</div></a>
+    <a class="series-row" href="./chez-deepseek.html"><div class="series-row-left"><div class="series-row-kicker">08 · DeepSeek</div><div class="series-row-title">Chez DeepSeek</div></div><div class="series-row-cta">Open the map</div></a>
+    <a class="series-row" href="./chez-kimi.html"><div class="series-row-left"><div class="series-row-kicker">09 · Moonshot</div><div class="series-row-title">Chez Kimi</div></div><div class="series-row-cta">Open the map</div></a>
+    <a class="series-row" href="./chez-qwen.html"><div class="series-row-left"><div class="series-row-kicker">10 · Alibaba</div><div class="series-row-title">Chez Qwen</div></div><div class="series-row-cta">Open the map</div></a>
+    <a class="series-row current" href="./chez-meta-ai.html"><div class="series-row-left"><div class="series-row-kicker">11 · Meta</div><div class="series-row-title">Chez Meta AI</div></div><div class="series-row-cta">You are here</div></a>
+    <a class="series-row" href="./chez-manus.html"><div class="series-row-left"><div class="series-row-kicker">12 · Manus</div><div class="series-row-title">Chez Manus</div></div><div class="series-row-cta">Open the map</div></a>
+  </div>
+</div>
+
+<div class="footer-cta">
+  <div class="footer-cta-eyebrow">For everyone quietly overwhelmed by AI</div>
+  <div class="footer-cta-title">Want the AI plan you will actually use?</div>
+  <div class="footer-cta-sub">A short audit, then the plan that fits your work and your time.</div>
+  <a class="footer-cta-button" href="../../opt-in.html">Get the AI Readiness Audit</a>
+</div>
+
+
+<div class="copyright-bar">
+  <span class="cr-line"><strong>© 2026 Fatiha Chikh / Shift &amp; Lead.</strong> All rights reserved.</span>
+  <span class="cr-line">Original IP. Reproduction, redistribution, screenshotting for republication, or use as AI training data prohibited without written permission.</span>
+</div>
+
+<div class="brand-foot"><a href="https://shiftandlead.com">shiftandlead.com</a> · The AI plan you will actually use</div>
+
+<script>
+const PASTEL = { lilac: { c: '#9B8FB8', bg: 'rgba(155,143,184,0.10)' }, ochre: { c: '#C9A876', bg: 'rgba(201,168,118,0.12)' }, sage: { c: '#8FA890', bg: 'rgba(143,168,144,0.12)' }, slate: { c: '#8FA4BC', bg: 'rgba(143,164,188,0.12)' }, rose: { c: '#C490A0', bg: 'rgba(196,144,160,0.12)' }, grey: { c: '#A8A39C', bg: 'rgba(168,163,156,0.12)' }, mixed: { c: '#A99BC6', bg: 'rgba(169,155,198,0.10)' }, navy: { c: '#1B2EA0', bg: 'rgba(27,46,160,0.10)' } };
+const W = { all: { l: 'All Meta AI', p: 'navy' }, app: { l: 'meta.ai + app', p: 'ochre' }, social: { l: 'WhatsApp / IG / Messenger', p: 'lilac' }, glasses: { l: 'Ray-Ban Meta glasses', p: 'rose' }, studio: { l: 'AI Studio characters', p: 'sage' }, dev: { l: 'Llama API (devs)', p: 'slate' }, oss: { l: 'Llama open weights', p: 'mixed' }, concept: { l: 'General AI concept', p: 'grey' } };
+const D = {
+  hallucination: { z: 'warnings', icon: 'wand-sparkles', name: 'Hallucinations', cat: 'ochre', w: 'concept', analogy: "Saying \"nut-free\" when it's not", short: 'Confident answer with made-up facts', desc: 'Every AI does this. Verify high-stakes claims, especially in casual social-app contexts.', ex: 'Meta AI in a WhatsApp group gives a confident but wrong answer about local opening hours.' },
+  confabulation: { z: 'warnings', icon: 'book-open-text', name: 'Confabulation', cat: 'ochre', w: 'concept', analogy: 'Making up where the eggs came from', short: 'Fills gaps with convincing stories', desc: 'Invents details rather than saying "I do not know".', ex: 'Asks for a source. Meta AI invents a convincing but fictional reference.' },
+  sycophancy: { z: 'warnings', icon: 'smile', name: 'Sycophancy', cat: 'ochre', w: 'concept', analogy: 'A yes-chef who always agrees', short: 'Pleases you instead of being honest', desc: 'Agrees with everything you say even when you are wrong.', ex: 'You present a half-baked idea and Meta AI cheerleads instead of challenging.' },
+  promptinjection: { z: 'warnings', icon: 'shield-alert', name: 'Prompt Injection', cat: 'rose', w: 'concept', analogy: 'Sneaking a fake order ticket', short: 'Malicious instructions hidden in input', desc: 'Shared images or links in a chat could contain hidden instructions.', ex: 'A shared image carries embedded steering text. Meta AI may be steered if it processes the visual as data.' },
+  dataleakage: { z: 'warnings', icon: 'share-2', name: 'Data Leakage', cat: 'rose', w: 'concept', analogy: 'Telling table 5 what table 3 ordered', short: "Private info slips where it shouldn't", desc: 'Conversations may feed Meta personalisation. Sensitive prompts should not happen in Meta AI chat.', ex: 'You ask a medical question in WhatsApp Meta AI. The data lives in Meta\'s broader user-profile ecosystem.' },
+  metaadbusiness: { z: 'warnings', icon: 'eye', name: 'Meta\'s Ad Business', cat: 'rose', w: 'all', analogy: 'The restaurant also sells your dining habits', short: 'Conversations live next to ad targeting', desc: "Meta's core business is targeted advertising. The hosted Meta AI product lives inside that ecosystem. Factor it in for sensitive prompts.", ex: 'A health question on Meta AI may inform Meta\'s ad-targeting profile of you.' },
+  publictraining: { z: 'warnings', icon: 'database', name: 'Training on Public Posts', cat: 'rose', w: 'all', analogy: 'Recipes inspired by every public dish', short: 'Public Facebook + IG posts used for training', desc: 'Meta trains models on public posts in regions where allowed. EU users have GDPR opt-out rights.', ex: 'Public Instagram posts may have been used in Llama training. Set your account private if you object.' },
+  bias: { z: 'warnings', icon: 'scale', name: 'Bias', cat: 'ochre', w: 'concept', analogy: 'Unconsciously serving bigger portions to some', short: 'Uneven treatment baked into training', desc: 'Inherits biases from training data, including social-platform skew.', ex: 'Casual social discourse style may bleed into formal answers.' },
+
+  llama: { z: 'foundation', icon: 'brain', name: 'Llama Family', cat: 'lilac', w: 'all', analogy: 'The Meta-trained chef', short: 'Open-source frontier model family', desc: "Meta's flagship model line. Llama 4 current generation: multi-modal, competitive with GPT-class on benchmarks. Open-source weights for most variants.", ex: 'Llama 4 powers Meta AI in WhatsApp and is also downloadable for self-host.' },
+  multimodal: { z: 'foundation', icon: 'eye', name: 'Multi-Modal', cat: 'lilac', w: 'all', analogy: 'Chef who reads, sees, and listens', short: 'Text, image, voice in / out', desc: 'Llama 4 understands text, images, and voice in and out. Strong fit for casual social use across apps.', ex: 'Send a photo of your meal in WhatsApp + ask "what is this dish?" and Meta AI answers.' },
+  socialcontext: { z: 'foundation', icon: 'users', name: 'Social-Platform Context', cat: 'lilac', w: 'social', analogy: "The chef who already knows your friends", short: 'Personalised by your Meta profile', desc: 'When used inside Meta apps, Meta AI uses thread context, your activity, group context for personalisation. Signature of the hosted product.', ex: 'In a WhatsApp group chat, Meta AI sees the conversation and answers naturally referencing it.' },
+  context: { z: 'foundation', icon: 'square', name: 'Long Context', cat: 'lilac', w: 'all', analogy: 'A large countertop', short: 'Handles long conversations', desc: 'Llama 4 supports long-context for extended conversations and document handling.', ex: 'Long chat threads or document uploads land cleanly in context.' },
+  tokens: { z: 'foundation', icon: 'type', name: 'Tokens', cat: 'lilac', w: 'all', analogy: 'Individual ingredients', short: 'Each word = one ingredient', desc: 'Llama API priced per token. Self-host is free per token, you supply compute.', ex: 'A heavy chatbot on Llama API: token cost scales with volume.' },
+  ossstrength: { z: 'foundation', icon: 'box-open', name: 'Open-Source DNA', cat: 'lilac', w: 'oss', analogy: 'Public recipe by design', short: 'Largest open-source AI ecosystem', desc: 'Llama weights are downloadable and modifiable. Hundreds of millions of downloads. The largest open AI ecosystem on Earth.', ex: 'A startup forks Llama, fine-tunes for healthcare, runs internally with zero data leaving the building.' },
+
+  metaaiapp: { z: 'entrance', icon: 'globe', name: 'meta.ai + Meta AI App', cat: 'ochre', w: 'app', analogy: 'The standalone dining room', short: 'Dedicated web + mobile app', desc: 'meta.ai on the web and the dedicated Meta AI app on iOS/Android. The main standalone product.', ex: 'Open meta.ai. Free chat, Imagine image gen, voice mode, web search.' },
+  whatsapp: { z: 'entrance', icon: 'message-circle', name: 'WhatsApp / IG / Messenger', cat: 'ochre', w: 'social', analogy: 'The chef already inside the venue', short: 'Type @MetaAI in any chat', desc: 'Meta AI is embedded inside WhatsApp, Instagram DM, Messenger, Facebook. Type @MetaAI to invoke it in a chat or group.', ex: 'In an IG DM, type @MetaAI "summarise the last 20 messages" and it answers in the thread.' },
+  glassesdoor: { z: 'entrance', icon: 'glasses', name: 'Ray-Ban Meta Glasses', cat: 'ochre', w: 'glasses', analogy: 'The chef on your face', short: 'Voice-first, hands-free', desc: 'Ray-Ban Meta smart glasses bring Meta AI voice-first. "Hey Meta" + camera-based pointing for live questions.', ex: 'Walking through a market, look at a fruit, "Hey Meta, what is this?" Glasses answer in your ear.' },
+  llamaapi: { z: 'entrance', icon: 'plug', name: 'Llama API', cat: 'ochre', w: 'dev', analogy: 'Wholesale phone line', short: 'For developers, token-based', desc: 'Plug Llama models into your software via the Llama API. Pricing competitive with major labs.', ex: 'A SaaS embeds Llama 4 as the chat backend for its customer-support feature.' },
+  llamaweights: { z: 'entrance', icon: 'package', name: 'Llama Open Weights', cat: 'ochre', w: 'oss', analogy: 'Public recipe, run your own kitchen', short: 'Download + self-host', desc: 'Llama weights downloadable from Meta + Hugging Face. Run on your own GPUs. Largest open AI ecosystem.', ex: 'A hospital downloads Llama 4 and fine-tunes on clinical data, all locally, no upstream calls.' },
+
+  voiceortext: { z: 'order', icon: 'mic', name: 'Voice or Text Input', cat: 'ochre', w: 'all', analogy: 'Order spoken or written', short: 'Speak via glasses + app, type elsewhere', desc: 'Voice everywhere on app + glasses, text in social apps. Choose the mode that fits the moment.', ex: 'Cooking with messy hands, use voice via glasses. At desk, type in the app.' },
+  socialcontextorder: { z: 'order', icon: 'message-square-text', name: 'Social Context as Order', cat: 'lilac', w: 'social', analogy: 'Chef reads the room before cooking', short: 'Chat thread + profile inform the answer', desc: 'In WhatsApp/IG/Messenger, Meta AI uses the chat thread as implicit context. Powerful for natural use, watch out for sensitive data.', ex: 'In a group planning a trip, @MetaAI "best restaurants near our hotel" knows which hotel from the thread.' },
+  imagineprompts: { z: 'order', icon: 'image-plus', name: 'Imagine Prompts', cat: 'sage', w: 'all', analogy: 'Order an illustrated dish', short: 'Trigger image generation', desc: 'Type "Imagine ..." to generate images. Works in the app, on meta.ai, and inside WhatsApp / IG threads.', ex: '"Imagine a corgi astronaut in space" returns 4 image options inside the chat.' },
+  studioprompts: { z: 'order', icon: 'sliders-horizontal', name: 'AI Studio Persona Brief', cat: 'sage', w: 'studio', analogy: 'Write the rules for your sous-chef', short: 'Define custom AI characters', desc: 'In AI Studio, define a custom AI character: persona, tone, voice, knowledge base.', ex: 'A fitness creator builds an AI version of themselves to answer fan DMs in their voice.' },
+  systemprompt: { z: 'order', icon: 'ticket', name: 'System Prompt (Llama API)', cat: 'ochre', w: 'dev', analogy: 'Standing instructions', short: 'Persistent persona / format / rules', desc: 'Developers on Llama API set system prompts that shape every reply.', ex: '"You are a polite Spanish customer-support agent." Sets behaviour for the whole session.' },
+  prompteng: { z: 'order', icon: 'pen-line', name: 'Prompt Engineering', cat: 'ochre', w: 'concept', analogy: 'Learning to write better tickets', short: 'Better orders = better dishes', desc: 'Clearer + more specific request = better answer. Especially relevant when Meta AI is mixed into a social thread.', ex: 'Bad: "what should I do?" Good: "Given the trip plan above, suggest a 3-day Lisbon itinerary with food and one beach day."' },
+
+  conversationalchat: { z: 'kitchen', icon: 'message-circle', name: 'Conversational Chat', cat: 'sage', w: 'all', analogy: 'Friendly chat across every counter', short: 'Default across all surfaces', desc: 'Default mode. Natural conversation across app, social platforms, glasses, and devices.', ex: 'Anywhere you are in Meta\'s apps, Meta AI is one tap or @ away.' },
+  imagineimage: { z: 'kitchen', icon: 'palette', name: 'Imagine Image Generation', cat: 'sage', w: 'all', analogy: 'Painting on demand', short: 'In-chat image gen', desc: 'Generate images from descriptions. Works inside WhatsApp / IG / Messenger / app. Good for casual creative use.', ex: '"Imagine a birthday cake with cats and rainbows" returns 4 stickers ready to send in the chat.' },
+  voicemode: { z: 'kitchen', icon: 'mic-vocal', name: 'Voice Mode', cat: 'sage', w: 'all', analogy: 'Spoken dish', short: 'Real-time voice in app + glasses', desc: 'Voice-first interaction in the Meta AI app and on Ray-Ban Meta glasses. Hands-free, near-instant.', ex: 'Driving + asking "Hey Meta, summarise my last 5 WhatsApp messages from my partner".' },
+  websearchkitchen: { z: 'kitchen', icon: 'search', name: 'Web Search', cat: 'sage', w: 'all', analogy: "Chef checking today's market", short: 'Live info inside answers', desc: 'Meta AI searches the live web for current information when needed.', ex: '"What is the weather in Dubai this weekend?" returns up-to-date info inside the chat.' },
+  groupanswers: { z: 'kitchen', icon: 'users', name: 'Group-Chat Answers', cat: 'sage', w: 'social', analogy: 'Chef answers everyone at the table', short: 'Answers visible to the whole group', desc: 'In group chats, @MetaAI returns answers visible to everyone. Useful for summaries, decisions, fact checks.', ex: 'Planning a trip in a group, @MetaAI suggests 3 options the whole group can vote on.' },
+  imageread: { z: 'kitchen', icon: 'image', name: 'Image Understanding', cat: 'sage', w: 'all', analogy: 'Chef who can see what you sent', short: 'Ask about photos in chat', desc: 'Send a photo in chat or via glasses, ask about it. Meta AI reads + answers.', ex: 'Send a photo of a plant in WhatsApp. "Is this safe for cats?" returns an answer grounded in the image.' },
+
+  aistudio: { z: 'team', icon: 'user-plus', name: 'AI Studio (creator characters)', cat: 'mixed', w: 'studio', analogy: 'Tool to build your own sous-chef persona', short: 'Custom AI characters for IG / Messenger', desc: 'Anyone can build a custom AI character with persona, voice, behaviour, deploy across IG and Messenger.', ex: 'A creator builds a "Yoga Coach" character that answers fan DMs in their voice.' },
+  creatorai: { z: 'team', icon: 'user-check', name: 'Creator AI (clone yourself)', cat: 'mixed', w: 'studio', analogy: 'AI version of the head chef', short: 'AI version of the creator on their content', desc: "Influencers train an AI version of themselves on their content to answer fans in their voice. Distinct from generic AI Studio characters.", ex: 'A 1M-follower IG creator launches Creator AI to handle fan DMs in their tone, scaling 1-to-1 reach.' },
+  whatsappbiz: { z: 'team', icon: 'briefcase', name: 'WhatsApp Business AI', cat: 'mixed', w: 'social', analogy: 'AI host in your shop on WhatsApp', short: 'SMB customer-service automation', desc: 'WhatsApp Business AI handles SMB customer service: orders, FAQ, booking. Integrates with the business catalogue.', ex: 'A local restaurant uses WhatsApp Business AI to take reservations and answer menu questions in chat.' },
+  llamastack: { z: 'team', icon: 'workflow', name: 'Llama Stack (dev agents)', cat: 'rose', w: 'dev', analogy: 'Full kitchen kit for builders', short: 'Build agents on Llama', desc: "Meta's developer stack to build agents on Llama: tool-use, RAG, evaluation, deployment.", ex: 'A startup builds a research-agent product using Llama Stack components.' },
+
+  socialsupply: { z: 'supply', icon: 'message-square-share', name: 'Social-Platform Data', cat: 'slate', w: 'social', analogy: 'Unique supplier no one else has', short: 'Thread + profile context', desc: "Personalisation supplier no one else has: chat threads, your contacts, your activity. Powerful for relevance, sensitive for privacy.", ex: 'Meta AI knows from your IG activity that you follow vegan creators, answers food questions accordingly.' },
+  websearchsupply: { z: 'supply', icon: 'globe', name: 'Web Search Supply', cat: 'slate', w: 'all', analogy: 'General supplier', short: 'Live web for current info', desc: 'Same web layer behind Meta AI search answers across surfaces.', ex: 'Current weather, current scores, latest news land via web search.' },
+  fileuploads: { z: 'supply', icon: 'upload', name: 'Image &amp; File Uploads', cat: 'slate', w: 'all', analogy: 'Bring your own ingredients', short: 'Photos + docs from chat', desc: 'Upload photos from your camera roll inside WhatsApp / IG. Meta AI reads + answers.', ex: 'Photo of a recipe card from your fridge, ask "convert this to a 4-person version" inside chat.' },
+  llamaapisupply: { z: 'supply', icon: 'plug-zap', name: 'Llama API', cat: 'slate', w: 'dev', analogy: 'Wholesale ingredient supply', short: 'Token-based, competitive', desc: 'Per-token Llama API. Drop-in for many AI workloads at competitive pricing.', ex: 'A chatbot startup runs its core LLM on Llama API for cost + open-source posture.' },
+  llamaweightssupply: { z: 'supply', icon: 'box-open', name: 'Llama Open Weights', cat: 'slate', w: 'oss', analogy: 'Largest public recipe collection', short: 'Most-downloaded open AI in the world', desc: 'Llama weights free under community license. Hundreds of millions of downloads, the most adopted open-source AI ecosystem.', ex: 'A research lab fine-tunes Llama on internal data, runs entirely locally, audit-friendly.' },
+  fewconnectors: { z: 'supply', icon: 'unplug', name: 'Few Pro Connectors', cat: 'slate', w: 'all', analogy: 'No enterprise delivery network', short: 'No Slack / Drive / Notion suite', desc: 'Few professional third-party connectors out of the box vs ChatGPT or Microsoft Copilot.', ex: 'You cannot "check my Slack" via Meta AI. Workflow ends in social-app surfaces.' },
+
+  textinapp: { z: 'delivery', icon: 'message-square', name: 'Text Reply (in-app)', cat: 'ochre', w: 'social', analogy: 'Dish served at your table', short: 'Answer right inside chat', desc: 'Replies land inside whatever surface you used: WhatsApp, IG DM, Messenger, FB, app, glasses notification.', ex: '@MetaAI answer appears in the WhatsApp group visible to everyone.' },
+  imagereply: { z: 'delivery', icon: 'image-plus', name: 'Generated Images (in-chat)', cat: 'sage', w: 'all', analogy: 'Painting served with the meal', short: 'Stickers + images directly in chat', desc: 'Generated images and stickers land directly in chat, ready to send.', ex: '"Imagine a thank-you sticker for grandma" returns 4 stickers, tap to send.' },
+  voicereply: { z: 'delivery', icon: 'volume-2', name: 'Voice Reply', cat: 'sage', w: 'glasses', analogy: 'Chef speaks back', short: 'Through app + glasses speakers', desc: 'Spoken reply through the Meta AI app or directly into Ray-Ban Meta glasses speakers.', ex: 'You ask via glasses, the answer plays in your ear.' },
+  groupreply: { z: 'delivery', icon: 'users-round', name: 'Group-Chat Reply', cat: 'sage', w: 'social', analogy: 'Whole table sees the dish', short: 'Visible to everyone in the chat', desc: 'In group chats, Meta AI replies are visible to all participants.', ex: 'Travel-planning group sees the suggested itinerary together.' },
+  characterreply: { z: 'delivery', icon: 'user-check', name: 'Character Persona Reply', cat: 'sage', w: 'studio', analogy: 'Sous-chef with own voice', short: 'Custom-AI persona answers', desc: 'AI Studio characters reply in their defined persona + voice across IG / Messenger.', ex: 'Fan DM to a creator: the Creator AI replies in the creator\'s voice.' },
+  stickergen: { z: 'delivery', icon: 'sticker', name: 'Sticker Generation', cat: 'sage', w: 'social', analogy: 'Edible art with the dish', short: 'Imagine inside WhatsApp', desc: 'Imagine inside WhatsApp generates ready-to-send stickers for the chat.', ex: 'Group party-planning thread fills with custom stickers from Imagine.' },
+
+  vschatgpt: { z: 'training', icon: 'swords', name: 'vs ChatGPT Plus', cat: 'grey', w: 'concept', analogy: 'Social distribution vs ecosystem polish', short: 'Meta = social reach, ChatGPT = pro polish', desc: 'ChatGPT Plus ($20): better at serious professional work, polish, connectors. Meta AI: already inside the apps you use, free, casual creative.', ex: 'Board presentation work: ChatGPT. Group-chat planning + stickers + glasses: Meta AI.' },
+  vsclaude: { z: 'training', icon: 'swords', name: 'vs Claude Pro', cat: 'grey', w: 'concept', analogy: 'Casual social vs nuanced professional', short: 'Meta = casual + open, Claude = nuance + agentic', desc: 'Claude Pro ($20): nuanced writing, careful reasoning, agentic computer use. Meta AI: free, casual, social-app native, open-source Llama.', ex: 'Sensitive client writing: Claude. Group-chat help + image stickers + open-source self-host: Meta AI.' },
+  vsgemini: { z: 'training', icon: 'swords', name: 'vs Gemini', cat: 'grey', w: 'concept', analogy: 'Two giants compared', short: 'Meta = social, Gemini = productivity', desc: 'Gemini ($20): Workspace + Android + productivity-heavy. Meta AI: social-app + glasses + open-source Llama.', ex: 'Work productivity: Gemini. Casual messaging + creator personas + glasses: Meta AI.' },
+  idealuser: { z: 'training', icon: 'target', name: 'Ideal User', cat: 'grey', w: 'concept', analogy: 'When Meta AI shines', short: 'Casual users + creators + open-source devs', desc: 'Anyone already living in WhatsApp / IG / Messenger. Creators building AI personas. Ray-Ban Meta glasses owners. Open-source devs running Llama in production.', ex: 'A creator runs an AI Studio character for fan DMs while self-hosting Llama for their main SaaS backend.' },
+
+  pricinghosted: { z: 'gov', icon: 'circle', name: 'Hosted Meta AI (free)', cat: 'ochre', w: 'app', analogy: 'Free dining, ad-supported model', short: 'meta.ai + app + WhatsApp / IG / Messenger', desc: 'Hosted Meta AI is free across all surfaces. Supported by Meta\'s broader ad business.', ex: 'Use Meta AI in WhatsApp for free, without any subscription, ever.' },
+  pricingstudio: { z: 'gov', icon: 'sparkles', name: 'AI Studio (free)', cat: 'sage', w: 'studio', analogy: 'Free creator tools', short: 'Build characters at no cost', desc: 'AI Studio is free for creators to build and deploy custom AI characters in IG + Messenger.', ex: 'A small creator launches their first AI Studio character without paying.' },
+  pricingglasses: { z: 'gov', icon: 'glasses', name: 'Ray-Ban Meta Glasses', cat: 'rose', w: 'glasses', analogy: 'Hardware purchase, AI included', short: '~$300+ for the device', desc: 'Glasses are a hardware purchase (~$300+). Meta AI is included, no extra subscription.', ex: 'Buy the glasses once, use Meta AI through them indefinitely.' },
+  pricingllamaapi: { z: 'gov', icon: 'circle-dollar-sign', name: 'Llama API', cat: 'slate', w: 'dev', analogy: 'Wholesale per-token', short: 'Pay per token, competitive', desc: 'Llama API token-based pricing. Competitive with other major labs for similar capability.', ex: 'A high-volume chatbot embeds Llama API at scale.' },
+  pricingoss: { z: 'gov', icon: 'package-open', name: 'Llama Open Weights', cat: 'mixed', w: 'oss', analogy: 'Free public recipe', short: 'Free download, community license', desc: 'Llama weights free under community license. Some restrictions for very large platforms (>700M monthly users).', ex: 'A research lab runs Llama on internal GPUs for clinical research.' },
+  privacyposture: { z: 'gov', icon: 'shield-alert', name: 'Privacy + Ad Posture', cat: 'rose', w: 'all', analogy: 'Local health code is also the local ad code', short: "Meta's data practices apply, EU opt-out exists", desc: "Meta's broader privacy and ad framework applies to the hosted product. EU users have GDPR opt-out rights for training. Self-host to fully control.", ex: 'A privacy-conscious EU user opts out of training and uses self-hosted Llama for sensitive work.' }
+};
+const ZM = { foundation: 'zone-foundation', entrance: 'zone-entrance', order: 'zone-order', kitchen: 'zone-kitchen', team: 'zone-team', supply: 'zone-supply', delivery: 'zone-delivery', training: 'zone-training', gov: 'zone-gov', warnings: 'zone-warnings' };
+Object.entries(D).forEach(([k, v]) => { const c = document.getElementById(ZM[v.z]); if (!c) return; const w = W[v.w] || W.all; const wPal = PASTEL[w.p] || PASTEL.lilac; const catPal = PASTEL[v.cat] || PASTEL.lilac; const el = document.createElement('div'); el.className = 'item'; el.onclick = () => show(k); const dot = document.createElement('div'); dot.className = 'cat-dot'; dot.style.background = catPal.c; el.appendChild(dot); const header = document.createElement('div'); header.className = 'item-header'; const icon = document.createElement('span'); icon.className = 'item-icon'; const iconI = document.createElement('i'); iconI.setAttribute('data-lucide', v.icon); icon.appendChild(iconI); const nameEl = document.createElement('span'); nameEl.className = 'item-name'; nameEl.textContent = v.name; header.appendChild(icon); header.appendChild(nameEl); el.appendChild(header); const analogy = document.createElement('div'); analogy.className = 'item-analogy'; analogy.textContent = v.analogy; el.appendChild(analogy); const desc = document.createElement('div'); desc.className = 'item-desc'; desc.textContent = v.short; el.appendChild(desc); const wb = document.createElement('span'); wb.className = 'wb'; wb.style.borderColor = wPal.c; wb.style.background = wPal.bg; wb.textContent = w.l; el.appendChild(wb); c.appendChild(el); });
+if (window.lucide) lucide.createIcons();
+document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });
+function show(k) { const d = D[k], w = W[d.w] || W.all; const wPal = PASTEL[w.p] || PASTEL.lilac; const di = document.getElementById('dIcon'); di.textContent = ''; const diI = document.createElement('i'); diI.setAttribute('data-lucide', d.icon); di.appendChild(diI); document.getElementById('dTitle').textContent = d.name; document.getElementById('dAnalogy').textContent = d.analogy; const dw = document.getElementById('dWhere'); dw.textContent = ''; const pinI = document.createElement('i'); pinI.setAttribute('data-lucide', 'map-pin'); dw.appendChild(pinI); dw.appendChild(document.createTextNode('Found in: ' + w.l)); dw.style.borderColor = wPal.c; dw.style.background = wPal.bg; document.getElementById('dDesc').textContent = d.desc; const ex = document.getElementById('dExample'); ex.textContent = ''; if (d.ex) { const strong = document.createElement('strong'); strong.textContent = 'Real example'; ex.appendChild(strong); ex.appendChild(document.createTextNode(d.ex)); ex.style.display = 'block'; } else { ex.style.display = 'none'; } document.getElementById('overlay').classList.add('active'); if (window.lucide) lucide.createIcons(); }
+function hide() { document.getElementById('overlay').classList.remove('active'); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') hide(); });
+</script>
+</body>
+</html>
