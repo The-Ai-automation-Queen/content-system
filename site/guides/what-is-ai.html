@@ -63,6 +63,10 @@ blockquote p{margin-bottom:0;color:var(--muted)}
 ul,ol{margin:12px 0 20px 24px}
 li{margin-bottom:8px;color:var(--ink)}
 
+.try-box{background:var(--surface);border:1px solid var(--accent);border-radius:6px;padding:24px 28px;margin:20px 0}
+.try-box .try-label{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin-bottom:12px}
+.try-box p{font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--ink);margin-bottom:0}
+
 .cta-bar{margin:48px 0;padding:32px;background:var(--navy);border-radius:6px;text-align:center;color:var(--canvas)}
 .cta-bar h3{color:var(--canvas);margin-top:0}
 .cta-bar p{color:rgba(255,255,255,0.85)}
@@ -98,78 +102,145 @@ li{margin-bottom:8px;color:var(--ink)}
 
   <div class="chips">
     <span class="chip chip-track0">WHAT</span>
-    <span class="chip chip-time">4 min read</span>
+    <span class="chip chip-time">6 min read</span>
   </div>
 
   <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; AI Basics</div>
 
   <h1>Everyone says &ldquo;AI.&rdquo; <em>Nobody says what it is.</em></h1>
 
-  <p class="lead">You&rsquo;re not behind. You were never told. Here&rsquo;s what it actually is, in 4 ideas, so you can stop nodding politely in meetings.</p>
+  <p class="lead">You&rsquo;re not behind. The problem isn&rsquo;t that you missed something. The problem is that nobody bothered to explain it simply. So let&rsquo;s fix that right now.</p>
 
   <hr class="rule">
 
-  <h2>AI is software that learned by example</h2>
+  <h2>Forget the sci-fi version</h2>
+
+  <p>When most people hear &ldquo;AI,&rdquo; they picture robots, Terminator, or some kind of digital brain that thinks like a human. That&rsquo;s not what we&rsquo;re talking about.</p>
+
+  <p>The AI you&rsquo;re hearing about every day? It&rsquo;s software. It runs on computers. It doesn&rsquo;t think, feel, or have opinions. It&rsquo;s a very powerful tool. Like a calculator, but for language.</p>
+
+  <p>Here&rsquo;s the simplest way I can put it.</p>
+
+  <hr class="rule">
+
+  <h2>Traditional software vs. AI</h2>
+
+  <p>Imagine you hire a new assistant. You have two options for how you train them.</p>
 
   <div class="vs">
     <div class="vs-col old">
-      <h3>Old software</h3>
-      <p>A developer types every rule.<br>&ldquo;If customer clicks button, send email.&rdquo;</p>
+      <h3>Option A</h3>
+      <p>You write a 500-page manual that covers every possible situation. &ldquo;If a client emails about pricing, reply with Template #7. If they mention a refund, forward to Sarah.&rdquo;</p>
+      <p style="margin-bottom:0">This is how traditional software works. A human writes every single rule, one by one. If a situation isn&rsquo;t in the manual, the software is stuck.</p>
     </div>
     <div class="vs-col new">
-      <h3>AI</h3>
-      <p>Nobody types rules. The software reads millions of examples of correct work, then figures out the rules itself.</p>
+      <h3>Option B</h3>
+      <p>You show them thousands of examples of great work. Great emails, great replies, great reports. They study the patterns and start producing work that looks like those examples.</p>
+      <p style="margin-bottom:0">This is how AI works. Nobody wrote the rules. The software figured out the patterns by studying a massive amount of examples.</p>
     </div>
   </div>
 
-  <p>The developer never wrote them. The AI found them. That&rsquo;s the only real difference.</p>
+  <p>That&rsquo;s genuinely the core idea. Traditional software follows instructions a human typed out. AI learned the instructions on its own by studying examples.</p>
+
+  <div class="pullquote">AI is not a genius. It&rsquo;s a very fast learner that studied a lot of homework.</div>
 
   <hr class="rule">
 
-  <h2>&ldquo;Generative AI&rdquo; is the one in every headline</h2>
+  <h2>The kind of AI in every headline right now</h2>
 
-  <p>There are different types of AI. The one everywhere right now is <strong>generative AI</strong>. The kind that <em>generates</em> new text, images, audio, and video.</p>
+  <p>There are different types of AI. The one everyone is talking about is called <strong>generative AI</strong>.</p>
 
-  <p>ChatGPT, Claude, Gemini, Midjourney, ElevenLabs: all generative AI. Different brands, same idea.</p>
+  <p>Generative means it <em>creates</em> new things. It writes new text, creates new images, generates new audio, and makes new video. It doesn&rsquo;t just sort data or recognize faces. It produces work that didn&rsquo;t exist before.</p>
 
-  <hr class="rule">
+  <p>ChatGPT, Claude, Gemini, Midjourney, ElevenLabs: different brands, same basic idea. They all studied enormous amounts of human-created content and now they can create new content that looks and sounds like the real thing.</p>
 
-  <h2>It&rsquo;s mostly very good at writing</h2>
-
-  <p>It reads, summarises, drafts, explains, imitates. That&rsquo;s the strength.</p>
-
-  <div class="pullquote">It&rsquo;s not magic. It&rsquo;s not conscious. It&rsquo;s autocomplete trained on a lot of writing, with a chat window on top.</div>
-
-  <p>That&rsquo;s the whole show.</p>
+  <p>When someone in your life says &ldquo;AI,&rdquo; nine times out of ten, this is what they mean.</p>
 
   <hr class="rule">
 
-  <h2>See it work</h2>
+  <h2>What it can actually do for you today</h2>
 
-  <p>Open ChatGPT or Claude. Type:</p>
+  <p>Here&rsquo;s where it gets practical. Forget the hype. These are things AI does well <em>right now</em>, for people running businesses or building something on the side.</p>
 
-  <blockquote>
-    <p>Explain how Stripe payouts work, as if I run a small business and am not a developer.</p>
-  </blockquote>
+  <h3>Write and communicate</h3>
+  <p>Emails, social media posts, proposals, client replies, follow-ups. You tell it what you need, give it context about your situation, and it drafts something you can use or tweak. What used to take 30 minutes takes 3.</p>
 
-  <p>You get back a clean, plain-language answer. Not 30 search results. Not a sales page. Just the explanation, at your level.</p>
+  <h3>Explain complex things simply</h3>
+  <p>Tax rules, legal clauses, technical documentation, competitor websites. Paste in the confusing thing and ask it to explain it like you&rsquo;re not an expert. It will.</p>
 
-  <p>You didn&rsquo;t need to know how AI works under the hood. You just needed to know it&rsquo;s very good at explaining things.</p>
+  <h3>Summarize and organize</h3>
+  <p>Long reports, meeting notes, research articles, customer reviews. Drop them in and ask for the key points. You get the essence without reading 40 pages.</p>
 
-  <p>That&rsquo;s the first useful thing it does. The others take 10 minutes each to learn.</p>
+  <h3>Brainstorm and ideate</h3>
+  <p>Content ideas, business names, marketing angles, workshop outlines. It won&rsquo;t replace your creativity, but it&rsquo;s the best brainstorming partner you&rsquo;ve ever had, available at 2 AM, never tired, never judging.</p>
 
-  <hr class="rule">
-
-  <h2>Why it works</h2>
+  <h3>Analyze and spot patterns</h3>
+  <p>Customer feedback, survey results, sales data, reviews of your competitors. Give it the information and ask what stands out. It can find patterns in minutes that would take you hours to see.</p>
 
   <div class="card accent">
-    <p>The model has read a huge amount of writing. Business, plain-English explainers, small-business questions. It has seen the pattern of &ldquo;explain to a non-technical reader&rdquo; thousands of times.</p>
-    <p style="margin-bottom:0">When you ask, it pattern-matches an answer at the level you asked for. <strong>Specificity in, usefulness out.</strong></p>
+    <p>Notice the pattern? In every case, you&rsquo;re giving the AI <strong>your</strong> information and asking it to do something useful with it. The more specific you are about what you need, the better the result.</p>
+    <p style="margin-bottom:0">This is the single most important thing to understand about AI. It&rsquo;s not magic. It&rsquo;s a conversation. You ask well, you get well.</p>
+  </div>
+
+  <hr class="rule">
+
+  <h2>What it can&rsquo;t do (yet)</h2>
+
+  <p>AI is powerful, but it has real limits. Knowing them will save you from trusting it with the wrong things.</p>
+
+  <p><strong>It sometimes makes things up.</strong> AI can confidently say something that is completely false. It&rsquo;s not lying on purpose. It&rsquo;s generating what sounds right based on patterns. Always double-check facts, numbers, and anything legal or financial.</p>
+
+  <p><strong>It doesn&rsquo;t know your business.</strong> Unless you tell it. It has no idea who your clients are, what you sell, or what happened in last Tuesday&rsquo;s meeting. You have to give it that context every time.</p>
+
+  <p><strong>It doesn&rsquo;t make decisions for you.</strong> It gives you options, drafts, and analysis. The judgment call is still yours. Think of it as a brilliant intern who works incredibly fast but needs you to approve everything.</p>
+
+  <p><strong>It doesn&rsquo;t replace expertise.</strong> A doctor, a lawyer, an accountant. AI can help you prepare, research, and draft. It should not be the final word on anything where being wrong has real consequences.</p>
+
+  <div class="pullquote">The people who get burned by AI are the ones who trust it blindly. The people who get the most from it are the ones who treat it like a fast, capable assistant that still needs supervision.</div>
+
+  <hr class="rule">
+
+  <h2>Try it right now</h2>
+
+  <p>Open ChatGPT, Claude, or Gemini (any of them, they all work for this). Copy one of these and paste it in:</p>
+
+  <div class="try-box">
+    <div class="try-label">Try this</div>
+    <p>&ldquo;I&rsquo;m a solopreneur who sells online courses. Write me a short, friendly email to send to someone who signed up for my free workshop but didn&rsquo;t attend. Keep it under 100 words.&rdquo;</p>
+  </div>
+
+  <div class="try-box">
+    <div class="try-label">Or this</div>
+    <p>&ldquo;I&rsquo;m comparing two project management tools for my small team: Notion and ClickUp. Give me 5 things to consider when choosing between them, written for someone who isn&rsquo;t technical.&rdquo;</p>
+  </div>
+
+  <div class="try-box">
+    <div class="try-label">Or this</div>
+    <p>&ldquo;I just got a long email from a potential client. Here it is: [paste the email]. Summarize what they&rsquo;re actually asking for in 3 bullet points.&rdquo;</p>
+  </div>
+
+  <p>You&rsquo;ll get back a real, usable answer in about 10 seconds. That&rsquo;s the moment it clicks. Not the theory. Not the definitions. The moment you see it do something useful for <em>your</em> situation.</p>
+
+  <hr class="rule">
+
+  <h2>Why this matters if you&rsquo;re building something</h2>
+
+  <p>If you&rsquo;re running a business, starting one, or thinking about leaving corporate to do your own thing, AI changes the math.</p>
+
+  <p>Tasks that used to require hiring someone or spending your evening on them can now get done in minutes. First drafts of content. Research on a new market. Replies to repetitive client questions. Summaries of competitor strategies.</p>
+
+  <p>This doesn&rsquo;t mean you replace people. It means <strong>you get hours back</strong>. Hours you can spend on the parts of your business that actually need you, or on the life you&rsquo;re building outside of it.</p>
+
+  <p>That&rsquo;s the real point. Not the technology itself. The time it gives you back.</p>
+
+  <div class="card accent">
+    <p>You now know what AI is, what it does, and what to watch out for. That&rsquo;s more than most people who use the word daily.</p>
+    <p style="margin-bottom:0">The next step is understanding the names you keep hearing. ChatGPT, Claude, Gemini, LLM, model, agent. They&rsquo;re not all the same thing, and sorting them out takes about 5 minutes.</p>
   </div>
 
   <div class="cta-bar">
-    <h3>Next: the 6 words that always get mixed up</h3>
-    <p>ChatGPT, AI, LLM, chatbot, agent, model. What each one actually is, in plain English.</p>
+    <h3>Next: ChatGPT and AI are not the same thing</h3>
+    <p>Six words everyone mixes up. Sorted biggest to smallest, so the confusion ends here.</p>
     <a href="chatgpt-vs-ai.html" class="btn">Read the next guide &rarr;</a>
   </div>
 

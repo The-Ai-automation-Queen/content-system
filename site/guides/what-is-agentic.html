@@ -50,10 +50,15 @@ p.lead{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:20
 
 .pullquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:24px;line-height:1.35;color:var(--muted);border-left:3px solid var(--accent);padding-left:24px;margin:40px 0}
 
-.level{padding:24px 0;border-bottom:1px solid var(--rule-light)}
+.level{padding:28px 0;border-bottom:1px solid var(--rule-light)}
 .level:last-of-type{border-bottom:none}
 .level-num{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:48px;color:var(--accent);line-height:1;margin-bottom:4px}
 .level h3{margin-top:8px}
+
+.comparison{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.comparison-box{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:24px}
+.comparison-box h3{margin-top:0;font-size:13px}
+.comparison-box.highlight{border-color:var(--accent);background:var(--accent-tint)}
 
 ul,ol{margin:12px 0 20px 24px}
 li{margin-bottom:8px;color:var(--ink)}
@@ -76,6 +81,7 @@ li{margin-bottom:8px;color:var(--ink)}
   h1{font-size:32px;line-height:1.1}
   .pullquote{font-size:20px}
   .level-num{font-size:36px}
+  .comparison{grid-template-columns:1fr;gap:12px}
   .guide-nav{flex-direction:column;gap:16px;align-items:flex-start}
   .nav-inner{padding:14px 16px}
   .nav-links{gap:16px;font-size:11px}
@@ -93,108 +99,150 @@ li{margin-bottom:8px;color:var(--ink)}
 
   <div class="chips">
     <span class="chip chip-track0">AGENTIC</span>
-    <span class="chip chip-time">6 min read</span>
+    <span class="chip chip-time">7 min read</span>
   </div>
 
   <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; AI Vocabulary</div>
 
-  <h1>Everyone says <em>&ldquo;agentic.&rdquo;</em> Here&rsquo;s what it actually means.</h1>
+  <h1>Everyone says <em>&ldquo;agentic.&rdquo;</em> Here is what it actually means.</h1>
 
-  <p class="lead">Agentic AI. AI agents. Agentic workflows. The word showed up everywhere in 2025, and nobody stopped to define it. It&rsquo;s simpler than it sounds. And more useful than the hype suggests.</p>
+  <p class="lead">Agentic AI. AI agents. Agentic workflows. The word showed up everywhere in 2025, and nobody stopped to explain it. It is simpler than it sounds. And once you understand it, you will see why every tech company in the world is racing to build it.</p>
 
   <hr class="rule">
 
-  <h2>The short version</h2>
+  <h2>The one-sentence version</h2>
 
-  <p><strong>Agentic</strong> means the AI doesn&rsquo;t just answer. It <em>acts.</em></p>
+  <p><strong>Agentic</strong> means the AI does not just answer your question. It goes and <em>does the thing.</em></p>
 
-  <p>A chatbot waits for your question, gives an answer, and stops. An agentic system takes your goal, breaks it into steps, decides which tools to use, runs those tools, checks the result, and keeps going until the job is done.</p>
+  <p>A regular chatbot waits for you to ask something, gives you a response, and stops. An agentic system takes your goal, breaks it into steps on its own, figures out which tools to use, runs those tools, checks whether it worked, and keeps going until the job is actually done.</p>
 
-  <p>The difference is not intelligence. It&rsquo;s autonomy.</p>
+  <p>The difference is not intelligence. It is autonomy. How much you let the AI do on its own before checking back in with you.</p>
 
   <div class="pullquote">A chatbot answers questions. An agentic system finishes tasks.</div>
 
   <hr class="rule">
 
+  <h2>Think of it like delegation</h2>
+
+  <p>You already understand this concept. You use it every day. You just have not heard it described with the word &ldquo;agentic&rdquo; before.</p>
+
+  <div class="comparison">
+    <div class="comparison-box">
+      <h3>Short leash</h3>
+      <p>You tell your assistant: &ldquo;Draft a reply to this email. Show me before you send it.&rdquo;</p>
+      <p style="margin-bottom:0">They write it. You review it. You hit send. They did one task and waited for your next instruction.</p>
+    </div>
+    <div class="comparison-box highlight">
+      <h3>Long leash</h3>
+      <p>You tell your assistant: &ldquo;Handle my inbox this morning. Respond to anything routine. Flag anything that needs my attention. Reschedule the 2pm if there is a conflict.&rdquo;</p>
+      <p style="margin-bottom:0">They read, decide, reply, schedule, flag. They come back with a summary when they are done. You did not approve each step.</p>
+    </div>
+  </div>
+
+  <p>The first is a chatbot. The second is agentic. Same assistant. Different level of trust, different level of independence.</p>
+
+  <p>The question with agentic AI is never &ldquo;can it do this?&rdquo; It is always &ldquo;how much leash should I give it for <em>this</em> task?&rdquo;</p>
+
+  <hr class="rule">
+
   <h2>The 4 levels of AI autonomy</h2>
 
-  <p>Not everything called &ldquo;agentic&rdquo; works the same way. Think of it as a ladder.</p>
+  <p>Not everything called &ldquo;agentic&rdquo; works the same way. There is a spectrum, and it helps to think of it as four levels. Most of what you use today is Level 1 or 2. The headlines are about Level 4.</p>
 
   <div class="level">
     <div class="level-num">1</div>
     <h3>Chat</h3>
-    <p>You ask, it answers. No memory between sessions. No tools. This is where most people start. You type a question into ChatGPT, Claude, or Gemini. You get text back. That&rsquo;s it.</p>
-    <p><strong>Example:</strong> &ldquo;Write me a thank-you email.&rdquo; You get the email. You copy, paste, send.</p>
+    <p>You ask, it answers. No memory between sessions. No tools. No actions. This is where most people start. You type a question. You get text back. You copy it, paste it, and do something with it yourself.</p>
+    <p><strong>Real example:</strong> You open a chatbot and type &ldquo;Write me a thank-you email for a client who just signed a contract.&rdquo; You get the email. You copy it into Gmail. You review it, change a few words, and hit send.</p>
+    <p>The AI did one thing. You did everything else.</p>
   </div>
 
   <div class="level">
     <div class="level-num">2</div>
     <h3>Chat + tools</h3>
-    <p>Same conversation, but now the AI can use tools. It can search the web, read a file, run a calculation, generate an image. You still drive. It still waits for you.</p>
-    <p><strong>Example:</strong> &ldquo;Search my Drive for the Q2 report and summarise it.&rdquo; The AI opens Google Drive, finds the file, reads it, writes a summary.</p>
+    <p>Same conversation, but now the AI can reach outside the chat window. It can search the web, read a file you uploaded, run a calculation, generate an image. You are still driving. It still waits for you between each step. But it can do more than just write text.</p>
+    <p><strong>Real example:</strong> You upload a 30-page PDF of a consulting report and ask &ldquo;What are the 3 biggest risks mentioned in this document?&rdquo; The AI reads the file, finds the risks, and writes a summary. You did not have to read the whole thing yourself.</p>
+    <p>Most people who use ChatGPT, Claude, or Gemini regularly are at this level. It is already powerful. And honestly, it is enough for most tasks.</p>
   </div>
 
   <div class="level">
     <div class="level-num">3</div>
     <h3>Workflow</h3>
-    <p>A fixed sequence of steps that runs the same way every time. You define the steps. The AI executes them. Reliable, repeatable, predictable. Most &ldquo;AI automations&rdquo; live here.</p>
-    <p><strong>Example:</strong> Every Monday, pull last week&rsquo;s Instagram stats, write a summary, drop it into a Notion page, and send a Slack message with the link.</p>
+    <p>A fixed sequence of steps that runs the same way every time. You define what happens. The AI executes it. Step 1, then step 2, then step 3. Predictable, repeatable, reliable. This is where most &ldquo;AI automations&rdquo; live today.</p>
+    <p><strong>Real example:</strong> Every Monday morning, the system automatically pulls your social media stats from the past week, writes a summary paragraph, drops it into a shared document, and sends a message to your team with the link. Nobody pressed a button. It just runs.</p>
+    <p>The AI is not making decisions here. It is following a recipe you created. But it is saving you an hour every Monday.</p>
   </div>
 
   <div class="level">
     <div class="level-num">4</div>
     <h3>Agentic</h3>
-    <p>The AI decides the steps. You give it a goal and a set of tools. It plans, executes, evaluates, and adjusts. If step 3 fails, it tries a different approach. If it needs information it doesn&rsquo;t have, it goes and gets it.</p>
-    <p><strong>Example:</strong> &ldquo;Research 5 competitors, find what they posted this week, compare it to our content calendar, and flag any gaps.&rdquo; The AI decides which tools to use, which competitors to check, what counts as a gap, and comes back with a report.</p>
+    <p>The AI decides the steps itself. You give it a goal and access to some tools. It plans, executes, evaluates whether it worked, and adjusts. If one approach does not work, it tries another. If it needs information it does not have, it goes and gets it. You set the destination. It drives.</p>
+    <p><strong>Real example:</strong> You say: &ldquo;Research 5 competitors in our space, find what content they posted this week, compare it to what we have planned, and flag any gaps or opportunities we are missing.&rdquo; The AI decides which competitors to check, which platforms to look at, what counts as a gap, and comes back with a report. You did not define the steps. It figured them out.</p>
+    <p>This is the frontier. This is what every major AI company is building right now. And this is where the real time savings live for business owners.</p>
   </div>
+
+  <div class="pullquote">Levels 1 and 2 save you time on individual tasks. Levels 3 and 4 save you time on entire processes. That is the difference.</div>
 
   <hr class="rule">
 
-  <h2>Why the word matters right now</h2>
+  <h2>Why this word is everywhere right now</h2>
 
-  <p>Every major AI company is building agentic features. Claude has computer use and Claude Code. OpenAI has Operator and Codex. Google has Gemini with deep research. Microsoft has Copilot agents inside Office 365.</p>
+  <p>Every major AI company shipped agentic features in 2025. They all used the same word, and they all meant roughly the same thing: AI that does not just talk, but takes action in the real world.</p>
 
-  <p>The shift is simple: AI is moving from &ldquo;answer my question&rdquo; to &ldquo;do my task.&rdquo;</p>
+  <p>The shift is simple. AI is moving from &ldquo;answer my question&rdquo; to &ldquo;do my task.&rdquo;</p>
 
-  <p>That changes what you buy, how you hire, and which processes you automate first.</p>
+  <p>That changes three things for you:</p>
+
+  <p><strong>What you buy.</strong> A tool that only answers questions is not the same as a tool that completes tasks. When you are comparing AI products, ask which level they are actually at. A Level 2 tool at $20/month might beat a Level 4 tool at $200/month if all you need is chat with tools.</p>
+
+  <p><strong>What you automate first.</strong> Start with tasks that follow predictable patterns (Level 3 workflows). Move to agentic (Level 4) only when the task changes every time and needs judgment. The boring repetitive stuff is where you get the fastest return on your time.</p>
+
+  <p><strong>How much you trust it.</strong> More autonomy means more room for mistakes. An agentic system that sends emails on your behalf could send a wrong email. One that books meetings could book the wrong time. Start with a short leash. Extend it when you see it working.</p>
 
   <div class="card accent">
-    <p><strong>The practical filter:</strong> When someone pitches you an &ldquo;AI agent,&rdquo; ask one question: <em>&ldquo;Does it decide the steps, or do I?&rdquo;</em></p>
-    <p style="margin-bottom:0">If you define the steps, it&rsquo;s a workflow. If the AI decides the steps, it&rsquo;s agentic. Both are useful. But they solve different problems, cost different amounts, and fail in different ways.</p>
+    <p><strong>The one question that separates hype from reality:</strong> When someone pitches you an &ldquo;AI agent,&rdquo; ask: <em>&ldquo;Does it decide the steps, or do I?&rdquo;</em></p>
+    <p style="margin-bottom:0">If you define the steps, it is a workflow. If the AI decides the steps, it is agentic. Both are useful. But they solve different problems, cost different amounts, and fail in different ways. Now you know which one you are looking at.</p>
   </div>
 
   <hr class="rule">
 
-  <h2>How it sounds in practice</h2>
+  <h2>Hear it in a real conversation</h2>
 
-  <p>A colleague says: <em>&ldquo;We&rsquo;re building an agentic pipeline that handles inbound leads end to end.&rdquo;</em></p>
+  <p>A colleague says: <em>&ldquo;We are building an agentic pipeline that handles inbound leads end to end.&rdquo;</em></p>
 
   <div class="card">
-    <p><strong>Translation:</strong></p>
+    <p><strong>What they actually mean:</strong></p>
     <ul>
-      <li>A lead comes in (form, DM, email)</li>
-      <li>The AI reads the message, decides if it&rsquo;s qualified, writes a personalised reply, and logs it in the CRM</li>
-      <li>If the lead asks a question the AI can&rsquo;t answer, it escalates to a human</li>
-      <li>No one defined the exact reply for each scenario. The AI figures it out from context</li>
+      <li>A potential customer reaches out (through a form, a DM, an email)</li>
+      <li>The AI reads the message, decides if this person is a real prospect or not, writes a personalized reply, and logs the interaction in their CRM</li>
+      <li>If the prospect asks a question the AI cannot answer, it flags it for a human</li>
+      <li>Nobody wrote a specific reply for every possible scenario. The AI figures out the right response from context</li>
     </ul>
-    <p style="margin-bottom:0">You now follow that sentence. You can ask: <em>&ldquo;What happens when it gets the qualification wrong?&rdquo;</em> That&rsquo;s the question that separates people who understand agentic from people who just repeat the word.</p>
+    <p>That is Level 4. The AI is making decisions, not following a script.</p>
+    <p style="margin-bottom:0">You follow that sentence now. And you could ask: <em>&ldquo;What happens when it gets the qualification wrong? Does it lose leads you should have followed up on?&rdquo;</em> That is the question that separates people who understand agentic from people who just repeat the word.</p>
   </div>
-
-  <div class="pullquote">Agentic doesn&rsquo;t mean magic. It means the AI has a longer leash. The question is always: how much leash is right for this task?</div>
 
   <hr class="rule">
 
   <h2>What this means for your business</h2>
 
-  <p>You don&rsquo;t need agentic AI for everything. Most businesses should start at Level 2 or 3. Chat with tools, or fixed workflows. Those are cheaper, more predictable, and easier to trust.</p>
+  <p>You do not need Level 4 for everything. Most businesses should start at Level 2 or 3. Chat with tools, or fixed workflows. They are cheaper, more predictable, and easier to trust.</p>
 
-  <p>Agentic matters when the task is too variable for a fixed workflow. When the steps change depending on what the AI finds. When you need judgement, not just execution.</p>
+  <p>Agentic matters when the task is too variable for a fixed workflow. When the steps change depending on what the AI finds. When you need judgment, not just execution.</p>
 
-  <p>Start small. Let it handle one task. Watch it closely. Expand the leash when it earns your trust.</p>
+  <p>Here is the practical order:</p>
+
+  <ol>
+    <li><strong>Start with chat + tools (Level 2).</strong> Use AI to help you write, research, summarize, and brainstorm. Get comfortable with how it thinks.</li>
+    <li><strong>Automate one repetitive process (Level 3).</strong> Pick the most boring, predictable task in your week. Build a workflow that handles it. Get your time back.</li>
+    <li><strong>Try agentic on one task (Level 4).</strong> Pick something where the steps change every time. Give the AI a goal and some tools. Watch it closely. Expand the leash when it earns your trust.</li>
+  </ol>
+
+  <p>The point is not to hand your business over to AI. The point is to stop spending your time on tasks that do not need your brain. The more of those you delegate, the more hours you get back for the work that actually grows your business.</p>
 
   <div class="cta-bar">
     <h3>Caught up on the vocabulary?</h3>
-    <p>Browse every guide, from absolute basics to full kitchen walkthroughs of every major AI tool.</p>
+    <p>Browse every guide, from absolute basics to full walkthroughs of every major AI tool.</p>
     <a href="../free-resources.html" class="btn">Browse all guides &rarr;</a>
   </div>
 
