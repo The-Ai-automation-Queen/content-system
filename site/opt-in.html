@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noai, noimageai">
 <title>Get the guide &mdash; Shift &amp; Lead</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,6 +72,7 @@ a:hover{color:var(--accent-deep)}
     <input type="hidden" name="guide" id="guide-slug" value="">
     <label for="email">Email address</label>
     <input id="email" name="email" type="email" placeholder="you@example.com" required>
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
     <button type="submit">Read the guide</button>
     <p class="fine">No spam. No sequences. Just the guides.</p>
   </form>
