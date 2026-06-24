@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What does agentic actually mean &mdash; Shift &amp; Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#F8F7F5;--cream:#F4F0FA;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
+  --muted:#5C5A57;--accent:#6B35C2;--accent-deep:#4A1F8F;--accent-tint:#EEE5FA;
+  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+a:hover{color:var(--accent-deep)}
+strong{font-weight:700;color:var(--ink)}
+
+.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+
+.wrap{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,100px) clamp(24px,5vw,72px)}
+
+.chips{margin-bottom:28px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff}
+.chip-track0{background:var(--accent)}
+.chip-time{background:transparent;color:var(--muted);border:1px solid var(--rule);padding:4px 10px}
+
+.kicker{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);display:flex;align-items:center;margin-bottom:20px}
+.kicker-rule{display:inline-block;width:32px;height:1px;background:var(--ink);margin-right:10px}
+
+h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,5.5vw,56px);line-height:1.08;letter-spacing:-0.5px;color:var(--ink);margin-bottom:24px}
+h1 em{font-style:italic;color:var(--electric)}
+h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.18;letter-spacing:-0.3px;margin:64px 0 16px}
+h3{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);margin:32px 0 12px}
+p{margin-bottom:18px;color:var(--ink)}
+p.lead{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:20px;line-height:1.55;color:var(--muted);margin-bottom:32px}
+
+.rule{border:0;border-top:2px solid var(--ink);margin:80px 0 40px}
+
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:28px 32px;margin:24px 0}
+.card.accent{border-color:var(--accent);background:var(--accent-tint)}
+
+.pullquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:24px;line-height:1.35;color:var(--muted);border-left:3px solid var(--accent);padding-left:24px;margin:40px 0}
+
+.level{padding:24px 0;border-bottom:1px solid var(--rule-light)}
+.level:last-of-type{border-bottom:none}
+.level-num{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:48px;color:var(--accent);line-height:1;margin-bottom:4px}
+.level h3{margin-top:8px}
+
+ul,ol{margin:12px 0 20px 24px}
+li{margin-bottom:8px;color:var(--ink)}
+
+.cta-bar{margin:48px 0;padding:32px;background:var(--navy);border-radius:6px;text-align:center;color:var(--canvas)}
+.cta-bar h3{color:var(--canvas);margin-top:0}
+.cta-bar p{color:rgba(255,255,255,0.85)}
+.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:13px 32px;background:var(--canvas);color:var(--ink);text-decoration:none;border-radius:4px;margin-top:12px}
+.btn:hover{background:#fff;color:var(--ink)}
+
+.guide-nav{display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:32px;border-top:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em}
+.guide-nav a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
+.guide-nav a:hover{color:var(--accent);border-color:var(--accent)}
+
+.footer{margin-top:120px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+
+@media(max-width:560px){
+  html,body{font-size:16px}
+  .wrap{padding:40px 16px}
+  h1{font-size:32px;line-height:1.1}
+  .pullquote{font-size:20px}
+  .level-num{font-size:36px}
+  .guide-nav{flex-direction:column;gap:16px;align-items:flex-start}
+  .nav-inner{padding:14px 16px}
+  .nav-links{gap:16px;font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="#">Community</a><a href="#">About</a></div>
+</div></nav>
+
+<div class="wrap">
+
+  <div class="chips">
+    <span class="chip chip-track0">AGENTIC</span>
+    <span class="chip chip-time">6 min read</span>
+  </div>
+
+  <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; AI Vocabulary</div>
+
+  <h1>Everyone says <em>&ldquo;agentic.&rdquo;</em> Here&rsquo;s what it actually means.</h1>
+
+  <p class="lead">Agentic AI. AI agents. Agentic workflows. The word showed up everywhere in 2025, and nobody stopped to define it. It&rsquo;s simpler than it sounds. And more useful than the hype suggests.</p>
+
+  <hr class="rule">
+
+  <h2>The short version</h2>
+
+  <p><strong>Agentic</strong> means the AI doesn&rsquo;t just answer. It <em>acts.</em></p>
+
+  <p>A chatbot waits for your question, gives an answer, and stops. An agentic system takes your goal, breaks it into steps, decides which tools to use, runs those tools, checks the result, and keeps going until the job is done.</p>
+
+  <p>The difference is not intelligence. It&rsquo;s autonomy.</p>
+
+  <div class="pullquote">A chatbot answers questions. An agentic system finishes tasks.</div>
+
+  <hr class="rule">
+
+  <h2>The 4 levels of AI autonomy</h2>
+
+  <p>Not everything called &ldquo;agentic&rdquo; works the same way. Think of it as a ladder.</p>
+
+  <div class="level">
+    <div class="level-num">1</div>
+    <h3>Chat</h3>
+    <p>You ask, it answers. No memory between sessions. No tools. This is where most people start. You type a question into ChatGPT, Claude, or Gemini. You get text back. That&rsquo;s it.</p>
+    <p><strong>Example:</strong> &ldquo;Write me a thank-you email.&rdquo; You get the email. You copy, paste, send.</p>
+  </div>
+
+  <div class="level">
+    <div class="level-num">2</div>
+    <h3>Chat + tools</h3>
+    <p>Same conversation, but now the AI can use tools. It can search the web, read a file, run a calculation, generate an image. You still drive. It still waits for you.</p>
+    <p><strong>Example:</strong> &ldquo;Search my Drive for the Q2 report and summarise it.&rdquo; The AI opens Google Drive, finds the file, reads it, writes a summary.</p>
+  </div>
+
+  <div class="level">
+    <div class="level-num">3</div>
+    <h3>Workflow</h3>
+    <p>A fixed sequence of steps that runs the same way every time. You define the steps. The AI executes them. Reliable, repeatable, predictable. Most &ldquo;AI automations&rdquo; live here.</p>
+    <p><strong>Example:</strong> Every Monday, pull last week&rsquo;s Instagram stats, write a summary, drop it into a Notion page, and send a Slack message with the link.</p>
+  </div>
+
+  <div class="level">
+    <div class="level-num">4</div>
+    <h3>Agentic</h3>
+    <p>The AI decides the steps. You give it a goal and a set of tools. It plans, executes, evaluates, and adjusts. If step 3 fails, it tries a different approach. If it needs information it doesn&rsquo;t have, it goes and gets it.</p>
+    <p><strong>Example:</strong> &ldquo;Research 5 competitors, find what they posted this week, compare it to our content calendar, and flag any gaps.&rdquo; The AI decides which tools to use, which competitors to check, what counts as a gap, and comes back with a report.</p>
+  </div>
+
+  <hr class="rule">
+
+  <h2>Why the word matters right now</h2>
+
+  <p>Every major AI company is building agentic features. Claude has computer use and Claude Code. OpenAI has Operator and Codex. Google has Gemini with deep research. Microsoft has Copilot agents inside Office 365.</p>
+
+  <p>The shift is simple: AI is moving from &ldquo;answer my question&rdquo; to &ldquo;do my task.&rdquo;</p>
+
+  <p>That changes what you buy, how you hire, and which processes you automate first.</p>
+
+  <div class="card accent">
+    <p><strong>The practical filter:</strong> When someone pitches you an &ldquo;AI agent,&rdquo; ask one question: <em>&ldquo;Does it decide the steps, or do I?&rdquo;</em></p>
+    <p style="margin-bottom:0">If you define the steps, it&rsquo;s a workflow. If the AI decides the steps, it&rsquo;s agentic. Both are useful. But they solve different problems, cost different amounts, and fail in different ways.</p>
+  </div>
+
+  <hr class="rule">
+
+  <h2>How it sounds in practice</h2>
+
+  <p>A colleague says: <em>&ldquo;We&rsquo;re building an agentic pipeline that handles inbound leads end to end.&rdquo;</em></p>
+
+  <div class="card">
+    <p><strong>Translation:</strong></p>
+    <ul>
+      <li>A lead comes in (form, DM, email)</li>
+      <li>The AI reads the message, decides if it&rsquo;s qualified, writes a personalised reply, and logs it in the CRM</li>
+      <li>If the lead asks a question the AI can&rsquo;t answer, it escalates to a human</li>
+      <li>No one defined the exact reply for each scenario. The AI figures it out from context</li>
+    </ul>
+    <p style="margin-bottom:0">You now follow that sentence. You can ask: <em>&ldquo;What happens when it gets the qualification wrong?&rdquo;</em> That&rsquo;s the question that separates people who understand agentic from people who just repeat the word.</p>
+  </div>
+
+  <div class="pullquote">Agentic doesn&rsquo;t mean magic. It means the AI has a longer leash. The question is always: how much leash is right for this task?</div>
+
+  <hr class="rule">
+
+  <h2>What this means for your business</h2>
+
+  <p>You don&rsquo;t need agentic AI for everything. Most businesses should start at Level 2 or 3. Chat with tools, or fixed workflows. Those are cheaper, more predictable, and easier to trust.</p>
+
+  <p>Agentic matters when the task is too variable for a fixed workflow. When the steps change depending on what the AI finds. When you need judgement, not just execution.</p>
+
+  <p>Start small. Let it handle one task. Watch it closely. Expand the leash when it earns your trust.</p>
+
+  <div class="cta-bar">
+    <h3>Caught up on the vocabulary?</h3>
+    <p>Browse every guide, from absolute basics to full kitchen walkthroughs of every major AI tool.</p>
+    <a href="../free-resources.html" class="btn">Browse all guides &rarr;</a>
+  </div>
+
+  <div class="guide-nav">
+    <a href="ai-jargon-guide.html">&larr; Prev: 12 AI words</a>
+    <a href="../free-resources.html">All guides &rarr;</a>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>Shift &amp; Lead &middot; Free guide &middot; &copy; 2026</p>
+</div>
+
+</body>
+</html>
