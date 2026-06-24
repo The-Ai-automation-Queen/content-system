@@ -87,9 +87,12 @@ a:hover{color:var(--accent-deep)}
   var params = new URLSearchParams(window.location.search);
   var guide = params.get('guide') || '';
   var src = params.get('src') || '';
+  var origin = window.location.origin;
   if (guide) {
     document.getElementById('guide-slug').value = guide;
-    document.getElementById('redirect-url').value = 'guides/' + guide + '.html';
+    document.getElementById('redirect-url').value = origin + '/guides/' + guide + '.html';
+  } else {
+    document.getElementById('redirect-url').value = origin + '/free-resources.html';
   }
 })();
 </script>
