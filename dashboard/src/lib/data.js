@@ -121,7 +121,7 @@ export function getVault(base) {
   return entries;
 }
 
-// 14-day editorial calendar (Romain-style): SCHEDULED + POSTED entries placed
+// 14-day editorial calendar: SCHEDULED + POSTED entries placed
 // on their vault date. Vault dates are DD/MM/YYYY (CLAUDE.md convention).
 export function getCalendar(entries, days = 14) {
   const toKey = (d) => {
