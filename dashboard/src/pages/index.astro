@@ -81,7 +81,7 @@ const machineGroups = [...new Set(d.machines.map((m) => m.group))];
 const liveCount = d.machines.filter((m) => m.status === 'live').length;
 const buildCount = d.machines.filter((m) => m.status !== 'live').length;
 
-const dataPayload = JSON.stringify({ entries: d.entries, calendar: d.calendar, machines: d.machines });
+const dataPayload = JSON.stringify({ entries: d.entries.map(e => ({...e, body: e.body || ''})), calendar: d.calendar, machines: d.machines });
 
 // Intelligence panels
 const perfLatest = d.performance.latest;
@@ -238,8 +238,18 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
 
       /* ── Content cards (entry list) ── */
       .entry-list { display: flex; flex-direction: column; gap: 0; }
-      .entry-card { background: var(--panel); border-bottom: 1px solid var(--line); padding: 20px 4px; display: flex; align-items: flex-start; gap: 16px; transition: all 0.12s; }
+      .entry-card { background: var(--panel); border-bottom: 1px solid var(--line); padding: 20px 4px; display: flex; align-items: flex-start; gap: 16px; transition: all 0.12s; cursor: pointer; }
       .entry-card:hover { background: rgba(107,53,194,0.04); }
+      .entry-expand { display: none; margin-top: 14px; }
+      .entry-card.open .entry-expand { display: block; }
+      .entry-expand pre { white-space: pre-wrap; font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; line-height: 1.7; color: var(--ink); background: var(--cream); border: 1px solid var(--line); border-radius: 4px; padding: 16px; max-height: 400px; overflow-y: auto; }
+      .entry-edit-area { width: 100%; min-height: 200px; font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; line-height: 1.7; color: var(--ink); background: var(--canvas); border: 1px solid var(--accent); border-radius: 4px; padding: 16px; resize: vertical; display: none; }
+      .entry-card.editing .entry-edit-area { display: block; }
+      .entry-card.editing .entry-expand pre { display: none; }
+      .entry-actions { display: flex; gap: 8px; margin-top: 10px; }
+      .entry-actions .btn { font-size: 12px; padding: 6px 14px; }
+      .entry-actions .btn.save { background: var(--green); color: #fff; border-color: var(--green); }
+      .entry-actions .btn.save:hover { background: #167a4a; }
       .entry-num { font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--accent-deep); background: var(--accent-tint); padding: 4px 8px; border-radius: 2px; white-space: nowrap; margin-top: 2px; }
       .entry-body { flex: 1; min-width: 0; }
       .entry-title { font-family: var(--serif); font-weight: 400; font-size: 20px; line-height: 1.25; }
@@ -492,7 +502,7 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
 
         <div class="entry-list" id="brain-list">
           {d.entries.map((e) => (
-            <div class="entry-card" data-entry-status={e.status}>
+            <div class="entry-card" data-entry-status={e.status} data-entry-num={e.num}>
               <span class="entry-num">#{e.num}</span>
               <div class="entry-body">
                 <div class="entry-title">{e.title}</div>
@@ -502,6 +512,15 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
                   {e.critic != null && <span class="chip score">{e.critic.toFixed(1)}</span>}
                   {e.flags.map((f) => <span class="chip flag">{FLAG_LABEL[f] || f}</span>)}
                   {e.hasVisual && <span class="chip vis">Visual</span>}
+                </div>
+                <div class="entry-expand">
+                  <pre>{e.body || '(no content yet)'}</pre>
+                  <textarea class="entry-edit-area" data-num={e.num}>{e.body || ''}</textarea>
+                  <div class="entry-actions">
+                    <button class="btn edit-btn" data-num={e.num}>Edit</button>
+                    <button class="btn save save-btn" data-num={e.num} style="display:none">Save</button>
+                    <button class="btn cancel-btn" data-num={e.num} style="display:none">Cancel</button>
+                  </div>
                 </div>
               </div>
               <div class="entry-status">
@@ -1242,6 +1261,74 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
         });
       });
 
+      // ── Expand entry on click (toggle body preview) ──
+      document.querySelectorAll('#brain-list .entry-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('.sbtn') || e.target.closest('.btn') || e.target.closest('textarea')) return;
+          card.classList.toggle('open');
+          card.classList.remove('editing');
+          const saveBtn = card.querySelector('.save-btn');
+          const cancelBtn = card.querySelector('.cancel-btn');
+          const editBtn = card.querySelector('.edit-btn');
+          if (saveBtn) saveBtn.style.display = 'none';
+          if (cancelBtn) cancelBtn.style.display = 'none';
+          if (editBtn) editBtn.style.display = '';
+        });
+      });
+
+      // ── Edit / Save / Cancel entry body ──
+      document.querySelectorAll('.edit-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const card = btn.closest('.entry-card');
+          card.classList.add('editing');
+          btn.style.display = 'none';
+          card.querySelector('.save-btn').style.display = '';
+          card.querySelector('.cancel-btn').style.display = '';
+          card.querySelector('.entry-edit-area').focus();
+        });
+      });
+
+      document.querySelectorAll('.cancel-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const card = btn.closest('.entry-card');
+          card.classList.remove('editing');
+          btn.style.display = 'none';
+          card.querySelector('.save-btn').style.display = 'none';
+          card.querySelector('.edit-btn').style.display = '';
+          const ta = card.querySelector('.entry-edit-area');
+          ta.value = card.querySelector('.entry-expand pre').textContent;
+        });
+      });
+
+      document.querySelectorAll('.save-btn').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+          e.stopPropagation();
+          btn.disabled = true;
+          const num = btn.dataset.num;
+          const card = btn.closest('.entry-card');
+          const body = card.querySelector('.entry-edit-area').value;
+          try {
+            const r = await fetch('/api/edit', {
+              method: 'POST',
+              headers: { 'content-type': 'application/json' },
+              body: JSON.stringify({ num, body }),
+            });
+            const j = await r.json();
+            if (j.ok) {
+              showToast('Saved #' + num);
+              card.querySelector('.entry-expand pre').textContent = body;
+              card.classList.remove('editing');
+              btn.style.display = 'none';
+              card.querySelector('.cancel-btn').style.display = 'none';
+              card.querySelector('.edit-btn').style.display = '';
+            } else { alert('Save failed: ' + (j.error || 'unknown')); }
+          } catch (err) { alert('Save failed: ' + err); }
+          btn.disabled = false;
+        });
+      });
+
       // ── Brain filters ──
       document.querySelectorAll('#brain-filters .filter').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -1379,7 +1466,8 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
           const title = escapeHtml(e.title);
           const plat = e.platform ? escapeHtml(e.platform.split('(')[0].trim()) : '';
           const pillar = e.pillar ? escapeHtml(e.pillar.split('(')[0].trim()) : '';
-          return '<div class="entry-card">' +
+          const body = escapeHtml(e.body || '(no content yet)');
+          return '<div class="entry-card" data-entry-num="' + escapeHtml(e.num) + '">' +
             '<span class="entry-num">#' + escapeHtml(e.num) + '</span>' +
             '<div class="entry-body">' +
               '<div class="entry-title">' + title + '</div>' +
@@ -1387,6 +1475,15 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
                 (plat ? '<span class="chip plat">' + plat + '</span>' : '') +
                 (pillar ? '<span class="chip cat">' + pillar + '</span>' : '') +
                 (e.critic != null ? '<span class="chip score">' + e.critic.toFixed(1) + '</span>' : '') +
+              '</div>' +
+              '<div class="entry-expand">' +
+                '<pre>' + body + '</pre>' +
+                '<textarea class="entry-edit-area" data-num="' + escapeHtml(e.num) + '">' + escapeHtml(e.body || '') + '</textarea>' +
+                '<div class="entry-actions">' +
+                  '<button class="btn edit-btn" data-num="' + escapeHtml(e.num) + '">Edit</button>' +
+                  '<button class="btn save save-btn" data-num="' + escapeHtml(e.num) + '" style="display:none">Save</button>' +
+                  '<button class="btn cancel-btn" data-num="' + escapeHtml(e.num) + '" style="display:none">Cancel</button>' +
+                '</div>' +
               '</div>' +
             '</div>' +
             '<div class="entry-status">' +
@@ -1404,6 +1501,53 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
               if (j.ok) { showToast('Moved #' + j.num + ' → ' + j.status); setTimeout(() => location.reload(), 600); }
               else { alert('Failed: ' + (j.error || 'unknown')); b.disabled = false; }
             } catch (err) { alert('Failed: ' + err); b.disabled = false; }
+          });
+        });
+        // Expand/edit handlers for machine detail entries
+        el.querySelectorAll('.entry-card').forEach(card => {
+          card.style.cursor = 'pointer';
+          card.addEventListener('click', (ev) => {
+            if (ev.target.closest('.sbtn') || ev.target.closest('.btn') || ev.target.closest('textarea')) return;
+            card.classList.toggle('open');
+            card.classList.remove('editing');
+          });
+        });
+        el.querySelectorAll('.edit-btn').forEach(btn => {
+          btn.addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            const card = btn.closest('.entry-card');
+            card.classList.add('editing');
+            btn.style.display = 'none';
+            card.querySelector('.save-btn').style.display = '';
+            card.querySelector('.cancel-btn').style.display = '';
+            card.querySelector('.entry-edit-area').focus();
+          });
+        });
+        el.querySelectorAll('.cancel-btn').forEach(btn => {
+          btn.addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            const card = btn.closest('.entry-card');
+            card.classList.remove('editing');
+            btn.style.display = 'none';
+            card.querySelector('.save-btn').style.display = 'none';
+            card.querySelector('.edit-btn').style.display = '';
+            card.querySelector('.entry-edit-area').value = card.querySelector('.entry-expand pre').textContent;
+          });
+        });
+        el.querySelectorAll('.save-btn').forEach(btn => {
+          btn.addEventListener('click', async (ev) => {
+            ev.stopPropagation();
+            btn.disabled = true;
+            const num = btn.dataset.num;
+            const card = btn.closest('.entry-card');
+            const body = card.querySelector('.entry-edit-area').value;
+            try {
+              const r = await fetch('/api/edit', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ num, body }) });
+              const j = await r.json();
+              if (j.ok) { showToast('Saved #' + num); card.querySelector('.entry-expand pre').textContent = body; card.classList.remove('editing'); btn.style.display = 'none'; card.querySelector('.cancel-btn').style.display = 'none'; card.querySelector('.edit-btn').style.display = ''; }
+              else { alert('Save failed: ' + (j.error || 'unknown')); }
+            } catch (err) { alert('Save failed: ' + err); }
+            btn.disabled = false;
           });
         });
       }
