@@ -33,8 +33,8 @@ a:hover{color:var(--accent-deep)}
 
 .gate-form{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:32px;text-align:left}
 .gate-form label{display:block;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:8px}
-.gate-form input[type="email"]{width:100%;padding:14px 16px;border:1px solid var(--rule);border-radius:4px;font-family:'Inter',sans-serif;font-size:15px;color:var(--ink);background:var(--canvas);margin-bottom:20px}
-.gate-form input[type="email"]:focus{outline:none;border-color:var(--accent)}
+.gate-form input[type="text"],.gate-form input[type="email"]{width:100%;padding:14px 16px;border:1px solid var(--rule);border-radius:4px;font-family:'Inter',sans-serif;font-size:15px;color:var(--ink);background:var(--canvas);margin-bottom:20px}
+.gate-form input[type="text"]:focus,.gate-form input[type="email"]:focus{outline:none;border-color:var(--accent)}
 .gate-form button{width:100%;padding:16px;background:var(--navy);color:var(--canvas);border:none;border-radius:4px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer}
 .gate-form button:hover{background:var(--electric)}
 .gate-form .fine{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);text-align:center;margin-top:14px}
@@ -68,6 +68,8 @@ a:hover{color:var(--accent-deep)}
   <p class="gate-sub">Enter your email and the guide opens immediately. You'll also get new guides when they publish. Unsubscribe anytime.</p>
 
   <form class="gate-form" id="gate-form">
+    <label for="firstName">First name</label>
+    <input id="firstName" name="firstName" type="text" placeholder="Your first name" required>
     <label for="email">Email address</label>
     <input id="email" name="email" type="email" placeholder="you@example.com" required>
     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
@@ -91,6 +93,7 @@ a:hover{color:var(--accent-deep)}
   document.getElementById('gate-form').addEventListener('submit', function(e){
     e.preventDefault();
     var form = this;
+    var firstName = form.querySelector('[name="firstName"]').value;
     var email = form.querySelector('[name="email"]').value;
     var gotcha = form.querySelector('[name="_gotcha"]').value;
     var btn = form.querySelector('button');
@@ -100,13 +103,13 @@ a:hover{color:var(--accent-deep)}
     fetch('https://formspree.io/f/xgojoyka', {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify({email: email, guide: guide, _gotcha: gotcha})
+      body: JSON.stringify({firstName: firstName, email: email, guide: guide, _gotcha: gotcha})
     });
 
     fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({email: email, guide: guide, source: 'guide-optin'})
+      body: JSON.stringify({firstName: firstName, email: email, guide: guide, source: 'guide-optin'})
     });
 
     setTimeout(function(){ window.location.href = redirectUrl; }, 600);
