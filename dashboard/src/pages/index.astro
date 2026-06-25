@@ -70,9 +70,9 @@ const truncate = (s: string, len = 40) => s.length > len ? s.slice(0, len) + '..
       }
       * { box-sizing: border-box; }
       body {
-        margin: 0; background: radial-gradient(1200px 600px at 80% -10%, #1a2030 0, var(--bg) 55%);
+        margin: 0; background: var(--bg);
         color: var(--ink); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        padding: 28px clamp(16px, 4vw, 48px) 64px;
+        padding: 0;
       }
       a { color: var(--blue); text-decoration: none; }
       a:hover { text-decoration: underline; }
@@ -203,9 +203,64 @@ const truncate = (s: string, len = 40) => s.length > len ? s.slice(0, len) + '..
       @media (max-width: 1100px) { .new-panels { grid-template-columns: 1fr; } }
 
       footer { color: var(--mut); font-size: 12px; margin-top: 40px; }
+
+      /* Sidebar */
+      .layout { display: flex; min-height: 100vh; }
+      .sidebar {
+        position: fixed; top: 0; left: 0; bottom: 0; width: 180px;
+        background: var(--panel); border-right: 1px solid var(--line);
+        display: flex; flex-direction: column; padding: 22px 0 16px; z-index: 100;
+        overflow-y: auto;
+      }
+      .sidebar .brand { padding: 0 18px 18px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+      .sidebar .brand-name { font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--ink); }
+      .sidebar .brand-sub { font-size: 10.5px; color: var(--mut); text-transform: uppercase; letter-spacing: 0.4px; margin-top: 3px; }
+      .sidebar nav { flex: 1; display: flex; flex-direction: column; gap: 2px; padding: 0 8px; }
+      .sidebar nav a {
+        display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 9px;
+        font-size: 13px; font-weight: 500; color: var(--mut); text-decoration: none; transition: background 0.15s;
+      }
+      .sidebar nav a:hover { background: var(--panel2); color: var(--ink); text-decoration: none; }
+      .sidebar nav a.active { background: #1a2744; color: var(--blue); font-weight: 600; }
+      .sidebar nav a .icon { width: 18px; text-align: center; font-size: 14px; flex-shrink: 0; }
+      .sidebar .sidebar-spacer { flex: 1; }
+      .sidebar .sidebar-bottom { padding: 12px 18px; border-top: 1px solid var(--line); margin-top: 8px; }
+      .sidebar .sidebar-bottom .tenant-info { font-size: 10.5px; color: var(--mut); text-transform: uppercase; letter-spacing: 0.3px; }
+      .main-content { margin-left: 180px; flex: 1; padding: 28px clamp(16px, 4vw, 48px) 64px; }
+      @media (max-width: 768px) {
+        .sidebar { display: none; }
+        .main-content { margin-left: 0; }
+      }
     </style>
   </head>
   <body>
+    <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-name">Content OS</div>
+        <div class="brand-sub">The AI Automation Queen</div>
+      </div>
+      <nav>
+        <a href="#top" class="active"><span class="icon">📊</span> Dashboard</a>
+        <a href="#pipeline"><span class="icon">🧠</span> Second Brain</a>
+        <a href="#"><span class="icon">📦</span> Inventory</a>
+        <a href="#"><span class="icon">🏗️</span> Architecture</a>
+        <a href="#engine"><span class="icon">⚙️</span> Machines</a>
+        <a href="#calendar"><span class="icon">📅</span> Calendar</a>
+        <a href="#"><span class="icon">🔁</span> Crons</a>
+        <a href="#"><span class="icon">🤖</span> Agents</a>
+        <a href="#"><span class="icon">💰</span> Costs</a>
+        <a href="#"><span class="icon">💻</span> CLI</a>
+        <a href="#"><span class="icon">🔔</span> Alerts</a>
+        <a href="#"><span class="icon">🔧</span> Settings</a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-bottom">
+        <div class="tenant-info">Tenant: {d.tenant === 'root' ? 'Fatiha' : d.tenant} (root)</div>
+        <div class="tenant-info">{new Date(d.generatedAt).toLocaleString()}</div>
+      </div>
+    </aside>
+    <div class="main-content">
     <header>
       <h1><span class="crown">👑</span> Mission Control</h1>
       <span class="sub" style="margin:0">The AI Automation Queen · content Business OS</span>
@@ -231,7 +286,7 @@ const truncate = (s: string, len = 40) => s.length > len ? s.slice(0, len) + '..
       <div class="kpi blue"><div class="n">{d.kpis.withVisual}</div><div class="l">With visual</div></div>
     </div>
 
-    <h2>The Engine — 5 machines</h2>
+    <h2 id="engine">The Engine — {d.machines.length} machines</h2>
     <div class="machines">
       {d.machines.map((m) => {
         const s = MSTATUS[m.status] || MSTATUS.partial;
@@ -249,7 +304,7 @@ const truncate = (s: string, len = 40) => s.length > len ? s.slice(0, len) + '..
       })}
     </div>
 
-    <h2>Pipeline</h2>
+    <h2 id="pipeline">Pipeline</h2>
     <div class="board">
       {d.columns.map((col) => (
         <div class="col">
@@ -288,7 +343,7 @@ const truncate = (s: string, len = 40) => s.length > len ? s.slice(0, len) + '..
       ))}
     </div>
 
-    <h2>Editorial calendar · next 14 days</h2>
+    <h2 id="calendar">Editorial calendar · next 14 days</h2>
     <div class="callegend">
       <span><i class="sw" style="background:var(--gold2)"></i>Scheduled</span>
       <span><i class="sw" style="background:var(--purple)"></i>Posted</span>
@@ -504,5 +559,7 @@ const truncate = (s: string, len = 40) => s.length > len ? s.slice(0, len) + '..
         });
       }
     </script>
+    </div><!-- .main-content -->
+    </div><!-- .layout -->
   </body>
 </html>
