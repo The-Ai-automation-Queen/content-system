@@ -346,6 +346,7 @@ export function getChannels() {
     { name: 'Twitter / X', role: 'Test + grow', handle: '@aiautomatik', connected: true, notes: 'Short text / repurpose' },
     { name: 'TikTok', role: 'Test + grow', handle: '—', connected: false, notes: 'Not connected to Blotato' },
     { name: 'Keynote / stage', role: 'Authority anchor', handle: '—', connected: false, notes: 'Clips reused as credibility signals' },
+    { name: 'Long-form (YouTube / Substack)', role: 'Optional later', handle: '—', connected: false, notes: 'Only if it earns its effort' },
   ];
 }
 
@@ -379,11 +380,11 @@ export function getMachines() {
     { id: 'M01·data', name: 'Signal Harvester', skill: 'signal-harvester', status: 'live', note: 'X/IG/YouTube via Apify (no paid X API) + Tavily web search', group: 'SYSTEM' },
     { id: 'M01·script', name: 'Content Engine', skill: 'content-engine', status: 'live', note: 'In-voice drafts, critic-scored', group: 'CROSS-PLATFORM' },
     { id: 'M02·visual', name: 'Visual Engine', skill: 'visual-engine', status: 'live', note: 'Blotato AI images + narrated video (open egress on VPS)', group: 'CROSS-PLATFORM' },
-    { id: 'M02·face', name: 'HeyGen Talking-Head', skill: 'heygen', status: has('HEYGEN_API_KEY') ? 'live' : 'needs-key', note: 'Set HEYGEN_API_KEY (the one paid tool) + record avatar/voice IDs', group: 'CROSS-PLATFORM' },
+    { id: 'M02·face', name: 'Talking-Head (Higgsfield / HeyGen)', skill: 'heygen', status: has('HEYGEN_API_KEY') ? 'live' : 'needs-key', note: 'Higgsfield (primary, MCP) or HeyGen (fallback, API key) — cloned avatar + voice of HER', group: 'CROSS-PLATFORM' },
     { id: 'M03·reels', name: 'Reels Factory', skill: 'reels-factory', status: 'live', note: 'Reap MCP (virality-scored, no key) + Blotato fallback — no Opus Clip', group: 'REELS (INSTAGRAM / TIKTOK)' },
     { id: 'M04·post', name: 'Distribution', skill: 'distribution', status: 'live', note: 'Blotato queue across platforms (connect TikTok to add it)', group: 'CROSS-PLATFORM' },
     { id: 'M05·leads', name: 'DM Responder', skill: 'dm-responder', status: 'partial', note: 'Runs on GoHighLevel (replaces ManyChat); activate lead-magnet URLs', group: 'CROSS-PLATFORM' },
-    { id: 'M06·measure', name: 'Performance Tracker', skill: 'performance-tracker', status: 'live', note: 'Scrapes all platforms for follower counts + post engagement', group: 'SYSTEM' },
+    { id: 'M06·measure', name: 'Performance Tracker', skill: 'performance-tracker', status: has('META_ACCESS_TOKEN') ? 'live' : 'needs-key', note: 'Meta Graph API (preferred) + Apify scrapers — set META_ACCESS_TOKEN + IG_BUSINESS_ID', group: 'SYSTEM' },
   ];
 }
 

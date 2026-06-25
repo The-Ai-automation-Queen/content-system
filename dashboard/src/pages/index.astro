@@ -46,13 +46,16 @@ const REPORT_META = {
 
 const COSTS = [
   { tool: 'Claude Code', plan: 'Max ($200/mo)', type: 'Core', note: 'Powers the entire system' },
-  { tool: 'Blotato', plan: 'Pro ($29/mo)', type: 'Publishing', note: 'Multi-platform queue + AI visuals' },
+  { tool: 'Blotato', plan: 'Pro ($29/mo)', type: 'Publishing', note: 'Multi-platform queue + AI visuals + narrated video' },
   { tool: 'Canva', plan: 'Pro ($13/mo)', type: 'Visual', note: 'Carousels, thumbnails' },
+  { tool: 'Gamma', plan: 'Free tier', type: 'Visual', note: 'Decks / presentations' },
   { tool: 'SupaData', plan: 'Starter ($9/mo)', type: 'Research', note: 'Video transcripts' },
-  { tool: 'HeyGen', plan: 'Creator ($29/mo)', type: 'Video', note: 'Talking-head avatar (optional)' },
-  { tool: 'Apify', plan: 'Free tier', type: 'Research', note: 'Social scraping' },
+  { tool: 'Higgsfield', plan: 'Paid (TBD)', type: 'Video', note: 'Talking-head avatar of HER (primary)' },
+  { tool: 'HeyGen', plan: 'Creator ($29/mo)', type: 'Video', note: 'Talking-head avatar (fallback)' },
+  { tool: 'Reap', plan: 'Free tier', type: 'Video', note: 'Long → shorts with virality scoring (MCP)' },
+  { tool: 'Apify', plan: 'Free tier', type: 'Research', note: 'Social scraping (IG/X/YouTube)' },
   { tool: 'Tavily', plan: 'Free tier', type: 'Research', note: 'Web search' },
-  { tool: 'GoHighLevel', plan: 'Starter ($97/mo)', type: 'Leads', note: 'DM responder + CRM' },
+  { tool: 'GoHighLevel', plan: 'Starter ($97/mo)', type: 'Leads', note: 'DM responder + CRM (replaces ManyChat)' },
   { tool: 'VPS', plan: '~$10/mo', type: 'Hosting', note: 'Crons + webhook host' },
 ];
 
@@ -585,10 +588,27 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
           <table class="data-table">
             <thead><tr><th>Gap</th><th>What's needed</th><th>Unblocks</th></tr></thead>
             <tbody>
-              <tr><td>HeyGen</td><td>HEYGEN_API_KEY + avatar/voice IDs</td><td style="color:var(--blue)">heygen (talking-head)</td></tr>
-              <tr><td>TikTok</td><td>Connect account to Blotato</td><td style="color:var(--blue)">TikTok publishing</td></tr>
-              <tr><td>ManyChat</td><td>MANYCHAT_API_KEY + IG automations</td><td style="color:var(--blue)">dm-responder (IG leads)</td></tr>
-              <tr><td>Always-on host</td><td>VPS for crons + webhook</td><td style="color:var(--blue)">M05 + crons</td></tr>
+              <tr><td>Meta Graph API</td><td>META_ACCESS_TOKEN + IG_BUSINESS_ID + FB_PAGE_ID</td><td style="color:var(--blue)">performance-tracker (M06)</td></tr>
+              <tr><td>Blotato media egress</td><td>Allowlist *.blotato.io in env network egress</td><td style="color:var(--blue)">Upload HeyGen MP4, ai-avatar-broll</td></tr>
+              <tr><td>Higgsfield MCP</td><td>Add Higgsfield MCP server + record avatar/voice IDs</td><td style="color:var(--blue)">heygen (talking-head of her — primary)</td></tr>
+              <tr><td>HeyGen (fallback)</td><td>HEYGEN_API_KEY + allowlist api.heygen.com</td><td style="color:var(--blue)">heygen (talking-head fallback)</td></tr>
+              <tr><td>Opus Clip</td><td>OPUS_CLIP_API_KEY + allowlist api.opus.pro</td><td style="color:var(--blue)">reels-factory</td></tr>
+              <tr><td>Signal sources</td><td>Confirm Apify/Tavily MCP usable from signal-harvester</td><td style="color:var(--blue)">signal-harvester live</td></tr>
+              <tr><td>TikTok</td><td>Connect TikTok account to Blotato</td><td style="color:var(--blue)">TikTok publishing</td></tr>
+              <tr><td>Always-on host</td><td>Small VPS or scheduled web sessions for crons + DM webhook</td><td style="color:var(--blue)">M05 + every-N-min crons</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel">
+          <h3>Integration backlog (connected, not yet wired)</h3>
+          <table class="data-table">
+            <thead><tr><th>Tool</th><th>Potential role</th><th>Step</th></tr></thead>
+            <tbody>
+              <tr><td><b>Notion</b></td><td>External content calendar / board mirrored from the vault</td><td style="color:var(--accent-deep)">1</td></tr>
+              <tr><td><b>Google Drive</b></td><td>Asset storage for generated visuals</td><td style="color:var(--accent-deep)">6</td></tr>
+              <tr><td><b>Granola</b></td><td>Meeting notes → content raw material</td><td style="color:var(--accent-deep)">1</td></tr>
+              <tr><td><b>GitHub</b></td><td>Hosting / sync / automation triggers</td><td style="color:var(--accent-deep)">6</td></tr>
             </tbody>
           </table>
         </div>
@@ -610,7 +630,7 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
             <span class="arch-arrow">→</span>
             <div class="arch-node"><div class="an-id">M02</div><div class="an-name">Visual Engine</div><div class="an-sub">visuals</div></div>
             <span class="arch-arrow">→</span>
-            <div class="arch-node"><div class="an-id">M02</div><div class="an-name">HeyGen</div><div class="an-sub">face</div></div>
+            <div class="arch-node"><div class="an-id">M02</div><div class="an-name">Talking-Head</div><div class="an-sub">Higgsfield / HeyGen</div></div>
             <span class="arch-arrow">→</span>
             <div class="arch-node"><div class="an-id">M03</div><div class="an-name">Reels Factory</div><div class="an-sub">shorts</div></div>
             <span class="arch-arrow">→</span>
@@ -996,22 +1016,32 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
             <h3>API Keys Status</h3>
             <div style="display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;font-size:14px">
+                <span>META_ACCESS_TOKEN</span>
+                <span style={`color:${d.machines.find(m=>m.skill==='performance-tracker')?.status === 'live' ? 'var(--green)' : 'var(--red)'}`}>
+                  {d.machines.find(m=>m.skill==='performance-tracker')?.status === 'live' ? 'Set' : 'Missing'}
+                </span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:14px">
+                <span>IG_BUSINESS_ID</span>
+                <span style="color:var(--mut)">Required for M06</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:14px">
+                <span>FB_PAGE_ID</span>
+                <span style="color:var(--mut)">Required for M06 (Facebook)</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:14px">
                 <span>HEYGEN_API_KEY</span>
                 <span style={`color:${d.machines.find(m=>m.skill==='heygen')?.status === 'live' ? 'var(--green)' : 'var(--red)'}`}>
                   {d.machines.find(m=>m.skill==='heygen')?.status === 'live' ? 'Set' : 'Missing'}
                 </span>
               </div>
               <div style="display:flex;justify-content:space-between;font-size:14px">
-                <span>SUPADATA_API_KEY</span>
-                <span style="color:var(--mut)">Check .env</span>
-              </div>
-              <div style="display:flex;justify-content:space-between;font-size:14px">
                 <span>TELEGRAM_BOT_TOKEN</span>
-                <span style="color:var(--mut)">Check .env</span>
+                <span style="color:var(--mut)">For alert notifications</span>
               </div>
               <div style="display:flex;justify-content:space-between;font-size:14px">
                 <span>GHL_API_KEY</span>
-                <span style="color:var(--mut)">Optional</span>
+                <span style="color:var(--mut)">Optional — GoHighLevel</span>
               </div>
             </div>
           </div>
