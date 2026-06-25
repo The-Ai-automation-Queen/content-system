@@ -101,11 +101,9 @@ a:hover{color:var(--accent-deep)}
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
       body: JSON.stringify({email: email, guide: guide, _gotcha: gotcha})
-    }).then(function(res){
-      window.location.href = redirectUrl;
-    }).catch(function(){
-      window.location.href = redirectUrl;
     });
+
+    setTimeout(function(){ window.location.href = redirectUrl; }, 600);
   });
 })();
 </script>
