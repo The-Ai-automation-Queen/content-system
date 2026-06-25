@@ -103,7 +103,7 @@ a:hover{color:var(--accent-deep)}
       body: JSON.stringify({email: email, guide: guide, _gotcha: gotcha})
     });
 
-    fetch('http://187.77.153.212:5678/webhook/formspree-lead', {
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({email: email, guide: guide, source: 'guide-optin'})
