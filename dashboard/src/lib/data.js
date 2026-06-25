@@ -335,17 +335,55 @@ function parsePatterns(block) {
     .filter(Boolean);
 }
 
-// The 5 machines + their live-wiring status. Env presence flips ⚙️ → live.
+// Channels from inventory.md — static list matching the documented channels.
+export function getChannels() {
+  return [
+    { name: 'Instagram', role: 'Test + grow', handle: '@thefatihachikh', connected: true, notes: 'Short-form video; reel/story' },
+    { name: 'LinkedIn', role: 'Warm-network anchor', handle: 'Fatiha Chikh', connected: true, notes: 'Where the bridge audience lives' },
+    { name: 'YouTube Shorts', role: 'Test + grow', handle: 'AI-Automation-Queen', connected: true, notes: 'Repurposed short-form' },
+    { name: 'Facebook', role: 'Repurpose', handle: 'AI Automation Queen', connected: true, notes: 'Mirror of LinkedIn/IG' },
+    { name: 'Threads', role: 'Test + grow', handle: '@thefatihachikh', connected: true, notes: 'Short text / repurpose' },
+    { name: 'Twitter / X', role: 'Test + grow', handle: '@aiautomatik', connected: true, notes: 'Short text / repurpose' },
+    { name: 'TikTok', role: 'Test + grow', handle: '—', connected: false, notes: 'Not connected to Blotato' },
+    { name: 'Keynote / stage', role: 'Authority anchor', handle: '—', connected: false, notes: 'Clips reused as credibility signals' },
+  ];
+}
+
+// Skills from skills/ directory — reads folder names + first line of SKILL.md.
+export function getSkills() {
+  const skillsDir = path.join(REPO_ROOT, 'skills');
+  let dirs = [];
+  try {
+    dirs = fs
+      .readdirSync(skillsDir, { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      .map((d) => d.name);
+  } catch {
+    return [];
+  }
+  return dirs.map((name) => {
+    let desc = '';
+    try {
+      const skill = fs.readFileSync(path.join(skillsDir, name, 'SKILL.md'), 'utf8');
+      const firstPara = skill.match(/^(?!#|>|---|\s*$)(.+)/m);
+      if (firstPara) desc = firstPara[1].replace(/\*\*/g, '').trim().slice(0, 120);
+    } catch { /* no SKILL.md */ }
+    return { name, desc };
+  });
+}
+
+// The machines + their live-wiring status. Env presence flips ⚙️ → live.
 export function getMachines() {
   const has = (k) => !!process.env[k];
   return [
-    { id: 'M01·data', name: 'Signal Harvester', skill: 'signal-harvester', status: 'live', note: 'X/IG/YouTube via Apify (no paid X API) + Tavily web search' },
-    { id: 'M01·script', name: 'Content Engine', skill: 'content-engine', status: 'live', note: 'In-voice drafts, critic-scored' },
-    { id: 'M02·visual', name: 'Visual Engine', skill: 'visual-engine', status: 'live', note: 'Blotato AI images + narrated video (open egress on VPS)' },
-    { id: 'M02·face', name: 'HeyGen Talking-Head', skill: 'heygen', status: has('HEYGEN_API_KEY') ? 'live' : 'needs-key', note: 'Set HEYGEN_API_KEY (the one paid tool) + record avatar/voice IDs' },
-    { id: 'M03·reels', name: 'Reels Factory', skill: 'reels-factory', status: 'live', note: 'Reap MCP (virality-scored, no key) + Blotato fallback — no Opus Clip' },
-    { id: 'M04·post', name: 'Distribution', skill: 'distribution', status: 'live', note: 'Blotato queue across platforms (connect TikTok to add it)' },
-    { id: 'M05·leads', name: 'DM Responder', skill: 'dm-responder', status: 'partial', note: 'Runs on GoHighLevel (replaces ManyChat); activate lead-magnet URLs' },
+    { id: 'M01·data', name: 'Signal Harvester', skill: 'signal-harvester', status: 'live', note: 'X/IG/YouTube via Apify (no paid X API) + Tavily web search', group: 'SYSTEM' },
+    { id: 'M01·script', name: 'Content Engine', skill: 'content-engine', status: 'live', note: 'In-voice drafts, critic-scored', group: 'CROSS-PLATFORM' },
+    { id: 'M02·visual', name: 'Visual Engine', skill: 'visual-engine', status: 'live', note: 'Blotato AI images + narrated video (open egress on VPS)', group: 'CROSS-PLATFORM' },
+    { id: 'M02·face', name: 'HeyGen Talking-Head', skill: 'heygen', status: has('HEYGEN_API_KEY') ? 'live' : 'needs-key', note: 'Set HEYGEN_API_KEY (the one paid tool) + record avatar/voice IDs', group: 'CROSS-PLATFORM' },
+    { id: 'M03·reels', name: 'Reels Factory', skill: 'reels-factory', status: 'live', note: 'Reap MCP (virality-scored, no key) + Blotato fallback — no Opus Clip', group: 'REELS (INSTAGRAM / TIKTOK)' },
+    { id: 'M04·post', name: 'Distribution', skill: 'distribution', status: 'live', note: 'Blotato queue across platforms (connect TikTok to add it)', group: 'CROSS-PLATFORM' },
+    { id: 'M05·leads', name: 'DM Responder', skill: 'dm-responder', status: 'partial', note: 'Runs on GoHighLevel (replaces ManyChat); activate lead-magnet URLs', group: 'CROSS-PLATFORM' },
+    { id: 'M06·measure', name: 'Performance Tracker', skill: 'performance-tracker', status: 'live', note: 'Scrapes all platforms for follower counts + post engagement', group: 'SYSTEM' },
   ];
 }
 
@@ -379,6 +417,8 @@ export function getDashboard(tenant) {
     calendar: getCalendar(entries),
     researchCount: getResearchCount(base),
     machines: getMachines(),
+    channels: getChannels(),
+    skills: getSkills(),
     leads,
     performance,
     competitor,
