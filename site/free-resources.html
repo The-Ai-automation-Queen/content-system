@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noai, noimageai">
 <title>The AI Edition &mdash; Shift &amp; Lead</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,10 +29,13 @@
 html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 
-.ribbon{display:block;width:100%;background:var(--navy);color:var(--canvas);font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;padding:11px 32px;text-align:center;text-decoration:none}
-.ribbon strong{color:#7FA0FF;font-weight:700;margin-left:6px}
-.ribbon-count{display:inline-flex;gap:6px;margin-left:10px;font-variant-numeric:tabular-nums}
-.ribbon-count span{background:rgba(255,255,255,0.1);padding:2px 7px;border-radius:2px}
+.ribbon{display:flex;width:100%;background:var(--navy);color:var(--canvas);font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;padding:11px 32px;text-align:center;text-decoration:none;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.ribbon label{cursor:default}
+.ribbon input[type="email"]{padding:7px 14px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);color:var(--canvas);font-family:'Inter',sans-serif;font-size:13px;border-radius:3px;letter-spacing:0.02em;text-transform:none;width:220px}
+.ribbon input[type="email"]::placeholder{color:rgba(255,255,255,0.45)}
+.ribbon input[type="email"]:focus{outline:none;border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.15)}
+.ribbon button{background:transparent;border:1px solid rgba(255,255,255,0.3);color:#7FA0FF;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:7px 16px;border-radius:3px;cursor:pointer}
+.ribbon button:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.5)}
 
 .nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
 .nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
@@ -40,7 +44,7 @@ a{color:inherit;text-decoration:none}
 
 .hero{background:var(--canvas);padding:88px 32px 96px}
 .hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:72px;align-items:center}
-.hero-kicker{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent-deep);margin-bottom:24px}
+.hero-kicker{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(28px,3.5vw,38px);text-transform:none;letter-spacing:0.02em;color:var(--muted);margin-bottom:24px}
 .hero h1{font-family:'Playfair Display',Georgia,serif;font-size:104px;line-height:0.96;font-weight:400;letter-spacing:-0.03em;margin-bottom:32px;font-style:italic;color:var(--electric)}
 .hero h1 .block{font-style:normal;display:block;color:var(--ink)}
 .hero-sub{font-size:22px;line-height:1.5;color:var(--muted);max-width:560px}
@@ -94,6 +98,8 @@ a{color:inherit;text-decoration:none}
 .row-title{font-family:'Playfair Display',Georgia,serif;font-size:30px;line-height:1.2;font-weight:400;margin-bottom:10px;letter-spacing:-0.01em}
 .row-summary{font-size:17px;color:var(--muted);max-width:760px;line-height:1.55}
 .row-cta{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.18em;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px;white-space:nowrap}
+.row.coming-soon{opacity:0.45;pointer-events:none}
+.row.coming-soon .row-cta{border-bottom-color:transparent;color:var(--muted)}
 
 .cta-band{background:var(--navy);color:var(--canvas);padding:96px 32px}
 .cta-inner{max-width:1240px;margin:0 auto}
@@ -151,15 +157,15 @@ img{max-width:100%;height:auto}
 
 @media (max-width:560px){
   html,body{font-size:16px}
-  .ribbon{padding:10px 16px;font-size:11px;letter-spacing:0.12em}
-  .ribbon strong{display:block;margin-left:0;margin-top:4px}
-  .ribbon-count{margin-left:6px}
+  .ribbon{padding:10px 16px;font-size:11px;letter-spacing:0.12em;gap:8px}
+  .ribbon input[type="email"]{width:170px;font-size:12px;padding:6px 10px}
+  .ribbon button{padding:6px 12px;font-size:11px}
   .nav-inner{padding:14px 16px;flex-wrap:wrap;gap:10px;justify-content:center}
   .nav-logo{font-size:19px}
   .nav-links{gap:12px;font-size:10px;flex-wrap:wrap;justify-content:center}
   .hero{padding:40px 16px 48px}
   .hero-inner{gap:32px}
-  .hero-kicker{font-size:11px;margin-bottom:18px}
+  .hero-kicker{font-size:24px;margin-bottom:18px}
   .hero h1{font-size:34px;margin-bottom:20px;line-height:1.05}
   .hero-sub{font-size:16px}
   .hero-portrait{max-width:240px}
@@ -193,11 +199,12 @@ img{max-width:100%;height:auto}
 </head>
 <body>
 
-<a class="ribbon" href="#">
-  Next free guide drops in
-  <span class="ribbon-count"><span>1d</span><span>04h</span><span>22m</span></span>
-  <strong>50 guides, 1 every 2 days</strong>
-</a>
+<form class="ribbon" id="ribbon-form">
+  <label for="ribbon-email">Get every new guide in your inbox</label>
+  <input id="ribbon-email" name="email" type="email" placeholder="your@email.com" required>
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+  <button type="submit"><strong>Subscribe free</strong></button>
+</form>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="#">Shift &amp; Lead</a>
@@ -206,7 +213,7 @@ img{max-width:100%;height:auto}
 
 <section class="hero"><div class="hero-inner">
   <div>
-    <div class="hero-kicker">The AI Edition &middot; A new guide every 2 days</div>
+    <div class="hero-kicker">The AI Edition</div>
     <h1>AI,<br>explained<br><span class="block">quietly.</span></h1>
     <p class="hero-sub">The guides I wish I had when I started. Now they're yours.</p>
   </div>
@@ -215,7 +222,7 @@ img{max-width:100%;height:auto}
 
 <section class="pull"><div class="pull-inner">
   <span class="pull-mark">&ldquo;</span>
-  <p class="pull-text">The people who learn this now will look back at this moment as <em>the turning point.</em></p>
+  <p class="pull-text">You're not behind. You just haven't had someone <em>explain it properly yet.</em></p>
   <div class="pull-attrib">Fatiha Chikh</div>
 </div></section>
 
@@ -231,28 +238,28 @@ img{max-width:100%;height:auto}
     <!-- Spotlight slots populated by JS on page load. Fallback HTML below in case JS fails. -->
     <div class="spot-feat" id="spotlight-featured">
       <div>
-        <span class="chip chip-setup">DECIDE</span>
-        <h3>Agent vs workflow vs chatbot. Which one do you actually need?</h3>
-        <p>Your team says "AI agent". 8 times out of 10 they mean workflow. Here is the 3-question filter that tells you which one your project actually needs.</p>
+        <span class="chip chip-track0">WHAT</span>
+        <h3>Everyone says &ldquo;AI&rdquo; 100 times a day. Nobody says what it is.</h3>
+        <p>You're not behind. You were never told. Here is what it is, in 4 lines.</p>
       </div>
-      <a class="row-cta" href="/opt-in.html?guide=agent-vs-workflow-chatbot&src=free-resources">Read →</a>
+      <a class="row-cta" href="opt-in.html?guide=what-is-ai">Read →</a>
     </div>
     <div class="spot-side" id="spotlight-side">
       <div class="spot-mini">
         <div>
-          <span class="chip chip-literacy">FILTER</span>
-          <h4>Are you ready for AI? The 5-question filter.</h4>
-          <p>5 questions before you spend on tools.</p>
+          <span class="chip chip-track0">DIFF</span>
+          <h4>ChatGPT and AI are not the same thing.</h4>
+          <p>6 words, sorted biggest to smallest.</p>
         </div>
-        <a class="row-cta" href="/opt-in.html?guide=are-you-ai-ready&src=free-resources">Read →</a>
+        <a class="row-cta" href="opt-in.html?guide=chatgpt-vs-ai">Read →</a>
       </div>
       <div class="spot-mini">
         <div>
-          <span class="chip chip-data">TRUST</span>
-          <h4>The trust ladder. When to verify AI output.</h4>
-          <p>4 levels. Each has a verification cost.</p>
+          <span class="chip chip-data">DECODE</span>
+          <h4>Chez Claude. The one that reads the whole room.</h4>
+          <p>Door, kitchen, plate. The restaurant walkthrough.</p>
         </div>
-        <a class="row-cta" href="/opt-in.html?guide=trust-ladder&src=free-resources">Read →</a>
+        <a class="row-cta" href="opt-in.html?guide=chez-claude">Read →</a>
       </div>
     </div>
   </div>
@@ -289,7 +296,7 @@ img{max-width:100%;height:auto}
     inner.appendChild(makeEl('h3', null, guide.title || ''));
     inner.appendChild(makeEl('p', null, guide.summary || ''));
     var cta = makeEl('a', 'row-cta', 'Read →');
-    cta.href = '/opt-in.html?guide=' + encodeURIComponent(slug) + '&src=free-resources';
+    cta.href = 'opt-in.html?guide=' + encodeURIComponent(slug);
     slot.appendChild(inner);
     slot.appendChild(cta);
   }
@@ -303,7 +310,7 @@ img{max-width:100%;height:auto}
       inner.appendChild(makeEl('h4', null, item.data.title || ''));
       inner.appendChild(makeEl('p', null, item.data.side_summary || item.data.summary || ''));
       var cta = makeEl('a', 'row-cta', 'Read →');
-      cta.href = '/opt-in.html?guide=' + encodeURIComponent(item.slug) + '&src=free-resources';
+      cta.href = 'opt-in.html?guide=' + encodeURIComponent(item.slug);
       mini.appendChild(inner);
       mini.appendChild(cta);
       slot.appendChild(mini);
@@ -377,311 +384,109 @@ img{max-width:100%;height:auto}
 <section class="library" id="library">
 
   <!-- CHEZ_SERIES_START -->
-  <!-- The Kitchen Maps series: 12 AI tools walked through like restaurants -->
-  <article class="row" data-publish="2026-06-30">
+  <!-- The Kitchen Maps series: 10 AI tools walked through like restaurants -->
+  <div class="card" style="margin:0 0 36px;border-left:3px solid var(--accent)">
+    <p style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:22px;line-height:1.35;color:var(--muted);margin-bottom:12px">The Kitchen Map series</p>
+    <p style="margin-bottom:0">Almost everyone on this planet loves food. So there was no better way to explain AI tools than to walk you through them like restaurants. Same structure every time: the door, the kitchen, the plate. Each new tool feels familiar before you've even opened it.</p>
+  </div>
+  <article class="row" data-publish="2026-06-23">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Anthropic · Kitchen Map</span><span class="row-date">30 Jun 2026</span></div>
-      <h2 class="row-title">Chez Claude. The Anthropic ecosystem as a restaurant.</h2>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Anthropic · Kitchen Map</span><span class="row-date">23 Jun 2026</span></div>
+      <h2 class="row-title">Chez Claude. The one that reads the whole room before it answers.</h2>
       <p class="row-summary">Long-form reasoning, Artifacts, computer-use, Projects, Claude Code. Walked through like a restaurant. Door, kitchen, plate.</p>
     </div>
-    <a class="row-cta" href="/opt-in.html?guide=chez-claude&src=free-resources">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-claude">Read &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-06-29">
+  <article class="row" data-publish="2026-06-23">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">OpenAI · Kitchen Map</span><span class="row-date">29 Jun 2026</span></div>
-      <h2 class="row-title">Chez ChatGPT. The OpenAI ecosystem as a restaurant.</h2>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">OpenAI · Kitchen Map</span><span class="row-date">23 Jun 2026</span></div>
+      <h2 class="row-title">Chez ChatGPT. The one everyone tried first. Here's what's actually on the menu.</h2>
       <p class="row-summary">GPTs, Operator, Agents, Voice, image gen, the whole OpenAI ecosystem as one walkthrough. Door, kitchen, plate.</p>
     </div>
-    <a class="row-cta" href="/opt-in.html?guide=chez-openai&src=free-resources">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-openai">Read &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-06-28">
+  <article class="row" data-publish="2026-06-23">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Google · Kitchen Map</span><span class="row-date">28 Jun 2026</span></div>
-      <h2 class="row-title">Chez Gemini. The Google ecosystem as a restaurant.</h2>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Google · Kitchen Map</span><span class="row-date">23 Jun 2026</span></div>
+      <h2 class="row-title">Chez Gemini. It already knows your calendar, your Drive, your inbox.</h2>
       <p class="row-summary">Gemini, Workspace, Deep Research, NotebookLM, Astra, the Google AI stack as a restaurant.</p>
     </div>
-    <a class="row-cta" href="/opt-in.html?guide=chez-gemini&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-27">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Microsoft · Kitchen Map</span><span class="row-date">27 Jun 2026</span></div>
-      <h2 class="row-title">Chez Copilot. The Microsoft ecosystem as a restaurant.</h2>
-      <p class="row-summary">Copilot Chat, Cowork, Studio, Agent 365, Foundry. Microsoft's AI restaurant from door to plate.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=chez-copilot&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-26">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Perplexity · Kitchen Map</span><span class="row-date">26 Jun 2026</span></div>
-      <h2 class="row-title">Chez Perplexity. The Perplexity ecosystem as a restaurant.</h2>
-      <p class="row-summary">Sonar, Pro Search, Deep Research, Spaces, Comet. Citation-first answer engine as a restaurant.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=chez-perplexity&src=free-resources">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-gemini">Read &rarr;</a>
   </article>
 
   <article class="row" data-publish="2026-06-25">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">xAI · Kitchen Map</span><span class="row-date">25 Jun 2026</span></div>
-      <h2 class="row-title">Chez Grok. The xAI ecosystem as a restaurant.</h2>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Microsoft · Kitchen Map</span><span class="row-date">25 Jun 2026</span></div>
+      <h2 class="row-title">Chez Copilot. It's been sitting in your Office toolbar this whole time.</h2>
+      <p class="row-summary">Copilot Chat, Cowork, Studio, Agent 365, Foundry. Microsoft's AI restaurant from door to plate.</p>
+    </div>
+    <a class="row-cta" href="opt-in.html?guide=chez-copilot">Read &rarr;</a>
+  </article>
+
+  <article class="row" data-publish="2026-06-29">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">xAI · Kitchen Map</span><span class="row-date">29 Jun 2026</span></div>
+      <h2 class="row-title">Chez Grok. Real-time ingredients. No filter on the chef.</h2>
       <p class="row-summary">Grok 4.3, Big Brain, Aurora, X live search, SuperGrok Heavy. xAI's loud kitchen walked through.</p>
     </div>
-    <a class="row-cta" href="/opt-in.html?guide=chez-grok&src=free-resources">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-grok">Read &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-06-24">
+  <article class="row" data-publish="2026-07-01">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Mistral · Kitchen Map</span><span class="row-date">24 Jun 2026</span></div>
-      <h2 class="row-title">Chez Mistral. The Mistral ecosystem as a restaurant.</h2>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Mistral · Kitchen Map</span><span class="row-date">01 Jul 2026</span></div>
+      <h2 class="row-title">Chez Mistral. Open kitchen. Nothing leaves the building.</h2>
       <p class="row-summary">Le Chat, Mistral Large, Magistral, Vibe coding, No Telemetry Mode. The Paris kitchen at $14.99/mo.</p>
     </div>
-    <a class="row-cta" href="/opt-in.html?guide=chez-mistral&src=free-resources">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-mistral">Read &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-06-23">
+  <article class="row" data-publish="2026-07-03">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">DeepSeek · Kitchen Map</span><span class="row-date">23 Jun 2026</span></div>
-      <h2 class="row-title">Chez DeepSeek. The DeepSeek ecosystem as a restaurant.</h2>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">DeepSeek · Kitchen Map</span><span class="row-date">03 Jul 2026</span></div>
+      <h2 class="row-title">Chez DeepSeek. Same plates. A fraction of the price.</h2>
       <p class="row-summary">V4 Flash, V4 Pro, 1M context, the dirt-cheap open-source kitchen from China, mapped clean.</p>
     </div>
-    <a class="row-cta" href="/opt-in.html?guide=chez-deepseek&src=free-resources">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-deepseek">Read &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-06-22">
+  <article class="row" data-publish="2026-07-05">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Moonshot · Kitchen Map</span><span class="row-date">22 Jun 2026</span></div>
-      <h2 class="row-title">Chez Kimi. The Moonshot ecosystem as a restaurant.</h2>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Moonshot · Kitchen Map</span><span class="row-date">05 Jul 2026</span></div>
+      <h2 class="row-title">Chez Kimi. 300 chefs in parallel. Nobody's heard of this place yet.</h2>
       <p class="row-summary">K2.6, 300-agent swarm, Kimi Code, Cursor under the hood. Moonshot AI's parallel brigade.</p>
     </div>
-    <a class="row-cta" href="/opt-in.html?guide=chez-kimi&src=free-resources">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-kimi">Read &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-06-21">
+  <article class="row" data-publish="2026-07-09">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Alibaba · Kitchen Map</span><span class="row-date">21 Jun 2026</span></div>
-      <h2 class="row-title">Chez Qwen. The Alibaba ecosystem as a restaurant.</h2>
-      <p class="row-summary">100+ models, Qwen-Flash, Plus, Max, OCR, Vision, voice, Alibaba Cloud regional. The broadest single-vendor menu.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=chez-qwen&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-20">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Meta · Kitchen Map</span><span class="row-date">20 Jun 2026</span></div>
-      <h2 class="row-title">Chez Meta AI. The Meta ecosystem as a restaurant.</h2>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Meta · Kitchen Map</span><span class="row-date">09 Jul 2026</span></div>
+      <h2 class="row-title">Chez Meta AI. Free tables on every app you already use.</h2>
       <p class="row-summary">Llama, WhatsApp + IG + Messenger integration, Ray-Ban Meta glasses, AI Studio creator characters.</p>
     </div>
-    <a class="row-cta" href="/opt-in.html?guide=chez-meta-ai&src=free-resources">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-meta-ai">Read &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-06-19">
+  <article class="row" data-publish="2026-07-11">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Manus · Kitchen Map</span><span class="row-date">19 Jun 2026</span></div>
-      <h2 class="row-title">Chez Manus. The Manus ecosystem as a restaurant.</h2>
+      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Manus · Kitchen Map</span><span class="row-date">11 Jul 2026</span></div>
+      <h2 class="row-title">Chez Manus. You sit down. The kitchen runs itself.</h2>
       <p class="row-summary">Autonomous multi-agent brigade. Planner, executor, verifier. Browser, code, file. Hours of unsupervised work.</p>
     </div>
-    <a class="row-cta" href="/opt-in.html?guide=chez-manus&src=free-resources">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-manus">Read &rarr;</a>
   </article>
 
   <!-- CHEZ_SERIES_END -->
-
-
-  <!-- EVERGREEN BATCH: decisions, diagnostics, trust, patterns. Tool-agnostic, will not age. -->
-
-  <article class="row" data-publish="2026-06-24">
-    <div>
-      <div class="row-meta"><span class="chip chip-setup">DECIDE</span><span class="row-kicker">Decisions</span><span class="row-date">24 Jun 2026</span></div>
-      <h2 class="row-title">Agent vs workflow vs chatbot. Which one do you actually need?</h2>
-      <p class="row-summary">Your team says "AI agent". 8 out of 10 times they mean workflow. 3-question filter that tells you which architecture your project actually needs.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=agent-vs-workflow-chatbot&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-23">
-    <div>
-      <div class="row-meta"><span class="chip chip-literacy">FILTER</span><span class="row-kicker">Diagnostics</span><span class="row-date">23 Jun 2026</span></div>
-      <h2 class="row-title">Are you ready for AI? The 5-question filter.</h2>
-      <p class="row-summary">5 questions before you spend a dollar on tools. Score yourself. Most failed AI projects fail because the business was not ready, not because the AI was bad.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=are-you-ai-ready&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-22">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">TRUST</span><span class="row-kicker">Verification</span><span class="row-date">22 Jun 2026</span></div>
-      <h2 class="row-title">The trust ladder. When to verify AI output, when not to.</h2>
-      <p class="row-summary">4 levels of trust. Each has a verification cost. Stop over-verifying low-stakes work. Stop under-verifying the work that matters.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=trust-ladder&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-21">
-    <div>
-      <div class="row-meta"><span class="chip chip-literacy">PATTERN</span><span class="row-kicker">Failure Modes</span><span class="row-date">21 Jun 2026</span></div>
-      <h2 class="row-title">5 reasons AI rollouts fail at month 3</h2>
-      <p class="row-summary">Same 5 patterns kill AI projects in real businesses. Not vendor blame. Not tech debt. Real reasons, real fixes.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=5-reasons-ai-fails&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-20">
-    <div>
-      <div class="row-meta"><span class="chip chip-setup">DECIDE</span><span class="row-kicker">Build vs Buy</span><span class="row-date">20 Jun 2026</span></div>
-      <h2 class="row-title">Buy a tool vs build it yourself. The honest matrix.</h2>
-      <p class="row-summary">Every vendor wants you to buy. Every dev wants you to build. 4-question framework that tells you which call is right for your business.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=buy-vs-build&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-19">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">TRUST</span><span class="row-kicker">Boundaries</span><span class="row-date">19 Jun 2026</span></div>
-      <h2 class="row-title">What you should never automate. 5 tasks AI cannot own.</h2>
-      <p class="row-summary">AI handles a lot. These 5 tasks it cannot. Automate them and you damage the part of your business that makes it human.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=what-never-automate&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <!-- END EVERGREEN BATCH -->
-
-  <!-- NEW BATCH: Kyle AI inspiration adapted to her voice -->
-
-  <article class="row" data-publish="2026-06-18">
-    <div>
-      <div class="row-meta"><span class="chip chip-setup">SETUP</span><span class="row-kicker">ChatGPT</span><span class="row-date">18 Jun 2026</span></div>
-      <h2 class="row-title">Build your Business Brain GPT</h2>
-      <p class="row-summary">Stop re-explaining your business to ChatGPT every single time. Build a Custom GPT that knows your voice, your offers, your audience.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=business-brain-gpt&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-17">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">BUILD</span><span class="row-kicker">CRM</span><span class="row-date">17 Jun 2026</span></div>
-      <h2 class="row-title">Build your own CRM with Claude Code</h2>
-      <p class="row-summary">Stop paying $79/mo for a CRM you use 10% of. Build your own in an afternoon. Form, dashboard, follow-ups, tracking. You own the database.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=build-your-own-crm&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-16">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">BUILD</span><span class="row-kicker">Content Ops</span><span class="row-date">16 Jun 2026</span></div>
-      <h2 class="row-title">Build a visual content calendar</h2>
-      <p class="row-summary">Plan and schedule every post from one screen. Connects to Google Drive so you pick videos directly. Stop juggling Sheets, Notion, and your camera roll.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=content-calendar&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-15">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">BUILD</span><span class="row-kicker">Analytics</span><span class="row-date">15 Jun 2026</span></div>
-      <h2 class="row-title">Real-time content dashboard</h2>
-      <p class="row-summary">Track every Instagram and YouTube post on one screen. Auto-updates every 6 hours. Stop checking 3 different apps to see how your content performed.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=content-dashboard&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-14">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">BUILD</span><span class="row-kicker">Email</span><span class="row-date">14 Jun 2026</span></div>
-      <h2 class="row-title">Build your own email platform</h2>
-      <p class="row-summary">Replace Mailchimp, ConvertKit, or Klaviyo with software you own. $20/mo to send 50,000 emails. Account flagged? You keep your list.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=email-marketing-platform&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-13">
-    <div>
-      <div class="row-meta"><span class="chip chip-track0">BUILD</span><span class="row-kicker">Claude Skills</span><span class="row-date">13 Jun 2026</span></div>
-      <h2 class="row-title">Build a content plan skill in Claude Code</h2>
-      <p class="row-summary">Turn any topic into 10 hooks, 3 video scripts, a carousel plan, a freebie outline, and a ManyChat flow. All from one slash command.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=content-plan-skill&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-12">
-    <div>
-      <div class="row-meta"><span class="chip chip-literacy">ANALYZE</span><span class="row-kicker">Reels</span><span class="row-date">12 Jun 2026</span></div>
-      <h2 class="row-title">Reverse-engineer any viral reel</h2>
-      <p class="row-summary">3 frameworks to break down any reel into a reusable playbook. Paste a link, get the analysis in 90 seconds. Hook, format, shot list, all of it.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=reel-analysis&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-11">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">BUILD</span><span class="row-kicker">Claude Skills</span><span class="row-date">11 Jun 2026</span></div>
-      <h2 class="row-title">Build a code audit skill</h2>
-      <p class="row-summary">Audit any codebase in 5 minutes. AI checks for bugs, security issues, performance, and maintainability. Saved as a Claude Code skill.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=code-audit-skill&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-10">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">BUILD</span><span class="row-kicker">Paid Ads</span><span class="row-date">10 Jun 2026</span></div>
-      <h2 class="row-title">Deploy Google Ads in 30 minutes</h2>
-      <p class="row-summary">Stop paying agencies $3K/mo to launch Google Ads. Build a deployment system that takes you from keyword research to live campaign.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=google-ads-deployment&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-09">
-    <div>
-      <div class="row-meta"><span class="chip chip-track0">BUILD</span><span class="row-kicker">Automation</span><span class="row-date">09 Jun 2026</span></div>
-      <h2 class="row-title">Browser automation with Playwright</h2>
-      <p class="row-summary">Automate any repetitive browser task. Form filling, data scraping, screenshot pipelines, end-to-end testing. Tell Claude Code what you want.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=playwright-automation&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-08">
-    <div>
-      <div class="row-meta"><span class="chip chip-literacy">BUILD</span><span class="row-kicker">Video</span><span class="row-date">08 Jun 2026</span></div>
-      <h2 class="row-title">Programmatic video with Remotion</h2>
-      <p class="row-summary">Render branded videos from code. Same template, infinite content. 100 reels with consistent branding in one afternoon.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=remotion-video&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <article class="row" data-publish="2026-06-07">
-    <div>
-      <div class="row-meta"><span class="chip chip-setup">BUILD</span><span class="row-kicker">Video Ops</span><span class="row-date">07 Jun 2026</span></div>
-      <h2 class="row-title">Video transcription pipeline</h2>
-      <p class="row-summary">Turn any video into a transcript in 30 seconds. Then auto-generate captions, blog posts, social hooks. All from one upload. $0.60 per video.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=video-transcription&src=free-resources">Read &rarr;</a>
-  </article>
-
-  <!-- END NEW BATCH -->
-
-  <article class="row" data-publish="2026-06-08">
-    <div>
-      <div class="row-meta"><span class="chip chip-setup">SETUP</span><span class="row-kicker">ChatGPT</span><span class="row-date">08 Jun 2026</span></div>
-      <h2 class="row-title">What ChatGPT actually does for business owners</h2>
-      <p class="row-summary">Same conversation with ChatGPT for 3 years. Same 3 prompts every week. Here is the ground floor before agents and skills.</p>
-    </div>
-    <a class="row-cta" href="/opt-in.html?guide=what-chatgpt-actually-does&src=free-resources">Read &rarr;</a>
-  </article>
   <article class="row" data-publish="2026-04-09">
     <div>
       <div class="row-meta"><span class="chip chip-literacy">WORDS</span><span class="row-kicker">AI Vocabulary</span><span class="row-date">09 Apr 2026</span></div>
-      <h2 class="row-title">&ldquo;Agents&rdquo;, &ldquo;skills&rdquo;, &ldquo;MCP&rdquo;, everyone uses words you do not know?</h2>
-      <p class="row-summary">Every meeting now has agents, skills, MCP, RAG, embedding. 12 words, plain English, next meeting makes sense.</p>
+      <h2 class="row-title">You sat through that meeting. You smiled. You understood nothing.</h2>
+      <p class="row-summary">Someone said RAG, MCP, and hallucination in the same sentence. You nodded. Everyone nodded. Here&rsquo;s the pause button.</p>
     </div>
-    <a class="row-cta" href="guides/ai-jargon-guide.html">Read &rarr;</a>
-  </article>
-  <article class="row" data-publish="2026-04-01">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">DATA</span><span class="row-kicker">Data Safety</span><span class="row-date">01 Apr 2026</span></div>
-      <h2 class="row-title">Worried AI will see things it should not?</h2>
-      <p class="row-summary">You paused before pasting a client email into ChatGPT. Good instinct. 4 rules, simpler than the 60-page terms of service.</p>
-    </div>
-    <a class="row-cta" href="#">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=ai-jargon-guide">Read &rarr;</a>
   </article>
   <article class="row" data-publish="2026-03-20">
     <div>
@@ -689,7 +494,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Heard &ldquo;prompt&rdquo; 50 times, still no idea what it is?</h2>
       <p class="row-summary">Every AI article tells you to write better prompts. Nobody tells you what a prompt is. Here is what makes one work.</p>
     </div>
-    <a class="row-cta" href="guides/what-is-a-prompt.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=what-is-a-prompt">Read &rarr;</a>
   </article>
   <article class="row" data-publish="2026-03-10">
     <div>
@@ -697,7 +502,7 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Confused if ChatGPT and AI are the same thing?</h2>
       <p class="row-summary">ChatGPT. AI. LLM. Chatbot. Agent. Model. None mean the same thing. Here is what each one is.</p>
     </div>
-    <a class="row-cta" href="guides/chatgpt-vs-ai.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chatgpt-vs-ai">Read &rarr;</a>
   </article>
   <article class="row" data-publish="2026-03-02">
     <div>
@@ -705,15 +510,15 @@ img{max-width:100%;height:auto}
       <h2 class="row-title">Everyone says &ldquo;AI&rdquo; 100 times a day. Nobody says what it is.</h2>
       <p class="row-summary">You are not behind. You were never told. Here is what it is, in 4 lines.</p>
     </div>
-    <a class="row-cta" href="guides/what-is-ai.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=what-is-ai">Read &rarr;</a>
   </article>
   <article class="row" data-publish="2026-03-01">
     <div>
-      <div class="row-meta"><span class="chip chip-setup">SETUP</span><span class="row-kicker">Build Once</span><span class="row-date">01 Mar 2026</span></div>
-      <h2 class="row-title">Clone your voice. Auto-render Reels. $0 per audio.</h2>
-      <p class="row-summary">VoxCPM + Google Colab + ReelStack. Your voice, 30 languages, overnight batches, finished 9:16 Reels. 45 min setup, then it runs.</p>
+      <div class="row-meta"><span class="chip chip-track0">AGENTIC</span><span class="row-kicker">AI Vocabulary</span><span class="row-date">01 Mar 2026</span></div>
+      <h2 class="row-title">Everyone says &ldquo;agentic.&rdquo; Here&rsquo;s what it actually means.</h2>
+      <p class="row-summary">Agentic AI. AI agents. Agentic workflows. 4 levels of autonomy, explained without the hype.</p>
     </div>
-    <a class="row-cta" href="guides/voice-clone-pipeline.html">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=what-is-agentic">Read &rarr;</a>
   </article>
 </section>
 
@@ -758,24 +563,40 @@ img{max-width:100%;height:auto}
     <a class="footer-link" href="#">Community, $49/mo</a><a class="footer-link" href="#">Fast Forward, $499</a><a class="footer-link" href="#">About</a>
   </div>
 </div>
-<div class="footer-legal">&copy; 2026 Shift &amp; Lead, All rights reserved</div>
+<div class="footer-legal">&copy; 2026 Shift &amp; Lead. All rights reserved. All content is original work. Reproduction without written consent is prohibited.</div>
 </footer>
 
 <script>
-// Date-gate: hides guide rows whose data-publish is in the future.
-// To release a guide, set its data-publish to today or earlier.
-// Rows without data-publish are always visible.
 (function(){
   var today = new Date().toISOString().slice(0,10);
   document.querySelectorAll('.row[data-publish]').forEach(function(row){
     if(row.getAttribute('data-publish') > today){
-      row.style.display = 'none';
+      row.classList.add('coming-soon');
+      var cta = row.querySelector('.row-cta');
+      if(cta){
+        cta.removeAttribute('href');
+        cta.textContent = 'Coming soon';
+      }
     }
   });
-  // Update the visible guide count in the ribbon
-  var visible = document.querySelectorAll('.row:not([style*="display: none"])').length;
-  var ribbon = document.querySelector('.ribbon strong');
-  if(ribbon) ribbon.textContent = visible + ' guides live, new ones every 2 days';
+})();
+
+(function(){
+  document.getElementById('ribbon-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = this;
+    var email = form.querySelector('[name="email"]').value;
+    var gotcha = form.querySelector('[name="_gotcha"]').value;
+    var btn = form.querySelector('button');
+    btn.innerHTML = '<strong>Subscribed!</strong>';
+    btn.disabled = true;
+
+    fetch('https://formspree.io/f/xgojoyka', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify({email: email, source: 'ribbon', _gotcha: gotcha})
+    });
+  });
 })();
 </script>
 </body></html>

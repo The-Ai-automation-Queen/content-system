@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noai, noimageai">
+<title>Get the guide &mdash; Shift &amp; Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#F8F7F5;--ink:#1A1A1A;--rule:#D8D6D2;--muted:#5C5A57;
+  --accent:#6B35C2;--accent-deep:#4A1F8F;--accent-tint:#EEE5FA;
+  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased;min-height:100vh}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+a:hover{color:var(--accent-deep)}
+
+.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+
+.gate{max-width:520px;margin:0 auto;padding:clamp(80px,12vw,160px) clamp(24px,5vw,48px) 80px;text-align:center}
+.gate-kicker{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:24px}
+.gate h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(30px,4.5vw,42px);line-height:1.15;letter-spacing:-0.3px;margin-bottom:18px}
+.gate h1 em{font-style:italic;color:var(--electric)}
+.gate-sub{font-size:18px;color:var(--muted);line-height:1.55;margin-bottom:40px}
+
+.gate-form{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:32px;text-align:left}
+.gate-form label{display:block;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:8px}
+.gate-form input[type="email"]{width:100%;padding:14px 16px;border:1px solid var(--rule);border-radius:4px;font-family:'Inter',sans-serif;font-size:15px;color:var(--ink);background:var(--canvas);margin-bottom:20px}
+.gate-form input[type="email"]:focus{outline:none;border-color:var(--accent)}
+.gate-form button{width:100%;padding:16px;background:var(--navy);color:var(--canvas);border:none;border-radius:4px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer}
+.gate-form button:hover{background:var(--electric)}
+.gate-form .fine{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);text-align:center;margin-top:14px}
+
+.gate-skip{margin-top:24px;font-family:'Inter',sans-serif;font-size:13px;color:var(--muted)}
+.gate-skip a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+
+.footer{position:fixed;bottom:0;left:0;right:0;padding:20px 32px;text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:12px;background:var(--canvas)}
+
+@media(max-width:560px){
+  html,body{font-size:16px}
+  .gate{padding:56px 16px 60px}
+  .gate h1{font-size:26px}
+  .gate-form{padding:24px}
+  .nav-inner{padding:14px 16px}
+  .nav-links{gap:12px;font-size:10px}
+  .footer{position:static;padding:32px 16px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-logo" href="free-resources.html">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="free-resources.html">Free Resources</a><a href="#">Community</a><a href="#">About</a></div>
+</div></nav>
+
+<div class="gate">
+  <div class="gate-kicker">Free guide</div>
+  <h1>One email. <em>Instant access.</em></h1>
+  <p class="gate-sub">Enter your email and the guide opens immediately. You'll also get new guides when they publish. Unsubscribe anytime.</p>
+
+  <form class="gate-form" id="gate-form">
+    <label for="email">Email address</label>
+    <input id="email" name="email" type="email" placeholder="you@example.com" required>
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+    <button type="submit">Read the guide</button>
+    <p class="fine">No spam. No sequences. Just the guides.</p>
+  </form>
+</div>
+
+<div class="footer">
+  &copy; 2026 Shift &amp; Lead. All rights reserved.
+</div>
+
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var guide = params.get('guide') || '';
+  var redirectUrl = guide
+    ? window.location.origin + '/guides/' + guide + '.html'
+    : window.location.origin + '/free-resources.html';
+
+  document.getElementById('gate-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = this;
+    var email = form.querySelector('[name="email"]').value;
+    var gotcha = form.querySelector('[name="_gotcha"]').value;
+    var btn = form.querySelector('button');
+    btn.textContent = 'Opening...';
+    btn.disabled = true;
+
+    fetch('https://formspree.io/f/xgojoyka', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify({email: email, guide: guide, _gotcha: gotcha})
+    }).then(function(res){
+      window.location.href = redirectUrl;
+    }).catch(function(){
+      window.location.href = redirectUrl;
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>12 AI words explained &mdash; Shift &amp; Lead</title>
+<meta name="robots" content="noai, noimageai">
+<title>The AI words they keep using &mdash; Shift &amp; Lead</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -49,10 +50,17 @@ p.lead{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:20
 
 .pullquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:24px;line-height:1.35;color:var(--muted);border-left:3px solid var(--accent);padding-left:24px;margin:40px 0}
 
-.word{padding:20px 0;border-bottom:1px solid var(--rule-light)}
-.word:last-of-type{border-bottom:none}
-.word-num{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:0.1em;margin-bottom:4px}
-.word-name{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:400;margin-bottom:8px}
+.scene{margin:48px 0;padding:32px;background:var(--surface);border:1px solid var(--rule);border-radius:6px}
+.scene-label{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin-bottom:16px}
+.scene-quote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:20px;line-height:1.4;color:var(--ink);margin-bottom:20px}
+.scene-break{display:block;margin:20px 0;font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:var(--muted)}
+
+.term{padding:20px 0;border-bottom:1px solid var(--rule-light)}
+.term:last-of-type{border-bottom:none}
+.term-word{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:400;margin-bottom:8px}
+.term-def{color:var(--ink);font-size:16px;line-height:1.65}
+.term-def .plain{display:block;margin-top:8px;color:var(--muted);font-style:italic}
+.term-def .example{display:block;margin-top:8px}
 
 ul,ol{margin:12px 0 20px 24px}
 li{margin-bottom:8px;color:var(--ink)}
@@ -74,6 +82,8 @@ li{margin-bottom:8px;color:var(--ink)}
   .wrap{padding:40px 16px}
   h1{font-size:32px;line-height:1.1}
   .pullquote{font-size:20px}
+  .scene{padding:22px}
+  .scene-quote{font-size:18px}
   .guide-nav{flex-direction:column;gap:16px;align-items:flex-start}
   .nav-inner{padding:14px 16px}
   .nav-links{gap:16px;font-size:11px}
@@ -91,119 +101,162 @@ li{margin-bottom:8px;color:var(--ink)}
 
   <div class="chips">
     <span class="chip chip-literacy">WORDS</span>
-    <span class="chip chip-time">6 min read</span>
+    <span class="chip chip-time">7 min read</span>
   </div>
 
   <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; AI Vocabulary</div>
 
-  <h1>12 AI words everyone uses. <em>Nobody explains them.</em></h1>
+  <h1>You smiled through the meeting. <em>You understood nothing.</em></h1>
 
-  <p class="lead">Agents, skills, MCP, RAG, embedding, fine-tune, token, context window, temperature, hallucination, open weights, multimodal. One sentence each. Bookmark this and stop translating.</p>
-
-  <hr class="rule">
-
-  <h2>The 12 words</h2>
-
-  <div class="word">
-    <div class="word-num">01</div>
-    <div class="word-name"><strong>Agent</strong></div>
-    <p>A chatbot that can take <em>actions</em> &mdash; click buttons, send emails, read your calendar, run code.</p>
-  </div>
-
-  <div class="word">
-    <div class="word-num">02</div>
-    <div class="word-name"><strong>Skill</strong></div>
-    <p>A reusable instruction set you trigger by name &mdash; a prompt + tools + steps, packaged and ready to run.</p>
-  </div>
-
-  <div class="word">
-    <div class="word-num">03</div>
-    <div class="word-name"><strong>MCP</strong> (Model Context Protocol)</div>
-    <p>A standard plug that lets AI tools connect to other apps. Like USB-C, but for AI. &ldquo;Claude connected to Google Drive via MCP&rdquo; means they speak the same plug language.</p>
-  </div>
-
-  <div class="word">
-    <div class="word-num">04</div>
-    <div class="word-name"><strong>RAG</strong> (Retrieval-Augmented Generation)</div>
-    <p>A technique where the AI looks something up in <em>your</em> documents before answering. Cuts hallucinations. Used when you want answers from your own data, not the AI&rsquo;s general training.</p>
-  </div>
-
-  <div class="word">
-    <div class="word-num">05</div>
-    <div class="word-name"><strong>Embedding</strong></div>
-    <p>The math version of a word or sentence. Two sentences with similar meaning have similar embeddings. Powers search inside AI tools. Just recognise the word &mdash; you don&rsquo;t need to think about it.</p>
-  </div>
-
-  <div class="word">
-    <div class="word-num">06</div>
-    <div class="word-name"><strong>Fine-tune</strong></div>
-    <p>Train a general model on your specific data so it behaves a certain way. Expensive and slow &mdash; and often replaced by good prompting + RAG.</p>
-  </div>
-
-  <div class="word">
-    <div class="word-num">07</div>
-    <div class="word-name"><strong>Token</strong></div>
-    <p>A chunk of text, roughly 4 characters or &frac34; of a word. AI charges by tokens. 1,000 tokens is about 750 words. Now you can read the pricing page.</p>
-  </div>
-
-  <div class="word">
-    <div class="word-num">08</div>
-    <div class="word-name"><strong>Context window</strong></div>
-    <p>How much text the AI can hold in its head at once. Claude&rsquo;s is around 1 million tokens. Once you go over, it starts forgetting the beginning of your conversation.</p>
-  </div>
-
-  <div class="word">
-    <div class="word-num">09</div>
-    <div class="word-name"><strong>Temperature</strong></div>
-    <p>A number from 0 to 1 controlling how &ldquo;creative&rdquo; the AI is. 0 = same answer every time. 1 = different answer every time. Default is usually around 0.7. You&rsquo;ll rarely change it.</p>
-  </div>
-
-  <div class="word">
-    <div class="word-num">10</div>
-    <div class="word-name"><strong>Hallucination</strong></div>
-    <p>When AI confidently invents wrong information. The single biggest reason to verify AI answers on legal, medical, or financial topics.</p>
-  </div>
-
-  <div class="word">
-    <div class="word-num">11</div>
-    <div class="word-name"><strong>Open weights / open source</strong></div>
-    <p>The model file is publicly downloadable &mdash; you can run it on your own hardware. Mistral, Llama, DeepSeek are open. ChatGPT, Claude, Gemini are not. Matters for privacy, cost, and customisation.</p>
-  </div>
-
-  <div class="word">
-    <div class="word-num">12</div>
-    <div class="word-name"><strong>Multimodal</strong></div>
-    <p>AI that handles text + images + audio + video together. Most major models are multimodal. Paste a screenshot; get a paragraph back.</p>
-  </div>
+  <p class="lead">Someone dropped RAG, tokens, and hallucination in the same sentence. You nodded. Everyone nodded. Nobody stopped to ask what any of it meant. This guide is the pause button you wished you had.</p>
 
   <hr class="rule">
 
-  <h2>How it sounds in practice</h2>
+  <h2>The sentence that started this</h2>
 
-  <p>A colleague says: <em>&ldquo;We&rsquo;re RAG-ing our customer service docs into a Claude agent with an MCP connection to Zendesk &mdash; fine-tune might come later if quality slips.&rdquo;</em></p>
+  <p>Here is an actual sentence you might hear in a meeting, a podcast, or a LinkedIn post. Right now, it probably sounds like nonsense. By the end of this guide, you will understand every word of it.</p>
 
-  <div class="card">
-    <p><strong>Translation:</strong></p>
-    <ul>
-      <li>Their docs are searched in real time so the AI quotes from them (<strong>RAG</strong>)</li>
-      <li>They&rsquo;re using Claude as the AI engine</li>
-      <li>It takes actions inside Zendesk (<strong>agent</strong> + <strong>MCP</strong>)</li>
-      <li>If answers get bad, they&rsquo;ll retrain Claude on their data (<strong>fine-tune</strong>)</li>
+  <div class="scene">
+    <div class="scene-label">Overheard in a meeting</div>
+    <p class="scene-quote">&ldquo;We&rsquo;re connecting our customer service docs to a Claude agent through MCP, so it pulls from our own data instead of making things up. If quality slips, we&rsquo;ll fine-tune. The context window should handle it. Tokens are cheap now.&rdquo;</p>
+  </div>
+
+  <p>Seven technical terms in two sentences. No wonder everyone just nods.</p>
+
+  <p>Let&rsquo;s break every one of them down. No jargon inside the jargon. Just plain language.</p>
+
+  <hr class="rule">
+
+  <h2>Group 1: The words in that sentence</h2>
+
+  <p>We will start with the six terms hiding in that meeting sentence. Each one gets a plain-English definition, then a &ldquo;think of it like&rdquo; line so it sticks.</p>
+
+  <div class="term">
+    <div class="term-word"><strong>Hallucination</strong></div>
+    <p class="term-def">When AI confidently makes something up. It doesn&rsquo;t know it&rsquo;s wrong. It isn&rsquo;t trying to lie. It just fills in gaps with things that sound right but aren&rsquo;t.
+    <span class="plain">Think of it like a friend who never says &ldquo;I don&rsquo;t know.&rdquo; They will always give you an answer, even when they&rsquo;re guessing. That&rsquo;s a hallucination.</span>
+    <span class="example"><strong>Why it matters:</strong> This is the single biggest reason you should always double-check AI answers on anything important. Especially numbers, legal claims, medical advice, or anything with real consequences.</span></p>
+  </div>
+
+  <div class="term">
+    <div class="term-word"><strong>RAG</strong> (Retrieval-Augmented Generation)</div>
+    <p class="term-def">Instead of answering from memory (where hallucinations happen), the AI looks something up in <em>your</em> specific documents first, then answers based on what it found.
+    <span class="plain">Think of it like an open-book exam. The AI isn&rsquo;t guessing from what it memorized in training. It&rsquo;s reading your files and quoting from them.</span>
+    <span class="example"><strong>Example:</strong> A company feeds their return policy into an AI chatbot. When a customer asks &ldquo;Can I return this after 60 days?&rdquo; the bot reads the actual policy instead of making up an answer.</span></p>
+  </div>
+
+  <div class="term">
+    <div class="term-word"><strong>Agent</strong></div>
+    <p class="term-def">An AI that doesn&rsquo;t just talk. It takes <em>action</em>. It can browse the web, read your files, send messages, fill forms, or run calculations. Regular chatbots wait for your question and give you text back. An agent goes and does things.
+    <span class="plain">Think of it like the difference between texting a smart friend for advice versus hiring that friend for the afternoon. They don&rsquo;t just tell you what to do. They go do it.</span>
+    <span class="example"><strong>Example:</strong> You tell an agent &ldquo;Find me flights to Lisbon under $400 for next weekend.&rdquo; Instead of listing airlines you could check, it actually searches, compares prices, and comes back with options.</span></p>
+  </div>
+
+  <div class="term">
+    <div class="term-word"><strong>MCP</strong> (Model Context Protocol)</div>
+    <p class="term-def">A standard way for AI tools to connect to other software. Like a universal adapter. Before MCP, every AI tool needed a custom connection to every app. MCP is one plug that works everywhere.
+    <span class="plain">Think of it like USB-C. Before USB-C, every phone brand had a different charging cable. MCP is the universal cable for AI apps.</span>
+    <span class="example"><strong>In that meeting sentence:</strong> &ldquo;MCP connection to Zendesk&rdquo; means the AI tool and Zendesk can talk to each other through this standard plug.</span></p>
+  </div>
+
+  <div class="term">
+    <div class="term-word"><strong>Context window</strong></div>
+    <p class="term-def">How much text the AI can &ldquo;hold in its head&rdquo; at one time. Every conversation has a limit. Once you go past it, the AI starts forgetting the earlier parts of your conversation. Bigger window means it can work with longer documents.
+    <span class="plain">Think of it like a desk. A small desk fits one page. A big desk fits a whole stack of papers. The AI can only look at what fits on its desk at once.</span>
+    <span class="example"><strong>Why it matters:</strong> If you are pasting a 50-page contract into a chatbot, you need a model with a big context window. Otherwise it literally will not see the end of the document.</span></p>
+  </div>
+
+  <div class="term">
+    <div class="term-word"><strong>Token</strong></div>
+    <p class="term-def">A small chunk of text. Roughly three-quarters of a word. AI companies charge by the token, the same way your phone plan charges by the gigabyte. 1,000 tokens is about 750 words.
+    <span class="plain">Think of it like syllables. The word &ldquo;unbelievable&rdquo; is one word but several tokens. Most short words are one token. Long words get split into pieces.</span>
+    <span class="example"><strong>Why it matters:</strong> When someone says &ldquo;tokens are cheap now,&rdquo; they mean the cost of using AI has dropped. That is actually true. Prices fell dramatically in 2024 and 2025.</span></p>
+  </div>
+
+  <div class="pullquote">You just decoded that entire meeting sentence. Read it again at the top. It makes sense now.</div>
+
+  <hr class="rule">
+
+  <h2>Group 2: Words you will hear this week</h2>
+
+  <p>These six terms were not in that meeting sentence, but you will run into them soon. Same treatment: plain English, no jargon hiding inside the definition.</p>
+
+  <div class="term">
+    <div class="term-word"><strong>Fine-tune</strong></div>
+    <p class="term-def">Taking a general AI model and retraining it on your specific data so it behaves a certain way. It is expensive, slow, and usually overkill. Most people get better results from writing a good prompt or using RAG. Fine-tuning is the last resort, not the first step.
+    <span class="plain">Think of it like hiring a general contractor versus training someone from scratch. Most of the time, you just need to give clear instructions (a prompt). You only retrain when the instructions genuinely are not enough.</span></p>
+  </div>
+
+  <div class="term">
+    <div class="term-word"><strong>Temperature</strong></div>
+    <p class="term-def">A setting that controls how predictable or creative the AI is. Low temperature (close to 0) means it gives nearly the same answer every time. High temperature (close to 1) means it takes more creative risks.
+    <span class="plain">Think of it like a dimmer switch for randomness. Turn it down for facts. Turn it up for brainstorming.</span>
+    <span class="example"><strong>When does it matter?</strong> Honestly, almost never for most people. The default setting works fine for 95% of tasks. But now you know what it means when someone mentions it.</span></p>
+  </div>
+
+  <div class="term">
+    <div class="term-word"><strong>Multimodal</strong></div>
+    <p class="term-def">An AI that can work with more than just text. It can understand images, audio, sometimes video. Most major AI models are multimodal now.
+    <span class="plain">Think of it like a person who reads, looks at photos, and listens to voicemails, instead of one that only reads text messages.</span>
+    <span class="example"><strong>Example:</strong> You take a photo of a restaurant menu in Italian and paste it into the chat. The AI reads the image, translates the menu, and tells you what to order based on your dietary restrictions. That is multimodal.</span></p>
+  </div>
+
+  <div class="term">
+    <div class="term-word"><strong>Open source / open weights</strong></div>
+    <p class="term-def">The AI model is publicly available for anyone to download and run on their own computer. The big chatbots (ChatGPT, Claude, Gemini) are not open. They are owned by their companies. But other models (like Meta&rsquo;s Llama) are open, meaning anyone can use them for free.
+    <span class="plain">Think of it like the difference between renting a commercial kitchen and owning your own stove. Both cook food. One gives you more control.</span>
+    <span class="example"><strong>Why it matters:</strong> If your business handles sensitive data and you do not want it passing through someone else&rsquo;s servers, open models let you run everything in-house. For everyone else, the cloud tools work fine.</span></p>
+  </div>
+
+  <div class="term">
+    <div class="term-word"><strong>Prompt engineering</strong></div>
+    <p class="term-def">The skill of writing better instructions to get better results from AI. Not a programming language. Not a certification. Just learning how to be specific, clear, and structured when you ask the AI for something.
+    <span class="plain">Think of it like learning how to brief a freelancer. The better your brief, the better the work you get back. Same idea.</span>
+    <span class="example"><strong>Good news:</strong> We have a whole guide on this. It is the one before this one in the series, and it gives you a 4-part formula that works every time.</span></p>
+  </div>
+
+  <div class="term">
+    <div class="term-word"><strong>API</strong> (Application Programming Interface)</div>
+    <p class="term-def">A way for two pieces of software to talk to each other behind the scenes. When someone says &ldquo;we connected it through the API,&rdquo; they mean the apps are exchanging data automatically, without anyone copying and pasting between them.
+    <span class="plain">Think of it like a waiter in a restaurant. You (the app) tell the waiter (the API) what you want. The waiter goes to the kitchen (the other app), brings back your order. You never go into the kitchen yourself.</span>
+    <span class="example"><strong>Example:</strong> Your accounting software pulls your bank transactions automatically every morning. That happens through an API. No human is downloading a CSV and uploading it somewhere.</span></p>
+  </div>
+
+  <hr class="rule">
+
+  <h2>Now read that sentence one more time</h2>
+
+  <div class="scene">
+    <div class="scene-label">The same meeting sentence, decoded</div>
+    <p class="scene-quote">&ldquo;We&rsquo;re connecting our customer service docs to a Claude agent through MCP, so it pulls from our own data instead of making things up. If quality slips, we&rsquo;ll fine-tune.&rdquo;</p>
+    <span class="scene-break">Translation:</span>
+    <ul style="margin-top:12px">
+      <li>The AI reads their actual support docs before answering customers (<strong>RAG</strong>)</li>
+      <li>It can take actions inside their help desk software, not just write responses (<strong>agent</strong> + <strong>MCP</strong>)</li>
+      <li>&ldquo;Making things up&rdquo; is the hallucination problem, and RAG is how they are solving it</li>
+      <li>If the answers still are not good enough, they will retrain the model on their specific data (<strong>fine-tune</strong>)</li>
+      <li>The AI can handle all their docs at once (<strong>context window</strong>) and the cost is reasonable (<strong>tokens</strong>)</li>
     </ul>
-    <p style="margin-bottom:0">You now follow that sentence. You can ask: <em>&ldquo;What happens when it can&rsquo;t find the answer in your docs?&rdquo;</em> &mdash; and sound like you&rsquo;ve been in 30 of these conversations.</p>
   </div>
 
-  <div class="pullquote">These 12 words cover roughly 90% of the AI jargon you&rsquo;ll hear in any business conversation. The other 10% you look up the moment you need it.</div>
+  <p>You follow every word now. And the next time someone drops a sentence like that, you can ask the question nobody else will: <em>&ldquo;What happens when the AI can&rsquo;t find the answer in your docs? Does it make something up, or does it say it doesn&rsquo;t know?&rdquo;</em></p>
+
+  <p>That question shows you understand the difference between RAG and hallucination. It moves the conversation forward instead of nodding through it.</p>
+
+  <div class="card accent">
+    <p><strong>These 12 words cover about 90% of the AI vocabulary in any business conversation.</strong> The other 10% you can look up the moment you hear them. But you will not need to look these ones up again.</p>
+    <p style="margin-bottom:0">The gap was never intelligence. It was just vocabulary. And you just closed it.</p>
+  </div>
 
   <div class="cta-bar">
-    <h3>Ready to use the tools, not just the words?</h3>
-    <p>The 3-tool AI setup I actually run &mdash; the brain, the megaphone, and the net.</p>
-    <a href="../free-resources.html" class="btn">Browse all guides &rarr;</a>
+    <h3>Now learn what &ldquo;agentic&rdquo; actually means</h3>
+    <p>The word behind every AI product launch in 2025. 4 levels of autonomy, explained without the hype.</p>
+    <a href="what-is-agentic.html" class="btn">Read the next guide &rarr;</a>
   </div>
 
   <div class="guide-nav">
     <a href="what-is-a-prompt.html">&larr; Prev: What is a prompt</a>
-    <a href="voice-clone-pipeline.html">Next: Voice clone pipeline &rarr;</a>
+    <a href="what-is-agentic.html">Next: What is agentic &rarr;</a>
   </div>
 
 </div>

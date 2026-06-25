@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noai, noimageai">
 <title>What is a prompt &mdash; Shift &amp; Lead</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,6 +63,9 @@ blockquote p{margin-bottom:0;color:var(--muted)}
 .vs-col.good{background:#F0F4E8;border:1px solid #C4D4A8}
 .vs-col h3{margin-top:0}
 
+.example-set{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:24px 28px;margin:24px 0}
+.example-set .ex-label{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin-bottom:14px}
+
 ul,ol{margin:12px 0 20px 24px}
 li{margin-bottom:8px;color:var(--ink)}
 
@@ -100,94 +104,142 @@ li{margin-bottom:8px;color:var(--ink)}
 
   <div class="chips">
     <span class="chip chip-track0">PROMPT</span>
-    <span class="chip chip-time">5 min read</span>
+    <span class="chip chip-time">7 min read</span>
   </div>
 
   <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; AI Basics</div>
 
   <h1>Heard &ldquo;prompt&rdquo; 50 times. <em>Still no idea what it is?</em></h1>
 
-  <p class="lead">Every AI article tells you to write better prompts. Nobody tells you what a prompt is. It&rsquo;s the thing you type. Here&rsquo;s what makes one actually work.</p>
+  <p class="lead">Every AI article says &ldquo;write better prompts.&rdquo; Nobody stops to explain what a prompt actually is, or why some get incredible results and others get garbage. Let&rsquo;s fix that.</p>
 
   <hr class="rule">
 
-  <h2>The full definition</h2>
+  <h2>A prompt is just what you type</h2>
 
-  <p>A prompt is what you write to the AI. The AI reads it and writes back. Every message you send is a new prompt. Every reply you get is the response.</p>
+  <p>That&rsquo;s it. When you open ChatGPT, Claude, or Gemini and type something into the message box, that message is your prompt. When the AI replies, that&rsquo;s the response.</p>
 
-  <p>That&rsquo;s all.</p>
+  <p>Every time you hit send, you&rsquo;re prompting. You&rsquo;ve been doing it since the first time you asked AI anything. You just didn&rsquo;t know the word.</p>
 
-  <p>&ldquo;Prompt engineering&rdquo; is just writing it well. There&rsquo;s no secret vocabulary. No magic word that unlocks a hidden mode. There are 4 things to do well &mdash; and when you do all 4, you get useful answers every time.</p>
+  <p>So why do people talk about &ldquo;prompt engineering&rdquo; like it&rsquo;s a skill? Because how you write that message changes everything about what you get back.</p>
+
+  <div class="pullquote">The quality of your answer is almost entirely determined by the quality of your question. That&rsquo;s the whole game.</div>
 
   <hr class="rule">
 
-  <h2>The 4 things a good prompt does</h2>
+  <h2>The 4-part formula</h2>
+
+  <p>There&rsquo;s no secret language. No magic words. But there are 4 things that, when you include them, consistently turn vague AI answers into ones you can actually use.</p>
 
   <div class="prompt-part">
     <div class="label">1. Role</div>
-    <p>Tell the AI who it&rsquo;s being.</p>
-    <blockquote><p>&ldquo;You are a small business accountant.&rdquo;</p></blockquote>
+    <p>Tell the AI who it should be. This shapes the tone, the vocabulary, and the type of advice it gives. Without a role, you get a generic answer. With one, you get an answer from the right perspective.</p>
+    <blockquote><p>&ldquo;You are an experienced social media manager for small businesses.&rdquo;</p></blockquote>
   </div>
 
   <div class="prompt-part">
     <div class="label">2. Context</div>
-    <p>Give it the situation.</p>
-    <blockquote><p>&ldquo;I run a 4-person agency, monthly revenue around $30K, no in-house bookkeeping.&rdquo;</p></blockquote>
+    <p>Give it your situation. AI doesn&rsquo;t know anything about you, your business, or your problems unless you tell it. The more relevant detail you share, the more tailored the answer will be.</p>
+    <blockquote><p>&ldquo;I run a small online store selling handmade candles. I have about 2,000 Instagram followers and I post 3 times a week. My engagement has dropped over the last month.&rdquo;</p></blockquote>
   </div>
 
   <div class="prompt-part">
     <div class="label">3. Task</div>
-    <p>Say exactly what you want.</p>
-    <blockquote><p>&ldquo;Draft 5 questions I should ask before hiring a bookkeeper.&rdquo;</p></blockquote>
+    <p>Say exactly what you want it to do. Not &ldquo;help me with social media.&rdquo; That&rsquo;s too broad. Be specific about the deliverable.</p>
+    <blockquote><p>&ldquo;Give me 5 Instagram post ideas that could increase engagement this week. Each one should include a caption and a content format (reel, carousel, or static image).&rdquo;</p></blockquote>
   </div>
 
   <div class="prompt-part">
     <div class="label">4. Format</div>
-    <p>Say how you want it back.</p>
-    <blockquote><p>&ldquo;Numbered list. One sentence each.&rdquo;</p></blockquote>
+    <p>Tell it how you want the answer structured. Without this, AI tends to write long paragraphs. With it, you get something you can use immediately.</p>
+    <blockquote><p>&ldquo;Present each idea as a numbered list with the format in bold, then the caption below it. Keep each caption under 50 words.&rdquo;</p></blockquote>
   </div>
-
-  <div class="pullquote">That&rsquo;s the entire skill.</div>
 
   <hr class="rule">
 
-  <h2>Bad vs good &mdash; the actual difference</h2>
+  <h2>See the difference</h2>
 
   <div class="vs">
     <div class="vs-col bad">
-      <h3>Bad prompt</h3>
-      <p>&ldquo;Help me hire a bookkeeper.&rdquo;</p>
-      <p style="margin-bottom:0"><strong>5 words. Vague, generic output.</strong></p>
+      <h3>Without the formula</h3>
+      <p>&ldquo;Help me with my Instagram.&rdquo;</p>
+      <p style="margin-bottom:0"><strong>You get:</strong> a generic 500-word essay about Instagram best practices. Nothing specific to you. Nothing you can post today.</p>
     </div>
     <div class="vs-col good">
-      <h3>Good prompt</h3>
-      <p>&ldquo;You are a small business accountant. I run a 4-person agency, monthly revenue around $30K, no in-house bookkeeping. Draft 5 questions I should ask before hiring a bookkeeper. Numbered list. One sentence each.&rdquo;</p>
-      <p style="margin-bottom:0"><strong>50 words. Specific, usable output.</strong></p>
+      <h3>With the formula</h3>
+      <p>&ldquo;You are an experienced social media manager for small businesses. I run a small online store selling handmade candles. I have about 2,000 Instagram followers and my engagement has dropped. Give me 5 Instagram post ideas that could increase engagement this week, each with a caption and content format. Numbered list, captions under 50 words.&rdquo;</p>
+      <p style="margin-bottom:0"><strong>You get:</strong> 5 specific ideas you can use today. Tailored to your product. Ready to adapt and post.</p>
     </div>
   </div>
 
-  <p>The difference isn&rsquo;t engineering. It&rsquo;s specificity.</p>
+  <p>Same AI. Same tool. Same subscription. The difference is entirely in how you asked.</p>
 
   <hr class="rule">
 
-  <h2>What this buys your business</h2>
+  <h2>Three more examples, different situations</h2>
 
-  <div class="card accent">
-    <p>AI pattern-matches the shape of your request. Vague in, vague out. Role + context + task + format = specific, usable answer.</p>
-    <p style="margin-bottom:0">Run 20 prompts using this template. That&rsquo;s the complete skill. There&rsquo;s genuinely nothing further to learn at this level.</p>
+  <p>The formula works for anything. Here&rsquo;s what it looks like across different real scenarios.</p>
+
+  <div class="example-set">
+    <div class="ex-label">Writing a client proposal</div>
+    <p><strong>Role:</strong> &ldquo;You are a freelance consultant who writes clear, professional proposals.&rdquo;</p>
+    <p><strong>Context:</strong> &ldquo;A potential client wants me to redesign their website. They&rsquo;re a local bakery with about 50 visitors a day on their current site. Budget is around $3,000.&rdquo;</p>
+    <p><strong>Task:</strong> &ldquo;Draft a one-page project proposal I can send them today.&rdquo;</p>
+    <p style="margin-bottom:0"><strong>Format:</strong> &ldquo;Include sections for scope, timeline, price, and next steps. Keep it under 400 words. Professional but warm.&rdquo;</p>
   </div>
 
-  <p>The next level is chaining prompts so the AI builds a whole workflow &mdash; where the same job runs on a schedule, without you starting it each time. That&rsquo;s where the real hours come back.</p>
+  <div class="example-set">
+    <div class="ex-label">Preparing for a meeting</div>
+    <p><strong>Role:</strong> &ldquo;You are a business strategy advisor.&rdquo;</p>
+    <p><strong>Context:</strong> &ldquo;I&rsquo;m meeting a potential partner who runs a marketing agency. They want to co-create an AI workshop for their clients. I&rsquo;ve never done a partnership like this.&rdquo;</p>
+    <p><strong>Task:</strong> &ldquo;Give me 8 questions I should ask during this meeting to evaluate whether this partnership is worth pursuing.&rdquo;</p>
+    <p style="margin-bottom:0"><strong>Format:</strong> &ldquo;Numbered list. One sentence each. Group them by theme: fit, logistics, and money.&rdquo;</p>
+  </div>
+
+  <div class="example-set">
+    <div class="ex-label">Handling a difficult customer email</div>
+    <p><strong>Role:</strong> &ldquo;You are a customer service expert who specializes in de-escalation.&rdquo;</p>
+    <p><strong>Context:</strong> &ldquo;A customer emailed saying they&rsquo;re upset their order arrived late. They want a refund. We can offer a 20% discount on their next order but not a full refund.&rdquo;</p>
+    <p><strong>Task:</strong> &ldquo;Write a reply that acknowledges their frustration, apologizes, and offers the discount without sounding corporate or scripted.&rdquo;</p>
+    <p style="margin-bottom:0"><strong>Format:</strong> &ldquo;Keep it under 150 words. Friendly and genuine tone. No bullet points.&rdquo;</p>
+  </div>
+
+  <p>See the pattern? <strong>Role + context + task + format.</strong> Four pieces. Works every time, for anything.</p>
+
+  <div class="pullquote">You don&rsquo;t need to memorize this. You just need to remember: before you hit send, did you tell the AI who to be, what your situation is, exactly what you want, and how to format it?</div>
+
+  <hr class="rule">
+
+  <h2>The two biggest mistakes people make</h2>
+
+  <p><strong>Mistake 1: Being too vague.</strong> &ldquo;Help me with marketing.&rdquo; &ldquo;Write me something for my business.&rdquo; &ldquo;Give me some ideas.&rdquo; These are so broad that the AI has to guess everything. It guesses wrong, you get useless answers, and you conclude &ldquo;AI doesn&rsquo;t work.&rdquo; It works fine. The prompt didn&rsquo;t.</p>
+
+  <p><strong>Mistake 2: Not iterating.</strong> Your first prompt rarely gives you the perfect answer. And that&rsquo;s okay. The magic is in the follow-up. &ldquo;Make option 3 shorter.&rdquo; &ldquo;Now make it sound less formal.&rdquo; &ldquo;Add a line about our free shipping.&rdquo; Think of it as a conversation, not a one-shot command. You refine until it&rsquo;s right.</p>
+
+  <hr class="rule">
+
+  <h2>Why this matters for your business</h2>
+
+  <p>Every task you use AI for starts with a prompt. Email drafts, content ideas, research, customer replies, strategy brainstorms. The better you get at writing prompts, the more useful AI becomes for everything you do.</p>
+
+  <p>And here&rsquo;s the thing that most people miss: a good prompt saves you time <em>every single time you use it</em>. Write a great prompt for client proposals once, save it somewhere, and reuse it with different context every time. That one prompt might save you an hour a week, every week, forever.</p>
+
+  <p>That&rsquo;s not a small thing. That&rsquo;s your time back.</p>
+
+  <div class="card accent">
+    <p>You now have the formula. Role, context, task, format. Try it 5 times today with real work you&rsquo;re already doing. You&rsquo;ll feel the difference immediately.</p>
+    <p style="margin-bottom:0">Once this clicks, everything else in AI gets easier. Because every tool, every feature, every workflow starts with you telling the AI what you need. And now you know how.</p>
+  </div>
 
   <div class="cta-bar">
-    <h3>Next: the 12 AI words everyone uses</h3>
-    <p>Agent, MCP, RAG, token, hallucination &mdash; explained in one sentence each.</p>
+    <h3>Next: the meeting where everyone speaks AI</h3>
+    <p>RAG, MCP, hallucination, token. One real meeting sentence, decoded word by word. You&rsquo;ll never nod along blankly again.</p>
     <a href="ai-jargon-guide.html" class="btn">Read the next guide &rarr;</a>
   </div>
 
   <div class="guide-nav">
     <a href="chatgpt-vs-ai.html">&larr; Prev: ChatGPT vs AI</a>
-    <a href="ai-jargon-guide.html">Next: 12 AI words &rarr;</a>
+    <a href="ai-jargon-guide.html">Next: The meeting &rarr;</a>
   </div>
 
 </div>
