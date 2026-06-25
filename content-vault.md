@@ -13,6 +13,7 @@
 
 ## Most recent (quick reference)
 
+- 25/06/2026 | Short-form video (Reel) | "You're Talking to the Most Powerful AI on the Planet Like It's Google" — Chez Claude guide promo | DRAFT
 - 23/06/2026 | Short-form video | "My One-Person Business Runs Like a Team of Five" — your digital team | READY TO POST
 - 23/06/2026 | LinkedIn | "AI Doesn't Fix Chaos. It Scales It." — fix the workflow first | READY TO POST
 - 23/06/2026 | Short-form video | "You're the Bottleneck" — hand off one task this week | READY TO POST
@@ -23,6 +24,69 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 011 — 25/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | You're Talking to the Most Powerful AI on the Planet Like It's Google | DRAFT
+
+**Status:** DRAFT
+**Platform:** Instagram Reels / TikTok / YouTube Shorts (vertical 9:16)
+**Format:** ~45s talking-head (AI twin) + on-screen text
+**Topic:** Most people type one sentence into Claude and wonder why the answer is mid. This reel shows the gap between how people use AI and how it actually works when you talk to it right, then offers the free Chez Claude guide.
+**Pattern used:** Provocation-First Hook (1) + Comment-Trigger CTA (5)
+**Pillar:** Stop Doing That by Hand
+**Critic score:** 8.4/10 — APPROVED FOR REVIEW
+**CTA keyword:** CLAUDE
+**Guide link:** https://guides.shiftandlead.com/opt-in.html?guide=chez-claude
+**GHL workflow:** Trigger on "CLAUDE" comment → DM with guide link
+
+---
+### SPOKEN SCRIPT
+
+**[0-3s — HOOK]** *(on camera, direct to lens)*
+"You're talking to the most powerful AI on the planet... like it's Google."
+`[ON SCREEN: "Stop Googling Claude."]`
+
+**[3-8s — THE PROBLEM]**
+"One sentence. No context. And then you're disappointed with what comes back."
+`[ON SCREEN: "Bad input = bad output"]`
+
+**[8-20s — THE SHIFT]**
+"Here's the thing nobody tells you. Claude doesn't need shorter prompts. It needs you to talk to it like a person.
+Tell it who you are. Tell it what you've tried. Tell it what good looks like.
+That one shift turned it from a fancy search bar into my actual business partner."
+`[ON SCREEN: "Context is everything."]`
+
+**[20-32s — THE PROOF]**
+"I built an entire guide that walks you through Claude like a restaurant menu.
+The door, the kitchen, the plate. Every tool, every feature, explained like a friend would explain it.
+No jargon. No fluff. Just what you need to actually get results."
+`[ON SCREEN: "Chez Claude — The Full Kitchen Map"]`
+
+**[32-42s — CTA]**
+"Comment CLAUDE and I'll send it to you free. Takes two minutes to read. Saves you weeks of guessing."
+`[ON SCREEN: "Comment CLAUDE = free guide"]`
+
+---
+### CAPTION (Instagram)
+
+You're using Claude like it's 2019 Google. Stop.
+
+I made a free guide that walks through everything Claude can do — explained like a restaurant menu, not a tech manual.
+
+Comment CLAUDE and I'll DM it to you.
+
+#AI #Claude #AItools #automation #solopreneur #entrepreneur #freedom
+
+---
+### GHL WORKFLOW SETUP
+
+**Trigger:** Instagram comment contains keyword "CLAUDE"
+**Action 1 — Send DM:**
+> Hey! Here's your free Chez Claude guide — the whole Claude ecosystem, explained like a restaurant menu. No jargon, just what you need to get real results. Enjoy! 👇
+> https://guides.shiftandlead.com/opt-in.html?guide=chez-claude
+
+**Action 2:** Tag contact with "guide-subscriber" + "chez-claude"
 
 ---
 
