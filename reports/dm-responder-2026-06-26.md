@@ -67,3 +67,22 @@ sending is possible from here; the VPS cron (every 5 min) is the live path.
    without a live URL + workflow.
 3. **No platform is disconnected** for publishing; DM automation just needs the
    Doppler-managed keys to be in scope for the M05 cron (they are on the VPS).
+
+---
+
+## Addendum (re-run 2026-06-26)
+
+Correction to "Platform connection state" above: that check read the **shell env**
+only. Reading `deploy/.env` directly shows the DM-automation keys **are** present
+in this environment:
+
+- `GHL_API_KEY` — **populated** → Instagram (GHL) path is credentialed.
+- `UNIPILE_API_KEY` + `UNIPILE_DSN` — **populated** → LinkedIn (Unipile) path is credentialed.
+- `FB_PAGE_TOKEN` — **absent** → Facebook DM/comment polling not yet credentialed.
+- `YOUTUBE_API_KEY` — **absent** → YouTube comment polling not yet credentialed.
+
+So the live DM rails are **IG + LinkedIn** (ready to fire once a magnet is active);
+**Facebook + YouTube remain disconnected** for the comment→DM loop. Everything else
+in this report stands: 0 active magnets, 0 leads, no leaks (CLAUDE row present),
+nothing posted yet → nothing to reply to. No DMs sent, no posting — queue-only honored.
+
