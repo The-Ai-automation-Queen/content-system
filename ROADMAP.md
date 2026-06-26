@@ -170,7 +170,7 @@ lead. Add one to each. Use the CTA map in `skills/monetisation/SKILL.md`.
 
 **Action 4 — Post one founding-member call on LinkedIn (15 minutes)**
 "I'm building a community for everyday entrepreneurs using AI to win back their
-time. Opening 20 founding spots at $97/month — locked forever. Comment FOUNDING
+time. Opening 20 founding spots at $27/month — locked forever. Comment FOUNDING
 for the link." This alone can generate $1,940/month from one post if 20 people
 join.
 
@@ -186,8 +186,8 @@ or organise corporate events. One booking = $5,000–$15,000.
 | Timeline | Target | Requires |
 |---|---|---|
 | Week 1 | First email subscribers | Lead magnets live + CTAs on posts |
-| Month 1 | 5 community founding members ($485/month) + 1 speaking booking ($5k+) | Founding-member post + speaker outreach |
-| Month 2 | 50 community members ($9,850/month MRR) | Community launched publicly at $197/month |
+| Month 1 | 20 founding members ($540/month) + 1 speaking booking ($5k+) | Founding-member post + speaker outreach |
+| Month 2 | 50 community members ($2,350/month MRR) | Community launched publicly at $47/month |
 | Month 3 | Starter Kit selling 20 units/month ($1,940) + 500 email subscribers | Starter Kit live on Gumroad |
 | Month 6 | 200 community members ($39,400/month) + first Bootcamp ($20k) | Bootcamp waitlist → cohort |
 | Year 1 | 500 members + recurring Bootcamp + speaking circuit | Full loop running autonomously |
@@ -230,9 +230,9 @@ or organise corporate events. One booking = $5,000–$15,000.
    `launch-content starter-kit` for the 3 launch posts. Operator actions: record
    the 25-min Loom walkthrough and create the Gumroad listing. This is the first
    paid product and the fastest way to prove the method to buyers.
-10. **Launch the AI Automation Queen Community on Skool ($197/month)** — create the
+10. **Launch the AI Automation Queen Community on Skool ($47/month)** — create the
     Skool space (3 sections: Resources / Live Calls / Community), set the founding
-    member price ($97/month locked), and run `skills/business-os-kit/ launch-content
+    member price ($27/month locked), and run `skills/business-os-kit/ launch-content
     community` for the 3 launch posts. Target: 20 founding members in month 1,
     50 total by month 2.
 11. **ACP funnel tagging in the content engine** — every vault draft now includes

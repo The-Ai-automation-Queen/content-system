@@ -4,7 +4,7 @@ version: 1.0.0
 description: |
   Packages Fatiha's Business OS into three sellable products and creates the
   promotional content to launch them. Products: Starter Kit ($97 one-time),
-  Community ($197/month on Skool), Bootcamp ($997 per cohort). Run to build
+  Community ($47/month on Skool), Bootcamp ($997 per cohort). Run to build
   a product tier, generate sales copy, audit what's packaged vs. missing, or
   produce a full launch content batch ready for the vault.
 argument-hint: "[build-starter-kit | build-community | build-bootcamp | launch-content <tier> | sales-copy <tier>]"
@@ -63,7 +63,7 @@ sequence, IRL event follow-up.
 
 ---
 
-### Product 2 — AI Automation Queen Community ($197/month or $1,497/year)
+### Product 2 — AI Automation Queen Community ($47/month or $397/year)
 
 **What it is:** A Skool community for everyday entrepreneurs using AI + automation
 to build their freedom business. This is the core recurring revenue engine.
@@ -79,17 +79,17 @@ member community features, $99/month platform fee). Alternative: Circle.
 - **Growing library:** all past sessions and resources, searchable
 
 **Founding member offer (to launch the community fast):**
-First 20 members at $97/month, locked for life. They get everything at a founding
+First 20 members at $27/month, locked for life. They get everything at a founding
 discount as a reward for betting early. Announce with one LinkedIn post:
 "I'm building a community for everyday entrepreneurs using AI to win back their time.
-Opening 20 founding spots at $97/month — locked forever. Comment FOUNDING for
-the link." Fill these 20 before opening publicly at $197/month.
+Opening 20 founding spots at $27/month — locked forever. Comment FOUNDING for
+the link." Fill these 20 before opening publicly at $47/month.
 
 **Revenue targets:**
-- 20 founding members: $1,940/month
-- 50 members (month 2): $9,850/month
-- 100 members (month 4): $19,700/month
-- 500 members (year 2): $98,500/month
+- 20 founding members: $540/month
+- 50 members (month 2): $2,350/month
+- 100 members (month 4): $4,700/month
+- 500 members (year 2): $23,500/month
 
 ---
 

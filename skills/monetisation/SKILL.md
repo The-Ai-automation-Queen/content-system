@@ -39,7 +39,7 @@ commitment. Never jump a stranger from free to $997.
 | 0 | **Lead magnets** (7 ready in `lead-magnets/`) | Free | GHL | ⚠️ INACTIVE — activate immediately |
 | 1 | **AI Time Audit Template** | $47 | Gumroad | 🔴 Build |
 | 2 | **Business OS Starter Kit** | $97 (one-time) | Gumroad | 🔴 Build — see `skills/business-os-kit/` |
-| 3 | **AI Automation Queen Community** | $197/month or $1,497/year | Skool | 🔴 Launch |
+| 3 | **AI Automation Queen Community** | $47/month or $397/year | Skool | 🔴 Launch |
 | 4 | **Business OS Bootcamp** | $997 per cohort | Skool + GHL | 🔴 Build waitlist |
 | 5 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn | 🟡 Activate outreach |
 
@@ -74,21 +74,21 @@ skill guides, and a 20–25 min Loom walkthrough. The taste of the full system f
 a non-technical buyer. See `skills/business-os-kit/SKILL.md` for the complete
 build instructions and sales copy framework.
 
-**Tier 3 — AI Automation Queen Community ($197/month or $1,497/year)**
+**Tier 3 — AI Automation Queen Community ($47/month or $397/year)**
 A Skool community where everyday entrepreneurs build their freedom business with
 AI + automation. Monthly deliverables: 2 live sessions (one "Build with me," one
 Q&A) + 1 template/resource drop + peer accountability + searchable library of
 past sessions. The core recurring revenue engine.
 
 Revenue math:
-- 50 members = $9,850/month
-- 200 members = $39,400/month
-- 500 members = $98,500/month = **$1.18M/year from this offer alone**
+- 50 members = $2,350/month
+- 200 members = $9,400/month
+- 500 members = $23,500/month = **$282,000/year from this offer alone**
 
-**Founding member offer (to launch fast):** First 20 spots at $97/month, locked
+**Founding member offer (to launch fast):** First 20 spots at $27/month, locked
 for life. Post once on LinkedIn: "I'm opening 20 founding spots. Comment FOUNDING."
-Fill those 20 before going public. Creates urgency, rewards early believers, and
-gives Fatiha the first community members to generate testimonials from.
+Fill those 20 before going public at $47/month. Creates urgency, rewards early
+believers, and gives Fatiha the first community members to generate testimonials from.
 
 **Tier 4 — Business OS Bootcamp ($997)**
 A 6-week live cohort: 20–50 people build their own Business OS from scratch.
@@ -172,7 +172,7 @@ One CTA per post. Match to pillar + ACP stage.
 |---|---|---|---|
 | Time Wins | "Comment STACK — I'll send my 3-tool setup" | "This is what we work on every month inside [community] →" | "Get the Starter Kit → [link]" |
 | Build Once, Runs Forever | "Comment PIPELINE and I'll send the voice clone guide" | "A member just built this in a weekend. Here's what happened:" | "Bootcamp applications open → [link]" |
-| The Freedom Business | "Comment FREEDOM — I'll send the guide" | "Join the people building their freedom business with AI →" | "[Community name] is open: $197/month → [Skool link]" |
+| The Freedom Business | "Comment FREEDOM — I'll send the guide" | "Join the people building their freedom business with AI →" | "[Community name] is open: $47/month → [Skool link]" |
 | Stop Doing That by Hand | "Comment TEAM — I'll show you how to set this up for free" | "Inside the community we ran this setup live last week —" | "The Starter Kit walks through this step by step → [link]" |
 | What's Worth It | "Comment WORDS for the plain-English AI jargon guide" | "What we actually debated in the community this week:" | "Community: where we filter signal from noise → [link]" |
 | Real Talk | "Comment DINNER if you're in Dubai and want in" | "The community is the people actually doing this. Come in →" | "20 founding spots at $97/month locked for life → [link]" |
@@ -194,7 +194,7 @@ CONTENT POST
                       Day 2:  One quick win story from someone who used it
                       Day 5:  "If you want the full system..." → Starter Kit ($97)
                       Day 7:  Community story: "What members inside are doing right now..."
-                      Day 10: Direct invite → AI Automation Queen Community ($197/month)
+                      Day 10: Direct invite → AI Automation Queen Community ($47/month)
                  └─ Community member on Skool
                       └─ Month 2: Bootcamp waitlist invite → cohort enrollment ($997)
 ```
@@ -234,7 +234,7 @@ flag which are done vs. still blocked with a suggested next action.
 - [ ] Plan first AI & Freedom Dinner in Dubai (see `skills/irl-events/SKILL.md`)
 
 ### Month 2 (recurring engine on)
-- [ ] Open community publicly at $197/month
+- [ ] Open community publicly at $47/month
 - [ ] Open Bootcamp waitlist to community members
 - [ ] Run first IRL Dubai dinner
 - [ ] Email list checkpoint: target 500 subscribers
@@ -266,11 +266,11 @@ This is arithmetic, not aspiration. The engine is already built.
 
 | Milestone | What it takes | Est. monthly revenue |
 |---|---|---|
-| Month 1 | 5 community members + 1 speaking gig | ~$7,000 |
-| Month 3 | 50 community members + Starter Kit sales | ~$12,000 |
-| Month 6 | 200 members + 1 Bootcamp cohort ($20k) | ~$55,000 |
-| Month 12 | 500 members + recurring Bootcamp + speaking | ~$130,000 |
-| Year 2 | 1,000 members + evergreen Bootcamp + speaking circuit | ~$250,000+/month |
+| Month 1 | 20 founding members ($27) + 1 speaking gig | ~$5,540 |
+| Month 3 | 50 community + Starter Kit 20 units/month | ~$3,290 |
+| Month 6 | 150 community + 1 Bootcamp cohort ($20k) | ~$10,050 |
+| Month 12 | 400 community + 2 Bootcamp/year + speaking | ~$38,000 |
+| Year 2 | 800 members + evergreen Bootcamp + speaking circuit | ~$75,000+/month |
 
 The content engine is running. The funnel just needs to be switched on. Activate
 the lead magnets, launch the community, and the system feeds itself.
