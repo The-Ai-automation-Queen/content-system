@@ -6,7 +6,7 @@
 > itself**. The brand runs on trust and on the operator's name, so a bad or
 > off-brand post is the real "incident" to guard against — more than any leaked key.
 
-_Last reviewed: 2026-06-22_
+_Last reviewed: 2026-06-26_
 
 ---
 
@@ -14,11 +14,22 @@ _Last reviewed: 2026-06-22_
 
 - **No secrets in this repo.** No API keys, tokens, passwords, or `.env` files
   are committed. There are none today — keep it that way.
-- External services (MCP servers, posting tools) authenticate at the **session**
-  level, not via files stored here. Credentials live in the Claude Code
-  environment configuration, never in markdown.
+- **Secrets are managed by [Doppler](https://doppler.com)** — a centralized,
+  encrypted secrets manager. Doppler replaces plain-text `.env` files with:
+  - **Encryption at rest and in transit** (secrets never sit as plain text on disk)
+  - **Audit trail** (who changed which key, when)
+  - **Instant rotation** (change a key in Doppler's dashboard, no SSH needed)
+  - **Role-based access** (if team members are added later)
+  - **Free tier** covers unlimited secrets, 5 projects
+- On the VPS, `run-machine.sh` auto-detects Doppler and injects secrets at
+  runtime via `doppler run`. If Doppler is not configured, it falls back to
+  sourcing `deploy/.env` (see `deploy/README.md` for setup).
+- In Claude Code cloud sessions, credentials live in the environment
+  configuration (MCP servers), never in markdown.
 - If an integration ever needs a key, reference it as an environment variable in
   docs; never paste the value. Add real secret files to `.gitignore` first.
+- **Never store secrets in `personal-brain.md`** or any brain/vault file —
+  those are synced to GitHub.
 
 ## 2. Data handling
 
