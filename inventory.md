@@ -95,7 +95,7 @@ Not offered: 1:1 advisory/consulting; time-consuming beginner training.
 | M02 face | **Higgsfield** (paid, MCP) / HeyGen fallback | Talking-head of HER cloned avatar + voice from a script | `heygen` (talking-head) |
 | M03 reels | **Opus Clip** ⚙️ (Blotato fallback) | Long video → many shorts with hooks + CTAs | `reels-factory` |
 | M04 distribution | **Blotato** | Schedule to the multi-platform **queue**; writes status back | `distribution` |
-| M05 DM/leads | **ManyChat** ⚙️ (IG) + Blotato/native API (FB/YT) | Comment-keyword → DM resource → capture lead | `dm-responder` |
+| M05 DM/leads | **GoHighLevel (GHL)** (IG) + Blotato/native API (FB/YT) | Comment-keyword → DM resource → capture lead | `dm-responder` |
 | M06 performance | **Meta Graph API** + **Apify** scrapers | Scrape all platforms for followers + post engagement; feed dashboard | `performance-tracker` |
 
 **Connected but not yet wired in** (integration backlog):
@@ -115,7 +115,7 @@ Not offered: 1:1 advisory/consulting; time-consuming beginner training.
 | Higgsfield MCP | Add Higgsfield MCP server to Claude Code env settings + record avatar/voice IDs in this file | `heygen` (talking-head of her — Higgsfield is primary) |
 | HeyGen (fallback) | `HEYGEN_API_KEY` env + allowlist `api.heygen.com`, `resource.heygen.ai` — only needed if Higgsfield unavailable | `heygen` (talking-head fallback) |
 | Opus Clip | `OPUS_CLIP_API_KEY` env + allowlist `api.opus.pro` | `reels-factory` |
-| ManyChat | `MANYCHAT_API_KEY` env + IG automations per `lead-magnets.csv` + a webhook host | `dm-responder` (IG leads) |
+| ~~ManyChat~~ | Not needed — **GoHighLevel (GHL)** handles IG comment→DM→capture natively | `dm-responder` (IG leads) |
 | Signal sources | X/Grok API key; confirm Apify/Tavily MCP usable from `signal-harvester` | `signal-harvester` live |
 | Always-on host | A small VPS (or scheduled web sessions) for crons + the DM webhook | M05 + every-N-min crons |
 | TikTok | Connect a TikTok account to Blotato | TikTok publishing |

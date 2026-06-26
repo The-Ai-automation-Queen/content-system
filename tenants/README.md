@@ -12,8 +12,8 @@ their files. Same code, different "second brain".
   tenant; nothing changes for her.
 - Every additional brand is a folder under `tenants/<slug>/` containing the
   same six brain files, plus a `tenant.json` with their connections (Blotato
-  workspace id, HeyGen API key reference, ManyChat workspace, lead-magnets
-  registry, etc.).
+  workspace id, HeyGen API key reference, GHL or ManyChat workspace,
+  lead-magnets registry, etc.).
 - Skills accept an optional `--tenant <slug>` argument. When passed, they read
   the brain from `tenants/<slug>/` instead of the root. Reports go to
   `tenants/<slug>/reports/`.
@@ -29,7 +29,7 @@ their files. Same code, different "second brain".
    pass — never make this up.
 3. **Set their connections.** Edit `tenant.json` with their Blotato workspace
    id, HeyGen avatar/voice ids (after a HeyGen clone session with them),
-   ManyChat workspace, Opus Clip key, etc. Use env-var names; never paste keys.
+   GHL or ManyChat workspace, Opus Clip key, etc. Use env-var names; never paste keys.
 4. **Wire their lead magnets.** Fill `lead-magnets.csv` with their active
    comment-keyword CTAs and resource URLs.
 5. **Test one piece end-to-end.** Run `content-engine --tenant <slug>` →
@@ -53,7 +53,7 @@ their files. Same code, different "second brain".
   their own.
 - The lead-magnets registry — keywords are tenant-scoped.
 - The vault and research notes — tenant-scoped.
-- The connected accounts (Blotato, HeyGen, ManyChat workspaces, etc.) —
+- The connected accounts (Blotato, HeyGen, GHL/ManyChat workspaces, etc.) —
   tenant-scoped.
 
 ## What IS shared

@@ -33,7 +33,7 @@ Built the missing machines from the Romain architecture teardown
 - **`reels-factory`** (M03) — long video → many shorts (Opus Clip API; Blotato
   `combine-clips` fallback), landed as critic-scored vault drafts.
 - **`dm-responder`** (M05, the money engine) — comment-keyword → DM resource →
-  lead capture (ManyChat for IG; Blotato/native APIs for FB+YT), backed by the
+  lead capture (GoHighLevel for IG; Blotato/native APIs for FB+YT), backed by the
   new `lead-magnets.csv` registry.
 - **`weekly-ops`** extended to chain all machines (signal → … → distribution → DM).
 - **Multi-brand:** `tenants/` with a `_template` (tenant.json + brain files) so

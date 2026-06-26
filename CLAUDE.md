@@ -77,8 +77,8 @@ Romain's 5 machines:
 - **`distribution`** — *M04.* Pushes `READY TO POST` entries into the **Blotato
   queue** across the connected platforms, writes status back. **Queue-only.**
 - **`dm-responder`** — *M05, the money engine.* Auto-replies to comment-keyword
-  CTAs with the lead-magnet link and captures the lead (ManyChat for IG; Blotato/
-  native APIs for FB+YT). Backed by `lead-magnets.csv`.
+  CTAs with the lead-magnet link and captures the lead (GoHighLevel for IG;
+  Blotato/native APIs for FB+YT). Backed by `lead-magnets.csv`.
 - **`performance-tracker`** — *M06, the feedback loop.* Scrapes all connected
   platforms (Meta Graph API for IG/FB when tokens set, Apify fallback for all)
   for follower counts + post-level engagement, writes `performance-log.md`,
