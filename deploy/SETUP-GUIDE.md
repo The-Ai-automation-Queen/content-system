@@ -55,18 +55,25 @@ chmod +x deploy/*.sh
 You need this for: failure/success alerts on every cron run + the daily
 brain-manager questions.
 
-### Step 5: Create the bot
+### Step 5: Create the bot and get the BOT TOKEN
 
-1. Open **Telegram** on your phone
+1. Open **Telegram** (phone or desktop app — both work)
 2. Search for **@BotFather**, start a chat
 3. Send `/newbot`
 4. Follow the prompts — give it a name (e.g. "Content OS Bot")
-5. **Copy the bot token** (looks like `123456789:ABCdefGHI...`)
+5. BotFather replies with your **bot token** — it looks like `123456789:ABCdefGHIjklMNO...`
+6. **Copy the bot token** — this is `TELEGRAM_BOT_TOKEN`
 
-### Step 6: Get your chat ID
+### Step 6: Get your USER CHAT ID
 
-1. Search for **@userinfobot** in Telegram, start a chat
-2. It replies with your user info — **copy the numeric ID** (e.g. `987654321`)
+> **⚠ IMPORTANT:** The chat ID is YOUR personal user ID — NOT the bot's ID.
+> The bot token starts with a number (the bot's ID) — do NOT use that number
+> as the chat ID, or the bot will try to message itself and fail.
+
+1. In Telegram, search for **@userinfobot** (this is a separate bot, not yours)
+2. Tap/click **Start**
+3. It instantly replies with your user info — look for the line that says **Id**
+4. **Copy that number** (e.g. `987654321`) — this is `TELEGRAM_CHAT_ID`
 
 Keep both values — you'll paste them into Doppler in Step 9.
 
@@ -99,13 +106,27 @@ doppler setup
 
 Choose: project = `content-os`, config = `prd`.
 
-### Step 9: Add your secrets
+### Step 9: Add your secrets (one at a time)
+
+First, add the **bot token** (from Step 5 — the long string with a colon from @BotFather):
 
 ```bash
-doppler secrets set \
-  TELEGRAM_BOT_TOKEN="your-bot-token-from-step-5" \
-  TELEGRAM_CHAT_ID="your-chat-id-from-step-6"
+doppler secrets set TELEGRAM_BOT_TOKEN="your-bot-token-from-step-5"
 ```
+
+Then, add your **user chat ID** (from Step 6 — the number from @userinfobot, NOT the bot's ID):
+
+```bash
+doppler secrets set TELEGRAM_CHAT_ID="your-chat-id-from-step-6"
+```
+
+Verify both are set:
+
+```bash
+doppler run -- bash -c 'echo "TOKEN=$TELEGRAM_BOT_TOKEN CHAT=$TELEGRAM_CHAT_ID"'
+```
+
+Both should show values. If CHAT matches the first number in TOKEN, you used the bot's ID by mistake — go back to @userinfobot and get YOUR user ID.
 
 That's the minimum to get alerts working. You'll add more keys in later phases.
 
@@ -135,8 +156,8 @@ You should get a Telegram message on your phone. If yes, alerts are live.
 claude login
 ```
 
-Follow the browser link to authenticate. This is what Romain uses — all
-script generation is "free" with the subscription, no per-token billing.
+Follow the browser link to authenticate. All script generation is included
+in the subscription — no per-token billing.
 
 **Option B — API key:**
 

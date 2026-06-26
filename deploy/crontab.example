@@ -1,5 +1,5 @@
 # Content OS — autonomous cadence (mirrors scheduler.config.json).
-# 1) Replace /home/fatiha/content-system with the absolute repo path (e.g. /home/fatiha/content-system).
+# 1) Replace __REPO__ with the absolute repo path (e.g. /home/fatiha/content-system).
 # 2) Install with:  crontab deploy/crontab.example
 # 3) Check with:    crontab -l
 #
@@ -10,25 +10,25 @@ SHELL=/bin/bash
 # ── M00 — Brain Manager ──────────────────────────────────────
 # Daily @ 20:00 — asks the operator questions via Telegram, updates personal-brain.md.
 # This is the Cerveau Manager: the personal context layer that makes posts feel real.
-0 20 * * *   /home/fatiha/content-system/deploy/run-machine.sh "/brain-manager" 0 0
+0 20 * * *   __REPO__/deploy/run-machine.sh "/brain-manager" 0 0
 
 # ── M01 — Signal Harvest + Script Generation ─────────────────
 # Daily @ 02:00 — harvest 7 signals from the live web.
-0 2 * * *    /home/fatiha/content-system/deploy/run-machine.sh "/signal-harvester" 1 120
+0 2 * * *    __REPO__/deploy/run-machine.sh "/signal-harvester" 1 120
 
 # Daily @ 02:30 — generate 5 scripts (1 story, 2 news, 1 opinion, 1 edu).
 # Scripts are ready when the operator wakes up. Uses personal-brain.md + latest signals.
-30 2 * * *   /home/fatiha/content-system/deploy/run-machine.sh "/content-engine daily" 1 120
+30 2 * * *   __REPO__/deploy/run-machine.sh "/content-engine daily" 1 120
 
 # ── M06 — Performance Tracker ────────────────────────────────
 # Daily @ 03:00 — scrape engagement metrics, annotate vault entries.
-0 3 * * *    /home/fatiha/content-system/deploy/run-machine.sh "/performance-tracker" 0 0
+0 3 * * *    __REPO__/deploy/run-machine.sh "/performance-tracker" 0 0
 
 # ── Full weekly loop ─────────────────────────────────────────
 # Monday @ 06:00 — runs the full machine chain (signal → script → visual → queue).
-0 6 * * 1    /home/fatiha/content-system/deploy/run-machine.sh "/weekly-ops" 1 240
+0 6 * * 1    __REPO__/deploy/run-machine.sh "/weekly-ops" 1 240
 
 # ── M05 — DM/Lead Responder ─────────────────────────────────
 # Every 5 min — polls comments for keyword CTAs, sends DMs via GHL (IG) + Unipile
 # (LinkedIn). Harmless to leave running — it just reports status until wired.
-*/5 * * * *  /home/fatiha/content-system/deploy/run-machine.sh "/dm-responder" 0 0
+*/5 * * * *  __REPO__/deploy/run-machine.sh "/dm-responder" 0 0
