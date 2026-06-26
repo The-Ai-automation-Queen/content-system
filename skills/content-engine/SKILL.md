@@ -48,6 +48,10 @@ This is non-negotiable. Read these every run, in this order:
    the next `ENTRY` number, and to avoid duplicating a topic already drafted.
 6. The latest `reports/competitor-watch-*.md` if a fresh one exists — for live
    angles and hooks competitors are using (to differentiate from, not copy).
+6. **`skills/monetisation/SKILL.md`** — to assign the correct ACP stage (A/C/P)
+   and pick the exact CTA for each draft. Read the ACP ratio of the last 10 vault
+   entries before tagging. This is non-negotiable: every draft must know its job
+   in the funnel before it's written.
 
 If a draft you are about to write would contradict the positioning, the draft is
 wrong. Fix the draft.
@@ -94,6 +98,15 @@ Follow the Script Application Rules from `inspiration-library` in order:
    different rhythm. One platform per draft.
 5. **End with an earned CTA** — a comment trigger or a specific next step, never
    "follow for more."
+5a. **Assign an ACP stage** — using the ACP funnel rules in
+   `skills/monetisation/SKILL.md`: count the A/C/P distribution of the last 10
+   vault entries (check the `ACP stage` field in each entry's metadata). Assign
+   the stage that keeps the ratio at ~7A / 2C / 1P. If there are already 2 P
+   posts in the last 10, assign A or C instead and note why in the metadata.
+5b. **Pick the exact CTA from the CTA map** — use `skills/monetisation/SKILL.md`
+   CTA map, matched to this draft's pillar and ACP stage. Write the exact CTA
+   text into the draft. For A posts, this is the comment keyword trigger. For C
+   posts, the community invite. For P posts, the product link line.
 6. **Voice check** — casual and conversational (contractions welcome), warm with a
    provocative edge, authority + relatability, specific, no corporate jargon, no
    engagement bait.
@@ -143,6 +156,8 @@ list at the very top of the file. Match the existing structure exactly:
 **Pattern used:** <which inspiration-library pattern>
 **Pillar:** <which content pillar from inventory.md>
 **Critic score:** <X.X>/10 — <APPROVED FOR REVIEW | NEEDS WORK: ...>
+**ACP stage:** <A | C | P> — <one-line reason, e.g. "A — ratio is currently 6A/2C/1P, adding A">
+**CTA:** <exact CTA text as it appears at the end of the post>
 **Source:** <research-notes RESEARCH NNN, or [VERIFY] for unsourced claims>
 
 ---

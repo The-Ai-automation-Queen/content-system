@@ -104,6 +104,21 @@ Romain's machines:
   to `transcripts/` + a summarized RESEARCH entry in `research-notes.md` with
   key takeaways, stack mentions, and gap analysis vs. our system. Dual-path:
   `yt-dlp` (fast, local) with web-extraction fallback (cloud).
+- **`monetisation`** — *The revenue layer.* Defines the offer ladder (free lead
+  magnets → $97 Starter Kit → $197/month Community → $997 Bootcamp → $5–15k
+  Speaking), the ACP funnel tagging rules, the CTA map by content pillar, the
+  conversion flow (content → email → community → product), and the monthly
+  revenue tracker. Referenced by `content-engine` for ACP stage + CTA selection.
+  Run with `activation-check` to audit revenue gaps, `revenue-audit` for the
+  weekly report, or `launch-plan <offer>` to plan a product launch.
+- **`business-os-kit`** — *Product packaging.* Packages this Business OS into
+  three sellable products (Starter Kit $97, Community $197/month, Bootcamp $997)
+  and produces the promotional launch content. Run with `build-starter-kit`,
+  `launch-content <tier>`, or `sales-copy <tier>`.
+- **`irl-events`** — *Dubai IRL community.* Plans and promotes "AI & Freedom
+  Dinners" (10–15 people, monthly, intimate format in Dubai), manages invite
+  sequences and post-event follow-up, and extracts 4 vault-ready content pieces
+  per event. Run with `plan-event`, `invite-sequence`, or `post-event-content`.
 
 > **Multi-brand:** the engine is brand-agnostic. Additional clients live under
 > `tenants/<slug>/` with their own brain + connections; skills take `--tenant`.
@@ -124,6 +139,8 @@ brain → signal → script → visual → queue → DM/lead → measure:
 ```
 brain-manager → signal-harvester → competitor-watch → vault-audit → content-engine → visual-engine(+heygen) → reels-factory → distribution → dm-responder → performance-tracker
   (M00 brain)     (M01 data)        (what others do)   (what's stale)  (M01 scripts)     (M02 visuals/face)      (M03 shorts)    (M04 → queue)   (M05 → leads)   (M06 → measure)
+signal-harvester → competitor-watch → vault-audit → content-engine → visual-engine(+heygen) → reels-factory → distribution → dm-responder → performance-tracker → monetisation
+   (M01 data)        (what others do)   (what's stale)  (M01 scripts)     (M02 visuals/face)      (M03 shorts)    (M04 → queue)   (M05 → leads)   (M06 → measure)    (revenue check)
 ```
 
 **Daily crons** (VPS): brain-manager @ 20:00, signal-harvester @ 02:00,

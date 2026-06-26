@@ -147,7 +147,55 @@ To automate the rhythm, run the harness `/loop` skill on `weekly-ops`, or trigge
 
 ---
 
-## Backlog (next increments, roughly prioritized)
+## Backlog
+
+### Priority 0 — This week (fastest path to cash)
+
+These are unblocked right now. Do them before anything else. Each one feeds
+the next. Combined, they switch the revenue funnel on.
+
+**Action 1 — Activate the lead magnets (2–3 hours)**
+All 7 resources in `lead-magnets/` are written and ready. None are live. Host
+each on a GHL page, paste the URL into `lead-magnets.csv`, set `active=yes`.
+Run `skills/monetisation/ activation-check` to audit what's still blocked.
+This unblocks: ManyChat DM flow, email list growth, the entire conversion funnel.
+
+**Action 2 — Write the 5-email GHL nurture sequence (1–2 hours)**
+Use the conversion flow template in `skills/monetisation/SKILL.md`. Day 0–10.
+This turns lead-magnet downloads into community members automatically.
+
+**Action 3 — Add keyword CTAs to the next 5 queued posts (30 minutes)**
+Check the last 10 vault entries — any without a comment keyword CTA is a missed
+lead. Add one to each. Use the CTA map in `skills/monetisation/SKILL.md`.
+
+**Action 4 — Post one founding-member call on LinkedIn (15 minutes)**
+"I'm building a community for everyday entrepreneurs using AI to win back their
+time. Opening 20 founding spots at $27/month — locked forever. Comment FOUNDING
+for the link." This alone can generate $1,940/month from one post if 20 people
+join.
+
+**Action 5 — Send the speaker one-pager to 10 warm corporate contacts (1 hour)**
+Run `skills/monetisation/ activation-check` to generate the one-pager. Email or
+DM it to warm contacts from the Dell/Intel/Microsoft network who are Dubai-based
+or organise corporate events. One booking = $5,000–$15,000.
+
+---
+
+### Revenue milestones (what to aim for by when)
+
+| Timeline | Target | Requires |
+|---|---|---|
+| Week 1 | First email subscribers | Lead magnets live + CTAs on posts |
+| Month 1 | 20 founding members ($540/month) + 1 speaking booking ($5k+) | Founding-member post + speaker outreach |
+| Month 2 | 50 community members ($2,350/month MRR) | Community launched publicly at $47/month |
+| Month 3 | Starter Kit selling 20 units/month ($1,940) + 500 email subscribers | Starter Kit live on Gumroad |
+| Month 6 | 200 community members ($39,400/month) + first Bootcamp ($20k) | Bootcamp waitlist → cohort |
+| Year 1 | 500 members + recurring Bootcamp + speaking circuit | Full loop running autonomously |
+| Year 2 | 1,000 members + evergreen products + IRL events | Scale |
+
+---
+
+### Ongoing backlog (roughly prioritized)
 
 1. **Run the closed loop on the backlog.** The wiring exists (`visual-engine` +
    `distribution`); the next action is to build visuals for the ready carousel/video
@@ -177,3 +225,34 @@ To automate the rhythm, run the harness `/loop` skill on `weekly-ops`, or trigge
    back before the next local sync overwrites them.
 8. **Named frameworks as content assets** (Pattern 12) — capture the operator's
    repeatable methodologies as named, citeable assets the engine reuses.
+9. **Package and launch the Business OS Starter Kit ($97)** — run
+   `skills/business-os-kit/ build-starter-kit` for build instructions, then
+   `launch-content starter-kit` for the 3 launch posts. Operator actions: record
+   the 25-min Loom walkthrough and create the Gumroad listing. This is the first
+   paid product and the fastest way to prove the method to buyers.
+10. **Launch the AI Automation Queen Community on Skool ($47/month)** — create the
+    Skool space (3 sections: Resources / Live Calls / Community), set the founding
+    member price ($27/month locked), and run `skills/business-os-kit/ launch-content
+    community` for the 3 launch posts. Target: 20 founding members in month 1,
+    50 total by month 2.
+11. **ACP funnel tagging in the content engine** — every vault draft now includes
+    `ACP stage` and `CTA` fields (added to `content-engine` skill). Run
+    `skills/monetisation/ cta-map` to audit the last 10 entries and flag any without
+    a keyword CTA or with a broken A/C/P ratio.
+12. **IRL community events — AI & Freedom Dinners in Dubai** — run
+    `skills/irl-events/ plan-event` to get the agenda and invite sequence for the
+    first dinner. Ideal first event: 10 warm contacts from the LinkedIn/corporate
+    network, intimate restaurant, free. Goal: 3+ community conversions per dinner.
+13. **Email nurture sequence (the missing conversion layer)** — the lead magnets
+    deliver the resource but there is no email follow-up yet. The 5-email GHL
+    sequence (defined in `skills/monetisation/`) turns a download into a community
+    member. Without it, leads go cold. This is the highest-leverage automation to
+    build this month.
+14. **Corporate speaking outreach (near-term high-ticket)** — one booked workshop
+    generates as much as 25–75 community memberships in a single payment. Run
+    `skills/monetisation/ launch-plan speaking` to get the one-pager, then send it
+    to 10 warm corporate contacts. Do this in week 1 alongside the community launch.
+15. **Builder-Distributor named content series** — a recurring format (Pattern 12)
+    documenting Fatiha's real process: "Here's how I built X and distributed it in
+    the same week." Teaches the concept, proves the method, attracts the exact
+    audience that buys the Bootcamp. One per month minimum.

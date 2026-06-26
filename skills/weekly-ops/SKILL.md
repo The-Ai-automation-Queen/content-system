@@ -55,7 +55,11 @@ steps also append to `research-notes.md`):
 6. reels-factory      →  M03 long-video → many shorts (only when a new long video exists)
 7. distribution       →  M04 schedules ready+unflagged posts into the Blotato QUEUE
 8. dm-responder       →  M05 comment→DM→lead capture (continuous cron, not weekly —
-                          report its status only; includes Unipile for LinkedIn DMs)
+report its status only; includes Unipile for LinkedIn DMs)
+report its status only)
+9. monetisation       →  Revenue audit: ACP ratio of last 10 vault entries,
+                          keyword CTA coverage, email/community counts from
+                          performance-log.md. Flag gaps; recommend one action.
 ```
 
 Steps 1-4 run every pass. Steps 5-7 act only on entries that are `READY TO POST`
