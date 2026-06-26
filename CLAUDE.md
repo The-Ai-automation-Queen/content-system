@@ -90,6 +90,10 @@ Romain's 5 machines:
   `research-notes.md` entry. (Lighter fallback for `signal-harvester`.)
 - **`competitor-watch`** — creator/competitor movement scan → `reports/`.
 - **`vault-audit`** — pipeline health check → `reports/`.
+- **`video-transcription`** — YouTube (or other) video → full transcript saved
+  to `transcripts/` + a summarized RESEARCH entry in `research-notes.md` with
+  key takeaways, stack mentions, and gap analysis vs. our system. Dual-path:
+  `yt-dlp` (fast, local) with web-extraction fallback (cloud).
 
 > **Multi-brand:** the engine is brand-agnostic. Additional clients live under
 > `tenants/<slug>/` with their own brain + connections; skills take `--tenant`.
