@@ -2,6 +2,56 @@
 
 ---
 
+## RESEARCH 019 — 2026-06-26 | Video transcription: Romain Brunel — "J'ai Automatisé 100% De Mon Contenu LinkedIn"
+
+**Status:** NOTED
+**Source:** https://www.youtube.com/watch?v=slpOWROj7s4 (Romain Brunel / Affiseo)
+**Language:** fr
+**Method:** manual paste (YouTube transcript) — yt-dlp blocked by proxy; Tavily/WebFetch fallback also blocked
+
+### Key takeaways (7 bullets)
+- Romain runs 3 "machines" for LinkedIn/X: (1) LinkedIn Content Factory, (2) X Content Factory, (3) DM Auto — they generate, publish, and respond to engagement entirely without manual intervention
+- His **Second Cerveau (Brain)** is the real engine: 11 active brain modules covering his life, anecdotes, opinions, lead magnets, LinkedIn writing style, and training materials — all stored on GitHub, all accessible to Claude CLI
+- Every day at 00:30, a **cron** auto-generates 5 LinkedIn scripts (1 storytelling, 2 AI-news, 1 opinion, 1 educational) from the brain + live news — scripts are waiting when he wakes up; choosing takes 5–10 minutes/week
+- The **Cerveau Manager** is the most novel piece: a daily Telegram bot asks him 5+ questions about his life, projects, opinions, and current events — answers auto-update the brain on GitHub, keeping posts authentically personal and current
+- **Unipile** is the LinkedIn DM API layer: when someone comments a keyword (e.g., "clone"), it auto-sends one of 3 randomized DM variants with the lead-magnet link, staggered on random time windows to avoid bot detection — 116 DMs sent + 222 responses on a single post (520 comments)
+- Publishing goes through **Metricool** API for cross-platform scheduling (LinkedIn, X, Reels cross-post); images are generated with **Replicate** (GPT Image 2) at ~€0.13/image — 5 ideas proposed, operator picks 1–3
+- Each machine has per-machine **documentation** designed so an AI agent can eventually take over the human validation step — the stated endgame is full autonomy with no human-in-the-loop
+
+### Tools & stack mentioned
+- **Claude Code CLI (Max plan, $180/mo)** — all script generation, brain updates, and automation logic; no separate API costs for writing
+- **VPS (self-hosted)** — custom web interface with editorial calendar, crons, and machine dashboards; always-on
+- **xAI API** — scrapes real-time AI news for the 2 daily news-type posts
+- **Replicate API (GPT Image 2)** — image generation for LinkedIn/X posts, ~€0.13/image
+- **Metricool** — cross-platform publishing API (LinkedIn, X, Reels); auto-publishes at scheduled times
+- **Unipile** — LinkedIn messaging API (legal connection via personal account); auto-DM on comment keywords + auto-reply
+- **Telegram bot** — daily Cerveau Manager interface; asks operator questions, syncs answers to GitHub brain
+- **GitHub** — stores the second brain; all machines read from it; Cerveau Manager pushes updates to it
+- **Whisper (via Replicate)** — video transcript extraction (mentioned, not shown in this video)
+
+### Content angles ready to use (3)
+- "My AI knows I'm flying to Asia in August. Yours doesn't know your name." → pillar: Build Once, Runs Forever (the Cerveau Manager as the moat — personal, always-current brain vs. generic prompt engineering)
+- "520 comments. 116 DMs sent. I touched zero of them." → pillar: Stop Doing That by Hand (Unipile auto-DM as the money engine; show scale of manual work replaced)
+- "5 scripts every morning. I just pick the best one." → pillar: Time Wins (daily auto-generation cron as the ultimate time buyback; 5–10 min/week to run content)
+
+### Contrarian take logged
+Everyone's obsessing over which AI model writes better copy. Romain's system proves the model is the least important part — his edge is the **brain**, not the brain's engine. His posts perform because the brain knows he flew to Asia, read that book, watched that YouTuber — personal context an LLM can never hallucinate. The competitive moat isn't "I use Claude" or "I use GPT." It's "my AI has 11 modules of my actual life and it updates every single day." Most creators are optimizing prompts when they should be building a living memory layer.
+
+### Gap analysis vs. our stack
+- **We have:** 6 machines fully designed (signal-harvester → content-engine → visual-engine → distribution → dm-responder → performance-tracker), a second brain (content-vault + research-notes), brand positioning + inspiration library, Blotato for multi-platform queuing, Claude Code as the engine, weekly-ops orchestrator
+- **We're missing:**
+  1. **Cerveau Manager (Brain Manager)** — the #1 gap. Romain has a daily Telegram bot that asks the operator personal questions and auto-updates the brain on GitHub. We have no equivalent. Our brain (content-vault, research-notes) is updated by skills, never by the operator's real life. This is what makes his posts feel personal. **Priority: critical.**
+  2. **Daily auto-generation cron** — Romain's VPS runs content-engine every day at 00:30 without being asked. We have weekly-ops but it's manual/on-demand. We need always-on scheduling (VPS, or Claude Code `/loop` + cron). **Priority: high.**
+  3. **Always-on hosting (VPS)** — his VPS runs 24/7 with crons, webhooks, and a visual dashboard. We run in ephemeral Claude Code sessions. Already on our ROADMAP (backlog item: "Always-on host"). **Priority: high.**
+  4. **Unipile for LinkedIn DM automation** — we have dm-responder designed for ManyChat (IG only). Romain uses Unipile to auto-DM on LinkedIn comment keywords — the legal API path. LinkedIn is our warm-network anchor; this is where the leads are. **Priority: high.**
+  5. **xAI API for real-time news scraping** — Romain's news posts pull from xAI. Our signal-harvester uses Tavily/Apify, which partially covers this, but a dedicated news API for the "2 daily news posts" pattern would strengthen freshness. **Priority: medium.**
+  6. **Replicate API for image generation** — he uses GPT Image 2 at €0.13/image. We have Blotato's visual engine (Flux/Imagen/Seedream), which covers this differently but is already wired. **Priority: low (already covered).**
+  7. **Per-machine documentation for AI delegation** — Romain documents each machine so an AI agent can eventually replace the human validator. We don't have machine-level operational docs. **Priority: medium (endgame feature).**
+  8. **Editorial calendar UI** — his VPS has a visual calendar. We have Notion on the roadmap (backlog item 5). **Priority: low (already planned).**
+- **Different approach:** Romain uses Metricool for publishing; we use Blotato (same role, different tool — Blotato is already wired and covers more platforms). Romain's brain is on GitHub as structured files; ours is in markdown (content-vault + research-notes) — same concept, different granularity. He runs Claude CLI Max ($180/mo) with no API; we run Claude Code sessions similarly.
+
+---
+
 ## RESEARCH 018 — 2026-06-23 | One-Person Business Runs Like a Team of Five · 95% Still Get Zero ROI (They Automate Chaos) · The $45 Stack · No-Code Agents Cross the Line · 51% of Leaders Don't Get AI
 
 **Status:** NOTED
