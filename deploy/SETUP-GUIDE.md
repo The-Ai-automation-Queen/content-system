@@ -156,8 +156,8 @@ You should get a Telegram message on your phone. If yes, alerts are live.
 claude login
 ```
 
-Follow the browser link to authenticate. This is what Romain uses — all
-script generation is "free" with the subscription, no per-token billing.
+Follow the browser link to authenticate. All script generation is included
+in the subscription — no per-token billing.
 
 **Option B — API key:**
 

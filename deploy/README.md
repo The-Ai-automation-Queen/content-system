@@ -3,7 +3,7 @@
 This folder turns the Business OS from "skills that exist" into "a machine that
 runs on a timer, alerts you when it breaks, and keeps a cockpit live 24/7."
 
-It closes the **4 real gaps** between this repo and Romain Brunel's always-on
+It closes the **4 gaps** between this repo and a fully autonomous content
 system. You have a **VPS** and **Telegram** — that's exactly what this kit needs.
 
 > **The big shortcut:** on your own VPS, outbound network access is **open by
@@ -52,9 +52,9 @@ each command actually did.
 
 ## Gap 1 — Always-on host + crons + Telegram alerts
 
-**What Romain has:** a VPS running crons (02:00 write scripts, retry at 04:00 on
+**What you need:** a VPS running crons (02:00 write scripts, retry at 04:00 on
 failure, every-5-min responder) with **Telegram failure alerts**.
-**What this kit gives you:** the same, driven by `run-machine.sh` + cron.
+**What this kit gives you:** exactly that, driven by `run-machine.sh` + cron.
 
 ### 1a. Create the Telegram bot (2 minutes)
 1. In Telegram, message **@BotFather** → `/newbot` → follow prompts → copy the
@@ -97,10 +97,9 @@ tracker @ 03:00, the full weekly loop Monday @ 06:00, and the DM responder every
 5 min. Each one alerts Telegram on failure (and on success). Edit times/timezone
 in `crontab.example` to taste.
 
-> **Why this mirrors Romain exactly:** `run-machine.sh` *is* the cron-with-retry-
-> and-Telegram layer that `scheduler.config.json` only describes. Flip
-> `scheduler.config.json`'s `alerts.telegram.wired` to `true` once 1a is done, so
-> the doc matches reality.
+> `run-machine.sh` *is* the cron-with-retry-and-Telegram layer that
+> `scheduler.config.json` only describes. Flip `scheduler.config.json`'s
+> `alerts.telegram.wired` to `true` once 1a is done, so the doc matches reality.
 
 ### 1f. Harden the VPS (do this before treating the box as production)
 
@@ -174,7 +173,7 @@ fallback if Doppler isn't configured.
 |---|---|---|
 | `HEYGEN_API_KEY` | M02 talking-head of *you* (`skills/heygen`) | **The one paid tool worth it.** HeyGen → Settings → API. After your first clone, paste the **avatar_id + voice_id** into `inventory.md`. |
 | `GHL_API_KEY` *(optional)* | M05 lead writes into GoHighLevel (`skills/dm-responder`) | Only if you want the skill to push leads into GHL directly. GHL already does comment→DM→capture→nurture **natively** — no key strictly required. |
-| `UNIPILE_API_KEY` + `UNIPILE_DSN` | M05 LinkedIn DM automation (`skills/dm-responder`) | Auto-DM on LinkedIn comment keywords — the Romain pattern. Sign up at unipile.com, connect your LinkedIn account. |
+| `UNIPILE_API_KEY` + `UNIPILE_DSN` | M05 LinkedIn DM automation (`skills/dm-responder`) | Auto-DM on LinkedIn comment keywords. Sign up at unipile.com, connect your LinkedIn account. |
 
 ### Tools you can SKIP (don't pay for these)
 - **ManyChat** → **GoHighLevel** does it. You already run GHL; it catches the
@@ -196,13 +195,12 @@ The dashboard's machine panel reflects each machine's status automatically.
 
 ## Gap 3 — Finer M02 craft (a decision, not a missing wire)
 
-Romain hand-crafts B-roll: per-segment **motion design (Hyperframe, 3 variants)**
-and **image→video** cinematic clips (Magnifique/Seedance-class), assembled by a
-**human editor** from Dropbox. You deliberately took the *more automated, fewer-
-moving-parts* path — **Blotato** generates AI images + narrated video + assembly,
-no human editor.
+The most polished content creators hand-craft B-roll: per-segment **motion
+design** and **image→video** cinematic clips, assembled by a **human editor**.
+This system takes the *more automated, fewer-moving-parts* path — **Blotato**
+generates AI images + narrated video + assembly, no human editor.
 
-**You are not missing the output — you're missing his bespoke polish.** Decide:
+**You are not missing the output — you're missing bespoke polish.** Decide:
 
 - **Keep it lean (recommended to start):** stay on Blotato. To push quality, turn
   on Blotato's image-animation / story-video options inside `skills/visual-engine`
@@ -222,10 +220,9 @@ Two of three sub-items are **already done in this repo**:
 
 - ✅ **Approve / move a script through the pipeline** — the dashboard's status
   buttons (`DRAFT → READY → SCHEDULED → POSTED`) write straight back to
-  `content-vault.md` via `/api/update`. That's Romain's "validate this script"
-  action.
+  `content-vault.md` via `/api/update`.
 - ✅ **Editorial calendar** — a 14-day calendar (gold = scheduled, purple =
-  posted) is now on the dashboard, matching his green/purple calendar.
+  posted) is now on the dashboard.
 
 The remaining sub-items are **operator data** only you can supply:
 
