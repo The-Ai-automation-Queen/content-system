@@ -86,3 +86,12 @@ So the live DM rails are **IG + LinkedIn** (ready to fire once a magnet is activ
 in this report stands: 0 active magnets, 0 leads, no leaks (CLAUDE row present),
 nothing posted yet → nothing to reply to. No DMs sent, no posting — queue-only honored.
 
+## Re-run confirmation (later 2026-06-26)
+
+Second end-to-end monitor pass this day reconfirms every finding above with **no
+change**: Blotato `list_posts` → empty (0 scheduled/live); 0 POSTED vault entries;
+all 10 registry rows `active=no`; no leaks (CLAUDE/STACK/FOLLOW UP all have rows);
+credential split unchanged (GHL ✅, Unipile ✅, FB ❌, YouTube ❌). Read-only calls
+only — no DMs, no posting, no queue release. **0 leads captured** (correct: nothing
+is live to trigger on).
+
