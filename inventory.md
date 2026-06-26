@@ -89,13 +89,14 @@ Not offered: 1:1 advisory/consulting; time-consuming beginner training.
 
 | Machine | Tool | Role in the system | Skill |
 |---|---|---|---|
+| M00 brain | **Claude Code** + Telegram bot | Daily brain update: asks operator questions, writes `personal-brain.md` | `brain-manager` |
 | M01 data | **Apify, Tavily, X, RSS** ⚙️ | Multi-source daily signal harvest (IG/X scrapes, YouTube virality, blogs, news) | `signal-harvester` |
-| M01 scripts | **Claude Code** | Signals → in-voice drafts, critic-scored | `content-engine` |
+| M01 scripts | **Claude Code** | Signals + personal brain → in-voice drafts, critic-scored (5/day in daily mode) | `content-engine` |
 | M02 visuals | **Canva, Gamma, Blotato** | Carousels/decks + AI images/infographics + film-free narrated video | `visual-engine` |
 | M02 face | **Higgsfield** (paid, MCP) / HeyGen fallback | Talking-head of HER cloned avatar + voice from a script | `heygen` (talking-head) |
 | M03 reels | **Opus Clip** ⚙️ (Blotato fallback) | Long video → many shorts with hooks + CTAs | `reels-factory` |
 | M04 distribution | **Blotato** | Schedule to the multi-platform **queue**; writes status back | `distribution` |
-| M05 DM/leads | **GoHighLevel (GHL)** (IG) + Blotato/native API (FB/YT) | Comment-keyword → DM resource → capture lead | `dm-responder` |
+| M05 DM/leads | **GHL** (IG) + **Unipile** ⚙️ (LinkedIn) + Blotato/native API (FB/YT) | Comment-keyword → DM resource → capture lead | `dm-responder` |
 | M06 performance | **Meta Graph API** + **Apify** scrapers | Scrape all platforms for followers + post engagement; feed dashboard | `performance-tracker` |
 
 **Connected but not yet wired in** (integration backlog):
@@ -116,8 +117,10 @@ Not offered: 1:1 advisory/consulting; time-consuming beginner training.
 | HeyGen (fallback) | `HEYGEN_API_KEY` env + allowlist `api.heygen.com`, `resource.heygen.ai` — only needed if Higgsfield unavailable | `heygen` (talking-head fallback) |
 | Opus Clip | `OPUS_CLIP_API_KEY` env + allowlist `api.opus.pro` | `reels-factory` |
 | ~~ManyChat~~ | Not needed — **GoHighLevel (GHL)** handles IG comment→DM→capture natively | `dm-responder` (IG leads) |
+| Unipile | `UNIPILE_API_KEY` + `UNIPILE_DSN` env + allowlist `api.unipile.com` + connect LinkedIn account | `dm-responder` (LinkedIn DM auto) |
+| Brain Manager Telegram | Create Telegram bot via @BotFather + set `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` | `brain-manager` daily brain updates |
 | Signal sources | X/Grok API key; confirm Apify/Tavily MCP usable from `signal-harvester` | `signal-harvester` live |
-| Always-on host | A small VPS (or scheduled web sessions) for crons + the DM webhook | M05 + every-N-min crons |
+| Always-on host | A small VPS (or scheduled web sessions) for crons + the DM webhook | All daily crons (M00 + M01 + M06) |
 | TikTok | Connect a TikTok account to Blotato | TikTok publishing |
 
 **Higgsfield IDs (fill after a clone session):** avatar_id = `____`, voice_id = `____`.

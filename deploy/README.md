@@ -86,9 +86,11 @@ finish. Check `deploy/logs/` for the transcript. If this works, the loop works.
 sed -i "s|__REPO__|$PWD|g" deploy/crontab.example
 crontab deploy/crontab.example
 ```
-You now have: daily signal harvest @ 02:00 (1 retry), the full weekly loop Monday
-@ 06:00 (1 retry), and the DM responder every 5 min. Each one alerts Telegram on
-failure (and on success). Edit times/timezone in `crontab.example` to taste.
+You now have: brain-manager @ 20:00 (evening brain update), signal-harvester @
+02:00, content-engine daily @ 02:30 (5 scripts ready by morning), performance-
+tracker @ 03:00, the full weekly loop Monday @ 06:00, and the DM responder every
+5 min. Each one alerts Telegram on failure (and on success). Edit times/timezone
+in `crontab.example` to taste.
 
 > **Why this mirrors Romain exactly:** `run-machine.sh` *is* the cron-with-retry-
 > and-Telegram layer that `scheduler.config.json` only describes. Flip
@@ -128,6 +130,7 @@ the rest are covered by tools you already have. Paste what you use into
 |---|---|---|
 | `HEYGEN_API_KEY` | M02 talking-head of *you* (`skills/heygen`) | **The one paid tool worth it.** HeyGen → Settings → API. After your first clone, paste the **avatar_id + voice_id** into `inventory.md`. |
 | `GHL_API_KEY` *(optional)* | M05 lead writes into GoHighLevel (`skills/dm-responder`) | Only if you want the skill to push leads into GHL directly. GHL already does comment→DM→capture→nurture **natively** — no key strictly required. |
+| `UNIPILE_API_KEY` + `UNIPILE_DSN` | M05 LinkedIn DM automation (`skills/dm-responder`) | Auto-DM on LinkedIn comment keywords — the Romain pattern. Sign up at unipile.com, connect your LinkedIn account. |
 
 ### Tools you can SKIP (don't pay for these)
 - **ManyChat** → **GoHighLevel** does it. You already run GHL; it catches the

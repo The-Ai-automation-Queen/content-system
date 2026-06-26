@@ -37,12 +37,16 @@ This is non-negotiable. Read these every run, in this order:
    win-back-your-time promise, the six pillars, and the voice. The identity layer.
 2. **`inspiration-library/SKILL.md`** — the 15 hook/format patterns, the Script
    Application Rules, the banned-words list, and platform adaptation rules.
-3. **`research-notes.md`** — the latest findings and, critically, the
+3. **`personal-brain.md`** — her living memory: real anecdotes, opinions, projects,
+   numbers, life events, and current focus. Updated daily by `brain-manager`. This
+   is what makes posts feel like *her* instead of generic AI. Use anecdotes for
+   storytelling posts, opinions for opinion posts, numbers for credibility.
+4. **`research-notes.md`** — the latest findings and, critically, the
    **"Content angles (3 ready to use)"** and **"Contrarian take logged"** blocks.
    These are pre-vetted raw material. Prefer them.
-4. **`content-vault.md`** — to learn the house style from existing entries, to get
+5. **`content-vault.md`** — to learn the house style from existing entries, to get
    the next `ENTRY` number, and to avoid duplicating a topic already drafted.
-5. The latest `reports/competitor-watch-*.md` if a fresh one exists — for live
+6. The latest `reports/competitor-watch-*.md` if a fresh one exists — for live
    angles and hooks competitors are using (to differentiate from, not copy).
 
 If a draft you are about to write would contradict the positioning, the draft is
@@ -53,6 +57,13 @@ wrong. Fix the draft.
 ## Inputs
 
 - **Argument** (optional): a topic, a target platform, and/or a count.
+- **`daily`** — the daily auto-generation mode (Romain pattern). Produces **5
+  scripts** for the target platform (default LinkedIn):
+  - 1 **storytelling** (from `personal-brain.md` anecdotes/life events)
+  - 2 **AI news** (from the latest `research-notes.md` signals)
+  - 1 **opinion** (from `personal-brain.md` opinions + research contrarian takes)
+  - 1 **educational** (from pillars, explaining a system/method she uses)
+  This mode is designed for the daily cron — scripts are ready when she wakes up.
 - **If no argument:** default to producing **3 drafts** that best fill the current
   gap. Decide the gap from the latest `vault-audit` report (which platform is
   thin, what is stale) and the freshest research angles. If no recent audit
