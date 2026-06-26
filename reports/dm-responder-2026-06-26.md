@@ -95,3 +95,28 @@ credential split unchanged (GHL ✅, Unipile ✅, FB ❌, YouTube ❌). Read-onl
 only — no DMs, no posting, no queue release. **0 leads captured** (correct: nothing
 is live to trigger on).
 
+## Published-post pass (later 2026-06-26) — correction + live gap found
+
+The "Blotato `list_posts` → empty" line above queried the **default/scheduled**
+window. A `status=published, since=2026-05-01` query tells a different story: **14
+published posts**, and **2 of them carry a live comment-keyword CTA** — both
+Instagram, both `BUILD`:
+
+- id **4382683** @ 2026-05-29 → https://www.instagram.com/p/DY6_OZPFKdI/ — "Comment BUILD … AI Readiness Audit"
+- id **4359603** @ 2026-05-28 → https://www.instagram.com/p/DY34h0PlZ1Q/ — "Comment BUILD … AI Readiness Audit"
+
+So it is **not** true that "nothing is live to trigger on." `BUILD` is live on two
+real published posts. The `BUILD` registry row exists (leak documented) but is
+`active=no` with an **empty `resource_url`** → anyone commenting BUILD on these two
+posts is **receiving no automated resource right now**. This is the single live
+conversion gap and the highest-value fix.
+
+**Why no DMs were sent anyway (correct + safe):** the comments themselves can't be
+reached from this session — the Blotato MCP has **no comment-read/reply endpoint**,
+and native Meta-Graph/YouTube polling needs `FB_PAGE_TOKEN`/`YOUTUBE_API_KEY` (FB ❌,
+YT ❌). The IG comment→DM loop for BUILD runs through **GHL** (credentialed ✅), so
+the fix is in GHL, not here. URLs are never invented (skill rule / security §1), so
+even a reachable BUILD comment would have nothing valid to deliver until the resource
+is hosted. **0 replies, 0 DMs, 0 leads, no posting, no queue release** — queue-only
+and human-in-loop honored. All 6 publishing platforms connected; none disconnected.
+
