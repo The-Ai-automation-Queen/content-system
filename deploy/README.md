@@ -30,14 +30,19 @@ system. You have a **VPS** and **Telegram** — that's exactly what this kit nee
 git clone https://github.com/the-ai-automation-queen/content-system.git ~/content-system
 cd ~/content-system
 git checkout main                       # run the synced mirror, not a feature branch
-bash deploy/install.sh                  # installs everything + starts the dashboard
-nano deploy/.env                        # paste keys (Telegram + the machine APIs you use)
+bash deploy/install.sh                  # installs everything (incl. Doppler CLI) + starts dashboard
+
+# Secrets — pick one:
+doppler login && doppler setup          # Option A: Doppler (recommended — encrypted + auditable)
+doppler secrets set TELEGRAM_BOT_TOKEN=xxx TELEGRAM_CHAT_ID=xxx ANTHROPIC_API_KEY=xxx
+# OR: nano deploy/.env                 # Option B: plain .env fallback
+
 ./deploy/telegram-notify.sh "OS online" # you should get a Telegram ping
 ssh-copy-id $USER@<vps-ip>              # ensure your SSH key is installed, then harden:
 ./deploy/harden-vps.sh                   # PLAN the hardening (changes nothing) — read it
 sudo ./deploy/harden-vps.sh apply        # APPLY, then TEST ssh in a 2nd session (SECURITY.md)
 sed -i "s|__REPO__|$PWD|g" deploy/crontab.example && crontab deploy/crontab.example
-crontab -l                              # confirm the 3 schedules are installed
+crontab -l                              # confirm the schedules are installed
 ```
 
 That's the system live. The sections below explain each gap so you know what
@@ -86,9 +91,11 @@ finish. Check `deploy/logs/` for the transcript. If this works, the loop works.
 sed -i "s|__REPO__|$PWD|g" deploy/crontab.example
 crontab deploy/crontab.example
 ```
-You now have: daily signal harvest @ 02:00 (1 retry), the full weekly loop Monday
-@ 06:00 (1 retry), and the DM responder every 5 min. Each one alerts Telegram on
-failure (and on success). Edit times/timezone in `crontab.example` to taste.
+You now have: brain-manager @ 20:00 (evening brain update), signal-harvester @
+02:00, content-engine daily @ 02:30 (5 scripts ready by morning), performance-
+tracker @ 03:00, the full weekly loop Monday @ 06:00, and the DM responder every
+5 min. Each one alerts Telegram on failure (and on success). Edit times/timezone
+in `crontab.example` to taste.
 
 > **Why this mirrors Romain exactly:** `run-machine.sh` *is* the cron-with-retry-
 > and-Telegram layer that `scheduler.config.json` only describes. Flip
@@ -118,16 +125,56 @@ A useful side effect: UFW closes everything except SSH, so the **dashboard
 
 ---
 
-## Gap 2 — Live API keys (paste, don't allowlist)
+## Gap 2 — Secrets management (Doppler) + API keys
 
-**On the VPS there is nothing to allowlist.** And you only *need* one paid key —
-the rest are covered by tools you already have. Paste what you use into
-`deploy/.env`.
+**On the VPS there is nothing to allowlist.** Secrets are managed by **Doppler**
+(encrypted, auditable, rotatable) instead of a plain `.env` file.
+
+### 2a. Set up Doppler (one time, 3 minutes)
+
+1. **Create a free account** at [doppler.com](https://doppler.com) — the free
+   plan covers unlimited secrets and 5 projects (more than enough).
+2. **On the VPS** (already installed by `install.sh`):
+   ```bash
+   doppler login                      # opens a browser link to authenticate
+   doppler setup                      # select project: content-os, config: prd
+   ```
+3. **Add your secrets:**
+   ```bash
+   doppler secrets set \
+     TELEGRAM_BOT_TOKEN=123456:ABC... \
+     TELEGRAM_CHAT_ID=987654321 \
+     ANTHROPIC_API_KEY=sk-ant-... \
+     HEYGEN_API_KEY=... \
+     UNIPILE_API_KEY=... \
+     UNIPILE_DSN=...
+   ```
+   Add only the keys you actually use. You can also add them via the Doppler
+   web dashboard (easier for copy-paste).
+
+4. **Verify:** `doppler secrets` — should list your keys (values masked).
+
+That's it. `run-machine.sh` auto-detects Doppler and injects secrets at runtime
+via `doppler run`. No `.env` file needed — but `deploy/.env` still works as a
+fallback if Doppler isn't configured.
+
+### Why Doppler instead of `.env`
+
+| | `.env` file | Doppler |
+|---|---|---|
+| Storage | Plain text on disk | Encrypted at rest + in transit |
+| Rotation | SSH in, edit file, restart | One command or web UI, instant |
+| Audit trail | None | Full history: who changed what, when |
+| Team access | Share the file | Role-based access, no file sharing |
+| Cost | Free | Free (up to 5 projects) |
+
+### 2b. API keys
 
 | Key in `.env` | Unlocks | Notes |
 |---|---|---|
 | `HEYGEN_API_KEY` | M02 talking-head of *you* (`skills/heygen`) | **The one paid tool worth it.** HeyGen → Settings → API. After your first clone, paste the **avatar_id + voice_id** into `inventory.md`. |
 | `GHL_API_KEY` *(optional)* | M05 lead writes into GoHighLevel (`skills/dm-responder`) | Only if you want the skill to push leads into GHL directly. GHL already does comment→DM→capture→nurture **natively** — no key strictly required. |
+| `UNIPILE_API_KEY` + `UNIPILE_DSN` | M05 LinkedIn DM automation (`skills/dm-responder`) | Auto-DM on LinkedIn comment keywords — the Romain pattern. Sign up at unipile.com, connect your LinkedIn account. |
 
 ### Tools you can SKIP (don't pay for these)
 - **ManyChat** → **GoHighLevel** does it. You already run GHL; it catches the

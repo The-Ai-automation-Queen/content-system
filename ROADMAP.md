@@ -9,7 +9,39 @@
 
 ## Build log
 
-### 2026-06-23 (latest) — M06 performance tracker + dashboard intelligence
+### 2026-06-26 (latest) — Brain Manager + daily crons + Unipile + machine docs
+Closed the 4 remaining gaps vs. Romain Brunel's always-on system (from RESEARCH
+019 gap analysis of his LinkedIn automation video):
+- **`brain-manager`** (M00, the Cerveau Manager) — daily brain update loop. Asks
+  the operator 5–7 contextual questions about real life, projects, opinions, and
+  current events, then writes answers into `personal-brain.md`. This is the #1
+  gap that was missing: the living memory layer that makes posts personal, not
+  generic. Runs at 20:00 daily (evening, so answers feed the next morning's
+  scripts). Supports `update` (daily), `review`, and `seed` (initial onboarding)
+  modes.
+- **`personal-brain.md`** created — the operator's living memory file. 11
+  categories: anecdotes, opinions, projects, numbers, lead magnets, stack, life
+  events, background, inspirations, testimonials, current focus. Date-stamped,
+  append-only. `content-engine` now loads it as step 3 of "load the brain."
+- **Daily content-engine cron** — added `content-engine daily` cron at 02:30
+  (after signal-harvester at 02:00). Generates 5 scripts per day: 1 storytelling
+  (from personal-brain), 2 AI news (from signals), 1 opinion, 1 educational.
+  Scripts ready when the operator wakes up — 5–10 min/week to pick winners.
+- **Unipile for LinkedIn DMs** — wired into `dm-responder` as the LinkedIn
+  channel. Auto-DM on comment keywords (3 message variants, randomized timing,
+  50 DMs/day cap). Needs `UNIPILE_API_KEY` + `UNIPILE_DSN` in `deploy/.env`.
+- **Per-machine operational docs** — `docs/machines/` with detailed operational
+  guides for M00–M06 (purpose, inputs, outputs, validation criteria, decision
+  framework for AI delegation). Modeled on Romain's per-machine documentation
+  approach for eventual AI autonomy.
+- Updated: `CLAUDE.md` (second brain, skills list, loop diagram, daily crons),
+  `inventory.md` (M00 brain-manager + Unipile in tools table + missing checklist),
+  `content-engine` (loads personal-brain.md, `daily` mode for 5-script generation),
+  `dm-responder` (Unipile LinkedIn setup), `weekly-ops` (brain-manager as step 0),
+  `crontab.example` (M00 @ 20:00, M01 scripts @ 02:30, M06 @ 03:00),
+  `.env.example` (Unipile keys), `video-transcription` skill + transcript.
+
+### 2026-06-23 — M06 performance tracker + dashboard intelligence
 Added the feedback loop so the system measures what it ships:
 - **`performance-tracker`** (M06) — scrapes all connected platforms (Meta Graph
   API for IG/FB when tokens set, Apify fallback for everything) for follower
@@ -33,7 +65,7 @@ Built the missing machines from the Romain architecture teardown
 - **`reels-factory`** (M03) — long video → many shorts (Opus Clip API; Blotato
   `combine-clips` fallback), landed as critic-scored vault drafts.
 - **`dm-responder`** (M05, the money engine) — comment-keyword → DM resource →
-  lead capture (ManyChat for IG; Blotato/native APIs for FB+YT), backed by the
+  lead capture (GoHighLevel for IG; Blotato/native APIs for FB+YT), backed by the
   new `lead-magnets.csv` registry.
 - **`weekly-ops`** extended to chain all machines (signal → … → distribution → DM).
 - **Multi-brand:** `tenants/` with a `_template` (tenant.json + brain files) so
@@ -93,14 +125,16 @@ Implemented the architecture and the core automation layer:
 
 Run the loop on a fixed rhythm so the system stays alive. Targets:
 
-| Job | Skill | Suggested cadence |
-|---|---|---|
-| Research sweep | `research-digest` | Weekly |
-| Competitor / creator scan | `competitor-watch` | Weekly |
-| Pipeline health check | `vault-audit` | Weekly |
-| Draft generation | `content-engine` | Weekly (after the three above) |
-| Performance scrape | `performance-tracker` | Daily (03:00 GST, after signal-harvester) |
-| Full loop | `weekly-ops` | Weekly (runs all five) |
+| Job | Skill | Cadence | Cron time (GST) |
+|---|---|---|---|
+| Brain update | `brain-manager` | **Daily** | 20:00 |
+| Signal harvest | `signal-harvester` | **Daily** | 02:00 |
+| Script generation | `content-engine daily` | **Daily** (5 scripts) | 02:30 |
+| Performance scrape | `performance-tracker` | **Daily** | 03:00 |
+| Competitor / creator scan | `competitor-watch` | Weekly | via weekly-ops |
+| Pipeline health check | `vault-audit` | Weekly | via weekly-ops |
+| Full loop | `weekly-ops` | Weekly (Mon 06:00) | 06:00 Mon |
+| DM responder | `dm-responder` | Every 5 min | */5 |
 
 **Publishing cadence target** (to confirm with the operator): short-form video
 blasted across Instagram, TikTok, LinkedIn, and YouTube Shorts — publish

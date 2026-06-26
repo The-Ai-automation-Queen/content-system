@@ -29,8 +29,8 @@ what exists, where it lives, and which skill to run for which job.
 
 ## Second Brain (Step 1) — the source of truth
 
-Everything the engine produces or reasons over lives in two files. Treat these as
-the database. Never invent content that contradicts them.
+Everything the engine produces or reasons over lives in three files. Treat these
+as the database. Never invent content that contradicts them.
 
 - **`content-vault.md`** — every content entry. Newest entries are numbered
   `## ENTRY NNN` at the top, with a quick-reference list of the most recent
@@ -41,7 +41,11 @@ the database. Never invent content that contradicts them.
   ENTRY 001–019 live in `content-vault-archive.md` (obsolete).
 - **`research-notes.md`** — dated research findings (`## RESEARCH NNN`), each with
   topics searched, key findings, signals, ready-to-use content angles, and one
-  logged contrarian take. Current highest is **RESEARCH 018**.
+  logged contrarian take. Current highest is **RESEARCH 020**.
+- **`personal-brain.md`** — the operator's living memory (the "Cerveau"). Updated
+  daily by `brain-manager` with real anecdotes, opinions, projects, numbers, life
+  events, and current focus. This is what makes content personal — not generic AI
+  output. `content-engine` loads it before every writing pass.
 
 ---
 
@@ -58,7 +62,12 @@ Skills are reusable, version-controlled instructions. Two kinds live here:
   before writing any script, hook, or outline.
 
 **Action skills** (in `skills/`, each a folder with a `SKILL.md`). Mapped to
-Romain's 5 machines:
+Romain's machines:
+- **`brain-manager`** — *M00, the Cerveau Manager.* Daily brain update loop: asks
+  the operator 5–7 contextual questions about their real life, projects, opinions,
+  and current events, then writes answers into `personal-brain.md`. This is what
+  makes content feel personal — the AI knows her anecdotes, her opinions, her
+  numbers. Modeled on Romain Brunel's Telegram-based Cerveau Manager.
 - **`signal-harvester`** — *M01 data layer.* Multi-source daily signal harvest
   (Apify IG/X scrapes, YouTube virality, RSS blogs, Tavily) with a source-mix +
   ≥2-lead-magnet rule → a `research-notes.md` entry. The richer alternative to
@@ -77,8 +86,9 @@ Romain's 5 machines:
 - **`distribution`** — *M04.* Pushes `READY TO POST` entries into the **Blotato
   queue** across the connected platforms, writes status back. **Queue-only.**
 - **`dm-responder`** — *M05, the money engine.* Auto-replies to comment-keyword
-  CTAs with the lead-magnet link and captures the lead (ManyChat for IG; Blotato/
-  native APIs for FB+YT). Backed by `lead-magnets.csv`.
+  CTAs with the lead-magnet link and captures the lead (GoHighLevel for IG;
+  Unipile for LinkedIn; Blotato/native APIs for FB+YT). Backed by
+  `lead-magnets.csv`.
 - **`performance-tracker`** — *M06, the feedback loop.* Scrapes all connected
   platforms (Meta Graph API for IG/FB when tokens set, Apify fallback for all)
   for follower counts + post-level engagement, writes `performance-log.md`,
@@ -90,6 +100,10 @@ Romain's 5 machines:
   `research-notes.md` entry. (Lighter fallback for `signal-harvester`.)
 - **`competitor-watch`** — creator/competitor movement scan → `reports/`.
 - **`vault-audit`** — pipeline health check → `reports/`.
+- **`video-transcription`** — YouTube (or other) video → full transcript saved
+  to `transcripts/` + a summarized RESEARCH entry in `research-notes.md` with
+  key takeaways, stack mentions, and gap analysis vs. our system. Dual-path:
+  `yt-dlp` (fast, local) with web-extraction fallback (cloud).
 
 > **Multi-brand:** the engine is brand-agnostic. Additional clients live under
 > `tenants/<slug>/` with their own brain + connections; skills take `--tenant`.
@@ -104,13 +118,18 @@ Romain's 5 machines:
 ## Agentics (Step 8) & Maintenance (Step 7) — the loop
 
 The system stays alive through a recurring loop, not one-off prompts. As of
-2026-06-23 the loop runs the **full Romain-shape across all 6 machines** —
-signal → script → visual → queue → DM/lead → measure:
+2026-06-26 the loop runs the **full Romain-shape across all 7 machines** —
+brain → signal → script → visual → queue → DM/lead → measure:
 
 ```
-signal-harvester → competitor-watch → vault-audit → content-engine → visual-engine(+heygen) → reels-factory → distribution → dm-responder → performance-tracker
-   (M01 data)        (what others do)   (what's stale)  (M01 scripts)     (M02 visuals/face)      (M03 shorts)    (M04 → queue)   (M05 → leads)   (M06 → measure)
+brain-manager → signal-harvester → competitor-watch → vault-audit → content-engine → visual-engine(+heygen) → reels-factory → distribution → dm-responder → performance-tracker
+  (M00 brain)     (M01 data)        (what others do)   (what's stale)  (M01 scripts)     (M02 visuals/face)      (M03 shorts)    (M04 → queue)   (M05 → leads)   (M06 → measure)
 ```
+
+**Daily crons** (VPS): brain-manager @ 20:00, signal-harvester @ 02:00,
+content-engine daily @ 02:30 (5 scripts ready by morning), performance-tracker
+@ 03:00. The brain-manager runs in the evening so the operator's answers feed
+the next morning's scripts.
 
 `skills/weekly-ops` runs this end to end and writes a dated set of reports to
 `reports/`. **Publishing is queue-only:** `distribution` schedules unflagged ready
