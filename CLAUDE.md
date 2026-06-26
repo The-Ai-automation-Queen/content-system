@@ -41,7 +41,7 @@ as the database. Never invent content that contradicts them.
   ENTRY 001–019 live in `content-vault-archive.md` (obsolete).
 - **`research-notes.md`** — dated research findings (`## RESEARCH NNN`), each with
   topics searched, key findings, signals, ready-to-use content angles, and one
-  logged contrarian take. Current highest is **RESEARCH 019**.
+  logged contrarian take. Current highest is **RESEARCH 020**.
 - **`personal-brain.md`** — the operator's living memory (the "Cerveau"). Updated
   daily by `brain-manager` with real anecdotes, opinions, projects, numbers, life
   events, and current focus. This is what makes content personal — not generic AI
