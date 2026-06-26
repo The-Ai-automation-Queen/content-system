@@ -81,5 +81,6 @@ if [ "$ok" -ne 0 ]; then
   exit 1
 fi
 
-notify "✅ ${SKILL} done. $(git log -1 --pretty=%s 2>/dev/null)"
+# Success is silent — only failures ping Telegram.
+# To see what ran, check deploy/logs/ or the git history.
 echo "== done ${SKILL} ==" >>"$LOG"
