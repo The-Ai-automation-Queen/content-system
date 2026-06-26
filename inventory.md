@@ -63,16 +63,27 @@ Every piece maps to one (see `positioning/SKILL.md`):
 5. **What's Worth It** — curated AI tools/news that actually matter (not daily)
 6. **Real Talk** — relatable founder lessons from having built it
 
-## 5. Offers / how it monetizes (active now)
+## 5. Offers / how it monetizes
 
-1. Paid **community / membership** (core, scalable)
-2. **Digital products / courses**
-3. **Corporate speaking / workshops** — high-ticket, warm-network, near-term cash
-   (fed by the LinkedIn authority; productized one-to-many, not 1:1 time)
-4. A packaged **system / "OS"** to sell (roadmap)
-5. **Affiliate / sponsorships** (opportunistic)
+The full offer ladder — from lowest commitment to highest. Every content piece
+should pull people toward one of these. See `skills/monetisation/SKILL.md` for
+the ACP funnel rules, CTA map, and the full conversion flow.
+
+| Tier | Offer | Price | Platform | Status |
+|---|---|---|---|---|
+| 0 | **Lead magnets** (7 written, in `lead-magnets/`) | Free | GHL | ⚠️ INACTIVE — host on GHL, set `active=yes` |
+| 1 | **AI Time Audit Template** | $47 (one-time) | Gumroad | 🔴 Build |
+| 2 | **Business OS Starter Kit** | $97 (one-time) | Gumroad | 🔴 Build — see `skills/business-os-kit/` |
+| 3 | **AI Automation Queen Community** | $197/month or $1,497/year | Skool | 🔴 Launch (20 founding spots at $97/month locked) |
+| 4 | **Business OS Bootcamp** | $997 per cohort | Skool + GHL | 🔴 Build waitlist from community |
+| 5 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn DM | 🟡 Activate — send one-pager to 10 warm contacts |
 
 Not offered: 1:1 advisory/consulting; time-consuming beginner training.
+
+Revenue ceiling (arithmetic): 500 community members × $197/month = $98,500/month
+= $1.18M/year from one offer alone. Add Bootcamp cohorts, product sales, and
+speaking fees → $3–5M/year within 2–3 years. The content engine is built; the
+revenue layer in `skills/monetisation/` just needs activating.
 
 ## 6. Data sources (what feeds the engine)
 
