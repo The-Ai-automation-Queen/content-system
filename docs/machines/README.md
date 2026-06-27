@@ -2,8 +2,7 @@
 
 Per-machine documentation so an AI agent (or a human operator) can understand
 exactly how each machine works, what it needs, and how to validate its output.
-Modeled on Romain Brunel's approach: document every machine well enough that an
-AI can eventually take over the human validation step.
+Document every machine well enough that an AI can eventually take over the human validation step.
 
 Each doc covers: purpose, inputs, outputs, validation criteria, common failures,
 and the decision framework for approving output.
