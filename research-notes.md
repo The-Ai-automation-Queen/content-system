@@ -2,6 +2,33 @@
 
 ---
 
+## RESEARCH 021 — 2026-06-27 | Daily signal harvest
+
+**Status:** NOTED
+**Sources hit:** Twitter (2, via Tavily fallback), Instagram (2), YouTube (1), RSS (1), News (1)
+**Source health:** Apify Twitter scraper (`apidojo/twitter-scraper-lite`) returned **free-tier demo data only** (`{"demo":true}`, "subscribe to a paid plan") → X slots filled from Tavily (x.com) per failure-mode rule. Apify Instagram (`apify/instagram-scraper`) **worked for @sabrina_ramonov** but returned **empty/`not_found` for @angelica_automates and @rileybrown.ai** → both IG slots drawn from Sabrina (two distinct formats) instead of two creators. See operator action below.
+
+### Signals of the day (7)
+1. [TW] "AI agents aren't tools, they're team members" — @keyelifeai thread: founder wakes to agent data-reports, directs several "AI employees" before the day starts. https://x.com/keyelifeai/status/2068378344761286906 — frames agents as a team you manage, not software you operate.  ★ LEAD-MAGNET (→ "TEAM" / First AI Employee)
+2. [TW] "Loop Engineering: the skill replacing prompt engineering" — @vicky_grok on an Anthropic engineer's paper: stop prompting agents, build *systems* that prompt agents (discover → build → adversarial verify → remember → restart). https://x.com/vicky_grok/status/2070074685669470672 — "a prompt gives you an answer; a loop gives you a machine." Contrarian-adjacent, high signal.
+3. [IG] @sabrina_ramonov — "Claude AI makes 1000 videos for near $0" (Claude Code + Remotion skill, runs locally): screenshots, animated text, voiceovers, captions all from one prompt. 202K plays / 6.9K likes / 14.8K comments. Comment "ANIMATION" → 5 free master prompts. https://www.instagram.com/p/DWNYBksiKYD/ — build-once automation as the hook.  ★ LEAD-MAGNET (comment-trigger → prompt pack; maps to our PIPELINE/PROMPT shape)
+4. [IG] @sabrina_ramonov — fresh 26/06 reel: "I asked ChatGPT to swipe left or right on my selfie" — consumer ChatGPT-trick format, 10.9K plays in <24h. https://www.instagram.com/p/DaD811ejLGW/ — shows the *playful consumer-AI* format still pulls; contrast to her system content.
+5. [YT] Metics Media — "How to Build AI Agents That Actually Work (No Code)" (24/06/2026): a small agent team that "does real work in the background, even while you sleep" — job description + tools + memory, scheduled with a budget cap, in Slack as a teammate. 3,217 views / 626K subs. Virality score: **2/100** (fresh, modest views — relevance high, virality low). https://www.youtube.com/watch?v=b0ymN8OgiMM  ★ LEAD-MAGNET-adjacent (→ "TEAM" / always-on AI employee)
+6. [RSS] Anthropic News — "Introducing Claude Tag" (23/06/2026): new way for *teams* to work with Claude. Also live: "Claude Corps" early-career fellowship (11/06). https://www.anthropic.com/news/introducing-claude-tag — primary-source product signal for the What's Worth It pillar.
+7. [NEWS] "I Tested AI Agents for Everyday Work — the Only Ones Worth Using" (Medium, last 7d): the keeper test = "saves you 5 hours/week without creating new problems; everything else is just a demo." Names Lindy (automation), Relevance AI (content pipelines), Zapier/Make (glue). https://medium.com/@a_siamtanis/i-tested-ai-agents-for-everyday-work-these-are-the-only-ones-worth-using-8422ab52d48d — the "demo vs. keeper" filter is a ready hook.
+
+### Top 3 content angles ready to use
+- "A creator with 500K+ followers just made 1,000 videos for basically $0 — no team, no editor, no expensive software." → pillar: **Build Once, Runs Forever** → lead-magnet hook: comment **PIPELINE** (Voice Clone Pipeline). The tool (Claude Code + a skill) isn't the flex — the system that runs while she sleeps is. (Signal 3.)
+- "Everyone's selling 'build AI agents, charge clients $2–5k.' That's not freedom — that's freelancing with extra steps." → pillar: **The Freedom Business** → lead-magnet hook: comment **TEAM** (First AI Employee). The agent worth building is the one that runs YOUR business, not the one you demo for a client. (Signals 1, 5 + the Hostinger "build & sell agents" trend.)
+- "If an AI tool doesn't save you 5 hours a week without creating new problems, it's just a demo." → pillar: **What's Worth It** → the keeper test as a filter for the tool-overwhelm audience. (Signal 7.)
+
+### Contrarian take logged
+Everyone teaching "build and sell AI agents for $2–5k a client" is quietly selling the agency model — you trade your hours building bespoke agents for other people. That's freelancing with an AI coat of paint: more clients = more delivery = the same hamster wheel you were trying to leave. The real freedom move isn't selling agents to others; it's building the *one* agent that runs your own business while you sleep, then selling the **system** (a product), not the build (your time). The "$5k agent build" crowd rebuilt the agency treadmill and called it AI — leverage was never the agent, it's whether the thing you sell scales without you.
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 020 — 2026-06-26 | 73%/10% Enterprise Gap · 78% Can't Prove AI Works · Goldman Sachs 11K Jobs/Month (Gen Z Hardest Hit) · EU AI Act 37-Day Countdown · 1-in-3 Startups Now Solo
 
 **Status:** NOTED
