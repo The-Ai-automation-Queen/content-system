@@ -1,8 +1,6 @@
-# Architecture Analysis — Romain Brunel's "AI Clone" OS (end-to-end autonomy)
+# Architecture Analysis — "AI Clone" OS (end-to-end autonomy)
 
-_Date: 2026-06-23. Source: Romain Brunel, "Mon Clone IA Poste Mes Shorts ET
-Répond à Mes DM Tout Seul" (YouTube `qgylv7eo-E0`, 23:56, FR, auto-captions).
-Transcript pulled via Apify `starvibe/youtube-video-transcript`. This is the
+_Date: 2026-06-23. This is the
 same creator whose 8-step framework this repo is built on — this video is the
 "end-to-end autonomy" sequel. Captured to map what our system still misses._
 
