@@ -119,6 +119,11 @@ Romain's machines:
   Dinners" (10–15 people, monthly, intimate format in Dubai), manages invite
   sequences and post-event follow-up, and extracts 4 vault-ready content pieces
   per event. Run with `plan-event`, `invite-sequence`, or `post-event-content`.
+- **`prospecting`** — *Daily biz-dev intelligence.* Scans for Dubai events,
+  LinkedIn engagement targets, podcast/collab opportunities, corporate training
+  RFPs, and quick wins. Writes a dated briefing to `reports/` with actionable
+  items the operator can execute in 15 minutes. Add to daily cron after
+  performance-tracker.
 
 > **Multi-brand:** the engine is brand-agnostic. Additional clients live under
 > `tenants/<slug>/` with their own brain + connections; skills take `--tenant`.
