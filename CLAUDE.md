@@ -6,6 +6,13 @@ on the 8-step framework from Romain Brunel's *"I Automated My Entire Business
 with Claude Code"* ([video](https://youtu.be/RCzvjTgH-Nw)), adapted to a
 personal-brand content operation.
 
+**What the brand does (as of 30/06/2026):** AI marketing strategy enhanced with
+AI agents + twin avatar creation for busy professionals who want to reinforce
+their online presence without burning out. She also serves as fractional AI CMO
+for companies wanting AI in their marketing. The content, the engine, and the
+systems she uses daily ARE the proof of concept — she runs her entire business
+this way.
+
 If you are an agent working in this repo, **read this file first.** It tells you
 what exists, where it lives, and which skill to run for which job.
 
@@ -104,13 +111,15 @@ Romain's machines:
   to `transcripts/` + a summarized RESEARCH entry in `research-notes.md` with
   key takeaways, stack mentions, and gap analysis vs. our system. Dual-path:
   `yt-dlp` (fast, local) with web-extraction fallback (cloud).
-- **`monetisation`** — *The revenue layer.* Defines the offer ladder (free lead
-  magnets → $97 Starter Kit → $197/month Community → $997 Bootcamp → $5–15k
-  Speaking), the ACP funnel tagging rules, the CTA map by content pillar, the
-  conversion flow (content → email → community → product), and the monthly
-  revenue tracker. Referenced by `content-engine` for ACP stage + CTA selection.
-  Run with `activation-check` to audit revenue gaps, `revenue-audit` for the
-  weekly report, or `launch-plan <offer>` to plan a product launch.
+- **`monetisation`** — *The revenue layer.* Defines the offer ladder across two
+  tracks: Individual (lead magnets → digital products → AI Twin mini-course →
+  Presence Engine Starter Kit $997 → ongoing $2,500-5,000/mo → community) and
+  Company (fractional AI CMO $3-8k/mo → agency white-label → certification).
+  Also defines ACP funnel tagging rules, CTA map by content pillar, conversion
+  flow, and monthly revenue tracker. Referenced by `content-engine` for ACP stage
+  + CTA selection. Run with `activation-check` to audit revenue gaps,
+  `revenue-audit` for the weekly report, or `launch-plan <offer>` to plan a
+  product launch.
 - **`business-os-kit`** — *Product packaging.* Packages this Business OS into
   three sellable products (Starter Kit $97, Community $197/month, Bootcamp $997)
   and produces the promotional launch content. Run with `build-starter-kit`,

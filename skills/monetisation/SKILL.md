@@ -32,21 +32,30 @@ brand: automation for freedom, not enterprise jargon.
 ## The Offer Ladder
 
 Every piece of content pulls people toward one of these tiers, in order of
-commitment. Never jump a stranger from free to $997.
+commitment. Never jump a stranger from free to $2,500/month.
+
+The ladder has two tracks: **Individual** (busy professionals wanting AI
+presence) and **Company** (businesses wanting AI-powered marketing). Both
+feed from the same content and brand authority.
 
 | Tier | Offer | Price | Platform | Status |
 |---|---|---|---|---|
-| 0 | **Lead magnets** (7 ready in `lead-magnets/`) | Free | GHL | ⚠️ INACTIVE — activate immediately |
-| 1 | **AI Time Audit Template** | $47 | Gumroad | 🔴 Build |
-| 2 | **Business OS Starter Kit** | $97 (one-time) | Gumroad | 🔴 Build — see `skills/business-os-kit/` |
-| 3 | **AI Automation Queen Community** | $47/month or $397/year | Skool | 🔴 Launch |
-| 4 | **Business OS Bootcamp** | $997 per cohort | Skool + GHL | 🔴 Build waitlist |
-| 5 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn | 🟡 Activate outreach |
+| 0 | **Lead magnets** (7+ ready in `lead-magnets/`) | Free | GHL | ⚠️ INACTIVE — activate immediately |
+| 1 | **Digital products** (templates, prompt libraries, voice kits) | $47–197 | Gumroad | 🔴 Build |
+| 2 | **"Build Your AI Twin" Mini-Course** | $197–497 (one-time) | Gumroad / Teachable | 🔴 Build |
+| 3 | **Presence Engine Starter Kit** | $997 (one-time) | Direct | 🔴 Build + launch |
+| 4 | **AI Automation Queen Community** | $47/month or $397/year | Skool | 🔴 Launch |
+| 5 | **Presence Engine — Ongoing** | $2,500/month | Direct | 🟡 Founding clients |
+| 6 | **Presence Engine — Full Clone** | $5,000/month | Direct | 🟡 After proof |
+| 7 | **Fractional AI CMO** | $3,000–8,000/month | Direct / LinkedIn | 🟡 Activate outreach |
+| 8 | **Speaking / Keynotes** | $5,000–$15,000 | Direct / LinkedIn | 🟡 Activate outreach |
+| 9 | **Agency white-label / licensing** | Custom | Direct | 🔴 After 3-5 clients |
+| 10 | **Certification program** | $2,000–5,000 | Cohort | 🔴 Month 6+ roadmap |
 
 ### What each offer is
 
 **Tier 0 — Lead magnets (FREE)**
-Seven resources already written and sitting in `lead-magnets/`. None are live.
+Resources already written and sitting in `lead-magnets/`. None are live.
 Activating them is the single fastest action available — the content exists,
 ManyChat is partially configured, GHL is already the target platform. All that's
 needed is: host each resource on a GHL page, paste the URL into `lead-magnets.csv`,
@@ -61,24 +70,34 @@ Current resources and their keyword triggers:
 - PROMPT — "What Is a Prompt — and How to Write One That Works"
 - WORDS — "12 AI Words Everyone Uses — Explained in Plain English"
 - PIPELINE — "Voice Clone Pipeline — Build Once, Post in Your Voice Forever"
+- CLONE — "3-Step Cheat Sheet: Clone Your Presence with AI" *(NEW — build this)*
 
-**Tier 1 — AI Time Audit Template ($47)**
-A Notion template + short video (~10 min). The buyer maps their current week;
-the template shows exactly how many hours could be reclaimed with AI. Low-ticket,
-impulse buy, high conversion. Sells on Gumroad. Build time: ~3 hours total.
-Funnel position: first paid touchpoint, easy yes, proves the method.
+**Tier 1 — Digital products ($47–197)**
+Standalone, self-serve resources. Build once, sell forever:
+- **Content Engine Templates** ($97–197) — pre-built n8n/Make workflows for
+  content automation + prompt libraries for different industries.
+- **Voice & Brand Kit** ($47–97) — templates to define your brand voice for AI,
+  prompt engineering guide for "sounding like you."
+- **AI Time Audit Template** ($47) — Notion template + short video. Map your week,
+  see exactly how many hours AI can reclaim.
 
-**Tier 2 — Business OS Starter Kit ($97)**
-A packaged version of this content OS: a Notion brain template, 3 simplified
-skill guides, and a 20–25 min Loom walkthrough. The taste of the full system for
-a non-technical buyer. See `skills/business-os-kit/SKILL.md` for the complete
-build instructions and sales copy framework.
+**Tier 2 — "Build Your AI Twin" Mini-Course ($197–497)**
+Step-by-step: record yourself, set up HeyGen/Synthesia, create your first 5
+avatar videos, set up a basic content engine. Self-paced, no hand-holding,
+includes templates and prompts. Perfect entry point for the bridge audience who
+want to DIY.
 
-**Tier 3 — AI Automation Queen Community ($47/month or $397/year)**
-A Skool community where everyday entrepreneurs build their freedom business with
-AI + automation. Monthly deliverables: 2 live sessions (one "Build with me," one
-Q&A) + 1 template/resource drop + peer accountability + searchable library of
-past sessions. The core recurring revenue engine.
+**Tier 3 — Presence Engine Starter Kit ($997 one-time)**
+Done-with-you setup: custom AI twin avatar (HeyGen) + voice clone (ElevenLabs) +
+90-day content strategy + 5 ready-to-publish avatar videos. The client records
+2-5 minutes of reference video, gets back a working twin and a plan. One
+onboarding call, then they're running.
+
+**Tier 4 — AI Automation Queen Community ($47/month or $397/year)**
+A Skool community where busy professionals and entrepreneurs build their AI
+presence and freedom business. Monthly deliverables: 2 live sessions (one
+"Build with me," one Q&A) + 1 template/resource drop + peer accountability +
+searchable library of past sessions. The core recurring revenue engine.
 
 Revenue math:
 - 50 members = $2,350/month
@@ -87,23 +106,41 @@ Revenue math:
 
 **Founding member offer (to launch fast):** First 20 spots at $27/month, locked
 for life. Post once on LinkedIn: "I'm opening 20 founding spots. Comment FOUNDING."
-Fill those 20 before going public at $47/month. Creates urgency, rewards early
-believers, and gives Fatiha the first community members to generate testimonials from.
 
-**Tier 4 — Business OS Bootcamp ($997)**
-A 6-week live cohort: 20–50 people build their own Business OS from scratch.
-Week 1: positioning + brain. Week 2: research machine. Week 3: content engine.
-Week 4: visuals + distribution. Week 5: money layer. Week 6: weekly ops loop.
-Taught live once, recorded, then sold as an evergreen self-paced product.
-First cohort: 20 people = $19,940. Source the waitlist from the community.
-Break-even is 1 student — everything above is margin.
+**Tier 5 — Presence Engine Ongoing ($2,500/month)**
+Everything in Starter Kit + full content engine setup (n8n workflows) + 20
+content pieces/month (avatar videos + text posts + carousels) + monthly strategy
+call. The client approves, the system publishes. Replaces a social media manager
+at half the cost.
 
-**Tier 5 — Corporate Speaking / Workshop ($5,000–$15,000)**
-Half-day or full-day workshop for corporate teams on AI + automation for
-productivity. Sold through LinkedIn authority and the warm corporate network
-(Dell / Intel / Microsoft contacts). One booking equals 25–75 community
-memberships in revenue. Does not require an audience — just one warm email
-to the right contact.
+**Tier 6 — Presence Engine Full Clone ($5,000/month)**
+Everything in Tier 5 + custom AI agents + multi-platform distribution + analytics
++ priority support. For executives and founders who want complete hands-off
+presence. Replaces an agency at a fraction of the cost.
+
+**Tier 7 — Fractional AI CMO ($3,000–8,000/month)**
+For companies (20-200 employees): audit current marketing, identify what AI can
+automate, set up executive team AI twins, build content engines, train the team.
+2-3 days/month commitment. 3-4 companies max at any time. High-ticket recurring
+revenue that also produces case studies for all other offers.
+
+**Tier 8 — Speaking / Keynotes ($5,000–$15,000)**
+Half-day or full-day workshop for corporate teams, or keynote at conferences.
+Sold through LinkedIn authority and the warm corporate network (enterprise tech
+contacts). Dubai + EMEA conference circuit (GITEX, World AI Expo, STEP, etc.).
+One booking equals 25–75 community memberships in revenue.
+
+**Tier 9 — Agency white-label / licensing (Custom)**
+License the Presence Engine system to Dubai media agencies. They sell it under
+their brand, Fatiha delivers the AI/avatar work. Revenue share (40/60 or 50/50)
+or licensing fee ($2,000/mo + $500/client/mo). Requires proof from 3-5 direct
+clients first.
+
+**Tier 10 — Certification program ($2,000–5,000)**
+"Certified AI Marketing Strategist" — train others to deliver the Presence
+Engine. Cohort-based, taught live once, then evergreen. They become licensed
+partners. This is the institution play (like Alicia Lyttle's IAAIC). Month 6+
+roadmap item.
 
 ---
 
@@ -112,23 +149,24 @@ to the right contact.
 When asked to produce the speaker one-pager, output this for operator review:
 
 **Fatiha Chikh — The AI Automation Queen**
-*Speaker, workshop facilitator, and Business OS architect*
+*Speaker, fractional AI CMO, and Presence Engine architect*
 
 **Three talk formats:**
-1. "The Freedom OS: How to Reclaim 20 Hours a Week with AI" — keynote (45 min)
-   For corporate conferences; shows non-technical leaders the exact system to
-   automate their busywork without coding.
-2. "AI for Everyday Entrepreneurs: The Practical Playbook" — half-day workshop
-   For teams of up to 30; participants leave with one live-built automation.
-3. "From Corporate to Freedom: How AI Made the Exit Possible" — keynote (45 min)
+1. "I Cloned Myself With AI — Here's What Happened to My Business" — keynote (45 min)
+   For tech and business conferences; the story of building a one-person business
+   powered by AI agents and a digital twin. Specific, provocative, proof-based.
+2. "AI Marketing Without the Agency: The Fractional CMO Playbook" — half-day workshop
+   For teams of up to 30; participants leave with an AI content engine prototype
+   and their first avatar video concept.
+3. "From 20 Years in Corporate to AI Freedom: The Automation Playbook" — keynote (45 min)
    For entrepreneurship and leadership conferences; bridges the corporate → founder
-   journey with AI as the unlock.
+   journey with AI as the unlock. Dubai/EMEA angle as differentiator.
 
 **Fees:** Keynote from $5,000 · Half-day workshop from $8,000 · Full-day from $15,000
 
-**What participants leave with:** A map of their own automatable workflows, a
-starter toolkit of the 3 tools that save the most time, and (workshop format)
-one live-built automation they built in the room.
+**What participants leave with:** A map of what AI can automate in their marketing,
+a starter toolkit of the 3 tools that replace a content team, and (workshop format)
+a live demo of their own AI twin avatar.
 
 Send this as a LinkedIn DM to 10 warm corporate contacts this week.
 
@@ -170,12 +208,12 @@ One CTA per post. Match to pillar + ACP stage.
 
 | Pillar | A post CTA | C post CTA | P post CTA |
 |---|---|---|---|
-| Time Wins | "Comment STACK — I'll send my 3-tool setup" | "This is what we work on every month inside [community] →" | "Get the Starter Kit → [link]" |
-| Build Once, Runs Forever | "Comment PIPELINE and I'll send the voice clone guide" | "A member just built this in a weekend. Here's what happened:" | "Bootcamp applications open → [link]" |
+| Time Wins | "Comment STACK — I'll send my 3-tool setup" | "This is what we work on every month inside [community] →" | "Get the Presence Engine Starter Kit → [link]" |
+| Build Once, Runs Forever | "Comment PIPELINE and I'll send the voice clone guide" | "A member just built this in a weekend. Here's what happened:" | "Build Your AI Twin — the mini-course is live → [link]" |
 | The Freedom Business | "Comment FREEDOM — I'll send the guide" | "Join the people building their freedom business with AI →" | "[Community name] is open: $47/month → [Skool link]" |
-| Stop Doing That by Hand | "Comment TEAM — I'll show you how to set this up for free" | "Inside the community we ran this setup live last week —" | "The Starter Kit walks through this step by step → [link]" |
+| Stop Doing That by Hand | "Comment CLONE — I'll send the 3-step cheat sheet" | "Inside the community we ran this setup live last week —" | "The Presence Engine does this for you → [link]" |
 | What's Worth It | "Comment WORDS for the plain-English AI jargon guide" | "What we actually debated in the community this week:" | "Community: where we filter signal from noise → [link]" |
-| Real Talk | "Comment DINNER if you're in Dubai and want in" | "The community is the people actually doing this. Come in →" | "20 founding spots at $97/month locked for life → [link]" |
+| Real Talk | "Comment DINNER if you're in Dubai and want in" | "The community is the people actually doing this. Come in →" | "20 founding spots at $27/month locked for life → [link]" |
 
 ---
 
