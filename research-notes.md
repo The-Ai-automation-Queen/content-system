@@ -2,6 +2,47 @@
 
 ---
 
+## RESEARCH 022 — 2026-06-30 | Video transcription: How to Monetize AI — Aspire with Emma Grede ft. Alicia Lyttle
+
+**Status:** NOTED
+**Source:** https://www.youtube.com/watch?v=-vrUfRMJL4w (Emma Grede / Aspire podcast)
+**Language:** English
+**Method:** web extraction (podscripts.co via Tavily + Apify)
+
+### Key takeaways (7 bullets)
+- **Manus.im is the #1 tool for presentations/media kits** — Alicia tested every presentation tool and says no tool beats Manus. The trick: tell it the exact style you want, then add "create this as if you had paid $20,000 for it" — the quality jumps dramatically. Whiteboard-style presentations especially shine.
+- **"Personal Intelligence Blueprint" method** — tell AI to create a personal intelligence blueprint about you by asking you questions, then "lock it in memory." All future outputs become deeply personalized to your business and brand.
+- **Three-step super prompt process** — (1) brain dump everything you want, (2) tell AI to "clean up this prompt for clarity and impact," (3) say "turn this into a super prompt" (adds role, goal, structure). Takes 2 minutes, dramatically changes output quality.
+- **AI team framework ($30K/month equivalent)** — create named AI agents with job descriptions, resumes, and even AI-generated profile images. Introduce them to real team members the same way you'd onboard a human hire (show resume, job description, photo). Named agents get used; "press release bot" does not.
+- **93 days without writing an email** — Alicia's AI agent "Maximus" runs on Telegram/WhatsApp via Base44, checks email, summarizes, asks how to respond, manages calendar, sends travel reminders. She reports being the best email responder in 26 years of business.
+- **Seven-fold efficiency gain** — Alicia reports 7x business efficiency improvement by leaning into AI across three core areas: (1) email management, (2) business marketing (245 ad campaigns created in minutes with Claude Code), (3) prospecting (daily 10 new client opportunities surfaced by AI).
+- **Claude Code was the surprise winner** — tool she was most skeptical of 6 months ago, now uses every day. Also praises Claude's Chrome extension for website usability testing (watches it click every button on your site and report issues).
+
+### Tools & stack mentioned
+- **Manus.im** — presentations and slide decks (her #1 tool for this)
+- **Claude (paid team tier, $25/month)** — content writing, landing pages, images, ads, agents, Chrome extension for website auditing
+- **Claude Code** — ad campaign creation (245 campaigns in minutes), now her most-used daily tool
+- **Claude Co-work** — creating images, videos in one go
+- **ChatGPT** — image creation (especially strong right now), personal intelligence blueprints, memory-based coaching
+- **Base44** — building "super agents" that communicate on WhatsApp/Telegram/iMessage, also builds mobile apps
+- **Gemini (Nanobanana)** — image creation
+- **OpenClaw** — explicitly NOT used due to security concerns; Claude Code + Manus cover the same ground
+
+### Content angles ready to use (3)
+- **"The $20,000 prompt trick for presentations"** — show your audience how Manus + one pricing prompt creates agency-quality media kits and pitch decks. Demonstrate before/after. → pillar: AI Automation
+- **"Your AI team costs $0/month — here's how to build one"** — walk through the named-agent method (resume, photo, job description, memory lock) vs. the generic "bot" approach nobody uses. Include the org chart visual. → pillar: Business Freedom
+- **"93 days without writing an email — here's my AI chief of staff setup"** — the Maximus framework: Base44 agent on Telegram, connected to email + calendar, daily prospecting briefings. Practical tutorial. → pillar: Time Freedom
+
+### Contrarian take logged
+"Everyone says AI replaces jobs. Alicia hired MORE humans than in 26 years of entrepreneurship because AI made the business grow so fast they needed more people — but only people who are AI-literate. The people who left were the ones who refused to work with AI."
+
+### Gap analysis vs. our stack
+- **We have:** Claude (content-engine), positioning system, content vault, research pipeline — we're already using AI strategically for content creation
+- **We're missing:** Manus.im for presentations/media kits/pitch decks, Base44 for WhatsApp/Telegram super agents, named AI team member framework with onboarding ritual, personal intelligence blueprint method
+- **Different approach:** We use a structured skill-based system (CLAUDE.md + skills/) rather than conversational memory-based coaching. Both valid — our approach is more reproducible; Alicia's is more personal/intuitive. We could integrate the "personal intelligence blueprint" concept into our brain-manager skill.
+
+---
+
 ## RESEARCH 021 — 2026-06-27 | Daily signal harvest
 
 **Status:** NOTED
