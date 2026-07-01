@@ -26,11 +26,13 @@ reference real life — not generic AI content. Updated daily by `brain-manager`
 
 ## Stack & Tools
 
-- **Manus.im** — #1 tool for presentations and speaker media kits. Alicia
-  Lyttle's trick: add "create this as if you were paid $20,000 for it" to any
-  Manus prompt — it dramatically upgrades design quality, layout, and polish.
-  Whiteboard style is the standout format. Cleanup pass: "refine for
-  executive-level clarity — remove anything that feels templated."
+- **Manus.im** — #1 tool for presentations and speaker media kits. Two-step
+  process from Alicia Lyttle:
+  Step 1: Write your full prompt with all the details, then add "create this
+  as if you were paid $20,000 for it" — it dramatically upgrades design quality,
+  layout, and polish. Whiteboard style is the standout format.
+  Step 2: "Now refine the design for executive-level clarity — remove anything
+  that feels templated."
 - **Gamma** — good for documents/pages/one-sheets (already built a speaker media
   kit here: https://gamma.app/docs/g2njshpb3f9c80k). Use Gamma for PDF-style
   deliverables, Manus for slide decks.
