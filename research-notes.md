@@ -2,6 +2,36 @@
 
 ---
 
+## RESEARCH 023 — 2026-07-03 | Daily signal harvest
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-07-03.md](reports/research-digest-2026-07-03.md)
+**Topics searched:** AI strategy business leaders frameworks case studies July 2026; EU AI Act US AI policy regulation deepfakes July 2026; enterprise AI adoption companies announcements July 2026; AI tools solopreneurs entrepreneurs non-technical leaders new July 2026; AI workforce jobs displacement reskilling data report July 2026; Microsoft Frontier Company 2.5 billion July 2026; IBM 2026 CEO study CAIO; Anthropic labor market AI impact research 2026; Goldman Sachs AI job displacement monthly 2026
+
+### Key Findings (summary)
+1. **Microsoft Frontier Company** (July 2, 2026): $2.5B new business unit, 6,000 engineers embedded inside enterprise clients to deploy and optimize AI. Amazon launched identical $1B program 2 days prior; OpenAI and Anthropic launched comparable programs in May. "Forward-deployed AI implementation" is now the enterprise playbook at every major provider. Partners: Unilever, Land O'Lakes, LSEG.
+2. **EU AI Act July 22 signatory deadline** (less known than August 2 enforcement): companies that want Code of Practice protection must file a signatory form with the EU AI Office by July 22 at 18:00 CEST. The August 2 enforcement date (Article 50: chatbot disclosures, deepfake labeling, fines up to €15M) has more coverage, but July 22 is the action deadline for maximum legal cover.
+3. **Anthropic labor market research**: AI could theoretically handle 70–90% of tasks in knowledge-worker roles (management, admin, finance, legal, marketing). Real-world enterprise usage sits at 20–30%. The gap is not capability — it's systems. No unemployment spike yet in exposed occupations, but hiring of workers aged 22–25 into those roles has slowed ~14%.
+4. **IBM 2026 CEO Study** (2,000 CEOs, May 2026): 76% of major organizations now have a Chief AI Officer — up from 26% in 2025. Companies that redesigned 5 core business areas are 4× more likely to meet objectives. Between 2026–2028: 53% of workers need upskilling for current roles; 29% need reskilling for different roles.
+5. **BCG: "AI will reshape more jobs than it replaces"** — challenges binary displacement narrative. Goldman Sachs tracking: ~16,000 net US jobs displaced/month as of April 2026, updated to ~11,000 net in June. BCG's framing: most roles will get an AI module grafted on; the people who don't update their operating model become the bottleneck.
+
+### Signals worth acting on
+- **Forward-deployed AI implementation as a consulting category**: all four major AI providers validated this model in the same 60-day window. The "done-with-you implementation" offer is now mainstream at enterprise tier and will filter down to SMB. Early mover advantage before the market crowds in.
+- **20–30% utilization ceiling is structural**: Anthropic data shows organizations plateau far below AI's theoretical capacity even with full access. The bottleneck is always workflow design and systems — exactly what this brand teaches.
+- **AI content labeling becoming platform UI, not just law**: July 22 → August 2 enforcement sequence will force Instagram, LinkedIn, TikTok, YouTube to surface disclosure features in Q3 2026. Getting ahead of this now signals sophistication.
+
+### Content angles (3 ready to use)
+1. "Microsoft needed 6,000 engineers to do what you can do alone. That's your advantage." → the enterprise bureaucracy is their moat against themselves; a solo operator can implement in a week what takes enterprises 18 months. **Pillar: The Freedom Business**
+2. "AI could already handle 70% of your admin. You're using it for 20%. Here's the gap." → Anthropic data as the hook; the difference is systems vs. treating AI like a search engine. **Pillar: Stop Doing That by Hand**
+3. "76% of Fortune 500 companies just hired a Chief AI Officer. You don't need the title — you need the system." → IBM stat as the hook; what a one-person CAIO function actually looks like. **Pillar: Build Once, Runs Forever**
+
+### Contrarian take logged
+The CAIO title is the new "digital transformation" press release. IBM's study shows 76% of companies now have a Chief AI Officer — the exact same percentage that called AI a "top strategic priority" in 2023 with zero production deployment behind it. Title creation is how organizations signal intent without accountability. The real indicator is whether AI appears in the P&L; only 10% of enterprises say it does (Publicis Sapient, June 2026). 66 percentage points have the CAIO, the subscriptions, and the town halls — but not the results. The people selling "get your CAIO certification" are building the same credential industry that emerged from the last transformation wave. The move isn't a certificate; it's a system that shows up in your numbers.
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 022 — 2026-06-30 | Video transcription: How to Monetize AI — Aspire with Emma Grede ft. Alicia Lyttle
 
 **Status:** NOTED
