@@ -85,12 +85,44 @@ guides-site code without waiting on the main-site migration:
   the CTA map and activation checklist (contradicted the rest of the same
   document).
 
+## Addendum — 04/07/2026, later same day
+
+Operator supplied the two facts flagged as open items above, plus a fourth
+property that changes Phase 3's scope:
+
+- **The AI Insider Brief newsletter already exists and is live**, at
+  brief.shiftandlead.com — twice-weekly (Tue/Fri), a curated AI-news digest
+  with a plain-English summary + ACT/WATCH/IGNORE verdict per story, email
+  delivery via Kit (ConvertKit). Branded "By The AI Automation Queen" already.
+  Its source is **not in this repo** (separate hosting, unknown CMS — same
+  situation as shiftandlead.ai). **Phase 3's "newsletter refresh" is therefore
+  a refresh of this existing asset**, not a new build: I can produce the
+  content/copy/design updates, but they need to be applied on whatever
+  platform actually hosts brief.shiftandlead.com.
+- **Two bugs found in the newsletter's own footer**, to fix as part of the
+  refresh:
+  1. Its Instagram icon links to `instagram.com/fati_chic_` — confirmed with
+     the operator this is a **stale/wrong handle**. The real, current account
+     is `@thefatihachikh` (636 followers, 312 posts, confirmed 04/07/2026).
+     The footer link needs to point there instead.
+  2. Its Skool icon links to `skool.com/@ai-automation-queen-5858` — confirmed
+     with the operator this is her **personal Skool profile**, not a live
+     community (matches `inventory.md`'s "🔴 Launch" status — the community
+     itself doesn't exist yet). Leave unlinked or repoint once Tier 3
+     (Community) actually launches, rather than sending subscribers to a
+     profile with nothing to join.
+- Instagram stats now confirmed: **@thefatihachikh, 636 followers, 312 posts**
+  — recorded in `inventory.md`. This is the baseline Phase 4's cadence/content
+  plan works from.
+
 ## Open items carried into the loop
 
-- Confirm whether an existing newsletter/"Insider Brief" platform already runs
-  outside this repo before rebuilding it from scratch.
-- Get current Instagram follower count + posting cadence directly from the
-  operator (public search cannot reliably surface these).
+- ~~Confirm whether an existing newsletter platform already runs~~ — resolved,
+  see addendum above.
+- ~~Get current Instagram follower count~~ — resolved, see addendum above.
 - `contact-us` on the current shiftandlead.ai posts to GoHighLevel's native
   form — the static-stack migration needs an equivalent capture mechanism
   (reuse the Formspree + n8n webhook pattern already proven in `site/`).
+- Find out what platform actually hosts brief.shiftandlead.com (Carrd, Framer,
+  custom — unknown) before attempting the Phase 3 refresh, since the fix has to
+  be applied there, not in this repo.

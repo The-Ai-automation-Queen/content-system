@@ -39,7 +39,7 @@ Multi-platform by design — publish everywhere, let engagement data pick the wi
 
 | Channel | Role | Blotato-connected? | Notes |
 |---|---|---|---|
-| Instagram | Test + grow | ✅ `@thefatihachikh` | Short-form video; reel/story |
+| Instagram | Test + grow | ✅ `@thefatihachikh` | Short-form video; reel/story. **636 followers, 312 posts (confirmed 04/07/2026).** |
 | LinkedIn | **Warm-network anchor** | ✅ Fatiha Chikh (+ company page) | Where the bridge audience lives; lead with insight + corporate-exit angle |
 | YouTube Shorts | Test + grow | ✅ AI-Automation-Queen | Repurposed short-form |
 | Facebook | Repurpose | ✅ Page "AI Automation Queen" | Mirror of LinkedIn/IG |
@@ -71,7 +71,7 @@ the ACP funnel rules, CTA map, and the full conversion flow.
 
 | Tier | Offer | Price | Platform | Status |
 |---|---|---|---|---|
-| 0 | **Free guides + lead magnets** (guides.shiftandlead.com + 7 in `lead-magnets/`) | Free | Static site + GHL | ⚠️ Lead magnets INACTIVE — host on GHL, set `active=yes` |
+| 0 | **Free guides + lead magnets + newsletter** (guides.shiftandlead.com + 7 in `lead-magnets/` + **AI Insider Brief** at brief.shiftandlead.com) | Free | Static site + GHL + Kit | ⚠️ Lead magnets INACTIVE — host on GHL, set `active=yes`. Insider Brief is **already live** (Tue/Fri, ACT/WATCH/IGNORE curated AI news, email via Kit) — needs a refresh pass, not a rebuild. |
 | 1 | **AI Time Audit Template** | $47 (one-time) | Gumroad | 🔴 Build |
 | 2 | **Business OS Starter Kit** (lite, templates only) | $97 (one-time) | Gumroad | 🔴 Build — see `skills/business-os-kit/` |
 | 3 | **AI Automation Queen Community** | $27/month founding (20 spots) → $47/month standard, or $397/year | Skool | 🔴 Launch — also teased live on guides.shiftandlead.com |

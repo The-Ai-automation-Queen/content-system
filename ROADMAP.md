@@ -37,7 +37,16 @@ Full findings in `reports/website-brand-audit-2026-07-04.md`.
   voice with a guide-site button + "Blog" nav entry → SEO metadata across all 13
   guide pages + SEO topic hubs + reframed case studies/testimonials → quiz/audit
   tool + newsletter refresh + free webinar → Instagram cadence plan. Running as
-  a recurring `/loop`.
+  a weekly trigger (`trig_01DmqyngnNR2uPhCDntxAJZ5`, Mondays 09:07) that fires
+  back into this session.
+- **Same-day addendum:** operator confirmed Instagram is `@thefatihachikh` at
+  636 followers / 312 posts (recorded in `inventory.md`), and surfaced a 4th
+  live property — the **AI Insider Brief** newsletter (brief.shiftandlead.com,
+  Tue/Fri, Kit-powered) — not previously known to this repo. Its own footer has
+  two bugs to fix in the Phase 3 refresh: an Instagram icon pointing at a stale
+  handle (`@fati_chic_`) instead of `@thefatihachikh`, and a Skool icon pointing
+  at a personal profile rather than a live community (confirmed: Community is
+  not yet launched). Full detail in the audit report's addendum.
 
 ### 2026-06-26 — Brain Manager + daily crons + Unipile + machine docs
 Closed the 4 remaining gaps vs. Romain Brunel's always-on system (from RESEARCH
