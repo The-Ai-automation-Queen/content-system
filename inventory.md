@@ -71,14 +71,26 @@ the ACP funnel rules, CTA map, and the full conversion flow.
 
 | Tier | Offer | Price | Platform | Status |
 |---|---|---|---|---|
-| 0 | **Lead magnets** (7 written, in `lead-magnets/`) | Free | GHL | ⚠️ INACTIVE — host on GHL, set `active=yes` |
+| 0 | **Free guides + lead magnets** (guides.shiftandlead.com + 7 in `lead-magnets/`) | Free | Static site + GHL | ⚠️ Lead magnets INACTIVE — host on GHL, set `active=yes` |
 | 1 | **AI Time Audit Template** | $47 (one-time) | Gumroad | 🔴 Build |
-| 2 | **Business OS Starter Kit** | $97 (one-time) | Gumroad | 🔴 Build — see `skills/business-os-kit/` |
-| 3 | **AI Automation Queen Community** | $47/month or $397/year | Skool | 🔴 Launch (20 founding spots at $27/month locked) |
-| 4 | **Business OS Bootcamp** | $997 per cohort | Skool + GHL | 🔴 Build waitlist from community |
-| 5 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn DM | 🟡 Activate — send one-pager to 10 warm contacts |
+| 2 | **Business OS Starter Kit** (lite, templates only) | $97 (one-time) | Gumroad | 🔴 Build — see `skills/business-os-kit/` |
+| 3 | **AI Automation Queen Community** | $27/month founding (20 spots) → $47/month standard, or $397/year | Skool | 🔴 Launch — also teased live on guides.shiftandlead.com |
+| 4 | **Fast Forward** (flagship one-time — structured build curriculum + 30-day community trial) | $499 (one-time) | Skool/Gumroad | 🔴 Build — copy already live on guides.shiftandlead.com |
+| 5 | **Business OS Bootcamp** | $997 per cohort | Skool + GHL | 🔴 Build waitlist from community |
+| 6 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn DM | 🟡 Activate — send one-pager to 10 warm contacts |
+| 7 | **Done-With-You Intensive** (bespoke, quoted — the old Shift & Lead agency retainer, reframed; not the default site CTA) | Quoted per scope | Direct | 🟡 Reframe existing case studies to this tier |
 
-Not offered: 1:1 advisory/consulting; time-consuming beginner training.
+Not offered as the default sale: 1:1 advisory/consulting or time-consuming
+beginner training — bespoke work now lives at Tier 7, quoted and positioned as
+an add-on to an already-public teacher, not the site's primary CTA.
+
+> **Brand note (04/07/2026):** shiftandlead.ai and "The AI Automation Queen"
+> are one brand going forward — the old Shift & Lead done-for-you agency voice
+> (retainers, "monthly management," B2B case studies sold as the main offer) is
+> retired as the site's front door. The founder story and the 4 case studies
+> stay as proof, reframed to "I built this, here's how you can too." See
+> `reports/website-brand-audit-2026-07-04.md` for the full audit and the
+> phased build plan this unblocked.
 
 Revenue ceiling (arithmetic): 500 community members × $197/month = $98,500/month
 = $1.18M/year from one offer alone. Add Bootcamp cohorts, product sales, and

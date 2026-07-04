@@ -9,7 +9,37 @@
 
 ## Build log
 
-### 2026-06-26 (latest) — Brain Manager + daily crons + Unipile + machine docs
+### 2026-07-04 (latest) — Website & brand audit, pricing reconciliation, guides-site lead-capture fixes
+Full audit of shiftandlead.ai, guides.shiftandlead.com, and Instagram, requested
+by the operator to prioritize and sequence "fix my online presence" work.
+Full findings in `reports/website-brand-audit-2026-07-04.md`.
+- **Brand decision:** shiftandlead.ai and The AI Automation Queen merge into one
+  brand. The retired "Shift & Lead" done-for-you agency voice is no longer the
+  site's front door — consistent with `positioning/SKILL.md`'s existing 22/06/2026
+  rebuild. Founder story + 4 case studies stay as proof, reframed to
+  teach-don't-do. Bespoke work becomes a quoted Tier 7 add-on, not the main CTA.
+- **Pricing ladder reconciled** — guides.shiftandlead.com's live "Community
+  $49/mo" + "Fast Forward $499" teaser didn't match `skills/monetisation/`'s
+  plan. Resolution: Fast Forward adopted as a new tier (flagship one-time,
+  between Starter Kit and Bootcamp) rather than dropped; Community's founding
+  ($27/mo) → standard ($47/mo) split now consistent everywhere. Updated
+  `inventory.md` and `skills/monetisation/SKILL.md` (also fixed two pre-existing
+  $97/$27 typos in the latter's CTA map and activation checklist).
+- **guides-site fixes shipped same day** (in `site/`): `free-resources.html`'s
+  nav/footer/CTA links were literal `href="#"` placeholders (Home, Community,
+  About, and all 3 pricing buttons) — nav/footer now point to the live main site
+  or in-page anchors; the 3 pricing CTAs now open a waitlist capture reusing the
+  existing Formspree + `auto.shiftandlead.com` n8n webhook dual-post pipeline,
+  tagged by tier. Same dead-link fix applied across all 6 vocabulary/pipeline
+  guide pages + `opt-in.html`.
+- **Next (queued, sequenced as a 4-phase plan in the audit report):** migrate
+  shiftandlead.ai onto the static stack (mirroring `site/`) in the merged brand
+  voice with a guide-site button + "Blog" nav entry → SEO metadata across all 13
+  guide pages + SEO topic hubs + reframed case studies/testimonials → quiz/audit
+  tool + newsletter refresh + free webinar → Instagram cadence plan. Running as
+  a recurring `/loop`.
+
+### 2026-06-26 — Brain Manager + daily crons + Unipile + machine docs
 Closed the 4 remaining gaps vs. Romain Brunel's always-on system (from RESEARCH
 019 gap analysis of his LinkedIn automation video):
 - **`brain-manager`** (M00, the Cerveau Manager) — daily brain update loop. Asks

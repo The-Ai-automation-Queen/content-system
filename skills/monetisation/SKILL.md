@@ -36,12 +36,16 @@ commitment. Never jump a stranger from free to $997.
 
 | Tier | Offer | Price | Platform | Status |
 |---|---|---|---|---|
-| 0 | **Lead magnets** (7 ready in `lead-magnets/`) | Free | GHL | ⚠️ INACTIVE — activate immediately |
+| 0 | **Free guides & lead magnets** (guides.shiftandlead.com + 7 in `lead-magnets/`) | Free | GHL + static site | ⚠️ Lead magnets INACTIVE — activate immediately |
 | 1 | **AI Time Audit Template** | $47 | Gumroad | 🔴 Build |
-| 2 | **Business OS Starter Kit** | $97 (one-time) | Gumroad | 🔴 Build — see `skills/business-os-kit/` |
-| 3 | **AI Automation Queen Community** | $47/month or $397/year | Skool | 🔴 Launch |
-| 4 | **Business OS Bootcamp** | $997 per cohort | Skool + GHL | 🔴 Build waitlist |
-| 5 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn | 🟡 Activate outreach |
+| 2 | **Business OS Starter Kit** (lite, one-time — templates only) | $97 (one-time) | Gumroad | 🔴 Build — see `skills/business-os-kit/` |
+| 3 | **AI Automation Queen Community** | $27/month founding (20 spots, locked for life) → $47/month standard, or $397/year | Skool | 🔴 Launch — also teased live on guides.shiftandlead.com |
+| 4 | **Fast Forward** (flagship one-time — structured build curriculum, 30-day community trial bundled) | $499 (one-time) | Skool/Gumroad | 🔴 Build — copy already live on guides.shiftandlead.com |
+| 5 | **Business OS Bootcamp** | $997 per cohort | Skool + GHL | 🔴 Build waitlist |
+| 6 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn | 🟡 Activate outreach |
+| 7 | **Done-With-You Intensive** (bespoke, quoted — reframed from the old Shift & Lead agency retainer; not the default CTA) | Quoted per scope | Direct | 🟡 Reframe existing case studies to this tier |
+
+> **Reconciled 04/07/2026:** the guides site (`site/free-resources.html`) previously showed Community at $49/mo with no founding-rate mention, and a "Fast Forward" $499 course not represented in this ladder. Resolution: Community's founding/standard split now matches across both; Fast Forward is adopted as a new Tier 4 (its copy was already built, keep it) rather than choosing one document over the other. Starter Kit ($97) stays as the lighter, template-only entry point below Fast Forward.
 
 ### What each offer is
 
@@ -175,7 +179,7 @@ One CTA per post. Match to pillar + ACP stage.
 | The Freedom Business | "Comment FREEDOM — I'll send the guide" | "Join the people building their freedom business with AI →" | "[Community name] is open: $47/month → [Skool link]" |
 | Stop Doing That by Hand | "Comment TEAM — I'll show you how to set this up for free" | "Inside the community we ran this setup live last week —" | "The Starter Kit walks through this step by step → [link]" |
 | What's Worth It | "Comment WORDS for the plain-English AI jargon guide" | "What we actually debated in the community this week:" | "Community: where we filter signal from noise → [link]" |
-| Real Talk | "Comment DINNER if you're in Dubai and want in" | "The community is the people actually doing this. Come in →" | "20 founding spots at $97/month locked for life → [link]" |
+| Real Talk | "Comment DINNER if you're in Dubai and want in" | "The community is the people actually doing this. Come in →" | "20 founding spots at $27/month locked for life → [link]" |
 
 ---
 
@@ -228,7 +232,7 @@ flag which are done vs. still blocked with a suggested next action.
 - [ ] Build the Business OS Starter Kit (see `skills/business-os-kit/SKILL.md`)
 - [ ] List on Gumroad at $97
 - [ ] Create Skool community (name, 3 sections: Resources / Live Calls / Community)
-- [ ] Set founding member price: $97/month locked
+- [ ] Set founding member price: $27/month locked
 - [ ] Post 1 founding-member call on LinkedIn ("Comment FOUNDING")
 - [ ] Produce and send speaker one-pager to 10 warm LinkedIn contacts
 - [ ] Plan first AI & Freedom Dinner in Dubai (see `skills/irl-events/SKILL.md`)

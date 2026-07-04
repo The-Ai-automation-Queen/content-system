@@ -91,6 +91,16 @@ She is **not** doing 1:1 advisory/consulting, and **not** time-consuming beginne
 training. Monetization matters *now* — content should grow the audience **and**
 convert it, not just chase reach.
 
+> **shiftandlead.ai (04/07/2026):** the main site currently still speaks the
+> retired agency voice (done-for-you automation for founders, retainer
+> language) under the "Shift & Lead" name. Decision: it merges into this one
+> brand — same voice, same offer ladder as everywhere else. The founder story
+> and existing case studies stay as proof, reframed to "I built this, here's
+> how you can too." Bespoke implementation work still exists, but as a quoted
+> add-on tier (see `skills/monetisation/SKILL.md` Tier 7, "Done-With-You
+> Intensive") — never the site's default CTA. See
+> `reports/website-brand-audit-2026-07-04.md` for the full audit.
+
 ---
 
 ## Voice
