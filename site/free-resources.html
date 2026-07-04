@@ -229,11 +229,87 @@ img{max-width:100%;height:auto}
   <div class="pull-attrib">Fatiha Chikh</div>
 </div></section>
 
+
+<!-- start-here paths -->
+<style>
+.paths{max-width:1240px;margin:0 auto;padding:72px 32px 24px}
+.paths-eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6B35C2}
+.paths-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,4vw,40px);font-weight:700;margin:6px 0 8px}
+.paths-sub{color:#5C5A57;font-size:16px;max-width:56ch;margin:0 0 28px}
+.paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.paths-grid{grid-template-columns:1fr}}
+.path-col{background:#fff;border:1px solid #D8D6D2;border-radius:14px;padding:26px 26px 22px;display:flex;flex-direction:column;gap:0}
+.path-col.crown{border-color:#6B35C2;box-shadow:0 8px 28px rgba(107,53,194,.10)}
+.path-lvl{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6B35C2}
+.path-name{font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:700;margin:6px 0 4px}
+.path-tag{color:#5C5A57;font-size:14px;margin:0 0 14px;font-family:'Inter',sans-serif}
+.path-check{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#5C5A57;margin:6px 0 6px}
+.path-col ul{list-style:none;margin:0 0 16px;padding:0}
+.path-col li{font-size:14.5px;color:#1A1A1A;padding:7px 0 7px 26px;position:relative;border-bottom:1px dashed #E8E5E0;font-family:'Inter',sans-serif}
+.path-col li:before{content:"→";position:absolute;left:2px;color:#6B35C2;font-family:'Space Mono',monospace}
+.path-route{background:#F4F0FA;border:1px solid #EEE5FA;border-radius:10px;padding:12px 16px;margin:auto 0 16px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.04em;color:#4A1F8F}
+.path-route strong{display:block;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5C5A57;margin-bottom:5px}
+.path-cta{display:block;text-align:center;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;text-decoration:none;background:#6B35C2;color:#fff;border-radius:8px;padding:13px 18px}
+.path-cta:hover{background:#4A1F8F}
+.path-cta.ghost{background:transparent;color:#1A1A1A;border:1.5px solid #1A1A1A;margin-top:8px}
+</style>
+<section class="paths" id="start-here">
+  <div class="paths-eyebrow">Start here</div>
+  <div class="paths-title">Where are you on the road?</div>
+  <p class="paths-sub">Three honest starting points. Pick the column that sounds like you — it tells you exactly what to read next, in order.</p>
+  <div class="paths-grid">
+
+    <div class="path-col">
+      <div class="path-lvl">Level 01</div>
+      <div class="path-name">AI-Curious</div>
+      <p class="path-tag">You hear it everywhere. Nobody's explained it.</p>
+      <div class="path-check">This is you if…</div>
+      <ul>
+        <li>You couldn't define "AI" if a friend asked</li>
+        <li>You think ChatGPT <em>is</em> AI (it isn't — almost)</li>
+        <li>You quietly worry you're already behind</li>
+      </ul>
+      <div class="path-route"><strong>Your reading order</strong>WHAT → DIFF → PROMPT → WORDS</div>
+      <a class="path-cta" href="opt-in.html?guide=what-is-ai">Start with WHAT →</a>
+    </div>
+
+    <div class="path-col crown">
+      <div class="path-lvl">Level 02</div>
+      <div class="path-name">Hands-On</div>
+      <p class="path-tag">You use the tools. It still feels like chaos.</p>
+      <div class="path-check">This is you if…</div>
+      <ul>
+        <li>You use ChatGPT weekly but results feel generic</li>
+        <li>You've collected tools — but built no system</li>
+        <li>You retype the same context every single time</li>
+      </ul>
+      <div class="path-route"><strong>Your reading order</strong>PROMPT → CHEZ CLAUDE → the Kitchen Maps</div>
+      <a class="path-cta" href="opt-in.html?guide=chez-claude">Enter Chez Claude →</a>
+    </div>
+
+    <div class="path-col">
+      <div class="path-lvl">Level 03</div>
+      <div class="path-name">The Operator</div>
+      <p class="path-tag">You want it to run without you.</p>
+      <div class="path-check">This is you if…</div>
+      <ul>
+        <li>You're done doing the busywork by hand</li>
+        <li>You want AI employees, not AI answers</li>
+        <li>Your goal is a business that doesn't need you online</li>
+      </ul>
+      <div class="path-route"><strong>Your reading order</strong>AGENTIC → PIPELINE → then let's talk</div>
+      <a class="path-cta" href="opt-in.html?guide=what-is-agentic">Read the Agentic guide →</a>
+      <a class="path-cta ghost" href="#next-steps">See the next step ↓</a>
+    </div>
+
+  </div>
+</section>
+
 <section class="spotlight"><div class="spotlight-inner">
   <div class="spotlight-head">
     <div>
       <div class="spotlight-eyebrow" id="spotlight-eyebrow">This week</div>
-      <div class="spotlight-title">Start here.</div>
+      <div class="spotlight-title">Fresh this week.</div>
     </div>
     <a class="row-cta" href="#library">All guides →</a>
   </div>
@@ -525,29 +601,31 @@ img{max-width:100%;height:auto}
   </article>
 </section>
 
-<section class="cta-band"><div class="cta-inner">
+
+
+<section class="cta-band" id="next-steps"><div class="cta-inner">
   <div class="cta-head">
     <div class="cta-eyebrow">Three ways to go further</div>
-    <div class="cta-title">When the free guides are not enough.</div>
+    <div class="cta-title">The guides are free. Forever.<br>These are the shortcuts.</div>
   </div>
   <div class="cta-grid">
     <div class="cta-card">
+      <div class="kicker">Free &middot; every Tuesday</div>
+      <h3>The Insider Brief.</h3>
+      <p>I read 200+ AI stories a week so you don't. One plain-English briefing with a verdict on each: ACT, WATCH, or IGNORE.</p>
+      <a class="btn-cream" href="https://brief.shiftandlead.com">Get the briefing</a>
+    </div>
+    <div class="cta-card">
       <div class="kicker">Community</div>
-      <h3>How I build everything.</h3>
-      <p>My actual workflow, swipe vault, and live calls when I run them. Discussion-first community.</p>
-      <a class="btn-cream" href="#">Join, $49/mo</a>
+      <h3>Build alongside me.</h3>
+      <p>Live "build with me" sessions, templates, and people on the same road. Founding member spots opening soon.</p>
+      <a class="btn-cream" href="about.html#community">Be first in line</a>
     </div>
     <div class="cta-card">
-      <div class="kicker">Course</div>
-      <h3>Fast Forward.</h3>
-      <p>Structured curriculum to build, ship, and install AI. 30-day community trial bundled.</p>
-      <a class="btn-cream" href="#">Enroll, $499</a>
-    </div>
-    <div class="cta-card">
-      <div class="kicker">Custom</div>
-      <h3>Custom requests.</h3>
-      <p>Bespoke setup, advisory, or workflow design. Quoted per scope.</p>
-      <a class="btn-cream" href="#">Request scope</a>
+      <div class="kicker">For companies</div>
+      <h3>Keynotes &amp; workshops.</h3>
+      <p>Bring this into your team &mdash; practical, non-technical, from someone whose business runs on 137 AI employees. From $5,000.</p>
+      <a class="btn-cream" href="work-with-fatiha.html">Work with Fatiha</a>
     </div>
   </div>
 </div></section>
