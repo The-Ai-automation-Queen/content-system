@@ -210,7 +210,7 @@ img{max-width:100%;height:auto}
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="#">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="#">Home</a><a href="#">Free Resources</a><a href="#">Community</a><a href="#">About</a></div>
+  <div class="nav-links"><a href="free-resources.html">Home</a><a href="#library">Free Resources</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="work-with-fatiha.html">Work with Fatiha</a></div>
 </div></nav>
 
 <section class="hero"><div class="hero-inner">
@@ -218,6 +218,7 @@ img{max-width:100%;height:auto}
     <div class="hero-kicker">The AI Edition</div>
     <h1>AI,<br>explained<br><span class="block">quietly.</span></h1>
     <p class="hero-sub">The guides I wish I had when I started. Now they're yours.</p>
+    <p style="font-family:'Inter',sans-serif;font-size:14px;color:#5C5A57;margin-top:14px">by <strong style="color:#1A1A1A">Fatiha Chikh</strong> — The AI Automation Queen · 20+ years in big tech · runs her business with 137 AI employees · <a href="about.html" style="color:#6B35C2">the story &rarr;</a></p>
   </div>
   <div class="hero-portrait"><img src="Portrait.jpeg" alt="Fatiha Chikh"></div>
 </div></section>
@@ -612,6 +613,12 @@ img{max-width:100%;height:auto}
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
       body: JSON.stringify({email: email, source: 'ribbon', _gotcha: gotcha})
+    });
+
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email, source: 'ribbon'})
     });
   });
 })();

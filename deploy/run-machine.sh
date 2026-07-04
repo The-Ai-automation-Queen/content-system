@@ -13,8 +13,15 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO="$(cd "$HERE/.." && pwd)"
 cd "$REPO"
 
-# Load secrets/keys (deploy/.env). `set -a` exports them to the claude child.
-set -a; [ -f "$HERE/.env" ] && . "$HERE/.env"; set +a
+# Load secrets/keys. Doppler (preferred) or deploy/.env (fallback).
+# Doppler injects secrets as env vars via `doppler run`. If Doppler is not
+# configured, we fall back to sourcing the .env file directly.
+if command -v doppler >/dev/null 2>&1 && doppler configs --json >/dev/null 2>&1; then
+  USE_DOPPLER=1
+else
+  USE_DOPPLER=0
+  set -a; [ -f "$HERE/.env" ] && . "$HERE/.env"; set +a
+fi
 
 SKILL="${1:?usage: run-machine.sh /skill-name [retries] [delay_min]}"
 RETRIES="${2:-1}"
@@ -37,9 +44,15 @@ run_once() {
   # here: it is YOUR VPS, YOUR repo, on a cron, and the skills are queue-only
   # per security.md (they never publish instantly). Tighten with --allowedTools
   # if you prefer a narrower grant.
-  claude -p "Run the ${SKILL} skill end to end. Obey CLAUDE.md and security.md. \
-Publishing is queue-only — never post instantly. End with the operator briefing." \
-    --dangerously-skip-permissions >>"$LOG" 2>&1
+  local CMD="claude -p \"Run the ${SKILL} skill end to end. Obey CLAUDE.md and security.md. \
+Publishing is queue-only — never post instantly. End with the operator briefing.\" \
+    --dangerously-skip-permissions"
+
+  if [ "$USE_DOPPLER" -eq 1 ]; then
+    doppler run -- bash -c "$CMD" >>"$LOG" 2>&1
+  else
+    bash -c "$CMD" >>"$LOG" 2>&1
+  fi
 }
 
 attempt=0; ok=1
@@ -68,5 +81,6 @@ if [ "$ok" -ne 0 ]; then
   exit 1
 fi
 
-notify "✅ ${SKILL} done. $(git log -1 --pretty=%s 2>/dev/null)"
+# Success is silent — only failures ping Telegram.
+# To see what ran, check deploy/logs/ or the git history.
 echo "== done ${SKILL} ==" >>"$LOG"

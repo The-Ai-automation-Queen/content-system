@@ -80,7 +80,31 @@ this skill to write leads into GHL directly (otherwise GHL captures them itself)
 2. Set `FB_PAGE_TOKEN` and `YOUTUBE_API_KEY` in env.
 3. A cron polls every 5 minutes for new comments matching any active keyword.
 
-### LinkedIn / TikTok / Threads / X
+### LinkedIn → Unipile API
+Unipile provides the most legal way to connect to LinkedIn's messaging API.
+It connects via the operator's personal LinkedIn account (same approach Romain
+Brunel uses for his DM Auto machine).
+
+1. Sign up at **unipile.com**, connect the LinkedIn account (Fatiha Chikh).
+2. Set `UNIPILE_API_KEY` and `UNIPILE_DSN` in `deploy/.env`.
+3. Allowlist `api.unipile.com` in any cloud environments.
+4. For each active row in `lead-magnets.csv`, the cron:
+   - **Polls** LinkedIn post comments every 5 minutes for keyword matches.
+   - **Sends a DM** with the resource link. Three message variants per keyword,
+     selected randomly to avoid bot detection:
+     ```
+     Variant A: "Here you go! 👉 <url> — tell me what you think!"
+     Variant B: "Sending it over 👉 <url>. Let me know if you have questions!"
+     Variant C: "Got you! 👉 <url> — DM me back if you want to go deeper."
+     ```
+   - **Staggers timing** — random delay of 1–5 minutes between DMs (never instant).
+   - **Handles non-connections:** if the person isn't connected, sends a
+     connection request with a note mentioning the resource. Once they accept,
+     sends the DM.
+5. Daily LinkedIn DM cap: **50 DMs/day** (platform safety limit). If the cap is
+   hit, remaining leads are queued for the next day and logged.
+
+### TikTok / Threads / X
 Manual until APIs catch up. The skill logs the missed lead with platform =
 `<platform>:manual` so they can be handled by the operator in batch.
 

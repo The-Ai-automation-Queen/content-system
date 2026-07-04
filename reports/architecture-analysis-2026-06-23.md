@@ -1,8 +1,6 @@
-# Architecture Analysis — Romain Brunel's "AI Clone" OS (end-to-end autonomy)
+# Architecture Analysis — "AI Clone" OS (end-to-end autonomy)
 
-_Date: 2026-06-23. Source: Romain Brunel, "Mon Clone IA Poste Mes Shorts ET
-Répond à Mes DM Tout Seul" (YouTube `qgylv7eo-E0`, 23:56, FR, auto-captions).
-Transcript pulled via Apify `starvibe/youtube-video-transcript`. This is the
+_Date: 2026-06-23. This is the
 same creator whose 8-step framework this repo is built on — this video is the
 "end-to-end autonomy" sequel. Captured to map what our system still misses._
 
@@ -13,11 +11,9 @@ same creator whose 8-step framework this repo is built on — this video is the
 
 ## The core idea: an "OS" made of "machines"
 
-Romain's business runs as a personal **OS** (he sells his as "AfiseoOS"). The OS
+The OS
 is a set of discrete **machines** — each machine is one self-contained pipeline
-that goes from a clear point A to point B. Crucially he says: these are
-**deterministic automations, not agents deciding freely** — "on est sûr que ça va
-toujours fonctionner." Agents are layered on top later (via per-machine docs) to
+that goes from a clear point A to point B. Agents are layered on top later (via per-machine docs) to
 remove the last manual steps.
 
 Every machine shares the same backbone:

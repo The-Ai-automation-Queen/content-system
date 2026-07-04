@@ -9,7 +9,39 @@
 
 ## Build log
 
-### 2026-06-23 (latest) — M06 performance tracker + dashboard intelligence
+### 2026-06-26 (latest) — Brain Manager + daily crons + Unipile + machine docs
+Closed the 4 remaining gaps vs. Romain Brunel's always-on system (from RESEARCH
+019 gap analysis of his LinkedIn automation video):
+- **`brain-manager`** (M00, the Cerveau Manager) — daily brain update loop. Asks
+  the operator 5–7 contextual questions about real life, projects, opinions, and
+  current events, then writes answers into `personal-brain.md`. This is the #1
+  gap that was missing: the living memory layer that makes posts personal, not
+  generic. Runs at 20:00 daily (evening, so answers feed the next morning's
+  scripts). Supports `update` (daily), `review`, and `seed` (initial onboarding)
+  modes.
+- **`personal-brain.md`** created — the operator's living memory file. 11
+  categories: anecdotes, opinions, projects, numbers, lead magnets, stack, life
+  events, background, inspirations, testimonials, current focus. Date-stamped,
+  append-only. `content-engine` now loads it as step 3 of "load the brain."
+- **Daily content-engine cron** — added `content-engine daily` cron at 02:30
+  (after signal-harvester at 02:00). Generates 5 scripts per day: 1 storytelling
+  (from personal-brain), 2 AI news (from signals), 1 opinion, 1 educational.
+  Scripts ready when the operator wakes up — 5–10 min/week to pick winners.
+- **Unipile for LinkedIn DMs** — wired into `dm-responder` as the LinkedIn
+  channel. Auto-DM on comment keywords (3 message variants, randomized timing,
+  50 DMs/day cap). Needs `UNIPILE_API_KEY` + `UNIPILE_DSN` in `deploy/.env`.
+- **Per-machine operational docs** — `docs/machines/` with detailed operational
+  guides for M00–M06 (purpose, inputs, outputs, validation criteria, decision
+  framework for AI delegation). Modeled on Romain's per-machine documentation
+  approach for eventual AI autonomy.
+- Updated: `CLAUDE.md` (second brain, skills list, loop diagram, daily crons),
+  `inventory.md` (M00 brain-manager + Unipile in tools table + missing checklist),
+  `content-engine` (loads personal-brain.md, `daily` mode for 5-script generation),
+  `dm-responder` (Unipile LinkedIn setup), `weekly-ops` (brain-manager as step 0),
+  `crontab.example` (M00 @ 20:00, M01 scripts @ 02:30, M06 @ 03:00),
+  `.env.example` (Unipile keys), `video-transcription` skill + transcript.
+
+### 2026-06-23 — M06 performance tracker + dashboard intelligence
 Added the feedback loop so the system measures what it ships:
 - **`performance-tracker`** (M06) — scrapes all connected platforms (Meta Graph
   API for IG/FB when tokens set, Apify fallback for everything) for follower
@@ -33,7 +65,7 @@ Built the missing machines from the Romain architecture teardown
 - **`reels-factory`** (M03) — long video → many shorts (Opus Clip API; Blotato
   `combine-clips` fallback), landed as critic-scored vault drafts.
 - **`dm-responder`** (M05, the money engine) — comment-keyword → DM resource →
-  lead capture (ManyChat for IG; Blotato/native APIs for FB+YT), backed by the
+  lead capture (GoHighLevel for IG; Blotato/native APIs for FB+YT), backed by the
   new `lead-magnets.csv` registry.
 - **`weekly-ops`** extended to chain all machines (signal → … → distribution → DM).
 - **Multi-brand:** `tenants/` with a `_template` (tenant.json + brain files) so
@@ -93,14 +125,16 @@ Implemented the architecture and the core automation layer:
 
 Run the loop on a fixed rhythm so the system stays alive. Targets:
 
-| Job | Skill | Suggested cadence |
-|---|---|---|
-| Research sweep | `research-digest` | Weekly |
-| Competitor / creator scan | `competitor-watch` | Weekly |
-| Pipeline health check | `vault-audit` | Weekly |
-| Draft generation | `content-engine` | Weekly (after the three above) |
-| Performance scrape | `performance-tracker` | Daily (03:00 GST, after signal-harvester) |
-| Full loop | `weekly-ops` | Weekly (runs all five) |
+| Job | Skill | Cadence | Cron time (GST) |
+|---|---|---|---|
+| Brain update | `brain-manager` | **Daily** | 20:00 |
+| Signal harvest | `signal-harvester` | **Daily** | 02:00 |
+| Script generation | `content-engine daily` | **Daily** (5 scripts) | 02:30 |
+| Performance scrape | `performance-tracker` | **Daily** | 03:00 |
+| Competitor / creator scan | `competitor-watch` | Weekly | via weekly-ops |
+| Pipeline health check | `vault-audit` | Weekly | via weekly-ops |
+| Full loop | `weekly-ops` | Weekly (Mon 06:00) | 06:00 Mon |
+| DM responder | `dm-responder` | Every 5 min | */5 |
 
 **Publishing cadence target** (to confirm with the operator): short-form video
 blasted across Instagram, TikTok, LinkedIn, and YouTube Shorts — publish
@@ -113,7 +147,55 @@ To automate the rhythm, run the harness `/loop` skill on `weekly-ops`, or trigge
 
 ---
 
-## Backlog (next increments, roughly prioritized)
+## Backlog
+
+### Priority 0 — This week (fastest path to cash)
+
+These are unblocked right now. Do them before anything else. Each one feeds
+the next. Combined, they switch the revenue funnel on.
+
+**Action 1 — Activate the lead magnets (2–3 hours)**
+All 7 resources in `lead-magnets/` are written and ready. None are live. Host
+each on a GHL page, paste the URL into `lead-magnets.csv`, set `active=yes`.
+Run `skills/monetisation/ activation-check` to audit what's still blocked.
+This unblocks: ManyChat DM flow, email list growth, the entire conversion funnel.
+
+**Action 2 — Write the 5-email GHL nurture sequence (1–2 hours)**
+Use the conversion flow template in `skills/monetisation/SKILL.md`. Day 0–10.
+This turns lead-magnet downloads into community members automatically.
+
+**Action 3 — Add keyword CTAs to the next 5 queued posts (30 minutes)**
+Check the last 10 vault entries — any without a comment keyword CTA is a missed
+lead. Add one to each. Use the CTA map in `skills/monetisation/SKILL.md`.
+
+**Action 4 — Post one founding-member call on LinkedIn (15 minutes)**
+"I'm building a community for everyday entrepreneurs using AI to win back their
+time. Opening 20 founding spots at $27/month — locked forever. Comment FOUNDING
+for the link." This alone can generate $1,940/month from one post if 20 people
+join.
+
+**Action 5 — Send the speaker one-pager to 10 warm corporate contacts (1 hour)**
+Run `skills/monetisation/ activation-check` to generate the one-pager. Email or
+DM it to warm contacts from the Dell/Intel/Microsoft network who are Dubai-based
+or organise corporate events. One booking = $5,000–$15,000.
+
+---
+
+### Revenue milestones (what to aim for by when)
+
+| Timeline | Target | Requires |
+|---|---|---|
+| Week 1 | First email subscribers | Lead magnets live + CTAs on posts |
+| Month 1 | 20 founding members ($540/month) + 1 speaking booking ($5k+) | Founding-member post + speaker outreach |
+| Month 2 | 50 community members ($2,350/month MRR) | Community launched publicly at $47/month |
+| Month 3 | Starter Kit selling 20 units/month ($1,940) + 500 email subscribers | Starter Kit live on Gumroad |
+| Month 6 | 200 community members ($39,400/month) + first Bootcamp ($20k) | Bootcamp waitlist → cohort |
+| Year 1 | 500 members + recurring Bootcamp + speaking circuit | Full loop running autonomously |
+| Year 2 | 1,000 members + evergreen products + IRL events | Scale |
+
+---
+
+### Ongoing backlog (roughly prioritized)
 
 1. **Run the closed loop on the backlog.** The wiring exists (`visual-engine` +
    `distribution`); the next action is to build visuals for the ready carousel/video
@@ -143,3 +225,34 @@ To automate the rhythm, run the harness `/loop` skill on `weekly-ops`, or trigge
    back before the next local sync overwrites them.
 8. **Named frameworks as content assets** (Pattern 12) — capture the operator's
    repeatable methodologies as named, citeable assets the engine reuses.
+9. **Package and launch the Business OS Starter Kit ($97)** — run
+   `skills/business-os-kit/ build-starter-kit` for build instructions, then
+   `launch-content starter-kit` for the 3 launch posts. Operator actions: record
+   the 25-min Loom walkthrough and create the Gumroad listing. This is the first
+   paid product and the fastest way to prove the method to buyers.
+10. **Launch the AI Automation Queen Community on Skool ($47/month)** — create the
+    Skool space (3 sections: Resources / Live Calls / Community), set the founding
+    member price ($27/month locked), and run `skills/business-os-kit/ launch-content
+    community` for the 3 launch posts. Target: 20 founding members in month 1,
+    50 total by month 2.
+11. **ACP funnel tagging in the content engine** — every vault draft now includes
+    `ACP stage` and `CTA` fields (added to `content-engine` skill). Run
+    `skills/monetisation/ cta-map` to audit the last 10 entries and flag any without
+    a keyword CTA or with a broken A/C/P ratio.
+12. **IRL community events — AI & Freedom Dinners in Dubai** — run
+    `skills/irl-events/ plan-event` to get the agenda and invite sequence for the
+    first dinner. Ideal first event: 10 warm contacts from the LinkedIn/corporate
+    network, intimate restaurant, free. Goal: 3+ community conversions per dinner.
+13. **Email nurture sequence (the missing conversion layer)** — the lead magnets
+    deliver the resource but there is no email follow-up yet. The 5-email GHL
+    sequence (defined in `skills/monetisation/`) turns a download into a community
+    member. Without it, leads go cold. This is the highest-leverage automation to
+    build this month.
+14. **Corporate speaking outreach (near-term high-ticket)** — one booked workshop
+    generates as much as 25–75 community memberships in a single payment. Run
+    `skills/monetisation/ launch-plan speaking` to get the one-pager, then send it
+    to 10 warm corporate contacts. Do this in week 1 alongside the community launch.
+15. **Builder-Distributor named content series** — a recurring format (Pattern 12)
+    documenting Fatiha's real process: "Here's how I built X and distributed it in
+    the same week." Teaches the concept, proves the method, attracts the exact
+    audience that buys the Bootcamp. One per month minimum.

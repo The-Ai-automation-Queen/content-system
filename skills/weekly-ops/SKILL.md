@@ -36,23 +36,30 @@ for the operator to release.
 
 ---
 
-## The loop (full Romain-shape, all 5 machines: signal → script → visual → queue → DM)
+## The loop (full Romain-shape, all machines: brain → signal → script → visual → queue → DM)
 
 Run these in order. Each writes a dated artifact to `reports/` (signal/research
 steps also append to `research-notes.md`):
 
 ```
+0. brain-manager      →  M00 brain: update personal-brain.md from operator answers
+                          (skip in automated runs — brain-manager has its own daily cron)
 1. signal-harvester   →  M01 data: 7 fresh signals (Apify/X/YT/RSS/Tavily)
                           (fall back to research-digest if sources aren't wired)
 2. competitor-watch   →  what the tracked creators/competitors are doing
 3. vault-audit        →  pipeline health: what is ready, stale, missing, POSTED
 4. content-engine     →  M01 scripts: new drafts that fill the gaps the audit found
+                          (daily mode: 5 scripts — 1 story, 2 news, 1 opinion, 1 edu)
 5. visual-engine      →  M02 visuals + film-free video (Canva/Gamma/Blotato)
    └─ heygen          →  M02 talking-head of HER avatar for entries flagged NEEDS HER FACE
 6. reels-factory      →  M03 long-video → many shorts (only when a new long video exists)
 7. distribution       →  M04 schedules ready+unflagged posts into the Blotato QUEUE
 8. dm-responder       →  M05 comment→DM→lead capture (continuous cron, not weekly —
-                          report its status only)
+report its status only; includes Unipile for LinkedIn DMs)
+report its status only)
+9. monetisation       →  Revenue audit: ACP ratio of last 10 vault entries,
+                          keyword CTA coverage, email/community counts from
+                          performance-log.md. Flag gaps; recommend one action.
 ```
 
 Steps 1-4 run every pass. Steps 5-7 act only on entries that are `READY TO POST`

@@ -5,7 +5,13 @@
 set -uo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-set -a; [ -f "$HERE/.env" ] && . "$HERE/.env"; set +a
+
+# Load secrets from Doppler (preferred) or deploy/.env (fallback).
+if command -v doppler >/dev/null 2>&1 && doppler configs --json >/dev/null 2>&1; then
+  eval "$(doppler secrets download --no-file --format env 2>/dev/null)" || true
+else
+  set -a; [ -f "$HERE/.env" ] && . "$HERE/.env"; set +a
+fi
 
 MSG="${1:?usage: telegram-notify.sh <message>}"
 

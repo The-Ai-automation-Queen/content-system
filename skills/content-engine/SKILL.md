@@ -37,13 +37,21 @@ This is non-negotiable. Read these every run, in this order:
    win-back-your-time promise, the six pillars, and the voice. The identity layer.
 2. **`inspiration-library/SKILL.md`** — the 15 hook/format patterns, the Script
    Application Rules, the banned-words list, and platform adaptation rules.
-3. **`research-notes.md`** — the latest findings and, critically, the
+3. **`personal-brain.md`** — her living memory: real anecdotes, opinions, projects,
+   numbers, life events, and current focus. Updated daily by `brain-manager`. This
+   is what makes posts feel like *her* instead of generic AI. Use anecdotes for
+   storytelling posts, opinions for opinion posts, numbers for credibility.
+4. **`research-notes.md`** — the latest findings and, critically, the
    **"Content angles (3 ready to use)"** and **"Contrarian take logged"** blocks.
    These are pre-vetted raw material. Prefer them.
-4. **`content-vault.md`** — to learn the house style from existing entries, to get
+5. **`content-vault.md`** — to learn the house style from existing entries, to get
    the next `ENTRY` number, and to avoid duplicating a topic already drafted.
-5. The latest `reports/competitor-watch-*.md` if a fresh one exists — for live
+6. The latest `reports/competitor-watch-*.md` if a fresh one exists — for live
    angles and hooks competitors are using (to differentiate from, not copy).
+6. **`skills/monetisation/SKILL.md`** — to assign the correct ACP stage (A/C/P)
+   and pick the exact CTA for each draft. Read the ACP ratio of the last 10 vault
+   entries before tagging. This is non-negotiable: every draft must know its job
+   in the funnel before it's written.
 
 If a draft you are about to write would contradict the positioning, the draft is
 wrong. Fix the draft.
@@ -53,6 +61,13 @@ wrong. Fix the draft.
 ## Inputs
 
 - **Argument** (optional): a topic, a target platform, and/or a count.
+- **`daily`** — the daily auto-generation mode (Romain pattern). Produces **5
+  scripts** for the target platform (default LinkedIn):
+  - 1 **storytelling** (from `personal-brain.md` anecdotes/life events)
+  - 2 **AI news** (from the latest `research-notes.md` signals)
+  - 1 **opinion** (from `personal-brain.md` opinions + research contrarian takes)
+  - 1 **educational** (from pillars, explaining a system/method she uses)
+  This mode is designed for the daily cron — scripts are ready when she wakes up.
 - **If no argument:** default to producing **3 drafts** that best fill the current
   gap. Decide the gap from the latest `vault-audit` report (which platform is
   thin, what is stale) and the freshest research angles. If no recent audit
@@ -83,6 +98,15 @@ Follow the Script Application Rules from `inspiration-library` in order:
    different rhythm. One platform per draft.
 5. **End with an earned CTA** — a comment trigger or a specific next step, never
    "follow for more."
+5a. **Assign an ACP stage** — using the ACP funnel rules in
+   `skills/monetisation/SKILL.md`: count the A/C/P distribution of the last 10
+   vault entries (check the `ACP stage` field in each entry's metadata). Assign
+   the stage that keeps the ratio at ~7A / 2C / 1P. If there are already 2 P
+   posts in the last 10, assign A or C instead and note why in the metadata.
+5b. **Pick the exact CTA from the CTA map** — use `skills/monetisation/SKILL.md`
+   CTA map, matched to this draft's pillar and ACP stage. Write the exact CTA
+   text into the draft. For A posts, this is the comment keyword trigger. For C
+   posts, the community invite. For P posts, the product link line.
 6. **Voice check** — casual and conversational (contractions welcome), warm with a
    provocative edge, authority + relatability, specific, no corporate jargon, no
    engagement bait.
@@ -132,6 +156,8 @@ list at the very top of the file. Match the existing structure exactly:
 **Pattern used:** <which inspiration-library pattern>
 **Pillar:** <which content pillar from inventory.md>
 **Critic score:** <X.X>/10 — <APPROVED FOR REVIEW | NEEDS WORK: ...>
+**ACP stage:** <A | C | P> — <one-line reason, e.g. "A — ratio is currently 6A/2C/1P, adding A">
+**CTA:** <exact CTA text as it appears at the end of the post>
 **Source:** <research-notes RESEARCH NNN, or [VERIFY] for unsourced claims>
 
 ---

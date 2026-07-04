@@ -63,16 +63,27 @@ Every piece maps to one (see `positioning/SKILL.md`):
 5. **What's Worth It** — curated AI tools/news that actually matter (not daily)
 6. **Real Talk** — relatable founder lessons from having built it
 
-## 5. Offers / how it monetizes (active now)
+## 5. Offers / how it monetizes
 
-1. Paid **community / membership** (core, scalable)
-2. **Digital products / courses**
-3. **Corporate speaking / workshops** — high-ticket, warm-network, near-term cash
-   (fed by the LinkedIn authority; productized one-to-many, not 1:1 time)
-4. A packaged **system / "OS"** to sell (roadmap)
-5. **Affiliate / sponsorships** (opportunistic)
+The full offer ladder — from lowest commitment to highest. Every content piece
+should pull people toward one of these. See `skills/monetisation/SKILL.md` for
+the ACP funnel rules, CTA map, and the full conversion flow.
+
+| Tier | Offer | Price | Platform | Status |
+|---|---|---|---|---|
+| 0 | **Lead magnets** (7 written, in `lead-magnets/`) | Free | GHL | ⚠️ INACTIVE — host on GHL, set `active=yes` |
+| 1 | **AI Time Audit Template** | $47 (one-time) | Gumroad | 🔴 Build |
+| 2 | **Business OS Starter Kit** | $97 (one-time) | Gumroad | 🔴 Build — see `skills/business-os-kit/` |
+| 3 | **AI Automation Queen Community** | $47/month or $397/year | Skool | 🔴 Launch (20 founding spots at $27/month locked) |
+| 4 | **Business OS Bootcamp** | $997 per cohort | Skool + GHL | 🔴 Build waitlist from community |
+| 5 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn DM | 🟡 Activate — send one-pager to 10 warm contacts |
 
 Not offered: 1:1 advisory/consulting; time-consuming beginner training.
+
+Revenue ceiling (arithmetic): 500 community members × $197/month = $98,500/month
+= $1.18M/year from one offer alone. Add Bootcamp cohorts, product sales, and
+speaking fees → $3–5M/year within 2–3 years. The content engine is built; the
+revenue layer in `skills/monetisation/` just needs activating.
 
 ## 6. Data sources (what feeds the engine)
 
@@ -89,13 +100,14 @@ Not offered: 1:1 advisory/consulting; time-consuming beginner training.
 
 | Machine | Tool | Role in the system | Skill |
 |---|---|---|---|
+| M00 brain | **Claude Code** + Telegram bot | Daily brain update: asks operator questions, writes `personal-brain.md` | `brain-manager` |
 | M01 data | **Apify, Tavily, X, RSS** ⚙️ | Multi-source daily signal harvest (IG/X scrapes, YouTube virality, blogs, news) | `signal-harvester` |
-| M01 scripts | **Claude Code** | Signals → in-voice drafts, critic-scored | `content-engine` |
+| M01 scripts | **Claude Code** | Signals + personal brain → in-voice drafts, critic-scored (5/day in daily mode) | `content-engine` |
 | M02 visuals | **Canva, Gamma, Blotato** | Carousels/decks + AI images/infographics + film-free narrated video | `visual-engine` |
 | M02 face | **Higgsfield** (paid, MCP) / HeyGen fallback | Talking-head of HER cloned avatar + voice from a script | `heygen` (talking-head) |
 | M03 reels | **Opus Clip** ⚙️ (Blotato fallback) | Long video → many shorts with hooks + CTAs | `reels-factory` |
 | M04 distribution | **Blotato** | Schedule to the multi-platform **queue**; writes status back | `distribution` |
-| M05 DM/leads | **ManyChat** ⚙️ (IG) + Blotato/native API (FB/YT) | Comment-keyword → DM resource → capture lead | `dm-responder` |
+| M05 DM/leads | **GHL** (IG) + **Unipile** ⚙️ (LinkedIn) + Blotato/native API (FB/YT) | Comment-keyword → DM resource → capture lead | `dm-responder` |
 | M06 performance | **Meta Graph API** + **Apify** scrapers | Scrape all platforms for followers + post engagement; feed dashboard | `performance-tracker` |
 
 **Connected but not yet wired in** (integration backlog):
@@ -115,9 +127,11 @@ Not offered: 1:1 advisory/consulting; time-consuming beginner training.
 | Higgsfield MCP | Add Higgsfield MCP server to Claude Code env settings + record avatar/voice IDs in this file | `heygen` (talking-head of her — Higgsfield is primary) |
 | HeyGen (fallback) | `HEYGEN_API_KEY` env + allowlist `api.heygen.com`, `resource.heygen.ai` — only needed if Higgsfield unavailable | `heygen` (talking-head fallback) |
 | Opus Clip | `OPUS_CLIP_API_KEY` env + allowlist `api.opus.pro` | `reels-factory` |
-| ManyChat | `MANYCHAT_API_KEY` env + IG automations per `lead-magnets.csv` + a webhook host | `dm-responder` (IG leads) |
+| ~~ManyChat~~ | Not needed — **GoHighLevel (GHL)** handles IG comment→DM→capture natively | `dm-responder` (IG leads) |
+| Unipile | `UNIPILE_API_KEY` + `UNIPILE_DSN` env + allowlist `api.unipile.com` + connect LinkedIn account | `dm-responder` (LinkedIn DM auto) |
+| Brain Manager Telegram | Create Telegram bot via @BotFather + set `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` | `brain-manager` daily brain updates |
 | Signal sources | X/Grok API key; confirm Apify/Tavily MCP usable from `signal-harvester` | `signal-harvester` live |
-| Always-on host | A small VPS (or scheduled web sessions) for crons + the DM webhook | M05 + every-N-min crons |
+| Always-on host | A small VPS (or scheduled web sessions) for crons + the DM webhook | All daily crons (M00 + M01 + M06) |
 | TikTok | Connect a TikTok account to Blotato | TikTok publishing |
 
 **Higgsfield IDs (fill after a clone session):** avatar_id = `____`, voice_id = `____`.

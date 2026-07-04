@@ -20,7 +20,13 @@
 - 30/06/2026 | Short-form video | "AI Said It Was Done. It Wasn't." — make it prove its work | DRAFT
 - 30/06/2026 | Short-form video | "Your AI Agrees With Everything. That's Costing You." — make it argue first | DRAFT
 - 30/06/2026 | LinkedIn carousel | "The 4 Upgrades" — stop using AI like an intern | DRAFT
-- 23/06/2026 | Short-form video | "My One-Person Business Runs Like a Team of Five" — your digital team | DRAFT
+- 27/06/2026 | LinkedIn | "Most People Automate the Wrong Thing First" — pick your first AI employee | READY TO POST
+- 27/06/2026 | LinkedIn | "Selling AI Agents for $5k Isn't Freedom — It's Freelancing With Extra Steps" — founding invite | DRAFT
+- 27/06/2026 | LinkedIn | "The Only Test That Tells You If an AI Tool Is Worth It" — 5 hrs/week or it's a demo | READY TO POST
+- 27/06/2026 | LinkedIn | "Someone Made 1,000 Videos for Basically $0" — build once, runs forever | READY TO POST
+- 27/06/2026 | LinkedIn | "The First Weekend I Didn't Open My Laptop, I Felt Sick" — when the system carried it | DRAFT
+- 25/06/2026 | Short-form video (Reel) | "You're Talking to the Most Powerful AI on the Planet Like It's Google" — Chez Claude guide promo | DRAFT
+- 23/06/2026 | Short-form video | "My One-Person Business Runs Like a Team of Five" — your digital team | READY TO POST
 - 23/06/2026 | LinkedIn | "AI Doesn't Fix Chaos. It Scales It." — fix the workflow first | READY TO POST
 - 23/06/2026 | Short-form video | "You're the Bottleneck" — hand off one task this week | READY TO POST
 - 23/06/2026 | LinkedIn carousel | "The Freedom Business Test" — 4 things that must run without you | READY TO POST
@@ -33,7 +39,7 @@
 
 ---
 
-## ENTRY 017 — 30/06/2026 | LinkedIn | I Trust AI Now *Because* of 20 Years at Dell | DRAFT
+## ENTRY 023 — 30/06/2026 | LinkedIn | I Trust AI Now *Because* of 20 Years at Dell | DRAFT
 
 **Status:** DRAFT
 **Platform:** LinkedIn (text post)
@@ -69,7 +75,9 @@ What's a skill from your old job that's quietly running your new one? I'd love t
 
 ---
 
-## ENTRY 016 — 30/06/2026 | LinkedIn | I'm Not the Builder Anymore. I'm the Judge. | DRAFT
+---
+
+## ENTRY 022 — 30/06/2026 | LinkedIn | I'm Not the Builder Anymore. I'm the Judge. | DRAFT
 
 **Status:** DRAFT
 **Platform:** LinkedIn (text post)
@@ -111,7 +119,9 @@ What's one thing on your list this week that doesn't actually need you — just 
 
 ---
 
-## ENTRY 015 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | 6 Helpers, 8 Minutes, a Full Launch Plan | DRAFT
+---
+
+## ENTRY 021 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | 6 Helpers, 8 Minutes, a Full Launch Plan | DRAFT
 
 **Status:** DRAFT
 **Platform:** Short-form video (Reel / TikTok / YouTube Short)
@@ -146,7 +156,9 @@ Want the exact setup I use to run things while I'm away from my desk? Comment "R
 
 ---
 
-## ENTRY 014 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Generic AI Answers? You're Starving It. | DRAFT
+---
+
+## ENTRY 020 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Generic AI Answers? You're Starving It. | DRAFT
 
 **Status:** DRAFT
 **Platform:** Short-form video (Reel / TikTok / YouTube Short)
@@ -177,7 +189,9 @@ Want the one-page "business brain" I paste in every time so my AI stops sounding
 
 ---
 
-## ENTRY 013 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | AI Said It Was Done. It Wasn't. | DRAFT
+---
+
+## ENTRY 019 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | AI Said It Was Done. It Wasn't. | DRAFT
 
 **Status:** DRAFT
 **Platform:** Short-form video (Reel / TikTok / YouTube Short)
@@ -212,7 +226,9 @@ Want the exact line I add so AI checks its own work before I ever look? Comment 
 
 ---
 
-## ENTRY 012 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Your AI Agrees With Everything. That's Costing You. | DRAFT
+---
+
+## ENTRY 018 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Your AI Agrees With Everything. That's Costing You. | DRAFT
 
 **Status:** DRAFT
 **Platform:** Short-form video (Reel / TikTok / YouTube Short)
@@ -245,7 +261,9 @@ Want the exact prompt I use to make AI argue with me before I build anything? Co
 
 ---
 
-## ENTRY 011 — 30/06/2026 | LinkedIn (carousel) | The 4 Upgrades: Stop Using AI Like an Intern | DRAFT
+---
+
+## ENTRY 017 — 30/06/2026 | LinkedIn (carousel) | The 4 Upgrades: Stop Using AI Like an Intern | DRAFT
 
 **Status:** DRAFT
 **Platform:** LinkedIn (carousel)
@@ -312,9 +330,257 @@ Breaking down each upgrade this week. Which one do you need most — 1, 2, 3, or
 
 ---
 
-## ENTRY 010 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | My One-Person Business Runs Like a Team of Five | DRAFT
+---
+
+## ENTRY 016 — 27/06/2026 | LinkedIn | Most People Automate the Wrong Thing First | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Educational LinkedIn post — 4-step method, ~220 words
+**Topic:** The method for picking the *right* first task to automate (boring + repetitive + zero-judgment), one employee at a time — so people stop automating chaos and quitting.
+**Pattern used:** Teach Your System, Not the Tool (3) + Fear-First Hook (2)
+**Pillar:** Stop Doing That by Hand (+ Time Wins)
+**Critic score:** 8.5/10 — APPROVED FOR REVIEW
+**ACP stage:** A — last 10 entries skew ~10A/0C/0P; A keeps the value-first base while the funnel needs C/P support that isn't live yet (see briefing).
+**CTA:** "Comment TEAM and I'll send you the setup" (→ "How to Set Up Your First AI Employee" lead magnet)
+**Source:** RESEARCH 018 (automate the workflow, not the chaos) + RESEARCH 021 (the "AI employee" framing). No unverified stats.
+**⚠️ PREP:** the "TEAM" lead magnet is `active=no` in `lead-magnets.csv` — host + activate it before this is queued (security.md §3.1; the CTA promises it).
+
+---
+### LINKEDIN POST
+
+Most people automate the wrong thing first — and then decide "automation just doesn't work for me."
+
+Here's the method I use to pick the right first thing, every time. Ten minutes and a notebook.
+
+**Step 1 — Catch yourself in the act.** For one day, write down every task the second you do it. Don't plan it. Just catch it. The inbox triage. The same DM you've typed 40 times. The copy-paste from one app to another.
+
+**Step 2 — Run the three-letter filter.** Mark every task that's (a) boring, (b) repetitive, and (c) needs zero real judgment from you. If a task needs your taste, your face, or your decision — leave it. That's your job. Everything else is robot work you're doing with human hands.
+
+**Step 3 — Pick the most boring one.** Not the hardest. Not the fanciest. The one that eats the most time for the least thought. That's your first AI "employee."
+
+**Step 4 — Automate only that.** Get it running. Trust it for a week. Then do it again with the next one.
+
+People fail because they try to automate the whole business in a weekend and burn out. You're not building a robot army. You're hiring one employee at a time.
+
+Want me to walk you through the exact first one most people should start with? Comment TEAM and I'll send you the setup.
+
+---
+
+## ENTRY 015 — 27/06/2026 | LinkedIn | Selling AI Agents for $5k Isn't Freedom — It's Freelancing With Extra Steps | DRAFT
 
 **Status:** DRAFT
+**Platform:** LinkedIn (text post)
+**Format:** Opinion / contrarian LinkedIn post, ~210 words
+**Topic:** The "build agents, charge clients $5k" dream is the agency treadmill rebranded. Real leverage is building the one system that runs your own business — and selling the system, not your time.
+**Pattern used:** Contrarian Operational Hook (14)
+**Pillar:** The Freedom Business
+**Critic score:** 8.5/10 — APPROVED FOR REVIEW
+**ACP stage:** C — deliberately injecting one C to move the last-10 ratio off ~all-A toward 7A/2C/1P. Framed as a *founding-member opening* (the one honest C available with no existing members to brag about).
+**CTA:** "Comment FOUNDING and I'll make sure you get first access" (founding-member invite)
+**Source:** RESEARCH 021 (contrarian take logged — the agency-treadmill argument). No unverified stats.
+**⚠️ PREP (blocks queueing):** the founding community offer must actually exist (Skool space + founding price locked) before this goes live — the CTA promises first access. Per monetisation skill, do not publish a C/P post against an offer that can't be joined.
+
+---
+### LINKEDIN POST
+
+Unpopular opinion: "build AI agents and charge clients $5k each" is not a freedom business. It's freelancing with extra steps.
+
+Everyone's selling the same dream right now — learn to build agents, land a few clients, quit your job. And the money's real. But read the fine print on what you're actually signing up for:
+
+More clients = more builds = more delivery = more calls = more revisions.
+
+That's not leverage. That's the agency treadmill with an AI logo slapped on it. You left one boss to get twelve of them. You're still trading hours for money — you've just made the hours more technical.
+
+The actual freedom move isn't building agents for other people. It's building the ONE system that runs your own business while you sleep — then selling the system, not your time. A product scales. A service ends the second you stop showing up.
+
+Leverage was never the agent. It's whether the thing you sell keeps working without you in the room.
+
+I'm putting together a small group of people who want to build it the leverage way — own systems, own income, no client treadmill. Founding doors open soon, and the first people in lock the founding rate for life.
+
+If that's the room you want, comment FOUNDING and I'll make sure you get first access.
+
+---
+
+## ENTRY 014 — 27/06/2026 | LinkedIn | The Only Test That Tells You If an AI Tool Is Worth It | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** AI-news / opinion LinkedIn post, ~210 words
+**Topic:** The "keeper vs demo" filter — if a tool can't save 5 hours/week without creating new problems, it's a demo. Cuts through tool overwhelm.
+**Pattern used:** Contrarian Operational Hook (14) + Before/After Contrast (13)
+**Pillar:** What's Worth It
+**Critic score:** 8.4/10 — APPROVED FOR REVIEW
+**ACP stage:** A — value-first filter post, comment-keyword capture.
+**CTA:** "Comment STACK and I'll send you the exact 3-tool setup I run on" (→ "The 3-Tool AI Stack I Actually Use" lead magnet — matched to the tool-selection topic over the map's default WORDS).
+**Source:** RESEARCH 021 signal #7 (Medium "AI agents for everyday work" — the 5-hours/week keeper test). The "5 hours" figure traces to that logged source.
+**⚠️ PREP:** the "STACK" lead magnet is `active=no` in `lead-magnets.csv` — activate before queueing (same flag as ENTRY 005).
+
+---
+### LINKEDIN POST
+
+Here's the only test that tells you if an AI tool is worth your money:
+
+Does it save you 5 hours a week without creating new problems?
+
+That's it. That's the whole filter.
+
+It quietly destroys about 90% of the tools you've been told you "need." Everything that doesn't pass is just a demo wearing a pricing page.
+
+Because here's what actually happens. You sign up for the shiny new thing. You spend a weekend setting it up. It half-works. Now you've got a new tool to babysit AND the old job it was supposed to kill. You didn't buy time back — you bought a second job for $29 a month.
+
+A keeper is different. You set it up once, it removes hours, and you stop thinking about it. No babysitting. No "wait, why did it do that." It just quietly gives you your week back.
+
+So before you buy the next tool, ask the only question that matters: 5 hours saved, no new chaos? If it can't promise that, close the tab.
+
+I've narrowed my whole business down to a handful of tools that actually pass this test. Comment STACK and I'll send you the exact 3-tool setup I run on.
+
+---
+
+## ENTRY 013 — 27/06/2026 | LinkedIn | Someone Made 1,000 Videos for Basically $0 | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** AI-news LinkedIn post, ~215 words
+**Topic:** A creator generated ~1,000 videos for near-zero cost with one prompt + a local pipeline. The flex isn't the tool — it's the build-once system that runs while you sleep.
+**Pattern used:** Specific Number Hook (11) + Teach Your System (3)
+**Pillar:** Build Once, Runs Forever
+**Critic score:** 8.5/10 — APPROVED FOR REVIEW
+**ACP stage:** A — news-driven value post, comment-keyword capture.
+**CTA:** "Comment PIPELINE and I'll send you the voice clone guide" (→ "Voice Clone Pipeline" lead magnet)
+**Source:** RESEARCH 021 signal #3 (@sabrina_ramonov — "Claude AI makes 1000 videos for near $0," Claude Code + Remotion skill, runs locally). The follower count is stated as "half a million" (her ~518K) — soft phrasing, no precise claim.
+**⚠️ PREP:** the "PIPELINE" lead magnet is `active=no` in `lead-magnets.csv` — activate before queueing.
+
+---
+### LINKEDIN POST
+
+A creator with half a million followers just made 1,000 videos for basically zero dollars.
+
+No editor. No agency. No $5,000-a-month software stack.
+
+One prompt. A system that builds the screenshots, the animated text, the voiceovers, the captions — and runs on her own laptop while she does literally anything else.
+
+Here's the part everyone will miss while they screenshot the "1,000 videos" number:
+
+The tool isn't the flex. The system is.
+
+Anyone can use AI to make one video. That saves you an afternoon. Building the thing that makes a thousand while you sleep gives you your whole year back.
+
+That's the line between *using* AI and *building* with it. Using it is a faster vending machine — you still show up and press the button every single time. Building with it means you press the button once and it keeps paying out.
+
+You don't need to be a developer to think this way. You need to stop asking "what can AI do for me right now?" and start asking "what can I set up once that keeps doing this for me?"
+
+That one shift is the entire game.
+
+Want the build-once setup I use to post in my own voice on autopilot? Comment PIPELINE and I'll send you the voice clone guide.
+
+---
+
+## ENTRY 012 — 27/06/2026 | LinkedIn | The First Weekend I Didn't Open My Laptop, I Felt Sick | DRAFT
+
+**Status:** DRAFT
+**Platform:** LinkedIn (text post)
+**Format:** Storytelling LinkedIn post, ~230 words
+**Topic:** The fear of stepping away when the business depends on you — and the moment a system carried the work without you. The corporate→entrepreneur "you just became your own worst boss" beat.
+**Pattern used:** Vulnerability Before Credentials (7) + Fear-First Hook (2)
+**Pillar:** Real Talk (+ The Freedom Business)
+**Critic score:** 8.4/10 — APPROVED FOR REVIEW
+**ACP stage:** A — story-led trust builder with a comment-keyword capture.
+**CTA:** "Comment FREEDOM and I'll send you the guide" (The Freedom Business A-stage CTA)
+**Source:** Positioning (corporate→entrepreneur transition). No external stats.
+**⚠️ PERSONALIZE (blocks queueing — critical):** `personal-brain.md` is empty/not seeded, so the "felt sick / first weekend" beat is a *true-to-positioning placeholder, not a real anecdote*. Replace with Fatiha's actual first-step-away moment (when, what nearly broke, how it felt) before this goes live. Run `/brain-manager` to seed real anecdotes so future storytelling posts don't need this flag.
+
+---
+### LINKEDIN POST
+
+The first weekend I didn't open my laptop, I felt sick.
+
+Not relaxed. Sick.
+
+Because for years, "switching off" just meant the work piled up and waited for me. Monday wasn't a fresh start — it was a backlog with a calendar invite.
+
+That's the part nobody warns you about when you leave the 9-to-5: you don't escape the boss. You become the boss, the team, and the unpaid intern, all at once. The business doesn't run your life less. It runs it more.
+
+What changed wasn't motivation. It was systems.
+
+I stopped asking "how do I get more done?" and started asking "what can run without me?" One task at a time. The follow-ups. The content. The scheduling. The stuff I was doing by hand at 11pm to feel "on top of it."
+
+The first weekend the systems carried it on their own, nothing broke. No fire. No backlog with my name on it Monday morning.
+
+That's the moment it stopped being a job I'd given myself and started being a business.
+
+You don't need to be technical to get there. You need to stop being the bottleneck for everything.
+
+If you want the exact first thing I'd automate to buy back your weekends — comment FREEDOM and I'll send you the guide.
+
+---
+
+## ENTRY 011 — 25/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | You're Talking to the Most Powerful AI on the Planet Like It's Google | DRAFT
+
+**Status:** DRAFT
+**Platform:** Instagram Reels / TikTok / YouTube Shorts (vertical 9:16)
+**Format:** ~45s talking-head (AI twin) + on-screen text
+**Topic:** Most people type one sentence into Claude and wonder why the answer is mid. This reel shows the gap between how people use AI and how it actually works when you talk to it right, then offers the free Chez Claude guide.
+**Pattern used:** Provocation-First Hook (1) + Comment-Trigger CTA (5)
+**Pillar:** Stop Doing That by Hand
+**Critic score:** 8.4/10 — APPROVED FOR REVIEW
+**CTA keyword:** CLAUDE
+**Guide link:** https://guides.shiftandlead.com/opt-in.html?guide=chez-claude
+**GHL workflow:** Trigger on "CLAUDE" comment → DM with guide link
+
+---
+### SPOKEN SCRIPT
+
+**[0-3s — HOOK]** *(on camera, direct to lens)*
+"You're talking to the most powerful AI on the planet... like it's Google."
+`[ON SCREEN: "Stop Googling Claude."]`
+
+**[3-8s — THE PROBLEM]**
+"One sentence. No context. And then you're disappointed with what comes back."
+`[ON SCREEN: "Bad input = bad output"]`
+
+**[8-20s — THE SHIFT]**
+"Here's the thing nobody tells you. Claude doesn't need shorter prompts. It needs you to talk to it like a person.
+Tell it who you are. Tell it what you've tried. Tell it what good looks like.
+That one shift turned it from a fancy search bar into my actual business partner."
+`[ON SCREEN: "Context is everything."]`
+
+**[20-32s — THE PROOF]**
+"I built an entire guide that walks you through Claude like a restaurant menu.
+The door, the kitchen, the plate. Every tool, every feature, explained like a friend would explain it.
+No jargon. No fluff. Just what you need to actually get results."
+`[ON SCREEN: "Chez Claude — The Full Kitchen Map"]`
+
+**[32-42s — CTA]**
+"Comment CLAUDE and I'll send it to you free. Takes two minutes to read. Saves you weeks of guessing."
+`[ON SCREEN: "Comment CLAUDE = free guide"]`
+
+---
+### CAPTION (Instagram)
+
+You're using Claude like it's 2019 Google. Stop.
+
+I made a free guide that walks through everything Claude can do — explained like a restaurant menu, not a tech manual.
+
+Comment CLAUDE and I'll DM it to you.
+
+#AI #Claude #AItools #automation #solopreneur #entrepreneur #freedom
+
+---
+### GHL WORKFLOW SETUP
+
+**Trigger:** Instagram comment contains keyword "CLAUDE"
+**Action 1 — Send DM:**
+> Hey! Here's your free Chez Claude guide — the whole Claude ecosystem, explained like a restaurant menu. No jargon, just what you need to get real results. Enjoy! 👇
+> https://guides.shiftandlead.com/opt-in.html?guide=chez-claude
+
+**Action 2:** Tag contact with "guide-subscriber" + "chez-claude"
+
+---
+
+## ENTRY 010 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | My One-Person Business Runs Like a Team of Five | READY TO POST
+
+**Status:** READY TO POST
 **Platform:** Instagram Reels / TikTok / YouTube Shorts (vertical 9:16)
 **Format:** ~40s talking-head + on-screen text + caption
 **Topic:** A one-person business doesn't mean doing everything yourself — it means a team of AI "employees" doing the parts that aren't you.
