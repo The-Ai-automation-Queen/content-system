@@ -93,6 +93,9 @@ a{color:inherit;text-decoration:none}
 .filter-label{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--muted);margin-right:8px}
 .pill{padding:8px 14px;border:1px solid var(--rule);background:#fff;font-family:'Inter',sans-serif;font-size:13px;cursor:pointer}
 .pill.active{background:var(--ink);color:var(--canvas);border-color:var(--ink)}
+.no-results{max-width:1240px;margin:32px auto 0;padding:0 32px;font-family:'Inter',sans-serif;font-size:14px;color:var(--muted)}
+.no-results a{color:var(--accent-deep);text-decoration:underline;text-underline-offset:3px}
+.row.filtered-out{display:none}
 
 .library{max-width:1240px;margin:0 auto;padding:24px 32px 96px}
 .row{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;padding:36px 0;border-bottom:1px solid var(--rule)}
@@ -230,8 +233,8 @@ img{max-width:100%;height:auto}
 </form>
 
 <nav class="nav"><div class="nav-inner">
-  <a class="nav-logo" href="https://www.shiftandlead.ai" style="display:inline-flex;align-items:center" aria-label="The AI Automation Queen — home"><svg viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg" height="30" role="img" aria-label="The AI Automation Queen"><rect x="2" y="4" width="48" height="48" rx="10" fill="#1A1A1A"/><text x="26" y="39" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="28" fill="#2C4BE0">Q</text><text x="60" y="25" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="18" fill="#2C4BE0">the ai</text><text x="60" y="45" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.5" fill="#1A1A1A">AUTOMATION QUEEN</text></svg></a>
-  <div class="nav-links"><a href="https://www.shiftandlead.ai">Home</a><a href="#library">Free Resources</a><a href="#go-further">Community</a><a href="#go-further">About</a></div>
+  <a class="nav-logo" href="https://www.shiftandlead.com" style="display:inline-flex;align-items:center" aria-label="The AI Automation Queen — home"><svg viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg" height="30" role="img" aria-label="The AI Automation Queen"><rect x="2" y="4" width="48" height="48" rx="10" fill="#1A1A1A"/><text x="26" y="39" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="28" fill="#2C4BE0">Q</text><text x="60" y="25" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="18" fill="#2C4BE0">the ai</text><text x="60" y="45" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.5" fill="#1A1A1A">AUTOMATION QUEEN</text></svg></a>
+  <div class="nav-links"><a href="https://www.shiftandlead.com">Home</a><a href="#library">Free Resources</a><a href="#go-further">Community</a><a href="#go-further">About</a></div>
 </div></nav>
 
 <section class="hero"><div class="hero-inner">
@@ -399,13 +402,14 @@ img{max-width:100%;height:auto}
       <a href="ai-vocabulary-explained.html" style="color:var(--accent-deep);text-decoration:underline;text-underline-offset:3px">AI Vocabulary</a>
     </div>
   </div>
-  <input class="search" type="search" placeholder="Search guides...">
-  <div class="filter-group"><span class="filter-label">Tool</span>
-    <button class="pill active">All</button><button class="pill">Claude</button><button class="pill">ChatGPT</button><button class="pill">Gemini</button>
+  <input class="search" type="search" id="guide-search" placeholder="Search guides...">
+  <div class="filter-group"><span class="filter-label">Category</span>
+    <button class="pill active" data-filter="all">All</button>
+    <button class="pill" data-filter="chip-data">Kitchen Map (Tool Guides)</button>
+    <button class="pill" data-filter="chip-track0">AI Basics</button>
+    <button class="pill" data-filter="chip-literacy">AI Vocabulary</button>
   </div>
-  <div class="filter-group"><span class="filter-label">Topic</span>
-    <button class="pill active">All</button><button class="pill">Content</button><button class="pill">Sales</button><button class="pill">Automation</button>
-  </div>
+  <p class="no-results" id="no-results" hidden>No guides match that search &mdash; try a different word, or <a href="ai-tools-compared.html">browse AI Tools Compared</a>.</p>
 </section>
 
 <section class="library" id="library">
@@ -541,7 +545,7 @@ img{max-width:100%;height:auto}
   </article>
   <article class="row" data-publish="2026-03-01">
     <div>
-      <div class="row-meta"><span class="chip chip-track0">AGENTIC</span><span class="row-kicker">AI Vocabulary</span><span class="row-date">01 Mar 2026</span></div>
+      <div class="row-meta"><span class="chip chip-literacy">AGENTIC</span><span class="row-kicker">AI Vocabulary</span><span class="row-date">01 Mar 2026</span></div>
       <h2 class="row-title">Everyone says &ldquo;agentic.&rdquo; Here&rsquo;s what it actually means.</h2>
       <p class="row-summary">Agentic AI. AI agents. Agentic workflows. 4 levels of autonomy, explained without the hype.</p>
     </div>
@@ -598,7 +602,7 @@ img{max-width:100%;height:auto}
   </div>
   <div>
     <div class="footer-col-head">Work With Her</div>
-    <a class="footer-link" href="#go-further">Community, $27/mo founding</a><a class="footer-link" href="#go-further">Fast Forward, $499</a><a class="footer-link" href="https://www.shiftandlead.ai">About</a>
+    <a class="footer-link" href="#go-further">Community, $27/mo founding</a><a class="footer-link" href="#go-further">Fast Forward, $499</a><a class="footer-link" href="https://www.shiftandlead.com">About</a>
   </div>
 </div>
 <div class="footer-legal">&copy; 2026 Shift &amp; Lead. All rights reserved. All content is original work. Reproduction without written consent is prohibited.</div>
@@ -705,6 +709,48 @@ img{max-width:100%;height:auto}
     btn.textContent = 'Saved!';
     statusNote.textContent = "You're on the list. First email lands when " + currentTier + " opens.";
   });
+})();
+
+(function(){
+  var searchInput = document.getElementById('guide-search');
+  var pills = document.querySelectorAll('.filter-group .pill');
+  var rows = document.querySelectorAll('.row');
+  var noResults = document.getElementById('no-results');
+  var activeFilter = 'all';
+
+  function chipClassOf(row){
+    var chip = row.querySelector('.chip');
+    if (!chip) return null;
+    var found = null;
+    chip.classList.forEach(function(c){
+      if (c !== 'chip' && c.indexOf('chip-') === 0) found = c;
+    });
+    return found;
+  }
+
+  function applyFilters(){
+    var query = searchInput.value.trim().toLowerCase();
+    var visibleCount = 0;
+    rows.forEach(function(row){
+      var matchesFilter = activeFilter === 'all' || chipClassOf(row) === activeFilter;
+      var matchesSearch = !query || row.textContent.toLowerCase().indexOf(query) !== -1;
+      var show = matchesFilter && matchesSearch;
+      row.classList.toggle('filtered-out', !show);
+      if (show) visibleCount++;
+    });
+    noResults.hidden = visibleCount !== 0;
+  }
+
+  pills.forEach(function(pill){
+    pill.addEventListener('click', function(){
+      pills.forEach(function(p){ p.classList.remove('active'); });
+      pill.classList.add('active');
+      activeFilter = pill.getAttribute('data-filter');
+      applyFilters();
+    });
+  });
+
+  searchInput.addEventListener('input', applyFilters);
 })();
 </script>
 </body></html>

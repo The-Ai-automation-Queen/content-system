@@ -4,7 +4,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.shiftandlead.ai/sitemap.xml
+Sitemap: https://www.shiftandlead.com/sitemap.xml
 
 # AI training crawlers
 User-agent: GPTBot
