@@ -245,6 +245,36 @@ SEO pass in full:
   Offered to migrate it to a real credential; low risk, no behavior change,
   just better hygiene if the workflow is ever exported/shared.
 
+## Addendum 6 — 04/07/2026, revenue strategy session + lead magnets ACTIVATED
+
+Operator asked for a hard-nosed pricing/revenue read. Conclusion recorded here
+so future sessions execute against it instead of re-debating:
+
+- **Diagnosis: a shipping gap, not a pricing problem.** 8 tiers on paper, zero
+  live. The dead zone rule applies: a small/cold audience buys under $100 on
+  impulse or $5k+ on trust — almost nothing between. Fast Forward ($499) is
+  **parked** until month 3+ / first testimonials, not killed.
+- **Execution order (3 offers, sequential):** (1) speaking one-pager to 10 warm
+  contacts ($5–15k, trust-based, fastest cash); (2) founding community, 20
+  spots at $27/mo locked (for testimonials more than the $540 MRR); (3) AI
+  Time Audit $47 impulse buy. Starter Kit / Fast Forward / Bootcamp wait for
+  proof. Recurring engine = 3 rituals: monthly Build-With-Me live, monthly
+  template drop, Insider Brief as the drumbeat.
+- **Lead magnets ACTIVATED same session** (ROADMAP Priority-0 Action 1, open
+  since June). Key discovery: 5 of 8 were already fully hosted as guide pages
+  with opt-in gates (WHAT/DIFF/PROMPT/WORDS/PIPELINE) — and the opt-in
+  registry in `site/opt-in.html` already had entries for the missing 3. Built
+  the 3 missing pages (`stack-3-tool-ai-stack.html`, `follow-up-setup.html`,
+  `first-ai-employee.html`) from the markdown in `lead-magnets/`, matching the
+  existing vocabulary-guide template (chips, cta-bar, guide-nav, simple
+  footer), cross-linked in the STACK → FOLLOW UP → TEAM chain, render-tested
+  in headless Chromium. All 8 rows in `lead-magnets.csv` now have opt-in-gated
+  URLs and `active=yes`. CLAUDE/BUILD/FREEDOM/FOUNDING rows stay `no`
+  (operator-gated per their own notes).
+- **Still operator-only:** GHL Instagram comment→DM workflows per keyword
+  (SETUP-GUIDE Phase 9), Skool space creation, sending the founding post and
+  speaker one-pager, recording the Time Audit walkthrough video.
+
 ## Open items carried into the loop
 
 - ~~Confirm whether an existing newsletter platform already runs~~ — resolved,
