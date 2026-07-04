@@ -216,6 +216,35 @@ SEO pass in full:
   kicker label said AI Vocabulary — now consistent, and the filter counts are
   exact (2 + 3 + 10 = all 15 library entries).
 
+## Addendum 5 — 04/07/2026, n8n automation fix verified live + Kit integration planned
+
+- **The `Formspree → GHL New Contact` n8n workflow (id `ydmlBSMnIVcHRfmW`) fix
+  from earlier today is now verified live**, not just edited. First attempt
+  silently didn't take effect — n8n separates a draft from the
+  published/active version, and `update_workflow` only touched the draft.
+  Caught this by test-executing the workflow (`execute_workflow` in production
+  mode) with the exact duplicate-email payload that used to fail, seeing it
+  fail again against the *old* active version, then calling `publish_workflow`
+  and re-running the same test: confirmed success (GHL upsert returned
+  `"succeeded":true`, contact updated with tags
+  `["lead","source-main-site-ribbon"]`). The workflow is source-of-truth in
+  n8n itself, not this repo, so there's nothing to commit here — recorded for
+  continuity across sessions.
+- **Operator decision:** the Kit (ConvertKit) newsletter signup should route
+  through GHL as the centralized system, not run as a separate parallel path.
+  Plan: GHL stays the system of record for every lead; a Kit credential
+  (native n8n `convertKit` node, credential type `convertKitApi`) gets added
+  to the same workflow so newsletter-ribbon signups (`source` = `ribbon` /
+  `main-site-ribbon`, no `guide`/`tier`) also get added as Kit subscribers in
+  the same run. Blocked on the operator adding the Kit API credential in n8n's
+  UI directly (Credentials → Add Credential → ConvertKit) — deliberately not
+  routed through this session, so the raw key never has to pass through chat.
+- **Outstanding, operator's call:** the GHL API bearer token is still
+  hardcoded as a literal header value on the `Create GHL Contact` node rather
+  than stored as a proper n8n credential (pre-existing, not introduced today).
+  Offered to migrate it to a real credential; low risk, no behavior change,
+  just better hygiene if the workflow is ever exported/shared.
+
 ## Open items carried into the loop
 
 - ~~Confirm whether an existing newsletter platform already runs~~ — resolved,
