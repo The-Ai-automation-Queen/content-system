@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noai, noimageai">
 <title>The AI Edition &mdash; Shift &amp; Lead</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shift &amp; Lead">
+<meta property="og:title" content="The AI Edition &mdash; Shift &amp; Lead">
+<meta property="og:description" content="AI, explained quietly. Free guides by Fatiha Chikh — The AI Automation Queen.">
+<meta property="og:url" content="https://guides.shiftandlead.com/free-resources.html">
+<meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://guides.shiftandlead.com/free-resources.html">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -210,7 +219,7 @@ img{max-width:100%;height:auto}
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="#">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="free-resources.html">Home</a><a href="#library">Free Resources</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="free-resources.html">Home</a><a href="#library">Free Resources</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="store.html">Store</a><a href="work-with-fatiha.html">Work with Fatiha</a></div>
 </div></nav>
 
 <section class="hero"><div class="hero-inner">
@@ -309,10 +318,58 @@ img{max-width:100%;height:auto}
   <div class="spotlight-head">
     <div>
       <div class="spotlight-eyebrow" id="spotlight-eyebrow">This week</div>
-      <div class="spotlight-title">Fresh this week.</div>
+      <div class="spotlight-title">This week.</div>
     </div>
     <a class="row-cta" href="#library">All guides →</a>
   </div>
+  
+<!-- thisweek strip: non-library content, hydrated from thisweek.json -->
+<style>
+.tw{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-bottom:26px}
+@media(max-width:900px){.tw{grid-template-columns:1fr}}
+.tw-brief{background:#1A1A1A;border-radius:14px;padding:22px 26px;color:#F5F0EB}
+.tw-brief .k{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#B79AE8;margin-bottom:10px}
+.tw-item{display:flex;gap:12px;align-items:baseline;padding:7px 0;border-top:1px solid rgba(255,255,255,.1)}
+.tw-item:first-of-type{border-top:none}
+.tw-v{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;padding:2px 9px;border-radius:4px;color:#fff;flex-shrink:0}
+.tw-item p{margin:0;font-size:14px;font-family:'Inter',sans-serif;color:#E8E3F2}
+.tw-brief a{font-family:'Inter',sans-serif;font-size:13px;color:#B79AE8;text-decoration:none;display:inline-block;margin-top:10px}
+.tw-stat{background:#F4F0FA;border:1px solid #EEE5FA;border-radius:14px;padding:22px 26px;display:flex;flex-direction:column;justify-content:center}
+.tw-stat .k{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#6B35C2;margin-bottom:8px}
+.tw-stat .n{font-family:'Playfair Display',Georgia,serif;font-size:44px;font-weight:700;line-height:1;color:#1A1A1A}
+.tw-stat p{margin:8px 0 0;font-size:13.5px;font-family:'Inter',sans-serif;color:#5C5A57}
+</style>
+<div class="tw" id="thisweek">
+  <div class="tw-brief">
+    <div class="k">From the Insider Brief — this week's verdicts</div>
+    <div id="tw-items">
+      <div class="tw-item"><span class="tw-v" style="background:#6B35C2">ACT</span><p id="tw-act">EU AI Act enforcement starts for general-purpose models — if you sell into Europe, check your disclosures.</p></div>
+      <div class="tw-item"><span class="tw-v" style="background:#1B2EA0">WATCH</span><p id="tw-watch">Agentic checkout inside chat apps — commerce is moving into the conversation.</p></div>
+      <div class="tw-item"><span class="tw-v" style="background:#E63955">IGNORE</span><p id="tw-ignore">The "AGI next quarter" discourse. Again.</p></div>
+    </div>
+    <a href="https://brief.shiftandlead.com">Get the full briefing, free →</a>
+  </div>
+  <div class="tw-stat">
+    <div class="k">Build-in-public · real number</div>
+    <div class="n" id="tw-stat-n">137</div>
+    <p id="tw-stat-p">AI employees running my business from one dashboard. I publish the receipts weekly.</p>
+  </div>
+</div>
+<script>
+(async function(){
+  try{
+    var r = await fetch('thisweek.json',{cache:'no-store'});
+    if(!r.ok) return;
+    var d = await r.json();
+    if(d.act) document.getElementById('tw-act').textContent = d.act;
+    if(d.watch) document.getElementById('tw-watch').textContent = d.watch;
+    if(d.ignore) document.getElementById('tw-ignore').textContent = d.ignore;
+    if(d.stat_n) document.getElementById('tw-stat-n').textContent = d.stat_n;
+    if(d.stat_p) document.getElementById('tw-stat-p').textContent = d.stat_p;
+  }catch(e){/* baked fallback stays */}
+})();
+</script>
+
   <div class="spotlight-grid" id="spotlight-grid">
     <!-- Spotlight slots populated by JS on page load. Fallback HTML below in case JS fails. -->
     <div class="spot-feat" id="spotlight-featured">
@@ -624,7 +681,7 @@ img{max-width:100%;height:auto}
     <div class="cta-card">
       <div class="kicker">For companies</div>
       <h3>Keynotes &amp; workshops.</h3>
-      <p>Bring this into your team &mdash; practical, non-technical, from someone whose business runs on 137 AI employees. From $5,000.</p>
+      <p>Bring this into your team &mdash; practical, non-technical, from someone whose business runs on 137 AI employees.</p>
       <a class="btn-cream" href="work-with-fatiha.html">Work with Fatiha</a>
     </div>
   </div>
