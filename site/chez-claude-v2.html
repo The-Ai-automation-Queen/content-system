@@ -10,13 +10,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--canvas:#F8F7F5;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#6B35C2;--accent-deep:#4A1F8F;--tint:#EEE5FA;--cream:#F4F0FA}
+:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--tint:#E4EAFB;--cream:#EEF2FC}
 *{box-sizing:border-box}
 body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.75}
 .mono{font-family:'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
 
 /* nav */
-.nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(248,247,245,.94);backdrop-filter:blur(8px);z-index:20}
+.nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20}
 .nav-inner{max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
 .nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:var(--ink);text-decoration:none}
 .nav .mono{font-size:10px;color:var(--muted)}
@@ -74,13 +74,13 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 /* warnings — "know before you eat" as menu footnotes */
 .warn{background:var(--ink);color:#F5F0EB}
 .warn-inner{max-width:1160px;margin:0 auto;padding:70px 24px}
-.warn .mono{color:#B79AE8;font-size:11px}
+.warn .mono{color:#7FA0FF;font-size:11px}
 .warn h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:700;margin:.4rem 0 26px}
 .warn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 @media(max-width:900px){.warn-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.warn-grid{grid-template-columns:1fr}}
 .warn-card{border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:20px}
-.warn-card .term{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#B79AE8;margin-bottom:8px}
+.warn-card .term{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7FA0FF;margin-bottom:8px}
 .warn-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0;line-height:1.6}
 .warn-card strong{color:#fff}
 
@@ -119,15 +119,15 @@ a{color:var(--accent)}
   <div class="cover-art">
     <!-- door/kitchen/plate cover mark, drawn -->
     <svg viewBox="0 0 300 380" fill="none" aria-label="Door, kitchen, plate">
-      <rect x="70" y="30" width="160" height="110" rx="6" stroke="#B79AE8" stroke-width="2"/>
-      <rect x="130" y="60" width="40" height="80" rx="3" stroke="#B79AE8" stroke-width="2"/>
-      <circle cx="162" cy="102" r="3.5" fill="#B79AE8"/>
+      <rect x="70" y="30" width="160" height="110" rx="6" stroke="#7FA0FF" stroke-width="2"/>
+      <rect x="130" y="60" width="40" height="80" rx="3" stroke="#7FA0FF" stroke-width="2"/>
+      <circle cx="162" cy="102" r="3.5" fill="#7FA0FF"/>
       <text x="150" y="22" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE DOOR</text>
-      <path d="M85 205h130M95 190h110M110 175h80" stroke="#B79AE8" stroke-width="2" stroke-linecap="round"/>
-      <path d="M120 165c0-10 8-10 8-20M150 165c0-10 8-10 8-20M180 165c0-10 8-10 8-20" stroke="#6B35C2" stroke-width="2" stroke-linecap="round"/>
+      <path d="M85 205h130M95 190h110M110 175h80" stroke="#7FA0FF" stroke-width="2" stroke-linecap="round"/>
+      <path d="M120 165c0-10 8-10 8-20M150 165c0-10 8-10 8-20M180 165c0-10 8-10 8-20" stroke="#2C4BE0" stroke-width="2" stroke-linecap="round"/>
       <text x="150" y="232" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE KITCHEN</text>
-      <circle cx="150" cy="310" r="46" stroke="#B79AE8" stroke-width="2"/>
-      <circle cx="150" cy="310" r="28" stroke="#6B35C2" stroke-width="2"/>
+      <circle cx="150" cy="310" r="46" stroke="#7FA0FF" stroke-width="2"/>
+      <circle cx="150" cy="310" r="28" stroke="#2C4BE0" stroke-width="2"/>
       <text x="150" y="378" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE PLATE</text>
     </svg>
     <span class="slot mono">image slot: replace with hero illustration</span>
@@ -177,22 +177,22 @@ a{color:var(--accent)}
     <div class="plan">
       <span class="mono">The floor plan</span>
       <svg viewBox="0 0 420 300" fill="none">
-        <rect x="150" y="110" width="120" height="80" rx="10" stroke="#6B35C2" stroke-width="2.5"/>
+        <rect x="150" y="110" width="120" height="80" rx="10" stroke="#2C4BE0" stroke-width="2.5"/>
         <text x="210" y="145" text-anchor="middle" font-family="Playfair Display" font-size="17" font-weight="700" fill="#1A1A1A">The Chef</text>
         <text x="210" y="166" text-anchor="middle" font-family="Space Mono" font-size="9" letter-spacing="2" fill="#5C5A57">ONE BRAIN</text>
-        <rect x="20" y="20" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#F8F7F5"/>
+        <rect x="20" y="20" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
         <text x="85" y="42" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">claude.ai</text>
         <text x="85" y="59" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">TABLE SERVICE</text>
-        <rect x="270" y="20" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#F8F7F5"/>
+        <rect x="270" y="20" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
         <text x="335" y="42" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">Claude Code</text>
         <text x="335" y="59" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">CHEF AT YOUR DESK</text>
-        <rect x="20" y="228" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#F8F7F5"/>
+        <rect x="20" y="228" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
         <text x="85" y="250" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">Cowork</text>
         <text x="85" y="267" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">PRIVATE DINING</text>
-        <rect x="270" y="228" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#F8F7F5"/>
+        <rect x="270" y="228" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
         <text x="335" y="250" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">API</text>
         <text x="335" y="267" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">CATERING</text>
-        <path d="M120 72 L172 110M300 72 L248 110M120 228 L172 190M300 228 L248 190" stroke="#B79AE8" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <path d="M120 72 L172 110M300 72 L248 110M120 228 L172 190M300 228 L248 190" stroke="#7FA0FF" stroke-width="1.5" stroke-dasharray="4 4"/>
       </svg>
     </div>
   </div>
@@ -212,19 +212,19 @@ a{color:var(--accent)}
   </div>
   <div class="menu">
     <div class="dish">
-      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><path d="M10 50c10-24 50-24 60 0" stroke="#6B35C2" stroke-width="2.5" stroke-linecap="round"/><circle cx="40" cy="20" r="9" stroke="#6B35C2" stroke-width="2.5"/></svg></div>
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><path d="M10 50c10-24 50-24 60 0" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/><circle cx="40" cy="20" r="9" stroke="#2C4BE0" stroke-width="2.5"/></svg></div>
       <span class="mono">Starter · 5 minutes</span>
       <h3>The long conversation</h3>
       <p>Paste an entire contract, report, or 40-page PDF and interrogate it. This is the dish no fast-food kitchen can make.</p>
     </div>
     <div class="dish">
-      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><rect x="12" y="10" width="56" height="40" rx="5" stroke="#6B35C2" stroke-width="2.5"/><path d="M24 26l8 6-8 6M40 40h16" stroke="#6B35C2" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><rect x="12" y="10" width="56" height="40" rx="5" stroke="#2C4BE0" stroke-width="2.5"/><path d="M24 26l8 6-8 6M40 40h16" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
       <span class="mono">Main · 20 minutes</span>
       <h3>The artifact</h3>
       <p>Ask for a working thing — a page, a calculator, a document — and watch it appear beside the chat, ready to use.</p>
     </div>
     <div class="dish">
-      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><circle cx="40" cy="32" r="22" stroke="#6B35C2" stroke-width="2.5"/><path d="M40 18v14l10 8" stroke="#6B35C2" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><circle cx="40" cy="32" r="22" stroke="#2C4BE0" stroke-width="2.5"/><path d="M40 18v14l10 8" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
       <span class="mono">Chef's special</span>
       <h3>The project</h3>
       <p>Give it standing context about your business once — then every conversation starts already knowing you.</p>
