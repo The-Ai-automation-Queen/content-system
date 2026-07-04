@@ -191,6 +191,31 @@ SEO pass in full:
   any JS — they're currently decorative. Worth fixing in a later pass since
   they'd otherwise mislead a visitor into thinking search/filter works.
 
+## Addendum 4 — 04/07/2026, domain decision + search-box fix
+
+- **Canonical domain changed to `shiftandlead.com`.** Operator confirmed the
+  new site should live at `www.shiftandlead.com`, not `.ai` — and since
+  `guides.shiftandlead.com` and `brief.shiftandlead.com` already run on that
+  root domain, this actually *fixes* an inconsistency rather than creating
+  one (the `.ai` main site was the odd one out). Swapped every hardcoded
+  `shiftandlead.ai` reference to `.com` across `main-site/` and `site/`
+  (canonical/OG/Twitter/JSON-LD URLs, sitemap, robots.txt, nav/footer links).
+  Recommended to the operator: set up a `.com` email alias/catch-all (or keep
+  the real contact address visible on-site) since some visitors will guess the
+  email domain matches the website domain, and 301-redirect `shiftandlead.ai`
+  → `shiftandlead.com` once the new site is live, to preserve any existing
+  links/SEO value rather than fragmenting across two domains.
+- **Fixed the guides library's search box**, flagged in Addendum 3 as
+  decorative. The old filter pills didn't even match real content
+  ("Content/Sales/Automation" topics don't exist in this library) — replaced
+  with one accurate filter (All / Kitchen Map / AI Basics / AI Vocabulary)
+  keyed off each row's chip class, plus live text search across title and
+  summary. Verified with a real headless-browser run (Playwright), not just
+  code review. Found and fixed a pre-existing markup bug along the way: the
+  "agentic" guide's chip was colored/classed as AI Basics while its own
+  kicker label said AI Vocabulary — now consistent, and the filter counts are
+  exact (2 + 3 + 10 = all 15 library entries).
+
 ## Open items carried into the loop
 
 - ~~Confirm whether an existing newsletter platform already runs~~ — resolved,
