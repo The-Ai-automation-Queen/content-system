@@ -47,6 +47,14 @@ Full findings in `reports/website-brand-audit-2026-07-04.md`.
   handle (`@fati_chic_`) instead of `@thefatihachikh`, and a Skool icon pointing
   at a personal profile rather than a live community (confirmed: Community is
   not yet launched). Full detail in the audit report's addendum.
+- **Phase 1 shipped same day** (operator asked to build now, not wait for
+  Monday): `main-site/` — shiftandlead.ai rebuilt on the static stack, merged
+  brand voice, Blog nav + guide-site CTA, 4 case studies reframed (facts kept
+  intact, no invented stats), reconciled pricing ladder, SEO meta from the
+  start, reused lead-capture pattern. Logo v2 (SVG wordmark) rolled out across
+  `main-site/` and all of `site/`. Still open: pointing the live shiftandlead.ai
+  domain at the new code (currently on GoHighLevel) — an operator decision.
+  Full detail in the audit report's second addendum.
 
 ### 2026-06-26 — Brain Manager + daily crons + Unipile + machine docs
 Closed the 4 remaining gaps vs. Romain Brunel's always-on system (from RESEARCH

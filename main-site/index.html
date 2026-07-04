@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#F8F7F5">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noai, noimageai">
+<title>The AI Automation Queen &mdash; Lead with AI. Don&rsquo;t drown in it.</title>
+<meta name="description" content="Fatiha Chikh, The AI Automation Queen, teaches everyday entrepreneurs to use AI and automation to win back their time. Free guides, a twice-weekly newsletter, and a community &mdash; built by someone who did it herself.">
+<meta property="og:title" content="The AI Automation Queen &mdash; Lead with AI. Don't drown in it.">
+<meta property="og:description" content="Free guides, a twice-weekly AI newsletter, and a community for everyday entrepreneurs who want AI and automation to buy back their time.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.shiftandlead.ai/">
+<meta property="og:image" content="https://www.shiftandlead.ai/Portrait.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The AI Automation Queen &mdash; Lead with AI. Don't drown in it.">
+<meta name="twitter:description" content="Free guides, a twice-weekly AI newsletter, and a community for everyday entrepreneurs who want AI and automation to buy back their time.">
+<link rel="canonical" href="https://www.shiftandlead.ai/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#F8F7F5;
+  --cream:#F4F0FA;
+  --ink:#1A1A1A;
+  --rule:#D8D6D2;
+  --muted:#5C5A57;
+  --accent:#6B35C2;
+  --accent-deep:#4A1F8F;
+  --accent-tint:#EEE5FA;
+  --electric:#2C4BE0;
+  --navy:#1B2EA0;
+  --surface:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+section{scroll-margin-top:70px}
+
+.ribbon{display:flex;width:100%;background:var(--navy);color:var(--canvas);font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;padding:11px 32px;text-align:center;text-decoration:none;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.ribbon label{cursor:default}
+.ribbon input[type="email"]{padding:7px 14px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);color:var(--canvas);font-family:'Inter',sans-serif;font-size:13px;border-radius:3px;letter-spacing:0.02em;text-transform:none;width:220px}
+.ribbon input[type="email"]::placeholder{color:rgba(255,255,255,0.45)}
+.ribbon input[type="email"]:focus{outline:none;border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.15)}
+.ribbon button{background:transparent;border:1px solid rgba(255,255,255,0.3);color:#7FA0FF;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:7px 16px;border-radius:3px;cursor:pointer}
+.ribbon button:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.5)}
+
+.nav{border-bottom:1px solid var(--rule);background:var(--canvas);position:sticky;top:0;z-index:10}
+.nav-inner{max-width:1240px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo{display:flex;align-items:center}
+.nav-logo svg{height:38px;width:auto}
+.nav-links{display:flex;align-items:center;gap:26px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;flex-wrap:wrap}
+.nav-cta{background:var(--electric);color:#fff;padding:10px 18px;border-radius:3px;font-weight:600}
+.nav-cta:hover{background:var(--navy)}
+
+.hero{background:var(--canvas);padding:80px 32px 88px}
+.hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:center}
+.hero-kicker{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.22em;color:var(--accent-deep);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.hero-kicker .rule{width:28px;height:1px;background:var(--accent-deep)}
+.hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(42px,6vw,72px);line-height:1.02;font-weight:400;letter-spacing:-0.02em;margin-bottom:28px}
+.hero h1 em{font-style:italic;color:var(--electric)}
+.hero-sub{font-size:19px;line-height:1.6;color:var(--muted);max-width:560px;margin-bottom:32px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{display:inline-block;padding:15px 26px;background:var(--electric);color:#fff;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;border-radius:3px}
+.btn-primary:hover{background:var(--navy)}
+.btn-ghost{display:inline-block;padding:15px 26px;background:transparent;color:var(--ink);border:1px solid var(--ink);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;border-radius:3px}
+.btn-ghost:hover{background:var(--ink);color:var(--canvas)}
+.hero-portrait{aspect-ratio:4/5;position:relative;overflow:hidden;background:#1A1A1A;border-radius:4px}
+.hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top}
+
+.pains{background:var(--ink);color:var(--canvas);padding:80px 32px}
+.pains-inner{max-width:1000px;margin:0 auto;text-align:center}
+.pains-eyebrow{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.22em;opacity:0.7;margin-bottom:20px}
+.pains-title{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(26px,3.4vw,36px);font-weight:400;margin-bottom:48px;line-height:1.35}
+.pains-list{list-style:none;display:grid;gap:20px;text-align:left;max-width:720px;margin:0 auto 44px}
+.pains-list li{display:flex;gap:16px;align-items:baseline;font-size:18px;color:rgba(248,247,245,0.92)}
+.pains-list li::before{content:"\2715";color:#E63955;font-family:'Space Mono',monospace;font-size:14px;flex-shrink:0}
+.pains-close{font-size:16px;color:rgba(248,247,245,0.7);max-width:600px;margin:0 auto}
+
+.founder{padding:96px 32px}
+.founder-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1.3fr;gap:64px;align-items:center}
+.founder-photo{aspect-ratio:4/5;overflow:hidden;border-radius:4px;background:#1A1A1A}
+.founder-photo img{width:100%;height:100%;object-fit:cover}
+.founder-eyebrow{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.22em;color:var(--accent-deep);margin-bottom:18px}
+.founder h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,3.6vw,40px);font-weight:400;margin-bottom:22px;letter-spacing:-0.01em}
+.founder p{font-size:18px;line-height:1.65;color:var(--ink);margin-bottom:18px}
+.founder p:last-child{margin-bottom:0}
+.founder-sign{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:20px;margin-top:22px;color:var(--accent-deep)}
+
+.pillars{background:var(--cream);padding:88px 32px}
+.pillars-inner{max-width:1240px;margin:0 auto}
+.section-head{text-align:center;margin-bottom:52px}
+.section-eyebrow{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.22em;color:var(--accent-deep);margin-bottom:16px}
+.section-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,4vw,44px);font-weight:400;letter-spacing:-0.01em}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pillar-card{background:#fff;border:1px solid var(--rule);padding:36px 32px;border-radius:4px}
+.pillar-card .num{font-family:'Space Mono',monospace;font-size:11px;color:var(--accent-deep);letter-spacing:0.16em;margin-bottom:16px}
+.pillar-card h3{font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:400;margin-bottom:14px}
+.pillar-card p{font-size:15px;color:var(--muted);line-height:1.6}
+
+.cases{padding:96px 32px}
+.cases-inner{max-width:1240px;margin:0 auto}
+.cases-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.case-card{border:1px solid var(--rule);padding:28px 24px;border-radius:4px;display:flex;flex-direction:column;gap:14px;background:#fff}
+.case-card .tag{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-deep)}
+.case-card h3{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:400;line-height:1.25}
+.case-card .stat{font-family:'Space Mono',monospace;font-size:28px;color:var(--electric)}
+.case-card .stat-label{font-size:13px;color:var(--muted)}
+.case-card .read{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink);border-bottom:1px solid var(--ink);align-self:flex-start;padding-bottom:2px;margin-top:auto}
+
+.testimonials{background:var(--ink);color:var(--canvas);padding:96px 32px}
+.testimonials-inner{max-width:1100px;margin:0 auto}
+.testimonials .section-eyebrow{color:#9FB4FF}
+.testimonials .section-title{color:var(--canvas)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:52px}
+.testi-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);padding:30px 26px;border-radius:4px}
+.testi-quote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:18px;line-height:1.5;margin-bottom:20px;color:rgba(248,247,245,0.95)}
+.testi-name{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;opacity:0.7}
+
+.ladder{padding:96px 32px;background:var(--cream)}
+.ladder-inner{max-width:1240px;margin:0 auto}
+.ladder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ladder-card{background:var(--electric);color:#fff;border-radius:4px;padding:36px;display:flex;flex-direction:column;gap:14px}
+.ladder-card.alt{background:var(--ink)}
+.ladder-card .kicker{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;opacity:0.75}
+.ladder-card h3{font-family:'Playfair Display',Georgia,serif;font-size:27px;font-weight:400}
+.ladder-card .price{font-family:'Space Mono',monospace;font-size:15px;opacity:0.9}
+.ladder-card p{font-size:14.5px;opacity:0.9;line-height:1.55}
+.ladder-card a{margin-top:auto;display:inline-block;padding:13px 20px;background:var(--canvas);color:var(--ink);font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;border-radius:3px;align-self:flex-start}
+.ladder-note{text-align:center;font-size:13.5px;color:var(--muted);margin-top:32px}
+.ladder-note a{text-decoration:underline;text-underline-offset:3px}
+
+.faq{padding:96px 32px}
+.faq-inner{max-width:820px;margin:0 auto}
+.faq-item{border-top:1px solid var(--rule);padding:26px 0}
+.faq-item:last-child{border-bottom:1px solid var(--rule)}
+.faq-item h3{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:400;margin-bottom:10px}
+.faq-item p{font-size:15.5px;color:var(--muted);line-height:1.6}
+
+.contact{background:var(--navy);color:var(--canvas);padding:96px 32px}
+.contact-inner{max-width:640px;margin:0 auto;text-align:center}
+.contact .section-eyebrow{color:#9FB4FF}
+.contact h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,3.6vw,38px);font-weight:400;margin-bottom:18px}
+.contact p{font-size:16px;opacity:0.85;margin-bottom:32px}
+.contact-form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
+.contact-form input{flex:1;min-width:240px;padding:14px 16px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.08);color:var(--canvas);font-family:'Inter',sans-serif;font-size:14px;border-radius:3px}
+.contact-form input::placeholder{color:rgba(255,255,255,0.5)}
+.contact-note{font-size:12.5px;opacity:0.65}
+.contact-alt{margin-top:36px;font-size:14px;opacity:0.85}
+.contact-alt a{text-decoration:underline;text-underline-offset:3px}
+
+.footer{background:var(--ink);color:var(--canvas);padding:56px 32px 32px}
+.footer-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;align-items:start}
+.footer-brand{margin-bottom:12px}
+.footer-brand svg{height:34px;width:auto}
+.footer-tag{opacity:0.7;font-size:14px;max-width:360px}
+.footer-col-head{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;opacity:0.6;margin-bottom:12px}
+.footer-link{display:block;font-size:14px;padding:4px 0;color:var(--canvas);opacity:0.9}
+.footer-legal{max-width:1240px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,0.12);font-size:11px;opacity:0.5;font-family:'Space Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;text-align:center}
+
+@media (max-width:900px){
+  .hero-inner,.founder-inner{grid-template-columns:1fr}
+  .hero-portrait,.founder-photo{max-width:360px}
+  .pillars-grid,.ladder-grid,.testi-grid{grid-template-columns:1fr}
+  .cases-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{grid-template-columns:1fr;gap:28px}
+}
+@media (max-width:600px){
+  .cases-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<form class="ribbon" id="ribbon-form">
+  <label for="ribbon-email">Get the AI Insider Brief &mdash; twice a week, free</label>
+  <input id="ribbon-email" name="email" type="email" placeholder="your@email.com" required>
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+  <button type="submit"><strong>Subscribe free</strong></button>
+</form>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-logo" href="#top" aria-label="The AI Automation Queen — home">
+    <svg viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The AI Automation Queen">
+      <rect x="2" y="4" width="48" height="48" rx="10" fill="#1A1A1A"/>
+      <text x="26" y="39" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="28" fill="#2C4BE0">Q</text>
+      <text x="60" y="25" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="18" fill="#2C4BE0">the ai</text>
+      <text x="60" y="45" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.5" fill="#1A1A1A">AUTOMATION QUEEN</text>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="https://guides.shiftandlead.com">Blog</a>
+    <a href="#about">About</a>
+    <a href="#cases">Case Studies</a>
+    <a href="#further">Community</a>
+    <a href="#contact">Contact</a>
+    <a class="nav-cta" href="https://guides.shiftandlead.com">Free Guides</a>
+  </div>
+</div></nav>
+
+<section class="hero" id="top"><div class="hero-inner">
+  <div>
+    <div class="hero-kicker"><span class="rule"></span>The AI Automation Queen</div>
+    <h1>Lead with AI.<br>Don&rsquo;t <em>drown</em> in it.</h1>
+    <p class="hero-sub">You built your business for freedom. Somewhere along the way, it started running you instead. I teach everyday entrepreneurs to use AI and automation to get their time back &mdash; not by handing you more software to figure out, but by showing you exactly what to automate, what to skip, and how, without needing to be technical.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="https://guides.shiftandlead.com">Get the free guides</a>
+      <a class="btn-ghost" href="#further">See how to go further</a>
+    </div>
+  </div>
+  <div class="hero-portrait"><img src="Portrait.jpeg" alt="Fatiha Chikh, The AI Automation Queen"></div>
+</div></section>
+
+<section class="pains"><div class="pains-inner">
+  <div class="pains-eyebrow">Sound familiar?</div>
+  <p class="pains-title">Every week you wait is costing you time, leads, and revenue.</p>
+  <ul class="pains-list">
+    <li>You&rsquo;re losing 15+ hours a week to repetitive busywork.</li>
+    <li>Leads go cold because you can&rsquo;t follow up fast enough.</li>
+    <li>You&rsquo;re paying for five tools and actually using two.</li>
+    <li>Your big goals are on hold because today&rsquo;s admin ate the day again.</li>
+    <li>You&rsquo;re missing chances because you&rsquo;re buried &mdash; not because you&rsquo;re not good enough.</li>
+  </ul>
+  <p class="pains-close">Let&rsquo;s find out what it&rsquo;s actually costing you &mdash; and fix it.</p>
+</div></section>
+
+<section class="founder" id="about"><div class="founder-inner">
+  <div class="founder-photo"><img src="closeUp.jpeg" alt="Fatiha Chikh"></div>
+  <div>
+    <div class="founder-eyebrow">Meet Fatiha</div>
+    <h2>I&rsquo;ve done this before. This time, I&rsquo;m building my own.</h2>
+    <p>For 20+ years inside Big Tech, my job was getting the world to adopt the next big thing &mdash; cloud, subscription models, digital transformation. I helped huge sales teams sell what nobody understood yet.</p>
+    <p>Then I left. I co-founded LeLabPlus, a smart-fashion company using AI and 3D design &mdash; we&rsquo;ve worked with Nike for four years, turning unsold stock into upcycled collections.</p>
+    <p>AI is just the next wave. A much bigger one. And I&rsquo;ve done this before &mdash; except this time I&rsquo;m not selling it to a boardroom. I&rsquo;m building my own thing with it, and teaching you to build yours.</p>
+    <p>What 20 years taught me: the winners don&rsquo;t work harder. They build better. That&rsquo;s what I hand you now.</p>
+    <div class="founder-sign">Fatiha Chikh</div>
+  </div>
+</div></section>
+
+<section class="pillars"><div class="pillars-inner">
+  <div class="section-head">
+    <div class="section-eyebrow">How I help</div>
+    <div class="section-title">Three ways in, one promise.</div>
+  </div>
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <div class="num">LEARN</div>
+      <h3>Start free, always.</h3>
+      <p>Free guides, the twice-weekly AI Insider Brief, and a growing library that turns AI overwhelm into plain English. No card, no catch.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="num">BUILD</div>
+      <h3>Templates, a community, a flagship course.</h3>
+      <p>A discussion-first community and a structured build curriculum that walks you through installing AI and automation in your own business &mdash; step by step, no code required.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="num">SPEAK</div>
+      <h3>Bring it to your team.</h3>
+      <p>Keynotes and workshops for teams ready to move &mdash; same authority, different room. Plus quoted, bespoke build projects for the rare business that needs it done alongside them.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="cases" id="cases"><div class="cases-inner">
+  <div class="section-head">
+    <div class="section-eyebrow">Proof, not theory</div>
+    <div class="section-title">I&rsquo;ve built these results for real businesses.</div>
+  </div>
+  <div class="cases-grid">
+    <div class="case-card">
+      <div class="tag">E-Commerce</div>
+      <h3>A support bot that answers before customers get frustrated.</h3>
+      <div class="stat">1 min</div>
+      <div class="stat-label">average support response time</div>
+      <a class="read" href="case-study-1.html">Read the story &rarr;</a>
+    </div>
+    <div class="case-card">
+      <div class="tag">Day Care Center</div>
+      <h3>An AI agent that qualifies leads and books tours in minutes.</h3>
+      <div class="stat">97%</div>
+      <div class="stat-label">faster time-to-first-contact</div>
+      <a class="read" href="case-study-2.html">Read the story &rarr;</a>
+    </div>
+    <div class="case-card">
+      <div class="tag">Tire Shop</div>
+      <h3>Recovering every missed call before the customer calls a competitor.</h3>
+      <div class="stat">42 sec</div>
+      <div class="stat-label">average time to respond to a lead</div>
+      <a class="read" href="case-study-3.html">Read the story &rarr;</a>
+    </div>
+    <div class="case-card">
+      <div class="tag">Coffee Shop</div>
+      <h3>Retiring the punch card for something that actually keeps people coming back.</h3>
+      <div class="stat">30%</div>
+      <div class="stat-label">increase in sales</div>
+      <a class="read" href="case-study-4.html">Read the story &rarr;</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="testimonials"><div class="testimonials-inner">
+  <div class="section-head">
+    <div class="section-eyebrow">In their words</div>
+    <div class="section-title">People who built it with me.</div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <p class="testi-quote">&ldquo;Working with Fatiha was a game-changer. I can work part-time, take care of my sons, and the automations for my marketing content handle everything in the background. Total peace of mind.&rdquo;</p>
+      <div class="testi-name">Pauline P.</div>
+    </div>
+    <div class="testi-card">
+      <p class="testi-quote">&ldquo;Fatiha helped us centralise our tools, document our systems, and start using AI without the overwhelm. Now we focus on innovation, not admin.&rdquo;</p>
+      <div class="testi-name">Myriam M.</div>
+    </div>
+    <div class="testi-card">
+      <p class="testi-quote">&ldquo;Thanks to Fatiha, we automated our training workflows. I save hours every week and finally feel like I&rsquo;m running the business, not the other way around.&rdquo;</p>
+      <div class="testi-name">Nazima C.</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ladder" id="further"><div class="ladder-inner">
+  <div class="section-head">
+    <div class="section-eyebrow">When free isn&rsquo;t enough</div>
+    <div class="section-title">Three ways to go further.</div>
+  </div>
+  <div class="ladder-grid">
+    <div class="ladder-card">
+      <div class="kicker">Community</div>
+      <h3>How I build everything.</h3>
+      <div class="price">$27/mo founding &middot; $47/mo standard</div>
+      <p>My actual workflow, swipe vault, and live calls when I run them. Discussion-first, 20 founding spots locked for life.</p>
+      <a href="https://guides.shiftandlead.com/free-resources.html#go-further">Join the waitlist</a>
+    </div>
+    <div class="ladder-card alt">
+      <div class="kicker">Course</div>
+      <h3>Fast Forward.</h3>
+      <div class="price">$499 one-time</div>
+      <p>Structured curriculum to build, ship, and install AI. 30-day community trial bundled.</p>
+      <a href="https://guides.shiftandlead.com/free-resources.html#go-further">Join the waitlist</a>
+    </div>
+    <div class="ladder-card">
+      <div class="kicker">Speaking &amp; Bespoke</div>
+      <h3>Bring it to your team.</h3>
+      <div class="price">Quoted per scope</div>
+      <p>Keynotes, half-day and full-day workshops, or a quoted done-with-you build for the rare business that needs it.</p>
+      <a href="#contact">Get in touch</a>
+    </div>
+  </div>
+  <p class="ladder-note">Prefer a lighter one-time start? The <a href="https://guides.shiftandlead.com/free-resources.html#go-further">Starter Kit ($97)</a> and Bootcamp cohorts ($997) are also on the way &mdash; ask below to be first in line.</p>
+</div></section>
+
+<section class="faq"><div class="faq-inner">
+  <div class="section-head">
+    <div class="section-eyebrow">Before you ask</div>
+    <div class="section-title">Questions people actually have.</div>
+  </div>
+  <div class="faq-item">
+    <h3>I&rsquo;m not technical &mdash; can I still do this?</h3>
+    <p>Absolutely. That&rsquo;s the whole point. You don&rsquo;t need to code. You need the system &mdash; I hand you shortcuts that just work, in plain English.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Do I need to replace what I already use?</h3>
+    <p>No. We work with what you&rsquo;ve got &mdash; your CRM, your email, your calendar. If something&rsquo;s not on my list of recommendations, I&rsquo;ll suggest better options. I never force a switch just to switch.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What if the free guides aren&rsquo;t enough?</h3>
+    <p>That&rsquo;s what the Community and Fast Forward are for &mdash; see above. Start free, go further when you&rsquo;re ready, never before.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Can I actually afford this?</h3>
+    <p>The free layer costs nothing and already saves you hours. Everything paid is designed to pay for itself in reclaimed time within the first month.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How fast will I see results?</h3>
+    <p>Some wins land the same week &mdash; one workflow automated, one hour back. Installing the full system properly takes a few weeks. Real change, not a hack.</p>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="contact-inner">
+  <div class="section-eyebrow">Let&rsquo;s talk</div>
+  <h2>Speaking, bespoke builds, or just say hello.</h2>
+  <p>For workshops, keynotes, or a quoted done-with-you project &mdash; or if you just want to be first in line when the Community opens.</p>
+  <form class="contact-form" id="contact-form">
+    <input type="email" name="email" placeholder="your@email.com" required>
+    <button type="submit" class="btn-primary" style="border:none;cursor:pointer">Send</button>
+  </form>
+  <p class="contact-note" id="contact-status">I read every message myself. No auto-replies, no funnels.</p>
+  <p class="contact-alt">Or find the free guides and newsletter signup at <a href="https://guides.shiftandlead.com">guides.shiftandlead.com</a>.</p>
+</div></section>
+
+<footer class="footer"><div class="footer-inner">
+  <div>
+    <div class="footer-brand">
+      <svg viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The AI Automation Queen">
+        <rect x="2" y="4" width="48" height="48" rx="10" fill="#F8F7F5"/>
+        <text x="26" y="39" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="28" fill="#2C4BE0">Q</text>
+        <text x="60" y="25" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="18" fill="#7FA0FF">the ai</text>
+        <text x="60" y="45" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.5" fill="#F8F7F5">AUTOMATION QUEEN</text>
+      </svg>
+    </div>
+    <p class="footer-tag">For everyday entrepreneurs who want AI and automation to buy back their time. Built by someone who did it herself.</p>
+  </div>
+  <div>
+    <div class="footer-col-head">Explore</div>
+    <a class="footer-link" href="https://guides.shiftandlead.com">Free Guides &amp; Blog</a>
+    <a class="footer-link" href="#cases">Case Studies</a>
+    <a class="footer-link" href="#about">About</a>
+  </div>
+  <div>
+    <div class="footer-col-head">Connect</div>
+    <a class="footer-link" href="https://www.instagram.com/thefatihachikh" target="_blank" rel="noopener">Instagram</a>
+    <a class="footer-link" href="https://linkedin.com/in/fatihachikh" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="footer-link" href="#contact">Contact</a>
+  </div>
+</div>
+<div class="footer-legal">&copy; 2026 The AI Automation Queen &middot; Shift &amp; Lead. All rights reserved.</div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('ribbon-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = this;
+    var email = form.querySelector('[name="email"]').value;
+    var gotcha = form.querySelector('[name="_gotcha"]').value;
+    var btn = form.querySelector('button');
+    btn.innerHTML = '<strong>Subscribed!</strong>';
+    btn.disabled = true;
+
+    fetch('https://formspree.io/f/xgojoyka', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify({email: email, source: 'main-site-ribbon', _gotcha: gotcha})
+    });
+
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email, source: 'main-site-ribbon'})
+    });
+  });
+})();
+
+(function(){
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('contact-status');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = form.querySelector('[name="email"]').value;
+    var btn = form.querySelector('button');
+
+    fetch('https://formspree.io/f/xgojoyka', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify({email: email, source: 'main-site-contact'})
+    });
+
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email, source: 'main-site-contact'})
+    });
+
+    btn.textContent = 'Sent!';
+    btn.disabled = true;
+    status.textContent = "Got it — I'll be in touch personally.";
+  });
+})();
+</script>
+</body></html>

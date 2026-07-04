@@ -115,14 +115,58 @@ property that changes Phase 3's scope:
   — recorded in `inventory.md`. This is the baseline Phase 4's cadence/content
   plan works from.
 
+## Addendum 2 — 04/07/2026, Phase 1 build (same day, not waiting for the loop)
+
+Operator asked to build now rather than wait for the Monday trigger. Shipped
+Phase 1 in full within this repo:
+
+- **shiftandlead.ai migrated onto the static stack** at `main-site/` — mirrors
+  `site/`'s hand-built HTML approach (no build step, self-contained pages).
+  `index.html` is the merged-brand home page: hero, pain points, founder story
+  (reframed, employer names kept vague per `positioning/SKILL.md`'s voice
+  rule), three-pillar "how I help" (Learn / Build / Speak — replacing the
+  retired Advise/Educate/Be-a-Voice framing), a case-studies grid, the 3
+  existing testimonials (kept verbatim — real client quotes, only the
+  surrounding frame was rewritten), the reconciled pricing ladder, a reframed
+  FAQ, and a contact/newsletter section. SEO meta (description, OG, Twitter
+  card, canonical) included from the start, plus `robots.txt` and
+  `sitemap.xml`.
+- **Guide button + Blog nav**: nav includes a `Blog` link to
+  guides.shiftandlead.com, a prominent "Free Guides" nav CTA, and a hero CTA —
+  satisfies both of the operator's original asks in one build.
+- **4 case studies rebuilt** (`case-study-1.html`..`case-study-4.html`) at the
+  same slugs as the original GHL pages, reframed from "we built it for your
+  business" to "I built this, here's how you can too," with the original
+  challenge/solution/results kept factually intact (no invented stats). Note:
+  case-study-3 (tire shop) and case-study-4 (coffee shop) share near-identical
+  solution copy and identical result numbers in the original GHL source —
+  carried through faithfully rather than invented apart.
+- **Contact/lead capture**: reuses the same Formspree + `auto.shiftandlead.com`
+  n8n webhook dual-post pattern already proven in `site/`, tagged
+  `main-site-ribbon` / `main-site-contact`.
+- **Logo v2**: a simple SVG wordmark (badge + "the ai" in electric-blue italic
+  Playfair Display + "AUTOMATION QUEEN" in Inter) replaces the plain-text
+  "Shift & Lead" nav wordmark — applied to `main-site/` and rolled out across
+  all of `site/` (free-resources.html, opt-in.html, and all 6 vocabulary/
+  pipeline guide pages) so both properties are visually consistent. This is a
+  systemized starting point, not a final professional logo — worth a real
+  design pass in Canva once that connector is authorized.
+- **Not yet done**: DNS/hosting cutover for shiftandlead.ai (the code exists in
+  `main-site/`, but pointing the live domain at it is an operator action —
+  flagged as an open item below), and the SEO topic-hub pages + case
+  studies/testimonials on the *guides* site itself (still Phase 2 work).
+
 ## Open items carried into the loop
 
 - ~~Confirm whether an existing newsletter platform already runs~~ — resolved,
   see addendum above.
 - ~~Get current Instagram follower count~~ — resolved, see addendum above.
-- `contact-us` on the current shiftandlead.ai posts to GoHighLevel's native
-  form — the static-stack migration needs an equivalent capture mechanism
-  (reuse the Formspree + n8n webhook pattern already proven in `site/`).
+- ~~`contact-us` needs an equivalent capture mechanism~~ — resolved, `main-site/`
+  reuses the Formspree + n8n webhook pattern.
+- **DNS/hosting cutover**: `main-site/` is built and ready, but shiftandlead.ai
+  still needs to actually point at it (currently live on GoHighLevel) — an
+  operator action (or a decision to keep GHL live in parallel during a
+  transition period). Ask before flipping the live domain.
 - Find out what platform actually hosts brief.shiftandlead.com (Carrd, Framer,
   custom — unknown) before attempting the Phase 3 refresh, since the fix has to
   be applied there, not in this repo.
