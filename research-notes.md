@@ -2,6 +2,40 @@
 
 ---
 
+## RESEARCH 019 — 2026-06-30 | The 4 Upgrades That Turn Claude Code Into a Business Partner (Council · Self-Verify · Context · Sub-Agents/Goal)
+
+**Status:** NOTED
+**Source:** YouTube — "I Turned Claude Code Into My Business Partner" (AIS / AI-Surge channel), https://www.youtube.com/watch?v=iTY8Q449YNQ. Watched via the `watch` skill (full transcript + 80 frames). ~28 min.
+**Why it's here:** This is a competitor/creator teardown, not a search digest. The creator demos the *exact* Romain-shape loop this repo is built on (council → build → verify → goal-run), aimed at the same "build your own AI business" audience. Useful as (a) a content-framework to replicate in her voice and (b) proof the 8-step model is the market-standard pattern now.
+
+### Key Findings (summary)
+1. **Hook that works:** "I turned Claude Code into the best business partner I could ask for and made 3× more money in 30 days." Personal-outcome + specific number — same shape as her best LinkedIn openers.
+2. **The 4 upgrades (the spine):**
+   - **Stop letting it agree with you** → a "council" of parallel sub-agents with distinct lenses: *Contrarian* (finds fatal flaws), *Expansionist* (biggest upside), *Principles thinker* (pure logic), *Researcher* (evidence). Pressure-tests an idea before any build.
+   - **Make it check its own work** → build-and-verify loop: Claude opens the page in Playwright, fills forms with junk/edge-case data, screenshots, and proves it works "by my own screenshots, not your word."
+   - **Manage your context** → keep context lean so reasoning doesn't degrade over long sessions.
+   - **Stop being the bottleneck** → `/goal` + sub-agents run unattended; 6 agents built a full go-to-market kit (positioning, market research, 14-day launch plan, outreach templates + drafts, content calendar) in ~8 minutes.
+3. **The mindset line (very reusable):** you shift from *builder/producer* → *problem-solver, decision-maker, reviewer, judge*. "Stop being the bottleneck."
+4. **Proof-of-scale framing:** "all these demos took me under an hour… something that would've taken a team of 10." Replaces team headcount with a 1-hour agent run.
+5. **Funnel:** free Skool community ("400,000+ building with Claude") + paid community with weekly calls. Content → free community → paid is the same bridge motion she runs.
+
+### Signals worth acting on
+- The "4 upgrades / fixes most people miss" listicle structure is a proven carousel + short-form series skeleton — she can replicate it in her voice without copying his exact prompts.
+- **Self-verification ("make it check its own work") is an under-told angle** in the solopreneur lane — most creators stop at "AI built it." A trust/"how do you know it actually works" hook is ownable.
+- "Stop being the bottleneck" lands directly on her **win-back-your-time** promise and the **You're the Bottleneck** short she already drafted (ENTRY 008) — a natural follow-on.
+- The council/contrarian idea reframes her existing **"AI agrees with you too much"** instinct into a concrete, demonstrable system.
+
+### Content angles (3 ready to use)
+1. **"I stopped letting AI agree with me — and started making real decisions."** The council idea, translated: give AI a job to *disagree* with you before you build. (Pillar: Build Once, Runs Forever / Stop Doing That by Hand.)
+2. **"AI built it. But does it actually work?"** The self-verify angle — make the machine prove its own work before you trust it. Under-told, high-credibility, ties to her 20-yr corporate rigor. (Pillar: What's Worth It / Real Talk.)
+3. **"6 agents. 8 minutes. A full launch plan."** The unattended `/goal` run as the payoff proof — what used to take a team now runs while you make coffee. (Pillar: The Freedom Business / Time Wins.)
+
+**Contrarian take logged:** Every AI creator is selling "look how fast it builds." The thing almost nobody shows is the part that actually matters to a real business owner: *how do you know it's right?* The ownable position is the **judge, not the builder** — the value isn't that AI does the work, it's that you've set up the checks so you can trust the output without doing it yourself. "Speed" is everyone's pitch; "trustworthy output you didn't have to babysit" is hers. It sits on top of her existing "you don't need to be technical, you need a system" line.
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 018 — 2026-06-23 | One-Person Business Runs Like a Team of Five · 95% Still Get Zero ROI (They Automate Chaos) · The $45 Stack · No-Code Agents Cross the Line · 51% of Leaders Don't Get AI
 
 **Status:** NOTED
