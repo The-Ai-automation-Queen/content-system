@@ -156,6 +156,41 @@ Phase 1 in full within this repo:
   flagged as an open item below), and the SEO topic-hub pages + case
   studies/testimonials on the *guides* site itself (still Phase 2 work).
 
+## Addendum 3 — 04/07/2026, Phase 2 build (SEO layer)
+
+Operator said "go for it" to keep building without waiting. Shipped Phase 2's
+SEO pass in full:
+
+- **Meta layer added to all 16 guide pages** in `site/guides/` (corrected count
+  — there are 16, not 13 as earlier estimated: 6 vocabulary/pipeline guides +
+  10 Kitchen Map guides including the 3 not-yet-published ones). Each page now
+  has a meta description (written fresh for the 6 that had none), Open Graph
+  tags, Twitter card, a canonical URL, and a JSON-LD `Article` schema block
+  with author/publisher/datePublished pulled from the guide's own
+  `data-publish` attribute on the library page (kept factual — omitted
+  `datePublished` entirely for `voice-clone-pipeline.html`, which isn't listed
+  in the library and has no confirmed publish date, rather than invent one).
+- **`free-resources.html`**: added meta description, OG, and Twitter tags, plus
+  a self-referencing canonical.
+- **`opt-in.html`**: this is a single static file serving many guides via
+  `?guide=` query string, so per-guide meta tags aren't feasible without a
+  build step. Set `robots` to `noindex, follow` (keeps this transactional gate
+  page out of search results — avoiding thin/duplicate-content flags — while
+  preserving link equity to the real guide pages it redirects to) and pointed
+  its canonical at `free-resources.html`.
+- **Two new SEO topic-hub pages**: `ai-tools-compared.html` (clusters all 10
+  Kitchen Map guides, targets "Claude vs ChatGPT vs Gemini"-style searches) and
+  `ai-vocabulary-explained.html` (clusters the 5 vocabulary guides in their
+  intended reading order). Both link back to `free-resources.html` and to each
+  other, and are linked *from* `free-resources.html`'s library header so
+  they're not orphan pages.
+- **`sitemap.xml`** created for guides.shiftandlead.com (19 URLs — didn't exist
+  before) and referenced from `robots.txt`.
+- **Noted, not fixed**: the library page's search box and Tool/Topic filter
+  pills (`free-resources.html`, `.controls` section) render but aren't wired to
+  any JS — they're currently decorative. Worth fixing in a later pass since
+  they'd otherwise mislead a visitor into thinking search/filter works.
+
 ## Open items carried into the loop
 
 - ~~Confirm whether an existing newsletter platform already runs~~ — resolved,

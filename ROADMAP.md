@@ -55,6 +55,15 @@ Full findings in `reports/website-brand-audit-2026-07-04.md`.
   `main-site/` and all of `site/`. Still open: pointing the live shiftandlead.ai
   domain at the new code (currently on GoHighLevel) — an operator decision.
   Full detail in the audit report's second addendum.
+- **Phase 2 shipped same day** (SEO layer): meta description/OG/Twitter/
+  canonical/JSON-LD Article schema added across all 16 guide pages (corrected
+  count from the earlier "13" estimate) + `free-resources.html`; `opt-in.html`
+  set to `noindex, follow` (it's a query-string gate page, not indexable
+  per-guide content); two new topic-hub pages (`ai-tools-compared.html`,
+  `ai-vocabulary-explained.html`) linked into the library nav; `sitemap.xml`
+  created and referenced from `robots.txt`. Noted but not fixed: the library's
+  search/filter UI is decorative, not wired to JS. Full detail in the audit
+  report's third addendum.
 
 ### 2026-06-26 — Brain Manager + daily crons + Unipile + machine docs
 Closed the 4 remaining gaps vs. Romain Brunel's always-on system (from RESEARCH
