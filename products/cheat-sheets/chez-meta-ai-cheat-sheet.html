@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chez Meta AI · Cheat Sheet | Shift &amp; Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,400;0,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--tint:#E4EAFB;--cream:#EEF2FC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.42}
+.mono{font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
+@page{size:A4;margin:12mm}
+.sheet{max-width:720px;margin:0 auto;padding:14px}
+
+/* header strip */
+.head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:14px;gap:12px;flex-wrap:wrap}
+.head h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:2rem;margin:0;line-height:1}
+.head h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.head .tagline{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--muted);margin:4px 0 0;max-width:46ch}
+.head .brand{font-size:9px;color:var(--muted);text-align:right;white-space:nowrap}
+.head .brand strong{color:var(--ink)}
+
+/* two-column body */
+.cols{display:grid;grid-template-columns:1.05fr 1fr;gap:22px}
+.col h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.02rem;margin:0 0 8px;padding-bottom:5px;border-bottom:1px solid var(--rule);color:var(--accent-deep)}
+.col h2 .n{color:var(--accent);font-weight:900;margin-right:4px}
+
+/* floor plan diagram */
+.plan{border:1px solid var(--rule);border-radius:10px;padding:10px 12px;margin-bottom:14px;background:var(--cream)}
+.plan .mono{font-size:8px;color:var(--accent);display:block;margin-bottom:6px}
+.plan ul{margin:0;padding:0;list-style:none;font-family:'Inter',sans-serif;font-size:.72rem;color:var(--ink)}
+.plan li{padding:3px 0;border-top:1px solid var(--rule)}
+.plan li:first-child{border-top:none}
+.plan li strong{color:var(--accent-deep);font-weight:600}
+
+/* 10 words */
+.words{margin:0;padding:0;list-style:none}
+.words li{font-family:'Inter',sans-serif;font-size:.74rem;color:var(--ink);padding:4px 0;border-top:1px solid var(--rule);line-height:1.35}
+.words li:first-child{border-top:none}
+.words strong{font-weight:700}
+.words .analogy{color:var(--muted);font-style:italic}
+
+/* order this first */
+.dishes{margin:0 0 14px;padding:0;list-style:none}
+.dishes li{padding:6px 0;border-top:1px solid var(--rule)}
+.dishes li:first-child{border-top:none}
+.dishes .dname{font-family:'Inter',sans-serif;font-weight:700;font-size:.8rem;color:var(--ink)}
+.dishes .ddesc{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);margin:1px 0 0;line-height:1.35}
+
+/* traffic light micro-card */
+.tl{border:1.5px solid var(--ink);border-radius:10px;padding:10px 12px;margin-bottom:0}
+.tl .mono{font-size:8px;color:var(--accent);display:block;margin-bottom:6px}
+.tl p{font-family:'Inter',sans-serif;font-size:.72rem;margin:2px 0;line-height:1.4}
+.tl .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.g{background:#2E9E5B}.a{background:#D19A2B}.r{background:#E63955}
+
+/* footer */
+.foot{margin-top:16px;padding-top:8px;border-top:2px solid var(--ink);text-align:center}
+.foot .cta{font-family:'Inter',sans-serif;font-weight:600;font-size:.82rem;color:var(--ink);margin:0 0 4px}
+.foot .cta a{color:var(--accent);text-decoration:none}
+.foot .ip{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+
+@media print{
+  body{margin:0}
+  .sheet{padding:0;max-width:none}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="head">
+    <div>
+      <h1>Chez <em>Meta AI.</em></h1>
+      <p class="tagline">No door to find. Already standing inside WhatsApp, Instagram, Messenger, and your glasses.</p>
+    </div>
+    <div class="brand mono"><strong>Shift &amp; Lead</strong><br>guides.shiftandlead.com</div>
+  </div>
+
+  <div class="cols">
+
+    <div class="col">
+      <h2><span class="n">01</span>The Floor Plan</h2>
+      <div class="plan">
+        <span class="mono">One chef, four rooms</span>
+        <ul>
+          <li><strong>meta.ai + app</strong>: the standalone dining room. Free chat, Imagine, voice, web search.</li>
+          <li><strong>WhatsApp / IG / Messenger</strong>: the chef already in the room. Type @MetaAI in any chat.</li>
+          <li><strong>AI Studio</strong>: creator workspace. Build your own custom AI characters.</li>
+          <li><strong>Llama API</strong>: the catering counter. Per-token, for developers building on top.</li>
+        </ul>
+      </div>
+
+      <h2><span class="n">02</span>10 Words That Matter</h2>
+      <ul class="words">
+        <li><strong>Llama</strong>: <span class="analogy">the open-source chef cooking every one of its replies.</span></li>
+        <li><strong>@MetaAI</strong>: <span class="analogy">the chef already inside the room you're in.</span></li>
+        <li><strong>Imagine</strong>: <span class="analogy">order an illustrated dish, right inside the chat.</span></li>
+        <li><strong>Ray-Ban Meta glasses</strong>: <span class="analogy">the chef on your face, hands-free, "Hey Meta."</span></li>
+        <li><strong>Social context</strong>: <span class="analogy">the chef reads the room before it cooks the answer.</span></li>
+        <li><strong>AI Studio</strong>: <span class="analogy">write the rules for your own sous-chef.</span></li>
+        <li><strong>Open weights</strong>: <span class="analogy">the largest public recipe collection on Earth.</span></li>
+        <li><strong>Llama API</strong>: <span class="analogy">wholesale phone line for developers building on top.</span></li>
+        <li><strong>Group-chat reply</strong>: <span class="analogy">the whole table sees the same plated dish.</span></li>
+        <li><strong>Meta's ad business</strong>: <span class="analogy">the restaurant that also sells your dining habits.</span></li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <h2><span class="n">03</span>Order This First</h2>
+      <ul class="dishes">
+        <li>
+          <div class="dname">@MetaAI in a group chat</div>
+          <div class="ddesc">Type @MetaAI in any WhatsApp, Instagram, or Messenger thread and ask a question. No new app, no sign-up.</div>
+        </li>
+        <li>
+          <div class="dname">Imagine, in the chat</div>
+          <div class="ddesc">Type "Imagine a ..." and get ready-to-send images or stickers right inside your conversation.</div>
+        </li>
+        <li>
+          <div class="dname">Voice through the glasses</div>
+          <div class="ddesc">If you own Ray-Ban Meta glasses, say "Hey Meta" and ask about whatever you're looking at, hands-free.</div>
+        </li>
+      </ul>
+
+      <h2><span class="n">04</span>The Traffic Light Rule</h2>
+      <div class="tl">
+        <span class="mono">Before you paste anything in</span>
+        <p><span class="dot g"></span><strong>Green</strong>: public info, your own drafts. Share freely.</p>
+        <p><span class="dot a"></span><strong>Amber</strong>: client or team data. Redact names and numbers first.</p>
+        <p><span class="dot r"></span><strong>Red</strong>: credentials, contracts, PII. Never in a personal AI account.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="foot">
+    <p class="cta">Full guide free at <a href="https://guides.shiftandlead.com">guides.shiftandlead.com</a> · The full prompt menus: The Prompt Menu, $19 in the Store</p>
+    <p class="ip">© 2026 Fatiha Chikh / Shift &amp; Lead · Original IP · The Kitchen Map™ · not for resale or redistribution</p>
+  </div>
+
+</div>
+</body>
+</html>

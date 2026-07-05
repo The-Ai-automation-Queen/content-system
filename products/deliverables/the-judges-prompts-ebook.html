@@ -123,8 +123,10 @@
   /* ============ DARK PANELS (cover + dividers) ============ */
 
   .dark-panel {
-    background: var(--ink);
-    color: var(--tint);
+    background: #FFFFFF;
+    color: var(--ink);
+    border-top: 4px solid var(--electric);
+    border-bottom: 4px solid var(--electric);
     margin: -56px -40px 0 -40px;
     padding: 56px 40px;
     min-height: calc(100% + 56px);
@@ -141,11 +143,11 @@
   }
 
   .dark-panel h1, .dark-panel h2 {
-    color: var(--white);
+    color: var(--ink);
   }
 
   .dark-panel .mono {
-    color: var(--light-on-dark);
+    color: var(--electric);
   }
 
   /* ============ COVER ============ */
@@ -157,7 +159,7 @@
 
   .cover-top .mono {
     font-size: 12px;
-    color: var(--light-on-dark);
+    color: var(--electric);
     margin-bottom: 32px;
     display: block;
   }
@@ -166,12 +168,12 @@
 
   .cover-mid .title {
     font-size: 3.4rem;
-    color: var(--white);
+    color: var(--ink);
     margin: 0;
   }
 
   .cover-mid .title .accent {
-    color: var(--light-on-dark);
+    color: var(--electric);
     font-style: italic;
     font-weight: 700;
   }
@@ -180,7 +182,7 @@
     font-family: 'Source Serif 4', serif;
     font-style: italic;
     font-size: 1.15rem;
-    color: var(--tint);
+    color: var(--muted);
     margin-top: 18px;
     max-width: 480px;
   }
@@ -198,7 +200,7 @@
   .cover-bottom .byline {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
-    color: var(--white);
+    color: var(--ink);
   }
 
   .cover-bottom .byline strong {
@@ -209,7 +211,7 @@
 
   .cover-bottom .edition {
     font-size: 10.5px;
-    color: var(--light-on-dark);
+    color: var(--electric);
   }
 
   /* ============ SECTION DIVIDERS ============ */
@@ -225,13 +227,13 @@
     font-size: 13px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--light-on-dark);
+    color: var(--electric);
     margin-bottom: 22px;
   }
 
   .divider .part-title {
     font-size: 2.5rem;
-    color: var(--white);
+    color: var(--ink);
     max-width: 520px;
   }
 
@@ -239,7 +241,7 @@
     font-family: 'Source Serif 4', serif;
     font-style: italic;
     font-size: 1.1rem;
-    color: var(--tint);
+    color: var(--muted);
     margin-top: 18px;
     max-width: 480px;
     border-left: 2px solid var(--electric);
@@ -250,7 +252,7 @@
     margin-top: 40px;
     font-family: 'Inter', sans-serif;
     font-size: 12.5px;
-    color: var(--light-on-dark);
+    color: var(--electric);
   }
 
   /* ============ TYPICAL LIGHT PAGE ELEMENTS ============ */
@@ -444,7 +446,7 @@
 
   .prompt-label .prompt-num {
     background: var(--electric);
-    color: var(--white);
+    color: var(--ink);
     border-radius: 5px;
     padding: 2px 8px;
     font-size: 11px;
@@ -460,8 +462,9 @@
   }
 
   .prompt-block {
-    background: var(--ink);
-    color: #E8EDFB;
+    background: #EEF2FC;
+    color: var(--ink);
+    border-left: 3px solid var(--electric);
     border-radius: 8px;
     padding: 16px 18px;
     font-family: 'Space Mono', monospace;
@@ -490,7 +493,7 @@
   .flagship-tag {
     display: inline-block;
     background: var(--electric);
-    color: var(--white);
+    color: var(--ink);
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 10.5px;

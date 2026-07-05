@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is Agentic AI: Cheat Sheet · Shift &amp; Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--tint:#E4EAFB;--cream:#EEF2FC;--red:#E63955}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--canvas);color:var(--ink)}
+body{font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.4}
+.mono{font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
+
+@page{size:A4;margin:12mm}
+.page{max-width:720px;margin:0 auto;padding:20px 22px}
+
+.head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2.5px solid var(--ink);padding-bottom:12px;margin-bottom:15px}
+.head h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:1.6rem;letter-spacing:-.01em}
+.head h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.head .tag{font-size:9.5px;color:var(--muted);margin-top:3px;font-family:'Inter',sans-serif}
+.head .brand{text-align:right;font-size:8.5px;letter-spacing:.1em;color:var(--muted)}
+.head .brand b{color:var(--ink);display:block;font-size:9px;letter-spacing:.08em}
+
+h2.sub{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1rem;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+h2.sub .n{color:var(--accent);font-weight:900}
+
+.oneidea{background:var(--cream);border:1.5px solid var(--accent);border-radius:10px;padding:11px 15px;margin-bottom:13px}
+.oneidea p{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:.98rem;line-height:1.35;color:var(--ink)}
+.oneidea p strong{color:var(--accent);font-style:normal}
+
+/* short leash / long leash */
+.leash{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.lcol{border-radius:8px;padding:9px 12px;border:1px solid var(--rule)}
+.lcol.hi{border-color:var(--accent);background:var(--tint)}
+.lcol .lbl{font-size:7.5px;color:var(--accent);display:block;margin-bottom:4px}
+.lcol h3{font-family:'Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;margin-bottom:3px}
+.lcol p{font-size:9px;color:var(--muted);line-height:1.35}
+
+/* the 4 levels */
+.levels{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:13px}
+.lvl{border:1px solid var(--rule);border-radius:8px;padding:8px 9px}
+.lvl.hi{border-color:var(--accent);background:var(--cream)}
+.lvl .num{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:1.05rem;color:var(--accent);line-height:1}
+.lvl h4{font-family:'Inter',sans-serif;font-size:9.6px;font-weight:600;margin:3px 0 3px}
+.lvl p{font-size:8.4px;color:var(--muted);line-height:1.3}
+.lvl .ex{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:8px;color:var(--ink);margin-top:4px;line-height:1.3}
+
+/* the one question card */
+.qcard{border:1.5px solid var(--accent);border-radius:8px;padding:10px 13px;margin-bottom:13px;background:#fff}
+.qcard .lbl{font-size:8px;color:var(--muted);display:block;margin-bottom:4px}
+.qcard p{font-family:'Inter',sans-serif;font-size:9.8px;color:var(--ink);line-height:1.4}
+.qcard p strong{color:var(--accent-deep)}
+.qcard p em{font-style:italic}
+
+.try{border:1.5px solid var(--accent);border-radius:8px;padding:10px 13px;margin-bottom:12px;background:#fff}
+.try .lbl{font-size:8px;color:var(--accent);display:block;margin-bottom:4px}
+.try p{font-family:'Inter',sans-serif;font-style:italic;font-size:10.5px;color:var(--ink);line-height:1.4}
+
+.traffic{border:1px solid var(--rule);border-radius:8px;padding:9px 13px;margin-bottom:12px;display:flex;gap:12px;align-items:center}
+.traffic .lbl{font-size:8px;color:var(--muted);white-space:nowrap;flex-shrink:0}
+.tlights{display:flex;gap:8px;flex:1}
+.tlight{flex:1;border-radius:6px;padding:5px 8px;font-size:8.7px;line-height:1.3}
+.tlight.green{background:#EEF5E6;color:#3A5A24}
+.tlight.amber{background:#FCF1DD;color:#7A5416}
+.tlight.red{background:#FBE7EA;color:#8C1F30}
+.tlight b{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.05em}
+
+.foot{border-top:1.5px solid var(--rule);padding-top:10px;margin-top:6px}
+.foot .cta{font-family:'Inter',sans-serif;font-size:10px;color:var(--ink);margin-bottom:5px}
+.foot .cta a{color:var(--accent);font-weight:600;text-decoration:none}
+.foot .ip{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{padding:0}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="head">
+    <div>
+      <h1>What <em>"Agentic"</em> Means</h1>
+      <div class="tag">Plain English series &middot; No. 05 &middot; the one-page version</div>
+    </div>
+    <div class="brand mono">
+      <b>Shift &amp; Lead</b>
+      guides.shiftandlead.com
+    </div>
+  </div>
+
+  <div class="oneidea">
+    <p>A chatbot <strong>answers</strong> questions. An agentic system <strong>finishes</strong> tasks. The difference is not intelligence, it's autonomy: how much you let the AI do before checking back in with you.</p>
+  </div>
+
+  <h2 class="sub"><span class="n">01</span> Think of it like delegation</h2>
+  <div class="leash">
+    <div class="lcol">
+      <span class="lbl mono">Short leash</span>
+      <h3>You review every step</h3>
+      <p>"Draft a reply. Show me before you send it." One task, then it waits for your next instruction.</p>
+    </div>
+    <div class="lcol hi">
+      <span class="lbl mono">Long leash</span>
+      <h3>It runs the whole job</h3>
+      <p>"Handle my inbox this morning. Flag anything urgent." It reads, decides, replies, comes back with a summary.</p>
+    </div>
+  </div>
+
+  <h2 class="sub"><span class="n">02</span> The four levels of AI autonomy</h2>
+  <div class="levels">
+    <div class="lvl">
+      <div class="num">1</div>
+      <h4>Chat</h4>
+      <p>You ask, it answers. No memory, no tools, no actions.</p>
+      <div class="ex">"Write a thank-you email." You paste it yourself.</div>
+    </div>
+    <div class="lvl">
+      <div class="num">2</div>
+      <h4>Chat + tools</h4>
+      <p>It can reach outside the chat: search, read a file, calculate.</p>
+      <div class="ex">Upload a report, ask "what are the top 3 risks?"</div>
+    </div>
+    <div class="lvl">
+      <div class="num">3</div>
+      <h4>Workflow</h4>
+      <p>A fixed sequence that runs the same way every time.</p>
+      <div class="ex">Every Monday, it pulls stats and drops a summary in a doc.</div>
+    </div>
+    <div class="lvl hi">
+      <div class="num">4</div>
+      <h4>Agentic</h4>
+      <p>The AI decides the steps itself. You set the goal, it drives.</p>
+      <div class="ex">"Research 5 competitors, flag gaps." You never defined the steps.</div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <span class="lbl mono">The one question that separates hype from reality</span>
+    <p>When someone pitches you an "AI agent," ask: <strong><em>"Does it decide the steps, or do I?"</em></strong> If you define the steps, it's a workflow. If the AI decides, it's agentic. Both are useful, but they cost different amounts and fail in different ways.</p>
+  </div>
+
+  <div class="try">
+    <span class="lbl mono">Try this today</span>
+    <p>Pick one repetitive task in your week. Ask: is this Level 2 (chat with tools), Level 3 (fixed workflow), or does it truly need Level 4 judgment? Start one level lower than you think.</p>
+  </div>
+
+  <div class="traffic">
+    <span class="lbl mono">The Traffic Light Rule</span>
+    <div class="tlights">
+      <div class="tlight green"><b>Green</b>Share freely: public info, general questions</div>
+      <div class="tlight amber"><b>Amber</b>Redact first: names, numbers become [Client]</div>
+      <div class="tlight red"><b>Red</b>Never in a personal AI account: real client data</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="cta">Full guide free at <a href="https://guides.shiftandlead.com">guides.shiftandlead.com</a> &middot; Next step: The Prompt Menu, $19 in the Store</div>
+    <div class="ip">© 2026 Fatiha Chikh / Shift &amp; Lead &middot; Original IP, not for resale or redistribution</div>
+  </div>
+
+</div>
+
+</body>
+</html>
