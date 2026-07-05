@@ -379,7 +379,7 @@ Want me to walk you through the exact first one most people should start with? C
 **ACP stage:** C — deliberately injecting one C to move the last-10 ratio off ~all-A toward 7A/2C/1P. Framed as a *founding-member opening* (the one honest C available with no existing members to brag about).
 **CTA:** "Comment FOUNDING and I'll make sure you get first access" (founding-member invite)
 **Source:** RESEARCH 021 (contrarian take logged — the agency-treadmill argument). No unverified stats.
-**⚠️ PREP (blocks queueing):** the founding community offer must actually exist (Skool space + founding price locked) before this goes live — the CTA promises first access. Per monetisation skill, do not publish a C/P post against an offer that can't be joined.
+**⚠️ PREP (blocks queueing):** the founding community offer must actually exist (Whop community space + founding price locked) before this goes live — the CTA promises first access. Per monetisation skill, do not publish a C/P post against an offer that can't be joined.
 
 ---
 ### LINKEDIN POST

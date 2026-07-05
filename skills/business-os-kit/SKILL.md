@@ -4,7 +4,7 @@ version: 1.0.0
 description: |
   Packages Fatiha's Business OS into three sellable products and creates the
   promotional content to launch them. Products: Starter Kit ($97 one-time),
-  Community ($47/month on Skool), Bootcamp ($997 per cohort). Run to build
+  Community ($47/month on Whop), Bootcamp ($997 per cohort). Run to build
   a product tier, generate sales copy, audit what's packaged vs. missing, or
   produce a full launch content batch ready for the vault.
 argument-hint: "[build-starter-kit | build-community | build-bootcamp | launch-content <tier> | sales-copy <tier>]"
@@ -69,11 +69,14 @@ sequence, IRL event follow-up.
 
 ### Product 2 — AI Automation Queen Community ($47/month or $397/year)
 
-**What it is:** A Skool community for everyday entrepreneurs using AI + automation
+**What it is:** A Whop community for everyday entrepreneurs using AI + automation
 to build their freedom business. This is the core recurring revenue engine.
 
-**Platform:** Skool (strongly recommended — clean UX, built-in discovery,
-member community features, $99/month platform fee). Alternative: Circle.
+**Platform:** Whop — one platform for the flagship course, checkout, and the
+community itself (no separate $99/month community-platform fee, and members
+already have a Whop account from buying the course). Skool was the earlier
+plan; sunset in favor of consolidating everything on Whop (operator decision,
+2026-07-06).
 
 **What members get (monthly deliverables):**
 - **2 live sessions/month:** one "Build with Me" (Fatiha runs a live automation
@@ -118,7 +121,7 @@ the evergreen self-paced course after the first cohort.
   runs itself.
 
 **Format:** One live 90-min Zoom session per week. Recordings available same day.
-Slack channel (or Skool classroom) for in-between support.
+Slack channel (or the Whop classroom) for in-between support.
 
 **Price and revenue:**
 - $997 per person
@@ -298,7 +301,7 @@ forever: [link]." ACP stage: C.
 ## What this skill does not do
 
 - Does not record the walkthrough video (operator action).
-- Does not set up Whop or Skool (operator action).
+- Does not set up Whop (operator action).
 - Does not publish any launch content — all drafts go to the vault for approval.
 - Does not make up social proof or member results.
 - Does not price the products without operator confirmation.

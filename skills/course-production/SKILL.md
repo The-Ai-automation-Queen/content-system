@@ -36,7 +36,7 @@ Produce the one-time recording-session script for the avatar/voice clone
 (Operator Playbook Phase 1.2): ~15 min of natural talking-head prompts (varied
 emotion: greeting, teaching, story, emphasis, humor) + ~15 min of clean read
 text covering her phoneme range and the words the course says most (Claude,
-Fatiha, automation, agent, Skool, Whop, tool names from the lessons) + the 4
+Fatiha, automation, agent, Whop, tool names from the lessons) + the 4
 connector clips (greeting / "let's look at the screen" / "back to me" / lesson
 close). Output: `reports/YYYY-MM-DD-calibration-script.md`.
 

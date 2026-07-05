@@ -58,9 +58,10 @@ You review each module batch before upload — pronunciation, claims, brand. One
 evening per module. Quality control is the one thing the twin cannot do.
 
 **Step 4 — Publish.**
-Whop (flagship + checkout), Skool (community + cohort classroom), drip schedule.
-Timeline for the whole factory: **3–4 weeks from avatar session to full course
-live**, versus 3–6 months of filming.
+Whop — one platform for the flagship, checkout, the community, and the
+cohort classroom (Skool was the earlier plan, sunset 2026-07-06) — drip
+schedule. Timeline for the whole factory: **3–4 weeks from avatar session to
+full course live**, versus 3–6 months of filming.
 
 The same factory then runs forever: new lesson script in → rendered lesson out.
 Course updates ("lifetime updates" is already in your bonus stack promise)
@@ -94,7 +95,7 @@ The event chain, fully automatic:
 Whop purchase → webhook → n8n
   ├─ GHL: create/tag contact (product, ICP, ACP stage)
   ├─ deliver access email (sequence already written — 14 of 21 emails exist)
-  ├─ tier ≥ community → Skool invite + onboarding DM
+  ├─ tier ≥ community → Whop community invite + onboarding DM
   ├─ tier = cohort → calendar + week-0 checklist + workbook (versioned, named)
   └─ 14 days later → automated testimonial/case-study ask → feeds testimonial-engine
 Lead magnet opt-in → GHL 5-email nurture (written) → $47 tripwire → flagship → community → cohort waitlist

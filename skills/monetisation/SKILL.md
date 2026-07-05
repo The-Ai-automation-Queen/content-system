@@ -39,8 +39,8 @@ commitment. Never jump a stranger from free to $997.
 | 0 | **Lead magnets** (7 ready in `lead-magnets/`) | Free | GHL | ⚠️ INACTIVE — activate immediately |
 | 1 | **AI Time Audit Template** | $47 | Whop | 🔴 Build |
 | 2 | **Business OS Starter Kit** | $97 (one-time) | Whop | 🔴 Build — see `skills/business-os-kit/` |
-| 3 | **AI Automation Queen Community** | $47/month or $397/year | Skool | 🔴 Launch |
-| 4 | **Business OS Bootcamp** | $997 per cohort | Skool + GHL | 🔴 Build waitlist |
+| 3 | **AI Automation Queen Community** | $47/month or $397/year | Whop | 🔴 Launch |
+| 4 | **Business OS Bootcamp** | $997 per cohort | Whop + GHL | 🔴 Build waitlist |
 | 5 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn | 🟡 Activate outreach |
 
 ### What each offer is
@@ -75,7 +75,7 @@ a non-technical buyer. See `skills/business-os-kit/SKILL.md` for the complete
 build instructions and sales copy framework.
 
 **Tier 3 — AI Automation Queen Community ($47/month or $397/year)**
-A Skool community where everyday entrepreneurs build their freedom business with
+A Whop community where everyday entrepreneurs build their freedom business with
 AI + automation. Monthly deliverables: 2 live sessions (one "Build with me," one
 Q&A) + 1 template/resource drop + peer accountability + searchable library of
 past sessions. The core recurring revenue engine.
@@ -172,7 +172,7 @@ One CTA per post. Match to pillar + ACP stage.
 |---|---|---|---|
 | Time Wins | "Comment STACK — I'll send my 3-tool setup" | "This is what we work on every month inside [community] →" | "Get the Starter Kit → [link]" |
 | Build Once, Runs Forever | "Comment PIPELINE and I'll send the voice clone guide" | "A member just built this in a weekend. Here's what happened:" | "Bootcamp applications open → [link]" |
-| The Freedom Business | "Comment FREEDOM — I'll send the guide" | "Join the people building their freedom business with AI →" | "[Community name] is open: $47/month → [Skool link]" |
+| The Freedom Business | "Comment FREEDOM — I'll send the guide" | "Join the people building their freedom business with AI →" | "[Community name] is open: $47/month → [Whop link]" |
 | Stop Doing That by Hand | "Comment TEAM — I'll show you how to set this up for free" | "Inside the community we ran this setup live last week —" | "The Starter Kit walks through this step by step → [link]" |
 | What's Worth It | "Comment WORDS for the plain-English AI jargon guide" | "What we actually debated in the community this week:" | "Community: where we filter signal from noise → [link]" |
 | Real Talk | "Comment DINNER if you're in Dubai and want in" | "The community is the people actually doing this. Come in →" | "20 founding spots at $97/month locked for life → [link]" |
@@ -195,7 +195,7 @@ CONTENT POST
                       Day 5:  "If you want the full system..." → Starter Kit ($97)
                       Day 7:  Community story: "What members inside are doing right now..."
                       Day 10: Direct invite → AI Automation Queen Community ($47/month)
-                 └─ Community member on Skool
+                 └─ Community member on Whop
                       └─ Month 2: Bootcamp waitlist invite → cohort enrollment ($997)
 ```
 
@@ -227,7 +227,7 @@ flag which are done vs. still blocked with a suggested next action.
 ### This month (first paid revenue)
 - [ ] Build the Business OS Starter Kit (see `skills/business-os-kit/SKILL.md`)
 - [ ] List on Whop at $97
-- [ ] Create Skool community (name, 3 sections: Resources / Live Calls / Community)
+- [ ] Create the Whop community (name, 3 sections: Resources / Live Calls / Community)
 - [ ] Set founding member price: $97/month locked
 - [ ] Post 1 founding-member call on LinkedIn ("Comment FOUNDING")
 - [ ] Produce and send speaker one-pager to 10 warm LinkedIn contacts
