@@ -151,6 +151,17 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .ipbar{max-width:1160px;margin:26px auto 0;padding:0 24px 70px}
 .ipbar p{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px;margin:0}
 a{color:var(--accent)}
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
 </style>
 </head>
 <body>
@@ -260,7 +271,8 @@ a{color:var(--accent)}
     </div>
   </div>
 
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 21 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Core brain</span><h4>Multi-Agent Brigade</h4><p><em>"A whole brigade, not one chef."</em> Planner breaks work into steps, Executors run each one, a Verifier reviews.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Multi-LLM Backbone</h4><p><em>"Brigade can hire different head chefs per dish."</em> Reportedly calls Claude plus other models, picking the right one per sub-task.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Async Long-Running Loop</h4><p><em>"Chef cooks while you sleep."</em> Tasks run in the cloud for hours — queue it and walk away.</p></div>
@@ -283,6 +295,7 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">The supply chain</span><h4>Sandbox File System</h4><p><em>"Chef's private worktop."</em> Each task gets its own file system for intermediate and final work.</p></div>
     <div class="station"><span class="mono">The supply chain</span><h4>Few Official Connectors</h4><p><em>"No traditional delivery contracts."</em> Relies on browser automation rather than dedicated API connectors — broader reach, less robust per service.</p></div>
   </div>
+</details>
 </section>
 
 <!-- pull quote -->
@@ -321,7 +334,8 @@ a{color:var(--accent)}
     </div>
   </div>
 
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 10 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">The order slip</span><h4>Constraints + Guardrails</h4><p><em>"House rules for the kitchen."</em> Budget, allowed sources, a do-not-do list — reduces wrong-direction risk.</p></div>
     <div class="station"><span class="mono">The order slip</span><h4>Attached Files</h4><p><em>"Bring your own ingredients."</em> Source docs, target templates, brand assets, data the agent needs.</p></div>
     <div class="station"><span class="mono">The order slip</span><h4>Credentials (carefully)</h4><p><em>"Hand over keys to the kitchen lockers."</em> Use dedicated low-privilege accounts where possible; audit the replay after.</p></div>
@@ -333,6 +347,7 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">Plating &amp; delivery</span><h4>Real-World Actions</h4><p><em>"Reservations actually made."</em> Bookings, form submissions, applications — with action gates on the high-stakes ones.</p></div>
     <div class="station"><span class="mono">Plating &amp; delivery</span><h4>Status Notifications</h4><p><em>"Waiter tells you the dish is ready."</em> A ping when a long task finishes, or when it needs you to step in.</p></div>
   </div>
+</details>
   <p class="menu-more">Every station gets its own walkthrough in the full guide — this is the seating chart.</p>
 </section>
 
@@ -401,7 +416,8 @@ a{color:var(--accent)}
     <p class="note">Pricing is credit-based and plan structure evolves frequently. Simple tasks burn few credits, deep research or long autonomous sessions burn many. Verify current rates at manus.im.</p>
   </div>
 
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 10 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">The bill</span><h4>Free Trial Credits</h4><p><em>"Free tasting menu."</em> New accounts get a small allocation — use it on simple, low-stakes tasks first.</p></div>
     <div class="station"><span class="mono">The bill</span><h4>Basic Plan</h4><p><em>"Entry-level subscription."</em> ~$39/mo, monthly credit allowance, fits 5-10 substantial tasks a week.</p></div>
     <div class="station"><span class="mono">The bill</span><h4>Plus Plan</h4><p><em>"Power-user tier."</em> ~$199/mo, larger pool, longer tasks, scheduling, higher concurrency.</p></div>
@@ -413,6 +429,7 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">Where it fits</span><h4>vs Kimi Agent Swarm</h4><p><em>"Computer-use vs coding-swarm."</em> Kimi parallelises coding tasks; Manus is purpose-built for browser-driven autonomous work.</p></div>
     <div class="station"><span class="mono">Where it fits</span><h4>Ideal User</h4><p><em>"When Manus shines."</em> Researchers running deep market scans, ops teams automating repetitive browser work, anyone who can spec an end state clearly and verify results.</p></div>
   </div>
+</details>
 </section>
 
 <!-- the chef's table: paid offers close -->

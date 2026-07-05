@@ -142,6 +142,17 @@ a{color:var(--accent)}
 /* wide content never breaks the page */
 table{width:100%;border-collapse:collapse}
 .scrollwrap{overflow-x:auto}
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
 </style>
 </head>
 <body>
@@ -240,7 +251,8 @@ table{width:100%;border-collapse:collapse}
   </div>
 
   <p style="max-width:900px;margin-top:36px">Before anyone walks in, the chef already exists — the core brain, ready to think.</p>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Core brain</span><h4>Gemini Pro</h4><p><em>"The head chef's full education"</em> — the most capable model, deep reasoning; toggle between Thinking and Fast modes.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Gemini Flash</h4><p><em>"The speed chef"</em> — faster, cheaper, lighter, built for simple dishes.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Tokens</h4><p><em>"Individual ingredients"</em> — every word costs tokens; the countertop holds up to 2 million of them.</p></div>
@@ -248,9 +260,11 @@ table{width:100%;border-collapse:collapse}
     <div class="station"><span class="mono">Core brain</span><h4>Memory Bank</h4><p><em>"Chef's notebook"</em> — long-term memory across sessions, so agents recall your preferences from last week.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Multi-modal</h4><p><em>"Chef who reads, sees, listens, and creates"</em> — text, images, audio, video in and out, plus Imagen, Veo, and Lyria for generating them.</p></div>
   </div>
+</details>
 
   <p style="max-width:900px;margin-top:36px">A customer walks in through one of these doors — multiple ways to enter this restaurant.</p>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Gemini App</span><h4>Gemini App</h4><p><em>"The dining room"</em> — the web and mobile chat interface at gemini.google.com.</p></div>
     <div class="station"><span class="mono">Workspace</span><h4>Gemini in Workspace</h4><p><em>"Chef who comes to your table"</em> — built into Gmail, Docs, Sheets, Slides, Meet.</p></div>
     <div class="station"><span class="mono">Agent Platform</span><h4>Gemini Enterprise App</h4><p><em>"The corporate dining room"</em> — discover, create, share, and run agents securely.</p></div>
@@ -258,6 +272,7 @@ table{width:100%;border-collapse:collapse}
     <div class="station"><span class="mono">Developer</span><h4>Antigravity IDE</h4><p><em>"The high-tech smart kitchen"</em> — agent-first IDE built on VS Code; Editor and Manager views for parallel agents.</p></div>
     <div class="station"><span class="mono">Gemini App</span><h4>Gemini Live</h4><p><em>"Speaking your order to the waiter"</em> — real-time voice conversation, hands-free on mobile.</p></div>
   </div>
+</details>
 
   <p style="max-width:900px;margin-top:36px">You place your order, and how it's written matters — instructions and context that shape every dish.</p>
   <div class="stations">
@@ -268,7 +283,8 @@ table{width:100%;border-collapse:collapse}
   </div>
 
   <p style="max-width:900px;margin-top:36px">The order slip goes to the kitchen — where the real cooking happens: tools, research, and creation.</p>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Gemini App</span><h4>Deep Research</h4><p><em>"Chef reading dozens of reference books"</em> — spends minutes browsing many sources into one sourced report.</p></div>
     <div class="station"><span class="mono">Gemini App</span><h4>Canvas</h4><p><em>"Side workspace for drafting"</em> — collaborative editing for documents and code, together with Gemini.</p></div>
     <div class="station"><span class="mono">All Gemini</span><h4>Imagen / Veo / Lyria</h4><p><em>"The chef who also paints, films, and composes"</em> — generates images, cinematic video, and music from text.</p></div>
@@ -276,6 +292,7 @@ table{width:100%;border-collapse:collapse}
     <div class="station"><span class="mono">Gemini App</span><h4>Guided Learning</h4><p><em>"The chef quizzes you to teach you"</em> — interactive study mode that adapts to your level.</p></div>
     <div class="station"><span class="mono">All Gemini</span><h4>Google Search Grounding</h4><p><em>"Chef checking today's fresh market"</em> — anchors answers in live, current Search results.</p></div>
   </div>
+</details>
 </section>
 
 <!-- pull quote -->
@@ -312,22 +329,26 @@ table{width:100%;border-collapse:collapse}
   </div>
 
   <p style="max-width:900px;margin-top:36px">The kitchen connects to outside suppliers — how it reaches tools beyond Google's own walls.</p>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Gemini App</span><h4>Extensions</h4><p><em>"Snap-on kitchen attachments"</em> — Google Flights, Hotels, Maps, YouTube, and third-party tools.</p></div>
     <div class="station"><span class="mono">Workspace</span><h4>Google Workspace</h4><p><em>"The internal supply network"</em> — Gemini searches across your Gmail, Drive, Calendar, and Meet transcripts.</p></div>
     <div class="station"><span class="mono">Developer</span><h4>MCP</h4><p><em>"Universal delivery dock"</em> — the open standard for connecting AI to external tools, APIs, and databases.</p></div>
     <div class="station"><span class="mono">Gemini CLI</span><h4>Gemini CLI Extensions</h4><p><em>"Power-ups for the terminal kitchen"</em> — pre-packaged integrations with Figma, Stripe, Shopify, and playbooks built in.</p></div>
     <div class="station"><span class="mono">Developer</span><h4>A2A Protocol</h4><p><em>"Chefs from different restaurants collaborating"</em> — agents on different frameworks discover and work together.</p></div>
   </div>
+</details>
 
   <p style="max-width:900px;margin-top:36px">Build, govern, and scale agents — the kitchen team behind the scenes.</p>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Agent Platform</span><h4>Agent Platform</h4><p><em>"The central kitchen headquarters"</em> — build, scale, govern, and optimize agents (formerly Vertex AI).</p></div>
     <div class="station"><span class="mono">Developer</span><h4>ADK</h4><p><em>"Kit to build your own restaurant"</em> — the open-source, model-agnostic developer framework.</p></div>
     <div class="station"><span class="mono">Agent Platform</span><h4>Agent Studio</h4><p><em>"Kitchen design workshop"</em> — a low-code canvas for designing multi-agent workflows.</p></div>
     <div class="station"><span class="mono">Agent Platform</span><h4>Agent Registry</h4><p><em>"Approved supplier directory"</em> — the central library of approved tools and agents.</p></div>
     <div class="station"><span class="mono">Agent Platform</span><h4>Agent Gallery</h4><p><em>"The marketplace for pre-built dishes"</em> — discover third-party agents from Adobe, Salesforce, ServiceNow, and more.</p></div>
   </div>
+</details>
 
   <p style="max-width:900px;margin-top:36px">The dish gets plated and delivered to you — how the finished thing reaches your table.</p>
   <div class="stations">

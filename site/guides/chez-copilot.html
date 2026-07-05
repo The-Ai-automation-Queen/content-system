@@ -145,6 +145,17 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 a{color:var(--accent)}
 .wide-scroll{overflow-x:auto}
 @media(max-width:600px){.stations{grid-template-columns:1fr}.menu{grid-template-columns:1fr}}
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
 </style>
 </head>
 <body>
@@ -251,7 +262,8 @@ a{color:var(--accent)}
 
   <!-- CHEF & BRAIN -->
   <p style="margin-top:40px">Before anyone walks in, the chef already exists. Microsoft's kitchen uses models from <em>OpenAI</em> plus its own. The <em>context window</em> is the countertop that determines how much the chef juggles at once. <em>Memory</em> keeps notes across visits. The chef reads images, audio, and video — that's <em>multi-modal</em>. <em>Microsoft Graph</em> is the chef's knowledge of your entire company: emails, calendar, files, org chart. And every word costs a <em>token</em>.</p>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Core brain</span><h4>GPT Models (OpenAI + Microsoft)</h4><p><em>"The chef's culinary education."</em> A mixed model family — OpenAI's models plus Microsoft's own — powering Copilot's foundational knowledge.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Tokens</h4><p><em>"Individual ingredients."</em> Every word costs tokens — a simple email draft uses few, a full report with data analysis uses many.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Context Window</h4><p><em>"Size of the countertop."</em> What the chef can see right now — Copilot pulls relevant context from Microsoft Graph to fill it intelligently.</p></div>
@@ -259,6 +271,7 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">Core brain</span><h4>Multi-modal</h4><p><em>"Chef who reads, sees, and listens."</em> Interprets images in documents, processes meeting audio, and generates visual content.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Memory / Work IQ</h4><p><em>"Chef's notebook."</em> Copilot Cowork runs on Work IQ, an intelligence layer that remembers your preferences and work patterns.</p></div>
   </div>
+</details>
 
   <!-- FRONT DOOR -->
   <p style="margin-top:40px">A customer walks in through one of several doors. You can enter <em>Copilot Chat</em>, a standalone dining room for conversation. Or the chef shows up inside the apps you already use — <em>Copilot in Word</em>, <em>Excel</em>, <em>PowerPoint</em>, <em>Outlook</em>, <em>Teams</em> — like a chef who comes to your table. <em>Copilot Cowork</em> goes further: it delegates real tasks and completes them for you. And you can say <em>"Hey Copilot"</em> to order hands-free with voice.</p>

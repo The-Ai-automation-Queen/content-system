@@ -143,6 +143,17 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .ipbar{max-width:1160px;margin:26px auto 0;padding:0 24px 70px}
 .ipbar p{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px;margin:0}
 a{color:var(--accent)}
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
 </style>
 </head>
 <body>
@@ -225,7 +236,8 @@ a{color:var(--accent)}
   </div>
   <p class="wide" style="margin-top:26px">We will start with the six terms hiding in that meeting sentence. Each one gets a plain-English definition, then a &ldquo;think of it like&rdquo; line so it sticks.</p>
 
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
     <div class="station">
       <span class="mono">Group 1 · term 1</span>
       <h4>Hallucination</h4>
@@ -257,6 +269,7 @@ a{color:var(--accent)}
       <p><em>&ldquo;A syllable, roughly.&rdquo;</em> A small chunk of text &mdash; about three-quarters of a word. AI companies charge by the token, like a phone plan charges by the gigabyte. &ldquo;Tokens are cheap now&rdquo; means AI got a lot cheaper in 2024&ndash;2025.</p>
     </div>
   </div>
+</details>
   <p class="menu-more">Read the meeting sentence again, at the very top of this page. It makes sense now.</p>
 </section>
 

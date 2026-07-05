@@ -147,6 +147,17 @@ a{color:var(--accent)}
 .try{background:#fff;border:1px solid var(--accent);border-radius:12px;padding:20px 22px}
 .try .mono{font-size:9.5px;color:var(--accent);display:block;margin-bottom:8px}
 .try p{font-family:'Inter',sans-serif;font-size:.86rem;color:var(--ink);margin:0;line-height:1.55;font-style:italic}
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
 </style>
 </head>
 <body>
@@ -305,13 +316,15 @@ a{color:var(--accent)}
     </div>
   </div>
 
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Write &amp; communicate</span><h4>Drafts on demand</h4><p>Emails, social posts, proposals, client replies, follow-ups — a draft in seconds instead of a blank page.</p></div>
     <div class="station"><span class="mono">Explain simply</span><h4>Plain-English translator</h4><p>Tax rules, legal clauses, technical docs, competitor sites — explained like you're not an expert.</p></div>
     <div class="station"><span class="mono">Summarize &amp; organize</span><h4>The 40-page shortcut</h4><p>Long reports, meeting notes, research, reviews — drop them in and ask for the key points.</p></div>
     <div class="station"><span class="mono">Brainstorm &amp; ideate</span><h4>The tireless partner</h4><p>Content ideas, business names, marketing angles, workshop outlines — available at 2am, never tired.</p></div>
     <div class="station"><span class="mono">Analyze &amp; spot patterns</span><h4>The pattern-finder</h4><p>Customer feedback, sales data, competitor reviews — patterns in minutes instead of hours.</p></div>
   </div>
+</details>
   <p class="menu-more">Notice the pattern across all five: you give it your information and ask it to do something useful with it. The more specific you are about what you need, the better the result. It's not magic — it's a conversation. You ask well, you get well.</p>
 </section>
 

@@ -150,6 +150,17 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .ipbar{max-width:1160px;margin:26px auto 0;padding:0 24px 70px}
 .ipbar p{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px;margin:0}
 a{color:var(--accent)}
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
 </style>
 </head>
 <body>
@@ -257,7 +268,8 @@ a{color:var(--accent)}
   <div class="sec-body" style="padding-top:14px">
     <p style="max-width:none">Before anyone walks in, the chef already exists. <strong>Mistral Large</strong> is the flagship for reasoning, coding, and multilingual work. <strong>Mistral Medium</strong> balances quality and speed, and is the default on the free tier. <strong>Mistral Small</strong> is the fast, cheap option for high-volume tasks. <strong>Magistral</strong> is the reasoning specialist that thinks step-by-step before answering, like Mistral's own version of "extended thinking." Every word you send is a <em>token</em> — an ingredient — and the <em>context window</em> is the size of the countertop: how much the chef can hold in mind at once. The signature edge is <strong>100+ languages</strong> including regional dialects, and <strong>exceptional speed</strong> — up to 1,000 words per second, the same whether you're on the free tier or paying.</p>
   </div>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 8 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Core brain</span><h4>Mistral Large</h4><p><em>"The flagship chef."</em> Best reasoning, coding, and multilingual model. Pro tier and above only.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Mistral Medium</h4><p><em>"The balanced everyday chef."</em> Quality and speed together — the free-tier default.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Mistral Small</h4><p><em>"The fast, efficient chef."</em> Quick answers, lowest cost — built for volume.</p></div>
@@ -267,6 +279,7 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">Core brain</span><h4>Tokens</h4><p><em>"Individual ingredients."</em> Every word costs tokens; API users pay per token.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Context Window</h4><p><em>"Size of the countertop."</em> What the chef can see right now — your question, memory, files, prior turns.</p></div>
   </div>
+</details>
 
   <div class="subhead">The front door</div>
   <div class="sec-body" style="padding-top:14px">
@@ -283,7 +296,8 @@ a{color:var(--accent)}
   <div class="sec-body" style="padding-top:14px">
     <p style="max-width:none">Every order has layers. The <strong>Model Picker</strong> lets you choose Large, Medium, Small, or Magistral per task. The <strong>Magistral reasoning toggle</strong> tells the chef to think step-by-step. <strong>Deep Research</strong> mode reads many sources before answering. <strong>Memories</strong> save up to 500 preferences across chats. <strong>Custom instructions</strong> shape tone and format. And <strong>prompt engineering</strong> is simply learning to write clearer tickets for better dishes.</p>
   </div>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Order slip</span><h4>Model Picker</h4><p><em>"Choose which chef takes your order."</em> Switch between Large, Medium, Small, Magistral.</p></div>
     <div class="station"><span class="mono">Order slip</span><h4>Magistral Reasoning Toggle</h4><p><em>"Telling the chef to think before answering."</em> Flips into extended step-by-step reasoning.</p></div>
     <div class="station"><span class="mono">Order slip</span><h4>Deep Research Mode</h4><p><em>"Reading every recipe book first."</em> Pro feature: reads many sources, returns a structured, sourced answer.</p></div>
@@ -291,12 +305,14 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">Order slip</span><h4>Custom Instructions</h4><p><em>"Standing notes on the kitchen wall."</em> Default tone, format, and persona for every reply.</p></div>
     <div class="station"><span class="mono">Order slip</span><h4>Prompt Engineering</h4><p><em>"Learning to write better order tickets."</em> Clearer requests produce noticeably better dishes.</p></div>
   </div>
+</details>
 
   <div class="subhead">The kitchen — where the work happens</div>
   <div class="sec-body" style="padding-top:14px">
     <p style="max-width:none">The order arrives and the stations light up. <strong>Multilingual writing</strong> across 100+ languages is the strongest station in the house. <strong>Mistral Vibe</strong> handles all-day coding sessions. <strong>Deep Research</strong> chains web reads into a sourced report. <strong>Document analysis</strong> reads anything you upload, up to 15GB on Pro. <strong>Web search</strong> brings in fresh ingredients. And <strong>FLUX Pro</strong> handles image generation — a guest chef borrowed from Black Forest Labs, not Mistral's own model.</p>
   </div>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Kitchen station</span><h4>Multilingual Writing</h4><p><em>"A chef who writes in any language."</em> Emails, reports, and articles across 100+ languages.</p></div>
     <div class="station"><span class="mono">Kitchen station</span><h4>Mistral Vibe Coding</h4><p><em>"Chef who builds the kitchen equipment."</em> All-day coding sessions with debugging and refactoring.</p></div>
     <div class="station"><span class="mono">Kitchen station</span><h4>Deep Research</h4><p><em>"Reading many books before answering."</em> Long-form sourced reports, Pro only.</p></div>
@@ -304,6 +320,7 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">Kitchen station</span><h4>Web Search</h4><p><em>"Checking today's market."</em> Up-to-date answers, more searches on Pro.</p></div>
     <div class="station"><span class="mono">Kitchen station</span><h4>FLUX Pro Image Gen</h4><p><em>"A guest artist in the kitchen."</em> Image generation via Black Forest Labs — not Mistral's own model, Pro only.</p></div>
   </div>
+</details>
 </section>
 
 <!-- pull quote -->
@@ -354,7 +371,8 @@ a{color:var(--accent)}
   <div class="sec-body" style="padding-top:14px">
     <p style="max-width:none"><strong>Web search</strong> brings live information into any answer. <strong>File uploads</strong> let you bring your own ingredients — PDFs, docs, spreadsheets, up to 15GB on Pro. The <strong>FLUX Pro partnership</strong> handles image generation through Black Forest Labs. <strong>La Plateforme</strong> exposes Mistral models to developers at competitive per-token pricing. <strong>Open-source weights</strong> can be downloaded and run on your own infrastructure, with zero data leaving your network. The one gap: <strong>fewer integrations</strong> than the giants — no Slack, Google Drive, or Jira connectors out of the box.</p>
   </div>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Supply</span><h4>Web Search Supply</h4><p><em>"The general supplier."</em> Live web behind both quick search and Deep Research.</p></div>
     <div class="station"><span class="mono">Supply</span><h4>File Uploads (15GB)</h4><p><em>"Bringing your own ingredients."</em> PDFs, docs, spreadsheets grounded inside a project.</p></div>
     <div class="station"><span class="mono">Supply</span><h4>FLUX Pro Partnership</h4><p><em>"Guest artist on retainer."</em> Image generation via Black Forest Labs, not Mistral's own model.</p></div>
@@ -362,12 +380,14 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">Supply</span><h4>Open-source weights</h4><p><em>"Public recipes you can run yourself."</em> Self-host Mistral 7B and Mixtral, zero data leaves your network.</p></div>
     <div class="station"><span class="mono">Supply</span><h4>Fewer Integrations</h4><p><em>"No delivery network."</em> No 60+ connectors like ChatGPT — copy-paste is the default bridge.</p></div>
   </div>
+</details>
 
   <div class="subhead">Plating &amp; delivery — how the dish reaches you</div>
   <div class="sec-body" style="padding-top:14px">
     <p style="max-width:none">The dish lands as a <strong>fast text answer</strong> with a near-instant feel. <strong>Code blocks</strong> come syntax-highlighted from Mistral Vibe. <strong>FLUX-generated images</strong> handle visuals. <strong>Document summaries</strong> distill uploaded files. <strong>Translations</strong> switch across 100+ languages inside one chat. And <strong>project history</strong> keeps everything searchable in named folders.</p>
   </div>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Delivery</span><h4>Fast Text Answer</h4><p><em>"Plate served before you finish ordering."</em> Near-instant, 1,000 words per minute.</p></div>
     <div class="station"><span class="mono">Delivery</span><h4>Code Output (Vibe)</h4><p><em>"Ready-to-serve dish from the coding station."</em> Syntax-highlighted, ready to paste.</p></div>
     <div class="station"><span class="mono">Delivery</span><h4>FLUX Image Output</h4><p><em>"Painting served alongside the meal."</em> High-quality stills via FLUX Pro.</p></div>
@@ -375,6 +395,7 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">Delivery</span><h4>Translations Across 100+</h4><p><em>"Same dish, plated for different rooms."</em> In-conversation language switching.</p></div>
     <div class="station"><span class="mono">Delivery</span><h4>Project History</h4><p><em>"Filing cabinet of past meals."</em> Searchable, revisitable, organised by project.</p></div>
   </div>
+</details>
 
   <div class="subhead">Where Mistral fits</div>
   <div class="sec-body" style="padding-top:14px">

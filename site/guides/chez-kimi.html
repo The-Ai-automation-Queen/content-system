@@ -140,6 +140,17 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 a{color:var(--accent)}
 table{width:100%}
 .tablewrap{overflow-x:auto}
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
 </style>
 </head>
 <body>
@@ -251,7 +262,8 @@ table{width:100%}
       <p><strong>The chef, before anyone walks in.</strong> The current chef is Kimi K2.6, released April 2026. A huge model that uses only a small slice of its brain per question — both powerful and cost-efficient. It ties GPT-class kitchens on coding benchmarks at roughly 80% less. It handles about 256K tokens of context, which is a large countertop for long documents. Deep Thinking mode chains up to 300 reasoning steps before answering the hard questions. It's multi-modal — text, images, video. Every word you type is a token, the individual ingredient the kitchen counts and bills by. And its signature trick is Agent Swarm: up to 300 mini-assistants working in parallel on one order.</p>
     </div>
   </div>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Core brain</span><h4>Kimi K2.6</h4><p><em>"A massive but efficient chef"</em> — matches GPT-class on coding at roughly 80% less cost.</p><span class="wb">All Kimi</span></div>
     <div class="station"><span class="mono">Core brain</span><h4>Exceptional Coding</h4><p><em>"World-class engineering chef"</em> — Cursor built its Composer 2 feature on this model.</p><span class="wb">All Kimi</span></div>
     <div class="station"><span class="mono">Core brain</span><h4>Deep Thinking (300 steps)</h4><p><em>"Chef who plans carefully before cooking"</em> — chains up to 300 reasoning steps on hard problems.</p><span class="wb">All Kimi</span></div>
@@ -259,6 +271,7 @@ table{width:100%}
     <div class="station"><span class="mono">Core brain</span><h4>256K Context Window</h4><p><em>"Large countertop"</em> — holds large documents and long conversations.</p><span class="wb">All Kimi</span></div>
     <div class="station"><span class="mono">Core brain</span><h4>Tokens</h4><p><em>"Individual ingredients"</em> — every word costs tokens; the API is priced dramatically cheaper than Western labs.</p><span class="wb">All Kimi</span></div>
   </div>
+</details>
 </section>
 
 <!-- The Front Door -->
@@ -283,13 +296,15 @@ table{width:100%}
       <p><strong>The order slip.</strong> Every order has layers. The Deep Thinking toggle tells the chef to chain up to 300 reasoning steps. The web search toggle grounds the answer in live information. The Agent Swarm toggle, on paid tiers, splits the task across many parallel agents. The API carries a system prompt for a persistent persona. And prompt engineering — learning to write clearer tickets — matters more than ever for autonomous coding sessions that run for hours unsupervised.</p>
     </div>
   </div>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Order slip</span><h4>Deep Thinking Toggle</h4><p><em>"Tell the chef to plan before cooking"</em> — up to 300 reasoning steps.</p><span class="wb">All Kimi</span></div>
     <div class="station"><span class="mono">Order slip</span><h4>Web Search Toggle</h4><p><em>"Tell the chef to check the market"</em> — grounds the answer in live web information.</p><span class="wb">Moderato $19</span></div>
     <div class="station"><span class="mono">Order slip</span><h4>Agent Swarm Toggle</h4><p><em>"Call in the whole brigade"</em> — splits the task across up to 300 parallel agents.</p><span class="wb">Allegro / Vivace</span></div>
     <div class="station"><span class="mono">Order slip</span><h4>System Prompt (API)</h4><p><em>"Standing instructions"</em> — persistent persona, format, and rules on the API.</p><span class="wb">Developer API</span></div>
     <div class="station"><span class="mono">Order slip</span><h4>Prompt Engineering</h4><p><em>"Learning to write better tickets"</em> — spec the goal, constraints, and done criteria up front.</p><span class="wb">General AI concept</span></div>
   </div>
+</details>
 </section>
 
 <!-- pull quote -->
@@ -325,6 +340,7 @@ table{width:100%}
     </div>
   </div>
 
+<details class="fold"><summary>Open the full station menu · 20 items</summary>
 <div class="stations">
   <div class="station"><span class="mono">Kitchen</span><h4>Slides &amp; Websites</h4><p><em>"Chef who also designs the menu cards"</em> — generates decks and web pages from a description.</p><span class="wb">Moderato $19</span></div>
   <div class="station"><span class="mono">Kitchen</span><h4>Screenshot to Code</h4><p><em>"Show the chef a photo, they recreate it"</em> — upload a design, get working code.</p><span class="wb">All Kimi</span></div>
@@ -347,6 +363,7 @@ table{width:100%}
   <div class="station"><span class="mono">Plating &amp; delivery</span><h4>Research Reports</h4><p><em>"Plated digest of the cookbook stack"</em> — sourced multi-page reports with citations.</p><span class="wb">Moderato $19</span></div>
   <div class="station"><span class="mono">Plating &amp; delivery</span><h4>Deployed App (Allegro+)</h4><p><em>"New restaurant opens overnight"</em> — a live URL from generated code, in minutes.</p><span class="wb">Allegro / Vivace</span></div>
 </div>
+</details>
 <p class="menu-more">Every station gets its own walkthrough in the full guide — this is the seating chart.</p>
 
 </section>

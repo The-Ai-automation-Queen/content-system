@@ -150,6 +150,17 @@ a{color:var(--accent)}
 @media(max-width:560px){
   .nav-links{display:none}
 }
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
 </style>
 </head>
 <body>
@@ -218,13 +229,15 @@ a{color:var(--accent)}
     </div>
   </div>
 
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Item</span><h4>Google account</h4><p>Colab free tier + Drive output. Free.</p></div>
     <div class="station"><span class="mono">Item</span><h4>30 seconds of clean voice WAV</h4><p>Your reference for voice cloning. Free.</p></div>
     <div class="station"><span class="mono">Item</span><h4>ReelStack license</h4><p>Reel scaffolding + render. One-time paid.</p></div>
     <div class="station"><span class="mono">Item</span><h4>Remotion on your laptop</h4><p>Where Reels actually render. Free.</p></div>
     <div class="station"><span class="mono">Item</span><h4>Google Drive for Desktop</h4><p>Syncs Colab output to your laptop. Free.</p></div>
   </div>
+</details>
   <p class="menu-more">Five things to gather before Step 1 — the rest of the guide assumes you have them.</p>
 </section>
 

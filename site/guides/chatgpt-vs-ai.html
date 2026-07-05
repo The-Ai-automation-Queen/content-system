@@ -120,6 +120,17 @@ li{margin-bottom:8px;color:var(--ink)}
   .nav-links{gap:16px;font-size:11px}
   .rail{overflow-x:auto;flex-wrap:nowrap}
 }
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
 </style>
 </head>
 <body>
@@ -206,7 +217,8 @@ li{margin-bottom:8px;color:var(--ink)}
     <h2>The names, sorted from biggest to smallest</h2>
     <p>Six words. Once you know where each one sits, you&rsquo;ll never confuse them again.</p>
 
-    <div class="stations">
+    <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
       <div class="station">
         <div class="cat">Word 1 &middot; The Category</div>
         <h4>AI &mdash; Artificial Intelligence</h4>
@@ -238,6 +250,7 @@ li{margin-bottom:8px;color:var(--ink)}
         <p><em>&ldquo;Hiring the friend, not just texting them.&rdquo;</em> A chatbot that takes action &mdash; searches the web, reads files, fills forms, runs code. A regular chatbot gives advice; an agent goes and does it.</p>
       </div>
     </div>
+</details>
 
     <div class="pull">AI is the category. Generative AI is the type. LLM is the <strong>engine</strong>. ChatGPT is one car, made by one company, using one engine. Now you know.</div>
 

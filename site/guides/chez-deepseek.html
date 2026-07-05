@@ -155,6 +155,17 @@ a{color:var(--accent)}
 .plans-card td{padding:10px 12px;border-bottom:1px solid var(--rule)}
 .plans-card tr:nth-child(even) td{background:var(--cream)}
 .plans-card .foot{font-size:.82rem;color:var(--muted);margin-top:12px;line-height:1.55;font-family:'Inter',sans-serif}
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
 </style>
 </head>
 <body>
@@ -256,7 +267,8 @@ a{color:var(--accent)}
     <h3>The Chef &amp; Their Brain</h3>
     <p>Before anyone walks in, the chef already exists. Two chefs share the kitchen. <strong>V4 Flash</strong> is the everyday chef — fast and incredibly cheap. <strong>V4 Pro</strong> handles harder problems with stronger reasoning. Both support a thinking toggle (slow and careful, versus fast and direct), and both work off a context window reaching roughly one million words — every word costs a token. Both are strongly bilingual in English and Chinese, with solid coverage in many other languages. The signature edge: 10 to 100x cheaper per token than ChatGPT or Claude for comparable quality on coding and reasoning.</p>
   </div>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Core brain</span><h4>V4 Flash</h4><p><em>"The everyday speed chef"</em> — fast, cheap, the default model for daily writing, coding, and conversation.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>V4 Pro</h4><p><em>"Premium chef for harder problems"</em> — stronger reasoning for complex, multi-step work, currently discounted.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Thinking Mode</h4><p><em>"Chef plans before cooking"</em> — toggles multi-step reasoning; slower, more accurate on hard problems.</p></div>
@@ -264,6 +276,7 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">Core brain</span><h4>Strong English + Chinese</h4><p><em>"A chef bilingual at native level"</em> — one of the strongest AI tools for Chinese tasks, competitive in English too.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Tokens</h4><p><em>"Individual ingredients"</em> — every word costs tokens; the rate here is extremely low compared to Western labs.</p></div>
   </div>
+</details>
 
   <!-- The Front Door -->
   <div class="zone-block">
@@ -282,39 +295,45 @@ a{color:var(--accent)}
     <h3>The Order Slip</h3>
     <p>You place your order, and how it's written matters. The model picker lets you choose V4 Flash or V4 Pro. The thinking toggle tells the chef to reason step-by-step or answer fast. The web search toggle adds live web results to the answer. The system prompt, on the API, sets persistent behaviour across a whole session. And prompt engineering is simply learning to write clearer tickets so the kitchen sends back a better dish.</p>
   </div>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">All DeepSeek</span><h4>Model Picker</h4><p><em>"Pick which chef takes the order"</em> — switch between V4 Flash and V4 Pro per task.</p></div>
     <div class="station"><span class="mono">All DeepSeek</span><h4>Thinking Toggle</h4><p><em>"Tell the chef to think before cooking"</em> — flips into step-by-step reasoning for hard problems.</p></div>
     <div class="station"><span class="mono">Free web + app</span><h4>Web Search Toggle</h4><p><em>"Tell the chef to check today's market"</em> — adds live web results to the next answer.</p></div>
     <div class="station"><span class="mono">Developer API</span><h4>System Prompt</h4><p><em>"Standing instructions in the kitchen"</em> — a persistent persona, format, or rule set for the whole session.</p></div>
     <div class="station"><span class="mono">General concept</span><h4>Prompt Engineering</h4><p><em>"Learning to write better tickets"</em> — a clearer, more specific request produces a better answer.</p></div>
   </div>
+</details>
 
   <!-- The Kitchen (cooking) -->
   <div class="zone-block">
     <h3>The Kitchen</h3>
     <p>The order arrives, and this is where the real work happens — code, writing, research. Coding is the signature station: DeepSeek matches GPT-class quality on programming benchmarks at a fraction of the price. Writing spans languages, especially strong bilingual EN/ZH. Document analysis works on uploaded files, with the 1M context handling long PDFs. Web search grounds answers in current information. And image understanding reads charts and screenshots.</p>
   </div>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">All DeepSeek</span><h4>Coding (signature)</h4><p><em>"The chef's signature dish"</em> — matches GPT-class quality on programming across most languages.</p></div>
     <div class="station"><span class="mono">All DeepSeek</span><h4>Writing (EN + ZH)</h4><p><em>"Chef who writes in two languages natively"</em> — bilingual emails, reports, posts.</p></div>
     <div class="station"><span class="mono">All DeepSeek</span><h4>Document Analysis</h4><p><em>"Chef who reads the filing cabinet"</em> — upload and query long documents using the 1M context.</p></div>
     <div class="station"><span class="mono">Free web + app</span><h4>Web Search</h4><p><em>"Chef checking today's market"</em> — live information pulled in when the toggle is on.</p></div>
     <div class="station"><span class="mono">All DeepSeek</span><h4>Image Understanding</h4><p><em>"Chef who can read photos and charts"</em> — upload visuals and ask questions, functional though less strong than ChatGPT or Claude on complex visuals.</p></div>
   </div>
+</details>
 
   <!-- The Kitchen Team -->
   <div class="zone-block">
     <h3>The Kitchen Team</h3>
     <p>For complex workflows, the team system kicks in. Long-context multi-doc lets you upload many files at once and ask cross-document questions. Project threads keep conversations grouped. The self-host stack runs DeepSeek on your own infrastructure for total data control. API tool-use enables agentic workflows on the developer side. And thousands of community fine-tunes exist on Hugging Face — specialised variants for legal, medical, finance, and more.</p>
   </div>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">All DeepSeek</span><h4>Multi-Doc Context</h4><p><em>"Cooking with many ingredient crates at once"</em> — many files in one conversation, cross-document questions.</p></div>
     <div class="station"><span class="mono">All DeepSeek</span><h4>Project Threads</h4><p><em>"Filing cabinets per topic"</em> — conversations grouped by project, reusable across sessions.</p></div>
     <div class="station"><span class="mono">Open-source</span><h4>Self-Host Stack</h4><p><em>"Your own private kitchen"</em> — open weights plus your own GPUs, total data control, no telemetry.</p></div>
     <div class="station"><span class="mono">Developer API</span><h4>API Tool-Use</h4><p><em>"Chef with extra kitchen gadgets"</em> — function calling for agentic workflows.</p></div>
     <div class="station"><span class="mono">Open-source</span><h4>Community Fine-Tunes</h4><p><em>"Sous-chefs specialising"</em> — thousands of domain variants for legal, medical, finance, coding niches.</p></div>
   </div>
+</details>
 </section>
 
 <!-- pull quote -->
@@ -350,7 +369,8 @@ a{color:var(--accent)}
     </div>
   </div>
 
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 10 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Delivery</span><h4>Text Answer</h4><p><em>"Plate served quickly"</em> — fast on Flash, more careful on Pro with thinking on.</p></div>
     <div class="station"><span class="mono">Delivery</span><h4>Code Blocks</h4><p><em>"Ready-to-serve technical dish"</em> — syntax-highlighted, copy-paste ready, with explanation and tests on request.</p></div>
     <div class="station"><span class="mono">Delivery · free web + app</span><h4>Sourced Answer (web)</h4><p><em>"Plate with the supplier slip"</em> — cites web sources when search is on.</p></div>
@@ -362,6 +382,7 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">Supply · open-source</span><h4>Open-Source Weights</h4><p><em>"Public recipes for self-hosters"</em> — free download on Hugging Face and ModelScope, Apache-style license.</p></div>
     <div class="station"><span class="mono">Supply</span><h4>Few Connectors</h4><p><em>"No delivery network"</em> — no native Slack, Drive, or Notion integrations; copy-paste is the bridge.</p></div>
   </div>
+</details>
   <p class="menu-more">The kitchen also connects outward through web search, file uploads, the API, and open weights — the supply lines above. Every station gets its own walkthrough in the full guide — this is the seating chart.</p>
 </section>
 

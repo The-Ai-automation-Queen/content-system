@@ -160,6 +160,17 @@ a{color:var(--accent)}
 .chefs-card h3{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;margin:0 0 6px;color:#fff}
 .chefs-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0 0 18px;line-height:1.6}
 .chefs-card a{margin-top:auto;text-align:center;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;text-decoration:none;background:#fff;color:var(--ink);border-radius:8px;padding:11px 16px}
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
 </style>
 </head>
 <body>
@@ -262,7 +273,8 @@ a{color:var(--accent)}
     <span class="zkicker mono">Station 01 · the chef's foundation</span>
     <h3>The Chef &amp; Their Brain</h3>
     <p class="znarr">Before the restaurant even opens, there's a chef. The <strong>LLM</strong> (Large Language Model, the AI engine behind Claude) is everything this chef has ever learned — every cookbook, every technique. The <strong>context window</strong> (their countertop) determines how much they can juggle at once. <strong>Memory</strong> (their notebook) remembers regulars across visits. They can read photos and listen to voice notes — that's <strong>multi-modal</strong>. When a dish is complex, they pause and plan — that's <strong>deep thinking</strong>. You can set how creative they cook with the <strong>temperature</strong> dial: low means follow the recipe, high means improvise. And every single word, in and out, is a <strong>token</strong>, like an individual ingredient.</p>
-    <div class="stations">
+    <details class="fold"><summary>Open the full station menu · 7 items</summary>
+<div class="stations">
       <div class="station"><span class="mono">All platforms</span><h4>LLM (Large Language Model)</h4><p class="analogy">"The chef's entire culinary education."</p><p>The AI engine behind Claude — trained on huge amounts of text so it can read, write, and reason in everyday language. The foundational knowledge that makes all cooking possible.</p></div>
       <div class="station"><span class="mono">All platforms</span><h4>Tokens</h4><p class="analogy">"Individual ingredients."</p><p>Each word (roughly) is one ingredient. A simple message needs a handful; a full essay needs thousands. Longer conversations use more tokens.</p></div>
       <div class="station"><span class="mono">All platforms</span><h4>Context Window</h4><p class="analogy">"Size of the countertop."</p><p>Everything the chef can see at once. A small counter means early ingredients fall off; a bigger counter means more complex meals are possible.</p></div>
@@ -271,6 +283,7 @@ a{color:var(--accent)}
       <div class="station"><span class="mono">All platforms</span><h4>Multi-modal</h4><p class="analogy">"A chef who reads, sees, and listens."</p><p>Not just text — this chef can look at photos, listen to voice notes, and read handwritten recipes.</p></div>
       <div class="station"><span class="mono">API / Developers</span><h4>Temperature</h4><p class="analogy">"How creative vs. strict the chef cooks."</p><p>Turn it low to follow the recipe exactly; turn it high to improvise and experiment. Developers control the dial.</p></div>
     </div>
+</details>
   </div>
 
   <!-- ZONE: The Front Door -->
@@ -278,7 +291,8 @@ a{color:var(--accent)}
     <span class="zkicker mono">Station 02 · ways in</span>
     <h3>The Front Door</h3>
     <p class="znarr">There are multiple ways to enter this restaurant. You can walk into <strong>Claude.ai</strong>, the dining room, and chat face to face. You can book <strong>Cowork</strong>, a private booth where the chef works alongside you on your files. Developers can pull up <strong>Claude Code</strong>, a terminal door straight into the kitchen, or call the <strong>API</strong>, like a phone line for bulk orders. Or there's <strong>headless mode</strong>, a ghost kitchen with no dining room — just silent background cooking. And if you're a regular with a big event, <strong>Projects</strong> are like a catering folder that keeps everything organized in one place.</p>
-    <div class="stations">
+    <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
       <div class="station"><span class="mono">Claude.ai</span><h4>Claude.ai</h4><p class="analogy">"The dining room."</p><p>The main web and mobile chat interface. You sit down, type a message, and get a response.</p></div>
       <div class="station"><span class="mono">Cowork</span><h4>Cowork</h4><p class="analogy">"Private dining booth."</p><p>A workspace for knowledge workers where the chef works on your documents, spreadsheets, and files in a sandboxed environment, connecting to workplace tools via MCP connectors.</p></div>
       <div class="station"><span class="mono">API / Developers</span><h4>API</h4><p class="analogy">"Phone line for bulk orders."</p><p>Developers send structured requests programmatically — no dining room needed, just call in and get food delivered.</p></div>
@@ -286,6 +300,7 @@ a{color:var(--accent)}
       <div class="station"><span class="mono">Claude Code + API</span><h4>Headless Mode</h4><p class="analogy">"Ghost kitchen."</p><p>No interface, no waiters — just the kitchen pumping out orders silently in the background.</p></div>
       <div class="station"><span class="mono">Claude.ai</span><h4>Projects</h4><p class="analogy">"Catering folder."</p><p>Groups related chats, files, and instructions together for one topic or client, all notes for one event in one binder.</p></div>
     </div>
+</details>
   </div>
 
   <!-- ZONE: The Order Slip -->
@@ -293,7 +308,8 @@ a{color:var(--accent)}
     <span class="zkicker mono">Station 03 · how instructions travel</span>
     <h3>The Order Slip</h3>
     <p class="znarr">Every order has layers. The <strong>system prompt</strong> is like special instructions clipped to the ticket, invisible to you but shaping how the chef works. <strong>claude.md</strong> is like house rules pinned on the kitchen wall that every chef reads before their shift. <strong>Instructions</strong> are like standing orders from a regular: "always add truffle oil for this customer." <strong>Prompt engineering</strong> is learning to write better order tickets — the clearer you are, the better the dish. And <strong>commands</strong> are like shortcut buttons on the register: one press fires a whole workflow.</p>
-    <div class="stations">
+    <details class="fold"><summary>Open the full station menu · 8 items</summary>
+<div class="stations">
       <div class="station"><span class="mono">API / Developers</span><h4>System Prompt</h4><p class="analogy">"Special instructions on the ticket."</p><p>Set by the developer, invisible to the user. Shapes tone, format, and boundaries of how the model responds.</p></div>
       <div class="station"><span class="mono">Claude Code</span><h4>claude.md</h4><p class="analogy">"House rules on the kitchen wall."</p><p>Project-wide standards every chef reads first. Can live at user, project, or organization level.</p></div>
       <div class="station"><span class="mono">Claude.ai</span><h4>Instructions</h4><p class="analogy">"Standing orders from a regular."</p><p>Persistent preferences attached to a Project — applied every time you chat within that context.</p></div>
@@ -303,6 +319,7 @@ a{color:var(--accent)}
       <div class="station"><span class="mono">Claude Code</span><h4>Plan Mode</h4><p class="analogy">"Chef sketching the dish before cooking."</p><p>The chef draws the full recipe on paper before touching an ingredient — you review and approve the plan before execution begins.</p></div>
       <div class="station"><span class="mono">Claude Code</span><h4>Auto Edits</h4><p class="analogy">"Plating without asking permission each time."</p><p>Instead of asking before every garnish, the chef just does it. Faster, but you trade control for speed.</p></div>
     </div>
+</details>
   </div>
 
   <!-- ZONE: The Kitchen (Claude Code) -->
@@ -310,7 +327,8 @@ a{color:var(--accent)}
     <span class="zkicker mono">Station 04 · where the cooking happens</span>
     <h3>The Kitchen Itself</h3>
     <p class="znarr">The order arrives in the kitchen. First, <strong>pre-tools</strong> kick in, like a prep station that washes, chops, and measures before cooking starts. Then the chef enters <strong>Claude Code</strong>, the actual kitchen where the hands-on work happens. They follow <strong>skills</strong>, like recipes for known dishes. They grab <strong>tools</strong> mid-cooking, like reaching for a blender or thermometer. If they need information they don't have memorized, they check <strong>RAG</strong>, like flipping open a reference book. <strong>Hooks</strong> fire automatically at key moments, like kitchen bells that trigger the next step. And everything is organized in the <strong>file structure</strong>, a well-labeled pantry where any chef finds what they need.</p>
-    <div class="stations">
+    <details class="fold"><summary>Open the full station menu · 7 items</summary>
+<div class="stations">
       <div class="station"><span class="mono">Claude Code</span><h4>Claude Code</h4><p class="analogy">"The kitchen."</p><p>A CLI tool for developers. Runs in your terminal with full access to your codebase — reads files, writes code, runs tests, handles Git.</p></div>
       <div class="station"><span class="mono">Claude Code</span><h4>Pre-tools</h4><p class="analogy">"The prep station."</p><p>Preprocessing that transforms your raw request into something the kitchen can work with, automatically.</p></div>
       <div class="station"><span class="mono">All platforms</span><h4>Tool Use</h4><p class="analogy">"Blender, thermometer, scale."</p><p>Web search, calculators, code execution — external instruments grabbed when cooking alone isn't enough.</p></div>
@@ -319,6 +337,7 @@ a{color:var(--accent)}
       <div class="station"><span class="mono">Claude Code</span><h4>Hooks</h4><p class="analogy">"Kitchen bells &amp; triggers."</p><p>Automatic reactions to events — ticket in, bell rings, fryer starts. No manual trigger needed.</p></div>
       <div class="station"><span class="mono">Claude Code</span><h4>File Structure</h4><p class="analogy">"The pantry."</p><p>Organized so any chef finds what they need — /src for code, /docs for docs, /tests for tests.</p></div>
     </div>
+</details>
   </div>
 
   <!-- ZONE: The Kitchen Team -->

@@ -147,6 +147,17 @@ a{color:var(--accent)}
 .billtable td{padding:10px 12px;border-bottom:1px solid var(--rule);font-family:'Inter',sans-serif;font-size:.92em}
 .billtable tr:nth-child(even){background:var(--cream)}
 .billwrap{overflow-x:auto;border:1px solid var(--rule);border-radius:14px;padding:20px;margin-top:24px}
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
 </style>
 </head>
 <body>
@@ -259,7 +270,8 @@ a{color:var(--accent)}
       <p>Before anyone walks in, the chef already exists. The current head chef is <strong>Grok 4.3</strong>, the most capable xAI model, rolling out to paid users in stages. <strong>Big Brain</strong> mode is the extended-reasoning toggle for hard problems. The <strong>context window</strong> goes up to 2 million tokens on Grok 4.1 Fast — the largest in the industry, meaning the chef can hold an entire book or codebase on the countertop at once. Every word you type or read back is a <strong>token</strong>. And the chef is <strong>multi-modal</strong>: it reads images, listens to voice, generates images and short videos through its Aurora engine, and can even clone a voice.</p>
     </div>
   </div>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 7 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Core brain</span><h4>Grok 4.3</h4><p><em>"The latest head chef"</em> — xAI's most capable model, fastest and most intelligent they've built, rolling out to SuperGrok and X Premium+ subscribers.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Big Brain Mode</h4><p><em>"A chef who thinks carefully before a complex dish"</em> — the extended-reasoning toggle for layered problems, available on SuperGrok.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Largest Context Window (2M)</h4><p><em>"The biggest countertop in any restaurant"</em> — Grok 4.1 Fast holds up to 2 million tokens, the largest of any major model.</p></div>
@@ -268,6 +280,7 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">Core brain</span><h4>Tokens</h4><p><em>"Individual ingredients"</em> — every word in your question and the answer costs tokens; API users pay per token.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Context Window</h4><p><em>"Size of the countertop"</em> — how much the chef can hold at once: your question, uploads, prior turns, X data, retrieved sources.</p></div>
   </div>
+</details>
 </section>
 
 <!-- THE FRONT DOOR -->
@@ -292,13 +305,15 @@ a{color:var(--accent)}
       <p>Every order has layers. <strong>Regular mode</strong> is fast answers for quick questions. <strong>Big Brain</strong> is the thinking-mode toggle for hard problems. <strong>DeepSearch</strong> is the research mode — the chef reads dozens of sources before answering. <strong>Custom instructions</strong> shape Grok's tone and behaviour for you. And <strong>prompt engineering</strong> is simply learning to write clearer tickets so the kitchen sends back a better dish.</p>
     </div>
   </div>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Order</span><h4>Regular Mode</h4><p><em>"The fast lane"</em> — quick, direct, sarcasm-tinted answers for chat, summaries, and casual research.</p></div>
     <div class="station"><span class="mono">Order</span><h4>Big Brain Toggle</h4><p><em>"Telling the chef 'take your time'"</em> — flips Grok into slower, more careful multi-step reasoning.</p></div>
     <div class="station"><span class="mono">Order</span><h4>DeepSearch Toggle</h4><p><em>"Asking the chef to read every cookbook first"</em> — extended web research before it synthesises an answer.</p></div>
     <div class="station"><span class="mono">Order</span><h4>Custom Instructions</h4><p><em>"Standing notes for the kitchen"</em> — persistent instructions on tone, format, and focus; the closest you get to dialling down the sarcasm.</p></div>
     <div class="station"><span class="mono">Order</span><h4>Prompt Engineering</h4><p><em>"Learning to write better order tickets"</em> — the clearer and more specific your request, the better Grok performs.</p></div>
   </div>
+</details>
 </section>
 
 <!-- pull quote -->
@@ -339,7 +354,8 @@ a{color:var(--accent)}
     </div>
   </div>
 
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Kitchen</span><h4>DeepSearch</h4><p><em>"Chef reading dozens of sources before answering"</em> — searches the web thoroughly, synthesises with citations.</p></div>
     <div class="station"><span class="mono">Kitchen</span><h4>Aurora Image Generation</h4><p><em>"Painting on demand"</em> — high-quality photorealistic images in under 5 seconds.</p></div>
     <div class="station"><span class="mono">Kitchen</span><h4>Aurora Video Generation</h4><p><em>"Filmmaker on the kitchen team"</em> — short 6-second clips, SuperGrok and above.</p></div>
@@ -347,6 +363,7 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">Kitchen</span><h4>AI Agents</h4><p><em>"Mini assistants that complete tasks for you"</em> — multi-step autonomous helpers; SuperGrok Lite gets 1, higher tiers unlock more.</p></div>
     <div class="station"><span class="mono">Kitchen</span><h4>Image Analysis</h4><p><em>"A researcher who can see"</em> — upload charts, diagrams, photos, or handwriting and ask questions about them.</p></div>
   </div>
+</details>
   <p class="menu-more">Every station gets its own walkthrough in the full guide — this is the seating chart.</p>
 </section>
 
@@ -372,13 +389,15 @@ a{color:var(--accent)}
       <p>The kitchen connects to outside suppliers. <strong>Real-time X data</strong> is Grok's signature supplier — no other major AI tool can search live X posts. <strong>Web search</strong> backs DeepSearch with general sources. The <strong>xAI API</strong> exposes Grok models to developers, with the most generous free credits of any major lab. But the <strong>ecosystem is smaller</strong>: fewer third-party integrations than ChatGPT or Microsoft Copilot.</p>
     </div>
   </div>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Supply</span><h4>Real-Time X Data</h4><p><em>"The signature supplier nobody else has"</em> — live access to X posts, genuinely unique for PR, journalism, and trend-watching.</p></div>
     <div class="station"><span class="mono">Supply</span><h4>Web Search</h4><p><em>"The general supplier network"</em> — standard web crawl behind DeepSearch, less differentiated but covers everything outside X.</p></div>
     <div class="station"><span class="mono">Supply</span><h4>xAI API</h4><p><em>"Wholesale ingredient supply"</em> — API access to Grok models, priced per token, with the industry's largest context window.</p></div>
     <div class="station"><span class="mono">Supply</span><h4>$175/mo Free Dev Credits</h4><p><em>"Free samples for restaurant partners"</em> — developers in the data-sharing program get up to $175/month free, most generous among major labs.</p></div>
     <div class="station"><span class="mono">Supply</span><h4>Smaller Integration Ecosystem</h4><p><em>"A restaurant without a catering arm"</em> — primarily standalone + X, far fewer third-party connectors than ChatGPT.</p></div>
   </div>
+</details>
 </section>
 
 <!-- PLATING & DELIVERY -->
@@ -388,13 +407,15 @@ a{color:var(--accent)}
       <p>The dish gets plated and delivered to you. It lands as a <strong>text answer</strong>, usually with a side of personality. <strong>Aurora images</strong> arrive in seconds. <strong>Aurora video</strong> clips on paid plans. <strong>Voice replies</strong> if you spoke the order. Inside X, Grok can <strong>post answers directly into the timeline</strong> or reply to threads, and its <strong>X analysis</strong> can summarise long threads, surface trends, and explain who is saying what.</p>
     </div>
   </div>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Delivery</span><h4>Text Answer (with personality)</h4><p><em>"Dish plated with a wink"</em> — the default output, direct answer often with a quip or sarcastic aside.</p></div>
     <div class="station"><span class="mono">Delivery</span><h4>Aurora Image Output</h4><p><em>"A painting delivered with the meal"</em> — photorealistic stills in under 5 seconds.</p></div>
     <div class="station"><span class="mono">Delivery</span><h4>Aurora Video Clips</h4><p><em>"A short film served with the dish"</em> — 6-second video output, SuperGrok and above.</p></div>
     <div class="station"><span class="mono">Delivery</span><h4>Voice Reply</h4><p><em>"Chef speaks the answer back"</em> — spoken replies, and with Custom Voices, in your own cloned voice.</p></div>
     <div class="station"><span class="mono">Delivery</span><h4>Post Inside X</h4><p><em>"Dish plated directly onto the timeline"</em> — Grok can summarise threads, suggest replies, and draft posts inside X.</p></div>
   </div>
+</details>
 </section>
 
 <!-- WHERE GROK FITS -->

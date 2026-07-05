@@ -138,6 +138,17 @@ a{color:var(--accent)}
 .pricewrap th{padding:10px 12px;border-bottom:2px solid var(--rule);font-family:'Space Mono',monospace;font-size:.7em;letter-spacing:.08em;text-transform:uppercase;text-align:left}
 .pricewrap td{padding:10px 12px;border-bottom:1px solid var(--rule)}
 .pricewrap tr:nth-child(even) td{background:var(--cream)}
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
 </style>
 </head>
 <body>
@@ -200,6 +211,7 @@ a{color:var(--accent)}
   </div>
 </section>
 
+<details class="fold"><summary>Open the full station menu · 5 items</summary>
 <div class="stations">
   <div class="station"><span class="mono">Dining room</span><h4>ChatGPT</h4><p class="analogy">"The dining room."</p><p>Where you sit and place your order — web, desktop, and mobile.</p></div>
   <div class="station"><span class="mono">Phone line</span><h4>API (Responses)</h4><p class="analogy">"A phone line for bulk orders."</p><p>OpenAI's latest developer interface, supports tools, agents, and structured outputs natively.</p></div>
@@ -207,6 +219,7 @@ a{color:var(--accent)}
   <div class="station"><span class="mono">The coding kitchen</span><h4>Codex</h4><p class="analogy">"The coding kitchen."</p><p>A specialized coding agent that runs in the cloud, reviews code, handles long tasks in isolated environments.</p></div>
   <div class="station"><span class="mono">Catering folder</span><h4>Projects</h4><p class="analogy">"A catering folder for one client."</p><p>Groups related conversations, files, and instructions together in one place.</p></div>
 </div>
+</details>
 
 <!-- 02 THE KITCHEN (floor plan) -->
 <section class="sec">
@@ -245,7 +258,8 @@ a{color:var(--accent)}
 
 <div class="sec" style="padding-top:32px">
   <p style="max-width:60ch;font-size:1.06rem;margin:0 0 1rem">OpenAI's chef has been through many culinary schools. The current generation is the <em>GPT</em> family (Generative Pre-trained Transformer — the AI engine behind ChatGPT). The <em>context window</em> (their countertop) determines how much they can juggle at once. <em>Memory</em> (their notebook) remembers you across visits. They can read photos, listen to audio, watch video — that's <em>multi-modal</em>. When a dish is complex, they pause and plan — that's <em>reasoning</em>, sometimes shown as a "thinking" toggle. You can set how creative they cook with the <em>temperature</em> dial. And every word, in and out, is a <em>token</em>, like an individual ingredient.</p>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 7 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">All platforms</span><h4>GPT (the model)</h4><p class="analogy">"The chef's entire culinary education."</p><p>The AI engine behind ChatGPT — fast, thinking, and pro variants tuned for different tasks.</p></div>
     <div class="station"><span class="mono">All platforms</span><h4>Tokens</h4><p class="analogy">"Individual ingredients."</p><p>Every word in and out is a token. "Hello" is about 1 token; OpenAI charges per token via the API.</p></div>
     <div class="station"><span class="mono">All platforms</span><h4>Context window</h4><p class="analogy">"The size of the countertop."</p><p>Everything the chef can see at once. Paste a whole book, as long as it fits on the counter.</p></div>
@@ -254,17 +268,20 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">All platforms</span><h4>Multi-modal</h4><p class="analogy">"A chef who reads, sees, listens, and creates images."</p><p>Understands text, images, audio, video — and creates images with DALL-E and GPT Image.</p></div>
     <div class="station"><span class="mono">API / developers</span><h4>Temperature</h4><p class="analogy">"How creative vs. strict the chef cooks."</p><p>Low = follow the recipe exactly. High = improvise and experiment.</p></div>
   </div>
+</details>
 </div>
 
 <div class="sec" style="padding-top:8px">
   <p style="max-width:60ch;font-size:1.06rem;margin:0 0 1rem">The order arrives, and the chef grabs <em>built-in tools</em> mid-cooking: web browsing, DALL-E for images, or the <em>code interpreter</em> for running Python. <em>Deep Research</em> is the chef pausing to read multiple reference books before answering — thorough, slow, high quality. <em>Canvas</em> is a side workspace where the chef drafts and iterates on documents or code with you watching. And <em>file search</em> lets the chef dig through your uploaded documents like checking the pantry shelves.</p>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">All platforms</span><h4>Built-in tools</h4><p class="analogy">"Blender, thermometer, scale."</p><p>Web browsing, DALL-E image generation, code interpreter, and file reading, built in.</p></div>
     <div class="station"><span class="mono">ChatGPT</span><h4>Deep Research</h4><p class="analogy">"Reading multiple reference books thoroughly."</p><p>Spends minutes browsing dozens of sources and delivers a comprehensive report.</p></div>
     <div class="station"><span class="mono">ChatGPT</span><h4>Canvas</h4><p class="analogy">"A side workspace for drafting and editing."</p><p>A panel where you and ChatGPT iterate on documents or code together.</p></div>
     <div class="station"><span class="mono">All platforms</span><h4>File search / retrieval</h4><p class="analogy">"Checking the pantry shelves."</p><p>Upload documents and let the model search through them to answer questions.</p></div>
     <div class="station"><span class="mono">ChatGPT</span><h4>Code Interpreter</h4><p class="analogy">"The chef running experiments in the lab."</p><p>Writes and executes Python in a sandbox — analyzes data, builds charts.</p></div>
   </div>
+</details>
 </div>
 
 <div class="sec" style="padding-top:8px">
@@ -321,7 +338,8 @@ a{color:var(--accent)}
     </div>
   </div>
 
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 9 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Order slip</span><h4>System prompt</h4><p class="analogy">"Special instructions clipped to the ticket."</p><p>Set by the developer, invisible to the user — shapes tone, format, and boundaries.</p></div>
     <div class="station"><span class="mono">Order slip</span><h4>AGENTS.md</h4><p class="analogy">"House rules on the kitchen wall."</p><p>An open spec defining how agents should behave on a website, service, or codebase.</p></div>
     <div class="station"><span class="mono">ChatGPT</span><h4>Custom Instructions</h4><p class="analogy">"Standing orders from a regular."</p><p>Tell ChatGPT about yourself once and it applies to every future conversation.</p></div>
@@ -332,6 +350,7 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">ChatGPT</span><h4>Voice Mode</h4><p class="analogy">"Speaking your order to the waiter."</p><p>Have a real-time voice conversation — it listens, understands, responds in natural speech.</p></div>
     <div class="station"><span class="mono">ChatGPT</span><h4>ChatGPT App</h4><p class="analogy">"The dining room follows you everywhere."</p><p>Web, desktop, and mobile — start a chat on your laptop, continue it on your phone.</p></div>
   </div>
+</details>
   <p class="menu-more">Every station gets its own walkthrough in the full guide — this is the seating chart.</p>
 </section>
 

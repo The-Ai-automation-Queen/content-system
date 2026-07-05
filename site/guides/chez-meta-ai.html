@@ -153,6 +153,17 @@ a{color:var(--accent)}
 .plans-card td{padding:10px 12px;border-bottom:1px solid var(--rule)}
 .plans-card tr:nth-child(even) td{background:#FAFAF9}
 .plans-foot{font-family:'Inter',sans-serif;font-size:.78rem;color:var(--muted);margin-top:10px;line-height:1.55}
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
 </style>
 </head>
 <body>
@@ -261,7 +272,8 @@ a{color:var(--accent)}
 <!-- The Chef & Their Brain -->
 <section class="sec" style="padding-top:36px">
   <p style="max-width:78ch;font-size:1.06rem">The chef is the <em>Llama family</em>, Meta's flagship model series. <em>Llama 4</em> is the current generation: multi-modal — it reads text, images and voice — and competitive with GPT-class models. The <em>context window</em> reaches long-document scale, and every word it reads or writes is a <em>token</em>. The signature edge is that <em>Llama is open-source</em>: anyone can download the weights, audit them, run them privately, build on them. It's the largest open-source AI ecosystem in the world. The hosted Meta AI experience runs Llama under the hood, plus your social-platform context — contacts, group chats, posts — for personalisation.</p>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Core brain</span><h4>Llama Family</h4><p><em>"The Meta-trained chef."</em> Open-source frontier model family — Llama 4 is multi-modal and competitive with GPT-class benchmarks.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Multi-Modal</h4><p><em>"Chef who reads, sees, and listens."</em> Text, image and voice in and out — send a photo in WhatsApp and ask what it is.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Social-Platform Context</h4><p><em>"The chef who already knows your friends."</em> Inside Meta apps, it reads the thread, your activity, and group context to personalise answers.</p></div>
@@ -269,6 +281,7 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">Core brain</span><h4>Tokens</h4><p><em>"Individual ingredients."</em> Each word is one ingredient — the Llama API is priced per token; self-hosting is free per token, you supply the compute.</p></div>
     <div class="station"><span class="mono">Core brain</span><h4>Open-Source DNA</h4><p><em>"Public recipe by design."</em> Weights are downloadable and modifiable, with hundreds of millions of downloads — the largest open AI ecosystem on Earth.</p></div>
   </div>
+</details>
 </section>
 
 <!-- The Front Door -->
@@ -278,13 +291,15 @@ a{color:var(--accent)}
     <div><h2 style="font-size:1.3rem">The Front Door — multiple ways in</h2><span class="mono">A customer walks in through one of these doors</span></div>
   </div>
   <p style="max-width:78ch;font-size:1.06rem;margin-top:18px">Meta AI lives in many places at once. The <em>standalone app</em> plus <em>meta.ai web</em> is the main dedicated interface. It's embedded directly in <em>WhatsApp</em>, <em>Instagram</em>, <em>Messenger</em>, and <em>Facebook</em> — type @MetaAI in any chat. <em>Ray-Ban Meta smart glasses</em> bring voice-first Meta AI to your face, hands-free. Developers connect via the <em>Llama API</em>. And the <em>open-source Llama weights</em> are downloadable from Meta and Hugging Face for self-hosting.</p>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">meta.ai + app</span><h4>meta.ai + Meta AI App</h4><p><em>"The standalone dining room."</em> The dedicated web + mobile product — free chat, Imagine image gen, voice mode, web search.</p></div>
     <div class="station"><span class="mono">WhatsApp / IG / Messenger</span><h4>WhatsApp / IG / Messenger</h4><p><em>"The chef already inside the venue."</em> Type @MetaAI in any chat or group and it answers right in the thread.</p></div>
     <div class="station"><span class="mono">Ray-Ban Meta glasses</span><h4>Ray-Ban Meta Glasses</h4><p><em>"The chef on your face."</em> Voice-first, hands-free — "Hey Meta" plus camera-based pointing for live questions.</p></div>
     <div class="station"><span class="mono">Llama API (devs)</span><h4>Llama API</h4><p><em>"Wholesale phone line."</em> Plug Llama models into your own software, token-based, priced competitively with major labs.</p></div>
     <div class="station"><span class="mono">Llama open weights</span><h4>Llama Open Weights</h4><p><em>"Public recipe, run your own kitchen."</em> Download from Meta or Hugging Face and run on your own GPUs — no upstream calls.</p></div>
   </div>
+</details>
 </section>
 
 <!-- The Order Slip -->
@@ -294,7 +309,8 @@ a{color:var(--accent)}
     <div><h2 style="font-size:1.3rem">The Order Slip — how requests are shaped</h2><span class="mono">You place your order, how it's written matters</span></div>
   </div>
   <p style="max-width:78ch;font-size:1.06rem;margin-top:18px">Every order has layers. <em>Voice or text</em> input on the app and glasses. <em>Social context</em>: in WhatsApp or Instagram, Meta AI sees the chat thread and may use it for context. <em>Imagine prompts</em> trigger image generation. <em>AI Studio character prompts</em> let creators define custom AI personalities. <em>Llama API system prompts</em> give developers persistent behaviour. And <em>prompt engineering</em> — writing clearer tickets — still matters here as everywhere else.</p>
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Order</span><h4>Voice or Text Input</h4><p><em>"Order spoken or written."</em> Voice everywhere on app and glasses, text in social apps — pick what fits the moment.</p></div>
     <div class="station"><span class="mono">Order</span><h4>Social Context as Order</h4><p><em>"Chef reads the room before cooking."</em> The chat thread becomes implicit context — powerful, but watch sensitive data.</p></div>
     <div class="station"><span class="mono">Order</span><h4>Imagine Prompts</h4><p><em>"Order an illustrated dish."</em> Type "Imagine ..." to generate images inside the app, meta.ai, or a WhatsApp/IG thread.</p></div>
@@ -302,6 +318,7 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">Llama API (devs)</span><h4>System Prompt (Llama API)</h4><p><em>"Standing instructions."</em> Developers set a persistent persona, format or rule set that shapes every reply.</p></div>
     <div class="station"><span class="mono">General concept</span><h4>Prompt Engineering</h4><p><em>"Learning to write better tickets."</em> A clearer, more specific request gets a better dish — especially in a social thread.</p></div>
   </div>
+</details>
 </section>
 
 <!-- pull quote -->
@@ -337,7 +354,8 @@ a{color:var(--accent)}
     </div>
   </div>
 
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">Kitchen</span><h4>Conversational Chat</h4><p><em>"Friendly chat across every counter."</em> The default mode across app, social platforms, glasses and devices.</p></div>
     <div class="station"><span class="mono">Kitchen</span><h4>Imagine Image Generation</h4><p><em>"Painting on demand."</em> In-chat image gen inside WhatsApp, IG, Messenger and the app.</p></div>
     <div class="station"><span class="mono">Kitchen</span><h4>Voice Mode</h4><p><em>"Spoken dish."</em> Real-time voice in the app and on Ray-Ban Meta glasses, near-instant.</p></div>
@@ -345,9 +363,11 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">Kitchen</span><h4>Group-Chat Answers</h4><p><em>"Chef answers everyone at the table."</em> @MetaAI replies are visible to the whole group — good for summaries and decisions.</p></div>
     <div class="station"><span class="mono">Kitchen</span><h4>Image Understanding</h4><p><em>"Chef who can see what you sent."</em> Send a photo, ask about it, get an answer grounded in the image.</p></div>
   </div>
+</details>
   <p class="menu-more">Beyond chat: the creator layer, the supply chain, and how the dish gets delivered back to you — the full stations below.</p>
 
-  <div class="stations">
+  <details class="fold"><summary>Open the full station menu · 16 items</summary>
+<div class="stations">
     <div class="station"><span class="mono">AI Studio characters</span><h4>AI Studio (creator characters)</h4><p><em>"Tool to build your own sous-chef persona."</em> Build a custom AI character with its own voice and behaviour, deployed across IG and Messenger.</p></div>
     <div class="station"><span class="mono">AI Studio characters</span><h4>Creator AI (clone yourself)</h4><p><em>"AI version of the head chef."</em> Influencers train an AI on their own content to answer fans in their own voice.</p></div>
     <div class="station"><span class="mono">WhatsApp / IG / Messenger</span><h4>WhatsApp Business AI</h4><p><em>"AI host in your shop on WhatsApp."</em> SMB customer-service automation — orders, FAQ, booking, tied to the business catalogue.</p></div>
@@ -365,6 +385,7 @@ a{color:var(--accent)}
     <div class="station"><span class="mono">AI Studio characters</span><h4>Character Persona Reply</h4><p><em>"Sous-chef with own voice."</em> AI Studio characters reply in their defined persona across IG and Messenger.</p></div>
     <div class="station"><span class="mono">WhatsApp / IG / Messenger</span><h4>Sticker Generation</h4><p><em>"Edible art with the dish."</em> Imagine inside WhatsApp turns prompts into ready-to-send stickers.</p></div>
   </div>
+</details>
   <p class="menu-more">Every station gets its own walkthrough in the full guide — this is the seating chart.</p>
 </section>
 
