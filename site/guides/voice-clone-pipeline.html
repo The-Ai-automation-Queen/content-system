@@ -16,86 +16,139 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --canvas:#FFFFFF;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
-  --muted:#5C5A57;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
-  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
-a:hover{color:var(--accent-deep)}
-strong{font-weight:700;color:var(--ink)}
+:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--tint:#E4EAFB;--cream:#EEF2FC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.75}
+.mono{font-family:'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
 
-.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
-.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
-.nav-links{display:flex;gap:28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+/* nav */
+.nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20}
+.nav-inner{max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav .mono{font-size:10px;color:var(--muted)}
+.nav-links{display:flex;gap:24px;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.08em}
 .nav-links a{color:var(--ink);text-decoration:none}
 
-.wrap{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,100px) clamp(24px,5vw,72px)}
+/* magazine cover hero */
+.cover{max-width:1160px;margin:0 auto;padding:70px 24px 56px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:end}
+@media(max-width:860px){.cover{grid-template-columns:1fr}}
+.issue{font-size:11px;color:var(--accent);margin-bottom:18px;display:flex;gap:18px;flex-wrap:wrap}
+.cover h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:clamp(3rem,9vw,6.2rem);line-height:.98;letter-spacing:-.02em;margin:0}
+.cover h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.cover .standfirst{font-size:1.2rem;color:var(--muted);max-width:44ch;margin:22px 0 0}
+.cover-art{position:relative;aspect-ratio:4/5;background:var(--ink);border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.cover-art svg{width:82%;height:auto}
+.cover-art .slot{position:absolute;bottom:10px;right:12px;font-size:9px;color:#8d86a0}
+.dropcap::first-letter{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:4.6em;float:left;line-height:.78;padding:6px 12px 0 0;color:var(--accent)}
 
-.chips{margin-bottom:28px;display:flex;gap:8px;flex-wrap:wrap}
-.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff}
-.chip-setup{background:var(--ink)}
-.chip-data{background:var(--electric)}
-.chip-time{background:transparent;color:var(--muted);border:1px solid var(--rule);padding:4px 10px}
+/* the rail — reading progress as courses */
+.rail{max-width:1160px;margin:0 auto;padding:0 24px}
+.courses{display:flex;gap:0;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:#fff;margin:8px 0 0}
+.course{flex:1;text-align:center;padding:11px 6px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-left:1px solid var(--rule)}
+.course:first-child{border-left:none}
+.course.active{background:var(--ink);color:#fff}
 
-.kicker{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);display:flex;align-items:center;margin-bottom:20px}
-.kicker-rule{display:inline-block;width:32px;height:1px;background:var(--ink);margin-right:10px}
+/* sections */
+.sec{max-width:1160px;margin:0 auto;padding:72px 24px 8px}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:baseline;border-top:2px solid var(--ink);padding-top:18px}
+.sec-num{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:3.4rem;line-height:1;color:var(--accent)}
+.sec-head h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0}
+.sec-head .mono{display:block;font-size:10px;color:var(--muted);margin-top:6px}
+.sec-body{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;padding:26px 0 0}
+@media(max-width:860px){.sec-body{grid-template-columns:1fr}}
+.sec-body p{max-width:60ch;font-size:1.06rem;margin:0 0 1rem}
+.sec pre{background:var(--ink);color:var(--canvas);font-family:'Space Mono',monospace;font-size:12.5px;line-height:1.6;padding:18px 20px;border-radius:8px;overflow-x:auto;margin:14px 0;max-width:60ch}
+.sec code{font-family:'Space Mono',monospace;font-size:.92em;background:var(--tint);color:var(--accent-deep);padding:1px 6px;border-radius:3px}
+.sec pre code{background:transparent;color:inherit;padding:0}
+.sec ul,.sec ol{max-width:60ch;margin:0 0 1rem 22px;padding:0}
+.sec li{margin-bottom:6px}
 
-h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,5.5vw,56px);line-height:1.08;letter-spacing:-0.5px;color:var(--ink);margin-bottom:24px}
-h1 em{font-style:italic;color:var(--electric)}
-h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.18;letter-spacing:-0.3px;margin:64px 0 16px}
-h3{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);margin:32px 0 12px}
-p{margin-bottom:18px;color:var(--ink)}
-p.lead{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:20px;line-height:1.55;color:var(--muted);margin-bottom:32px}
+/* floor plan diagram */
+.plan{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:26px}
+.plan .mono{font-size:10px;color:var(--accent);display:block;margin-bottom:12px}
+.plan svg{width:100%;height:auto}
 
-.rule{border:0;border-top:2px solid var(--ink);margin:80px 0 40px}
+/* menu cards */
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 0}
+@media(max-width:860px){.menu{grid-template-columns:1fr}}
+.dish{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:24px;position:relative}
+.dish .mono{font-size:9.5px;color:var(--accent)}
+.dish h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:.4rem 0 .4rem}
+.dish p{font-family:'Inter',sans-serif;font-size:.9rem;color:var(--muted);margin:0;line-height:1.6}
+.dish .pict{height:74px;margin-bottom:10px;display:flex;align-items:center}
+.dish .pict svg{height:64px;width:auto}
 
-.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:28px 32px;margin:24px 0}
-.card.accent{border-color:var(--accent);background:var(--accent-tint)}
+/* stations grid — reused for tables/lists turned into scannable cards */
+.stations{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 0}
+@media(max-width:900px){.stations{grid-template-columns:repeat(2,1fr)}}
+.station{border:1px solid var(--rule);border-radius:12px;padding:16px 18px;background:#fff}
+.station .mono{font-size:9px;color:var(--accent)}
+.station h4{font-family:'Inter',sans-serif;font-size:.98rem;font-weight:600;margin:.35rem 0 .2rem}
+.station p{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--muted);margin:0;line-height:1.5}
+.menu-more{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:18px}
 
-.pullquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:24px;line-height:1.35;color:var(--muted);border-left:3px solid var(--accent);padding-left:24px;margin:40px 0}
+/* pull quote */
+.pull{max-width:1160px;margin:0 auto;padding:80px 24px}
+.pull blockquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.7rem,4.5vw,2.7rem);line-height:1.3;margin:0;max-width:26ch;color:var(--ink)}
+.pull blockquote strong{color:var(--accent);font-style:normal}
+.pull .mono{font-size:10px;color:var(--muted);margin-top:18px;display:block}
 
-.step{margin:48px 0;padding-top:32px;border-top:1px solid var(--rule-light)}
-.step-num{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:56px;color:var(--accent);line-height:1;margin-bottom:8px}
-.step h2{margin-top:0}
+/* warnings — "know before you eat" as menu footnotes */
+.warn{background:var(--ink);color:#F5F0EB}
+.warn-inner{max-width:1160px;margin:0 auto;padding:70px 24px}
+.warn .mono{color:#7FA0FF;font-size:11px}
+.warn h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:700;margin:.4rem 0 26px}
+.warn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.warn-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.warn-grid{grid-template-columns:1fr}}
+.warn-card{border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:20px}
+.warn-card .term{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7FA0FF;margin-bottom:8px}
+.warn-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0;line-height:1.6}
+.warn-card strong{color:#fff}
+.warn-inner .storelink{margin-top:30px;font-family:'Inter',sans-serif;font-size:.92rem;color:#D9D3E6}
+.warn-inner .storelink a{color:#7FA0FF}
 
-pre{background:var(--ink);color:var(--canvas);font-family:'Space Mono',monospace;font-size:13px;line-height:1.6;padding:20px 24px;border-radius:4px;overflow-x:auto;margin:16px 0}
-code{font-family:'Space Mono',monospace;font-size:14px;background:var(--accent-tint);color:var(--accent);padding:1px 6px;border-radius:2px}
-pre code{background:transparent;color:inherit;padding:0;font-size:13px}
+/* image slots for the magazine treatment */
+.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
+.imgslot .mono{font-size:9.5px;color:var(--accent)}
+.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
+.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
+.fullbleed .imgslot{aspect-ratio:21/8}
 
-ul,ol{margin:12px 0 20px 24px}
-li{margin-bottom:8px;color:var(--ink)}
+/* subscribe strip */
+.subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
+.subs-in{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid var(--accent);border-radius:14px;padding:22px 26px;background:var(--cream)}
+.subs-in h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:0}
+.subs-in p{font-family:'Inter',sans-serif;font-size:.88rem;color:var(--muted);margin:.2rem 0 0}
+.subs-in a{font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:var(--accent);color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap}
 
-table{width:100%;border-collapse:collapse;margin:24px 0;font-family:'Inter',sans-serif;font-size:14px}
-th{text-align:left;font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:11px;color:var(--muted);padding:12px 16px;border-bottom:2px solid var(--ink)}
-td{padding:14px 16px;border-bottom:1px solid var(--rule-light);color:var(--ink)}
+/* the chef's table: paid offers close */
+.chefs{background:var(--ink);color:#F5F0EB;margin-top:72px}
+.chefs-in{max-width:1160px;margin:0 auto;padding:64px 24px}
+.chefs .mono{color:#7FA0FF;font-size:11px}
+.chefs h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:700;margin:.4rem 0 26px}
+.chefs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.chefs-grid{grid-template-columns:1fr}}
+.chefs-card{border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:24px;display:flex;flex-direction:column;background:rgba(255,255,255,.03)}
+.chefs-card .mono{font-size:9.5px;margin-bottom:8px}
+.chefs-card h3{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;margin:0 0 6px;color:#fff}
+.chefs-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0 0 18px;line-height:1.6}
+.chefs-card a{margin-top:auto;text-align:center;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;text-decoration:none;background:#fff;color:var(--ink);border-radius:8px;padding:11px 16px}
 
-.cta-bar{margin:48px 0;padding:32px;background:var(--navy);border-radius:6px;text-align:center;color:var(--canvas)}
-.cta-bar h3{color:var(--canvas);margin-top:0}
-.cta-bar p{color:rgba(255,255,255,0.85)}
-.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:13px 32px;background:var(--canvas);color:var(--ink);text-decoration:none;border-radius:4px;margin-top:12px}
-.btn:hover{background:#fff;color:var(--ink)}
-
-.guide-nav{display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:32px;border-top:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em}
-.guide-nav a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
-.guide-nav a:hover{color:var(--accent);border-color:var(--accent)}
-
-.footer{margin-top:120px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+/* byline + IP bar */
+.byline{max-width:1160px;margin:70px auto 0;padding:0 24px}
+.byline-in{display:flex;gap:18px;align-items:center;background:var(--cream);border:1px solid var(--tint);border-radius:14px;padding:22px 26px}
+.byline-in img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.byline-in p{margin:0;font-size:.95rem}
+.byline-in .who{font-family:'Inter',sans-serif;font-weight:600}
+.ipbar{max-width:1160px;margin:26px auto 0;padding:0 24px 70px}
+.ipbar p{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px;margin:0}
+a{color:var(--accent)}
 
 @media(max-width:560px){
-  html,body{font-size:16px}
-  .wrap{padding:40px 16px}
-  h1{font-size:32px;line-height:1.1}
-  .pullquote{font-size:20px}
-  .step-num{font-size:40px}
-  .guide-nav{flex-direction:column;gap:16px;align-items:flex-start}
-  .nav-inner{padding:14px 16px}
-  .nav-links{gap:16px;font-size:11px}
+  .nav-links{display:none}
 }
 </style>
 </head>
@@ -103,91 +156,121 @@ td{padding:14px 16px;border-bottom:1px solid var(--rule-light);color:var(--ink)}
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="#">Community</a><a href="#">About</a></div>
+  <div class="nav-links">
+    <a href="../free-resources.html">Free Resources</a>
+    <a href="https://brief.shiftandlead.com">The Brief</a>
+    <a href="../store.html">Store</a>
+    <a href="../about.html">About</a>
+    <a href="../work-with-fatiha.html">Work with Fatiha</a>
+  </div>
 </div></nav>
 
-<div class="wrap">
-
-  <div class="chips">
-    <span class="chip chip-setup">SETUP</span>
-    <span class="chip chip-data">DATA</span>
-    <span class="chip chip-time">45 min setup &middot; 5 min per Reel</span>
+<!-- COVER -->
+<header class="cover">
+  <div>
+    <div class="issue mono"><span>Plain English · No. 07</span><span>VoxCPM · ReelStack</span><span>9 min read</span></div>
+    <h1>Voice Clone. <em>Auto Reel.</em></h1>
+    <p class="standfirst">Record yourself once. Build a pipeline that writes new scripts in your own voice and turns them into finished 9:16 Reels while you sleep &mdash; for $0 per generation, no GPU required.</p>
   </div>
-
-  <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; Build Once, Runs Forever</div>
-
-  <h1>Clone your voice. <em>Auto-render Reels.</em></h1>
-
-  <p class="lead">Your voice. Your words. Rendered while you sleep. This is a faceless Reel workflow that costs nothing per generation and runs on a laptop with no GPU.</p>
-
-  <div class="card">
-    <h3>What you&rsquo;ll have at the end</h3>
-    <ul>
-      <li>Your voice cloned from a 30-second sample, usable in 30 languages</li>
-      <li>A Colab notebook that batches voiceovers to Google Drive overnight</li>
-      <li>A ReelStack pipeline that turns those voiceovers into finished 9:16 Reels</li>
-      <li>$0 per audio generation after setup. No ElevenLabs subscription needed.</li>
-    </ul>
+  <div class="cover-art">
+    <svg viewBox="0 0 300 380" fill="none" aria-label="Microphone, pipeline, finished reel">
+      <circle cx="150" cy="70" r="34" stroke="#7FA0FF" stroke-width="2"/>
+      <rect x="136" y="52" width="28" height="40" rx="14" stroke="#2C4BE0" stroke-width="2"/>
+      <path d="M126 88a24 24 0 0048 0M150 112v18" stroke="#7FA0FF" stroke-width="2" stroke-linecap="round"/>
+      <text x="150" y="24" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE VOICE</text>
+      <path d="M90 190h120M100 175h100M115 160h70" stroke="#7FA0FF" stroke-width="2" stroke-linecap="round"/>
+      <path d="M125 150c0-9 7-9 7-18M150 150c0-9 7-9 7-18M175 150c0-9 7-9 7-18" stroke="#2C4BE0" stroke-width="2" stroke-linecap="round"/>
+      <text x="150" y="218" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE PIPELINE</text>
+      <rect x="112" y="256" width="76" height="96" rx="8" stroke="#7FA0FF" stroke-width="2"/>
+      <path d="M138 290l20 14-20 14z" fill="#2C4BE0"/>
+      <text x="150" y="378" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE REEL</text>
+    </svg>
+    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
+</header>
 
-  <hr class="rule">
-
-  <h2>What you need before you start</h2>
-
-  <table>
-    <thead>
-      <tr><th>Item</th><th>Why</th><th>Cost</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Google account</td><td>Colab free tier + Drive output</td><td>Free</td></tr>
-      <tr><td>30 seconds of clean voice WAV</td><td>Reference for voice cloning</td><td>Free</td></tr>
-      <tr><td>ReelStack license</td><td>Reel scaffolding + render</td><td>One-time paid</td></tr>
-      <tr><td>Remotion on your laptop</td><td>Where Reels render</td><td>Free</td></tr>
-      <tr><td>Google Drive for Desktop</td><td>Sync Colab output to laptop</td><td>Free</td></tr>
-    </tbody>
-  </table>
-
-  <p class="lead">No local GPU. Colab handles all the generation in the cloud. Your laptop only renders the final video.</p>
-
-  <hr class="rule">
-
-  <div class="step">
-    <div class="step-num">01</div>
-    <h2>Record your voice sample</h2>
-    <p>Open Voice Memos, Audacity, or any recorder. Record 20&ndash;30 seconds of yourself speaking naturally. Read a paragraph from a book, describe your day.</p>
-    <h3>Rules</h3>
-    <ul>
-      <li>Clean room. No fan, traffic, or music behind you.</li>
-      <li>Normal pace. Don&rsquo;t perform. The clone copies how you <em>actually</em> talk.</li>
-      <li>Save as WAV at 44kHz or 48kHz, mono. If your recorder only exports MP3, convert it in Audacity.</li>
-      <li>Name it <code>my-voice-ref.wav</code>. You&rsquo;ll reuse this file forever.</li>
-    </ul>
+<!-- course rail -->
+<div class="rail">
+  <div class="courses">
+    <div class="course active">01 · Before You Start</div>
+    <div class="course">02 · Clone The Voice</div>
+    <div class="course">03 · The Pipeline</div>
+    <div class="course">04 · Know Before You Trust It</div>
+    <div class="course">05 · The Bill</div>
   </div>
+</div>
 
-  <div class="step">
-    <div class="step-num">02</div>
-    <h2>Open the Colab notebook</h2>
-    <p>The notebook ships with this guide. It installs VoxCPM, loads the 2B multilingual model, mounts your Google Drive, and runs voice cloning in batch.</p>
-    <h3>Setup</h3>
-    <ol>
-      <li>Go to colab.research.google.com</li>
-      <li>File &gt; Upload notebook &gt; select <code>VoxCPM_Reels_Pipeline.ipynb</code></li>
-      <li>Runtime &gt; Change runtime type &gt; <strong>T4 GPU</strong> (free tier)</li>
-      <li>Runtime &gt; Run all</li>
-    </ol>
-    <div class="card accent">
-      <h3>First run takes 5&ndash;10 minutes</h3>
-      <p style="margin-bottom:0">VoxCPM downloads the model weights (around 5GB) on first load. They cache for the rest of your session. Subsequent generations take 30&ndash;60 seconds per Reel.</p>
+<!-- 01 BEFORE YOU START -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <div><h2>Before You Start — what you'll have by the end</h2><span class="mono">First course · 2 min</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p class="dropcap">Your voice. Your words. Rendered while you sleep. This is a faceless Reel workflow that costs nothing per generation and runs on a laptop with no GPU. (And yes — even the best chef makes mistakes. The allergen card comes right before you eat — course four.)</p>
+      <p>By the time you finish this guide, you'll have your voice cloned from a 30-second sample and usable in 30 languages; a Colab notebook that batches voiceovers to Google Drive overnight; a ReelStack pipeline that turns those voiceovers into finished 9:16 Reels; and a cost of $0 per audio generation after setup, with no ElevenLabs subscription needed.</p>
+      <p>No local GPU. Colab handles all the generation in the cloud. Your laptop only renders the final video.</p>
+    </div>
+    <div class="imgslot" style="aspect-ratio:4/3">
+      <span class="mono">Image slot 01</span>
+      <em>Editorial photo: laptop + phone recording a voice memo, warm desk light — duotone ink/purple grade</em>
     </div>
   </div>
 
-  <div class="step">
-    <div class="step-num">03</div>
-    <h2>Upload your voice + generate in batch</h2>
-    <p>When the notebook hits Cell 5, an upload button appears. Drop <code>my-voice-ref.wav</code>. Colab caches it for the session.</p>
-    <h3>Cell 7: write your batch</h3>
-    <p>Edit the <code>BATCH</code> list with your Reel scripts. Each item generates one WAV:</p>
-    <pre><code>BATCH = [
+  <div class="stations">
+    <div class="station"><span class="mono">Item</span><h4>Google account</h4><p>Colab free tier + Drive output. Free.</p></div>
+    <div class="station"><span class="mono">Item</span><h4>30 seconds of clean voice WAV</h4><p>Your reference for voice cloning. Free.</p></div>
+    <div class="station"><span class="mono">Item</span><h4>ReelStack license</h4><p>Reel scaffolding + render. One-time paid.</p></div>
+    <div class="station"><span class="mono">Item</span><h4>Remotion on your laptop</h4><p>Where Reels actually render. Free.</p></div>
+    <div class="station"><span class="mono">Item</span><h4>Google Drive for Desktop</h4><p>Syncs Colab output to your laptop. Free.</p></div>
+  </div>
+  <p class="menu-more">Five things to gather before Step 1 — the rest of the guide assumes you have them.</p>
+</section>
+
+<!-- 02 CLONE THE VOICE -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <div><h2>Clone the Voice — steps 1 to 3</h2><span class="mono">Second course · record, load, batch</span></div>
+  </div>
+
+  <div class="sec-body" style="display:block">
+    <p style="max-width:70ch">One reference recording feeds a free cloud model that can then say anything, in your voice, in thirty languages. Three steps get you from "just my phone" to a folder full of voiceover files.</p>
+
+    <div style="border-top:1px solid var(--rule);margin-top:26px;padding-top:26px">
+      <span class="mono" style="font-size:10px;color:var(--accent)">Step 01</span>
+      <h3 style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.4rem;margin:.3rem 0 .6rem">Record your voice sample</h3>
+      <p style="max-width:60ch">Open Voice Memos, Audacity, or any recorder. Record 20&ndash;30 seconds of yourself speaking naturally — read a paragraph from a book, describe your day.</p>
+      <ul>
+        <li>Clean room. No fan, traffic, or music behind you.</li>
+        <li>Normal pace. Don't perform — the clone copies how you <em>actually</em> talk.</li>
+        <li>Save as WAV at 44kHz or 48kHz, mono. If your recorder only exports MP3, convert it in Audacity.</li>
+        <li>Name it <code>my-voice-ref.wav</code>. You'll reuse this file forever.</li>
+      </ul>
+    </div>
+
+    <div style="border-top:1px solid var(--rule);margin-top:26px;padding-top:26px">
+      <span class="mono" style="font-size:10px;color:var(--accent)">Step 02</span>
+      <h3 style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.4rem;margin:.3rem 0 .6rem">Open the Colab notebook</h3>
+      <p style="max-width:60ch">The notebook ships with this guide. It installs VoxCPM, loads the 2B multilingual model, mounts your Google Drive, and runs voice cloning in batch.</p>
+      <ol>
+        <li>Go to colab.research.google.com.</li>
+        <li>File &gt; Upload notebook &gt; select <code>VoxCPM_Reels_Pipeline.ipynb</code>.</li>
+        <li>Runtime &gt; Change runtime type &gt; <strong>T4 GPU</strong> (free tier).</li>
+        <li>Runtime &gt; Run all.</li>
+      </ol>
+      <div class="station" style="max-width:60ch;background:var(--cream);border-color:var(--accent)">
+        <span class="mono">First run takes 5&ndash;10 minutes</span>
+        <p style="margin-top:6px">VoxCPM downloads the model weights (around 5GB) on first load. They cache for the rest of your session. Subsequent generations take 30&ndash;60 seconds per Reel.</p>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid var(--rule);margin-top:26px;padding-top:26px">
+      <span class="mono" style="font-size:10px;color:var(--accent)">Step 03</span>
+      <h3 style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.4rem;margin:.3rem 0 .6rem">Upload your voice + generate in batch</h3>
+      <p style="max-width:60ch">When the notebook hits Cell 5, an upload button appears. Drop <code>my-voice-ref.wav</code> — Colab caches it for the session. Then edit the <code>BATCH</code> list in Cell 7 with your Reel scripts. Each item generates one WAV file:</p>
+      <pre><code>BATCH = [
     {
         'slug': 'ai-plan-actually-use',
         'text': 'Most AI plans collect dust. The one you actually use starts with one problem worth solving this week.',
@@ -197,132 +280,156 @@ td{padding:14px 16px;border-bottom:1px solid var(--rule-light);color:var(--ink)}
         'text': 'A tech BFF answers your stupid AI questions without making you feel stupid. That is the standard.',
     },
 ]</code></pre>
-    <p>Run Cell 7. WAVs land in your Google Drive at <code>MyDrive/voxcpm-output/</code>.</p>
-    <div class="pullquote">One ref voice. Unlimited scripts. Same voice across 30 languages.</div>
-  </div>
-
-  <div class="step">
-    <div class="step-num">04</div>
-    <h2>Sync WAVs to your laptop</h2>
-    <p>Install Google Drive for Desktop. Pick <strong>Stream files</strong> mode, not Mirror. Nothing eats your local disk. Files download on demand.</p>
-    <p>After install, your Drive mounts as a folder. Browse to <code>voxcpm-output/</code>. Move into your Remotion project:</p>
-    <pre><code>mkdir public\audio
-copy "G:\My Drive\voxcpm-output\2026-06-18_ai-plan-actually-use.wav" public\audio\myreel.wav</code></pre>
-  </div>
-
-  <div class="step">
-    <div class="step-num">05</div>
-    <h2>Lock motion to voice</h2>
-    <p>From your Remotion project root:</p>
-    <pre><code>/reelstack-beats public/audio/myreel.wav</code></pre>
-    <p>ReelStack pipes the WAV through ffmpeg, runs whisper-cli, and prints frame-accurate <code>BEAT</code> constants. Copy them. They lock every scene cut to the words you actually said.</p>
-    <div class="card accent">
-      <p style="margin-bottom:0"><strong>Why this matters.</strong> Eyeballing scene cuts on a 90-second Reel drifts 6 seconds by the end. Whisper-locked beats stay in sync to the frame.</p>
+      <p style="max-width:60ch">Run Cell 7. WAVs land in your Google Drive at <code>MyDrive/voxcpm-output/</code>.</p>
     </div>
   </div>
+</section>
 
-  <div class="step">
-    <div class="step-num">06</div>
-    <h2>Scaffold the Reel</h2>
-    <p>Pick a ReelStack family that fits the message. 5 ship: Glass Iridescent, Cream Paper, Dark Cinematic, Warm Signature, Forbidden.</p>
-    <pre><code>/reelstack-glass --preset=graphify --name=MyReel --vo=public/audio/myreel.wav</code></pre>
-    <p>ReelStack writes the full <code>.tsx</code> file with palette, primitives, and BEAT skeleton. Paste your beats from Step 5. Open Remotion Studio (<code>npm run dev</code>) to preview.</p>
-  </div>
-
-  <div class="step">
-    <div class="step-num">07</div>
-    <h2>Render</h2>
-    <pre><code>/reelstack-render MyReel --platform=ig</code></pre>
-    <p>ReelStack runs the lint (safe zones, motion floors, hero text fit), then encodes H.264 at IG-optimal bitrate. Output: MP4 ready to upload.</p>
-    <p>For TikTok: <code>--platform=tiktok</code>. For YouTube Shorts: <code>--platform=shorts</code>.</p>
-  </div>
-
-  <hr class="rule">
-
-  <h2>What this replaces</h2>
-
-  <table>
-    <thead>
-      <tr><th>Tool</th><th>Old cost</th><th>New cost</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>ElevenLabs voice clone</td><td>$22&ndash;99/month</td><td>$0 (Colab free) or $10/month (Pro)</td></tr>
-      <tr><td>CapCut Pro auto-caption</td><td>$8/month</td><td>$0 (whisper-cli)</td></tr>
-      <tr><td>Stock B-roll subscription</td><td>$20&ndash;40/month</td><td>$0 (ReelStack primitives)</td></tr>
-    </tbody>
-  </table>
-
-  <p class="lead">The savings only matter if you publish. The point of this stack is to ship more Reels with less friction.</p>
-
-  <hr class="rule">
-
-  <h2>Troubleshooting</h2>
-
-  <h3>Colab disconnects mid-batch</h3>
-  <p>Free tier sessions cap around 12 hours. Keep the tab open. For batches over 20 Reels, upgrade to Colab Pro (~$10/month).</p>
-
-  <h3>The cloned voice sounds robotic</h3>
-  <p>The reference WAV is too short, too noisy, or too performed. Re-record 30 seconds of natural speech in a quiet room. Clone quality equals reference quality.</p>
-
-  <h3>Whisper picks up the wrong words</h3>
-  <p>Speak the script exactly as written. Test Cell 7 with one short script before batching 20.</p>
-
-  <h3>ReelStack rejects the render</h3>
-  <p>The lint failed. Run <code>/reelstack-lint MyReel.tsx</code> for the exact violations.</p>
-
-  <div class="cta-bar">
-    <h3>This is one pipeline. The bigger shift?</h3>
-    <p>When every repeatable task works this way. Built once, running while you sleep. Browse the full library.</p>
-    <a href="../free-resources.html" class="btn">All guides &rarr;</a>
-  </div>
-
-  <div class="guide-nav">
-    <a href="ai-jargon-guide.html">&larr; Prev: 12 AI words</a>
-    <a href="../free-resources.html">All guides &rarr;</a>
-  </div>
-
+<!-- pull quote -->
+<div class="pull">
+  <blockquote>"One ref voice. <strong>Unlimited scripts.</strong> Same voice across 30 languages."</blockquote>
+  <span class="mono">— why you only record once</span>
 </div>
 
+<!-- 03 THE PIPELINE -->
+<section class="sec" style="padding-top:0">
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <div><h2>The Pipeline — steps 4 to 7</h2><span class="mono">Third course · sync, lock, scaffold, render</span></div>
+  </div>
 
+  <div class="sec-body" style="display:block">
+    <p style="max-width:70ch">The audio exists. Now it becomes a video. Four steps carry the WAV from your Drive folder to a finished, platform-ready MP4.</p>
+
+    <div style="border-top:1px solid var(--rule);margin-top:26px;padding-top:26px">
+      <span class="mono" style="font-size:10px;color:var(--accent)">Step 04</span>
+      <h3 style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.4rem;margin:.3rem 0 .6rem">Sync WAVs to your laptop</h3>
+      <p style="max-width:60ch">Install Google Drive for Desktop. Pick <strong>Stream files</strong> mode, not Mirror — nothing eats your local disk, files download on demand. After install, your Drive mounts as a folder. Browse to <code>voxcpm-output/</code> and move the file into your Remotion project:</p>
+      <pre><code>mkdir public\audio
+copy "G:\My Drive\voxcpm-output\2026-06-18_ai-plan-actually-use.wav" public\audio\myreel.wav</code></pre>
+    </div>
+
+    <div style="border-top:1px solid var(--rule);margin-top:26px;padding-top:26px">
+      <span class="mono" style="font-size:10px;color:var(--accent)">Step 05</span>
+      <h3 style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.4rem;margin:.3rem 0 .6rem">Lock motion to voice</h3>
+      <p style="max-width:60ch">From your Remotion project root:</p>
+      <pre><code>/reelstack-beats public/audio/myreel.wav</code></pre>
+      <p style="max-width:60ch">ReelStack pipes the WAV through ffmpeg, runs whisper-cli, and prints frame-accurate <code>BEAT</code> constants. Copy them — they lock every scene cut to the words you actually said.</p>
+      <div class="station" style="max-width:60ch;background:var(--cream);border-color:var(--accent)">
+        <span class="mono">Why this matters</span>
+        <p style="margin-top:6px"><strong>Eyeballing scene cuts</strong> on a 90-second Reel drifts 6 seconds by the end. Whisper-locked beats stay in sync to the frame.</p>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid var(--rule);margin-top:26px;padding-top:26px">
+      <span class="mono" style="font-size:10px;color:var(--accent)">Step 06</span>
+      <h3 style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.4rem;margin:.3rem 0 .6rem">Scaffold the Reel</h3>
+      <p style="max-width:60ch">Pick a ReelStack family that fits the message. Five ship: Glass Iridescent, Cream Paper, Dark Cinematic, Warm Signature, Forbidden.</p>
+      <pre><code>/reelstack-glass --preset=graphify --name=MyReel --vo=public/audio/myreel.wav</code></pre>
+      <p style="max-width:60ch">ReelStack writes the full <code>.tsx</code> file with palette, primitives, and BEAT skeleton. Paste your beats from Step 5. Open Remotion Studio (<code>npm run dev</code>) to preview.</p>
+    </div>
+
+    <div style="border-top:1px solid var(--rule);margin-top:26px;padding-top:26px">
+      <span class="mono" style="font-size:10px;color:var(--accent)">Step 07</span>
+      <h3 style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.4rem;margin:.3rem 0 .6rem">Render</h3>
+      <pre><code>/reelstack-render MyReel --platform=ig</code></pre>
+      <p style="max-width:60ch">ReelStack runs the lint (safe zones, motion floors, hero text fit), then encodes H.264 at IG-optimal bitrate. Output: an MP4 ready to upload. For TikTok, use <code>--platform=tiktok</code>. For YouTube Shorts, use <code>--platform=shorts</code>.</p>
+    </div>
+
+    <div class="stations" style="grid-template-columns:repeat(3,1fr)">
+      <div class="station"><span class="mono">Old cost</span><h4>ElevenLabs voice clone</h4><p>$22&ndash;99/month &rarr; now $0 (Colab free) or $10/month (Pro).</p></div>
+      <div class="station"><span class="mono">Old cost</span><h4>CapCut Pro auto-caption</h4><p>$8/month &rarr; now $0 (whisper-cli).</p></div>
+      <div class="station"><span class="mono">Old cost</span><h4>Stock B-roll subscription</h4><p>$20&ndash;40/month &rarr; now $0 (ReelStack primitives).</p></div>
+    </div>
+    <p class="menu-more">The savings only matter if you publish — the point of this stack is to ship more Reels with less friction.</p>
+  </div>
+</section>
+
+<!-- full-bleed image slot -->
+<div class="fullbleed">
+  <div class="imgslot">
+    <span class="mono">Image slot 02 · full-bleed divider</span>
+    <em>Wide editorial photo: a laptop rendering a Reel timeline, phone propped beside it showing the finished vertical video</em>
+  </div>
+</div>
+
+<!-- 04 KNOW BEFORE YOU TRUST IT -->
+<section class="warn" style="margin-top:72px">
+  <div class="warn-inner">
+    <span class="mono">Fourth course · read this before you trust it</span>
+    <h2>Know before you trust it.</h2>
+    <div class="warn-grid">
+      <div class="warn-card"><div class="term">Colab disconnects mid-batch</div><p>Free tier sessions cap around 12 hours. Keep the tab open. For batches over 20 Reels, <strong>upgrade to Colab Pro</strong> (~$10/month).</p></div>
+      <div class="warn-card"><div class="term">The cloned voice sounds robotic</div><p>The reference WAV is too short, too noisy, or too performed. Re-record 30 seconds of natural speech in a quiet room — <strong>clone quality equals reference quality.</strong></p></div>
+      <div class="warn-card"><div class="term">Whisper picks up the wrong words</div><p>Speak the script exactly as written. <strong>Test Cell 7 with one short script</strong> before batching 20.</p></div>
+      <div class="warn-card"><div class="term">ReelStack rejects the render</div><p>The lint failed. Run <code style="background:rgba(255,255,255,.1);color:#fff;padding:1px 6px;border-radius:3px">/reelstack-lint MyReel.tsx</code> for <strong>the exact violations.</strong></p></div>
+    </div>
+    <p class="storelink">I keep verification prompts for exactly these failures — <a href="../store.html">The Judge's Prompts &rarr;</a></p>
+  </div>
+</section>
 
 <!-- subscribe strip -->
-<div style="max-width:680px;margin:56px auto 0;padding:0 24px">
- <div style="display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid #2C4BE0;border-radius:14px;padding:22px 26px;background:#EEF2FC">
-  <div><div style="font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;color:#1A1A1A">Get every new Kitchen Map in your inbox.</div>
-  <div style="font-family:'Inter',sans-serif;font-size:.88rem;color:#5C5A57;margin-top:3px">Plus The Insider Brief — one curated AI briefing every Tuesday, verdicts included.</div></div>
-  <a href="https://brief.shiftandlead.com" style="font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:#2C4BE0;color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap">Subscribe free &rarr;</a>
- </div>
-</div>
+<div class="subs"><div class="subs-in">
+  <div><h3>Get every new Kitchen Map in your inbox.</h3><p>Plus The Insider Brief — one curated AI briefing every Tuesday, verdicts included.</p></div>
+  <a href="https://brief.shiftandlead.com">Subscribe free &rarr;</a>
+</div></div>
 
-<!-- chef's table close -->
-<div style="max-width:680px;margin:56px auto 0;padding:0 4px">
- <div style="background:#1A1A1A;border-radius:14px;padding:34px 30px;text-align:center">
-  <div style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#7FA0FF;margin-bottom:10px">The chef's table — go further than the guide</div>
-  <div style="font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:20px">You've learned the words.<br>Now learn to run the kitchen.</div>
-  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-   <a href="../store.html" style="font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;text-decoration:none;background:#fff;color:#1A1A1A;border-radius:8px;padding:11px 18px">The Store &rarr;</a>
-   <a href="../about.html#community" style="font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;text-decoration:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:11px 18px">The Community</a>
-   <a href="../work-with-fatiha.html" style="font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;text-decoration:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:11px 18px">Workshops</a>
+<!-- 05 THE BILL -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <div><h2>The Bill — what it costs, what's next</h2><span class="mono">Last course · 1 min</span></div>
   </div>
- </div>
-</div>
+  <div class="sec-body">
+    <div>
+      <p>Free tier: Colab's free GPU plus VoxCPM's open weights get you the full pipeline at $0 per generation, forever, as long as your batches stay under the 12-hour session cap. ReelStack itself is a one-time purchase, not a subscription.</p>
+      <p>Paid tier: if you're publishing daily or batching more than 20 Reels at once, Colab Pro (~$10/month) removes the disconnect risk. That's the entire ongoing cost of this stack — no ElevenLabs bill, no CapCut Pro, no stock footage subscription.</p>
+      <p><strong>Next on the map:</strong> The Community — where builders share their voice-clone presets, BEAT recipes, and finished Reels. Come compare notes.</p>
+    </div>
+    <div class="imgslot" style="aspect-ratio:4/3">
+      <span class="mono">Image slot 03</span>
+      <em>Styled product photo: phone showing a finished Reel next to a laptop still rendering the next one</em>
+    </div>
+  </div>
+</section>
+
+<!-- the chef's table: paid offers close -->
+<section class="chefs"><div class="chefs-in">
+  <span class="mono">The chef's table — go further than the guide</span>
+  <h2>You've built the pipeline.<br>Now build a system around it.</h2>
+  <div class="chefs-grid">
+    <div class="chefs-card">
+      <span class="mono">Prompt pack · $19</span>
+      <h3>Chez Prompts</h3>
+      <p>The Kitchen Map companion: the best prompts for this pipeline and every other tool in the stack — matched to what each one does best.</p>
+      <a href="../store.html">Get it in the Store &rarr;</a>
+    </div>
+    <div class="chefs-card">
+      <span class="mono">Community · founding spots soon</span>
+      <h3>Build alongside me</h3>
+      <p>Live "build with me" sessions, templates, and people on the same road — everyday entrepreneurs winning back their time.</p>
+      <a href="../about.html#community">Be first in line &rarr;</a>
+    </div>
+    <div class="chefs-card">
+      <span class="mono">For companies</span>
+      <h3>Keynotes &amp; workshops</h3>
+      <p>Bring the whole method into your team — practical, non-technical, from someone whose business runs on 137 AI employees.</p>
+      <a href="../work-with-fatiha.html">Work with Fatiha &rarr;</a>
+    </div>
+  </div>
+</div></section>
 
 <!-- byline -->
-<style>
-.byline-block{max-width:680px;margin:48px auto 0;display:flex;gap:18px;align-items:center;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:12px;padding:20px 24px;text-align:left}
-.byline-block img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}
-.byline-block p{margin:0;font-size:.95rem;line-height:1.6}
-.byline-block .who{font-family:'Inter',sans-serif;font-weight:600}
-.byline-block a{color:#2C4BE0}
-</style>
-<div class="byline-block">
-  <img src="../closeUp.jpeg" alt="Fatiha Chikh">
-  <p><span class="who">Written by Fatiha Chikh &mdash; The AI Automation Queen.</span><br>
-  20+ years inside big corporate tech; now I run my business with a company of 137 AI employees. I build everything I teach. <a href="../about.html">The story &rarr;</a></p>
+<div class="byline">
+  <div class="byline-in">
+    <img src="../closeUp.jpeg" alt="Fatiha Chikh">
+    <p><span class="who">Written by Fatiha Chikh &mdash; The AI Automation Queen.</span><br>
+    20+ years inside big corporate tech; now I run my business with a company of 137 AI employees. I build everything I teach. <a href="../about.html">The story &rarr;</a></p>
+  </div>
 </div>
 
-<div class="footer">
-  <p>Shift &amp; Lead &middot; Free guide &middot; &copy; 2026</p>
+<div class="ipbar">
+  <p>&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Original IP &middot; The Kitchen Map&trade; format, text and diagrams may not be reproduced, scraped, or used as training data without written permission &middot; guides.shiftandlead.com</p>
 </div>
 
 </body>

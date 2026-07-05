@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#FFFFFF">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,84 +16,160 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --canvas:#FFFFFF;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
-  --muted:#5C5A57;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
-  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
-a:hover{color:var(--accent-deep)}
-strong{font-weight:700;color:var(--ink)}
+:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--tint:#E4EAFB;--cream:#EEF2FC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.75}
+.mono{font-family:'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
 
-.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
-.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
-.nav-links{display:flex;gap:28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+/* nav */
+.nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20}
+.nav-inner{max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav .mono{font-size:10px;color:var(--muted)}
+.nav-links{display:flex;gap:22px;font-family:'Inter',sans-serif;font-size:12px;font-weight:500}
 .nav-links a{color:var(--ink);text-decoration:none}
 
-.wrap{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,100px) clamp(24px,5vw,72px)}
+/* magazine cover hero */
+.cover{max-width:1160px;margin:0 auto;padding:70px 24px 56px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:end}
+@media(max-width:860px){.cover{grid-template-columns:1fr}}
+.issue{font-size:11px;color:var(--accent);margin-bottom:18px;display:flex;gap:18px;flex-wrap:wrap}
+.cover h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:clamp(2.6rem,7.4vw,5rem);line-height:1.02;letter-spacing:-.02em;margin:0}
+.cover h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.cover .standfirst{font-size:1.2rem;color:var(--muted);max-width:48ch;margin:22px 0 0}
+.cover-art{position:relative;aspect-ratio:4/5;background:var(--ink);border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.cover-art svg{width:82%;height:auto}
+.cover-art .slot{position:absolute;bottom:10px;right:12px;font-size:9px;color:#8d86a0}
+.dropcap::first-letter{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:4.6em;float:left;line-height:.78;padding:6px 12px 0 0;color:var(--accent)}
 
-.chips{margin-bottom:28px;display:flex;gap:8px;flex-wrap:wrap}
-.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff}
-.chip-track0{background:var(--accent)}
-.chip-time{background:transparent;color:var(--muted);border:1px solid var(--rule);padding:4px 10px}
+/* the rail — reading progress as courses */
+.rail{max-width:1160px;margin:0 auto;padding:0 24px}
+.courses{display:flex;gap:0;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:#fff;margin:8px 0 0}
+.course{flex:1;text-align:center;padding:11px 6px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-left:1px solid var(--rule)}
+.course:first-child{border-left:none}
+.course.active{background:var(--ink);color:#fff}
 
-.kicker{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);display:flex;align-items:center;margin-bottom:20px}
-.kicker-rule{display:inline-block;width:32px;height:1px;background:var(--ink);margin-right:10px}
+/* sections */
+.sec{max-width:1160px;margin:0 auto;padding:72px 24px 8px}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:baseline;border-top:2px solid var(--ink);padding-top:18px}
+.sec-num{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:3.4rem;line-height:1;color:var(--accent)}
+.sec-head h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0}
+.sec-head .mono{display:block;font-size:10px;color:var(--muted);margin-top:6px}
+.sec-body{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;padding:26px 0 0}
+@media(max-width:860px){.sec-body{grid-template-columns:1fr}}
+.sec-body p{max-width:64ch;font-size:1.06rem;margin:0 0 1rem}
+.sec-full p{max-width:70ch;font-size:1.06rem;margin:0 0 1rem}
+.sec-full{padding:26px 0 0}
 
-h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,5.5vw,56px);line-height:1.08;letter-spacing:-0.5px;color:var(--ink);margin-bottom:24px}
-h1 em{font-style:italic;color:var(--electric)}
-h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.18;letter-spacing:-0.3px;margin:64px 0 16px}
-h3{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);margin:32px 0 12px}
-p{margin-bottom:18px;color:var(--ink)}
-p.lead{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:20px;line-height:1.55;color:var(--muted);margin-bottom:32px}
+/* floor plan / diagram panel reused as comparison panel */
+.plan{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:26px}
+.plan .mono{font-size:10px;color:var(--accent);display:block;margin-bottom:12px}
+.plan svg{width:100%;height:auto}
 
-.rule{border:0;border-top:2px solid var(--ink);margin:80px 0 40px}
+/* comparison boxes (short leash / long leash) */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0 0}
+@media(max-width:760px){.compare{grid-template-columns:1fr}}
+.compare-box{border:1px solid var(--rule);border-radius:14px;padding:22px 24px;background:#fff}
+.compare-box.hi{border-color:var(--accent);background:var(--cream)}
+.compare-box .mono{font-size:9.5px;color:var(--accent);margin-bottom:8px;display:block}
+.compare-box h4{font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;font-weight:700;margin:0 0 10px}
+.compare-box p{font-family:'Inter',sans-serif;font-size:.92rem;color:var(--muted);margin:0 0 10px;line-height:1.6}
+.compare-box p:last-child{margin-bottom:0}
 
-.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:28px 32px;margin:24px 0}
-.card.accent{border-color:var(--accent);background:var(--accent-tint)}
+/* menu cards reused as "the 4 levels" dishes */
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 0}
+@media(max-width:860px){.menu{grid-template-columns:1fr}}
+.dish{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:24px;position:relative}
+.dish .mono{font-size:9.5px;color:var(--accent)}
+.dish h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:.4rem 0 .4rem}
+.dish p{font-family:'Inter',sans-serif;font-size:.9rem;color:var(--muted);margin:0;line-height:1.6}
+.dish .pict{height:74px;margin-bottom:10px;display:flex;align-items:center}
+.dish .pict svg{height:64px;width:auto}
 
-.pullquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:24px;line-height:1.35;color:var(--muted);border-left:3px solid var(--accent);padding-left:24px;margin:40px 0}
+/* pull quote */
+.pull{max-width:1160px;margin:0 auto;padding:80px 24px}
+.pull blockquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.7rem,4.5vw,2.7rem);line-height:1.3;margin:0;max-width:26ch;color:var(--ink)}
+.pull blockquote strong{color:var(--accent);font-style:normal}
+.pull .mono{font-size:10px;color:var(--muted);margin-top:18px;display:block}
 
-.level{padding:28px 0;border-bottom:1px solid var(--rule-light)}
-.level:last-of-type{border-bottom:none}
-.level-num{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:48px;color:var(--accent);line-height:1;margin-bottom:4px}
-.level h3{margin-top:8px}
+/* stations grid — used for the 4 levels detail + business steps */
+.stations{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 0}
+@media(max-width:900px){.stations{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.stations{grid-template-columns:1fr}}
+.station{border:1px solid var(--rule);border-radius:12px;padding:16px 18px;background:#fff}
+.station .mono{font-size:9px;color:var(--accent)}
+.station h4{font-family:'Inter',sans-serif;font-size:.98rem;font-weight:600;margin:.35rem 0 .2rem}
+.station p{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--muted);margin:0;line-height:1.5}
+.menu-more{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:18px}
 
-.comparison{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
-.comparison-box{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:24px}
-.comparison-box h3{margin-top:0;font-size:13px}
-.comparison-box.highlight{border-color:var(--accent);background:var(--accent-tint)}
+/* accent card (the one question) */
+.card-accent{border:1.5px solid var(--accent);background:var(--cream);border-radius:14px;padding:24px 26px;margin:28px 0 0}
+.card-accent p{font-family:'Inter',sans-serif;font-size:.96rem;color:var(--ink);margin:0 0 10px;line-height:1.65}
+.card-accent p:last-child{margin-bottom:0}
 
-ul,ol{margin:12px 0 20px 24px}
-li{margin-bottom:8px;color:var(--ink)}
+/* dialogue card (hear it in a real conversation) */
+.card-plain{border:1px solid var(--rule);border-radius:14px;padding:24px 26px;margin:22px 0 0;background:#fff}
+.card-plain p{font-family:'Inter',sans-serif;font-size:.96rem;color:var(--ink);margin:0 0 10px;line-height:1.65}
+.card-plain p:last-child{margin-bottom:0}
+.card-plain ul{margin:10px 0 14px 20px;padding:0}
+.card-plain li{font-family:'Inter',sans-serif;font-size:.92rem;color:var(--muted);margin-bottom:8px;line-height:1.6}
 
-.cta-bar{margin:48px 0;padding:32px;background:var(--navy);border-radius:6px;text-align:center;color:var(--canvas)}
-.cta-bar h3{color:var(--canvas);margin-top:0}
-.cta-bar p{color:rgba(255,255,255,0.85)}
-.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:13px 32px;background:var(--canvas);color:var(--ink);text-decoration:none;border-radius:4px;margin-top:12px}
-.btn:hover{background:#fff;color:var(--ink)}
+/* image slots */
+.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
+.imgslot .mono{font-size:9.5px;color:var(--accent)}
+.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
+.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
+.fullbleed .imgslot{aspect-ratio:21/8}
 
-.guide-nav{display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:32px;border-top:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em}
-.guide-nav a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
-.guide-nav a:hover{color:var(--accent);border-color:var(--accent)}
+/* warn band */
+.warn{background:var(--ink);color:#F5F0EB}
+.warn-inner{max-width:1160px;margin:0 auto;padding:70px 24px}
+.warn .mono{color:#7FA0FF;font-size:11px}
+.warn h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:700;margin:.4rem 0 26px}
+.warn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.warn-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.warn-grid{grid-template-columns:1fr}}
+.warn-card{border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:20px}
+.warn-card .term{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7FA0FF;margin-bottom:8px}
+.warn-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0;line-height:1.6}
+.warn-card strong{color:#fff}
+.warn-link{font-family:'Inter',sans-serif;font-size:.92rem;color:#D9D3E6;margin-top:26px;max-width:60ch}
+.warn-link a{color:#7FA0FF}
 
-.footer{margin-top:120px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+/* subscribe strip */
+.subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
+.subs-in{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid var(--accent);border-radius:14px;padding:22px 26px;background:var(--cream)}
+.subs-in h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:0}
+.subs-in p{font-family:'Inter',sans-serif;font-size:.88rem;color:var(--muted);margin:.2rem 0 0}
+.subs-in a{font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:var(--accent);color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap}
+
+/* chef's table close */
+.chefs{background:var(--ink);color:#F5F0EB;margin-top:72px}
+.chefs-in{max-width:1160px;margin:0 auto;padding:64px 24px}
+.chefs .mono{color:#7FA0FF;font-size:11px}
+.chefs h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:700;margin:.4rem 0 26px}
+.chefs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.chefs-grid{grid-template-columns:1fr}}
+.chefs-card{border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:24px;display:flex;flex-direction:column;background:rgba(255,255,255,.03)}
+.chefs-card .mono{font-size:9.5px;margin-bottom:8px}
+.chefs-card h3{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;margin:0 0 6px;color:#fff}
+.chefs-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0 0 18px;line-height:1.6}
+.chefs-card a{margin-top:auto;text-align:center;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;text-decoration:none;background:#fff;color:var(--ink);border-radius:8px;padding:11px 16px}
+
+/* byline + IP bar */
+.byline{max-width:1160px;margin:70px auto 0;padding:0 24px}
+.byline-in{display:flex;gap:18px;align-items:center;background:var(--cream);border:1px solid var(--tint);border-radius:14px;padding:22px 26px}
+.byline-in img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.byline-in p{margin:0;font-size:.95rem}
+.byline-in .who{font-family:'Inter',sans-serif;font-weight:600}
+.ipbar{max-width:1160px;margin:26px auto 0;padding:0 24px 70px}
+.ipbar p{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px;margin:0}
+a{color:var(--accent)}
 
 @media(max-width:560px){
-  html,body{font-size:16px}
-  .wrap{padding:40px 16px}
-  h1{font-size:32px;line-height:1.1}
-  .pullquote{font-size:20px}
-  .level-num{font-size:36px}
-  .comparison{grid-template-columns:1fr;gap:12px}
-  .guide-nav{flex-direction:column;gap:16px;align-items:flex-start}
-  .nav-inner{padding:14px 16px}
-  .nav-links{gap:16px;font-size:11px}
+  .sec{padding:52px 16px 8px}
+  .cover{padding:48px 16px 40px}
 }
 </style>
 </head>
@@ -101,207 +177,327 @@ li{margin-bottom:8px;color:var(--ink)}
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="#">Community</a><a href="#">About</a></div>
+  <div class="nav-links">
+    <a href="../free-resources.html">Free Resources</a>
+    <a href="https://brief.shiftandlead.com">The Brief</a>
+    <a href="../store.html">Store</a>
+    <a href="../about.html">About</a>
+    <a href="../work-with-fatiha.html">Work with Fatiha</a>
+  </div>
 </div></nav>
 
-<div class="wrap">
-
-  <div class="chips">
-    <span class="chip chip-track0">AGENTIC</span>
-    <span class="chip chip-time">7 min read</span>
+<!-- COVER -->
+<header class="cover">
+  <div>
+    <div class="issue mono"><span>Plain English · No. 02</span><span>AI Vocabulary</span><span>7 min read</span></div>
+    <h1>What <em>&ldquo;agentic&rdquo;</em> actually means.</h1>
+    <p class="standfirst">AI that does not just answer your question. It goes and does the thing. Here is the word everyone uses and almost nobody explains — in four levels, with real examples.</p>
   </div>
-
-  <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; AI Vocabulary</div>
-
-  <h1>Everyone says <em>&ldquo;agentic.&rdquo;</em> Here is what it actually means.</h1>
-
-  <p class="lead">Agentic AI. AI agents. Agentic workflows. The word showed up everywhere in 2025, and nobody stopped to explain it. It is simpler than it sounds. And once you understand it, you will see why every tech company in the world is racing to build it.</p>
-
-  <hr class="rule">
-
-  <h2>The one-sentence version</h2>
-
-  <p><strong>Agentic</strong> means the AI does not just answer your question. It goes and <em>does the thing.</em></p>
-
-  <p>A regular chatbot waits for you to ask something, gives you a response, and stops. An agentic system takes your goal, breaks it into steps on its own, figures out which tools to use, runs those tools, checks whether it worked, and keeps going until the job is actually done.</p>
-
-  <p>The difference is not intelligence. It is autonomy. How much you let the AI do on its own before checking back in with you.</p>
-
-  <div class="pullquote">A chatbot answers questions. An agentic system finishes tasks.</div>
-
-  <hr class="rule">
-
-  <h2>Think of it like delegation</h2>
-
-  <p>You already understand this concept. You use it every day. You just have not heard it described with the word &ldquo;agentic&rdquo; before.</p>
-
-  <div class="comparison">
-    <div class="comparison-box">
-      <h3>Short leash</h3>
-      <p>You tell your assistant: &ldquo;Draft a reply to this email. Show me before you send it.&rdquo;</p>
-      <p style="margin-bottom:0">They write it. You review it. You hit send. They did one task and waited for your next instruction.</p>
-    </div>
-    <div class="comparison-box highlight">
-      <h3>Long leash</h3>
-      <p>You tell your assistant: &ldquo;Handle my inbox this morning. Respond to anything routine. Flag anything that needs my attention. Reschedule the 2pm if there is a conflict.&rdquo;</p>
-      <p style="margin-bottom:0">They read, decide, reply, schedule, flag. They come back with a summary when they are done. You did not approve each step.</p>
-    </div>
+  <div class="cover-art">
+    <svg viewBox="0 0 300 380" fill="none" aria-label="Four steps climbing toward a finished task">
+      <text x="150" y="26" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">FOUR LEVELS</text>
+      <rect x="40" y="300" width="52" height="40" rx="4" stroke="#7FA0FF" stroke-width="2"/>
+      <text x="66" y="325" text-anchor="middle" fill="#7FA0FF" font-family="Playfair Display" font-size="18" font-weight="700">1</text>
+      <rect x="105" y="260" width="52" height="80" rx="4" stroke="#7FA0FF" stroke-width="2"/>
+      <text x="131" y="285" text-anchor="middle" fill="#7FA0FF" font-family="Playfair Display" font-size="18" font-weight="700">2</text>
+      <rect x="170" y="210" width="52" height="130" rx="4" stroke="#7FA0FF" stroke-width="2"/>
+      <text x="196" y="235" text-anchor="middle" fill="#7FA0FF" font-family="Playfair Display" font-size="18" font-weight="700">3</text>
+      <rect x="235" y="150" width="52" height="190" rx="4" stroke="#2C4BE0" stroke-width="2.5"/>
+      <text x="261" y="180" text-anchor="middle" fill="#2C4BE0" font-family="Playfair Display" font-size="20" font-weight="900">4</text>
+      <circle cx="261" cy="130" r="12" fill="#2C4BE0"/>
+      <path d="M255 130l4 4 8-8" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="150" y="366" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">CHAT &rarr; AGENTIC</text>
+    </svg>
+    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
+</header>
 
-  <p>The first is a chatbot. The second is agentic. Same assistant. Different level of trust, different level of independence.</p>
-
-  <p>The question with agentic AI is never &ldquo;can it do this?&rdquo; It is always &ldquo;how much leash should I give it for <em>this</em> task?&rdquo;</p>
-
-  <hr class="rule">
-
-  <h2>The 4 levels of AI autonomy</h2>
-
-  <p>Not everything called &ldquo;agentic&rdquo; works the same way. There is a spectrum, and it helps to think of it as four levels. Most of what you use today is Level 1 or 2. The headlines are about Level 4.</p>
-
-  <div class="level">
-    <div class="level-num">1</div>
-    <h3>Chat</h3>
-    <p>You ask, it answers. No memory between sessions. No tools. No actions. This is where most people start. You type a question. You get text back. You copy it, paste it, and do something with it yourself.</p>
-    <p><strong>Real example:</strong> You open a chatbot and type &ldquo;Write me a thank-you email for a client who just signed a contract.&rdquo; You get the email. You copy it into Gmail. You review it, change a few words, and hit send.</p>
-    <p>The AI did one thing. You did everything else.</p>
+<!-- course rail -->
+<div class="rail">
+  <div class="courses">
+    <div class="course active">01 &middot; The Word</div>
+    <div class="course">02 &middot; Delegation</div>
+    <div class="course">03 &middot; The Four Levels</div>
+    <div class="course">04 &middot; Read It In The Wild</div>
+    <div class="course">05 &middot; What To Do Now</div>
   </div>
-
-  <div class="level">
-    <div class="level-num">2</div>
-    <h3>Chat + tools</h3>
-    <p>Same conversation, but now the AI can reach outside the chat window. It can search the web, read a file you uploaded, run a calculation, generate an image. You are still driving. It still waits for you between each step. But it can do more than just write text.</p>
-    <p><strong>Real example:</strong> You upload a 30-page PDF of a consulting report and ask &ldquo;What are the 3 biggest risks mentioned in this document?&rdquo; The AI reads the file, finds the risks, and writes a summary. You did not have to read the whole thing yourself.</p>
-    <p>Most people who use ChatGPT, Claude, or Gemini regularly are at this level. It is already powerful. And honestly, it is enough for most tasks.</p>
-  </div>
-
-  <div class="level">
-    <div class="level-num">3</div>
-    <h3>Workflow</h3>
-    <p>A fixed sequence of steps that runs the same way every time. You define what happens. The AI executes it. Step 1, then step 2, then step 3. Predictable, repeatable, reliable. This is where most &ldquo;AI automations&rdquo; live today.</p>
-    <p><strong>Real example:</strong> Every Monday morning, the system automatically pulls your social media stats from the past week, writes a summary paragraph, drops it into a shared document, and sends a message to your team with the link. Nobody pressed a button. It just runs.</p>
-    <p>The AI is not making decisions here. It is following a recipe you created. But it is saving you an hour every Monday.</p>
-  </div>
-
-  <div class="level">
-    <div class="level-num">4</div>
-    <h3>Agentic</h3>
-    <p>The AI decides the steps itself. You give it a goal and access to some tools. It plans, executes, evaluates whether it worked, and adjusts. If one approach does not work, it tries another. If it needs information it does not have, it goes and gets it. You set the destination. It drives.</p>
-    <p><strong>Real example:</strong> You say: &ldquo;Research 5 competitors in our space, find what content they posted this week, compare it to what we have planned, and flag any gaps or opportunities we are missing.&rdquo; The AI decides which competitors to check, which platforms to look at, what counts as a gap, and comes back with a report. You did not define the steps. It figured them out.</p>
-    <p>This is the frontier. This is what every major AI company is building right now. And this is where the real time savings live for business owners.</p>
-  </div>
-
-  <div class="pullquote">Levels 1 and 2 save you time on individual tasks. Levels 3 and 4 save you time on entire processes. That is the difference.</div>
-
-  <hr class="rule">
-
-  <h2>Why this word is everywhere right now</h2>
-
-  <p>Every major AI company shipped agentic features in 2025. They all used the same word, and they all meant roughly the same thing: AI that does not just talk, but takes action in the real world.</p>
-
-  <p>The shift is simple. AI is moving from &ldquo;answer my question&rdquo; to &ldquo;do my task.&rdquo;</p>
-
-  <p>That changes three things for you:</p>
-
-  <p><strong>What you buy.</strong> A tool that only answers questions is not the same as a tool that completes tasks. When you are comparing AI products, ask which level they are actually at. A Level 2 tool at $20/month might beat a Level 4 tool at $200/month if all you need is chat with tools.</p>
-
-  <p><strong>What you automate first.</strong> Start with tasks that follow predictable patterns (Level 3 workflows). Move to agentic (Level 4) only when the task changes every time and needs judgment. The boring repetitive stuff is where you get the fastest return on your time.</p>
-
-  <p><strong>How much you trust it.</strong> More autonomy means more room for mistakes. An agentic system that sends emails on your behalf could send a wrong email. One that books meetings could book the wrong time. Start with a short leash. Extend it when you see it working.</p>
-
-  <div class="card accent">
-    <p><strong>The one question that separates hype from reality:</strong> When someone pitches you an &ldquo;AI agent,&rdquo; ask: <em>&ldquo;Does it decide the steps, or do I?&rdquo;</em></p>
-    <p style="margin-bottom:0">If you define the steps, it is a workflow. If the AI decides the steps, it is agentic. Both are useful. But they solve different problems, cost different amounts, and fail in different ways. Now you know which one you are looking at.</p>
-  </div>
-
-  <hr class="rule">
-
-  <h2>Hear it in a real conversation</h2>
-
-  <p>A colleague says: <em>&ldquo;We are building an agentic pipeline that handles inbound leads end to end.&rdquo;</em></p>
-
-  <div class="card">
-    <p><strong>What they actually mean:</strong></p>
-    <ul>
-      <li>A potential customer reaches out (through a form, a DM, an email)</li>
-      <li>The AI reads the message, decides if this person is a real prospect or not, writes a personalized reply, and logs the interaction in their CRM</li>
-      <li>If the prospect asks a question the AI cannot answer, it flags it for a human</li>
-      <li>Nobody wrote a specific reply for every possible scenario. The AI figures out the right response from context</li>
-    </ul>
-    <p>That is Level 4. The AI is making decisions, not following a script.</p>
-    <p style="margin-bottom:0">You follow that sentence now. And you could ask: <em>&ldquo;What happens when it gets the qualification wrong? Does it lose leads you should have followed up on?&rdquo;</em> That is the question that separates people who understand agentic from people who just repeat the word.</p>
-  </div>
-
-  <hr class="rule">
-
-  <h2>What this means for your business</h2>
-
-  <p>You do not need Level 4 for everything. Most businesses should start at Level 2 or 3. Chat with tools, or fixed workflows. They are cheaper, more predictable, and easier to trust.</p>
-
-  <p>Agentic matters when the task is too variable for a fixed workflow. When the steps change depending on what the AI finds. When you need judgment, not just execution.</p>
-
-  <p>Here is the practical order:</p>
-
-  <ol>
-    <li><strong>Start with chat + tools (Level 2).</strong> Use AI to help you write, research, summarize, and brainstorm. Get comfortable with how it thinks.</li>
-    <li><strong>Automate one repetitive process (Level 3).</strong> Pick the most boring, predictable task in your week. Build a workflow that handles it. Get your time back.</li>
-    <li><strong>Try agentic on one task (Level 4).</strong> Pick something where the steps change every time. Give the AI a goal and some tools. Watch it closely. Expand the leash when it earns your trust.</li>
-  </ol>
-
-  <p>The point is not to hand your business over to AI. The point is to stop spending your time on tasks that do not need your brain. The more of those you delegate, the more hours you get back for the work that actually grows your business.</p>
-
-  <div class="cta-bar">
-    <h3>Caught up on the vocabulary?</h3>
-    <p>Browse every guide, from absolute basics to full walkthroughs of every major AI tool.</p>
-    <a href="../free-resources.html" class="btn">Browse all guides &rarr;</a>
-  </div>
-
-  <div class="guide-nav">
-    <a href="ai-jargon-guide.html">&larr; Prev: 12 AI words</a>
-    <a href="../free-resources.html">All guides &rarr;</a>
-  </div>
-
 </div>
 
+<!-- 01 THE WORD -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <div><h2>The word &mdash; what it actually means</h2><span class="mono">First course &middot; 1 min</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p class="dropcap">Agentic AI. AI agents. Agentic workflows. The word showed up everywhere in 2025, and nobody stopped to explain it. It is simpler than it sounds. And once you understand it, you will see why every tech company in the world is racing to build it.</p>
+      <p><strong>Agentic</strong> means the AI does not just answer your question. It goes and <em>does the thing.</em></p>
+      <p>A regular chatbot waits for you to ask something, gives you a response, and stops. An agentic system takes your goal, breaks it into steps on its own, figures out which tools to use, runs those tools, checks whether it worked, and keeps going until the job is actually done.</p>
+      <p>The difference is not intelligence. It is autonomy &mdash; how much you let the AI do on its own before checking back in with you.</p>
+    </div>
+    <div class="imgslot" style="aspect-ratio:4/3">
+      <span class="mono">Image slot 01</span>
+      <em>Editorial photo: an open door with a task list dissolving into checkmarks &mdash; duotone ink/electric grade</em>
+    </div>
+  </div>
+</section>
 
+<!-- pull quote 1 -->
+<div class="pull">
+  <blockquote>A chatbot <strong>answers</strong> questions. An agentic system <strong>finishes</strong> tasks.</blockquote>
+  <span class="mono">&mdash; the one-sentence version</span>
+</div>
+
+<!-- 02 DELEGATION -->
+<section class="sec" style="padding-top:0">
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <div><h2>Think of it like delegation</h2><span class="mono">Second course &middot; a comparison</span></div>
+  </div>
+  <div class="sec-full">
+    <p>You already understand this concept. You use it every day. You just have not heard it described with the word &ldquo;agentic&rdquo; before.</p>
+    <div class="compare">
+      <div class="compare-box">
+        <span class="mono">Short leash</span>
+        <h4>You review every step</h4>
+        <p>You tell your assistant: &ldquo;Draft a reply to this email. Show me before you send it.&rdquo;</p>
+        <p>They write it. You review it. You hit send. They did one task and waited for your next instruction.</p>
+      </div>
+      <div class="compare-box hi">
+        <span class="mono">Long leash</span>
+        <h4>It runs the whole job</h4>
+        <p>You tell your assistant: &ldquo;Handle my inbox this morning. Respond to anything routine. Flag anything that needs my attention. Reschedule the 2pm if there is a conflict.&rdquo;</p>
+        <p>They read, decide, reply, schedule, flag. They come back with a summary when they are done. You did not approve each step.</p>
+      </div>
+    </div>
+    <p style="margin-top:20px">The first is a chatbot. The second is agentic. Same assistant. Different level of trust, different level of independence.</p>
+    <p>The question with agentic AI is never &ldquo;can it do this?&rdquo; It is always &ldquo;how much leash should I give it for <em>this</em> task?&rdquo;</p>
+  </div>
+</section>
+
+<!-- 03 THE FOUR LEVELS -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <div><h2>The four levels of AI autonomy</h2><span class="mono">Third course &middot; the whole spectrum</span></div>
+  </div>
+  <div class="sec-full">
+    <p>Not everything called &ldquo;agentic&rdquo; works the same way. There is a spectrum, and it helps to think of it as four levels. Most of what you use today is Level 1 or 2. The headlines are about Level 4.</p>
+
+    <div class="menu">
+      <div class="dish">
+        <div class="pict"><svg viewBox="0 0 80 64" fill="none"><path d="M14 44h34l12-14v-14H14z" stroke="#2C4BE0" stroke-width="2.5" stroke-linejoin="round"/><path d="M22 22h20M22 30h14" stroke="#2C4BE0" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="mono">Level 1</span>
+        <h3>Chat</h3>
+        <p>You ask, it answers. No memory between sessions, no tools, no actions. You type a question, get text back, and do everything else yourself.</p>
+      </div>
+      <div class="dish">
+        <div class="pict"><svg viewBox="0 0 80 64" fill="none"><rect x="12" y="14" width="56" height="36" rx="5" stroke="#2C4BE0" stroke-width="2.5"/><circle cx="26" cy="32" r="4" stroke="#2C4BE0" stroke-width="2"/><path d="M38 26h18M38 32h18M38 38h12" stroke="#2C4BE0" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="mono">Level 2</span>
+        <h3>Chat + tools</h3>
+        <p>Same conversation, but it can reach outside the chat window &mdash; search the web, read a file, run a calculation. You still drive; it can just do more per turn.</p>
+      </div>
+      <div class="dish">
+        <div class="pict"><svg viewBox="0 0 80 64" fill="none"><circle cx="18" cy="32" r="7" stroke="#2C4BE0" stroke-width="2.5"/><circle cx="40" cy="32" r="7" stroke="#2C4BE0" stroke-width="2.5"/><circle cx="62" cy="32" r="7" stroke="#2C4BE0" stroke-width="2.5"/><path d="M25 32h8M47 32h8" stroke="#2C4BE0" stroke-width="2.5"/></svg></div>
+        <span class="mono">Level 3</span>
+        <h3>Workflow</h3>
+        <p>A fixed sequence that runs the same way every time. You define what happens; the AI executes it &mdash; step 1, then 2, then 3. Predictable and repeatable.</p>
+      </div>
+    </div>
+
+    <div class="stations" style="grid-template-columns:1fr;margin-top:22px">
+      <div class="station" style="border-color:var(--accent);background:var(--cream)">
+        <span class="mono">Level 4</span>
+        <h4 style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;margin:.35rem 0 .3rem">Agentic</h4>
+        <p style="font-size:.92rem">The AI decides the steps itself. You give it a goal and access to tools. It plans, executes, evaluates whether it worked, and adjusts. If one approach fails, it tries another. If it needs information it does not have, it goes and gets it. You set the destination &mdash; it drives.</p>
+      </div>
+    </div>
+
+    <div class="stations">
+      <div class="station">
+        <span class="mono">Level 1 &middot; real example</span>
+        <h4>The thank-you email</h4>
+        <p>You type &ldquo;Write a thank-you email for a client who just signed.&rdquo; You get the email, paste it into Gmail, tweak a few words, hit send. The AI did one thing. You did everything else.</p>
+      </div>
+      <div class="station">
+        <span class="mono">Level 2 &middot; real example</span>
+        <h4>The 30-page report</h4>
+        <p>You upload a consulting report and ask &ldquo;What are the 3 biggest risks mentioned?&rdquo; It reads the file, finds the risks, writes a summary. You never had to read the whole thing.</p>
+      </div>
+      <div class="station">
+        <span class="mono">Level 3 &middot; real example</span>
+        <h4>The Monday report</h4>
+        <p>Every Monday, the system pulls last week's social stats, writes a summary, drops it in a shared doc, and messages the team a link. Nobody pressed a button. It just runs.</p>
+      </div>
+      <div class="station" style="border-color:var(--accent);background:var(--cream)">
+        <span class="mono">Level 4 &middot; real example</span>
+        <h4>The competitor scan</h4>
+        <p>You say &ldquo;Research 5 competitors, find what they posted this week, compare it to our plan, flag gaps.&rdquo; It decides which competitors and platforms to check, what counts as a gap, and returns a report. You never defined the steps.</p>
+      </div>
+    </div>
+    <p class="menu-more">Levels 1 and 2 save you time on individual tasks. Levels 3 and 4 save you time on entire processes. That is the difference.</p>
+  </div>
+</section>
+
+<!-- pull quote 2 -->
+<div class="pull">
+  <blockquote>&ldquo;Does it decide the steps, <strong>or do I?</strong>&rdquo;</blockquote>
+  <span class="mono">&mdash; the one question that separates hype from reality</span>
+</div>
+
+<!-- full-bleed image slot -->
+<div class="fullbleed">
+  <div class="imgslot">
+    <span class="mono">Image slot 02 &middot; full-bleed divider</span>
+    <em>Wide editorial photo: a control room dashboard with four glowing progress bars, only the last one lit fully &mdash; or your portrait, mid-explanation</em>
+  </div>
+</div>
+
+<!-- 04 READ IT IN THE WILD -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">04</div>
+    <div><h2>Why this word is everywhere &mdash; and how to hear it in the wild</h2><span class="mono">Fourth course &middot; 3 min</span></div>
+  </div>
+  <div class="sec-full">
+    <p>Every major AI company shipped agentic features in 2025. They all used the same word, and they all meant roughly the same thing: AI that does not just talk, but takes action in the real world.</p>
+    <p>The shift is simple. AI is moving from &ldquo;answer my question&rdquo; to &ldquo;do my task.&rdquo; That changes three things for you.</p>
+
+    <div class="stations" style="grid-template-columns:repeat(3,1fr)">
+      <div class="station">
+        <span class="mono">What you buy</span>
+        <h4>Compare the level, not the price</h4>
+        <p>A tool that only answers questions is not the same as one that completes tasks. A Level 2 tool at $20/month might beat a Level 4 tool at $200/month if all you need is chat with tools.</p>
+      </div>
+      <div class="station">
+        <span class="mono">What you automate first</span>
+        <h4>Boring before clever</h4>
+        <p>Start with tasks that follow predictable patterns (Level 3 workflows). Move to agentic (Level 4) only when the steps change every time and need judgment.</p>
+      </div>
+      <div class="station">
+        <span class="mono">How much you trust it</span>
+        <h4>More autonomy, more risk</h4>
+        <p>An agentic system that sends emails on your behalf could send a wrong one. One that books meetings could book the wrong time. Start with a short leash; extend it as it earns trust.</p>
+      </div>
+    </div>
+
+    <div class="card-accent">
+      <p><strong>The one question that separates hype from reality:</strong> when someone pitches you an &ldquo;AI agent,&rdquo; ask &mdash; <em>&ldquo;Does it decide the steps, or do I?&rdquo;</em></p>
+      <p>If you define the steps, it is a workflow. If the AI decides the steps, it is agentic. Both are useful. But they solve different problems, cost different amounts, and fail in different ways. Now you know which one you are looking at.</p>
+    </div>
+
+    <h3 style="font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;margin:36px 0 4px">Hear it in a real conversation</h3>
+    <p style="margin-bottom:0">A colleague says: <em>&ldquo;We are building an agentic pipeline that handles inbound leads end to end.&rdquo;</em></p>
+    <div class="card-plain">
+      <p><strong>What they actually mean:</strong></p>
+      <ul>
+        <li>A potential customer reaches out (through a form, a DM, an email)</li>
+        <li>The AI reads the message, decides if this person is a real prospect or not, writes a personalized reply, and logs the interaction in their CRM</li>
+        <li>If the prospect asks a question the AI cannot answer, it flags it for a human</li>
+        <li>Nobody wrote a specific reply for every possible scenario &mdash; the AI figures out the right response from context</li>
+      </ul>
+      <p>That is Level 4. The AI is making decisions, not following a script.</p>
+      <p>You can follow that sentence now. And you could ask: <em>&ldquo;What happens when it gets the qualification wrong? Does it lose leads you should have followed up on?&rdquo;</em> That is the question that separates people who understand agentic from people who just repeat the word.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 04b KNOW BEFORE YOU TRUST IT (warn band) -->
+<section class="warn" style="margin-top:72px">
+  <div class="warn-inner">
+    <span class="mono">Read this before you trust it</span>
+    <h2>Know before you delegate.</h2>
+    <div class="warn-grid">
+      <div class="warn-card"><div class="term">Autonomy risk</div><p>More independence means more room for mistakes. An agentic system that sends emails on your behalf <strong>could send the wrong one.</strong> Start with a short leash.</p></div>
+      <div class="warn-card"><div class="term">Wrong tool for the job</div><p>Using Level 4 for a task that just needed a fixed workflow wastes time and money. <strong>Match the level to the job,</strong> not the hype.</p></div>
+      <div class="warn-card"><div class="term">Silent failure</div><p>An agentic system that misjudges a step (like a wrongly-qualified lead) may not tell you. <strong>Ask what happens when it gets it wrong.</strong></p></div>
+    </div>
+    <p class="warn-link">I keep verification prompts for exactly these failures &mdash; <a href="../store.html">The Judge's Prompts &rarr;</a></p>
+  </div>
+</section>
 
 <!-- subscribe strip -->
-<div style="max-width:680px;margin:56px auto 0;padding:0 24px">
- <div style="display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid #2C4BE0;border-radius:14px;padding:22px 26px;background:#EEF2FC">
-  <div><div style="font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;color:#1A1A1A">Get every new Kitchen Map in your inbox.</div>
-  <div style="font-family:'Inter',sans-serif;font-size:.88rem;color:#5C5A57;margin-top:3px">Plus The Insider Brief — one curated AI briefing every Tuesday, verdicts included.</div></div>
-  <a href="https://brief.shiftandlead.com" style="font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:#2C4BE0;color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap">Subscribe free &rarr;</a>
- </div>
-</div>
+<div class="subs"><div class="subs-in">
+  <div><h3>Get every new Kitchen Map in your inbox.</h3><p>Plus The Insider Brief — one curated AI briefing every Tuesday, verdicts included.</p></div>
+  <a href="https://brief.shiftandlead.com">Subscribe free →</a>
+</div></div>
 
-<!-- chef's table close -->
-<div style="max-width:680px;margin:56px auto 0;padding:0 4px">
- <div style="background:#1A1A1A;border-radius:14px;padding:34px 30px;text-align:center">
-  <div style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#7FA0FF;margin-bottom:10px">The chef's table — go further than the guide</div>
-  <div style="font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:20px">You've learned the words.<br>Now learn to run the kitchen.</div>
-  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-   <a href="../store.html" style="font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;text-decoration:none;background:#fff;color:#1A1A1A;border-radius:8px;padding:11px 18px">The Store &rarr;</a>
-   <a href="../about.html#community" style="font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;text-decoration:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:11px 18px">The Community</a>
-   <a href="../work-with-fatiha.html" style="font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;text-decoration:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:11px 18px">Workshops</a>
+<!-- 05 WHAT TO DO NOW -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <div><h2>What this means for your business</h2><span class="mono">Last course &middot; 1 min</span></div>
   </div>
- </div>
-</div>
+  <div class="sec-body">
+    <div>
+      <p>You do not need Level 4 for everything. Most businesses should start at Level 2 or 3 &mdash; chat with tools, or fixed workflows. They are cheaper, more predictable, and easier to trust.</p>
+      <p>Agentic matters when the task is too variable for a fixed workflow &mdash; when the steps change depending on what the AI finds, when you need judgment, not just execution.</p>
+      <p>The point is not to hand your business over to AI. The point is to stop spending your time on tasks that do not need your brain. The more of those you delegate, the more hours you get back for the work that actually grows your business.</p>
+      <p><strong>Next on the map:</strong> how a real voice-clone pipeline is built, start to finish &mdash; a working example of agentic AI doing a full job, not just answering a question.</p>
+    </div>
+    <div class="imgslot" style="aspect-ratio:4/3">
+      <span class="mono">Image slot 03</span>
+      <em>Styled product photo: three stacked trays labeled Level 2, 3, 4 &mdash; the top one glowing faintly</em>
+    </div>
+  </div>
+
+  <div class="stations" style="grid-template-columns:repeat(3,1fr);margin-top:8px">
+    <div class="station">
+      <span class="mono">Step 1</span>
+      <h4>Start with chat + tools</h4>
+      <p>Use AI to help you write, research, summarize, and brainstorm (Level 2). Get comfortable with how it thinks.</p>
+    </div>
+    <div class="station">
+      <span class="mono">Step 2</span>
+      <h4>Automate one repetitive process</h4>
+      <p>Pick the most boring, predictable task in your week. Build a workflow that handles it (Level 3). Get your time back.</p>
+    </div>
+    <div class="station" style="border-color:var(--accent);background:var(--cream)">
+      <span class="mono">Step 3</span>
+      <h4>Try agentic on one task</h4>
+      <p>Pick something where the steps change every time. Give the AI a goal and some tools (Level 4). Watch it closely. Expand the leash when it earns your trust.</p>
+    </div>
+  </div>
+</section>
+
+<!-- the chef's table: paid offers close -->
+<section class="chefs"><div class="chefs-in">
+  <span class="mono">The chef's table — go further than the guide</span>
+  <h2>You've learned the words.<br>Now learn to run the kitchen.</h2>
+  <div class="chefs-grid">
+    <div class="chefs-card">
+      <span class="mono">Prompt pack · $19</span>
+      <h3>Chez Prompts</h3>
+      <p>The Kitchen Map companion: the best prompts for every major AI kitchen — matched to what each one cooks best.</p>
+      <a href="../store.html">Get it in the Store →</a>
+    </div>
+    <div class="chefs-card">
+      <span class="mono">Community · founding spots soon</span>
+      <h3>Build alongside me</h3>
+      <p>Live "build with me" sessions, templates, and people on the same road — everyday entrepreneurs winning back their time.</p>
+      <a href="../about.html#community">Be first in line →</a>
+    </div>
+    <div class="chefs-card">
+      <span class="mono">For companies</span>
+      <h3>Keynotes &amp; workshops</h3>
+      <p>Bring the whole method into your team — practical, non-technical, from someone whose business runs on 137 AI employees.</p>
+      <a href="../work-with-fatiha.html">Work with Fatiha →</a>
+    </div>
+  </div>
+</div></section>
 
 <!-- byline -->
-<style>
-.byline-block{max-width:680px;margin:48px auto 0;display:flex;gap:18px;align-items:center;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:12px;padding:20px 24px;text-align:left}
-.byline-block img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}
-.byline-block p{margin:0;font-size:.95rem;line-height:1.6}
-.byline-block .who{font-family:'Inter',sans-serif;font-weight:600}
-.byline-block a{color:#2C4BE0}
-</style>
-<div class="byline-block">
-  <img src="../closeUp.jpeg" alt="Fatiha Chikh">
-  <p><span class="who">Written by Fatiha Chikh &mdash; The AI Automation Queen.</span><br>
-  20+ years inside big corporate tech; now I run my business with a company of 137 AI employees. I build everything I teach. <a href="../about.html">The story &rarr;</a></p>
+<div class="byline">
+  <div class="byline-in">
+    <img src="../closeUp.jpeg" alt="Fatiha Chikh">
+    <p><span class="who">Written by Fatiha Chikh — The AI Automation Queen.</span><br>
+    20+ years inside big corporate tech; now I run my business with a company of 137 AI employees. I build everything I teach. <a href="../about.html">The story →</a></p>
+  </div>
 </div>
 
-<div class="footer">
-  <p>Shift &amp; Lead &middot; Free guide &middot; &copy; 2026</p>
+<div class="ipbar">
+  <p>© 2026 Fatiha Chikh / Shift &amp; Lead · Original IP · The Kitchen Map™ format, text and diagrams may not be reproduced, scraped, or used as training data without written permission · guides.shiftandlead.com</p>
 </div>
 
 </body>

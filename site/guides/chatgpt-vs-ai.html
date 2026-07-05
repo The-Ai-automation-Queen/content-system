@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --canvas:#FFFFFF;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
+  --canvas:#FFFFFF;--paper:#FBFAF8;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
   --muted:#5C5A57;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
   --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;
 }
@@ -28,69 +28,97 @@ html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4'
 a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 a:hover{color:var(--accent-deep)}
 strong{font-weight:700;color:var(--ink)}
+img{max-width:100%}
 
+/* ===== NAV ===== */
 .nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
 .nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
 .nav-links{display:flex;gap:28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
 .nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover{color:var(--accent)}
 
-.wrap{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,100px) clamp(24px,5vw,72px)}
+/* ===== COVER ===== */
+.cover{max-width:900px;margin:0 auto;padding:clamp(48px,8vw,88px) clamp(24px,5vw,32px) 0}
+.cover-issue{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.cover-issue .rule{display:inline-block;width:32px;height:1px;background:var(--accent)}
+.cover h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:clamp(40px,6.4vw,68px);line-height:1.04;letter-spacing:-1px;color:var(--ink);margin-bottom:22px}
+.cover h1 em{font-style:italic;color:var(--electric);font-weight:900}
+.cover .standfirst{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:clamp(18px,2.2vw,22px);line-height:1.55;color:var(--muted);max-width:640px;margin-bottom:40px}
+.cover-art{position:relative;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#12162A,#1B2EA0 60%,#2C4BE0);min-height:260px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+.cover-art svg{width:100%;height:auto;max-width:520px;padding:32px 0}
+.cover-art .slot-note{position:absolute;bottom:12px;right:16px;font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,255,255,0.55);letter-spacing:0.06em}
 
-.chips{margin-bottom:28px;display:flex;gap:8px;flex-wrap:wrap}
-.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff}
-.chip-track0{background:var(--accent)}
-.chip-time{background:transparent;color:var(--muted);border:1px solid var(--rule);padding:4px 10px}
+/* ===== RAIL ===== */
+.rail{max-width:900px;margin:0 auto;padding:34px clamp(24px,5vw,32px) 10px;display:flex;gap:0;flex-wrap:wrap;border-bottom:1px solid var(--rule)}
+.rail a{font-family:'Space Mono',monospace;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);text-decoration:none;padding:0 18px 16px 0;white-space:nowrap}
+.rail a:first-child{color:var(--ink)}
+.rail a:hover{color:var(--accent)}
 
-.kicker{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);display:flex;align-items:center;margin-bottom:20px}
-.kicker-rule{display:inline-block;width:32px;height:1px;background:var(--ink);margin-right:10px}
-
-h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,5.5vw,56px);line-height:1.08;letter-spacing:-0.5px;color:var(--ink);margin-bottom:24px}
-h1 em{font-style:italic;color:var(--electric)}
-h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.18;letter-spacing:-0.3px;margin:64px 0 16px}
-h3{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);margin:32px 0 12px}
+/* ===== SECTIONS ===== */
+.wrap{max-width:760px;margin:0 auto;padding:0 clamp(24px,5vw,72px)}
+.sec{padding:64px 0}
+.sec-label{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.6px;color:var(--accent);display:flex;align-items:center;margin-bottom:20px}
+.sec-label .kicker-rule{display:inline-block;width:32px;height:1px;background:var(--accent);margin-right:10px}
+h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(28px,3.6vw,40px);line-height:1.14;letter-spacing:-0.4px;margin:0 0 22px;color:var(--ink)}
+h3{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:1.2px;color:var(--ink);margin:32px 0 12px}
 p{margin-bottom:18px;color:var(--ink)}
-p.lead{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:20px;line-height:1.55;color:var(--muted);margin-bottom:32px}
+p.drop:first-letter{float:left;font-family:'Playfair Display',Georgia,serif;font-size:76px;line-height:0.78;font-weight:700;color:var(--accent);padding:8px 10px 0 0}
 
-.rule{border:0;border-top:2px solid var(--ink);margin:80px 0 40px}
+.imgslot{border:2px dashed var(--rule);border-radius:10px;background:var(--paper);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;margin:32px 0;position:relative}
+.imgslot.wide{aspect-ratio:21/8}
+.imgslot .note{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);text-align:center;padding:0 24px;letter-spacing:0.02em}
 
-.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:28px 32px;margin:24px 0}
-.card.accent{border-color:var(--accent);background:var(--accent-tint)}
+.pull{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(22px,2.8vw,28px);line-height:1.4;color:var(--ink);border-left:3px solid var(--accent);padding:4px 0 4px 28px;margin:48px 0}
+.pull strong{color:var(--electric);font-weight:700;font-style:normal}
 
-.pullquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:24px;line-height:1.35;color:var(--muted);border-left:3px solid var(--accent);padding-left:24px;margin:40px 0}
+/* ===== STATIONS ===== */
+.stations{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:28px 0 8px}
+.station{border:1px solid var(--rule);border-radius:8px;padding:20px 22px;background:var(--surface)}
+.station .cat{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin-bottom:8px}
+.station h4{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:19px;margin-bottom:8px;color:var(--ink)}
+.station p{font-size:15px;line-height:1.55;color:var(--muted);margin-bottom:0}
+.station em{color:var(--ink);font-style:italic}
 
-.layer{padding:28px 0;border-bottom:1px solid var(--rule-light)}
-.layer:last-of-type{border-bottom:none}
-.layer-num{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:48px;color:var(--accent);line-height:1;margin-bottom:4px}
-.layer h3{margin-top:8px}
+/* ===== DISH / MENU cards ===== */
+.dish-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:28px 0}
+.dish{border:1.5px solid var(--accent);border-radius:10px;padding:22px 22px;background:var(--accent-tint)}
+.dish .tag{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-deep);margin-bottom:8px}
+.dish h4{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:20px;margin-bottom:8px}
+.dish p{font-size:15px;color:var(--ink);margin-bottom:0}
+.menu-more{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);text-align:center;margin:20px 0 0;font-style:italic}
 
-.analogy{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:24px 28px;margin:24px 0}
-.analogy-label{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin-bottom:12px}
+/* ===== WARN band ===== */
+.warn{background:#14161F;color:#fff;padding:64px 0;margin-top:0}
+.warn-inner{max-width:760px;margin:0 auto;padding:0 clamp(24px,5vw,72px)}
+.warn .sec-label{color:#7FA0FF}
+.warn .sec-label .kicker-rule{background:#7FA0FF}
+.warn h2{color:#fff}
+.warn p{color:rgba(255,255,255,0.82)}
+.warn-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:28px 0}
+.warn-card{border:1px solid rgba(255,255,255,0.16);border-radius:8px;padding:20px 22px;background:rgba(255,255,255,0.04)}
+.warn-card .term{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#7FA0FF;margin-bottom:8px}
+.warn-card p{font-size:14.5px;color:rgba(255,255,255,0.78);margin-bottom:0}
+.warn a{color:#7FA0FF}
 
 ul,ol{margin:12px 0 20px 24px}
 li{margin-bottom:8px;color:var(--ink)}
 
-.cta-bar{margin:48px 0;padding:32px;background:var(--navy);border-radius:6px;text-align:center;color:var(--canvas)}
-.cta-bar h3{color:var(--canvas);margin-top:0}
-.cta-bar p{color:rgba(255,255,255,0.85)}
-.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:13px 32px;background:var(--canvas);color:var(--ink);text-decoration:none;border-radius:4px;margin-top:12px}
-.btn:hover{background:#fff;color:var(--ink)}
-
-.guide-nav{display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:32px;border-top:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em}
+.guide-nav{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:32px;border-top:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em}
 .guide-nav a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
 .guide-nav a:hover{color:var(--accent);border-color:var(--accent)}
 
-.footer{margin-top:120px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+.footer{margin-top:80px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
 
 @media(max-width:560px){
   html,body{font-size:16px}
-  .wrap{padding:40px 16px}
-  h1{font-size:32px;line-height:1.1}
-  .pullquote{font-size:20px}
-  .layer-num{font-size:36px}
+  .wrap{padding:0 16px}
+  .cover h1{font-size:32px;line-height:1.1}
+  .pull{font-size:20px}
   .guide-nav{flex-direction:column;gap:16px;align-items:flex-start}
   .nav-inner{padding:14px 16px}
   .nav-links{gap:16px;font-size:11px}
+  .rail{overflow-x:auto;flex-wrap:nowrap}
 }
 </style>
 </head>
@@ -98,148 +126,233 @@ li{margin-bottom:8px;color:var(--ink)}
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="#">Community</a><a href="#">About</a></div>
+  <div class="nav-links">
+    <a href="../free-resources.html">Free Resources</a>
+    <a href="https://brief.shiftandlead.com">The Brief</a>
+    <a href="../store.html">Store</a>
+    <a href="../about.html">About</a>
+    <a href="../work-with-fatiha.html">Work With Fatiha</a>
+  </div>
 </div></nav>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <div class="cover-issue"><span class="rule"></span>Plain English &middot; No. 02 &middot; 6 min read</div>
+  <h1>ChatGPT vs AI &mdash; <em>6 words that always get mixed up.</em></h1>
+  <p class="standfirst">Most people use &ldquo;ChatGPT&rdquo; and &ldquo;AI&rdquo; like they mean the same thing. They don&rsquo;t. Mixing them up is like calling every car a Toyota. Here are the six words that keep tripping people up &mdash; sorted out for good.</p>
+
+  <div class="cover-art">
+    <svg viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="90" cy="110" r="52" fill="none" stroke="#7FA0FF" stroke-width="2" opacity="0.6"/>
+      <text x="90" y="117" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" fill="#EAF0FF" letter-spacing="1">ENGINE</text>
+      <path d="M170 110 L230 110" stroke="#7FA0FF" stroke-width="2" stroke-dasharray="4 5" opacity="0.6"/>
+      <rect x="230" y="70" width="120" height="80" rx="10" fill="none" stroke="#7FA0FF" stroke-width="2" opacity="0.6"/>
+      <text x="290" y="114" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" fill="#EAF0FF" letter-spacing="1">CAR / APP</text>
+      <path d="M350 110 L410 110" stroke="#7FA0FF" stroke-width="2" stroke-dasharray="4 5" opacity="0.6"/>
+      <rect x="410" y="85" width="90" height="50" rx="8" fill="none" stroke="#7FA0FF" stroke-width="2" opacity="0.6"/>
+      <text x="455" y="115" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" fill="#EAF0FF" letter-spacing="1">BRAND</text>
+    </svg>
+    <div class="slot-note">[image slot &mdash; engine / car / brand diagram, 4:3 to 21:8 crop]</div>
+  </div>
+</div>
+
+<!-- ===== RAIL ===== -->
+<div class="rail">
+  <a href="#sec01">01 &middot; The Car Analogy</a>
+  <a href="#sec02">02 &middot; The Six Words</a>
+  <a href="#sec03">03 &middot; Hear It In A Meeting</a>
+  <a href="#sec04">04 &middot; Where People Get Burned</a>
+  <a href="#sec05">05 &middot; Why It Pays Off</a>
+</div>
 
 <div class="wrap">
 
-  <div class="chips">
-    <span class="chip chip-track0">NAMES</span>
-    <span class="chip chip-time">6 min read</span>
-  </div>
+  <!-- ===== SEC 01 ===== -->
+  <section class="sec" id="sec01">
+    <div class="sec-label"><span class="kicker-rule"></span>01 &middot; The Car Analogy</div>
+    <h2>Think of it like a car</h2>
+    <p class="drop">Before we get into the tech names, here&rsquo;s an analogy that makes the whole thing click &mdash; and yes, even the best explainer makes mistakes now and then. If any of the six terms below still feel fuzzy after this, that&rsquo;s normal. Come back to this page any time.</p>
 
-  <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; AI Basics</div>
+    <div class="stations">
+      <div class="station">
+        <div class="cat">Part 1 of 3</div>
+        <h4>The Engine</h4>
+        <p><em>&ldquo;The invisible thing that does the work.&rdquo;</em> It&rsquo;s the technology doing the thinking. Powerful, but you never touch it directly.</p>
+      </div>
+      <div class="station">
+        <div class="cat">Part 2 of 3</div>
+        <h4>The Car</h4>
+        <p><em>&ldquo;What you actually sit in and drive.&rdquo;</em> It&rsquo;s built around the engine, with a dashboard, a steering wheel, and seats &mdash; the part you interact with.</p>
+      </div>
+      <div class="station">
+        <div class="cat">Part 3 of 3</div>
+        <h4>The Brand</h4>
+        <p><em>&ldquo;Toyota, BMW, Tesla.&rdquo;</em> Who made it. Same concept &mdash; a car with an engine &mdash; different makers, different feel.</p>
+      </div>
+    </div>
 
-  <h1>ChatGPT and AI <em>are not the same thing.</em></h1>
-
-  <p class="lead">Most people use &ldquo;ChatGPT&rdquo; and &ldquo;AI&rdquo; like they mean the same thing. They don&rsquo;t. And mixing them up is like calling every car a Toyota. Let&rsquo;s sort out the names so you never get confused in that conversation again.</p>
-
-  <hr class="rule">
-
-  <h2>Think of it like a car</h2>
-
-  <p>Before we get into the tech names, here&rsquo;s an analogy that makes the whole thing click.</p>
-
-  <div class="analogy">
-    <div class="analogy-label">The car analogy</div>
-    <p><strong>The engine</strong> is the technology that does the work. It&rsquo;s powerful but invisible. You never interact with the engine directly.</p>
-    <p><strong>The car</strong> is what you actually sit in and drive. It&rsquo;s built around the engine. It has a dashboard, a steering wheel, and seats.</p>
-    <p style="margin-bottom:0"><strong>The brand</strong> is who made it. Toyota, BMW, Tesla. Same concept (a car with an engine), different makers, different feels.</p>
-  </div>
-
-  <p>Now replace those words:</p>
-  <ul>
-    <li><strong>The engine</strong> = the AI model (the technology doing the thinking)</li>
-    <li><strong>The car</strong> = the chatbot or app (what you type into)</li>
-    <li><strong>The brand</strong> = the company that made it (OpenAI, Anthropic, Google)</li>
-  </ul>
-
-  <p>That&rsquo;s the entire structure. Everything below is just putting the specific names in the right box.</p>
-
-  <hr class="rule">
-
-  <h2>The names, sorted from biggest to smallest</h2>
-
-  <div class="layer">
-    <div class="layer-num">1</div>
-    <h3>AI (Artificial Intelligence)</h3>
-    <p>The broadest term. It covers all software that learns from examples instead of following handwritten rules. Your email spam filter is AI. Netflix recommending shows is AI. The face unlock on your phone is AI. It&rsquo;s a huge category.</p>
-    <p>When someone says &ldquo;AI,&rdquo; they could mean almost anything. On its own, the word tells you very little.</p>
-  </div>
-
-  <div class="layer">
-    <div class="layer-num">2</div>
-    <h3>Generative AI</h3>
-    <p>The specific type of AI in every headline right now. Unlike older AI that sorts, classifies, or recommends, generative AI <em>creates</em> new things. New text, new images, new audio, new video.</p>
-    <p>When your friend says &ldquo;I used AI to write my bio,&rdquo; they mean generative AI. This is the kind that matters for your daily work.</p>
-  </div>
-
-  <div class="layer">
-    <div class="layer-num">3</div>
-    <h3>LLM (Large Language Model)</h3>
-    <p>This is the <strong>engine</strong> from our car analogy. It&rsquo;s the technology that powers the text-based AI tools. &ldquo;Large&rdquo; because it studied an enormous amount of writing to learn how language works. &ldquo;Language&rdquo; because text is what it&rsquo;s best at. &ldquo;Model&rdquo; because it&rsquo;s one specific trained piece of software.</p>
-    <p>Examples of LLMs: GPT-4o (made by OpenAI), Claude Opus (made by Anthropic), Gemini Pro (made by Google). You&rsquo;ll probably never need to pick one yourself. But when someone drops &ldquo;LLM&rdquo; in a meeting, you now know they&rsquo;re talking about the engine, not the car.</p>
-  </div>
-
-  <div class="layer">
-    <div class="layer-num">4</div>
-    <h3>Chatbot / App</h3>
-    <p>This is the <strong>car</strong>. The thing you actually open, type into, and use. It&rsquo;s built around an LLM, but it adds the interface, the features, the design, and the experience.</p>
-    <p><strong>ChatGPT</strong> is a chatbot made by OpenAI. The engine inside it is an LLM called GPT.</p>
-    <p><strong>Claude</strong> is a chatbot made by Anthropic. The engine inside it is an LLM also called Claude.</p>
-    <p><strong>Gemini</strong> is a chatbot made by Google. The engine inside it is an LLM also called Gemini.</p>
-    <p>Yes, sometimes the car and the engine share a name. That&rsquo;s part of why it&rsquo;s confusing. But now you see the difference.</p>
-  </div>
-
-  <div class="layer">
-    <div class="layer-num">5</div>
-    <h3>Agent</h3>
-    <p>A chatbot that doesn&rsquo;t just talk. It takes <em>action</em>. It can search the web, read your files, send messages, fill in forms, or run code. It does things in the real world, not just in a chat window.</p>
-    <p>Think of it this way: a regular chatbot is like texting a smart friend for advice. An agent is like hiring that friend for the afternoon. They don&rsquo;t just tell you what to do. They go and do it.</p>
-    <p>This word is going to keep coming up. There&rsquo;s a whole guide on it later in this series.</p>
-  </div>
-
-  <div class="pullquote">AI is the category. Generative AI is the type. LLM is the engine. ChatGPT is one car, made by one company, using one engine. Now you know.</div>
-
-  <hr class="rule">
-
-  <h2>Hear it in a real conversation</h2>
-
-  <p>Someone at a meeting says: <em>&ldquo;We tested the new Claude model and it&rsquo;s way better for long documents. Let&rsquo;s switch our team&rsquo;s chatbot over.&rdquo;</em></p>
-
-  <div class="card">
-    <p><strong>What they actually mean:</strong></p>
+    <p>Now replace those words:</p>
     <ul>
-      <li><strong>Claude model</strong> = the engine (the LLM made by Anthropic)</li>
-      <li><strong>Better for long documents</strong> = this engine handles more text at once</li>
-      <li><strong>Our team&rsquo;s chatbot</strong> = the app their team uses to interact with AI</li>
-      <li><strong>Switch over</strong> = swap the engine inside their existing app</li>
+      <li><strong>The engine</strong> = the AI model (the technology doing the thinking)</li>
+      <li><strong>The car</strong> = the chatbot or app (what you type into)</li>
+      <li><strong>The brand</strong> = the company that made it (OpenAI, Anthropic, Google)</li>
     </ul>
-    <p style="margin-bottom:0">You follow that now. And you could ask: <em>&ldquo;How long is &lsquo;long&rsquo;? Are we talking 10-page reports or 200-page contracts?&rdquo;</em> That&rsquo;s a question that shows you understand the difference. It moves the conversation forward instead of nodding through it.</p>
-  </div>
+    <p>That&rsquo;s the entire structure. Everything below is just putting the specific names in the right box.</p>
+  </section>
 
-  <hr class="rule">
+  <!-- ===== SEC 02 ===== -->
+  <section class="sec" id="sec02">
+    <div class="sec-label"><span class="kicker-rule"></span>02 &middot; The Six Words</div>
+    <h2>The names, sorted from biggest to smallest</h2>
+    <p>Six words. Once you know where each one sits, you&rsquo;ll never confuse them again.</p>
 
-  <h2>Why this matters for you</h2>
+    <div class="stations">
+      <div class="station">
+        <div class="cat">Word 1 &middot; The Category</div>
+        <h4>AI &mdash; Artificial Intelligence</h4>
+        <p><em>&ldquo;Any software that learns instead of following handwritten rules.&rdquo;</em> The broadest term there is. Your spam filter, Netflix recommendations, and phone face-unlock are all AI. On its own, the word tells you almost nothing.</p>
+      </div>
+      <div class="station">
+        <div class="cat">Word 2 &middot; The Type</div>
+        <h4>Generative AI</h4>
+        <p><em>&ldquo;The kind that creates, not just sorts.&rdquo;</em> Unlike older AI that classifies or recommends, generative AI makes new text, images, audio, and video. This is the kind in every headline right now.</p>
+      </div>
+      <div class="station">
+        <div class="cat">Word 3 &middot; The Engine</div>
+        <h4>LLM &mdash; Large Language Model</h4>
+        <p><em>&ldquo;The engine from our car analogy.&rdquo;</em> &ldquo;Large&rdquo; because it studied enormous amounts of writing. &ldquo;Language&rdquo; because text is its specialty. Examples: GPT-4o, Claude Opus, Gemini Pro.</p>
+      </div>
+      <div class="station">
+        <div class="cat">Word 4 &middot; The Car</div>
+        <h4>Chatbot / App</h4>
+        <p><em>&ldquo;The thing you actually open and type into.&rdquo;</em> Built around an LLM, plus the interface and design. ChatGPT, Claude, and Gemini are all chatbots &mdash; each with an LLM of the same name inside.</p>
+      </div>
+      <div class="station">
+        <div class="cat">Word 5 &middot; The Maker</div>
+        <h4>Brand / Company</h4>
+        <p><em>&ldquo;Who built the car.&rdquo;</em> OpenAI makes ChatGPT. Anthropic makes Claude. Google makes Gemini. Same concept, different makers &mdash; which is exactly why the names get tangled.</p>
+      </div>
+      <div class="station">
+        <div class="cat">Word 6 &middot; The Doer</div>
+        <h4>Agent</h4>
+        <p><em>&ldquo;Hiring the friend, not just texting them.&rdquo;</em> A chatbot that takes action &mdash; searches the web, reads files, fills forms, runs code. A regular chatbot gives advice; an agent goes and does it.</p>
+      </div>
+    </div>
 
-  <p>When you know the names, three things change.</p>
+    <div class="pull">AI is the category. Generative AI is the type. LLM is the <strong>engine</strong>. ChatGPT is one car, made by one company, using one engine. Now you know.</div>
 
-  <p><strong>You stop overpaying.</strong> Someone pitches you an &ldquo;AI tool&rdquo; for $99/month. You now know to ask: which model does it use? Because ChatGPT, Claude, and Gemini all have free tiers. Maybe you don&rsquo;t need the fancy wrapper. Maybe you just need the engine directly.</p>
+    <p>Yes, sometimes the car and the engine share a name &mdash; Claude the chatbot runs on an LLM also called Claude. That overlap is a big part of why this gets confusing. But now you see the difference underneath it.</p>
+  </section>
 
-  <p><strong>You compare properly.</strong> Instead of &ldquo;ChatGPT vs. AI,&rdquo; you start asking &ldquo;ChatGPT vs. Claude for writing client proposals.&rdquo; Specific. Useful. Answerable.</p>
+  <!-- ===== SEC 03 ===== -->
+  <section class="sec" id="sec03">
+    <div class="sec-label"><span class="kicker-rule"></span>03 &middot; Hear It In A Meeting</div>
+    <h2>Hear it in a real conversation</h2>
+    <p>Someone at a meeting says: <em>&ldquo;We tested the new Claude model and it&rsquo;s way better for long documents. Let&rsquo;s switch our team&rsquo;s chatbot over.&rdquo;</em></p>
 
-  <p><strong>You stop feeling lost in conversations.</strong> Half the confusion around AI is just vocabulary. You just cleared most of it in 5 minutes.</p>
+    <div class="dish-grid">
+      <div class="dish">
+        <div class="tag">Starter</div>
+        <h4>&ldquo;Claude model&rdquo;</h4>
+        <p>= the engine. The LLM made by Anthropic.</p>
+      </div>
+      <div class="dish">
+        <div class="tag">Main</div>
+        <h4>&ldquo;Better for long documents&rdquo;</h4>
+        <p>= this engine can handle more text at once than the one they were using.</p>
+      </div>
+      <div class="dish">
+        <div class="tag">Chef's Special</div>
+        <h4>&ldquo;Switch our chatbot over&rdquo;</h4>
+        <p>= swap the engine inside the app their team already uses &mdash; the app itself doesn&rsquo;t change.</p>
+      </div>
+    </div>
 
-  <div class="card accent">
-    <p>The next time someone says &ldquo;AI&rdquo; and means ChatGPT, you&rsquo;ll know the difference. You don&rsquo;t need to correct them. But you&rsquo;ll know.</p>
-    <p style="margin-bottom:0">And that quiet confidence? It compounds. Every guide from here builds on this foundation.</p>
-  </div>
+    <p>You follow that now. And you could ask: <em>&ldquo;How long is &lsquo;long&rsquo;? Are we talking 10-page reports or 200-page contracts?&rdquo;</em> That&rsquo;s a question that shows you understand the difference. It moves the conversation forward instead of nodding through it.</p>
 
-  <div class="cta-bar">
-    <h3>Next: what a &ldquo;prompt&rdquo; actually is</h3>
-    <p>You keep hearing it. Here&rsquo;s the 4-part formula that turns vague AI answers into specific, usable ones.</p>
-    <a href="what-is-a-prompt.html" class="btn">Read the next guide &rarr;</a>
-  </div>
-
-  <div class="guide-nav">
-    <a href="what-is-ai.html">&larr; Prev: What AI is</a>
-    <a href="what-is-a-prompt.html">Next: What is a prompt &rarr;</a>
-  </div>
+    <div class="imgslot wide">
+      <div class="note">[full-bleed image slot, 21:8 &mdash; meeting room / speech-bubble motif showing the &ldquo;engine vs car&rdquo; swap]</div>
+    </div>
+  </section>
 
 </div>
 
-
-
-<!-- subscribe strip -->
+<!-- ===== SUBSCRIBE STRIP ===== -->
 <div style="max-width:680px;margin:56px auto 0;padding:0 24px">
  <div style="display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid #2C4BE0;border-radius:14px;padding:22px 26px;background:#EEF2FC">
-  <div><div style="font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;color:#1A1A1A">Get every new Kitchen Map in your inbox.</div>
+  <div><div style="font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;color:#1A1A1A">Get every new Plain English guide in your inbox.</div>
   <div style="font-family:'Inter',sans-serif;font-size:.88rem;color:#5C5A57;margin-top:3px">Plus The Insider Brief — one curated AI briefing every Tuesday, verdicts included.</div></div>
   <a href="https://brief.shiftandlead.com" style="font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:#2C4BE0;color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap">Subscribe free &rarr;</a>
  </div>
 </div>
 
-<!-- chef's table close -->
+<!-- ===== SEC 04 — WARN BAND ===== -->
+<div class="warn" id="sec04">
+  <div class="warn-inner">
+    <div class="sec-label"><span class="kicker-rule"></span>04 &middot; Where People Get Burned</div>
+    <h2>Before you nod along in the next meeting</h2>
+    <p>The confusion between these words isn&rsquo;t just academic. It costs people money and credibility. Here&rsquo;s where it actually bites.</p>
+
+    <div class="warn-cards">
+      <div class="warn-card">
+        <div class="term">Paying twice for the same engine</div>
+        <p><em>&ldquo;Someone pitches you an &lsquo;AI tool&rsquo; for $99/month.&rdquo;</em> If it&rsquo;s just a thin wrapper around ChatGPT or Claude, you might be paying a markup for something with a free tier underneath.</p>
+      </div>
+      <div class="warn-card">
+        <div class="term">Comparing the wrong things</div>
+        <p><em>&ldquo;ChatGPT vs. AI&rdquo; isn&rsquo;t a real comparison.</em> &ldquo;AI&rdquo; isn&rsquo;t a competitor to ChatGPT &mdash; it&rsquo;s the category ChatGPT belongs to. Compare &ldquo;ChatGPT vs. Claude for writing proposals&rdquo; instead.</p>
+      </div>
+      <div class="warn-card">
+        <div class="term">Assuming the car and engine match</div>
+        <p><em>&ldquo;Claude the app&rdquo; and &ldquo;Claude the model&rdquo; share a name but aren&rsquo;t identical.</em> An app can quietly swap its engine. Ask which model version you&rsquo;re actually getting before you rely on it for something important.</p>
+      </div>
+      <div class="warn-card">
+        <div class="term">Trusting an &ldquo;agent&rdquo; that only chats</div>
+        <p><em>&ldquo;It says agent, but does it actually take action?&rdquo;</em> Plenty of products borrow the word for marketing. A real agent does things in the world &mdash; not just talks about them.</p>
+      </div>
+    </div>
+
+    <p>I keep verification prompts for exactly these failures &mdash; <a href="../store.html">The Judge&rsquo;s Prompts &rarr;</a></p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ===== SEC 05 ===== -->
+  <section class="sec" id="sec05">
+    <div class="sec-label"><span class="kicker-rule"></span>05 &middot; Why It Pays Off</div>
+    <h2>Why this matters for you</h2>
+    <p>When you know the names, three things change &mdash; and none of them cost you anything.</p>
+
+    <div class="stations">
+      <div class="station">
+        <div class="cat">Change 1</div>
+        <h4>You stop overpaying</h4>
+        <p>Someone pitches an &ldquo;AI tool&rdquo; subscription. You now ask: which model does it use? ChatGPT, Claude, and Gemini all have free tiers &mdash; maybe you don&rsquo;t need the fancy wrapper at all.</p>
+      </div>
+      <div class="station">
+        <div class="cat">Change 2</div>
+        <h4>You compare properly</h4>
+        <p>Instead of &ldquo;ChatGPT vs. AI,&rdquo; you start asking &ldquo;ChatGPT vs. Claude for writing client proposals.&rdquo; Specific. Useful. Answerable.</p>
+      </div>
+      <div class="station">
+        <div class="cat">Change 3</div>
+        <h4>You stop feeling lost</h4>
+        <p>Half the confusion around AI is just vocabulary. You just cleared most of it in six minutes &mdash; and that quiet confidence compounds. Every guide from here builds on this foundation.</p>
+      </div>
+    </div>
+
+    <p>Next on the map: what a &ldquo;prompt&rdquo; actually is &mdash; the 4-part formula that turns vague AI answers into specific, usable ones.</p>
+
+    <div class="guide-nav">
+      <a href="what-is-ai.html">&larr; Prev: What AI is</a>
+      <a href="what-is-a-prompt.html">Next: What is a prompt &rarr;</a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== CHEF'S TABLE CLOSE ===== -->
 <div style="max-width:680px;margin:56px auto 0;padding:0 4px">
  <div style="background:#1A1A1A;border-radius:14px;padding:34px 30px;text-align:center">
   <div style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#7FA0FF;margin-bottom:10px">The chef's table — go further than the guide</div>
@@ -252,7 +365,7 @@ li{margin-bottom:8px;color:var(--ink)}
  </div>
 </div>
 
-<!-- byline -->
+<!-- ===== BYLINE ===== -->
 <style>
 .byline-block{max-width:680px;margin:48px auto 0;display:flex;gap:18px;align-items:center;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:12px;padding:20px 24px;text-align:left}
 .byline-block img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#FFFFFF">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,303 +13,423 @@
 <meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://guides.shiftandlead.com/guides/ai-jargon-guide.html">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --canvas:#FFFFFF;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
-  --muted:#5C5A57;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
-  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
-a:hover{color:var(--accent-deep)}
-strong{font-weight:700;color:var(--ink)}
+:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--tint:#E4EAFB;--cream:#EEF2FC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.75}
+.mono{font-family:'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
 
-.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
-.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
-.nav-links{display:flex;gap:28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
-.nav-links a{color:var(--ink);text-decoration:none}
+/* nav */
+.nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20}
+.nav-inner{max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav .mono{font-size:10px;color:var(--muted)}
 
-.wrap{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,100px) clamp(24px,5vw,72px)}
+/* magazine cover hero */
+.cover{max-width:1160px;margin:0 auto;padding:70px 24px 56px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:end}
+@media(max-width:860px){.cover{grid-template-columns:1fr}}
+.issue{font-size:11px;color:var(--accent);margin-bottom:18px;display:flex;gap:18px;flex-wrap:wrap}
+.cover h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:clamp(3rem,9vw,6.2rem);line-height:.98;letter-spacing:-.02em;margin:0}
+.cover h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.cover .standfirst{font-size:1.2rem;color:var(--muted);max-width:44ch;margin:22px 0 0}
+.cover-art{position:relative;aspect-ratio:4/5;background:var(--ink);border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.cover-art svg{width:82%;height:auto}
+.cover-art .slot{position:absolute;bottom:10px;right:12px;font-size:9px;color:#8d86a0}
+.dropcap::first-letter{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:4.6em;float:left;line-height:.78;padding:6px 12px 0 0;color:var(--accent)}
 
-.chips{margin-bottom:28px;display:flex;gap:8px;flex-wrap:wrap}
-.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff}
-.chip-literacy{background:#E63955}
-.chip-time{background:transparent;color:var(--muted);border:1px solid var(--rule);padding:4px 10px}
+/* the rail — reading progress as courses */
+.rail{max-width:1160px;margin:0 auto;padding:0 24px}
+.courses{display:flex;gap:0;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:#fff;margin:8px 0 0}
+.course{flex:1;text-align:center;padding:11px 6px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-left:1px solid var(--rule)}
+.course:first-child{border-left:none}
+.course.active{background:var(--ink);color:#fff}
 
-.kicker{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);display:flex;align-items:center;margin-bottom:20px}
-.kicker-rule{display:inline-block;width:32px;height:1px;background:var(--ink);margin-right:10px}
+/* sections */
+.sec{max-width:1160px;margin:0 auto;padding:72px 24px 8px}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:baseline;border-top:2px solid var(--ink);padding-top:18px}
+.sec-num{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:3.4rem;line-height:1;color:var(--accent)}
+.sec-head h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0}
+.sec-head .mono{display:block;font-size:10px;color:var(--muted);margin-top:6px}
+.sec-body{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;padding:26px 0 0}
+@media(max-width:860px){.sec-body{grid-template-columns:1fr}}
+.sec-body p{max-width:60ch;font-size:1.06rem;margin:0 0 1rem}
+.sec p.wide{max-width:76ch;font-size:1.06rem;margin:0 0 1rem}
 
-h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,5.5vw,56px);line-height:1.08;letter-spacing:-0.5px;color:var(--ink);margin-bottom:24px}
-h1 em{font-style:italic;color:var(--electric)}
-h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.18;letter-spacing:-0.3px;margin:64px 0 16px}
-h3{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);margin:32px 0 12px}
-p{margin-bottom:18px;color:var(--ink)}
-p.lead{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:20px;line-height:1.55;color:var(--muted);margin-bottom:32px}
+/* floor plan / scene diagram */
+.plan{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:26px}
+.plan .mono{font-size:10px;color:var(--accent);display:block;margin-bottom:12px}
+.plan svg{width:100%;height:auto}
+.plan blockquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.05rem;line-height:1.5;color:var(--ink);margin:0 0 14px}
+.plan ul{margin:0;padding-left:18px;font-family:'Inter',sans-serif;font-size:.9rem;color:var(--muted);line-height:1.7}
+.plan ul strong{color:var(--ink)}
 
-.rule{border:0;border-top:2px solid var(--ink);margin:80px 0 40px}
+/* menu cards */
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 0}
+@media(max-width:860px){.menu{grid-template-columns:1fr}}
+.dish{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:24px;position:relative}
+.dish .mono{font-size:9.5px;color:var(--accent)}
+.dish h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:.4rem 0 .4rem}
+.dish p{font-family:'Inter',sans-serif;font-size:.9rem;color:var(--muted);margin:0;line-height:1.6}
+.dish .pict{height:74px;margin-bottom:10px;display:flex;align-items:center}
+.dish .pict svg{height:64px;width:auto}
 
-.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:28px 32px;margin:24px 0}
-.card.accent{border-color:var(--accent);background:var(--accent-tint)}
+/* stations grid (word definitions as station cards) */
+.stations{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 0}
+@media(max-width:900px){.stations{grid-template-columns:repeat(2,1fr)}}
+.station{border:1px solid var(--rule);border-radius:12px;padding:16px 18px;background:#fff}
+.station .mono{font-size:9px;color:var(--accent)}
+.station h4{font-family:'Inter',sans-serif;font-size:.98rem;font-weight:600;margin:.35rem 0 .2rem}
+.station p{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--muted);margin:0;line-height:1.5}
+.station p em{font-style:italic;color:var(--ink)}
+.menu-more{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:18px}
 
-.pullquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:24px;line-height:1.35;color:var(--muted);border-left:3px solid var(--accent);padding-left:24px;margin:40px 0}
+/* pull quote */
+.pull{max-width:1160px;margin:0 auto;padding:80px 24px}
+.pull blockquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.7rem,4.5vw,2.7rem);line-height:1.3;margin:0;max-width:26ch;color:var(--ink)}
+.pull blockquote strong{color:var(--accent);font-style:normal}
+.pull .mono{font-size:10px;color:var(--muted);margin-top:18px;display:block}
 
-.scene{margin:48px 0;padding:32px;background:var(--surface);border:1px solid var(--rule);border-radius:6px}
-.scene-label{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin-bottom:16px}
-.scene-quote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:20px;line-height:1.4;color:var(--ink);margin-bottom:20px}
-.scene-break{display:block;margin:20px 0;font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:var(--muted)}
+/* warnings — "know before you eat" */
+.warn{background:var(--ink);color:#F5F0EB}
+.warn-inner{max-width:1160px;margin:0 auto;padding:70px 24px}
+.warn .mono{color:#7FA0FF;font-size:11px}
+.warn h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:700;margin:.4rem 0 26px}
+.warn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.warn-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.warn-grid{grid-template-columns:1fr}}
+.warn-card{border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:20px}
+.warn-card .term{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7FA0FF;margin-bottom:8px}
+.warn-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0;line-height:1.6}
+.warn-card strong{color:#fff}
+.warn-inner .link-line{margin-top:26px;font-family:'Inter',sans-serif;font-size:.92rem;color:#D9D3E6}
+.warn-inner .link-line a{color:#7FA0FF}
 
-.term{padding:20px 0;border-bottom:1px solid var(--rule-light)}
-.term:last-of-type{border-bottom:none}
-.term-word{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:400;margin-bottom:8px}
-.term-def{color:var(--ink);font-size:16px;line-height:1.65}
-.term-def .plain{display:block;margin-top:8px;color:var(--muted);font-style:italic}
-.term-def .example{display:block;margin-top:8px}
+/* image slots */
+.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
+.imgslot .mono{font-size:9.5px;color:var(--accent)}
+.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
+.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
+.fullbleed .imgslot{aspect-ratio:21/8}
 
-ul,ol{margin:12px 0 20px 24px}
-li{margin-bottom:8px;color:var(--ink)}
+/* subscribe strip */
+.subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
+.subs-in{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid var(--accent);border-radius:14px;padding:22px 26px;background:var(--cream)}
+.subs-in h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:0}
+.subs-in p{font-family:'Inter',sans-serif;font-size:.88rem;color:var(--muted);margin:.2rem 0 0}
+.subs-in a{font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:var(--accent);color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap}
 
-.cta-bar{margin:48px 0;padding:32px;background:var(--navy);border-radius:6px;text-align:center;color:var(--canvas)}
-.cta-bar h3{color:var(--canvas);margin-top:0}
-.cta-bar p{color:rgba(255,255,255,0.85)}
-.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:13px 32px;background:var(--canvas);color:var(--ink);text-decoration:none;border-radius:4px;margin-top:12px}
-.btn:hover{background:#fff;color:var(--ink)}
+/* chef's table offers close */
+.chefs{background:var(--ink);color:#F5F0EB;margin-top:72px}
+.chefs-in{max-width:1160px;margin:0 auto;padding:64px 24px}
+.chefs .mono{color:#7FA0FF;font-size:11px}
+.chefs h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:700;margin:.4rem 0 26px}
+.chefs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.chefs-grid{grid-template-columns:1fr}}
+.chefs-card{border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:24px;display:flex;flex-direction:column;background:rgba(255,255,255,.03)}
+.chefs-card .mono{font-size:9.5px;margin-bottom:8px}
+.chefs-card h3{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;margin:0 0 6px;color:#fff}
+.chefs-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0 0 18px;line-height:1.6}
+.chefs-card a{margin-top:auto;text-align:center;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;text-decoration:none;background:#fff;color:var(--ink);border-radius:8px;padding:11px 16px}
 
-.guide-nav{display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:32px;border-top:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em}
-.guide-nav a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
-.guide-nav a:hover{color:var(--accent);border-color:var(--accent)}
-
-.footer{margin-top:120px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
-
-@media(max-width:560px){
-  html,body{font-size:16px}
-  .wrap{padding:40px 16px}
-  h1{font-size:32px;line-height:1.1}
-  .pullquote{font-size:20px}
-  .scene{padding:22px}
-  .scene-quote{font-size:18px}
-  .guide-nav{flex-direction:column;gap:16px;align-items:flex-start}
-  .nav-inner{padding:14px 16px}
-  .nav-links{gap:16px;font-size:11px}
-}
+/* byline + IP bar */
+.byline{max-width:1160px;margin:70px auto 0;padding:0 24px}
+.byline-in{display:flex;gap:18px;align-items:center;background:var(--cream);border:1px solid var(--tint);border-radius:14px;padding:22px 26px}
+.byline-in img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.byline-in p{margin:0;font-size:.95rem}
+.byline-in .who{font-family:'Inter',sans-serif;font-weight:600}
+.ipbar{max-width:1160px;margin:26px auto 0;padding:0 24px 70px}
+.ipbar p{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px;margin:0}
+a{color:var(--accent)}
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="#">Community</a><a href="#">About</a></div>
+  <span class="mono">Plain English · No. 04 — AI Vocabulary</span>
 </div></nav>
 
-<div class="wrap">
-
-  <div class="chips">
-    <span class="chip chip-literacy">WORDS</span>
-    <span class="chip chip-time">7 min read</span>
+<!-- COVER -->
+<header class="cover">
+  <div>
+    <div class="issue mono"><span>Plain English · No. 04</span><span>AI Vocabulary</span><span>7 min read</span></div>
+    <h1>The words <em>everyone uses.</em></h1>
+    <p class="standfirst">Someone dropped RAG, tokens, and hallucination in the same sentence. You nodded. Everyone nodded. Nobody stopped to ask what any of it meant. This guide is the pause button you wished you had — twelve words, plain English, no jargon hiding inside the definitions.</p>
   </div>
-
-  <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; AI Vocabulary</div>
-
-  <h1>You smiled through the meeting. <em>You understood nothing.</em></h1>
-
-  <p class="lead">Someone dropped RAG, tokens, and hallucination in the same sentence. You nodded. Everyone nodded. Nobody stopped to ask what any of it meant. This guide is the pause button you wished you had.</p>
-
-  <hr class="rule">
-
-  <h2>The sentence that started this</h2>
-
-  <p>Here is an actual sentence you might hear in a meeting, a podcast, or a LinkedIn post. Right now, it probably sounds like nonsense. By the end of this guide, you will understand every word of it.</p>
-
-  <div class="scene">
-    <div class="scene-label">Overheard in a meeting</div>
-    <p class="scene-quote">&ldquo;We&rsquo;re connecting our customer service docs to a Claude agent through MCP, so it pulls from our own data instead of making things up. If quality slips, we&rsquo;ll fine-tune. The context window should handle it. Tokens are cheap now.&rdquo;</p>
+  <div class="cover-art">
+    <svg viewBox="0 0 300 380" fill="none" aria-label="Twelve words, decoded">
+      <rect x="60" y="34" width="180" height="46" rx="6" stroke="#7FA0FF" stroke-width="2"/>
+      <text x="150" y="62" text-anchor="middle" fill="#7FA0FF" font-family="Space Mono" font-size="12" letter-spacing="2">?  ?  ?  ?  ?  ?</text>
+      <text x="150" y="20" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE SENTENCE</text>
+      <path d="M150 90v34" stroke="#2C4BE0" stroke-width="2" stroke-dasharray="4 4"/>
+      <rect x="40" y="134" width="220" height="150" rx="8" stroke="#2C4BE0" stroke-width="2"/>
+      <text x="150" y="122" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">TWELVE WORDS</text>
+      <text x="70" y="160" fill="#7FA0FF" font-family="Space Mono" font-size="10">Hallucination</text>
+      <text x="70" y="180" fill="#7FA0FF" font-family="Space Mono" font-size="10">RAG · Agent · MCP</text>
+      <text x="70" y="200" fill="#7FA0FF" font-family="Space Mono" font-size="10">Context · Token</text>
+      <text x="70" y="220" fill="#7FA0FF" font-family="Space Mono" font-size="10">Fine-tune · Temp.</text>
+      <text x="70" y="240" fill="#7FA0FF" font-family="Space Mono" font-size="10">Multimodal · Open</text>
+      <text x="70" y="260" fill="#7FA0FF" font-family="Space Mono" font-size="10">Prompt eng. · API</text>
+      <path d="M150 284v34" stroke="#2C4BE0" stroke-width="2" stroke-dasharray="4 4"/>
+      <rect x="80" y="330" width="140" height="40" rx="6" stroke="#7FA0FF" stroke-width="2"/>
+      <text x="150" y="356" text-anchor="middle" fill="#7FA0FF" font-family="Space Mono" font-size="12" letter-spacing="1">Understood.</text>
+    </svg>
+    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
+</header>
 
-  <p>Seven technical terms in two sentences. No wonder everyone just nods.</p>
-
-  <p>Let&rsquo;s break every one of them down. No jargon inside the jargon. Just plain language.</p>
-
-  <hr class="rule">
-
-  <h2>Group 1: The words in that sentence</h2>
-
-  <p>We will start with the six terms hiding in that meeting sentence. Each one gets a plain-English definition, then a &ldquo;think of it like&rdquo; line so it sticks.</p>
-
-  <div class="term">
-    <div class="term-word"><strong>Hallucination</strong></div>
-    <p class="term-def">When AI confidently makes something up. It doesn&rsquo;t know it&rsquo;s wrong. It isn&rsquo;t trying to lie. It just fills in gaps with things that sound right but aren&rsquo;t.
-    <span class="plain">Think of it like a friend who never says &ldquo;I don&rsquo;t know.&rdquo; They will always give you an answer, even when they&rsquo;re guessing. That&rsquo;s a hallucination.</span>
-    <span class="example"><strong>Why it matters:</strong> This is the single biggest reason you should always double-check AI answers on anything important. Especially numbers, legal claims, medical advice, or anything with real consequences.</span></p>
+<!-- course rail -->
+<div class="rail">
+  <div class="courses">
+    <div class="course active">01 · The Sentence</div>
+    <div class="course">02 · The First Six</div>
+    <div class="course">03 · The Next Six</div>
+    <div class="course">04 · Decoded</div>
+    <div class="course">05 · The Bill</div>
   </div>
-
-  <div class="term">
-    <div class="term-word"><strong>RAG</strong> (Retrieval-Augmented Generation)</div>
-    <p class="term-def">Instead of answering from memory (where hallucinations happen), the AI looks something up in <em>your</em> specific documents first, then answers based on what it found.
-    <span class="plain">Think of it like an open-book exam. The AI isn&rsquo;t guessing from what it memorized in training. It&rsquo;s reading your files and quoting from them.</span>
-    <span class="example"><strong>Example:</strong> A company feeds their return policy into an AI chatbot. When a customer asks &ldquo;Can I return this after 60 days?&rdquo; the bot reads the actual policy instead of making up an answer.</span></p>
-  </div>
-
-  <div class="term">
-    <div class="term-word"><strong>Agent</strong></div>
-    <p class="term-def">An AI that doesn&rsquo;t just talk. It takes <em>action</em>. It can browse the web, read your files, send messages, fill forms, or run calculations. Regular chatbots wait for your question and give you text back. An agent goes and does things.
-    <span class="plain">Think of it like the difference between texting a smart friend for advice versus hiring that friend for the afternoon. They don&rsquo;t just tell you what to do. They go do it.</span>
-    <span class="example"><strong>Example:</strong> You tell an agent &ldquo;Find me flights to Lisbon under $400 for next weekend.&rdquo; Instead of listing airlines you could check, it actually searches, compares prices, and comes back with options.</span></p>
-  </div>
-
-  <div class="term">
-    <div class="term-word"><strong>MCP</strong> (Model Context Protocol)</div>
-    <p class="term-def">A standard way for AI tools to connect to other software. Like a universal adapter. Before MCP, every AI tool needed a custom connection to every app. MCP is one plug that works everywhere.
-    <span class="plain">Think of it like USB-C. Before USB-C, every phone brand had a different charging cable. MCP is the universal cable for AI apps.</span>
-    <span class="example"><strong>In that meeting sentence:</strong> &ldquo;MCP connection to Zendesk&rdquo; means the AI tool and Zendesk can talk to each other through this standard plug.</span></p>
-  </div>
-
-  <div class="term">
-    <div class="term-word"><strong>Context window</strong></div>
-    <p class="term-def">How much text the AI can &ldquo;hold in its head&rdquo; at one time. Every conversation has a limit. Once you go past it, the AI starts forgetting the earlier parts of your conversation. Bigger window means it can work with longer documents.
-    <span class="plain">Think of it like a desk. A small desk fits one page. A big desk fits a whole stack of papers. The AI can only look at what fits on its desk at once.</span>
-    <span class="example"><strong>Why it matters:</strong> If you are pasting a 50-page contract into a chatbot, you need a model with a big context window. Otherwise it literally will not see the end of the document.</span></p>
-  </div>
-
-  <div class="term">
-    <div class="term-word"><strong>Token</strong></div>
-    <p class="term-def">A small chunk of text. Roughly three-quarters of a word. AI companies charge by the token, the same way your phone plan charges by the gigabyte. 1,000 tokens is about 750 words.
-    <span class="plain">Think of it like syllables. The word &ldquo;unbelievable&rdquo; is one word but several tokens. Most short words are one token. Long words get split into pieces.</span>
-    <span class="example"><strong>Why it matters:</strong> When someone says &ldquo;tokens are cheap now,&rdquo; they mean the cost of using AI has dropped. That is actually true. Prices fell dramatically in 2024 and 2025.</span></p>
-  </div>
-
-  <div class="pullquote">You just decoded that entire meeting sentence. Read it again at the top. It makes sense now.</div>
-
-  <hr class="rule">
-
-  <h2>Group 2: Words you will hear this week</h2>
-
-  <p>These six terms were not in that meeting sentence, but you will run into them soon. Same treatment: plain English, no jargon hiding inside the definition.</p>
-
-  <div class="term">
-    <div class="term-word"><strong>Fine-tune</strong></div>
-    <p class="term-def">Taking a general AI model and retraining it on your specific data so it behaves a certain way. It is expensive, slow, and usually overkill. Most people get better results from writing a good prompt or using RAG. Fine-tuning is the last resort, not the first step.
-    <span class="plain">Think of it like hiring a general contractor versus training someone from scratch. Most of the time, you just need to give clear instructions (a prompt). You only retrain when the instructions genuinely are not enough.</span></p>
-  </div>
-
-  <div class="term">
-    <div class="term-word"><strong>Temperature</strong></div>
-    <p class="term-def">A setting that controls how predictable or creative the AI is. Low temperature (close to 0) means it gives nearly the same answer every time. High temperature (close to 1) means it takes more creative risks.
-    <span class="plain">Think of it like a dimmer switch for randomness. Turn it down for facts. Turn it up for brainstorming.</span>
-    <span class="example"><strong>When does it matter?</strong> Honestly, almost never for most people. The default setting works fine for 95% of tasks. But now you know what it means when someone mentions it.</span></p>
-  </div>
-
-  <div class="term">
-    <div class="term-word"><strong>Multimodal</strong></div>
-    <p class="term-def">An AI that can work with more than just text. It can understand images, audio, sometimes video. Most major AI models are multimodal now.
-    <span class="plain">Think of it like a person who reads, looks at photos, and listens to voicemails, instead of one that only reads text messages.</span>
-    <span class="example"><strong>Example:</strong> You take a photo of a restaurant menu in Italian and paste it into the chat. The AI reads the image, translates the menu, and tells you what to order based on your dietary restrictions. That is multimodal.</span></p>
-  </div>
-
-  <div class="term">
-    <div class="term-word"><strong>Open source / open weights</strong></div>
-    <p class="term-def">The AI model is publicly available for anyone to download and run on their own computer. The big chatbots (ChatGPT, Claude, Gemini) are not open. They are owned by their companies. But other models (like Meta&rsquo;s Llama) are open, meaning anyone can use them for free.
-    <span class="plain">Think of it like the difference between renting a commercial kitchen and owning your own stove. Both cook food. One gives you more control.</span>
-    <span class="example"><strong>Why it matters:</strong> If your business handles sensitive data and you do not want it passing through someone else&rsquo;s servers, open models let you run everything in-house. For everyone else, the cloud tools work fine.</span></p>
-  </div>
-
-  <div class="term">
-    <div class="term-word"><strong>Prompt engineering</strong></div>
-    <p class="term-def">The skill of writing better instructions to get better results from AI. Not a programming language. Not a certification. Just learning how to be specific, clear, and structured when you ask the AI for something.
-    <span class="plain">Think of it like learning how to brief a freelancer. The better your brief, the better the work you get back. Same idea.</span>
-    <span class="example"><strong>Good news:</strong> We have a whole guide on this. It is the one before this one in the series, and it gives you a 4-part formula that works every time.</span></p>
-  </div>
-
-  <div class="term">
-    <div class="term-word"><strong>API</strong> (Application Programming Interface)</div>
-    <p class="term-def">A way for two pieces of software to talk to each other behind the scenes. When someone says &ldquo;we connected it through the API,&rdquo; they mean the apps are exchanging data automatically, without anyone copying and pasting between them.
-    <span class="plain">Think of it like a waiter in a restaurant. You (the app) tell the waiter (the API) what you want. The waiter goes to the kitchen (the other app), brings back your order. You never go into the kitchen yourself.</span>
-    <span class="example"><strong>Example:</strong> Your accounting software pulls your bank transactions automatically every morning. That happens through an API. No human is downloading a CSV and uploading it somewhere.</span></p>
-  </div>
-
-  <hr class="rule">
-
-  <h2>Now read that sentence one more time</h2>
-
-  <div class="scene">
-    <div class="scene-label">The same meeting sentence, decoded</div>
-    <p class="scene-quote">&ldquo;We&rsquo;re connecting our customer service docs to a Claude agent through MCP, so it pulls from our own data instead of making things up. If quality slips, we&rsquo;ll fine-tune.&rdquo;</p>
-    <span class="scene-break">Translation:</span>
-    <ul style="margin-top:12px">
-      <li>The AI reads their actual support docs before answering customers (<strong>RAG</strong>)</li>
-      <li>It can take actions inside their help desk software, not just write responses (<strong>agent</strong> + <strong>MCP</strong>)</li>
-      <li>&ldquo;Making things up&rdquo; is the hallucination problem, and RAG is how they are solving it</li>
-      <li>If the answers still are not good enough, they will retrain the model on their specific data (<strong>fine-tune</strong>)</li>
-      <li>The AI can handle all their docs at once (<strong>context window</strong>) and the cost is reasonable (<strong>tokens</strong>)</li>
-    </ul>
-  </div>
-
-  <p>You follow every word now. And the next time someone drops a sentence like that, you can ask the question nobody else will: <em>&ldquo;What happens when the AI can&rsquo;t find the answer in your docs? Does it make something up, or does it say it doesn&rsquo;t know?&rdquo;</em></p>
-
-  <p>That question shows you understand the difference between RAG and hallucination. It moves the conversation forward instead of nodding through it.</p>
-
-  <div class="card accent">
-    <p><strong>These 12 words cover about 90% of the AI vocabulary in any business conversation.</strong> The other 10% you can look up the moment you hear them. But you will not need to look these ones up again.</p>
-    <p style="margin-bottom:0">The gap was never intelligence. It was just vocabulary. And you just closed it.</p>
-  </div>
-
-  <div class="cta-bar">
-    <h3>Now learn what &ldquo;agentic&rdquo; actually means</h3>
-    <p>The word behind every AI product launch in 2025. 4 levels of autonomy, explained without the hype.</p>
-    <a href="what-is-agentic.html" class="btn">Read the next guide &rarr;</a>
-  </div>
-
-  <div class="guide-nav">
-    <a href="what-is-a-prompt.html">&larr; Prev: What is a prompt</a>
-    <a href="what-is-agentic.html">Next: What is agentic &rarr;</a>
-  </div>
-
 </div>
 
+<!-- 01 THE SENTENCE -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <div><h2>The Sentence — where this all started</h2><span class="mono">First course · 1 min</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p class="dropcap">You smiled through the meeting. You understood nothing. Someone dropped RAG, tokens, and hallucination in the same sentence, and you nodded, and everyone else nodded too, and nobody stopped to ask what any of it meant. This guide is the pause button you wished you had.</p>
+      <p>Here is an actual sentence you might hear in a meeting, a podcast, or a LinkedIn post. Right now, it probably sounds like nonsense. By the end of this guide, you will understand every word of it.</p>
+    </div>
+    <div class="plan">
+      <span class="mono">Overheard in a meeting</span>
+      <blockquote>&ldquo;We&rsquo;re connecting our customer service docs to a Claude agent through MCP, so it pulls from our own data instead of making things up. If quality slips, we&rsquo;ll fine-tune. The context window should handle it. Tokens are cheap now.&rdquo;</blockquote>
+      <ul><li>Seven technical terms in two sentences.</li><li>No wonder everyone just nods.</li><li>Let&rsquo;s break every one of them down &mdash; no jargon inside the jargon, just plain language.</li></ul>
+    </div>
+  </div>
+</section>
 
+<!-- pull quote 1 -->
+<div class="pull">
+  <blockquote>The gap was never intelligence. It was just <strong>vocabulary.</strong></blockquote>
+  <span class="mono">— what this guide actually fixes</span>
+</div>
+
+<!-- 02 THE FIRST SIX -->
+<section class="sec" style="padding-top:0">
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <div><h2>The First Six — the words hiding in that sentence</h2><span class="mono">Second course · six terms</span></div>
+  </div>
+  <p class="wide" style="margin-top:26px">We will start with the six terms hiding in that meeting sentence. Each one gets a plain-English definition, then a &ldquo;think of it like&rdquo; line so it sticks.</p>
+
+  <div class="stations">
+    <div class="station">
+      <span class="mono">Group 1 · term 1</span>
+      <h4>Hallucination</h4>
+      <p><em>&ldquo;A friend who never says &lsquo;I don&rsquo;t know.&rsquo;&rdquo;</em> When AI confidently makes something up, it isn&rsquo;t trying to lie &mdash; it just fills gaps with things that sound right but aren&rsquo;t. Always double-check AI on anything with real consequences: numbers, legal claims, medical advice.</p>
+    </div>
+    <div class="station">
+      <span class="mono">Group 1 · term 2</span>
+      <h4>RAG <span style="font-weight:400">(Retrieval-Augmented Generation)</span></h4>
+      <p><em>&ldquo;An open-book exam.&rdquo;</em> Instead of answering from memory (where hallucinations happen), the AI looks something up in <em>your</em> documents first, then answers based on what it found &mdash; e.g. reading your actual return policy instead of guessing.</p>
+    </div>
+    <div class="station">
+      <span class="mono">Group 1 · term 3</span>
+      <h4>Agent</h4>
+      <p><em>&ldquo;Hiring a smart friend for the afternoon, not just texting them.&rdquo;</em> An AI that doesn&rsquo;t just talk back &mdash; it takes action: browses the web, reads files, fills forms. Tell it &ldquo;find me flights under $400&rdquo; and it actually searches and compares.</p>
+    </div>
+    <div class="station">
+      <span class="mono">Group 1 · term 4</span>
+      <h4>MCP <span style="font-weight:400">(Model Context Protocol)</span></h4>
+      <p><em>&ldquo;USB-C for AI apps.&rdquo;</em> A standard way for AI tools to plug into other software. Before MCP, every AI tool needed a custom connection to every app. &ldquo;MCP connection to Zendesk&rdquo; means the AI and Zendesk can talk through one universal plug.</p>
+    </div>
+    <div class="station">
+      <span class="mono">Group 1 · term 5</span>
+      <h4>Context window</h4>
+      <p><em>&ldquo;A desk that only fits so much paper.&rdquo;</em> How much text the AI can hold in its head at once. Go past the limit and it starts forgetting earlier parts of the chat. Paste a 50-page contract and you need a model with a big desk.</p>
+    </div>
+    <div class="station">
+      <span class="mono">Group 1 · term 6</span>
+      <h4>Token</h4>
+      <p><em>&ldquo;A syllable, roughly.&rdquo;</em> A small chunk of text &mdash; about three-quarters of a word. AI companies charge by the token, like a phone plan charges by the gigabyte. &ldquo;Tokens are cheap now&rdquo; means AI got a lot cheaper in 2024&ndash;2025.</p>
+    </div>
+  </div>
+  <p class="menu-more">Read the meeting sentence again, at the very top of this page. It makes sense now.</p>
+</section>
+
+<!-- full-bleed image slot -->
+<div class="fullbleed">
+  <div class="imgslot">
+    <span class="mono">Image slot 02 · full-bleed divider</span>
+    <em>Wide editorial photo: a whiteboard mid-explanation, or a hand underlining a dense paragraph — duotone ink/purple grade</em>
+  </div>
+</div>
+
+<!-- 03 THE NEXT SIX -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <div><h2>The Next Six — words you'll hear this week</h2><span class="mono">Third course · six more terms</span></div>
+  </div>
+  <p class="wide" style="margin-top:26px">These six terms were not in that meeting sentence, but you will run into them soon. Same treatment: plain English, no jargon hiding inside the definition. Three of them are the most useful to actually recognize on sight.</p>
+
+  <div class="menu">
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><rect x="12" y="10" width="56" height="40" rx="5" stroke="#2C4BE0" stroke-width="2.5"/><path d="M24 26l8 6-8 6M40 40h16" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <span class="mono">Starter · easiest to spot</span>
+      <h3>API <span style="font-size:.7em;font-weight:400">(Application Programming Interface)</span></h3>
+      <p><em>&ldquo;A waiter in a restaurant.&rdquo;</em> A way for two apps to talk behind the scenes without a human copying and pasting between them &mdash; like your accounting software pulling bank transactions automatically every morning.</p>
+    </div>
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><path d="M10 50c10-24 50-24 60 0" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/><circle cx="40" cy="20" r="9" stroke="#2C4BE0" stroke-width="2.5"/></svg></div>
+      <span class="mono">Main · worth mastering</span>
+      <h3>Prompt engineering</h3>
+      <p><em>&ldquo;Briefing a freelancer well.&rdquo;</em> The skill of writing clearer, more specific instructions to get better AI results. Not a programming language, not a certification &mdash; just a better brief in, better work out.</p>
+    </div>
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><circle cx="40" cy="32" r="22" stroke="#2C4BE0" stroke-width="2.5"/><path d="M40 18v14l10 8" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <span class="mono">Chef's special · good to know</span>
+      <h3>Multimodal</h3>
+      <p><em>&ldquo;Reads, looks at photos, listens to voicemails.&rdquo;</em> An AI that works with more than text &mdash; images, audio, sometimes video. Snap a photo of an Italian menu and it translates it and suggests what to order.</p>
+    </div>
+  </div>
+
+  <div class="stations">
+    <div class="station">
+      <span class="mono">Group 2 · term</span>
+      <h4>Fine-tune</h4>
+      <p><em>&ldquo;Training someone from scratch, vs. hiring a contractor.&rdquo;</em> Retraining a general AI model on your specific data. Expensive, slow, usually overkill &mdash; a good prompt or RAG solves most problems first.</p>
+    </div>
+    <div class="station">
+      <span class="mono">Group 2 · term</span>
+      <h4>Temperature</h4>
+      <p><em>&ldquo;A dimmer switch for randomness.&rdquo;</em> Controls how predictable or creative the AI is. Low = same answer every time; high = more creative risk. Almost never touched &mdash; the default works for 95% of tasks.</p>
+    </div>
+    <div class="station">
+      <span class="mono">Group 2 · term</span>
+      <h4>Open source / open weights</h4>
+      <p><em>&ldquo;Renting a kitchen vs. owning your own stove.&rdquo;</em> The model is publicly downloadable and runnable on your own machine. ChatGPT, Claude, and Gemini aren&rsquo;t open; Meta&rsquo;s Llama is. Matters mainly for sensitive in-house data.</p>
+    </div>
+    <div class="station">
+      <span class="mono">Group 2 · recap</span>
+      <h4>All twelve, together</h4>
+      <p>Hallucination, RAG, Agent, MCP, Context window, Token, Fine-tune, Temperature, Multimodal, Open source, Prompt engineering, API &mdash; that&rsquo;s the whole list. About 90% of AI vocabulary in any business conversation.</p>
+    </div>
+  </div>
+  <p class="menu-more">Twelve words down. Everything else, you can look up the moment you hear it.</p>
+</section>
+
+<!-- pull quote 2 -->
+<div class="pull">
+  <blockquote>&ldquo;What happens when the AI can&rsquo;t find the answer in your docs? Does it <strong>make something up,</strong> or does it say it doesn&rsquo;t know?&rdquo;</blockquote>
+  <span class="mono">— the question that shows you actually understood</span>
+</div>
+
+<!-- 04 DECODED -->
+<section class="sec" style="padding-top:0">
+  <div class="sec-head">
+    <div class="sec-num">04</div>
+    <div><h2>Decoded — read that sentence one more time</h2><span class="mono">Fourth course · the translation</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p>Now read that sentence again, decoded, term by term:</p>
+      <p class="wide">&ldquo;We&rsquo;re connecting our customer service docs to a Claude agent through MCP, so it pulls from our own data instead of making things up. If quality slips, we&rsquo;ll fine-tune.&rdquo;</p>
+      <p>You follow every word now. And the next time someone drops a sentence like that, you can ask the question nobody else will: is it making something up, or saying it doesn&rsquo;t know? That question alone proves you understand the difference between RAG and hallucination &mdash; it moves the conversation forward instead of nodding through it.</p>
+    </div>
+    <div class="plan">
+      <span class="mono">Translation, line by line</span>
+      <ul>
+        <li>The AI reads their actual support docs before answering customers (<strong>RAG</strong>)</li>
+        <li>It can take actions inside their help desk software, not just write responses (<strong>agent</strong> + <strong>MCP</strong>)</li>
+        <li>&ldquo;Making things up&rdquo; is the hallucination problem, and RAG is how they&rsquo;re solving it</li>
+        <li>If answers still aren&rsquo;t good enough, they&rsquo;ll retrain the model on their own data (<strong>fine-tune</strong>)</li>
+        <li>The AI can handle all their docs at once (<strong>context window</strong>), and the cost is reasonable (<strong>tokens</strong>)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 04b BEFORE YOU EAT (dark warn band) -->
+<section class="warn" style="margin-top:72px">
+  <div class="warn-inner">
+    <span class="mono">Read this before you trust any of it</span>
+    <h2>Know before you nod along again.</h2>
+    <div class="warn-grid">
+      <div class="warn-card"><div class="term">Hallucination</div><p>It states things confidently <strong>when they aren't true.</strong> Always verify claims that matter — numbers, legal, medical.</p></div>
+      <div class="warn-card"><div class="term">RAG isn't a guarantee</div><p>RAG reduces hallucination, it doesn't erase it. <strong>Ask what happens</strong> when the docs don't have the answer.</p></div>
+      <div class="warn-card"><div class="term">Fine-tuning is a last resort</div><p>Most teams reach for it too early. <strong>Try a better prompt or RAG first</strong> — fine-tuning is slow and expensive.</p></div>
+      <div class="warn-card"><div class="term">Jargon as a smokescreen</div><p>Sometimes big words hide a small idea, or hide that <strong>nobody in the room actually checked.</strong> Ask the plain-English question.</p></div>
+    </div>
+    <p class="link-line">I keep verification prompts for exactly these failures — <a href="../store.html">The Judge's Prompts &rarr;</a></p>
+  </div>
+</section>
 
 <!-- subscribe strip -->
-<div style="max-width:680px;margin:56px auto 0;padding:0 24px">
- <div style="display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid #2C4BE0;border-radius:14px;padding:22px 26px;background:#EEF2FC">
-  <div><div style="font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;color:#1A1A1A">Get every new Kitchen Map in your inbox.</div>
-  <div style="font-family:'Inter',sans-serif;font-size:.88rem;color:#5C5A57;margin-top:3px">Plus The Insider Brief — one curated AI briefing every Tuesday, verdicts included.</div></div>
-  <a href="https://brief.shiftandlead.com" style="font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:#2C4BE0;color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap">Subscribe free &rarr;</a>
- </div>
-</div>
+<div class="subs"><div class="subs-in">
+  <div><h3>Get every new Kitchen Map in your inbox.</h3><p>Plus The Insider Brief — one curated AI briefing every Tuesday, verdicts included.</p></div>
+  <a href="https://brief.shiftandlead.com">Subscribe free &rarr;</a>
+</div></div>
 
-<!-- chef's table close -->
-<div style="max-width:680px;margin:56px auto 0;padding:0 4px">
- <div style="background:#1A1A1A;border-radius:14px;padding:34px 30px;text-align:center">
-  <div style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#7FA0FF;margin-bottom:10px">The chef's table — go further than the guide</div>
-  <div style="font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:20px">You've learned the words.<br>Now learn to run the kitchen.</div>
-  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-   <a href="../store.html" style="font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;text-decoration:none;background:#fff;color:#1A1A1A;border-radius:8px;padding:11px 18px">The Store &rarr;</a>
-   <a href="../about.html#community" style="font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;text-decoration:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:11px 18px">The Community</a>
-   <a href="../work-with-fatiha.html" style="font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;text-decoration:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:11px 18px">Workshops</a>
+<!-- 05 THE BILL -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <div><h2>The Bill — what you walk away with</h2><span class="mono">Last course · 1 min</span></div>
   </div>
- </div>
-</div>
+  <div class="sec-body">
+    <div>
+      <p>These twelve words cover about 90% of the AI vocabulary in any business conversation. The other 10% you can look up the moment you hear it. But you will not need to look these ones up again.</p>
+      <p>The gap was never intelligence. It was just vocabulary. And you just closed it.</p>
+      <p><strong>Next on the map:</strong> step inside an actual kitchen and see these words in action &mdash; <a href="chez-claude.html"><em>Chez Claude</em>, the first restaurant on the tour &rarr;</a></p>
+    </div>
+    <div class="imgslot" style="aspect-ratio:4/3">
+      <span class="mono">Image slot 03</span>
+      <em>Styled product photo: a small notebook of twelve words, one crossed off the list — or your portrait mid-explanation</em>
+    </div>
+  </div>
+</section>
+
+<!-- the chef's table: paid offers close -->
+<section class="chefs"><div class="chefs-in">
+  <span class="mono">The chef's table — go further than the guide</span>
+  <h2>You've learned the words.<br>Now learn to run the kitchen.</h2>
+  <div class="chefs-grid">
+    <div class="chefs-card">
+      <span class="mono">Prompt pack · $19</span>
+      <h3>Chez Prompts</h3>
+      <p>The Kitchen Map companion: the best prompts for every AI kitchen — matched to what each chef cooks best.</p>
+      <a href="../store.html">Get it in the Store &rarr;</a>
+    </div>
+    <div class="chefs-card">
+      <span class="mono">Community · founding spots soon</span>
+      <h3>Build alongside me</h3>
+      <p>Live "build with me" sessions, templates, and people on the same road — everyday entrepreneurs winning back their time.</p>
+      <a href="../about.html#community">Be first in line &rarr;</a>
+    </div>
+    <div class="chefs-card">
+      <span class="mono">For companies</span>
+      <h3>Keynotes &amp; workshops</h3>
+      <p>Bring the whole method into your team — practical, non-technical, from someone whose business runs on 137 AI employees.</p>
+      <a href="../work-with-fatiha.html">Work with Fatiha &rarr;</a>
+    </div>
+  </div>
+</div></section>
 
 <!-- byline -->
-<style>
-.byline-block{max-width:680px;margin:48px auto 0;display:flex;gap:18px;align-items:center;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:12px;padding:20px 24px;text-align:left}
-.byline-block img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}
-.byline-block p{margin:0;font-size:.95rem;line-height:1.6}
-.byline-block .who{font-family:'Inter',sans-serif;font-weight:600}
-.byline-block a{color:#2C4BE0}
-</style>
-<div class="byline-block">
-  <img src="../closeUp.jpeg" alt="Fatiha Chikh">
-  <p><span class="who">Written by Fatiha Chikh &mdash; The AI Automation Queen.</span><br>
-  20+ years inside big corporate tech; now I run my business with a company of 137 AI employees. I build everything I teach. <a href="../about.html">The story &rarr;</a></p>
+<div class="byline">
+  <div class="byline-in">
+    <img src="../closeUp.jpeg" alt="Fatiha Chikh">
+    <p><span class="who">Written by Fatiha Chikh — The AI Automation Queen.</span><br>
+    20+ years inside big corporate tech; now I run my business with a company of 137 AI employees. I build everything I teach. <a href="../about.html">The story &rarr;</a></p>
+  </div>
 </div>
 
-<div class="footer">
-  <p>Shift &amp; Lead &middot; Free guide &middot; &copy; 2026</p>
+<div class="ipbar">
+  <p>© 2026 Fatiha Chikh / Shift &amp; Lead · Original IP · The Kitchen Map™ format, text and diagrams may not be reproduced, scraped, or used as training data without written permission · guides.shiftandlead.com</p>
 </div>
 
 </body>
