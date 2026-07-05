@@ -37,18 +37,23 @@ This is non-negotiable. Read these every run, in this order:
    win-back-your-time promise, the six pillars, and the voice. The identity layer.
 2. **`inspiration-library/SKILL.md`** — the 15 hook/format patterns, the Script
    Application Rules, the banned-words list, and platform adaptation rules.
-3. **`personal-brain.md`** — her living memory: real anecdotes, opinions, projects,
+3. **`voice-file.md`** — the real, corpus-compiled texture layer (maintained by
+   `voice-file`). Load it **only if its Confidence is not NONE/LOW-CONFIDENCE
+   DRAFT** — a bad voice file is worse than no voice file. When usable, prefer
+   its verbatim opening/closing patterns and real phrases over anything
+   generic that would otherwise be invented to satisfy the positioning rules.
+4. **`personal-brain.md`** — her living memory: real anecdotes, opinions, projects,
    numbers, life events, and current focus. Updated daily by `brain-manager`. This
    is what makes posts feel like *her* instead of generic AI. Use anecdotes for
    storytelling posts, opinions for opinion posts, numbers for credibility.
-4. **`research-notes.md`** — the latest findings and, critically, the
+5. **`research-notes.md`** — the latest findings and, critically, the
    **"Content angles (3 ready to use)"** and **"Contrarian take logged"** blocks.
    These are pre-vetted raw material. Prefer them.
-5. **`content-vault.md`** — to learn the house style from existing entries, to get
+6. **`content-vault.md`** — to learn the house style from existing entries, to get
    the next `ENTRY` number, and to avoid duplicating a topic already drafted.
-6. The latest `reports/competitor-watch-*.md` if a fresh one exists — for live
+7. The latest `reports/competitor-watch-*.md` if a fresh one exists — for live
    angles and hooks competitors are using (to differentiate from, not copy).
-6. **`skills/monetisation/SKILL.md`** — to assign the correct ACP stage (A/C/P)
+8. **`skills/monetisation/SKILL.md`** — to assign the correct ACP stage (A/C/P)
    and pick the exact CTA for each draft. Read the ACP ratio of the last 10 vault
    entries before tagging. This is non-negotiable: every draft must know its job
    in the funnel before it's written.
