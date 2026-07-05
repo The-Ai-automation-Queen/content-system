@@ -77,11 +77,6 @@
    "title": "Chez Gemini. It already knows your calendar.",
    "desc": "The Google AI stack as a restaurant."
   },
-  "voice-clone-pipeline": {
-   "chip": "PIPELINE",
-   "title": "Build once, post in your voice forever.",
-   "desc": "The voice-clone content pipeline, step by step."
-  },
   "chez-mistral": {
    "chip": "DECODE",
    "title": "Chez Mistral. Open kitchen, nothing leaves the building.",

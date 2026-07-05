@@ -42,8 +42,12 @@ simplified for a non-technical person to set up in 2 days.
    repo. Pre-built sections: Your Brand Brain (positioning), Your Content Vault
    (drafts + statuses), Your Research Notes, and a simple Content Calendar view.
    Pre-filled with examples they swap out. No coding. No Claude Code required.
-2. **3 Simplified Skill Guides** (plain-English PDFs or Notion pages — not agent
+2. **4 Simplified Skill Guides** (plain-English PDFs or Notion pages — not agent
    prompts):
+   - Writing Style Clone Lite: make AI actually sound like you, in 5 steps
+     (this is the differentiator that was almost sold standalone at $47 as
+     "The Voice Clone Pipeline" — kept inside the Kit instead because the
+     method is close to the core IP; see `docs/FLAGSHIP-COURSE-STRATEGY.md` §2)
    - Content Engine Lite: how to use AI to write in your voice, step by step
    - Distribution Lite: how to schedule across 5 platforms in under 30 minutes
    - DM Responder Lite: how to set up "comment a keyword → auto DM → lead captured"
@@ -151,13 +155,22 @@ not a technical manual.
    Angle. Pre-filled with 2 examples.
 5. **Your Weekly Checklist** — A repeating checklist: run research, write 3 drafts,
    review + approve, schedule into your tool of choice, track performance.
-6. **Resources** — Links to the 3 skill guides and the walkthrough video.
+6. **Resources** — Links to the 4 skill guides and the walkthrough video.
 
-### Step 2 — Write the 3 Simplified Skill Guides
+### Step 2 — Write the 4 Simplified Skill Guides
 
-Rewrite `skills/content-engine/`, `skills/distribution/`, and `skills/dm-responder/`
-as plain-English step-by-step guides. Strip all agent-specific instructions.
-Format: numbered steps a 12-year-old could follow. Max 2 pages each. PDF format.
+Rewrite the voice-calibration method (see `products/business-os-starter-kit.md`
+Part 2), `skills/content-engine/`, `skills/distribution/`, and
+`skills/dm-responder/` as plain-English step-by-step guides. Strip all
+agent-specific instructions. Format: numbered steps a 12-year-old could
+follow. Max 2 pages each. PDF format.
+
+Guide 0 — Writing Style Clone Lite:
+- Step 1: Gather 5 samples of your real, typical writing
+- Step 2: Run the Voice Calibration prompt (6 rules that describe your voice)
+- Step 3: Stress-test it on an unfamiliar topic; tighten any rule that misses
+- Step 4: Lock the 6 rules at the top of your Brand Brain
+- Step 5: Re-run every few months as your voice evolves
 
 Guide 1 — Content Engine Lite:
 - Step 1: Open your brand brain in Notion and read your positioning section
@@ -214,6 +227,7 @@ guides, and a 25-minute walkthrough video showing the whole thing working live."
 
 **What you get:**
 - The Business OS Notion template (pre-built, pre-filled — swap in your brand)
+- Writing Style Clone Lite: make AI actually sound like you, in 5 steps
 - Content Engine Lite: write in your voice using AI, step by step
 - Distribution Lite: schedule across 5 platforms in 30 minutes
 - DM Responder Lite: keyword comment → auto DM → lead captured (no code)
