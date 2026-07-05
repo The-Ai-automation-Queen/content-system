@@ -46,6 +46,13 @@ as the database. Never invent content that contradicts them.
   daily by `brain-manager` with real anecdotes, opinions, projects, numbers, life
   events, and current focus. This is what makes content personal — not generic AI
   output. `content-engine` loads it before every writing pass.
+- **`voice-file.md`** — the real, corpus-compiled texture layer. Maintained by
+  `voice-file` from raw material dropped in `voice-corpus/` (old posts, emails,
+  transcripts — anything she actually wrote/said, never AI output). Where the
+  brain supplies *facts* and `positioning` supplies *rules*, this supplies real
+  sentences to match — closes the gap between "sounds like the rules" and
+  "sounds like her." `content-engine` loads it (when not LOW-CONFIDENCE) after
+  `inspiration-library` and before the brain.
 
 ---
 
@@ -69,6 +76,13 @@ Romain's machines:
   and current events, then writes answers into `personal-brain.md`. This is what
   makes content feel personal — the AI knows her anecdotes, her opinions, her
   numbers. Modeled on Romain Brunel's Telegram-based Cerveau Manager.
+- **`voice-file`** — the texture layer. Compiles `voice-corpus/` (her real,
+  pre-AI writing/speech) into `voice-file.md`: verbatim opening/closing
+  patterns, real recurring words, sentence rhythm, and confirmed-absent AI-isms.
+  Run `interview` mode to elicit raw writing samples when the corpus is thin,
+  `compile` to (re)build the voice file, `validate` to blind-test it against a
+  real post, `status` for a health check. Without this, `content-engine` only
+  has style *rules* (positioning) to work from — this gives it real *evidence*.
 - **`signal-harvester`** — *M01 data layer.* Multi-source daily signal harvest
   (Apify IG/X scrapes, YouTube virality, RSS blogs, Tavily) with a source-mix +
   ≥2-lead-magnet rule → a `research-notes.md` entry. The richer alternative to
