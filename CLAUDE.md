@@ -68,6 +68,12 @@ Skills are reusable, version-controlled instructions. Two kinds live here:
   tracked institutional publisher (23 rows), 15 named hook/format patterns,
   and the script application rules. Load this
   before writing any script, hook, or outline.
+- **`copy-craft/SKILL.md`** — the structural/platform-mechanics layer: dwell-time
+  and hook-window rules per platform, timeless direct-response checks, and the
+  authority to defer to `performance-log.md`'s real logged evidence over
+  general best practice whenever they conflict. Distinct from voice (tone),
+  inspiration-library (which studied pattern), and monetisation (which CTA) —
+  this is *why a piece would or wouldn't get read*.
 
 **Action skills** (in `skills/`, each a folder with a `SKILL.md`). Mapped to
 Romain's machines:
@@ -108,8 +114,12 @@ Romain's machines:
   platforms (Meta Graph API for IG/FB when tokens set, Apify fallback for all)
   for follower counts + post-level engagement, writes `performance-log.md`,
   annotates POSTED vault entries, and feeds the dashboard intelligence panels.
-  Supports `competitors` mode (scrapes creators.csv handles) and `linkedin-update`
-  mode (manual paste for LinkedIn post analytics).
+  Also extracts a **Lessons** subsection each run — a ranked, evidence-backed
+  comparison of winning vs. losing patterns (pillar/format/hook mechanism) —
+  that `copy-craft` and `content-engine` read before the next drafting pass.
+  This is what actually closes the loop; scraped numbers alone don't change
+  what gets written next. Supports `competitors` mode (scrapes creators.csv
+  handles) and `linkedin-update` mode (manual paste for LinkedIn post analytics).
 - **`weekly-ops`** — the orchestrator. Runs the full machine loop (Step 7/8).
 - **`research-digest`** — last-30-days research sweep → `reports/` + a
   `research-notes.md` entry. (Lighter fallback for `signal-harvester`.)

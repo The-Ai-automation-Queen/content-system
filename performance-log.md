@@ -68,6 +68,33 @@
 - Facebook / YouTube / LinkedIn / Twitter / Threads: no baseline captured (scrape failed or platform not retrievable — see Profile snapshot notes)
 - Top-performing piece: IG clone reel "Meet mine. Fat.IA" — 41 likes, 9 comments, 893 plays, 7.9% eng. rate
 - Weakest signal: the "6 AI words / glossary pack" educational carousels — 3–9 likes each (0.5–1.9%), well below the personal/story posts
-- Content signal: **personal narrative + her face/voice (clone reel, "18 months building", mission posts) outperforms generic AI-explainer carousels ~5:1 on engagement rate.** The rebuild's voice (specific, personal, provocative) is pointed in the right direction — lean into face/story video, retire listicle glossary packs.
+
+### Lessons — repeatable patterns
+
+> Read by `copy-craft` and `content-engine` before every drafting pass. This is
+> pre-rebrand data (all 12 scraped posts predate 22/06/2026), so treat it as
+> **directional evidence about format/hook mechanism, not a verdict on the new
+> voice/positioning** — no rebuilt-brand content has been scraped yet.
+
+**Winners this run:**
+1. Personal reveal / face-and-story (IG Reel/carousel) — "Meet mine. Fat.IA…"
+   (7.9%), "18 months attending AI events… then I started building" (7.8%),
+   "This is how we use AI in the fashion industry… Lelabplus" (5.2%)
+
+**Losers this run:**
+1. Generic educational listicle (IG carousel, "6 AI [topic] Pack N of 6"
+   glossary series) — 0.5–1.9% across 6 posts (Packs 1–6)
+
+**The comparison:** personal narrative + her face/voice/actual story ran
+**~4–8x** the engagement rate of the generic AI-explainer glossary-pack format
+across these 12 posts (7.9%/7.8%/5.2% vs. 0.5–1.9%). The format gap is large
+and consistent enough across 6 losing posts to trust, even pre-rebrand.
+
+**Carried forward:** first run with enough data to compare — no prior finding
+to confirm or contradict. **Action for `copy-craft`/`content-engine`:** until
+rebuilt-brand posts are scraped, treat "personal reveal/story" as the
+provisional winning shape and "generic listicle/explainer" as the provisional
+losing shape — re-validate against real post-rebrand data as soon as it exists,
+since this evidence predates the current positioning.
 
 ---

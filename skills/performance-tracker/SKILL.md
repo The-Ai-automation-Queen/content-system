@@ -369,6 +369,34 @@ If a prior `## PERFORMANCE` entry exists in `performance-log.md`:
 
 If no prior entry exists, write `(first snapshot — no delta)`.
 
+### 5. Extract lessons — winners vs losers
+
+This is the step that closes the loop into `content-engine` and `copy-craft`.
+Raw numbers alone don't change what gets written next; a ranked, attributed
+comparison does.
+
+1. Rank this run's scraped posts (all platforms, pooled) by engagement rate.
+2. Take the top 3 and bottom 3 (or top/bottom 25% if there are enough posts).
+   For each, note: platform, format (reel/carousel/text/etc.), matched vault
+   entry's **pillar** and **pattern used** (if matched), and the hook's
+   mechanism (bold claim / curiosity gap / personal reveal / educational
+   listicle / etc. — describe what it actually is, don't force it into a
+   pre-existing label if it doesn't fit).
+3. Write a **comparison, not just a list**: what structurally separates the
+   top group from the bottom group? Prefer a specific, falsifiable claim
+   ("personal/behind-the-scenes reveals ran 4–8x the engagement rate of
+   educational listicles across N posts this run") over a vague one
+   ("some posts did better").
+4. Carry forward lessons across runs — if this run's top pattern matches a
+   pattern already logged as a winner in a previous run's Lessons section,
+   say so explicitly ("confirms the 2026-06-27 finding") rather than treating
+   every run as a first look. If a run has too few posts (<6) for a reliable
+   comparison, say so and skip ranking rather than force a conclusion from
+   thin data.
+5. Never launder an assumption as a finding — if a plausible-sounding pattern
+   isn't actually supported by this run's numbers, don't write it down as a
+   lesson.
+
 ---
 
 ## Output
@@ -443,7 +471,28 @@ Then prepend the new entry (newest at top, below the header):
 - LinkedIn connections: +89 (+1.6%)
 - Top-performing piece: ENTRY 010 — 12,400 views, 7.4% eng. rate
 - Weakest platform: [platform] — [observation]
-- Content signal: [one sentence — e.g., "talking-head reels outperform carousels 3:1 on IG"]
+
+### Lessons — repeatable patterns
+
+> Read by `copy-craft` and `content-engine` before every drafting pass. Every
+> claim here must trace to specific posts in this run's tables above — no
+> assumptions. If fewer than 6 posts were scraped this run, write "insufficient
+> data this run" instead of forcing a ranking.
+
+**Winners this run:**
+1. [Pillar/format/hook mechanism] — [N]% eng. rate avg, e.g. ENTRY 010, ENTRY 003
+2. ...
+
+**Losers this run:**
+1. [Pillar/format/hook mechanism] — [N]% eng. rate avg, e.g. ENTRY 007
+2. ...
+
+**The comparison:** [one specific, falsifiable sentence on what separates
+winners from losers — e.g., "personal/behind-the-scenes reveals (7.8% avg)
+ran 4-8x the educational-listicle format (0.5-1.9% avg) across 12 posts."]
+
+**Carried forward:** [confirms / contradicts / extends a prior run's finding,
+cite the date — or "first run with enough data to compare" if none exists yet]
 
 ---
 ```
