@@ -171,6 +171,13 @@ a{color:var(--accent)}
   .sec{padding:52px 16px 8px}
   .cover{padding:48px 16px 40px}
 }
+
+/* qa: contain grid children, never let the page scroll sideways */
+.sec-body>*{min-width:0}
+.sec-body svg,.sec-body img{max-width:100%;height:auto}
+.imgslot{max-width:100%;overflow:hidden}
+.sec table{max-width:100%}
+body{overflow-x:hidden}
 </style>
 </head>
 <body>

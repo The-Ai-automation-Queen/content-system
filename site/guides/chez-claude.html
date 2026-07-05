@@ -171,6 +171,13 @@ details.fold[open]>summary::after{content:"\2191"}
 details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 .warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
 .warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
+
+/* qa: contain grid children, never let the page scroll sideways */
+.sec-body>*{min-width:0}
+.sec-body svg,.sec-body img{max-width:100%;height:auto}
+.imgslot{max-width:100%;overflow:hidden}
+.sec table{max-width:100%}
+body{overflow-x:hidden}
 </style>
 </head>
 <body>

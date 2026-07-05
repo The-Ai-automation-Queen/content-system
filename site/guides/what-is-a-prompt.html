@@ -154,6 +154,13 @@ a{color:var(--accent)}
 @media(max-width:560px){
   .warn-grid{grid-template-columns:1fr}
 }
+
+/* qa: contain grid children, never let the page scroll sideways */
+.sec-body>*{min-width:0}
+.sec-body svg,.sec-body img{max-width:100%;height:auto}
+.imgslot{max-width:100%;overflow:hidden}
+.sec table{max-width:100%}
+body{overflow-x:hidden}
 </style>
 </head>
 <body>
