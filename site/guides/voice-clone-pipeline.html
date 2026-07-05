@@ -215,17 +215,17 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 <section class="sec">
   <div class="sec-head">
     <div class="sec-num">01</div>
-    <div><h2>Before You Start — what you'll have by the end</h2><span class="mono">First course · 2 min</span></div>
+    <div><h2>Before You Start. What you'll have by the end.</h2><span class="mono">First course · 2 min</span></div>
   </div>
   <div class="sec-body">
     <div>
-      <p class="dropcap">Your voice. Your words. Rendered while you sleep. This is a faceless Reel workflow that costs nothing per generation and runs on a laptop with no GPU. (And yes — even the best chef makes mistakes. The allergen card comes right before you eat — course four.)</p>
+      <p class="dropcap">Your voice. Your words. Rendered while you sleep. This is a faceless Reel workflow that costs nothing per generation and runs on a laptop with no GPU. (And yes, even the best chef makes mistakes. The allergen card comes right before you eat, in course four.)</p>
       <p>By the time you finish this guide, you'll have your voice cloned from a 30-second sample and usable in 30 languages; a Colab notebook that batches voiceovers to Google Drive overnight; a ReelStack pipeline that turns those voiceovers into finished 9:16 Reels; and a cost of $0 per audio generation after setup, with no ElevenLabs subscription needed.</p>
       <p>No local GPU. Colab handles all the generation in the cloud. Your laptop only renders the final video.</p>
     </div>
     <div class="imgslot" style="aspect-ratio:4/3">
       <span class="mono">Image slot 01</span>
-      <em>Editorial photo: laptop + phone recording a voice memo, warm desk light — duotone ink/purple grade</em>
+      <em>Editorial photo: laptop + phone recording a voice memo, warm desk light, duotone ink/purple grade</em>
     </div>
   </div>
 
@@ -238,14 +238,14 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
     <div class="station"><span class="mono">Item</span><h4>Google Drive for Desktop</h4><p>Syncs Colab output to your laptop. Free.</p></div>
   </div>
 </details>
-  <p class="menu-more">Five things to gather before Step 1 — the rest of the guide assumes you have them.</p>
+  <p class="menu-more">Five things to gather before Step 1. The rest of the guide assumes you have them.</p>
 </section>
 
 <!-- 02 CLONE THE VOICE -->
 <section class="sec">
   <div class="sec-head">
     <div class="sec-num">02</div>
-    <div><h2>Clone the Voice — steps 1 to 3</h2><span class="mono">Second course · record, load, batch</span></div>
+    <div><h2>Clone the Voice. Steps 1 to 3.</h2><span class="mono">Second course · record, load, batch</span></div>
   </div>
 
   <div class="sec-body" style="display:block">
@@ -254,10 +254,10 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
     <div style="border-top:1px solid var(--rule);margin-top:26px;padding-top:26px">
       <span class="mono" style="font-size:10px;color:var(--accent)">Step 01</span>
       <h3 style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.4rem;margin:.3rem 0 .6rem">Record your voice sample</h3>
-      <p style="max-width:60ch">Open Voice Memos, Audacity, or any recorder. Record 20&ndash;30 seconds of yourself speaking naturally — read a paragraph from a book, describe your day.</p>
+      <p style="max-width:60ch">Open Voice Memos, Audacity, or any recorder. Record 20&ndash;30 seconds of yourself speaking naturally, like reading a paragraph from a book, or describing your day.</p>
       <ul>
         <li>Clean room. No fan, traffic, or music behind you.</li>
-        <li>Normal pace. Don't perform — the clone copies how you <em>actually</em> talk.</li>
+        <li>Normal pace. Don't perform, because the clone copies how you <em>actually</em> talk.</li>
         <li>Save as WAV at 44kHz or 48kHz, mono. If your recorder only exports MP3, convert it in Audacity.</li>
         <li>Name it <code>my-voice-ref.wav</code>. You'll reuse this file forever.</li>
       </ul>
@@ -282,7 +282,7 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
     <div style="border-top:1px solid var(--rule);margin-top:26px;padding-top:26px">
       <span class="mono" style="font-size:10px;color:var(--accent)">Step 03</span>
       <h3 style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.4rem;margin:.3rem 0 .6rem">Upload your voice + generate in batch</h3>
-      <p style="max-width:60ch">When the notebook hits Cell 5, an upload button appears. Drop <code>my-voice-ref.wav</code> — Colab caches it for the session. Then edit the <code>BATCH</code> list in Cell 7 with your Reel scripts. Each item generates one WAV file:</p>
+      <p style="max-width:60ch">When the notebook hits Cell 5, an upload button appears. Drop <code>my-voice-ref.wav</code>. Colab caches it for the session. Then edit the <code>BATCH</code> list in Cell 7 with your Reel scripts. Each item generates one WAV file:</p>
       <pre><code>BATCH = [
     {
         'slug': 'ai-plan-actually-use',
@@ -301,14 +301,14 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 <!-- pull quote -->
 <div class="pull">
   <blockquote>"One ref voice. <strong>Unlimited scripts.</strong> Same voice across 30 languages."</blockquote>
-  <span class="mono">— why you only record once</span>
+  <span class="mono">Why you only record once</span>
 </div>
 
 <!-- 03 THE PIPELINE -->
 <section class="sec" style="padding-top:0">
   <div class="sec-head">
     <div class="sec-num">03</div>
-    <div><h2>The Pipeline — steps 4 to 7</h2><span class="mono">Third course · sync, lock, scaffold, render</span></div>
+    <div><h2>The Pipeline. Steps 4 to 7.</h2><span class="mono">Third course · sync, lock, scaffold, render</span></div>
   </div>
 
   <div class="sec-body" style="display:block">
@@ -317,7 +317,7 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
     <div style="border-top:1px solid var(--rule);margin-top:26px;padding-top:26px">
       <span class="mono" style="font-size:10px;color:var(--accent)">Step 04</span>
       <h3 style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.4rem;margin:.3rem 0 .6rem">Sync WAVs to your laptop</h3>
-      <p style="max-width:60ch">Install Google Drive for Desktop. Pick <strong>Stream files</strong> mode, not Mirror — nothing eats your local disk, files download on demand. After install, your Drive mounts as a folder. Browse to <code>voxcpm-output/</code> and move the file into your Remotion project:</p>
+      <p style="max-width:60ch">Install Google Drive for Desktop. Pick <strong>Stream files</strong> mode, not Mirror, so nothing eats your local disk. Files download on demand. After install, your Drive mounts as a folder. Browse to <code>voxcpm-output/</code> and move the file into your Remotion project:</p>
       <pre><code>mkdir public\audio
 copy "G:\My Drive\voxcpm-output\2026-06-18_ai-plan-actually-use.wav" public\audio\myreel.wav</code></pre>
     </div>
@@ -327,7 +327,7 @@ copy "G:\My Drive\voxcpm-output\2026-06-18_ai-plan-actually-use.wav" public\audi
       <h3 style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.4rem;margin:.3rem 0 .6rem">Lock motion to voice</h3>
       <p style="max-width:60ch">From your Remotion project root:</p>
       <pre><code>/reelstack-beats public/audio/myreel.wav</code></pre>
-      <p style="max-width:60ch">ReelStack pipes the WAV through ffmpeg, runs whisper-cli, and prints frame-accurate <code>BEAT</code> constants. Copy them — they lock every scene cut to the words you actually said.</p>
+      <p style="max-width:60ch">ReelStack pipes the WAV through ffmpeg, runs whisper-cli, and prints frame-accurate <code>BEAT</code> constants. Copy them: they lock every scene cut to the words you actually said.</p>
       <div class="station" style="max-width:60ch;background:var(--cream);border-color:var(--accent)">
         <span class="mono">Why this matters</span>
         <p style="margin-top:6px"><strong>Eyeballing scene cuts</strong> on a 90-second Reel drifts 6 seconds by the end. Whisper-locked beats stay in sync to the frame.</p>
@@ -354,7 +354,7 @@ copy "G:\My Drive\voxcpm-output\2026-06-18_ai-plan-actually-use.wav" public\audi
       <div class="station"><span class="mono">Old cost</span><h4>CapCut Pro auto-caption</h4><p>$8/month &rarr; now $0 (whisper-cli).</p></div>
       <div class="station"><span class="mono">Old cost</span><h4>Stock B-roll subscription</h4><p>$20&ndash;40/month &rarr; now $0 (ReelStack primitives).</p></div>
     </div>
-    <p class="menu-more">The savings only matter if you publish — the point of this stack is to ship more Reels with less friction.</p>
+    <p class="menu-more">The savings only matter if you publish. The point of this stack is to ship more Reels with less friction.</p>
   </div>
 </section>
 
@@ -373,17 +373,17 @@ copy "G:\My Drive\voxcpm-output\2026-06-18_ai-plan-actually-use.wav" public\audi
     <h2>Know before you trust it.</h2>
     <div class="warn-grid">
       <div class="warn-card"><div class="term">Colab disconnects mid-batch</div><p>Free tier sessions cap around 12 hours. Keep the tab open. For batches over 20 Reels, <strong>upgrade to Colab Pro</strong> (~$10/month).</p></div>
-      <div class="warn-card"><div class="term">The cloned voice sounds robotic</div><p>The reference WAV is too short, too noisy, or too performed. Re-record 30 seconds of natural speech in a quiet room — <strong>clone quality equals reference quality.</strong></p></div>
+      <div class="warn-card"><div class="term">The cloned voice sounds robotic</div><p>The reference WAV is too short, too noisy, or too performed. Re-record 30 seconds of natural speech in a quiet room: <strong>clone quality equals reference quality.</strong></p></div>
       <div class="warn-card"><div class="term">Whisper picks up the wrong words</div><p>Speak the script exactly as written. <strong>Test Cell 7 with one short script</strong> before batching 20.</p></div>
       <div class="warn-card"><div class="term">ReelStack rejects the render</div><p>The lint failed. Run <code style="background:rgba(255,255,255,.1);color:#fff;padding:1px 6px;border-radius:3px">/reelstack-lint MyReel.tsx</code> for <strong>the exact violations.</strong></p></div>
     </div>
-    <p class="storelink">I keep verification prompts for exactly these failures — <a href="../store.html">The Judge's Prompts &rarr;</a></p>
+    <p class="storelink">I keep verification prompts for exactly these failures. <a href="../store.html">The Judge's Prompts &rarr;</a></p>
   </div>
 </section>
 
 <!-- subscribe strip -->
 <div class="subs"><div class="subs-in">
-  <div><h3>Get every new Kitchen Map in your inbox.</h3><p>Plus The Insider Brief — one curated AI briefing every Tuesday, verdicts included.</p></div>
+  <div><h3>Get every new Kitchen Map in your inbox.</h3><p>Plus The Insider Brief: one curated AI briefing every Tuesday, verdicts included.</p></div>
   <a href="https://brief.shiftandlead.com">Subscribe free &rarr;</a>
 </div></div>
 
@@ -391,13 +391,13 @@ copy "G:\My Drive\voxcpm-output\2026-06-18_ai-plan-actually-use.wav" public\audi
 <section class="sec">
   <div class="sec-head">
     <div class="sec-num">05</div>
-    <div><h2>The Bill — what it costs, what's next</h2><span class="mono">Last course · 1 min</span></div>
+    <div><h2>The Bill. What it costs, what's next.</h2><span class="mono">Last course · 1 min</span></div>
   </div>
   <div class="sec-body">
     <div>
       <p>Free tier: Colab's free GPU plus VoxCPM's open weights get you the full pipeline at $0 per generation, forever, as long as your batches stay under the 12-hour session cap. ReelStack itself is a one-time purchase, not a subscription.</p>
-      <p>Paid tier: if you're publishing daily or batching more than 20 Reels at once, Colab Pro (~$10/month) removes the disconnect risk. That's the entire ongoing cost of this stack — no ElevenLabs bill, no CapCut Pro, no stock footage subscription.</p>
-      <p><strong>Next on the map:</strong> The Community — where builders share their voice-clone presets, BEAT recipes, and finished Reels. Come compare notes.</p>
+      <p>Paid tier: if you're publishing daily or batching more than 20 Reels at once, Colab Pro (~$10/month) removes the disconnect risk. That's the entire ongoing cost of this stack: no ElevenLabs bill, no CapCut Pro, no stock footage subscription.</p>
+      <p><strong>Next on the map:</strong> The Community: where builders share their voice-clone presets, BEAT recipes, and finished Reels. Come compare notes.</p>
     </div>
     <div class="imgslot" style="aspect-ratio:4/3">
       <span class="mono">Image slot 03</span>
@@ -408,25 +408,25 @@ copy "G:\My Drive\voxcpm-output\2026-06-18_ai-plan-actually-use.wav" public\audi
 
 <!-- the chef's table: paid offers close -->
 <section class="chefs"><div class="chefs-in">
-  <span class="mono">The chef's table — go further than the guide</span>
+  <span class="mono">The chef's table. Go further than the guide.</span>
   <h2>You've built the pipeline.<br>Now build a system around it.</h2>
   <div class="chefs-grid">
     <div class="chefs-card">
       <span class="mono">Prompt pack · $19</span>
       <h3>Chez Prompts</h3>
-      <p>The Kitchen Map companion: the best prompts for this pipeline and every other tool in the stack — matched to what each one does best.</p>
+      <p>The Kitchen Map companion: the best prompts for this pipeline and every other tool in the stack, matched to what each one does best.</p>
       <a href="../store.html">Get it in the Store &rarr;</a>
     </div>
     <div class="chefs-card">
       <span class="mono">Community · founding spots soon</span>
       <h3>Build alongside me</h3>
-      <p>Live "build with me" sessions, templates, and people on the same road — everyday entrepreneurs winning back their time.</p>
+      <p>Live "build with me" sessions, templates, and people on the same road, everyday entrepreneurs winning back their time.</p>
       <a href="../about.html#community">Be first in line &rarr;</a>
     </div>
     <div class="chefs-card">
       <span class="mono">For companies</span>
       <h3>Keynotes &amp; workshops</h3>
-      <p>Bring the whole method into your team — practical, non-technical, from someone whose business runs on 137 AI employees.</p>
+      <p>Bring the whole method into your team, practical, non-technical, from someone whose business runs on 137 AI employees.</p>
       <a href="../work-with-fatiha.html">Work with Fatiha &rarr;</a>
     </div>
   </div>
@@ -436,7 +436,7 @@ copy "G:\My Drive\voxcpm-output\2026-06-18_ai-plan-actually-use.wav" public\audi
 <div class="byline">
   <div class="byline-in">
     <img src="../closeUp.jpeg" alt="Fatiha Chikh">
-    <p><span class="who">Written by Fatiha Chikh &mdash; The AI Automation Queen.</span><br>
+    <p><span class="who">Written by Fatiha Chikh: The AI Automation Queen.</span><br>
     20+ years inside big corporate tech; now I run my business with a company of 137 AI employees. I build everything I teach. <a href="../about.html">The story &rarr;</a></p>
   </div>
 </div>
