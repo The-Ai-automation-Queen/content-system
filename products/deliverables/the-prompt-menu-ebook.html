@@ -1,0 +1,3229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Prompt Menu: Fatiha Chikh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --ink: #1A1A1A;
+    --electric: #2C4BE0;
+    --navy: #1B2EA0;
+    --tint: #E4EAFB;
+    --cream: #EEF2FC;
+    --light-on-dark: #7FA0FF;
+    --signal: #E63955;
+    --muted: #5C5A57;
+    --rule: #D8D6D2;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--white);
+    color: var(--ink);
+  }
+
+  body {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    margin: 0 0 0.4em 0;
+    line-height: 1.12;
+  }
+
+  .mono {
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .ui {
+    font-family: 'Inter', sans-serif;
+  }
+
+  a { color: var(--electric); }
+
+  /* ============ PAGE / PRINT SETUP ============ */
+
+  @page {
+    size: A4;
+    margin: 18mm;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 40px;
+    page-break-after: always;
+    position: relative;
+  }
+
+  .page:last-child { page-break-after: auto; }
+
+  .page-footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  @media print {
+    body { font-size: 12.5pt; }
+    .page {
+      max-width: 100%;
+      padding: 0;
+      min-height: 246mm;
+    }
+    .no-print { display: none !important; }
+    .page-footer {
+      position: fixed;
+      bottom: 6mm;
+      left: 0;
+      right: 0;
+      text-align: center;
+      border-top: none;
+      margin-top: 0;
+    }
+    .dark-panel { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .prompt-block { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media screen {
+    body { background: #F4F4F2; }
+    .page {
+      background: var(--white);
+      margin: 24px auto;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 12px 40px rgba(0,0,0,0.06);
+      min-height: 900px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .page { padding: 40px 22px; min-height: auto; }
+  }
+
+  img, svg { max-width: 100%; }
+
+  /* ============ DARK PANELS (cover + dividers) ============ */
+
+  .dark-panel {
+    background: var(--white); border-top: 4px solid var(--electric); border-bottom: 4px solid var(--electric);
+    color: var(--muted);
+    margin: -56px -40px 0 -40px;
+    padding: 56px 40px;
+    min-height: calc(100% + 56px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 720px) {
+    .dark-panel { margin: -40px -22px 0 -22px; padding: 40px 22px; }
+  }
+
+  @media print {
+    .dark-panel { margin: 0; padding: 0; min-height: 246mm; }
+  }
+
+  .dark-panel h1, .dark-panel h2 {
+    color: var(--ink);
+  }
+
+  .dark-panel .mono {
+    color: var(--electric);
+  }
+
+  /* ============ COVER ============ */
+
+  .cover {
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .cover-top .mono {
+    font-size: 12px;
+    color: var(--electric);
+    margin-bottom: 32px;
+    display: block;
+  }
+
+  .cover-mid { margin: auto 0; }
+
+  .cover-mid .title {
+    font-size: 3.4rem;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .cover-mid .title .accent {
+    color: var(--electric);
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  .cover-mid .subtitle {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin-top: 18px;
+    max-width: 480px;
+  }
+
+  .cover-bottom {
+    border-top: 1px solid rgba(127,160,255,0.3);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .cover-bottom .byline {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .cover-bottom .byline strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  .cover-bottom .edition {
+    font-size: 10.5px;
+    color: var(--electric);
+  }
+
+  /* ============ SECTION DIVIDERS ============ */
+
+  .divider {
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .divider .part-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 22px;
+  }
+
+  .divider .part-title {
+    font-size: 2.5rem;
+    color: var(--ink);
+    max-width: 520px;
+  }
+
+  .divider .part-purpose {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-top: 18px;
+    max-width: 480px;
+    border-left: 2px solid var(--electric);
+    padding-left: 18px;
+  }
+
+  .divider .part-count {
+    margin-top: 40px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: var(--electric);
+  }
+
+  /* ============ TYPICAL LIGHT PAGE ELEMENTS ============ */
+
+  .kicker {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  h2.page-title {
+    font-size: 2rem;
+    color: var(--ink);
+    margin-bottom: 0.5em;
+  }
+
+  p { margin: 0 0 1em 0; }
+
+  .lede {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+
+  /* ============ TRAFFIC LIGHT CARD ============ */
+
+  .traffic-card {
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin: 26px 0;
+  }
+
+  .traffic-card .traffic-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .traffic-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+
+  .traffic-row + .traffic-row {
+    border-top: 1px solid var(--rule);
+  }
+
+  .dot {
+    flex: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-top: 4px;
+  }
+
+  .dot.green { background: #2E9E5B; }
+  .dot.amber { background: #E0A82E; }
+  .dot.red { background: var(--signal); }
+
+  .traffic-row strong { color: var(--ink); }
+
+  /* ============ NUMBERED / HOW-TO LISTS ============ */
+
+  .howto-list {
+    list-style: none;
+    margin: 24px 0;
+    padding: 0;
+    counter-reset: howto;
+  }
+
+  .howto-list li {
+    counter-increment: howto;
+    position: relative;
+    padding-left: 42px;
+    margin-bottom: 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .howto-list li::before {
+    content: counter(howto);
+    position: absolute;
+    left: 0;
+    top: -2px;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--electric);
+  }
+
+  .howto-list li strong { color: var(--ink); }
+
+  /* ============ TABLE OF CONTENTS ============ */
+
+  .toc-part {
+    margin-bottom: 22px;
+  }
+
+  .toc-part-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 6px;
+  }
+
+  .toc-part-num {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--electric);
+    flex: none;
+    width: 36px;
+  }
+
+  .toc-part-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.08rem;
+    color: var(--ink);
+  }
+
+  .toc-part-title .toc-count {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-left: 8px;
+  }
+
+  .toc-items {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    padding-left: 50px;
+    line-height: 1.5;
+  }
+
+  /* ============ PROMPT CARDS ============ */
+
+  .prompt-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 22px 24px 24px 24px;
+    margin: 0 0 22px 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .prompt-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .prompt-label .prompt-num {
+    background: var(--electric);
+    color: var(--ink);
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 11px;
+  }
+
+  .prompt-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .prompt-block {
+    background: #EEF2FC; color: var(--ink); border-left: 3px solid var(--electric);
+    border-radius: 8px;
+    padding: 16px 18px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0 0 12px 0;
+    white-space: pre-wrap;
+  }
+
+  .prompt-when {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .prompt-when strong {
+    color: var(--ink);
+  }
+
+  .flagship {
+    border-color: var(--electric);
+    border-width: 1.5px;
+  }
+
+  .flagship-tag {
+    display: inline-block;
+    background: var(--electric);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 3px 9px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
+  /* ============ MENU CATEGORY LABEL (Starters/Mains/Specials/Verify) ============ */
+
+  .menu-category {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--navy);
+    background: var(--tint);
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 6px;
+    margin: 30px 0 14px 0;
+  }
+
+  .menu-category:first-of-type { margin-top: 8px; }
+
+  .menu-category-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    margin: -8px 0 18px 0;
+  }
+
+  /* ============ MENU CONVENTION EXPLAINER (how-to-use page) ============ */
+
+  .convention-grid {
+    margin: 22px 0;
+  }
+
+  .convention-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 14px 0;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .convention-row + .convention-row {
+    border-top: 1px solid var(--rule);
+  }
+
+  .convention-tag {
+    flex: none;
+    width: 108px;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--electric);
+  }
+
+  .convention-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .convention-desc strong { color: var(--ink); }
+
+  /* ============ KITCHEN INDEX (table of contents list of 10) ============ */
+
+  .kitchen-index {
+    margin: 26px 0;
+  }
+
+  .kitchen-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 14px 0;
+  }
+
+  .kitchen-row + .kitchen-row {
+    border-top: 1px solid var(--rule);
+  }
+
+  .kitchen-num {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--electric);
+    flex: none;
+    width: 34px;
+  }
+
+  .kitchen-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--ink);
+    flex: none;
+    width: 160px;
+  }
+
+  .kitchen-tagline {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* ============ CLOSING PAGE ============ */
+
+  .closing-note {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 28px 26px;
+    margin: 28px 0;
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  .signoff {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    margin-top: 8px;
+  }
+
+  .crosssell {
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .crosssell .ui {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .crosssell .cta {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--electric);
+    white-space: nowrap;
+  }
+
+  .license-block {
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.6;
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+    margin-top: 32px;
+  }
+
+  /* small helper */
+  .center { text-align: center; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- COVER PAGE                                                    -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel cover">
+    <div class="cover-top">
+      <span class="mono">The AI Automation Queen &middot; Shift &amp; Lead</span>
+    </div>
+    <div class="cover-mid">
+      <h1 class="title">The Prompt <span class="accent">Menu</span></h1>
+      <p class="subtitle">Copy-paste prompts for every AI tool. 150 dishes, 10 kitchens, one menu. Order with confidence.</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="byline">
+        <strong>Fatiha Chikh</strong>
+        <span class="ui">The AI Automation Queen &middot; Shift &amp; Lead</span>
+      </div>
+      <div class="edition mono">Edition 1 &middot; 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- HOW TO USE THIS                                               -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Before you order</span>
+  <h2 class="page-title">How to use this menu</h2>
+  <p class="lede">One menu, ten kitchens, the same four courses in every one. Here's how to read it.</p>
+
+  <ol class="howto-list">
+    <li><strong>Find your kitchen.</strong> Each of the 10 AI tools gets its own chapter: Claude, ChatGPT, Gemini, Copilot, Grok, Mistral, DeepSeek, Kimi, Manus, Meta AI. If you already know which tool you're opening today, jump straight to that chapter.</li>
+    <li><strong>Order by course.</strong> Every kitchen serves the same four courses, in the same order: Starters (fast wins), Mains (real business work), Chef's Specials (only that kitchen can cook these), and Verify (make it prove its work). Start with Starters if it's your first time in that kitchen.</li>
+    <li><strong>Adapt every bracket.</strong> [Like this] marks a spot that's yours to fill in. The more specific you make it, the better the dish turns out. A vague bracket gets a vague answer.</li>
+  </ol>
+
+  <div class="traffic-card">
+    <div class="traffic-title">The Traffic Light Rule</div>
+    <p class="ui" style="margin-bottom:16px; color:var(--muted); font-size:13.5px;">
+      Every prompt in this menu is written to model good data hygiene: names become [Client] or [Me], numbers get rounded, nothing sensitive gets pasted in. Use this rule for anything you put into an AI tool, in this menu or anywhere else.
+    </p>
+    <div class="traffic-row">
+      <div class="dot green"></div>
+      <div><strong>Green, share freely.</strong> General questions, public information, your own drafts with nothing identifying in them.</div>
+    </div>
+    <div class="traffic-row">
+      <div class="dot amber"></div>
+      <div><strong>Amber, redact first.</strong> Anything about a real client, real numbers, or real names. Swap them for [Client], [rounded figure], [Me] before you paste.</div>
+    </div>
+    <div class="traffic-row">
+      <div class="dot red"></div>
+      <div><strong>Red, never in a personal AI account.</strong> Credentials, contracts, anything covered by an NDA, anything you wouldn't want screenshotted. That data needs a business-grade tool with a real data agreement, not a free personal chat window.</div>
+    </div>
+  </div>
+
+  <p class="ui" style="font-size:13.5px; color:var(--muted);">Every prompt in this menu already follows this rule. Copy them as they are, or tighten them further for your own situation.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- THE MENU CONVENTION                                           -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">The house rules</span>
+  <h2 class="page-title">The menu convention</h2>
+  <p class="lede">Four courses, every kitchen, no exceptions. Once you know the convention, you can order confidently anywhere on this menu.</p>
+
+  <div class="convention-grid">
+    <div class="convention-row">
+      <div class="convention-tag">Starters</div>
+      <div class="convention-desc"><strong>4 prompts, 5 minutes each.</strong> The first wins in that kitchen. Fast, low-stakes, built to prove the tool is worth opening today.</div>
+    </div>
+    <div class="convention-row">
+      <div class="convention-tag">Mains</div>
+      <div class="convention-desc"><strong>6 prompts, real business work.</strong> Client updates, proposals, research, planning: the everyday dishes that make up most of what you'll actually order.</div>
+    </div>
+    <div class="convention-row">
+      <div class="convention-tag">Chef's Specials</div>
+      <div class="convention-desc"><strong>3 prompts, only this kitchen can cook these.</strong> The feature that's genuinely unique to that tool: a live X search, an unattended agent run, a working artifact. Skip these in the wrong kitchen and you'll get a worse dish somewhere else.</div>
+    </div>
+    <div class="convention-row">
+      <div class="convention-tag">Verify</div>
+      <div class="convention-desc"><strong>2 prompts, make it prove its work.</strong> Every kitchen ends the same way: a confidence check and a sycophancy check, so you never accept a confident-sounding answer as a correct one. The full verification system lives in The Judge's Prompts.</div>
+    </div>
+  </div>
+
+  <p style="font-size:14.5px; color:var(--muted); font-family:'Inter',sans-serif;">15 prompts per kitchen, 10 kitchens, 150 prompts total. Every single one uses [brackets] for your variables and models redaction by default: names as [Client]/[Me], numbers rounded, nothing sensitive ever pasted in.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TABLE OF CONTENTS                                             -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Contents</span>
+  <h2 class="page-title">The ten kitchens</h2>
+  <p class="lede">Same four courses in every kitchen. Order by number or jump straight to the tool you're opening today.</p>
+
+  <div class="kitchen-index">
+    <div class="kitchen-row">
+      <div class="kitchen-num">01</div>
+      <div class="kitchen-name">Claude</div>
+      <div class="kitchen-tagline">The kitchen that reads the whole room before it answers.</div>
+    </div>
+    <div class="kitchen-row">
+      <div class="kitchen-num">02</div>
+      <div class="kitchen-name">ChatGPT</div>
+      <div class="kitchen-tagline">You hear AI names everywhere and never know which does what. This is the one that walks you through the door.</div>
+    </div>
+    <div class="kitchen-row">
+      <div class="kitchen-num">03</div>
+      <div class="kitchen-name">Gemini</div>
+      <div class="kitchen-tagline">Same chef, different service. The skill is knowing which counter to order at.</div>
+    </div>
+    <div class="kitchen-row">
+      <div class="kitchen-num">04</div>
+      <div class="kitchen-name">Copilot</div>
+      <div class="kitchen-tagline">The whole Microsoft Copilot ecosystem walked through like a restaurant. Door, kitchen, plate.</div>
+    </div>
+    <div class="kitchen-row">
+      <div class="kitchen-num">05</div>
+      <div class="kitchen-name">Grok</div>
+      <div class="kitchen-tagline">Fast, sarcastic, plugged straight into the live feed of X.</div>
+    </div>
+    <div class="kitchen-row">
+      <div class="kitchen-num">06</div>
+      <div class="kitchen-name">Mistral</div>
+      <div class="kitchen-tagline">The fastest kitchen in Paris, EU-only ingredients, no telemetry on request.</div>
+    </div>
+    <div class="kitchen-row">
+      <div class="kitchen-num">07</div>
+      <div class="kitchen-name">DeepSeek</div>
+      <div class="kitchen-tagline">The kitchen that cooks the same quality dish for a fraction of the bill.</div>
+    </div>
+    <div class="kitchen-row">
+      <div class="kitchen-num">08</div>
+      <div class="kitchen-name">Kimi</div>
+      <div class="kitchen-tagline">The kitchen that puts 300 sous-chefs on one ticket, at a fraction of the bill.</div>
+    </div>
+    <div class="kitchen-row">
+      <div class="kitchen-num">09</div>
+      <div class="kitchen-name">Manus</div>
+      <div class="kitchen-tagline">The kitchen that takes the order, walks off, and comes back with the finished dish, no supervision required.</div>
+    </div>
+    <div class="kitchen-row">
+      <div class="kitchen-num">10</div>
+      <div class="kitchen-name">Meta AI</div>
+      <div class="kitchen-tagline">It never made you leave the room you were already in.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+<!-- ============================================================ -->
+<!-- KITCHEN 01 DIVIDER : CLAUDE                                   -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Kitchen 01 &middot; 15 prompts</div>
+    <h2 class="part-title">Claude</h2>
+    <p class="part-purpose">The kitchen that reads the whole room before it answers.</p>
+    <div class="part-count mono">Starters &middot; Mains &middot; Chef's Specials &middot; Verify</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 01 CONTENT : CLAUDE STARTERS                          -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 01 &middot; Claude</span>
+  <h2 class="page-title">The kitchen that reads the whole room</h2>
+
+  <div class="menu-category">Starters &middot; 4 prompts, 5 minutes each</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Start here</span>
+    <div class="prompt-label"><span class="prompt-num">01</span><span class="prompt-name">The Plain Rewrite</span></div>
+    <div class="prompt-block">Rewrite the message below so a busy person understands it in one read.
+Short sentences. No jargon. No hype. Keep every fact, drop every filler word.
+
+Message:
+[paste your message, with names swapped for [Client] / [Me] and any real
+numbers rounded]</div>
+    <div class="prompt-when"><strong>When:</strong> You wrote something in five minutes and it shows. Use this before you hit send on any email, update, or post.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">02</span><span class="prompt-name">The Two-Minute Verdict</span></div>
+    <div class="prompt-block">I need to decide between [Option A] and [Option B] by [rounded deadline,
+e.g. "end of day"]. Give me your honest recommendation in three sentences,
+then one sentence on what would change your mind.</div>
+    <div class="prompt-when"><strong>When:</strong> You're stuck picking and just need a clear-headed opinion, not an essay.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">03</span><span class="prompt-name">The Document Once-Over</span></div>
+    <div class="prompt-block">Read the document below and tell me, in a short list: what's missing, what's
+unclear, and what a reader would ask you first. Don't rewrite it yet, just
+tell me what's wrong with it.
+
+Document:
+[paste, with [Client]/[Me] in place of real names and rounded figures only]</div>
+    <div class="prompt-when"><strong>When:</strong> Something's off in a document you've reread too many times to see clearly.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">04</span><span class="prompt-name">The Second Draft</span></div>
+    <div class="prompt-block">Here's a first attempt: [paste]. Don't just polish it. Give me a genuinely
+different second version, same goal, different approach. I want to compare
+two real options, not two versions of the same one.</div>
+    <div class="prompt-when"><strong>When:</strong> Your first draft is fine but you suspect "fine" isn't good enough.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 01 CONTENT : CLAUDE MAINS (1/2)                       -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 01 &middot; Claude</span>
+  <h2 class="page-title">Real business work</h2>
+
+  <div class="menu-category">Mains &middot; 6 prompts</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">05</span><span class="prompt-name">The Long-Document Hold</span></div>
+    <div class="prompt-block">I'm going to paste a long document in sections. Don't summarize each piece
+as it comes in, just confirm you've got it. Once I say "that's everything,"
+give me one clean summary of the whole thing: the throughline, the three
+things that matter most, and anything that contradicts itself across
+sections.
+
+[paste section 1, redacted: [Client] names, rounded numbers, no IDs or
+credentials]</div>
+    <div class="prompt-when"><strong>When:</strong> A document (contract, report, transcript) is too long to hold in your own head at once. This is what a big countertop is actually for: it won't lose the thread halfway through like a smaller-context tool will.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">06</span><span class="prompt-name">The Client Update, In My Voice</span></div>
+    <div class="prompt-block">Write an update to [Client] about [project/topic]. Here's what actually
+happened this week: [bullet list of facts, names as [Client]/[Me], numbers
+rounded]. Match this tone: [paste 2-3 sentences of your own past writing as
+a voice sample]. Keep it under 150 words. No filler, no "I hope this finds
+you well."</div>
+    <div class="prompt-when"><strong>When:</strong> A status update that needs to sound like you, not like a template.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">07</span><span class="prompt-name">The Meeting-to-Action Pass</span></div>
+    <div class="prompt-block">Below is a rough transcript or notes from a call with [Client]. Turn it into
+three lists: decisions made, open questions, and who owns what next with a
+rounded deadline for each. If something in the notes is ambiguous, flag it
+instead of guessing.
+
+Notes:
+[paste, redacted]</div>
+    <div class="prompt-when"><strong>When:</strong> You just got off a call and the notes are messier than the meeting was.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">08</span><span class="prompt-name">The Week-Ahead Plan</span></div>
+    <div class="prompt-block">Here's everything on my plate this week: [list tasks, rough time estimates,
+deadlines rounded to the nearest day]. Group it into a plan: what has to
+happen first, what can wait, and what I should just say no to. Be honest if
+the list is unrealistic for the time I actually have: [rounded hours
+available].</div>
+    <div class="prompt-when"><strong>When:</strong> The list is longer than the week. Someone needs to say so out loud.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 01 CONTENT : CLAUDE MAINS (2/2)                       -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 01 &middot; Claude</span>
+  <h2 class="page-title">Real business work, continued</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">09</span><span class="prompt-name">The Structure Before The Sentence</span></div>
+    <div class="prompt-block">I need to write [type of document, e.g. "a training module" or "a proposal"]
+about [topic]. Before you write a single sentence, give me three genuinely
+different structures I could use, not three versions of the same outline.
+Two sentences on each: what it emphasizes and who it's best for. I'll pick
+one, then you write it.</div>
+    <div class="prompt-when"><strong>When:</strong> Long, structured writing where the wrong shape wastes an afternoon. Claude holds a long thread without losing the plot, which is exactly what makes it worth planning the shape first instead of writing blind.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">10</span><span class="prompt-name">The Steady Second Opinion</span></div>
+    <div class="prompt-block">I've been going back and forth on this for a while and I've lost perspective:
+[describe the decision and the back-and-forth, redacted]. Read it fresh, as
+if you'd never seen it, and tell me the steadiest, most level-headed take.
+Not what I want to hear, what actually holds up.</div>
+    <div class="prompt-when"><strong>When:</strong> You need a chef who reads the whole room and answers considered rather than confidently wrong, especially on something you've been circling too long to see straight.</div>
+  </div>
+
+  <div class="menu-category">Chef's Specials &middot; 3 prompts, only this kitchen can cook these</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Signature dish</span>
+    <div class="prompt-label"><span class="prompt-num">11</span><span class="prompt-name">The Working Artifact</span></div>
+    <div class="prompt-block">Build me a working [one-pager / tracker / calculator / simple page] for
+[purpose]. I want something I can actually open, edit, and reuse, not a
+description of one. Here's what it needs to do: [list requirements]. Here's
+the data or content it should start with: [paste, redacted]. Show it to me
+as a finished thing, then ask what I'd change.</div>
+    <div class="prompt-when"><strong>When:</strong> You want a takeaway box, not just an answer. This is the one dish only Claude plates this way: a real, editable artifact that appears beside the chat instead of a wall of text describing what you'd have to build yourself.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">12</span><span class="prompt-name">The Standing Order</span></div>
+    <div class="prompt-block">From now on in this project, treat these as standing instructions: [list your
+recurring preferences, e.g. tone, format, the client context that applies to
+every chat here, redacted]. Every time I bring you something in this project,
+apply these automatically without me repeating them.</div>
+    <div class="prompt-when"><strong>When:</strong> You're working the same client or topic across many chats and you're tired of re-explaining context every single time. This is the standing-order notebook a regular gets, set up once inside a Project instead of rebuilt from scratch each visit.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 01 CONTENT : CLAUDE SPECIALS (cont) + VERIFY          -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 01 &middot; Claude</span>
+  <h2 class="page-title">Only this kitchen, and prove the work</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">13</span><span class="prompt-name">The Plan-First Build</span></div>
+    <div class="prompt-block">Here's the full job: [describe the complex task end to end, e.g. building
+out a document, a multi-part analysis, a campaign outline]. Before you do
+any of it, pause and think it through: lay out your plan in 5 to 8 bullets,
+including the order you'll tackle things in and anything you're unsure about.
+I'll approve or redirect the plan. Then, and only then, execute it in full.</div>
+    <div class="prompt-when"><strong>When:</strong> A task big enough that rushing in costs you more time than planning does. This is the chef pausing to think before touching an ingredient: worth asking for explicitly when the job has real complexity, not for a five-minute rewrite.</div>
+  </div>
+
+  <div class="menu-category">Verify &middot; 2 prompts, make it prove its work</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">14</span><span class="prompt-name">The Confidence Check</span></div>
+    <div class="prompt-block">Go back through what you just told me and mark each claim as one of three
+things: VERIFIED (you have real evidence for it in what I gave you),
+LIKELY (a reasonable inference, but not confirmed), or GUESSED (you filled
+a gap because I didn't give you the information). Don't soften this. I'd
+rather see an honest GUESSED than a confident answer that isn't backed up.</div>
+    <div class="prompt-when"><strong>When:</strong> Any answer with facts, figures, or claims you'll act on. Confident and correct aren't the same thing, and this is how you tell them apart before you rely on either.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">15</span><span class="prompt-name">The Argue-With-Me Pass</span></div>
+    <div class="prompt-block">I want you to disagree with me if I'm wrong, even though I'm the one asking.
+Here's what I think is the right call: [your decision or draft, redacted].
+Before you agree with anything, find the strongest honest case against it.
+If you still think I'm right after that, say so, and tell me why the
+counter-argument didn't hold up.</div>
+    <div class="prompt-when"><strong>When:</strong> Any moment it would be easy for AI to just agree with you because you asked. Politeness isn't the same as being right, and this forces the distinction.</div>
+  </div>
+
+  <p style="margin-top:8px; font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); font-style:italic;">The full verification system lives in The Judge's Prompts.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+<!-- ============================================================ -->
+<!-- KITCHEN 02 DIVIDER : CHATGPT                                  -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Kitchen 02 &middot; 15 prompts</div>
+    <h2 class="part-title">ChatGPT</h2>
+    <p class="part-purpose">You hear AI names everywhere and never know which does what. This is the one that walks you through the door, the kitchen, and the plate.</p>
+    <div class="part-count mono">Starters &middot; Mains &middot; Chef's Specials &middot; Verify</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 02 CONTENT : CHATGPT STARTERS                         -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 02 &middot; ChatGPT</span>
+  <h2 class="page-title">The one that walks you through the door</h2>
+
+  <div class="menu-category">Starters &middot; 4 prompts, 5 minutes each</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Start here</span>
+    <div class="prompt-label"><span class="prompt-num">16</span><span class="prompt-name">The five minute business triage</span></div>
+    <div class="prompt-block">Act as an operations consultant. I run a small business and I want a fast triage of where I'm losing time.
+
+Ask me one question at a time, in this order:
+1. What are the 5 tasks I do most often in a working week?
+2. Which of those 5 feel repetitive or boring?
+3. Which ones need a judgment call only I can make?
+
+Once I've answered all three, give me:
+- A short list of the tasks that are safe to hand to an AI tool starting this week
+- A short list of the tasks that still need me
+- One task to try automating first, and why that one
+
+Keep the tone plain and direct. No jargon.</div>
+    <div class="prompt-when"><strong>When:</strong> First session with ChatGPT, before you've decided what to actually use it for.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">17</span><span class="prompt-name">The meeting notes to next steps converter</span></div>
+    <div class="prompt-block">I'm going to paste rough notes from a meeting. Turn them into:
+1. A 3 to 5 line summary of what was discussed
+2. A clear list of decisions made (if any)
+3. A list of action items, each with: what, who (use [Name] if I haven't said), and by when (use [Date] if no date was given)
+
+If something in my notes is ambiguous, flag it as "NEEDS CLARIFICATION" instead of guessing.
+
+Here are the notes:
+[Paste your rough meeting notes here, with any client or company names replaced by [Client] or [Company]]</div>
+    <div class="prompt-when"><strong>When:</strong> Right after any internal or client meeting, while it's still fresh.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">18</span><span class="prompt-name">The inbox reply in your voice</span></div>
+    <div class="prompt-block">Here is an email I need to reply to. Write me a first draft reply.
+
+Rules:
+- Match a warm, direct, professional tone. Short sentences.
+- No corporate filler like "I hope this email finds you well."
+- If the email asks for something I can't confirm (price, date, availability), leave a placeholder like [confirm availability] instead of inventing an answer.
+- End with a clear next step, not a vague "let me know."
+
+The email:
+[Paste the email, with sender name replaced by [Client] and any account numbers or personal details removed]
+
+My reply should cover these points:
+[List the 2 to 3 things you actually want to say]</div>
+    <div class="prompt-when"><strong>When:</strong> Clearing a backlog of client or partner emails without losing your voice.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">19</span><span class="prompt-name">The custom instructions setup</span></div>
+    <div class="prompt-block">Help me write my ChatGPT Custom Instructions so every future conversation already knows who I am.
+
+Ask me these questions one at a time:
+1. What's my role and what kind of business do I run? (describe in general terms, no company name needed)
+2. Who do I usually write for: clients, my team, or myself?
+3. What tone do I want by default: formal, warm, blunt, playful?
+4. What should ChatGPT never do when replying to me? (e.g. never use em-dashes, never invent numbers, never assume I want a long answer)
+
+Once I've answered, write two short paragraphs:
+- One for "What would you like ChatGPT to know about you?"
+- One for "How would you like ChatGPT to respond?"
+
+Keep both under 1500 characters each, since that's the field limit.</div>
+    <div class="prompt-when"><strong>When:</strong> Once, at the very start, so every later chat starts warmer.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 02 CONTENT : CHATGPT MAINS (1/2)                      -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 02 &middot; ChatGPT</span>
+  <h2 class="page-title">Real business work</h2>
+
+  <div class="menu-category">Mains &middot; 6 prompts</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">20</span><span class="prompt-name">The client proposal first draft</span></div>
+    <div class="prompt-block">Act as a business writer helping me draft a client proposal.
+
+Here's what I need to cover:
+- Client's situation: [describe the problem in general terms, no company name]
+- What I'm proposing to do: [describe the service or project]
+- Rough timeline: [e.g. "about 6 weeks"]
+- Rough investment: [e.g. "around [rounded number]"]
+
+Write a proposal with these sections: Situation, What I'll Do, Timeline, Investment, Why Me. Keep it to one page. Plain English, no filler, no made-up case studies or client names. If I haven't given you enough detail for a section, write [ADD DETAIL] instead of inventing something.</div>
+    <div class="prompt-when"><strong>When:</strong> Turning a verbal agreement into a document a client can actually sign off on.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">21</span><span class="prompt-name">The document analyzer using Canvas</span></div>
+    <div class="prompt-block">I'm going to upload a document (a contract, a report, or a long policy). Open it in Canvas so we can work on it together.
+
+First, give me:
+1. A 5 bullet summary of what it actually says
+2. Any clauses, numbers, or terms that seem unusual or worth double-checking
+3. Plain English translations of the 3 most confusing sections
+
+Then wait for me. I'll tell you which section to rewrite, shorten, or challenge, and we'll edit it together in Canvas rather than you rewriting the whole thing at once.
+
+[Attach or paste the document, with names, account numbers, and identifying details replaced by [Client], [Company], or [rounded number]]</div>
+    <div class="prompt-when"><strong>When:</strong> Reviewing a contract or long report where you want to edit sections, not just read a summary.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">22</span><span class="prompt-name">The spreadsheet to chart in one pass</span></div>
+    <div class="prompt-block">I'm uploading a spreadsheet of business numbers (sales, expenses, or usage, whichever I attach). Use Code Interpreter to:
+
+1. Tell me what columns you found and what each seems to represent
+2. Build 2 charts that would actually help me make a decision (you choose the chart type, explain why)
+3. Point out the single most surprising or important number in the data
+4. Give me one plain English sentence I could say to a business partner about what this data means
+
+If any column headers or values look like personal or client-identifying data, tell me before you chart anything so I can decide whether to redact it first.</div>
+    <div class="prompt-when"><strong>When:</strong> You have a spreadsheet and 10 minutes, and want the story behind the numbers, not just the numbers.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">23</span><span class="prompt-name">The competitor scan with Deep Research</span></div>
+    <div class="prompt-block">Use Deep Research to build me a briefing on [industry or niche, e.g. "boutique fitness studios" or "B2B invoicing software for freelancers"].
+
+I want:
+1. Who the 5 to 8 most visible players are right now
+2. What they seem to be charging (rounded ranges are fine)
+3. What complaint or gap shows up more than once across reviews or forums
+4. One opportunity that looks underserved
+
+Cite your sources. If you can't verify a claim from an actual source, say so instead of presenting it as fact.</div>
+    <div class="prompt-when"><strong>When:</strong> Before you price a new offer or enter a market, when you want real research instead of a guess.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 02 CONTENT : CHATGPT MAINS (2/2)                      -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 02 &middot; ChatGPT</span>
+  <h2 class="page-title">Real business work, continued</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">24</span><span class="prompt-name">The one page marketing plan</span></div>
+    <div class="prompt-block">Act as a marketing advisor for a small business. Ask me these questions one at a time before writing anything:
+
+1. What do I sell and who buys it? (describe in general terms)
+2. What's my rough monthly budget for marketing? (rounded number, e.g. "around [rounded number]")
+3. What have I already tried, and what happened?
+4. How many hours a week can I realistically spend on marketing?
+
+Once I've answered, give me a one page plan with: 3 channels to focus on (and why, given my budget and hours), 1 thing to stop doing, and a simple way to know in 30 days if it worked.
+
+No jargon. No channel I can't realistically run myself or with 1 helper.</div>
+    <div class="prompt-when"><strong>When:</strong> You need a plan you can actually execute this month, not a 40 page strategy deck.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">25</span><span class="prompt-name">The multi-step task handed to Agent Mode</span></div>
+    <div class="prompt-block">Use Agent Mode to complete this task for me:
+
+[Describe a concrete, multi-step task Agent Mode can actually do in a browser, e.g. "Go to [website] and check the current price for [product], then compare it against [website 2] and [website 3], and give me a table" or "Fill out [specific public form] with the following details: [list only non-sensitive placeholder details]"]
+
+Before you take any action that submits information, creates an account, or spends money, stop and ask me to confirm first. Show me what you found or did at each major step, not just the final result.</div>
+    <div class="prompt-when"><strong>When:</strong> A real multi-step errand online (price checks, form filling, comparisons) that would normally cost you 20 minutes of tab-switching.</div>
+  </div>
+
+  <div class="menu-category">Chef's Specials &middot; 3 prompts, only this kitchen can cook these</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Signature dish</span>
+    <div class="prompt-label"><span class="prompt-num">26</span><span class="prompt-name">The Canvas and Code Interpreter tag team</span></div>
+    <div class="prompt-block">I want to build a simple client-facing report. Here's the situation:
+
+- Data source: [describe what you're uploading, e.g. "a spreadsheet of monthly sales by product"]
+- Who it's for: [e.g. "a client update" or "my own monthly review"]
+- What decision it should support: [e.g. "whether to discontinue a product line"]
+
+Step 1: Use Code Interpreter to analyze the data and build the 2 most relevant charts.
+Step 2: Open a new Canvas and draft a one page written summary that references those charts, written for a reader with no data background.
+Step 3: Wait for my edits. I'll tell you which sentences to cut, which chart to swap, and we'll refine the Canvas draft together rather than starting over each time.
+
+Replace any names or account details in the data with [Client] or [rounded number] before you present anything back to me.</div>
+    <div class="prompt-when"><strong>When:</strong> You want the analysis and the polished writeup in the same session, so nothing gets lost translating between them.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 02 CONTENT : CHATGPT SPECIALS (cont) + VERIFY         -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 02 &middot; ChatGPT</span>
+  <h2 class="page-title">Only this kitchen, and prove the work</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">27</span><span class="prompt-name">The Deep Research pricing sanity check</span></div>
+    <div class="prompt-block">Use Deep Research to sanity check a price I'm considering.
+
+Here's my offer: [describe what you're selling in one or two sentences, no client names]
+The price I'm considering: around [rounded number]
+Who I think it's for: [describe the buyer in general terms]
+
+Find out:
+1. What similar offers actually charge (cite sources, rounded ranges are fine)
+2. Whether my price sits above, below, or in line with the market
+3. One argument for charging more, and one honest reason I might be charging too much
+
+Don't just agree with my number to be polite. If the research says I'm off, tell me plainly and explain why.</div>
+    <div class="prompt-when"><strong>When:</strong> Before you publish a price, when you want outside evidence instead of a gut feeling.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">28</span><span class="prompt-name">The connector powered weekly digest</span></div>
+    <div class="prompt-block">Using the connectors I've enabled (for example Gmail, Google Drive, or Slack, whichever apply), pull together a weekly digest for me covering:
+
+1. Anything that looks like it needs a reply from me and has been sitting more than 2 days
+2. Any document that was shared with me this week that I haven't opened
+3. A short list of what seems to be waiting on other people, so I know what NOT to chase yet
+
+Summarize in plain sentences, not raw message dumps. Replace any names other than mine with [Contact] or [Client] in the summary you show me. If a connector isn't available or I haven't set one up, tell me instead of guessing at the contents.</div>
+    <div class="prompt-when"><strong>When:</strong> Monday morning, before you open five apps separately to find out what actually needs you.</div>
+  </div>
+
+  <div class="menu-category">Verify &middot; 2 prompts, make it prove its work</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">29</span><span class="prompt-name">The hallucination check on anything cited</span></div>
+    <div class="prompt-block">Look back at your last answer. For every fact, statistic, or claim you gave me:
+
+1. Tell me whether you actually verified it (via Deep Research, browsing, or an uploaded document) or whether you generated it from general knowledge
+2. For anything you generated rather than verified, mark it clearly as "UNVERIFIED"
+3. For any source, name, or citation you gave me, confirm whether it's real and checkable, or tell me plainly if you're not fully sure it exists
+
+I would rather see "I'm not sure" than a confident answer that turns out to be invented.</div>
+    <div class="prompt-when"><strong>When:</strong> Right after any answer with numbers, citations, or specific claims you plan to repeat to someone else.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">30</span><span class="prompt-name">The sycophancy stress test</span></div>
+    <div class="prompt-block">I want you to critique the plan I just described, not encourage it.
+
+Specifically:
+1. What is the single weakest assumption in what I proposed?
+2. If this fails, what is the most likely reason?
+3. Is there a simpler or cheaper way to test this before committing fully?
+
+Don't soften this to spare my feelings, and don't tell me it's "a great start" if it isn't. If the plan is genuinely solid, say so plainly, but back it up with a specific reason rather than general praise.</div>
+    <div class="prompt-when"><strong>When:</strong> Before you commit budget, time, or a client relationship to a plan ChatGPT helped you build.</div>
+  </div>
+
+  <p style="margin-top:8px; font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); font-style:italic;">The full verification system lives in The Judge's Prompts.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+<!-- ============================================================ -->
+<!-- KITCHEN 03 DIVIDER : GEMINI                                   -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Kitchen 03 &middot; 15 prompts</div>
+    <h2 class="part-title">Gemini</h2>
+    <p class="part-purpose">Same chef, different service. The skill is knowing which counter to order at.</p>
+    <div class="part-count mono">Starters &middot; Mains &middot; Chef's Specials &middot; Verify</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 03 CONTENT : GEMINI STARTERS                          -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 03 &middot; Gemini</span>
+  <h2 class="page-title">Same chef, different service</h2>
+
+  <div class="menu-category">Starters &middot; 4 prompts, 5 minutes each</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Start here</span>
+    <div class="prompt-label"><span class="prompt-num">31</span><span class="prompt-name">The five-way comparison</span></div>
+    <div class="prompt-block">I need to choose between five options for [decision, e.g. "project management tools for a 5-person team"]. Use Search grounding to research current information on each of these: [Option A], [Option B], [Option C], [Option D], [Option E].
+
+For each one, give me:
+- What it actually does, in plain English
+- Price at the tier I'd realistically need (rounded numbers, not exact quotes)
+- The one thing it's best at
+- The one thing that would make me regret picking it
+
+End with a single recommendation for a business my size ([rounded number] people, [rounded budget] per month) and explain the reasoning in 3 sentences.</div>
+    <div class="prompt-when"><strong>When:</strong> Anytime you're stuck between options and would otherwise open eight tabs and give up.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">32</span><span class="prompt-name">The inbox-to-brief rewrite</span></div>
+    <div class="prompt-block">Here's a messy email thread I need to turn into a clean action brief. I'm going to paste the thread below with names replaced by [Client] or [Colleague] and any numbers rounded.
+
+[paste the redacted thread]
+
+Give me back:
+1. What's actually being asked of me, in one sentence
+2. Every deadline mentioned, listed in date order
+3. A 3-sentence reply I could send right now
+4. Anything in the thread that contradicts something earlier in the thread</div>
+    <div class="prompt-when"><strong>When:</strong> A reply-all chain has spiraled and you need the actual ask, not the noise.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">33</span><span class="prompt-name">The document first pass</span></div>
+    <div class="prompt-block">I'm pasting a document below (a draft, a contract section, or a report). Read the whole thing before answering.
+
+[paste document, with any client names as [Client] and financial figures rounded]
+
+Give me:
+- A 5-line summary a busy person could read in 20 seconds
+- The 3 weakest sentences and why they're weak
+- One question I should ask before this goes out the door</div>
+    <div class="prompt-when"><strong>When:</strong> You need a second pair of eyes on something before it leaves your inbox, fast.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">34</span><span class="prompt-name">The meeting-notes cleanup</span></div>
+    <div class="prompt-block">Below are my raw, messy notes from a call with [Client]. Clean them into a structured recap I can send.
+
+[paste raw notes, names as [Client]/[Attendee], numbers rounded]
+
+Format as:
+- Attendees and date
+- Decisions made (bullet list)
+- Open questions (bullet list)
+- Next steps with an owner for each one, even if the owner is just "me"</div>
+    <div class="prompt-when"><strong>When:</strong> Right after any call, while the notes are still fresh but too messy to send as-is.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 03 CONTENT : GEMINI MAINS (1/2)                       -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 03 &middot; Gemini</span>
+  <h2 class="page-title">Real business work</h2>
+
+  <div class="menu-category">Mains &middot; 6 prompts</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">35</span><span class="prompt-name">The long-document analyst</span></div>
+    <div class="prompt-block">I'm going to paste a long document below (up to a full report, transcript, or set of contracts). I need you to hold the whole thing in mind while I ask questions, not just skim the start.
+
+[paste the full document, with [Client]/[Vendor] names and rounded figures]
+
+First, confirm you've read the entire thing by giving me a one-paragraph summary that references something from the very end of the document, not just the start.
+
+Then wait for my questions about specific sections.</div>
+    <div class="prompt-when"><strong>When:</strong> You've got something too long to read properly yourself and need to interrogate it section by section.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">36</span><span class="prompt-name">The Deep Research market scan</span></div>
+    <div class="prompt-block">Run a deep research pass on [market, e.g. "AI scheduling tools for solo consultants"]. I need this for a real decision, not a surface skim.
+
+Cover:
+1. The 5 to 8 real players in this space right now
+2. What each one charges (rounded to nearest $5 or $10)
+3. Where the actual gaps are, things nobody in this space does well
+4. Whether this looks crowded or genuinely open
+
+Hand it back as a structured report I could forward to [Colleague] without editing.</div>
+    <div class="prompt-when"><strong>When:</strong> You need a real market picture before building, pitching, or pricing something, not just a gut feeling.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">37</span><span class="prompt-name">The client proposal builder</span></div>
+    <div class="prompt-block">I'm building a proposal for [Client], a [industry] business with roughly [rounded number] employees. The problem they want solved is [one-line problem].
+
+Draft a one-page proposal with:
+- The problem, stated back to them in their own language
+- What I'd actually do, in 3 to 5 steps
+- Timeline in weeks, not exact dates
+- Price framed as a range (rounded), not one number
+- One line of risk reversal (what happens if it doesn't work)
+
+Keep it in plain English. No jargon, no hype, no exclamation points.</div>
+    <div class="prompt-when"><strong>When:</strong> A prospect said yes to a call and now you need the follow-up document within the hour.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">38</span><span class="prompt-name">The quarterly plan in one sitting</span></div>
+    <div class="prompt-block">Help me build a 90-day plan for [Business/Client], working from these rough inputs:
+- Current state: [2 to 3 lines, rounded numbers]
+- The one goal that matters most: [goal]
+- Hours available per week: [rounded number]
+
+Structure it as three 30-day blocks. Each block gets: the one priority, 3 concrete actions, and one number I'll check at the end of the block to know if it worked.
+
+Push back if the goal and the hours available don't match. Don't just agree with me.</div>
+    <div class="prompt-when"><strong>When:</strong> Planning season, or any time a goal needs breaking into weeks instead of staying a wish.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 03 CONTENT : GEMINI MAINS (2/2)                       -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 03 &middot; Gemini</span>
+  <h2 class="page-title">Real business work, continued</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">39</span><span class="prompt-name">The Workspace-native rewrite</span></div>
+    <div class="prompt-block">I'm working inside [Docs/Sheets/Gmail] on [what the document is, e.g. "a client-facing report" or "a cold outreach draft"]. Rewrite what's on the page right now to be:
+- Shorter, cut by roughly a third
+- Plain English, no jargon
+- One clear next action at the end
+
+Keep it in place in the document rather than starting a new one, and show me what changed versus what I had before.</div>
+    <div class="prompt-when"><strong>When:</strong> You're already inside Docs, Sheets, or Gmail and don't want to lose the thread by switching tools.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">40</span><span class="prompt-name">The Canvas working draft</span></div>
+    <div class="prompt-block">Open a working draft with me for [type of document, e.g. "a one-page client-facing service menu"]. Start with a rough structure, then I'll tell you what to change section by section as we go, the way I'd mark up a paper draft.
+
+Begin with just the skeleton: headings and one line under each saying what goes there. Wait for me before writing full paragraphs.</div>
+    <div class="prompt-when"><strong>When:</strong> Building something collaboratively over 20 minutes, where you want to steer section by section instead of getting one big draft to fix afterward.</div>
+  </div>
+
+  <div class="menu-category">Chef's Specials &middot; 3 prompts, only this kitchen can cook these</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Signature dish</span>
+    <div class="prompt-label"><span class="prompt-num">41</span><span class="prompt-name">The Gem, built once</span></div>
+    <div class="prompt-block">Set yourself up as a standing Gem called "[Name, e.g. Weekly Client Briefing]" with these saved instructions:
+
+Role: [one line, e.g. "You summarize my week's client activity into a Monday-morning briefing"]
+Always do: [2 to 3 standing rules, e.g. "round all figures, flag anything overdue, keep it under 200 words"]
+Never do: [1 to 2 hard boundaries, e.g. "never invent a number you weren't given"]
+
+Confirm the role back to me in your own words, then wait for me to feed you this week's inputs.</div>
+    <div class="prompt-when"><strong>When:</strong> Any task you'll repeat weekly or monthly, so the setup only happens once and every future order already knows the job.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 03 CONTENT : GEMINI SPECIALS (cont) + VERIFY          -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 03 &middot; Gemini</span>
+  <h2 class="page-title">Only this kitchen, and prove the work</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">42</span><span class="prompt-name">The NotebookLM source briefing</span></div>
+    <div class="prompt-block">I'm uploading [rounded number] source documents about [topic, e.g. "our onboarding process" or "this client's industry"]. Treat these as the only truth, don't pull in outside information.
+
+Give me:
+1. A summary of what these sources actually say, cross-referenced against each other
+2. Any place two sources disagree
+3. Three questions I should be ready to answer that these sources don't cover
+
+Then let me ask follow-up questions against just these sources.</div>
+    <div class="prompt-when"><strong>When:</strong> You've got a pile of PDFs, transcripts, or research and need answers grounded only in what you actually gave it, not general web knowledge.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">43</span><span class="prompt-name">The multi-modal audit</span></div>
+    <div class="prompt-block">I'm giving you [a screenshot / an image / an audio clip / a short video] of [what it shows, e.g. "our current landing page" or "a client walkthrough recording"].
+
+Look at (or listen to) the whole thing, then tell me:
+- What's actually there, described plainly
+- The single biggest thing you'd change first, and why
+- One thing that's working well enough to leave alone
+
+Keep the tone like a colleague giving feedback, not a grading rubric.</div>
+    <div class="prompt-when"><strong>When:</strong> You've got something visual or spoken to review and typing a description yourself would take longer than just handing it over.</div>
+  </div>
+
+  <div class="menu-category">Verify &middot; 2 prompts, make it prove its work</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">44</span><span class="prompt-name">The disagree-with-me check</span></div>
+    <div class="prompt-block">Before I trust this, argue against your own answer. Take the response you just gave me about [topic] and find the 3 strongest reasons it could be wrong or incomplete. Don't soften them. If you genuinely can't find a weak point, say so and explain why you're confident instead of just agreeing with yourself.</div>
+    <div class="prompt-when"><strong>When:</strong> Anytime the answer sounds too smooth, or matters enough that a "yes-chef" response isn't good enough.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">45</span><span class="prompt-name">The grounded-fact check</span></div>
+    <div class="prompt-block">Go back through your last answer about [topic] and flag every specific claim, number, or fact. For each one, tell me: is this something you found via Search grounding just now, or something from general training that could be outdated? Mark each claim as "checked live" or "unverified" so I know exactly what to double-check myself before I use it.</div>
+    <div class="prompt-when"><strong>When:</strong> The output has specific numbers, dates, or claims in it and you're about to put your name behind it.</div>
+  </div>
+
+  <p style="margin-top:8px; font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); font-style:italic;">The full verification system lives in The Judge's Prompts.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+<!-- ============================================================ -->
+<!-- KITCHEN 04 DIVIDER : COPILOT                                  -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Kitchen 04 &middot; 15 prompts</div>
+    <h2 class="part-title">Microsoft Copilot</h2>
+    <p class="part-purpose">The whole Microsoft Copilot ecosystem walked through like a restaurant. Door, kitchen, plate.</p>
+    <div class="part-count mono">Starters &middot; Mains &middot; Chef's Specials &middot; Verify</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 04 CONTENT : COPILOT STARTERS                         -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 04 &middot; Microsoft Copilot</span>
+  <h2 class="page-title">Door, kitchen, plate</h2>
+
+  <div class="menu-category">Starters &middot; 4 prompts, 5 minutes each</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Start here</span>
+    <div class="prompt-label"><span class="prompt-num">46</span><span class="prompt-name">The inbox triage</span></div>
+    <div class="prompt-block">You're in Copilot Chat or the Copilot pane in Outlook. Summarize my unread emails from this morning into three groups: needs a reply today, can wait, and pure FYI. For each email, give me one line on what it's about and who it's from, using [Client]/[Sender] style labels instead of full names if I paste subject lines directly. End with a suggested order to answer them in.</div>
+    <div class="prompt-when"><strong>When:</strong> First thing in the morning, before you open a single email yourself.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">47</span><span class="prompt-name">The meeting you missed</span></div>
+    <div class="prompt-block">You're in Copilot for Teams. Summarize the meeting titled "[Meeting name]" from [date]. Give me: the three decisions that got made, anything assigned to me by name (use [Me] if my name appears), and any open question nobody answered. Flag anything that sounds like a deadline.</div>
+    <div class="prompt-when"><strong>When:</strong> Whenever a meeting happened without you, or you need the two-minute version before the next one.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">48</span><span class="prompt-name">The paragraph that's too long</span></div>
+    <div class="prompt-block">You're Copilot in Word. Here's a paragraph: "[paste paragraph]". Make it more concise without losing the meaning. Give me two versions: one cut to half the length, one cut to a single sentence. Keep the tone [formal/casual, pick one].</div>
+    <div class="prompt-when"><strong>When:</strong> Any time a draft feels bloated and you want it tightened in seconds, right where you're writing it.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">49</span><span class="prompt-name">The chart that explains itself</span></div>
+    <div class="prompt-block">You're Copilot in Excel. Look at the data in this sheet and chart it by [region/month/category, pick one]. Then write me three sentences underneath explaining what the chart shows in plain English, as if you were telling a colleague who has 30 seconds.</div>
+    <div class="prompt-when"><strong>When:</strong> When a table of numbers needs to become something a non-analyst can glance at and understand.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 04 CONTENT : COPILOT MAINS (1/2)                      -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 04 &middot; Microsoft Copilot</span>
+  <h2 class="page-title">Real business work</h2>
+
+  <div class="menu-category">Mains &middot; 6 prompts</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">50</span><span class="prompt-name">The client update, drafted for me</span></div>
+    <div class="prompt-block">You're Copilot in Outlook. Draft an email to [Client] giving a project status update. Cover: what shipped this week (rounded to the nearest useful detail, no exact figures unless I give them to you), what's in progress, and one thing I need from them to keep moving. Keep it under 150 words, warm but professional, no filler like "I hope this finds you well."</div>
+    <div class="prompt-when"><strong>When:</strong> Weekly or biweekly client check-ins that would otherwise eat 20 minutes of staring at a blank draft.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">51</span><span class="prompt-name">The budget sanity check</span></div>
+    <div class="prompt-block">You're Copilot in Excel with Code Interpreter. I'm giving you a spreadsheet with rounded, non-identifying numbers only (no real client names, no exact contract values). Check the totals, flag any row where a formula looks broken or a number seems out of range compared to the rest, and tell me in plain language if anything looks off before I send this to [Client] or my accountant.</div>
+    <div class="prompt-when"><strong>When:</strong> Before any budget, invoice summary, or financial doc leaves your hands.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">52</span><span class="prompt-name">The proposal, built from what I already have</span></div>
+    <div class="prompt-block">You're Copilot in Word, grounded in my SharePoint files. Pull together a first draft of a proposal for [Client] using our past proposal templates and the notes from our last call (search for anything with "[Client]" or "[project name]" in the file name or content). Structure it as: the problem, what we'd do, rough timeline, and next step. Leave placeholders in [brackets] for anything you can't find, don't guess at numbers.</div>
+    <div class="prompt-when"><strong>When:</strong> Starting a new client proposal without writing the whole skeleton from scratch.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">53</span><span class="prompt-name">The competitive snapshot, delegated</span></div>
+    <div class="prompt-block">You're Copilot Cowork. Prepare a competitive analysis report comparing [my company/product] against [Competitor A] and [Competitor B]. Research publicly available information only, no scraping anything behind a login. Draft it, format it as a short report with a summary at the top, and have it ready for me to review. I'll check back once it's done, don't wait for me to babysit it.</div>
+    <div class="prompt-when"><strong>When:</strong> When you want real research and a real draft to exist by the time you're back at your desk, not just an outline.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 04 CONTENT : COPILOT MAINS (2/2)                      -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 04 &middot; Microsoft Copilot</span>
+  <h2 class="page-title">Real business work, continued</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">54</span><span class="prompt-name">The quarterly plan, laid out</span></div>
+    <div class="prompt-block">You're Copilot in Word or Copilot Pages. Help me lay out a plan for [Q1/Q2/Q3/Q4] covering three goals for [my business/team]. For each goal, give me: the outcome we want, two or three concrete steps, and a rough timeframe (weeks, not exact dates unless I specify them). Keep the whole thing on one page. Turn it into a Copilot Page so I can share it with [my team/Me] and we can edit it together.</div>
+    <div class="prompt-when"><strong>When:</strong> Quarterly planning sessions, especially when the plan needs to live somewhere shareable, not buried in a chat window.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">55</span><span class="prompt-name">The recurring report, made into a skill</span></div>
+    <div class="prompt-block">You're Copilot Cowork. I do this same task every [week/month]: [describe the recurring task, e.g. "pull last month's numbers, write a one-page summary, and flag anything down more than 10 percent"]. Turn this into a saved Copilot Skill so next time I just tell you to run it, instead of explaining it from scratch. Confirm back to me what you saved as the instructions before we finish.</div>
+    <div class="prompt-when"><strong>When:</strong> Any task you find yourself explaining the same way more than twice. This is Copilot's version of building your own repeatable process, not something the other tools do.</div>
+  </div>
+
+  <div class="menu-category">Chef's Specials &middot; 3 prompts, only this kitchen can cook these</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Signature dish</span>
+    <div class="prompt-label"><span class="prompt-num">56</span><span class="prompt-name">The whole-company answer</span></div>
+    <div class="prompt-block">You're Copilot Chat, grounded in Microsoft Graph. Answer this using only what's actually in my company's emails, calendar, and files, don't invent a policy or a fact if you can't find it: "[my question, e.g. 'what's our current refund policy' or 'who owns the [project name] account']". If you can't find a real source for the answer, tell me plainly that you couldn't find it instead of guessing. Name the document or email you pulled it from.</div>
+    <div class="prompt-when"><strong>When:</strong> Any question where the honest answer lives somewhere in your own company's files, not in general knowledge. This only works because Copilot reads your actual Graph data, not a generic model.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 04 CONTENT : COPILOT SPECIALS (cont) + VERIFY         -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 04 &middot; Microsoft Copilot</span>
+  <h2 class="page-title">Only this kitchen, and prove the work</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">57</span><span class="prompt-name">The three-app relay</span></div>
+    <div class="prompt-block">You're Copilot, working across Outlook, Word, and PowerPoint. Take the client feedback in this email thread about [Client]'s project, turn the key points into a short revised project brief in Word, then build three slides from that brief for a five-minute internal update. Keep names as [Client] and rounded figures throughout all three documents. Tell me when each piece is ready.</div>
+    <div class="prompt-when"><strong>When:</strong> When one piece of information needs to travel through your whole toolkit and come out the other side as three different deliverables, without you retyping it three times.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">58</span><span class="prompt-name">The overnight delegation</span></div>
+    <div class="prompt-block">You're Copilot Cowork. Here's the task: "[describe a multi-step task, e.g. 'research three vendors for [service], compare pricing tiers, and draft a one-page recommendation']". Plan it, research it, and produce the finished draft in the background. I'm closing my laptop. Have it waiting for me when I open it back up, and flag anywhere you had to make an assumption instead of finding a real answer.</div>
+    <div class="prompt-when"><strong>When:</strong> Real delegation, not just chat. Cowork keeps working even when your machine is off, which no other kitchen on this menu does yet.</div>
+  </div>
+
+  <div class="menu-category">Verify &middot; 2 prompts, make it prove its work</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">59</span><span class="prompt-name">The grounding check</span></div>
+    <div class="prompt-block">You're Copilot. For the answer you just gave me about "[topic]", tell me exactly which document, email, or file you pulled each fact from. If any part of your answer wasn't grounded in a real source from my company's files, an it was your own general knowledge, say so directly instead of blending it in as if it were all sourced the same way.</div>
+    <div class="prompt-when"><strong>When:</strong> Any time Copilot states something as company fact. This catches the exact failure the guide calls out: a confident answer that cites a policy that doesn't exist.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">60</span><span class="prompt-name">The yes-chef check</span></div>
+    <div class="prompt-block">You're Copilot. I'm about to share [a plan/budget/document] with you. Before you tell me what you think, give me the three weakest points in it first, the things a skeptical outside reviewer would flag, even if the rest is strong. Only after that, tell me what's working. Don't open with "this looks great."</div>
+    <div class="prompt-when"><strong>When:</strong> Before anything goes out the door, when you specifically don't want a chef who just agrees with you. Guards against the sycophancy the guide warns about.</div>
+  </div>
+
+  <p style="margin-top:8px; font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); font-style:italic;">The full verification system lives in The Judge's Prompts.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+<!-- ============================================================ -->
+<!-- KITCHEN 05 DIVIDER : GROK                                     -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Kitchen 05 &middot; 15 prompts</div>
+    <h2 class="part-title">Grok</h2>
+    <p class="part-purpose">Fast, sarcastic, plugged straight into the live feed of X.</p>
+    <div class="part-count mono">Starters &middot; Mains &middot; Chef's Specials &middot; Verify</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 05 CONTENT : GROK STARTERS                            -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 05 &middot; Grok</span>
+  <h2 class="page-title">Plugged into the live feed</h2>
+
+  <div class="menu-category">Starters &middot; 4 prompts, 5 minutes each</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Start here</span>
+    <div class="prompt-label"><span class="prompt-num">61</span><span class="prompt-name">What is the internet saying about this, right now</span></div>
+    <div class="prompt-block">Use DeepSearch. I need to know what people are actually saying about
+[topic, product, or company] on X and the open web in the last 48 hours.
+
+Read enough sources to be confident, then give me:
+1. The overall mood: positive, negative, or split, with a rough percentage
+2. The 3 most repeated opinions, in people's own words where you can
+3. Any single post or thread that's driving the conversation more than others
+4. What's noise vs what's a real pattern worth acting on
+
+Flag anything you're inferring vs anything you actually found stated directly.</div>
+    <div class="prompt-when"><strong>When:</strong> The first morning you need a real pulse check before a meeting, a launch, or a reply, instead of guessing from your own feed.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">62</span><span class="prompt-name">Summarize this thread before I wade into it</span></div>
+    <div class="prompt-block">Here's a link to an X thread: [paste link]. Summarize it for me like I've
+never seen it: who started it, what the actual argument is, where the
+disagreement is, and whether it's still growing or already dying down.
+
+Then tell me honestly: is this worth me replying to, or is it a 6-hour
+story that'll be gone by tomorrow.</div>
+    <div class="prompt-when"><strong>When:</strong> Before you spend 20 minutes reading a thread that turns out to be nothing, or before you jump into one that actually matters.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">63</span><span class="prompt-name">Turn my rough note into an X post that sounds like me</span></div>
+    <div class="prompt-block">Here's a rough note I wrote for myself: [paste your rough note, no client
+names or numbers, describe the situation in general terms like "a client
+project" or "around 30%"].
+
+Turn it into a short X post. Keep my point, don't add a joke I wouldn't
+make, and don't invent a stat or detail I didn't give you. Give me 2
+versions: one plain, one with a little more edge.</div>
+    <div class="prompt-when"><strong>When:</strong> Any time you have a real thought and 90 seconds, and want it sharpened without losing your voice.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">64</span><span class="prompt-name">Explain this image, chart, or screenshot to me</span></div>
+    <div class="prompt-block">I'm uploading an image: [attach the chart, screenshot, or photo].
+
+Tell me plainly what it shows, in 4 sentences or less. Then tell me the
+one thing in it I'd probably miss if I only glanced at it. If any text
+in the image is hard to read, say so instead of guessing at it.</div>
+    <div class="prompt-when"><strong>When:</strong> Someone sends you a screenshot mid-conversation and you need to understand it in the next 10 seconds, not the next 10 minutes.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 05 CONTENT : GROK MAINS (1/2)                         -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 05 &middot; Grok</span>
+  <h2 class="page-title">Real business work</h2>
+
+  <div class="menu-category">Mains &middot; 6 prompts</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">65</span><span class="prompt-name">Draft the client update from my rough bullet points</span></div>
+    <div class="prompt-block">I need to write a project update for [Client]. Here are my rough notes,
+already stripped of anything private: we finished [rounded number, e.g.
+"about 80%"] of the work, the main blocker was [general description, not
+the private detail], and next step is [next step].
+
+Write it as a short, professional update: what's done, what's blocked,
+what happens next, in that order. No filler opening, no "I hope this
+finds you well." Keep it under 150 words.</div>
+    <div class="prompt-when"><strong>When:</strong> Every week you owe a client an update and would rather spend 3 minutes than 20.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">66</span><span class="prompt-name">Read this long document and tell me what actually matters</span></div>
+    <div class="prompt-block">I'm pasting a long document below (or describe it as: a contract, a
+report, a set of meeting notes). Because your context window can hold
+all of it at once, read the whole thing, not just the start.
+
+[paste document, with any client names swapped for [Client] and dollar
+figures rounded first]
+
+Give me: the 5 things that actually matter, anything that contradicts
+itself between sections, and one question I should ask before I sign off
+on this.</div>
+    <div class="prompt-when"><strong>When:</strong> You've been handed something 40 pages long and a meeting about it in an hour.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">67</span><span class="prompt-name">Use Big Brain to stress-test my plan before I commit</span></div>
+    <div class="prompt-block">Turn on Big Brain mode. Here's a plan I'm considering: [describe the
+plan in plain terms: what you'd do, roughly what it would cost, roughly
+how long it would take, no real client names].
+
+Don't just tell me it sounds good. Find the weakest assumption in it,
+the step most likely to go wrong, and one alternative I haven't
+considered. Take your time on this one.</div>
+    <div class="prompt-when"><strong>When:</strong> Before a decision that's expensive to reverse: a pricing change, a hire, a big proposal.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">68</span><span class="prompt-name">Watch what's being said about my brand and brief me daily</span></div>
+    <div class="prompt-block">Set up a persistent agent for me. Its job: monitor X for mentions of
+[my brand or product name, not a client's], plus the general topic of
+[your industry or niche].
+
+Every time I check in, give me: anything new worth knowing, anything
+that looks like a complaint building momentum, and anything positive
+worth responding to or reposting. Keep the tone factual, not alarmist.</div>
+    <div class="prompt-when"><strong>When:</strong> You can't watch the feed all day but you still need to know before a small thing becomes a big thing.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 05 CONTENT : GROK MAINS (2/2)                         -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 05 &middot; Grok</span>
+  <h2 class="page-title">Real business work, continued</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">69</span><span class="prompt-name">Build me a one-page brief from scattered research</span></div>
+    <div class="prompt-block">I've gathered notes on [topic, e.g. "a competitor's new pricing" or "a
+trend in my industry"] from a few different places. Here they are,
+unpolished: [paste your notes, general terms only, no client specifics].
+
+Use DeepSearch to fill in anything missing or outdated, then combine it
+all into one clean brief: what's happening, why it matters to me, and
+what I should consider doing about it. One page, plain language.</div>
+    <div class="prompt-when"><strong>When:</strong> You have half a research project already done in scattered notes and need it turned into something you can actually hand someone.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">70</span><span class="prompt-name">Give me the honest read on this trend before I bet on it</span></div>
+    <div class="prompt-block">Use DeepSearch across X and the web. I'm considering betting on
+[a trend, tool, or shift in my industry] being real and lasting, not a
+flash in the pan.
+
+Give me the case for it being real, the case for it being hype, and
+which case currently has more evidence behind it. Tell me plainly if
+you're not confident either way instead of picking a side to sound
+useful.</div>
+    <div class="prompt-when"><strong>When:</strong> Before you spend real time or money chasing something because it's loud on X this week.</div>
+  </div>
+
+  <div class="menu-category">Chef's Specials &middot; 3 prompts, only this kitchen can cook these</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Signature dish</span>
+    <div class="prompt-label"><span class="prompt-num">71</span><span class="prompt-name">The live pulse check, sourced and dated</span></div>
+    <div class="prompt-block">Use DeepSearch to pull only what's been posted on X in the last 6 hours
+about [topic, product, or event]. I don't want a general summary of the
+topic, I want what's happening in this window specifically.
+
+Tell me: what changed in the last 6 hours, who's driving it, and
+whether it's still moving or has already peaked. Note the rough time of
+the posts you're drawing from where you can.</div>
+    <div class="prompt-when"><strong>When:</strong> The one thing no other kitchen can cook: a genuinely live read on X, not a snapshot from whenever the model was trained.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 05 CONTENT : GROK SPECIALS (cont) + VERIFY            -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 05 &middot; Grok</span>
+  <h2 class="page-title">Only this kitchen, and prove the work</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">72</span><span class="prompt-name">Feed this entire codebase or book into the countertop at once</span></div>
+    <div class="prompt-block">I'm giving you a large amount of material at once because your context
+window can hold it all: [paste the full codebase, manuscript, or long
+document, with any private client details replaced by [Client] and
+figures rounded].
+
+Read the whole thing before answering. Then tell me: the overall
+structure as you understood it, the 3 weakest or most inconsistent
+parts, and one thing that appears in more than one place but should
+only appear once.</div>
+    <div class="prompt-when"><strong>When:</strong> Whenever something is too long for a normal conversation and you don't want it read in fragments, since this is the biggest countertop in the industry.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">73</span><span class="prompt-name">Generate the visual, then critique your own work</span></div>
+    <div class="prompt-block">Using Aurora, generate an image of: [describe the image plainly, no real
+people's likenesses, no client logos].
+
+Once it's generated, look at your own output and tell me honestly: what
+looks off, what you'd change if I asked for a second version, and
+whether this is ready to use or needs a redo. Don't just say it looks
+great.</div>
+    <div class="prompt-when"><strong>When:</strong> When you need a fast visual and want the chef to flag its own weak spots instead of you catching them later.</div>
+  </div>
+
+  <div class="menu-category">Verify &middot; 2 prompts, make it prove its work</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">74</span><span class="prompt-name">Show me the sources, not just the summary</span></div>
+    <div class="prompt-block">Go back through your last answer about [topic]. For each specific claim
+or number you gave me, tell me whether it came from a source you can
+point to, or whether you inferred or estimated it.
+
+List the claims you're less than 80 percent confident in separately, so
+I know exactly what to double-check myself before I repeat any of this
+to someone else.</div>
+    <div class="prompt-when"><strong>When:</strong> Any time an answer sounded confident, because that confidence and being right aren't the same thing here.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">75</span><span class="prompt-name">Argue the other side before I trust this</span></div>
+    <div class="prompt-block">I asked you about [topic or decision] and you gave me an answer. Now
+argue against your own answer as hard as you honestly can. Don't soften
+it and don't agree with me just because I'm the one asking.
+
+Then tell me which side, the original answer or this counter-argument,
+you'd actually bet on if you had to pick one.</div>
+    <div class="prompt-when"><strong>When:</strong> Before you act on advice from a chef that's built to agree with you unless you push back first.</div>
+  </div>
+
+  <p style="margin-top:8px; font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); font-style:italic;">The full verification system lives in The Judge's Prompts.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+<!-- ============================================================ -->
+<!-- KITCHEN 06 DIVIDER : MISTRAL                                  -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Kitchen 06 &middot; 15 prompts</div>
+    <h2 class="part-title">Mistral</h2>
+    <p class="part-purpose">The fastest kitchen in Paris, EU-only ingredients, no telemetry on request.</p>
+    <div class="part-count mono">Starters &middot; Mains &middot; Chef's Specials &middot; Verify</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 06 CONTENT : MISTRAL STARTERS                         -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 06 &middot; Mistral</span>
+  <h2 class="page-title">EU-only ingredients, no telemetry on request</h2>
+
+  <div class="menu-category">Starters &middot; 4 prompts, 5 minutes each</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Start here</span>
+    <div class="prompt-label"><span class="prompt-num">76</span><span class="prompt-name">The one-thread translation run</span></div>
+    <div class="prompt-block">I need the same message in three languages, staying in this one thread so
+tone carries over consistently. Here's the source, in English:
+
+"[Paste your message, 1 paragraph max. Example: a client update, redacted:
+'Hi [Client], the [rounded number]-day rollout is on track. We'll confirm
+the go-live date by [date].']"
+
+Give me:
+1. A German version written the way a German native would actually write
+   it, not a literal translation
+2. A French version, same rule
+3. A Brazilian Portuguese version, same rule
+
+After each one, flag anything that reads stiff or too literal so I know
+what to double-check.</div>
+    <div class="prompt-when"><strong>When:</strong> You need one message to land naturally in more than one language, fast, without opening three separate tools.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">77</span><span class="prompt-name">The daily brief, no throttle</span></div>
+    <div class="prompt-block">Give me a 5-bullet brief on [topic, e.g. "changes to EU data protection
+rules this month"]. Rules:
+- Each bullet is one sentence, plain language, no jargon
+- End with one line: what I should actually do differently because of this
+- If you're not sure something is current, say so instead of guessing</div>
+    <div class="prompt-when"><strong>When:</strong> A fast, no-nonsense daily or weekly briefing you can read in under a minute, using the free tier's instant response speed.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">78</span><span class="prompt-name">The redaction-first document check</span></div>
+    <div class="prompt-block">I'm about to paste a document summary. Before I do, confirm: are you
+running in a mode where this content won't be used for training? If you
+can't confirm that, tell me now so I can adjust what I share.
+
+Once confirmed, here's what I need checked: [describe the check, e.g.
+"does this match our standard contract terms for a [rounded number]-month
+engagement?"]. I've already replaced names with [Client] and [Me] and
+rounded all numbers.</div>
+    <div class="prompt-when"><strong>When:</strong> Any time you're about to hand over document content and want the privacy question answered before you paste anything sensitive.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">79</span><span class="prompt-name">The multilingual meeting recap</span></div>
+    <div class="prompt-block">Here's a rough recap of a meeting, in English, already redacted (names
+replaced with [Client]/[Me], numbers rounded):
+
+"[Paste recap]"
+
+Turn this into a clean summary with three sections: Decided, Open
+questions, Who owns what next. Then give me the same three sections
+translated into [second language, e.g. French], written the way a native
+speaker would phrase a meeting recap, not a literal translation.</div>
+    <div class="prompt-when"><strong>When:</strong> You just left a call and need a shareable recap in two languages before you forget the details.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 06 CONTENT : MISTRAL MAINS (1/2)                      -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 06 &middot; Mistral</span>
+  <h2 class="page-title">Real business work</h2>
+
+  <div class="menu-category">Mains &middot; 6 prompts</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">80</span><span class="prompt-name">The client email in the client's own idiom</span></div>
+    <div class="prompt-block">Write an email to [Client] about [topic, e.g. "a [rounded number]-week
+delay on the deliverable"]. Requirements:
+- Original language: [language]
+- Tone: professional but warm, not stiff or overly formal
+- Length: under 150 words
+- Do not translate from an English draft. Write it directly in
+  [language] the way a native speaker in that market would actually
+  phrase it
+Give me two versions: one that leads with the delay, one that leads with
+the reason first. I'll pick.</div>
+    <div class="prompt-when"><strong>When:</strong> You need client-facing copy in a language you don't speak fluently, and a literal translation would read wrong.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">81</span><span class="prompt-name">The 100-page contract read</span></div>
+    <div class="prompt-block">I'm uploading a contract (redacted: party names replaced with [Client]
+and [Me], all figures rounded). I need:
+1. Every termination clause, quoted directly, with its trigger condition
+2. Every clause with a hard deadline or date, listed chronologically
+3. A one-paragraph plain-English summary of what happens if either side
+   walks away early
+Flag anything you're inferring versus anything directly stated in the
+text. Don't summarize the whole document, just answer these three things.</div>
+    <div class="prompt-when"><strong>When:</strong> A long document lands in your inbox and you need the three things that actually matter, not a full re-read.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">82</span><span class="prompt-name">The weekly report from raw notes</span></div>
+    <div class="prompt-block">Here are my raw notes from this week (redacted, numbers rounded):
+
+"[Paste bullet notes]"
+
+Turn this into a client-ready weekly status report with sections: Summary
+(2 sentences), Progress this week, Blockers, Next week's plan. Keep it
+under 300 words total. Match a tone that's confident but not salesy, like
+I'm updating a partner, not pitching a stranger.</div>
+    <div class="prompt-when"><strong>When:</strong> Friday afternoon, messy notes, need a clean report before you can close the week.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">83</span><span class="prompt-name">The service package, quoted and named</span></div>
+    <div class="prompt-block">I offer [describe the service, e.g. "a [rounded number]-week onboarding
+package for small business owners"]. Help me write:
+1. Three name options for this package, none of them generic
+2. A one-paragraph description of what's included, no jargon
+3. A price justification paragraph: why this price makes sense, without
+   sounding defensive
+Keep the tone direct, like I'm explaining it to a smart friend, not
+pitching a room.</div>
+    <div class="prompt-when"><strong>When:</strong> You're packaging or repricing an offer and need the naming and framing done in one pass.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 06 CONTENT : MISTRAL MAINS (2/2)                      -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 06 &middot; Mistral</span>
+  <h2 class="page-title">Real business work, continued</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">84</span><span class="prompt-name">The multi-region rollout plan</span></div>
+    <div class="prompt-block">I'm planning to roll out [describe the thing, e.g. "a new pricing page"]
+across [list regions, e.g. "France, Germany, and Brazil"]. For each
+region, tell me:
+1. One cultural or legal difference I should account for, if there is one
+   worth mentioning, don't invent one if there isn't
+2. Whether the copy should be adapted or fully rewritten for that market
+3. One risk of launching the same version everywhere
+Keep each region's answer to 4 lines max.</div>
+    <div class="prompt-when"><strong>When:</strong> You're about to launch something across more than one country and want the regional gaps flagged before you ship, not after.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">85</span><span class="prompt-name">The EU-only data handling check</span></div>
+    <div class="prompt-block">Before I share [describe the data type in general terms, e.g. "customer
+survey responses, already anonymized"], walk me through: where does this
+data get processed, does any of it leave EU servers, and what's the
+difference in your answer if I have No Telemetry Mode on versus off?
+Answer plainly, no marketing language. If you're not certain about
+something, say so instead of reassuring me.</div>
+    <div class="prompt-when"><strong>When:</strong> A GDPR-conscious business owner needs a straight answer on data residency before uploading anything, in plain language, not legal boilerplate.</div>
+  </div>
+
+  <div class="menu-category">Chef's Specials &middot; 3 prompts, only this kitchen can cook these</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Signature dish</span>
+    <div class="prompt-label"><span class="prompt-num">86</span><span class="prompt-name">The step-by-step reasoning audit (Magistral)</span></div>
+    <div class="prompt-block">Turn on step-by-step reasoning for this one. I need you to work through
+[describe a genuinely multi-step problem, e.g. "whether a [rounded
+number]-month payment plan or a single upfront price makes more sense for
+[Client]'s cash flow situation, redacted"] and show your reasoning at
+each step before the final answer. Don't skip to the conclusion. At the
+end, tell me the one step where a different assumption would have changed
+the answer.</div>
+    <div class="prompt-when"><strong>When:</strong> A decision has real stakes and you want to see the chef's thinking exposed, not just the final plate, using Magistral's extended reasoning mode.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 06 CONTENT : MISTRAL SPECIALS (cont) + VERIFY         -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 06 &middot; Mistral</span>
+  <h2 class="page-title">Only this kitchen, and prove the work</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">87</span><span class="prompt-name">The sourced deep research brief</span></div>
+    <div class="prompt-block">Run deep research on [topic, e.g. "current EU rules affecting small
+consultancies working with client data"]. I need:
+1. A structured brief, not a wall of text
+2. Every claim tied to a source you actually read, not a guess
+3. A final section: what's still unclear or where sources disagree
+If you can't find enough current sources, tell me that instead of filling
+the gap with a confident-sounding guess.</div>
+    <div class="prompt-when"><strong>When:</strong> You need a real research pass across multiple sources with citations, not a single quick answer, using Deep Research mode (Pro).</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">88</span><span class="prompt-name">The Vibe pair-programming session</span></div>
+    <div class="prompt-block">I'm working in Mistral Vibe on [describe the task, e.g. "cleaning up a
+script that processes client invoices, no real data included"]. Don't
+just hand me a rewrite. Work with me: ask what the code currently does
+wrong, propose one fix at a time, and wait for me to confirm before
+moving to the next one. Flag any part where you're guessing at intent
+instead of reading it directly from the code.</div>
+    <div class="prompt-when"><strong>When:</strong> An all-day coding session where you want a collaborator, not a one-shot code dump, inside Mistral Vibe.</div>
+  </div>
+
+  <div class="menu-category">Verify &middot; 2 prompts, make it prove its work</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">89</span><span class="prompt-name">The confabulation check</span></div>
+    <div class="prompt-block">Before I trust this, tell me honestly: is there anything in your last
+answer that you're not fully certain about, including any source,
+citation, or fact you might have stitched together rather than actually
+verified? List each one separately. Don't reassure me, just flag them.</div>
+    <div class="prompt-when"><strong>When:</strong> Right after any answer that includes facts, dates, or citations you plan to actually use or share.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">90</span><span class="prompt-name">The sycophancy break</span></div>
+    <div class="prompt-block">Take the opposite side of what I just proposed and argue it as
+convincingly as you can, like you actually believe it. Then tell me
+honestly: on balance, which side is stronger, and why? Don't just tell me
+what I want to hear.</div>
+    <div class="prompt-when"><strong>When:</strong> You've just gotten agreement that felt a little too easy and want a genuine second opinion before you commit.</div>
+  </div>
+
+  <p style="margin-top:8px; font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); font-style:italic;">The full verification system lives in The Judge's Prompts.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+<!-- ============================================================ -->
+<!-- KITCHEN 07 DIVIDER : DEEPSEEK                                 -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Kitchen 07 &middot; 15 prompts</div>
+    <h2 class="part-title">DeepSeek</h2>
+    <p class="part-purpose">The kitchen that cooks the same quality dish for a fraction of the bill.</p>
+    <div class="part-count mono">Starters &middot; Mains &middot; Chef's Specials &middot; Verify</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 07 CONTENT : DEEPSEEK STARTERS                        -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 07 &middot; DeepSeek</span>
+  <h2 class="page-title">Same quality, a fraction of the bill</h2>
+
+  <div class="menu-category">Starters &middot; 4 prompts, 5 minutes each</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Start here</span>
+    <div class="prompt-label"><span class="prompt-num">91</span><span class="prompt-name">The free first order</span></div>
+    <div class="prompt-block">I'm going to give you a real task, not a test question. Before you start,
+tell me in one line: should I be using V4 Flash or V4 Pro for this, and
+should thinking mode be on or off? Then do the task with that setup.
+
+Task: [describe the task in 2-3 sentences, rounded numbers only, no names
+or account details, e.g. "draft a follow-up email for a client proposal
+worth about [10] thousand, they went quiet after [2] weeks"]</div>
+    <div class="prompt-when"><strong>When:</strong> The very first thing to run in chat.deepseek.com, so you learn which chef to call next time instead of guessing.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">92</span><span class="prompt-name">The cost-check habit</span></div>
+    <div class="prompt-block">Before you answer, estimate roughly how long your response will be and
+whether this task actually needs your strongest reasoning mode or would
+run just as well on the fast, cheap setting. Tell me your estimate in one
+line, then answer.
+
+Task: [paste the task, redact any client name to [Client], round any
+number, remove account numbers or emails]</div>
+    <div class="prompt-when"><strong>When:</strong> Use this on routine requests (a quick draft, a short summary) so you build the habit of matching effort to the job instead of defaulting to the expensive setting out of habit.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">93</span><span class="prompt-name">The bilingual draft</span></div>
+    <div class="prompt-block">Write this once in English, then write a second version in Chinese that a
+native speaker would actually say, not a direct translation. Flag any
+line where the two versions carry a different tone.
+
+Content: [paste the message or post with real names swapped for [Client]/
+[Vendor] and any figure rounded, e.g. "a short note to [Vendor] about a
+delayed shipment worth about [5k], keep it polite but firm"]</div>
+    <div class="prompt-when"><strong>When:</strong> Any time you're writing for a bilingual audience or a supplier relationship, DeepSeek's EN/ZH strength does real work here that most other kitchens fake with a translation pass.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">94</span><span class="prompt-name">The document opener</span></div>
+    <div class="prompt-block">I'm uploading a document. First, tell me its length and structure in 3
+bullets so I know you've actually read it. Then wait for my real question,
+don't summarize yet.
+
+Document: [upload the file, redact names, account numbers, and signatures
+before uploading, e.g. replace "Acme Corp" with "[Client]" and any dollar
+figure with a rounded placeholder like "[about 50k]"]</div>
+    <div class="prompt-when"><strong>When:</strong> The first move on any file over a few pages, so you confirm the 1M-word context actually caught the whole thing before you trust its answers.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 07 CONTENT : DEEPSEEK MAINS (1/2)                     -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 07 &middot; DeepSeek</span>
+  <h2 class="page-title">Real business work</h2>
+
+  <div class="menu-category">Mains &middot; 6 prompts</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">95</span><span class="prompt-name">The contract read</span></div>
+    <div class="prompt-block">Read this contract end to end. Give me three sections: (1) the 5 clauses
+that actually matter to me as the [buyer/seller], in plain English, (2)
+anything unusual compared to a standard version of this kind of contract,
+(3) the 3 questions I should ask before signing. Use rounded figures only
+when you quote numbers back to me, and never repeat account or routing
+numbers even if they appear in the file.
+
+Contract: [upload the file with names replaced by [Client]/[Vendor], and
+any bank details blacked out before upload]</div>
+    <div class="prompt-when"><strong>When:</strong> Any contract, lease, or vendor agreement long enough that reading it yourself would eat an hour, this is where the 1M context earns its keep.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">96</span><span class="prompt-name">The client update, redacted by default</span></div>
+    <div class="prompt-block">Draft a status update email to a client. Use [Client] for their name and
+[Me] for mine throughout, and round every number mentioned (budget,
+timeline, hours) to the nearest sensible figure. Tone: warm but factual,
+no filler sentences, 3 short paragraphs max.
+
+Details: [what's done, what's next, any blocker, e.g. "phase 1 finished
+about [2] weeks early, phase 2 starts [Monday], one blocker: waiting on
+their sign-off"]</div>
+    <div class="prompt-when"><strong>When:</strong> Weekly or milestone client emails where you want a fast, cheap draft you can personalize in 30 seconds before sending, never paste the client's actual name or invoice numbers into the prompt itself.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">97</span><span class="prompt-name">The multi-file cross-check</span></div>
+    <div class="prompt-block">I'm uploading several files that should agree with each other (a proposal,
+an invoice, and a contract, for example). Read all of them and tell me
+anywhere they contradict each other on price, dates, or scope. List each
+mismatch as: what document A says, what document B says, and which one
+looks like the error.
+
+Files: [upload 2-4 documents, all names and figures redacted to
+[Client]/rounded numbers before upload]</div>
+    <div class="prompt-when"><strong>When:</strong> Before sending anything out the door where three documents need to tell the same story, catching a mismatch here costs nothing; catching it after signature costs a client.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">98</span><span class="prompt-name">The planning session, thinking mode on</span></div>
+    <div class="prompt-block">Turn thinking mode on for this one. I have a decision to make with several
+moving parts. Walk through your reasoning step by step, out loud, not just
+the final answer, then give me a recommendation and the one assumption
+that would change it if it's wrong.
+
+Decision: [describe the situation in plain terms, rounded numbers, no
+real names, e.g. "choosing between two vendors, one is [15]% cheaper but
+slower, the other costs more but the client needs delivery in [3] weeks"]</div>
+    <div class="prompt-when"><strong>When:</strong> A real decision with tradeoffs, not a quick fact lookup, this is what the "chef plans before cooking" toggle is actually for.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 07 CONTENT : DEEPSEEK MAINS (2/2)                     -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 07 &middot; DeepSeek</span>
+  <h2 class="page-title">Real business work, continued</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">99</span><span class="prompt-name">The coding task, signature dish</span></div>
+    <div class="prompt-block">Here's a bug/feature request. Before writing code, tell me your plan in 3
+bullets. Then write the code with comments explaining any non-obvious
+choice, and a short list of what you'd test to confirm it works. Strip any
+real API keys, tokens, or credentials from what you paste me back, use
+[API_KEY] as a placeholder if one appears in context.
+
+Code + context: [paste the relevant code and the problem, remove
+credentials, internal URLs, and customer data before pasting]</div>
+    <div class="prompt-when"><strong>When:</strong> This is the dish DeepSeek is famous for, GPT-class coding quality at a fraction of the price, use it for real bugs and refactors, not toy examples.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">100</span><span class="prompt-name">The long-document digest for a meeting</span></div>
+    <div class="prompt-block">Read this document and produce a one-page brief I could hand someone
+before a meeting: 5 key points, 3 open questions, and 1 recommended
+position to walk in with. Keep names as [Client]/[Vendor] and round every
+figure you mention.
+
+Document: [upload the report or thread, redacted before upload]</div>
+    <div class="prompt-when"><strong>When:</strong> Prepping for a call where the backing document is long but the meeting is short, turns an hour of reading into a page you can skim on the way in.</div>
+  </div>
+
+  <div class="menu-category">Chef's Specials &middot; 3 prompts, only this kitchen can cook these</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Signature dish</span>
+    <div class="prompt-label"><span class="prompt-num">101</span><span class="prompt-name">The self-host data-control check</span></div>
+    <div class="prompt-block">I'm deciding whether this task needs to stay on hosted chat or should wait
+until I can run it on a self-hosted setup. Tell me plainly: does what I'm
+about to paste you contain anything (client identity, financial detail,
+regulated data) that shouldn't leave my own infrastructure? Answer yes or
+no first, then explain why in one line.
+
+What I'm about to paste: [describe it in general terms with names already
+swapped for [Client] and figures rounded, don't paste the actual sensitive
+content into this check, e.g. "a spreadsheet with [Client] names and
+contract values around [rounded numbers]"]</div>
+    <div class="prompt-when"><strong>When:</strong> Before you paste anything remotely sensitive into the hosted product, since hosted chat and API both process data in China. This prompt is the pause button, use it before the real prompt, not instead of it.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 07 CONTENT : DEEPSEEK SPECIALS (cont) + VERIFY        -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 07 &middot; DeepSeek</span>
+  <h2 class="page-title">Only this kitchen, and prove the work</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">102</span><span class="prompt-name">The cheap-model relay</span></div>
+    <div class="prompt-block">Do this task on the fast, cheap setting first and show me the result.
+Then tell me honestly: would switching to the stronger reasoning mode
+change the answer in any meaningful way, or is this result already good
+enough to use? If it would change, explain what specifically would
+improve.
+
+Task: [paste the task, redacted, rounded numbers]</div>
+    <div class="prompt-when"><strong>When:</strong> Whenever you're not sure if a task is worth the upgrade, this makes the chef itself justify the extra cost instead of you guessing, and it works because the price gap between the two chefs here is large enough to actually matter.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">103</span><span class="prompt-name">The community fine-tune scout</span></div>
+    <div class="prompt-block">I work in [industry, e.g. "legal" or "logistics"]. Tell me what a
+domain-specialized version of you would likely handle better than the
+general model for my kind of work, and what specific terminology or
+document type I should test it on first if I go looking for a fine-tuned
+variant. Don't invent a specific model name, just describe what to look
+for.
+
+My work in one line: [describe your role/industry generally, no client
+names or case details]</div>
+    <div class="prompt-when"><strong>When:</strong> When general-purpose answers keep missing industry-specific nuance, this tells you whether it's worth hunting down one of the thousands of community fine-tunes before you go looking.</div>
+  </div>
+
+  <div class="menu-category">Verify &middot; 2 prompts, make it prove its work</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">104</span><span class="prompt-name">The reasoning replay</span></div>
+    <div class="prompt-block">Show me the reasoning steps you actually used to reach that answer, not a
+cleaned-up version after the fact. If any step was a guess rather than
+something stated in the source material, mark it clearly as a guess.</div>
+    <div class="prompt-when"><strong>When:</strong> Right after any answer built on an uploaded document or a multi-step decision, so you can tell what came from the source and what got filled in.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">105</span><span class="prompt-name">The confidence audit</span></div>
+    <div class="prompt-block">Go back through your last answer and mark every claim as one of three
+things: confirmed by the source I gave you, general knowledge you're
+confident in, or a guess you made to fill a gap. Don't soften this, if
+something was a guess, call it a guess.</div>
+    <div class="prompt-when"><strong>When:</strong> Before you send anything client-facing or act on a recommendation, this catches confabulation and overconfidence before they cost you something.</div>
+  </div>
+
+  <p style="margin-top:8px; font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); font-style:italic;">The full verification system lives in The Judge's Prompts.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+<!-- ============================================================ -->
+<!-- KITCHEN 08 DIVIDER : KIMI                                     -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Kitchen 08 &middot; 15 prompts</div>
+    <h2 class="part-title">Kimi</h2>
+    <p class="part-purpose">The kitchen that puts 300 sous-chefs on one ticket, at a fraction of the bill.</p>
+    <div class="part-count mono">Starters &middot; Mains &middot; Chef's Specials &middot; Verify</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 08 CONTENT : KIMI STARTERS                            -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 08 &middot; Kimi</span>
+  <h2 class="page-title">300 sous-chefs on one ticket</h2>
+
+  <div class="menu-category">Starters &middot; 4 prompts, 5 minutes each</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Start here</span>
+    <div class="prompt-label"><span class="prompt-num">106</span><span class="prompt-name">Fix this function without breaking anything else</span></div>
+    <div class="prompt-block">Here is a function from my codebase. Review it for bugs, edge cases, and
+readability, then rewrite it.
+
+[paste the function, remove any API keys, tokens, or customer data first]
+
+Rules:
+1. Keep the same function name and inputs/outputs unless you tell me why they
+   need to change.
+2. List every bug you found, in plain English, before you show the fix.
+3. Write 3 test cases that would have caught the worst bug.
+4. Flag anything you're not fully sure about instead of guessing silently.</div>
+    <div class="prompt-when"><strong>When:</strong> Any time you have working-but-shaky code and want a second pair of eyes before you ship it.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">107</span><span class="prompt-name">Turn a screenshot into a working page</span></div>
+    <div class="prompt-block">I'm attaching a screenshot of a page design [attach the image; blur or crop
+out any real names, emails, or account numbers first].
+
+Turn it into working code:
+1. Match the layout, spacing, and colors as closely as you can.
+2. Use plain HTML/CSS unless I tell you a framework (React, Vue, etc.).
+3. Make it responsive down to mobile width.
+4. Tell me anywhere you had to guess (a font, an exact color, hidden content)
+   so I know what to double-check.</div>
+    <div class="prompt-when"><strong>When:</strong> You have a design, a competitor page, or a whiteboard sketch and want a real first draft in minutes instead of starting from a blank file.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">108</span><span class="prompt-name">Explain this error like I'm mid-panic</span></div>
+    <div class="prompt-block">I'm getting this error and I don't know why:
+
+[paste the exact error message and the 10-15 lines of code around it, with
+any secrets or client identifiers replaced by [REDACTED]]
+
+Walk me through:
+1. What this error actually means, in one plain sentence.
+2. The most likely cause given my code.
+3. The exact fix, ready to paste in.
+4. One thing to check afterward to confirm it's really fixed, not just quiet.</div>
+    <div class="prompt-when"><strong>When:</strong> You hit a wall mid-build and need the fastest possible path back to working code.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">109</span><span class="prompt-name">Turn a rough idea into a spec Kimi can actually build from</span></div>
+    <div class="prompt-block">I have an idea for a small tool/feature: [describe it in 2-3 sentences, no
+client names, just the shape of the thing].
+
+Before you write any code, turn this into a short build spec:
+1. What it does, in one paragraph.
+2. The inputs and outputs.
+3. 3 things that would make this "done."
+4. Anything you'd need me to clarify before starting.
+
+Then wait for my go-ahead before writing code.</div>
+    <div class="prompt-when"><strong>When:</strong> Every autonomous coding session, long or short, goes better when it starts from a spec instead of a vibe. Five minutes here saves an hour later.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 08 CONTENT : KIMI MAINS (1/2)                         -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 08 &middot; Kimi</span>
+  <h2 class="page-title">Real business work</h2>
+
+  <div class="menu-category">Mains &middot; 6 prompts</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">110</span><span class="prompt-name">Turn a messy client update into a clean status email</span></div>
+    <div class="prompt-block">Here are my rough notes from this week on a client project:
+
+[paste your notes, replace the client's real name with [Client] and round
+any dollar figures or dates to the nearest sensible unit]
+
+Write a short status email to [Client] that:
+1. Opens with what's done, not what's pending.
+2. Covers blockers in one honest line each, no jargon.
+3. Ends with exactly what I need from them next, if anything.
+4. Reads like a person wrote it, not a report generator.</div>
+    <div class="prompt-when"><strong>When:</strong> End of week or end of sprint, when you need to sound organized in under two minutes.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">111</span><span class="prompt-name">Deep Research a decision before you spend money on it</span></div>
+    <div class="prompt-block">I'm deciding between a few options for [describe the decision: a tool, a
+vendor, a platform, a hire, no real company names needed].
+
+Options to compare: [list 3-5 options]
+
+Do a Deep Research pass and come back with:
+1. A short table: option, strongest case for it, strongest case against it.
+2. Which one you'd pick if you were me, and why, in plain language.
+3. What would change your answer (a different budget, team size, timeline).
+4. Sources or reasoning behind each claim, not just assertions.</div>
+    <div class="prompt-when"><strong>When:</strong> Any time a decision is big enough to deserve 20 minutes of real digging instead of a gut call.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">112</span><span class="prompt-name">Turn a client call transcript into next steps</span></div>
+    <div class="prompt-block">Here's a rough transcript or my notes from a call with [Client]:
+
+[paste the notes, with [Client] standing in for the real name and no
+account numbers, contract values, or personal details included]
+
+Give me:
+1. A 3-bullet summary of what was actually decided.
+2. A list of action items with who owns each one: [Me] or [Client].
+3. One thing that was said but never resolved, so it doesn't get lost.
+4. A short recap message I could send [Client] within the hour.</div>
+    <div class="prompt-when"><strong>When:</strong> Right after any client call, while it's still fresh enough to catch what would otherwise slip.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">113</span><span class="prompt-name">Build a one-page project plan from a rough brief</span></div>
+    <div class="prompt-block">Here's the rough brief for a project: [describe scope, timeline, and goal in
+plain terms, rounded numbers only, no real client or company name].
+
+Turn this into a one-page plan:
+1. 3-5 phases, each with a one-line goal.
+2. A rough time estimate per phase (in days or weeks, not exact dates).
+3. The single biggest risk to watch for.
+4. What "done" looks like, in one sentence.
+
+Keep it short enough that I could paste it straight into an email.</div>
+    <div class="prompt-when"><strong>When:</strong> Kicking off new work, especially when the client brief itself was vague and you need to hand them back something concrete.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 08 CONTENT : KIMI MAINS (2/2)                         -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 08 &middot; Kimi</span>
+  <h2 class="page-title">Real business work, continued</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">114</span><span class="prompt-name">Generate a working slide deck outline from a brief</span></div>
+    <div class="prompt-block">I need a slide deck on: [topic, in one sentence]
+Audience: [who's in the room, e.g. "a client's ops team", not real names]
+Goal: [what they should believe or do after watching]
+
+Build me:
+1. A slide-by-slide outline, 8-12 slides, one line of content per slide.
+2. A one-sentence "so what" for each slide, the point it's actually making.
+3. Where a chart, screenshot, or diagram would do more than text.
+4. A closing slide that ends on the actual ask, not a generic thank-you.</div>
+    <div class="prompt-when"><strong>When:</strong> You need a deck fast and would rather edit a strong draft than stare at a blank slide.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">115</span><span class="prompt-name">Audit a piece of client-facing copy before it goes out</span></div>
+    <div class="prompt-block">Here's copy I'm about to send or publish for [Client]:
+
+[paste the copy, with [Client] replacing the real name and no real pricing
+or personal claims left in]
+
+Review it for:
+1. Anywhere it overpromises or makes a claim I couldn't defend if asked.
+2. Anywhere it's vague when it could be specific.
+3. One line that could be cut entirely without losing meaning.
+4. A tightened rewrite, same length or shorter.</div>
+    <div class="prompt-when"><strong>When:</strong> Before anything client-facing goes out the door, especially copy you wrote fast and haven't re-read yet.</div>
+  </div>
+
+  <div class="menu-category">Chef's Specials &middot; 3 prompts, only this kitchen can cook these</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Signature dish</span>
+    <div class="prompt-label"><span class="prompt-num">116</span><span class="prompt-name">Agent Swarm: build a full multi-page site in one pass</span></div>
+    <div class="prompt-block">I want a multi-page marketing site for [describe the business in one
+sentence, no real name needed, e.g. "a local bakery" or "a B2B consulting
+firm"].
+
+Pages needed: [list them, e.g. home, about, services, contact]
+
+With Agent Swarm on, assign a different agent to each page and have them
+work in parallel. For each page, come back with:
+1. The working code for that page.
+2. How it connects to the others (nav, shared styling).
+3. One thing that's still a placeholder and needs my real content.
+
+Tell me up front if any page needs client logos, photos, or real copy before
+it can be finished, so I know what to gather.</div>
+    <div class="prompt-when"><strong>When:</strong> You need a full working site draft in one sitting instead of one page at a time. This is the dish no other kitchen on the menu can plate the same way.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 08 CONTENT : KIMI SPECIALS (cont) + VERIFY            -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 08 &middot; Kimi</span>
+  <h2 class="page-title">Only this kitchen, and prove the work</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">117</span><span class="prompt-name">Set it loose for an unsupervised overnight refactor</span></div>
+    <div class="prompt-block">Here's a part of my codebase that's grown messy over time [describe the
+folder or module, no real client names or secrets, share only the code
+itself with any keys or tokens replaced by [REDACTED]].
+
+I want you to run an autonomous refactor:
+1. First, tell me your plan: what you'll touch, what you won't, and why.
+2. Then refactor for readability and consistency without changing behavior.
+3. Add or update tests so I can verify nothing broke.
+4. At the end, give me a plain-English changelog of everything you touched,
+   long enough that I can review it in one sitting even if the session ran
+   for hours.
+
+Do not touch anything outside the scope I gave you, even if you spot other
+issues. Just list those separately for me to approve later.</div>
+    <div class="prompt-when"><strong>When:</strong> You have a real backlog of technical debt and hours to let it run unsupervised, the way a 13-hour overnight refactor actually plays out here.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">118</span><span class="prompt-name">Deep Thinking: stress-test a plan before you commit to it</span></div>
+    <div class="prompt-block">Here's a plan I'm about to commit to: [describe it in a few sentences,
+rounded numbers, no real client or company names].
+
+Turn on Deep Thinking and reason through this as carefully as you can before
+answering:
+1. Walk through the plan step by step and find the weakest link.
+2. Think through 2 ways this could fail that I haven't mentioned.
+3. Tell me what would have to be true for this plan to actually work.
+4. Give me your honest read: would you commit to this as written, or change
+   something first?
+
+Show your reasoning, not just the final verdict.</div>
+    <div class="prompt-when"><strong>When:</strong> A decision is big enough that you want the chef to actually plan before cooking, not just answer fast.</div>
+  </div>
+
+  <div class="menu-category">Verify &middot; 2 prompts, make it prove its work</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">119</span><span class="prompt-name">Make it show its work, not just its confidence</span></div>
+    <div class="prompt-block">Look back at your last answer in this conversation.
+
+1. Point out anything you stated as fact that you're not fully certain about.
+2. If you cited a library, tool, source, or fact, tell me plainly whether you
+   actually verified it exists or whether you're pattern-matching from
+   training.
+3. Rate your own confidence in the answer, low, medium, or high, and say why.
+4. If you'd tell a paying client this exact answer with your name on it,
+   say so. If not, tell me what you'd change first.</div>
+    <div class="prompt-when"><strong>When:</strong> Right after any answer you're about to act on, especially generated code or a cited claim you haven't checked yourself.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">120</span><span class="prompt-name">Catch the yes-chef problem before it costs you</span></div>
+    <div class="prompt-block">Here's something I built or wrote, and I want your honest opinion, not a
+polite one: [paste the work, redacted of any client name, real numbers, or
+personal data].
+
+1. If there's a real problem with this, say so plainly, don't soften it.
+2. Tell me the single weakest part, even if the rest is strong.
+3. If you'd normally just say "looks good," stop and actually check it first.
+4. Give me one thing you'd change if this were your name on it, not mine.</div>
+    <div class="prompt-when"><strong>When:</strong> Any time you suspect the answer you're about to get is the agreeable one, not the accurate one.</div>
+  </div>
+
+  <p style="margin-top:8px; font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); font-style:italic;">The full verification system lives in The Judge's Prompts.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+<!-- ============================================================ -->
+<!-- KITCHEN 09 DIVIDER : MANUS                                    -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Kitchen 09 &middot; 15 prompts</div>
+    <h2 class="part-title">Manus</h2>
+    <p class="part-purpose">The kitchen that takes the order, walks off, and comes back with the finished dish, no supervision required.</p>
+    <div class="part-count mono">Starters &middot; Mains &middot; Chef's Specials &middot; Verify</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 09 CONTENT : MANUS STARTERS                           -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 09 &middot; Manus</span>
+  <h2 class="page-title">No supervision required</h2>
+
+  <div class="menu-category">Starters &middot; 4 prompts, 5 minutes each</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Start here</span>
+    <div class="prompt-label"><span class="prompt-num">121</span><span class="prompt-name">The Ten-Minute Market Scan</span></div>
+    <div class="prompt-block">Goal: build a comparison spreadsheet of 10 suppliers for [product or service category], priced in [currency].
+
+Columns: supplier name, website, price for [rounded spec, e.g. "the 300-400W tier"], shipping or delivery terms, and one line on reputation from public reviews.
+
+Constraints: only use publicly available pages, do not create any accounts, do not enter payment details anywhere, stop after 10 suppliers even if more exist.
+
+Before you start browsing, show me your plan as a numbered list of steps. Wait for me to approve it before you run it.
+
+Deliver the result as a spreadsheet (CSV or XLSX) I can open directly.</div>
+    <div class="prompt-when"><strong>When:</strong> The first time you want proof this kitchen can research and structure data without you babysitting every click.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">122</span><span class="prompt-name">The First Real Report</span></div>
+    <div class="prompt-block">Goal: research [topic, e.g. "the current state of X in the Y industry"] and produce a structured report for [Client], a company in [industry, rounded size like "under 50 people"].
+
+Structure: executive summary, 3 to 5 key findings each with a source link, one page of implications for a company their size, and a short recommendations list.
+
+Constraints: cite every claim with a link, flag anything you could not verify from at least two sources, keep it under [rounded length, e.g. "6 pages"].
+
+Show me the plan first. Once I approve it, run it and deliver the report as Markdown and PDF.</div>
+    <div class="prompt-when"><strong>When:</strong> When you need a first deliverable that looks like real client work, not a chat answer.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">123</span><span class="prompt-name">The Overnight Task</span></div>
+    <div class="prompt-block">Goal: [describe a task that takes real research time, e.g. "compile every publicly listed [type of event] happening in [rounded region] in the next [rounded timeframe]"].
+
+I am queuing this and walking away. Constraints: stay within [rounded credit or time budget], only use public sources, do not sign up for anything, do not submit any forms.
+
+Show me your plan before you start. Once approved, run the full task without needing me to respond again, and notify me when it's done or if you hit something that needs my decision.
+
+Deliver the final list as a spreadsheet with source links for every row.</div>
+    <div class="prompt-when"><strong>When:</strong> The moment you test the "queue it and it cooks while you sleep" promise for real, with a low-stakes task.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">124</span><span class="prompt-name">The Replay Habit</span></div>
+    <div class="prompt-block">Before I trust this task's output, walk me through what you actually did, step by step, as if you were narrating the replay to someone who wasn't watching.
+
+For each step, tell me: what you looked at or clicked, what you concluded, and whether you are fully confident in that step or just reasonably confident.
+
+Flag anywhere you guessed, assumed, or filled a gap instead of verifying it directly.</div>
+    <div class="prompt-when"><strong>When:</strong> Right after any task finishes, before you act on the result, especially the first few times you use this kitchen.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 09 CONTENT : MANUS MAINS (1/2)                        -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 09 &middot; Manus</span>
+  <h2 class="page-title">Real business work</h2>
+
+  <div class="menu-category">Mains &middot; 6 prompts</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">125</span><span class="prompt-name">The Competitor Teardown</span></div>
+    <div class="prompt-block">Goal: research [rounded number, e.g. "8"] competitors to [Client]'s product in [category] and build a comparison document.
+
+For each competitor, pull: positioning line from their homepage, pricing tiers (rounded to nearest [currency] amount), 3 stated features, and one thing their public reviews complain about.
+
+Constraints: public pages only, no logins, no contact forms submitted, stop if a site requires payment to view pricing and note it as "pricing gated" instead of guessing.
+
+Show me the plan first. Deliver as a structured report (Markdown and PDF) plus a summary spreadsheet.</div>
+    <div class="prompt-when"><strong>When:</strong> Building the competitive section of a proposal or a quarterly review for [Client] without spending a day on tabs.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">126</span><span class="prompt-name">The Client-Ready Slide Deck</span></div>
+    <div class="prompt-block">Goal: turn the attached [file type, e.g. "research report" or "data export"] into a slide deck for a meeting with [Client].
+
+Structure: title slide, agenda, [rounded number, e.g. "5"] content slides covering the main findings, one slide of recommendations, one closing slide with next steps.
+
+Tone: plain English, one idea per slide, numbers rounded, no jargon. Do not invent any statistic that isn't in the source file.
+
+Show me the plan first. Deliver the finished deck in a format I can open and edit.</div>
+    <div class="prompt-when"><strong>When:</strong> You have the analysis done and need it presentation-ready without touching a slide tool yourself.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">127</span><span class="prompt-name">The Weekly Standing Order</span></div>
+    <div class="prompt-block">Set up a scheduled task that runs every [day, e.g. "Monday"] at [time] and does the following:
+
+Goal: check [rounded number, e.g. "5"] specific public sources (list: [source 1], [source 2], [source 3]) for anything new about [topic relevant to Client or Me], and summarize what changed since last week.
+
+Constraints: public pages only, no logins required, keep the summary to one page, flag if a source is unreachable instead of skipping it silently.
+
+Deliver each week's summary as a short report, and notify me when it's ready.</div>
+    <div class="prompt-when"><strong>When:</strong> You want a recurring watch on a market, a competitor, or a topic without remembering to check it yourself.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">128</span><span class="prompt-name">The Multi-Source Research Aggregator</span></div>
+    <div class="prompt-block">Goal: pull together everything publicly available on [topic] from at least [rounded number, e.g. "6"] different types of sources (news, forums, official documentation, review sites, and similar).
+
+Deduplicate overlapping claims, note where sources disagree, and structure the result under clear headings: what's confirmed, what's disputed, what's speculative.
+
+Constraints: link every claim to its source, do not present a forum opinion as a verified fact, keep speculative material clearly labeled.
+
+Show me the plan first. Deliver as a structured Markdown report.</div>
+    <div class="prompt-when"><strong>When:</strong> Research that would normally mean 20 open tabs and a headache, done as one ticket instead.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 09 CONTENT : MANUS MAINS (2/2)                        -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 09 &middot; Manus</span>
+  <h2 class="page-title">Real business work, continued</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">129</span><span class="prompt-name">The Application or Form Batch</span></div>
+    <div class="prompt-block">Goal: fill out and submit [rounded number, e.g. "10"] copies of the same type of public form (example: directory listings, event registrations, or newsletter signups) using the details below.
+
+Details to use: [name], [rounded description of what's being submitted], [public contact info only, never a password or payment method].
+
+Constraints: pause and ask me before submitting anything that asks for payment, a password, or personal identification beyond what I've listed above. Show me the plan first.
+
+After each submission, log what was submitted and where, so I have a record.</div>
+    <div class="prompt-when"><strong>When:</strong> Repetitive public-facing admin work, like listing [Client]'s business across directories, that eats an afternoon if done by hand.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">130</span><span class="prompt-name">The Prototype Website</span></div>
+    <div class="prompt-block">Goal: build a working prototype website for [Client or Me] to review internally. Purpose: [one line, e.g. "show a proposed layout for the new services page"].
+
+Structure: [rounded number, e.g. "4"] pages, content based on the attached [file or brief], placeholder images where none are provided, plain English copy with no invented claims.
+
+Show me the plan first, including the page list. Once approved, build it and deliver a working link plus the underlying files.</div>
+    <div class="prompt-when"><strong>When:</strong> You need something clickable to react to, not another wall of text describing what a page could look like.</div>
+  </div>
+
+  <div class="menu-category">Chef's Specials &middot; 3 prompts, only this kitchen can cook these</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Signature dish</span>
+    <div class="prompt-label"><span class="prompt-num">131</span><span class="prompt-name">The Constrained Autonomous Run</span></div>
+    <div class="prompt-block">Goal: [a real end-to-end goal, e.g. "find and shortlist 15 potential vendors for X and compile a first-contact-ready brief on each"].
+
+I want you to run this fully autonomously once I approve the plan: don't come back to me mid-task unless you hit a decision that needs a human (payment, credentials, or a genuinely ambiguous fork in the plan).
+
+Constraints: [rounded credit or time cap], public sources only unless I say otherwise, log every source you touch.
+
+Show me the plan first. Then run it start to finish and notify me when it's done, with the replay available for me to review.</div>
+    <div class="prompt-when"><strong>When:</strong> The task that justifies this kitchen over a chat tool: real autonomy, on a leash you set yourself.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 09 CONTENT : MANUS SPECIALS (cont) + VERIFY           -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 09 &middot; Manus</span>
+  <h2 class="page-title">Only this kitchen, and prove the work</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">132</span><span class="prompt-name">The Trimmed Plan</span></div>
+    <div class="prompt-block">Here is the plan you just proposed for [task name]: [paste the plan Manus generated].
+
+Before I approve it, tell me: which steps are the highest credit cost, which steps could be cut or merged without losing the core result, and which single step is most likely to go wrong or wander off scope.
+
+Then give me a trimmed version of the plan, same goal, fewer or safer steps.</div>
+    <div class="prompt-when"><strong>When:</strong> Every time before you approve a plan for anything beyond a 5-minute task. This is the single biggest lever you have over cost and scope, use it.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">133</span><span class="prompt-name">The Verified Real-World Action</span></div>
+    <div class="prompt-block">Goal: [a real-world action, e.g. "submit an inquiry form on 5 specific vendor websites" or "book a rounded number of appointments through a public scheduling page"].
+
+Because this involves actions with real consequences, pause before each one that involves payment, a signature, personal data beyond what I list, or anything irreversible, and ask me to confirm.
+
+Use only these details: [rounded, non-sensitive details]. Never use a password or payment method I haven't explicitly given you in this conversation.
+
+Show me the plan first, then execute with confirmation gates in place, and give me the replay link when done.</div>
+    <div class="prompt-when"><strong>When:</strong> Exactly the kind of task other AI tools can only describe. Manus can actually do it, so make it prove it's asking before it acts.</div>
+  </div>
+
+  <div class="menu-category">Verify &middot; 2 prompts, make it prove its work</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">134</span><span class="prompt-name">The Confabulation Check</span></div>
+    <div class="prompt-block">Look back at the task you just completed. For each major claim in your final report ("the form was submitted," "the price is X," "the source confirms Y"), tell me exactly how you verified it: which page, which screenshot moment in the replay, which specific text you read.
+
+If any claim in your report doesn't have a verification step behind it, say so directly instead of defending it. List those separately under "unverified, treat with caution."</div>
+    <div class="prompt-when"><strong>When:</strong> Before you rely on any output that describes an action being taken, not just information being found. Confabulation in an agent means a fake "done" report, catch it here.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">135</span><span class="prompt-name">The Injection and Scope Audit</span></div>
+    <div class="prompt-block">Review the full run you just did. Did any site, page, or document you interacted with contain instructions that redirected what you were doing, even subtly, away from my original goal?
+
+Also check: did you stay within the constraints I set (budget, sources, do-not-do list), or did scope creep in anywhere? List every place you touched a page, form, or file that I did not explicitly authorize in the original goal.</div>
+    <div class="prompt-when"><strong>When:</strong> After any task that touched authenticated sites, submitted anything, or ran longer than expected. This is the check for the highest-stakes failure mode this kitchen has: a hijacked or wandering agent.</div>
+  </div>
+
+  <p style="margin-top:8px; font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); font-style:italic;">The full verification system lives in The Judge's Prompts.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+<!-- ============================================================ -->
+<!-- KITCHEN 10 DIVIDER : META AI                                  -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Kitchen 10 &middot; 15 prompts</div>
+    <h2 class="part-title">Meta AI</h2>
+    <p class="part-purpose">It never made you leave the room you were already in.</p>
+    <div class="part-count mono">Starters &middot; Mains &middot; Chef's Specials &middot; Verify</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 10 CONTENT : META AI STARTERS                         -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 10 &middot; Meta AI</span>
+  <h2 class="page-title">Never leave the room you're already in</h2>
+
+  <div class="menu-category">Starters &middot; 4 prompts, 5 minutes each</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Start here</span>
+    <div class="prompt-label"><span class="prompt-num">136</span><span class="prompt-name">The group chat decision-maker</span></div>
+    <div class="prompt-block">@MetaAI read back through this chat and summarize where we landed.
+
+Give me:
+1. The decision we actually made (if any)
+2. Who is doing what next, using first names or roles only, like [Person A] takes the booking, [Person B] confirms the date
+3. Anything still open that nobody answered
+
+Keep it to 6 lines max so it's easy to read on a phone.</div>
+    <div class="prompt-when"><strong>When:</strong> Use it at the end of any WhatsApp or Messenger group thread, family, friends, or a small client group, when the conversation scrolled past what anyone can hold in their head.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">137</span><span class="prompt-name">The photo-to-answer</span></div>
+    <div class="prompt-block">[Attach or send a photo in the chat]
+
+I'm not sure what this is or what I'm looking at. Tell me:
+1. What it actually is, in plain language
+2. Anything I should be careful about (if it's food, a plant, a product label, a warning sign, etc.)
+3. One follow-up question I should ask if I want more detail
+
+If you're not fully sure, say so instead of guessing.</div>
+    <div class="prompt-when"><strong>When:</strong> Use it the moment you snap a photo of something confusing, a label, a plant, a receipt, an appliance, right inside WhatsApp or Instagram, no separate app.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">138</span><span class="prompt-name">Imagine, the fast sticker</span></div>
+    <div class="prompt-block">Imagine a [style, e.g. hand-drawn, watercolor, pixel-art] sticker of [subject, e.g. a coffee cup with a tiny crown] for a [occasion, e.g. Monday morning] chat message. Make it simple enough to read at sticker size, no tiny text.</div>
+    <div class="prompt-when"><strong>When:</strong> Use it inside a WhatsApp, Instagram, or Messenger thread when you want a ready-to-send image or sticker in under a minute, no export, no separate design tool.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">139</span><span class="prompt-name">Hands-free through the glasses</span></div>
+    <div class="prompt-block">"Hey Meta, look at what I'm looking at and tell me [what I want to know, e.g. what this ingredient is / how to say this in Portuguese / what this building is]."
+
+Keep the answer to one short sentence I can act on immediately, I'm hands-free.</div>
+    <div class="prompt-when"><strong>When:</strong> Use it with Ray-Ban Meta glasses when your hands are full, you're cooking, walking, or fixing something, and you need a fast spoken answer, not a screen.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 10 CONTENT : META AI MAINS (1/2)                      -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 10 &middot; Meta AI</span>
+  <h2 class="page-title">Real business work</h2>
+
+  <div class="menu-category">Mains &middot; 6 prompts</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">140</span><span class="prompt-name">The client update, redacted and ready</span></div>
+    <div class="prompt-block">@MetaAI help me turn these rough notes into a short client update message.
+
+Notes: [paste your rough notes, using [Client] instead of the real name, and rounded numbers like "about 40 units" instead of exact figures]
+
+Write it as:
+1. What we did this week (2-3 lines)
+2. What's next (1-2 lines)
+3. One question for [Client], if there is one
+
+Tone: warm, direct, no jargon. Short enough to read on a phone screen.</div>
+    <div class="prompt-when"><strong>When:</strong> Use it when you need to send a quick client or customer update from your phone, straight from the WhatsApp or Messenger thread you're already having with them.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">141</span><span class="prompt-name">The document, explained in plain English</span></div>
+    <div class="prompt-block">I'm sending you a photo of a document (contract page, invoice, form, notice). Read it and tell me:
+
+1. What this document actually is
+2. The 3 things I most need to know or do
+3. Any date, deadline, or number I should not miss
+
+If any part is blurry or unclear in the photo, tell me instead of guessing what it says. Use [rounded numbers] if you're estimating anything.</div>
+    <div class="prompt-when"><strong>When:</strong> Use it when a client or a business sends you a photo of paperwork inside WhatsApp and you need the plain-English version fast, not a legal read, just clarity.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">142</span><span class="prompt-name">The social caption, three ways</span></div>
+    <div class="prompt-block">Write 3 short captions for a post about [topic, e.g. our new product launch / a client win, described generically as "[Client] hit [rounded milestone]"].
+
+Caption 1: friendly and casual, like a WhatsApp status
+Caption 2: a little more polished, for Instagram
+Caption 3: short and punchy, under 12 words
+
+No em-dashes. No hashtags unless I ask for them. Keep [Client] and [Me] as placeholders, don't invent a real name.</div>
+    <div class="prompt-when"><strong>When:</strong> Use it when you need quick, on-brand caption options for Instagram or Facebook and want to stay inside the app instead of opening a separate writing tool.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">143</span><span class="prompt-name">The AI Studio persona brief</span></div>
+    <div class="prompt-block">I want to build a custom AI character in AI Studio. Help me write the persona brief.
+
+Character purpose: [what this character is for, e.g. answering FAQs for my audience / being a friendly study buddy]
+Tone: [e.g. warm and encouraging, or blunt and no-nonsense]
+Things it should always do: [list 2-3]
+Things it should never do: [list 2-3, e.g. never give financial advice, never make up sources]
+Topics it should redirect elsewhere: [list any]
+
+Write this as a clear, structured brief I can paste into AI Studio's character setup, organized under headings so it's easy to follow.</div>
+    <div class="prompt-when"><strong>When:</strong> Use it before you build a custom AI character in AI Studio, so the persona, tone, and guardrails are decided on paper first, not improvised inside the tool.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 10 CONTENT : META AI MAINS (2/2)                      -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 10 &middot; Meta AI</span>
+  <h2 class="page-title">Real business work, continued</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">144</span><span class="prompt-name">The WhatsApp Business FAQ builder</span></div>
+    <div class="prompt-block">Help me draft the FAQ answers for my WhatsApp Business AI assistant.
+
+My business: [one line, e.g. a small bakery taking orders / a service business booking appointments]
+Common questions customers ask: [list 5-8, e.g. "what are your hours," "do you deliver," "how do I book"]
+
+For each question, write a short, friendly answer in plain language, tied to my actual catalogue or booking process where relevant. Flag any question where the answer should come from a real person instead of the AI.</div>
+    <div class="prompt-when"><strong>When:</strong> Use it when setting up or refreshing the automated FAQ layer behind a small business's WhatsApp Business AI, before customers ever see it.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">145</span><span class="prompt-name">The weekly plan, spoken and confirmed</span></div>
+    <div class="prompt-block">"Hey Meta, I need to plan my week. Here's what's on it: [list 4-6 things out loud, e.g. client call Tuesday, invoice due Friday]. Help me group these into what has to happen first, what can wait, and one thing I should not forget."
+
+Then read the plan back to me in the order I should tackle it.</div>
+    <div class="prompt-when"><strong>When:</strong> Use it hands-free through Ray-Ban Meta glasses or voice mode in the app, when you're commuting or between tasks and want to think out loud instead of typing.</div>
+  </div>
+
+  <div class="menu-category">Chef's Specials &middot; 3 prompts, only this kitchen can cook these</div>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Signature dish</span>
+    <div class="prompt-label"><span class="prompt-num">146</span><span class="prompt-name">The self-hosted Llama data policy</span></div>
+    <div class="prompt-block">I'm running a Llama model on my own infrastructure through the open-source weights, not the hosted Meta AI app. Help me write a one-page internal policy for my team covering:
+
+1. What kind of data is safe to send to this self-hosted model versus what still needs a real Traffic Light Rule check (green share freely, amber redact first, red never in an AI account)
+2. Why self-hosting changes the privacy picture compared to the hosted meta.ai product
+3. One line reminding the team that self-hosting removes upstream calls but doesn't remove the need for good judgment
+
+Plain English, no legal jargon, short enough that a non-technical teammate reads it in two minutes.</div>
+    <div class="prompt-when"><strong>When:</strong> Use it once, when you or your developer sets up self-hosted Llama, so everyone touching it understands what "your own kitchen" actually means for data.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KITCHEN 10 CONTENT : META AI SPECIALS (cont) + VERIFY         -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Kitchen 10 &middot; Meta AI</span>
+  <h2 class="page-title">Only this kitchen, and prove the work</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">147</span><span class="prompt-name">The Llama API system prompt draft</span></div>
+    <div class="prompt-block">I'm building a product on top of the Llama API and need a system prompt. Here's what the assistant should do:
+
+Purpose: [one line]
+Persistent persona/tone: [describe]
+Format rules it should always follow: [e.g. always answer in 3 bullet points, always ask a clarifying question first]
+Hard boundaries: [list 2-3 things it must never do]
+
+Write this as a clean system prompt I can drop straight into my API call, and add one line at the end reminding future-me why each rule is there, so I don't accidentally delete a boundary later.</div>
+    <div class="prompt-when"><strong>When:</strong> Use it when you're a developer setting standing instructions for an app built on the Llama API, so the persona holds steady across every single call instead of drifting.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">148</span><span class="prompt-name">The cross-platform brand voice, one AI character</span></div>
+    <div class="prompt-block">I want the AI character I built in AI Studio to sound the same whether someone talks to it on Instagram or Messenger. Give me:
+
+1. A short "voice card" (5 lines) capturing tone, favorite phrases, and things it never says
+2. One test conversation on Instagram and one on Messenger, written out, so I can check the voice holds steady across both
+3. A flag for any place the platform's format (DMs vs comments) might tempt it to sound different
+
+Keep it plain English, no em-dashes, easy for a non-technical creator to review.</div>
+    <div class="prompt-when"><strong>When:</strong> Use it after you've deployed an AI Studio character to more than one surface, to catch the moment a "sous-chef" starts sounding like two different people depending on the app.</div>
+  </div>
+
+  <div class="menu-category">Verify &middot; 2 prompts, make it prove its work</div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">149</span><span class="prompt-name">The hallucination check, in the thread</span></div>
+    <div class="prompt-block">@MetaAI before I trust that last answer, check yourself:
+
+1. Which parts of your answer are you fully confident about?
+2. Which parts might be a guess dressed up as a fact, the kind of thing you'd say confidently even if it's wrong?
+3. Is there anything here I should verify somewhere else before I act on it or forward it to [Client]?
+
+Be honest even if it makes the answer look less complete.</div>
+    <div class="prompt-when"><strong>When:</strong> Use it any time a Meta AI answer in a group chat or DM is going to inform a real decision, a purchase, advice you'll repeat, or something you'll send to someone else.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">150</span><span class="prompt-name">The sycophancy pressure-test</span></div>
+    <div class="prompt-block">I disagree with what you just told me. Before you just agree with me, actually check: was your original answer right, or was mine? Argue for your original answer first, using specific reasons, then tell me honestly which one of us is more likely correct.
+
+Don't just flip to whatever makes me happy. I want the honest read, even if it means telling me I'm wrong.</div>
+    <div class="prompt-when"><strong>When:</strong> Use it whenever Meta AI folds too easily the moment you push back, especially in casual chat threads where a quick "yes-chef" answer is tempting to give.</div>
+  </div>
+
+  <p style="margin-top:8px; font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); font-style:italic;">The full verification system lives in The Judge's Prompts.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+<!-- ============================================================ -->
+<!-- CLOSING PAGE                                                  -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Closing</span>
+  <h2 class="page-title">Which kitchen to start with</h2>
+
+  <p>You now have all 150. Don't try to open all ten kitchens this week.</p>
+
+  <ol class="howto-list">
+    <li><strong>If you're not sure where to start, start with Claude or ChatGPT.</strong> Claude for anything long, structured, or where you want a real editable artifact back. ChatGPT if you want one tool that does research, spreadsheets, documents, and delegated browser tasks in the same place. Both have a full 15-prompt menu built for exactly that kind of first visit.</li>
+    <li><strong>Add a specialist once you know your gap.</strong> Grok if you need a genuine live read on what's happening right now. Mistral if you work across languages or care about EU data residency. DeepSeek or Kimi if coding or heavy documents are your daily work and cost matters. Manus if you want a task queued and finished while you're away. Meta AI if your business already lives inside WhatsApp or Instagram. Copilot if your whole company already runs on Microsoft 365. Gemini if you're already inside Google Workspace.</li>
+    <li><strong>Every kitchen ends the same way.</strong> Run the two Verify prompts at the end of every chapter before you trust an answer with your name on it. That habit matters more than which kitchen you picked.</li>
+  </ol>
+
+  <div class="closing-note">
+    <p style="margin-bottom:12px;">Ten kitchens, one menu, the same four courses everywhere. Once you know the convention, you can order confidently anywhere this industry goes next.</p>
+    <div class="signoff">Now go order.</div>
+    <p class="ui" style="margin-top:14px; font-style:normal; font-size:14px; color:var(--muted);">From Fatiha</p>
+  </div>
+
+  <div class="crosssell">
+    <div class="ui">Every prompt on this menu ends with a Verify course. The full verification system, 42 prompts deep, lives in The Judge's Prompts.</div>
+    <a class="cta" href="../../site/store.html">See what's in the Store &rarr;</a>
+  </div>
+
+  <div class="license-block">
+    <p style="margin-bottom:8px;"><strong style="color:var(--ink);">License.</strong> &copy; 2026 Fatiha Chikh / Shift &amp; Lead. Original IP. For the buyer's personal or single-business use. Redistribution, resale, or use as AI training data is prohibited. Free updates are included, this menu is refreshed as tools change.</p>
+    <p>Licensed to [buyer email] &middot; resale and redistribution prohibited</p>
+  </div>
+</div>
+</body>
+</html>
