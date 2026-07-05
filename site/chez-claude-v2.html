@@ -230,6 +230,29 @@ a{color:var(--accent)}
       <p>Give it standing context about your business once — then every conversation starts already knowing you.</p>
     </div>
   </div>
+
+<!-- the full menu: every station in the kitchen -->
+<style>
+.stations{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 0}
+@media(max-width:900px){.stations{grid-template-columns:repeat(2,1fr)}}
+.station{border:1px solid var(--rule);border-radius:12px;padding:16px 18px;background:#fff}
+.station .mono{font-size:9px;color:var(--accent)}
+.station h4{font-family:'Inter',sans-serif;font-size:.98rem;font-weight:600;margin:.35rem 0 .2rem}
+.station p{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--muted);margin:0;line-height:1.5}
+.menu-more{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:18px}
+</style>
+<div class="stations">
+  <div class="station"><span class="mono">Core brain</span><h4>The models</h4><p>Fast for everyday orders, deep for the dishes that take reasoning.</p></div>
+  <div class="station"><span class="mono">Front of house</span><h4>Projects</h4><p>Standing context — the kitchen remembers your business.</p></div>
+  <div class="station"><span class="mono">Front of house</span><h4>Artifacts</h4><p>Working things built beside the chat, ready to use.</p></div>
+  <div class="station"><span class="mono">Front of house</span><h4>Voice &amp; files</h4><p>Talk to it; hand it PDFs, spreadsheets, screenshots.</p></div>
+  <div class="station"><span class="mono">Chef at your desk</span><h4>Claude Code</h4><p>The chef works inside your files and terminal.</p></div>
+  <div class="station"><span class="mono">Private dining</span><h4>Cowork</h4><p>A desk in your office — it handles multi-step jobs.</p></div>
+  <div class="station"><span class="mono">Execution</span><h4>Computer use</h4><p>It can drive the screen — click, type, complete tasks.</p></div>
+  <div class="station"><span class="mono">Catering</span><h4>API &amp; agents</h4><p>Pipe the kitchen into your own product or workflow.</p></div>
+</div>
+<p class="menu-more">Every station gets its own walkthrough in the full guide — this is the seating chart.</p>
+
 </section>
 
 <!-- full-bleed image slot -->
@@ -254,6 +277,19 @@ a{color:var(--accent)}
   </div>
 </section>
 
+<!-- subscribe strip -->
+<style>
+.subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
+.subs-in{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid var(--accent);border-radius:14px;padding:22px 26px;background:var(--cream)}
+.subs-in h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:0}
+.subs-in p{font-family:'Inter',sans-serif;font-size:.88rem;color:var(--muted);margin:.2rem 0 0}
+.subs-in a{font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:var(--accent);color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap}
+</style>
+<div class="subs"><div class="subs-in">
+  <div><h3>Get every new Kitchen Map in your inbox.</h3><p>Plus The Insider Brief — one curated AI briefing every Tuesday, verdicts included.</p></div>
+  <a href="https://brief.shiftandlead.com">Subscribe free →</a>
+</div></div>
+
 <!-- 05 THE BILL -->
 <section class="sec">
   <div class="sec-head">
@@ -271,6 +307,46 @@ a{color:var(--accent)}
     </div>
   </div>
 </section>
+
+
+<!-- the chef's table: paid offers close -->
+<style>
+.chefs{background:var(--ink);color:#F5F0EB;margin-top:72px}
+.chefs-in{max-width:1160px;margin:0 auto;padding:64px 24px}
+.chefs .mono{color:#7FA0FF;font-size:11px}
+.chefs h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:700;margin:.4rem 0 26px}
+.chefs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.chefs-grid{grid-template-columns:1fr}}
+.chefs-card{border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:24px;display:flex;flex-direction:column;background:rgba(255,255,255,.03)}
+.chefs-card .mono{font-size:9.5px;margin-bottom:8px}
+.chefs-card h3{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;margin:0 0 6px;color:#fff}
+.chefs-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0 0 18px;line-height:1.6}
+.chefs-card a{margin-top:auto;text-align:center;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;text-decoration:none;background:#fff;color:var(--ink);border-radius:8px;padding:11px 16px}
+</style>
+<section class="chefs"><div class="chefs-in">
+  <span class="mono">The chef's table — go further than the guide</span>
+  <h2>You've seen the restaurant.<br>Now learn to run the kitchen.</h2>
+  <div class="chefs-grid">
+    <div class="chefs-card">
+      <span class="mono">Prompt pack · $19</span>
+      <h3>Chez Prompts</h3>
+      <p>The Kitchen Map companion: the best prompts for this kitchen and every other — matched to what each chef cooks best.</p>
+      <a href="store.html">Get it in the Store →</a>
+    </div>
+    <div class="chefs-card">
+      <span class="mono">Community · founding spots soon</span>
+      <h3>Build alongside me</h3>
+      <p>Live "build with me" sessions, templates, and people on the same road — everyday entrepreneurs winning back their time.</p>
+      <a href="about.html#community">Be first in line →</a>
+    </div>
+    <div class="chefs-card">
+      <span class="mono">For companies</span>
+      <h3>Keynotes &amp; workshops</h3>
+      <p>Bring the whole method into your team — practical, non-technical, from someone whose business runs on 137 AI employees.</p>
+      <a href="work-with-fatiha.html">Work with Fatiha →</a>
+    </div>
+  </div>
+</div></section>
 
 <!-- byline -->
 <div class="byline">
