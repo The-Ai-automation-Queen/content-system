@@ -15,6 +15,10 @@
       "voice_id": "",
       "api_key_env": "HEYGEN_API_KEY_REPLACE_SLUG"
     },
+    "ai_twin": {
+      "wired": false,
+      "note": "Separate system — the twin-factory plugin in the AI-Creator-OS repo, not this repo. Requires its own per-client assets/twin/<slug>/ setup, its own signed consent block, and is NOT yet tenant-scoped there (single global asset folder as of 2026-07 — see docs/CLIENT-ONBOARDING-PLAYBOOK.md §5 before offering this to more than one client at a time)."
+    },
     "manychat": {
       "wired": false,
       "workspace_id": "",
@@ -34,6 +38,13 @@
     }
   },
 
+  "voice": {
+    "corpus_piece_count": 0,
+    "compiled": false,
+    "confidence": "NONE",
+    "last_validated": null
+  },
+
   "schedule": {
     "signal_harvester": "daily 02:00",
     "weekly_ops": "weekly Mon 06:00",
@@ -47,6 +58,10 @@
     "positioning": "positioning/SKILL.md",
     "inspiration_library": "inspiration-library/SKILL.md",
     "lead_magnets": "lead-magnets.csv",
-    "reports": "reports/"
+    "reports": "reports/",
+    "personal_brain": "personal-brain.md",
+    "voice_corpus": "voice-corpus/",
+    "voice_file": "voice-file.md",
+    "performance_log": "performance-log.md"
   }
 }
