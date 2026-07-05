@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Shift and Lead//Webinar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:webinar-17jun2026@shiftandlead
+DTSTAMP:20260602T000000Z
+DTSTART:20260617T150000Z
+DTEND:20260617T160000Z
+SUMMARY:AI Automation Webinar with Fatiha Chikh
+DESCRIPTION:Join here: https://meetn.com/shiftandlead\n\n60 minutes live. Bring one question about a task draining your time.
+LOCATION:https://meetn.com/shiftandlead
+URL:https://meetn.com/shiftandlead
+STATUS:CONFIRMED
+SEQUENCE:0
+BEGIN:VALARM
+TRIGGER:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:AI Webinar starts in 1 hour
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:AI Webinar starts in 15 minutes
+END:VALARM
+END:VEVENT
+END:VCALENDAR
