@@ -157,7 +157,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 <div class="header">
   <h1>Chez Gemini</h1>
   <div class="subtitle">You hear AI names everywhere and never know which does what. This walks you through Google Gemini like a restaurant: door, kitchen, plate.</div>
-  <div class="reading-guide">Read and click through the tiles for more details, follow the order and enjoy!</div>
+  <div class="reading-guide">Read and click through the tiles for more details, follow the order and enjoy! <em>(And yes — even the best chef makes mistakes. The allergen card comes right before you eat — last course.)</em></div>
 </div>
 
 <div class="legend">
@@ -179,17 +179,9 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
 <div class="map">
 
-  <!-- ZONE 1 -->
-  <div class="zone">
-    <div class="zone-top"><span class="zone-num">1</span><div class="zone-titles"><div class="zone-label">Know Before You Eat</div><div class="zone-subtitle">The chef is brilliant, but not perfect. Read this before you order.</div></div></div>
-    <div class="zone-narrative">Before you sit down, know this: even the best chef makes mistakes. Sometimes they confidently say "this is nut-free" when it's not, that's a <em>hallucination</em>. Sometimes they fill gaps with a convincing story, that's <em>confabulation</em>. They might agree with everything you say, that's <em>sycophancy</em>. Someone could slip a fake ticket, that's <em>prompt injection</em>. The chef might reveal another table's secrets, that's <em>data leakage</em>. They carry unconscious habits, that's <em>bias</em>. And sometimes they are certain when guessing, that's <em>overconfidence</em>. Google uses its AI Principles and safety filters to mitigate these risks.</div>
-    <div class="items-grid" id="zone-warnings"></div>
-  </div>
-  <div class="flow-bridge"><span class="flow-label">Now meet this restaurant's chef</span></div>
-
   <!-- ZONE 2 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">2</span><div class="zone-titles"><div class="zone-label">The Chef &amp; Their Brain</div><div class="zone-subtitle">Before anyone walks in, the chef already exists. This is who they are.</div></div></div>
+    <div class="zone-top"><span class="zone-num">1</span><div class="zone-titles"><div class="zone-label">The Chef &amp; Their Brain</div><div class="zone-subtitle">Before anyone walks in, the chef already exists. This is who they are.</div></div></div>
     <div class="zone-narrative">Google's chef has multiple modes. The <em>Gemini Pro</em> family is the most capable brain. <em>Gemini Flash</em> is a faster, cheaper chef for simpler dishes. You can toggle between <em>Thinking</em> (deep reasoning) and <em>Fast</em> (low-latency) modes. The chef reads text, images, audio, and video, that's <em>multi-modal</em>. The <em>context window</em> (countertop) is massive, up to 2 million tokens. And <em>Memory Bank</em> remembers you across sessions. Every word is a <em>token</em>.</div>
     <div class="items-grid" id="zone-foundation"></div>
   </div>
@@ -197,7 +189,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 3 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">3</span><div class="zone-titles"><div class="zone-label">The Front Door</div><div class="zone-subtitle">Multiple ways to enter this restaurant</div></div></div>
+    <div class="zone-top"><span class="zone-num">2</span><div class="zone-titles"><div class="zone-label">The Front Door</div><div class="zone-subtitle">Multiple ways to enter this restaurant</div></div></div>
     <div class="zone-narrative">You can walk into the <em>Gemini App</em>, the dining room on web and mobile. The chef also appears inside <em>Google Workspace</em>: Gmail, Docs, Sheets, Slides, Meet. For developers, the <em>Gemini CLI</em> is an open-source terminal tool. <em>Antigravity IDE</em> is the smart kitchen where multiple AI agents work in parallel on code. The <em>Gemini Enterprise App</em> brings agents to businesses. And <em>Gemini Live</em> lets you have a real-time voice conversation with the chef.</div>
     <div class="items-grid" id="zone-entrance"></div>
   </div>
@@ -205,7 +197,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 4 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">4</span><div class="zone-titles"><div class="zone-label">The Order Slip</div><div class="zone-subtitle">Instructions and context that shape every dish</div></div></div>
+    <div class="zone-top"><span class="zone-num">3</span><div class="zone-titles"><div class="zone-label">The Order Slip</div><div class="zone-subtitle">Instructions and context that shape every dish</div></div></div>
     <div class="zone-narrative"><em>Gems</em> are like pre-configured order profiles, custom AI assistants with saved instructions and roles. <em>Custom Instructions</em> tell the chef your general preferences across all conversations. <em>System instructions</em> (API) are the invisible ticket shaping the chef's behavior. And <em>prompt engineering</em> is learning to write clearer tickets for better results.</div>
     <div class="items-grid" id="zone-order"></div>
   </div>
@@ -213,7 +205,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 5 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">5</span><div class="zone-titles"><div class="zone-label">The Kitchen</div><div class="zone-subtitle">Where the real cooking happens, tools, research, and creation</div></div></div>
+    <div class="zone-top"><span class="zone-num">4</span><div class="zone-titles"><div class="zone-label">The Kitchen</div><div class="zone-subtitle">Where the real cooking happens, tools, research, and creation</div></div></div>
     <div class="zone-narrative"><em>Deep Research</em> is the chef spending time reading dozens of sources to produce thorough reports. <em>Canvas</em> is a side workspace for drafting and editing documents or code. <em>Guided Learning</em> is the chef quizzing you to deepen understanding. The chef creates images with <em>Imagen</em>, generates video with <em>Veo</em>, and makes music with <em>Lyria</em>. <em>Scheduled Actions</em> let the chef run recurring tasks on autopilot. And <em>Google Search</em> grounding keeps answers anchored in real, current data.</div>
     <div class="items-grid" id="zone-kitchen"></div>
   </div>
@@ -221,7 +213,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 6 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">6</span><div class="zone-titles"><div class="zone-label">The Kitchen Team</div><div class="zone-subtitle">Build, govern, and scale agents</div></div></div>
+    <div class="zone-top"><span class="zone-num">5</span><div class="zone-titles"><div class="zone-label">The Kitchen Team</div><div class="zone-subtitle">Build, govern, and scale agents</div></div></div>
     <div class="zone-narrative">The <em>Agent Platform</em> (formerly Vertex AI) is the central place to build, scale, govern, and optimize agents. The <em>Agent Development Kit</em> is the developer framework. <em>Agent Studio</em> is a low-code canvas for designing multi-agent workflows. The <em>Agent Registry</em> is a central library of approved tools and agents. And the <em>Agent Gallery</em> in the Gemini Enterprise app lets teams discover and deploy partner agents from Adobe, Salesforce, ServiceNow and others.</div>
     <div class="items-grid" id="zone-team"></div>
   </div>
@@ -229,7 +221,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 7 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">7</span><div class="zone-titles"><div class="zone-label">The Supply Chain</div><div class="zone-subtitle">How the kitchen connects to the outside world</div></div></div>
+    <div class="zone-top"><span class="zone-num">6</span><div class="zone-titles"><div class="zone-label">The Supply Chain</div><div class="zone-subtitle">How the kitchen connects to the outside world</div></div></div>
     <div class="zone-narrative"><em>Extensions</em> connect Gemini to Google services (Flights, Hotels, Maps, YouTube) and third-party tools. <em>MCP</em> support is built into the ADK and Agent Platform for standardized connections. <em>Gemini CLI Extensions</em> are power-ups for the terminal, pre-packaged integrations with Figma, Stripe, Shopify, and more. And <em>A2A (Agent-to-Agent) Protocol</em> lets agents built on different frameworks discover and collaborate with each other.</div>
     <div class="items-grid" id="zone-supply"></div>
   </div>
@@ -237,7 +229,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 8 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">8</span><div class="zone-titles"><div class="zone-label">Plating &amp; Delivery</div><div class="zone-subtitle">How the finished dish reaches you</div></div></div>
+    <div class="zone-top"><span class="zone-num">7</span><div class="zone-titles"><div class="zone-label">Plating &amp; Delivery</div><div class="zone-subtitle">How the finished dish reaches you</div></div></div>
     <div class="zone-narrative"><em>Canvas</em> outputs let you edit and refine documents and code collaboratively. <em>Gemini in Workspace</em> plates directly inside Gmail, Docs, Sheets, and Slides, like the chef editing your document at the table. <em>Streaming</em> delivers responses word by word. <em>NotebookLM</em> is a personal research assistant that turns your sources into summaries and audio overviews. And the <em>Gemini App</em> follows you across web, Android, and iOS so you can eat anywhere.</div>
     <div class="items-grid" id="zone-delivery"></div>
   </div>
@@ -245,7 +237,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 9 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">9</span><div class="zone-titles"><div class="zone-label">Training &amp; Improvement</div><div class="zone-subtitle">How the chef gets better over time</div></div></div>
+    <div class="zone-top"><span class="zone-num">8</span><div class="zone-titles"><div class="zone-label">Training &amp; Improvement</div><div class="zone-subtitle">How the chef gets better over time</div></div></div>
     <div class="zone-narrative"><em>Agent Evaluation</em> and <em>Agent Simulation</em> test agents before deployment, food critics scoring dishes on a rubric. <em>Agent Observability</em> provides real-time execution traces into agent reasoning. <em>Model tuning</em> on the Agent Platform lets you customize models for your domain. And <em>Model Garden</em> gives access to hundreds of models including third-party options like Claude and open models like Gemma and Llama.</div>
     <div class="items-grid" id="zone-training"></div>
   </div>
@@ -253,7 +245,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 10 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">10</span><div class="zone-titles"><div class="zone-label">Health, Safety &amp; The Bill</div><div class="zone-subtitle">The non-negotiables that wrap around everything</div></div></div>
+    <div class="zone-top"><span class="zone-num">9</span><div class="zone-titles"><div class="zone-label">Health, Safety &amp; The Bill</div><div class="zone-subtitle">The non-negotiables that wrap around everything</div></div></div>
     <div class="zone-narrative">This zone wraps around everything. <em>Google AI Principles</em> are the health inspector framework. <em>Safety filters</em> scan for harmful content during generation. <em>Agent Identity</em> gives every agent a unique cryptographic ID for auditability. <em>Agent Gateway</em> acts as air traffic control for your agent fleet. And the <em>pricing</em> ranges from free (Gemini App) through Google AI Plus and Pro to Enterprise.</div>
     <div class="items-grid" id="zone-gov"></div>
   </div>
@@ -320,14 +312,37 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
     <a class="series-row" href="./chez-meta-ai.html"><div class="series-row-left"><div class="series-row-kicker">11 · Meta</div><div class="series-row-title">Chez Meta AI</div></div><div class="series-row-cta">Open the map</div></a>
     <a class="series-row" href="./chez-manus.html"><div class="series-row-left"><div class="series-row-kicker">12 · Manus</div><div class="series-row-title">Chez Manus</div></div><div class="series-row-cta">Open the map</div></a>
   </div>
+  <div class="flow-bridge"><span class="flow-label">One last thing before you eat</span></div>
+  <!-- ZONE 1 -->
+  <div class="zone">
+    <div class="zone-top"><span class="zone-num">10</span><div class="zone-titles"><div class="zone-label">Know Before You Eat</div><div class="zone-subtitle">The chef is brilliant, but not perfect. The allergen card — read it before you eat.</div></div></div>
+    <div class="zone-narrative">Before you sit down, know this: even the best chef makes mistakes. Sometimes they confidently say "this is nut-free" when it's not, that's a <em>hallucination</em>. Sometimes they fill gaps with a convincing story, that's <em>confabulation</em>. They might agree with everything you say, that's <em>sycophancy</em>. Someone could slip a fake ticket, that's <em>prompt injection</em>. The chef might reveal another table's secrets, that's <em>data leakage</em>. They carry unconscious habits, that's <em>bias</em>. And sometimes they are certain when guessing, that's <em>overconfidence</em>. Google uses its AI Principles and safety filters to mitigate these risks. <a href="../store.html" style="color:#2C4BE0;font-weight:600">I keep verification prompts for exactly these failures — The Judge’s Prompts &rarr;</a></div>
+    <div class="items-grid" id="zone-warnings"></div>
+  </div>
+  
+
 </div>
 
 <!-- FOOTER CTA -->
+
+<!-- subscribe strip -->
+<div style="max-width:1100px;margin:56px auto 0;padding:0 24px">
+ <div style="display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid #2C4BE0;border-radius:14px;padding:22px 26px;background:#EEF2FC">
+  <div><div style="font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;color:#1A1A1A">Get every new Kitchen Map in your inbox.</div>
+  <div style="font-family:'Inter',sans-serif;font-size:.88rem;color:#5C5A57;margin-top:3px">Plus The Insider Brief — one curated AI briefing every Tuesday, verdicts included.</div></div>
+  <a href="https://brief.shiftandlead.com" style="font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:#2C4BE0;color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap">Subscribe free &rarr;</a>
+ </div>
+</div>
+
 <div class="footer-cta">
-  <div class="footer-cta-eyebrow">For everyone quietly overwhelmed by AI</div>
-  <div class="footer-cta-title">Want the AI plan you will actually use?</div>
-  <div class="footer-cta-sub">A short audit, then the plan that fits your work and your time.</div>
-  <a class="footer-cta-button" href="../../opt-in.html">Get the AI Readiness Audit</a>
+  <div class="footer-cta-eyebrow">The chef's table — go further than the guide</div>
+  <div class="footer-cta-title">You've seen the restaurant.<br>Now learn to run the kitchen.</div>
+  <div class="footer-cta-sub">The paid shortcuts behind the free guides — prompt packs, the community, and workshops for teams.</div>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a class="footer-cta-button" href="../store.html">Chez Prompts &middot; $19</a>
+    <a class="footer-cta-button" href="../about.html#community">The Community</a>
+    <a class="footer-cta-button" href="../work-with-fatiha.html">Workshops</a>
+  </div>
 </div>
 
 

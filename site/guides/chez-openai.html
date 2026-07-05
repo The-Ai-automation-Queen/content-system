@@ -157,7 +157,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 <div class="header">
   <h1>Chez ChatGPT</h1>
   <div class="subtitle">You hear AI names everywhere and never know which does what. This walks you through ChatGPT and OpenAI like a restaurant: door, kitchen, plate.</div>
-  <div class="reading-guide">Read and click through the tiles for more details, follow the order and enjoy!</div>
+  <div class="reading-guide">Read and click through the tiles for more details, follow the order and enjoy! <em>(And yes — even the best chef makes mistakes. The allergen card comes right before you eat — last course.)</em></div>
 </div>
 
 <div class="legend">
@@ -179,17 +179,9 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
 <div class="map">
 
-  <!-- ZONE 1 -->
-  <div class="zone">
-    <div class="zone-top"><span class="zone-num">1</span><div class="zone-titles"><div class="zone-label">Know Before You Eat</div><div class="zone-subtitle">The chef is brilliant, but not perfect. Read this before you order.</div></div></div>
-    <div class="zone-narrative">Before you sit down, know this: even the best chef makes mistakes. Sometimes they confidently say "this is nut-free" when it's not, that's a <em>hallucination</em>. Sometimes they fill gaps with a convincing story instead of saying "I don't know", that's <em>confabulation</em>. They might agree with everything you say even when you're wrong, that's <em>sycophancy</em>. Someone could slip a fake ticket into the kitchen to hijack your order, that's <em>prompt injection</em>. The chef might accidentally reveal another table's secrets, that's <em>data leakage</em>. They carry unconscious habits from their training, that's <em>bias</em>. And sometimes they state things as certain when they're actually guessing, that's <em>overconfidence</em>. These risks apply to every AI restaurant, not just this one.</div>
-    <div class="items-grid" id="zone-warnings"></div>
-  </div>
-  <div class="flow-bridge"><span class="flow-label">Now meet this restaurant's chef</span></div>
-
   <!-- ZONE 2 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">2</span><div class="zone-titles"><div class="zone-label">The Chef &amp; Their Brain</div><div class="zone-subtitle">Before anyone walks in, the chef already exists. This is who they are.</div></div></div>
+    <div class="zone-top"><span class="zone-num">1</span><div class="zone-titles"><div class="zone-label">The Chef &amp; Their Brain</div><div class="zone-subtitle">Before anyone walks in, the chef already exists. This is who they are.</div></div></div>
     <div class="zone-narrative">OpenAI's chef has been through many culinary schools. The current generation is the <em>GPT</em> family (Generative Pre-trained Transformer, the AI engine behind ChatGPT). The <em>context window</em> (their countertop) determines how much they can juggle at once. <em>Memory</em> (their notebook) remembers you across visits. They can read photos, listen to audio, watch video, that's <em>multi-modal</em>. When a dish is complex, they pause and plan, that's <em>reasoning</em>, sometimes shown as a "thinking" toggle. You can set how creative they cook with the <em>temperature</em> dial. And every word, in and out, is a <em>token</em>, like an individual ingredient.</div>
     <div class="items-grid" id="zone-foundation"></div>
   </div>
@@ -197,7 +189,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 3 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">3</span><div class="zone-titles"><div class="zone-label">The Front Door</div><div class="zone-subtitle">There are multiple ways to enter this restaurant</div></div></div>
+    <div class="zone-top"><span class="zone-num">2</span><div class="zone-titles"><div class="zone-label">The Front Door</div><div class="zone-subtitle">There are multiple ways to enter this restaurant</div></div></div>
     <div class="zone-narrative">You can walk into <em>ChatGPT</em>, the dining room, and chat face to face. Developers can call the <em>API</em> (Responses API), like a phone line for bulk orders. There's <em>Agent Mode</em>, a ghost kitchen where ChatGPT browses the web, fills forms, and completes tasks for you. For coding, <em>Codex</em> is the specialized kitchen for writing and reviewing code. And if you're a regular with a big project, <em>Projects</em> keep everything organized in one folder.</div>
     <div class="items-grid" id="zone-entrance"></div>
   </div>
@@ -205,7 +197,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 4 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">4</span><div class="zone-titles"><div class="zone-label">The Order Slip</div><div class="zone-subtitle">Instructions, preferences, and shortcuts that shape every dish</div></div></div>
+    <div class="zone-top"><span class="zone-num">3</span><div class="zone-titles"><div class="zone-label">The Order Slip</div><div class="zone-subtitle">Instructions, preferences, and shortcuts that shape every dish</div></div></div>
     <div class="zone-narrative">Every order has layers. The <em>system prompt</em> is like special instructions clipped to the ticket, invisible to you but shaping the chef's approach. <em>AGENTS.md</em> is like house rules on the kitchen wall, standards for how agents behave on a website or codebase. <em>Custom Instructions</em> are like standing orders from a regular: "always keep it concise for this customer." <em>Prompt engineering</em> is learning to write better order tickets. And <em>GPT Actions</em> are like shortcut buttons, pre-configured connections to external services from inside a Custom GPT.</div>
     <div class="items-grid" id="zone-order"></div>
   </div>
@@ -213,7 +205,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 5 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">5</span><div class="zone-titles"><div class="zone-label">The Kitchen</div><div class="zone-subtitle">Where the real cooking happens, tools, code, and reference books</div></div></div>
+    <div class="zone-top"><span class="zone-num">4</span><div class="zone-titles"><div class="zone-label">The Kitchen</div><div class="zone-subtitle">Where the real cooking happens, tools, code, and reference books</div></div></div>
     <div class="zone-narrative">The order arrives. The chef grabs <em>built-in tools</em> mid-cooking, like web browsing, DALL-E for images, or the <em>code interpreter</em> for running Python. <em>Deep Research</em> is like the chef pausing to read multiple reference books before answering, thorough, slow, high quality. <em>Canvas</em> is a side workspace where the chef drafts and iterates on documents or code with you watching. And <em>file search</em> lets the chef dig through your uploaded documents like checking the pantry shelves.</div>
     <div class="items-grid" id="zone-kitchen"></div>
   </div>
@@ -221,7 +213,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 6 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">6</span><div class="zone-titles"><div class="zone-label">The Kitchen Team</div><div class="zone-subtitle">Custom GPTs, workspace agents, and the tools to build your own</div></div></div>
+    <div class="zone-top"><span class="zone-num">5</span><div class="zone-titles"><div class="zone-label">The Kitchen Team</div><div class="zone-subtitle">Custom GPTs, workspace agents, and the tools to build your own</div></div></div>
     <div class="zone-narrative"><em>Workspace Agents</em>, like a kitchen manager, handle complex team workflows: shared, scheduled, running autonomously across tools. <em>Custom GPTs</em> are like sous-chefs, each one specialized for a task with their own instructions and tools. The <em>Agents SDK</em> and <em>AgentKit</em> are like a kit to build your own restaurant, blueprints, tools, and a connector registry for developers. And <em>Frontier</em> is like the restaurant management company, an enterprise platform governing fleets of agents.</div>
     <div class="items-grid" id="zone-team"></div>
   </div>
@@ -229,7 +221,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 7 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">7</span><div class="zone-titles"><div class="zone-label">The Supply Chain</div><div class="zone-subtitle">How the kitchen connects to the outside world</div></div></div>
+    <div class="zone-top"><span class="zone-num">6</span><div class="zone-titles"><div class="zone-label">The Supply Chain</div><div class="zone-subtitle">How the kitchen connects to the outside world</div></div></div>
     <div class="zone-narrative">The restaurant doesn't grow its own food. <em>Connectors</em> are like supplier trucks, Gmail, Google Drive, GitHub, Slack each deliver their goods. <em>MCP</em> support is arriving as a universal delivery dock, one standard door for all suppliers. <em>Plugins</em> (legacy) were the original snap-on attachments, now replaced by GPT Actions and connectors. And the <em>Apps SDK</em> lets developers build custom UIs alongside their tools.</div>
     <div class="items-grid" id="zone-supply"></div>
   </div>
@@ -237,7 +229,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 8 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">8</span><div class="zone-titles"><div class="zone-label">Plating &amp; Delivery</div><div class="zone-subtitle">How the finished dish reaches your table</div></div></div>
+    <div class="zone-top"><span class="zone-num">7</span><div class="zone-titles"><div class="zone-label">Plating &amp; Delivery</div><div class="zone-subtitle">How the finished dish reaches your table</div></div></div>
     <div class="zone-narrative">The dish is cooked, but not done yet. <em>Canvas</em> is like a plating station where you and the chef refine the output together, editing, iterating, polishing. The finished dish might arrive via <em>streaming</em>, course by course as it's ready. <em>Structured Outputs</em> ensure the dish is presented exactly how the developer ordered, precise formatting, no surprises. <em>Voice Mode</em> lets you talk to the chef directly. And the <em>ChatGPT app</em> (desktop, mobile) brings the dining room wherever you go.</div>
     <div class="items-grid" id="zone-delivery"></div>
   </div>
@@ -245,7 +237,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 9 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">9</span><div class="zone-titles"><div class="zone-label">Training &amp; Improvement</div><div class="zone-subtitle">How the chef gets better over time</div></div></div>
+    <div class="zone-top"><span class="zone-num">8</span><div class="zone-titles"><div class="zone-label">Training &amp; Improvement</div><div class="zone-subtitle">How the chef gets better over time</div></div></div>
     <div class="zone-narrative">After service ends, the restaurant improves. <em>Evals</em> are like food critics, they score outputs on a rubric to reveal what needs work. <em>Fine-tuning</em> is like a specialized cooking class, retrain the chef on your specific data. <em>Distillation</em> is like teaching an apprentice, a smaller, faster chef learns from the master's best dishes. And <em>RLHF</em> (reinforcement learning from human feedback) is like customer reviews shaping the menu.</div>
     <div class="items-grid" id="zone-training"></div>
   </div>
@@ -253,7 +245,7 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
 
   <!-- ZONE 10 -->
   <div class="zone">
-    <div class="zone-top"><span class="zone-num">10</span><div class="zone-titles"><div class="zone-label">Health, Safety &amp; The Bill</div><div class="zone-subtitle">The non-negotiables that wrap around the entire restaurant</div></div></div>
+    <div class="zone-top"><span class="zone-num">9</span><div class="zone-titles"><div class="zone-label">Health, Safety &amp; The Bill</div><div class="zone-subtitle">The non-negotiables that wrap around the entire restaurant</div></div></div>
     <div class="zone-narrative">This zone wraps around everything. <em>Safety systems</em> are like health inspectors, rules for what the kitchen can and can't serve. <em>Guardrails</em> are like safety rails on equipment, content filters, refusal behaviors. <em>Rate limits</em> are like a maximum capacity, the kitchen can only take so many orders per hour. <em>Plans and pricing</em> are the bill, Free, Plus, Pro, Business, Enterprise each get different menus and portions. And <em>admin controls</em> let the restaurant owner decide who gets kitchen access.</div>
     <div class="items-grid" id="zone-gov"></div>
   </div>
@@ -392,14 +384,37 @@ body { background: var(--canvas); color: var(--ink); font-family: var(--font-bod
       <div class="series-row-cta">Open the map</div>
     </a>
   </div>
+  <div class="flow-bridge"><span class="flow-label">One last thing before you eat</span></div>
+  <!-- ZONE 1 -->
+  <div class="zone">
+    <div class="zone-top"><span class="zone-num">10</span><div class="zone-titles"><div class="zone-label">Know Before You Eat</div><div class="zone-subtitle">The chef is brilliant, but not perfect. The allergen card — read it before you eat.</div></div></div>
+    <div class="zone-narrative">Before you sit down, know this: even the best chef makes mistakes. Sometimes they confidently say "this is nut-free" when it's not, that's a <em>hallucination</em>. Sometimes they fill gaps with a convincing story instead of saying "I don't know", that's <em>confabulation</em>. They might agree with everything you say even when you're wrong, that's <em>sycophancy</em>. Someone could slip a fake ticket into the kitchen to hijack your order, that's <em>prompt injection</em>. The chef might accidentally reveal another table's secrets, that's <em>data leakage</em>. They carry unconscious habits from their training, that's <em>bias</em>. And sometimes they state things as certain when they're actually guessing, that's <em>overconfidence</em>. These risks apply to every AI restaurant, not just this one. <a href="../store.html" style="color:#2C4BE0;font-weight:600">I keep verification prompts for exactly these failures — The Judge’s Prompts &rarr;</a></div>
+    <div class="items-grid" id="zone-warnings"></div>
+  </div>
+  
+
 </div>
 
 <!-- FOOTER CTA -->
+
+<!-- subscribe strip -->
+<div style="max-width:1100px;margin:56px auto 0;padding:0 24px">
+ <div style="display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid #2C4BE0;border-radius:14px;padding:22px 26px;background:#EEF2FC">
+  <div><div style="font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;color:#1A1A1A">Get every new Kitchen Map in your inbox.</div>
+  <div style="font-family:'Inter',sans-serif;font-size:.88rem;color:#5C5A57;margin-top:3px">Plus The Insider Brief — one curated AI briefing every Tuesday, verdicts included.</div></div>
+  <a href="https://brief.shiftandlead.com" style="font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:#2C4BE0;color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap">Subscribe free &rarr;</a>
+ </div>
+</div>
+
 <div class="footer-cta">
-  <div class="footer-cta-eyebrow">For everyone quietly overwhelmed by AI</div>
-  <div class="footer-cta-title">Want the AI plan you will actually use?</div>
-  <div class="footer-cta-sub">A short audit, then the plan that fits your work and your time.</div>
-  <a class="footer-cta-button" href="../../opt-in.html">Get the AI Readiness Audit</a>
+  <div class="footer-cta-eyebrow">The chef's table — go further than the guide</div>
+  <div class="footer-cta-title">You've seen the restaurant.<br>Now learn to run the kitchen.</div>
+  <div class="footer-cta-sub">The paid shortcuts behind the free guides — prompt packs, the community, and workshops for teams.</div>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a class="footer-cta-button" href="../store.html">Chez Prompts &middot; $19</a>
+    <a class="footer-cta-button" href="../about.html#community">The Community</a>
+    <a class="footer-cta-button" href="../work-with-fatiha.html">Workshops</a>
+  </div>
 </div>
 
 
