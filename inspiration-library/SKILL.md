@@ -1,11 +1,12 @@
 ---
 name: my-inspiration-library
-version: 1.3.0
+version: 1.4.0
 description: |
   Creator inspiration library for "the AI Automation Queen" — a creator/educator helping
   everyday entrepreneurs use AI + automation to win back their time. Encodes format analysis,
-  best practices, and hook patterns from 21 studied creators in the AI/automation creator space.
-  Reference this every time you write a script, video hook, or content outline.
+  best practices, and hook patterns from 21 studied creators plus 1 tracked institutional
+  publisher (23 rows total) in the AI/automation creator space.
+  Reference this every time you write a script, video hook, content outline, or free guide.
   Do NOT invoke this as a standalone skill — load it as context before writing scripts.
 argument-hint: (no arguments — loaded as context by other skills, not invoked directly)
 allowed-tools:
@@ -14,9 +15,18 @@ allowed-tools:
 
 # My Inspiration Library
 
-This library encodes creator research from 21 studied creators in the AI/automation creator space.
-When writing scripts, hooks, series outlines, or video content for this user, apply these
-patterns. Do not default to generic content structures — use this library first.
+This library encodes creator research from 21 studied creators plus 1 tracked institutional
+publisher (row 22, AI Operators Academy — a same-niche French-market academy; see
+`creators.csv` and `research-notes.md` RESEARCH 025) in the AI/automation creator space.
+When writing scripts, hooks, series outlines, video content, or free guides for this user,
+apply these patterns. Do not default to generic content structures — use this library first.
+
+**Guide-writing rule (row 22 specifically):** their numbered-steps tactical format is
+proven and worth reusing for English lead magnets — outcome-first subtitle, numbered
+steps each closing on a checkmark result, one copy-paste block, a closing 3-card CTA
+matching our own offer ladder. The FORMAT is fair game. Their French article text is
+their copyrighted work — never translate it. Every guide written from this row is
+original content in the voice rules below, on a comparable topic, not a translation.
 
 ---
 

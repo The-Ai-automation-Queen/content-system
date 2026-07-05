@@ -83,11 +83,10 @@ via Doppler (per `deploy/SECURITY.md`) — never pasted into repo files.
 | 2.3 | **Blotato** | Confirm subscription active; allowlist `*.blotato.io` egress in the environment; confirm the 6 connected accounts still valid; connect TikTok (currently missing) | 30 min |
 | 2.4 | **GHL** | Connect Instagram `@thefatihachikh` (Settings → Integrations); create API key | 30 min |
 | 2.5 | **Apify + Tavily** | Confirm both API keys valid and funded (Apify needs ~$20/mo credit) | 15 min |
-| 2.6 | **Gumroad or Stripe** | Create account → you'll add products in Phase 3 | 20 min |
-| 2.7 | **Whop** | Create the course space (flagship home) | 30 min |
-| 2.8 | **Skool** | Confirm `skool.com/@ai-automation-queen-5858` group; set up 3 sections: Resources / Live Calls / Community | 30 min |
-| 2.9 | **Unipile** (LinkedIn DM — optional until Phase 4) | Account + `UNIPILE_API_KEY` + connect LinkedIn | 30 min |
-| 2.10 | **n8n** | Confirm instance reachable; I build the workflows, you just approve credentials it uses | 15 min |
+| 2.6 | **Whop** | Create account → you'll add products in Phase 3 | 20 min |
+| 2.7 | **Whop** | Create the course space (flagship home) + the community space (3 sections: Resources / Live Calls / Community) — Skool was the earlier plan, sunset in favor of one platform | 30 min |
+| 2.8 | **Unipile** (LinkedIn DM — optional until Phase 4) | Account + `UNIPILE_API_KEY` + connect LinkedIn | 30 min |
+| 2.9 | **n8n** | Confirm instance reachable; I build the workflows, you just approve credentials it uses | 15 min |
 
 **TEST**
 - [ ] T2.a From the VPS: `deploy/run-machine.sh` manual run → you receive a
@@ -107,7 +106,7 @@ add new automations while any Phase-2 test is red.
 ## Phase 3 — Money Wiring (Week 2, ~4 hours) → first dollars possible
 
 **DO**
-- [ ] 3.1 Create the $47 **AI Time Audit** on Gumroad (content exists:
+- [ ] 3.1 Create the $47 **AI Time Audit** on Whop (content exists:
       `products/ai-time-audit-template.md`; Judge's Prompts + one Chez guide
       attach as bonuses). Copy the buy URL.
 - [ ] 3.2 Paste the URL into `site/store.html` (or ask me to). Remove the other

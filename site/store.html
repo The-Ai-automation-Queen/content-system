@@ -113,28 +113,35 @@ var PRODUCTS = [
   {
     cat: "System · kit",
     name: "Business OS Starter Kit",
-    desc: "The taste of my full system for non-technical builders: brain template, three lite playbooks, full walkthrough.",
-    bullets: ["Notion Brain template, pre-filled","Content Engine / Distribution / DM playbooks","25-min live walkthrough + email templates"],
+    desc: "The taste of my full system for non-technical builders: brain template, four lite playbooks, full walkthrough.",
+    bullets: ["Notion Brain template, pre-filled","Content Engine / Distribution / DM / Writing Style Clone playbooks","25-min live walkthrough + email templates"],
     price: "$97",
-    url: ""
-  },
-  {
-    cat: "System · pipeline",
-    name: "The Voice Clone Pipeline",
-    desc: "Build once, post in your voice forever. The complete pipeline: clone your voice, batch your audio, and auto-produce narrated reels.",
-    bullets: ["The full step-by-step build (7 stages)","Copy-paste scripts and settings","Troubleshooting guide + free updates as tools change"],
-    price: "$47",
     url: ""
   },
   {
     cat: "Prompt pack · ebook",
     name: "The Prompt Menu: copy-paste prompts for every AI tool",
-    desc: "The best prompts for each kitchen: Claude, ChatGPT, Gemini, Copilot, matched to what each chef cooks best.",
-    bullets: ["Per-tool prompt menus","Door, kitchen, plate structure","Updated as the kitchens change"],
+    desc: "The which-tool-for-what decision map, plus 3 bonus prompts per kitchen not in the free guides. Claude, ChatGPT, Gemini, Copilot, and 6 more.",
+    bullets: ["The Kitchen Map: which AI for which job","30 bonus prompts, 3 per tool, not in the free guides","Updated as the kitchens change"],
     price: "$19",
     url: ""
   }
 ];
+// Source files (for the operator — not read by the page):
+//   The Judge's Prompts          -> products/the-judges-prompts.md
+//   The AI Time Audit            -> products/ai-time-audit-template.md
+//   Business OS Starter Kit      -> products/business-os-starter-kit.md
+//   The Prompt Menu              -> products/the-prompt-menu.md
+// The Voice Clone Pipeline was retired entirely (2026-07-05) — removed from
+// the Store, free resources, opt-in, and sitemap. The writing-voice method
+// it pointed at is too close to the core IP to sell standalone at low
+// ticket; it's now "Writing Style Clone Lite," a bonus playbook INSIDE the
+// Starter Kit above. The audio-cloning source (lead-magnets/
+// voice-clone-pipeline.md, site/guides/voice-clone-pipeline.html) stays in
+// the repo, unlinked — not part of the portfolio.
+// Launch steps (Whop title/price/description, per product) are in
+// docs/PRODUCTS-LAUNCH-CHECKLIST.md — run it once per product, paste the
+// resulting URL into the `url` field above, done.
 
 var grid = document.getElementById('products');
 PRODUCTS.forEach(function(p){

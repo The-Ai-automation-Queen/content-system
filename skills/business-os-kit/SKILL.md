@@ -4,7 +4,7 @@ version: 1.0.0
 description: |
   Packages Fatiha's Business OS into three sellable products and creates the
   promotional content to launch them. Products: Starter Kit ($97 one-time),
-  Community ($47/month on Skool), Bootcamp ($997 per cohort). Run to build
+  Community ($47/month on Whop), Bootcamp ($997 per cohort). Run to build
   a product tier, generate sales copy, audit what's packaged vs. missing, or
   produce a full launch content batch ready for the vault.
 argument-hint: "[build-starter-kit | build-community | build-bootcamp | launch-content <tier> | sales-copy <tier>]"
@@ -42,8 +42,12 @@ simplified for a non-technical person to set up in 2 days.
    repo. Pre-built sections: Your Brand Brain (positioning), Your Content Vault
    (drafts + statuses), Your Research Notes, and a simple Content Calendar view.
    Pre-filled with examples they swap out. No coding. No Claude Code required.
-2. **3 Simplified Skill Guides** (plain-English PDFs or Notion pages — not agent
+2. **4 Simplified Skill Guides** (plain-English PDFs or Notion pages — not agent
    prompts):
+   - Writing Style Clone Lite: make AI actually sound like you, in 5 steps
+     (this is the differentiator that was almost sold standalone at $47 as
+     "The Voice Clone Pipeline" — kept inside the Kit instead because the
+     method is close to the core IP; see `docs/FLAGSHIP-COURSE-STRATEGY.md` §2)
    - Content Engine Lite: how to use AI to write in your voice, step by step
    - Distribution Lite: how to schedule across 5 platforms in under 30 minutes
    - DM Responder Lite: how to set up "comment a keyword → auto DM → lead captured"
@@ -54,7 +58,7 @@ simplified for a non-technical person to set up in 2 days.
    reformatted as a fill-in-the-blank template. They swap in their own voice,
    offers, and lead magnets.
 
-**Delivery:** Gumroad page → buyer gets a Notion template link + ZIP of PDFs + Loom link.
+**Delivery:** Whop page → buyer gets a Notion template link + ZIP of PDFs + Loom link.
 **Price rationale:** $97 is an impulse buy for the target audience. Low enough to
 not need a sales call. High enough to signal real value. Up from $47 once 50 units
 are sold and social proof exists.
@@ -65,11 +69,14 @@ sequence, IRL event follow-up.
 
 ### Product 2 — AI Automation Queen Community ($47/month or $397/year)
 
-**What it is:** A Skool community for everyday entrepreneurs using AI + automation
+**What it is:** A Whop community for everyday entrepreneurs using AI + automation
 to build their freedom business. This is the core recurring revenue engine.
 
-**Platform:** Skool (strongly recommended — clean UX, built-in discovery,
-member community features, $99/month platform fee). Alternative: Circle.
+**Platform:** Whop — one platform for the flagship course, checkout, and the
+community itself (no separate $99/month community-platform fee, and members
+already have a Whop account from buying the course). Skool was the earlier
+plan; sunset in favor of consolidating everything on Whop (operator decision,
+2026-07-06).
 
 **What members get (monthly deliverables):**
 - **2 live sessions/month:** one "Build with Me" (Fatiha runs a live automation
@@ -114,7 +121,7 @@ the evergreen self-paced course after the first cohort.
   runs itself.
 
 **Format:** One live 90-min Zoom session per week. Recordings available same day.
-Slack channel (or Skool classroom) for in-between support.
+Slack channel (or the Whop classroom) for in-between support.
 
 **Price and revenue:**
 - $997 per person
@@ -151,13 +158,22 @@ not a technical manual.
    Angle. Pre-filled with 2 examples.
 5. **Your Weekly Checklist** — A repeating checklist: run research, write 3 drafts,
    review + approve, schedule into your tool of choice, track performance.
-6. **Resources** — Links to the 3 skill guides and the walkthrough video.
+6. **Resources** — Links to the 4 skill guides and the walkthrough video.
 
-### Step 2 — Write the 3 Simplified Skill Guides
+### Step 2 — Write the 4 Simplified Skill Guides
 
-Rewrite `skills/content-engine/`, `skills/distribution/`, and `skills/dm-responder/`
-as plain-English step-by-step guides. Strip all agent-specific instructions.
-Format: numbered steps a 12-year-old could follow. Max 2 pages each. PDF format.
+Rewrite the voice-calibration method (see `products/business-os-starter-kit.md`
+Part 2), `skills/content-engine/`, `skills/distribution/`, and
+`skills/dm-responder/` as plain-English step-by-step guides. Strip all
+agent-specific instructions. Format: numbered steps a 12-year-old could
+follow. Max 2 pages each. PDF format.
+
+Guide 0 — Writing Style Clone Lite:
+- Step 1: Gather 5 samples of your real, typical writing
+- Step 2: Run the Voice Calibration prompt (6 rules that describe your voice)
+- Step 3: Stress-test it on an unfamiliar topic; tighten any rule that misses
+- Step 4: Lock the 6 rules at the top of your Brand Brain
+- Step 5: Re-run every few months as your voice evolves
 
 Guide 1 — Content Engine Lite:
 - Step 1: Open your brand brain in Notion and read your positioning section
@@ -189,17 +205,17 @@ Run `launch-content starter-kit` to produce the 3 vault drafts (see below).
 
 These require human action — the skill cannot do them:
 - [ ] Record the 25-min Loom walkthrough (show the Notion template + one skill guide)
-- [ ] Create a Gumroad product listing ($97, description from `sales-copy` below)
+- [ ] Create a Whop product listing ($97, description from `sales-copy` below)
 - [ ] Export the Notion template as a shareable link
 - [ ] Export the 3 guides as PDFs
-- [ ] Upload everything to Gumroad as a product file bundle
+- [ ] Upload everything to Whop as a product file bundle
 - [ ] Test the checkout flow before promoting
 
 ---
 
 ## Sales Copy Framework
 
-Run with `sales-copy starter-kit` to produce the Gumroad listing copy.
+Run with `sales-copy starter-kit` to produce the Whop listing copy.
 
 **Headline:** "Build the AI business system I use to run my content, leads, and
 pipeline — in a weekend."
@@ -214,6 +230,7 @@ guides, and a 25-minute walkthrough video showing the whole thing working live."
 
 **What you get:**
 - The Business OS Notion template (pre-built, pre-filled — swap in your brand)
+- Writing Style Clone Lite: make AI actually sound like you, in 5 steps
 - Content Engine Lite: write in your voice using AI, step by step
 - Distribution Lite: schedule across 5 platforms in 30 minutes
 - DM Responder Lite: keyword comment → auto DM → lead captured (no code)
@@ -284,7 +301,7 @@ forever: [link]." ACP stage: C.
 ## What this skill does not do
 
 - Does not record the walkthrough video (operator action).
-- Does not set up Gumroad or Skool (operator action).
+- Does not set up Whop (operator action).
 - Does not publish any launch content — all drafts go to the vault for approval.
 - Does not make up social proof or member results.
 - Does not price the products without operator confirmation.

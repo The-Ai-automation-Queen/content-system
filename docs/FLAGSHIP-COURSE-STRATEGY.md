@@ -64,9 +64,11 @@ upsell. Personal-use license. Sanitized templates (see §2).
 
 **Format B — Cohort + Community (online, live).** The 6-week "Business OS
 Bootcamp" at $997/cohort, fed by and feeding the **AI Automation Queen
-Community** (Skool). The community is the continuity engine: monthly build
-sessions, template drops, the *living* inspiration library, member wins. This is
-where the recurring revenue and the moat live.
+Community** (Whop — Skool was the earlier plan, sunset 2026-07-06 in favor
+of one platform for course, checkout, and community). The community is the
+continuity engine: monthly build sessions, template drops, the *living*
+inspiration library, member wins. This is where the recurring revenue and
+the moat live.
 
 **Format C — Corporate (offline/onsite, plus virtual).** Three products from the
 same modules, matching your existing speaker one-pager:
@@ -141,7 +143,7 @@ decays; AI tooling shifts monthly, and your maintenance layer is the moat.
 2. **Version-stamp templates per cohort** (footer: cohort ID + buyer name on
    PDFs/workbooks). Leaks become traceable; most people don't leak what's named.
 3. **The deepest artifacts never leave hosted environments**: skill library
-   delivered inside the community's private repo/Skool classroom, not as a
+   delivered inside the community's private repo/Whop classroom, not as a
    public download bundle.
 4. **Corporate workshops: workbooks yes, repo no.** The install engagement gets
    the repo — priced accordingly.
@@ -258,7 +260,7 @@ of the 13 READY entries — Day 1 of the Activation Arc. Wire GHL keyword→DM f
 the 3 live magnets. Send the speaker one-pager to 10 warm contacts.
 
 **Phase 2 — Founding community + recording (Weeks 3–6). Revenue: recurring begins.**
-Open Skool: 20 founding spots at $27/mo locked (their job: testimonials).
+Open the Whop community: 20 founding spots at $27/mo locked (their job: testimonials).
 Record CORE (M0–M6) — screen-record heavy, talking-head light; 51 lessons are
 written, this is production not creation. Build the $97 Starter Kit from
 `business-os-kit` spec. Activation Arc continues 3–4×/week with real numbers.
@@ -293,6 +295,7 @@ copycat threat into distribution.
 | Flagship name | Keep "Fast Forward"; rename/retire the two ghost products | ⬜ |
 | Lesson 0.0 | SHOCK-AND-AWE opens; Kitchens tour becomes 0.1 | ⬜ |
 | Community price | $47/mo · $397/yr · founding $27 locked | ⬜ |
+| Community platform | **Whop** (decided 2026-07-06) — sunset Skool, one platform for course + checkout + community | ✅ |
 | Method name | Pick one ("Business OS" default) and use it everywhere | ⬜ |
 | Agency question | License tier at $5k–10k/yr, not exclusion | ⬜ |
 | Spearhead channel | LinkedIn for 90 days | ⬜ |
