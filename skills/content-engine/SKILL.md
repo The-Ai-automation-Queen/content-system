@@ -79,6 +79,28 @@ proceed. Do not interrogate.
 
 ---
 
+## The series mechanic — the Activation Arc
+
+While the launch season runs (see `docs/FLAGSHIP-COURSE-STRATEGY.md` §3.1), the
+build-in-public story is a **named, numbered series**, not loose posts
+(inspiration-library Pattern: Harper Carroll's numbered-series arc — completion
+urgency, follow-forcing):
+
+- Every Activation Arc draft opens with the series header line:
+  **"Day N of switching my machine on."** N increments per *published* Arc post
+  (check the vault for the highest POSTED Arc number, not the highest drafted).
+- Each episode must contain at least one **verifiable number from the machine
+  itself** (drafts produced, keyword DMs sent, leads captured, $ collected —
+  from `performance-log.md` or the day's real events in `personal-brain.md`).
+  No number available → it's not an Arc episode; write it as a normal pillar
+  post instead.
+- Each episode ends by opening tomorrow's loop in one line ("Tomorrow: the DM
+  machine goes live") — the follow-forcing mechanic.
+- Tag Arc entries `Series: Activation Arc — Day N` in the metadata block so
+  performance-tracker can report the series as a unit.
+
+---
+
 ## How to write each draft
 
 Follow the Script Application Rules from `inspiration-library` in order:

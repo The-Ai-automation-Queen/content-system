@@ -11,7 +11,7 @@ description: |
   queues it, or whenever the operator asks for the visual/video for a specific
   ENTRY. Produces image/PDF/MP4 assets and records their location + URL on the
   entry. Does NOT publish.
-argument-hint: "[ENTRY number to build visuals for — e.g. '007'; or 'next' for the next entry that needs a visual]"
+argument-hint: "[ENTRY number to build visuals for — e.g. '007'; 'next' for the next entry that needs a visual; or 'carousel-batch' for the weekly 3-carousel batch]"
 allowed-tools:
   - Read
   - Edit
@@ -146,6 +146,25 @@ copy, not re-authoring it.
 If the operator hasn't specified an entry and several need visuals, pick the next
 `READY TO POST` carousel/video entry without a `**Visual:**` line; if ambiguous,
 ask once with `AskUserQuestion`.
+
+---
+
+## Weekly mode: `carousel-batch`
+
+The volume play (inspiration-library: Chris Donnelly — carousels at 2× post
+performance, produced in batches, one signature look). Run once a week:
+
+1. Read `performance-log.md` and `content-vault.md`; pick the week's **3
+   strongest entries** (best engagement if posted; highest critic score if not)
+   that don't yet have a carousel.
+2. For each, derive a 6–8 slide outline from the entry's existing copy —
+   hook slide → one idea per slide → CTA slide with the entry's real CTA.
+   One of the three should use the **myth/reality** contrast format when the
+   source entry supports it.
+3. Build all three in one pass (same template, same brand kit — the signature
+   look IS the strategy), export, record `**Visual:**` lines on each entry.
+4. Close with the standard handoff plus one line: which of the 3 to post first
+   and why.
 
 ---
 
