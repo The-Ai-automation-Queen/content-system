@@ -1,0 +1,114 @@
+{
+  "https://techcrunch.com/category/artificial-intelligence/feed/": {
+    "last_checked": "2026-04-12T16:37:08.024Z",
+    "items_found": 3
+  },
+  "https://www.technologyreview.com/feed/": {
+    "last_checked": "2026-04-12T16:37:09.544Z",
+    "items_found": 0
+  },
+  "https://openai.com/blog/rss.xml": {
+    "last_checked": "2026-04-12T16:37:11.960Z",
+    "items_found": 0
+  },
+  "https://blog.google/technology/ai/rss/": {
+    "last_checked": "2026-04-12T16:37:14.018Z",
+    "items_found": 0
+  },
+  "https://blogs.microsoft.com/ai/feed/": {
+    "last_checked": "2026-04-12T16:37:15.387Z",
+    "items_found": 0
+  },
+  "https://www.oneusefulthing.org/feed": {
+    "last_checked": "2026-04-12T16:37:16.625Z",
+    "items_found": 0
+  },
+  "https://venturebeat.com/category/ai/feed/": {
+    "last_checked": "2026-04-12T16:37:18.266Z",
+    "items_found": 0
+  },
+  "https://www.artificialintelligence-news.com/feed/": {
+    "last_checked": "2026-04-12T16:37:20.613Z",
+    "items_found": 0
+  },
+  "https://www.fastcompany.com/technology/rss": {
+    "last_checked": "2026-04-12T16:37:23.412Z",
+    "items_found": 2
+  },
+  "https://www.exponentialview.co/feed": {
+    "last_checked": "2026-04-12T16:37:24.540Z",
+    "items_found": 1
+  },
+  "https://hbr.org/topic/subject/technology-and-analytics/artificial-intelligence": {
+    "last_checked": "2026-04-12T16:37:30.065Z",
+    "items_found": 3
+  },
+  "https://www.aboutamazon.com/news/aws/feed": {
+    "last_checked": "2026-04-12T16:37:32.429Z",
+    "items_found": 0
+  },
+  "https://cloudblog.withgoogle.com/rss/": {
+    "last_checked": "2026-04-12T16:37:35.189Z",
+    "items_found": 0
+  },
+  "https://fpf.org/feed/": {
+    "last_checked": "2026-04-12T16:37:36.747Z",
+    "items_found": 0
+  },
+  "https://themarkup.org/feeds/rss.xml": {
+    "last_checked": "2026-04-12T16:37:39.505Z",
+    "items_found": 0
+  },
+  "https://www.mckinsey.com/insights/rss": {
+    "last_checked": "2026-04-12T16:37:41.348Z",
+    "items_found": 0
+  },
+  "https://www.ben-evans.com/benedictevans?format=rss": {
+    "last_checked": "2026-04-12T16:37:46.001Z",
+    "items_found": 0
+  },
+  "https://stratechery.com/feed/": {
+    "last_checked": "2026-04-12T16:37:47.742Z",
+    "items_found": 0
+  },
+  "https://www.cnbc.com/id/19854910/device/rss/rss.html": {
+    "last_checked": "2026-04-12T16:37:49.330Z",
+    "items_found": 0
+  },
+  "https://simonwillison.net/atom/everything/": {
+    "last_checked": "2026-04-12T16:37:51.530Z",
+    "items_found": 2
+  },
+  "https://www.newcomer.co/feed": {
+    "last_checked": "2026-04-12T16:37:52.808Z",
+    "items_found": 0
+  },
+  "https://www.retaildive.com/feeds/news/": {
+    "last_checked": "2026-04-12T16:37:54.385Z",
+    "items_found": 0
+  },
+  "https://www.healthcareitnews.com/feed": {
+    "last_checked": "2026-04-12T16:37:57.190Z",
+    "items_found": 0
+  },
+  "https://www.fiercehealthcare.com/rss/xml": {
+    "last_checked": "2026-04-12T16:37:58.384Z",
+    "items_found": 25
+  },
+  "https://chamath.substack.com/feed": {
+    "last_checked": "2026-04-12T16:37:59.528Z",
+    "items_found": 1
+  },
+  "https://newsletter.pragmaticengineer.com/feed": {
+    "last_checked": "2026-04-12T16:38:01.031Z",
+    "items_found": 0
+  },
+  "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml": {
+    "last_checked": "2026-04-12T16:38:02.220Z",
+    "items_found": 1
+  },
+  "https://www.wired.com/feed/tag/ai/latest/rss": {
+    "last_checked": "2026-04-12T16:38:04.615Z",
+    "items_found": 0
+  }
+}

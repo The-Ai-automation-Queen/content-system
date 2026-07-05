@@ -1,0 +1,114 @@
+{
+  "cards": [
+    {
+      "id": "2026-04-11-001",
+      "category": "Breaking",
+      "headline": "OpenAI just launched GPT-5 with a buried enterprise clause",
+      "narrative": "GPT-5 dropped this morning with impressive benchmarks, but the enterprise agreement now includes a clause letting OpenAI use anonymised business prompts for model improvement. If you run client strategy through ChatGPT, read the new terms before your next session.",
+      "verdict": "ACT",
+      "verdict_text": "Read the updated enterprise terms today and decide if your current usage still fits your risk tolerance.",
+      "topics": ["GPT-5", "OpenAI", "enterprise terms"],
+      "date": "11/04/2026",
+      "timestamp": "2026-04-11T08:00:00Z"
+    },
+    {
+      "id": "2026-04-11-002",
+      "category": "Tools",
+      "headline": "Notion added native AI meeting summaries that actually work",
+      "narrative": "Notion shipped a meeting summary feature that connects to Zoom and Google Meet, transcribes, and drops action items straight into your workspace. For teams under 10, this eliminates the need for a separate transcription tool. The free tier includes 10 meetings per month.",
+      "verdict": "WATCH",
+      "verdict_text": "If you already use Notion, test it on one internal meeting this week before committing.",
+      "topics": ["Notion", "meeting summaries"],
+      "date": "11/04/2026",
+      "timestamp": "2026-04-11T07:00:00Z"
+    },
+    {
+      "id": "2026-04-11-003",
+      "category": "Privacy",
+      "headline": "Google quietly changed Gemini free-tier data policy",
+      "narrative": "Your free Gemini conversations now train Google's models by default. If you or your team use the free tier for client work, your client data is feeding their AI. That is a liability you did not sign up for.",
+      "verdict": "ACT",
+      "verdict_text": "Upgrade to a paid plan or switch to Claude for anything client-related. Stop using free-tier AI for business data.",
+      "topics": ["Gemini", "data policy", "Google"],
+      "date": "11/04/2026",
+      "timestamp": "2026-04-11T06:00:00Z"
+    },
+    {
+      "id": "2026-04-10-001",
+      "category": "Tools",
+      "headline": "Canva's new AI image tool is surprisingly good for product shots",
+      "narrative": "Canva released an image generation feature trained on product and lifestyle photography. Early tests show it produces usable social media images in seconds, cutting the need for stock photo subscriptions. Not studio-grade, but for Instagram stories and quick posts it does the job.",
+      "verdict": "WATCH",
+      "verdict_text": "Try it for one week of social content and compare the output quality against what you currently pay for.",
+      "topics": ["Canva", "image generation"],
+      "date": "10/04/2026",
+      "timestamp": "2026-04-10T09:00:00Z"
+    },
+    {
+      "id": "2026-04-10-002",
+      "category": "Strategy",
+      "headline": "McKinsey: 72 percent of AI subscriptions go unused after 90 days",
+      "narrative": "A new McKinsey report found that nearly three quarters of AI tools purchased by small businesses are abandoned within three months. Buying tools without a workflow kills your budget and your confidence. One tool used well beats five tools collecting dust.",
+      "verdict": "ACT",
+      "verdict_text": "Audit every AI subscription you pay for this month and cancel anything you have not opened in 30 days.",
+      "topics": ["subscriptions", "McKinsey", "tool waste"],
+      "date": "10/04/2026",
+      "timestamp": "2026-04-10T08:00:00Z"
+    },
+    {
+      "id": "2026-04-10-003",
+      "category": "Tools",
+      "headline": "Slack AI thread summaries now available on all paid plans",
+      "narrative": "Slack now offers AI summaries of long threads and channels for all paid tiers, not just Enterprise. If your team loses decisions in endless threads, this surfaces what matters. It does not replace good communication habits, but it reduces the time spent scrolling.",
+      "verdict": "WATCH",
+      "verdict_text": "Enable it in your Slack admin settings and ask your team to flag whether the summaries are accurate after two weeks.",
+      "topics": ["Slack", "thread summaries"],
+      "date": "10/04/2026",
+      "timestamp": "2026-04-10T07:00:00Z"
+    },
+    {
+      "id": "2026-04-09-001",
+      "category": "Strategy",
+      "headline": "EU AI Act enforcement starts in three months and most small businesses are not ready",
+      "narrative": "Phase one of the EU AI Act takes effect in July 2026 and applies to any business serving EU customers, not just EU-based companies. If you sell digital products or services into Europe, you need to know which of your AI tools fall under the transparency requirements. Fines start at two percent of global revenue.",
+      "verdict": "ACT",
+      "verdict_text": "List every AI tool your business uses and check if any require disclosure under the EU AI Act transparency rules.",
+      "topics": ["EU AI Act", "compliance"],
+      "date": "09/04/2026",
+      "timestamp": "2026-04-09T09:00:00Z"
+    },
+    {
+      "id": "2026-04-09-002",
+      "category": "Strategy",
+      "headline": "No, AI is not replacing all copywriters by June",
+      "narrative": "A viral LinkedIn post claimed AI will fully replace human copywriters within two months. The post was written to sell a course. AI handles first drafts and repetitive copy well, but brand voice, emotional nuance, and strategic messaging still need a human. Do not panic-buy a course because someone manufactured urgency.",
+      "verdict": "IGNORE",
+      "verdict_text": "Skip the panic and keep refining how you use AI as a drafting partner, not a replacement.",
+      "topics": ["copywriting", "hype cycle"],
+      "date": "09/04/2026",
+      "timestamp": "2026-04-09T08:00:00Z"
+    },
+    {
+      "id": "2026-04-09-003",
+      "category": "Tools",
+      "headline": "Adobe doubled the price of its AI features with 48 hours notice",
+      "narrative": "Adobe Creative Cloud AI add-on jumped from fifteen to thirty dollars per month, effective immediately for new subscribers. If you budgeted around the old price, this changes your cost calculation. Competitors like Canva and Figma now offer similar features at lower price points.",
+      "verdict": "WATCH",
+      "verdict_text": "Compare what you actually use in Adobe's AI features against alternatives before your next billing cycle.",
+      "topics": ["Adobe", "pricing"],
+      "date": "09/04/2026",
+      "timestamp": "2026-04-09T07:00:00Z"
+    },
+    {
+      "id": "2026-04-09-004",
+      "category": "Breaking",
+      "headline": "Another forty-million-dollar AI startup selling a product that does not exist yet",
+      "narrative": "A new startup raised forty million dollars claiming their AI agent can handle sales, marketing, customer service, and operations for any business. The demo looks impressive, the waitlist is long, and the product does not ship yet. This is venture capital theatre, not a tool you can use today.",
+      "verdict": "IGNORE",
+      "verdict_text": "Ignore the hype. Stay focused on the tools that are shipping and working right now.",
+      "topics": ["startup hype", "vaporware"],
+      "date": "09/04/2026",
+      "timestamp": "2026-04-09T06:00:00Z"
+    }
+  ]
+}
