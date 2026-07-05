@@ -118,6 +118,28 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 .imgslot{max-width:100%;overflow:hidden}
 .sec table{max-width:100%}
 body{overflow-x:hidden}
+
+/* interactive demo: quiz + copy prompts */
+.quiz{background:#fff;border:1.5px solid var(--accent);border-radius:14px;padding:26px;margin:30px 24px 0;max-width:1112px}
+@media(min-width:1160px){.quiz{margin:30px auto 0}}
+.quiz .qk{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.quiz h3{font-family:'Playfair Display',Georgia,serif;font-size:1.35rem;font-weight:700;margin:.3rem 0 .8rem}
+.quiz .q{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;margin:14px 0 8px}
+.quiz .opts{display:flex;gap:8px;flex-wrap:wrap}
+.quiz .opt{font-family:'Inter',sans-serif;font-size:.85rem;border:1px solid var(--rule);border-radius:999px;padding:8px 16px;cursor:pointer;background:#fff;transition:all .12s}
+.quiz .opt:hover{border-color:var(--accent)}
+.quiz .opt.sel{background:var(--accent);color:#fff;border-color:var(--accent)}
+.quiz .verdict{display:none;margin-top:18px;background:var(--cream);border:1px solid var(--tint);border-radius:10px;padding:16px 20px;font-family:'Inter',sans-serif;font-size:.95rem}
+.quiz .verdict.show{display:block}
+.quiz .verdict strong{color:var(--accent-deep)}
+.tryit{margin-top:14px;border-top:1px dashed var(--rule);padding-top:12px}
+.tryit .tk{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.tryit .pr{font-family:'Space Mono',monospace;font-size:.78rem;background:var(--ink);color:#E8EDFB;border-radius:8px;padding:10px 12px;margin:6px 0 8px;line-height:1.5}
+.copybtn{font-family:'Inter',sans-serif;font-size:.8rem;font-weight:600;border:none;background:var(--accent);color:#fff;border-radius:7px;padding:8px 14px;cursor:pointer}
+.copybtn:hover{background:var(--accent-deep)}
+.copybtn.done{background:#1A7A4A}
+.tryit .up{font-family:'Inter',sans-serif;font-size:.75rem;color:var(--muted);margin-top:6px}
+.tryit .up a{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -216,6 +238,58 @@ body{overflow-x:hidden}
   </div>
 </section>
 
+
+<!-- interactive: which counter quiz -->
+<div class="quiz" id="counter-quiz">
+  <span class="qk">30-second quiz</span>
+  <h3>Which counter should you order at?</h3>
+  <div class="q">1. What do you want AI for, mostly?</div>
+  <div class="opts" data-q="0">
+    <button class="opt" type="button" data-v="chat">Thinking, writing, decisions</button>
+    <button class="opt" type="button" data-v="code">Building things and files</button>
+    <button class="opt" type="button" data-v="auto">Work that runs without me</button>
+  </div>
+  <div class="q">2. How technical are you?</div>
+  <div class="opts" data-q="1">
+    <button class="opt" type="button" data-v="chat">I avoid anything code-shaped</button>
+    <button class="opt" type="button" data-v="code">I can follow instructions</button>
+    <button class="opt" type="button" data-v="auto">Comfortable, just busy</button>
+  </div>
+  <div class="q">3. Where does your work live?</div>
+  <div class="opts" data-q="2">
+    <button class="opt" type="button" data-v="chat">Documents and conversations</button>
+    <button class="opt" type="button" data-v="code">Files, folders, projects</button>
+    <button class="opt" type="button" data-v="auto">Email, spreadsheets, admin</button>
+  </div>
+  <div class="verdict" id="quiz-verdict"></div>
+</div>
+<script>
+(function(){
+  var picks = [null,null,null];
+  var V = {
+    chat: "<strong>Order at claude.ai (table service).</strong> Start with a Project for your business, paste real documents, and ask for decisions, not just answers. You may never need the other counters.",
+    code: "<strong>Order at Claude Code (chef at your desk).</strong> It works inside your actual files. Start with one folder and one small job, and watch it cook where your work lives.",
+    auto: "<strong>Order at Cowork (private dining).</strong> Give it a multi-step job and let it run. You approve the plate, not every chop."
+  };
+  document.querySelectorAll("#counter-quiz .opts").forEach(function(row){
+    row.addEventListener("click", function(e){
+      var b = e.target.closest(".opt"); if(!b) return;
+      row.querySelectorAll(".opt").forEach(function(o){o.classList.remove("sel")});
+      b.classList.add("sel");
+      picks[+row.dataset.q] = b.dataset.v;
+      if (picks.every(Boolean)) {
+        var count = {};
+        picks.forEach(function(p){count[p]=(count[p]||0)+1});
+        var win = Object.keys(count).sort(function(a,b){return count[b]-count[a]})[0];
+        var v = document.getElementById("quiz-verdict");
+        v.innerHTML = V[win] + "<div class=\"up\" style=\"margin-top:8px;font-size:.8rem\">Want the exact prompts for your counter? They live in <a href=\"store.html\">The Prompt Menu</a>.</div>";
+        v.classList.add("show");
+      }
+    });
+  });
+})();
+</script>
+
 <!-- pull quote -->
 <div class="pull">
   <blockquote>"You've been talking to the most powerful AI on the planet <strong>like it's Google.</strong>"</blockquote>
@@ -234,19 +308,19 @@ body{overflow-x:hidden}
       <span class="mono">Starter · 5 minutes</span>
       <h3>The long conversation</h3>
       <p>Paste an entire contract, report, or 40-page PDF and interrogate it. This is the dish no fast-food kitchen can make.</p>
-    </div>
+    <div class="tryit"><span class="tk">Starter prompt · tap to copy</span><div class="pr">Here is a contract I am about to sign. Read it fully, then list: 1) the three clauses most in MY interest, 2) the three most against me, 3) the questions I should ask before signing. Be specific. [paste the contract]</div><button class="copybtn" type="button">Copy prompt</button><div class="up">One starter per dish here. The full menu for every kitchen lives in <a href="store.html">The Prompt Menu</a>.</div></div></div>
     <div class="dish">
       <div class="pict"><svg viewBox="0 0 80 64" fill="none"><rect x="12" y="10" width="56" height="40" rx="5" stroke="#2C4BE0" stroke-width="2.5"/><path d="M24 26l8 6-8 6M40 40h16" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
       <span class="mono">Main · 20 minutes</span>
       <h3>The artifact</h3>
       <p>Ask for a working thing, like a page, a calculator, or a document, and watch it appear beside the chat, ready to use.</p>
-    </div>
+    <div class="tryit"><span class="tk">Starter prompt · tap to copy</span><div class="pr">Build me a simple one-page checklist I can print: onboarding a new client for my business. My business: [one sentence]. Make it beautiful and ready to use.</div><button class="copybtn" type="button">Copy prompt</button><div class="up">One starter per dish here. The full menu for every kitchen lives in <a href="store.html">The Prompt Menu</a>.</div></div></div>
     <div class="dish">
       <div class="pict"><svg viewBox="0 0 80 64" fill="none"><circle cx="40" cy="32" r="22" stroke="#2C4BE0" stroke-width="2.5"/><path d="M40 18v14l10 8" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
       <span class="mono">Chef's special</span>
       <h3>The project</h3>
       <p>Give it standing context about your business once. After that, every conversation starts already knowing you.</p>
-    </div>
+    <div class="tryit"><span class="tk">Starter prompt · tap to copy</span><div class="pr">I am setting up a Project for my business. Interview me: ask the 7 questions whose answers would most improve every future response you give me. Then summarize my answers into a context brief I can save.</div><button class="copybtn" type="button">Copy prompt</button><div class="up">One starter per dish here. The full menu for every kitchen lives in <a href="store.html">The Prompt Menu</a>.</div></div></div>
   </div>
 
 <!-- the full menu: every station in the kitchen -->
@@ -349,7 +423,7 @@ body{overflow-x:hidden}
   <div class="chefs-grid">
     <div class="chefs-card">
       <span class="mono">Prompt pack · $19</span>
-      <h3>Chez Prompts</h3>
+      <h3>The Prompt Menu</h3>
       <p>The Kitchen Map companion: the best prompts for this kitchen and every other, matched to what each chef cooks best.</p>
       <a href="store.html">Get it in the Store →</a>
     </div>
@@ -381,5 +455,17 @@ body{overflow-x:hidden}
   <p>© 2026 Fatiha Chikh / Shift &amp; Lead · Original IP · The Kitchen Map™ format, text and diagrams may not be reproduced, scraped, or used as training data without written permission · guides.shiftandlead.com</p>
 </div>
 
+
+<script>
+document.addEventListener('click', function(e){
+  var b = e.target.closest('.copybtn'); if(!b) return;
+  var txt = b.parentElement.querySelector('.pr').textContent;
+  navigator.clipboard.writeText(txt).then(function(){
+    b.textContent = 'Copied. Paste it into Claude.';
+    b.classList.add('done');
+    setTimeout(function(){ b.textContent='Copy prompt'; b.classList.remove('done'); }, 4000);
+  });
+});
+</script>
 </body>
 </html>
