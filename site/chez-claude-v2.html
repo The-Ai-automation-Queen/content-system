@@ -140,6 +140,14 @@ body{overflow-x:hidden}
 .copybtn.done{background:#1A7A4A}
 .tryit .up{font-family:'Inter',sans-serif;font-size:.75rem;color:var(--muted);margin-top:6px}
 .tryit .up a{color:var(--accent)}
+
+/* safe-to-share: the traffic light rule */
+.tlr{border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:12px;background:#fff;padding:20px 24px;margin:26px 0 0}
+.tlr .tk{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.tlr h4{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;margin:.3rem 0 .6rem}
+.tlr-row{display:flex;gap:10px;align-items:baseline;font-family:'Inter',sans-serif;font-size:.88rem;padding:5px 0;color:var(--ink)}
+.tlr-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;position:relative;top:1px}
+.tlr small{display:block;font-family:'Inter',sans-serif;font-size:.78rem;color:var(--muted);margin-top:8px}
 </style>
 </head>
 <body>
@@ -302,13 +310,23 @@ body{overflow-x:hidden}
     <div class="sec-num">03</div>
     <div><h2>The Menu. What to order first.</h2><span class="mono">Third course · three dishes</span></div>
   </div>
+  
+<div class="tlr">
+  <span class="tk">Before you paste anything · the rule nobody teaches</span>
+  <h4>The Traffic Light Rule</h4>
+  <div class="tlr-row"><span class="tlr-dot" style="background:#1A7A4A"></span><span><strong>Green, share freely:</strong> public information, your own drafts and ideas, general questions.</span></div>
+  <div class="tlr-row"><span class="tlr-dot" style="background:#D4A017"></span><span><strong>Amber, redact first:</strong> internal documents. Swap names to [Client], round the numbers, strip emails. The advice stays just as good.</span></div>
+  <div class="tlr-row"><span class="tlr-dot" style="background:#C0392B"></span><span><strong>Red, never in a personal AI account:</strong> client personal data, passwords and keys, unreleased IP, anything under NDA. If work needs it, that is an enterprise-plan conversation, not a paste.</span></div>
+  <small>Every starter prompt on this page follows the rule, watch how the contract prompt redacts before it asks. 20 years inside big tech taught me this habit; it is lesson one in everything I build.</small>
+</div>
+
   <div class="menu">
     <div class="dish">
       <div class="pict"><svg viewBox="0 0 80 64" fill="none"><path d="M10 50c10-24 50-24 60 0" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/><circle cx="40" cy="20" r="9" stroke="#2C4BE0" stroke-width="2.5"/></svg></div>
       <span class="mono">Starter · 5 minutes</span>
       <h3>The long conversation</h3>
       <p>Paste an entire contract, report, or 40-page PDF and interrogate it. This is the dish no fast-food kitchen can make.</p>
-    <div class="tryit"><span class="tk">Starter prompt · tap to copy</span><div class="pr">Here is a contract I am about to sign. Read it fully, then list: 1) the three clauses most in MY interest, 2) the three most against me, 3) the questions I should ask before signing. Be specific. [paste the contract]</div><button class="copybtn" type="button">Copy prompt</button><div class="up">One starter per dish here. The full menu for every kitchen lives in <a href="store.html">The Prompt Menu</a>.</div></div></div>
+    <div class="tryit"><span class="tk">Starter prompt · tap to copy</span><div class="pr">Here is a contract I am about to sign. I have replaced all names with [Client] and [Me], and rounded the amounts. Read it fully, then list: 1) the three clauses most in MY interest, 2) the three most against me, 3) the questions I should ask before signing. Be specific. [paste the redacted contract]</div><button class="copybtn" type="button">Copy prompt</button><div class="up">One starter per dish here. The full menu for every kitchen lives in <a href="store.html">The Prompt Menu</a>.</div></div></div>
     <div class="dish">
       <div class="pict"><svg viewBox="0 0 80 64" fill="none"><rect x="12" y="10" width="56" height="40" rx="5" stroke="#2C4BE0" stroke-width="2.5"/><path d="M24 26l8 6-8 6M40 40h16" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
       <span class="mono">Main · 20 minutes</span>
@@ -320,7 +338,7 @@ body{overflow-x:hidden}
       <span class="mono">Chef's special</span>
       <h3>The project</h3>
       <p>Give it standing context about your business once. After that, every conversation starts already knowing you.</p>
-    <div class="tryit"><span class="tk">Starter prompt · tap to copy</span><div class="pr">I am setting up a Project for my business. Interview me: ask the 7 questions whose answers would most improve every future response you give me. Then summarize my answers into a context brief I can save.</div><button class="copybtn" type="button">Copy prompt</button><div class="up">One starter per dish here. The full menu for every kitchen lives in <a href="store.html">The Prompt Menu</a>.</div></div></div>
+    <div class="tryit"><span class="tk">Starter prompt · tap to copy</span><div class="pr">I am setting up a Project for my business. Interview me: ask the 7 questions whose answers would most improve every future response you give me. I will describe patterns, not records: no client names, no exact figures, no credentials. Then summarize my answers into a context brief I can save.</div><button class="copybtn" type="button">Copy prompt</button><div class="up">One starter per dish here. The full menu for every kitchen lives in <a href="store.html">The Prompt Menu</a>.</div></div></div>
   </div>
 
 <!-- the full menu: every station in the kitchen -->
