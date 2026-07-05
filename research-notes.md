@@ -2,6 +2,78 @@
 
 ---
 
+## RESEARCH 025 — 2026-07-05 | AI Operators Academy (IAOA) — same-niche competitor, French market, "3-steps" guide factory
+
+**Status:** NOTED
+**Source:** ai-operators-academy.fr — operator-flagged link (`/ressources/utiliser-claude-code-gratuit-openrouter`), extracted via Tavily. French-language academy teaching Claude Code / AI-agent automation to business owners.
+**Why it's here:** This is close to a mirror of her own business model, one language and one market over. Worth studying for format and topic coverage, not for copying text — see the IP note below.
+
+### The business model (their offer ladder — compare to `docs/FLAGSHIP-COURSE-STRATEGY.md` §1.4)
+1. Free resources (23+ short articles, the top of funnel)
+2. **Formation** ("Learn on your own") — the self-paced academy, self-serve
+3. **Accompagnement** ("Le Comité," a mentor) — paid coaching/mentorship calls
+4. **Délégation** ("Aura Agency") — a done-for-you build team, the highest tier
+
+Same three-rung shape as her Self-Paced → Cohort/Community → Corporate ladder,
+independently arrived at — good external confirmation the ladder shape is
+right for this market, not just her own idea.
+
+### The article format (the reusable pattern)
+Every free article: a punchy "how to do X in 3 steps" title → 3-4 bullet
+outcomes → numbered steps, each ending in a ✅ "Result" callout → a
+copy-paste prompt/code block → a 3-card CTA block (the 3 ladder rungs above,
+one CTA each) → "Read also" related-article links. Tight, tactical,
+screenshot-free (prompt-block-driven), clearly optimized for a non-technical
+reader who just wants the exact text to paste.
+
+### Topic backlog (translated, for evaluating fit — NOT their text)
+Good fit for a non-technical, ICP-1 audience (comparable to her Time Wins /
+What's Worth It pillars):
+- Run Claude Code for free by redirecting it to free OpenRouter models
+  (the exact page linked — 3 steps: get an OpenRouter key, one config
+  prompt, verify the model switched)
+- 3 free sites to use Claude/GPT/Gemini without paying (LM Arena, Pinokio,
+  Design Arena)
+- 10 "secret" keywords/prompts that change how Claude responds
+- Force Claude to stop agreeing with you — a "critical partner" mode prompt
+- 4 habits that change how you use Claude Code (`/init`, `/clear`, model
+  choice, parallel sub-agents)
+
+Better suited to the flagship's Depth tier (M7–M9) than a free top-of-funnel
+guide — more technical/dev-leaning:
+- Installing multi-agent orchestrators (Ruflo, "The Agency" 144-agent repo)
+- Connecting Claude to a site with no API (Printing Press)
+- Token-cost reduction techniques (MarkItDown, file-re-read waste)
+- A financial-analysis skill install
+- Meta Ads / SEO / marketing-agency-replacement automations
+
+### IP note (operating rule, not public-facing)
+The topics and the 3-steps format are fair game to be inspired by — exactly
+what `inspiration-library` already does for tracked creators: study the
+pattern, write original content in her own voice. Their French article TEXT
+is their copyrighted work; it should never be translated and republished
+as hers. Every guide below is written fresh, not translated.
+
+### Content angles (2 built this pass, rest queued)
+1. **Built as a new lead magnet:** "Stop Paying for AI Tokens" — running
+   Claude Code on free OpenRouter models. See
+   `lead-magnets/free-ai-tokens-openrouter.md`.
+2. **Queued for next batch:** the 3-free-AI-sites guide and the 10-keywords
+   guide (both strong ICP-1 fits) — flagged in `ROADMAP.md` for
+   `content-engine`/`visual-engine` to pick up as the next `chez`-style or
+   plain-`.md` lead magnets.
+
+**Contrarian take logged:** the existence of a French-market mirror of her
+exact business shape is good news, not competition to fear — it validates
+the ladder, and it's a font of tested topics to adapt, not a threat. The
+actual moat was never the topic list; it's the personal brain, the receipts,
+and (per `docs/FLAGSHIP-COURSE-STRATEGY.md` §2) the living system, which no
+one can copy-paste.
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 024 — 2026-06-30 | The 4 Upgrades That Turn Claude Code Into a Business Partner (Council · Self-Verify · Context · Sub-Agents/Goal)
 
 **Status:** NOTED

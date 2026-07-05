@@ -58,7 +58,7 @@ simplified for a non-technical person to set up in 2 days.
    reformatted as a fill-in-the-blank template. They swap in their own voice,
    offers, and lead magnets.
 
-**Delivery:** Gumroad page → buyer gets a Notion template link + ZIP of PDFs + Loom link.
+**Delivery:** Whop page → buyer gets a Notion template link + ZIP of PDFs + Loom link.
 **Price rationale:** $97 is an impulse buy for the target audience. Low enough to
 not need a sales call. High enough to signal real value. Up from $47 once 50 units
 are sold and social proof exists.
@@ -202,17 +202,17 @@ Run `launch-content starter-kit` to produce the 3 vault drafts (see below).
 
 These require human action — the skill cannot do them:
 - [ ] Record the 25-min Loom walkthrough (show the Notion template + one skill guide)
-- [ ] Create a Gumroad product listing ($97, description from `sales-copy` below)
+- [ ] Create a Whop product listing ($97, description from `sales-copy` below)
 - [ ] Export the Notion template as a shareable link
 - [ ] Export the 3 guides as PDFs
-- [ ] Upload everything to Gumroad as a product file bundle
+- [ ] Upload everything to Whop as a product file bundle
 - [ ] Test the checkout flow before promoting
 
 ---
 
 ## Sales Copy Framework
 
-Run with `sales-copy starter-kit` to produce the Gumroad listing copy.
+Run with `sales-copy starter-kit` to produce the Whop listing copy.
 
 **Headline:** "Build the AI business system I use to run my content, leads, and
 pipeline — in a weekend."
@@ -298,7 +298,7 @@ forever: [link]." ACP stage: C.
 ## What this skill does not do
 
 - Does not record the walkthrough video (operator action).
-- Does not set up Gumroad or Skool (operator action).
+- Does not set up Whop or Skool (operator action).
 - Does not publish any launch content — all drafts go to the vault for approval.
 - Does not make up social proof or member results.
 - Does not price the products without operator confirmation.

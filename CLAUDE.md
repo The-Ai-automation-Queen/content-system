@@ -57,8 +57,9 @@ Skills are reusable, version-controlled instructions. Two kinds live here:
 - **`positioning/SKILL.md`** — brand positioning, voice, audience, the
   win-back-your-time promise, and the six content pillars. The non-negotiable
   identity layer.
-- **`inspiration-library/SKILL.md`** + `creators.csv` — 21 studied creators,
-  15 named hook/format patterns, and the script application rules. Load this
+- **`inspiration-library/SKILL.md`** + `creators.csv` — 21 studied creators + 1
+  tracked institutional publisher (23 rows), 15 named hook/format patterns,
+  and the script application rules. Load this
   before writing any script, hook, or outline.
 
 **Action skills** (in `skills/`, each a folder with a `SKILL.md`). Mapped to

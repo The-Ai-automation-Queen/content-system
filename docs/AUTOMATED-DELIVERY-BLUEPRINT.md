@@ -91,7 +91,7 @@ automate a loop whose upstream is inactive.*
 The event chain, fully automatic:
 
 ```
-Whop/Gumroad purchase → webhook → n8n
+Whop purchase → webhook → n8n
   ├─ GHL: create/tag contact (product, ICP, ACP stage)
   ├─ deliver access email (sequence already written — 14 of 21 emails exist)
   ├─ tier ≥ community → Skool invite + onboarding DM
@@ -242,7 +242,7 @@ files, the ICP tagging rule in content-engine, the corporate one-pager +
 workshop workbook from existing modules, the testimonial-engine automation.
 
 **Only you:** the half-day avatar/voice recording session, platform accounts +
-keys (HeyGen/Higgsfield, Blotato egress, GHL, Telegram, VPS), Whop/Gumroad
+keys (HeyGen/Higgsfield, Blotato egress, GHL, Telegram, VPS), Whop
 checkout setup, the brain seed, lesson QA, and pressing GO.
 
 Sequence: avatar session + brain seed (week 1) → factory renders M0–M2 while

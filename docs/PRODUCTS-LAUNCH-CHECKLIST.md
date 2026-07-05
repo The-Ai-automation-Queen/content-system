@@ -2,7 +2,7 @@
 
 > Created: 2026-07-05 · Status: LIVING CHECKLIST
 > All 4 store products now have finished, buyer-ready content (see
-> `products/`). What's left for each is 100% yours: a Gumroad listing takes
+> `products/`). What's left for each is 100% yours: a Whop listing takes
 > about 10 minutes. This doc gives you the exact copy to paste so there's no
 > deciding left to do — just clicking.
 >
@@ -11,13 +11,13 @@
 > survives as "Writing Style Clone Lite," now a bonus playbook inside the
 > Starter Kit below, not a standalone SKU.
 >
-> After each product: paste the resulting Gumroad URL into
+> After each product: paste the resulting Whop URL into
 > `site/store.html` → the matching `url: ""` field → the button flips from
 > "Coming soon" to "Buy now" automatically. Nothing else on the page changes.
 
 ## The one-time flow, per product (repeat 4 times)
 
-1. Gumroad → **New product** → **Digital product**.
+1. Whop → **New product** → **Digital product**.
 2. Paste the **Title**, **Price**, **Summary**, and **Description** from the
    tables below.
 3. Upload the file: export the matching `products/*.md` to PDF (or paste it
@@ -67,7 +67,7 @@
 | Summary | Build the AI system I use to run my content, leads, and pipeline — in a weekend. No coding. |
 | Description | Everything I built, simplified for a non-technical weekend build: a Brain Template (Notion-ready), four plain-English playbooks (clone your writing voice, write in it using AI, schedule everywhere, turn comments into leads), and a bonus 5-email nurture template. Copy the structure into your own Notion, follow the guides, done by Sunday. |
 | File | Copy `products/business-os-starter-kit.md` into a Notion page, share the link, AND export it to PDF as a backup download |
-| Extra step | Record the 25-minute walkthrough video mentioned in the kit (a screen recording of you setting up the template + running Guide 1 once, live) and attach the Loom/video link to the Gumroad delivery. This is the one product that needs a short recording — everything else is ready as-is. |
+| Extra step | Record the 25-minute walkthrough video mentioned in the kit (a screen recording of you setting up the template + running Guide 1 once, live) and attach the Loom/video link to the Whop delivery. This is the one product that needs a short recording — everything else is ready as-is. |
 | Cover image | Same approach as above |
 
 ---
@@ -106,4 +106,4 @@ purple/beige design). Two things still need YOUR input before you share it:
 - [ ] Tell `content-engine` these are live — it can now write P-posts (per
       the ACP ratio rule: max 1 in every 10) linking to each.
 - [ ] Nothing else. You do not have to touch this again unless you improve a
-      product's content — Gumroad's auto-update setting handles the rest.
+      product's content — Whop's auto-update setting handles the rest.

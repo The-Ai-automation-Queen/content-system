@@ -37,8 +37,8 @@ commitment. Never jump a stranger from free to $997.
 | Tier | Offer | Price | Platform | Status |
 |---|---|---|---|---|
 | 0 | **Lead magnets** (7 ready in `lead-magnets/`) | Free | GHL | ⚠️ INACTIVE — activate immediately |
-| 1 | **AI Time Audit Template** | $47 | Gumroad | 🔴 Build |
-| 2 | **Business OS Starter Kit** | $97 (one-time) | Gumroad | 🔴 Build — see `skills/business-os-kit/` |
+| 1 | **AI Time Audit Template** | $47 | Whop | 🔴 Build |
+| 2 | **Business OS Starter Kit** | $97 (one-time) | Whop | 🔴 Build — see `skills/business-os-kit/` |
 | 3 | **AI Automation Queen Community** | $47/month or $397/year | Skool | 🔴 Launch |
 | 4 | **Business OS Bootcamp** | $997 per cohort | Skool + GHL | 🔴 Build waitlist |
 | 5 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn | 🟡 Activate outreach |
@@ -65,7 +65,7 @@ Current resources and their keyword triggers:
 **Tier 1 — AI Time Audit Template ($47)**
 A Notion template + short video (~10 min). The buyer maps their current week;
 the template shows exactly how many hours could be reclaimed with AI. Low-ticket,
-impulse buy, high conversion. Sells on Gumroad. Build time: ~3 hours total.
+impulse buy, high conversion. Sells on Whop. Build time: ~3 hours total.
 Funnel position: first paid touchpoint, easy yes, proves the method.
 
 **Tier 2 — Business OS Starter Kit ($97)**
@@ -226,7 +226,7 @@ flag which are done vs. still blocked with a suggested next action.
 
 ### This month (first paid revenue)
 - [ ] Build the Business OS Starter Kit (see `skills/business-os-kit/SKILL.md`)
-- [ ] List on Gumroad at $97
+- [ ] List on Whop at $97
 - [ ] Create Skool community (name, 3 sections: Resources / Live Calls / Community)
 - [ ] Set founding member price: $97/month locked
 - [ ] Post 1 founding-member call on LinkedIn ("Comment FOUNDING")

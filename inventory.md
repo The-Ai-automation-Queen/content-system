@@ -72,8 +72,8 @@ the ACP funnel rules, CTA map, and the full conversion flow.
 | Tier | Offer | Price | Platform | Status |
 |---|---|---|---|---|
 | 0 | **Lead magnets** (7 written, in `lead-magnets/`) | Free | GHL | ⚠️ INACTIVE — host on GHL, set `active=yes` |
-| 1 | **AI Time Audit Template** | $47 (one-time) | Gumroad | 🔴 Build |
-| 2 | **Business OS Starter Kit** | $97 (one-time) | Gumroad | 🔴 Build — see `skills/business-os-kit/` |
+| 1 | **AI Time Audit Template** | $47 (one-time) | Whop | 🔴 Build |
+| 2 | **Business OS Starter Kit** | $97 (one-time) | Whop | 🔴 Build — see `skills/business-os-kit/` |
 | 3 | **AI Automation Queen Community** | $47/month or $397/year | Skool | 🔴 Launch (20 founding spots at $27/month locked) |
 | 4 | **Business OS Bootcamp** | $997 per cohort | Skool + GHL | 🔴 Build waitlist from community |
 | 5 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn DM | 🟡 Activate — send one-pager to 10 warm contacts |

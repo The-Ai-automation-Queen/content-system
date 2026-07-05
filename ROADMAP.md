@@ -188,7 +188,7 @@ or organise corporate events. One booking = $5,000–$15,000.
 | Week 1 | First email subscribers | Lead magnets live + CTAs on posts |
 | Month 1 | 20 founding members ($540/month) + 1 speaking booking ($5k+) | Founding-member post + speaker outreach |
 | Month 2 | 50 community members ($2,350/month MRR) | Community launched publicly at $47/month |
-| Month 3 | Starter Kit selling 20 units/month ($1,940) + 500 email subscribers | Starter Kit live on Gumroad |
+| Month 3 | Starter Kit selling 20 units/month ($1,940) + 500 email subscribers | Starter Kit live on Whop |
 | Month 6 | 200 community members ($39,400/month) + first Bootcamp ($20k) | Bootcamp waitlist → cohort |
 | Year 1 | 500 members + recurring Bootcamp + speaking circuit | Full loop running autonomously |
 | Year 2 | 1,000 members + evergreen products + IRL events | Scale |
@@ -228,7 +228,7 @@ or organise corporate events. One booking = $5,000–$15,000.
 9. **Package and launch the Business OS Starter Kit ($97)** — run
    `skills/business-os-kit/ build-starter-kit` for build instructions, then
    `launch-content starter-kit` for the 3 launch posts. Operator actions: record
-   the 25-min Loom walkthrough and create the Gumroad listing. This is the first
+   the 25-min Loom walkthrough and create the Whop listing. This is the first
    paid product and the fastest way to prove the method to buyers.
 10. **Launch the AI Automation Queen Community on Skool ($47/month)** — create the
     Skool space (3 sections: Resources / Live Calls / Community), set the founding
