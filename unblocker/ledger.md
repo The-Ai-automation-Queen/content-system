@@ -111,7 +111,7 @@
 ### UNB-013 — Paste the 5-email nurture sequence into GHL
 - **why:** downloads currently go cold by design; this converts them. Agent drafts the emails first (agent-side prep, not a human blocker)
 - **revenue_unlocked:** download → member conversion · **effort_min:** 15 (paste + wire trigger)
-- **depends_on:** UNB-009 + agent-drafted emails · **unblocks:** the full funnel
+- **depends_on:** UNB-009 (~~agent-drafted emails~~ ✅ done 06/07 — full sequence + execute-only GHL guide in `email-sequences/ghl-nurture/`) · **unblocks:** the full funnel
 - **source:** ROADMAP Priority-0 Action 2 + backlog 13
 - **verify:** operator ✅
 - **status:** open · served_count: 0 · added: 2026-07-06
