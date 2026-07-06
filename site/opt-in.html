@@ -1,25 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#F8F7F5">
+<html lang="en" style="background:#FFFFFF">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noai, noimageai, noindex, follow">
-<meta name="description" content="Get any free AI guide from The AI Edition — enter your email and it lands in your inbox immediately.">
+<meta name="robots" content="noai, noimageai">
 <title id="page-title">Get the guide &mdash; Shift &amp; Lead</title>
-<link rel="canonical" href="https://guides.shiftandlead.com/free-resources.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --canvas:#F8F7F5;
-  --cream:#F4F0FA;
+  --canvas:#FFFFFF;
+  --cream:#EEF2FC;
   --ink:#1A1A1A;
   --rule:#D8D6D2;
   --muted:#5C5A57;
-  --accent:#6B35C2;
-  --accent-deep:#4A1F8F;
-  --accent-tint:#EEE5FA;
+  --accent:#2C4BE0;
+  --accent-deep:#1B2EA0;
+  --accent-tint:#E4EAFB;
   --electric:#2C4BE0;
   --navy:#1B2EA0;
 }
@@ -120,7 +118,7 @@ a{color:inherit;text-decoration:none}
 <body>
 
 <nav class="nav"><div class="nav-inner">
-  <a class="nav-logo" href="../index.html" style="display:inline-flex;align-items:center" aria-label="The AI Automation Queen — home"><svg viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg" height="30" role="img" aria-label="The AI Automation Queen"><rect x="2" y="4" width="48" height="48" rx="10" fill="#1A1A1A"/><text x="26" y="39" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="28" fill="#2C4BE0">Q</text><text x="60" y="25" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="18" fill="#2C4BE0">the ai</text><text x="60" y="45" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.5" fill="#1A1A1A">AUTOMATION QUEEN</text></svg></a>
+  <a class="nav-logo" href="../index.html">Shift &amp; Lead</a>
   <a class="nav-back" href="../free-resources.html">← All free guides</a>
 </div></nav>
 
@@ -155,7 +153,7 @@ a{color:inherit;text-decoration:none}
         <input type="hidden" name="source" value="guide-optin">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <button class="form-btn" type="submit" id="submit-btn">Read the guide →</button>
-        <p class="form-privacy">No spam. No sequences. Just the guides.</p>
+        <p class="form-privacy">You’ll also get <strong>The Insider Brief</strong>, one curated AI briefing every Tuesday, verdicts included. Unsubscribe any time.</p>
       </form>
     </div>
     <div class="success" id="success-state">
@@ -185,8 +183,9 @@ a{color:inherit;text-decoration:none}
   </div>
   <div>
     <div class="footer-col-head">Work with Fatiha</div>
-    <a class="footer-link" href="free-resources.html#go-further">Community</a>
-    <a class="footer-link" href="free-resources.html#go-further">About</a>
+    <a class="footer-link" href="../about.html#community">Community</a>
+    <a class="footer-link" href="../about.html">About</a>
+    <a class="footer-link" href="../work-with-fatiha.html">Keynotes &amp; workshops</a>
   </div>
 </div>
 <div class="footer-legal">&copy; 2026 Shift &amp; Lead. All rights reserved.</div>
@@ -197,7 +196,7 @@ var GUIDES = {
   'what-is-ai': {
     chip: 'WHAT', chipClass: 'chip-purple',
     title: 'Everyone says “AI” 100 times a day. Nobody says what it is.',
-    desc: 'You’re not behind. You were never told. Here’s what AI actually is — plain English, no jargon, no condescension.',
+    desc: 'You’re not behind. You were never told. Here’s what AI actually is: plain English, no jargon, no condescension.',
     bullets: [
       'What AI is, in 4 lines (the version that actually sticks)',
       'Why it keeps getting more capable, so fast',
@@ -207,7 +206,7 @@ var GUIDES = {
   },
   'chatgpt-vs-ai': {
     chip: 'DIFF', chipClass: 'chip-purple',
-    title: 'ChatGPT and AI are not the same thing. Here are the 6 words — sorted.',
+    title: 'ChatGPT and AI are not the same thing. Here are the 6 words, sorted.',
     desc: 'ChatGPT. AI. LLM. Chatbot. Agent. Model. Everyone uses them interchangeably. None of them mean the same thing.',
     bullets: [
       'All 6 terms, defined in one sentence each',
@@ -236,17 +235,6 @@ var GUIDES = {
       'One plain-English sentence per term',
       'A quick-reference card you’ll actually keep open',
       'The 3 you’ll hear most in the next 90 days'
-    ]
-  },
-  'voice-clone-pipeline': {
-    chip: 'PIPELINE', chipClass: 'chip-blue',
-    title: 'Clone your voice once. Post in it forever.',
-    desc: 'The full pipeline to build a voice-cloned content engine. Built once, it runs while you’re not working.',
-    bullets: [
-      'The exact tools in the pipeline (open source, no monthly fee)',
-      'How to record your training voice in under 30 minutes',
-      'The output: short-form video in your voice, on autopilot',
-      'What “built once, runs forever” looks like in practice'
     ]
   },
   'stack-3-tool-ai-stack': {

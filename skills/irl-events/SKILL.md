@@ -204,7 +204,7 @@ Content: A short synthesis of the 2–3 themes from the evening. "Last night's
 dinner surfaced three things I keep hearing from smart people building their thing:
 [theme 1], [theme 2], [theme 3]. Here's my take on each..." (2–3 sentences per
 theme). End with a soft CTA: "If this resonated, come into the community where
-we work on this every week: [Skool link]."
+we work on this every week: [Whop link]."
 
 ### Day 7 — Follow-up to anyone who clicked but didn't join
 

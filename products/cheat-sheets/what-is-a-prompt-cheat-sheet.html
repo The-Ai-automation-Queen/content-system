@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is A Prompt: Cheat Sheet · Shift &amp; Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--tint:#E4EAFB;--cream:#EEF2FC;--red:#E63955}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--canvas);color:var(--ink)}
+body{font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.4}
+.mono{font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
+
+@page{size:A4;margin:12mm}
+.page{max-width:720px;margin:0 auto;padding:20px 22px}
+
+.head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2.5px solid var(--ink);padding-bottom:12px;margin-bottom:16px}
+.head h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:1.7rem;letter-spacing:-.01em}
+.head h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.head .tag{font-size:9.5px;color:var(--muted);margin-top:3px;font-family:'Inter',sans-serif}
+.head .brand{text-align:right;font-size:8.5px;letter-spacing:.1em;color:var(--muted)}
+.head .brand b{color:var(--ink);display:block;font-size:9px;letter-spacing:.08em}
+
+h2.sub{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1rem;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+h2.sub .n{color:var(--accent);font-weight:900}
+
+.oneidea{background:var(--cream);border:1.5px solid var(--accent);border-radius:10px;padding:11px 15px;margin-bottom:14px}
+.oneidea p{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:.98rem;line-height:1.35;color:var(--ink)}
+.oneidea p strong{color:var(--accent);font-style:normal}
+
+/* the formula: 4 ingredient cards */
+.formula{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px}
+.ing{border:1px solid var(--rule);border-radius:8px;padding:9px 10px}
+.ing .num{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:1.1rem;color:var(--accent);line-height:1}
+.ing h4{font-family:'Inter',sans-serif;font-size:9.8px;font-weight:600;margin:3px 0 3px}
+.ing p{font-size:8.8px;color:var(--muted);line-height:1.35}
+.ing .ex{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:8.3px;color:var(--ink);margin-top:4px;line-height:1.3}
+
+/* before / after */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.vs-col{border-radius:8px;padding:10px 12px}
+.vs-col.bad{background:#FDF2F2;border:1px solid #E8C4C4}
+.vs-col.good{background:#F0F4E8;border:1px solid #C4D4A8}
+.vs-col .lbl{font-size:7.5px;color:var(--accent);display:block;margin-bottom:4px}
+.vs-col h3{font-family:'Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;margin-bottom:4px}
+.vs-col p{font-size:9.3px;color:var(--muted);line-height:1.4}
+.vs-col p strong{color:var(--ink)}
+
+/* the two mistakes */
+.mistakes{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:14px}
+.mistake{background:#EEF2FC;border-left:3px solid #2C4BE0;color:#1A1A1A;border-radius:8px;padding:9px 11px}
+.mistake .term{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:#7FA0FF;margin-bottom:3px;display:block}
+.mistake p{font-size:9.7px;color:#D9D3E6;line-height:1.35}
+.mistake p strong{color:#fff}
+
+.try{border:1.5px solid var(--accent);border-radius:8px;padding:10px 13px;margin-bottom:12px;background:#fff}
+.try .lbl{font-size:8px;color:var(--accent);display:block;margin-bottom:4px}
+.try p{font-family:'Inter',sans-serif;font-style:italic;font-size:10.5px;color:var(--ink);line-height:1.4}
+
+.traffic{border:1px solid var(--rule);border-radius:8px;padding:9px 13px;margin-bottom:12px;display:flex;gap:12px;align-items:center}
+.traffic .lbl{font-size:8px;color:var(--muted);white-space:nowrap;flex-shrink:0}
+.tlights{display:flex;gap:8px;flex:1}
+.tlight{flex:1;border-radius:6px;padding:5px 8px;font-size:8.7px;line-height:1.3}
+.tlight.green{background:#EEF5E6;color:#3A5A24}
+.tlight.amber{background:#FCF1DD;color:#7A5416}
+.tlight.red{background:#FBE7EA;color:#8C1F30}
+.tlight b{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.05em}
+
+.foot{border-top:1.5px solid var(--rule);padding-top:10px;margin-top:6px}
+.foot .cta{font-family:'Inter',sans-serif;font-size:10px;color:var(--ink);margin-bottom:5px}
+.foot .cta a{color:var(--accent);font-weight:600;text-decoration:none}
+.foot .ip{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{padding:0}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="head">
+    <div>
+      <h1>What Is A <em>Prompt?</em></h1>
+      <div class="tag">Plain English series &middot; No. 03 &middot; the one-page version</div>
+    </div>
+    <div class="brand mono">
+      <b>Shift &amp; Lead</b>
+      guides.shiftandlead.com
+    </div>
+  </div>
+
+  <div class="oneidea">
+    <p>A prompt is just what you type. The quality of your answer is almost entirely determined by <strong>the quality of your question.</strong> That's the whole game.</p>
+  </div>
+
+  <h2 class="sub"><span class="n">01</span> The formula: four things, every time</h2>
+  <div class="formula">
+    <div class="ing">
+      <div class="num">1</div>
+      <h4>Role</h4>
+      <p>Who it should be. Shapes tone and vocabulary.</p>
+      <div class="ex">"You are an experienced social media manager."</div>
+    </div>
+    <div class="ing">
+      <div class="num">2</div>
+      <h4>Context</h4>
+      <p>Your situation. AI knows nothing unless you tell it.</p>
+      <div class="ex">"I sell handmade candles, 2,000 followers, engagement dropped."</div>
+    </div>
+    <div class="ing">
+      <div class="num">3</div>
+      <h4>Task</h4>
+      <p>Exactly what you want. Not "help me", be specific.</p>
+      <div class="ex">"Give me 5 post ideas with captions to boost engagement."</div>
+    </div>
+    <div class="ing">
+      <div class="num">4</div>
+      <h4>Format</h4>
+      <p>How to structure the answer. Without it, long paragraphs.</p>
+      <div class="ex">"Numbered list, bold titles, captions under 50 words."</div>
+    </div>
+  </div>
+
+  <h2 class="sub"><span class="n">02</span> See it work: same request, before and after</h2>
+  <div class="vs">
+    <div class="vs-col bad">
+      <span class="lbl mono">Without the formula</span>
+      <h3>"Help me with my Instagram."</h3>
+      <p><strong>You get:</strong> a generic 500-word essay. Nothing specific. Nothing to post today.</p>
+    </div>
+    <div class="vs-col good">
+      <span class="lbl mono">With the formula</span>
+      <h3>Role + context + task + format, one message</h3>
+      <p><strong>You get:</strong> 5 specific ideas you can use today, tailored to your product, ready to post.</p>
+    </div>
+  </div>
+
+  <h2 class="sub"><span class="n">03</span> Know before you eat: the two mistakes</h2>
+  <div class="mistakes">
+    <div class="mistake"><span class="term">Being too vague</span><p>"Help me with marketing" is so broad the AI has to guess. It guesses wrong and you conclude <strong>"AI doesn't work."</strong> It works fine, the prompt didn't.</p></div>
+    <div class="mistake"><span class="term">Not iterating</span><p>Your first prompt rarely nails it, that's okay. Treat it as <strong>a conversation, not a one-shot command.</strong> Refine until it's right.</p></div>
+  </div>
+
+  <div class="try">
+    <span class="lbl mono">Try this today</span>
+    <p>Pick one task you're already doing this week. Write the prompt with all four parts: role, context, task, format. Notice the difference.</p>
+  </div>
+
+  <div class="traffic">
+    <span class="lbl mono">The Traffic Light Rule</span>
+    <div class="tlights">
+      <div class="tlight green"><b>Green</b>Share freely: public info, general questions</div>
+      <div class="tlight amber"><b>Amber</b>Redact first: names, numbers become [Client]</div>
+      <div class="tlight red"><b>Red</b>Never in a personal AI account: real client data</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="cta">Full guide free at <a href="https://guides.shiftandlead.com">guides.shiftandlead.com</a> &middot; Next step: The Prompt Menu, $19 in the Store</div>
+    <div class="ip">© 2026 Fatiha Chikh / Shift &amp; Lead &middot; Original IP, not for resale or redistribution</div>
+  </div>
+
+</div>
+
+</body>
+</html>

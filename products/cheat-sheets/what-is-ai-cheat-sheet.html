@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What AI Actually Is: Cheat Sheet · Shift &amp; Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--tint:#E4EAFB;--cream:#EEF2FC;--red:#E63955}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--canvas);color:var(--ink)}
+body{font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.4}
+.mono{font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
+
+@page{size:A4;margin:12mm}
+.page{max-width:720px;margin:0 auto;padding:20px 22px}
+
+/* header strip */
+.head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2.5px solid var(--ink);padding-bottom:12px;margin-bottom:16px}
+.head h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:1.7rem;letter-spacing:-.01em}
+.head h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.head .tag{font-size:9.5px;color:var(--muted);margin-top:3px;font-family:'Inter',sans-serif}
+.head .brand{text-align:right;font-size:8.5px;letter-spacing:.1em;color:var(--muted)}
+.head .brand b{color:var(--ink);display:block;font-size:9px;letter-spacing:.08em}
+
+h2.sub{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1rem;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+h2.sub .n{color:var(--accent);font-weight:900}
+
+/* definition card / the one idea */
+.oneidea{background:var(--cream);border:1.5px solid var(--accent);border-radius:10px;padding:12px 16px;margin-bottom:14px}
+.oneidea p{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.02rem;line-height:1.35;color:var(--ink)}
+.oneidea p strong{color:var(--accent);font-style:normal}
+
+/* two-column compare */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.ccol{border:1px solid var(--rule);border-radius:8px;padding:10px 12px}
+.ccol.hi{border-color:var(--accent);background:var(--tint)}
+.ccol .lbl{font-size:8px;color:var(--accent);margin-bottom:4px;display:block}
+.ccol h3{font-family:'Playfair Display',Georgia,serif;font-size:.92rem;font-weight:700;margin-bottom:4px}
+.ccol p{font-size:10.5px;color:var(--muted);line-height:1.4}
+
+/* 5 things grid */
+.things{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px}
+.thing{border:1px solid var(--rule);border-radius:8px;padding:8px 7px;text-align:center}
+.thing .lbl{font-size:7px;color:var(--accent);display:block;margin-bottom:3px}
+.thing h4{font-family:'Inter',sans-serif;font-size:9.5px;font-weight:600;line-height:1.25}
+
+/* limits grid */
+.limits{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:14px}
+.limit{background:#EEF2FC;border-left:3px solid #2C4BE0;color:#1A1A1A;border-radius:8px;padding:9px 11px}
+.limit .term{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:#7FA0FF;margin-bottom:3px;display:block}
+.limit p{font-size:9.8px;color:#D9D3E6;line-height:1.35}
+.limit p strong{color:#fff}
+
+/* try this today */
+.try{border:1.5px solid var(--accent);border-radius:8px;padding:10px 13px;margin-bottom:12px;background:#fff}
+.try .lbl{font-size:8px;color:var(--accent);display:block;margin-bottom:4px}
+.try p{font-family:'Inter',sans-serif;font-style:italic;font-size:10.5px;color:var(--ink);line-height:1.4}
+
+/* traffic light card */
+.traffic{border:1px solid var(--rule);border-radius:8px;padding:9px 13px;margin-bottom:12px;display:flex;gap:12px;align-items:center}
+.traffic .lbl{font-size:8px;color:var(--muted);white-space:nowrap;flex-shrink:0}
+.tlights{display:flex;gap:8px;flex:1}
+.tlight{flex:1;border-radius:6px;padding:5px 8px;font-size:8.7px;line-height:1.3}
+.tlight.green{background:#EEF5E6;color:#3A5A24}
+.tlight.amber{background:#FCF1DD;color:#7A5416}
+.tlight.red{background:#FBE7EA;color:#8C1F30}
+.tlight b{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.05em}
+
+/* footer */
+.foot{border-top:1.5px solid var(--rule);padding-top:10px;margin-top:6px}
+.foot .cta{font-family:'Inter',sans-serif;font-size:10px;color:var(--ink);margin-bottom:5px}
+.foot .cta a{color:var(--accent);font-weight:600;text-decoration:none}
+.foot .ip{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{padding:0}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="head">
+    <div>
+      <h1>What AI <em>Actually</em> Is</h1>
+      <div class="tag">Plain English series &middot; No. 01 &middot; the one-page version</div>
+    </div>
+    <div class="brand mono">
+      <b>Shift &amp; Lead</b>
+      guides.shiftandlead.com
+    </div>
+  </div>
+
+  <div class="oneidea">
+    <p>AI is not a digital brain. It's software that studied thousands of examples and found <strong>patterns, not rules.</strong> That's the one idea that makes everything else make sense.</p>
+  </div>
+
+  <h2 class="sub"><span class="n">01</span> Two ways to train an assistant</h2>
+  <div class="compare">
+    <div class="ccol">
+      <span class="lbl mono">Option A</span>
+      <h3>Traditional software</h3>
+      <p>A human writes every rule by hand. If a case isn't in the manual, the software is stuck.</p>
+    </div>
+    <div class="ccol hi">
+      <span class="lbl mono">Option B</span>
+      <h3>How AI works</h3>
+      <p>It studied thousands of examples and found the pattern itself. Nobody wrote the rules.</p>
+    </div>
+  </div>
+
+  <h2 class="sub"><span class="n">02</span> What it can do for you today</h2>
+  <div class="things">
+    <div class="thing"><span class="lbl mono">Starter</span><h4>Write emails, posts, proposals</h4></div>
+    <div class="thing"><span class="lbl mono">Main</span><h4>Explain jargon simply</h4></div>
+    <div class="thing"><span class="lbl mono">Also</span><h4>Summarize long docs</h4></div>
+    <div class="thing"><span class="lbl mono">Also</span><h4>Brainstorm ideas</h4></div>
+    <div class="thing"><span class="lbl mono">Special</span><h4>Spot patterns in data</h4></div>
+  </div>
+
+  <h2 class="sub"><span class="n">03</span> Know before you eat: the 4 real limits</h2>
+  <div class="limits">
+    <div class="limit"><span class="term">Makes things up</span><p>It can confidently say something <strong>completely false.</strong> Always double-check facts and numbers.</p></div>
+    <div class="limit"><span class="term">Doesn't know your business</span><p>No idea who your clients are <strong>unless you tell it.</strong> Give it context every time.</p></div>
+    <div class="limit"><span class="term">Doesn't decide for you</span><p>It gives options and drafts. <strong>The judgment call is still yours.</strong></p></div>
+    <div class="limit"><span class="term">Doesn't replace expertise</span><p>Great for prep and drafts, but <strong>not the final word</strong> where being wrong has real consequences.</p></div>
+  </div>
+
+  <div class="try">
+    <span class="lbl mono">Try this today</span>
+    <p>"I run [type of business]. Write a short, friendly email to someone who signed up for my free workshop but didn't attend. Keep it under 100 words."</p>
+  </div>
+
+  <div class="traffic">
+    <span class="lbl mono">The Traffic Light Rule</span>
+    <div class="tlights">
+      <div class="tlight green"><b>Green</b>Share freely: public info, general questions</div>
+      <div class="tlight amber"><b>Amber</b>Redact first: names, numbers become [Client]</div>
+      <div class="tlight red"><b>Red</b>Never in a personal AI account: real client data</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="cta">Full guide free at <a href="https://guides.shiftandlead.com">guides.shiftandlead.com</a> &middot; Next step: The Prompt Menu, $19 in the Store</div>
+    <div class="ip">© 2026 Fatiha Chikh / Shift &amp; Lead &middot; Original IP, not for resale or redistribution</div>
+  </div>
+
+</div>
+
+</body>
+</html>

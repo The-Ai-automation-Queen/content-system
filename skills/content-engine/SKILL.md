@@ -37,18 +37,29 @@ This is non-negotiable. Read these every run, in this order:
    win-back-your-time promise, the six pillars, and the voice. The identity layer.
 2. **`inspiration-library/SKILL.md`** — the 15 hook/format patterns, the Script
    Application Rules, the banned-words list, and platform adaptation rules.
-3. **`personal-brain.md`** — her living memory: real anecdotes, opinions, projects,
+2a. **`skills/copy-craft/SKILL.md`** — the structural/platform-mechanics layer:
+   dwell-time and hook-window rules per platform, the timeless direct-response
+   checks, and — most important — the **Lessons** subsection of the latest
+   `performance-log.md` entry if one exists. Real logged performance for this
+   audience outranks the general platform mechanics in this file whenever they
+   conflict; note the conflict rather than silently picking one.
+3. **`voice-file.md`** — the real, corpus-compiled texture layer (maintained by
+   `voice-file`). Load it **only if its Confidence is not NONE/LOW-CONFIDENCE
+   DRAFT** — a bad voice file is worse than no voice file. When usable, prefer
+   its verbatim opening/closing patterns and real phrases over anything
+   generic that would otherwise be invented to satisfy the positioning rules.
+4. **`personal-brain.md`** — her living memory: real anecdotes, opinions, projects,
    numbers, life events, and current focus. Updated daily by `brain-manager`. This
    is what makes posts feel like *her* instead of generic AI. Use anecdotes for
    storytelling posts, opinions for opinion posts, numbers for credibility.
-4. **`research-notes.md`** — the latest findings and, critically, the
+5. **`research-notes.md`** — the latest findings and, critically, the
    **"Content angles (3 ready to use)"** and **"Contrarian take logged"** blocks.
    These are pre-vetted raw material. Prefer them.
-5. **`content-vault.md`** — to learn the house style from existing entries, to get
+6. **`content-vault.md`** — to learn the house style from existing entries, to get
    the next `ENTRY` number, and to avoid duplicating a topic already drafted.
-6. The latest `reports/competitor-watch-*.md` if a fresh one exists — for live
+7. The latest `reports/competitor-watch-*.md` if a fresh one exists — for live
    angles and hooks competitors are using (to differentiate from, not copy).
-6. **`skills/monetisation/SKILL.md`** — to assign the correct ACP stage (A/C/P)
+8. **`skills/monetisation/SKILL.md`** — to assign the correct ACP stage (A/C/P)
    and pick the exact CTA for each draft. Read the ACP ratio of the last 10 vault
    entries before tagging. This is non-negotiable: every draft must know its job
    in the funnel before it's written.
@@ -76,6 +87,28 @@ wrong. Fix the draft.
 If the request is genuinely ambiguous (e.g. a vague topic with no platform and
 the gap is unclear), ask **one** focused question with `AskUserQuestion` — then
 proceed. Do not interrogate.
+
+---
+
+## The series mechanic — the Activation Arc
+
+While the launch season runs (see `docs/FLAGSHIP-COURSE-STRATEGY.md` §3.1), the
+build-in-public story is a **named, numbered series**, not loose posts
+(inspiration-library Pattern: Harper Carroll's numbered-series arc — completion
+urgency, follow-forcing):
+
+- Every Activation Arc draft opens with the series header line:
+  **"Day N of switching my machine on."** N increments per *published* Arc post
+  (check the vault for the highest POSTED Arc number, not the highest drafted).
+- Each episode must contain at least one **verifiable number from the machine
+  itself** (drafts produced, keyword DMs sent, leads captured, $ collected —
+  from `performance-log.md` or the day's real events in `personal-brain.md`).
+  No number available → it's not an Arc episode; write it as a normal pillar
+  post instead.
+- Each episode ends by opening tomorrow's loop in one line ("Tomorrow: the DM
+  machine goes live") — the follow-forcing mechanic.
+- Tag Arc entries `Series: Activation Arc — Day N` in the metadata block so
+  performance-tracker can report the series as a unit.
 
 ---
 
@@ -123,12 +156,20 @@ before posting (per `security.md` §3).
 After drafting, switch roles and critique each draft as a demanding editor.
 Score 0–10 on:
 
-- **Hook strength** — would it stop the scroll? (the internal test:
-  "Is that good enough to stop someone mid-scroll?")
+- **Hook strength** — does it pass `copy-craft`'s platform-specific window
+  check (LinkedIn: works as a complete thought in ~210 characters; Reels/
+  Shorts/TikTok: first frame answers what's-happening/why-care/what-you-get)?
+  Not just a gut "would this stop the scroll."
 - **Positioning fit** — does it sound like *her*, serving *her* audience?
 - **Specificity** — concrete numbers, named frameworks, real stakes (not vague)?
 - **Voice** — casual, conversational, warm-with-edge, jargon-free?
 - **CTA** — earned and specific?
+- **Proven-pattern fit** — per `copy-craft`, does this match a pattern
+  `performance-log.md`'s Lessons section has actually logged as a winner for
+  this audience? If it matches a logged loser instead, this score must be low
+  even if the other criteria score well — note the conflict explicitly rather
+  than averaging it away. If there's no logged evidence yet, score neutral
+  (5/10) on this criterion and say so, don't guess a number.
 
 Average to a single **Critic score**. Then:
 - **≥ 8.0** → mark `READY TO POST`.

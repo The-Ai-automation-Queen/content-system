@@ -1,281 +1,436 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#F8F7F5">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noai, noimageai">
-<meta name="description" content="What AI actually is, explained in 4 lines — no jargon, no hype, just the plain-English explanation you were never given.">
-<title>What AI actually is &mdash; Shift &amp; Lead</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="canonical" href="https://guides.shiftandlead.com/guides/what-is-ai.html">
-<meta property="og:title" content="What AI actually is">
-<meta property="og:description" content="What AI actually is, explained in 4 lines — no jargon, no hype, just the plain-English explanation you were never given.">
-<meta property="og:type" content="article">
+<title>What AI actually is · Shift &amp; Lead</title>
+<meta name="description" content="AI, explained quietly. Free guides by Fatiha Chikh — The AI Automation Queen.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shift &amp; Lead">
+<meta property="og:title" content="What AI actually is &mdash; Shift &amp; Lead">
+<meta property="og:description" content="AI, explained quietly. Free guides by Fatiha Chikh — The AI Automation Queen.">
 <meta property="og:url" content="https://guides.shiftandlead.com/guides/what-is-ai.html">
 <meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="What AI actually is">
-<meta name="twitter:description" content="What AI actually is, explained in 4 lines — no jargon, no hype, just the plain-English explanation you were never given.">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "What AI actually is",
-  "description": "What AI actually is, explained in 4 lines — no jargon, no hype, just the plain-English explanation you were never given.",
-  "datePublished": "2026-03-01",
-  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
-  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/what-is-ai.html",
-  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
-  "publisher": {"@type": "Organization", "name": "The AI Automation Queen", "url": "https://www.shiftandlead.com"}
-}
-</script>
+<link rel="canonical" href="https://guides.shiftandlead.com/guides/what-is-ai.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --canvas:#F8F7F5;--cream:#F4F0FA;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
-  --muted:#5C5A57;--accent:#6B35C2;--accent-deep:#4A1F8F;--accent-tint:#EEE5FA;
-  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
-a:hover{color:var(--accent-deep)}
-strong{font-weight:700;color:var(--ink)}
+:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--tint:#E4EAFB;--cream:#EEF2FC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.75}
+.mono{font-family:'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
 
-.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
-.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
-.nav-links{display:flex;gap:28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
-.nav-links a{color:var(--ink);text-decoration:none}
+/* nav */
+.nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20}
+.nav-inner{max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav .mono{font-size:10px;color:var(--muted)}
 
-.wrap{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,100px) clamp(24px,5vw,72px)}
+/* magazine cover hero */
+.cover{max-width:1160px;margin:0 auto;padding:70px 24px 56px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:end}
+@media(max-width:860px){.cover{grid-template-columns:1fr}}
+.issue{font-size:11px;color:var(--accent);margin-bottom:18px;display:flex;gap:18px;flex-wrap:wrap}
+.cover h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:clamp(3rem,9vw,6.2rem);line-height:.98;letter-spacing:-.02em;margin:0}
+.cover h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.cover .standfirst{font-size:1.2rem;color:var(--muted);max-width:44ch;margin:22px 0 0}
+.cover-art{position:relative;aspect-ratio:4/5;background:var(--ink);border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.cover-art svg{width:82%;height:auto}
+.cover-art .slot{position:absolute;bottom:10px;right:12px;font-size:9px;color:#8d86a0}
+.dropcap::first-letter{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:4.6em;float:left;line-height:.78;padding:6px 12px 0 0;color:var(--accent)}
 
-.chips{margin-bottom:28px;display:flex;gap:8px;flex-wrap:wrap}
-.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff}
-.chip-track0{background:var(--accent)}
-.chip-literacy{background:#E63955}
-.chip-time{background:transparent;color:var(--muted);border:1px solid var(--rule);padding:4px 10px}
+/* the rail — reading progress as courses */
+.rail{max-width:1160px;margin:0 auto;padding:0 24px}
+.courses{display:flex;gap:0;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:#fff;margin:8px 0 0}
+.course{flex:1;text-align:center;padding:11px 6px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-left:1px solid var(--rule)}
+.course:first-child{border-left:none}
+.course.active{background:var(--ink);color:#fff}
 
-.kicker{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);display:flex;align-items:center;margin-bottom:20px}
-.kicker-rule{display:inline-block;width:32px;height:1px;background:var(--ink);margin-right:10px}
+/* sections */
+.sec{max-width:1160px;margin:0 auto;padding:72px 24px 8px}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:baseline;border-top:2px solid var(--ink);padding-top:18px}
+.sec-num{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:3.4rem;line-height:1;color:var(--accent)}
+.sec-head h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0}
+.sec-head .mono{display:block;font-size:10px;color:var(--muted);margin-top:6px}
+.sec-body{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;padding:26px 0 0}
+@media(max-width:860px){.sec-body{grid-template-columns:1fr}}
+.sec-body p{max-width:60ch;font-size:1.06rem;margin:0 0 1rem}
+.sec-full{padding:26px 0 0}
+.sec-full p{max-width:70ch;font-size:1.06rem;margin:0 0 1rem}
 
-h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,5.5vw,56px);line-height:1.08;letter-spacing:-0.5px;color:var(--ink);margin-bottom:24px}
-h1 em{font-style:italic;color:var(--electric)}
-h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.18;letter-spacing:-0.3px;margin:64px 0 16px}
-h3{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);margin:32px 0 12px}
-p{margin-bottom:18px;color:var(--ink)}
-p.lead{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:20px;line-height:1.55;color:var(--muted);margin-bottom:32px}
+/* floor plan diagram (reused as "compare" plan) */
+.plan{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:26px}
+.plan .mono{font-size:10px;color:var(--accent);display:block;margin-bottom:12px}
+.plan svg{width:100%;height:auto}
 
-.rule{border:0;border-top:2px solid var(--ink);margin:80px 0 40px}
+/* menu cards */
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 0}
+@media(max-width:860px){.menu{grid-template-columns:1fr}}
+.dish{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:24px;position:relative}
+.dish .mono{font-size:9.5px;color:var(--accent)}
+.dish h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:.4rem 0 .4rem}
+.dish p{font-family:'Inter',sans-serif;font-size:.9rem;color:var(--muted);margin:0;line-height:1.6}
+.dish .pict{height:74px;margin-bottom:10px;display:flex;align-items:center}
+.dish .pict svg{height:64px;width:auto}
 
-.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:28px 32px;margin:24px 0}
-.card.accent{border-color:var(--accent);background:var(--accent-tint)}
+/* pull quote */
+.pull{max-width:1160px;margin:0 auto;padding:80px 24px}
+.pull blockquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.7rem,4.5vw,2.7rem);line-height:1.3;margin:0;max-width:26ch;color:var(--ink)}
+.pull blockquote strong{color:var(--accent);font-style:normal}
+.pull .mono{font-size:10px;color:var(--muted);margin-top:18px;display:block}
 
-.pullquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:24px;line-height:1.35;color:var(--muted);border-left:3px solid var(--accent);padding-left:24px;margin:40px 0}
+/* stations grid */
+.stations{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 0}
+@media(max-width:900px){.stations{grid-template-columns:repeat(2,1fr)}}
+.station{border:1px solid var(--rule);border-radius:12px;padding:16px 18px;background:#fff}
+.station .mono{font-size:9px;color:var(--accent)}
+.station h4{font-family:'Inter',sans-serif;font-size:.98rem;font-weight:600;margin:.35rem 0 .2rem}
+.station p{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--muted);margin:0;line-height:1.5}
+.menu-more{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:18px}
 
-blockquote{background:var(--accent-tint);border-left:3px solid var(--accent);padding:16px 24px;margin:20px 0;border-radius:0 4px 4px 0;font-style:italic;color:var(--muted)}
-blockquote p{margin-bottom:0;color:var(--muted)}
+/* warnings — "know before you eat" as menu footnotes */
+.warn{background:var(--ink);color:#F5F0EB}
+.warn-inner{max-width:1160px;margin:0 auto;padding:70px 24px}
+.warn .mono{color:#7FA0FF;font-size:11px}
+.warn h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:700;margin:.4rem 0 26px}
+.warn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.warn-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.warn-grid{grid-template-columns:1fr}}
+.warn-card{border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:20px}
+.warn-card .term{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7FA0FF;margin-bottom:8px}
+.warn-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0;line-height:1.6}
+.warn-card strong{color:#fff}
+.warn-inner .storelink{margin-top:30px;font-family:'Inter',sans-serif;font-size:.92rem;color:#D9D3E6}
+.warn-inner .storelink a{color:#7FA0FF}
 
-.vs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
-.vs-col{padding:20px 24px;border-radius:6px}
-.vs-col.old{background:#FDF2F2;border:1px solid #E8C4C4}
-.vs-col.new{background:#F0F4E8;border:1px solid #C4D4A8}
-.vs-col h3{margin-top:0}
+/* image slots for the magazine treatment */
+.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
+.imgslot .mono{font-size:9.5px;color:var(--accent)}
+.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
+.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
+.fullbleed .imgslot{aspect-ratio:21/8}
 
-ul,ol{margin:12px 0 20px 24px}
-li{margin-bottom:8px;color:var(--ink)}
+/* subscribe strip */
+.subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
+.subs-in{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid var(--accent);border-radius:14px;padding:22px 26px;background:var(--cream)}
+.subs-in h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:0}
+.subs-in p{font-family:'Inter',sans-serif;font-size:.88rem;color:var(--muted);margin:.2rem 0 0}
+.subs-in a{font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:var(--accent);color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap}
 
-.try-box{background:var(--surface);border:1px solid var(--accent);border-radius:6px;padding:24px 28px;margin:20px 0}
-.try-box .try-label{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin-bottom:12px}
-.try-box p{font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--ink);margin-bottom:0}
+/* the chef's table: paid offers close */
+.chefs{background:var(--ink);color:#F5F0EB;margin-top:72px}
+.chefs-in{max-width:1160px;margin:0 auto;padding:64px 24px}
+.chefs .mono{color:#7FA0FF;font-size:11px}
+.chefs h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:700;margin:.4rem 0 26px}
+.chefs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.chefs-grid{grid-template-columns:1fr}}
+.chefs-card{border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:24px;display:flex;flex-direction:column;background:rgba(255,255,255,.03)}
+.chefs-card .mono{font-size:9.5px;margin-bottom:8px}
+.chefs-card h3{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;margin:0 0 6px;color:#fff}
+.chefs-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0 0 18px;line-height:1.6}
+.chefs-card a{margin-top:auto;text-align:center;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;text-decoration:none;background:#fff;color:var(--ink);border-radius:8px;padding:11px 16px}
 
-.cta-bar{margin:48px 0;padding:32px;background:var(--navy);border-radius:6px;text-align:center;color:var(--canvas)}
-.cta-bar h3{color:var(--canvas);margin-top:0}
-.cta-bar p{color:rgba(255,255,255,0.85)}
-.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:13px 32px;background:var(--canvas);color:var(--ink);text-decoration:none;border-radius:4px;margin-top:12px}
-.btn:hover{background:#fff;color:var(--ink)}
+/* byline + IP bar */
+.byline{max-width:1160px;margin:70px auto 0;padding:0 24px}
+.byline-in{display:flex;gap:18px;align-items:center;background:var(--cream);border:1px solid var(--tint);border-radius:14px;padding:22px 26px}
+.byline-in img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.byline-in p{margin:0;font-size:.95rem}
+.byline-in .who{font-family:'Inter',sans-serif;font-weight:600}
+.ipbar{max-width:1160px;margin:26px auto 0;padding:0 24px 70px}
+.ipbar p{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px;margin:0}
+a{color:var(--accent)}
 
-.guide-nav{display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:32px;border-top:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em}
-.guide-nav a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
-.guide-nav a:hover{color:var(--accent);border-color:var(--accent)}
+/* try boxes */
+.tries{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0 0}
+@media(max-width:900px){.tries{grid-template-columns:1fr}}
+.try{background:#fff;border:1px solid var(--accent);border-radius:12px;padding:20px 22px}
+.try .mono{font-size:9.5px;color:var(--accent);display:block;margin-bottom:8px}
+.try p{font-family:'Inter',sans-serif;font-size:.86rem;color:var(--ink);margin:0;line-height:1.55;font-style:italic}
 
-.footer{margin-top:120px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
 
-@media(max-width:560px){
-  html,body{font-size:16px}
-  .wrap{padding:40px 16px}
-  h1{font-size:32px;line-height:1.1}
-  .pullquote{font-size:20px}
-  .vs{grid-template-columns:1fr}
-  .guide-nav{flex-direction:column;gap:16px;align-items:flex-start}
-  .nav-inner{padding:14px 16px}
-  .nav-links{gap:16px;font-size:11px}
-}
+/* qa: contain grid children, never let the page scroll sideways */
+.sec-body>*{min-width:0}
+.sec-body svg,.sec-body img{max-width:100%;height:auto}
+.imgslot{max-width:100%;overflow:hidden}
+.sec table{max-width:100%}
+body{overflow-x:hidden}
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
-  <a class="nav-logo" href="../free-resources.html" style="display:inline-flex;align-items:center" aria-label="The AI Automation Queen — home"><svg viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg" height="30" role="img" aria-label="The AI Automation Queen"><rect x="2" y="4" width="48" height="48" rx="10" fill="#1A1A1A"/><text x="26" y="39" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="28" fill="#2C4BE0">Q</text><text x="60" y="25" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="18" fill="#2C4BE0">the ai</text><text x="60" y="45" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.5" fill="#1A1A1A">AUTOMATION QUEEN</text></svg></a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="../free-resources.html#go-further">Community</a><a href="../free-resources.html#go-further">About</a></div>
+  <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
+  <span class="mono">Plain English · No. 01 · AI Basics</span>
 </div></nav>
 
-<div class="wrap">
-
-  <div class="chips">
-    <span class="chip chip-track0">WHAT</span>
-    <span class="chip chip-time">6 min read</span>
+<!-- COVER -->
+<header class="cover">
+  <div>
+    <div class="issue mono"><span>Plain English · No. 01</span><span>AI, actually</span><span>6 min read</span></div>
+    <h1>What AI <em>actually</em> is.</h1>
+    <p class="standfirst">Everyone says "AI." Nobody says what it is. You're not behind, because nobody bothered to explain it simply. So let's fix that right now, no sci-fi, no jargon.</p>
   </div>
-
-  <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; AI Basics</div>
-
-  <h1>Everyone says &ldquo;AI.&rdquo; <em>Nobody says what it is.</em></h1>
-
-  <p class="lead">You&rsquo;re not behind. The problem isn&rsquo;t that you missed something. The problem is that nobody bothered to explain it simply. So let&rsquo;s fix that right now.</p>
-
-  <hr class="rule">
-
-  <h2>Forget the sci-fi version</h2>
-
-  <p>When most people hear &ldquo;AI,&rdquo; they picture robots, Terminator, or some kind of digital brain that thinks like a human. That&rsquo;s not what we&rsquo;re talking about.</p>
-
-  <p>The AI you&rsquo;re hearing about every day? It&rsquo;s software. It runs on computers. It doesn&rsquo;t think, feel, or have opinions. It&rsquo;s a very powerful tool. Like a calculator, but for language.</p>
-
-  <p>Here&rsquo;s the simplest way I can put it.</p>
-
-  <hr class="rule">
-
-  <h2>Traditional software vs. AI</h2>
-
-  <p>Imagine you hire a new assistant. You have two options for how you train them.</p>
-
-  <div class="vs">
-    <div class="vs-col old">
-      <h3>Option A</h3>
-      <p>You write a 500-page manual that covers every possible situation. &ldquo;If a client emails about pricing, reply with Template #7. If they mention a refund, forward to Sarah.&rdquo;</p>
-      <p style="margin-bottom:0">This is how traditional software works. A human writes every single rule, one by one. If a situation isn&rsquo;t in the manual, the software is stuck.</p>
-    </div>
-    <div class="vs-col new">
-      <h3>Option B</h3>
-      <p>You show them thousands of examples of great work. Great emails, great replies, great reports. They study the patterns and start producing work that looks like those examples.</p>
-      <p style="margin-bottom:0">This is how AI works. Nobody wrote the rules. The software figured out the patterns by studying a massive amount of examples.</p>
-    </div>
+  <div class="cover-art">
+    <svg viewBox="0 0 300 380" fill="none" aria-label="A simple machine that learned from examples">
+      <rect x="70" y="30" width="160" height="90" rx="6" stroke="#7FA0FF" stroke-width="2"/>
+      <path d="M95 60h110M95 78h80M95 96h95" stroke="#7FA0FF" stroke-width="2" stroke-linecap="round"/>
+      <text x="150" y="22" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THOUSANDS OF EXAMPLES</text>
+      <path d="M150 128v34" stroke="#2C4BE0" stroke-width="2" stroke-linecap="round"/>
+      <path d="M138 150l12 12 12-12" stroke="#2C4BE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="150" cy="230" r="52" stroke="#2C4BE0" stroke-width="2.5"/>
+      <text x="150" y="225" text-anchor="middle" fill="#F5F0EB" font-family="Playfair Display" font-size="15" font-weight="700">Patterns</text>
+      <text x="150" y="246" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="9" letter-spacing="2">NOT RULES</text>
+      <path d="M150 282v30" stroke="#7FA0FF" stroke-width="2" stroke-linecap="round"/>
+      <path d="M130 300l20 20 20-20" stroke="#7FA0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="150" y="360" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">NEW WORK, ON DEMAND</text>
+    </svg>
+    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
+</header>
 
-  <p>That&rsquo;s genuinely the core idea. Traditional software follows instructions a human typed out. AI learned the instructions on its own by studying examples.</p>
-
-  <div class="pullquote">AI is not a genius. It&rsquo;s a very fast learner that studied a lot of homework.</div>
-
-  <hr class="rule">
-
-  <h2>The kind of AI in every headline right now</h2>
-
-  <p>There are different types of AI. The one everyone is talking about is called <strong>generative AI</strong>.</p>
-
-  <p>Generative means it <em>creates</em> new things. It writes new text, creates new images, generates new audio, and makes new video. It doesn&rsquo;t just sort data or recognize faces. It produces work that didn&rsquo;t exist before.</p>
-
-  <p>ChatGPT, Claude, Gemini, Midjourney, ElevenLabs: different brands, same basic idea. They all studied enormous amounts of human-created content and now they can create new content that looks and sounds like the real thing.</p>
-
-  <p>When someone in your life says &ldquo;AI,&rdquo; nine times out of ten, this is what they mean.</p>
-
-  <hr class="rule">
-
-  <h2>What it can actually do for you today</h2>
-
-  <p>Here&rsquo;s where it gets practical. Forget the hype. These are things AI does well <em>right now</em>, for people running businesses or building something on the side.</p>
-
-  <h3>Write and communicate</h3>
-  <p>Emails, social media posts, proposals, client replies, follow-ups. You tell it what you need, give it context about your situation, and it drafts something you can use or tweak. What used to take 30 minutes takes 3.</p>
-
-  <h3>Explain complex things simply</h3>
-  <p>Tax rules, legal clauses, technical documentation, competitor websites. Paste in the confusing thing and ask it to explain it like you&rsquo;re not an expert. It will.</p>
-
-  <h3>Summarize and organize</h3>
-  <p>Long reports, meeting notes, research articles, customer reviews. Drop them in and ask for the key points. You get the essence without reading 40 pages.</p>
-
-  <h3>Brainstorm and ideate</h3>
-  <p>Content ideas, business names, marketing angles, workshop outlines. It won&rsquo;t replace your creativity, but it&rsquo;s the best brainstorming partner you&rsquo;ve ever had, available at 2 AM, never tired, never judging.</p>
-
-  <h3>Analyze and spot patterns</h3>
-  <p>Customer feedback, survey results, sales data, reviews of your competitors. Give it the information and ask what stands out. It can find patterns in minutes that would take you hours to see.</p>
-
-  <div class="card accent">
-    <p>Notice the pattern? In every case, you&rsquo;re giving the AI <strong>your</strong> information and asking it to do something useful with it. The more specific you are about what you need, the better the result.</p>
-    <p style="margin-bottom:0">This is the single most important thing to understand about AI. It&rsquo;s not magic. It&rsquo;s a conversation. You ask well, you get well.</p>
+<!-- course rail -->
+<div class="rail">
+  <div class="courses">
+    <div class="course active">01 · Not Sci-Fi</div>
+    <div class="course">02 · How It Learns</div>
+    <div class="course">03 · What It Can Do</div>
+    <div class="course">04 · Know The Limits</div>
+    <div class="course">05 · Try It</div>
   </div>
-
-  <hr class="rule">
-
-  <h2>What it can&rsquo;t do (yet)</h2>
-
-  <p>AI is powerful, but it has real limits. Knowing them will save you from trusting it with the wrong things.</p>
-
-  <p><strong>It sometimes makes things up.</strong> AI can confidently say something that is completely false. It&rsquo;s not lying on purpose. It&rsquo;s generating what sounds right based on patterns. Always double-check facts, numbers, and anything legal or financial.</p>
-
-  <p><strong>It doesn&rsquo;t know your business.</strong> Unless you tell it. It has no idea who your clients are, what you sell, or what happened in last Tuesday&rsquo;s meeting. You have to give it that context every time.</p>
-
-  <p><strong>It doesn&rsquo;t make decisions for you.</strong> It gives you options, drafts, and analysis. The judgment call is still yours. Think of it as a brilliant intern who works incredibly fast but needs you to approve everything.</p>
-
-  <p><strong>It doesn&rsquo;t replace expertise.</strong> A doctor, a lawyer, an accountant. AI can help you prepare, research, and draft. It should not be the final word on anything where being wrong has real consequences.</p>
-
-  <div class="pullquote">The people who get burned by AI are the ones who trust it blindly. The people who get the most from it are the ones who treat it like a fast, capable assistant that still needs supervision.</div>
-
-  <hr class="rule">
-
-  <h2>Try it right now</h2>
-
-  <p>Open ChatGPT, Claude, or Gemini (any of them, they all work for this). Copy one of these and paste it in:</p>
-
-  <div class="try-box">
-    <div class="try-label">Try this</div>
-    <p>&ldquo;I&rsquo;m a solopreneur who sells online courses. Write me a short, friendly email to send to someone who signed up for my free workshop but didn&rsquo;t attend. Keep it under 100 words.&rdquo;</p>
-  </div>
-
-  <div class="try-box">
-    <div class="try-label">Or this</div>
-    <p>&ldquo;I&rsquo;m comparing two project management tools for my small team: Notion and ClickUp. Give me 5 things to consider when choosing between them, written for someone who isn&rsquo;t technical.&rdquo;</p>
-  </div>
-
-  <div class="try-box">
-    <div class="try-label">Or this</div>
-    <p>&ldquo;I just got a long email from a potential client. Here it is: [paste the email]. Summarize what they&rsquo;re actually asking for in 3 bullet points.&rdquo;</p>
-  </div>
-
-  <p>You&rsquo;ll get back a real, usable answer in about 10 seconds. That&rsquo;s the moment it clicks. Not the theory. Not the definitions. The moment you see it do something useful for <em>your</em> situation.</p>
-
-  <hr class="rule">
-
-  <h2>Why this matters if you&rsquo;re building something</h2>
-
-  <p>If you&rsquo;re running a business, starting one, or thinking about leaving corporate to do your own thing, AI changes the math.</p>
-
-  <p>Tasks that used to require hiring someone or spending your evening on them can now get done in minutes. First drafts of content. Research on a new market. Replies to repetitive client questions. Summaries of competitor strategies.</p>
-
-  <p>This doesn&rsquo;t mean you replace people. It means <strong>you get hours back</strong>. Hours you can spend on the parts of your business that actually need you, or on the life you&rsquo;re building outside of it.</p>
-
-  <p>That&rsquo;s the real point. Not the technology itself. The time it gives you back.</p>
-
-  <div class="card accent">
-    <p>You now know what AI is, what it does, and what to watch out for. That&rsquo;s more than most people who use the word daily.</p>
-    <p style="margin-bottom:0">The next step is understanding the names you keep hearing. ChatGPT, Claude, Gemini, LLM, model, agent. They&rsquo;re not all the same thing, and sorting them out takes about 5 minutes.</p>
-  </div>
-
-  <div class="cta-bar">
-    <h3>Next: ChatGPT and AI are not the same thing</h3>
-    <p>Six words everyone mixes up. Sorted biggest to smallest, so the confusion ends here.</p>
-    <a href="chatgpt-vs-ai.html" class="btn">Read the next guide &rarr;</a>
-  </div>
-
-  <div class="guide-nav">
-    <a href="../free-resources.html">&larr; All guides</a>
-    <a href="chatgpt-vs-ai.html">Next: ChatGPT vs AI &rarr;</a>
-  </div>
-
 </div>
 
-<div class="footer">
-  <p>Shift &amp; Lead &middot; Free guide &middot; &copy; 2026</p>
+<!-- 01 FORGET THE SCI-FI VERSION -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <div><h2>Forget the sci-fi version</h2><span class="mono">First course · what AI is not</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p class="dropcap">When most people hear "AI," they picture robots, Terminator, or some kind of digital brain that thinks like a human. That's not what we're talking about. The AI you're hearing about every day is software. It runs on computers. It doesn't think, feel, or have opinions. It's a very powerful tool, like a calculator, but for language.</p>
+      <p>(And yes, even the best chef makes mistakes. The allergen card comes right before you eat: course four.)</p>
+      <p>Here's the simplest way to put it: what follows is the one idea that makes everything else about AI make sense.</p>
+    </div>
+    <div class="imgslot" style="aspect-ratio:4/3">
+      <span class="mono">Image slot 01</span>
+      <em>Editorial photo: a plain, ordinary tool, calm light, no robots, no neon circuitry</em>
+    </div>
+  </div>
+</section>
+
+<!-- 02 HOW IT LEARNS (compare) -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <div><h2>Traditional software vs. AI: how it actually learns</h2><span class="mono">Second course · the one idea that explains everything</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p>Imagine you hire a new assistant. You have two options for how you train them.</p>
+      <p>That's genuinely the core idea. Traditional software follows instructions a human typed out. AI learned the instructions on its own by studying examples.</p>
+    </div>
+    <div class="plan">
+      <span class="mono">Two ways to train an assistant</span>
+      <svg viewBox="0 0 420 260" fill="none">
+        <rect x="20" y="20" width="170" height="210" rx="10" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
+        <text x="105" y="48" text-anchor="middle" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1A1A1A">Option A</text>
+        <text x="105" y="66" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">TRADITIONAL SOFTWARE</text>
+        <path d="M40 90h130M40 106h110M40 122h120M40 138h90" stroke="#D8D6D2" stroke-width="2" stroke-linecap="round"/>
+        <text x="105" y="205" text-anchor="middle" font-family="Inter" font-size="10" fill="#5C5A57">A human writes</text>
+        <text x="105" y="220" text-anchor="middle" font-family="Inter" font-size="10" fill="#5C5A57">every rule, by hand</text>
+        <rect x="230" y="20" width="170" height="210" rx="10" stroke="#2C4BE0" stroke-width="2.5" fill="#FFFFFF"/>
+        <text x="315" y="48" text-anchor="middle" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1A1A1A">Option B</text>
+        <text x="315" y="66" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#2C4BE0">HOW AI WORKS</text>
+        <circle cx="260" cy="98" r="6" stroke="#2C4BE0" stroke-width="1.5"/>
+        <circle cx="290" cy="98" r="6" stroke="#2C4BE0" stroke-width="1.5"/>
+        <circle cx="320" cy="98" r="6" stroke="#2C4BE0" stroke-width="1.5"/>
+        <circle cx="350" cy="98" r="6" stroke="#2C4BE0" stroke-width="1.5"/>
+        <circle cx="275" cy="122" r="6" stroke="#2C4BE0" stroke-width="1.5"/>
+        <circle cx="305" cy="122" r="6" stroke="#2C4BE0" stroke-width="1.5"/>
+        <circle cx="335" cy="122" r="6" stroke="#2C4BE0" stroke-width="1.5"/>
+        <text x="315" y="205" text-anchor="middle" font-family="Inter" font-size="10" fill="#5C5A57">It studies examples</text>
+        <text x="315" y="220" text-anchor="middle" font-family="Inter" font-size="10" fill="#5C5A57">and learns the pattern</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="stations">
+    <div class="station">
+      <span class="mono">Option A · the manual</span>
+      <h4>Rule by rule</h4>
+      <p>You write a 500-page manual for every situation: "if a client emails about pricing, reply with Template #7." A human writes every single rule. If a case isn't in the manual, the software is stuck.</p>
+    </div>
+    <div class="station">
+      <span class="mono">Option B · the examples</span>
+      <h4>Pattern by pattern</h4>
+      <p>You show thousands of examples of great work: great emails, great replies, great reports. Nobody wrote the rules. The software found the patterns by studying a massive amount of examples.</p>
+    </div>
+  </div>
+</section>
+
+<!-- pull quote -->
+<div class="pull">
+  <blockquote>AI is not a genius. It's <strong>a very fast learner</strong> that studied a lot of homework.</blockquote>
+  <span class="mono">· the one line that explains the whole idea</span>
+</div>
+
+<!-- 03 WHAT IT CAN ACTUALLY DO -->
+<section class="sec" style="padding-top:0">
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <div><h2>What it can actually do for you today</h2><span class="mono">Third course · generative AI, in practice</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p>There are different types of AI. The one everyone is talking about is called <strong>generative AI</strong>. Generative means it <em>creates</em> new things: writes new text, creates new images, generates new audio, makes new video. It doesn't just sort data or recognize faces. It produces work that didn't exist before.</p>
+      <p>ChatGPT, Claude, Gemini, Midjourney, ElevenLabs: different brands, same basic idea. They all studied enormous amounts of human-created content and now they can create new content that looks and sounds like the real thing. When someone says "AI," nine times out of ten, this is what they mean.</p>
+    </div>
+    <div class="imgslot" style="aspect-ratio:4/3">
+      <span class="mono">Image slot 02</span>
+      <em>Editorial photo: hands at a keyboard, a document mid-draft, warm, ordinary desk light</em>
+    </div>
+  </div>
+
+  <div class="menu">
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><path d="M10 50c10-24 50-24 60 0" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/><circle cx="40" cy="20" r="9" stroke="#2C4BE0" stroke-width="2.5"/></svg></div>
+      <span class="mono">Starter · write &amp; communicate</span>
+      <h3>Emails, posts, proposals</h3>
+      <p>You tell it what you need, give it context about your situation, and it drafts something you can use or tweak. What used to take 30 minutes takes 3.</p>
+    </div>
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><rect x="12" y="10" width="56" height="40" rx="5" stroke="#2C4BE0" stroke-width="2.5"/><path d="M24 26l8 6-8 6M40 40h16" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <span class="mono">Main · explain complex things</span>
+      <h3>Tax rules, legal clauses, jargon</h3>
+      <p>Paste in the confusing thing and ask it to explain it like you're not an expert. It will.</p>
+    </div>
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><circle cx="40" cy="32" r="22" stroke="#2C4BE0" stroke-width="2.5"/><path d="M40 18v14l10 8" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <span class="mono">Chef's special · analyze &amp; spot patterns</span>
+      <h3>Feedback, survey data, competitors</h3>
+      <p>Give it the information and ask what stands out. It can find patterns in minutes that would take you hours to see.</p>
+    </div>
+  </div>
+
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
+    <div class="station"><span class="mono">Write &amp; communicate</span><h4>Drafts on demand</h4><p>Emails, social posts, proposals, client replies, follow-ups: a draft in seconds instead of a blank page.</p></div>
+    <div class="station"><span class="mono">Explain simply</span><h4>Plain-English translator</h4><p>Tax rules, legal clauses, technical docs, competitor sites, explained like you're not an expert.</p></div>
+    <div class="station"><span class="mono">Summarize &amp; organize</span><h4>The 40-page shortcut</h4><p>Long reports, meeting notes, research, reviews: drop them in and ask for the key points.</p></div>
+    <div class="station"><span class="mono">Brainstorm &amp; ideate</span><h4>The tireless partner</h4><p>Content ideas, business names, marketing angles, workshop outlines, available at 2am, never tired.</p></div>
+    <div class="station"><span class="mono">Analyze &amp; spot patterns</span><h4>The pattern-finder</h4><p>Customer feedback, sales data, competitor reviews: patterns in minutes instead of hours.</p></div>
+  </div>
+</details>
+  <p class="menu-more">Notice the pattern across all five: you give it your information and ask it to do something useful with it. The more specific you are about what you need, the better the result. It's not magic, it's a conversation. You ask well, you get well.</p>
+</section>
+
+<!-- full-bleed image slot -->
+<div class="fullbleed">
+  <div class="imgslot">
+    <span class="mono">Image slot 03 · full-bleed divider</span>
+    <em>Wide editorial photo: a desk mid-work, screen showing a drafted email, calm, ordinary light</em>
+  </div>
+</div>
+
+<!-- 04 KNOW BEFORE YOU EAT -->
+<section class="warn" style="margin-top:72px">
+  <div class="warn-inner">
+    <span class="mono">Fourth course · what it can't do (yet)</span>
+    <h2>Know before you eat.</h2>
+    <p style="font-family:'Inter',sans-serif;font-size:.95rem;color:#D9D3E6;max-width:60ch;margin:0 0 26px">AI is powerful, but it has real limits. Knowing them will save you from trusting it with the wrong things.</p>
+    <div class="warn-grid">
+      <div class="warn-card"><div class="term">Makes things up</div><p>It can confidently say something that is <strong>completely false.</strong> It's not lying on purpose, it's generating what sounds right based on patterns. Always double-check facts, numbers, and anything legal or financial.</p></div>
+      <div class="warn-card"><div class="term">Doesn't know your business</div><p>It has no idea who your clients are, what you sell, or what happened in last Tuesday's meeting, <strong>unless you tell it.</strong> You have to give it that context every time.</p></div>
+      <div class="warn-card"><div class="term">Doesn't decide for you</div><p>It gives you options, drafts, and analysis. <strong>The judgment call is still yours</strong>: think of it as a brilliant intern who works fast but needs you to approve everything.</p></div>
+      <div class="warn-card"><div class="term">Doesn't replace expertise</div><p>A doctor, a lawyer, an accountant, it can help you prepare, research, and draft, but <strong>it should not be the final word</strong> on anything where being wrong has real consequences.</p></div>
+    </div>
+    <p class="storelink">I keep verification prompts for exactly these failures: <a href="../store.html">The Judge's Prompts →</a></p>
+  </div>
+</section>
+
+<!-- pull quote 2 -->
+<div class="pull">
+  <blockquote>The people who get burned by AI trust it blindly. The people who get the most from it treat it like a <strong>fast, capable assistant</strong> that still needs supervision.</blockquote>
+  <span class="mono">· the difference between the two groups</span>
+</div>
+
+<!-- subscribe strip -->
+<div class="subs"><div class="subs-in">
+  <div><h3>Get every new guide in your inbox.</h3><p>Plus The Insider Brief: one curated AI briefing every Tuesday, verdicts included.</p></div>
+  <a href="https://brief.shiftandlead.com">Subscribe free →</a>
+</div></div>
+
+<!-- 05 TRY IT / THE BILL -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <div><h2>Try it right now, and why it matters</h2><span class="mono">Last course · 3 prompts, one takeaway</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p>Open ChatGPT, Claude, or Gemini, any of them, they all work for this. Copy one of the prompts on the right and paste it in. You'll get back a real, usable answer in about 10 seconds. That's the moment it clicks. Not the theory. Not the definitions. The moment you see it do something useful for <em>your</em> situation.</p>
+      <p>If you're running a business, starting one, or thinking about leaving corporate to do your own thing, AI changes the math. Tasks that used to require hiring someone or spending your evening on them can now get done in minutes: first drafts of content, research on a new market, replies to repetitive client questions, summaries of competitor strategies.</p>
+      <p>This doesn't mean you replace people. It means <strong>you get hours back</strong>, hours you can spend on the parts of your business that actually need you, or on the life you're building outside of it. That's the real point. Not the technology itself. The time it gives you back.</p>
+      <p><strong>Next on the map:</strong> the names you keep hearing: ChatGPT, Claude, Gemini, LLM, model, agent. They're not all the same thing, and sorting them out takes about 5 minutes.</p>
+    </div>
+    <div>
+      <div class="tries">
+        <div class="try"><span class="mono">Try this</span><p>"I'm a solopreneur who sells online courses. Write me a short, friendly email to send to someone who signed up for my free workshop but didn't attend. Keep it under 100 words."</p></div>
+        <div class="try"><span class="mono">Or this</span><p>"I'm comparing two project management tools for my small team: Notion and ClickUp. Give me 5 things to consider when choosing between them, written for someone who isn't technical."</p></div>
+        <div class="try"><span class="mono">Or this</span><p>"I just got a long email from a potential client. Here it is: [paste the email]. Summarize what they're actually asking for in 3 bullet points."</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- the chef's table: paid offers close -->
+<section class="chefs"><div class="chefs-in">
+  <span class="mono">The chef's table · go further than the guide</span>
+  <h2>You've learned the words.<br>Now learn to run the kitchen.</h2>
+  <div class="chefs-grid">
+    <div class="chefs-card">
+      <span class="mono">Prompt pack · $19</span>
+      <h3>The Prompt Menu</h3>
+      <p>The Kitchen Map companion: the best prompts for every AI kitchen, matched to what each one cooks best.</p>
+      <a href="../store.html">Get it in the Store →</a>
+    </div>
+    <div class="chefs-card">
+      <span class="mono">Community · founding spots soon</span>
+      <h3>Build alongside me</h3>
+      <p>Live "build with me" sessions, templates, and people on the same road, everyday entrepreneurs winning back their time.</p>
+      <a href="../about.html#community">Be first in line →</a>
+    </div>
+    <div class="chefs-card">
+      <span class="mono">For companies</span>
+      <h3>Keynotes &amp; workshops</h3>
+      <p>Bring the whole method into your team: practical, non-technical, from someone whose business runs on 137 AI employees.</p>
+      <a href="../work-with-fatiha.html">Work with Fatiha →</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- byline -->
+<div class="byline">
+  <div class="byline-in">
+    <img src="../closeUp.jpeg" alt="Fatiha Chikh">
+    <p><span class="who">Written by Fatiha Chikh: The AI Automation Queen.</span><br>
+    20+ years inside big corporate tech; now I run my business with a company of 137 AI employees. I build everything I teach. <a href="../about.html">The story →</a></p>
+  </div>
+</div>
+
+<div class="ipbar">
+  <p>© 2026 Fatiha Chikh / Shift &amp; Lead · Original IP · The Kitchen Map™ format, text and diagrams may not be reproduced, scraped, or used as training data without written permission · guides.shiftandlead.com</p>
 </div>
 
 </body>

@@ -1,0 +1,1284 @@
+<title>The AI Time Audit: Fatiha Chikh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --ink: #1A1A1A;
+    --electric: #2C4BE0;
+    --navy: #1B2EA0;
+    --tint: #E4EAFB;
+    --cream: #EEF2FC;
+    --light-on-dark: #7FA0FF;
+    --signal: #E63955;
+    --muted: #5C5A57;
+    --rule: #D8D6D2;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--white);
+    color: var(--ink);
+  }
+
+  body {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    margin: 0 0 0.4em 0;
+    line-height: 1.12;
+  }
+
+  .mono {
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .ui {
+    font-family: 'Inter', sans-serif;
+  }
+
+  a { color: var(--electric); }
+
+  /* ============ PAGE / PRINT SETUP ============ */
+
+  @page {
+    size: A4;
+    margin: 18mm;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 40px;
+    page-break-after: always;
+    position: relative;
+  }
+
+  .page:last-child { page-break-after: auto; }
+
+  .page-footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  @media print {
+    body { font-size: 12.5pt; }
+    .page {
+      max-width: 100%;
+      padding: 0;
+      min-height: 246mm;
+    }
+    .no-print { display: none !important; }
+    .page-footer {
+      position: fixed;
+      bottom: 6mm;
+      left: 0;
+      right: 0;
+      text-align: center;
+      border-top: none;
+      margin-top: 0;
+    }
+    .dark-panel { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .fill, .fill-line, .fill-box, .score-box, .example-row td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    [contenteditable] { outline: none !important; }
+  }
+
+  @media screen {
+    body { background: #F4F4F2; }
+    .page {
+      background: var(--white);
+      margin: 24px auto;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 12px 40px rgba(0,0,0,0.06);
+      min-height: 900px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .page { padding: 40px 22px; min-height: auto; }
+  }
+
+  img, svg { max-width: 100%; }
+
+  /* ============ SCREEN-ONLY EDIT HINT ============ */
+
+  .edit-hint {
+    display: none;
+  }
+
+  @media screen {
+    .edit-hint {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--tint);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 0 0 22px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--navy);
+    }
+    .edit-hint .dot-live {
+      flex: none;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--electric);
+    }
+  }
+
+  [contenteditable="true"] {
+    cursor: text;
+  }
+
+  @media screen {
+    [contenteditable="true"]:hover {
+      background: var(--cream);
+    }
+    [contenteditable="true"]:focus {
+      background: var(--white);
+      outline: 2px solid var(--electric);
+      outline-offset: -1px;
+    }
+  }
+
+  /* ============ DARK PANELS (cover) ============ */
+
+  .dark-panel {
+    background:#EEF2FC;border-left:3px solid #2C4BE0;
+    color:#1A1A1A;
+    margin: -56px -40px 0 -40px;
+    padding: 56px 40px;
+    min-height: calc(100% + 56px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 720px) {
+    .dark-panel { margin: -40px -22px 0 -22px; padding: 40px 22px; }
+  }
+
+  @media print {
+    .dark-panel { margin: 0; padding: 0; min-height: 246mm; }
+  }
+
+  .dark-panel h1, .dark-panel h2 {
+    color: var(--white);
+  }
+
+  .dark-panel .mono {
+    color: var(--light-on-dark);
+  }
+
+  /* ============ COVER ============ */
+
+  .cover {
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .cover-top .mono {
+    font-size: 12px;
+    color: var(--light-on-dark);
+    margin-bottom: 32px;
+    display: block;
+  }
+
+  .cover-mid { margin: auto 0; }
+
+  .cover-mid .title {
+    font-size: 3.2rem;
+    color: var(--white);
+    margin: 0;
+  }
+
+  .cover-mid .title .accent {
+    color: var(--light-on-dark);
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  .cover-mid .subtitle {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--tint);
+    margin-top: 18px;
+    max-width: 480px;
+  }
+
+  .cover-mid .price-tag {
+    display: inline-block;
+    margin-top: 22px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--light-on-dark);
+    border-radius: 5px;
+    padding: 5px 11px;
+  }
+
+  .cover-bottom {
+    border-top: 1px solid rgba(127,160,255,0.3);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .cover-bottom .byline {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--white);
+  }
+
+  .cover-bottom .byline strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  .cover-bottom .edition {
+    font-size: 10.5px;
+    color: var(--light-on-dark);
+  }
+
+  /* ============ TYPICAL LIGHT PAGE ELEMENTS ============ */
+
+  .kicker {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  h2.page-title {
+    font-size: 1.9rem;
+    color: var(--ink);
+    margin-bottom: 0.5em;
+  }
+
+  p { margin: 0 0 1em 0; }
+
+  .lede {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+
+  /* ============ TRAFFIC LIGHT CARD ============ */
+
+  .traffic-card {
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin: 22px 0;
+  }
+
+  .traffic-card .traffic-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  .traffic-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 9px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .traffic-row + .traffic-row {
+    border-top: 1px solid var(--rule);
+  }
+
+  .dot {
+    flex: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-top: 4px;
+  }
+
+  .dot.green { background: #2E9E5B; }
+  .dot.amber { background: #E0A82E; }
+  .dot.red { background: var(--signal); }
+
+  .traffic-row strong { color: var(--ink); }
+
+  /* ============ NUMBERED / HOW-TO LISTS ============ */
+
+  .howto-list {
+    list-style: none;
+    margin: 22px 0;
+    padding: 0;
+    counter-reset: howto;
+  }
+
+  .howto-list li {
+    counter-increment: howto;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 15px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+
+  .howto-list li::before {
+    content: counter(howto);
+    position: absolute;
+    left: 0;
+    top: -2px;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--electric);
+  }
+
+  .howto-list li strong { color: var(--ink); }
+
+  /* ============ PART DIVIDER STRIP (light, not full dark page) ============ */
+
+  .part-strip {
+    background:#EEF2FC;border-left:3px solid #2C4BE0;
+    color:#1A1A1A;
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin: 0 0 28px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .part-strip .part-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--light-on-dark);
+    flex: none;
+  }
+
+  .part-strip .part-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin: 0;
+  }
+
+  .part-strip .part-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--tint);
+    width: 100%;
+    margin-top: 2px;
+  }
+
+  /* ============ FILLABLE TABLE : WEEK MAP ============ */
+
+  .week-table-wrap {
+    overflow-x: auto;
+    margin: 0 0 20px 0;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+  }
+
+  table.week-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    min-width: 640px;
+  }
+
+  table.week-table th {
+    background: var(--cream);
+    color: var(--ink);
+    font-weight: 700;
+    text-align: left;
+    padding: 9px 8px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 11px;
+    letter-spacing: 0.01em;
+  }
+
+  table.week-table th.narrow, table.week-table td.narrow {
+    text-align: center;
+    width: 58px;
+  }
+
+  table.week-table td {
+    padding: 9px 8px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    color: var(--ink);
+  }
+
+  table.week-table tr:last-child td { border-bottom: none; }
+
+  table.week-table td.fill {
+    background: var(--white);
+    min-height: 20px;
+  }
+
+  table.week-table .day-row td {
+    background:#EEF2FC;border-left:3px solid #2C4BE0;
+    color:#1A1A1A;
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 7px 8px;
+  }
+
+  .fill-blank {
+    display: inline-block;
+    min-width: 100%;
+    min-height: 16px;
+  }
+
+  @media print {
+    table.week-table td.fill { min-height: 22px; }
+  }
+
+  .week-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: -8px;
+    margin-bottom: 20px;
+  }
+
+  /* ============ SCORING GUIDE ============ */
+
+  .score-legend {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 18px 0 22px 0;
+  }
+
+  @media (max-width: 560px) {
+    .score-legend { grid-template-columns: 1fr; }
+  }
+
+  .score-legend-item {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 13px 15px;
+  }
+
+  .score-legend-item .sl-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .score-legend-item .sl-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .score-legend-item .sl-scale {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    color: var(--electric);
+    margin-top: 6px;
+  }
+
+  table.score-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    margin: 4px 0 8px 0;
+  }
+
+  table.score-table th {
+    background: var(--cream);
+    color: var(--ink);
+    font-weight: 700;
+    text-align: left;
+    padding: 9px 8px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 10.5px;
+  }
+
+  table.score-table th.narrow, table.score-table td.narrow {
+    text-align: center;
+    width: 52px;
+  }
+
+  table.score-table td {
+    padding: 9px 8px;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+    vertical-align: top;
+  }
+
+  tr.example-row td {
+    background: var(--tint);
+  }
+
+  tr.example-row td:first-child {
+    border-radius: 8px 0 0 8px;
+  }
+
+  tr.example-row td:last-child {
+    border-radius: 0 8px 8px 0;
+  }
+
+  .example-tag {
+    display: inline-block;
+    background: var(--electric);
+    color: var(--white);
+    font-family: 'Space Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+
+  .threshold-card {
+    background:#EEF2FC;border-left:3px solid #2C4BE0;
+    color:#1A1A1A;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 18px 0;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .threshold-card .threshold-num {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 2.4rem;
+    color: var(--light-on-dark);
+    flex: none;
+  }
+
+  .threshold-card .threshold-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    color: var(--tint);
+    line-height: 1.5;
+  }
+
+  .threshold-card .threshold-text strong { color: var(--white); }
+
+  /* ============ PART 3 : EMPLOYEE CARDS ============ */
+
+  .employee-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 20px 22px 22px 22px;
+    margin: 0 0 16px 0;
+  }
+
+  .employee-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .employee-icon {
+    flex: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--tint);
+    color: var(--navy);
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .employee-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+  }
+
+  .employee-fit {
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 1px;
+  }
+
+  .employee-job {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.55;
+    margin: 0;
+    padding-left: 46px;
+  }
+
+  .rank-fill {
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 20px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+  }
+
+  .rank-fill .rank-label {
+    font-weight: 700;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .rank-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .rank-row:last-child { border-bottom: none; }
+
+  .rank-row .rank-num {
+    font-family: 'Space Mono', monospace;
+    color: var(--electric);
+    font-weight: 700;
+    font-size: 12px;
+    flex: none;
+    width: 20px;
+  }
+
+  .rank-row .rank-task {
+    flex: 1;
+    color: var(--muted);
+  }
+
+  .rank-row .rank-employee {
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ============ PART 4 : MATH TABLE ============ */
+
+  table.math-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    margin: 4px 0 20px 0;
+  }
+
+  table.math-table th {
+    background: var(--cream);
+    color: var(--ink);
+    font-weight: 700;
+    text-align: left;
+    padding: 10px 10px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  table.math-table td {
+    padding: 11px 10px;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+  }
+
+  table.math-table td.narrow, table.math-table th.narrow {
+    text-align: center;
+    width: 90px;
+  }
+
+  table.math-table tr.total-row td {
+    background: var(--tint);
+    font-weight: 700;
+    border-bottom: none;
+  }
+
+  table.math-table tr.total-row td:first-child { border-radius: 8px 0 0 8px; }
+  table.math-table tr.total-row td:last-child { border-radius: 0 8px 8px 0; }
+
+  .honesty-line {
+    border-left: 3px solid var(--signal);
+    background: var(--cream);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  .honesty-line strong { color: var(--ink); }
+
+  /* ============ CLOSING PAGE ============ */
+
+  .closing-note {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 26px 24px;
+    margin: 24px 0;
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  .signoff {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    margin-top: 8px;
+  }
+
+  .day1-list {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+    counter-reset: day1;
+  }
+
+  .day1-list li {
+    counter-increment: day1;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .day1-list li::before {
+    content: counter(day1);
+    position: absolute;
+    left: 0;
+    top: -1px;
+    background: var(--electric);
+    color: var(--white);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 11.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .day1-list li strong { color: var(--ink); }
+
+  .crosssell {
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin: 22px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .crosssell .ui {
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  .crosssell .cta {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--electric);
+    white-space: nowrap;
+  }
+
+  .license-block {
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.6;
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+    margin-top: 28px;
+  }
+
+  .center { text-align: center; }
+</style>
+
+<!-- ============================================================ -->
+<!-- COVER PAGE                                                    -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel cover">
+    <div class="cover-top">
+      <span class="mono">The AI Automation Queen &middot; Shift &amp; Lead</span>
+    </div>
+    <div class="cover-mid">
+      <h1 class="title">The AI Time <span class="accent">Audit</span></h1>
+      <p class="subtitle">Map your week, find the hours AI can take off your plate, and pick your first AI employee, all in one sitting.</p>
+      <span class="price-tag">$47 &middot; fillable worksheet</span>
+    </div>
+    <div class="cover-bottom">
+      <div class="byline">
+        <strong>Fatiha Chikh</strong>
+        <span class="ui">The AI Automation Queen &middot; Shift &amp; Lead</span>
+      </div>
+      <div class="edition mono">Edition 1 &middot; 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- HOW IT WORKS                                                  -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Before you start</span>
+  <h2 class="page-title">How this worksheet works</h2>
+  <p class="lede">One sitting, four parts, one decision at the end.</p>
+
+  <ol class="howto-list">
+    <li><strong>Map your week.</strong> Part 1 is a blank table. You fill in every task you do in a normal work week, honestly, including the boring ones.</li>
+    <li><strong>Score each task.</strong> Part 2 gives every task a number, 0 to 20. The number tells you if AI should take it.</li>
+    <li><strong>Pick your first hire.</strong> Part 3 matches your top 3 scoring tasks to five employee types. You choose one to start.</li>
+    <li><strong>Do the math.</strong> Part 4 turns hours back into a weekly and monthly number, plus an honest word on ramp-up.</li>
+  </ol>
+
+  <p class="ui" style="font-size:13.5px; color:var(--muted);">Print it and fill it by hand, or type straight into the shaded cells on screen. Either way works. This is a working document, not a display piece.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 1 : THE WEEK MAP                                         -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="part-strip">
+    <div class="part-num mono">Part 01</div>
+    <h3 class="part-title">The Week Map</h3>
+    <div class="part-sub">Write down every task you do in a normal week. Nothing is too small to list.</div>
+  </div>
+
+  <div class="edit-hint no-print"><span class="dot-live"></span> On screen: click any shaded cell below and type. It saves nothing, so copy your answers somewhere safe before you close the tab. Printing gives you blank lines instead.</div>
+
+  <p class="ui" style="font-size:13px; color:var(--muted); margin-bottom:16px;">For each day, list the tasks that took real time. Repeat a task across days if you do it daily, that's useful data, not a mistake.</p>
+
+  <div class="week-table-wrap">
+    <table class="week-table">
+      <thead>
+        <tr>
+          <th style="width:26%;">Task</th>
+          <th class="narrow">Minutes</th>
+          <th class="narrow">Repeats?</th>
+          <th class="narrow">Drains me?</th>
+          <th class="narrow">Needs my judgment?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="day-row"><td colspan="5">Monday</td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+
+        <tr class="day-row"><td colspan="5">Tuesday</td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+
+        <tr class="day-row"><td colspan="5">Wednesday</td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="week-note">Repeats? = daily / a few times a week / weekly / rare. Drains me? and Needs my judgment? = score each 1 (not really) to 5 (completely).</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<div class="page">
+  <div class="part-strip">
+    <div class="part-num mono">Part 01</div>
+    <h3 class="part-title">The Week Map, continued</h3>
+    <div class="part-sub">Thursday through Sunday. Weekend rows are optional, only fill them if you actually work then.</div>
+  </div>
+
+  <div class="week-table-wrap">
+    <table class="week-table">
+      <thead>
+        <tr>
+          <th style="width:26%;">Task</th>
+          <th class="narrow">Minutes</th>
+          <th class="narrow">Repeats?</th>
+          <th class="narrow">Drains me?</th>
+          <th class="narrow">Needs my judgment?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="day-row"><td colspan="5">Thursday</td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+
+        <tr class="day-row"><td colspan="5">Friday</td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+
+        <tr class="day-row"><td colspan="5">Saturday <span class="ui" style="text-transform:none; letter-spacing:0; opacity:0.7;">(optional)</span></td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+
+        <tr class="day-row"><td colspan="5">Sunday <span class="ui" style="text-transform:none; letter-spacing:0; opacity:0.7;">(optional)</span></td></tr>
+        <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="week-note">Done mapping? Circle or highlight every task where Drains me is 4 or higher. Those are the ones you'll score next, in Part 2.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 2 : THE SCORING GUIDE                                    -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="part-strip">
+    <div class="part-num mono">Part 02</div>
+    <h3 class="part-title">The Scoring Guide</h3>
+    <div class="part-sub">Take the tasks you circled. Score each one against four questions, 0 to 5 apiece.</div>
+  </div>
+
+  <div class="score-legend">
+    <div class="score-legend-item">
+      <div class="sl-title">Repetitive</div>
+      <div class="sl-desc">You do roughly the same steps every time this task comes up.</div>
+      <div class="sl-scale">0 = never the same &middot; 5 = identical every time</div>
+    </div>
+    <div class="score-legend-item">
+      <div class="sl-title">Rule-based</div>
+      <div class="sl-desc">There's a clear "if this, then that" you could explain to a new hire.</div>
+      <div class="sl-scale">0 = pure instinct &middot; 5 = fully explainable</div>
+    </div>
+    <div class="score-legend-item">
+      <div class="sl-title">Text-or-data-shaped</div>
+      <div class="sl-desc">The task is mostly reading, writing, sorting, or summarizing information.</div>
+      <div class="sl-scale">0 = physical or in-person &middot; 5 = pure text/data</div>
+    </div>
+    <div class="score-legend-item">
+      <div class="sl-title">Low-stakes if wrong</div>
+      <div class="sl-desc">A mistake here is cheap to catch and cheap to fix.</div>
+      <div class="sl-scale">0 = high stakes &middot; 5 = truly low stakes</div>
+    </div>
+  </div>
+
+  <p class="ui" style="font-size:13px; color:var(--muted);">Add the four scores. Maximum possible is 20.</p>
+
+  <div class="threshold-card">
+    <div class="threshold-num">14+</div>
+    <div class="threshold-text"><strong>Automate first.</strong> Anything scoring 14 or above is your strongest candidate for an AI employee. Below 14 isn't off-limits, it just needs more human judgment sitting alongside the AI.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<div class="page">
+  <div class="part-strip">
+    <div class="part-num mono">Part 02</div>
+    <h3 class="part-title">The Scoring Guide, continued</h3>
+    <div class="part-sub">One worked example, then your own tasks below it.</div>
+  </div>
+
+  <table class="score-table">
+    <thead>
+      <tr>
+        <th style="width:24%;">Task</th>
+        <th class="narrow">Repetitive</th>
+        <th class="narrow">Rule-based</th>
+        <th class="narrow">Text/data</th>
+        <th class="narrow">Low-stakes</th>
+        <th class="narrow">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="example-row">
+        <td><span class="example-tag">Example</span><br>Writing the weekly status update email to [Client]</td>
+        <td class="narrow">5</td>
+        <td class="narrow">4</td>
+        <td class="narrow">5</td>
+        <td class="narrow">4</td>
+        <td class="narrow"><strong>18</strong></td>
+      </tr>
+      <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+      <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+      <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+      <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+      <tr><td class="fill" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td><td class="fill narrow" contenteditable="true"></td></tr>
+    </tbody>
+  </table>
+
+  <p class="ui" style="font-size:13px; color:var(--muted);">Why the example scores 18: [Client] status emails follow the same shape every week (5), the content rules are clear once you write them down once (4), it's pure text (5), and a rough draft you review before sending is genuinely low-stakes (4). That's a strong first hire.</p>
+
+  <p class="ui" style="font-size:13.5px; color:var(--ink); margin-top:18px;"><strong>Now sort your scored tasks highest to lowest.</strong> Your top 3 move into Part 3.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 3 : PICK YOUR FIRST AI EMPLOYEE                          -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="part-strip">
+    <div class="part-num mono">Part 03</div>
+    <h3 class="part-title">Pick Your First AI Employee</h3>
+    <div class="part-sub">Five employee types. Match your top 3 tasks to the type that fits, then choose the one you'll set up first.</div>
+  </div>
+
+  <div class="employee-card">
+    <div class="employee-head">
+      <div class="employee-icon">01</div>
+      <div>
+        <div class="employee-name">The Follow-Up Responder</div>
+        <div class="employee-fit">Fits: repeat questions, check-ins, anything you answer the same way twice a week</div>
+      </div>
+    </div>
+    <p class="employee-job">Reads incoming messages and drafts the reply in your voice. Flags anything it isn't sure about instead of guessing. Never sends without your review until you've trusted it on 10 in a row.</p>
+  </div>
+
+  <div class="employee-card">
+    <div class="employee-head">
+      <div class="employee-icon">02</div>
+      <div>
+        <div class="employee-name">The Summarizer</div>
+        <div class="employee-fit">Fits: long documents, meeting notes, reports, anything you skim instead of reading</div>
+      </div>
+    </div>
+    <p class="employee-job">Turns a long document or transcript into a short brief: what happened, what matters, what needs a decision. Rounds numbers, redacts names. Never treated as the final word on anything legal or financial.</p>
+  </div>
+
+  <div class="employee-card">
+    <div class="employee-head">
+      <div class="employee-icon">03</div>
+      <div>
+        <div class="employee-name">The Drafter</div>
+        <div class="employee-fit">Fits: emails, proposals, posts, anything where a blank page is the hard part</div>
+      </div>
+    </div>
+    <p class="employee-job">Writes the first version of anything you'd otherwise stare at for twenty minutes before starting. Works from your rules and past examples, not from a blank prompt. You edit, you never originate from zero again.</p>
+  </div>
+
+  <div class="employee-card">
+    <div class="employee-head">
+      <div class="employee-icon">04</div>
+      <div>
+        <div class="employee-name">The Researcher</div>
+        <div class="employee-fit">Fits: gathering information, comparing options, prep work before a decision</div>
+      </div>
+    </div>
+    <p class="employee-job">Pulls together what's known on a topic, a competitor, or an option you're weighing, and hands you a short comparison instead of ten open tabs. States what it's unsure about instead of filling gaps with a guess.</p>
+  </div>
+
+  <div class="employee-card">
+    <div class="employee-head">
+      <div class="employee-icon">05</div>
+      <div>
+        <div class="employee-name">The Scheduler</div>
+        <div class="employee-fit">Fits: reminders, recurring tasks, anything that only needs to happen "on Tuesday"</div>
+      </div>
+    </div>
+    <p class="employee-job">Runs the same job on a set day and time without you remembering to start it. Reports what it did in one line afterward. Starts on the smallest, lowest-stakes recurring task you own.</p>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<div class="page">
+  <div class="part-strip">
+    <div class="part-num mono">Part 03</div>
+    <h3 class="part-title">Pick Your First AI Employee, continued</h3>
+    <div class="part-sub">Match your top 3 scored tasks to an employee type, then circle the one you'll set up this week.</div>
+  </div>
+
+  <div class="rank-fill">
+    <span class="rank-label">Your top 3, matched</span>
+    <div class="rank-row">
+      <span class="rank-num">#1</span>
+      <span class="rank-task fill" contenteditable="true" style="min-width:200px; display:inline-block;">Task, from Part 2</span>
+      <span class="rank-employee fill" contenteditable="true" style="min-width:160px; display:inline-block;">Employee type</span>
+    </div>
+    <div class="rank-row">
+      <span class="rank-num">#2</span>
+      <span class="rank-task fill" contenteditable="true" style="min-width:200px; display:inline-block;"></span>
+      <span class="rank-employee fill" contenteditable="true" style="min-width:160px; display:inline-block;"></span>
+    </div>
+    <div class="rank-row">
+      <span class="rank-num">#3</span>
+      <span class="rank-task fill" contenteditable="true" style="min-width:200px; display:inline-block;"></span>
+      <span class="rank-employee fill" contenteditable="true" style="min-width:160px; display:inline-block;"></span>
+    </div>
+  </div>
+
+  <p class="ui" style="font-size:14px; color:var(--ink); margin-top:22px;"><strong>Circle #1, #2, or #3 above.</strong> That's the only one you set up this week. The other two wait their turn.</p>
+
+  <p class="ui" style="font-size:13px; color:var(--muted); margin-top:8px;">One employee type can cover more than one task once it's running well. Don't feel pressure to hire five different types before you've proven one works.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 4 : THE 20-HOUR MATH                                    -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="part-strip">
+    <div class="part-num mono">Part 04</div>
+    <h3 class="part-title">The 20-Hour Math</h3>
+    <div class="part-sub">Turn your Part 1 numbers into hours reclaimed, honestly.</div>
+  </div>
+
+  <p class="ui" style="font-size:13.5px; color:var(--muted); margin-bottom:16px;">Go back to your circled task from Part 1. Fill in the minutes it takes and how often it repeats. The table does the rest.</p>
+
+  <table class="math-table">
+    <thead>
+      <tr>
+        <th>What you're measuring</th>
+        <th class="narrow">Your number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Minutes per instance of your #1 task</td>
+        <td class="narrow fill" contenteditable="true"></td>
+      </tr>
+      <tr>
+        <td>Times per week it repeats</td>
+        <td class="narrow fill" contenteditable="true"></td>
+      </tr>
+      <tr>
+        <td>Minutes per week (minutes &times; repeats)</td>
+        <td class="narrow fill" contenteditable="true"></td>
+      </tr>
+      <tr>
+        <td>Hours per week (minutes &divide; 60)</td>
+        <td class="narrow fill" contenteditable="true"></td>
+      </tr>
+      <tr class="total-row">
+        <td>Hours reclaimed over 4 weeks (hours/week &times; 4)</td>
+        <td class="narrow fill" contenteditable="true"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="honesty-line">
+    <strong>The honesty line.</strong> You will not get the full number back in week one. Week one is setup and correction: you're teaching the AI employee what "good" looks like for you. Expect roughly half the time saved in week one, closer to the full number by week three or four. That ramp-up is normal. It is not a sign the task was a bad pick.
+  </div>
+
+  <p class="ui" style="font-size:13px; color:var(--muted);">If you want, repeat this table for your #2 and #3 tasks once #1 is running well. Stacked employees compound the hours back, but only after each one is trusted on its own.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CLOSING PAGE                                                  -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Closing</span>
+  <h2 class="page-title">What to do on day 1</h2>
+
+  <p>You've mapped the week, scored the tasks, picked the employee, and done the math. Here's the only thing left: start.</p>
+
+  <ol class="day1-list">
+    <li><strong>Open your favorite AI tool.</strong> Claude, ChatGPT, Gemini, whatever you already use is fine. You don't need a new tool to start.</li>
+    <li><strong>Describe the one task you circled in Part 3.</strong> Tell it what you do, step by step, and show it one real example of "good" (redact names and numbers first, see the traffic light rule below).</li>
+    <li><strong>Give it a small, real version of the task today.</strong> Not a test question, an actual piece of this week's work. Review the output before it goes anywhere.</li>
+    <li><strong>Write down what you'd fix.</strong> That note is what makes the second attempt better than the first. This is the whole loop, repeated.</li>
+  </ol>
+
+  <div class="traffic-card">
+    <div class="traffic-title">One reminder before you paste anything real</div>
+    <div class="traffic-row">
+      <div class="dot green"></div>
+      <div><strong>Green, share freely.</strong> Your own drafts, general process descriptions, nothing identifying.</div>
+    </div>
+    <div class="traffic-row">
+      <div class="dot amber"></div>
+      <div><strong>Amber, redact first.</strong> Real client names become [Client], real numbers get rounded.</div>
+    </div>
+    <div class="traffic-row">
+      <div class="dot red"></div>
+      <div><strong>Red, never in a personal AI account.</strong> Credentials, contracts, anything under an NDA.</div>
+    </div>
+  </div>
+
+  <div class="closing-note">
+    <p style="margin-bottom:10px;">You don't need to automate everything this month. You need one task, fully handed off, that you trust.</p>
+    <div class="signoff">Start there.</div>
+    <p class="ui" style="margin-top:12px; font-style:normal; font-size:14px; color:var(--muted);">From Fatiha</p>
+  </div>
+
+  <div class="crosssell">
+    <div class="ui">Want the next system? More worksheets and prompt packs like this one live in the Store.</div>
+    <a class="cta" href="../../site/store.html">See what's in the Store &rarr;</a>
+  </div>
+
+  <div class="license-block">
+    <p style="margin-bottom:8px;"><strong style="color:var(--ink);">License.</strong> &copy; 2026 Fatiha Chikh / Shift &amp; Lead. Original IP. For the buyer's personal or single-business use. Redistribution, resale, or use as AI training data is prohibited. Free updates are included, this worksheet improves as the landscape changes.</p>
+    <p>Licensed to [buyer email] &middot; resale and redistribution prohibited</p>
+  </div>
+</div>

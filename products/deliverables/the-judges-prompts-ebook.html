@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Judge's Prompts: Fatiha Chikh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --ink: #1A1A1A;
+    --electric: #2C4BE0;
+    --navy: #1B2EA0;
+    --tint: #E4EAFB;
+    --cream: #EEF2FC;
+    --light-on-dark: #7FA0FF;
+    --signal: #E63955;
+    --muted: #5C5A57;
+    --rule: #D8D6D2;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--white);
+    color: var(--ink);
+  }
+
+  body {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    margin: 0 0 0.4em 0;
+    line-height: 1.12;
+  }
+
+  .mono {
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .ui {
+    font-family: 'Inter', sans-serif;
+  }
+
+  a { color: var(--electric); }
+
+  /* ============ PAGE / PRINT SETUP ============ */
+
+  @page {
+    size: A4;
+    margin: 18mm;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 40px;
+    page-break-after: always;
+    position: relative;
+  }
+
+  .page:last-child { page-break-after: auto; }
+
+  .page-footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  @media print {
+    body { font-size: 12.5pt; }
+    .page {
+      max-width: 100%;
+      padding: 0;
+      min-height: 246mm;
+    }
+    .no-print { display: none !important; }
+    .page-footer {
+      position: fixed;
+      bottom: 6mm;
+      left: 0;
+      right: 0;
+      text-align: center;
+      border-top: none;
+      margin-top: 0;
+    }
+    .dark-panel { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .prompt-block { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media screen {
+    body { background: #F4F4F2; }
+    .page {
+      background: var(--white);
+      margin: 24px auto;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 12px 40px rgba(0,0,0,0.06);
+      min-height: 900px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .page { padding: 40px 22px; min-height: auto; }
+  }
+
+  img, svg { max-width: 100%; }
+
+  /* ============ DARK PANELS (cover + dividers) ============ */
+
+  .dark-panel {
+    background: #FFFFFF;
+    color: var(--ink);
+    border-top: 4px solid var(--electric);
+    border-bottom: 4px solid var(--electric);
+    margin: -56px -40px 0 -40px;
+    padding: 56px 40px;
+    min-height: calc(100% + 56px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 720px) {
+    .dark-panel { margin: -40px -22px 0 -22px; padding: 40px 22px; }
+  }
+
+  @media print {
+    .dark-panel { margin: 0; padding: 0; min-height: 246mm; }
+  }
+
+  .dark-panel h1, .dark-panel h2 {
+    color: var(--ink);
+  }
+
+  .dark-panel .mono {
+    color: var(--electric);
+  }
+
+  /* ============ COVER ============ */
+
+  .cover {
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .cover-top .mono {
+    font-size: 12px;
+    color: var(--electric);
+    margin-bottom: 32px;
+    display: block;
+  }
+
+  .cover-mid { margin: auto 0; }
+
+  .cover-mid .title {
+    font-size: 3.4rem;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .cover-mid .title .accent {
+    color: var(--electric);
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  .cover-mid .subtitle {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin-top: 18px;
+    max-width: 480px;
+  }
+
+  .cover-bottom {
+    border-top: 1px solid rgba(127,160,255,0.3);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .cover-bottom .byline {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .cover-bottom .byline strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  .cover-bottom .edition {
+    font-size: 10.5px;
+    color: var(--electric);
+  }
+
+  /* ============ SECTION DIVIDERS ============ */
+
+  .divider {
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .divider .part-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 22px;
+  }
+
+  .divider .part-title {
+    font-size: 2.5rem;
+    color: var(--ink);
+    max-width: 520px;
+  }
+
+  .divider .part-purpose {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-top: 18px;
+    max-width: 480px;
+    border-left: 2px solid var(--electric);
+    padding-left: 18px;
+  }
+
+  .divider .part-count {
+    margin-top: 40px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: var(--electric);
+  }
+
+  /* ============ TYPICAL LIGHT PAGE ELEMENTS ============ */
+
+  .kicker {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  h2.page-title {
+    font-size: 2rem;
+    color: var(--ink);
+    margin-bottom: 0.5em;
+  }
+
+  p { margin: 0 0 1em 0; }
+
+  .lede {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+
+  /* ============ TRAFFIC LIGHT CARD ============ */
+
+  .traffic-card {
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin: 26px 0;
+  }
+
+  .traffic-card .traffic-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .traffic-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+
+  .traffic-row + .traffic-row {
+    border-top: 1px solid var(--rule);
+  }
+
+  .dot {
+    flex: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-top: 4px;
+  }
+
+  .dot.green { background: #2E9E5B; }
+  .dot.amber { background: #E0A82E; }
+  .dot.red { background: var(--signal); }
+
+  .traffic-row strong { color: var(--ink); }
+
+  /* ============ NUMBERED / HOW-TO LISTS ============ */
+
+  .howto-list {
+    list-style: none;
+    margin: 24px 0;
+    padding: 0;
+    counter-reset: howto;
+  }
+
+  .howto-list li {
+    counter-increment: howto;
+    position: relative;
+    padding-left: 42px;
+    margin-bottom: 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .howto-list li::before {
+    content: counter(howto);
+    position: absolute;
+    left: 0;
+    top: -2px;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--electric);
+  }
+
+  .howto-list li strong { color: var(--ink); }
+
+  /* ============ TABLE OF CONTENTS ============ */
+
+  .toc-part {
+    margin-bottom: 28px;
+  }
+
+  .toc-part-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 10px;
+  }
+
+  .toc-part-num {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--electric);
+    flex: none;
+    width: 40px;
+  }
+
+  .toc-part-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--ink);
+  }
+
+  .toc-part-title .toc-count {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--muted);
+    margin-left: 8px;
+  }
+
+  .toc-items {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    color: var(--muted);
+    padding-left: 54px;
+    line-height: 1.9;
+    columns: 2;
+    column-gap: 24px;
+  }
+
+  .toc-items span {
+    display: block;
+    break-inside: avoid;
+  }
+
+  .toc-items .num {
+    color: var(--electric);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    margin-right: 4px;
+  }
+
+  /* ============ PROMPT CARDS ============ */
+
+  .prompt-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 22px 24px 24px 24px;
+    margin: 0 0 22px 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .prompt-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .prompt-label .prompt-num {
+    background: var(--electric);
+    color: var(--ink);
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 11px;
+  }
+
+  .prompt-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .prompt-block {
+    background: #EEF2FC;
+    color: var(--ink);
+    border-left: 3px solid var(--electric);
+    border-radius: 8px;
+    padding: 16px 18px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0 0 12px 0;
+    white-space: pre-wrap;
+  }
+
+  .prompt-when {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .prompt-when strong {
+    color: var(--ink);
+  }
+
+  .flagship {
+    border-color: var(--electric);
+    border-width: 1.5px;
+  }
+
+  .flagship-tag {
+    display: inline-block;
+    background: var(--electric);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 3px 9px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
+  /* ============ FRAMEWORK (4 UPGRADES) CARDS ============ */
+
+  .upgrade-card {
+    display: flex;
+    gap: 18px;
+    padding: 18px 0;
+    align-items: flex-start;
+  }
+
+  .upgrade-card + .upgrade-card {
+    border-top: 1px solid var(--rule);
+  }
+
+  .upgrade-num {
+    flex: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--tint);
+    color: var(--navy);
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .upgrade-body .upgrade-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15.5px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .upgrade-body p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  /* ============ CLOSING PAGE ============ */
+
+  .closing-note {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 28px 26px;
+    margin: 28px 0;
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  .signoff {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    margin-top: 8px;
+  }
+
+  .crosssell {
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .crosssell .ui {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .crosssell .cta {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--electric);
+    white-space: nowrap;
+  }
+
+  .license-block {
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.6;
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+    margin-top: 32px;
+  }
+
+  /* small helper */
+  .center { text-align: center; }
+</style>
+</head>
+<body>
+
+
+<!-- ============================================================ -->
+<!-- COVER PAGE                                                    -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel cover">
+    <div class="cover-top">
+      <span class="mono">The AI Automation Queen · Shift &amp; Lead</span>
+    </div>
+    <div class="cover-mid">
+      <h1 class="title">The<br>Judge&rsquo;s <span class="accent">Prompts</span></h1>
+      <p class="subtitle">42 prompts that make AI prove its work before you trust it. Stop building. Start judging.</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="byline">
+        <strong>Fatiha Chikh</strong>
+        <span class="ui">The AI Automation Queen &middot; Shift &amp; Lead</span>
+      </div>
+      <div class="edition mono">Edition 1 &middot; 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- HOW TO USE THIS                                               -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Before you start</span>
+  <h2 class="page-title">How to use this pack</h2>
+  <p class="lede">Three ideas, then you're free to jump straight to the prompts.</p>
+
+  <ol class="howto-list">
+    <li><strong>Don't use all 42 at once.</strong> Pick the three that match your current failure mode. Most people start with #11 (Prove It's Done), #21 (Interview First), and #29 (The Acceptance Test). That trio alone changes how you work with AI.</li>
+    <li><strong>Chain them in order.</strong> Council prompts before you build, so bad ideas get argued down early. Full Context prompts while you build, so the AI isn't guessing. Self-Verify prompts after, so nothing ships on a claim. Goal-Run prompts for anything you'll leave unattended.</li>
+    <li><strong>Adapt every bracket.</strong> [Like this] marks a spot that's yours to fill in. The more specific you make it, the stronger the prompt gets. A vague bracket gets a vague answer.</li>
+  </ol>
+
+  <div class="traffic-card">
+    <div class="traffic-title">The Traffic Light Rule</div>
+    <p class="ui" style="margin-bottom:16px; color:var(--muted); font-size:13.5px;">
+      Every prompt in this pack is written to model good data hygiene: names become [Client] or [Me], numbers get rounded, nothing sensitive gets pasted in. Use this rule for anything you put into an AI tool, in this pack or anywhere else.
+    </p>
+    <div class="traffic-row">
+      <div class="dot green"></div>
+      <div><strong>Green, share freely.</strong> General questions, public information, your own drafts with nothing identifying in them.</div>
+    </div>
+    <div class="traffic-row">
+      <div class="dot amber"></div>
+      <div><strong>Amber, redact first.</strong> Anything about a real client, real numbers, or real names. Swap them for [Client], [rounded figure], [Me] before you paste.</div>
+    </div>
+    <div class="traffic-row">
+      <div class="dot red"></div>
+      <div><strong>Red, never in a personal AI account.</strong> Credentials, contracts, anything covered by an NDA, anything you wouldn't want screenshotted. That data needs a business-grade tool with a real data agreement, not a free personal chat window.</div>
+    </div>
+  </div>
+
+  <p class="ui" style="font-size:13.5px; color:var(--muted);">Every prompt in this pack already follows this rule. Copy them as they are, or tighten them further for your own situation.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TABLE OF CONTENTS                                             -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Contents</span>
+  <h2 class="page-title">Where to find what you need</h2>
+
+  <div class="toc-part">
+    <div class="toc-part-head">
+      <div class="toc-part-num">01</div>
+      <div class="toc-part-title">The Council <span class="toc-count">10 prompts &middot; decide before you build</span></div>
+    </div>
+    <div class="toc-items">
+      <span><span class="num">01</span>The Devil's Advocate</span>
+      <span><span class="num">02</span>The Three-Chair Panel</span>
+      <span><span class="num">03</span>The Pre-Mortem</span>
+      <span><span class="num">04</span>The Steelman Swap</span>
+      <span><span class="num">05</span>The Missing Option</span>
+      <span><span class="num">06</span>The Assumption Audit</span>
+      <span><span class="num">07</span>The Base-Rate Check</span>
+      <span><span class="num">08</span>The Confidence Ladder</span>
+      <span><span class="num">09</span>The Second Opinion</span>
+      <span><span class="num">10</span>The Silent Disagreement Hunt</span>
+    </div>
+  </div>
+
+  <div class="toc-part">
+    <div class="toc-part-head">
+      <div class="toc-part-num">02</div>
+      <div class="toc-part-title">Self-Verify <span class="toc-count">10 prompts &middot; never accept "done"</span></div>
+    </div>
+    <div class="toc-items">
+      <span><span class="num">11</span>Prove It's Done</span>
+      <span><span class="num">12</span>The Error Hunt</span>
+      <span><span class="num">13</span>Source or Silence</span>
+      <span><span class="num">14</span>The Nut-Free Check</span>
+      <span><span class="num">15</span>Read It Back Cold</span>
+      <span><span class="num">16</span>The Edge-Case Sweep</span>
+      <span><span class="num">17</span>The Numbers Audit</span>
+      <span><span class="num">18</span>Two Drafts, One Judge</span>
+      <span><span class="num">19</span>The Regression Check</span>
+      <span><span class="num">20</span>Score It Before I Do</span>
+    </div>
+  </div>
+
+  <div class="toc-part">
+    <div class="toc-part-head">
+      <div class="toc-part-num">03</div>
+      <div class="toc-part-title">Full Context <span class="toc-count">8 prompts &middot; stop starving your AI</span></div>
+    </div>
+    <div class="toc-items">
+      <span><span class="num">21</span>The Interview First</span>
+      <span><span class="num">22</span>What Am I Not Telling You?</span>
+      <span><span class="num">23</span>The Voice Calibration</span>
+      <span><span class="num">24</span>The Constraint Load</span>
+      <span><span class="num">25</span>The Audience Stand-In</span>
+      <span><span class="num">26</span>Business Brain Load</span>
+      <span><span class="num">27</span>The Definition Lock</span>
+      <span><span class="num">28</span>Refresh the Context</span>
+    </div>
+  </div>
+
+  <div class="toc-part">
+    <div class="toc-part-head">
+      <div class="toc-part-num">04</div>
+      <div class="toc-part-title">The Goal-Run <span class="toc-count">7 prompts &middot; judge outcomes, not steps</span></div>
+    </div>
+    <div class="toc-items">
+      <span><span class="num">29</span>The Acceptance Test</span>
+      <span><span class="num">30</span>The Handoff Brief</span>
+      <span><span class="num">31</span>The Checkpoint Gate</span>
+      <span><span class="num">32</span>Judge the Runner</span>
+      <span><span class="num">33</span>The Diff Report</span>
+      <span><span class="num">34</span>The Rollback Plan</span>
+      <span><span class="num">35</span>The Unattended Rule</span>
+    </div>
+  </div>
+
+  <div class="toc-part">
+    <div class="toc-part-head">
+      <div class="toc-part-num">05</div>
+      <div class="toc-part-title">Sensitive Work <span class="toc-count">5 prompts &middot; money, clients, reputation</span></div>
+    </div>
+    <div class="toc-items">
+      <span><span class="num">36</span>The Client-Facing Gate</span>
+      <span><span class="num">37</span>The Money Math Proof</span>
+      <span><span class="num">38</span>The Legal Humility Check</span>
+      <span><span class="num">39</span>The Screenshot Test</span>
+      <span><span class="num">40</span>The Send-Delay Judgment</span>
+    </div>
+  </div>
+
+  <div class="toc-part">
+    <div class="toc-part-head">
+      <div class="toc-part-num">B</div>
+      <div class="toc-part-title">The Daily Habit <span class="toc-count">2 prompts &middot; bonus</span></div>
+    </div>
+    <div class="toc-items">
+      <span><span class="num">41</span>The Morning Brief</span>
+      <span><span class="num">42</span>The Friday Receipts</span>
+    </div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- WHY THIS EXISTS + THE 4 UPGRADES                              -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Why this exists</span>
+  <h2 class="page-title">You're not the builder anymore</h2>
+
+  <p>Every AI guru sells you speed. "Look how fast it builds!" Here's what they don't show you: the part that matters to a real business owner. How do you know it's right?</p>
+
+  <p>I spent 20+ years inside big corporate tech. The thing that environment beat into me wasn't how to build. It was how to verify. Nothing shipped because someone said it was done. It shipped because it proved it was done.</p>
+
+  <p>That's the mindset shift this pack installs. You're not the builder anymore. You're the judge. AI does the work. These prompts are how you check it, without doing the work yourself.</p>
+
+  <p>Every prompt here is one I actually use, running a business where 137 AI employees do the work and I sign off on it. Copy, paste, adapt. Tool-agnostic: they work in Claude, ChatGPT, Gemini, Copilot, anything.</p>
+
+  <h3 style="font-size:1.3rem; margin-top:36px;">The 4 Upgrades</h3>
+  <p class="lede">The framework behind every prompt in this pack.</p>
+
+  <p style="font-size:14.5px; color:var(--muted); font-family:'Inter',sans-serif; margin-bottom:6px;">Most people use AI like an intern: give a task, accept the answer, hope. Here's the upgrade path.</p>
+
+  <div style="margin-top:18px;">
+    <div class="upgrade-card">
+      <div class="upgrade-num">1</div>
+      <div class="upgrade-body">
+        <div class="upgrade-title">The Council</div>
+        <p>Make AI disagree with you before you build. One opinion is a guess. A panel with assigned opposing roles is a decision.</p>
+      </div>
+    </div>
+    <div class="upgrade-card">
+      <div class="upgrade-num">2</div>
+      <div class="upgrade-body">
+        <div class="upgrade-title">Self-Verify</div>
+        <p>Never accept "done." Make it prove its work against explicit criteria, and hunt for its own mistakes.</p>
+      </div>
+    </div>
+    <div class="upgrade-card">
+      <div class="upgrade-num">3</div>
+      <div class="upgrade-body">
+        <div class="upgrade-title">Full Context</div>
+        <p>Generic answers mean a starving AI. Feed it your real business (offers, voice, clients, constraints) before you ask.</p>
+      </div>
+    </div>
+    <div class="upgrade-card">
+      <div class="upgrade-num">4</div>
+      <div class="upgrade-body">
+        <div class="upgrade-title">The Goal Run</div>
+        <p>Hand it an outcome, not a step. Then judge the outcome against the checklist you wrote before it started.</p>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top:24px; font-size:14.5px; color:var(--muted); font-family:'Inter',sans-serif;">Every prompt below serves one of these four. Use the section that matches the failure you're seeing.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 1 DIVIDER : THE COUNCIL                                  -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Part 01 &middot; 10 prompts</div>
+    <h2 class="part-title">The Council</h2>
+    <p class="part-purpose">Make AI disagree with you before you build. One opinion is a guess; a panel is a decision.</p>
+    <div class="part-count mono">Prompts 01&ndash;10</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 1 CONTENT : COUNCIL PROMPTS                              -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Part 01 &middot; The Council</span>
+  <h2 class="page-title">Decide before you build</h2>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Start here</span>
+    <div class="prompt-label"><span class="prompt-num">01</span><span class="prompt-name">The Devil's Advocate</span></div>
+    <div class="prompt-block">Before I act on this, argue AGAINST it as strongly as you can. What breaks, what's the cost of being wrong, and what would a skeptic who dislikes this idea say? Only after that, tell me if you still recommend it and why.</div>
+    <div class="prompt-when"><strong>Use when:</strong> any decision that costs money or reputation if wrong.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">02</span><span class="prompt-name">The Three-Chair Panel</span></div>
+    <div class="prompt-block">Answer this question three times, as three different experts: [a cautious CFO], [an aggressive growth marketer], [my most demanding customer]. Have them disagree where they honestly would. Then write the one-paragraph verdict that survives all three.</div>
+    <div class="prompt-when"><strong>Use when:</strong> strategy calls, pricing, positioning.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">03</span><span class="prompt-name">The Pre-Mortem</span></div>
+    <div class="prompt-block">Assume this plan failed completely six months from now. Write the honest post-mortem: the three most likely reasons it failed, ranked. For each, what early warning sign would have shown up first?</div>
+    <div class="prompt-when"><strong>Use when:</strong> launching anything.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">04</span><span class="prompt-name">The Steelman Swap</span></div>
+    <div class="prompt-block">Here are two options I'm choosing between: [A] and [B]. Steelman each one, the strongest honest case for it, before you compare. No verdict until both cases are made properly.</div>
+    <div class="prompt-when"><strong>Use when:</strong> you're leaning one way and want to check the pull is honest, not just comfortable.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">05</span><span class="prompt-name">The Missing Option</span></div>
+    <div class="prompt-block">I've framed this as a choice between [A] and [B]. What option C am I not seeing? Give me two alternatives that reframe the problem, even if they seem unrealistic at first.</div>
+    <div class="prompt-when"><strong>Use when:</strong> a decision feels stuck between two bad choices.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<div class="page">
+  <span class="kicker">Part 01 &middot; The Council</span>
+  <h2 class="page-title">Decide before you build, continued</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">06</span><span class="prompt-name">The Assumption Audit</span></div>
+    <div class="prompt-block">List every assumption baked into my request, things I've treated as true without saying so. Rank them by how wrong they'd have to be to change the answer. Flag the one you'd verify first.</div>
+    <div class="prompt-when"><strong>Use when:</strong> the plan relies on things nobody's actually checked.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">07</span><span class="prompt-name">The Base-Rate Check</span></div>
+    <div class="prompt-block">Before your recommendation: what usually happens when people in my situation try this? What's the honest base rate of success, and what separates the ones who succeed?</div>
+    <div class="prompt-when"><strong>Use when:</strong> you want reality instead of optimism before you commit.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">08</span><span class="prompt-name">The Confidence Ladder</span></div>
+    <div class="prompt-block">Give your answer, then rate your confidence 1-10 and explain what information would move it up or down two points. If it's below 7, say what you'd need to check first.</div>
+    <div class="prompt-when"><strong>Use when:</strong> you can't tell if an answer is solid or a best guess dressed up as one.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">09</span><span class="prompt-name">The Second Opinion (cross-tool)</span></div>
+    <div class="prompt-block">[Paste output from one AI into another:] Another assistant produced this answer to my question. Review it as a rival expert: what did it get right, what did it miss, what would you have done differently?</div>
+    <div class="prompt-when"><strong>Use when:</strong> the decision is big enough to justify a second, independent set of eyes.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">10</span><span class="prompt-name">The Silent Disagreement Hunt</span></div>
+    <div class="prompt-block">Read my plan. Where do you actually disagree with me but have been trained to be agreeable about it? Say the uncomfortable part plainly, I'm paying for the disagreement, not the encouragement.</div>
+    <div class="prompt-when"><strong>Use when:</strong> you suspect you're getting agreement instead of honesty.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 2 DIVIDER : SELF-VERIFY                                  -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Part 02 &middot; 10 prompts</div>
+    <h2 class="part-title">Self-Verify</h2>
+    <p class="part-purpose">Never accept "done." Make it prove its work against explicit criteria, and hunt for its own mistakes.</p>
+    <div class="part-count mono">Prompts 11&ndash;20</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 2 CONTENT : SELF-VERIFY PROMPTS                          -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Part 02 &middot; Self-Verify</span>
+  <h2 class="page-title">Never accept "done"</h2>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">The most valuable prompt in this pack</span>
+    <div class="prompt-label"><span class="prompt-num">11</span><span class="prompt-name">Prove It's Done</span></div>
+    <div class="prompt-block">You say this is complete. Prove it: walk through each requirement from my original request, quote the part of your output that satisfies it, and mark any requirement you only partially met. Be strict, a miss labeled as a miss is worth more to me than a claimed pass.</div>
+    <div class="prompt-when"><strong>Use on everything.</strong> This single prompt does more work than any other in this pack.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">12</span><span class="prompt-name">The Error Hunt</span></div>
+    <div class="prompt-block">Before I use this, hunt your own output for errors: factual claims that could be wrong, numbers that don't add up, steps that skip something, names/dates you might have invented. List every suspect item with a risk rating.</div>
+    <div class="prompt-when"><strong>Use when:</strong> the output will be read by someone other than you.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">13</span><span class="prompt-name">Source or Silence</span></div>
+    <div class="prompt-block">Go back through your answer and mark every factual claim as either [VERIFIABLE, here's where] or [MY GENERATION, treat with caution]. Rewrite the answer keeping only what survives.</div>
+    <div class="prompt-when"><strong>Use when:</strong> facts and figures matter and you can't tell which is which.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">14</span><span class="prompt-name">The Nut-Free Check</span></div>
+    <div class="prompt-block">You've told me this is safe/correct/compliant. That's exactly the kind of claim that's dangerous when wrong. What would have to be true for your claim to hold? Which of those things have you actually verified vs assumed?</div>
+    <div class="prompt-when"><strong>Use when:</strong> a wrong answer here could hurt someone, not just embarrass you.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">15</span><span class="prompt-name">Read It Back Cold</span></div>
+    <div class="prompt-block">Read your output as if you'd never seen my request, as a stranger receiving it. What's confusing, what's missing context, what would make the stranger ask "wait, what about&hellip;"? Fix those before showing me again.</div>
+    <div class="prompt-when"><strong>Use when:</strong> the reader won't have the context you had while asking.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<div class="page">
+  <span class="kicker">Part 02 &middot; Self-Verify</span>
+  <h2 class="page-title">Never accept "done", continued</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">16</span><span class="prompt-name">The Edge-Case Sweep</span></div>
+    <div class="prompt-block">What inputs or situations would break this? Give me the five most likely edge cases, and for each: does your solution handle it, fail loudly, or fail silently? Silent failures first.</div>
+    <div class="prompt-when"><strong>Use when:</strong> this will run without you watching it every time.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">17</span><span class="prompt-name">The Numbers Audit</span></div>
+    <div class="prompt-block">Recompute every number in your answer from scratch, showing the arithmetic. If any number can't be recomputed from stated inputs, flag it as unverified.</div>
+    <div class="prompt-when"><strong>Use when:</strong> money, time, or metrics are part of the answer.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">18</span><span class="prompt-name">Two Drafts, One Judge</span></div>
+    <div class="prompt-block">Produce two genuinely different versions of this. Then judge them against [my criteria] and tell me which wins, where, and what you'd steal from the loser.</div>
+    <div class="prompt-when"><strong>Use when:</strong> the first draft feels fine but you haven't seen an alternative.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">19</span><span class="prompt-name">The Regression Check</span></div>
+    <div class="prompt-block">You just changed [X]. What else in this document/plan/system did that change silently affect? Check every section that references or depends on it.</div>
+    <div class="prompt-when"><strong>Use when:</strong> you've asked for one small edit to something with many moving parts.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">20</span><span class="prompt-name">Score It Before I Do</span></div>
+    <div class="prompt-block">Score your own output against this rubric before I see it: [accuracy / completeness / voice match / usability, each /10]. Anything under 8, fix first and tell me what you changed.</div>
+    <div class="prompt-when"><strong>Use when:</strong> you want a consistent quality bar without re-explaining it every time.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 3 DIVIDER : FULL CONTEXT                                 -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Part 03 &middot; 8 prompts</div>
+    <h2 class="part-title">Full Context</h2>
+    <p class="part-purpose">Generic answers mean a starving AI. Feed it your real business before you ask.</p>
+    <div class="part-count mono">Prompts 21&ndash;28</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 3 CONTENT : FULL CONTEXT PROMPTS                         -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Part 03 &middot; Full Context</span>
+  <h2 class="page-title">Stop starving your AI</h2>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">Start here</span>
+    <div class="prompt-label"><span class="prompt-num">21</span><span class="prompt-name">The Interview First</span></div>
+    <div class="prompt-block">Before you write anything: interview me. Ask the 5-7 questions whose answers would most change the result. Don't start until I've answered.</div>
+    <div class="prompt-when"><strong>Use when:</strong> any important deliverable from a cold start.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">22</span><span class="prompt-name">What Am I Not Telling You?</span></div>
+    <div class="prompt-block">Based on what I've asked, what context are you missing that would most improve your answer? List what you'd want to know about my business, audience, and constraints, I'll fill in the blanks.</div>
+    <div class="prompt-when"><strong>Use when:</strong> you've already asked once and the answer felt generic.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">23</span><span class="prompt-name">The Voice Calibration</span></div>
+    <div class="prompt-block">Here are three things I've written that sound like me: [paste]. Describe my voice in 6 rules, then keep those rules visible and follow them in everything you produce for me in this conversation.</div>
+    <div class="prompt-when"><strong>Use when:</strong> the output is technically right but doesn't sound like you.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">24</span><span class="prompt-name">The Constraint Load</span></div>
+    <div class="prompt-block">Before answering, restate my constraints back to me: budget, time, tools I use, things I refuse to do. If I haven't given you some, ask. Solutions that ignore constraints are worthless to me.</div>
+    <div class="prompt-when"><strong>Use when:</strong> you're worried the answer will assume resources you don't have.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<div class="page">
+  <span class="kicker">Part 03 &middot; Full Context</span>
+  <h2 class="page-title">Stop starving your AI, continued</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">25</span><span class="prompt-name">The Audience Stand-In</span></div>
+    <div class="prompt-block">My reader is [a non-technical corporate professional who's overwhelmed by AI]. Before you answer me, describe that person's day, fears, and vocabulary in three lines, then answer for them, not for me.</div>
+    <div class="prompt-when"><strong>Use when:</strong> you're writing for someone other than yourself.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">26</span><span class="prompt-name">Business Brain Load</span></div>
+    <div class="prompt-block">Here's my business context: [paste your offers, audience, voice rules]. Confirm you've absorbed it by summarizing my business back to me in 4 lines, including the thing you'd say I care most about. Then we start.</div>
+    <div class="prompt-when"><strong>Use when:</strong> starting a new project or a new AI conversation from scratch.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">27</span><span class="prompt-name">The Definition Lock</span></div>
+    <div class="prompt-block">We keep using the word [X]. Define what YOU mean by it, I'll correct it, and we lock that definition for the rest of this work. Misaligned definitions are where wrong answers hide.</div>
+    <div class="prompt-when"><strong>Use when:</strong> a conversation keeps circling without landing.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">28</span><span class="prompt-name">Refresh the Context</span></div>
+    <div class="prompt-block">We're deep in this conversation. Summarize: what we've decided, what's open, and what constraints are active. I'll correct any drift, then we continue from the corrected summary.</div>
+    <div class="prompt-when"><strong>Use when:</strong> a long conversation is starting to feel like it's lost the thread.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 4 DIVIDER : GOAL-RUN                                     -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Part 04 &middot; 7 prompts</div>
+    <h2 class="part-title">The Goal-Run</h2>
+    <p class="part-purpose">Hand it an outcome, not a step. Judge the outcome against the checklist you wrote first.</p>
+    <div class="part-count mono">Prompts 29&ndash;35</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 4 CONTENT : GOAL-RUN PROMPTS                             -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Part 04 &middot; The Goal-Run</span>
+  <h2 class="page-title">Judge outcomes, not steps</h2>
+
+  <div class="prompt-card flagship">
+    <span class="flagship-tag">The judge's core move</span>
+    <div class="prompt-label"><span class="prompt-num">29</span><span class="prompt-name">The Acceptance Test (write it first)</span></div>
+    <div class="prompt-block">Before you start: write the checklist I should use to judge whether your result is acceptable. I'll approve or edit the checklist, then do the work and grade yourself against it.</div>
+    <div class="prompt-when"><strong>The idea in one line:</strong> define "done" before the work exists.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">30</span><span class="prompt-name">The Handoff Brief</span></div>
+    <div class="prompt-block">You're about to do this multi-step job. First give me: the steps you'll take, what you'll produce at each, and where you might need my judgment. I'll flag where I want a checkpoint.</div>
+    <div class="prompt-when"><strong>Use when:</strong> handing off a job with several stages.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">31</span><span class="prompt-name">The Checkpoint Gate</span></div>
+    <div class="prompt-block">Stop at [step]. Show me what you have, list what changed from the plan, and wait for my go before continuing. Don't optimize past a gate.</div>
+    <div class="prompt-when"><strong>Use when:</strong> one step in the job needs your sign-off before the next begins.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">32</span><span class="prompt-name">Judge the Runner</span></div>
+    <div class="prompt-block">[After a long task:] Here was the goal: [paste]. Here's the checklist we agreed: [paste]. Grade the result item by item, pass, partial, fail, with evidence quoted for each grade. No narrative, just the grading table first.</div>
+    <div class="prompt-when"><strong>Use when:</strong> a long task just finished and you need the verdict, not the story.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<div class="page">
+  <span class="kicker">Part 04 &middot; The Goal-Run</span>
+  <h2 class="page-title">Judge outcomes, not steps, continued</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">33</span><span class="prompt-name">The Diff Report</span></div>
+    <div class="prompt-block">Compare what you delivered against what I asked for. Three lists: delivered as asked / delivered differently (and why) / not delivered (and why). The middle list is where trust is won or lost.</div>
+    <div class="prompt-when"><strong>Use when:</strong> the delivered result feels slightly off from what you asked for.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">34</span><span class="prompt-name">The Rollback Plan</span></div>
+    <div class="prompt-block">Before we ship this change: if it turns out wrong, what exactly do we undo, in what order, and what can't be undone? If anything is irreversible, flag it now, irreversible needs my explicit sign-off.</div>
+    <div class="prompt-when"><strong>Use when:</strong> the change is hard or costly to reverse.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">35</span><span class="prompt-name">The Unattended Rule</span></div>
+    <div class="prompt-block">You'll do this while I'm away. Rules: [what you may do freely], [what waits for my approval], [what you must never do]. Repeat the rules back, then begin.</div>
+    <div class="prompt-when"><strong>Use when:</strong> AI will keep working after you've stepped away.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 5 DIVIDER : SENSITIVE WORK                                -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Part 05 &middot; 5 prompts</div>
+    <h2 class="part-title">Sensitive Work</h2>
+    <p class="part-purpose">Money, clients, reputation: the places where a wrong answer costs the most.</p>
+    <div class="part-count mono">Prompts 36&ndash;40</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 5 CONTENT : SENSITIVE WORK PROMPTS                       -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Part 05 &middot; Sensitive Work</span>
+  <h2 class="page-title">Money, clients, reputation</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">36</span><span class="prompt-name">The Client-Facing Gate</span></div>
+    <div class="prompt-block">This will be read by a client. Before I see it: check it for anything that overpromises, anything that could embarrass me if screenshot, and anything that doesn't sound like me. Rewrite those parts and show me what you changed.</div>
+    <div class="prompt-when"><strong>Use when:</strong> a client will read this before you get a second look at it.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">37</span><span class="prompt-name">The Money Math Proof</span></div>
+    <div class="prompt-block">This involves money. Show every calculation, state every assumption with its source, and mark clearly which numbers are estimates. Then tell me the worst-case if each estimate is 30% off.</div>
+    <div class="prompt-when"><strong>Use when:</strong> a number here influences a real financial decision.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">38</span><span class="prompt-name">The Legal Humility Check</span></div>
+    <div class="prompt-block">Does any part of this touch legal, tax, or compliance territory? Mark those sections [PROFESSIONAL REVIEW NEEDED], and never present them as settled advice.</div>
+    <div class="prompt-when"><strong>Use when:</strong> the topic brushes up against legal, tax, or compliance ground.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">39</span><span class="prompt-name">The Screenshot Test</span></div>
+    <div class="prompt-block">If this exact text were screenshot and posted publicly with my name on it, what's the worst honest reading of it? Fix anything that fails that test.</div>
+    <div class="prompt-when"><strong>Use when:</strong> anything you're about to publish or send publicly.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">40</span><span class="prompt-name">The Send-Delay Judgment</span></div>
+    <div class="prompt-block">I'm about to send this while [annoyed/excited/tired]. Read it as the recipient. What lands differently than I intend? What would 'tomorrow-me' soften or cut?</div>
+    <div class="prompt-when"><strong>Use when:</strong> you're about to hit send in a heightened state of mind.</div>
+  </div>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- BONUS DIVIDER : DAILY HABIT                                    -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="dark-panel divider">
+    <div class="part-num mono">Bonus &middot; 2 prompts</div>
+    <h2 class="part-title">The Judge&rsquo;s Daily Habit</h2>
+    <p class="part-purpose">Two small prompts that keep the judge's seat occupied, every single day.</p>
+    <div class="part-count mono">Prompts 41&ndash;42</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- BONUS CONTENT : DAILY HABIT PROMPTS                            -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Bonus &middot; The Daily Habit</span>
+  <h2 class="page-title">Keep the judge's seat occupied</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">41</span><span class="prompt-name">The Morning Brief</span></div>
+    <div class="prompt-block">Each morning: list what you completed since yesterday, what you're blocked on, and the ONE decision only I can make today. Nothing else.</div>
+    <div class="prompt-when"><strong>Use when:</strong> every morning, before anything else, if AI is doing ongoing work for you.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-label"><span class="prompt-num">42</span><span class="prompt-name">The Friday Receipts</span></div>
+    <div class="prompt-block">It's Friday. Give me the week's receipts: tasks completed, hours saved (honest estimate with reasoning), anything you got wrong and how it was caught. The 'got wrong' section is mandatory, empty means you didn't look.</div>
+    <div class="prompt-when"><strong>Use when:</strong> the end of every week. The mandatory "got wrong" section is what makes this one honest.</div>
+  </div>
+
+  <p style="margin-top:32px; font-family:'Inter',sans-serif; font-size:14px; color:var(--muted);">These two prompts are the smallest habit in this pack and the one most people skip. Run them for a month and you'll have a written record of exactly where AI earned its keep, and exactly where it needed you.</p>
+
+  <div class="page-footer">&copy; 2026 Fatiha Chikh / Shift &amp; Lead &middot; Licensed to [buyer email] &middot; resale and redistribution prohibited</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CLOSING PAGE                                                  -->
+<!-- ============================================================ -->
+<div class="page">
+  <span class="kicker">Closing</span>
+  <h2 class="page-title">What to do next</h2>
+
+  <p>You now have all 42. Don't try to use them all this week.</p>
+
+  <ol class="howto-list">
+    <li><strong>Pick your trio.</strong> Start with #11 (Prove It's Done), #21 (Interview First), and #29 (The Acceptance Test). Run them on whatever you're working on today.</li>
+    <li><strong>Notice what breaks.</strong> The prompt that makes you uncomfortable is usually the one you needed. That discomfort is the judge's seat working.</li>
+    <li><strong>Build the chain.</strong> Council before you build, Full Context while you build, Self-Verify after, Goal-Run for anything unattended. Once it's a habit, you stop thinking about which prompt to reach for.</li>
+  </ol>
+
+  <div class="closing-note">
+    <p style="margin-bottom:12px;">You're not behind. You were just never taught to judge.</p>
+    <div class="signoff">Now you have the gavel.</div>
+    <p class="ui" style="margin-top:14px; font-style:normal; font-size:14px; color:var(--muted);">From Fatiha</p>
+  </div>
+
+  <div class="crosssell">
+    <div class="ui">Want the next system? More prompt packs and tools like this one live in the Store.</div>
+    <a class="cta" href="../../store.html">See what's in the Store &rarr;</a>
+  </div>
+
+  <div class="license-block">
+    <p style="margin-bottom:8px;"><strong style="color:var(--ink);">License.</strong> &copy; 2026 Fatiha Chikh / Shift &amp; Lead. Original IP. For the buyer's personal or single-business use. Redistribution, resale, or use as AI training data is prohibited. Free updates are included, this pack improves as the landscape changes.</p>
+    <p>Licensed to [buyer email] &middot; resale and redistribution prohibited</p>
+  </div>
+</div>
+</body>
+</html>

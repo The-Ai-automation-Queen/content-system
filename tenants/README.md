@@ -20,23 +20,34 @@ their files. Same code, different "second brain".
 - The dashboard has a tenant switcher (top-right). Reading the URL
   `/?tenant=acme` swaps the active brain.
 
-## Onboard a new client (10-minute checklist)
+## Onboard a new client — quick reference
 
-1. **Copy the template:** `cp -r tenants/_template tenants/<client-slug>`.
-2. **Fill the brain.** In their folder, fill `positioning/SKILL.md` (who they
-   serve, the promise, pillars, voice), `inventory.md` (channels, offers,
-   connections), and a starter `content-vault.md`. Use the operator's profiling
-   pass — never make this up.
-3. **Set their connections.** Edit `tenant.json` with their Blotato workspace
-   id, HeyGen avatar/voice ids (after a HeyGen clone session with them),
-   GHL or ManyChat workspace, Opus Clip key, etc. Use env-var names; never paste keys.
-4. **Wire their lead magnets.** Fill `lead-magnets.csv` with their active
-   comment-keyword CTAs and resource URLs.
-5. **Test one piece end-to-end.** Run `content-engine --tenant <slug>` →
+Full step-by-step (with the actual discovery-call questions) lives in
+`docs/CLIENT-ONBOARDING-PLAYBOOK.md`. Short version:
+
+1. **Discovery call first.** Never scaffold from a blank guess — get their
+   positioning, audience, voice, and offers straight from them.
+2. **Copy the template:** `cp -r tenants/_template tenants/<client-slug>` — this
+   now produces a fully working scaffold, not just a to-do list.
+3. **Fill the brain.** `positioning/SKILL.md`, `inventory.md`, `lead-magnets.csv`
+   — straight from the discovery call, never invented.
+4. **Seed the personal brain.** Run `brain-manager seed --tenant <slug>` right
+   after discovery, while the answers are fresh.
+5. **Build their voice file.** Drop 10–15 real samples of their own writing
+   into `tenants/<slug>/voice-corpus/`, then `voice-file compile --tenant <slug>`
+   and `voice-file validate --tenant <slug>`.
+6. **Set their connections.** Edit `tenant.json` with their Blotato workspace
+   id, HeyGen avatar/voice ids, GHL or ManyChat workspace, etc. Env-var names
+   only — never paste keys. AI-twin/avatar video is a separate, not-yet
+   tenant-scoped system — see the playbook §5 before offering it.
+7. **Test one piece end-to-end.** Run `content-engine --tenant <slug>` →
    `visual-engine --tenant <slug>` → `distribution --tenant <slug>`. The first
    pass surfaces any missing connection.
-6. **Schedule their loop.** Add their `/loop` entry to `.claude/settings.json`
+8. **Schedule their loop.** Add their `/loop` entry to `.claude/settings.json`
    (or run from their own scheduled session).
+9. **Go-live handoff.** Confirm they know: drafts land daily, they review and
+   mark `READY TO POST`, and publishing itself is a manual release from
+   Blotato — the machine never posts without a human click.
 
 ## Security notes
 
@@ -52,13 +63,21 @@ their files. Same code, different "second brain".
 - The brand brain (positioning, voice, pillars) — by design, each tenant owns
   their own.
 - The lead-magnets registry — keywords are tenant-scoped.
-- The vault and research notes — tenant-scoped.
+- The vault, research notes, and personal brain — tenant-scoped.
+- The voice corpus and compiled voice file — each client's own real writing,
+  never mixed with another client's or with Fatiha's.
+- The performance log and its Lessons — one client's winning/losing patterns
+  are not evidence for another client's audience.
 - The connected accounts (Blotato, HeyGen, GHL/ManyChat workspaces, etc.) —
   tenant-scoped.
+- **The AI twin/avatar** — not tenant-scoped at all yet (separate repo, single
+  global asset folder). Treat as single-client-only until that's fixed.
 
 ## What IS shared
 
-- The **skills** (the engine).
+- The **skills** (the engine) — including `copy-craft`'s platform mechanics,
+  which are brand-agnostic (though each tenant's own `performance-log.md`
+  Lessons still outrank it for that specific audience).
 - The **inspiration-library** (the format/hook playbook) — it's brand-agnostic
   reference.
 - The **dashboard code** (one UI serves all tenants).

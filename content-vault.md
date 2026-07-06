@@ -13,6 +13,13 @@
 
 ## Most recent (quick reference)
 
+- 30/06/2026 | LinkedIn | "I Trust AI Now Because of 20 Years at Dell" — why rigor makes me trust it | DRAFT
+- 30/06/2026 | LinkedIn | "I'm Not the Builder Anymore. I'm the Judge." — the mindset shift | DRAFT
+- 30/06/2026 | Short-form video | "6 Helpers, 8 Minutes, a Full Launch Plan" — let it run without you | DRAFT
+- 30/06/2026 | Short-form video | "Generic AI Answers? You're Starving It." — give it your whole business | DRAFT
+- 30/06/2026 | Short-form video | "AI Said It Was Done. It Wasn't." — make it prove its work | DRAFT
+- 30/06/2026 | Short-form video | "Your AI Agrees With Everything. That's Costing You." — make it argue first | DRAFT
+- 30/06/2026 | LinkedIn carousel | "The 4 Upgrades" — stop using AI like an intern | DRAFT
 - 27/06/2026 | LinkedIn | "Most People Automate the Wrong Thing First" — pick your first AI employee | READY TO POST
 - 27/06/2026 | LinkedIn | "Selling AI Agents for $5k Isn't Freedom — It's Freelancing With Extra Steps" — founding invite | DRAFT
 - 27/06/2026 | LinkedIn | "The Only Test That Tells You If an AI Tool Is Worth It" — 5 hrs/week or it's a demo | READY TO POST
@@ -29,6 +36,299 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 023 — 30/06/2026 | LinkedIn | I Trust AI Now *Because* of 20 Years at Dell | DRAFT
+
+**Status:** DRAFT
+**Platform:** LinkedIn (text post)
+**Format:** Vulnerability-before-credentials story → soft CTA
+**Topic:** Real Talk seasoning + credibility bridge. The corporate rigor that made her skeptical of AI is the same rigor that now lets her trust it — because she makes it prove its work. Closes the "4 Upgrades" sprint with the why-you-can-trust-me layer.
+**Pattern used:** Vulnerability Before Credentials (7) + Named Framework (12, references "the 4 upgrades")
+**Pillar:** Real Talk
+**Critic score:** 8.6/10 — APPROVED FOR REVIEW
+**Source:** RESEARCH 019 (self-verify angle + builder→judge shift).
+
+---
+For years, I was the person in the room who didn't trust the shiny new thing.
+
+Twenty years at Dell, Intel, Microsoft will do that to you. You learn the hard way that "it works on my machine" isn't proof. That "trust me, it's fine" is how things blow up in production. You learn to ask, every single time: how do we *know*?
+
+So when AI showed up promising to run my business, my first reaction wasn't excitement. It was the same question I'd asked for two decades. How do I know it's actually right?
+
+Here's the twist I didn't expect.
+
+That instinct — the one that made me skeptical — is exactly the thing that lets me trust AI now.
+
+Because I stopped asking it to just *do* the work. I started making it *prove* the work. Show me. Check it. Test it against the messy edge cases. Hand me the receipts, not your word.
+
+Once I did that, everything changed. I'm not crossing my fingers and hoping the output is good. I've built the checks in. So I can hand off the task and trust what comes back — without redoing it myself.
+
+The people who get burned by AI aren't the careful ones. They're the ones who took "done" at face value.
+
+Turns out the corporate habits I thought I was leaving behind are the ones making this whole thing work.
+
+What's a skill from your old job that's quietly running your new one? I'd love to hear it.
+
+#AIautomation #Solopreneur #CareerPivot
+
+---
+
+---
+
+## ENTRY 022 — 30/06/2026 | LinkedIn | I'm Not the Builder Anymore. I'm the Judge. | DRAFT
+
+**Status:** DRAFT
+**Platform:** LinkedIn (text post)
+**Format:** Provocation-first mindset reframe → soft CTA
+**Topic:** The payoff of the "4 Upgrades" sprint. The real shift isn't that AI does the work faster — it's that your job changes from builder/producer to decision-maker/judge. Lands on the win-back-time promise.
+**Pattern used:** Provocation-First Hook (1) + Named Framework (12)
+**Pillar:** The Freedom Business
+**Critic score:** 8.8/10 — APPROVED FOR REVIEW
+**Source:** RESEARCH 019 (builder → problem-solver/judge mindset line).
+
+---
+The most useful thing I did this year wasn't learning a new tool.
+
+It was firing myself from a job.
+
+For years I was the builder. The producer. The one with their hands on every piece of work — writing it, making it, fixing it, doing it again. If it got done, it's because I sat there and did it. That's the trap most of us are stuck in. We think being busy *is* the business.
+
+It's not. It's the bottleneck.
+
+Here's the shift that changed everything: I stopped being the one who does the work, and became the one who *judges* the work.
+
+The AI drafts. I decide. The AI builds. I check. The AI runs six things at once while I'm not even watching — and my job is to look at what comes back and say "yes, ship it" or "no, do it again."
+
+Builder → judge. That's the whole upgrade.
+
+And it's not a downgrade in importance. The judgment is the valuable part. Deciding what's worth building, spotting what's off, knowing what "good" looks like — a tool can't do that. You can.
+
+So if you're drowning in your own to-do list right now, the question isn't "what tool do I buy."
+
+It's "which of these am I doing because it actually needs *me* — and which am I doing just because I always have?"
+
+Hand off the second kind. Become the judge.
+
+That's how the business starts running without running your life.
+
+What's one thing on your list this week that doesn't actually need you — just your sign-off?
+
+#AIautomation #Solopreneur #Productivity
+
+---
+
+---
+
+## ENTRY 021 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | 6 Helpers, 8 Minutes, a Full Launch Plan | DRAFT
+
+**Status:** DRAFT
+**Platform:** Short-form video (Reel / TikTok / YouTube Short)
+**Format:** Result-first demo, ~35–45s talking-head + screen B-roll
+**Topic:** The unattended-delegation payoff. Set the goal, walk away, come back to finished work done by multiple AI helpers in parallel. Proof of the Freedom Business.
+**Pattern used:** Specific Number as Hook (11) + Result-First Demo (10) + Comment-Trigger CTA (5)
+**Pillar:** The Freedom Business
+**Critic score:** 8.5/10 — APPROVED FOR REVIEW
+**Source:** RESEARCH 019 (the 6-agent / ~8-minute `/goal` go-to-market run).
+
+---
+**[HOOK — 0:00, on screen: "6 helpers. 8 minutes." talk straight to camera]**
+Six helpers. Eight minutes. A full launch plan — and I made coffee while it happened.
+
+**[BODY]**
+Here's what most people get wrong about AI. They sit there and babysit it. One task. Watching the whole time. That's not help — that's a second job.
+
+So I stopped watching.
+
+I gave it one clear goal: build me a launch plan for this idea. And instead of doing it one piece at a time, it split the work across six helpers, all working at the same time.
+
+**[screen B-roll: files appearing — positioning, market research, launch plan, outreach, content calendar]**
+
+I walked away. Eight minutes later I came back to positioning, market research, a 14-day plan, outreach templates, and a content calendar. Done. Checked. Waiting for me.
+
+The old way, that's a team and a week. This was one quiet morning.
+
+The trick isn't doing AI faster. It's setting it up to run *without you* — so you stop being the bottleneck.
+
+**[CTA]**
+Want the exact setup I use to run things while I'm away from my desk? Comment "RUN" and I'll send it over.
+
+---
+
+---
+
+## ENTRY 020 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Generic AI Answers? You're Starving It. | DRAFT
+
+**Status:** DRAFT
+**Platform:** Short-form video (Reel / TikTok / YouTube Short)
+**Format:** Fear/call-out hook, ~30–40s talking-head
+**Topic:** Why people get bland, generic AI output — they give it no context. Feed it your actual business (your offer, your customer, your voice) and the output stops sounding like everyone else's.
+**Pattern used:** Contrarian Operational Hook (14) + Fear-First Hook (2) + Comment-Trigger CTA (5)
+**Pillar:** Build Once, Runs Forever
+**Critic score:** 8.4/10 — APPROVED FOR REVIEW
+**Source:** RESEARCH 019 ("manage your context" upgrade, translated to non-technical).
+
+---
+**[HOOK — 0:00, straight to camera]**
+If your AI keeps spitting out generic, could-be-anyone garbage — it's not the AI. You're starving it.
+
+**[BODY]**
+Everyone complains that AI sounds fake and bland. Of course it does. You gave it nothing to work with.
+
+You typed one rushed sentence and expected it to know your business. It doesn't. It's guessing. And a guess always comes out average.
+
+Here's the fix, and it's boring on purpose: give it the actual context. Who your customer really is. What you sell and why. How you talk. The thing you'd tell a new hire on day one — write that down once, and feed it in.
+
+The difference is night and day. Same tool. Same prompt. But now it's working *from your business* instead of from thin air.
+
+Generic in, generic out. Your business in, your voice out.
+
+**[CTA]**
+Want the one-page "business brain" I paste in every time so my AI stops sounding like everyone else? Comment "BRAIN" and it's yours.
+
+---
+
+---
+
+## ENTRY 019 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | AI Said It Was Done. It Wasn't. | DRAFT
+
+**Status:** DRAFT
+**Platform:** Short-form video (Reel / TikTok / YouTube Short)
+**Format:** Before/after, ~35–45s talking-head + screen B-roll
+**Topic:** The self-verify upgrade — her ownable angle. Don't trust "done." Make AI test its own work and prove it before you ship. Where her corporate rigor becomes a differentiator.
+**Pattern used:** Before/After Contrast (13) + Result-First Demo (10) + Comment-Trigger CTA (5)
+**Pillar:** What's Worth It
+**Critic score:** 8.9/10 — APPROVED FOR REVIEW
+**Source:** RESEARCH 019 (build-and-verify / "prove it by my own screenshots" — logged contrarian take).
+
+---
+**[HOOK — 0:00, straight to camera, slightly dry]**
+AI told me it was done. It was lying. Well — it was wrong. Same result if I'd shipped it.
+
+**[BODY]**
+This is the part nobody shows you. Every creator out there is going "look how fast AI built this!" Cool. But does it actually *work*?
+
+For a long time I'd take "done" at face value. Then I'd find the broken thing later — usually after I'd already sent it to someone. Embarrassing.
+
+So now I add one step. I don't let it tell me it's finished. I make it *prove* it.
+
+**[screen B-roll: AI testing a form with junk inputs, screenshots appearing]**
+
+Go test it yourself. Try to break it. Throw the messy, wrong, real-world inputs at it. Show me the screenshots.
+
+And it catches its own mistakes — before they ever reach me.
+
+Twenty years in corporate taught me one thing: "trust me, it's fine" is not proof. Make it show you the receipts.
+
+**[CTA]**
+Want the exact line I add so AI checks its own work before I ever look? Comment "PROVE" and I'll send it.
+
+---
+
+---
+
+## ENTRY 018 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Your AI Agrees With Everything. That's Costing You. | DRAFT
+
+**Status:** DRAFT
+**Platform:** Short-form video (Reel / TikTok / YouTube Short)
+**Format:** Provocation/contrarian hook, ~30–40s talking-head
+**Topic:** AI is a people-pleaser — it validates your bad ideas. The upgrade: make it argue with you and find the flaws *before* you spend a week building the wrong thing.
+**Pattern used:** Contrarian Operational Hook (14) + Provocation-First Hook (1) + Comment-Trigger CTA (5)
+**Pillar:** Stop Doing That by Hand
+**Critic score:** 8.6/10 — APPROVED FOR REVIEW
+**Source:** RESEARCH 019 (the "council" / stop-letting-it-agree upgrade).
+
+---
+**[HOOK — 0:00, straight to camera]**
+Your AI agrees with everything you say. And that's quietly costing you weeks.
+
+**[BODY]**
+You bring it an idea, it goes "great idea!" You ask if your plan's good, "looks solid!" It's a people-pleaser. It wants you happy. It is *not* trying to keep you from making a mistake.
+
+So you go build the thing. And a week later you find out the flaw that was obvious from day one — the one a good business partner would've called out before you started.
+
+Here's the upgrade: stop asking it to cheer for you. Give it the opposite job.
+
+Tell it: poke holes in this. Be the harshest critic in the room. What would make this fail? Where's the fatal flaw I'm not seeing?
+
+Suddenly it's not a yes-man. It's the advisor who saves you the wasted week.
+
+A partner who only ever agrees with you isn't a partner. It's a mirror.
+
+**[CTA]**
+Want the exact prompt I use to make AI argue with me before I build anything? Comment "ARGUE" and I'll send it.
+
+---
+
+---
+
+## ENTRY 017 — 30/06/2026 | LinkedIn (carousel) | The 4 Upgrades: Stop Using AI Like an Intern | DRAFT
+
+**Status:** DRAFT
+**Platform:** LinkedIn (carousel)
+**Format:** Named-numbered-series carousel (anchor piece) + soft CTA caption
+**Topic:** The series anchor. Four upgrades that turn AI from an intern you babysit into a business partner you delegate to: make it argue, make it prove it, give it your business brain, let it run without you. Each slide seeds a follow-on short (ENTRY 012–015).
+**Pattern used:** Named Numbered Series (4) + Named Framework as Content Asset (12) + Specific Number as Hook (11)
+**Pillar:** Build Once, Runs Forever
+**Critic score:** 8.7/10 — APPROVED FOR REVIEW
+**Source:** RESEARCH 019 (the 4-upgrades framework, translated from dev-demo into outcome language).
+
+---
+**SLIDE 1 (cover):**
+I stopped using AI like an intern I babysit.
+I started using it like a business partner I delegate to.
+4 upgrades that 3×'d what I get done →
+
+**SLIDE 2:**
+Most people use AI like a nervous new intern.
+They hover. They check everything. They do half of it themselves anyway.
+That's not leverage. That's a second job.
+A partner is different. You hand it the work and trust what comes back.
+Here's how you make that switch.
+
+**SLIDE 3 — Upgrade 1: Make it argue with you.**
+Your AI agrees with everything. That's costing you weeks.
+Give it the opposite job: "Poke holes in this. What's the fatal flaw?"
+A partner who only nods isn't a partner. It's a mirror.
+
+**SLIDE 4 — Upgrade 2: Make it prove its work.**
+Don't trust "done." Make it show you the receipts.
+Make it test its own work, try to break it, hand you the proof.
+"Trust me, it's fine" is not proof. Make it earn it.
+
+**SLIDE 5 — Upgrade 3: Give it your whole business brain.**
+Generic answers come from generic context.
+Write down — once — who your customer is, what you sell, how you talk.
+Feed that in every time. Same tool, completely different output.
+
+**SLIDE 6 — Upgrade 4: Let it run without you.**
+Stop babysitting one task at a time.
+Set a clear goal, walk away, let it work in the background.
+Six things at once while you make coffee. That's the freedom part.
+
+**SLIDE 7 — The shift:**
+Make it argue. Make it prove it. Feed it your business. Let it run.
+You stop being the builder.
+You become the judge.
+That's when the business starts running without running your life.
+
+**SLIDE 8 (CTA):**
+I'm breaking down each of these 4 upgrades this week.
+Follow so you catch them — and tell me which one you need most. 👇
+
+**CAPTION:**
+Most people are still using AI like an intern they have to babysit. One task, watching the whole time, redoing half of it. That's not leverage — it's a second job.
+
+The switch is treating it like a partner you can actually delegate to. Four upgrades get you there: make it argue with you, make it prove its work, feed it your real business, and let it run without you.
+
+Do all four and your job changes. You stop being the one doing the work and become the one judging it. That's the whole unlock.
+
+Breaking down each upgrade this week. Which one do you need most — 1, 2, 3, or 4?
+
+#AIautomation #Solopreneur #Productivity #BuildInPublic
+
+---
 
 ---
 
@@ -79,7 +379,7 @@ Want me to walk you through the exact first one most people should start with? C
 **ACP stage:** C — deliberately injecting one C to move the last-10 ratio off ~all-A toward 7A/2C/1P. Framed as a *founding-member opening* (the one honest C available with no existing members to brag about).
 **CTA:** "Comment FOUNDING and I'll make sure you get first access" (founding-member invite)
 **Source:** RESEARCH 021 (contrarian take logged — the agency-treadmill argument). No unverified stats.
-**⚠️ PREP (blocks queueing):** the founding community offer must actually exist (Skool space + founding price locked) before this goes live — the CTA promises first access. Per monetisation skill, do not publish a C/P post against an offer that can't be joined.
+**⚠️ PREP (blocks queueing):** the founding community offer must actually exist (Whop community space + founding price locked) before this goes live — the CTA promises first access. Per monetisation skill, do not publish a C/P post against an offer that can't be joined.
 
 ---
 ### LINKEDIN POST

@@ -54,7 +54,7 @@ Then paste that URL into `lead-magnets.csv` → `resource_url`, and set
 `active` to `yes`. The moment a row is active, the DM responder will hand it out.
 
 > **Quick path if you're in a hurry:** any public link works — a Google Doc set
-> to "anyone with the link," a Notion page, a Gumroad freebie. GHL is just the
+> to "anyone with the link," a Notion page, a Whop freebie. GHL is just the
 > best because it captures the email too. You can start with a Google Doc and
 > upgrade to a GHL page later without changing anything else.
 

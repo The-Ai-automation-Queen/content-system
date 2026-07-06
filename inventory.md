@@ -71,14 +71,22 @@ the ACP funnel rules, CTA map, and the full conversion flow.
 
 | Tier | Offer | Price | Platform | Status |
 |---|---|---|---|---|
-| 0 | **Free guides + lead magnets + newsletter** (guides.shiftandlead.com + 7 in `lead-magnets/` + **AI Insider Brief** at brief.shiftandlead.com) | Free | Static site + GHL + Kit | ⚠️ Lead magnets INACTIVE — host on GHL, set `active=yes`. Insider Brief is **already live** (Tue/Fri, ACT/WATCH/IGNORE curated AI news, email via Kit) — needs a refresh pass, not a rebuild. |
-| 1 | **AI Time Audit Template** | $47 (one-time) | Gumroad | 🔴 Build |
-| 2 | **Business OS Starter Kit** (lite, templates only) | $97 (one-time) | Gumroad | 🔴 Build — see `skills/business-os-kit/` |
-| 3 | **AI Automation Queen Community** | $27/month founding (20 spots) → $47/month standard, or $397/year | Skool | 🔴 Launch — also teased live on guides.shiftandlead.com |
-| 4 | **Fast Forward** (flagship one-time — structured build curriculum + 30-day community trial) | $499 (one-time) | Skool/Gumroad | 🔴 Build — copy already live on guides.shiftandlead.com |
-| 5 | **Business OS Bootcamp** | $997 per cohort | Skool + GHL | 🔴 Build waitlist from community |
-| 6 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn DM | 🟡 Activate — send one-pager to 10 warm contacts |
-| 7 | **Done-With-You Intensive** (bespoke, quoted — the old Shift & Lead agency retainer, reframed; not the default site CTA) | Quoted per scope | Direct | 🟡 Reframe existing case studies to this tier |
+> **Canonical source: `queen-brain/offers.md`** (05/07/2026 decision). This
+> table is a consumer copy — when they disagree, queen-brain wins. Reconciled
+> 06/07/2026 after merging the session branch with main.
+
+| Tier | Offer | Price | Platform | Status 06/07/2026 |
+|---|---|---|---|---|
+| 0 | **Free layer**: guides + 7 active lead magnets + **AI Time Audit quiz** (`site/time-audit.html`) + **AI Insider Brief** (brief.shiftandlead.com, Tue/Fri via Kit) | Free | Static site + GHL + Kit | ✅ 7 magnets ACTIVE with opt-in URLs (PIPELINE retired 05/07); quiz live; Brief live (needs refresh pass) |
+| 1 | **The Prompt Menu** (150 prompts across 10 kitchens, ebook) | $19 | Whop | ✅ Built + sales page — awaiting checkout link |
+| 2 | **The Judge's Prompts** (42 verification prompts, ebook) | $27 | Whop | ✅ Built + sales page — awaiting checkout link |
+| 3 | **AI Time Audit** (10-page fillable worksheet) | $47 | Whop | ✅ Built + sales page — awaiting checkout link; free quiz funnels into it |
+| 4 | **Business OS Starter Kit** | $97 | Whop | 🔴 Spec-only (next factory run) |
+| 5 | **AI Automation Queen Community** | $27/month founding (20 spots, locked) → $47/month, or $397/year | Whop (Skool sunset 05/07) | 🔴 Not launched — waitlist capture live on guides site |
+| 6 | **Fast Forward** (54-lesson curriculum + Whop kit) | $499 | Whop | 🟡 Consolidated — awaiting her identity assets ("the twin") + Whop product |
+| 7 | **Business OS Bootcamp** | $997 per cohort | Whop + GHL | 🔴 Waitlist not open |
+| 8 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn DM | 🟡 One-pager not sent |
+| 9 | **Done-With-You Intensive** (bespoke, quoted; never the default CTA) | Quoted per scope | Direct | 🟡 Case studies reframed to this tier on the .com site |
 
 Not offered as the default sale: 1:1 advisory/consulting or time-consuming
 beginner training — bespoke work now lives at Tier 7, quoted and positioned as

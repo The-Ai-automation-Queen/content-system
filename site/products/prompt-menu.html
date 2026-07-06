@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Prompt Menu · Shift &amp; Lead</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shift &amp; Lead">
+<meta property="og:title" content="The Prompt Menu · Shift &amp; Lead">
+<meta property="og:description" content="150 copy-paste prompts across 10 AI kitchens. Know exactly what to order before you open the tab. By Fatiha Chikh, The AI Automation Queen.">
+<meta property="og:url" content="https://guides.shiftandlead.com/products/prompt-menu.html">
+<meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://guides.shiftandlead.com/products/prompt-menu.html">
+
+<meta name="description" content="150 copy-paste prompts across 10 AI kitchens. Know exactly what to order before you open the tab. By Fatiha Chikh, The AI Automation Queen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;--cream:#EEF2FC;--onDark:#7FA0FF;--signal:#E63955}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.7}
+a{color:var(--accent)}
+.nav{border-bottom:1px solid var(--rule);background:var(--canvas);position:sticky;top:0;z-index:10}
+.nav-inner{max-width:1080px;margin:0 auto;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:22px;flex-wrap:wrap}
+.nav-links a{font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+.kicker{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:clamp(2.2rem,6vw,3.4rem);line-height:1.1;margin:.5rem 0 .8rem}
+h1 em{font-style:normal;color:var(--accent)}
+h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.6rem;line-height:1.25;margin:0 0 .8rem}
+.hero{padding:56px 0 20px}
+.sub{font-size:1.15rem;color:var(--muted);max-width:58ch;margin:0 0 22px}
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0 8px;padding:0;list-style:none}
+@media(max-width:720px){.who{grid-template-columns:1fr}}
+.who li{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:16px 18px;font-family:'Inter',sans-serif;font-size:14px;color:var(--ink)}
+.who li strong{display:block;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+section{padding:40px 0;border-top:1px solid var(--rule)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+@media(max-width:720px){.grid3{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:22px}
+.card .n{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.card h3{font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;font-weight:700;margin:0 0 8px}
+.card p{font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);margin:0}
+.menu-table{width:100%;border-collapse:collapse;margin-top:22px;font-family:'Inter',sans-serif;font-size:13.5px}
+.menu-table th{text-align:left;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:0 12px 10px 0;border-bottom:1px solid var(--rule)}
+.menu-table td{padding:12px 12px 12px 0;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink)}
+.menu-table td.kitchen{font-family:'Playfair Display',Georgia,serif;font-weight:700;white-space:nowrap}
+.menu-table td.why{color:var(--muted)}
+.menu-scroll{overflow-x:auto;max-width:100%}
+.sample-wrap{position:relative;margin-top:24px}
+.sample-tag{position:absolute;top:-14px;right:18px;background:var(--ink);color:#fff;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:6px 14px;border-radius:999px;transform:rotate(3deg);z-index:2}
+.prompt-card{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:24px}
+.prompt-card .label{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.prompt-block{background:var(--ink);color:#E8EDFB;font-family:'Space Mono',monospace;font-size:.85rem;line-height:1.65;border-radius:8px;padding:18px 20px;margin:0 0 14px;white-space:pre-wrap}
+.when{font-family:'Inter',sans-serif;font-size:13.5px;color:var(--muted);margin:0}
+.when strong{color:var(--ink)}
+.menu-legend{display:flex;gap:18px;flex-wrap:wrap;margin:18px 0 0;font-family:'Inter',sans-serif;font-size:13px;color:var(--muted)}
+.menu-legend strong{color:var(--ink);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.getlist{margin:20px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
+@media(max-width:600px){.getlist{grid-template-columns:1fr}}
+.getlist li{font-family:'Inter',sans-serif;font-size:14.5px;color:var(--ink);padding-left:1.4rem;position:relative}
+.getlist li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+.price-block{background:var(--ink);color:#F5F0EB;border-radius:16px;padding:40px;margin-top:8px;text-align:center}
+.price-block .label{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--onDark)}
+.price-block .amount{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:3rem;color:#fff;margin:10px 0 6px}
+.price-block p{color:#CFC8DD;max-width:46ch;margin:0 auto 22px;font-family:'Inter',sans-serif;font-size:14.5px}
+.buy-btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:16px;text-decoration:none;background:var(--accent);color:#fff;border-radius:8px;padding:15px 30px}
+.buy-btn:hover{background:var(--accent-deep)}
+.faq{margin-top:20px}
+.faq-item{border-top:1px solid var(--rule);padding:18px 0}
+.faq-item:first-child{border-top:none}
+.faq-item h3{font-family:'Inter',sans-serif;font-weight:600;font-size:15.5px;margin:0 0 6px;color:var(--ink)}
+.faq-item p{font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);margin:0}
+.byline-card{background:var(--cream);border:1px solid var(--accent-tint);border-radius:14px;padding:26px 28px;display:flex;gap:18px;align-items:flex-start;margin-top:8px}
+.byline-card img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.byline-card .name{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.1rem;margin:0 0 2px}
+.byline-card p{font-family:'Inter',sans-serif;font-size:13.5px;color:var(--muted);margin:0}
+.ip-bar{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--muted);text-align:center;padding:18px 0;border-top:1px solid var(--rule);margin-top:10px}
+.footer{border-top:1px solid var(--rule);margin-top:40px;padding:36px 0 48px;font-family:'Inter',sans-serif;font-size:13px;color:var(--muted)}
+.footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
+  <div class="nav-links">
+    <a href="../free-resources.html">Free Resources</a>
+    <a href="https://brief.shiftandlead.com">The Insider Brief</a>
+    <a href="../store.html" class="active">Store</a>
+    <a href="../about.html">About</a>
+    <a href="../work-with-fatiha.html">Work with Fatiha</a>
+  </div>
+</div></nav>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Prompt pack · ebook · $19</div>
+  <h1>Ten kitchens.<br>One menu, <em>so you know what to order.</em></h1>
+  <p class="sub">150 copy-paste prompts across every AI tool you actually use: Claude, ChatGPT, Gemini, Copilot, Grok, Mistral, DeepSeek, Kimi, Manus, and Meta AI. Stop guessing which one to open.</p>
+</header>
+
+<section style="padding-top:0;border-top:none">
+  <ul class="who">
+    <li><strong>This is for you if</strong>You bounce between two or three AI tools and never know which one is actually right for the job.</li>
+    <li><strong>This is for you if</strong>You've got one good prompt you reuse everywhere, and you know there's more you're missing.</li>
+    <li><strong>This is for you if</strong>You want a menu to reach for, not another tab of tutorials to sit through.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="kicker">What's inside</div>
+  <h2>Every kitchen, the same order every time.</h2>
+  <div class="grid3">
+    <div class="card">
+      <div class="n">Course 1</div>
+      <h3>Starters</h3>
+      <p>4 prompts per kitchen. Five-minute wins: the first thing to try the moment you open the tab.</p>
+    </div>
+    <div class="card">
+      <div class="n">Course 2</div>
+      <h3>Mains</h3>
+      <p>6 prompts per kitchen. Real business work: client updates, meeting notes, week plans, structure before sentences.</p>
+    </div>
+    <div class="card">
+      <div class="n">Course 3</div>
+      <h3>Chef's Specials</h3>
+      <p>3 prompts per kitchen. The dish only that kitchen can plate: what makes each tool worth having at all.</p>
+    </div>
+    <div class="card">
+      <div class="n">Course 4</div>
+      <h3>Verify</h3>
+      <p>2 prompts per kitchen. Make it prove its work before you trust the plate it just handed you.</p>
+    </div>
+    <div class="card">
+      <div class="n">The Map</div>
+      <h3>Which Kitchen for Which Job</h3>
+      <p>One table: your job, the best kitchen for it, and why. Check it before you open a tool out of habit.</p>
+    </div>
+    <div class="card">
+      <div class="n">10 kitchens</div>
+      <h3>Claude to Meta AI</h3>
+      <p>Claude, ChatGPT, Gemini, Copilot, Grok, Mistral, DeepSeek, Kimi, Manus, Meta AI. 15 prompts each, 150 total.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="kicker">The map</div>
+  <h2>Which kitchen for which job.</h2>
+  <div class="menu-scroll">
+  <table class="menu-table">
+    <thead><tr><th>Your job</th><th>Best kitchen</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Long, structured writing (a full guide, a course module)</td><td class="kitchen">Claude</td><td class="why">Holds a long thread without losing the plot; steadier voice across a big document</td></tr>
+      <tr><td>Fast, casual answers and brainstorming</td><td class="kitchen">ChatGPT</td><td class="why">Fastest front door, huge plugin ecosystem, most "just works" for quick asks</td></tr>
+      <tr><td>You live inside Microsoft Office already</td><td class="kitchen">Copilot</td><td class="why">Already in your Word, Excel, and Outlook; zero new tool to learn</td></tr>
+      <tr><td>You want it to see and reason over images or docs deeply</td><td class="kitchen">Gemini</td><td class="why">Best native multi-modal handling; tight Google Workspace integration</td></tr>
+      <tr><td>Need real-time info, current events, unfiltered takes</td><td class="kitchen">Grok</td><td class="why">Live X search built in; least filtered tone of the ten</td></tr>
+      <tr><td>European data residency or French-language nuance</td><td class="kitchen">Mistral</td><td class="why">EU-based; noticeably better French idiom and tone</td></tr>
+      <tr><td>Need it cheap and open, or want to self-host</td><td class="kitchen">DeepSeek</td><td class="why">Strong reasoning at a fraction of the cost; open-weight options</td></tr>
+      <tr><td>Long-context reasoning on a budget</td><td class="kitchen">Kimi</td><td class="why">Very large context window, generous free tier</td></tr>
+      <tr><td>Turning one instruction into a finished multi-step task</td><td class="kitchen">Manus</td><td class="why">Built for "do this whole task," not just "answer this"</td></tr>
+      <tr><td>Meta ecosystem work (Instagram, WhatsApp, Facebook built-in)</td><td class="kitchen">Meta AI</td><td class="why">Already inside the apps you're likely posting from</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="when" style="margin-top:16px"><strong>The rule:</strong> don't pick one kitchen forever. Match the tool to the job. Most of my own work runs through two or three of these, not one.</p>
+</section>
+
+<section>
+  <div class="kicker">See one</div>
+  <h2>Chez Claude, Starter #1: The Plain Rewrite.</h2>
+  <div class="sample-wrap">
+    <span class="sample-tag">Sample</span>
+    <div class="prompt-card">
+      <div class="label">Chez Claude · Starters · S1 · The Plain Rewrite</div>
+      <div class="prompt-block">Rewrite the message below so a busy person understands it in one read.
+Short sentences. No jargon. No hype. Keep every fact, drop every filler word.
+
+Message:
+[paste your message, with names swapped for [Client] / [Me] and any real
+numbers rounded]</div>
+      <p class="when"><strong>Use when:</strong> you wrote something in five minutes and it shows. Run this before you hit send on any email, update, or post.</p>
+    </div>
+  </div>
+  <p class="menu-legend">Every one of the 150 prompts is built the same way: redact names to [Client]/[Me], round the numbers, never paste credentials. The pack models the habit on every single card, so it becomes automatic, not a rule you have to remember.</p>
+</section>
+
+<section>
+  <div class="kicker">What you get</div>
+  <h2>The complete menu.</h2>
+  <ul class="getlist">
+    <li>150 prompts: 15 per kitchen, across 10 AI tools</li>
+    <li>The Kitchen Map: which AI for which job, and why</li>
+    <li>Starters, Mains, Chef's Specials, Verify: same structure, every kitchen</li>
+    <li>The Universal Ordering Script that works in any tool, day one</li>
+    <li>Redaction modeled in every single prompt, not just explained once</li>
+    <li>Self-contained, print-ready ebook (HTML, works on any device)</li>
+    <li>Free updates included as the kitchens change</li>
+  </ul>
+</section>
+
+<section>
+  <div class="price-block">
+    <div class="label">The Prompt Menu</div>
+    <div class="amount">$19</div>
+    <p>One-time payment. Instant delivery. Buy once, use forever, across every AI tool you touch.</p>
+    <a class="buy-btn" href="../store.html">Get it in the Store →</a>
+  </div>
+</section>
+
+<section>
+  <div class="kicker">Questions</div>
+  <div class="faq">
+    <div class="faq-item">
+      <h3>What format is it?</h3>
+      <p>A single self-contained HTML ebook, print-ready, so you can read it on screen or export it to PDF and keep it forever.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are updates included?</h3>
+      <p>Yes. Kitchens change faster than menus. Every time this pack gets updated for a tool change, buyers get the new version free.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What if I only use one or two of these tools?</h3>
+      <p>I'd rather you know before you buy: this is a menu for ten kitchens, not one. If you only ever open one AI tool and have no plans to try another, the free Chez guide for that tool alone might be all you need.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="byline-card">
+    <img src="../closeUp.jpeg" alt="Fatiha Chikh">
+    <div>
+      <p class="name">Fatiha Chikh</p>
+      <p>The AI Automation Queen · Shift &amp; Lead. 20+ years inside big corporate tech, now running a company of 137 AI employees who do the work while she judges it. <a href="../about.html">The story →</a></p>
+    </div>
+  </div>
+  <div class="ip-bar">© 2026 FATIHA CHIKH / SHIFT &amp; LEAD · ORIGINAL IP · FOR BUYER'S PERSONAL OR SINGLE-BUSINESS USE · RESALE AND REDISTRIBUTION PROHIBITED</div>
+</section>
+
+<footer class="footer">
+  <strong style="color:var(--ink)">Fatiha Chikh</strong> · The AI Automation Queen · Shift &amp; Lead<br>
+  <a href="https://www.linkedin.com/in/fatihachikh">LinkedIn</a> · <a href="https://www.instagram.com/thefatihachikh">Instagram</a> · <a href="https://brief.shiftandlead.com">The Insider Brief</a><br><br>
+  © 2026 Fatiha Chikh / Shift &amp; Lead. All rights reserved.
+</footer>
+
+</div>
+</body>
+</html>

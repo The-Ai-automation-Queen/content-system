@@ -1,0 +1,91 @@
+{
+ "default": {
+  "featured_slug": "what-is-ai",
+  "side_slugs": [
+   "chatgpt-vs-ai",
+   "chez-claude"
+  ]
+ },
+ "weeks": {
+  "27": {
+   "featured": "chez-claude",
+   "side": [
+    "what-is-a-prompt",
+    "what-is-agentic"
+   ]
+  },
+  "28": {
+   "featured": "what-is-agentic",
+   "side": [
+    "chez-openai",
+    "ai-jargon-guide"
+   ]
+  },
+  "29": {
+   "featured": "chez-gemini",
+   "side": [
+    "what-is-ai",
+    "ai-jargon-guide"
+   ]
+  },
+  "30": {
+   "featured": "chez-copilot",
+   "side": [
+    "chatgpt-vs-ai",
+    "chez-mistral"
+   ]
+  }
+ },
+ "guide_data": {
+  "what-is-ai": {
+   "chip": "WHAT",
+   "title": "Everyone says \u201cAI\u201d 100 times a day. Nobody says what it is.",
+   "desc": "You're not behind. You were never told. Here is what it is, in 4 lines."
+  },
+  "chatgpt-vs-ai": {
+   "chip": "DIFF",
+   "title": "ChatGPT and AI are not the same thing.",
+   "desc": "6 words, sorted biggest to smallest."
+  },
+  "chez-claude": {
+   "chip": "DECODE",
+   "title": "Chez Claude. The one that reads the whole room.",
+   "desc": "Door, kitchen, plate. The restaurant walkthrough."
+  },
+  "what-is-a-prompt": {
+   "chip": "PROMPT",
+   "title": "What is a prompt \u2014 and how to write one that works.",
+   "desc": "The 20-minute upgrade to every AI answer you get."
+  },
+  "what-is-agentic": {
+   "chip": "AGENTIC",
+   "title": "AI that does the job, not just the answer.",
+   "desc": "What 'agentic' means \u2014 and why it changes everything."
+  },
+  "chez-openai": {
+   "chip": "DECODE",
+   "title": "Chez ChatGPT. The one everyone tried first.",
+   "desc": "The whole OpenAI menu, door to plate."
+  },
+  "ai-jargon-guide": {
+   "chip": "WORDS",
+   "title": "12 AI words everyone uses \u2014 explained in plain English.",
+   "desc": "The vocabulary that unlocks every other guide."
+  },
+  "chez-gemini": {
+   "chip": "DECODE",
+   "title": "Chez Gemini. It already knows your calendar.",
+   "desc": "The Google AI stack as a restaurant."
+  },
+  "chez-mistral": {
+   "chip": "DECODE",
+   "title": "Chez Mistral. Open kitchen, nothing leaves the building.",
+   "desc": "The Paris kitchen walked through."
+  },
+  "chez-copilot": {
+   "chip": "DECODE",
+   "title": "Chez Copilot. It's been in your toolbar this whole time.",
+   "desc": "Microsoft's AI restaurant from door to plate."
+  }
+ }
+}

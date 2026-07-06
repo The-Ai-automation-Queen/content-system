@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chez Gemini · Cheat Sheet | Shift &amp; Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,400;0,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--tint:#E4EAFB;--cream:#EEF2FC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.42}
+.mono{font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
+@page{size:A4;margin:12mm}
+.sheet{max-width:720px;margin:0 auto;padding:14px}
+
+/* header strip */
+.head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:14px;gap:12px;flex-wrap:wrap}
+.head h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:2rem;margin:0;line-height:1}
+.head h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.head .tagline{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--muted);margin:4px 0 0;max-width:46ch}
+.head .brand{font-size:9px;color:var(--muted);text-align:right;white-space:nowrap}
+.head .brand strong{color:var(--ink)}
+
+/* two-column body */
+.cols{display:grid;grid-template-columns:1.05fr 1fr;gap:22px}
+.col h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.02rem;margin:0 0 8px;padding-bottom:5px;border-bottom:1px solid var(--rule);color:var(--accent-deep)}
+.col h2 .n{color:var(--accent);font-weight:900;margin-right:4px}
+
+/* floor plan diagram */
+.plan{border:1px solid var(--rule);border-radius:10px;padding:10px 12px;margin-bottom:14px;background:var(--cream)}
+.plan .mono{font-size:8px;color:var(--accent);display:block;margin-bottom:6px}
+.plan ul{margin:0;padding:0;list-style:none;font-family:'Inter',sans-serif;font-size:.72rem;color:var(--ink)}
+.plan li{padding:3px 0;border-top:1px solid var(--rule)}
+.plan li:first-child{border-top:none}
+.plan li strong{color:var(--accent-deep);font-weight:600}
+
+/* 10 words */
+.words{margin:0;padding:0;list-style:none}
+.words li{font-family:'Inter',sans-serif;font-size:.74rem;color:var(--ink);padding:4px 0;border-top:1px solid var(--rule);line-height:1.35}
+.words li:first-child{border-top:none}
+.words strong{font-weight:700}
+.words .analogy{color:var(--muted);font-style:italic}
+
+/* order this first */
+.dishes{margin:0 0 14px;padding:0;list-style:none}
+.dishes li{padding:6px 0;border-top:1px solid var(--rule)}
+.dishes li:first-child{border-top:none}
+.dishes .dname{font-family:'Inter',sans-serif;font-weight:700;font-size:.8rem;color:var(--ink)}
+.dishes .ddesc{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);margin:1px 0 0;line-height:1.35}
+
+/* traffic light micro-card */
+.tl{border:1.5px solid var(--ink);border-radius:10px;padding:10px 12px;margin-bottom:0}
+.tl .mono{font-size:8px;color:var(--accent);display:block;margin-bottom:6px}
+.tl p{font-family:'Inter',sans-serif;font-size:.72rem;margin:2px 0;line-height:1.4}
+.tl .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.g{background:#2E9E5B}.a{background:#D19A2B}.r{background:#E63955}
+
+/* footer */
+.foot{margin-top:16px;padding-top:8px;border-top:2px solid var(--ink);text-align:center}
+.foot .cta{font-family:'Inter',sans-serif;font-weight:600;font-size:.82rem;color:var(--ink);margin:0 0 4px}
+.foot .cta a{color:var(--accent);text-decoration:none}
+.foot .ip{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+
+@media print{
+  body{margin:0}
+  .sheet{padding:0;max-width:none}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="head">
+    <div>
+      <h1>Chez <em>Gemini.</em></h1>
+      <p class="tagline">Not one dish, a whole building. Already inside your inbox, docs, and calendar.</p>
+    </div>
+    <div class="brand mono"><strong>Shift &amp; Lead</strong><br>guides.shiftandlead.com</div>
+  </div>
+
+  <div class="cols">
+
+    <div class="col">
+      <h2><span class="n">01</span>The Floor Plan</h2>
+      <div class="plan">
+        <span class="mono">One brain, many doors in</span>
+        <ul>
+          <li><strong>Gemini App</strong>: the dining room. Web and mobile at gemini.google.com.</li>
+          <li><strong>Workspace</strong>: chef at your table. Built into Gmail, Docs, Sheets, Meet.</li>
+          <li><strong>Gemini CLI</strong>: the terminal kitchen. Open-source agent for developers.</li>
+          <li><strong>Agent Platform</strong>: catering / enterprise. Fleets of agents at scale.</li>
+        </ul>
+      </div>
+
+      <h2><span class="n">02</span>10 Words That Matter</h2>
+      <ul class="words">
+        <li><strong>Gemini Pro</strong>: <span class="analogy">the head chef's full education, deep reasoning.</span></li>
+        <li><strong>Gemini Flash</strong>: <span class="analogy">the speed chef for simple dishes.</span></li>
+        <li><strong>Context window</strong>: <span class="analogy">a countertop up to 2 million tokens wide.</span></li>
+        <li><strong>Memory Bank</strong>: <span class="analogy">the chef's notebook across sessions.</span></li>
+        <li><strong>Gems</strong>: <span class="analogy">pre-configured order profiles, saved instructions.</span></li>
+        <li><strong>Deep Research</strong>: <span class="analogy">reading dozens of reference books first.</span></li>
+        <li><strong>Canvas</strong>: <span class="analogy">side workspace for drafting together.</span></li>
+        <li><strong>Search Grounding</strong>: <span class="analogy">checking today's fresh market before answering.</span></li>
+        <li><strong>ADK</strong>: <span class="analogy">the kit to build your own restaurant.</span></li>
+        <li><strong>NotebookLM</strong>: <span class="analogy">your personal research assistant.</span></li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <h2><span class="n">03</span>Order This First</h2>
+      <ul class="dishes">
+        <li>
+          <div class="dname">Deep Research</div>
+          <div class="ddesc">Ask it to compare five tools or vendors. It reads dozens of sources and hands back a sourced report.</div>
+        </li>
+        <li>
+          <div class="dname">Canvas + Workspace</div>
+          <div class="ddesc">Draft in Canvas, or ask Gemini right inside Docs, Sheets, or Gmail to rewrite or build a chart in place.</div>
+        </li>
+        <li>
+          <div class="dname">A Gem, custom-built</div>
+          <div class="ddesc">Set one up once with saved instructions and a role. Every future order already knows the job.</div>
+        </li>
+      </ul>
+
+      <h2><span class="n">04</span>The Traffic Light Rule</h2>
+      <div class="tl">
+        <span class="mono">Before you paste anything in</span>
+        <p><span class="dot g"></span><strong>Green</strong>: public info, your own drafts. Share freely.</p>
+        <p><span class="dot a"></span><strong>Amber</strong>: client or team data. Redact names and numbers first.</p>
+        <p><span class="dot r"></span><strong>Red</strong>: credentials, contracts, PII. Never in a personal AI account.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="foot">
+    <p class="cta">Full guide free at <a href="https://guides.shiftandlead.com">guides.shiftandlead.com</a> · The full prompt menus: The Prompt Menu, $19 in the Store</p>
+    <p class="ip">© 2026 Fatiha Chikh / Shift &amp; Lead · Original IP · The Kitchen Map™ · not for resale or redistribution</p>
+  </div>
+
+</div>
+</body>
+</html>

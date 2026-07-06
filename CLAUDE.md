@@ -46,6 +46,13 @@ as the database. Never invent content that contradicts them.
   daily by `brain-manager` with real anecdotes, opinions, projects, numbers, life
   events, and current focus. This is what makes content personal — not generic AI
   output. `content-engine` loads it before every writing pass.
+- **`voice-file.md`** — the real, corpus-compiled texture layer. Maintained by
+  `voice-file` from raw material dropped in `voice-corpus/` (old posts, emails,
+  transcripts — anything she actually wrote/said, never AI output). Where the
+  brain supplies *facts* and `positioning` supplies *rules*, this supplies real
+  sentences to match — closes the gap between "sounds like the rules" and
+  "sounds like her." `content-engine` loads it (when not LOW-CONFIDENCE) after
+  `inspiration-library` and before the brain.
 
 ---
 
@@ -57,9 +64,16 @@ Skills are reusable, version-controlled instructions. Two kinds live here:
 - **`positioning/SKILL.md`** — brand positioning, voice, audience, the
   win-back-your-time promise, and the six content pillars. The non-negotiable
   identity layer.
-- **`inspiration-library/SKILL.md`** + `creators.csv` — 21 studied creators,
-  15 named hook/format patterns, and the script application rules. Load this
+- **`inspiration-library/SKILL.md`** + `creators.csv` — 21 studied creators + 1
+  tracked institutional publisher (23 rows), 15 named hook/format patterns,
+  and the script application rules. Load this
   before writing any script, hook, or outline.
+- **`copy-craft/SKILL.md`** — the structural/platform-mechanics layer: dwell-time
+  and hook-window rules per platform, timeless direct-response checks, and the
+  authority to defer to `performance-log.md`'s real logged evidence over
+  general best practice whenever they conflict. Distinct from voice (tone),
+  inspiration-library (which studied pattern), and monetisation (which CTA) —
+  this is *why a piece would or wouldn't get read*.
 
 **Action skills** (in `skills/`, each a folder with a `SKILL.md`). Mapped to
 Romain's machines:
@@ -68,6 +82,13 @@ Romain's machines:
   and current events, then writes answers into `personal-brain.md`. This is what
   makes content feel personal — the AI knows her anecdotes, her opinions, her
   numbers. Modeled on Romain Brunel's Telegram-based Cerveau Manager.
+- **`voice-file`** — the texture layer. Compiles `voice-corpus/` (her real,
+  pre-AI writing/speech) into `voice-file.md`: verbatim opening/closing
+  patterns, real recurring words, sentence rhythm, and confirmed-absent AI-isms.
+  Run `interview` mode to elicit raw writing samples when the corpus is thin,
+  `compile` to (re)build the voice file, `validate` to blind-test it against a
+  real post, `status` for a health check. Without this, `content-engine` only
+  has style *rules* (positioning) to work from — this gives it real *evidence*.
 - **`signal-harvester`** — *M01 data layer.* Multi-source daily signal harvest
   (Apify IG/X scrapes, YouTube virality, RSS blogs, Tavily) with a source-mix +
   ≥2-lead-magnet rule → a `research-notes.md` entry. The richer alternative to
@@ -93,8 +114,12 @@ Romain's machines:
   platforms (Meta Graph API for IG/FB when tokens set, Apify fallback for all)
   for follower counts + post-level engagement, writes `performance-log.md`,
   annotates POSTED vault entries, and feeds the dashboard intelligence panels.
-  Supports `competitors` mode (scrapes creators.csv handles) and `linkedin-update`
-  mode (manual paste for LinkedIn post analytics).
+  Also extracts a **Lessons** subsection each run — a ranked, evidence-backed
+  comparison of winning vs. losing patterns (pillar/format/hook mechanism) —
+  that `copy-craft` and `content-engine` read before the next drafting pass.
+  This is what actually closes the loop; scraped numbers alone don't change
+  what gets written next. Supports `competitors` mode (scrapes creators.csv
+  handles) and `linkedin-update` mode (manual paste for LinkedIn post analytics).
 - **`weekly-ops`** — the orchestrator. Runs the full machine loop (Step 7/8).
 - **`research-digest`** — last-30-days research sweep → `reports/` + a
   `research-notes.md` entry. (Lighter fallback for `signal-harvester`.)

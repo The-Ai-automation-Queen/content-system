@@ -2,6 +2,114 @@
 
 ---
 
+## RESEARCH 025 — 2026-07-05 | AI Operators Academy (IAOA) — same-niche competitor, French market, "3-steps" guide factory
+
+**Status:** NOTED
+**Source:** ai-operators-academy.fr — operator-flagged link (`/ressources/utiliser-claude-code-gratuit-openrouter`), extracted via Tavily. French-language academy teaching Claude Code / AI-agent automation to business owners.
+**Why it's here:** This is close to a mirror of her own business model, one language and one market over. Worth studying for format and topic coverage, not for copying text — see the IP note below.
+
+### The business model (their offer ladder — compare to `docs/FLAGSHIP-COURSE-STRATEGY.md` §1.4)
+1. Free resources (23+ short articles, the top of funnel)
+2. **Formation** ("Learn on your own") — the self-paced academy, self-serve
+3. **Accompagnement** ("Le Comité," a mentor) — paid coaching/mentorship calls
+4. **Délégation** ("Aura Agency") — a done-for-you build team, the highest tier
+
+Same three-rung shape as her Self-Paced → Cohort/Community → Corporate ladder,
+independently arrived at — good external confirmation the ladder shape is
+right for this market, not just her own idea.
+
+### The article format (the reusable pattern)
+Every free article: a punchy "how to do X in 3 steps" title → 3-4 bullet
+outcomes → numbered steps, each ending in a ✅ "Result" callout → a
+copy-paste prompt/code block → a 3-card CTA block (the 3 ladder rungs above,
+one CTA each) → "Read also" related-article links. Tight, tactical,
+screenshot-free (prompt-block-driven), clearly optimized for a non-technical
+reader who just wants the exact text to paste.
+
+### Topic backlog (translated, for evaluating fit — NOT their text)
+Good fit for a non-technical, ICP-1 audience (comparable to her Time Wins /
+What's Worth It pillars):
+- Run Claude Code for free by redirecting it to free OpenRouter models
+  (the exact page linked — 3 steps: get an OpenRouter key, one config
+  prompt, verify the model switched)
+- 3 free sites to use Claude/GPT/Gemini without paying (LM Arena, Pinokio,
+  Design Arena)
+- 10 "secret" keywords/prompts that change how Claude responds
+- Force Claude to stop agreeing with you — a "critical partner" mode prompt
+- 4 habits that change how you use Claude Code (`/init`, `/clear`, model
+  choice, parallel sub-agents)
+
+Better suited to the flagship's Depth tier (M7–M9) than a free top-of-funnel
+guide — more technical/dev-leaning:
+- Installing multi-agent orchestrators (Ruflo, "The Agency" 144-agent repo)
+- Connecting Claude to a site with no API (Printing Press)
+- Token-cost reduction techniques (MarkItDown, file-re-read waste)
+- A financial-analysis skill install
+- Meta Ads / SEO / marketing-agency-replacement automations
+
+### IP note (operating rule, not public-facing)
+The topics and the 3-steps format are fair game to be inspired by — exactly
+what `inspiration-library` already does for tracked creators: study the
+pattern, write original content in her own voice. Their French article TEXT
+is their copyrighted work; it should never be translated and republished
+as hers. Every guide below is written fresh, not translated.
+
+### Content angles (2 built this pass, rest queued)
+1. **Built as a new lead magnet:** "Stop Paying for AI Tokens" — running
+   Claude Code on free OpenRouter models. See
+   `lead-magnets/free-ai-tokens-openrouter.md`.
+2. **Queued for next batch:** the 3-free-AI-sites guide and the 10-keywords
+   guide (both strong ICP-1 fits) — flagged in `ROADMAP.md` for
+   `content-engine`/`visual-engine` to pick up as the next `chez`-style or
+   plain-`.md` lead magnets.
+
+**Contrarian take logged:** the existence of a French-market mirror of her
+exact business shape is good news, not competition to fear — it validates
+the ladder, and it's a font of tested topics to adapt, not a threat. The
+actual moat was never the topic list; it's the personal brain, the receipts,
+and (per `docs/FLAGSHIP-COURSE-STRATEGY.md` §2) the living system, which no
+one can copy-paste.
+
+**Status:** NOTED
+
+---
+
+## RESEARCH 024 — 2026-06-30 | The 4 Upgrades That Turn Claude Code Into a Business Partner (Council · Self-Verify · Context · Sub-Agents/Goal)
+
+**Status:** NOTED
+**Source:** YouTube — "I Turned Claude Code Into My Business Partner" (AIS / AI-Surge channel), https://www.youtube.com/watch?v=iTY8Q449YNQ. Watched via the `watch` skill (full transcript + 80 frames). ~28 min.
+**Why it's here:** This is a competitor/creator teardown, not a search digest. The creator demos the *exact* Romain-shape loop this repo is built on (council → build → verify → goal-run), aimed at the same "build your own AI business" audience. Useful as (a) a content-framework to replicate in her voice and (b) proof the 8-step model is the market-standard pattern now.
+
+### Key Findings (summary)
+1. **Hook that works:** "I turned Claude Code into the best business partner I could ask for and made 3× more money in 30 days." Personal-outcome + specific number — same shape as her best LinkedIn openers.
+2. **The 4 upgrades (the spine):**
+   - **Stop letting it agree with you** → a "council" of parallel sub-agents with distinct lenses: *Contrarian* (finds fatal flaws), *Expansionist* (biggest upside), *Principles thinker* (pure logic), *Researcher* (evidence). Pressure-tests an idea before any build.
+   - **Make it check its own work** → build-and-verify loop: Claude opens the page in Playwright, fills forms with junk/edge-case data, screenshots, and proves it works "by my own screenshots, not your word."
+   - **Manage your context** → keep context lean so reasoning doesn't degrade over long sessions.
+   - **Stop being the bottleneck** → `/goal` + sub-agents run unattended; 6 agents built a full go-to-market kit (positioning, market research, 14-day launch plan, outreach templates + drafts, content calendar) in ~8 minutes.
+3. **The mindset line (very reusable):** you shift from *builder/producer* → *problem-solver, decision-maker, reviewer, judge*. "Stop being the bottleneck."
+4. **Proof-of-scale framing:** "all these demos took me under an hour… something that would've taken a team of 10." Replaces team headcount with a 1-hour agent run.
+5. **Funnel:** free Skool community ("400,000+ building with Claude") + paid community with weekly calls. Content → free community → paid is the same bridge motion she runs.
+
+### Signals worth acting on
+- The "4 upgrades / fixes most people miss" listicle structure is a proven carousel + short-form series skeleton — she can replicate it in her voice without copying his exact prompts.
+- **Self-verification ("make it check its own work") is an under-told angle** in the solopreneur lane — most creators stop at "AI built it." A trust/"how do you know it actually works" hook is ownable.
+- "Stop being the bottleneck" lands directly on her **win-back-your-time** promise and the **You're the Bottleneck** short she already drafted (ENTRY 008) — a natural follow-on.
+- The council/contrarian idea reframes her existing **"AI agrees with you too much"** instinct into a concrete, demonstrable system.
+
+### Content angles (3 ready to use)
+1. **"I stopped letting AI agree with me — and started making real decisions."** The council idea, translated: give AI a job to *disagree* with you before you build. (Pillar: Build Once, Runs Forever / Stop Doing That by Hand.)
+2. **"AI built it. But does it actually work?"** The self-verify angle — make the machine prove its own work before you trust it. Under-told, high-credibility, ties to her 20-yr corporate rigor. (Pillar: What's Worth It / Real Talk.)
+3. **"6 agents. 8 minutes. A full launch plan."** The unattended `/goal` run as the payoff proof — what used to take a team now runs while you make coffee. (Pillar: The Freedom Business / Time Wins.)
+
+**Contrarian take logged:** Every AI creator is selling "look how fast it builds." The thing almost nobody shows is the part that actually matters to a real business owner: *how do you know it's right?* The ownable position is the **judge, not the builder** — the value isn't that AI does the work, it's that you've set up the checks so you can trust the output without doing it yourself. "Speed" is everyone's pitch; "trustworthy output you didn't have to babysit" is hers. It sits on top of her existing "you don't need to be technical, you need a system" line.
+
+**Status:** NOTED
+
+---
+
+---
+
 ## RESEARCH 023 — 2026-07-03 | Daily signal harvest
 
 **Status:** NOTED

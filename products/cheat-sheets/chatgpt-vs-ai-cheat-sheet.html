@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT vs AI: Cheat Sheet · Shift &amp; Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--tint:#E4EAFB;--cream:#EEF2FC;--red:#E63955}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--canvas);color:var(--ink)}
+body{font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.4}
+.mono{font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
+
+@page{size:A4;margin:12mm}
+.page{max-width:720px;margin:0 auto;padding:20px 22px}
+
+.head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2.5px solid var(--ink);padding-bottom:12px;margin-bottom:16px}
+.head h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:1.55rem;letter-spacing:-.01em}
+.head h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.head .tag{font-size:9.5px;color:var(--muted);margin-top:3px;font-family:'Inter',sans-serif}
+.head .brand{text-align:right;font-size:8.5px;letter-spacing:.1em;color:var(--muted)}
+.head .brand b{color:var(--ink);display:block;font-size:9px;letter-spacing:.08em}
+
+h2.sub{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1rem;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+h2.sub .n{color:var(--accent);font-weight:900}
+
+/* car analogy: 3 boxes */
+.carbox{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.carbox .c{border:1px solid var(--rule);border-radius:8px;padding:9px 11px;text-align:center}
+.carbox .c.hi{border-color:var(--accent);background:var(--tint)}
+.carbox .lbl{font-size:7.5px;color:var(--accent);display:block;margin-bottom:3px}
+.carbox h3{font-family:'Playfair Display',Georgia,serif;font-size:.88rem;font-weight:700;margin-bottom:3px}
+.carbox p{font-size:9.5px;color:var(--muted);line-height:1.35}
+
+/* 6 words grid, small terms */
+.words{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:14px}
+.word{border:1px solid var(--rule);border-radius:8px;padding:8px 10px}
+.word .lbl{font-size:7px;color:var(--accent);display:block;margin-bottom:3px}
+.word h4{font-family:'Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;margin-bottom:2px}
+.word p{font-size:9px;color:var(--muted);line-height:1.35}
+
+/* the one-line summary */
+.oneidea{background:var(--cream);border:1.5px solid var(--accent);border-radius:10px;padding:11px 15px;margin-bottom:14px}
+.oneidea p{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:.95rem;line-height:1.35;color:var(--ink)}
+.oneidea p strong{color:var(--accent);font-style:normal}
+
+/* decode strip */
+.decode{border:1px solid var(--rule);border-radius:8px;padding:10px 13px;margin-bottom:14px}
+.decode .lbl{font-size:8px;color:var(--muted);display:block;margin-bottom:5px}
+.decode p{font-family:'Inter',sans-serif;font-size:10px;line-height:1.5;color:var(--ink);margin-bottom:5px}
+.decode p:last-child{margin-bottom:0}
+.decode p b{color:var(--accent-deep)}
+
+/* try this today */
+.try{border:1.5px solid var(--accent);border-radius:8px;padding:10px 13px;margin-bottom:12px;background:#fff}
+.try .lbl{font-size:8px;color:var(--accent);display:block;margin-bottom:4px}
+.try p{font-family:'Inter',sans-serif;font-style:italic;font-size:10.5px;color:var(--ink);line-height:1.4}
+
+/* traffic light card */
+.traffic{border:1px solid var(--rule);border-radius:8px;padding:9px 13px;margin-bottom:12px;display:flex;gap:12px;align-items:center}
+.traffic .lbl{font-size:8px;color:var(--muted);white-space:nowrap;flex-shrink:0}
+.tlights{display:flex;gap:8px;flex:1}
+.tlight{flex:1;border-radius:6px;padding:5px 8px;font-size:8.7px;line-height:1.3}
+.tlight.green{background:#EEF5E6;color:#3A5A24}
+.tlight.amber{background:#FCF1DD;color:#7A5416}
+.tlight.red{background:#FBE7EA;color:#8C1F30}
+.tlight b{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.05em}
+
+.foot{border-top:1.5px solid var(--rule);padding-top:10px;margin-top:6px}
+.foot .cta{font-family:'Inter',sans-serif;font-size:10px;color:var(--ink);margin-bottom:5px}
+.foot .cta a{color:var(--accent);font-weight:600;text-decoration:none}
+.foot .ip{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{padding:0}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="head">
+    <div>
+      <h1>ChatGPT vs AI: <em>the six words</em></h1>
+      <div class="tag">Plain English series &middot; No. 02 &middot; the one-page version</div>
+    </div>
+    <div class="brand mono">
+      <b>Shift &amp; Lead</b>
+      guides.shiftandlead.com
+    </div>
+  </div>
+
+  <h2 class="sub"><span class="n">01</span> Think of it like a car</h2>
+  <div class="carbox">
+    <div class="c">
+      <span class="lbl mono">The engine</span>
+      <h3>The AI model</h3>
+      <p>The technology doing the thinking. Powerful, but you never touch it directly.</p>
+    </div>
+    <div class="c hi">
+      <span class="lbl mono">The car</span>
+      <h3>The chatbot or app</h3>
+      <p>Built around the engine. Dashboard, steering wheel. The part you interact with.</p>
+    </div>
+    <div class="c">
+      <span class="lbl mono">The brand</span>
+      <h3>The company</h3>
+      <p>Who made it. OpenAI, Anthropic, Google. Same concept, different maker.</p>
+    </div>
+  </div>
+
+  <h2 class="sub"><span class="n">02</span> The six words, sorted for good</h2>
+  <div class="words">
+    <div class="word"><span class="lbl mono">Word 1 &middot; category</span><h4>AI</h4><p>Any software that learns instead of following handwritten rules. The broadest term there is.</p></div>
+    <div class="word"><span class="lbl mono">Word 2 &middot; type</span><h4>Generative AI</h4><p>The kind that creates: new text, images, audio, video. What every headline means right now.</p></div>
+    <div class="word"><span class="lbl mono">Word 3 &middot; the engine</span><h4>LLM</h4><p>Large Language Model. Studied enormous amounts of writing. GPT-4o, Claude, Gemini Pro.</p></div>
+    <div class="word"><span class="lbl mono">Word 4 &middot; the car</span><h4>Chatbot / App</h4><p>What you actually open and type into. Built around an LLM plus the interface.</p></div>
+    <div class="word"><span class="lbl mono">Word 5 &middot; the maker</span><h4>Brand / Company</h4><p>Who built the car. OpenAI, Anthropic, Google. Same concept, different makers.</p></div>
+    <div class="word"><span class="lbl mono">Word 6 &middot; the doer</span><h4>Agent</h4><p>A chatbot that takes action: searches, reads files, fills forms. It goes and does it.</p></div>
+  </div>
+
+  <div class="oneidea">
+    <p>AI is the category. Generative AI is the type. LLM is the <strong>engine.</strong> ChatGPT is one car, made by one company, using one engine. Now you know.</p>
+  </div>
+
+  <h2 class="sub"><span class="n">03</span> Hear it in a meeting</h2>
+  <div class="decode">
+    <span class="lbl mono">"We tested the new Claude model, it's better for long documents. Let's switch our chatbot over."</span>
+    <p><b>"Claude model"</b> = the engine, the LLM made by Anthropic.</p>
+    <p><b>"Better for long documents"</b> = this engine handles more text at once.</p>
+    <p><b>"Switch our chatbot over"</b> = swap the engine inside the app. The app itself doesn't change.</p>
+  </div>
+
+  <div class="try">
+    <span class="lbl mono">Try this today</span>
+    <p>Next time someone pitches an "AI tool" subscription, ask: which model does it use underneath? ChatGPT, Claude, and Gemini all have free tiers.</p>
+  </div>
+
+  <div class="traffic">
+    <span class="lbl mono">The Traffic Light Rule</span>
+    <div class="tlights">
+      <div class="tlight green"><b>Green</b>Share freely: public info, general questions</div>
+      <div class="tlight amber"><b>Amber</b>Redact first: names, numbers become [Client]</div>
+      <div class="tlight red"><b>Red</b>Never in a personal AI account: real client data</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="cta">Full guide free at <a href="https://guides.shiftandlead.com">guides.shiftandlead.com</a> &middot; Next step: The Prompt Menu, $19 in the Store</div>
+    <div class="ip">© 2026 Fatiha Chikh / Shift &amp; Lead &middot; Original IP, not for resale or redistribution</div>
+  </div>
+
+</div>
+
+</body>
+</html>

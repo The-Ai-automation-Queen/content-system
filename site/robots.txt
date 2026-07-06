@@ -1,3 +1,5 @@
+Sitemap: https://guides.shiftandlead.com/sitemap.xml
+
 # Shift & Lead — robots.txt
 # Allow search engines, block AI scrapers and content crawlers
 

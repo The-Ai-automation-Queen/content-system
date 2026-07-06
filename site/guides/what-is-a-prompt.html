@@ -1,274 +1,433 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#F8F7F5">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noai, noimageai">
-<meta name="description" content="What a prompt actually is, and what makes one work — a plain-English guide for anyone tired of vague write-better-prompts advice.">
-<title>What is a prompt &mdash; Shift &amp; Lead</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="canonical" href="https://guides.shiftandlead.com/guides/what-is-a-prompt.html">
-<meta property="og:title" content="What is a prompt">
-<meta property="og:description" content="What a prompt actually is, and what makes one work — a plain-English guide for anyone tired of vague write-better-prompts advice.">
-<meta property="og:type" content="article">
+<title>What is a prompt · Shift &amp; Lead</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shift &amp; Lead">
+<meta property="og:title" content="What is a prompt &mdash; Shift &amp; Lead">
+<meta property="og:description" content="AI, explained quietly. Free guides by Fatiha Chikh — The AI Automation Queen.">
 <meta property="og:url" content="https://guides.shiftandlead.com/guides/what-is-a-prompt.html">
 <meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="What is a prompt">
-<meta name="twitter:description" content="What a prompt actually is, and what makes one work — a plain-English guide for anyone tired of vague write-better-prompts advice.">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "What is a prompt",
-  "description": "What a prompt actually is, and what makes one work — a plain-English guide for anyone tired of vague write-better-prompts advice.",
-  "datePublished": "2026-03-20",
-  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
-  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/what-is-a-prompt.html",
-  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
-  "publisher": {"@type": "Organization", "name": "The AI Automation Queen", "url": "https://www.shiftandlead.com"}
-}
-</script>
+<link rel="canonical" href="https://guides.shiftandlead.com/guides/what-is-a-prompt.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --canvas:#F8F7F5;--cream:#F4F0FA;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
-  --muted:#5C5A57;--accent:#6B35C2;--accent-deep:#4A1F8F;--accent-tint:#EEE5FA;
-  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
-a:hover{color:var(--accent-deep)}
-strong{font-weight:700;color:var(--ink)}
+:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--tint:#E4EAFB;--cream:#EEF2FC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.75}
+.mono{font-family:'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
 
-.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
-.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
-.nav-links{display:flex;gap:28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
-.nav-links a{color:var(--ink);text-decoration:none}
+/* nav */
+.nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20}
+.nav-inner{max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav .mono{font-size:10px;color:var(--muted)}
 
-.wrap{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,100px) clamp(24px,5vw,72px)}
+/* magazine cover hero */
+.cover{max-width:1160px;margin:0 auto;padding:70px 24px 56px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:end}
+@media(max-width:860px){.cover{grid-template-columns:1fr}}
+.issue{font-size:11px;color:var(--accent);margin-bottom:18px;display:flex;gap:18px;flex-wrap:wrap}
+.cover h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:clamp(3rem,9vw,6.2rem);line-height:.98;letter-spacing:-.02em;margin:0}
+.cover h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.cover .standfirst{font-size:1.2rem;color:var(--muted);max-width:44ch;margin:22px 0 0}
+.cover-art{position:relative;aspect-ratio:4/5;background:var(--ink);border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.cover-art svg{width:82%;height:auto}
+.cover-art .slot{position:absolute;bottom:10px;right:12px;font-size:9px;color:#8d86a0}
+.dropcap::first-letter{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:4.6em;float:left;line-height:.78;padding:6px 12px 0 0;color:var(--accent)}
 
-.chips{margin-bottom:28px;display:flex;gap:8px;flex-wrap:wrap}
-.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff}
-.chip-track0{background:var(--accent)}
-.chip-time{background:transparent;color:var(--muted);border:1px solid var(--rule);padding:4px 10px}
+/* the rail — reading progress as courses */
+.rail{max-width:1160px;margin:0 auto;padding:0 24px}
+.courses{display:flex;gap:0;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:#fff;margin:8px 0 0}
+.course{flex:1;text-align:center;padding:11px 6px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-left:1px solid var(--rule)}
+.course:first-child{border-left:none}
+.course.active{background:var(--ink);color:#fff}
 
-.kicker{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);display:flex;align-items:center;margin-bottom:20px}
-.kicker-rule{display:inline-block;width:32px;height:1px;background:var(--ink);margin-right:10px}
+/* sections */
+.sec{max-width:1160px;margin:0 auto;padding:72px 24px 8px}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:baseline;border-top:2px solid var(--ink);padding-top:18px}
+.sec-num{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:3.4rem;line-height:1;color:var(--accent)}
+.sec-head h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0}
+.sec-head .mono{display:block;font-size:10px;color:var(--muted);margin-top:6px}
+.sec-body{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;padding:26px 0 0}
+@media(max-width:860px){.sec-body{grid-template-columns:1fr}}
+.sec-body p{max-width:60ch;font-size:1.06rem;margin:0 0 1rem}
+.sec p{max-width:74ch;font-size:1.06rem;margin:0 0 1rem}
 
-h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,5.5vw,56px);line-height:1.08;letter-spacing:-0.5px;color:var(--ink);margin-bottom:24px}
-h1 em{font-style:italic;color:var(--electric)}
-h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.18;letter-spacing:-0.3px;margin:64px 0 16px}
-h3{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);margin:32px 0 12px}
-p{margin-bottom:18px;color:var(--ink)}
-p.lead{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:20px;line-height:1.55;color:var(--muted);margin-bottom:32px}
+/* floor plan diagram (reused as "the formula" plan) */
+.plan{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:26px}
+.plan .mono{font-size:10px;color:var(--accent);display:block;margin-bottom:12px}
+.plan svg{width:100%;height:auto}
 
-.rule{border:0;border-top:2px solid var(--ink);margin:80px 0 40px}
+/* menu cards */
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 0}
+@media(max-width:860px){.menu{grid-template-columns:1fr}}
+.dish{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:24px;position:relative}
+.dish .mono{font-size:9.5px;color:var(--accent)}
+.dish h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:.4rem 0 .4rem}
+.dish p{font-family:'Inter',sans-serif;font-size:.9rem;color:var(--muted);margin:0;line-height:1.6}
+.dish .pict{height:74px;margin-bottom:10px;display:flex;align-items:center}
+.dish .pict svg{height:64px;width:auto}
 
-.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:28px 32px;margin:24px 0}
-.card.accent{border-color:var(--accent);background:var(--accent-tint)}
+/* stations grid */
+.stations{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 0}
+@media(max-width:900px){.stations{grid-template-columns:repeat(2,1fr)}}
+.station{border:1px solid var(--rule);border-radius:12px;padding:16px 18px;background:#fff}
+.station .mono{font-size:9px;color:var(--accent)}
+.station h4{font-family:'Inter',sans-serif;font-size:.98rem;font-weight:600;margin:.35rem 0 .2rem}
+.station p{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--muted);margin:0;line-height:1.5}
+.station blockquote{margin:.4rem 0 0;padding:0;border:0;background:none;font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:.82rem;color:var(--ink)}
+.menu-more{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:18px}
 
-.pullquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:24px;line-height:1.35;color:var(--muted);border-left:3px solid var(--accent);padding-left:24px;margin:40px 0}
+/* pull quote */
+.pull{max-width:1160px;margin:0 auto;padding:80px 24px}
+.pull blockquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.7rem,4.5vw,2.7rem);line-height:1.3;margin:0;max-width:30ch;color:var(--ink)}
+.pull blockquote strong{color:var(--accent);font-style:normal}
+.pull .mono{font-size:10px;color:var(--muted);margin-top:18px;display:block}
 
-blockquote{background:var(--accent-tint);border-left:3px solid var(--accent);padding:16px 24px;margin:20px 0;border-radius:0 4px 4px 0;color:var(--muted)}
-blockquote p{margin-bottom:0;color:var(--muted)}
+/* vs comparison, reusing dish-card visual language */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:26px 0 0}
+@media(max-width:860px){.vs{grid-template-columns:1fr}}
+.vs-col{border-radius:14px;padding:24px;border:1px solid var(--rule)}
+.vs-col.bad{background:#FDF2F2;border-color:#E8C4C4}
+.vs-col.good{background:#F0F4E8;border-color:#C4D4A8}
+.vs-col .mono{font-size:9.5px;color:var(--accent)}
+.vs-col h3{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;margin:.4rem 0 .6rem}
+.vs-col p{font-family:'Inter',sans-serif;font-size:.88rem;color:var(--muted);margin:0 0 .6rem;line-height:1.6}
+.vs-col p:last-child{margin-bottom:0}
+.vs-col strong{color:var(--ink)}
 
-.prompt-part{padding:20px 0;border-bottom:1px solid var(--rule-light)}
-.prompt-part:last-of-type{border-bottom:none}
-.prompt-part .label{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin-bottom:6px}
+/* warnings — "know before you eat" as menu footnotes */
+.warn{background:var(--ink);color:#F5F0EB}
+.warn-inner{max-width:1160px;margin:0 auto;padding:70px 24px}
+.warn .mono{color:#7FA0FF;font-size:11px}
+.warn h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:700;margin:.4rem 0 26px}
+.warn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:560px){.warn-grid{grid-template-columns:1fr}}
+.warn-card{border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:20px}
+.warn-card .term{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7FA0FF;margin-bottom:8px}
+.warn-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0;line-height:1.6}
+.warn-card strong{color:#fff}
+.warn-link{font-family:'Inter',sans-serif;font-size:.92rem;color:#D9D3E6;margin-top:26px}
+.warn-link a{color:#7FA0FF}
 
-.vs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
-.vs-col{padding:20px 24px;border-radius:6px}
-.vs-col.bad{background:#FDF2F2;border:1px solid #E8C4C4}
-.vs-col.good{background:#F0F4E8;border:1px solid #C4D4A8}
-.vs-col h3{margin-top:0}
+/* image slots for the magazine treatment */
+.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
+.imgslot .mono{font-size:9.5px;color:var(--accent)}
+.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
+.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
+.fullbleed .imgslot{aspect-ratio:21/8}
 
-.example-set{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:24px 28px;margin:24px 0}
-.example-set .ex-label{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin-bottom:14px}
+/* byline + IP bar */
+.byline{max-width:1160px;margin:70px auto 0;padding:0 24px}
+.byline-in{display:flex;gap:18px;align-items:center;background:var(--cream);border:1px solid var(--tint);border-radius:14px;padding:22px 26px}
+.byline-in img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.byline-in p{margin:0;font-size:.95rem}
+.byline-in .who{font-family:'Inter',sans-serif;font-weight:600}
+.ipbar{max-width:1160px;margin:26px auto 0;padding:0 24px 70px}
+.ipbar p{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px;margin:0}
+a{color:var(--accent)}
 
-ul,ol{margin:12px 0 20px 24px}
-li{margin-bottom:8px;color:var(--ink)}
+/* subscribe strip + chef's table (shared with template) */
+.subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
+.subs-in{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid var(--accent);border-radius:14px;padding:22px 26px;background:var(--cream)}
+.subs-in h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:0}
+.subs-in p{font-family:'Inter',sans-serif;font-size:.88rem;color:var(--muted);margin:.2rem 0 0}
+.subs-in a{font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:var(--accent);color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap}
 
-.cta-bar{margin:48px 0;padding:32px;background:var(--navy);border-radius:6px;text-align:center;color:var(--canvas)}
-.cta-bar h3{color:var(--canvas);margin-top:0}
-.cta-bar p{color:rgba(255,255,255,0.85)}
-.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:13px 32px;background:var(--canvas);color:var(--ink);text-decoration:none;border-radius:4px;margin-top:12px}
-.btn:hover{background:#fff;color:var(--ink)}
-
-.guide-nav{display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:32px;border-top:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em}
-.guide-nav a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
-.guide-nav a:hover{color:var(--accent);border-color:var(--accent)}
-
-.footer{margin-top:120px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+.chefs{background:var(--ink);color:#F5F0EB;margin-top:72px}
+.chefs-in{max-width:1160px;margin:0 auto;padding:64px 24px}
+.chefs .mono{color:#7FA0FF;font-size:11px}
+.chefs h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:700;margin:.4rem 0 26px}
+.chefs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.chefs-grid{grid-template-columns:1fr}}
+.chefs-card{border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:24px;display:flex;flex-direction:column;background:rgba(255,255,255,.03)}
+.chefs-card .mono{font-size:9.5px;margin-bottom:8px}
+.chefs-card h3{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;margin:0 0 6px;color:#fff}
+.chefs-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0 0 18px;line-height:1.6}
+.chefs-card a{margin-top:auto;text-align:center;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;text-decoration:none;background:#fff;color:var(--ink);border-radius:8px;padding:11px 16px}
 
 @media(max-width:560px){
-  html,body{font-size:16px}
-  .wrap{padding:40px 16px}
-  h1{font-size:32px;line-height:1.1}
-  .pullquote{font-size:20px}
-  .vs{grid-template-columns:1fr}
-  .guide-nav{flex-direction:column;gap:16px;align-items:flex-start}
-  .nav-inner{padding:14px 16px}
-  .nav-links{gap:16px;font-size:11px}
+  .warn-grid{grid-template-columns:1fr}
 }
+
+/* qa: contain grid children, never let the page scroll sideways */
+.sec-body>*{min-width:0}
+.sec-body svg,.sec-body img{max-width:100%;height:auto}
+.imgslot{max-width:100%;overflow:hidden}
+.sec table{max-width:100%}
+body{overflow-x:hidden}
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
-  <a class="nav-logo" href="../free-resources.html" style="display:inline-flex;align-items:center" aria-label="The AI Automation Queen — home"><svg viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg" height="30" role="img" aria-label="The AI Automation Queen"><rect x="2" y="4" width="48" height="48" rx="10" fill="#1A1A1A"/><text x="26" y="39" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="28" fill="#2C4BE0">Q</text><text x="60" y="25" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="18" fill="#2C4BE0">the ai</text><text x="60" y="45" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.5" fill="#1A1A1A">AUTOMATION QUEEN</text></svg></a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="../free-resources.html#go-further">Community</a><a href="../free-resources.html#go-further">About</a></div>
+  <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
+  <span class="mono">Plain English · No. 03: What Is A Prompt</span>
 </div></nav>
 
-<div class="wrap">
+<!-- COVER -->
+<header class="cover">
+  <div>
+    <div class="issue mono"><span>Plain English · No. 03</span><span>7 min read</span></div>
+    <h1>What is a <em>prompt?</em></h1>
+    <p class="standfirst">Every AI article says "write better prompts." Nobody stops to explain what a prompt actually is, or why some get incredible results and others get garbage. Let's fix that.</p>
+  </div>
+  <div class="cover-art">
+    <!-- role/context/task/format cover mark, drawn -->
+    <svg viewBox="0 0 300 380" fill="none" aria-label="A message going in, a shaped answer coming out">
+      <rect x="70" y="30" width="160" height="90" rx="6" stroke="#7FA0FF" stroke-width="2"/>
+      <path d="M95 60h110M95 78h80M95 96h60" stroke="#7FA0FF" stroke-width="2" stroke-linecap="round"/>
+      <text x="150" y="22" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE PROMPT</text>
+      <path d="M150 140v40" stroke="#2C4BE0" stroke-width="2" stroke-linecap="round"/>
+      <path d="M138 170l12 14 12-14" stroke="#2C4BE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="80" y="200" width="140" height="90" rx="6" stroke="#7FA0FF" stroke-width="2"/>
+      <path d="M100 224h100M100 242h100M100 260h70" stroke="#7FA0FF" stroke-width="2" stroke-linecap="round"/>
+      <text x="150" y="316" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE ANSWER</text>
+    </svg>
+    <span class="slot mono">image slot: replace with hero illustration</span>
+  </div>
+</header>
 
-  <div class="chips">
-    <span class="chip chip-track0">PROMPT</span>
-    <span class="chip chip-time">7 min read</span>
+<!-- course rail -->
+<div class="rail">
+  <div class="courses">
+    <div class="course active">01 · What It Is</div>
+    <div class="course">02 · The Formula</div>
+    <div class="course">03 · See It Work</div>
+    <div class="course">04 · Before You Eat</div>
+    <div class="course">05 · The Bill</div>
+  </div>
+</div>
+
+<!-- 01 WHAT IT IS -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <div><h2>What it is: just what you type</h2><span class="mono">First course · 1 min</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p class="dropcap">A prompt is just what you type. That's it. When you open ChatGPT, Claude, or Gemini and type something into the message box, that message is your prompt. When the AI replies, that's the response.</p>
+      <p>Every time you hit send, you're prompting. You've been doing it since the first time you asked AI anything. You just didn't know the word.</p>
+      <p>So why do people talk about "prompt engineering" like it's a skill? Because how you write that message changes everything about what you get back. (And yes, even the best chef makes mistakes. The allergen card comes right before you eat, in course four.)</p>
+    </div>
+    <div class="imgslot" style="aspect-ratio:4/3">
+      <span class="mono">Image slot 01</span>
+      <em>Editorial photo: a hand typing a short note, warm light, duotone ink/purple grade</em>
+    </div>
+  </div>
+</section>
+
+<!-- pull quote -->
+<div class="pull">
+  <blockquote>The quality of your answer is almost entirely determined by <strong>the quality of your question.</strong> That's the whole game.</blockquote>
+  <span class="mono">Why prompts matter more than people think</span>
+</div>
+
+<!-- 02 THE FORMULA -->
+<section class="sec" style="padding-top:0">
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <div><h2>The Formula: four things, every time</h2><span class="mono">Second course · the floor plan</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p>There's no secret language. No magic words. But there are 4 things that, when you include them, consistently turn vague AI answers into ones you can actually use: role, context, task, and format.</p>
+      <p>Same chef, different order every time. The skill is knowing what to put on the ticket. That's what the floor plan below is for.</p>
+    </div>
+    <div class="plan">
+      <span class="mono">The order ticket</span>
+      <svg viewBox="0 0 420 300" fill="none">
+        <rect x="150" y="110" width="120" height="80" rx="10" stroke="#2C4BE0" stroke-width="2.5"/>
+        <text x="210" y="145" text-anchor="middle" font-family="Playfair Display" font-size="17" font-weight="700" fill="#1A1A1A">The AI</text>
+        <text x="210" y="166" text-anchor="middle" font-family="Space Mono" font-size="9" letter-spacing="2" fill="#5C5A57">ONE ANSWER</text>
+        <rect x="20" y="20" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
+        <text x="85" y="42" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">1. Role</text>
+        <text x="85" y="59" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">WHO IT SHOULD BE</text>
+        <rect x="270" y="20" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
+        <text x="335" y="42" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">2. Context</text>
+        <text x="335" y="59" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">YOUR SITUATION</text>
+        <rect x="20" y="228" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
+        <text x="85" y="250" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">3. Task</text>
+        <text x="85" y="267" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">EXACTLY WHAT YOU WANT</text>
+        <rect x="270" y="228" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
+        <text x="335" y="250" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">4. Format</text>
+        <text x="335" y="267" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">HOW TO STRUCTURE IT</text>
+        <path d="M120 72 L172 110M300 72 L248 110M120 228 L172 190M300 228 L248 190" stroke="#7FA0FF" stroke-width="1.5" stroke-dasharray="4 4"/>
+      </svg>
+    </div>
   </div>
 
-  <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; AI Basics</div>
+  <div class="stations">
+    <div class="station">
+      <span class="mono">Ingredient 1</span>
+      <h4>Role</h4>
+      <p>Tell the AI who it should be. This shapes the tone, the vocabulary, and the type of advice it gives. Without a role, you get a generic answer. With one, you get an answer from the right perspective.</p>
+      <blockquote>"You are an experienced social media manager for small businesses."</blockquote>
+    </div>
+    <div class="station">
+      <span class="mono">Ingredient 2</span>
+      <h4>Context</h4>
+      <p>Give it your situation. AI doesn't know anything about you, your business, or your problems unless you tell it. The more relevant detail you share, the more tailored the answer will be.</p>
+      <blockquote>"I run a small online store selling handmade candles. About 2,000 Instagram followers, posting 3 times a week. Engagement has dropped this month."</blockquote>
+    </div>
+    <div class="station">
+      <span class="mono">Ingredient 3</span>
+      <h4>Task</h4>
+      <p>Say exactly what you want it to do. Not "help me with social media", that's too broad. Be specific about the deliverable.</p>
+      <blockquote>"Give me 5 Instagram post ideas that could increase engagement this week, each with a caption and content format."</blockquote>
+    </div>
+    <div class="station">
+      <span class="mono">Ingredient 4</span>
+      <h4>Format</h4>
+      <p>Tell it how you want the answer structured. Without this, AI tends to write long paragraphs. With it, you get something you can use immediately.</p>
+      <blockquote>"Numbered list, format in bold, caption below it, each under 50 words."</blockquote>
+    </div>
+  </div>
+  <p class="menu-more">Role + context + task + format. Four pieces. Works every time, for anything.</p>
+</section>
 
-  <h1>Heard &ldquo;prompt&rdquo; 50 times. <em>Still no idea what it is?</em></h1>
-
-  <p class="lead">Every AI article says &ldquo;write better prompts.&rdquo; Nobody stops to explain what a prompt actually is, or why some get incredible results and others get garbage. Let&rsquo;s fix that.</p>
-
-  <hr class="rule">
-
-  <h2>A prompt is just what you type</h2>
-
-  <p>That&rsquo;s it. When you open ChatGPT, Claude, or Gemini and type something into the message box, that message is your prompt. When the AI replies, that&rsquo;s the response.</p>
-
-  <p>Every time you hit send, you&rsquo;re prompting. You&rsquo;ve been doing it since the first time you asked AI anything. You just didn&rsquo;t know the word.</p>
-
-  <p>So why do people talk about &ldquo;prompt engineering&rdquo; like it&rsquo;s a skill? Because how you write that message changes everything about what you get back.</p>
-
-  <div class="pullquote">The quality of your answer is almost entirely determined by the quality of your question. That&rsquo;s the whole game.</div>
-
-  <hr class="rule">
-
-  <h2>The 4-part formula</h2>
-
-  <p>There&rsquo;s no secret language. No magic words. But there are 4 things that, when you include them, consistently turn vague AI answers into ones you can actually use.</p>
-
-  <div class="prompt-part">
-    <div class="label">1. Role</div>
-    <p>Tell the AI who it should be. This shapes the tone, the vocabulary, and the type of advice it gives. Without a role, you get a generic answer. With one, you get an answer from the right perspective.</p>
-    <blockquote><p>&ldquo;You are an experienced social media manager for small businesses.&rdquo;</p></blockquote>
+<!-- 03 SEE IT WORK -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <div><h2>See It Work: three dishes, side by side</h2><span class="mono">Third course · before &amp; after, then three more orders</span></div>
   </div>
 
-  <div class="prompt-part">
-    <div class="label">2. Context</div>
-    <p>Give it your situation. AI doesn&rsquo;t know anything about you, your business, or your problems unless you tell it. The more relevant detail you share, the more tailored the answer will be.</p>
-    <blockquote><p>&ldquo;I run a small online store selling handmade candles. I have about 2,000 Instagram followers and I post 3 times a week. My engagement has dropped over the last month.&rdquo;</p></blockquote>
-  </div>
-
-  <div class="prompt-part">
-    <div class="label">3. Task</div>
-    <p>Say exactly what you want it to do. Not &ldquo;help me with social media.&rdquo; That&rsquo;s too broad. Be specific about the deliverable.</p>
-    <blockquote><p>&ldquo;Give me 5 Instagram post ideas that could increase engagement this week. Each one should include a caption and a content format (reel, carousel, or static image).&rdquo;</p></blockquote>
-  </div>
-
-  <div class="prompt-part">
-    <div class="label">4. Format</div>
-    <p>Tell it how you want the answer structured. Without this, AI tends to write long paragraphs. With it, you get something you can use immediately.</p>
-    <blockquote><p>&ldquo;Present each idea as a numbered list with the format in bold, then the caption below it. Keep each caption under 50 words.&rdquo;</p></blockquote>
-  </div>
-
-  <hr class="rule">
-
-  <h2>See the difference</h2>
+  <p style="max-width:74ch">Same AI. Same tool. Same subscription. Here's the exact same request, once without the formula and once with it.</p>
 
   <div class="vs">
     <div class="vs-col bad">
-      <h3>Without the formula</h3>
-      <p>&ldquo;Help me with my Instagram.&rdquo;</p>
-      <p style="margin-bottom:0"><strong>You get:</strong> a generic 500-word essay about Instagram best practices. Nothing specific to you. Nothing you can post today.</p>
+      <span class="mono">Without the formula</span>
+      <h3>"Help me with my Instagram."</h3>
+      <p><strong>You get:</strong> a generic 500-word essay about Instagram best practices. Nothing specific to you. Nothing you can post today.</p>
     </div>
     <div class="vs-col good">
-      <h3>With the formula</h3>
-      <p>&ldquo;You are an experienced social media manager for small businesses. I run a small online store selling handmade candles. I have about 2,000 Instagram followers and my engagement has dropped. Give me 5 Instagram post ideas that could increase engagement this week, each with a caption and content format. Numbered list, captions under 50 words.&rdquo;</p>
-      <p style="margin-bottom:0"><strong>You get:</strong> 5 specific ideas you can use today. Tailored to your product. Ready to adapt and post.</p>
+      <span class="mono">With the formula</span>
+      <h3>Role + context + task + format, all in one message</h3>
+      <p>"You are an experienced social media manager for small businesses. I run a small online store selling handmade candles, 2,000 followers, engagement dropped. Give me 5 Instagram post ideas to increase engagement this week, each with a caption and content format. Numbered list, captions under 50 words."</p>
+      <p><strong>You get:</strong> 5 specific ideas you can use today. Tailored to your product. Ready to adapt and post.</p>
     </div>
   </div>
 
-  <p>Same AI. Same tool. Same subscription. The difference is entirely in how you asked.</p>
-
-  <hr class="rule">
-
-  <h2>Three more examples, different situations</h2>
-
-  <p>The formula works for anything. Here&rsquo;s what it looks like across different real scenarios.</p>
-
-  <div class="example-set">
-    <div class="ex-label">Writing a client proposal</div>
-    <p><strong>Role:</strong> &ldquo;You are a freelance consultant who writes clear, professional proposals.&rdquo;</p>
-    <p><strong>Context:</strong> &ldquo;A potential client wants me to redesign their website. They&rsquo;re a local bakery with about 50 visitors a day on their current site. Budget is around $3,000.&rdquo;</p>
-    <p><strong>Task:</strong> &ldquo;Draft a one-page project proposal I can send them today.&rdquo;</p>
-    <p style="margin-bottom:0"><strong>Format:</strong> &ldquo;Include sections for scope, timeline, price, and next steps. Keep it under 400 words. Professional but warm.&rdquo;</p>
+  <div class="menu" style="margin-top:40px">
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><path d="M10 50c10-24 50-24 60 0" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/><circle cx="40" cy="20" r="9" stroke="#2C4BE0" stroke-width="2.5"/></svg></div>
+      <span class="mono">Starter</span>
+      <h3>Writing a client proposal</h3>
+      <p><strong>Role:</strong> "You are a freelance consultant who writes clear, professional proposals." <strong>Context:</strong> "A potential client wants a website redesign, a local bakery, ~50 visitors/day, budget ~$3,000." <strong>Task:</strong> "Draft a one-page proposal I can send today." <strong>Format:</strong> "Scope, timeline, price, next steps. Under 400 words. Professional but warm."</p>
+    </div>
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><rect x="12" y="10" width="56" height="40" rx="5" stroke="#2C4BE0" stroke-width="2.5"/><path d="M24 26l8 6-8 6M40 40h16" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <span class="mono">Main</span>
+      <h3>Preparing for a meeting</h3>
+      <p><strong>Role:</strong> "You are a business strategy advisor." <strong>Context:</strong> "Meeting a potential partner, a marketing agency wanting to co-create an AI workshop. First partnership like this."<strong>Task:</strong> "8 questions to evaluate whether this partnership is worth pursuing." <strong>Format:</strong> "Numbered list, one sentence each, grouped by fit, logistics, money."</p>
+    </div>
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><circle cx="40" cy="32" r="22" stroke="#2C4BE0" stroke-width="2.5"/><path d="M40 18v14l10 8" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <span class="mono">Chef's special</span>
+      <h3>Handling a difficult customer email</h3>
+      <p><strong>Role:</strong> "You are a customer service expert who specializes in de-escalation." <strong>Context:</strong> "Customer upset their order arrived late, wants a refund. We can offer 20% off next order, not a full refund." <strong>Task:</strong> "A reply that acknowledges frustration, apologizes, offers the discount, without sounding corporate." <strong>Format:</strong> "Under 150 words, friendly and genuine, no bullet points."</p>
+    </div>
   </div>
+  <p class="menu-more">See the pattern? Role + context + task + format, every order, every time.</p>
+</section>
 
-  <div class="example-set">
-    <div class="ex-label">Preparing for a meeting</div>
-    <p><strong>Role:</strong> &ldquo;You are a business strategy advisor.&rdquo;</p>
-    <p><strong>Context:</strong> &ldquo;I&rsquo;m meeting a potential partner who runs a marketing agency. They want to co-create an AI workshop for their clients. I&rsquo;ve never done a partnership like this.&rdquo;</p>
-    <p><strong>Task:</strong> &ldquo;Give me 8 questions I should ask during this meeting to evaluate whether this partnership is worth pursuing.&rdquo;</p>
-    <p style="margin-bottom:0"><strong>Format:</strong> &ldquo;Numbered list. One sentence each. Group them by theme: fit, logistics, and money.&rdquo;</p>
-  </div>
-
-  <div class="example-set">
-    <div class="ex-label">Handling a difficult customer email</div>
-    <p><strong>Role:</strong> &ldquo;You are a customer service expert who specializes in de-escalation.&rdquo;</p>
-    <p><strong>Context:</strong> &ldquo;A customer emailed saying they&rsquo;re upset their order arrived late. They want a refund. We can offer a 20% discount on their next order but not a full refund.&rdquo;</p>
-    <p><strong>Task:</strong> &ldquo;Write a reply that acknowledges their frustration, apologizes, and offers the discount without sounding corporate or scripted.&rdquo;</p>
-    <p style="margin-bottom:0"><strong>Format:</strong> &ldquo;Keep it under 150 words. Friendly and genuine tone. No bullet points.&rdquo;</p>
-  </div>
-
-  <p>See the pattern? <strong>Role + context + task + format.</strong> Four pieces. Works every time, for anything.</p>
-
-  <div class="pullquote">You don&rsquo;t need to memorize this. You just need to remember: before you hit send, did you tell the AI who to be, what your situation is, exactly what you want, and how to format it?</div>
-
-  <hr class="rule">
-
-  <h2>The two biggest mistakes people make</h2>
-
-  <p><strong>Mistake 1: Being too vague.</strong> &ldquo;Help me with marketing.&rdquo; &ldquo;Write me something for my business.&rdquo; &ldquo;Give me some ideas.&rdquo; These are so broad that the AI has to guess everything. It guesses wrong, you get useless answers, and you conclude &ldquo;AI doesn&rsquo;t work.&rdquo; It works fine. The prompt didn&rsquo;t.</p>
-
-  <p><strong>Mistake 2: Not iterating.</strong> Your first prompt rarely gives you the perfect answer. And that&rsquo;s okay. The magic is in the follow-up. &ldquo;Make option 3 shorter.&rdquo; &ldquo;Now make it sound less formal.&rdquo; &ldquo;Add a line about our free shipping.&rdquo; Think of it as a conversation, not a one-shot command. You refine until it&rsquo;s right.</p>
-
-  <hr class="rule">
-
-  <h2>Why this matters for your business</h2>
-
-  <p>Every task you use AI for starts with a prompt. Email drafts, content ideas, research, customer replies, strategy brainstorms. The better you get at writing prompts, the more useful AI becomes for everything you do.</p>
-
-  <p>And here&rsquo;s the thing that most people miss: a good prompt saves you time <em>every single time you use it</em>. Write a great prompt for client proposals once, save it somewhere, and reuse it with different context every time. That one prompt might save you an hour a week, every week, forever.</p>
-
-  <p>That&rsquo;s not a small thing. That&rsquo;s your time back.</p>
-
-  <div class="card accent">
-    <p>You now have the formula. Role, context, task, format. Try it 5 times today with real work you&rsquo;re already doing. You&rsquo;ll feel the difference immediately.</p>
-    <p style="margin-bottom:0">Once this clicks, everything else in AI gets easier. Because every tool, every feature, every workflow starts with you telling the AI what you need. And now you know how.</p>
-  </div>
-
-  <div class="cta-bar">
-    <h3>Next: the meeting where everyone speaks AI</h3>
-    <p>RAG, MCP, hallucination, token. One real meeting sentence, decoded word by word. You&rsquo;ll never nod along blankly again.</p>
-    <a href="ai-jargon-guide.html" class="btn">Read the next guide &rarr;</a>
-  </div>
-
-  <div class="guide-nav">
-    <a href="chatgpt-vs-ai.html">&larr; Prev: ChatGPT vs AI</a>
-    <a href="ai-jargon-guide.html">Next: The meeting &rarr;</a>
-  </div>
-
+<!-- pull quote 2 -->
+<div class="pull">
+  <blockquote>Before you hit send: did you tell the AI <strong>who to be, what your situation is, exactly what you want, and how to format it?</strong></blockquote>
+  <span class="mono">The one thing to remember</span>
 </div>
 
-<div class="footer">
-  <p>Shift &amp; Lead &middot; Free guide &middot; &copy; 2026</p>
+<!-- full-bleed image slot -->
+<div class="fullbleed">
+  <div class="imgslot">
+    <span class="mono">Image slot 02 · full-bleed divider</span>
+    <em>Wide editorial photo: an order ticket clipped to a rail, warm light, or your portrait working, shot from the side</em>
+  </div>
+</div>
+
+<!-- subscribe strip -->
+<div class="subs"><div class="subs-in">
+  <div><h3>Get every new Kitchen Map in your inbox.</h3><p>Plus The Insider Brief: one curated AI briefing every Tuesday, verdicts included.</p></div>
+  <a href="https://brief.shiftandlead.com">Subscribe free →</a>
+</div></div>
+
+<!-- 04 KNOW BEFORE YOU EAT -->
+<section class="warn" style="margin-top:72px">
+  <div class="warn-inner">
+    <span class="mono">Fourth course · the two mistakes everyone makes</span>
+    <h2>Know before you eat.</h2>
+    <div class="warn-grid">
+      <div class="warn-card"><div class="term">Being too vague</div><p>"Help me with marketing." "Write me something for my business." "Give me some ideas." These are so broad the AI has to guess everything. It guesses wrong, you get useless answers, and you conclude <strong>"AI doesn't work."</strong> It works fine. The prompt didn't.</p></div>
+      <div class="warn-card"><div class="term">Not iterating</div><p>Your first prompt rarely gives you the perfect answer, and that's okay. The magic is in the follow-up: "Make option 3 shorter." "Sound less formal." "Add a line about free shipping." Think of it as <strong>a conversation, not a one-shot command.</strong> You refine until it's right.</p></div>
+    </div>
+    <p class="warn-link">I keep verification prompts for exactly these failures, so <a href="../store.html">The Judge's Prompts &rarr;</a></p>
+  </div>
+</section>
+
+<!-- 05 THE BILL -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <div><h2>The Bill: why this is worth learning once</h2><span class="mono">Last course · 1 min</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p>Every task you use AI for starts with a prompt. Email drafts, content ideas, research, customer replies, strategy brainstorms. The better you get at writing prompts, the more useful AI becomes for everything you do.</p>
+      <p>And here's the thing most people miss: a good prompt saves you time <em>every single time you use it</em>. Write a great prompt for client proposals once, save it somewhere, and reuse it with different context every time. That one prompt might save you an hour a week, every week, forever. That's not a small thing. That's your time back.</p>
+      <p>You now have the formula. Role, context, task, format. Try it 5 times today with real work you're already doing, and you'll feel the difference immediately. Once this clicks, everything else in AI gets easier, because every tool, every feature, every workflow starts with you telling the AI what you need. And now you know how.</p>
+      <p><strong>Next on the map:</strong> the meeting where everyone speaks AI: RAG, MCP, hallucination, token, decoded word by word.</p>
+    </div>
+    <div class="imgslot" style="aspect-ratio:4/3">
+      <span class="mono">Image slot 03</span>
+      <em>The bill on a small tray, one purple petit-four, styled product photo</em>
+    </div>
+  </div>
+</section>
+
+<!-- the chef's table: paid offers close -->
+<section class="chefs"><div class="chefs-in">
+  <span class="mono">The chef's table: go further than the guide</span>
+  <h2>You've learned the words.<br>Now learn to run the kitchen.</h2>
+  <div class="chefs-grid">
+    <div class="chefs-card">
+      <span class="mono">Prompt pack · $19</span>
+      <h3>The Prompt Menu</h3>
+      <p>The Kitchen Map companion: the best prompts for this kitchen and every other, matched to what each chef cooks best.</p>
+      <a href="../store.html">Get it in the Store →</a>
+    </div>
+    <div class="chefs-card">
+      <span class="mono">Community · founding spots soon</span>
+      <h3>Build alongside me</h3>
+      <p>Live "build with me" sessions, templates, and people on the same road, everyday entrepreneurs winning back their time.</p>
+      <a href="../about.html#community">Be first in line →</a>
+    </div>
+    <div class="chefs-card">
+      <span class="mono">For companies</span>
+      <h3>Keynotes &amp; workshops</h3>
+      <p>Bring the whole method into your team, practical, non-technical, from someone whose business runs on 137 AI employees.</p>
+      <a href="../work-with-fatiha.html">Work with Fatiha →</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- byline -->
+<div class="byline">
+  <div class="byline-in">
+    <img src="../closeUp.jpeg" alt="Fatiha Chikh">
+    <p><span class="who">Written by Fatiha Chikh, The AI Automation Queen.</span><br>
+    20+ years inside big corporate tech; now I run my business with a company of 137 AI employees. I build everything I teach. <a href="../about.html">The story →</a></p>
+  </div>
+</div>
+
+<div class="ipbar">
+  <p>© 2026 Fatiha Chikh / Shift &amp; Lead · Original IP · The Kitchen Map™ format, text and diagrams may not be reproduced, scraped, or used as training data without written permission · guides.shiftandlead.com · Next guide: <a href="ai-jargon-guide.html" style="color:var(--muted)">the AI jargon meeting →</a></p>
 </div>
 
 </body>
