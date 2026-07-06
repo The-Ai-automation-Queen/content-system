@@ -13,17 +13,17 @@
 | 1 | The Unblocker (Chief of Staff) | 10 | 8 | 10 | 43 | ✅ **BUILT 06/07** — `skills/unblocker/` |
 | 2 | Morning Review Cockpit | 9 | 7 | 10 | 40 | ✅ **BUILT 06/07** — `skills/review-cockpit/` |
 | 3 | Voice-Note Brain Feeder | 9 | 8 | 8 | 38 | ✅ **BUILT 06/07** — `brain-manager` v1.1 `listen`/`prefill` |
-| 4 | Launch Conductor | 9 | 6 | 8 | 36 | wave 2 |
-| 5 | Speaking-Gig Pipeline | 8 | 7 | 7 | 33.5 | wave 2 |
-| 6 | Nurture Completer & Email Ops | 8 | 8 | 6 | 33 | wave 2 |
-| 7 | Taste Clone | 7 | 6 | 8 | 32 | wave 3 (needs Cockpit history) |
+| 4 | Launch Conductor | 9 | 6 | 8 | 36 | ✅ **BUILT 06/07** — `skills/launch-conductor/` |
+| 5 | Speaking-Gig Pipeline | 8 | 7 | 7 | 33.5 | ✅ **BUILT 06/07** — `skills/speaking-pipeline/` |
+| 6 | Nurture Completer & Email Ops | 8 | 8 | 6 | 33 | ✅ **BUILT 06/07** — `skills/email-ops/` |
+| 7 | Taste Clone | 7 | 6 | 8 | 32 | ✅ **BUILT 06/07** — `skills/taste-clone/` · dormant until ≥50 cockpit decisions |
 | 8 | Course Production Producer | 8 | 6 | 6 | 31 | ✅ **pre-existing** — `skills/course-production/` (needs raw identity, UNB-018/19/20, to activate) |
-| 9 | Revenue Watchdog | 7 | 8 | 6 | 31 | wave 3 (needs live checkout, UNB-002) |
-| 10 | Research-Inbox Distiller | 6 | 8 | 6 | 29 | wave 3 |
-| 11 | Community Concierge | 8 | 4 | 5 | 27.5 | wave 4 (needs members, UNB-014/015) |
-| 12 | Client-Tenant Onboarder | 7 | 5 | 4 | 25 | wave 4 |
-| 13 | Estate Janitor | 5 | 7 | 4 | 23 | wave 4 |
-| 14 | French-Market Mirror | 6 | 5 | 3 | 21.5 | wave 4 (needs English funnel live) |
+| 9 | Revenue Watchdog | 7 | 8 | 6 | 31 | ✅ **BUILT 06/07** — `skills/revenue-watchdog/` · dormant until first checkout (UNB-002) |
+| 10 | Research-Inbox Distiller | 6 | 8 | 6 | 29 | ✅ **BUILT 06/07** — `skills/inbox-distiller/` |
+| 11 | Community Concierge | 8 | 4 | 5 | 27.5 | ✅ **BUILT 06/07** — `skills/community-concierge/` · dormant until ~20 members (UNB-014/015) |
+| 12 | Client-Tenant Onboarder | 7 | 5 | 4 | 25 | ✅ **BUILT 06/07** — `skills/tenant-onboarder/` · activates on first client call |
+| 13 | Estate Janitor | 5 | 7 | 4 | 23 | ✅ **BUILT 06/07** — `skills/estate-janitor/` |
+| 14 | French-Market Mirror | 6 | 5 | 3 | 21.5 | ✅ **BUILT 06/07** — `skills/french-mirror/` · dormant until EN funnel converts |
 
 ## Build waves — why this order
 
@@ -147,7 +147,12 @@ variant, Blotato-queued to FR-targeted channels when they exist.
 
 ## Operating rule
 
-One tool ships at a time. A wave doesn't start until the previous wave's
-tools are *running in the daily loop*, not just merged. The Unblocker's
-ledger tracks the human-side dependencies; this file tracks the build order.
-Update the Status column as tools ship — this file is the record.
+**Build phase complete (06/07/2026): all 14 tools exist as skills.** The
+sequencing now lives in *activation*, not building: each dormant tool states
+its trigger at the top of its SKILL.md and wakes when the matching item flips
+in `unblocker/ledger.md` (first checkout → revenue-watchdog; ≥50 review
+decisions → taste-clone gate; ~20 members → community-concierge; EN funnel
+converting → french-mirror; first client call → tenant-onboarder; raw
+identity recorded → course-production). The Unblocker's ledger tracks the
+human-side dependencies; this file stays the record — update Status if a
+tool is redesigned or retired.

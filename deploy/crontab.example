@@ -43,6 +43,21 @@ SHELL=/bin/bash
 # Monday @ 06:00 — runs the full machine chain (signal → script → visual → queue).
 0 6 * * 1    __REPO__/deploy/run-machine.sh "/weekly-ops" 1 240
 
+# ── Revenue Watchdog ─────────────────────────────────────────
+# Daily @ 03:30 — reconcile Whop/Stripe/GHL into revenue-log.md. Harmless
+# while dormant (no keys / no checkout yet): it just reports status.
+30 3 * * *   __REPO__/deploy/run-machine.sh "/revenue-watchdog daily" 0 0
+
+# ── Weekly intelligence + hygiene ────────────────────────────
+# Sunday 05:00 — distill the research-inbox week into a RESEARCH entry + brief.
+0 5 * * 0    __REPO__/deploy/run-machine.sh "/inbox-distiller weekly" 1 120
+# Sunday 05:30 — recompile taste-file.md from the week's review decisions.
+30 5 * * 0   __REPO__/deploy/run-machine.sh "/taste-clone compile" 0 0
+# Sunday 06:30 — estate hygiene scan across the 8 repos.
+30 6 * * 0   __REPO__/deploy/run-machine.sh "/estate-janitor scan" 0 0
+# Monday 05:30 — refresh the speaking pipeline (new events/targets this week).
+30 5 * * 1   __REPO__/deploy/run-machine.sh "/speaking-pipeline scan" 1 120
+
 # ── M05 — DM/Lead Responder ─────────────────────────────────
 # Every 5 min — polls comments for keyword CTAs, sends DMs via GHL (IG) + Unipile
 # (LinkedIn). Harmless to leave running — it just reports status until wired.

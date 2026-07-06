@@ -171,6 +171,65 @@ Romain's machines:
   items the operator can execute in 15 minutes. Add to daily cron after
   performance-tracker.
 
+- **`launch-conductor`** — *Portfolio #4.* One offer + one date in → the full
+  campaign out as ONE reviewable arc (`launches/<slug>/PLAN.md`): posts, emails
+  (via email-ops), DM keyword rows, countdown timing, all through existing
+  machines with cockpit approval gates. `monitor` proposes (never posts)
+  honest-urgency pieces mid-launch. One launch at a time. Modes: `plan`,
+  `build`, `monitor`. First use: the founding community launch.
+- **`speaking-pipeline`** — *Portfolio #5.* Extends prospecting into a real
+  pipeline: scans Dubai/GCC corporate events + L&D contacts, drafts max 3
+  personalized pitches per serving in her voice (she sends), tracks
+  identified → pitched → replied → call → booked in `speaking-pipeline.md`.
+  One booking = $5–15k. Modes: `scan`, `pitch`, `status`, `update`.
+- **`email-ops`** — *Portfolio #6, the Nurture Completer.* Drafts the Day 0–10
+  GHL nurture sequence, the 7 missing fast-forward onboarding emails, and
+  launch broadcasts for the conductor — all paste-ready in `email-sequences/`,
+  never sent by the skill. Modes: `nurture`, `fast-forward`, `broadcast`, `audit`.
+- **`taste-clone`** — *Portfolio #7.* Learns her editorial taste from
+  `review-cockpit/decisions-log.md` into an evidence-cited `taste-file.md`
+  the content-engine critic loads. `gate` mode (pre-filter to top-2 drafts)
+  is hard-locked behind ≥50 decisions + 2 weeks of proven precision +
+  her explicit approval; archived drafts are never deleted. **Dormant until
+  the decisions log has data.** Modes: `compile`, `status`, `gate`.
+- **`revenue-watchdog`** — *Portfolio #9.* Daily Whop/Stripe/GHL
+  reconciliation into `revenue-log.md` + milestone mirroring to queen-brain
+  `proof.md`; manual-paste fallback per missing key; one first-sale
+  celebration ping, then anomaly-only alerts; feeds the Sunday money
+  paragraph. **Dormant until the first live checkout (UNB-002).** Modes:
+  `daily`, `manual-update`, `weekly-narrative`, `status`.
+- **`inbox-distiller`** — *Portfolio #10.* Weekly sweep of the
+  `research-inbox` repo (750+ saved links, EN+FR): clusters, kills noise,
+  emits a cited RESEARCH entry + 2–3 "What's Worth It" angles for
+  content-engine + a 5-bullet Telegram brief. `backlog` mode chews the full
+  history in monthly batches. Read-only on the inbox. Modes: `weekly`,
+  `backlog`, `status`.
+- **`community-concierge`** — *Portfolio #11.* Whop community assistant,
+  always labeled as her AI, never impersonating her: welcomes, answers from
+  her corpus only, escalates the rest in a daily digest, flags churn risk,
+  harvests member wins (permission-gated) into proof.md + testimonial
+  drafts. **Dormant until ~20 members — becomes top-3 priority that day.**
+  Modes: `welcome`, `answer-queue`, `digest`, `harvest`, `status`.
+- **`tenant-onboarder`** — *Portfolio #12.* Discovery-call transcript →
+  fully scaffolded `tenants/<slug>/` (tenant.json, seeded brain from
+  transcript facts only + explicit QUESTIONS-FOR-CLIENT, connections
+  checklist, sendable kickoff report). Makes the done-for-you Business OS
+  offer deliverable in a day. Modes: `onboard`, `checklist`, `status`.
+- **`estate-janitor`** — *Portfolio #13.* Weekly 8-repo hygiene scan:
+  duplicates, phantom manifest claims, STATUS contradictions, stale
+  branches, drifted copy → one immutable `reports/janitor-*.md` with ranked
+  items. Fixes only typo-level issues itself; deletions/consolidations
+  always route to the unblocker ledger as human decisions. Modes: `scan`,
+  `fix`, `status`.
+- **`french-mirror`** — *Portfolio #14.* Rebuilds proven winners (per
+  `performance-log.md` evidence only) natively in French for the
+  francophone MENA/France market, into a dedicated `ENTRY FR-NNN` vault
+  series; queue-only, French-targeted channels only. **Dormant until the
+  English funnel converts.** Modes: `mirror`, `candidates`, `status`.
+
+> **The portfolio:** the ranked 14-tool roadmap these come from (with
+> activation triggers and wave order) lives in `docs/AI-TOOLS-PORTFOLIO.md`.
+
 > **Multi-brand:** the engine is brand-agnostic. Additional clients live under
 > `tenants/<slug>/` with their own brain + connections; skills take `--tenant`.
 > See `tenants/README.md`. (The "plug-and-play for clients" path.)

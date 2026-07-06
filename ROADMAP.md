@@ -9,7 +9,30 @@
 
 ## Build log
 
-### 2026-07-06 (later, latest) — Wave 1 complete: Review Cockpit + Voice-Note Brain Feeder
+### 2026-07-06 (evening, latest) — Portfolio complete: all 14 tools built
+Waves 2–4 of `docs/AI-TOOLS-PORTFOLIO.md` built in one pass (10 new skills;
+#8 already existed as `course-production`). The full ranked portfolio is now
+code; the dormant ones carry explicit activation triggers and wake when their
+dependency flips in `unblocker/ledger.md`:
+- **Wave 2 (money engines):** `launch-conductor` (#4 — one offer in, one
+  reviewable campaign arc out, cockpit-gated), `speaking-pipeline` (#5 —
+  scan → 3 prepped pitches/serving → append-only CRM), `email-ops` (#6 —
+  Day 0–10 nurture, the 7 missing fast-forward onboarding emails, launch
+  broadcasts; paste-ready, never sends).
+- **Wave 3 (compounding):** `taste-clone` (#7 — decisions-log → taste-file;
+  gate locked behind ≥50 decisions + proven precision), `revenue-watchdog`
+  (#9 — daily reconciliation, first-sale ping, anomaly-only alerts),
+  `inbox-distiller` (#10 — weekly research-inbox sweep + backlog mode).
+- **Wave 4 (expansion):** `community-concierge` (#11 — labeled AI, corpus-only
+  answers, win harvesting; dormant till ~20 members), `tenant-onboarder`
+  (#12 — transcript → configured tenant in a day), `estate-janitor` (#13 —
+  weekly 8-repo hygiene, deletions always human decisions), `french-mirror`
+  (#14 — proven winners rebuilt natively in French, ENTRY FR-NNN series).
+- Crons added: revenue-watchdog daily 03:30; Sunday intelligence block
+  (inbox-distiller 05:00, taste-clone 05:30, estate-janitor 06:30); Monday
+  speaking-pipeline 05:30. CLAUDE.md skills list + portfolio statuses updated.
+
+### 2026-07-06 (later) — Wave 1 complete: Review Cockpit + Voice-Note Brain Feeder
 Completed Wave 1 of `docs/AI-TOOLS-PORTFOLIO.md` (the locked 14-tool roadmap) —
 all three tools ride the one shared Telegram bot from UNB-001:
 - **`skills/review-cockpit/`** (#2) — 07:30 digest of overnight drafts as
