@@ -144,6 +144,15 @@ Romain's machines:
   Dinners" (10–15 people, monthly, intimate format in Dubai), manages invite
   sequences and post-event follow-up, and extracts 4 vault-ready content pieces
   per event. Run with `plan-event`, `invite-sequence`, or `post-event-content`.
+- **`unblocker`** — *The AI Chief of Staff / ship engine.* Attacks the estate's
+  documented failure mode: built-but-not-shipped. Daily at 08:00 GST it scans
+  the full 8-repo estate for human-only blockers, maintains
+  `unblocker/ledger.md`, picks exactly **one** task, preps ~90% of it into an
+  execute-only pack (`unblocker/packs/`), delivers it via Telegram as a
+  15-minute action (window 09:00–12:00), follows up with a gentle-butler
+  escalation ladder, and writes verified completions back to ROADMAP /
+  ACTION-PLAN / queen-brain STATUS + a line into `personal-brain.md`. Never
+  serves a list. Modes: `daily`, `scan`, `status`, `done/kill/split <id>`, `swap`.
 - **`prospecting`** — *Daily biz-dev intelligence.* Scans for Dubai events,
   LinkedIn engagement targets, podcast/collab opportunities, corporate training
   RFPs, and quick wins. Writes a dated briefing to `reports/` with actionable
@@ -175,8 +184,10 @@ signal-harvester → competitor-watch → vault-audit → content-engine → vis
 
 **Daily crons** (VPS): brain-manager @ 20:00, signal-harvester @ 02:00,
 content-engine daily @ 02:30 (5 scripts ready by morning), performance-tracker
-@ 03:00. The brain-manager runs in the evening so the operator's answers feed
-the next morning's scripts.
+@ 03:00, **unblocker @ 08:00** (the day's ONE prepped ship task via Telegram).
+The brain-manager runs in the evening so the operator's answers feed the next
+morning's scripts; the unblocker runs in the morning so shipping happens in
+the 09:00–12:00 window.
 
 `skills/weekly-ops` runs this end to end and writes a dated set of reports to
 `reports/`. **Publishing is queue-only:** `distribution` schedules unflagged ready

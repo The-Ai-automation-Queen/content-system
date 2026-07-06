@@ -12,6 +12,12 @@ SHELL=/bin/bash
 # This is the Cerveau Manager: the personal context layer that makes posts feel real.
 0 20 * * *   __REPO__/deploy/run-machine.sh "/brain-manager" 0 0
 
+# ── The Unblocker — AI Chief of Staff ────────────────────────
+# Daily @ 08:00 — scans the estate, picks ONE prepped 15-min unblock task,
+# delivers it via Telegram. Execution window 09:00-12:00. Follow-up +
+# status write-back happen inside the run.
+0 8 * * *    __REPO__/deploy/run-machine.sh "/unblocker daily" 0 0
+
 # ── M01 — Signal Harvest + Script Generation ─────────────────
 # Daily @ 02:00 — harvest 7 signals from the live web.
 0 2 * * *    __REPO__/deploy/run-machine.sh "/signal-harvester" 1 120

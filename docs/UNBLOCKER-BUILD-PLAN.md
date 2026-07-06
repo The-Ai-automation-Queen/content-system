@@ -1,7 +1,8 @@
 # The Unblocker — Build Plan (v0)
 
-> Created: 2026-07-06 · Status: PLAN — awaiting operator answers to the open
-> questions at the bottom, then architect step by step.
+> Created: 2026-07-06 · Status: **BUILT (Phase 1 + Phase 2 wiring)** — decisions
+> locked 06/07, see §6. Skill: `skills/unblocker/SKILL.md` · Ledger:
+> `unblocker/ledger.md` · Packs: `unblocker/packs/`.
 >
 > **What it is:** an AI Chief of Staff whose only job is converting
 > "everything built, nothing live" into shipped. It reads the estate's own
@@ -143,19 +144,18 @@ delivers value from day one even if later phases wait.
 - **Kill is a first-class outcome.** A deliberately killed task is a shipped
   decision, and the ledger records it (feeds the Estate Janitor's future work).
 
-## 6. Open questions (answer these, then we architect)
+## 6. Decisions — locked by the operator, 06/07/2026
 
-- **Q1 — Channel:** Telegram bot (recommended — shared with brain-manager's
-  planned bot), WhatsApp, email, or file-only to start?
-- **Q2 — Runtime:** do you have the VPS yet, or should this run as a Claude
-  scheduled session/Routine? (Phase 1 needs neither.)
-- **Q3 — Tone:** gentle butler, drill sergeant, or wry chief-of-staff? And how
-  hard may it push on serve 2–3?
-- **Q4 — Scope:** full 8-repo estate ledger from day one (recommended), or
-  content-system's revenue blockers only for v1?
-- **Q5 — Timing:** what time (GST) does the daily task land, and when is your
-  realistic 15-minute execution window?
-- **Q6 — Write authority:** may it tick checkboxes / update STATUS.md and
-  ROADMAP.md directly when it verifies completion, or propose-only at first?
-- **Q7 — First target:** seed the ledger from everything, or start it aimed at
-  ROADMAP Priority 0 (the five cash-machine actions) so week one = funnel on?
+- **Q1 — Channel:** **Telegram**, shared bot with brain-manager
+  (morning = ship, evening = reflect). One bot, two machines.
+- **Q2 — Runtime:** **VPS** (exists, needs configuring — UNB-001 is exactly
+  that task). Cron line added to `deploy/crontab.example`.
+- **Q3 — Tone:** **gentle butler.** Warm, unhurried, zero guilt mechanics.
+  Serve 3 = the kill/split/blocker conversation, still kindly.
+- **Q4 — Scope:** **full 8-repo estate** from day one.
+- **Q5 — Timing:** delivery **08:00 GST**, execution window **09:00–12:00**.
+- **Q6 — Write authority:** **granted** — tick checkboxes and update
+  STATUS/ROADMAP/csv directly on verified completion (annotate, never delete).
+- **Q7 — First target:** per recommendation — Priority-0 / Money Path first.
+  Queue: Telegram bot → first Whop checkout → VPS pull → remaining SKUs →
+  brain seed → release posts → lead magnets → community → speaking.

@@ -9,7 +9,30 @@
 
 ## Build log
 
-### 2026-06-26 (latest) — Brain Manager + daily crons + Unipile + machine docs
+### 2026-07-06 (latest) — The Unblocker (AI Chief of Staff)
+Built the ship engine that attacks the estate's documented failure mode:
+everything built, nothing live.
+- **`skills/unblocker/`** — daily loop: scan the full 8-repo estate → maintain
+  `unblocker/ledger.md` (every human-only blocker, cited to its source doc,
+  with revenue/effort/dependency/verify fields) → select exactly ONE task →
+  prep ~90% into an execute-only pack → deliver via Telegram @ 08:00 GST →
+  follow up (gentle-butler escalation: shrink → reframe → kill/split/blocker
+  conversation at serve 3) → write verified completions back to ROADMAP,
+  ACTION-PLAN, queen-brain STATUS, lead-magnets.csv, and personal-brain.md.
+  Never serves a list. Hard cap: one task/day, ≤15 min, window 09:00–12:00.
+- **`unblocker/ledger.md`** seeded with 24 entries from queen-brain STATUS
+  (ONLY FATIHA list), ROADMAP Priority-0, ACTION-PLAN, lead-magnets.csv, and
+  inventory.md. Queue honors the standing law: no new SKUs until one existing
+  SKU has a live checkout.
+- **First two packs written:** UNB-001 (Telegram bot + VPS crons — makes the
+  system self-hosting) and UNB-002 (first live checkout: The Judge's Prompts
+  $27 on Whop + store.html paste).
+- `deploy/crontab.example` gained the 08:00 unblocker line; CLAUDE.md skills
+  list + daily-crons section updated. Design doc: `docs/UNBLOCKER-BUILD-PLAN.md`
+  (operator decisions locked 06/07: Telegram · VPS · gentle butler · full
+  estate scope · 08:00 GST · write authority granted).
+
+### 2026-06-26 — Brain Manager + daily crons + Unipile + machine docs
 Closed the 4 remaining gaps vs. Romain Brunel's always-on system (from RESEARCH
 019 gap analysis of his LinkedIn automation video):
 - **`brain-manager`** (M00, the Cerveau Manager) — daily brain update loop. Asks
@@ -127,6 +150,7 @@ Run the loop on a fixed rhythm so the system stays alive. Targets:
 
 | Job | Skill | Cadence | Cron time (GST) |
 |---|---|---|---|
+| Ship task (ONE, prepped) | `unblocker daily` | **Daily** | 08:00 |
 | Brain update | `brain-manager` | **Daily** | 20:00 |
 | Signal harvest | `signal-harvester` | **Daily** | 02:00 |
 | Script generation | `content-engine daily` | **Daily** (5 scripts) | 02:30 |
