@@ -11,15 +11,24 @@ decks, film-free video, and talking-head video of her real avatar.
 ## Components
 
 ### Visual Engine (`visual-engine`)
-- **Canva** — carousels, infographics
+- **carousel-factory** (primary for carousels) — HTML slides rendered to
+  1080x1350 PNGs via headless Chromium; brand-locked, zero credits
+- **Canva** — infographics, one-off formats the templates don't cover
 - **Gamma** — decks, cards
 - **Blotato** — AI images (Flux/Imagen/Seedream), film-free narrated video
   (ElevenLabs voices), AI story videos, infographics
+
+### Motion / programmatic video
+- **hyperframes** (primary) — HTML-to-MP4: explainers, motion graphics,
+  slideshows, website-to-video; router at `skills/hyperframes/SKILL.md`
+- **remotion** — React-based motion design when HyperFrames isn't enough
 
 ### Talking Head (`heygen`)
 - **Higgsfield** (primary) — her cloned avatar + voice
 - **HeyGen** (fallback) — API-based avatar rendering
 - Pairs with Blotato `ai-avatar-broll` (talking head speaks, Blotato adds B-roll)
+- **captions** (mandatory finishing pass) — karaoke captions burned in
+  before any spoken-word video reaches M04; see `skills/captions/`
 
 ## Inputs
 - READY TO POST vault entries (the script)
