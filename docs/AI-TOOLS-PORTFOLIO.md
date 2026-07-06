@@ -17,7 +17,7 @@
 | 5 | Speaking-Gig Pipeline | 8 | 7 | 7 | 33.5 | wave 2 |
 | 6 | Nurture Completer & Email Ops | 8 | 8 | 6 | 33 | wave 2 |
 | 7 | Taste Clone | 7 | 6 | 8 | 32 | wave 3 (needs Cockpit history) |
-| 8 | Course Production Producer | 8 | 6 | 6 | 31 | wave 3 (needs raw identity, UNB-018/19/20) |
+| 8 | Course Production Producer | 8 | 6 | 6 | 31 | ✅ **pre-existing** — `skills/course-production/` (needs raw identity, UNB-018/19/20, to activate) |
 | 9 | Revenue Watchdog | 7 | 8 | 6 | 31 | wave 3 (needs live checkout, UNB-002) |
 | 10 | Research-Inbox Distiller | 6 | 8 | 6 | 29 | wave 3 |
 | 11 | Community Concierge | 8 | 4 | 5 | 27.5 | wave 4 (needs members, UNB-014/015) |
@@ -97,12 +97,12 @@ drafts get served, rest auto-archived with reasons.
 **Effort:** 2 sessions + weeks of data. **Depends:** #2 running daily.
 
 ### 8. Course Production Producer
-Turns the 54 written lessons into a recording factory: teleprompter scripts
-(exist in the Whop kit) → Gamma slide decks → 3 batch recording sprints
-scheduled → post-production metadata (chapters, descriptions, upload order).
-Respects the killed voice-clone decision: her real recordings, just made
-frictionless.
-**Effort:** 2 sessions. **Depends:** UNB-017/018/019/020.
+**Already exists as `skills/course-production/`** (built in a prior session):
+converts written flagship lessons into render-ready packages — spoken-register
+teleprompter scripts split into ≤60s twin segments, screen-demo shot lists,
+per-lesson Gamma slide briefs, assembly order, and platform metadata. The twin
+renders [TWIN] segments; she records only screen demos and QAs.
+**Depends:** the raw-identity assets (UNB-017/018/019/020) to activate.
 
 ### 9. Revenue Watchdog
 Daily reconciliation: Whop/Stripe/GHL → `revenue-log.md` + queen-brain
