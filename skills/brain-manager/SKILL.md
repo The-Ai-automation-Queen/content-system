@@ -1,19 +1,23 @@
 ---
 name: brain-manager
-version: 1.0.0
+version: 1.1.0
 description: |
   The Cerveau Manager — keeps the second brain personal and current. Every day
   it asks the operator 5–7 contextual questions about their real life, projects,
   opinions, and recent events, then writes the answers into `personal-brain.md`.
-  This is what makes content feel like HER, not a generic AI. Modeled on Romain
-  Brunel's Telegram-based brain-update loop. Can run interactively (AskUserQuestion)
-  or via Telegram bot (on a VPS with the daily cron).
-argument-hint: "[optional: 'update' (default) | 'review' | 'seed']"
+  Also the Voice-Note Brain Feeder (v1.1): `listen` ingests voice notes and
+  free-text messages sent to the Telegram bot anytime and files them into the
+  brain; `prefill` mines her existing corpus into proposed entries she confirms
+  instead of composes. This is what makes content feel like HER, not a generic
+  AI. Modeled on Romain Brunel's Telegram-based brain-update loop.
+argument-hint: "[optional: 'update' (default) | 'review' | 'seed' | 'listen' | 'prefill']"
 allowed-tools:
   - Read
   - Edit
   - Write
   - Grep
+  - Glob
+  - Bash
   - AskUserQuestion
   - mcp__Tavily__tavily_search
 ---
@@ -120,6 +124,46 @@ build the initial brain. This is the "onboarding interview." Covers:
 - Current projects and goals
 - Active lead magnets and their URLs
 
+**Pacing rule (learned 05/07/2026 — she paused round 2 of the seed):** serve
+the seed in **15-minute halves**, never one long interrogation. Voice-note
+answers are always welcome (see `listen`). If a round stalls, stop gracefully
+and let `listen` + the daily `update` fill the rest over the week.
+
+### `listen` — the Voice-Note Brain Feeder (v1.1)
+
+The zero-friction input path: she talks, the brain grows. Runs inside every
+`review-cockpit process` sweep (which routes non-review messages here) and at
+the start of the 20:00 `update`.
+
+1. Input: voice notes and free-text messages sent to the shared Telegram bot
+   that aren't review decisions or unblocker replies (the cockpit routes them).
+2. Voice → text via the estate's transcription path (local `faster-whisper`
+   on the VPS; if unavailable, ask kindly for text — never guess at audio).
+3. Extract every distinct fact/story/opinion/number from the message —
+   one rambly voice memo often yields 3–5 brain entries.
+4. File each into the right `personal-brain.md` category, date-stamped,
+   following the Rules for updating the brain (quotable, never invented,
+   cross-referenced). Her verbatim phrasing is gold — keep her words.
+5. Confirm in ONE line back: "Filed: 1 anecdote (the Dubai dinner story),
+   1 opinion, 1 number. The dinner one will make a great hook."
+
+### `prefill` — mine what already exists (run once, then on new corpus)
+
+The brain shouldn't start empty when years of her real words already exist.
+
+1. Sources (real, hers, never AI output): `voice-corpus/`, `transcripts/`,
+   `../queen-brain/personal-brain.md` + `positioning.md` + `proof.md`,
+   old posts in `content-vault-archive.md` marked as hers.
+2. Extract candidate entries (anecdotes, opinions, numbers, background,
+   inspirations) with a source citation each.
+3. **Never write directly to the brain from prefill.** Write proposals to
+   `personal-brain-proposals.md`, grouped by category, each with source +
+   confidence. Send her the top 10 via Telegram as a numbered confirm list
+   (`1✅ 2✅ 4❌ …` — same protocol as the cockpit).
+4. On confirmation, move accepted entries into `personal-brain.md` marked
+   `(confirmed DD/MM/YYYY, from <source>)`. Rejected ones are logged and
+   never re-proposed.
+
 ---
 
 ## The brain file — `personal-brain.md`
@@ -208,18 +252,21 @@ With it, the content engine writes *as* her.
 
 ## Telegram bot integration (VPS — autonomous mode)
 
-On the VPS, this skill can be triggered by a Telegram bot instead of
-`AskUserQuestion`. The flow:
+The shared estate bot (created in UNB-001, `deploy/.env`) carries the whole
+daily rhythm: unblocker @ 08:00, cockpit digest @ 07:30, brain questions
+@ 20:00 — one thread, one bot.
 
-1. A daily cron (e.g., 20:00) triggers the brain-manager.
-2. Instead of `AskUserQuestion`, it sends the questions to Telegram via
-   `telegram-notify.sh` (or an n8n workflow).
-3. The operator replies on their phone.
-4. An n8n webhook (or Telegram bot polling) captures the replies and triggers
-   a second brain-manager run with the answers piped in.
+1. The 20:00 cron triggers `update`: it first runs `listen` (sweep any
+   unprocessed voice notes/texts), then sends the day's 5–7 questions via
+   the Telegram API.
+2. She answers on her phone — text or voice notes, in any order, skipping
+   freely. Answers are captured by the next inbox sweep (`review-cockpit
+   process` @ 20:30, or tomorrow's runs) and filed by `listen`.
+3. No webhook or n8n needed: the cockpit's `getUpdates` polling is the single
+   inbox consumer and routes brain material here (offset lives in
+   `review-cockpit/state.md`).
 
-For the initial rollout, the interactive `AskUserQuestion` mode works fine.
-The Telegram integration is a VPS enhancement.
+Interactive sessions still use `AskUserQuestion` directly.
 
 ---
 
