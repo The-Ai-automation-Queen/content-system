@@ -9,7 +9,35 @@
 
 ## Build log
 
-### 2026-07-06 (latest) — The AI Time Audit: interactive quiz + audit tool (Phase 3, item 1)
+### 2026-07-06 (later) — Reconciled the two development lines (main merged into session branch)
+The session branch and `main` had diverged into two parallel builds: this
+branch's audit/main-site/SEO/activation/quiz line, and the local "AI Company"
+line (store, products, About/Work-with pages, brand v2, Whop, killed Voice
+Pipeline) pushed to `main` 05–06/07. Merged `origin/main` into the branch and
+reconciled:
+- **Main's redesigned site wins** for all 18 conflicted site pages (magazine
+  format, electric-on-white, own SEO). This branch's six unique pages survive
+  (Time Audit quiz, 2 topic hubs, 3 lead-magnet guide pages) and were adapted
+  to brand v2: white canvas, electric accent, **zero em-dashes** in customer
+  copy, dead anchors retargeted to `about.html#community`. Same treatment
+  applied to all `main-site/` (.com) pages.
+- **Lead-magnet activation re-applied on main's CSV**: 7 rows active
+  (PIPELINE stays retired per the 05/07 kill; main's TOKENS row noted).
+  Time Audit link added to the redesigned library nav; sitemap merged
+  (main's pages + this branch's six).
+- **Offer ladder reconciled in `inventory.md` + `skills/monetisation/`** to
+  the queen-brain canon (now cloned into the session): Whop everywhere,
+  $19 Prompt Menu / $27 Judge's Prompts / $47 Time Audit marked built-awaiting-
+  checkout, Fast Forward consolidated-awaiting-twin, explicit "queen-brain/
+  offers.md is canonical" pointers. Fixed main's stale $97-founding typo
+  (correct: $27/mo locked).
+- **Bonus**: the merge brought in `ai-insider-brief/` (crawler, pipeline, Kit
+  sender) — the newsletter source needed for Phase 3's refresh, previously
+  thought to live only on the VPS.
+- Everything re-verified: quiz end-to-end in headless Chromium, 37 HTML files
+  pass JS/JSON-LD validation, sitemap valid.
+
+### 2026-07-06 — The AI Time Audit: interactive quiz + audit tool (Phase 3, item 1)
 First scheduled run of the weekly rebuild loop. Phases 1–2 were already
 complete, so this run shipped the next unfinished item: the quiz/audit tool
 from the operator's original task list, built as **The AI Time Audit**
