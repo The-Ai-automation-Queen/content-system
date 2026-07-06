@@ -81,7 +81,19 @@ Romain's machines:
   the operator 5–7 contextual questions about their real life, projects, opinions,
   and current events, then writes answers into `personal-brain.md`. This is what
   makes content feel personal — the AI knows her anecdotes, her opinions, her
-  numbers. Modeled on Romain Brunel's Telegram-based Cerveau Manager.
+  numbers. Modeled on Romain Brunel's Telegram-based Cerveau Manager. v1.1
+  adds the **Voice-Note Brain Feeder**: `listen` files voice notes/texts sent
+  to the bot anytime into the brain; `prefill` mines her existing corpus into
+  proposed entries she confirms instead of composes.
+- **`review-cockpit`** — *The 5-minute morning ritual.* Sends the overnight
+  drafts to Telegram at 07:30 as numbered cards (hook, pillar, platform,
+  critic score) for one-tap ✅ approve / 🎙 edit-by-voice-note / ❌ kill.
+  Twice-daily `process` sweeps apply replies to the vault (READY TO POST /
+  KILLED), CTA-check approvals against live lead magnets, and log every
+  decision to `review-cockpit/decisions-log.md` — the Taste Clone's future
+  training data. Also the estate's single Telegram inbox router: unblocker
+  replies → ledger, brain voice notes → `brain-manager listen`. Max 6 cards
+  per digest; queue-only publishing stands.
 - **`voice-file`** — the texture layer. Compiles `voice-corpus/` (her real,
   pre-AI writing/speech) into `voice-file.md`: verbatim opening/closing
   patterns, real recurring words, sentence rhythm, and confirmed-absent AI-isms.
@@ -182,12 +194,14 @@ signal-harvester → competitor-watch → vault-audit → content-engine → vis
    (M01 data)        (what others do)   (what's stale)  (M01 scripts)     (M02 visuals/face)      (M03 shorts)    (M04 → queue)   (M05 → leads)   (M06 → measure)    (revenue check)
 ```
 
-**Daily crons** (VPS): brain-manager @ 20:00, signal-harvester @ 02:00,
-content-engine daily @ 02:30 (5 scripts ready by morning), performance-tracker
-@ 03:00, **unblocker @ 08:00** (the day's ONE prepped ship task via Telegram).
-The brain-manager runs in the evening so the operator's answers feed the next
-morning's scripts; the unblocker runs in the morning so shipping happens in
-the 09:00–12:00 window.
+**Daily crons** (VPS): signal-harvester @ 02:00, content-engine daily @ 02:30
+(5 scripts ready by morning), performance-tracker @ 03:00, **review-cockpit
+digest @ 07:30** (drafts as one-tap Telegram cards), **unblocker @ 08:00**
+(the day's ONE prepped ship task), review-cockpit process @ 12:30 + 20:30
+(applies replies, routes voice notes), brain-manager @ 20:00. The morning pair
+makes her whole required contribution a ~15-minute phone ritual (review over
+coffee, ship one thing before noon); the evening brain questions feed the next
+morning's scripts. All on one shared Telegram bot.
 
 `skills/weekly-ops` runs this end to end and writes a dated set of reports to
 `reports/`. **Publishing is queue-only:** `distribution` schedules unflagged ready

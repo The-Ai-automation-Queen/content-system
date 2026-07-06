@@ -12,6 +12,15 @@ SHELL=/bin/bash
 # This is the Cerveau Manager: the personal context layer that makes posts feel real.
 0 20 * * *   __REPO__/deploy/run-machine.sh "/brain-manager" 0 0
 
+# ── Review Cockpit — the 5-minute morning ritual ─────────────
+# Daily @ 07:30 — sends the overnight drafts to Telegram as numbered cards
+# (approve / edit-by-voice-note / kill). Twice-daily process sweeps apply the
+# replies to the vault, route unblocker replies + brain voice notes, and log
+# every decision for the Taste Clone.
+30 7 * * *   __REPO__/deploy/run-machine.sh "/review-cockpit digest" 0 0
+30 12 * * *  __REPO__/deploy/run-machine.sh "/review-cockpit process" 0 0
+30 20 * * *  __REPO__/deploy/run-machine.sh "/review-cockpit process" 0 0
+
 # ── The Unblocker — AI Chief of Staff ────────────────────────
 # Daily @ 08:00 — scans the estate, picks ONE prepped 15-min unblock task,
 # delivers it via Telegram. Execution window 09:00-12:00. Follow-up +

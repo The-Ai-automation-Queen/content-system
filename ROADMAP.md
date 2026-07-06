@@ -9,7 +9,27 @@
 
 ## Build log
 
-### 2026-07-06 (latest) — The Unblocker (AI Chief of Staff)
+### 2026-07-06 (later, latest) — Wave 1 complete: Review Cockpit + Voice-Note Brain Feeder
+Completed Wave 1 of `docs/AI-TOOLS-PORTFOLIO.md` (the locked 14-tool roadmap) —
+all three tools ride the one shared Telegram bot from UNB-001:
+- **`skills/review-cockpit/`** (#2) — 07:30 digest of overnight drafts as
+  numbered Telegram cards (hook, pillar, critic score) with ✅/🎙/❌ replies;
+  process sweeps @ 12:30 + 20:30 write decisions back to the vault, CTA-check
+  approvals against live lead magnets, and append every decision to
+  `review-cockpit/decisions-log.md` (Taste Clone training data). Single
+  Telegram inbox consumer: routes unblocker replies → ledger, brain material
+  → brain-manager listen. Max 6 cards/digest; queue-only publishing stands.
+- **`brain-manager` v1.1** (#3, Voice-Note Brain Feeder) — `listen` mode files
+  voice notes/texts sent to the bot anytime into `personal-brain.md`
+  (whisper transcription on the VPS, ask-for-text fallback); `prefill` mode
+  mines voice-corpus/transcripts/queen-brain/archive into proposed entries
+  she confirms (`personal-brain-proposals.md`) instead of composes. Seed
+  interview now paced in 15-minute halves (she paused the long version once).
+- `deploy/crontab.example` + CLAUDE.md updated. Her total required daily
+  input is now ~15 phone minutes: review over coffee, ship one thing by noon,
+  answer or voice-note the evening questions.
+
+### 2026-07-06 — The Unblocker (AI Chief of Staff)
 Built the ship engine that attacks the estate's documented failure mode:
 everything built, nothing live.
 - **`skills/unblocker/`** — daily loop: scan the full 8-repo estate → maintain
@@ -150,7 +170,9 @@ Run the loop on a fixed rhythm so the system stays alive. Targets:
 
 | Job | Skill | Cadence | Cron time (GST) |
 |---|---|---|---|
+| Draft review cards | `review-cockpit digest` | **Daily** | 07:30 |
 | Ship task (ONE, prepped) | `unblocker daily` | **Daily** | 08:00 |
+| Reply processing + routing | `review-cockpit process` | **2×/day** | 12:30, 20:30 |
 | Brain update | `brain-manager` | **Daily** | 20:00 |
 | Signal harvest | `signal-harvester` | **Daily** | 02:00 |
 | Script generation | `content-engine daily` | **Daily** (5 scripts) | 02:30 |

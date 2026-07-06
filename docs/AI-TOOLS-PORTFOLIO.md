@@ -11,8 +11,8 @@
 | Rank | Tool | Impact | Effort | Week-change | Score | Status |
 |---|---|---|---|---|---|---|
 | 1 | The Unblocker (Chief of Staff) | 10 | 8 | 10 | 43 | ✅ **BUILT 06/07** — `skills/unblocker/` |
-| 2 | Morning Review Cockpit | 9 | 7 | 10 | 40 | next |
-| 3 | Voice-Note Brain Feeder | 9 | 8 | 8 | 38 | next |
+| 2 | Morning Review Cockpit | 9 | 7 | 10 | 40 | ✅ **BUILT 06/07** — `skills/review-cockpit/` |
+| 3 | Voice-Note Brain Feeder | 9 | 8 | 8 | 38 | ✅ **BUILT 06/07** — `brain-manager` v1.1 `listen`/`prefill` |
 | 4 | Launch Conductor | 9 | 6 | 8 | 36 | wave 2 |
 | 5 | Speaking-Gig Pipeline | 8 | 7 | 7 | 33.5 | wave 2 |
 | 6 | Nurture Completer & Email Ops | 8 | 8 | 6 | 33 | wave 2 |
@@ -27,8 +27,8 @@
 
 ## Build waves — why this order
 
-**Wave 1 — the human interface (now).** #1 ✅, #2, #3. All three ride the same
-Telegram bot (UNB-001). Morning: the Unblocker serves the ship task and the
+**Wave 1 — the human interface (✅ built 06/07, activates with UNB-001).**
+#1 ✅, #2 ✅, #3 ✅. All three ride the same Telegram bot (UNB-001). Morning: the Unblocker serves the ship task and the
 Cockpit serves the drafts for one-tap review. Anytime: voice notes feed the
 brain. After wave 1, Fatiha's *entire* required daily contribution to the
 machine is ~15 minutes on her phone.
