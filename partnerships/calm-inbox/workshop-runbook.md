@@ -27,6 +27,12 @@ with a prepared demo inbox (never demo a real client inbox) · printed
 one-pagers (participant-handout §1) on every seat · 3 QR codes printed at exit ·
 timer visible to facilitators.
 
+**Corporate observers (the pilot's real sales call — README §0):** 2–3 warm
+HR/L&D contacts get comped seats, invited personally by Fatiha at W−6. They
+participate like everyone else (no "observer" badge — the experience IS the
+pitch). They also get the corporate one-pager (`skills/monetisation/` speaker
+one-pager, workshop variant) in a follow-up within 48h, not in the room.
+
 **Demo inbox prep:** 6 fake-but-realistic emails staged in a doc, ready to
 paste: (1) a 14-message thread about a slipping project deadline, (2) a vague
 "quick call?" request from a senior person, (3) a client complaint with three
@@ -203,7 +209,14 @@ the ten people who want to go further than the inbox."*
 - **W+0 (same evening):** tag attendees in GHL; the follow-up email
   (participant-handout §4) fires next morning at 08:00 — exactly when they're
   about to open their inbox and need the prompts.
-- **W+1:** pod invite to attendees (10 seats, workshop-attendee price).
+- **W+1 to W+2 days — corporate follow-up (do this before anything else):**
+  personal email from Fatiha to each comped HR/L&D observer: one specific
+  moment from the room + the corporate workshop one-pager + a direct ask for
+  a 20-min call about running it for their team. This single email is the
+  highest-expected-value action of the whole pilot (README §7, corporate
+  audition metric).
+- **W+1:** pod invite to attendees (10 seats, cohort-1 founding price
+  $150 — stated as one-time, includes recording consent).
 - **Both facilitators:** 15-min debrief — what ran long, which demo landed
   hardest, one quote for content. Feed it to `content-engine` for the recap
   post; `irl-events post-event-content` shape applies (4 pieces per event).

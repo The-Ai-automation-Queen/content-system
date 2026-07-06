@@ -1,8 +1,16 @@
 # 4-Week AI Integration Pod — Full Curriculum
 
 **"From Knowing AI to Working Better with AI"**
-Max 10 participants · USD 150 pp · 4 × 90-min live sessions (weekly, same
-slot) + light homework · runs online or hybrid (Dubai room + Zoom).
+Max 10 participants · 4 × 90-min live sessions (weekly, same slot) + light
+homework · runs online or hybrid (Dubai room + Zoom).
+
+**Pricing (revised 06/07 — README §3):** cohort 1 = **USD 150 founding
+price, one time only**, stated at purchase as the founding deal — in
+exchange, participants consent to **session recording + testimonial use**
+(anonymized on request). From cohort 2: $250–300 live, or the recorded
+cohort-1 curriculum sells as a self-paced product and the pod never runs
+this cheap again. **All four sessions are recorded — non-negotiable; the
+recording is the actual payment for the founding price.**
 
 **Objective (from the brief):** build the **judgement, confidence and habits**
 to integrate AI into day-to-day work *without becoming dependent on it*.
@@ -186,3 +194,8 @@ lighter from here on — what would you do with the capacity?*
 - **The pod is the product lab:** the judgement logs and before/after numbers
   are testimonial and case-study raw material for the next cohort's promo —
   harvest with consent at Week 4, feed to `content-engine`.
+- **Productization pass (within 2 weeks of Week 4, non-optional):** cut the
+  four recordings into (a) an evergreen self-paced version of the pod and
+  (b) teach-block clips for `reels-factory`. Per README §7, "recorded but
+  never productized" counts as a kill signal on the leverage check — the
+  founding discount only pays for itself if the asset ships.

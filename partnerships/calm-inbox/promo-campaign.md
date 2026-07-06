@@ -35,10 +35,18 @@ Patterns referenced below are from `inspiration-library/SKILL.md`.
 | 7 | Summer Reset | "Everyone redesigns their life in January. The smart ones do it in the quiet of August." | "Your inbox is quiet right now. That's the window." | P2 fear/urgency (soft) | The Freedom Business | Workshop link |
 | 8 | Ready for September | "September you will inherit whatever August you builds. 20 seats. One workshop. Bring your laptop." | Before/after: last cohort quote + numbers | P13 before/after + P5 comment-trigger | The Freedom Business | Workshop/pod link |
 
-**Volume per week:** 1 LinkedIn post (Fatiha) + 1 short video (Fatiha) +
-1 native co-post (Tessa) + cross-comments on each other's posts within the
-first hour. That's enough; capped-room offers don't need a content firehose,
-they need consistency and one clear door.
+**Volume per week (positioning cap — audit 06/07):** on Fatiha's channels,
+**max 1 co-branded piece per week** — pick the LinkedIn post OR the short
+video as the co-branded one; the other runs solo-voiced under her own
+pillars. Tessa posts her native version on her channels. Cross-comments
+within the first hour. Fatiha's six pillars stay primary all eight weeks —
+the campaign is a guest in her feed, not the tenant. Every Calm Inbox post
+frames under *win back your time* (her promise), never "AI wellness"
+(Tessa's lane on Tessa's channels). Capped-room offers don't need a content
+firehose; they need consistency and one clear door.
+
+**Do-not-start rule:** no campaign post goes live before Gate 0
+(README §5) — Cash Machine core live + `partnership-terms.md` signed.
 
 **Workshop-week extras (whenever W lands):** 1 "what to expect" story
 sequence, 1 seats-left post (only if true — no fake scarcity, per

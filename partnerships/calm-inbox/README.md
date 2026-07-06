@@ -11,6 +11,40 @@
 
 ---
 
+## 0. Pilot frame — what this is and isn't (audited 06/07/2026)
+
+This initiative is **a pilot, run once, then reviewed** (§7). It is **not a
+revenue line** — at pod economics ($750/partner/cohort) it never will be, and
+judging it on revenue would kill it for the wrong reason. It's judged on three
+jobs only:
+
+1. **The corporate audition.** The 90-min workshop is the live demo of the
+   Tier-5 corporate offer ($5k–15k, `skills/monetisation/`). "AI productivity +
+   employee wellbeing, two facilitators" is exactly what corporate L&D buys.
+   2–3 warm HR/L&D contacts get comped seats at the public run — *that* is the
+   sales channel this pilot exists to open. One corporate booking outearns ten
+   pod cohorts.
+2. **The testimonial harvest.** The brand currently has zero logged
+   testimonials (`personal-brain.md`). Workshop share-outs + pod judgement
+   logs + before/after numbers, collected with consent, fix that.
+3. **The list.** Every CALM lead is co-owned, exportable, and feeds both
+   ladders (terms §1).
+
+**Guardrails from the audit:**
+- **Sequencing gate:** the campaign does not start until the Cash Machine
+  plan's core is live (lead magnets hosted, founding community open —
+  `ACTION-PLAN-CASH-MACHINE.md`). Warm leads need a live next step to land in.
+- **Positioning cap:** max 1 co-branded piece/week on Fatiha's channels; her
+  six pillars stay primary; every Calm Inbox post frames under *win back your
+  time*, not "AI wellness." Fatiha's prep time caps at ~2h/week — the engine
+  drafts, she approves.
+- **Paper before public:** `partnership-terms.md` gets signed before the
+  first co-branded post. List, frameworks, brand name, exit — all covered.
+- **Leverage rule:** cohort 1 is recorded (terms §3). Either the pod becomes
+  a product after cohort 1, or it doesn't run at founding price again.
+
+---
+
 ## 1. The offer stack (four assets, one funnel)
 
 | Asset | What it is | Role in the funnel | Owner file |
@@ -54,21 +88,28 @@ it. Fatiha's engine drafts; humans approve (matches `security.md` queue-only).
 
 ---
 
-## 3. Money
+## 3. Money (revised 06/07 after audit)
 
 - **Workshop:** two modes, same runbook.
-  - *Corporate/hosted* — sold to a company or venue at **$3k–7k flat**
-    (entry point of the Tier-5 speaking lane in `skills/monetisation/`;
-    two facilitators justifies the higher end over time). Split 50/50.
-  - *Public ticketed* — **$45–75/seat** × 20 seats. This mode is mostly a
-    pod-filler and list-builder; don't optimize it for margin.
-- **Pod:** $150 × 10 = **$1,500/cohort**, split 50/50 after direct costs.
-  The real value: pod graduates are the warmest possible entrants to
-  Fatiha's community/Starter Kit and Tessa's coaching. Each keeps 100% of
-  their own backend sales.
-- **Referral honesty:** the pod is priced as a bridge product, not the
-  business. The business is what each partner's ladder does with warm,
-  transformed graduates.
+  - *Public ticketed (cohort 1)* — **$75–95/seat** × 20 seats (raised from
+    $45–75: cheap tickets no-show and anchor low). Purpose: list-builder,
+    testimonial harvest, and **live demo for the comped HR/L&D observers**.
+    Don't optimize it for margin.
+  - *Corporate/hosted (the actual prize)* — sold to a company at **$5k–7k
+    flat** to start, climbing toward the Tier-5 band ($5k–15k,
+    `skills/monetisation/`) as case studies stack. Two facilitators +
+    wellbeing angle justifies premium. Split 50/50. **Every public run
+    exists to sell this mode.**
+- **Pod:** cohort 1 runs at **$150 founding price, once, explicitly in
+  exchange for recording rights + testimonials** (terms §3) — the recording
+  becomes the evergreen/product asset. From cohort 2 (if the §7 review says
+  scale): **$250–300**, or the pod doesn't run live again and sells as a
+  recorded product instead. Never both cheap AND unrecorded.
+- **Anchoring guard:** pod members are told the founding price is a
+  one-time cohort-1 deal at purchase — protects the $997 Bootcamp anchor.
+- **Backend:** each partner keeps 100% of their own ladder sales, no
+  cross-commission (terms §2). The pod's real value is warm, transformed
+  graduates entering both ladders — that's the business; the $1,500 is not.
 
 ---
 
@@ -105,7 +146,8 @@ it. Fatiha's engine drafts; humans approve (matches `security.md` queue-only).
 
 | When | What | Who |
 |---|---|---|
-| W−6 weeks | Lock date, venue, pricing mode; build landing page + payment; host Calm Inbox Kit in GHL, flip `CALM` row to `active=yes` | Both / Fatiha |
+| **Gate 0** (before anything) | Cash Machine core live: lead magnets hosted, founding community open (`ACTION-PLAN-CASH-MACHINE.md`) — **and** `partnership-terms.md` signed. No co-branded post before both. | Fatiha / Both |
+| W−6 weeks | Lock date + venue; build landing page + payment; host Calm Inbox Kit in GHL, flip `CALM` row to `active=yes`; invite 2–3 warm HR/L&D contacts as comped observers | Both / Fatiha |
 | W−6 → W−1 | Run promo weeks 1–6 (`promo-campaign.md`); record podcast episode in this window and release ~W−3 | Engine + both |
 | W−2 | Dry run of the full 90 min on Zoom, both facilitators, timed | Both |
 | W−1 | Pre-event email to registrants (laptop, AI account, 3 real emails — checklist in runbook §0); print handouts; generate QR codes | Fatiha |
@@ -117,8 +159,37 @@ it. Fatiha's engine drafts; humans approve (matches `security.md` queue-only).
 
 ## 6. Open decisions (need humans, not the engine)
 
-1. **Date + venue** for workshop #1 (Dubai; `irl-events` venue contacts can seed this).
-2. **Pricing mode** for cohort #1 — recommended: public ticketed at ~$60 to fill fast, use it as the case study to sell the corporate mode.
-3. **Podcast home** — whose feed, or a co-branded mini-series?
-4. **Tessa's backend link** for QR #3 (her offer page).
-5. **Data-safety stance** to state in the room (runbook §2 includes the default script: no confidential content into personal AI accounts; use employer-approved tools or anonymize).
+1. **Sign `partnership-terms.md`** — blocks everything else (Gate 0).
+2. **Date + venue** for workshop #1 (Dubai; `irl-events` venue contacts can seed this) — scheduled *after* Cash Machine core is live.
+3. **Which 2–3 HR/L&D contacts** get comped observer seats (warm corporate network — this is the pilot's real sales call).
+4. **Podcast home** — whose feed, or a co-branded mini-series?
+5. **Tessa's backend link** for QR #3 (her offer page).
+6. ~~Pricing mode~~ **DECIDED 06/07:** public ticketed $75–95, comped corporate observers, pod at $150 founding-with-recording-rights (§3).
+
+---
+
+## 7. Kill/scale metrics — the review gate (terms §7)
+
+Run once: workshop #1 + pod cohort #1. Then both partners score it against
+this table and explicitly pick **scale / adjust / kill**. No automatic
+cohort #2, no drifting into "one more round."
+
+| Job | Metric | Scale signal | Kill signal |
+|---|---|---|---|
+| Corporate audition | Qualified corporate conversations opened from observers/attendees | ≥1 real conversation (budget + named buyer) | 0 conversations and no observer showed |
+| Testimonial harvest | Usable, consented testimonials with specifics (names/numbers) | ≥3 | ≤1 |
+| List | CALM + registrant emails captured | ≥100 | <40 |
+| Funnel proof | Workshop/pod graduates entering either partner's paid ladder within 30 days | ≥2 (either ladder) | 0 — confirms the audience-fit blind spot |
+| Cost check | Fatiha's total hours across campaign + delivery | ≤25h | >40h (it ate the engine) |
+| Leverage check | Pod cohort 1 fully recorded + at least one asset productized from it | Done | Not recorded = founding price was a donation |
+
+**Scale** = ≥4 of 6 in the scale column → book cohort 2 at $250–300 and
+pitch the first corporate workshop.
+**Adjust** = mixed → fix the failing job only, run once more, re-review.
+**Kill** = ≥2 kill signals (or funnel proof = 0 *and* corporate = 0) → wind
+down per terms §6, keep the list, both walk away friends with a recorded
+curriculum each.
+
+**Performance data source:** campaign numbers from `performance-log.md`
+(`performance-tracker` runs nightly); lead counts from GHL; hours from
+Fatiha's honest log, not vibes.
