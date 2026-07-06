@@ -9,7 +9,37 @@
 
 ## Build log
 
-### 2026-07-04 (latest) — Website & brand audit, pricing reconciliation, guides-site lead-capture fixes
+### 2026-07-06 (latest) — The AI Time Audit: interactive quiz + audit tool (Phase 3, item 1)
+First scheduled run of the weekly rebuild loop. Phases 1–2 were already
+complete, so this run shipped the next unfinished item: the quiz/audit tool
+from the operator's original task list, built as **The AI Time Audit**
+(`site/time-audit.html`).
+- **What it is:** 8 questions across 4 areas (content, leads, admin/ops,
+  focus), one-at-a-time card UI in the guides site's editorial style, keyboard
+  answerable (1–4), back navigation, progress bar, reduced-motion respected.
+  Result screen: estimated hours leaked/week (+ work-weeks/year), a named
+  profile (Do-It-All Founder → System Owner), a per-area breakdown with the
+  worst leak highlighted, and a CTA routed by that worst area to the matching
+  **activated lead magnet** (content→STACK, leads→FOLLOW UP, ops→TEAM,
+  focus→Insider Brief) — so the quiz feeds the funnel that went live on 04/07.
+  Secondary CTA: founding community waitlist at the locked ladder's $27/mo
+  founding price. No unbuilt product is sold anywhere in it.
+- **Result shown without email** (no sign-up wall); optional "email me my
+  audit" capture posts source=time-audit + profile type + hours into the
+  existing Formspree + n8n → GHL pipeline, so quiz takers arrive in GHL
+  tagged by their profile.
+- **Wired in:** "Take the Time Audit" link in the guides library header, and a
+  "Take the 3-minute Time Audit" button in the main site's pain-points section
+  (whose closing line was already "let's find out what it's actually costing
+  you"). Added to the guides sitemap with full SEO meta + JSON-LD.
+- **Verified in a real browser** (headless Chromium): scoring extremes (20h /
+  0h), per-area CTA routing, keyboard input, back button, retake, and the
+  email form — all pass, zero JS errors.
+- Phase 3 remaining: newsletter/Insider Brief refresh (waiting on the operator
+  bringing the VPS project history into this repo + hosting platform info),
+  then the free webinar. Phase 4 (Instagram plan) after.
+
+### 2026-07-04 — Website & brand audit, pricing reconciliation, guides-site lead-capture fixes
 Full audit of shiftandlead.ai, guides.shiftandlead.com, and Instagram, requested
 by the operator to prioritize and sequence "fix my online presence" work.
 Full findings in `reports/website-brand-audit-2026-07-04.md`.

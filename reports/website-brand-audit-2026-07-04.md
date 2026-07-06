@@ -275,6 +275,24 @@ so future sessions execute against it instead of re-debating:
   (SETUP-GUIDE Phase 9), Skool space creation, sending the founding post and
   speaker one-pager, recording the Time Audit walkthrough video.
 
+## Addendum 7 — 06/07/2026, Phase 3 item 1 shipped: The AI Time Audit
+
+First scheduled loop run. Built the interactive quiz/audit tool
+(`site/time-audit.html`) — full detail in ROADMAP.md's 2026-07-06 entry.
+Design notes for future passes: one-question-at-a-time card UI in the site's
+editorial system; CTAs route by worst leak area to the four activated free
+funnels only (STACK / FOLLOW UP / TEAM / Insider Brief) + the founding-
+community waitlist at the locked $27/mo price — deliberately no $47 Time
+Audit product mention until that product exists, per the parked-until-proof
+strategy in Addendum 6. The email capture feeds GHL with
+`source=time-audit` and the taker's profile type as a tag, giving the
+founding-community launch a pre-qualified segment to invite.
+
+Phase 3 remaining: newsletter/Insider Brief refresh — **blocked on operator**
+(bringing the VPS newsletter project history into this repo, per her
+04/07 message) — then the free webinar. Phase 4 (Instagram cadence plan,
+baseline 636 followers/312 posts) after that.
+
 ## Open items carried into the loop
 
 - ~~Confirm whether an existing newsletter platform already runs~~ — resolved,
