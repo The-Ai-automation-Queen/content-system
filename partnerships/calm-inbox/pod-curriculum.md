@@ -4,13 +4,13 @@
 Max 10 participants · 4 × 90-min live sessions (weekly, same slot) + light
 homework · runs online or hybrid (Dubai room + Zoom).
 
-**Pricing (revised 06/07 — README §3):** cohort 1 = **USD 150 founding
-price, one time only**, stated at purchase as the founding deal — in
-exchange, participants consent to **session recording + testimonial use**
-(anonymized on request). From cohort 2: $250–300 live, or the recorded
-cohort-1 curriculum sells as a self-paced product and the pod never runs
-this cheap again. **All four sessions are recorded — non-negotiable; the
-recording is the actual payment for the founding price.**
+**Pricing — ⚠️ ON HOLD until Fatiha confirms with Tessa whether the brief's
+"USD 150 per person" means total or per session (both scenarios + Fatiha's
+negotiation floor in README §3).** Whatever the answer: any price at or
+below $300 total is a **cohort-1 founding deal only**, stated at purchase,
+paid for with **session recording + testimonial consent** (anonymized on
+request). **All four sessions are recorded — non-negotiable in every
+scenario; the recording is what makes cheap cohort-1 pricing rational.**
 
 **Objective (from the brief):** build the **judgement, confidence and habits**
 to integrate AI into day-to-day work *without becoming dependent on it*.

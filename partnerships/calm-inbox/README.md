@@ -100,11 +100,20 @@ it. Fatiha's engine drafts; humans approve (matches `security.md` queue-only).
     `skills/monetisation/`) as case studies stack. Two facilitators +
     wellbeing angle justifies premium. Split 50/50. **Every public run
     exists to sell this mode.**
-- **Pod:** cohort 1 runs at **$150 founding price, once, explicitly in
-  exchange for recording rights + testimonials** (terms §3) — the recording
-  becomes the evergreen/product asset. From cohort 2 (if the §7 review says
-  scale): **$250–300**, or the pod doesn't run live again and sells as a
-  recorded product instead. Never both cheap AND unrecorded.
+- **Pod — ⚠️ PRICE BASIS UNCONFIRMED (Fatiha checking with Tessa):** the
+  brief says "USD 150 per person," reading as *total* for 4 weeks, but it
+  may have meant *per session* ($600 pp). The two are different businesses:
+  - *If $150 total:* $1,500/cohort → $750/partner ≈ $40–50/hr. Only viable
+    **once**, as a founding cohort paid in recording rights + testimonials
+    (terms §3); becomes a product after, never runs live at this price again.
+  - *If $150/session ($600 total):* $6,000/cohort → $3,000/partner ≈
+    $150–200/hr. A real, repeatable offer that sits correctly in the ladder
+    (above Starter Kit $97, under Bootcamp $997). Keep recording + review
+    gate anyway.
+  - **Fatiha's negotiation floor:** $600 pp, or $150–300 total for cohort 1
+    only as an explicit founding deal with recording rights. Below that,
+    her hours are worth more pointed at her own funnel.
+  Never both cheap AND unrecorded, in any scenario.
 - **Anchoring guard:** pod members are told the founding price is a
   one-time cohort-1 deal at purchase — protects the $997 Bootcamp anchor.
 - **Backend:** each partner keeps 100% of their own ladder sales, no
@@ -164,7 +173,10 @@ it. Fatiha's engine drafts; humans approve (matches `security.md` queue-only).
 3. **Which 2–3 HR/L&D contacts** get comped observer seats (warm corporate network — this is the pilot's real sales call).
 4. **Podcast home** — whose feed, or a co-branded mini-series?
 5. **Tessa's backend link** for QR #3 (her offer page).
-6. ~~Pricing mode~~ **DECIDED 06/07:** public ticketed $75–95, comped corporate observers, pod at $150 founding-with-recording-rights (§3).
+6. **Pod price basis — WITH TESSA NOW:** does the brief's "USD 150 per
+   person" mean total or per session? Both scenarios + Fatiha's negotiation
+   floor are in §3. Workshop side is decided: public ticketed $75–95 with
+   comped corporate observers.
 
 ---
 
