@@ -9,6 +9,72 @@
 
 ## Build log
 
+### 2026-07-06 (evening, latest) — Portfolio complete: all 14 tools built
+Waves 2–4 of `docs/AI-TOOLS-PORTFOLIO.md` built in one pass (10 new skills;
+#8 already existed as `course-production`). The full ranked portfolio is now
+code; the dormant ones carry explicit activation triggers and wake when their
+dependency flips in `unblocker/ledger.md`:
+- **Wave 2 (money engines):** `launch-conductor` (#4 — one offer in, one
+  reviewable campaign arc out, cockpit-gated), `speaking-pipeline` (#5 —
+  scan → 3 prepped pitches/serving → append-only CRM), `email-ops` (#6 —
+  Day 0–10 nurture, the 7 missing fast-forward onboarding emails, launch
+  broadcasts; paste-ready, never sends).
+- **Wave 3 (compounding):** `taste-clone` (#7 — decisions-log → taste-file;
+  gate locked behind ≥50 decisions + proven precision), `revenue-watchdog`
+  (#9 — daily reconciliation, first-sale ping, anomaly-only alerts),
+  `inbox-distiller` (#10 — weekly research-inbox sweep + backlog mode).
+- **Wave 4 (expansion):** `community-concierge` (#11 — labeled AI, corpus-only
+  answers, win harvesting; dormant till ~20 members), `tenant-onboarder`
+  (#12 — transcript → configured tenant in a day), `estate-janitor` (#13 —
+  weekly 8-repo hygiene, deletions always human decisions), `french-mirror`
+  (#14 — proven winners rebuilt natively in French, ENTRY FR-NNN series).
+- Crons added: revenue-watchdog daily 03:30; Sunday intelligence block
+  (inbox-distiller 05:00, taste-clone 05:30, estate-janitor 06:30); Monday
+  speaking-pipeline 05:30. CLAUDE.md skills list + portfolio statuses updated.
+
+### 2026-07-06 (later) — Wave 1 complete: Review Cockpit + Voice-Note Brain Feeder
+Completed Wave 1 of `docs/AI-TOOLS-PORTFOLIO.md` (the locked 14-tool roadmap) —
+all three tools ride the one shared Telegram bot from UNB-001:
+- **`skills/review-cockpit/`** (#2) — 07:30 digest of overnight drafts as
+  numbered Telegram cards (hook, pillar, critic score) with ✅/🎙/❌ replies;
+  process sweeps @ 12:30 + 20:30 write decisions back to the vault, CTA-check
+  approvals against live lead magnets, and append every decision to
+  `review-cockpit/decisions-log.md` (Taste Clone training data). Single
+  Telegram inbox consumer: routes unblocker replies → ledger, brain material
+  → brain-manager listen. Max 6 cards/digest; queue-only publishing stands.
+- **`brain-manager` v1.1** (#3, Voice-Note Brain Feeder) — `listen` mode files
+  voice notes/texts sent to the bot anytime into `personal-brain.md`
+  (whisper transcription on the VPS, ask-for-text fallback); `prefill` mode
+  mines voice-corpus/transcripts/queen-brain/archive into proposed entries
+  she confirms (`personal-brain-proposals.md`) instead of composes. Seed
+  interview now paced in 15-minute halves (she paused the long version once).
+- `deploy/crontab.example` + CLAUDE.md updated. Her total required daily
+  input is now ~15 phone minutes: review over coffee, ship one thing by noon,
+  answer or voice-note the evening questions.
+
+### 2026-07-06 — The Unblocker (AI Chief of Staff)
+Built the ship engine that attacks the estate's documented failure mode:
+everything built, nothing live.
+- **`skills/unblocker/`** — daily loop: scan the full 8-repo estate → maintain
+  `unblocker/ledger.md` (every human-only blocker, cited to its source doc,
+  with revenue/effort/dependency/verify fields) → select exactly ONE task →
+  prep ~90% into an execute-only pack → deliver via Telegram @ 08:00 GST →
+  follow up (gentle-butler escalation: shrink → reframe → kill/split/blocker
+  conversation at serve 3) → write verified completions back to ROADMAP,
+  ACTION-PLAN, queen-brain STATUS, lead-magnets.csv, and personal-brain.md.
+  Never serves a list. Hard cap: one task/day, ≤15 min, window 09:00–12:00.
+- **`unblocker/ledger.md`** seeded with 24 entries from queen-brain STATUS
+  (ONLY FATIHA list), ROADMAP Priority-0, ACTION-PLAN, lead-magnets.csv, and
+  inventory.md. Queue honors the standing law: no new SKUs until one existing
+  SKU has a live checkout.
+- **First two packs written:** UNB-001 (Telegram bot + VPS crons — makes the
+  system self-hosting) and UNB-002 (first live checkout: The Judge's Prompts
+  $27 on Whop + store.html paste).
+- `deploy/crontab.example` gained the 08:00 unblocker line; CLAUDE.md skills
+  list + daily-crons section updated. Design doc: `docs/UNBLOCKER-BUILD-PLAN.md`
+  (operator decisions locked 06/07: Telegram · VPS · gentle butler · full
+  estate scope · 08:00 GST · write authority granted).
+
 ### 2026-07-06 (later) — Reconciled the two development lines (main merged into session branch)
 The session branch and `main` had diverged into two parallel builds: this
 branch's audit/main-site/SEO/activation/quiz line, and the local "AI Company"
@@ -241,6 +307,9 @@ Run the loop on a fixed rhythm so the system stays alive. Targets:
 
 | Job | Skill | Cadence | Cron time (GST) |
 |---|---|---|---|
+| Draft review cards | `review-cockpit digest` | **Daily** | 07:30 |
+| Ship task (ONE, prepped) | `unblocker daily` | **Daily** | 08:00 |
+| Reply processing + routing | `review-cockpit process` | **2×/day** | 12:30, 20:30 |
 | Brain update | `brain-manager` | **Daily** | 20:00 |
 | Signal harvest | `signal-harvester` | **Daily** | 02:00 |
 | Script generation | `content-engine daily` | **Daily** (5 scripts) | 02:30 |

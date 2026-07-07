@@ -36,6 +36,17 @@ brain-manager (M00, 20:00) → signal-harvester (M01, 02:00) → content-engine
 performance-tracker (M06, 03:00) → weekly-ops (Mon 06:00) chains it all.
 Per-machine operational detail: `docs/machines/`.
 
+Operator-loop machines (the 14-tool portfolio, `docs/AI-TOOLS-PORTFOLIO.md`):
+unblocker (08:00 GST, one 15-min founder task/day), review-cockpit (07:30
+Telegram approval cards), launch-conductor, speaking-pipeline, email-ops,
+taste-clone, revenue-watchdog, inbox-distiller + Wave-4 dormants. Each lives
+in `skills/<name>/`; build history in ROADMAP.md.
+
+The 99 campaign: hiring-campaign (cloud trigger, Mon 05:07, 3 employees/week)
+→ employee-stories format → carousel-factory / captions / hyperframes for
+assets → tracker `site/99.html`. Board meeting (Mon 08:07) audits produced
+vs released.
+
 ## Engine laws (in addition to the Constitution)
 
 1. **Queue, never publish.** distribution schedules into Blotato; Fatiha
