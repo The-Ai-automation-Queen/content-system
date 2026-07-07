@@ -85,6 +85,44 @@ agent-os-company-dashboard/company/departments/) is the source material;
   "Now hiring: Inbox Manager. Salary: $0. Interviews Friday." Posted 2-3
   days before the PROOF story ships. Creates the serial cliffhanger.
 
+## The playbook law (non-negotiable)
+
+Every PLAYBOOK episode ships its complete setup asset THE SAME RUN the
+copy is written. No copy without its deliverable. Concretely, before the
+episode can enter the vault, all four must exist:
+
+1. `lead-magnets/<slug>.md`: the full setup guide, every step, the exact
+   prompt with blanks, the Traffic Light rules. Complete enough that a
+   reader needs nothing else.
+2. `site/guides/<slug>.html`: the public guide page (use the standard
+   guide template head/CSS).
+3. An entry in the opt-in catalog in `site/opt-in.html` (chip, title,
+   desc, 4 bullets).
+4. An ACTIVE row in `lead-magnets.csv` with the keyword the episode's
+   CTA uses.
+
+Fatiha is never in the middle asking for the asset. The machine builds
+the promise before it makes the promise. (First example: INBOX /
+inbox-manager-setup, shipped 2026-07-07.)
+
+## Names
+
+Every employee gets a first name, not just a function. The name appears
+with the role card and always with the AI-honesty beat ("She is not a
+person. She is a workflow."). Names are assigned at activation and are
+permanent. Assigned so far:
+
+| # | Name | Role | Department |
+|---|---|---|---|
+| 001 | Nour | Board Secretary | Back Office |
+| 002 | Rashid | Head of Research | Intelligence |
+| 003 | Zeina | Design Studio | Marketing |
+| 004 | Nadia | Inbox Manager (interviewing) | Operations |
+
+New names: short, warm, easy to say in English and French, no name
+reuse, never the name of a real client or contact. Log new assignments
+in this table and on site/99.html in the same run.
+
 ## Series mechanics
 
 - Numbering = order of activation, permanent. Employee #1 is the Board
@@ -92,8 +130,9 @@ agent-os-company-dashboard/company/departments/) is the source material;
   asset: "Employee #7 of 99."
 - Each episode lands in the vault as a normal entry (ACP ratio applies;
   these are A-posts).
-- The public tracker page (site/99.html when built) is the canonical
-  counter; stories link to it.
+- The public tracker page (site/99.html, live) is the canonical
+  counter; stories link to it. Update it in the same run as any hire,
+  name, or receipt change.
 - Source material: read the employee's file in
   agent-os-company-dashboard/company/departments/<dept>/<name>.md for
   the real job description. Do not invent capabilities the file does

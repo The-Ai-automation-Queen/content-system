@@ -38,7 +38,7 @@ That is 30 percent of her job, done with zero AI.
 You just hired a third of an employee.
 
 Want her full job description, step by step, to copy?
-Comment FOLLOW UP and I will send you the setup.
+Comment INBOX and I will send you the setup.
 
 ---
 
@@ -55,5 +55,7 @@ Comment FOLLOW UP and I will send you the setup.
 - Red line beat = the safe-AI positioning, one line.
 - First win costs nothing and is complete (free = understand + one
   first win). The full system is the paid/gated layer.
-- CTA keyword FOLLOW UP maps to the active "Lead Follow-Up Setup" row;
-  swap per episode, verify the row is ACTIVE the same run.
+- CTA keyword INBOX maps to the ACTIVE inbox-manager-setup row (shipped
+  2026-07-07 under the playbook law); swap per episode, verify the row
+  is ACTIVE the same run.
+- Employee #4 has a name now: Nadia. Use it in the role card.
