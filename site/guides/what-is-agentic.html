@@ -25,11 +25,12 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 
 /* nav */
 .nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20}
-.nav-inner{max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
 .nav .mono{font-size:10px;color:var(--muted)}
-.nav-links{display:flex;gap:22px;font-family:'Inter',sans-serif;font-size:12px;font-weight:500}
+.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
 .nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
 
 /* magazine cover hero */
 .cover{max-width:1160px;margin:0 auto;padding:70px 24px 56px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:end}
@@ -184,7 +185,7 @@ body{overflow-x:hidden}
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="../99.html">The 99</a><a href="../about.html">About</a><a href="../store.html">Store</a><a href="../work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="../99.html">The 99</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="../work-with-fatiha.html">Work with Fatiha</a></div>
 </div></nav>
 
 <!-- COVER -->
@@ -423,7 +424,7 @@ body{overflow-x:hidden}
       <div class="warn-card"><div class="term">Wrong tool for the job</div><p>Using Level 4 for a task that just needed a fixed workflow wastes time and money. <strong>Match the level to the job,</strong> not the hype.</p></div>
       <div class="warn-card"><div class="term">Silent failure</div><p>An agentic system that misjudges a step (like a wrongly-qualified lead) may not tell you. <strong>Ask what happens when it gets it wrong.</strong></p></div>
     </div>
-    <p class="warn-link">I keep verification prompts for exactly these failures, so check out <a href="../store.html">The Judge's Prompts &rarr;</a></p>
+    <p class="warn-link">I keep verification prompts for exactly these failures, so check out <a href="https://www.shiftandlead.com/store.html">The Judge's Prompts &rarr;</a></p>
   </div>
 </section>
 

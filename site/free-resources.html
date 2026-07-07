@@ -47,9 +47,11 @@ a{color:inherit;text-decoration:none}
 .ribbon button:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.5)}
 
 .nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
-.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700}
-.nav-links{display:flex;gap:28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
 
 .hero{background:var(--canvas);padding:88px 32px 96px}
 .hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:72px;align-items:center}
@@ -219,7 +221,7 @@ img{max-width:100%;height:auto}
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="free-resources.html" class="active">Home</a><a href="free-resources.html#library">Free Resources</a><a href="99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="store.html">Store</a><a href="work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="free-resources.html" class="active">Home</a><a href="free-resources.html#library">Free Resources</a><a href="99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="work-with-fatiha.html">Work with Fatiha</a></div>
 </div></nav>
 
 <section class="hero"><div class="hero-inner">
@@ -278,8 +280,8 @@ img{max-width:100%;height:auto}
         <li>You think ChatGPT is all of AI (it's one small piece)</li>
         <li>You quietly worry you're already behind</li>
       </ul>
-      <div class="path-route"><strong>Your reading order</strong>Basics 1 → 2 → 3 → 4</div>
-      <a class="path-cta" href="guides/what-is-ai.html">Start with Basics 1 →</a>
+      <div class="path-route"><strong>Your reading order</strong>What AI Is &rarr; ChatGPT vs AI &rarr; How to Prompt &rarr; The Jargon, Decoded</div>
+      <a class="path-cta" href="guides/what-is-ai.html">Start with &ldquo;What AI Is&rdquo; &rarr;</a>
     </div>
 
     <div class="path-col crown">
@@ -292,8 +294,8 @@ img{max-width:100%;height:auto}
         <li>You've collected tools, but built no system</li>
         <li>You retype the same context every single time</li>
       </ul>
-      <div class="path-route"><strong>Your reading order</strong>Basics 3 → Kitchen Map: Claude → the rest of the maps</div>
-      <a class="path-cta" href="guides/what-is-a-prompt.html">Start with Basics 3 →</a>
+      <div class="path-route"><strong>Your reading order</strong>How to Prompt &rarr; Kitchen Map: Claude &rarr; the rest of the maps</div>
+      <a class="path-cta" href="guides/what-is-a-prompt.html">Start with &ldquo;What Is a Prompt&rdquo; &rarr;</a>
     </div>
 
     <div class="path-col">
@@ -306,7 +308,7 @@ img{max-width:100%;height:auto}
         <li>You want AI employees, not AI answers</li>
         <li>Your goal is a business that doesn't need you online</li>
       </ul>
-      <div class="path-route"><strong>Your reading order</strong>Basics 5 → the Kitchen Maps → hire your first AI employee</div>
+      <div class="path-route"><strong>Your reading order</strong>What &ldquo;Agentic&rdquo; Means &rarr; the Kitchen Maps &rarr; hire your first AI employee</div>
       <a class="path-cta" href="guides/what-is-agentic.html">Read the Agentic guide →</a>
       <a class="path-cta ghost" href="time-audit.html">Not sure what to hand off first? Take the Time Audit →</a>
     </div>
@@ -680,7 +682,7 @@ img{max-width:100%;height:auto}
       <div class="kicker">The Store</div>
       <h3>Buy once, use forever.</h3>
       <p>The paid shortcuts behind these guides, starting at $19: prompt packs, playbooks, systems. Opening soon; the list hears first.</p>
-      <a class="btn-cream" href="store.html">Browse the Store</a>
+      <a class="btn-cream" href="https://www.shiftandlead.com/store.html">Browse the Store</a>
     </div>
     <div class="cta-card">
       <div class="kicker">Community</div>
@@ -708,7 +710,7 @@ img{max-width:100%;height:auto}
   </div>
   <div>
     <div class="footer-col-head">Work with Fatiha</div>
-    <a class="footer-link" href="about.html#community">Community</a><a class="footer-link" href="store.html">Store</a><a class="footer-link" href="work-with-fatiha.html">Keynotes &amp; workshops</a><a class="footer-link" href="about.html">About</a>
+    <a class="footer-link" href="about.html#community">Community</a><a class="footer-link" href="https://www.shiftandlead.com/store.html">Store</a><a class="footer-link" href="work-with-fatiha.html">Keynotes &amp; workshops</a><a class="footer-link" href="about.html">About</a>
   </div>
 </div>
 <div class="footer-legal"><a href="privacy.html" style="color:inherit">Privacy</a> · &copy; 2026 Shift &amp; Lead. All rights reserved. All content is original work. Reproduction without written consent is prohibited.</div>
