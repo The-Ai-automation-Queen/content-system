@@ -17,12 +17,23 @@ allowed-tools:
   - Glob
 ---
 
-# Hiring Campaign (weekly)
+# Hiring Campaign (weekly wave)
 
-One run = one employee = one complete week of campaign assets. The run
-is autonomous end to end EXCEPT the two things the Constitution reserves
-for Fatiha: releasing the queue (Law 11) and merging to main (VPS
-deploys main). Everything else happens without her.
+One run = THREE employees = one complete week of campaign assets (the
+"hiring wave"). The run is autonomous end to end EXCEPT the two things
+the Constitution reserves for Fatiha: releasing the queue (Law 11) and
+merging to main (VPS deploys main). Everything else happens without her.
+
+Weekly slot map the wave fills:
+- Monday: wave announcement (one post introducing the week's 3 openings)
+- Tuesday: episode 1 (+ its carousel)
+- Wednesday: episode 2 (+ its carousel) and the reel of the week
+- Thursday: episode 3 (+ its carousel)
+- Friday: Friday Receipts carries the tracker delta (badges earned)
+
+Wave composition rule: the 3 employees come from 3 different
+departments, mixing pain points (money, time, attention) so the week
+never repeats itself.
 
 ## Read first
 
@@ -34,8 +45,8 @@ deploys main). Everything else happens without her.
 
 ## The weekly run
 
-1. **Pick.** Take the next `planned` row from schedule.md. Read that
-   employee's real job description in
+1. **Pick.** Take the next THREE `planned` rows from schedule.md. Read
+   each employee's real job description in
    `agent-os-company-dashboard/company/departments/<dept>/<file>.md`
    (if the repo is in session; otherwise use the role summary column in
    schedule.md and note the source gap in the report).
@@ -66,9 +77,29 @@ deploys main). Everything else happens without her.
    produced, what is queued vs waiting, and the single release action
    Fatiha owes this week.
 
+## Interconnections (how this run feeds the other machines)
+
+- **Board meeting (Nour, Mondays 08:07)** runs 3 hours after this one
+  and reads reports/hiring-campaign-*.md: waves produced vs released is
+  a standing board metric. Unreleased waves get named at the board.
+- **Website loop (Mondays 09:07)** deploys/refreshes site work; tracker
+  and guide pages from this run ride the same branch.
+- **M04 distribution (VPS)** picks up the READY TO POST vault entries;
+  this run never queues to Blotato directly if the VPS machine is
+  healthy (one queue owner, no double-scheduling).
+- **M06 performance-tracker** numbers feed next wave's choices: if an
+  episode format outperforms, the report says which and the next wave
+  leans into it.
+- **Insider Brief (Tuesdays)** gets a one-line "this week's openings"
+  cross-mention drafted by this run for the newsletter engine to use.
+- Every playbook's keyword lands in the same n8n -> GHL capture rail as
+  all other magnets; source tags make each employee's episode
+  measurable on its own.
+
 ## Hard rules
 
-- One employee per run. Never batch ahead.
+- Three employees per run, one wave per week. Never more than one wave
+  ahead.
 - The counter never runs ahead of receipts (tracker law).
 - If the previous week's episode was never released, this run still
   produces, but the report says so in the first line: unreleased work

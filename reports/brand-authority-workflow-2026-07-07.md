@@ -313,3 +313,57 @@ Fatiha flagged two factual failures in this report. Both stand corrected:
    operating reality. The public number must be the verifiable active
    count from run logs, not the wired total. Strategy for the replacement
    number is logged in the session of this date.
+
+---
+
+## Addendum 2 — plan status, end of day 2026-07-07
+
+Much of this report was executed the same day it was written. Current
+state of every recommendation:
+
+**Positioning (Part 1) — REPLACED.** The original sentence contained an
+untraceable credential claim (see Addendum 1). The adopted architecture
+is The 99: "99 employees, but a payroll ain't one." Public number is 99
+(rounded DOWN from the 137 roster), and the public counter shows only
+receipts-verified hires. Positioning line in use: 20 years inside Dell,
+Intel and Microsoft; now building a company staffed by AI, turning on
+its employees one at a time, receipts published weekly.
+
+**Authority gaps (Part 2) — status:**
+- Gap 1 (machine never shipped): production now automated as the weekly
+  hiring wave, 3 employees/week, Mondays 05:07 (trigger
+  trig_016GLHjcTLyB4hhQvmdmS6cT). Release button remains Fatiha's.
+- Gap 2 (proof artifact): site/99.html built: public tracker, 3 hired
+  with receipts (Nour, Rashid, Zeina), Nadia interviewing, honesty
+  rules on-page, counter can go down. Awaits merge + VPS deploy.
+- Gap 3 (LinkedIn rewrite): NOT DONE, founder-facing draft pending.
+- Gap 4 (checkout): NOT DONE, founder action, unchanged since the
+  06/07 board meeting.
+- Gap 5 (IG bio/CTA): NOT DONE, founder action (2 minutes).
+
+**90-day engine (Part 3) — superseded in cadence:** content leg now
+runs at 3 employee episodes/week + wave announcement + reel + Brief
+cross-mention, produced by the Monday wave run. Founder legs (DMs,
+podcast pitches, speaking, Friday release ritual) unchanged and still
+founder-owned.
+
+**Monetization gaps (matrix) — wiring since publication:**
+- Free capture layer expanded: 8th active magnet INBOX
+  (inbox-manager-setup), first asset shipped under the playbook law
+  (every episode ships its complete setup guide the same run).
+- Anti-cannibalization law written into skills/employee-stories:
+  free = one employee + first win; paid = the system, importable
+  workflow files, updates, community speed. No n8n exports in free.
+- Engines #1 (checkout) and #2 (community) still blocked on founder
+  actions; nothing in this addendum changes the #1 ranking.
+
+**New since the report:** employee names (Nour, Rashid, Zeina, Nadia,
+and schedule through #016), empathy AI-honesty framing replacing the
+"not a person" line (job-fear stance now brand law), hiring schedule
+seeded 4 waves ahead, machine interconnections documented (board
+meeting reads wave reports; M04 owns the queue; M06 data steers wave
+choices).
+
+At 3/week the 99 completes in ~8 months. The bottleneck stated in the
+original diagnosis is unchanged: production is now automated; release
+and the cash register are not machines, they are Fatiha.
