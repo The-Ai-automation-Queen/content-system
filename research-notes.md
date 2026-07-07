@@ -2,6 +2,36 @@
 
 ---
 
+## RESEARCH 026 — 2026-07-07 | Daily signal harvest — AI failure rates, EU AI Act Aug 2, Codex non-dev surge, job displacement acceleration
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-07-07.md](reports/research-digest-2026-07-07.md)
+**Topics searched:** AI strategy business leaders frameworks failures July 2026; EU AI Act enforcement deepfakes US policy July 2026; enterprise AI adoption companies results July 2026; AI tools solopreneurs non-technical entrepreneurs July 2026; AI workforce jobs displacement reskilling data July 2026; OpenAI Codex enterprise users non-developers 2026; AI layoffs job cuts tracker 2026
+
+### Key Findings (summary)
+1. **HBR "Urgency Trap"** (July 2026): 80% of enterprise AI projects fail to deliver value; 42% of companies abandoned most AI initiatives in 2025 (up from 17% the year before). Root cause: organizational misalignment, not technology. Companies are deploying AI to signal urgency before they know why. Article: https://hbr.org/2026/07/when-developing-an-ai-strategy-beware-the-urgency-trap
+2. **EU AI Act Article 50 — August 2, 2026**: Chatbot disclosure ("I am AI") + deepfake labeling ("artificially generated or manipulated") become legally mandatory. Fines up to €15M / 3% global revenue. Directly affects Instagram, LinkedIn, TikTok, YouTube — platforms must surface disclosure UI in Q3. Creators using AI-generated face/voice video (HeyGen, Higgsfield) are in scope. Code of Practice sign-up deadline was July 22. https://artificialintelligenceact.eu/article/50/
+3. **OpenAI Codex**: 5 million weekly users as of June 2026 (2M in March — 150% in 3 months). Non-developers now 20% of users, growing 3× faster than engineers. Enterprise = 40%+ of OpenAI revenue, on track to equal consumer by year-end. The developer-only wall is collapsing. https://openai.com/index/scaling-codex-to-enterprises-worldwide/
+4. **AI job displacement accelerating**: Through June 2026 — 101,743 US job cuts formally cite AI, nearly double all of 2025 (54,836 full year). May 2026 alone: 38,579 cuts with AI cited (40% of all layoffs — highest monthly total since tracking began). 56% of all 2026 layoff events cite AI/automation/ML. Tech sector layoffs up 83% YoY. Most exposed: data entry, customer service, entry-level content, admin. https://www.insurancejournal.com/news/national/2026/07/02/875989.htm
+5. **Solopreneur surge confirmed**: Solo-founded startups grew from 23.7% (2019) to 36.3% (mid-2025). ~41 million US solopreneurs. AI-assisted solopreneurs report 15–20 hours saved per week. Minimal effective AI stack costs ~$45/month. https://fortune.com/2026/05/18/solo-founders-ai-automation-entire-teams-entrepreneurs/
+
+### Signals worth acting on
+- **"AI layoff" is now a legal paper trail**: Companies are formally citing AI in WARN Act filings and severance docs — data will get more precise and explosive each month through Q3 2026. Creators who own the "what to do about this" lane before the panic peaks will inherit the audience.
+- **Non-technical workers colonizing developer tools faster than predicted**: OpenAI's Codex non-developer growth at 3× engineers invalidates the "technical vs. non-technical" framing. The divide is collapsing, not shrinking. Content that still treats this as a hard wall is aging out.
+- **Solo startup share keeps rising**: 36.3% of new startups are solo-founded, driven structurally by AI capability. The addressable market for "build without a team" content is expanding every quarter.
+
+### Content angles (3 ready to use)
+1. **"80% of AI projects fail. Here's why yours won't."** — Enterprise failure is a bureaucracy disease (misaligned purpose, vanishing sponsors, no operating model). A solopreneur who knows exactly what to automate and ships it in a weekend doesn't have this disease. The failure data makes the solo approach look prescient. **Pillar: Build Once, Runs Forever**
+2. **"100,000 job cuts cited AI in the first 6 months of 2026. Here's what the safe side looks like."** — The people at risk aren't using AI — they're still doing the work AI can now do cheaply. The safe side isn't avoiding AI; it's using it to do more per hour than any employer could replace. Reskilling = one automation this week. **Pillar: Stop Doing That by Hand**
+3. **"Non-developers are now the fastest-growing group on an AI coding tool. The technical excuse is gone."** — OpenAI's own data: knowledge workers outpacing engineers 3:1 on Codex. The "I'm not technical" excuse has an expiration date — 2026 is it. **Pillar: What's Worth It**
+
+### Contrarian take logged
+The HBR "urgency trap" advice — slow down, get clarity, don't rush AI deployment — is correct for 10,000-person enterprises with 6-month procurement cycles. It is the wrong advice for solopreneurs. Analysis paralysis disguised as strategy is the solo operator's version of the urgency trap. The 80% enterprise failure rate exists because large orgs can't implement, measure, and iterate in a weekend. Small operators can. The lesson isn't "AI needs more planning." It's: "small teams who can ship fast have a structural advantage over every committee-bound organization on Earth." Taking enterprise advice and applying it to a solo context does the opposite of what it should.
+
+**Status:** NOTED
+
+---
+
 ## RESEARCH 025 — 2026-07-05 | AI Operators Academy (IAOA) — same-niche competitor, French market, "3-steps" guide factory
 
 **Status:** NOTED
