@@ -133,6 +133,16 @@ li{margin-bottom:8px;color:var(--ink)}
 
   <p class="lead">Here&rsquo;s the brutal truth: most people lose money not because they can&rsquo;t get attention, but because they can&rsquo;t <em>follow up</em>. Someone comments, someone opts in&hellip; and then it sits in your DMs until the excitement is dead. This is the exact setup I use so <strong>every</strong> raised hand gets caught, gets the thing, and gets followed up with, automatically. You build it once. It runs forever.</p>
 
+  <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
+    <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
+    <p style="margin:0 0 14px;font-size:15.5px">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
+    <form class="capture-form" style="display:flex;gap:10px;flex-wrap:wrap">
+      <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <button type="submit" style="padding:10px 20px;background:#2C4BE0;color:#fff;border:none;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:14px;cursor:pointer">Send them to me</button>
+    </form>
+  </div>
+
   <hr class="rule">
 
   <h2>What you&rsquo;re building</h2>
@@ -189,8 +199,29 @@ li{margin-bottom:8px;color:var(--ink)}
 </div>
 
 <div class="footer">
-  <p>Shift &amp; Lead &middot; Free guide &middot; &copy; 2026</p>
+  <p>Shift &amp; Lead &middot; Free guide &middot; &copy; 2026 &middot; <a href="../privacy.html" style="color:inherit">Privacy</a></p>
 </div>
+
+<script>
+document.querySelectorAll('.capture-form').forEach(function(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    var email = form.querySelector('[name="email"]').value;
+    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Done.'; return; }
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      var r = await fetch('https://formspree.io/f/xgojoyka', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-follow-up-setup'}) });
+      fetch('https://auto.shiftandlead.com/webhook/formspree-lead', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-follow-up-setup'}) });
+      if (r.ok) { btn.textContent = 'On its way.'; } else { btn.disabled=false; btn.textContent='Try again'; }
+    } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
+  });
+});
+</script>
 
 </body>
 </html>

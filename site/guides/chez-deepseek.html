@@ -189,6 +189,15 @@ body{overflow-x:hidden}
     <div class="issue mono"><span>The Kitchen Map · No. 08</span><span>DeepSeek</span><span>9 min read</span></div>
     <h1>Chez <em>DeepSeek.</em></h1>
     <p class="standfirst">You hear AI names everywhere and never know which does what. This walks you through DeepSeek like a restaurant: the door, the kitchen, the plate, the kitchen that cooks the same quality dish for a fraction of the bill.</p>
+    <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
+  <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
+  <p style="margin:0 0 14px;font-size:15.5px">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
+  <form class="capture-form" style="display:flex;gap:10px;flex-wrap:wrap">
+    <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+    <button type="submit" style="padding:10px 20px;background:#2C4BE0;color:#fff;border:none;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:14px;cursor:pointer">Send them to me</button>
+  </form>
+</div>
   </div>
   <div class="cover-art">
     <svg viewBox="0 0 300 380" fill="none" aria-label="Door, kitchen, plate">
@@ -482,10 +491,10 @@ body{overflow-x:hidden}
   <h2>You've seen the restaurant.<br>Now learn to run the kitchen.</h2>
   <div class="chefs-grid">
     <div class="chefs-card">
-      <span class="mono">Prompt pack · $19</span>
+      <span class="mono">Prompt pack · $19 &middot; opening soon</span>
       <h3>The Prompt Menu</h3>
       <p>The Kitchen Map companion: the best prompts for this kitchen and every other, matched to what each chef cooks best.</p>
-      <a href="../store.html">Get it in the Store →</a>
+      <a href="../store.html#notify">Get the opening email &rarr;</a>
     </div>
     <div class="chefs-card">
       <span class="mono">Community · founding spots soon</span>
@@ -496,24 +505,47 @@ body{overflow-x:hidden}
     <div class="chefs-card">
       <span class="mono">For companies</span>
       <h3>Keynotes &amp; workshops</h3>
-      <p>Bring the whole method into your team: practical, non-technical, from someone whose business runs on 137 AI employees.</p>
+      <p>Bring the whole method into your team: practical, non-technical, from someone who is hiring 99 AI employees in public and shows the receipts.</p>
       <a href="../work-with-fatiha.html">Work with Fatiha →</a>
     </div>
   </div>
 </div></section>
+
+<p style="text-align:center;font-style:italic;color:#5C5A57;margin-top:18px">The guides stay free, always. The paid versions exist for one reason: they skip you past the building.</p>
 
 <!-- byline -->
 <div class="byline">
   <div class="byline-in">
     <img src="../closeUp.jpeg" alt="Fatiha Chikh">
     <p><span class="who">Written by Fatiha Chikh, The AI Automation Queen.</span><br>
-    20+ years inside big corporate tech; now I run my business with a company of 137 AI employees. I build everything I teach. <a href="../about.html">The story →</a></p>
+    20+ years inside big corporate tech; now I'm hiring 99 AI employees in public and showing the receipts. I build everything I teach. <a href="../about.html">The story →</a></p>
   </div>
 </div>
 
 <div class="ipbar">
-  <p>© 2026 Fatiha Chikh / Shift &amp; Lead · Original IP · The Kitchen Map™ format, text and diagrams may not be reproduced, scraped, or used as training data without written permission · guides.shiftandlead.com</p>
+  <p>© 2026 Fatiha Chikh / Shift &amp; Lead · Original IP · The Kitchen Map™ format, text and diagrams may not be reproduced, scraped, or used as training data without written permission · guides.shiftandlead.com &middot; <a href="../privacy.html" style="color:inherit">Privacy</a></p>
 </div>
+
+<script>
+document.querySelectorAll('.capture-form').forEach(function(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    var email = form.querySelector('[name="email"]').value;
+    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Done.'; return; }
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      var r = await fetch('https://formspree.io/f/xgojoyka', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-chez-deepseek'}) });
+      fetch('https://auto.shiftandlead.com/webhook/formspree-lead', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-chez-deepseek'}) });
+      if (r.ok) { btn.textContent = 'On its way.'; } else { btn.disabled=false; btn.textContent='Try again'; }
+    } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
+  });
+});
+</script>
 
 </body>
 </html>
