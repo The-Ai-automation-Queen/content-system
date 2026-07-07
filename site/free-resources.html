@@ -219,7 +219,7 @@ img{max-width:100%;height:auto}
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="#">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="free-resources.html">Home</a><a href="#library">Free Resources</a><a href="99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="store.html">Store</a><a href="work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="free-resources.html" class="active">Home</a><a href="free-resources.html#library">Free Resources</a><a href="99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="store.html">Store</a><a href="work-with-fatiha.html">Work with Fatiha</a></div>
 </div></nav>
 
 <section class="hero"><div class="hero-inner">
@@ -278,8 +278,8 @@ img{max-width:100%;height:auto}
         <li>You think ChatGPT <em>is</em> AI (it isn't, almost)</li>
         <li>You quietly worry you're already behind</li>
       </ul>
-      <div class="path-route"><strong>Your reading order</strong>WHAT → DIFF → PROMPT → WORDS</div>
-      <a class="path-cta" href="opt-in.html?guide=what-is-ai">Start with WHAT →</a>
+      <div class="path-route"><strong>Your reading order</strong>Basics 1 → 2 → 3 → 4</div>
+      <a class="path-cta" href="opt-in.html?guide=what-is-ai">Start with Basics 1 →</a>
     </div>
 
     <div class="path-col crown">
@@ -292,7 +292,7 @@ img{max-width:100%;height:auto}
         <li>You've collected tools, but built no system</li>
         <li>You retype the same context every single time</li>
       </ul>
-      <div class="path-route"><strong>Your reading order</strong>PROMPT → CHEZ CLAUDE → the Kitchen Maps</div>
+      <div class="path-route"><strong>Your reading order</strong>Basics 3 → Tool Map: Claude → the rest of the maps</div>
       <a class="path-cta" href="opt-in.html?guide=chez-claude">Enter Chez Claude →</a>
     </div>
 
@@ -306,9 +306,8 @@ img{max-width:100%;height:auto}
         <li>You want AI employees, not AI answers</li>
         <li>Your goal is a business that doesn't need you online</li>
       </ul>
-      <div class="path-route"><strong>Your reading order</strong>AGENTIC → the Kitchen Maps → then let's talk</div>
+      <div class="path-route"><strong>Your reading order</strong>Basics 5 → the Tool Maps → the next step below</div>
       <a class="path-cta" href="opt-in.html?guide=what-is-agentic">Read the Agentic guide →</a>
-      <a class="path-cta ghost" href="#next-steps">See the next step ↓</a>
     </div>
 
   </div>
@@ -317,85 +316,50 @@ img{max-width:100%;height:auto}
 <section class="spotlight"><div class="spotlight-inner">
   <div class="spotlight-head">
     <div>
-      <div class="spotlight-eyebrow" id="spotlight-eyebrow">This week</div>
-      <div class="spotlight-title">This week.</div>
+      <div class="spotlight-eyebrow" id="spotlight-eyebrow">Featured</div>
+      <div class="spotlight-title">Start with these.</div>
     </div>
     <a class="row-cta" href="#library">All guides →</a>
   </div>
   
-<!-- thisweek strip: non-library content, hydrated from thisweek.json -->
 <style>
-.tw{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-bottom:26px}
-@media(max-width:900px){.tw{grid-template-columns:1fr}}
-.tw-brief{background:#1A1A1A;border-radius:14px;padding:22px 26px;color:#F5F0EB}
-.tw-brief .k{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#7FA0FF;margin-bottom:10px}
-.tw-item{display:flex;gap:12px;align-items:baseline;padding:7px 0;border-top:1px solid rgba(255,255,255,.1)}
-.tw-item:first-of-type{border-top:none}
-.tw-v{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;padding:2px 9px;border-radius:4px;color:#fff;flex-shrink:0}
-.tw-item p{margin:0;font-size:14px;font-family:'Inter',sans-serif;color:#E8E3F2}
-.tw-brief a{font-family:'Inter',sans-serif;font-size:13px;color:#7FA0FF;text-decoration:none;display:inline-block;margin-top:10px}
-.tw-stat{background:#EEF2FC;border:1px solid #E4EAFB;border-radius:14px;padding:22px 26px;display:flex;flex-direction:column;justify-content:center}
-.tw-stat .k{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#2C4BE0;margin-bottom:8px}
-.tw-stat .n{font-family:'Playfair Display',Georgia,serif;font-size:44px;font-weight:700;line-height:1;color:#1A1A1A}
-.tw-stat p{margin:8px 0 0;font-size:13.5px;font-family:'Inter',sans-serif;color:#5C5A57}
+.bip{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:14px;padding:16px 24px;margin-bottom:26px}
+.bip .k{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#2C4BE0;flex-shrink:0}
+.bip p{margin:0;font-size:14.5px;font-family:'Inter',sans-serif;color:#1A1A1A;flex:1;min-width:240px}
+.bip a{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:#2C4BE0;text-decoration:none;border-bottom:1px solid #2C4BE0;padding-bottom:2px;white-space:nowrap}
 </style>
-<div class="tw" id="thisweek">
-  <div class="tw-brief">
-    <div class="k">From the Insider Brief · this week's verdicts</div>
-    <div id="tw-items">
-      <div class="tw-item"><span class="tw-v" style="background:#2C4BE0">ACT</span><p id="tw-act">EU AI Act enforcement starts for general-purpose models. If you sell into Europe, check your disclosures.</p></div>
-      <div class="tw-item"><span class="tw-v" style="background:#1A1A1A">WATCH</span><p id="tw-watch">Agentic checkout inside chat apps: commerce is moving into the conversation.</p></div>
-      <div class="tw-item"><span class="tw-v" style="background:#E63955">IGNORE</span><p id="tw-ignore">The "AGI next quarter" discourse. Again.</p></div>
-    </div>
-    <a href="https://brief.shiftandlead.com">Get the full briefing, free →</a>
-  </div>
-  <div class="tw-stat">
-    <div class="k">Build-in-public · real number</div>
-    <div class="n" id="tw-stat-n">137</div>
-    <p id="tw-stat-p">AI employees running my business from one dashboard. I publish the receipts weekly.</p>
-  </div>
+<div class="bip">
+  <span class="k">Built in public</span>
+  <p>I am hiring 99 AI employees, one at a time, in public. This library is how I explain what they do, in plain English.</p>
+  <a href="99.html">See the live scoreboard &rarr;</a>
 </div>
-<script>
-(async function(){
-  try{
-    var r = await fetch('thisweek.json',{cache:'no-store'});
-    if(!r.ok) return;
-    var d = await r.json();
-    if(d.act) document.getElementById('tw-act').textContent = d.act;
-    if(d.watch) document.getElementById('tw-watch').textContent = d.watch;
-    if(d.ignore) document.getElementById('tw-ignore').textContent = d.ignore;
-    if(d.stat_n) document.getElementById('tw-stat-n').textContent = d.stat_n;
-    if(d.stat_p) document.getElementById('tw-stat-p').textContent = d.stat_p;
-  }catch(e){/* baked fallback stays */}
-})();
-</script>
 
   <div class="spotlight-grid" id="spotlight-grid">
     <!-- Spotlight slots populated by JS on page load. Fallback HTML below in case JS fails. -->
     <div class="spot-feat" id="spotlight-featured">
       <div>
-        <span class="chip chip-track0">WHAT</span>
+        <span class="chip chip-track0">BASICS 01</span>
         <h3>Everyone says &ldquo;AI&rdquo; 100 times a day. Nobody says what it is.</h3>
         <p>You're not behind. You were never told. Here is what it is, in 4 lines.</p>
       </div>
-      <a class="row-cta" href="opt-in.html?guide=what-is-ai">Read →</a>
+      <a class="row-cta" href="opt-in.html?guide=what-is-ai">Get the 4-line answer &rarr;</a>
     </div>
     <div class="spot-side" id="spotlight-side">
       <div class="spot-mini">
         <div>
-          <span class="chip chip-track0">DIFF</span>
+          <span class="chip chip-track0">BASICS 02</span>
           <h4>ChatGPT and AI are not the same thing.</h4>
           <p>6 words, sorted biggest to smallest.</p>
         </div>
-        <a class="row-cta" href="opt-in.html?guide=chatgpt-vs-ai">Read →</a>
+        <a class="row-cta" href="opt-in.html?guide=chatgpt-vs-ai">Sort the 6 words &rarr;</a>
       </div>
       <div class="spot-mini">
         <div>
-          <span class="chip chip-data">DECODE</span>
+          <span class="chip chip-data">TOOL MAP</span>
           <h4>Chez Claude. The one that reads the whole room.</h4>
           <p>Door, kitchen, plate. The restaurant walkthrough.</p>
         </div>
-        <a class="row-cta" href="opt-in.html?guide=chez-claude">Read →</a>
+        <a class="row-cta" href="opt-in.html?guide=chez-claude">Map the Claude kitchen &rarr;</a>
       </div>
     </div>
   </div>
@@ -431,7 +395,7 @@ img{max-width:100%;height:auto}
     inner.appendChild(makeEl('span', 'chip ' + (guide.chip_class || 'chip-setup'), guide.chip || 'GUIDE'));
     inner.appendChild(makeEl('h3', null, guide.title || ''));
     inner.appendChild(makeEl('p', null, guide.summary || ''));
-    var cta = makeEl('a', 'row-cta', 'Read →');
+    var cta = makeEl('a', 'row-cta', 'Read the guide →');
     cta.href = 'opt-in.html?guide=' + encodeURIComponent(slug);
     slot.appendChild(inner);
     slot.appendChild(cta);
@@ -445,7 +409,7 @@ img{max-width:100%;height:auto}
       inner.appendChild(makeEl('span', 'chip ' + (item.data.chip_class || 'chip-literacy'), item.data.chip || 'GUIDE'));
       inner.appendChild(makeEl('h4', null, item.data.title || ''));
       inner.appendChild(makeEl('p', null, item.data.side_summary || item.data.summary || ''));
-      var cta = makeEl('a', 'row-cta', 'Read →');
+      var cta = makeEl('a', 'row-cta', 'Read the guide →');
       cta.href = 'opt-in.html?guide=' + encodeURIComponent(item.slug);
       mini.appendChild(inner);
       mini.appendChild(cta);
@@ -493,7 +457,7 @@ img{max-width:100%;height:auto}
 
     var eyebrow = document.getElementById('spotlight-eyebrow');
     if (eyebrow) {
-      eyebrow.textContent = override && override.active ? 'Featured pick' : 'This week';
+      eyebrow.textContent = override && override.active ? 'Featured pick' : 'Featured';
     }
   } catch (err) {
     console.warn('Spotlight rotation failed, using baked HTML:', err);
@@ -508,12 +472,9 @@ img{max-width:100%;height:auto}
       <div class="controls-title">Every guide, every track.</div>
     </div>
   </div>
-  <input class="search" type="search" placeholder="Search guides...">
-  <div class="filter-group"><span class="filter-label">Tool</span>
-    <button class="pill active">All</button><button class="pill">Claude</button><button class="pill">ChatGPT</button><button class="pill">Gemini</button>
-  </div>
-  <div class="filter-group"><span class="filter-label">Topic</span>
-    <button class="pill active">All</button><button class="pill">Content</button><button class="pill">Sales</button><button class="pill">Automation</button>
+  <input class="search" id="lib-search" type="search" placeholder="Search the library...">
+  <div class="filter-group"><span class="filter-label">Show</span>
+    <button class="pill active" data-track="all">All</button><button class="pill" data-track="basics">The Basics</button><button class="pill" data-track="toolmap">Tool Maps</button><button class="pill" data-track="business">Put AI to work</button>
   </div>
 </section>
 
@@ -521,140 +482,180 @@ img{max-width:100%;height:auto}
 
   <!-- CHEZ_SERIES_START -->
   <!-- The Kitchen Maps series: 10 AI tools walked through like restaurants -->
-  <div class="card" style="margin:0 0 36px;border-left:3px solid var(--accent)">
+  <div class="card" data-track="toolmap" style="margin:0 0 36px;border-left:3px solid var(--accent)">
     <p style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:22px;line-height:1.35;color:var(--muted);margin-bottom:12px">The Kitchen Map series</p>
     <p style="margin-bottom:0">Almost everyone on this planet loves food. So there was no better way to explain AI tools than to walk you through them like restaurants. Same structure every time: the door, the kitchen, the plate. Each new tool feels familiar before you've even opened it.</p>
   </div>
-  <article class="row" data-publish="2026-06-23">
+  <article class="row" data-track="toolmap" data-publish="2026-06-23">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Anthropic · Kitchen Map</span><span class="row-date">23 Jun 2026</span></div>
+      <div class="row-meta"><span class="chip chip-data">TOOL MAP</span><span class="row-kicker">Anthropic · Kitchen Map</span><span class="row-date">23 Jun 2026</span></div>
       <h2 class="row-title">Chez Claude. The one that reads the whole room before it answers.</h2>
       <p class="row-summary">Long-form reasoning, Artifacts, computer-use, Projects, Claude Code. Walked through like a restaurant. Door, kitchen, plate.</p>
     </div>
-    <a class="row-cta" href="opt-in.html?guide=chez-claude">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-claude">Map the Claude kitchen &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-06-23">
+  <article class="row" data-track="toolmap" data-publish="2026-06-23">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">OpenAI · Kitchen Map</span><span class="row-date">23 Jun 2026</span></div>
+      <div class="row-meta"><span class="chip chip-data">TOOL MAP</span><span class="row-kicker">OpenAI · Kitchen Map</span><span class="row-date">23 Jun 2026</span></div>
       <h2 class="row-title">Chez ChatGPT. The one everyone tried first. Here's what's actually on the menu.</h2>
       <p class="row-summary">GPTs, Operator, Agents, Voice, image gen, the whole OpenAI ecosystem as one walkthrough. Door, kitchen, plate.</p>
     </div>
-    <a class="row-cta" href="opt-in.html?guide=chez-openai">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-openai">See the ChatGPT menu &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-06-23">
+  <article class="row" data-track="toolmap" data-publish="2026-06-23">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Google · Kitchen Map</span><span class="row-date">23 Jun 2026</span></div>
+      <div class="row-meta"><span class="chip chip-data">TOOL MAP</span><span class="row-kicker">Google · Kitchen Map</span><span class="row-date">23 Jun 2026</span></div>
       <h2 class="row-title">Chez Gemini. It already knows your calendar, your Drive, your inbox.</h2>
       <p class="row-summary">Gemini, Workspace, Deep Research, NotebookLM, Astra, the Google AI stack as a restaurant.</p>
     </div>
-    <a class="row-cta" href="opt-in.html?guide=chez-gemini">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-gemini">Tour the Google kitchen &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-06-25">
+  <article class="row" data-track="toolmap" data-publish="2026-06-25">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Microsoft · Kitchen Map</span><span class="row-date">25 Jun 2026</span></div>
+      <div class="row-meta"><span class="chip chip-data">TOOL MAP</span><span class="row-kicker">Microsoft · Kitchen Map</span><span class="row-date">25 Jun 2026</span></div>
       <h2 class="row-title">Chez Copilot. It's been sitting in your Office toolbar this whole time.</h2>
       <p class="row-summary">Copilot Chat, Cowork, Studio, Agent 365, Foundry. Microsoft's AI restaurant from door to plate.</p>
     </div>
-    <a class="row-cta" href="opt-in.html?guide=chez-copilot">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-copilot">Open the Office toolbar &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-06-29">
+  <article class="row" data-track="toolmap" data-publish="2026-06-29">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">xAI · Kitchen Map</span><span class="row-date">29 Jun 2026</span></div>
+      <div class="row-meta"><span class="chip chip-data">TOOL MAP</span><span class="row-kicker">xAI · Kitchen Map</span><span class="row-date">29 Jun 2026</span></div>
       <h2 class="row-title">Chez Grok. Real-time ingredients. No filter on the chef.</h2>
       <p class="row-summary">Grok 4.3, Big Brain, Aurora, X live search, SuperGrok Heavy. xAI's loud kitchen walked through.</p>
     </div>
-    <a class="row-cta" href="opt-in.html?guide=chez-grok">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-grok">Meet the loud chef &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-07-01">
+  <article class="row" data-track="toolmap" data-publish="2026-07-01">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Mistral · Kitchen Map</span><span class="row-date">01 Jul 2026</span></div>
+      <div class="row-meta"><span class="chip chip-data">TOOL MAP</span><span class="row-kicker">Mistral · Kitchen Map</span><span class="row-date">01 Jul 2026</span></div>
       <h2 class="row-title">Chez Mistral. Open kitchen. Nothing leaves the building.</h2>
       <p class="row-summary">Le Chat, Mistral Large, Magistral, Vibe coding, No Telemetry Mode. The Paris kitchen at $14.99/mo.</p>
     </div>
-    <a class="row-cta" href="opt-in.html?guide=chez-mistral">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-mistral">Visit the Paris kitchen &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-07-03">
+  <article class="row" data-track="toolmap" data-publish="2026-07-03">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">DeepSeek · Kitchen Map</span><span class="row-date">03 Jul 2026</span></div>
+      <div class="row-meta"><span class="chip chip-data">TOOL MAP</span><span class="row-kicker">DeepSeek · Kitchen Map</span><span class="row-date">03 Jul 2026</span></div>
       <h2 class="row-title">Chez DeepSeek. Same plates. A fraction of the price.</h2>
       <p class="row-summary">V4 Flash, V4 Pro, 1M context, the dirt-cheap open-source kitchen from China, mapped clean.</p>
     </div>
-    <a class="row-cta" href="opt-in.html?guide=chez-deepseek">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-deepseek">Check the cheap menu &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-07-05">
+  <article class="row" data-track="toolmap" data-publish="2026-07-05">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Moonshot · Kitchen Map</span><span class="row-date">05 Jul 2026</span></div>
+      <div class="row-meta"><span class="chip chip-data">TOOL MAP</span><span class="row-kicker">Moonshot · Kitchen Map</span><span class="row-date">05 Jul 2026</span></div>
       <h2 class="row-title">Chez Kimi. 300 chefs in parallel. Nobody's heard of this place yet.</h2>
       <p class="row-summary">K2.6, 300-agent swarm, Kimi Code, Cursor under the hood. Moonshot AI's parallel brigade.</p>
     </div>
-    <a class="row-cta" href="opt-in.html?guide=chez-kimi">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-kimi">Meet the 300 chefs &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-07-09">
+  <article class="row" data-track="toolmap" data-publish="2026-07-07">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Meta · Kitchen Map</span><span class="row-date">09 Jul 2026</span></div>
+      <div class="row-meta"><span class="chip chip-data">TOOL MAP</span><span class="row-kicker">Meta · Kitchen Map</span><span class="row-date">07 Jul 2026</span></div>
       <h2 class="row-title">Chez Meta AI. Free tables on every app you already use.</h2>
       <p class="row-summary">Llama, WhatsApp + IG + Messenger integration, Ray-Ban Meta glasses, AI Studio creator characters.</p>
     </div>
-    <a class="row-cta" href="opt-in.html?guide=chez-meta-ai">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-meta-ai">Find your free table &rarr;</a>
   </article>
 
-  <article class="row" data-publish="2026-07-11">
+  <article class="row" data-track="toolmap" data-publish="2026-07-11">
     <div>
-      <div class="row-meta"><span class="chip chip-data">DECODE</span><span class="row-kicker">Manus · Kitchen Map</span><span class="row-date">11 Jul 2026</span></div>
+      <div class="row-meta"><span class="chip chip-data">TOOL MAP</span><span class="row-kicker">Manus · Kitchen Map</span><span class="row-date">11 Jul 2026</span></div>
       <h2 class="row-title">Chez Manus. You sit down. The kitchen runs itself.</h2>
       <p class="row-summary">Autonomous multi-agent brigade. Planner, executor, verifier. Browser, code, file. Hours of unsupervised work.</p>
     </div>
-    <a class="row-cta" href="opt-in.html?guide=chez-manus">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chez-manus">Watch it run itself &rarr;</a>
   </article>
 
   <!-- CHEZ_SERIES_END -->
-  <article class="row" data-publish="2026-04-09">
+
+  <!-- BUSINESS_TRACK_START -->
+  <div class="card" data-track="business" style="margin:36px 0;border-left:3px solid var(--chip-setup)">
+    <p style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:22px;line-height:1.35;color:var(--muted);margin-bottom:12px">Put AI to work</p>
+    <p style="margin-bottom:0">Understanding AI is step one. These setups are step two: real workflows you can copy, from the exact tools to the first shift. Free, complete, no fluff.</p>
+  </div>
+  <article class="row" data-track="business" data-publish="2026-07-04">
     <div>
-      <div class="row-meta"><span class="chip chip-literacy">WORDS</span><span class="row-kicker">AI Vocabulary</span><span class="row-date">09 Apr 2026</span></div>
+      <div class="row-meta"><span class="chip chip-setup">SETUP</span><span class="row-kicker">Put AI to work</span><span class="row-date">04 Jul 2026</span></div>
+      <h2 class="row-title">You don&rsquo;t need 40 AI tools. You need 3.</h2>
+      <p class="row-summary">A brain, a megaphone, and a net. The exact 3-tool stack that runs a business, and how they hand off to each other.</p>
+    </div>
+    <a class="row-cta" href="opt-in.html?guide=stack-3-tool-ai-stack">Steal the 3-tool stack &rarr;</a>
+  </article>
+  <article class="row" data-track="business" data-publish="2026-07-04">
+    <div>
+      <div class="row-meta"><span class="chip chip-setup">SETUP</span><span class="row-kicker">Put AI to work</span><span class="row-date">04 Jul 2026</span></div>
+      <h2 class="row-title">Still following up with leads by hand?</h2>
+      <p class="row-summary">The workflow that replies to your leads, books the call, and nurtures the relationship while you do something else.</p>
+    </div>
+    <a class="row-cta" href="opt-in.html?guide=follow-up-setup">Stop the lead leaks &rarr;</a>
+  </article>
+  <article class="row" data-track="business" data-publish="2026-07-04">
+    <div>
+      <div class="row-meta"><span class="chip chip-setup">SETUP</span><span class="row-kicker">Put AI to work</span><span class="row-date">04 Jul 2026</span></div>
+      <h2 class="row-title">How to hire your first AI employee in a day.</h2>
+      <p class="row-summary">Not a tool. An employee. Pick the task, write the job description, run the first shift, approve the work.</p>
+    </div>
+    <a class="row-cta" href="opt-in.html?guide=first-ai-employee">Hire your first AI employee &rarr;</a>
+  </article>
+  <article class="row" data-track="business" data-publish="2026-07-07">
+    <div>
+      <div class="row-meta"><span class="chip chip-setup">SETUP</span><span class="row-kicker">Put AI to work</span><span class="row-date">07 Jul 2026</span></div>
+      <h2 class="row-title">You answer email 90 minutes a day. She never will again.</h2>
+      <p class="row-summary">The Inbox Manager: reads every email, sorts it, drafts the easy replies, never sends. Gmail and Outlook.</p>
+    </div>
+    <a class="row-cta" href="opt-in.html?guide=inbox-manager-setup">Put your inbox on payroll &rarr;</a>
+  </article>
+  <!-- BUSINESS_TRACK_END -->
+
+  <article class="row" data-track="basics" data-publish="2026-04-09">
+    <div>
+      <div class="row-meta"><span class="chip chip-literacy">BASICS 04</span><span class="row-kicker">AI Vocabulary</span><span class="row-date">09 Apr 2026</span></div>
       <h2 class="row-title">You sat through that meeting. You smiled. You understood nothing.</h2>
       <p class="row-summary">Someone said RAG, MCP, and hallucination in the same sentence. You nodded. Everyone nodded. Here&rsquo;s the pause button.</p>
     </div>
-    <a class="row-cta" href="opt-in.html?guide=ai-jargon-guide">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=ai-jargon-guide">Decode the meeting &rarr;</a>
   </article>
-  <article class="row" data-publish="2026-03-20">
+  <article class="row" data-track="basics" data-publish="2026-03-20">
     <div>
-      <div class="row-meta"><span class="chip chip-track0">PROMPT</span><span class="row-kicker">AI Basics</span><span class="row-date">20 Mar 2026</span></div>
+      <div class="row-meta"><span class="chip chip-track0">BASICS 03</span><span class="row-kicker">AI Basics</span><span class="row-date">20 Mar 2026</span></div>
       <h2 class="row-title">Heard &ldquo;prompt&rdquo; 50 times, still no idea what it is?</h2>
       <p class="row-summary">Every AI article tells you to write better prompts. Nobody tells you what a prompt is. Here is what makes one work.</p>
     </div>
-    <a class="row-cta" href="opt-in.html?guide=what-is-a-prompt">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=what-is-a-prompt">Learn what a prompt is &rarr;</a>
   </article>
-  <article class="row" data-publish="2026-03-10">
+  <article class="row" data-track="basics" data-publish="2026-03-10">
     <div>
-      <div class="row-meta"><span class="chip chip-track0">DIFF</span><span class="row-kicker">AI Basics</span><span class="row-date">10 Mar 2026</span></div>
+      <div class="row-meta"><span class="chip chip-track0">BASICS 02</span><span class="row-kicker">AI Basics</span><span class="row-date">10 Mar 2026</span></div>
       <h2 class="row-title">Confused if ChatGPT and AI are the same thing?</h2>
       <p class="row-summary">ChatGPT. AI. LLM. Chatbot. Agent. Model. None mean the same thing. Here is what each one is.</p>
     </div>
-    <a class="row-cta" href="opt-in.html?guide=chatgpt-vs-ai">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=chatgpt-vs-ai">Sort the 6 words &rarr;</a>
   </article>
-  <article class="row" data-publish="2026-03-02">
+  <article class="row" data-track="basics" data-publish="2026-03-02">
     <div>
-      <div class="row-meta"><span class="chip chip-track0">WHAT</span><span class="row-kicker">AI Basics</span><span class="row-date">02 Mar 2026</span></div>
+      <div class="row-meta"><span class="chip chip-track0">BASICS 01</span><span class="row-kicker">AI Basics</span><span class="row-date">02 Mar 2026</span></div>
       <h2 class="row-title">Everyone says &ldquo;AI&rdquo; 100 times a day. Nobody says what it is.</h2>
       <p class="row-summary">You are not behind. You were never told. Here is what it is, in 4 lines.</p>
     </div>
-    <a class="row-cta" href="opt-in.html?guide=what-is-ai">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=what-is-ai">Get the 4-line answer &rarr;</a>
   </article>
-  <article class="row" data-publish="2026-03-01">
+  <article class="row" data-track="basics" data-publish="2026-03-01">
     <div>
-      <div class="row-meta"><span class="chip chip-track0">AGENTIC</span><span class="row-kicker">AI Vocabulary</span><span class="row-date">01 Mar 2026</span></div>
+      <div class="row-meta"><span class="chip chip-track0">BASICS 05</span><span class="row-kicker">AI Vocabulary</span><span class="row-date">01 Mar 2026</span></div>
       <h2 class="row-title">Everyone says &ldquo;agentic.&rdquo; Here&rsquo;s what it actually means.</h2>
       <p class="row-summary">Agentic AI. AI agents. Agentic workflows. 4 levels of autonomy, explained without the hype.</p>
     </div>
-    <a class="row-cta" href="opt-in.html?guide=what-is-agentic">Read &rarr;</a>
+    <a class="row-cta" href="opt-in.html?guide=what-is-agentic">Cut through the hype &rarr;</a>
   </article>
 </section>
 
@@ -681,7 +682,7 @@ img{max-width:100%;height:auto}
     <div class="cta-card">
       <div class="kicker">For companies</div>
       <h3>Keynotes &amp; workshops.</h3>
-      <p>Bring this into your team: practical, non-technical, from someone whose business runs on 137 AI employees.</p>
+      <p>Bring this into your team: practical, non-technical, from someone hiring 99 AI employees in public, receipts included.</p>
       <a class="btn-cream" href="work-with-fatiha.html">Work with Fatiha</a>
     </div>
   </div>
@@ -694,7 +695,7 @@ img{max-width:100%;height:auto}
   </div>
   <div>
     <div class="footer-col-head">Library</div>
-    <a class="footer-link" href="#">All guides</a><a class="footer-link" href="#">Latest</a><a class="footer-link" href="#">Most-saved</a>
+    <a class="footer-link" href="#library">All guides</a><a class="footer-link" href="99.html">The 99</a><a class="footer-link" href="https://brief.shiftandlead.com">The Insider Brief</a>
   </div>
   <div>
     <div class="footer-col-head">Work With Her</div>
@@ -756,6 +757,32 @@ img{max-width:100%;height:auto}
       body: JSON.stringify({email: email, source: 'ribbon'})
     });
   });
+})();
+</script>
+
+<script>
+(function(){
+  var track = 'all';
+  var q = '';
+  var search = document.getElementById('lib-search');
+  var pills = document.querySelectorAll('.controls .pill');
+  function apply(){
+    document.querySelectorAll('.library .row, .library .card[data-track]').forEach(function(el){
+      var okTrack = (track === 'all') || (el.getAttribute('data-track') === track);
+      var okQ = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
+      var isCard = el.classList.contains('card');
+      el.style.display = (okTrack && (isCard ? !q : okQ)) ? '' : 'none';
+    });
+  }
+  pills.forEach(function(p){
+    p.addEventListener('click', function(){
+      pills.forEach(function(x){ x.classList.remove('active'); });
+      p.classList.add('active');
+      track = p.getAttribute('data-track') || 'all';
+      apply();
+    });
+  });
+  if(search){ search.addEventListener('input', function(){ q = search.value.trim().toLowerCase(); apply(); }); }
 })();
 </script>
 </body></html>
