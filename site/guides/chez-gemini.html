@@ -463,40 +463,13 @@ body{overflow-x:hidden}
   </div>
 </section>
 
-<!-- the chef's table: paid offers close -->
-<section class="chefs"><div class="chefs-in">
-  <span class="mono">The chef's table. Go further than the guide</span>
-  <h2>You've seen the restaurant.<br>Now learn to run the kitchen.</h2>
-  <div class="chefs-grid">
-    <div class="chefs-card">
-      <span class="mono">Prompt pack · $19 &middot; opening soon</span>
-      <h3>The Prompt Menu</h3>
-      <p>The Kitchen Map companion: the best prompts for this kitchen and every other, matched to what each chef cooks best.</p>
-      <a href="../store.html#notify">Get the opening email &rarr;</a>
-    </div>
-    <div class="chefs-card">
-      <span class="mono">Community · founding spots soon</span>
-      <h3>Build alongside me</h3>
-      <p>Live "build with me" sessions, templates, and people on the same road, everyday entrepreneurs winning back their time.</p>
-      <a href="../about.html#community">Be first in line →</a>
-    </div>
-    <div class="chefs-card">
-      <span class="mono">For companies</span>
-      <h3>Keynotes &amp; workshops</h3>
-      <p>Bring the whole method into your team: practical, non-technical, from someone who is hiring 99 AI employees in public and shows the receipts.</p>
-      <a href="../work-with-fatiha.html">Work with Fatiha →</a>
-    </div>
-  </div>
-</div></section>
-
-<p style="text-align:center;font-style:italic;color:#5C5A57;margin-top:18px">The guides stay free, always. The paid versions exist for one reason: they skip you past the building.</p>
+<p style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0">Ready for more than free? The three ways to go further &rarr;</a></p>
 
 <!-- byline -->
 <div class="byline">
   <div class="byline-in">
     <img src="../closeUp.jpeg" alt="Fatiha Chikh">
-    <p><span class="who">Written by Fatiha Chikh, The AI Automation Queen.</span><br>
-    20+ years inside big corporate tech; now I'm hiring 99 AI employees in public and showing the receipts. I build everything I teach. <a href="../about.html">The story →</a></p>
+    <p>Written by <strong>Fatiha Chikh</strong>, The AI Automation Queen. <a href="../about.html">The story &rarr;</a></p>
   </div>
 </div>
 
@@ -523,6 +496,13 @@ document.querySelectorAll('.capture-form').forEach(function(form){
     } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
   });
 });
+</script>
+
+<script>
+try {
+  var r = JSON.parse(localStorage.getItem('sl_read') || '[]');
+  if (r.indexOf('chez-gemini') === -1) { r.push('chez-gemini'); localStorage.setItem('sl_read', JSON.stringify(r)); }
+} catch(e){}
 </script>
 
 </body>

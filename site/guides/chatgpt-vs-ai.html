@@ -376,20 +376,7 @@ body{overflow-x:hidden}
 
 </div>
 
-<!-- ===== CHEF'S TABLE CLOSE ===== -->
-<div style="max-width:680px;margin:56px auto 0;padding:0 4px">
- <div style="background:#1A1A1A;border-radius:14px;padding:34px 30px;text-align:center">
-  <div style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#7FA0FF;margin-bottom:10px">The chef's table &middot; go further than the guide</div>
-  <div style="font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:20px">You've learned the words.<br>Now learn to run the kitchen.</div>
-  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-   <a href="../store.html#notify" style="font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;text-decoration:none;background:#fff;color:#1A1A1A;border-radius:8px;padding:11px 18px">Get the opening email &rarr;</a>
-   <a href="../about.html#community" style="font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;text-decoration:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:11px 18px">The Community</a>
-   <a href="../work-with-fatiha.html" style="font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;text-decoration:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:11px 18px">Workshops</a>
-  </div>
- </div>
-</div>
-
-<p style="text-align:center;font-style:italic;color:#5C5A57;margin-top:18px">The guides stay free, always. The paid versions exist for one reason: they skip you past the building.</p>
+<p style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0">Ready for more than free? The three ways to go further &rarr;</a></p>
 
 <!-- ===== BYLINE ===== -->
 <style>
@@ -401,8 +388,7 @@ body{overflow-x:hidden}
 </style>
 <div class="byline-block">
   <img src="../closeUp.jpeg" alt="Fatiha Chikh">
-  <p><span class="who">Written by Fatiha Chikh: The AI Automation Queen.</span><br>
-  20+ years inside big corporate tech; now I'm hiring 99 AI employees in public and showing the receipts. I build everything I teach. <a href="../about.html">The story &rarr;</a></p>
+  <p>Written by <strong>Fatiha Chikh</strong>, The AI Automation Queen. <a href="../about.html">The story &rarr;</a></p>
 </div>
 
 <div class="footer">
@@ -428,6 +414,13 @@ document.querySelectorAll('.capture-form').forEach(function(form){
     } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
   });
 });
+</script>
+
+<script>
+try {
+  var r = JSON.parse(localStorage.getItem('sl_read') || '[]');
+  if (r.indexOf('chatgpt-vs-ai') === -1) { r.push('chatgpt-vs-ai'); localStorage.setItem('sl_read', JSON.stringify(r)); }
+} catch(e){}
 </script>
 
 </body>

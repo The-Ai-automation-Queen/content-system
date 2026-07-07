@@ -63,7 +63,7 @@ never repeats itself.
    run: `lead-magnets/<slug>.md`, `site/guides/<slug>.html` (standard
    template), opt-in catalog entry, ACTIVE row in lead-magnets.csv with
    the episode keyword. The inbox-manager-setup set is the model.
-5. **Tracker.** Update `site/99.html`: announced employee gets an
+5. **Tracker.** Update `site/99.html`: refresh the `#wave-stamp` line (Last updated DD Mon YYYY, next wave lands Monday); announced employee gets an
    "interviewing" slot; a badge (hired state + receipt) ONLY with a
    real receipt. Update the name table in employee-stories/SKILL.md and
    schedule.md the same run.
