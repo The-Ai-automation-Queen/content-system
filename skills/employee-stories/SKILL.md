@@ -57,8 +57,11 @@ agent-os-company-dashboard/company/departments/) is the source material;
 3. **THE HIRE.** Introduce the employee. Role card: name, job title,
    department, one-line job description, "Salary: $0. Never sleeps."
    RULE: employees may have human names but are ALWAYS explicitly AI in
-   the same breath. "Nadia is not a person. Nadia is a workflow." Never
-   a fake human presented as real (M02 law).
+   the same breath. The house line is the empathy version, never the
+   cold version: "[Name] is AI. The only job she took was mine: [the
+   hours it was costing]." Banned phrasing: "not a person", "replaces
+   staff", anything that reads as gloating about job loss. Never a fake
+   human presented as real (M02 law).
 4. **HOW SHE WORKS.** 3-5 numbered steps, plain words, no tool worship.
    Tools get named once (n8n, Claude, Gmail) so it is real, not magic.
 5. **THE RECEIPT** (PROOF mode) or **THE DEMO** (PLAYBOOK mode).
@@ -84,6 +87,49 @@ agent-os-company-dashboard/company/departments/) is the source material;
 - **Hiring-post ritual** (announcement variant): job-ad parody.
   "Now hiring: Inbox Manager. Salary: $0. Interviews Friday." Posted 2-3
   days before the PROOF story ships. Creates the serial cliffhanger.
+
+## The job-fear stance (brand position, every episode honors it)
+
+The audience includes people losing or leaving corporate jobs to this
+exact technology. The 99 are never framed as replacing humans. The
+truthful frame, which is also the strategic one: these employees do
+work nobody was ever hired to do. A solo founder has no staff to
+replace; the only job an AI employee takes is the founder's own unpaid
+overtime. Standing lines the series can use:
+
+- "I didn't replace anyone. There was never anyone. It was just me at
+  midnight."
+- "AI employees for businesses too small to hire human ones."
+- "She works so I can hire humans for the work that deserves one."
+
+When the fear itself is the topic, address it head-on in the Real Talk
+pillar; never dodge it, never mock it. Fatiha's category is helping
+people land on the right side of the shift. That is what the brand
+name means.
+
+## The free/paid line (anti-cannibalization law)
+
+Constitution Law 10: free = understand + one first win; paid = the
+system + speed + updates. Applied to The 99:
+
+1. **Free (playbooks)**: ONE employee at a time, written steps, generic
+   tools, the prompt with blanks. The reader can genuinely build that
+   one employee alone. That is the first win, and it is complete.
+2. **Paid, always**: the SYSTEM. How employees connect to each other,
+   the hiring order that compounds, her exact configs and tuned
+   prompts, importable workflow files (n8n JSON exports), video
+   walkthroughs, updates when tools change, and troubleshooting with
+   her. A playbook never ships an export file, an orchestration map, or
+   a multi-employee pipeline.
+3. **Cadence**: playbooks release one at a time on the content
+   calendar, never as a bulk library. 99 episodes is a multi-year
+   asset; do not dump it.
+4. **Upgrade path is mandatory** in every playbook (the inbox guide's
+   closing section is the model): name what the paid layer adds, one
+   paragraph, no hard sell.
+5. Community members get each playbook's full kit (file + video) as
+   part of membership; the public gets the written steps. Same
+   knowledge, different speed. Speed is the product.
 
 ## The playbook law (non-negotiable)
 

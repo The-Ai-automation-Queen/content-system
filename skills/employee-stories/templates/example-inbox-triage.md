@@ -18,7 +18,8 @@ Department: Operations.
 Job: reads every email, sorts it, drafts the easy replies.
 Salary: $0. Never sleeps. Never opens Instagram between tasks.
 
-She is not a person. She is a workflow. Here is her whole job:
+Nadia is AI. I built her. The only job she took was mine:
+the 90 minutes a day I was losing to my inbox. Here is her whole job:
 
 1. Every new email gets read and labeled: reply needed, waiting, FYI, junk.
 2. The "reply needed" pile gets a drafted answer in my tone, saved as a draft. Never sent.
@@ -48,8 +49,9 @@ Comment INBOX and I will send you the setup.
 - The 22-days number: 90 min x 220 working days = 330 hrs = ~22 days.
   Arithmetic from the stated premise, no invented external stat.
 - Role card lines are reusable verbatim structure for every episode.
-- "She is not a person. She is a workflow." is the mandatory AI-honesty
-  beat, one line, never softened.
+- The AI-honesty beat is mandatory but uses the empathy version: she is
+  AI, and the only job she took was the founder's own lost hours. The
+  cold "not a person, a workflow" phrasing is banned (job-fear stance).
 - Tools named once, described as boring. The magic is the org chart,
   not the tech.
 - Red line beat = the safe-AI positioning, one line.

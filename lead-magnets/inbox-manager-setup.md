@@ -106,4 +106,5 @@ install across a whole business.
 
 ---
 
-*From the desk of Employee #004. She is not a person. She is a workflow.*
+*From the desk of Employee #004. Nadia is AI, built by one human. The
+only job she took was the 90 minutes a day her boss was losing to email.*
