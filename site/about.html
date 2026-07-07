@@ -109,7 +109,7 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
   <div class="company">
     <div class="label">The living proof</div>
     <h2>I'm hiring 99 AI employees, in public.</h2>
-    <p>This isn't a metaphor. I'm building a company where the busywork is done by AI employees I hire one at a time: Sales researches, Marketing drafts, Back Office chases invoices. An employee only counts when it did real work this week. I make the decisions, everything else runs without me.</p>
+    <p>This isn't a metaphor. I'm building a company where the busywork is done by AI employees I hire one at a time. The hiring rules and every receipt live on the scoreboard.</p>
     <p>Every claim I make, I make from inside this system. I build in public: real numbers, real screenshots, every week on <a href="99.html" style="color:inherit">the scoreboard</a>.</p>
     <div class="depts">
       <span>Sales</span><span>Deals</span><span>Marketing</span><span>Operations</span><span>Intelligence</span><span>Customer</span><span>Back Office</span>
@@ -122,10 +122,31 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
   <div class="community-box">
     <div class="kicker">The community</div>
     <h2>Build your freedom business alongside me.</h2>
-    <p style="max-width:58ch">A private community for everyday entrepreneurs using AI and automation to win back their time. Live build sessions, templates, and people on the same road. <strong>Founding member spots are opening soon.</strong></p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="https://brief.shiftandlead.com">Join the Insider Brief, be first to know</a>
-    </div>
+    <p style="max-width:58ch">A private community for everyday entrepreneurs using AI and automation to win back their time. Live build sessions, templates, and people on the same road.</p>
+    <p style="max-width:58ch"><strong>$27/mo founding, 20 spots, locked for life. $47/mo after.</strong> Founding waitlist open now.</p>
+    <form id="community-waitlist" style="display:flex;gap:10px;flex-wrap:wrap;max-width:480px;margin-top:14px">
+      <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:220px;padding:12px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <button type="submit" class="btn btn-primary" style="cursor:pointer;border:none">Join the founding waitlist</button>
+    </form>
+    <script>
+    document.getElementById('community-waitlist').addEventListener('submit', async function(e){
+      e.preventDefault();
+      var form = this, btn = form.querySelector('button');
+      var email = form.querySelector('[name="email"]').value;
+      if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Done.'; return; }
+      btn.disabled = true; btn.textContent = 'Sending...';
+      try {
+        var r = await fetch('https://formspree.io/f/xgojoyka', { method:'POST', keepalive:true,
+          headers:{'Content-Type':'application/json','Accept':'application/json'},
+          body: JSON.stringify({email: email, source: 'community-waitlist'}) });
+        fetch('https://auto.shiftandlead.com/webhook/formspree-lead', { method:'POST', keepalive:true,
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({email: email, source: 'community-waitlist'}) });
+        if (r.ok) { btn.textContent = 'You are on the list.'; } else { btn.disabled=false; btn.textContent='Try again'; }
+      } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
+    });
+    </script>
   </div>
 </section>
 

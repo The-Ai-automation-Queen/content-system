@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noai, noimageai">
-<meta name="description" content="The 3-minute AI Time Audit: find out how many hours a week your business leaks to manual work, where the biggest leak is, and the exact free guide to fix it first.">
-<title>The AI Time Audit: How Many Hours Are You Leaking? | Shift &amp; Lead</title>
+<meta name="description" content="The free 3-minute Time Leak Quiz: find out how many hours a week your business leaks to manual work, where the biggest leak is, and the exact free guide to fix it first.">
+<title>The Time Leak Quiz: How Many Hours Are You Leaking? | Shift &amp; Lead</title>
 <link rel="canonical" href="https://guides.shiftandlead.com/time-audit.html">
-<meta property="og:title" content="The AI Time Audit: How Many Hours Are You Leaking?">
+<meta property="og:title" content="The Time Leak Quiz: How Many Hours Are You Leaking?">
 <meta property="og:description" content="8 questions, 3 minutes. Find out how many hours a week your business leaks to manual work, and the exact first fix.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://guides.shiftandlead.com/time-audit.html">
 <meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The AI Time Audit: How Many Hours Are You Leaking?">
+<meta name="twitter:title" content="The Time Leak Quiz: How Many Hours Are You Leaking?">
 <meta name="twitter:description" content="8 questions, 3 minutes. Find out how many hours a week your business leaks to manual work, and the exact first fix.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "The AI Time Audit",
+  "name": "The Time Leak Quiz",
   "description": "8 questions, 3 minutes. Find out how many hours a week your business leaks to manual work, and the exact first fix.",
   "url": "https://guides.shiftandlead.com/time-audit.html",
   "applicationCategory": "BusinessApplication",
@@ -143,7 +143,7 @@ button{font-family:inherit}
 
   <!-- INTRO -->
   <section class="intro" id="intro">
-    <div class="intro-kicker">The AI Time Audit</div>
+    <div class="intro-kicker">The Time Leak Quiz &middot; free &middot; 3 minutes</div>
     <h1>How many hours is your business <em>leaking?</em></h1>
     <p class="sub">Eight questions about how your week actually runs, content, leads, admin, and the stuff only you can do. At the end: your leak in hours per week, where it&rsquo;s worst, and the exact free guide to fix that first.</p>
     <div class="intro-facts">
@@ -183,7 +183,8 @@ button{font-family:inherit}
       <p id="cta-desc"></p>
       <a id="cta-link" href="#">Get the free guide &rarr;</a>
     </div>
-    <p class="r-secondary">Want to fix all of it with people one step ahead of you? <a href="about.html#community">The founding community is opening soon. Get on the list.</a></p>
+    <p class="r-secondary">Want the full fix, not just the score? <a href="products/time-audit.html">The AI Time Audit ($47): the worksheet, the scoring guide, and the walkthrough &rarr;</a></p>
+    <p class="r-secondary">Prefer to fix it with people one step ahead of you? <a href="about.html#community">The founding community is opening soon. Get on the list.</a></p>
 
     <div class="r-email">
       <h4>Email me my full audit.</h4>
@@ -195,7 +196,7 @@ button{font-family:inherit}
       <p class="r-email-note" id="email-note">No spam. No sequences you didn&rsquo;t ask for.</p>
     </div>
 
-    <div class="r-retake"><button type="button" id="retake">&larr; Retake the audit</button></div>
+    <div class="r-retake"><button type="button" id="retake">&larr; Retake the quiz</button></div>
   </section>
 
 </div>
@@ -390,6 +391,7 @@ button{font-family:inherit}
     link.textContent = cta.label;
 
     result.dataset.total = hoursTxt;
+    if (window.slSaveQuiz) window.slSaveQuiz(hoursTxt);
     result.dataset.type = type.name;
     result.dataset.worst = worst;
 
@@ -444,6 +446,26 @@ button{font-family:inherit}
     btn.textContent = 'Sent!';
     document.getElementById('email-note').textContent = 'On its way. If it doesn’t appear in 5 minutes, check spam.';
   });
+})();
+</script>
+
+<script>
+(function(){
+  try {
+    var prev = JSON.parse(localStorage.getItem('sl_quiz') || 'null');
+    if (prev && prev.hours != null) {
+      var intro = document.querySelector('.intro-kicker');
+      if (intro) {
+        var note = document.createElement('p');
+        note.style.cssText = "font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.08em;color:#2C4BE0;margin-top:10px";
+        note.textContent = 'Your last score: ' + prev.hours + ' hrs/week on ' + prev.date + '. Retake and compare.';
+        intro.parentNode.insertBefore(note, intro.nextSibling);
+      }
+    }
+    window.slSaveQuiz = function(hours){
+      localStorage.setItem('sl_quiz', JSON.stringify({hours: hours, date: new Date().toISOString().slice(0,10)}));
+    };
+  } catch(e){}
 })();
 </script>
 </body></html>

@@ -105,7 +105,11 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
   <div class="nav-links"><a href="../99.html">The 99</a>
     <a href="../free-resources.html">Free Resources</a>
     <a href="https://brief.shiftandlead.com">The Insider Brief</a>
-    <a href="../store.html" class="active">Store</a>
+    <form class="sku-notify" style="display:flex;gap:10px;flex-wrap:wrap;margin:8px 0">
+  <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:12px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+  <button type="submit" style="padding:12px 22px;background:#2C4BE0;color:#fff;border:none;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:14px;cursor:pointer">Opening soon · email me the launch</button>
+</form>
     <a href="../about.html">About</a>
     <a href="../work-with-fatiha.html">Work with Fatiha</a>
   </div>
@@ -117,6 +121,7 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
   <div class="kicker">Template · worksheet · $47</div>
   <h1>Find the hours,<br><em>hire your first AI employee.</em></h1>
   <p class="sub">A fillable worksheet that maps your real week, scores every task for automation, and hands you one clear hire by the end of the sitting. Not a tutorial. A plan.</p>
+  <p style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase"><a href="../time-audit.html" style="color:#2C4BE0">Not sure how big your leak is? Take the free 3-minute quiz first &rarr;</a></p>
 </header>
 
 <section style="padding-top:0;border-top:none">
@@ -279,7 +284,11 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
     <div class="label">The AI Time Audit</div>
     <div class="amount">$47</div>
     <p>One-time payment. Instant delivery. Fill it in once, walk away with your first AI employee.</p>
-    <a class="buy-btn" href="../store.html">Get it in the Store →</a>
+    <form class="sku-notify" style="display:flex;gap:10px;flex-wrap:wrap;margin:8px 0">
+  <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:12px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+  <button type="submit" style="padding:12px 22px;background:#2C4BE0;color:#fff;border:none;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:14px;cursor:pointer">Opening soon · email me the launch</button>
+</form>
   </div>
 </section>
 
@@ -319,5 +328,25 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
 </footer>
 
 </div>
+<script>
+document.querySelectorAll('.sku-notify').forEach(function(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    var email = form.querySelector('[name="email"]').value;
+    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent='Done.'; return; }
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      var r = await fetch('https://formspree.io/f/xgojoyka', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({email: email, source: 'notify-time-audit'}) });
+      fetch('https://auto.shiftandlead.com/webhook/formspree-lead', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({email: email, source: 'notify-time-audit'}) });
+      if (r.ok) { btn.textContent = 'You are first in line.'; } else { btn.disabled=false; btn.textContent='Try again'; }
+    } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
+  });
+});
+</script>
 </body>
 </html>

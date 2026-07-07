@@ -121,10 +121,19 @@ document.getElementById('notify-form').addEventListener('submit', async function
 var PRODUCTS = [
   {
     cat: "Prompt pack · ebook",
+    name: "The Prompt Menu: copy-paste prompts for every AI tool",
+    page: "products/prompt-menu.html",
+    desc: "150 copy-paste prompts, 15 per kitchen, across 10 AI tools, plus the which-tool-for-what decision map. Claude, ChatGPT, Gemini, Copilot, and 6 more.",
+    bullets: ["The Kitchen Map: which AI for which job","30 bonus prompts, 3 per tool, not in the free guides","Updated as the kitchens change"],
+    price: "$19",
+    url: ""
+  },
+  {
+    cat: "Prompt pack · ebook",
     name: "The Judge's Prompts",
     page: "products/judges-prompts.html",
     desc: "Make AI prove its work before you trust it. The verification prompts I use so output is right, not just fast.",
-    bullets: ["40+ tested prompts with when-to-use notes","The 4 Upgrades framework explained","Copy-paste, tool-agnostic"],
+    bullets: ["42 tested verification prompts with when-to-use notes","The 4 Upgrades framework explained","Copy-paste, tool-agnostic"],
     price: "$27",
     url: ""
   },
@@ -138,12 +147,21 @@ var PRODUCTS = [
     url: ""
   },
   {
-    cat: "Prompt pack · ebook",
-    name: "The Prompt Menu: copy-paste prompts for every AI tool",
-    page: "products/prompt-menu.html",
-    desc: "The which-tool-for-what decision map, plus 3 bonus prompts per kitchen not in the free guides. Claude, ChatGPT, Gemini, Copilot, and 6 more.",
-    bullets: ["The Kitchen Map: which AI for which job","30 bonus prompts, 3 per tool, not in the free guides","Updated as the kitchens change"],
-    price: "$19",
+    cat: "System · kit",
+    name: "Business OS Starter Kit",
+    desc: "The system install for non-technical builders: brain template, lite playbooks, full walkthrough. In build.",
+    bullets: ["Notion Brain template, pre-filled","Lite playbooks for the core machines","Full walkthrough video"],
+    price: "$97",
+    status: "In build · join the list",
+    url: ""
+  },
+  {
+    cat: "Cohort · 6 weeks",
+    name: "Business OS Bootcamp",
+    desc: "The guided build: six weeks, your business, the whole system installed together. Never sold cold; the waitlist is the door.",
+    bullets: ["Live cohort, small by design","Your automations built during the program","Community membership included"],
+    price: "$997",
+    status: "Cohort waitlist",
     url: ""
   }
 ];
@@ -160,7 +178,7 @@ PRODUCTS.forEach(function(p){
     '<div class="buy-row"><span class="price">'+p.price+'</span>'+
     (live
       ? '<a class="buy" href="'+p.url+'">Buy now →</a>'
-      : '<span class="buy soon">Coming soon</span>')+
+      : '<a class="buy soon" href="#notify" style="text-decoration:none">'+(p.status || 'Opening soon · get notified')+'</a>')+
     '</div>';
   grid.appendChild(el);
 });

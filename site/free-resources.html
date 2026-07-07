@@ -458,7 +458,15 @@ img{max-width:100%;height:auto}
 
     var eyebrow = document.getElementById('spotlight-eyebrow');
     if (eyebrow) {
-      eyebrow.textContent = override && override.active ? 'Featured pick' : 'Featured';
+      if (override && override.active) { eyebrow.textContent = 'Featured pick'; }
+      else {
+        var now = new Date();
+        var day = (now.getDay() + 6) % 7;
+        var mon = new Date(now); mon.setDate(now.getDate() - day);
+        var sun = new Date(mon); sun.setDate(mon.getDate() + 6);
+        var fmt = function(d){ return d.getDate() + ' ' + d.toLocaleString('en-GB',{month:'short'}); };
+        eyebrow.textContent = "This week's pick \u00b7 " + fmt(mon) + ' to ' + fmt(sun);
+      }
     }
   } catch (err) {
     console.warn('Spotlight rotation failed, using baked HTML:', err);
@@ -669,22 +677,22 @@ img{max-width:100%;height:auto}
   </div>
   <div class="cta-grid">
     <div class="cta-card">
-      <div class="kicker">Free &middot; every Tuesday</div>
-      <h3>The Insider Brief.</h3>
-      <p>I read 200+ AI stories a week so you don't. One plain-English briefing with a verdict on each: ACT, WATCH, or IGNORE.</p>
-      <a class="btn-cream" href="https://brief.shiftandlead.com">Get the briefing</a>
+      <div class="kicker">The Store</div>
+      <h3>Buy once, use forever.</h3>
+      <p>The paid shortcuts behind these guides, starting at $19: prompt packs, playbooks, systems. Opening soon; the list hears first.</p>
+      <a class="btn-cream" href="store.html">Browse the Store</a>
     </div>
     <div class="cta-card">
       <div class="kicker">Community</div>
       <h3>Build alongside me.</h3>
-      <p>Live "build with me" sessions, templates, and people on the same road. Founding member spots opening soon.</p>
-      <a class="btn-cream" href="about.html#community">Be first in line</a>
+      <p>Live build sessions, templates, and people on the same road. Founding spots are limited and locked for life.</p>
+      <a class="btn-cream" href="about.html#community">Pricing and waitlist</a>
     </div>
     <div class="cta-card">
       <div class="kicker">For companies</div>
       <h3>Keynotes &amp; workshops.</h3>
       <p>Bring this into your team: practical, non-technical, from someone hiring 99 AI employees in public, receipts included.</p>
-      <a class="btn-cream" href="work-with-fatiha.html">Work with Fatiha</a>
+      <a class="btn-cream" href="work-with-fatiha.html">Formats and booking</a>
     </div>
   </div>
 </div></section>
@@ -718,7 +726,9 @@ img{max-width:100%;height:auto}
     if(isFuture){
       row.classList.add('coming-soon');
       cta.removeAttribute('href');
-      cta.textContent = 'Coming soon';
+      var pub = row.getAttribute('data-publish');
+      var pd = new Date(pub + 'T00:00:00');
+      cta.textContent = 'Unlocks ' + pd.getDate() + ' ' + pd.toLocaleString('en-GB',{month:'short'});
     } else {
       var title = row.querySelector('.row-title');
       if(title && href){
@@ -785,6 +795,125 @@ img{max-width:100%;height:auto}
     });
   });
   if(search){ search.addEventListener('input', function(){ q = search.value.trim().toLowerCase(); apply(); }); }
+})();
+</script>
+
+<script>
+(function(){
+  // ---- shared state (localStorage, no accounts) ----
+  var read = [];
+  try { read = JSON.parse(localStorage.getItem('sl_read') || '[]'); } catch(e){}
+  var lastVisit = localStorage.getItem('sl_last_visit');
+
+  var rows = Array.prototype.slice.call(document.querySelectorAll('.library .row'));
+  function slugOf(row){
+    var a = row.querySelector('.row-cta[href], .row-title a[href]');
+    if (!a) return null;
+    var m = (a.getAttribute('href')||'').match(/guides\/([a-z0-9-]+)\.html/);
+    return m ? m[1] : null;
+  }
+
+  var tracks = { basics: {done:0, total:0, label:'Foundations'}, toolmap: {done:0, total:0, label:'The Kitchen Map'}, business: {done:0, total:0, label:'First AI Employee'} };
+  var firstUnread = null;
+
+  rows.forEach(function(row){
+    var slug = slugOf(row);
+    var track = row.getAttribute('data-track');
+    var isRead = slug && read.indexOf(slug) !== -1;
+    if (track && tracks[track] && !row.classList.contains('coming-soon')) {
+      tracks[track].total++;
+      if (isRead) tracks[track].done++;
+    }
+    if (isRead) {
+      var meta = row.querySelector('.row-meta');
+      if (meta) {
+        var tick = document.createElement('span');
+        tick.className = 'row-kicker';
+        tick.style.color = '#2C4BE0';
+        tick.textContent = '\u2713 read';
+        meta.appendChild(tick);
+      }
+    } else if (slug && !row.classList.contains('coming-soon') && !firstUnread) {
+      firstUnread = { slug: slug, title: (row.querySelector('.row-title')||{}).textContent || '' };
+    }
+    // new-since-last-visit badge
+    var pub = row.getAttribute('data-publish');
+    if (lastVisit && pub && pub > lastVisit && !isRead && !row.classList.contains('coming-soon')) {
+      var meta2 = row.querySelector('.row-meta');
+      if (meta2) {
+        var badge = document.createElement('span');
+        badge.className = 'chip chip-track0';
+        badge.style.fontSize = '10px';
+        badge.textContent = 'NEW';
+        meta2.insertBefore(badge, meta2.firstChild);
+      }
+    }
+  });
+
+  // ---- progress header for returning readers ----
+  if (read.length > 0) {
+    var lib = document.querySelector('.controls-head');
+    if (lib) {
+      var total = rows.filter(function(r){ return !r.classList.contains('coming-soon') && slugOf(r); }).length;
+      var parts = Object.keys(tracks).filter(function(k){ return tracks[k].total > 0; }).map(function(k){
+        return tracks[k].label + ' ' + tracks[k].done + '/' + tracks[k].total;
+      });
+      var strip = document.createElement('div');
+      strip.style.cssText = 'width:100%;font-family:Space Mono,monospace;font-size:12px;letter-spacing:0.08em;color:#5C5A57;margin-top:10px';
+      var html = 'YOUR PROGRESS \u00b7 ' + read.length + ' of ' + total + ' guides read \u00b7 ' + parts.join(' \u00b7 ');
+      strip.textContent = html;
+      if (firstUnread) {
+        var cont = document.createElement('a');
+        cont.href = 'guides/' + firstUnread.slug + '.html';
+        cont.style.cssText = 'color:#2C4BE0;margin-left:10px';
+        cont.textContent = 'pick up where you left off \u2192';
+        strip.appendChild(cont);
+      }
+      lib.appendChild(strip);
+    }
+  }
+
+  // ---- start-here cards: course progress lines ----
+  var pathMap = [{sel:'.path-col:nth-child(1)', k:'basics'},{sel:'.path-col:nth-child(2)', k:'toolmap'},{sel:'.path-col:nth-child(3)', k:'business'}];
+  if (read.length > 0) {
+    pathMap.forEach(function(p){
+      var col = document.querySelector('.paths-grid ' + p.sel);
+      var tr = tracks[p.k];
+      if (col && tr && tr.total) {
+        var line = document.createElement('div');
+        line.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;letter-spacing:0.1em;color:' + (tr.done ? '#2C4BE0' : '#5C5A57') + ';margin-top:10px';
+        line.textContent = tr.done >= tr.total ? '\u2713 COURSE COMPLETE' : 'LESSON ' + (tr.done + 1) + ' OF ' + tr.total;
+        col.appendChild(line);
+      }
+    });
+  }
+
+  // ---- Kitchen Map mini-index inside the series intro card ----
+  var intro = document.querySelector('.library .card[data-track="toolmap"]');
+  if (intro) {
+    var mapWrap = document.createElement('div');
+    mapWrap.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap;margin-top:16px';
+    rows.filter(function(r){ return r.getAttribute('data-track') === 'toolmap'; }).forEach(function(r){
+      var slug = slugOf(r);
+      var name = ((r.querySelector('.row-title')||{}).textContent || '').replace(/^Chez /, '').split('.')[0];
+      var el;
+      if (r.classList.contains('coming-soon')) {
+        el = document.createElement('span');
+        el.textContent = '\uD83D\uDD12 ' + name + ' \u00b7 ' + (r.querySelector('.row-cta')||{textContent:''}).textContent.replace('Unlocks ','');
+        el.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;padding:5px 10px;border:1px dashed #D8D6D2;color:#5C5A57';
+      } else {
+        el = document.createElement('a');
+        el.href = 'guides/' + slug + '.html';
+        var visited = read.indexOf(slug) !== -1;
+        el.textContent = (visited ? '\u2713 ' : '') + name;
+        el.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;padding:5px 10px;border:1px solid ' + (visited ? '#2C4BE0' : '#D8D6D2') + ';color:' + (visited ? '#2C4BE0' : '#1A1A1A') + ';text-decoration:none';
+      }
+      mapWrap.appendChild(el);
+    });
+    intro.appendChild(mapWrap);
+  }
+
+  localStorage.setItem('sl_last_visit', new Date().toISOString().slice(0,10));
 })();
 </script>
 </body></html>
