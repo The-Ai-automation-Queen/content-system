@@ -50,6 +50,16 @@ h1{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(
 .note{background:var(--cream);border:1px solid var(--accent-tint);border-radius:12px;padding:18px 22px;margin:20px 0 0;font-family:'Inter',sans-serif;font-size:14px;color:var(--muted)}
 .footer{border-top:1px solid var(--rule);margin-top:56px;padding:36px 0 48px;font-family:'Inter',sans-serif;font-size:13px;color:var(--muted)}
 .footer a{color:var(--muted)}
+
+.ladder-diagram{max-width:1000px;margin:0 auto 56px;padding:0 8px}
+.ladder-track{display:flex;align-items:center;overflow-x:auto;padding-bottom:8px}
+.ladder-node{flex:1;min-width:118px;text-align:center;position:relative;padding:0 4px}
+.ladder-node .dot{width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid var(--rule);margin:0 auto 10px;position:relative;z-index:1}
+.ladder-node.here .dot{background:var(--accent);border-color:var(--accent)}
+.ladder-node .lbl{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.ladder-node.here .lbl{color:var(--accent);font-weight:700}
+.ladder-node .amt{font-family:'Playfair Display',Georgia,serif;font-size:15px;color:var(--ink);margin-top:2px}
+.ladder-connector{flex:0 0 24px;height:2px;background:var(--rule);margin-top:-24px}
 </style>
 </head>
 <body>
@@ -68,6 +78,22 @@ h1{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(
   <p style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin:10px 0 0">The Store opens soon &middot; the free guides are open now</p>
   <p class="byline">by <strong>Fatiha Chikh</strong>, The AI Automation Queen · <a href="https://guides.shiftandlead.com/about.html" style="color:var(--accent)">the story →</a></p>
 </header>
+
+<div class="ladder-diagram">
+  <div class="ladder-track">
+    <div class="ladder-node here"><div class="dot"></div><div class="lbl">Free guides</div><div class="amt">$0</div></div>
+    <div class="ladder-connector"></div>
+    <div class="ladder-node"><div class="dot"></div><div class="lbl">Prompt Menu</div><div class="amt">$19</div></div>
+    <div class="ladder-connector"></div>
+    <div class="ladder-node"><div class="dot"></div><div class="lbl">Judge&rsquo;s Prompts</div><div class="amt">$27</div></div>
+    <div class="ladder-connector"></div>
+    <div class="ladder-node"><div class="dot"></div><div class="lbl">Time Audit</div><div class="amt">$47</div></div>
+    <div class="ladder-connector"></div>
+    <div class="ladder-node"><div class="dot"></div><div class="lbl">Starter Kit</div><div class="amt">$97</div></div>
+    <div class="ladder-connector"></div>
+    <div class="ladder-node"><div class="dot"></div><div class="lbl">Community</div><div class="amt">$27/mo</div></div>
+  </div>
+</div>
 
 <div class="grid" id="products"></div>
 
