@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#FFFFFF">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noai, noimageai">
+<meta name="description" content="The public scoreboard of an experiment: one founder, hiring 99 AI employees, one at a time, receipts required. 99 employees, but a payroll ain't one.">
+<title>The 99 &mdash; 99 employees, but a payroll ain&rsquo;t one | Shift &amp; Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://guides.shiftandlead.com/99.html">
+<meta property="og:title" content="The 99 &mdash; 99 employees, but a payroll ain't one">
+<meta property="og:description" content="One founder. 99 AI employees, hired one at a time, in public. An employee only counts when it did real work this week. This page is the scoreboard.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://guides.shiftandlead.com/99.html">
+<meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "The 99",
+  "description": "A public experiment: hiring 99 AI employees, one at a time, with receipts.",
+  "url": "https://guides.shiftandlead.com/99.html",
+  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"}
+}
+</script>
+<style>
+:root{
+  --canvas:#FFFFFF;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
+  --muted:#5C5A57;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
+  --electric:#2C4BE0;--navy:#1B2EA0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+a:hover{color:var(--accent-deep)}
+
+.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover{color:var(--accent)}
+.nav-links a.active{color:var(--accent)}
+
+.hero{padding:88px 32px 56px;text-align:center}
+.hero-inner{max-width:880px;margin:0 auto}
+.hero-kicker{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.22em;color:var(--accent);margin-bottom:24px}
+.hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(40px,6.5vw,76px);line-height:1.04;font-weight:400;letter-spacing:-0.02em}
+.hero h1 em{font-style:italic;color:var(--electric)}
+.hero-sub{margin:28px auto 0;max-width:640px;font-size:20px;line-height:1.55;color:var(--muted)}
+
+.counter{display:flex;justify-content:center;align-items:baseline;gap:18px;margin:48px 0 8px;font-family:'Space Mono',monospace}
+.counter .big{font-size:clamp(56px,9vw,104px);font-weight:700;color:var(--electric);letter-spacing:-0.03em;line-height:1}
+.counter .of{font-size:clamp(22px,3vw,34px);color:var(--muted)}
+.counter-label{text-align:center;font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.2em;color:var(--muted);margin-bottom:8px}
+
+.rules{max-width:940px;margin:56px auto 0;padding:0 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rule-card{border:1px solid var(--rule);border-top:3px solid var(--electric);padding:22px 20px;background:var(--canvas)}
+.rule-card .n{font-family:'Space Mono',monospace;font-weight:700;font-size:12px;color:var(--electric);letter-spacing:0.14em;margin-bottom:10px;text-transform:uppercase}
+.rule-card p{font-size:15px;line-height:1.55;color:var(--ink)}
+
+.board{max-width:1240px;margin:72px auto 0;padding:0 32px}
+.board-head{display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:28px;flex-wrap:wrap;gap:8px}
+.board-head h2{font-family:'Playfair Display',Georgia,serif;font-size:30px;font-weight:400}
+.board-head .open-count{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.slot{border:1px solid var(--rule);min-height:150px;padding:16px;display:flex;flex-direction:column;justify-content:space-between}
+.slot .num{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.14em;color:var(--muted)}
+.slot.open{background:var(--canvas)}
+.slot.open .state{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--rule)}
+.slot.open .state{color:#B9B6B1}
+.slot.hired{background:var(--cream);border-color:var(--electric);border-top:4px solid var(--electric)}
+.slot.hired .num{color:var(--electric)}
+.slot .name{font-family:'Playfair Display',Georgia,serif;font-size:24px;line-height:1.1;margin:8px 0 2px}
+.slot .role{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink)}
+.slot .dept{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-top:2px}
+.slot .receipt{margin-top:12px;font-size:13px;line-height:1.45;color:var(--muted);border-top:1px solid var(--rule);padding-top:10px}
+.slot .receipt b{color:var(--ink);font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;display:block;margin-bottom:3px;font-weight:700}
+.slot.interviewing{border-style:dashed;border-color:var(--accent-deep)}
+.slot.interviewing .state{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-deep)}
+
+.how{max-width:880px;margin:88px auto 0;padding:0 32px}
+.how h2{font-family:'Playfair Display',Georgia,serif;font-size:30px;font-weight:400;margin-bottom:24px;border-bottom:2px solid var(--ink);padding-bottom:14px}
+.how ol{list-style:none;counter-reset:step;display:flex;flex-direction:column;gap:16px}
+.how li{counter-increment:step;position:relative;padding-left:52px;font-size:17px;line-height:1.6}
+.how li::before{content:counter(step,decimal-leading-zero);position:absolute;left:0;top:2px;font-family:'Space Mono',monospace;font-weight:700;font-size:15px;color:var(--electric)}
+
+.cta-band{margin:96px 32px 0;padding:56px 32px;background:var(--navy);text-align:center;border-radius:6px}
+.cta-band h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(26px,3.6vw,38px);font-weight:400;color:#fff;max-width:640px;margin:0 auto}
+.cta-band p{color:rgba(255,255,255,0.85);margin:16px auto 0;max-width:520px;font-size:17px}
+.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:14px 34px;background:#fff;color:var(--ink);text-decoration:none;border-radius:4px;margin-top:26px}
+.btn:hover{background:var(--cream);color:var(--ink)}
+.cta-sub{display:block;margin-top:16px}
+.cta-sub a{color:rgba(255,255,255,0.85)}
+
+.footer{margin-top:120px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+
+@media(max-width:760px){
+  .nav-inner{padding:16px 20px}
+  .nav-links{gap:14px;font-size:11px;flex-wrap:wrap}
+  .hero{padding:56px 20px 40px}
+  .rules{grid-template-columns:1fr;padding:0 20px}
+  .board{padding:0 20px}
+  .how{padding:0 20px}
+  .cta-band{margin:72px 20px 0}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="free-resources.html">Shift &amp; Lead</a>
+    <div class="nav-links">
+      <a href="free-resources.html">Home</a>
+      <a href="free-resources.html#library">Free Resources</a>
+      <a href="time-audit.html">Time Audit</a>
+      <a href="99.html" class="active">The 99</a>
+      <a href="about.html">About</a>
+      <a href="store.html">Store</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">A public experiment</div>
+    <h1>99 employees,<br>but a <em>payroll</em> ain&rsquo;t one.</h1>
+    <p class="hero-sub">I am building a company staffed by AI. 99 employees, hired one at a time, in public. This page is the scoreboard, and it is not allowed to flatter me.</p>
+    <div class="counter"><span class="big" id="hired-count">3</span><span class="of">/ 99 hired</span></div>
+    <div class="counter-label">updated when the receipts say so, not before</div>
+  </div>
+</header>
+
+<section class="rules">
+  <div class="rule-card">
+    <div class="n">Rule 01 &middot; Receipts or it didn&rsquo;t happen</div>
+    <p>An employee counts as hired only if it did real work in the last 7 days and I can show the output. No receipt, no badge.</p>
+  </div>
+  <div class="rule-card">
+    <div class="n">Rule 02 &middot; They prepare, I release</div>
+    <p>No employee sends anything to a human on its own. Drafts land in my review queue. The send button stays human.</p>
+  </div>
+  <div class="rule-card">
+    <div class="n">Rule 03 &middot; The counter can go down</div>
+    <p>An employee that stops working loses its badge until it earns it back. Small and true beats big and hollow.</p>
+  </div>
+</section>
+
+<main class="board">
+  <div class="board-head">
+    <h2>The org chart</h2>
+    <div class="open-count"><span id="open-count">95</span> roles still open</div>
+  </div>
+  <div class="grid" id="grid">
+
+    <div class="slot hired">
+      <div>
+        <div class="num">EMPLOYEE #001 &middot; HIRED 06 JUL 2026</div>
+        <div class="name">Nour</div>
+        <div class="role">Board Secretary</div>
+        <div class="dept">Back Office</div>
+      </div>
+      <div class="receipt"><b>First receipt</b>Ran the Monday board meeting and wrote the minutes. Tells me the truth even when the truth is $0.</div>
+    </div>
+
+    <div class="slot hired">
+      <div>
+        <div class="num">EMPLOYEE #002 &middot; HIRED 07 JUL 2026</div>
+        <div class="name">Rashid</div>
+        <div class="role">Head of Research</div>
+        <div class="dept">Intelligence</div>
+      </div>
+      <div class="receipt"><b>First receipt</b>Audited this whole brand and fact-checked 10 competitor funnels against live sources, in one day.</div>
+    </div>
+
+    <div class="slot hired">
+      <div>
+        <div class="num">EMPLOYEE #003 &middot; HIRED 06 JUL 2026</div>
+        <div class="name">Zeina</div>
+        <div class="role">Design Studio</div>
+        <div class="dept">Marketing</div>
+      </div>
+      <div class="receipt"><b>First receipt</b>Rendered the first on-brand carousel from a plain text brief. Pixel-perfect, in seconds, for $0.</div>
+    </div>
+
+    <div class="slot interviewing">
+      <div>
+        <div class="num">EMPLOYEE #004</div>
+        <div class="name">Nadia</div>
+        <div class="role">Inbox Manager</div>
+        <div class="dept">Operations</div>
+      </div>
+      <div class="state">Interviewing &middot; starts when the receipts do</div>
+    </div>
+
+  </div>
+</main>
+
+<section class="how">
+  <h2>How hiring works here</h2>
+  <ol>
+    <li>A role gets a job description: one founder problem it exists to kill.</li>
+    <li>The new hire works a real trial shift on my business, not a demo.</li>
+    <li>The output becomes a public receipt. Real screenshots, real numbers.</li>
+    <li>Only then does the badge appear on this page. Every hire gets its own story.</li>
+  </ol>
+</section>
+
+<section class="cta-band">
+  <h2>Want to hire your own Employee #1?</h2>
+  <p>The free guide walks you through your first AI hire in a day: pick the task, write the job description, run the first shift.</p>
+  <a class="btn" href="opt-in.html?guide=first-ai-employee">Get the free hiring guide</a>
+  <span class="cta-sub">Not sure what to delegate first? <a href="time-audit.html">Take the 3-minute Time Audit</a></span>
+</section>
+
+<div class="footer">
+  <p>Shift &amp; Lead &middot; The 99 &middot; &copy; 2026</p>
+</div>
+
+<script>
+(function(){
+  var grid = document.getElementById('grid');
+  var filled = grid.querySelectorAll('.slot').length; // hired + interviewing
+  var hired = grid.querySelectorAll('.slot.hired').length;
+  document.getElementById('hired-count').textContent = hired;
+  document.getElementById('open-count').textContent = 99 - filled;
+  for (var i = filled + 1; i <= 99; i++) {
+    var d = document.createElement('div');
+    d.className = 'slot open';
+    d.innerHTML = '<div class="num">EMPLOYEE #' + String(i).padStart(3,'0') + '</div><div class="state">Hiring</div>';
+    grid.appendChild(d);
+  }
+})();
+</script>
+
+</body>
+</html>

@@ -48,7 +48,9 @@ You produce assets. **You never publish.** (Distribution does that, into a queue
 
 | Need | Tool | Why |
 |---|---|---|
-| **LinkedIn carousel / infographic** (text-heavy slides) | **Canva** | Brand-kit colors + templates; cleanest text-on-slide; exports PDF/PNG |
+| **IG/LinkedIn carousel** (text-heavy slides) | **`skills/carousel-factory/`** | Primary path: HTML slides → 1080x1350 PNGs via headless Chromium. Brand-locked template, zero credits, deterministic. Fall back to Canva only for formats the template can't do. |
+| **Explainer / motion-graphics VIDEO from scratch** | **`skills/hyperframes/`** | HTML-to-MP4 with agent skills (slideshow, faceless-explainer, website-to-video, embedded-captions). Remotion (`skills/remotion/`) for heavier React motion design. |
+| **LinkedIn carousel / infographic** (Canva fallback) | **Canva** | Brand-kit colors + templates; cleanest text-on-slide; exports PDF/PNG |
 | **Slide deck / multi-slide social post** | **Gamma** | Fast prompt → structured slides; good for "Freedom Business Test"-style decks |
 | **On-screen text cards for a video** (the `[ON SCREEN: …]` cues) | **Canva** | One branded card per cue, exported as PNG sequence |
 | **Film-free short-form VIDEO** (narrated, no camera) | **Blotato** `create_visual` | AI images + ElevenLabs voiceover → finished 9:16 MP4 — see the video section below |

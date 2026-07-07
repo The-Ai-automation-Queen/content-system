@@ -6,6 +6,8 @@ Sitemap: https://guides.shiftandlead.com/sitemap.xml
 User-agent: *
 Allow: /
 
+Sitemap: https://guides.shiftandlead.com/sitemap.xml
+
 # AI training crawlers
 User-agent: GPTBot
 Disallow: /
