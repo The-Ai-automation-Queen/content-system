@@ -202,6 +202,8 @@ li{margin-bottom:8px;color:var(--ink)}
     <a href="stack-3-tool-ai-stack.html" class="btn">Read the next guide &rarr;</a>
   </div>
 
+  <p style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0">Ready for more than free? The three ways to go further &rarr;</a></p>
+
   <div class="guide-nav">
     <a href="../free-resources.html">&larr; All guides</a>
     <a href="stack-3-tool-ai-stack.html">Next: The 3-Tool AI Stack &rarr;</a>
@@ -234,5 +236,11 @@ document.querySelectorAll('.capture-form').forEach(function(form){
 });
 </script>
 
+<script>
+try {
+  var r = JSON.parse(localStorage.getItem('sl_read') || '[]');
+  if (r.indexOf('first-ai-employee') === -1) { r.push('first-ai-employee'); localStorage.setItem('sl_read', JSON.stringify(r)); }
+} catch(e){}
+</script>
 </body>
 </html>

@@ -214,6 +214,8 @@ li{margin-bottom:8px;color:var(--ink)}
     <a href="first-ai-employee.html" class="btn">Read the hiring guide &rarr;</a>
   </div>
 
+  <p style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0">Ready for more than free? The three ways to go further &rarr;</a></p>
+
   <div class="guide-nav">
     <a href="../free-resources.html">&larr; All guides</a>
     <a href="../99.html">Meet The 99 &rarr;</a>
@@ -246,5 +248,26 @@ document.querySelectorAll('.capture-form').forEach(function(form){
 });
 </script>
 
+<script>
+try {
+  var r = JSON.parse(localStorage.getItem('sl_read') || '[]');
+  if (r.indexOf('inbox-manager-setup') === -1) { r.push('inbox-manager-setup'); localStorage.setItem('sl_read', JSON.stringify(r)); }
+} catch(e){}
+</script>
+<script>
+document.querySelectorAll('.try-box, pre').forEach(function(box){
+  if (box.closest('script,style')) return;
+  var btn = document.createElement('button');
+  btn.textContent = 'Copy';
+  btn.style.cssText = "display:block;margin-top:10px;padding:6px 14px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;background:#fff;border:1px solid #2C4BE0;color:#2C4BE0;cursor:pointer";
+  btn.addEventListener('click', function(){
+    navigator.clipboard.writeText(box.innerText.replace(/Copy$/,'').trim()).then(function(){
+      btn.textContent = 'Copied \u2713';
+      setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+    });
+  });
+  box.appendChild(btn);
+});
+</script>
 </body>
 </html>
