@@ -294,3 +294,22 @@ Founder-side (the plan depends on these):
 - Add LeLabPlus / Nike / Fortune 500 to queen-brain canon with dates and
   roles so Law 7 can trace them, or they cannot be used in copy.
 - One honest week of hours-saved measurement (proof.md's blank metric).
+
+---
+
+## Correction addendum — 2026-07-07 (operator review)
+
+Fatiha flagged two factual failures in this report. Both stand corrected:
+
+1. **"Running AI adoption for Dell, Intel, and Microsoft" is FALSE.** Canon
+   says only "20+ years in tech (Dell, Intel, Microsoft)" with no roles,
+   titles, or AI-adoption claim. The synthesis embellished the credential;
+   the positioning sentence in Part 1 must not be used as written. Any
+   version of it must say only what canon can trace until Fatiha supplies
+   documented roles and dates.
+2. **The 137-agent number is a roster count, not a working headcount.**
+   The agents are not all running properly yet. Per Law 8 ("built" means a
+   customer could use it today), 137 must never be presented as an
+   operating reality. The public number must be the verifiable active
+   count from run logs, not the wired total. Strategy for the replacement
+   number is logged in the session of this date.
