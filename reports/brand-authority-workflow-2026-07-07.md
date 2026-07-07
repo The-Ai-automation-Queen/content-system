@@ -367,3 +367,44 @@ choices).
 At 3/week the 99 completes in ~8 months. The bottleneck stated in the
 original diagnosis is unchanged: production is now automated; release
 and the cash register are not machines, they are Fatiha.
+
+---
+
+## Addendum 3 — estate convergence and PR #20, 2026-07-07 (05:40 UTC)
+
+**The two development lines are reconciled and one merge away from live.**
+PR #20 (github.com/The-Ai-automation-Queen/content-system/pull/20) carries
+everything: 861 files, mergeable state clean, the only CI check green, and
+a Vercel preview of the merged head already deployed. Vercel deploys the
+site/ directory, so merging the PR puts the guides site changes live
+(including 99.html and the INBOX guide) without waiting for the VPS.
+
+**The 14-tool operator portfolio (from main, PR #19) changes two findings
+in this report:**
+
+1. **The release-button bottleneck now has a machine answer.** The report
+   named "23 drafts, 0 released" as the core failure and left releasing as
+   an unassisted founder ritual. Main's `review-cockpit` skill turns it
+   into a 5-minute Telegram ritual: 07:30 digest of overnight drafts as
+   numbered cards, one-tap approve / voice-edit / kill, decisions swept
+   back to the vault twice daily. The wave campaign produces; the cockpit
+   makes releasing nearly frictionless. The bottleneck is now genuinely
+   just the tap.
+2. **The founder legs of the 90-day engine got machines too:** `unblocker`
+   (daily 08:00 GST, exactly one prepped 15-minute founder task, and its
+   ledger already tracks UNB-002 = first live checkout), `speaking-pipeline`
+   (3 prepped pitches per serving, she only sends), `email-ops` (nurture +
+   onboarding sequences paste-ready), `revenue-watchdog` (will catch the
+   first sale the day it happens). The report's founder-action list stays
+   founder-owned, but every item now arrives pre-chewed.
+
+**Current machine schedule (consolidated):** unblocker 08:00 GST daily;
+review-cockpit 07:30 + sweeps 12:30/20:30; Monday cloud triggers: hiring
+wave 05:07 (3 employees), board meeting 08:07, website loop 09:07; VPS
+loop M00-M06 per crontab; revenue-watchdog 03:30 daily; Sunday
+intelligence block.
+
+**Still true, unchanged by any of this:** live-checkout revenue is $0 and
+no checkout exists. The unblocker's UNB-002 and the board meeting's
+standing founder action are the same 60 minutes of Whop/Stripe work. Every
+machine above is upstream of that cash register.
