@@ -649,6 +649,23 @@ function initForms() {
       btn.textContent = 'Sending...';
       btn.disabled = true;
 
+      // Estate-wide GHL visibility: every capture surface (main-site ribbon,
+      // guides opt-ins, store notify forms) dual-posts to Formspree + the
+      // n8n webhook so GHL is the single source of truth for subscribers,
+      // regardless of which form or which property they used. The Brief
+      // keeps sending through its own ESP below; this just makes the
+      // subscriber visible in GHL with a source tag.
+      fetch('https://formspree.io/f/xgojoyka', {
+        method: 'POST', keepalive: true,
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ email: email, source: source || 'brief' })
+      });
+      fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
+        method: 'POST', keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, source: source || 'brief' })
+      });
+
       fetch('https://api.convertkit.com/v3/forms/9318060/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
