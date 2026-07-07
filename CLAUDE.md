@@ -202,8 +202,10 @@ Romain's machines:
   `research-inbox` repo (750+ saved links, EN+FR): clusters, kills noise,
   emits a cited RESEARCH entry + 2–3 "What's Worth It" angles for
   content-engine + a 5-bullet Telegram brief. `backlog` mode chews the full
-  history in monthly batches. Read-only on the inbox. Modes: `weekly`,
-  `backlog`, `status`.
+  history in monthly batches. `pulse` is the on-demand check — run it anytime
+  for a fast read on what's new plus a "Ready to ship" list of already-logged
+  angles that never became a draft. Read-only on the inbox. Modes: `weekly`,
+  `pulse`, `backlog`, `status`.
 - **`community-concierge`** — *Portfolio #11.* Whop community assistant,
   always labeled as her AI, never impersonating her: welcomes, answers from
   her corpus only, escalates the rest in a daily digest, flags churn risk,

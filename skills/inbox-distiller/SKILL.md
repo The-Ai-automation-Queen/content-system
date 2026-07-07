@@ -9,8 +9,10 @@ description: |
   run, cluster by theme, kill the noise, then emit a research-notes.md entry
   with content angles + a contrarian take, flag 2-3 "What's Worth It" angles
   for content-engine, and send a 5-bullet Telegram brief. A one-time
-  `backlog` mode chews the full history in monthly batches.
-argument-hint: "[optional: 'weekly' (default) | 'backlog' | 'status']"
+  `backlog` mode chews the full history in monthly batches. `pulse` is the
+  on-demand version — invoke it anytime you want a fast read of what's new
+  in Obsidian and what's already sitting there unused that could ship.
+argument-hint: "[optional: 'weekly' (default) | 'pulse' | 'backlog' | 'status']"
 allowed-tools:
   - Read
   - Edit
@@ -87,6 +89,50 @@ file can hold the best find of the week. Skip non-capture files (`README.md`,
    clusters, keeps/kills with reasons, the three outputs, and the state
    line — `STATE: last-processed = <filename>` — which the next run reads.
 
+### `pulse` — the on-demand attention check
+
+This is the mode you invoke yourself, anytime, when you want to know "what's
+in Obsidian that needs me right now?" without waiting for the scheduled
+`weekly` run. Optimized for speed and for *shipping*, not exhaustive research.
+Takes under a minute to read.
+
+1. **Find the marker** the same way `weekly` does (newest
+   `reports/inbox-distiller-*.md`, its `STATE:` line).
+2. **Count the delta** — files newer than the marker.
+   - **Delta ≤ 30:** read them now (raw content, same trust rules as
+     `weekly`) and go straight to step 3.
+   - **Delta > 30:** don't do a full sweep inline. Report the count, name the
+     oldest unprocessed file (so she knows how stale the queue is), and
+     recommend running `weekly` (or `backlog` if it's the first-ever pass)
+     instead. Still complete step 4 below using what's already in
+     `research-notes.md` — pulse always answers "what needs my attention,"
+     even when the new-capture half is deferred.
+3. **Triage the delta into three buckets**, one line each, no essay:
+   - 🔴 **Needs you now** — high-signal, time-sensitive, or directly
+     unblocks a queued piece of work (a launch, an offer, a pillar gap).
+   - 🟡 **Worth a look** — solid but not urgent; will get folded into the
+     next `weekly` entry regardless.
+   - ⚫ **Killed** — noise, with the one-line reason (same kill rules as
+     `weekly`). Don't write research-notes.md entries for a pulse run unless
+     something in 🔴 is strong enough to warrant citing immediately — if so,
+     append it as the next `## RESEARCH NNN` following the normal rules
+     rather than holding it for the next `weekly` pass.
+4. **Always close with "Ready to ship"** — this is what makes `pulse`
+   different from a research digest. Cross-check the **existing**
+   `### For content-engine — What's Worth It candidates` blocks already
+   logged in `research-notes.md` (from past `weekly`/`backlog` runs) against
+   `content-vault.md`: which flagged angles never became a DRAFT? Surface up
+   to 3, oldest first, each with its source file and the one-line angle, so
+   the answer to "what can I ship faster" is never just new research — it's
+   also the backlog of already-good ideas nobody drafted yet. If her offers
+   are live (check `queen-brain/STATUS.md` for the active SKU / launch), rank
+   any angle that maps to the active launch or a monetisation CTA above
+   general pillar content.
+5. **No report file.** `pulse` is conversational — print the buckets and the
+   Ready-to-ship list directly; nothing to append to `reports/` unless step 3
+   produced a research-notes.md entry (then note that filename inline). The
+   marker is untouched — only `weekly`/`backlog` advance `STATE`.
+
 ### `backlog` — the one-time history chew
 
 For the existing ~750-file pile. Process in **monthly batches** (group by
@@ -106,6 +152,9 @@ month so `backlog` can resume — never re-process a completed batch.
 Print: total capture files in the inbox · marker position (last processed
 filename + how many files are unprocessed behind it) · date of last weekly
 report · whether the backlog digest exists · research entries produced so far.
+
+(For a live read on what's actionable right now rather than pipeline health,
+run `pulse` instead.)
 
 ---
 
