@@ -129,6 +129,7 @@ button{font-family:inherit}
 }
 
 .footer{margin-top:100px;padding:36px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
 </style>
 </head>
 <body>
@@ -182,7 +183,7 @@ button{font-family:inherit}
       <p id="cta-desc"></p>
       <a id="cta-link" href="#">Get the free guide &rarr;</a>
     </div>
-    <p class="r-secondary">Want to fix all of it with people one step ahead of you? <a href="about.html#community">Join the founding community waitlist, $27/mo, locked for life for the first 20.</a></p>
+    <p class="r-secondary">Want to fix all of it with people one step ahead of you? <a href="about.html#community">The founding community is opening soon. Get on the list.</a></p>
 
     <div class="r-email">
       <h4>Email me my full audit.</h4>
@@ -200,7 +201,7 @@ button{font-family:inherit}
 </div>
 
 <div class="footer">
-  <p>Shift &amp; Lead &middot; The AI Time Audit &middot; &copy; 2026</p>
+  <p>Shift &amp; Lead &middot; The AI Time Audit &middot; &copy; 2026 &middot; <a href="privacy.html" style="color:inherit">Privacy</a></p>
 </div>
 
 <script>
@@ -288,7 +289,7 @@ button{font-family:inherit}
       desc: 'The repeating tasks you resent are exactly the ones an AI employee should own. The First AI Employee guide is the 5-step hire, one task, off your plate for good, this week.',
       href: 'opt-in.html?guide=first-ai-employee', label: 'Set up your first AI employee (free) →' },
     brain: { title: 'Your biggest leak is attention.',
-      desc: 'You’re spending real hours filtering AI noise that someone should filter for you. The AI Insider Brief does it twice a week: plain English, an ACT / WATCH / IGNORE verdict on every story, free.',
+      desc: 'You’re spending real hours filtering AI noise that someone should filter for you. The AI Insider Brief does it every Tuesday: plain English, an ACT / WATCH / IGNORE verdict on every story, free.',
       href: 'https://brief.shiftandlead.com', label: 'Get the AI Insider Brief (free) →' }
   };
 
@@ -379,7 +380,7 @@ button{font-family:inherit}
 
     var cta = (byArea[worst] > 0) ? CTAS[worst] : {
       title: 'Honestly? You’re already running tight.',
-      desc: 'No major leak to plug, so the next win is staying ahead of what’s changing. The AI Insider Brief filters the noise for you, twice a week.',
+      desc: 'No major leak to plug, so the next win is staying ahead of what’s changing. The AI Insider Brief filters the noise for you, every Tuesday.',
       href: 'https://brief.shiftandlead.com', label: 'Get the AI Insider Brief (free) →'
     };
     document.getElementById('cta-title').textContent = cta.title;
@@ -430,12 +431,12 @@ button{font-family:inherit}
       worstArea: result.dataset.worst || ''
     };
     fetch('https://formspree.io/f/xgojoyka', {
-      method: 'POST',
+      method: 'POST', keepalive: true,
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
       body: JSON.stringify(payload)
     });
     fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
-      method: 'POST',
+      method: 'POST', keepalive: true,
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(payload)
     });
