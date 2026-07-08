@@ -403,9 +403,11 @@ or organise corporate events. One booking = $5,000–$15,000.
    Scheduled → Posted) into a Notion board for a phone-friendly calendar view.
 6. **Research upgrade** — wire Tavily (deep research) + Apify (trend scraping) into
    `research-digest` for sharper front-of-loop signals.
-7. **Cross-platform sync.** `sync-to-github.bat` is Windows-only and one-way
-   (local → GitHub, local wins). Add a pull step so remote/web-agent changes flow
-   back before the next local sync overwrites them.
+7. ~~**Cross-platform sync.**~~ — _resolved 2026-07-08 by retiring the model:_
+   GitHub `main` is now the source of truth. The VPS pulls before every
+   autonomous run and pushes its output back (`deploy/run-machine.sh`); local
+   copies and agent sessions pull before editing like any git client.
+   `sync-to-github.bat` ("local wins" one-way sync) is retired — do not run it.
 8. **Named frameworks as content assets** (Pattern 12) — capture the operator's
    repeatable methodologies as named, citeable assets the engine reuses.
 9. **Package and launch the Business OS Starter Kit ($97)** — run

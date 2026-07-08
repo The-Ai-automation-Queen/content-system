@@ -40,5 +40,10 @@ Run `weekly-ops` to execute it end to end (schedule it with the `/loop` skill).
 
 ## Sync
 
-Local files are the source of truth. Run `sync-to-github.bat` to push updates.
-See `ROADMAP.md` for the cross-platform sync caveat.
+**GitHub `main` is the source of truth** (since 2026-07-08). The VPS pulls
+before every autonomous run and pushes its output back to `main`. Any other
+copy (operator's local machine, web/agent sessions) is a normal git client:
+`git pull origin main` before editing, push or PR when done.
+
+`sync-to-github.bat` (the old "local wins" one-way sync) is retired — do not
+run it; it would overwrite the machine's autonomous commits.
