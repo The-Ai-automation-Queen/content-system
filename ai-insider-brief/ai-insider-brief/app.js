@@ -646,6 +646,9 @@ function initForms() {
       var btn = form.querySelector('button');
       var originalText = btn.textContent;
 
+      var gotcha = form.querySelector('input[name="_gotcha"]');
+      if (gotcha && gotcha.value) { btn.textContent = 'You are in!'; return; }
+
       btn.textContent = 'Sending...';
       btn.disabled = true;
 
