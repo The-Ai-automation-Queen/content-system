@@ -77,6 +77,12 @@ section{padding:36px 0;border-top:1px solid var(--rule)}
 .not-for{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:28px 30px}
 .not-for ul{margin:.6rem 0 0;padding-left:1.1rem;color:var(--muted)}
 .not-for li{margin:.5rem 0}
+.booking-form{display:flex;flex-direction:column;gap:12px;margin:22px 0 0;max-width:440px}
+.booking-form input,.booking-form textarea{width:100%;padding:13px 16px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.08);color:#F5F0EB;font-family:'Inter',sans-serif;font-size:14px;border-radius:6px}
+.booking-form input::placeholder,.booking-form textarea::placeholder{color:rgba(245,240,235,0.45)}
+.booking-form textarea{min-height:96px;resize:vertical;font-family:'Inter',sans-serif}
+.booking-form input:focus,.booking-form textarea:focus{outline:none;border-color:rgba(255,255,255,0.5)}
+.booking-status{font-size:14px;color:#CFC8DD;margin-top:14px}
 </style>
 </head>
 <body>
@@ -184,7 +190,15 @@ section{padding:36px 0;border-top:1px solid var(--rule)}
     <div class="kicker" style="color:#B8A8FF">Booking</div>
     <h2>Check a date.</h2>
     <p>Tell me the event, the audience, and the date. I reply with fit, format, and a firm quote, usually within 48 hours.</p>
-    <a class="btn" href="index.html#contact">Send the details &rarr;</a>
+    <form class="booking-form" id="booking-form">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Work email" required>
+      <input type="text" name="company" placeholder="Company" required>
+      <textarea name="details" placeholder="The event, the audience, and the date" required></textarea>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <button type="submit" class="btn">Send the details &rarr;</button>
+    </form>
+    <p class="booking-status" id="booking-status" style="display:none"></p>
     <p style="margin-top:14px;font-size:14px;color:#CFC8DD">Prefer LinkedIn? <a href="https://www.linkedin.com/in/fatihachikh" style="color:#B8A8FF">Message me there</a>.</p>
     <p style="margin-top:16px;font-size:14px"><a href="https://guides.shiftandlead.com/free-resources.html" style="color:#B8A8FF">Not booking an event? Start with the free guides &rarr;</a></p>
   </div>
@@ -216,5 +230,41 @@ section{padding:36px 0;border-top:1px solid var(--rule)}
 </footer>
 
 </div>
+
+<script>
+(function(){
+  var form = document.getElementById('booking-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = form.querySelector('[name="name"]').value;
+    var email = form.querySelector('[name="email"]').value;
+    var company = form.querySelector('[name="company"]').value;
+    var details = form.querySelector('[name="details"]').value;
+    var gotcha = form.querySelector('[name="_gotcha"]').value;
+    var btn = form.querySelector('button');
+    var status = document.getElementById('booking-status');
+    if (gotcha) { btn.textContent = 'Done.'; return; }
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    fetch('https://formspree.io/f/xgojoyka', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify({name: name, email: email, company: company, details: details, source: 'workshops-fit-call', _gotcha: gotcha})
+    });
+
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({name: name, email: email, company: company, details: details, source: 'workshops-fit-call'})
+    });
+
+    form.style.display = 'none';
+    status.style.display = 'block';
+    status.textContent = 'Got it. I reply with fit, format, and a firm quote, usually within 48 hours.';
+  });
+})();
+</script>
 </body>
 </html>
