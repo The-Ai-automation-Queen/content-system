@@ -97,6 +97,7 @@ a{color:inherit;text-decoration:none}
 .controls-eyebrow{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent-deep)}
 .controls-title{font-family:'Playfair Display',Georgia,serif;font-size:42px;font-weight:400;letter-spacing:-0.01em}
 .search{flex:1;min-width:280px;padding:14px 18px;border:1px solid var(--rule);background:#fff;font-family:'Inter',sans-serif;font-size:14px}
+.search:focus-visible,.pill:focus-visible{outline:2px solid var(--accent-deep);outline-offset:2px}
 .filter-group{display:flex;gap:8px;align-items:center}
 .filter-label{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--muted);margin-right:8px}
 .pill{padding:8px 14px;border:1px solid var(--rule);background:#fff;font-family:'Inter',sans-serif;font-size:13px;cursor:pointer}
@@ -238,7 +239,7 @@ img{max-width:100%;height:auto}
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="free-resources.html" class="active">Home</a><a href="free-resources.html#library">Free Resources</a><a href="99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html">Fast Forward</a></div>
+  <div class="nav-links"><a href="free-resources.html" class="active">Home</a><a href="free-resources.html#library">Free Resources</a><a href="99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=free-resources">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=free-resources">Fast Forward</a></div>
 </div></nav>
 
 <section class="hero"><div class="hero-inner">
@@ -246,10 +247,10 @@ img{max-width:100%;height:auto}
     <div class="hero-kicker">The free library of Shift &amp; Lead</div>
     <h1>AI,<br>explained<br><span class="block">quietly.</span></h1>
     <p class="hero-sub">The guides I wish I had when I started. Now they are yours, free, no email wall.</p>
-    <p style="font-size:16px;color:var(--muted);margin-top:10px">Want the full system behind these guides? <a href="https://www.shiftandlead.com/fast-forward.html" style="color:var(--accent-deep);text-decoration:underline;text-underline-offset:3px">Start with Fast Forward &rarr;</a></p>
+    <p style="font-size:16px;color:var(--muted);margin-top:10px">Want the full system behind these guides? <a href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=free-resources" style="color:var(--accent-deep);text-decoration:underline;text-underline-offset:3px">Start with Fast Forward &rarr;</a></p>
     <p style="font-family:'Inter',sans-serif;font-size:14px;color:#5C5A57;margin-top:14px">by <strong style="color:#1C1C1C">Fatiha Chikh</strong>, The AI Automation Queen · 20+ years in big tech · hiring 99 AI employees in public · <a href="99.html" style="color:#6B4EFF">the receipts &rarr;</a></p>
   </div>
-  <div class="hero-portrait"><img src="fatiha-shelf.jpg" alt="Fatiha Chikh"></div>
+  <div class="hero-portrait"><img src="fatiha-shelf.jpg" alt="Fatiha Chikh" loading="eager" decoding="async"></div>
 </div></section>
 
 <section class="pull"><div class="pull-inner">
@@ -338,7 +339,7 @@ img{max-width:100%;height:auto}
   <div class="spotlight-head">
     <div>
       <div class="spotlight-eyebrow" id="spotlight-eyebrow">Featured</div>
-      <div class="spotlight-title">Start with these.</div>
+      <h2 class="spotlight-title">Start with these.</h2>
     </div>
     <a class="row-cta" href="#library">All guides →</a>
   </div>
@@ -439,17 +440,21 @@ img{max-width:100%;height:auto}
   }
 
   try {
-    var override = null;
-    try {
-      var overrideRes = await fetch('current.json', { cache: 'no-store' });
-      if (overrideRes.ok) override = await overrideRes.json();
-    } catch (e) { /* no override is fine */ }
+    // Fetch current.json (override) and spotlight.json (weekly rotation) in parallel,
+    // instead of one after another, to cut settle time. A missing/broken current.json
+    // still resolves to null and does not block spotlight.json.
+    var overridePromise = fetch('current.json', { cache: 'no-store' })
+      .then(function(res) { return res.ok ? res.json() : null; })
+      .catch(function() { return null; });
+    var spotPromise = fetch('spotlight.json', { cache: 'no-store' });
 
-    var spotRes = await fetch('spotlight.json', { cache: 'no-store' });
+    var results = await Promise.all([overridePromise, spotPromise]);
+    var override = results[0];
+    var spotRes = results[1];
     if (!spotRes.ok) return;
     var data = await spotRes.json();
 
-    var featuredSlug, sideSlugs;
+    var featuredSlug, sideSlugs, usedWeekConfig = false;
     if (override && override.active === true && override.featured) {
       featuredSlug = override.featured;
       sideSlugs = (override.side && override.side.length === 2) ? override.side : data.default.side_slugs;
@@ -459,6 +464,7 @@ img{max-width:100%;height:auto}
       if (weekConfig) {
         featuredSlug = weekConfig.featured;
         sideSlugs = weekConfig.side;
+        usedWeekConfig = true;
       } else {
         featuredSlug = data.default.featured_slug;
         sideSlugs = data.default.side_slugs;
@@ -478,14 +484,19 @@ img{max-width:100%;height:auto}
 
     var eyebrow = document.getElementById('spotlight-eyebrow');
     if (eyebrow) {
-      if (override && override.active) { eyebrow.textContent = 'Featured pick'; }
-      else {
+      // Only claim a dated "This week's pick" when the current ISO week actually has a
+      // spotlight.json entry. Override picks and default-fallback picks (rotation ran
+      // out, see spotlight.json) get the undated "Editor's pick" label instead, so the
+      // eyebrow never states a date range it cannot back up.
+      if (usedWeekConfig) {
         var now = new Date();
         var day = (now.getDay() + 6) % 7;
         var mon = new Date(now); mon.setDate(now.getDate() - day);
         var sun = new Date(mon); sun.setDate(mon.getDate() + 6);
         var fmt = function(d){ return d.getDate() + ' ' + d.toLocaleString('en-GB',{month:'short'}); };
         eyebrow.textContent = "This week's pick \u00b7 " + fmt(mon) + ' to ' + fmt(sun);
+      } else {
+        eyebrow.textContent = "Editor's pick";
       }
     }
   } catch (err) {
@@ -704,13 +715,13 @@ img{max-width:100%;height:auto}
       <div class="kicker">Fast Forward</div>
       <h3>The course, for you.</h3>
       <p>The prompt packs, playbooks, and systems behind these guides now ship inside Fast Forward, one course built from the system I run my own business on.</p>
-      <a class="btn-cream" href="https://www.shiftandlead.com/fast-forward.html">See Fast Forward</a>
+      <a class="btn-cream" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=free-resources">See Fast Forward</a>
     </div>
     <div class="cta-card">
       <div class="kicker">Workshops &amp; Keynotes</div>
       <h3>For teams.</h3>
       <p>Keynotes, half day, and full day workshops. Practical, non-technical, built from a system that actually runs.</p>
-      <a class="btn-cream" href="https://www.shiftandlead.com/work-with-fatiha.html">Formats and booking</a>
+      <a class="btn-cream" href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=free-resources">Formats and booking</a>
     </div>
     <div class="cta-card">
       <div class="kicker">Free Guides &amp; Insider Brief</div>
@@ -730,8 +741,8 @@ img{max-width:100%;height:auto}
     <div class="footer-col-head">Explore</div>
     <a class="footer-link" href="https://guides.shiftandlead.com">The Free Guides</a>
     <a class="footer-link" href="https://www.shiftandlead.com/index.html#cases">Case Studies</a>
-    <a class="footer-link" href="https://www.shiftandlead.com/fast-forward.html">Fast Forward</a>
-    <a class="footer-link" href="https://www.shiftandlead.com/work-with-fatiha.html">Workshops</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=free-resources">Fast Forward</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=free-resources">Workshops</a>
     <a class="footer-link" href="https://www.shiftandlead.com/index.html#further">Community</a>
     <a class="footer-link" href="about.html">About</a>
   </div>
