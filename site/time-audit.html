@@ -194,6 +194,7 @@ button{font-family:inherit}
       <p>Your result, the breakdown, and the fix-first plan, in your inbox so it doesn&rsquo;t vanish with this tab.</p>
       <form class="r-email-row" id="email-form">
         <input type="email" name="email" placeholder="your@email.com" required>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <button type="submit">Send it</button>
       </form>
       <p class="r-email-note" id="email-note">No spam. No sequences you didn&rsquo;t ask for.</p>
@@ -428,6 +429,7 @@ button{font-family:inherit}
     var form = this;
     var email = form.querySelector('[name="email"]').value;
     var btn = form.querySelector('button');
+    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Sent!'; return; }
     var payload = {
       email: email,
       source: 'time-audit',
