@@ -26,12 +26,12 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 
 /* nav */
 .nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20}
-.nav-inner{max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
 .nav .mono{font-size:10px;color:var(--muted)}
-.nav-links{display:flex;gap:16px;flex-wrap:wrap}
-.nav-links a{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid transparent}
-.nav-links a:hover{border-bottom-color:var(--ink)}
+.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
 
 /* magazine cover hero */
 .cover{max-width:1160px;margin:0 auto;padding:70px 24px 56px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:end}
@@ -177,7 +177,7 @@ body{overflow-x:hidden}
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html" rel="noopener">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="../99.html">The 99</a><a href="../about.html">About</a><a href="../store.html">Store</a><a href="../work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="../99.html">The 99</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="../work-with-fatiha.html">Work with Fatiha</a></div>
   <span class="mono">The Kitchen Map · Meta AI · 11 min read</span>
 </div></nav>
 
@@ -438,7 +438,7 @@ body{overflow-x:hidden}
       <div class="warn-card"><div class="term">Training on Public Posts</div><p><em>"Recipes inspired by every public dish."</em> Public Facebook and Instagram posts may train Llama where allowed. EU users have a GDPR opt-out.</p></div>
       <div class="warn-card"><div class="term">Bias</div><p><em>"Unconsciously serving bigger portions to some."</em> Inherits biases from training data, including social-platform tone bleeding into formal answers.</p></div>
     </div>
-    <a class="warn-link" href="../store.html">I keep verification prompts for exactly these failures. The Judge's Prompts →</a>
+    <a class="warn-link" href="https://www.shiftandlead.com/products/judges-prompts.html">I keep verification prompts for exactly these failures. The Judge's Prompts →</a>
   </div>
 </section>
 
@@ -458,7 +458,7 @@ body{overflow-x:hidden}
     <div>
       <p>The hosted product, meta.ai, the app, and Meta AI inside WhatsApp, Instagram, Messenger and Facebook, is entirely <strong>free</strong>, supported by Meta's ad business rather than a subscription. <em>AI Studio</em> is free for creators to build and deploy custom characters. <em>Ray-Ban Meta smart glasses</em> are a one-time hardware purchase, roughly $300 and up, with Meta AI included at no extra cost. Developers pay per token on the <em>Llama API</em>, priced competitively with other major labs. And the <em>Llama open weights</em> are free to download under a community license, with a few restrictions for platforms above 700 million monthly users.</p>
       <p>Where Meta AI wins: <em>distribution</em>, because it's already inside the apps billions of people open every day, and the <em>open-source ecosystem</em>, the most-downloaded open AI on the planet. It's the pick for casual creative use, group-chat help, glasses interaction, or self-hosted Llama in serious development. It loses on professional polish next to ChatGPT or Claude, and on privacy unless you self-host.</p>
-      <p><strong>Next on the map:</strong> <em>what "agentic" means</em>: AI that does the job, not just the answer.</p>
+      <p><strong>Next on the map:</strong> <a href="./chez-manus.html">Chez Manus: the kitchen that runs errands &rarr;</a></p>
     </div>
     <div class="imgslot" style="aspect-ratio:4/3">
       <span class="mono">Image slot 04</span>

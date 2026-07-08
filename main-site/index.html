@@ -47,10 +47,12 @@ section{scroll-margin-top:70px}
 .ribbon button:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.5)}
 
 .nav{border-bottom:1px solid var(--rule);background:var(--canvas);position:sticky;top:0;z-index:10}
-.nav-inner{max-width:1240px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.nav-logo{display:flex;align-items:center}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
 .nav-logo svg{height:38px;width:auto}
-.nav-links{display:flex;align-items:center;gap:26px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;flex-wrap:wrap}
+.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
 .nav-cta{background:var(--electric);color:#fff;padding:10px 18px;border-radius:3px;font-weight:600}
 .nav-cta:hover{background:var(--navy)}
 
@@ -96,6 +98,8 @@ section{scroll-margin-top:70px}
 .section-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,4vw,44px);font-weight:400;letter-spacing:-0.01em}
 .pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .pillar-card{background:#fff;border:1px solid var(--rule);padding:36px 32px;border-radius:4px}
+.pillar-icon{width:44px;height:44px;margin-bottom:18px;color:var(--electric)}
+
 .pillar-card .num{font-family:'Space Mono',monospace;font-size:11px;color:var(--accent-deep);letter-spacing:0.16em;margin-bottom:16px}
 .pillar-card h3{font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:400;margin-bottom:14px}
 .pillar-card p{font-size:15px;color:var(--muted);line-height:1.6}
@@ -169,7 +173,7 @@ section{scroll-margin-top:70px}
 }
 @media (max-width:600px){
   .cases-grid{grid-template-columns:1fr}
-  .nav-links{display:none}
+  .nav-links{gap:12px;font-size:10px;justify-content:center}
 }
 </style>
 </head>
@@ -185,7 +189,7 @@ section{scroll-margin-top:70px}
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="#top" aria-label="Shift &amp; Lead, home" style="font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:700;color:#1A1A1A;text-decoration:none">Shift &amp; Lead</a>
   <div class="nav-links">
-    <a href="https://guides.shiftandlead.com">Free Guides</a>
+    <a href="store.html">Store</a>
     <a href="#about">About</a>
     <a href="#cases">Case Studies</a>
     <a href="#further">Community</a>
@@ -260,18 +264,21 @@ section{scroll-margin-top:70px}
   </div>
   <div class="pillars-grid">
     <div class="pillar-card">
+      <svg class="pillar-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 12c-3-3-8-4-14-3v22c6-1 11 0 14 3 3-3 8-4 14-3V9c-6-1-11 0-14 3z"/><path d="M22 12v22"/></svg>
       <div class="num">LEARN</div>
       <h3>Start free, always.</h3>
       <p>Free guides, the Tuesday AI Insider Brief, and a growing library that turns AI overwhelm into plain English. No card, no catch.</p>
       <a href="https://guides.shiftandlead.com" style="color:#2C4BE0;font-weight:600">Start with the guides &rarr;</a>
     </div>
     <div class="pillar-card">
+      <svg class="pillar-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="8" y="8" width="12" height="12" rx="1"/><rect x="24" y="8" width="12" height="12" rx="1"/><rect x="8" y="24" width="12" height="12" rx="1"/><path d="M30 24v5m0 0h-5m5 0h5m-5 0v7"/></svg>
       <div class="num">BUILD</div>
       <h3>Templates, a community, a flagship course.</h3>
       <p>A discussion-first community and a structured build curriculum that walks you through installing AI and automation in your own business, step by step, no code required.</p>
       <a href="#further" style="color:#2C4BE0;font-weight:600">Three ways to go further &rarr;</a>
     </div>
     <div class="pillar-card">
+      <svg class="pillar-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="17" y="6" width="10" height="18" rx="5"/><path d="M11 20a11 11 0 0022 0"/><path d="M22 31v7m-6 0h12"/></svg>
       <div class="num">SPEAK</div>
       <h3>Bring it to your team.</h3>
       <p>Keynotes and workshops for teams ready to move, same authority, different room. Plus quoted, bespoke build projects for the rare business that needs it done alongside them.</p>
@@ -306,13 +313,6 @@ section{scroll-margin-top:70px}
       <div class="stat">42 sec</div>
       <div class="stat-label">average time to respond to a lead</div>
       <a class="read" href="case-study-3.html">Read the story &rarr;</a>
-    </div>
-    <div class="case-card">
-      <div class="tag">Coffee Shop</div>
-      <h3>Retiring the punch card for something that actually keeps people coming back.</h3>
-      <div class="stat">30%</div>
-      <div class="stat-label">increase in sales</div>
-      
     </div>
   </div>
 </div></section>
@@ -354,7 +354,7 @@ section{scroll-margin-top:70px}
       <div class="kicker">The Store</div>
       <h3>Buy once, use forever.</h3>
       <p>Prompt packs, playbooks, and systems: the paid shortcuts behind the free guides. Every product is something I use to run my own business.</p>
-      <a href="https://guides.shiftandlead.com/store.html">Browse the Store</a>
+      <a href="store.html">Browse the Store</a>
     </div>
     <div class="ladder-card">
       <div class="kicker">Speaking &amp; Workshops</div>
