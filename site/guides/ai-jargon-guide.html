@@ -108,12 +108,7 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .warn-inner .link-line{margin-top:26px;font-family:'Inter',sans-serif;font-size:.92rem;color:#D9D3E6}
 .warn-inner .link-line a{color:#7FA0FF}
 
-/* image slots */
-.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
-.imgslot .mono{font-size:9.5px;color:var(--accent)}
-.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
-.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
-.fullbleed .imgslot{aspect-ratio:21/8}
+.fullbleed 
 
 /* subscribe strip */
 .subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
@@ -159,17 +154,17 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 /* qa: contain grid children, never let the page scroll sideways */
 .sec-body>*{min-width:0}
 .sec-body svg,.sec-body img{max-width:100%;height:auto}
-.imgslot{max-width:100%;overflow:hidden}
 .sec table{max-width:100%}
 body{overflow-x:hidden}
 .nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}.nav-links a{color:var(--ink);text-decoration:none}.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="../99.html">The 99</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
 </div></nav>
 
 <!-- COVER -->
@@ -206,7 +201,6 @@ body{overflow-x:hidden}
       <rect x="80" y="330" width="140" height="40" rx="6" stroke="#7FA0FF" stroke-width="2"/>
       <text x="150" y="356" text-anchor="middle" fill="#7FA0FF" font-family="Space Mono" font-size="12" letter-spacing="1">Understood.</text>
     </svg>
-    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
 </header>
 
@@ -291,13 +285,6 @@ body{overflow-x:hidden}
   <p class="menu-more">Read the meeting sentence again, at the very top of this page. It makes sense now.</p>
 </section>
 
-<!-- full-bleed image slot -->
-<div class="fullbleed">
-  <div class="imgslot">
-    <span class="mono">Image slot 02 · full-bleed divider</span>
-    <em>Wide editorial photo: a whiteboard mid-explanation, or a hand underlining a dense paragraph, duotone ink/purple grade</em>
-  </div>
-</div>
 
 <!-- 03 THE NEXT SIX -->
 <section class="sec">
@@ -416,10 +403,6 @@ body{overflow-x:hidden}
       <p>These twelve words cover about 90% of the AI vocabulary in any business conversation. The other 10% you can look up the moment you hear it. But you will not need to look these ones up again.</p>
       <p>The gap was never intelligence. It was just vocabulary. And you just closed it.</p>
       <p><strong>Next on the map:</strong> step inside an actual kitchen and see these words in action: <a href="chez-claude.html"><em>Chez Claude</em>, the first restaurant on the tour &rarr;</a></p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 03</span>
-      <em>Styled product photo: a small notebook of twelve words, one crossed off the list, or your portrait mid-explanation</em>
     </div>
   </div>
 </section>

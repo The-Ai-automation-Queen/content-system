@@ -117,12 +117,7 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .warn-link{font-family:'Inter',sans-serif;font-size:.92rem;color:#D9D3E6;margin-top:26px}
 .warn-link a{color:#7FA0FF}
 
-/* image slots for the magazine treatment */
-.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
-.imgslot .mono{font-size:9.5px;color:var(--accent)}
-.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
-.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
-.fullbleed .imgslot{aspect-ratio:21/8}
+.fullbleed 
 
 /* byline + IP bar */
 .byline{max-width:1160px;margin:70px auto 0;padding:0 24px}
@@ -160,17 +155,17 @@ a{color:var(--accent)}
 /* qa: contain grid children, never let the page scroll sideways */
 .sec-body>*{min-width:0}
 .sec-body svg,.sec-body img{max-width:100%;height:auto}
-.imgslot{max-width:100%;overflow:hidden}
 .sec table{max-width:100%}
 body{overflow-x:hidden}
 .nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}.nav-links a{color:var(--ink);text-decoration:none}.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="../99.html">The 99</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
 </div></nav>
 
 <!-- COVER -->
@@ -201,7 +196,6 @@ body{overflow-x:hidden}
       <path d="M100 224h100M100 242h100M100 260h70" stroke="#7FA0FF" stroke-width="2" stroke-linecap="round"/>
       <text x="150" y="316" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE ANSWER</text>
     </svg>
-    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
 </header>
 
@@ -227,10 +221,6 @@ body{overflow-x:hidden}
       <p class="dropcap">A prompt is just what you type. That's it. When you open ChatGPT, Claude, or Gemini and type something into the message box, that message is your prompt. When the AI replies, that's the response.</p>
       <p>Every time you hit send, you're prompting. You've been doing it since the first time you asked AI anything. You just didn't know the word.</p>
       <p>So why do people talk about "prompt engineering" like it's a skill? Because how you write that message changes everything about what you get back. (And yes, even the best chef makes mistakes. The allergen card comes right before you eat, in course four.)</p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 01</span>
-      <em>Editorial photo: a hand typing a short note, warm light, duotone ink/purple grade</em>
     </div>
   </div>
 </section>
@@ -356,13 +346,6 @@ body{overflow-x:hidden}
   <span class="mono">The one thing to remember</span>
 </div>
 
-<!-- full-bleed image slot -->
-<div class="fullbleed">
-  <div class="imgslot">
-    <span class="mono">Image slot 02 · full-bleed divider</span>
-    <em>Wide editorial photo: an order ticket clipped to a rail, warm light, or your portrait working, shot from the side</em>
-  </div>
-</div>
 
 <!-- subscribe strip -->
 <div class="subs"><div class="subs-in">
@@ -395,10 +378,6 @@ body{overflow-x:hidden}
       <p>And here's the thing most people miss: a good prompt saves you time <em>every single time you use it</em>. Write a great prompt for client proposals once, save it somewhere, and reuse it with different context every time. That one prompt might save you an hour a week, every week, forever. That's not a small thing. That's your time back.</p>
       <p>You now have the formula. Role, context, task, format. Try it 5 times today with real work you're already doing, and you'll feel the difference immediately. Once this clicks, everything else in AI gets easier, because every tool, every feature, every workflow starts with you telling the AI what you need. And now you know how.</p>
       <p><strong>Next on the map:</strong> the meeting where everyone speaks AI: RAG, MCP, hallucination, token, decoded word by word.</p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 03</span>
-      <em>The bill on a small tray, one purple petit-four, styled product photo</em>
     </div>
   </div>
 </section>

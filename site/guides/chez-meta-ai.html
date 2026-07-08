@@ -106,12 +106,7 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .warn-card strong{color:#fff}
 .warn-link{font-family:'Inter',sans-serif;font-size:.92rem;color:#7FA0FF;display:inline-block;margin-top:22px}
 
-/* image slots for the magazine treatment */
-.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
-.imgslot .mono{font-size:9.5px;color:var(--accent)}
-.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
-.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
-.fullbleed .imgslot{aspect-ratio:21/8}
+.fullbleed 
 
 /* subscribe strip */
 .subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
@@ -168,16 +163,16 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 /* qa: contain grid children, never let the page scroll sideways */
 .sec-body>*{min-width:0}
 .sec-body svg,.sec-body img{max-width:100%;height:auto}
-.imgslot{max-width:100%;overflow:hidden}
 .sec table{max-width:100%}
 body{overflow-x:hidden}
+.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html" rel="noopener">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="../99.html">The 99</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
   <span class="mono">The Kitchen Map · Meta AI · 11 min read</span>
 </div></nav>
 
@@ -211,7 +206,6 @@ body{overflow-x:hidden}
       <circle cx="150" cy="310" r="28" stroke="#2C4BE0" stroke-width="2"/>
       <text x="150" y="378" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE PLATE</text>
     </svg>
-    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
 </header>
 
@@ -236,10 +230,6 @@ body{overflow-x:hidden}
     <div>
       <p class="dropcap">Meta AI doesn't have a front door you have to find, because it's already standing inside every door you use. Open WhatsApp, Instagram, Messenger, Facebook: it's there, one @mention away. Put on a pair of Ray-Ban Meta glasses and it's on your face, listening for "Hey Meta." Go looking for a dedicated address and you'll find meta.ai and the Meta AI app too, but the real trick of this kitchen is that it never made you leave the room you were already in. (And yes, even the best chef makes mistakes. The allergen card comes right before you eat, in course four.)</p>
       <p>Under the hood, the chef cooking every one of those replies is <em>Llama</em>: Meta's own model family, and the most widely downloaded open-source AI on Earth. That's the second thing worth knowing before you sit down: you can also take this recipe home and run your own kitchen.</p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 02</span>
-      <em>Editorial photo: a phone lit up mid-chat inside a messaging app, warm light, duotone ink/purple grade</em>
     </div>
   </div>
 </section>
@@ -414,13 +404,6 @@ body{overflow-x:hidden}
   </div>
 </section>
 
-<!-- full-bleed image slot -->
-<div class="fullbleed">
-  <div class="imgslot">
-    <span class="mono">Image slot 03 · full-bleed divider</span>
-    <em>Wide editorial photo: a phone screen mid-group-chat with a Meta AI reply visible, warm light, or your portrait working, shot from the side</em>
-  </div>
-</div>
 
 <!-- 04 KNOW BEFORE YOU EAT -->
 <section class="warn" style="margin-top:72px">
@@ -459,10 +442,6 @@ body{overflow-x:hidden}
       <p>The hosted product, meta.ai, the app, and Meta AI inside WhatsApp, Instagram, Messenger and Facebook, is entirely <strong>free</strong>, supported by Meta's ad business rather than a subscription. <em>AI Studio</em> is free for creators to build and deploy custom characters. <em>Ray-Ban Meta smart glasses</em> are a one-time hardware purchase, roughly $300 and up, with Meta AI included at no extra cost. Developers pay per token on the <em>Llama API</em>, priced competitively with other major labs. And the <em>Llama open weights</em> are free to download under a community license, with a few restrictions for platforms above 700 million monthly users.</p>
       <p>Where Meta AI wins: <em>distribution</em>, because it's already inside the apps billions of people open every day, and the <em>open-source ecosystem</em>, the most-downloaded open AI on the planet. It's the pick for casual creative use, group-chat help, glasses interaction, or self-hosted Llama in serious development. It loses on professional polish next to ChatGPT or Claude, and on privacy unless you self-host.</p>
       <p><strong>Next on the map:</strong> <a href="./chez-manus.html">Chez Manus: the kitchen that runs errands &rarr;</a></p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 04</span>
-      <em>The bill on a small tray, one purple petit-four, styled product photo</em>
     </div>
   </div>
 

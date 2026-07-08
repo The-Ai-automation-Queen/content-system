@@ -105,12 +105,7 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .warn-inner .storelink{margin-top:30px;font-family:'Inter',sans-serif;font-size:.92rem;color:#D9D3E6}
 .warn-inner .storelink a{color:#7FA0FF}
 
-/* image slots for the magazine treatment */
-.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
-.imgslot .mono{font-size:9.5px;color:var(--accent)}
-.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
-.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
-.fullbleed .imgslot{aspect-ratio:21/8}
+.fullbleed 
 
 /* subscribe strip */
 .subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
@@ -163,17 +158,17 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 /* qa: contain grid children, never let the page scroll sideways */
 .sec-body>*{min-width:0}
 .sec-body svg,.sec-body img{max-width:100%;height:auto}
-.imgslot{max-width:100%;overflow:hidden}
 .sec table{max-width:100%}
 body{overflow-x:hidden}
 .nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}.nav-links a{color:var(--ink);text-decoration:none}.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="../99.html">The 99</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
 </div></nav>
 
 <!-- COVER -->
@@ -206,7 +201,6 @@ body{overflow-x:hidden}
       <path d="M130 300l20 20 20-20" stroke="#7FA0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       <text x="150" y="360" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">NEW WORK, ON DEMAND</text>
     </svg>
-    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
 </header>
 
@@ -232,10 +226,6 @@ body{overflow-x:hidden}
       <p class="dropcap">When most people hear "AI," they picture robots, Terminator, or some kind of digital brain that thinks like a human. That's not what we're talking about. The AI you're hearing about every day is software. It runs on computers. It doesn't think, feel, or have opinions. It's a very powerful tool, like a calculator, but for language.</p>
       <p>(And yes, even the best chef makes mistakes. The allergen card comes right before you eat: course four.)</p>
       <p>Here's the simplest way to put it: what follows is the one idea that makes everything else about AI make sense.</p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 01</span>
-      <em>Editorial photo: a plain, ordinary tool, calm light, no robots, no neon circuitry</em>
     </div>
   </div>
 </section>
@@ -307,10 +297,6 @@ body{overflow-x:hidden}
       <p>There are different types of AI. The one everyone is talking about is called <strong>generative AI</strong>. Generative means it <em>creates</em> new things: writes new text, creates new images, generates new audio, makes new video. It doesn't just sort data or recognize faces. It produces work that didn't exist before.</p>
       <p>ChatGPT, Claude, Gemini, Midjourney, ElevenLabs: different brands, same basic idea. They all studied enormous amounts of human-created content and now they can create new content that looks and sounds like the real thing. When someone says "AI," nine times out of ten, this is what they mean.</p>
     </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 02</span>
-      <em>Editorial photo: hands at a keyboard, a document mid-draft, warm, ordinary desk light</em>
-    </div>
   </div>
 
   <div class="menu">
@@ -346,13 +332,6 @@ body{overflow-x:hidden}
   <p class="menu-more">Notice the pattern across all five: you give it your information and ask it to do something useful with it. The more specific you are about what you need, the better the result. It's not magic, it's a conversation. You ask well, you get well.</p>
 </section>
 
-<!-- full-bleed image slot -->
-<div class="fullbleed">
-  <div class="imgslot">
-    <span class="mono">Image slot 03 · full-bleed divider</span>
-    <em>Wide editorial photo: a desk mid-work, screen showing a drafted email, calm, ordinary light</em>
-  </div>
-</div>
 
 <!-- 04 KNOW BEFORE YOU EAT -->
 <section class="warn" style="margin-top:72px">

@@ -96,12 +96,7 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .warn-link{font-family:'Inter',sans-serif;font-size:.92rem;color:#7FA0FF;display:inline-block;margin-top:28px;text-decoration:none;font-weight:600}
 .warn-link:hover{text-decoration:underline}
 
-/* image slots for the magazine treatment */
-.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
-.imgslot .mono{font-size:9.5px;color:var(--accent)}
-.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
-.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
-.fullbleed .imgslot{aspect-ratio:21/8}
+.fullbleed 
 
 /* stations grid (used across sections 02 + 03) */
 .stations{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 0}
@@ -165,16 +160,16 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 /* qa: contain grid children, never let the page scroll sideways */
 .sec-body>*{min-width:0}
 .sec-body svg,.sec-body img{max-width:100%;height:auto}
-.imgslot{max-width:100%;overflow:hidden}
 .sec table{max-width:100%}
 body{overflow-x:hidden}
+.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html" rel="noopener">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="../99.html">The 99</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
   <span class="mono">Kitchen Map · No. 07 · Mistral</span>
 </div></nav>
 
@@ -207,7 +202,6 @@ body{overflow-x:hidden}
       <circle cx="150" cy="310" r="28" stroke="#2C4BE0" stroke-width="2"/>
       <text x="150" y="378" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE PLATE</text>
     </svg>
-    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
 </header>
 
@@ -232,10 +226,6 @@ body{overflow-x:hidden}
     <div>
       <p class="dropcap">Mistral runs a brigade out of Paris, and it's the fastest kitchen in town. Its signature is speed, up to 1,000 words a second, the same pace whether you're paying or not, and a strict European code of conduct: EU servers, GDPR by default, and a privacy toggle no other major kitchen offers. This is the door for people who want their AI fast, multilingual, and provably private. (And yes, even the best chef makes mistakes. The allergen card comes right before you eat: course four.)</p>
       <p>You've eaten at the big American chains. Chez Mistral is the smaller, faster, cheaper place around the corner that happens to speak over 100 languages and never makes you wait for the bill.</p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 01</span>
-      <em>Editorial photo: a Parisian bistro door at dusk, warm light, duotone ink/electric-blue grade</em>
     </div>
   </div>
 </section>
@@ -420,13 +410,6 @@ body{overflow-x:hidden}
   <p class="menu-more">Every station gets its own walkthrough in the full guide. This is the seating chart.</p>
 </section>
 
-<!-- full-bleed image slot -->
-<div class="fullbleed">
-  <div class="imgslot">
-    <span class="mono">Image slot 02 · full-bleed divider</span>
-    <em>Wide editorial photo: a pass counter with plates under warm light, tricolour accent, or your portrait working, shot from the side</em>
-  </div>
-</div>
 
 <!-- 04 KNOW BEFORE YOU EAT -->
 <section class="warn" style="margin-top:72px">

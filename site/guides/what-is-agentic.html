@@ -117,12 +117,7 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .card-plain ul{margin:10px 0 14px 20px;padding:0}
 .card-plain li{font-family:'Inter',sans-serif;font-size:.92rem;color:var(--muted);margin-bottom:8px;line-height:1.6}
 
-/* image slots */
-.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
-.imgslot .mono{font-size:9.5px;color:var(--accent)}
-.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
-.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
-.fullbleed .imgslot{aspect-ratio:21/8}
+.fullbleed 
 
 /* warn band */
 .warn{background:var(--ink);color:#F5F0EB}
@@ -177,16 +172,16 @@ a{color:var(--accent)}
 /* qa: contain grid children, never let the page scroll sideways */
 .sec-body>*{min-width:0}
 .sec-body svg,.sec-body img{max-width:100%;height:auto}
-.imgslot{max-width:100%;overflow:hidden}
 .sec table{max-width:100%}
 body{overflow-x:hidden}
+.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="../99.html">The 99</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
 </div></nav>
 
 <!-- COVER -->
@@ -220,7 +215,6 @@ body{overflow-x:hidden}
       <path d="M255 130l4 4 8-8" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       <text x="150" y="366" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">CHAT &rarr; AGENTIC</text>
     </svg>
-    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
 </header>
 
@@ -247,10 +241,6 @@ body{overflow-x:hidden}
       <p><strong>Agentic</strong> means the AI does not just answer your question. It goes and <em>does the thing.</em></p>
       <p>A regular chatbot waits for you to ask something, gives you a response, and stops. An agentic system takes your goal, breaks it into steps on its own, figures out which tools to use, runs those tools, checks whether it worked, and keeps going until the job is actually done.</p>
       <p>The difference is not intelligence. It is autonomy: how much you let the AI do on its own before checking back in with you.</p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 01</span>
-      <em>Editorial photo: an open door with a task list dissolving into checkmarks, duotone ink/electric grade</em>
     </div>
   </div>
 </section>
@@ -358,13 +348,6 @@ body{overflow-x:hidden}
   <span class="mono">The one question that separates hype from reality</span>
 </div>
 
-<!-- full-bleed image slot -->
-<div class="fullbleed">
-  <div class="imgslot">
-    <span class="mono">Image slot 02 &middot; full-bleed divider</span>
-    <em>Wide editorial photo: a control room dashboard with four glowing progress bars, only the last one lit fully, or your portrait, mid-explanation</em>
-  </div>
-</div>
 
 <!-- 04 READ IT IN THE WILD -->
 <section class="sec">
@@ -447,10 +430,6 @@ body{overflow-x:hidden}
       <p>Agentic matters when the task is too variable for a fixed workflow: when the steps change depending on what the AI finds, when you need judgment, not just execution.</p>
       <p>The point is not to hand your business over to AI. The point is to stop spending your time on tasks that do not need your brain. The more of those you delegate, the more hours you get back for the work that actually grows your business.</p>
       <p><strong>Next on the map:</strong> <a href="chez-claude.html">Chez Claude, the full Kitchen Map &rarr;</a> See the most capable kitchen room by room, then give it its first real job.</p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 03</span>
-      <em>Styled product photo: three stacked trays labeled Level 2, 3, 4. The top one glowing faintly</em>
     </div>
   </div>
 

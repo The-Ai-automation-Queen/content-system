@@ -92,12 +92,7 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .warn-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0;line-height:1.6}
 .warn-card strong{color:#fff}
 
-/* image slots for the magazine treatment */
-.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
-.imgslot .mono{font-size:9.5px;color:var(--accent)}
-.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
-.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
-.fullbleed .imgslot{aspect-ratio:21/8}
+.fullbleed 
 
 /* stations grid (menu / kitchen item cards) */
 .stations{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 0}
@@ -157,17 +152,17 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 /* qa: contain grid children, never let the page scroll sideways */
 .sec-body>*{min-width:0}
 .sec-body svg,.sec-body img{max-width:100%;height:auto}
-.imgslot{max-width:100%;overflow:hidden}
 .sec table{max-width:100%}
 body{overflow-x:hidden}
 .nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}.nav-links a{color:var(--ink);text-decoration:none}.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="../99.html">The 99</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
 </div></nav>
 
 <!-- COVER -->
@@ -200,7 +195,6 @@ body{overflow-x:hidden}
       <circle cx="150" cy="310" r="28" stroke="#2C4BE0" stroke-width="2"/>
       <text x="150" y="378" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE PLATE</text>
     </svg>
-    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
 </header>
 
@@ -225,10 +219,6 @@ body{overflow-x:hidden}
     <div>
       <p class="dropcap">You hear the names everywhere, Gemini, Gems, Workspace, Antigravity, Veo, and never quite know which does what. Google's restaurant isn't one dish, it's a whole building: a dining room, a corporate wing, a terminal kitchen out back, and a supply dock feeding it all from outside. Read and click through as you go, follow the order, and enjoy. (And yes, even the best chef makes mistakes. The allergen card comes right before you eat, in course four.)</p>
       <p>Google's chef has multiple modes: a deep-reasoning head chef and a fast, cheap speed chef, both reading text, images, audio, and video off the same enormous countertop.</p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 02</span>
-      <em>Editorial photo: restaurant door, warm light, duotone ink/purple grade</em>
     </div>
   </div>
 </section>
@@ -393,13 +383,6 @@ body{overflow-x:hidden}
   <p class="menu-more">Every station gets its own walkthrough in the full guide. This is the seating chart.</p>
 </section>
 
-<!-- full-bleed image slot -->
-<div class="fullbleed">
-  <div class="imgslot">
-    <span class="mono">Image slot 03 · full-bleed divider</span>
-    <em>Wide editorial photo: a pass counter with plates under warm light, or your portrait working, shot from the side</em>
-  </div>
-</div>
 
 <!-- 04 KNOW BEFORE YOU EAT -->
 <section class="warn" style="margin-top:72px">
@@ -455,10 +438,6 @@ body{overflow-x:hidden}
       </div>
       <p style="font-size:.85rem;color:var(--muted);margin-top:10px">Based on gemini.google.com, June 2026, USD. Subject to change, verify current rates. Antigravity IDE is free in public preview; Gemini CLI is free and open-source; API pricing is per token for developers.</p>
       <p><strong>Next on the map:</strong> <a href="chez-copilot.html">Chez Copilot. It&rsquo;s been in your toolbar this whole time &rarr;</a></p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 04</span>
-      <em>The bill on a small tray, one purple petit-four, styled product photo</em>
     </div>
   </div>
 </section>

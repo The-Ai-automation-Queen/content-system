@@ -104,12 +104,7 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .warn-card strong{color:#fff}
 .warn-link{font-family:'Inter',sans-serif;font-size:.95rem;color:#7FA0FF;display:inline-block;margin-top:28px}
 
-/* image slots for the magazine treatment */
-.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
-.imgslot .mono{font-size:9.5px;color:var(--accent)}
-.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
-.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
-.fullbleed .imgslot{aspect-ratio:21/8}
+.fullbleed 
 
 /* subscribe strip */
 .subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
@@ -162,16 +157,16 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 /* qa: contain grid children, never let the page scroll sideways */
 .sec-body>*{min-width:0}
 .sec-body svg,.sec-body img{max-width:100%;height:auto}
-.imgslot{max-width:100%;overflow:hidden}
 .sec table{max-width:100%}
 body{overflow-x:hidden}
+.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="../99.html">The 99</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
 
 </div></nav>
 
@@ -205,7 +200,6 @@ body{overflow-x:hidden}
       <circle cx="150" cy="310" r="28" stroke="#2C4BE0" stroke-width="2"/>
       <text x="150" y="378" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE PLATE</text>
     </svg>
-    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
 </header>
 
@@ -230,10 +224,6 @@ body{overflow-x:hidden}
     <div>
       <p class="dropcap">Every restaurant tells you what it is before you sit down. Grok's door says: fast, sarcastic, plugged straight into the live feed of X. This is the kitchen that reads what the whole world is posting right now and answers with a wink, because it doesn't do quiet and bookish, it does quick, opinionated, and occasionally reckless. (And yes, even the best chef makes mistakes. The allergen card comes right before you eat, in course four.)</p>
       <p>You walk in expecting a straight answer and you get one, usually with a joke attached. This is the kitchen for anyone who needs to know what the internet is saying about something right now, not last week.</p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 02</span>
-      <em>Editorial photo: restaurant door, neon glow, duotone ink/electric-blue grade</em>
     </div>
   </div>
 </section>
@@ -443,13 +433,6 @@ body{overflow-x:hidden}
   </div>
 </section>
 
-<!-- full-bleed image slot -->
-<div class="fullbleed">
-  <div class="imgslot">
-    <span class="mono">Image slot 03 · full-bleed divider</span>
-    <em>Wide editorial photo: a pass counter with plates under neon-blue light, or a phone showing a live X feed, shot from the side</em>
-  </div>
-</div>
 
 <!-- 04 KNOW BEFORE YOU EAT -->
 <section class="warn" style="margin-top:72px">
@@ -489,10 +472,6 @@ body{overflow-x:hidden}
     <div>
       <p>This zone wraps around everything. <strong>Safety controls</strong> were tightened after the January 2026 image-generator scandal, but the trust gap is real. The <strong>free tier</strong> gives about 10 prompts per 2 hours, lighter than competitor free tiers. <strong>X Premium ($8)</strong> bundles basic Grok with X. <strong>SuperGrok Lite ($10)</strong> and <strong>SuperGrok ($30)</strong> are the standalone paid plans. <strong>X Premium+ ($40)</strong> bundles full Grok with full X. <strong>SuperGrok Heavy ($300)</strong> is power-user territory with Grok 4 Heavy. <strong>Students</strong> with US .edu emails get SuperGrok free.</p>
       <p><strong>Next on the map:</strong> <a href="chez-mistral.html">Chez Mistral: open kitchen, nothing leaves the building &rarr;</a></p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 04</span>
-      <em>The bill on a small tray, one electric-blue petit-four · styled product photo</em>
     </div>
   </div>
   <div class="billwrap">
