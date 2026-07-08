@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#F5F2EB">
+<html lang="en" style="background:#FFFFFF">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,21 +23,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --canvas:#F5F2EB;
+  --canvas:#FFFFFF;
   --surface:#FFFFFF;
-  --cream:#EFEBE1;
-  --ink:#1C1C1C;
-  --rule:#DEDACE;
+  --cream:#EEF2FC;
+  --ink:#1A1A1A;
+  --rule:#D8D6D2;
   --muted:#5C5A57;
-  --accent:#6B4EFF;
-  --accent-deep:#4F35D6;
-  --accent-tint:#EAE5FB;
-  --electric:#6B4EFF;
-  --navy:#4F35D6;
-  --chip-setup:#1C1C1C;
+  --accent:#2C4BE0;
+  --accent-deep:#1B2EA0;
+  --accent-tint:#E4EAFB;
+  --electric:#2C4BE0;
+  --navy:#1B2EA0;
+  --chip-setup:#1A1A1A;
   --chip-literacy:#E63955;
-  --chip-data:#6B4EFF;
-  --chip-track0:#6B4EFF;
+  --chip-data:#2C4BE0;
+  --chip-track0:#2C4BE0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -48,7 +48,7 @@ a{color:inherit;text-decoration:none}
 .ribbon input[type="email"]{padding:7px 14px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);color:var(--canvas);font-family:'Inter',sans-serif;font-size:13px;border-radius:3px;letter-spacing:0.02em;text-transform:none;width:220px}
 .ribbon input[type="email"]::placeholder{color:rgba(255,255,255,0.45)}
 .ribbon input[type="email"]:focus{outline:none;border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.15)}
-.ribbon button{background:transparent;border:1px solid rgba(255,255,255,0.3);color:#B8A8FF;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:7px 16px;border-radius:3px;cursor:pointer}
+.ribbon button{background:transparent;border:1px solid rgba(255,255,255,0.3);color:#B9C6F5;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:7px 16px;border-radius:3px;cursor:pointer}
 .ribbon button:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.5)}
 
 .nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
@@ -66,7 +66,7 @@ a{color:inherit;text-decoration:none}
 .hero h1{font-family:'Playfair Display',Georgia,serif;font-size:104px;line-height:0.96;font-weight:400;letter-spacing:-0.03em;margin-bottom:32px;font-style:italic;color:var(--electric)}
 .hero h1 .block{font-style:normal;display:block;color:var(--ink)}
 .hero-sub{font-size:22px;line-height:1.5;color:var(--muted);max-width:560px}
-.hero-portrait{aspect-ratio:4/5;position:relative;overflow:hidden;background:#1C1C1C}
+.hero-portrait{aspect-ratio:4/5;position:relative;overflow:hidden;background:#1A1A1A}
 .hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 
 .pull{background:var(--canvas);color:var(--ink);padding:88px 32px;text-align:center;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);margin:0 32px}
@@ -130,7 +130,7 @@ a{color:inherit;text-decoration:none}
 .cta-title{font-family:'Playfair Display',Georgia,serif;font-size:54px;font-weight:400;font-style:italic;letter-spacing:-0.02em}
 .cta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .cta-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.18);padding:36px}
-.cta-card .kicker{color:#B8A8FF}
+.cta-card .kicker{color:#B9C6F5}
 .cta-card .kicker{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;opacity:0.7;margin-bottom:14px}
 .cta-card h3{font-family:'Playfair Display',Georgia,serif;font-size:28px;line-height:1.2;font-weight:400;margin-bottom:14px}
 .cta-card p{font-size:15px;opacity:0.85;margin-bottom:24px;line-height:1.55}
@@ -249,7 +249,7 @@ img{max-width:100%;height:auto}
     <h1>AI,<br>explained<br><span class="block">quietly.</span></h1>
     <p class="hero-sub">The guides I wish I had when I started. Now they are yours, free, no email wall.</p>
     <p style="font-size:16px;color:var(--muted);margin-top:10px">Want the full system behind these guides? <a href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=free-resources" style="color:var(--accent-deep);text-decoration:underline;text-underline-offset:3px">Start with Fast Forward &rarr;</a></p>
-    <p style="font-family:'Inter',sans-serif;font-size:14px;color:#5C5A57;margin-top:14px">by <strong style="color:#1C1C1C">Fatiha Chikh</strong>, The AI Automation Queen · 20+ years in big tech · hiring 99 AI employees in public · <a href="99.html" style="color:#6B4EFF">the receipts &rarr;</a></p>
+    <p style="font-family:'Inter',sans-serif;font-size:14px;color:#5C5A57;margin-top:14px">by <strong style="color:#1A1A1A">Fatiha Chikh</strong>, The AI Automation Queen · 20+ years in big tech · hiring 99 AI employees in public · <a href="99.html" style="color:#2C4BE0">the receipts &rarr;</a></p>
   </div>
   <div class="hero-portrait"><img src="fatiha-shelf.jpg" alt="Fatiha Chikh" loading="eager" decoding="async"></div>
 </div></section>
@@ -264,25 +264,25 @@ img{max-width:100%;height:auto}
 <!-- start-here paths -->
 <style>
 .paths{max-width:1240px;margin:0 auto;padding:72px 32px 24px}
-.paths-eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6B4EFF}
+.paths-eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#2C4BE0}
 .paths-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,4vw,40px);font-weight:700;margin:6px 0 8px}
 .paths-sub{color:#5C5A57;font-size:16px;max-width:56ch;margin:0 0 28px}
 .paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 @media(max-width:900px){.paths-grid{grid-template-columns:1fr}}
-.path-col{background:#fff;border:1px solid #DEDACE;border-radius:14px;padding:26px 26px 22px;display:flex;flex-direction:column;gap:0}
-.path-col.crown{border-color:#6B4EFF;box-shadow:0 8px 28px rgba(107,78,255,.12)}
-.path-lvl{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6B4EFF}
+.path-col{background:#fff;border:1px solid #D8D6D2;border-radius:14px;padding:26px 26px 22px;display:flex;flex-direction:column;gap:0}
+.path-col.crown{border-color:#2C4BE0;box-shadow:0 8px 28px rgba(107,78,255,.12)}
+.path-lvl{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#2C4BE0}
 .path-name{font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:700;margin:6px 0 4px}
 .path-tag{color:#5C5A57;font-size:14px;margin:0 0 14px;font-family:'Inter',sans-serif}
 .path-check{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#5C5A57;margin:6px 0 6px}
 .path-col ul{list-style:none;margin:0 0 16px;padding:0}
-.path-col li{font-size:14.5px;color:#1C1C1C;padding:7px 0 7px 26px;position:relative;border-bottom:1px dashed #E8E5E0;}
-.path-col li:before{content:"→";position:absolute;left:2px;color:#6B4EFF;font-family:'Space Mono',monospace}
-.path-route{background:#EFEBE1;border:1px solid #EAE5FB;border-radius:10px;padding:12px 16px;margin:auto 0 16px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.04em;color:#4F35D6}
+.path-col li{font-size:14.5px;color:#1A1A1A;padding:7px 0 7px 26px;position:relative;border-bottom:1px dashed #E8E5E0;}
+.path-col li:before{content:"→";position:absolute;left:2px;color:#2C4BE0;font-family:'Space Mono',monospace}
+.path-route{background:#EEF2FC;border:1px solid #E4EAFB;border-radius:10px;padding:12px 16px;margin:auto 0 16px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.04em;color:#1B2EA0}
 .path-route strong{display:block;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5C5A57;margin-bottom:5px}
-.path-cta{display:block;text-align:center;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;text-decoration:none;background:#6B4EFF;color:#fff;border-radius:8px;padding:13px 18px}
-.path-cta:hover{background:#4F35D6}
-.path-cta.ghost{background:transparent;color:#1C1C1C;border:1.5px solid #1C1C1C;margin-top:8px}
+.path-cta{display:block;text-align:center;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;text-decoration:none;background:#2C4BE0;color:#fff;border-radius:8px;padding:13px 18px}
+.path-cta:hover{background:#1B2EA0}
+.path-cta.ghost{background:transparent;color:#1A1A1A;border:1.5px solid #1A1A1A;margin-top:8px}
 </style>
 <section class="paths" id="start-here">
   <div class="paths-eyebrow">Start here</div>
@@ -346,10 +346,10 @@ img{max-width:100%;height:auto}
   </div>
   
 <style>
-.bip{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:#EFEBE1;border:1px solid #EAE5FB;border-radius:14px;padding:16px 24px;margin-bottom:26px}
-.bip .k{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#6B4EFF;flex-shrink:0}
-.bip p{margin:0;font-size:14.5px;color:#1C1C1C;flex:1;min-width:240px}
-.bip a{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:#6B4EFF;text-decoration:none;border-bottom:1px solid #6B4EFF;padding-bottom:2px;white-space:nowrap}
+.bip{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:14px;padding:16px 24px;margin-bottom:26px}
+.bip .k{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#2C4BE0;flex-shrink:0}
+.bip p{margin:0;font-size:14.5px;color:#1A1A1A;flex:1;min-width:240px}
+.bip a{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:#2C4BE0;text-decoration:none;border-bottom:1px solid #2C4BE0;padding-bottom:2px;white-space:nowrap}
 </style>
 <div class="bip">
   <span class="k">Built in public</span>
@@ -873,7 +873,7 @@ img{max-width:100%;height:auto}
       if (meta) {
         var tick = document.createElement('span');
         tick.className = 'row-kicker';
-        tick.style.color = '#6B4EFF';
+        tick.style.color = '#2C4BE0';
         tick.textContent = '\u2713 read';
         meta.appendChild(tick);
       }
@@ -909,7 +909,7 @@ img{max-width:100%;height:auto}
       if (firstUnread) {
         var cont = document.createElement('a');
         cont.href = 'guides/' + firstUnread.slug + '.html';
-        cont.style.cssText = 'color:#6B4EFF;margin-left:10px';
+        cont.style.cssText = 'color:#2C4BE0;margin-left:10px';
         cont.textContent = 'pick up where you left off \u2192';
         strip.appendChild(cont);
       }
@@ -925,7 +925,7 @@ img{max-width:100%;height:auto}
       var tr = tracks[p.k];
       if (col && tr && tr.total) {
         var line = document.createElement('div');
-        line.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;letter-spacing:0.1em;color:' + (tr.done ? '#6B4EFF' : '#5C5A57') + ';margin-top:10px';
+        line.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;letter-spacing:0.1em;color:' + (tr.done ? '#2C4BE0' : '#5C5A57') + ';margin-top:10px';
         line.textContent = tr.done >= tr.total ? '\u2713 COURSE COMPLETE' : 'LESSON ' + (tr.done + 1) + ' OF ' + tr.total;
         col.appendChild(line);
       }
@@ -944,13 +944,13 @@ img{max-width:100%;height:auto}
       if (r.classList.contains('coming-soon')) {
         el = document.createElement('span');
         el.textContent = '\uD83D\uDD12 ' + name + ' \u00b7 ' + (r.querySelector('.row-cta')||{textContent:''}).textContent.replace('Unlocks ','');
-        el.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;padding:5px 10px;border:1px dashed #DEDACE;color:#5C5A57';
+        el.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;padding:5px 10px;border:1px dashed #D8D6D2;color:#5C5A57';
       } else {
         el = document.createElement('a');
         el.href = 'guides/' + slug + '.html';
         var visited = read.indexOf(slug) !== -1;
         el.textContent = (visited ? '\u2713 ' : '') + name;
-        el.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;padding:5px 10px;border:1px solid ' + (visited ? '#6B4EFF' : '#DEDACE') + ';color:' + (visited ? '#6B4EFF' : '#1C1C1C') + ';text-decoration:none';
+        el.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;padding:5px 10px;border:1px solid ' + (visited ? '#2C4BE0' : '#D8D6D2') + ';color:' + (visited ? '#2C4BE0' : '#1A1A1A') + ';text-decoration:none';
       }
       mapWrap.appendChild(el);
     });
