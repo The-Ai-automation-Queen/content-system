@@ -89,10 +89,10 @@ section{scroll-margin-top:70px}
 .module p{font-size:15px;color:var(--muted);line-height:1.6}
 .curriculum-note{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:22px;font-size:15px;color:var(--muted);margin-top:12px}
 
-.bonus-grid{display:grid;gap:18px;margin-top:8px}
-.bonus-card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:22px 26px}
-.bonus-card h4{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:18px;margin-bottom:8px}
-.bonus-card p{font-size:15px;color:var(--muted);line-height:1.6}
+.included-list{list-style:none;margin-top:8px}
+.included-list li{font-size:17px;line-height:1.6;padding:14px 0 14px 30px;border-top:1px solid var(--rule);position:relative}
+.included-list li:last-child{border-bottom:1px solid var(--rule)}
+.included-list li::before{content:"\2713";color:var(--accent-deep);position:absolute;left:0;font-family:'Space Mono',monospace}
 
 .pricing{padding:80px 32px;background:var(--ink);color:var(--canvas)}
 .pricing-inner{max-width:900px;margin:0 auto}
@@ -292,26 +292,13 @@ section{scroll-margin-top:70px}
 </div></section>
 
 <section class="section" id="bonuses"><div class="section-inner">
-  <div class="section-eyebrow">The bonuses, included</div>
-  <p style="margin-bottom:22px">4 complete toolkits ship with your seat, built into the exact lessons where you use them.</p>
-  <div class="bonus-grid">
-    <div class="bonus-card">
-      <h4>The Kitchen Map + Prompt Menu</h4>
-      <p>Which AI for which job, plus copy-paste prompts for all 10 tools. Inside Modules 0 and 1.</p>
-    </div>
-    <div class="bonus-card">
-      <h4>The Judge's Prompts</h4>
-      <p>42 verification prompts that make AI prove its work before you trust it. Inside Modules 1 and 7.</p>
-    </div>
-    <div class="bonus-card">
-      <h4>The AI Time Audit worksheet</h4>
-      <p>The printable one-page audit that finds your first hours to reclaim. Inside Module 0.</p>
-    </div>
-    <div class="bonus-card">
-      <h4>The Business Brain template</h4>
-      <p>The pre-built Notion brain every lesson pulls from. Inside Module 1.</p>
-    </div>
-  </div>
+  <div class="section-eyebrow">Included with your seat</div>
+  <ul class="included-list">
+    <li>Copy-paste prompts for all 10 major AI tools</li>
+    <li>42 checks that make AI prove its work</li>
+    <li>The 1-page audit that finds your first hours to reclaim</li>
+    <li>The pre-built Notion brain the whole course runs on</li>
+  </ul>
 </div></section>
 
 <section class="pricing" id="pricing"><div class="pricing-inner">
