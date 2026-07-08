@@ -67,16 +67,14 @@ h1{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(
 
 <header class="hero">
   <div class="kicker">The Store</div>
-  <h1>Buy once. Use forever.</h1>
-  <p class="sub">Prompt packs, playbooks, and systems: the paid shortcuts behind the free guides. Every product is something I actually use to run my own business.</p>
-  <p style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin:10px 0 0">The Store opens soon &middot; the free guides are open now</p>
+  <h1>The Store opens soon.</h1>
+  <p class="sub">Prompt packs, playbooks, and systems: the paid shortcuts behind the free guides, built from the systems I run my own business on. The shelves are being stocked now.</p>
+  <p style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin:10px 0 0">One list &middot; first word when the doors open &middot; the free guides are open now</p>
   <p class="byline">by <strong>Fatiha Chikh</strong>, The AI Automation Queen · <a href="https://guides.shiftandlead.com/about.html" style="color:var(--accent)">the story →</a></p>
 </header>
 
-<div class="grid" id="products"></div>
-
 <div class="note" id="notify">
-  <strong>While the shelves fill.</strong> The Store opens soon. One list covers everything: join it once and you get the opening email, plus first word when any product on this page goes live.
+  <strong>Get the opening email.</strong> One list covers everything: join it once and you get first word when the Store opens, and when each product goes live.
   <form id="notify-form" style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
     <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:220px;padding:11px 14px;border:1px solid var(--rule);border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
@@ -117,75 +115,5 @@ document.getElementById('notify-form').addEventListener('submit', async function
 
 </div>
 
-<script>
-// ── PRODUCT CONFIG ──────────────────────────────────────────────────────
-// To put a product on sale: paste its Stripe Payment Link or Whop URL into
-// `url` — the button flips from "Coming soon" to "Buy now" automatically.
-// To add a product: copy a block. Nothing else on the page needs touching.
-var PRODUCTS = [
-  {
-    cat: "Prompt pack · ebook",
-    name: "The Prompt Menu: copy-paste prompts for every AI tool",
-    page: "products/prompt-menu.html",
-    desc: "150 copy-paste prompts, 15 per kitchen, across 10 AI tools, plus the which-tool-for-what decision map. Claude, ChatGPT, Gemini, Copilot, and 6 more.",
-    bullets: ["The Kitchen Map: which AI for which job","30 bonus prompts, 3 per tool, not in the free guides","Updated as the kitchens change"],
-    price: "$19",
-    url: ""
-  },
-  {
-    cat: "Prompt pack · ebook",
-    name: "The Judge's Prompts",
-    page: "products/judges-prompts.html",
-    desc: "Make AI prove its work before you trust it. The verification prompts I use so output is right, not just fast.",
-    bullets: ["42 tested verification prompts with when-to-use notes","The 4 Upgrades framework explained","Copy-paste, tool-agnostic"],
-    price: "$27",
-    url: ""
-  },
-  {
-    cat: "Template · worksheet",
-    name: "The AI Time Audit",
-    page: "products/time-audit.html",
-    desc: "Map your week, find the hours AI can take off your plate, and pick your first AI employee, in one sitting.",
-    bullets: ["The audit worksheet (Notion + PDF)","Scoring guide: what to automate first","Spec sheet for your first AI employee"],
-    price: "$47",
-    url: ""
-  },
-  {
-    cat: "System · kit",
-    name: "Business OS Starter Kit",
-    desc: "The system install for non-technical builders: brain template, lite playbooks, full walkthrough. In build.",
-    bullets: ["Notion Brain template, pre-filled","Lite playbooks for the core machines","Full walkthrough video"],
-    price: "$97",
-    status: "In build",
-    url: ""
-  },
-  {
-    cat: "Cohort · 6 weeks",
-    name: "Business OS Bootcamp",
-    desc: "The guided build: six weeks, your business, the whole system installed together. Never sold cold; the waitlist is the door.",
-    bullets: ["Live cohort, small by design","Your automations built during the program","Community membership included"],
-    price: "$997",
-    status: "Cohort waitlist",
-    url: ""
-  }
-];
-var grid = document.getElementById('products');
-PRODUCTS.forEach(function(p){
-  var el = document.createElement('div');
-  el.className = 'product';
-  var live = p.url && p.url.length > 4;
-  el.innerHTML =
-    '<div class="cat">'+p.cat+'</div>'+
-    (p.page ? '<h3><a href="'+p.page+'" style="color:inherit;text-decoration:none">'+p.name+'</a></h3>' : '<h3>'+p.name+'</h3>')+
-    '<p>'+p.desc+'</p>'+
-    '<ul>'+p.bullets.map(function(b){return '<li>'+b+'</li>';}).join('')+'</ul>'+
-    '<div class="buy-row"><span class="price">'+p.price+'</span>'+
-    (live
-      ? '<a class="buy" href="'+p.url+'">Buy now →</a>'
-      : '<span class="buy soon">'+(p.status || 'Opening soon')+'</span>')+
-    '</div>';
-  grid.appendChild(el);
-});
-</script>
 </body>
 </html>

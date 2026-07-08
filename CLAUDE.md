@@ -24,6 +24,7 @@ anything customer-facing. Do not reconstruct canon from this repo's copies.)
 | The newsletter | `ai-insider-brief/` | AI Insider Brief: crawler, approval bot, Kit sender. |
 | Second brain | `content-vault.md`, `research-notes.md` | Every draft and research entry, append-only, numbered. |
 | Lead registry | `lead-magnets.csv` + `lead-magnets/` | Keyword CTAs and the resources behind them. Active rows are live promises. |
+| Brand kit | `brand/` | Visual identity guidelines, logo lockups, favicon/mark masters. |
 | The machines | `skills/` + `docs/machines/` | M00 brain-manager through M06 performance-tracker, plus weekly-ops. |
 | Results | `performance-log.md`, `reports/` | What actually happened. Immutable, dated. |
 | Deploy kit | `deploy/` | VPS bootstrap, crons, hardening, Telegram alerts. |
