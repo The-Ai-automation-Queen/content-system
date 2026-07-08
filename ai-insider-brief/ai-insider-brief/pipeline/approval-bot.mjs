@@ -4,36 +4,21 @@
 
 import { init, sendMessage, sendMessageWithButtons, editMessage, answerCallbackQuery, getUpdates } from './telegram.mjs';
 import { filterItem, synthesizeCard } from './synthesizer.mjs';
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
+import { loadMergedConfig, resolveLLMConfig } from './config-loader.mjs';
+import { getConfig as getNewsletterConfig, buildEmailHTML, selectCards, buildSubject, sendBroadcast } from './newsletter-sender.mjs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, unlinkSync } from 'fs';
 import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+var __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Config — loaded from env
 var BOT_TOKEN;
 var CHAT_ID;
 var BRIEFS_PATH;
 var PENDING_PATH;
+var PREVIEW_TRIGGER_PATH;
 var LLM_CONFIG;
-
-// Load env from file
-function loadEnv(envPath) {
-  var content = readFileSync(envPath, 'utf-8');
-  var env = {};
-  var lines = content.split('\n');
-  for (var i = 0; i < lines.length; i++) {
-    var line = lines[i].trim();
-    if (!line || line.startsWith('#')) continue;
-    var eqIdx = line.indexOf('=');
-    if (eqIdx <= 0) continue;
-    var key = line.substring(0, eqIdx).trim();
-    var val = line.substring(eqIdx + 1).trim();
-    // Strip surrounding quotes
-    if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
-      val = val.slice(1, -1);
-    }
-    env[key] = val;
-  }
-  return env;
-}
 
 // Verdict emoji mapping
 function verdictEmoji(verdict) {
@@ -147,6 +132,148 @@ function removePending(cardId) {
   var pending = loadPending();
   pending = pending.filter(function(c) { return c.id !== cardId; });
   savePending(pending);
+}
+
+// ---------------------------------------------------------------------------
+// TUESDAY SEND-APPROVAL FLOW
+// Constitution Law 11 / Engine Law 1: agents queue, a human releases. This
+// bot never calls Kit's send API on its own. It only ever gets there after
+// the "Send to subscribers" button is tapped in the authorized Telegram
+// chat. Cache is in-memory and keyed by the preview message_id; if the bot
+// restarts between the preview and the tap, the cache is gone and the
+// operator is told to run /preview again rather than risk sending stale data.
+// ---------------------------------------------------------------------------
+
+var previewCache = {}; // message_id -> { cards, mode, nlConfig }
+
+async function buildTuesdayPreviewData() {
+  var nlConfig = getNewsletterConfig();
+  if (!existsSync(nlConfig.briefsPath)) return null;
+
+  var briefsData;
+  try {
+    briefsData = JSON.parse(readFileSync(nlConfig.briefsPath, 'utf-8'));
+  } catch (err) {
+    console.error('[PREVIEW] Could not parse briefs.json: ' + err.message);
+    return null;
+  }
+
+  var allCards = briefsData.cards || [];
+  var mode = 'weekly'; // The Brief sends once a week, Tuesday only (see CONTEXT.md).
+  var cards = selectCards(allCards, mode);
+
+  return { cards: cards, mode: mode, nlConfig: nlConfig };
+}
+
+function formatPreviewMessage(data, statusLine) {
+  var parts = [];
+  parts.push('<b>Tuesday Brief: Send Preview</b>');
+  parts.push('Subject: ' + escapeHtml(buildSubject(data.mode, new Date())));
+  parts.push('Cards: ' + data.cards.length);
+  parts.push('');
+
+  if (data.cards.length === 0) {
+    parts.push('No cards in this window. Sending now would deliver an empty issue.');
+  } else {
+    data.cards.slice(0, 5).forEach(function (c, i) {
+      parts.push((i + 1) + '. [' + (c.category || 'UNCATEGORIZED') + '] ' + escapeHtml(c.headline || ''));
+    });
+    if (data.cards.length > 5) {
+      parts.push('... +' + (data.cards.length - 5) + ' more');
+    }
+  }
+
+  if (statusLine) {
+    parts.push('');
+    parts.push(statusLine);
+  }
+
+  return parts.join('\n');
+}
+
+// Sends the preview card with Send/Skip buttons. Nothing is sent to
+// subscribers until "Send to subscribers" is tapped.
+async function sendTuesdayPreview() {
+  var data = await buildTuesdayPreviewData();
+  if (!data) {
+    await sendMessage(CHAT_ID, '⚠️ Could not build the Tuesday preview: briefs.json not found or unreadable.');
+    return;
+  }
+
+  var text = formatPreviewMessage(data, null);
+  var buttons = [
+    { text: '✅ Send to subscribers', callback_data: 'tuesday:send' },
+    { text: '⏭️ Skip this week', callback_data: 'tuesday:skip' }
+  ];
+  var sent = await sendMessageWithButtons(CHAT_ID, text, buttons);
+  if (sent && sent.message_id) {
+    previewCache[sent.message_id] = data;
+  }
+  console.log('[PREVIEW] Tuesday preview sent (' + data.cards.length + ' card(s)).');
+}
+
+// Handles the "Send to subscribers" / "Skip this week" button taps.
+async function handleTuesdayCallback(action, messageId) {
+  var data = previewCache[messageId];
+
+  if (action === 'skip') {
+    var skipText = data
+      ? formatPreviewMessage(data, '⏭️ <b>SKIPPED THIS WEEK</b>')
+      : '⏭️ <b>SKIPPED THIS WEEK</b>';
+    await editMessage(CHAT_ID, messageId, skipText);
+    delete previewCache[messageId];
+    console.log('[PREVIEW] Tuesday send skipped by operator.');
+    return;
+  }
+
+  if (action === 'send') {
+    if (!data) {
+      await editMessage(CHAT_ID, messageId, '⚠️ Preview data expired (bot restarted since /preview ran). Run /preview again before sending.');
+      return;
+    }
+
+    await editMessage(CHAT_ID, messageId, formatPreviewMessage(data, '⏳ Sending...'));
+
+    try {
+      var html = buildEmailHTML(data.cards, data.mode);
+      var subject = buildSubject(data.mode, new Date());
+      var tagId = data.mode === 'daily' ? data.nlConfig.dailyTagId : data.nlConfig.weeklyTagId;
+      var result = await sendBroadcast(data.nlConfig, subject, html, tagId);
+      var broadcastId = result && result.broadcast ? result.broadcast.id : 'unknown';
+      await editMessage(CHAT_ID, messageId, formatPreviewMessage(data, '✅ <b>SENT</b>. Kit broadcast ID: ' + escapeHtml(String(broadcastId))));
+      console.log('[PREVIEW] Tuesday brief sent. Broadcast ID: ' + broadcastId);
+    } catch (err) {
+      await editMessage(CHAT_ID, messageId, formatPreviewMessage(data, '❌ <b>SEND FAILED</b>: ' + escapeHtml(err.message)));
+      console.error('[PREVIEW] Tuesday send failed: ' + err.message);
+    }
+
+    delete previewCache[messageId];
+  }
+}
+
+// Polled from the main loop. tuesday-preview.mjs (run by cron, Tuesday
+// 05:30 GST) does not send anything itself — it drops a trigger file that
+// this always-on bot picks up and turns into a Telegram preview with
+// buttons. This mirrors checkNewPending()'s file-polling pattern instead of
+// requiring the bot to expose an HTTP endpoint.
+var lastPreviewTriggerCheck = 0;
+var PREVIEW_TRIGGER_CHECK_INTERVAL = 10000; // 10 seconds
+
+async function checkPreviewTrigger() {
+  var now = Date.now();
+  if (now - lastPreviewTriggerCheck < PREVIEW_TRIGGER_CHECK_INTERVAL) return;
+  lastPreviewTriggerCheck = now;
+
+  if (!PREVIEW_TRIGGER_PATH || !existsSync(PREVIEW_TRIGGER_PATH)) return;
+
+  try {
+    // Consume immediately so a slow Telegram call can't cause a double-fire.
+    unlinkSync(PREVIEW_TRIGGER_PATH);
+    console.log('[BOT] Tuesday preview trigger detected. Building preview...');
+    await sendTuesdayPreview();
+  } catch (err) {
+    console.error('[BOT] Preview trigger error: ' + err.message);
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -294,6 +421,9 @@ async function pollLoop() {
       // Check for new pending cards between polls
       await checkNewPending();
 
+      // Check for a Tuesday preview trigger dropped by cron (tuesday-preview.mjs)
+      await checkPreviewTrigger();
+
       var updates = await getUpdates(offset);
 
       for (var j = 0; j < updates.length; j++) {
@@ -364,6 +494,13 @@ async function pollLoop() {
             await editMessage(CHAT_ID, query.message.message_id, '❌ <b>REJECTED AND DISCARDED</b>');
             console.log('[BOT] Card rejected: ' + cardId);
           }
+
+          // Tuesday send-approval flow. cardId here is 'send' or 'skip',
+          // not a card id — see the 'tuesday:send' / 'tuesday:skip' buttons
+          // built in sendTuesdayPreview().
+          else if (action === 'tuesday') {
+            await handleTuesdayCallback(cardId, query.message.message_id);
+          }
         }
 
         // Handle text message
@@ -404,6 +541,13 @@ async function pollLoop() {
             delete editState[CHAT_ID];
             await sendForApproval(es.card);
             console.log('[BOT] Card re-sent for approval after edit.');
+          }
+
+          // /preview — manually trigger the Tuesday send-approval preview
+          // (normally fired by cron via tuesday-preview.mjs, Tuesday 05:30 GST).
+          else if (msgText === '/preview' || msgText.indexOf('/preview') === 0 || msgText.indexOf('/preview@') === 0) {
+            console.log('[BOT] /preview command received.');
+            await sendTuesdayPreview();
           }
 
           // SUBMIT MODE — URL detected → fetch, synthesize, queue
@@ -454,27 +598,16 @@ async function pollLoop() {
 
 // Entry point
 async function main() {
-  // Try multiple env file locations
-  var envPath = process.env.ENV_PATH || '';
-  var paths = [
-    envPath,
-    '/root/ai-insider-brief-pipeline/.env',
-    'C:\\Secrets\\insider-brief.env',
-    './config.env'
-  ].filter(Boolean);
+  // Same config resolution as run.mjs: config.env (repo baseline) layered
+  // under by the deployment secrets file, so LLM_PROVIDER/GEMINI_MODEL
+  // survive even though the secrets file only carries tokens/keys.
+  var loaded = loadMergedConfig(__dirname);
+  var env = loaded.env;
+  console.log('[BOT] Config base: ' + (loaded.basePath || 'not found'));
+  console.log('[BOT] Config secrets: ' + (loaded.secretsPath || 'not found (base config.env only)'));
 
-  var env = null;
-  for (var i = 0; i < paths.length; i++) {
-    if (existsSync(paths[i])) {
-      console.log('[BOT] Loading env from: ' + paths[i]);
-      env = loadEnv(paths[i]);
-      break;
-    }
-  }
-
-  if (!env || !env.TELEGRAM_BOT_TOKEN || !env.TELEGRAM_CHAT_ID) {
-    console.error('[BOT] Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID in env.');
-    console.error('[BOT] Searched paths: ' + paths.join(', '));
+  if (!env.TELEGRAM_BOT_TOKEN || !env.TELEGRAM_CHAT_ID) {
+    console.error('[BOT] Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID in config.');
     process.exit(1);
   }
 
@@ -482,22 +615,19 @@ async function main() {
   CHAT_ID = env.TELEGRAM_CHAT_ID;
   BRIEFS_PATH = env.BRIEFS_JSON_PATH || './data/briefs.json';
   PENDING_PATH = env.PENDING_PATH || './pipeline/cards-pending.json';
+  PREVIEW_TRIGGER_PATH = env.PREVIEW_TRIGGER_PATH || './pipeline/preview-trigger.json';
 
-  // LLM config for submit mode synthesis
-  var llmProvider = env.LLM_PROVIDER || 'ollama';
-  if (llmProvider === 'ollama') {
-    LLM_CONFIG = {
-      provider: 'ollama',
-      ollamaUrl: env.OLLAMA_URL || 'http://localhost:11434',
-      model: env.OLLAMA_MODEL || 'qwen2.5:3b'
-    };
-    console.log('[BOT] LLM: Ollama (' + LLM_CONFIG.model + ')');
+  // LLM config for submit mode synthesis — only falls back to Ollama 3B
+  // when Gemini is genuinely unconfigured, never as a silent default.
+  try {
+    LLM_CONFIG = resolveLLMConfig(env);
+  } catch (err) {
+    console.error('[BOT] ' + err.message);
+    process.exit(1);
+  }
+  if (LLM_CONFIG.provider === 'ollama') {
+    console.log('[BOT] LLM: Ollama (' + LLM_CONFIG.model + ') at ' + LLM_CONFIG.ollamaUrl);
   } else {
-    LLM_CONFIG = {
-      provider: 'gemini',
-      apiKey: env.GEMINI_API_KEY || process.env.GEMINI_API_KEY,
-      model: env.GEMINI_MODEL || 'gemini-2.0-flash'
-    };
     console.log('[BOT] LLM: Gemini (' + LLM_CONFIG.model + ')');
   }
 

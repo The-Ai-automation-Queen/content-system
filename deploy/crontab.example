@@ -62,3 +62,29 @@ SHELL=/bin/bash
 # Every 5 min — polls comments for keyword CTAs, sends DMs via GHL (IG) + Unipile
 # (LinkedIn). Harmless to leave running — it just reports status until wired.
 */5 * * * *  __REPO__/deploy/run-machine.sh "/dm-responder" 0 0
+
+# =============================================================
+# AI Insider Brief (paths assume the estate VPS after deploy/brief-migration;
+# on the legacy brief VPS use /root/ai-insider-brief-pipeline instead) (runs on the brief VPS, not the estate VPS)
+# These lines are NOT for the run-machine.sh estate loop above — they call
+# plain node scripts directly. Install on the separate brief VPS
+# (root@187.77.153.212 per ai-insider-brief/CONTEXT.md), where this repo's
+# ai-insider-brief/ai-insider-brief/pipeline/ contents are deployed flattened
+# into /root/ai-insider-brief-pipeline/ (see ai-insider-brief/DEPLOY.md).
+# The persistent approval bot (pm2 process "insider-brief-bot", not cron)
+# is the only thing that ever calls Kit's send API, and only after a human
+# taps "Send to subscribers" in Telegram — see approval-bot.mjs.
+# =============================================================
+# Crawl + synth — every 12 hours. Queues new cards for Telegram approval.
+0 */12 * * *  cd $HOME/content-system/ai-insider-brief/ai-insider-brief/pipeline && node run.mjs >> /var/log/insider-brief-pipeline.log 2>&1
+
+# Health check — hourly. Alerts Telegram if the bot/Ollama/frontend/briefs.json look wrong.
+0 * * * *     cd $HOME/content-system/ai-insider-brief/ai-insider-brief/pipeline && node health-check.mjs >> /var/log/insider-brief-health.log 2>&1
+
+# Weekly self-audit — Sunday. Dead feeds, filler verdicts, empty verticals, queue depth.
+0 5 * * 0     cd $HOME/content-system/ai-insider-brief/ai-insider-brief/pipeline && node weekly-audit.mjs >> /var/log/insider-brief-audit.log 2>&1
+
+# Tuesday send-approval preview — 05:30 GST. Drops a trigger file; the
+# always-on approval bot turns it into a Telegram preview with Send/Skip
+# buttons. NOTHING sends to subscribers from this line alone.
+30 5 * * 2    cd $HOME/content-system/ai-insider-brief/ai-insider-brief/pipeline && node tuesday-preview.mjs >> /var/log/insider-brief-preview.log 2>&1
