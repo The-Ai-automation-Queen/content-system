@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#FFFFFF">
+<html lang="en" style="background:#F5F2EB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,9 +31,9 @@
 </script>
 <style>
 :root{
-  --canvas:#FFFFFF;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
-  --muted:#5C5A57;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
-  --electric:#2C4BE0;--navy:#1B2EA0;
+  --canvas:#F5F2EB;--surface:#FFFFFF;--cream:#EFEBE1;--ink:#1C1C1C;--rule:#DEDACE;--rule-light:#ECEAE7;
+  --muted:#5C5A57;--accent:#6B4EFF;--accent-deep:#4F35D6;--accent-tint:#EAE5FB;
+  --electric:#6B4EFF;--navy:#4F35D6;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
@@ -47,6 +47,8 @@ a:hover{color:var(--accent-deep)}
 .nav-links a{color:var(--ink);text-decoration:none}
 .nav-links a:hover,.nav-links a.active{color:var(--accent)}
 .nav-links a.active{color:var(--accent)}
+.nav-links .nav-cta{background:var(--accent);color:#fff;padding:9px 16px;border-radius:3px;font-weight:600}
+.nav-links .nav-cta:hover{background:var(--accent-deep)}
 
 .hero{padding:88px 32px 56px;text-align:center}
 .hero-inner{max-width:880px;margin:0 auto}
@@ -92,7 +94,7 @@ a:hover{color:var(--accent-deep)}
 .how li{counter-increment:step;position:relative;padding-left:52px;font-size:17px;line-height:1.6}
 .how li::before{content:counter(step,decimal-leading-zero);position:absolute;left:0;top:2px;font-family:'Space Mono',monospace;font-weight:700;font-size:15px;color:var(--electric)}
 
-.cta-band{margin:96px 32px 0;padding:56px 32px;background:var(--navy);text-align:center;border-radius:6px}
+.cta-band{margin:96px 32px 0;padding:56px 32px;background:var(--ink);text-align:center;border-radius:6px}
 .cta-band h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(26px,3.6vw,38px);font-weight:400;color:#fff;max-width:640px;margin:0 auto}
 .cta-band p{color:rgba(255,255,255,0.85);margin:16px auto 0;max-width:520px;font-size:17px}
 .btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:14px 34px;background:#fff;color:var(--ink);text-decoration:none;border-radius:4px;margin-top:26px}
@@ -100,7 +102,14 @@ a:hover{color:var(--accent-deep)}
 .cta-sub{display:block;margin-top:16px}
 .cta-sub a{color:rgba(255,255,255,0.85)}
 
-.footer{margin-top:120px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+.footer{background:var(--ink);color:var(--canvas);margin-top:120px;padding:56px 32px 32px}
+.footer-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;align-items:start;text-align:left}
+.footer-brand{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:700;margin-bottom:12px}
+.footer-tag{opacity:0.7;font-size:14px;max-width:360px}
+.footer-col-head{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;opacity:0.6;margin-bottom:12px}
+.footer-link{display:block;font-size:14px;padding:4px 0;color:var(--canvas);opacity:0.9;text-decoration:none}
+.footer-legal{max-width:1240px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,0.12);font-size:11px;opacity:0.5;font-family:'Space Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;text-align:center}
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr;gap:28px}}
 
 @media(max-width:760px){
   .nav-inner{padding:16px 20px}
@@ -118,7 +127,7 @@ a:hover{color:var(--accent-deep)}
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="free-resources.html">Shift &amp; Lead</a>
-    <div class="nav-links"><a href="free-resources.html">Home</a><a href="free-resources.html#library">Free Resources</a><a href="99.html" class="active">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
+    <div class="nav-links"><a href="free-resources.html">Home</a><a href="free-resources.html#library">Free Resources</a><a href="99.html" class="active">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html">Fast Forward</a></div>
   </div>
 </nav>
 
@@ -215,9 +224,30 @@ a:hover{color:var(--accent-deep)}
   <span class="cta-sub">Not sure what to delegate first? <a href="time-audit.html">Take the 3-minute Time Leak Quiz</a></span>
 </section>
 
-<div class="footer">
-  <p>Shift &amp; Lead &middot; The 99 &middot; &copy; 2026 &middot; <a href="privacy.html" style="color:inherit">Privacy</a></p>
+<footer class="footer"><div class="footer-inner">
+  <div>
+    <div class="footer-brand">Shift &amp; Lead</div>
+    <p class="footer-tag">For everyday entrepreneurs who want AI and automation to buy back their time. Built by someone who did it herself.</p>
+  </div>
+  <div>
+    <div class="footer-col-head">Explore</div>
+    <a class="footer-link" href="https://guides.shiftandlead.com">The Free Guides</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#cases">Case Studies</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/fast-forward.html">Fast Forward</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/work-with-fatiha.html">Workshops</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#further">Community</a>
+    <a class="footer-link" href="about.html">About</a>
+  </div>
+  <div>
+    <div class="footer-col-head">Connect</div>
+    <a class="footer-link" href="https://www.instagram.com/thefatihachikh" target="_blank" rel="noopener">Instagram</a>
+    <a class="footer-link" href="https://linkedin.com/in/fatihachikh" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="footer-link" href="https://brief.shiftandlead.com">The Insider Brief</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#contact">Contact</a>
+  </div>
 </div>
+<div class="footer-legal"><a href="privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved.</div>
+</footer>
 
 <script>
 (function(){

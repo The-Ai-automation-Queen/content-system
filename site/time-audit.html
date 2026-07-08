@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#FFFFFF">
+<html lang="en" style="background:#F5F2EB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,14 +31,14 @@
   "applicationCategory": "BusinessApplication",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
   "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
-  "publisher": {"@type": "Organization", "name": "The AI Automation Queen", "url": "https://www.shiftandlead.com"}
+  "publisher": {"@type": "Organization", "name": "Shift & Lead", "url": "https://www.shiftandlead.com"}
 }
 </script>
 <style>
 :root{
-  --canvas:#FFFFFF;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
-  --muted:#5C5A57;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
-  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;--red:#E63955;
+  --canvas:#F5F2EB;--cream:#EFEBE1;--ink:#1C1C1C;--rule:#DEDACE;--rule-light:#ECEAE7;
+  --muted:#5C5A57;--accent:#6B4EFF;--accent-deep:#4F35D6;--accent-tint:#EAE5FB;
+  --electric:#6B4EFF;--navy:#4F35D6;--surface:#FFFFFF;--red:#E63955;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -99,8 +99,8 @@ button{font-family:inherit}
 .r-bar-row.worst .r-bar-fill{background:var(--red)}
 .r-bar-val{font-family:'Space Mono',monospace;font-size:12px;color:var(--ink);text-align:right;font-variant-numeric:tabular-nums}
 
-.r-cta{background:var(--navy);color:var(--canvas);border-radius:6px;padding:34px 32px;margin-bottom:20px}
-.r-cta .k{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#9FB4FF;margin-bottom:12px}
+.r-cta{background:var(--ink);color:var(--canvas);border-radius:6px;padding:34px 32px;margin-bottom:20px}
+.r-cta .k{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#B8A8FF;margin-bottom:12px}
 .r-cta h3{font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:400;line-height:1.25;margin-bottom:10px}
 .r-cta p{font-size:15px;color:rgba(248,247,245,0.85);line-height:1.55;margin-bottom:22px}
 .r-cta a{display:inline-block;padding:14px 24px;background:var(--canvas);color:var(--ink);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;border-radius:3px}
@@ -131,14 +131,28 @@ button{font-family:inherit}
   .r-bar-row{grid-template-columns:96px 1fr 40px}
 }
 
-.footer{margin-top:100px;padding:36px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+.footer{background:var(--ink);color:var(--canvas);margin-top:100px;padding:56px 32px 32px}
+.footer-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;align-items:start;text-align:left}
+.footer-brand{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:700;margin-bottom:12px}
+.footer-tag{opacity:0.7;font-size:14px;max-width:360px}
+.footer-col-head{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;opacity:0.6;margin-bottom:12px}
+.footer-link{display:block;font-size:14px;padding:4px 0;color:var(--canvas);opacity:0.9;text-decoration:none}
+.footer-legal{max-width:1240px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,0.12);font-size:11px;opacity:0.5;font-family:'Space Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;text-align:center}
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr;gap:28px}}
 .nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:22px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent-deep)}
+.nav-links .nav-cta{background:var(--accent);color:#fff;padding:9px 16px;border-radius:3px;font-weight:600}
+.nav-links .nav-cta:hover{background:var(--accent-deep)}
+@media (max-width:640px){.nav-links{display:none}}
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="free-resources.html">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="free-resources.html">Home</a><a href="free-resources.html#library">Free Resources</a><a href="99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html">Fast Forward</a></div>
   <a class="nav-back" href="free-resources.html">&larr; All free guides</a>
 </div></nav>
 
@@ -205,9 +219,30 @@ button{font-family:inherit}
 
 </div>
 
-<div class="footer">
-  <p>Shift &amp; Lead &middot; The AI Time Audit &middot; &copy; 2026 &middot; <a href="privacy.html" style="color:inherit">Privacy</a></p>
+<footer class="footer"><div class="footer-inner">
+  <div>
+    <div class="footer-brand">Shift &amp; Lead</div>
+    <p class="footer-tag">For everyday entrepreneurs who want AI and automation to buy back their time. Built by someone who did it herself.</p>
+  </div>
+  <div>
+    <div class="footer-col-head">Explore</div>
+    <a class="footer-link" href="https://guides.shiftandlead.com">The Free Guides</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#cases">Case Studies</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/fast-forward.html">Fast Forward</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/work-with-fatiha.html">Workshops</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#further">Community</a>
+    <a class="footer-link" href="about.html">About</a>
+  </div>
+  <div>
+    <div class="footer-col-head">Connect</div>
+    <a class="footer-link" href="https://www.instagram.com/thefatihachikh" target="_blank" rel="noopener">Instagram</a>
+    <a class="footer-link" href="https://linkedin.com/in/fatihachikh" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="footer-link" href="https://brief.shiftandlead.com">The Insider Brief</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#contact">Contact</a>
+  </div>
 </div>
+<div class="footer-legal"><a href="privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved.</div>
+</footer>
 
 <script>
 (function(){
@@ -462,7 +497,7 @@ button{font-family:inherit}
       var intro = document.querySelector('.intro-kicker');
       if (intro) {
         var note = document.createElement('p');
-        note.style.cssText = "font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.08em;color:#2C4BE0;margin-top:10px";
+        note.style.cssText = "font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.08em;color:#6B4EFF;margin-top:10px";
         note.textContent = 'Your last score: ' + prev.hours + ' hrs/week on ' + prev.date + '. Retake and compare.';
         intro.parentNode.insertBefore(note, intro.nextSibling);
       }
