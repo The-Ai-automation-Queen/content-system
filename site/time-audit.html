@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#FFFFFF">
+<html lang="en" style="background:#F5F2EB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="robots" content="noai, noimageai">
+<meta name="robots" content="index, follow, max-image-preview:large, noai, noimageai">
 <meta name="description" content="The free 3-minute Time Leak Quiz: find out how many hours a week your business leaks to manual work, where the biggest leak is, and the exact free guide to fix it first.">
 <title>The Time Leak Quiz: How Many Hours Are You Leaking? | Shift &amp; Lead</title>
 <link rel="canonical" href="https://guides.shiftandlead.com/time-audit.html">
@@ -31,14 +31,14 @@
   "applicationCategory": "BusinessApplication",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
   "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
-  "publisher": {"@type": "Organization", "name": "The AI Automation Queen", "url": "https://www.shiftandlead.com"}
+  "publisher": {"@type": "Organization", "name": "Shift & Lead", "url": "https://www.shiftandlead.com"}
 }
 </script>
 <style>
 :root{
-  --canvas:#FFFFFF;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
-  --muted:#5C5A57;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
-  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;--red:#E63955;
+  --canvas:#F5F2EB;--cream:#EFEBE1;--ink:#1C1C1C;--rule:#DEDACE;--rule-light:#ECEAE7;
+  --muted:#5C5A57;--accent:#6B4EFF;--accent-deep:#4F35D6;--accent-tint:#EAE5FB;
+  --electric:#6B4EFF;--navy:#4F35D6;--surface:#FFFFFF;--red:#E63955;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -99,8 +99,8 @@ button{font-family:inherit}
 .r-bar-row.worst .r-bar-fill{background:var(--red)}
 .r-bar-val{font-family:'Space Mono',monospace;font-size:12px;color:var(--ink);text-align:right;font-variant-numeric:tabular-nums}
 
-.r-cta{background:var(--navy);color:var(--canvas);border-radius:6px;padding:34px 32px;margin-bottom:20px}
-.r-cta .k{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#9FB4FF;margin-bottom:12px}
+.r-cta{background:var(--ink);color:var(--canvas);border-radius:6px;padding:34px 32px;margin-bottom:20px}
+.r-cta .k{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#B8A8FF;margin-bottom:12px}
 .r-cta h3{font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:400;line-height:1.25;margin-bottom:10px}
 .r-cta p{font-size:15px;color:rgba(248,247,245,0.85);line-height:1.55;margin-bottom:22px}
 .r-cta a{display:inline-block;padding:14px 24px;background:var(--canvas);color:var(--ink);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;border-radius:3px}
@@ -131,14 +131,29 @@ button{font-family:inherit}
   .r-bar-row{grid-template-columns:96px 1fr 40px}
 }
 
-.footer{margin-top:100px;padding:36px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+.footer{background:var(--ink);color:var(--canvas);margin-top:100px;padding:56px 32px 32px}
+.footer-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;align-items:start;text-align:left}
+.footer-brand{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:700;margin-bottom:12px}
+.footer-tag{opacity:0.7;font-size:14px;max-width:360px}
+.footer-col-head{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;opacity:0.6;margin-bottom:12px}
+.footer-link{display:block;font-size:14px;padding:4px 0;color:var(--canvas);opacity:0.9;text-decoration:none}
+.footer-legal{max-width:1240px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,0.12);font-size:11px;opacity:0.5;font-family:'Space Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;text-align:center}
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr;gap:28px}}
 .nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:22px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent-deep)}
+.nav-links .nav-cta{background:var(--accent);color:#fff;padding:9px 16px;border-radius:3px;font-weight:600}
+.nav-links .nav-cta:hover{background:var(--accent-deep)}
+@media (max-width:640px){.nav-links{display:none}}
 </style>
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="free-resources.html">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="free-resources.html">Home</a><a href="free-resources.html#library">Free Resources</a><a href="99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=time-audit">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=time-audit">Fast Forward</a></div>
   <a class="nav-back" href="free-resources.html">&larr; All free guides</a>
 </div></nav>
 
@@ -148,7 +163,7 @@ button{font-family:inherit}
   <section class="intro" id="intro">
     <div class="intro-kicker">The Time Leak Quiz &middot; free &middot; 3 minutes</div>
     <h1>How many hours is your business <em>leaking?</em></h1>
-    <p class="sub">Eight questions about how your week actually runs, content, leads, admin, and the stuff only you can do. At the end: your leak in hours per week, where it&rsquo;s worst, and the exact free guide to fix that first.</p>
+    <p class="sub">Eight questions about how your week actually runs, content, leads, admin, and the stuff only you can do. At the end: your leak in hours per week, where it leaks worst, and the exact free guide to fix that first.</p>
     <div class="intro-facts">
       <span class="intro-fact"><strong>8</strong> questions</span>
       <span class="intro-fact"><strong>3</strong> minutes</span>
@@ -184,20 +199,20 @@ button{font-family:inherit}
       <div class="k" id="cta-k">Fix the biggest leak first</div>
       <h3 id="cta-title"></h3>
       <p id="cta-desc"></p>
-      <a id="cta-link" href="#">Get the free guide &rarr;</a>
+      <a id="cta-link" href="free-resources.html">Get the free guide &rarr;</a>
     </div>
-    <p class="r-secondary">Want the full fix, not just the score? The paid AI Time Audit is coming to the Store. <a href="https://www.shiftandlead.com/store.html">Get first word when it opens &rarr;</a></p>
+    <p class="r-secondary">Want the full fix, not just the score? Fast Forward turns your audit into working systems, lesson by lesson. <a href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=time-audit">See Fast Forward &rarr;</a></p>
     <p class="r-secondary">Prefer to fix it with people one step ahead of you? <a href="about.html#community">The founding community is opening soon. Get on the list.</a></p>
 
     <div class="r-email">
       <h4>Email me my full audit.</h4>
-      <p>Your result, the breakdown, and the fix-first plan, in your inbox so it doesn&rsquo;t vanish with this tab.</p>
+      <p>Your result, the breakdown, and the fix-first plan, in your inbox so it does not vanish with this tab.</p>
       <form class="r-email-row" id="email-form">
         <input type="email" name="email" placeholder="your@email.com" required>
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <button type="submit">Send it</button>
       </form>
-      <p class="r-email-note" id="email-note">No spam. No sequences you didn&rsquo;t ask for.</p>
+      <p class="r-email-note" id="email-note">No spam. No sequences you did not ask for.</p>
     </div>
 
     <div class="r-retake"><button type="button" id="retake">&larr; Retake the quiz</button></div>
@@ -205,9 +220,30 @@ button{font-family:inherit}
 
 </div>
 
-<div class="footer">
-  <p>Shift &amp; Lead &middot; The AI Time Audit &middot; &copy; 2026 &middot; <a href="privacy.html" style="color:inherit">Privacy</a></p>
+<footer class="footer"><div class="footer-inner">
+  <div>
+    <div class="footer-brand">Shift &amp; Lead</div>
+    <p class="footer-tag">For everyday entrepreneurs who want AI and automation to buy back their time. Built by someone who did it herself.</p>
+  </div>
+  <div>
+    <div class="footer-col-head">Explore</div>
+    <a class="footer-link" href="https://guides.shiftandlead.com">The Free Guides</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#cases">Case Studies</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=time-audit">Fast Forward</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=time-audit">Workshops</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#further">Community</a>
+    <a class="footer-link" href="about.html">About</a>
+  </div>
+  <div>
+    <div class="footer-col-head">Connect</div>
+    <a class="footer-link" href="https://www.instagram.com/thefatihachikh" target="_blank" rel="noopener">Instagram</a>
+    <a class="footer-link" href="https://linkedin.com/in/fatihachikh" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="footer-link" href="https://brief.shiftandlead.com">The Insider Brief</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#contact">Contact</a>
+  </div>
 </div>
+<div class="footer-legal"><a href="privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved.</div>
+</footer>
 
 <script>
 (function(){
@@ -462,7 +498,7 @@ button{font-family:inherit}
       var intro = document.querySelector('.intro-kicker');
       if (intro) {
         var note = document.createElement('p');
-        note.style.cssText = "font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.08em;color:#2C4BE0;margin-top:10px";
+        note.style.cssText = "font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.08em;color:#6B4EFF;margin-top:10px";
         note.textContent = 'Your last score: ' + prev.hours + ' hrs/week on ' + prev.date + '. Retake and compare.';
         intro.parentNode.insertBefore(note, intro.nextSibling);
       }

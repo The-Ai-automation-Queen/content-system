@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#FFFFFF">
+<html lang="en" style="background:#F5F2EB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="robots" content="noai, noimageai">
+<meta name="robots" content="index, follow, max-image-preview:large, noai, noimageai">
 <title id="page-title">Get the guide · Shift &amp; Lead</title>
+<meta name="description" content="Enter your email and get the free guide sent straight to your inbox, from Shift &amp; Lead.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shift &amp; Lead">
+<meta property="og:title" content="Get the guide, Shift &amp; Lead">
+<meta property="og:description" content="Enter your email and get the free guide sent straight to your inbox, from Shift &amp; Lead.">
+<meta property="og:url" content="https://guides.shiftandlead.com/opt-in.html">
+<meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
+<link rel="canonical" href="https://guides.shiftandlead.com/opt-in.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --canvas:#FFFFFF;
-  --cream:#EEF2FC;
-  --ink:#1A1A1A;
-  --rule:#D8D6D2;
+  --canvas:#F5F2EB;
+  --surface:#FFFFFF;
+  --cream:#EFEBE1;
+  --ink:#1C1C1C;
+  --rule:#DEDACE;
   --muted:#5C5A57;
-  --accent:#2C4BE0;
-  --accent-deep:#1B2EA0;
-  --accent-tint:#E4EAFB;
-  --electric:#2C4BE0;
-  --navy:#1B2EA0;
+  --accent:#6B4EFF;
+  --accent-deep:#4F35D6;
+  --accent-tint:#EAE5FB;
+  --electric:#6B4EFF;
+  --navy:#4F35D6;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -30,10 +39,16 @@ a{color:inherit;text-decoration:none}
 
 /* NAV */
 .nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
-.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink)}
 .nav-back{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:2px}
 .nav-back:hover{border-bottom-color:var(--ink);color:var(--ink)}
+.nav-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent-deep)}
+.nav-links .nav-cta{background:var(--accent);color:#fff;padding:9px 16px;border-radius:3px;font-weight:600}
+.nav-links .nav-cta:hover{background:var(--accent-deep)}
+@media (max-width:700px){.nav-links{display:none}}
 
 /* CHIP */
 .chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff;margin-bottom:28px}
@@ -117,11 +132,13 @@ a{color:inherit;text-decoration:none}
   .footer-legal{font-size:10px}
 }
 </style>
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="free-resources.html">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="free-resources.html">Home</a><a href="free-resources.html#library">Free Resources</a><a href="99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=opt-in">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=opt-in">Fast Forward</a></div>
   <a class="nav-back" href="free-resources.html">← All free guides</a>
 </div></nav>
 
@@ -133,7 +150,7 @@ a{color:inherit;text-decoration:none}
     <h1 class="guide-title" id="guide-title">Loading…</h1>
     <p class="guide-desc" id="guide-desc"></p>
     <div class="guide-what" id="guide-what">
-      <div class="guide-what-label">What's inside</div>
+      <div class="guide-what-label">What is inside</div>
       <ul id="guide-bullets"></ul>
     </div>
   </div>
@@ -162,7 +179,7 @@ a{color:inherit;text-decoration:none}
     <div class="success" id="success-state">
       <div class="success-check">✓</div>
       <div class="success-title">Opening your guide…</div>
-      <p class="success-sub">Also heading to your inbox in case you want it later.<br>If it doesn't appear in 5 minutes, check spam.</p>
+      <p class="success-sub">Also heading to your inbox in case you want it later.<br>If it does not appear in 5 minutes, check spam.</p>
     </div>
   </div>
 
@@ -177,21 +194,26 @@ a{color:inherit;text-decoration:none}
 <footer class="footer"><div class="footer-inner">
   <div>
     <div class="footer-brand">Shift &amp; Lead</div>
-    <p class="footer-tag">For everyone quietly overwhelmed by AI. Real guides. Tested in real businesses.</p>
+    <p class="footer-tag">For everyday entrepreneurs who want AI and automation to buy back their time. Built by someone who did it herself.</p>
   </div>
   <div>
-    <div class="footer-col-head">Library</div>
-    <a class="footer-link" href="free-resources.html#library">All guides</a>
-    <a class="footer-link" href="free-resources.html">Home</a>
-  </div>
-  <div>
-    <div class="footer-col-head">Work with Fatiha</div>
-    <a class="footer-link" href="about.html#community">Community</a>
+    <div class="footer-col-head">Explore</div>
+    <a class="footer-link" href="https://guides.shiftandlead.com">The Free Guides</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#cases">Case Studies</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=opt-in">Fast Forward</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=opt-in">Workshops</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#further">Community</a>
     <a class="footer-link" href="about.html">About</a>
-    <a class="footer-link" href="https://www.shiftandlead.com/work-with-fatiha.html">Keynotes &amp; workshops</a>
+  </div>
+  <div>
+    <div class="footer-col-head">Connect</div>
+    <a class="footer-link" href="https://www.instagram.com/thefatihachikh" target="_blank" rel="noopener">Instagram</a>
+    <a class="footer-link" href="https://linkedin.com/in/fatihachikh" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="footer-link" href="https://brief.shiftandlead.com">The Insider Brief</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#contact">Contact</a>
   </div>
 </div>
-<div class="footer-legal"><a href="privacy.html" style="color:inherit">Privacy</a> · &copy; 2026 Shift &amp; Lead. All rights reserved.</div>
+<div class="footer-legal"><a href="privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved.</div>
 </footer>
 
 <script>
@@ -353,18 +375,18 @@ var GUIDES = {
   'chez-mistral': {
     chip: 'DECODE', chipClass: 'chip-blue',
     title: 'Chez Mistral. Open kitchen. Nothing leaves the building.',
-    desc: 'Le Chat, Mistral Large, Magistral, Vibe coding, No Telemetry Mode: the Paris kitchen, at $14.99/mo.',
+    desc: 'Le Chat, Mistral Large, Magistral, Vibe coding, No Telemetry Mode: the Paris kitchen, mapped clean.',
     bullets: [
       'The door: why Mistral markets itself on privacy first',
       'The kitchen: Le Chat, Magistral, and Vibe coding, explained without the jargon',
       'The plate: what No Telemetry Mode actually means for your data',
-      'Where $14.99/mo lands compared to the rest of the menu'
+      'Where Mistral Pro lands compared to the rest of the menu'
     ]
   },
   'chez-deepseek': {
     chip: 'DECODE', chipClass: 'chip-blue',
     title: 'Chez DeepSeek. Same plates. A fraction of the price.',
-    desc: 'V4 Flash, V4 Pro, 1M context: the dirt-cheap open-source kitchen from China, mapped clean.',
+    desc: 'V4 Flash, V4 Pro, 1M context: the open-source kitchen from China, mapped clean.',
     bullets: [
       'The door: how DeepSeek undercuts everyone else on price',
       'The kitchen: V4 Flash, V4 Pro, and the 1M-token context window, explained in plain English',

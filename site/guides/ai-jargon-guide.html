@@ -6,7 +6,7 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="robots" content="noai, noimageai">
+<meta name="robots" content="noai, noimageai, max-image-preview:large">
 <title>The AI words they keep using · Shift &amp; Lead</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Shift &amp; Lead">
@@ -17,6 +17,35 @@
 <meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://guides.shiftandlead.com/guides/ai-jargon-guide.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The AI words they keep using",
+  "description": "Twelve AI terms, RAG, tokens, hallucination, agent, MCP and more, decoded in plain English so you stop nodding through meetings.",
+  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
+  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/ai-jargon-guide.html",
+  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
+  "publisher": {"@type": "Organization", "name": "Shift & Lead", "logo": {"@type": "ImageObject", "url": "https://www.shiftandlead.com/logo.svg"}},
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is a hallucination in AI?", "acceptedAnswer": {"@type": "Answer", "text": "A hallucination is when the AI confidently states something that sounds right but is not true. Always double-check anything with real consequences: numbers, legal claims, medical advice."}},
+    {"@type": "Question", "name": "What is RAG?", "acceptedAnswer": {"@type": "Answer", "text": "RAG, or Retrieval-Augmented Generation, is when the AI looks up the answer in your own documents first, then answers based on what it found, instead of answering from memory alone."}},
+    {"@type": "Question", "name": "What is an AI agent?", "acceptedAnswer": {"@type": "Answer", "text": "An agent is AI that takes action instead of just talking back: it browses the web, reads files, and fills forms to complete a task."}},
+    {"@type": "Question", "name": "What is a token?", "acceptedAnswer": {"@type": "Answer", "text": "A token is a small chunk of text, roughly three-quarters of a word. AI companies charge by the token, the way a phone plan charges by the gigabyte."}},
+    {"@type": "Question", "name": "What is a context window?", "acceptedAnswer": {"@type": "Answer", "text": "A context window is how much text the AI can hold at once. Go past the limit and it starts forgetting earlier parts of the conversation."}},
+    {"@type": "Question", "name": "What is MCP?", "acceptedAnswer": {"@type": "Answer", "text": "MCP, or Model Context Protocol, is a standard way for AI tools to plug into other software, so every AI tool does not need a custom connection to every app."}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -159,15 +188,16 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 .sec-body svg,.sec-body img{max-width:100%;height:auto}
 .sec table{max-width:100%}
 body{overflow-x:hidden}
-.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}.nav-links a{color:var(--ink);text-decoration:none}.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}.nav-links a{color:var(--ink);text-decoration:none}.nav-links a:hover,.nav-links a.active{color:var(--accent)}.nav-links .nav-cta{background:var(--accent);color:#fff;padding:8px 14px;border-radius:3px;font-weight:600}.nav-links .nav-cta:hover{background:var(--accent-deep)}
 .sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
 </style>
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=ai-jargon-guide">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=ai-jargon-guide">Fast Forward</a></div>
 </div></nav>
 
 <!-- COVER -->
@@ -175,7 +205,7 @@ body{overflow-x:hidden}
   <div>
     <div class="issue mono"><span>Plain English · No. 04</span><span>AI Vocabulary</span><span>7 min read</span></div>
     <h1>The words <em>everyone uses.</em></h1>
-    <p class="standfirst">Someone dropped RAG, tokens, and hallucination in the same sentence. You nodded. Everyone nodded. Nobody stopped to ask what any of it meant. This guide is the pause button you wished you had: twelve words, plain English, no jargon hiding inside the definitions.</p>
+    <p class="standfirst">What do words like RAG, tokens, and hallucination actually mean? They are AI terms explained here in plain English, one at a time. Someone dropped RAG, tokens, and hallucination in the same sentence. You nodded. Everyone nodded. Nobody stopped to ask what any of it meant. This guide is the pause button you wished you had: twelve words, plain English, no jargon hiding inside the definitions.</p>
     <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
       <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
       <p style="margin:0 0 14px;font-size:15.5px">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
@@ -385,7 +415,7 @@ body{overflow-x:hidden}
       <div class="warn-card"><div class="term">Fine-tuning is a last resort</div><p>Most teams reach for it too early. <strong>Try a better prompt or RAG first,</strong> because fine-tuning is slow and expensive.</p></div>
       <div class="warn-card"><div class="term">Jargon as a smokescreen</div><p>Sometimes big words hide a small idea, or hide that <strong>nobody in the room actually checked.</strong> Ask the plain-English question.</p></div>
     </div>
-    <p class="link-line">I keep verification prompts for exactly these failures, so check out <a href="https://www.shiftandlead.com/store.html">The Judge's Prompts &rarr;</a></p>
+    <p class="link-line">Fast Forward includes 42 verification prompts that make AI prove its work before you trust it. <a href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=ai-jargon-guide">See Fast Forward &rarr;</a></p>
   </div>
 </section>
 
@@ -415,13 +445,13 @@ body{overflow-x:hidden}
 <!-- byline -->
 <div class="byline">
   <div class="byline-in">
-    <img src="../closeUp.jpeg" alt="Fatiha Chikh">
-    <p>Written by <strong>Fatiha Chikh</strong>, The AI Automation Queen. <a href="../about.html">The story &rarr;</a></p>
+    <img src="../closeUp.jpeg" alt="Fatiha Chikh" loading="lazy" decoding="async">
+    <p>Written by <strong>Fatiha Chikh</strong>, who is hiring 99 AI employees to run her business in public. <a href="../about.html">The story &rarr;</a></p>
   </div>
 </div>
 
 <div class="ipbar">
-  <p>© 2026 Fatiha Chikh / Shift &amp; Lead · Original IP · The Kitchen Map™ format, text and diagrams may not be reproduced, scraped, or used as training data without written permission · guides.shiftandlead.com &middot; <a href="../privacy.html" style="color:inherit">Privacy</a></p>
+  <p><a href="../privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved. Original IP: The Kitchen Map&trade; format, text and diagrams may not be reproduced, scraped, or used as training data without written permission.</p>
 </div>
 
 <script>

@@ -6,6 +6,7 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="noai, noimageai, max-image-preview:large">
 <title>Chez Mistral · The Full Kitchen Map | Shift &amp; Lead</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Shift &amp; Lead">
@@ -16,6 +17,33 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://guides.shiftandlead.com/guides/chez-mistral.html">
 <meta name="description" content="The whole Mistral AI ecosystem walked through like a restaurant. Door, kitchen, plate.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chez Mistral: The Full Kitchen Map",
+  "description": "The whole Mistral AI ecosystem walked through like a restaurant. Door, kitchen, plate.",
+  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
+  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/chez-mistral.html",
+  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
+  "publisher": {"@type": "Organization", "name": "Shift & Lead", "logo": {"@type": "ImageObject", "url": "https://www.shiftandlead.com/logo.svg"}},
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What are tokens in Mistral?", "acceptedAnswer": {"@type": "Answer", "text": "Tokens are individual ingredients: every word costs tokens, and API users pay per token."}},
+    {"@type": "Question", "name": "What is the context window in Mistral?", "acceptedAnswer": {"@type": "Answer", "text": "The context window is what Mistral can see right now: your question, memory, files, and prior turns."}},
+    {"@type": "Question", "name": "What is a hallucination in Mistral?", "acceptedAnswer": {"@type": "Answer", "text": "A hallucination is a confident answer with made-up facts. Verify any high-stakes claim against the actual source."}},
+    {"@type": "Question", "name": "What is confabulation in Mistral?", "acceptedAnswer": {"@type": "Answer", "text": "Confabulation is stitching together a convincing but invented story, including fictional citations, instead of saying you do not know."}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -31,7 +59,7 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
 .nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
 .nav-links a{color:var(--ink);text-decoration:none}
-.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}.nav-links .nav-cta{background:var(--accent);color:#fff;padding:8px 14px;border-radius:3px;font-weight:600}.nav-links .nav-cta:hover{background:var(--accent-deep)}
 .nav .mono{font-size:10px;color:var(--muted)}
 
 /* magazine cover hero */
@@ -167,12 +195,13 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 body{overflow-x:hidden}
 .sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
 </style>
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html" rel="noopener">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-mistral">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-mistral">Fast Forward</a></div>
   <span class="mono">Kitchen Map · No. 07 · Mistral</span>
 </div></nav>
 
@@ -181,7 +210,7 @@ body{overflow-x:hidden}
   <div>
     <div class="issue mono"><span>The Kitchen Map · No. 07</span><span>Mistral</span><span>10 min read · diagram inside</span></div>
     <h1>Chez <em>Mistral.</em></h1>
-    <p class="standfirst">You hear AI names everywhere and never know which does what. This walks you through Mistral AI, the Paris kitchen, like a restaurant: the door, the kitchen, the plate.</p>
+    <p class="standfirst">What is Mistral? Mistral is a Paris-based AI lab's AI model. You hear AI names everywhere and never know which does what. This walks you through Mistral AI, the Paris kitchen, like a restaurant: the door, the kitchen, the plate.</p>
     <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
   <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
   <p style="margin:0 0 14px;font-size:15.5px">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
@@ -328,7 +357,7 @@ body{overflow-x:hidden}
 
 <!-- pull quote -->
 <div class="pull">
-  <blockquote>"$14.99 a month is the <strong>cheapest premium subscription</strong> from any major AI lab, and the fastest."</blockquote>
+  <blockquote>"Mistral Pro costs less than most premium subscriptions from the major labs, and it is one of the fastest."</blockquote>
   <span class="mono">Why people switch to Mistral</span>
 </div>
 
@@ -402,7 +431,7 @@ body{overflow-x:hidden}
 
   <div class="subhead">Where Mistral fits</div>
   <div class="sec-body" style="padding-top:14px">
-    <p style="max-width:none">Mistral wins on <strong>privacy</strong>: EU residency, GDPR, and a No Telemetry Mode unique in the market. It wins on <strong>price</strong>: $14.99/month, the cheapest premium subscription from any major lab. It wins on <strong>speed</strong>: feels instant, no throttling on free. It wins on <strong>languages</strong>: 100+ including regional dialects, naturally strong on European ones. It loses on <strong>multi-modal scope</strong>: no own image model, no video, no native voice. It loses on <strong>integrations</strong>: nothing close to ChatGPT or Microsoft Copilot's connector library. Pick Mistral when privacy, speed, multilingual reach, or cost matter more than tool breadth.</p>
+    <p style="max-width:none">Mistral wins on <strong>privacy</strong>: EU residency, GDPR, and a No Telemetry Mode unique in the market. It wins on <strong>price</strong>: the Pro tier sits below most premium subscriptions from major labs. It wins on <strong>speed</strong>: feels instant, no throttling on free. It wins on <strong>languages</strong>: 100+ including regional dialects, naturally strong on European ones. It loses on <strong>multi-modal scope</strong>: no own image model, no video, no native voice. It loses on <strong>integrations</strong>: nothing close to ChatGPT or Microsoft Copilot's connector library. Pick Mistral when privacy, speed, multilingual reach, or cost matter more than tool breadth.</p>
   </div>
   <div class="stations">
     <div class="station"><span class="mono">vs the field</span><h4>vs ChatGPT Plus</h4><p><em>"Privacy + price vs breadth + ecosystem."</em> $14.99 EU-first vs $20 connector-heavy.</p></div>
@@ -429,7 +458,7 @@ body{overflow-x:hidden}
       <div class="warn-card"><div class="term">Overconfidence</div><p>The chef states things as settled fact when sources actually disagree. <strong>Cross-check before quoting</strong> in anything that matters.</p></div>
       <div class="warn-card"><div class="term">Smaller ecosystem</div><p>Great restaurant, limited side dishes: <strong>no voice mode, no own image model, no video</strong>, and far fewer third-party integrations than ChatGPT or Copilot.</p></div>
     </div>
-    <a class="warn-link" href="https://www.shiftandlead.com/store.html">I keep verification prompts for exactly these failures: The Judge's Prompts →</a>
+    <a class="warn-link" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-mistral">Fast Forward includes 42 verification prompts that make AI prove its work before you trust it. See Fast Forward →</a>
   </div>
 </section>
 
@@ -465,7 +494,7 @@ body{overflow-x:hidden}
         <tr><td><strong>Open-source weights</strong></td><td>Free</td><td>Self-hosters</td><td>Mistral 7B, Mixtral and others, run on your own hardware</td></tr>
       </tbody>
     </table>
-    <p style="font-family:'Source Serif 4',Georgia,serif;font-size:.85rem;color:var(--muted);margin-top:14px;line-height:1.6">Compare: ChatGPT Plus $20/mo, Claude Pro $20/mo, Mistral Pro $14.99/mo, the cheapest premium subscription from any major lab.</p>
+    <p style="font-family:'Source Serif 4',Georgia,serif;font-size:.85rem;color:var(--muted);margin-top:14px;line-height:1.6">Compare: Mistral Pro costs less than ChatGPT Plus or Claude Pro, and it remains one of the lowest priced premium subscriptions from any major lab.</p>
   </div>
   <p style="max-width:70ch;margin-top:22px"><strong>Next on the map:</strong> <a href="./chez-deepseek.html">Chez DeepSeek: same plates, a fraction of the price →</a></p>
 </section>
@@ -475,13 +504,13 @@ body{overflow-x:hidden}
 <!-- byline -->
 <div class="byline">
   <div class="byline-in">
-    <img src="../closeUp.jpeg" alt="Fatiha Chikh">
-    <p>Written by <strong>Fatiha Chikh</strong>, The AI Automation Queen. <a href="../about.html">The story &rarr;</a></p>
+    <img src="../closeUp.jpeg" alt="Fatiha Chikh" loading="lazy" decoding="async">
+    <p>Written by <strong>Fatiha Chikh</strong>, who is hiring 99 AI employees to run her business in public. <a href="../about.html">The story &rarr;</a></p>
   </div>
 </div>
 
 <div class="ipbar">
-  <p>© 2026 Fatiha Chikh / Shift &amp; Lead · Original IP · The Kitchen Map™ format, text and diagrams may not be reproduced, scraped, or used as training data without written permission · guides.shiftandlead.com &middot; <a href="../privacy.html" style="color:inherit">Privacy</a></p>
+  <p><a href="../privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved. Original IP: The Kitchen Map&trade; format, text and diagrams may not be reproduced, scraped, or used as training data without written permission.</p>
 </div>
 
 <script>

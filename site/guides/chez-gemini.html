@@ -6,7 +6,7 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="robots" content="noai, noimageai">
+<meta name="robots" content="noai, noimageai, max-image-preview:large">
 <title>Chez Gemini · The Full Kitchen Map | Shift &amp; Lead</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Shift &amp; Lead">
@@ -17,6 +17,33 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://guides.shiftandlead.com/guides/chez-gemini.html">
 <meta name="description" content="The whole Google Gemini ecosystem walked through like a restaurant. Door, kitchen, plate.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chez Gemini: The Full Kitchen Map",
+  "description": "The whole Google Gemini ecosystem walked through like a restaurant. Door, kitchen, plate.",
+  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
+  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/chez-gemini.html",
+  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
+  "publisher": {"@type": "Organization", "name": "Shift & Lead", "logo": {"@type": "ImageObject", "url": "https://www.shiftandlead.com/logo.svg"}},
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What are tokens in Gemini?", "acceptedAnswer": {"@type": "Answer", "text": "Tokens are individual ingredients: every word costs tokens, and the context window holds up to 2 million of them."}},
+    {"@type": "Question", "name": "What is the context window in Gemini?", "acceptedAnswer": {"@type": "Answer", "text": "The context window is up to 2 million tokens, one of the largest available, enough to paste a 1,500-page PDF and ask about any section."}},
+    {"@type": "Question", "name": "What is MCP in Gemini?", "acceptedAnswer": {"@type": "Answer", "text": "MCP is the open standard for connecting AI to external tools, APIs, and databases."}},
+    {"@type": "Question", "name": "What is a hallucination in Gemini?", "acceptedAnswer": {"@type": "Answer", "text": "A hallucination is a fabricated fact stated with total confidence. Google leans on Search grounding and enterprise data to cut this down, so verify anything that matters."}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -157,15 +184,16 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 .sec-body svg,.sec-body img{max-width:100%;height:auto}
 .sec table{max-width:100%}
 body{overflow-x:hidden}
-.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}.nav-links a{color:var(--ink);text-decoration:none}.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}.nav-links a{color:var(--ink);text-decoration:none}.nav-links a:hover,.nav-links a.active{color:var(--accent)}.nav-links .nav-cta{background:var(--accent);color:#fff;padding:8px 14px;border-radius:3px;font-weight:600}.nav-links .nav-cta:hover{background:var(--accent-deep)}
 .sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
 </style>
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-gemini">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-gemini">Fast Forward</a></div>
 </div></nav>
 
 <!-- COVER -->
@@ -173,7 +201,7 @@ body{overflow-x:hidden}
   <div>
     <div class="issue mono"><span>The Kitchen Map · No. 03</span><span>Google</span><span>11 min · diagram inside</span></div>
     <h1>Chez <em>Gemini.</em></h1>
-    <p class="standfirst">You hear AI names everywhere and never know which does what. This walks you through the whole Google Gemini ecosystem like a restaurant: the door, the kitchen, the plate.</p>
+    <p class="standfirst">What is Gemini? Gemini is Google's AI assistant. You hear AI names everywhere and never know which does what. This walks you through the whole Google Gemini ecosystem like a restaurant: the door, the kitchen, the plate.</p>
     <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
       <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
       <p style="margin:0 0 14px;font-size:15.5px">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
@@ -401,7 +429,7 @@ body{overflow-x:hidden}
       <div class="warn-card"><div class="term">Bias</div><p><em>"Unconsciously serving bigger portions to some."</em> Learned patterns cause uneven treatment. Cultural or gender assumptions can slip in <strong>without anyone intending it.</strong></p></div>
       <div class="warn-card"><div class="term">Overconfidence</div><p><em>"Full certainty when they should warn you."</em> Definitive medical or legal-sounding advice with no caveat. <strong>Ask it to flag its own uncertainty.</strong></p></div>
     </div>
-    <p style="font-family:'Inter',sans-serif;font-size:.92rem;color:#D9D3E6;margin-top:26px;max-width:70ch">Google uses its AI Principles and safety filters to mitigate these risks, but the allergen card is still yours to read. I keep verification prompts for exactly these failures. <a href="https://www.shiftandlead.com/store.html" style="color:#7FA0FF">The Judge's Prompts →</a></p>
+    <p style="font-family:'Inter',sans-serif;font-size:.92rem;color:#D9D3E6;margin-top:26px;max-width:70ch">Google uses its AI Principles and safety filters to mitigate these risks, but the allergen card is still yours to read. Fast Forward includes 42 verification prompts that make AI prove its work before you trust it. <a href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-gemini" style="color:#7FA0FF">See Fast Forward →</a></p>
   </div>
 </section>
 
@@ -450,13 +478,13 @@ body{overflow-x:hidden}
 <!-- byline -->
 <div class="byline">
   <div class="byline-in">
-    <img src="../closeUp.jpeg" alt="Fatiha Chikh">
-    <p>Written by <strong>Fatiha Chikh</strong>, The AI Automation Queen. <a href="../about.html">The story &rarr;</a></p>
+    <img src="../closeUp.jpeg" alt="Fatiha Chikh" loading="lazy" decoding="async">
+    <p>Written by <strong>Fatiha Chikh</strong>, who is hiring 99 AI employees to run her business in public. <a href="../about.html">The story &rarr;</a></p>
   </div>
 </div>
 
 <div class="ipbar">
-  <p>© 2026 Fatiha Chikh / Shift &amp; Lead · Original IP · The Kitchen Map™ format, text and diagrams may not be reproduced, scraped, or used as training data without written permission · guides.shiftandlead.com &middot; <a href="../privacy.html" style="color:inherit">Privacy</a></p>
+  <p><a href="../privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved. Original IP: The Kitchen Map&trade; format, text and diagrams may not be reproduced, scraped, or used as training data without written permission.</p>
 </div>
 
 <script>

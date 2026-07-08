@@ -24,7 +24,7 @@ That's the shift this pack installs. You stop being the builder. You become the 
 
 They're organized around four upgrades: make AI disagree with you before you build (The Council), never accept "done" without proof (Self-Verify), stop starving your AI of context (Full Context), and judge outcomes instead of babysitting steps (The Goal Run). There's also a set for the moments where money, clients, or your reputation are on the line.
 
-Every prompt is one I actually use, running a business where 137 AI employees do the work and I sign off on it. Copy, paste, adapt the brackets to your situation. They work in Claude, ChatGPT, Gemini, Copilot, anything with a text box.
+Every prompt is one I actually use, running a business where 99 AI employees do the work and I sign off on it. Copy, paste, adapt the brackets to your situation. They work in Claude, ChatGPT, Gemini, Copilot, anything with a text box.
 
 You're not behind on AI. You were just never taught to judge it. This pack hands you the gavel.
 
@@ -91,7 +91,7 @@ Nobody's selling the part that actually matters once you're running a real busin
 
 I spent 20+ years inside big corporate tech before this. The thing that world drilled into me wasn't how to build fast. It was how to verify. Nothing shipped because someone said "it's done." It shipped because it proved it was done.
 
-That's the shift I had to make with AI too. I'm not the builder anymore. I'm the judge. AI does the work, and I've built a specific set of prompts that make it show its proof before I trust it, across a business where 137 AI agents do the actual work and I sign off.
+That's the shift I had to make with AI too. I'm not the builder anymore. I'm the judge. AI does the work, and I've built a specific set of prompts that make it show its proof before I trust it, across a business where 99 AI employees do the actual work and I sign off.
 
 I packaged 42 of those prompts into one pack. Council prompts that make AI argue with you before you build. Self-verify prompts that make it hunt its own mistakes. Context prompts that stop it from guessing. Goal-run prompts for anything you're not watching in real time.
 

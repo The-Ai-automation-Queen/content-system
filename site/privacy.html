@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#FFFFFF">
+<html lang="en" style="background:#F5F2EB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="robots" content="noai, noimageai">
+<meta name="robots" content="index, follow, max-image-preview:large, noai, noimageai">
 <meta name="description" content="What Shift &amp; Lead collects (your email, when you ask for it), where it goes, and how to leave. Plain English, like everything else here.">
 <title>Privacy · Shift &amp; Lead</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Privacy · Shift &amp; Lead">
+<meta property="og:description" content="What Shift &amp; Lead collects (your email, when you ask for it), where it goes, and how to leave. Plain English, like everything else here.">
+<meta property="og:url" content="https://guides.shiftandlead.com/privacy.html">
+<meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Source+Serif+4:ital,wght@0,400;0,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="canonical" href="https://guides.shiftandlead.com/privacy.html">
 <style>
-:root{--canvas:#FFFFFF;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--muted:#5C5A57;--accent:#2C4BE0;--accent-deep:#1B2EA0}
+:root{--canvas:#F5F2EB;--surface:#FFFFFF;--cream:#EFEBE1;--ink:#1C1C1C;--rule:#DEDACE;--muted:#5C5A57;--accent:#6B4EFF;--accent-deep:#4F35D6}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
 a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
@@ -24,6 +29,8 @@ a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
 .nav-links a{color:var(--ink);text-decoration:none}
 .nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-links .nav-cta{background:var(--accent);color:#fff;padding:9px 16px;border-radius:3px;font-weight:600}
+.nav-links .nav-cta:hover{background:var(--accent-deep)}
 .wrap{max-width:720px;margin:0 auto;padding:72px 24px 104px}
 .kicker{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:16px}
 h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(34px,5vw,48px);font-weight:400;line-height:1.1;margin-bottom:20px}
@@ -32,35 +39,44 @@ p{margin-bottom:16px}
 ul{margin:0 0 16px 22px}
 li{margin-bottom:8px}
 .updated{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);margin-bottom:40px}
-.footer{margin-top:96px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+.footer{background:var(--ink);color:var(--canvas);margin-top:96px;padding:56px 32px 32px}
+.footer-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;align-items:start;text-align:left}
+.footer-brand{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:700;margin-bottom:12px}
+.footer-tag{opacity:0.7;font-size:14px;max-width:360px}
+.footer-col-head{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;opacity:0.6;margin-bottom:12px}
+.footer-link{display:block;font-size:14px;padding:4px 0;color:var(--canvas);opacity:0.9;text-decoration:none}
+.footer-legal{max-width:1240px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,0.12);font-size:11px;opacity:0.5;font-family:'Space Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;text-align:center}
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr;gap:28px}}
 </style>
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="free-resources.html">Home</a><a href="free-resources.html#library">Free Resources</a><a href="99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="free-resources.html">Home</a><a href="free-resources.html#library">Free Resources</a><a href="99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html">Fast Forward</a></div>
 </div></nav>
 
 <div class="wrap">
   <div class="kicker">Privacy</div>
   <h1>What we collect, where it goes, and how to leave.</h1>
-  <p class="updated">Last updated: 07 July 2026</p>
+  <p class="updated">Last updated: 08 July 2026</p>
 
   <p>This site explains AI in plain English. The privacy policy works the same way.</p>
 
   <h2>What we collect</h2>
   <ul>
-    <li><strong>Your email address</strong>, only when you type it into a form yourself: to get a guide, the newsletter, a quiz result, or the Store opening email.</li>
+    <li><strong>Your email address</strong>, only when you type it into a form yourself: to get a guide, the newsletter, a quiz result, or a waitlist confirmation.</li>
     <li><strong>Your first name</strong>, if a form asks for it and you give it.</li>
     <li><strong>Your quiz answers</strong> on the Time Audit, if you choose to send your result by email. If you do the quiz without entering an email, nothing is stored anywhere; it runs entirely in your browser.</li>
+    <li><strong>Anonymous visit counts</strong>. We run our own analytics on our own server (Umami, self-hosted). It uses no cookies, stores no personal profile, and cannot follow you around the web. It tells us which pages get read and roughly where visitors come from, nothing about who you are.</li>
   </ul>
-  <p>That is the whole list. No tracking pixels, no advertising cookies, no analytics profiles, no selling or renting your data to anyone, ever.</p>
+  <p>That is the whole list. No advertising cookies, no third-party trackers, no selling or renting your data to anyone, ever.</p>
 
   <h2>Where it goes</h2>
   <p>When you submit a form, your email travels to the tools that run this publication: a form service (Formspree), our own automation server, and our customer database (GoHighLevel). Newsletter delivery is handled by our email provider. Each of these processes your data only to do the job you asked for: sending you the thing you requested.</p>
 
-  <h2>What you'll receive</h2>
+  <h2>What you will receive</h2>
   <p>The thing you asked for, and the emails that go with this publication (guides, the AI Insider Brief). Every email has an unsubscribe link. One click and you are out, no questions, no guilt trip.</p>
 
   <h2>Your rights</h2>
@@ -70,9 +86,30 @@ li{margin-bottom:8px}
   <p>If this policy changes, the date at the top changes with it. We will not quietly get worse.</p>
 </div>
 
-<div class="footer">
-  <p>Shift &amp; Lead &middot; <a href="free-resources.html" style="color:inherit">Home</a> &middot; &copy; 2026</p>
+<footer class="footer"><div class="footer-inner">
+  <div>
+    <div class="footer-brand">Shift &amp; Lead</div>
+    <p class="footer-tag">For everyday entrepreneurs who want AI and automation to buy back their time. Built by someone who did it herself.</p>
+  </div>
+  <div>
+    <div class="footer-col-head">Explore</div>
+    <a class="footer-link" href="https://guides.shiftandlead.com">The Free Guides</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#cases">Case Studies</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/fast-forward.html">Fast Forward</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/work-with-fatiha.html">Workshops</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#further">Community</a>
+    <a class="footer-link" href="about.html">About</a>
+  </div>
+  <div>
+    <div class="footer-col-head">Connect</div>
+    <a class="footer-link" href="https://www.instagram.com/thefatihachikh" target="_blank" rel="noopener">Instagram</a>
+    <a class="footer-link" href="https://linkedin.com/in/fatihachikh" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="footer-link" href="https://brief.shiftandlead.com">The Insider Brief</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#contact">Contact</a>
+  </div>
 </div>
+<div class="footer-legal"><a href="privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved.</div>
+</footer>
 
 </body>
 </html>
