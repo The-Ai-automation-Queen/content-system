@@ -51,15 +51,6 @@ h1{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(
 .footer{border-top:1px solid var(--rule);margin-top:56px;padding:36px 0 48px;font-family:'Inter',sans-serif;font-size:13px;color:var(--muted)}
 .footer a{color:var(--muted)}
 
-.ladder-diagram{max-width:1000px;margin:0 auto 56px;padding:0 8px}
-.ladder-track{display:flex;align-items:center;overflow-x:auto;padding-bottom:8px}
-.ladder-node{flex:1;min-width:118px;text-align:center;position:relative;padding:0 4px}
-.ladder-node .dot{width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid var(--rule);margin:0 auto 10px;position:relative;z-index:1}
-.ladder-node.here .dot{background:var(--accent);border-color:var(--accent)}
-.ladder-node .lbl{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.ladder-node.here .lbl{color:var(--accent);font-weight:700}
-.ladder-node .amt{font-family:'Playfair Display',Georgia,serif;font-size:15px;color:var(--ink);margin-top:2px}
-.ladder-connector{flex:0 0 24px;height:2px;background:var(--rule);margin-top:-24px}
 </style>
 </head>
 <body>
@@ -79,26 +70,10 @@ h1{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(
   <p class="byline">by <strong>Fatiha Chikh</strong>, The AI Automation Queen · <a href="https://guides.shiftandlead.com/about.html" style="color:var(--accent)">the story →</a></p>
 </header>
 
-<div class="ladder-diagram">
-  <div class="ladder-track">
-    <div class="ladder-node here"><div class="dot"></div><div class="lbl">Free guides</div><div class="amt">$0</div></div>
-    <div class="ladder-connector"></div>
-    <div class="ladder-node"><div class="dot"></div><div class="lbl">Prompt Menu</div><div class="amt">$19</div></div>
-    <div class="ladder-connector"></div>
-    <div class="ladder-node"><div class="dot"></div><div class="lbl">Judge&rsquo;s Prompts</div><div class="amt">$27</div></div>
-    <div class="ladder-connector"></div>
-    <div class="ladder-node"><div class="dot"></div><div class="lbl">Time Audit</div><div class="amt">$47</div></div>
-    <div class="ladder-connector"></div>
-    <div class="ladder-node"><div class="dot"></div><div class="lbl">Starter Kit</div><div class="amt">$97</div></div>
-    <div class="ladder-connector"></div>
-    <div class="ladder-node"><div class="dot"></div><div class="lbl">Community</div><div class="amt">$27/mo</div></div>
-  </div>
-</div>
-
 <div class="grid" id="products"></div>
 
 <div class="note" id="notify">
-  <strong>While the shelves fill.</strong> The Store opens soon. Checkout will be handled by Stripe or Whop: you get the product link the moment you pay, plus an email copy, and free updates when the product improves. Want the opening email first?
+  <strong>While the shelves fill.</strong> The Store opens soon. One list covers everything: join it once and you get the opening email, plus first word when any product on this page goes live.
   <form id="notify-form" style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
     <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:220px;padding:11px 14px;border:1px solid var(--rule);border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
@@ -134,7 +109,7 @@ document.getElementById('notify-form').addEventListener('submit', async function
 <footer class="footer">
   <strong style="color:var(--ink)">Fatiha Chikh</strong> · The AI Automation Queen · Shift &amp; Lead<br>
   <a href="https://www.linkedin.com/in/fatihachikh">LinkedIn</a> · <a href="https://www.instagram.com/thefatihachikh">Instagram</a> · <a href="https://brief.shiftandlead.com">The Insider Brief</a><br><br>
-  © 2026 Fatiha Chikh / Shift &amp; Lead. All rights reserved. · <a href="privacy.html">Privacy</a>
+  © 2026 Fatiha Chikh / Shift &amp; Lead. All rights reserved. · <a href="https://guides.shiftandlead.com/privacy.html">Privacy</a>
 </footer>
 
 </div>
@@ -168,7 +143,7 @@ var PRODUCTS = [
     name: "The AI Time Audit",
     page: "products/time-audit.html",
     desc: "Map your week, find the hours AI can take off your plate, and pick your first AI employee, in one sitting.",
-    bullets: ["The audit worksheet (Notion + PDF)","Scoring guide: what to automate first","10-min walkthrough video"],
+    bullets: ["The audit worksheet (Notion + PDF)","Scoring guide: what to automate first","Spec sheet for your first AI employee"],
     price: "$47",
     url: ""
   },
@@ -178,7 +153,7 @@ var PRODUCTS = [
     desc: "The system install for non-technical builders: brain template, lite playbooks, full walkthrough. In build.",
     bullets: ["Notion Brain template, pre-filled","Lite playbooks for the core machines","Full walkthrough video"],
     price: "$97",
-    status: "In build · join the list",
+    status: "In build",
     url: ""
   },
   {
@@ -204,7 +179,7 @@ PRODUCTS.forEach(function(p){
     '<div class="buy-row"><span class="price">'+p.price+'</span>'+
     (live
       ? '<a class="buy" href="'+p.url+'">Buy now →</a>'
-      : '<a class="buy soon" href="#notify" style="text-decoration:none">'+(p.status || 'Opening soon · get notified')+'</a>')+
+      : '<span class="buy soon">'+(p.status || 'Opening soon')+'</span>')+
     '</div>';
   grid.appendChild(el);
 });

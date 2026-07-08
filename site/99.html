@@ -221,13 +221,32 @@ a:hover{color:var(--accent-deep)}
   var grid = document.getElementById('grid');
   var filled = grid.querySelectorAll('.slot').length; // hired + interviewing
   var hired = grid.querySelectorAll('.slot.hired').length;
+  var open = 99 - filled;
   document.getElementById('hired-count').textContent = hired;
-  document.getElementById('open-count').textContent = 99 - filled;
-  for (var i = filled + 1; i <= 99; i++) {
+  document.getElementById('open-count').textContent = open;
+
+  function openSlot(i){
     var d = document.createElement('div');
     d.className = 'slot open';
     d.innerHTML = '<div class="num">EMPLOYEE #' + String(i).padStart(3,'0') + '</div><div class="state">Hiring</div>';
-    grid.appendChild(d);
+    return d;
+  }
+
+  var PREVIEW = 5;
+  var shown = Math.min(PREVIEW, open);
+  for (var i = filled + 1; i <= filled + shown; i++) grid.appendChild(openSlot(i));
+
+  if (open > shown) {
+    var more = document.createElement('button');
+    more.type = 'button';
+    more.className = 'slot open';
+    more.style.cssText = 'cursor:pointer;font:inherit;color:inherit;text-align:left;border-style:dashed';
+    more.innerHTML = '<div class="num">+ ' + (open - shown) + ' MORE ROLES</div><div class="state" style="color:var(--accent-deep)">Show the full org chart &rarr;</div>';
+    more.addEventListener('click', function(){
+      more.remove();
+      for (var i = filled + shown + 1; i <= 99; i++) grid.appendChild(openSlot(i));
+    });
+    grid.appendChild(more);
   }
 })();
 </script>

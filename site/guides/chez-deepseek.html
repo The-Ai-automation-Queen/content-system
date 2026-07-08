@@ -93,12 +93,7 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .warn-link{font-family:'Inter',sans-serif;font-size:.95rem;color:#7FA0FF;display:inline-block;margin-top:22px}
 .warn-link:hover{text-decoration:underline}
 
-/* image slots for the magazine treatment */
-.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
-.imgslot .mono{font-size:9.5px;color:var(--accent)}
-.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
-.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
-.fullbleed .imgslot{aspect-ratio:21/8}
+.fullbleed 
 
 /* stations grid (menu + kitchen zones) */
 .stations{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 34px}
@@ -170,17 +165,17 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 /* qa: contain grid children, never let the page scroll sideways */
 .sec-body>*{min-width:0}
 .sec-body svg,.sec-body img{max-width:100%;height:auto}
-.imgslot{max-width:100%;overflow:hidden}
 .sec table{max-width:100%}
 body{overflow-x:hidden}
 .nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}.nav-links a{color:var(--ink);text-decoration:none}.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Free Resources</a><a href="../99.html">The 99</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
 </div></nav>
 
 <!-- COVER -->
@@ -212,7 +207,6 @@ body{overflow-x:hidden}
       <circle cx="150" cy="310" r="28" stroke="#2C4BE0" stroke-width="2"/>
       <text x="150" y="378" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE PLATE</text>
     </svg>
-    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
 </header>
 
@@ -237,10 +231,6 @@ body{overflow-x:hidden}
     <div>
       <p class="dropcap">Every restaurant tells you what it is before you sit down. DeepSeek's door says: no dress code, no cover charge, and the receipt is almost embarrassingly small. This is the kitchen that cooks coding and reasoning dishes to the same standard as the famous places across town, at roughly a hundredth of the price, and hands you the recipe if you want to cook it yourself at home. <em>(And yes, even the best chef makes mistakes. The allergen card comes right before you eat, in course four.)</em></p>
       <p>Two chefs share this kitchen. One is fast and dirt cheap for everyday orders. The other thinks longer and harder when the problem deserves it. Both speak fluent English and Chinese, and both will happily read a document a thousand pages long without losing the thread.</p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 02</span>
-      <em>Editorial photo: modest restaurant door, unpretentious signage, duotone ink/blue grade</em>
     </div>
   </div>
 </section>
@@ -403,13 +393,6 @@ body{overflow-x:hidden}
   <p class="menu-more">The kitchen also connects outward through web search, file uploads, the API, and open weights: the supply lines above. Every station gets its own walkthrough in the full guide. This is the seating chart.</p>
 </section>
 
-<!-- full-bleed image slot -->
-<div class="fullbleed">
-  <div class="imgslot">
-    <span class="mono">Image slot 03 · full-bleed divider</span>
-    <em>Wide editorial photo: a modest, efficient service counter under warm light, value over spectacle</em>
-  </div>
-</div>
 
 <!-- 04 KNOW BEFORE YOU EAT -->
 <section class="warn" style="margin-top:72px">
@@ -448,10 +431,6 @@ body{overflow-x:hidden}
       <p>The hosted chat and mobile apps are entirely free: no subscription, no credit card, generous daily caps. On the API, V4 Flash runs around $0.14 per million input tokens, and V4 Pro (stronger reasoning) is currently sold at a 75% discount off list. That's roughly 1-3% of what GPT-class APIs charge for comparable work. Self-hosting the open-source weights is free to download. You only pay for your own compute.</p>
       <p><strong>Where DeepSeek fits:</strong> it wins on cost (10-100x cheaper API for similar coding and reasoning quality), on open-source (full weights, self-hostable, audit-friendly), and on free chat (no $20/month for the hosted product). It loses on integrations versus ChatGPT or Copilot, on English polish for nuanced professional writing versus Claude, and on privacy for compliance-heavy industries unless you self-host. Pick DeepSeek for high-volume API workloads, coding-heavy teams, bilingual EN/ZH work, or self-hosting needs.</p>
       <p><strong>Next on the map:</strong> <a href="chez-kimi.html">Chez Kimi, the long-context kitchen &rarr;</a></p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 04</span>
-      <em>The bill on a small tray, surprisingly thin · styled product photo</em>
     </div>
   </div>
 
