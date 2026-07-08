@@ -62,6 +62,95 @@ async function loadBriefs() {
 }
 
 // ============================================================
+// MODULE A2: Dormancy guard — never let the page look stale by accident
+// ============================================================
+
+var STALE_THRESHOLD_DAYS = 10;
+
+function updateFeedStatus(cards) {
+  var statusEl = document.getElementById('feed-status');
+  if (!statusEl) return;
+
+  if (!cards || cards.length === 0) {
+    statusEl.style.display = 'none';
+    return;
+  }
+
+  var newestTimestamp = null;
+  cards.forEach(function (card) {
+    var t = new Date(card.timestamp);
+    if (!isNaN(t.getTime()) && (!newestTimestamp || t > newestTimestamp)) {
+      newestTimestamp = t;
+    }
+  });
+
+  if (!newestTimestamp) {
+    statusEl.style.display = 'none';
+    return;
+  }
+
+  var ageDays = (Date.now() - newestTimestamp.getTime()) / (1000 * 60 * 60 * 24);
+
+  if (ageDays > STALE_THRESHOLD_DAYS) {
+    statusEl.textContent = 'From the archive';
+    statusEl.style.display = 'block';
+  } else {
+    // Fresh board: keep current behavior, no extra framing label.
+    statusEl.style.display = 'none';
+  }
+}
+
+// ============================================================
+// MODULE A3: Past issues — proves the Tuesday cadence even when
+// the live feed is thin. Tolerates a missing data/archive.json.
+// ============================================================
+
+async function loadAndRenderArchive() {
+  var container = document.getElementById('past-issues');
+  if (!container) return;
+
+  var raw;
+  try {
+    var res = await fetch('data/archive.json');
+    if (!res.ok) return; // no archive file yet — stay silent, do not fabricate
+    raw = await res.json();
+  } catch (err) {
+    return; // network or parse failure — stay silent
+  }
+
+  var entries = raw && (raw.issues || raw.archive || raw);
+  if (!Array.isArray(entries) || entries.length === 0) return;
+
+  var dates = entries
+    .map(function (item) {
+      if (typeof item === 'string') return item;
+      if (item && item.date) return item.date;
+      return null;
+    })
+    .filter(Boolean);
+
+  if (dates.length === 0) return;
+
+  container.textContent = '';
+
+  var label = document.createElement('p');
+  label.className = 'past-issues-label';
+  label.textContent = 'Past issues';
+  container.appendChild(label);
+
+  var list = document.createElement('ul');
+  list.className = 'past-issues-list';
+  dates.forEach(function (d) {
+    var li = document.createElement('li');
+    li.textContent = d;
+    list.appendChild(li);
+  });
+  container.appendChild(list);
+
+  container.style.display = 'block';
+}
+
+// ============================================================
 // MODULE B: Topic Bubble Extraction and Rendering
 // ============================================================
 
@@ -567,6 +656,9 @@ function initAutoRefresh() {
         var topics = extractTopics(allCards);
         renderBubbles(topics);
 
+        // Re-check dormancy now that fresher cards have arrived
+        updateFeedStatus(allCards);
+
         showToast(added.length + ' new brief' + (added.length > 1 ? 's' : ''));
       }
     } catch (e) {
@@ -752,6 +844,13 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   // Render feed
   renderFeed(cards);
+
+  // Dormancy honesty: label the board "From the archive" if the
+  // newest card is more than 10 days old, instead of implying it's current.
+  updateFeedStatus(cards);
+
+  // Compact past-issues list, if an archive file exists (tolerates 404).
+  loadAndRenderArchive();
 
   // Hide pills for categories with no cards
   updateCategoryPillVisibility(cards);

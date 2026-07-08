@@ -1,0 +1,51 @@
+# Shift & Lead - The AI Insider Brief - robots.txt
+# Allow search engines, block AI training crawlers
+
+User-agent: *
+Allow: /
+
+Sitemap: https://brief.shiftandlead.com/sitemap.xml
+
+# AI training crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Cohere-ai
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+# Live answer-engine fetchers are allowed so our pages can be cited as the source.
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
