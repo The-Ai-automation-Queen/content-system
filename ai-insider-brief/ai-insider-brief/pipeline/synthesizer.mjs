@@ -1,4 +1,13 @@
 // synthesizer.mjs — Filter and synthesize crawled items via Ollama or Gemini
+//
+// MERGED 2026-07-08: this file used to be the "loose" version — it had no
+// code-level integrity check on ACT verdicts, only the prompt asked nicely.
+// The orphaned top-level copy of this file had enforceActIntegrity(), which
+// demotes a fake ACT to WATCH in CODE (regex checks against the actual
+// verdict_text), independent of whether the LLM followed the prompt. That
+// is the fix for weak newsletter CTAs: a card can no longer claim ACT unless
+// its verdict_text passes the imperative-opener test and isn't secretly
+// telling "companies" to do something. Category standardized to "Healthcare".
 
 import { FILTER_PROMPT, SYNTHESIZE_PROMPT } from './prompts.mjs';
 
@@ -87,10 +96,30 @@ export async function synthesizeCard(item, config) {
     throw new Error('Invalid card: ' + valid.reason);
   }
 
+  // ACT integrity gate — demote fake ACTs to WATCH. This runs regardless of
+  // what the LLM claimed; it is a code-level check, not a prompt-level one.
+  card = enforceActIntegrity(card);
+
   // Add metadata
   card.source_url = item.url;
   card.source_name = item.sourceName;
 
+  return card;
+}
+
+// Hard gate against fake ACT verdicts.
+// Demotes ACT to WATCH when verdict_text uses vague verbs or names an organisation as subject.
+export var FAKE_ACT_VERBS = /\b(consider|explore|evaluate|experiment with|stay (informed|on top of)|keep an eye|be (aware|prepared)|maximi[sz]e|leverage|navigate|harness|embrace|look into|think about|improve (performance|presence|experience|results))\b/i;
+export var ORG_SUBJECT = /^(companies|businesses|organi[sz]ations|enterprises|teams|the industry|firms|brands)\s+(should|must|need to|have to|ought to)/i;
+export var IMPERATIVE_OPENERS = /^(run|open|check|change|ask|download|audit|switch|disable|opt out|save|screenshot|read|review|update|delete|enable|set|turn (on|off)|copy|paste|test|verify|confirm|install|uninstall|export|import|share|forward|bookmark|subscribe|unsubscribe|toggle|adjust|configure|edit|create|measure|track|monitor|compare|search|browse|click|select|choose|pick|take|do|stop|start|pause|resume|join|leave|book|schedule|call|email|message|sign up|log in|log out)\b/i;
+
+export function enforceActIntegrity(card) {
+  if (card.verdict !== 'ACT') return card;
+  var t = (card.verdict_text || '').trim();
+  if (FAKE_ACT_VERBS.test(t) || ORG_SUBJECT.test(t) || !IMPERATIVE_OPENERS.test(t)) {
+    card.verdict = 'WATCH';
+    card._demoted_from = 'ACT';
+  }
   return card;
 }
 
