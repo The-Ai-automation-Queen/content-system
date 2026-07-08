@@ -6,7 +6,7 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="robots" content="noai, noimageai">
+<meta name="robots" content="noai, noimageai, max-image-preview:large">
 <meta name="description" content="Hire an AI employee that reads your email, sorts it, drafts the easy replies, and hands you one summary a day. Gmail and Outlook. Draft-only by design.">
 <title>The Inbox Manager Setup | Shift &amp; Lead</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,9 +28,25 @@
   "headline": "The Inbox Manager Setup",
   "description": "Hire an AI employee that reads your email, sorts it, drafts the easy replies, and hands you one summary a day. Gmail and Outlook. Draft-only by design.",
   "image": "https://guides.shiftandlead.com/Portrait.jpeg",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
   "mainEntityOfPage": "https://guides.shiftandlead.com/guides/inbox-manager-setup.html",
   "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
-  "publisher": {"@type": "Organization", "name": "The AI Automation Queen", "url": "https://www.shiftandlead.com"}
+  "publisher": {"@type": "Organization", "name": "Shift & Lead", "logo": {"@type": "ImageObject", "url": "https://www.shiftandlead.com/logo.svg"}},
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "The Inbox Manager setup",
+  "description": "The workflow that reads every email, sorts it, drafts the easy replies, and hands you one summary a day, without ever sending on its own.",
+  "step": [
+    {"@type": "HowToStep", "name": "Set the filters", "text": "In Gmail or Outlook, filter newsletters, receipts, and emails where you are only CC'd out of the main inbox. About 10 minutes, no AI required."},
+    {"@type": "HowToStep", "name": "Build the triage brain", "text": "In n8n or Make, trigger on new email, send it to Claude to label it and draft a reply when needed, then apply the label and save the draft."},
+    {"@type": "HowToStep", "name": "Schedule the 8am digest", "text": "Each weekday morning, fetch everything labeled in the last 24 hours and summarize it in 5 lines: how many came in, how many need you, how many were filed."}
+  ]
 }
 </script>
 <style>
@@ -134,7 +150,7 @@ li{margin-bottom:8px;color:var(--ink)}
 
   <h1>The Inbox Manager <em>setup.</em></h1>
 
-  <p class="lead">You answer email for about 90 minutes a day. That is 22 full working days a year, sorting other people&rsquo;s requests. This guide hires you an AI employee that reads every email, sorts it, drafts the easy replies, and hands you one summary at 8am. She never sends anything. The send button stays yours.</p>
+  <p class="lead">What is an inbox manager? An inbox manager is an AI employee that reads, sorts, and drafts your email so you only handle what needs you. You answer email for about 90 minutes a day. That is 22 full working days a year, sorting other people&rsquo;s requests. This guide hires you an AI employee that reads every email, sorts it, drafts the easy replies, and hands you one summary at 8am. She never sends anything. The send button stays yours.</p>
 
   <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
     <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
