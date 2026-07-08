@@ -2,6 +2,21 @@
 
 ---
 
+## RESEARCH 027 — 2026-07-08 | Bio canon facts — Nike vendor relationship, COVID mask production (source: Fatiha, direct)
+
+**Status:** CANON
+**Source:** Fatiha Chikh, directly, in the bio-rewrite approval message (Claude Code session, 08/07/2026). Named-source entry per Engine Law 4 (facts trace or die).
+
+### Facts now published on the estate
+1. **Nike was an exclusive vendor relationship earned at LeLabPlus**, the ethical, zero-carbon fashion factory Fatiha co-founded in France, through circular manufacturing made to work in practice. Published: site/about.html (story + receipts), main-site/index.html (founder section references the fashion-manufacturing chapter without naming Nike).
+2. **LeLabPlus produced 2 million protective masks for French hospitals during COVID.** Fatiha's original message wrote "2 millions"; published as "2 million" (grammar only, figure unchanged). Published: site/about.html (story + receipts "2M" card).
+
+### Notes
+- These two facts were previously flagged as unusable (the "Nike" name was removed from the homepage earlier in this session for lack of a trace). This entry is now the trace.
+- If queen-brain/proof.md is updated later, these should be mirrored there as the canonical proof source.
+
+---
+
 ## RESEARCH 026 — 2026-07-07 | Daily signal harvest — AI failure rates, EU AI Act Aug 2, Codex non-dev surge, job displacement acceleration
 
 **Status:** NOTED
