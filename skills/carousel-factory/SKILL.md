@@ -50,10 +50,18 @@ it is two slides.
 ## Alternate template: mascot variant (proposal, not yet default)
 
 `templates/carousel-template-mascot.html` is a second template: numbered
-circle badges instead of mono kickers, alternating canvas/cream/ink
-backgrounds per slide, a card-style bulleted list, and a dashed-box mascot
-slot on every slide reserved for a brand character illustration that does
-not exist yet in `brand/`.
+circle badges instead of mono kickers, a card-style bulleted list, and a
+dashed-box mascot slot on every slide reserved for a brand character
+illustration that does not exist yet in `brand/`.
+
+Colors and grounds follow `queen-brain/brand.md` exactly, same as the
+production template: canvas (pure white) is the ground on every slide, ink
+only ever appears as a small contained element (the 96px badge circle, the
+120px ampersand tile), electric blue is the only accent. An earlier draft
+tried alternating full-slide canvas/cream/ink backgrounds and a rotating
+accent palette (emerald/amber/violet) — both were rejected (violet also
+directly conflicts with brand.md's "purple as accent, retired 05/07/2026").
+Do not reintroduce either without a founder sign-off.
 
 Before using it for a real post:
 

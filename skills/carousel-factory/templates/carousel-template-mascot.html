@@ -12,31 +12,28 @@
   --cream:#EEF2FC;--tint:#E4EAFB;--rule:#D8D6D2;--muted:#5C5A57;
 }
 *{margin:0;box-sizing:border-box}
-body{background:#333;display:flex;flex-direction:column;align-items:center;gap:24px;padding:24px}
+body{background:#666;display:flex;flex-direction:column;align-items:center;gap:24px;padding:24px}
+/* Ground is always canvas (pure white), per brand.md's 70% white rule. Ink and
+   cream only ever show up as small contained elements below, never as a
+   full-slide background. */
 .slide{width:1080px;height:1350px;position:relative;padding:80px;
+  background:var(--canvas);color:var(--ink);
   display:flex;flex-direction:column;font-family:"Source Serif 4",serif;overflow:hidden}
-.bg-canvas{background:var(--canvas);color:var(--ink)}
-.bg-cream{background:var(--cream);color:var(--ink)}
-.bg-ink{background:var(--ink);color:var(--canvas)}
 .kicker{font-family:"Space Mono",monospace;text-transform:uppercase;
   letter-spacing:.22em;font-size:20px;display:flex;justify-content:space-between;
   color:var(--muted)}
-.bg-ink .kicker{color:#9a99c9}
 .headline{font-family:"Playfair Display",serif;font-weight:700;font-size:96px;
   line-height:1.05;margin-top:48px}
-.headline em{font-style:italic}
 .hl-accent{color:var(--electric)}
-.bg-ink .hl-accent{color:#7f95f0}
 .subhead{font-size:30px;color:var(--muted);margin-top:28px;font-style:italic}
-.bg-ink .subhead{color:#c9c8e6}
+/* badge: minimal ink element, a 96px circle, not a background */
 .badge{width:96px;height:96px;border-radius:50%;background:var(--ink);
   color:var(--canvas);font-family:"Playfair Display",serif;font-weight:700;
   font-size:48px;display:flex;align-items:center;justify-content:center}
-.bg-ink .badge{background:var(--electric)}
 .title{font-family:"Playfair Display",serif;font-weight:700;font-size:72px;margin-top:32px}
+/* card: white surface, cream/tint border only, never a full-bleed fill */
 .card{background:var(--canvas);border:2px solid var(--tint);border-radius:28px;
   padding:44px 48px;margin-top:40px;max-width:680px}
-.bg-ink .card{background:#232323;border-color:#333}
 .card li{list-style:none;font-size:32px;padding:14px 0;display:flex;align-items:center;gap:20px}
 .card li::before{content:"";width:16px;height:16px;border-radius:50%;
   background:var(--electric);flex:none}
@@ -44,19 +41,18 @@ body{background:#333;display:flex;flex-direction:column;align-items:center;gap:2
 .mascot{width:520px;height:520px;border:2px dashed var(--rule);border-radius:20px;
   display:flex;align-items:center;justify-content:center;color:var(--muted);
   font-family:"Inter",sans-serif;font-size:22px;align-self:center}
+/* the brand mark on a light surface: a small ink tile, per brand/BRAND-GUIDELINES.md */
 .mark-tile{width:120px;height:120px;border-radius:24px;background:var(--ink);
   color:var(--electric);font-family:"Playfair Display",serif;font-style:italic;
   font-weight:700;font-size:80px;display:flex;align-items:center;justify-content:center}
-.mark-bare{color:var(--electric);font-family:"Playfair Display",serif;
-  font-style:italic;font-weight:700;font-size:120px}
 /* required by every real post: Engine Law 2, keyword CTA on an ACTIVE lead-magnets.csv row */
 .keyword{display:inline-block;margin-top:48px;background:var(--electric);color:#fff;
   font-family:"Space Mono",monospace;font-weight:700;font-size:44px;
   letter-spacing:.1em;text-transform:uppercase;padding:30px 48px}
 </style></head><body>
 
-<!-- 1. HOOK: one line, max 9 words. bg-canvas. -->
-<section class="slide bg-canvas">
+<!-- 1. HOOK: one line, max 9 words. -->
+<section class="slide">
   <div class="kicker"><span>&copy;2026</span><span>Shift &amp; Lead</span><span>01 of NN</span></div>
   <h1 class="headline">The hook line goes <span class="hl-accent">here</span></h1>
   <p class="subhead">One line of context, not a paragraph.</p>
@@ -64,8 +60,8 @@ body{background:#333;display:flex;flex-direction:column;align-items:center;gap:2
   <div class="mascot">[ mascot: placeholder — swap for real art before use ]</div>
 </section>
 
-<!-- 2..n POINT: numbered badge + title + 2-4 short list items on a card. Alternate bg-cream / bg-ink. -->
-<section class="slide bg-cream">
+<!-- 2..n POINT: numbered badge + title + 2-4 short list items on a card. -->
+<section class="slide">
   <div class="kicker"><span>Shift &amp; Lead</span><span>02 of NN</span></div>
   <div class="badge">01</div>
   <h2 class="title">One idea, stated plainly</h2>
@@ -78,7 +74,7 @@ body{background:#333;display:flex;flex-direction:column;align-items:center;gap:2
 </section>
 
 <!-- LAST. CTA: keyword from an ACTIVE lead-magnets.csv row. Required on every real post (Engine Law 2). -->
-<section class="slide bg-ink">
+<section class="slide">
   <div class="kicker"><span>Shift &amp; Lead</span><span>NN of NN</span></div>
   <h2 class="title">Want the full walkthrough?</h2>
   <p class="subhead">What they get, in one sentence.</p>
@@ -88,10 +84,10 @@ body{background:#333;display:flex;flex-direction:column;align-items:center;gap:2
 </section>
 
 <!-- OPTIONAL sign-off: brand mark closer. Use AFTER the keyword CTA slide above, never instead of it. -->
-<section class="slide bg-ink" style="align-items:center;text-align:center">
+<section class="slide" style="align-items:center;text-align:center">
   <div class="kicker" style="width:100%"><span>Shift &amp; Lead</span><span>the end</span></div>
   <div class="spacer"></div>
-  <div class="mark-bare">&amp;</div>
+  <div class="mark-tile" style="align-self:center">&amp;</div>
   <h2 class="title" style="margin-top:24px">Build the system once.</h2>
   <p class="subhead">Follow @shiftandlead for the full skill files.</p>
   <div class="spacer"></div>
