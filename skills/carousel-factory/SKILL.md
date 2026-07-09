@@ -47,6 +47,29 @@ fix, re-render. Never hand the queue a carousel you have not looked at.
 6 to 8 slides total. One idea per slide. If a slide needs a paragraph,
 it is two slides.
 
+## Alternate template: mascot variant (proposal, not yet default)
+
+`templates/carousel-template-mascot.html` is a second template: numbered
+circle badges instead of mono kickers, alternating canvas/cream/ink
+backgrounds per slide, a card-style bulleted list, and a dashed-box mascot
+slot on every slide reserved for a brand character illustration that does
+not exist yet in `brand/`.
+
+Before using it for a real post:
+
+- Fill or delete every `.mascot` box. There is no mascot asset in
+  `brand/BRAND-GUIDELINES.md` today; shipping the placeholder text is not
+  an option (Engine law 5, no half-finished visuals to the queue).
+- Keep a `slide--cta`-equivalent slide with `Comment KEYWORD` from an
+  ACTIVE `lead-magnets.csv` row as the real last slide (Engine law 2). The
+  ampersand sign-off section at the end of the file is a brand closer for
+  AFTER that slide, never a substitute for it.
+- This file is a design proposal on the `claude/presentation-slide-design-tgpgl2`
+  branch. It has not replaced `carousel-template.html` as the production
+  template; that's a founder call (adopt, discard, or merge specific
+  elements like the badge/card list into the main template) once real
+  mascot art exists.
+
 ## Workflow
 
 1. Read the vault entry (script/draft). Extract: hook, 3 to 5 points,
