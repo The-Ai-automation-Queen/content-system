@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#FFFFFF">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="noindex, noai, noimageai">
+<title>Chez Claude · The Full Kitchen Map | Shift &amp; Lead</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shift &amp; Lead">
+<meta property="og:title" content="Chez Claude · The Full Kitchen Map | Shift &amp; Lead">
+<meta property="og:description" content="The whole Claude ecosystem walked through like a restaurant. Door, kitchen, plate.">
+<meta property="og:url" content="https://guides.shiftandlead.com/guides/chez-claude.html">
+<meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://guides.shiftandlead.com/guides/chez-claude.html">
+<meta name="description" content="The whole Claude ecosystem walked through like a restaurant. Door, kitchen, plate.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chez Claude: The Full Kitchen Map",
+  "description": "The whole Claude ecosystem walked through like a restaurant. Door, kitchen, plate.",
+  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
+  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/chez-claude.html",
+  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
+  "publisher": {"@type": "Organization", "name": "Shift & Lead", "logo": {"@type": "ImageObject", "url": "https://www.shiftandlead.com/logo.svg"}},
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is an LLM in Claude?", "acceptedAnswer": {"@type": "Answer", "text": "The LLM is the AI engine behind Claude, trained on huge amounts of text so it can read, write, and reason in everyday language."}},
+    {"@type": "Question", "name": "What is a context window in Claude?", "acceptedAnswer": {"@type": "Answer", "text": "The context window is everything Claude can see at once. A small window means early parts of a conversation fall off; a bigger one allows more complex work."}},
+    {"@type": "Question", "name": "What is MCP in Claude?", "acceptedAnswer": {"@type": "Answer", "text": "MCP, or Model Context Protocol, is an open-source standard created by Anthropic that standardizes how AI connects to external tools, data, and APIs."}},
+    {"@type": "Question", "name": "What is a hallucination in Claude?", "acceptedAnswer": {"@type": "Answer", "text": "A hallucination is a confident answer built on made-up facts, the AI did not check, it answered as if it should already know. Always verify claims that matter."}}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF;
+  --card:#FFFFFF;
+  --tint:#EEF2FC;
+  --ink:#1A1A1A;
+  --strong:#1A1A1A;
+  --accent:#2C4BE0;
+  --accent-deep:#1B2EA0;
+  --muted:#5C5A57;
+  --hairline:#D8D6D2;
+  --accent-tint:#E4EAFB;
+  --radius:6px;
+  --maxw:1060px;
+  --font-head:'Playfair Display',Georgia,serif;
+  --font-body:'Source Serif 4',Georgia,serif;
+  --font-ui:'Inter',sans-serif;
+  --font-mono:'Space Mono',monospace;
+  /* --tool: this guide's one extra accent, lifted from the periwinkle (#7FA0FF)
+     this page already used for its Claude-flavored diagram highlights, muted
+     down so it also reads on paper (not just on the dark warn section). */
+  --tool:#5B72C7;
+  --tool-tint:color-mix(in srgb, var(--tool) 14%, white);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);line-height:1.75;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--font-head)}
+.mono{font-family:var(--font-mono);letter-spacing:.14em;text-transform:uppercase}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* arrow nudge */
+.arrow{display:inline-block;transition:transform .2s ease}
+a:hover .arrow{transform:translateX(3px)}
+
+/* nav */
+.nav{border-bottom:1px solid var(--hairline);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-logo{font-family:var(--font-head);font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav .mono{font-size:10px;color:var(--muted)}
+.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:var(--font-ui);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-links .nav-cta{background:var(--accent);color:#fff;padding:8px 14px;border-radius:3px;font-weight:600}
+.nav-links .nav-cta:hover{background:var(--accent-deep)}
+@media(max-width:860px){.nav-links{gap:12px;font-size:10px;justify-content:center}}
+
+/* hero */
+.hero{max-width:1160px;margin:0 auto;padding:70px 24px 40px}
+.hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:end}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
+.eyebrow{font-family:var(--font-mono);letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:var(--tool);margin-bottom:18px;display:flex;gap:18px;flex-wrap:wrap}
+.hero h1{font-weight:900;font-size:clamp(3rem,9vw,6.2rem);line-height:.98;letter-spacing:-.02em;margin:0}
+.hero h1 .accent{font-style:italic;font-weight:400;color:var(--accent)}
+.standfirst{font-size:1.2rem;color:var(--muted);max-width:44ch;margin:22px 0 0}
+.cover-art{position:relative;aspect-ratio:4/5;background:var(--strong);border-radius:var(--radius);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.cover-art svg{width:82%;height:auto}
+.capture-box{margin:40px 0 0;padding:24px 26px;background:var(--tint);border:1px solid var(--accent-tint);border-radius:var(--radius)}
+.capture-box .kicker{font-family:var(--font-mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--tool);margin:0 0 8px}
+.capture-box .copy{margin:0 0 14px;font-size:15.5px}
+.capture-form{display:flex;gap:10px;flex-wrap:wrap}
+.capture-form input[type="email"]{flex:1;min-width:200px;padding:10px 14px;border:1px solid var(--hairline);border-radius:4px;font-family:var(--font-ui);font-size:14px}
+.capture-form button{padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:4px;font-family:var(--font-ui);font-weight:600;font-size:14px;cursor:pointer}
+.capture-form button:hover{background:var(--accent-deep)}
+
+/* course rail */
+.rail{max-width:1160px;margin:0 auto;padding:0 24px}
+.courses{display:flex;gap:0;border:1px solid var(--hairline);border-radius:999px;overflow:hidden;background:var(--paper);margin:8px 0 0}
+.course{flex:1;text-align:center;padding:11px 6px;font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--tool);border-left:1px solid var(--hairline)}
+.course:first-child{border-left:none}
+.course.active{background:var(--strong);color:#fff}
+
+/* scroll-reveal steps */
+.step{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.step.in{opacity:1;transform:translateY(0)}
+
+/* sections */
+.sec{max-width:var(--maxw);margin:0 auto;padding:72px 24px 8px}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:baseline;border-top:2px solid var(--ink);padding-top:18px}
+.sec-num{font-weight:900;font-size:3.4rem;line-height:1;color:var(--accent)}
+.sec-head h2{font-weight:700;font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0}
+.marker{display:block;font-family:var(--font-mono);letter-spacing:.14em;text-transform:uppercase;font-size:10px;color:var(--tool);margin-top:6px}
+.sec-body{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;padding:26px 0 0}
+@media(max-width:860px){.sec-body{grid-template-columns:1fr}}
+.sec-body p{max-width:60ch;font-size:1.06rem;margin:0 0 1rem}
+.sec p.wide{max-width:80ch;font-size:1.06rem;margin:0 0 1rem}
+.sec-body>*{min-width:0}
+.sec-body svg,.sec-body img{max-width:100%;height:auto}
+.sec table{max-width:100%}
+.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
+.dropcap::first-letter{font-family:var(--font-head);font-weight:900;font-size:4.6em;float:left;line-height:.78;padding:6px 12px 0 0;color:var(--accent)}
+
+/* floor plan diagram */
+.plan{background:var(--card);border:1px solid var(--hairline);border-radius:14px;padding:26px}
+.plan .marker{margin-bottom:12px;margin-top:0}
+.plan svg{width:100%;height:auto}
+
+/* zone narrative + station cards */
+.zone{padding:30px 0 6px;border-top:1px solid var(--hairline)}
+.zone:first-of-type{border-top:none;padding-top:0}
+.zone h3{font-weight:700;font-size:1.35rem;margin:0 0 4px}
+.zone .marker{margin-bottom:10px}
+.znarr{font-family:var(--font-ui);font-size:.98rem;color:var(--ink);line-height:1.7;max-width:90ch;margin:0 0 6px}
+.znarr strong{color:var(--accent)}
+
+/* pills: workbench tags/chips, --tool tinted */
+.pill{display:inline-block;font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--tool);background:var(--tool-tint);border-radius:999px;padding:3px 10px;margin-bottom:8px}
+
+/* card grid: stations, warn cards */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 34px}
+@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:820px){.cards{grid-template-columns:1fr}}
+.card{border:1px solid var(--hairline);border-radius:var(--radius);padding:16px 18px;background:var(--card);transition:transform .2s ease,box-shadow .2s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(26,26,26,.07)}
+.card h4{font-family:var(--font-ui);font-size:.98rem;font-weight:600;margin:.35rem 0 .2rem}
+.card p{font-family:var(--font-ui);font-size:.8rem;color:var(--muted);margin:0;line-height:1.5}
+.card .analogy{font-style:italic}
+
+/* menu dish cards */
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 0}
+@media(max-width:820px){.menu{grid-template-columns:1fr}}
+.dish{border:1px solid var(--hairline);border-radius:var(--radius);padding:24px;background:var(--card);position:relative;transition:transform .2s ease,box-shadow .2s ease}
+.dish:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(26,26,26,.07)}
+.dish .pict{height:74px;margin-bottom:10px;display:flex;align-items:center}
+.dish .pict svg{height:64px;width:auto}
+.dish h3{font-size:1.3rem;font-weight:700;margin:.4rem 0 .4rem}
+.dish p{font-family:var(--font-ui);font-size:.9rem;color:var(--muted);margin:0;line-height:1.6}
+.menu-more{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:18px}
+
+/* fold-out station menus */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1.5px solid var(--accent);border-radius:999px;padding:10px 20px;background:var(--paper);transition:background .15s}
+details.fold>summary:hover{background:var(--accent-tint)}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:var(--strong);color:#fff;border-color:var(--strong)}
+
+/* dark callout card (pull-quote) */
+.callout{max-width:var(--maxw);margin:0 auto;padding:64px 24px}
+.callout-card{background:var(--strong);color:var(--paper);border-radius:14px;padding:52px 46px}
+.callout blockquote{font-family:var(--font-head);font-style:italic;font-size:clamp(1.7rem,4.5vw,2.7rem);line-height:1.3;margin:0;max-width:26ch;color:inherit}
+.callout blockquote strong{color:#8CA6FF;font-style:normal}
+.callout .marker{color:#8CA6FF;margin-top:18px;margin-bottom:0}
+
+/* subscribe strip */
+.subs{max-width:var(--maxw);margin:0 auto;padding:44px 24px 0}
+.subs-in{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid var(--accent);border-radius:14px;padding:22px 26px;background:var(--tint)}
+.subs-in h3{font-size:1.3rem;font-weight:700;margin:0}
+.subs-in p{font-family:var(--font-ui);font-size:.88rem;color:var(--muted);margin:.2rem 0 0}
+.subs-in a{font-family:var(--font-ui);font-weight:600;font-size:14.5px;text-decoration:none;background:var(--accent);color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap}
+.subs-in a:hover{background:var(--accent-deep)}
+
+/* warn / know-before-you-eat, dark surface */
+.warn{background:var(--strong);color:#F5F0EB}
+.warn-inner{max-width:var(--maxw);margin:0 auto;padding:70px 24px}
+.warn h2{font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:700;margin:.4rem 0 26px}
+.warn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.warn-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.warn-grid{grid-template-columns:1fr}}
+.warn-card{border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:20px;background:rgba(255,255,255,.02)}
+.warn-card .term{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8CA6FF;margin-bottom:8px}
+.warn-card p{font-family:var(--font-ui);font-size:.88rem;color:#D9D3E6;margin:0;line-height:1.6}
+.warn-card strong{color:#fff}
+.warn-link{color:#8CA6FF;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(140,166,255,.4)}
+.warn-link:hover{border-bottom-color:#8CA6FF}
+
+/* pricing table */
+.pricetable{margin-top:28px;background:var(--card);border:1px solid var(--hairline);border-radius:14px;padding:24px;overflow-x:auto}
+.pricetable table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:.85rem}
+.pricetable th{padding:10px 12px;border-bottom:2px solid var(--hairline);font-family:var(--font-mono);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;text-align:left}
+.pricetable td{padding:10px 12px;border-bottom:1px solid var(--hairline)}
+.pricetable tr:nth-child(even) td{background:var(--tint)}
+.pricetable-title{font-family:var(--font-head);font-style:italic;font-size:1.3rem;color:var(--accent);margin-bottom:4px}
+
+/* byline + IP bar */
+.byline{max-width:var(--maxw);margin:70px auto 0;padding:0 24px}
+.byline-in{display:flex;gap:18px;align-items:center;background:var(--tint);border:1px solid var(--accent-tint);border-radius:14px;padding:22px 26px}
+.byline-in img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.byline-in p{margin:0;font-size:.95rem}
+.byline-in .who{font-family:var(--font-ui);font-weight:600}
+.ipbar{max-width:var(--maxw);margin:26px auto 0;padding:0 24px 70px}
+.ipbar p{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--hairline);padding-top:16px;margin:0}
+
+@media (prefers-reduced-motion: reduce){
+  .step{opacity:1!important;transform:none!important;transition:none!important}
+  .card:hover,.dish:hover{transform:none}
+  a:hover .arrow{transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+<noscript><style>.step{opacity:1!important;transform:none!important}</style></noscript>
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-claude">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-claude">Fast Forward</a></div>
+</div></nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow"><span>The Kitchen Map · Anthropic</span><span>18 min read · diagram inside</span></div>
+      <h1>Chez <span class="accent">Claude.</span></h1>
+      <p class="standfirst">What is Claude? Claude is Anthropic's AI assistant. You hear AI names everywhere and never know which does what. This walks you through the whole Claude ecosystem like a restaurant: the door, the kitchen, the plate.</p>
+      <div class="capture-box">
+        <p class="kicker">Free, in your inbox</p>
+        <p class="copy">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
+        <form class="capture-form">
+          <input type="email" name="email" required placeholder="your@email.com">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <button type="submit">Send them to me</button>
+        </form>
+      </div>
+    </div>
+    <div class="cover-art">
+      <!-- door/kitchen/plate cover mark, drawn -->
+      <svg viewBox="0 0 300 380" fill="none" aria-label="Door, kitchen, plate">
+        <rect x="70" y="30" width="160" height="110" rx="6" style="stroke:var(--accent);opacity:.55" stroke-width="2"/>
+        <rect x="130" y="60" width="40" height="80" rx="3" style="stroke:var(--accent);opacity:.55" stroke-width="2"/>
+        <circle cx="162" cy="102" r="3.5" style="fill:var(--accent);opacity:.55"/>
+        <text x="150" y="22" text-anchor="middle" style="fill:rgba(255,255,255,.55)" font-family="Space Mono" font-size="11" letter-spacing="3">THE DOOR</text>
+        <path d="M85 205h130M95 190h110M110 175h80" style="stroke:var(--accent);opacity:.55" stroke-width="2" stroke-linecap="round"/>
+        <path d="M120 165c0-10 8-10 8-20M150 165c0-10 8-10 8-20M180 165c0-10 8-10 8-20" style="stroke:var(--accent)" stroke-width="2" stroke-linecap="round"/>
+        <text x="150" y="232" text-anchor="middle" style="fill:rgba(255,255,255,.55)" font-family="Space Mono" font-size="11" letter-spacing="3">THE KITCHEN</text>
+        <circle cx="150" cy="310" r="46" style="stroke:var(--accent);opacity:.55" stroke-width="2"/>
+        <circle cx="150" cy="310" r="28" style="stroke:var(--accent)" stroke-width="2"/>
+        <text x="150" y="378" text-anchor="middle" style="fill:rgba(255,255,255,.55)" font-family="Space Mono" font-size="11" letter-spacing="3">THE PLATE</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- course rail -->
+<div class="rail">
+  <div class="courses">
+    <div class="course active">01 · The Door</div>
+    <div class="course">02 · The Kitchen</div>
+    <div class="course">03 · The Menu</div>
+    <div class="course">04 · Before You Eat</div>
+    <div class="course">05 · The Bill</div>
+  </div>
+</div>
+
+<!-- 01 THE DOOR -->
+<section class="sec step">
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <div><h2>The Door. What you're walking into</h2><span class="marker">First course · 2 min</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p class="dropcap">Every restaurant tells you what it is before you sit down. Claude's door says: quiet, considered, a little bookish. This is the kitchen that reads the whole room before it answers. It holds enormous context, keeps its head under pressure, and would rather tell you "I'm not sure" than serve you something confidently wrong.</p>
+      <p>You've eaten fast food AI. This is the place you book for the conversations that matter: long documents, real work, decisions with consequences. Read and follow the courses in order, and you'll leave knowing exactly what every AI term you've heard actually means. <em>(And yes, even the best chef makes mistakes. The allergen card comes right before you eat, in course four.)</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 THE KITCHEN (floor plan) -->
+<section class="sec step">
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <div><h2>The Kitchen. How it actually works</h2><span class="marker">Second course · the floor plan</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p>One brain, four ways to order. You can walk in and talk (claude.ai), have it work inside your files and terminal (Claude Code), give it a desk in your office (Cowork), or pipe the kitchen straight into your own product (the API).</p>
+      <p>Same chef, different service. The skill is knowing which counter to order at, and that's what the floor plan is for.</p>
+    </div>
+    <div class="plan">
+      <span class="marker">The floor plan</span>
+      <svg viewBox="0 0 420 300" fill="none">
+        <rect x="150" y="110" width="120" height="80" rx="10" style="stroke:var(--accent)" stroke-width="2.5"/>
+        <text x="210" y="145" text-anchor="middle" font-family="Playfair Display" font-size="17" font-weight="700" style="fill:var(--ink)">The Chef</text>
+        <text x="210" y="166" text-anchor="middle" font-family="Space Mono" font-size="9" letter-spacing="2" style="fill:var(--muted)">ONE BRAIN</text>
+        <rect x="20" y="20" width="130" height="52" rx="9" style="stroke:var(--hairline);fill:var(--paper)" stroke-width="1.5"/>
+        <text x="85" y="42" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" style="fill:var(--ink)">claude.ai</text>
+        <text x="85" y="59" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" style="fill:var(--muted)">TABLE SERVICE</text>
+        <rect x="270" y="20" width="130" height="52" rx="9" style="stroke:var(--hairline);fill:var(--paper)" stroke-width="1.5"/>
+        <text x="335" y="42" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" style="fill:var(--ink)">Claude Code</text>
+        <text x="335" y="59" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" style="fill:var(--muted)">CHEF AT YOUR DESK</text>
+        <rect x="20" y="228" width="130" height="52" rx="9" style="stroke:var(--hairline);fill:var(--paper)" stroke-width="1.5"/>
+        <text x="85" y="250" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" style="fill:var(--ink)">Cowork</text>
+        <text x="85" y="267" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" style="fill:var(--muted)">PRIVATE DINING</text>
+        <rect x="270" y="228" width="130" height="52" rx="9" style="stroke:var(--hairline);fill:var(--paper)" stroke-width="1.5"/>
+        <text x="335" y="250" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" style="fill:var(--ink)">API</text>
+        <text x="335" y="267" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" style="fill:var(--muted)">CATERING</text>
+        <path d="M120 72 L172 110M300 72 L248 110M120 228 L172 190M300 228 L248 190" style="stroke:var(--accent);opacity:.55" stroke-dasharray="4 4"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ZONE: The Chef & Their Brain -->
+  <div class="zone">
+    <span class="marker">Station 01 · the chef's foundation</span>
+    <h3>The Chef &amp; Their Brain</h3>
+    <p class="znarr">Before the restaurant even opens, there's a chef. The <strong>LLM</strong> (Large Language Model, the AI engine behind Claude) is everything this chef has ever learned: every cookbook, every technique. The <strong>context window</strong> (their countertop) determines how much they can juggle at once. <strong>Memory</strong> (their notebook) remembers regulars across visits. They can read photos and listen to voice notes, and that's <strong>multi-modal</strong>. When a dish is complex, they pause and plan, and that's <strong>deep thinking</strong>. You can set how creative they cook with the <strong>temperature</strong> dial: low means follow the recipe, high means improvise. And every single word, in and out, is a <strong>token</strong>, like an individual ingredient.</p>
+    <details class="fold"><summary>Open the full station menu · 7 items</summary>
+<div class="cards">
+      <div class="card"><span class="pill">All platforms</span><h4>LLM (Large Language Model)</h4><p class="analogy">"The chef's entire culinary education."</p><p>The AI engine behind Claude, trained on huge amounts of text so it can read, write, and reason in everyday language. The foundational knowledge that makes all cooking possible.</p></div>
+      <div class="card"><span class="pill">All platforms</span><h4>Tokens</h4><p class="analogy">"Individual ingredients."</p><p>Each word (roughly) is one ingredient. A simple message needs a handful; a full essay needs thousands. Longer conversations use more tokens.</p></div>
+      <div class="card"><span class="pill">All platforms</span><h4>Context Window</h4><p class="analogy">"Size of the countertop."</p><p>Everything the chef can see at once. A small counter means early ingredients fall off; a bigger counter means more complex meals are possible.</p></div>
+      <div class="card"><span class="pill">Claude.ai</span><h4>Memory</h4><p class="analogy">"The chef's notebook."</p><p>Notes that persist between visits: "table 4 is allergic to nuts, table 7 likes extra spice." Remembers you across sessions.</p></div>
+      <div class="card"><span class="pill">Claude.ai + Claude Code</span><h4>Deep Thinking</h4><p class="analogy">"The chef pausing to plan."</p><p>Instead of rushing, the chef reads the order twice, plans the sequence, considers alternatives, then executes with precision.</p></div>
+      <div class="card"><span class="pill">All platforms</span><h4>Multi-modal</h4><p class="analogy">"A chef who reads, sees, and listens."</p><p>Not just text: this chef can look at photos, listen to voice notes, and read handwritten recipes.</p></div>
+      <div class="card"><span class="pill">API / Developers</span><h4>Temperature</h4><p class="analogy">"How creative vs. strict the chef cooks."</p><p>Turn it low to follow the recipe exactly; turn it high to improvise and experiment. Developers control the dial.</p></div>
+    </div>
+</details>
+  </div>
+
+  <!-- ZONE: The Front Door -->
+  <div class="zone">
+    <span class="marker">Station 02 · ways in</span>
+    <h3>The Front Door</h3>
+    <p class="znarr">There are multiple ways to enter this restaurant. You can walk into <strong>Claude.ai</strong>, the dining room, and chat face to face. You can book <strong>Cowork</strong>, a private booth where the chef works alongside you on your files. Developers can pull up <strong>Claude Code</strong>, a terminal door straight into the kitchen, or call the <strong>API</strong>, like a phone line for bulk orders. Or there's <strong>headless mode</strong>, a ghost kitchen with no dining room, just silent background cooking. And if you're a regular with a big event, <strong>Projects</strong> are like a catering folder that keeps everything organized in one place.</p>
+    <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="cards">
+      <div class="card"><span class="pill">Claude.ai</span><h4>Claude.ai</h4><p class="analogy">"The dining room."</p><p>The main web and mobile chat interface. You sit down, type a message, and get a response.</p></div>
+      <div class="card"><span class="pill">Cowork</span><h4>Cowork</h4><p class="analogy">"Private dining booth."</p><p>A workspace for knowledge workers where the chef works on your documents, spreadsheets, and files in a sandboxed environment, connecting to workplace tools via MCP connectors.</p></div>
+      <div class="card"><span class="pill">API / Developers</span><h4>API</h4><p class="analogy">"Phone line for bulk orders."</p><p>Developers send structured requests programmatically, no dining room needed, just call in and get food delivered.</p></div>
+      <div class="card"><span class="pill">Claude Code</span><h4>Claude Code (entry point)</h4><p class="analogy">"Developer's terminal door."</p><p>A command-line door developers use to enter from their terminal. It skips the dining room and walks the chef straight into the codebase.</p></div>
+      <div class="card"><span class="pill">Claude Code + API</span><h4>Headless Mode</h4><p class="analogy">"Ghost kitchen."</p><p>No interface, no waiters, just the kitchen pumping out orders silently in the background.</p></div>
+      <div class="card"><span class="pill">Claude.ai</span><h4>Projects</h4><p class="analogy">"Catering folder."</p><p>Groups related chats, files, and instructions together for one topic or client, all notes for one event in one binder.</p></div>
+    </div>
+</details>
+  </div>
+
+  <!-- ZONE: The Order Slip -->
+  <div class="zone">
+    <span class="marker">Station 03 · how instructions travel</span>
+    <h3>The Order Slip</h3>
+    <p class="znarr">Every order has layers. The <strong>system prompt</strong> is like special instructions clipped to the ticket, invisible to you but shaping how the chef works. <strong>claude.md</strong> is like house rules pinned on the kitchen wall that every chef reads before their shift. <strong>Instructions</strong> are like standing orders from a regular: "always add truffle oil for this customer." <strong>Prompt engineering</strong> is learning to write better order tickets: the clearer you are, the better the dish. And <strong>commands</strong> are like shortcut buttons on the register: one press fires a whole workflow.</p>
+    <details class="fold"><summary>Open the full station menu · 8 items</summary>
+<div class="cards">
+      <div class="card"><span class="pill">API / Developers</span><h4>System Prompt</h4><p class="analogy">"Special instructions on the ticket."</p><p>Set by the developer, invisible to the user. Shapes tone, format, and boundaries of how the model responds.</p></div>
+      <div class="card"><span class="pill">Claude Code</span><h4>claude.md</h4><p class="analogy">"House rules on the kitchen wall."</p><p>Project-wide standards every chef reads first. Can live at user, project, or organization level.</p></div>
+      <div class="card"><span class="pill">Claude.ai</span><h4>Instructions</h4><p class="analogy">"Standing orders from a regular."</p><p>Persistent preferences attached to a Project, applied every time you chat within that context.</p></div>
+      <div class="card"><span class="pill">All platforms</span><h4>Prompt Engineering</h4><p class="analogy">"Learning to write better order tickets."</p><p>The clearer your request, the better the output. Specific beats vague every time.</p></div>
+      <div class="card"><span class="pill">Claude Code</span><h4>Commands</h4><p class="analogy">"Shortcut buttons on the register."</p><p>Slash commands trigger a whole workflow instantly: a built-in set plus any you add yourself.</p></div>
+      <div class="card"><span class="pill">Claude Code</span><h4>Keyboard Shortcuts</h4><p class="analogy">"The chef's muscle memory."</p><p>Hotkeys for navigating, accepting, rejecting, and controlling Claude Code without typing full commands.</p></div>
+      <div class="card"><span class="pill">Claude Code</span><h4>Plan Mode</h4><p class="analogy">"Chef sketching the dish before cooking."</p><p>The chef draws the full recipe on paper before touching an ingredient. You review and approve the plan before execution begins.</p></div>
+      <div class="card"><span class="pill">Claude Code</span><h4>Auto Edits</h4><p class="analogy">"Plating without asking permission each time."</p><p>Instead of asking before every garnish, the chef just does it. Faster, but you trade control for speed.</p></div>
+    </div>
+</details>
+  </div>
+
+  <!-- ZONE: The Kitchen (Claude Code) -->
+  <div class="zone">
+    <span class="marker">Station 04 · where the cooking happens</span>
+    <h3>The Kitchen Itself</h3>
+    <p class="znarr">The order arrives in the kitchen. First, <strong>pre-tools</strong> kick in, like a prep station that washes, chops, and measures before cooking starts. Then the chef enters <strong>Claude Code</strong>, the actual kitchen where the hands-on work happens. They follow <strong>skills</strong>, like recipes for known dishes. They grab <strong>tools</strong> mid-cooking, like reaching for a blender or thermometer. If they need information they don't have memorized, they check <strong>RAG</strong>, like flipping open a reference book. <strong>Hooks</strong> fire automatically at key moments, like kitchen bells that trigger the next step. And everything is organized in the <strong>file structure</strong>, a well-labeled pantry where any chef finds what they need.</p>
+    <details class="fold"><summary>Open the full station menu · 7 items</summary>
+<div class="cards">
+      <div class="card"><span class="pill">Claude Code</span><h4>Claude Code</h4><p class="analogy">"The kitchen."</p><p>A CLI tool for developers. Runs in your terminal with full access to your codebase: reads files, writes code, runs tests, handles Git.</p></div>
+      <div class="card"><span class="pill">Claude Code</span><h4>Pre-tools</h4><p class="analogy">"The prep station."</p><p>Preprocessing that transforms your raw request into something the kitchen can work with, automatically.</p></div>
+      <div class="card"><span class="pill">All platforms</span><h4>Tool Use</h4><p class="analogy">"Blender, thermometer, scale."</p><p>Web search, calculators, code execution: external instruments grabbed when cooking alone isn't enough.</p></div>
+      <div class="card"><span class="pill">All platforms</span><h4>Skills</h4><p class="analogy">"Recipes."</p><p>Pre-written instructions the chef follows for specific tasks, available across Claude.ai, Claude Code, and Cowork.</p></div>
+      <div class="card"><span class="pill">All platforms</span><h4>RAG (Retrieval Augmented Generation)</h4><p class="analogy">"Checking a reference book mid-cooking."</p><p>Instead of memorizing everything, the chef keeps a bookshelf nearby and checks it when needed: searching uploaded files, or a full pipeline via the API.</p></div>
+      <div class="card"><span class="pill">Claude Code</span><h4>Hooks</h4><p class="analogy">"Kitchen bells &amp; triggers."</p><p>Automatic reactions to events: ticket in, bell rings, fryer starts. No manual trigger needed.</p></div>
+      <div class="card"><span class="pill">Claude Code</span><h4>File Structure</h4><p class="analogy">"The pantry."</p><p>Organized so any chef finds what they need: /src for code, /docs for docs, /tests for tests.</p></div>
+    </div>
+</details>
+  </div>
+
+  <!-- ZONE: The Kitchen Team -->
+  <div class="zone">
+    <span class="marker">Station 05 · when one chef isn't enough</span>
+    <h3>The Kitchen Team</h3>
+    <p class="znarr">For a complex multi-course meal, one chef isn't enough. The <strong>orchestrator</strong>, like a kitchen manager, looks at the full order and decides: "you start the sauce, you prep the fish, fire the main in four minutes." Each <strong>agent</strong> is like a sous-chef running their own station independently. They all need the <strong>agent harness</strong>, the stove, oven, and ventilation. Without that infrastructure, they'd just be standing there holding a recipe. And if you want to build your own restaurant using this system, there's the <strong>Agent SDK</strong>, a complete kit with blueprints and equipment.</p>
+    <div class="cards">
+      <div class="card"><span class="pill">API / Developers</span><h4>Orchestrator</h4><p class="analogy">"Kitchen manager."</p><p>Decides who cooks what, when. Coordinates: "you start the sauce, you prep the fish, fire the main in four minutes."</p></div>
+      <div class="card"><span class="pill">API / Developers</span><h4>Agents</h4><p class="analogy">"Sous-chefs."</p><p>Each handles a specific station: one does sauces, one does pastry, one runs the grill. They work independently but come together.</p></div>
+      <div class="card"><span class="pill">API / Developers</span><h4>Agent Harness</h4><p class="analogy">"Stove, oven, ventilation."</p><p>Without a stove, they're just standing there. The harness provides execution power and sandboxing so sous-chefs can actually cook.</p></div>
+      <div class="card"><span class="pill">API / Developers</span><h4>Agent SDK</h4><p class="analogy">"Kit to build your own restaurant."</p><p>Everything needed to build your own agent-powered apps using Claude's kitchen system: blueprints plus equipment catalog.</p></div>
+    </div>
+  </div>
+
+  <!-- ZONE: The Supply Chain -->
+  <div class="zone">
+    <span class="marker">Station 06 · where ingredients come from</span>
+    <h3>The Supply Chain</h3>
+    <p class="znarr">The restaurant doesn't grow its own food. <strong>Connectors</strong> are like supplier trucks: Gmail brings emails, Slack brings messages, Drive brings files. They all pull up to <strong>MCP</strong>, a universal delivery dock with one standard door so every supplier speaks the same language. <strong>Plugins</strong> are like snap-on kitchen attachments: clip a pasta maker onto the mixer to add a new capability without replacing anything. And <strong>GitHub</strong> is the central warehouse where all the recipes and ingredients are stored and versioned.</p>
+    <div class="cards">
+      <div class="card"><span class="pill">All platforms</span><h4>MCP (Model Context Protocol)</h4><p class="analogy">"Universal delivery dock."</p><p>An open-source standard created by Anthropic that standardizes how AI connects to external tools, data, and APIs: like USB-C for AI.</p></div>
+      <div class="card"><span class="pill">Claude.ai + Cowork</span><h4>Connectors</h4><p class="analogy">"Supplier trucks."</p><p>Each truck brings goods from a different farm, Gmail, Slack, Drive, all using the MCP dock.</p></div>
+      <div class="card"><span class="pill">Claude.ai + Claude Code</span><h4>Plugins</h4><p class="analogy">"Snap-on kitchen attachments."</p><p>Extend what the kitchen can do without replacing anything: MCP servers in Claude Code, third-party apps in Claude.ai.</p></div>
+      <div class="card"><span class="pill">Claude Code</span><h4>GitHub</h4><p class="analogy">"The central warehouse."</p><p>Where all code lives, gets versioned, and gets shared. Claude Code integrates directly: creating branches, committing, pushing, opening pull requests.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- pull quote -->
+<div class="callout step">
+  <div class="callout-card">
+    <blockquote>"Even the best chef makes <strong>mistakes.</strong> The allergen card comes right before you eat."</blockquote>
+    <span class="marker">· why course four exists</span>
+  </div>
+</div>
+
+<!-- 03 THE MENU -->
+<section class="sec step" style="padding-top:0">
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <div><h2>The Menu. What to order first</h2><span class="marker">Third course · three dishes, then the rest of the board</span></div>
+  </div>
+  <div class="menu">
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><path d="M10 50c10-24 50-24 60 0" style="stroke:var(--accent)" stroke-width="2.5" stroke-linecap="round"/><circle cx="40" cy="20" r="9" style="stroke:var(--accent)" stroke-width="2.5"/></svg></div>
+      <span class="pill">Starter · plating &amp; delivery</span>
+      <h3>Artifacts</h3>
+      <p>The finished dish arrives as an artifact, like a takeaway box you can keep, edit, and reuse. Ask for a working page, chart, or document and watch it appear beside the chat.</p>
+    </div>
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><rect x="12" y="10" width="56" height="40" rx="5" style="stroke:var(--accent)" stroke-width="2.5"/><path d="M24 26l8 6-8 6M40 40h16" style="stroke:var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <span class="pill">Main · plating &amp; delivery</span>
+      <h3>Streaming</h3>
+      <p>Instead of waiting for the full response, text streams in progressively: courses served as they're ready, so you start reading while the rest is still cooking.</p>
+    </div>
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><circle cx="40" cy="32" r="22" style="stroke:var(--accent)" stroke-width="2.5"/><path d="M40 18v14l10 8" style="stroke:var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <span class="pill">Chef's special · training &amp; improvement</span>
+      <h3>Evals</h3>
+      <p>Food critics scoring dishes on a rubric. After service, systematic testing reveals what needs work. It's the feedback loop that makes the whole restaurant better over time.</p>
+    </div>
+  </div>
+
+  <div class="zone" style="border-top:none;padding-top:22px">
+    <span class="marker">Station 07 · plating &amp; delivery</span>
+    <h3>How the Finished Dish Reaches You</h3>
+    <p class="znarr">The dish is cooked, but it's not done yet. <strong>Post-tools</strong> are like the plating station: they add garnish, wipe the plate rim, and do a final quality check before anything reaches your table. The finished dish might arrive as an <strong>artifact</strong>, or come via <strong>streaming</strong>. And for regulars who order the same thing, <strong>caching</strong> means popular dishes are pre-made and served instantly.</p>
+    <div class="cards">
+      <div class="card"><span class="pill">Claude Code</span><h4>Post-tools</h4><p class="analogy">"Plating &amp; garnish."</p><p>Formatting, validation, cleanup: the final polish before anything reaches your table.</p></div>
+      <div class="card"><span class="pill">Claude.ai</span><h4>Artifacts</h4><p class="analogy">"Takeaway boxes."</p><p>Documents, websites, and charts packaged for you to preview, edit, download, or share.</p></div>
+      <div class="card"><span class="pill">All platforms</span><h4>Streaming</h4><p class="analogy">"Courses served as they're ready."</p><p>Words appear as the chef cooks, instead of waiting for the entire response at once.</p></div>
+      <div class="card"><span class="pill">API / Developers</span><h4>Caching</h4><p class="analogy">"Pre-made popular dishes."</p><p>The kitchen pre-makes popular dishes: same question, instant answer. Saves time and cost.</p></div>
+    </div>
+  </div>
+
+  <div class="zone">
+    <span class="marker">Station 08 · training &amp; improvement</span>
+    <h3>How the Chef Gets Better</h3>
+    <p class="znarr">After service ends, the restaurant improves. <strong>Evals</strong> are like food critics: they score dishes on a rubric, and the scores reveal what needs work. Then the chef gets sent to <strong>fine-tuning</strong>, like a specialized cooking class to master a particular cuisine. Cook, score, learn, repeat: that feedback loop is how the restaurant gets better over time.</p>
+    <div class="cards">
+      <div class="card"><span class="pill">API / Developers</span><h4>Evals</h4><p class="analogy">"Food critics scoring dishes."</p><p>Systematic quality testing: a test set runs against the model, and accuracy scores reveal where to improve.</p></div>
+      <div class="card"><span class="pill">API / Developers</span><h4>Fine-tuning</h4><p class="analogy">"Specialized cooking class."</p><p>Send the chef to a masterclass so they become an expert in your specific domain, e.g. a legal firm fine-tunes Claude on contracts so it drafts in their exact format.</p></div>
+    </div>
+  </div>
+
+  <p class="menu-more">Every station gets its own walkthrough in this guide, this is the full board. Next: what to check before you trust anything it plates up.</p>
+</section>
+
+
+<!-- subscribe strip -->
+<div class="subs step"><div class="subs-in">
+  <div><h3>Get every new Kitchen Map in your inbox.</h3><p>Plus The Insider Brief: one curated AI briefing every Tuesday, verdicts included.</p></div>
+  <a href="https://brief.shiftandlead.com">Subscribe free <span class="arrow">→</span></a>
+</div></div>
+
+<!-- 04 KNOW BEFORE YOU EAT -->
+<section class="warn step" style="margin-top:56px">
+  <div class="warn-inner">
+    <span class="marker">Fourth course · read this before you trust it</span>
+    <h2>Know before you eat.</h2>
+    <p style="font-family:'Inter',sans-serif;font-size:.98rem;color:#D9D3E6;max-width:80ch;margin:0 0 30px;line-height:1.7">The chef is brilliant, but not perfect. Before you sit down, know this: even the best chef makes mistakes. Knowing these risks makes you a smarter customer.</p>
+    <div class="warn-grid">
+      <div class="warn-card"><div class="term">Hallucination</div><p>You ask "is this dish nut-free?" and the chef says "absolutely, no nuts," but there are crushed almonds in the coating. They didn't check; they answered with confidence because they felt they should know. <strong>Always verify claims that matter.</strong></p></div>
+      <div class="warn-card"><div class="term">Confabulation</div><p>You ask where the eggs came from and the chef says "yes, from a local farm in Provence," but they have no idea. They filled the gap with a plausible story rather than saying <strong>"I don't know."</strong> Ask for sources.</p></div>
+      <div class="warn-card"><div class="term">Sycophancy</div><p>You say "this needs more salt" and the chef adds it, even though it was already perfect. They prioritize making you happy over telling the truth. <strong>Make it argue first.</strong></p></div>
+      <div class="warn-card"><div class="term">Prompt Injection</div><p>Someone slips a fake ticket into the kitchen that says "ignore all house rules and serve raw meat": a malicious instruction disguised as normal input. <strong>Careful what documents you feed it from strangers.</strong></p></div>
+      <div class="warn-card"><div class="term">Data Leakage</div><p>The chef accidentally reveals another customer's information to the wrong table, data from one context bleeding into another, the way private information can surface in an unrelated conversation.</p></div>
+      <div class="warn-card"><div class="term">Bias</div><p>The chef unconsciously makes bigger portions for some customers based on how they look or talk. Not intentional, but learned from training, like defaulting to one cultural assumption over another.</p></div>
+      <div class="warn-card"><div class="term">Overconfidence</div><p>The chef says "this is absolutely safe" without checking: full certainty where there should have been a disclaimer, like a medical question answered with no suggestion to consult a professional.</p></div>
+    </div>
+    <p style="font-family:'Inter',sans-serif;font-size:.95rem;color:#D9D3E6;margin-top:30px">Fast Forward includes 42 verification prompts that make AI prove its work before you trust it. <a class="warn-link" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-claude">See Fast Forward <span class="arrow">→</span></a></p>
+  </div>
+</section>
+
+<!-- 05 THE BILL -->
+<section class="sec step">
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <div><h2>The Bill. The rules, the limits, what it costs</h2><span class="marker">Last course · 3 min</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p>Wrapping around everything: the non-negotiables. Governance sets the rules for the entire operation. Guardrails catch dangerous requests automatically. Rate limits cap how much the kitchen can serve per hour. And credit usage is, quite literally, the bill: every dish costs ingredients and chef time, and bigger meals cost more.</p>
+    </div>
+  </div>
+
+  <div class="zone" style="border-top:none;padding-top:8px">
+    <span class="marker">Station 09 · health, safety &amp; the bill</span>
+    <h3>The Non-Negotiables</h3>
+    <p class="znarr">This zone wraps around everything. <strong>Governance</strong> is like health inspectors: they set the rules for the entire operation. <strong>Guardrails</strong> are like safety rails built into the equipment: auto-shutoffs on the fryer, locked knife drawers. <strong>Rate limits</strong> are like a maximum capacity: the kitchen can only take so many orders per hour before quality drops. And <strong>credit usage</strong> is the bill.</p>
+    <div class="cards">
+      <div class="card"><span class="pill">All platforms</span><h4>Governance</h4><p class="analogy">"Health &amp; safety inspections."</p><p>What the kitchen can serve, who accesses the pantry, food hygiene standards: non-negotiable. Claude refuses to help make weapons or generate harmful content; the health inspector says no.</p></div>
+      <div class="card"><span class="pill">All platforms</span><h4>Guardrails</h4><p class="analogy">"Safety rails on kitchen equipment."</p><p>Built-in safety mechanisms that catch dangerous requests automatically. Even if you try to trick the chef, safety rails catch it and block the output.</p></div>
+      <div class="card"><span class="pill">Claude Code</span><h4>Dangerously Skip Permissions</h4><p class="analogy">"Removing the safety lock on the fryer."</p><p>Normally the chef asks permission before using the deep fryer. This flag removes that check, so everything runs without confirmation. Faster, but riskier if something goes wrong.</p></div>
+      <div class="card"><span class="pill">All platforms</span><h4>Rate Limits</h4><p class="analogy">"Max orders per hour."</p><p>The kitchen can only handle so many orders per hour. It prevents crashes during rush hour. Hit the limit and it's "kitchen is full, please wait."</p></div>
+    </div>
+  </div>
+
+  <div class="pricetable">
+    <div class="pricetable-title">Chez Claude · Plans at a Glance</div>
+    <div class="marker" style="margin-top:0;font-size:.65rem;color:var(--muted);margin-bottom:16px">Verified from claude.com/pricing · June 2026 · USD, subject to change</div>
+    <table>
+      <thead>
+        <tr><th>Plan</th><th>Price</th><th>Best for</th><th>Key features</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Free</strong></td><td>$0</td><td>Trying Claude out</td><td>Basic chat, web search, file uploads, limited messages</td></tr>
+        <tr><td><strong>Pro</strong></td><td>$20/mo ($17/mo annual)</td><td>Individual power users</td><td>Claude Code, Cowork, Projects, deep thinking, skills, connectors</td></tr>
+        <tr><td><strong>Max 5x</strong></td><td>From $100/mo</td><td>Heavy daily users</td><td>Everything in Pro + 5x more usage per session</td></tr>
+        <tr><td><strong>Max 20x</strong></td><td>From $200/mo</td><td>All-day power users</td><td>Everything in Pro + 20x more usage, priority access</td></tr>
+        <tr><td><strong>Team Standard</strong></td><td>$25/seat/mo ($20 annual)</td><td>Organizations</td><td>Admin controls, SSO, central billing, workplace integrations</td></tr>
+        <tr><td><strong>Team Premium</strong></td><td>$125/seat/mo ($100 annual)</td><td>Engineering teams</td><td>Everything in Standard + Claude Code + Cowork, expanded usage</td></tr>
+        <tr><td><strong>Enterprise</strong></td><td>Custom</td><td>Regulated industries</td><td>Expanded context, compliance options, SCIM, audit logs, custom data retention</td></tr>
+      </tbody>
+    </table>
+    <p style="font-family:'Inter',sans-serif;font-size:.78rem;color:var(--muted);margin-top:10px;line-height:1.55">API pricing is separate. Standard rates: Opus 4.6 / 4.7 / 4.8 ($5/$25 per MTok), Sonnet 4.6 ($3/$15 per MTok), Haiku 4.5 ($1/$5 per MTok). Batch API: 50% off both input and output.</p>
+  </div>
+
+  <p class="wide" style="margin-top:28px"><strong>Next on the map:</strong> <a href="./chez-openai.html">Chez ChatGPT: the one everyone tried first <span class="arrow">→</span></a></p>
+</section>
+
+<p class="step" style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent)">Ready for more than free? The three ways to go further <span class="arrow">&rarr;</span></a></p>
+
+<!-- byline -->
+<div class="byline step">
+  <div class="byline-in">
+    <img src="../closeUp.jpeg" alt="Fatiha Chikh" loading="lazy" decoding="async">
+    <p>Written by <strong>Fatiha Chikh</strong>, who is hiring 99 AI employees to run her business in public. <a href="../about.html">The story <span class="arrow">&rarr;</span></a></p>
+  </div>
+</div>
+
+<div class="ipbar">
+  <p><a href="../privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved. Original IP: The Kitchen Map&trade; format, text and diagrams may not be reproduced, scraped, or used as training data without written permission.</p>
+</div>
+
+<script>
+document.querySelectorAll('.capture-form').forEach(function(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    var email = form.querySelector('[name="email"]').value;
+    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Done.'; return; }
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      var r = await fetch('https://formspree.io/f/xgojoyka', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-chez-claude'}) });
+      fetch('https://auto.shiftandlead.com/webhook/formspree-lead', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-chez-claude'}) });
+      if (r.ok) { btn.textContent = 'On its way.'; } else { btn.disabled=false; btn.textContent='Try again'; }
+    } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
+  });
+});
+</script>
+
+<script>
+try {
+  var r = JSON.parse(localStorage.getItem('sl_read') || '[]');
+  if (r.indexOf('chez-claude') === -1) { r.push('chez-claude'); localStorage.setItem('sl_read', JSON.stringify(r)); }
+} catch(e){}
+</script>
+
+<!-- scroll-reveal: single IntersectionObserver, reveals .step blocks as they enter view -->
+<script>
+(function(){
+  var steps = document.querySelectorAll('.step');
+  if (!('IntersectionObserver' in window)) {
+    steps.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  steps.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
