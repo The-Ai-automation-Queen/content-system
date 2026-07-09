@@ -2,6 +2,73 @@
 
 ---
 
+## RESEARCH 029 — 2026-07-07 | Research-Inbox Backlog Triage — 758 saved links, first-ever sweep
+
+**Status:** NOTED
+**Source:** full one-time `backlog` sweep of `/home/user/research-inbox` (the
+save-everything Obsidian-synced capture repo) by `inbox-distiller`, 758
+files dated 2026-04-09 to 2026-07-06, English + French. Full digest:
+`reports/inbox-distiller-backlog-2026-07-07.md`. Going forward, `weekly`
+continues from `STATE: last-processed = 2026-07-06-gdocs-vocable-high-impact-campaign-prompts.md`.
+
+### What she keeps saving (master pattern map, ~425 kept of 758, ~333 killed as noise)
+1. **Claude Code / agent-skills ecosystem, meta-tooling & governance** — 136 items, rising. Skill/subagent repos to plug into the AI Engine, MCP servers, and increasingly formal project-governance frameworks that mirror this repo's own CLAUDE.md architecture almost exactly.
+2. **Creator monetisation case studies & pricing intelligence** — 90 items, rising. Real dollar figures from adjacent creators (see contrarian take below) — useful direct pricing benchmarks for the offer ladder.
+3. **AI avatar / faceless-video / visual-production tooling** — 83 items, rising. The most concrete, directly-buildable cluster for `heygen` and `visual-engine`.
+4. **Personal-brand strategy & LinkedIn/content-funnel playbooks** — 45 items, steady.
+5. **French-market AI-education & creator competitor intel** — 35 items, steady. Feeds the dormant `french-mirror` skill.
+6. **Second-brain / personal-memory architecture** — 28 items, steady. Validates the existing Second Brain design; no new architecture needed.
+7. **AI-agent security & supply-chain risk** — 15 items, steady (LiteLLM PyPI compromise, a Claude-skill malware auditor finding 36% of public-marketplace skills have flaws).
+8. **"AI agent runs your whole business" hype vs. real-cost skepticism** — 10 items, rising.
+9. **Direct "packaged Business OS" competitors** — 9 items, rising, including SkillTree ($49/mo, "137 AI agents across 7 departments" — the exact framing of queen-brain's own estate).
+10. **MCP (Model Context Protocol)** — 6 items, rising from near-zero.
+
+Real Talk is the thinnest-fed content pillar across the whole backlog — only
+two strong candidates in 758 files (see pillar mapping in the digest).
+
+### Signals
+- Build material (skills/governance + avatar/visual tooling, 219 items) and monetisation proof-of-concept (90 items) dominate the saving habit far more than personal-brand/content-funnel material.
+- Three separate captures converge independently on the same build (a Claude Code + Meta Developer App private IG/TikTok analytics dashboard) — a real signal worth folding into `performance-tracker`.
+- A durable prompt (AI avatar 6-view character-consistency sheet) was captured twice, two weeks apart — the missing pre-step `heygen` needs for identity-consistent avatar generation.
+- SkillTree, a direct "packaged Business OS" competitor, uses identical language ("137 agents, 7 departments") to queen-brain's own estate framing — monitor, don't copy from.
+
+### Ready-to-use content angles (full list + citations in the digest)
+- **Time Wins:** "A free Claude Skill replaced a $1,000s brand-strategist audit in 2 minutes" (`2026-04-13-article-i-built-a-claude-skill-that-audits-your-linkedin-for-you-it-does-in-2-minutes-wh.md`).
+- **Build Once, Runs Forever:** "My second brain updates itself every Sunday at 3am while I sleep" (`2026-06-24-twitter-affiseo-...md`).
+- **The Freedom Business:** "One person, five products, $1M/month — why a portfolio beats one big startup" (`2026-06-20-twitter-ridarketh-tibo-louis-lucas-makes-over-1000000-a-month...md`).
+- **Stop Doing That by Hand:** "Most small businesses pay $5-10K/month for an agency — one Claude Code session replaces the whole stack" (`2026-04-13-twitter-coreyganim-...md`).
+- **What's Worth It:** "Your whole business for $8/month? Here's what that pitch actually leaves out" (`2026-06-10-twitter-ibuzovskyi-hermes-agent-now-runs-a-full-business-for-8month...md`).
+- **Real Talk:** "The woman who made $20M for other people's launches and is terrified to show her own face" (`2026-06-21-youtube-content-strategy-for-20m-shadow-operator-behind-afnan-khalifa-and-thomas-kralov.md`).
+
+### Unused build opportunities surfaced (checked honestly against the existing estate — full detail in the digest)
+1. A pre-install skill security auditor (nothing today audits new skill code for risk before it lands in `skills/`).
+2. A multi-model critic cross-check for `content-engine`/`taste-clone` (currently single-model only).
+3. A dedicated SEO/GEO discoverability skill (nothing owns "can people find this page at all").
+4. Packaging the Starter Kit as an installable Claude skill, not just PDF/Whop (via the book-to-skill pattern).
+5. An auto-caption/motion-graphics layer for `reels-factory` shorts (Remotion/HyperFrames-style), which Opus Clip/Blotato don't currently do.
+
+### Contrarian take (logged)
+"Free-agent-runs-your-business" claims (Hermes Agent's "$8/month runs your
+whole business," "ambient businesses," zero-employee AI CEOs) are lead-gen
+copy, not operating reality. Every real-dollar case study in this same
+backlog contradicts the pitch: Higgsfield+Claude still takes ~3 hours of
+skilled prompt work per campaign, CAM charges $500/month, Content Lab
+charges $3,500+$998/mo and is "sold out," someone sold a DM-agent
+architecture for €7,000, and CEOs are quietly discovering agent token costs
+now exceed the salaries of the humans they replaced
+(`2026-05-29-twitter-escanorreloaded-ceos-are-quietly-realizing-the-ai-replacement-plan-has-a-problem.md`).
+The gap between the $8/month pitch and the $500–$10,000/month reality is
+itself a Real Talk / What's Worth It angle.
+
+### For content-engine — What's Worth It candidates
+1. Is the "$8/month runs your whole business" genre (Hermes Agent etc.) worth your time? Evidence: hype vs. hard-cost case studies. Sources: `2026-06-10-twitter-ibuzovskyi-hermes-agent-now-runs-a-full-business-for-8month-content-code-inbox-a.md`, `2026-06-04-gdocs-how-higgsfield-claude.md`, `2026-05-17-article-title-cam-your-face-your-voice-posted-across-5-platforms-on-autopilot.md`, `2026-05-29-twitter-escanorreloaded-ceos-are-quietly-realizing-the-ai-replacement-plan-has-a-problem.md`.
+2. Is building a multi-model "AI Executive Board" critic worth the engineering time over the current single-model critic? Sources: `2026-04-29-article-title-notion-where-teams-and-agents-work-together.md`, `2026-05-08-article-title-agent-auditeur-la-4e-couche-de-gouvernance-template-4-champs.md`.
+3. Are the faceless-AI-avatar "build a whole AI influencer channel" courses worth engaging with, given the brand is built on her real face and voice? Sources: `2026-06-28-article-title-opt-in-avatarprime.md`, `2026-06-24-article-title-create-and-earn-with-ai.md`, `2026-07-04-article-title-ai-video-bootcamp.md`.
+
+*(Angles only, per inbox-distiller's guardrails — content-engine owns drafting.)*
+
+---
+
 ## RESEARCH 028 — 2026-07-09 | Daily signal harvest — Meta AI agent slowdown, Gartner cancellation wave, Anthropic Claude Science, solopreneur stack news
 
 **Status:** NOTED

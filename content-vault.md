@@ -13,6 +13,11 @@
 
 ## Most recent (quick reference)
 
+- 07/07/2026 | X/Twitter (thread) | "$5–10K/Month Agency? One Claude Code Session Replaced the Whole Stack" — agency spend vs. one AI session | DRAFT
+- 07/07/2026 | Facebook | "The Woman Who Made Someone Else $20M — and Still Won't Show Her Face" — the cost of hiding | DRAFT
+- 07/07/2026 | LinkedIn carousel | "Everyone's Selling 'Build a Faceless AI Avatar Empire.' Here's Why I Kept My Actual Face." — what's-worth-it check | DRAFT
+- 07/07/2026 | Short-form video | "One AI Grading Its Own Homework? I Stopped Trusting That." — is a second AI critic worth building | DRAFT
+- 07/07/2026 | LinkedIn | "Your Whole Business for $8 a Month? Read the Fine Print First" — the $8/month hype vs. the real cost | DRAFT
 - 30/06/2026 | LinkedIn | "I Trust AI Now Because of 20 Years at Dell" — why rigor makes me trust it | DRAFT
 - 30/06/2026 | LinkedIn | "I'm Not the Builder Anymore. I'm the Judge." — the mindset shift | DRAFT
 - 30/06/2026 | Short-form video | "6 Helpers, 8 Minutes, a Full Launch Plan" — let it run without you | DRAFT
@@ -36,6 +41,209 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 028 — 07/07/2026 | X / Twitter (thread) | $5–10K/Month Agency? One Claude Code Session Replaced the Whole Stack | DRAFT
+
+**Status:** DRAFT
+**Platform:** X / Twitter (numbered thread, 6 tweets)
+**Format:** Contrarian claim-first thread — hook tweet + evidence beats + operational close
+**Topic:** A widely-shared claim that one Claude Code session can replace what small businesses pay a $5–10K/month agency for. Reframes "Stop Doing That by Hand" around agency spend rather than manual tasks — fills the vault's Twitter/X coverage gap (0 dedicated entries per `reports/vault-audit-2026-07-05.md` §4).
+**Pattern used:** Contrarian Operational Hook (14) + Before/After Contrast (13)
+**Pillar:** Stop Doing That by Hand
+**Critic score:** 8.1/10 — APPROVED FOR REVIEW (held at DRAFT this run regardless — see note below)
+**ACP stage:** A — value-first, comment-keyword capture. See ENTRY 024's batch-level ACP note for how this fits the last-10 ratio math.
+**CTA:** "Comment TEAM and I'll show you how to set this up for free"
+**Source:** RESEARCH 026 (Stop Doing That by Hand angle, `2026-04-13-twitter-coreyganim-...md`). The $5–10K/month agency-replacement claim is a third-party tweet, reported here as a claim someone made — not presented as Fatiha's own verified result.
+**⚠️ PREP:** the "TEAM" lead magnet is `active=no` in `lead-magnets.csv` (same flag as ENTRY 016) — host + activate before queueing.
+**Note:** Held at DRAFT per this run's instruction regardless of score. Chosen specifically to fill the Twitter/X gap flagged in the latest vault audit.
+
+---
+### X / TWITTER THREAD
+
+1/ Someone posted this last month and it's still bugging me: most small businesses pay $5–10K a month for a marketing agency. One Claude Code session replaced the whole stack.
+
+2/ Read that again. Not "helped with." Replaced.
+
+3/ The agency retainer buys you: someone to write the captions, someone to schedule them, someone to make the graphics, someone to report back on what worked. Four jobs, one invoice.
+
+4/ One well-set-up AI session can draft the captions, adapt them per platform, flag what to post when, and tell you honestly what's working — for the cost of the tool, not a retainer.
+
+5/ This isn't "fire your agency tomorrow." It's this: before you sign another $5–10K/month contract, spend one afternoon finding out how much of that you can actually run yourself.
+
+6/ I'll show you the exact first thing I automated instead of hiring for it — for free. Comment TEAM and I'll send it over.
+
+---
+
+---
+
+## ENTRY 027 — 07/07/2026 | Facebook | The Woman Who Made Someone Else $20M — and Still Won't Show Her Face | DRAFT
+
+**Status:** DRAFT
+**Platform:** Facebook (personal-toned text post — the lighter, more-personal LinkedIn reformat `vault-audit-2026-07-05.md` §5 recommends)
+**Format:** Fear-first hook → personal mirror → community invite, ~180 words
+**Topic:** A researched Real Talk mirror — reacting to a documented case of someone building eight figures in launch revenue for other people's brands while staying anonymous herself — set against Fatiha's own choice to build under her real face and name from a genuinely small following. Fills the vault's Facebook coverage gap (0 entries per `reports/vault-audit-2026-07-05.md` §4) and Real Talk, the pillar RESEARCH 026 flags as the thinnest-fed across the whole research backlog.
+**Pattern used:** Fear-First Hook (2) + Vulnerability Before Credentials (7)
+**Pillar:** Real Talk
+**Critic score:** 7.8/10 — NEEDS WORK: strong hook and honest specificity, but the "personal reveal" winner evidence in `performance-log.md` is pre-rebrand Instagram data, not Facebook data — proven-pattern fit scored neutral (no direct logged evidence for this platform yet), which caps the average. Held at DRAFT this run regardless.
+**ACP stage:** C — deliberate community-invite injection (mirrors ENTRY 015's approach). See ENTRY 024's batch-level ACP note.
+**CTA:** "The community is the people actually doing this. Come in →"
+**Source:** RESEARCH 026 (Real Talk angle, `2026-06-21-youtube-content-strategy-for-20m-shadow-operator-behind-afnan-khalifa-and-thomas-kralov.md` — names not repeated in the post itself to keep the post about the mirror, not the individuals). Follower figure (632, Instagram) traces to `performance-log.md` PERFORMANCE 2026-06-27 profile snapshot. The "sudden, not gradual" corporate-exit detail traces to `personal-brain.md` (2026-07-05 entry) — the specific trigger story is not yet recorded there, so it is not invented here.
+**⚠️ PREP (blocks queueing):** same blocker as ENTRY 015 — the community (Whop space + founding price) isn't live yet. Do not queue until that exists; [VERIFY] that the invite links somewhere real before posting.
+
+---
+### FACEBOOK POST
+
+There's a video going around right now about a woman who quietly built eight figures in launch revenue for other people's brands — and still won't put her own face on anything.
+
+I get it more than I want to admit.
+
+My own corporate exit wasn't some slow, brave wind-down either. It was one sudden decision, and then I was just... out, with no name of my own attached to anything yet.
+
+Here's the thing though. Right now my following is small — a few hundred people, not a few hundred thousand. I could absolutely hide behind that and wait until the numbers look "safe" enough to show up.
+
+But hiding is the whole trap. The $20M woman is proof you can be brilliant, in-demand, and still stuck — because the thing with your own name on it is the only thing that's actually yours.
+
+So I'm doing this under my real name, on camera, at 600-something followers, instead of waiting for permission that never comes.
+
+If you're building the thing that's actually yours — even quietly, even small right now — the community is the people actually doing this. Come in →
+
+---
+
+---
+
+## ENTRY 026 — 07/07/2026 | LinkedIn (carousel) | Everyone's Selling "Build a Faceless AI Avatar Empire." Here's Why I Kept My Actual Face. | DRAFT
+
+**Status:** DRAFT
+**Platform:** LinkedIn (carousel / PDF-style document post)
+**Format:** Myth/reality contrast carousel (Chris Donnelly format) + vulnerability-before-credentials framing, 7 slides + caption
+**Topic:** RESEARCH 026 What's Worth It candidate #3 — evaluates the current wave of "build a faceless AI avatar channel" courses/opt-ins against a brand built on a real face and real voice.
+**Pattern used:** Myth/Reality Table format (Chris Donnelly, creator #20) + Vulnerability Before Credentials (7)
+**Pillar:** What's Worth It
+**Critic score:** 8.0/10 — APPROVED FOR REVIEW. Flagging one proven-pattern conflict per `copy-craft`/`performance-log.md`: the logged loser pattern is *generic educational listicle/explainer carousels* (0.5–1.9% eng., pre-rebrand IG data), which a myth/reality table could drift toward if it stayed abstract. Mitigated by anchoring every slide to Fatiha's own real, specific numbers and choice rather than a generic list — but this is untested for the rebuilt brand and for LinkedIn specifically, so the mitigation is reasoned, not proven. Held at DRAFT this run regardless of score.
+**ACP stage:** A — value-first filter post, comment-keyword capture.
+**CTA:** "Comment WORDS for the plain-English AI jargon guide" (these pitches run thick with buzzwords like "faceless authority" and "digital twin monetization" — WORDS is the literacy-chain resource built for exactly that noise)
+**Source:** RESEARCH 026 What's Worth It candidate #3 (`2026-06-28-article-title-opt-in-avatarprime.md`, `2026-06-24-article-title-create-and-earn-with-ai.md`, `2026-07-04-article-title-ai-video-bootcamp.md`) — referenced only as evidence that this course/opt-in cluster exists and is rising (RESEARCH 026 signal: 83 items in the avatar/faceless-video cluster, rising); no pricing, curriculum, or outcome claims from those specific pages are cited or invented. Follower figure (632, Instagram) traces to `performance-log.md` PERFORMANCE 2026-06-27.
+**⚠️ PREP:** the "WORDS" lead magnet is `active=no` in `lead-magnets.csv` — host + activate before queueing.
+
+---
+### LINKEDIN CAROUSEL
+
+**SLIDE 1 (cover):**
+Right now, a whole wave of courses is selling "build a faceless AI avatar empire."
+I looked at three of them this week.
+Here's what they promise vs. what actually happens →
+
+**SLIDE 2:**
+The promise: you never show your face, never use your real voice, and an AI avatar builds you an audience anyway.
+The pitch: passive, faceless, scalable.
+
+**SLIDE 3 — What they promise:**
+"Post daily without being on camera."
+"Your avatar never gets tired, never has an off day."
+"Build authority without building a personal brand."
+
+**SLIDE 4 — What actually happens:**
+An audience trusting a face that isn't real, a voice that isn't real, building loyalty to a business that can't actually vouch for anything it says. [VERIFY — this is my reasoned read of the model, not a cited outcome from any specific course.]
+
+**SLIDE 5 — My honest answer to "is this worth it":**
+Not for me. My whole business is built on people believing a real person did this, is doing this, will keep doing this.
+An avatar can't have the conversation that made someone finally believe they could leave the 9-to-5.
+
+**SLIDE 6 — The actual math:**
+I'm not big. 632 followers on Instagram as of my last count. No shortcut. No avatar doing the work for me.
+But every one of those followers is looking at an actual person, not a rendered one.
+
+**SLIDE 7 (CTA):**
+These pitches are loaded with jargon designed to make "faceless" sound like "effortless."
+Comment WORDS and I'll send you the plain-English guide that cuts through it — starting with this trend.
+
+**CAPTION:**
+There's a real, rising cluster of "faceless AI avatar" courses right now — build the channel, never show up, let the avatar carry it. I looked at three of them this week.
+
+I'm not doing it. Not because the tech doesn't work — it does. Because the entire promise I'm making people is that a real person did this and can show you how. An avatar can't make that promise.
+
+I'm not big yet either. A few hundred followers, no shortcuts. But it's my actual face on every one of them.
+
+If you want the plain-English translation of what these pitches are actually selling before you buy in, comment WORDS.
+
+#AIautomation #PersonalBrand #WhatsWorthIt
+
+---
+
+---
+
+## ENTRY 025 — 07/07/2026 | Short-form video (Reel / TikTok / YouTube Short) | One AI Grading Its Own Homework? I Stopped Trusting That. | DRAFT
+
+**Status:** DRAFT
+**Platform:** Short-form video (Reel / TikTok / YouTube Short)
+**Format:** Contrarian hook + system reveal, ~35–45s talking-head
+**Topic:** RESEARCH 026 What's Worth It candidate #2 — is a multi-model "AI Executive Board" critic worth the engineering time over the single-model critic the content system runs today? An honest, undecided evaluation, not a finished build.
+**Pattern used:** Contrarian Operational Hook (14) + Teach Your System, Not the Tool (3)
+**Pillar:** What's Worth It
+**Critic score:** 8.2/10 — APPROVED FOR REVIEW. No `performance-log.md` evidence exists yet for this exact hook/topic — proven-pattern fit scored neutral (5/10 component) per `copy-craft`'s rule for untested territory; the talking-head/personal-reveal shape matches the logged winner pattern (personal narrative + her voice), which lifts the rest of the score. Held at DRAFT this run regardless.
+**ACP stage:** C — deliberate community-invite injection. See ENTRY 024's batch-level ACP note.
+**CTA:** "What we actually debated in the community this week:"
+**Source:** RESEARCH 026 What's Worth It candidate #2 (`2026-04-29-article-title-notion-where-teams-and-agents-work-together.md`, `2026-05-08-article-title-agent-auditeur-la-4e-couche-de-gouvernance-template-4-champs.md` — the concept is referenced only, never translated, per `inspiration-library`'s rule on French source text). The single-model critic described is this repo's own documented critic gate (`skills/content-engine/SKILL.md`), not an external claim.
+**⚠️ PREP:** same as ENTRY 027 — the community isn't live yet; do not queue until it is. [VERIFY] that whatever "come weigh in" mechanic is used (comments, a Whop post, etc.) actually exists before posting.
+**Note:** Not tagged as an Activation Arc episode — no verifiable machine number (drafts produced, DMs sent, $ collected) is available for this specific piece per the series rule; written as a standalone pillar post instead.
+
+---
+### SPOKEN SCRIPT
+
+**[HOOK — 0:00, straight to camera]**
+I built my content system to check its own work. Turns out that's not enough — because one AI grading its own homework is still just one opinion.
+
+**[BODY]**
+Right now, my drafts get written by one AI, then reviewed by that same AI switching hats to play the critic. It catches a lot. But it's still one model marking its own test.
+
+There's a real idea floating around right now — some people are calling it a fourth layer of governance: a second, different AI whose only job is to audit the first one's work before a human ever sees it. Not one voice grading itself — a second, independent read.
+
+Here's my honest answer, and I'm not going to pretend I've already decided: I don't know yet if building that is worth the extra engineering time over what I've already got running.
+
+**[screen B-roll, optional: two AI icons facing each other with a checklist between them]**
+
+What I do know is this — the question "do I trust the thing that made this, or bring in a second opinion" isn't just a tech question. It's the same question you ask before you trust any tool with your business.
+
+**[CTA]**
+What we actually debated in the community this week: whether one AI grading itself is enough. Come weigh in.
+
+---
+
+---
+
+## ENTRY 024 — 07/07/2026 | LinkedIn | Your Whole Business for $8 a Month? Read the Fine Print First | DRAFT
+
+**Status:** DRAFT
+**Platform:** LinkedIn (text post)
+**Format:** Specific-number hook + contrarian evidence stack, ~230 words
+**Topic:** RESEARCH 026 What's Worth It candidate #1 — is the "$8/month runs your whole business" genre (Hermes Agent and similar) worth taking seriously, set against the real-dollar case studies logged in the same research sweep.
+**Pattern used:** Specific Number as Hook (11) + Contrarian Operational Hook (14)
+**Pillar:** What's Worth It
+**Critic score:** 8.4/10 — APPROVED FOR REVIEW. Matches the "specific number + contrarian claim" LinkedIn shape both `copy-craft` and the latest competitor-watch flag as currently strong (Allie K. Miller pattern); no rebuilt-brand LinkedIn data is logged yet in `performance-log.md` to confirm for this account specifically. Held at DRAFT this run regardless of score.
+**ACP stage:** P — this batch's one deliberate P (0 P posts are currently tagged anywhere in the vault). Rule-compliant: not adjacent to another P, and the vault has never run two P's in a row. Per monetisation Rule 4, P posts should carry time pressure; the CTA map's literal What's Worth It/P text is evergreen ("where we filter signal from noise") — used verbatim per the map rather than inventing a fake deadline, since the Community isn't live to attach a real one to. Flagging the tension rather than silently resolving it.
+**CTA:** "Community: where we filter signal from noise → [link]"
+**Source:** RESEARCH 026 What's Worth It candidate #1 and its logged Contrarian take, same entry: `2026-06-10-twitter-ibuzovskyi-hermes-agent-now-runs-a-full-business-for-8month...md` (the $8/month claim), `2026-06-04-gdocs-how-higgsfield-claude.md` (the ~3 hours of skilled prompt work per campaign), `2026-05-17-article-title-cam-your-face-your-voice-posted-across-5-platforms-on-autopilot.md` (CAM's $500/month), `2026-05-29-twitter-escanorreloaded-ceos-are-quietly-realizing-the-ai-replacement-plan-has-a-problem.md` (CEOs discovering agent token costs exceeding replaced salaries). The Content Lab figure ($3,500 + $998/month, "sold out") and the €7,000 DM-agent-architecture sale are both drawn from RESEARCH 026's own logged Contrarian take paragraph — not independently re-verified beyond that entry; flagged [VERIFY] before quoting either figure externally.
+**⚠️ PREP (blocks queueing):** the Community isn't live yet (`skills/monetisation/SKILL.md` Tier 3 status: 🔴 Launch) — no real link exists for the CTA. Do not invent a URL; hold until the offer is live, per ENTRY 015's precedent.
+**Batch ACP note (applies to ENTRY 024–028):** the last 10 vault entries (014–023) carry only 3 explicit `ACP stage` tags (014=A, 015=C, 016=A); entries 017–023 were produced without the field. Reading untagged entries as the implicit value-first default (A) — the same convention ENTRY 016 used for the pre-existing history — the last-10 window reads roughly 9A/1C/0P. This batch of 5 is tagged 2A / 2C / 1P specifically to pull the *next* rolling 10-entry window (019–028) toward the ~7A/2C/1P target, not to hit it in one run. No two P's run consecutively; no more than 1-in-10 P overall.
+
+---
+### LINKEDIN POST
+
+Somebody's telling you your whole business can run on $8 a month. Here's what that pitch conveniently leaves out.
+
+There's a wave of "AI agent runs your entire business for $8/month" content going around right now. Zero employees. Ambient business. Set it and forget it.
+
+Meanwhile, in the same research pile: a real automated face-and-voice posting setup (CAM) charges $500 a month — and that's the automated version. A skilled team using Higgsfield + Claude on a real campaign still spends around 3 hours of actual prompt work per campaign — that's not zero, that's just less than before. Someone sold a DM-agent architecture for €7,000. And CEOs are quietly discovering their agents' token bills now cost more than the salaries of the humans they replaced.
+
+None of that means AI agents are a scam. It means the $8/month pitch is lead-gen copy, not an operating budget.
+
+The real number sits somewhere between "free" and "you still need a real system, real setup time, and probably a real subscription that isn't $8." That gap — between the pitch and the receipts — is the whole game. Anyone selling you the $8 version without mentioning the gap is selling you the headline, not the business.
+
+This is exactly the kind of pitch we pick apart before anyone spends a dollar on it — Community: where we filter signal from noise → [link]
+
+---
 
 ---
 
