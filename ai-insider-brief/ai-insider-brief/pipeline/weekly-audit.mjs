@@ -98,7 +98,7 @@ function checkPendingDepth() {
 function checkCategoryDistribution() {
   const data = JSON.parse(readFileSync(BRIEFS_PATH, 'utf-8'));
   const cards = (data.cards || []).slice(0, 30);
-  const expected = ['Breaking', 'Tools', 'Privacy', 'Strategy', 'Marketing', 'Real Estate', 'Health', 'Finance', 'Education', 'Media'];
+  const expected = ['Breaking', 'Tools', 'Privacy', 'Strategy', 'Marketing', 'Real Estate', 'Healthcare', 'Finance', 'Education', 'Media'];
   const counts = {};
   expected.forEach(c => counts[c] = 0);
   cards.forEach(c => { if (counts[c.category] !== undefined) counts[c.category]++; });

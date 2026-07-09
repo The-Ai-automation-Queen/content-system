@@ -1,31 +1,11 @@
 import { crawlSources } from './crawler.mjs';
 import { filterItem, synthesizeCard } from './synthesizer.mjs';
+import { loadMergedConfig, resolveLLMConfig } from './config-loader.mjs';
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 var __dirname = dirname(fileURLToPath(import.meta.url));
-
-// Load env from file
-function loadEnv(filePath) {
-  if (!existsSync(filePath)) return {};
-  var lines = readFileSync(filePath, 'utf-8').split('\n');
-  var env = {};
-  lines.forEach(function(line) {
-    line = line.trim();
-    if (!line || line.startsWith('#')) return;
-    var eqIndex = line.indexOf('=');
-    if (eqIndex === -1) return;
-    var key = line.substring(0, eqIndex).trim();
-    var val = line.substring(eqIndex + 1).trim();
-    // Remove surrounding quotes
-    if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
-      val = val.slice(1, -1);
-    }
-    env[key] = val;
-  });
-  return env;
-}
 
 async function main() {
   console.log('========================================');
@@ -33,45 +13,25 @@ async function main() {
   console.log('  ' + new Date().toISOString());
   console.log('========================================\n');
 
-  // Load config
-  var envPaths = [
-    process.env.ENV_PATH,
-    '/root/ai-insider-brief-pipeline/.env',
-    'C:\\Secrets\\insider-brief.env',
-    resolve(__dirname, 'config.env')
-  ].filter(Boolean);
+  // Load config — config.env (repo baseline) layered under by the
+  // deployment secrets file, so LLM_PROVIDER/GEMINI_MODEL in config.env
+  // survive even when the secrets file exists and only carries tokens/keys.
+  var loaded = loadMergedConfig(__dirname);
+  var env = loaded.env;
+  console.log('[CONFIG] Base: ' + (loaded.basePath || 'not found'));
+  console.log('[CONFIG] Secrets: ' + (loaded.secretsPath || 'not found (base config.env only)'));
 
-  var env = {};
-  for (var p of envPaths) {
-    if (existsSync(p)) {
-      env = loadEnv(p);
-      console.log('[CONFIG] Loaded env from: ' + p);
-      break;
-    }
+  var llmConfig;
+  try {
+    llmConfig = resolveLLMConfig(env);
+  } catch (err) {
+    console.error('[ERROR] ' + err.message);
+    process.exit(1);
   }
 
-  // LLM config — supports Ollama (default) or Gemini
-  var llmProvider = env.LLM_PROVIDER || 'ollama';
-  var llmConfig;
-
-  if (llmProvider === 'ollama') {
-    llmConfig = {
-      provider: 'ollama',
-      ollamaUrl: env.OLLAMA_URL || 'http://localhost:11434',
-      model: env.OLLAMA_MODEL || 'qwen2.5:3b'
-    };
+  if (llmConfig.provider === 'ollama') {
     console.log('[LLM] Using Ollama (' + llmConfig.model + ') at ' + llmConfig.ollamaUrl);
   } else {
-    var geminiKey = env.GEMINI_API_KEY || process.env.GEMINI_API_KEY;
-    if (!geminiKey) {
-      console.error('[ERROR] GEMINI_API_KEY not found. Set LLM_PROVIDER=ollama or provide key.');
-      process.exit(1);
-    }
-    llmConfig = {
-      provider: 'gemini',
-      apiKey: geminiKey,
-      model: env.GEMINI_MODEL || 'gemini-2.0-flash'
-    };
     console.log('[LLM] Using Gemini (' + llmConfig.model + ')');
   }
 
@@ -100,9 +60,24 @@ async function main() {
   }
   console.log('[BRIEFS] ' + existingBriefs.length + ' existing cards\n');
 
+  // Load pending (already-queued, not-yet-approved) cards for dedup. Without
+  // this, the crawler re-fetches and re-queues the same story every run
+  // until a human approves or rejects it.
+  var pendingForDedup = [];
+  if (existsSync(pendingPath)) {
+    try {
+      pendingForDedup = JSON.parse(readFileSync(pendingPath, 'utf-8'));
+    } catch (err) {
+      console.error('[WARN] Could not parse pending cards for dedup: ' + err.message);
+    }
+  }
+
   // Step 1: CRAWL
   console.log('--- STEP 1: CRAWLING ---\n');
-  var rawItems = await crawlSources(sources, statePath, existingBriefs);
+  var rawItems = await crawlSources(sources, statePath, existingBriefs, {
+    pendingCards: pendingForDedup,
+    maxCardsPerRun: maxCardsPerRun
+  });
 
   if (rawItems.length === 0) {
     console.log('\n[DONE] No new items found. Nothing to process.');
@@ -175,7 +150,8 @@ async function main() {
   // Step 4: QUEUE FOR APPROVAL
   console.log('--- STEP 4: QUEUING FOR APPROVAL ---\n');
 
-  // Load existing pending cards
+  // Load existing pending cards fresh (the approval bot polls and mutates
+  // this file independently, so re-read right before writing).
   var pending = [];
   if (existsSync(pendingPath)) {
     pending = JSON.parse(readFileSync(pendingPath, 'utf-8'));

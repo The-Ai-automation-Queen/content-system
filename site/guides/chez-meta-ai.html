@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noai, noimageai">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="noai, noimageai, max-image-preview:large">
 <title>Chez Meta AI · The Full Kitchen Map | Shift &amp; Lead</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Shift &amp; Lead">
@@ -15,6 +18,33 @@
 <link rel="canonical" href="https://guides.shiftandlead.com/guides/chez-meta-ai.html">
 
 <meta name="description" content="The whole Meta AI ecosystem walked through like a restaurant. Door, kitchen, plate.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chez Meta AI: The Full Kitchen Map",
+  "description": "The whole Meta AI ecosystem walked through like a restaurant. Door, kitchen, plate.",
+  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
+  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/chez-meta-ai.html",
+  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
+  "publisher": {"@type": "Organization", "name": "Shift & Lead", "logo": {"@type": "ImageObject", "url": "https://www.shiftandlead.com/logo.svg"}},
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What are tokens in Meta AI?", "acceptedAnswer": {"@type": "Answer", "text": "Tokens are individual ingredients. The Llama API is priced per token, while self-hosting is free per token because you supply the compute."}},
+    {"@type": "Question", "name": "What is a hallucination in Meta AI?", "acceptedAnswer": {"@type": "Answer", "text": "A hallucination is a confident answer with made-up facts. Every AI does this, so verify high-stakes claims, especially in casual social threads."}},
+    {"@type": "Question", "name": "What is confabulation in Meta AI?", "acceptedAnswer": {"@type": "Answer", "text": "Confabulation is filling a gap with a convincing story instead of saying you do not know. Ask for sources."}},
+    {"@type": "Question", "name": "Where is Meta AI available?", "acceptedAnswer": {"@type": "Answer", "text": "Meta AI is already installed in the apps people open every day, including Facebook, Instagram, and WhatsApp."}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -26,12 +56,12 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 
 /* nav */
 .nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20}
-.nav-inner{max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
 .nav .mono{font-size:10px;color:var(--muted)}
-.nav-links{display:flex;gap:16px;flex-wrap:wrap}
-.nav-links a{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid transparent}
-.nav-links a:hover{border-bottom-color:var(--ink)}
+.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}.nav-links .nav-cta{background:var(--accent);color:#fff;padding:8px 14px;border-radius:3px;font-weight:600}.nav-links .nav-cta:hover{background:var(--accent-deep)}
 
 /* magazine cover hero */
 .cover{max-width:1160px;margin:0 auto;padding:70px 24px 56px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:end}
@@ -106,12 +136,7 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .warn-card strong{color:#fff}
 .warn-link{font-family:'Inter',sans-serif;font-size:.92rem;color:#7FA0FF;display:inline-block;margin-top:22px}
 
-/* image slots for the magazine treatment */
-.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
-.imgslot .mono{font-size:9.5px;color:var(--accent)}
-.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
-.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
-.fullbleed .imgslot{aspect-ratio:21/8}
+.fullbleed 
 
 /* subscribe strip */
 .subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
@@ -168,22 +193,17 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 /* qa: contain grid children, never let the page scroll sideways */
 .sec-body>*{min-width:0}
 .sec-body svg,.sec-body img{max-width:100%;height:auto}
-.imgslot{max-width:100%;overflow:hidden}
 .sec table{max-width:100%}
 body{overflow-x:hidden}
+.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
 </style>
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
-  <a class="nav-logo" href="https://shiftandlead.com" target="_blank" rel="noopener">Shift &amp; Lead</a>
-  <div class="nav-links">
-    <a href="../free-resources.html">Free resources</a>
-    <a href="https://brief.shiftandlead.com">The Brief</a>
-    <a href="../store.html">Store</a>
-    <a href="../about.html">About</a>
-    <a href="../work-with-fatiha.html">Work with Fatiha</a>
-  </div>
+  <a class="nav-logo" href="../free-resources.html" rel="noopener">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-meta-ai">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-meta-ai">Fast Forward</a></div>
   <span class="mono">The Kitchen Map · Meta AI · 11 min read</span>
 </div></nav>
 
@@ -192,7 +212,16 @@ body{overflow-x:hidden}
   <div>
     <div class="issue mono"><span>The Kitchen Map · No. 11</span><span>Meta AI</span><span>11 min · diagram inside</span></div>
     <h1>Chez <em>Meta AI.</em></h1>
-    <p class="standfirst">You hear AI names everywhere and never know which does what. This walks you through Meta AI like a restaurant: the door, the kitchen, the plate, already installed in the apps you open every day.</p>
+    <p class="standfirst">What is Meta AI? Meta AI is Meta's AI assistant, built into Facebook, Instagram, and WhatsApp. You hear AI names everywhere and never know which does what. This walks you through Meta AI like a restaurant: the door, the kitchen, the plate, already installed in the apps you open every day.</p>
+    <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
+  <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
+  <p style="margin:0 0 14px;font-size:15.5px">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
+  <form class="capture-form" style="display:flex;gap:10px;flex-wrap:wrap">
+    <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+    <button type="submit" style="padding:10px 20px;background:#2C4BE0;color:#fff;border:none;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:14px;cursor:pointer">Send them to me</button>
+  </form>
+</div>
   </div>
   <div class="cover-art">
     <!-- door/kitchen/plate cover mark, drawn -->
@@ -208,7 +237,6 @@ body{overflow-x:hidden}
       <circle cx="150" cy="310" r="28" stroke="#2C4BE0" stroke-width="2"/>
       <text x="150" y="378" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE PLATE</text>
     </svg>
-    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
 </header>
 
@@ -233,10 +261,6 @@ body{overflow-x:hidden}
     <div>
       <p class="dropcap">Meta AI doesn't have a front door you have to find, because it's already standing inside every door you use. Open WhatsApp, Instagram, Messenger, Facebook: it's there, one @mention away. Put on a pair of Ray-Ban Meta glasses and it's on your face, listening for "Hey Meta." Go looking for a dedicated address and you'll find meta.ai and the Meta AI app too, but the real trick of this kitchen is that it never made you leave the room you were already in. (And yes, even the best chef makes mistakes. The allergen card comes right before you eat, in course four.)</p>
       <p>Under the hood, the chef cooking every one of those replies is <em>Llama</em>: Meta's own model family, and the most widely downloaded open-source AI on Earth. That's the second thing worth knowing before you sit down: you can also take this recipe home and run your own kitchen.</p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 02</span>
-      <em>Editorial photo: a phone lit up mid-chat inside a messaging app, warm light, duotone ink/purple grade</em>
     </div>
   </div>
 </section>
@@ -411,13 +435,6 @@ body{overflow-x:hidden}
   </div>
 </section>
 
-<!-- full-bleed image slot -->
-<div class="fullbleed">
-  <div class="imgslot">
-    <span class="mono">Image slot 03 · full-bleed divider</span>
-    <em>Wide editorial photo: a phone screen mid-group-chat with a Meta AI reply visible, warm light, or your portrait working, shot from the side</em>
-  </div>
-</div>
 
 <!-- 04 KNOW BEFORE YOU EAT -->
 <section class="warn" style="margin-top:72px">
@@ -435,7 +452,7 @@ body{overflow-x:hidden}
       <div class="warn-card"><div class="term">Training on Public Posts</div><p><em>"Recipes inspired by every public dish."</em> Public Facebook and Instagram posts may train Llama where allowed. EU users have a GDPR opt-out.</p></div>
       <div class="warn-card"><div class="term">Bias</div><p><em>"Unconsciously serving bigger portions to some."</em> Inherits biases from training data, including social-platform tone bleeding into formal answers.</p></div>
     </div>
-    <a class="warn-link" href="../store.html">I keep verification prompts for exactly these failures. The Judge's Prompts →</a>
+    <a class="warn-link" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-meta-ai">Fast Forward includes 42 verification prompts that make AI prove its work before you trust it. See Fast Forward →</a>
   </div>
 </section>
 
@@ -455,11 +472,7 @@ body{overflow-x:hidden}
     <div>
       <p>The hosted product, meta.ai, the app, and Meta AI inside WhatsApp, Instagram, Messenger and Facebook, is entirely <strong>free</strong>, supported by Meta's ad business rather than a subscription. <em>AI Studio</em> is free for creators to build and deploy custom characters. <em>Ray-Ban Meta smart glasses</em> are a one-time hardware purchase, roughly $300 and up, with Meta AI included at no extra cost. Developers pay per token on the <em>Llama API</em>, priced competitively with other major labs. And the <em>Llama open weights</em> are free to download under a community license, with a few restrictions for platforms above 700 million monthly users.</p>
       <p>Where Meta AI wins: <em>distribution</em>, because it's already inside the apps billions of people open every day, and the <em>open-source ecosystem</em>, the most-downloaded open AI on the planet. It's the pick for casual creative use, group-chat help, glasses interaction, or self-hosted Llama in serious development. It loses on professional polish next to ChatGPT or Claude, and on privacy unless you self-host.</p>
-      <p><strong>Next on the map:</strong> <em>what "agentic" means</em>: AI that does the job, not just the answer.</p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 04</span>
-      <em>The bill on a small tray, one purple petit-four, styled product photo</em>
+      <p><strong>Next on the map:</strong> <a href="./chez-manus.html">Chez Manus: the kitchen that runs errands &rarr;</a></p>
     </div>
   </div>
 
@@ -492,44 +505,46 @@ body{overflow-x:hidden}
   </div>
 </section>
 
-<!-- the chef's table: paid offers close -->
-<section class="chefs"><div class="chefs-in">
-  <span class="mono">The chef's table. Go further than the guide.</span>
-  <h2>You've seen the restaurant.<br>Now learn to run the kitchen.</h2>
-  <div class="chefs-grid">
-    <div class="chefs-card">
-      <span class="mono">Prompt pack · $19</span>
-      <h3>The Prompt Menu</h3>
-      <p>The Kitchen Map companion: the best prompts for this kitchen and every other, matched to what each chef cooks best.</p>
-      <a href="../store.html">Get it in the Store →</a>
-    </div>
-    <div class="chefs-card">
-      <span class="mono">Community · founding spots soon</span>
-      <h3>Build alongside me</h3>
-      <p>Live "build with me" sessions, templates, and people on the same road, everyday entrepreneurs winning back their time.</p>
-      <a href="../about.html#community">Be first in line →</a>
-    </div>
-    <div class="chefs-card">
-      <span class="mono">For companies</span>
-      <h3>Keynotes &amp; workshops</h3>
-      <p>Bring the whole method into your team, practical, non-technical, from someone whose business runs on 137 AI employees.</p>
-      <a href="../work-with-fatiha.html">Work with Fatiha →</a>
-    </div>
-  </div>
-</div></section>
+<p style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0">Ready for more than free? The three ways to go further &rarr;</a></p>
 
 <!-- byline -->
 <div class="byline">
   <div class="byline-in">
-    <img src="../closeUp.jpeg" alt="Fatiha Chikh">
-    <p><span class="who">Written by Fatiha Chikh: The AI Automation Queen.</span><br>
-    20+ years inside big corporate tech; now I run my business with a company of 137 AI employees. I build everything I teach. <a href="../about.html">The story →</a></p>
+    <img src="../closeUp.jpeg" alt="Fatiha Chikh" loading="lazy" decoding="async">
+    <p>Written by <strong>Fatiha Chikh</strong>, who is hiring 99 AI employees to run her business in public. <a href="../about.html">The story &rarr;</a></p>
   </div>
 </div>
 
 <div class="ipbar">
-  <p>© 2026 Fatiha Chikh / Shift &amp; Lead · Original IP · The Kitchen Map™ format, text and diagrams may not be reproduced, scraped, or used as training data without written permission · guides.shiftandlead.com</p>
+  <p><a href="../privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved. Original IP: The Kitchen Map&trade; format, text and diagrams may not be reproduced, scraped, or used as training data without written permission.</p>
 </div>
 
+<script>
+document.querySelectorAll('.capture-form').forEach(function(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    var email = form.querySelector('[name="email"]').value;
+    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Done.'; return; }
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      var r = await fetch('https://formspree.io/f/xgojoyka', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-chez-meta-ai'}) });
+      fetch('https://auto.shiftandlead.com/webhook/formspree-lead', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-chez-meta-ai'}) });
+      if (r.ok) { btn.textContent = 'On its way.'; } else { btn.disabled=false; btn.textContent='Try again'; }
+    } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
+  });
+});
+</script>
+
+<script>
+try {
+  var r = JSON.parse(localStorage.getItem('sl_read') || '[]');
+  if (r.indexOf('chez-meta-ai') === -1) { r.push('chez-meta-ai'); localStorage.setItem('sl_read', JSON.stringify(r)); }
+} catch(e){}
+</script>
 </body>
 </html>

@@ -22,7 +22,7 @@ The Prompt Menu: 150 Prompts Across 10 AI Kitchens
 
 Most prompt packs are a wall of text. You scroll, you skim, you close the tab, and you never come back to it. That's not a prompt problem. That's a menu problem.
 
-I run a business where 137 AI agents do the actual work, and I stopped writing prompts from scratch a long time ago. I order them. I know which "kitchen" handles writing, which one handles research, which one handles planning, and I go straight to the dish I want.
+I run a business where 99 AI employees do the actual work, and I stopped writing prompts from scratch a long time ago. I order them. I know which "kitchen" handles writing, which one handles research, which one handles planning, and I go straight to the dish I want.
 
 This pack takes that idea and hands it to you. 150 prompts, split across 10 AI kitchens: things like Writing, Research, Planning, Cleanup, and Client Work. Each kitchen is a menu. Each prompt is a dish, with a short line telling you what it's for and when to order it. No scrolling through 150 prompts to find the one you need tonight. You open the menu for the job in front of you and you pick.
 
@@ -87,7 +87,7 @@ Fatiha
 
 I stopped writing prompts from scratch a while back. Now I order them.
 
-I run a business where 137 AI agents do the actual work, and the only way that stays manageable is if I'm not reinventing a prompt every time I sit down. I know which "kitchen" handles writing, which one handles research, which one handles client work, and I go straight to what I need.
+I run a business where 99 AI employees do the actual work, and the only way that stays manageable is if I'm not reinventing a prompt every time I sit down. I know which "kitchen" handles writing, which one handles research, which one handles client work, and I go straight to what I need.
 
 Most prompt packs don't work that way. They're a wall of 150 prompts and you scroll until you give up and go write your own from scratch again.
 
@@ -146,7 +146,7 @@ Map one real week, score every task, and find the 20 hours AI should already be 
 
 Everyone tells you to "use AI more." Almost nobody tells you where. So you end up bolting AI onto the easiest task in your week, the one that was never actually costing you time, while the real drain keeps eating your hours.
 
-I run a business where 137 AI agents do the work, and none of that started with a big vision. It started with one week, mapped hour by hour, so I could see exactly where my time was actually going. That map is the whole method behind this audit.
+I run a business where 99 AI employees do the work, and none of that started with a big vision. It started with one week, mapped hour by hour, so I could see exactly where my time was actually going. That map is the whole method behind this audit.
 
 This pack walks you through mapping one real week of your work, task by task. Then it gives you a simple scoring guide so you're not guessing which tasks are worth handing off. You'll score each task on how repeatable it is, how much it drains you, and how safe it is to delegate. The tasks that score highest are your first AI employee: the one job AI should be doing for you before any other.
 
@@ -213,7 +213,7 @@ Fatiha
 
 Nobody tells you where. So people bolt AI onto whatever task is easiest to hand off, which is usually not the task actually costing them time. The real drain keeps draining.
 
-I run a business where 137 AI agents do the work now, and none of it started with a plan. It started with one week, mapped hour by hour, so I could see where my time really went instead of where I assumed it went.
+I run a business where 99 AI employees do the work now, and none of it started with a plan. It started with one week, mapped hour by hour, so I could see where my time really went instead of where I assumed it went.
 
 I built that mapping method into an audit. You log one real week, task by task. Then you score each task on how repeatable it is, how much it drains you, and how safe it is to hand off. Whatever scores highest is your first AI employee: the one job AI should be doing for you before any other.
 

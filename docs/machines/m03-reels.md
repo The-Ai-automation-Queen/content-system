@@ -11,6 +11,8 @@ with hooks and comment CTAs, landed as vault drafts.
 ## Tools
 - **Reap** (MCP, no key) — primary, returns virality scores
 - **Blotato** `combine-clips` — fallback
+- **ffmpeg-toolkit** — 9:16 reframe, thumbnails, concat, music beds
+- **captions** — karaoke caption burn-in, mandatory before queueing
 
 ## Inputs
 - A long-form video (YouTube, recorded content)

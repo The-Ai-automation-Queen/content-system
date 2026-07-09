@@ -130,3 +130,14 @@ why, so she can re-paste knowingly.
 7. **Facts about "what members are doing" require members.** Until the
    community has real activity to cite, Day 7-style emails use her own story
    and the founding invitation, not fictional member wins.
+
+
+## Mode: new-this-week (recurring, added 07/07/2026)
+
+Every Monday after the hiring wave completes, draft one short email for the
+list (paste-ready in email-sequences/new-this-week-YYYY-MM-DD.md):
+subject in the house voice, two links only: this week's spotlight guide
+(from site/spotlight.json current week) and the newest hire on the 99
+scoreboard. Under 120 words, no em-dashes, one CTA each. This closes the
+"get every new guide in your inbox" ribbon promise. Never sent by the
+skill; Fatiha pastes into GHL.

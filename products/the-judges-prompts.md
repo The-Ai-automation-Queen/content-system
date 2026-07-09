@@ -19,8 +19,8 @@ That's the mindset shift this pack installs: **you're not the builder anymore.
 You're the judge.** AI does the work. These prompts are how you check it —
 without doing the work yourself.
 
-Every prompt here is one I actually use, running a business where 137 AI
-employees do the work and I sign off on it. Copy, paste, adapt. Tool-agnostic —
+Every prompt here is one I actually use, running a business where 99 AI
+employees do the work and I sign off on it. Copy, paste, adapt. Tool-agnostic:
 they work in Claude, ChatGPT, Gemini, Copilot, anything.
 
 ---

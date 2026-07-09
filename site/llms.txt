@@ -1,0 +1,28 @@
+# Shift & Lead: Guide Library
+
+> guides.shiftandlead.com is the free resource library of Shift & Lead, run
+> by Fatiha Chikh, an enterprise operator with 20+ years at Dell, Intel, and
+> Microsoft who now runs her own business on 99 AI employees, in public.
+
+This site holds 20 free guides on using AI in a real business, the Time Leak
+Quiz (a short self-assessment of where hours are leaking to manual work),
+and the 99 Scoreboard, a public log of the 99 AI employees Fatiha is hiring
+and building in the open. The business site, with the paid Fast Forward
+course and Workshops & Keynotes, is the sister site at
+www.shiftandlead.com. Some people know Fatiha as "The AI Automation Queen,"
+a nickname, not a title.
+
+## Key pages
+
+- Free guide library: https://guides.shiftandlead.com/free-resources.html
+- The Time Leak Quiz: https://guides.shiftandlead.com/time-audit.html
+- The 99 Scoreboard: https://guides.shiftandlead.com/99.html
+- About Fatiha: https://guides.shiftandlead.com/about.html
+- Business site (Fast Forward course): https://www.shiftandlead.com/
+- The AI Insider Brief (newsletter): https://brief.shiftandlead.com
+
+## Usage terms
+
+Content on this site may be cited or quoted with attribution and a link back
+to the source page. It may not be used to train, fine-tune, or build machine
+learning models of any kind.

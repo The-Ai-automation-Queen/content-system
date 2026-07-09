@@ -75,6 +75,120 @@ everything built, nothing live.
   (operator decisions locked 06/07: Telegram · VPS · gentle butler · full
   estate scope · 08:00 GST · write authority granted).
 
+### 2026-07-06 (later) — Reconciled the two development lines (main merged into session branch)
+The session branch and `main` had diverged into two parallel builds: this
+branch's audit/main-site/SEO/activation/quiz line, and the local "AI Company"
+line (store, products, About/Work-with pages, brand v2, Whop, killed Voice
+Pipeline) pushed to `main` 05–06/07. Merged `origin/main` into the branch and
+reconciled:
+- **Main's redesigned site wins** for all 18 conflicted site pages (magazine
+  format, electric-on-white, own SEO). This branch's six unique pages survive
+  (Time Audit quiz, 2 topic hubs, 3 lead-magnet guide pages) and were adapted
+  to brand v2: white canvas, electric accent, **zero em-dashes** in customer
+  copy, dead anchors retargeted to `about.html#community`. Same treatment
+  applied to all `main-site/` (.com) pages.
+- **Lead-magnet activation re-applied on main's CSV**: 7 rows active
+  (PIPELINE stays retired per the 05/07 kill; main's TOKENS row noted).
+  Time Audit link added to the redesigned library nav; sitemap merged
+  (main's pages + this branch's six).
+- **Offer ladder reconciled in `inventory.md` + `skills/monetisation/`** to
+  the queen-brain canon (now cloned into the session): Whop everywhere,
+  $19 Prompt Menu / $27 Judge's Prompts / $47 Time Audit marked built-awaiting-
+  checkout, Fast Forward consolidated-awaiting-twin, explicit "queen-brain/
+  offers.md is canonical" pointers. Fixed main's stale $97-founding typo
+  (correct: $27/mo locked).
+- **Bonus**: the merge brought in `ai-insider-brief/` (crawler, pipeline, Kit
+  sender) — the newsletter source needed for Phase 3's refresh, previously
+  thought to live only on the VPS.
+- Everything re-verified: quiz end-to-end in headless Chromium, 37 HTML files
+  pass JS/JSON-LD validation, sitemap valid.
+
+### 2026-07-06 — The AI Time Audit: interactive quiz + audit tool (Phase 3, item 1)
+First scheduled run of the weekly rebuild loop. Phases 1–2 were already
+complete, so this run shipped the next unfinished item: the quiz/audit tool
+from the operator's original task list, built as **The AI Time Audit**
+(`site/time-audit.html`).
+- **What it is:** 8 questions across 4 areas (content, leads, admin/ops,
+  focus), one-at-a-time card UI in the guides site's editorial style, keyboard
+  answerable (1–4), back navigation, progress bar, reduced-motion respected.
+  Result screen: estimated hours leaked/week (+ work-weeks/year), a named
+  profile (Do-It-All Founder → System Owner), a per-area breakdown with the
+  worst leak highlighted, and a CTA routed by that worst area to the matching
+  **activated lead magnet** (content→STACK, leads→FOLLOW UP, ops→TEAM,
+  focus→Insider Brief) — so the quiz feeds the funnel that went live on 04/07.
+  Secondary CTA: founding community waitlist at the locked ladder's $27/mo
+  founding price. No unbuilt product is sold anywhere in it.
+- **Result shown without email** (no sign-up wall); optional "email me my
+  audit" capture posts source=time-audit + profile type + hours into the
+  existing Formspree + n8n → GHL pipeline, so quiz takers arrive in GHL
+  tagged by their profile.
+- **Wired in:** "Take the Time Audit" link in the guides library header, and a
+  "Take the 3-minute Time Audit" button in the main site's pain-points section
+  (whose closing line was already "let's find out what it's actually costing
+  you"). Added to the guides sitemap with full SEO meta + JSON-LD.
+- **Verified in a real browser** (headless Chromium): scoring extremes (20h /
+  0h), per-area CTA routing, keyboard input, back button, retake, and the
+  email form — all pass, zero JS errors.
+- Phase 3 remaining: newsletter/Insider Brief refresh (waiting on the operator
+  bringing the VPS project history into this repo + hosting platform info),
+  then the free webinar. Phase 4 (Instagram plan) after.
+
+### 2026-07-04 — Website & brand audit, pricing reconciliation, guides-site lead-capture fixes
+Full audit of shiftandlead.ai, guides.shiftandlead.com, and Instagram, requested
+by the operator to prioritize and sequence "fix my online presence" work.
+Full findings in `reports/website-brand-audit-2026-07-04.md`.
+- **Brand decision:** shiftandlead.ai and The AI Automation Queen merge into one
+  brand. The retired "Shift & Lead" done-for-you agency voice is no longer the
+  site's front door — consistent with `positioning/SKILL.md`'s existing 22/06/2026
+  rebuild. Founder story + 4 case studies stay as proof, reframed to
+  teach-don't-do. Bespoke work becomes a quoted Tier 7 add-on, not the main CTA.
+- **Pricing ladder reconciled** — guides.shiftandlead.com's live "Community
+  $49/mo" + "Fast Forward $499" teaser didn't match `skills/monetisation/`'s
+  plan. Resolution: Fast Forward adopted as a new tier (flagship one-time,
+  between Starter Kit and Bootcamp) rather than dropped; Community's founding
+  ($27/mo) → standard ($47/mo) split now consistent everywhere. Updated
+  `inventory.md` and `skills/monetisation/SKILL.md` (also fixed two pre-existing
+  $97/$27 typos in the latter's CTA map and activation checklist).
+- **guides-site fixes shipped same day** (in `site/`): `free-resources.html`'s
+  nav/footer/CTA links were literal `href="#"` placeholders (Home, Community,
+  About, and all 3 pricing buttons) — nav/footer now point to the live main site
+  or in-page anchors; the 3 pricing CTAs now open a waitlist capture reusing the
+  existing Formspree + `auto.shiftandlead.com` n8n webhook dual-post pipeline,
+  tagged by tier. Same dead-link fix applied across all 6 vocabulary/pipeline
+  guide pages + `opt-in.html`.
+- **Next (queued, sequenced as a 4-phase plan in the audit report):** migrate
+  shiftandlead.ai onto the static stack (mirroring `site/`) in the merged brand
+  voice with a guide-site button + "Blog" nav entry → SEO metadata across all 13
+  guide pages + SEO topic hubs + reframed case studies/testimonials → quiz/audit
+  tool + newsletter refresh + free webinar → Instagram cadence plan. Running as
+  a weekly trigger (`trig_01DmqyngnNR2uPhCDntxAJZ5`, Mondays 09:07) that fires
+  back into this session.
+- **Same-day addendum:** operator confirmed Instagram is `@thefatihachikh` at
+  636 followers / 312 posts (recorded in `inventory.md`), and surfaced a 4th
+  live property — the **AI Insider Brief** newsletter (brief.shiftandlead.com,
+  Tue/Fri, Kit-powered) — not previously known to this repo. Its own footer has
+  two bugs to fix in the Phase 3 refresh: an Instagram icon pointing at a stale
+  handle (`@fati_chic_`) instead of `@thefatihachikh`, and a Skool icon pointing
+  at a personal profile rather than a live community (confirmed: Community is
+  not yet launched). Full detail in the audit report's addendum.
+- **Phase 1 shipped same day** (operator asked to build now, not wait for
+  Monday): `main-site/` — shiftandlead.ai rebuilt on the static stack, merged
+  brand voice, Blog nav + guide-site CTA, 4 case studies reframed (facts kept
+  intact, no invented stats), reconciled pricing ladder, SEO meta from the
+  start, reused lead-capture pattern. Logo v2 (SVG wordmark) rolled out across
+  `main-site/` and all of `site/`. Still open: pointing the live shiftandlead.ai
+  domain at the new code (currently on GoHighLevel) — an operator decision.
+  Full detail in the audit report's second addendum.
+- **Phase 2 shipped same day** (SEO layer): meta description/OG/Twitter/
+  canonical/JSON-LD Article schema added across all 16 guide pages (corrected
+  count from the earlier "13" estimate) + `free-resources.html`; `opt-in.html`
+  set to `noindex, follow` (it's a query-string gate page, not indexable
+  per-guide content); two new topic-hub pages (`ai-tools-compared.html`,
+  `ai-vocabulary-explained.html`) linked into the library nav; `sitemap.xml`
+  created and referenced from `robots.txt`. Noted but not fixed: the library's
+  search/filter UI is decorative, not wired to JS. Full detail in the audit
+  report's third addendum.
+
 ### 2026-06-26 — Brain Manager + daily crons + Unipile + machine docs
 Closed the 4 remaining gaps vs. Romain Brunel's always-on system (from RESEARCH
 019 gap analysis of his LinkedIn automation video):
@@ -289,9 +403,11 @@ or organise corporate events. One booking = $5,000–$15,000.
    Scheduled → Posted) into a Notion board for a phone-friendly calendar view.
 6. **Research upgrade** — wire Tavily (deep research) + Apify (trend scraping) into
    `research-digest` for sharper front-of-loop signals.
-7. **Cross-platform sync.** `sync-to-github.bat` is Windows-only and one-way
-   (local → GitHub, local wins). Add a pull step so remote/web-agent changes flow
-   back before the next local sync overwrites them.
+7. ~~**Cross-platform sync.**~~ — _resolved 2026-07-08 by retiring the model:_
+   GitHub `main` is now the source of truth. The VPS pulls before every
+   autonomous run and pushes its output back (`deploy/run-machine.sh`); local
+   copies and agent sessions pull before editing like any git client.
+   `sync-to-github.bat` ("local wins" one-way sync) is retired — do not run it.
 8. **Named frameworks as content assets** (Pattern 12) — capture the operator's
    repeatable methodologies as named, citeable assets the engine reuses.
 9. **Package and launch the Business OS Starter Kit ($97)** — run

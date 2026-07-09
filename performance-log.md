@@ -6,6 +6,73 @@
 
 ---
 
+## PERFORMANCE 2026-07-09
+
+**Run date:** 2026-07-09 ~06:00 UTC
+**Sources scraped:** Instagram (FAILED), Facebook (FAILED), YouTube (FAILED), LinkedIn (FAILED), Twitter/X (FAILED), Threads (FAILED), Blotato (FAILED)
+**Data path:** ALL paths blocked this run. `META_ACCESS_TOKEN` not in env (Meta Graph API skipped). Apify MCP server not connected in this session (no MCP tool available). No `APIFY_TOKEN` env var for REST API fallback. Blotato MCP server not connected. Only Telegram bot token found in env — not relevant to scraping.
+
+> **Data gap alert:** This is the second consecutive session with all scrapers failing.
+> Last successful data: 2026-06-27 (12 days ago — approaching the 2-consecutive-day
+> alert threshold defined in M06 validation criteria). **Action required: connect Apify
+> MCP and Blotato MCP, or set `APIFY_TOKEN` env var before next run.**
+
+### Profile snapshot
+
+| Platform | Handle | Followers | Delta | Posts/Videos | Other |
+|---|---|---|---|---|---|
+| Instagram | @thefatihachikh | (scrape failed — reusing 2026-06-27 baseline: 632) | (no new data) | (no new data) | Apify MCP not connected this session |
+| Facebook | AI Automation Queen | (scrape failed) | — | — | Apify MCP not connected; no Meta Graph API token |
+| YouTube | @AI-Automation-Queen | (scrape failed) | — | — | Apify MCP not connected |
+| LinkedIn | Fatiha Chikh | (scrape failed) | — | — | Apify MCP not connected; use `linkedin-update` for manual stats |
+| Twitter/X | @aiautomatik | (scrape failed) | — | — | Apify MCP not connected |
+| Threads | @thefatihachikh | (scrape failed) | — | — | Apify MCP not connected |
+| TikTok | — | NOT CONNECTED | — | — | See inventory.md gap — connect to Blotato first |
+
+### Top posts by engagement (last 12 posts per platform)
+
+> **No data returned this run.** All Apify scrapers unavailable (MCP not connected,
+> no REST API token). No vault entries have status `POSTED` (0/23 entries published
+> since brand rebuild on 22/06/2026), so no vault-to-post cross-reference is possible
+> regardless of scraper availability.
+
+### Blotato queue status
+
+> **Blotato MCP not connected this session** — cannot query published/scheduled/failed posts.
+> Last known state (2026-06-27): 14 published, 0 scheduled, 5 failed (4 were test posts / stale gateway error).
+
+### Week-over-week summary
+
+> No week-over-week deltas can be computed — this run produced no new metrics and the
+> prior run (2026-06-27) was also a partial failure. Carrying forward 2026-06-27 baseline:
+- Instagram followers: 632 (last scraped 2026-06-27 — delta unknown, 12 days elapsed)
+- Facebook / YouTube / LinkedIn / Twitter / Threads: no baseline captured (all scrape failures across both runs)
+- Top-performing piece (carried from prior run): IG clone reel "Meet mine. Fat.IA" — 41 likes, 9 comments, 893 plays, 7.9% eng. rate (2026-06-27 data)
+- **Critical gap:** 0 posts released from the rebuilt brand (ENTRY 001–023) in 17 days since the brand rebuild. The performance tracker cannot measure what has not been posted.
+
+### Lessons — repeatable patterns
+
+> **Insufficient new data this run** — all scrapers failed, no POSTED vault entries exist.
+> Carrying forward findings from 2026-06-27:
+
+**Carried forward from 2026-06-27 (still the only data available):**
+Personal narrative + face/voice/actual story ran ~4–8x the engagement rate of generic
+AI-explainer/glossary-pack format (7.9%/7.8%/5.2% vs. 0.5–1.9% across 12 posts).
+This is pre-rebrand data and remains unvalidated against the new positioning — it will
+stay provisional until rebuilt-brand content goes live and gets scraped.
+
+**Systemic finding this run:** The measurement layer (M06) has now failed to produce
+new metrics in two consecutive runs (2026-06-27, 2026-07-09). The root cause is
+infrastructure, not content: no MCP servers connected in local sessions, no env-var
+fallback for the Apify REST API. Until fixed, the content engine is flying blind.
+
+**Action for `content-engine` and `distribution`:** The backlog has 13 READY TO POST
+entries. Releasing even 3–4 posts would (a) start generating real post-rebrand data
+and (b) give M06 something to measure on the next run. The bottleneck is release, not
+production.
+
+---
+
 ## PERFORMANCE 2026-06-27
 
 **Run date:** 2026-06-27 03:04 UTC

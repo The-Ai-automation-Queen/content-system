@@ -1,0 +1,39 @@
+# Shift & Lead
+
+> Shift & Lead is the business site of Fatiha Chikh, an enterprise operator
+> with 20+ years at Dell, Intel, and Microsoft. She now runs her own business
+> on 99 AI employees, in public, and teaches other founders and operators to
+> do the same.
+
+Fatiha Chikh built her career inside large enterprise tech companies before
+starting Shift & Lead. She also co-founded LeLabPlus, a zero-carbon fashion
+factory in France that supplied Nike and produced 2 million masks for French
+hospitals during COVID. She speaks 4 languages and is based in Dubai. Some
+people know her as "The AI Automation Queen," a nickname, not a title.
+
+This site (www.shiftandlead.com) is the business front door: the Fast
+Forward course, Workshops & Keynotes for teams, and case studies from real
+work. The free guide library, quiz, and opt-ins live on the sister site,
+guides.shiftandlead.com.
+
+## Offer
+
+- Fast Forward: a self-paced system to run a business on AI, for
+  non-technical owners and operators. Founding price $299, rises to $499 at
+  public launch. See /fast-forward.html for full detail.
+
+## Key pages
+
+- Homepage: https://www.shiftandlead.com/
+- Fast Forward course: https://www.shiftandlead.com/fast-forward.html
+- Workshops & Keynotes: https://www.shiftandlead.com/work-with-fatiha.html
+- Case studies: https://www.shiftandlead.com/case-study-1.html
+- Free guide library (sister site): https://guides.shiftandlead.com/free-resources.html
+- The 99 Scoreboard (sister site): https://guides.shiftandlead.com/99.html
+- The AI Insider Brief (newsletter): https://brief.shiftandlead.com
+
+## Usage terms
+
+Content on this site may be cited or quoted with attribution and a link back
+to the source page. It may not be used to train, fine-tune, or build machine
+learning models of any kind.

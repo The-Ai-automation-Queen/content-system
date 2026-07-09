@@ -43,13 +43,15 @@ then the 5 "What You Get" bullets and the 3 FAQ entries from the same file.
 
 ### Part C — Paste the link into the store (4 min)
 
-On your local machine (source of truth), in `site/store.html`:
+On your local machine, in `site/store.html` (run `git pull origin main`
+first — GitHub `main` is the source of truth since 2026-07-08):
 
 1. Find `var PRODUCTS = [` (~line 96).
 2. In the entry for **The Judge's Prompts**, paste your Whop URL into the
    empty `url: ''` field. The button flips from "Coming soon" to "Buy now"
    automatically — nothing else to edit.
-3. Run `sync-to-github.bat` to push it.
+3. Commit and push: `git add site/store.html && git commit -m "Judge's Prompts: live Whop URL" && git push origin main`.
+   (`sync-to-github.bat` is retired — never bulk-overwrite `main`.)
 
 *(Reference if anything looks different: `docs/PRODUCTS-LAUNCH-CHECKLIST.md`.)*
 

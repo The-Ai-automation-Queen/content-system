@@ -36,12 +36,23 @@ commitment. Never jump a stranger from free to $997.
 
 | Tier | Offer | Price | Platform | Status |
 |---|---|---|---|---|
-| 0 | **Lead magnets** (7 ready in `lead-magnets/`) | Free | GHL | ⚠️ INACTIVE — activate immediately |
-| 1 | **AI Time Audit Template** | $47 | Whop | 🔴 Build |
-| 2 | **Business OS Starter Kit** | $97 (one-time) | Whop | 🔴 Build — see `skills/business-os-kit/` |
-| 3 | **AI Automation Queen Community** | $47/month or $397/year | Whop | 🔴 Launch |
-| 4 | **Business OS Bootcamp** | $997 per cohort | Whop + GHL | 🔴 Build waitlist |
-| 5 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn | 🟡 Activate outreach |
+> **Canonical source: `queen-brain/offers.md`** (05/07/2026 decision). This
+> ladder is a consumer copy — when they disagree, queen-brain wins. Reconciled
+> 06/07/2026 after merging the session branch with main. The tier write-ups
+> below this table predate the $19/$27 SKUs and keep their original numbering.
+
+| Tier | Offer | Price | Platform | Status 06/07/2026 |
+|---|---|---|---|---|
+| 0 | **Free layer**: guides + 7 active lead magnets + AI Time Audit quiz + AI Insider Brief | Free | Static site + GHL + Kit | ✅ 7 magnets ACTIVE (PIPELINE retired); quiz live; Brief live |
+| 1 | **The Prompt Menu** | $19 | Whop | ✅ Built + sales page — awaiting checkout link |
+| 2 | **The Judge's Prompts** | $27 | Whop | ✅ Built + sales page — awaiting checkout link |
+| 3 | **AI Time Audit** (worksheet) | $47 | Whop | ✅ Built + sales page — awaiting checkout link |
+| 4 | **Business OS Starter Kit** | $97 | Whop | 🔴 Spec-only |
+| 5 | **AI Automation Queen Community** | $27/mo founding (20 spots, locked) → $47/mo, or $397/yr | Whop | 🔴 Not launched — waitlist live on guides site |
+| 6 | **Fast Forward** (54-lesson curriculum) | $499 | Whop | 🟡 Consolidated — awaiting twin + Whop product |
+| 7 | **Business OS Bootcamp** | $997 per cohort | Whop + GHL | 🔴 Waitlist not open |
+| 8 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn | 🟡 One-pager not sent |
+| 9 | **Done-With-You Intensive** (bespoke; never the default CTA) | Quoted per scope | Direct | 🟡 Reframed case studies live on .com site |
 
 ### What each offer is
 
@@ -175,7 +186,7 @@ One CTA per post. Match to pillar + ACP stage.
 | The Freedom Business | "Comment FREEDOM — I'll send the guide" | "Join the people building their freedom business with AI →" | "[Community name] is open: $47/month → [Whop link]" |
 | Stop Doing That by Hand | "Comment TEAM — I'll show you how to set this up for free" | "Inside the community we ran this setup live last week —" | "The Starter Kit walks through this step by step → [link]" |
 | What's Worth It | "Comment WORDS for the plain-English AI jargon guide" | "What we actually debated in the community this week:" | "Community: where we filter signal from noise → [link]" |
-| Real Talk | "Comment DINNER if you're in Dubai and want in" | "The community is the people actually doing this. Come in →" | "20 founding spots at $97/month locked for life → [link]" |
+| Real Talk | "Comment DINNER if you're in Dubai and want in" | "The community is the people actually doing this. Come in →" | "20 founding spots at $27/month locked for life → [link]" |
 
 ---
 
@@ -228,7 +239,7 @@ flag which are done vs. still blocked with a suggested next action.
 - [ ] Build the Business OS Starter Kit (see `skills/business-os-kit/SKILL.md`)
 - [ ] List on Whop at $97
 - [ ] Create the Whop community (name, 3 sections: Resources / Live Calls / Community)
-- [ ] Set founding member price: $97/month locked
+- [ ] Set founding member price: $27/month locked
 - [ ] Post 1 founding-member call on LinkedIn ("Comment FOUNDING")
 - [ ] Produce and send speaker one-pager to 10 warm LinkedIn contacts
 - [ ] Plan first AI & Freedom Dinner in Dubai (see `skills/irl-events/SKILL.md`)

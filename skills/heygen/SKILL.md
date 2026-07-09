@@ -134,6 +134,10 @@ line at the top of the vault file.
 For entries that need the **avatar + AI B-roll** finishing pass, hand the
 video URL to `visual-engine`'s Blotato `ai-avatar-broll` template.
 
+Every talking-head render then goes through the **`captions` skill**
+(karaoke caption burn-in, 9:16 reframe via `ffmpeg-toolkit`) before it can
+be queued. Raw uncaptioned avatar video never reaches M04.
+
 ---
 
 ## `list-avatars` / `list-voices` modes

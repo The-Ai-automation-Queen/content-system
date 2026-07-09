@@ -3,16 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noai, noimageai">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="noai, noimageai, max-image-preview:large">
 <title>The AI words they keep using · Shift &amp; Lead</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Shift &amp; Lead">
-<meta property="og:title" content="The AI words they keep using &mdash; Shift &amp; Lead">
-<meta property="og:description" content="AI, explained quietly. Free guides by Fatiha Chikh — The AI Automation Queen.">
+<meta property="og:title" content="The AI words they keep using &middot; Shift &amp; Lead">
+<meta name="description" content="Twelve AI terms, RAG, tokens, hallucination, agent, MCP and more, decoded in plain English so you stop nodding through meetings.">
+<meta property="og:description" content="Twelve AI terms, RAG, tokens, hallucination, agent, MCP and more, decoded in plain English so you stop nodding through meetings.">
 <meta property="og:url" content="https://guides.shiftandlead.com/guides/ai-jargon-guide.html">
 <meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://guides.shiftandlead.com/guides/ai-jargon-guide.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The AI words they keep using",
+  "description": "Twelve AI terms, RAG, tokens, hallucination, agent, MCP and more, decoded in plain English so you stop nodding through meetings.",
+  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
+  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/ai-jargon-guide.html",
+  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
+  "publisher": {"@type": "Organization", "name": "Shift & Lead", "logo": {"@type": "ImageObject", "url": "https://www.shiftandlead.com/logo.svg"}},
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is a hallucination in AI?", "acceptedAnswer": {"@type": "Answer", "text": "A hallucination is when the AI confidently states something that sounds right but is not true. Always double-check anything with real consequences: numbers, legal claims, medical advice."}},
+    {"@type": "Question", "name": "What is RAG?", "acceptedAnswer": {"@type": "Answer", "text": "RAG, or Retrieval-Augmented Generation, is when the AI looks up the answer in your own documents first, then answers based on what it found, instead of answering from memory alone."}},
+    {"@type": "Question", "name": "What is an AI agent?", "acceptedAnswer": {"@type": "Answer", "text": "An agent is AI that takes action instead of just talking back: it browses the web, reads files, and fills forms to complete a task."}},
+    {"@type": "Question", "name": "What is a token?", "acceptedAnswer": {"@type": "Answer", "text": "A token is a small chunk of text, roughly three-quarters of a word. AI companies charge by the token, the way a phone plan charges by the gigabyte."}},
+    {"@type": "Question", "name": "What is a context window?", "acceptedAnswer": {"@type": "Answer", "text": "A context window is how much text the AI can hold at once. Go past the limit and it starts forgetting earlier parts of the conversation."}},
+    {"@type": "Question", "name": "What is MCP?", "acceptedAnswer": {"@type": "Answer", "text": "MCP, or Model Context Protocol, is a standard way for AI tools to plug into other software, so every AI tool does not need a custom connection to every app."}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -24,8 +57,8 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 
 /* nav */
 .nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20}
-.nav-inner{max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
 .nav .mono{font-size:10px;color:var(--muted)}
 
 /* magazine cover hero */
@@ -107,12 +140,7 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .warn-inner .link-line{margin-top:26px;font-family:'Inter',sans-serif;font-size:.92rem;color:#D9D3E6}
 .warn-inner .link-line a{color:#7FA0FF}
 
-/* image slots */
-.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
-.imgslot .mono{font-size:9.5px;color:var(--accent)}
-.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
-.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
-.fullbleed .imgslot{aspect-ratio:21/8}
+.fullbleed 
 
 /* subscribe strip */
 .subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
@@ -158,16 +186,18 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 /* qa: contain grid children, never let the page scroll sideways */
 .sec-body>*{min-width:0}
 .sec-body svg,.sec-body img{max-width:100%;height:auto}
-.imgslot{max-width:100%;overflow:hidden}
 .sec table{max-width:100%}
 body{overflow-x:hidden}
+.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}.nav-links a{color:var(--ink);text-decoration:none}.nav-links a:hover,.nav-links a.active{color:var(--accent)}.nav-links .nav-cta{background:var(--accent);color:#fff;padding:8px 14px;border-radius:3px;font-weight:600}.nav-links .nav-cta:hover{background:var(--accent-deep)}
+.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
 </style>
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <span class="mono">Plain English · No. 04: AI Vocabulary</span>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=ai-jargon-guide">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=ai-jargon-guide">Fast Forward</a></div>
 </div></nav>
 
 <!-- COVER -->
@@ -175,7 +205,16 @@ body{overflow-x:hidden}
   <div>
     <div class="issue mono"><span>Plain English · No. 04</span><span>AI Vocabulary</span><span>7 min read</span></div>
     <h1>The words <em>everyone uses.</em></h1>
-    <p class="standfirst">Someone dropped RAG, tokens, and hallucination in the same sentence. You nodded. Everyone nodded. Nobody stopped to ask what any of it meant. This guide is the pause button you wished you had: twelve words, plain English, no jargon hiding inside the definitions.</p>
+    <p class="standfirst">What do words like RAG, tokens, and hallucination actually mean? They are AI terms explained here in plain English, one at a time. Someone dropped RAG, tokens, and hallucination in the same sentence. You nodded. Everyone nodded. Nobody stopped to ask what any of it meant. This guide is the pause button you wished you had: twelve words, plain English, no jargon hiding inside the definitions.</p>
+    <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
+      <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
+      <p style="margin:0 0 14px;font-size:15.5px">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
+      <form class="capture-form" style="display:flex;gap:10px;flex-wrap:wrap">
+        <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit" style="padding:10px 20px;background:#2C4BE0;color:#fff;border:none;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:14px;cursor:pointer">Send them to me</button>
+      </form>
+    </div>
   </div>
   <div class="cover-art">
     <svg viewBox="0 0 300 380" fill="none" aria-label="Twelve words, decoded">
@@ -195,7 +234,6 @@ body{overflow-x:hidden}
       <rect x="80" y="330" width="140" height="40" rx="6" stroke="#7FA0FF" stroke-width="2"/>
       <text x="150" y="356" text-anchor="middle" fill="#7FA0FF" font-family="Space Mono" font-size="12" letter-spacing="1">Understood.</text>
     </svg>
-    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
 </header>
 
@@ -280,13 +318,6 @@ body{overflow-x:hidden}
   <p class="menu-more">Read the meeting sentence again, at the very top of this page. It makes sense now.</p>
 </section>
 
-<!-- full-bleed image slot -->
-<div class="fullbleed">
-  <div class="imgslot">
-    <span class="mono">Image slot 02 · full-bleed divider</span>
-    <em>Wide editorial photo: a whiteboard mid-explanation, or a hand underlining a dense paragraph, duotone ink/purple grade</em>
-  </div>
-</div>
 
 <!-- 03 THE NEXT SIX -->
 <section class="sec">
@@ -384,7 +415,7 @@ body{overflow-x:hidden}
       <div class="warn-card"><div class="term">Fine-tuning is a last resort</div><p>Most teams reach for it too early. <strong>Try a better prompt or RAG first,</strong> because fine-tuning is slow and expensive.</p></div>
       <div class="warn-card"><div class="term">Jargon as a smokescreen</div><p>Sometimes big words hide a small idea, or hide that <strong>nobody in the room actually checked.</strong> Ask the plain-English question.</p></div>
     </div>
-    <p class="link-line">I keep verification prompts for exactly these failures, so check out <a href="../store.html">The Judge's Prompts &rarr;</a></p>
+    <p class="link-line">Fast Forward includes 42 verification prompts that make AI prove its work before you trust it. <a href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=ai-jargon-guide">See Fast Forward &rarr;</a></p>
   </div>
 </section>
 
@@ -406,51 +437,50 @@ body{overflow-x:hidden}
       <p>The gap was never intelligence. It was just vocabulary. And you just closed it.</p>
       <p><strong>Next on the map:</strong> step inside an actual kitchen and see these words in action: <a href="chez-claude.html"><em>Chez Claude</em>, the first restaurant on the tour &rarr;</a></p>
     </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 03</span>
-      <em>Styled product photo: a small notebook of twelve words, one crossed off the list, or your portrait mid-explanation</em>
-    </div>
   </div>
 </section>
 
-<!-- the chef's table: paid offers close -->
-<section class="chefs"><div class="chefs-in">
-  <span class="mono">The chef's table: go further than the guide</span>
-  <h2>You've learned the words.<br>Now learn to run the kitchen.</h2>
-  <div class="chefs-grid">
-    <div class="chefs-card">
-      <span class="mono">Prompt pack · $19</span>
-      <h3>The Prompt Menu</h3>
-      <p>The Kitchen Map companion: the best prompts for every AI kitchen, matched to what each chef cooks best.</p>
-      <a href="../store.html">Get it in the Store &rarr;</a>
-    </div>
-    <div class="chefs-card">
-      <span class="mono">Community · founding spots soon</span>
-      <h3>Build alongside me</h3>
-      <p>Live "build with me" sessions, templates, and people on the same road, everyday entrepreneurs winning back their time.</p>
-      <a href="../about.html#community">Be first in line &rarr;</a>
-    </div>
-    <div class="chefs-card">
-      <span class="mono">For companies</span>
-      <h3>Keynotes &amp; workshops</h3>
-      <p>Bring the whole method into your team, practical, non-technical, from someone whose business runs on 137 AI employees.</p>
-      <a href="../work-with-fatiha.html">Work with Fatiha &rarr;</a>
-    </div>
-  </div>
-</div></section>
+<p style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0">Ready for more than free? The three ways to go further &rarr;</a></p>
 
 <!-- byline -->
 <div class="byline">
   <div class="byline-in">
-    <img src="../closeUp.jpeg" alt="Fatiha Chikh">
-    <p><span class="who">Written by Fatiha Chikh, The AI Automation Queen.</span><br>
-    20+ years inside big corporate tech; now I run my business with a company of 137 AI employees. I build everything I teach. <a href="../about.html">The story &rarr;</a></p>
+    <img src="../closeUp.jpeg" alt="Fatiha Chikh" loading="lazy" decoding="async">
+    <p>Written by <strong>Fatiha Chikh</strong>, who is hiring 99 AI employees to run her business in public. <a href="../about.html">The story &rarr;</a></p>
   </div>
 </div>
 
 <div class="ipbar">
-  <p>© 2026 Fatiha Chikh / Shift &amp; Lead · Original IP · The Kitchen Map™ format, text and diagrams may not be reproduced, scraped, or used as training data without written permission · guides.shiftandlead.com</p>
+  <p><a href="../privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved. Original IP: The Kitchen Map&trade; format, text and diagrams may not be reproduced, scraped, or used as training data without written permission.</p>
 </div>
+
+<script>
+document.querySelectorAll('.capture-form').forEach(function(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    var email = form.querySelector('[name="email"]').value;
+    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Done.'; return; }
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      var r = await fetch('https://formspree.io/f/xgojoyka', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-ai-jargon-guide'}) });
+      fetch('https://auto.shiftandlead.com/webhook/formspree-lead', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-ai-jargon-guide'}) });
+      if (r.ok) { btn.textContent = 'On its way.'; } else { btn.disabled=false; btn.textContent='Try again'; }
+    } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
+  });
+});
+</script>
+
+<script>
+try {
+  var r = JSON.parse(localStorage.getItem('sl_read') || '[]');
+  if (r.indexOf('ai-jargon-guide') === -1) { r.push('ai-jargon-guide'); localStorage.setItem('sl_read', JSON.stringify(r)); }
+} catch(e){}
+</script>
 
 </body>
 </html>

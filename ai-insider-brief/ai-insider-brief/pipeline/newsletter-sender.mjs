@@ -6,6 +6,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { loadMergedConfig } from './config-loader.mjs';
 
 var __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -13,40 +14,11 @@ var __dirname = dirname(fileURLToPath(import.meta.url));
 // Config
 // ---------------------------------------------------------------------------
 
-function loadEnv(filePath) {
-  if (!existsSync(filePath)) return {};
-  var lines = readFileSync(filePath, 'utf-8').split('\n');
-  var env = {};
-  lines.forEach(function (line) {
-    line = line.trim();
-    if (!line || line.startsWith('#')) return;
-    var eqIndex = line.indexOf('=');
-    if (eqIndex === -1) return;
-    var key = line.substring(0, eqIndex).trim();
-    var val = line.substring(eqIndex + 1).trim();
-    if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
-      val = val.slice(1, -1);
-    }
-    env[key] = val;
-  });
-  return env;
-}
-
-function getConfig() {
-  var envPaths = [
-    process.env.ENV_PATH,
-    '/root/ai-insider-brief-pipeline/.env',
-    'C:\\Secrets\\insider-brief.env',
-    resolve(__dirname, 'config.env')
-  ].filter(Boolean);
-
-  var env = {};
-  for (var p of envPaths) {
-    if (existsSync(p)) {
-      env = loadEnv(p);
-      break;
-    }
-  }
+// Exported so approval-bot.mjs's Tuesday send-approval flow (task: human
+// releases, agents only queue) can build the exact same broadcast this
+// script would send, without duplicating the config/env resolution logic.
+export function getConfig() {
+  var env = loadMergedConfig(__dirname).env;
 
   return {
     kitApiSecret: env.KIT_API_SECRET || process.env.KIT_API_SECRET,
@@ -105,7 +77,7 @@ function categoryColor(category) {
     'Privacy': '#6B35C2',
     'Strategy': '#6B35C2',
     'Marketing': '#EA580C',
-    'Health': '#16A34A',
+    'Healthcare': '#16A34A',
     'Finance': '#2563EB',
     'Real Estate': '#A855F7',
     'Education': '#0891B2',
@@ -118,7 +90,40 @@ function categoryColor(category) {
 // Email HTML builder
 // ---------------------------------------------------------------------------
 
-function buildEmailHTML(cards, mode) {
+// The one money link in the whole pipeline (Constitution: turn attention
+// into emails, emails into checkouts). Voice: premium approachable, no
+// em-dashes, no hype words, contractions welcome. One clear line, one
+// button, one smaller secondary link to the free guides. Nothing else
+// competes with it.
+var FAST_FORWARD_URL = 'https://www.shiftandlead.com/fast-forward.html?utm_source=brief&utm_medium=email&utm_campaign=insider-brief';
+var GUIDES_URL = 'https://guides.shiftandlead.com/?utm_source=brief&utm_medium=email&utm_campaign=insider-brief';
+
+function buildCtaRow() {
+  return `
+    <tr>
+      <td style="padding: 30px 0; border-top: 1px solid #e2ddd4; border-bottom: 1px solid #e2ddd4;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td style="padding-bottom: 14px;">
+              <p style="margin: 0; font-family: Georgia, serif; font-size: 15px; color: #1C1C1C; line-height: 1.6;">I run my business on 99 AI employees. Fast Forward is the system, taught step by step.</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 14px;">
+              <a href="${FAST_FORWARD_URL}" target="_blank" rel="noopener" style="display: inline-block; background: #2C4BE0; color: #ffffff; font-family: Arial, sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; padding: 12px 24px; border-radius: 4px;">See Fast Forward</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p style="margin: 0; font-family: Arial, sans-serif; font-size: 12px; color: #888888;">New to this? Start with the <a href="${GUIDES_URL}" style="color: #6B35C2; text-decoration: underline;">free guides</a>.</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>`;
+}
+
+export function buildEmailHTML(cards, mode) {
   var today = formatDateDMY(new Date());
   var title = mode === 'daily'
     ? 'Your Daily AI Brief'
@@ -193,6 +198,9 @@ function buildEmailHTML(cards, mode) {
           <!-- Cards -->
           ${cardRows}
 
+          <!-- CTA -->
+          ${buildCtaRow()}
+
           <!-- Footer -->
           <tr>
             <td style="padding-top: 40px; text-align: center;">
@@ -214,16 +222,18 @@ function buildEmailHTML(cards, mode) {
 // Kit API — create broadcast
 // ---------------------------------------------------------------------------
 
-async function sendBroadcast(config, subject, htmlContent, tagId) {
+// NOTE: throws on misconfiguration/failure rather than process.exit(1) —
+// this function is now also called from the long-running approval-bot.mjs
+// process (the Tuesday send-approval flow), where exiting the process would
+// kill the bot instead of just failing one send. main() below is the only
+// caller that should turn a thrown error into a process exit.
+export async function sendBroadcast(config, subject, htmlContent, tagId) {
   if (!config.kitApiSecret) {
-    console.error('[ERROR] KIT_API_SECRET not set. Cannot send broadcasts.');
-    console.error('Get it from Kit dashboard: Settings > Advanced > API Secret');
-    process.exit(1);
+    throw new Error('KIT_API_SECRET not set. Cannot send broadcasts. Get it from Kit dashboard: Settings > Advanced > API Secret');
   }
 
   if (!tagId) {
-    console.error('[ERROR] Tag ID not set. Run setup-kit.mjs first to create tags.');
-    process.exit(1);
+    throw new Error('Tag ID not set. Run setup-kit.mjs first to create tags.');
   }
 
   var url = 'https://api.convertkit.com/v3/broadcasts';
@@ -247,6 +257,52 @@ async function sendBroadcast(config, subject, htmlContent, tagId) {
 
   var data = await res.json();
   return data;
+}
+
+// ---------------------------------------------------------------------------
+// Card selection — exported so approval-bot.mjs's Tuesday preview builds the
+// exact same card set the real send would use (task: "reusing newsletter-
+// sender's selection logic", not a re-implementation that can drift).
+// ---------------------------------------------------------------------------
+
+export function selectCards(allCards, mode) {
+  var filtered;
+  if (mode === 'daily') {
+    var today = new Date();
+    filtered = allCards.filter(function (c) {
+      return isSameDay(c.timestamp, today);
+    });
+    // Fallback: if nothing today, grab last 24h
+    if (filtered.length === 0) {
+      filtered = allCards.filter(function (c) {
+        return isWithinDays(c.timestamp, 1);
+      });
+    }
+  } else if (mode === 'semiweekly') {
+    // Twice-weekly digest: pull last 4 days so Tue + Fri sends overlap minimally
+    filtered = allCards.filter(function (c) {
+      return isWithinDays(c.timestamp, 4);
+    });
+  } else {
+    filtered = allCards.filter(function (c) {
+      return isWithinDays(c.timestamp, 7);
+    });
+  }
+
+  // Sort newest first
+  filtered.sort(function (a, b) {
+    return new Date(b.timestamp) - new Date(a.timestamp);
+  });
+
+  return filtered;
+}
+
+export function buildSubject(mode, now) {
+  var dayShort = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][now.getDay()];
+  var ddmm = String(now.getDate()).padStart(2, '0') + '/' + String(now.getMonth() + 1).padStart(2, '0');
+  if (mode === 'daily') return 'AI Insider Brief // ' + dayShort + ' ' + ddmm;
+  if (mode === 'semiweekly') return 'AI Insider Brief // ' + dayShort + ' ' + ddmm;
+  return 'AI Insider Brief // Weekly ' + ddmm;
 }
 
 // ---------------------------------------------------------------------------
@@ -278,34 +334,7 @@ async function main() {
   var allCards = briefsData.cards || [];
   console.log('[BRIEFS] ' + allCards.length + ' total cards\n');
 
-  // Filter cards by date
-  var filtered;
-  if (mode === 'daily') {
-    var today = new Date();
-    filtered = allCards.filter(function (c) {
-      return isSameDay(c.timestamp, today);
-    });
-    // Fallback: if nothing today, grab last 24h
-    if (filtered.length === 0) {
-      filtered = allCards.filter(function (c) {
-        return isWithinDays(c.timestamp, 1);
-      });
-    }
-  } else if (mode === 'semiweekly') {
-    // Twice-weekly digest: pull last 4 days so Tue + Fri sends overlap minimally
-    filtered = allCards.filter(function (c) {
-      return isWithinDays(c.timestamp, 4);
-    });
-  } else {
-    filtered = allCards.filter(function (c) {
-      return isWithinDays(c.timestamp, 7);
-    });
-  }
-
-  // Sort newest first
-  filtered.sort(function (a, b) {
-    return new Date(b.timestamp) - new Date(a.timestamp);
-  });
+  var filtered = selectCards(allCards, mode);
 
   console.log('[FILTER] ' + filtered.length + ' cards for ' + mode + ' email\n');
 
@@ -317,14 +346,7 @@ async function main() {
 
   // Build email
   var html = buildEmailHTML(filtered, mode);
-  var now = new Date();
-  var dayShort = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][now.getDay()];
-  var ddmm = String(now.getDate()).padStart(2, '0') + '/' + String(now.getMonth() + 1).padStart(2, '0');
-  var today = formatDateDMY(now);
-  var subject;
-  if (mode === 'daily') subject = 'AI Insider Brief // ' + dayShort + ' ' + ddmm;
-  else if (mode === 'semiweekly') subject = 'AI Insider Brief // ' + dayShort + ' ' + ddmm;
-  else subject = 'AI Insider Brief // Weekly ' + ddmm;
+  var subject = buildSubject(mode, new Date());
 
   console.log('[EMAIL] Subject: ' + subject);
   console.log('[EMAIL] Cards: ' + filtered.length);
@@ -343,8 +365,14 @@ async function main() {
   }
 }
 
-main().catch(function (err) {
-  console.error('[FATAL] ' + err.message);
-  console.error(err.stack);
-  process.exit(1);
-});
+// Only run main() when this file is executed directly (node newsletter-sender.mjs ...).
+// approval-bot.mjs imports getConfig/buildEmailHTML/selectCards/buildSubject/sendBroadcast
+// from this module for the Tuesday send-approval flow and must not trigger a second CLI run.
+var isMain = process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1]);
+if (isMain) {
+  main().catch(function (err) {
+    console.error('[FATAL] ' + err.message);
+    console.error(err.stack);
+    process.exit(1);
+  });
+}

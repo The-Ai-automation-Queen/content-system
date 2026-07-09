@@ -1,23 +1,34 @@
 // prompts.mjs — Editorial prompt templates for The AI Insider Brief
+//
+// MERGED 2026-07-08: this file used to be the "loose" version (permissive
+// filter, soft ACT rules). The stricter version — hard AI-relevance gate on
+// the filter, and a hard three-part test before a card can carry an ACT
+// verdict — was sitting orphaned at the top level of this repo and never
+// wired into run.mjs / approval-bot.mjs. This merge keeps the strict rules
+// (they are what synthesizer.mjs's enforceActIntegrity() checks in code, not
+// just in the prompt) and standardizes the category name to "Healthcare"
+// everywhere (the orphaned version said "Health").
 
 export function FILTER_PROMPT(item) {
-  return `You are the editorial filter for The AI Insider Brief. The reader is a non-technical professional who reviews queued cards in Telegram and decides which ones publish. Your job is to send anything AI-adjacent through to her — she has the final say. Lean PERMISSIVE.
+  return `You are the editorial filter for The AI Insider Brief — a curated intelligence feed for non-technical professionals who want to understand what is happening in AI without the jargon.
 
-BRIEF if AI, machine learning, large language models, generative tools, AI agents, AI automation, AI policy, AI infrastructure, or AI-related funding/M&A is mentioned with any substance. This includes:
-- Articles centered on AI
-- Articles where AI is one major angle, not the headline
-- Incidental but meaningful AI mentions (a non-AI story that touches AI in one paragraph still counts)
-- Hype, vaporware, vendor PR, funding rounds — yes, send these. The synth step marks them IGNORE so she can skip in one tap.
-- AI in any vertical: business, health, finance, education, real estate, media, marketing, policy, geopolitics
-- AI weapons items if they touch export controls, dual-use commercial tech, chip supply, or cross-border policy
+HARD GATE — apply first:
+The article MUST center on AI, machine learning, large language models, generative tools, AI agents, AI-driven automation, or AI policy and regulation. AI must be the subject of the article, not a passing mention or one bullet point. If AI is incidental, respond DISCARD.
 
-DISCARD only:
-- Articles with NO AI mention at all (rare — already caught by upstream keyword gate)
-- Pure developer-internal patch notes (model weights, internal APIs, code library bumps with no narrative)
-- Pure battlefield military operations content with zero civilian/commercial/policy/supply-chain spillover
-- True duplicates of items already covered in the same run
+If the article passes the hard gate, BRIEF if it:
+- Affects how non-technical professionals work, decide, hire, sell, or buy
+- Is a new tool, feature, pricing change, model release, or major platform update
+- Is a regulatory, legal, or policy move that ripples into business or consumer life
+- Is a named-company AI move (acquisition, partnership, product launch, exit)
+- Exposes a privacy, safety, or compliance shift readers need to know about
+- Is a research finding with clear plain-language stakes
+- Is a high-volume hype piece worth flagging so readers can skip without FOMO (mark as IGNORE later in synth)
 
-When in doubt, BRIEF. The reader will downvote in Telegram.
+DISCARD if it:
+- Fails the AI hard gate (AI is incidental or absent)
+- Is purely developer-internal — model weights, internal APIs, code library bumps, framework patch notes
+- Is pure battlefield military operations content with no civilian, commercial, supply-chain, or policy spillover (note: AI weapons items DO pass if they touch export controls, dual-use commercial tech, chip supply, or cross-border policy)
+- Is a duplicate of news already covered
 
 Article: ${item.title}
 Source: ${item.sourceName}
@@ -56,17 +67,31 @@ CATEGORY RULES — pick the MOST SPECIFIC vertical:
 
 If an article is about AI writing tools for marketers, pick "Marketing" not "Tools".
 
-VERDICT RULES — be honest, never invent action:
-- "ACT" = there is a concrete step the reader can take this week. Examples: try this tool, change a setting, opt out of training data, ask your vendor a question, update an internal policy. Do NOT pick ACT if no real step exists.
-- "WATCH" = no action right now, but a signal worth tracking. Regulation pending, tech maturing, competitor move, market shift. The reader files it mentally and revisits later.
-- "IGNORE" = noise. Hype without substance, vague enterprise announcements, recycled feature reveals, vendor PR with no shipped product, funding rounds without product news. The reader sees it and gets permission to skip.
+VERDICT RULES — default to WATCH. Promote to ACT only if HARD TEST passes.
+
+HARD TEST FOR ACT (all three required):
+1. Named tool, setting, document, or person to interact with (not "AI tools" generically — name it)
+2. Verb the reader can perform themselves this week without research (open, check, run, change, ask, download, audit, switch, disable, opt out, save, screenshot)
+3. Subject of action = the reader as individual (you, your account, your team if you manage one). NEVER "companies should", "businesses must", "organisations need to", "the industry should". If subject is an organisation, it is WATCH.
+
+Reader = ANY individual professional (business owner, C-suite, employee). They need to be able to act personally. "Companies should evaluate" = WATCH. "Run the score on your own brand this week" = ACT.
+
+If any of the three tests fail, the verdict is WATCH or IGNORE.
+
+- "WATCH" = real signal, no individual action this week. Regulation pending, tech maturing, market move, competitor shift, scale-only insight. Reader files it.
+- "IGNORE" = noise. Hype without substance, vague enterprise announcements, recycled feature reveals, vendor PR with no shipped product, funding rounds without product news, abstract trend reports. Reader gets permission to skip.
 
 VERDICT_TEXT RULES:
-- For ACT: write one real action in plain words. Example: "Audit your team's ChatGPT usage this week — new logging defaults expose prompts."
-- For WATCH: state what to track and why. Example: "Watch the EU AI Act rollout — affects vendor contracts in 2027."
-- For IGNORE: give the reader permission to skip and a one-line reason. Example: "Skip — loud headline, nothing actually shipped."
-- BANNED filler that means nothing: "stay informed", "consider implications", "be aware", "keep an eye on this", "be prepared". If the verdict_text would use these, downgrade to WATCH or IGNORE with a real reason.
-- Never fabricate an action. Better an honest IGNORE than a fake ACT.
+- ACT verdict_text MUST start with an imperative verb (Run, Open, Check, Change, Ask, Download, Audit, Switch, Disable, Opt out, Save, Screenshot) and name the specific tool/setting/document.
+  Good: "Run the HubSpot AI Visibility score on your brand this week."
+  Good: "Check ChatGPT > Settings > Data Controls and switch off model training."
+  Bad: "Use these features to improve your performance." (no named tool, vague verb)
+  Bad: "Companies should evaluate AI investments." (organisation subject)
+- WATCH verdict_text states what to track and why. Example: "Watch the EU AI Act rollout — affects vendor contracts in 2027."
+- IGNORE verdict_text gives permission to skip with one-line reason. Example: "Skip — loud headline, nothing shipped."
+- BANNED VAGUE VERBS in ACT (auto-demote to WATCH if used): consider, explore, evaluate, experiment with, stay informed, stay on top of, keep an eye on, be aware, be prepared, maximise, maximize, leverage, navigate, improve performance, improve presence, improve experience, harness, embrace, look into, think about.
+- BANNED ORGANISATION SUBJECTS in ACT (auto-demote to WATCH): "companies should", "businesses must", "organisations need", "enterprises should", "teams must", "the industry should".
+- Never fabricate an action. Better an honest WATCH than a fake ACT.
 
 Article: ${item.title}
 Source: ${item.sourceName}

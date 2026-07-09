@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="noai, noimageai, max-image-preview:large">
 <title>Chez Grok · The Full Kitchen Map | Shift &amp; Lead</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Shift &amp; Lead">
@@ -13,6 +17,33 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://guides.shiftandlead.com/guides/chez-grok.html">
 <meta name="description" content="The whole xAI Grok ecosystem walked through like a restaurant. Door, kitchen, plate.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chez Grok: The Full Kitchen Map",
+  "description": "The whole xAI Grok ecosystem walked through like a restaurant. Door, kitchen, plate.",
+  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
+  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/chez-grok.html",
+  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
+  "publisher": {"@type": "Organization", "name": "Shift & Lead", "logo": {"@type": "ImageObject", "url": "https://www.shiftandlead.com/logo.svg"}},
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What are tokens in Grok?", "acceptedAnswer": {"@type": "Answer", "text": "Tokens are individual ingredients: every word in your question and the answer costs tokens, and API users pay per token."}},
+    {"@type": "Question", "name": "What is the context window in Grok?", "acceptedAnswer": {"@type": "Answer", "text": "The context window is how much Grok can hold at once: your question, uploads, prior turns, X data, and retrieved sources."}},
+    {"@type": "Question", "name": "What is the hallucination rate in Grok?", "acceptedAnswer": {"@type": "Answer", "text": "Grok claims one of the lowest hallucination rates, about 4.2%, but important facts should always be verified."}},
+    {"@type": "Question", "name": "What is confabulation in Grok?", "acceptedAnswer": {"@type": "Answer", "text": "Confabulation is inventing plausible details rather than saying you do not know. Grok's witty tone can make this harder to spot."}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -24,12 +55,12 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 
 /* nav */
 .nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20}
-.nav-inner{max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
 .nav .mono{font-size:10px;color:var(--muted)}
-.nav-links{display:flex;gap:18px;flex-wrap:wrap}
-.nav-links a{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;color:var(--ink);text-decoration:none}
-.nav-links a:hover{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}.nav-links .nav-cta{background:var(--accent);color:#fff;padding:8px 14px;border-radius:3px;font-weight:600}.nav-links .nav-cta:hover{background:var(--accent-deep)}
 
 /* magazine cover hero */
 .cover{max-width:1160px;margin:0 auto;padding:70px 24px 56px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:end}
@@ -104,12 +135,7 @@ body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Seri
 .warn-card strong{color:#fff}
 .warn-link{font-family:'Inter',sans-serif;font-size:.95rem;color:#7FA0FF;display:inline-block;margin-top:28px}
 
-/* image slots for the magazine treatment */
-.imgslot{border:1.5px dashed var(--accent);background:var(--cream);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--accent-deep);text-align:center;padding:20px}
-.imgslot .mono{font-size:9.5px;color:var(--accent)}
-.imgslot em{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--muted);max-width:34ch}
-.fullbleed{max-width:1160px;margin:64px auto 0;padding:0 24px}
-.fullbleed .imgslot{aspect-ratio:21/8}
+.fullbleed 
 
 /* subscribe strip */
 .subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
@@ -162,23 +188,18 @@ details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
 /* qa: contain grid children, never let the page scroll sideways */
 .sec-body>*{min-width:0}
 .sec-body svg,.sec-body img{max-width:100%;height:auto}
-.imgslot{max-width:100%;overflow:hidden}
 .sec table{max-width:100%}
 body{overflow-x:hidden}
+.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
 </style>
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links">
-    <a href="../free-resources.html">Free Resources</a>
-    <a href="https://brief.shiftandlead.com">The Insider Brief</a>
-    <a href="../store.html">Store</a>
-    <a href="../about.html">About</a>
-    <a href="../work-with-fatiha.html">Work with Fatiha</a>
-  </div>
-  <span class="mono">The Kitchen Map · No. 06</span>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-grok">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-grok">Fast Forward</a></div>
+
 </div></nav>
 
 <!-- COVER -->
@@ -186,7 +207,16 @@ body{overflow-x:hidden}
   <div>
     <div class="issue mono"><span>The Kitchen Map · No. 06</span><span>xAI</span><span>10 min read</span></div>
     <h1>Chez <em>Grok.</em></h1>
-    <p class="standfirst">You hear AI names everywhere and never know which does what. This walks you through xAI Grok like a restaurant: the door, the kitchen, the plate.</p>
+    <p class="standfirst">What is Grok? Grok is xAI's AI assistant, built into X. You hear AI names everywhere and never know which does what. This walks you through xAI Grok like a restaurant: the door, the kitchen, the plate.</p>
+    <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
+      <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
+      <p style="margin:0 0 14px;font-size:15.5px">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
+      <form class="capture-form" style="display:flex;gap:10px;flex-wrap:wrap">
+        <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit" style="padding:10px 20px;background:#2C4BE0;color:#fff;border:none;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:14px;cursor:pointer">Send them to me</button>
+      </form>
+    </div>
   </div>
   <div class="cover-art">
     <!-- door/kitchen/plate cover mark, drawn -->
@@ -202,7 +232,6 @@ body{overflow-x:hidden}
       <circle cx="150" cy="310" r="28" stroke="#2C4BE0" stroke-width="2"/>
       <text x="150" y="378" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE PLATE</text>
     </svg>
-    <span class="slot mono">image slot: replace with hero illustration</span>
   </div>
 </header>
 
@@ -227,10 +256,6 @@ body{overflow-x:hidden}
     <div>
       <p class="dropcap">Every restaurant tells you what it is before you sit down. Grok's door says: fast, sarcastic, plugged straight into the live feed of X. This is the kitchen that reads what the whole world is posting right now and answers with a wink, because it doesn't do quiet and bookish, it does quick, opinionated, and occasionally reckless. (And yes, even the best chef makes mistakes. The allergen card comes right before you eat, in course four.)</p>
       <p>You walk in expecting a straight answer and you get one, usually with a joke attached. This is the kitchen for anyone who needs to know what the internet is saying about something right now, not last week.</p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 02</span>
-      <em>Editorial photo: restaurant door, neon glow, duotone ink/electric-blue grade</em>
     </div>
   </div>
 </section>
@@ -440,13 +465,6 @@ body{overflow-x:hidden}
   </div>
 </section>
 
-<!-- full-bleed image slot -->
-<div class="fullbleed">
-  <div class="imgslot">
-    <span class="mono">Image slot 03 · full-bleed divider</span>
-    <em>Wide editorial photo: a pass counter with plates under neon-blue light, or a phone showing a live X feed, shot from the side</em>
-  </div>
-</div>
 
 <!-- 04 KNOW BEFORE YOU EAT -->
 <section class="warn" style="margin-top:72px">
@@ -466,7 +484,7 @@ body{overflow-x:hidden}
       <div class="warn-card"><div class="term">Sarcastic Personality</div><p><em>"A chef who cracks jokes while cooking."</em> Grok is designed to be witty and irreverent. You can soften it via custom instructions but not fully turn it off.</p></div>
       <div class="warn-card"><div class="term">All Co-Founders Left</div><p><em>"Every original chef has left the kitchen."</em> All 10 original xAI co-founders have departed, unusual for a company this young.</p></div>
     </div>
-    <a class="warn-link" href="../store.html">I keep verification prompts for exactly these failures: The Judge's Prompts →</a>
+    <a class="warn-link" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-grok">Fast Forward includes 42 verification prompts that make AI prove its work before you trust it. See Fast Forward →</a>
   </div>
 </section>
 
@@ -485,11 +503,7 @@ body{overflow-x:hidden}
   <div class="sec-body">
     <div>
       <p>This zone wraps around everything. <strong>Safety controls</strong> were tightened after the January 2026 image-generator scandal, but the trust gap is real. The <strong>free tier</strong> gives about 10 prompts per 2 hours, lighter than competitor free tiers. <strong>X Premium ($8)</strong> bundles basic Grok with X. <strong>SuperGrok Lite ($10)</strong> and <strong>SuperGrok ($30)</strong> are the standalone paid plans. <strong>X Premium+ ($40)</strong> bundles full Grok with full X. <strong>SuperGrok Heavy ($300)</strong> is power-user territory with Grok 4 Heavy. <strong>Students</strong> with US .edu emails get SuperGrok free.</p>
-      <p><strong>Next on the map:</strong> Chez Mistral: open kitchen, nothing leaves the building.</p>
-    </div>
-    <div class="imgslot" style="aspect-ratio:4/3">
-      <span class="mono">Image slot 04</span>
-      <em>The bill on a small tray, one electric-blue petit-four · styled product photo</em>
+      <p><strong>Next on the map:</strong> <a href="chez-mistral.html">Chez Mistral: open kitchen, nothing leaves the building &rarr;</a></p>
     </div>
   </div>
   <div class="billwrap">
@@ -512,44 +526,47 @@ body{overflow-x:hidden}
   </div>
 </section>
 
-<!-- the chef's table: paid offers close -->
-<section class="chefs"><div class="chefs-in">
-  <span class="mono">The chef's table · go further than the guide</span>
-  <h2>You've seen the restaurant.<br>Now learn to run the kitchen.</h2>
-  <div class="chefs-grid">
-    <div class="chefs-card">
-      <span class="mono">Prompt pack · $19</span>
-      <h3>The Prompt Menu</h3>
-      <p>The Kitchen Map companion: the best prompts for this kitchen and every other, matched to what each chef cooks best.</p>
-      <a href="../store.html">Get it in the Store →</a>
-    </div>
-    <div class="chefs-card">
-      <span class="mono">Community · founding spots soon</span>
-      <h3>Build alongside me</h3>
-      <p>Live "build with me" sessions, templates, and people on the same road: everyday entrepreneurs winning back their time.</p>
-      <a href="../about.html#community">Be first in line →</a>
-    </div>
-    <div class="chefs-card">
-      <span class="mono">For companies</span>
-      <h3>Keynotes &amp; workshops</h3>
-      <p>Bring the whole method into your team: practical, non-technical, from someone whose business runs on 137 AI employees.</p>
-      <a href="../work-with-fatiha.html">Work with Fatiha →</a>
-    </div>
-  </div>
-</div></section>
+<p style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0">Ready for more than free? The three ways to go further &rarr;</a></p>
 
 <!-- byline -->
 <div class="byline">
   <div class="byline-in">
-    <img src="../closeUp.jpeg" alt="Fatiha Chikh">
-    <p><span class="who">Written by Fatiha Chikh, The AI Automation Queen.</span><br>
-    20+ years inside big corporate tech; now I run my business with a company of 137 AI employees. I build everything I teach. <a href="../about.html">The story →</a></p>
+    <img src="../closeUp.jpeg" alt="Fatiha Chikh" loading="lazy" decoding="async">
+    <p>Written by <strong>Fatiha Chikh</strong>, who is hiring 99 AI employees to run her business in public. <a href="../about.html">The story &rarr;</a></p>
   </div>
 </div>
 
 <div class="ipbar">
-  <p>© 2026 Fatiha Chikh / Shift &amp; Lead · Original IP · The Kitchen Map™ format, text and diagrams may not be reproduced, scraped, or used as training data without written permission · guides.shiftandlead.com</p>
+  <p><a href="../privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved. Original IP: The Kitchen Map&trade; format, text and diagrams may not be reproduced, scraped, or used as training data without written permission.</p>
 </div>
+
+<script>
+document.querySelectorAll('.capture-form').forEach(function(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    var email = form.querySelector('[name="email"]').value;
+    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Done.'; return; }
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      var r = await fetch('https://formspree.io/f/xgojoyka', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-chez-grok'}) });
+      fetch('https://auto.shiftandlead.com/webhook/formspree-lead', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-chez-grok'}) });
+      if (r.ok) { btn.textContent = 'On its way.'; } else { btn.disabled=false; btn.textContent='Try again'; }
+    } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
+  });
+});
+</script>
+
+<script>
+try {
+  var r = JSON.parse(localStorage.getItem('sl_read') || '[]');
+  if (r.indexOf('chez-grok') === -1) { r.push('chez-grok'); localStorage.setItem('sl_read', JSON.stringify(r)); }
+} catch(e){}
+</script>
 
 </body>
 </html>

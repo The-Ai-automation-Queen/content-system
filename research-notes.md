@@ -2,7 +2,7 @@
 
 ---
 
-## RESEARCH 026 — 2026-07-07 | Research-Inbox Backlog Triage — 758 saved links, first-ever sweep
+## RESEARCH 029 — 2026-07-07 | Research-Inbox Backlog Triage — 758 saved links, first-ever sweep
 
 **Status:** NOTED
 **Source:** full one-time `backlog` sweep of `/home/user/research-inbox` (the
@@ -66,6 +66,89 @@ itself a Real Talk / What's Worth It angle.
 3. Are the faceless-AI-avatar "build a whole AI influencer channel" courses worth engaging with, given the brand is built on her real face and voice? Sources: `2026-06-28-article-title-opt-in-avatarprime.md`, `2026-06-24-article-title-create-and-earn-with-ai.md`, `2026-07-04-article-title-ai-video-bootcamp.md`.
 
 *(Angles only, per inbox-distiller's guardrails — content-engine owns drafting.)*
+
+---
+
+## RESEARCH 028 — 2026-07-09 | Daily signal harvest — Meta AI agent slowdown, Gartner cancellation wave, Anthropic Claude Science, solopreneur stack news
+
+**Status:** NOTED
+**Sources hit:** Twitter/X (2 — WebSearch fallback), Instagram (2 — WebSearch fallback), YouTube (0 — Apify not connected; flagged), RSS (1), News (1)
+**Source gap:** Apify MCP and Tavily MCP not connected in this session. All slots filled from WebSearch fallback per failure-mode rule. YouTube virality scoring not possible without scraper — operator action required to connect Apify (see inventory.md gap list).
+
+### Signals of the day (7)
+
+1. [TW] **Zuckerberg tells Meta staff AI agents slower than expected** (July 2, 2026) — Meta spent $145B on AI infrastructure, cut 8,000 jobs (10% of workforce), reassigned 7,000 to an "Agent Transformation" unit — and Zuckerberg admitted at an internal town hall that agent progress has not "accelerated in the way" executives expected. He expects meaningful results in 3–6 months. Source: https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped/ — Why it matters: the world's largest AI bet is stalling inside a bureaucracy. Solopreneurs who ship fast have a structural edge this company doesn't. High engagement signal across X this week.
+
+2. [TW] **Gartner: 40%+ of agentic AI projects to be cancelled by 2027** — Multiple outlets citing the same Gartner figure week of July 7: over 40% of enterprise agentic AI projects will be cancelled by end of 2027 due to escalating costs, unclear business value, and inadequate risk controls. Sources: https://nhjournal.com/counterpoint-meet-the-ai-agents-of-2026-ambitious-overhyped-and-still-in-training/ + https://investinginai.substack.com/p/the-great-ai-contraction-5-contrarian — Why it matters: mass project cancellation = enterprise AI has a committee problem, not a technology problem. The 60% that work are the ones with clear scope and fast iteration. ★ LEAD-MAGNET → maps to **TEAM** keyword ("How to Set Up Your First AI Employee" — do it right the first time).
+
+3. [IG] **Taras Kaskov (@taras_kaskov) AI Automation reel** — July 4, 2026 — https://www.instagram.com/reel/DaX7Sc8Khxd/ — AI Automation / Marketer. Date confirmed from Google snippet. Engagement data unavailable (Apify not connected). Format signal: AI automation tactical content posting through July 4 holiday — niche is active during downtime periods. Creator not in tracked list but format-adjacent.
+
+4. [IG] **"7 AI tools helping creators grow faster in 2026"** — https://www.instagram.com/p/DYey3W2ku3q/ — Creator and date unverified (WebSearch fallback; Apify not connected). Format: save-worthy listicle post. Content angle: tool curation for creators is active content format in July 2026. Note: Sabrina Ramonov (@sabrina_ramonov, 934K IG followers, tracked creator #1) is active on Instagram but specific July 2026 reel was not retrievable without Apify — connect scraper to pull her latest reel engagement data.
+
+5. [YT] **(no fresh signal this run)** — Apify YouTube scraper not connected; virality scoring not possible. Fallback note: Nate Herk (@nateherk, ~600K subscribers) is consistently the top AI/n8n automation tutorial channel with July content covering AI agent workflows — operator can manually check for this week's upload. Virality score: unable to compute. **Action needed:** connect Apify to unlock YouTube + IG scraping.
+
+6. [RSS] **Anthropic Claude Science** (launched June 30 / covered July 5, 2026) — 60+ preconfigured scientific tools including genomics/proteomics pipelines, sequence analysis, HPC computing access. Drug discovery initiative for neglected diseases. Beta access for Pro/Max/Team/Enterprise on macOS and Linux. Source: https://aitoolsrecap.com/Blog/ai-news-july-5-2026 — Why it matters: Anthropic is expanding from general assistant to specialized vertical agent platform. The message for non-technical solopreneurs: AI is becoming domain-specific, and knowing which tool covers which domain is now the competitive edge. ★ LEAD-MAGNET → maps to **STACK** keyword ("The 3-Tool AI Stack I Actually Use" — which tools cover which jobs).
+
+7. [NEWS] **AI updates that matter for solopreneur entrepreneurs — July 7, 2026** — Source: https://www.entrepreneuraitools.com/ai-updates-for-entrepreneurs-july-7-2026/ — Three moves: (a) Claude Sonnet 5 pricing more accessible for agent testing — recommended first test: one 30–90 min repeatable task; (b) Gemini Omni Flash generates 3–10 second video clips for hook testing — coaches and consultants can iterate content faster; (c) Microsoft 365 Copilot bundles now simplify AI access for Outlook/Excel/Teams/Word users — pilot one seat for email triage before rolling out. Bottom line for the audience: the "AI stack" is cheapening and consolidating — the window to build habits before everyone else does is now.
+
+---
+
+### Top 3 content angles ready to use
+
+- **"Zuckerberg spent $145 billion on AI agents. They're not working. Here's what is."** → Pillar: Build Once, Runs Forever → lead-magnet hook: comment **TEAM** (First AI Employee setup). Frame: what a $145B budget and 7,000 dedicated employees can't do in a bureaucracy, you can do in a weekend with a clear scope and one repeatable task.
+
+- **"The 3 AI tools that actually matter for non-technical founders this week — and the 4 to skip."** → Pillar: What's Worth It → lead-magnet hook: comment **STACK**. Frame: Claude Sonnet 5, Gemini Omni Flash, and M365 Copilot are the moves. Everything else is noise for your stage.
+
+- **"40% of company AI projects will be cancelled by 2027. Here's how to make sure yours isn't one of them."** → Pillar: Stop Doing That by Hand → lead-magnet hook: comment **INBOX** (Inbox Manager Setup as a worked example of a scoped, working automation). Frame: cancellations happen because scope is unclear. One bounded task, measurable result, human-in-the-loop. That's the 60%.
+
+### Contrarian take logged
+
+Everyone reading the Zuckerberg story is concluding that AI agents don't work yet. The correct read is the reverse. If a $145 billion infrastructure budget, 7,000 reassigned employees, and an internal team called "Agent Transformation" can't make AI agents deliver inside Meta, the advantage is structural — not technological. Large organizations cannot implement, test, and iterate in a weekend. Small operators can. Zuckerberg's admission is not a red flag for AI agents. It is a green flag for every non-technical solopreneur who can scope one automation this week, ship it Friday, and measure it Monday. The enterprise failure rate is the moat.
+
+---
+
+## RESEARCH 027 — 2026-07-08 | Bio canon facts — Nike vendor relationship, COVID mask production (source: Fatiha, direct)
+
+**Status:** CANON
+**Source:** Fatiha Chikh, directly, in the bio-rewrite approval message (Claude Code session, 08/07/2026). Named-source entry per Engine Law 4 (facts trace or die).
+
+### Facts now published on the estate
+1. **Nike was an exclusive vendor relationship earned at LeLabPlus**, the ethical, zero-carbon fashion factory Fatiha co-founded in France, through circular manufacturing made to work in practice. Published: site/about.html (story + receipts), main-site/index.html (founder section references the fashion-manufacturing chapter without naming Nike).
+2. **LeLabPlus produced 2 million protective masks for French hospitals during COVID.** Fatiha's original message wrote "2 millions"; published as "2 million" (grammar only, figure unchanged). Published: site/about.html (story + receipts "2M" card).
+
+### Notes
+- These two facts were previously flagged as unusable (the "Nike" name was removed from the homepage earlier in this session for lack of a trace). This entry is now the trace.
+- If queen-brain/proof.md is updated later, these should be mirrored there as the canonical proof source.
+
+---
+
+## RESEARCH 026 — 2026-07-07 | Daily signal harvest — AI failure rates, EU AI Act Aug 2, Codex non-dev surge, job displacement acceleration
+
+**Status:** NOTED
+**Report:** [reports/research-digest-2026-07-07.md](reports/research-digest-2026-07-07.md)
+**Topics searched:** AI strategy business leaders frameworks failures July 2026; EU AI Act enforcement deepfakes US policy July 2026; enterprise AI adoption companies results July 2026; AI tools solopreneurs non-technical entrepreneurs July 2026; AI workforce jobs displacement reskilling data July 2026; OpenAI Codex enterprise users non-developers 2026; AI layoffs job cuts tracker 2026
+
+### Key Findings (summary)
+1. **HBR "Urgency Trap"** (July 2026): 80% of enterprise AI projects fail to deliver value; 42% of companies abandoned most AI initiatives in 2025 (up from 17% the year before). Root cause: organizational misalignment, not technology. Companies are deploying AI to signal urgency before they know why. Article: https://hbr.org/2026/07/when-developing-an-ai-strategy-beware-the-urgency-trap
+2. **EU AI Act Article 50 — August 2, 2026**: Chatbot disclosure ("I am AI") + deepfake labeling ("artificially generated or manipulated") become legally mandatory. Fines up to €15M / 3% global revenue. Directly affects Instagram, LinkedIn, TikTok, YouTube — platforms must surface disclosure UI in Q3. Creators using AI-generated face/voice video (HeyGen, Higgsfield) are in scope. Code of Practice sign-up deadline was July 22. https://artificialintelligenceact.eu/article/50/
+3. **OpenAI Codex**: 5 million weekly users as of June 2026 (2M in March — 150% in 3 months). Non-developers now 20% of users, growing 3× faster than engineers. Enterprise = 40%+ of OpenAI revenue, on track to equal consumer by year-end. The developer-only wall is collapsing. https://openai.com/index/scaling-codex-to-enterprises-worldwide/
+4. **AI job displacement accelerating**: Through June 2026 — 101,743 US job cuts formally cite AI, nearly double all of 2025 (54,836 full year). May 2026 alone: 38,579 cuts with AI cited (40% of all layoffs — highest monthly total since tracking began). 56% of all 2026 layoff events cite AI/automation/ML. Tech sector layoffs up 83% YoY. Most exposed: data entry, customer service, entry-level content, admin. https://www.insurancejournal.com/news/national/2026/07/02/875989.htm
+5. **Solopreneur surge confirmed**: Solo-founded startups grew from 23.7% (2019) to 36.3% (mid-2025). ~41 million US solopreneurs. AI-assisted solopreneurs report 15–20 hours saved per week. Minimal effective AI stack costs ~$45/month. https://fortune.com/2026/05/18/solo-founders-ai-automation-entire-teams-entrepreneurs/
+
+### Signals worth acting on
+- **"AI layoff" is now a legal paper trail**: Companies are formally citing AI in WARN Act filings and severance docs — data will get more precise and explosive each month through Q3 2026. Creators who own the "what to do about this" lane before the panic peaks will inherit the audience.
+- **Non-technical workers colonizing developer tools faster than predicted**: OpenAI's Codex non-developer growth at 3× engineers invalidates the "technical vs. non-technical" framing. The divide is collapsing, not shrinking. Content that still treats this as a hard wall is aging out.
+- **Solo startup share keeps rising**: 36.3% of new startups are solo-founded, driven structurally by AI capability. The addressable market for "build without a team" content is expanding every quarter.
+
+### Content angles (3 ready to use)
+1. **"80% of AI projects fail. Here's why yours won't."** — Enterprise failure is a bureaucracy disease (misaligned purpose, vanishing sponsors, no operating model). A solopreneur who knows exactly what to automate and ships it in a weekend doesn't have this disease. The failure data makes the solo approach look prescient. **Pillar: Build Once, Runs Forever**
+2. **"100,000 job cuts cited AI in the first 6 months of 2026. Here's what the safe side looks like."** — The people at risk aren't using AI — they're still doing the work AI can now do cheaply. The safe side isn't avoiding AI; it's using it to do more per hour than any employer could replace. Reskilling = one automation this week. **Pillar: Stop Doing That by Hand**
+3. **"Non-developers are now the fastest-growing group on an AI coding tool. The technical excuse is gone."** — OpenAI's own data: knowledge workers outpacing engineers 3:1 on Codex. The "I'm not technical" excuse has an expiration date — 2026 is it. **Pillar: What's Worth It**
+
+### Contrarian take logged
+The HBR "urgency trap" advice — slow down, get clarity, don't rush AI deployment — is correct for 10,000-person enterprises with 6-month procurement cycles. It is the wrong advice for solopreneurs. Analysis paralysis disguised as strategy is the solo operator's version of the urgency trap. The 80% enterprise failure rate exists because large orgs can't implement, measure, and iterate in a weekend. Small operators can. The lesson isn't "AI needs more planning." It's: "small teams who can ship fast have a structural advantage over every committee-bound organization on Earth." Taking enterprise advice and applying it to a solo context does the opposite of what it should.
+
+**Status:** NOTED
 
 ---
 

@@ -392,7 +392,7 @@
       "tier": 2,
       "ai_filter": true,
       "category_affinity": [
-        "Health"
+        "Healthcare"
       ]
     },
     {
@@ -402,7 +402,7 @@
       "tier": 2,
       "ai_filter": true,
       "category_affinity": [
-        "Health",
+        "Healthcare",
         "Tools"
       ]
     },
@@ -413,7 +413,7 @@
       "tier": 2,
       "ai_filter": true,
       "category_affinity": [
-        "Health"
+        "Healthcare"
       ]
     },
     {
@@ -423,7 +423,7 @@
       "tier": 2,
       "ai_filter": true,
       "category_affinity": [
-        "Health",
+        "Healthcare",
         "Tools"
       ]
     },
@@ -434,7 +434,7 @@
       "tier": 2,
       "ai_filter": true,
       "category_affinity": [
-        "Health",
+        "Healthcare",
         "Strategy"
       ]
     },
@@ -445,7 +445,7 @@
       "tier": 2,
       "ai_filter": false,
       "category_affinity": [
-        "Health"
+        "Healthcare"
       ]
     },
     {
