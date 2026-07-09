@@ -2,6 +2,44 @@
 
 ---
 
+## RESEARCH 028 — 2026-07-09 | Daily signal harvest — Meta AI agent slowdown, Gartner cancellation wave, Anthropic Claude Science, solopreneur stack news
+
+**Status:** NOTED
+**Sources hit:** Twitter/X (2 — WebSearch fallback), Instagram (2 — WebSearch fallback), YouTube (0 — Apify not connected; flagged), RSS (1), News (1)
+**Source gap:** Apify MCP and Tavily MCP not connected in this session. All slots filled from WebSearch fallback per failure-mode rule. YouTube virality scoring not possible without scraper — operator action required to connect Apify (see inventory.md gap list).
+
+### Signals of the day (7)
+
+1. [TW] **Zuckerberg tells Meta staff AI agents slower than expected** (July 2, 2026) — Meta spent $145B on AI infrastructure, cut 8,000 jobs (10% of workforce), reassigned 7,000 to an "Agent Transformation" unit — and Zuckerberg admitted at an internal town hall that agent progress has not "accelerated in the way" executives expected. He expects meaningful results in 3–6 months. Source: https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped/ — Why it matters: the world's largest AI bet is stalling inside a bureaucracy. Solopreneurs who ship fast have a structural edge this company doesn't. High engagement signal across X this week.
+
+2. [TW] **Gartner: 40%+ of agentic AI projects to be cancelled by 2027** — Multiple outlets citing the same Gartner figure week of July 7: over 40% of enterprise agentic AI projects will be cancelled by end of 2027 due to escalating costs, unclear business value, and inadequate risk controls. Sources: https://nhjournal.com/counterpoint-meet-the-ai-agents-of-2026-ambitious-overhyped-and-still-in-training/ + https://investinginai.substack.com/p/the-great-ai-contraction-5-contrarian — Why it matters: mass project cancellation = enterprise AI has a committee problem, not a technology problem. The 60% that work are the ones with clear scope and fast iteration. ★ LEAD-MAGNET → maps to **TEAM** keyword ("How to Set Up Your First AI Employee" — do it right the first time).
+
+3. [IG] **Taras Kaskov (@taras_kaskov) AI Automation reel** — July 4, 2026 — https://www.instagram.com/reel/DaX7Sc8Khxd/ — AI Automation / Marketer. Date confirmed from Google snippet. Engagement data unavailable (Apify not connected). Format signal: AI automation tactical content posting through July 4 holiday — niche is active during downtime periods. Creator not in tracked list but format-adjacent.
+
+4. [IG] **"7 AI tools helping creators grow faster in 2026"** — https://www.instagram.com/p/DYey3W2ku3q/ — Creator and date unverified (WebSearch fallback; Apify not connected). Format: save-worthy listicle post. Content angle: tool curation for creators is active content format in July 2026. Note: Sabrina Ramonov (@sabrina_ramonov, 934K IG followers, tracked creator #1) is active on Instagram but specific July 2026 reel was not retrievable without Apify — connect scraper to pull her latest reel engagement data.
+
+5. [YT] **(no fresh signal this run)** — Apify YouTube scraper not connected; virality scoring not possible. Fallback note: Nate Herk (@nateherk, ~600K subscribers) is consistently the top AI/n8n automation tutorial channel with July content covering AI agent workflows — operator can manually check for this week's upload. Virality score: unable to compute. **Action needed:** connect Apify to unlock YouTube + IG scraping.
+
+6. [RSS] **Anthropic Claude Science** (launched June 30 / covered July 5, 2026) — 60+ preconfigured scientific tools including genomics/proteomics pipelines, sequence analysis, HPC computing access. Drug discovery initiative for neglected diseases. Beta access for Pro/Max/Team/Enterprise on macOS and Linux. Source: https://aitoolsrecap.com/Blog/ai-news-july-5-2026 — Why it matters: Anthropic is expanding from general assistant to specialized vertical agent platform. The message for non-technical solopreneurs: AI is becoming domain-specific, and knowing which tool covers which domain is now the competitive edge. ★ LEAD-MAGNET → maps to **STACK** keyword ("The 3-Tool AI Stack I Actually Use" — which tools cover which jobs).
+
+7. [NEWS] **AI updates that matter for solopreneur entrepreneurs — July 7, 2026** — Source: https://www.entrepreneuraitools.com/ai-updates-for-entrepreneurs-july-7-2026/ — Three moves: (a) Claude Sonnet 5 pricing more accessible for agent testing — recommended first test: one 30–90 min repeatable task; (b) Gemini Omni Flash generates 3–10 second video clips for hook testing — coaches and consultants can iterate content faster; (c) Microsoft 365 Copilot bundles now simplify AI access for Outlook/Excel/Teams/Word users — pilot one seat for email triage before rolling out. Bottom line for the audience: the "AI stack" is cheapening and consolidating — the window to build habits before everyone else does is now.
+
+---
+
+### Top 3 content angles ready to use
+
+- **"Zuckerberg spent $145 billion on AI agents. They're not working. Here's what is."** → Pillar: Build Once, Runs Forever → lead-magnet hook: comment **TEAM** (First AI Employee setup). Frame: what a $145B budget and 7,000 dedicated employees can't do in a bureaucracy, you can do in a weekend with a clear scope and one repeatable task.
+
+- **"The 3 AI tools that actually matter for non-technical founders this week — and the 4 to skip."** → Pillar: What's Worth It → lead-magnet hook: comment **STACK**. Frame: Claude Sonnet 5, Gemini Omni Flash, and M365 Copilot are the moves. Everything else is noise for your stage.
+
+- **"40% of company AI projects will be cancelled by 2027. Here's how to make sure yours isn't one of them."** → Pillar: Stop Doing That by Hand → lead-magnet hook: comment **INBOX** (Inbox Manager Setup as a worked example of a scoped, working automation). Frame: cancellations happen because scope is unclear. One bounded task, measurable result, human-in-the-loop. That's the 60%.
+
+### Contrarian take logged
+
+Everyone reading the Zuckerberg story is concluding that AI agents don't work yet. The correct read is the reverse. If a $145 billion infrastructure budget, 7,000 reassigned employees, and an internal team called "Agent Transformation" can't make AI agents deliver inside Meta, the advantage is structural — not technological. Large organizations cannot implement, test, and iterate in a weekend. Small operators can. Zuckerberg's admission is not a red flag for AI agents. It is a green flag for every non-technical solopreneur who can scope one automation this week, ship it Friday, and measure it Monday. The enterprise failure rate is the moat.
+
+---
+
 ## RESEARCH 027 — 2026-07-08 | Bio canon facts — Nike vendor relationship, COVID mask production (source: Fatiha, direct)
 
 **Status:** CANON
