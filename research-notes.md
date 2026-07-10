@@ -2,6 +2,40 @@
 
 ---
 
+## RESEARCH 030 — 2026-07-10 | Daily signal harvest
+
+**Status:** NOTED
+**Sources hit:** Twitter/X (2 via web-search fallback), Instagram (2 via web-search fallback), YouTube (1), RSS/Anthropic (1), News (1)
+**Apify status:** NOT AVAILABLE this session — Twitter + Instagram slots filled from Tavily/web-search per failure-mode rule. No signals invented.
+
+### Signals of the day (7)
+
+1. [TW] **Charly Wargnier (@DataChaz):** "Karpathy was right — 90% of AI advice dies in 6 months. Most tools won't even survive 90 days. This guy is giving away the exact 2026 playbook for AI Agents: what to learn, build, and ignore entirely." High-engagement thread referencing Karpathy's latest deep dive. — https://x.com/DataChaz/status/2054225085100151163 — *July 2026* — Why it matters: the noise-vs-signal framing is Fatiha's whole "What's Worth It" lane; the 90-day tool-death cycle is a ready-made hook. ★ LEAD-MAGNET (maps to **STACK** — "The 3-Tool AI Stack I Actually Use")
+
+2. [TW] **@TechCrunch quoting Mark Zuckerberg:** "Mark Zuckerberg tells staff that AI agents haven't progressed as quickly as he'd hoped." Contrarian signal from the most AI-bullish CEO in tech, surfacing inside a week when everyone is pitching "fully autonomous agents." — https://x.com/TechCrunch/status/2072827723710615720 — *July 2026* — Why it matters: validates the human-in-the-loop framing; strong anchor for a "Real Talk" post countering the agent hype. ★ LEAD-MAGNET (maps to **WHAT** — "What AI Actually Is — Plain English")
+
+3. [IG] **Sabrina Ramonov (@sabrina_ramonov):** Latest reel — fully automated AI social media system: one article in → n8n + HeyGen AI avatar + Blotato → text posts, image posts, and video posts across all channels, 24/7, no manual step. Documented step-by-step on her Substack. — https://www.instagram.com/sabrina_ramonov/ / https://www.sabrina.dev/p/i-built-an-ai-social-media-system — *Current reel, July 2026* — Why it matters: "Build Once, Runs Forever" — the finished-system-as-proof format that outperforms tutorials.
+
+4. [IG] **Riley Brown (@realrileybrown, 328K IG):** "Mobile apps as we know them will become a thing of the past. All AI agents will just generate interfaces on command that are already connected to all your tools / data. Downloading a static app someone else made will be weird in 2 years." Result-reveal drop; screenshot-demo format. — https://www.instagram.com/realrileybrown/ / https://x.com/rileybrown/status/2060391226323382301 — *June–July 2026* — Why it matters: "What's Worth It" forward-look; Fatiha can contextualize this for her non-technical audience before they hear it from a tech bro.
+
+5. [YT] **"The AI Powered Solopreneur: How to Automate Without Losing the Human Touch"** — YouTube — https://www.youtube.com/watch?v=tzFW3XS6Yy8 — *Recent, July 2026 niche* — Virality score: **~38/100** (estimated; channel subscriber count unavailable, but topic is peak-niche alignment with our audience). Angle: automation without killing the personal brand — the exact tension Fatiha resolves for her audience.
+
+6. [RSS] **Anthropic blog (Jul 9, 2026):** "Introducing a way to reflect on how you use Claude" — new beta dashboard showing Claude usage by topic + task type, with break reminders and a named **4D AI Fluency Framework** (Delegation, Description, Discernment, Diligence). — https://www.anthropic.com/news/reflect-with-claude — Why it matters: Anthropic just gave a formal name to what Fatiha already teaches. She can own this language for her audience before it becomes noise.
+
+7. [NEWS] **The Lonely Entrepreneur / multiple sources:** "One-Person Business AI: The Solo Founder Boom of 2026" — hard data: 29.8M solopreneurs in the US, $1.7T revenue, 64% use generative AI for marketing — but 68% have less than 6 months savings and only 3.6% earn $1M+. Key line: *"AI is an extraordinary employee and a terrible friend. It will absorb your tasks — but never your isolation, your fear, or the weight of the decision."* — https://lonelyentrepreneur.com/one-person-business-ai/ — Why it matters: the stat-gap between AI adoption (64%) and financial stability (3.6% hit $1M) is the strongest evidence yet for Fatiha's "strategy, not just tools" positioning.
+
+### Top 3 content angles ready to use
+
+- **Anthropic's 4D AI Fluency Framework** → "There's a framework Anthropic just quietly released for working smarter with Claude. I've been teaching these four things for months. Now they have a name." → Pillar: **Time Wins** → Lead-magnet hook: comment **PROMPT** (What Is a Prompt — and How to Write One That Works)
+- **The 64%/3.6% gap** → "64% of solopreneurs use AI. Only 3.6% earn over $1M. The gap isn't the tool — it's the strategy. Here's what the 3.6% do differently." → Pillar: **Stop Doing That by Hand** → Lead-magnet hook: comment **STACK**
+- **Zuckerberg's admission on AI agents** → "Even Zuckerberg admitted it this week: AI agents aren't there yet. So why are you stressing about keeping up? Here's what to focus on instead." → Pillar: **What's Worth It** → Lead-magnet hook: comment **WHAT**
+
+### Contrarian take logged
+
+"Everyone in tech is selling the autonomous-agent dream — 90% of AI advice has a 6-month shelf life (Karpathy), and this week Mark Zuckerberg quietly told his own staff that agents haven't moved as fast as he hoped. Meanwhile 64% of solopreneurs are using AI and still only 3.6% break $1M. The skill gap isn't 'do you use AI' — it's 'do you use AI with a strategy or just with hope.' The people winning aren't the ones with the most tools; they're the ones who picked three and built a system around them."
+
+---
+
 ## RESEARCH 029 — 2026-07-07 | Research-Inbox Backlog Triage — 758 saved links, first-ever sweep
 
 **Status:** NOTED
