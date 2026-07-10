@@ -13,6 +13,11 @@
 
 ## Most recent (quick reference)
 
+- 10/07/2026 | LinkedIn | "The Work You Repeat Every Week Is the First Work AI Should Take" — build once, runs forever method | READY TO POST
+- 10/07/2026 | LinkedIn | "64% of Solopreneurs Use AI. Only 3.6% Earn Over $1M. The Gap Isn't the Tool." — strategy vs tools | READY TO POST
+- 10/07/2026 | LinkedIn | "There Are Four Things That Make AI Actually Useful. Anthropic Just Named Them." — 4D AI Fluency Framework | READY TO POST
+- 10/07/2026 | LinkedIn | "This Week, Even Zuckerberg Admitted It: AI Agents Aren't There Yet. Good." — solopreneur structural advantage | READY TO POST
+- 10/07/2026 | LinkedIn | "Most People Who Left Corporate Did the Smart Thing. I Didn't." — real talk on the sudden exit | READY TO POST
 - 07/07/2026 | X/Twitter (thread) | "$5–10K/Month Agency? One Claude Code Session Replaced the Whole Stack" — agency spend vs. one AI session | DRAFT
 - 07/07/2026 | Facebook | "The Woman Who Made Someone Else $20M — and Still Won't Show Her Face" — the cost of hiding | DRAFT
 - 07/07/2026 | LinkedIn carousel | "Everyone's Selling 'Build a Faceless AI Avatar Empire.' Here's Why I Kept My Actual Face." — what's-worth-it check | DRAFT
@@ -41,6 +46,197 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 033 — 10/07/2026 | LinkedIn | The Work You Repeat Every Week Is the First Work AI Should Take | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Teach Your System, Not the Tool + Before/After Contrast, ~250 words
+**Topic:** Educational — how to identify and hand off your first repetitive task to AI. Explains the "Build Once, Runs Forever" method with inbox triage as the concrete example. Entry to the pillar for non-technical audiences.
+**Pattern used:** Teach Your System, Not the Tool (3) + Before/After Contrast (13)
+**Pillar:** Build Once, Runs Forever
+**Critic score:** 8.3/10 — APPROVED FOR REVIEW. Hook works as a complete thought in ~210 chars. Method illustration uses inbox triage as a concrete example without inventing personal time-save stats. Proven-pattern fit scored 7/10 (directional match — "Teach Your System" is a logged pattern; no LinkedIn post-rebrand baseline yet).
+**ACP stage:** A — 029–033 batch is all-A. Rationale: existing 024–028 window = 2A/2C/1P; adding 5A brings the rolling 024–033 window to exactly 7A/2C/1P. No P posts in this batch (024 is the only P in last 10, still under the 2-in-10 cap).
+**CTA:** "Comment INBOX and I'll send you the step-by-step setup for your first AI employee — the one that runs while you're focused on everything else."
+**Source:** Pillar method — no external source required. Inbox triage used as a method illustration, not a personal stat claim. No [VERIFY] flags.
+**⚠️ CTA note:** CTA map assigns "Comment PIPELINE" for Build Once, Runs Forever / A — but PIPELINE is retired (lead-magnets.csv `active=no` since 05/07/2026). Substituting INBOX (active ✅, `How to Set Up Your First AI Employee — Employee #004 playbook`), which is thematically correct for this pillar (set it up once, runs forever). Flag: update the CTA map in `skills/monetisation/SKILL.md` to retire the PIPELINE entry.
+
+---
+### LINKEDIN POST
+
+The work you repeat every single week is the first work that should come off your plate.
+
+Not because it's boring. Because it's automatable — and that's where you actually get your time back.
+
+Simple filter: if you did this again this week exactly the way you did it last week, AI can take it. With one setup, once.
+
+Think about inbox triage. Every morning: sort by priority, draft the routine replies, flag what actually needs your brain, defer the rest. Same steps, same order, every single day.
+
+That kind of work already has a job description built into it. When you hand it to an AI, you're not cutting a corner — you're writing a hire spec for a repeatable task and getting someone who'll show up on time, do it right, and never need to be briefed again.
+
+The mistake most people make: they try to automate the interesting stuff first. The big creative project. The long-form piece. You get your life back by removing the things that run quietly in the background, stealing 30 minutes here, an hour there, week after week.
+
+Start with the repetitive. Name the task. Write out every step. Then ask: which steps are just following a rule? That's what AI takes. The judgment calls stay with you.
+
+Build it once. Measure it for a week. Then do the next one.
+
+Comment INBOX and I'll send you the step-by-step setup for your first AI employee — the one that runs while you're focused on everything else.
+
+---
+
+---
+
+## ENTRY 032 — 10/07/2026 | LinkedIn | 64% of Solopreneurs Use AI. Only 3.6% Earn Over $1M. The Gap Isn't the Tool. | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Specific Number as Hook + Contrarian Operational Hook, ~220 words
+**Topic:** Opinion — the 64%/3.6% stat gap reveals the difference between using AI and using AI with a strategy. The people winning aren't on different tools; they're asking different questions.
+**Pattern used:** Specific Number as Hook (11) + Contrarian Operational Hook (14)
+**Pillar:** Stop Doing That by Hand
+**Critic score:** 8.6/10 — APPROVED FOR REVIEW. Hook is a double-number provocation that stops the scroll. Specific stats fully traced. Contrarian reframe is sharp and serves the audience. Proven-pattern fit scored 7/10 (specific-number hook matches logged patterns in inspiration-library; no LinkedIn post-rebrand baseline yet, but directional evidence is strong).
+**ACP stage:** A — batch note in ENTRY 029.
+**CTA:** "Comment TEAM and I'll send you the first thing I automated in my own business. Not the most impressive. The one you should do first."
+**Source:** RESEARCH 030, Signal 7 — The Lonely Entrepreneur / multiple sources: 29.8M solopreneurs in the US, 64% use generative AI for marketing, 3.6% earn $1M+. Contrarian take from RESEARCH 030 contrarian-take block. All numbers are logged; no [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+64% of solopreneurs use AI now. Only 3.6% earn over $1 million.
+
+Let that gap sit for a second.
+
+Most people see that and think: "I need better AI tools." That's the wrong read.
+
+The people in the 3.6% aren't using different tools. They're using tools with a strategy behind them. A specific task. A measurable result. A clear before and after.
+
+The 64% use AI for things. The 3.6% use AI for outcomes.
+
+Here's what that looks like in practice: instead of "help me write a caption," it's "here's my business, my audience, my voice, and what I want this caption to do — now write it." Instead of "summarise this for me," it's "here's the decision I need to make — find the three things I need to know."
+
+The gap isn't the tool. It's the question you're asking.
+
+You can close it faster than you think — but not by downloading another app.
+
+Comment TEAM and I'll send you the first thing I automated in my own business. Not the most impressive thing. The one I should have done first.
+
+---
+
+---
+
+## ENTRY 031 — 10/07/2026 | LinkedIn | There Are Four Things That Make AI Actually Useful. Anthropic Just Named Them. | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Named Framework + Provocation-First Hook, ~230 words
+**Topic:** AI News — Anthropic published the 4D AI Fluency Framework (Delegation, Description, Discernment, Diligence) in a July 9, 2026 blog post. Fatiha has been teaching versions of these principles without knowing they had a name. Makes AI learnable for a non-technical audience.
+**Pattern used:** Named Framework as Content Asset (12) + Provocation-First Hook (1)
+**Pillar:** Time Wins
+**Critic score:** 8.1/10 — APPROVED FOR REVIEW. Hook opens with the audience split (who gets results vs who just uses it), which works in ~210 chars. Personal angle ("I've been teaching three of these for months") partially matches the logged winner pattern. Proven-pattern fit scored 6/10 (mix of timely announcement + personal relevance; provisional upgrade from neutral given personal "I" element). No [VERIFY] flags — all four D names from logged source.
+**ACP stage:** A — batch note in ENTRY 029.
+**CTA:** "Comment STACK and I'll send my 3-tool setup. The tools are a fraction of the picture."
+**Source:** RESEARCH 030, Signal 6 — Anthropic blog, Jul 9, 2026: "Introducing a way to reflect on how you use Claude" — 4D AI Fluency Framework: Delegation, Description, Discernment, Diligence. URL logged in RESEARCH 030.
+
+---
+### LINKEDIN POST
+
+There are four things that separate people who get real work done with AI from people who just use it for a few tasks and wonder why nothing's changing.
+
+Anthropic named them yesterday: Delegation, Description, Discernment, Diligence.
+
+I've been teaching three of these for months. I just didn't know they had a name.
+
+Delegation — knowing which tasks AI should be doing instead of you.
+Description — giving the AI enough context to actually do the job. Not one line. Not "summarise this." Your business. Your customer. Your actual problem.
+Discernment — knowing when to trust the output and when to push back, ask again, or start over.
+Diligence — checking what comes back before you ship it. "AI said so" is not a quality standard.
+
+The people winning with AI aren't the ones with the most tools. They're the ones who've built these instincts.
+
+And none of this is technical. You don't need to understand how AI works to work well with it. You need to know how to work with it.
+
+Comment STACK and I'll send my 3-tool setup. The tools are a fraction of the picture.
+
+---
+
+---
+
+## ENTRY 030 — 10/07/2026 | LinkedIn | This Week, Even Zuckerberg Admitted It: AI Agents Aren't There Yet. Good. | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Contrarian Operational Hook + Specific Number as Hook, ~270 words
+**Topic:** AI News — Zuckerberg told Meta staff that AI agents haven't progressed as fast as he hoped, despite $145B in AI infrastructure and 7,000 people reassigned to an "Agent Transformation" unit. The contrarian read: this is a green flag for solopreneurs, not a red flag for AI.
+**Pattern used:** Contrarian Operational Hook (14) + Specific Number as Hook (11)
+**Pillar:** What's Worth It
+**Critic score:** 8.2/10 — APPROVED FOR REVIEW. Timely, specific, and well-sourced. The reframe ("this isn't a red flag for AI agents — it's a green flag for you") is exactly the What's Worth It pillar doing its job. Proven-pattern fit scored 7/10 (contrarian + specific numbers matches inspiration-library patterns; no LinkedIn post-rebrand baseline yet). No [VERIFY] flags — all figures from logged research.
+**ACP stage:** A — batch note in ENTRY 029.
+**CTA:** "Comment WHAT and I'll send you the plain-English guide to what AI actually is right now — no hype, no jargon."
+**Source:** RESEARCH 030, Signal 2 (TechCrunch / @TechCrunch/status/2072827723710615720, July 2026) + RESEARCH 028, Signal 1 (TechCrunch article Jul 2, 2026: $145B, 8,000 jobs cut, 7,000 to "Agent Transformation"). All numbers logged; no [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+This week, Mark Zuckerberg told his staff that AI agents haven't moved as fast as he hoped.
+
+Worth sitting with for a second.
+
+Meta spent $145 billion on AI infrastructure. They cut 8,000 jobs. They reassigned 7,000 people to a team called "Agent Transformation." And their CEO — in a room full of the engineers whose literal job is to make agents work — admitted it isn't going the way anyone expected.
+
+Every pundit selling "fully autonomous agents by end of year" missed the memo.
+
+Here's the read I don't see anyone taking: this isn't a red flag for AI agents. It's a green flag for you.
+
+Large organizations can't test, learn, and iterate in a weekend. A bureaucracy the size of Meta cannot ship and measure a single automation before a committee reviews it, escalates it, and waits for Q3 budget approval. You can do that before lunch.
+
+The failure rate inside enterprise AI is a structural advantage for every small operator who can move fast, scope small, and ship one working thing this week.
+
+The agent that doesn't work yet inside a $145 billion budget? You can build a version of it — scoped for one task, tested against your business, live by Friday — for the cost of a tool subscription.
+
+That's the real story this week.
+
+Comment WHAT and I'll send you the plain-English guide to what AI actually is right now — no hype, no jargon.
+
+---
+
+---
+
+## ENTRY 029 — 10/07/2026 | LinkedIn | Most People Who Left Corporate Did the Smart Thing. I Didn't. | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Vulnerability Before Credentials + Fear-First Hook, ~230 words
+**Topic:** Storytelling / Real Talk — the sudden corporate exit. Subverts the expectation that leaving corporate is a carefully planned move. Bridges the audience (corporate professionals thinking about leaving) to the offer (AI-powered business that runs without a full team).
+**Pattern used:** Vulnerability Before Credentials (7) + Fear-First Hook (2)
+**Pillar:** Real Talk
+**Critic score:** 8.0/10 — APPROVED FOR REVIEW. Hook subverts the assumed "careful exit plan" story within ~210 chars. Personal narrative shape directionally matches pre-rebrand logged winner (7.9% engagement on personal narrative posts — pre-rebrand Instagram data, not yet validated on LinkedIn for rebuilt brand; promoted from neutral to provisional 7/10 on proven-pattern fit). CTA substituted (see note).
+**ACP stage:** A — batch note: all 5 posts in this batch (029–033) are A. Rolling 024–033 window = 7A/2C/1P (024: P, 025: C, 026: A, 027: C, 028: A, 029–033: 5×A). Rule-compliant: no two P's in a row, no P in this batch, no CTA pointing at inactive row.
+**CTA:** "Comment WORDS and I'll send you the plain-English AI jargon guide — the best first step if you're at the start of this."
+**Source:** personal-brain.md (2026-07-05 entry: "The corporate exit was a sudden, decisive moment rather than a gradual wind-down — confirmed by operator"). "20+ years in corporate tech" traces to personal-brain.md and positioning/SKILL.md. No [VERIFY] flags. Specific trigger/story not yet recorded in personal-brain — not invented here.
+**⚠️ CTA note:** CTA map assigns "Comment DINNER if you're in Dubai and want in" for Real Talk / A — but DINNER is not in `lead-magnets.csv` at all (no row exists, no URL, inactive). Substituting WORDS (active ✅, "12 AI Words Everyone Uses — Explained in Plain English"), which is a natural first step for the corporate professional drawn to this story. Flag: DINNER keyword needs to be added to lead-magnets.csv and an IRL event resource needs to exist before this CTA can be used.
+
+---
+### LINKEDIN POST
+
+Most people who leave corporate do the smart thing. They plan it.
+
+12 months of runway. A client already waiting. A side business already running. A careful, considered exit with every base covered.
+
+I didn't do any of that. Mine was one decision. Fast. Definitive. And then I was standing outside 20 years of corporate tech with no plan attached to my name yet.
+
+Here's what I've figured out since: the runway wasn't the thing I actually needed.
+
+What I needed was leverage. A business that didn't require me to be everywhere at once, doing everything by hand. AI gave me that — not in the inspirational-poster sense. In the specific, practical sense. Automations that run while I'm not watching. Research that happens without me. Content that goes out on schedule without me building it piece by piece.
+
+I'm still early — a few hundred followers, not a few hundred thousand. But what I've built is mine. And it runs without me babysitting it.
+
+If you're thinking about making a similar jump and you're not sure where to start with the AI side of it — don't let the jargon stop you before you begin.
+
+Comment WORDS and I'll send you the plain-English AI jargon guide — the best first step if you're at the start of this.
+
+---
 
 ---
 
