@@ -2,6 +2,40 @@
 
 ---
 
+## RESEARCH 031 — 2026-07-11 | Daily signal harvest
+
+**Status:** NOTED
+**Sources hit:** Twitter/X (2 via web-search fallback), Instagram (2 via web-search fallback), YouTube (1), RSS/Anthropic (1), News (1)
+**Apify status:** NOT AVAILABLE this session — Twitter + Instagram slots filled from Tavily/web-search per failure-mode rule. No signals invented.
+
+### Signals of the day (7)
+
+1. [TW] **Technology Radar July 2026 (hectorpincheira.com):** "AI Agents Enter Production and Governance Can't Keep Up" — companies are deploying agents on critical systems with no traceability, no control frameworks, no defined limits. Key line: "The next major corporate AI incident will not be technical — it will be a governance issue." — https://www.hectorpincheira.com/en/news/technological-radar-july-2026-ai-agents-go-into-production-and-governance-doesnt-keep-up/ — *July 2026* — Why it matters: the governance gap is Fatiha's competitive angle — solopreneurs who build human-in-the-loop systems right now are safer AND faster than enterprises fumbling blind. ★ LEAD-MAGNET (maps to **WHAT** — "What AI Actually Is — Plain English")
+
+2. [TW] **TechBuzz.ai / Vishal Sikka (ex-SAP CTO):** "New Research Claims AI Agents Are Mathematically Doomed to Fail" — paper "Hallucination Stations" argues transformers fundamentally cannot reliably handle complex agentic tasks. Sikka's quote: "There is no way they can be reliable." Enterprise AI agent adoption stalling; hallucinations disrupting entire workflows. — https://www.techbuzz.ai/articles/new-research-claims-ai-agents-are-mathematically-doomed-to-fail — *July 2026* — Why it matters: third consecutive week with heavyweight validation for the "don't chase the agent hype" position (Karpathy → Zuckerberg last week → now a formal academic paper). Strongest contrarian triple yet.
+
+3. [IG] **Sabrina Ramonov (@sabrina_ramonov, 934K IG):** Reel — n8n + Make template that clones a viral Instagram reel using a HeyGen AI avatar, fully automated: one input → video → posted across platforms, no manual step. She built 1.4M+ audience in 15 months using this exact system. — https://www.instagram.com/reel/DIZ_mBmhYm_/ — *July 2026* — Why it matters: "Build Once, Runs Forever" — the finished-system-as-proof format that outperforms tutorials. The reel-cloning pipeline maps directly to Fatiha's visual-engine stack. ★ LEAD-MAGNET (maps to **TEAM** — "How to Set Up Your First AI Employee")
+
+4. [IG] **Instagram algorithm shift 2026 (creatorflow.so / platform intel):** DM shares now weighted 3–5× higher than likes for Reels reach. Instagram actively down-ranks generic AI-generated content (effective May 2026). Implication: comment-trigger → auto-DM automation is now the single highest-leverage distribution move on the platform. — https://creatorflow.so/blog/instagram-trends-2026-creators-marketers/ — *Current, July 2026* — Why it matters: this is the mechanic behind every comment-keyword CTA in the lead-magnet registry; validates the whole system design and makes the "Stop Doing That by Hand" hook even sharper.
+
+5. [YT] **"The 'Boring' AI Offers Making Millionaires In 2026"** — YouTube — https://www.youtube.com/watch?v=Tjtr2LrP7wU — *Recent, July 2026 niche* — Virality score: **~32/100** (estimated; channel subscriber data unavailable). Angle: unglamorous, repeatable AI business models outperform the flashy agent plays — the exact counterpoint to this week's "agents are doomed" signals. High relevance for Fatiha's "What's Worth It" pillar.
+
+6. [RSS] **Anthropic blog (Jul 9, 2026):** "Inviting Hard Questions" — Anthropic launching a public accountability initiative: a dedicated website where anyone can submit the hardest questions about AI (job displacement, creative devaluation, human autonomy, misuse risks) and Anthropic commits to publicly track and report how they address each one. Also announced Claude free for scientists + Claude Corps fellowship. — https://www.anthropic.com/news/hard-questions — Why it matters: Anthropic just gave Fatiha a real-talk hook — "even the company building the most powerful AI is now asking the public to send them hard questions. What does that tell you?" First-mover window to use this before it becomes noise.
+
+7. [NEWS] **AI Automation Trends July 2026 (blog.mean.ceo):** Sharp shift from simple task automation to coordinated autonomous systems that plan, draft, route, monitor, and decide. Solopreneur AI stack now costs $3K–$12K/year (95–98% cost reduction vs traditional team). New business registrations up 80% in France, 70% in Finland, 40% in Netherlands — the solopreneur boom is a global structural shift, not a US trend. — https://blog.mean.ceo/ai-automation-trends-july-2026/ — *July 2026* — Why it matters: the global registration data is a fresh stat for Fatiha's "Freedom Business" pillar — the market is moving to her, not the other way around.
+
+### Top 3 content angles ready to use
+
+- **The contrarian triple** → "Three things happened this week that the agent hype crowd missed: a formal paper says agents are mathematically unreliable, Meta is behind schedule on its own agents, and enterprise adoption is stalling because hallucinations break whole workflows. Stop chasing. Start building what works right now." → Pillar: **What's Worth It** → Lead-magnet hook: comment **WHAT**
+- **Instagram's hidden algorithm shift** → "Instagram quietly changed what gets you reach. DM shares now count 3-5x more than likes. If you're posting and hoping people tap the link, you're playing last year's game. Here's the move that works in 2026." → Pillar: **Stop Doing That by Hand** → Lead-magnet hook: comment **STACK**
+- **The 'boring' AI business is winning** → "Not agents. Not chatbots. Not AI avatars posting 24/7. The solopreneurs making real money in 2026 are running one repeatable system that does one job well, every day, while they sleep. Here's what that actually looks like." → Pillar: **Build Once, Runs Forever** → Lead-magnet hook: comment **TEAM**
+
+### Contrarian take logged
+
+"Everyone is still racing to build fully autonomous AI agents. This week alone: a former SAP CTO published a paper claiming agents are mathematically unreliable, Meta's own agent rollout is running behind schedule, and enterprise teams report hallucinations are breaking entire workflows. Meanwhile Instagram is down-ranking the generic AI content those same agents produce. The boring, human-reviewed, repeatable automation is quietly winning. The people building one good system that runs every day are lapping the people chasing every new agent demo."
+
+---
+
 ## RESEARCH 030 — 2026-07-10 | Daily signal harvest
 
 **Status:** NOTED
