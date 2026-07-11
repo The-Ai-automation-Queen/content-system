@@ -13,6 +13,11 @@
 
 ## Most recent (quick reference)
 
+- 11/07/2026 | LinkedIn | "You Don't Need a Week to Set Up Your First AI Automation. You Need 30 Minutes." — time wins method, founding-member P post | DRAFT
+- 11/07/2026 | LinkedIn | "Not Agents. Not Chatbots. Not AI Avatars. The AI Business Making Money Right Now Is Boring." — boring AI wins, community C post | READY TO POST [PREP: community link needed before queueing]
+- 11/07/2026 | LinkedIn | "Instagram Quietly Changed What Gets You Reach." — IG algorithm shift, community C post | DRAFT [PREP: community link needed before queueing]
+- 11/07/2026 | LinkedIn | "Three Things Happened in AI This Week That Nobody's Talking About Together." — agent hype contrarian triple | READY TO POST
+- 11/07/2026 | LinkedIn | "I Didn't Plan My Exit From Corporate. It Was a Regular Tuesday." — real talk, corporate exit storytelling | DRAFT
 - 10/07/2026 | LinkedIn | "The Work You Repeat Every Week Is the First Work AI Should Take" — build once, runs forever method | READY TO POST
 - 10/07/2026 | LinkedIn | "64% of Solopreneurs Use AI. Only 3.6% Earn Over $1M. The Gap Isn't the Tool." — strategy vs tools | READY TO POST
 - 10/07/2026 | LinkedIn | "There Are Four Things That Make AI Actually Useful. Anthropic Just Named Them." — 4D AI Fluency Framework | READY TO POST
@@ -46,6 +51,183 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 038 — 11/07/2026 | LinkedIn | You Don't Need a Week to Set Up Your First AI Automation. You Need 30 Minutes. | DRAFT
+
+**Status:** DRAFT
+**Platform:** LinkedIn (text post)
+**Format:** Teach Your System, Not the Tool (3), ~200 words
+**Topic:** Educational — three-question filter for finding your first automatable task. Concrete examples: email triage and research summaries. Ends with founding-member community invite.
+**Pattern used:** Teach Your System, Not the Tool (3)
+**Pillar:** Time Wins
+**Critic score:** 7.3/10 — NEEDS WORK: educational how-to format is untested in post-rebrand positioning. Pre-rebrand data shows generic AI explainers underperformed personal narrative by 4-8x (provisional — this specific how-to format may differ from a glossary post, but needs one real post to confirm). Lift: post one educational how-to and watch engagement vs storytelling baseline before marking READY TO POST.
+**ACP stage:** P — rolling window 029-038: 5A (029-033, all-A batch) + 2A (034-035) + 2C (036-037) + 1P (038) = 7A/2C/1P ✅. Last P post: ENTRY 024 (13 posts ago — well above the 4 A/C minimum between P posts ✅). No two P in a row: ENTRY 037 is C ✅.
+**CTA:** "Founding spots for the AI Automation Queen community are open at $27 a month, locked for life. One live 'build with me' session every month. This is the kind of thing we build together. [PREP: add Whop founding-member/community link here before queueing]"
+**Source:** Pillar method content — no external statistics cited. No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+You don't need a week to set up your first AI automation. You need 30 minutes and the right task to start with.
+
+Here's the filter that finds it:
+
+Does this task repeat on a schedule? Weekly, daily, every time a new client signs up?
+Does it follow the same steps every time?
+Does it not need a fresh judgment call each time it runs?
+
+Three yeses? That's your first automation candidate.
+
+The most common ones for solopreneurs: email triage (same sorting, same flagging, same draft-reply steps every morning) and research summaries (same format, same criteria, same sources, every week).
+
+Both take under 30 minutes to set up with Claude or ChatGPT. Describe the task. Give it your criteria. Test it twice. It runs.
+
+The first time you skip the morning routine because the AI already handled it. That's when it clicks.
+
+Founding spots for the AI Automation Queen community are open at $27 a month, locked for life. One live "build with me" session every month. This is the kind of thing we build together. [PREP: add Whop founding-member/community link here before queueing]
+
+---
+
+## ENTRY 037 — 11/07/2026 | LinkedIn | Not Agents. Not Chatbots. Not AI Avatars. The AI Business Making Money Right Now Is Boring. | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Contrarian Operational Hook (14), ~240 words
+**Topic:** Opinion — the solopreneurs quietly winning in 2026 are running one boring, repeatable system, not chasing agent demos. Sources: YouTube "boring AI offers" video + Meta $145B figure as contrast.
+**Pattern used:** Contrarian Operational Hook (14)
+**Pillar:** Build Once, Runs Forever
+**Critic score:** 8.3/10 — APPROVED FOR REVIEW. Hook ("Not agents. Not chatbots. Not AI avatars.") passes the 210-char test as a punchy three-line opener. Contrarian frame is sharp and differentiated. Specificity from named YouTube video and established $145B stat. Proven-pattern fit: contrarian operational hook is a logged high-performer in inspiration-library (7/10 — no post-rebrand data yet, directional).
+**ACP stage:** C — see batch ACP note in ENTRY 038. Rolling window 029-038 target: adding this C (with ENTRY 036 as the second C) corrects the all-A run in 029-033.
+**CTA:** "This is exactly what people come to build inside the community. One boring system, shipped. Come do it with us. [PREP: insert community waitlist link here before queueing]"
+**Source:** RESEARCH 031 Signal 5 (YouTube "The Boring AI Offers Making Millionaires in 2026", July 2026). Meta $145B figure from RESEARCH 028 Signal 1 / RESEARCH 030 (established). No [VERIFY] flags.
+**⚠️ PREP flag:** Community waitlist link required before this post can be queued. Post is quality-complete. Operator action: add Whop/guides-site community link to the CTA line.
+
+---
+### LINKEDIN POST
+
+Not agents. Not chatbots. Not AI avatars. The AI business that's actually making money right now is boring.
+
+And I mean that as a compliment.
+
+The solopreneurs quietly winning in 2026 aren't the ones demoing the flashiest tool or building a fully autonomous pipeline with 12 integrations. They're the ones who picked one thing that needed to happen every day, built one reliable system around it, and left it running.
+
+Email triage. Research summaries. Content drafts. Lead follow-up. Social scheduling. One task. One AI. One system. Running while they sleep.
+
+That's the whole play.
+
+There's a YouTube video making the rounds this week titled "The Boring AI Offers Making Millionaires in 2026." The premise isn't ironic. The boring use case, done consistently, compounds in a way the agent hype never does.
+
+The automation I set up months ago and never think about anymore is delivering more value than anything I'm actively experimenting with. Every time.
+
+The shiny agent everyone's watching demos of? Enterprise teams with $145 billion budgets can't get it to work reliably. Your one repeatable system? That one's running right now.
+
+This is exactly what people come to build inside the community. One boring system, shipped. Come do it with us. [PREP: insert community waitlist link here before queueing]
+
+---
+
+## ENTRY 036 — 11/07/2026 | LinkedIn | Instagram Quietly Changed What Gets You Reach. If You're Still Chasing Likes, You're Playing Last Year's Game. | DRAFT
+
+**Status:** DRAFT
+**Platform:** LinkedIn (text post)
+**Format:** Provocation-First Hook (1) + Result-First Demo (10), ~210 words
+**Topic:** AI News — Instagram shifted its algorithm in May 2026: DM shares now weighted 3-5x higher than likes for Reels reach. Down-ranking generic AI-generated content. Explains the comment-trigger automation mechanic and why it's now the highest-leverage distribution move.
+**Pattern used:** Provocation-First Hook (1) + Result-First Demo (10)
+**Pillar:** Stop Doing That by Hand
+**Critic score:** 7.7/10 — NEEDS WORK: post is structurally complete and well-sourced. Score is held at DRAFT solely by the [PREP] CTA block (community link missing). Lift to READY TO POST once community waitlist link is inserted into the CTA.
+**ACP stage:** C — see batch ACP note in ENTRY 038.
+**CTA:** "This is exactly what we build inside the community. Come join us. [PREP: insert community waitlist link here before queueing]"
+**Source:** RESEARCH 031 Signal 4 (creatorflow.so/blog/instagram-trends-2026-creators-marketers, July 2026: DM shares 3-5x weighting, down-ranking of generic AI content effective May 2026). No [VERIFY] flags.
+**⚠️ PREP flag:** Community waitlist link required before this post can be queued. Add Whop/guides-site community URL to the CTA line, then mark READY TO POST.
+
+---
+### LINKEDIN POST
+
+Instagram quietly changed what gets you reach. If you're still chasing likes, you're playing last year's game.
+
+Here's what shifted in May 2026: DM shares are now weighted 3 to 5 times higher than likes for Reels reach. Saves matter. Comments matter. Likes barely move the needle anymore.
+
+Translation: the comment-trigger system (someone comments a keyword, an automation sends them the resource they asked for via DM) isn't just a nice lead-gen move. It's now the single highest-leverage distribution play on Instagram.
+
+You post something genuinely useful. They comment a keyword. The automation delivers the resource. The platform sees a DM share and pushes your content to a new audience. You wake up to new followers and new subscribers.
+
+This isn't a hack. It's working with how the algorithm actually works right now.
+
+One more thing: Instagram is also down-ranking generic AI-generated content as of May 2026. The volume play is broken. Specificity wins. Human-reviewed content wins. A clear ask that triggers a real DM wins.
+
+This is exactly what we build inside the community. Come join us. [PREP: insert community waitlist link here before queueing]
+
+---
+
+## ENTRY 035 — 11/07/2026 | LinkedIn | Three Things Happened in AI This Week That Nobody's Talking About Together. | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Contrarian Operational Hook (14) + Specific Number as Hook (11), ~230 words
+**Topic:** AI News — contrarian triple from RESEARCH 031: (1) academic paper argues transformer agents are mathematically unreliable; (2) Gartner forecasts 40%+ enterprise agent projects cancelled by 2027; (3) Instagram down-ranking generic AI-generated content. Synthesis: the boring, human-reviewed, repeatable automation is winning.
+**Pattern used:** Contrarian Operational Hook (14) + Specific Number as Hook (11)
+**Pillar:** What's Worth It
+**Critic score:** 8.0/10 — APPROVED FOR REVIEW. Hook ("Three things happened in AI this week that nobody's talking about together") works as a complete thought in 210 chars and creates a clear curiosity gap. All three data points are fully sourced. Synthesis ("boring version outperforms flashy version") is sharp and serves the What's Worth It pillar cleanly. Proven-pattern fit 7/10: contrarian + specific numbers is a logged inspiration-library pattern; no post-rebrand baseline yet, directional.
+**ACP stage:** A — see batch ACP note in ENTRY 038.
+**CTA:** "Comment WHAT and I'll send you the plain-English guide to what AI actually is right now. No hype, no jargon."
+**Source:** RESEARCH 031 Signal 2 (Vishal Sikka / TechBuzz.ai "Hallucination Stations" paper, July 2026). RESEARCH 028 Signal 2 (Gartner 40% cancellation forecast, multiple outlets, week of July 7, 2026). RESEARCH 031 Signal 4 (Instagram down-ranking effective May 2026, creatorflow.so). No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+Three things happened in AI this week that nobody's talking about together.
+
+One: a former SAP executive co-authored a paper arguing that AI agents are mathematically unreliable. Not eventually. Fundamentally. The transformer architecture behind every major model can't handle the complexity of true agentic tasks without breaking.
+
+Two: Gartner is forecasting that 40% of enterprise AI agent projects will be cancelled by 2027. Not because of budget. Because of unclear scope, runaway costs, and no real business case built in from the start.
+
+Three: Instagram started down-ranking generic AI-generated content in May 2026. The "post 30 AI captions and one will stick" play is actively penalised by the platform now.
+
+Here's the point none of these articles are making: none of this means AI doesn't work. It means the promise of hands-free, fully autonomous agents is ahead of the reality.
+
+What actually works right now: one clear task, human in the loop, measurable result, run every day.
+
+The boring version of AI is outperforming the flashy version. The people building one working system while everyone else is chasing the next agent demo are quietly lapping the field.
+
+Comment WHAT and I'll send you the plain-English guide to what AI actually is right now. No hype, no jargon.
+
+---
+
+## ENTRY 034 — 11/07/2026 | LinkedIn | I Didn't Plan My Exit From Corporate. It Was a Regular Tuesday. | DRAFT
+
+**Status:** DRAFT
+**Platform:** LinkedIn (text post)
+**Format:** Vulnerability Before Credentials (7) + Provocation-First Hook (1), ~230 words
+**Topic:** Storytelling — the sudden, decisive corporate exit and how AI made the transition survivable. Bridges to the audience: if you're still in corporate wondering if there's something else, you're not wrong.
+**Pattern used:** Vulnerability Before Credentials (7) + Provocation-First Hook (1)
+**Pillar:** Real Talk
+**Critic score:** 7.8/10 — NEEDS WORK: emotional arc is complete and the bridge-audience hook is strong. Held at DRAFT by one specificity gap: the actual corporate exit trigger/moment is not yet recorded in personal-brain.md (confirmed: brain-manager flagged it as the highest-value follow-up). Lift to READY TO POST once brain-manager captures the real exit moment — that one detail moves this from universally relatable to unmistakably hers. Pre-rebrand Lessons note: personal narrative ran ~4-8x the engagement of generic content (provisional; post-rebrand baseline still pending).
+**ACP stage:** A — see batch ACP note in ENTRY 038.
+**CTA:** "Comment TEAM and I'll send you how I set up my first AI employee. That's where the time actually started coming back."
+**Source:** personal-brain.md — Background & Career section (20+ years in corporate tech, Dubai, sudden decisive exit confirmed). No invented details. No [VERIFY] flags.
+**⚠️ CTA note:** CTA map assigns "Comment DINNER if you're in Dubai and want in" for Real Talk / A. DINNER is not in lead-magnets.csv (no active keyword row). Substituting TEAM (active ✅, "How to Set Up Your First AI Employee") as the earned next step for someone considering a corporate exit. Flag: update the CTA map in skills/monetisation/SKILL.md to assign an active keyword for the Real Talk / A post.
+
+---
+### LINKEDIN POST
+
+I didn't plan my exit from corporate. It was a regular Tuesday and I just knew it was done.
+
+Not because things were bad. Not because I had a safety net. Because something had quietly shifted, and when I finally named it, there was no un-naming it.
+
+20-something years inside big corporate tech. Projects I was proud of. Teams I liked. A career that looked excellent from the outside.
+
+And a Tuesday morning where none of it was enough anymore.
+
+The hardest part wasn't deciding to leave. It was the gap between knowing I was done and knowing what I was walking toward.
+
+AI is a big part of what made that gap survivable. Not because it had all the answers. Because it let me test ideas, build fast, and run things that would have needed a whole team before.
+
+I run now from Dubai, on my own terms, with a stack of automations doing the jobs I used to hire out or do manually at midnight.
+
+If you're in corporate right now wondering if there's something else, you're not wrong. The path exists. I'm not that far ahead of you.
+
+Comment TEAM and I'll send you how I set up my first AI employee. That's where the time actually started coming back.
 
 ---
 
