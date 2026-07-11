@@ -1,0 +1,104 @@
+# Performance Report — 2026-07-11
+
+> Machine M06 daily run. Copy of the performance-log entry plus narrative analysis.
+
+---
+
+## Performance entry
+
+**Run date:** 2026-07-11
+**Sources scraped:** ALL FAILED (third consecutive run)
+
+### Data path taken
+
+| Platform | Preferred path tried | Fallback tried | Result |
+|---|---|---|---|
+| Instagram | Meta Graph API — SKIPPED (no META_ACCESS_TOKEN) | Apify MCP — FAILED (not connected) | No data |
+| Facebook | Meta Graph API — SKIPPED (no META_ACCESS_TOKEN) | Apify MCP — FAILED (not connected) | No data |
+| YouTube | Apify MCP — FAILED (not connected) | — | No data |
+| LinkedIn | Apify MCP — FAILED (not connected) | Manual (no linkedin-update arg passed) | No data |
+| Twitter/X | Apify MCP — FAILED (not connected) | — | No data |
+| Threads | Apify MCP — FAILED (not connected) | — | No data |
+| TikTok | NOT CONNECTED | — | No data |
+| Blotato | MCP not connected | — | No queue data |
+
+### Profile snapshot (carried from 2026-06-27 — 14 days stale)
+
+| Platform | Handle | Followers | Delta (vs 2026-06-27) |
+|---|---|---|---|
+| Instagram | @thefatihachikh | 632 | unknown |
+| Facebook | AI Automation Queen | unknown | unknown |
+| YouTube | @AI-Automation-Queen | unknown | unknown |
+| LinkedIn | Fatiha Chikh | unknown | unknown |
+| Twitter/X | @aiautomatik | unknown | unknown |
+| Threads | @thefatihachikh | unknown | unknown |
+| TikTok | — | NOT CONNECTED | — |
+
+### Vault status
+
+- Total entries: 038
+- POSTED: 0
+- READY TO POST: 20 (ENTRY 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 013, 014, 016, 029, 030, 031, 032, 033, 035, 037)
+- DRAFT: 18
+- Vault annotations written this run: 0 (no POSTED entries to annotate)
+
+---
+
+## Narrative analysis
+
+### What is working
+
+Nothing can be confirmed to be working — the measurement layer has been dark for 14 days.
+The content-engine machine has produced 38 vault entries in the rebuilt brand voice since
+22/06/2026, including 20 READY TO POST entries across LinkedIn, short-form video, and X.
+The signal-harvester and content-engine crons are running (git log shows daily commits for
+2026-07-10 and 2026-07-11). Production is not the bottleneck.
+
+The carried-forward finding from 2026-06-27 (pre-rebrand): personal narrative / face-and-story
+format outperformed generic AI-explainer carousels ~4–8x on Instagram (7.9%/7.8%/5.2% vs.
+0.5–1.9%). Still the best directional signal available, but 14 days stale and from a different
+brand era — use with caution.
+
+### What is not working
+
+**Three things are broken simultaneously:**
+
+1. **The scraper layer.** Apify MCP and Blotato MCP are not connected in local/cloud sessions.
+   `META_ACCESS_TOKEN` and `APIFY_TOKEN` are absent from the environment. Result: M06 has
+   produced no new metrics in three consecutive runs (2026-06-27, 2026-07-09, 2026-07-11).
+   The M06 validation criterion "No data gaps >2 consecutive days" is breached.
+
+2. **The release gate.** 38 vault entries, 0 POSTED. Even if scrapers were live, there is
+   nothing post-rebrand to measure. Content is piling up in READY TO POST but nothing is
+   being released to Blotato. The distribution machine (M04) appears to be producing queue
+   runs but either: (a) the Blotato queue status is unknown without MCP, or (b) drafts are
+   queued but not released by the operator.
+
+3. **The feedback loop.** Without scrape data AND without released content, neither content-engine
+   nor copy-craft can learn what the rebuilt-brand voice produces in the real world.
+   The ACP ratio math is running inside the vault, but no external signal validates it.
+
+### One recommendation for the next content-engine run
+
+**Do not produce more drafts until 3–5 READY TO POST entries have been released and scraped.**
+The vault has 20 READY TO POST entries; producing entry 039 before entries 001–037 have been
+measured adds to a backlog that already has no observable outcomes attached to it.
+If the operator releases via Blotato before the next M06 cron (03:00 GST), the next
+run will have real post-rebrand data to work with — and content-engine can adjust its
+pillar/hook mix based on actual engagement rather than the 14-day-old pre-rebrand baseline.
+
+### Infrastructure fix checklist (unblocks M06 immediately)
+
+- [ ] **Option A (preferred):** Add Apify MCP server + Blotato MCP server to Claude Code
+  session environment (see `security.md` — credentials live in Doppler on VPS, or in
+  env config for cloud sessions).
+- [ ] **Option B (quick fallback):** Set `APIFY_TOKEN` as an env var. This gives M06 the
+  REST API fallback path for Instagram, YouTube, Twitter, and LinkedIn scrapers without
+  needing the MCP. Blotato MCP still required for queue status.
+- [ ] **Option C (immediate, partial):** Pass `linkedin-update` argument on next run to
+  manually paste LinkedIn analytics — at least closes the LinkedIn data gap with zero
+  infrastructure changes.
+
+---
+
+*Report generated by M06 performance-tracker — 2026-07-11*
