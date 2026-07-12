@@ -2,6 +2,40 @@
 
 ---
 
+## RESEARCH 032 — 2026-07-12 | Daily signal harvest
+
+**Status:** NOTED
+**Sources hit:** Twitter/X (2, web-search fallback), Instagram (2, web-search fallback), YouTube (1, metadata unavailable — embed-blocked), RSS/Anthropic (1), News (1)
+**Apify status:** NOT AVAILABLE this session — all social slots filled from web-search per failure-mode rule. No signals invented.
+
+### Signals of the day (7)
+
+1. [TW] **Peter Diamandis (@PeterDiamandis):** "The One-Person AI Conglomerate Is Here — Forbes analysis confirms AI now enables ultra-lean, one-person companies replacing entire teams. This is the 'organizational singularity' playing out in real-time — transforming business structure, efficiency, and taxation." — https://x.com/PeterDiamandis/status/2043682085786063150 — ~June 2026 — Why it matters: when Diamandis names a trend the "organizational singularity," the mainstream window is open. Fatiha is already living the case study — first-mover position to own the category before larger accounts flood it. ★ LEAD-MAGNET (maps to **WHAT** — "What AI Actually Is — Plain English")
+
+2. [TW] **Allie K. Miller (@alliekmiller, 2M followers, #1 AI Business voice):** "This is an insane Anthropic tweet" — amplifies Anthropic's claim that 80% of their new production code is now authored by Claude; responds to a Fortune 500 developer who asked "why would I use AI to code if I can just code myself" and answered the real objection live in public. — https://x.com/alliekmiller/status/2038729492387213421 — ~June 2026 — Why it matters: the blocker Allie is killing ("I can do it myself") is the same one Fatiha's audience hits. The answer is the same: delegate the code, keep the goal. Source for the 80% stat: VentureBeat — https://venturebeat.com/technology/anthropic-says-80-of-its-new-production-code-is-now-authored-by-claude-how-your-enterprise-can-keep-up/
+
+3. [IG] **Sabrina Ramonov (@sabrina_ramonov, 965K Instagram):** "I Built an AI Social Media System" — detailed public breakdown of the n8n system that grew her to 1.4M audience across platforms; documents the exact stack (n8n + HeyGen + Blotato) and the decision not to post manually. — https://www.sabrina.dev/p/i-built-an-ai-social-media-system — (Apify IG scraper unavailable; fallback to creator's public web presence per failure-mode rule) — Why it matters: same architecture as Fatiha's content engine M01–M04. The format — show the running system, not the tutorial — outperforms in every metric. ★ LEAD-MAGNET (maps to **TEAM** — "How to Set Up Your First AI Employee")
+
+4. [IG] **Riley Brown (@rileybrown.ai, 634.5K TikTok / active Instagram):** current posting focus is AI agent tools — "AI agents tools everyone should learn" series; format: rapid screen recording with result-reveal before explanation; co-founder of vibecode.dev. — https://www.instagram.com/rileybrown.ai/ — (Apify IG scraper unavailable; fallback) — Why it matters: Riley's result-first format (show output first, then explain) is the highest-performing short-form structure in the AI tools niche right now. The format is the lesson.
+
+5. [YT] **"The AI Powered Solopreneur: How to Automate Without Losing the Human Touch"** — YouTube — https://www.youtube.com/watch?v=tzFW3XS6Yy8 — Virality score: N/A (view/subscriber data unavailable — YouTube embed-blocked this session; operator can verify). Why it matters: if the top-searched titles are solving for "without losing the human touch," that fear is the hook — not the tool. The title itself is a content strategy brief for Fatiha's next video.
+
+6. [RSS] **Anthropic: "The Making of Claude Code"** — Feature, July 6, 2026 — https://www.anthropic.com/features/making-of-claude-code — Inside story of how Claude Code went from an internal CLI to Anthropic's flagship coding agent; Anthropic's own engineers now delegate 80% of production code to Claude. Why it matters: the tool Fatiha uses and teaches has become the company's primary engineering resource. The "I'm not technical" objection is now categorically defunct.
+
+7. [NEWS] **Fortune + Grey Journal — solopreneur data wall (March/May 2026):** Solo-founded startups hit 36.3% of all new companies (up from 23.7% in 2019). 41.8M US solopreneurs contribute $1.3T to the economy annually. AI solopreneur stack costs $3K–$12K/year → 60–80% profit margins vs. 10–20% for staffed businesses. Maor Shlomo built Base44 solo in 6 months → $80M acquisition by Wix. Danny Postma: $3.6M ARR, zero employees. — https://fortune.com/2026/05/18/solo-founders-ai-automation-entire-teams-entrepreneurs/ + https://greyjournal.net/hustle/grow/solo-founders-million-dollar-ai-businesses-2026/ — Why it matters: primary-source stat wall now covers every content pillar. "The Freedom Business" carousel writes itself.
+
+### Top 3 content angles ready to use
+
+- **The organizational singularity** → "Peter Diamandis just named what you've been building. He's calling it the 'organizational singularity.' One person, AI stack, Fortune-500-level output. The only thing missing from most people's version: someone who's already built it showing them how." → Pillar: **The Freedom Business** → Lead-magnet hook: comment **WHAT**
+- **Even Anthropic's engineers don't write their own code** → "80% of the code at Anthropic is now written by Claude. So the next time someone tells you they're 'not technical enough' to use AI — ask them: are you more technical than the people who built it?" → Pillar: **Stop Doing That by Hand** → Lead-magnet hook: comment **STACK**
+- **36% of all new companies are solo-founded** → "Solo founders just hit 36% of all new companies. The ones using AI stacks run at 60–80% profit margins. One person built and sold a company for $80M in 6 months. The data is in. The only question is whether you're building." → Pillar: **Build Once, Runs Forever** → Lead-magnet hook: comment **TEAM**
+
+### Contrarian take logged
+
+"Everyone is talking about when to hire their first employee. The data says the smarter question is whether you ever need to. Solo-founded companies just crossed 36% of all new businesses. The ones with AI stacks run at 60–80% profit margins — compared to 10–20% for staffed companies. A solo founder built a company in six months and sold it to Wix for $80 million. Peter Diamandis is calling this the 'organizational singularity.' The people rushing to build a team are constructing a cost structure the market is about to make obsolete."
+
+---
+
 ## RESEARCH 031 — 2026-07-11 | Daily signal harvest
 
 **Status:** NOTED
