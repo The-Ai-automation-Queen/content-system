@@ -6,6 +6,89 @@
 
 ---
 
+## PERFORMANCE 2026-07-13
+
+**Run date:** 2026-07-13 ~UTC
+**Sources scraped:** Instagram (FAILED), Facebook (FAILED), YouTube (FAILED), LinkedIn (FAILED), Twitter/X (FAILED), Threads (FAILED), TikTok (NOT CONNECTED), Blotato (FAILED)
+**Data path:** ALL paths blocked — fifth consecutive failed run.
+- `META_ACCESS_TOKEN` not in env → Meta Graph API skipped for Instagram and Facebook.
+- Apify MCP server not connected in this session (ToolSearch returned no Apify tools).
+- `APIFY_TOKEN` not in env → REST API fallback also unavailable.
+- Blotato MCP not connected → no published/scheduled post data retrievable.
+- TikTok: account not connected to Blotato (inventory.md gap, pre-existing).
+
+> **ESCALATED DATA GAP ALERT — CRITICAL (FIFTH CONSECUTIVE FAILURE):** Runs 2026-06-27
+> (partial), 2026-07-09, 2026-07-11, 2026-07-12, and now 2026-07-13 have all failed to
+> produce scraped metrics. The M06 validation criterion "No data gaps >2 consecutive days"
+> has been continuously breached since 2026-07-09 (4 days ago). Last reliable profile data:
+> 2026-06-27 — **16 days ago**. The measurement layer has been dark for over two weeks.
+> **Root cause is unchanged and cannot self-resolve. Operator action required.**
+
+### Profile snapshot
+
+| Platform | Handle | Followers | Delta | Posts/Videos | Other |
+|---|---|---|---|---|---|
+| Instagram | @thefatihachikh | (scrape failed — last baseline: 632 on 2026-06-27) | (no data — 16 days elapsed) | (no data) | Apify MCP not connected; no `META_ACCESS_TOKEN` |
+| Facebook | AI Automation Queen | (scrape failed) | — | — | No Meta token; Apify MCP not connected |
+| YouTube | @AI-Automation-Queen | (scrape failed) | — | — | Apify MCP not connected |
+| LinkedIn | Fatiha Chikh | (scrape failed) | — | — | Apify MCP not connected; use `linkedin-update` arg for manual stats |
+| Twitter/X | @aiautomatik | (scrape failed) | — | — | Apify MCP not connected |
+| Threads | @thefatihachikh | (scrape failed) | — | — | Apify MCP not connected |
+| TikTok | — | NOT CONNECTED | — | — | Connect TikTok account to Blotato first (inventory.md gap) |
+
+### Top posts by engagement (last 12 posts per platform)
+
+> **No data returned this run.** All Apify scrapers unavailable (MCP not connected,
+> no REST API token). Blotato MCP not connected — cannot cross-reference published posts.
+> Vault entries: 0 out of 43 entries (ENTRY 001–043) have status `POSTED` — all content
+> from the brand rebuild (22/06/2026 onward) remains unreleased. No vault-to-post
+> cross-reference possible.
+
+### Blotato queue status
+
+> **Blotato MCP not connected this session** — cannot query published/scheduled/failed posts.
+> Last known state (2026-06-27): 14 published, 0 scheduled, 5 failed (4 were test posts / stale errors).
+> Current queue health is unknown for all distribution runs since 2026-07-09.
+
+### Week-over-week summary
+
+- Instagram followers: 632 (last scraped 2026-06-27 — delta unknown, 16 days elapsed)
+- Facebook / YouTube / LinkedIn / Twitter / Threads: no data across five consecutive runs
+- Top-performing piece (carried from 2026-06-27, pre-rebrand): IG clone reel "Meet mine. Fat.IA" — 41 likes, 9 comments, 893 plays, 7.9% eng. rate
+- Weakest signal: the measurement layer itself — dark for 16 days
+- **Critical structural gap:** 43 vault entries (20+ READY TO POST), 0 POSTED. M06 cannot measure what has not been released. Content engine produced 5 new drafts today (ENTRY 039–043); they join the queue with nothing ahead of them posted.
+
+### Lessons — repeatable patterns
+
+> **Insufficient new data — fifth consecutive scraper failure.** Carrying forward
+> 2026-06-27 findings (pre-rebrand, 16 days stale, directional only):
+
+**Carried forward from 2026-06-27 (16 days stale — treat as directional):**
+Personal narrative + face/voice/actual story ran ~4–8x the engagement rate of generic
+AI-explainer/glossary-pack format (7.9%/7.8%/5.2% vs. 0.5–1.9% across 12 posts).
+Unvalidated against the new positioning — remains provisional until rebuilt-brand
+content (ENTRY 001+) goes live and gets scraped.
+
+**Systemic finding (fifth consecutive run):** The measurement layer has been dark for
+16 consecutive days. Content engine (M01) has produced 43 vault entries across multiple
+daily runs. Distribution runs are committed in git. But M06 cannot read any of it. The
+feedback loop is completely broken — the engine is producing content in the dark.
+
+**Action required (operator — no change since 2026-07-12, still unresolved):**
+1. **Highest priority:** Connect Apify MCP + Blotato MCP in the session environment — OR
+   set `APIFY_TOKEN` as an env var so the Apify REST API fallback can run. Either unblocks
+   Instagram, YouTube, Twitter/X, and Threads profile data immediately.
+2. **Also required:** Release at least 3–5 READY TO POST vault entries via Blotato so
+   M06 has post-rebrand content to measure on the next run. Without released posts,
+   even a working M06 has nothing to score.
+3. **Optional but valuable:** On next M06 run, pass `linkedin-update` argument to
+   manually inject LinkedIn analytics (follower count + post impressions) — the auto-scraper
+   alone returns public follower count only.
+4. If MCP wiring is not yet possible in this environment, setting `APIFY_TOKEN` alone
+   enables the REST API fallback for four platforms at low cost (~$0.01–0.05/run).
+
+---
+
 ## PERFORMANCE 2026-07-12
 
 **Run date:** 2026-07-12 ~UTC
