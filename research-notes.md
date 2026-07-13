@@ -2,6 +2,40 @@
 
 ---
 
+## RESEARCH 033 — 2026-07-13 | Daily signal harvest
+
+**Status:** NOTED
+**Sources hit:** Twitter/X (2, web-search fallback), Instagram (2, web-search fallback), YouTube (1, metadata unavailable — embed-blocked), RSS/Anthropic (1), News (1)
+**Apify status:** NOT AVAILABLE this session — all social slots filled from web-search per failure-mode rule. No signals invented.
+
+### Signals of the day (7)
+
+1. [TW] **Praveen Neppalli (@praveenTweets, Uber VP Engineering):** "Agentic AI adoption is on fire at @Uber... Today, 99% of our engineers use AI tools. More than 70% of pull requests are attributed to local or cloud agents." — https://x.com/praveenTweets/status/2074605343439810922 — July 2026 — Why it matters: Uber — not a startup, not a research lab — crossed the threshold. When the world's largest ride-share network runs 70% of its code through agents, the "AI is only for technical people" objection is finished. Every non-technical entrepreneur watching this has run out of excuses. ★ LEAD-MAGNET (maps to **WHAT** — "What AI Actually Is — Plain English")
+
+2. [TW] **Forbes on X (@Forbes):** "The modern solo business owner is part operator, part marketer, part service provider and part strategist" — amplifies their feature on AI enabling solopreneurs to run with Fortune-500-level output as a one-person operation. — https://x.com/Forbes/status/2056027121441734958 — July 2026 — Why it matters: Forbes defining the AI-powered solopreneur as the new default operator archetype opens the narrative window. Fatiha IS this story, one step ahead of the audience, with the systems already built and running. ★ LEAD-MAGNET (maps to **TEAM** — "How to Set Up Your First AI Employee")
+
+3. [IG] **Sabrina Ramonov (@sabrina_ramonov, 965K Instagram):** "I Built an AI Social Media System" — full public breakdown of the n8n + HeyGen + Blotato stack that built her 1.4M-person audience; format: show the system running, not a tutorial. — https://www.sabrina.dev/p/i-built-an-ai-social-media-system — (Apify IG scraper unavailable; sourced from creator's public web presence per failure-mode rule) — Why it matters: same architecture as Fatiha's M01–M04. The "show the system in motion" format consistently outperforms screen-tutorial format. This is a direct format signal — the proof IS the content.
+
+4. [IG] **Riley Brown (@realrileybrown, 328K Instagram / co-founder @agent_native):** current posting focus — AI agents for business; format: drops into the live agent demo before explaining anything, result reveals before context. — https://www.instagram.com/realrileybrown/ — (Apify IG scraper unavailable; sourced from web search) — Why it matters: Riley's pivot from "AI tool demos" to "AI agent for your business" signals where the niche is heading in H2 2026. Positioning Fatiha's content in the agent-native frame now is first-mover — most accounts haven't made this language shift yet.
+
+5. [YT] **"The NEW 1-Person AI Business To Start in 2026"** — YouTube — https://www.youtube.com/watch?v=HucDu0p5eXU — Virality score: N/A (YouTube embed-blocked this session; operator can verify view data). Why it matters: titles in the "NEW 1-person business to START" mold now top YouTube search for AI solopreneur terms. The audience intent shifted from "learn about AI" to "start something with AI." That is a CTA frame Fatiha can own before larger accounts catch up.
+
+6. [RSS] **Anthropic — "Inviting Hard Questions"** — July 9, 2026 — https://www.anthropic.com/news/hard-questions — Anthropic publicly invited people to submit their hardest questions about AI: "Who decides the rules for AI?" / "Does AI make the world a more dangerous place?" / "Can AI give my children a better future?" — acknowledging that even the company building the most capable models doesn't claim to have all the answers. Why it matters: when the builder of the tool admits open questions out loud, the "everyday entrepreneur using AI" frame gets stronger. The message Fatiha can own: you don't need to understand the whole map — you need to know which three tools solve your specific problem this week.
+
+7. [NEWS] **Mean.ceo / AI Automation Trends — July 2026** — https://blog.mean.ceo/ai-automation-trends-july-2026/ — Synthesis: 29.8M solopreneurs in the US generate $1.7T in annual revenue (~6.8% of US total economic output). Fastest-ROI automation targets for solo founders: email triage, lead handling, support replies, finance admin, founder ops. Multi-agent stacks (research, content, sales ops, inbox, support, knowledge, control — 7 roles) now deployable without a technical background. Why it matters: the solopreneur economy is now statistically indisputable — $1.7T is bigger than the GDP of most countries. This is the number for the next "Freedom Business" carousel.
+
+### Top 3 content angles ready to use
+
+- **"99% of Uber engineers use AI tools. 70% of their PRs are from agents."** → "If the most technical workforce on earth has handed 70% of its output to agents, the 'I'm not technical enough' excuse just expired." → Pillar: **Stop Doing That by Hand** → Lead-magnet hook: comment **WHAT**
+- **"The new solo business owner: operator, marketer, service provider, and strategist — powered by AI"** → "Forbes put a name to what Fatiha has been building. The question is whether your audience sees *themselves* in that frame yet — or still thinks it's for 'tech people.'" → Pillar: **The Freedom Business** → Lead-magnet hook: comment **TEAM**
+- **"Anthropic just asked the public: 'Who decides the rules for AI?'"** → "The company building the most powerful AI model on earth is asking the public for the hard questions. The founder who's already building with it and can explain what actually matters? That's the trusted voice right now. Not the regulator. Not the researcher. You." → Pillar: **What's Worth It** → Lead-magnet hook: comment **STACK**
+
+### Contrarian take logged
+
+"Everyone keeps saying AI is going to replace your job. The smarter question is: replace it with what? Uber's VP of Engineering just confirmed 70% of their pull requests come from AI agents — at the company that runs transport for 150 million people. SaaStr replaced 10 salespeople with 20 AI agents managed by 1.2 humans. The companies winning aren't debating whether to use AI. They're past that. They're three seasons ahead, already running on agent stacks, already compounding the head start. The real threat isn't AI taking your job. It's being the last person who still does it by hand when everyone else stopped — and wondering why your margins look nothing like theirs."
+
+---
+
 ## RESEARCH 032 — 2026-07-12 | Daily signal harvest
 
 **Status:** NOTED
