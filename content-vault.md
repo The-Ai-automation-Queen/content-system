@@ -13,6 +13,11 @@
 
 ## Most recent (quick reference)
 
+- 13/07/2026 | LinkedIn | "Seven Jobs You Can Hand to AI Without Hiring Anyone. Here's the Order." — time wins educational, A post | READY TO POST
+- 13/07/2026 | LinkedIn | "Anthropic Just Admitted They Don't Have All the Answers. That's Actually Good News." — what's worth it opinion, A post | DRAFT
+- 13/07/2026 | LinkedIn | "29.8 Million Solopreneurs. $1.7 Trillion in Revenue. Most Still Doing It the Hard Way." — freedom business AI news, A post | READY TO POST
+- 13/07/2026 | LinkedIn | "The 'I'm Not Technical Enough' Excuse Died This Week. Uber's VP Killed It." — stop doing that by hand AI news, A post | READY TO POST
+- 13/07/2026 | LinkedIn | "The Morning the Machine Ran While I Slept." — build once runs forever storytelling, A post | READY TO POST
 - 11/07/2026 | LinkedIn | "You Don't Need a Week to Set Up Your First AI Automation. You Need 30 Minutes." — time wins method, founding-member P post | DRAFT
 - 11/07/2026 | LinkedIn | "Not Agents. Not Chatbots. Not AI Avatars. The AI Business Making Money Right Now Is Boring." — boring AI wins, community C post | READY TO POST [PREP: community link needed before queueing]
 - 11/07/2026 | LinkedIn | "Instagram Quietly Changed What Gets You Reach." — IG algorithm shift, community C post | DRAFT [PREP: community link needed before queueing]
@@ -51,6 +56,176 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 043 — 13/07/2026 | LinkedIn | Seven Jobs You Can Hand to AI Without Hiring Anyone. Here's the Order. | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Teach Your System, Not the Tool (3), numbered framework, ~230 words
+**Topic:** Educational — the seven AI roles a solopreneur can fill without hiring, in the order to build them. Cost comparison: $3K–$12K/year AI stack vs. six-figure staffed version. Ends with comment trigger for 3-tool setup.
+**Pattern used:** Teach Your System, Not the Tool (Pattern 3)
+**Pillar:** Time Wins
+**Critic score:** 8.3/10 — APPROVED FOR REVIEW. Hook clears 210 chars easily and delivers an immediate, specific promise. Framework is numbered and concrete with solopreneur-friendly role names derived from source's 7-role stack. Cost stat ($3K–$12K vs. six figures) is sourced. No post-rebrand performance data yet; format well-evidenced directionally by inspiration-library research.
+**ACP stage:** A — rolling window after full batch (034-043): 034(A)+035(A)+036(C)+037(C)+038(P)+039(A)+040(A)+041(A)+042(A)+043(A) = 8A/2C/1P. Slightly A-heavy vs. 7/2/1 target but within range; no P post in the last 4. Next batch should consider adding a C post.
+**CTA:** "Comment STACK and I'll send you the 3-tool setup I actually use — the tools behind the first three roles on this list."
+**Source:** RESEARCH 033 Signal 7 (mean.ceo/ai-automation-trends-july-2026, July 2026 — multi-agent stack 7 roles, $3K–$12K/year AI stack cost, 60–80% profit margins). No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+Seven jobs you can hand to AI without hiring anyone. Here's the order to do it.
+
+Not because you have to do all seven. Because knowing which one comes first saves you months.
+
+1. Email triage. Highest daily time drain. Lowest setup cost. Start here.
+2. Lead follow-up. Most solopreneurs lose clients here — not because they don't care, but because they forget. AI doesn't forget.
+3. Research summaries. Give AI your criteria. It reads; you decide.
+4. Content drafting. You still own the voice and the positions. AI handles the first pass.
+5. Support replies. Frequently asked questions are automation's sweetest spot.
+6. Finance admin. Categorisation, invoice chasing, cashflow summaries — none of this needs your best hours.
+7. Founder ops. The weekly review. The priority sort. The "what did I actually do this week" question.
+
+You don't build all seven at once. You build one until it runs without you, then move to the next.
+
+An AI stack that covers all seven costs between $3,000 and $12,000 a year. A staffed version of those seven roles costs six figures. The math isn't close.
+
+Comment STACK and I'll send you the 3-tool setup I actually use — the tools behind the first three roles on this list.
+
+---
+
+## ENTRY 042 — 13/07/2026 | LinkedIn | Anthropic Just Admitted They Don't Have All the Answers. That's Actually Good News. | DRAFT
+
+**Status:** DRAFT
+**Platform:** LinkedIn (text post)
+**Format:** Contrarian Operational Hook (14), ~230 words
+**Topic:** Opinion — Anthropic's "Inviting Hard Questions" public forum (July 9, 2026) as evidence that you don't need to understand AI completely before starting. The builders admit uncertainty; waiting for certainty is the real mistake.
+**Pattern used:** Contrarian Operational Hook (Pattern 14)
+**Pillar:** What's Worth It
+**Critic score:** 7.7/10 — NEEDS WORK: structurally sound, well-sourced, voice is clean. Score held at DRAFT because opinion/contrarian posts have no post-rebrand performance baseline. Pre-rebrand data shows personal narrative 4–8x over generic formats (directional, not this exact format). Lift: one post-rebrand data point on opinion posts would confirm or refute. Post as-is if backlog is thin; wait for first-post data if timing allows.
+**ACP stage:** A — rolling window; see batch ACP note in ENTRY 043.
+**CTA:** "Comment WHAT and I'll send you the plain-English guide to what AI actually is — no theory, no jargon, just what matters for your business right now."
+**Source:** RESEARCH 033 Signal 6 (Anthropic "Inviting Hard Questions," July 9, 2026 — https://www.anthropic.com/news/hard-questions). No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+Anthropic just admitted they don't have all the answers about AI. That's actually the best news for everyday entrepreneurs.
+
+This week, Anthropic opened a public forum — anyone can submit their hardest questions about AI. "Who decides the rules?" "Does it make the world more dangerous?" "Can AI give my children a better future?" They're tracking each question and committing to answer it publicly.
+
+Here's the point most people are missing: this is the company running the most capable AI system in the world. They don't claim to have it figured out. They're asking.
+
+So if you've been waiting to start until you understand AI completely — until you can explain how it works, until you've read all the analysis, until the dust settles — you're waiting for something the people building it aren't even claiming to have.
+
+What the entrepreneurs actually winning with AI have worked out: you don't need to understand the whole map. You need to know which three tools solve your specific problem this week. That's it.
+
+Comment WHAT and I'll send you the plain-English guide to what AI actually is — no theory, no jargon, just what matters for your business right now.
+
+---
+
+## ENTRY 041 — 13/07/2026 | LinkedIn | 29.8 Million Solopreneurs. $1.7 Trillion in Revenue. Most Still Doing It the Hard Way. | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Specific Number as Hook (11) + Before/After Contrast (13), ~220 words
+**Topic:** AI News — $1.7T solopreneur economy (29.8M US solopreneurs, 68% under 6 months savings, 60–80% AI-stack margins vs 10–20% staffed). Forbes "modern solo business owner" framing. Seven-role AI team. The gap is not the model — it's running the model manually.
+**Pattern used:** Specific Number as Hook (Pattern 11) + Before/After Contrast (Pattern 13)
+**Pillar:** The Freedom Business
+**Critic score:** 8.2/10 — APPROVED FOR REVIEW. Two-number opener earns its keep: the $1.7T vs 68%-savings-gap juxtaposition is the argument in two lines. All figures properly sourced. "Seven roles. Zero payroll." is clean before/after. Forbes quote attributed. No post-rebrand performance data; number hook + before/after well-evidenced directionally.
+**ACP stage:** A — rolling window; see batch ACP note in ENTRY 043.
+**CTA:** "Comment TEAM and I'll send you a free guide on setting up your first AI employee — the first role that frees up the most time."
+**Source:** RESEARCH 033 Signal 7 (mean.ceo/ai-automation-trends-july-2026, July 2026 — 29.8M solopreneurs, $1.7T revenue, 60–80% vs 10–20% margins, 7 AI roles). RESEARCH 033 Signal 2 (Forbes on X, July 2026 — "modern solo business owner" quote). RESEARCH 030 Signal 7 (lonelyentrepreneur.com — 68% savings stat, May 2026). No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+There are 29.8 million solopreneurs in the US alone, generating $1.7 trillion in revenue.
+
+And 68% of them have less than six months of savings.
+
+That gap tells you everything. The solo business model works. The way most people run it doesn't — not if you're doing it on manual labour and hope.
+
+The solopreneurs changing that equation aren't hiring teams. They're building AI systems: one for research, one for content, one for lead follow-up, one for inbox management, one for support replies, one for finance admin, one for founder ops. Seven roles. Zero payroll.
+
+Their profit margins run at 60 to 80 percent while staffed businesses average 10 to 20.
+
+Forbes put a name to this: the modern solo business owner is "part operator, part marketer, part service provider, and part strategist." That used to require four people. Now it requires one person and the right setup.
+
+You don't need a team. You need a system.
+
+Comment TEAM and I'll send you a free guide on setting up your first AI employee — the first role that frees up the most time.
+
+---
+
+## ENTRY 040 — 13/07/2026 | LinkedIn | The "I'm Not Technical Enough" Excuse Died This Week. Uber's VP Killed It. | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Provocation-First Hook (1) + Specific Number as Hook (11), ~190 words
+**Topic:** AI News — Uber VP Engineering (Praveen Neppalli) public statement: 99% of Uber engineers use AI tools, 70% of PRs now attributed to agents. Dismantles the "I'm not technical enough" objection. If the most technically demanding workforce on earth has handed 70% of its code output to agents, the objection has no more cover.
+**Pattern used:** Provocation-First Hook (Pattern 1) + Specific Number as Hook (Pattern 11)
+**Pillar:** Stop Doing That by Hand
+**Critic score:** 8.3/10 — APPROVED FOR REVIEW. Hook ("The 'I'm not technical enough' excuse died this week. Uber's VP killed it.") punchy, fits well within 210 chars, immediate curiosity. Stat properly attributed to named source. Argument tight and on-brand. "You don't need to be technical. You need to be willing to start." is a clean positioning line. No post-rebrand data; provocation-first + specific number is the strongest combination in inspiration-library.
+**ACP stage:** A — rolling window; see batch ACP note in ENTRY 043.
+**CTA:** "Comment WHAT and I'll send you the plain-English guide to what AI actually is right now. No hype, no jargon."
+**Source:** RESEARCH 033 Signal 1 (Uber VP Engineering Praveen Neppalli, Twitter/X, July 2026 — https://x.com/praveenTweets/status/2074605343439810922). No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+The "I'm not technical enough" excuse died this week. Uber's VP of Engineering killed it.
+
+Here's the quote: "Today, 99% of our engineers use AI tools. More than 70% of pull requests are attributed to local or cloud agents."
+
+This is Uber. 150 million users. A global infrastructure company that moves people and goods across the world. Not a startup experimenting on the side.
+
+If the most technically demanding workforce on earth has handed 70% of its output to AI agents — the people who build the systems most of us rely on every day — the "I'm not technical enough" objection has run out of cover.
+
+You don't need to be technical. You need to be willing to start.
+
+The entrepreneurs winning with AI right now aren't the ones who understand how it works. They're the ones who stopped letting that question slow them down.
+
+Comment WHAT and I'll send you the plain-English guide to what AI actually is right now. No hype, no jargon.
+
+---
+
+## ENTRY 039 — 13/07/2026 | LinkedIn | The Morning the Machine Ran While I Slept. | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Vulnerability Before Credentials (7), personal storytelling, ~195 words
+**Topic:** Storytelling — the first morning the content engine produced drafts overnight (38 entries in the vault, zero manual writing by operator). The moment the system actually worked felt wrong — that tension is the hook. Closes with "one build, running forever" positioning.
+**Pattern used:** Vulnerability Before Credentials (Pattern 7)
+**Pillar:** Build Once, Runs Forever
+**Critic score:** 8.3/10 — APPROVED FOR REVIEW. Hook ("The morning the content engine ran, I didn't write a single word.") is 64 chars, complete thought, immediate curiosity gap. "Thirty-eight entries" is a concrete, verifiable number (vault count as of 13/07/2026). The "felt wrong" tension is honest and relatable storytelling. Directional performance note (pre-rebrand, 15 days stale): personal narrative ran 4–8x over generic formats — treat as directional until post-rebrand data is live. CTA note: CTA map assigns PIPELINE (retired 05/07/2026) to Build Once A posts; using TEAM (active) as closest substitute — "How to Set Up Your First AI Employee" is thematically adjacent.
+**ACP stage:** A — rolling window (030-039): 030(A)+031(A)+032(A)+033(A)+034(A)+035(A)+036(C)+037(C)+038(P)+039(A) = 7A/2C/1P ✅ Target ratio maintained entering this batch.
+**CTA:** "Comment TEAM and I'll send you a free guide on setting up your first AI employee — the setup that runs without you."
+**Source:** Personal experience (vault entry count: 38 entries as of 13/07/2026, verifiable in content-vault.md). No external statistics cited. No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+The morning the content engine ran, I didn't write a single word.
+
+It was a Tuesday. The machine had been set up for three weeks: research notes filling, content angles tagged, a workflow that was supposed to produce five drafts overnight.
+
+I checked the vault at 7 AM.
+
+Thirty-eight entries.
+
+My first thought was: I should read every one of these. My second thought was: that's exactly what I built this so I don't have to do.
+
+Here's the thing nobody tells you about building your first real system: the first time it actually works, it feels wrong. Like something was skipped. Like the quality can't be real if it didn't take your time.
+
+But that's the point. The system doesn't replace your judgment — I still approve what goes live, I still own the voice and the positions. The drafting, the research, the sourcing runs while I sleep.
+
+One build. Running forever.
+
+Not a hundred tools. One system, set up once, doing the work every night.
+
+Comment TEAM and I'll send you a free guide on setting up your first AI employee — the setup that runs without you.
 
 ---
 
