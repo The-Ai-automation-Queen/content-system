@@ -164,6 +164,9 @@ permanent. Assigned so far:
 | 002 | Rashid | Head of Research | Intelligence |
 | 003 | Zeina | Design Studio | Marketing |
 | 004 | Nadia | Inbox Manager (interviewing) | Operations |
+| 005 | Sami | Late-Payment Chaser (interviewing) | Back Office |
+| 006 | Lina | Meeting Scheduler (interviewing) | Operations |
+| 007 | Karim | FAQ Engine (interviewing) | Customer |
 
 New names: short, warm, easy to say in English and French, no name
 reuse, never the name of a real client or contact. Log new assignments

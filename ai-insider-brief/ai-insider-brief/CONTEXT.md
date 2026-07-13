@@ -110,5 +110,9 @@ One primary action, three placements, zero competing offers:
   handler, but no page should ever add a frequency choice back without
   updating this section first — single cadence is the rule.
 
+## Pending cross-mentions (for the newsletter engine)
+
+- **Week of 13/07/2026 (drafted by hiring-campaign)**: "Three new AI employees joined the floor this week: a late-payment chaser, a meeting scheduler, and an FAQ engine. All three ship as free playbooks. See who's hiring at guides.shiftandlead.com/99.html." One line, next issue, then remove this entry.
+
 ## When to update this file
 Add a glossary entry when a new source type, prompt template, or pipeline stage enters.

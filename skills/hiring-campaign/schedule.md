@@ -11,9 +11,9 @@ real files in agent-os-company-dashboard/company/departments/.
 | 002 | Rashid | Head of Research | (cloud workflow, research) | PROOF | hired 07/07/2026 | - |
 | 003 | Zeina | Design Studio | (carousel-factory) | PROOF | hired 06/07/2026 | - |
 | 004 | Nadia | Inbox Manager | operations/operations-task-router.md (adapted) | PLAYBOOK | announced, playbook live 07/07/2026 | 2026-W28 |
-| 005 | Sami | Late-Payment Chaser | backoffice/backoffice-late-payment-chaser.md | PLAYBOOK | planned | 2026-W29 |
-| 006 | Lina | Meeting Scheduler | operations/operations-meeting-scheduler.md | PLAYBOOK | planned | 2026-W29 |
-| 007 | Karim | FAQ Engine | customer/customer-faq-engine.md | PLAYBOOK | planned | 2026-W29 |
+| 005 | Sami | Late-Payment Chaser | backoffice/backoffice-late-payment-chaser.md | PLAYBOOK | announced, playbook live 13/07/2026 | 2026-W29 |
+| 006 | Lina | Meeting Scheduler | operations/operations-meeting-scheduler.md | PLAYBOOK | announced, playbook live 13/07/2026 | 2026-W29 |
+| 007 | Karim | FAQ Engine | customer/customer-faq-engine.md | PLAYBOOK | announced, playbook live 13/07/2026 | 2026-W29 |
 | 008 | Yara | Competitor Watch | intelligence/intelligence-competitor-watch.md | PLAYBOOK | planned | 2026-W30 |
 | 009 | Omar | Receipt Processor | backoffice/backoffice-receipt-processor.md | PLAYBOOK | planned | 2026-W30 |
 | 010 | Maya | News Desk | intelligence/intelligence-news-digest.md | PROOF candidate (Insider Brief crawler) | planned | 2026-W30 |

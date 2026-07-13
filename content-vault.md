@@ -13,6 +13,14 @@
 
 ## Most recent (quick reference)
 
+- 13/07/2026 | LinkedIn carousel | "You Have Answered 'What Are Your Hours' by Hand for the Hundredth Time" — Karim, FAQ Engine, Employee #007 | READY TO POST
+- 13/07/2026 | LinkedIn | "You Have Answered 'What Are Your Hours' by Hand for the Hundredth Time" — Karim, FAQ Engine, Employee #007 | READY TO POST
+- 13/07/2026 | Short-form video (Reel) | "I Hired Three More AI Employees This Week" — wave reel, Sami/Lina/Karim | READY TO POST
+- 13/07/2026 | LinkedIn carousel | "You Have Typed 'Does Tuesday Work for You?' More Times Than You Can Count" — Lina, Meeting Scheduler, Employee #006 | READY TO POST
+- 13/07/2026 | LinkedIn | "You Have Typed 'Does Tuesday Work for You?' More Times Than You Can Count" — Lina, Meeting Scheduler, Employee #006 | READY TO POST
+- 13/07/2026 | LinkedIn carousel | "You've Sent That 'Just Following Up' Email Four Times This Month" — Sami, Late-Payment Chaser, Employee #005 | READY TO POST
+- 13/07/2026 | LinkedIn | "You've Sent That 'Just Following Up' Email Four Times This Month" — Sami, Late-Payment Chaser, Employee #005 | READY TO POST
+- 13/07/2026 | LinkedIn | "Now Hiring: Three AI Employees, Salary $0 Each" — wave announcement, Employees #5/#6/#7 | READY TO POST
 - 30/06/2026 | LinkedIn | "I Trust AI Now Because of 20 Years at Dell" — why rigor makes me trust it | DRAFT
 - 30/06/2026 | LinkedIn | "I'm Not the Builder Anymore. I'm the Judge." — the mindset shift | DRAFT
 - 30/06/2026 | Short-form video | "6 Helpers, 8 Minutes, a Full Launch Plan" — let it run without you | DRAFT
@@ -36,6 +44,259 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 031 — 13/07/2026 | LinkedIn carousel | You Have Answered "What Are Your Hours" by Hand for the Hundredth Time | DRAFT
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 030 (Karim, Employee #007, FAQ Engine, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/karim/karim-faq-engine-01.png through -06.png
+Source HTML: skills/carousel-factory/out/karim-faq-engine.html
+**CTA keyword:** FAQ, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You have answered 'what are your hours' by hand for the hundredth time."
+Slide 2 (scene): "Someone messages your page. Same question, fiftieth time. You stop, type the same answer again, go back to what you were doing."
+Slide 3 (role card): Karim, FAQ Engine, Customer, Salary $0, never sleeps. "Karim is AI. The only job he took was mine: the fifty times a week I typed the same answer by hand."
+Slide 4 (how he works): 4-step list, question list setup, match check, instant answer, honest escalation.
+Slide 5 (demo): "Built and tested on a real FAQ list with one AI tool and a messaging inbox. Setup about 25 minutes. He answers only from your approved list."
+Slide 6 (CTA): "Want the free setup? Comment FAQ."
+
+---
+
+## ENTRY 030 — 13/07/2026 | LinkedIn | You Have Answered "What Are Your Hours" by Hand for the Hundredth Time | DRAFT
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Thursday episode 3)
+**Topic:** Employee #007, Karim, FAQ Engine. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/faq-engine-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** schedule.md row 007 (customer/customer-faq-engine.md, not read this run, repo absent). Mode check: no receipt found anywhere. Confirmed PLAYBOOK.
+
+---
+You've answered "what are your hours" by hand for the hundredth time.
+
+Someone messages your page. It's a question you've answered fifty times before. You stop what you're doing, type the same answer again, go back to what you were doing.
+
+Meet Employee #007.
+
+Karim. FAQ Engine. Customer.
+Salary: $0. Never sleeps.
+
+Karim is AI. The only job he took was mine: the fifty times a week I typed the same answer by hand.
+
+How he works:
+1. You give him your 10 most-asked questions, and your real answers.
+2. A customer messages, he checks: is this one of the 10?
+3. If yes, he answers instantly, in your words.
+4. If no, he says so honestly and hands it to you. He never guesses.
+
+The demo: built and tested on a real FAQ list with one AI tool and a messaging inbox. Setup, about 25 minutes. He answers only from your approved list, nothing invented.
+
+Red line: if a question isn't on your list, he doesn't improvise. He says he'll get you a real answer and flags it to you. No guessing, ever.
+
+Your first win, free, today: write down the 5 questions you answer most. That list is Karim's entire job description.
+
+Comment FAQ and I'll send you the full setup, free.
+
+#AIemployees #The99 #CustomerService
+
+---
+
+## ENTRY 029 — 13/07/2026 | Short-form video (Reel / TikTok / YouTube Short) | I Hired Three More AI Employees This Week | DRAFT
+
+**Status:** READY TO POST
+**Platform:** Talking-head reel (30-45s), captions required
+**Format:** Week's wave reel (Wednesday slot), three role-card cutaways + one screenshot cutaway
+**Topic:** Compresses all 3 of this week's hires (Sami, Lina, Karim) into one 45-second reel, per the hiring-campaign weekly slot map.
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur client names/data on the invoice-tracker screenshot).
+**Source:** Assembled from ENTRY 025/027/030's role-card lines. No new claims.
+
+---
+[0:00-0:03] HOOK, on-screen text + spoken: "I hired three more AI employees this week."
+
+[0:03-0:12] Role card cutaway 1, Sami: "Sami chases the invoice so I don't have to write 'just following up' again."
+
+[0:12-0:21] Role card cutaway 2, Lina: "Lina ends the 'does Tuesday work for you' email chain."
+
+[0:21-0:30] Role card cutaway 3, Karim: "Karim answers the question I've typed by hand fifty times."
+
+[0:30-0:38] Screenshot cutaway: Sami's invoice-tracking sheet, real setup, client names blurred (redaction modeled).
+
+[0:38-0:45] Closing line, spoken + on-screen: "None of them send anything without me. That's the rule. Comment TEAM and I'll send you how to hire your first one."
+
+---
+
+## ENTRY 028 — 13/07/2026 | LinkedIn carousel | You Have Typed "Does Tuesday Work for You?" More Times Than You Can Count | DRAFT
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 027 (Lina, Employee #006, Meeting Scheduler, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/lina/lina-meeting-scheduler-01.png through -06.png
+Source HTML: skills/carousel-factory/out/lina-meeting-scheduler.html
+**CTA keyword:** SCHEDULE, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You have typed 'does Tuesday work for you?' more times than you can count."
+Slide 2 (scene): "Three emails deep, just to book a 20-minute call. By the time everyone agrees, you've forgotten what the call was even about."
+Slide 3 (role card): Lina, Meeting Scheduler, Operations, Salary $0, never sleeps. "Lina is AI. The only job she took was mine: the six emails it used to take me to book one call."
+Slide 4 (how she works): 4-step list, calendar read, 3-slot offer, book and invite, reschedule handling.
+Slide 5 (demo): "Built and tested with a calendar tool and one automation flow. About 30 minutes to set up. She can only see free or busy."
+Slide 6 (CTA): "Want the free setup? Comment SCHEDULE."
+
+---
+
+## ENTRY 027 — 13/07/2026 | LinkedIn | You Have Typed "Does Tuesday Work for You?" More Times Than You Can Count | DRAFT
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Wednesday episode 2)
+**Topic:** Employee #006, Lina, Meeting Scheduler. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/meeting-scheduler-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** schedule.md row 006 (operations/operations-meeting-scheduler.md, not read this run, repo absent). Mode check: no receipt found anywhere. Confirmed PLAYBOOK.
+
+---
+You've typed "does Tuesday work for you?" more times than you can count.
+
+Three emails deep, just to book a 20-minute call. By the time everyone agrees on a time, you've forgotten what the call was even about.
+
+Meet Employee #006.
+
+Lina. Meeting Scheduler. Operations.
+Salary: $0. Never sleeps.
+
+Lina is AI. The only job she took was mine: the six emails it used to take me to book one call.
+
+How she works:
+1. Reads your real calendar, knows what's actually free.
+2. Someone asks for time, she offers 3 real slots, same thread.
+3. They pick one, she books it, sends the invite to both of you.
+4. Someone reschedules, she finds the next slot. No thread restarts.
+
+The demo: built and tested with a calendar tool and one automation flow. About 30 minutes to set up. She can only see free or busy, never the details of your other meetings.
+
+Red line: she never shares what else is on your calendar, just whether a slot is open. Your other meetings stay private, always.
+
+Your first win, free, today: block 2 hours you never want booked. That's the boundary Lina works inside from day one.
+
+Comment SCHEDULE and I'll send you the full setup, free.
+
+#AIemployees #The99 #Productivity
+
+---
+
+## ENTRY 026 — 13/07/2026 | LinkedIn carousel | You've Sent That "Just Following Up" Email Four Times This Month | DRAFT
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 025 (Sami, Employee #005, Late-Payment Chaser, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/sami/sami-late-payment-chaser-01.png through -06.png
+Source HTML: skills/carousel-factory/out/sami-late-payment-chaser.html
+**CTA keyword:** CHASER, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You've sent that 'just following up' email four times this month."
+Slide 2 (scene): "It's the 28th. Two clients still haven't paid for work you finished three weeks ago. You open your email to chase them, again, and just don't."
+Slide 3 (role card): Sami, Late-Payment Chaser, Back Office, Salary $0, never sleeps. "Sami is AI. The only job he took was mine: the 20 minutes a week I spent working up the nerve to ask for my own money."
+Slide 4 (how he works): 4-step list, invoice check, 3-day reminder, 10-day firmer note, 20-day human flag.
+Slide 5 (demo): "Built and tested with a plain spreadsheet and one automation tool. Setup time about 40 minutes. He never touches your bank account."
+Slide 6 (CTA): "Want the free setup? Comment CHASER."
+
+---
+
+## ENTRY 025 — 13/07/2026 | LinkedIn | You've Sent That "Just Following Up" Email Four Times This Month | DRAFT
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Tuesday episode 1)
+**Topic:** Employee #005, Sami, Late-Payment Chaser. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/late-payment-chaser-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** schedule.md row 005 (backoffice/backoffice-late-payment-chaser.md, not read this run, repo absent). Mode check: no receipt in reports/, performance-log.md, or queen-brain/board/ for Sami. Confirmed PLAYBOOK.
+
+---
+You've sent that "just following up on this invoice" email four times this month.
+
+It's the 28th. Two clients still haven't paid you for work you finished three weeks ago. You open your email to chase them, again, and you just don't.
+
+Meet Employee #005.
+
+Sami. Late-Payment Chaser. Back Office.
+Salary: $0. Never sleeps.
+
+Sami is AI. The only job he took was mine: the 20 minutes a week I spent working up the nerve to ask for my own money.
+
+How he works:
+1. Checks your invoice list daily.
+2. 3 days late, a friendly reminder, in your voice.
+3. 10 days late, a firmer one. Still polite. Still you.
+4. 20 days late, he flags it to you. He never threatens anyone alone.
+
+The demo: built and tested with a plain spreadsheet and one automation tool. Setup time, about 40 minutes. He never touches your bank account. He only sends words, and only in your voice.
+
+Red line: he never mentions late fees, legal language, or collections without you approving that message first. Money conversations stay yours to escalate.
+
+Your first win, free, today: list every invoice more than 7 days overdue. That list is Sami's entire job description.
+
+Comment CHASER and I'll send you the full setup, free.
+
+#AIemployees #The99 #SmallBusiness
+
+---
+
+## ENTRY 024 — 13/07/2026 | LinkedIn | Now Hiring: Three AI Employees, Salary $0 Each | DRAFT
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Hiring-post ritual (job-ad parody), Monday wave announcement
+**Topic:** Introduces the week's 3 openings (Employees #005, #006, #007) before their individual episode stories run Tue/Wed/Thu. Creates the serial cliffhanger per the employee-stories skill.
+**Pattern used:** Job-ad parody + serial-cliffhanger opener
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — value-first series opener, comment-keyword capture, no promo.
+**Source:** skills/hiring-campaign/schedule.md rows 005-007. Role descriptions from schedule.md's role-summary column; agent-os-company-dashboard repo not in session this run, so the full department job-description files were not read. Gap logged in reports/hiring-campaign-2026-07-13.md.
+
+---
+Now hiring. Three AI employees. Salary: $0 each.
+
+Employee #005: Late-Payment Chaser.
+Chases the invoice so you do not have to write "just following up" again.
+
+Employee #006: Meeting Scheduler.
+Ends the "does Tuesday work for you" email chain for good.
+
+Employee #007: FAQ Engine.
+Answers the question you have typed by hand fifty times, instantly.
+
+None of them sleep. None of them ask for a raise. None of them send anything without me seeing it first.
+
+That is Employee #5, #6, and #7 of 99. I am hiring a whole AI team, one at a time, in public, on my own business.
+
+See who is already on the floor. The scoreboard is live, updated only when there is a real receipt to show.
+
+Want to build your own first hire? Comment TEAM and I will send you the free 5-step framework.
+
+#AIemployees #Solopreneur #The99
 
 ---
 
