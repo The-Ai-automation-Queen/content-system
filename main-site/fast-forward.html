@@ -82,11 +82,15 @@ section{scroll-margin-top:70px}
 .curriculum-block{margin-bottom:36px}
 .curriculum-block h3{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:24px;margin-bottom:8px}
 .curriculum-block .sub{font-size:14.5px;color:var(--muted);margin-bottom:22px}
-.module{border-top:1px solid var(--rule);padding:20px 0}
-.module:last-child{border-bottom:1px solid var(--rule)}
-.module .num{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-deep);margin-bottom:6px}
-.module h4{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:19px;margin-bottom:6px}
-.module p{font-size:15px;color:var(--muted);line-height:1.6}
+.module{border-top:1px solid var(--rule)}
+.module:last-of-type{border-bottom:1px solid var(--rule)}
+.module summary{display:flex;align-items:baseline;gap:16px;padding:16px 0;cursor:pointer;list-style:none;flex-wrap:wrap}
+.module summary::-webkit-details-marker{display:none}
+.module summary::after{content:'+';margin-left:auto;font-family:'Space Mono',monospace;font-size:16px;color:var(--accent-deep)}
+.module[open] summary::after{content:'\2212'}
+.module .num{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-deep)}
+.module .m-title{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:19px}
+.module p{font-size:15px;color:var(--muted);line-height:1.6;padding:0 0 18px}
 .curriculum-note{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:22px;font-size:15px;color:var(--muted);margin-top:12px}
 
 .included-list{list-style:none;margin-top:8px}
@@ -148,6 +152,7 @@ section{scroll-margin-top:70px}
 }
 </style>
 <script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-WWW-ID"></script>
+<script defer src="/motion.js"></script>
 </head>
 <body>
 
@@ -159,7 +164,7 @@ section{scroll-margin-top:70px}
     <a href="index.html#cases">Case Studies</a>
     <a href="fast-forward.html" class="active">Fast Forward</a>
     <a href="work-with-fatiha.html">Workshops</a>
-    <a href="index.html#further">Community</a>
+    <a href="https://guides.shiftandlead.com/about.html#community-waitlist">Community</a>
     <a href="index.html#contact">Contact</a>
     <a class="nav-cta" href="https://guides.shiftandlead.com">Free Guides</a>
   </div>
@@ -181,7 +186,7 @@ section{scroll-margin-top:70px}
 <section class="section" id="problem"><div class="section-inner">
   <div class="section-eyebrow">The problem</div>
   <p>You know AI could give you hours back. You have tried. You opened ChatGPT, used it for a week, and quietly went back to doing everything by hand. That is not your fault. Nobody handed you the system. You got tutorials, hype, and 100 tabs you never reopened.</p>
-  <p>Here is the truth from 20 years of watching this happen: every technology shift looks technical from the outside, and simple once someone translates it. Cloud looked technical. It was not. AI looks technical. It is not. You do not need to become a techie. You need the system, and someone who has already built it to hand it to you in order.</p>
+  <p>Here is the truth from 20 years of watching this happen: every shift looks technical until someone translates it. Cloud looked technical. It was not. AI is the same. You do not need to become a techie. You need the system, handed to you in order.</p>
 </div></section>
 
 <section class="section dark" id="stakes"><div class="section-inner">
@@ -191,7 +196,7 @@ section{scroll-margin-top:70px}
 
 <section class="section" id="outcomes"><div class="section-inner">
   <div class="section-eyebrow">What you walk away with</div>
-  <p>By the end, you will have handed the busywork to AI employees you set up one at a time, the same way I run my own company. Not slides about someday. Real systems running while you sleep. You will have written content in your own voice, working documents and pages, connected tools, and, if you want it, your first automated agent that delivers to your inbox every morning.</p>
+  <p>By the end, the busywork is handed to AI employees you set up one at a time, the same way I run my own company. Real systems running while you sleep: content in your own voice, connected tools, and, if you want it, your first automated agent delivering to your inbox every morning.</p>
   <p>The system has a name. It is called Freedom OS, and by the end of the course it is running in your business, not just described in a slide.</p>
 </div></section>
 
@@ -232,61 +237,51 @@ section{scroll-margin-top:70px}
   <div class="curriculum-block">
     <h3>The Core (Modules 0 to 6)</h3>
     <p class="sub">Become capable without it ever feeling technical.</p>
-    <div class="module">
-      <div class="num">Module 0</div>
-      <h4>Get set up</h4>
+    <details class="module">
+      <summary><span class="num">Module 0</span><span class="m-title">Get set up</span></summary>
       <p>Your first AI audit in 60 minutes, no tools required, and a tour of which AI is best for which job.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 1</div>
-      <h4>Foundations</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 1</span><span class="m-title">Foundations</span></summary>
       <p>How to talk to AI so it gives you what you actually want, and how to build your reusable Brand Kit.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 2</div>
-      <h4>Connect your tools</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 2</span><span class="m-title">Connect your tools</span></summary>
       <p>Make AI work with the Google Drive, Gmail, Canva and calendar you already use.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 3</div>
-      <h4>Create content</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 3</span><span class="m-title">Create content</span></summary>
       <p>LinkedIn posts, video scripts, carousels, emails and newsletters, from one conversation, in your voice.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 4</div>
-      <h4>Run your business</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 4</span><span class="m-title">Run your business</span></summary>
       <p>Sales pages, website copy, proposals, meeting notes, invoices and lead magnets.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 5</div>
-      <h4>Build and sell knowledge</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 5</span><span class="m-title">Build and sell knowledge</span></summary>
       <p>Turn your expertise into a product people pay for.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 6</div>
-      <h4>Put it together</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 6</span><span class="m-title">Put it together</span></summary>
       <p>Make it a daily system, not a one-time effort.</p>
-    </div>
+    </details>
   </div>
 
   <div class="curriculum-block">
     <h3>The Depth upgrade (Modules 7 to 9)</h3>
     <p class="sub">Become genuinely technical without realizing it happened.</p>
-    <div class="module">
-      <div class="num">Module 7</div>
-      <h4>Strategy and architecture</h4>
+    <details class="module">
+      <summary><span class="num">Module 7</span><span class="m-title">Strategy and architecture</span></summary>
       <p>How AI actually works, choosing models, evaluating output, cost and security.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 8</div>
-      <h4>Agents and automation</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 8</span><span class="m-title">Agents and automation</span></summary>
       <p>Install Claude Code and build your first agent that runs on a schedule and delivers while you sleep.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 9</div>
-      <h4>Scale, data and team</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 9</span><span class="m-title">Scale, data and team</span></summary>
       <p>Spreadsheets, customer research, sales pipeline, your AI policy, and training your team.</p>
-    </div>
+    </details>
   </div>
 
   <div class="curriculum-note">The Core is fully non-technical. The Depth upgrade is where you quietly cross into running real automations. You will not notice the moment it stopped being scary.</div>
@@ -392,7 +387,7 @@ section{scroll-margin-top:70px}
     <a class="footer-link" href="index.html#cases">Case Studies</a>
     <a class="footer-link" href="fast-forward.html">Fast Forward</a>
     <a class="footer-link" href="work-with-fatiha.html">Workshops</a>
-    <a class="footer-link" href="index.html#further">Community</a>
+    <a class="footer-link" href="https://guides.shiftandlead.com/about.html#community-waitlist">Community</a>
     <a class="footer-link" href="index.html#about">About</a>
   </div>
   <div>

@@ -8,7 +8,7 @@ Dark intelligence dashboard. Scrapes AI/business sources every 12 hours via cron
 ## Architecture
 | Component | File | Purpose |
 |-----------|------|---------|
-| **Frontend** | `index.html` + `app.js` + `styles.css` / `styles-light.css` | Dashboard UI, dark theme default |
+| **Frontend** | `index.html` + `app.js` + `styles.css` | Dashboard UI, Shift & Lead blue/white system (legacy `styles-light.css` removed 13/07/2026) |
 | **Pipeline** | `pipeline/` | Source fetch → Ollama summarise → JSON output |
 | **Sources** | `sources.json` | Curated source list (RSS/URL list) |
 | **Prompts** | `prompts.mjs` | Ollama prompt templates per content type |

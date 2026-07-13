@@ -84,3 +84,39 @@ There is no shared stylesheet, template, or partial anywhere. The nav, footer, d
 4. Decide the brief.shiftandlead.com seam: keep the deliberate second identity or bring it into the blue/white system.
 
 Open questions for the founder are being asked in-session; implementation will not start until scope is confirmed.
+
+---
+
+## Implementation addendum (same day, after founder scope decisions)
+
+Scope confirmed by Fatiha: fix leaks + cut text on conversion pages + motion site-wide with vanilla JS and CSS (no framework, no build step) + unify the Brief into blue/white. Full template rebuild declined. Chez guide bodies left intact.
+
+### Shipped in this change
+
+1. Leak fixes
+   - privacy.html nav and footer cross-domain links now carry the standard UTM parameters.
+   - Every "Community" link on both sites (26 links) now points at the real community waitlist on guides about.html instead of the nonexistent #further destination.
+   - guides/chez-claude-preview.html converted to a redirect stub pointing at chez-claude.html. The 3,237-word duplicate is gone.
+   - site/lib/lucide.min.js (411 KB, referenced by nothing) deleted.
+   - www homepage "Subscribe free" link for the Insider Brief now points at brief.shiftandlead.com instead of #top.
+   - Orphan redirect stubs (case-study-4, products/*) kept: they are not in any sitemap and still catch inbound links.
+
+2. Text cuts (conversion pages only)
+   - www index.html: 1,167 to 1,120 words. Hero sub, pains list, founder story (the 90-word run-on is gone), FAQ trimmed.
+   - fast-forward.html: 1,194 to 1,171 words, and the 10-module curriculum wall is now collapsible details rows, so the page reads far shorter than the count suggests.
+   - guides about.html: 726 to 640 words, story section tightened.
+   - free-resources.html left as is: its weight is the 21-row library index, which is the page's purpose.
+   - Zero em-dashes introduced. No numbers changed. Offer language unchanged (waitlist per offers.md).
+
+3. Motion system
+   - New shared file: site/lib/motion.js and identical main-site/motion.js. Vanilla JS, about 3 KB, no dependencies. Scroll-reveals with stagger on sections and cards, eased hover transitions, count-up on case-study stats. Respects prefers-reduced-motion; with JS off every element stays visible.
+   - Injected into all 35 real pages across both sites. Verified in a real browser on 5 representative pages: all tagged elements reveal, no JS errors.
+
+4. Insider Brief
+   - The repo's styles.css was already the blue/white system; index.html loads it. The purple/cream version still visible at brief.shiftandlead.com is a stale deploy. Legacy styles-light.css (the purple design) deleted so it cannot regress. Fix on the live site is a VPS pull.
+
+### Founder tasks remaining (cannot be done from the repo)
+
+- Redeploy brief.shiftandlead.com (VPS pull) to replace the stale purple build.
+- Fill the Umami website IDs: the placeholders (UMAMI-WWW-ID, UMAMI-GUIDES-ID, UMAMI-BRIEF-ID) need the real IDs from the self-hosted Umami dashboard, per deploy/analytics/README.md. Until then www traffic is not measured.
+- The "3 / 99 hired" counter remains hand-synced between site/99.html and the www homepage (SYNC comments in place). Left as is per scope; a shared JSON fetch would need CORS setup.
