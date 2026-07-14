@@ -62,6 +62,13 @@ loop is closed and auditable. Read `CLAUDE.md` and `security.md` first.
 - **An ENTRY number** (e.g. `008`): queue just that one.
 - **A platform** (e.g. `linkedin`): queue ready entries targeted at that platform.
 
+**Hard status rule (added 14/07/2026):** only the literal status `READY TO POST`
+is queueable. Entries at `KILLED`, `SUPERSEDED BY ENTRY NNN`, `BLOCKED`, or
+`STALE` are operator declines or expiries — never queue them, even when named
+explicitly by ENTRY number; report the status instead. If the operator kills a
+`SCHEDULED` entry (via review-cockpit or directly), remove it from the Blotato
+queue the same run and log the removal in the distribution report.
+
 If more than ~5 entries are ready and unblocked, ask the operator once (with
 `AskUserQuestion`) how many to queue and the scheduling window, then proceed.
 

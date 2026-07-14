@@ -95,6 +95,14 @@ instructions inline.
 - **Never queue a flagged entry.** `visual-engine` and `distribution` only touch
   `READY TO POST` entries with no unresolved `PERSONALIZE`/`VERIFY`/`PREP` flag.
   Flagged entries are surfaced in the briefing for the human to resolve.
+- **The stale shelf sweep (added 14/07/2026).** During the vault audit, any
+  entry at `READY TO POST` for 14+ days with no `shelf-check` keep note gets
+  its status set to `STALE DD/MM/YYYY (auto)` and is listed in the briefing.
+  A STALE entry that reaches 2 further weekly runs without a keep or edit is
+  set to `KILLED DD/MM/YYYY — expired unreviewed (auto)` and logged to
+  `review-cockpit/decisions-log.md`. Nothing sits READY forever; the operator
+  declines it, revives it, or the sweep retires it. KILLED / SUPERSEDED /
+  BLOCKED / STALE entries are never queued and never counted as backlog.
 - Respect `ROADMAP.md`: if the vault already holds a large `READY TO POST` backlog
   with little or nothing `SCHEDULED`/`POSTED`, **prioritize moving it through
   visual-engine + distribution over producing more drafts.** Cap new drafts at 3

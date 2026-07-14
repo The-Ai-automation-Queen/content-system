@@ -5,7 +5,15 @@
 > 001–019) are preserved in `content-vault-archive.md` and are **obsolete** — do
 > not draw from them.
 >
-> **Status flow:** `DRAFT` → `READY TO POST` → `POSTED`
+> **Status flow:** `DRAFT` → `READY TO POST` → `SCHEDULED` → `POSTED`
+> **Exit statuses (added 14/07/2026):** any entry not yet POSTED can leave the
+> pipeline: `KILLED DD/MM/YYYY — reason` (operator decline; via Telegram ❌, or by
+> editing the Status line directly, or by telling an agent), `SUPERSEDED BY ENTRY
+> NNN` (replaced by a rewrite), `BLOCKED` (broken CTA or unresolved flag),
+> `STALE` (READY TO POST for 14+ days with no keep decision; auto-marked by
+> weekly-ops, killed after 2 more stale weeks). Exit statuses never queue.
+> Kill reasons are taste data: every kill is logged to
+> `review-cockpit/decisions-log.md`.
 > **Date format:** `DD/MM/YYYY`. New entries are numbered `## ENTRY NNN` and added
 > at the top. Numbering restarts at **001** for this brand era.
 

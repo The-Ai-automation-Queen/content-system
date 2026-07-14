@@ -41,6 +41,9 @@ process @ 12:30 + 20:30 GST · decisions logged for the Taste Clone (#7).
 1. First run a `process` sweep (catch overnight replies).
 2. Collect reviewables from `content-vault.md`:
    - all entries at `DRAFT` (newest first — the 02:30 batch leads)
+   - **the Ready shelf**: entries at `READY TO POST` for 7+ days, as `R#`
+     cards (max 3 per digest, oldest first). Nothing stays READY
+     indefinitely; it gets re-decided or it dies.
    - a one-line footer on queue state: counts of READY TO POST / SCHEDULED,
      from the vault + latest `reports/distribution-*.md`
 3. Send ONE Telegram thread (direct API `sendMessage`, HTML mode — not
@@ -57,6 +60,7 @@ process @ 12:30 + 20:30 GST · decisions logged for the Taste Clone (#7).
 4. Footer with the reply protocol:
    > Reply: `1✅ 3✅` approve · `2❌` kill (add a word why, it teaches me) ·
    > reply to a card with a 🎙 voice note or text to edit it · `all✅`
+   > Ready shelf: `R1✅` keep 7 more days · `R1❌` kill it (a word why helps)
 5. Record the served card list + message ids in `review-cockpit/state.md`
    (card number → vault ENTRY NNN mapping, current getUpdates offset).
 
@@ -77,7 +81,14 @@ process @ 12:30 + 20:30 GST · decisions logged for the Taste Clone (#7).
      present + lead magnet live in `lead-magnets.csv`?) — if the keyword's
      magnet isn't live, keep the approval but add a `CTA-BLOCKED` note so
      `distribution` skips it (never queue a dead keyword).
-   - ❌ → Status `KILLED` + her reason verbatim if given.
+   - ❌ → Status `KILLED DD/MM/YYYY — reason` (her reason verbatim if given).
+     Kills apply to ANY pre-POSTED entry, including READY TO POST and
+     SCHEDULED ones — approval is always revocable until she releases in
+     Blotato. If the entry is SCHEDULED, also remove it from the Blotato
+     queue the same run and note that in the confirmation.
+   - `R#✅` → keep on the shelf: add a `shelf-check DD/MM/YYYY — kept` note
+     to the entry; the 14-day stale clock restarts from that date.
+   - `R#❌` → same as a kill (status + reason + decisions log).
    - 🎙/text edit → transcribe voice (see Transcription below), apply the
      edit to the entry **preserving her words wherever possible** (her edit
      text outranks the draft), re-score with the content-engine critic,
@@ -91,8 +102,10 @@ process @ 12:30 + 20:30 GST · decisions logged for the Taste Clone (#7).
 
 ### `status`
 
-Print: DRAFTs awaiting review (+ age), decisions this week by type, approval
-rate, oldest unreviewed entry, decisions-log size (Taste Clone readiness).
+Print: DRAFTs awaiting review (+ age), Ready-shelf ages (READY TO POST
+entries by days-ready, flagging any at 7+ and 14+ days), decisions this week
+by type, approval rate, oldest unreviewed entry, decisions-log size (Taste
+Clone readiness).
 
 ---
 
