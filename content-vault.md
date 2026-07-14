@@ -29,7 +29,7 @@
 - 14/07/2026 | LinkedIn | "How to Automate Without Scaling Your Chaos" — rewrite of the superseded entry, how-to-first (v3) | READY TO POST [VERIFY: 95% stat]
 - 14/07/2026 | LinkedIn | "How to Test If an AI Tool Is Worth Your Money" — rewrite of the superseded entry, how-to-first (v3) | READY TO POST
 - 14/07/2026 | LinkedIn | "How to Pick the Right First Thing to Automate" — rewrite of the superseded entry, how-to-first (v3) | READY TO POST
-- 14/07/2026 | LinkedIn | "How I Left Corporate With No Plan (and What I Needed Instead)" — rewrite of the superseded entry, how-to-first (v3) | READY TO POST
+- 14/07/2026 | LinkedIn | "How I Left Corporate With No Plan (and What I Needed Instead)" — rewrite of the superseded entry, how-to-first (v3) | KILLED 14/07/2026 (operator: exit stories retired until personal-brain is seeded)
 - 14/07/2026 | LinkedIn | "How a One-Person Business Outruns Meta's $145 Billion" — rewrite of the superseded entry, how-to-first (v3) | READY TO POST
 - 14/07/2026 | LinkedIn | "How to Score Your AI Skills in 2 Minutes" — rewrite of the superseded entry, how-to-first (v3) | READY TO POST
 - 14/07/2026 | LinkedIn | "How the Top 3.6% of Solopreneurs Use AI Differently" — rewrite of the superseded entry, how-to-first (v3) | READY TO POST
@@ -197,8 +197,9 @@ Comment TEAM and I'll send you the setup for that first employee.
 
 ---
 
-## ENTRY 060 — 14/07/2026 | LinkedIn | How I Left Corporate With No Plan (and What I Needed Instead) | READY TO POST
+## ENTRY 060 — 14/07/2026 | LinkedIn | How I Left Corporate With No Plan (and What I Needed Instead) | KILLED 14/07/2026
 `A · Real Talk · CTA: WORDS · supersedes 029 · src: Career Profile.md, personal-brain.md (exit: sudden, confirmed; trigger story not yet recorded, not invented)`
+**KILLED 14/07/2026 — operator decision, same run as ENTRY 065. Exit-story content is retired entirely until the real exit moment is recorded in personal-brain.md. Do not revive; do not revive superseded ENTRY 029 either.**
 
 How do you leave 20 years at Dell, Intel and Microsoft with no plan? In my case: one decision, one Tuesday. Fast. Definitive. Suddenly I was standing outside the building with four languages, a long CV, and nothing attached to my own name.
 

@@ -1,1 +1,2 @@
 [2026-07-14] ENTRY 065 · killed · Real Talk · how-to-first story · — · kill reason (operator, in-chat): "factually incorrect and not useful for anyone" — invented Sunday-dread/test arc does not match her real exit; no exit-story drafts until personal-brain records the real moment
+[2026-07-14] ENTRY 060 · killed · Real Talk · how-to-first story · — · kill reason (operator, in-chat): "kill 060 too" — all exit-story content retired until the real exit moment is recorded in personal-brain.md (pattern: two exit-story kills in one run)
