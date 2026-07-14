@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <rect width="1080" height="1350" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1080" height="14" fill="#2C4BE0"/>
+  <text x="90" y="150" font-family="'Space Mono', Menlo, monospace" font-size="26" letter-spacing="6" fill="#1B2EA0">LIVE MASTERCLASS · 90 MINUTES</text>
+  <text x="90" y="300" font-family="'Playfair Display', Georgia, serif" font-size="110" fill="#1A1A1A">Leave with an</text>
+  <text x="90" y="425" font-family="'Playfair Display', Georgia, serif" font-size="110" fill="#1A1A1A">AI employee.</text>
+  <text x="90" y="550" font-family="'Playfair Display', Georgia, serif" font-size="110" fill="#2C4BE0">Running.</text>
+  
+  <rect x="90" y="615" width="240" height="6" fill="#2C4BE0"/>
+  <text x="90" y="725" font-family="Georgia, serif" font-size="38" fill="#1A1A1A"><tspan fill="#2C4BE0" font-weight="bold">&#8594;  </tspan>One real task, off your plate for good</text>
+  <text x="90" y="803" font-family="Georgia, serif" font-size="38" fill="#1A1A1A"><tspan fill="#2C4BE0" font-weight="bold">&#8594;  </tspan>Set up live, step by step, with me</text>
+  <text x="90" y="881" font-family="Georgia, serif" font-size="38" fill="#1A1A1A"><tspan fill="#2C4BE0" font-weight="bold">&#8594;  </tspan>No code. No jargon. No homework.</text>
+  
+  <text x="90" y="1180" font-family="Georgia, serif" font-size="30" font-style="italic" fill="#5C5A57">with Fatiha Chikh · Shift &amp; Lead</text>
+  <rect x="90" y="1215" width="900" height="76" rx="4" fill="#2C4BE0"/>
+  <text x="540" y="1264" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="3" fill="#FFFFFF" text-anchor="middle">SEATS LIMITED · LINK IN BIO</text>
+  <rect x="0" y="1336" width="1080" height="14" fill="#2C4BE0"/>
+</svg>
