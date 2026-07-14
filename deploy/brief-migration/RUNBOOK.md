@@ -8,11 +8,20 @@ Two machines are involved:
 
 | Name in this doc | What it is | How you reach it |
 |---|---|---|
-| OLD VPS | Serves brief.shiftandlead.com today (the purple site) | `ssh root@187.77.153.212` |
-| ESTATE VPS | Serves www + guides, runs the machines, has this repo at `/home/deploy/content-system` | `ssh deploy@YOUR-ESTATE-IP` |
+| OLD VPS | Serves brief.shiftandlead.com today (the purple site) | `ssh root@187.77.153.212` (root, always: this box predates the estate setup and has no other account) |
+| ESTATE VPS | Serves www + guides, runs the machines, has this repo at `$HOME/content-system` | `ssh YOUR-USER@YOUR-ESTATE-IP` |
 
-Placeholders you replace while typing: `YOUR-ESTATE-IP`, and the four secret
-values in step 2. Everything else is copy-paste as written.
+`YOUR-USER` is the normal account you created when you first set up the
+estate VPS (SETUP-GUIDE.md step 1; bootstrap-vps.sh runs as that user, not
+root, and there is no user named "deploy" unless you happened to create
+one). If you forgot the name: it is the one that works in
+`ssh -L 4321:localhost:4321 YOUR-USER@YOUR-ESTATE-IP`, the tunnel you use
+for the dashboard.
+
+Placeholders you replace while typing: `YOUR-USER`, `YOUR-ESTATE-IP`, and
+the four secret values in step 2. Every command below that mentions a path
+uses `$HOME`/`$USER`, so once you are logged in as the right user they are
+copy-paste as written.
 
 ## Step 0. Pre-flight (2 min, from your Mac)
 
@@ -28,12 +37,11 @@ DNS is already moved and only steps 2, 4, 5, 6 apply.
 Then confirm the repo path on the ESTATE VPS:
 
 ```bash
-ssh deploy@YOUR-ESTATE-IP
-ls /home/deploy/content-system/ai-insider-brief/ai-insider-brief/index.html
+ssh YOUR-USER@YOUR-ESTATE-IP
+ls $HOME/content-system/ai-insider-brief/ai-insider-brief/index.html
 ```
 
-If that file is missing, run `git -C /home/deploy/content-system pull` first.
-If the repo lives somewhere else, note the real path; steps 3 and 5 need it.
+If that file is missing, run `git -C $HOME/content-system pull` first.
 
 ## Step 1. Copy the secrets off the OLD VPS (3 min)
 
@@ -56,8 +64,8 @@ copying, they live in the repo's `pipeline/config.env`.
 ## Step 2. Put the secrets in Doppler on the ESTATE VPS (3 min)
 
 ```bash
-ssh deploy@YOUR-ESTATE-IP
-cd /home/deploy/content-system
+ssh YOUR-USER@YOUR-ESTATE-IP
+cd $HOME/content-system
 doppler secrets set TELEGRAM_BOT_TOKEN='PASTE-VALUE'
 doppler secrets set TELEGRAM_CHAT_ID='PASTE-VALUE'
 doppler secrets set GEMINI_API_KEY='PASTE-VALUE'
@@ -74,10 +82,12 @@ the project/config you created during the estate bootstrap.)
 
 Still on the ESTATE VPS:
 
+The shipped config file contains an example path (`/home/deploy/...`);
+the sed below rewrites it to YOUR real home directory automatically:
+
 ```bash
-sudo cp /home/deploy/content-system/deploy/brief-migration/brief.shiftandlead.com.nginx.conf /etc/nginx/sites-available/brief.shiftandlead.com
-# only if your repo path differs from /home/deploy/content-system:
-# sudo sed -i 's|/home/deploy/content-system|/YOUR/REAL/PATH|' /etc/nginx/sites-available/brief.shiftandlead.com
+sudo cp $HOME/content-system/deploy/brief-migration/brief.shiftandlead.com.nginx.conf /etc/nginx/sites-available/brief.shiftandlead.com
+sudo sed -i "s|/home/deploy|$HOME|" /etc/nginx/sites-available/brief.shiftandlead.com
 sudo ln -s /etc/nginx/sites-available/brief.shiftandlead.com /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl reload nginx
@@ -121,9 +131,12 @@ try `curl -sI https://brief.shiftandlead.com | head -3` and hard-refresh.
 
 On the ESTATE VPS:
 
+The shipped unit file also carries the example user/path; the seds fix
+both to your real account before it is enabled:
+
 ```bash
-sudo cp /home/deploy/content-system/deploy/brief-migration/insider-brief-bot.service /etc/systemd/system/
-# adjust WorkingDirectory in the file first if your repo path differs
+sudo cp $HOME/content-system/deploy/brief-migration/insider-brief-bot.service /etc/systemd/system/
+sudo sed -i "s|/home/deploy|$HOME|; s|User=deploy|User=$USER|" /etc/systemd/system/insider-brief-bot.service
 sudo systemctl daemon-reload
 sudo systemctl enable --now insider-brief-bot
 systemctl status insider-brief-bot --no-pager
@@ -155,7 +168,7 @@ the same way the systemd unit does.
 Check: run one crawl by hand and watch your Telegram for pending cards:
 
 ```bash
-cd /home/deploy/content-system/ai-insider-brief/ai-insider-brief/pipeline
+cd $HOME/content-system/ai-insider-brief/ai-insider-brief/pipeline
 doppler run -- node run.mjs
 ```
 
