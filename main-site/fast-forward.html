@@ -82,11 +82,15 @@ section{scroll-margin-top:70px}
 .curriculum-block{margin-bottom:36px}
 .curriculum-block h3{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:24px;margin-bottom:8px}
 .curriculum-block .sub{font-size:14.5px;color:var(--muted);margin-bottom:22px}
-.module{border-top:1px solid var(--rule);padding:20px 0}
-.module:last-child{border-bottom:1px solid var(--rule)}
-.module .num{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-deep);margin-bottom:6px}
-.module h4{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:19px;margin-bottom:6px}
-.module p{font-size:15px;color:var(--muted);line-height:1.6}
+.module{border-top:1px solid var(--rule)}
+.module:last-of-type{border-bottom:1px solid var(--rule)}
+.module summary{display:flex;align-items:baseline;gap:16px;padding:16px 0;cursor:pointer;list-style:none;flex-wrap:wrap}
+.module summary::-webkit-details-marker{display:none}
+.module summary::after{content:'+';margin-left:auto;font-family:'Space Mono',monospace;font-size:16px;color:var(--accent-deep)}
+.module[open] summary::after{content:'\2212'}
+.module .num{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-deep)}
+.module .m-title{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:19px}
+.module p{font-size:15px;color:var(--muted);line-height:1.6;padding:0 0 18px}
 .curriculum-note{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:22px;font-size:15px;color:var(--muted);margin-top:12px}
 
 .included-list{list-style:none;margin-top:8px}
@@ -147,7 +151,8 @@ section{scroll-margin-top:70px}
   .nav-links{gap:12px;font-size:10px;justify-content:center}
 }
 </style>
-<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="<www-id>"></script>
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-WWW-ID"></script>
+<script defer src="/motion.js"></script>
 </head>
 <body>
 
@@ -181,7 +186,7 @@ section{scroll-margin-top:70px}
 <section class="section" id="problem"><div class="section-inner">
   <div class="section-eyebrow">The problem</div>
   <p>You know AI could give you hours back. You have tried. You opened ChatGPT, used it for a week, and quietly went back to doing everything by hand. That is not your fault. Nobody handed you the system. You got tutorials, hype, and 100 tabs you never reopened.</p>
-  <p>Here is the truth from 20 years of watching this happen: every technology shift looks technical from the outside, and simple once someone translates it. Cloud looked technical. It was not. AI looks technical. It is not. You do not need to become a techie. You need the system, and someone who has already built it to hand it to you in order.</p>
+  <p>Here is the truth from 20 years of watching this happen: every shift looks technical until someone translates it. Cloud looked technical. It was not. AI is the same. You do not need to become a techie. You need the system, handed to you in order.</p>
 </div></section>
 
 <section class="section dark" id="stakes"><div class="section-inner">
@@ -191,7 +196,7 @@ section{scroll-margin-top:70px}
 
 <section class="section" id="outcomes"><div class="section-inner">
   <div class="section-eyebrow">What you walk away with</div>
-  <p>By the end, you will have handed the busywork to AI employees you set up one at a time, the same way I run my own company. Not slides about someday. Real systems running while you sleep. You will have written content in your own voice, working documents and pages, connected tools, and, if you want it, your first automated agent that delivers to your inbox every morning.</p>
+  <p>By the end, the busywork is handed to AI employees you set up one at a time, the same way I run my own company. Real systems running while you sleep: content in your own voice, connected tools, and, if you want it, your first automated agent delivering to your inbox every morning.</p>
   <p>The system has a name. It is called Freedom OS, and by the end of the course it is running in your business, not just described in a slide.</p>
 </div></section>
 
@@ -232,61 +237,51 @@ section{scroll-margin-top:70px}
   <div class="curriculum-block">
     <h3>The Core (Modules 0 to 6)</h3>
     <p class="sub">Become capable without it ever feeling technical.</p>
-    <div class="module">
-      <div class="num">Module 0</div>
-      <h4>Your first hour with AI</h4>
+    <details class="module">
+      <summary><span class="num">Module 0</span><span class="m-title">Your first hour with AI</span></summary>
       <p>Your first AI audit in 60 minutes, no tools required, and a tour of which AI is best for which job.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 1</div>
-      <h4>Make AI sound like you</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 1</span><span class="m-title">Make AI sound like you</span></summary>
       <p>How to talk to AI so it gives you what you actually want, and how to build your reusable Brand Kit.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 2</div>
-      <h4>Give your AI hands</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 2</span><span class="m-title">Give your AI hands</span></summary>
       <p>Make AI work with the Google Drive, Gmail, Canva and calendar you already use.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 3</div>
-      <h4>Your content engine</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 3</span><span class="m-title">Your content engine</span></summary>
       <p>LinkedIn posts, video scripts, carousels, emails and newsletters, from one conversation, in your voice.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 4</div>
-      <h4>Win back your admin hours</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 4</span><span class="m-title">Win back your admin hours</span></summary>
       <p>Sales pages, website copy, proposals, meeting notes, invoices and lead magnets.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 5</div>
-      <h4>Turn what you know into income</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 5</span><span class="m-title">Turn what you know into income</span></summary>
       <p>Turn your expertise into a product people pay for.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 6</div>
-      <h4>Make it run without you</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 6</span><span class="m-title">Make it run without you</span></summary>
       <p>Make it a daily system, not a one-time effort.</p>
-    </div>
+    </details>
   </div>
 
   <div class="curriculum-block">
     <h3>The Depth upgrade (Modules 7 to 9)</h3>
     <p class="sub">Become genuinely technical without realizing it happened.</p>
-    <div class="module">
-      <div class="num">Module 7</div>
-      <h4>Think like an operator</h4>
+    <details class="module">
+      <summary><span class="num">Module 7</span><span class="m-title">Think like an operator</span></summary>
       <p>How AI actually works, choosing models, evaluating output, cost and security.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 8</div>
-      <h4>Hire your AI employees</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 8</span><span class="m-title">Hire your AI employees</span></summary>
       <p>Install Claude Code and build your first agent that runs on a schedule and delivers while you sleep.</p>
-    </div>
-    <div class="module">
-      <div class="num">Module 9</div>
-      <h4>Scale without hiring</h4>
+    </details>
+    <details class="module">
+      <summary><span class="num">Module 9</span><span class="m-title">Scale without hiring</span></summary>
       <p>Spreadsheets, customer research, sales pipeline, your AI policy, and training your team.</p>
-    </div>
+    </details>
   </div>
 
   <div class="curriculum-note">The Core is fully non-technical. The Depth upgrade is where you quietly cross into running real automations. You will not notice the moment it stopped being scary.</div>
