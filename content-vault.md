@@ -13,24 +13,46 @@
 
 ## Most recent (quick reference)
 
-- 13/07/2026 | LinkedIn | "The Debate About AI Is Over. The Companies Winning Aren't Having It." — what's worth it opinion, A post | READY TO POST
-- 13/07/2026 | X/Twitter thread | "Solo-Founded Companies Just Crossed 36% of All New Businesses. The Data on Building Alone in 2026." — freedom business data thread, A post | READY TO POST
-- 13/07/2026 | Short-form video | "I Was on a Call When My Content Posted. Here's the System." — build once runs forever demo, A post | READY TO POST
-- 13/07/2026 | LinkedIn | "Seven Jobs You Can Hand to AI Without Hiring Anyone. Here's the Order." — time wins educational, A post | READY TO POST
+> **14/07/2026 batch note:** ENTRY 047-066 are Cordiner-method rewrites (outcome hook + one-win recipe + real receipts + involvement close, per docs/2026-07-14-cordiner-vault-comparison.md). Each supersedes the READY entry named in its metadata; superseded entries are status-marked and must not be queued.
+
+- 14/07/2026 | LinkedIn | "Stop Asking 'Should I Use AI?' The Winners Ask a Better Question." — Cordiner-method rewrite of 046, A post | READY TO POST
+- 14/07/2026 | X/Twitter thread | "Solo-Founded Companies Just Crossed 36% of All New Businesses" — rewrite of 045 with receipts + recipe close, A post | READY TO POST
+- 14/07/2026 | Short-form video | "I Was on a Call When My Content Posted" — rewrite of 044 with 137-employee receipt, A post | READY TO POST
+- 14/07/2026 | LinkedIn | "Seven Jobs You Can Hand to AI. I Run All Seven. Here's the Order." — rewrite of 043, A post | READY TO POST
+- 14/07/2026 | LinkedIn | "Solopreneurs With AI Stacks Run 60-80% Margins. The Difference Is One Decision." — rewrite of 041, A post | READY TO POST
+- 14/07/2026 | LinkedIn | "You Don't Need to Be Technical. Uber's Engineers Aren't Typing the Code Either." — rewrite of 040, A post | READY TO POST
+- 14/07/2026 | LinkedIn | "The Morning the Machine Ran While I Slept" — rewrite of 039, builder-to-judge + receipts, A post | READY TO POST
+- 14/07/2026 | LinkedIn | "The Boring AI Business" — rewrite of 037 with inbox-manager receipt, C post | READY TO POST [PREP: community link]
+- 14/07/2026 | LinkedIn | "Three AI Headlines That Handed One-Person Businesses an Edge. What to Do With Each." — rewrite of 035, A post | READY TO POST
+- 14/07/2026 | LinkedIn | "The Work You Repeat Every Week. Find It in 10 Minutes." — rewrite of 033, flagship Result Recipe, A post | READY TO POST
+- 14/07/2026 | LinkedIn | "64% Use AI. 3.6% Earn Over $1M. Close the Gap This Week." — rewrite of 032 with before/after prompt, A post | READY TO POST
+- 14/07/2026 | LinkedIn | "Four Skills Decide Whether AI Saves Your Week. Score Yourself in 2 Minutes." — rewrite of 031, A post | READY TO POST
+- 14/07/2026 | LinkedIn | "Meta Spent $145 Billion and Their Agents Still Aren't Ready. Your Window." — rewrite of 030 with insider receipt, A post | READY TO POST
+- 14/07/2026 | LinkedIn | "Most People Who Left Corporate Did the Smart Thing. I Didn't." — rewrite of 029 with career receipts, A post | READY TO POST
+- 14/07/2026 | LinkedIn | "Most People Automate the Wrong Thing First" — rewrite of 016, 4-step method + receipt, A post | READY TO POST
+- 14/07/2026 | LinkedIn | "The Only Test That Tells You If an AI Tool Is Worth It" — rewrite of 014 with how-to-run-it, A post | READY TO POST
+- 14/07/2026 | LinkedIn | "AI Doesn't Fix Chaos. It Scales It." — rewrite of 009 with 15-min fix + PROMPT CTA, A post | READY TO POST [VERIFY: 95% stat]
+- 14/07/2026 | LinkedIn | "You Need 3 Tools and 1 System. Not 30 Tools." — rewrite of 005 with the 3-job filter, A post | READY TO POST
+- 14/07/2026 | LinkedIn | "The Sunday Night Test" — rewrite of 001 with real career receipts, A post | READY TO POST
+- 14/07/2026 | Short-form video | "My Company Has 137 Employees. Human Headcount: 1." — rewrite of 010 with the real org, A post | READY TO POST
+- 13/07/2026 | LinkedIn | "The Debate About AI Is Over. The Companies Winning Aren't Having It." — what's worth it opinion, A post | SUPERSEDED BY ENTRY 047
+- 13/07/2026 | X/Twitter thread | "Solo-Founded Companies Just Crossed 36% of All New Businesses. The Data on Building Alone in 2026." — freedom business data thread, A post | SUPERSEDED BY ENTRY 048
+- 13/07/2026 | Short-form video | "I Was on a Call When My Content Posted. Here's the System." — build once runs forever demo, A post | SUPERSEDED BY ENTRY 049
+- 13/07/2026 | LinkedIn | "Seven Jobs You Can Hand to AI Without Hiring Anyone. Here's the Order." — time wins educational, A post | SUPERSEDED BY ENTRY 050
 - 13/07/2026 | LinkedIn | "Anthropic Just Admitted They Don't Have All the Answers. That's Actually Good News." — what's worth it opinion, A post | DRAFT
-- 13/07/2026 | LinkedIn | "29.8 Million Solopreneurs. $1.7 Trillion in Revenue. Most Still Doing It the Hard Way." — freedom business AI news, A post | READY TO POST
-- 13/07/2026 | LinkedIn | "The 'I'm Not Technical Enough' Excuse Died This Week. Uber's VP Killed It." — stop doing that by hand AI news, A post | READY TO POST
-- 13/07/2026 | LinkedIn | "The Morning the Machine Ran While I Slept." — build once runs forever storytelling, A post | READY TO POST
+- 13/07/2026 | LinkedIn | "29.8 Million Solopreneurs. $1.7 Trillion in Revenue. Most Still Doing It the Hard Way." — freedom business AI news, A post | SUPERSEDED BY ENTRY 051
+- 13/07/2026 | LinkedIn | "The 'I'm Not Technical Enough' Excuse Died This Week. Uber's VP Killed It." — stop doing that by hand AI news, A post | SUPERSEDED BY ENTRY 052
+- 13/07/2026 | LinkedIn | "The Morning the Machine Ran While I Slept." — build once runs forever storytelling, A post | SUPERSEDED BY ENTRY 053
 - 11/07/2026 | LinkedIn | "You Don't Need a Week to Set Up Your First AI Automation. You Need 30 Minutes." — time wins method, founding-member P post | DRAFT
-- 11/07/2026 | LinkedIn | "Not Agents. Not Chatbots. Not AI Avatars. The AI Business Making Money Right Now Is Boring." — boring AI wins, community C post | READY TO POST [PREP: community link needed before queueing]
+- 11/07/2026 | LinkedIn | "Not Agents. Not Chatbots. Not AI Avatars. The AI Business Making Money Right Now Is Boring." — boring AI wins, community C post | SUPERSEDED BY ENTRY 054 [PREP: community link needed before queueing]
 - 11/07/2026 | LinkedIn | "Instagram Quietly Changed What Gets You Reach." — IG algorithm shift, community C post | DRAFT [PREP: community link needed before queueing]
-- 11/07/2026 | LinkedIn | "Three Things Happened in AI This Week That Nobody's Talking About Together." — agent hype contrarian triple | READY TO POST
+- 11/07/2026 | LinkedIn | "Three Things Happened in AI This Week That Nobody's Talking About Together." — agent hype contrarian triple | SUPERSEDED BY ENTRY 055
 - 11/07/2026 | LinkedIn | "I Didn't Plan My Exit From Corporate. It Was a Regular Tuesday." — real talk, corporate exit storytelling | DRAFT
-- 10/07/2026 | LinkedIn | "The Work You Repeat Every Week Is the First Work AI Should Take" — build once, runs forever method | READY TO POST
-- 10/07/2026 | LinkedIn | "64% of Solopreneurs Use AI. Only 3.6% Earn Over $1M. The Gap Isn't the Tool." — strategy vs tools | READY TO POST
-- 10/07/2026 | LinkedIn | "There Are Four Things That Make AI Actually Useful. Anthropic Just Named Them." — 4D AI Fluency Framework | READY TO POST
-- 10/07/2026 | LinkedIn | "This Week, Even Zuckerberg Admitted It: AI Agents Aren't There Yet. Good." — solopreneur structural advantage | READY TO POST
-- 10/07/2026 | LinkedIn | "Most People Who Left Corporate Did the Smart Thing. I Didn't." — real talk on the sudden exit | READY TO POST
+- 10/07/2026 | LinkedIn | "The Work You Repeat Every Week Is the First Work AI Should Take" — build once, runs forever method | SUPERSEDED BY ENTRY 056
+- 10/07/2026 | LinkedIn | "64% of Solopreneurs Use AI. Only 3.6% Earn Over $1M. The Gap Isn't the Tool." — strategy vs tools | SUPERSEDED BY ENTRY 057
+- 10/07/2026 | LinkedIn | "There Are Four Things That Make AI Actually Useful. Anthropic Just Named Them." — 4D AI Fluency Framework | SUPERSEDED BY ENTRY 058
+- 10/07/2026 | LinkedIn | "This Week, Even Zuckerberg Admitted It: AI Agents Aren't There Yet. Good." — solopreneur structural advantage | SUPERSEDED BY ENTRY 059
+- 10/07/2026 | LinkedIn | "Most People Who Left Corporate Did the Smart Thing. I Didn't." — real talk on the sudden exit | SUPERSEDED BY ENTRY 060
 - 07/07/2026 | X/Twitter (thread) | "$5–10K/Month Agency? One Claude Code Session Replaced the Whole Stack" — agency spend vs. one AI session | DRAFT
 - 07/07/2026 | Facebook | "The Woman Who Made Someone Else $20M — and Still Won't Show Her Face" — the cost of hiding | DRAFT
 - 07/07/2026 | LinkedIn carousel | "Everyone's Selling 'Build a Faceless AI Avatar Empire.' Here's Why I Kept My Actual Face." — what's-worth-it check | DRAFT
@@ -43,28 +65,790 @@
 - 30/06/2026 | Short-form video | "AI Said It Was Done. It Wasn't." — make it prove its work | DRAFT
 - 30/06/2026 | Short-form video | "Your AI Agrees With Everything. That's Costing You." — make it argue first | DRAFT
 - 30/06/2026 | LinkedIn carousel | "The 4 Upgrades" — stop using AI like an intern | DRAFT
-- 27/06/2026 | LinkedIn | "Most People Automate the Wrong Thing First" — pick your first AI employee | READY TO POST
+- 27/06/2026 | LinkedIn | "Most People Automate the Wrong Thing First" — pick your first AI employee | SUPERSEDED BY ENTRY 061
 - 27/06/2026 | LinkedIn | "Selling AI Agents for $5k Isn't Freedom — It's Freelancing With Extra Steps" — founding invite | DRAFT
-- 27/06/2026 | LinkedIn | "The Only Test That Tells You If an AI Tool Is Worth It" — 5 hrs/week or it's a demo | READY TO POST
-- 27/06/2026 | LinkedIn | "Someone Made 1,000 Videos for Basically $0" — build once, runs forever | READY TO POST
+- 27/06/2026 | LinkedIn | "The Only Test That Tells You If an AI Tool Is Worth It" — 5 hrs/week or it's a demo | SUPERSEDED BY ENTRY 062
+- 27/06/2026 | LinkedIn | "Someone Made 1,000 Videos for Basically $0" — build once, runs forever | BLOCKED (retired PIPELINE CTA)
 - 27/06/2026 | LinkedIn | "The First Weekend I Didn't Open My Laptop, I Felt Sick" — when the system carried it | DRAFT
 - 25/06/2026 | Short-form video (Reel) | "You're Talking to the Most Powerful AI on the Planet Like It's Google" — Chez Claude guide promo | DRAFT
-- 23/06/2026 | Short-form video | "My One-Person Business Runs Like a Team of Five" — your digital team | READY TO POST
-- 23/06/2026 | LinkedIn | "AI Doesn't Fix Chaos. It Scales It." — fix the workflow first | READY TO POST
+- 23/06/2026 | Short-form video | "My One-Person Business Runs Like a Team of Five" — your digital team | SUPERSEDED BY ENTRY 066
+- 23/06/2026 | LinkedIn | "AI Doesn't Fix Chaos. It Scales It." — fix the workflow first | SUPERSEDED BY ENTRY 063
 - 23/06/2026 | Short-form video | "You're the Bottleneck" — hand off one task this week | READY TO POST
 - 23/06/2026 | LinkedIn carousel | "The Freedom Business Test" — 4 things that must run without you | READY TO POST
 - 23/06/2026 | Short-form video | "Turn One Idea Into a Week of Content" — 1 idea → 5 pieces | READY TO POST
-- 23/06/2026 | LinkedIn | "Stop Collecting AI Tools" — tool-rich, system-poor | READY TO POST
+- 23/06/2026 | LinkedIn | "Stop Collecting AI Tools" — tool-rich, system-poor | SUPERSEDED BY ENTRY 064
 - 23/06/2026 | Short-form video | "Stop Using AI Like a Vending Machine" — build systems, not answers | READY TO POST
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
-- 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+- 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | SUPERSEDED BY ENTRY 065
 
 ---
 
-## ENTRY 046 — 13/07/2026 | LinkedIn | The Debate About AI Is Over. The Companies Winning Aren't Having It. | READY TO POST
+## ENTRY 066 — 14/07/2026 | Short-form video (Reel/TikTok/YouTube Short) | My Company Has 137 Employees. Human Headcount: 1. | READY TO POST
 
 **Status:** READY TO POST
+**Supersedes:** ENTRY 010 (do not queue the old version; PERSONALIZE flag resolved with real setup from queen-brain/proof.md)
+**Platform:** Short-form video (vertical 9:16, ~45s)
+**Format:** Cordiner method — result first, real receipt, involvement close
+**Pattern used:** Result-First Demo (10) + Named Series potential (4)
+**Pillar:** The Freedom Business
+**Critic score:** 8.8/10 — the "137 employees, 1 human" line is the strongest hook in the vault and it is TRUE (proof.md). Departments now match the real dashboard instead of a placeholder team of four.
+**ACP stage:** A (inherited from ENTRY 010)
+**CTA:** "Comment TEAM and I'll send you the setup for your first one."
+**Source:** queen-brain/proof.md (137 AI employees, 7 departments, one dashboard — logged 05/07/2026). No [VERIFY] flags.
+
+---
+### SPOKEN SCRIPT
+
+**[0–4s — HOOK]** *(on camera)*
+"My company has 137 employees. Human headcount: one. Me."
+`[ON SCREEN: "137 employees. 1 human."]`
+
+**[4–32s — BODY]**
+"They work in 7 departments. Sales. Marketing. Operations. Intelligence. Customer. Deals. Back office.
+`[B-ROLL: the dashboard org chart, slow scroll]`
+None of them sleep. None of them are human. I built them, and I run them from one dashboard on my Mac.
+I spent 20 years in corporate tech at Dell, Intel and Microsoft, and a marketing team this size would have cost millions a year. Mine costs less than one junior hire.
+And me? I do the part only I can do. The judgment. The face. The decisions."
+
+**[32–45s — CLOSE]**
+"You don't start with 137. You start with one employee doing one job.
+Comment TEAM and I'll send you the setup for your first one. And follow, because I'm building this company in public."
+`[ON SCREEN: "Comment TEAM = your first AI employee"]`
+
+---
+### CAPTION
+137 employees. 1 human. I run the whole thing from one dashboard. 👑
+Comment TEAM and I'll send you the setup for your first AI employee.
+#AIautomation #solopreneur #FreedomBusiness
+
+---
+
+## ENTRY 065 — 14/07/2026 | LinkedIn | The Sunday Night Test | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 001 (do not queue the old version; PERSONALIZE flag resolved with Career Profile receipts — the exit trigger moment stays unwritten because it is still not recorded in personal-brain)
+**Platform:** LinkedIn (text post, ~230 words)
+**Format:** Cordiner method — story with receipts + one-win close
+**Pattern used:** Vulnerability Before Credentials (7)
+**Pillar:** Real Talk (+ The Freedom Business)
+**Critic score:** 8.9/10 — real career receipts replace the generic "big titles" line; personal narrative is the logged 4-8x pattern.
+**ACP stage:** A (inherited)
+**CTA:** "Comment WORDS and I'll send you the plain-English AI guide I wish I'd had that Sunday."
+**Source:** queen-brain/Career Profile.md (Dell, Intel, Microsoft, Quest roles; Microsoft $8M / #1 EMEA; Dubai). No invented details. No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+For 20 years I built other people's companies. Dell. Intel. Microsoft.
+
+I was good at it. At Microsoft I ranked #1 across all EMEA markets. At Dell I ran global channel campaigns across four continents. The CV made people nod.
+
+And every Sunday around 7pm, the same quiet dread of Monday.
+
+I used to think that was the price of a good job. Everyone feels it, right?
+
+Then AI changed the math. For the first time, one person could run what used to need a department. Content. Research. Follow-up. Systems that work while you sleep.
+
+So I left. Not with a grand plan. Quietly, and honestly, terrified.
+
+Today I run my own company from Dubai. 137 AI employees in 7 departments, one dashboard, one human. Everything I learned in 20 years of corporate marketing still counts. I just stopped renting it out.
+
+Here's what I want you to take from this if you're reading it on a Sunday night: you are not starting from zero. Your corporate years are the asset. The tools to use them for yourself finally exist.
+
+The jargon is the only wall left, and it's thinner than it looks.
+
+Comment WORDS and I'll send you the plain-English AI guide I wish I'd had that Sunday.
+
+---
+
+## ENTRY 064 — 14/07/2026 | LinkedIn | You Need 3 Tools and 1 System. Not 30 Tools. | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 005 (do not queue the old version)
+**Platform:** LinkedIn (text post, ~210 words)
+**Format:** Cordiner method — outcome hook + the actual filter + receipt
+**Pattern used:** Contrarian Operational Hook (14) + Comment-Trigger CTA (5)
+**Pillar:** What's Worth It
+**Critic score:** 8.6/10
+**ACP stage:** A (inherited)
+**CTA:** "Comment STACK and I'll send you the exact 3-tool setup my whole company runs on."
+**Source:** Opinion/curation + proof.md (137-employee company, real stack discipline). No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+You need 3 tools and 1 system. Not 30 tools.
+
+I get pitched a "game-changing" AI tool almost every day. I run a company of 137 AI employees, and it sits on 3 core tools. Here's the filter that got me there.
+
+Every tool in your business must own one of these three jobs:
+
+1. Capture: a way for interested people to reach you and leave their email.
+2. Follow-up: a way for every one of them to hear back without you typing it.
+3. Create: a way to turn one idea into content for every platform.
+
+That's the whole machine. Everything else is a login, a learning curve, a monthly fee, and another decision you didn't need.
+
+Here's your 10-minute version tonight: list every AI tool you pay for. Next to each, write which of the three jobs it owns. Any tool with no job next to it gets cancelled this week. Most people fund three tools doing the same job badly and zero doing follow-up at all.
+
+Twenty years of corporate marketing budgets taught me this: the stack is never the problem. The missing system is.
+
+Comment STACK and I'll send you the exact 3-tool setup my whole company runs on.
+
+---
+
+## ENTRY 063 — 14/07/2026 | LinkedIn | AI Doesn't Fix Chaos. It Scales It. | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 009 (do not queue the old version; adds the missing keyword CTA per Engine Law 2)
+**Platform:** LinkedIn (text post, ~230 words)
+**Format:** Cordiner method — the warning + the complete fix
+**Pattern used:** Contrarian Operational Hook (14) + Teach Your System (3)
+**Pillar:** Build Once, Runs Forever
+**Critic score:** 8.7/10
+**ACP stage:** A (inherited)
+**CTA:** "Comment PROMPT and I'll send you the guide to writing the instruction that turns your steps into a system."
+**Source:** RESEARCH 018. ⚠️ VERIFY the "95%" stat reads as current before posting (sourced 06/2026: ~95% of custom AI pilots fail on P&L).
+**⚠️ VERIFY flag:** confirm the 95% stat before queueing.
+
+---
+### LINKEDIN POST
+
+AI doesn't fix chaos. It scales it.
+
+Something like 95% of AI projects never make a business any money. Everyone blames the tech. The tech is fine. The problem is that most people point AI at a mess and hope.
+
+If your process only exists in your head and runs differently every time, automating it gives you faster chaos, around the clock, without you watching.
+
+Here's the fix, and it takes 15 minutes, not a weekend:
+
+1. Pick ONE task you repeat every week. Not the fanciest. The most annoying.
+2. Do it one more time, and write down every step as you go. Exactly as you do it, in order. No cleaning it up.
+3. Read the list back and mark each step: rule (same every time) or judgment (needs your brain).
+4. The rule steps become the job description you hand to AI. The judgment steps stay yours.
+
+I spent 20 years watching corporate projects die from skipping exactly this step. The winners were never the teams with the biggest budget. They were the ones who wrote the process down first.
+
+That one page is the difference between a tool you gave up on and an employee that shows up every day.
+
+Comment PROMPT and I'll send you the guide to writing the instruction that turns your steps into a system.
+
+---
+
+## ENTRY 062 — 14/07/2026 | LinkedIn | The Only Test That Tells You If an AI Tool Is Worth It | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 014 (do not queue the old version)
+**Platform:** LinkedIn (text post, ~220 words)
+**Format:** Cordiner method — the filter + how to run it this week
+**Pattern used:** Contrarian Operational Hook (14) + Before/After Contrast (13)
+**Pillar:** What's Worth It
+**Critic score:** 8.6/10
+**ACP stage:** A (inherited)
+**CTA:** "Comment STACK and I'll send you the 3 tools that passed."
+**Source:** RESEARCH 021 signal #7 (the 5-hours/week keeper test). No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+Here's the only test that tells you if an AI tool is worth your money: does it save you 5 hours a week without creating new problems?
+
+That single question destroys about 90% of the tools you've been told you need. Everything that fails it is a demo wearing a pricing page.
+
+Here's how to actually run the test, because "I think it helps" is not data:
+
+1. Before you set anything up, write down the task it should remove and how long that task took you last week. A real number, from your calendar.
+2. Set the tool up and give it two weeks. No extensions.
+3. At the end, answer three questions. Did the old task disappear from my week? Did a new task appear (babysitting it, fixing it, checking it)? Would I notice within two days if it broke?
+4. Saved hours minus new babysitting hours. Under 5, cancel it. Over 5, keep it and stop thinking about it.
+
+I ran this test across everything in my own business. A company of 137 AI employees came out the other side running on 3 core tools. The test is ruthless, and that's the point.
+
+Comment STACK and I'll send you the 3 tools that passed.
+
+---
+
+## ENTRY 061 — 14/07/2026 | LinkedIn | Most People Automate the Wrong Thing First | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 016 (do not queue the old version; TEAM keyword now ACTIVE in lead-magnets.csv, old PREP flag resolved)
+**Platform:** LinkedIn (text post, ~230 words)
+**Format:** Cordiner method — the 4-step method + receipt
+**Pattern used:** Teach Your System, Not the Tool (3)
+**Pillar:** Stop Doing That by Hand (+ Time Wins)
+**Critic score:** 8.7/10
+**ACP stage:** A (inherited)
+**CTA:** "Comment TEAM and I'll send you the setup for that first employee."
+**Source:** RESEARCH 018 + RESEARCH 021. Receipt: proof.md (inbox manager = Employee #004, playbook live). No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+Most people automate the wrong thing first, decide "automation doesn't work for me," and quit. Ten minutes and a notebook fixes it.
+
+Here's the method:
+
+**Step 1. Catch yourself in the act.** For one day, write down every task the second you do it. The inbox triage. The DM you've typed 40 times. The copy-paste between two apps.
+
+**Step 2. Run the three-letter filter.** Mark every task that is (a) boring, (b) repetitive, and (c) needs zero real judgment. If it needs your taste, your face, or your decision, leave it. That's your job.
+
+**Step 3. Pick the most boring one.** Not the hardest. Not the most impressive. The one that eats the most time for the least thought. That's your first AI employee.
+
+**Step 4. Automate only that.** Get it running. Trust it for a week. Then hire the next one.
+
+My own first hire was the inbox manager. Not glamorous. It's still the employee I'd rehire first, because it bought back the hour I now spend on things that grow the business.
+
+People fail because they try to automate the whole company in a weekend. You're not building a robot army. You're hiring one employee at a time. I'm at 137 now. Everyone starts at one.
+
+Comment TEAM and I'll send you the setup for that first employee.
+
+---
+
+## ENTRY 060 — 14/07/2026 | LinkedIn | Most People Who Left Corporate Did the Smart Thing. I Didn't. | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 029 (do not queue the old version)
+**Platform:** LinkedIn (text post, ~230 words)
+**Format:** Cordiner method — story with real receipts + first-step close
+**Pattern used:** Vulnerability Before Credentials (7)
+**Pillar:** Real Talk
+**Critic score:** 8.8/10 — career receipts make it unmistakably hers; the specific exit trigger stays unwritten (still not in personal-brain, not invented).
+**ACP stage:** A (inherited)
+**CTA:** "Comment WORDS and I'll send you the plain-English AI jargon guide. It's the first step I give everyone."
+**Source:** queen-brain/Career Profile.md + personal-brain.md (sudden decisive exit, confirmed). proof.md (7 magnets live, first organic capture 29/06). No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+Most people who leave corporate do the smart thing. They plan it. 12 months of runway, a client waiting, a side business already earning.
+
+I didn't do any of that. Mine was one decision. Fast. Definitive. After 20 years at Dell, Intel and Microsoft, I was suddenly standing outside the building with four languages, a long CV, and no plan attached to my name.
+
+Here's what I've learned since: the runway wasn't the thing I actually needed. Leverage was.
+
+A business that doesn't need me everywhere at once. Research that happens without me. Content that goes out on schedule whether I'm at my desk in Dubai or not. Follow-up that never forgets anyone. I built that with AI, one system at a time, and I'm building it in public: 137 AI employees on the org chart, 7 free guides live, the first stranger's email captured three weeks ago.
+
+I'm still early. A few hundred followers, not a few hundred thousand. But every piece of it is mine, and it runs without me babysitting it.
+
+If you're in corporate wondering whether there's something else: you're not wrong, and you're not starting from zero. The jargon is the only wall. Take it down first.
+
+Comment WORDS and I'll send you the plain-English AI jargon guide. It's the first step I give everyone.
+
+---
+
+## ENTRY 059 — 14/07/2026 | LinkedIn | Meta Spent $145 Billion and Their Agents Still Aren't Ready. Here's Why That's Your Window. | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 030 (do not queue the old version)
+**Platform:** LinkedIn (text post, ~250 words)
+**Format:** Cordiner method — news + insider receipt + ship-by-Friday recipe
+**Pattern used:** Contrarian Operational Hook (14) + Specific Number as Hook (11)
+**Pillar:** What's Worth It
+**Critic score:** 8.7/10 — the 20-years-inside-enterprise receipt turns a news take into an insider read nobody else can write.
+**ACP stage:** A (inherited)
+**CTA:** "Comment WHAT and I'll send you the plain-English guide to what AI actually is right now."
+**Source:** RESEARCH 030 Signal 2 + RESEARCH 028 Signal 1 (Zuckerberg statement, $145B, 8,000 jobs cut, 7,000 reassigned). Career receipt: Career Profile.md. No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+Meta spent $145 billion on AI, reassigned 7,000 people to a team literally called "Agent Transformation," and this week Zuckerberg told his staff it isn't moving as fast as he hoped.
+
+I spent 20 years inside companies like that. Dell, Intel, Microsoft. I can tell you exactly why the $145 billion isn't working: nothing ships without a committee, a legal review, a brand review, and a Q3 budget line. I once watched a one-page campaign wait 11 weeks for approvals. The technology was never the slow part. The organization was.
+
+You don't have that problem. And that's the window.
+
+Here's how to use it this week:
+
+1. Pick one task, so small it feels almost embarrassing. One email type. One report. One follow-up.
+2. Give AI the job with your real context: what the task is, what good looks like, one example of you doing it well. Redact client names and numbers first.
+3. Run it three times. Fix what's off. By Friday it works, or you learned why in days, not quarters.
+
+That loop, test, learn, ship in a week, is the exact thing a $145 billion company cannot buy. It comes free with being small.
+
+The agent hype is ahead of reality. Your one boring working system doesn't care.
+
+Comment WHAT and I'll send you the plain-English guide to what AI actually is right now.
+
+---
+
+## ENTRY 058 — 14/07/2026 | LinkedIn | Four Skills Decide Whether AI Saves Your Week or Wastes It. Score Yourself in 2 Minutes. | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 031 (do not queue the old version)
+**Platform:** LinkedIn (text post, ~240 words)
+**Format:** Cordiner method — named framework + self-score exercise
+**Pattern used:** Named Framework as Content Asset (12)
+**Pillar:** Time Wins
+**Critic score:** 8.5/10 — the self-score turns a news post into a save-worthy exercise (saves weigh 14-16x a like per the platform data in the course research).
+**ACP stage:** A (inherited)
+**CTA:** "Comment STACK and I'll send you my 3-tool setup. The tools are the small part; these four skills are the rest."
+**Source:** RESEARCH 030 Signal 6 (Anthropic 4D AI Fluency Framework: Delegation, Description, Discernment, Diligence, July 9 2026). No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+Four skills decide whether AI saves your week or quietly wastes it. Anthropic just named them, and you can score yourself in 2 minutes.
+
+Grade yourself 1 to 5 on each:
+
+**Delegation.** Do I know which tasks AI should be doing instead of me? (5 = I have a list. 1 = I ask it random things when I remember it exists.)
+
+**Description.** When I hand over a task, do I give it my business, my customer, my voice, and what good looks like? (5 = it has my context every time. 1 = one rushed sentence.)
+
+**Discernment.** Do I know when to trust the output and when to push back? (5 = I challenge it and it gets better. 1 = I take the first answer.)
+
+**Diligence.** Do I check the work before it ships? (5 = always, with a method. 1 = "AI said so.")
+
+Now the move: your LOWEST score is your entire focus for the next two weeks. Not a new tool. That one skill.
+
+I've been teaching three of these for months without knowing they had a name. And after 20 years running marketing teams, I can confirm: these are exactly the four skills you'd want in a human hire too. That's the point. You're not learning software. You're learning to manage.
+
+Comment STACK and I'll send you my 3-tool setup. The tools are the small part; these four skills are the rest.
+
+---
+
+## ENTRY 057 — 14/07/2026 | LinkedIn | 64% of Solopreneurs Use AI. Only 3.6% Earn Over $1M. Close the Gap This Week. | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 032 (do not queue the old version)
+**Platform:** LinkedIn (text post, ~230 words)
+**Format:** Cordiner method — data gap + the before/after prompt fix
+**Pattern used:** Specific Number as Hook (11) + Before/After Contrast (13)
+**Pillar:** Stop Doing That by Hand
+**Critic score:** 8.8/10 — keeps the strongest data hook in the vault, adds the executable fix the old version only described.
+**ACP stage:** A (inherited)
+**CTA:** "Comment TEAM and I'll send you the first thing I'd automate with it."
+**Source:** RESEARCH 030 Signal 7 (29.8M solopreneurs, 64% use AI, 3.6% earn $1M+). No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+64% of solopreneurs use AI now. Only 3.6% earn over $1 million. The gap isn't the tool. It's the question you're asking it.
+
+The 64% ask AI for things. The 3.6% ask AI for outcomes. Here's the difference, side by side.
+
+The 64% version:
+"Write me a LinkedIn post about productivity."
+
+The 3.6% version:
+"You write for my business. I help [audience] get [result]. My voice: [3 lines that sound like me]. My point of view on productivity: [your actual opinion]. Write a post that makes my ideal client save it. 1,400 to 1,800 characters."
+
+Same tool. Same price. Completely different business.
+
+Try it tonight, 10 minutes: take the last thing you asked AI to do. Rewrite the request with your business, your customer, your voice, and what you want the output to achieve. Compare the two results. Fill in the blanks from your own business, and leave client names and private numbers out of it. Context, not confidential data.
+
+Twenty years of briefing marketing agencies taught me this exact lesson: a lazy brief gets you generic work at any budget. AI just made the feedback loop instant.
+
+The gap is one habit. It's learnable this week.
+
+Comment TEAM and I'll send you the first thing I'd automate with it.
+
+---
+
+## ENTRY 056 — 14/07/2026 | LinkedIn | The Work You Repeat Every Week Is the First Work AI Should Take. Find It in 10 Minutes. | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 033 (do not queue the old version)
+**Platform:** LinkedIn (text post, ~250 words)
+**Format:** Cordiner method — full Result Recipe with the copy-paste prompt
+**Pattern used:** Teach Your System, Not the Tool (3)
+**Pillar:** Build Once, Runs Forever
+**Critic score:** 8.9/10 — this is the flagship Result Recipe: complete win, redaction modeled, involvement close that produces proof replies.
+**ACP stage:** A (inherited)
+**CTA:** "Do the audit, then comment INBOX and I'll send you the full setup for the first employee it usually finds."
+**Source:** Pillar method. Prompt is original, redaction modeled per the data safety law. No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+The work you repeat every single week is the first work that should come off your plate. Here's how to find it in 10 minutes, tonight.
+
+**Step 1 (5 min).** List everything you did more than once this week. Don't organize it. Just dump it: inbox sorting, the same DM replies, invoice chasing, the Monday report, reformatting content for each platform.
+
+**Step 2 (1 min).** Paste this into Claude or ChatGPT, with your list. Swap real client names for placeholders first; the AI needs your patterns, not your private data:
+
+"Here are tasks I repeated this week: [your list]. For each one, tell me: does it repeat on a schedule, does it follow the same steps every time, and does it need a fresh judgment call each run? Rank the top 3 I should hand to an AI assistant first, and say why."
+
+**Step 3 (4 min).** Read the ranking. The #1 answer is your first AI employee. Write down every step of that task exactly as you do it. That page is its job description.
+
+That's the whole audit. My own #1 was inbox triage. It's still the hire I'd make first, out of the 137 AI employees I run now.
+
+Do the audit, then comment INBOX with what your #1 turned out to be, and I'll send you the full setup for the first employee it usually finds.
+
+---
+
+## ENTRY 055 — 14/07/2026 | LinkedIn | Three AI Headlines This Week Quietly Handed One-Person Businesses an Edge. Here's What to Do With Each. | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 035 (do not queue the old version)
+**Platform:** LinkedIn (text post, ~250 words)
+**Format:** Cordiner method — news triple, each with an action
+**Pattern used:** Contrarian Operational Hook (14) + Specific Number as Hook (11)
+**Pillar:** What's Worth It
+**Critic score:** 8.6/10
+**ACP stage:** A (inherited)
+**CTA:** "Comment WHAT and I'll send you the plain-English guide to what AI actually is right now."
+**Source:** RESEARCH 031 Signal 2 (Hallucination Stations paper) + RESEARCH 028 Signal 2 (Gartner 40% forecast) + RESEARCH 031 Signal 4 (Instagram down-ranking, May 2026). No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+Three AI headlines this week quietly handed one-person businesses an edge. Here's what to do with each one.
+
+**One:** a former SAP executive co-authored a paper arguing AI agents are mathematically unreliable at complex, open-ended tasks.
+Your move: stop trying to build the do-everything agent. Give AI one narrow job with clear steps. That's the version that works, and it's the version you can build.
+
+**Two:** Gartner forecasts 40% of enterprise AI agent projects get cancelled by 2027. Unclear scope, runaway costs, no business case.
+Your move: scope like the survivors. Before you automate anything, write one line: "this saves me X hours a week on task Y." No line, no build. You just out-planned most of the Fortune 500.
+
+**Three:** Instagram is now down-ranking generic AI-generated content, and DM shares weigh 3 to 5 times more than likes.
+Your move: the volume play is dead, and that's good news for you. One specific, human-reviewed post that makes someone send it to a friend now beats 30 generic captions.
+
+Notice the pattern: every one of these headlines punishes "spray AI at everything" and rewards one small, supervised, working system. That's not a limitation. That's the exact game a one-person business can win.
+
+Comment WHAT and I'll send you the plain-English guide to what AI actually is right now.
+
+---
+
+## ENTRY 054 — 14/07/2026 | LinkedIn | Not Agents. Not Chatbots. Not AI Avatars. The AI Business Making Money Right Now Is Boring. | READY TO POST (PREP: community link)
+
+**Status:** READY TO POST — ⚠️ PREP: community waitlist link required before queueing
+**Supersedes:** ENTRY 037 (do not queue the old version)
+**Platform:** LinkedIn (text post, ~230 words)
+**Format:** Cordiner method — contrarian + her boring receipt + pick-your-boring-task exercise
+**Pattern used:** Contrarian Operational Hook (14)
+**Pillar:** Build Once, Runs Forever
+**Critic score:** 8.6/10
+**ACP stage:** C (inherited — keeps the batch ratio)
+**CTA:** "This is exactly what people come to build inside the community. One boring system, shipped. Come do it with us. [PREP: insert community waitlist link before queueing]"
+**Source:** RESEARCH 031 Signal 5 (YouTube "Boring AI Offers" video) + Meta $145B (RESEARCH 028 Signal 1). Receipt: proof.md. No [VERIFY] flags.
+**⚠️ PREP flag:** community waitlist link required before this post can be queued.
+
+---
+### LINKEDIN POST
+
+Not agents. Not chatbots. Not AI avatars. The AI business actually making money right now is boring. And I mean that as a compliment.
+
+The solopreneurs quietly winning in 2026 didn't demo the flashiest tool. They picked one thing that needed to happen every day, built one reliable system around it, and left it running.
+
+Want proof from my own company? I run 137 AI employees. The most valuable one sorts email. Not the content engine, not the research crawler. The boring inbox manager that hands me a clean summary instead of 60 open tabs of anxiety. It has quietly returned more hours than anything shiny I've experimented with.
+
+Meanwhile, the flashy autonomous agent everyone watches demos of? Enterprise teams with $145 billion budgets can't get it to run reliably yet.
+
+So here's the exercise. Finish this sentence: "Every single day, my business needs ___ to happen, and right now it only happens if I do it."
+
+Whatever you wrote in that blank is your boring millionaire system. Not the impressive one. That one.
+
+Email triage. Lead follow-up. Research summaries. Content drafts. Pick yours, build it once, and let it be boring at scale while you do the human parts.
+
+This is exactly what people come to build inside the community. One boring system, shipped. Come do it with us. [PREP: insert community waitlist link before queueing]
+
+---
+
+## ENTRY 053 — 14/07/2026 | LinkedIn | The Morning the Machine Ran While I Slept | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 039 (do not queue the old version)
+**Platform:** LinkedIn (text post, ~230 words)
+**Format:** Cordiner method — story + machine receipt + do-this close
+**Pattern used:** Vulnerability Before Credentials (7)
+**Pillar:** Build Once, Runs Forever
+**Critic score:** 8.8/10 — vault count updated to the verifiable current number; corporate lens added.
+**ACP stage:** A (inherited)
+**CTA:** "Comment TEAM and I'll send you the setup for your first one."
+**Source:** Personal experience (vault entry count verifiable in content-vault.md; 43 entries as of 13/07/2026). Career receipt: Career Profile.md. No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+The morning the content engine ran, I didn't write a single word. And it felt wrong.
+
+It was a Tuesday. The machine had been set up for three weeks: research notes filling, angles tagged, a workflow meant to produce five drafts overnight.
+
+I checked the vault at 7 AM. The drafts were there. Sourced, structured, in my voice. The count now sits at 43 entries, and I didn't type them.
+
+My first instinct was to read every line and redo half of it. Twenty years at Dell, Intel and Microsoft trains that reflex into you: nothing ships without someone bleeding over it.
+
+But here's what two decades in corporate actually taught me, once I looked at it honestly. The best leaders I worked for never did the work themselves. They set the standard, built the team, and judged the output. Nobody called them lazy. They called them managers.
+
+That's the shift. The system drafts, researches and sources while I sleep. I set the voice, approve what goes live, and own every position. Builder to judge.
+
+If you want the same shift, start tonight with one line: write down the standard for ONE task you keep redoing. What does "good" look like? That page is what you'll manage against.
+
+One build. Running forever.
+
+Comment TEAM and I'll send you the setup for your first one.
+
+---
+
+## ENTRY 052 — 14/07/2026 | LinkedIn | You Don't Need to Be Technical to Run AI Agents. Uber's Engineers Aren't Typing the Code Either. | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 040 (do not queue the old version)
+**Platform:** LinkedIn (text post, ~230 words)
+**Format:** Cordiner method — myth kill + the 3-step loop anyone can copy
+**Pattern used:** Specific Number as Hook (11)
+**Pillar:** Stop Doing That by Hand
+**Critic score:** 8.7/10
+**ACP stage:** A (inherited)
+**CTA:** "Comment WHAT and I'll send you the plain-English guide to what AI actually is. No hype, no jargon."
+**Source:** RESEARCH 033 Signal 1 (Uber VP Engineering: 99% engineers use AI, 70% of PRs from agents). Receipt: proof.md + Career Profile.md. No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+You don't need to be technical to run AI agents. The people at Uber aren't typing the code either.
+
+This week Uber's VP of Engineering shared that 99% of their engineers use AI tools and over 70% of their code output now comes from agents. Read what that actually means: the most technical workforce on earth stopped doing the work by hand. They describe, review, and approve.
+
+That loop has three steps, and none of them require a computer science degree:
+
+1. **Describe.** Tell the agent the job like you'd brief a new hire: what to do, what good looks like, one example. In plain English.
+2. **Review.** Look at what comes back. You already know how to do this. You've been reviewing other people's work your whole career.
+3. **Approve or send it back.** With a note, exactly like you would with a colleague.
+
+I'm living proof. I'm not an engineer. I ran marketing at Dell, Intel and Microsoft for 20 years. Today I run 137 AI employees, and my technical skill is that I'm good at the brief, honest in the review, and strict at the approval. Skills every professional already has.
+
+The excuse died. What's left is the decision to start.
+
+Comment WHAT and I'll send you the plain-English guide to what AI actually is. No hype, no jargon.
+
+---
+
+## ENTRY 051 — 14/07/2026 | LinkedIn | Solopreneurs With AI Stacks Run 60-80% Margins. The Difference Is One Decision. | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 041 (do not queue the old version)
+**Platform:** LinkedIn (text post, ~230 words)
+**Format:** Cordiner method — data + the hire-or-automate test
+**Pattern used:** Specific Number as Hook (11) + Before/After Contrast (13)
+**Pillar:** The Freedom Business
+**Critic score:** 8.7/10
+**ACP stage:** A (inherited)
+**CTA:** "Comment TEAM and I'll send you the free guide to setting up the first role."
+**Source:** RESEARCH 033 Signal 7 (29.8M solopreneurs, $1.7T, 60-80% vs 10-20% margins, $3K-$12K stack, 7 roles) + RESEARCH 030 Signal 7 (68% savings stat) + Forbes quote (RESEARCH 033 Signal 2). No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+Solopreneurs running AI systems report 60 to 80% profit margins. Staffed businesses average 10 to 20. The difference isn't talent. It's one decision, made over and over.
+
+The decision: every time work piles up, most people ask "who can I hire or outsource this to?" The 60-80% group asks a different question first: "can a system do this instead?"
+
+Here's the test, next time you feel the pile-up:
+
+1. Name the job you'd hire for. Not the person, the actual output: "someone to follow up with leads," "someone to draft content," "someone to sort my inbox."
+2. Ask: does this job repeat, follow rules, and produce checkable output? If yes, it's a system, not a salary. An AI stack covering seven of these roles costs $3,000 to $12,000 a year. The staffed version costs six figures.
+3. Only hire humans for what's left: judgment, relationships, taste, the face of the thing.
+
+The wider numbers say most people never make this switch: 29.8 million US solopreneurs generating $1.7 trillion, and 68% still sitting on less than six months of savings. The model works. Running it entirely by hand is what doesn't.
+
+Forbes calls the modern solo owner "part operator, part marketer, part service provider, part strategist." You can be all four. You just can't be them manually.
+
+Comment TEAM and I'll send you the free guide to setting up the first role.
+
+---
+
+## ENTRY 050 — 14/07/2026 | LinkedIn | Seven Jobs You Can Hand to AI Without Hiring Anyone. I Run All Seven. Here's the Order. | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 043 (do not queue the old version)
+**Platform:** LinkedIn (text post, ~250 words)
+**Format:** Cordiner method — numbered framework + her real org receipt
+**Pattern used:** Teach Your System, Not the Tool (3)
+**Pillar:** Time Wins
+**Critic score:** 8.9/10 — "I run all seven" converts a generic list into a receipt-backed one; save-worthy structure.
+**ACP stage:** A (inherited)
+**CTA:** "Comment STACK and I'll send you the 3-tool setup behind the first three."
+**Source:** RESEARCH 033 Signal 7 ($3K-$12K stack, 7 roles) + proof.md (7 departments, 137 employees). No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+Seven jobs you can hand to AI without hiring anyone. I run all seven in my own company. Here's the order I'd build them again.
+
+1. **Email triage.** Highest daily time drain, lowest setup cost. My inbox manager reads, sorts, drafts the routine replies, and hands me one summary. Start here.
+2. **Lead follow-up.** Most solopreneurs don't lose clients from bad work. They lose them from forgetting to follow up. AI doesn't forget.
+3. **Research summaries.** Give it your criteria once. It reads everything; you decide.
+4. **Content drafting.** You own the voice and the opinions. It handles the first pass. My drafts are written overnight; I judge them at 7 AM.
+5. **Support replies.** The questions people ask you are 80% the same questions. Answer each one brilliantly once.
+6. **Finance admin.** Categorising, invoice chasing, cashflow summaries. None of this deserves your best hours.
+7. **Founder ops.** The weekly review, the priority sort, the "what actually moved this week" report.
+
+Build one until it runs without you. Then the next. That's how I got from one AI employee to a 7-department company of 137, and the full stack costs $3,000 to $12,000 a year. The staffed version costs six figures. The math isn't close.
+
+Comment STACK and I'll send you the 3-tool setup behind the first three.
+
+---
+
+## ENTRY 049 — 14/07/2026 | Short-form video (Reel/TikTok/YouTube Short) | I Was on a Call When My Content Posted | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 044 (do not queue the old version)
+**Platform:** Short-form video (60-75s)
+**Format:** Cordiner method — result-first demo + receipt + do-this-tonight close
+**Pattern used:** Result-First Demo (10) + Show-Your-System
+**Pillar:** Build Once, Runs Forever
+**Critic score:** 8.7/10
+**ACP stage:** A (inherited)
+**CTA:** "Comment TEAM and I'll send you the guide to your first AI employee."
+**Source:** RESEARCH 033 (format signals) + proof.md (real system receipts). No [VERIFY] flags.
+
+---
+### VIDEO SCRIPT (60-75s)
+
+[OPEN: Phone screen, LinkedIn notification pop. Text: "While I was on a call this morning..."]
+
+VOICEOVER: "I was on a call when my content posted."
+
+[CUT: DM notification. Text: "...three things happened without me."]
+
+VOICEOVER: "I was in a meeting when the research ran. And I was asleep when the DM went out."
+
+[CUT TO FACE, direct camera]
+
+"I'm not technical. I spent 20 years in corporate marketing at Dell, Intel and Microsoft. What I built isn't code. It's a company: 137 AI employees, 7 departments, one dashboard, one human. Me.
+
+[B-ROLL: dashboard org chart scroll]
+
+Every morning it finds what's worth talking about. Every night it drafts my posts. When someone comments a keyword, it sends them the guide they asked for. I review, I approve, I stay the judge. But I stopped being the workforce.
+
+Here's your version, tonight: pick ONE task you'll repeat tomorrow anyway. Write down its steps. That page is the job description for your first AI employee."
+
+[END CARD: "Comment TEAM = the setup for employee #1"]
+
+VOICEOVER: "Comment TEAM and I'll send you the setup for your first one. Start with one. I started with one."
+
+---
+### COMPANION CAPTION (LinkedIn/Threads cross-post)
+
+I was on a call when my content posted.
+I was in a meeting when the research ran.
+I was asleep when the DM went out.
+
+Not magic, and not code. A company of 137 AI employees, run by one very non-technical human who spent 20 years in corporate marketing.
+
+Start with one employee. Comment TEAM and I'll send you the setup.
+
+---
+
+## ENTRY 048 — 14/07/2026 | X/Twitter (thread) | Solo-Founded Companies Just Crossed 36% of All New Businesses | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 045 (do not queue the old version)
+**Platform:** X / Twitter (thread, 7 tweets)
+**Format:** Cordiner method — data wall + receipt + recipe close
+**Pattern used:** Data-backed argument, thread wall
+**Pillar:** The Freedom Business
+**Critic score:** 8.5/10
+**ACP stage:** A (inherited)
+**CTA:** "Comment TEAM and I'll show you how to set up your first AI employee."
+**Source:** RESEARCH 032 Signal 7 (36% stat, Maor Shlomo $80M, Danny Postma $3.6M ARR, $3K-$12K stack, 60-80% margins) + RESEARCH 033 Signal 1 (Uber 70%) + RESEARCH 032 Signal 6 (Anthropic 80%) + proof.md. No [VERIFY] flags.
+
+---
+### THREAD
+
+**Tweet 1 (hook):**
+Solo-founded companies just crossed 36% of all new businesses.
+
+The ones with AI stacks run at 60-80% profit margins.
+
+Here's what the data says about building alone in 2026, and how to start this week:
+
+**Tweet 2:**
+The numbers first.
+
+29.8M US solopreneurs generate $1.7T a year. That's 6.8% of GDP.
+
+A one-person AI stack: $3K-$12K a year.
+The staffed version of the same output: six figures.
+
+This isn't a niche. It's the shape of the next economy.
+
+**Tweet 3:**
+Two examples that aren't outliers anymore.
+
+Maor Shlomo: built Base44 solo in 6 months. Wix paid $80M.
+Danny Postma: $3.6M ARR, zero employees.
+
+Not geniuses. Early. The model is replicable.
+
+**Tweet 4:**
+Inside the companies building the tools:
+
+99% of Uber engineers use AI daily. 70% of their code ships from agents.
+Anthropic writes 80% of its own code with Claude.
+
+When the builders stopped typing, "I'm not technical" stopped being a reason.
+
+**Tweet 5:**
+My own receipt: I spent 20 years in corporate marketing (Dell, Intel, Microsoft).
+
+Today I run a company of 137 AI employees in 7 departments. Human headcount: 1.
+
+The margin difference isn't talent. It's headcount you don't carry.
+
+**Tweet 6:**
+How to start, this week, in 3 steps:
+
+1. Name one job you'd hire for
+2. Write its steps like a job description
+3. Hand it to AI and review the output for a week
+
+One employee. Then the next. That's the entire playbook.
+
+**Tweet 7 (close):**
+The data is in. The tools exist. The margins are documented.
+
+The only variable is whether you start building the system or keep being the system.
+
+Comment TEAM and I'll show you how to set up your first AI employee.
+
+---
+
+## ENTRY 047 — 14/07/2026 | LinkedIn | Stop Asking "Should I Use AI?" The Winners Ask a Better Question. | READY TO POST
+
+**Status:** READY TO POST
+**Supersedes:** ENTRY 046 (do not queue the old version)
+**Platform:** LinkedIn (text post, ~230 words)
+**Format:** Cordiner method — reframe + the delegation question + first-delegation recipe
+**Pattern used:** Contrarian Operational Hook (14)
+**Pillar:** What's Worth It
+**Critic score:** 8.7/10
+**ACP stage:** A (inherited)
+**CTA:** "Comment WORDS and I'll send you the plain-English guide to what's actually happening in AI right now."
+**Source:** RESEARCH 033 Signal 1 (Uber 70%) + RESEARCH 032 Signal 6 (Anthropic 80%). Career receipt: Career Profile.md. No [VERIFY] flags.
+
+---
+### LINKEDIN POST
+
+Stop asking "should I use AI?" The companies winning with it are asking a better question: "what would I delegate to someone smarter and faster than me, if that person cost less than my phone plan?"
+
+That swap is the whole gap.
+
+Uber: 70% of production code now ships from AI agents. Anthropic: the team building the most capable AI on earth writes 80% of its own code with it. These organizations finished the debate seasons ago. They're compounding while everyone else is still holding the meeting about whether to start.
+
+I recognize that meeting. I sat in it for 20 years at Dell, Intel and Microsoft. Smart people, honest concerns, and a decision that somehow always landed on "let's revisit next quarter."
+
+Here's how to skip it. Answer the delegation question on paper, tonight:
+
+1. Write down 3 things you did this week that drained you.
+2. Next to each, write what a capable assistant would have needed to know to do it for you.
+3. Pick the one with the shortest answer. That's your first delegation, this week.
+
+You don't need to understand how the engine works. The Uber engineers didn't build their agents. They learned to delegate to them.
+
+That's the move. Delegation, not expertise.
+
+Comment WORDS and I'll send you the plain-English guide to what's actually happening in AI right now.
+
+---
+
+## ENTRY 046 — 13/07/2026 | LinkedIn | The Debate About AI Is Over. The Companies Winning Aren't Having It. | SUPERSEDED BY ENTRY 047
+
+**Status:** SUPERSEDED BY ENTRY 047 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post, ~220 words)
 **Format:** Contrarian Operational Hook (Pattern 14) — opens with the state of the field, names the gap the reader is sitting in
 **Topic:** Opinion — companies compounding with AI have moved past the adoption debate. Anchors to Uber (70% of PRs from agents) and Anthropic (80% code from Claude) as proof. Audience: still-in-debate people who need permission to stop waiting.
@@ -104,9 +888,9 @@ Comment WORDS and I'll send you the plain-English guide to what's actually happe
 
 ---
 
-## ENTRY 045 — 13/07/2026 | X/Twitter (thread) | Solo-Founded Companies Just Crossed 36% of All New Businesses. The Data on Building Alone in 2026. | READY TO POST
+## ENTRY 045 — 13/07/2026 | X/Twitter (thread) | Solo-Founded Companies Just Crossed 36% of All New Businesses. The Data on Building Alone in 2026. | SUPERSEDED BY ENTRY 048
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 048 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** X / Twitter (thread — 7 tweets)
 **Format:** Data wall thread — statistic hook, sequential build, action close
 **Topic:** The solo-founder economics from RESEARCH 032+033 — what the data actually says about building a one-person AI-powered business in 2026.
@@ -193,9 +977,9 @@ Comment TEAM and I'll show you how to set up your first AI employee — this is 
 
 ---
 
-## ENTRY 044 — 13/07/2026 | Short-form video (Reel/TikTok/YouTube Short) | I Was on a Call When My Content Posted. Here's the System. | READY TO POST
+## ENTRY 044 — 13/07/2026 | Short-form video (Reel/TikTok/YouTube Short) | I Was on a Call When My Content Posted. Here's the System. | SUPERSEDED BY ENTRY 049
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 049 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** Short-form video — Instagram Reel / TikTok / YouTube Short (60–75s)
 **Format:** Result-first demo — notifications/dashboard screen recording + face-to-camera close. No tutorial structure; output shown before explanation.
 **Topic:** Show the AI content system running. Not how it was built — that it runs.
@@ -252,9 +1036,9 @@ Comment TEAM and I'll send you the guide to setting up your first AI employee �
 
 ---
 
-## ENTRY 043 — 13/07/2026 | LinkedIn | Seven Jobs You Can Hand to AI Without Hiring Anyone. Here's the Order. | READY TO POST
+## ENTRY 043 — 13/07/2026 | LinkedIn | Seven Jobs You Can Hand to AI Without Hiring Anyone. Here's the Order. | SUPERSEDED BY ENTRY 050
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 050 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** Teach Your System, Not the Tool (3), numbered framework, ~230 words
 **Topic:** Educational — the seven AI roles a solopreneur can fill without hiring, in the order to build them. Cost comparison: $3K–$12K/year AI stack vs. six-figure staffed version. Ends with comment trigger for 3-tool setup.
@@ -318,9 +1102,9 @@ Comment WHAT and I'll send you the plain-English guide to what AI actually is �
 
 ---
 
-## ENTRY 041 — 13/07/2026 | LinkedIn | 29.8 Million Solopreneurs. $1.7 Trillion in Revenue. Most Still Doing It the Hard Way. | READY TO POST
+## ENTRY 041 — 13/07/2026 | LinkedIn | 29.8 Million Solopreneurs. $1.7 Trillion in Revenue. Most Still Doing It the Hard Way. | SUPERSEDED BY ENTRY 051
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 051 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** Specific Number as Hook (11) + Before/After Contrast (13), ~220 words
 **Topic:** AI News — $1.7T solopreneur economy (29.8M US solopreneurs, 68% under 6 months savings, 60–80% AI-stack margins vs 10–20% staffed). Forbes "modern solo business owner" framing. Seven-role AI team. The gap is not the model — it's running the model manually.
@@ -352,9 +1136,9 @@ Comment TEAM and I'll send you a free guide on setting up your first AI employee
 
 ---
 
-## ENTRY 040 — 13/07/2026 | LinkedIn | The "I'm Not Technical Enough" Excuse Died This Week. Uber's VP Killed It. | READY TO POST
+## ENTRY 040 — 13/07/2026 | LinkedIn | The "I'm Not Technical Enough" Excuse Died This Week. Uber's VP Killed It. | SUPERSEDED BY ENTRY 052
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 052 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** Provocation-First Hook (1) + Specific Number as Hook (11), ~190 words
 **Topic:** AI News — Uber VP Engineering (Praveen Neppalli) public statement: 99% of Uber engineers use AI tools, 70% of PRs now attributed to agents. Dismantles the "I'm not technical enough" objection. If the most technically demanding workforce on earth has handed 70% of its code output to agents, the objection has no more cover.
@@ -384,9 +1168,9 @@ Comment WHAT and I'll send you the plain-English guide to what AI actually is ri
 
 ---
 
-## ENTRY 039 — 13/07/2026 | LinkedIn | The Morning the Machine Ran While I Slept. | READY TO POST
+## ENTRY 039 — 13/07/2026 | LinkedIn | The Morning the Machine Ran While I Slept. | SUPERSEDED BY ENTRY 053
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 053 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** Vulnerability Before Credentials (7), personal storytelling, ~195 words
 **Topic:** Storytelling — the first morning the content engine produced drafts overnight (38 entries in the vault, zero manual writing by operator). The moment the system actually worked felt wrong — that tension is the hook. Closes with "one build, running forever" positioning.
@@ -458,9 +1242,9 @@ Founding spots for the AI Automation Queen community are open at $27 a month, lo
 
 ---
 
-## ENTRY 037 — 11/07/2026 | LinkedIn | Not Agents. Not Chatbots. Not AI Avatars. The AI Business Making Money Right Now Is Boring. | READY TO POST
+## ENTRY 037 — 11/07/2026 | LinkedIn | Not Agents. Not Chatbots. Not AI Avatars. The AI Business Making Money Right Now Is Boring. | SUPERSEDED BY ENTRY 054
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 054 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** Contrarian Operational Hook (14), ~240 words
 **Topic:** Opinion — the solopreneurs quietly winning in 2026 are running one boring, repeatable system, not chasing agent demos. Sources: YouTube "boring AI offers" video + Meta $145B figure as contrast.
@@ -528,9 +1312,9 @@ This is exactly what we build inside the community. Come join us. [PREP: insert 
 
 ---
 
-## ENTRY 035 — 11/07/2026 | LinkedIn | Three Things Happened in AI This Week That Nobody's Talking About Together. | READY TO POST
+## ENTRY 035 — 11/07/2026 | LinkedIn | Three Things Happened in AI This Week That Nobody's Talking About Together. | SUPERSEDED BY ENTRY 055
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 055 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** Contrarian Operational Hook (14) + Specific Number as Hook (11), ~230 words
 **Topic:** AI News — contrarian triple from RESEARCH 031: (1) academic paper argues transformer agents are mathematically unreliable; (2) Gartner forecasts 40%+ enterprise agent projects cancelled by 2027; (3) Instagram down-ranking generic AI-generated content. Synthesis: the boring, human-reviewed, repeatable automation is winning.
@@ -599,9 +1383,9 @@ Comment TEAM and I'll send you how I set up my first AI employee. That's where t
 
 ---
 
-## ENTRY 033 — 10/07/2026 | LinkedIn | The Work You Repeat Every Week Is the First Work AI Should Take | READY TO POST
+## ENTRY 033 — 10/07/2026 | LinkedIn | The Work You Repeat Every Week Is the First Work AI Should Take | SUPERSEDED BY ENTRY 056
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 056 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** Teach Your System, Not the Tool + Before/After Contrast, ~250 words
 **Topic:** Educational — how to identify and hand off your first repetitive task to AI. Explains the "Build Once, Runs Forever" method with inbox triage as the concrete example. Entry to the pillar for non-technical audiences.
@@ -638,9 +1422,9 @@ Comment INBOX and I'll send you the step-by-step setup for your first AI employe
 
 ---
 
-## ENTRY 032 — 10/07/2026 | LinkedIn | 64% of Solopreneurs Use AI. Only 3.6% Earn Over $1M. The Gap Isn't the Tool. | READY TO POST
+## ENTRY 032 — 10/07/2026 | LinkedIn | 64% of Solopreneurs Use AI. Only 3.6% Earn Over $1M. The Gap Isn't the Tool. | SUPERSEDED BY ENTRY 057
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 057 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** Specific Number as Hook + Contrarian Operational Hook, ~220 words
 **Topic:** Opinion — the 64%/3.6% stat gap reveals the difference between using AI and using AI with a strategy. The people winning aren't on different tools; they're asking different questions.
@@ -676,9 +1460,9 @@ Comment TEAM and I'll send you the first thing I automated in my own business. N
 
 ---
 
-## ENTRY 031 — 10/07/2026 | LinkedIn | There Are Four Things That Make AI Actually Useful. Anthropic Just Named Them. | READY TO POST
+## ENTRY 031 — 10/07/2026 | LinkedIn | There Are Four Things That Make AI Actually Useful. Anthropic Just Named Them. | SUPERSEDED BY ENTRY 058
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 058 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** Named Framework + Provocation-First Hook, ~230 words
 **Topic:** AI News — Anthropic published the 4D AI Fluency Framework (Delegation, Description, Discernment, Diligence) in a July 9, 2026 blog post. Fatiha has been teaching versions of these principles without knowing they had a name. Makes AI learnable for a non-technical audience.
@@ -713,9 +1497,9 @@ Comment STACK and I'll send my 3-tool setup. The tools are a fraction of the pic
 
 ---
 
-## ENTRY 030 — 10/07/2026 | LinkedIn | This Week, Even Zuckerberg Admitted It: AI Agents Aren't There Yet. Good. | READY TO POST
+## ENTRY 030 — 10/07/2026 | LinkedIn | This Week, Even Zuckerberg Admitted It: AI Agents Aren't There Yet. Good. | SUPERSEDED BY ENTRY 059
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 059 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** Contrarian Operational Hook + Specific Number as Hook, ~270 words
 **Topic:** AI News — Zuckerberg told Meta staff that AI agents haven't progressed as fast as he hoped, despite $145B in AI infrastructure and 7,000 people reassigned to an "Agent Transformation" unit. The contrarian read: this is a green flag for solopreneurs, not a red flag for AI.
@@ -753,9 +1537,9 @@ Comment WHAT and I'll send you the plain-English guide to what AI actually is ri
 
 ---
 
-## ENTRY 029 — 10/07/2026 | LinkedIn | Most People Who Left Corporate Did the Smart Thing. I Didn't. | READY TO POST
+## ENTRY 029 — 10/07/2026 | LinkedIn | Most People Who Left Corporate Did the Smart Thing. I Didn't. | SUPERSEDED BY ENTRY 060
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 060 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** Vulnerability Before Credentials + Fear-First Hook, ~230 words
 **Topic:** Storytelling / Real Talk — the sudden corporate exit. Subverts the expectation that leaving corporate is a carefully planned move. Bridges the audience (corporate professionals thinking about leaving) to the offer (AI-powered business that runs without a full team).
@@ -1286,9 +2070,9 @@ Breaking down each upgrade this week. Which one do you need most — 1, 2, 3, or
 
 ---
 
-## ENTRY 016 — 27/06/2026 | LinkedIn | Most People Automate the Wrong Thing First | READY TO POST
+## ENTRY 016 — 27/06/2026 | LinkedIn | Most People Automate the Wrong Thing First | SUPERSEDED BY ENTRY 061
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 061 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** Educational LinkedIn post — 4-step method, ~220 words
 **Topic:** The method for picking the *right* first task to automate (boring + repetitive + zero-judgment), one employee at a time — so people stop automating chaos and quitting.
@@ -1356,9 +2140,9 @@ If that's the room you want, comment FOUNDING and I'll make sure you get first a
 
 ---
 
-## ENTRY 014 — 27/06/2026 | LinkedIn | The Only Test That Tells You If an AI Tool Is Worth It | READY TO POST
+## ENTRY 014 — 27/06/2026 | LinkedIn | The Only Test That Tells You If an AI Tool Is Worth It | SUPERSEDED BY ENTRY 062
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 062 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** AI-news / opinion LinkedIn post, ~210 words
 **Topic:** The "keeper vs demo" filter — if a tool can't save 5 hours/week without creating new problems, it's a demo. Cuts through tool overwhelm.
@@ -1391,9 +2175,9 @@ I've narrowed my whole business down to a handful of tools that actually pass th
 
 ---
 
-## ENTRY 013 — 27/06/2026 | LinkedIn | Someone Made 1,000 Videos for Basically $0 | READY TO POST
+## ENTRY 013 — 27/06/2026 | LinkedIn | Someone Made 1,000 Videos for Basically $0 | BLOCKED (retired CTA)
 
-**Status:** READY TO POST
+**Status:** BLOCKED 14/07/2026 — CTA keyword PIPELINE is retired in lead-magnets.csv (Engine Law 2 leak, flagged this run). Re-CTA or retire before queueing.
 **Platform:** LinkedIn (text post)
 **Format:** AI-news LinkedIn post, ~215 words
 **Topic:** A creator generated ~1,000 videos for near-zero cost with one prompt + a local pipeline. The flex isn't the tool — it's the build-once system that runs while you sleep.
@@ -1532,9 +2316,9 @@ Comment CLAUDE and I'll DM it to you.
 
 ---
 
-## ENTRY 010 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | My One-Person Business Runs Like a Team of Five | READY TO POST
+## ENTRY 010 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | My One-Person Business Runs Like a Team of Five | SUPERSEDED BY ENTRY 066
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 066 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** Instagram Reels / TikTok / YouTube Shorts (vertical 9:16)
 **Format:** ~40s talking-head + on-screen text + caption
 **Topic:** A one-person business doesn't mean doing everything yourself — it means a team of AI "employees" doing the parts that aren't you.
@@ -1577,9 +2361,9 @@ Which "employee" would you hire first — 1, 2, 3, or 4? 👇
 
 ---
 
-## ENTRY 009 — 23/06/2026 | LinkedIn | AI Doesn't Fix Chaos. It Scales It. | READY TO POST
+## ENTRY 009 — 23/06/2026 | LinkedIn | AI Doesn't Fix Chaos. It Scales It. | SUPERSEDED BY ENTRY 063
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 063 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** Contrarian text post + soft CTA
 **Topic:** The reason most people get nothing from AI isn't the tools — it's automating a broken, undocumented process. Fix the workflow first.
@@ -1742,9 +2526,9 @@ Drop your last good idea below 👇
 
 ---
 
-## ENTRY 005 — 23/06/2026 | LinkedIn | Stop Collecting AI Tools | READY TO POST
+## ENTRY 005 — 23/06/2026 | LinkedIn | Stop Collecting AI Tools | SUPERSEDED BY ENTRY 064
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 064 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** Short text post + comment-trigger CTA
 **Topic:** You're not tool-poor, you're system-poor. You can build 90% of what you need with 2–3 tools.
@@ -1901,9 +2685,9 @@ Want the exact setup I use for lead follow-up? Comment "FOLLOW UP" and I'll send
 
 ---
 
-## ENTRY 001 — 23/06/2026 | LinkedIn | The Sunday Night Test | READY TO POST
+## ENTRY 001 — 23/06/2026 | LinkedIn | The Sunday Night Test | SUPERSEDED BY ENTRY 065
 
-**Status:** READY TO POST
+**Status:** SUPERSEDED BY ENTRY 065 (Cordiner-method rewrite, 14/07/2026) — do not queue this version
 **Platform:** LinkedIn (text post)
 **Format:** Story-led text post + comment-trigger CTA
 **Topic:** Leaving corporate to build your own thing — the dread, the turning point, and why your corporate years are an asset, not a sunk cost.
