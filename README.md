@@ -45,6 +45,15 @@ before every autonomous run and pushes its output back to `main`. Any other
 copy (operator's local machine, web/agent sessions) is a normal git client:
 `git pull origin main` before editing, push or PR when done.
 
+**Hosting topology (verified 14/07/2026):** one server. `srv1485425`
+(Hostinger) and `187.77.153.212` are the same machine: hostname and IPv4 of
+the estate VPS. It serves www.shiftandlead.com, the apex, and
+brief.shiftandlead.com from `/home/fatiha/content-system`, updated by
+`git -C ~/content-system pull --ff-only origin main`. guides.shiftandlead.com
+is served by Vercel (project `content-system`), which auto-deploys on every
+merge to `main` with no pull step. SSH port 22 on the VPS is closed by the
+hardening; do not diagnose "connection refused" on 22 as an outage.
+
 `sync-to-github.bat` (the old "local wins" one-way sync) was retired and
 deleted from the repo on 14/07/2026. If a copy still exists on the operator's
 Windows machine, do not run it; it would overwrite the machine's autonomous
