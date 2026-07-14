@@ -116,10 +116,13 @@ urgency, follow-forcing):
 
 Follow the Script Application Rules from `inspiration-library` in order:
 
-1. **Open with the outcome** — first sentence names the reader's after-state
-   or hands them the promise (outcome-first law, `queen-brain/voice.md`,
-   ratified 14/07/2026). A provocation or fear opening is allowed only when
-   the very next line lands on the promise. No warm-up, no title restatement.
+1. **Open how-to-first** (operator-calibrated 14/07/2026, chosen over
+   claim-first and you-problem-first): the title and the first line name the
+   deliverable plainly, like a lesson title. "How to find your first AI
+   employee in 10 minutes. Step by step, tonight." A stranger must know what
+   they get before the second line (obvious-beats-clever law,
+   `queen-brain/voice.md`). Provocations, clever lines, and story tension go
+   AFTER the promise, never instead of it. No warm-up, no title restatement.
 1a. **Result Recipe quota** — of the 5 daily drafts, at least 2 must be
    Result Recipes: one complete first win the reader can execute today
    (3-5 numbered steps, exactly one copy-paste prompt with redaction
