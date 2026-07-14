@@ -122,3 +122,28 @@ Fast Forward code at show-and-tell.
 Checkout live → masterclass (list-builder + demand test) → bootcamp
 (launch + video harvest) → Get It Done Days (premium back end). Prices and
 dates are DECISION NEEDED in the queen-brain proposal.
+
+
+---
+
+## The Summer Build Series (ratified 14/07/2026: 4 masterclasses, $150 each, beginners)
+
+One rule at this price point: **narrow scope, complete win.** Never hold back
+quality; hold back breadth. One build per class, done until it runs.
+
+| # | Class | The one build | Source lessons |
+|---|---|---|---|
+| 1 | Hire Your First AI Employee | Inbox manager running on their real email | M0-L00, M0-L04, M2-L02 + playbook |
+| 2 | Teach AI to Write Like You | Brand Kit installed; 3 outputs in their voice | M1-L01, M1-L02 |
+| 3 | A Week of Content in 90 Minutes | 1 idea into 5 pieces, scheduled (live counter) | M3-L01, M3-L07, M3-L08 |
+| 4 | Never Lose a Lead Again | Follow-up machine live, tested with a dummy lead | M2-L07 + FOLLOW UP playbook, M4-L01 lite |
+
+Scope guard for every class, in: one build to "it runs", the Traffic Light
+safety brief, the preloaded template, the recording, one next-step door.
+Out, always: a second build, tool tours, anything from M7-M9, deep Q&A
+tangents (parked to the follow-up email, which doubles as nurture).
+
+Series mechanics: each class opens with last class's counter, ends with the
+same door (next class + Fast Forward). Class 4 hands off into the bootcamp.
+Four recordings = the "Summer Sessions" replay bundle + 4 course videos.
+Open decisions: dates, 4-pack bundle price, replay-included vs upsold.
