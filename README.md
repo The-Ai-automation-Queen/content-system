@@ -45,5 +45,7 @@ before every autonomous run and pushes its output back to `main`. Any other
 copy (operator's local machine, web/agent sessions) is a normal git client:
 `git pull origin main` before editing, push or PR when done.
 
-`sync-to-github.bat` (the old "local wins" one-way sync) is retired — do not
-run it; it would overwrite the machine's autonomous commits.
+`sync-to-github.bat` (the old "local wins" one-way sync) was retired and
+deleted from the repo on 14/07/2026. If a copy still exists on the operator's
+Windows machine, do not run it; it would overwrite the machine's autonomous
+commits. Delete any local copy too.

@@ -116,8 +116,21 @@ urgency, follow-forcing):
 
 Follow the Script Application Rules from `inspiration-library` in order:
 
-1. **Open with a provocation or fear** — first sentence is the hook. No warm-up,
-   no title restatement.
+1. **Open how-to-first** (operator-calibrated 14/07/2026, chosen over
+   claim-first and you-problem-first): the title and the first line name the
+   deliverable plainly, like a lesson title. "How to find your first AI
+   employee in 10 minutes. Step by step, tonight." A stranger must know what
+   they get before the second line (obvious-beats-clever law,
+   `queen-brain/voice.md`). Provocations, clever lines, and story tension go
+   AFTER the promise, never instead of it. No warm-up, no title restatement.
+1a. **Result Recipe quota** — of the 5 daily drafts, at least 2 must be
+   Result Recipes: one complete first win the reader can execute today
+   (3-5 numbered steps, exactly one copy-paste prompt with redaction
+   modeled, doable in under 30 minutes), closed with "do it and comment
+   [KEYWORD] with what you found" so replies become proof. Takes and news
+   commentary may fill the other slots but each must answer "so what do I
+   do?" in the body. (Free = understand + one first win.) Full rationale:
+   `docs/2026-07-14-cordiner-vault-comparison.md`.
 2. **Pick a named pattern** from the playbook that fits the topic. State which
    one you chose (internally, in the entry's production notes).
 3. **Anchor to the positioning** — the bridge audience (corporate professionals who
@@ -159,7 +172,9 @@ Score 0–10 on:
 - **Hook strength** — does it pass `copy-craft`'s platform-specific window
   check (LinkedIn: works as a complete thought in ~210 characters; Reels/
   Shorts/TikTok: first frame answers what's-happening/why-care/what-you-get)?
-  Not just a gut "would this stop the scroll."
+  Not just a gut "would this stop the scroll." And does the hook promise an
+  outcome, not only intrigue (outcome-first law)? Intrigue with no promise
+  by line two caps this criterion at 5/10.
 - **Positioning fit** — does it sound like *her*, serving *her* audience?
 - **Specificity** — concrete numbers, named frameworks, real stakes (not vague)?
 - **Voice** — casual, conversational, warm-with-edge, jargon-free?
@@ -184,36 +199,39 @@ Be honest. A low score under deadline pressure still means not ready.
 ## Output — append to the vault
 
 For each draft, prepend a new entry to `content-vault.md` using the next number
-and the existing house format. Also add a one-line summary to the quick-reference
-list at the very top of the file. Match the existing structure exactly:
+and the **compact house format (adopted 14/07/2026 — operator decision, keep
+the vault lean)**. Also add a one-line summary to the quick-reference list at
+the very top of the file:
 
 ```
 ## ENTRY NNN — DD/MM/YYYY | <Platform> | <Short Title> | <STATUS>
+`<A|C|P> · <Pillar> · CTA: <KEYWORD> · critic <X.X> · src: <RESEARCH NNN-S#> [· ⚠️ flags]`
 
-**Status:** <DRAFT | READY TO POST>
-**Platform:** <platform + format details>
-**Format:** <e.g. 75s talking-head video script + companion text post>
-**Topic:** <one line>
-**Pattern used:** <which inspiration-library pattern>
-**Pillar:** <which content pillar from inventory.md>
-**Critic score:** <X.X>/10 — <APPROVED FOR REVIEW | NEEDS WORK: ...>
-**ACP stage:** <A | C | P> — <one-line reason, e.g. "A — ratio is currently 6A/2C/1P, adding A">
-**CTA:** <exact CTA text as it appears at the end of the post>
-**Source:** <research-notes RESEARCH NNN, or [VERIFY] for unsourced claims>
-
----
-### <SPOKEN SCRIPT / LINKEDIN CAPTION / ARTICLE — as appropriate>
-
-<the content>
-
----
-### COMPANION / THUMBNAIL / CTA  (as appropriate)
-
-<...>
+<the content — and nothing else>
 ```
 
+Content rules by platform:
+- **LinkedIn / X / Facebook**: the post text ONLY. No script blocks, no
+  companion sections, no restated CTA line, no production notes. What is in
+  the entry is exactly what gets pasted into the platform.
+- **Short-form video**: the spoken script with screen cues, plus one caption
+  line. Nothing else.
+- Longer production detail (thumbnails, GHL workflows, b-roll lists) goes in
+  the machine's dated report, never in the vault.
+
 Use `DD/MM/YYYY` dates (today's date). Never renumber or overwrite existing
-entries — append only.
+entries — append only. When a batch supersedes old entries, move the
+superseded originals to `content-vault-archive.md` the same run, statuses
+preserved.
+
+**Receipt rotation law (added 14/07/2026):** receipts come from
+`queen-brain/proof.md` and `queen-brain/Career Profile.md`, and any specific
+credential or receipt (the 137-employee company, the Dell/Intel/Microsoft
+years, the inbox-manager first hire, the vault count, the follower count) may
+appear in at most 1 of any 10 consecutive entries. Two story posts must never
+share the same biographical beat. The credential serves the point of the post;
+it never opens two posts the same way. When in doubt, rotate to an unused
+receipt or use none.
 
 ---
 
