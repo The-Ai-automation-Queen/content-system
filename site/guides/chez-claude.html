@@ -12,7 +12,7 @@
 <link rel="canonical" href="https://guides.shiftandlead.com/guides/chez-claude.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Shift &amp; Lead">
-<meta property="og:title" content="Chez Claude: What Claude Does Best—and Where It Falls Short">
+<meta property="og:title" content="Chez Claude: What Claude Does Best and Where It Falls Short">
 <meta property="og:description" content="A skimmable guide to Claude's strongest uses, limits, features and plans.">
 <meta property="og:url" content="https://guides.shiftandlead.com/guides/chez-claude.html">
 <meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
@@ -21,7 +21,7 @@
 {
   "@context":"https://schema.org",
   "@type":"Article",
-  "headline":"Chez Claude: What Claude Does Best—and Where It Falls Short",
+  "headline":"Chez Claude: What Claude Does Best and Where It Falls Short",
   "description":"A skimmable guide to Claude's strongest uses, limits, features and plans.",
   "image":"https://guides.shiftandlead.com/Portrait.jpeg",
   "datePublished":"2026-07-08",
@@ -47,7 +47,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&amp;family=Source+Serif+4:wght@400;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
 <style>
-:root{--canvas:#fff;--ink:#1a1a1a;--muted:#605e5a;--rule:#d8d6d2;--accent:#2c4be0;--accent-deep:#1b2ea0;--tint:#e4eafb;--cream:#f5f7fd;--success:#167749;--success-bg:#edf8f2;--warning:#9a5b00;--warning-bg:#fff7e8;--danger:#a33434;--danger-bg:#fff1f1}
+:root{--canvas:#fff;--ink:#1a1a1a;--muted:#605e5a;--rule:#d8d6d2;--accent:#2c4be0;--accent-deep:#1b2ea0;--tint:#e4eafb;--cream:#f5f7fd}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.65;overflow-x:hidden}
@@ -73,7 +73,7 @@ h1 em{font-weight:400;color:var(--accent)}
 .button{display:inline-flex;align-items:center;justify-content:center;padding:11px 17px;border-radius:5px;border:1.5px solid var(--accent);font-family:'Inter',sans-serif;font-size:13px;font-weight:700;text-decoration:none}
 .button.primary{background:var(--accent);color:#fff}
 .button.secondary{background:#fff;color:var(--accent)}
-.verdict{border:1px solid var(--rule);border-top:5px solid var(--accent);border-radius:10px;background:#fff;box-shadow:0 14px 40px rgba(26,26,26,.07);overflow:hidden}
+.verdict{border:1px solid var(--rule);border-top-color:var(--accent);border-radius:10px;background:#fff;box-shadow:0 14px 40px rgba(26,26,26,.07);overflow:hidden}
 .verdict-title{padding:17px 20px 14px;border-bottom:1px solid var(--rule);font-family:'Inter',sans-serif;font-size:16px;font-weight:700}
 .verdict-row{display:grid;grid-template-columns:105px 1fr;gap:14px;padding:15px 20px;border-bottom:1px solid var(--rule)}
 .verdict-row:last-child{border-bottom:0}
@@ -90,11 +90,11 @@ h1 em{font-weight:400;color:var(--accent)}
 .section-dek{font-family:'Inter',sans-serif;font-size:.94rem;color:var(--muted);margin:0;max-width:72ch}
 .decision-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .decision{border:1px solid var(--rule);border-radius:10px;padding:22px}
-.decision.good{border-top:4px solid var(--success);background:var(--success-bg)}
-.decision.stop{border-top:4px solid var(--danger);background:var(--danger-bg)}
+.decision.good{background:var(--cream)}
+.decision.stop{background:#fff}
 .decision .label{font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.decision.good .label{color:var(--success)}
-.decision.stop .label{color:var(--danger)}
+.decision.good .label{color:var(--accent)}
+.decision.stop .label{color:var(--ink)}
 .decision h3{font-family:'Inter',sans-serif;font-size:1.08rem;margin:7px 0 12px}
 .decision ul{margin:0;padding-left:19px;font-family:'Inter',sans-serif;font-size:.89rem;color:#34322f}
 .decision li+li{margin-top:7px}
@@ -104,9 +104,9 @@ th{padding:12px 15px;background:var(--cream);border-bottom:2px solid var(--rule)
 td{padding:13px 15px;border-bottom:1px solid var(--rule);font-family:'Inter',sans-serif;font-size:.86rem;vertical-align:top}
 tr:last-child td{border-bottom:0}
 .fit{display:inline-block;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:700;white-space:nowrap}
-.fit.strong{color:var(--success);background:var(--success-bg)}
-.fit.setup{color:var(--warning);background:var(--warning-bg)}
-.fit.review{color:var(--danger);background:var(--danger-bg)}
+.fit.strong{color:var(--accent);background:var(--tint)}
+.fit.setup{color:var(--muted);background:var(--cream)}
+.fit.review{color:var(--ink);background:#efefed}
 .flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:22px;align-items:stretch}
 .flow-step{position:relative;border:1px solid var(--rule);border-radius:8px;padding:17px 14px;background:#fff;min-height:128px}
 .flow-step:not(:last-child)::after{content:'→';position:absolute;right:-18px;top:50%;transform:translateY(-50%);font-family:'Inter',sans-serif;color:var(--accent);font-weight:700}
@@ -166,9 +166,9 @@ tr:last-child td{border-bottom:0}
 <header class="hero">
   <div class="hero-grid">
     <div>
-      <div class="eyebrow mono">The Kitchen Map · Anthropic · Updated 15 July 2026</div>
+      <div class="eyebrow mono">The Kitchen Map · Anthropic</div>
       <h1>Chez <em>Claude.</em></h1>
-      <p class="promise">What Claude does best—and where it falls short.</p>
+      <p class="promise">What Claude does best and where it falls short.</p>
       <p class="intro">Claude is a strong choice when the work depends on careful reading, sustained context, structured thinking or code. It is not a final authority. Use it to move the work forward, then verify what matters.</p>
       <div class="hero-actions">
         <a class="button primary" href="#decision">See if Claude fits your work</a>
@@ -252,7 +252,7 @@ tr:last-child td{border-bottom:0}
 </section>
 
 <section class="section" id="plans">
-  <div class="section-head"><div class="section-num">05</div><div><h2>Choose the Claude plan that matches the work</h2><p class="section-dek">Start free. Pay when usage limits or a required feature interrupt a real workflow—not because a higher tier sounds more capable.</p></div></div>
+  <div class="section-head"><div class="section-num">05</div><div><h2>Choose the Claude plan that matches the work</h2><p class="section-dek">Start free. Pay when usage limits or a required feature interrupt a real workflow. A higher tier name is not a reason to upgrade.</p></div></div>
   <div class="price-note"><span>Prices checked on Anthropic's official pricing page · 15 July 2026 · USD · taxes not included</span><a href="https://claude.com/pricing" rel="noopener">Check current Claude pricing →</a></div>
   <div class="matrix">
     <table>
