@@ -24,7 +24,7 @@
 > **14/07/2026 batch note:** ENTRY 047-066 are Cordiner-method rewrites (outcome hook + one-win recipe + real receipts + involvement close, per docs/2026-07-14-cordiner-vault-comparison.md). Each supersedes the READY entry named in its meta line. The superseded originals (and BLOCKED ENTRY 013) were moved to `content-vault-archive.md` the same day, statuses preserved — do not draw from them.
 
 - 14/07/2026 | Short-form video | "How One Person Runs a Company of 137 AI Employees" — rewrite of the superseded entry, how-to-first (v3) | READY TO POST
-- 14/07/2026 | LinkedIn | "How I Knew It Was Time to Leave Corporate. The Sunday Test." — rewrite of the superseded entry, how-to-first (v3) | READY TO POST
+- 14/07/2026 | LinkedIn | "How I Knew It Was Time to Leave Corporate. The Sunday Test." — rewrite of the superseded entry, how-to-first (v3) | KILLED 14/07/2026 (operator: factually incorrect)
 - 14/07/2026 | LinkedIn | "How to Run Your Whole Business on 3 Tools" — rewrite of the superseded entry, how-to-first (v3) | READY TO POST
 - 14/07/2026 | LinkedIn | "How to Automate Without Scaling Your Chaos" — rewrite of the superseded entry, how-to-first (v3) | READY TO POST [VERIFY: 95% stat]
 - 14/07/2026 | LinkedIn | "How to Test If an AI Tool Is Worth Your Money" — rewrite of the superseded entry, how-to-first (v3) | READY TO POST
@@ -91,8 +91,9 @@ Comment TEAM and I'll send you the setup for your first one. And follow, because
 
 ---
 
-## ENTRY 065 — 14/07/2026 | LinkedIn | How I Knew It Was Time to Leave Corporate. The Sunday Test. | READY TO POST
+## ENTRY 065 — 14/07/2026 | LinkedIn | How I Knew It Was Time to Leave Corporate. The Sunday Test. | KILLED 14/07/2026
 `A · Real Talk · CTA: WORDS · supersedes 001 · src: Career Profile.md`
+**KILLED 14/07/2026 — operator: "factually incorrect and not useful for anyone." The Sunday-dread arc and the 'test' framing are not her real story. Do not revive; do not revive superseded ENTRY 001 either (same invented arc). No exit-story post gets drafted again until the real exit moment is recorded in personal-brain.md.**
 
 How do you know it's time to leave corporate? For me, the answer arrived every Sunday at 7pm.
 

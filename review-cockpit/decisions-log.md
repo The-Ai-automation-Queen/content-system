@@ -1,0 +1,1 @@
+[2026-07-14] ENTRY 065 · killed · Real Talk · how-to-first story · — · kill reason (operator, in-chat): "factually incorrect and not useful for anyone" — invented Sunday-dread/test arc does not match her real exit; no exit-story drafts until personal-brain records the real moment
