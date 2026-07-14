@@ -116,8 +116,18 @@ urgency, follow-forcing):
 
 Follow the Script Application Rules from `inspiration-library` in order:
 
-1. **Open with a provocation or fear** — first sentence is the hook. No warm-up,
-   no title restatement.
+1. **Open with the outcome** — first sentence names the reader's after-state
+   or hands them the promise (outcome-first law, `queen-brain/voice.md`,
+   ratified 14/07/2026). A provocation or fear opening is allowed only when
+   the very next line lands on the promise. No warm-up, no title restatement.
+1a. **Result Recipe quota** — of the 5 daily drafts, at least 2 must be
+   Result Recipes: one complete first win the reader can execute today
+   (3-5 numbered steps, exactly one copy-paste prompt with redaction
+   modeled, doable in under 30 minutes), closed with "do it and comment
+   [KEYWORD] with what you found" so replies become proof. Takes and news
+   commentary may fill the other slots but each must answer "so what do I
+   do?" in the body. (Free = understand + one first win.) Full rationale:
+   `docs/2026-07-14-cordiner-vault-comparison.md`.
 2. **Pick a named pattern** from the playbook that fits the topic. State which
    one you chose (internally, in the entry's production notes).
 3. **Anchor to the positioning** — the bridge audience (corporate professionals who
@@ -159,7 +169,9 @@ Score 0–10 on:
 - **Hook strength** — does it pass `copy-craft`'s platform-specific window
   check (LinkedIn: works as a complete thought in ~210 characters; Reels/
   Shorts/TikTok: first frame answers what's-happening/why-care/what-you-get)?
-  Not just a gut "would this stop the scroll."
+  Not just a gut "would this stop the scroll." And does the hook promise an
+  outcome, not only intrigue (outcome-first law)? Intrigue with no promise
+  by line two caps this criterion at 5/10.
 - **Positioning fit** — does it sound like *her*, serving *her* audience?
 - **Specificity** — concrete numbers, named frameworks, real stakes (not vague)?
 - **Voice** — casual, conversational, warm-with-edge, jargon-free?
