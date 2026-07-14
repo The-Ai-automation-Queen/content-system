@@ -2,6 +2,40 @@
 
 ---
 
+## RESEARCH 034 — 2026-07-14 | Daily signal harvest
+
+**Status:** NOTED
+**Sources hit:** Twitter/X (2, web-search fallback), Instagram (2, web-search fallback), YouTube (1, view-count blocked — embed wall), RSS/Anthropic (1), News (1)
+**Apify status:** NOT AVAILABLE this session — all social slots filled from web-search per failure-mode rule. No signals invented.
+
+### Signals of the day (7)
+
+1. [TW] **Humayun Sheikh (@HMsheikh4):** "2026: AI Stopped Chatting, Started Doing. 40% of enterprise apps will have AI agents by year's end — up from 5%. That's transformational. Agentic AI is changing everything. Systems now sense, plan, and execute autonomously. No more chatbots — digital workers that get things done." — https://x.com/HMsheikh4/status/2032836878706053237 — 2026 — Why it matters: the language shift from "assistant" to "digital worker" is happening in real time across tech audiences. When mainstream X influencers start framing AI as a workforce (not a tool), Fatiha's TEAM angle ("Set Up Your First AI Employee") becomes the perfect entry point for the audience that just heard this for the first time. ★ LEAD-MAGNET (maps to **TEAM** — "How to Set Up Your First AI Employee")
+
+2. [TW] **Chris Perry / Forbes (@Forbes, July 13 2026):** "The Future of Business: AI Agents and Bionic Workers" — Jevon's Paradox for AI: "As AI makes certain work cheaper, companies and consumers will use more of that work, leading to increased demand for the work overall." — https://www.forbes.com/sites/chris-perry/2026/07/13/the-future-of-business-ai-agents-and-bionic-workers/ — Why it matters: this is the counter-intuitive take circulating the highest-engagement tech/business audiences right now. Automation doesn't shrink the human's role — it expands demand for the skilled human. The "bionic worker" (human + AI stack) outcompetes both pure-human workers and pure-AI outputs. For Fatiha's audience this is the reframe that turns "I'm scared AI will replace me" into "I need to get on the AI side of this equation now."
+
+3. [IG] **Sabrina Ramonov (@sabrina_ramonov, 965K+ Instagram):** "Fully automated system to make AI..." — reel showing the n8n + HeyGen + Blotato stack running autonomously in July 2026 — https://www.instagram.com/sabrina_ramonov/reel/DED-nxBNFk9/ — (Apify IG scraper unavailable; sourced from creator's public web presence per failure-mode rule) — Why it matters: Sabrina's continued "show the machine in motion" format outperforms tutorial breakdowns — audience sees the system running first, explanation second. Same architecture as Fatiha's M01–M04. Format signal: proof of the running system IS the content. ★ LEAD-MAGNET (maps to **STACK** — "The 3-Tool AI Stack I Actually Use")
+
+4. [IG] **Starter Story (@starter_story, 214 likes, April 2026):** "His launch post got 32K views… and only 26 signups. A casual Twitter selfie drove $1K MRR in 24 hours." — https://www.instagram.com/reel/DWrmpwyPHAl/ — Format: data storytelling with a twist reveal. Why it matters: in 2026 audiences follow people, not products. A polished launch at 32K views converted at 0.08%; a personal story converted at high rate same day. For Fatiha: Real Talk posts are not just relatability — they are the highest-converting top-of-funnel content. The transition story ("I left corporate") is not seasoning, it's the hook.
+
+5. [YT] **"How To Start A 1-Person AI Business ($0 to $1M)"** — YouTube — https://www.youtube.com/watch?v=WvsWbgE_kWg — Virality score: N/A (view-count data blocked this session; operator can verify). Why it matters: the emerging YouTube title frame is shifting from "How to Build" → "$0 to $1M with AI" — aspirational outcome in the title, not the method. This title format is now appearing across the top AI business channels. Fatiha's content can own this frame before it peaks — the story of a corporate exec going from 9-to-5 to a systems-driven business is the exact "$0 to $1M" proof the audience wants.
+
+6. [RSS] **Anthropic — "Inviting Hard Questions"** — July 9, 2026 — https://www.anthropic.com/news/hard-questions — Anthropic publicly invited people to submit their hardest questions about AI: "Who decides the rules for AI?" "Does AI make the world more dangerous?" "Can AI give my children a better future?" — acknowledging that even the company building the most capable models doesn't have all the answers. Why it matters: when the builder admits open questions, the non-technical entrepreneur has permission to stop pretending they need to understand everything. Message Fatiha can own: you don't need to map the whole territory — you need to know which 3 tools solve your specific problem this week.
+
+7. [NEWS] **Jio Haptik launches "SOLO" — AI growth team for solopreneurs** — July 2026 — https://tele.net.in/jio-haptik-launches-ai-platform-for-solopreneurs-and-small-businesses/ — A major telecom-backed AI company is now explicitly targeting 2M+ solopreneurs and small businesses with an "AI growth team in a box" product it named "SOLO." Capabilities: marketing, sales, customer support automation without a technical background. Why it matters: when enterprise tech builds and names products after the 1-person business model, mainstream arrival is confirmed. Fatiha is one full step ahead of this wave — the audience she's already built is the exact market a billion-dollar company just pointed at.
+
+### Top 3 content angles ready to use
+
+- **"Jevon's Paradox: automation doesn't shrink the human's role — it expands demand for you."** → Forbes July 13 + contrarian angle — "Everyone thinks AI cuts the workforce. Jevon's Paradox says the opposite: when work gets cheaper, people buy more of it. The solopreneurs who master AI now won't work less — they'll work on things that matter more and earn more per hour." → Pillar: **Stop Doing That by Hand** → Lead-magnet hook: comment **TEAM**
+- **"Anthropic admitted they don't have all the answers. Neither do you — and that's fine."** → RSS July 9 + What's Worth It angle — "The company building the most powerful AI in the world just invited the public to ask their hardest questions. If the builder doesn't have all the answers, you're officially off the hook. You don't need a PhD. You need 3 tools and a use case." → Pillar: **What's Worth It** → Lead-magnet hook: comment **WHAT**
+- **"32K views. 26 signups. Then a selfie made $1K MRR in 24 hours."** → Starter Story IG data + Real Talk angle — "He optimised the launch post. Polished video, clear CTA, 32K views. 26 people signed up. Then he posted a photo of himself at his desk and casually mentioned what he was building. $1K MRR the next morning. In 2026 people don't follow products. They follow people who are one step ahead of them." → Pillar: **Real Talk** → No lead-magnet (audience-building A-post)
+
+### Contrarian take logged
+
+Everyone thinks "automation = efficiency = doing the same work faster." But Jevon's Paradox applied to AI says something different: when you make a task 10x cheaper, demand for that task expands to fill the time you freed. The solopreneurs who automate will not work fewer hours — they will work on higher-leverage things. The real escape isn't automating your to-do list. It's building systems that generate revenue while you sleep. Those are different things. Most people chasing "productivity" are actually chasing the second thing but building the first.
+
+---
+
 ## RESEARCH 033 — 2026-07-13 | Daily signal harvest
 
 **Status:** NOTED
