@@ -1,17 +1,36 @@
-# Telegram approval bot for the AI Insider Brief (replaces pm2 on the old VPS).
-# Install: copy to /etc/systemd/system/, then:
-#   systemctl daemon-reload && systemctl enable --now insider-brief-bot
 [Unit]
 Description=AI Insider Brief Telegram approval bot
 After=network-online.target
+Wants=network-online.target
 
 [Service]
 Type=simple
-WorkingDirectory=/home/deploy/content-system/ai-insider-brief/ai-insider-brief/pipeline
-ExecStart=/usr/bin/doppler run -- /usr/bin/node approval-bot.mjs
+User=root
+Group=root
+WorkingDirectory=/root/ai-insider-brief-pipeline
+ExecStartPre=/usr/bin/test -s /root/ai-insider-brief-pipeline/.env
+ExecStartPre=/usr/bin/node --check /root/ai-insider-brief-pipeline/approval-bot.mjs
+ExecStart=/usr/bin/node /root/ai-insider-brief-pipeline/approval-bot.mjs
 Restart=always
 RestartSec=10
-User=deploy
+TimeoutStopSec=30
+UMask=0027
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=full
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+ProtectHostname=true
+ProtectClock=true
+LockPersonality=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+SystemCallArchitectures=native
 
 [Install]
 WantedBy=multi-user.target

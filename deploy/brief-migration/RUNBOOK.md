@@ -127,28 +127,24 @@ window. It should load over TLS and be BLUE, because it is now serving the
 repo's styles.css. If it is still purple, your browser or DNS is cached;
 try `curl -sI https://brief.shiftandlead.com | head -3` and hard-refresh.
 
-## Step 5. Install the approval bot as a service (3 min)
+## Step 5. Verify the approval bot service
 
-On the ESTATE VPS:
-
-The shipped unit file also carries the example user/path; the seds fix
-both to your real account before it is enabled:
+The Git deployment installs and supervises the approval bot automatically.
+Its private configuration and mutable queue remain under
+`/root/ai-insider-brief-pipeline/`; reviewed code comes from this repository.
+Verify it with:
 
 ```bash
-sudo cp $HOME/content-system/deploy/brief-migration/insider-brief-bot.service /etc/systemd/system/
-sudo sed -i "s|/home/deploy|$HOME|; s|User=deploy|User=$USER|" /etc/systemd/system/insider-brief-bot.service
-sudo systemctl daemon-reload
-sudo systemctl enable --now insider-brief-bot
 systemctl status insider-brief-bot --no-pager
 ```
 
 Expected: `active (running)`. The pipeline is plain Node with no npm
-dependencies, so there is nothing to install; Node 18+ is already on the
-box from the estate bootstrap.
+dependencies. Do not install a second pm2 or Doppler-managed copy; it would
+compete for the same Telegram updates.
 
 Check: send any URL to the bot in Telegram; it should reply with an
-approval card. If the service is crash-looping, `journalctl -u
-insider-brief-bot -n 50` almost always shows a missing Doppler secret.
+approval card. If the service is crash-looping, inspect it with
+`journalctl -u insider-brief-bot -n 50`.
 
 ## Step 6. Install the crons (2 min)
 

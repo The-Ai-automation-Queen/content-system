@@ -1,6 +1,6 @@
 // health-check.mjs — Monitor pipeline health, alert on Telegram if something is down
 // Runs via cron every hour. Checks:
-//   1. Is the approval bot process running?
+//   1. Is the approval bot systemd service running?
 //   2. Did the pipeline produce cards recently (last 24h)?
 //   3. Is briefs.json accessible and valid?
 //   4. Is Ollama responding?
@@ -55,18 +55,11 @@ async function main() {
 
   var issues = [];
 
-  // Check 1: Is approval bot running in pm2?
+  // Check 1: Is the supervised approval bot service running?
   try {
-    var pm2Output = execFileSync('pm2', ['jlist'], { encoding: 'utf-8' });
-    var pm2List = JSON.parse(pm2Output);
-    var bot = pm2List.find(function (p) { return p.name === 'insider-brief-bot'; });
-    if (!bot) {
-      issues.push('\u274c Approval bot not found in pm2');
-    } else if (bot.pm2_env.status !== 'online') {
-      issues.push('\u274c Approval bot status: ' + bot.pm2_env.status + ' (restarts: ' + bot.pm2_env.restart_time + ')');
-    }
+    execFileSync('systemctl', ['is-active', '--quiet', 'insider-brief-bot.service']);
   } catch (err) {
-    issues.push('\u274c Cannot check pm2: ' + err.message);
+    issues.push('\u274c Approval bot service is not active');
   }
 
   // Check 2: Is briefs.json valid and recently updated?
@@ -103,7 +96,7 @@ async function main() {
 
   // Check 4: Is frontend serving?
   try {
-    var res = await fetch('http://localhost:8080', { signal: AbortSignal.timeout(5000) });
+    var res = await fetch('https://brief.shiftandlead.com/', { signal: AbortSignal.timeout(5000) });
     if (!res.ok) {
       issues.push('\u274c Frontend HTTP ' + res.status);
     }

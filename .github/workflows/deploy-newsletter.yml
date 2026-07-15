@@ -7,7 +7,9 @@ on:
     paths:
       - ai-insider-brief/ai-insider-brief/**
       - deploy/deploy-newsletter.sh
+      - deploy/deploy-newsletter-agent.sh
       - deploy/vps-deploy-newsletter.sh
+      - deploy/brief-migration/insider-brief-bot.service
       - .github/workflows/deploy-newsletter.yml
       - .github/newsletter-known-hosts
   workflow_dispatch:
@@ -25,7 +27,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out deployment metadata
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install restricted deployment key
         env:
