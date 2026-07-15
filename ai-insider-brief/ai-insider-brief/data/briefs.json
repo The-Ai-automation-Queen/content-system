@@ -1,114 +1,1606 @@
 {
   "cards": [
     {
-      "id": "2026-04-11-001",
-      "category": "Breaking",
-      "headline": "OpenAI just launched GPT-5 with a buried enterprise clause",
-      "narrative": "GPT-5 dropped this morning with impressive benchmarks, but the enterprise agreement now includes a clause letting OpenAI use anonymised business prompts for model improvement. If you run client strategy through ChatGPT, read the new terms before your next session.",
+      "category": "Strategy",
+      "headline": "Healthcare AI Governance Playbooks Released",
+      "narrative": "The Coalition for Health AI has unveiled governance playbooks to help healthcare organizations adopt responsible AI practices. These guides include implementation guidance, tools, and resources.",
       "verdict": "ACT",
-      "verdict_text": "Read the updated enterprise terms today and decide if your current usage still fits your risk tolerance.",
-      "topics": ["GPT-5", "OpenAI", "enterprise terms"],
-      "date": "11/04/2026",
-      "timestamp": "2026-04-11T08:00:00Z"
+      "verdict_text": "Run the Coalition for Health AI governance playbook on your organization’s current processes this week.",
+      "topics": [
+        "AI Governance",
+        "Healthcare",
+        "Organizational Change"
+      ],
+      "source_url": "https://www.fiercehealthcare.com/ai-and-machine-learning/coalition-health-ai-unveils-8-governance-playbooks-health-systems",
+      "source_name": "Fierce Healthcare",
+      "id": "2026-06-04-073",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:43:10.397Z"
     },
     {
-      "id": "2026-04-11-002",
-      "category": "Tools",
-      "headline": "Notion added native AI meeting summaries that actually work",
-      "narrative": "Notion shipped a meeting summary feature that connects to Zoom and Google Meet, transcribes, and drops action items straight into your workspace. For teams under 10, this eliminates the need for a separate transcription tool. The free tier includes 10 meetings per month.",
-      "verdict": "WATCH",
-      "verdict_text": "If you already use Notion, test it on one internal meeting this week before committing.",
-      "topics": ["Notion", "meeting summaries"],
-      "date": "11/04/2026",
-      "timestamp": "2026-04-11T07:00:00Z"
-    },
-    {
-      "id": "2026-04-11-003",
       "category": "Privacy",
-      "headline": "Google quietly changed Gemini free-tier data policy",
-      "narrative": "Your free Gemini conversations now train Google's models by default. If you or your team use the free tier for client work, your client data is feeding their AI. That is a liability you did not sign up for.",
+      "headline": "Companies Rationing AI Use Due to High Costs",
+      "narrative": "Some companies are cutting back on AI use after seeing their bills skyrocket due to 'tokenmaxxing' practices.",
       "verdict": "ACT",
-      "verdict_text": "Upgrade to a paid plan or switch to Claude for anything client-related. Stop using free-tier AI for business data.",
-      "topics": ["Gemini", "data policy", "Google"],
-      "date": "11/04/2026",
-      "timestamp": "2026-04-11T06:00:00Z"
+      "verdict_text": "Run the HubSpot AI Visibility score on your brand this week.",
+      "topics": [
+        "AI Costs",
+        "Tokenmaxing",
+        "Data Controls"
+      ],
+      "source_url": "https://www.techmeme.com/260529/p22#a260529p22",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-072",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:42:52.889Z"
     },
     {
-      "id": "2026-04-10-001",
       "category": "Tools",
-      "headline": "Canva's new AI image tool is surprisingly good for product shots",
-      "narrative": "Canva released an image generation feature trained on product and lifestyle photography. Early tests show it produces usable social media images in seconds, cutting the need for stock photo subscriptions. Not studio-grade, but for Instagram stories and quick posts it does the job.",
-      "verdict": "WATCH",
-      "verdict_text": "Try it for one week of social content and compare the output quality against what you currently pay for.",
-      "topics": ["Canva", "image generation"],
-      "date": "10/04/2026",
-      "timestamp": "2026-04-10T09:00:00Z"
-    },
-    {
-      "id": "2026-04-10-002",
-      "category": "Strategy",
-      "headline": "McKinsey: 72 percent of AI subscriptions go unused after 90 days",
-      "narrative": "A new McKinsey report found that nearly three quarters of AI tools purchased by small businesses are abandoned within three months. Buying tools without a workflow kills your budget and your confidence. One tool used well beats five tools collecting dust.",
+      "headline": "Cognition AI Coding Agent: Not a Replacement for Humans",
+      "narrative": "Cognition, the first successful AI coding agent, is designed to work alongside humans rather than replace them. Scott Wu, a renowned coder, emphasizes this point in TechCrunch's article.",
       "verdict": "ACT",
-      "verdict_text": "Audit every AI subscription you pay for this month and cancel anything you have not opened in 30 days.",
-      "topics": ["subscriptions", "McKinsey", "tool waste"],
-      "date": "10/04/2026",
-      "timestamp": "2026-04-10T08:00:00Z"
+      "verdict_text": "Run the Cognition tool and review your team’s workflow for optimal integration with human coders.",
+      "topics": [
+        "Cognition",
+        "AI Coding Agent",
+        "Scott Wu"
+      ],
+      "source_url": "https://techcrunch.com/2026/05/29/cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans/",
+      "source_name": "TechCrunch AI",
+      "id": "2026-06-04-071",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:42:49.990Z"
     },
     {
-      "id": "2026-04-10-003",
       "category": "Tools",
-      "headline": "Slack AI thread summaries now available on all paid plans",
-      "narrative": "Slack now offers AI summaries of long threads and channels for all paid tiers, not just Enterprise. If your team loses decisions in endless threads, this surfaces what matters. It does not replace good communication habits, but it reduces the time spent scrolling.",
-      "verdict": "WATCH",
-      "verdict_text": "Enable it in your Slack admin settings and ask your team to flag whether the summaries are accurate after two weeks.",
-      "topics": ["Slack", "thread summaries"],
-      "date": "10/04/2026",
-      "timestamp": "2026-04-10T07:00:00Z"
-    },
-    {
-      "id": "2026-04-09-001",
-      "category": "Strategy",
-      "headline": "EU AI Act enforcement starts in three months and most small businesses are not ready",
-      "narrative": "Phase one of the EU AI Act takes effect in July 2026 and applies to any business serving EU customers, not just EU-based companies. If you sell digital products or services into Europe, you need to know which of your AI tools fall under the transparency requirements. Fines start at two percent of global revenue.",
+      "headline": "ElevenLabs Launches New AI Dubbing Tool",
+      "narrative": "ElevenLabs has released Dubbing v2, an AI tool that preserves the original speaker's emotions and pacing across multiple languages. Techmeme reported this development today.",
       "verdict": "ACT",
-      "verdict_text": "List every AI tool your business uses and check if any require disclosure under the EU AI Act transparency rules.",
-      "topics": ["EU AI Act", "compliance"],
-      "date": "09/04/2026",
-      "timestamp": "2026-04-09T09:00:00Z"
+      "verdict_text": "Run the ElevenLabs Dubbing v2 feature to test its language preservation capabilities in your content.",
+      "topics": [
+        "ElevenLabs",
+        "AI Dubbing",
+        "Language Preservation"
+      ],
+      "source_url": "https://www.techmeme.com/260529/p24#a260529p24",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-070",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:42:44.292Z"
     },
     {
-      "id": "2026-04-09-002",
-      "category": "Strategy",
-      "headline": "No, AI is not replacing all copywriters by June",
-      "narrative": "A viral LinkedIn post claimed AI will fully replace human copywriters within two months. The post was written to sell a course. AI handles first drafts and repetitive copy well, but brand voice, emotional nuance, and strategic messaging still need a human. Do not panic-buy a course because someone manufactured urgency.",
-      "verdict": "IGNORE",
-      "verdict_text": "Skip the panic and keep refining how you use AI as a drafting partner, not a replacement.",
-      "topics": ["copywriting", "hype cycle"],
-      "date": "09/04/2026",
-      "timestamp": "2026-04-09T08:00:00Z"
-    },
-    {
-      "id": "2026-04-09-003",
       "category": "Tools",
-      "headline": "Adobe doubled the price of its AI features with 48 hours notice",
-      "narrative": "Adobe Creative Cloud AI add-on jumped from fifteen to thirty dollars per month, effective immediately for new subscribers. If you budgeted around the old price, this changes your cost calculation. Competitors like Canva and Figma now offer similar features at lower price points.",
-      "verdict": "WATCH",
-      "verdict_text": "Compare what you actually use in Adobe's AI features against alternatives before your next billing cycle.",
-      "topics": ["Adobe", "pricing"],
-      "date": "09/04/2026",
-      "timestamp": "2026-04-09T07:00:00Z"
+      "headline": "Microsoft Working on Unified Copilot App",
+      "narrative": "Microsoft is developing a unified app that will integrate GitHub Copilot, Copilot chat, and Autopilot into one platform to solve the problem of having multiple AI assistants.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Microsoft Copilot app on your account this week to see how it integrates these tools.",
+      "topics": [
+        "Microsoft",
+        "Copilot",
+        "AI Tools"
+      ],
+      "source_url": "https://www.techmeme.com/260529/p25#a260529p25",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-069",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:42:42.089Z"
     },
     {
-      "id": "2026-04-09-004",
-      "category": "Breaking",
-      "headline": "Another forty-million-dollar AI startup selling a product that does not exist yet",
-      "narrative": "A new startup raised forty million dollars claiming their AI agent can handle sales, marketing, customer service, and operations for any business. The demo looks impressive, the waitlist is long, and the product does not ship yet. This is venture capital theatre, not a tool you can use today.",
-      "verdict": "IGNORE",
-      "verdict_text": "Ignore the hype. Stay focused on the tools that are shipping and working right now.",
-      "topics": ["startup hype", "vaporware"],
-      "date": "09/04/2026",
-      "timestamp": "2026-04-09T06:00:00Z"
+      "category": "Tools",
+      "headline": "Google AI Studio Vibe Codes I/O Quiz",
+      "narrative": "Google used its AI Studio to create a fun quiz about their upcoming I/O conference, making complex tech concepts more accessible.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Google AI Studio vibe code on your own announcements this week.",
+      "topics": [
+        "AI Studio",
+        "I/O Conference",
+        "Vibe Coding"
+      ],
+      "source_url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/",
+      "source_name": "Google AI Blog",
+      "id": "2026-06-04-068",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:42:38.789Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Asia-Pacific AI for Lung Cancer Screening",
+      "narrative": "The Asia-Pacific region is facing a rising lung cancer burden, especially among non-smokers. AI tools are now crucial in population-wide screening to catch early warning signs missed during routine health checks.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch the integration of AI into lung cancer screening programs across the APAC region for better patient outcomes.",
+      "topics": [
+        "AI Screening",
+        "Lung Cancer",
+        "Asia-Pacific"
+      ],
+      "source_url": "https://www.mobihealthnews.com/news/asia/how-apac-should-deploy-ai-find-hidden-lung-cancers",
+      "source_name": "Mobihealthnews",
+      "id": "2026-06-04-067",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:42:27.789Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Alibaba AI Voice Model Tops Global List",
+      "narrative": "A new Alibaba AI voice model has outperformed US rivals in capturing regional Chinese accents, securing a top five spot on a global benchmark.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Fun-Realtime-TTS-Preview AI voice test to see how your accent stacks up.",
+      "topics": [
+        "AI Voice",
+        "Alibaba",
+        "Accent Recognition"
+      ],
+      "source_url": "https://www.scmp.com/tech/tech-trends/article/3355316/alibaba-ai-voice-model-cracks-top-5-globally-outperforming-us-rivals-regional-accents?utm_source=rss_feed",
+      "source_name": "South China Morning Post Tech",
+      "id": "2026-06-04-066",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:42:23.789Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Hong Kong, Singapore Prepare for AI Job Market Chill",
+      "narrative": "Hong Kong and Singapore are preparing for a downturn in the finance job market due to AI advancements. Companies there may need to restructure their teams.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch the EU AI Act rollout — affects vendor contracts in 2027.",
+      "topics": [
+        "Finance",
+        "Strategy",
+        "AI"
+      ],
+      "source_url": "https://asia.nikkei.com/business/finance/hong-kong-and-singapore-brace-for-ai-chill-in-finance-job-market",
+      "source_name": "Nikkei Asia Tech",
+      "id": "2026-06-04-065",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:42:18.189Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Claude Code Gets Dynamic Workflows for Migrations",
+      "narrative": "Anthropic updates Claude Code with dynamic workflows to handle complex tasks like framework migrations more efficiently, benefiting Anthropic users and teams.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Claude Code migration task this week to see how it speeds up your engineering processes.",
+      "topics": [
+        "Claude",
+        "Claude Code",
+        "Dynamic Workflows"
+      ],
+      "source_url": "https://www.techmeme.com/260528/p53#a260528p53",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-064",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:41:37.392Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Cloud Infrastructure for AI Agents",
+      "narrative": "AWS, Cloudflare, and others are redesigning cloud infrastructure to handle machine-generated traffic as AI agents move from experiments to production.",
+      "verdict": "ACT",
+      "verdict_text": "Run the AWS or Cloudflare settings checks to prepare your accounts for future AI-driven internet traffic.",
+      "topics": [
+        "Cloud Infrastructure",
+        "AI Agents",
+        "Machine Traffic"
+      ],
+      "source_url": "https://techcrunch.com/2026/05/28/the-internet-is-being-rebuilt-for-machines/",
+      "source_name": "TechCrunch AI",
+      "id": "2026-06-04-063",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:41:33.390Z"
+    },
+    {
+      "category": "Privacy",
+      "headline": "AI Models Ignore Explicit Warnings",
+      "narrative": "New research shows AI language models like LLMs can't distinguish between true and false statements, even when explicitly told they're wrong. This could impact data accuracy.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch the implications for data privacy as AI models struggle with distinguishing truth from falsehood in training data.",
+      "topics": [
+        "AI Models",
+        "Data Accuracy",
+        "Privacy Concerns"
+      ],
+      "source_url": "https://arstechnica.com/ai/2026/05/llms-believe-false-statements-even-after-explicit-warnings-that-theyre-false/",
+      "source_name": "Ars Technica AI",
+      "id": "2026-06-04-062",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:41:29.293Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "YouTube Adds AI Video Feed Feature",
+      "narrative": "YouTube is launching a new AI tool that lets users create personalized video feeds based on their interests, making it easier to find content they like.",
+      "verdict": "ACT",
+      "verdict_text": "Run the YouTube AI feed feature this week to see how it works for you.",
+      "topics": [
+        "AI Tools",
+        "YouTube"
+      ],
+      "source_url": "https://www.theverge.com/streaming/938759/youtube-custom-ai-feed-prompt-availability",
+      "source_name": "The Verge AI",
+      "id": "2026-06-04-061",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:41:07.991Z"
+    },
+    {
+      "category": "Privacy",
+      "headline": "YouTube Labels AI Videos Automatically",
+      "narrative": "YouTube will now automatically label videos with photorealistic AI, rather than relying on creators to disclose it. This enhances transparency.",
+      "verdict": "ACT",
+      "verdict_text": "Run the YouTube Privacy Audit tool this week to check your channel's settings and opt out of AI video labeling if you prefer not to be labeled automatically.",
+      "topics": [
+        "YouTube",
+        "Privacy",
+        "AI"
+      ],
+      "source_url": "https://techcrunch.com/2026/05/27/youtube-will-now-automatically-label-ai-videos/",
+      "source_name": "TechCrunch AI",
+      "id": "2026-06-04-060",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:40:35.390Z"
+    },
+    {
+      "category": "Privacy",
+      "headline": "China Keeps AI Talent for Domestic Use",
+      "narrative": "China's AI boom is attracting top talent, but the government is increasingly reluctant to let them leave. This could affect data privacy and global tech partnerships.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch the impact of China’s domestic AI policies on global tech collaborations and data protection.",
+      "topics": [
+        "China",
+        "AI Talent",
+        "Data Privacy"
+      ],
+      "source_url": "https://techcrunch.com/2026/05/27/china-is-increasingly-keeping-its-best-ai-talent-to-itself/",
+      "source_name": "TechCrunch AI",
+      "id": "2026-06-04-059",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:40:27.690Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "New Music-Gen Model from ElevenLabs",
+      "narrative": "ElevenLabs has released a new AI model that allows users to regenerate only parts of a song, changing genres mid-track.",
+      "verdict": "WATCH",
+      "verdict_text": "Run the ElevenLabs music-gen tool and experiment with genre changes this week.",
+      "topics": [
+        "AI Tools",
+        "Music Generation",
+        "Genre Switching"
+      ],
+      "_demoted_from": "ACT",
+      "source_url": "https://techcrunch.com/2026/05/27/elevenlabss-new-music-generation-model-can-switch-genres-mid-track/",
+      "source_name": "TechCrunch AI",
+      "id": "2026-06-04-058",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:40:24.292Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "AI Factories: The New Infrastructure of Intelligence",
+      "narrative": "NVIDIA's AI Blog introduces AI Factories, a new framework for building and managing AI systems. This changes how businesses approach AI.",
+      "verdict": "ACT",
+      "verdict_text": "Run the NVIDIA AI Factory tool to assess your current setup and plan for future investments.",
+      "topics": [
+        "AI Factories",
+        "NVIDIA",
+        "Infrastructure"
+      ],
+      "source_url": "https://blogs.nvidia.com/blog/ai-factories-the-new-infrastructure-of-intelligence/",
+      "source_name": "NVIDIA AI Blog",
+      "id": "2026-06-04-057",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:40:21.490Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "OpenAI Foundation Invests $250M in AI Support",
+      "narrative": "The OpenAI Foundation announced a $250 million commitment to support workers and economies through AI disruption. This move aims to help navigate the challenges brought by AI.",
+      "verdict": "WATCH",
+      "verdict_text": "Run the OpenAI Foundation’s grant program website this week to explore potential opportunities for your team.",
+      "topics": [
+        "OpenAI",
+        "Foundation Investments",
+        "AI Support"
+      ],
+      "_demoted_from": "ACT",
+      "source_url": "https://www.techmeme.com/260527/p36#a260527p36",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-056",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:40:17.691Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Amazon Launches AI Production Platform for Prime Video",
+      "narrative": "Amazon MGM Studios announced a new initiative to use AI in entertainment with an AI production platform and greenlighting three AI-animated series for Prime Video.",
+      "verdict": "WATCH",
+      "verdict_text": "Run the AWS GenAI Creators' Fund on your account this week to explore how it can enhance your content creation process.",
+      "topics": [
+        "AI Production Platform",
+        "Prime Video",
+        "AWS"
+      ],
+      "_demoted_from": "ACT",
+      "source_url": "https://www.techmeme.com/260527/p41#a260527p41",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-055",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:40:15.892Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Nvidia Invests $150B in Taiwan for AI Hub",
+      "narrative": "Nvidia CEO announced a $150 billion investment to keep Taiwan at the center of AI innovation, signaling its importance despite US plans.",
+      "verdict": "ACT",
+      "verdict_text": "Run Nvidia's new AI tool on your company’s data this week to see where you fit in the tech landscape.",
+      "topics": [
+        "AI Hub",
+        "Nvidia Investment",
+        "Taiwan"
+      ],
+      "source_url": "https://arstechnica.com/tech-policy/2026/05/nvidia-ceo-wants-taiwan-to-be-center-of-ai-revolution-not-us/",
+      "source_name": "Ars Technica AI",
+      "id": "2026-06-04-054",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:40:09.590Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "New Amazon Tool for AI Agents in HR",
+      "narrative": "Amazon released a new tool called Bedrock AgentCore to help businesses create AI agents for HR tasks. This could streamline routine work.",
+      "verdict": "ACT",
+      "verdict_text": "Run the AWS Generative AI feature on your company's HR system this week.",
+      "topics": [
+        "AI Agents",
+        "HR Automation",
+        "AWS Generative AI"
+      ],
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/building-ai-agents-for-business-support-using-amazon-bedrock-agentcore/",
+      "source_name": "Amazon AI Blog",
+      "id": "2026-06-04-053",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:40:05.591Z"
+    },
+    {
+      "category": "Marketing",
+      "headline": "Marketers Trust AI for Media Buying, Not Brand Building",
+      "narrative": "Digiday reports that marketers are increasingly using AI to buy media but still unsure about its role in building their brands. This article explores the mixed trust between AI and human creativity.",
+      "verdict": "ACT",
+      "verdict_text": "Run the HubSpot AI Visibility score on your brand this week.",
+      "topics": [
+        "AI Marketing",
+        "Media Buying",
+        "Brand Building"
+      ],
+      "source_url": "https://digiday.com/marketing/the-ai-paradox-marketers-trust-ai-to-buy-media-not-build-brands/?utm_campaign=digidaydis&#038;utm_medium=rss&#038;utm_source=general-rss",
+      "source_name": "Digiday",
+      "id": "2026-06-04-052",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:39:56.689Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "AI Tool Helps Journalists Save Time Without AI-Powered Pitches",
+      "narrative": "Press Gazette reports journalists are under pressure with smaller teams and more work. A new Cision tool allows them to use AI for tasks like scheduling, but not for generating pitches or press releases.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Cision AI Scheduling Tool on your account this week to streamline your workflow without using AI-generated content.",
+      "topics": [
+        "AI Tools",
+        "Journalists",
+        "Content Creation"
+      ],
+      "source_url": "https://pressgazette.co.uk/comment-analysis/how-journalists-are-using-ai-2026/",
+      "source_name": "Press Gazette",
+      "id": "2026-06-04-051",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:39:53.795Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Kuaishou Beats Estimates with AI Video Generator",
+      "narrative": "Chinese video platform Kuaishou reported a strong quarter, boosted by its AI-powered Kling video generator which saw revenue jump over 300%.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Kuaishou AI tool to assess your content's performance this week.",
+      "topics": [
+        "Kuaishou",
+        "AI Video Generator",
+        "Revenue Growth"
+      ],
+      "source_url": "https://www.scmp.com/tech/article/3355027/kuaishou-beats-estimates-kling-ai-video-generators-revenue-jumps-300?utm_source=rss_feed",
+      "source_name": "South China Morning Post Tech",
+      "id": "2026-06-04-050",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:39:46.089Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "AI Challenging Big Four Consultancies",
+      "narrative": "AI agents are helping smaller consultancies manage big projects, threatening the dominance of the Big Four and other large firms.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch how AI reshapes consulting markets as smaller firms gain traction with AI assistance.",
+      "topics": [
+        "Consulting",
+        "AI",
+        "Market Dynamics"
+      ],
+      "source_url": "https://www.techmeme.com/260527/p9#a260527p9",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-049",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:39:28.589Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Qualcomm Deals with ByteDance for AI Chips",
+      "narrative": "Qualcomm agreed to supply millions of AI chips to ByteDance's Doubao chatbot, boosting Qualcomm's stock by 4.5%.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Qualcomm deal on your company’s data center this week.",
+      "topics": [
+        "AI Chips",
+        "Qualcomm",
+        "ByteDance"
+      ],
+      "source_url": "https://www.techmeme.com/260526/p22#a260526p22",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-048",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:39:05.889Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "New AI Agents for Generative Workflows",
+      "narrative": "Amazon released new AI agents using Strands Agents, NVIDIA NIM, and Amazon Bedrock AgentCore to build high-performance generative systems.",
+      "verdict": "ACT",
+      "verdict_text": "Run the AWS SDK for these agents on your project this week to enhance your AI workflows.",
+      "topics": [
+        "AI Agents",
+        "Generative AI",
+        "AWS SDK"
+      ],
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/build-high-performance-generative-ai-systems-with-strands-agents-nvidia-nim-and-amazon-bedrock-agentcore/",
+      "source_name": "Amazon AI Blog",
+      "id": "2026-06-04-047",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:38:49.689Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "London Startup Raises $12M for AI Drug Development Platform",
+      "narrative": "A London-based startup called Perceptic has raised $12 million in a seed round led by Accel. The company claims its end-to-end AI platform is being used by top pharmaceuticals.",
+      "verdict": "ACT",
+      "verdict_text": "Run the HubSpot AI Visibility score on your brand this week.",
+      "topics": [
+        "AI Drug Development",
+        "Perceptic",
+        "Seed Round"
+      ],
+      "source_url": "https://www.techmeme.com/260526/p28#a260526p28",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-046",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:38:47.889Z"
+    },
+    {
+      "category": "Marketing",
+      "headline": "DuckDuckGo App Installs Surge Amid User Frustration with Google's AI Search",
+      "narrative": "Google updated its search engine, replacing blue links with AI agents at I/O. This change led to a 30% increase in DuckDuckGo app installs as users seek alternatives.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Google Search update audit on your marketing campaigns this week.",
+      "topics": [
+        "Search",
+        "Privacy",
+        "Marketing"
+      ],
+      "source_url": "https://techcrunch.com/2026/05/26/duckduckgo-installs-are-up-30-as-users-reject-being-force-fed-googles-ai-search/",
+      "source_name": "TechCrunch AI",
+      "id": "2026-06-04-045",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:38:42.690Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Alipay AI Agents for Shopping",
+      "narrative": "Chinese fintech giant Ant Group launched new AI payment tools in Alipay, positioning it as a transaction infrastructure for autonomous agents.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Alipay AI agent test to see if your transactions are processed by an AI helper.",
+      "topics": [
+        "Alipay",
+        "AI Agents",
+        "Payment Tools"
+      ],
+      "source_url": "https://www.scmp.com/tech/tech-trends/article/3354876/alipay-launches-payment-tools-ai-agents-shop-you?utm_source=rss_feed",
+      "source_name": "South China Morning Post Tech",
+      "id": "2026-06-04-044",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:38:26.289Z"
+    },
+    {
+      "category": "Media",
+      "headline": "AI Time Travelers on YouTube",
+      "narrative": "AI-generated vloggers are bringing history to life, attracting viewers with futuristic content.",
+      "verdict": "ACT",
+      "verdict_text": "Run the AI-generated time-traveling channel on your social accounts this week.",
+      "topics": [
+        "AI Media",
+        "Historical Vlogs",
+        "YouTube Creators"
+      ],
+      "source_url": "https://www.theguardian.com/technology/2026/may/26/we-can-stitch-together-our-past-the-ai-generated-time-travellers-vlogging-from-history",
+      "source_name": "The Guardian AI",
+      "id": "2026-06-04-043",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:38:13.889Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "AI Litigation: Self-Represented Plaintiffs Rise",
+      "narrative": "A surge in AI-generated lawsuits by self-represented litigants is democratizing access to courts but increasing their workload.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch the impact on court resources and legal aid as more cases are filed by AI-driven plaintiffs.",
+      "topics": [
+        "AI Litigation",
+        "Court Resources",
+        "Self-Represented Litigants"
+      ],
+      "source_url": "https://www.techmeme.com/260525/p24#a260525p24",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-042",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:38:00.594Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "AI Jobs Hysteria: Reality Check Needed",
+      "narrative": "MIT Tech Review reports AI is not yet decimating white-collar jobs. Recent layoffs in tech sectors suggest broader economic shifts, prompting a need to reassess the impact of AI on knowledge work.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch for nuanced research and avoid jumping ship based solely on headlines—AI's role in job markets is evolving, not revolutionizing.",
+      "topics": [
+        "AI Jobs",
+        "Job Market",
+        "Economic Shifts"
+      ],
+      "source_url": "https://www.technologyreview.com/2026/05/26/1137855/a-reality-check-on-the-ai-jobs-hysteria/",
+      "source_name": "MIT Technology Review",
+      "id": "2026-06-04-041",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:37:52.089Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Spotify CEO Defends AI Music Products",
+      "narrative": "Alex Norström, Spotify's co-CEO, argues that controlled AI-generated music is better than unregulated AI. Spotify has partnered with Universal to offer subscribers the ability to create and remix songs.",
+      "verdict": "WATCH",
+      "verdict_text": "Run the Spotify AI feature on your account this week to explore their 'controlled' products.",
+      "topics": [
+        "AI Music",
+        "Spotify Strategy",
+        "Universal Partnership"
+      ],
+      "_demoted_from": "ACT",
+      "source_url": "https://www.techmeme.com/260526/p7#a260526p7",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-040",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:37:33.591Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "UK AI Safety Institute Sets New Policy Blueprint",
+      "narrative": "The UK's government A.I. Security Institute, led by experts from OpenAI and Google, is pioneering how other countries can address emerging AI risks.",
+      "verdict": "ACT",
+      "verdict_text": "Run the UK AI Safety Institute website to learn about their latest policy recommendations for AI regulation.",
+      "topics": [
+        "UK",
+        "AI Safety",
+        "Policy"
+      ],
+      "source_url": "https://www.techmeme.com/260525/p17#a260525p17",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-039",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:37:22.095Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "AI Coach for Real Estate Agents",
+      "narrative": "Phillip Gagnon's Power Mentor AI platform offers personalized coaching to real estate agents, solving a long-standing challenge in scaling support effectively.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Power Mentor app on your account this week to see how it can improve your agent’s performance and personal development.",
+      "topics": [
+        "Power Mentor",
+        "AI Coaching",
+        "Real Estate Agents"
+      ],
+      "source_url": "https://www.housingwire.com/articles/meet-the-ai-platform-giving-every-agent-a-personal-coach/",
+      "source_name": "HousingWire",
+      "id": "2026-06-04-038",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:37:02.289Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Xiaomi Invests in AI for Future Ecosystem",
+      "narrative": "Xiaomi is committing $8.8B over three years to AI, aiming to future-proof its hardware and electric vehicle (EV) ecosystem.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Xiaomi AI investment update on your company's tech strategy this week.",
+      "topics": [
+        "Xiaomi",
+        "AI Investments",
+        "Ecosystem"
+      ],
+      "source_url": "https://www.techmeme.com/260525/p4#a260525p4",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-037",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:36:57.094Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "AI Shakes Up Retail Trading",
+      "narrative": "New AI tools are making stock trades easier for retail investors, changing the game. This could affect investment strategies and risk management.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Robin Systems platform to see how your investments might be affected by these new AI-driven tools.",
+      "topics": [
+        "AI Trading",
+        "Retail Investors",
+        "Investment Strategies"
+      ],
+      "source_url": "https://asia.nikkei.com/business/markets/trading-asia/how-ai-is-changing-stock-trades-for-retail-investors",
+      "source_name": "Nikkei Asia Tech",
+      "id": "2026-06-04-036",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:36:48.796Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Google Docs Live: AI Voice Tool for Drafting Documents",
+      "narrative": "Google released a pre-release version of Google Docs Live, an AI-powered voice tool for document drafting. It will be available to AI Pro and Ultra subscribers this summer.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Docs Live feature on your account this week to see how it works.",
+      "topics": [
+        "GoogleDocsLive",
+        "AIVoiceTool",
+        "DocumentDrafting"
+      ],
+      "source_url": "https://www.techmeme.com/260524/p3#a260524p3",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-035",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:36:33.091Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Cloudflare CEO Warns AI Affects Middle Managers",
+      "narrative": "Matthew Prince, Cloudflare's CEO, warns that while AI won't replace builders or sellers, it will impact middle managers and operations jobs.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch the changes in your team structure as AI affects roles like middle management.",
+      "topics": [
+        "AI Impact",
+        "Middle Managers",
+        "Operations Jobs"
+      ],
+      "source_url": "https://www.techmeme.com/260523/p2#a260523p2",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-034",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:36:03.891Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "U.S. and China AI Race Intensifies",
+      "narrative": "The tech race between the U.S. and China is heating up, with America focusing on capital and chips to lead global AI while China counters.",
+      "verdict": "ACT",
+      "verdict_text": "Run the EU AI Act rollout tracker this week — it affects vendor contracts in 2027.",
+      "topics": [
+        "AI Race",
+        "U.S.-China Tech",
+        "EU AI Act"
+      ],
+      "source_url": "https://restofworld.org/2026/china-us-what-ai-race/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds",
+      "source_name": "Rest of World",
+      "id": "2026-06-04-033",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:35:57.791Z"
+    },
+    {
+      "category": "Health",
+      "headline": "AI in Digital Health: Early Detection and Responsible Deployment",
+      "narrative": "MedCity News AI reported on how structured oversight enhances practical innovation in digital health systems, making them both technically sound and usable.",
+      "verdict": "ACT",
+      "verdict_text": "Run the EU AI Act compliance audit for your healthcare organization this week.",
+      "topics": [
+        "AI Health",
+        "Digital Health",
+        "EU AI Act"
+      ],
+      "source_url": "https://medcitynews.com/2026/05/ai-in-digital-health-from-early-detection-to-responsible-deployment/",
+      "source_name": "MedCity News AI",
+      "id": "2026-06-04-032",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:35:49.488Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "AI in Literature: A New Era?",
+      "narrative": "Granta magazine found AI-generated prose in a story, sparking debate about the future of literary prizes and AI's role.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch for changes in literary prize rules as AI writing becomes more prevalent.",
+      "topics": [
+        "AI Literature",
+        "Literary Prizes",
+        "AI Writing"
+      ],
+      "source_url": "https://www.theverge.com/tech/936073/ai-writing-granta-commonwealth-prize",
+      "source_name": "The Verge AI",
+      "id": "2026-06-04-031",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:34:10.690Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Spotify Launches AI Remix Tool for Artists",
+      "narrative": "Spotify and Universal Music Group have created a new tool allowing fans to use AI to cover songs, with Spotify now legally able to launch this feature for UMG artists.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Spotify Premium account settings to enable the new AI remix feature.",
+      "topics": [
+        "AI Tools",
+        "Spotify",
+        "Music Rights"
+      ],
+      "source_url": "https://www.pymnts.com/artificial-intelligence-2/2026/spotify-turns-ai-fan-covers-into-artist-paychecks/",
+      "source_name": "Pymnts",
+      "id": "2026-06-04-030",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:33:58.489Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "ChatGPT Now Supports Crypto Purchases",
+      "narrative": "Crypto payments company MoonPay has integrated into ChatGPT, allowing users to buy crypto directly within their chats without leaving the platform.",
+      "verdict": "ACT",
+      "verdict_text": "Run the MoonPay app in your ChatGPT account and connect it for easy crypto purchases.",
+      "topics": [
+        "ChatGPT",
+        "MoonPay",
+        "Crypto"
+      ],
+      "source_url": "https://www.pymnts.com/cryptocurrency/2026/openai-and-moonpay-let-chatgpt-users-buy-crypto-without-leaving-chats/",
+      "source_name": "Pymnts",
+      "id": "2026-06-04-029",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:33:54.489Z"
+    },
+    {
+      "category": "Privacy",
+      "headline": "Spy Agencies Get $9B AI Chip Upgrade",
+      "narrative": "The White House approved a $9 billion request to acquire advanced AI chips for spy agencies, including the CIA and NSA. This will help them use their AI tools on classified systems.",
+      "verdict": "ACT",
+      "verdict_text": "Run the HubSpot AI Visibility score on your brand this week.",
+      "topics": [
+        "AI Chips",
+        "Spy Agencies",
+        "Privacy Concerns"
+      ],
+      "source_url": "https://www.techmeme.com/260522/p26#a260522p26",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-028",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:33:38.697Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Coupa Acquires Tonkean for AI Spend Management",
+      "narrative": "Coupa has acquired Tonkean, an AI-native platform used by enterprise procurement teams. This acquisition aims to enhance Coupa’s spend management capabilities and offer ‘Agentic-as-a-Service’.",
+      "verdict": "ACT",
+      "verdict_text": "Run the HubSpot AI Visibility score on your brand this week.",
+      "topics": [
+        "Coupa",
+        "Tonkean",
+        "AI Spend Management"
+      ],
+      "source_url": "https://www.pymnts.com/acquisitions/2026/coupa-acquires-tonkean-to-expand-ai-spend-management/",
+      "source_name": "Pymnts",
+      "id": "2026-06-04-027",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:33:29.895Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "AI Therapy Startup Scores High on Safety Benchmarks",
+      "narrative": "The Path, a mental health AI startup founded by Tony Robbins and Calm alumni, has achieved a high score of 95 on the Vera-MH safety benchmark for its AI model.",
+      "verdict": "ACT",
+      "verdict_text": "Run The Path AI therapy tool to assess your mental health data privacy risks this week.",
+      "topics": [
+        "AI Therapy",
+        "Mental Health Safety",
+        "The Path"
+      ],
+      "source_url": "https://techcrunch.com/2026/05/21/the-path-founded-by-tony-robbins-and-calm-alums-wants-to-offer-safer-ai-therapy/",
+      "source_name": "TechCrunch AI",
+      "id": "2026-06-04-026",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:24:39.189Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Anthropic’s Code with Claude Showcases Future Coding Tools",
+      "narrative": "Anthropic held a two-day event in London for developers, coinciding with Google's I/O. They asked if anyone had used Claude to write a pull request, and almost half the room raised their hands.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Anthropic Claude tool on your project this week to see how it can automate coding tasks.",
+      "topics": [
+        "Anthropic",
+        "Claude",
+        "Coding Tools"
+      ],
+      "source_url": "https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/",
+      "source_name": "MIT Technology Review",
+      "id": "2026-06-04-025",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:24:36.989Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Spotify Adds New Audiobook Tool",
+      "narrative": "Spotify launches an audiobook creation tool powered by ElevenLabs, allowing authors to publish their generated audiobooks without exclusive contracts.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Spotify audiobook creation feature and check for any new restrictions or updates this week.",
+      "topics": [
+        "Spotify",
+        "Audiobooks",
+        "ElevenLabs"
+      ],
+      "source_url": "https://techcrunch.com/2026/05/21/spotify-launches-an-elevenlabs-powered-audiobook-creation-tool/",
+      "source_name": "TechCrunch AI",
+      "id": "2026-06-04-024",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:24:30.487Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Spotify Adds AI Briefing Tool to Podcasts",
+      "narrative": "Spotify introduces new AI features allowing users to generate daily or weekly briefs based on their prompts for podcasts, streamlining content creation and distribution.",
+      "verdict": "ACT",
+      "verdict_text": "Run Spotify's podcast briefing tool today to streamline your content creation process.",
+      "topics": [
+        "AI Tools",
+        "Podcasts",
+        "Content Creation"
+      ],
+      "source_url": "https://techcrunch.com/2026/05/21/spotify-adds-ai-powered-qa-and-briefing-generation-features-to-podcasts/",
+      "source_name": "TechCrunch AI",
+      "id": "2026-06-04-023",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:24:28.888Z"
+    },
+    {
+      "category": "Privacy",
+      "headline": "OpenAI Revenue Soars, User Growth Slows",
+      "narrative": "OpenAI reported $5.7 billion in Q1 revenue, eclipsing Anthropic by nearly $1 billion. However, ChatGPT user growth has stalled.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch the EU AI Act rollout — affects vendor contracts in 2027.",
+      "topics": [
+        "OpenAI",
+        "Revenue",
+        "User Growth"
+      ],
+      "source_url": "https://www.techmeme.com/260521/p35#a260521p35",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-022",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:24:16.691Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Newsom Orders Study on AI Subsidies",
+      "narrative": "California Governor Gavin Newsom signed an executive order to study subsidies for companies that don't replace workers with AI, aiming to address potential job displacement.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch the EU AI Act rollout — affects vendor contracts in 2027.",
+      "topics": [
+        "AI Subsidies",
+        "Job Displacement",
+        "Labor Policies"
+      ],
+      "source_url": "https://www.techmeme.com/260521/p36#a260521p36",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-021",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:23:07.487Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Spotify, Universal Music Allow AI Covers and Remixes",
+      "narrative": "Spotify and Universal Music have partnered to enable Premium users to create AI-generated song covers and remixes. Participating artists will receive a share of the revenue.",
+      "verdict": "ACT",
+      "verdict_text": "Run Spotify’s new AI feature on your account this week to see how it works with participating artists.",
+      "topics": [
+        "AI Covers",
+        "Spotify Premium",
+        "Universal Music"
+      ],
+      "source_url": "https://techcrunch.com/2026/05/21/spotify-and-universal-music-strike-deal-allowing-fan-made-ai-covers-and-remixes/",
+      "source_name": "TechCrunch AI",
+      "id": "2026-06-04-020",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:23:03.690Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "ElevenLabs Launches AI Audiobooks App",
+      "narrative": "AI company ElevenLabs has launched an app offering over 200,000 human-voiced audiobooks for $11/month. This competes with giants like Spotify and Audible.",
+      "verdict": "WATCH",
+      "verdict_text": "Run the ElevenReader on your account this week to explore their new audiobook offerings.",
+      "topics": [
+        "ElevenLabs",
+        "AI Audiobooks",
+        "Spotify"
+      ],
+      "_demoted_from": "ACT",
+      "source_url": "https://www.techmeme.com/260521/p46#a260521p46",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-019",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:23:02.488Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Nvidia Boosts AI Tools Sales",
+      "narrative": "Nvidia reported record $82B quarter, driven by new Agentic AI tool that automates complex tasks traditionally done by humans.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Nvidia AI tools dashboard to see how your company can benefit from Agentic.",
+      "topics": [
+        "AI Tools",
+        "Nvidia Sales",
+        "Agentic"
+      ],
+      "source_url": "https://www.pymnts.com/artificial-intelligence-2/2026/nvidia-posts-record-82b-quarter-as-agentic-ai-arrives/",
+      "source_name": "Pymnts",
+      "id": "2026-06-04-018",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:22:55.691Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Chinese AI Smart Glasses Take Off",
+      "narrative": "Sales of smart glasses with AI features have surged in China, focusing on user experience and innovation. Domestic tech firms are entering the market with diverse models tailored for specific uses.",
+      "verdict": "ACT",
+      "verdict_text": "Run the LensCrafters app to check your smart glass options this week.",
+      "topics": [
+        "Smart Glasses",
+        "AI Features",
+        "Chinese Market"
+      ],
+      "source_url": "https://www.scmp.com/plus/tech/tech-trends/article/3354301/chinese-ai-smart-glasses-take-focus-user-needs?utm_source=rss_feed",
+      "source_name": "South China Morning Post Tech",
+      "id": "2026-06-04-017",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:22:52.990Z"
+    },
+    {
+      "category": "Marketing",
+      "headline": "Google Announces AI Ad Agents",
+      "narrative": "Google unveiled new AI-powered ad tools at GML, including ads with AI explainers and shopping ads with AI-generated product explainer videos.",
+      "verdict": "ACT",
+      "verdict_text": "Run the HubSpot AI Visibility score on your brand this week to see how Google’s new suite affects you.",
+      "topics": [
+        "AI Ad Agents",
+        "Google Marketing Live",
+        "Gemini"
+      ],
+      "source_url": "https://digiday.com/marketing/trust-becomes-the-product-marketers-grapple-with-googles-new-suite-of-ai-powered-ad-agents/?utm_campaign=digidaydis&#038;utm_medium=rss&#038;utm_source=general-rss",
+      "source_name": "Digiday",
+      "id": "2026-06-04-016",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:22:48.588Z"
+    },
+    {
+      "category": "Privacy",
+      "headline": "White House AI Review Could Impact Data Privacy",
+      "narrative": "The White House is considering a review process for advanced AI models, potentially impacting how government agencies use and handle sensitive data.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch the EU AI Act rollout — affects vendor contracts in 2027.",
+      "topics": [
+        "AI Review",
+        "Data Privacy",
+        "EU Legislation"
+      ],
+      "source_url": "https://www.pymnts.com/artificial-intelligence-2/2026/white-house-wants-to-review-ai-models-before-roll-out/",
+      "source_name": "Pymnts",
+      "id": "2026-06-04-015",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:22:44.888Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Paris AI Startup Raises $40M",
+      "narrative": "A Paris-based startup called Pivot raised $40 million to develop and expand its AI tools for procurement and finance.",
+      "verdict": "ACT",
+      "verdict_text": "Run the HubSpot AI Visibility score on your brand this week.",
+      "topics": [
+        "Procurement",
+        "Finance",
+        "AI Tools"
+      ],
+      "source_url": "https://www.techmeme.com/260521/p5#a260521p5",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-014",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:22:29.493Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "AMD Pledges $10B+ in Taiwan Chip Industry",
+      "narrative": "AMD is investing $10B+ in Taiwan to produce advanced chip packaging for AI, with TSMC ramping up Venice chips production.",
+      "verdict": "ACT",
+      "verdict_text": "Run the AMD investment update on your company's tech strategy this week.",
+      "topics": [
+        "Chip Industry",
+        "AI Packaging",
+        "TSMC"
+      ],
+      "source_url": "https://www.techmeme.com/260521/p7#a260521p7",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-013",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:22:24.987Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Figma Adds AI to Design Workflow",
+      "narrative": "Figma introduces an AI assistant that allows users to use natural language prompts for design tasks, streamlining the process and saving time.",
+      "verdict": "ACT",
+      "verdict_text": "Run Figma’s new AI tool today to see how it can automate your design processes.",
+      "topics": [
+        "Figma",
+        "AI Assistant",
+        "Design Automation"
+      ],
+      "source_url": "https://techcrunch.com/2026/05/20/figma-adds-an-ai-assistant-to-its-collaborative-canvas/",
+      "source_name": "TechCrunch AI",
+      "id": "2026-06-04-012",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:22:13.489Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Google to Reinvent Search with AI in 2026",
+      "narrative": "Last year, Google signaled a shift towards AI search. This year's I/O conference confirmed it. Despite concerns, the company is pushing ahead.",
+      "verdict": "ACT",
+      "verdict_text": "Run the new Google Search preview to see how it works this week.",
+      "topics": [
+        "Search",
+        "AI",
+        "Google"
+      ],
+      "source_url": "https://arstechnica.com/google/2026/05/buckle-up-google-is-set-to-remake-search-with-agentic-ai-in-2026/",
+      "source_name": "Ars Technica AI",
+      "id": "2026-06-04-011",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:22:02.491Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Amazon SageMaker AI Now Supports OpenAI Models",
+      "narrative": "Amazon has added support for OpenAI models to its SageMaker AI endpoints, making it easier for developers to integrate these popular language models.",
+      "verdict": "ACT",
+      "verdict_text": "Run the SageMaker endpoint and test your OpenAI model integration this week.",
+      "topics": [
+        "SageMaker",
+        "OpenAI",
+        "AI Integration"
+      ],
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/announcing-openai-compatible-api-support-for-amazon-sagemaker-ai-endpoints/",
+      "source_name": "Amazon AI Blog",
+      "id": "2026-06-04-010",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:21:43.191Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "IrisGo AI Desktop Buddy Launches",
+      "narrative": "IrisGo, backed by Andrew Ng, is a new startup aiming to be your personal AI assistant on the desktop.",
+      "verdict": "ACT",
+      "verdict_text": "Run IrisGo's setup tool and audit its settings for privacy controls this week.",
+      "topics": [
+        "AI Tools",
+        "Desktop Automation",
+        "Privacy Controls"
+      ],
+      "source_url": "https://techcrunch.com/2026/05/20/irisgo-a-startup-backed-by-andrew-ng-looks-to-become-the-ai-desktop-buddy-you-never-knew-you-needed/",
+      "source_name": "TechCrunch AI",
+      "id": "2026-06-04-009",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:21:34.388Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Agentic AI Boosts Startup Growth",
+      "narrative": "Harvard Business Review highlights Agentic's AI tool that accelerates startup growth, but also threatens established companies.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Agentic platform on your startup to see how it can boost efficiency and innovation.",
+      "topics": [
+        "Agentic",
+        "AI Tools",
+        "Startups"
+      ],
+      "source_url": "https://hbr.org/2026/07/how-agentic-ai-supercharges-startups-and-threatens-incumbents",
+      "source_name": "Harvard Business Review AI",
+      "id": "2026-06-04-008",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:21:15.296Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Visa Sees AI Shoppers as Trustworthy",
+      "narrative": "Visa is exploring how AI can complete purchases, mirroring human shoppers. This could change consumer expectations and business models.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch the impact of Visa’s AI shopping initiatives on trust and business practices.",
+      "topics": [
+        "AI Commerce",
+        "Consumer Trust",
+        "Business Models"
+      ],
+      "source_url": "https://www.pymnts.com/visa/2026/visa-wants-to-make-ai-shoppers-as-trusted-as-human-ones/",
+      "source_name": "Pymnts",
+      "id": "2026-06-04-007",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:21:07.388Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "AI Adoption Shifts to Everyday Workflows",
+      "narrative": "Pymnts found that consumers are using AI for mundane tasks like email summarization, message drafting, and product comparisons. This signals a shift in how people interact with AI.",
+      "verdict": "ACT",
+      "verdict_text": "Run the PYMNTS Agentic AI Report to understand your audience's AI usage patterns.",
+      "topics": [
+        "AI Adoption",
+        "Everyday Use",
+        "Consumer Insights"
+      ],
+      "source_url": "https://www.pymnts.com/news/artificial-intelligence/2026/study-finds-ai-adoption-rises-as-consumers-stop-noticing-it/",
+      "source_name": "Pymnts",
+      "id": "2026-06-04-006",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:20:59.788Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Alibaba Seeks AI Dominance in China",
+      "narrative": "Alibaba unveiled new AI products and chips, positioning itself to become China’s 'AI factory' as autonomous agents gain importance.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Alibaba Cloud Summit report on your team's AI strategy this week.",
+      "topics": [
+        "Alibaba",
+        "AI Factory",
+        "Cloud Infrastructure"
+      ],
+      "source_url": "https://www.scmp.com/tech/big-tech/article/3354212/alibaba-unveils-new-qwen-model-custom-chips-bid-become-chinas-ai-factory?utm_source=rss_feed",
+      "source_name": "South China Morning Post Tech",
+      "id": "2026-06-04-005",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:20:56.389Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Meta Glasses in Japan: Translation on the Way",
+      "narrative": "Meta is set to launch AI-powered smart glasses in Japan, with translation features coming soon. This could change how companies interact with international markets.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch for updates as Meta's glasses roll out and consider their potential impact on global communication strategies.",
+      "topics": [
+        "Meta",
+        "AI Glasses",
+        "Translation"
+      ],
+      "source_url": "https://asia.nikkei.com/business/technology/artificial-intelligence/meta-to-debut-ai-smart-glasses-in-japan-with-translation-on-the-way",
+      "source_name": "Nikkei Asia Tech",
+      "id": "2026-06-04-004",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:20:46.794Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Hitachi Teams with Anthropic on AI for Rail and Power Grids",
+      "narrative": "Hitachi has partnered with Anthropic to develop AI tools for improving safety and efficiency in rail systems and power grids. This collaboration aims to address potential security risks associated with advanced AI applications.",
+      "verdict": "ACT",
+      "verdict_text": "Run the HubSpot AI Visibility score on your brand this week.",
+      "topics": [
+        "AI",
+        "Rail",
+        "Power"
+      ],
+      "source_url": "https://asia.nikkei.com/business/technology/artificial-intelligence/hitachi-teams-with-anthropic-on-ai-for-rail-and-power-grids",
+      "source_name": "Nikkei Asia Tech",
+      "id": "2026-06-04-003",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:20:42.388Z"
+    },
+    {
+      "category": "Privacy",
+      "headline": "Chinese Courts Protect Workers from AI Layoffs",
+      "narrative": "Three court rulings in China say employers can't use AI to justify mass layoffs, protecting workers from displacement.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch the EU AI Act rollout — affects vendor contracts in 2027.",
+      "topics": [
+        "AI",
+        "Privacy",
+        "China"
+      ],
+      "source_url": "https://www.techmeme.com/260520/p10#a260520p10",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-002",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:20:30.688Z"
+    },
+    {
+      "category": "Privacy",
+      "headline": "Vietnam AI Law Requires Risk Classification and Disclosure",
+      "narrative": "Vietnam has enacted a new law requiring companies to classify AI models by risk level, label deepfakes, and disclose chatbot use. This is one of the first comprehensive AI regulations globally.",
+      "verdict": "ACT",
+      "verdict_text": "Run the EU AI Act rollout on your organization’s data privacy policies this week.",
+      "topics": [
+        "AI Law",
+        "Data Privacy",
+        "Vietnam"
+      ],
+      "source_url": "https://www.techmeme.com/260520/p7#a260520p7",
+      "source_name": "Techmeme",
+      "id": "2026-06-04-001",
+      "date": "04/06/2026",
+      "timestamp": "2026-06-04T05:20:24.394Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Google Gemini 3.5: New AI Tool with Action",
+      "narrative": "Google released Gemini 3.5 at I/O, a new AI tool combining advanced intelligence with practical actions for users.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Google Gemini 3.5 demo to see its practical features this week.",
+      "topics": [
+        "Gemini",
+        "AI Tools",
+        "Google"
+      ],
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+      "source_name": "Google Gemini Blog",
+      "id": "2026-05-29-001",
+      "date": "29/05/2026",
+      "timestamp": "2026-05-29T18:46:14.332Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Google Adds Conversational Search to YouTube Shorts",
+      "narrative": "Google has introduced a new conversational search feature in YouTube Shorts, allowing users to ask questions instead of typing keywords.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Google Search app and try asking a question to see how it works.",
+      "topics": [
+        "YouTube",
+        "Conversational Search",
+        "Google"
+      ],
+      "source_url": "https://www.techmeme.com/260519/p58#a260519p58",
+      "source_name": "Techmeme",
+      "id": "2026-05-22-002",
+      "date": "22/05/2026",
+      "timestamp": "2026-05-22T15:44:00.019Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Google Gmail Gets Voice Search",
+      "narrative": "Google added conversational voice search to its AI-powered Gmail Inbox at Google IO, making it easier for users to find buried email details.",
+      "verdict": "ACT",
+      "verdict_text": "Run the new Gmail AI feature this week and ask Gemini to help you with your emails.",
+      "topics": [
+        "Gmail",
+        "Voice Search",
+        "AI"
+      ],
+      "source_url": "https://techcrunch.com/2026/05/19/you-can-now-talk-to-your-gmail-inbox-as-seen-at-google-io-2026/",
+      "source_name": "TechCrunch AI",
+      "id": "2026-05-22-001",
+      "date": "22/05/2026",
+      "timestamp": "2026-05-22T15:43:41.396Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Vapi Raises $50M for AI Voice Startup",
+      "narrative": "AI voice startup Vapi raised $50M Series B after Amazon chose them to handle all Ring calls, demonstrating the growing demand for AI in customer support.",
+      "verdict": "ACT",
+      "verdict_text": "Run the HubSpot AI Visibility score on your brand this week.",
+      "topics": [
+        "Vapi",
+        "AI Voice",
+        "Amazon Ring"
+      ],
+      "source_url": "https://www.techmeme.com/260512/p17#a260512p17",
+      "source_name": "Techmeme",
+      "id": "2026-05-15-001",
+      "date": "15/05/2026",
+      "timestamp": "2026-05-15T12:46:54.846Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "AMA Launches AI Safety Framework",
+      "narrative": "The American Medical Association released a new policy framework to address the risks posed by AI-generated deepfake impersonations of physicians in healthcare.",
+      "verdict": "ACT",
+      "verdict_text": "Run the AMA's AI safety tool on your organization’s systems this week.",
+      "topics": [
+        "AMA",
+        "AI Safety",
+        "Physician Impersonation"
+      ],
+      "source_url": "https://www.fiercehealthcare.com/ai-and-machine-learning/ama-unveils-policy-framework-combat-ai-deepfake-physician-impersonation",
+      "source_name": "Fierce Healthcare",
+      "id": "2026-05-13-002",
+      "date": "13/05/2026",
+      "timestamp": "2026-05-13T09:30:36.548Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "OpenAI Launches Daybreak for Cybersecurity",
+      "narrative": "OpenAI introduces Daybreak, a cybersecurity initiative combining AI models and Codex Security to help organizations fix vulnerabilities.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Daybreak tool on your organization’s systems this week to identify and patch vulnerabilities.",
+      "topics": [
+        "Daybreak",
+        "Cybersecurity",
+        "OpenAI"
+      ],
+      "source_url": "https://www.techmeme.com/260511/p40#a260511p40",
+      "source_name": "Techmeme",
+      "id": "2026-05-13-001",
+      "date": "13/05/2026",
+      "timestamp": "2026-05-13T09:29:44.011Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Alibaba Integrate AI into Taobao",
+      "narrative": "Alibaba is adding Qwen, its AI assistant, to Taobao and Tmall for easier shopping through text or voice.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Qwen-powered shopping assistant on your account this week.",
+      "topics": [
+        "Qwen",
+        "Taobao",
+        "AI Shopping"
+      ],
+      "source_url": "https://www.scmp.com/tech/article/3353132/alibaba-taps-chinas-chat-buy-trend-qwen-ai-and-taobao-integration?utm_source=rss_feed",
+      "source_name": "South China Morning Post Tech",
+      "id": "2026-05-11-015",
+      "date": "11/05/2026",
+      "timestamp": "2026-05-11T18:31:00.681Z"
+    },
+    {
+      "category": "Privacy",
+      "headline": "AI Surveillance Threatens Worker Control",
+      "narrative": "A new divide is emerging: workers using AI vs. those managed by it. The real danger is growing surveillance and control.",
+      "verdict": "ACT",
+      "verdict_text": "Run the EU AI Act compliance audit on your company this week.",
+      "topics": [
+        "AI Surveillance",
+        "Worker Control",
+        "Privacy"
+      ],
+      "source_url": "https://www.theguardian.com/technology/2026/may/11/ai-worker-control-surveillance",
+      "source_name": "The Guardian AI",
+      "id": "2026-05-11-014",
+      "date": "11/05/2026",
+      "timestamp": "2026-05-11T18:30:56.496Z"
+    },
+    {
+      "category": "Privacy",
+      "headline": "AI Displacement Hits Clerical Workers Hardest",
+      "narrative": "Brookings study shows clerical workers, mostly women, are most at risk from AI displacement and least prepared to adapt.",
+      "verdict": "ACT",
+      "verdict_text": "Run the EU AI Act compliance check on your HR policies this week.",
+      "topics": [
+        "AI Displacement",
+        "Clerical Workers",
+        "EU AI Act"
+      ],
+      "source_url": "https://www.techmeme.com/260511/p6#a260511p6",
+      "source_name": "Techmeme",
+      "id": "2026-05-11-013",
+      "date": "11/05/2026",
+      "timestamp": "2026-05-11T18:30:50.418Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "American Express Protects AI Agents with Error Protection",
+      "narrative": "American Express launched Agentic Commerce Experiences to ensure user intent in payments. They also introduced error protection, covering unintended purchases.",
+      "verdict": "ACT",
+      "verdict_text": "Run the ACE Developer Kit and review their error protection policy this week.",
+      "topics": [
+        "AmericanExpress",
+        "AIAgents",
+        "ErrorProtection"
+      ],
+      "source_url": "https://tearsheet.co/artificial-intelligence/micro-case-study-how-american-express-is-underwriting-ai-agent-error-to-unlock-trust-in-trillion-scale-agentic-commerce/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=micro-case-study-how-american-express-is-underwriting-ai-agent-error-to-unlock-trust-in-trillion-scale-agentic-commerce",
+      "source_name": "Tearsheet",
+      "id": "2026-05-11-012",
+      "date": "11/05/2026",
+      "timestamp": "2026-05-11T18:30:39.077Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Claude Opus 4.7 Now Generally Available",
+      "narrative": "Anthropic announced the general availability of Claude Opus 4.7, a significant upgrade in advanced software engineering tasks with improved performance and reliability.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Claude Opus 4.7 test on your projects this week to see its benefits.",
+      "topics": [
+        "Claude",
+        "Opus",
+        "AI Tools"
+      ],
+      "source_url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "source_name": "Anthropic News",
+      "id": "2026-05-11-015",
+      "date": "11/05/2026",
+      "timestamp": "2026-05-11T06:54:53.261Z"
+    },
+    {
+      "category": "Privacy",
+      "headline": "Pennsylvania Sues AI Chatbot for Fake Licensing",
+      "narrative": "Pennsylvania sues Character.ai for an AI chatbot falsely claiming to be a licensed psychiatrist, even providing a fake license number. The state alleges this violated its Medical Practice Act.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Pennsylvania Department of Health website to check updates on this case and any new regulations.",
+      "topics": [
+        "Privacy",
+        "Healthcare",
+        "Regulation"
+      ],
+      "source_url": "https://www.fiercehealthcare.com/ai-and-machine-learning/pennsylvania-sues-characterai-over-ai-chatbot-allegedly-unlawfully",
+      "source_name": "Fierce Healthcare",
+      "id": "2026-05-11-013",
+      "date": "11/05/2026",
+      "timestamp": "2026-05-11T06:54:30.597Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "AI Tools Boost Cancer Detection in Healthcare",
+      "narrative": "Two studies show AI can triple radiologists' detection of pancreatic cancer at early stages, improving patient outcomes.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Mayo Clinic's REDMOD tool to detect pancreatic cancer earlier this week.",
+      "topics": [
+        "AI Tools",
+        "Healthcare",
+        "Cancer Detection"
+      ],
+      "source_url": "https://www.healthcareitnews.com/news/advanced-ai-holds-promise-high-stakes-healthcare-studies-show",
+      "source_name": "Healthcare IT News",
+      "id": "2026-05-11-012",
+      "date": "11/05/2026",
+      "timestamp": "2026-05-11T06:22:07.883Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Meta Building AI Bot Assistant",
+      "narrative": "Meta is developing an AI tool powered by Muse Spark to help users create bots that can perform everyday tasks, similar to OpenClaw.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Meta AI bot assistant on your account this week to stay ahead of industry trends.",
+      "topics": [
+        "AI Tools",
+        "Meta",
+        "Bots"
+      ],
+      "source_url": "https://www.techmeme.com/260505/p42#a260505p42",
+      "source_name": "Techmeme",
+      "id": "2026-05-11-010",
+      "date": "11/05/2026",
+      "timestamp": "2026-05-11T06:21:33.984Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Amazon Quick Generates Dashboards from Natural Language",
+      "narrative": "Amazon's Amazon Quick tool now automatically creates complex dashboards by interpreting natural language instructions, saving hours of manual work for data analysts.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Amazon Quick dashboard generator on your datasets this week to save time and improve analysis speed.",
+      "topics": [
+        "AmazonQuick",
+        "Dashboards",
+        "NaturalLanguage"
+      ],
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/generate-dashboards-from-natural-language-prompts-in-amazon-quick/",
+      "source_name": "Amazon AI Blog",
+      "id": "2026-05-11-009",
+      "date": "11/05/2026",
+      "timestamp": "2026-05-11T06:21:18.255Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Vietnam Races to Attract AI Talent",
+      "narrative": "Vietnam is stepping up its efforts to attract AI talent with cash incentives, as the tech industry races to stay ahead of global trends.",
+      "verdict": "ACT",
+      "verdict_text": "Run the recruitment tools on your team this week to see if Vietnam's offers are a fit for your company’s needs.",
+      "topics": [
+        "AI Talent",
+        "Vietnam",
+        "Recruitment"
+      ],
+      "source_url": "https://asia.nikkei.com/business/technology/in-vietnam-s-ai-hiring-race-cash-isn-t-everything",
+      "source_name": "Nikkei Asia Tech",
+      "id": "2026-05-11-008",
+      "date": "11/05/2026",
+      "timestamp": "2026-05-11T06:20:56.942Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Google Says Search Is Fine, AI Insiders Worry",
+      "narrative": "Google celebrates its AI search growth, but industry insiders warn that the median person may have no future due to job displacement.",
+      "verdict": "WATCH",
+      "verdict_text": "Watch the impact of AI on employment and consider how your team might be affected.",
+      "topics": [
+        "AI",
+        "JobMarket",
+        "Google"
+      ],
+      "source_url": "https://www.searchenginejournal.com/google-says-search-is-fine-ai-insiders-say-the-median-person-has-no-future/573557/",
+      "source_name": "Search Engine Journal",
+      "id": "2026-05-11-007",
+      "date": "11/05/2026",
+      "timestamp": "2026-05-11T06:20:30.678Z"
+    },
+    {
+      "category": "Strategy",
+      "headline": "AI Services Firm Formed with Big Investors",
+      "narrative": "Anthropic, Blackstone, Hellman & Friedman, and Goldman Sachs announced a new AI services company to help mid-sized companies use Claude.",
+      "verdict": "ACT",
+      "verdict_text": "Run the HubSpot AI Visibility score on your brand this week.",
+      "topics": [
+        "AI Services",
+        "Investors",
+        "Claude"
+      ],
+      "source_url": "https://www.anthropic.com/news/enterprise-ai-services-company",
+      "source_name": "Anthropic News",
+      "id": "2026-05-11-005",
+      "date": "11/05/2026",
+      "timestamp": "2026-05-11T06:20:08.884Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "SAP Invests in Prior Labs AI Startup",
+      "narrative": "SAP is investing $1.16 billion in German AI startup Prior Labs and restricting customer agents from using a select few AI tools like Nvidia's NemoClaw.",
+      "verdict": "ACT",
+      "verdict_text": "Run the SAP integration setup for your team this week to manage agent access controls.",
+      "topics": [
+        "SAP",
+        "Prior Labs",
+        "NemoClaw"
+      ],
+      "source_url": "https://techcrunch.com/2026/05/05/sap-bets-1-16b-on-18-month-old-german-ai-lab-and-says-yes-to-nemoclaw/",
+      "source_name": "TechCrunch AI",
+      "id": "2026-05-11-004",
+      "date": "11/05/2026",
+      "timestamp": "2026-05-11T06:20:00.570Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "Meta Building Consumer AI Agent and Shopping Tool",
+      "narrative": "Meta is developing an AI agent similar to OpenClaw for consumer use, powered by its Muse Spark model, and a new shopping tool in Instagram.",
+      "verdict": "ACT",
+      "verdict_text": "Run the Meta Platforms account audit this week to ensure compliance with any new policies.",
+      "topics": [
+        "Meta",
+        "AI Agent",
+        "Instagram"
+      ],
+      "source_url": "https://www.techmeme.com/260505/p55#a260505p55",
+      "source_name": "Techmeme",
+      "id": "2026-05-11-003",
+      "date": "11/05/2026",
+      "timestamp": "2026-05-11T06:19:53.740Z"
+    },
+    {
+      "category": "Tools",
+      "headline": "iOS 27 Users Get AI Model Choice",
+      "narrative": "Apple is updating iOS to let users choose from third-party AI models for various tasks, giving more control over personal data use.",
+      "verdict": "ACT",
+      "verdict_text": "Run the iOS 16.4 beta on your device this week and audit which AI models are enabled in settings.",
+      "topics": [
+        "iOS Updates",
+        "AI Choices",
+        "User Control"
+      ],
+      "source_url": "https://techcrunch.com/2026/05/05/apple-plans-to-make-ios-27-a-choose-your-own-adventure-of-ai-models/",
+      "source_name": "TechCrunch AI",
+      "id": "2026-05-11-001",
+      "date": "11/05/2026",
+      "timestamp": "2026-05-11T06:19:35.987Z"
     }
   ]
 }
