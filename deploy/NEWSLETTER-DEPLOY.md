@@ -23,6 +23,18 @@ runtime environment and must never be added to frontend code or this repo.
 `/var/lib/ai-insider-brief/briefs.json`; every release links to that stable
 file. A code deployment therefore cannot erase newly generated cards.
 
+The validated runtime state is mirrored back to this repository every hour by
+`.github/workflows/mirror-newsletter-content.yml`. The workflow downloads the
+public JSON over HTTPS, enforces size and schema limits, rejects any increase
+in duplicate card IDs, and commits only `data/briefs.json` when its semantic
+content changed.
+
+The mirror uses GitHub's short-lived repository token with only
+`contents: write`; no GitHub write credential is stored on the VPS. A commit
+made with that token does not start another push workflow, so mirroring cannot
+create a deployment loop. The VPS file remains the live runtime state while
+the Git copy provides history and recovery.
+
 ## Production flow
 
 1. Merge a newsletter change into `main`.
@@ -30,11 +42,30 @@ file. A code deployment therefore cannot erase newly generated cards.
 3. The forced command on the VPS runs
    `/usr/local/sbin/deploy-content-system-newsletter` and nothing else.
 4. The wrapper refuses to overwrite a dirty VPS checkout, fetches `main` with
-   a fast-forward-only merge, and invokes `deploy/deploy-newsletter.sh`.
+   a fast-forward-only merge, and invokes the public-site and newsletter-agent
+   deployment scripts.
 5. The deploy script builds a new release, validates JSON and JavaScript,
    checks that no private files are public, atomically changes the live
    symlink, tests Nginx, and checks the local HTTPS response.
 6. If the health check fails, the previous release is restored automatically.
+
+The agent deploy preserves `/root/ai-insider-brief-pipeline/.env`, its pending
+approval queue, crawl state, and generated data. It updates only reviewed code
+and baseline configuration, validates the selected LLM and local Ollama model,
+then runs the Telegram approval bot as `insider-brief-bot.service`. Failed
+service activation restores the previous code. Approval messages are released
+in batches of at most ten, with at least fifteen minutes between backlog
+batches, to prevent a restart from flooding Telegram.
+
+## Generated-content mirror
+
+The mirror runs at minute 23 of every hour and can also be started from
+**Actions → Mirror newsletter content to Git → Run workflow**.
+
+If the public file is unavailable, empty, oversized, malformed, or introduces
+additional duplicate IDs, the job fails without changing the repository. The
+live newsletter and its publishing pipeline continue running; only the Git
+snapshot is delayed until the next successful run.
 
 Production releases are stored in `/var/www/ai-insider-brief-releases/`.
 The active public path remains `/var/www/ai-insider-brief` so the existing

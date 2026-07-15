@@ -51,7 +51,12 @@ the estate VPS. It serves www.shiftandlead.com, the apex, and
 brief.shiftandlead.com. Newsletter changes merged into `main` deploy through
 `.github/workflows/deploy-newsletter.yml` into versioned VPS releases with an
 automatic health check and rollback. The generated `briefs.json` remains
-persistent runtime state and is not overwritten by code deploys.
+persistent runtime state and is not overwritten by code deploys. A separate
+hourly workflow validates that live JSON and mirrors changes back to `main`,
+providing Git history without storing a repository write credential on the VPS.
+The crawler and Telegram approval agent run from the reviewed pipeline code in
+this repository; deployments preserve their private secrets, pending queue,
+source state, and generated data while systemd keeps the approval agent alive.
 guides.shiftandlead.com is served by Vercel (project `content-system`), which
 auto-deploys on every merge to `main`. SSH port 22 is key-only, rate-limited,
 and protected by fail2ban; password login is disabled.

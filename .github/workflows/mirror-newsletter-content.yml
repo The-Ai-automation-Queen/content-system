@@ -1,0 +1,50 @@
+name: Mirror newsletter content to Git
+
+on:
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: newsletter-content-mirror
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Fetch and validate production newsletter state
+        run: deploy/mirror-newsletter-content.sh
+
+      - name: Commit a changed snapshot
+        run: |
+          target="ai-insider-brief/ai-insider-brief/data/briefs.json"
+          if git diff --quiet -- "$target"; then
+            echo "No newsletter content change to commit."
+            exit 0
+          fi
+
+          unexpected="$(git diff --name-only | grep -Fvx "$target" || true)"
+          if [[ -n "$unexpected" ]]; then
+            echo "Mirror changed an unexpected file:" >&2
+            echo "$unexpected" >&2
+            exit 1
+          fi
+
+          git diff --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "$target"
+          git commit -m "Mirror generated newsletter content"
+          git pull --rebase origin main
+          git push origin HEAD:main

@@ -371,24 +371,34 @@ var editState = {}; // chatId -> { card, messageId }
 // Check for new pending cards periodically
 var lastPendingCheck = 0;
 var PENDING_CHECK_INTERVAL = 10000; // 10 seconds
+var lastPendingBatch = 0;
+var APPROVAL_BATCH_SIZE = 10;
+var APPROVAL_BATCH_INTERVAL = 15 * 60 * 1000;
 
-async function checkNewPending() {
+async function checkNewPending(force) {
   var now = Date.now();
-  if (now - lastPendingCheck < PENDING_CHECK_INTERVAL) return;
+  if (!force && now - lastPendingCheck < PENDING_CHECK_INTERVAL) return;
   lastPendingCheck = now;
+  if (!force && now - lastPendingBatch < APPROVAL_BATCH_INTERVAL) return;
 
   var pending = loadPending();
-  var hasNew = false;
+  var sentCount = 0;
   for (var i = 0; i < pending.length; i++) {
-    if (!pending[i]._sent) {
+    if (!pending[i]._sent && sentCount < APPROVAL_BATCH_SIZE) {
       console.log('[BOT] New pending card found: ' + pending[i].headline);
-      await sendForApproval(pending[i]);
+      var sentMessage = await sendForApproval(pending[i]);
+      if (!sentMessage || !sentMessage.message_id) {
+        console.error('[BOT] Approval message was not accepted by Telegram; card remains unsent.');
+        break;
+      }
       pending[i]._sent = true;
-      hasNew = true;
+      sentCount += 1;
     }
   }
-  if (hasNew) {
+  if (sentCount > 0) {
     savePending(pending);
+    lastPendingBatch = now;
+    console.log('[BOT] Sent ' + sentCount + ' pending card(s) for approval.');
   }
 }
 
@@ -400,20 +410,11 @@ async function pollLoop() {
   console.log('[BOT] Briefs path: ' + BRIEFS_PATH);
   console.log('[BOT] Pending path: ' + PENDING_PATH);
 
-  // Send any unsent pending cards on startup
   var pending = loadPending();
-  for (var i = 0; i < pending.length; i++) {
-    if (!pending[i]._sent) {
-      console.log('[BOT] Sending pending card: ' + pending[i].headline);
-      await sendForApproval(pending[i]);
-      pending[i]._sent = true;
-    }
-  }
-  if (pending.length > 0) {
-    savePending(pending);
-    console.log('[BOT] Sent ' + pending.length + ' pending card(s) for approval.');
-  } else {
+  if (pending.length === 0) {
     console.log('[BOT] No pending cards. Watching for new ones...');
+  } else {
+    await checkNewPending(true);
   }
 
   while (true) {
@@ -616,6 +617,10 @@ async function main() {
   BRIEFS_PATH = env.BRIEFS_JSON_PATH || './data/briefs.json';
   PENDING_PATH = env.PENDING_PATH || './pipeline/cards-pending.json';
   PREVIEW_TRIGGER_PATH = env.PREVIEW_TRIGGER_PATH || './pipeline/preview-trigger.json';
+  var configuredBatchSize = parseInt(env.APPROVAL_BATCH_SIZE || '10', 10);
+  var configuredBatchInterval = parseInt(env.APPROVAL_BATCH_INTERVAL_MINUTES || '15', 10);
+  APPROVAL_BATCH_SIZE = Number.isFinite(configuredBatchSize) && configuredBatchSize > 0 ? configuredBatchSize : 10;
+  APPROVAL_BATCH_INTERVAL = (Number.isFinite(configuredBatchInterval) && configuredBatchInterval > 0 ? configuredBatchInterval : 15) * 60 * 1000;
 
   // LLM config for submit mode synthesis — only falls back to Ollama 3B
   // when Gemini is genuinely unconfigured, never as a silent default.

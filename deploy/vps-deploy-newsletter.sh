@@ -35,4 +35,9 @@ fi
 sudo -H -u fatiha git -C "$REPO" fetch origin "$BRANCH"
 sudo -H -u fatiha git -C "$REPO" merge --ff-only "origin/$BRANCH"
 
-exec "$REPO/deploy/deploy-newsletter.sh"
+"$REPO/deploy/deploy-newsletter.sh"
+if [[ -x "$REPO/deploy/deploy-newsletter-agent.sh" ]]; then
+  exec "$REPO/deploy/deploy-newsletter-agent.sh"
+fi
+
+echo "Newsletter agent deployment script is not present; public site only."
