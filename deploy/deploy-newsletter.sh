@@ -17,7 +17,7 @@ RELEASES_DIR="${NEWSLETTER_RELEASES_DIR:-/var/www/ai-insider-brief-releases}"
 STATE_DIR="${NEWSLETTER_STATE_DIR:-/var/lib/ai-insider-brief}"
 LOCK_FILE="${NEWSLETTER_LOCK_FILE:-/run/lock/ai-insider-brief-deploy.lock}"
 TIMESTAMP="$(date -u +%Y%m%dT%H%M%SZ)"
-REVISION="$(git -C "$REPO_ROOT" rev-parse --short=12 HEAD 2>/dev/null || printf 'manual')"
+REVISION="$(git -c safe.directory="$REPO_ROOT" -C "$REPO_ROOT" rev-parse --short=12 HEAD 2>/dev/null || printf 'manual')"
 RELEASE="$RELEASES_DIR/$TIMESTAMP-$REVISION"
 STATE_FILE="$STATE_DIR/briefs.json"
 
