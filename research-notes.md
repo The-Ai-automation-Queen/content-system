@@ -2,6 +2,40 @@
 
 ---
 
+## RESEARCH 035 — 2026-07-15 | Daily signal harvest
+
+**Status:** NOTED
+**Sources hit:** Twitter/X (2, web-search fallback), Instagram (2, web-search fallback), YouTube (1, virality score N/A), RSS/Anthropic (1), News (1)
+**Apify status:** NOT AVAILABLE this session — all social slots filled from web-search per failure-mode rule. No signals invented.
+
+### Signals of the day (7)
+
+1. [TW] **Greg Isenberg (@gregisenberg):** "The whole business becomes readable to agents. Your data, SOPs, pricing, permissions, and decisions all live in one shared context layer... The most valuable thing you can build in 2026 is a business so well-documented that an agent can run it." — https://x.com/gregisenberg/status/2070918939526205494 — ~July 2026 (X blocked unauthenticated fetch; URL confirmed via multiple search citations) — Why it matters: reframes AI readiness as a documentation and ops discipline, not a coding task. Immediately actionable for a non-technical solopreneur — write your SOPs, clarify your process, and you're already building the AI-ready business. ★ LEAD-MAGNET (maps to **TEAM** — "How to Set Up Your First AI Employee")
+
+2. [TW] **Mark Zuckerberg (TechCrunch, July 2, 2026):** "The trajectory of the agentic development over at least the last four months hasn't really accelerated in the way that we expected." — https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped/ — Why it matters: the CEO who restructured Meta around AI agent productivity and laid off 8,000 employees to fund it just admitted the gains haven't arrived on schedule. This is the sharpest contrarian data point of the month — enterprise AI is still catching up; the solo operator who moves now has an asymmetric advantage that enterprise won't close for quarters.
+
+3. [IG] **Sabrina Ramonov (@sabrina_ramonov):** n8n automation that reposts your TikToks — and presumably other short-form content — across platforms automatically — https://www.instagram.com/reel/DLdR9nUoVAN/ — Date: unconfirmed (Instagram login wall; URL surfaced via web search, content described in search snippets) — Why it matters: "show the machine running" continues to be Sabrina's highest-performing format. One person maintaining 9-platform distribution with a single approval step, no manual editing — this is the visual proof of what Fatiha's system already does. ★ LEAD-MAGNET (maps to **STACK** — "The 3-Tool AI Stack I Actually Use")
+
+4. [IG] **@shesmakingmillions:** "AI eliminates repetitive tasks so one person can do the work that previously required three — and you can train AI on your voice and business frameworks." — https://www.instagram.com/reel/DXqpKD0EYX7/ — April 28, 2026 (web fallback — no July 2026 IG reel date-confirmed; best available real result) — Why it matters: the "one person multiplied by AI" message is breaking through female entrepreneur accounts, which means this framing is crossing the chasm from tech-forward to mainstream. Fatiha's audience is exactly this demographic.
+
+5. [YT] **"I Built 4 AI Systems That Businesses Can't Stop Buying | AI Automation Agency Secrets 2026"** — Simple Tech Skills — https://www.youtube.com/watch?v=M2ivBWjkPFY — ~July 10, 2026 (confirmed "5 days ago" in search results dated July 15) — Virality score: N/A (view count not indexed; verify on YouTube). Why it matters: outcome-first title framing — "what businesses are actively paying for" signals real demand, not theory. No coding assumed. The format shift from "how to build" to "what buyers want" is accelerating.
+
+6. [RSS] **Anthropic — "Introducing Claude for Teachers"** — July 14, 2026 — https://www.anthropic.com/news/claude-for-teachers — Why it matters: Anthropic is now shipping profession-specific AI modes. The "I'm not technical enough" barrier is collapsing as tools get tailored to specific roles. For Fatiha's audience of coaches, trainers, and educators in corporate: purpose-built AI for their workflow is arriving now, not later.
+
+7. [NEWS] **AI agent customer support cost: $0.46 per ticket vs. $4.18 human-handled (9x difference)** — Mean CEO Blog, AI Agents News July 2026 — https://blog.mean.ceo/ai-agents-news-july-2026/ — Why it matters: when the ROI number is this stark, it stops being a "maybe someday" decision. Every solopreneur handling support manually is subsidising that gap. The winning pattern confirmed in the piece: map one messy process, add a human review step, measure time saved. That's Fatiha's playbook in one sentence. ★ LEAD-MAGNET (maps to **INBOX** — "The Inbox Manager Setup")
+
+### Top 3 content angles ready to use
+
+- **"Build a business your agent can run — start with one documented SOP."** → Greg Isenberg's "readable to agents" frame + Build Once, Runs Forever pillar — "You don't need a team of developers. You need a process written down clearly enough that an AI can follow it. That's it. Document one workflow this week and you're already ahead of 90% of operators." → Pillar: **Build Once, Runs Forever** → Lead-magnet hook: comment **TEAM**
+- **"Zuck spent $145B on AI agents and admitted they underdelivered. Here's why that's your advantage."** → Zuckerberg contrarian + What's Worth It pillar — "Enterprise AI is still catching up. The solo operator who implements the tools that already work today has an asymmetric advantage that won't be available for long." → Pillar: **What's Worth It** → Lead-magnet hook: comment **WHAT**
+- **"AI handles customer support for $0.46 a ticket. Human support costs $4.18. The math has decided."** → News stat + Stop Doing That by Hand — visceral, specific, provokes immediate action for any solopreneur still doing this manually. → Pillar: **Stop Doing That by Hand** → Lead-magnet hook: comment **INBOX**
+
+### Contrarian take logged
+
+Everyone thinks the AI agent revolution is already running at full speed. Mark Zuckerberg — who bet Meta's entire workforce restructuring on it, spending $145 billion — just admitted it hasn't accelerated the way he expected. But that's not a reason to wait. It's the opposite signal: the enterprise version is late, which means the solo operator who implements the tools that *already work* today has an asymmetric window that enterprise won't close for quarters. The people who act now won't just save time — they'll be a full cycle ahead when everyone else finally catches up.
+
+---
+
 ## RESEARCH 034 — 2026-07-14 | Daily signal harvest
 
 **Status:** NOTED
