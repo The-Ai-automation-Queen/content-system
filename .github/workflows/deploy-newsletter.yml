@@ -1,0 +1,62 @@
+name: Deploy newsletter to VPS
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ai-insider-brief/ai-insider-brief/**
+      - deploy/deploy-newsletter.sh
+      - deploy/vps-deploy-newsletter.sh
+      - .github/workflows/deploy-newsletter.yml
+      - .github/newsletter-known-hosts
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: newsletter-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out deployment metadata
+        uses: actions/checkout@v4
+
+      - name: Install restricted deployment key
+        env:
+          NEWSLETTER_DEPLOY_SSH_KEY: ${{ secrets.NEWSLETTER_DEPLOY_SSH_KEY }}
+        run: |
+          test -n "$NEWSLETTER_DEPLOY_SSH_KEY"
+          install -d -m 0700 ~/.ssh
+          printf '%s\n' "$NEWSLETTER_DEPLOY_SSH_KEY" > ~/.ssh/newsletter_deploy
+          chmod 0600 ~/.ssh/newsletter_deploy
+
+      - name: Trigger verified VPS deployment
+        run: |
+          ssh \
+            -i ~/.ssh/newsletter_deploy \
+            -o BatchMode=yes \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile=.github/newsletter-known-hosts \
+            -o ConnectTimeout=15 \
+            deploy@187.77.153.212 \
+            deploy-newsletter
+
+      - name: Verify public newsletter
+        run: |
+          curl \
+            --fail \
+            --silent \
+            --show-error \
+            --location \
+            --max-time 20 \
+            --retry 3 \
+            --retry-all-errors \
+            https://brief.shiftandlead.com/ \
+            | grep -q 'AI Insider Brief'
