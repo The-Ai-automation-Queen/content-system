@@ -23,6 +23,11 @@
 
 > **14/07/2026 batch note:** ENTRY 047-066 are Cordiner-method rewrites (outcome hook + one-win recipe + real receipts + involvement close, per docs/2026-07-14-cordiner-vault-comparison.md). Each supersedes the READY entry named in its meta line. The superseded originals (and BLOCKED ENTRY 013) were moved to `content-vault-archive.md` the same day, statuses preserved — do not draw from them.
 
+- 15/07/2026 | LinkedIn | "Day 1 of Switching My Machine On — Build a Content Machine That Runs Without You" — Activation Arc Day 1, build-in-public, 66-entry stat | READY TO POST
+- 15/07/2026 | LinkedIn | "How to Make Your Business Agent-Ready Starting Tonight" — SOP Result Recipe, RESEARCH 035-S1 (Greg Isenberg) | READY TO POST
+- 15/07/2026 | LinkedIn | "How to Handle Customer Support for $0.46 Per Ticket" — stop-doing-by-hand Result Recipe, RESEARCH 035-S7 | READY TO POST
+- 15/07/2026 | LinkedIn | "How to Take the AI Timing Window That Most Solopreneurs Don't Know Is Open" — contrarian opinion, RESEARCH 035-S2+S6 | READY TO POST
+- 15/07/2026 | LinkedIn | "How to Give AI the Full Picture of Your Business Without Sharing Private Data" — educational method + community C post | DRAFT [PREP: community link]
 - 14/07/2026 | Short-form video | "How One Person Runs a Company of 137 AI Employees" — rewrite of the superseded entry, how-to-first (v3) | READY TO POST
 - 14/07/2026 | LinkedIn | "How I Knew It Was Time to Leave Corporate. The Sunday Test." — rewrite of the superseded entry, how-to-first (v3) | KILLED 14/07/2026 (operator: factually incorrect)
 - 14/07/2026 | LinkedIn | "How to Run Your Whole Business on 3 Tools" — rewrite of the superseded entry, how-to-first (v3) | READY TO POST
@@ -68,6 +73,167 @@
 - 23/06/2026 | Short-form video | "Stop Using AI Like a Vending Machine" — build systems, not answers | READY TO POST
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
+
+---
+
+## ENTRY 071 — 15/07/2026 | LinkedIn | How to Give AI the Full Picture of Your Business Without Sharing Private Data | DRAFT
+`C · Time Wins · CTA: community waitlist · critic 7.5 · src: pillar method, vault practice · ⚠️ PREP: insert community waitlist link before queueing`
+
+How to give AI the full picture of your business without sharing private data. The method in 4 steps.
+
+Context is what separates a useful AI output from a generic one.
+
+The reason most people get mediocre results: they ask vague questions. "Write me a LinkedIn post about productivity." That's starving it.
+
+The reason most people hold back their real context: they're not sure what's safe to share.
+
+Here's the method — fast enough to run before your next session:
+
+1. **Give it your role and audience.** "I help [describe your customer] get [describe the outcome]. My business is built around [describe your core offer or service]."
+
+2. **Give it your voice.** Paste 3 sentences that sound like you — from an email, a message, anything you've actually written. Let it read you before it writes for you.
+
+3. **Redact the private parts.** Replace real client names with [CLIENT], company names with [COMPANY], revenue figures with [FIGURE]. The AI needs your patterns and your context — not the specific details that belong to someone else.
+
+4. **Tell it what good looks like.** "Here's something I wrote that worked: [example]. Match that tone and depth."
+
+Four inputs. You'll notice the difference in the first output.
+
+This is one of the fundamentals we work through every month inside the AI Automation Queen community — with your actual business, not a generic example.
+
+If you want to do this alongside people who are building for real: join us → [PREP: insert community waitlist link before queueing]
+
+> **Critic notes:** Hook 8/10, positioning 9/10, specificity 9/10, voice 8/10, CTA 6/10 (blocked by PREP), proven-pattern 5/10 (no logged data — untested territory). Avg 7.5. Lifts to ~8.5 once community link is live. DRAFT until PREP resolved.
+
+---
+
+## ENTRY 070 — 15/07/2026 | LinkedIn | How to Take the AI Timing Window That Most Solopreneurs Don't Know Is Open | READY TO POST
+`A · What's Worth It · CTA: WHAT · critic 8.0 · src: RESEARCH 035-S2 (Zuckerberg/TechCrunch Jul 2 2026), RESEARCH 035-S6 (Claude for Teachers, Anthropic Jul 14 2026)`
+
+How to take the AI timing window that most solopreneurs don't know is open.
+
+Two things happened this week that almost no one connected.
+
+Mark Zuckerberg told Meta staff that AI agents haven't progressed as fast as he hoped — after $145 billion in investment.
+
+The same week, Anthropic shipped Claude for Teachers: a purpose-built AI mode for a non-technical professional, no setup required.
+
+Here's what those two signals mean together: enterprise AI is running behind schedule. Accessible AI for one specific person doing one specific job? Already deployed.
+
+You're not waiting for AI to be ready. Enterprise is.
+
+When the corporate version of a technology is running late, the people already building with the working version compound a head start that money can't buy back quickly. It happened with social media. With mobile apps.
+
+This is that window. Not someday. This week.
+
+So what's the move?
+
+Write down the one task in your business that hasn't changed in two years. That task is your first AI hire. Not when you feel ready — this week.
+
+The advantage isn't being smarter. It's being 6 months earlier.
+
+Comment WHAT and I'll send you the plain-English guide to what AI actually is right now — no hype, no jargon.
+
+> **Critic notes:** Hook 9/10, positioning 9/10, specificity 8/10 ("6 months earlier" is framing not a logged stat — directional, appropriate for opinion), voice 9/10, CTA 8/10, proven-pattern 5/10 (untested). Avg 8.0. READY TO POST.
+
+---
+
+## ENTRY 069 — 15/07/2026 | LinkedIn | How to Handle Customer Support for $0.46 Per Ticket | READY TO POST
+`A · Stop Doing That by Hand · CTA: INBOX · critic 8.0 · src: RESEARCH 035-S7 (Mean CEO Blog, AI Agents News Jul 2026)`
+
+How to handle customer support for $0.46 per ticket. Step by step, this week.
+
+New data, AI Agents News digest, July 2026: AI-handled support tickets cost $0.46 each. Human-handled support costs $4.18.
+
+That's a 9x gap — per ticket, every ticket, for as long as you run a business.
+
+If you're still answering support messages by hand, you're subsidising that difference every day.
+
+Here's how to close it in 5 steps:
+
+1. List your 10 most common customer questions. Pull them from memory or from your inbox. These are the replies you've typed 40 or 50 times.
+
+2. For each question, write the ideal answer — exactly how you'd reply if you had the time to do it perfectly, every time.
+
+3. Build your AI support assistant with this prompt (replace real client names with [CLIENT] and company names with [COMPANY] before you paste):
+
+"You handle first-response customer support for my business. Context: [2 sentences on what you do and who your customers are]. When someone contacts me with [question type], respond like this: [your ideal answer]. Keep the tone [casual/professional]. If you don't know the answer, say: 'Great question — I'll check on this and get back to you within 24 hours.' Don't make anything up."
+
+4. Test it on your 10 questions. Fix anything that sounds off.
+
+5. Route new support messages to this assistant for first response. Review and send — or let it send directly for low-risk queries.
+
+That's it. One document and one prompt. Your first AI support employee.
+
+Do it and comment INBOX with the question it handles best. I'll send you the full inbox manager setup.
+
+> **Critic notes:** Hook 9/10, positioning 9/10, specificity 9/10 (stat sourced RESEARCH 035-S7), voice 8/10, CTA 8/10 (involvement close), proven-pattern 5/10 (untested). Avg 8.0. READY TO POST.
+
+---
+
+## ENTRY 068 — 15/07/2026 | LinkedIn | How to Make Your Business Agent-Ready Starting Tonight | READY TO POST
+`A · Build Once, Runs Forever · CTA: TEAM · critic 8.0 · src: RESEARCH 035-S1 (Greg Isenberg, X ~Jul 2026)`
+
+How to make your business agent-ready starting tonight. One SOP, one document, 30 minutes.
+
+Greg Isenberg put it in one line this week: "The most valuable thing you can build in 2026 is a business so well-documented that an agent can run it."
+
+He's right. And it's simpler than it sounds.
+
+You don't need a developer. You don't need a $10K tool. You need your process written down.
+
+Here's how to do it in 30 minutes tonight:
+
+1. Pick ONE task you repeat every week — the most boring, most predictable one.
+2. Do it one more time. As you go, write down every step in plain sentences. Exactly as you do it, in order. Don't clean it up.
+3. When you're done, mark each step: rule (same every time) or judgment call (needs your brain)?
+4. Write the rules into a one-paragraph brief: "You are my [task] assistant. Every time I send you [input], do the following: [your rule steps, in order]. Stop if you're unsure and ask me."
+5. Paste it into Claude or ChatGPT. Run it. Fix what's off.
+
+That single page is the difference between a tool you tried once and an employee that shows up every day.
+
+Copy and paste this prompt to get started:
+
+"Help me document one of my business processes. I'll describe the task and you ask me one question at a time to help me write it step by step. Replace any client or company names with placeholders as we go. The process I want to document: [your most repetitive task]."
+
+Do it tonight, then comment TEAM with what process you documented. I'll send you the setup for turning that document into a running system.
+
+> **Critic notes:** Hook 8/10, positioning 9/10, specificity 9/10 (Greg Isenberg quote sourced RESEARCH 035-S1; 5 steps; copy-paste prompt included), voice 8/10, CTA 9/10 (involvement close: comment with what they documented), proven-pattern 5/10 (untested). Avg 8.0. READY TO POST.
+
+---
+
+## ENTRY 067 — 15/07/2026 | LinkedIn | Day 1 of Switching My Machine On — Build a Content Machine That Runs Without You | READY TO POST
+`A · Build Once, Runs Forever · CTA: TEAM · critic 8.0 · src: personal-brain.md (current project), performance-log.md (vault count 66 verified, 0 POSTED verified)`
+`Series: Activation Arc — Day 1`
+
+Day 1 of switching my machine on.
+
+How to build a content machine that runs without you — and what it actually looks like from the inside.
+
+My system has been live for 6 weeks.
+
+66 pieces of content drafted. None of them written by hand. 0 published yet — because I'm still wiring the last switch: the one that moves a draft from a queue to a live post.
+
+That's the honest version of "build once, runs forever." Build the machine. Build the quality check. Flip the switch.
+
+Here's what happens every night while I sleep:
+
+1. The system scans 7 sources — news, competitor moves, platform shifts.
+2. It picks the 3 strongest angles for my audience.
+3. It writes 5 pieces in my voice.
+4. It queues them for my morning review.
+
+That's it. The only thing I still do by hand: say yes or no.
+
+Not writing. Not researching. Not formatting. One judgment call per batch.
+
+If you're still doing steps 1–4 yourself, you're running a sprint, not a business.
+
+Comment TEAM and I'll send you the setup for your first AI employee — the one I'd hire before any of the others.
+
+Tomorrow: the first posts go live. I'll show you the numbers from Day 1.
+
+> **Critic notes:** Hook 9/10 (series header + outcome promise in <150 chars; build-in-public urgency), positioning 9/10, specificity 9/10 (66 drafts, 0 POSTED, 7 sources, 5 pieces/run — all verifiable from vault + perf-log), voice 8/10, CTA 8/10, proven-pattern 5/10 (no logged data for this audience — untested territory; Harper Carroll series mechanic has external validation but no logged proof for Fatiha's audience yet). Avg 8.0. READY TO POST.
 
 ---
 
