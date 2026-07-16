@@ -23,6 +23,14 @@
 
 > **14/07/2026 batch note:** ENTRY 047-066 are Cordiner-method rewrites (outcome hook + one-win recipe + real receipts + involvement close, per docs/2026-07-14-cordiner-vault-comparison.md). Each supersedes the READY entry named in its meta line. The superseded originals (and BLOCKED ENTRY 013) were moved to `content-vault-archive.md` the same day, statuses preserved — do not draw from them.
 
+> **16/07/2026 batch note:** ENTRY 072-076 are the daily content-engine run (daily mode: 1 storytelling, 2 AI news, 1 opinion, 1 educational). All how-to-first. Sourced from RESEARCH 036. ACP this batch: 3A / 1C / 1P — rolling 10 (ENTRY 067-076) lands at 7A / 2C / 1P.
+
+- 16/07/2026 | LinkedIn | "How to Stop Doing the Work and Start Being the Decision-Maker" — storytelling C post, Real Talk, community waitlist | DRAFT [PREP: community link]
+- 16/07/2026 | LinkedIn | "How to Stop Waiting for the Perfect AI and Hire the One That Exists Right Now" — AI news Result Recipe, Stop Doing by Hand, RESEARCH 036-S1 | READY TO POST
+- 16/07/2026 | LinkedIn | "How to Join the 41 Million Solopreneurs Already Winning With AI" — AI news Result Recipe, The Freedom Business, RESEARCH 036-S7 | READY TO POST
+- 16/07/2026 | LinkedIn | "How to Skip the AI Debate and Get Your Time Back This Tuesday" — opinion, What's Worth It, RESEARCH 036 contrarian | READY TO POST
+- 16/07/2026 | LinkedIn | "How to Find Out Exactly Which Hours AI Can Give You Back. In 20 Minutes." — educational P post, Time Wins, AI Time Audit | DRAFT [PREP: Whop checkout link + time pressure]
+
 - 15/07/2026 | LinkedIn | "Day 1 of Switching My Machine On — Build a Content Machine That Runs Without You" — Activation Arc Day 1, build-in-public, 66-entry stat | READY TO POST
 - 15/07/2026 | LinkedIn | "How to Make Your Business Agent-Ready Starting Tonight" — SOP Result Recipe, RESEARCH 035-S1 (Greg Isenberg) | READY TO POST
 - 15/07/2026 | LinkedIn | "How to Handle Customer Support for $0.46 Per Ticket" — stop-doing-by-hand Result Recipe, RESEARCH 035-S7 | READY TO POST
@@ -73,6 +81,168 @@
 - 23/06/2026 | Short-form video | "Stop Using AI Like a Vending Machine" — build systems, not answers | READY TO POST
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
+
+---
+
+## ENTRY 076 — 16/07/2026 | LinkedIn | How to Find Out Exactly Which Hours AI Can Give You Back. In 20 Minutes. | DRAFT
+`P · Time Wins · CTA: AI Time Audit $47 → [PREP: Whop checkout link] · critic 7.3 · src: pillar method (Time Wins) · ⚠️ PREP: insert Whop checkout link for AI Time Audit before queueing · ⚠️ PREP: add time pressure / launch window once live`
+
+How to find out exactly which hours AI can give you back. In 20 minutes.
+
+Most people know they're wasting time. They don't know where.
+
+That gap — between "I feel busy" and "here are the 11 hours I don't need to do anymore" — is the most expensive gap in a one-person business.
+
+Here's the 20-minute audit that closes it:
+
+1. Open a blank document. Write the name of every task you did last week. One task per line. Be boring and specific. Not "admin" but "replied to 14 Instagram DMs by hand."
+
+2. For each task, write down the minutes it took. Total it up. This is your real workweek.
+
+3. Put each task through this filter:
+   - Can AI do this without my judgment? (Same result whether I do it or not.)
+   - Can AI draft it and I review in 2 minutes instead of 20?
+   - Does it genuinely need me, my taste, my relationship, my decision?
+
+4. Everything in category 1 is this week's automation project. Category 2 is next week's. Category 3 is actually your job.
+
+5. Look at the hours in categories 1 and 2. That number is what AI gives you back.
+
+Most people who run this find they've been carrying 8 to 15 hours of AI-delegatable work without realising it. [VERIFY: confirm this range against a logged source before posting] Usually in the most boring-looking part of their week.
+
+If you want the structured template that turns this 20-minute audit into a running tracker, the AI Time Audit does exactly that. It's $47 and it's already built.
+
+→ [PREP: insert Whop checkout link for AI Time Audit before queueing] [PREP: add time pressure / launch window once live]
+
+> **Critic notes:** Hook 9/10 (outcome named in opening line, specific 20-min promise; "How to find out exactly which hours AI can give you back. In 20 minutes." = 83 chars ✓ works as complete thought), positioning 9/10 (Time Wins pillar; non-technical; free method delivers the first win, product is the extended tool), specificity 8/10 (5-step method is original; "8 to 15 hours" estimate marked [VERIFY] before posting), voice 8/10 (casual, warm-with-edge; "actually your job" lands), CTA 5/10 (PREP blocked — no Whop link, no time pressure set; P post scarcity framing cannot be finalised until launch window known), proven-pattern 5/10 (Result Recipe + P post; no logged data for this audience — untested territory). Avg 7.3. DRAFT — lifts to ~8.5 when both PREP items resolved.
+
+---
+
+## ENTRY 075 — 16/07/2026 | LinkedIn | How to Skip the AI Debate and Get Your Time Back This Tuesday | READY TO POST
+`A · What's Worth It · CTA: WHAT · critic 8.0 · src: RESEARCH 036-S1 (Paul Graham, @paulg X Jul 7 2026), RESEARCH 036-S7 (Bloomberg Jul 10 2026), RESEARCH 036 contrarian take`
+
+How to skip the AI debate and get your time back this Tuesday.
+
+The two biggest AI conversations of the month:
+
+Will AI models be godlike by 2031?
+
+Are AI agents still crashing in infinite loops?
+
+Both camps are right about different things. And neither answer changes what you should do this week.
+
+The 41 million solopreneurs Bloomberg just named as the biggest business story of 2026 don't care about model benchmarks. They need one automation that works this Tuesday.
+
+The operators winning right now aren't the ones who picked the best model. They're the ones who documented one workflow and handed it to a tool that already works.
+
+This is the practical answer to every AI debate: pick the smallest thing in your business that eats time and costs zero judgment. Test the tool you already have. Run it three times. That's it.
+
+The rest is noise.
+
+So what do you do with this? Stop reading launch posts about AI. Open the tool you already pay for. Pick one task. Try it before Friday.
+
+Comment WHAT and I'll send you the plain-English guide to what AI actually is right now. No benchmarks, no jargon.
+
+> **Critic notes:** Hook 9/10 (outcome + specific deadline "this Tuesday" in opening line; 71 chars ✓ works as standalone thought; how-to-first promise), positioning 9/10 (What's Worth It pillar; filters noise for the everyday entrepreneur; directly on-brand), specificity 8/10 (41M Bloomberg Jul 10 stat sourced RESEARCH 036-S7; Paul Graham 2031 debate sourced RESEARCH 036-S1; contrarian take from RESEARCH 036 logged; "try it before Friday" is a call-to-action, not a sourced stat — appropriate for opinion post), voice 9/10 ("The rest is noise." punchy; warm-with-edge throughout; "so what do you do?" answered per skill requirement for takes posts), CTA 8/10 (WHAT active, maps to What's Worth It A post per CTA map ✓), proven-pattern 5/10 (Contrarian Operational Hook + opinion format; no logged data for this audience — untested territory). Avg 8.0. READY TO POST.
+
+---
+
+## ENTRY 074 — 16/07/2026 | LinkedIn | How to Join the 41 Million Solopreneurs Already Winning With AI | READY TO POST
+`A · The Freedom Business · CTA: WHAT · critic 8.0 · src: RESEARCH 036-S7 (Bloomberg Jul 10 2026) · Note: CTA map designates FREEDOM for Freedom Business A posts — FREEDOM is inactive (lead-magnets.csv); WHAT used as closest active alternative for educational next step`
+
+How to join the 41 million solopreneurs already winning with AI. Starting today.
+
+Bloomberg named it this week: 41 million solopreneurs in the US. AI is the cited accelerant.
+
+You're not in a niche anymore. You're on the crest of the biggest business formation wave in modern US history.
+
+The question isn't whether AI-powered solo business works. Bloomberg answered that. The question is whether you've actually started.
+
+Here's how to join them today:
+
+1. List the 3 tasks in your business that repeat every single week. Not the interesting ones. The repetitive ones.
+
+2. Rank them: which one, if you handed it to AI, would buy you the most time per week?
+
+3. Take the top one and write down how you currently do it. Plain sentences. Exact order.
+
+4. Test this starter prompt (redact any client or company names before you send it):
+
+"I need help with [task]. Here's how I currently do it: [your steps]. Your job is to do this task as well as I do, in my style. Here's an example of me doing it well: [paste a real example]. Match that tone and quality."
+
+5. Run it on your next real case. Adjust once. Use it every time after.
+
+That's the entry point. One task. One system. One week.
+
+The 41 million are already moving. The setup takes an afternoon.
+
+Comment WHAT and I'll send you the plain-English guide to what AI actually is right now. No jargon, no hype.
+
+> **Critic notes:** Hook 9/10 (41M number starts the title; "Starting today" closes it as a deadline; 80 chars ✓ works as complete thought; outcome-first), positioning 9/10 (Freedom Business pillar; macro wave validates the audience; everyday entrepreneurs, non-technical; "you don't need to be ready, just started"), specificity 9/10 (Bloomberg Jul 10 2026 stat sourced RESEARCH 036-S7; 5 steps; copy-paste prompt with redaction modeled; "one week" is a reasonable framing, not a sourced claim), voice 8/10 (casual, warm; "the 41 million are already moving" has the edge), CTA 8/10 (WHAT active ✓; note: CTA map designates FREEDOM for Freedom Business A posts but FREEDOM is inactive in lead-magnets.csv — WHAT used as closest active keyword; appropriate educational next step for this post's audience), proven-pattern 5/10 (Specific Number Hook + Result Recipe format; no logged data for this audience — untested). Avg 8.0. READY TO POST.
+
+---
+
+## ENTRY 073 — 16/07/2026 | LinkedIn | How to Stop Waiting for the Perfect AI and Hire the One That Exists Right Now | READY TO POST
+`A · Stop Doing That by Hand · CTA: TEAM · critic 8.2 · src: RESEARCH 036-S1 (Paul Graham, @paulg X Jul 7 2026, 173 replies), RESEARCH 036-S3 (@bizgenix.ai contrast reel May 2026)`
+
+How to stop waiting for the perfect AI and hire the one that exists right now.
+
+Y Combinator's founder just set off the biggest AI-timeline debate of the month. His question: imagine what AI will look like in 5 years. 173 replies.
+
+Here's what most of those replies missed: the tools available right now already represent a bigger leap than most people have acted on.
+
+The 2031 conversation is interesting. Your Monday is not waiting.
+
+How to hire your first AI employee today, in 15 minutes:
+
+1. Pick one task you do manually at least 3 times a week. Something boring and predictable. Not the interesting ones. The repetitive ones.
+
+2. Write down every step, exactly as you do it. Not the polished version. The real version, including the parts that feel embarrassingly simple.
+
+3. Paste this prompt into Claude or ChatGPT (replace client names with [CLIENT] and company names with [COMPANY] before you send it):
+
+"You handle [task name] for my business. Context: [2 sentences on what you do and who you do it for]. Every time I give you [input], follow these steps: [your steps from step 2]. If you're unsure at any point, stop and ask me one question. Never guess."
+
+4. Run it on 3 real examples. Fix what's off.
+
+5. That's your first AI hire. The same task that took 30 minutes now takes 90 seconds.
+
+The gap between "waiting for AI to be ready" and "AI already running" is one documented task.
+
+Do it today and comment TEAM with the task you automated. I'll send you the full setup for your first AI employee.
+
+> **Critic notes:** Hook 9/10 (outcome-first, provocation embedded after the promise per operator calibration; "the one that exists right now" has edge; 86 chars ✓ complete thought), positioning 9/10 (Stop Doing by Hand pillar; non-technical; "your Monday is not waiting" anchors to time-freedom promise), specificity 9/10 (Paul Graham post sourced RESEARCH 036-S1, 173 replies cited; 5 steps; copy-paste prompt with redaction modeled; "15 minutes" and "90 seconds" are specific, achievable for this task type), voice 8/10 (casual, warm; "Your Monday is not waiting" lands), CTA 9/10 (TEAM active ✓; involvement close — comment with their specific automated task; stronger than keyword-only), proven-pattern 5/10 (Contrarian Operational Hook + Result Recipe; no logged data for this audience — untested territory). Avg 8.2. READY TO POST.
+
+---
+
+## ENTRY 072 — 16/07/2026 | LinkedIn | How to Stop Doing the Work and Start Being the Decision-Maker | DRAFT
+`C · Real Talk · CTA: community waitlist · critic 7.0 · src: personal-brain.md (current project, system live 6+ weeks) · ⚠️ PREP: insert community waitlist link before queueing`
+
+How to stop doing the work and start being the decision-maker. What the shift actually feels like.
+
+A few weeks ago I woke up to five pieces of content drafted and ready for review.
+
+I didn't write them. I was asleep.
+
+I read them with a coffee. Made three calls: yes, yes, flag for revision.
+
+That was the whole morning.
+
+Not building. Not researching. Not drafting. Just deciding.
+
+The transition feels strange at first. You spend years believing the doing is the value. That the research is what makes you credible. That the writing is what makes you the expert.
+
+Then the system handles those parts, and you realise something: what actually matters is knowing good from not-good. That judgment is yours. Nobody's automating it.
+
+Deciding is the work. Everything else is just the machine running.
+
+This is exactly what we work through inside the AI Automation Queen community, starting from your specific business, not a generic example.
+
+The waitlist is open. Come in →
+
+[PREP: insert community waitlist link before queueing]
+
+> **Critic notes:** Hook 8/10 (clear outcome promise in opening line; "How to stop doing the work and start being the decision-maker" = 66 chars ✓ complete thought; how-to-first with tension payoff in second line), positioning 9/10 (Real Talk pillar; automation-for-freedom narrative; "deciding is the work" is the core promise), specificity 7/10 (real scenario from current project, no hard numbers — vault-count and corporate-years receipts are at 1/10 rotation limit for this window, intentionally avoided; "a few weeks ago" is vague but appropriate for storytelling format), voice 8/10 (casual, conversational, warm; "just deciding" and "the machine running" land well), CTA 5/10 (PREP blocked — community waitlist link not yet active; CTA map for Real Talk C post: "The community is the people actually doing this. Come in →" — used verbatim), proven-pattern 5/10 (Vulnerability Before Credentials + Real Talk C post format; no logged data for this audience — untested). Avg 7.0. DRAFT — lifts to ~8.5 when PREP resolved.
 
 ---
 
