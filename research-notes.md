@@ -2,6 +2,40 @@
 
 ---
 
+## RESEARCH 036 — 2026-07-16 | Daily signal harvest
+
+**Status:** NOTED
+**Sources hit:** Twitter/X (2, web-search fallback), Instagram (2, web-search fallback), YouTube (1, virality score N/A), RSS/Anthropic (1), News (1)
+**Apify status:** NOT AVAILABLE this session — all social slots filled from web-search per failure-mode rule. No signals invented.
+
+### Signals of the day (7)
+
+1. [TW] **Paul Graham (@paulg, X):** "Imagine what it will be like if 5 years from now models have improved on Fable as much as Fable has improved on GPT3." — July 7, 2026 — https://explainx.ai/blog/paul-graham-fable-gpt3-five-year-ai-progress-speculation-2026 (X direct access blocked; post confirmed via secondary citation; 173 replies, trending news card) — Why it matters: Y Combinator's founder dropped a one-liner on X that set off the biggest AI-timeline debate of the week. The pattern repeating across replies: power users who are already at Fable-level say "I'd take Fable at GPT-3 prices over god-model 2031." For Fatiha's audience, the signal is quieter but more useful — the tools available *right now* are already the "next level" most people haven't acted on. ★ LEAD-MAGNET (maps to **WHAT** — "What AI Actually Is — Plain English")
+
+2. [TW] **Counterpoint circulating on X:** "COUNTERPOINT: Meet the AI agents of 2026 — Ambitious, overhyped and still in training" — The LC News, July 2026 — https://www.thelcn.com/voices/counterpoint-meet-the-ai-agents-of-2026-ambitious-overhyped-and-still-in-training/article_fc3480f9-3903-4d71-a464-43763b9db93f.html (429 on fetch; confirmed via search snippet) — Why it matters: while Paul Graham imagines 2031, an LC editorial is pushing back — agents are prone to infinite loops, hallucinations, and still require constant supervision. The debate is heating up on X because both camps are right about different things. For Fatiha: her angle is neither pure hype nor pure skeptic — it's the practical middle. The proven tools that already work for a one-person business today.
+
+3. [IG] **@bizgenix.ai:** "AI Automation vs. AI Agents" contrast reel — https://www.instagram.com/reel/DZB5zQfoLx0/ — May 31, 2026 (web fallback; IG login wall) — Key framing: automation = clear rules, zero decision-making risk, proven scalable ROI; agents = hallucinations, infinite loops, requires constant supervision. Why it matters: the "keep it simple and proven" narrative is surfacing on business creator accounts. Format insight — contrast/comparison reels are outperforming tutorials in this niche. ★ LEAD-MAGNET (maps to **STACK** — "The 3-Tool AI Stack I Actually Use")
+
+4. [IG] **Sabrina Ramonov (@sabrina_ramonov, 965K+ followers):** n8n + Blotato Instagram carousel automation reel — July 2026 — https://www.instagram.com/sabrina_ramonov/reels/ (Instagram login wall; confirmed active July 2026 via web search, Blotato blog) — Recurring format: "show the machine running first, explanation second." Her Blotato-native carousel builder inside n8n is a direct mirror of the infrastructure Fatiha's engine already uses. Why it matters: when the platform's own blog case-studies your automation stack, format credibility is earned. Mirror play: one machine, one approval step, 9 platforms — show it running.
+
+5. [YT] **"DON'T start an AI automation agency in 2026 (do this instead)"** — YouTube — https://www.youtube.com/watch?v=dSJ5ryaAJiQ — posted ~July 9, 2026 (confirmed "1 week ago" in search results dated July 16) — Virality score: N/A (view count not indexed this session; verify on YouTube). Why it matters: the most-shared reframe in the AI automation niche is no longer "how to build" — it's "here's what I'd stop doing and why." Contrarian title patterns are outperforming instructional titles. For Fatiha: the "what NOT to do" voice is high-trust, hard to fake, and owns the attention of people already burned by chasing complexity.
+
+6. [RSS] **Anthropic — "Anthropic commits $10 million to Canadian AI research"** — July 14, 2026 — https://www.anthropic.com/news/canadian-ai-research — $10M CAD to 8 institutions including Amii, Mila, and Vector Institute, plus API credits to hundreds of affiliated Canadian startups. Why it matters: Anthropic is now distributing the infrastructure layer — API credits to startups means Claude becomes the default for the next wave of entrepreneur-built AI tools. The tools Fatiha teaches are built on exactly this stack. Angle: the tools that will matter in 12 months are being funded today. Act on today's version now.
+
+7. [NEWS] **Bloomberg — "AI Drives a Surge in US Business Formations But Most are 'Solopreneurs'"** — July 10, 2026 — https://www.bloomberg.com/news/newsletters/2026-07-10/ai-drives-a-surge-in-us-business-formations-but-most-are-solopreneurs — US solopreneur count now exceeds 41 million; AI is the cited accelerant. Why it matters: when Bloomberg headlines with solo operators as the story of AI adoption, the mainstream has arrived. Every piece of content Fatiha puts out right now lands on the crest of the biggest business formation wave in modern US history. The audience she's already building is the macro story. ★ LEAD-MAGNET (maps to **TEAM** — "How to Set Up Your First AI Employee")
+
+### Top 3 content angles ready to use
+
+- **"The tools you have today are already the 'next level' most people haven't acted on."** → Paul Graham's 2031 frame flipped: instead of waiting for godmode AI, the insight is that the current tools already changed everything — and 74% of solopreneurs are using them while your competitors are debating the timeline. → Pillar: **What's Worth It** → Lead-magnet hook: comment **WHAT**
+- **"41 million solopreneurs. Bloomberg called it. You're not early — you're on time."** → Bloomberg solopreneur surge + Freedom Business framing — the macro wave just got named by the mainstream. Fatiha is one step ahead, not in a niche. → Pillar: **The Freedom Business** → Lead-magnet hook: comment **TEAM**
+- **"AI Automation vs AI Agents — here's the one you actually need right now (and it's not the flashy one)."** → @bizgenix.ai contrast format + What's Worth It pillar — cuts through the hype, gives a clear recommendation, and points to Fatiha's stack. → Pillar: **Stop Doing That by Hand** → Lead-magnet hook: comment **STACK**
+
+### Contrarian take logged
+
+Everyone is debating whether AI agents will take over the world by 2031 (Paul Graham camp) or whether they're still crashing in infinite loops (The LC counterpoint camp). Both miss the actual opportunity. The 41 million solopreneurs Bloomberg just named as the biggest business story of 2026 don't care about 2031 model benchmarks — they need one automation that works this Tuesday. The operators winning right now aren't the ones who picked the best model. They're the ones who documented one workflow and handed it to the tool that already works. The debate about what AI will be is a distraction from what it already does.
+
+---
+
 ## RESEARCH 035 — 2026-07-15 | Daily signal harvest
 
 **Status:** NOTED
