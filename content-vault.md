@@ -23,7 +23,13 @@
 
 > **14/07/2026 batch note:** ENTRY 047-066 are Cordiner-method rewrites (outcome hook + one-win recipe + real receipts + involvement close, per docs/2026-07-14-cordiner-vault-comparison.md). Each supersedes the READY entry named in its meta line. The superseded originals (and BLOCKED ENTRY 013) were moved to `content-vault-archive.md` the same day, statuses preserved — do not draw from them.
 
+> **20/07/2026 weekly-ops:** ENTRY 077-079 from RESEARCH 040 (Jul 20 2026). 2 LinkedIn Result Recipes + 1 short-form video. All READY TO POST. 6 entries (002, 003, 004, 006, 007, 008) marked STALE 20/07/2026 (auto) — 27 days READY TO POST, no shelf-check keep note.
+
 > **16/07/2026 batch note:** ENTRY 072-076 are the daily content-engine run (daily mode: 1 storytelling, 2 AI news, 1 opinion, 1 educational). All how-to-first. Sourced from RESEARCH 036. ACP this batch: 3A / 1C / 1P — rolling 10 (ENTRY 067-076) lands at 7A / 2C / 1P.
+
+- 20/07/2026 | LinkedIn | "How to Build the 3-Tool AI Stack That Actually Works. Tonight." — What's Worth It, STACK | READY TO POST
+- 20/07/2026 | LinkedIn | "How to Hand Your First Business Task to an AI Employee. 5 Steps, 10 Minutes." — The Freedom Business, TEAM | READY TO POST
+- 20/07/2026 | Short-form video | "How to Build an Interactive Lead Magnet for Free. No Code. 20 Minutes." — Build Once, PROMPT | READY TO POST
 
 - 16/07/2026 | LinkedIn | "How to Stop Doing the Work and Start Being the Decision-Maker" — storytelling C post, Real Talk, community waitlist | DRAFT [PREP: community link]
 - 16/07/2026 | LinkedIn | "How to Stop Waiting for the Perfect AI and Hire the One That Exists Right Now" — AI news Result Recipe, Stop Doing by Hand, RESEARCH 036-S1 | READY TO POST
@@ -75,12 +81,104 @@
 - 27/06/2026 | LinkedIn | "Selling AI Agents for $5k Isn't Freedom — It's Freelancing With Extra Steps" — founding invite | DRAFT
 - 27/06/2026 | LinkedIn | "The First Weekend I Didn't Open My Laptop, I Felt Sick" — when the system carried it | DRAFT
 - 25/06/2026 | Short-form video (Reel) | "You're Talking to the Most Powerful AI on the Planet Like It's Google" — Chez Claude guide promo | DRAFT
-- 23/06/2026 | Short-form video | "You're the Bottleneck" — hand off one task this week | READY TO POST
-- 23/06/2026 | LinkedIn carousel | "The Freedom Business Test" — 4 things that must run without you | READY TO POST
-- 23/06/2026 | Short-form video | "Turn One Idea Into a Week of Content" — 1 idea → 5 pieces | READY TO POST
-- 23/06/2026 | Short-form video | "Stop Using AI Like a Vending Machine" — build systems, not answers | READY TO POST
-- 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
-- 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
+- 23/06/2026 | Short-form video | "You're the Bottleneck" — hand off one task this week | STALE 20/07/2026 (auto)
+- 23/06/2026 | LinkedIn carousel | "The Freedom Business Test" — 4 things that must run without you | STALE 20/07/2026 (auto)
+- 23/06/2026 | Short-form video | "Turn One Idea Into a Week of Content" — 1 idea → 5 pieces | STALE 20/07/2026 (auto)
+- 23/06/2026 | Short-form video | "Stop Using AI Like a Vending Machine" — build systems, not answers | STALE 20/07/2026 (auto)
+- 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | STALE 20/07/2026 (auto)
+- 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | STALE 20/07/2026 (auto)
+
+---
+
+## ENTRY 079 — 20/07/2026 | Short-form video | How to Build an Interactive Lead Magnet for Free. No Code. 20 Minutes. | READY TO POST
+`A · Build Once, Runs Forever · CTA: PROMPT · critic 8.0 · src: RESEARCH 040-S7 (Canva Code 2.0, Marcus Mendes/9to5Mac Jul 14 2026)`
+
+**[HOOK — 0:00, on camera]**
+"You can now build an interactive lead magnet for free. No code. No designer. Here's exactly how."
+[ON SCREEN: "Free lead magnet. 20 minutes. No code."]
+
+**[BODY — 0:04–0:25]**
+"Canva just shipped Code 2.0. It's on the free plan. Over 50 templates — quizzes, calculators, opt-in pages. You pick one, edit the content in plain English, and Canva generates the interactive version and hosts it for you."
+
+[Screen B-roll: Canva Code 2.0 interface, quiz template, editing content fields]
+
+"I built mine in an afternoon. A 20-minute AI Time Audit — a simple quiz that shows a solopreneur exactly which hours in their week AI could handle. Someone fills it in, they get the result, I get the lead. It runs automatically."
+
+"This is the whole lead capture workflow: one useful quiz, one hosted link. Build it once. It works while you're not watching."
+
+**[CTA — 0:25–0:35]**
+"Comment PROMPT and I'll send you the exact prompt I used to write the quiz content — plus the template I started with."
+
+[END CARD: "Comment PROMPT for the prompt + template"]
+
+**Caption (LinkedIn / Threads cross-post):**
+How to build an interactive lead magnet using Canva Code 2.0. Free plan. No code. No designer. Takes 20 minutes. Comment PROMPT and I'll send you the exact prompt I used.
+
+> **Critic notes:** Hook 9/10 (first frame removes three objections before cut; what's-happening + why-care + what-you-get answered immediately; outcome-first for video format), positioning 9/10 (Build Once Runs Forever; "works while you're not watching" is the freedom payoff; non-technical), specificity 8/10 (Canva Code 2.0 from RESEARCH 040-S7 Jul 14 2026 ✓; free plan ✓; 50+ templates ✓; AI Time Audit example verified as Fatiha's own offer), voice 8/10 (direct, casual; "Build it once. It works while you're not watching." lands as the payoff), CTA 8/10 (PROMPT active ✓; "prompt + template" makes the ask concrete), proven-pattern 6/10 (show-the-system format validated by Angelica Automates/competitor data this week; above neutral). Avg 8.0. READY TO POST.
+
+---
+
+## ENTRY 078 — 20/07/2026 | LinkedIn | How to Hand Your First Business Task to an AI Employee. 5 Steps, 10 Minutes. | READY TO POST
+`A · The Freedom Business · CTA: TEAM · critic 8.2 · src: RESEARCH 039-S1 (John Werner, Forbes Jul 18 2026)`
+
+How to hand your first business task to an AI employee. 5 steps, 10 minutes.
+
+New data, Forbes, July 2026: In Q2 2026, 63% of new C-corporation filings had a single founder. Solo business applications in high-AI sectors grew 27% over three years.
+
+Going solo isn't the alternative path anymore. It's the dominant one.
+
+The reason isn't that people got braver. The labour equation changed. One person with the right AI setup can now do what used to take a team. The first step in that setup is always the same: documenting one task well enough to hand it over.
+
+Here's how to do it in 10 minutes:
+
+1. Name the task you want to hand off. One sentence: "I need [task name] done [how often] for [output or person]."
+
+2. Write down every step, exactly as you do it now. Not the polished version. The version you'd describe to a very literal person on their first day.
+
+3. Add one example: here is what good looks like. Paste something you've actually done. Redact any client names or company names before you use it.
+
+4. Write the failure condition: here is what I don't want. One or two examples of what would make you ask for it to be done again.
+
+5. Paste steps 1 to 4 into Claude or ChatGPT with this opening: "You handle [task name] for my business. Here is the job description: [paste your steps]. If you are ever unsure, ask me one question rather than guessing."
+
+That's the hire. Test it on the next real case. Adjust once. Use it every week after.
+
+The 63% is not a coincidence. Every person who went solo in a high-AI sector in the last three years had access to these tools. Most are using them.
+
+Comment TEAM and I'll send you the free guide to setting up your first AI employee.
+
+> **Critic notes:** Hook 9/10 (outcome-first; "5 steps, 10 minutes" is a tight deliverable; 72 chars ✓; how-to-first), positioning 9/10 (The Freedom Business pillar; corporate-to-entrepreneur narrative; macro data frames the audience's aspiration as the statistical majority, not the exception; non-technical), specificity 9/10 (Q2 2026 Forbes/John Werner data RESEARCH 039-S1 ✓; 27% growth stat ✓; 5-step process; copy-paste prompt with redaction instruction modeled ✓), voice 9/10 (direct, warm-with-edge; "Not the polished version. The version you'd describe to a very literal person on their first day." has texture; "The 63% is not a coincidence." lands), CTA 8/10 (TEAM active ✓; involvement close), proven-pattern 5/10 (Result Recipe + solopreneur data hook; no post-rebrand data). Avg 8.2. READY TO POST.
+
+---
+
+## ENTRY 077 — 20/07/2026 | LinkedIn | How to Build the 3-Tool AI Stack That Actually Works. Tonight. | READY TO POST
+`A · What's Worth It · CTA: STACK · critic 8.0 · src: RESEARCH 040-S1 (Technology Radar Jul 6 2026, Hector Pincheira), RESEARCH 040-S2 (OpenAI ROI Scorecard Jul 19 2026, Lilach Bullock)`
+
+How to build the 3-tool AI stack that actually works. Tonight.
+
+New data from the Technology Radar, July 2026: 78% of organisations have adopted AI tools. 74% failed to improve results.
+
+That's not a technology problem. That's a stack problem.
+
+The organisations getting results aren't using more tools. They're using fewer, better-matched ones. Here's the 5-step audit to find yours tonight:
+
+1. Write down every AI tool you pay for or use regularly. Include free ones. "I tried it twice" still counts.
+
+2. For each tool, complete this sentence: this saves me [N] hours on [specific task] every week. If you can't fill in both blanks, circle it.
+
+3. Everything you circled is budget to recover. Remove it. Your working stack just got shorter and cleaner.
+
+4. Look at what's left. Do these pass work to each other, or do they sit in separate tabs? A stack is when tool A's output feeds tool B's input. Independent tabs isn't a stack.
+
+5. Where are your three biggest remaining time drains? Name the one tool that covers each one. That's your real stack.
+
+OpenAI just published a 4-question framework to measure AI ROI: work completion rate, task cost, result reliability, and value scaling. Most organisations can't answer any of the four. Not because AI doesn't work. Because they never defined what each tool was supposed to do.
+
+Define it first. The stack follows.
+
+Comment STACK and I'll send you the 3-tool setup I actually use.
+
+> **Critic notes:** Hook 9/10 (outcome-first, "Tonight." as deadline; 71 chars ✓ complete thought; how-to-first), positioning 9/10 (What's Worth It pillar; filtering noise for everyday entrepreneurs; non-technical), specificity 8/10 (Technology Radar Jul 2026 RESEARCH 040-S1 ✓; OpenAI ROI framework RESEARCH 040-S2 ✓; 5-step audit; "separate tabs isn't a stack" is a concrete and memorable distinction), voice 8/10 (direct, warm; "separate tabs isn't a stack" and "Define it first. The stack follows." are strong), CTA 8/10 (STACK active ✓; involvement close), proven-pattern 5/10 (Result Recipe + data hook; no post-rebrand data). Avg 8.0. READY TO POST.
 
 ---
 
@@ -1606,9 +1704,9 @@ Comment CLAUDE and I'll DM it to you.
 ---
 
 
-## ENTRY 008 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | You're the Bottleneck | READY TO POST
+## ENTRY 008 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | You're the Bottleneck | STALE 20/07/2026 (auto)
 
-**Status:** READY TO POST
+**Status:** STALE 20/07/2026 (auto)
 **Platform:** Instagram Reels / TikTok / YouTube Shorts (vertical 9:16)
 **Format:** ~30s talking-head + on-screen text + caption
 **Topic:** If the business stops when you stop, you own a job — not a business. Hand off one task.
@@ -1644,9 +1742,9 @@ What's the first task you'd hand off? 👇
 
 ---
 
-## ENTRY 007 — 23/06/2026 | LinkedIn (carousel) | The Freedom Business Test | READY TO POST
+## ENTRY 007 — 23/06/2026 | LinkedIn (carousel) | The Freedom Business Test | STALE 20/07/2026 (auto)
 
-**Status:** READY TO POST
+**Status:** STALE 20/07/2026 (auto)
 **Platform:** LinkedIn (document/carousel post, 1080×1350)
 **Format:** 8-slide carousel + caption
 **Topic:** Your business isn't free if it stops when you do. The 4 things that must run without you.
@@ -1692,7 +1790,7 @@ Which number is your weakest? 👇
 
 ---
 
-## ENTRY 006 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Turn One Idea Into a Week of Content | READY TO POST
+## ENTRY 006 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Turn One Idea Into a Week of Content | STALE 20/07/2026 (auto)
 
 **Status:** READY TO POST
 **Platform:** Instagram Reels / TikTok / YouTube Shorts (vertical 9:16)
@@ -1733,7 +1831,7 @@ Drop your last good idea below 👇
 ---
 
 
-## ENTRY 004 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Stop Using AI Like a Vending Machine | READY TO POST
+## ENTRY 004 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Stop Using AI Like a Vending Machine | STALE 20/07/2026 (auto)
 
 **Status:** READY TO POST
 **Platform:** Instagram Reels / TikTok / YouTube Shorts (vertical 9:16)
@@ -1773,7 +1871,7 @@ What would you turn into a system? 👇
 
 ---
 
-## ENTRY 003 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | I Haven't Built a Slide Deck in 9 Months | READY TO POST
+## ENTRY 003 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | I Haven't Built a Slide Deck in 9 Months | STALE 20/07/2026 (auto)
 
 **Status:** READY TO POST
 **Platform:** Instagram Reels / TikTok / YouTube Shorts (vertical 9:16)
@@ -1815,7 +1913,7 @@ What would you hand off first? 👇
 
 ---
 
-## ENTRY 002 — 23/06/2026 | LinkedIn | Stop Doing Robot Work With Human Hands | READY TO POST
+## ENTRY 002 — 23/06/2026 | LinkedIn | Stop Doing Robot Work With Human Hands | STALE 20/07/2026 (auto)
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
