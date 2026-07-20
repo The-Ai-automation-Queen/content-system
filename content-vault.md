@@ -13,6 +13,14 @@
 
 ## Most recent (quick reference)
 
+- 13/07/2026 | LinkedIn carousel | "You've Explained the Same Process to Someone Three Separate Times This Year" — Idris, SOP Writer, Employee #011 | READY TO POST
+- 13/07/2026 | LinkedIn | "You've Explained the Same Process to Someone Three Separate Times This Year" — Idris, SOP Writer, Employee #011 | READY TO POST
+- 13/07/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Yara/Omar/Idris | READY TO POST
+- 13/07/2026 | LinkedIn carousel | "You Have a Shoebox of Receipts You Keep Meaning to Log" — Omar, Receipt Processor, Employee #009 | READY TO POST
+- 13/07/2026 | LinkedIn | "You Have a Shoebox of Receipts You Keep Meaning to Log" — Omar, Receipt Processor, Employee #009 | READY TO POST
+- 13/07/2026 | LinkedIn carousel | "You Check Your Competitor's Page for the Third Time Today" — Yara, Competitor Watch, Employee #008 | READY TO POST
+- 13/07/2026 | LinkedIn | "You Check Your Competitor's Page for the Third Time Today" — Yara, Competitor Watch, Employee #008 | READY TO POST
+- 13/07/2026 | LinkedIn | "Now Hiring: Three More AI Employees, Salary $0 Each" — wave announcement, Employees #8/#9/#11 | READY TO POST
 - 13/07/2026 | LinkedIn carousel | "You Have Answered 'What Are Your Hours' by Hand for the Hundredth Time" — Karim, FAQ Engine, Employee #007 | READY TO POST
 - 13/07/2026 | LinkedIn | "You Have Answered 'What Are Your Hours' by Hand for the Hundredth Time" — Karim, FAQ Engine, Employee #007 | READY TO POST
 - 13/07/2026 | Short-form video (Reel) | "I Hired Three More AI Employees This Week" — wave reel, Sami/Lina/Karim | READY TO POST
@@ -44,6 +52,259 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 039 — 13/07/2026 | LinkedIn carousel | You've Explained the Same Process to Someone Three Separate Times This Year | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 038 (Idris, Employee #011, SOP Writer, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/idris/idris-sop-writer-01.png through -06.png
+Source HTML: skills/carousel-factory/out/idris-sop-writer.html
+**CTA keyword:** SOP, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You've explained the same process to someone three separate times this year."
+Slide 2 (scene): "A new hire, a contractor, your future self in six months. Same question, typed out fresh every time."
+Slide 3 (role card): Idris, SOP Writer, Operations, Salary $0, never sleeps. "Idris is AI. The only job he took was mine: the twenty minutes I'd spend re-explaining a process I'd already explained a dozen times."
+Slide 4 (how he works): 4-step list, describe once, turn into steps, flag gaps, hand off the document.
+Slide 5 (demo): "Built and tested documenting 3 real workflows. Setup about 20 minutes. He only writes down what you actually told him."
+Slide 6 (CTA): "Want the free setup? Comment SOP."
+
+---
+
+## ENTRY 038 — 13/07/2026 | LinkedIn | You've Explained the Same Process to Someone Three Separate Times This Year | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Thursday episode 3)
+**Topic:** Employee #011, Idris, SOP Writer. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/sop-writer-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** schedule.md row 011 (operations/operations-sop-writer.md, not read this run, repo absent; pulled forward from 2026-W31 to this run's wave for department diversity, see ENTRY 032's reordering note). Mode check: no receipt found anywhere. Confirmed PLAYBOOK.
+
+---
+You've explained the same process to someone three separate times this year.
+
+A new hire, a contractor, your future self in six months. Same question, same answer, typed out fresh every time because nothing was ever written down.
+
+Meet Employee #011.
+
+Idris. SOP Writer. Operations.
+Salary: $0. Never sleeps.
+
+Idris is AI. The only job he took was mine: the twenty minutes I'd spend re-explaining a process I'd already explained a dozen times.
+
+How he works:
+1. You talk or type through a process once, the way you'd explain it to a person.
+2. He turns it into numbered steps, plain language.
+3. He flags anything unclear or missing a step, and asks you, instead of filling the gap with a guess.
+4. You get one clean document, ready to hand to anyone.
+
+The demo: built and tested documenting 3 real workflows with one AI tool and a shared doc. Setup time, about 20 minutes. He only writes down what you actually told him, nothing invented.
+
+Red line: he never fills a missing step with a guess. If a step is unclear, the document says "needs detail" instead of making one up.
+
+Your first win, free, today: describe one process out loud or in a voice note, just once. That recording is Idris's first draft.
+
+Comment SOP and I'll send you the full setup, free.
+
+#AIemployees #The99 #Operations
+
+---
+
+## ENTRY 037 — 13/07/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** Talking-head reel (30-45s), captions required
+**Format:** Week's wave reel (Wednesday slot), three role-card cutaways + one screenshot cutaway
+**Topic:** Compresses all 3 of this week's hires (Yara, Omar, Idris) into one 45-second reel, per the hiring-campaign weekly slot map.
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur amounts/vendor names on the receipt-log screenshot).
+**Source:** Assembled from ENTRY 033/035/038's role-card lines. No new claims.
+
+---
+[0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
+
+[0:03-0:12] Role card cutaway 1, Yara: "Yara ends the anxious competitor-tab-refreshing. She checks on a schedule, not on my anxiety."
+
+[0:12-0:21] Role card cutaway 2, Omar: "Omar turns my shoebox of receipts into clean expense rows."
+
+[0:21-0:30] Role card cutaway 3, Idris: "Idris turns what's in my head into a real document, so I stop repeating myself."
+
+[0:30-0:38] Screenshot cutaway: Omar's receipt-log spreadsheet, real setup, amounts and vendor names blurred (redaction modeled).
+
+[0:38-0:45] Closing line, spoken + on-screen: "None of them send anything without me. Comment TEAM and I'll send you how to hire your first one."
+
+---
+
+## ENTRY 036 — 13/07/2026 | LinkedIn carousel | You Have a Shoebox of Receipts You Keep Meaning to Log | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 035 (Omar, Employee #009, Receipt Processor, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/omar/omar-receipt-processor-01.png through -06.png
+Source HTML: skills/carousel-factory/out/omar-receipt-processor.html
+**CTA keyword:** RECEIPTS, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You have a shoebox of receipts you keep meaning to log."
+Slide 2 (scene): "Tax season is coming. The receipts are still sitting there, some fading, some you can't remember."
+Slide 3 (role card): Omar, Receipt Processor, Back Office, Salary $0, never sleeps. "Omar is AI. The only job he took was mine: the Sunday afternoons I lost typing numbers off little paper slips."
+Slide 4 (how he works): 4-step list, forward/photograph, read details, log the row, flag unclear ones.
+Slide 5 (demo): "Built and tested on a real month of receipts. Setup about 30 minutes. He never touches your bank account."
+Slide 6 (CTA): "Want the free setup? Comment RECEIPTS."
+
+---
+
+## ENTRY 035 — 13/07/2026 | LinkedIn | You Have a Shoebox of Receipts You Keep Meaning to Log | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Wednesday episode 2)
+**Topic:** Employee #009, Omar, Receipt Processor. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/receipt-processor-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** schedule.md row 009 (backoffice/backoffice-receipt-processor.md, not read this run, repo absent). Mode check: no receipt found anywhere. Confirmed PLAYBOOK.
+
+---
+You have a shoebox, or a phone folder, of receipts you keep meaning to log.
+
+Tax season is coming. You know this. The receipts are still sitting there, some fading, some you can no longer remember.
+
+Meet Employee #009.
+
+Omar. Receipt Processor. Back Office.
+Salary: $0. Never sleeps.
+
+Omar is AI. The only job he took was mine: the Sunday afternoons I lost typing numbers off little paper slips into a spreadsheet.
+
+How he works:
+1. You forward or photograph a receipt, that's it.
+2. He reads the vendor, amount, date, and category.
+3. He logs it into your expense sheet, one clean row.
+4. Anything blurry or unclear, he flags for you instead of guessing.
+
+The demo: built and tested on a real month of receipts with one AI tool and a spreadsheet. Setup time, about 30 minutes. He never touches your bank account or files taxes, he only logs what you send him.
+
+Red line: he never invents an amount or vendor he can't read clearly. Unclear receipts get flagged, not guessed at.
+
+Your first win, free, today: photograph the 5 receipts sitting closest to you right now. That's Omar's first shift.
+
+Comment RECEIPTS and I'll send you the full setup, free.
+
+#AIemployees #The99 #SmallBusiness
+
+---
+
+## ENTRY 034 — 13/07/2026 | LinkedIn carousel | You Check Your Competitor's Page for the Third Time Today | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 033 (Yara, Employee #008, Competitor Watch, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/yara/yara-competitor-watch-01.png through -06.png
+Source HTML: skills/carousel-factory/out/yara-competitor-watch.html
+**CTA keyword:** WATCH, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You check your competitor's page for the third time today, again."
+Slide 2 (scene): "It's not even about them. It's the fear of missing something. Open, scroll, nothing new, close, open again an hour later."
+Slide 3 (role card): Yara, Competitor Watch, Intelligence, Salary $0, never sleeps. "Yara is AI. The only job she took was mine: the ten minutes an hour I spent refreshing a tab hoping for news about someone else."
+Slide 4 (how she works): 4-step list, scheduled check, real-change flagging, plain-English write-up, weekly digest.
+Slide 5 (demo): "Built and tested watching 3 real competitor sites for one week. Setup about 35 minutes. She only reads public pages."
+Slide 6 (CTA): "Want the free setup? Comment WATCH."
+
+---
+
+## ENTRY 033 — 13/07/2026 | LinkedIn | You Check Your Competitor's Page for the Third Time Today | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Tuesday episode 1)
+**Topic:** Employee #008, Yara, Competitor Watch. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/competitor-watch-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** schedule.md row 008 (intelligence/intelligence-competitor-watch.md, not read this run, repo absent). Mode check: no receipt in reports/, performance-log.md, or queen-brain/board/ for Yara. Confirmed PLAYBOOK.
+
+---
+You check your competitor's page for the third time today, again.
+
+It is not even about them. It is the fear of missing something. So you open the tab, scroll, find nothing new, close it, open it again an hour later.
+
+Meet Employee #008.
+
+Yara. Competitor Watch. Intelligence.
+Salary: $0. Never sleeps.
+
+Yara is AI. The only job she took was mine: the ten minutes an hour I spent refreshing a tab hoping for news about someone else.
+
+How she works:
+1. Checks your named competitors' sites and pages on a schedule, not on your anxiety.
+2. Flags only real changes: a new price, a new page, a new offer.
+3. Writes one plain-English line per change, no jargon, no spin.
+4. Sends you a single weekly digest. Nothing pings you mid-day.
+
+The demo: built and tested watching 3 real competitor sites for one week with a simple change-detection tool and one AI summarizer. Setup time, about 35 minutes. She only reads public pages, nothing behind a login.
+
+Red line: she never guesses at a competitor's strategy or invents a threat that is not there. If nothing changed, the digest says so, plainly.
+
+Your first win, free, today: name your 3 real competitors. That list is Yara's entire beat.
+
+Comment WATCH and I'll send you the full setup, free.
+
+#AIemployees #The99 #CompetitiveIntelligence
+
+---
+
+## ENTRY 032 — 13/07/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Hiring-post ritual (job-ad parody), Monday wave announcement
+**Topic:** Introduces this wave's 3 openings (Employees #008, #009, #011). Note the numbering gap: #010 (Maya, News Desk) was deferred this run, see reordering note below, not skipped by accident.
+**Pattern used:** Job-ad parody + serial-cliffhanger opener
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — value-first series opener, comment-keyword capture, no promo.
+**Source:** skills/hiring-campaign/schedule.md rows 008, 009, 011. Rows 008 and 010 are both Intelligence department, which breaks the wave's 3-different-department rule; reordered to pull row 011 (Idris, Operations) forward instead of row 010 (Maya, Intelligence), per schedule.md's own "a planned row can be reordered" rule. Maya (010) is now next in the queue. Role descriptions from schedule.md's role-summary column; agent-os-company-dashboard repo not read this run for the full job-description files (same fallback as the prior wave).
+
+---
+Now hiring. Three more AI employees. Salary: $0 each.
+
+Employee #008: Competitor Watch.
+Ends the anxious tab-refreshing. Checks competitors on a schedule, tells you only what actually changed.
+
+Employee #009: Receipt Processor.
+Turns your shoebox of receipts into clean expense rows, without you typing a single number.
+
+Employee #011: SOP Writer.
+Turns what is in your head into a real document, so you stop explaining the same thing three times.
+
+None of them sleep. None of them ask for a raise. None of them send anything without me seeing it first.
+
+That is Employee #8, #9, and #11 of 99. The full team, hired one at a time, in public.
+
+See who is already on the floor. The scoreboard is live, updated only when there is a real receipt to show.
+
+Want to build your own first hire? Comment TEAM and I will send you the free 5-step framework.
+
+#AIemployees #Solopreneur #The99
 
 ---
 

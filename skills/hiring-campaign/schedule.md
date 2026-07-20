@@ -14,10 +14,10 @@ real files in agent-os-company-dashboard/company/departments/.
 | 005 | Sami | Late-Payment Chaser | backoffice/backoffice-late-payment-chaser.md | PLAYBOOK | announced, playbook live 13/07/2026 | 2026-W29 |
 | 006 | Lina | Meeting Scheduler | operations/operations-meeting-scheduler.md | PLAYBOOK | announced, playbook live 13/07/2026 | 2026-W29 |
 | 007 | Karim | FAQ Engine | customer/customer-faq-engine.md | PLAYBOOK | announced, playbook live 13/07/2026 | 2026-W29 |
-| 008 | Yara | Competitor Watch | intelligence/intelligence-competitor-watch.md | PLAYBOOK | planned | 2026-W30 |
-| 009 | Omar | Receipt Processor | backoffice/backoffice-receipt-processor.md | PLAYBOOK | planned | 2026-W30 |
-| 010 | Maya | News Desk | intelligence/intelligence-news-digest.md | PROOF candidate (Insider Brief crawler) | planned | 2026-W30 |
-| 011 | Idris | SOP Writer | operations/operations-sop-writer.md | PLAYBOOK | planned | 2026-W31 |
+| 008 | Yara | Competitor Watch | intelligence/intelligence-competitor-watch.md | PLAYBOOK | announced, playbook live 13/07/2026 | 2026-W30 |
+| 009 | Omar | Receipt Processor | backoffice/backoffice-receipt-processor.md | PLAYBOOK | announced, playbook live 13/07/2026 | 2026-W30 |
+| 010 | Maya | News Desk | intelligence/intelligence-news-digest.md | PROOF candidate (Insider Brief crawler) | planned, deferred from 2026-W30 (row reordered to keep the wave to 3 distinct departments alongside 008 Intelligence) | 2026-W31 |
+| 011 | Idris | SOP Writer | operations/operations-sop-writer.md | PLAYBOOK | announced, playbook live 13/07/2026 | 2026-W30 |
 | 012 | Salma | Client Onboarding | operations/operations-client-onboarding.md | PLAYBOOK | planned | 2026-W31 |
 | 013 | Tariq | Invoice Builder | backoffice/backoffice-invoicing.md | PLAYBOOK | planned | 2026-W31 |
 | 014 | Hind | Social Listener | intelligence/intelligence-social-listening.md | PLAYBOOK | planned | 2026-W32 |

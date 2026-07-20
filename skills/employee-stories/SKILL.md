@@ -167,6 +167,9 @@ permanent. Assigned so far:
 | 005 | Sami | Late-Payment Chaser (interviewing) | Back Office |
 | 006 | Lina | Meeting Scheduler (interviewing) | Operations |
 | 007 | Karim | FAQ Engine (interviewing) | Customer |
+| 008 | Yara | Competitor Watch (interviewing) | Intelligence |
+| 009 | Omar | Receipt Processor (interviewing) | Back Office |
+| 011 | Idris | SOP Writer (interviewing) | Operations |
 
 New names: short, warm, easy to say in English and French, no name
 reuse, never the name of a real client or contact. Log new assignments
