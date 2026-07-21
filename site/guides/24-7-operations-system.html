@@ -1,1 +1,308 @@
-PLACEHOLDER_GUIDE
+<!DOCTYPE html>
+<html lang="en" style="background:#FFFFFF">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="noai, noimageai, max-image-preview:large">
+<meta name="description" content="Build a 24/7 AI operations layer in 7 days. No code. Five scheduled workflows that run while you sleep. Works with Claude, ChatGPT, Gemini, or Copilot.">
+<title>Run a 24/7 Company Without Working 24/7 | Shift &amp; Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://guides.shiftandlead.com/guides/24-7-operations-system.html">
+<meta property="og:title" content="Run a 24/7 Company Without Working 24/7">
+<meta property="og:description" content="Build your AI operations layer in 7 days. No code. Five scheduled workflows that run while you sleep. The complete playbook, free.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://guides.shiftandlead.com/guides/24-7-operations-system.html">
+<meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Run a 24/7 Company Without Working 24/7">
+<meta name="twitter:description" content="Build your AI operations layer in 7 days. No code. Five workflows that run while you sleep. The complete playbook, free.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Run a 24/7 Company Without Working 24/7",
+  "description": "Build a 24/7 AI operations layer in 7 days. No code. Five scheduled workflows that run while you sleep. Works with Claude, ChatGPT, Gemini, or Copilot.",
+  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
+  "datePublished": "2026-07-21",
+  "dateModified": "2026-07-21",
+  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/24-7-operations-system.html",
+  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
+  "publisher": {"@type": "Organization", "name": "Shift & Lead", "logo": {"@type": "ImageObject", "url": "https://www.shiftandlead.com/logo.svg"}},
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Build a 24/7 AI operations system in 7 days",
+  "description": "Five scheduled AI workflows that handle the predictable parts of a solo business, without ever sending anything on their own.",
+  "step": [
+    {"@type": "HowToStep", "name": "Set up your assistant", "text": "Enable scheduled runs and connect only three things: your inbox, your calendar, and your main cloud drive. Write one plain system prompt."},
+    {"@type": "HowToStep", "name": "Build your morning briefing", "text": "A 7am run that reads the last 24 hours of email and today's calendar and writes a ranked briefing before you wake up."},
+    {"@type": "HowToStep", "name": "Build your end-of-day review", "text": "A 6pm run that summarises what got done, what got dropped, and what carries into tomorrow."},
+    {"@type": "HowToStep", "name": "Build your research and content workflow", "text": "A weekly digest of everything you saved, feeding two content drafts every Monday."},
+    {"@type": "HowToStep", "name": "Build your client and project weekly update", "text": "A Sunday run that pre-writes one update per client for you to review and send."},
+    {"@type": "HowToStep", "name": "Make the system reliable", "text": "Add a stop rule to every workflow, a System Log, and a 10-minute weekly review."},
+    {"@type": "HowToStep", "name": "Document and expand", "text": "Write down the whole system so you can rebuild it in 20 minutes, then add one new workflow at a time."}
+  ]
+}
+</script>
+<style>
+:root{
+  --canvas:#FFFFFF;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
+  --muted:#5C5A57;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
+  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+a:hover{color:var(--accent-deep)}
+strong{font-weight:700;color:var(--ink)}
+
+.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}.nav-links .nav-cta{background:var(--accent);color:#fff;padding:8px 14px;border-radius:3px;font-weight:600}.nav-links .nav-cta:hover{background:var(--accent-deep)}
+
+.wrap{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,100px) clamp(24px,5vw,72px)}
+
+.chips{margin-bottom:28px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff}
+.chip-track0{background:var(--accent)}
+.chip-literacy{background:#E63955}
+.chip-time{background:transparent;color:var(--muted);border:1px solid var(--rule);padding:4px 10px}
+
+.kicker{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);display:flex;align-items:center;margin-bottom:20px}
+.kicker-rule{display:inline-block;width:32px;height:1px;background:var(--ink);margin-right:10px}
+
+h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,5.5vw,56px);line-height:1.08;letter-spacing:-0.5px;color:var(--ink);margin-bottom:24px}
+h1 em{font-style:italic;color:var(--electric)}
+h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.18;letter-spacing:-0.3px;margin:64px 0 16px}
+h3{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);margin:32px 0 12px}
+p{margin-bottom:18px;color:var(--ink)}
+p.lead{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:20px;line-height:1.55;color:var(--muted);margin-bottom:32px}
+
+.rule{border:0;border-top:2px solid var(--ink);margin:80px 0 40px}
+
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:28px 32px;margin:24px 0}
+.card.accent{border-color:var(--accent);background:var(--accent-tint)}
+
+.pullquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:24px;line-height:1.35;color:var(--muted);border-left:3px solid var(--accent);padding-left:24px;margin:40px 0}
+
+blockquote{background:var(--accent-tint);border-left:3px solid var(--accent);padding:16px 24px;margin:20px 0;border-radius:0 4px 4px 0;font-style:italic;color:var(--muted)}
+blockquote p{margin-bottom:0;color:var(--muted)}
+
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.vs-col{padding:20px 24px;border-radius:6px}
+.vs-col.old{background:#FDF2F2;border:1px solid #E8C4C4}
+.vs-col.new{background:#F0F4E8;border:1px solid #C4D4A8}
+.vs-col h3{margin-top:0}
+
+ul,ol{margin:12px 0 20px 24px}
+li{margin-bottom:8px;color:var(--ink)}
+
+.try-box{background:var(--surface);border:1px solid var(--accent);border-radius:6px;padding:24px 28px;margin:20px 0}
+.try-box .try-label{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin-bottom:12px}
+.try-box p{font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--ink);margin-bottom:0}
+
+.cta-bar{margin:48px 0;padding:32px;background:var(--navy);border-radius:6px;text-align:center;color:var(--canvas)}
+.cta-bar h3{color:var(--canvas);margin-top:0}
+.cta-bar p{color:rgba(255,255,255,0.85)}
+.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:13px 32px;background:var(--canvas);color:var(--ink);text-decoration:none;border-radius:4px;margin-top:12px}
+.btn:hover{background:#fff;color:var(--ink)}
+
+.guide-nav{display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:32px;border-top:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em}
+.guide-nav a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
+.guide-nav a:hover{color:var(--accent);border-color:var(--accent)}
+
+.footer{margin-top:120px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+
+@media(max-width:560px){
+  html,body{font-size:16px}
+  .wrap{padding:40px 16px}
+  h1{font-size:32px;line-height:1.1}
+  .pullquote{font-size:20px}
+  .vs{grid-template-columns:1fr}
+  .guide-nav{flex-direction:column;gap:16px;align-items:flex-start}
+  .nav-inner{padding:14px 16px}
+  .nav-links{gap:16px;font-size:11px}
+}
+</style><script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
+<script defer src="/lib/motion.js"></script>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=24-7-operations-system">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=24-7-operations-system">Fast Forward</a></div>
+</div></nav>
+
+<div class="wrap">
+
+  <div class="chips">
+    <span class="chip chip-track0">MORNING</span>
+    <span class="chip chip-time">12 min read</span>
+  </div>
+
+  <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; The Freedom Business &middot; 7-day playbook</div>
+
+  <h1>Run a 24/7 company <em>without working 24/7.</em></h1>
+
+  <p class="lead">You already work long hours and you still feel behind. That morning scramble is not a productivity problem, it is a coordination problem. And coordination is the one thing you can hand to a machine. In 7 days, about 30 to 60 minutes a day, you will have five quiet workflows that run while you sleep. No code. No team. Works with Claude, ChatGPT, Gemini, or Copilot.</p>
+
+  <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
+    <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
+    <p style="margin:0 0 14px;font-size:15.5px">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
+    <form class="capture-form" style="display:flex;gap:10px;flex-wrap:wrap">
+      <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <button type="submit" style="padding:10px 20px;background:#2C4BE0;color:#fff;border:none;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:14px;cursor:pointer">Send them to me</button>
+    </form>
+  </div>
+
+  <hr class="rule">
+
+  <h2>What this system will and will not do</h2>
+  <p><strong>It will</strong> send you a morning briefing before you open your laptop, close each day with a review that preps tomorrow, turn your saved reading into content drafts, and pre-write your weekly client updates.</p>
+  <p><strong>It will not</strong> publish anything for you, reply to clients on your behalf, or replace your judgment on strategy, pricing, or hiring. The point is not to remove you from the business. The point is to remove you from the coordination.</p>
+
+  <h2>One rule before you connect anything: the Traffic Light Rule</h2>
+  <p>You are about to give an assistant a window into your inbox, your calendar, and your client notes. That is real access. One habit keeps you safe, and I teach it in everything I make:</p>
+  <ol class="steps">
+    <li>&#128994; <strong>Green</strong>: your own drafts, public info, subject lines, your own calendar. Safe to hand over freely.</li>
+    <li>&#128992; <strong>Amber</strong>: internal notes, emails from known contacts, half-finished plans. Fine to process, but strip names and numbers you would not want leaving your control. When in doubt, redact first.</li>
+    <li>&#128308; <strong>Red</strong>: passwords, contracts, NDA material, client personal data, payment details. This never goes into a personal AI account. Ever. If a workflow would touch red-level material, it skips it and flags it for you.</li>
+  </ol>
+  <p>Green flows, amber gets redacted, red stays out. Every prompt below is built to respect that.</p>
+
+  <h2>Day 1. Set up your assistant and connect the essentials</h2>
+  <p>Open your chosen platform and enable scheduled runs and connectors. On Claude, enable Cowork. On ChatGPT, enable Tasks and Connectors. On Gemini, enable Scheduled Actions in Workspace. On Copilot, open Copilot Studio and create an agent.</p>
+  <p>Connect only three things today: your email inbox, your calendar, and your main cloud drive. Nothing else. Every connector is a new surface for something to go wrong, so you want the smallest possible starting point. Then write one plain system prompt and reuse it everywhere.</p>
+  <div class="try-box">
+    <p class="try-label">Your system prompt</p>
+    <p>You are the operations assistant for a solo founder. Your job is to reduce coordination overhead. Always summarise clearly. Flag anything urgent. Never send messages or take irreversible actions. Never store or repeat passwords, contracts, or client personal data. Always leave decisions to me. When in doubt, ask.</p>
+  </div>
+
+  <h2>Day 2. Build your morning briefing</h2>
+  <p>This is the single workflow that changes your day the most. Schedule it for 07:00 in your timezone, and test it once by hand before you trust it.</p>
+  <div class="try-box">
+    <p class="try-label">Morning briefing prompt</p>
+    <p>Read my inbox from the last 24 hours. Read today's calendar. Summarise in 3 sections. Section 1: what needs my attention today, ranked by urgency. Section 2: meetings today with any prep notes I should remember. Section 3: anything I missed yesterday that still needs a reply. Keep it under 300 words. Do not include passwords, full account numbers, or other sensitive details. Write it to a doc titled Morning Briefing YYYY-MM-DD in my main folder.</p>
+  </div>
+
+  <h2>Day 3. Build your end-of-day review</h2>
+  <p>Same idea, different job. Schedule it for 18:00 or whenever you close your laptop. Between the briefing and the review you now have a continuous thread, so you never start a day from scratch again.</p>
+  <div class="try-box">
+    <p class="try-label">End-of-day review prompt</p>
+    <p>Read the doc titled Morning Briefing YYYY-MM-DD. Read the last 24 hours of email. Read the last 24 hours of calendar events. Summarise what got done, what got dropped, and what should carry into tomorrow. Write it to a doc titled Daily Review YYYY-MM-DD.</p>
+  </div>
+
+  <h2>Day 4. Build your research and content workflow</h2>
+  <p>Create a doc called Research Inbox. All week, paste in any link worth keeping. That is your only manual step. Then two scheduled runs do the rest: a Friday digest, and a Monday draft pass.</p>
+  <div class="try-box">
+    <p class="try-label">Friday digest prompt (14:00)</p>
+    <p>Read the doc titled Research Inbox. For each link, summarise the core insight in 3 sentences. Group insights by theme. At the bottom, propose 5 content ideas I could write about next week based on the themes. Save to a doc titled Weekly Research Digest YYYY-MM-DD. Do not empty the Research Inbox. I will archive it manually.</p>
+  </div>
+  <div class="try-box">
+    <p class="try-label">Monday draft prompt (09:00)</p>
+    <p>Read the latest Weekly Research Digest. Pick the 2 strongest content ideas. For each, write a 300 word first draft in a conversational tone. Save to a doc titled Content Drafts YYYY-MM-DD. Mark them as drafts. Do not publish.</p>
+  </div>
+  <p>Every Monday you open two drafts, edit, and publish yourself. The system does the boring 80 percent. You do the 20 percent that matters.</p>
+
+  <h2>Day 5. Build your client and project weekly update</h2>
+  <p>Keep one doc per client, where you drop notes through the week. Keep passwords, contracts, and personal data out of these docs. This is amber material, so redact anything you would not want leaving your control.</p>
+  <div class="try-box">
+    <p class="try-label">Weekly client update prompt (Sunday 17:00)</p>
+    <p>Read each doc in the folder titled Clients. For each client, write a short weekly update covering: what got done this week, what is blocked, what is next, and any questions I need answered. Save all updates to one doc titled Client Updates Ready to Send YYYY-MM-DD. Do not send anything. I will review and send myself.</p>
+  </div>
+  <p>Sunday evening you open one doc, review five pre-written updates, tweak the tone, and send them yourself in 20 minutes. Every client feels well managed.</p>
+
+  <h2>Day 6. Make the system reliable</h2>
+  <p>A system that runs five times a day but fails silently is worse than no system. Do four things. First, add a stop rule to every workflow: <em>if any required doc is missing or empty, do not guess, write a short note to a doc titled System Log YYYY-MM-DD and stop.</em> Second, create that System Log doc and skim it once a day. Third, set a 10-minute Sunday review to read the week of logs and fix any prompt that keeps failing. Fourth, test a break: disconnect your email, run the briefing by hand, and confirm it fails cleanly into the log instead of inventing an answer.</p>
+
+  <h2>Day 7. Document and prepare to expand</h2>
+  <p>Create a doc called My Operations System. Write down the platform you chose, your system prompt, the connectors you enabled, every workflow with its exact prompt and schedule, one paragraph on what the system is for, and a running note of what broke and how you fixed it. This is your recovery plan: if something goes wrong in three months, this doc rebuilds the whole thing in 20 minutes. Then pick one workflow to add next week. Not five. One.</p>
+
+  <hr class="rule">
+
+  <h2>The three things that decide whether this lasts</h2>
+  <ol class="steps">
+    <li><strong>Small scope.</strong> Add workflows one at a time. The systems that survive are the ones that grew slowly.</li>
+    <li><strong>Clear stop conditions.</strong> Every workflow needs to know when to hand back to you, or it drifts into noise you learn to ignore.</li>
+    <li><strong>Weekly review.</strong> Ten minutes every Sunday on the System Log. That is the entire maintenance cost.</li>
+  </ol>
+
+  <h2>Where this system will not save you</h2>
+  <p>Scheduled assistants with connectors are powerful for the workflows above. They are not the right tool for multi-step content pipelines with strict brand voice, automated publishing to your social platforms, research pulling from dozens of sources with citations, or logic that chains several specialised assistants together. That is the line between a helpful assistant and a real operations team. The first one you just built. The second is what I teach next.</p>
+
+  <div class="cta-bar">
+    <h3>Ready to build the team, not just the mornings?</h3>
+    <p>Fast Forward is the step-by-step system for building the AI employees that run the parts of your business this playbook only prepped. Same plain-language, no-code approach, taken all the way. Founding members get first access and founding pricing.</p>
+    <a href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=24-7-operations-system" class="btn">Join the founding waitlist &rarr;</a>
+  </div>
+
+  <p style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0">Ready for more than free? The three ways to go further &rarr;</a></p>
+
+  <div class="guide-nav">
+    <a href="../free-resources.html">&larr; All guides</a>
+    <a href="first-ai-employee.html">Hire your first AI employee &rarr;</a>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p><a href="../privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved.</p>
+</div>
+
+<script>
+document.querySelectorAll('.capture-form').forEach(function(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    var email = form.querySelector('[name="email"]').value;
+    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Done.'; return; }
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      var r = await fetch('https://formspree.io/f/xgojoyka', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-24-7-operations-system'}) });
+      fetch('https://auto.shiftandlead.com/webhook/formspree-lead', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-24-7-operations-system'}) });
+      if (r.ok) { btn.textContent = 'On its way.'; } else { btn.disabled=false; btn.textContent='Try again'; }
+    } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
+  });
+});
+</script>
+
+<script>
+try {
+  var r = JSON.parse(localStorage.getItem('sl_read') || '[]');
+  if (r.indexOf('24-7-operations-system') === -1) { r.push('24-7-operations-system'); localStorage.setItem('sl_read', JSON.stringify(r)); }
+} catch(e){}
+</script>
+<script>
+document.querySelectorAll('.try-box, pre').forEach(function(box){
+  if (box.closest('script,style')) return;
+  var btn = document.createElement('button');
+  btn.textContent = 'Copy';
+  btn.style.cssText = "display:block;margin-top:10px;padding:6px 14px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;background:#fff;border:1px solid #2C4BE0;color:#2C4BE0;cursor:pointer";
+  btn.addEventListener('click', function(){
+    navigator.clipboard.writeText(box.innerText.replace(/Copy$/,'').trim()).then(function(){
+      btn.textContent = 'Copied ✓';
+      setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+    });
+  });
+  box.appendChild(btn);
+});
+</script>
+</body>
+</html>
