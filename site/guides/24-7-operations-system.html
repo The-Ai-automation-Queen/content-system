@@ -142,7 +142,7 @@ li{margin-bottom:8px;color:var(--ink)}
 
 <nav class="nav"><div class="nav-inner">
   <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=24-7-operations-system">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=24-7-operations-system">Fast Forward</a></div>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=24-7-operations-system">Workshops</a></div>
 </div></nav>
 
 <div class="wrap">
@@ -184,12 +184,35 @@ li{margin-bottom:8px;color:var(--ink)}
   <p>Green flows, amber gets redacted, red stays out. Every prompt below is built to respect that.</p>
 
   <h2>Day 1. Set up your assistant and connect the essentials</h2>
-  <p>Open your chosen platform and enable scheduled runs and connectors. On Claude, enable Cowork. On ChatGPT, enable Tasks and Connectors. On Gemini, enable Scheduled Actions in Workspace. On Copilot, open Copilot Studio and create an agent.</p>
-  <p>Connect only three things today: your email inbox, your calendar, and your main cloud drive. Nothing else. Every connector is a new surface for something to go wrong, so you want the smallest possible starting point. Then write one plain system prompt and reuse it everywhere.</p>
+  <p>This is the day most guides skip. If you have never done any of this before, go slowly and follow it step by step. It is the foundation for everything else, and it is easier than it looks. Give yourself the full hour today. The other days are quicker.</p>
+
+  <h3>Step 1: Get the right subscription</h3>
+  <p>The free version of these tools cannot run on a schedule or connect to your inbox. You need a paid plan. Create an account, then pick the tier that includes scheduling and connectors. On Claude, go to claude.ai and subscribe to Pro or Max, Cowork comes with it. On ChatGPT, go to chatgpt.com and subscribe to Plus, Pro, or Team to unlock Tasks and Connectors. On Gemini, get Gemini Advanced (Google One AI Premium) or use Gemini inside your Google Workspace. On Copilot, you need a Microsoft 365 Copilot license on your Microsoft 365 account. You only need one. Do not sign up for all four.</p>
+
+  <h3>Step 2: Open the feature that runs on a schedule</h3>
+  <p>This is the engine of the whole system, and each platform hides it in a slightly different place. On Claude, open Cowork. On ChatGPT, open Tasks. On Gemini, open Scheduled Actions in Workspace, or set up a Gem. On Copilot, open Copilot Studio and create a new agent. Menus move around, so if the exact word is not there, look for anything that says schedule, task, automation, or agent. That is the one.</p>
+
+  <h3>Step 3: Connect your first account (the part that feels scary but is not)</h3>
+  <p>A connector is simply permission for your assistant to read something you already own, like your inbox. Setting one up is the same every time:</p>
+  <ol class="steps">
+    <li>Find the connectors area. Look for Settings, then Connectors, Tools, Integrations, or Add apps.</li>
+    <li>Click Connect next to the one you want. Start with your email.</li>
+    <li>A window from Google or Microsoft opens. Sign in to your own account.</li>
+    <li>It shows you exactly what the assistant will be allowed to do. Read it. This is where the Traffic Light Rule starts. Reading and drafting is fine. If something asks for permission to send or delete and you did not expect it, stop and check before you continue.</li>
+    <li>Click Allow. The window closes and the connector shows as connected.</li>
+  </ol>
+  <p>That is it. You just gave your assistant its first sense. If you ever want to undo it, the same screen has a Disconnect button. You stay in control the whole time.</p>
+
+  <h3>Step 4: Connect only 3 things</h3>
+  <p>Now connect your email inbox, your calendar, and your main cloud drive, and nothing else yet. Every connector is a new surface for something to go wrong, so you want the smallest possible starting point. You can always add more once the basics run without you.</p>
+
+  <h3>Step 5: Write your system prompt</h3>
+  <p>This is the short paragraph that tells the assistant who it is working for and how you want it to behave. Keep it plain, save it, and reuse it across every workflow. On Claude save it as a Project instruction, on ChatGPT as a Custom GPT or Project system prompt, on Gemini as a Gem, on Copilot as the agent's system message.</p>
   <div class="try-box">
     <p class="try-label">Your system prompt</p>
     <p>You are the operations assistant for a solo founder. Your job is to reduce coordination overhead. Always summarise clearly. Flag anything urgent. Never send messages or take irreversible actions. Never store or repeat passwords, contracts, or client personal data. Always leave decisions to me. When in doubt, ask.</p>
   </div>
+  <p>Day 1 done. You have a working assistant, 3 connectors, and a clear role. The hardest part is behind you.</p>
 
   <h2>Day 2. Build your morning briefing</h2>
   <p>This is the single workflow that changes your day the most. Schedule it for 07:00 in your timezone, and test it once by hand before you trust it.</p>
@@ -241,15 +264,7 @@ li{margin-bottom:8px;color:var(--ink)}
   </ol>
 
   <h2>Where this system will not save you</h2>
-  <p>Scheduled assistants with connectors are powerful for the workflows above. They are not the right tool for multi-step content pipelines with strict brand voice, automated publishing to your social platforms, research pulling from dozens of sources with citations, or logic that chains several specialised assistants together. That is the line between a helpful assistant and a real operations team. The first one you just built. The second is what I teach next.</p>
-
-  <div class="cta-bar">
-    <h3>Ready to build the team, not just the mornings?</h3>
-    <p>Fast Forward is the step-by-step system for building the AI employees that run the parts of your business this playbook only prepped. Same plain-language, no-code approach, taken all the way. Founding members get first access and founding pricing.</p>
-    <a href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=24-7-operations-system" class="btn">Join the founding waitlist &rarr;</a>
-  </div>
-
-  <p style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0">Ready for more than free? The three ways to go further &rarr;</a></p>
+  <p>Scheduled assistants with connectors are powerful for the workflows above. They are not the right tool for multi-step content pipelines with strict brand voice, automated publishing to your social platforms, research pulling from dozens of sources with citations, or logic that chains several specialised assistants together. That is the line between a helpful assistant and a real operations team. The first one you just built. The second is a bigger, more advanced setup, and it is a separate playbook for a later day. Master these five workflows first.</p>
 
   <div class="guide-nav">
     <a href="../free-resources.html">&larr; All guides</a>
