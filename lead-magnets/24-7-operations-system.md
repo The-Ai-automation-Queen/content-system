@@ -299,7 +299,7 @@ The founding waitlist is open. Details at the end.
 Two ways to keep going.
 
 **1. Want this playbook as a file you can keep?**
-Comment **SYSTEM** on the post that sent you here, or send me a DM with the word **SYSTEM**, and I will send you the full guide plus the prompt pack so you are not copying from a doc.
+Comment **MORNING** on the post that sent you here, or send me a DM with the word **MORNING**, and I will send you the full guide plus the prompt pack so you are not copying from a doc.
 
 **2. Ready to build the system that actually runs your business, not just your mornings?**
 Join the **Fast Forward founding waitlist**. It is the same plain-language, no-code approach you just used, taken all the way to a business that runs without running your life. Founding members get first access and founding pricing. Link in the same place you found this.
