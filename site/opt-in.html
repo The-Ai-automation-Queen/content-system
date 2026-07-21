@@ -1,1 +1,513 @@
-PLACEHOLDER_OPTIN
+<!DOCTYPE html>
+<html lang="en" style="background:#FFFFFF">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="index, follow, max-image-preview:large, noai, noimageai">
+<title id="page-title">Get the guide · Shift &amp; Lead</title>
+<meta name="description" content="Enter your email and get the free guide sent straight to your inbox, from Shift &amp; Lead.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shift &amp; Lead">
+<meta property="og:title" content="Get the guide, Shift &amp; Lead">
+<meta property="og:description" content="Enter your email and get the free guide sent straight to your inbox, from Shift &amp; Lead.">
+<meta property="og:url" content="https://guides.shiftandlead.com/opt-in.html">
+<meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
+<link rel="canonical" href="https://guides.shiftandlead.com/opt-in.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#FFFFFF;
+  --surface:#FFFFFF;
+  --cream:#EEF2FC;
+  --ink:#1A1A1A;
+  --rule:#D8D6D2;
+  --muted:#5C5A57;
+  --accent:#2C4BE0;
+  --accent-deep:#1B2EA0;
+  --accent-tint:#E4EAFB;
+  --electric:#2C4BE0;
+  --navy:#1B2EA0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink)}
+.nav-back{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:2px}
+.nav-back:hover{border-bottom-color:var(--ink);color:var(--ink)}
+.nav-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent-deep)}
+.nav-links .nav-cta{background:var(--accent);color:#fff;padding:9px 16px;border-radius:3px;font-weight:600}
+.nav-links .nav-cta:hover{background:var(--accent-deep)}
+@media (max-width:700px){.nav-links{display:none}}
+
+/* CHIP */
+.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff;margin-bottom:28px}
+.chip-purple{background:var(--accent)}
+.chip-black{background:var(--ink)}
+.chip-red{background:#E63955}
+.chip-blue{background:var(--electric)}
+
+/* TWO-COLUMN LAYOUT */
+.page{max-width:1100px;margin:0 auto;padding:88px 32px 104px;display:grid;grid-template-columns:1.1fr 1fr;gap:96px;align-items:start}
+
+/* LEFT: GUIDE CONTENT */
+.guide-lead{}
+.guide-kicker{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent-deep);margin-bottom:10px}
+.guide-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,3.8vw,44px);line-height:1.1;font-weight:400;letter-spacing:-0.02em;margin-bottom:20px;color:var(--ink)}
+.guide-title em{color:var(--electric);font-style:italic}
+.guide-desc{font-size:18px;line-height:1.6;color:var(--muted);margin-bottom:36px}
+
+.guide-what{border-top:1px solid var(--rule);padding-top:28px}
+.guide-what-label{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent-deep);margin-bottom:16px}
+.guide-what ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.guide-what li{font-size:16px;color:var(--ink);padding-left:22px;position:relative;line-height:1.5}
+.guide-what li::before{content:'→';position:absolute;left:0;color:var(--accent);font-family:'Space Mono',monospace;font-size:12px;top:1px}
+
+/* RIGHT: FORM */
+.form-wrap{background:#fff;border:1px solid var(--rule);padding:44px}
+.form-eyebrow{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--muted);margin-bottom:10px}
+.form-heading{font-family:'Playfair Display',Georgia,serif;font-size:28px;font-weight:400;line-height:1.2;margin-bottom:8px}
+.form-sub{font-size:15px;color:var(--muted);margin-bottom:32px;line-height:1.55}
+.form-group{margin-bottom:18px}
+.form-label{display:block;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink);margin-bottom:7px}
+.form-input{width:100%;padding:14px 16px;border:1px solid var(--rule);background:var(--canvas);font-family:'Inter',sans-serif;font-size:15px;color:var(--ink);-webkit-appearance:none;border-radius:0}
+.form-input:focus{outline:none;border-color:var(--accent)}
+.form-btn{display:block;width:100%;padding:17px 24px;background:var(--navy);color:var(--canvas);font-family:'Inter',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;border:none;cursor:pointer;margin-top:26px;border-radius:0}
+.form-btn:hover{background:var(--accent-deep)}
+.form-btn:disabled{opacity:0.55;cursor:default}
+.form-privacy{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-top:14px;text-align:center}
+
+/* SUCCESS */
+.success{display:none;padding:20px 0}
+.success-check{font-size:48px;color:var(--accent);margin-bottom:16px;line-height:1}
+.success-title{font-family:'Playfair Display',Georgia,serif;font-size:30px;font-weight:400;margin-bottom:12px;line-height:1.2}
+.success-sub{font-size:15px;color:var(--muted);line-height:1.6}
+
+/* PULL */
+.pull{background:var(--canvas);padding:80px 32px;text-align:center;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);margin:0 32px}
+.pull-inner{max-width:800px;margin:0 auto}
+.pull-mark{font-family:'Playfair Display',Georgia,serif;font-size:96px;line-height:0.4;color:var(--accent);opacity:0.6;display:block;margin-bottom:8px}
+.pull-text{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:36px;line-height:1.28;font-weight:400;color:var(--ink)}
+.pull-text em{color:var(--electric);font-style:italic}
+.pull-attrib{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.22em;margin-top:28px;color:var(--muted)}
+
+/* FOOTER */
+.footer{background:var(--ink);color:var(--canvas);padding:56px 32px 28px;margin-top:80px}
+.footer-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;align-items:start}
+.footer-brand{font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:700;margin-bottom:10px}
+.footer-tag{opacity:0.7;font-size:14px;max-width:380px}
+.footer-col-head{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;opacity:0.6;margin-bottom:12px}
+.footer-link{display:block;font-size:14px;padding:4px 0;color:var(--canvas);opacity:0.85}
+.footer-link:hover{opacity:1}
+.footer-legal{max-width:1240px;margin:40px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,0.12);font-size:10px;opacity:0.45;font-family:'Space Mono',monospace;letter-spacing:0.16em;text-transform:uppercase;text-align:center}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .page{grid-template-columns:1fr;gap:52px;padding:60px 24px 80px}
+  .pull{margin:0 20px;padding:64px 24px}
+  .pull-text{font-size:28px}
+  .footer-inner{grid-template-columns:1fr;gap:32px}
+  .nav-inner{padding:16px 20px}
+}
+@media(max-width:560px){
+  html,body{font-size:16px}
+  .page{padding:44px 16px 64px}
+  .form-wrap{padding:28px 22px}
+  .guide-title{font-size:27px}
+  .guide-desc{font-size:16px}
+  .pull{margin:0 12px;padding:48px 18px}
+  .pull-text{font-size:22px}
+  .pull-mark{font-size:72px}
+  .footer{padding:44px 16px 24px}
+  .footer-legal{font-size:10px}
+}
+</style>
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
+<script defer src="/lib/motion.js"></script>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-logo" href="free-resources.html">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="free-resources.html">Home</a><a href="free-resources.html#library">Free Resources</a><a href="99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="about.html">About</a><a href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=opt-in">Workshops</a><a class="nav-cta" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=opt-in">Fast Forward</a></div>
+  <a class="nav-back" href="free-resources.html">← All free guides</a>
+</div></nav>
+
+<div class="page">
+
+  <div class="guide-lead">
+    <div class="guide-kicker">Free guide</div>
+    <span class="chip chip-purple" id="guide-chip">GUIDE</span>
+    <h1 class="guide-title" id="guide-title">Loading…</h1>
+    <p class="guide-desc" id="guide-desc"></p>
+    <div class="guide-what" id="guide-what">
+      <div class="guide-what-label">What is inside</div>
+      <ul id="guide-bullets"></ul>
+    </div>
+  </div>
+
+  <div class="form-wrap">
+    <div id="form-state">
+      <div class="form-eyebrow">Send it to my inbox</div>
+      <div class="form-heading" id="form-heading">One email. Instant access.</div>
+      <p class="form-sub">Enter your details and the guide opens immediately. No spam. Unsubscribe any time.</p>
+      <form id="optin-form">
+        <div class="form-group">
+          <label class="form-label" for="firstName">First name</label>
+          <input class="form-input" id="firstName" name="firstName" type="text" placeholder="Your first name" required autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Email address</label>
+          <input class="form-input" id="email" name="email" type="email" placeholder="your@email.com" required autocomplete="email">
+        </div>
+        <input type="hidden" id="guide-field" name="guide" value="">
+        <input type="hidden" name="source" value="guide-optin">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button class="form-btn" type="submit" id="submit-btn">Read the guide →</button>
+        <p class="form-privacy">You’ll also get <strong>The Insider Brief</strong>, one curated AI briefing every Tuesday, verdicts included. Unsubscribe any time.</p>
+      </form>
+    </div>
+    <div class="success" id="success-state">
+      <div class="success-check">✓</div>
+      <div class="success-title">Opening your guide…</div>
+      <p class="success-sub">Also heading to your inbox in case you want it later.<br>If it does not appear in 5 minutes, check spam.</p>
+    </div>
+  </div>
+
+</div>
+
+<section class="pull"><div class="pull-inner">
+  <span class="pull-mark">&ldquo;</span>
+  <p class="pull-text">You're not behind. You just haven't had someone <em>explain it properly yet.</em></p>
+  <div class="pull-attrib">Fatiha Chikh</div>
+</div></section>
+
+<footer class="footer"><div class="footer-inner">
+  <div>
+    <div class="footer-brand">Shift &amp; Lead</div>
+    <p class="footer-tag">For everyday entrepreneurs who want AI and automation to buy back their time. Built by someone who did it herself.</p>
+  </div>
+  <div>
+    <div class="footer-col-head">Explore</div>
+    <a class="footer-link" href="https://guides.shiftandlead.com">The Free Guides</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#cases">Case Studies</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=opt-in">Fast Forward</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=opt-in">Workshops</a>
+    <a class="footer-link" href="about.html#community-waitlist">Community</a>
+    <a class="footer-link" href="about.html">About</a>
+  </div>
+  <div>
+    <div class="footer-col-head">Connect</div>
+    <a class="footer-link" href="https://www.instagram.com/thefatihachikh" target="_blank" rel="noopener">Instagram</a>
+    <a class="footer-link" href="https://linkedin.com/in/fatihachikh" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="footer-link" href="https://brief.shiftandlead.com">The Insider Brief</a>
+    <a class="footer-link" href="https://www.shiftandlead.com/index.html#contact">Contact</a>
+  </div>
+</div>
+<div class="footer-legal"><a href="privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved.</div>
+</footer>
+
+<script>
+var GUIDES = {
+  'what-is-ai': {
+    chip: 'WHAT', chipClass: 'chip-purple',
+    title: 'Everyone says “AI” 100 times a day. Nobody says what it is.',
+    desc: 'You’re not behind. You were never told. Here’s what AI actually is: plain English, no jargon, no condescension.',
+    bullets: [
+      'What AI is, in 4 lines (the version that actually sticks)',
+      'Why it keeps getting more capable, so fast',
+      'The difference between AI and a search engine',
+      'Where to start if you’ve been avoiding it'
+    ]
+  },
+  'chatgpt-vs-ai': {
+    chip: 'DIFF', chipClass: 'chip-purple',
+    title: 'ChatGPT and AI are not the same thing. Here are the 6 words, sorted.',
+    desc: 'ChatGPT. AI. LLM. Chatbot. Agent. Model. Everyone uses them interchangeably. None of them mean the same thing.',
+    bullets: [
+      'All 6 terms, defined in one sentence each',
+      'The hierarchy: what contains what',
+      'Why the distinction actually matters in practice',
+      'The one word that changes how you think about all of it'
+    ]
+  },
+  'what-is-a-prompt': {
+    chip: 'PROMPT', chipClass: 'chip-purple',
+    title: 'Heard “prompt” 50 times. Still no idea what it actually is?',
+    desc: 'Every AI article tells you to write better prompts. Nobody tells you what a prompt is, or why some work and most don’t.',
+    bullets: [
+      'What a prompt actually is (in one sentence)',
+      'The anatomy of a prompt that works every time',
+      'The 3 things most people leave out',
+      'A copy-paste starter template you can use today'
+    ]
+  },
+  'ai-jargon-guide': {
+    chip: 'WORDS', chipClass: 'chip-red',
+    title: '12 AI words everyone uses. Explained in plain English.',
+    desc: 'You sat through that meeting. You smiled. You nodded. You understood nothing. Here’s the pause button.',
+    bullets: [
+      'RAG, MCP, hallucination, fine-tuning: all 12 defined',
+      'One plain-English sentence per term',
+      'A quick-reference card you’ll actually keep open',
+      'The 3 you’ll hear most in the next 90 days'
+    ]
+  },
+  'inbox-manager-setup': {
+    chip: 'INBOX', chipClass: 'chip-black',
+    title: 'Hire the AI employee that runs your inbox.',
+    desc: 'She reads every email, sorts it, drafts the easy replies, and hands you one summary at 8am. She never sends anything. The send button stays yours.',
+    bullets: [
+      'The 4-job workflow: label, draft, file, digest',
+      'The exact job description (prompt) to copy, blanks and all',
+      'The 3 filters that do 30 percent of the job with zero AI',
+      'The safety rules: draft-only by design, red lines included'
+    ]
+  },
+  '24-7-operations-system': {
+    chip: 'MORNING', chipClass: 'chip-black',
+    title: 'Run a 24/7 company without working 24/7.',
+    desc: 'Build your AI operations layer in 7 days. No code. Five quiet workflows that run while you sleep, from a morning briefing to your weekly client updates.',
+    bullets: [
+      'The exact 5 workflows, with a copy-paste prompt for each',
+      'The 7-day build plan, 30 to 60 minutes a day',
+      'The Traffic Light Rule that keeps your data safe',
+      'Works the same on Claude, ChatGPT, Gemini, or Copilot'
+    ]
+  },
+  'stack-3-tool-ai-stack': {
+    chip: 'STACK', chipClass: 'chip-purple',
+    title: 'The 3 tools I use to run my entire business with AI.',
+    desc: 'Claude thinks. Blotato publishes. GHL closes the loop. Here’s exactly how they connect: and how you can replicate it.',
+    bullets: [
+      'The exact 3-tool stack (no fluff, no alternatives)',
+      'How the tools hand off to each other automatically',
+      'What to set up first, second, and third',
+      'The one thing most people skip that breaks the whole system'
+    ]
+  },
+  'follow-up-setup': {
+    chip: 'FOLLOW UP', chipClass: 'chip-black',
+    title: 'Still following up with leads by hand? Here’s the setup that does it for you.',
+    desc: 'The exact workflow that replies to your leads, books the call, and nurtures the relationship: while you’re doing something else entirely.',
+    bullets: [
+      'The follow-up sequence that runs on autopilot',
+      'How to set the triggers so nothing falls through',
+      'The 3 messages that move a cold lead to a warm one',
+      'How to plug this into GHL in under an hour'
+    ]
+  },
+  'first-ai-employee': {
+    chip: 'TEAM', chipClass: 'chip-black',
+    title: 'How to hire your first AI employee in a day.',
+    desc: 'Not a tool. An employee. One that shows up on time, never complains, and does the work you keep putting off.',
+    bullets: [
+      'The 5-step hire framework: pick task → job description → tools → shift → approve',
+      'The exact job description format that makes AI work reliably',
+      'What to delegate first (and what to keep for yourself)',
+      'Day 1–3 quickstart plan'
+    ]
+  },
+  'what-is-agentic': {
+    chip: 'AGENTIC', chipClass: 'chip-purple',
+    title: 'Everyone says “agentic.” Here’s what it actually means.',
+    desc: 'Agentic AI. AI agents. Agentic workflows. Everyone uses the word. Almost nobody defines it: including people using it three different ways in the same sentence.',
+    bullets: [
+      'What “agentic” actually means, in one sentence',
+      'The 4 levels of autonomy, from autocomplete to fully unsupervised',
+      'Where the hype outruns what these systems can actually do today',
+      'How to tell if a tool is genuinely agentic or just marketing itself that way'
+    ]
+  },
+  'chez-claude': {
+    chip: 'DECODE', chipClass: 'chip-blue',
+    title: 'Chez Claude. The one that reads the whole room before it answers.',
+    desc: 'Long-form reasoning, Artifacts, computer-use, Projects, Claude Code: the whole Anthropic ecosystem, walked through like a restaurant. Door, kitchen, plate.',
+    bullets: [
+      'The door: what Claude.ai actually looks like the first time you open it',
+      'The kitchen: Artifacts, Projects, computer-use, and Claude Code, explained in plain English',
+      'The plate: what you actually get out, and when to reach for which feature',
+      'The one thing that makes Claude different from every other kitchen on this list'
+    ]
+  },
+  'chez-openai': {
+    chip: 'DECODE', chipClass: 'chip-blue',
+    title: 'Chez ChatGPT. The one everyone tried first. Here’s what’s actually on the menu.',
+    desc: 'GPTs, Operator, Agents, Voice, image gen: the whole OpenAI ecosystem, walked through like a restaurant. Door, kitchen, plate.',
+    bullets: [
+      'The door: what changed since the ChatGPT you tried once and forgot about',
+      'The kitchen: GPTs, Agents, Operator, and Voice mode, explained without the marketing',
+      'The plate: image gen, and what it’s actually good for',
+      'Where ChatGPT fits next to Claude, Gemini, and the rest of the menu'
+    ]
+  },
+  'chez-gemini': {
+    chip: 'DECODE', chipClass: 'chip-blue',
+    title: 'Chez Gemini. It already knows your calendar, your Drive, your inbox.',
+    desc: 'Gemini, Workspace, Deep Research, NotebookLM, Astra: the Google AI stack, walked through like a restaurant.',
+    bullets: [
+      'The door: how Gemini is already inside Gmail, Docs, and Calendar before you’ve opened it',
+      'The kitchen: Deep Research, NotebookLM, and Astra, explained in plain English',
+      'The plate: what the Workspace integration actually saves you',
+      'The trade-off nobody mentions: what Google sees in exchange'
+    ]
+  },
+  'chez-copilot': {
+    chip: 'DECODE', chipClass: 'chip-blue',
+    title: 'Chez Copilot. It’s been sitting in your Office toolbar this whole time.',
+    desc: 'Copilot Chat, Cowork, Studio, Agent 365, Foundry: Microsoft’s AI restaurant, from door to plate.',
+    bullets: [
+      'The door: the Copilot button you’ve been ignoring in Word, Excel, and Teams',
+      'The kitchen: Cowork, Studio, Agent 365, and Foundry, explained without the enterprise jargon',
+      'The plate: what it’s actually good for if you already live in Office',
+      'Where it falls short of Claude or ChatGPT, and why that’s fine'
+    ]
+  },
+  'chez-grok': {
+    chip: 'DECODE', chipClass: 'chip-blue',
+    title: 'Chez Grok. Real-time ingredients. No filter on the chef.',
+    desc: 'Grok 4.3, Big Brain, Aurora, X live search, SuperGrok Heavy: xAI’s loud kitchen, walked through.',
+    bullets: [
+      'The door: what makes Grok different from a ChatGPT clone',
+      'The kitchen: Big Brain, Aurora, and live X search, explained in plain English',
+      'The plate: SuperGrok Heavy, and who it’s actually for',
+      'The one trade-off you’re making for real-time answers'
+    ]
+  },
+  'chez-mistral': {
+    chip: 'DECODE', chipClass: 'chip-blue',
+    title: 'Chez Mistral. Open kitchen. Nothing leaves the building.',
+    desc: 'Le Chat, Mistral Large, Magistral, Vibe coding, No Telemetry Mode: the Paris kitchen, mapped clean.',
+    bullets: [
+      'The door: why Mistral markets itself on privacy first',
+      'The kitchen: Le Chat, Magistral, and Vibe coding, explained without the jargon',
+      'The plate: what No Telemetry Mode actually means for your data',
+      'Where Mistral Pro lands compared to the rest of the menu'
+    ]
+  },
+  'chez-deepseek': {
+    chip: 'DECODE', chipClass: 'chip-blue',
+    title: 'Chez DeepSeek. Same plates. A fraction of the price.',
+    desc: 'V4 Flash, V4 Pro, 1M context: the open-source kitchen from China, mapped clean.',
+    bullets: [
+      'The door: how DeepSeek undercuts everyone else on price',
+      'The kitchen: V4 Flash, V4 Pro, and the 1M-token context window, explained in plain English',
+      'The plate: what you give up for the lower price tag',
+      'The one question to ask before you rely on it for anything sensitive'
+    ]
+  },
+  'chez-kimi': {
+    chip: 'DECODE', chipClass: 'chip-blue',
+    title: 'Chez Kimi. 300 chefs in parallel. Nobody’s heard of this place yet.',
+    desc: 'K2.6, a 300-agent swarm, Kimi Code, Cursor under the hood, Moonshot AI’s parallel brigade.',
+    bullets: [
+      'The door: who’s actually behind Kimi, and why it’s suddenly worth knowing',
+      'The kitchen: the 300-agent swarm and Kimi Code, explained without the hype',
+      'The plate: what running Cursor under the hood actually means for you',
+      'Why this is the one on the list most people haven’t heard of yet'
+    ]
+  },
+  'chez-meta-ai': {
+    chip: 'DECODE', chipClass: 'chip-blue',
+    title: 'Chez Meta AI. Free tables on every app you already use.',
+    desc: 'Llama, WhatsApp + IG + Messenger integration, Ray-Ban Meta glasses, AI Studio, Meta’s AI stack, mapped clean.',
+    bullets: [
+      'The door: where Meta AI is already sitting inside WhatsApp, Instagram, and Messenger',
+      'The kitchen: Llama, AI Studio creator characters, and Ray-Ban Meta glasses, explained plainly',
+      'The plate: what’s actually free versus what’s a funnel',
+      'The privacy trade-off of an AI that’s already inside your DMs'
+    ]
+  },
+  'chez-manus': {
+    chip: 'DECODE', chipClass: 'chip-blue',
+    title: 'Chez Manus. You sit down. The kitchen runs itself.',
+    desc: 'An autonomous multi-agent brigade, planner, executor, verifier, working browser, code, and files for hours, unsupervised.',
+    bullets: [
+      'The door: what makes Manus “agentic” instead of just a chatbot',
+      'The kitchen: the planner/executor/verifier brigade, explained in plain English',
+      'The plate: what hours of unsupervised work actually looks like in practice',
+      'The guardrails you need before you let it run on its own'
+    ]
+  }
+};
+
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var slug = (params.get('guide') || '').toLowerCase().trim();
+  var guide = GUIDES[slug];
+
+  var redirectUrl = slug && guide
+    ? window.location.origin + '/guides/' + slug + '.html'
+    : window.location.origin + '/free-resources.html';
+
+  if (guide) {
+    document.getElementById('page-title').textContent = guide.title + ', Shift & Lead';
+
+    var chipEl = document.getElementById('guide-chip');
+    chipEl.textContent = guide.chip;
+    chipEl.className = 'chip ' + guide.chipClass;
+
+    document.getElementById('guide-title').textContent = guide.title;
+    document.getElementById('guide-desc').textContent = guide.desc;
+
+    var ul = document.getElementById('guide-bullets');
+    guide.bullets.forEach(function(b) {
+      var li = document.createElement('li');
+      li.textContent = b;
+      ul.appendChild(li);
+    });
+  } else {
+    document.getElementById('guide-title').textContent = 'Get your free guide.';
+    document.getElementById('guide-desc').textContent = 'Tell us where to send you, and we will open the full free library.';
+    document.getElementById('guide-what').style.display = 'none';
+    document.querySelector('.chip').style.display = 'none';
+  }
+
+  document.getElementById('guide-field').value = slug;
+
+  document.getElementById('optin-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submit-btn');
+    btn.textContent = 'Opening…';
+    btn.disabled = true;
+
+    var firstName = document.getElementById('firstName').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var gotcha = document.querySelector('[name="_gotcha"]').value;
+
+    // Fire Formspree (email backup)
+    fetch('https://formspree.io/f/xgojoyka', {
+      method: 'POST', keepalive: true,
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ firstName: firstName, email: email, guide: slug, _gotcha: gotcha })
+    });
+
+    // Fire n8n webhook (GHL contact + tag)
+    if (!gotcha) fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
+      method: 'POST', keepalive: true,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ firstName: firstName, email: email, guide: slug, source: 'guide-optin' })
+    });
+
+    // Show success flash, then redirect to the guide
+    document.getElementById('form-state').style.display = 'none';
+    document.getElementById('success-state').style.display = 'block';
+
+    setTimeout(function() {
+      window.location.href = redirectUrl;
+    }, 900);
+  });
+})();
+</script>
+</body>
+</html>
