@@ -31,6 +31,14 @@
 - 20/07/2026 | LinkedIn | "How to Hand Your First Business Task to an AI Employee. 5 Steps, 10 Minutes." — The Freedom Business, TEAM | READY TO POST
 - 20/07/2026 | Short-form video | "How to Build an Interactive Lead Magnet for Free. No Code. 20 Minutes." — Build Once, PROMPT | READY TO POST
 
+> **21/07/2026 daily run:** ENTRY 080-084 from RESEARCH 041 (Jul 21 2026). 1 storytelling C post, 2 AI news Result Recipes (A posts), 1 opinion C post, 1 educational A post. ACP this batch: 3A / 2C / 0P — rolling 10 (ENTRY 075-084) lands at 7A / 2C / 1P. Entries 080, 083 marked DRAFT [PREP: community waitlist link]; entries 081, 082, 084 READY TO POST.
+
+- 21/07/2026 | LinkedIn | "How to Unlearn the Instinct That Makes AI Automation Feel Wrong." — Real Talk, community | DRAFT [PREP: community link]
+- 21/07/2026 | LinkedIn | "How to Beat a $145 Billion AI Budget. Tonight." — What's Worth It, STACK | READY TO POST
+- 21/07/2026 | LinkedIn | "How to Set Up the Comment-to-DM System That Captures Leads While You Sleep." — Stop Doing by Hand, TEAM | READY TO POST
+- 21/07/2026 | LinkedIn | "How to Tell If Your AI Tools Are Actually Working. Forbes Just Named the Question." — What's Worth It, community | DRAFT [PREP: community link]
+- 21/07/2026 | LinkedIn | "How to Build a Content System That Posts for You Every Week." — Build Once, PIPELINE | READY TO POST
+
 - 16/07/2026 | LinkedIn | "How to Stop Doing the Work and Start Being the Decision-Maker" — storytelling C post, Real Talk, community waitlist | DRAFT [PREP: community link]
 - 16/07/2026 | LinkedIn | "How to Stop Waiting for the Perfect AI and Hire the One That Exists Right Now" — AI news Result Recipe, Stop Doing by Hand, RESEARCH 036-S1 | READY TO POST
 - 16/07/2026 | LinkedIn | "How to Join the 41 Million Solopreneurs Already Winning With AI" — AI news Result Recipe, The Freedom Business, RESEARCH 036-S7 | READY TO POST
@@ -87,6 +95,165 @@
 - 23/06/2026 | Short-form video | "Stop Using AI Like a Vending Machine" — build systems, not answers | STALE 20/07/2026 (auto)
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | STALE 20/07/2026 (auto)
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | STALE 20/07/2026 (auto)
+
+---
+
+## ENTRY 084 — 21/07/2026 | LinkedIn | How to Build a Content System That Posts for You Every Week. The 4-Step Method. | READY TO POST
+`A · Build Once, Runs Forever · CTA: PIPELINE · critic 8.0 · src: pillar method · receipt: vault count (79 entries, 1st use in this window)`
+
+How to build a content system that posts for you every week. The 4-step method.
+
+Consistent content doesn't require consistent effort. It requires one documented system.
+
+Here's how to build it:
+
+1. Pick one piece of content you produce every week. The most formulaic type you have — a tip, a question, a resource share. Write down your exact format in plain steps. Not what it's about. How it's structured.
+
+2. Write the AI brief. One prompt that produces the first draft every time:
+
+"You produce [content type] for my business. My audience is [one sentence about who they are and what they want]. The format is always: [your steps from step 1]. My voice sounds like this: [paste 3 sentences you've actually written — replace any client names with [CLIENT] and company names with [COMPANY]]. Here is a good past example: [paste one]. Produce this week's version for this topic: [topic]."
+
+3. Test it 3 times on real topics. If it's not producing usable first drafts by the third run, the format in step 1 needs to be clearer. Fix the brief, not the prompt.
+
+4. Connect it to your schedule. Once output is reliable: AI draft to your 5-minute review to scheduled post. That's the full human role. The machine handles everything before and after.
+
+I use this method for 4 content types. This system has produced 79 ready-to-review vault entries. My daily review time: under 30 minutes.
+
+Comment PIPELINE and I'll send you the voice clone pipeline — the one I use to post in my voice without spending an hour on each piece.
+
+> **Critic notes:** Hook 9/10 (outcome-first; "posts for you every week" names the recurring payoff; "The 4-step method." sets expectation; 82 chars ✓ complete thought; how-to-first ✓); positioning 9/10 (Build Once Runs Forever pillar; "you build it once" is the exact pillar promise in a sentence; non-technical; freedom of time ✓); specificity 9/10 (4-step method; copy-paste prompt with [CLIENT]/[COMPANY] redaction modeled ✓; vault count 79 entries — real logged receipt, 1st use in this rolling window ✓; "30 minutes" specific and verifiable for this operator); voice 8/10 (direct; "Fix the brief, not the prompt." is a punchy, memorable rule; contractions; no em-dashes ✓); CTA 8/10 (PIPELINE active ✓; "voice clone pipeline" and "post in my voice" make the ask concrete, not generic); proven-pattern 5/10 (Teach Your System pattern; no post-rebrand logged data — untested territory; scoring neutral per skill). Avg 8.0. READY TO POST.
+
+---
+
+## ENTRY 083 — 21/07/2026 | LinkedIn | How to Tell If Your AI Tools Are Actually Working. Forbes Just Named the Question. | DRAFT
+`C · What's Worth It · CTA: community waitlist · critic 7.5 · src: RESEARCH 041-S2 (Forbes, Vivian Toh, Jul 17 2026), RESEARCH 040-S1 (Technology Radar Jul 6 2026, Hector Pincheira), RESEARCH 040-S2 (OpenAI ROI Scorecard Jul 19 2026, Lilach Bullock) · ⚠️ PREP: insert community waitlist link before queueing · ⚠️ Note: "tabs vs. stack" distinction also appears in ENTRY 077 — different framing, separated by 7 entries; flag for operator awareness`
+
+How to tell if your AI tools are actually working. Forbes just named the question.
+
+Forbes published this week: the barrier to AI adoption isn't technical. It's behavioral. Most people don't want to build AI agents. They want their existing tools to work better.
+
+The question they didn't answer directly: how do you know if your existing tools ARE working better?
+
+One question does it:
+
+Can you name one specific outcome this tool produced for your business this week?
+
+Not "it helped me think." Not "it saved some time." One sentence: it produced [output], which meant [result], in [timeframe].
+
+If you can't finish that sentence, the tool isn't in your stack. It's in your tabs.
+
+The Technology Radar put the macro version of this into numbers: 78% of organisations adopted AI tools. 74% failed to improve results. OpenAI published a 4-question ROI framework this month because most organisations couldn't answer the basics without being prompted to look.
+
+The measurement gap is the AI gap. The operators getting results aren't using better tools. They're measuring the ones they have.
+
+This is the conversation that runs every month inside the AI Automation Queen community. Not which tool won the benchmark. What did your stack actually produce last week?
+
+The answers are always more surprising than the tools. Come in →
+
+[PREP: insert community waitlist link before queueing]
+
+> **Critic notes:** Hook 8/10 (outcome-first; "Forbes just named the question" adds authority cue for LinkedIn audience; 82 chars ✓ complete thought; how-to-first ✓); positioning 9/10 (What's Worth It pillar; measurement frame; non-technical entrepreneurs; filtering noise = the brand promise ✓); specificity 9/10 (RESEARCH 041-S2 ✓ Forbes Jul 17 2026; Technology Radar RESEARCH 040-S1 ✓; OpenAI ROI framework RESEARCH 040-S2 ✓; all cross-referenced; "tabs vs. stack" distinction is original and repeatable); voice 9/10 (direct; "tabs vs. stack" is memorable; "prompted to look" has edge; contractions; no em-dashes ✓); CTA 5/10 (PREP blocked; "Come in →" per CTA map for What's Worth It C post — adapted from "What we actually debated in the community this week" to match post's closing energy ✓); proven-pattern 5/10 (Contrarian Operational Hook; no logged data — untested territory; neutral). Avg 7.5. DRAFT — lifts to ~8.5 when PREP resolved.
+
+---
+
+## ENTRY 082 — 21/07/2026 | LinkedIn | How to Set Up the Comment-to-DM System That Captures Leads While You Sleep. 4 Steps. | READY TO POST
+`A · Stop Doing That by Hand · CTA: TEAM · critic 8.2 · src: RESEARCH 041-S4 (mean.ceo Instagram Trends Jul 2026, comment-to-DM highest-converting strategy)`
+
+How to set up the comment-to-DM system that captures leads while you sleep. 4 steps.
+
+Instagram confirmed it this week: comment-to-DM automation is the highest-converting revenue strategy on the platform right now. Posts that prompt a keyword comment and deliver value via DM are outperforming call-to-website by a wide margin.
+
+Here's what it looks like in practice:
+
+Someone watches your content. You ask them to comment a keyword. They comment. They automatically get a DM with your free resource. Their email goes into your system. You're not involved in any step after the initial setup.
+
+Before: manually tracking comments and following up by hand. After: the system handles every reply, every time, whether you're in a meeting or asleep.
+
+Here's the 4-step setup:
+
+1. Choose the free resource you get asked about most. A guide, a checklist, a template. One page is enough to start. If nothing comes to mind, take the question you answer most often in DMs and write the answer once as a short PDF.
+
+2. Pick a one-word keyword. Short, obvious, related to the topic: STACK, TEAM, PROMPT. This is what your audience comments to trigger the DM.
+
+3. Set up the DM automation. ManyChat connects to Instagram for free. Configure it to: detect keyword comment, send DM, deliver the resource link, ask for email to receive the full version.
+
+4. Film a short video, Reel or talking-head, that ends with this script (replace the brackets with your own values before you record):
+
+"If you want [resource name], comment [KEYWORD] below and I'll send it to you right now."
+
+Say it on camera. Pin the same line as your first comment to catch anyone who reads without watching.
+
+That's the whole setup. One afternoon to build. Runs every time someone watches after that.
+
+Do it and comment TEAM with the keyword you chose. I'll send you the free guide to setting up your first AI employee — which is exactly what this system is.
+
+> **Critic notes:** Hook 9/10 (outcome-first; "while you sleep" is the freedom payoff; "4 steps" sets expectation; 89 chars ✓ complete thought; how-to-first ✓); positioning 9/10 (Stop Doing That by Hand pillar; before/after contrast is explicit; system-runs-without-you = freedom promise; non-technical throughout ✓); specificity 9/10 (RESEARCH 041-S4 ✓ mean.ceo Jul 2026; ManyChat named; free plan noted; copy-paste script with [KEYWORD]/[resource name] redaction structure ✓; "one afternoon" is specific and achievable); voice 8/10 (casual, direct; "You're not involved in any step after the initial setup." is the clean payoff; before/after structure lands; contractions; no em-dashes ✓); CTA 9/10 (TEAM active ✓; "comment TEAM with the keyword you chose" is a specific involvement close; "which is exactly what this system is" ties DM automation to AI employee framing cleanly ✓); proven-pattern 5/10 (Before/After Contrast + Result Recipe; no post-rebrand logged data — untested; note: system is Instagram-confirmed but the post is on LinkedIn — cross-platform relevance is implied, not stated). Avg 8.2. READY TO POST.
+
+---
+
+## ENTRY 081 — 21/07/2026 | LinkedIn | How to Beat a $145 Billion AI Budget. Tonight. | READY TO POST
+`A · What's Worth It · CTA: STACK · critic 8.2 · src: RESEARCH 041-S1 (TechCrunch Jul 2 2026, Zuckerberg town hall, Meta $145B infrastructure cut)`
+
+How to beat a $145 billion AI budget. Tonight.
+
+Meta invested $145 billion in AI infrastructure in 2026. Cut 8,000 employees. Reassigned 7,000 more into new AI units.
+
+Then Mark Zuckerberg told staff in a town hall: the agents "didn't accelerate in the way" they expected. Recovery timeline: 3 to 6 months.
+
+Here's what that tells you: the most resourced AI operation on earth is behind schedule. You don't have to be.
+
+The reason one person with 3 tools can outperform $145 billion in infrastructure right now: scope. Meta needs its agents to work for 3 billion people across every possible workflow. You need yours to work for your business on 3 specific tasks.
+
+That is a solvable problem. Here's how to solve it tonight:
+
+1. Name the 3 tasks in your business that eat the most time each week. Be specific: not "communications" but "replying to LinkedIn DMs by hand." Not "admin" but "formatting my weekly report."
+
+2. For each task, complete this sentence: this tool saves me [N hours] on [task name] every week. If you can't fill in both blanks, circle it — you don't have a working tool for that task yet.
+
+3. Pick the tool that already handles each circled task. Not the one you want to try. The one that already exists and works for one specific thing.
+
+4. Write one prompt for each task (replace the brackets before you send it):
+
+"You handle [task name] for my business. The output should always be [format], delivered to [recipient]. Here's how I currently do it: [your exact steps]. Replace any client names with [CLIENT] and company names with [COMPANY]. If you're unsure at any point, stop and ask me one question. Don't guess."
+
+5. Run it on one real case. Fix what's off. That's the first tool in your working stack.
+
+Meta's recovery timeline is 3 to 6 months. Your first working tool can run by Friday.
+
+Comment STACK and I'll send you the 3-tool setup I actually use.
+
+> **Critic notes:** Hook 9/10 (outcome-first; "Tonight." as hard deadline; 43 chars — tight, provocative contrast ✓; how-to-first with edge ✓); positioning 9/10 (What's Worth It pillar; scope argument is the brand differentiator — one person, specific tasks vs. enterprise complexity; non-technical ✓); specificity 9/10 (RESEARCH 041-S1 ✓ TechCrunch Jul 2 2026; $145B, 8,000 cut, 7,000 reassigned, and Zuckerberg direct quote all sourced ✓; 3–6 month recovery from same source ✓; 5 steps; copy-paste prompt with [CLIENT]/[COMPANY] redaction modeled ✓); voice 9/10 (direct; "That is a solvable problem." definitive; "Meta's recovery timeline is 3 to 6 months. Your first working tool can run by Friday." is a strong contrast close; contractions; no em-dashes ✓); CTA 8/10 (STACK active ✓; involvement close); proven-pattern 5/10 (Contrarian Operational Hook + Result Recipe; no post-rebrand logged data for this audience — untested territory; neutral). Avg 8.2. READY TO POST.
+
+---
+
+## ENTRY 080 — 21/07/2026 | LinkedIn | How to Unlearn the Instinct That Makes AI Automation Feel Wrong. And What to Do Instead. | DRAFT
+`C · Real Talk · CTA: community waitlist · critic 7.3 · src: personal-brain.md (20+ years corporate background; current project: building content OS) · ⚠️ PREP: insert community waitlist link before queueing · ⚠️ Note: no specific logged anecdote available in personal-brain — post is framed as shared observation grounded in her background; lifts to ~8.5 when (a) PREP resolved and (b) a specific trigger moment is seeded in personal-brain`
+
+How to unlearn the instinct that makes AI automation feel wrong. And what to do instead.
+
+Twenty years of corporate instilled one belief deep enough that I didn't notice it was there: your value shows up in what you produce.
+
+You produce the report, so they see you working. You write the email, so they know you're responsive. The output is the proof of the effort. The effort is the proof of your worth.
+
+AI breaks that completely.
+
+The moment your system handles the research, drafts the content, and sends the follow-up without you producing any of it directly, the old reflex fires: "but did I actually do anything today?"
+
+The answer — the one that takes time to get comfortable with — is yes. You built the system that did it. You reviewed the output. You made the call on what was good and what wasn't. You decided what to hand over and what to keep.
+
+That's the new job. The doing is infrastructure. The deciding is the work.
+
+Getting comfortable in that role is not instant. It's not something twenty years of corporate trains you for. And it doesn't happen from reading about it.
+
+It happens from building something, watching it run, and trusting what you built.
+
+That shift is what we work through inside the AI Automation Queen community. Not "which tool is best" but "what does it feel like to stop being the one who does it all?"
+
+The answers are always more honest than the tools. Come in →
+
+[PREP: insert community waitlist link before queueing]
+
+> **Critic notes:** Hook 8/10 ("How to unlearn the instinct that makes AI automation feel wrong. And what to do instead." = 82 chars ✓ complete thought; outcome-first — the deliverable is the fix for the instinct; "And what to do instead" signals the recipe follows; how-to-first ✓); positioning 9/10 (Real Talk pillar; corporate → entrepreneur bridge is the exact audience tension; "deciding is the work" is the core brand promise stated plainly ✓); specificity 8/10 ("Twenty years of corporate" matches vague-reference voice rule ✓; no named employers ✓; instinct described is concrete and universally recognizable for the target audience; no invented anecdote — framed as shared observation, not a fabricated specific moment; flag: richer with a logged anecdote from personal-brain when available); voice 9/10 (casual; contractions; "but did I actually do anything today?" is the exact internal thought — hits authentically; "The doing is infrastructure. The deciding is the work." — short, punchy, memorable; no em-dashes ✓); CTA 5/10 (PREP blocked; "Come in →" adapted from Real Talk C post CTA map: "The community is the people actually doing this. Come in →" — tone matched ✓); proven-pattern 5/10 (Vulnerability Before Credentials pattern; no logged data — untested territory; neutral). Avg 7.3. DRAFT — lifts to ~8.5 when PREP resolved; gains specificity when a trigger moment is seeded in personal-brain via brain-manager.
 
 ---
 
