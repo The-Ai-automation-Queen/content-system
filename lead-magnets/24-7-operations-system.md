@@ -111,34 +111,65 @@ Every prompt in this guide is built to respect this. When you write your own, ke
 
 ## Day 1: Set up your assistant and connect the essentials
 
-Open your chosen platform. Enable scheduled runs and connectors.
+This is the day most guides skip. If you have never done any of this before, go slowly and follow it step by step. It is the foundation for everything else, and it is easier than it looks. Give yourself the full hour today. The other days are quicker.
 
-Claude: enable Cowork in settings.
-ChatGPT: enable Tasks and Connectors in settings.
-Gemini: open Workspace and enable Scheduled Actions.
+### Step 1: Get the right subscription
+
+The free version of these tools cannot run on a schedule or connect to your inbox. You need a paid plan. Create an account, then pick the tier that includes scheduling and connectors.
+
+Claude: go to claude.ai, create an account, and subscribe to Claude Pro or Max. Cowork comes with it.
+ChatGPT: go to chatgpt.com, create an account, and subscribe to Plus, Pro, or Team. This unlocks Tasks and Connectors.
+Gemini: sign in with your Google account and get Gemini Advanced (Google One AI Premium), or use Gemini inside your Google Workspace if your business already has one.
+Copilot: you need a Microsoft 365 Copilot license added to your existing Microsoft 365 account.
+
+If you already pay for one of these, you are ready. You only need one. Do not sign up for all four.
+
+### Step 2: Open the feature that runs on a schedule
+
+This is the engine of the whole system, and each platform hides it in a slightly different place. Look for these names:
+
+Claude: open Cowork from the main Claude window. If you do not see it, double check your plan includes it.
+ChatGPT: open Tasks (usually under your profile menu or in the sidebar).
+Gemini: open Scheduled Actions inside Google Workspace, or set up a Gem.
 Copilot: open Copilot Studio and create a new agent.
 
-Connect only 3 things on day 1:
+Menus move around. If the exact word is not there, look for anything that says schedule, task, automation, or agent. That is the one.
+
+### Step 3: Connect your first account (the part that feels scary but is not)
+
+A connector is simply permission for your assistant to read something you already own, like your inbox. Setting one up is the same every time:
+
+1. Find the connectors area. Look for Settings, then Connectors, Tools, Integrations, or Add apps.
+2. Click Connect next to the one you want. Start with your email.
+3. A window from Google or Microsoft opens. Sign in to your own account.
+4. It shows you exactly what the assistant will be allowed to do. Read it. This is where the Traffic Light Rule starts. Reading and drafting is fine. If something asks for permission to send or delete and you did not expect it, stop and check before you continue.
+5. Click Allow. The window closes and the connector shows as connected.
+
+That is it. You just gave your assistant its first sense. If you ever want to undo it, the same screen has a Disconnect button. You stay in control the whole time.
+
+### Step 4: Connect only 3 things
+
+Now connect these three, and nothing else yet:
 Your email inbox.
 Your calendar.
 Your main cloud drive (where your notes and docs live).
 
-Do not connect anything else yet. Every connector is a new surface for something to go wrong. You want the smallest possible starting point.
+Do not connect anything else on day 1. Every connector is a new surface for something to go wrong. You want the smallest possible starting point. You can always add more once the basics run without you.
 
-Now write your system prompt. This is the short paragraph that tells the assistant who it is working for and how you want it to behave. Keep it plain.
+### Step 5: Write your system prompt
 
-Example:
+This is the short paragraph that tells the assistant who it is working for and how you want it to behave. Keep it plain.
 
 > "You are the operations assistant for a solo founder. Your job is to reduce coordination overhead. Always summarise clearly. Flag anything urgent. Never send messages or take irreversible actions. Never store or repeat passwords, contracts, or client personal data. Always leave decisions to me. When in doubt, ask."
 
-Save this. You will reuse it across every workflow.
+Save it, because you will reuse it across every workflow.
 
 Claude: save as a Project instruction.
 ChatGPT: save as a Custom GPT instruction or Project system prompt.
 Gemini: save as a Gem.
 Copilot: save as the agent's system message in Copilot Studio.
 
-Day 1 done. You have a working assistant with 3 connectors and a clear role.
+Day 1 done. You have a working assistant, 3 connectors, and a clear role. The hardest part is behind you.
 
 ---
 
@@ -148,7 +179,7 @@ This is the single workflow that will change your day the most. It runs before y
 
 Schedule a run for 07:00 in your timezone. Give it this instruction:
 
-> "Read my inbox from the last 24 hours. Read today's calendar. Summarise in 3 sections. Section 1: what needs my attention today, ranked by urgency. Section 2: meetings today with any prep notes I should remember. Section 3: anything I missed yesterday that still needs a reply. Keep it under 300 words. Do not include passwords, full account numbers, or other sensitive details in the summary. Write it to a doc titled Morning Briefing YYYY-MM-DD in my main folder."
+"Read my inbox from the last 24 hours. Read today's calendar. Summarise in 3 sections. Section 1: what needs my attention today, ranked by urgency. Section 2: meetings today with any prep notes I should remember. Section 3: anything I missed yesterday that still needs a reply. Keep it under 300 words. Do not include passwords, full account numbers, or other sensitive details in the summary. Write it to a doc titled Morning Briefing YYYY-MM-DD in my main folder."
 
 Test it once manually before scheduling. Read what it produces. If it feels noisy or wrong, edit the prompt. You will iterate this 3 or 4 times over the first week.
 
@@ -162,7 +193,7 @@ Same idea. Different job. This one runs at your usual end-of-day time.
 
 Schedule a run for 18:00 or whenever you close your laptop. Give it this instruction:
 
-> "Read the doc titled Morning Briefing YYYY-MM-DD. Read the last 24 hours of email. Read the last 24 hours of calendar events. Summarise what got done, what got dropped, and what should carry into tomorrow. Write it to a doc titled Daily Review YYYY-MM-DD."
+"Read the doc titled Morning Briefing YYYY-MM-DD. Read the last 24 hours of email. Read the last 24 hours of calendar events. Summarise what got done, what got dropped, and what should carry into tomorrow. Write it to a doc titled Daily Review YYYY-MM-DD."
 
 Between the morning briefing and the daily review, you now have a continuous thread. You are no longer starting each day from scratch. Your system remembers what happened yesterday even if you do not.
 
@@ -178,11 +209,11 @@ Create a doc called Research Inbox. Anytime you find an interesting article, vid
 
 Schedule a run for Friday at 14:00. Give it this instruction:
 
-> "Read the doc titled Research Inbox. For each link, summarise the core insight in 3 sentences. Group insights by theme. At the bottom, propose 5 content ideas I could write about next week based on the themes. Save the output to a doc titled Weekly Research Digest YYYY-MM-DD. Do not empty the Research Inbox. I will archive it manually."
+"Read the doc titled Research Inbox. For each link, summarise the core insight in 3 sentences. Group insights by theme. At the bottom, propose 5 content ideas I could write about next week based on the themes. Save the output to a doc titled Weekly Research Digest YYYY-MM-DD. Do not empty the Research Inbox. I will archive it manually."
 
 Now add a second scheduled run for Monday at 09:00:
 
-> "Read the latest Weekly Research Digest. Pick the 2 strongest content ideas. For each, write a 300 word first draft in a conversational tone. Save to a doc titled Content Drafts YYYY-MM-DD. Mark them as drafts. Do not publish."
+"Read the latest Weekly Research Digest. Pick the 2 strongest content ideas. For each, write a 300 word first draft in a conversational tone. Save to a doc titled Content Drafts YYYY-MM-DD. Mark them as drafts. Do not publish."
 
 You now have a research pipeline feeding a content pipeline. Every Monday, you open 2 drafts to review. You edit. You publish yourself. The system does the boring 80 percent. You do the 20 percent that matters.
 
@@ -198,7 +229,7 @@ You need a single doc per client or project, where you drop notes throughout the
 
 Schedule a run for Sunday at 17:00. Give it this instruction:
 
-> "Read each doc in the folder titled Clients. For each client, write a short weekly update covering: what got done this week, what is blocked, what is next, and any questions I need answered. Save all updates to one doc titled Client Updates Ready to Send YYYY-MM-DD. Do not send anything. I will review and send myself."
+"Read each doc in the folder titled Clients. For each client, write a short weekly update covering: what got done this week, what is blocked, what is next, and any questions I need answered. Save all updates to one doc titled Client Updates Ready to Send YYYY-MM-DD. Do not send anything. I will review and send myself."
 
 Sunday evening, you open one doc, review 5 pre-written updates, tweak the tone, and send them yourself in 20 minutes. Every client feels well managed. You spent almost no time getting there.
 
@@ -288,21 +319,11 @@ Complex research pulling from dozens of sources with citations.
 Anything that needs to read and write your own files directly.
 Custom logic that chains multiple specialised assistants together.
 
-This is the exact line between a helpful assistant and a real operations team. The first one you just built. The second one is what I teach inside **Fast Forward**, my step-by-step system for building the AI employees that run the parts of your business this playbook only prepped. If this week showed you what is possible, that is where you go deeper.
-
-The founding waitlist is open. Details at the end.
+This is the exact line between a helpful assistant and a real operations team. The first one you just built. The second one is a bigger, more advanced setup, and it is a separate playbook for a later day. Master these five workflows first. That is what makes the next step easy when you get to it.
 
 ---
 
-## Get the next piece
-
-Two ways to keep going.
-
-**1. Want this playbook as a file you can keep?**
-Comment **MORNING** on the post that sent you here, or send me a DM with the word **MORNING**, and I will send you the full guide plus the prompt pack so you are not copying from a doc.
-
-**2. Ready to build the system that actually runs your business, not just your mornings?**
-Join the **Fast Forward founding waitlist**. It is the same plain-language, no-code approach you just used, taken all the way to a business that runs without running your life. Founding members get first access and founding pricing. Link in the same place you found this.
+## Final thought
 
 You do not need a team to run a real company. You need a small set of reliable workflows that handle the predictable parts of your week so your best hours go to the work that actually grows the business.
 
