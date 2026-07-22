@@ -220,7 +220,6 @@ section{scroll-margin-top:70px}
     <a href="#top" class="active">Home</a>
     <a href="#about">About</a>
     <a href="#cases">Case Studies</a>
-    <a href="fast-forward.html">Fast Forward</a>
     <a href="work-with-fatiha.html">Workshops</a>
     <a href="https://guides.shiftandlead.com/about.html#community-waitlist">Community</a>
     <a href="#contact">Contact</a>
@@ -471,24 +470,21 @@ section{scroll-margin-top:70px}
       <p class="testi-quote">&ldquo;Working with Fatiha was a game-changer. I can work part-time, take care of my sons, and the automations for my marketing content handle everything in the background. Total peace of mind.&rdquo;</p>
       <div class="testi-attrib">
         <div class="testi-name">Pauline P.</div>
-        <!-- PLACEHOLDER: replace with attributed result (name, role, industry, before/after number) when released by Fatiha -->
-        <div class="testi-role placeholder">Attribution being confirmed</div>
+        <!-- Role/industry attribution intentionally omitted until Fatiha releases attributed results. Add <div class="testi-role">Role, Industry</div> here when confirmed. -->
       </div>
     </div>
     <div class="testi-card">
       <p class="testi-quote">&ldquo;Fatiha helped us centralise our tools, document our systems, and start using AI without the overwhelm. Now we focus on innovation, not admin.&rdquo;</p>
       <div class="testi-attrib">
         <div class="testi-name">Myriam M.</div>
-        <!-- PLACEHOLDER: replace with attributed result (name, role, industry, before/after number) when released by Fatiha -->
-        <div class="testi-role placeholder">Attribution being confirmed</div>
+        <!-- Role/industry attribution intentionally omitted until Fatiha releases attributed results. Add <div class="testi-role">Role, Industry</div> here when confirmed. -->
       </div>
     </div>
     <div class="testi-card">
       <p class="testi-quote">&ldquo;Thanks to Fatiha, we automated our training workflows. I save hours every week and finally feel like I&rsquo;m running the business, not the other way around.&rdquo;</p>
       <div class="testi-attrib">
         <div class="testi-name">Nazima C.</div>
-        <!-- PLACEHOLDER: replace with attributed result (name, role, industry, before/after number) when released by Fatiha -->
-        <div class="testi-role placeholder">Attribution being confirmed</div>
+        <!-- Role/industry attribution intentionally omitted until Fatiha releases attributed results. Add <div class="testi-role">Role, Industry</div> here when confirmed. -->
       </div>
     </div>
   </div>
@@ -568,7 +564,6 @@ section{scroll-margin-top:70px}
     <div class="footer-col-head">Explore</div>
     <a class="footer-link" href="https://guides.shiftandlead.com">The Free Guides</a>
     <a class="footer-link" href="#cases">Case Studies</a>
-    <a class="footer-link" href="fast-forward.html">Fast Forward</a>
     <a class="footer-link" href="work-with-fatiha.html">Workshops</a>
     <a class="footer-link" href="https://guides.shiftandlead.com/about.html#community-waitlist">Community</a>
     <a class="footer-link" href="#about">About</a>
@@ -581,7 +576,7 @@ section{scroll-margin-top:70px}
     <a class="footer-link" href="#contact">Contact</a>
   </div>
 </div>
-<div class="footer-legal"><a href="https://guides.shiftandlead.com/privacy.html" style="color:inherit">Privacy</a> &middot; <a href="terms.html" style="color:inherit">Terms</a> &middot; <a href="refund-policy.html" style="color:inherit">Refunds</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved.</div>
+<div class="footer-legal"><a href="privacy.html" style="color:inherit">Privacy</a> &middot; <a href="terms.html" style="color:inherit">Terms</a> &middot; <a href="refund-policy.html" style="color:inherit">Refunds</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved.</div>
 </footer>
 
 <script>
@@ -850,7 +845,11 @@ section{scroll-margin-top:70px}
 })();
 </script>
 
-<!-- Count-up stats on scroll (case studies), respects prefers-reduced-motion -->
+<!-- Count-up stats on scroll (case studies), respects prefers-reduced-motion.
+     The number is only zeroed for the ~900ms it is actively counting up, and
+     that only starts once the card is genuinely in view. If the observer never
+     fires (or JS stalls), the stat keeps its real value instead of sticking at
+     "0", and every animation lands exactly on data-original. -->
 <script>
 (function(){
   var stats = document.querySelectorAll('.case-card .stat');
@@ -858,49 +857,71 @@ section{scroll-margin-top:70px}
 
   var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Parse and remember each stat's real value up front, but do NOT overwrite the
+  // visible text yet: the source value stays on screen until the count-up runs.
   stats.forEach(function(el){
     var original = el.textContent.trim();
-    var match = original.match(/^([\d.]+)(.*)$/);
-    if (!match){ el.dataset.original = original; el.dataset.skip = 'true'; return; }
     el.dataset.original = original;
+    var match = original.match(/^([\d.]+)(.*)$/);
+    if (!match){ el.dataset.skip = 'true'; return; }
     el.dataset.numeral = match[1];
     el.dataset.suffix = match[2];
-    if (!prefersReduced) {
-      el.textContent = (match[1].indexOf('.') === -1 ? '0' : '0.0') + match[2];
-    }
   });
 
+  // No-animation path: leave the real values on screen (never zero, never blank).
   if (prefersReduced || !('IntersectionObserver' in window)) return;
 
+  function runCount(el){
+    if (el.dataset.skip === 'true' || el.dataset.counted === 'true') return;
+    el.dataset.counted = 'true';
+    var target = parseFloat(el.dataset.numeral);
+    if (!isFinite(target)) { el.textContent = el.dataset.original; return; }
+    var suffix = el.dataset.suffix;
+    var isInt = el.dataset.numeral.indexOf('.') === -1;
+    var duration = 900;
+    var startTime = null;
+
+    function step(ts){
+      if (!startTime) startTime = ts;
+      var progress = Math.min((ts - startTime) / duration, 1);
+      var current = target * progress;
+      el.textContent = (isInt ? Math.round(current) : current.toFixed(1)) + suffix;
+      // Stop when done or if the node leaves the DOM; always finish on the exact
+      // source value so a stat can never freeze part-way (e.g. at "0").
+      if (progress < 1 && el.isConnected) requestAnimationFrame(step);
+      else el.textContent = el.dataset.original;
+    }
+    requestAnimationFrame(step);
+  }
+
+  // Start counting only when the stat is actually visible (same trigger the
+  // reveal animation uses), so it can never finish while the card is hidden.
   var observer = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if (!entry.isIntersecting) return;
-      var el = entry.target;
-      if (el.dataset.skip === 'true' || el.dataset.counted === 'true') return;
-      el.dataset.counted = 'true';
-
-      var target = parseFloat(el.dataset.numeral);
-      var suffix = el.dataset.suffix;
-      var isInt = el.dataset.numeral.indexOf('.') === -1;
-      var duration = 900;
-      var startTime = null;
-
-      function step(ts){
-        if (!startTime) startTime = ts;
-        var progress = Math.min((ts - startTime) / duration, 1);
-        var current = target * progress;
-        el.textContent = (isInt ? Math.round(current) : current.toFixed(1)) + suffix;
-        if (progress < 1) requestAnimationFrame(step);
-        else el.textContent = el.dataset.original;
-      }
-      requestAnimationFrame(step);
-      observer.unobserve(el);
+      observer.unobserve(entry.target);
+      runCount(entry.target);
     });
   }, {threshold: 0.4});
 
   stats.forEach(function(el){
     if (el.dataset.skip !== 'true') observer.observe(el);
   });
+
+  // Safety net: any stat still not counted after 3s but currently on screen is
+  // snapped to its real value, so a card is never left showing a partial number.
+  setTimeout(function(){
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    stats.forEach(function(el){
+      if (el.dataset.counted === 'true' || el.dataset.skip === 'true') return;
+      var r = el.getBoundingClientRect();
+      if (r.top < vh && r.bottom > 0){
+        observer.unobserve(el);
+        el.dataset.counted = 'true';
+        el.textContent = el.dataset.original;
+      }
+    });
+  }, 3000);
 })();
 </script>
 </body></html>
