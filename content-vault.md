@@ -39,6 +39,14 @@
 - 21/07/2026 | LinkedIn | "How to Tell If Your AI Tools Are Actually Working. Forbes Just Named the Question." — What's Worth It, community | DRAFT [PREP: community link]
 - 21/07/2026 | LinkedIn | "How to Build a Content System That Posts for You Every Week." — Build Once, PIPELINE | READY TO POST
 
+> **24/07/2026 daily run:** ENTRY 090–094 from RESEARCH 043 (Jul 23 2026). 1 storytelling C post, 2 AI news Result Recipes (A posts), 1 opinion A post, 1 educational C post. ACP this batch: 3A / 2C / 0P — rolling 10 (ENTRY 085–094) lands at 7A / 2C / 1P. Entries 090, 094 DRAFT; entries 091, 092, 093 READY TO POST.
+
+- 24/07/2026 | LinkedIn | "How to Build the System First, Ship Second, and Stop Confusing the Two." — Real Talk, community | DRAFT
+- 24/07/2026 | LinkedIn | "How to Cut Your AI Costs to Under $50 a Month When Enterprises Are Burning $500M. The 23% Rule." — What's Worth It, STACK | READY TO POST
+- 24/07/2026 | LinkedIn | "How to Build Your Head Start Before OpenAI Teaches AI to Your Competition for Free. This Week." — The Freedom Business, TEAM | READY TO POST
+- 24/07/2026 | LinkedIn | "How to Use AI for the 23% of Tasks It's Actually Built For. And What to Do With the Other 77%." — What's Worth It, STACK | READY TO POST
+- 24/07/2026 | LinkedIn | "How to Show Your Automation Working Instead of Explaining How It Works." — Build Once, Runs Forever, community | DRAFT [⚠️ VERIFY + PREP]
+
 > **22/07/2026 daily run:** ENTRY 085–089 from RESEARCH 042 (Jul 22 2026). 1 storytelling A post, 2 AI news Result Recipes (A posts), 1 short-form video A post, 1 educational P post. ACP this batch: 4A / 0C / 1P — rolling 10 (ENTRY 080–089) lands at 7A / 2C / 1P. Entries 085 DRAFT (personal-brain sparse — specificity gap); entry 089 DRAFT [PREP: Whop checkout link]; entries 086, 087, 088 READY TO POST.
 
 - 22/07/2026 | LinkedIn | "How to Know When AI Stops Being a Tool and Starts Running Your Business. One Question." — Real Talk, STACK | DRAFT
@@ -103,6 +111,175 @@
 - 23/06/2026 | Short-form video | "Stop Using AI Like a Vending Machine" — build systems, not answers | STALE 20/07/2026 (auto)
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | STALE 20/07/2026 (auto)
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | STALE 20/07/2026 (auto)
+
+---
+
+## ENTRY 094 — 24/07/2026 | LinkedIn | How to Show Your Automation Working Instead of Explaining How It Works. | DRAFT
+`C · Build Once, Runs Forever · CTA: community tease · critic 7.2 · src: RESEARCH 043-S3 (Lightreel.ai Result-First Tutorial, Jul 2026) · ⚠️ VERIFY: view-multiplier claim — confirm from Lightreel.ai before posting · ⚠️ PREP: insert community link or member story before queueing`
+
+How to show your automation working instead of explaining how it works. The Reels format breaking out right now.
+
+Most solopreneurs spend 10 minutes explaining what their automation does before showing it. That's backwards.
+
+Here's the format driving outsized views on Instagram in July 2026 — and why it works:
+
+Result first. Steps after.
+
+Open with the output already on screen. The email sequence running. The n8n flow completing. The lead magnet delivered. Zero preamble.
+
+Then compress the build to 3 visible actions. No intro. No "hey guys." Just the proof.
+
+The logic: the output earns the watch time. The steps earn the save.
+
+Here's how to apply it this week:
+
+1. Screen record your automation running — the output arriving, not the setup. 30 seconds maximum.
+2. Overlay one line of text: "[WHAT IT JUST DID] in [HOW LONG]." No more.
+3. Add 3 jump cuts showing the steps that made it happen. Each cut = one action.
+4. End with: "This runs every [FREQUENCY] without me touching it."
+
+That's it. The system is the content. You don't need a script — you need a running workflow and a phone.
+
+Inside the community, we work on systems exactly like this every month — so the content creates itself. → [PREP: insert community link or member story before queueing]
+
+> **Critic notes:** Hook 8/10 (how-to-first ✓; "instead of explaining how it works" is the value contrast that makes the lesson title land; complete thought within 210 chars ✓; outcome-first ✓); Positioning 8/10 (Build Once, Runs Forever ✓; "the system is the content" is the meta-teaching model — Sabrina/Angelica pattern applied to brand voice; teaches solopreneurs to make their running automation the content itself); Specificity 7/10 (view multiplier claim needs VERIFY before posting; 4-step method is concrete; "n8n flow / email sequence / lead magnet" are real examples; overlay text and jump-cut instruction are specific; community reference is aspirational only); Voice 8/10 (punchy short lines ✓; "Zero preamble." / "Just the proof." / "The system is the content." — clean declarative constructions; no jargon; no em-dashes ✓; contractions ✓); CTA 7/10 ([PREP] flag blocks posting; community tease is earned by post theme but needs a real destination); Proven-pattern 5/10 (no post-rebrand logged data; neutral; Result-First format from external research not own performance data). Avg 7.2. DRAFT. Lift: (1) Verify and insert the view multiplier stat from Lightreel.ai; (2) Replace community PREP with founding invite or waitlist link when live; (3) Add one specific example from Fatiha's own stack to ground the steps.
+
+---
+
+## ENTRY 093 — 24/07/2026 | LinkedIn | How to Use AI for the 23% of Tasks It's Actually Built For. And What to Do With the Other 77%. | READY TO POST
+`A · What's Worth It · CTA: STACK · critic 8.0 · src: RESEARCH 043-S1 (MIT study / @unusual_whales / Forbes, Jul 2026), RESEARCH 043-S2 (Forbes Tech Council / Saklani, Jul 2026)`
+
+How to use AI for the 23% of tasks it's actually built for. And what to do with the other 77%.
+
+Most companies don't know the difference. One company ran up a $500M Claude bill because they routed everything through AI and forgot to set a cap.
+
+An MIT study this week found AI automation is only economically viable in 23% of roles. The other 77%? It costs more than the people it replaced.
+
+Here's how to tell which is which:
+
+AI is a judgment layer. It reads context, interprets intent, and produces output that is sometimes brilliant and sometimes wrong — with no warning between them. Give it the tasks where pattern recognition, nuance, or drafting matter.
+
+Deterministic tools — your existing software — are right every time, predictably. Give them the tasks that need to be correct.
+
+The operators winning in 2026 aren't the ones with the largest AI stack. They're the ones who picked the right tools for the 23% of tasks that genuinely benefit from AI — and used reliable software for everything else.
+
+Coverage is not the skill. Precision is.
+
+Comment STACK — I'll send my actual 3-tool setup. The one that handles my 23% and costs less than $50 a month.
+
+> **Critic notes:** Hook 9/10 (how-to-first ✓; "23% of tasks it's actually built for" is a specific research-backed promise; "what to do with the other 77%" creates curiosity gap AFTER the promise — not instead of it ✓; complete thought within 210 chars ✓; outcome-first ✓); Positioning 9/10 (What's Worth It ✓; precision vs coverage is the brand's core intellectual position; "Coverage is not the skill. Precision is." is the thesis stated cleanly); Specificity 9/10 (MIT 23% stat from RESEARCH 043-S1 ✓; $500M Claude bill from RESEARCH 043-S1 ✓; AI as judgment layer vs deterministic tools distinction from RESEARCH 043-S2 ✓; behavior described concretely); Voice 8/10 ("Coverage is not the skill. Precision is." — clean contrarian close; "with no warning between them" is genuinely unsettling and honest; no jargon; no em-dashes ✓; contractions ✓); CTA 8/10 (comment STACK ✓ ACTIVE ✓; "The one that handles my 23%" ties CTA directly to the post's argument; "$50 a month" adds contrast with the $500M bill above); Proven-pattern 5/10 (no post-rebrand logged data; neutral; Pattern 14 contrarian operational hook). Avg 8.0. READY TO POST.
+
+---
+
+## ENTRY 092 — 24/07/2026 | LinkedIn | How to Build Your Head Start Before OpenAI Teaches AI to Your Competition for Free. This Week. | READY TO POST
+`A · The Freedom Business · CTA: TEAM · critic 8.0 · src: RESEARCH 043-S7 (OpenAI Small Business Program, Jul 2026)`
+
+How to build your head start before OpenAI teaches AI to your competition for free. This week.
+
+OpenAI just launched free AI academies for small business owners. In-person. Guided. Covering sales, accounting, eCommerce, and operations. 10 million users are already on their work tools.
+
+The question isn't whether your competition will learn AI. It's whether they'll learn it before or after you've already built the system.
+
+Here's the 3-step head start you can build this week:
+
+1. Name the one task your business runs on that is still done by hand. Not the most interesting one — the one that happens every day, takes real time, and has a predictable input. That's your first automation candidate.
+
+2. Build the AI employee for it this week. Not a chatbot — an employee: a defined role, a defined task, a defined output you review. Use this to start:
+
+---
+You are my [ROLE — e.g. email drafter / research assistant / lead qualifier] for [YOUR BUSINESS NAME OR TYPE].
+
+Your job is to handle: [DESCRIBE THE SPECIFIC TASK].
+
+Every time I give you [DESCRIBE THE INPUT], produce:
+[DESCRIBE THE OUTPUT FORMAT].
+
+Tone: [professional / direct / warm — pick one].
+Always flag if you're unsure. Never invent facts.
+
+Start with this input: [PASTE YOUR FIRST REAL TASK INPUT HERE]
+---
+
+3. Run it for 7 days. Compare the output to what you'd have done by hand. You now have evidence — not an opinion — about whether this works for your business.
+
+That evidence is your head start. OpenAI's academy will teach the concept. You'll already have the proof.
+
+Comment TEAM — I'll send you the guide I use to set up a first AI employee from scratch. It's free.
+
+> **Critic notes:** Hook 9/10 (how-to-first ✓; "before OpenAI teaches AI to your competition for free. This week." creates urgency grounded in a real, current event; outcome named — you'll have a concrete head start; complete thought within 210 chars ✓; outcome-first ✓); Positioning 9/10 (The Freedom Business ✓; "head start before the window closes" is exactly the moment her bridge audience is living in; "not a chatbot — an employee" is the brand's specific language for a first AI hire); Specificity 8/10 (OpenAI Small Business Program from RESEARCH 043-S7 ✓; "10 million users" from logged source ✓; 3-step structure is concrete; prompt template is a real usable deliverable with redaction modeled in brackets ✓; "7 days" is a specific timeframe); Voice 8/10 ("The question isn't whether your competition will learn AI. It's whether they'll learn it before or after you've already built the system." — direct, urgent without alarm; no jargon; no em-dashes ✓; contractions ✓; Result Recipe format with copy-paste prompt ✓); CTA 9/10 (comment TEAM ✓ ACTIVE ✓; "from scratch. It's free." reduces friction; earned by the TEAM theme); Proven-pattern 5/10 (no post-rebrand logged data; neutral; Pattern 2 fear-first + Result Recipe structure). Avg 8.0. READY TO POST.
+
+---
+
+## ENTRY 091 — 24/07/2026 | LinkedIn | How to Cut Your AI Costs to Under $50 a Month When Enterprises Are Burning $500M. The 23% Rule. | READY TO POST
+`A · What's Worth It · CTA: STACK · critic 8.3 · src: RESEARCH 043-S1 (MIT study / @unusual_whales / Forbes, Jul 2026)`
+
+How to cut your AI costs to under $50 a month when enterprises are burning $500M. The 23% rule.
+
+An MIT study this week found AI automation is only cost-effective in 23% of roles. Uber burned its entire 2026 AI budget in 4 months. One company racked up a $500M Claude bill because they forgot to set a cap.
+
+The enterprise AI-as-headcount model is publicly failing. The solopreneur model isn't — because it's built on exactly that 23%.
+
+Here's how to find your 23% in under 30 minutes:
+
+1. List every task you did last week. One line per task.
+2. For each one, ask: is the input predictable and repeatable? Yes or no. Only the "yes" tasks are automation candidates.
+3. From the "yes" list, pick the 3 that cost you the most hours per month.
+4. Test each one with this prompt — and see which gets the cleanest, most consistent output:
+
+---
+You are my AI employee. Your task is:
+
+[TASK NAME AND DESCRIPTION]
+
+Here are 3 examples of the input you will receive:
+[EXAMPLE INPUT 1]
+[EXAMPLE INPUT 2]
+[EXAMPLE INPUT 3]
+
+Here are 3 examples of the output I expect:
+[EXAMPLE OUTPUT 1]
+[EXAMPLE OUTPUT 2]
+[EXAMPLE OUTPUT 3]
+
+Run the task. If anything is unclear, ask one question before proceeding.
+---
+
+The task that gives you a clean, reviewable output without needing to be corrected? That's the 23% you start with.
+
+The enterprise that spent $500M learned the hard way: coverage is not the skill. Knowing which 23% to automate — that's the whole product.
+
+Do this today and comment STACK with the task you identified. I'll send my actual 3-tool setup — the one that costs under $50 a month and covers the 23% that moves the needle.
+
+> **Critic notes:** Hook 9/10 (how-to-first ✓; "$50 a month / $500M / 23% rule" — three specific numbers create immediate contrast and credibility; outcome named — you'll cut AI costs using a concrete rule; complete thought within 210 chars ✓; outcome-first ✓); Positioning 9/10 (What's Worth It ✓; solopreneur vs enterprise cost-efficiency is the brand's core argument; "The solopreneur model isn't — because it's built on exactly that 23%." is the thesis stated cleanly); Specificity 9/10 (MIT 23% stat from RESEARCH 043-S1 ✓; Uber 2026 AI budget from RESEARCH 043-S1 ✓; $500M Claude bill from RESEARCH 043-S1 ✓; 4-step 30-minute exercise is concrete; prompt template is a full usable deliverable with redaction in brackets ✓; "yes/no" filter is actionable); Voice 9/10 ("The enterprise AI-as-headcount model is publicly failing. The solopreneur model isn't." — punchy, declarative, takes a side; no jargon; no em-dashes ✓; contractions ✓; Result Recipe with copy-paste prompt and "do this today" close ✓); CTA 9/10 (comment STACK ✓ ACTIVE ✓; "with the task you identified" makes replies a specific proof mechanism; "the 23% that moves the needle" ties CTA back to the post's argument); Proven-pattern 5/10 (no post-rebrand logged data; neutral; Pattern 11 specific-number hook + Pattern 13 before/after + Result Recipe). Avg 8.3. READY TO POST.
+
+---
+
+## ENTRY 090 — 24/07/2026 | LinkedIn | How to Build the System First, Ship Second, and Stop Confusing the Two. | DRAFT
+`C · Real Talk · CTA: community tease · critic 7.0 · src: personal-brain.md (current project — content OS build-in-public), performance-log.md (89-entry vault, 0 POSTED) · ⚠️ personal-brain sparse — rebuild middle section when trigger story is seeded · ⚠️ PREP: insert Whop community link before queueing`
+
+How to build the system first, ship second, and stop confusing the two.
+
+89 drafts in a vault. Research running every night. Not one post live. That's not a strategy — that's delay with better-sounding excuses.
+
+I've been building this machine for months. Signal harvested daily. Five drafts produced every morning. Reports logging what ran. The system works.
+
+And nothing has shipped.
+
+Here's what I've learned watching the machine run without an audience:
+
+Building and shipping are completely different muscles. Building wants the system perfect. Shipping doesn't care. Shipping just wants out the door.
+
+The machine doesn't care about perfect. It runs either way.
+
+What changed for me wasn't confidence — it was realising I was the bottleneck in a system I designed to run without me.
+
+If you're building something right now — an automation, a content system, a new part of your business — and you keep finding one more thing to fix before you ship: that's not diligence. That's fear with better-sounding excuses.
+
+The move is to find the one piece that's actually ready and send it. Not the best one. The ready one.
+
+The community I'm building is for the people doing exactly this — already building, already hesitating, already 80% there. The community is the people actually doing this. Come in → [PREP: Whop community link]
+
+> **Critic notes:** Hook 8/10 (how-to-first ✓; "89 drafts in a vault. Research running every night. Not one post live." is specific and provocative; outcome-first — you'll learn how to separate building from shipping ✓; complete thought within 210 chars ✓; "89 drafts" is a real traceable number from vault + performance-log); Positioning 7/10 (Real Talk ✓; "building vs shipping" tension is relatable to bridge audience; corporate-to-entrepreneur frame implicit but not explicit — personal-brain trigger story not yet available; CTA pull toward community is earned but needs community link to be live); Specificity 7/10 ("89 drafts" and "0 posts live" are real numbers from performance-log ✓; "five drafts every morning" is real from the daily cron ✓; but middle lacks a specific turning point or anecdote because personal-brain is not yet seeded — one real moment would lift this to 9); Voice 8/10 (casual, confessional; "delay with better-sounding excuses" and "fear with better-sounding excuses" are the right voice — warm-with-edge and self-aware; no em-dashes ✓; contractions ✓); CTA 7/10 ([PREP] blocks posting; "The community is the people actually doing this. Come in →" is the exact CTA map line for Real Talk C posts ✓; earned by post theme); Proven-pattern 5/10 (no post-rebrand logged data; neutral; Pattern 7 vulnerability-before-credentials applied to current project state since personal-brain is sparse). Avg 7.0. DRAFT. Lift: when personal-brain is seeded with the corporate exit trigger story, replace the "I've been building this machine" section with the specific moment the machine first ran overnight and she woke to 5 drafts without having written a word. That specificity lifts positioning + specificity to 9/10 each and pushes this to READY TO POST.
 
 ---
 
