@@ -2,6 +2,38 @@
 
 ---
 
+## RESEARCH 044 — 2026-07-27 | Weekly research digest
+
+**Status:** NOTED
+**Sources hit:** HBR (July 2026), Silicon Canals (July 2026), Technology.org (July 17, 2026), Writer/Deloitte (July 2026), NBER survey (July 2026), BCG, HiWave Blog, Recruiting Connection, Metaintro, Alternates.ai
+**Apify status:** NOT AVAILABLE this session — research digest via web search.
+
+### Signals of the day (5)
+
+1. [NEWS] **"The AI Urgency Trap" — NBER/HBR, July 2026** — 6,000+ senior executives (US, UK, Germany, Australia): 90% report no measurable AI productivity gains in 3 years. Winning companies average 3.5 AI use cases; failing ones average 6.1; focused companies get 2.1x the ROI. — https://hbr.org/2026/07/when-developing-an-ai-strategy-beware-the-urgency-trap — Pillar: **What's Worth It** ★ STACK
+
+2. [NEWS] **EU AI Act transparency obligations August 2, 2026** — Chatbot disclosure, synthetic content labels, deepfake labeling all become legally binding in 6 days. Penalties up to €15M or 3% global revenue. New ban on non-consensual AI intimate imagery added (Dec 2026). — https://siliconcanals.com/the-eus-ai-act-starts-requiring-chatbot-and-deepfake-labels-on-august-2-while-its-tougher-rules-on-hiring-biometrics-and-migration-are-pushed-back-to-december-2027/ — Pillar: **Stop Doing That by Hand**
+
+3. [NEWS] **Enterprise AI dysfunction — 79% face challenges, 54% say it's "tearing company apart"** — Writer/Deloitte report July 2026. Microsoft launches $2.5B "Frontier Company" unit to fill the implementation gap. — https://writer.com/blog/enterprise-ai-adoption-2026/ — Pillar: **What's Worth It**
+
+4. [NEWS] **AI workforce: hiring suppression, not mass layoffs** — AI 3rd leading cause of planned layoffs (16%), but main mechanism is frozen headcount. 7.5M admin jobs at risk by 2027. 59% of workers need reskilling by 2030. 6.1M clerical workers at 95% automation risk. — https://hiwavemakers.com/blog/ai-job-displacement-2026-what-the-data-really-shows/ — Pillar: **The Freedom Business** ★ TEAM
+
+5. [NEWS] **Solopreneur AI stack consolidation** — $75–$150/month AI stack now replaces $600–1,000/month VA spend. 78% of solopreneurs expect AI to transform operations in 2026. Consolidation trend: 3–5 integrated tools beating 10+ disconnected apps. — https://www.metaintro.com/blog/ai-tools-solopreneurs-productivity-triple-output-2026 — Pillar: **Build Once, Runs Forever**
+
+### Top 3 content angles ready to use
+
+- **"A study of 6,000 executives confirmed it: companies using 3–4 AI tools get 2x the ROI of companies using 6+. More AI tools, worse results. Here are the only 3 I use."** → NBER/HBR data; STACK as the answer. Pillar: **What's Worth It** → Lead-magnet hook: comment STACK
+
+- **"EU law says every AI-generated post, image, and deepfake must be labeled starting August 2. 6 days away. Most creators aren't ready. Here's the one-sentence version of what it means for you."** → EU AI Act transparency deadline as the urgency hook; trust-building plain English breakdown. Pillar: **Stop Doing That by Hand** → High save/share; pair with community CTA.
+
+- **"AI isn't taking your colleagues' jobs. It's just making sure no one gets hired to replace them. 7.5 million admin jobs eliminated by 2027 — quietly, without a single headline. Here's where the risk actually sits and what to do about it."** → Hiring suppression data as the hook; TEAM as the first step for the corporate-to-entrepreneur bridge. Pillar: **The Freedom Business** → Lead-magnet hook: comment TEAM
+
+### Contrarian take logged
+
+Everyone says adopt more AI faster. The NBER data (6,000+ executives, 4 countries) says 90% got zero measurable productivity gains in 3 years — and the focused companies (3.5 use cases) beat the unfocused ones (6.1 use cases) by 2.1x ROI. The urgency trap is real: treating AI as a fire extinguisher for every urgent problem is exactly why it fails. Precision beats coverage. Three tight use cases beat twenty mediocre ones. The solopreneur with discipline beats the enterprise with a budget.
+
+---
+
 ## RESEARCH 043 — 2026-07-23 | Daily signal harvest
 
 **Status:** NOTED
