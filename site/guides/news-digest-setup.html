@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#FFFFFF">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="noai, noimageai">
+<meta name="description" content="Hire an AI employee that reads your industry sources and ranks what matters. She never invents a headline, only reports what your sources actually said.">
+<title>The News Digest Setup | Shift &amp; Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://guides.shiftandlead.com/guides/news-digest-setup.html">
+<meta property="og:title" content="The News Digest Setup">
+<meta property="og:description" content="An AI employee that reads your industry sources so you don't have to scroll them at midnight. The complete setup, free.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://guides.shiftandlead.com/guides/news-digest-setup.html">
+<meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The News Digest Setup">
+<meta name="twitter:description" content="An AI employee that reads your industry sources so you don't have to scroll them at midnight. The complete setup, free.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The News Digest Setup",
+  "description": "Hire an AI employee that reads your industry sources and ranks what matters. She never invents a headline, only reports what your sources actually said.",
+  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
+  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/news-digest-setup.html",
+  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
+  "publisher": {"@type": "Organization", "name": "The AI Automation Queen", "url": "https://www.shiftandlead.com"}
+}
+</script>
+<style>
+:root{
+  --canvas:#FFFFFF;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
+  --muted:#5C5A57;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
+  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+a:hover{color:var(--accent-deep)}
+strong{font-weight:700;color:var(--ink)}
+
+.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+
+.wrap{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,100px) clamp(24px,5vw,72px)}
+
+.chips{margin-bottom:28px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff}
+.chip-track0{background:var(--accent)}
+.chip-literacy{background:#E63955}
+.chip-time{background:transparent;color:var(--muted);border:1px solid var(--rule);padding:4px 10px}
+
+.kicker{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);display:flex;align-items:center;margin-bottom:20px}
+.kicker-rule{display:inline-block;width:32px;height:1px;background:var(--ink);margin-right:10px}
+
+h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,5.5vw,56px);line-height:1.08;letter-spacing:-0.5px;color:var(--ink);margin-bottom:24px}
+h1 em{font-style:italic;color:var(--electric)}
+h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.18;letter-spacing:-0.3px;margin:64px 0 16px}
+h3{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);margin:32px 0 12px}
+p{margin-bottom:18px;color:var(--ink)}
+p.lead{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:20px;line-height:1.55;color:var(--muted);margin-bottom:32px}
+
+.rule{border:0;border-top:2px solid var(--ink);margin:80px 0 40px}
+
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:28px 32px;margin:24px 0}
+.card.accent{border-color:var(--accent);background:var(--accent-tint)}
+
+.pullquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:24px;line-height:1.35;color:var(--muted);border-left:3px solid var(--accent);padding-left:24px;margin:40px 0}
+
+blockquote{background:var(--accent-tint);border-left:3px solid var(--accent);padding:16px 24px;margin:20px 0;border-radius:0 4px 4px 0;font-style:italic;color:var(--muted)}
+blockquote p{margin-bottom:0;color:var(--muted)}
+
+ul,ol{margin:12px 0 20px 24px}
+li{margin-bottom:8px;color:var(--ink)}
+
+.try-box{background:var(--surface);border:1px solid var(--accent);border-radius:6px;padding:24px 28px;margin:20px 0}
+.try-box .try-label{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin-bottom:12px}
+.try-box p{font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--ink);margin-bottom:0}
+
+.cta-bar{margin:48px 0;padding:32px;background:var(--navy);border-radius:6px;text-align:center;color:var(--canvas)}
+.cta-bar h3{color:var(--canvas);margin-top:0}
+.cta-bar p{color:rgba(255,255,255,0.85)}
+.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:13px 32px;background:var(--canvas);color:var(--ink);text-decoration:none;border-radius:4px;margin-top:12px}
+.btn:hover{background:#fff;color:var(--ink)}
+
+.guide-nav{display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:32px;border-top:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em}
+.guide-nav a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
+.guide-nav a:hover{color:var(--accent);border-color:var(--accent)}
+
+.footer{margin-top:120px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+
+@media(max-width:560px){
+  html,body{font-size:16px}
+  .wrap{padding:40px 16px}
+  h1{font-size:32px;line-height:1.1}
+  .pullquote{font-size:20px}
+  .vs{grid-template-columns:1fr}
+  .guide-nav{flex-direction:column;gap:16px;align-items:flex-start}
+  .nav-inner{padding:14px 16px}
+  .nav-links{gap:16px;font-size:11px}
+}
+</style></head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a href="https://www.shiftandlead.com/store.html">Store</a><a href="https://www.shiftandlead.com/work-with-fatiha.html">Work with Fatiha</a></div>
+</div></nav>
+
+<div class="wrap">
+
+  <div class="chips">
+    <span class="chip chip-track0">DIGEST</span>
+    <span class="chip chip-time">6 min read</span>
+  </div>
+
+  <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; Stop Doing That by Hand &middot; Employee #010&rsquo;s playbook</div>
+
+  <h1>The News Digest <em>setup.</em></h1>
+
+  <p class="lead">You have 14 unread AI newsletters and a nagging feeling you&rsquo;re missing something. This guide hires you an AI employee that reads your named sources on a schedule instead, ranks what matters, and sends one honest weekly digest. She never invents a headline.</p>
+
+  <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
+    <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
+    <p style="margin:0 0 14px;font-size:15.5px">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
+    <form class="capture-form" style="display:flex;gap:10px;flex-wrap:wrap">
+      <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <button type="submit" style="padding:10px 20px;background:#2C4BE0;color:#fff;border:none;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:14px;cursor:pointer">Send them to me</button>
+    </form>
+  </div>
+
+  <hr class="rule">
+
+  <h2>What you are building</h2>
+  <p>One workflow with four jobs:</p>
+  <ol class="steps">
+    <li>You <strong>give her the 3-5 sources</strong> you already follow. That&rsquo;s the whole input.</li>
+    <li>She <strong>reads what came out this week</strong>, those sources only.</li>
+    <li>She <strong>ranks it by what matters</strong> to your business, most important first.</li>
+    <li>You get <strong>one weekly digest</strong>, one line per item, links included.</li>
+  </ol>
+  <p>Time to build: about 20 minutes. The tools are boring on purpose: one AI (Claude), a way to collect the week&rsquo;s links, your inbox or notes app to receive the digest.</p>
+
+  <h2>The safety rules. Read these first.</h2>
+  <p>This employee only ever reports what your sources actually said, so the rules are not optional:</p>
+  <ol class="steps">
+    <li>&#128994; <strong>Green</strong>: the headlines and links from your named sources. That is the entire input.</li>
+    <li>&#128992; <strong>Orange</strong>: the one-line relevance summary she writes for each item. Drafted from what the source actually said.</li>
+    <li>&#128308; <strong>Red</strong>: she never invents a headline, a source, or a link that wasn&rsquo;t given to her.</li>
+  </ol>
+  <p><strong>The rule that matters most:</strong> if a week is quiet, the digest says &ldquo;Nothing major this week,&rdquo; instead of inventing urgency to look useful.</p>
+
+  <h2>Part 1. Pick your sources. 10 minutes, no AI.</h2>
+  <p>Do this even if you build nothing else:</p>
+  <ol class="steps">
+    <li>Name the 3-5 sources you already open out of habit. Not an aspirational list, the ones you actually check.</li>
+    <li>Write down what &ldquo;must-know&rdquo; means for you, so the AI has a real target, not a vague brief.</li>
+    <li>Each week, collect the headlines or links from those sources into one place.</li>
+  </ol>
+  <p>That is the entire source list. You can already see what to watch.</p>
+
+  <h2>Part 2. The ranking brain. 10 minutes.</h2>
+  <p>With Claude (or your AI tool of choice) directly:</p>
+  <ol class="steps">
+    <li><strong>Input</strong>: this week&rsquo;s collected headlines or links from your named sources.</li>
+    <li><strong>AI step</strong>: send them with the job description below. Copy it exactly, fill the blanks.</li>
+  </ol>
+
+  <div class="try-box">
+    <p><strong>Her job description (the prompt):</strong><br><br>
+    You are my industry news analyst. Here is this week&rsquo;s list of headlines and links: [PASTE HEADLINES OR LINKS].<br><br>
+    My rules:<br>
+    &bull; Rank by relevance to [YOUR FOCUS AREA], most important first.<br>
+    &bull; One plain-English line per item: what happened, why it might matter to me.<br>
+    &bull; Never invent a headline or a link that wasn&rsquo;t given to you.<br>
+    &bull; If nothing this week matters, say exactly: &ldquo;Nothing major this week.&rdquo;<br><br>
+    Return the ranked digest only.</p>
+  </div>
+
+  <p>Notice the blanks are yours to fill and the prompt never speculates beyond the source. That is the redaction habit: the structure is public, the specifics stay home.</p>
+
+  <h2>Part 3. Keep the source list honest. 5 minutes a month.</h2>
+  <ol class="steps">
+    <li>Once a month, check your 3-5 sources are still the right ones.</li>
+    <li>Industries move faster than reading lists get updated.</li>
+  </ol>
+  <p>The feeling you are buying: you stop opening 14 tabs out of anxiety, because you know the one thing that actually matters will land in your digest on schedule.</p>
+
+  <h2>The upgrade path</h2>
+  <p>Once the digest feels reliable and you trust it over your own scrolling, you have built trust with your eighth AI employee. The same pattern, read, rank, summarize honestly, is how every AI employee works. One employee at a time. That is the whole method.</p>
+
+  <div class="cta-bar">
+    <h3>See also: How to Set Up Your First AI Employee</h3>
+    <p>The 5-step hire framework this News Digest was built on: pick the task, write the job description, choose the tools, run the first shift, approve the work.</p>
+    <a href="first-ai-employee.html" class="btn">Revisit the hiring guide &rarr;</a>
+  </div>
+
+  <p style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0">Ready for more than free? The three ways to go further &rarr;</a></p>
+
+  <div class="guide-nav">
+    <a href="../free-resources.html">&larr; All guides</a>
+    <a href="../99.html">Meet The 99 &rarr;</a>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>Shift &amp; Lead &middot; Free guide &middot; &copy; 2026 &middot; <a href="../privacy.html" style="color:inherit">Privacy</a></p>
+</div>
+
+<script>
+document.querySelectorAll('.capture-form').forEach(function(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    var email = form.querySelector('[name="email"]').value;
+    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Done.'; return; }
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      var r = await fetch('https://formspree.io/f/xgojoyka', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-news-digest-setup'}) });
+      fetch('https://auto.shiftandlead.com/webhook/formspree-lead', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-news-digest-setup'}) });
+      if (r.ok) { btn.textContent = 'On its way.'; } else { btn.disabled=false; btn.textContent='Try again'; }
+    } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
+  });
+});
+</script>
+
+<script>
+try {
+  var r = JSON.parse(localStorage.getItem('sl_read') || '[]');
+  if (r.indexOf('news-digest-setup') === -1) { r.push('news-digest-setup'); localStorage.setItem('sl_read', JSON.stringify(r)); }
+} catch(e){}
+</script>
+<script>
+document.querySelectorAll('.try-box, pre').forEach(function(box){
+  if (box.closest('script,style')) return;
+  var btn = document.createElement('button');
+  btn.textContent = 'Copy';
+  btn.style.cssText = "display:block;margin-top:10px;padding:6px 14px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;background:#fff;border:1px solid #2C4BE0;color:#2C4BE0;cursor:pointer";
+  btn.addEventListener('click', function(){
+    navigator.clipboard.writeText(box.innerText.replace(/Copy$/,'').trim()).then(function(){
+      btn.textContent = 'Copied ✓';
+      setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+    });
+  });
+  box.appendChild(btn);
+});
+</script>
+</body>
+</html>

@@ -170,6 +170,9 @@ permanent. Assigned so far:
 | 008 | Yara | Competitor Watch (interviewing) | Intelligence |
 | 009 | Omar | Receipt Processor (interviewing) | Back Office |
 | 011 | Idris | SOP Writer (interviewing) | Operations |
+| 010 | Maya | News Digest (interviewing) | Intelligence |
+| 012 | Salma | Client Onboarding (interviewing) | Operations |
+| 013 | Tariq | Invoice Builder (interviewing) | Back Office |
 
 New names: short, warm, easy to say in English and French, no name
 reuse, never the name of a real client or contact. Log new assignments

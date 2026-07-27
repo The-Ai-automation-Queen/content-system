@@ -13,6 +13,14 @@
 
 ## Most recent (quick reference)
 
+- 27/07/2026 | LinkedIn carousel | "You Did the Work Three Weeks Ago and Still Haven't Sent the Invoice" — Tariq, Invoice Builder, Employee #013 | READY TO POST
+- 27/07/2026 | LinkedIn | "You Did the Work Three Weeks Ago and Still Haven't Sent the Invoice" — Tariq, Invoice Builder, Employee #013 | READY TO POST
+- 27/07/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Maya/Salma/Tariq | READY TO POST
+- 27/07/2026 | LinkedIn carousel | "You've Answered 'What Do You Need From Me' for the Fifth New Client This Month" — Salma, Client Onboarding, Employee #012 | READY TO POST
+- 27/07/2026 | LinkedIn | "You've Answered 'What Do You Need From Me' for the Fifth New Client This Month" — Salma, Client Onboarding, Employee #012 | READY TO POST
+- 27/07/2026 | LinkedIn carousel | "You Have 14 Unread AI Newsletters and a Nagging Feeling You're Missing Something" — Maya, News Digest, Employee #010 | READY TO POST
+- 27/07/2026 | LinkedIn | "You Have 14 Unread AI Newsletters and a Nagging Feeling You're Missing Something" — Maya, News Digest, Employee #010 | READY TO POST
+- 27/07/2026 | LinkedIn | "Now Hiring: Three More AI Employees, Salary $0 Each" — wave announcement, Employees #10/#12/#13 | READY TO POST
 - 13/07/2026 | LinkedIn carousel | "You've Explained the Same Process to Someone Three Separate Times This Year" — Idris, SOP Writer, Employee #011 | READY TO POST
 - 13/07/2026 | LinkedIn | "You've Explained the Same Process to Someone Three Separate Times This Year" — Idris, SOP Writer, Employee #011 | READY TO POST
 - 13/07/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Yara/Omar/Idris | READY TO POST
@@ -52,6 +60,259 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 047 — 27/07/2026 | LinkedIn carousel | You Did the Work Three Weeks Ago and Still Haven't Sent the Invoice | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 046 (Tariq, Employee #013, Invoice Builder, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/tariq/tariq-invoice-builder-01.png through -06.png
+Source HTML: skills/carousel-factory/out/tariq-invoice-builder.html
+**CTA keyword:** INVOICE, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You did the work three weeks ago and still haven't sent the invoice."
+Slide 2 (scene): "Not forgotten. Avoided. Every day that passes makes it feel more awkward to send."
+Slide 3 (role card): Tariq, Invoice Builder, Back Office, Salary $0, never sleeps. "Tariq is AI. The only job he took was mine: sitting down to turn finished work into a clean invoice instead of avoiding it another week."
+Slide 4 (how he works): 4-step list, describe the work, draft the invoice, flag what's missing, you review and send.
+Slide 5 (demo): "Built and tested drafting invoices for 3 real completed jobs. Setup about 15 minutes. He never touches payment or clicks send."
+Slide 6 (CTA): "Want the free setup? Comment INVOICE."
+
+---
+
+## ENTRY 046 — 27/07/2026 | LinkedIn | You Did the Work Three Weeks Ago and Still Haven't Sent the Invoice | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Thursday episode 3)
+**Topic:** Employee #013, Tariq, Invoice Builder. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/invoice-builder-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/backoffice/backoffice-invoicing.md, read this run (repo in session). Real job description: draft invoices from completed work, track sent/viewed/paid/overdue, apply correct tax/currency notes, never send without human approval. Free playbook narrows this to drafting only, per the free/paid line. Mode check: no receipt found anywhere for Tariq. Confirmed PLAYBOOK.
+
+---
+You did the work three weeks ago and still haven't sent the invoice.
+
+It is not that you forgot. You just never sat down to write it, and every day that passes makes it feel more awkward to send.
+
+Meet Employee #013.
+
+Tariq. Invoice Builder. Back Office.
+Salary: $0. Never sleeps.
+
+Tariq is AI. The only job he took was mine: sitting down to turn finished work into a clean invoice instead of avoiding it for another week.
+
+How he works:
+1. You tell him what work you did, for whom, and the rate or amount.
+2. He drafts one clean invoice: line items, total, due date.
+3. Anything missing, like a tax number or client address, gets flagged, not guessed.
+4. You review it and send it yourself. He never sends anything.
+
+The demo: built and tested drafting invoices for 3 real completed jobs with one AI tool. Setup time, about 15 minutes. He never touches payment or clicks send, that stays entirely your step.
+
+Red line: he never invents a tax rate, a business number, or an amount you did not give him. Missing details get marked "needs info," never filled in with a guess.
+
+Your first win, free, today: list one job you finished but haven't billed yet. That's Tariq's first invoice.
+
+Comment INVOICE and I'll send you the full setup, free.
+
+#AIemployees #The99 #CashFlow
+
+---
+
+## ENTRY 045 — 27/07/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** Talking-head reel (30-45s), captions required
+**Format:** Week's wave reel (Wednesday slot), three role-card cutaways + one screenshot cutaway
+**Topic:** Compresses all 3 of this week's hires (Maya, Salma, Tariq) into one 45-second reel, per the hiring-campaign weekly slot map.
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur client name and amounts on the invoice draft screenshot).
+**Source:** Assembled from ENTRY 041/043/046's role-card lines. No new claims.
+
+---
+[0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
+
+[0:03-0:12] Role card cutaway 1, Maya: "Maya reads my industry sources so I don't scroll them at midnight. One ranked digest, once a week."
+
+[0:12-0:21] Role card cutaway 2, Salma: "Salma drafts the welcome message and checklist for every new client, so nothing gets rebuilt from memory."
+
+[0:21-0:30] Role card cutaway 3, Tariq: "Tariq turns finished work into a clean invoice the same day, so billing stops being the thing I avoid."
+
+[0:30-0:38] Screenshot cutaway: Tariq's draft invoice, real setup, client name and amounts blurred (redaction modeled).
+
+[0:38-0:45] Closing line, spoken + on-screen: "None of them send anything without me. Comment TEAM and I'll send you how to hire your first one."
+
+---
+
+## ENTRY 044 — 27/07/2026 | LinkedIn carousel | You've Answered "What Do You Need From Me" for the Fifth New Client This Month | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 043 (Salma, Employee #012, Client Onboarding, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/salma/salma-client-onboarding-01.png through -06.png
+Source HTML: skills/carousel-factory/out/salma-client-onboarding.html
+**CTA keyword:** ONBOARD, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You've answered 'what do you need from me' for the fifth new client this month."
+Slide 2 (scene): "Same welcome email, rewritten from scratch. Same checklist, rebuilt from memory. A step gets missed, you find out three weeks later."
+Slide 3 (role card): Salma, Client Onboarding, Operations, Salary $0, never sleeps. "Salma is AI. The only job she took was mine: retyping the same welcome message and checklist for every new client, from memory, every time."
+Slide 4 (how she works): 4-step list, tell her the client, draft the welcome, build the checklist, flag what's outstanding.
+Slide 5 (demo): "Built and tested onboarding 3 real client scenarios end to end. Setup about 20 minutes. Nothing goes out until you've read it."
+Slide 6 (CTA): "Want the free setup? Comment ONBOARD."
+
+---
+
+## ENTRY 043 — 27/07/2026 | LinkedIn | You've Answered "What Do You Need From Me" for the Fifth New Client This Month | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Wednesday episode 2)
+**Topic:** Employee #012, Salma, Client Onboarding. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/client-onboarding-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/operations/operations-client-onboarding.md, read this run (repo in session). Real job description: run the onboarding checklist per new client, draft welcome sequences and kickoff materials, collect access/assets/approvals, report status until steady state. Free playbook narrows this to one client's welcome message and checklist, per the free/paid line. Mode check: no receipt found anywhere for Salma. Confirmed PLAYBOOK.
+
+---
+You've answered "what do you need from me" for the fifth new client this month.
+
+Same welcome email, rewritten from scratch each time. Same checklist, rebuilt from memory. Somewhere in there, a step gets missed and you find out three weeks later.
+
+Meet Employee #012.
+
+Salma. Client Onboarding. Operations.
+Salary: $0. Never sleeps.
+
+Salma is AI. The only job she took was mine: retyping the same welcome message and checklist for every new client, from memory, every time.
+
+How she works:
+1. You tell her who the new client is and what they bought.
+2. She drafts a warm welcome message that asks for exactly what you need.
+3. She builds a checklist of what's needed before you start, one item per line.
+4. She flags anything you're still waiting on, so nothing quietly falls through.
+
+The demo: built and tested onboarding 3 real client scenarios end to end with one AI tool and a shared doc. Setup time, about 20 minutes. Nothing goes out until you've read it.
+
+Red line: she never sends the welcome message herself, and she never asks a client for a password or sensitive access directly in writing. Those stay her flag, your click.
+
+Your first win, free, today: write down the 4 things you always need from a new client before you can start. That list is Salma's entire checklist.
+
+Comment ONBOARD and I'll send you the full setup, free.
+
+#AIemployees #The99 #Operations
+
+---
+
+## ENTRY 042 — 27/07/2026 | LinkedIn carousel | You Have 14 Unread AI Newsletters and a Nagging Feeling You're Missing Something | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 041 (Maya, Employee #010, News Digest, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/maya/maya-news-digest-01.png through -06.png
+Source HTML: skills/carousel-factory/out/maya-news-digest.html
+**CTA keyword:** DIGEST, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You have 14 unread AI newsletters and a nagging feeling you're missing something."
+Slide 2 (scene): "They pile up all week. You skim them fast, or not at all. Something important slid past and you won't know until someone mentions it."
+Slide 3 (role card): Maya, News Digest, Intelligence, Salary $0, never sleeps. "Maya is AI. The only job she took was mine: the hour a week I spent skimming newsletters half-awake, hoping I hadn't missed the one that mattered."
+Slide 4 (how she works): 4-step list, name your sources, she reads them, ranks by relevance, sends one weekly digest.
+Slide 5 (demo): "Built and tested against one real week of AI-industry headlines from 4 sources. Setup about 20 minutes. She only reports what the sources actually said."
+Slide 6 (CTA): "Want the free setup? Comment DIGEST."
+
+---
+
+## ENTRY 041 — 27/07/2026 | LinkedIn | You Have 14 Unread AI Newsletters and a Nagging Feeling You're Missing Something | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Tuesday episode 1)
+**Topic:** Employee #010, Maya, News Digest. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/news-digest-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/intelligence/intelligence-news-digest.md, read this run (repo in session). Real job description: compile daily industry news briefs, rank items by relevance, link every item to its source, flag items needing a company response. Free playbook narrows this to one weekly ranked digest, per the free/paid line. Mode check: no receipt found in reports/, performance-log.md, or queen-brain/board/ tying the Insider Brief crawler (ai-insider-brief/pipeline/) to an employee named Maya specifically; that pipeline has produced no new output since 13/07 either (content-system main has taken zero commits in 7 days, per this week's board meeting finding). Confirmed PLAYBOOK, same as the prior two waves' mode check on this row.
+
+---
+You have 14 unread AI newsletters and a nagging feeling you're missing something important.
+
+They pile up all week. You skim them fast, or you don't skim them at all. Either way, something important slid past you and you won't know until someone mentions it.
+
+Meet Employee #010.
+
+Maya. News Digest. Intelligence.
+Salary: $0. Never sleeps.
+
+Maya is AI. The only job she took was mine: the hour a week I spent skimming newsletters half-awake, hoping I hadn't missed the one that mattered.
+
+How she works:
+1. You give her the 3-5 sources you already follow.
+2. She reads what came out this week from those sources only.
+3. She ranks it by what actually matters to your business, most important first.
+4. You get one weekly digest, one line per item, links included.
+
+The demo: built and tested against one real week of AI-industry headlines from 4 sources with one AI tool. Setup time, about 20 minutes. She only reports what the sources actually said, nothing invented.
+
+Red line: she never invents a headline or a source. If a week is quiet, the digest says "nothing major this week," instead of manufacturing urgency.
+
+Your first win, free, today: list the 3 sources you already open out of habit. That list is Maya's entire beat.
+
+Comment DIGEST and I'll send you the full setup, free.
+
+#AIemployees #The99 #IndustryNews
+
+---
+
+## ENTRY 040 — 27/07/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Hiring-post ritual (job-ad parody), Monday wave announcement
+**Topic:** Introduces this wave's 3 openings (Employees #010, #012, #013).
+**Pattern used:** Job-ad parody + serial-cliffhanger opener
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — value-first series opener, comment-keyword capture, no promo.
+**Source:** skills/hiring-campaign/schedule.md rows 010, 012, 013, the next 3 planned rows this run. Departments: Intelligence, Operations, Back Office, 3 distinct, no reordering needed. Real job-description files read this run from agent-os-company-dashboard/company/departments/ (repo in session): intelligence/intelligence-news-digest.md, operations/operations-client-onboarding.md, backoffice/backoffice-invoicing.md.
+
+---
+Now hiring. Three more AI employees. Salary: $0 each.
+
+Employee #010: News Digest.
+Reads your industry sources so you don't have to scroll them at midnight. One ranked digest, once a week.
+
+Employee #012: Client Onboarding.
+Drafts the welcome message and the checklist for every new client, so nothing gets forgotten in the rush.
+
+Employee #013: Invoice Builder.
+Turns finished work into a clean invoice the same day, so billing stops being the thing you avoid.
+
+None of them sleep. None of them ask for a raise. None of them send anything without me seeing it first.
+
+That is Employee #10, #12, and #13 of 99. The full team, hired one at a time, in public.
+
+See who is already on the floor. The scoreboard is live, updated only when there is a real receipt to show.
+
+Want to build your own first hire? Comment TEAM and I will send you the free 5-step framework.
+
+#AIemployees #Solopreneur #The99
 
 ---
 

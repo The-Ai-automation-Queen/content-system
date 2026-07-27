@@ -114,6 +114,7 @@ One primary action, three placements, zero competing offers:
 
 - **Week of 13/07/2026 (drafted by hiring-campaign)**: "Three new AI employees joined the floor this week: a late-payment chaser, a meeting scheduler, and an FAQ engine. All three ship as free playbooks. See who's hiring at guides.shiftandlead.com/99.html." One line, next issue, then remove this entry.
 - **Week of 13/07/2026, second wave (drafted by hiring-campaign)**: "Three more AI employees joined this week: a competitor watcher, a receipt processor, and an SOP writer. All three ship as free playbooks. See who's hiring at guides.shiftandlead.com/99.html." One line, next issue, then remove this entry.
+- **Week of 27/07/2026 (drafted by hiring-campaign)**: "Three more AI employees joined this week: a news digest, a client onboarder, and an invoice builder. All three ship as free playbooks. See who's hiring at guides.shiftandlead.com/99.html." One line, next issue, then remove this entry. Note: the two entries above (13/07, both waves) are still sitting here unused as of this run, consistent with the newsletter engine not having run in two weeks.
 
 ## When to update this file
 Add a glossary entry when a new source type, prompt template, or pipeline stage enters.

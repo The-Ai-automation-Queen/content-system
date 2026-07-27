@@ -16,10 +16,10 @@ real files in agent-os-company-dashboard/company/departments/.
 | 007 | Karim | FAQ Engine | customer/customer-faq-engine.md | PLAYBOOK | announced, playbook live 13/07/2026 | 2026-W29 |
 | 008 | Yara | Competitor Watch | intelligence/intelligence-competitor-watch.md | PLAYBOOK | announced, playbook live 13/07/2026 | 2026-W30 |
 | 009 | Omar | Receipt Processor | backoffice/backoffice-receipt-processor.md | PLAYBOOK | announced, playbook live 13/07/2026 | 2026-W30 |
-| 010 | Maya | News Desk | intelligence/intelligence-news-digest.md | PROOF candidate (Insider Brief crawler) | planned, deferred from 2026-W30 (row reordered to keep the wave to 3 distinct departments alongside 008 Intelligence) | 2026-W31 |
+| 010 | Maya | News Digest | intelligence/intelligence-news-digest.md | PLAYBOOK (mode check 27/07: still no receipt tying the Insider Brief crawler to an employee named Maya; stays PLAYBOOK until one exists) | announced, playbook live 27/07/2026 | 2026-W31 |
 | 011 | Idris | SOP Writer | operations/operations-sop-writer.md | PLAYBOOK | announced, playbook live 13/07/2026 | 2026-W30 |
-| 012 | Salma | Client Onboarding | operations/operations-client-onboarding.md | PLAYBOOK | planned | 2026-W31 |
-| 013 | Tariq | Invoice Builder | backoffice/backoffice-invoicing.md | PLAYBOOK | planned | 2026-W31 |
+| 012 | Salma | Client Onboarding | operations/operations-client-onboarding.md | PLAYBOOK | announced, playbook live 27/07/2026 | 2026-W31 |
+| 013 | Tariq | Invoice Builder | backoffice/backoffice-invoicing.md | PLAYBOOK | announced, playbook live 27/07/2026 | 2026-W31 |
 | 014 | Hind | Social Listener | intelligence/intelligence-social-listening.md | PLAYBOOK | planned | 2026-W32 |
 | 015 | Ziad | Churn Watch | customer/customer-churn-watch.md | PLAYBOOK | planned | 2026-W32 |
 | 016 | Amal | Feedback Digest | customer/customer-feedback-digest.md | PLAYBOOK | planned | 2026-W32 |
