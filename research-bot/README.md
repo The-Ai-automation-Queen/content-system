@@ -49,3 +49,24 @@ The `hermes-autonomous-bridge` systemd timer (every 5 min) runs the research
 inbox through an Anthropic-powered chain and was the primary credit drain on
 2026-07-28. It lives outside this folder and needs the same free-first gate
 before being re-enabled.
+
+## Running the repair
+
+Two equivalent options (both idempotent, both back up every file they touch):
+
+```bash
+# A. paste-and-go, nothing to check out
+bash research-bot/fix-drain-paste.sh      # or paste its contents into the VPS shell
+
+# B. if this repo is checked out on the VPS
+sudo python3 research-bot/fix-drain.py
+```
+
+`fix-drain.py` is the canonical, fully documented version; `fix-drain-paste.sh`
+is the same logic condensed into a single paste-able heredoc (verified to
+produce byte-identical logic - the only differences are comments).
+
+Both patch four things: the paid-Anthropic gate in the hermes bridge, the retry
+cap in the autonomous bridge, the paid-Haiku gate in the capture bot, and t.co
+expansion in the Twitter extractor. Re-running reports ALREADY and changes
+nothing.
