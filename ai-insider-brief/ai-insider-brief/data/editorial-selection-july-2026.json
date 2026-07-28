@@ -1,0 +1,57 @@
+{
+  "include_urls": [
+    "https://techcrunch.com/2026/07/23/anthropic-updates-claude-voice-mode-with-more-capable-models/",
+    "https://techcrunch.com/2026/07/23/aegisai-founded-by-former-google-security-execs-lands-36m-to-stop-ai-driven-spear-phishing/",
+    "https://techcrunch.com/2026/07/23/runway-bets-on-ai-model-routing-as-generative-media-gets-crowded/",
+    "https://techcrunch.com/2026/07/23/openai-makes-chatgpt-health-available-to-all-u-s-users/",
+    "https://techcrunch.com/2026/07/22/substacks-new-tool-tells-you-whos-been-writing-their-newsletters-with-ai/",
+    "https://techcrunch.com/2026/07/22/synthesias-ai-training-platform-is-moving-beyond-videos-into-live-coaching/",
+    "https://techcrunch.com/2026/07/21/jack-dorsey-is-taking-on-slack-with-buzz-a-group-chat-platform-for-teams-and-their-ai-agents/",
+    "https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/",
+    "https://www.bbc.com/news/articles/cz97x8k4zqzo",
+    "https://techcrunch.com/2026/07/21/gritt-exits-stealth-with-34-million-for-robots-to-build-solar-plants-then-everything-else/",
+    "https://www.musicbusinessworldwide.com/sony-music-files-new-lawsuit-against-ai-platform-udio-asserting-over-30000-sound-recordings-a-judge-barred-it-from-adding-to-its-original-case/",
+    "https://techcrunch.com/2026/07/20/natural-raises-30m-to-reinvent-payments-for-ai-agents-and-take-on-stripe/",
+    "https://techcrunch.com/2026/07/20/youtube-clarifies-policies-around-ai-slop-and-upsetting-videos/",
+    "https://www.technologyreview.com/2026/07/20/1140655/ai-biases-hiring-humans/",
+    "https://www.bleepingcomputer.com/news/security/cursor-codex-gemini-cli-antigravity-hit-by-sandbox-escapes/",
+    "https://www.thestack.technology/hugging-face-hacked-turned-to-chinese-llm-for-help-after-us-models-blocked-blue-team/",
+    "https://arstechnica.com/ai/2026/07/will-ai-fix-prior-authorization-or-make-it-worse/",
+    "https://techcrunch.com/2026/07/15/vint-cerf-is-working-on-a-plan-to-unleash-ai-agents-on-the-open-internet/",
+    "https://www.technologyreview.com/2026/07/15/1140514/meet-gpt-red-an-llm-super-hacker-openai-built-to-make-its-models-safer/",
+    "https://www.hollywoodreporter.com/business/digital/netflix-generative-ai-tools-filmmakers-new-products-1236397366/"
+  ],
+  "overrides": {
+    "https://techcrunch.com/2026/07/23/anthropic-updates-claude-voice-mode-with-more-capable-models/": {
+      "trigger": "Anthropic releases the update beyond beta and lists the eligible plans and integrations."
+    },
+    "https://techcrunch.com/2026/07/23/openai-makes-chatgpt-health-available-to-all-u-s-users/": {
+      "trigger": "OpenAI changes Health's privacy terms, data-sharing controls, or clinical-safety guidance."
+    },
+    "https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/": {
+      "trigger": "Google publishes general availability, pricing, or independent benchmark results for the new models."
+    },
+    "https://www.bbc.com/news/articles/cz97x8k4zqzo": {
+      "trigger": "The UK government names the departments inheriting responsibility for national AI policy."
+    },
+    "https://techcrunch.com/2026/07/21/gritt-exits-stealth-with-34-million-for-robots-to-build-solar-plants-then-everything-else/": {
+      "category": "Real Estate",
+      "trigger": "Gritt completes its announced field deployment or publishes verified installation results."
+    },
+    "https://techcrunch.com/2026/07/20/youtube-clarifies-policies-around-ai-slop-and-upsetting-videos/": {
+      "category": "Marketing"
+    },
+    "https://www.technologyreview.com/2026/07/20/1140655/ai-biases-hiring-humans/": {
+      "trigger": "Your HR vendor introduces o3- or R1-based screening or ranking into a hiring workflow."
+    },
+    "https://www.bleepingcomputer.com/news/security/cursor-codex-gemini-cli-antigravity-hit-by-sandbox-escapes/": {
+      "trigger": "Your coding-agent vendor publishes a CVE or security advisory affecting your configuration."
+    },
+    "https://arstechnica.com/ai/2026/07/will-ai-fix-prior-authorization-or-make-it-worse/": {
+      "trigger": "CMS publishes binding guidance on AI use in prior-authorization or claim-denial decisions."
+    },
+    "https://www.technologyreview.com/2026/07/15/1140514/meet-gpt-red-an-llm-super-hacker-openai-built-to-make-its-models-safer/": {
+      "trigger": "OpenAI releases GPT-Red access or repeatable findings teams can use in their own red-teaming."
+    }
+  }
+}

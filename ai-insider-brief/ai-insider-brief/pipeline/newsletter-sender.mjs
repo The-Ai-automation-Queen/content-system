@@ -7,6 +7,7 @@ import { readFileSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { loadMergedConfig } from './config-loader.mjs';
+import { isCurrentEditorialCard } from './editorial-contract.mjs';
 
 var __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -161,7 +162,8 @@ export function buildEmailHTML(cards, mode) {
                 <tr>
                   <td style="padding-left: 12px;">
                     <p style="margin: 0; font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: ${vColor};">${card.verdict}</p>
-                    <p style="margin: 2px 0 0; font-family: Arial, sans-serif; font-size: 13px; color: #888888; line-height: 1.4;">${card.verdict_text}</p>
+                    <p style="margin: 2px 0 0; font-family: Arial, sans-serif; font-size: 12px; color: #666666; line-height: 1.4;"><strong>For:</strong> ${(card.applies_to || []).join(', ')}</p>
+                    <p style="margin: 4px 0 0; font-family: Arial, sans-serif; font-size: 13px; color: #555555; line-height: 1.4;"><strong>${card.verdict === 'ACT' ? 'Action' : card.verdict === 'WATCH' ? 'Trigger' : 'Reason'}:</strong> ${card.verdict === 'ACT' ? card.action : card.verdict === 'WATCH' ? card.trigger : card.reason}</p>
                   </td>
                 </tr>
               </table>
@@ -266,6 +268,10 @@ export async function sendBroadcast(config, subject, htmlContent, tagId) {
 // ---------------------------------------------------------------------------
 
 export function selectCards(allCards, mode) {
+  // Legacy verdicts were generated before evidence extraction and independent
+  // verification. They remain archived on the public board, but can never be
+  // selected for a subscriber email.
+  allCards = (allCards || []).filter(isCurrentEditorialCard);
   var filtered;
   if (mode === 'daily') {
     var today = new Date();

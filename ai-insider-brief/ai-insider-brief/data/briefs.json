@@ -1,6 +1,1599 @@
 {
   "cards": [
     {
+      "category": "Tools",
+      "headline": "Claude Voice Mode adds model selection and app integrations",
+      "narrative": "Anthropic updated Claude's voice mode to support Opus, Sonnet, and Haiku models. The tool now integrates with Gmail, Google Calendar, Slack, Canva, and Notion to perform tasks like drafting emails or updating meetings.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "All Claude users in beta"
+      ],
+      "reason": "The update is currently in beta. Full general availability or a move out of beta would trigger a wider transition to these tools.",
+      "trigger": "Anthropic releases the update beyond beta and lists the eligible plans and integrations.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "Voice AI",
+        "App Integration",
+        "Anthropic"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:06:08.568Z",
+        "reasons": [
+          "The headline and narrative are supported by the article and evidence (e1, e2).",
+          "The audience is correctly identified as 'All Claude users in beta' based on the text.",
+          "The verdict is WATCH, which is appropriate given the beta status, and it is accompanied by a concrete observable trigger (general public release).",
+          "All cited evidence IDs correspond correctly to the claims made in the narrative."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Users can now select Opus, Sonnet, or Haiku models for voice mode.",
+          "source_text": "The company said Thursday that users can choose between Opus, Sonnet, and Haiku models."
+        },
+        {
+          "id": "e2",
+          "claim": "Voice mode can interact with apps such as Gmail, Google Calendar, Slack, Canva, and Notion.",
+          "source_text": "Claudes voice mode can tap into other apps like Gmail, Google Calendar, Slack, Canva, and Notion."
+        },
+        {
+          "id": "e3",
+          "claim": "Voice mode defaults to the fastest version of the model previously used in text chat.",
+          "source_text": "voice mode picks the last model people used in the text chat and uses its fastest version by default."
+        },
+        {
+          "id": "e4",
+          "claim": "Multilingual support includes English, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Portuguese (Brazilian), and Spanish.",
+          "source_text": "Anthropic supports English, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Portuguese (Brazilian), and Spanish"
+        },
+        {
+          "id": "e5",
+          "claim": "Free users are limited to the Haiku model and one connected app.",
+          "source_text": "free users will be restricted to using the Haiku model with only one connected app."
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "The specific voice stack used by Anthropic",
+        "Whether conversational improvements like interruption handling were implemented"
+      ],
+      "verdict_text": "Anthropic releases the update beyond beta and lists the eligible plans and integrations.",
+      "source_url": "https://techcrunch.com/2026/07/23/anthropic-updates-claude-voice-mode-with-more-capable-models/",
+      "source_name": "TechCrunch AI",
+      "source_published_at": "2026-07-23T19:00:00.000Z",
+      "article_content_chars": 3202,
+      "article_content_complete": true,
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "trigger"
+        ]
+      },
+      "timestamp": "2026-07-23T19:00:00.000Z",
+      "date": "23/07/2026",
+      "id": "2026-07-23-18c71ec7"
+    },
+    {
+      "category": "Tools",
+      "headline": "AegisAI raises $36M to combat AI spear phishing",
+      "narrative": "AegisAI uses AI agents to detect sophisticated spear phishing and malicious PDF attachments that bypass traditional rule-based filters. The startup recently secured $36 million in Series A funding to scale its agentic defense system.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Companies using legacy email security tools"
+      ],
+      "reason": "The tool is available to some customers, but no specific pricing, signup path, or deployment instructions are provided for new users.",
+      "trigger": "Public release of a standard pricing plan or a self-service signup portal for the AegisAI platform.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e4",
+        "e5"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "Cybersecurity",
+        "AI Agents",
+        "Phishing"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:05:49.530Z",
+        "reasons": [
+          "The headline and narrative are supported by the article and evidence record.",
+          "The verdict is WATCH, which is appropriate given the tool is in use but lacks public pricing or signup details.",
+          "The audience (Companies using legacy email security tools) is grounded in the article's discussion of replacing legacy tools.",
+          "The trigger is a concrete observable event (public release of pricing/signup) to move from monitoring to action.",
+          "All cited evidence IDs (e1, e4, e5) accurately support the narrative's claims about funding, adoption, and technical capabilities."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "AegisAI raised $36 million in Series A funding led by Battery Ventures.",
+          "source_text": "AegisAI raise a $36 million Series A led by Battery Ventures"
+        },
+        {
+          "id": "e2",
+          "claim": "The total capital raised by AegisAI is $49 million.",
+          "source_text": "The fresh funding brings the startup’s total capital to $49 million."
+        },
+        {
+          "id": "e3",
+          "claim": "AegisAI was co-founded by former Google security executives Cy Khormaee and Ryan Luo.",
+          "source_text": "former Google security executives Cy Khormaee and Ryan Luo... teamed up to launch AegisAI"
+        },
+        {
+          "id": "e4",
+          "claim": "The technology is used by Mesh, LangChain, and Lokker.",
+          "source_text": "adopted by dozens of customers, including crypto payments company Mesh, AI startup LangChain, and privacy compliance platform Lokker."
+        },
+        {
+          "id": "e5",
+          "claim": "AegisAI's agents can detect malicious PDF attachments containing passwords and CAPTCHA.",
+          "source_text": "can catch malicious PDF attachments that look legitimate at first, including ones with built-in passwords and CAPTCHA"
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "The specific number of 'dozens of customers' AegisAI has adopted.",
+        "The exact date AegisAI was launched."
+      ],
+      "verdict_text": "The tool is available to some customers, but no specific pricing, signup path, or deployment instructions are provided for new users. Trigger: Public release of a standard pricing plan or a self-service signup portal for the AegisAI platform..",
+      "source_url": "https://techcrunch.com/2026/07/23/aegisai-founded-by-former-google-security-execs-lands-36m-to-stop-ai-driven-spear-phishing/",
+      "source_name": "TechCrunch AI",
+      "source_published_at": "2026-07-23T18:38:34.000Z",
+      "article_content_chars": 4664,
+      "article_content_complete": true,
+      "timestamp": "2026-07-23T18:38:34.000Z",
+      "date": "23/07/2026",
+      "id": "2026-07-23-7a2e33bd"
+    },
+    {
+      "category": "Tools",
+      "headline": "Runway launches AI Media Router for developers",
+      "narrative": "Runway released the Media Router via its Runway Dev platform. The tool automatically selects the best image, video, or audio model based on a developer's priority for quality, speed, or cost. This shifts Runway from a model provider to an orchestration layer for generative media.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Developers integrating generative media models",
+        "Companies building with generative media"
+      ],
+      "reason": "The tool is available, but the evidence does not provide specific pricing, API documentation, or a low-risk implementation path to justify an ACT verdict.",
+      "trigger": "The release of a new frontier video model or a change in the Media Router's supported third party model roster.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "Generative AI",
+        "API",
+        "Model Routing"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:06:19.928Z",
+        "reasons": [
+          "The verdict WATCH is appropriate as the tool is launched but not an urgent action for the user.",
+          "The narrative is fully supported by the article and evidence record.",
+          "The audience is specific and derived from the evidence record.",
+          "The trigger is concrete and observable (release of a new model or change in roster).",
+          "All cited evidence IDs (e1, e2) directly support the claims in the narrative."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Runway launched the Media Router via the Runway Dev platform to provide API access to various media models.",
+          "source_text": "the startup launched Runway Media Router through Runway Dev... that provides API access to a growing roster of third-party image, video, and audio models"
+        },
+        {
+          "id": "e2",
+          "claim": "The Media Router selects models based on developer preferences for speed, cost, or quality.",
+          "source_text": "The Media Router is a tool that automatically selects the best image, video, or audio generation model for a request based on whether a developer prioritizes quality, speed, or cost."
+        },
+        {
+          "id": "e3",
+          "claim": "Runway Dev is used by customers such as Adobe, Cloudflare, and Expedia to integrate media generation into their products.",
+          "source_text": "Through Runway Dev, customers including Adobe, Cloudflare, ElevenLabs, Expedia, Shutterstock, and Quora can build media generation directly into their own products"
+        },
+        {
+          "id": "e4",
+          "claim": "Runway transitioned from unlimited subscription plans to a token-based pricing model.",
+          "source_text": "Runway replaced its unlimited subscription plans with token-based pricing"
+        },
+        {
+          "id": "e5",
+          "claim": "Runway's text-to-video and image-to-video models are currently outperformed by models from Google, ByteDance, and Alibaba.",
+          "source_text": "the company’s text-to-video and image-to-video models no longer lead the rankings. In the top 20 spots are models from heavy hitters like Google and China’s ByteDance and Alibaba."
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "The specific release date for Gen 5"
+      ],
+      "verdict_text": "The tool is available, but the evidence does not provide specific pricing, API documentation, or a low-risk implementation path to justify an ACT verdict. Trigger: The release of a new frontier video model or a change in the Media Router's supported third party model roster..",
+      "source_url": "https://techcrunch.com/2026/07/23/runway-bets-on-ai-model-routing-as-generative-media-gets-crowded/",
+      "source_name": "TechCrunch AI",
+      "source_published_at": "2026-07-23T17:07:35.000Z",
+      "article_content_chars": 7929,
+      "article_content_complete": true,
+      "timestamp": "2026-07-23T17:07:35.000Z",
+      "date": "23/07/2026",
+      "id": "2026-07-23-68e99a0f"
+    },
+    {
+      "category": "Healthcare",
+      "headline": "OpenAI expands ChatGPT Health to all US users over 18",
+      "narrative": "OpenAI is rolling out ChatGPT Health to all US users on web and iOS. Users can now integrate medical records from systems like Epic and Oracle Health to get insights across all chat queries. The update follows a lawsuit regarding unsafe medical suggestions.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "U.S.-based users over 18"
+      ],
+      "reason": "The feature is available, but it involves health advice, which is a high-risk category requiring independent verification before an ACT verdict.",
+      "trigger": "OpenAI changes Health's privacy terms, data-sharing controls, or clinical-safety guidance.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e6",
+        "e7"
+      ],
+      "confidence": 1,
+      "verification_warning": "OpenAI terms state the service is not for diagnosis or treatment, and a lawsuit exists regarding unsafe medical advice.",
+      "topics": [
+        "Health AI",
+        "Medical Data Integration",
+        "OpenAI"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:06:03.495Z",
+        "reasons": [
+          "The verdict, audience, reason, and evidence IDs are all supported by the provided text. The narrative accurately summarizes the expansion of ChatGPT Health, the integration of medical records, and the context of the lawsuit. The trigger is a concrete observable event (certification or safety update) relevant to the high-risk nature of the feature."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "ChatGPT Health is available to all U.S. users over 18 across all plans.",
+          "source_text": "making ChatGPT Health... available to all U.S.-based users over 18 across all plans."
+        },
+        {
+          "id": "e2",
+          "claim": "Users can integrate health data from Apple Health, Function, and MyFitnessPal.",
+          "source_text": "allowing users to integrate data from other services and their personal information from services such as Apple Health, Function, and MyFitnessPal."
+        },
+        {
+          "id": "e3",
+          "claim": "Medical records can be integrated from Epic, Oracle Health, One Medical, and Function Health.",
+          "source_text": "integrate their medical records from hospital systems like Epic and Oracle Health, and health platforms like One Medical and Function Health."
+        },
+        {
+          "id": "e4",
+          "claim": "Health-related queries increased from 230 million to 300 million per week.",
+          "source_text": "users were asking 230 million health-related queries each week. That number has now gone up to 300 million."
+        },
+        {
+          "id": "e5",
+          "claim": "GPT 5.6-Luna outperforms GPT 5.5 on the HealthBench benchmark.",
+          "source_text": "the smallest model from its latest release, GPT 5.6-Luna, outperforms GPT 5.5 on HealthBench evaluation"
+        },
+        {
+          "id": "e6",
+          "claim": "OpenAI's terms state services are not for diagnosis or treatment of health conditions.",
+          "source_text": "the company maintains in its terms that its services are not intended for use in the diagnosis or treatment of any health condition."
+        },
+        {
+          "id": "e7",
+          "claim": "The feature is rolling out on web and iOS this week.",
+          "source_text": "Health in ChatGPT is rolling out to logged-in U.S. users with free, Go, Plus, and Pro plans on the web and iOS this week."
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "The specific outcome or current status of the lawsuit filed by the Florida-based pastor."
+      ],
+      "verdict_text": "OpenAI changes Health's privacy terms, data-sharing controls, or clinical-safety guidance.",
+      "source_url": "https://techcrunch.com/2026/07/23/openai-makes-chatgpt-health-available-to-all-u-s-users/",
+      "source_name": "TechCrunch AI",
+      "source_published_at": "2026-07-23T17:00:00.000Z",
+      "article_content_chars": 3771,
+      "article_content_complete": true,
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "trigger"
+        ]
+      },
+      "timestamp": "2026-07-23T17:00:00.000Z",
+      "date": "23/07/2026",
+      "id": "2026-07-23-a501624b"
+    },
+    {
+      "category": "Media",
+      "headline": "Substack integrates AI detection tool for newsletters",
+      "narrative": "Substack integrated Pangram software to let users estimate the ratio of human to AI content in posts and comments. Writers can now add optional AI author notes to disclose their process. This move aims to increase transparency and trust in independent content.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Substack writers",
+        "Substack users"
+      ],
+      "reason": "The tool is available, but the evidence does not provide a specific setting path or a low risk reason to act immediately for all users.",
+      "trigger": "Substack introduces penalties or algorithmic demotion for undisclosed AI content.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "AI detection",
+        "Content transparency",
+        "Substack"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:05:29.137Z",
+        "reasons": [
+          "The narrative accurately reflects the evidence regarding the Pangram integration and AI author notes.",
+          "The audience is correctly identified based on the evidence record.",
+          "The verdict WATCH is appropriate as the feature is already live (no ACT required).",
+          "The trigger is a concrete observable event (penalties/demotion) that would change the nature of the feature, which is currently described as non-punitive (e4).",
+          "All cited evidence IDs correspond to the claims in the narrative."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Substack integrated Pangram to estimate human vs AI content in posts, comments, and replies.",
+          "source_text": "integration with the AI writing detection software Pangram that will allow users to scan posts, comments, and replies on Substacks app"
+        },
+        {
+          "id": "e2",
+          "claim": "The AI detection tool works on content exceeding 100 characters.",
+          "source_text": "The feature will be available in Substacks app for any post, note, reply, or comment above 100 characters."
+        },
+        {
+          "id": "e3",
+          "claim": "Writers can optionally include an AI author's note to disclose AI usage.",
+          "source_text": "Substack will also allow its writers to include an optional AI authors note, using which creators can properly disclose their use of AI"
+        },
+        {
+          "id": "e4",
+          "claim": "The tool is not intended to penalize or prohibit AI-assisted writing.",
+          "source_text": "the tool is not meant to prohibit or penalize AI-assisted writing, but rather to encourage writers to add a how I make this statement"
+        },
+        {
+          "id": "e5",
+          "claim": "Publishers can use Pangram on their own drafts and request the removal of incorrect scans.",
+          "source_text": "Publishers can also run Pangram on their own drafts before publication, and report and remove scans on their own work they believe are mistakes."
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "The specific accuracy rate of the Pangram integration",
+        "Whether Substack will introduce penalties for undisclosed AI content in the future"
+      ],
+      "verdict_text": "The tool is available, but the evidence does not provide a specific setting path or a low risk reason to act immediately for all users. Trigger: Substack introduces penalties or algorithmic demotion for undisclosed AI content..",
+      "source_url": "https://techcrunch.com/2026/07/22/substacks-new-tool-tells-you-whos-been-writing-their-newsletters-with-ai/",
+      "source_name": "TechCrunch AI",
+      "source_published_at": "2026-07-22T16:23:09.000Z",
+      "article_content_chars": 3337,
+      "article_content_complete": true,
+      "timestamp": "2026-07-22T16:23:09.000Z",
+      "date": "22/07/2026",
+      "id": "2026-07-22-f731f91b"
+    },
+    {
+      "category": "Education",
+      "headline": "Synthesia launches AI Roleplay Sessions for corporate training",
+      "narrative": "Synthesia released Roleplay Sessions, allowing employees to practice high-stakes conversations with AI avatars that score performance against rubrics. The tool shifts the company from content generation toward a performance-management platform using OpenAI reasoning intelligence.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Enterprises",
+        "Sales teams",
+        "Corporate leadership"
+      ],
+      "reason": "The tool is currently an enterprise offering with no public pricing or self-service signup path provided in the evidence.",
+      "trigger": "The release of Roleplay Sessions to small businesses, prosumers, or educational institutions.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e5"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "AI Training",
+        "Corporate Learning",
+        "Performance Management"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:05:02.187Z",
+        "reasons": [
+          "The verdict is WATCH, which is appropriate as the product is currently limited to enterprises with no public access path.",
+          "The narrative is supported by e1 and e3 (the draft's e5 is used for the trigger/reason).",
+          "The audience is specific and supported by the article (Enterprises, Sales teams, Corporate leadership).",
+          "The trigger is a concrete observable event supported by the text (expansion to small businesses, prosumers, and educational institutions).",
+          "All evidence IDs cited in the draft align with the source text."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Synthesia launched Roleplay Sessions for practicing high-stakes conversations with AI avatars that provide scoring against a rubric.",
+          "source_text": "launched Roleplay Sessions, an interactive training product where employees can practice high-stakes conversations... and then scores them against a rubric."
+        },
+        {
+          "id": "e2",
+          "claim": "The \"Sessions\" platform is planned to expand into candidate screening and job interviews.",
+          "source_text": "Roleplay is the first release under a broader “Sessions” platform Synthesia plans to expand into other formats, including job interviews and candidate screening"
+        },
+        {
+          "id": "e3",
+          "claim": "Synthesia uses OpenAI for the underlying reasoning intelligence of the product.",
+          "source_text": "The companys avatar and voice technology are proprietary, but the underlying reasoning intelligence is OpenAI’s."
+        },
+        {
+          "id": "e4",
+          "claim": "Early customers include a top three European company by market cap, a top five Fortune 100 company, and a major global recruitment firm.",
+          "source_text": "including “one of the top three companies by market cap in Europe, one of the top five Fortune 100, and one of the biggest recruitment companies in the world”"
+        },
+        {
+          "id": "e5",
+          "claim": "The product is currently an enterprise offering, with plans to expand to prosumers, small businesses, and educational institutions in coming months.",
+          "source_text": "Roleplay is an enterprise offering for now, but the goal is to offer it more widely to small businesses, prosumers, and potentially educational institutions"
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "Specific pricing for Roleplay Sessions",
+        "The identity of the specific Fortune 100 or European market cap companies using the tool"
+      ],
+      "verdict_text": "The tool is currently an enterprise offering with no public pricing or self-service signup path provided in the evidence. Trigger: The release of Roleplay Sessions to small businesses, prosumers, or educational institutions..",
+      "source_url": "https://techcrunch.com/2026/07/22/synthesias-ai-training-platform-is-moving-beyond-videos-into-live-coaching/",
+      "source_name": "TechCrunch AI",
+      "source_published_at": "2026-07-22T08:00:00.000Z",
+      "article_content_chars": 4789,
+      "article_content_complete": true,
+      "timestamp": "2026-07-22T08:00:00.000Z",
+      "date": "22/07/2026",
+      "id": "2026-07-22-36a01ef9"
+    },
+    {
+      "category": "Tools",
+      "headline": "Jack Dorsey launches Buzz AI group chat platform",
+      "narrative": "Block has released Buzz, an open source group chat platform that integrates humans and AI agents in one workspace. It aims to replace Slack and GitHub by offering a model agnostic, decentralized environment for team collaboration.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "newer startups using AI agents",
+        "developers"
+      ],
+      "reason": "The product is in early stages and the source explicitly advises against porting teams over yet.",
+      "trigger": "Release of stable enterprise features or a formal exit from early stage development.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e3",
+        "e4"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "AI Agents",
+        "Collaboration Software",
+        "Open Source"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:04:55.557Z",
+        "reasons": [
+          "The verdict WATCH is appropriate as the article explicitly states it is probably not a good idea to port teams over yet because the product is in its early stages.",
+          "The audience consists of developers and newer startups using AI agents, which are both mentioned in the article/evidence.",
+          "The trigger is concrete and observable (release of stable features/exit from early stage).",
+          "The narrative accurately reflects the article's claims regarding Block, open source nature, and the goal to reduce dependency on Slack and GitHub."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Buzz is a group chat platform for the workplace combining humans and AI agents.",
+          "source_text": "Buzz is a group chat platform for the workplace that puts humans and their AI agents in the same conversations."
+        },
+        {
+          "id": "e2",
+          "claim": "The platform was built by Jack Dorsey's company, Block.",
+          "source_text": "According to its website, Buzz was built by Dorseys company Block"
+        },
+        {
+          "id": "e3",
+          "claim": "Buzz is open source, allowing developers to customize instances for their team's workflows.",
+          "source_text": "Since the platform is open source, developers can make their own Buzz instance feel more customized to the needs and workflows of their specific team."
+        },
+        {
+          "id": "e4",
+          "claim": "Buzz provides a free desktop application for Linux, Windows, and macOS.",
+          "source_text": "Buzzs free desktop app is available now for macOS, Windows, and Linux"
+        },
+        {
+          "id": "e5",
+          "claim": "Centaur is described by Georgios Konstantopoulos as a virtual employee running via API or inside Slack.",
+          "source_text": "Georgios Konstantopoulos recently unveiled a similar open source product called Centaur, which he describes as a virtual employee that runs either inside of Slack or via an API."
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "Pricing for future non-free versions of Buzz",
+        "Specific release date for Centaur"
+      ],
+      "verdict_text": "The product is in early stages and the source explicitly advises against porting teams over yet. Trigger: Release of stable enterprise features or a formal exit from early stage development..",
+      "source_url": "https://techcrunch.com/2026/07/21/jack-dorsey-is-taking-on-slack-with-buzz-a-group-chat-platform-for-teams-and-their-ai-agents/",
+      "source_name": "TechCrunch AI",
+      "source_published_at": "2026-07-21T19:43:41.000Z",
+      "article_content_chars": 4300,
+      "article_content_complete": true,
+      "timestamp": "2026-07-21T19:43:41.000Z",
+      "date": "21/07/2026",
+      "id": "2026-07-21-2d7014cf"
+    },
+    {
+      "category": "Tools",
+      "headline": "Google releases Gemini 3.6 Flash and specialized Flash models",
+      "narrative": "Google DeepMind launched Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber. The 3.6 Flash model reduces token usage by 17% to lower costs for developers building AI agents at scale. Gemini 3.5 Pro remains in partner testing.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "customers that are building AI agents at scale"
+      ],
+      "reason": "The 3.6 Flash model is available, but the high-capability Gemini 3.5 Pro is still in testing and not yet released to the general public.",
+      "trigger": "Google publishes general availability, pricing, or independent benchmark results for the new models.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2",
+        "e5"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "LLM",
+        "Google Gemini",
+        "AI Agents"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:04:49.549Z",
+        "reasons": [
+          "The headline and narrative accurately reflect the article content and provided evidence.",
+          "The audience 'customers that are building AI agents at scale' is explicitly mentioned in the text.",
+          "The reason for the WATCH verdict is supported by evidence e5 and e4, noting that while Flash models are out, the Pro model is still in testing.",
+          "The trigger is a concrete, observable event (the public release of Gemini 3.5 Pro).",
+          "All cited evidence IDs correspond correctly to the claims made in the narrative."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Google DeepMind released Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber.",
+          "source_text": "Google DeepMind released Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber."
+        },
+        {
+          "id": "e2",
+          "claim": "Gemini 3.6 Flash reduces token usage by up to 17% over 3.5 Flash, lowering cost.",
+          "source_text": "reducing token usage by up to 17%, making it cheaper than its predecessor 3.5 Flash."
+        },
+        {
+          "id": "e3",
+          "claim": "Gemini 3.5 Flash Cyber is limited to governments and trusted partners via a pilot program.",
+          "source_text": "This model will be exclusively available to governments and trusted partners as part of a limited access pilot program"
+        },
+        {
+          "id": "e4",
+          "claim": "The release did not include an update to Gemini Pro.",
+          "source_text": "The update doesnt include the long-anticipated update to Googles flagship model, Gemini Pro"
+        },
+        {
+          "id": "e5",
+          "claim": "Logan Kilpatrick stated Gemini 3.5 Pro is being tested with partners.",
+          "source_text": "Logan Kilpatrick said Tuesday that the company is currently testing Gemini 3.5 Pro with partners"
+        },
+        {
+          "id": "e6",
+          "claim": "Pre-training has started for Gemini 4.",
+          "source_text": "the team has started its most ambitious pre-training run yet for Gemini 4."
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "Specific release date for Gemini 3.5 Pro",
+        "Specific pricing for the models"
+      ],
+      "verdict_text": "Google publishes general availability, pricing, or independent benchmark results for the new models.",
+      "source_url": "https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/",
+      "source_name": "TechCrunch AI",
+      "source_published_at": "2026-07-21T17:11:50.000Z",
+      "article_content_chars": 3502,
+      "article_content_complete": true,
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "trigger"
+        ]
+      },
+      "timestamp": "2026-07-21T17:11:50.000Z",
+      "date": "21/07/2026",
+      "id": "2026-07-21-bc8fdb9e"
+    },
+    {
+      "category": "Strategy",
+      "headline": "UK AI Minister joins cabinet as tech department is scrapped",
+      "narrative": "AI Minister Kanishka Narayan now holds a cabinet seat, though the Department for Science, Innovation and Technology has been abolished. Responsibilities are being split across other government departments.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "UK start-ups",
+        "UK government departments"
+      ],
+      "reason": "The restructuring of tech governance is a significant signal, but specific new departmental assignments are not yet detailed.",
+      "trigger": "The UK government names the departments inheriting responsibility for national AI policy.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "UK Government",
+        "AI Policy",
+        "Governance"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:04:11.718Z",
+        "reasons": [
+          "The verdict (WATCH) is appropriate as the current state is a restructuring with missing details on departmental assignments.",
+          "The audience is specific (UK start-ups, UK government departments).",
+          "The trigger is a concrete observable event (announcement of departmental assignments).",
+          "The narrative and evidence IDs (e1, e2) are directly supported by the article text."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "AI Minister Kanishka Narayan will have a seat in the cabinet.",
+          "source_text": "The AI Minister, Kanishka Narayan, will be given a seat at the top table of government"
+        },
+        {
+          "id": "e2",
+          "claim": "The Department for Science, Innovation and Technology (DSIT) has been abolished.",
+          "source_text": "the Department for Science, Innovation and Technology (DSIT) has been scrapped."
+        },
+        {
+          "id": "e3",
+          "claim": "Liz Kendall previously served as technology secretary before being sacked by Prime Minister Andy Burnham.",
+          "source_text": "no longer a dedicated technology secretary, a position filled by Liz Kendall until she was sacked by new Prime Minister Andy Burnham."
+        },
+        {
+          "id": "e4",
+          "claim": "Narayan's previous responsibilities included the AI Security Institute, semiconductors, and online safety.",
+          "source_text": "his responsibilities spanned AI opportunities, the AI Security Institute, semiconductors and online safety."
+        },
+        {
+          "id": "e5",
+          "claim": "Government plans for AI leadership were reported in February to potentially strain drinking water supplies.",
+          "source_text": "the BBC was told in February government plans to make the UK a \"world leader\" in AI could put already stretched supplies of drinking water under strain."
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "Which specific government departments will inherit the responsibilities of the scrapped DSIT."
+      ],
+      "verdict_text": "The UK government names the departments inheriting responsibility for national AI policy.",
+      "source_url": "https://www.bbc.com/news/articles/cz97x8k4zqzo",
+      "source_name": "Techmeme",
+      "source_published_at": "2026-07-21T12:00:00.000Z",
+      "article_content_chars": 4362,
+      "article_content_complete": true,
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "trigger"
+        ]
+      },
+      "timestamp": "2026-07-21T12:00:00.000Z",
+      "date": "21/07/2026",
+      "id": "2026-07-21-b810e786"
+    },
+    {
+      "category": "Real Estate",
+      "headline": "Gritt launches AI system to automate solar panel installation",
+      "narrative": "Gritt has exited stealth with a $26 million Series A round. The company uses AI to control off-the-shelf robotic arms and skidders to unload and position solar panels. This system can increase a crew's daily installation capacity from 800 to 4,000 panels.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Solar panel installation crews",
+        "U.S. power construction companies"
+      ],
+      "reason": "The technology is in early deployment with a limited number of systems. It is not yet available for general purchase or wide scale adoption.",
+      "trigger": "Gritt completes its announced field deployment or publishes verified installation results.",
+      "action": null,
+      "evidence_ids": [
+        "e4",
+        "e5",
+        "e8"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "Robotics",
+        "Solar Energy",
+        "Physical AI"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:04:38.145Z",
+        "reasons": [
+          "The verdict (WATCH) is appropriate given the technology's current state (early deployment).",
+          "The audience is specific and supported by the evidence record (solar crews and U.S. power construction companies).",
+          "The reason for the judgment is supported by the text mentioning only two systems currently deployed and a goal of 48 within six months.",
+          "The trigger is concrete and observable, based on the company's stated goals (48 systems) and product roadmap (fastening and rack building).",
+          "All cited evidence IDs (e4, e5, e8) accurately support the narrative and triggers."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Gritt raised a $26 million Series A round led by Obvious Ventures.",
+          "source_text": "The company exited stealth Tuesday morning with a $26 million Series A round of funding led by Obvious Ventures"
+        },
+        {
+          "id": "e2",
+          "claim": "Total funding for Gritt has reached $32 million.",
+          "source_text": "That brings its total funding to $32 million"
+        },
+        {
+          "id": "e3",
+          "claim": "Gritt utilizes rented skidders and robotic arms from companies such as Kawasaki rather than building its own hardware.",
+          "source_text": "Gritt uses off-the-shelf hardware — thus far, rented skidders and robotic arms built by companies like Kawasaki"
+        },
+        {
+          "id": "e4",
+          "claim": "The AI system assists workers by unloading solar panels and positioning them on frames with sub-millimeter accuracy.",
+          "source_text": "The first job its systems handle is unloading large, glass solar panels... and positioning them on the frames with sub-millimeter accuracy"
+        },
+        {
+          "id": "e5",
+          "claim": "Current deployments show an eight-person crew can increase daily installation from 800 to 3,000-4,000 panels.",
+          "source_text": "a typical eight-person crew can install 800 panels a day, but the same crew working with Gritts systems can install 3,000 to 4,000 panels each day"
+        },
+        {
+          "id": "e6",
+          "claim": "Gritt is contracted for 2.8 gigawatts of solar panel installation over the next 18 months.",
+          "source_text": "the company says it is contracted to help install 2.8 gigawatts of solar panels in the next 18 months"
+        },
+        {
+          "id": "e7",
+          "claim": "Gritt's customer base includes three of the top 10 U.S. power construction companies.",
+          "source_text": "its customers include three of the top 10 U.S. power construction companies"
+        },
+        {
+          "id": "e8",
+          "claim": "The company aims to have 48 systems operating within six months.",
+          "source_text": "The company hopes to be operating 48 of its systems within the next six months"
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "The specific identities of the three U.S. power construction companies that are customers.",
+        "The specific AI models used by Gritt."
+      ],
+      "verdict_text": "Gritt completes its announced field deployment or publishes verified installation results.",
+      "source_url": "https://techcrunch.com/2026/07/21/gritt-exits-stealth-with-34-million-for-robots-to-build-solar-plants-then-everything-else/",
+      "source_name": "Techmeme",
+      "source_published_at": "2026-07-21T10:00:00.000Z",
+      "article_content_chars": 5958,
+      "article_content_complete": true,
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "category",
+          "trigger"
+        ]
+      },
+      "timestamp": "2026-07-21T10:00:00.000Z",
+      "date": "21/07/2026",
+      "id": "2026-07-21-267ee18d"
+    },
+    {
+      "category": "Media",
+      "headline": "Sony Music sues Udio over 30,000 unauthorized AI training recordings",
+      "narrative": "Sony Music and nine labels filed a lawsuit against Udio for copying 30,117 sound recordings to train AI models. The suit alleges Udio used YT-DLP to rip audio from YouTube. Sony is the only major music company that has not reached a licensing deal with Udio.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "AI developers",
+        "Music industry professionals"
+      ],
+      "reason": "The lawsuit establishes a legal precedent for AI training data and DMCA circumvention but does not require immediate action from the reader.",
+      "trigger": "A court ruling on whether using YT-DLP for AI training constitutes fair use or a DMCA violation.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "Copyright",
+        "Generative AI",
+        "Legal"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:04:32.264Z",
+        "reasons": [
+          "The headline and narrative are accurately supported by the provided evidence record (e1, e2, e3, e4).",
+          "The verdict 'WATCH' is appropriate as there is no immediate action required, but the legal outcome is significant for the target audiences.",
+          "The trigger is concrete and observable, based on the legal claims mentioned in e5 regarding DMCA circumvention and the general context of the copyright suit.",
+          "The audiences (AI developers, Music industry professionals) are specific and relevant to a lawsuit concerning AI training data and music copyrights."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Sony Music Entertainment and nine affiliated labels filed a lawsuit against Udio on July 20 in the US District Court for the Southern District of New York.",
+          "source_text": "The complaint... was filed on Monday (July 20) in the US District Court for the Southern District of New York."
+        },
+        {
+          "id": "e2",
+          "claim": "The lawsuit involves 30,117 sound recordings that Sony claims were copied without permission for AI training.",
+          "source_text": "asserting 30,117 sound recordings it says the AI music company copied without permission to train its generative AI models."
+        },
+        {
+          "id": "e3",
+          "claim": "Sony alleges Udio used the tool YT-DLP to rip recordings from YouTube.",
+          "source_text": "Udio obtained many of the recordings by stream ripping them from YouTube using the tool YT-DLP"
+        },
+        {
+          "id": "e4",
+          "claim": "Udio has entered licensing deals with several rightsholders, but Sony is the only major music company that has not.",
+          "source_text": "Sony is the only major music company yet to reach a licensing agreement with Udio"
+        },
+        {
+          "id": "e5",
+          "claim": "The legal action includes claims regarding post-1972 recordings, pre-1972 recordings under the Music Modernization Act, and DMCA circumvention.",
+          "source_text": "infringement of post-1972 recordings, infringement of pre-1972 recordings protected under the Music Modernization Act, and circumvention of technological measures under the Digital Millennium Copyright Act."
+        },
+        {
+          "id": "e6",
+          "claim": "Udio was founded by former Google DeepMind researchers and is led by CEO Andrew Sanchez.",
+          "source_text": "Udio, developed by Uncharted Labs, was founded by former Google DeepMind researchers... and is led by co-founder and CEO Andrew Sanchez."
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "The specific names of the other seven affiliated labels beyond Arista Records and LaFace."
+      ],
+      "verdict_text": "The lawsuit establishes a legal precedent for AI training data and DMCA circumvention but does not require immediate action from the reader. Trigger: A court ruling on whether using YT-DLP for AI training constitutes fair use or a DMCA violation..",
+      "source_url": "https://www.musicbusinessworldwide.com/sony-music-files-new-lawsuit-against-ai-platform-udio-asserting-over-30000-sound-recordings-a-judge-barred-it-from-adding-to-its-original-case/",
+      "source_name": "Techmeme",
+      "source_published_at": "2026-07-20T19:35:10.000Z",
+      "article_content_chars": 4107,
+      "article_content_complete": true,
+      "timestamp": "2026-07-20T19:35:10.000Z",
+      "date": "20/07/2026",
+      "id": "2026-07-20-073967c8"
+    },
+    {
+      "category": "Finance",
+      "headline": "Natural raises $30M to build payment rails for AI agents",
+      "narrative": "Natural is developing an orchestration layer that allows AI agents to autonomously move and store funds. This infrastructure aims to replace human authorization in payments to enable computer speed transactions.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Companies integrating AI agents"
+      ],
+      "reason": "The product has only operated in a beta trial and no public pricing or access path is provided.",
+      "trigger": "The general release of Natural's payment infrastructure beyond the beta trial.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e3",
+        "e5"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "AI Agents",
+        "Fintech",
+        "Payments"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:03:39.411Z",
+        "reasons": [
+          "The verdict (WATCH) is appropriate because the product is currently in beta and the draft correctly identifies that no public access path or pricing is available.",
+          "The audience (Companies integrating AI agents) is well-supported by the article's description of who would integrate the infrastructure.",
+          "The reason and trigger are logical and based on the article's statement that the company 'has operated in a beta trial until now'.",
+          "All cited evidence IDs (e1, e3, e5) accurately support the narrative regarding funding, functionality, and payment types."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Natural raised $30 million in a Series A round led by Forerunner.",
+          "source_text": "Forerunner... led its $30 million Series A round in the company"
+        },
+        {
+          "id": "e2",
+          "claim": "Total funding for Natural is $40 million.",
+          "source_text": "bringing the company’s total funding to $40 million."
+        },
+        {
+          "id": "e3",
+          "claim": "Natural's infrastructure allows agents to make payments, collect funds, and transact with humans and other agents.",
+          "source_text": "companies can allow their agents to make autonomous payments, collect funds, and transact with both humans and other agents."
+        },
+        {
+          "id": "e4",
+          "claim": "The company was founded in 2025 by Kahlil Lalji, Eric Wang, and Walt Leung.",
+          "source_text": "Lalji teamed up with Eric Wang... and Walt Leung... and founded Natural in 2025."
+        },
+        {
+          "id": "e5",
+          "claim": "Natural plans to support both stablecoins and traditional bank payments.",
+          "source_text": "While Natural plans to incorporate stablecoins into its architecture, it is also building support for traditional bank payments."
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "Specific pricing for Natural's orchestration layer",
+        "Exact date of the beta trial launch"
+      ],
+      "verdict_text": "The product has only operated in a beta trial and no public pricing or access path is provided. Trigger: The general release of Natural's payment infrastructure beyond the beta trial..",
+      "source_url": "https://techcrunch.com/2026/07/20/natural-raises-30m-to-reinvent-payments-for-ai-agents-and-take-on-stripe/",
+      "source_name": "Techmeme",
+      "source_published_at": "2026-07-20T19:11:25.000Z",
+      "article_content_chars": 5351,
+      "article_content_complete": true,
+      "timestamp": "2026-07-20T19:11:25.000Z",
+      "date": "20/07/2026",
+      "id": "2026-07-20-cf3c8dfd"
+    },
+    {
+      "category": "Marketing",
+      "headline": "YouTube restricts monetization for AI slop and personas",
+      "narrative": "YouTube updated its Partner Program policies to demonetize three types of inauthentic content: template-based videos, distressing content, and AI personas discussing sensitive topics. This move targets content farming to protect ad revenue and platform quality.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "YouTube Partner Program members",
+        "AI content creators"
+      ],
+      "reason": "The policy is already active, but the evidence does not provide a specific quantitative threshold for when a channel is flagged for having too much restricted content.",
+      "trigger": "YouTube issuing a monetization warning or removal notice based on the new inauthentic content categories.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "AI content",
+        "Monetization",
+        "YouTube"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:03:57.930Z",
+        "reasons": [
+          "The verdict (WATCH) is appropriate because the policy is already implemented (July 16), meaning there is no future deadline to ACT on, but there is an ongoing operational risk for creators.",
+          "The audience (YPP members, AI content creators) is supported by the article and e4.",
+          "The reason accurately reflects the ambiguity in the text regarding the threshold ('too much') for demonetization.",
+          "The trigger is a concrete observable event (receiving a notice) that would signal the policy's application to a specific user.",
+          "All narrative claims are supported by the cited evidence IDs e1, e2, e3, and e4."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "YouTube updated policies to specify three types of inauthentic content ineligible for monetization.",
+          "source_text": "YouTubes policy now explains that there are three types of videos under the broader category of inauthentic content that cannot be monetized."
+        },
+        {
+          "id": "e2",
+          "claim": "The three categories include generic/template-based content, off-putting/distressing content, and AI personas discussing sensitive topics.",
+          "source_text": "three categories, including generic, repetitive, or template-based content, followed by off-putting or distressing content, and then any content where AI personas are used to discuss sensitive topics"
+        },
+        {
+          "id": "e3",
+          "claim": "Content featuring AI personas discussing finance, legal, or medical issues is targeted by the new rules.",
+          "source_text": "YouTube says it doesnt want to incentivize creators using AI personas to discuss more sensitive topics, like finance, legal issues, healthcare, and medical issues."
+        },
+        {
+          "id": "e4",
+          "claim": "The policy clarifications were implemented on July 16 for all YouTube Partner Program members.",
+          "source_text": "The policy clarifications were rolled out on July 16 and impact all YouTube Partner Program members."
+        },
+        {
+          "id": "e5",
+          "claim": "YouTube's ad revenue currently exceeds that of rival streamers and it has more average daily views than Netflix.",
+          "source_text": "Googles video platform now generates more ad revenue than rival streamers and has overtaken Netflix in average daily views worldwide."
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "The specific quantitative threshold for what constitutes 'too much' of the restricted content types before monetization is revoked."
+      ],
+      "verdict_text": "YouTube issuing a monetization warning or removal notice based on the new inauthentic content categories.",
+      "source_url": "https://techcrunch.com/2026/07/20/youtube-clarifies-policies-around-ai-slop-and-upsetting-videos/",
+      "source_name": "TechCrunch AI",
+      "source_published_at": "2026-07-20T15:23:06.000Z",
+      "article_content_chars": 5128,
+      "article_content_complete": true,
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "category"
+        ]
+      },
+      "timestamp": "2026-07-20T15:23:06.000Z",
+      "date": "20/07/2026",
+      "id": "2026-07-20-c6758287"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Reasoning LLMs show higher bias in simulated hiring",
+      "narrative": "Research from Princeton and the University of Chicago shows LLMs develop stereotypes from experience, often exceeding human bias levels. Higher reasoning models like OpenAI o3 and DeepSeek R1 demonstrated stronger tendencies to segregate candidates by group.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "AI companies building agentic models"
+      ],
+      "reason": "The study uses a simulated game. Real world impact is an open question, but the signal regarding reasoning models is significant.",
+      "trigger": "Your HR vendor introduces o3- or R1-based screening or ranking into a hiring workflow.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "AI Bias",
+        "LLM Reasoning",
+        "Recruitment"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:03:16.650Z",
+        "reasons": [
+          "The verdict WATCH is appropriate as the article explicitly states that real-world impact is an 'open question'.",
+          "The audience 'AI companies building agentic models' is directly supported by the article's mention of the risk associated with agentic models that remember user details.",
+          "The reason accurately reflects the simulated nature of the study and the specific signal regarding reasoning models.",
+          "The trigger is a concrete observable event related to the deployment of the specific models (o3 and R1) cited in the evidence.",
+          "All cited evidence IDs (e1, e2, e3) accurately support the claims in the narrative."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "LLMs can develop their own biases from experience and stereotype job applicants more than humans.",
+          "source_text": "New research suggests that LLMs can also develop their own biases from experience—and stereotype job applicants more than humans do."
+        },
+        {
+          "id": "e2",
+          "claim": "OpenAI's o3 model scored 1.83 on a segregation scale, nearly reaching the maximum of 2.",
+          "source_text": "the models scored roughly 65% higher, with OpenAI’s reasoning model o3 scoring 1.83, close to the maximum possible."
+        },
+        {
+          "id": "e3",
+          "claim": "Higher reasoning models like o3 and R1 demonstrated stronger biases.",
+          "source_text": "Newer models with higher reasoning capabilities, such as OpenAI’s o3 and DeepSeek’s R1, showed stronger biases."
+        },
+        {
+          "id": "e4",
+          "claim": "Providing relevant personal information, such as age and education, reduced the likelihood of the models segregating people by ethnicity.",
+          "source_text": "When the models were told personal information relevant to the ability to adapt to a new city, such as age and education, they were less likely to segregate"
+        },
+        {
+          "id": "e5",
+          "claim": "Instructing models to be fair did not significantly change their behavior.",
+          "source_text": "Telling the model to be fair didn’t change its behavior much."
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "The extent to which AI systems will stereotype job applicants in real-world scenarios.",
+        "The exact amount of memory chatbots should have to avoid over-indexing on previous behaviors while remaining useful."
+      ],
+      "verdict_text": "Your HR vendor introduces o3- or R1-based screening or ranking into a hiring workflow.",
+      "source_url": "https://www.technologyreview.com/2026/07/20/1140655/ai-biases-hiring-humans/",
+      "source_name": "MIT Technology Review",
+      "source_published_at": "2026-07-20T12:00:00.000Z",
+      "article_content_chars": 6282,
+      "article_content_complete": true,
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "trigger"
+        ]
+      },
+      "timestamp": "2026-07-20T12:00:00.000Z",
+      "date": "20/07/2026",
+      "id": "2026-07-20-35a1b283"
+    },
+    {
+      "category": "Tools",
+      "headline": "Sandbox escapes found in AI coding agents",
+      "narrative": "Researchers found vulnerabilities in Cursor, OpenAI Codex, Google Gemini CLI, and Antigravity. These allow agents to write files that external tools then execute as commands on the host machine. Most issues are patched, but the pattern shows a systemic risk in agentic coding tools.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Developers using agentic coding tools"
+      ],
+      "reason": "Most vulnerabilities are already patched, but the underlying class of escape remains a risk for those weighing new agentic tools.",
+      "trigger": "Your coding-agent vendor publishes a CVE or security advisory affecting your configuration.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e6"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "AI Security",
+        "Coding Agents",
+        "Sandbox Escape"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:04:22.590Z",
+        "reasons": [
+          "The verdict (WATCH) is appropriate as most issues are patched but a systemic risk is identified.",
+          "The audience is specific and supported by the evidence record.",
+          "The reason for the judgment is supported by the article's discussion on the 'underlying class' of vulnerabilities.",
+          "The trigger is concrete and observable (release of new CVEs/advisories).",
+          "All cited evidence IDs (e1, e2, e3, e4, e6) accurately support the claims in the narrative."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Researchers broke out of sandboxes in Cursor, OpenAI's Codex, Google's Gemini CLI, and Antigravity.",
+          "source_text": "Security researchers broke out of the sandboxes in four widely used AI coding agents, including Cursor, OpenAI's Codex, Google's Gemini CLI and Antigravity"
+        },
+        {
+          "id": "e2",
+          "claim": "The escape occurs when an agent writes a file that a trusted external tool subsequently runs, loads, or scans.",
+          "source_text": "It just writes a file that a trusted tool outside the box later runs, loads, or scans, and the escape happens on its own."
+        },
+        {
+          "id": "e3",
+          "claim": "Cursor fixed a workspace-controlled .claude hook config vulnerability in version 3.0.0, tracked as CVE-2026-48124.",
+          "source_text": "In Cursor, a workspace-controlled .claude hook config turned into unsandboxed command execution. It is now tracked as CVE-2026-48124 and was fixed in version 3.0.0."
+        },
+        {
+          "id": "e4",
+          "claim": "OpenAI patched a Codex CLI vulnerability where a 'safe' command allowlist trusted git show improperly in v0.95.0.",
+          "source_text": "In Codex CLI, a \"safe\" command allowlist trusted git show by name while the actual invocation was not read-only. OpenAI patched it in v0.95.0"
+        },
+        {
+          "id": "e5",
+          "claim": "Google classified two Antigravity findings as 'Other valid security vulnerabilities' and downgraded them due to exploit difficulty.",
+          "source_text": "Google classified both as \"Other valid security vulnerabilities\" and applied a downgrade, judging them difficult to exploit"
+        },
+        {
+          "id": "e6",
+          "claim": "A vulnerability involving a privileged local Docker socket affected Codex, Cursor, and Gemini CLI.",
+          "source_text": "One Docker socket finding hit Codex, Cursor and Gemini CLI at once."
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "The specific CVE identifier for the Cursor Git metadata bug.",
+        "The specific CVE identifier for the OpenAI Codex CLI patch."
+      ],
+      "verdict_text": "Your coding-agent vendor publishes a CVE or security advisory affecting your configuration.",
+      "source_url": "https://www.bleepingcomputer.com/news/security/cursor-codex-gemini-cli-antigravity-hit-by-sandbox-escapes/",
+      "source_name": "Techmeme",
+      "source_published_at": "2026-07-20T12:00:00.000Z",
+      "article_content_chars": 4153,
+      "article_content_complete": true,
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "trigger"
+        ]
+      },
+      "timestamp": "2026-07-20T12:00:00.000Z",
+      "date": "20/07/2026",
+      "id": "2026-07-20-1179d4e8"
+    },
+    {
+      "category": "Privacy",
+      "headline": "Hugging Face production infrastructure breached by AI agent",
+      "narrative": "An autonomous AI agent breached Hugging Face by abusing dataset processing paths to harvest credentials. The company used an open-weight model for forensics because commercial API guardrails blocked the analysis of attack payloads.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Hugging Face customers"
+      ],
+      "reason": "The company explicitly recommended that customers rotate tokens and review activity following the breach.",
+      "trigger": "Hugging Face notifies customers directly that their specific data was affected.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e5"
+      ],
+      "confidence": 1,
+      "verification_warning": "Independent verifier did not approve ACT",
+      "topics": [
+        "Cybersecurity",
+        "AI Agents",
+        "Data Breach"
+      ],
+      "_demoted_from": "ACT",
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "demoted",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:03:00.281Z",
+        "reasons": [
+          "The action requires a specific trigger to be an 'ACT' card. The draft lacks a trigger, meaning the action 'Rotate any access tokens' is presented as an immediate mandate without a defined event or condition for the user to monitor.",
+          "The urgency of the action is not established as an immediate crisis for all customers, as Hugging Face is still assessing if partner or customer data was affected."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Hugging Face's production infrastructure was breached by an autonomous AI agent system.",
+          "source_text": "Hugging Face said its production infrastructure was breached by an “autonomous” AI agent system early last week"
+        },
+        {
+          "id": "e2",
+          "claim": "The breach involved abusing a remote-code dataset loader and a template-injection in a dataset configuration.",
+          "source_text": "“abused two code-execution paths in our dataset processing (a remote-code dataset loader and a template-injection in a dataset configuration)"
+        },
+        {
+          "id": "e3",
+          "claim": "Commercial frontier model guardrails blocked the analysis of attack commands and exploit payloads.",
+          "source_text": "the analysis requires submitting large volumes of real attack commands, exploit payloads, and C2 artifacts, and these requests were blocked by the providers' safety guardrails."
+        },
+        {
+          "id": "e4",
+          "claim": "Hugging Face utilized the GLM 5.2 model from Z.ai lab for log analysis.",
+          "source_text": "Hugging Face’s defenders turned instead to the open-source GLM 5.2 model from China’s Z.ai lab"
+        },
+        {
+          "id": "e5",
+          "claim": "Hugging Face recommended customers rotate access tokens and review account activity.",
+          "source_text": "“We recommend rotating any access tokens and reviewing recent activity on your account.”"
+        },
+        {
+          "id": "e6",
+          "claim": "The company has not found tampering with models, datasets, spaces, or its supply chain.",
+          "source_text": "its incident response team has seen no “tampering” with models, datasets, or spaces, and its supply chain (container images and published packages) are “verified clean.”"
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "The identity of the attacker",
+        "Which commercial frontier models were first attempted for incident response",
+        "Which model the attackers used",
+        "Whether partner or customer data was affected"
+      ],
+      "verdict_text": "The company explicitly recommended that customers rotate tokens and review activity following the breach. Trigger: Hugging Face notifies customers directly that their specific data was affected..",
+      "source_url": "https://www.thestack.technology/hugging-face-hacked-turned-to-chinese-llm-for-help-after-us-models-blocked-blue-team/",
+      "source_name": "Techmeme",
+      "source_published_at": "2026-07-19T15:01:15.000Z",
+      "article_content_chars": 4430,
+      "article_content_complete": true,
+      "timestamp": "2026-07-19T15:01:15.000Z",
+      "date": "19/07/2026",
+      "id": "2026-07-19-265f3769"
+    },
+    {
+      "category": "Healthcare",
+      "headline": "Trump Administration Pilots AI for Medicare Claims",
+      "narrative": "The Trump administration is testing AI to evaluate Medicare claims. This pilot examines how AI affects insurance coverage decisions and prior authorization processes.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Medicare claimants"
+      ],
+      "reason": "The evidence describes a pilot program but provides no specific settings or deadlines for users to act upon.",
+      "trigger": "CMS publishes binding guidance on AI use in prior-authorization or claim-denial decisions.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "confidence": 0.8,
+      "verification_warning": "The source content is partial and the confidence in the evidence is low.",
+      "topics": [
+        "Medicare",
+        "AI",
+        "Insurance"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T09:02:47.056Z",
+        "reasons": [
+          "The headline and narrative are directly supported by evidence ids e1 and e2.",
+          "The audience 'Medicare claimants' is a reasonable derivation from the subject of Medicare claims.",
+          "The verdict 'WATCH' is appropriate because the content is partial and describes a pilot without current actionable deadlines.",
+          "The trigger is a concrete, observable event (official guidelines/policy change) that would logically follow a pilot program."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "The Trump administration is piloting AI for the evaluation of Medicare claims.",
+          "source_text": "Trump admin starts to pilot using AI to evaluate Medicare claims"
+        },
+        {
+          "id": "e2",
+          "claim": "The pilot considers AI's impact on coverage decisions like prior authorization.",
+          "source_text": "AI's potential impact on insurance-coverage decisions like prior authorization"
+        }
+      ],
+      "source_confidence": "low",
+      "unknowns": [
+        "Specific goals of the pilot",
+        "Timeline for implementation",
+        "Technical details of the AI being used"
+      ],
+      "verdict_text": "CMS publishes binding guidance on AI use in prior-authorization or claim-denial decisions.",
+      "source_url": "https://arstechnica.com/ai/2026/07/will-ai-fix-prior-authorization-or-make-it-worse/",
+      "source_name": "Techmeme",
+      "source_published_at": "2026-07-18T12:00:00.000Z",
+      "article_content_chars": 160,
+      "article_content_complete": false,
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "trigger"
+        ]
+      },
+      "timestamp": "2026-07-18T12:00:00.000Z",
+      "date": "18/07/2026",
+      "id": "2026-07-18-c63f170a"
+    },
+    {
+      "category": "Strategy",
+      "headline": "Vint Cerf joins Innovation Labs to standardize AI agent identity",
+      "narrative": "Innovation Labs proposed DNSid to link AI agent identities to internet domain names using cryptographic proofs. Vint Cerf is advising the effort to create an open architecture for agent accountability. The system is currently in trials with unnamed hyperscalers and identity companies.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Hyperscalers",
+        "Identity companies"
+      ],
+      "reason": "The DNSid standard is currently in trials and not yet available for general adoption.",
+      "trigger": "The public release of the DNSid protocol or its adoption by a major hyperscaler.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e3",
+        "e4"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "AI Agents",
+        "Internet Standards",
+        "Identity"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T08:56:48.193Z",
+        "reasons": [
+          "The verdict (WATCH) is appropriate as the system is in trials and not yet widely released.",
+          "The audience (Hyperscalers, Identity companies) is specifically mentioned as the current trial participants in the text.",
+          "The reason aligns with the current status of the DNSid standard (trialing).",
+          "The trigger is a concrete observable event (public release or adoption by a major hyperscaler).",
+          "All cited evidence IDs (e1, e3, e4) accurately support the claims in the narrative."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Vint Cerf is now an advisor for Innovation Labs.",
+          "source_text": "Starting today, hes advising Innovation Labs, an organization trying to create the open architecture for AI agents to identify themselves."
+        },
+        {
+          "id": "e2",
+          "claim": "Innovation Labs is a subsidiary of Identity Digital.",
+          "source_text": "Innovation Labs is a subsidiary of Identity Digital, a DNS registry company"
+        },
+        {
+          "id": "e3",
+          "claim": "DNSid uses cryptographic proofs to log agent registration and links them to domain names.",
+          "source_text": "Innovation Labs has proposed DNSid, a system to create identities for agents and link each one to an existing internet domain name, using cryptographic proofs"
+        },
+        {
+          "id": "e4",
+          "claim": "Innovation Labs is testing its standards with certain identity companies and hyperscalers.",
+          "source_text": "Innovation Labs interim CEO Allie Kline says the company is trialing the standards with several unnamed hyperscalers and identity companies."
+        },
+        {
+          "id": "e5",
+          "claim": "Innovation Labs does not intend to own registration data or conduct other AI business.",
+          "source_text": "One key to Innovation Labs proposal is that it does not come with broader plans to do other kinds of AI business or own the registration data"
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "The specific names of the hyperscalers and identity companies involved in the trials."
+      ],
+      "verdict_text": "The DNSid standard is currently in trials and not yet available for general adoption. Trigger: The public release of the DNSid protocol or its adoption by a major hyperscaler..",
+      "source_url": "https://techcrunch.com/2026/07/15/vint-cerf-is-working-on-a-plan-to-unleash-ai-agents-on-the-open-internet/",
+      "source_name": "TechCrunch AI",
+      "source_published_at": "2026-07-15T12:00:00.000Z",
+      "article_content_chars": 4331,
+      "article_content_complete": true,
+      "timestamp": "2026-07-15T12:00:00.000Z",
+      "date": "15/07/2026",
+      "id": "2026-07-15-63ab2ff3"
+    },
+    {
+      "category": "Strategy",
+      "headline": "OpenAI uses GPT-Red to automate AI red-teaming",
+      "narrative": "OpenAI developed GPT-Red, an LLM that automates security testing by attacking other models. This process helped harden GPT-5.6 against prompt injections, including a new fake chain of thought attack. GPT-Red will not be released to the public.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "AI security researchers",
+        "Human red-teamers"
+      ],
+      "reason": "The tool is not available for public use, but the discovery of new attack vectors like fake chain of thought is a signal for security professionals.",
+      "trigger": "OpenAI releases GPT-Red access or repeatable findings teams can use in their own red-teaming.",
+      "action": null,
+      "evidence_ids": [
+        "e3",
+        "e4",
+        "e6"
+      ],
+      "confidence": 1,
+      "verification_warning": null,
+      "topics": [
+        "AI Safety",
+        "Red-Teaming",
+        "Prompt Injection"
+      ],
+      "editorial_contract_version": 2,
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T08:57:41.992Z",
+        "reasons": [
+          "The headline and narrative are accurately supported by the article and evidence record.",
+          "The verdict is WATCH, which is appropriate since the tool is internal to OpenAI (e6).",
+          "The audience (AI security researchers, Human red-teamers) is specific and relevant to the discovery of new attack vectors like 'fake chain of thought' (e3).",
+          "The trigger is a concrete, observable event (release of a similar tool or a widespread exploit) that would justify a change in status.",
+          "All cited evidence IDs (e3, e4, e6) directly support the claims made in the narrative."
+        ],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "GPT-Red is used to help other models improve defenses against cyberattacks.",
+          "source_text": "OpenAI has built an LLM super-hacker called GPT-Red that it uses as a sparring partner to help its other models boost their defenses"
+        },
+        {
+          "id": "e2",
+          "claim": "GPT-Red was trained using a self-play loop where it attempted to attack other models while they defended themselves.",
+          "source_text": "OpenAI’s researchers took an LLM that had not been trained as a hacker and set it up in what’s known as a self-play loop"
+        },
+        {
+          "id": "e3",
+          "claim": "GPT-Red discovered a 'fake chain of thought' attack that inserts fake entries to trick models.",
+          "source_text": "GPT-Red found a way to insert a fake entry into another model’s chain of thought that would trick that model into acting on spoofed information"
+        },
+        {
+          "id": "e4",
+          "claim": "In tests, fewer than 23% of GPT-Red's strongest attacks worked against GPT-5.6, compared to over 90% against GPT-5.",
+          "source_text": "more than 90% of them worked against GPT-5 (released in August last year), and fewer than 23% worked against the new GPT-5.6."
+        },
+        {
+          "id": "e5",
+          "claim": "GPT-Red struggles with attacks involving back-and-forth conversations or the use of images.",
+          "source_text": "It is not great at figuring out attacks that involve a back-and-forth conversation... It is also not yet that great at using images"
+        },
+        {
+          "id": "e6",
+          "claim": "OpenAI will not release GPT-Red to the public.",
+          "source_text": "Unsurprisingly, OpenAI will not be releasing GPT-Red."
+        }
+      ],
+      "source_confidence": "high",
+      "unknowns": [
+        "The specific date of the 2025 experiment mentioned for comparison",
+        "The specific nature of the 'concurrent work' blog post by independent researchers"
+      ],
+      "verdict_text": "OpenAI releases GPT-Red access or repeatable findings teams can use in their own red-teaming.",
+      "source_url": "https://www.technologyreview.com/2026/07/15/1140514/meet-gpt-red-an-llm-super-hacker-openai-built-to-make-its-models-safer/",
+      "source_name": "MIT Technology Review",
+      "source_published_at": "2026-07-15T12:00:00.000Z",
+      "article_content_chars": 7228,
+      "article_content_complete": true,
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "trigger"
+        ]
+      },
+      "timestamp": "2026-07-15T12:00:00.000Z",
+      "date": "15/07/2026",
+      "id": "2026-07-15-dba38c19"
+    },
+    {
       "category": "Strategy",
       "headline": "Healthcare AI Governance Playbooks Released",
       "narrative": "The Coalition for Health AI has unveiled governance playbooks to help healthcare organizations adopt responsible AI practices. These guides include implementation guidance, tools, and resources.",
@@ -13,9 +1606,10 @@
       ],
       "source_url": "https://www.fiercehealthcare.com/ai-and-machine-learning/coalition-health-ai-unveils-8-governance-playbooks-health-systems",
       "source_name": "Fierce Healthcare",
-      "id": "2026-06-04-073",
+      "id": "archive-2026-06-04-d3000f22",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:43:10.397Z"
+      "timestamp": "2026-06-04T05:43:10.397Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Privacy",
@@ -30,9 +1624,10 @@
       ],
       "source_url": "https://www.techmeme.com/260529/p22#a260529p22",
       "source_name": "Techmeme",
-      "id": "2026-06-04-072",
+      "id": "archive-2026-06-04-3f3bc50f",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:42:52.889Z"
+      "timestamp": "2026-06-04T05:42:52.889Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -47,9 +1642,10 @@
       ],
       "source_url": "https://techcrunch.com/2026/05/29/cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans/",
       "source_name": "TechCrunch AI",
-      "id": "2026-06-04-071",
+      "id": "archive-2026-06-04-3e28aed6",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:42:49.990Z"
+      "timestamp": "2026-06-04T05:42:49.990Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -64,9 +1660,10 @@
       ],
       "source_url": "https://www.techmeme.com/260529/p24#a260529p24",
       "source_name": "Techmeme",
-      "id": "2026-06-04-070",
+      "id": "archive-2026-06-04-f8ba3511",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:42:44.292Z"
+      "timestamp": "2026-06-04T05:42:44.292Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -81,9 +1678,10 @@
       ],
       "source_url": "https://www.techmeme.com/260529/p25#a260529p25",
       "source_name": "Techmeme",
-      "id": "2026-06-04-069",
+      "id": "archive-2026-06-04-b6e267df",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:42:42.089Z"
+      "timestamp": "2026-06-04T05:42:42.089Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -98,9 +1696,10 @@
       ],
       "source_url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/",
       "source_name": "Google AI Blog",
-      "id": "2026-06-04-068",
+      "id": "archive-2026-06-04-45a6a155",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:42:38.789Z"
+      "timestamp": "2026-06-04T05:42:38.789Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -115,9 +1714,10 @@
       ],
       "source_url": "https://www.mobihealthnews.com/news/asia/how-apac-should-deploy-ai-find-hidden-lung-cancers",
       "source_name": "Mobihealthnews",
-      "id": "2026-06-04-067",
+      "id": "archive-2026-06-04-68c75f73",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:42:27.789Z"
+      "timestamp": "2026-06-04T05:42:27.789Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -132,9 +1732,10 @@
       ],
       "source_url": "https://www.scmp.com/tech/tech-trends/article/3355316/alibaba-ai-voice-model-cracks-top-5-globally-outperforming-us-rivals-regional-accents?utm_source=rss_feed",
       "source_name": "South China Morning Post Tech",
-      "id": "2026-06-04-066",
+      "id": "archive-2026-06-04-0d78181a",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:42:23.789Z"
+      "timestamp": "2026-06-04T05:42:23.789Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -149,9 +1750,10 @@
       ],
       "source_url": "https://asia.nikkei.com/business/finance/hong-kong-and-singapore-brace-for-ai-chill-in-finance-job-market",
       "source_name": "Nikkei Asia Tech",
-      "id": "2026-06-04-065",
+      "id": "archive-2026-06-04-5c69c704",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:42:18.189Z"
+      "timestamp": "2026-06-04T05:42:18.189Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -166,9 +1768,10 @@
       ],
       "source_url": "https://www.techmeme.com/260528/p53#a260528p53",
       "source_name": "Techmeme",
-      "id": "2026-06-04-064",
+      "id": "archive-2026-06-04-f2bb2061",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:41:37.392Z"
+      "timestamp": "2026-06-04T05:41:37.392Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -183,9 +1786,10 @@
       ],
       "source_url": "https://techcrunch.com/2026/05/28/the-internet-is-being-rebuilt-for-machines/",
       "source_name": "TechCrunch AI",
-      "id": "2026-06-04-063",
+      "id": "archive-2026-06-04-3f9e04c7",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:41:33.390Z"
+      "timestamp": "2026-06-04T05:41:33.390Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Privacy",
@@ -200,9 +1804,10 @@
       ],
       "source_url": "https://arstechnica.com/ai/2026/05/llms-believe-false-statements-even-after-explicit-warnings-that-theyre-false/",
       "source_name": "Ars Technica AI",
-      "id": "2026-06-04-062",
+      "id": "archive-2026-06-04-acb72827",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:41:29.293Z"
+      "timestamp": "2026-06-04T05:41:29.293Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -216,9 +1821,10 @@
       ],
       "source_url": "https://www.theverge.com/streaming/938759/youtube-custom-ai-feed-prompt-availability",
       "source_name": "The Verge AI",
-      "id": "2026-06-04-061",
+      "id": "archive-2026-06-04-62bde20e",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:41:07.991Z"
+      "timestamp": "2026-06-04T05:41:07.991Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Privacy",
@@ -233,9 +1839,10 @@
       ],
       "source_url": "https://techcrunch.com/2026/05/27/youtube-will-now-automatically-label-ai-videos/",
       "source_name": "TechCrunch AI",
-      "id": "2026-06-04-060",
+      "id": "archive-2026-06-04-0e3fc6ee",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:40:35.390Z"
+      "timestamp": "2026-06-04T05:40:35.390Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Privacy",
@@ -250,9 +1857,10 @@
       ],
       "source_url": "https://techcrunch.com/2026/05/27/china-is-increasingly-keeping-its-best-ai-talent-to-itself/",
       "source_name": "TechCrunch AI",
-      "id": "2026-06-04-059",
+      "id": "archive-2026-06-04-8a50fad2",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:40:27.690Z"
+      "timestamp": "2026-06-04T05:40:27.690Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -268,9 +1876,10 @@
       "_demoted_from": "ACT",
       "source_url": "https://techcrunch.com/2026/05/27/elevenlabss-new-music-generation-model-can-switch-genres-mid-track/",
       "source_name": "TechCrunch AI",
-      "id": "2026-06-04-058",
+      "id": "archive-2026-06-04-fdb4b11c",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:40:24.292Z"
+      "timestamp": "2026-06-04T05:40:24.292Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -285,9 +1894,10 @@
       ],
       "source_url": "https://blogs.nvidia.com/blog/ai-factories-the-new-infrastructure-of-intelligence/",
       "source_name": "NVIDIA AI Blog",
-      "id": "2026-06-04-057",
+      "id": "archive-2026-06-04-2cd22a3d",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:40:21.490Z"
+      "timestamp": "2026-06-04T05:40:21.490Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -303,9 +1913,10 @@
       "_demoted_from": "ACT",
       "source_url": "https://www.techmeme.com/260527/p36#a260527p36",
       "source_name": "Techmeme",
-      "id": "2026-06-04-056",
+      "id": "archive-2026-06-04-d457ec0d",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:40:17.691Z"
+      "timestamp": "2026-06-04T05:40:17.691Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -321,9 +1932,10 @@
       "_demoted_from": "ACT",
       "source_url": "https://www.techmeme.com/260527/p41#a260527p41",
       "source_name": "Techmeme",
-      "id": "2026-06-04-055",
+      "id": "archive-2026-06-04-6d869c29",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:40:15.892Z"
+      "timestamp": "2026-06-04T05:40:15.892Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -338,9 +1950,10 @@
       ],
       "source_url": "https://arstechnica.com/tech-policy/2026/05/nvidia-ceo-wants-taiwan-to-be-center-of-ai-revolution-not-us/",
       "source_name": "Ars Technica AI",
-      "id": "2026-06-04-054",
+      "id": "archive-2026-06-04-45a70cb9",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:40:09.590Z"
+      "timestamp": "2026-06-04T05:40:09.590Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -355,9 +1968,10 @@
       ],
       "source_url": "https://aws.amazon.com/blogs/machine-learning/building-ai-agents-for-business-support-using-amazon-bedrock-agentcore/",
       "source_name": "Amazon AI Blog",
-      "id": "2026-06-04-053",
+      "id": "archive-2026-06-04-0a5f7a90",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:40:05.591Z"
+      "timestamp": "2026-06-04T05:40:05.591Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Marketing",
@@ -372,9 +1986,10 @@
       ],
       "source_url": "https://digiday.com/marketing/the-ai-paradox-marketers-trust-ai-to-buy-media-not-build-brands/?utm_campaign=digidaydis&#038;utm_medium=rss&#038;utm_source=general-rss",
       "source_name": "Digiday",
-      "id": "2026-06-04-052",
+      "id": "archive-2026-06-04-2b60377a",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:39:56.689Z"
+      "timestamp": "2026-06-04T05:39:56.689Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -389,9 +2004,10 @@
       ],
       "source_url": "https://pressgazette.co.uk/comment-analysis/how-journalists-are-using-ai-2026/",
       "source_name": "Press Gazette",
-      "id": "2026-06-04-051",
+      "id": "archive-2026-06-04-e91854a8",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:39:53.795Z"
+      "timestamp": "2026-06-04T05:39:53.795Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -406,9 +2022,10 @@
       ],
       "source_url": "https://www.scmp.com/tech/article/3355027/kuaishou-beats-estimates-kling-ai-video-generators-revenue-jumps-300?utm_source=rss_feed",
       "source_name": "South China Morning Post Tech",
-      "id": "2026-06-04-050",
+      "id": "archive-2026-06-04-c9653d99",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:39:46.089Z"
+      "timestamp": "2026-06-04T05:39:46.089Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -423,9 +2040,10 @@
       ],
       "source_url": "https://www.techmeme.com/260527/p9#a260527p9",
       "source_name": "Techmeme",
-      "id": "2026-06-04-049",
+      "id": "archive-2026-06-04-2b9b1847",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:39:28.589Z"
+      "timestamp": "2026-06-04T05:39:28.589Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -440,9 +2058,10 @@
       ],
       "source_url": "https://www.techmeme.com/260526/p22#a260526p22",
       "source_name": "Techmeme",
-      "id": "2026-06-04-048",
+      "id": "archive-2026-06-04-f00637d4",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:39:05.889Z"
+      "timestamp": "2026-06-04T05:39:05.889Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -457,9 +2076,10 @@
       ],
       "source_url": "https://aws.amazon.com/blogs/machine-learning/build-high-performance-generative-ai-systems-with-strands-agents-nvidia-nim-and-amazon-bedrock-agentcore/",
       "source_name": "Amazon AI Blog",
-      "id": "2026-06-04-047",
+      "id": "archive-2026-06-04-48dcf143",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:38:49.689Z"
+      "timestamp": "2026-06-04T05:38:49.689Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -474,9 +2094,10 @@
       ],
       "source_url": "https://www.techmeme.com/260526/p28#a260526p28",
       "source_name": "Techmeme",
-      "id": "2026-06-04-046",
+      "id": "archive-2026-06-04-f114d466",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:38:47.889Z"
+      "timestamp": "2026-06-04T05:38:47.889Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Marketing",
@@ -491,9 +2112,10 @@
       ],
       "source_url": "https://techcrunch.com/2026/05/26/duckduckgo-installs-are-up-30-as-users-reject-being-force-fed-googles-ai-search/",
       "source_name": "TechCrunch AI",
-      "id": "2026-06-04-045",
+      "id": "archive-2026-06-04-d33737cd",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:38:42.690Z"
+      "timestamp": "2026-06-04T05:38:42.690Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -508,9 +2130,10 @@
       ],
       "source_url": "https://www.scmp.com/tech/tech-trends/article/3354876/alipay-launches-payment-tools-ai-agents-shop-you?utm_source=rss_feed",
       "source_name": "South China Morning Post Tech",
-      "id": "2026-06-04-044",
+      "id": "archive-2026-06-04-22c7bbbb",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:38:26.289Z"
+      "timestamp": "2026-06-04T05:38:26.289Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Media",
@@ -525,9 +2148,10 @@
       ],
       "source_url": "https://www.theguardian.com/technology/2026/may/26/we-can-stitch-together-our-past-the-ai-generated-time-travellers-vlogging-from-history",
       "source_name": "The Guardian AI",
-      "id": "2026-06-04-043",
+      "id": "archive-2026-06-04-09e4c468",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:38:13.889Z"
+      "timestamp": "2026-06-04T05:38:13.889Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -542,9 +2166,10 @@
       ],
       "source_url": "https://www.techmeme.com/260525/p24#a260525p24",
       "source_name": "Techmeme",
-      "id": "2026-06-04-042",
+      "id": "archive-2026-06-04-aed6ac72",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:38:00.594Z"
+      "timestamp": "2026-06-04T05:38:00.594Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -559,9 +2184,10 @@
       ],
       "source_url": "https://www.technologyreview.com/2026/05/26/1137855/a-reality-check-on-the-ai-jobs-hysteria/",
       "source_name": "MIT Technology Review",
-      "id": "2026-06-04-041",
+      "id": "archive-2026-06-04-34c08cc7",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:37:52.089Z"
+      "timestamp": "2026-06-04T05:37:52.089Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -577,9 +2203,10 @@
       "_demoted_from": "ACT",
       "source_url": "https://www.techmeme.com/260526/p7#a260526p7",
       "source_name": "Techmeme",
-      "id": "2026-06-04-040",
+      "id": "archive-2026-06-04-839c9210",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:37:33.591Z"
+      "timestamp": "2026-06-04T05:37:33.591Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -594,9 +2221,10 @@
       ],
       "source_url": "https://www.techmeme.com/260525/p17#a260525p17",
       "source_name": "Techmeme",
-      "id": "2026-06-04-039",
+      "id": "archive-2026-06-04-0126827c",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:37:22.095Z"
+      "timestamp": "2026-06-04T05:37:22.095Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -611,9 +2239,10 @@
       ],
       "source_url": "https://www.housingwire.com/articles/meet-the-ai-platform-giving-every-agent-a-personal-coach/",
       "source_name": "HousingWire",
-      "id": "2026-06-04-038",
+      "id": "archive-2026-06-04-360969d1",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:37:02.289Z"
+      "timestamp": "2026-06-04T05:37:02.289Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -628,9 +2257,10 @@
       ],
       "source_url": "https://www.techmeme.com/260525/p4#a260525p4",
       "source_name": "Techmeme",
-      "id": "2026-06-04-037",
+      "id": "archive-2026-06-04-30c4d874",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:36:57.094Z"
+      "timestamp": "2026-06-04T05:36:57.094Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -645,9 +2275,10 @@
       ],
       "source_url": "https://asia.nikkei.com/business/markets/trading-asia/how-ai-is-changing-stock-trades-for-retail-investors",
       "source_name": "Nikkei Asia Tech",
-      "id": "2026-06-04-036",
+      "id": "archive-2026-06-04-3e0b1ec1",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:36:48.796Z"
+      "timestamp": "2026-06-04T05:36:48.796Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -662,9 +2293,10 @@
       ],
       "source_url": "https://www.techmeme.com/260524/p3#a260524p3",
       "source_name": "Techmeme",
-      "id": "2026-06-04-035",
+      "id": "archive-2026-06-04-efa811f0",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:36:33.091Z"
+      "timestamp": "2026-06-04T05:36:33.091Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -679,9 +2311,10 @@
       ],
       "source_url": "https://www.techmeme.com/260523/p2#a260523p2",
       "source_name": "Techmeme",
-      "id": "2026-06-04-034",
+      "id": "archive-2026-06-04-ec024e6a",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:36:03.891Z"
+      "timestamp": "2026-06-04T05:36:03.891Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -696,12 +2329,13 @@
       ],
       "source_url": "https://restofworld.org/2026/china-us-what-ai-race/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds",
       "source_name": "Rest of World",
-      "id": "2026-06-04-033",
+      "id": "archive-2026-06-04-f3bda003",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:35:57.791Z"
+      "timestamp": "2026-06-04T05:35:57.791Z",
+      "lifecycle": "archive"
     },
     {
-      "category": "Health",
+      "category": "Healthcare",
       "headline": "AI in Digital Health: Early Detection and Responsible Deployment",
       "narrative": "MedCity News AI reported on how structured oversight enhances practical innovation in digital health systems, making them both technically sound and usable.",
       "verdict": "ACT",
@@ -713,9 +2347,10 @@
       ],
       "source_url": "https://medcitynews.com/2026/05/ai-in-digital-health-from-early-detection-to-responsible-deployment/",
       "source_name": "MedCity News AI",
-      "id": "2026-06-04-032",
+      "id": "archive-2026-06-04-45915c59",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:35:49.488Z"
+      "timestamp": "2026-06-04T05:35:49.488Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -730,9 +2365,10 @@
       ],
       "source_url": "https://www.theverge.com/tech/936073/ai-writing-granta-commonwealth-prize",
       "source_name": "The Verge AI",
-      "id": "2026-06-04-031",
+      "id": "archive-2026-06-04-1976a5e5",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:34:10.690Z"
+      "timestamp": "2026-06-04T05:34:10.690Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -747,9 +2383,10 @@
       ],
       "source_url": "https://www.pymnts.com/artificial-intelligence-2/2026/spotify-turns-ai-fan-covers-into-artist-paychecks/",
       "source_name": "Pymnts",
-      "id": "2026-06-04-030",
+      "id": "archive-2026-06-04-7a14b77b",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:33:58.489Z"
+      "timestamp": "2026-06-04T05:33:58.489Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -764,9 +2401,10 @@
       ],
       "source_url": "https://www.pymnts.com/cryptocurrency/2026/openai-and-moonpay-let-chatgpt-users-buy-crypto-without-leaving-chats/",
       "source_name": "Pymnts",
-      "id": "2026-06-04-029",
+      "id": "archive-2026-06-04-8eba6fdb",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:33:54.489Z"
+      "timestamp": "2026-06-04T05:33:54.489Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Privacy",
@@ -781,9 +2419,10 @@
       ],
       "source_url": "https://www.techmeme.com/260522/p26#a260522p26",
       "source_name": "Techmeme",
-      "id": "2026-06-04-028",
+      "id": "archive-2026-06-04-a05c4b09",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:33:38.697Z"
+      "timestamp": "2026-06-04T05:33:38.697Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -798,9 +2437,10 @@
       ],
       "source_url": "https://www.pymnts.com/acquisitions/2026/coupa-acquires-tonkean-to-expand-ai-spend-management/",
       "source_name": "Pymnts",
-      "id": "2026-06-04-027",
+      "id": "archive-2026-06-04-9fdad2f0",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:33:29.895Z"
+      "timestamp": "2026-06-04T05:33:29.895Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -815,9 +2455,10 @@
       ],
       "source_url": "https://techcrunch.com/2026/05/21/the-path-founded-by-tony-robbins-and-calm-alums-wants-to-offer-safer-ai-therapy/",
       "source_name": "TechCrunch AI",
-      "id": "2026-06-04-026",
+      "id": "archive-2026-06-04-16d653c1",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:24:39.189Z"
+      "timestamp": "2026-06-04T05:24:39.189Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -832,9 +2473,10 @@
       ],
       "source_url": "https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/",
       "source_name": "MIT Technology Review",
-      "id": "2026-06-04-025",
+      "id": "archive-2026-06-04-60d606dd",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:24:36.989Z"
+      "timestamp": "2026-06-04T05:24:36.989Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -849,9 +2491,10 @@
       ],
       "source_url": "https://techcrunch.com/2026/05/21/spotify-launches-an-elevenlabs-powered-audiobook-creation-tool/",
       "source_name": "TechCrunch AI",
-      "id": "2026-06-04-024",
+      "id": "archive-2026-06-04-bbb09848",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:24:30.487Z"
+      "timestamp": "2026-06-04T05:24:30.487Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -866,9 +2509,10 @@
       ],
       "source_url": "https://techcrunch.com/2026/05/21/spotify-adds-ai-powered-qa-and-briefing-generation-features-to-podcasts/",
       "source_name": "TechCrunch AI",
-      "id": "2026-06-04-023",
+      "id": "archive-2026-06-04-02f7a7c1",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:24:28.888Z"
+      "timestamp": "2026-06-04T05:24:28.888Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Privacy",
@@ -883,9 +2527,10 @@
       ],
       "source_url": "https://www.techmeme.com/260521/p35#a260521p35",
       "source_name": "Techmeme",
-      "id": "2026-06-04-022",
+      "id": "archive-2026-06-04-28d423c4",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:24:16.691Z"
+      "timestamp": "2026-06-04T05:24:16.691Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -900,9 +2545,10 @@
       ],
       "source_url": "https://www.techmeme.com/260521/p36#a260521p36",
       "source_name": "Techmeme",
-      "id": "2026-06-04-021",
+      "id": "archive-2026-06-04-dcd7bbab",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:23:07.487Z"
+      "timestamp": "2026-06-04T05:23:07.487Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -917,9 +2563,10 @@
       ],
       "source_url": "https://techcrunch.com/2026/05/21/spotify-and-universal-music-strike-deal-allowing-fan-made-ai-covers-and-remixes/",
       "source_name": "TechCrunch AI",
-      "id": "2026-06-04-020",
+      "id": "archive-2026-06-04-76ffe809",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:23:03.690Z"
+      "timestamp": "2026-06-04T05:23:03.690Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -935,9 +2582,10 @@
       "_demoted_from": "ACT",
       "source_url": "https://www.techmeme.com/260521/p46#a260521p46",
       "source_name": "Techmeme",
-      "id": "2026-06-04-019",
+      "id": "archive-2026-06-04-af9fb857",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:23:02.488Z"
+      "timestamp": "2026-06-04T05:23:02.488Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -952,9 +2600,10 @@
       ],
       "source_url": "https://www.pymnts.com/artificial-intelligence-2/2026/nvidia-posts-record-82b-quarter-as-agentic-ai-arrives/",
       "source_name": "Pymnts",
-      "id": "2026-06-04-018",
+      "id": "archive-2026-06-04-8d4dfab6",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:22:55.691Z"
+      "timestamp": "2026-06-04T05:22:55.691Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -969,9 +2618,10 @@
       ],
       "source_url": "https://www.scmp.com/plus/tech/tech-trends/article/3354301/chinese-ai-smart-glasses-take-focus-user-needs?utm_source=rss_feed",
       "source_name": "South China Morning Post Tech",
-      "id": "2026-06-04-017",
+      "id": "archive-2026-06-04-b8c2564e",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:22:52.990Z"
+      "timestamp": "2026-06-04T05:22:52.990Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Marketing",
@@ -986,9 +2636,10 @@
       ],
       "source_url": "https://digiday.com/marketing/trust-becomes-the-product-marketers-grapple-with-googles-new-suite-of-ai-powered-ad-agents/?utm_campaign=digidaydis&#038;utm_medium=rss&#038;utm_source=general-rss",
       "source_name": "Digiday",
-      "id": "2026-06-04-016",
+      "id": "archive-2026-06-04-a756f085",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:22:48.588Z"
+      "timestamp": "2026-06-04T05:22:48.588Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Privacy",
@@ -1003,9 +2654,10 @@
       ],
       "source_url": "https://www.pymnts.com/artificial-intelligence-2/2026/white-house-wants-to-review-ai-models-before-roll-out/",
       "source_name": "Pymnts",
-      "id": "2026-06-04-015",
+      "id": "archive-2026-06-04-962096ea",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:22:44.888Z"
+      "timestamp": "2026-06-04T05:22:44.888Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1020,9 +2672,10 @@
       ],
       "source_url": "https://www.techmeme.com/260521/p5#a260521p5",
       "source_name": "Techmeme",
-      "id": "2026-06-04-014",
+      "id": "archive-2026-06-04-9df30fb1",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:22:29.493Z"
+      "timestamp": "2026-06-04T05:22:29.493Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -1037,9 +2690,10 @@
       ],
       "source_url": "https://www.techmeme.com/260521/p7#a260521p7",
       "source_name": "Techmeme",
-      "id": "2026-06-04-013",
+      "id": "archive-2026-06-04-327c701d",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:22:24.987Z"
+      "timestamp": "2026-06-04T05:22:24.987Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1054,9 +2708,10 @@
       ],
       "source_url": "https://techcrunch.com/2026/05/20/figma-adds-an-ai-assistant-to-its-collaborative-canvas/",
       "source_name": "TechCrunch AI",
-      "id": "2026-06-04-012",
+      "id": "archive-2026-06-04-8010b886",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:22:13.489Z"
+      "timestamp": "2026-06-04T05:22:13.489Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -1071,9 +2726,10 @@
       ],
       "source_url": "https://arstechnica.com/google/2026/05/buckle-up-google-is-set-to-remake-search-with-agentic-ai-in-2026/",
       "source_name": "Ars Technica AI",
-      "id": "2026-06-04-011",
+      "id": "archive-2026-06-04-fa8abf41",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:22:02.491Z"
+      "timestamp": "2026-06-04T05:22:02.491Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1088,9 +2744,10 @@
       ],
       "source_url": "https://aws.amazon.com/blogs/machine-learning/announcing-openai-compatible-api-support-for-amazon-sagemaker-ai-endpoints/",
       "source_name": "Amazon AI Blog",
-      "id": "2026-06-04-010",
+      "id": "archive-2026-06-04-b5f96e40",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:21:43.191Z"
+      "timestamp": "2026-06-04T05:21:43.191Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1105,9 +2762,10 @@
       ],
       "source_url": "https://techcrunch.com/2026/05/20/irisgo-a-startup-backed-by-andrew-ng-looks-to-become-the-ai-desktop-buddy-you-never-knew-you-needed/",
       "source_name": "TechCrunch AI",
-      "id": "2026-06-04-009",
+      "id": "archive-2026-06-04-27e38315",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:21:34.388Z"
+      "timestamp": "2026-06-04T05:21:34.388Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1122,9 +2780,10 @@
       ],
       "source_url": "https://hbr.org/2026/07/how-agentic-ai-supercharges-startups-and-threatens-incumbents",
       "source_name": "Harvard Business Review AI",
-      "id": "2026-06-04-008",
+      "id": "archive-2026-06-04-87288064",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:21:15.296Z"
+      "timestamp": "2026-06-04T05:21:15.296Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -1139,9 +2798,10 @@
       ],
       "source_url": "https://www.pymnts.com/visa/2026/visa-wants-to-make-ai-shoppers-as-trusted-as-human-ones/",
       "source_name": "Pymnts",
-      "id": "2026-06-04-007",
+      "id": "archive-2026-06-04-93d1c552",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:21:07.388Z"
+      "timestamp": "2026-06-04T05:21:07.388Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -1156,9 +2816,10 @@
       ],
       "source_url": "https://www.pymnts.com/news/artificial-intelligence/2026/study-finds-ai-adoption-rises-as-consumers-stop-noticing-it/",
       "source_name": "Pymnts",
-      "id": "2026-06-04-006",
+      "id": "archive-2026-06-04-62eea407",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:20:59.788Z"
+      "timestamp": "2026-06-04T05:20:59.788Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -1173,9 +2834,10 @@
       ],
       "source_url": "https://www.scmp.com/tech/big-tech/article/3354212/alibaba-unveils-new-qwen-model-custom-chips-bid-become-chinas-ai-factory?utm_source=rss_feed",
       "source_name": "South China Morning Post Tech",
-      "id": "2026-06-04-005",
+      "id": "archive-2026-06-04-f250aa36",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:20:56.389Z"
+      "timestamp": "2026-06-04T05:20:56.389Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -1190,9 +2852,10 @@
       ],
       "source_url": "https://asia.nikkei.com/business/technology/artificial-intelligence/meta-to-debut-ai-smart-glasses-in-japan-with-translation-on-the-way",
       "source_name": "Nikkei Asia Tech",
-      "id": "2026-06-04-004",
+      "id": "archive-2026-06-04-5b15d90e",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:20:46.794Z"
+      "timestamp": "2026-06-04T05:20:46.794Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -1207,9 +2870,10 @@
       ],
       "source_url": "https://asia.nikkei.com/business/technology/artificial-intelligence/hitachi-teams-with-anthropic-on-ai-for-rail-and-power-grids",
       "source_name": "Nikkei Asia Tech",
-      "id": "2026-06-04-003",
+      "id": "archive-2026-06-04-f5d68c0a",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:20:42.388Z"
+      "timestamp": "2026-06-04T05:20:42.388Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Privacy",
@@ -1224,9 +2888,10 @@
       ],
       "source_url": "https://www.techmeme.com/260520/p10#a260520p10",
       "source_name": "Techmeme",
-      "id": "2026-06-04-002",
+      "id": "archive-2026-06-04-ad1fcdda",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:20:30.688Z"
+      "timestamp": "2026-06-04T05:20:30.688Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Privacy",
@@ -1241,9 +2906,10 @@
       ],
       "source_url": "https://www.techmeme.com/260520/p7#a260520p7",
       "source_name": "Techmeme",
-      "id": "2026-06-04-001",
+      "id": "archive-2026-06-04-444286d1",
       "date": "04/06/2026",
-      "timestamp": "2026-06-04T05:20:24.394Z"
+      "timestamp": "2026-06-04T05:20:24.394Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1258,9 +2924,10 @@
       ],
       "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
       "source_name": "Google Gemini Blog",
-      "id": "2026-05-29-001",
+      "id": "archive-2026-05-29-64d3b909",
       "date": "29/05/2026",
-      "timestamp": "2026-05-29T18:46:14.332Z"
+      "timestamp": "2026-05-29T18:46:14.332Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1275,9 +2942,10 @@
       ],
       "source_url": "https://www.techmeme.com/260519/p58#a260519p58",
       "source_name": "Techmeme",
-      "id": "2026-05-22-002",
+      "id": "archive-2026-05-22-610fad31",
       "date": "22/05/2026",
-      "timestamp": "2026-05-22T15:44:00.019Z"
+      "timestamp": "2026-05-22T15:44:00.019Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1292,9 +2960,10 @@
       ],
       "source_url": "https://techcrunch.com/2026/05/19/you-can-now-talk-to-your-gmail-inbox-as-seen-at-google-io-2026/",
       "source_name": "TechCrunch AI",
-      "id": "2026-05-22-001",
+      "id": "archive-2026-05-22-225a97a8",
       "date": "22/05/2026",
-      "timestamp": "2026-05-22T15:43:41.396Z"
+      "timestamp": "2026-05-22T15:43:41.396Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1309,9 +2978,10 @@
       ],
       "source_url": "https://www.techmeme.com/260512/p17#a260512p17",
       "source_name": "Techmeme",
-      "id": "2026-05-15-001",
+      "id": "archive-2026-05-15-0df64b94",
       "date": "15/05/2026",
-      "timestamp": "2026-05-15T12:46:54.846Z"
+      "timestamp": "2026-05-15T12:46:54.846Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -1326,9 +2996,10 @@
       ],
       "source_url": "https://www.fiercehealthcare.com/ai-and-machine-learning/ama-unveils-policy-framework-combat-ai-deepfake-physician-impersonation",
       "source_name": "Fierce Healthcare",
-      "id": "2026-05-13-002",
+      "id": "archive-2026-05-13-d8e4f27d",
       "date": "13/05/2026",
-      "timestamp": "2026-05-13T09:30:36.548Z"
+      "timestamp": "2026-05-13T09:30:36.548Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1343,9 +3014,10 @@
       ],
       "source_url": "https://www.techmeme.com/260511/p40#a260511p40",
       "source_name": "Techmeme",
-      "id": "2026-05-13-001",
+      "id": "archive-2026-05-13-b2dafc3f",
       "date": "13/05/2026",
-      "timestamp": "2026-05-13T09:29:44.011Z"
+      "timestamp": "2026-05-13T09:29:44.011Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1360,9 +3032,10 @@
       ],
       "source_url": "https://www.scmp.com/tech/article/3353132/alibaba-taps-chinas-chat-buy-trend-qwen-ai-and-taobao-integration?utm_source=rss_feed",
       "source_name": "South China Morning Post Tech",
-      "id": "2026-05-11-015",
+      "id": "archive-2026-05-11-e224cf92",
       "date": "11/05/2026",
-      "timestamp": "2026-05-11T18:31:00.681Z"
+      "timestamp": "2026-05-11T18:31:00.681Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Privacy",
@@ -1377,9 +3050,10 @@
       ],
       "source_url": "https://www.theguardian.com/technology/2026/may/11/ai-worker-control-surveillance",
       "source_name": "The Guardian AI",
-      "id": "2026-05-11-014",
+      "id": "archive-2026-05-11-aeb50f61",
       "date": "11/05/2026",
-      "timestamp": "2026-05-11T18:30:56.496Z"
+      "timestamp": "2026-05-11T18:30:56.496Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Privacy",
@@ -1394,9 +3068,10 @@
       ],
       "source_url": "https://www.techmeme.com/260511/p6#a260511p6",
       "source_name": "Techmeme",
-      "id": "2026-05-11-013",
+      "id": "archive-2026-05-11-7ca2bfbc",
       "date": "11/05/2026",
-      "timestamp": "2026-05-11T18:30:50.418Z"
+      "timestamp": "2026-05-11T18:30:50.418Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -1411,9 +3086,10 @@
       ],
       "source_url": "https://tearsheet.co/artificial-intelligence/micro-case-study-how-american-express-is-underwriting-ai-agent-error-to-unlock-trust-in-trillion-scale-agentic-commerce/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=micro-case-study-how-american-express-is-underwriting-ai-agent-error-to-unlock-trust-in-trillion-scale-agentic-commerce",
       "source_name": "Tearsheet",
-      "id": "2026-05-11-012",
+      "id": "archive-2026-05-11-b81f87dc",
       "date": "11/05/2026",
-      "timestamp": "2026-05-11T18:30:39.077Z"
+      "timestamp": "2026-05-11T18:30:39.077Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1428,9 +3104,10 @@
       ],
       "source_url": "https://www.anthropic.com/news/claude-opus-4-7",
       "source_name": "Anthropic News",
-      "id": "2026-05-11-015",
+      "id": "archive-2026-05-11-b8af8104",
       "date": "11/05/2026",
-      "timestamp": "2026-05-11T06:54:53.261Z"
+      "timestamp": "2026-05-11T06:54:53.261Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Privacy",
@@ -1445,9 +3122,10 @@
       ],
       "source_url": "https://www.fiercehealthcare.com/ai-and-machine-learning/pennsylvania-sues-characterai-over-ai-chatbot-allegedly-unlawfully",
       "source_name": "Fierce Healthcare",
-      "id": "2026-05-11-013",
+      "id": "archive-2026-05-11-fcd8d33d",
       "date": "11/05/2026",
-      "timestamp": "2026-05-11T06:54:30.597Z"
+      "timestamp": "2026-05-11T06:54:30.597Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -1462,9 +3140,10 @@
       ],
       "source_url": "https://www.healthcareitnews.com/news/advanced-ai-holds-promise-high-stakes-healthcare-studies-show",
       "source_name": "Healthcare IT News",
-      "id": "2026-05-11-012",
+      "id": "archive-2026-05-11-8443fde2",
       "date": "11/05/2026",
-      "timestamp": "2026-05-11T06:22:07.883Z"
+      "timestamp": "2026-05-11T06:22:07.883Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1479,9 +3158,10 @@
       ],
       "source_url": "https://www.techmeme.com/260505/p42#a260505p42",
       "source_name": "Techmeme",
-      "id": "2026-05-11-010",
+      "id": "archive-2026-05-11-523d1031",
       "date": "11/05/2026",
-      "timestamp": "2026-05-11T06:21:33.984Z"
+      "timestamp": "2026-05-11T06:21:33.984Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1496,9 +3176,10 @@
       ],
       "source_url": "https://aws.amazon.com/blogs/machine-learning/generate-dashboards-from-natural-language-prompts-in-amazon-quick/",
       "source_name": "Amazon AI Blog",
-      "id": "2026-05-11-009",
+      "id": "archive-2026-05-11-595e4dde",
       "date": "11/05/2026",
-      "timestamp": "2026-05-11T06:21:18.255Z"
+      "timestamp": "2026-05-11T06:21:18.255Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -1513,9 +3194,10 @@
       ],
       "source_url": "https://asia.nikkei.com/business/technology/in-vietnam-s-ai-hiring-race-cash-isn-t-everything",
       "source_name": "Nikkei Asia Tech",
-      "id": "2026-05-11-008",
+      "id": "archive-2026-05-11-32f03736",
       "date": "11/05/2026",
-      "timestamp": "2026-05-11T06:20:56.942Z"
+      "timestamp": "2026-05-11T06:20:56.942Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -1530,9 +3212,10 @@
       ],
       "source_url": "https://www.searchenginejournal.com/google-says-search-is-fine-ai-insiders-say-the-median-person-has-no-future/573557/",
       "source_name": "Search Engine Journal",
-      "id": "2026-05-11-007",
+      "id": "archive-2026-05-11-b3efebb3",
       "date": "11/05/2026",
-      "timestamp": "2026-05-11T06:20:30.678Z"
+      "timestamp": "2026-05-11T06:20:30.678Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Strategy",
@@ -1547,9 +3230,10 @@
       ],
       "source_url": "https://www.anthropic.com/news/enterprise-ai-services-company",
       "source_name": "Anthropic News",
-      "id": "2026-05-11-005",
+      "id": "archive-2026-05-11-ba2481e5",
       "date": "11/05/2026",
-      "timestamp": "2026-05-11T06:20:08.884Z"
+      "timestamp": "2026-05-11T06:20:08.884Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1564,9 +3248,10 @@
       ],
       "source_url": "https://techcrunch.com/2026/05/05/sap-bets-1-16b-on-18-month-old-german-ai-lab-and-says-yes-to-nemoclaw/",
       "source_name": "TechCrunch AI",
-      "id": "2026-05-11-004",
+      "id": "archive-2026-05-11-ae0ecff8",
       "date": "11/05/2026",
-      "timestamp": "2026-05-11T06:20:00.570Z"
+      "timestamp": "2026-05-11T06:20:00.570Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1581,9 +3266,10 @@
       ],
       "source_url": "https://www.techmeme.com/260505/p55#a260505p55",
       "source_name": "Techmeme",
-      "id": "2026-05-11-003",
+      "id": "archive-2026-05-11-1de776c1",
       "date": "11/05/2026",
-      "timestamp": "2026-05-11T06:19:53.740Z"
+      "timestamp": "2026-05-11T06:19:53.740Z",
+      "lifecycle": "archive"
     },
     {
       "category": "Tools",
@@ -1598,9 +3284,10 @@
       ],
       "source_url": "https://techcrunch.com/2026/05/05/apple-plans-to-make-ios-27-a-choose-your-own-adventure-of-ai-models/",
       "source_name": "TechCrunch AI",
-      "id": "2026-05-11-001",
+      "id": "archive-2026-05-11-7287a41d",
       "date": "11/05/2026",
-      "timestamp": "2026-05-11T06:19:35.987Z"
+      "timestamp": "2026-05-11T06:19:35.987Z",
+      "lifecycle": "archive"
     }
   ]
 }

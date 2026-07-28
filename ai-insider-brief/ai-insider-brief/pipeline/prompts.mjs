@@ -1,109 +1,148 @@
-// prompts.mjs — Editorial prompt templates for The AI Insider Brief
+// prompts.mjs — Evidence-first editorial prompts for The AI Insider Brief.
 //
-// MERGED 2026-07-08: this file used to be the "loose" version (permissive
-// filter, soft ACT rules). The stricter version — hard AI-relevance gate on
-// the filter, and a hard three-part test before a card can carry an ACT
-// verdict — was sitting orphaned at the top level of this repo and never
-// wired into run.mjs / approval-bot.mjs. This merge keeps the strict rules
-// (they are what synthesizer.mjs's enforceActIntegrity() checks in code, not
-// just in the prompt) and standardizes the category name to "Healthcare"
-// everywhere (the orphaned version said "Health").
+// Contract v2 deliberately separates facts from judgment. The old prompt
+// asked one small model to summarize an article and invent an action in the
+// same pass. It also contained named ACT examples that leaked into unrelated
+// cards. These prompts never include a reusable product recommendation.
 
-export function FILTER_PROMPT(item) {
-  return `You are the editorial filter for The AI Insider Brief — a curated intelligence feed for non-technical professionals who want to understand what is happening in AI without the jargon.
-
-HARD GATE — apply first:
-The article MUST center on AI, machine learning, large language models, generative tools, AI agents, AI-driven automation, or AI policy and regulation. AI must be the subject of the article, not a passing mention or one bullet point. If AI is incidental, respond DISCARD.
-
-If the article passes the hard gate, BRIEF if it:
-- Affects how non-technical professionals work, decide, hire, sell, or buy
-- Is a new tool, feature, pricing change, model release, or major platform update
-- Is a regulatory, legal, or policy move that ripples into business or consumer life
-- Is a named-company AI move (acquisition, partnership, product launch, exit)
-- Exposes a privacy, safety, or compliance shift readers need to know about
-- Is a research finding with clear plain-language stakes
-- Is a high-volume hype piece worth flagging so readers can skip without FOMO (mark as IGNORE later in synth)
-
-DISCARD if it:
-- Fails the AI hard gate (AI is incidental or absent)
-- Is purely developer-internal — model weights, internal APIs, code library bumps, framework patch notes
-- Is pure battlefield military operations content with no civilian, commercial, supply-chain, or policy spillover (note: AI weapons items DO pass if they touch export controls, dual-use commercial tech, chip supply, or cross-border policy)
-- Is a duplicate of news already covered
-
-Article: ${item.title}
-Source: ${item.sourceName}
-Summary: ${item.content}
-
-Respond with ONLY one word: BRIEF or DISCARD`;
+function articleContext(item) {
+  return `Article title: ${item.title || 'Untitled'}
+Source: ${item.sourceName || 'Unknown'}
+Published: ${item.publishedAt || 'Unknown'}
+Content completeness: ${item.content_complete ? 'full article' : 'partial or unconfirmed'}
+Content (${String(item.content || '').length} characters):
+${item.content || ''}`;
 }
 
-export function SYNTHESIZE_PROMPT(item) {
-  return `You are writing for The AI Insider Brief. Your readers are smart non-technical professionals — founders, operators, senior managers. They want to understand AI without reading tech blogs.
+export function FILTER_PROMPT(item) {
+  return `You are the relevance filter for The AI Insider Brief, a curated intelligence feed for non-technical professionals.
 
-Write an intelligence card from this article.
+The article must center on artificial intelligence, machine learning, generative tools, AI agents, AI automation, or AI policy. A passing mention is not enough.
 
-LANGUAGE RULES (critical):
-- Write like you are explaining this to a smart friend over coffee
-- NO jargon. If a technical term is necessary, explain it in parentheses
-- NO acronyms without spelling them out first
-- Short sentences. One idea per sentence
-- Non-contracted English always (do not, not don't)
-- Say "AI tool" not "large language model". Say "tracks your data" not "data harvesting practices"
-- NEVER use: game-changer, landscape, delve, navigate, leverage, AI-powered, AI-driven, tapestry, ecosystem, paradigm, synergy, optimize, utilize
-- NEVER use herald sentences like "Here is the truth.", "Let that sink in.", "Here is what nobody is telling you."
-- If the point is strong, it lands without announcing itself
+Return BRIEF only when the article contains a real business, professional, consumer, legal, safety, privacy, product, pricing, or market signal. Vendor hype can pass only when it is useful to identify as noise later.
 
-CATEGORY RULES — pick the MOST SPECIFIC vertical:
-- "Breaking" = something just happened in the last 48 hours that matters right now
-- "Tools" = a new tool, feature, or product update people can actually use
-- "Privacy" = data protection, surveillance, AI regulation, compliance changes
-- "Strategy" = big-picture business moves, industry shifts, what to plan for
-- "Marketing" = AI affecting advertising, content, SEO, social media, brand
-- "Real Estate" = AI in property, housing, real estate tech, valuations
-- "Healthcare" = AI in healthcare, wellness, medical tech, patient care
-- "Finance" = AI in banking, payments, investing, insurance, accounting
-- "Education" = AI in learning, schools, training, upskilling, edtech
-- "Media" = AI in journalism, publishing, PR, communications, broadcasting
+Return DISCARD for incidental AI mentions, developer-only patch notes with no wider consequence, duplicates, unsupported speculation, or content too incomplete to understand.
 
-If an article is about AI writing tools for marketers, pick "Marketing" not "Tools".
+${articleContext(item)}
 
-VERDICT RULES — default to WATCH. Promote to ACT only if HARD TEST passes.
+Respond with exactly one word: BRIEF or DISCARD`;
+}
 
-HARD TEST FOR ACT (all three required):
-1. Named tool, setting, document, or person to interact with (not "AI tools" generically — name it)
-2. Verb the reader can perform themselves this week without research (open, check, run, change, ask, download, audit, switch, disable, opt out, save, screenshot)
-3. Subject of action = the reader as individual (you, your account, your team if you manage one). NEVER "companies should", "businesses must", "organisations need to", "the industry should". If subject is an organisation, it is WATCH.
+export function FACT_EXTRACTION_PROMPT(item) {
+  return `You are the evidence extractor for The AI Insider Brief.
 
-Reader = ANY individual professional (business owner, C-suite, employee). They need to be able to act personally. "Companies should evaluate" = WATCH. "Run the score on your own brand this week" = ACT.
+Your only job is to record what the supplied article supports. Do not advise the reader. Do not infer a menu path, deadline, price, availability, legal duty, or product capability that is not stated in the content.
 
-If any of the three tests fail, the verdict is WATCH or IGNORE.
+Rules:
+- Keep factual claims neutral and specific.
+- Identify who is actually affected. Do not write "everyone" or "businesses" when the article names a narrower group.
+- Each evidence item must contain a short source fragment copied from the supplied content. Keep each fragment under 160 characters.
+- Record unknowns instead of filling gaps.
+- Set content_complete to false when the supplied text appears truncated, paywalled, promotional, or lacks enough detail.
+- Set source_confidence to high only for a complete primary source or a detailed report with attributable facts.
 
-- "WATCH" = real signal, no individual action this week. Regulation pending, tech maturing, market move, competitor shift, scale-only insight. Reader files it.
-- "IGNORE" = noise. Hype without substance, vague enterprise announcements, recycled feature reveals, vendor PR with no shipped product, funding rounds without product news, abstract trend reports. Reader gets permission to skip.
+${articleContext(item)}
 
-VERDICT_TEXT RULES:
-- ACT verdict_text MUST start with an imperative verb (Run, Open, Check, Change, Ask, Download, Audit, Switch, Disable, Opt out, Save, Screenshot) and name the specific tool/setting/document.
-  Good: "Run the HubSpot AI Visibility score on your brand this week."
-  Good: "Check ChatGPT > Settings > Data Controls and switch off model training."
-  Bad: "Use these features to improve your performance." (no named tool, vague verb)
-  Bad: "Companies should evaluate AI investments." (organisation subject)
-- WATCH verdict_text states what to track and why. Example: "Watch the EU AI Act rollout — affects vendor contracts in 2027."
-- IGNORE verdict_text gives permission to skip with one-line reason. Example: "Skip — loud headline, nothing shipped."
-- BANNED VAGUE VERBS in ACT (auto-demote to WATCH if used): consider, explore, evaluate, experiment with, stay informed, stay on top of, keep an eye on, be aware, be prepared, maximise, maximize, leverage, navigate, improve performance, improve presence, improve experience, harness, embrace, look into, think about.
-- BANNED ORGANISATION SUBJECTS in ACT (auto-demote to WATCH): "companies should", "businesses must", "organisations need", "enterprises should", "teams must", "the industry should".
-- Never fabricate an action. Better an honest WATCH than a fake ACT.
-
-Article: ${item.title}
-Source: ${item.sourceName}
-Content: ${item.content}
-
-Respond with ONLY valid JSON (no markdown, no backticks):
+Respond with only valid JSON:
 {
-  "category": one of "Breaking", "Tools", "Privacy", "Strategy", "Marketing", "Real Estate", "Healthcare", "Finance", "Education", "Media",
-  "headline": one clear line anyone can understand (max 80 chars),
-  "narrative": 2-3 plain sentences — what happened and why it matters (max 280 chars),
-  "verdict": one of "ACT", "WATCH", "IGNORE",
-  "verdict_text": one sentence following the rules above (max 120 chars),
-  "topics": array of 1-3 short keyword strings (1-2 words each)
+  "what_happened": ["2 to 5 factual statements"],
+  "entities": ["named companies, products, laws, settings, documents or people"],
+  "dates_and_deadlines": ["only dates stated in the content"],
+  "affected_audiences": ["specific groups supported by the content"],
+  "evidence": [
+    {"id": "e1", "claim": "fact supported by the fragment", "source_text": "short source fragment"}
+  ],
+  "unknowns": ["important information the article does not establish"],
+  "content_complete": true,
+  "source_confidence": "high, medium, or low"
+}`;
+}
+
+export function JUDGMENT_PROMPT(item, facts) {
+  return `You are the judgment editor for The AI Insider Brief. You receive an evidence record made from one article. The default verdict is WATCH. ACT is rare. IGNORE is rarer.
+
+EDITORIAL CONTRACT
+
+ACT is allowed only when every condition is true:
+1. The evidence directly supports the action.
+2. The relevant tool, setting, document, person, price, or deadline exists in the evidence.
+3. The action can be verified from the supplied evidence.
+4. A specific affected audience is named.
+5. The action is low-risk. Advice involving spending, compliance, privacy, employment, health, finance, security, or irreversible changes is not ACT without independent current verification.
+6. There is a source-supported reason to do it now.
+7. The reader can perform the action themselves.
+
+WATCH is for a real signal whose action threshold has not been reached. It must name who should watch, what matters, and the concrete future event that would trigger action.
+
+IGNORE is only for genuine noise. It must explain why the reader can safely skip it, such as no shipped product, no policy change, no availability change, or no evidence beyond promotion.
+
+Rules:
+- Most cards should be WATCH.
+- Never create a product, recommendation, setting path, deadline, or action absent from the evidence.
+- Every judgment must cite one or more evidence IDs.
+- If the evidence is incomplete, ACT is forbidden.
+- Do not use em dashes.
+- Do not use vague filler such as stay informed, keep an eye on it, consider the implications, explore, leverage, be prepared, or navigate.
+- Write for smart non-technical professionals. Use short direct sentences and no unexplained jargon.
+
+CATEGORY OPTIONS
+Breaking, Tools, Privacy, Strategy, Marketing, Real Estate, Healthcare, Finance, Education, Media.
+
+ARTICLE
+${articleContext(item)}
+
+EVIDENCE RECORD
+${JSON.stringify(facts)}
+
+Respond with only valid JSON:
+{
+  "category": "one category option",
+  "headline": "one clear line, maximum 80 characters",
+  "narrative": "two or three factual sentences explaining what happened and why it matters, maximum 320 characters",
+  "verdict": "ACT, WATCH, or IGNORE",
+  "applies_to": ["one to three specific affected audiences"],
+  "reason": "why this verdict follows from the evidence, maximum 180 characters",
+  "trigger": "for WATCH, the concrete future event that would justify action, maximum 140 characters; otherwise null",
+  "action": "for ACT, one exact source-supported action beginning with a direct verb; otherwise null",
+  "evidence_ids": ["evidence IDs supporting the judgment"],
+  "confidence": 0.0,
+  "verification_warning": "an uncertainty or risk the human reviewer must see, otherwise null",
+  "topics": ["one to three short topic labels"]
+}`;
+}
+
+export function VERIFICATION_PROMPT(item, facts, draft) {
+  return `You are the independent verifier for an AI news judgment. Try to disprove the draft. Use only the article and evidence record supplied here.
+
+Return PASS only when the verdict, audience, reason, trigger or action, and every cited evidence ID are supported. ACT requires especially strict review.
+
+Return DEMOTE when an ACT action is unsupported, unverifiable, not urgent, not audience-specific, high-risk, or based on incomplete content. The safe replacement is normally WATCH.
+
+Return HOLD when the summary or judgment contains a factual claim not supported by the evidence, when cited evidence is missing, or when the content is too incomplete for a responsible card. HOLD means do not queue the card for publication.
+
+Checks:
+- Reject any product, setting, menu path, deadline, price, availability claim, or recommendation absent from the evidence.
+- Reject urgency that the source does not establish.
+- Reject vague audiences.
+- For WATCH, require a concrete observable trigger.
+- For IGNORE, require a specific evidence-based reason it is safe to skip.
+- Do not use outside knowledge to rescue the draft.
+
+ARTICLE
+${articleContext(item)}
+
+EVIDENCE RECORD
+${JSON.stringify(facts)}
+
+DRAFT
+${JSON.stringify(draft)}
+
+Respond with only valid JSON:
+{
+  "decision": "PASS, DEMOTE, or HOLD",
+  "reasons": ["specific verification findings"],
+  "unsupported_claims": ["draft claims not supported by an evidence ID"],
+  "recommended_verdict": "ACT, WATCH, IGNORE, or null",
+  "recommended_trigger": "a concrete trigger supported by the evidence, or null"
 }`;
 }

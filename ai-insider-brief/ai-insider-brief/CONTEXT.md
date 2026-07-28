@@ -52,10 +52,9 @@ and www.shiftandlead.com:
   properties (Free Guides / The 99 / The Brief / Store / About), so a
   reader can move between all three surfaces. Previously this page was
   an island with no links back into the estate except two social icons.
-- The feed/card rendering logic in `app.js` is untouched; only the CSS
-  classes it targets were re-themed (`.feed-card`, `.verdict-*`,
-  `.category-pill`, `.content-gate`, `.shimmer-card`, etc. all still
-  exist, just re-colored).
+- The established feed/card layout remains the public contract. Card content
+  uses `.feed-card`, `.verdict-*`, `.category-pill`, and `.shimmer-card`.
+  There is no content gate: readers can scan every card before subscribing.
 
 ## Population rules reset (07/07/2026)
 
@@ -66,9 +65,12 @@ and www.shiftandlead.com:
   changes, this file and every page that mentions the Brief must be
   updated in the same commit (see the estate-wide cadence audit in
   `reports/estate-architecture-blueprint-2026-07-07.md`).
-- **Categories and the ACT/WATCH/IGNORE verdict system are unchanged**
-  — they are the Brief's strongest differentiator and stay exactly as
-  designed.
+- **Categories and the ACT/WATCH/IGNORE names remain, but the editorial
+  contract changed on 15/07/2026.** ACT is rare and must be directly
+  supported by source evidence, independently verified, audience-specific,
+  low-risk, and time-sensitive. WATCH must name the affected audience and a
+  concrete future trigger. IGNORE is rare and must explain why the item is
+  safe to skip. Most cards should be WATCH.
 - **This is not the guides.** The Brief is a recurring news digest
   (timely, dated, verdict-driven). The guides library is an evergreen
   literacy/tool/setup school (timeless, no expiry). The two were
@@ -82,14 +84,13 @@ and www.shiftandlead.com:
 
 ## CTA rules reset (07/07/2026)
 
-One primary action, three placements, zero competing offers:
+One primary action, repeated without hiding the evidence:
 
-1. **Primary, everywhere on this page: subscribe.** Hero form
-   (`data-source="brief-hero"`), the content gate
-   (`data-source="brief-gate"`), and the footer
-   (`data-source="brief-footer"`). No other action competes with this
-   on the page; per the estate blueprint's "one job per page" rule,
-   the Brief's job is capturing the subscribe, not selling anything.
+1. **Primary, everywhere on this page: subscribe.** Hero and footer forms
+   remain the capture points. The feed is uninterrupted by promotional cards
+   so readers can assess the editorial value before opting in. No other action
+   competes with this on the page; per the estate blueprint's "one job per
+   page" rule, the Brief's job is capturing the subscribe, not selling anything.
 2. **Secondary, one cross-block, two lines, no store link.** A reader
    who is lost (needs the basics first) is pointed at the free guides;
    a reader who wants proof is pointed at the 99 scoreboard. Neither
@@ -99,7 +100,7 @@ One primary action, three placements, zero competing offers:
    incoherence problem.
 3. **Subscriber visibility**: every subscribe form now also fires the
    estate-wide Formspree + n8n webhook dual-POST (source tags
-   `brief-hero` / `brief-gate` / `brief-footer`) so GHL sees every
+   `brief-hero` / `brief-footer`) so GHL sees every
    Brief subscriber alongside every other capture surface, while Kit
    (ConvertKit) remains the actual sender. This mirrors the pattern
    already used by every other form across guides.shiftandlead.com and
@@ -109,6 +110,30 @@ One primary action, three placements, zero competing offers:
   left as dead code in `app.js` rather than risk breaking the subscribe
   handler, but no page should ever add a frequency choice back without
   updating this section first — single cadence is the rule.
+
+## Evidence-based card contract (15/07/2026)
+
+- Contract version is `2`. New cards carry `editorial_contract_version: 2`.
+- Article discovery and judgment are separate. RSS finds the story; the
+  pipeline fetches up to 10,000 useful article characters before judgment.
+- Card creation is three passes: factual evidence extraction, editorial
+  judgment, and an independent adversarial verification.
+- Deterministic code runs after the models. ACT is demoted unless the full
+  article is at least 3,000 characters, source confidence is high, card
+  confidence is at least 0.85, the verifier passes it, the action is direct,
+  and its meaningful terms appear in the source evidence.
+- High-risk actions involving money, law, compliance, privacy, security,
+  health, finance, employment, external publishing, deletion, or other
+  irreversible changes are not allowed as ACT without independent current
+  verification. The automated pipeline therefore demotes them to WATCH.
+- Telegram shows the audience, reason, action or trigger, evidence,
+  confidence, verification state, warning, and source before approval.
+- Telegram refuses to approve cards generated under the old contract. They
+  remain an evaluation archive only.
+- The public board never presents an old unverified verdict as current
+  advice. Legacy cards are labeled ARCHIVE.
+- The hard five-card subscription gate is retired. The recent board remains
+  readable, with soft signup invitations after cards three and nine.
 
 ## When to update this file
 Add a glossary entry when a new source type, prompt template, or pipeline stage enters.

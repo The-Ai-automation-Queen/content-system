@@ -24,11 +24,17 @@ BACKUP="$BACKUPS_ROOT/$TIMESTAMP-$REVISION"
 runtime_files=(
   approval-bot.mjs
   archive-old-cards.mjs
+  category-balance.mjs
   config-loader.mjs
   crawler.mjs
+  editorial-contract.mjs
   health-check.mjs
+  merge-reassessments.mjs
   newsletter-sender.mjs
   prompts.mjs
+  quarantine-legacy-pending.mjs
+  promote-reassessment.mjs
+  reassess-archive.mjs
   run.mjs
   setup-kit.mjs
   sources.json
@@ -71,7 +77,6 @@ required_runtime_files=(
   .env
   cards-pending.json
   state.json
-  data/briefs.json
 )
 for file in "${required_runtime_files[@]}"; do
   if [[ ! -s "$RUNTIME_ROOT/$file" ]]; then
@@ -81,7 +86,6 @@ for file in "${required_runtime_files[@]}"; do
 done
 jq -e 'type == "array"' "$RUNTIME_ROOT/cards-pending.json" >/dev/null
 jq -e 'type == "object"' "$RUNTIME_ROOT/state.json" >/dev/null
-jq -e 'type == "object" and (.cards | type == "array") and (.cards | length > 0)' "$RUNTIME_ROOT/data/briefs.json" >/dev/null
 
 resolved="$(cd "$SOURCE_ROOT" && ENV_PATH="$RUNTIME_ROOT/.env" node --input-type=module -e 'import { loadMergedConfig, resolveLLMConfig } from "./config-loader.mjs"; const resolved = resolveLLMConfig(loadMergedConfig(process.cwd()).env); console.log([resolved.provider, resolved.model || "", resolved.ollamaUrl || ""].join("|"));')"
 IFS='|' read -r provider model ollama_url <<< "$resolved"
