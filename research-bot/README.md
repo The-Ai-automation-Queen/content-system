@@ -29,3 +29,23 @@ reviewed, fixed, and recovered — instead of living only on the VPS.
 ## Deploy
 Pull this folder onto the VPS and restart the service:
 `sudo systemctl restart research-bot` (or however `bot.mjs` is supervised).
+
+## Status of the two known bugs
+- ✅ **Credit drain** — FIXED in `analyzer.mjs` + `config.mjs`. The paid Anthropic
+  (Haiku) fallback now runs only when `RESEARCH_ALLOW_PAID=1` is set in `.env`
+  (default off). With it off, a free-tier outage saves a quiet stub instead of
+  billing the `sk-ant-` key.
+- ✅ **`t.co` links** — FIXED in `extractors/twitter.mjs` via `expandTco()`, which
+  resolves shortlink redirects before analysis.
+
+## Still to add from the VPS (not in this snapshot)
+- `context/positioning.mjs` — imported by `analyzer.mjs` (`CONTEXT_VERSION`,
+  `POSITIONING_CONTEXT`). Copy it from `/root/research-bot/context/`.
+- `package.json` / `package-lock.json` — declares the `simple-git` dependency.
+- **Never** commit `.env` or `bird-cookies.json` (already blocked by `.gitignore`).
+
+## Related drain source (separate service)
+The `hermes-autonomous-bridge` systemd timer (every 5 min) runs the research
+inbox through an Anthropic-powered chain and was the primary credit drain on
+2026-07-28. It lives outside this folder and needs the same free-first gate
+before being re-enabled.
