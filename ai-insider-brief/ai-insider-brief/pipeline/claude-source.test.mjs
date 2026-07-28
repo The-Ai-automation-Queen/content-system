@@ -11,6 +11,7 @@ test('Claude product announcements are a first-party tier-one source', () => {
   assert.equal(source.url, 'https://claude.com/blog-category/announcements');
   assert.equal(source.type, 'scrape');
   assert.equal(source.tier, 1);
+  assert.equal(source.initial_lookback_hours, 168);
 });
 
 test('Claude Webflow-style blog links are discovered and deduplicated', () => {

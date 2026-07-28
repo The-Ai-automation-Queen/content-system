@@ -511,9 +511,14 @@ export async function crawlSources(sources, statePath, existingBriefs, opts) {
 
   for (var source of sources) {
     var lastChecked = state[source.url] ? state[source.url].last_checked : null;
-    // Default to 24 hours ago if never checked
+    // Default to 24 hours ago if never checked. A newly added first-party
+    // source may request a bounded initial backfill so recent announcements
+    // published before the source was configured are not silently lost.
     if (!lastChecked) {
-      lastChecked = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+      var initialLookbackHours = Number(source.initial_lookback_hours || 24);
+      if (!Number.isFinite(initialLookbackHours) || initialLookbackHours < 1) initialLookbackHours = 24;
+      initialLookbackHours = Math.min(initialLookbackHours, 24 * 14);
+      lastChecked = new Date(Date.now() - initialLookbackHours * 60 * 60 * 1000).toISOString();
     }
 
     try {

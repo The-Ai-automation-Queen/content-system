@@ -102,6 +102,7 @@
       "type": "scrape",
       "tier": 1,
       "ai_filter": false,
+      "initial_lookback_hours": 168,
       "category_affinity": [
         "Tools",
         "Breaking",
@@ -114,6 +115,7 @@
       "type": "scrape",
       "tier": 1,
       "ai_filter": false,
+      "initial_lookback_hours": 168,
       "category_affinity": [
         "Tools",
         "Breaking",
