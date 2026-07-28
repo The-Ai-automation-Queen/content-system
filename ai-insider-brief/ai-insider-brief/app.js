@@ -422,7 +422,7 @@ function updateBriefingHeader() {
   }
 
   kicker.textContent = newCount ? 'NEW SINCE YOUR LAST VISIT' : 'WHAT MATTERS NOW';
-  title.textContent = newCount ? newCount + ' new AI change' + (newCount === 1 ? '' : 's') + ' worth weighing before your next decision' : 'The AI changes worth weighing before your next business decision';
+  title.textContent = newCount ? newCount + ' new AI development' + (newCount === 1 ? '' : 's') + ' to understand, monitor or respond to' : 'What is changing, what to monitor, and when to respond';
   status.textContent = latest ? 'Updated ' + formatBriefingDate(latest.timestamp) : '';
 }
 
