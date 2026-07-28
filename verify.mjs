@@ -360,6 +360,32 @@ function checkVoiceBans(ctx) {
     `found: ${hits.join(', ')}`);
 }
 
+// Copy that a page injects into the DOM at runtime is just as public as copy in
+// the markup, but visibleText() strips <script> so it never gets checked. This
+// pulls the string literals out of inline scripts and runs the same voice
+// rules over them. The opt-in page's guide catalogue lives there.
+function checkScriptCopyVoice(ctx) {
+  const scripts = [...ctx.html.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)]
+    .map((m) => m[1])
+    .filter((s) => !/application\/ld\+json/i.test(s));
+
+  const literals = [];
+  for (const body of scripts) {
+    // single- and double-quoted literals long enough to be prose, not a key
+    for (const m of body.matchAll(/'((?:[^'\\\n]|\\.){12,})'|"((?:[^"\\\n]|\\.){12,})"/g)) {
+      literals.push((m[1] ?? m[2]).replace(/\\'/g, "'"));
+    }
+  }
+  const joined = literals.join(' \n ').toLowerCase();
+  const hits = BANNED_SUBSTRINGS.filter((s) => joined.includes(s));
+  const dashes = literals.filter((l) => /[—–]/.test(l)).length;
+
+  record(hits.length === 0 && dashes === 0, ctx.rel,
+    'runtime-injected copy follows the same voice rules',
+    [hits.length ? `found: ${hits.join(', ')}` : '',
+     dashes ? `${dashes} literal(s) with an em-dash` : ''].filter(Boolean).join('; '));
+}
+
 function checkForms(ctx) {
   const forms = [...ctx.html.matchAll(/<form[\s\S]*?<\/form>/gi)].map((m) => m[0]);
   if (forms.length === 0) {
@@ -504,6 +530,7 @@ function checkFile(abs, siteDir, opts = {}) {
   checkPalette(ctx);
   checkNoEmDash(ctx);
   checkVoiceBans(ctx);
+  checkScriptCopyVoice(ctx);
   checkForms(ctx);
   checkSharedCss(ctx);
 
