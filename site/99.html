@@ -29,10 +29,11 @@
   "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"}
 }
 </script>
+<link rel="stylesheet" href="/assets/site.css">
 <style>
 :root{
-  --canvas:#FFFFFF;--surface:#FFFFFF;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
-  --muted:#5C5A57;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
+  --canvas:#FFFFFF;--surface:#FFFFFF;--cream:#FAF7F2;--ink:#1A1A1A;--rule:#E8E4DD;--rule-light:#E8E4DD;
+  --muted:#555;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
   --electric:#2C4BE0;--navy:#1B2EA0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -77,7 +78,7 @@ a:hover{color:var(--accent-deep)}
 .slot .num{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.14em;color:var(--muted)}
 .slot.open{background:var(--canvas)}
 .slot.open .state{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--rule)}
-.slot.open .state{color:#B9B6B1}
+.slot.open .state{color:#888}
 .slot.hired{background:var(--cream);border-color:var(--electric);border-top:4px solid var(--electric)}
 .slot.hired .num{color:var(--electric)}
 .slot .name{font-family:'Playfair Display',Georgia,serif;font-size:24px;line-height:1.1;margin:8px 0 2px}
@@ -123,6 +124,7 @@ a:hover{color:var(--accent-deep)}
 </style>
 <script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 <script defer src="/lib/motion.js"></script>
+<script defer src="/assets/capture.js"></script>
 </head>
 <body>
 
@@ -225,6 +227,28 @@ a:hover{color:var(--accent-deep)}
   <a class="btn" href="opt-in.html?guide=first-ai-employee">Get the free hiring guide</a>
   <span class="cta-sub">Not sure what to delegate first? <a href="time-audit.html">Take the 3-minute Time Leak Quiz</a></span>
 </section>
+
+<!-- partial:newsletter -->
+<section class="newsletter" aria-labelledby="nl-title">
+  <div class="nl-grid">
+    <div class="nl-copy">
+      <p class="eyebrow mono">The Insider Brief</p>
+      <h2 id="nl-title">One clear verdict on the AI news that matters.</h2>
+      <p>Every week. What changed, whether you should care, and what to do about it. Free.</p>
+      <form class="capture-form" data-source="the-99">
+        <label class="visually-hidden" for="nl-email">Email address</label>
+        <input id="nl-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit">Subscribe free</button>
+      </form>
+      <p class="capture-fineprint">No cost, no catch. Unsubscribe anytime.</p>
+    </div>
+    <div class="nl-art">
+      <img src="/assets/art/insider-brief.svg" alt="A weekly briefing card showing three headlines each marked with a plain verdict." loading="lazy" decoding="async" width="480" height="360">
+    </div>
+  </div>
+</section>
+<!-- /partial:newsletter -->
 
 <footer class="footer"><div class="footer-inner">
   <div>

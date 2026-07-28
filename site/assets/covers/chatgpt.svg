@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="ChatGPT">
+  <rect width="1600" height="900" fill="#FAF7F2"/>
+  <rect x="0" y="0" width="1600" height="10" fill="#2C4BE0"/>
+  <rect x="1020" y="0" width="1" height="900" fill="#E8E4DD"/>
+  <g>
+    <rect x="1075" y="153" width="170" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="181" width="148" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="206" width="294" height="9" rx="4.5" fill="#2C4BE0" opacity="0.44"/>
+    <rect x="1075" y="237" width="309" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="262" width="212" height="9" rx="4.5" fill="#2C4BE0" opacity="0.37"/>
+    <rect x="1075" y="290" width="172" height="9" rx="4.5" fill="#2C4BE0" opacity="0.73"/>
+    <rect x="1075" y="321" width="345" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="349" width="359" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="377" width="184" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="405" width="368" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="433" width="246" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="461" width="290" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="486" width="207" height="9" rx="4.5" fill="#2C4BE0" opacity="0.42"/>
+    <rect x="1075" y="517" width="176" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="545" width="166" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="573" width="320" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="601" width="185" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="629" width="253" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="657" width="147" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="685" width="345" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="713" width="345" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="741" width="296" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1049" y="536" width="8" height="34" rx="4" fill="#2C4BE0"/>
+  </g>
+  <text x="110" y="150" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="24" letter-spacing="4.5" fill="#1B2EA0">TOOL VERDICT / OPENAI</text>
+  <text y="470" font-family="Georgia,'Times New Roman',serif" font-size="116" font-weight="700" fill="#1a1a1a"><tspan x="110" dy="0">ChatGPT</tspan></text>
+  <rect x="110" y="522" width="120" height="4" fill="#2C4BE0"/>
+  <text x="110" y="800" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="22" letter-spacing="4" fill="#1a1a1a" opacity="0.55">SHIFT &amp; LEAD</text>
+  <text x="110" y="836" font-family="Georgia,'Times New Roman',serif" font-size="24" font-style="italic" fill="#1a1a1a" opacity="0.45">guides.shiftandlead.com</text>
+</svg>

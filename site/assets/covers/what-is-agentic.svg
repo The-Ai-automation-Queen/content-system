@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="What agentic actually means">
+  <rect width="1600" height="900" fill="#FAF7F2"/>
+  <rect x="0" y="0" width="1600" height="10" fill="#2C4BE0"/>
+  <rect x="1020" y="0" width="1" height="900" fill="#E8E4DD"/>
+  <g>
+    <rect x="1075" y="150" width="192" height="9" rx="4.5" fill="#2C4BE0" opacity="0.36"/>
+    <rect x="1075" y="181" width="351" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="209" width="192" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="237" width="258" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="262" width="186" height="9" rx="4.5" fill="#2C4BE0" opacity="0.57"/>
+    <rect x="1075" y="293" width="213" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="321" width="266" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="349" width="336" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="374" width="133" height="9" rx="4.5" fill="#2C4BE0" opacity="0.59"/>
+    <rect x="1075" y="405" width="153" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="433" width="213" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="461" width="260" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="489" width="231" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="517" width="267" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="545" width="239" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="573" width="308" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="601" width="284" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="629" width="255" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="657" width="246" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="682" width="140" height="9" rx="4.5" fill="#2C4BE0" opacity="0.54"/>
+    <rect x="1075" y="710" width="233" height="9" rx="4.5" fill="#2C4BE0" opacity="0.66"/>
+    <rect x="1075" y="741" width="161" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1049" y="508" width="8" height="34" rx="4" fill="#2C4BE0"/>
+  </g>
+  <text x="110" y="150" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="24" letter-spacing="4.5" fill="#1B2EA0">THE BASICS</text>
+  <text y="408.52" font-family="Georgia,'Times New Roman',serif" font-size="116" font-weight="700" fill="#1a1a1a"><tspan x="110" dy="0">What agentic</tspan><tspan x="110" dy="122.96000000000001">actually means</tspan></text>
+  <rect x="110" y="583.48" width="120" height="4" fill="#2C4BE0"/>
+  <text x="110" y="800" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="22" letter-spacing="4" fill="#1a1a1a" opacity="0.55">SHIFT &amp; LEAD</text>
+  <text x="110" y="836" font-family="Georgia,'Times New Roman',serif" font-size="24" font-style="italic" fill="#1a1a1a" opacity="0.45">guides.shiftandlead.com</text>
+</svg>

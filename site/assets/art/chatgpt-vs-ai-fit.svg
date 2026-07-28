@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" width="1600" height="800" role="img" aria-label="Six words, sorted, so a sales deck stops working on you.">
+  <rect width="1600" height="800" fill="#ffffff"/>
+  <rect x="80" y="70" width="680" height="420" rx="18" fill="#FAF7F2" stroke="#E8E4DD"/>
+  <rect x="840" y="70" width="680" height="420" rx="18" fill="#ffffff" stroke="#E8E4DD"/>
+  <rect x="80" y="70" width="6" height="420" rx="3" fill="#2C4BE0"/>
+  <rect x="840" y="70" width="6" height="420" rx="3" fill="#1a1a1a"/>
+  <text x="130" y="140" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="21" letter-spacing="3.5" fill="#1B2EA0">WHERE IT EARNS ITS KEEP</text>
+  <text x="890" y="140" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="21" letter-spacing="3.5" fill="#1a1a1a">WHERE IT WILL BURN YOU</text>
+  <text x="130" y="220" font-family="Georgia,'Times New Roman',serif" font-size="30" fill="#1a1a1a">Following a sales pitch and</text>
+  <text x="130" y="260" font-family="Georgia,'Times New Roman',serif" font-size="30" fill="#1a1a1a">knowing which bit is real.</text>
+  <text x="890" y="220" font-family="Georgia,'Times New Roman',serif" font-size="30" fill="#1a1a1a">Buying a model when what you</text>
+  <text x="890" y="260" font-family="Georgia,'Times New Roman',serif" font-size="30" fill="#1a1a1a">needed was a workflow.</text>
+  <rect x="80" y="560" width="1440" height="1" fill="#E8E4DD"/>
+  <text x="800" y="606" text-anchor="middle" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="20" letter-spacing="3.5" fill="#1B2EA0">WHAT I WOULD ACTUALLY DO</text>
+  <text x="800" y="648" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="32" font-style="italic" fill="#1B2EA0">Learn these six words. They are the difference between buying well and buying</text>
+  <text x="800" y="690" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="32" font-style="italic" fill="#1B2EA0">twice.</text>
+</svg>

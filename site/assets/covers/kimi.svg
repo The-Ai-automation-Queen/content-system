@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Kimi">
+  <rect width="1600" height="900" fill="#FAF7F2"/>
+  <rect x="0" y="0" width="1600" height="10" fill="#2C4BE0"/>
+  <rect x="1020" y="0" width="1" height="900" fill="#E8E4DD"/>
+  <g>
+    <rect x="1075" y="153" width="160" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="181" width="380" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="209" width="318" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="237" width="151" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="262" width="189" height="9" rx="4.5" fill="#2C4BE0" opacity="0.53"/>
+    <rect x="1075" y="293" width="300" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="321" width="345" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="346" width="153" height="9" rx="4.5" fill="#2C4BE0" opacity="0.45"/>
+    <rect x="1075" y="377" width="376" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="405" width="190" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="433" width="238" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="461" width="252" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="489" width="204" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="517" width="316" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="545" width="280" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="570" width="214" height="9" rx="4.5" fill="#2C4BE0" opacity="0.82"/>
+    <rect x="1075" y="601" width="142" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="629" width="233" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="657" width="280" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="685" width="291" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="713" width="144" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="741" width="152" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1049" y="564" width="8" height="34" rx="4" fill="#2C4BE0"/>
+  </g>
+  <text x="110" y="150" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="24" letter-spacing="4.5" fill="#1B2EA0">TOOL VERDICT / MOONSHOT AI</text>
+  <text y="470" font-family="Georgia,'Times New Roman',serif" font-size="116" font-weight="700" fill="#1a1a1a"><tspan x="110" dy="0">Kimi</tspan></text>
+  <rect x="110" y="522" width="120" height="4" fill="#2C4BE0"/>
+  <text x="110" y="800" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="22" letter-spacing="4" fill="#1a1a1a" opacity="0.55">SHIFT &amp; LEAD</text>
+  <text x="110" y="836" font-family="Georgia,'Times New Roman',serif" font-size="24" font-style="italic" fill="#1a1a1a" opacity="0.45">guides.shiftandlead.com</text>
+</svg>

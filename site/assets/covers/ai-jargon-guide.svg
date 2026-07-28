@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="The AI words they keep using">
+  <rect width="1600" height="900" fill="#FAF7F2"/>
+  <rect x="0" y="0" width="1600" height="10" fill="#2C4BE0"/>
+  <rect x="1020" y="0" width="1" height="900" fill="#E8E4DD"/>
+  <g>
+    <rect x="1075" y="153" width="225" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="181" width="303" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="209" width="183" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="237" width="200" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="265" width="357" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="293" width="306" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="318" width="182" height="9" rx="4.5" fill="#2C4BE0" opacity="0.53"/>
+    <rect x="1075" y="349" width="197" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="377" width="267" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="405" width="164" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="433" width="243" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="461" width="325" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="489" width="374" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="514" width="150" height="9" rx="4.5" fill="#2C4BE0" opacity="0.71"/>
+    <rect x="1075" y="545" width="334" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="573" width="373" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="601" width="168" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="626" width="242" height="9" rx="4.5" fill="#2C4BE0" opacity="0.59"/>
+    <rect x="1075" y="657" width="216" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="685" width="362" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="713" width="331" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="1075" y="738" width="363" height="9" rx="4.5" fill="#2C4BE0" opacity="0.39"/>
+    <rect x="1049" y="256" width="8" height="34" rx="4" fill="#2C4BE0"/>
+  </g>
+  <text x="110" y="150" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="24" letter-spacing="4.5" fill="#1B2EA0">THE BASICS</text>
+  <text y="347.03999999999996" font-family="Georgia,'Times New Roman',serif" font-size="116" font-weight="700" fill="#1a1a1a"><tspan x="110" dy="0">The AI words</tspan><tspan x="110" dy="122.96000000000001">they keep</tspan><tspan x="110" dy="122.96000000000001">using</tspan></text>
+  <rect x="110" y="644.96" width="120" height="4" fill="#2C4BE0"/>
+  <text x="110" y="800" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="22" letter-spacing="4" fill="#1a1a1a" opacity="0.55">SHIFT &amp; LEAD</text>
+  <text x="110" y="836" font-family="Georgia,'Times New Roman',serif" font-size="24" font-style="italic" fill="#1a1a1a" opacity="0.45">guides.shiftandlead.com</text>
+</svg>

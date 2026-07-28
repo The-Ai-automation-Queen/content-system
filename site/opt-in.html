@@ -19,14 +19,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
 :root{
   --canvas:#FFFFFF;
   --surface:#FFFFFF;
-  --cream:#EEF2FC;
+  --cream:#FAF7F2;
   --ink:#1A1A1A;
-  --rule:#D8D6D2;
-  --muted:#5C5A57;
+  --rule:#E8E4DD;
+  --muted:#555;
   --accent:#2C4BE0;
   --accent-deep:#1B2EA0;
   --accent-tint:#E4EAFB;
@@ -328,7 +329,7 @@ var GUIDES = {
       'How to tell if a tool is genuinely agentic or just marketing itself that way'
     ]
   },
-  'chez-claude': {
+  'claude': {
     chip: 'DECODE', chipClass: 'chip-blue',
     title: 'Chez Claude. The one that reads the whole room before it answers.',
     desc: 'Long-form reasoning, Artifacts, computer-use, Projects, Claude Code: the whole Anthropic ecosystem, walked through like a restaurant. Door, kitchen, plate.',
@@ -339,7 +340,7 @@ var GUIDES = {
       'The one thing that makes Claude different from every other kitchen on this list'
     ]
   },
-  'chez-openai': {
+  'chatgpt': {
     chip: 'DECODE', chipClass: 'chip-blue',
     title: 'Chez ChatGPT. The one everyone tried first. Here’s what’s actually on the menu.',
     desc: 'GPTs, Operator, Agents, Voice, image gen: the whole OpenAI ecosystem, walked through like a restaurant. Door, kitchen, plate.',
@@ -350,7 +351,7 @@ var GUIDES = {
       'Where ChatGPT fits next to Claude, Gemini, and the rest of the menu'
     ]
   },
-  'chez-gemini': {
+  'gemini': {
     chip: 'DECODE', chipClass: 'chip-blue',
     title: 'Chez Gemini. It already knows your calendar, your Drive, your inbox.',
     desc: 'Gemini, Workspace, Deep Research, NotebookLM, Astra: the Google AI stack, walked through like a restaurant.',
@@ -361,7 +362,7 @@ var GUIDES = {
       'The trade-off nobody mentions: what Google sees in exchange'
     ]
   },
-  'chez-copilot': {
+  'copilot': {
     chip: 'DECODE', chipClass: 'chip-blue',
     title: 'Chez Copilot. It’s been sitting in your Office toolbar this whole time.',
     desc: 'Copilot Chat, Cowork, Studio, Agent 365, Foundry: Microsoft’s AI restaurant, from door to plate.',
@@ -372,7 +373,7 @@ var GUIDES = {
       'Where it falls short of Claude or ChatGPT, and why that’s fine'
     ]
   },
-  'chez-grok': {
+  'grok': {
     chip: 'DECODE', chipClass: 'chip-blue',
     title: 'Chez Grok. Real-time ingredients. No filter on the chef.',
     desc: 'Grok 4.3, Big Brain, Aurora, X live search, SuperGrok Heavy: xAI’s loud kitchen, walked through.',
@@ -383,7 +384,7 @@ var GUIDES = {
       'The one trade-off you’re making for real-time answers'
     ]
   },
-  'chez-mistral': {
+  'mistral': {
     chip: 'DECODE', chipClass: 'chip-blue',
     title: 'Chez Mistral. Open kitchen. Nothing leaves the building.',
     desc: 'Le Chat, Mistral Large, Magistral, Vibe coding, No Telemetry Mode: the Paris kitchen, mapped clean.',
@@ -394,7 +395,7 @@ var GUIDES = {
       'Where Mistral Pro lands compared to the rest of the menu'
     ]
   },
-  'chez-deepseek': {
+  'deepseek': {
     chip: 'DECODE', chipClass: 'chip-blue',
     title: 'Chez DeepSeek. Same plates. A fraction of the price.',
     desc: 'V4 Flash, V4 Pro, 1M context: the open-source kitchen from China, mapped clean.',
@@ -405,7 +406,7 @@ var GUIDES = {
       'The one question to ask before you rely on it for anything sensitive'
     ]
   },
-  'chez-kimi': {
+  'kimi': {
     chip: 'DECODE', chipClass: 'chip-blue',
     title: 'Chez Kimi. 300 chefs in parallel. Nobody’s heard of this place yet.',
     desc: 'K2.6, a 300-agent swarm, Kimi Code, Cursor under the hood, Moonshot AI’s parallel brigade.',
@@ -416,7 +417,7 @@ var GUIDES = {
       'Why this is the one on the list most people haven’t heard of yet'
     ]
   },
-  'chez-meta-ai': {
+  'meta-ai': {
     chip: 'DECODE', chipClass: 'chip-blue',
     title: 'Chez Meta AI. Free tables on every app you already use.',
     desc: 'Llama, WhatsApp + IG + Messenger integration, Ray-Ban Meta glasses, AI Studio, Meta’s AI stack, mapped clean.',
@@ -427,7 +428,7 @@ var GUIDES = {
       'The privacy trade-off of an AI that’s already inside your DMs'
     ]
   },
-  'chez-manus': {
+  'manus': {
     chip: 'DECODE', chipClass: 'chip-blue',
     title: 'Chez Manus. You sit down. The kitchen runs itself.',
     desc: 'An autonomous multi-agent brigade, planner, executor, verifier, working browser, code, and files for hours, unsupervised.',

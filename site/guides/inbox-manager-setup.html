@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#FFFFFF">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,289 +7,241 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="robots" content="noai, noimageai, max-image-preview:large">
-<meta name="description" content="Hire an AI employee that reads your email, sorts it, drafts the easy replies, and hands you one summary a day. Gmail and Outlook. Draft-only by design.">
 <title>One Summary a Day: The Inbox Manager Setup | Shift &amp; Lead</title>
+<meta name="description" content="Set up an AI employee that reads your email, sorts it, drafts the easy replies and hands you one summary a day. Works on Gmail and Outlook. Draft-only by design.">
+<link rel="canonical" href="https://guides.shiftandlead.com/guides/inbox-manager-setup.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shift &amp; Lead">
+<meta property="og:title" content="One summary a day: the inbox manager">
+<meta property="og:description" content="Stop reading your inbox. Read one summary of it, once a day, and act on four lines.">
+<meta property="og:url" content="https://guides.shiftandlead.com/guides/inbox-manager-setup.html">
+<meta property="og:image" content="https://guides.shiftandlead.com/assets/covers/inbox-manager-setup.svg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"One summary a day: the inbox manager",
+  "description":"Stop reading your inbox. Read one summary of it, once a day, and act on four lines.",
+  "image":"https://guides.shiftandlead.com/assets/covers/inbox-manager-setup.svg",
+  "datePublished":"2026-06-15",
+  "dateModified":"2026-07-28",
+  "mainEntityOfPage":"https://guides.shiftandlead.com/guides/inbox-manager-setup.html",
+  "author":{"@type":"Person","name":"Fatiha Chikh","url":"https://www.shiftandlead.com"},
+  "publisher":{"@type":"Organization","name":"Shift & Lead","logo":{"@type":"ImageObject","url":"https://www.shiftandlead.com/logo.svg"}},
+  "inLanguage":"en"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="canonical" href="https://guides.shiftandlead.com/guides/inbox-manager-setup.html">
-<meta property="og:title" content="One Summary a Day: The Inbox Manager Setup">
-<meta property="og:description" content="An AI employee that reads your email, sorts it, drafts the easy replies, and never sends anything. The complete setup, free.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://guides.shiftandlead.com/guides/inbox-manager-setup.html">
-<meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="One Summary a Day: The Inbox Manager Setup">
-<meta name="twitter:description" content="An AI employee that reads your email, sorts it, drafts the easy replies, and never sends anything. The complete setup, free.">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The Inbox Manager Setup",
-  "description": "Hire an AI employee that reads your email, sorts it, drafts the easy replies, and hands you one summary a day. Gmail and Outlook. Draft-only by design.",
-  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
-  "datePublished": "2026-07-08",
-  "dateModified": "2026-07-08",
-  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/inbox-manager-setup.html",
-  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
-  "publisher": {"@type": "Organization", "name": "Shift & Lead", "logo": {"@type": "ImageObject", "url": "https://www.shiftandlead.com/logo.svg"}},
-  "inLanguage": "en"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "The Inbox Manager setup",
-  "description": "The workflow that reads every email, sorts it, drafts the easy replies, and hands you one summary a day, without ever sending on its own.",
-  "step": [
-    {"@type": "HowToStep", "name": "Set the filters", "text": "In Gmail or Outlook, filter newsletters, receipts, and emails where you are only CC'd out of the main inbox. About 10 minutes, no AI required."},
-    {"@type": "HowToStep", "name": "Build the triage brain", "text": "In n8n or Make, trigger on new email, send it to Claude to label it and draft a reply when needed, then apply the label and save the draft."},
-    {"@type": "HowToStep", "name": "Schedule the 8am digest", "text": "Each weekday morning, fetch everything labeled in the last 24 hours and summarize it in 5 lines: how many came in, how many need you, how many were filed."}
-  ]
-}
-</script>
-<style>
-:root{
-  --canvas:#FFFFFF;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
-  --muted:#5C5A57;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
-  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
-a:hover{color:var(--accent-deep)}
-strong{font-weight:700;color:var(--ink)}
-
-.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
-.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
-.nav-links a{color:var(--ink);text-decoration:none}
-.nav-links a:hover,.nav-links a.active{color:var(--accent)}.nav-links .nav-cta{background:var(--accent);color:#fff;padding:8px 14px;border-radius:3px;font-weight:600}.nav-links .nav-cta:hover{background:var(--accent-deep)}
-
-.wrap{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,100px) clamp(24px,5vw,72px)}
-
-.chips{margin-bottom:28px;display:flex;gap:8px;flex-wrap:wrap}
-.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff}
-.chip-track0{background:var(--accent)}
-.chip-literacy{background:#E63955}
-.chip-time{background:transparent;color:var(--muted);border:1px solid var(--rule);padding:4px 10px}
-
-.kicker{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);display:flex;align-items:center;margin-bottom:20px}
-.kicker-rule{display:inline-block;width:32px;height:1px;background:var(--ink);margin-right:10px}
-
-h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,5.5vw,56px);line-height:1.08;letter-spacing:-0.5px;color:var(--ink);margin-bottom:24px}
-h1 em{font-style:italic;color:var(--electric)}
-h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.18;letter-spacing:-0.3px;margin:64px 0 16px}
-h3{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);margin:32px 0 12px}
-p{margin-bottom:18px;color:var(--ink)}
-p.lead{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:20px;line-height:1.55;color:var(--muted);margin-bottom:32px}
-
-.rule{border:0;border-top:2px solid var(--ink);margin:80px 0 40px}
-
-.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:28px 32px;margin:24px 0}
-.card.accent{border-color:var(--accent);background:var(--accent-tint)}
-
-.pullquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:24px;line-height:1.35;color:var(--muted);border-left:3px solid var(--accent);padding-left:24px;margin:40px 0}
-
-blockquote{background:var(--accent-tint);border-left:3px solid var(--accent);padding:16px 24px;margin:20px 0;border-radius:0 4px 4px 0;font-style:italic;color:var(--muted)}
-blockquote p{margin-bottom:0;color:var(--muted)}
-
-.vs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
-.vs-col{padding:20px 24px;border-radius:6px}
-.vs-col.old{background:#FDF2F2;border:1px solid #E8C4C4}
-.vs-col.new{background:#F0F4E8;border:1px solid #C4D4A8}
-.vs-col h3{margin-top:0}
-
-ul,ol{margin:12px 0 20px 24px}
-li{margin-bottom:8px;color:var(--ink)}
-
-.try-box{background:var(--surface);border:1px solid var(--accent);border-radius:6px;padding:24px 28px;margin:20px 0}
-.try-box .try-label{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin-bottom:12px}
-.try-box p{font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--ink);margin-bottom:0}
-
-.cta-bar{margin:48px 0;padding:32px;background:var(--navy);border-radius:6px;text-align:center;color:var(--canvas)}
-.cta-bar h3{color:var(--canvas);margin-top:0}
-.cta-bar p{color:rgba(255,255,255,0.85)}
-.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:13px 32px;background:var(--canvas);color:var(--ink);text-decoration:none;border-radius:4px;margin-top:12px}
-.btn:hover{background:#fff;color:var(--ink)}
-
-.guide-nav{display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:32px;border-top:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em}
-.guide-nav a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
-.guide-nav a:hover{color:var(--accent);border-color:var(--accent)}
-
-.footer{margin-top:120px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
-
-@media(max-width:560px){
-  html,body{font-size:16px}
-  .wrap{padding:40px 16px}
-  h1{font-size:32px;line-height:1.1}
-  .pullquote{font-size:20px}
-  .vs{grid-template-columns:1fr}
-  .guide-nav{flex-direction:column;gap:16px;align-items:flex-start}
-  .nav-inner{padding:14px 16px}
-  .nav-links{gap:16px;font-size:11px}
-}
-</style><script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
-<script defer src="/lib/motion.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
+<script defer src="/assets/capture.js"></script>
 </head>
-<body>
+<body class="guide" data-page="inbox-manager-setup">
 
-<nav class="nav"><div class="nav-inner">
-  <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a class="nav-cta" href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=inbox-manager-setup">Workshops</a></div>
-</div></nav>
+<!-- partial:guide-nav -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a class="site-nav-logo" href="/free-resources.html">Shift &amp; Lead</a>
+    <div class="site-nav-links">
+      <a href="/free-resources.html#library">Free guides</a>
+      <a href="/99.html">The 99</a>
+      <a href="https://brief.shiftandlead.com">The Insider Brief</a>
+      <a href="/about.html">About</a>
+      <a class="nav-cta" href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&amp;utm_medium=site&amp;utm_campaign=library">Work with me</a>
+    </div>
+  </div>
+</nav>
+<!-- /partial:guide-nav -->
 
-<div class="wrap">
+<article class="guide-doc">
 
-  <div class="chips">
-    <span class="chip chip-track0">INBOX</span>
-    <span class="chip chip-time">7 min read</span>
+  <header class="guide-hero">
+    <p class="eyebrow mono">Put AI to work</p>
+    <h1>One summary a day: the inbox manager</h1>
+    <p class="verdict">Stop reading your inbox. Read one summary of it, once a day, and act on four lines.</p>
+
+    <figure class="cover">
+      <img src="/assets/covers/inbox-manager-setup.svg" alt="Cover: the inbox manager setup, from Shift and Lead" width="1600" height="900">
+    </figure>
+
+    <ul class="tldr">
+      <li><span>Best for</span>Anyone who opens their inbox to check one thing and loses an hour.</li>
+      <li><span>Careful with</span>Letting it reply on your behalf before you trust its judgement.</li>
+      <li><span>What I would do</span>Set it to summarise only. Add sending later, or never.</li>
+    </ul>
+  </header>
+
+  <div class="prose">
+
+    <h2>What you are building</h2>
+
+    <p>An AI employee that reads, sorts and drafts your email so you only handle the things that genuinely need you. It works the same on Gmail and Outlook. It takes about an hour to build.</p>
+
+    <p>The tools are boring on purpose: your email, one automation tool such as n8n or Make, where the free tiers are fine, and one AI. Nothing here needs code.</p>
+
+    <p>If you spend an hour and a half a day on email, and most people I work with do, that is a serious slice of your year spent sorting other people's priorities into an order. This does the sorting. You do the deciding.</p>
+
+    <figure class="fig">
+      <img src="/assets/art/inbox-manager-setup-fit.svg" alt="Two columns: where an inbox manager earns its keep against where it will burn you." width="1600" height="800" loading="lazy" decoding="async">
+      <figcaption>One pass a day, four decisions, inbox closed.</figcaption>
+    </figure>
+
+    <h2>The safety rules. Read these first.</h2>
+
+    <p>The rule that matters most, and I want it in front of you before you build anything: set the no-send rule at the connection level, not as a polite instruction in a prompt.</p>
+
+    <p>When you connect Gmail or Outlook, grant read, modify and draft permissions. Do not grant send. Now it cannot send an email, whatever happens, whatever it misunderstands, whatever is buried in a message it reads. An instruction can be overridden. A permission cannot.</p>
+
+    <p>Two more, briefly. Treat every incoming email as untrusted, because a message can contain text designed to redirect an automated reader. And never let it touch anything with a password reset, a payment or a legal deadline in it. Those go straight to you.</p>
+
+    <div class="callout">
+      <p class="callout-label">Do this</p>
+      <p>Before you connect anything, go to your email account's permissions screen and read what you are about to grant, in full. If send is on the list, take it off. That one screen is the whole safety story.</p>
+    </div>
+
+    <h2>Part one. The filters. Ten minutes, no AI.</h2>
+
+    <p>Do this even if you build nothing else, because it is where most of the win is and it takes ten minutes.</p>
+
+    <p>In Gmail go to Settings and then Filters, or in Outlook use Rules. Set up rules that move the obvious categories out of your main inbox before you ever see them: newsletters, receipts, notifications, calendar invitations, anything from a no-reply address.</p>
+
+    <p>Most people's inbox problem is not volume. It is that four genuinely important messages are hidden among sixty that are not. Sorting is most of the cure and it needs no intelligence at all.</p>
+
+    <blockquote class="pull">Half of what feels like an email problem is a filing problem you have never sat down and solved.</blockquote>
+
   </div>
 
-  <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; Stop Doing That by Hand &middot; Employee #004&rsquo;s playbook</div>
-
-  <h1>Open your inbox to <em>one summary a day.</em></h1>
-
-  <p class="lead">What is an inbox manager? An inbox manager is an AI employee that reads, sorts, and drafts your email so you only handle what needs you. You answer email for about 90 minutes a day. That is 22 full working days a year, sorting other people&rsquo;s requests. This guide hires you an AI employee that reads every email, sorts it, drafts the easy replies, and hands you one summary at 8am. She never sends anything. The send button stays yours.</p>
-
-  <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
-    <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
-    <p style="margin:0 0 14px;font-size:15.5px">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
-    <form class="capture-form" style="display:flex;gap:10px;flex-wrap:wrap">
-      <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+  <!-- partial:gate -->
+<aside class="gate" aria-labelledby="gate-title">
+  <div class="gate-inner">
+    <p class="gate-proof">Free, forever. No cost, no catch.</p>
+    <h2 class="gate-title" id="gate-title">Want the rest of these as they land?</h2>
+    <p class="gate-sub">This guide stays open. Put your email in and you also get every new guide plus the weekly Insider Brief. Unsubscribe anytime.</p>
+    <form class="gate-form capture-form" data-source="guide">
+      <label class="visually-hidden" for="gate-email">Email address</label>
+      <input id="gate-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-      <button type="submit" style="padding:10px 20px;background:#2C4BE0;color:#fff;border:none;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:14px;cursor:pointer">Send them to me</button>
+      <button type="submit">Send me the guides</button>
     </form>
+    <p class="gate-fineprint">Already on the list? Just keep reading. Nothing below is locked.</p>
+  </div>
+</aside>
+<!-- /partial:gate -->
+
+  <div class="prose">
+
+    <h2>Part two. The triage. Thirty minutes.</h2>
+
+    <p>Now the AI part. Build one workflow that runs through yesterday's mail and puts each message into exactly one of four buckets.</p>
+
+    <div class="guide-table">
+      <table>
+        <thead><tr><th>Bucket</th><th>What goes in it</th><th>What happens</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Needs you</strong></td><td>A decision only you can make, a client, money, anything with a deadline.</td><td>Stays in the inbox, flagged. You handle it.</td></tr>
+          <tr><td><strong>Needs a reply, not a decision</strong></td><td>Scheduling, standard questions, things you answer the same way every time.</td><td>A draft is written and left in your drafts folder.</td></tr>
+          <tr><td><strong>For information</strong></td><td>Updates, threads you are copied into, things you should know about.</td><td>One line in the daily summary. Archived.</td></tr>
+          <tr><td><strong>Nothing</strong></td><td>Marketing, notifications, noise the filters missed.</td><td>Archived silently.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Write the bucket definitions in your own words, with two real examples from your own inbox for each. That is the job description, and it is what makes this work for your business rather than in general.</p>
+
+    <h2>Part three. The daily summary. Fifteen minutes.</h2>
+
+    <p>One message, at a fixed time, before you open your laptop. It should be short enough to read standing up.</p>
+
+    <ul>
+      <li>What needs you today, with a one-line reason for each.</li>
+      <li>What has been drafted and is waiting in drafts.</li>
+      <li>Anything worth knowing but not doing.</li>
+      <li>Anything that has been sitting more than three days without a reply.</li>
+    </ul>
+
+    <p>That last line is the one that quietly earns its keep. The email you meant to answer on Tuesday and have now half-forgotten is the one that costs you a client.</p>
+
+    <h2>The upgrade path, and where to stop</h2>
+
+    <p>Run it in summarise-and-draft mode for a month. Read the drafts before you send them and notice what it consistently gets wrong. Fix that in the job description, not in the individual email.</p>
+
+    <p>After a month you will be tempted to let it send the easy ones by itself. My honest advice: do not, unless the category is genuinely mechanical, like confirming a meeting time. The time saved by not pressing send is about four seconds. The cost of one wrong email to the wrong client is considerably more than that.</p>
+
+    <p>Draft-only is not a training-wheels stage you graduate from. For most small businesses it is the right permanent setting.</p>
+
   </div>
 
-  <hr class="rule">
+  <section class="related">
+    <h2>Keep going</h2>
+    <div class="card-grid">
+      <a class="card" href="/guides/first-ai-employee.html">
+        <img src="/assets/covers/first-ai-employee.svg" alt="" width="1600" height="900" loading="lazy" decoding="async">
+        <div class="card-body">
+          <p class="card-kicker mono">Put AI to work</p>
+          <h3>Hire your first AI employee</h3>
+          <p class="card-desc">The method underneath this build.</p>
+        </div>
+      </a>
+      <a class="card" href="/guides/24-7-operations-system.html">
+        <img src="/assets/covers/24-7-operations-system.svg" alt="" width="1600" height="900" loading="lazy" decoding="async">
+        <div class="card-body">
+          <p class="card-kicker mono">Put AI to work</p>
+          <h3>Run a business around the clock</h3>
+          <p class="card-desc">The full set of scheduled workflows.</p>
+        </div>
+      </a>
+      <a class="card" href="/guides/gemini.html">
+        <img src="/assets/covers/gemini.svg" alt="" width="1600" height="900" loading="lazy" decoding="async">
+        <div class="card-body">
+          <p class="card-kicker mono">Tool verdict / Google</p>
+          <h3>Gemini</h3>
+          <p class="card-desc">If you are on Gmail, this is the shortest route in.</p>
+        </div>
+      </a>
+    </div>
+  </section>
 
-  <h2>What you are building</h2>
-  <p>One workflow with four jobs:</p>
-  <ol class="steps">
-    <li>Every new email gets read and labeled: <strong>Reply needed / Waiting / FYI / Junk</strong>.</li>
-    <li>Every &ldquo;Reply needed&rdquo; email gets a <strong>drafted answer in your tone</strong>, saved to drafts. Never sent.</li>
-    <li>Newsletters and receipts get <strong>filed automatically</strong> before you ever see them.</li>
-    <li>At 8am you get <strong>one summary</strong>: what needs you, what did not.</li>
-  </ol>
-  <p>Works the same on Gmail and Outlook. Time to build: about an hour. The tools are boring on purpose: your email, one automation tool (n8n or Make, free tiers are fine), one AI (Claude).</p>
+</article>
 
-  <h2>The safety rules. Read these first.</h2>
-  <p>This employee touches your mail, so the rules are not optional:</p>
-  <ol class="steps">
-    <li>&#128994; <strong>Green</strong>: subject lines, sender names, your own drafts. Safe to process.</li>
-    <li>&#128992; <strong>Orange</strong>: email bodies from known contacts. The AI reads them to label and draft, stores them nowhere else, uses them for nothing else.</li>
-    <li>&#128308; <strong>Red</strong>: attachments from unknown senders, client data, passwords, contracts. The workflow skips these entirely and labels them &ldquo;Needs you&rdquo;. No exceptions.</li>
-  </ol>
-  <p><strong>The rule that matters most:</strong> set the no-send rule at the connection level, not as a polite instruction. When you connect Gmail or Outlook, grant the read, modify and draft permissions, and do not grant send. Now she <em>cannot</em> send, even on a bad day.</p>
-
-  <h2>Part 1. The filters. 10 minutes, no AI.</h2>
-  <p>Do this even if you build nothing else. In Gmail (Settings &rarr; Filters) or Outlook (Rules):</p>
-  <ol class="steps">
-    <li>Anything with &ldquo;unsubscribe&rdquo; from newsletter platforms &rarr; label <strong>Newsletters</strong>, skip the inbox.</li>
-    <li>Subject contains receipt, invoice, or order confirmation &rarr; label <strong>Receipts</strong>, skip the inbox.</li>
-    <li>Emails where you are CC&rsquo;d, not the direct recipient &rarr; label <strong>FYI</strong>.</li>
-  </ol>
-  <p>That is 30 percent of her job, done, with zero AI. You just hired a third of an employee.</p>
-
-  <h2>Part 2. The triage brain. 30 minutes.</h2>
-  <p>In n8n (or Make):</p>
-  <ol class="steps">
-    <li><strong>Trigger</strong>: Gmail node, &ldquo;message received&rdquo; (Outlook: the Outlook trigger). Poll every 5 minutes.</li>
-    <li><strong>AI step</strong>: send the sender, subject and body to Claude with the job description below. Copy it exactly, fill the blanks.</li>
-    <li><strong>Apply the label</strong> back onto the email (Gmail: modify labels; Outlook: move to folder).</li>
-    <li><strong>If reply needed</strong>: create a draft on that thread with the AI&rsquo;s text. It waits in your drafts folder.</li>
-  </ol>
-
-  <div class="try-box">
-    <p><strong>Her job description (the prompt):</strong><br><br>
-    You are my inbox triage assistant. Label this email as exactly one of: REPLY_NEEDED, WAITING, FYI, JUNK.<br><br>
-    My rules:<br>
-    &bull; Emails from [YOUR CLIENTS&rsquo; DOMAINS] are always REPLY_NEEDED.<br>
-    &bull; Anything asking me for a decision, a meeting, or money: REPLY_NEEDED.<br>
-    &bull; Automated notifications and no-reply senders: FYI.<br>
-    &bull; Cold pitches selling me services: JUNK.<br>
-    &bull; If it mentions [YOUR PROJECT NAMES], never JUNK.<br><br>
-    If REPLY_NEEDED, also draft a reply in my voice: plain English, short sentences, warm but direct. Sign off: [YOUR SIGN-OFF]. If the email asks for something I have not decided, the draft says I will come back by [DAY]. It never invents an answer.<br><br>
-    Return JSON: {"label": "...", "draft": "..."}</p>
+<!-- partial:newsletter -->
+<section class="newsletter" aria-labelledby="nl-title">
+  <div class="nl-grid">
+    <div class="nl-copy">
+      <p class="eyebrow mono">The Insider Brief</p>
+      <h2 id="nl-title">One clear verdict on the AI news that matters.</h2>
+      <p>Every week. What changed, whether you should care, and what to do about it. Free.</p>
+      <form class="capture-form" data-source="newsletter">
+        <label class="visually-hidden" for="nl-email">Email address</label>
+        <input id="nl-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit">Subscribe free</button>
+      </form>
+      <p class="capture-fineprint">No cost, no catch. Unsubscribe anytime.</p>
+    </div>
+    <div class="nl-art">
+      <img src="/assets/art/insider-brief.svg" alt="A weekly briefing card showing three headlines each marked with a plain verdict." loading="lazy" decoding="async" width="480" height="360">
+    </div>
   </div>
+</section>
+<!-- /partial:newsletter -->
 
-  <p>Notice the blanks are yours to fill and the prompt never includes real client names or data. That is the redaction habit: the structure is public, the specifics stay home.</p>
-
-  <h2>Part 3. The 8am digest. 15 minutes.</h2>
-  <ol class="steps">
-    <li><strong>Trigger</strong>: schedule, weekdays at 8:00.</li>
-    <li><strong>Fetch</strong>: everything labeled in the last 24 hours.</li>
-    <li><strong>AI step</strong>: &ldquo;Summarize in 5 lines max: how many came in, how many need me (sender + one-line ask for each), how many were filed. Plain English, no fluff.&rdquo;</li>
-    <li><strong>Deliver</strong> it to yourself: email, Telegram, or Slack.</li>
-  </ol>
-  <p>The feeling you are buying: you open your inbox already knowing nothing in there is a surprise.</p>
-
-  <h2>The upgrade path</h2>
-  <p>When her drafts sound like you 9 times out of 10, you have built trust with your first AI employee. The same pattern, read, label, draft, never send, is how every AI employee works, from lead follow-up to customer support. One employee at a time. That is the whole method.</p>
-
-  <div class="cta-bar">
-    <h3>See also: How to Set Up Your First AI Employee</h3>
-    <p>The 5-step hire framework this Inbox Manager was built on: pick the task, write the job description, choose the tools, run the first shift, approve the work.</p>
-    <a href="first-ai-employee.html" class="btn">Revisit the hiring guide &rarr;</a>
+<!-- partial:byline -->
+<div class="byline">
+  <div class="byline-in">
+    <img src="/closeUp.jpeg" alt="Fatiha Chikh" loading="lazy" decoding="async" width="62" height="62">
+    <p>Written by <strong>Fatiha Chikh</strong>. Twenty years at Dell, Intel and Microsoft, now hiring 99 AI employees to run her business in public. <a href="/about.html">Read the story</a></p>
   </div>
-
-  <p style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0">Ready for more than free? The three ways to go further &rarr;</a></p>
-
-  <div class="guide-nav">
-    <a href="../free-resources.html">&larr; All guides</a>
-    <a href="../99.html">Meet The 99 &rarr;</a>
-  </div>
-
 </div>
+<!-- /partial:byline -->
 
-<div class="footer">
-  <p><a href="../privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved.</p>
-</div>
+<!-- partial:guide-foot -->
+<footer class="site-foot">
+  <p><a href="/privacy.html">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved. The text and diagrams in these guides may not be reproduced, scraped or used as training data without written permission.</p>
+</footer>
+<!-- /partial:guide-foot -->
 
-<script>
-document.querySelectorAll('.capture-form').forEach(function(form){
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    var btn = form.querySelector('button');
-    var email = form.querySelector('[name="email"]').value;
-    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Done.'; return; }
-    btn.disabled = true; btn.textContent = 'Sending...';
-    try {
-      var r = await fetch('https://formspree.io/f/xgojoyka', { method:'POST', keepalive:true,
-        headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body: JSON.stringify({email: email, source: 'guide-inbox-manager-setup'}) });
-      fetch('https://auto.shiftandlead.com/webhook/formspree-lead', { method:'POST', keepalive:true,
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({email: email, source: 'guide-inbox-manager-setup'}) });
-      if (r.ok) { btn.textContent = 'On its way.'; } else { btn.disabled=false; btn.textContent='Try again'; }
-    } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
-  });
-});
-</script>
-
-<script>
-try {
-  var r = JSON.parse(localStorage.getItem('sl_read') || '[]');
-  if (r.indexOf('inbox-manager-setup') === -1) { r.push('inbox-manager-setup'); localStorage.setItem('sl_read', JSON.stringify(r)); }
-} catch(e){}
-</script>
-<script>
-document.querySelectorAll('.try-box, pre').forEach(function(box){
-  if (box.closest('script,style')) return;
-  var btn = document.createElement('button');
-  btn.textContent = 'Copy';
-  btn.style.cssText = "display:block;margin-top:10px;padding:6px 14px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;background:#fff;border:1px solid #2C4BE0;color:#2C4BE0;cursor:pointer";
-  btn.addEventListener('click', function(){
-    navigator.clipboard.writeText(box.innerText.replace(/Copy$/,'').trim()).then(function(){
-      btn.textContent = 'Copied \u2713';
-      setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
-    });
-  });
-  box.appendChild(btn);
-});
-</script>
 </body>
 </html>

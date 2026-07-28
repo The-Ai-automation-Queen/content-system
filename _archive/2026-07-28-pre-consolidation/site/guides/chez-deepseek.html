@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="noai, noimageai, max-image-preview:large">
+<title>Chez DeepSeek · The Full Kitchen Map | Shift &amp; Lead</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shift &amp; Lead">
+<meta property="og:title" content="Chez DeepSeek · The Full Kitchen Map | Shift &amp; Lead">
+<meta property="og:description" content="The whole DeepSeek AI ecosystem walked through like a restaurant. Door, kitchen, plate.">
+<meta property="og:url" content="https://guides.shiftandlead.com/guides/chez-deepseek.html">
+<meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://guides.shiftandlead.com/guides/chez-deepseek.html">
+<meta name="description" content="The whole DeepSeek AI ecosystem walked through like a restaurant. Door, kitchen, plate.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chez DeepSeek: The Full Kitchen Map",
+  "description": "The whole DeepSeek AI ecosystem walked through like a restaurant. Door, kitchen, plate.",
+  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
+  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/chez-deepseek.html",
+  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
+  "publisher": {"@type": "Organization", "name": "Shift & Lead", "logo": {"@type": "ImageObject", "url": "https://www.shiftandlead.com/logo.svg"}},
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What are tokens in DeepSeek?", "acceptedAnswer": {"@type": "Answer", "text": "Tokens are individual ingredients: every word costs tokens, priced at an extremely low rate compared to Western labs."}},
+    {"@type": "Question", "name": "What is a hallucination in DeepSeek?", "acceptedAnswer": {"@type": "Answer", "text": "A hallucination is a confident answer with made-up facts. Every AI does this, DeepSeek included, so verify any high-stakes claim against the actual source."}},
+    {"@type": "Question", "name": "What is confabulation in DeepSeek?", "acceptedAnswer": {"@type": "Answer", "text": "Confabulation is filling a gap with a convincing story instead of saying you do not know, including invented library names for code."}},
+    {"@type": "Question", "name": "Why is DeepSeek known for low cost?", "acceptedAnswer": {"@type": "Answer", "text": "DeepSeek is built to cook the same quality dish for a fraction of the bill, delivering comparable AI output at a much lower token price."}}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--tint:#E4EAFB;--cream:#EEF2FC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.75}
+.mono{font-family:'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
+
+/* nav */
+.nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav .mono{font-size:10px;color:var(--muted)}
+
+/* magazine cover hero */
+.cover{max-width:1160px;margin:0 auto;padding:70px 24px 56px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:end}
+@media(max-width:860px){.cover{grid-template-columns:1fr}}
+.issue{font-size:11px;color:var(--accent);margin-bottom:18px;display:flex;gap:18px;flex-wrap:wrap}
+.cover h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:clamp(3rem,9vw,6.2rem);line-height:.98;letter-spacing:-.02em;margin:0}
+.cover h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.cover .standfirst{font-size:1.2rem;color:var(--muted);max-width:44ch;margin:22px 0 0}
+.cover-art{position:relative;aspect-ratio:4/5;background:var(--ink);border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.cover-art svg{width:82%;height:auto}
+.cover-art .slot{position:absolute;bottom:10px;right:12px;font-size:9px;color:#8d86a0}
+.dropcap::first-letter{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:4.6em;float:left;line-height:.78;padding:6px 12px 0 0;color:var(--accent)}
+
+/* the rail — reading progress as courses */
+.rail{max-width:1160px;margin:0 auto;padding:0 24px}
+.courses{display:flex;gap:0;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:#fff;margin:8px 0 0}
+.course{flex:1;text-align:center;padding:11px 6px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-left:1px solid var(--rule)}
+.course:first-child{border-left:none}
+.course.active{background:var(--ink);color:#fff}
+
+/* sections */
+.sec{max-width:1160px;margin:0 auto;padding:72px 24px 8px}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:baseline;border-top:2px solid var(--ink);padding-top:18px}
+.sec-num{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:3.4rem;line-height:1;color:var(--accent)}
+.sec-head h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0}
+.sec-head .mono{display:block;font-size:10px;color:var(--muted);margin-top:6px}
+.sec-body{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;padding:26px 0 0}
+@media(max-width:860px){.sec-body{grid-template-columns:1fr}}
+.sec-body p{max-width:60ch;font-size:1.06rem;margin:0 0 1rem}
+
+/* floor plan diagram */
+.plan{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:26px}
+.plan .mono{font-size:10px;color:var(--accent);display:block;margin-bottom:12px}
+.plan svg{width:100%;height:auto}
+
+/* menu cards */
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 0}
+@media(max-width:860px){.menu{grid-template-columns:1fr}}
+.dish{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:24px;position:relative}
+.dish .mono{font-size:9.5px;color:var(--accent)}
+.dish h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:.4rem 0 .4rem}
+.dish p{font-family:'Inter',sans-serif;font-size:.9rem;color:var(--muted);margin:0;line-height:1.6}
+.dish .pict{height:74px;margin-bottom:10px;display:flex;align-items:center}
+.dish .pict svg{height:64px;width:auto}
+
+/* pull quote */
+.pull{max-width:1160px;margin:0 auto;padding:80px 24px}
+.pull blockquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.7rem,4.5vw,2.7rem);line-height:1.3;margin:0;max-width:26ch;color:var(--ink)}
+.pull blockquote strong{color:var(--accent);font-style:normal}
+.pull .mono{font-size:10px;color:var(--muted);margin-top:18px;display:block}
+
+/* warnings — "know before you eat" as menu footnotes */
+.warn{background:var(--ink);color:#F5F0EB}
+.warn-inner{max-width:1160px;margin:0 auto;padding:70px 24px}
+.warn .mono{color:#7FA0FF;font-size:11px}
+.warn h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:700;margin:.4rem 0 26px}
+.warn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.warn-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.warn-grid{grid-template-columns:1fr}}
+.warn-card{border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:20px}
+.warn-card .term{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7FA0FF;margin-bottom:8px}
+.warn-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0;line-height:1.6}
+.warn-card strong{color:#fff}
+.warn-link{font-family:'Inter',sans-serif;font-size:.95rem;color:#7FA0FF;display:inline-block;margin-top:22px}
+.warn-link:hover{text-decoration:underline}
+
+.fullbleed 
+
+/* stations grid (menu + kitchen zones) */
+.stations{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 34px}
+@media(max-width:900px){.stations{grid-template-columns:repeat(2,1fr)}}
+.station{border:1px solid var(--rule);border-radius:12px;padding:16px 18px;background:#fff}
+.station .mono{font-size:9px;color:var(--accent)}
+.station h4{font-family:'Inter',sans-serif;font-size:.98rem;font-weight:600;margin:.35rem 0 .2rem}
+.station p{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--muted);margin:0;line-height:1.5}
+.station em{color:var(--accent);font-style:italic}
+.menu-more{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:18px}
+
+/* zone narrative paragraphs inside sec 02 */
+.zone-block{margin:0 0 12px}
+.zone-block h3{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:400;font-size:1.4rem;color:var(--accent);margin:0 0 6px}
+.zone-block > p{font-size:1.02rem;max-width:none}
+
+/* subscribe strip */
+.subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
+.subs-in{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid var(--accent);border-radius:14px;padding:22px 26px;background:var(--cream)}
+.subs-in h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:0}
+.subs-in p{font-family:'Inter',sans-serif;font-size:.88rem;color:var(--muted);margin:.2rem 0 0}
+.subs-in a{font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:var(--accent);color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap}
+
+/* the chef's table: paid offers close */
+.chefs{background:var(--ink);color:#F5F0EB;margin-top:72px}
+.chefs-in{max-width:1160px;margin:0 auto;padding:64px 24px}
+.chefs .mono{color:#7FA0FF;font-size:11px}
+.chefs h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:700;margin:.4rem 0 26px}
+.chefs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.chefs-grid{grid-template-columns:1fr}}
+.chefs-card{border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:24px;display:flex;flex-direction:column;background:rgba(255,255,255,.03)}
+.chefs-card .mono{font-size:9.5px;margin-bottom:8px}
+.chefs-card h3{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;margin:0 0 6px;color:#fff}
+.chefs-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0 0 18px;line-height:1.6}
+.chefs-card a{margin-top:auto;text-align:center;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;text-decoration:none;background:#fff;color:var(--ink);border-radius:8px;padding:11px 16px}
+
+/* byline + IP bar */
+.byline{max-width:1160px;margin:70px auto 0;padding:0 24px}
+.byline-in{display:flex;gap:18px;align-items:center;background:var(--cream);border:1px solid var(--tint);border-radius:14px;padding:22px 26px}
+.byline-in img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.byline-in p{margin:0;font-size:.95rem}
+.byline-in .who{font-family:'Inter',sans-serif;font-weight:600}
+.ipbar{max-width:1160px;margin:26px auto 0;padding:0 24px 70px}
+.ipbar p{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px;margin:0}
+a{color:var(--accent)}
+
+/* plans table */
+.plans-wrap{max-width:1160px;margin:36px auto 0;padding:0 24px}
+.plans-card{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:26px;overflow-x:auto}
+.plans-card .cap{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.25rem;color:var(--accent);margin-bottom:4px}
+.plans-card .mono{font-size:10px;color:var(--muted);margin-bottom:16px;display:block}
+.plans-card table{width:100%;border-collapse:collapse;font-size:.9rem;font-family:'Inter',sans-serif}
+.plans-card th{text-align:left;padding:10px 12px;border-bottom:2px solid var(--rule);font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.plans-card td{padding:10px 12px;border-bottom:1px solid var(--rule)}
+.plans-card tr:nth-child(even) td{background:var(--cream)}
+.plans-card .foot{font-size:.82rem;color:var(--muted);margin-top:12px;line-height:1.55;font-family:'Inter',sans-serif}
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
+
+/* qa: contain grid children, never let the page scroll sideways */
+.sec-body>*{min-width:0}
+.sec-body svg,.sec-body img{max-width:100%;height:auto}
+.sec table{max-width:100%}
+body{overflow-x:hidden}
+.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}.nav-links a{color:var(--ink);text-decoration:none}.nav-links a:hover,.nav-links a.active{color:var(--accent)}.nav-links .nav-cta{background:var(--accent);color:#fff;padding:8px 14px;border-radius:3px;font-weight:600}.nav-links .nav-cta:hover{background:var(--accent-deep)}
+.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
+</style>
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
+<script defer src="/lib/motion.js"></script>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a class="nav-cta" href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-deepseek">Workshops</a></div>
+</div></nav>
+
+<!-- COVER -->
+<header class="cover">
+  <div>
+    <div class="issue mono"><span>The Kitchen Map · No. 08</span><span>DeepSeek</span><span>9 min read</span></div>
+    <h1>Chez <em>DeepSeek.</em></h1>
+    <p class="standfirst">What is DeepSeek? DeepSeek is a Chinese AI lab's low-cost AI model. You hear AI names everywhere and never know which does what. This walks you through DeepSeek like a restaurant: the door, the kitchen, the plate, the kitchen that cooks the same quality dish for a fraction of the bill.</p>
+    <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
+  <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
+  <p style="margin:0 0 14px;font-size:15.5px">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
+  <form class="capture-form" style="display:flex;gap:10px;flex-wrap:wrap">
+    <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+    <button type="submit" style="padding:10px 20px;background:#2C4BE0;color:#fff;border:none;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:14px;cursor:pointer">Send them to me</button>
+  </form>
+</div>
+  </div>
+  <div class="cover-art">
+    <svg viewBox="0 0 300 380" fill="none" aria-label="Door, kitchen, plate">
+      <rect x="70" y="30" width="160" height="110" rx="6" stroke="#7FA0FF" stroke-width="2"/>
+      <rect x="130" y="60" width="40" height="80" rx="3" stroke="#7FA0FF" stroke-width="2"/>
+      <circle cx="162" cy="102" r="3.5" fill="#7FA0FF"/>
+      <text x="150" y="22" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE DOOR</text>
+      <path d="M85 205h130M95 190h110M110 175h80" stroke="#7FA0FF" stroke-width="2" stroke-linecap="round"/>
+      <path d="M120 165c0-10 8-10 8-20M150 165c0-10 8-10 8-20M180 165c0-10 8-10 8-20" stroke="#2C4BE0" stroke-width="2" stroke-linecap="round"/>
+      <text x="150" y="232" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE KITCHEN</text>
+      <circle cx="150" cy="310" r="46" stroke="#7FA0FF" stroke-width="2"/>
+      <circle cx="150" cy="310" r="28" stroke="#2C4BE0" stroke-width="2"/>
+      <text x="150" y="378" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE PLATE</text>
+    </svg>
+  </div>
+</header>
+
+<!-- course rail -->
+<div class="rail">
+  <div class="courses">
+    <div class="course active">01 · The Door</div>
+    <div class="course">02 · The Kitchen</div>
+    <div class="course">03 · The Menu</div>
+    <div class="course">04 · Before You Eat</div>
+    <div class="course">05 · The Bill</div>
+  </div>
+</div>
+
+<!-- 01 THE DOOR -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <div><h2>The Door. What you're walking into</h2><span class="mono">First course · 2 min</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p class="dropcap">Every restaurant tells you what it is before you sit down. DeepSeek's door says: no dress code, no cover charge, and the receipt is almost embarrassingly small. This is the kitchen that cooks coding and reasoning dishes to the same standard as the famous places across town, at roughly a hundredth of the price, and hands you the recipe if you want to cook it yourself at home. <em>(And yes, even the best chef makes mistakes. The allergen card comes right before you eat, in course four.)</em></p>
+      <p>Two chefs share this kitchen. One is fast and low cost for everyday orders. The other thinks longer and harder when the problem deserves it. Both speak fluent English and Chinese, and both will happily read a document a thousand pages long without losing the thread.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 THE KITCHEN (floor plan) -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <div><h2>The Kitchen. How it actually works</h2><span class="mono">Second course · the floor plan</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p>One brain, four ways to order. You can walk into the free dining room (chat.deepseek.com or the mobile apps), call in a wholesale order for your own product (the developer API), or take the recipe home and build your own kitchen (open-source self-host).</p>
+      <p>Same chef, radically different price tags depending on the counter. The floor plan below shows where each surface sits.</p>
+    </div>
+    <div class="plan">
+      <span class="mono">The floor plan</span>
+      <svg viewBox="0 0 420 300" fill="none">
+        <rect x="150" y="110" width="120" height="80" rx="10" stroke="#2C4BE0" stroke-width="2.5"/>
+        <text x="210" y="145" text-anchor="middle" font-family="Playfair Display" font-size="17" font-weight="700" fill="#1A1A1A">The Chef</text>
+        <text x="210" y="166" text-anchor="middle" font-family="Space Mono" font-size="9" letter-spacing="2" fill="#5C5A57">V4 FLASH / V4 PRO</text>
+        <rect x="20" y="20" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
+        <text x="85" y="42" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">chat.deepseek.com</text>
+        <text x="85" y="59" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">FREE DINING ROOM</text>
+        <rect x="270" y="20" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
+        <text x="335" y="42" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">iOS &amp; Android</text>
+        <text x="335" y="59" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">DINING ROOM, MOBILE</text>
+        <rect x="20" y="228" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
+        <text x="85" y="250" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">Developer API</text>
+        <text x="85" y="267" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">WHOLESALE LINE</text>
+        <rect x="270" y="228" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
+        <text x="335" y="250" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">Open-source</text>
+        <text x="335" y="267" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">TAKE THE RECIPE HOME</text>
+        <path d="M120 72 L172 110M300 72 L248 110M120 228 L172 190M300 228 L248 190" stroke="#7FA0FF" stroke-width="1.5" stroke-dasharray="4 4"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- The Chef & Their Brain -->
+  <div class="zone-block" style="margin-top:44px">
+    <h3>The Chef &amp; Their Brain</h3>
+    <p>Before anyone walks in, the chef already exists. Two chefs share the kitchen. <strong>V4 Flash</strong> is the everyday chef: fast and low cost. <strong>V4 Pro</strong> handles harder problems with stronger reasoning. Both support a thinking toggle (slow and careful, versus fast and direct), and both work off a context window reaching roughly one million words, because every word costs a token. Both are strongly bilingual in English and Chinese, with solid coverage in many other languages. The signature edge: priced 10 to 100 times lower per token than ChatGPT or Claude for comparable quality on coding and reasoning.</p>
+  </div>
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
+    <div class="station"><span class="mono">Core brain</span><h4>V4 Flash</h4><p><em>"The everyday speed chef"</em>: fast, low cost, the default model for daily writing, coding, and conversation.</p></div>
+    <div class="station"><span class="mono">Core brain</span><h4>V4 Pro</h4><p><em>"Premium chef for harder problems"</em>: stronger reasoning for complex, multi-step work, currently discounted.</p></div>
+    <div class="station"><span class="mono">Core brain</span><h4>Thinking Mode</h4><p><em>"Chef plans before cooking"</em>: toggles multi-step reasoning; slower, more accurate on hard problems.</p></div>
+    <div class="station"><span class="mono">Core brain</span><h4>1M Context Window</h4><p><em>"A very long countertop"</em>: holds a 200-page report or large codebase without losing track.</p></div>
+    <div class="station"><span class="mono">Core brain</span><h4>Strong English + Chinese</h4><p><em>"A chef bilingual at native level"</em>: one of the strongest AI tools for Chinese tasks, competitive in English too.</p></div>
+    <div class="station"><span class="mono">Core brain</span><h4>Tokens</h4><p><em>"Individual ingredients"</em>: every word costs tokens; the rate here is extremely low compared to Western labs.</p></div>
+  </div>
+</details>
+
+  <!-- The Front Door -->
+  <div class="zone-block">
+    <h3>The Front Door</h3>
+    <p>A customer walks in through one of these doors. The main entrance is chat.deepseek.com, completely free, no subscription. iOS and Android apps cover mobile. The developer API lets you plug DeepSeek into your own software: OpenAI-compatible, so switching is trivial. And an open-source download puts the model weights themselves in your hands, free, to run on your own GPUs.</p>
+  </div>
+  <div class="stations">
+    <div class="station"><span class="mono">Free web + app</span><h4>chat.deepseek.com</h4><p><em>"The free dining room"</em>: completely free hosted chat, no subscription, generous daily caps.</p></div>
+    <div class="station"><span class="mono">Free web + app</span><h4>iOS &amp; Android Apps</h4><p><em>"Dining room on your phone"</em>: the same free experience, native on mobile.</p></div>
+    <div class="station"><span class="mono">Developer API</span><h4>Developer API</h4><p><em>"Wholesale phone line"</em>: OpenAI-compatible endpoints, low cost, switch in minutes.</p></div>
+    <div class="station"><span class="mono">Open-source</span><h4>Open-source Download</h4><p><em>"Public recipe, run your own kitchen"</em>: free weights on Hugging Face and ModelScope for total data control.</p></div>
+  </div>
+
+  <!-- The Order Slip -->
+  <div class="zone-block">
+    <h3>The Order Slip</h3>
+    <p>You place your order, and how it's written matters. The model picker lets you choose V4 Flash or V4 Pro. The thinking toggle tells the chef to reason step-by-step or answer fast. The web search toggle adds live web results to the answer. The system prompt, on the API, sets persistent behaviour across a whole session. And prompt engineering is simply learning to write clearer tickets so the kitchen sends back a better dish.</p>
+  </div>
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
+    <div class="station"><span class="mono">All DeepSeek</span><h4>Model Picker</h4><p><em>"Pick which chef takes the order"</em>: switch between V4 Flash and V4 Pro per task.</p></div>
+    <div class="station"><span class="mono">All DeepSeek</span><h4>Thinking Toggle</h4><p><em>"Tell the chef to think before cooking"</em>: flips into step-by-step reasoning for hard problems.</p></div>
+    <div class="station"><span class="mono">Free web + app</span><h4>Web Search Toggle</h4><p><em>"Tell the chef to check today's market"</em>: adds live web results to the next answer.</p></div>
+    <div class="station"><span class="mono">Developer API</span><h4>System Prompt</h4><p><em>"Standing instructions in the kitchen"</em>: a persistent persona, format, or rule set for the whole session.</p></div>
+    <div class="station"><span class="mono">General concept</span><h4>Prompt Engineering</h4><p><em>"Learning to write better tickets"</em>: a clearer, more specific request produces a better answer.</p></div>
+  </div>
+</details>
+
+  <!-- The Kitchen (cooking) -->
+  <div class="zone-block">
+    <h3>The Kitchen</h3>
+    <p>The order arrives, and this is where the real work happens: code, writing, research. Coding is the signature station: DeepSeek matches GPT-class quality on programming benchmarks at a fraction of the price. Writing spans languages, especially strong bilingual EN/ZH. Document analysis works on uploaded files, with the 1M context handling long PDFs. Web search grounds answers in current information. And image understanding reads charts and screenshots.</p>
+  </div>
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
+    <div class="station"><span class="mono">All DeepSeek</span><h4>Coding (signature)</h4><p><em>"The chef's signature dish"</em>: matches GPT-class quality on programming across most languages.</p></div>
+    <div class="station"><span class="mono">All DeepSeek</span><h4>Writing (EN + ZH)</h4><p><em>"Chef who writes in two languages natively"</em>: bilingual emails, reports, posts.</p></div>
+    <div class="station"><span class="mono">All DeepSeek</span><h4>Document Analysis</h4><p><em>"Chef who reads the filing cabinet"</em>: upload and query long documents using the 1M context.</p></div>
+    <div class="station"><span class="mono">Free web + app</span><h4>Web Search</h4><p><em>"Chef checking today's market"</em>: live information pulled in when the toggle is on.</p></div>
+    <div class="station"><span class="mono">All DeepSeek</span><h4>Image Understanding</h4><p><em>"Chef who can read photos and charts"</em>: upload visuals and ask questions, functional though less strong than ChatGPT or Claude on complex visuals.</p></div>
+  </div>
+</details>
+
+  <!-- The Kitchen Team -->
+  <div class="zone-block">
+    <h3>The Kitchen Team</h3>
+    <p>For complex workflows, the team system kicks in. Long-context multi-doc lets you upload many files at once and ask cross-document questions. Project threads keep conversations grouped. The self-host stack runs DeepSeek on your own infrastructure for total data control. API tool-use enables agentic workflows on the developer side. And thousands of community fine-tunes exist on Hugging Face: specialised variants for legal, medical, finance, and more.</p>
+  </div>
+  <details class="fold"><summary>Open the full station menu · 5 items</summary>
+<div class="stations">
+    <div class="station"><span class="mono">All DeepSeek</span><h4>Multi-Doc Context</h4><p><em>"Cooking with many ingredient crates at once"</em>: many files in one conversation, cross-document questions.</p></div>
+    <div class="station"><span class="mono">All DeepSeek</span><h4>Project Threads</h4><p><em>"Filing cabinets per topic"</em>: conversations grouped by project, reusable across sessions.</p></div>
+    <div class="station"><span class="mono">Open-source</span><h4>Self-Host Stack</h4><p><em>"Your own private kitchen"</em>: open weights plus your own GPUs, total data control, no telemetry.</p></div>
+    <div class="station"><span class="mono">Developer API</span><h4>API Tool-Use</h4><p><em>"Chef with extra kitchen gadgets"</em>: function calling for agentic workflows.</p></div>
+    <div class="station"><span class="mono">Open-source</span><h4>Community Fine-Tunes</h4><p><em>"Sous-chefs specialising"</em>: thousands of domain variants for legal, medical, finance, coding niches.</p></div>
+  </div>
+</details>
+</section>
+
+<!-- pull quote -->
+<div class="pull">
+  <blockquote>"DeepSeek costs 10 to 100 times <strong>less</strong> per token than ChatGPT or Claude for comparable quality on coding and reasoning."</blockquote>
+  <span class="mono">· why it's on the map</span>
+</div>
+
+<!-- 03 THE MENU -->
+<section class="sec" style="padding-top:0">
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <div><h2>The Menu. What to order first</h2><span class="mono">Third course · three dishes</span></div>
+  </div>
+  <div class="menu">
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><rect x="12" y="10" width="56" height="40" rx="5" stroke="#2C4BE0" stroke-width="2.5"/><path d="M24 26l8 6-8 6M40 40h16" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <span class="mono">Starter · free, 2 minutes</span>
+      <h3>The free chat</h3>
+      <p>Open chat.deepseek.com or the mobile app and just start asking. No subscription, no credit card, generous daily caps.</p>
+    </div>
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><path d="M10 50c10-24 50-24 60 0" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/><circle cx="40" cy="20" r="9" stroke="#2C4BE0" stroke-width="2.5"/></svg></div>
+      <span class="mono">Main · 20 minutes</span>
+      <h3>A real coding task</h3>
+      <p>Give it a genuine bug or refactor. This is the signature dish: coding quality that matches the famous kitchens for a fraction of the price.</p>
+    </div>
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><circle cx="40" cy="32" r="22" stroke="#2C4BE0" stroke-width="2.5"/><path d="M40 18v14l10 8" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <span class="mono">Chef's special</span>
+      <h3>The long document</h3>
+      <p>Upload a 100-page contract or report and interrogate it. The 1M-word context handles it without losing the thread.</p>
+    </div>
+  </div>
+
+  <details class="fold"><summary>Open the full station menu · 10 items</summary>
+<div class="stations">
+    <div class="station"><span class="mono">Delivery</span><h4>Text Answer</h4><p><em>"Plate served quickly"</em>: fast on Flash, more careful on Pro with thinking on.</p></div>
+    <div class="station"><span class="mono">Delivery</span><h4>Code Blocks</h4><p><em>"Ready-to-serve technical dish"</em>: syntax-highlighted, copy-paste ready, with explanation and tests on request.</p></div>
+    <div class="station"><span class="mono">Delivery · free web + app</span><h4>Sourced Answer (web)</h4><p><em>"Plate with the supplier slip"</em>: cites web sources when search is on.</p></div>
+    <div class="station"><span class="mono">Delivery</span><h4>Document Summaries</h4><p><em>"Plated digest of long report"</em>: structured summaries, key clauses, action items from uploads.</p></div>
+    <div class="station"><span class="mono">Delivery</span><h4>Image-Grounded Reply</h4><p><em>"Plate that reflects the photo you showed"</em>: chart reads, screenshot analysis, diagram explanation.</p></div>
+    <div class="station"><span class="mono">Supply · free</span><h4>Web Search Supply</h4><p><em>"The general supplier"</em>: the same live web index behind the search toggle on chat and apps.</p></div>
+    <div class="station"><span class="mono">Supply · free</span><h4>File Uploads</h4><p><em>"Bringing your own ingredients"</em>: PDFs, docs, screenshots grounded directly in the conversation.</p></div>
+    <div class="station"><span class="mono">Supply · dev API</span><h4>Developer API</h4><p><em>"Wholesale ingredients, low cost"</em>: OpenAI-compatible, roughly 1-3% of GPT-class cost.</p></div>
+    <div class="station"><span class="mono">Supply · open-source</span><h4>Open-Source Weights</h4><p><em>"Public recipes for self-hosters"</em>: free download on Hugging Face and ModelScope, Apache-style license.</p></div>
+    <div class="station"><span class="mono">Supply</span><h4>Few Connectors</h4><p><em>"No delivery network"</em>: no native Slack, Drive, or Notion integrations; copy-paste is the bridge.</p></div>
+  </div>
+</details>
+  <p class="menu-more">The kitchen also connects outward through web search, file uploads, the API, and open weights: the supply lines above. Every station gets its own walkthrough in the full guide. This is the seating chart.</p>
+</section>
+
+
+<!-- 04 KNOW BEFORE YOU EAT -->
+<section class="warn" style="margin-top:72px">
+  <div class="warn-inner">
+    <span class="mono">Fourth course · read this before you trust it</span>
+    <h2>Know before you eat.</h2>
+    <div class="warn-grid">
+      <div class="warn-card"><div class="term">Hallucination</div><p><em>"Saying 'nut-free' when it's not."</em> A confident answer with made-up facts. Every AI does this, DeepSeek included, so verify any high-stakes claim against the actual source.</p></div>
+      <div class="warn-card"><div class="term">Confabulation</div><p><em>"Making up where the eggs came from."</em> Fills gaps with a convincing story instead of saying "I do not know," including invented library names for code.</p></div>
+      <div class="warn-card"><div class="term">Sycophancy</div><p><em>"A yes-chef who always agrees."</em> Agrees with everything you say even when you're wrong, building on a flawed approach instead of flagging the gap.</p></div>
+      <div class="warn-card"><div class="term">Prompt injection</div><p><em>"Sneaking a fake order ticket into the kitchen."</em> Hidden instructions in a webpage or document can try to steer the chef off course.</p></div>
+      <div class="warn-card"><div class="term">Data leakage</div><p><em>"Telling table 5 what table 3 ordered."</em> On the hosted product, conversations may be used for training or improvement. Self-hosting fully removes this.</p></div>
+      <div class="warn-card"><div class="term">Bias</div><p><em>"Unconsciously serving bigger portions to some."</em> Inherits biases from training data, including a Chinese-internet skew on certain sensitive topics.</p></div>
+      <div class="warn-card"><div class="term">Overconfidence</div><p><em>"Full certainty when they should warn you."</em> States debated facts as settled with no hedge, so cross-check anything important.</p></div>
+      <div class="warn-card"><div class="term">China-hosted data</div><p><em>"Foreign kitchen handles your order."</em> Hosted chat and API process data in China, fine for personal use, worth checking for regulated industries. Self-host removes this entirely.</p></div>
+      <div class="warn-card"><div class="term">Chinese content rules</div><p><em>"Different health codes in different countries."</em> Safety filters follow Chinese regulation, so sensitive political topics may get cautious or non-answers on the hosted product.</p></div>
+    </div>
+    <!-- Fast Forward CTA hidden pending launch (restore by removing this comment wrapper): <a class="warn-link" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-deepseek">Fast Forward includes 42 verification prompts that make AI prove its work before you trust it. See Fast Forward →</a> -->
+  </div>
+</section>
+
+<!-- subscribe strip -->
+<div class="subs"><div class="subs-in">
+  <div><h3>Get every new Kitchen Map in your inbox.</h3><p>Plus The Insider Brief: one curated AI briefing every Tuesday, verdicts included.</p></div>
+  <a href="https://brief.shiftandlead.com">Subscribe free →</a>
+</div></div>
+
+<!-- 05 THE BILL -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <div><h2>The Bill. What it costs, what's next</h2><span class="mono">Last course · 1 min</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p>The hosted chat and mobile apps are entirely free: no subscription, no credit card, generous daily caps. On the API, V4 Flash runs around $0.14 per million input tokens, and V4 Pro (stronger reasoning) is currently sold at a 75% discount off list. That's roughly 1-3% of what GPT-class APIs charge for comparable work. Self-hosting the open-source weights is free to download. You only pay for your own compute.</p>
+      <p><strong>Where DeepSeek fits:</strong> it wins on cost (10-100x cheaper API for similar coding and reasoning quality), on open-source (full weights, self-hostable, audit-friendly), and on free chat (no $20/month for the hosted product). It loses on integrations versus ChatGPT or Copilot, on English polish for nuanced professional writing versus Claude, and on privacy for compliance-heavy industries unless you self-host. Pick DeepSeek for high-volume API workloads, coding-heavy teams, bilingual EN/ZH work, or self-hosting needs.</p>
+      <p><strong>Next on the map:</strong> <a href="chez-kimi.html">Chez Kimi, the long-context kitchen &rarr;</a></p>
+    </div>
+  </div>
+
+  <div class="plans-wrap">
+    <div class="plans-card">
+      <div class="cap">Chez DeepSeek · Plans at a Glance</div>
+      <span class="mono">Based on deepseek.com · June 2026 · USD, subject to change, verify current rates</span>
+      <table>
+        <thead><tr><th>How you use it</th><th>Cost</th><th>Best for</th><th>Key features</th></tr></thead>
+        <tbody>
+          <tr><td><strong>chat.deepseek.com + mobile</strong></td><td>Free</td><td>Everyone</td><td>Chat, web search, file upload, generous daily caps, no subscription</td></tr>
+          <tr><td><strong>API V4 Flash</strong></td><td>~$0.14/M in tokens</td><td>High-volume apps</td><td>Roughly 1/35th the cost of GPT-class APIs for comparable work</td></tr>
+          <tr><td><strong>API V4 Pro</strong></td><td>Deep discount</td><td>Complex reasoning</td><td>Stronger reasoning for harder coding/analysis tasks, currently 75% off list</td></tr>
+          <tr><td><strong>Self-host (open-source)</strong></td><td>Free download</td><td>Privacy-first orgs</td><td>Full data control, you supply the GPUs and power</td></tr>
+        </tbody>
+      </table>
+      <p class="foot">Reference: ChatGPT Plus $20/mo, Claude Pro $20/mo. DeepSeek hosted chat is free; the API is roughly 1-3% of GPT-class pricing for similar work.</p>
+    </div>
+  </div>
+
+  <div class="stations" style="margin-top:34px">
+    <div class="station"><span class="mono">Comparison</span><h4>vs ChatGPT Plus</h4><p><em>"Cost + open vs ecosystem + polish"</em>: ChatGPT wins on connectors, voice, image, video, ecosystem breadth. DeepSeek wins on price and open weights; the API runs 1-3% of GPT cost.</p></div>
+    <div class="station"><span class="mono">Comparison</span><h4>vs Claude Pro</h4><p><em>"Cost vs nuance"</em>: Claude wins on long-form writing and agentic computer use. DeepSeek wins on the lowest cost serious coding API plus a free hosted chat.</p></div>
+    <div class="station"><span class="mono">Comparison</span><h4>vs Qwen</h4><p><em>"Two Chinese chefs compared"</em>: Qwen offers 100+ models and global data centres. DeepSeek offers fewer models but the lowest cost reasoning and coding API on the market.</p></div>
+    <div class="station"><span class="mono">Fit</span><h4>Ideal User</h4><p><em>"When DeepSeek shines"</em>: cost-sensitive developers, coding-heavy teams, bilingual EN/ZH workflows, and privacy-first orgs self-hosting open weights.</p></div>
+    <div class="station"><span class="mono">Governance · free</span><h4>Free Hosted Chat</h4><p><em>"Free dining, every day"</em>: $0, generous daily caps, no credit card required.</p></div>
+    <div class="station"><span class="mono">Governance · dev API</span><h4>API V4 Flash Pricing</h4><p><em>"Wholesale, low cost"</em>: around $0.14 per million input tokens.</p></div>
+    <div class="station"><span class="mono">Governance · dev API</span><h4>API V4 Pro Pricing</h4><p><em>"Premium ingredient, still low cost"</em>: currently 75% off list price, still priced well below Western premium models.</p></div>
+    <div class="station"><span class="mono">Governance · open-source</span><h4>Self-Host (free download)</h4><p><em>"Public recipe"</em>: weights are free, you pay your own compute, total data control.</p></div>
+    <div class="station"><span class="mono">Governance · China-hosted</span><h4>China Compliance Layer</h4><p><em>"Local health-code rules"</em>: the hosted product follows Chinese content regulation; self-hosting runs without that layer.</p></div>
+  </div>
+</section>
+
+<p style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0">Ready for more than free? The three ways to go further &rarr;</a></p>
+
+<!-- byline -->
+<div class="byline">
+  <div class="byline-in">
+    <img src="../closeUp.jpeg" alt="Fatiha Chikh" loading="lazy" decoding="async">
+    <p>Written by <strong>Fatiha Chikh</strong>, who is hiring 99 AI employees to run her business in public. <a href="../about.html">The story &rarr;</a></p>
+  </div>
+</div>
+
+<div class="ipbar">
+  <p><a href="../privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved. Original IP: The Kitchen Map&trade; format, text and diagrams may not be reproduced, scraped, or used as training data without written permission.</p>
+</div>
+
+<script>
+document.querySelectorAll('.capture-form').forEach(function(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    var email = form.querySelector('[name="email"]').value;
+    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Done.'; return; }
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      var r = await fetch('https://formspree.io/f/xgojoyka', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-chez-deepseek'}) });
+      fetch('https://auto.shiftandlead.com/webhook/formspree-lead', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-chez-deepseek'}) });
+      if (r.ok) { btn.textContent = 'On its way.'; } else { btn.disabled=false; btn.textContent='Try again'; }
+    } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
+  });
+});
+</script>
+
+<script>
+try {
+  var r = JSON.parse(localStorage.getItem('sl_read') || '[]');
+  if (r.indexOf('chez-deepseek') === -1) { r.push('chez-deepseek'); localStorage.setItem('sl_read', JSON.stringify(r)); }
+} catch(e){}
+</script>
+
+</body>
+</html>

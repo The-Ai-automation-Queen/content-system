@@ -21,13 +21,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
 :root{
   --canvas:#FFFFFF;
-  --cream:#EEF2FC;
+  --cream:#FAF7F2;
   --ink:#1A1A1A;
-  --rule:#D8D6D2;
-  --muted:#5C5A57;
+  --rule:#E8E4DD;
+  --muted:#555;
   --accent:#2C4BE0;
   --accent-deep:#1B2EA0;
   --accent-tint:#E4EAFB;
@@ -357,7 +358,7 @@ section{scroll-margin-top:70px}
 </div></section>
 
 
-<section class="live-week" style="background:#EEF2FC;border-top:1px solid #E4EAFB;border-bottom:1px solid #E4EAFB;padding:40px 32px">
+<section class="live-week" style="background:#FAF7F2;border-top:1px solid #E4EAFB;border-bottom:1px solid #E4EAFB;padding:40px 32px">
   <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px" class="live-week-grid">
     <div>
       <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#1B2EA0;margin-bottom:8px">The scoreboard</div>
@@ -549,9 +550,10 @@ section{scroll-margin-top:70px}
   <h2>Speaking, bespoke builds, or just say hello.</h2>
   <p>For workshops, keynotes, or a quoted done-with-you project, or if you just want to be first in line when the Community opens.</p>
   <form class="contact-form" id="contact-form" style="display:flex;flex-direction:column;gap:8px;max-width:480px;margin:0 auto 12px">
-    <input type="text" name="name" placeholder="Your name" style="padding:12px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
-    <input type="email" name="email" placeholder="your@email.com" required style="padding:12px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
-    <textarea name="message" placeholder="What are you working on?" rows="3" style="padding:12px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px;resize:vertical"></textarea>
+    <input type="text" name="name" placeholder="Your name" style="padding:12px 14px;border:1px solid #E8E4DD;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+    <input type="email" name="email" placeholder="your@email.com" required style="padding:12px 14px;border:1px solid #E8E4DD;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+    <textarea name="message" placeholder="What are you working on?" rows="3" style="padding:12px 14px;border:1px solid #E8E4DD;border-radius:4px;font-family:Inter,sans-serif;font-size:14px;resize:vertical"></textarea>
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
     <button type="submit" class="btn-primary" style="border:none;cursor:pointer;align-self:center">Send</button>
   </form>
   <p class="contact-note" id="contact-status"></p>

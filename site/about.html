@@ -21,8 +21,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-:root{--canvas:#FFFFFF;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;--cream:#EEF2FC;--electric:#2C4BE0}
+:root{--canvas:#FFFFFF;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#555;--rule:#E8E4DD;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;--cream:#FAF7F2;--electric:#2C4BE0}
 *{box-sizing:border-box}
 body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.75}
 a{color:var(--accent)}
@@ -52,9 +53,9 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
 .receipt{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:18px 20px}
 .receipt .n{font-family:'Space Mono',monospace;font-size:1.5rem;color:var(--accent)}
 .receipt p{margin:.3rem 0 0;font-family:'Inter',sans-serif;font-size:.85rem;color:var(--muted)}
-.company{background:var(--ink);color:#F5F0EB;border-radius:14px;padding:36px;margin:8px 0}
+.company{background:var(--ink);color:#FAF7F2;border-radius:14px;padding:36px;margin:8px 0}
 .company h2{color:#fff}
-.company p{color:#B9C6F2;max-width:60ch}
+.company p{color:#E4EAFB;max-width:60ch}
 .company .label{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#E4EAFB}
 .depts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .depts span{font-family:'Inter',sans-serif;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.25)}
@@ -113,6 +114,7 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
 </script>
 <script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 <script defer src="/lib/motion.js"></script>
+<script defer src="/assets/capture.js"></script>
 </head>
 <body>
 
@@ -154,7 +156,7 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
     <div class="receipt"><div class="n">Nike</div><p>Exclusive vendor at LeLabPlus, the zero-carbon fashion factory I co-founded in France</p></div>
     <div class="receipt"><div class="n">2M</div><p>Protective masks produced for French hospitals during COVID</p></div>
     <div class="receipt"><div class="n">99</div><p>AI employees being hired in public, receipts on <a href="99.html">the scoreboard</a></p></div>
-    <div class="receipt"><div class="n">16+</div><p>Free plain-English guides, the Kitchen Map series</p></div>
+    <div class="receipt"><div class="n">16+</div><p>Free plain-English guides, including ten tool verdicts</p></div>
     <div class="receipt"><div class="n">4</div><p>Languages: English, French, Spanish, Italian (Arabic in progress)</p></div>
   </div>
 </section>
@@ -179,7 +181,7 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
     <p style="max-width:58ch">A private community for everyday entrepreneurs using AI and automation to win back their time. Live build sessions, templates, and people on the same road.</p>
     <p style="max-width:58ch"><strong>Founding spots, locked for life.</strong> Waitlist open now, no dollar figure until the doors actually open.</p>
     <form id="community-waitlist" style="display:flex;gap:10px;flex-wrap:wrap;max-width:480px;margin-top:14px">
-      <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:220px;padding:12px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+      <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:220px;padding:12px 14px;border:1px solid #E8E4DD;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <button type="submit" class="btn btn-primary" style="cursor:pointer;border:none">Join the founding waitlist</button>
     </form>
@@ -213,6 +215,28 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
     <a class="btn btn-ghost" href="free-resources.html">Start with the free guides</a>
   </div>
 </section>
+
+<!-- partial:newsletter -->
+<section class="newsletter" aria-labelledby="nl-title">
+  <div class="nl-grid">
+    <div class="nl-copy">
+      <p class="eyebrow mono">The Insider Brief</p>
+      <h2 id="nl-title">One clear verdict on the AI news that matters.</h2>
+      <p>Every week. What changed, whether you should care, and what to do about it. Free.</p>
+      <form class="capture-form" data-source="about">
+        <label class="visually-hidden" for="nl-email">Email address</label>
+        <input id="nl-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit">Subscribe free</button>
+      </form>
+      <p class="capture-fineprint">No cost, no catch. Unsubscribe anytime.</p>
+    </div>
+    <div class="nl-art">
+      <img src="/assets/art/insider-brief.svg" alt="A weekly briefing card showing three headlines each marked with a plain verdict." loading="lazy" decoding="async" width="480" height="360">
+    </div>
+  </div>
+</section>
+<!-- /partial:newsletter -->
 
 <footer class="footer"><div class="footer-inner">
   <div>
