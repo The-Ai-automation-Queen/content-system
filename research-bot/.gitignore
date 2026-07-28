@@ -1,0 +1,12 @@
+# NEVER commit secrets or credentials
+.env
+.env.*
+*.env
+bird-cookies.json
+*cookies*.json
+*.key
+*.pem
+*.log
+
+# Node
+node_modules/
