@@ -1,150 +1,189 @@
-// synthesizer.mjs — Filter and synthesize crawled items via Ollama or Gemini
-//
-// MERGED 2026-07-08: this file used to be the "loose" version — it had no
-// code-level integrity check on ACT verdicts, only the prompt asked nicely.
-// The orphaned top-level copy of this file had enforceActIntegrity(), which
-// demotes a fake ACT to WATCH in CODE (regex checks against the actual
-// verdict_text), independent of whether the LLM followed the prompt. That
-// is the fix for weak newsletter CTAs: a card can no longer claim ACT unless
-// its verdict_text passes the imperative-opener test and isn't secretly
-// telling "companies" to do something. Category standardized to "Healthcare".
+// synthesizer.mjs — Evidence extraction, judgment and independent verification.
 
-import { FILTER_PROMPT, SYNTHESIZE_PROMPT } from './prompts.mjs';
+import {
+  FILTER_PROMPT,
+  FACT_EXTRACTION_PROMPT,
+  JUDGMENT_PROMPT,
+  VERIFICATION_PROMPT
+} from './prompts.mjs';
+import {
+  enforceEditorialContract,
+  validateFacts,
+  validateDraft
+} from './editorial-contract.mjs';
 
-// Rate-limit helper
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+const LLM_TIMEOUT_MS = 120000;
+
+function llmFetch(url, options) {
+  return fetch(url, Object.assign({}, options, { signal: AbortSignal.timeout(LLM_TIMEOUT_MS) }));
 }
 
-// Call Ollama (local LLM on VPS)
-async function callOllama(prompt, ollamaUrl, model) {
-  var url = ollamaUrl + '/api/generate';
-  var res = await fetch(url, {
+function sleep(ms) {
+  return new Promise(function (resolve) { setTimeout(resolve, ms); });
+}
+
+async function callOllama(prompt, config) {
+  var url = config.ollamaUrl + '/api/generate';
+  var res = await llmFetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: model,
+      model: config.model,
       prompt: prompt,
       stream: false,
+      format: config.expectJson ? 'json' : undefined,
       options: {
-        temperature: 0.3,
-        num_predict: 500
+        temperature: config.temperature === undefined ? 0.1 : config.temperature,
+        num_predict: config.maxOutputTokens || 1400
       }
     })
   });
-  if (!res.ok) {
-    var errText = await res.text();
-    throw new Error('Ollama error: ' + res.status + ' ' + errText);
-  }
+  if (!res.ok) throw new Error('Ollama error: ' + res.status + ' ' + await res.text());
   var data = await res.json();
-  return data.response.trim();
+  return String(data.response || '').trim();
 }
 
-// Call Gemini API (fallback)
-async function callGemini(prompt, apiKey, model) {
-  var url = 'https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent?key=' + apiKey;
-  var res = await fetch(url, {
+async function callGemini(prompt, config) {
+  var url = 'https://generativelanguage.googleapis.com/v1beta/models/' + config.model + ':generateContent?key=' + config.apiKey;
+  var res = await llmFetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       contents: [{ parts: [{ text: prompt }] }],
       generationConfig: {
-        temperature: 0.3,
-        maxOutputTokens: 500
+        temperature: config.temperature === undefined ? 0.1 : config.temperature,
+        maxOutputTokens: config.maxOutputTokens || 1400,
+        responseMimeType: config.expectJson ? 'application/json' : 'text/plain'
       }
     })
   });
-  if (!res.ok) {
-    var errText = await res.text();
-    throw new Error('Gemini API error: ' + res.status + ' ' + errText);
-  }
+  if (!res.ok) throw new Error('Gemini API error: ' + res.status + ' ' + await res.text());
   var data = await res.json();
-  return data.candidates[0].content.parts[0].text.trim();
+  return String(data.candidates?.[0]?.content?.parts?.[0]?.text || '').trim();
 }
 
-// Unified LLM call — routes to Ollama or Gemini based on config
-async function callLLM(prompt, config) {
-  if (config.provider === 'ollama') {
-    return await callOllama(prompt, config.ollamaUrl, config.model);
-  } else {
-    return await callGemini(prompt, config.apiKey, config.model);
+async function callOpenRouter(prompt, config) {
+  var res = await llmFetch('https://openrouter.ai/api/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + config.apiKey,
+      'HTTP-Referer': 'https://brief.shiftandlead.com',
+      'X-Title': 'The AI Insider Brief'
+    },
+    body: JSON.stringify({
+      model: config.model,
+      messages: [{ role: 'user', content: prompt }],
+      temperature: config.temperature === undefined ? 0.1 : config.temperature,
+      max_tokens: config.maxOutputTokens || 1400,
+      response_format: config.expectJson ? { type: 'json_object' } : undefined
+    })
+  });
+  if (!res.ok) throw new Error('OpenRouter error: ' + res.status + ' ' + await res.text());
+  var data = await res.json();
+  return String(data.choices?.[0]?.message?.content || '').trim();
+}
+
+async function callLLM(prompt, config, options) {
+  var requestConfig = Object.assign({}, config, options || {});
+  if (requestConfig.provider === 'ollama') return callOllama(prompt, requestConfig);
+  if (requestConfig.provider === 'gemini') return callGemini(prompt, requestConfig);
+  if (requestConfig.provider === 'openrouter') return callOpenRouter(prompt, requestConfig);
+  throw new Error('Unsupported LLM provider: ' + requestConfig.provider);
+}
+
+function parseJsonResponse(result, stage) {
+  var cleaned = String(result || '')
+    .replace(/```json\s*/gi, '')
+    .replace(/```\s*/g, '')
+    .trim();
+  var first = cleaned.indexOf('{');
+  var last = cleaned.lastIndexOf('}');
+  if (first === -1 || last <= first) throw new Error(stage + ' returned no JSON object');
+  try {
+    return JSON.parse(cleaned.slice(first, last + 1));
+  } catch (err) {
+    throw new Error(stage + ' returned invalid JSON: ' + err.message);
   }
 }
 
-// Filter: should this article become a brief?
+function stageConfig(config, stage) {
+  if (config && config.stages && config.stages[stage]) return config.stages[stage];
+  return config;
+}
+
+async function stagePause(config) {
+  await sleep(config.provider === 'ollama' ? 100 : 500);
+}
+
 export async function filterItem(item, config) {
-  var prompt = FILTER_PROMPT(item);
-  var result = await callLLM(prompt, config);
-  await sleep(500);
-  return result.toUpperCase().includes('BRIEF');
+  var selected = stageConfig(config, 'filter');
+  var result = await callLLM(FILTER_PROMPT(item), selected, {
+    expectJson: false,
+    maxOutputTokens: 20,
+    temperature: 0
+  });
+  await stagePause(selected);
+  return /^BRIEF\b/i.test(result.trim());
 }
 
-// Synthesize: write the intelligence card
+export async function extractFacts(item, config) {
+  var selected = stageConfig(config, 'extraction');
+  var result = await callLLM(FACT_EXTRACTION_PROMPT(item), selected, {
+    expectJson: true,
+    maxOutputTokens: 1500,
+    temperature: 0
+  });
+  await stagePause(selected);
+  var facts = parseJsonResponse(result, 'Evidence extraction');
+  var valid = validateFacts(facts);
+  if (!valid.ok) throw new Error('Invalid evidence record: ' + valid.reason);
+  return facts;
+}
+
+export async function draftJudgment(item, facts, config) {
+  var selected = stageConfig(config, 'judgment');
+  var result = await callLLM(JUDGMENT_PROMPT(item, facts), selected, {
+    expectJson: true,
+    maxOutputTokens: 1200,
+    temperature: 0.1
+  });
+  await stagePause(selected);
+  var draft = parseJsonResponse(result, 'Judgment');
+  var valid = validateDraft(draft, facts);
+  if (!valid.ok) throw new Error('Invalid judgment draft: ' + valid.reason);
+  return draft;
+}
+
+export async function verifyJudgment(item, facts, draft, config) {
+  var selected = stageConfig(config, 'verification');
+  var result = await callLLM(VERIFICATION_PROMPT(item, facts, draft), selected, {
+    expectJson: true,
+    maxOutputTokens: 800,
+    temperature: 0
+  });
+  await stagePause(selected);
+  var verification = parseJsonResponse(result, 'Verification');
+  if (['PASS', 'DEMOTE', 'HOLD'].indexOf(String(verification.decision || '').toUpperCase()) === -1) {
+    throw new Error('Invalid verification decision');
+  }
+  verification.decision = String(verification.decision).toUpperCase();
+  return verification;
+}
+
 export async function synthesizeCard(item, config) {
-  var prompt = SYNTHESIZE_PROMPT(item);
-  var result = await callLLM(prompt, config);
-  await sleep(500);
+  var facts = await extractFacts(item, config);
+  var draft = await draftJudgment(item, facts, config);
+  var verification = await verifyJudgment(item, facts, draft, config);
+  var enforced = enforceEditorialContract(draft, facts, item, verification);
 
-  // Clean up response — remove markdown backticks if present
-  result = result.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+  if (!enforced.ok) throw new Error('Editorial contract rejected card: ' + enforced.reason);
 
-  var card = JSON.parse(result);
-
-  // Validate
-  var valid = validateCard(card);
-  if (!valid.ok) {
-    throw new Error('Invalid card: ' + valid.reason);
-  }
-
-  // ACT integrity gate — demote fake ACTs to WATCH. This runs regardless of
-  // what the LLM claimed; it is a code-level check, not a prompt-level one.
-  card = enforceActIntegrity(card);
-
-  // Add metadata
-  card.source_url = item.url;
-  card.source_name = item.sourceName;
-
+  var card = enforced.card;
+  card.source_url = item.url || '';
+  card.source_name = item.sourceName || 'Unknown';
+  card.source_published_at = item.publishedAt || null;
+  card.article_content_chars = String(item.content || '').length;
+  card.article_content_complete = Boolean(item.content_complete);
   return card;
-}
-
-// Hard gate against fake ACT verdicts.
-// Demotes ACT to WATCH when verdict_text uses vague verbs or names an organisation as subject.
-export var FAKE_ACT_VERBS = /\b(consider|explore|evaluate|experiment with|stay (informed|on top of)|keep an eye|be (aware|prepared)|maximi[sz]e|leverage|navigate|harness|embrace|look into|think about|improve (performance|presence|experience|results))\b/i;
-export var ORG_SUBJECT = /^(companies|businesses|organi[sz]ations|enterprises|teams|the industry|firms|brands)\s+(should|must|need to|have to|ought to)/i;
-export var IMPERATIVE_OPENERS = /^(run|open|check|change|ask|download|audit|switch|disable|opt out|save|screenshot|read|review|update|delete|enable|set|turn (on|off)|copy|paste|test|verify|confirm|install|uninstall|export|import|share|forward|bookmark|subscribe|unsubscribe|toggle|adjust|configure|edit|create|measure|track|monitor|compare|search|browse|click|select|choose|pick|take|do|stop|start|pause|resume|join|leave|book|schedule|call|email|message|sign up|log in|log out)\b/i;
-
-export function enforceActIntegrity(card) {
-  if (card.verdict !== 'ACT') return card;
-  var t = (card.verdict_text || '').trim();
-  if (FAKE_ACT_VERBS.test(t) || ORG_SUBJECT.test(t) || !IMPERATIVE_OPENERS.test(t)) {
-    card.verdict = 'WATCH';
-    card._demoted_from = 'ACT';
-  }
-  return card;
-}
-
-// Validate card has all required fields and values
-function validateCard(card) {
-  var categories = ['Breaking', 'Tools', 'Privacy', 'Strategy', 'Marketing', 'Real Estate', 'Healthcare', 'Finance', 'Education', 'Media'];
-  var verdicts = ['ACT', 'WATCH', 'IGNORE'];
-
-  if (!card.category || categories.indexOf(card.category) === -1) {
-    return { ok: false, reason: 'Invalid category: ' + card.category };
-  }
-  if (!card.headline || card.headline.length > 100) {
-    return { ok: false, reason: 'Headline missing or too long' };
-  }
-  if (!card.narrative || card.narrative.length > 350) {
-    return { ok: false, reason: 'Narrative missing or too long' };
-  }
-  if (!card.verdict || verdicts.indexOf(card.verdict) === -1) {
-    return { ok: false, reason: 'Invalid verdict: ' + card.verdict };
-  }
-  if (!card.verdict_text) {
-    return { ok: false, reason: 'Verdict text missing' };
-  }
-  if (!card.topics || !Array.isArray(card.topics) || card.topics.length === 0) {
-    return { ok: false, reason: 'Topics missing' };
-  }
-  return { ok: true };
 }

@@ -2,9 +2,12 @@
 // Idempotent. Safe to run daily via cron. Keeps the public board lean.
 
 import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { dirname, resolve } from 'path';
+import { loadMergedConfig } from './config-loader.mjs';
 
-const BRIEFS_PATH = '/root/ai-insider-brief-pipeline/data/briefs.json';
-const ARCHIVE_PATH = '/root/ai-insider-brief-pipeline/data/archive.json';
+const env = loadMergedConfig(process.cwd()).env;
+const BRIEFS_PATH = env.BRIEFS_JSON_PATH || '/root/ai-insider-brief-pipeline/data/briefs.json';
+const ARCHIVE_PATH = env.ARCHIVE_JSON_PATH || resolve(dirname(BRIEFS_PATH), 'archive.json');
 const ARCHIVE_DAYS = 30;
 
 function loadJSON(path, fallback) {
@@ -29,7 +32,9 @@ function main() {
 
   cards.forEach(c => {
     const t = c.timestamp ? new Date(c.timestamp).getTime() : 0;
-    if (t && t < cutoff) {
+    // Curated historical cards are deliberately part of the public reading
+    // library. Only ordinary expiring feed cards are moved out.
+    if (c.lifecycle !== 'archive' && t && t < cutoff) {
       moved.push(c);
     } else {
       keep.push(c);

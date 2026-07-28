@@ -4,8 +4,9 @@
 
 import { init, sendMessage, sendMessageWithButtons, editMessage, answerCallbackQuery, getUpdates } from './telegram.mjs';
 import { filterItem, synthesizeCard } from './synthesizer.mjs';
-import { loadMergedConfig, resolveLLMConfig } from './config-loader.mjs';
+import { loadMergedConfig, resolvePipelineLLMConfig } from './config-loader.mjs';
 import { getConfig as getNewsletterConfig, buildEmailHTML, selectCards, buildSubject, sendBroadcast } from './newsletter-sender.mjs';
+import { EDITORIAL_CONTRACT_VERSION, isCurrentEditorialCard } from './editorial-contract.mjs';
 import { readFileSync, writeFileSync, existsSync, mkdirSync, unlinkSync } from 'fs';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -41,14 +42,38 @@ function formatCardMessage(card) {
   parts.push(escapeHtml(card.narrative || ''));
   parts.push('');
 
+  if (!isCurrentEditorialCard(card)) {
+    parts.push('🔒 <b>LEGACY CARD: APPROVAL BLOCKED</b>');
+    parts.push('This card was generated before the evidence-based editorial contract. Preserve it for evaluation, but do not publish its old verdict.');
+    return parts.join('\n');
+  }
+
   var emoji = verdictEmoji(card.verdict);
-  parts.push(emoji + ' <b>' + (card.verdict || '').toUpperCase() + '</b>: ' + escapeHtml(card.verdict_text || ''));
+  parts.push(emoji + ' <b>' + (card.verdict || '').toUpperCase() + '</b>');
+  parts.push('<b>For:</b> ' + escapeHtml((card.applies_to || []).join(', ')));
+  parts.push('<b>Reason:</b> ' + escapeHtml(card.reason || ''));
+  if (card.verdict === 'ACT') parts.push('<b>Action:</b> ' + escapeHtml(card.action || ''));
+  if (card.verdict === 'WATCH') parts.push('<b>Trigger:</b> ' + escapeHtml(card.trigger || ''));
+  parts.push('<b>Confidence:</b> ' + Math.round(Number(card.confidence || 0) * 100) + '%');
+  parts.push('<b>Verification:</b> ' + escapeHtml(card.verification?.status || 'unknown'));
+  if (card.verification_warning) parts.push('⚠️ <b>Warning:</b> ' + escapeHtml(card.verification_warning));
   parts.push('');
+
+  if (Array.isArray(card.evidence) && card.evidence.length > 0) {
+    parts.push('<b>Evidence</b>');
+    card.evidence.slice(0, 3).forEach(function (entry) {
+      parts.push('• ' + escapeHtml(entry.id + ': ' + entry.claim));
+      parts.push('  “' + escapeHtml(entry.source_text || '') + '”');
+    });
+    parts.push('');
+  }
 
   if (card.topics && card.topics.length > 0) {
     var topicList = Array.isArray(card.topics) ? card.topics.join(', ') : card.topics;
     parts.push('Topics: ' + escapeHtml(topicList));
   }
+
+  if (card.source_url) parts.push('Source: ' + escapeHtml(card.source_url));
 
   return parts.join('\n');
 }
@@ -65,11 +90,11 @@ function escapeHtml(text) {
 // Send a card for approval
 async function sendForApproval(card) {
   var text = formatCardMessage(card);
-  var buttons = [
+  var buttons = isCurrentEditorialCard(card) ? [
     { text: '✅ Approve', callback_data: 'approve:' + card.id },
     { text: '✏️ Edit', callback_data: 'edit:' + card.id },
     { text: '❌ Reject', callback_data: 'reject:' + card.id }
-  ];
+  ] : [{ text: '🗄 Keep for evaluation', callback_data: 'legacy:' + card.id }];
   return await sendMessageWithButtons(CHAT_ID, text, buttons);
 }
 
@@ -81,8 +106,23 @@ function ensureDir(filePath) {
   }
 }
 
+function approvalValidationError(card) {
+  if (!isCurrentEditorialCard(card)) return 'Legacy editorial contract';
+  if (!Array.isArray(card.applies_to) || card.applies_to.length === 0) return 'Affected audience is missing';
+  if (!card.reason || !Array.isArray(card.evidence) || card.evidence.length === 0) return 'Reason or evidence is missing';
+  if (card.verification?.verified_verdict !== card.verdict) return 'Edited verdict requires regeneration and independent verification';
+  if (card.verdict === 'ACT') {
+    if (!card.action) return 'ACT action is missing';
+    if (card.verification?.status !== 'verified' || card._demoted_from) return 'ACT was not independently verified';
+  }
+  if (card.verdict === 'WATCH' && !card.trigger) return 'WATCH trigger is missing';
+  return null;
+}
+
 // Add approved card to briefs.json
 function publishCard(card) {
+  var validationError = approvalValidationError(card);
+  if (validationError) throw new Error('Publish blocked: ' + validationError);
   ensureDir(BRIEFS_PATH);
 
   var briefs = { cards: [] };
@@ -158,7 +198,7 @@ async function buildTuesdayPreviewData() {
     return null;
   }
 
-  var allCards = briefsData.cards || [];
+  var allCards = (briefsData.cards || []).filter(isCurrentEditorialCard);
   var mode = 'weekly'; // The Brief sends once a week, Tuesday only (see CONTEXT.md).
   var cards = selectCards(allCards, mode);
 
@@ -323,12 +363,14 @@ async function fetchArticleContent(url) {
     var pText = stripHtmlBot(pMatch[1]).trim();
     if (pText.length > 40) paragraphs.push(pText);
   }
-  var content = paragraphs.join(' ').slice(0, 800);
+  var content = paragraphs.join(' ').slice(0, 10000);
   var domain = new URL(url).hostname.replace('www.', '');
 
   return {
     title: title || 'Untitled',
     content: content || 'No content extracted',
+    content_source: 'article',
+    content_complete: content.length >= 3000,
     url: url,
     sourceName: domain,
     sourceTier: 2,
@@ -340,11 +382,13 @@ async function fetchArticleContent(url) {
 function buildItemFromText(text) {
   var lines = text.split('\n').filter(function(l) { return l.trim().length > 0; });
   var title = lines[0] || 'Manual submission';
-  var content = lines.slice(1).join(' ').slice(0, 800) || title;
+  var content = lines.slice(1).join(' ').slice(0, 10000) || title;
 
   return {
     title: title.slice(0, 120),
     content: content,
+    content_source: 'manual',
+    content_complete: content.length >= 3000,
     url: '',
     sourceName: 'Manual submission',
     sourceTier: 2,
@@ -384,7 +428,7 @@ async function checkNewPending(force) {
   var pending = loadPending();
   var sentCount = 0;
   for (var i = 0; i < pending.length; i++) {
-    if (!pending[i]._sent && sentCount < APPROVAL_BATCH_SIZE) {
+    if (!pending[i]._sent && isCurrentEditorialCard(pending[i]) && sentCount < APPROVAL_BATCH_SIZE) {
       console.log('[BOT] New pending card found: ' + pending[i].headline);
       var sentMessage = await sendForApproval(pending[i]);
       if (!sentMessage || !sentMessage.message_id) {
@@ -457,6 +501,17 @@ async function pollLoop() {
               if (pendingCards[k].id === cardId) { card = pendingCards[k]; break; }
             }
             if (card) {
+              if (!isCurrentEditorialCard(card)) {
+                await editMessage(CHAT_ID, query.message.message_id, formatCardMessage(card) + '\n\n⛔ <b>NOT PUBLISHED</b>. This old-contract card is preserved only for evaluation.');
+                console.warn('[PUBLISH BLOCKED] Legacy card: ' + cardId);
+                continue;
+              }
+              var approvalError = approvalValidationError(card);
+              if (approvalError) {
+                await editMessage(CHAT_ID, query.message.message_id, formatCardMessage(card) + '\n\n⛔ <b>NOT PUBLISHED</b>: ' + escapeHtml(approvalError));
+                console.warn('[PUBLISH BLOCKED] ' + cardId + ': ' + approvalError);
+                continue;
+              }
               // Clean internal fields
               delete card._sent;
               var tempId = card.id;
@@ -476,6 +531,10 @@ async function pollLoop() {
               if (pendingCards[k].id === cardId) { card = pendingCards[k]; break; }
             }
             if (card) {
+              if (!isCurrentEditorialCard(card)) {
+                await editMessage(CHAT_ID, query.message.message_id, formatCardMessage(card) + '\n\n⛔ <b>EDIT BLOCKED</b>. Regenerate this source under contract v' + EDITORIAL_CONTRACT_VERSION + '.');
+                continue;
+              }
               editState[CHAT_ID] = { card: card, messageId: query.message.message_id };
               await editMessage(
                 CHAT_ID,
@@ -483,7 +542,7 @@ async function pollLoop() {
                 formatCardMessage(card) +
                 '\n\n✏️ <b>Send your corrections as a text message.</b>' +
                 '\nFormat: <code>field=value</code>' +
-                '\n\nEditable fields: <code>headline</code>, <code>narrative</code>, <code>verdict</code>, <code>verdict_text</code>, <code>category</code>' +
+                '\n\nEditable fields: <code>headline</code>, <code>narrative</code>, <code>verdict</code>, <code>applies_to</code>, <code>reason</code>, <code>trigger</code>, <code>action</code>, <code>category</code>' +
                 '\n\nExample: <code>headline=New headline text here</code>'
               );
               console.log('[BOT] Edit mode activated for card: ' + cardId);
@@ -494,6 +553,10 @@ async function pollLoop() {
             removePending(cardId);
             await editMessage(CHAT_ID, query.message.message_id, '❌ <b>REJECTED AND DISCARDED</b>');
             console.log('[BOT] Card rejected: ' + cardId);
+          }
+
+          else if (action === 'legacy') {
+            await editMessage(CHAT_ID, query.message.message_id, '🗄 <b>KEPT FOR EVALUATION</b>\n\nThis card cannot publish under the current editorial contract.');
           }
 
           // Tuesday send-approval flow. cardId here is 'send' or 'skip',
@@ -517,8 +580,11 @@ async function pollLoop() {
               var field = msgText.substring(0, eqIndex).trim().toLowerCase();
               var value = msgText.substring(eqIndex + 1).trim();
 
-              var validFields = ['headline', 'narrative', 'verdict', 'verdict_text', 'category'];
+              var validFields = ['headline', 'narrative', 'verdict', 'applies_to', 'reason', 'trigger', 'action', 'category'];
               if (validFields.indexOf(field) !== -1) {
+                if (field === 'applies_to') {
+                  value = value.split(',').map(function (part) { return part.trim(); }).filter(Boolean);
+                }
                 es.card[field] = value;
 
                 var pendingCards = loadPending();
@@ -532,7 +598,7 @@ async function pollLoop() {
                 console.log('[BOT] Card updated: ' + field + ' = ' + value);
               } else {
                 await sendMessageWithButtons(CHAT_ID,
-                  '\u26a0\ufe0f Unknown field: <code>' + escapeHtml(field) + '</code>\n\nValid fields: <code>headline</code>, <code>narrative</code>, <code>verdict</code>, <code>verdict_text</code>, <code>category</code>',
+                  '\u26a0\ufe0f Unknown field: <code>' + escapeHtml(field) + '</code>\n\nValid fields: <code>headline</code>, <code>narrative</code>, <code>verdict</code>, <code>applies_to</code>, <code>reason</code>, <code>trigger</code>, <code>action</code>, <code>category</code>',
                   []
                 );
                 continue;
@@ -625,7 +691,7 @@ async function main() {
   // LLM config for submit mode synthesis — only falls back to Ollama 3B
   // when Gemini is genuinely unconfigured, never as a silent default.
   try {
-    LLM_CONFIG = resolveLLMConfig(env);
+    LLM_CONFIG = resolvePipelineLLMConfig(env);
   } catch (err) {
     console.error('[BOT] ' + err.message);
     process.exit(1);

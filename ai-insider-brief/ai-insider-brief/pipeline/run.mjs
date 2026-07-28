@@ -1,6 +1,7 @@
-import { crawlSources } from './crawler.mjs';
+import { crawlSources, enrichArticleItem } from './crawler.mjs';
 import { filterItem, synthesizeCard } from './synthesizer.mjs';
-import { loadMergedConfig, resolveLLMConfig } from './config-loader.mjs';
+import { loadMergedConfig, resolvePipelineLLMConfig } from './config-loader.mjs';
+import { prioritizeCategoryCoverage } from './category-balance.mjs';
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -23,7 +24,7 @@ async function main() {
 
   var llmConfig;
   try {
-    llmConfig = resolveLLMConfig(env);
+    llmConfig = resolvePipelineLLMConfig(env);
   } catch (err) {
     console.error('[ERROR] ' + err.message);
     process.exit(1);
@@ -78,6 +79,7 @@ async function main() {
     pendingCards: pendingForDedup,
     maxCardsPerRun: maxCardsPerRun
   });
+  rawItems = prioritizeCategoryCoverage(rawItems);
 
   if (rawItems.length === 0) {
     console.log('\n[DONE] No new items found. Nothing to process.');
@@ -91,6 +93,8 @@ async function main() {
 
   for (var item of rawItems) {
     try {
+      item = await enrichArticleItem(item);
+      console.log('[ARTICLE] ' + item.title + ' | ' + String(item.content || '').length + ' chars | ' + (item.content_complete ? 'complete' : 'partial'));
       var shouldBrief = await filterItem(item, llmConfig);
       if (shouldBrief) {
         briefItems.push(item);

@@ -23,15 +23,16 @@ function saveState(statePath, state) {
 
 const UA = 'AI-Insider-Brief-Crawler/1.0';
 const FETCH_TIMEOUT_MS = 10_000;
-// Raised from 500 -> 4000. At 500 chars, cards were being synthesized from a
-// truncated opening fragment (often just the lede), which is most of why
-// scraping quality was weak: the LLM never saw the substance of the article.
-const MAX_CONTENT_CHARS = 4000;
+// Contract v2 needs enough source material to establish scope, audience,
+// evidence and unknowns. RSS descriptions remain discovery material; the
+// pipeline fetches the full article before filtering and judgment.
+const MAX_CONTENT_CHARS = 10000;
+const MIN_COMPLETE_CONTENT_CHARS = 3000;
 const MAX_SCRAPE_ARTICLES = 5;
-// Tier-2 sources are lower-trust / higher-noise. Cap how many of them can
-// occupy a run's card budget so one noisy tier-2 feed can't crowd out tier-1
-// signal. Expressed as a fraction of MAX_CARDS_PER_RUN (passed in from
-// run.mjs); default used only if the caller does not supply a cap.
+// Tier-2 sources are lower-trust / higher-noise. Cap how many enter the
+// evaluation pool, not the smaller publication budget. Applying the cap to
+// MAX_CARDS_PER_RUN itself previously removed nearly every Finance,
+// Healthcare, Education, Real Estate and Media candidate before review.
 const DEFAULT_TIER2_FRACTION = 0.4;
 
 // AI keyword gate — applied at fetch layer to non-AI-pure sources (source.ai_filter === true).
@@ -161,6 +162,75 @@ function extractArticleText(html) {
   return paragraphs.join(' ');
 }
 
+function extractArticleMeta(html) {
+  var author = '';
+  var authorMatch = html.match(/(?:property|name)=["'](?:author|article:author)["'][^>]*content=["']([^"']+)["']/i);
+  if (authorMatch) author = stripHtml(authorMatch[1]);
+
+  var publishedAt = null;
+  var dateMatch = html.match(/(?:property|name)=["'](?:article:published_time|date|pubdate|publish_date|datePublished)["'][^>]*content=["']([^"']+)["']/i);
+  if (dateMatch) publishedAt = parseDate(dateMatch[1]);
+
+  return { author: author, publishedAt: publishedAt };
+}
+
+export function extractTechmemeOriginal(html, techmemeUrl) {
+  const fragment = new URL(techmemeUrl).hash.replace(/^#/, '');
+  if (!fragment) return null;
+  const anchor = html.search(new RegExp("<A\\s+NAME=[\"']" + fragment.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + "[\"']", 'i'));
+  if (anchor < 0) return null;
+  const nextCluster = html.indexOf('<DIV CLASS="clus">', anchor + 20);
+  const block = html.slice(anchor, nextCluster > anchor ? nextCluster : anchor + 12000);
+  const link = block.match(/<A\s+CLASS=["']ourh["']\s+HREF=["']([^"']+)["'][^>]*>([\s\S]*?)<\/A>/i);
+  if (!link) return null;
+  return { url: stripHtml(link[1]), summary: stripHtml(link[2]) };
+}
+
+// Fetches the actual article after RSS discovery. Failure is conservative:
+// the discovery text is retained, but the item is marked incomplete so ACT
+// cannot pass the deterministic contract.
+export async function enrichArticleItem(item) {
+  if (!item || !item.url || item.content_source === 'article') return item;
+
+  try {
+    if (/^https?:\/\/(?:www\.)?techmeme\.com\//i.test(item.url)) {
+      const aggregatorUrl = item.url;
+      const aggregatorRes = await fetchWithTimeout(aggregatorUrl, {
+        headers: { Accept: 'text/html,application/xhtml+xml' }
+      });
+      if (aggregatorRes.ok) {
+        const aggregatorHtml = await aggregatorRes.text();
+        const original = extractTechmemeOriginal(aggregatorHtml, aggregatorUrl);
+        if (original) {
+          item.source_aggregator_url = aggregatorUrl;
+          item.url = original.url.replace(/&amp;/g, '&');
+          if (original.summary.length > String(item.content || '').length) item.content = original.summary;
+        }
+      }
+    }
+
+    var res = await fetchWithTimeout(item.url, {
+      headers: { Accept: 'text/html,application/xhtml+xml' }
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    var html = await res.text();
+    var fullText = cap(extractArticleText(html), MAX_CONTENT_CHARS);
+    var meta = extractArticleMeta(html);
+
+    if (fullText.length > String(item.content || '').length) item.content = fullText;
+    item.content_source = 'article';
+    item.content_complete = String(item.content || '').length >= MIN_COMPLETE_CONTENT_CHARS;
+    item.author = meta.author || item.author || '';
+    if (meta.publishedAt) item.publishedAt = meta.publishedAt.toISOString();
+    return item;
+  } catch (err) {
+    item.content_source = item.content_source || 'rss';
+    item.content_complete = false;
+    item.content_fetch_warning = err.message;
+    return item;
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Dedupe helpers — cross-source near-duplicate detection on normalized
 // titles. Several tier-1 and tier-2 sources cover the same wire story; we
@@ -286,6 +356,8 @@ async function fetchRSS(sourceUrl, lastChecked) {
       title,
       url,
       content,
+      content_source: 'rss',
+      content_complete: false,
       source: sourceUrl,
       publishedAt: publishedAt ? publishedAt.toISOString() : new Date().toISOString(),
     });
@@ -380,6 +452,8 @@ async function scrapePage(sourceUrl, lastChecked) {
         title: candidate.title,
         url: candidate.url,
         content,
+        content_source: 'article',
+        content_complete: content.length >= MIN_COMPLETE_CONTENT_CHARS,
         source: sourceUrl,
         publishedAt: publishedAt ? publishedAt.toISOString() : new Date().toISOString(),
       });
@@ -505,7 +579,8 @@ export async function crawlSources(sources, statePath, existingBriefs, opts) {
   }
 
   var beforeCap = allItems.length;
-  allItems = capTier2Items(allItems, maxCardsPerRun, tier2Fraction);
+  var evaluationPoolSize = maxCardsPerRun > 0 ? maxCardsPerRun * 3 : 0;
+  allItems = capTier2Items(allItems, evaluationPoolSize, tier2Fraction);
   if (beforeCap !== allItems.length) {
     console.log('[TIER-CAP] ' + (beforeCap - allItems.length) + ' tier-2 item(s) dropped over the ' + Math.round(tier2Fraction * 100) + '% cap');
   }

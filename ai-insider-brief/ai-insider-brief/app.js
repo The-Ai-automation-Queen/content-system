@@ -281,17 +281,27 @@ function createCardElement(card, index) {
   narrative.className = 'card-narrative';
   narrative.textContent = card.narrative;
 
-  // Verdict bar
+  // Verdict bar. Legacy cards keep their factual summary and source, but the
+  // old unverified recommendation is never presented as current advice.
+  var isEvidenceCard = card.editorial_contract_version === 2;
   var verdictBar = document.createElement('div');
-  verdictBar.className = 'verdict-bar verdict-' + card.verdict.toLowerCase();
+  verdictBar.className = 'verdict-bar verdict-' + (isEvidenceCard ? card.verdict.toLowerCase() : 'ignore');
 
   var verdictLabel = document.createElement('div');
   verdictLabel.className = 'verdict-label';
-  verdictLabel.textContent = card.verdict;
+  verdictLabel.textContent = isEvidenceCard ? card.verdict : 'ARCHIVE';
 
   var verdictText = document.createElement('div');
   verdictText.className = 'verdict-text';
-  verdictText.textContent = card.verdict_text;
+  if (!isEvidenceCard) {
+    verdictText.textContent = 'Historical card. Its verdict was not verified under the current evidence standard.';
+  } else if (card.verdict === 'ACT') {
+    verdictText.textContent = card.action || card.verdict_text;
+  } else if (card.verdict === 'WATCH') {
+    verdictText.textContent = card.trigger || card.verdict_text;
+  } else {
+    verdictText.textContent = card.reason || card.verdict_text;
+  }
 
   verdictBar.appendChild(verdictLabel);
   verdictBar.appendChild(verdictText);
@@ -321,11 +331,8 @@ function createCardElement(card, index) {
   return el;
 }
 
-var GATE_LIMIT = 5;
-
 function renderFeed(cards) {
   var feed = document.getElementById('feed');
-  var gate = document.getElementById('content-gate');
   feed.textContent = '';
 
   if (!cards || cards.length === 0) {
@@ -333,47 +340,14 @@ function renderFeed(cards) {
     empty.className = 'empty-state';
     empty.textContent = 'Nothing here right now. That is a good sign.';
     feed.appendChild(empty);
-    if (gate) gate.style.display = 'none';
     return;
   }
 
-  var shouldGate = !isSubscribed && cards.length > GATE_LIMIT;
-
-  // When gated, ensure at least one ACT card is in the visible set
-  var displayCards = cards;
-  if (shouldGate) {
-    var visibleSlice = cards.slice(0, GATE_LIMIT);
-    var hasAct = visibleSlice.some(function (c) { return c.verdict === 'ACT'; });
-    if (!hasAct) {
-      var actIndex = -1;
-      for (var j = GATE_LIMIT; j < cards.length; j++) {
-        if (cards[j].verdict === 'ACT') { actIndex = j; break; }
-      }
-      if (actIndex > -1) {
-        displayCards = cards.slice();
-        var swapped = displayCards[GATE_LIMIT - 1];
-        displayCards[GATE_LIMIT - 1] = displayCards[actIndex];
-        displayCards[actIndex] = swapped;
-      }
-    }
-  }
-
-  var limit = shouldGate ? GATE_LIMIT + 1 : displayCards.length;
-
-  for (var i = 0; i < limit && i < displayCards.length; i++) {
-    var cardEl = createCardElement(displayCards[i], i);
-
-    if (shouldGate && i === GATE_LIMIT) {
-      cardEl.classList.add('gated-fade');
-    }
-
+  for (var i = 0; i < cards.length; i++) {
+    var cardEl = createCardElement(cards[i], i);
     feed.appendChild(cardEl);
   }
 
-  // Show or hide the content gate
-  if (gate) {
-    gate.style.display = shouldGate ? 'block' : 'none';
-  }
 }
 
 function groupByDate(cards) {
@@ -641,7 +615,6 @@ function initForms() {
 
       var email = form.querySelector('input[name="email"]').value;
       var formId = form.getAttribute('data-form-id');
-      var source = form.getAttribute('data-source');
       var frequency = getSelectedFrequency(form);
       var btn = form.querySelector('button');
       var originalText = btn.textContent;
@@ -649,7 +622,14 @@ function initForms() {
       btn.textContent = 'Sending...';
       btn.disabled = true;
 
-      fetch('https://api.convertkit.com/v3/forms/9318060/subscribe', {
+      if (!/^\d+$/.test(formId)) {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        showToast('Signup is temporarily unavailable.');
+        return;
+      }
+
+      fetch('https://api.convertkit.com/v3/forms/' + formId + '/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -659,7 +639,10 @@ function initForms() {
           fields: { frequency: frequency }
         })
       })
-      .then(function (res) { return res.json(); })
+      .then(function (res) {
+        if (!res.ok) throw new Error('Kit signup failed: HTTP ' + res.status);
+        return res.json();
+      })
       .then(function (data) {
         if (data.subscription) {
           form.querySelector('input[name="email"]').value = '';
@@ -667,23 +650,8 @@ function initForms() {
           btn.classList.add('btn-success');
           showToast('Check your inbox (or spam) to confirm your subscription');
 
-          // Unlock gated content
           isSubscribed = true;
           localStorage.setItem('insider-brief-subscribed', '1');
-          var gate = document.getElementById('content-gate');
-          if (gate) gate.style.display = 'none';
-
-          // Re-render feed without gate
-          if (activeTopicFilter) {
-            filterByTopic(activeTopicFilter);
-          } else if (currentCategory === 'all') {
-            renderFeed(allCards);
-          } else {
-            var catFiltered = allCards.filter(function (c) {
-              return c.category === currentCategory;
-            });
-            renderFeed(catFiltered);
-          }
 
           // Add confirmation message below the form
           var existingMsg = form.parentElement.querySelector('.confirm-msg');

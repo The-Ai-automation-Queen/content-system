@@ -70,13 +70,10 @@ export function loadMergedConfig(pipelineDir) {
   };
 }
 
-// Resolves the LLM config (provider/model/apiKey) the SAME way for every
-// entry point. Only falls back to the local Ollama 3B model when Gemini is
-// genuinely unconfigured — never as a silent default when a provider was
-// actually specified.
-export function resolveLLMConfig(env) {
-  var provider = (env.LLM_PROVIDER || '').toLowerCase().trim();
+function resolveProviderConfig(env, provider, prefix) {
+  prefix = prefix ? prefix + '_' : '';
   var geminiKey = env.GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+  var openRouterKey = env.OPENROUTER_API_KEY || process.env.OPENROUTER_API_KEY;
 
   if (!provider) {
     // No explicit provider anywhere. Prefer Gemini if a key is actually
@@ -91,13 +88,49 @@ export function resolveLLMConfig(env) {
     return {
       provider: 'gemini',
       apiKey: geminiKey,
-      model: env.GEMINI_MODEL || 'gemini-2.0-flash'
+      model: env[prefix + 'GEMINI_MODEL'] || env.GEMINI_MODEL || 'gemini-2.0-flash'
     };
+  }
+
+  if (provider === 'openrouter') {
+    if (!openRouterKey) {
+      throw new Error(prefix + 'LLM_PROVIDER=openrouter but no OPENROUTER_API_KEY was found.');
+    }
+    return {
+      provider: 'openrouter',
+      apiKey: openRouterKey,
+      model: env[prefix + 'OPENROUTER_MODEL'] || env.OPENROUTER_MODEL || 'openai/gpt-4.1-mini'
+    };
+  }
+
+  if (provider !== 'ollama') {
+    throw new Error('Unsupported LLM provider: ' + provider);
   }
 
   return {
     provider: 'ollama',
     ollamaUrl: env.OLLAMA_URL || 'http://localhost:11434',
-    model: env.OLLAMA_MODEL || 'qwen2.5:3b'
+    model: env[prefix + 'OLLAMA_MODEL'] || env.OLLAMA_MODEL || 'qwen2.5:3b'
   };
+}
+
+// Resolves the legacy single-provider shape for scripts that need one model.
+export function resolveLLMConfig(env) {
+  var provider = (env.LLM_PROVIDER || '').toLowerCase().trim();
+  return resolveProviderConfig(env, provider, '');
+}
+
+// Evidence-first synthesis supports a local-first split. Each stage inherits
+// LLM_PROVIDER unless explicitly overridden. This lets the cheap relevance
+// and extraction work stay on Ollama while OpenRouter is used only for the
+// judgment or independent verification stage when the operator enables it.
+export function resolvePipelineLLMConfig(env) {
+  var base = resolveLLMConfig(env);
+  var stages = {};
+  ['filter', 'extraction', 'judgment', 'verification'].forEach(function (stage) {
+    var prefix = stage.toUpperCase();
+    var configured = String(env[prefix + '_LLM_PROVIDER'] || '').toLowerCase().trim();
+    stages[stage] = configured ? resolveProviderConfig(env, configured, prefix) : base;
+  });
+  return Object.assign({}, base, { stages: stages });
 }

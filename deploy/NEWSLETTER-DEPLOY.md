@@ -57,6 +57,23 @@ service activation restores the previous code. Approval messages are released
 in batches of at most ten, with at least fifteen minutes between backlog
 batches, to prevent a restart from flooding Telegram.
 
+### Editorial contract migration
+
+Cards generated before editorial contract v2 must never be approved. After
+deploying the v2 pipeline, review the dry-run count and then preserve them as
+an evaluation set:
+
+```bash
+cd /root/ai-insider-brief-pipeline
+node quarantine-legacy-pending.mjs
+node quarantine-legacy-pending.mjs --apply
+```
+
+The apply command writes a full timestamped backup and a separate legacy
+evaluation JSON under `evaluation/` before atomically replacing the active
+queue. Old Telegram buttons are also rejected in code, so a delayed button
+tap cannot publish a legacy verdict.
+
 ## Generated-content mirror
 
 The mirror runs at minute 23 of every hour and can also be started from

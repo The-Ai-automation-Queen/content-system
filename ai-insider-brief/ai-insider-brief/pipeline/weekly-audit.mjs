@@ -145,7 +145,7 @@ async function main() {
   lines.push(`<b>Pending queue:</b> ${pending}${pending > 50 ? ' WARN approval bottleneck' : ''}`);
   lines.push(`<b>Verdict quality:</b> ${verdict.fillerPct}% filler (${verdict.fillerCount}/${verdict.sampled})`);
   if (verdict.fillerPct > 40) {
-    lines.push('  -> bump Ollama qwen2.5:3b -> 7b OR add post-synth scrubber');
+    lines.push('  -> inspect the evidence/judgment/verifier stages and deterministic contract failures');
   }
   lines.push(`<b>Empty verticals:</b> ${cat.empty.length === 0 ? 'none' : cat.empty.join(', ')}`);
   lines.push(`<b>Dead feeds (${dead.length}):</b>`);
