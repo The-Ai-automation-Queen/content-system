@@ -421,9 +421,9 @@ function updateBriefingHeader() {
     return;
   }
 
-  kicker.textContent = newCount ? 'NEW SINCE YOUR LAST VISIT' : 'LATEST BRIEFING';
-  title.textContent = newCount ? newCount + ' new development' + (newCount === 1 ? '' : 's') + ' worth your attention' : 'The latest decisions, first';
-  status.textContent = latest ? 'Updated ' + formatBriefingDate(latest.timestamp) + ' · ' + currentCards.length + ' current briefings' : '';
+  kicker.textContent = newCount ? 'NEW SINCE YOUR LAST VISIT' : 'WHAT MATTERS NOW';
+  title.textContent = newCount ? newCount + ' new AI change' + (newCount === 1 ? '' : 's') + ' worth weighing before your next decision' : 'The AI changes worth weighing before your next business decision';
+  status.textContent = latest ? 'Updated ' + formatBriefingDate(latest.timestamp) : '';
 }
 
 function initFeedViews() {
