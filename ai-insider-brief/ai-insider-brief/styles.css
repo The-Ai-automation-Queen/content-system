@@ -108,21 +108,6 @@ body {
   box-shadow: 0 8px 24px rgba(44, 75, 224, 0.22);
 }
 
-/* Success state for form buttons */
-.btn-success {
-  background: #22C55E !important;
-  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3) !important;
-}
-
-.confirm-msg {
-  font-family: Inter, sans-serif;
-  font-size: 0.78rem;
-  color: #16a34a;
-  margin-top: 14px;
-  text-align: center;
-  line-height: 1.5;
-}
-
 
 /* ============================================================
    HERO SECTION
@@ -245,112 +230,6 @@ body {
   margin-top: 20px;
   line-height: 1.6;
   font-family: "Source Serif 4", Georgia, serif;
-}
-
-.hero-form {
-  margin-top: 40px;
-  display: flex;
-  gap: 8px;
-  max-width: 440px;
-  width: 100%;
-}
-
-.hero-form input[type="email"] {
-  flex: 1;
-  background: #ffffff;
-  border: 1px solid #d0c9bc;
-  border-radius: 10px;
-  padding: 14px 18px;
-  color: #1a1a1a;
-  font-family: "Source Serif 4", Georgia, serif;
-  font-size: 0.9rem;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.hero-form input[type="email"]:focus {
-  border-color: #2C4BE0;
-}
-
-.hero-form input[type="email"]::placeholder {
-  color: #aaa49a;
-}
-
-.hero-form button {
-  background: #2C4BE0;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  padding: 14px 24px;
-  font-family: Inter, sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.hero-form button:hover {
-  background: #1B2EA0;
-  box-shadow: 0 0 30px rgba(44, 75, 224, 0.2);
-}
-
-/* --- Frequency Toggle --- */
-.frequency-toggle {
-  display: flex;
-  gap: 0;
-  border: 1px solid #d0c9bc;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 16px;
-  max-width: 280px;
-}
-
-.freq-option {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 16px;
-  font-family: Inter, sans-serif;
-  font-size: 0.8rem;
-  color: #888888;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  background: transparent;
-  border: none;
-  text-align: center;
-}
-
-.freq-option input[type="radio"] {
-  display: none;
-}
-
-.freq-option:first-child {
-  border-right: 1px solid #d0c9bc;
-}
-
-.freq-option.freq-active {
-  background: #2C4BE0;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.freq-option:hover:not(.freq-active) {
-  background: rgba(44, 75, 224, 0.06);
-  color: #1a1a1a;
-}
-
-/* Center frequency toggle in the hero. */
-.hero-content .frequency-toggle {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.site-footer .frequency-toggle {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 12px;
 }
 
 /* Hero social proof line */
@@ -914,53 +793,6 @@ body {
   margin-top: 28px;
 }
 
-.footer-form {
-  max-width: 360px;
-  margin: 24px auto;
-  display: flex;
-  gap: 8px;
-}
-
-.footer-form input[type="email"] {
-  flex: 1;
-  background: #ffffff;
-  border: 1px solid #d0c9bc;
-  border-radius: 10px;
-  padding: 12px 16px;
-  color: #1a1a1a;
-  font-family: "Source Serif 4", Georgia, serif;
-  font-size: 0.85rem;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.footer-form input[type="email"]:focus {
-  border-color: #2C4BE0;
-}
-
-.footer-form input[type="email"]::placeholder {
-  color: #aaa49a;
-}
-
-.footer-form button {
-  background: #2C4BE0;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  padding: 12px 20px;
-  font-family: Inter, sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.footer-form button:hover {
-  background: #1B2EA0;
-  box-shadow: 0 0 20px rgba(44, 75, 224, 0.2);
-}
-
 
 /* ============================================================
    RESPONSIVE — Tablet (max-width: 900px)
@@ -1043,14 +875,6 @@ body {
     padding: 0 20px;
   }
 
-  .hero-form {
-    flex-direction: column;
-  }
-
-  .hero-form button {
-    width: 100%;
-  }
-
   .category-bar {
     padding: 10px 16px;
   }
@@ -1077,13 +901,6 @@ body {
     right: 20px;
   }
 
-  .footer-form {
-    flex-direction: column;
-  }
-
-  .footer-form button {
-    width: 100%;
-  }
 }
 
 

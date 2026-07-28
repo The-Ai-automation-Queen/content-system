@@ -3,7 +3,7 @@
 Per-build glossary. Cold session entry: read this first. Lazy update during real work.
 
 ## Purpose
-Dark intelligence dashboard. Scrapes AI/business sources every 12 hours via cron, runs Ollama summarisation locally, surfaces top items via Kit capture. Public-facing dashboard at index.html.
+Open intelligence briefing. Scrapes AI/business sources every 12 hours via cron, runs Ollama summarisation, and publishes reviewed cards for non-technical business readers. Public-facing briefing at `index.html`.
 
 ## Architecture
 | Component | File | Purpose |
@@ -22,7 +22,7 @@ Dark intelligence dashboard. Scrapes AI/business sources every 12 hours via cron
 
 ## Key Decisions
 - **Ollama local LLM** for summarisation (free, no token spend)
-- **Kit (formerly ConvertKit) capture** wired to dashboard for opt-ins
+- **No email collection on the Brief.** Reader acquisition and email capture live on the Free Guides website.
 - **Light theme, estate canon** (reset 07/07/2026 — see below; the old
   dark-purple-on-cream theme is retired)
 
@@ -54,17 +54,15 @@ and www.shiftandlead.com:
   an island with no links back into the estate except two social icons.
 - The established feed/card layout remains the public contract. Card content
   uses `.feed-card`, `.verdict-*`, `.category-pill`, and `.shimmer-card`.
-  There is no content gate: readers can scan every card before subscribing.
+  There is no content gate or signup form: readers can scan every card freely.
 
 ## Population rules reset (07/07/2026)
 
-- **Cadence: every Tuesday, once.** The page and every cross-reference
-  to it previously said "twice a week" in several places (meta tags,
-  hero copy, FAQ) while the actual operating cadence was Tuesday-only.
-  Every string now says "every Tuesday." If the cadence ever genuinely
-  changes, this file and every page that mentions the Brief must be
-  updated in the same commit (see the estate-wide cadence audit in
-  `reports/estate-architecture-blueprint-2026-07-07.md`).
+- **Public briefing cadence: twice daily.** The crawler runs at 10:00 and
+  22:00 Dubai time. It prepares up to five reviewed cards per run, capped
+  at eight per day, and cards enter the public state after editorial approval.
+  The separate Tuesday email-preview workflow remains human-gated and does
+  not control access to the public briefing.
 - **Categories and the ACT/WATCH/IGNORE names remain, but the editorial
   contract changed on 15/07/2026.** ACT is rare and must be directly
   supported by source evidence, independently verified, audience-specific,
@@ -82,34 +80,16 @@ and www.shiftandlead.com:
   not the send cadence. It does not need to match "every Tuesday";
   the dashboard can (and should) look current between sends.
 
-## CTA rules reset (07/07/2026)
+## CTA rules reset (28/07/2026)
 
-One primary action, repeated without hiding the evidence:
-
-1. **Primary, everywhere on this page: subscribe.** Hero and footer forms
-   remain the capture points. The feed is uninterrupted by promotional cards
-   so readers can assess the editorial value before opting in. No other action
-   competes with this on the page; per the estate blueprint's "one job per
-   page" rule, the Brief's job is capturing the subscribe, not selling anything.
-2. **Secondary, one cross-block, two lines, no store link.** A reader
-   who is lost (needs the basics first) is pointed at the free guides;
-   a reader who wants proof is pointed at the 99 scoreboard. Neither
-   line pitches a paid product — that would duplicate the Store's job
-   (now at www.shiftandlead.com/store.html) and confuse the "is this a
-   sales page" read the estate blueprint flagged as the estate's core
-   incoherence problem.
-3. **Subscriber visibility**: every subscribe form now also fires the
-   estate-wide Formspree + n8n webhook dual-POST (source tags
-   `brief-hero` / `brief-footer`) so GHL sees every
-   Brief subscriber alongside every other capture surface, while Kit
-   (ConvertKit) remains the actual sender. This mirrors the pattern
-   already used by every other form across guides.shiftandlead.com and
-   www.shiftandlead.com.
-- **Removed**: the unused daily/weekly frequency toggle
-  (`getSelectedFrequency`) had no UI wired to it and defaulted safely;
-  left as dead code in `app.js` rather than risk breaking the subscribe
-  handler, but no page should ever add a frequency choice back without
-  updating this section first — single cadence is the rule.
+- The Brief is an open briefing, not an email-capture surface. It has no
+  signup form, email field, subscription API, frequency selector, or gate.
+- Its one job is to help readers understand current AI developments quickly.
+- The header action and beginner FAQ point to the Free Guides library, which
+  is the acquisition and email-collection path for this part of the estate.
+- The card layout and ACT/WATCH/IGNORE editorial system remain unchanged.
+- Do not reintroduce Kit/ConvertKit credentials or signup code into public
+  frontend files.
 
 ## Evidence-based card contract (15/07/2026)
 
@@ -132,8 +112,8 @@ One primary action, repeated without hiding the evidence:
   remain an evaluation archive only.
 - The public board never presents an old unverified verdict as current
   advice. Legacy cards are labeled ARCHIVE.
-- The hard five-card subscription gate is retired. The recent board remains
-  readable, with soft signup invitations after cards three and nine.
+- The hard five-card subscription gate and soft signup invitations are retired.
+  The full recent board remains readable without registration.
 
 ## When to update this file
 Add a glossary entry when a new source type, prompt template, or pipeline stage enters.

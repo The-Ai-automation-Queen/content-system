@@ -1,13 +1,13 @@
 # The AI Insider Brief
 
-> brief.shiftandlead.com is the Tuesday AI newsletter from Shift & Lead, run
+> brief.shiftandlead.com is the open AI briefing from Shift & Lead, run
 > by Fatiha Chikh, an enterprise operator with 20+ years at Dell, Intel, and
 > Microsoft who now runs her own business on 99 AI employees, in public.
 
-This page is a free newsletter for business owners, senior managers, and
-professionals who need to understand AI without becoming engineers. Every
-Tuesday it filters the week's AI news down to what actually affects a
-business in direct, accessible language. Current cards separate source
+This page is an open briefing for business owners, senior managers, and
+professionals who need to understand AI without becoming engineers. Its bot
+researches trusted sources twice daily, and reviewed cards explain what affects
+a business in direct, accessible language. No signup is required. Current cards separate source
 evidence from judgment. ACT is reserved for a verified action. WATCH names
 the event that would trigger action. IGNORE explains why the reader can
 safely skip the signal. Some people know Fatiha as "The AI Automation Queen," a nickname,
@@ -15,7 +15,7 @@ not a title.
 
 ## Key pages
 
-- This newsletter: https://brief.shiftandlead.com
+- This briefing: https://brief.shiftandlead.com
 - Free guide library (guides.shiftandlead.com): https://guides.shiftandlead.com/free-resources.html
 - Business site, Fast Forward course: https://www.shiftandlead.com/fast-forward.html
 

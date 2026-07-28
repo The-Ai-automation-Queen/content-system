@@ -9,7 +9,6 @@
 let allCards = [];
 let currentCategory = 'all';
 let activeTopicFilter = null;
-let isSubscribed = false;
 
 // Shared alias map — used by extractTopics and filterByTopic
 var TOPIC_ALIASES = {
@@ -580,116 +579,10 @@ function removeShimmerLoading() {
 }
 
 // ============================================================
-// MODULE I: GHL Form Submission
-// ============================================================
-
-function getSelectedFrequency(form) {
-  // Find the frequency toggle associated with this form
-  var parent = form.parentElement;
-  var toggle = parent.querySelector('.frequency-toggle');
-  if (!toggle) return 'weekly';
-  var checked = toggle.querySelector('input[type="radio"]:checked');
-  return checked ? checked.value : 'weekly';
-}
-
-function initFrequencyToggles() {
-  var toggles = document.querySelectorAll('.frequency-toggle');
-  toggles.forEach(function (toggle) {
-    var options = toggle.querySelectorAll('.freq-option');
-    options.forEach(function (opt) {
-      opt.addEventListener('click', function () {
-        options.forEach(function (o) { o.classList.remove('freq-active'); });
-        opt.classList.add('freq-active');
-        var radio = opt.querySelector('input[type="radio"]');
-        if (radio) radio.checked = true;
-      });
-    });
-  });
-}
-
-function initForms() {
-  var forms = document.querySelectorAll('[data-form-id]');
-  forms.forEach(function (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var email = form.querySelector('input[name="email"]').value;
-      var formId = form.getAttribute('data-form-id');
-      var frequency = getSelectedFrequency(form);
-      var btn = form.querySelector('button');
-      var originalText = btn.textContent;
-
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-
-      if (!/^\d+$/.test(formId)) {
-        btn.textContent = originalText;
-        btn.disabled = false;
-        showToast('Signup is temporarily unavailable.');
-        return;
-      }
-
-      fetch('https://api.convertkit.com/v3/forms/' + formId + '/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          api_key: 'bvkVWvPgYeSP4-QJr0NGiw',
-          email: email,
-          tags: [],
-          fields: { frequency: frequency }
-        })
-      })
-      .then(function (res) {
-        if (!res.ok) throw new Error('Kit signup failed: HTTP ' + res.status);
-        return res.json();
-      })
-      .then(function (data) {
-        if (data.subscription) {
-          form.querySelector('input[name="email"]').value = '';
-          btn.textContent = 'You are in!';
-          btn.classList.add('btn-success');
-          showToast('Check your inbox (or spam) to confirm your subscription');
-
-          isSubscribed = true;
-          localStorage.setItem('insider-brief-subscribed', '1');
-
-          // Add confirmation message below the form
-          var existingMsg = form.parentElement.querySelector('.confirm-msg');
-          if (!existingMsg) {
-            var msg = document.createElement('p');
-            msg.className = 'confirm-msg';
-            msg.textContent = 'Check your inbox to confirm your subscription. It might be in your spam folder.';
-            form.parentElement.insertBefore(msg, form.nextSibling);
-          }
-
-          setTimeout(function () {
-            btn.textContent = originalText;
-            btn.classList.remove('btn-success');
-            btn.disabled = false;
-          }, 4000);
-        } else {
-          throw new Error('No subscription returned');
-        }
-      })
-      .catch(function () {
-        btn.textContent = originalText;
-        btn.disabled = false;
-        showToast('Something went wrong. Try again.');
-      });
-    });
-  });
-}
-
-// ============================================================
 // INIT
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', async function () {
-  // Check if visitor has already subscribed
-  if (localStorage.getItem('insider-brief-subscribed') === '1') {
-    isSubscribed = true;
-  }
-
   showShimmerLoading();
   var cards = await loadBriefs();
   removeShimmerLoading();
@@ -708,6 +601,4 @@ document.addEventListener('DOMContentLoaded', async function () {
   initCategoryFilters();
   initScrollBehaviors();
   initAutoRefresh();
-  initFrequencyToggles();
-  initForms();
 });
