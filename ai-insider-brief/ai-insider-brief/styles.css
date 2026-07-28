@@ -300,7 +300,93 @@ body {
    FEED — TILE GRID LAYOUT
    ============================================================ */
 .feed-section {
-  padding: 0 24px;
+  padding: 36px 24px 0;
+}
+
+.briefing-header {
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.briefing-kicker,
+.feed-count {
+  font-family: Inter, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #2C4BE0;
+  text-transform: uppercase;
+}
+
+.briefing-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.55rem, 3vw, 2.1rem);
+  line-height: 1.2;
+  margin-top: 5px;
+}
+
+.briefing-status {
+  color: #777168;
+  font-size: 0.88rem;
+  margin-top: 7px;
+}
+
+.feed-view-switch {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid #ddd6c8;
+  border-radius: 24px;
+  background: #f8f6f1;
+  flex-shrink: 0;
+}
+
+.feed-view-button {
+  border: 0;
+  border-radius: 20px;
+  padding: 8px 16px;
+  background: transparent;
+  color: #777168;
+  font-family: Inter, sans-serif;
+  font-size: 0.76rem;
+  cursor: pointer;
+}
+
+.feed-view-button.active {
+  background: #2C4BE0;
+  color: #fff;
+}
+
+.feed-footer-controls {
+  max-width: 1200px;
+  margin: 24px auto 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.feed-count {
+  color: #aaa49a;
+  letter-spacing: 0.06em;
+}
+
+.load-more-button {
+  border: 1px solid #2C4BE0;
+  border-radius: 24px;
+  padding: 10px 22px;
+  background: #fff;
+  color: #2C4BE0;
+  font-family: Inter, sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.load-more-button:hover {
+  background: #2C4BE0;
+  color: #fff;
 }
 
 .feed {
@@ -340,6 +426,24 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
+}
+
+.new-badge {
+  margin-left: auto;
+  margin-right: 8px;
+  font-family: Inter, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #16a34a;
+  border-radius: 10px;
+  padding: 3px 8px;
+}
+
+.feed-card.is-new {
+  border-color: rgba(22, 163, 74, 0.35);
 }
 
 .category-badge {
@@ -865,7 +969,21 @@ body {
   }
 
   .feed-section {
-    padding: 0 16px;
+    padding: 30px 16px 0;
+  }
+
+  .briefing-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .feed-view-switch {
+    align-self: stretch;
+  }
+
+  .feed-view-button {
+    flex: 1;
   }
 
   .feed-card {
@@ -923,6 +1041,11 @@ body {
 
   .card-timestamp {
     font-size: 0.68rem;
+  }
+
+  .new-badge {
+    font-size: 0.56rem;
+    padding: 3px 6px;
   }
 
   .verdict-bar {

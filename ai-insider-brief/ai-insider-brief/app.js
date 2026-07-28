@@ -9,6 +9,11 @@
 let allCards = [];
 let currentCategory = 'all';
 let activeTopicFilter = null;
+let currentView = 'current';
+let visibleCardLimit = 12;
+let lastVisitTimestamp = null;
+var PAGE_SIZE = 12;
+var LAST_VISIT_KEY = 'insiderBriefLastVisit';
 
 // Shared alias map — used by extractTopics and filterByTopic
 var TOPIC_ALIASES = {
@@ -191,17 +196,8 @@ function filterByTopic(topic) {
   if (allPill) allPill.classList.add('active');
   currentCategory = 'all';
 
-  // Filter cards by topic — resolve aliases so clicking "OpenAI" matches ChatGPT, GPT-5, etc.
-  var canonicalTarget = topic.toLowerCase();
-  var filtered = allCards.filter(function (card) {
-    if (!card.topics || !Array.isArray(card.topics)) return false;
-    return card.topics.some(function (t) {
-      var resolved = (TOPIC_ALIASES[t.toLowerCase()] || t).toLowerCase();
-      return resolved === canonicalTarget;
-    });
-  });
-
-  renderFeed(filtered);
+  visibleCardLimit = PAGE_SIZE;
+  renderCurrentView();
   showTopicIndicator(topic);
 }
 
@@ -238,7 +234,8 @@ function removeTopicIndicator() {
 function clearTopicFilter() {
   activeTopicFilter = null;
   removeTopicIndicator();
-  renderFeed(allCards);
+  visibleCardLimit = PAGE_SIZE;
+  renderCurrentView();
 }
 
 // ============================================================
@@ -254,6 +251,9 @@ function createCardElement(card, index) {
   }
   el.id = card.id;
   el.style.animationDelay = (index * 60) + 'ms';
+  if (lastVisitTimestamp && new Date(card.timestamp).getTime() > lastVisitTimestamp) {
+    el.classList.add('is-new');
+  }
 
   // Card header
   var header = document.createElement('div');
@@ -268,6 +268,12 @@ function createCardElement(card, index) {
   timestamp.textContent = card.date;
 
   header.appendChild(badge);
+  if (el.classList.contains('is-new')) {
+    var newBadge = document.createElement('span');
+    newBadge.className = 'new-badge';
+    newBadge.textContent = 'New';
+    header.appendChild(newBadge);
+  }
   header.appendChild(timestamp);
 
   // Headline
@@ -349,6 +355,96 @@ function renderFeed(cards) {
 
 }
 
+function isCurrentCard(card) {
+  return card.editorial_contract_version === 2;
+}
+
+function getViewCards() {
+  var cards = allCards.filter(function (card) {
+    return currentView === 'current' ? isCurrentCard(card) : !isCurrentCard(card);
+  });
+
+  if (activeTopicFilter) {
+    var canonicalTarget = activeTopicFilter.toLowerCase();
+    cards = cards.filter(function (card) {
+      if (!card.topics || !Array.isArray(card.topics)) return false;
+      return card.topics.some(function (topic) {
+        var resolved = (TOPIC_ALIASES[topic.toLowerCase()] || topic).toLowerCase();
+        return resolved === canonicalTarget;
+      });
+    });
+  }
+
+  if (currentCategory !== 'all') {
+    cards = cards.filter(function (card) { return card.category === currentCategory; });
+  }
+
+  return cards;
+}
+
+function renderCurrentView() {
+  var cards = getViewCards();
+  renderFeed(cards.slice(0, visibleCardLimit));
+  updateFeedControls(cards.length, Math.min(cards.length, visibleCardLimit));
+}
+
+function updateFeedControls(total, shown) {
+  var count = document.getElementById('feed-count');
+  var loadMore = document.getElementById('load-more');
+  var label = currentView === 'current' ? 'current briefings' : 'archive cards';
+  count.textContent = total ? 'Showing ' + shown + ' of ' + total + ' ' + label : '';
+  loadMore.hidden = shown >= total;
+  loadMore.textContent = currentView === 'current' ? 'Show more briefings' : 'Explore more of the archive';
+}
+
+function formatBriefingDate(timestamp) {
+  return new Date(timestamp).toLocaleDateString('en-GB', {
+    day: 'numeric', month: 'long', year: 'numeric'
+  });
+}
+
+function updateBriefingHeader() {
+  var currentCards = allCards.filter(isCurrentCard);
+  var archiveCards = allCards.filter(function (card) { return !isCurrentCard(card); });
+  var newCount = lastVisitTimestamp ? currentCards.filter(function (card) {
+    return new Date(card.timestamp).getTime() > lastVisitTimestamp;
+  }).length : 0;
+  var latest = currentCards[0];
+  var title = document.getElementById('briefing-title');
+  var status = document.getElementById('briefing-status');
+  var kicker = document.getElementById('briefing-kicker');
+
+  if (currentView === 'archive') {
+    kicker.textContent = 'REFERENCE LIBRARY';
+    title.textContent = 'Older developments, when you need the context';
+    status.textContent = archiveCards.length + ' historical cards. Their original verdicts are not presented as current advice.';
+    return;
+  }
+
+  kicker.textContent = newCount ? 'NEW SINCE YOUR LAST VISIT' : 'LATEST BRIEFING';
+  title.textContent = newCount ? newCount + ' new development' + (newCount === 1 ? '' : 's') + ' worth your attention' : 'The latest decisions, first';
+  status.textContent = latest ? 'Updated ' + formatBriefingDate(latest.timestamp) + ' · ' + currentCards.length + ' current briefings' : '';
+}
+
+function initFeedViews() {
+  var buttons = document.querySelectorAll('.feed-view-button');
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      currentView = button.getAttribute('data-view');
+      visibleCardLimit = PAGE_SIZE;
+      buttons.forEach(function (item) { item.classList.remove('active'); });
+      button.classList.add('active');
+      updateBriefingHeader();
+      renderCurrentView();
+    });
+  });
+
+  document.getElementById('load-more').addEventListener('click', function () {
+    visibleCardLimit += PAGE_SIZE;
+    renderCurrentView();
+  });
+}
+
 function groupByDate(cards) {
   var now = new Date();
   var todayStr = formatDateDMY(now);
@@ -412,15 +508,8 @@ function initCategoryFilters() {
       pill.classList.add('active');
       currentCategory = pill.getAttribute('data-category');
 
-      var filtered;
-      if (currentCategory === 'all') {
-        filtered = allCards;
-      } else {
-        filtered = allCards.filter(function (card) {
-          return card.category === currentCategory;
-        });
-      }
-      renderFeed(filtered);
+      visibleCardLimit = PAGE_SIZE;
+      renderCurrentView();
     });
   });
 }
@@ -524,17 +613,8 @@ function initAutoRefresh() {
         // Refresh pill visibility — newly added categories may need to appear
         updateCategoryPillVisibility(allCards);
 
-        // Re-render current view
-        if (activeTopicFilter) {
-          filterByTopic(activeTopicFilter);
-        } else if (currentCategory === 'all') {
-          renderFeed(allCards);
-        } else {
-          var filtered = allCards.filter(function (c) {
-            return c.category === currentCategory;
-          });
-          renderFeed(filtered);
-        }
+        updateBriefingHeader();
+        renderCurrentView();
 
         // Update bubbles with new topic data
         var topics = extractTopics(allCards);
@@ -583,6 +663,8 @@ function removeShimmerLoading() {
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', async function () {
+  var storedVisit = window.localStorage.getItem(LAST_VISIT_KEY);
+  lastVisitTimestamp = storedVisit ? Number(storedVisit) : null;
   showShimmerLoading();
   var cards = await loadBriefs();
   removeShimmerLoading();
@@ -591,14 +673,18 @@ document.addEventListener('DOMContentLoaded', async function () {
   var topics = extractTopics(cards);
   renderBubbles(topics);
 
-  // Render feed
-  renderFeed(cards);
+  // Render a finite current briefing. The older library stays available on demand.
+  updateBriefingHeader();
+  renderCurrentView();
 
   // Hide pills for categories with no cards
   updateCategoryPillVisibility(cards);
 
   // Init interactions
   initCategoryFilters();
+  initFeedViews();
   initScrollBehaviors();
   initAutoRefresh();
+
+  window.localStorage.setItem(LAST_VISIT_KEY, String(Date.now()));
 });

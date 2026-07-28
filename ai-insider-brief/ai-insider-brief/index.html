@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232C4BE0'/><text x='50' y='68' font-size='55' font-family='Georgia' fill='white' text-anchor='middle' font-style='italic'>B</text></svg>">
-  <link rel="stylesheet" href="styles.css?v=20260728-1">
+  <link rel="stylesheet" href="styles.css?v=20260728-2">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -82,7 +82,7 @@
     ]
   }
   </script>
-  <script src="app.js" defer></script>
+  <script src="app.js?v=20260728-2" defer></script>
 </head>
 <body>
 
@@ -125,7 +125,22 @@
     </nav>
 
     <section class="feed-section">
+      <div class="briefing-header">
+        <div>
+          <p class="briefing-kicker" id="briefing-kicker">LATEST BRIEFING</p>
+          <h2 class="briefing-title" id="briefing-title">The latest decisions, first</h2>
+          <p class="briefing-status" id="briefing-status" aria-live="polite"></p>
+        </div>
+        <div class="feed-view-switch" aria-label="Choose briefing view">
+          <button class="feed-view-button active" data-view="current">Current</button>
+          <button class="feed-view-button" data-view="archive">Archive</button>
+        </div>
+      </div>
       <div id="feed" class="feed"></div>
+      <div class="feed-footer-controls">
+        <p class="feed-count" id="feed-count" aria-live="polite"></p>
+        <button class="load-more-button" id="load-more" type="button">Show more</button>
+      </div>
     </section>
 
     <section class="value-block">
