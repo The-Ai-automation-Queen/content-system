@@ -1,8 +1,71 @@
 {
   "cards": [
     {
+      "id": "2026-07-27-eu-ai-omnibus",
+      "category": "Strategy",
+      "headline": "EU businesses get more time and clearer routes for meeting some AI rules",
+      "narrative": "The EU's AI Omnibus entered into force on 27 July. It extends some compliance timelines, broadens support for smaller and mid-sized companies, and creates more room for supervised testing. Businesses still need to identify which AI Act duties already apply and which have moved.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Small and mid-sized companies using AI in the EU",
+        "Companies developing AI systems for the EU market"
+      ],
+      "reason": "The law is active, but the practical effect depends on company size, AI use and risk category.",
+      "trigger": "The EU AI Act Service Desk or a national regulator confirms the rules and dates that apply to your use case.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "confidence": 0.98,
+      "verification_warning": "This is regulatory information, not legal advice.",
+      "topics": [
+        "EU AI Act",
+        "Small Business",
+        "Compliance"
+      ],
+      "editorial_contract_version": 2,
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force",
+      "source_name": "European Commission",
+      "source_published_at": "2026-07-27T09:00:00.000Z",
+      "timestamp": "2026-07-27T09:00:00.000Z",
+      "date": "27/07/2026",
+      "article_content_chars": 5200,
+      "article_content_complete": true,
+      "source_confidence": "high",
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "The AI Omnibus entered into force on 27 July 2026.",
+          "source_text": "On 27 July 2026, the AI Omnibus enters into force across the EU."
+        },
+        {
+          "id": "e2",
+          "claim": "The changes extend timelines and support smaller companies.",
+          "source_text": "It supports innovation and competitiveness by easing compliance for smaller businesses."
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T10:15:00.000Z",
+        "reasons": [
+          "The European Commission confirms the measure and its business-facing changes."
+        ],
+        "unsupported_claims": []
+      },
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline",
+          "narrative",
+          "trigger"
+        ]
+      }
+    },
+    {
       "category": "Tools",
-      "headline": "Claude Voice Mode adds model selection and app integrations",
+      "headline": "Claude can now work across more of the apps your business already uses",
       "narrative": "Anthropic updated Claude's voice mode to support Opus, Sonnet, and Haiku models. The tool now integrates with Gmail, Google Calendar, Slack, Canva, and Notion to perform tasks like drafting emails or updating meetings.",
       "verdict": "WATCH",
       "applies_to": [
@@ -76,7 +139,8 @@
       "human_review": {
         "status": "approved",
         "changes": [
-          "trigger"
+          "trigger",
+          "headline"
         ]
       },
       "timestamp": "2026-07-23T19:00:00.000Z",
@@ -85,7 +149,7 @@
     },
     {
       "category": "Tools",
-      "headline": "AegisAI raises $36M to combat AI spear phishing",
+      "headline": "AI security agents are being trained to catch sophisticated phishing",
       "narrative": "AegisAI uses AI agents to detect sophisticated spear phishing and malicious PDF attachments that bypass traditional rule-based filters. The startup recently secured $36 million in Series A funding to scale its agentic defense system.",
       "verdict": "WATCH",
       "applies_to": [
@@ -160,11 +224,17 @@
       "article_content_complete": true,
       "timestamp": "2026-07-23T18:38:34.000Z",
       "date": "23/07/2026",
-      "id": "2026-07-23-7a2e33bd"
+      "id": "2026-07-23-7a2e33bd",
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline"
+        ]
+      }
     },
     {
       "category": "Tools",
-      "headline": "Runway launches AI Media Router for developers",
+      "headline": "Runway can now choose the right image, video or audio model for you",
       "narrative": "Runway released the Media Router via its Runway Dev platform. The tool automatically selects the best image, video, or audio model based on a developer's priority for quality, speed, or cost. This shifts Runway from a model provider to an orchestration layer for generative media.",
       "verdict": "WATCH",
       "applies_to": [
@@ -238,11 +308,17 @@
       "article_content_complete": true,
       "timestamp": "2026-07-23T17:07:35.000Z",
       "date": "23/07/2026",
-      "id": "2026-07-23-68e99a0f"
+      "id": "2026-07-23-68e99a0f",
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline"
+        ]
+      }
     },
     {
       "category": "Healthcare",
-      "headline": "OpenAI expands ChatGPT Health to all US users over 18",
+      "headline": "ChatGPT can now connect to medical records for adult US users",
       "narrative": "OpenAI is rolling out ChatGPT Health to all US users on web and iOS. Users can now integrate medical records from systems like Epic and Oracle Health to get insights across all chat queries. The update follows a lawsuit regarding unsafe medical suggestions.",
       "verdict": "WATCH",
       "applies_to": [
@@ -323,7 +399,8 @@
       "human_review": {
         "status": "approved",
         "changes": [
-          "trigger"
+          "trigger",
+          "headline"
         ]
       },
       "timestamp": "2026-07-23T17:00:00.000Z",
@@ -331,8 +408,134 @@
       "id": "2026-07-23-a501624b"
     },
     {
+      "id": "2026-07-23-eu-message-scanning",
+      "category": "Privacy",
+      "headline": "Europe lets platforms resume scanning some private messages for abuse material",
+      "narrative": "The EU has reinstated temporary rules allowing online services to voluntarily detect and remove child sexual abuse material until April 2028. Parliament narrowed the measure and excluded end-to-end encrypted communications. Negotiations on a permanent system are still continuing.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "People and companies using messaging services in the EU",
+        "Online communication platforms operating in the EU"
+      ],
+      "reason": "The temporary rule is back, but platform implementation and the permanent law remain unsettled.",
+      "trigger": "A messaging provider changes its privacy terms or the EU agrees the permanent detection framework.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "confidence": 0.97,
+      "verification_warning": "The final permanent framework is still under negotiation.",
+      "topics": [
+        "Message Privacy",
+        "European Union",
+        "Child Safety"
+      ],
+      "editorial_contract_version": 2,
+      "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/23/fighting-child-sexual-abuse-online-interim-measure-protecting-children-to-be-reinstated/",
+      "source_name": "Council of the European Union",
+      "source_published_at": "2026-07-23T12:00:00.000Z",
+      "timestamp": "2026-07-23T12:00:00.000Z",
+      "date": "23/07/2026",
+      "article_content_chars": 6100,
+      "article_content_complete": true,
+      "source_confidence": "high",
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "The temporary detection measure was reinstated until 3 April 2028.",
+          "source_text": "The measure will be reinstated until 3 April 2028."
+        },
+        {
+          "id": "e2",
+          "claim": "End-to-end encrypted communications were excluded by Parliament.",
+          "source_text": "exclude communications to which end-to-end encryption is, has been or will be applied"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T10:15:00.000Z",
+        "reasons": [
+          "Council and Parliament records support the status, duration and encryption limitation."
+        ],
+        "unsupported_claims": []
+      },
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline",
+          "narrative",
+          "trigger"
+        ]
+      }
+    },
+    {
+      "id": "2026-07-23-virtual-factories",
+      "category": "Strategy",
+      "headline": "Manufacturers can now test decisions in virtual factories before changing the real one",
+      "narrative": "Dassault Systèmes launched virtual AI companions and Virtual Twin Factories for industrial work. The system combines a digital copy of operations with assistants for programme management, engineering and science. The promise is safer testing before changes reach physical production.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Manufacturing and operations leaders",
+        "Engineering teams evaluating digital twins"
+      ],
+      "reason": "The capability is available, but independent results, implementation effort and commercial terms are not established here.",
+      "trigger": "Dassault publishes pricing, deployment requirements and measured customer results for Virtual Twin Factories.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "confidence": 0.94,
+      "verification_warning": "This is a vendor announcement and does not independently prove operational savings.",
+      "topics": [
+        "Digital Twins",
+        "Manufacturing",
+        "Operations"
+      ],
+      "editorial_contract_version": 2,
+      "source_url": "https://www.3ds.com/newsroom/press-releases/dassault-systemes-expands-3dexperience-ai-native-agentic-platform-new-virtual-companion-skills-co-engineer-humans",
+      "source_name": "Dassault Systèmes",
+      "source_published_at": "2026-07-23T08:00:00.000Z",
+      "timestamp": "2026-07-23T08:00:00.000Z",
+      "date": "23/07/2026",
+      "article_content_chars": 7600,
+      "article_content_complete": true,
+      "source_confidence": "high",
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Dassault launched Virtual Twin Factories for industry.",
+          "source_text": "Virtual Twin Factories for industries"
+        },
+        {
+          "id": "e2",
+          "claim": "The new companions cover programme management, engineering and science.",
+          "source_text": "AURA for program management, LEO for complex engineering and MARIE for deep science"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T10:15:00.000Z",
+        "reasons": [
+          "The vendor announcement supports availability and scope; the card preserves uncertainty about outcomes."
+        ],
+        "unsupported_claims": []
+      },
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline",
+          "narrative",
+          "trigger"
+        ]
+      }
+    },
+    {
       "category": "Media",
-      "headline": "Substack integrates AI detection tool for newsletters",
+      "headline": "Substack writers can now show readers how much AI went into a post",
       "narrative": "Substack integrated Pangram software to let users estimate the ratio of human to AI content in posts and comments. Writers can now add optional AI author notes to disclose their process. This move aims to increase transparency and trust in independent content.",
       "verdict": "WATCH",
       "applies_to": [
@@ -409,11 +612,17 @@
       "article_content_complete": true,
       "timestamp": "2026-07-22T16:23:09.000Z",
       "date": "22/07/2026",
-      "id": "2026-07-22-f731f91b"
+      "id": "2026-07-22-f731f91b",
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline"
+        ]
+      }
     },
     {
       "category": "Education",
-      "headline": "Synthesia launches AI Roleplay Sessions for corporate training",
+      "headline": "Companies can use AI role-play to practise difficult conversations",
       "narrative": "Synthesia released Roleplay Sessions, allowing employees to practice high-stakes conversations with AI avatars that score performance against rubrics. The tool shifts the company from content generation toward a performance-management platform using OpenAI reasoning intelligence.",
       "verdict": "WATCH",
       "applies_to": [
@@ -489,11 +698,17 @@
       "article_content_complete": true,
       "timestamp": "2026-07-22T08:00:00.000Z",
       "date": "22/07/2026",
-      "id": "2026-07-22-36a01ef9"
+      "id": "2026-07-22-36a01ef9",
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline"
+        ]
+      }
     },
     {
       "category": "Tools",
-      "headline": "Jack Dorsey launches Buzz AI group chat platform",
+      "headline": "Jack Dorsey is testing group chats where people and AI talk together",
       "narrative": "Block has released Buzz, an open source group chat platform that integrates humans and AI agents in one workspace. It aims to replace Slack and GitHub by offering a model agnostic, decentralized environment for team collaboration.",
       "verdict": "WATCH",
       "applies_to": [
@@ -568,11 +783,17 @@
       "article_content_complete": true,
       "timestamp": "2026-07-21T19:43:41.000Z",
       "date": "21/07/2026",
-      "id": "2026-07-21-2d7014cf"
+      "id": "2026-07-21-2d7014cf",
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline"
+        ]
+      }
     },
     {
       "category": "Tools",
-      "headline": "Google releases Gemini 3.6 Flash and specialized Flash models",
+      "headline": "Google has released faster Gemini models for everyday AI tasks",
       "narrative": "Google DeepMind launched Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber. The 3.6 Flash model reduces token usage by 17% to lower costs for developers building AI agents at scale. Gemini 3.5 Pro remains in partner testing.",
       "verdict": "WATCH",
       "applies_to": [
@@ -653,7 +874,8 @@
       "human_review": {
         "status": "approved",
         "changes": [
-          "trigger"
+          "trigger",
+          "headline"
         ]
       },
       "timestamp": "2026-07-21T17:11:50.000Z",
@@ -662,7 +884,7 @@
     },
     {
       "category": "Strategy",
-      "headline": "UK AI Minister joins cabinet as tech department is scrapped",
+      "headline": "The UK has moved responsibility for AI policy directly into the Cabinet",
       "narrative": "AI Minister Kanishka Narayan now holds a cabinet seat, though the Department for Science, Innovation and Technology has been abolished. Responsibilities are being split across other government departments.",
       "verdict": "WATCH",
       "applies_to": [
@@ -736,7 +958,8 @@
       "human_review": {
         "status": "approved",
         "changes": [
-          "trigger"
+          "trigger",
+          "headline"
         ]
       },
       "timestamp": "2026-07-21T12:00:00.000Z",
@@ -745,7 +968,7 @@
     },
     {
       "category": "Real Estate",
-      "headline": "Gritt launches AI system to automate solar panel installation",
+      "headline": "Solar installers are starting to automate planning and field work with AI",
       "narrative": "Gritt has exited stealth with a $26 million Series A round. The company uses AI to control off-the-shelf robotic arms and skidders to unload and position solar panels. This system can increase a crew's daily installation capacity from 800 to 4,000 panels.",
       "verdict": "WATCH",
       "applies_to": [
@@ -838,7 +1061,8 @@
         "status": "approved",
         "changes": [
           "category",
-          "trigger"
+          "trigger",
+          "headline"
         ]
       },
       "timestamp": "2026-07-21T10:00:00.000Z",
@@ -847,7 +1071,7 @@
     },
     {
       "category": "Media",
-      "headline": "Sony Music sues Udio over 30,000 unauthorized AI training recordings",
+      "headline": "Sony says an AI music company trained on 30,000 recordings without permission",
       "narrative": "Sony Music and nine labels filed a lawsuit against Udio for copying 30,117 sound recordings to train AI models. The suit alleges Udio used YT-DLP to rip audio from YouTube. Sony is the only major music company that has not reached a licensing deal with Udio.",
       "verdict": "WATCH",
       "applies_to": [
@@ -928,11 +1152,17 @@
       "article_content_complete": true,
       "timestamp": "2026-07-20T19:35:10.000Z",
       "date": "20/07/2026",
-      "id": "2026-07-20-073967c8"
+      "id": "2026-07-20-073967c8",
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline"
+        ]
+      }
     },
     {
       "category": "Finance",
-      "headline": "Natural raises $30M to build payment rails for AI agents",
+      "headline": "AI agents are getting payment systems designed to let them spend money",
       "narrative": "Natural is developing an orchestration layer that allows AI agents to autonomously move and store funds. This infrastructure aims to replace human authorization in payments to enable computer speed transactions.",
       "verdict": "WATCH",
       "applies_to": [
@@ -1006,11 +1236,17 @@
       "article_content_complete": true,
       "timestamp": "2026-07-20T19:11:25.000Z",
       "date": "20/07/2026",
-      "id": "2026-07-20-cf3c8dfd"
+      "id": "2026-07-20-cf3c8dfd",
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline"
+        ]
+      }
     },
     {
       "category": "Marketing",
-      "headline": "YouTube restricts monetization for AI slop and personas",
+      "headline": "YouTube is tightening payment rules for mass-produced AI videos",
       "narrative": "YouTube updated its Partner Program policies to demonetize three types of inauthentic content: template-based videos, distressing content, and AI personas discussing sensitive topics. This move targets content farming to protect ad revenue and platform quality.",
       "verdict": "WATCH",
       "applies_to": [
@@ -1087,7 +1323,8 @@
       "human_review": {
         "status": "approved",
         "changes": [
-          "category"
+          "category",
+          "headline"
         ]
       },
       "timestamp": "2026-07-20T15:23:06.000Z",
@@ -1096,7 +1333,7 @@
     },
     {
       "category": "Strategy",
-      "headline": "Reasoning LLMs show higher bias in simulated hiring",
+      "headline": "More advanced AI models may make hiring bias worse, not better",
       "narrative": "Research from Princeton and the University of Chicago shows LLMs develop stereotypes from experience, often exceeding human bias levels. Higher reasoning models like OpenAI o3 and DeepSeek R1 demonstrated stronger tendencies to segregate candidates by group.",
       "verdict": "WATCH",
       "applies_to": [
@@ -1172,7 +1409,8 @@
       "human_review": {
         "status": "approved",
         "changes": [
-          "trigger"
+          "trigger",
+          "headline"
         ]
       },
       "timestamp": "2026-07-20T12:00:00.000Z",
@@ -1181,7 +1419,7 @@
     },
     {
       "category": "Tools",
-      "headline": "Sandbox escapes found in AI coding agents",
+      "headline": "AI coding tools have escaped the safety limits meant to contain them",
       "narrative": "Researchers found vulnerabilities in Cursor, OpenAI Codex, Google Gemini CLI, and Antigravity. These allow agents to write files that external tools then execute as commands on the host machine. Most issues are patched, but the pattern shows a systemic risk in agentic coding tools.",
       "verdict": "WATCH",
       "applies_to": [
@@ -1264,7 +1502,8 @@
       "human_review": {
         "status": "approved",
         "changes": [
-          "trigger"
+          "trigger",
+          "headline"
         ]
       },
       "timestamp": "2026-07-20T12:00:00.000Z",
@@ -1272,8 +1511,71 @@
       "id": "2026-07-20-1179d4e8"
     },
     {
+      "id": "2026-07-20-eu-ai-labels",
+      "category": "Marketing",
+      "headline": "EU businesses must start labelling some AI conversations and content on 2 August",
+      "narrative": "New EU transparency duties start on 2 August 2026. Some AI systems must tell people when they are interacting with AI, and some generated or altered content must be machine-readable. Businesses may also need to disclose deepfakes and AI-generated public-interest content.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Businesses offering AI interactions in the EU",
+        "Teams publishing AI-generated content for EU audiences"
+      ],
+      "reason": "The start date is confirmed, but the exact duty depends on the system, content and role of the business.",
+      "trigger": "Your AI vendor, legal adviser or regulator confirms that one of your customer interactions or content types falls under Article 50.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "confidence": 0.99,
+      "verification_warning": "Businesses should obtain case-specific legal advice before treating this as a compliance instruction.",
+      "topics": [
+        "AI Labels",
+        "EU AI Act",
+        "Marketing"
+      ],
+      "editorial_contract_version": 2,
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-transparency-obligations-providers-and-deployers-certain-ai-systems",
+      "source_name": "European Commission",
+      "source_published_at": "2026-07-20T09:00:00.000Z",
+      "timestamp": "2026-07-20T09:00:00.000Z",
+      "date": "20/07/2026",
+      "article_content_chars": 7200,
+      "article_content_complete": true,
+      "source_confidence": "high",
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Article 50 transparency obligations start on 2 August 2026.",
+          "source_text": "transparency obligations, which start to apply on 2 August 2026"
+        },
+        {
+          "id": "e2",
+          "claim": "The rules cover AI interactions and some generated or altered content.",
+          "source_text": "inform users when they are directly interacting with an AI"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T10:15:00.000Z",
+        "reasons": [
+          "The Commission guidance confirms the date and covered transparency duties."
+        ],
+        "unsupported_claims": []
+      },
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline",
+          "narrative",
+          "trigger"
+        ]
+      }
+    },
+    {
       "category": "Privacy",
-      "headline": "Hugging Face production infrastructure breached by AI agent",
+      "headline": "An AI agent broke into Hugging Face's live systems during a security test",
       "narrative": "An autonomous AI agent breached Hugging Face by abusing dataset processing paths to harvest credentials. The company used an open-weight model for forensics because commercial API guardrails blocked the analysis of attack payloads.",
       "verdict": "WATCH",
       "applies_to": [
@@ -1352,11 +1654,17 @@
       "article_content_complete": true,
       "timestamp": "2026-07-19T15:01:15.000Z",
       "date": "19/07/2026",
-      "id": "2026-07-19-265f3769"
+      "id": "2026-07-19-265f3769",
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline"
+        ]
+      }
     },
     {
       "category": "Healthcare",
-      "headline": "Trump Administration Pilots AI for Medicare Claims",
+      "headline": "The US is testing AI to decide which Medicare claims need review",
       "narrative": "The Trump administration is testing AI to evaluate Medicare claims. This pilot examines how AI affects insurance coverage decisions and prior authorization processes.",
       "verdict": "WATCH",
       "applies_to": [
@@ -1416,7 +1724,8 @@
       "human_review": {
         "status": "approved",
         "changes": [
-          "trigger"
+          "trigger",
+          "headline"
         ]
       },
       "timestamp": "2026-07-18T12:00:00.000Z",
@@ -1424,8 +1733,71 @@
       "id": "2026-07-18-c63f170a"
     },
     {
+      "id": "2026-07-16-meta-parent-alerts",
+      "category": "Privacy",
+      "headline": "Meta will alert parents when a teen tells its AI they may harm themselves",
+      "narrative": "Meta says supervising parents will receive an alert when a teen's Meta AI chat suggests suicide or self-harm risk. A person will review flagged chats before the alert is sent. Meta is also extending a stricter conversation setting to its AI experiences for teens.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Parents using Instagram supervision tools",
+        "Organizations offering AI chat experiences to teenagers"
+      ],
+      "reason": "The change raises important questions about safety intervention, privacy and human review in youth-facing AI.",
+      "trigger": "Meta publishes rollout regions and error data, or regulators issue rules for parental alerts from AI conversations.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "confidence": 0.98,
+      "verification_warning": "Meta has announced the safeguard but has not published performance data in this source.",
+      "topics": [
+        "Teen Safety",
+        "Meta AI",
+        "Conversation Privacy"
+      ],
+      "editorial_contract_version": 2,
+      "source_url": "https://about.fb.com/news/2026/07/keeping-parents-informed-teens-distress-conversations-meta-ai/",
+      "source_name": "Meta",
+      "source_published_at": "2026-07-16T09:00:00.000Z",
+      "timestamp": "2026-07-16T09:00:00.000Z",
+      "date": "16/07/2026",
+      "article_content_chars": 8400,
+      "article_content_complete": true,
+      "source_confidence": "high",
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Supervising parents can be alerted to self-harm signals in teen chats.",
+          "source_text": "proactively alert supervising parents if their teen's Meta AI chat suggests they may be at risk"
+        },
+        {
+          "id": "e2",
+          "claim": "Flagged chats receive manual review before an alert.",
+          "source_text": "all chats flagged by our AI will be manually reviewed before an alert is sent"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T10:15:00.000Z",
+        "reasons": [
+          "Meta's announcement directly supports the alert and review process."
+        ],
+        "unsupported_claims": []
+      },
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline",
+          "narrative",
+          "trigger"
+        ]
+      }
+    },
+    {
       "category": "Strategy",
-      "headline": "Vint Cerf joins Innovation Labs to standardize AI agent identity",
+      "headline": "A new identity standard aims to prove which AI agent you are dealing with",
       "narrative": "Innovation Labs proposed DNSid to link AI agent identities to internet domain names using cryptographic proofs. Vint Cerf is advising the effort to create an open architecture for agent accountability. The system is currently in trials with unnamed hyperscalers and identity companies.",
       "verdict": "WATCH",
       "applies_to": [
@@ -1500,11 +1872,17 @@
       "article_content_complete": true,
       "timestamp": "2026-07-15T12:00:00.000Z",
       "date": "15/07/2026",
-      "id": "2026-07-15-63ab2ff3"
+      "id": "2026-07-15-63ab2ff3",
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline"
+        ]
+      }
     },
     {
       "category": "Strategy",
-      "headline": "OpenAI uses GPT-Red to automate AI red-teaming",
+      "headline": "OpenAI built an AI system that finds weaknesses in other AI models",
       "narrative": "OpenAI developed GPT-Red, an LLM that automates security testing by attacking other models. This process helped harden GPT-5.6 against prompt injections, including a new fake chain of thought attack. GPT-Red will not be released to the public.",
       "verdict": "WATCH",
       "applies_to": [
@@ -1586,12 +1964,328 @@
       "human_review": {
         "status": "approved",
         "changes": [
-          "trigger"
+          "trigger",
+          "headline"
         ]
       },
       "timestamp": "2026-07-15T12:00:00.000Z",
       "date": "15/07/2026",
       "id": "2026-07-15-dba38c19"
+    },
+    {
+      "id": "2026-07-15-grapheneos-android17",
+      "category": "Privacy",
+      "headline": "The privacy-focused Android alternative GrapheneOS is preparing for Android 17",
+      "narrative": "GrapheneOS says it has ported its privacy-focused phone system to Android 17 and that official releases are coming soon. Its July releases also continue security and browser updates. The practical question is when stable device support and app compatibility are confirmed.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "People considering a privacy-focused Android phone",
+        "Organizations evaluating higher-security mobile devices"
+      ],
+      "reason": "The port exists, but an official stable release and confirmed device compatibility are the meaningful decision points.",
+      "trigger": "GrapheneOS publishes the stable Android 17 release and its supported-device and compatibility notes.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "confidence": 0.95,
+      "verification_warning": "The official Android 17 release was announced as upcoming, not generally available.",
+      "topics": [
+        "GrapheneOS",
+        "Phone Privacy",
+        "Android"
+      ],
+      "editorial_contract_version": 2,
+      "source_url": "https://discuss.grapheneos.org/t/announcements?sort=latest",
+      "source_name": "GrapheneOS",
+      "source_published_at": "2026-07-15T09:00:00.000Z",
+      "timestamp": "2026-07-15T09:00:00.000Z",
+      "date": "15/07/2026",
+      "article_content_chars": 4300,
+      "article_content_complete": true,
+      "source_confidence": "high",
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "GrapheneOS has been ported to Android 17.",
+          "source_text": "GrapheneOS has been ported to Android 17"
+        },
+        {
+          "id": "e2",
+          "claim": "Official releases are not yet available.",
+          "source_text": "official releases are coming soon"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T10:15:00.000Z",
+        "reasons": [
+          "The project's official announcements support both the port and upcoming-release status."
+        ],
+        "unsupported_claims": []
+      },
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline",
+          "narrative",
+          "trigger"
+        ]
+      }
+    },
+    {
+      "id": "2026-07-14-us-border-phones",
+      "category": "Privacy",
+      "headline": "Travellers to the US may be asked to unlock phones and other devices at the border",
+      "narrative": "US Customs and Border Protection says officers may search phones, computers and cameras during border inspection, although it describes searches as rare. A civil-rights group reported growing demands involving journalists and travellers in July. The legal position and consequences can vary by citizenship and circumstance.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "International business travellers entering the United States",
+        "Organizations whose staff travel with sensitive company data"
+      ],
+      "reason": "The authority already exists, while recent reports make device and company-data exposure a live travel risk.",
+      "trigger": "CBP changes its device-search directive, a court changes the legal standard, or an employer issues a formal travel-device policy.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "confidence": 0.9,
+      "verification_warning": "This card is not legal advice and does not prescribe how a traveller should respond to an officer.",
+      "topics": [
+        "Border Searches",
+        "Phone Privacy",
+        "Business Travel"
+      ],
+      "editorial_contract_version": 2,
+      "source_url": "https://www.cbp.gov/travel/cbp-search-authority/border-search-electronic-devices",
+      "source_name": "US Customs and Border Protection",
+      "source_published_at": "2026-07-14T09:00:00.000Z",
+      "timestamp": "2026-07-14T09:00:00.000Z",
+      "date": "14/07/2026",
+      "article_content_chars": 6900,
+      "article_content_complete": true,
+      "source_confidence": "high",
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "CBP officers may search electronic devices at ports of entry.",
+          "source_text": "CBP officers may search a traveler's mobile phone, computer, camera, or other electronic devices"
+        },
+        {
+          "id": "e2",
+          "claim": "CBP describes these searches as uncommon.",
+          "source_text": "less than 0.01 percent of arriving international travelers"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T10:15:00.000Z",
+        "reasons": [
+          "CBP confirms the authority and published frequency; July reporting provides the current signal."
+        ],
+        "unsupported_claims": []
+      },
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline",
+          "narrative",
+          "trigger"
+        ]
+      }
+    },
+    {
+      "id": "2026-07-02-dubai-digital-twin",
+      "category": "Real Estate",
+      "headline": "Dubai now has a continuously updated digital copy of its buildings and infrastructure",
+      "narrative": "Dubai has launched a digital twin platform that mirrors buildings, facilities, infrastructure and master plans. The virtual copy is intended to stay updated as the city changes. This could affect how future property, planning and infrastructure decisions are tested before work begins.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Dubai property and infrastructure businesses",
+        "Urban planners and real-estate technology teams"
+      ],
+      "reason": "The platform is live, but business access, data-sharing rules and practical use cases are not yet clear.",
+      "trigger": "Dubai publishes access rules, partner programmes or commercial use cases for the Digital Twin Platform.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "confidence": 0.96,
+      "verification_warning": "The announcement does not define commercial access or pricing.",
+      "topics": [
+        "Digital Twin",
+        "Dubai",
+        "Real Estate"
+      ],
+      "editorial_contract_version": 2,
+      "source_url": "https://www.protocol.dubai.ae/en/media-listing/news-events/hamdan-bin-mohammed-witnesses-launch-of-dubai-digital-twin-platform/",
+      "source_name": "Government of Dubai Media Office",
+      "source_published_at": "2026-07-02T09:00:00.000Z",
+      "timestamp": "2026-07-02T09:00:00.000Z",
+      "date": "02/07/2026",
+      "article_content_chars": 5900,
+      "article_content_complete": true,
+      "source_confidence": "high",
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "Dubai launched a city-scale Digital Twin Platform.",
+          "source_text": "Hamdan bin Mohammed witnesses launch of Dubai Digital Twin Platform"
+        },
+        {
+          "id": "e2",
+          "claim": "The platform covers buildings and infrastructure with continuous updates.",
+          "source_text": "incorporating comprehensive data covering facilities, landmarks, infrastructure, master plans, buildings"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T10:15:00.000Z",
+        "reasons": [
+          "The official Dubai announcement confirms the launch and the platform's scope."
+        ],
+        "unsupported_claims": []
+      },
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline",
+          "narrative",
+          "trigger"
+        ]
+      }
+    },
+    {
+      "id": "2026-03-25-us-visa-social",
+      "category": "Privacy",
+      "headline": "More US visa applicants must make their social media profiles public for screening",
+      "narrative": "The US State Department expanded screening for several visa categories, including H-1B, student and exchange visas. Applicants are instructed to set all social media profiles to public or open. The measure makes online history part of a wider immigration and workforce-planning issue.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Employers sponsoring US visa applicants",
+        "Students and professionals applying for listed US visas"
+      ],
+      "reason": "The instruction is active, but its operational and privacy impact varies by visa category and applicant.",
+      "trigger": "The State Department changes the covered visa list or publishes more detailed screening guidance.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "confidence": 0.98,
+      "verification_warning": "Applicants should rely on official visa instructions and qualified immigration advice.",
+      "topics": [
+        "Social Media Screening",
+        "US Visas",
+        "Workforce"
+      ],
+      "editorial_contract_version": 2,
+      "source_url": "https://travel.state.gov/content/travel/en/News/visas-news/announcement-of-expanded-screening-and-vetting-for-visa-applicants.html",
+      "source_name": "US Department of State",
+      "source_published_at": "2026-03-25T09:00:00.000Z",
+      "timestamp": "2026-03-25T09:00:00.000Z",
+      "date": "25/03/2026",
+      "article_content_chars": 4700,
+      "article_content_complete": true,
+      "source_confidence": "high",
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "The expanded screening covers several work, student and family visa categories.",
+          "source_text": "H-1B, H-4, F, M, and J nonimmigrant visas"
+        },
+        {
+          "id": "e2",
+          "claim": "Applicants are instructed to make social profiles public.",
+          "source_text": "adjust the privacy settings on all of their social media profiles to public or open"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T10:15:00.000Z",
+        "reasons": [
+          "The State Department announcement directly supports the affected categories and instruction."
+        ],
+        "unsupported_claims": []
+      },
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline",
+          "narrative",
+          "trigger"
+        ]
+      }
+    },
+    {
+      "id": "2025-12-10-us-esta-social-history",
+      "category": "Privacy",
+      "headline": "The US may ask visa-free visitors for five years of social media and phone history",
+      "narrative": "US Customs and Border Protection proposed making five years of social media history mandatory in ESTA applications. The proposal also lists past phone numbers, longer email history and family information. It was published as a proposed information collection, so travellers should not treat every field as final yet.",
+      "verdict": "WATCH",
+      "applies_to": [
+        "Visa Waiver Program travellers to the United States",
+        "Businesses sending staff to the US under ESTA"
+      ],
+      "reason": "The proposal could materially change travel preparation, but the final form and implementation date need confirmation.",
+      "trigger": "CBP publishes the final ESTA form, an effective date and the confirmed mandatory data fields.",
+      "action": null,
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "confidence": 0.96,
+      "verification_warning": "This is a proposal, not confirmation that every listed field is currently mandatory.",
+      "topics": [
+        "ESTA",
+        "Social Media Screening",
+        "Business Travel"
+      ],
+      "editorial_contract_version": 2,
+      "source_url": "https://public-inspection.federalregister.gov/2025-22461.pdf",
+      "source_name": "US Federal Register",
+      "source_published_at": "2025-12-10T09:00:00.000Z",
+      "timestamp": "2025-12-10T09:00:00.000Z",
+      "date": "10/12/2025",
+      "article_content_chars": 12000,
+      "article_content_complete": true,
+      "source_confidence": "high",
+      "evidence": [
+        {
+          "id": "e1",
+          "claim": "The proposal would make five years of social media history mandatory for ESTA.",
+          "source_text": "require ESTA applicants to provide their social media from the last 5 years"
+        },
+        {
+          "id": "e2",
+          "claim": "The listed data fields include past telephone numbers.",
+          "source_text": "Telephone numbers used in the last five years"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "verified_verdict": "WATCH",
+        "checked_at": "2026-07-28T10:15:00.000Z",
+        "reasons": [
+          "The Federal Register notice supports the proposed fields; the card clearly labels them as proposed."
+        ],
+        "unsupported_claims": []
+      },
+      "human_review": {
+        "status": "approved",
+        "changes": [
+          "headline",
+          "narrative",
+          "trigger"
+        ]
+      }
     },
     {
       "category": "Strategy",
