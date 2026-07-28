@@ -109,6 +109,18 @@
       ]
     },
     {
+      "name": "Claude Product Announcements",
+      "url": "https://claude.com/blog-category/announcements",
+      "type": "scrape",
+      "tier": 1,
+      "ai_filter": false,
+      "category_affinity": [
+        "Tools",
+        "Breaking",
+        "Strategy"
+      ]
+    },
+    {
       "name": "Meta AI Blog",
       "url": "https://ai.meta.com/blog/",
       "type": "scrape",

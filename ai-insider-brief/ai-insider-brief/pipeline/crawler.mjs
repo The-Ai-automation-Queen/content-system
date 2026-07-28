@@ -370,12 +370,10 @@ async function fetchRSS(sourceUrl, lastChecked) {
 // Web page scraper (for sources without RSS)
 // ---------------------------------------------------------------------------
 
-async function scrapePage(sourceUrl, lastChecked) {
-  const res = await fetchWithTimeout(sourceUrl);
-  if (!res.ok) throw new Error('HTTP ' + res.status);
-  const html = await res.text();
-
-  // Extract article links — look for <a> tags with hrefs that look like articles
+export function extractScrapeCandidates(html, sourceUrl) {
+  // Extract article links — look for <a> tags with hrefs that look like articles.
+  // Claude publishes product announcements on claude.com/blog, separately
+  // from the corporate newsroom at anthropic.com/news.
   const linkRe = /<a\s[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
   let match;
   const candidates = [];
@@ -416,6 +414,15 @@ async function scrapePage(sourceUrl, lastChecked) {
 
     candidates.push({ title: text, url: href });
   }
+
+  return candidates;
+}
+
+async function scrapePage(sourceUrl, lastChecked) {
+  const res = await fetchWithTimeout(sourceUrl);
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  const html = await res.text();
+  const candidates = extractScrapeCandidates(html, sourceUrl);
 
   // Limit to MAX_SCRAPE_ARTICLES to be respectful
   const toFetch = candidates.slice(0, MAX_SCRAPE_ARTICLES);
