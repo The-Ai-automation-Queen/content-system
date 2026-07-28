@@ -276,14 +276,81 @@ body {
   flex-shrink: 0;
 }
 
+.category-pill[data-category="Breaking"],
+.feed-card[data-category="Breaking"] {
+  --category-color: #DC2626;
+  --category-tint: rgba(220, 38, 38, 0.08);
+}
+
+.category-pill[data-category="Strategy"],
+.feed-card[data-category="Strategy"] {
+  --category-color: #4F46E5;
+  --category-tint: rgba(79, 70, 229, 0.08);
+}
+
+.category-pill[data-category="Privacy"],
+.feed-card[data-category="Privacy"] {
+  --category-color: #7C3AED;
+  --category-tint: rgba(124, 58, 237, 0.08);
+}
+
+.category-pill[data-category="Tools"],
+.feed-card[data-category="Tools"] {
+  --category-color: #0369A1;
+  --category-tint: rgba(3, 105, 161, 0.08);
+}
+
+.category-pill[data-category="Marketing"],
+.feed-card[data-category="Marketing"] {
+  --category-color: #C2410C;
+  --category-tint: rgba(194, 65, 12, 0.08);
+}
+
+.category-pill[data-category="Healthcare"],
+.feed-card[data-category="Healthcare"] {
+  --category-color: #15803D;
+  --category-tint: rgba(21, 128, 61, 0.08);
+}
+
+.category-pill[data-category="Finance"],
+.feed-card[data-category="Finance"] {
+  --category-color: #1D4ED8;
+  --category-tint: rgba(29, 78, 216, 0.08);
+}
+
+.category-pill[data-category="Real Estate"],
+.feed-card[data-category="Real Estate"] {
+  --category-color: #A21CAF;
+  --category-tint: rgba(162, 28, 175, 0.08);
+}
+
+.category-pill[data-category="Education"],
+.feed-card[data-category="Education"] {
+  --category-color: #0F766E;
+  --category-tint: rgba(15, 118, 110, 0.08);
+}
+
+.category-pill[data-category="Media"],
+.feed-card[data-category="Media"] {
+  --category-color: #BE185D;
+  --category-tint: rgba(190, 24, 93, 0.08);
+}
+
+.category-pill:not([data-category="all"]) {
+  border-color: var(--category-color);
+  background: var(--category-tint);
+  color: var(--category-color);
+}
+
 .category-pill:hover {
-  border-color: #2C4BE0;
-  color: #1a1a1a;
+  border-color: var(--category-color, #2C4BE0);
+  color: var(--category-color, #1a1a1a);
+  background: var(--category-tint, rgba(44, 75, 224, 0.06));
 }
 
 .category-pill.active {
-  background: #2C4BE0;
-  border-color: #2C4BE0;
+  background: var(--category-color, #2C4BE0);
+  border-color: var(--category-color, #2C4BE0);
   color: #ffffff;
 }
 
@@ -291,7 +358,7 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #2C4BE0;
+  background: currentColor;
   animation: breakingPulse 2s ease-in-out infinite;
 }
 
@@ -455,40 +522,14 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  background: rgba(44, 75, 224, 0.08);
-  color: #2C4BE0;
+  background: var(--category-tint, rgba(44, 75, 224, 0.08));
+  color: var(--category-color, #2C4BE0);
 }
 
 .card-timestamp {
   font-family: Inter, sans-serif;
   font-size: 0.7rem;
   color: #aaa49a;
-}
-
-/* Category-specific badge colors */
-.feed-card[data-category="Marketing"] .category-badge {
-  background: rgba(234, 88, 12, 0.08);
-  color: #EA580C;
-}
-.feed-card[data-category="Health"] .category-badge {
-  background: rgba(22, 163, 74, 0.08);
-  color: #16A34A;
-}
-.feed-card[data-category="Finance"] .category-badge {
-  background: rgba(37, 99, 235, 0.08);
-  color: #2563EB;
-}
-.feed-card[data-category="Real Estate"] .category-badge {
-  background: rgba(168, 85, 247, 0.08);
-  color: #A855F7;
-}
-.feed-card[data-category="Education"] .category-badge {
-  background: rgba(6, 182, 212, 0.08);
-  color: #0891B2;
-}
-.feed-card[data-category="Media"] .category-badge {
-  background: rgba(236, 72, 153, 0.08);
-  color: #DB2777;
 }
 
 /* Card Headline */
