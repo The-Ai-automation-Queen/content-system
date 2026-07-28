@@ -84,6 +84,12 @@ Rules:
 - Do not use em dashes.
 - Do not use vague filler such as stay informed, keep an eye on it, consider the implications, explore, leverage, be prepared, or navigate.
 - Write for smart non-technical professionals. Use short direct sentences and no unexplained jargon.
+- Write the headline for a busy person outside the technology industry. Lead with
+  the practical change, not a company announcement, product version, funding
+  round, model name, acronym, or technical mechanism.
+- A reader must understand the headline without knowing the named product. If a
+  company or product matters, explain what changed in ordinary language.
+- The narrative must answer: what changed, who is affected, and why it matters.
 
 CATEGORY OPTIONS
 Breaking, Tools, Privacy, Strategy, Marketing, Real Estate, Healthcare, Finance, Education, Media.
@@ -97,8 +103,8 @@ ${JSON.stringify(facts)}
 Respond with only valid JSON:
 {
   "category": "one category option",
-  "headline": "one clear line, maximum 80 characters",
-  "narrative": "two or three factual sentences explaining what happened and why it matters, maximum 320 characters",
+  "headline": "one plain-English line led by the practical change, maximum 90 characters",
+  "narrative": "three or four factual plain-English sentences covering what changed, who is affected, and why it matters, maximum 480 characters",
   "verdict": "ACT, WATCH, or IGNORE",
   "applies_to": ["one to three specific affected audiences"],
   "reason": "why this verdict follows from the evidence, maximum 180 characters",

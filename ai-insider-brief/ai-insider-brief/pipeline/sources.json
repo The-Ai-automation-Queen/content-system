@@ -678,6 +678,83 @@
         "Privacy",
         "Strategy"
       ]
+    },
+    {
+      "name": "European Commission Digital and AI Policy",
+      "url": "https://digital-strategy.ec.europa.eu/en/news",
+      "type": "scrape",
+      "tier": 1,
+      "ai_filter": true,
+      "category_affinity": [
+        "Privacy",
+        "Strategy"
+      ]
+    },
+    {
+      "name": "European Parliament Press Releases",
+      "url": "https://www.europarl.europa.eu/rss/doc/press-releases/en.xml",
+      "type": "rss",
+      "tier": 1,
+      "ai_filter": true,
+      "category_affinity": [
+        "Privacy",
+        "Strategy"
+      ]
+    },
+    {
+      "name": "US Visa News",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news.html",
+      "type": "scrape",
+      "tier": 1,
+      "ai_filter": true,
+      "category_affinity": [
+        "Privacy",
+        "Strategy"
+      ]
+    },
+    {
+      "name": "US Customs and Border Protection News",
+      "url": "https://www.cbp.gov/newsroom/national-media-release",
+      "type": "scrape",
+      "tier": 1,
+      "ai_filter": true,
+      "category_affinity": [
+        "Privacy",
+        "Strategy"
+      ]
+    },
+    {
+      "name": "GrapheneOS Releases",
+      "url": "https://grapheneos.org/releases",
+      "type": "scrape",
+      "tier": 1,
+      "ai_filter": true,
+      "category_affinity": [
+        "Privacy",
+        "Tools"
+      ]
+    },
+    {
+      "name": "Meta Newsroom",
+      "url": "https://about.fb.com/news/",
+      "type": "scrape",
+      "tier": 1,
+      "ai_filter": true,
+      "category_affinity": [
+        "Privacy",
+        "Media"
+      ]
+    },
+    {
+      "name": "Digital Twin Consortium",
+      "url": "https://www.digitaltwinconsortium.org/press-room/",
+      "type": "scrape",
+      "tier": 1,
+      "ai_filter": true,
+      "category_affinity": [
+        "Strategy",
+        "Real Estate"
+      ]
     }
   ]
 }

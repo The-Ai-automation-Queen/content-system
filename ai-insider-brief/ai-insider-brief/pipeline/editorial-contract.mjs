@@ -116,8 +116,8 @@ export function validateFacts(facts) {
 export function validateDraft(card, facts) {
   if (!card || typeof card !== 'object') return { ok: false, reason: 'Card missing' };
   if (CATEGORIES.indexOf(card.category) === -1) return { ok: false, reason: 'Invalid category' };
-  if (!cleanText(card.headline) || cleanText(card.headline).length > 100) return { ok: false, reason: 'Invalid headline' };
-  if (!cleanText(card.narrative) || cleanText(card.narrative).length > 380) return { ok: false, reason: 'Invalid narrative' };
+  if (!cleanText(card.headline) || cleanText(card.headline).length > 110) return { ok: false, reason: 'Invalid headline' };
+  if (!cleanText(card.narrative) || cleanText(card.narrative).length > 500) return { ok: false, reason: 'Invalid narrative' };
   if (VERDICTS.indexOf(card.verdict) === -1) return { ok: false, reason: 'Invalid verdict' };
   if (!hasSpecificAudience(card)) return { ok: false, reason: 'Affected audience missing or vague' };
   if (!cleanText(card.reason)) return { ok: false, reason: 'Verdict reason missing' };
