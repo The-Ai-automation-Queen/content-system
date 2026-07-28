@@ -84,12 +84,6 @@ body {
   gap: 16px;
 }
 
-.header-byline {
-  font-family: Inter, sans-serif;
-  font-size: 0.75rem;
-  color: #888888;
-}
-
 .header-subscribe {
   background: #2C4BE0;
   color: #ffffff;
@@ -230,15 +224,6 @@ body {
   margin-top: 20px;
   line-height: 1.6;
   font-family: "Source Serif 4", Georgia, serif;
-}
-
-/* Hero social proof line */
-.hero-proof {
-  font-family: Inter, sans-serif;
-  font-size: 0.75rem;
-  color: #aaa49a;
-  margin-top: 16px;
-  letter-spacing: 0.02em;
 }
 
 
