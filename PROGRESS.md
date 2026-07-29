@@ -246,8 +246,7 @@ page-specific rules still win.
 ## 5. Weekly cadence and retention
 
 - [x] Persistent top-ribbon opt-in on the brief
-- [x] Inline opt-in after every 3rd briefing item, injected as the feed renders
-- [x] 16:9 thumbnail on every item, generated inline from its own category, no external images
+- [x] One inline opt-in inside the feed, as a band across the grid, after the 6th item
 - [x] Cadence promise on the brief hero and, via the newsletter partial, sitewide
 - [x] No content gate on the brief. It is a feed; its job is capture and freshness.
 - [x] `capture.js` exposes `slWireCaptureForms()` so forms rendered after load work, without double-binding
@@ -264,8 +263,84 @@ on 77%. A gate mid-section would read worse than one a few points off.
 ## 7. Source tracking
 
 - [x] Every form on all three sites carries a source tag: page slug plus placement
-- [x] Hidden input, no PII. Examples: `www-index-ribbon`, `guides-freedom-os-kit-hero`, `brief-inline-2`
+- [x] Hidden input, no PII. Examples: `www-index-ribbon`, `guides-freedom-os-kit-hero`, `brief-inline-1`
 - [x] Pre-existing forms given an explicit `action` on the endpoint they already posted to, so they work with JavaScript off
+
+---
+
+# Phase 3 — layout audit, 29/07/2026
+
+Fatiha reported the brief looked broken. It was, and I shipped it. This is what
+went wrong, what else I checked, and what I changed so it cannot happen quietly
+again.
+
+## Why the harness did not catch it
+
+`verify.mjs` reported 999 PASS / 0 FAIL on the build that broke. Every check it
+ran was true. It reads HTML: tags, attributes, links, copy. A layout is none of
+those. A page can pass every structural check and still look wrong, and that is
+exactly what happened.
+
+## What was broken on brief.shiftandlead.com
+
+All four were mine, all four shipped in PR #75.
+
+| What | Measured | Fix |
+|---|---|---|
+| A gradient thumbnail with a large letter on every briefing card | card grew 343px to 573px | Removed. It was decoration nobody asked for, and it drowned the headline it sat above. |
+| The in-feed opt-in injected as a direct child of the 3-column feed grid | took a 392px card cell, punched holes in the grid | Spans the grid as a 1200x106 band, once, after the 6th item. |
+| Three in-feed opt-ins plus the ribbon plus the footer newsletter | 5 identical CTAs on one page | One in-feed opt-in. Three total, at the top, mid-feed and the end. |
+| The opt-in ribbon above the header on a phone | 156px of a 844px screen, 3 rows, before the header | 86px, promise on one line, field and button sharing the next. |
+
+Two more, found while measuring:
+
+- `{{SUBSCRIBER_COUNT}}` was rendering literally in the hero on the live site.
+  Removed rather than invented.
+- `line-height: 1.65` from the shared stylesheet now inherits into the brief,
+  which had none of its own. Header 64px to 70px, logo 23px to 33px. Left as is:
+  it is the correct default for body serif and the drift is in the chrome only.
+
+## What was NOT broken
+
+Checked every page on all three sites at 390px and 1280px, against the
+pre-consolidation build at `c7ce063`:
+
+- **www.shiftandlead.com**, 13 pages: clean. No overflow, no broken image, no
+  JavaScript error, correct fonts, one `<h1>` each.
+- **guides.shiftandlead.com**, 12 landing pages and 20 guides: clean. The 20
+  pages whose inline `<style>` I extracted to `/assets/pages/*.css` all load
+  their stylesheet and render correctly.
+- Every image on both sites resolves once lazy loading has had its chance.
+- The three pages reporting no stylesheet are redirect stubs, which is correct.
+
+## Pre-existing, not from this build
+
+Present at `c7ce063` too, so not a regression. Say if you want them fixed:
+
+- Topic bubbles in the brief hero drift past the right edge and sit under the
+  headline on a phone. They are clipped, so no sideways scroll, but on a narrow
+  screen the words overlap the subtitle.
+- The footer band on the brief moved from `#EDE8DF` to the brand cream during
+  the palette pass, so it separates by hairline now rather than by tone.
+
+## The check that would have caught it
+
+`tools/verify-render.mjs`. It serves each site and opens every page in headless
+Chromium at both widths, then fails on: sideways scroll, a `{{PLACEHOLDER}}` in
+rendered text **or in an attribute**, an image that did not load, a real page
+with no stylesheet or an empty one, a JavaScript error, and a short list of
+element shapes that broke once and must not break again.
+
+Run against the broken build it reports all six problems above. Run against this
+one it is clean.
+
+`verify.mjs` stays the zero-dependency gate and is unchanged. This one needs
+Playwright, says so plainly when it is missing, and is the extra pass:
+
+```
+node verify.mjs --all              # always
+node tools/verify-render.mjs       # before anything ships
+```
 
 ---
 
@@ -278,9 +353,10 @@ on 77%. A gate mid-section would read worse than one a few points off.
 | `main-site/work-with-me.html` | Offer application | `{{OFFER_FORM_ID}}` |
 | `main-site/work-with-fatiha.html` | Workshop application | `{{WORKSHOP_FORM_ID}}` |
 
-**Subscriber count (1).** `{{SUBSCRIBER_COUNT}}` on the brief hero. The brief said
-to use the real number or a placeholder. The real one is not in the repo, so the
-placeholder stands until you supply it.
+**Subscriber count (1).** The brief hero now reads "Every week, free, one clear
+verdict" with no count. `{{SUBSCRIBER_COUNT}}` was rendering literally on the
+live page, which is worse than saying nothing. Give me the real figure from GHL
+and the count goes back in.
 
 **DRAFT offer copy (1).** The pricing answer in the work-with-me FAQ is marked
 DRAFT on the page. There is no public price anywhere, per the brief.

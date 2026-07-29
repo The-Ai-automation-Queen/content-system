@@ -221,6 +221,17 @@ body {
   color: #1a1a1a;
 }
 
+/* What the reader is signing up for, stated before the pitch. No subscriber
+   count here until there is a real one to publish. */
+.hero-cadence {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue-deep);
+  margin: 18px 0 0;
+}
+
 .hero-subtitle {
   font-size: 1.1rem;
   color: #666666;
