@@ -21,6 +21,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -86,7 +87,44 @@ function carryAttributes(previous, next) {
   return next.replace(/data-source="[^"]*"/, `data-source="${prevSource[1]}"`);
 }
 
+/* ------------------------------------------------- version the local assets
+
+   Every local stylesheet and script gets ?v=<hash of its own contents>. This
+   used to be a hand-typed date that someone had to remember to bump, and on
+   29/07/2026 nobody did: styles.css and app.js changed, their ?v= did not, and
+   returning visitors got new HTML against their old cached CSS. Classes that
+   only existed in the new file had no rules, so parts of the page rendered as
+   unstyled plain text. Deriving the version from the file removes the step that
+   can be forgotten. */
+
+const hashes = new Map();
+
+function versionOf(diskPath) {
+  if (!hashes.has(diskPath)) {
+    hashes.set(diskPath, fs.existsSync(diskPath)
+      ? crypto.createHash('sha256').update(fs.readFileSync(diskPath)).digest('hex').slice(0, 8)
+      : null);
+  }
+  return hashes.get(diskPath);
+}
+
+function stampVersions(html, file, siteRoot) {
+  return html.replace(
+    /((?:href|src)=")([^"]+\.(?:css|js))(\?[^"]*)?(")/g,
+    (whole, lead, url, _query, tail) => {
+      if (/^(https?:)?\/\//.test(url) || url.startsWith('data:')) return whole;
+      const disk = url.startsWith('/')
+        ? path.join(siteRoot, url.slice(1))
+        : path.resolve(path.dirname(file), url);
+      const v = versionOf(disk);
+      return v ? `${lead}${url}?v=${v}${tail}` : whole;
+    }
+  );
+}
+
 const files = SITE_ROOTS.flatMap((s) => walk(path.join(ROOT, s)));
+const siteRootOf = (file) =>
+  path.join(ROOT, SITE_ROOTS.find((s) => file.startsWith(path.join(ROOT, s) + path.sep)));
 
 for (const file of files) {
   let html = fs.readFileSync(file, 'utf8');
@@ -100,6 +138,8 @@ for (const file of files) {
     html = html.replace(re, (_m, open, previous, close) =>
       `${open}\n${carryAttributes(previous, body)}\n${close}`);
   }
+
+  html = stampVersions(html, file, siteRootOf(file));
 
   if (html === before) continue;
   if (check) { wouldChange.push(path.relative(ROOT, file)); continue; }

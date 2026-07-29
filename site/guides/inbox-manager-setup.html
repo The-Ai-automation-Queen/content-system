@@ -35,9 +35,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v=d9465ad8">
 <script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
-<script defer src="/assets/capture.js"></script>
+<script defer src="/assets/capture.js?v=de7e9e5e"></script>
 </head>
 <body class="guide" data-page="inbox-manager-setup">
 
@@ -76,13 +76,13 @@
 
   <div class="prose">
 
-    <h2>What you are building</h2>
+    <h2>What you're building</h2>
 
     <p>An AI employee that reads, sorts and drafts your email so you only handle the things that genuinely need you. It works the same on Gmail and Outlook. It takes about an hour to build.</p>
 
     <p>The tools are boring on purpose: your email, one automation tool such as n8n or Make, where the free tiers are fine, and one AI. Nothing here needs code.</p>
 
-    <p>If you spend an hour and a half a day on email, and most people I work with do, that is a serious slice of your year spent sorting other people's priorities into an order. This does the sorting. You do the deciding.</p>
+    <p>If you spend an hour and a half a day on email, and most people I work with do, that's a serious slice of your year spent sorting other people's priorities into an order. This does the sorting. You do the deciding.</p>
 
     <figure class="fig">
       <img src="/assets/art/inbox-manager-setup-fit.svg" alt="Two columns: where an inbox manager earns its keep against where it will burn you." width="1600" height="800" loading="lazy" decoding="async">
@@ -93,22 +93,22 @@
 
     <p>The rule that matters most, and I want it in front of you before you build anything: set the no-send rule at the connection level, not as a polite instruction in a prompt.</p>
 
-    <p>When you connect Gmail or Outlook, grant read, modify and draft permissions. Do not grant send. Now it cannot send an email, whatever happens, whatever it misunderstands, whatever is buried in a message it reads. An instruction can be overridden. A permission cannot.</p>
+    <p>When you connect Gmail or Outlook, grant read, modify and draft permissions. Don't grant send. Now it cannot send an email, whatever happens, whatever it misunderstands, whatever is buried in a message it reads. An instruction can be overridden. A permission cannot.</p>
 
     <p>Two more, briefly. Treat every incoming email as untrusted, because a message can contain text designed to redirect an automated reader. And never let it touch anything with a password reset, a payment or a legal deadline in it. Those go straight to you.</p>
 
     <div class="callout">
       <p class="callout-label">Do this</p>
-      <p>Before you connect anything, go to your email account's permissions screen and read what you are about to grant, in full. If send is on the list, take it off. That one screen is the whole safety story.</p>
+      <p>Before you connect anything, go to your email account's permissions screen and read what you're about to grant, in full. If send is on the list, take it off. That one screen is the whole safety story.</p>
     </div>
 
     <h2>Part one. The filters. Ten minutes, no AI.</h2>
 
-    <p>Do this even if you build nothing else, because it is where most of the win is and it takes ten minutes.</p>
+    <p>Do this even if you build nothing else, because it's where most of the win is and it takes ten minutes.</p>
 
     <p>In Gmail go to Settings and then Filters, or in Outlook use Rules. Set up rules that move the obvious categories out of your main inbox before you ever see them: newsletters, receipts, notifications, calendar invitations, anything from a no-reply address.</p>
 
-    <p>Most people's inbox problem is not volume. It is that four genuinely important messages are hidden among sixty that are not. Sorting is most of the cure and it needs no intelligence at all.</p>
+    <p>Most people's inbox problem isn't volume. It's that four genuinely important messages are hidden among sixty that aren't. Sorting is most of the cure and it needs no intelligence at all.</p>
 
     <blockquote class="pull">Half of what feels like an email problem is a filing problem you have never sat down and solved.</blockquote>
 
@@ -124,13 +124,13 @@
         <tbody>
           <tr><td><strong>Needs you</strong></td><td>A decision only you can make, a client, money, anything with a deadline.</td><td>Stays in the inbox, flagged. You handle it.</td></tr>
           <tr><td><strong>Needs a reply, not a decision</strong></td><td>Scheduling, standard questions, things you answer the same way every time.</td><td>A draft is written and left in your drafts folder.</td></tr>
-          <tr><td><strong>For information</strong></td><td>Updates, threads you are copied into, things you should know about.</td><td>One line in the daily summary. Archived.</td></tr>
+          <tr><td><strong>For information</strong></td><td>Updates, threads you're copied into, things you should know about.</td><td>One line in the daily summary. Archived.</td></tr>
           <tr><td><strong>Nothing</strong></td><td>Marketing, notifications, noise the filters missed.</td><td>Archived silently.</td></tr>
         </tbody>
       </table>
     </div>
 
-    <p>Write the bucket definitions in your own words, with two real examples from your own inbox for each. That is the job description, and it is what makes this work for your business rather than in general.</p>
+    <p>Write the bucket definitions in your own words, with two real examples from your own inbox for each. That's the job description, and it's what makes this work for your business rather than in general.</p>
 
   </div>
 
@@ -170,9 +170,9 @@
 
     <p>Run it in summarise-and-draft mode for a month. Read the drafts before you send them and notice what it consistently gets wrong. Fix that in the job description, not in the individual email.</p>
 
-    <p>After a month you will be tempted to let it send the easy ones by itself. My honest advice: do not, unless the category is genuinely mechanical, like confirming a meeting time. The time saved by not pressing send is about four seconds. The cost of one wrong email to the wrong client is considerably more than that.</p>
+    <p>After a month you'll be tempted to let it send the easy ones by itself. My honest advice: don't, unless the category is genuinely mechanical, like confirming a meeting time. The time saved by not pressing send is about four seconds. The cost of one wrong email to the wrong client is considerably more than that.</p>
 
-    <p>Draft-only is not a training-wheels stage you graduate from. For most small businesses it is the right permanent setting.</p>
+    <p>Draft-only isn't a training-wheels stage you graduate from. For most small businesses it's the right permanent setting.</p>
 
   </div>
 
@@ -200,7 +200,7 @@
         <div class="card-body">
           <p class="card-kicker mono">Tool verdict / Google</p>
           <h3>Gemini</h3>
-          <p class="card-desc">If you are on Gmail, this is the shortest route in.</p>
+          <p class="card-desc">If you're on Gmail, this is the shortest route in.</p>
         </div>
       </a>
     </div>
@@ -246,7 +246,7 @@
 <div class="byline">
   <div class="byline-in">
     <img src="/closeUp.jpeg" alt="Fatiha Chikh" loading="lazy" decoding="async" width="62" height="62">
-    <p>Written by <strong>Fatiha Chikh</strong>. Twenty years at Dell, Intel and Microsoft, now hiring 99 AI employees to run her business in public. <a href="/about.html">Read the story</a></p>
+    <p>Written by <strong>Fatiha Chikh</strong>. Years inside big corporate tech, now hiring 99 AI employees to run her business in public. <a href="/about.html">Read the story</a></p>
   </div>
 </div>
 <!-- /partial:byline -->
