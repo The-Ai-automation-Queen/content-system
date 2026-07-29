@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#FFFFFF">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="noai, noimageai, max-image-preview:large">
+<meta name="description" content="The exact no-code setup that catches every lead, delivers the resource instantly, and runs a 3-message follow-up on its own, with the messages to copy.">
+<title>The Lead Follow-Up That Runs Itself | Shift &amp; Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://guides.shiftandlead.com/guides/follow-up-setup.html">
+<meta property="og:title" content="The Lead Follow-Up That Runs Itself">
+<meta property="og:description" content="The exact no-code setup that catches every lead, delivers the resource instantly, and runs a 3-message follow-up on its own, with the messages to copy.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://guides.shiftandlead.com/guides/follow-up-setup.html">
+<meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Lead Follow-Up That Runs Itself">
+<meta name="twitter:description" content="The exact no-code setup that catches every lead, delivers the resource instantly, and runs a 3-message follow-up on its own, with the messages to copy.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Lead Follow-Up Setup (Stop Doing This by Hand)",
+  "description": "The exact no-code setup that catches every lead, delivers the resource instantly, and runs a 3-message follow-up on its own, with the messages to copy.",
+  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
+  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/follow-up-setup.html",
+  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
+  "publisher": {"@type": "Organization", "name": "Shift & Lead", "logo": {"@type": "ImageObject", "url": "https://www.shiftandlead.com/logo.svg"}},
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "The lead follow-up setup",
+  "description": "The exact no-code setup that catches every lead, delivers the resource instantly, and runs a 3-message follow-up on its own.",
+  "step": [
+    {"@type": "HowToStep", "name": "The trigger", "text": "Set a workflow to fire when a comment or form opt-in contains your keyword. Use one workflow per offer."},
+    {"@type": "HowToStep", "name": "The instant reply", "text": "Auto-send a DM the moment someone comments, kept human. Speed matters: a reply in 10 seconds converts, a reply in 10 hours does not."},
+    {"@type": "HowToStep", "name": "Capture and tag", "text": "When they opt in, save the email and tag them by the offer they wanted."},
+    {"@type": "HowToStep", "name": "The 3-message follow-up", "text": "Send message 1 the same day to deliver the resource, message 2 on day 2 with value and soft proof, and message 3 on day 4 with the invitation."}
+  ]
+}
+</script>
+<style>
+:root{
+  --canvas:#FFFFFF;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
+  --muted:#5C5A57;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
+  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+a:hover{color:var(--accent-deep)}
+strong{font-weight:700;color:var(--ink)}
+
+.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}.nav-links .nav-cta{background:var(--accent);color:#fff;padding:8px 14px;border-radius:3px;font-weight:600}.nav-links .nav-cta:hover{background:var(--accent-deep)}
+
+.wrap{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,100px) clamp(24px,5vw,72px)}
+
+.chips{margin-bottom:28px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff}
+.chip-track0{background:var(--accent)}
+.chip-literacy{background:#E63955}
+.chip-time{background:transparent;color:var(--muted);border:1px solid var(--rule);padding:4px 10px}
+
+.kicker{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);display:flex;align-items:center;margin-bottom:20px}
+.kicker-rule{display:inline-block;width:32px;height:1px;background:var(--ink);margin-right:10px}
+
+h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,5.5vw,56px);line-height:1.08;letter-spacing:-0.5px;color:var(--ink);margin-bottom:24px}
+h1 em{font-style:italic;color:var(--electric)}
+h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.18;letter-spacing:-0.3px;margin:64px 0 16px}
+h3{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);margin:32px 0 12px}
+p{margin-bottom:18px;color:var(--ink)}
+p.lead{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:20px;line-height:1.55;color:var(--muted);margin-bottom:32px}
+
+.rule{border:0;border-top:2px solid var(--ink);margin:80px 0 40px}
+
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:28px 32px;margin:24px 0}
+.card.accent{border-color:var(--accent);background:var(--accent-tint)}
+
+.pullquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:24px;line-height:1.35;color:var(--muted);border-left:3px solid var(--accent);padding-left:24px;margin:40px 0}
+
+blockquote{background:var(--accent-tint);border-left:3px solid var(--accent);padding:16px 24px;margin:20px 0;border-radius:0 4px 4px 0;font-style:italic;color:var(--muted)}
+blockquote p{margin-bottom:0;color:var(--muted)}
+
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.vs-col{padding:20px 24px;border-radius:6px}
+.vs-col.old{background:#FDF2F2;border:1px solid #E8C4C4}
+.vs-col.new{background:#F0F4E8;border:1px solid #C4D4A8}
+.vs-col h3{margin-top:0}
+
+ul,ol{margin:12px 0 20px 24px}
+li{margin-bottom:8px;color:var(--ink)}
+
+.try-box{background:var(--surface);border:1px solid var(--accent);border-radius:6px;padding:24px 28px;margin:20px 0}
+.try-box .try-label{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin-bottom:12px}
+.try-box p{font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--ink);margin-bottom:0}
+
+.cta-bar{margin:48px 0;padding:32px;background:var(--navy);border-radius:6px;text-align:center;color:var(--canvas)}
+.cta-bar h3{color:var(--canvas);margin-top:0}
+.cta-bar p{color:rgba(255,255,255,0.85)}
+.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:13px 32px;background:var(--canvas);color:var(--ink);text-decoration:none;border-radius:4px;margin-top:12px}
+.btn:hover{background:#fff;color:var(--ink)}
+
+.guide-nav{display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:32px;border-top:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em}
+.guide-nav a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
+.guide-nav a:hover{color:var(--accent);border-color:var(--accent)}
+
+.footer{margin-top:120px;padding:40px 32px;border-top:2px solid var(--ink);text-align:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px}
+
+@media(max-width:560px){
+  html,body{font-size:16px}
+  .wrap{padding:40px 16px}
+  h1{font-size:32px;line-height:1.1}
+  .pullquote{font-size:20px}
+  .vs{grid-template-columns:1fr}
+  .guide-nav{flex-direction:column;gap:16px;align-items:flex-start}
+  .nav-inner{padding:14px 16px}
+  .nav-links{gap:16px;font-size:11px}
+}
+</style>
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
+<script defer src="/lib/motion.js"></script>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a class="nav-cta" href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=follow-up-setup">Workshops</a></div>
+</div></nav>
+
+<div class="wrap">
+
+  <div class="chips">
+    <span class="chip chip-literacy">FOLLOW UP</span>
+    <span class="chip chip-time">6 min read</span>
+  </div>
+
+  <div class="kicker"><span class="kicker-rule"></span>Free guide &middot; Stop Doing That by Hand</div>
+
+  <h1>Every lead followed up. <em>Not by you.</em></h1>
+
+  <p class="lead">What is a lead follow-up setup? A lead follow-up setup is the automation that catches every raised hand, delivers the resource, and follows up on its own. Here&rsquo;s the brutal truth: most people lose money not because they can&rsquo;t get attention, but because they can&rsquo;t <em>follow up</em>. Someone comments, someone opts in&hellip; and then it sits in your DMs until the excitement is dead. This is the exact setup I use so <strong>every</strong> raised hand gets caught, gets the thing, and gets followed up with, automatically. You build it once. It runs forever.</p>
+
+  <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
+    <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
+    <p style="margin:0 0 14px;font-size:15.5px">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
+    <form class="capture-form" style="display:flex;gap:10px;flex-wrap:wrap">
+      <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <button type="submit" style="padding:10px 20px;background:#2C4BE0;color:#fff;border:none;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:14px;cursor:pointer">Send them to me</button>
+    </form>
+  </div>
+
+  <hr class="rule">
+
+  <h2>What you&rsquo;re building</h2>
+
+  <div class="card"><p style="margin-bottom:0;font-family:'Space Mono',monospace;font-size:14px;line-height:1.8">Someone comments your keyword &rarr; instant DM with the link<br>&rarr; they opt in &rarr; resource delivered + tagged in your CRM<br>&rarr; 3-message follow-up sequence runs on its own</p></div>
+
+  <p>You can build all of this inside one tool (I use GoHighLevel). No code.</p>
+
+  <hr class="rule">
+
+  <h2>Step 1. The trigger</h2>
+  <p>Set a workflow to fire when a comment (or form opt-in) contains your keyword, e.g. <strong>STACK</strong>, <strong>FOLLOW UP</strong>, <strong>TEAM</strong>. One workflow per offer.</p>
+
+  <h2>Step 2. The instant reply</h2>
+  <p>Auto-send the DM the second they comment. Keep it human:</p>
+  <blockquote><p>&ldquo;Yes! Sending it now &#128073; [link]. Tell me what you build with it.&rdquo;</p></blockquote>
+  <p>Speed is everything. The reply that arrives in 10 seconds converts; the one that arrives in 10 hours doesn&rsquo;t.</p>
+
+  <h2>Step 3. Capture + tag</h2>
+  <p>When they opt in, save the email and tag them by the offer they wanted. Now you know what each person actually cares about, gold for later.</p>
+
+  <h2>Step 4. The 3-message follow-up (copy these)</h2>
+
+  <h3>Message 1, same day (deliver + set up the next step)</h3>
+  <blockquote><p>&ldquo;There&rsquo;s your [resource] &#127881; Quick heads up: the magic isn&rsquo;t the tool, it&rsquo;s setting it up <em>once</em> so it runs without you. Hit reply and tell me the one task you&rsquo;d hand off first.&rdquo;</p></blockquote>
+
+  <h3>Message 2, day 2 (value + soft proof)</h3>
+  <blockquote><p>&ldquo;Most people grab a tool and never wire it in, so it changes nothing. The ones who win pick ONE repetitive task and let the system own it. Here&rsquo;s the 30-min version &rarr; [link to a post/video].&rdquo;</p></blockquote>
+
+  <h3>Message 3, day 4 (the invitation)</h3>
+  <blockquote><p>&ldquo;If doing this solo feels slow, that&rsquo;s normal, it&rsquo;s faster with people a step ahead of you. That&rsquo;s exactly what [your community/offer] is for &rarr; [link]. Either way, I&rsquo;m in your corner. &#128081;&rdquo;</p></blockquote>
+
+  <hr class="rule">
+
+  <h2>The point</h2>
+
+  <p>You&rsquo;re not &ldquo;being salesy.&rdquo; You&rsquo;re being <em>reliable</em>, the thing you promised actually shows up, every time, without you. That&rsquo;s what builds trust at scale.</p>
+
+  <div class="pullquote">Set it up once. Let it follow up forever.</div>
+
+  <p>Ready to give one task to an &ldquo;AI employee&rdquo; that works a full shift for you? Read <a href="../opt-in.html?guide=first-ai-employee">How to Set Up Your First AI Employee</a>.</p>
+
+  <div class="cta-bar">
+    <h3>Next: How to Set Up Your First AI Employee</h3>
+    <p>Give one task a real job, real tools, and a real shift, so it leaves your plate for good.</p>
+    <a href="first-ai-employee.html" class="btn">Read the next guide &rarr;</a>
+  </div>
+
+  <p style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0">Ready for more than free? The three ways to go further &rarr;</a></p>
+
+  <div class="guide-nav">
+    <a href="../free-resources.html">&larr; All guides</a>
+    <a href="first-ai-employee.html">Next: First AI Employee &rarr;</a>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p><a href="../privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved.</p>
+</div>
+
+<script>
+document.querySelectorAll('.capture-form').forEach(function(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    var email = form.querySelector('[name="email"]').value;
+    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Done.'; return; }
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      var r = await fetch('https://formspree.io/f/xgojoyka', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-follow-up-setup'}) });
+      fetch('https://auto.shiftandlead.com/webhook/formspree-lead', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-follow-up-setup'}) });
+      if (r.ok) { btn.textContent = 'On its way.'; } else { btn.disabled=false; btn.textContent='Try again'; }
+    } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
+  });
+});
+</script>
+
+<script>
+try {
+  var r = JSON.parse(localStorage.getItem('sl_read') || '[]');
+  if (r.indexOf('follow-up-setup') === -1) { r.push('follow-up-setup'); localStorage.setItem('sl_read', JSON.stringify(r)); }
+} catch(e){}
+</script>
+</body>
+</html>

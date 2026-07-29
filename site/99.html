@@ -29,100 +29,11 @@
   "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"}
 }
 </script>
-<style>
-:root{
-  --canvas:#FFFFFF;--surface:#FFFFFF;--cream:#EEF2FC;--ink:#1A1A1A;--rule:#D8D6D2;--rule-light:#ECEAE7;
-  --muted:#5C5A57;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
-  --electric:#2C4BE0;--navy:#1B2EA0;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
-a:hover{color:var(--accent-deep)}
-
-.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
-.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
-.nav-links a{color:var(--ink);text-decoration:none}
-.nav-links a:hover,.nav-links a.active{color:var(--accent)}
-.nav-links a.active{color:var(--accent)}
-.nav-links .nav-cta{background:var(--accent);color:#fff;padding:9px 16px;border-radius:3px;font-weight:600}
-.nav-links .nav-cta:hover{background:var(--accent-deep)}
-
-.hero{padding:88px 32px 56px;text-align:center}
-.hero-inner{max-width:880px;margin:0 auto}
-.hero-kicker{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.22em;color:var(--accent);margin-bottom:24px}
-.hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(40px,6.5vw,76px);line-height:1.04;font-weight:400;letter-spacing:-0.02em}
-.hero h1 em{font-style:italic;color:var(--electric)}
-.hero-sub{margin:28px auto 0;max-width:640px;font-size:20px;line-height:1.55;color:var(--muted)}
-
-.counter{display:flex;justify-content:center;align-items:baseline;gap:18px;margin:48px 0 8px;font-family:'Space Mono',monospace}
-.counter .big{font-size:clamp(56px,9vw,104px);font-weight:700;color:var(--electric);letter-spacing:-0.03em;line-height:1}
-.counter .of{font-size:clamp(22px,3vw,34px);color:var(--muted)}
-.counter-label{text-align:center;font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.2em;color:var(--muted);margin-bottom:8px}
-
-.rules{max-width:940px;margin:56px auto 0;padding:0 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.rule-card{border:1px solid var(--rule);border-top:3px solid var(--electric);padding:22px 20px;background:var(--canvas)}
-.rule-card .n{font-family:'Space Mono',monospace;font-weight:700;font-size:12px;color:var(--electric);letter-spacing:0.14em;margin-bottom:10px;text-transform:uppercase}
-.rule-card p{font-size:15px;line-height:1.55;color:var(--ink)}
-
-.board{max-width:1240px;margin:72px auto 0;padding:0 32px}
-.board-head{display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:28px;flex-wrap:wrap;gap:8px}
-.board-head h2{font-family:'Playfair Display',Georgia,serif;font-size:30px;font-weight:400}
-.board-head .open-count{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted)}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
-.slot{border:1px solid var(--rule);min-height:150px;padding:16px;display:flex;flex-direction:column;justify-content:space-between}
-.slot .num{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.14em;color:var(--muted)}
-.slot.open{background:var(--canvas)}
-.slot.open .state{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--rule)}
-.slot.open .state{color:#B9B6B1}
-.slot.hired{background:var(--cream);border-color:var(--electric);border-top:4px solid var(--electric)}
-.slot.hired .num{color:var(--electric)}
-.slot .name{font-family:'Playfair Display',Georgia,serif;font-size:24px;line-height:1.1;margin:8px 0 2px}
-.slot .role{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink)}
-.slot .dept{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-top:2px}
-.slot .receipt{margin-top:12px;font-size:13px;line-height:1.45;color:var(--muted);border-top:1px solid var(--rule);padding-top:10px}
-.slot .receipt b{color:var(--ink);font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;display:block;margin-bottom:3px;font-weight:700}
-.slot.interviewing{border-style:dashed;border-color:var(--accent-deep)}
-.slot.interviewing .state{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-deep)}
-
-.how{max-width:880px;margin:88px auto 0;padding:0 32px}
-.how h2{font-family:'Playfair Display',Georgia,serif;font-size:30px;font-weight:400;margin-bottom:24px;border-bottom:2px solid var(--ink);padding-bottom:14px}
-.how ol{list-style:none;counter-reset:step;display:flex;flex-direction:column;gap:16px}
-.how li{counter-increment:step;position:relative;padding-left:52px;font-size:17px;line-height:1.6}
-.how li::before{content:counter(step,decimal-leading-zero);position:absolute;left:0;top:2px;font-family:'Space Mono',monospace;font-weight:700;font-size:15px;color:var(--electric)}
-
-.cta-band{margin:96px 32px 0;padding:56px 32px;background:var(--navy);text-align:center;border-radius:6px}
-.cta-band h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(26px,3.6vw,38px);font-weight:400;color:#fff;max-width:640px;margin:0 auto}
-.cta-band p{color:rgba(255,255,255,0.85);margin:16px auto 0;max-width:520px;font-size:17px}
-.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:14px 34px;background:#fff;color:var(--ink);text-decoration:none;border-radius:4px;margin-top:26px}
-.btn:hover{background:var(--cream);color:var(--ink)}
-.cta-sub{display:block;margin-top:16px}
-.cta-sub a{color:rgba(255,255,255,0.85)}
-
-.footer{background:var(--ink);color:var(--canvas);margin-top:120px;padding:56px 32px 32px}
-.footer-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;align-items:start;text-align:left}
-.footer-brand{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:700;margin-bottom:12px}
-.footer-tag{opacity:0.7;font-size:14px;max-width:360px}
-.footer-col-head{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;opacity:0.6;margin-bottom:12px}
-.footer-link{display:block;font-size:14px;padding:4px 0;color:var(--canvas);opacity:0.9;text-decoration:none}
-.footer-legal{max-width:1240px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,0.12);font-size:11px;opacity:0.5;font-family:'Space Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;text-align:center}
-@media(max-width:900px){.footer-inner{grid-template-columns:1fr;gap:28px}}
-
-@media(max-width:760px){
-  .nav-inner{padding:16px 20px}
-  .nav-links{gap:14px;font-size:11px;flex-wrap:wrap}
-  .hero{padding:56px 20px 40px}
-  .rules{grid-template-columns:1fr;padding:0 20px}
-  .board{padding:0 20px}
-  .how{padding:0 20px}
-  .cta-band{margin:72px 20px 0}
-}
-</style>
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/pages/99.css">
 <script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 <script defer src="/lib/motion.js"></script>
+<script defer src="/assets/capture.js"></script>
 </head>
 <body>
 
@@ -225,6 +136,29 @@ a:hover{color:var(--accent-deep)}
   <a class="btn" href="opt-in.html?guide=first-ai-employee">Get the free hiring guide</a>
   <span class="cta-sub">Not sure what to delegate first? <a href="time-audit.html">Take the 3-minute Time Leak Quiz</a></span>
 </section>
+
+<!-- partial:newsletter -->
+<section class="newsletter" aria-labelledby="nl-title">
+  <div class="nl-grid">
+    <div class="nl-copy">
+      <p class="eyebrow mono">The Insider Brief</p>
+      <h2 id="nl-title">One clear verdict on the AI news that matters.</h2>
+      <p>Every week. What changed, whether you should care, and what to do about it. Free.</p>
+      <form class="capture-form" action="https://formspree.io/f/xgojoyka" method="POST" data-source="the-99">
+        <label class="visually-hidden" for="nl-email">Email address</label>
+        <input id="nl-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
+        <input type="hidden" name="source" value="newsletter">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit">Subscribe free</button>
+      </form>
+      <p class="capture-fineprint">No cost, no catch. Unsubscribe anytime.</p>
+    </div>
+    <div class="nl-art">
+      <img src="/assets/art/insider-brief.svg" alt="A weekly briefing card showing three headlines each marked with a plain verdict." loading="lazy" decoding="async" width="480" height="360">
+    </div>
+  </div>
+</section>
+<!-- /partial:newsletter -->
 
 <footer class="footer"><div class="footer-inner">
   <div>

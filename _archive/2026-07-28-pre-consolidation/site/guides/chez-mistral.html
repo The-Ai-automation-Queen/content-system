@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="noai, noimageai, max-image-preview:large">
+<title>Chez Mistral · The Full Kitchen Map | Shift &amp; Lead</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shift &amp; Lead">
+<meta property="og:title" content="Chez Mistral · The Full Kitchen Map | Shift &amp; Lead">
+<meta property="og:description" content="The whole Mistral AI ecosystem walked through like a restaurant. Door, kitchen, plate.">
+<meta property="og:url" content="https://guides.shiftandlead.com/guides/chez-mistral.html">
+<meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://guides.shiftandlead.com/guides/chez-mistral.html">
+<meta name="description" content="The whole Mistral AI ecosystem walked through like a restaurant. Door, kitchen, plate.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chez Mistral: The Full Kitchen Map",
+  "description": "The whole Mistral AI ecosystem walked through like a restaurant. Door, kitchen, plate.",
+  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
+  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/chez-mistral.html",
+  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
+  "publisher": {"@type": "Organization", "name": "Shift & Lead", "logo": {"@type": "ImageObject", "url": "https://www.shiftandlead.com/logo.svg"}},
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What are tokens in Mistral?", "acceptedAnswer": {"@type": "Answer", "text": "Tokens are individual ingredients: every word costs tokens, and API users pay per token."}},
+    {"@type": "Question", "name": "What is the context window in Mistral?", "acceptedAnswer": {"@type": "Answer", "text": "The context window is what Mistral can see right now: your question, memory, files, and prior turns."}},
+    {"@type": "Question", "name": "What is a hallucination in Mistral?", "acceptedAnswer": {"@type": "Answer", "text": "A hallucination is a confident answer with made-up facts. Verify any high-stakes claim against the actual source."}},
+    {"@type": "Question", "name": "What is confabulation in Mistral?", "acceptedAnswer": {"@type": "Answer", "text": "Confabulation is stitching together a convincing but invented story, including fictional citations, instead of saying you do not know."}}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--tint:#E4EAFB;--cream:#EEF2FC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.75}
+.mono{font-family:'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
+
+/* nav */
+.nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20}
+.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}.nav-links .nav-cta{background:var(--accent);color:#fff;padding:8px 14px;border-radius:3px;font-weight:600}.nav-links .nav-cta:hover{background:var(--accent-deep)}
+.nav .mono{font-size:10px;color:var(--muted)}
+
+/* magazine cover hero */
+.cover{max-width:1160px;margin:0 auto;padding:70px 24px 56px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:end}
+@media(max-width:860px){.cover{grid-template-columns:1fr}}
+.issue{font-size:11px;color:var(--accent);margin-bottom:18px;display:flex;gap:18px;flex-wrap:wrap}
+.cover h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:clamp(3rem,9vw,6.2rem);line-height:.98;letter-spacing:-.02em;margin:0}
+.cover h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.cover .standfirst{font-size:1.2rem;color:var(--muted);max-width:44ch;margin:22px 0 0}
+.cover-art{position:relative;aspect-ratio:4/5;background:var(--ink);border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.cover-art svg{width:82%;height:auto}
+.cover-art .slot{position:absolute;bottom:10px;right:12px;font-size:9px;color:#8d86a0}
+.dropcap::first-letter{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:4.6em;float:left;line-height:.78;padding:6px 12px 0 0;color:var(--accent)}
+
+/* the rail — reading progress as courses */
+.rail{max-width:1160px;margin:0 auto;padding:0 24px}
+.courses{display:flex;gap:0;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:#fff;margin:8px 0 0}
+.course{flex:1;text-align:center;padding:11px 6px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-left:1px solid var(--rule)}
+.course:first-child{border-left:none}
+.course.active{background:var(--ink);color:#fff}
+
+/* sections */
+.sec{max-width:1160px;margin:0 auto;padding:72px 24px 8px}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:baseline;border-top:2px solid var(--ink);padding-top:18px}
+.sec-num{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:3.4rem;line-height:1;color:var(--accent)}
+.sec-head h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0}
+.sec-head .mono{display:block;font-size:10px;color:var(--muted);margin-top:6px}
+.sec-body{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;padding:26px 0 0}
+@media(max-width:860px){.sec-body{grid-template-columns:1fr}}
+.sec-body p{max-width:60ch;font-size:1.06rem;margin:0 0 1rem}
+
+/* floor plan diagram */
+.plan{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:26px}
+.plan .mono{font-size:10px;color:var(--accent);display:block;margin-bottom:12px}
+.plan svg{width:100%;height:auto}
+
+/* menu cards */
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 0}
+@media(max-width:860px){.menu{grid-template-columns:1fr}}
+.dish{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:24px;position:relative}
+.dish .mono{font-size:9.5px;color:var(--accent)}
+.dish h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:.4rem 0 .4rem}
+.dish p{font-family:'Inter',sans-serif;font-size:.9rem;color:var(--muted);margin:0;line-height:1.6}
+.dish .pict{height:74px;margin-bottom:10px;display:flex;align-items:center}
+.dish .pict svg{height:64px;width:auto}
+
+/* pull quote */
+.pull{max-width:1160px;margin:0 auto;padding:80px 24px}
+.pull blockquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.7rem,4.5vw,2.7rem);line-height:1.3;margin:0;max-width:30ch;color:var(--ink)}
+.pull blockquote strong{color:var(--accent);font-style:normal}
+.pull .mono{font-size:10px;color:var(--muted);margin-top:18px;display:block}
+
+/* warnings — "know before you eat" as menu footnotes */
+.warn{background:var(--ink);color:#F5F0EB}
+.warn-inner{max-width:1160px;margin:0 auto;padding:70px 24px}
+.warn .mono{color:#7FA0FF;font-size:11px}
+.warn h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:700;margin:.4rem 0 26px}
+.warn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.warn-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.warn-grid{grid-template-columns:1fr}}
+.warn-card{border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:20px}
+.warn-card .term{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7FA0FF;margin-bottom:8px}
+.warn-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0;line-height:1.6}
+.warn-card strong{color:#fff}
+.warn-link{font-family:'Inter',sans-serif;font-size:.92rem;color:#7FA0FF;display:inline-block;margin-top:28px;text-decoration:none;font-weight:600}
+.warn-link:hover{text-decoration:underline}
+
+.fullbleed 
+
+/* stations grid (used across sections 02 + 03) */
+.stations{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 0}
+@media(max-width:900px){.stations{grid-template-columns:repeat(2,1fr)}}
+.station{border:1px solid var(--rule);border-radius:12px;padding:16px 18px;background:#fff}
+.station .mono{font-size:9px;color:var(--accent)}
+.station h4{font-family:'Inter',sans-serif;font-size:.98rem;font-weight:600;margin:.35rem 0 .2rem}
+.station p{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--muted);margin:0;line-height:1.5}
+.station em{color:var(--accent-deep);font-style:italic}
+.menu-more{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:18px}
+.subhead{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.2rem;color:var(--accent);margin:44px 0 0}
+
+/* bill table */
+.billwrap{border:1px solid var(--rule);border-radius:14px;padding:24px;overflow-x:auto;margin-top:26px}
+.billwrap table{width:100%;border-collapse:collapse;font-size:.88rem;font-family:'Inter',sans-serif;min-width:640px}
+.billwrap th{padding:10px 12px;border-bottom:2px solid var(--rule);font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:var(--muted)}
+.billwrap td{padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+.billwrap tr:nth-child(even) td{background:var(--cream)}
+
+/* subscribe strip */
+.subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
+.subs-in{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid var(--accent);border-radius:14px;padding:22px 26px;background:var(--cream)}
+.subs-in h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:0}
+.subs-in p{font-family:'Inter',sans-serif;font-size:.88rem;color:var(--muted);margin:.2rem 0 0}
+.subs-in a{font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:var(--accent);color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap}
+
+/* the chef's table: paid offers close */
+.chefs{background:var(--ink);color:#F5F0EB;margin-top:72px}
+.chefs-in{max-width:1160px;margin:0 auto;padding:64px 24px}
+.chefs .mono{color:#7FA0FF;font-size:11px}
+.chefs h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:700;margin:.4rem 0 26px}
+.chefs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.chefs-grid{grid-template-columns:1fr}}
+.chefs-card{border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:24px;display:flex;flex-direction:column;background:rgba(255,255,255,.03)}
+.chefs-card .mono{font-size:9.5px;margin-bottom:8px}
+.chefs-card h3{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;margin:0 0 6px;color:#fff}
+.chefs-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0 0 18px;line-height:1.6}
+.chefs-card a{margin-top:auto;text-align:center;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;text-decoration:none;background:#fff;color:var(--ink);border-radius:8px;padding:11px 16px}
+
+/* byline + IP bar */
+.byline{max-width:1160px;margin:70px auto 0;padding:0 24px}
+.byline-in{display:flex;gap:18px;align-items:center;background:var(--cream);border:1px solid var(--tint);border-radius:14px;padding:22px 26px}
+.byline-in img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.byline-in p{margin:0;font-size:.95rem}
+.byline-in .who{font-family:'Inter',sans-serif;font-weight:600}
+.ipbar{max-width:1160px;margin:26px auto 0;padding:0 24px 70px}
+.ipbar p{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px;margin:0}
+a{color:var(--accent)}
+
+/* skim-first: full menus fold away */
+details.fold{margin:22px 0 0}
+details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
+details.fold>summary:hover{background:#E4EAFB}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"\2193";font-size:13px}
+details.fold[open]>summary::after{content:"\2191"}
+details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
+.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
+
+/* qa: contain grid children, never let the page scroll sideways */
+.sec-body>*{min-width:0}
+.sec-body svg,.sec-body img{max-width:100%;height:auto}
+.sec table{max-width:100%}
+body{overflow-x:hidden}
+.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
+</style>
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
+<script defer src="/lib/motion.js"></script>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-logo" href="../free-resources.html" rel="noopener">Shift &amp; Lead</a>
+  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a class="nav-cta" href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-mistral">Workshops</a></div>
+  <span class="mono">Kitchen Map · No. 07 · Mistral</span>
+</div></nav>
+
+<!-- COVER -->
+<header class="cover">
+  <div>
+    <div class="issue mono"><span>The Kitchen Map · No. 07</span><span>Mistral</span><span>10 min read · diagram inside</span></div>
+    <h1>Chez <em>Mistral.</em></h1>
+    <p class="standfirst">What is Mistral? Mistral is a Paris-based AI lab's AI model. You hear AI names everywhere and never know which does what. This walks you through Mistral AI, the Paris kitchen, like a restaurant: the door, the kitchen, the plate.</p>
+    <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
+  <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
+  <p style="margin:0 0 14px;font-size:15.5px">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
+  <form class="capture-form" style="display:flex;gap:10px;flex-wrap:wrap">
+    <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+    <button type="submit" style="padding:10px 20px;background:#2C4BE0;color:#fff;border:none;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:14px;cursor:pointer">Send them to me</button>
+  </form>
+</div>
+  </div>
+  <div class="cover-art">
+    <svg viewBox="0 0 300 380" fill="none" aria-label="Door, kitchen, plate">
+      <rect x="70" y="30" width="160" height="110" rx="6" stroke="#7FA0FF" stroke-width="2"/>
+      <rect x="130" y="60" width="40" height="80" rx="3" stroke="#7FA0FF" stroke-width="2"/>
+      <circle cx="162" cy="102" r="3.5" fill="#7FA0FF"/>
+      <text x="150" y="22" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE DOOR</text>
+      <path d="M85 205h130M95 190h110M110 175h80" stroke="#7FA0FF" stroke-width="2" stroke-linecap="round"/>
+      <path d="M120 165c0-10 8-10 8-20M150 165c0-10 8-10 8-20M180 165c0-10 8-10 8-20" stroke="#2C4BE0" stroke-width="2" stroke-linecap="round"/>
+      <text x="150" y="232" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE KITCHEN</text>
+      <circle cx="150" cy="310" r="46" stroke="#7FA0FF" stroke-width="2"/>
+      <circle cx="150" cy="310" r="28" stroke="#2C4BE0" stroke-width="2"/>
+      <text x="150" y="378" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE PLATE</text>
+    </svg>
+  </div>
+</header>
+
+<!-- course rail -->
+<div class="rail">
+  <div class="courses">
+    <div class="course active">01 · The Door</div>
+    <div class="course">02 · The Kitchen</div>
+    <div class="course">03 · The Menu</div>
+    <div class="course">04 · Before You Eat</div>
+    <div class="course">05 · The Bill</div>
+  </div>
+</div>
+
+<!-- 01 THE DOOR -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <div><h2>The Door: what you're walking into</h2><span class="mono">First course · 2 min</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p class="dropcap">Mistral runs a brigade out of Paris, and it's the fastest kitchen in town. Its signature is speed, up to 1,000 words a second, the same pace whether you're paying or not, and a strict European code of conduct: EU servers, GDPR by default, and a privacy toggle no other major kitchen offers. This is the door for people who want their AI fast, multilingual, and provably private. (And yes, even the best chef makes mistakes. The allergen card comes right before you eat: course four.)</p>
+      <p>You've eaten at the big American chains. Chez Mistral is the smaller, faster, cheaper place around the corner that happens to speak over 100 languages and never makes you wait for the bill.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 THE KITCHEN (floor plan) -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <div><h2>The Kitchen: how it actually works</h2><span class="mono">Second course · the floor plan</span></div>
+  </div>
+  <div class="sec-body">
+    <div>
+      <p>One chef, several doors in. The main dining room is <strong>Le Chat</strong> (French for "the cat") on the web and as iOS/Android apps. Coders get a workspace inside it called <strong>Mistral Vibe</strong>. Developers go round the back to <strong>La Plateforme</strong>, the pay-per-use API. And if you want the recipe itself, some models are <strong>open-source</strong>: Mistral 7B and Mixtral can be downloaded and run on your own hardware.</p>
+      <p>Same brigade behind every door, just a different way of placing the order.</p>
+    </div>
+    <div class="plan">
+      <span class="mono">The floor plan</span>
+      <svg viewBox="0 0 420 300" fill="none">
+        <rect x="150" y="110" width="120" height="80" rx="10" stroke="#2C4BE0" stroke-width="2.5"/>
+        <text x="210" y="145" text-anchor="middle" font-family="Playfair Display" font-size="17" font-weight="700" fill="#1A1A1A">The Chef</text>
+        <text x="210" y="166" text-anchor="middle" font-family="Space Mono" font-size="9" letter-spacing="2" fill="#5C5A57">LARGE · MEDIUM · SMALL</text>
+        <rect x="20" y="20" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
+        <text x="85" y="42" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">Le Chat</text>
+        <text x="85" y="59" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">WEB + APP</text>
+        <rect x="270" y="20" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
+        <text x="335" y="42" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">Mistral Vibe</text>
+        <text x="335" y="59" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">CODING WORKSPACE</text>
+        <rect x="20" y="228" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
+        <text x="85" y="250" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">La Plateforme</text>
+        <text x="85" y="267" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">DEVELOPER API</text>
+        <rect x="270" y="228" width="130" height="52" rx="9" stroke="#D8D6D2" stroke-width="1.5" fill="#FFFFFF"/>
+        <text x="335" y="250" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#1A1A1A">Open-source</text>
+        <text x="335" y="267" text-anchor="middle" font-family="Space Mono" font-size="8" letter-spacing="1.5" fill="#5C5A57">SELF-HOSTED</text>
+        <path d="M120 72 L172 110M300 72 L248 110M120 228 L172 190M300 228 L248 190" stroke="#7FA0FF" stroke-width="1.5" stroke-dasharray="4 4"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="subhead">The chef &amp; their brain</div>
+  <div class="sec-body" style="padding-top:14px">
+    <p style="max-width:none">Before anyone walks in, the chef already exists. <strong>Mistral Large</strong> is the flagship for reasoning, coding, and multilingual work. <strong>Mistral Medium</strong> balances quality and speed, and is the default on the free tier. <strong>Mistral Small</strong> is the fast, cheap option for high-volume tasks. <strong>Magistral</strong> is the reasoning specialist that thinks step-by-step before answering, like Mistral's own version of "extended thinking." Every word you send is a <em>token</em>, an ingredient, and the <em>context window</em> is the size of the countertop: how much the chef can hold in mind at once. The signature edge is <strong>100+ languages</strong> including regional dialects, and <strong>exceptional speed</strong>: up to 1,000 words per second, the same whether you're on the free tier or paying.</p>
+  </div>
+  <details class="fold"><summary>Open the full station menu · 8 items</summary>
+<div class="stations">
+    <div class="station"><span class="mono">Core brain</span><h4>Mistral Large</h4><p><em>"The flagship chef."</em> Best reasoning, coding, and multilingual model. Pro tier and above only.</p></div>
+    <div class="station"><span class="mono">Core brain</span><h4>Mistral Medium</h4><p><em>"The balanced everyday chef."</em> Quality and speed together: the free-tier default.</p></div>
+    <div class="station"><span class="mono">Core brain</span><h4>Mistral Small</h4><p><em>"The fast, efficient chef."</em> Quick answers, lowest cost, built for volume.</p></div>
+    <div class="station"><span class="mono">Core brain</span><h4>Magistral (reasoning)</h4><p><em>"Thinks step-by-step before cooking."</em> The specialised reasoning model for hard, multi-step problems.</p></div>
+    <div class="station"><span class="mono">Core brain</span><h4>100+ Languages</h4><p><em>"A chef who speaks every language fluently."</em> Including regional dialects, naturally strong on European languages.</p></div>
+    <div class="station"><span class="mono">Core brain</span><h4>Exceptional Speed</h4><p><em>"The fastest kitchen in town."</em> Up to 1,000 words/sec, no throttling on free.</p></div>
+    <div class="station"><span class="mono">Core brain</span><h4>Tokens</h4><p><em>"Individual ingredients."</em> Every word costs tokens; API users pay per token.</p></div>
+    <div class="station"><span class="mono">Core brain</span><h4>Context Window</h4><p><em>"Size of the countertop."</em> What the chef can see right now: your question, memory, files, prior turns.</p></div>
+  </div>
+</details>
+
+  <div class="subhead">The front door</div>
+  <div class="sec-body" style="padding-top:14px">
+    <p style="max-width:none">Multiple ways to enter this restaurant. The main entrance is <strong>Le Chat</strong>: web at chat.mistral.ai plus iOS and Android apps, with a free tier and a Pro tier at $14.99/month. <strong>Mistral Vibe</strong> is the coding workspace built into Le Chat Pro. <strong>La Plateforme</strong> is the developer API door, priced pay-per-use. And <strong>open-source models</strong> like Mistral 7B and Mixtral can be downloaded and self-hosted on your own machine.</p>
+  </div>
+  <div class="stations">
+    <div class="station"><span class="mono">Entrance</span><h4>Le Chat (web + mobile)</h4><p><em>"The standalone dining room."</em> chat.mistral.ai plus iOS and Android: free tier, Pro at $14.99/month.</p></div>
+    <div class="station"><span class="mono">Entrance</span><h4>Mistral Vibe</h4><p><em>"The coding workspace inside Le Chat."</em> All-day coding assistant, pay-as-you-go beyond the included allocation.</p></div>
+    <div class="station"><span class="mono">Entrance</span><h4>La Plateforme (API)</h4><p><em>"The wholesale door for businesses."</em> Pay-per-token developer API, competitive on Small and Medium.</p></div>
+    <div class="station"><span class="mono">Entrance</span><h4>Open-source models</h4><p><em>"Public recipes for some dishes."</em> Mistral 7B and Mixtral, free to download. Large stays proprietary.</p></div>
+  </div>
+
+  <div class="subhead">The order slip</div>
+  <div class="sec-body" style="padding-top:14px">
+    <p style="max-width:none">Every order has layers. The <strong>Model Picker</strong> lets you choose Large, Medium, Small, or Magistral per task. The <strong>Magistral reasoning toggle</strong> tells the chef to think step-by-step. <strong>Deep Research</strong> mode reads many sources before answering. <strong>Memories</strong> save up to 500 preferences across chats. <strong>Custom instructions</strong> shape tone and format. And <strong>prompt engineering</strong> is simply learning to write clearer tickets for better dishes.</p>
+  </div>
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
+    <div class="station"><span class="mono">Order slip</span><h4>Model Picker</h4><p><em>"Choose which chef takes your order."</em> Switch between Large, Medium, Small, Magistral.</p></div>
+    <div class="station"><span class="mono">Order slip</span><h4>Magistral Reasoning Toggle</h4><p><em>"Telling the chef to think before answering."</em> Flips into extended step-by-step reasoning.</p></div>
+    <div class="station"><span class="mono">Order slip</span><h4>Deep Research Mode</h4><p><em>"Reading every recipe book first."</em> Pro feature: reads many sources, returns a structured, sourced answer.</p></div>
+    <div class="station"><span class="mono">Order slip</span><h4>Memories (up to 500)</h4><p><em>"Chef's notebook about you."</em> Saves preferences and context across every chat.</p></div>
+    <div class="station"><span class="mono">Order slip</span><h4>Custom Instructions</h4><p><em>"Standing notes on the kitchen wall."</em> Default tone, format, and persona for every reply.</p></div>
+    <div class="station"><span class="mono">Order slip</span><h4>Prompt Engineering</h4><p><em>"Learning to write better order tickets."</em> Clearer requests produce noticeably better dishes.</p></div>
+  </div>
+</details>
+
+  <div class="subhead">The kitchen: where the work happens</div>
+  <div class="sec-body" style="padding-top:14px">
+    <p style="max-width:none">The order arrives and the stations light up. <strong>Multilingual writing</strong> across 100+ languages is the strongest station in the house. <strong>Mistral Vibe</strong> handles all-day coding sessions. <strong>Deep Research</strong> chains web reads into a sourced report. <strong>Document analysis</strong> reads anything you upload, up to 15GB on Pro. <strong>Web search</strong> brings in fresh ingredients. And <strong>FLUX Pro</strong> handles image generation: a guest chef borrowed from Black Forest Labs, not Mistral's own model.</p>
+  </div>
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
+    <div class="station"><span class="mono">Kitchen station</span><h4>Multilingual Writing</h4><p><em>"A chef who writes in any language."</em> Emails, reports, and articles across 100+ languages.</p></div>
+    <div class="station"><span class="mono">Kitchen station</span><h4>Mistral Vibe Coding</h4><p><em>"Chef who builds the kitchen equipment."</em> All-day coding sessions with debugging and refactoring.</p></div>
+    <div class="station"><span class="mono">Kitchen station</span><h4>Deep Research</h4><p><em>"Reading many books before answering."</em> Long-form sourced reports, Pro only.</p></div>
+    <div class="station"><span class="mono">Kitchen station</span><h4>Document Analysis (15GB)</h4><p><em>"A chef who reads your filing cabinet."</em> Upload, organise, and query PDFs, docs, spreadsheets.</p></div>
+    <div class="station"><span class="mono">Kitchen station</span><h4>Web Search</h4><p><em>"Checking today's market."</em> Up-to-date answers, more searches on Pro.</p></div>
+    <div class="station"><span class="mono">Kitchen station</span><h4>FLUX Pro Image Gen</h4><p><em>"A guest artist in the kitchen."</em> Image generation via Black Forest Labs, not Mistral's own model, Pro only.</p></div>
+  </div>
+</details>
+</section>
+
+<!-- pull quote -->
+<div class="pull">
+  <blockquote>"Mistral Pro costs less than most premium subscriptions from the major labs, and it is one of the fastest."</blockquote>
+  <span class="mono">Why people switch to Mistral</span>
+</div>
+
+<!-- 03 THE MENU -->
+<section class="sec" style="padding-top:0">
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <div><h2>The Menu: what to order first</h2><span class="mono">Third course · three dishes</span></div>
+  </div>
+  <div class="menu">
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><path d="M10 50c10-24 50-24 60 0" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/><circle cx="40" cy="20" r="9" stroke="#2C4BE0" stroke-width="2.5"/></svg></div>
+      <span class="mono">Starter · 5 minutes</span>
+      <h3>The fast multilingual draft</h3>
+      <p>Draft a business email in German, translate it to French, then adapt it for Brazilian Portuguese, all in one thread, at near-instant speed.</p>
+    </div>
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><rect x="12" y="10" width="56" height="40" rx="5" stroke="#2C4BE0" stroke-width="2.5"/><path d="M24 26l8 6-8 6M40 40h16" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <span class="mono">Main · 20 minutes</span>
+      <h3>The document read</h3>
+      <p>Upload a 100-page contract and ask "what are the termination clauses and their conditions?" Mistral pulls the relevant text plus a summary.</p>
+    </div>
+    <div class="dish">
+      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><circle cx="40" cy="32" r="22" stroke="#2C4BE0" stroke-width="2.5"/><path d="M40 18v14l10 8" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <span class="mono">Chef's special</span>
+      <h3>No Telemetry Mode</h3>
+      <p>Toggle the one privacy switch no other major lab offers: a contractual guarantee your conversation is never used for training.</p>
+    </div>
+  </div>
+
+  <div class="subhead">The kitchen team: saving, organising, sharing</div>
+  <div class="sec-body" style="padding-top:14px">
+    <p style="max-width:none"><strong>Projects</strong> group chats and documents by topic or client: 500 on Free, 1,000 on Pro. <strong>Memories</strong> save up to 500 things about you across conversations. <strong>Team</strong>, at around $24.99/seat, adds a shared workspace, domain verification, and admin controls. <strong>Enterprise</strong> offers private deployment, your own cloud or on-prem, custom models, and hands-on support from Mistral's engineering team.</p>
+  </div>
+  <div class="stations">
+    <div class="station"><span class="mono">Front of house</span><h4>Projects</h4><p><em>"Filing cabinets per client or topic."</em> 500 on Free, 1,000 on Pro.</p></div>
+    <div class="station"><span class="mono">Front of house</span><h4>Memories (500)</h4><p><em>"Chef's persistent notebook."</em> Preferences carried across every chat.</p></div>
+    <div class="station"><span class="mono">Team dining</span><h4>Team Plan (~$24.99/seat)</h4><p><em>"Group dining with admin controls."</em> Shared workspace, domain verification, central billing.</p></div>
+    <div class="station"><span class="mono">Private kitchen</span><h4>Enterprise (private deploy)</h4><p><em>"Your own private kitchen."</em> On-prem or your cloud, custom models, full stack control.</p></div>
+  </div>
+
+  <div class="subhead">The supply chain: how it connects outside</div>
+  <div class="sec-body" style="padding-top:14px">
+    <p style="max-width:none"><strong>Web search</strong> brings live information into any answer. <strong>File uploads</strong> let you bring your own ingredients: PDFs, docs, spreadsheets, up to 15GB on Pro. The <strong>FLUX Pro partnership</strong> handles image generation through Black Forest Labs. <strong>La Plateforme</strong> exposes Mistral models to developers at competitive per-token pricing. <strong>Open-source weights</strong> can be downloaded and run on your own infrastructure, with zero data leaving your network. The one gap: <strong>fewer integrations</strong> than the giants, no Slack, Google Drive, or Jira connectors out of the box.</p>
+  </div>
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
+    <div class="station"><span class="mono">Supply</span><h4>Web Search Supply</h4><p><em>"The general supplier."</em> Live web behind both quick search and Deep Research.</p></div>
+    <div class="station"><span class="mono">Supply</span><h4>File Uploads (15GB)</h4><p><em>"Bringing your own ingredients."</em> PDFs, docs, spreadsheets grounded inside a project.</p></div>
+    <div class="station"><span class="mono">Supply</span><h4>FLUX Pro Partnership</h4><p><em>"Guest artist on retainer."</em> Image generation via Black Forest Labs, not Mistral's own model.</p></div>
+    <div class="station"><span class="mono">Supply</span><h4>La Plateforme API</h4><p><em>"Wholesale ingredient supply."</em> Per-token billing, very competitive on Small and Medium.</p></div>
+    <div class="station"><span class="mono">Supply</span><h4>Open-source weights</h4><p><em>"Public recipes you can run yourself."</em> Self-host Mistral 7B and Mixtral, zero data leaves your network.</p></div>
+    <div class="station"><span class="mono">Supply</span><h4>Fewer Integrations</h4><p><em>"No delivery network."</em> No 60+ connectors like ChatGPT, so copy-paste is the default bridge.</p></div>
+  </div>
+</details>
+
+  <div class="subhead">Plating &amp; delivery: how the dish reaches you</div>
+  <div class="sec-body" style="padding-top:14px">
+    <p style="max-width:none">The dish lands as a <strong>fast text answer</strong> with a near-instant feel. <strong>Code blocks</strong> come syntax-highlighted from Mistral Vibe. <strong>FLUX-generated images</strong> handle visuals. <strong>Document summaries</strong> distill uploaded files. <strong>Translations</strong> switch across 100+ languages inside one chat. And <strong>project history</strong> keeps everything searchable in named folders.</p>
+  </div>
+  <details class="fold"><summary>Open the full station menu · 6 items</summary>
+<div class="stations">
+    <div class="station"><span class="mono">Delivery</span><h4>Fast Text Answer</h4><p><em>"Plate served before you finish ordering."</em> Near-instant, 1,000 words per minute.</p></div>
+    <div class="station"><span class="mono">Delivery</span><h4>Code Output (Vibe)</h4><p><em>"Ready-to-serve dish from the coding station."</em> Syntax-highlighted, ready to paste.</p></div>
+    <div class="station"><span class="mono">Delivery</span><h4>FLUX Image Output</h4><p><em>"Painting served alongside the meal."</em> High-quality stills via FLUX Pro.</p></div>
+    <div class="station"><span class="mono">Delivery</span><h4>Document Summaries</h4><p><em>"Plated digest of a long report."</em> Structured summary, dates, action items, clauses.</p></div>
+    <div class="station"><span class="mono">Delivery</span><h4>Translations Across 100+</h4><p><em>"Same dish, plated for different rooms."</em> In-conversation language switching.</p></div>
+    <div class="station"><span class="mono">Delivery</span><h4>Project History</h4><p><em>"Filing cabinet of past meals."</em> Searchable, revisitable, organised by project.</p></div>
+  </div>
+</details>
+
+  <div class="subhead">Where Mistral fits</div>
+  <div class="sec-body" style="padding-top:14px">
+    <p style="max-width:none">Mistral wins on <strong>privacy</strong>: EU residency, GDPR, and a No Telemetry Mode unique in the market. It wins on <strong>price</strong>: the Pro tier sits below most premium subscriptions from major labs. It wins on <strong>speed</strong>: feels instant, no throttling on free. It wins on <strong>languages</strong>: 100+ including regional dialects, naturally strong on European ones. It loses on <strong>multi-modal scope</strong>: no own image model, no video, no native voice. It loses on <strong>integrations</strong>: nothing close to ChatGPT or Microsoft Copilot's connector library. Pick Mistral when privacy, speed, multilingual reach, or cost matter more than tool breadth.</p>
+  </div>
+  <div class="stations">
+    <div class="station"><span class="mono">vs the field</span><h4>vs ChatGPT Plus</h4><p><em>"Privacy + price vs breadth + ecosystem."</em> $14.99 EU-first vs $20 connector-heavy.</p></div>
+    <div class="station"><span class="mono">vs the field</span><h4>vs Claude Pro</h4><p><em>"Speed + EU vs nuance + agentic."</em> Mistral wins on speed and privacy; Claude on long-form nuance and computer use.</p></div>
+    <div class="station"><span class="mono">vs the field</span><h4>vs Perplexity Pro</h4><p><em>"Generalist EU vs research specialist."</em> Mistral covers more ground; Perplexity owns cited live research.</p></div>
+    <div class="station"><span class="mono">vs the field</span><h4>Ideal User</h4><p><em>"When Mistral shines."</em> EU businesses under GDPR, multilingual teams, privacy-first professionals, budget-conscious users, self-hosters.</p></div>
+  </div>
+  <p class="menu-more">Every station gets its own walkthrough in the full guide. This is the seating chart.</p>
+</section>
+
+
+<!-- 04 KNOW BEFORE YOU EAT -->
+<section class="warn" style="margin-top:72px">
+  <div class="warn-inner">
+    <span class="mono">Fourth course · read this before you trust it</span>
+    <h2>Know before you eat.</h2>
+    <div class="warn-grid">
+      <div class="warn-card"><div class="term">Hallucinations</div><p>The chef says <strong>"definitely nut-free"</strong> when it isn't: a confident answer with made-up facts. Verify any high-stakes claim against the actual source.</p></div>
+      <div class="warn-card"><div class="term">Confabulation</div><p>Instead of saying "I don't know," the chef stitches together a <strong>convincing but invented story</strong>, including fictional citations. Always ask for the real source.</p></div>
+      <div class="warn-card"><div class="term">Sycophancy</div><p>A yes-chef who agrees with everything you say, <strong>even when you're wrong.</strong> Make it argue the other side first.</p></div>
+      <div class="warn-card"><div class="term">Prompt injection</div><p>Someone sneaks a fake order ticket in: hidden instructions inside a webpage or document that try to <strong>steer the chef.</strong> Be careful what you feed it from strangers.</p></div>
+      <div class="warn-card"><div class="term">Data leakage</div><p>Without No Telemetry Mode, uploaded files or chat content could be used for training. <strong>Enterprise plus on-prem</strong> removes this risk entirely.</p></div>
+      <div class="warn-card"><div class="term">Bias</div><p>Mistral inherits its training data's habits: <strong>strong on European contexts</strong>, thinner coverage in some non-EU regions.</p></div>
+      <div class="warn-card"><div class="term">Overconfidence</div><p>The chef states things as settled fact when sources actually disagree. <strong>Cross-check before quoting</strong> in anything that matters.</p></div>
+      <div class="warn-card"><div class="term">Smaller ecosystem</div><p>Great restaurant, limited side dishes: <strong>no voice mode, no own image model, no video</strong>, and far fewer third-party integrations than ChatGPT or Copilot.</p></div>
+    </div>
+    <!-- Fast Forward CTA hidden pending launch (restore by removing this comment wrapper): <a class="warn-link" href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=chez-mistral">Fast Forward includes 42 verification prompts that make AI prove its work before you trust it. See Fast Forward →</a> -->
+  </div>
+</section>
+
+<!-- subscribe strip -->
+<div class="subs"><div class="subs-in">
+  <div><h3>Get every new Kitchen Map in your inbox.</h3><p>Plus The Insider Brief: one curated AI briefing every Tuesday, verdicts included.</p></div>
+  <a href="https://brief.shiftandlead.com">Subscribe free →</a>
+</div></div>
+
+<!-- 05 THE BILL -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <div><h2>The Bill. What it costs, what's next.</h2><span class="mono">Last course · 1 min</span></div>
+  </div>
+  <div class="sec-body" style="grid-template-columns:1fr">
+    <div>
+      <p>This zone wraps around everything. <strong>EU residency + GDPR</strong> is the structural safety net: Mistral is headquartered in Paris, data processed on EU-based servers. <strong>No Telemetry Mode</strong> on Pro contractually guarantees your conversations are never used for training or product improvement. No other major AI tool offers this level of assurance. <strong>Le Chat Free</strong> gives roughly 25 messages a day. <strong>Le Chat Pro</strong> at $14.99/month unlocks Mistral Large, Vibe, deep research, 15GB storage, and image generation. <strong>Students</strong> get 53% off at $7.04/month. <strong>Team</strong> runs about $24.99/seat. <strong>Enterprise</strong> is custom, for private deployment. The developer API is priced separately and very competitively.</p>
+    </div>
+  </div>
+  <div class="billwrap">
+    <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.2rem;color:var(--accent);margin-bottom:4px">Chez Mistral · Plans at a Glance</div>
+    <div class="mono" style="font-size:.62rem;color:var(--muted);margin-bottom:16px">Based on mistral.ai/pricing · June 2026 · USD, subject to change, verify current rates</div>
+    <table>
+      <thead><tr><th>Plan</th><th>Price</th><th>Best for</th><th>Key features</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Le Chat Free</strong></td><td>$0</td><td>Trying it out</td><td>~25 messages/day, Mistral Medium + Small, no Large, no Vibe</td></tr>
+        <tr><td><strong>Le Chat Pro</strong></td><td>$14.99/mo</td><td>Privacy-first professionals</td><td>Mistral Large, ~150 msgs/day, Mistral Vibe, deep research, 15GB storage, No Telemetry, FLUX image gen</td></tr>
+        <tr><td><strong>Student</strong></td><td>$7.04/mo</td><td>Students &amp; educators</td><td>Same as Pro, 53% off, .edu email + ID verification, annual renewal</td></tr>
+        <tr><td><strong>Team</strong></td><td>~$24.99/seat/mo</td><td>Small orgs</td><td>30GB storage/user, domain verification, shared projects, admin controls</td></tr>
+        <tr><td><strong>Enterprise</strong></td><td>Custom</td><td>Security-first orgs</td><td>Private deployment (on-prem / own cloud), custom models, full stack control, engineering support</td></tr>
+        <tr><td><strong>La Plateforme API</strong></td><td>Pay per use</td><td>Developers</td><td>Token-based, very competitive on Small + Medium, separate from Le Chat</td></tr>
+        <tr><td><strong>Open-source weights</strong></td><td>Free</td><td>Self-hosters</td><td>Mistral 7B, Mixtral and others, run on your own hardware</td></tr>
+      </tbody>
+    </table>
+    <p style="font-family:'Source Serif 4',Georgia,serif;font-size:.85rem;color:var(--muted);margin-top:14px;line-height:1.6">Compare: Mistral Pro costs less than ChatGPT Plus or Claude Pro, and it remains one of the lowest priced premium subscriptions from any major lab.</p>
+  </div>
+  <p style="max-width:70ch;margin-top:22px"><strong>Next on the map:</strong> <a href="./chez-deepseek.html">Chez DeepSeek: same plates, a fraction of the price →</a></p>
+</section>
+
+<p style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0">Ready for more than free? The three ways to go further &rarr;</a></p>
+
+<!-- byline -->
+<div class="byline">
+  <div class="byline-in">
+    <img src="../closeUp.jpeg" alt="Fatiha Chikh" loading="lazy" decoding="async">
+    <p>Written by <strong>Fatiha Chikh</strong>, who is hiring 99 AI employees to run her business in public. <a href="../about.html">The story &rarr;</a></p>
+  </div>
+</div>
+
+<div class="ipbar">
+  <p><a href="../privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved. Original IP: The Kitchen Map&trade; format, text and diagrams may not be reproduced, scraped, or used as training data without written permission.</p>
+</div>
+
+<script>
+document.querySelectorAll('.capture-form').forEach(function(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    var email = form.querySelector('[name="email"]').value;
+    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Done.'; return; }
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      var r = await fetch('https://formspree.io/f/xgojoyka', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-chez-mistral'}) });
+      fetch('https://auto.shiftandlead.com/webhook/formspree-lead', { method:'POST', keepalive:true,
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({email: email, source: 'guide-chez-mistral'}) });
+      if (r.ok) { btn.textContent = 'On its way.'; } else { btn.disabled=false; btn.textContent='Try again'; }
+    } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
+  });
+});
+</script>
+
+<script>
+try {
+  var r = JSON.parse(localStorage.getItem('sl_read') || '[]');
+  if (r.indexOf('chez-mistral') === -1) { r.push('chez-mistral'); localStorage.setItem('sl_read', JSON.stringify(r)); }
+} catch(e){}
+</script>
+
+</body>
+</html>

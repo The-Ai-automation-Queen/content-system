@@ -25,7 +25,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232C4BE0'/><text x='50' y='68' font-size='55' font-family='Georgia' fill='white' text-anchor='middle' font-style='italic'>B</text></svg>">
-  <link rel="stylesheet" href="styles.css?v=20260728-4">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="styles.css?v=20260728-5">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -69,8 +70,17 @@
   }
   </script>
   <script src="app.js?v=20260728-2" defer></script>
+  <script defer src="/assets/capture.js"></script>
 </head>
-<body>
+<body data-page="insider-brief">
+
+  <form class="sl-ribbon capture-form" action="https://formspree.io/f/xgojoyka" method="POST" data-source="brief-ribbon">
+    <label for="ribbon-email">One clear verdict on the AI news that matters. Every week, free.</label>
+    <input id="ribbon-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
+    <input type="hidden" name="source" value="brief-ribbon">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+    <button type="submit">Subscribe free</button>
+  </form>
 
   <header class="site-header">
     <div class="header-inner">
@@ -87,6 +97,7 @@
       <div id="topic-bubbles" class="topic-bubbles"></div>
       <div class="hero-content">
         <h1>Stay ahead of AI changes<br>that affect your business.</h1>
+        <p class="hero-cadence" style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#1B2EA0;margin:18px 0 0">Every week &middot; free &middot; join {{SUBSCRIBER_COUNT}} operators</p>
         <p class="hero-subtitle">A focused briefing that filters the noise, explains what matters, and helps you decide what deserves your attention.</p>
       </div>
     </section>
@@ -132,6 +143,29 @@
     <p class="curator-note">Fatiha Chikh shows business owners where AI can make money, save time or create risk. Her perspective is shaped by 20 years at Dell, Intel and Microsoft.</p>
 
   </main>
+
+  <!-- partial:newsletter -->
+<section class="newsletter" aria-labelledby="nl-title">
+  <div class="nl-grid">
+    <div class="nl-copy">
+      <p class="eyebrow mono">The Insider Brief</p>
+      <h2 id="nl-title">One clear verdict on the AI news that matters.</h2>
+      <p>Every week. What changed, whether you should care, and what to do about it. Free.</p>
+      <form class="capture-form" action="https://formspree.io/f/xgojoyka" method="POST" data-source="brief">
+        <label class="visually-hidden" for="nl-email">Email address</label>
+        <input id="nl-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
+        <input type="hidden" name="source" value="newsletter">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit">Subscribe free</button>
+      </form>
+      <p class="capture-fineprint">No cost, no catch. Unsubscribe anytime.</p>
+    </div>
+    <div class="nl-art">
+      <img src="/assets/art/insider-brief.svg" alt="A weekly briefing card showing three headlines each marked with a plain verdict." loading="lazy" decoding="async" width="480" height="360">
+    </div>
+  </div>
+</section>
+<!-- /partial:newsletter -->
 
   <button class="scroll-top" aria-label="Scroll to top">&uarr;</button>
   <div class="toast" id="toast"></div>

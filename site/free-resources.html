@@ -21,220 +21,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --canvas:#FFFFFF;
-  --surface:#FFFFFF;
-  --cream:#EEF2FC;
-  --ink:#1A1A1A;
-  --rule:#D8D6D2;
-  --muted:#5C5A57;
-  --accent:#2C4BE0;
-  --accent-deep:#1B2EA0;
-  --accent-tint:#E4EAFB;
-  --electric:#2C4BE0;
-  --navy:#1B2EA0;
-  --chip-setup:#1A1A1A;
-  --chip-literacy:#E63955;
-  --chip-data:#2C4BE0;
-  --chip-track0:#2C4BE0;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-
-.ribbon{display:flex;width:100%;background:var(--navy);color:var(--canvas);font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;padding:11px 32px;text-align:center;text-decoration:none;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-.ribbon label{cursor:default}
-.ribbon input[type="email"]{padding:7px 14px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);color:var(--canvas);font-family:'Inter',sans-serif;font-size:13px;border-radius:3px;letter-spacing:0.02em;text-transform:none;width:220px}
-.ribbon input[type="email"]::placeholder{color:rgba(255,255,255,0.45)}
-.ribbon input[type="email"]:focus{outline:none;border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.15)}
-.ribbon button{background:transparent;border:1px solid rgba(255,255,255,0.3);color:#E4EAFB;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:7px 16px;border-radius:3px;cursor:pointer}
-.ribbon button:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.5)}
-
-.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
-.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
-.nav-links a{color:var(--ink);text-decoration:none}
-.nav-links a:hover,.nav-links a.active{color:var(--accent)}
-.nav-links .nav-cta{background:var(--accent);color:#fff;padding:9px 16px;border-radius:3px;font-weight:600}
-.nav-links .nav-cta:hover{background:var(--accent-deep)}
-
-.hero{background:var(--canvas);padding:88px 32px 96px}
-.hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:72px;align-items:center}
-.hero-kicker{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(28px,3.5vw,38px);text-transform:none;letter-spacing:0.02em;color:var(--muted);margin-bottom:24px}
-.hero h1{font-family:'Playfair Display',Georgia,serif;font-size:104px;line-height:0.96;font-weight:400;letter-spacing:-0.03em;margin-bottom:32px;font-style:italic;color:var(--electric)}
-.hero h1 .block{font-style:normal;display:block;color:var(--ink)}
-.hero-sub{font-size:22px;line-height:1.5;color:var(--muted);max-width:560px}
-.hero-portrait{aspect-ratio:4/5;position:relative;overflow:hidden;background:#1A1A1A}
-.hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-
-.pull{background:var(--canvas);color:var(--ink);padding:88px 32px;text-align:center;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);margin:0 32px}
-.pull-inner{max-width:880px;margin:0 auto}
-.pull-mark{font-family:'Playfair Display',Georgia,serif;font-size:96px;line-height:0.4;color:var(--accent);opacity:0.6;display:block;margin-bottom:8px}
-.pull-text{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:38px;line-height:1.28;font-weight:400;color:var(--ink)}
-.pull-text em{color:var(--electric);font-style:italic}
-.pull-attrib{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.22em;margin-top:32px;color:var(--muted)}
-
-.spotlight{background:var(--cream);padding:80px 32px}
-.spotlight-inner{max-width:1240px;margin:0 auto}
-.spotlight-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:36px;border-bottom:1px solid var(--rule);padding-bottom:18px}
-.spotlight-eyebrow{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent-deep)}
-.spotlight-title{font-family:'Playfair Display',Georgia,serif;font-size:42px;font-weight:400;letter-spacing:-0.01em}
-.spotlight-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:24px}
-.spot-feat{background:#fff;border:1px solid var(--rule);padding:40px;display:flex;flex-direction:column;justify-content:space-between;min-height:360px}
-.spot-feat .chip{align-self:flex-start;margin-bottom:18px}
-.spot-feat h3{font-family:'Playfair Display',Georgia,serif;font-size:42px;line-height:1.1;font-weight:400;margin-bottom:16px;letter-spacing:-0.01em}
-.spot-feat p{color:var(--muted);font-size:18px;line-height:1.5;margin-bottom:32px;max-width:540px}
-.spot-side{display:grid;grid-template-rows:1fr 1fr;gap:24px}
-.spot-mini{background:#fff;border:1px solid var(--rule);padding:24px;display:flex;flex-direction:column;justify-content:space-between}
-.spot-mini .chip{align-self:flex-start;margin-bottom:12px}
-.spot-mini h4{font-family:'Playfair Display',Georgia,serif;font-size:22px;line-height:1.25;font-weight:400;margin-bottom:8px}
-.spot-mini p{color:var(--muted);font-size:14px;line-height:1.5;margin-bottom:18px}
-
-.controls{max-width:1240px;margin:0 auto;padding:80px 32px 24px;display:flex;gap:24px;flex-wrap:wrap;align-items:center}
-.controls-head{width:100%;display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid var(--rule);padding-bottom:18px;margin-bottom:8px}
-.controls-eyebrow{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent-deep)}
-.controls-title{font-family:'Playfair Display',Georgia,serif;font-size:42px;font-weight:400;letter-spacing:-0.01em}
-.search{flex:1;min-width:280px;padding:14px 18px;border:1px solid var(--rule);background:#fff;font-family:'Inter',sans-serif;font-size:14px}
-.search:focus-visible,.pill:focus-visible{outline:2px solid var(--accent-deep);outline-offset:2px}
-.filter-group{display:flex;gap:8px;align-items:center}
-.filter-label{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--muted);margin-right:8px}
-.pill{padding:8px 14px;border:1px solid var(--rule);background:#fff;font-family:'Inter',sans-serif;font-size:13px;cursor:pointer}
-.pill.active{background:var(--ink);color:var(--canvas);border-color:var(--ink)}
-
-.library{max-width:1240px;margin:0 auto;padding:24px 32px 96px}
-.card{background:#fff;padding:28px 32px;border-radius:4px}
-.row{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;padding:36px 0;border-bottom:1px solid var(--rule)}
-.row:hover{background:rgba(44,75,224,0.04);cursor:pointer}
-.row-title a{color:inherit;text-decoration:none}
-.row-title a:hover{color:var(--accent)}
-.row-meta{display:flex;gap:14px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
-.chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff}
-.chip-setup{background:var(--chip-setup)}
-.chip-literacy{background:var(--chip-literacy)}
-.chip-data{background:var(--chip-data)}
-.chip-track0{background:var(--chip-track0)}
-.row-kicker{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted)}
-.row-date{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);margin-left:auto}
-.row-title{font-family:'Playfair Display',Georgia,serif;font-size:30px;line-height:1.2;font-weight:400;margin-bottom:10px;letter-spacing:-0.01em}
-.row-summary{font-size:17px;color:var(--muted);max-width:760px;line-height:1.55}
-.row-cta{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.18em;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px;white-space:nowrap}
-.row.coming-soon{opacity:0.45;pointer-events:none}
-.row.coming-soon .row-cta{border-bottom-color:transparent;color:var(--muted)}
-
-.cta-band{background:var(--navy);color:var(--canvas);padding:96px 32px}
-.cta-inner{max-width:1240px;margin:0 auto}
-.cta-head{text-align:center;margin-bottom:48px}
-.cta-eyebrow{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.22em;opacity:0.8;margin-bottom:14px}
-.cta-title{font-family:'Playfair Display',Georgia,serif;font-size:54px;font-weight:400;font-style:italic;letter-spacing:-0.02em}
-.cta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.cta-card{background:var(--electric);border:1px solid rgba(255,255,255,0.18);padding:36px}
-.cta-card .kicker{color:#E4EAFB}
-.cta-card .kicker{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;opacity:0.7;margin-bottom:14px}
-.cta-card h3{font-family:'Playfair Display',Georgia,serif;font-size:28px;line-height:1.2;font-weight:400;margin-bottom:14px}
-.cta-card p{font-size:15px;opacity:0.85;margin-bottom:24px;line-height:1.55}
-.btn-cream{display:inline-block;padding:14px 24px;background:var(--canvas);color:var(--ink);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em}
-
-.footer{background:var(--ink);color:var(--canvas);padding:64px 32px 32px}
-.footer-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;align-items:start}
-.footer-brand{font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:700;margin-bottom:10px}
-.footer-tag{opacity:0.75;font-size:14px;max-width:380px}
-.footer-col-head{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;opacity:0.6;margin-bottom:12px}
-.footer-link{display:block;font-size:14px;padding:4px 0;color:var(--canvas);opacity:0.9}
-.footer-legal{max-width:1240px;margin:48px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,0.12);font-size:11px;opacity:0.5;font-family:'Space Mono',monospace;letter-spacing:0.18em;text-transform:uppercase;text-align:center}
-
-img{max-width:100%;height:auto}
-
-@media (max-width:900px){
-  .nav-inner{padding:16px 20px}
-  .nav-links{gap:16px;font-size:11px}
-  .hero{padding:56px 20px 64px}
-  .hero-inner{grid-template-columns:1fr;gap:40px}
-  .hero h1{font-size:48px}
-  .hero-sub{font-size:18px}
-  .hero-portrait{aspect-ratio:auto;max-width:360px;margin:0 auto;width:100%;background:transparent}
-  .hero-portrait img{height:auto;object-fit:contain}
-  .pull{padding:64px 20px;margin:0 20px}
-  .pull-text{font-size:28px}
-  .spotlight{padding:64px 20px}
-  .spotlight-grid{grid-template-columns:1fr}
-  .spotlight-title{font-size:34px}
-  .spot-feat{padding:28px;min-height:0}
-  .spot-feat h3{font-size:32px}
-  .controls{padding:64px 20px 24px;gap:16px}
-  .controls-title{font-size:34px}
-  .controls-head{flex-wrap:wrap;gap:12px}
-  .library{padding:24px 20px 72px}
-  .row{grid-template-columns:1fr;gap:14px;padding:28px 0}
-  .row-cta{justify-self:start}
-  .row-title{font-size:24px}
-  .row-date{margin-left:0}
-  .cta-band{padding:72px 20px}
-  .cta-title{font-size:38px}
-  .cta-grid{grid-template-columns:1fr}
-  .cta-card{padding:28px}
-  .footer{padding:48px 20px 24px}
-  .footer-inner{grid-template-columns:1fr;gap:32px}
-}
-
-@media (max-width:560px){
-  html,body{font-size:16px}
-  .ribbon{padding:10px 16px;font-size:11px;letter-spacing:0.12em;gap:8px}
-  .ribbon input[type="email"]{width:170px;font-size:12px;padding:6px 10px}
-  .ribbon button{padding:6px 12px;font-size:11px}
-  .nav-inner{padding:14px 16px;flex-wrap:wrap;gap:10px;justify-content:center}
-  .nav-logo{font-size:19px}
-  .nav-links{gap:12px;font-size:10px;flex-wrap:wrap;justify-content:center}
-  .hero{padding:40px 16px 48px}
-  .hero-inner{gap:32px}
-  .hero-kicker{font-size:24px;margin-bottom:18px}
-  .hero h1{font-size:34px;margin-bottom:20px;line-height:1.05}
-  .hero-sub{font-size:16px}
-  .hero-portrait{max-width:240px}
-  .pull{padding:48px 18px;margin:0 16px}
-  .pull-mark{font-size:72px}
-  .pull-text{font-size:22px;line-height:1.32}
-  .pull-attrib{font-size:10px;margin-top:24px}
-  .spotlight{padding:48px 16px}
-  .spotlight-head{flex-direction:column;align-items:flex-start;gap:12px}
-  .spotlight-title{font-size:28px}
-  .spot-feat{padding:22px}
-  .spot-feat h3{font-size:26px}
-  .spot-feat p{font-size:16px}
-  .spot-mini{padding:20px}
-  .controls{padding:48px 16px 16px}
-  .controls-title{font-size:28px}
-  .filter-group{flex-wrap:wrap}
-  .search{min-width:0;width:100%;font-size:15px}
-  .library{padding:16px 16px 56px}
-  .row{padding:24px 0}
-  .row-title{font-size:21px}
-  .row-summary{font-size:15px}
-  .cta-band{padding:56px 16px}
-  .cta-title{font-size:30px}
-  .cta-card h3{font-size:24px}
-  .cta-card{padding:24px}
-  .footer{padding:40px 16px 20px}
-  .footer-legal{font-size:10px;letter-spacing:0.14em}
-}
-
-.dkp-row{display:flex;gap:0;margin-top:22px;border-top:1px solid var(--rule);padding-top:22px}
-.dkp-step{flex:1;text-align:center;padding:0 12px;position:relative}
-.dkp-step:not(:last-child)::after{content:'\2192';position:absolute;right:-2px;top:14px;color:var(--rule);font-size:18px}
-.dkp-step svg{width:34px;height:34px;color:var(--accent);margin-bottom:8px}
-.dkp-step .lbl{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);font-weight:700}
-.dkp-step p{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.4}
-@media(max-width:640px){.dkp-row{flex-direction:column;gap:20px}.dkp-step:not(:last-child)::after{display:none}}
-</style>
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/pages/free-resources.css">
 <script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 <script defer src="/lib/motion.js"></script>
 </head>
 <body>
 
-<form class="ribbon" id="ribbon-form">
+<form action="https://formspree.io/f/xgojoyka" method="POST" class="ribbon" id="ribbon-form">
   <label for="ribbon-email">Get the AI Insider Brief, free</label>
   <input id="ribbon-email" name="email" type="email" placeholder="your@email.com" required>
+  <input type="hidden" name="source" value="guides-library-ribbon">
   <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
   <button type="submit"><strong>Subscribe free</strong></button>
 </form>
@@ -251,7 +48,7 @@ img{max-width:100%;height:auto}
     <p class="hero-sub">The guides I wish I had when I started. Now they are yours, free, no email wall.</p>
     <!-- Fast Forward hero cross-sell line removed pending launch; restore from git history to bring it back. -->
 
-    <p style="font-family:'Inter',sans-serif;font-size:14px;color:#5C5A57;margin-top:14px">by <strong style="color:#1A1A1A">Fatiha Chikh</strong>, The AI Automation Queen · 20+ years in big tech · hiring 99 AI employees in public · <a href="99.html" style="color:#2C4BE0">the receipts &rarr;</a></p>
+    <p style="font-family:'Inter',sans-serif;font-size:14px;color:#555;margin-top:14px">by <strong style="color:#1A1A1A">Fatiha Chikh</strong>, The AI Automation Queen · 20+ years in big tech · hiring 99 AI employees in public · <a href="99.html" style="color:#2C4BE0">the receipts &rarr;</a></p>
   </div>
   <div class="hero-portrait"><img src="fatiha-shelf.jpg" alt="Fatiha Chikh" loading="eager" decoding="async"></div>
 </div></section>
@@ -264,28 +61,6 @@ img{max-width:100%;height:auto}
 
 
 <!-- start-here paths -->
-<style>
-.paths{max-width:1240px;margin:0 auto;padding:72px 32px 24px}
-.paths-eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#2C4BE0}
-.paths-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,4vw,40px);font-weight:700;margin:6px 0 8px}
-.paths-sub{color:#5C5A57;font-size:16px;max-width:56ch;margin:0 0 28px}
-.paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media(max-width:900px){.paths-grid{grid-template-columns:1fr}}
-.path-col{background:#fff;border:1px solid #D8D6D2;border-radius:14px;padding:26px 26px 22px;display:flex;flex-direction:column;gap:0}
-.path-col.crown{border-color:#2C4BE0;box-shadow:0 8px 28px rgba(107,78,255,.12)}
-.path-lvl{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#2C4BE0}
-.path-name{font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:700;margin:6px 0 4px}
-.path-tag{color:#5C5A57;font-size:14px;margin:0 0 14px;font-family:'Inter',sans-serif}
-.path-check{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#5C5A57;margin:6px 0 6px}
-.path-col ul{list-style:none;margin:0 0 16px;padding:0}
-.path-col li{font-size:14.5px;color:#1A1A1A;padding:7px 0 7px 26px;position:relative;border-bottom:1px dashed #E8E5E0;}
-.path-col li:before{content:"→";position:absolute;left:2px;color:#2C4BE0;font-family:'Space Mono',monospace}
-.path-route{background:#EEF2FC;border:1px solid #E4EAFB;border-radius:10px;padding:12px 16px;margin:auto 0 16px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.04em;color:#1B2EA0}
-.path-route strong{display:block;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5C5A57;margin-bottom:5px}
-.path-cta{display:block;text-align:center;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;text-decoration:none;background:#2C4BE0;color:#fff;border-radius:8px;padding:13px 18px}
-.path-cta:hover{background:#1B2EA0}
-.path-cta.ghost{background:transparent;color:#1A1A1A;border:1.5px solid #1A1A1A;margin-top:8px}
-</style>
 <section class="paths" id="start-here">
   <div class="paths-eyebrow">Start here</div>
   <div class="paths-title">Where are you on the road?</div>
@@ -316,7 +91,7 @@ img{max-width:100%;height:auto}
         <li>You have collected tools, but built no system</li>
         <li>You retype the same context every single time</li>
       </ul>
-      <div class="path-route"><strong>Your reading order</strong>What Is a Prompt? &rarr; Chez Claude: The Full Kitchen Map &rarr; the rest of the Kitchen Map series</div>
+      <div class="path-route"><strong>Your reading order</strong>What Is a Prompt? &rarr; the Claude verdict &rarr; the rest of the tool verdicts</div>
       <a class="path-cta" href="guides/what-is-a-prompt.html">Start with &ldquo;What Is a Prompt&rdquo; &rarr;</a>
     </div>
 
@@ -330,7 +105,7 @@ img{max-width:100%;height:auto}
         <li>You want AI employees, not AI answers</li>
         <li>Your goal is a business that does not need you online</li>
       </ul>
-      <div class="path-route"><strong>Your reading order</strong>What Does Agentic Actually Mean &rarr; the Kitchen Map series &rarr; How to Set Up Your First AI Employee</div>
+      <div class="path-route"><strong>Your reading order</strong>What Does Agentic Actually Mean &rarr; the tool verdicts &rarr; How to Set Up Your First AI Employee</div>
       <a class="path-cta" href="guides/what-is-agentic.html">Read the Agentic guide →</a>
       <a class="path-cta ghost" href="time-audit.html">Not sure what to hand off first? Take the Time Audit →</a>
     </div>
@@ -347,12 +122,6 @@ img{max-width:100%;height:auto}
     <a class="row-cta" href="#library">All guides →</a>
   </div>
   
-<style>
-.bip{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:14px;padding:16px 24px;margin-bottom:26px}
-.bip .k{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#2C4BE0;flex-shrink:0}
-.bip p{margin:0;font-size:14.5px;color:#1A1A1A;flex:1;min-width:240px}
-.bip a{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:#2C4BE0;text-decoration:none;border-bottom:1px solid #2C4BE0;padding-bottom:2px;white-space:nowrap}
-</style>
 <div class="bip">
   <span class="k">Built in public</span>
   <p>Every AI employee I hire gets logged on a public scoreboard, with receipts. This library explains, in plain English, what each one actually does.</p>
@@ -380,11 +149,11 @@ img{max-width:100%;height:auto}
       </div>
       <div class="spot-mini">
         <div>
-          <span class="chip chip-data">KITCHEN MAP</span>
-          <h4>Chez Claude. The one that reads the whole room.</h4>
-          <p>Door, kitchen, plate. The restaurant walkthrough.</p>
+          <span class="chip chip-data">TOOL VERDICT</span>
+          <h4>Claude. For anything that needs careful reading.</h4>
+          <p>Where it earns its keep, and where it will burn you.</p>
         </div>
-        <a class="row-cta" href="guides/chez-claude.html">Map the Claude kitchen &rarr;</a>
+        <a class="row-cta" href="guides/claude.html">Read the Claude verdict &rarr;</a>
       </div>
     </div>
   </div>
@@ -517,113 +286,108 @@ img{max-width:100%;height:auto}
   </div>
   <input class="search" id="lib-search" type="search" placeholder="Search the library...">
   <div class="filter-group"><span class="filter-label">Show</span>
-    <button class="pill active" data-track="all">All</button><button class="pill" data-track="basics">The Basics</button><button class="pill" data-track="toolmap">Kitchen Maps</button><button class="pill" data-track="business">Put AI to work</button>
+    <button class="pill active" data-track="all">All</button><button class="pill" data-track="basics">The Basics</button><button class="pill" data-track="toolmap">Tool verdicts</button><button class="pill" data-track="business">Put AI to work</button>
   </div>
+</section>
+
+<section class="controls" style="padding-top:0">
+  <p style="margin:0"><a class="row-cta" href="freedom-os-kit.html">Looking for the prompts and templates? Open the Freedom OS Starter Kit &rarr;</a></p>
 </section>
 
 <section class="library" id="library">
 
-  <!-- CHEZ_SERIES_START -->
-  <!-- The Kitchen Maps series: 10 AI tools walked through like restaurants -->
+  <!-- TOOL_VERDICTS_START -->
+  <!-- Ten AI tools, each with a straight verdict: what it is for, what it costs, where it fails -->
   <div class="card" data-track="toolmap" style="margin:0 0 36px;border-left:3px solid var(--accent)">
-    <p style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:22px;line-height:1.35;color:var(--muted);margin-bottom:12px">The Kitchen Map series</p>
-    <p style="margin-bottom:0">Almost everyone on this planet loves food. So there was no better way to explain AI tools than to walk you through them like restaurants. Same structure every time: the door, the kitchen, the plate. Each new tool feels familiar before you have even opened it.</p>
+    <p style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:22px;line-height:1.35;color:var(--muted);margin-bottom:12px">The tool verdicts</p>
+    <p style="margin-bottom:0">Ten AI tools, each one judged the way I would tell a friend who runs a business. Same three questions every time, so you can compare them properly instead of reading ten different sales pages.</p>
     <div class="dkp-row">
-      <div class="dkp-step"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="4" width="16" height="27" rx="1"/><circle cx="20" cy="17" r="1.3" fill="currentColor" stroke="none"/></svg><div class="lbl">The Door</div><p>What you see when you open it</p></div>
-      <div class="dkp-step"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="9" width="24" height="18" rx="1"/><path d="M11 9V6m6 3V6m6 3V6"/><path d="M5 20h24"/></svg><div class="lbl">The Kitchen</div><p>What actually runs behind it</p></div>
-      <div class="dkp-step"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="17" cy="17" r="12"/><circle cx="17" cy="17" r="5.5"/></svg><div class="lbl">The Plate</div><p>What you get to use, day to day</p></div>
+      <div class="dkp-step"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 17l7 7 15-15"/></svg><div class="lbl">Where it earns its keep</div><p>The jobs it is genuinely good at</p></div>
+      <div class="dkp-step"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 6v14"/><circle cx="17" cy="26" r="1.4" fill="currentColor" stroke="none"/></svg><div class="lbl">Where it will burn you</div><p>The failure you have to plan for</p></div>
+      <div class="dkp-step"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 24l8-14 8 14z"/><path d="M8 27h16"/></svg><div class="lbl">What I would actually do</div><p>Buy it, trial it, or leave it</p></div>
     </div>
+  </div>
   <article class="row" data-track="toolmap" data-publish="2026-06-23">
     <div>
-      <div class="row-meta"><span class="chip chip-data">KITCHEN MAP</span><span class="row-kicker">Anthropic · Kitchen Map</span><span class="row-date">23 Jun 2026</span></div>
-      <h2 class="row-title">Chez Claude. The one that reads the whole room before it answers.</h2>
-      <p class="row-summary">Long-form reasoning, Artifacts, computer-use, Projects, Claude Code. Walked through like a restaurant. Door, kitchen, plate.</p>
+      <div class="row-meta"><span class="chip chip-data">TOOL VERDICT</span><span class="row-kicker">Anthropic &middot; Tool verdict</span><span class="row-date">23 Jun 2026</span></div>
+      <h2 class="row-title">Claude. Use it for anything that needs to be read carefully and thought through. Do not treat it as the final word.</h2>
+      <p class="row-summary">Best for long documents, complex drafts, work that has to hold its context, and code. Careful with facts, numbers, and anything going out under your name without a check.</p>
     </div>
-    <a class="row-cta" href="guides/chez-claude.html">Map the Claude kitchen &rarr;</a>
+    <a class="row-cta" href="guides/claude.html">Read the Claude verdict &rarr;</a>
   </article>
-
   <article class="row" data-track="toolmap" data-publish="2026-06-23">
     <div>
-      <div class="row-meta"><span class="chip chip-data">KITCHEN MAP</span><span class="row-kicker">OpenAI · Kitchen Map</span><span class="row-date">23 Jun 2026</span></div>
-      <h2 class="row-title">Chez ChatGPT. The one everyone tried first. Here is what actually sits on the menu.</h2>
-      <p class="row-summary">GPTs, Operator, Agents, Voice, image gen, the whole OpenAI ecosystem as one walkthrough. Door, kitchen, plate.</p>
+      <div class="row-meta"><span class="chip chip-data">TOOL VERDICT</span><span class="row-kicker">OpenAI &middot; Tool verdict</span><span class="row-date">23 Jun 2026</span></div>
+      <h2 class="row-title">ChatGPT. The generalist. It will have a go at anything, which is exactly why you have to check it.</h2>
+      <p class="row-summary">Best for first drafts, thinking out loud, images, and a bit of everything else. Careful with anything where roughly right is not good enough.</p>
     </div>
-    <a class="row-cta" href="guides/chez-openai.html">See the ChatGPT menu &rarr;</a>
+    <a class="row-cta" href="guides/chatgpt.html">Read the ChatGPT verdict &rarr;</a>
   </article>
-
   <article class="row" data-track="toolmap" data-publish="2026-06-23">
     <div>
-      <div class="row-meta"><span class="chip chip-data">KITCHEN MAP</span><span class="row-kicker">Google · Kitchen Map</span><span class="row-date">23 Jun 2026</span></div>
-      <h2 class="row-title">Chez Gemini. It already knows your calendar, your Drive, your inbox.</h2>
-      <p class="row-summary">Gemini, Workspace, Deep Research, NotebookLM, Astra, the Google AI stack as a restaurant.</p>
+      <div class="row-meta"><span class="chip chip-data">TOOL VERDICT</span><span class="row-kicker">Google &middot; Tool verdict</span><span class="row-date">23 Jun 2026</span></div>
+      <h2 class="row-title">Gemini. The one that already has your calendar, your Drive and your inbox. That is the whole argument for it.</h2>
+      <p class="row-summary">Best for teams already living in Google Workspace, and research across your own files. Careful with opening up your whole Drive before you have checked what it can see.</p>
     </div>
-    <a class="row-cta" href="guides/chez-gemini.html">Tour the Google kitchen &rarr;</a>
+    <a class="row-cta" href="guides/gemini.html">Read the Gemini verdict &rarr;</a>
   </article>
-
   <article class="row" data-track="toolmap" data-publish="2026-06-25">
     <div>
-      <div class="row-meta"><span class="chip chip-data">KITCHEN MAP</span><span class="row-kicker">Microsoft · Kitchen Map</span><span class="row-date">25 Jun 2026</span></div>
-      <h2 class="row-title">Chez Copilot. It has been sitting in your Office toolbar this whole time.</h2>
-      <p class="row-summary">Copilot Chat, Cowork, Studio, Agent 365, Foundry. Microsoft's AI restaurant from door to plate.</p>
+      <div class="row-meta"><span class="chip chip-data">TOOL VERDICT</span><span class="row-kicker">Microsoft &middot; Tool verdict</span><span class="row-date">25 Jun 2026</span></div>
+      <h2 class="row-title">Copilot. The one that lives inside Word, Excel and Outlook. Buy it for where it sits, not for how clever it is.</h2>
+      <p class="row-summary">Best for teams already paying for Microsoft 365, especially in Excel and Outlook. Careful with the price. Thirty dollars per person per month adds up fast on a small team.</p>
     </div>
-    <a class="row-cta" href="guides/chez-copilot.html">Open the Office toolbar &rarr;</a>
+    <a class="row-cta" href="guides/copilot.html">Read the Copilot verdict &rarr;</a>
   </article>
-
+  <article class="row" data-track="toolmap" data-publish="2026-06-25">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">TOOL VERDICT</span><span class="row-kicker">xAI &middot; Tool verdict</span><span class="row-date">25 Jun 2026</span></div>
+      <h2 class="row-title">Grok. Fast, loud, and wired into X. Good for watching a story break. Not for work you will put your name on.</h2>
+      <p class="row-summary">Best for real-time chatter on X, plus image and video generation. Careful with tone and accuracy. It is built to be provocative, and it succeeds.</p>
+    </div>
+    <a class="row-cta" href="guides/grok.html">Read the Grok verdict &rarr;</a>
+  </article>
+  <article class="row" data-track="toolmap" data-publish="2026-06-27">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">TOOL VERDICT</span><span class="row-kicker">Mistral AI &middot; Tool verdict</span><span class="row-date">27 Jun 2026</span></div>
+      <h2 class="row-title">Mistral. The European one. Pick it when where your data sits matters more than raw capability.</h2>
+      <p class="row-summary">Best for multilingual work, privacy-sensitive teams, and EU data rules. Careful with a thinner integration ecosystem than the big three.</p>
+    </div>
+    <a class="row-cta" href="guides/mistral.html">Read the Mistral verdict &rarr;</a>
+  </article>
+  <article class="row" data-track="toolmap" data-publish="2026-06-27">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">TOOL VERDICT</span><span class="row-kicker">DeepSeek &middot; Tool verdict</span><span class="row-date">27 Jun 2026</span></div>
+      <h2 class="row-title">DeepSeek. Very good, very cheap, and hosted in China. That last part is the whole decision.</h2>
+      <p class="row-summary">Best for high-volume API work where cost decides it, and coding. Careful with anything client-confidential on the hosted version.</p>
+    </div>
+    <a class="row-cta" href="guides/deepseek.html">Read the DeepSeek verdict &rarr;</a>
+  </article>
   <article class="row" data-track="toolmap" data-publish="2026-06-29">
     <div>
-      <div class="row-meta"><span class="chip chip-data">KITCHEN MAP</span><span class="row-kicker">xAI · Kitchen Map</span><span class="row-date">29 Jun 2026</span></div>
-      <h2 class="row-title">Chez Grok. Real-time ingredients. No filter on the chef.</h2>
-      <p class="row-summary">Grok 4.3, Big Brain, Aurora, X live search, SuperGrok Heavy. xAI's loud kitchen walked through.</p>
+      <div class="row-meta"><span class="chip chip-data">TOOL VERDICT</span><span class="row-kicker">Moonshot AI &middot; Tool verdict</span><span class="row-date">29 Jun 2026</span></div>
+      <h2 class="row-title">Kimi. A serious coding tool at a fraction of the price, with the same hosting question as DeepSeek.</h2>
+      <p class="row-summary">Best for long coding sessions, and turning a prompt into slides or a site. Careful with the same data question, and paid tiers that climb quickly.</p>
     </div>
-    <a class="row-cta" href="guides/chez-grok.html">Meet the loud chef &rarr;</a>
+    <a class="row-cta" href="guides/kimi.html">Read the Kimi verdict &rarr;</a>
   </article>
-
+  <article class="row" data-track="toolmap" data-publish="2026-06-29">
+    <div>
+      <div class="row-meta"><span class="chip chip-data">TOOL VERDICT</span><span class="row-kicker">Meta &middot; Tool verdict</span><span class="row-date">29 Jun 2026</span></div>
+      <h2 class="row-title">Meta AI. Free, already inside WhatsApp and Instagram, and you are the product.</h2>
+      <p class="row-summary">Best for quick answers and quick images in the apps you already have open. Careful with anything about your business, your numbers or your customers.</p>
+    </div>
+    <a class="row-cta" href="guides/meta-ai.html">Read the Meta AI verdict &rarr;</a>
+  </article>
   <article class="row" data-track="toolmap" data-publish="2026-07-01">
     <div>
-      <div class="row-meta"><span class="chip chip-data">KITCHEN MAP</span><span class="row-kicker">Mistral · Kitchen Map</span><span class="row-date">01 Jul 2026</span></div>
-      <h2 class="row-title">Chez Mistral. Open kitchen. Nothing leaves the building.</h2>
-      <p class="row-summary">Le Chat, Mistral Large, Magistral, Vibe coding, No Telemetry Mode. The Paris kitchen, mapped clean.</p>
+      <div class="row-meta"><span class="chip chip-data">TOOL VERDICT</span><span class="row-kicker">Manus &middot; Tool verdict</span><span class="row-date">01 Jul 2026</span></div>
+      <h2 class="row-title">Manus. It takes the job, goes away, and comes back with it finished. Impressive, expensive, and it will surprise you.</h2>
+      <p class="row-summary">Best for multi-step research and admin you would otherwise pay someone to do. Careful with credits, and anything with a login or a payment attached to it.</p>
     </div>
-    <a class="row-cta" href="guides/chez-mistral.html">Visit the Paris kitchen &rarr;</a>
+    <a class="row-cta" href="guides/manus.html">Read the Manus verdict &rarr;</a>
   </article>
-
-  <article class="row" data-track="toolmap" data-publish="2026-07-03">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">KITCHEN MAP</span><span class="row-kicker">DeepSeek · Kitchen Map</span><span class="row-date">03 Jul 2026</span></div>
-      <h2 class="row-title">Chez DeepSeek. Same plates. A fraction of the price.</h2>
-      <p class="row-summary">V4 Flash, V4 Pro, 1M context, the open-source kitchen from China, mapped clean.</p>
-    </div>
-    <a class="row-cta" href="guides/chez-deepseek.html">See the menu &rarr;</a>
-  </article>
-
-  <article class="row" data-track="toolmap" data-publish="2026-07-05">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">KITCHEN MAP</span><span class="row-kicker">Moonshot · Kitchen Map</span><span class="row-date">05 Jul 2026</span></div>
-      <h2 class="row-title">Chez Kimi. 300 chefs in parallel. Nobody's heard of this place yet.</h2>
-      <p class="row-summary">K2.6, 300-agent swarm, Kimi Code, Cursor under the hood. Moonshot AI's parallel brigade.</p>
-    </div>
-    <a class="row-cta" href="guides/chez-kimi.html">Meet the 300 chefs &rarr;</a>
-  </article>
-
-  <article class="row" data-track="toolmap" data-publish="2026-07-07">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">KITCHEN MAP</span><span class="row-kicker">Meta · Kitchen Map</span><span class="row-date">07 Jul 2026</span></div>
-      <h2 class="row-title">Chez Meta AI. Free tables on every app you already use.</h2>
-      <p class="row-summary">Llama, WhatsApp + IG + Messenger integration, Ray-Ban Meta glasses, AI Studio creator characters.</p>
-    </div>
-    <a class="row-cta" href="guides/chez-meta-ai.html">Find your free table &rarr;</a>
-  </article>
-
-  <article class="row" data-track="toolmap" data-publish="2026-07-11">
-    <div>
-      <div class="row-meta"><span class="chip chip-data">KITCHEN MAP</span><span class="row-kicker">Manus · Kitchen Map</span><span class="row-date">11 Jul 2026</span></div>
-      <h2 class="row-title">Chez Manus. You sit down. The kitchen runs itself.</h2>
-      <p class="row-summary">Autonomous multi-agent brigade. Planner, executor, verifier. Browser, code, file. Hours of unsupervised work.</p>
-    </div>
-    <a class="row-cta" href="guides/chez-manus.html">Watch it run itself &rarr;</a>
-  </article>
-
-  <!-- CHEZ_SERIES_END -->
+  <!-- TOOL_VERDICTS_END -->
 
   <!-- BUSINESS_TRACK_START -->
   <div class="card" data-track="business" style="margin:36px 0;border-left:3px solid var(--chip-setup)">
@@ -860,7 +624,7 @@ img{max-width:100%;height:auto}
     return m ? m[1] : null;
   }
 
-  var tracks = { basics: {done:0, total:0, label:'Foundations'}, toolmap: {done:0, total:0, label:'The Kitchen Map'}, business: {done:0, total:0, label:'First AI Employee'} };
+  var tracks = { basics: {done:0, total:0, label:'Foundations'}, toolmap: {done:0, total:0, label:'Tool verdicts'}, business: {done:0, total:0, label:'First AI Employee'} };
   var firstUnread = null;
 
   rows.forEach(function(row){
@@ -906,7 +670,7 @@ img{max-width:100%;height:auto}
         return tracks[k].label + ' ' + tracks[k].done + '/' + tracks[k].total;
       });
       var strip = document.createElement('div');
-      strip.style.cssText = 'width:100%;font-family:Space Mono,monospace;font-size:12px;letter-spacing:0.08em;color:#5C5A57;margin-top:10px';
+      strip.style.cssText = 'width:100%;font-family:Space Mono,monospace;font-size:12px;letter-spacing:0.08em;color:#555;margin-top:10px';
       var html = 'YOUR PROGRESS \u00b7 ' + read.length + ' of ' + total + ' guides read \u00b7 ' + parts.join(' \u00b7 ');
       strip.textContent = html;
       if (firstUnread) {
@@ -928,32 +692,32 @@ img{max-width:100%;height:auto}
       var tr = tracks[p.k];
       if (col && tr && tr.total) {
         var line = document.createElement('div');
-        line.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;letter-spacing:0.1em;color:' + (tr.done ? '#2C4BE0' : '#5C5A57') + ';margin-top:10px';
+        line.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;letter-spacing:0.1em;color:' + (tr.done ? '#2C4BE0' : '#555') + ';margin-top:10px';
         line.textContent = tr.done >= tr.total ? '\u2713 COURSE COMPLETE' : 'LESSON ' + (tr.done + 1) + ' OF ' + tr.total;
         col.appendChild(line);
       }
     });
   }
 
-  // ---- Kitchen Map mini-index inside the series intro card ----
+  // ---- Tool verdict mini-index inside the series intro card ----
   var intro = document.querySelector('.library .card[data-track="toolmap"]');
   if (intro) {
     var mapWrap = document.createElement('div');
     mapWrap.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap;margin-top:16px';
     rows.filter(function(r){ return r.getAttribute('data-track') === 'toolmap'; }).forEach(function(r){
       var slug = slugOf(r);
-      var name = ((r.querySelector('.row-title')||{}).textContent || '').replace(/^Chez /, '').split('.')[0];
+      var name = ((r.querySelector('.row-title')||{}).textContent || '').split('.')[0];
       var el;
       if (r.classList.contains('coming-soon')) {
         el = document.createElement('span');
         el.textContent = '\uD83D\uDD12 ' + name + ' \u00b7 ' + (r.querySelector('.row-cta')||{textContent:''}).textContent.replace('Unlocks ','');
-        el.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;padding:5px 10px;border:1px dashed #D8D6D2;color:#5C5A57';
+        el.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;padding:5px 10px;border:1px dashed #E8E4DD;color:#555';
       } else {
         el = document.createElement('a');
         el.href = 'guides/' + slug + '.html';
         var visited = read.indexOf(slug) !== -1;
         el.textContent = (visited ? '\u2713 ' : '') + name;
-        el.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;padding:5px 10px;border:1px solid ' + (visited ? '#2C4BE0' : '#D8D6D2') + ';color:' + (visited ? '#2C4BE0' : '#1A1A1A') + ';text-decoration:none';
+        el.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;padding:5px 10px;border:1px solid ' + (visited ? '#2C4BE0' : '#E8E4DD') + ';color:' + (visited ? '#2C4BE0' : '#1A1A1A') + ';text-decoration:none';
       }
       mapWrap.appendChild(el);
     });

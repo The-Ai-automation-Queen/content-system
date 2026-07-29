@@ -1,0 +1,35 @@
+# guides.shiftandlead.com redirect map
+#
+# The guide series was renamed on 2026-07-28 when the cafe framing was retired.
+# Every old path still has an HTML stub on disk with a meta refresh and a
+# canonical tag, so nothing breaks if this file is never wired up. These are
+# the real 301s, which is what search engines actually want.
+#
+# nginx:
+#   map $request_uri $sl_redirect {
+#       include /etc/nginx/redirects.map;
+#       default "";
+#   }
+#   server {
+#       if ($sl_redirect) { return 301 $sl_redirect; }
+#   }
+#
+# Format: <old path> <new path>;
+
+/guides/chez-claude.html          /guides/claude.html;
+/guides/chez-claude-preview.html  /guides/claude.html;
+/guides/chez-openai.html          /guides/chatgpt.html;
+/guides/chez-gemini.html          /guides/gemini.html;
+/guides/chez-copilot.html         /guides/copilot.html;
+/guides/chez-grok.html            /guides/grok.html;
+/guides/chez-mistral.html         /guides/mistral.html;
+/guides/chez-deepseek.html        /guides/deepseek.html;
+/guides/chez-kimi.html            /guides/kimi.html;
+/guides/chez-meta-ai.html         /guides/meta-ai.html;
+/guides/chez-manus.html           /guides/manus.html;
+
+# Pre-existing stubs, listed here so the whole redirect surface is in one file.
+/ai-tools-compared.html           /free-resources.html;
+/ai-vocabulary-explained.html     /free-resources.html;
+/guides/voice-clone-pipeline.html /free-resources.html;
+/products/time-audit.html         /time-audit.html;

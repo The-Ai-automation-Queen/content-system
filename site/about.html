@@ -21,58 +21,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-:root{--canvas:#FFFFFF;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;--cream:#EEF2FC;--electric:#2C4BE0}
-*{box-sizing:border-box}
-body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.75}
-a{color:var(--accent)}
-.nav{border-bottom:1px solid var(--rule);background:var(--canvas);position:sticky;top:0;z-index:10}
-.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
-.nav-links a{color:var(--ink);text-decoration:none}
-.nav-links a:hover,.nav-links a.active{color:var(--accent)}
-.nav-links .nav-cta{background:var(--accent);color:#fff;padding:9px 16px;border-radius:3px;font-weight:600}
-.nav-links .nav-cta:hover{background:var(--accent-deep)}
-.wrap{max-width:880px;margin:0 auto;padding:0 22px}
-.kicker{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h1{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.08;margin:.4rem 0 1rem}
-h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.7rem;line-height:1.2;margin:0 0 .8rem}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:64px 0 48px}
-@media(max-width:720px){.hero{grid-template-columns:1fr}}
-.hero img{width:100%;max-width:360px;display:block;border-radius:4px}
-.hero-sub{font-size:1.15rem;color:var(--muted);max-width:54ch}
-.spine{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;font-family:'Inter',sans-serif;font-size:13px}
-.spine span{padding:5px 12px;border:1px solid var(--rule);border-radius:999px;background:#fff}
-.spine .crown{background:var(--ink);color:#fff;border-color:var(--ink)}
-section{padding:40px 0;border-top:1px solid var(--rule)}
-.story p{max-width:64ch;font-size:1.05rem}
-.story .big{font-family:'Playfair Display',Georgia,serif;font-size:1.45rem;line-height:1.45;color:var(--accent-deep);max-width:30ch}
-.receipts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:20px}
-.receipt{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:18px 20px}
-.receipt .n{font-family:'Space Mono',monospace;font-size:1.5rem;color:var(--accent)}
-.receipt p{margin:.3rem 0 0;font-family:'Inter',sans-serif;font-size:.85rem;color:var(--muted)}
-.company{background:var(--ink);color:#F5F0EB;border-radius:14px;padding:36px;margin:8px 0}
-.company h2{color:#fff}
-.company p{color:#B9C6F2;max-width:60ch}
-.company .label{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#E4EAFB}
-.depts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.depts span{font-family:'Inter',sans-serif;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.25)}
-.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
-.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;text-decoration:none;padding:13px 24px;border-radius:8px}
-.btn-primary{background:var(--accent);color:#fff}
-.btn-primary:hover{background:var(--accent-deep)}
-.btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
-.community-box{background:var(--cream);border:1px solid var(--accent-tint);border-radius:14px;padding:30px}
-.footer{background:var(--ink);color:var(--canvas);margin:56px calc(50% - 50vw) 0;padding:56px 32px 32px;width:100vw}
-.footer-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;align-items:start}
-.footer-brand{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:700;margin-bottom:12px}
-.footer-tag{opacity:0.7;font-size:14px;max-width:360px}
-.footer-col-head{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;opacity:0.6;margin-bottom:12px}
-.footer-link{display:block;font-size:14px;padding:4px 0;color:var(--canvas);opacity:0.9;text-decoration:none}
-.footer-legal{max-width:1240px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,0.12);font-size:11px;opacity:0.5;font-family:'Space Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;text-align:center}
-@media(max-width:900px){.footer-inner{grid-template-columns:1fr;gap:28px}}
-</style>
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/pages/about.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -113,6 +63,7 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
 </script>
 <script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 <script defer src="/lib/motion.js"></script>
+<script defer src="/assets/capture.js"></script>
 </head>
 <body>
 
@@ -147,6 +98,28 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
 </section>
 
 <section>
+  <div class="kicker">The pattern</div>
+  <h2>I have led this shift before. Three times.</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <p class="when">Two decades in enterprise tech</p>
+      <h3>Dell, Intel, Microsoft</h3>
+      <p>Not inventing the technology. Translating it, so ordinary teams across a dozen markets would actually adopt it. The internet, then cloud, then subscriptions. Every time, smart people froze and waited too long.</p>
+    </div>
+    <div class="timeline-item">
+      <p class="when">Then, a different industry entirely</p>
+      <h3>LeLabPlus, France</h3>
+      <p>I co-founded a zero-carbon fashion factory and made circular manufacturing work in practice. It earned us Nike as an exclusive vendor, and a role producing two million protective masks for French hospitals during COVID. Same pattern, nothing else in common.</p>
+    </div>
+    <div class="timeline-item">
+      <p class="when">Now, on myself, in public</p>
+      <h3>Freedom OS and the 99</h3>
+      <p>I am hiring ninety-nine AI employees to run my own business, one at a time, with the receipts on <a href="99.html">the scoreboard</a>. Every claim I make, I make from inside the system I am describing.</p>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="kicker">The receipts</div>
   <h2>Proof, not promises.</h2>
   <div class="receipts">
@@ -154,7 +127,7 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
     <div class="receipt"><div class="n">Nike</div><p>Exclusive vendor at LeLabPlus, the zero-carbon fashion factory I co-founded in France</p></div>
     <div class="receipt"><div class="n">2M</div><p>Protective masks produced for French hospitals during COVID</p></div>
     <div class="receipt"><div class="n">99</div><p>AI employees being hired in public, receipts on <a href="99.html">the scoreboard</a></p></div>
-    <div class="receipt"><div class="n">16+</div><p>Free plain-English guides, the Kitchen Map series</p></div>
+    <div class="receipt"><div class="n">20</div><p>Free plain-English guides, including ten tool verdicts, plus <a href="freedom-os-kit.html">the Starter Kit</a></p></div>
     <div class="receipt"><div class="n">4</div><p>Languages: English, French, Spanish, Italian (Arabic in progress)</p></div>
   </div>
 </section>
@@ -178,9 +151,10 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
     <h2>Build your freedom business alongside me.</h2>
     <p style="max-width:58ch">A private community for everyday entrepreneurs using AI and automation to win back their time. Live build sessions, templates, and people on the same road.</p>
     <p style="max-width:58ch"><strong>Founding spots, locked for life.</strong> Waitlist open now, no dollar figure until the doors actually open.</p>
-    <form id="community-waitlist" style="display:flex;gap:10px;flex-wrap:wrap;max-width:480px;margin-top:14px">
-      <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:220px;padding:12px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+    <form action="https://formspree.io/f/xgojoyka" method="POST" id="community-waitlist" style="display:flex;gap:10px;flex-wrap:wrap;max-width:480px;margin-top:14px">
+      <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:220px;padding:12px 14px;border:1px solid #E8E4DD;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
+      <input type="hidden" name="source" value="guides-about-community">
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <button type="submit" class="btn btn-primary" style="cursor:pointer;border:none">Join the founding waitlist</button>
     </form>
     <script>
@@ -213,6 +187,41 @@ section{padding:40px 0;border-top:1px solid var(--rule)}
     <a class="btn btn-ghost" href="free-resources.html">Start with the free guides</a>
   </div>
 </section>
+
+<section>
+  <div class="kicker">Work with me</div>
+  <div class="community-box">
+    <h2>Want it built with you, rather than explained?</h2>
+    <p>Everything above is free and stays free. When you want a hand putting it in place, I build your first AI employee with you in a week: one real task off your plate, handed over so you own it. Solo operators welcome. There is no revenue number you have to clear.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://www.shiftandlead.com/work-with-me.html?utm_source=guides&amp;utm_medium=about&amp;utm_campaign=authority">See how it works</a>
+      <a class="btn btn-ghost" href="free-resources.html">Start with the free guides</a>
+    </div>
+  </div>
+</section>
+
+<!-- partial:newsletter -->
+<section class="newsletter" aria-labelledby="nl-title">
+  <div class="nl-grid">
+    <div class="nl-copy">
+      <p class="eyebrow mono">The Insider Brief</p>
+      <h2 id="nl-title">One clear verdict on the AI news that matters.</h2>
+      <p>Every week. What changed, whether you should care, and what to do about it. Free.</p>
+      <form class="capture-form" action="https://formspree.io/f/xgojoyka" method="POST" data-source="about">
+        <label class="visually-hidden" for="nl-email">Email address</label>
+        <input id="nl-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
+        <input type="hidden" name="source" value="newsletter">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit">Subscribe free</button>
+      </form>
+      <p class="capture-fineprint">No cost, no catch. Unsubscribe anytime.</p>
+    </div>
+    <div class="nl-art">
+      <img src="/assets/art/insider-brief.svg" alt="A weekly briefing card showing three headlines each marked with a plain verdict." loading="lazy" decoding="async" width="480" height="360">
+    </div>
+  </div>
+</section>
+<!-- /partial:newsletter -->
 
 <footer class="footer"><div class="footer-inner">
   <div>

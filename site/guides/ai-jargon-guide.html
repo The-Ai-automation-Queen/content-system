@@ -7,481 +7,246 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="robots" content="noai, noimageai, max-image-preview:large">
-<title>The AI words they keep using · Shift &amp; Lead</title>
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Shift &amp; Lead">
-<meta property="og:title" content="The AI words they keep using &middot; Shift &amp; Lead">
-<meta name="description" content="Twelve AI terms, RAG, tokens, hallucination, agent, MCP and more, decoded in plain English so you stop nodding through meetings.">
-<meta property="og:description" content="Twelve AI terms, RAG, tokens, hallucination, agent, MCP and more, decoded in plain English so you stop nodding through meetings.">
-<meta property="og:url" content="https://guides.shiftandlead.com/guides/ai-jargon-guide.html">
-<meta property="og:image" content="https://guides.shiftandlead.com/Portrait.jpeg">
-<meta name="twitter:card" content="summary_large_image">
+<title>AI Jargon Decoded: Twelve Words in Plain English | Shift &amp; Lead</title>
+<meta name="description" content="Twelve AI terms, tokens, context window, RAG, hallucination, agent, MCP and more, decoded in plain English so you stop nodding through meetings.">
 <link rel="canonical" href="https://guides.shiftandlead.com/guides/ai-jargon-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shift &amp; Lead">
+<meta property="og:title" content="The AI words they keep using">
+<meta property="og:description" content="Most AI jargon is one ordinary idea wearing a lab coat. Here they are, in plain English.">
+<meta property="og:url" content="https://guides.shiftandlead.com/guides/ai-jargon-guide.html">
+<meta property="og:image" content="https://guides.shiftandlead.com/assets/covers/ai-jargon-guide.svg">
+<meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The AI words they keep using",
-  "description": "Twelve AI terms, RAG, tokens, hallucination, agent, MCP and more, decoded in plain English so you stop nodding through meetings.",
-  "image": "https://guides.shiftandlead.com/Portrait.jpeg",
-  "datePublished": "2026-07-08",
-  "dateModified": "2026-07-08",
-  "mainEntityOfPage": "https://guides.shiftandlead.com/guides/ai-jargon-guide.html",
-  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
-  "publisher": {"@type": "Organization", "name": "Shift & Lead", "logo": {"@type": "ImageObject", "url": "https://www.shiftandlead.com/logo.svg"}},
-  "inLanguage": "en"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question", "name": "What is a hallucination in AI?", "acceptedAnswer": {"@type": "Answer", "text": "A hallucination is when the AI confidently states something that sounds right but is not true. Always double-check anything with real consequences: numbers, legal claims, medical advice."}},
-    {"@type": "Question", "name": "What is RAG?", "acceptedAnswer": {"@type": "Answer", "text": "RAG, or Retrieval-Augmented Generation, is when the AI looks up the answer in your own documents first, then answers based on what it found, instead of answering from memory alone."}},
-    {"@type": "Question", "name": "What is an AI agent?", "acceptedAnswer": {"@type": "Answer", "text": "An agent is AI that takes action instead of just talking back: it browses the web, reads files, and fills forms to complete a task."}},
-    {"@type": "Question", "name": "What is a token?", "acceptedAnswer": {"@type": "Answer", "text": "A token is a small chunk of text, roughly three-quarters of a word. AI companies charge by the token, the way a phone plan charges by the gigabyte."}},
-    {"@type": "Question", "name": "What is a context window?", "acceptedAnswer": {"@type": "Answer", "text": "A context window is how much text the AI can hold at once. Go past the limit and it starts forgetting earlier parts of the conversation."}},
-    {"@type": "Question", "name": "What is MCP?", "acceptedAnswer": {"@type": "Answer", "text": "MCP, or Model Context Protocol, is a standard way for AI tools to plug into other software, so every AI tool does not need a custom connection to every app."}}
-  ]
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"The AI words they keep using",
+  "description":"Most AI jargon is one ordinary idea wearing a lab coat. Here they are, in plain English.",
+  "image":"https://guides.shiftandlead.com/assets/covers/ai-jargon-guide.svg",
+  "datePublished":"2026-06-10",
+  "dateModified":"2026-07-28",
+  "mainEntityOfPage":"https://guides.shiftandlead.com/guides/ai-jargon-guide.html",
+  "author":{"@type":"Person","name":"Fatiha Chikh","url":"https://www.shiftandlead.com"},
+  "publisher":{"@type":"Organization","name":"Shift & Lead","logo":{"@type":"ImageObject","url":"https://www.shiftandlead.com/logo.svg"}},
+  "inLanguage":"en"
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-:root{--canvas:#FFFFFF;--ink:#1A1A1A;--muted:#5C5A57;--rule:#D8D6D2;--accent:#2C4BE0;--accent-deep:#1B2EA0;--tint:#E4EAFB;--cream:#EEF2FC}
-*{box-sizing:border-box}
-body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.75}
-.mono{font-family:'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
-
-/* nav */
-.nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20}
-.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
-.nav .mono{font-size:10px;color:var(--muted)}
-
-/* magazine cover hero */
-.cover{max-width:1160px;margin:0 auto;padding:70px 24px 56px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:end}
-@media(max-width:860px){.cover{grid-template-columns:1fr}}
-.issue{font-size:11px;color:var(--accent);margin-bottom:18px;display:flex;gap:18px;flex-wrap:wrap}
-.cover h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:clamp(3rem,9vw,6.2rem);line-height:.98;letter-spacing:-.02em;margin:0}
-.cover h1 em{font-style:italic;font-weight:400;color:var(--accent)}
-.cover .standfirst{font-size:1.2rem;color:var(--muted);max-width:44ch;margin:22px 0 0}
-.cover-art{position:relative;aspect-ratio:4/5;background:var(--ink);border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.cover-art svg{width:82%;height:auto}
-.cover-art .slot{position:absolute;bottom:10px;right:12px;font-size:9px;color:#8d86a0}
-.dropcap::first-letter{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:4.6em;float:left;line-height:.78;padding:6px 12px 0 0;color:var(--accent)}
-
-/* the rail — reading progress as courses */
-.rail{max-width:1160px;margin:0 auto;padding:0 24px}
-.courses{display:flex;gap:0;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:#fff;margin:8px 0 0}
-.course{flex:1;text-align:center;padding:11px 6px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-left:1px solid var(--rule)}
-.course:first-child{border-left:none}
-.course.active{background:var(--ink);color:#fff}
-
-/* sections */
-.sec{max-width:1160px;margin:0 auto;padding:72px 24px 8px}
-.sec-head{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:baseline;border-top:2px solid var(--ink);padding-top:18px}
-.sec-num{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:3.4rem;line-height:1;color:var(--accent)}
-.sec-head h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0}
-.sec-head .mono{display:block;font-size:10px;color:var(--muted);margin-top:6px}
-.sec-body{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;padding:26px 0 0}
-@media(max-width:860px){.sec-body{grid-template-columns:1fr}}
-.sec-body p{max-width:60ch;font-size:1.06rem;margin:0 0 1rem}
-.sec p.wide{max-width:76ch;font-size:1.06rem;margin:0 0 1rem}
-
-/* floor plan / scene diagram */
-.plan{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:26px}
-.plan .mono{font-size:10px;color:var(--accent);display:block;margin-bottom:12px}
-.plan svg{width:100%;height:auto}
-.plan blockquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.05rem;line-height:1.5;color:var(--ink);margin:0 0 14px}
-.plan ul{margin:0;padding-left:18px;font-family:'Inter',sans-serif;font-size:.9rem;color:var(--muted);line-height:1.7}
-.plan ul strong{color:var(--ink)}
-
-/* menu cards */
-.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 0}
-@media(max-width:860px){.menu{grid-template-columns:1fr}}
-.dish{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:24px;position:relative}
-.dish .mono{font-size:9.5px;color:var(--accent)}
-.dish h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:.4rem 0 .4rem}
-.dish p{font-family:'Inter',sans-serif;font-size:.9rem;color:var(--muted);margin:0;line-height:1.6}
-.dish .pict{height:74px;margin-bottom:10px;display:flex;align-items:center}
-.dish .pict svg{height:64px;width:auto}
-
-/* stations grid (word definitions as station cards) */
-.stations{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 0}
-@media(max-width:900px){.stations{grid-template-columns:repeat(2,1fr)}}
-.station{border:1px solid var(--rule);border-radius:12px;padding:16px 18px;background:#fff}
-.station .mono{font-size:9px;color:var(--accent)}
-.station h4{font-family:'Inter',sans-serif;font-size:.98rem;font-weight:600;margin:.35rem 0 .2rem}
-.station p{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--muted);margin:0;line-height:1.5}
-.station p em{font-style:italic;color:var(--ink)}
-.menu-more{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:18px}
-
-/* pull quote */
-.pull{max-width:1160px;margin:0 auto;padding:80px 24px}
-.pull blockquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.7rem,4.5vw,2.7rem);line-height:1.3;margin:0;max-width:26ch;color:var(--ink)}
-.pull blockquote strong{color:var(--accent);font-style:normal}
-.pull .mono{font-size:10px;color:var(--muted);margin-top:18px;display:block}
-
-/* warnings — "know before you eat" */
-.warn{background:var(--ink);color:#F5F0EB}
-.warn-inner{max-width:1160px;margin:0 auto;padding:70px 24px}
-.warn .mono{color:#7FA0FF;font-size:11px}
-.warn h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:700;margin:.4rem 0 26px}
-.warn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-@media(max-width:900px){.warn-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.warn-grid{grid-template-columns:1fr}}
-.warn-card{border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:20px}
-.warn-card .term{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7FA0FF;margin-bottom:8px}
-.warn-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0;line-height:1.6}
-.warn-card strong{color:#fff}
-.warn-inner .link-line{margin-top:26px;font-family:'Inter',sans-serif;font-size:.92rem;color:#D9D3E6}
-.warn-inner .link-line a{color:#7FA0FF}
-
-.fullbleed 
-
-/* subscribe strip */
-.subs{max-width:1160px;margin:0 auto;padding:44px 24px 0}
-.subs-in{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1.5px solid var(--accent);border-radius:14px;padding:22px 26px;background:var(--cream)}
-.subs-in h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:700;margin:0}
-.subs-in p{font-family:'Inter',sans-serif;font-size:.88rem;color:var(--muted);margin:.2rem 0 0}
-.subs-in a{font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:var(--accent);color:#fff;border-radius:8px;padding:12px 22px;white-space:nowrap}
-
-/* chef's table offers close */
-.chefs{background:var(--ink);color:#F5F0EB;margin-top:72px}
-.chefs-in{max-width:1160px;margin:0 auto;padding:64px 24px}
-.chefs .mono{color:#7FA0FF;font-size:11px}
-.chefs h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:700;margin:.4rem 0 26px}
-.chefs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-@media(max-width:900px){.chefs-grid{grid-template-columns:1fr}}
-.chefs-card{border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:24px;display:flex;flex-direction:column;background:rgba(255,255,255,.03)}
-.chefs-card .mono{font-size:9.5px;margin-bottom:8px}
-.chefs-card h3{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;margin:0 0 6px;color:#fff}
-.chefs-card p{font-family:'Inter',sans-serif;font-size:.88rem;color:#D9D3E6;margin:0 0 18px;line-height:1.6}
-.chefs-card a{margin-top:auto;text-align:center;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;text-decoration:none;background:#fff;color:var(--ink);border-radius:8px;padding:11px 16px}
-
-/* byline + IP bar */
-.byline{max-width:1160px;margin:70px auto 0;padding:0 24px}
-.byline-in{display:flex;gap:18px;align-items:center;background:var(--cream);border:1px solid var(--tint);border-radius:14px;padding:22px 26px}
-.byline-in img{width:64px;height:64px;border-radius:50%;object-fit:cover}
-.byline-in p{margin:0;font-size:.95rem}
-.byline-in .who{font-family:'Inter',sans-serif;font-weight:600}
-.ipbar{max-width:1160px;margin:26px auto 0;padding:0 24px 70px}
-.ipbar p{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px;margin:0}
-a{color:var(--accent)}
-
-/* skim-first: full menus fold away */
-details.fold{margin:22px 0 0}
-details.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2C4BE0;border:1.5px solid #2C4BE0;border-radius:999px;padding:10px 20px;background:#fff;transition:background .15s}
-details.fold>summary:hover{background:#E4EAFB}
-details.fold>summary::-webkit-details-marker{display:none}
-details.fold>summary::after{content:"\2193";font-size:13px}
-details.fold[open]>summary::after{content:"\2191"}
-details.fold[open]>summary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
-.warn details.fold>summary{background:transparent;color:#7FA0FF;border-color:#7FA0FF}
-.warn details.fold[open]>summary{background:#fff;color:#1A1A1A;border-color:#fff}
-
-/* qa: contain grid children, never let the page scroll sideways */
-.sec-body>*{min-width:0}
-.sec-body svg,.sec-body img{max-width:100%;height:auto}
-.sec table{max-width:100%}
-body{overflow-x:hidden}
-.nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}.nav-links a{color:var(--ink);text-decoration:none}.nav-links a:hover,.nav-links a.active{color:var(--accent)}.nav-links .nav-cta{background:var(--accent);color:#fff;padding:8px 14px;border-radius:3px;font-weight:600}.nav-links .nav-cta:hover{background:var(--accent-deep)}
-.sec-body>div:only-child{grid-column:1/-1;max-width:72ch}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 <script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
-<script defer src="/lib/motion.js"></script>
+<script defer src="/assets/capture.js"></script>
 </head>
-<body>
+<body class="guide" data-page="ai-jargon-guide">
 
-<nav class="nav"><div class="nav-inner">
-  <a class="nav-logo" href="../free-resources.html">Shift &amp; Lead</a>
-  <div class="nav-links"><a href="../free-resources.html">Home</a><a href="../free-resources.html#library">Free Resources</a><a href="../99.html">The 99</a><a href="https://brief.shiftandlead.com">The Insider Brief</a><a href="../about.html">About</a><a class="nav-cta" href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=ai-jargon-guide">Workshops</a></div>
-</div></nav>
+<!-- partial:guide-nav -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a class="site-nav-logo" href="/free-resources.html">Shift &amp; Lead</a>
+    <div class="site-nav-links">
+      <a href="/free-resources.html#library">Free guides</a>
+      <a href="/99.html">The 99</a>
+      <a href="https://brief.shiftandlead.com">The Insider Brief</a>
+      <a href="/about.html">About</a>
+      <a class="nav-cta" href="https://www.shiftandlead.com/work-with-fatiha.html?utm_source=guides&amp;utm_medium=site&amp;utm_campaign=library">Work with me</a>
+    </div>
+  </div>
+</nav>
+<!-- /partial:guide-nav -->
 
-<!-- COVER -->
-<header class="cover">
-  <div>
-    <div class="issue mono"><span>Plain English · No. 04</span><span>AI Vocabulary</span><span>7 min read</span></div>
-    <h1>The words <em>everyone uses.</em></h1>
-    <p class="standfirst">What do words like RAG, tokens, and hallucination actually mean? They are AI terms explained here in plain English, one at a time. Someone dropped RAG, tokens, and hallucination in the same sentence. You nodded. Everyone nodded. Nobody stopped to ask what any of it meant. This guide is the pause button you wished you had: twelve words, plain English, no jargon hiding inside the definitions.</p>
-    <div class="inline-capture" style="margin:40px 0;padding:24px 26px;background:#EEF2FC;border:1px solid #E4EAFB;border-radius:8px">
-      <p style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0;margin:0 0 8px">Free, in your inbox</p>
-      <p style="margin:0 0 14px;font-size:15.5px">Get every guide in this library, plus one plain-English AI briefing every Tuesday with a clear verdict on each story.</p>
-      <form class="capture-form" style="display:flex;gap:10px;flex-wrap:wrap">
-        <input type="email" name="email" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #D8D6D2;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-        <button type="submit" style="padding:10px 20px;background:#2C4BE0;color:#fff;border:none;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:14px;cursor:pointer">Send them to me</button>
+<article class="guide-doc">
+
+  <header class="guide-hero">
+    <p class="eyebrow mono">The basics</p>
+    <h1>The AI words they keep using</h1>
+    <p class="verdict">Most AI jargon is one ordinary idea wearing a lab coat. Here they are, in plain English.</p>
+
+    <figure class="cover">
+      <img src="/assets/covers/ai-jargon-guide.svg" alt="Cover: the AI words they keep using, from Shift and Lead" width="1280" height="720">
+    </figure>
+
+    <ul class="tldr">
+      <li><span>Best for</span>Sitting in a meeting and knowing exactly what is being said.</li>
+      <li><span>Careful with</span>Nodding. Nodding is how you end up on the wrong project.</li>
+      <li><span>What I would do</span>Keep this open in a tab for a fortnight. After that you will not need it.</li>
+    </ul>
+  </header>
+
+  <div class="prose">
+
+    <h2>The sentence this started with</h2>
+
+    <p>Somebody said this to me, in a real meeting, with a straight face:</p>
+
+    <blockquote class="pull">"We are running a RAG pipeline with a fine-tuned model, but the context window is limiting the agent, so we are looking at MCP to cut the token spend."</blockquote>
+
+    <p>Everyone around the table nodded. I would guess two of them followed it. That sentence contains six pieces of jargon and one actual idea, and the actual idea is roughly "our thing is expensive and does not remember enough".</p>
+
+    <p>Here is every word in it, and six more you will meet this week. My translation job is to give you the plain version, not to make you sound clever.</p>
+
+    <h2>The six words in that sentence</h2>
+
+    <div class="guide-table">
+      <table>
+        <thead><tr><th>The word</th><th>What it actually means</th><th>Why anyone cares</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Token</strong></td><td>A chunk of text, roughly three quarters of a word. How the tools count what you send and receive.</td><td>It is how you are billed. Longer conversations cost more.</td></tr>
+          <tr><td><strong>Context window</strong></td><td>Everything it can hold in mind at once: your instructions, the conversation, the files.</td><td>When a long session goes strange, this is usually why.</td></tr>
+          <tr><td><strong>RAG</strong></td><td>Retrieval augmented generation. It looks something up in your documents before answering, rather than answering from memory.</td><td>The standard way to make a tool that knows about your business.</td></tr>
+          <tr><td><strong>Fine-tuning</strong></td><td>Extra training to make a model better at one narrow thing.</td><td>Expensive, and usually unnecessary. A good brief solves most of what people fine-tune for.</td></tr>
+          <tr><td><strong>Agent</strong></td><td>Software that takes multi-step actions towards a goal rather than answering once.</td><td>Useful, and the word most likely to be stretched in a sales pitch.</td></tr>
+          <tr><td><strong>MCP</strong></td><td>Model Context Protocol. An agreed standard for connecting AI tools to other software and data.</td><td>It is why connecting things is getting easier and cheaper.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure class="fig">
+      <img src="/assets/art/ai-jargon-guide-fit.svg" alt="Two columns: where knowing the vocabulary helps against where nodding along will burn you." width="1600" height="800" loading="lazy" decoding="async">
+      <figcaption>The words that come up most, and what each one really means.</figcaption>
+    </figure>
+
+    <div class="callout">
+      <p class="callout-label">Do this</p>
+      <p>Next time a word goes past that you do not know, say so. "Can you put that in plain English?" You will find at least one other person in the room was waiting for someone to ask, and the person who cannot answer it has told you something useful.</p>
+    </div>
+
+  
+
+    <h2>Six more you will hear this week</h2>
+
+    <div class="guide-table">
+      <table>
+        <thead><tr><th>The word</th><th>What it actually means</th><th>Why anyone cares</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Hallucination</strong></td><td>It stated something false as though it were fact.</td><td>The single most important failure to know about. It never warns you.</td></tr>
+          <tr><td><strong>Prompt</strong></td><td>What you type. The brief.</td><td>The difference between a useless answer and a good one is almost always here.</td></tr>
+          <tr><td><strong>System prompt</strong></td><td>Standing instructions the builder set, which you do not see, shaping how it behaves.</td><td>Explains why the same model behaves differently in two products.</td></tr>
+          <tr><td><strong>Multimodal</strong></td><td>It handles more than text: images, audio, sometimes video.</td><td>You can photograph a document instead of typing it out.</td></tr>
+          <tr><td><strong>Open weights</strong></td><td>The model file is published, so you can download and run it on your own hardware.</td><td>The answer when data cannot leave your building.</td></tr>
+          <tr><td><strong>Guardrails</strong></td><td>Rules and checks meant to stop it doing something unsafe or off-limits.</td><td>Ask what they are before you put anything customer-facing on it.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- partial:gate -->
+<aside class="gate" aria-labelledby="gate-title">
+  <div class="gate-inner">
+    <p class="gate-proof">Free, forever. No cost, no catch.</p>
+    <h2 class="gate-title" id="gate-title">Want the rest of these as they land?</h2>
+    <p class="gate-sub">This guide stays open. Put your email in and you also get every new guide plus the weekly Insider Brief. Unsubscribe anytime.</p>
+    <form class="gate-form capture-form" action="https://formspree.io/f/xgojoyka" method="POST" data-source="guide">
+      <label class="visually-hidden" for="gate-email">Email address</label>
+      <input id="gate-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
+      <input type="hidden" name="source" value="guide">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <button type="submit">Send me the guides</button>
+    </form>
+    <p class="gate-fineprint">Already on the list? Just keep reading. Nothing below is locked.</p>
+  </div>
+</aside>
+<!-- /partial:gate -->
+
+  <div class="prose">
+    <h2>Read that sentence one more time</h2>
+
+    <p>"We are running a RAG pipeline with a fine-tuned model, but the context window is limiting the agent, so we are looking at MCP to cut the token spend."</p>
+
+    <p>In plain English: we built something that looks up our own documents before answering, we paid to train it on our data, it cannot hold enough in mind to do the multi-step job properly, and we are hoping a standard connector will bring the bill down.</p>
+
+    <p>That version invites the useful questions. Why did you fine-tune before trying a better brief? Which multi-step job, specifically? What is the bill? None of those questions are available while the jargon is doing its work.</p>
+
+    <h2>What you walk away with</h2>
+
+    <p>Not the ability to use these words. The ability to hear through them. Jargon in this field is not usually there to deceive you, it is there because the person speaking is repeating what they heard. But it does the same job as deception, because it stops you asking.</p>
+
+    <p>You do not need to be technical to make good decisions here. You need to be the person who says "in plain English, what does this do, what does it cost, and what happens when it is wrong?" That question works whether you understand the answer or not, and it is the only one that matters.</p>
+
+  </div>
+
+  <section class="related">
+    <h2>Keep going</h2>
+    <div class="card-grid">
+      <a class="card" href="/guides/chatgpt-vs-ai.html">
+        <img src="/assets/covers/chatgpt-vs-ai.svg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+        <div class="card-body">
+          <p class="card-kicker mono">The basics</p>
+          <h3>ChatGPT and AI are not the same thing</h3>
+          <p class="card-desc">Six words used as if they mean one thing.</p>
+        </div>
+      </a>
+      <a class="card" href="/guides/what-is-ai.html">
+        <img src="/assets/covers/what-is-ai.svg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+        <div class="card-body">
+          <p class="card-kicker mono">The basics</p>
+          <h3>What AI actually is</h3>
+          <p class="card-desc">Pattern-matching at enormous scale.</p>
+        </div>
+      </a>
+      <a class="card" href="/guides/what-is-a-prompt.html">
+        <img src="/assets/covers/what-is-a-prompt.svg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+        <div class="card-body">
+          <p class="card-kicker mono">The basics</p>
+          <h3>What a prompt actually is</h3>
+          <p class="card-desc">A prompt is a brief. Write it like one.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- partial:upsell -->
+<section class="upsell">
+  <div class="upsell-inner">
+    <p class="eyebrow mono">When free isn't enough</p>
+    <h2>Want this built with you, not just explained?</h2>
+    <p>I'll build your first AI employee with you in a week, using the same systems as the case studies. You keep it, and you can change it.</p>
+    <a class="btn-primary" href="https://www.shiftandlead.com/work-with-me.html?utm_source=guides&amp;utm_medium=guide&amp;utm_campaign=upsell">See how it works</a>
+  </div>
+</section>
+<!-- /partial:upsell -->
+
+</article>
+
+<!-- partial:newsletter -->
+<section class="newsletter" aria-labelledby="nl-title">
+  <div class="nl-grid">
+    <div class="nl-copy">
+      <p class="eyebrow mono">The Insider Brief</p>
+      <h2 id="nl-title">One clear verdict on the AI news that matters.</h2>
+      <p>Every week. What changed, whether you should care, and what to do about it. Free.</p>
+      <form class="capture-form" action="https://formspree.io/f/xgojoyka" method="POST" data-source="newsletter">
+        <label class="visually-hidden" for="nl-email">Email address</label>
+        <input id="nl-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
+        <input type="hidden" name="source" value="newsletter">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit">Subscribe free</button>
       </form>
+      <p class="capture-fineprint">No cost, no catch. Unsubscribe anytime.</p>
     </div>
-  </div>
-  <div class="cover-art">
-    <svg viewBox="0 0 300 380" fill="none" aria-label="Twelve words, decoded">
-      <rect x="60" y="34" width="180" height="46" rx="6" stroke="#7FA0FF" stroke-width="2"/>
-      <text x="150" y="62" text-anchor="middle" fill="#7FA0FF" font-family="Space Mono" font-size="12" letter-spacing="2">?  ?  ?  ?  ?  ?</text>
-      <text x="150" y="20" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">THE SENTENCE</text>
-      <path d="M150 90v34" stroke="#2C4BE0" stroke-width="2" stroke-dasharray="4 4"/>
-      <rect x="40" y="134" width="220" height="150" rx="8" stroke="#2C4BE0" stroke-width="2"/>
-      <text x="150" y="122" text-anchor="middle" fill="#8d86a0" font-family="Space Mono" font-size="11" letter-spacing="3">TWELVE WORDS</text>
-      <text x="70" y="160" fill="#7FA0FF" font-family="Space Mono" font-size="10">Hallucination</text>
-      <text x="70" y="180" fill="#7FA0FF" font-family="Space Mono" font-size="10">RAG · Agent · MCP</text>
-      <text x="70" y="200" fill="#7FA0FF" font-family="Space Mono" font-size="10">Context · Token</text>
-      <text x="70" y="220" fill="#7FA0FF" font-family="Space Mono" font-size="10">Fine-tune · Temp.</text>
-      <text x="70" y="240" fill="#7FA0FF" font-family="Space Mono" font-size="10">Multimodal · Open</text>
-      <text x="70" y="260" fill="#7FA0FF" font-family="Space Mono" font-size="10">Prompt eng. · API</text>
-      <path d="M150 284v34" stroke="#2C4BE0" stroke-width="2" stroke-dasharray="4 4"/>
-      <rect x="80" y="330" width="140" height="40" rx="6" stroke="#7FA0FF" stroke-width="2"/>
-      <text x="150" y="356" text-anchor="middle" fill="#7FA0FF" font-family="Space Mono" font-size="12" letter-spacing="1">Understood.</text>
-    </svg>
-  </div>
-</header>
-
-<!-- course rail -->
-<div class="rail">
-  <div class="courses">
-    <div class="course active">01 · The Sentence</div>
-    <div class="course">02 · The First Six</div>
-    <div class="course">03 · The Next Six</div>
-    <div class="course">04 · Decoded</div>
-    <div class="course">05 · The Bill</div>
-  </div>
-</div>
-
-<!-- 01 THE SENTENCE -->
-<section class="sec">
-  <div class="sec-head">
-    <div class="sec-num">01</div>
-    <div><h2>The Sentence: where this all started</h2><span class="mono">First course · 1 min</span></div>
-  </div>
-  <div class="sec-body">
-    <div>
-      <p class="dropcap">You smiled through the meeting. You understood nothing. Someone dropped RAG, tokens, and hallucination in the same sentence, and you nodded, and everyone else nodded too, and nobody stopped to ask what any of it meant. This guide is the pause button you wished you had.</p>
-      <p>Here is an actual sentence you might hear in a meeting, a podcast, or a LinkedIn post. Right now, it probably sounds like nonsense. By the end of this guide, you will understand every word of it.</p>
-    </div>
-    <div class="plan">
-      <span class="mono">Overheard in a meeting</span>
-      <blockquote>&ldquo;We&rsquo;re connecting our customer service docs to a Claude agent through MCP, so it pulls from our own data instead of making things up. If quality slips, we&rsquo;ll fine-tune. The context window should handle it. Tokens are cheap now.&rdquo;</blockquote>
-      <ul><li>Seven technical terms in two sentences.</li><li>No wonder everyone just nods.</li><li>Let&rsquo;s break every one of them down: no jargon inside the jargon, just plain language.</li></ul>
+    <div class="nl-art">
+      <img src="/assets/art/insider-brief.svg" alt="A weekly briefing card showing three headlines each marked with a plain verdict." loading="lazy" decoding="async" width="480" height="360">
     </div>
   </div>
 </section>
+<!-- /partial:newsletter -->
 
-<!-- pull quote 1 -->
-<div class="pull">
-  <blockquote>The gap was never intelligence. It was just <strong>vocabulary.</strong></blockquote>
-  <span class="mono">What this guide actually fixes</span>
-</div>
-
-<!-- 02 THE FIRST SIX -->
-<section class="sec" style="padding-top:0">
-  <div class="sec-head">
-    <div class="sec-num">02</div>
-    <div><h2>The First Six: the words hiding in that sentence</h2><span class="mono">Second course · six terms</span></div>
-  </div>
-  <p class="wide" style="margin-top:26px">We will start with the six terms hiding in that meeting sentence. Each one gets a plain-English definition, then a &ldquo;think of it like&rdquo; line so it sticks.</p>
-
-  <details class="fold"><summary>Open the full station menu · 6 items</summary>
-<div class="stations">
-    <div class="station">
-      <span class="mono">Group 1 · term 1</span>
-      <h4>Hallucination</h4>
-      <p><em>&ldquo;A friend who never says &lsquo;I don&rsquo;t know.&rsquo;&rdquo;</em> When AI confidently makes something up, it isn&rsquo;t trying to lie, it just fills gaps with things that sound right but aren&rsquo;t. Always double-check AI on anything with real consequences: numbers, legal claims, medical advice.</p>
-    </div>
-    <div class="station">
-      <span class="mono">Group 1 · term 2</span>
-      <h4>RAG <span style="font-weight:400">(Retrieval-Augmented Generation)</span></h4>
-      <p><em>&ldquo;An open-book exam.&rdquo;</em> Instead of answering from memory (where hallucinations happen), the AI looks something up in <em>your</em> documents first, then answers based on what it found: e.g. reading your actual return policy instead of guessing.</p>
-    </div>
-    <div class="station">
-      <span class="mono">Group 1 · term 3</span>
-      <h4>Agent</h4>
-      <p><em>&ldquo;Hiring a smart friend for the afternoon, not just texting them.&rdquo;</em> An AI that doesn&rsquo;t just talk back: it takes action, browses the web, reads files, fills forms. Tell it &ldquo;find me flights under $400&rdquo; and it actually searches and compares.</p>
-    </div>
-    <div class="station">
-      <span class="mono">Group 1 · term 4</span>
-      <h4>MCP <span style="font-weight:400">(Model Context Protocol)</span></h4>
-      <p><em>&ldquo;USB-C for AI apps.&rdquo;</em> A standard way for AI tools to plug into other software. Before MCP, every AI tool needed a custom connection to every app. &ldquo;MCP connection to Zendesk&rdquo; means the AI and Zendesk can talk through one universal plug.</p>
-    </div>
-    <div class="station">
-      <span class="mono">Group 1 · term 5</span>
-      <h4>Context window</h4>
-      <p><em>&ldquo;A desk that only fits so much paper.&rdquo;</em> How much text the AI can hold in its head at once. Go past the limit and it starts forgetting earlier parts of the chat. Paste a 50-page contract and you need a model with a big desk.</p>
-    </div>
-    <div class="station">
-      <span class="mono">Group 1 · term 6</span>
-      <h4>Token</h4>
-      <p><em>&ldquo;A syllable, roughly.&rdquo;</em> A small chunk of text, about three-quarters of a word. AI companies charge by the token, like a phone plan charges by the gigabyte. &ldquo;Tokens are cheap now&rdquo; means AI got a lot cheaper in 2024&ndash;2025.</p>
-    </div>
-  </div>
-</details>
-  <p class="menu-more">Read the meeting sentence again, at the very top of this page. It makes sense now.</p>
-</section>
-
-
-<!-- 03 THE NEXT SIX -->
-<section class="sec">
-  <div class="sec-head">
-    <div class="sec-num">03</div>
-    <div><h2>The Next Six: words you'll hear this week</h2><span class="mono">Third course · six more terms</span></div>
-  </div>
-  <p class="wide" style="margin-top:26px">These six terms were not in that meeting sentence, but you will run into them soon. Same treatment: plain English, no jargon hiding inside the definition. Three of them are the most useful to actually recognize on sight.</p>
-
-  <div class="menu">
-    <div class="dish">
-      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><rect x="12" y="10" width="56" height="40" rx="5" stroke="#2C4BE0" stroke-width="2.5"/><path d="M24 26l8 6-8 6M40 40h16" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
-      <span class="mono">Starter · easiest to spot</span>
-      <h3>API <span style="font-size:.7em;font-weight:400">(Application Programming Interface)</span></h3>
-      <p><em>&ldquo;A waiter in a restaurant.&rdquo;</em> A way for two apps to talk behind the scenes without a human copying and pasting between them, like your accounting software pulling bank transactions automatically every morning.</p>
-    </div>
-    <div class="dish">
-      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><path d="M10 50c10-24 50-24 60 0" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/><circle cx="40" cy="20" r="9" stroke="#2C4BE0" stroke-width="2.5"/></svg></div>
-      <span class="mono">Main · worth mastering</span>
-      <h3>Prompt engineering</h3>
-      <p><em>&ldquo;Briefing a freelancer well.&rdquo;</em> The skill of writing clearer, more specific instructions to get better AI results. Not a programming language, not a certification, just a better brief in, better work out.</p>
-    </div>
-    <div class="dish">
-      <div class="pict"><svg viewBox="0 0 80 64" fill="none"><circle cx="40" cy="32" r="22" stroke="#2C4BE0" stroke-width="2.5"/><path d="M40 18v14l10 8" stroke="#2C4BE0" stroke-width="2.5" stroke-linecap="round"/></svg></div>
-      <span class="mono">Chef's special · good to know</span>
-      <h3>Multimodal</h3>
-      <p><em>&ldquo;Reads, looks at photos, listens to voicemails.&rdquo;</em> An AI that works with more than text: images, audio, sometimes video. Snap a photo of an Italian menu and it translates it and suggests what to order.</p>
-    </div>
-  </div>
-
-  <div class="stations">
-    <div class="station">
-      <span class="mono">Group 2 · term</span>
-      <h4>Fine-tune</h4>
-      <p><em>&ldquo;Training someone from scratch, vs. hiring a contractor.&rdquo;</em> Retraining a general AI model on your specific data. Expensive, slow, usually overkill, a good prompt or RAG solves most problems first.</p>
-    </div>
-    <div class="station">
-      <span class="mono">Group 2 · term</span>
-      <h4>Temperature</h4>
-      <p><em>&ldquo;A dimmer switch for randomness.&rdquo;</em> Controls how predictable or creative the AI is. Low = same answer every time; high = more creative risk. Almost never touched: the default works for 95% of tasks.</p>
-    </div>
-    <div class="station">
-      <span class="mono">Group 2 · term</span>
-      <h4>Open source / open weights</h4>
-      <p><em>&ldquo;Renting a kitchen vs. owning your own stove.&rdquo;</em> The model is publicly downloadable and runnable on your own machine. ChatGPT, Claude, and Gemini aren&rsquo;t open; Meta&rsquo;s Llama is. Matters mainly for sensitive in-house data.</p>
-    </div>
-    <div class="station">
-      <span class="mono">Group 2 · recap</span>
-      <h4>All twelve, together</h4>
-      <p>Hallucination, RAG, Agent, MCP, Context window, Token, Fine-tune, Temperature, Multimodal, Open source, Prompt engineering, API: that&rsquo;s the whole list. About 90% of AI vocabulary in any business conversation.</p>
-    </div>
-  </div>
-  <p class="menu-more">Twelve words down. Everything else, you can look up the moment you hear it.</p>
-</section>
-
-<!-- pull quote 2 -->
-<div class="pull">
-  <blockquote>&ldquo;What happens when the AI can&rsquo;t find the answer in your docs? Does it <strong>make something up,</strong> or does it say it doesn&rsquo;t know?&rdquo;</blockquote>
-  <span class="mono">The question that shows you actually understood</span>
-</div>
-
-<!-- 04 DECODED -->
-<section class="sec" style="padding-top:0">
-  <div class="sec-head">
-    <div class="sec-num">04</div>
-    <div><h2>Decoded: read that sentence one more time</h2><span class="mono">Fourth course · the translation</span></div>
-  </div>
-  <div class="sec-body">
-    <div>
-      <p>Now read that sentence again, decoded, term by term:</p>
-      <p class="wide">&ldquo;We&rsquo;re connecting our customer service docs to a Claude agent through MCP, so it pulls from our own data instead of making things up. If quality slips, we&rsquo;ll fine-tune.&rdquo;</p>
-      <p>You follow every word now. And the next time someone drops a sentence like that, you can ask the question nobody else will: is it making something up, or saying it doesn&rsquo;t know? That question alone proves you understand the difference between RAG and hallucination. It moves the conversation forward instead of nodding through it.</p>
-    </div>
-    <div class="plan">
-      <span class="mono">Translation, line by line</span>
-      <ul>
-        <li>The AI reads their actual support docs before answering customers (<strong>RAG</strong>)</li>
-        <li>It can take actions inside their help desk software, not just write responses (<strong>agent</strong> + <strong>MCP</strong>)</li>
-        <li>&ldquo;Making things up&rdquo; is the hallucination problem, and RAG is how they&rsquo;re solving it</li>
-        <li>If answers still aren&rsquo;t good enough, they&rsquo;ll retrain the model on their own data (<strong>fine-tune</strong>)</li>
-        <li>The AI can handle all their docs at once (<strong>context window</strong>), and the cost is reasonable (<strong>tokens</strong>)</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- 04b BEFORE YOU EAT (dark warn band) -->
-<section class="warn" style="margin-top:72px">
-  <div class="warn-inner">
-    <span class="mono">Read this before you trust any of it</span>
-    <h2>Know before you nod along again.</h2>
-    <div class="warn-grid">
-      <div class="warn-card"><div class="term">Hallucination</div><p>It states things confidently <strong>when they aren't true.</strong> Always verify claims that matter: numbers, legal, medical.</p></div>
-      <div class="warn-card"><div class="term">RAG isn't a guarantee</div><p>RAG reduces hallucination, it doesn't erase it. <strong>Ask what happens</strong> when the docs don't have the answer.</p></div>
-      <div class="warn-card"><div class="term">Fine-tuning is a last resort</div><p>Most teams reach for it too early. <strong>Try a better prompt or RAG first,</strong> because fine-tuning is slow and expensive.</p></div>
-      <div class="warn-card"><div class="term">Jargon as a smokescreen</div><p>Sometimes big words hide a small idea, or hide that <strong>nobody in the room actually checked.</strong> Ask the plain-English question.</p></div>
-    </div>
-    <!-- Fast Forward CTA hidden pending launch (restore by removing this comment wrapper): <p class="link-line">Fast Forward includes 42 verification prompts that make AI prove its work before you trust it. <a href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=ai-jargon-guide">See Fast Forward &rarr;</a></p> -->
-  </div>
-</section>
-
-<!-- subscribe strip -->
-<div class="subs"><div class="subs-in">
-  <div><h3>Get every new Kitchen Map in your inbox.</h3><p>Plus The Insider Brief: one curated AI briefing every Tuesday, verdicts included.</p></div>
-  <a href="https://brief.shiftandlead.com">Subscribe free &rarr;</a>
-</div></div>
-
-<!-- 05 THE BILL -->
-<section class="sec">
-  <div class="sec-head">
-    <div class="sec-num">05</div>
-    <div><h2>The Bill: what you walk away with</h2><span class="mono">Last course · 1 min</span></div>
-  </div>
-  <div class="sec-body">
-    <div>
-      <p>These twelve words cover about 90% of the AI vocabulary in any business conversation. The other 10% you can look up the moment you hear it. But you will not need to look these ones up again.</p>
-      <p>The gap was never intelligence. It was just vocabulary. And you just closed it.</p>
-      <p><strong>Next on the map:</strong> step inside an actual kitchen and see these words in action: <a href="chez-claude.html"><em>Chez Claude</em>, the first restaurant on the tour &rarr;</a></p>
-    </div>
-  </div>
-</section>
-
-<p style="text-align:center;margin:48px 0"><a href="../free-resources.html#next-steps" style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:#2C4BE0">Ready for more than free? The three ways to go further &rarr;</a></p>
-
-<!-- byline -->
+<!-- partial:byline -->
 <div class="byline">
   <div class="byline-in">
-    <img src="../closeUp.jpeg" alt="Fatiha Chikh" loading="lazy" decoding="async">
-    <p>Written by <strong>Fatiha Chikh</strong>, who is hiring 99 AI employees to run her business in public. <a href="../about.html">The story &rarr;</a></p>
+    <img src="/closeUp.jpeg" alt="Fatiha Chikh" loading="lazy" decoding="async" width="62" height="62">
+    <p>Written by <strong>Fatiha Chikh</strong>. Twenty years at Dell, Intel and Microsoft, now hiring 99 AI employees to run her business in public. <a href="/about.html">Read the story</a></p>
   </div>
 </div>
+<!-- /partial:byline -->
 
-<div class="ipbar">
-  <p><a href="../privacy.html" style="color:inherit">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved. Original IP: The Kitchen Map&trade; format, text and diagrams may not be reproduced, scraped, or used as training data without written permission.</p>
-</div>
-
-<script>
-document.querySelectorAll('.capture-form').forEach(function(form){
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    var btn = form.querySelector('button');
-    var email = form.querySelector('[name="email"]').value;
-    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Done.'; return; }
-    btn.disabled = true; btn.textContent = 'Sending...';
-    try {
-      var r = await fetch('https://formspree.io/f/xgojoyka', { method:'POST', keepalive:true,
-        headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body: JSON.stringify({email: email, source: 'guide-ai-jargon-guide'}) });
-      fetch('https://auto.shiftandlead.com/webhook/formspree-lead', { method:'POST', keepalive:true,
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({email: email, source: 'guide-ai-jargon-guide'}) });
-      if (r.ok) { btn.textContent = 'On its way.'; } else { btn.disabled=false; btn.textContent='Try again'; }
-    } catch(err){ btn.disabled=false; btn.textContent='Try again'; }
-  });
-});
-</script>
-
-<script>
-try {
-  var r = JSON.parse(localStorage.getItem('sl_read') || '[]');
-  if (r.indexOf('ai-jargon-guide') === -1) { r.push('ai-jargon-guide'); localStorage.setItem('sl_read', JSON.stringify(r)); }
-} catch(e){}
-</script>
+<!-- partial:guide-foot -->
+<footer class="site-foot">
+  <p><a href="/privacy.html">Privacy</a> &middot; &copy; 2026 Shift &amp; Lead. All rights reserved. The text and diagrams in these guides may not be reproduced, scraped or used as training data without written permission.</p>
+</footer>
+<!-- /partial:guide-foot -->
 
 </body>
 </html>

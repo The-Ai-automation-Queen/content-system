@@ -1,8 +1,12 @@
 /* ============================================================
-   THE INSIDER BRIEF — Light Premium Intelligence Dashboard
+   THE INSIDER BRIEF
    Brand: Fatiha Chikh / Shift & Lead
-   ============================================================ */
 
+   Layered on the shared design system. /assets/site.css loads first and
+   provides the brand tokens (--blue, --blue-deep, --cream, --line, --ink,
+   and the type stack). Everything below is brief-specific: the feed, the
+   category bar, the card states. Do not redefine a shared token here.
+   ============================================================ */
 /* --- Reset & Global --- */
 * {
   box-sizing: border-box;
@@ -23,7 +27,7 @@ body {
 }
 
 ::selection {
-  background: #2C4BE0;
+  background: var(--blue);
   color: #ffffff;
 }
 
@@ -33,17 +37,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f2f4fb;
+  background: var(--cream);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2C4BE0;
+  background: var(--blue);
   border-radius: 3px;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #2C4BE0 #f2f4fb;
+  scrollbar-color: var(--blue) var(--cream);
 }
 
 
@@ -57,7 +61,7 @@ body {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid #e2e5ef;
+  border-bottom: 1px solid var(--line);
   padding: 16px 24px;
 }
 
@@ -85,7 +89,7 @@ body {
 }
 
 .header-subscribe {
-  background: #2C4BE0;
+  background: var(--blue);
   color: #ffffff;
   border: none;
   padding: 8px 20px;
@@ -98,7 +102,7 @@ body {
 }
 
 .header-subscribe:hover {
-  background: #1B2EA0;
+  background: var(--blue-deep);
   box-shadow: 0 8px 24px rgba(44, 75, 224, 0.22);
 }
 
@@ -116,7 +120,7 @@ body {
   position: relative;
   overflow: hidden;
   scroll-margin-top: 80px;
-  background: linear-gradient(180deg, #ffffff 0%, #f5f6fa 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--cream) 100%);
 }
 
 /* --- Topic Bubbles (hero background) --- */
@@ -238,7 +242,7 @@ body {
   background: rgba(245, 242, 235, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid #ddd6c8;
+  border-bottom: 1px solid var(--line);
   padding: 14px 24px;
 }
 
@@ -266,7 +270,7 @@ body {
   gap: 6px;
   padding: 8px 20px;
   border-radius: 24px;
-  border: 1px solid #d0c9bc;
+  border: 1px solid var(--line);
   background: transparent;
   color: #888888;
   font-family: Inter, sans-serif;
@@ -343,14 +347,14 @@ body {
 }
 
 .category-pill:hover {
-  border-color: var(--category-color, #2C4BE0);
+  border-color: var(--category-color, var(--blue));
   color: var(--category-color, #1a1a1a);
   background: var(--category-tint, rgba(44, 75, 224, 0.06));
 }
 
 .category-pill.active {
-  background: var(--category-color, #2C4BE0);
-  border-color: var(--category-color, #2C4BE0);
+  background: var(--category-color, var(--blue));
+  border-color: var(--category-color, var(--blue));
   color: #ffffff;
 }
 
@@ -384,7 +388,7 @@ body {
   font-family: Inter, sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.1em;
-  color: #2C4BE0;
+  color: var(--blue);
   text-transform: uppercase;
 }
 
@@ -396,7 +400,7 @@ body {
 }
 
 .briefing-status {
-  color: #777168;
+  color: #555555;
   font-size: 0.88rem;
   margin-top: 7px;
 }
@@ -404,9 +408,9 @@ body {
 .feed-view-switch {
   display: inline-flex;
   padding: 3px;
-  border: 1px solid #ddd6c8;
+  border: 1px solid var(--line);
   border-radius: 24px;
-  background: #f8f6f1;
+  background: var(--cream);
   flex-shrink: 0;
 }
 
@@ -415,14 +419,14 @@ body {
   border-radius: 20px;
   padding: 8px 16px;
   background: transparent;
-  color: #777168;
+  color: #555555;
   font-family: Inter, sans-serif;
   font-size: 0.76rem;
   cursor: pointer;
 }
 
 .feed-view-button.active {
-  background: #2C4BE0;
+  background: var(--blue);
   color: #fff;
 }
 
@@ -436,23 +440,23 @@ body {
 }
 
 .feed-count {
-  color: #aaa49a;
+  color: #888888;
   letter-spacing: 0.06em;
 }
 
 .load-more-button {
-  border: 1px solid #2C4BE0;
+  border: 1px solid var(--blue);
   border-radius: 24px;
   padding: 10px 22px;
   background: #fff;
-  color: #2C4BE0;
+  color: var(--blue);
   font-family: Inter, sans-serif;
   font-size: 0.8rem;
   cursor: pointer;
 }
 
 .load-more-button:hover {
-  background: #2C4BE0;
+  background: var(--blue);
   color: #fff;
 }
 
@@ -469,7 +473,7 @@ body {
    ============================================================ */
 .feed-card {
   background: #ffffff;
-  border: 1px solid #e2ddd4;
+  border: 1px solid var(--line);
   border-radius: 16px;
   padding: 20px;
   display: flex;
@@ -523,13 +527,13 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   background: var(--category-tint, rgba(44, 75, 224, 0.08));
-  color: var(--category-color, #2C4BE0);
+  color: var(--category-color, var(--blue));
 }
 
 .card-timestamp {
   font-family: Inter, sans-serif;
   font-size: 0.7rem;
-  color: #aaa49a;
+  color: #888888;
 }
 
 /* Card Headline */
@@ -576,12 +580,12 @@ body {
 }
 
 .verdict-watch {
-  border-left-color: #2C4BE0;
+  border-left-color: var(--blue);
   background: rgba(44, 75, 224, 0.04);
 }
 
 .verdict-ignore {
-  border-left-color: #c0b9ad;
+  border-left-color: #888888;
   background: rgba(138, 138, 138, 0.04);
 }
 
@@ -598,7 +602,7 @@ body {
 }
 
 .verdict-watch .verdict-label {
-  color: #2C4BE0;
+  color: var(--blue);
 }
 
 .verdict-ignore .verdict-label {
@@ -624,10 +628,10 @@ body {
 
 .share-btn {
   background: none;
-  border: 1px solid #e2ddd4;
+  border: 1px solid var(--line);
   border-radius: 8px;
   padding: 5px 12px;
-  color: #aaa49a;
+  color: #888888;
   font-family: Inter, sans-serif;
   font-size: 0.72rem;
   cursor: pointer;
@@ -638,16 +642,16 @@ body {
 }
 
 .share-btn:hover {
-  border-color: #2C4BE0;
-  color: #2C4BE0;
+  border-color: var(--blue);
+  color: var(--blue);
 }
 
 .source-link {
   font-family: Inter, sans-serif;
   font-size: 0.72rem;
-  color: #aaa49a;
+  color: #888888;
   text-decoration: none;
-  border: 1px solid #e2ddd4;
+  border: 1px solid var(--line);
   border-radius: 8px;
   padding: 5px 12px;
   transition: all 0.25s ease;
@@ -656,8 +660,8 @@ body {
 }
 
 .source-link:hover {
-  border-color: #2C4BE0;
-  color: #2C4BE0;
+  border-color: var(--blue);
+  color: var(--blue);
 }
 
 /* Breaking Card State */
@@ -683,13 +687,13 @@ body {
   content: '';
   flex: 1;
   height: 1px;
-  background: #ddd6c8;
+  background: var(--line);
 }
 
 .date-separator span {
   font-family: Inter, sans-serif;
   font-size: 0.7rem;
-  color: #aaa49a;
+  color: #888888;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   white-space: nowrap;
@@ -745,7 +749,7 @@ body {
    ============================================================ */
 .shimmer-card {
   background: #ffffff;
-  border: 1px solid #e2ddd4;
+  border: 1px solid var(--line);
   border-radius: 16px;
   padding: 24px;
   aspect-ratio: 1 / 1;
@@ -754,7 +758,7 @@ body {
 .shimmer-line {
   height: 14px;
   border-radius: 6px;
-  background: linear-gradient(90deg, #ebe7df 25%, #f0ece4 50%, #ebe7df 75%);
+  background: linear-gradient(90deg, var(--line) 25%, var(--cream) 50%, var(--line) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s ease-in-out infinite;
   margin-bottom: 12px;
@@ -780,7 +784,7 @@ body {
   grid-column: 1 / -1;
   text-align: center;
   padding: 80px 24px;
-  color: #aaa49a;
+  color: #888888;
   font-family: "Source Serif 4", Georgia, serif;
   font-style: italic;
   font-size: 1rem;
@@ -797,7 +801,7 @@ body {
   margin: 16px auto 8px;
   font-family: Inter, sans-serif;
   font-size: 0.82rem;
-  color: #2C4BE0;
+  color: var(--blue);
   background: rgba(44, 75, 224, 0.05);
   border: 1px solid rgba(44, 75, 224, 0.15);
   border-radius: 10px;
@@ -806,7 +810,7 @@ body {
 .topic-filter-clear {
   background: none;
   border: none;
-  color: #aaa49a;
+  color: #888888;
   font-size: 1.1rem;
   cursor: pointer;
   padding: 0 4px;
@@ -829,7 +833,7 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #2C4BE0;
+  background: var(--blue);
   border: none;
   color: #ffffff;
   font-size: 1.2rem;
@@ -847,7 +851,7 @@ body {
 }
 
 .scroll-top:hover {
-  background: #1B2EA0;
+  background: var(--blue-deep);
   transform: scale(1.1);
 }
 
@@ -861,7 +865,7 @@ body {
   left: 50%;
   transform: translateX(-50%) translateY(20px);
   background: #ffffff;
-  border: 1px solid #e2ddd4;
+  border: 1px solid var(--line);
   color: #1a1a1a;
   font-family: Inter, sans-serif;
   font-size: 0.82rem;
@@ -883,10 +887,10 @@ body {
    FOOTER
    ============================================================ */
 .site-footer {
-  border-top: 1px solid #ddd6c8;
+  border-top: 1px solid var(--line);
   padding: 60px 24px;
   text-align: center;
-  background: #ede8df;
+  background: var(--cream);
 }
 
 .footer-brand {
@@ -905,19 +909,19 @@ body {
 }
 
 .footer-socials a {
-  color: #aaa49a;
+  color: #888888;
   transition: color 0.25s ease;
   text-decoration: none;
 }
 
 .footer-socials a:hover {
-  color: #2C4BE0;
+  color: var(--blue);
 }
 
 .footer-trust {
   font-family: Inter, sans-serif;
   font-size: 0.72rem;
-  color: #b0a89c;
+  color: #888888;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-top: 28px;
@@ -1122,8 +1126,8 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 22px 24px 28px;
-  border-top: 1px solid #e2ddd4;
-  color: #777168;
+  border-top: 1px solid var(--line);
+  color: #555555;
   font-family: "Source Serif 4", Georgia, serif;
   font-size: 0.9rem;
   line-height: 1.5;
