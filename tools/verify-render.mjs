@@ -140,6 +140,40 @@ const shotsDir = (args.find(a => a.startsWith('--shots=')) || '').split('=')[1];
 const exe = '/opt/pw-browsers/chromium';
 const browser = await chromium.launch(existsSync(exe) ? { executablePath: exe } : {});
 
+/* The pages load fonts from Google, and that stylesheet blocks rendering. Fetched
+   fresh on every page it costs about twelve seconds each, which turns this check
+   into an hour nobody will wait for. So fetch each external URL once and replay it
+   from memory after that. The fonts still load, so the type metrics this check
+   measures are the real ones. */
+const cache = new Map();
+
+async function cacheExternal(context) {
+  await context.route('**/*', async route => {
+    const url = route.request().url();
+    if (url.startsWith('http://127.0.0.1')) return route.continue();
+    const hit = cache.get(url);
+    if (hit) return route.fulfill(hit);
+    try {
+      const res = await route.fetch();
+      const entry = {
+        status: res.status(),
+        headers: res.headers(),
+        body: await res.body()
+      };
+      cache.set(url, entry);
+      return route.fulfill(entry);
+    } catch {
+      return route.abort();
+    }
+  });
+}
+
+const contexts = {};
+for (const vp of WIDTHS) {
+  contexts[vp.name] = await browser.newContext({ viewport: { width: vp.width, height: vp.height } });
+  await cacheExternal(contexts[vp.name]);
+}
+
 let pass = 0;
 const failures = [];
 
@@ -164,7 +198,7 @@ for (const [key, site] of Object.entries(SITES)) {
     }
 
     for (const vp of WIDTHS) {
-      const page = await browser.newPage({ viewport: { width: vp.width, height: vp.height } });
+      const page = await contexts[vp.name].newPage();
       const jsErrors = [];
       page.on('pageerror', e => jsErrors.push(e.message));
 

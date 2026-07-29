@@ -185,6 +185,9 @@ body.guide{background:var(--paper);color:var(--ink);font-family:var(--serif);fon
 .row-summary{font-size:16px;color:#555;margin:0}
 .row-cta{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);text-decoration:none;white-space:nowrap;font-weight:700}
 .row-cta:hover{color:var(--blue-deep)}
+/* nowrap is right for "All guides ->" beside a row. A sentence-length link needs
+   this, or it forces the page wider than the phone it is being read on. */
+.row-cta.wraps{white-space:normal}
 @media(max-width:700px){.row{flex-direction:column;gap:12px}}
 
 /* ------------------------------------------------------------- 12. print */

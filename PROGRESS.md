@@ -300,18 +300,39 @@ Two more, found while measuring:
   which had none of its own. Header 64px to 70px, logo 23px to 33px. Left as is:
   it is the correct default for body serif and the drift is in the chrome only.
 
+## One more, found by the new check
+
+`free-resources.html` scrolled sideways by 310px on a phone. The Starter Kit
+cross-link is a full sentence wearing `.row-cta`, which is `white-space: nowrap`.
+That is right for "All guides →" sitting beside a row and wrong for prose: it
+forced the line to 676px inside a 390px screen. The library page and the three
+stubs that redirect to it were all affected, so this was the most-read page on
+the site scrolling sideways on mobile.
+
+Fixed with a `.wraps` variant rather than by rewriting the sentence.
+
+I did not find this by eye. My own earlier sweep only rendered those pages at
+1280px, where they are fine.
+
 ## What was NOT broken
 
-Checked every page on all three sites at 390px and 1280px, against the
+Every page on all three sites, at 390px and 1280px, against the
 pre-consolidation build at `c7ce063`:
 
-- **www.shiftandlead.com**, 13 pages: clean. No overflow, no broken image, no
+- **www.shiftandlead.com**, 19 pages: clean. No overflow, no broken image, no
   JavaScript error, correct fonts, one `<h1>` each.
-- **guides.shiftandlead.com**, 12 landing pages and 20 guides: clean. The 20
+- **guides.shiftandlead.com**, 47 pages including all 20 guides: clean. The 20
   pages whose inline `<style>` I extracted to `/assets/pages/*.css` all load
   their stylesheet and render correctly.
-- Every image on both sites resolves once lazy loading has had its chance.
-- The three pages reporting no stylesheet are redirect stubs, which is correct.
+- Every image on all three sites resolves once lazy loading has had its chance.
+- Pages reporting no stylesheet are redirect stubs, which is correct.
+- Brief feed interactions hold: show-more, archive switch and category filter
+  each keep exactly one opt-in at full width, all three capture forms wired
+  once, no JavaScript errors.
+
+Final state: 65 of 67 pages render clean. The two that do not are the two
+application forms still carrying `{{OFFER_FORM_ID}}` and `{{WORKSHOP_FORM_ID}}`,
+which is the check doing its job.
 
 ## Pre-existing, not from this build
 
@@ -338,9 +359,15 @@ one it is clean.
 Playwright, says so plainly when it is missing, and is the extra pass:
 
 ```
-node verify.mjs --all              # always
-node tools/verify-render.mjs       # before anything ships
+node verify.mjs --all              # always, ~2 seconds
+node tools/verify-render.mjs       # before anything ships, ~4 minutes
 ```
+
+The pages load fonts from Google and that stylesheet blocks rendering, which
+cost about twelve seconds per page fetched fresh. Every external URL is now
+fetched once and replayed from memory, so 67 pages at two widths takes under
+four minutes instead of over an hour. The fonts still load, so the type metrics
+it measures are the real ones.
 
 ---
 
