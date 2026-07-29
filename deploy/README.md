@@ -23,6 +23,44 @@ system. You have a **VPS** and **Telegram** — that's exactly what this kit nee
 
 ---
 
+## Agent Reach — giving the machines eyes
+
+`install.sh` step 8 installs [Agent Reach](https://github.com/Panniantong/agent-reach),
+a CLI that lets the machines read the open web: any page (via Jina Reader),
+YouTube transcripts, RSS, GitHub, and — once configured — Twitter/X, Reddit,
+LinkedIn and others. `signal-harvester` (M01) is the obvious consumer.
+
+It lives in `~/.agent-reach-venv`, symlinked to `~/.local/bin/agent-reach`.
+**Crons get a bare PATH — call it by absolute path** in `crontab`:
+
+```bash
+$HOME/.agent-reach-venv/bin/agent-reach doctor
+```
+
+Three things to know before you extend it:
+
+- **Pinned, not floating.** `AGENT_REACH_COMMIT` in `install.sh` pins an audited
+  commit. Upstream's own docs tell you to install from `archive/main.zip` —
+  whatever is on `main` at that moment, unsigned. Bump the SHA deliberately,
+  after reading the diff.
+- **Installed in `--safe` mode.** Left to itself, `agent-reach install --env=auto`
+  writes to `/etc/apt/sources.list.d/`, runs `apt-get install`, and executes
+  NodeSource's setup script as root. We don't let it — step 3 already provides
+  Node. If you want the GitHub CLI, install `gh` yourself.
+- **Cookie channels are an account-risk decision, not a config step.** Twitter,
+  Reddit, XiaoHongShu and friends authenticate with exported session cookies,
+  which are full-account bearer credentials stored in `~/.agent-reach/config.yaml`
+  (mode 0600). Use a secondary account, never the Shift & Lead primaries. Do not
+  put these cookies in Doppler-backed `.env` or anywhere in this repo — see
+  `security.md`.
+
+The `opencli` channel is deliberately **not** installed: it adds a third-party
+Chrome extension plus a local daemon driving a real logged-in browser, from a
+different maintainer. That is a much larger blast radius than a Python package
+and needs its own decision.
+
+---
+
 ## TL;DR — the whole thing in 7 commands
 
 ```bash
