@@ -1,35 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Meta AI">
-  <rect width="1600" height="900" fill="#FAF7F2"/>
-  <rect x="0" y="0" width="1600" height="10" fill="#2C4BE0"/>
-  <rect x="1020" y="0" width="1" height="900" fill="#E8E4DD"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Meta AI">
+  <rect width="1280" height="720" fill="#FAF7F2"/>
+  <rect x="0" y="0" width="1280" height="8" fill="#2C4BE0"/>
+  <rect x="816" y="0" width="1" height="720" fill="#E8E4DD"/>
   <g>
-    <rect x="1075" y="153" width="263" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="178" width="278" height="9" rx="4.5" fill="#2C4BE0" opacity="0.80"/>
-    <rect x="1075" y="209" width="219" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="237" width="337" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="265" width="368" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="293" width="274" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="321" width="363" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="349" width="376" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="377" width="271" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="405" width="144" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="433" width="269" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="461" width="299" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="486" width="270" height="9" rx="4.5" fill="#2C4BE0" opacity="0.71"/>
-    <rect x="1075" y="517" width="243" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="542" width="271" height="9" rx="4.5" fill="#2C4BE0" opacity="0.67"/>
-    <rect x="1075" y="573" width="169" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="601" width="363" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="626" width="357" height="9" rx="4.5" fill="#2C4BE0" opacity="0.40"/>
-    <rect x="1075" y="657" width="270" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="685" width="139" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="713" width="213" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="741" width="375" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1049" y="256" width="8" height="34" rx="4" fill="#2C4BE0"/>
+    <rect x="860" y="122" width="211" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="142.4" width="223" height="7" rx="3.5" fill="#2C4BE0" opacity="0.80"/>
+    <rect x="860" y="166.8" width="175" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="189.20000000000002" width="270" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="211.60000000000002" width="294" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="234.00000000000003" width="220" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="256.40000000000003" width="290" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="278.8" width="301" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="301.2" width="217" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="323.59999999999997" width="115" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="345.99999999999994" width="215" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="368.3999999999999" width="240" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="388.7999999999999" width="216" height="7" rx="3.5" fill="#2C4BE0" opacity="0.71"/>
+    <rect x="860" y="413.1999999999999" width="194" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="433.59999999999985" width="217" height="7" rx="3.5" fill="#2C4BE0" opacity="0.67"/>
+    <rect x="860" y="457.99999999999983" width="135" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="480.3999999999998" width="290" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="500.7999999999998" width="285" height="7" rx="3.5" fill="#2C4BE0" opacity="0.40"/>
+    <rect x="860" y="525.1999999999998" width="216" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="547.5999999999998" width="111" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="569.9999999999998" width="170" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="592.3999999999997" width="300" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="839" y="204.6" width="6" height="27" rx="4" fill="#2C4BE0"/>
   </g>
-  <text x="110" y="150" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="24" letter-spacing="4.5" fill="#1B2EA0">TOOL VERDICT / META</text>
-  <text y="470" font-family="Georgia,'Times New Roman',serif" font-size="116" font-weight="700" fill="#1a1a1a"><tspan x="110" dy="0">Meta AI</tspan></text>
-  <rect x="110" y="522" width="120" height="4" fill="#2C4BE0"/>
-  <text x="110" y="800" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="22" letter-spacing="4" fill="#1a1a1a" opacity="0.55">SHIFT &amp; LEAD</text>
-  <text x="110" y="836" font-family="Georgia,'Times New Roman',serif" font-size="24" font-style="italic" fill="#1a1a1a" opacity="0.45">guides.shiftandlead.com</text>
+  <text x="88" y="120" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="19" letter-spacing="3.6" fill="#1B2EA0">TOOL VERDICT / META</text>
+  <text y="376" font-family="Georgia,'Times New Roman',serif" font-size="93" font-weight="700" fill="#1a1a1a"><tspan x="88" dy="0">Meta AI</tspan></text>
+  <rect x="88" y="418" width="96" height="3" fill="#2C4BE0"/>
+  <text x="88" y="640" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="18" letter-spacing="3.2" fill="#1a1a1a" opacity="0.55">SHIFT &amp; LEAD</text>
+  <text x="88" y="669" font-family="Georgia,'Times New Roman',serif" font-size="19" font-style="italic" fill="#1a1a1a" opacity="0.45">guides.shiftandlead.com</text>
 </svg>

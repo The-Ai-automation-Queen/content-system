@@ -35,119 +35,7 @@
 }
 </script>
 <link rel="stylesheet" href="/assets/site.css">
-<style>
-:root{
-  --canvas:#FFFFFF;--cream:#FAF7F2;--ink:#1A1A1A;--rule:#E8E4DD;--rule-light:#E8E4DD;
-  --muted:#555;--accent:#2C4BE0;--accent-deep:#1B2EA0;--accent-tint:#E4EAFB;
-  --electric:#2C4BE0;--navy:#1B2EA0;--surface:#FFFFFF;--red:#E63955;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-button{font-family:inherit}
-
-.nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
-.nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.nav-back{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:2px}
-.nav-back:hover{border-bottom-color:var(--ink);color:var(--ink)}
-
-.stage{max-width:760px;margin:0 auto;padding:clamp(40px,7vw,80px) clamp(20px,5vw,48px) 96px}
-
-/* ---- intro ---- */
-.intro-kicker{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.22em;color:var(--accent-deep);margin-bottom:20px;display:flex;align-items:center;gap:10px}
-.intro-kicker::before{content:"";width:28px;height:1px;background:var(--accent-deep)}
-.intro h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(36px,5.4vw,56px);font-weight:400;line-height:1.06;letter-spacing:-0.02em;margin-bottom:24px}
-.intro h1 em{font-style:italic;color:var(--electric)}
-.intro .sub{font-size:19px;color:var(--muted);line-height:1.6;max-width:600px;margin-bottom:36px}
-.intro-facts{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:40px}
-.intro-fact{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);display:flex;align-items:center;gap:8px}
-.intro-fact strong{font-size:22px;color:var(--ink);letter-spacing:0}
-.btn-start{display:inline-block;padding:17px 32px;background:var(--electric);color:#fff;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;border:none;border-radius:3px;cursor:pointer}
-.btn-start:hover{background:var(--navy)}
-.intro-note{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-top:16px}
-
-/* ---- quiz ---- */
-.progress{display:flex;align-items:center;gap:14px;margin-bottom:40px}
-.progress-track{flex:1;height:2px;background:var(--rule);position:relative}
-.progress-fill{position:absolute;left:0;top:0;bottom:0;background:var(--electric);transition:width .35s ease}
-.progress-label{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
-
-.q-area{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent-deep);margin-bottom:14px}
-.q-text{font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,3.4vw,34px);font-weight:400;line-height:1.2;letter-spacing:-0.01em;margin-bottom:30px;text-wrap:balance}
-
-.options{display:flex;flex-direction:column;gap:12px}
-.opt{display:flex;align-items:baseline;gap:16px;text-align:left;width:100%;padding:18px 20px;background:var(--surface);border:1px solid var(--rule);border-radius:4px;cursor:pointer;font-size:16.5px;line-height:1.5;color:var(--ink);transition:border-color .12s ease, background .12s ease}
-.opt:hover,.opt:focus-visible{border-color:var(--accent);background:var(--accent-tint);outline:none}
-.opt .key{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);border:1px solid var(--rule);border-radius:3px;padding:2px 7px;flex-shrink:0}
-.opt:hover .key{border-color:var(--accent);color:var(--accent-deep)}
-
-.q-back{margin-top:28px;background:none;border:none;font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);cursor:pointer;border-bottom:1px solid var(--rule);padding:0 0 2px}
-.q-back:hover{color:var(--ink);border-bottom-color:var(--ink)}
-
-/* ---- result ---- */
-.r-kicker{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.22em;color:var(--accent-deep);margin-bottom:18px}
-.r-hours{font-family:'Playfair Display',Georgia,serif;font-size:clamp(52px,9vw,92px);line-height:1;font-weight:400;letter-spacing:-0.03em;color:var(--electric);font-style:italic}
-.r-hours-label{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);margin:8px 0 26px}
-.r-type{font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,3.4vw,32px);font-weight:400;line-height:1.2;margin-bottom:14px}
-.r-desc{font-size:17px;color:var(--muted);line-height:1.65;max-width:620px;margin-bottom:36px}
-.r-desc strong{color:var(--ink)}
-
-.r-bars{display:flex;flex-direction:column;gap:14px;margin-bottom:40px;max-width:560px}
-.r-bar-row{display:grid;grid-template-columns:130px 1fr 46px;align-items:center;gap:14px}
-.r-bar-name{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted)}
-.r-bar-track{height:10px;background:var(--rule-light);border-radius:5px;overflow:hidden}
-.r-bar-fill{height:100%;background:var(--accent);border-radius:5px;transition:width .6s ease}
-.r-bar-row.worst .r-bar-fill{background:var(--red)}
-.r-bar-val{font-family:'Space Mono',monospace;font-size:12px;color:var(--ink);text-align:right;font-variant-numeric:tabular-nums}
-
-.r-cta{background:var(--navy);color:var(--canvas);border-radius:6px;padding:34px 32px;margin-bottom:20px}
-.r-cta .k{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#E4EAFB;margin-bottom:12px}
-.r-cta h3{font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:400;line-height:1.25;margin-bottom:10px}
-.r-cta p{font-size:15px;color:rgba(248,247,245,0.85);line-height:1.55;margin-bottom:22px}
-.r-cta a{display:inline-block;padding:14px 24px;background:var(--canvas);color:var(--ink);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;border-radius:3px}
-
-.r-secondary{font-size:15px;color:var(--muted);margin-bottom:44px}
-.r-secondary a{color:var(--accent-deep);text-decoration:underline;text-underline-offset:3px}
-
-.r-email{border-top:2px solid var(--ink);padding-top:32px}
-.r-email h4{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:400;margin-bottom:8px}
-.r-email p{font-size:14.5px;color:var(--muted);margin-bottom:18px}
-.r-email-row{display:flex;gap:10px;flex-wrap:wrap;max-width:520px}
-.r-email-row input{flex:1;min-width:220px;padding:14px 16px;border:1px solid var(--rule);background:var(--surface);font-family:'Inter',sans-serif;font-size:15px;border-radius:3px}
-.r-email-row input:focus{outline:none;border-color:var(--accent)}
-.r-email-row button{padding:14px 22px;background:var(--electric);color:#fff;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;border:none;border-radius:3px;cursor:pointer}
-.r-email-row button:hover{background:var(--navy)}
-.r-email-row button:disabled{opacity:0.6;cursor:default}
-.r-email-note{font-family:'Space Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-top:12px}
-
-.r-retake{margin-top:36px}
-.r-retake button{background:none;border:none;font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);cursor:pointer;border-bottom:1px solid var(--rule);padding:0 0 2px}
-.r-retake button:hover{color:var(--ink);border-bottom-color:var(--ink)}
-
-[hidden]{display:none !important}
-@media (prefers-reduced-motion: reduce){
-  .progress-fill,.r-bar-fill,.opt{transition:none}
-}
-@media (max-width:600px){
-  .r-bar-row{grid-template-columns:96px 1fr 40px}
-}
-
-.footer{background:var(--ink);color:var(--canvas);margin-top:100px;padding:56px 32px 32px}
-.footer-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;align-items:start;text-align:left}
-.footer-brand{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:700;margin-bottom:12px}
-.footer-tag{opacity:0.7;font-size:14px;max-width:360px}
-.footer-col-head{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;opacity:0.6;margin-bottom:12px}
-.footer-link{display:block;font-size:14px;padding:4px 0;color:var(--canvas);opacity:0.9;text-decoration:none}
-.footer-legal{max-width:1240px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,0.12);font-size:11px;opacity:0.5;font-family:'Space Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;text-align:center}
-@media(max-width:900px){.footer-inner{grid-template-columns:1fr;gap:28px}}
-.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:22px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
-.nav-links a{color:var(--ink);text-decoration:none}
-.nav-links a:hover,.nav-links a.active{color:var(--accent-deep)}
-.nav-links .nav-cta{background:var(--accent);color:#fff;padding:9px 16px;border-radius:3px;font-weight:600}
-.nav-links .nav-cta:hover{background:var(--accent-deep)}
-@media (max-width:640px){.nav-links{display:none}}
-</style>
+<link rel="stylesheet" href="/assets/pages/time-audit.css">
 <script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 <script defer src="/lib/motion.js"></script>
 </head>
@@ -209,9 +97,10 @@ button{font-family:inherit}
     <div class="r-email">
       <h4>Email me my full audit.</h4>
       <p>Your result, the breakdown, and the fix-first plan, in your inbox so it does not vanish with this tab.</p>
-      <form class="r-email-row" id="email-form">
+      <form action="https://formspree.io/f/xgojoyka" method="POST" class="r-email-row" id="email-form">
         <input type="email" name="email" placeholder="your@email.com" required>
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="source" value="guides-time-audit-result">
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <button type="submit">Send it</button>
       </form>
       <p class="r-email-note" id="email-note">No spam. No sequences you did not ask for.</p>

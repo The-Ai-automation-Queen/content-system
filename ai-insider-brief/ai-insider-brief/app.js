@@ -242,6 +242,71 @@ function clearTopicFilter() {
 // MODULE C: Card Rendering
 // ============================================================
 
+// A 16:9 thumbnail per item. Generated inline from the card's own category and
+// headline, so the feed stays visual without fetching a single external image.
+var THUMB_TONE = {
+  'Breaking': ['#DC2626', '#7f1d1d'], 'Strategy': ['#1D4ED8', '#1e3a8a'],
+  'Privacy': ['#7C3AED', '#4c1d95'], 'Tools': ['#0F766E', '#134e4a'],
+  'Marketing': ['#BE185D', '#831843'], 'Healthcare': ['#15803D', '#14532d'],
+  'Finance': ['#C2410C', '#7c2d12'], 'Real Estate': ['#0369A1', '#075985'],
+  'Education': ['#A21CAF', '#701a75'], 'Media': ['#4F46E5', '#3730a3']
+};
+
+function createThumb(card) {
+  var tone = THUMB_TONE[card.category] || ['#2C4BE0', '#1B2EA0'];
+  var initials = (card.category || 'AI').replace(/[^A-Za-z ]/g, '')
+    .split(' ').map(function (w) { return w.charAt(0); }).join('').slice(0, 2).toUpperCase();
+  var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="320" height="180" role="img" aria-label="' +
+    (card.category || 'Briefing') + '">' +
+    '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+    '<stop offset="0" stop-color="' + tone[0] + '"/><stop offset="1" stop-color="' + tone[1] + '"/>' +
+    '</linearGradient></defs>' +
+    '<rect width="320" height="180" fill="url(#g)"/>' +
+    '<text x="24" y="150" font-family="Georgia,serif" font-size="64" font-weight="700" fill="#ffffff" opacity="0.28">' +
+    initials + '</text></svg>';
+  var img = document.createElement('img');
+  img.className = 'card-thumb';
+  img.width = 320;
+  img.height = 180;
+  img.loading = 'lazy';
+  img.decoding = 'async';
+  img.alt = '';
+  img.setAttribute('aria-hidden', 'true');
+  img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  return img;
+}
+
+// An inline opt-in after every third item. The brief is a feed, so its job is
+// capture and freshness, never a content gate.
+function createInlineOptIn(n) {
+  var wrap = document.createElement('section');
+  wrap.className = 'feed-optin';
+  var h = document.createElement('p');
+  h.className = 'feed-optin-title';
+  h.textContent = 'One clear verdict on the AI news that matters.';
+  var sub = document.createElement('p');
+  sub.className = 'feed-optin-sub';
+  sub.textContent = 'Every week, free. What changed, whether you should care, and what to do.';
+  var form = document.createElement('form');
+  form.className = 'capture-form';
+  form.setAttribute('action', 'https://formspree.io/f/xgojoyka');
+  form.setAttribute('method', 'POST');
+  form.setAttribute('data-source', 'brief-inline-' + n);
+  var email = document.createElement('input');
+  email.type = 'email'; email.name = 'email'; email.required = true;
+  email.autocomplete = 'email'; email.placeholder = 'your@email.com';
+  var source = document.createElement('input');
+  source.type = 'hidden'; source.name = 'source'; source.value = 'brief-inline-' + n;
+  var pot = document.createElement('input');
+  pot.type = 'text'; pot.name = '_gotcha'; pot.tabIndex = -1;
+  pot.autocomplete = 'off'; pot.style.display = 'none';
+  var btn = document.createElement('button');
+  btn.type = 'submit'; btn.textContent = 'Subscribe free';
+  form.appendChild(email); form.appendChild(source); form.appendChild(pot); form.appendChild(btn);
+  wrap.appendChild(h); wrap.appendChild(sub); wrap.appendChild(form);
+  return wrap;
+}
+
 function createCardElement(card, index) {
   var el = document.createElement('div');
   el.className = 'feed-card';
@@ -256,6 +321,8 @@ function createCardElement(card, index) {
   }
 
   // Card header
+  el.appendChild(createThumb(card));
+
   var header = document.createElement('div');
   header.className = 'card-header';
 
@@ -351,7 +418,11 @@ function renderFeed(cards) {
   for (var i = 0; i < cards.length; i++) {
     var cardEl = createCardElement(cards[i], i);
     feed.appendChild(cardEl);
+    if ((i + 1) % 3 === 0 && i + 1 < cards.length) {
+      feed.appendChild(createInlineOptIn((i + 1) / 3));
+    }
   }
+  if (window.slWireCaptureForms) window.slWireCaptureForms();
 
 }
 

@@ -20,6 +20,11 @@
   }
 
   function wire(form) {
+    // Feeds render opt-ins after this script has run, so wiring must be
+    // repeatable without double-binding a form.
+    if (form.getAttribute('data-wired') === 'yes') return;
+    form.setAttribute('data-wired', 'yes');
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var button = form.querySelector('button');
@@ -66,9 +71,16 @@
     });
   }
 
-  function init() {
+  function wireAll() {
     var forms = document.querySelectorAll('form.capture-form');
     for (var i = 0; i < forms.length; i++) wire(forms[i]);
+  }
+
+  // Exposed so a page that renders forms later can re-run the wiring.
+  window.slWireCaptureForms = wireAll;
+
+  function init() {
+    wireAll();
 
     // Remember which guides have been read, for the library page continue link.
     var slug = document.body.getAttribute('data-page');

@@ -131,7 +131,6 @@
       "whatIdDo": "Buy one month, give it three real jobs, then decide.",
       "figCaption": "An agent is a contractor, not a colleague. Brief it like one."
     },
-
     {
       "slug": "what-is-ai",
       "track": "basics",
@@ -192,7 +191,6 @@
       "whatIdDo": "Keep this open in a tab for a fortnight. After that you will not need it.",
       "figCaption": "The words that come up most, and what each one really means."
     },
-
     {
       "slug": "stack-3-tool-ai-stack",
       "track": "business",
@@ -252,6 +250,18 @@
       "carefulWith": "Automating a promise you cannot keep the next morning.",
       "whatIdDo": "Start with the after-hours reply. It is the one that pays for itself first.",
       "figCaption": "What runs while you sleep, and what still waits for you."
+    },
+    {
+      "slug": "freedom-os-kit",
+      "track": "kit",
+      "kicker": "Free, forever",
+      "title": "The Freedom OS Starter Kit",
+      "h1": "The Freedom OS Starter Kit",
+      "verdict": "Every prompt, template and setup I use, in plain English, free.",
+      "bestFor": "Non-technical operators who want the working versions, not the theory.",
+      "carefulWith": "Collecting templates instead of running one of them this week.",
+      "whatIdDo": "Take one. Use it on real work today. Come back for the next.",
+      "figCaption": "The kit, sorted by the job you are trying to get done."
     }
   ]
 }

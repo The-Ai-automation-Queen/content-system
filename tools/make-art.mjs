@@ -5,7 +5,7 @@
 //
 // Every guide gets two pieces of art, generated here rather than fetched:
 //
-//   site/assets/covers/<slug>.svg   1600x900 cover, used at the top of the
+//   site/assets/covers/<slug>.svg   1280x720 cover, used at the top of the
 //                                   guide and as the card image in the library
 //   site/assets/art/<slug>-fit.svg  in-body figure: where the tool earns its
 //                                   keep against where it will burn you
@@ -85,63 +85,63 @@ function wrap(text, maxChars) {
 function motif(seed) {
   const rand = rng(seed);
   const parts = [];
-  const x0 = 1075;
-  const width = 380;
-  let y = 150;
+  const x0 = 860;
+  const width = 304;
+  let y = 120;
   for (let row = 0; row < 22; row++) {
     const w = Math.round(width * (0.35 + rand() * 0.65));
     const filled = rand() > 0.78;
     if (filled) {
-      parts.push(`<rect x="${x0}" y="${y}" width="${w}" height="9" rx="4.5" fill="${BLUE}" opacity="${(0.35 + rand() * 0.5).toFixed(2)}"/>`);
+      parts.push(`<rect x="${x0}" y="${y}" width="${w}" height="7" rx="3.5" fill="${BLUE}" opacity="${(0.35 + rand() * 0.5).toFixed(2)}"/>`);
     } else {
-      parts.push(`<rect x="${x0}" y="${y + 3}" width="${w}" height="2" rx="1" fill="${BLUE_DEEP}" opacity="0.16"/>`);
+      parts.push(`<rect x="${x0}" y="${y + 2}" width="${w}" height="2" rx="1" fill="${BLUE_DEEP}" opacity="0.16"/>`);
     }
-    y += 28;
+    y += 22.4;
   }
   // one solid accent block, position seeded
-  const by = 150 + Math.floor(rand() * 18) * 28;
-  parts.push(`<rect x="${x0 - 26}" y="${by - 6}" width="8" height="34" rx="4" fill="${BLUE}"/>`);
+  const by = 120 + Math.floor(rand() * 18) * 22.4;
+  parts.push(`<rect x="${x0 - 21}" y="${by - 5}" width="6" height="27" rx="4" fill="${BLUE}"/>`);
   return parts.join('\n    ');
 }
 
-// The title column runs from x=110 to the hairline at x=1020, so 890px of
+// The title column runs from x=88 to the hairline at x=816, so 712px of
 // room. Step the type down until the longest line fits in at most four lines.
 function fitTitle(text) {
-  const AVAILABLE = 890;
+  const AVAILABLE = 712;
   const CHAR = 0.52; // rough em width of Georgia bold
-  for (const size of [116, 100, 84, 72, 60, 52]) {
+  for (const size of [93, 80, 67, 58, 48, 42]) {
     const maxChars = Math.floor(AVAILABLE / (size * CHAR));
     const lines = wrap(text, maxChars);
     if (lines.length <= 4 && lines.every((l) => l.length <= maxChars)) {
       return { lines, size };
     }
   }
-  return { lines: wrap(text, 34).slice(0, 4), size: 52 };
+  return { lines: wrap(text, 34).slice(0, 4), size: 42 };
 }
 
 function cover(guide) {
   const seed = seedOf(guide.slug);
   const { lines: titleLines, size } = fitTitle(guide.h1);
   const step = size * 1.06;
-  const startY = 470 - ((titleLines.length - 1) * step * 0.5);
-  const ruleY = startY + ((titleLines.length - 1) * step) + 52;
+  const startY = 376 - ((titleLines.length - 1) * step * 0.5);
+  const ruleY = startY + ((titleLines.length - 1) * step) + 42;
 
   const title = titleLines
-    .map((l, i) => `<tspan x="110" dy="${i === 0 ? 0 : step}">${esc(l)}</tspan>`)
+    .map((l, i) => `<tspan x="88" dy="${i === 0 ? 0 : step}">${esc(l)}</tspan>`)
     .join('');
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="${esc(guide.h1)}">
-  <rect width="1600" height="900" fill="${CREAM}"/>
-  <rect x="0" y="0" width="1600" height="10" fill="${BLUE}"/>
-  <rect x="1020" y="0" width="1" height="900" fill="${LINE}"/>
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="${esc(guide.h1)}">
+  <rect width="1280" height="720" fill="${CREAM}"/>
+  <rect x="0" y="0" width="1280" height="8" fill="${BLUE}"/>
+  <rect x="816" y="0" width="1" height="720" fill="${LINE}"/>
   <g>
     ${motif(seed)}
   </g>
-  <text x="110" y="150" font-family="${MONO}" font-size="24" letter-spacing="4.5" fill="${BLUE_DEEP}">${esc(guide.kicker.toUpperCase())}</text>
+  <text x="88" y="120" font-family="${MONO}" font-size="19" letter-spacing="3.6" fill="${BLUE_DEEP}">${esc(guide.kicker.toUpperCase())}</text>
   <text y="${startY}" font-family="${DISPLAY}" font-size="${size}" font-weight="700" fill="${INK}">${title}</text>
-  <rect x="110" y="${ruleY}" width="120" height="4" fill="${BLUE}"/>
-  <text x="110" y="800" font-family="${MONO}" font-size="22" letter-spacing="4" fill="${INK}" opacity="0.55">SHIFT &amp; LEAD</text>
-  <text x="110" y="836" font-family="${DISPLAY}" font-size="24" font-style="italic" fill="${INK}" opacity="0.45">guides.shiftandlead.com</text>
+  <rect x="88" y="${ruleY}" width="96" height="3" fill="${BLUE}"/>
+  <text x="88" y="640" font-family="${MONO}" font-size="18" letter-spacing="3.2" fill="${INK}" opacity="0.55">SHIFT &amp; LEAD</text>
+  <text x="88" y="669" font-family="${DISPLAY}" font-size="19" font-style="italic" fill="${INK}" opacity="0.45">guides.shiftandlead.com</text>
 </svg>
 `;
 }

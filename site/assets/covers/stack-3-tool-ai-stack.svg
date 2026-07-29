@@ -1,35 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="The three-tool stack I actually use">
-  <rect width="1600" height="900" fill="#FAF7F2"/>
-  <rect x="0" y="0" width="1600" height="10" fill="#2C4BE0"/>
-  <rect x="1020" y="0" width="1" height="900" fill="#E8E4DD"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="The three-tool stack I actually use">
+  <rect width="1280" height="720" fill="#FAF7F2"/>
+  <rect x="0" y="0" width="1280" height="8" fill="#2C4BE0"/>
+  <rect x="816" y="0" width="1" height="720" fill="#E8E4DD"/>
   <g>
-    <rect x="1075" y="150" width="172" height="9" rx="4.5" fill="#2C4BE0" opacity="0.63"/>
-    <rect x="1075" y="178" width="214" height="9" rx="4.5" fill="#2C4BE0" opacity="0.41"/>
-    <rect x="1075" y="209" width="268" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="234" width="219" height="9" rx="4.5" fill="#2C4BE0" opacity="0.84"/>
-    <rect x="1075" y="265" width="250" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="290" width="218" height="9" rx="4.5" fill="#2C4BE0" opacity="0.60"/>
-    <rect x="1075" y="321" width="266" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="349" width="140" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="374" width="305" height="9" rx="4.5" fill="#2C4BE0" opacity="0.77"/>
-    <rect x="1075" y="405" width="253" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="430" width="217" height="9" rx="4.5" fill="#2C4BE0" opacity="0.37"/>
-    <rect x="1075" y="461" width="187" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="489" width="220" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="517" width="335" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="545" width="379" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="573" width="166" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="601" width="175" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="629" width="287" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1075" y="654" width="293" height="9" rx="4.5" fill="#2C4BE0" opacity="0.64"/>
-    <rect x="1075" y="682" width="197" height="9" rx="4.5" fill="#2C4BE0" opacity="0.36"/>
-    <rect x="1075" y="710" width="311" height="9" rx="4.5" fill="#2C4BE0" opacity="0.85"/>
-    <rect x="1075" y="741" width="277" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
-    <rect x="1049" y="620" width="8" height="34" rx="4" fill="#2C4BE0"/>
+    <rect x="860" y="120" width="138" height="7" rx="3.5" fill="#2C4BE0" opacity="0.63"/>
+    <rect x="860" y="142.4" width="171" height="7" rx="3.5" fill="#2C4BE0" opacity="0.41"/>
+    <rect x="860" y="166.8" width="215" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="187.20000000000002" width="175" height="7" rx="3.5" fill="#2C4BE0" opacity="0.84"/>
+    <rect x="860" y="211.60000000000002" width="200" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="232.00000000000003" width="175" height="7" rx="3.5" fill="#2C4BE0" opacity="0.60"/>
+    <rect x="860" y="256.40000000000003" width="212" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="278.8" width="112" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="299.2" width="244" height="7" rx="3.5" fill="#2C4BE0" opacity="0.77"/>
+    <rect x="860" y="323.59999999999997" width="202" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="343.99999999999994" width="173" height="7" rx="3.5" fill="#2C4BE0" opacity="0.37"/>
+    <rect x="860" y="368.3999999999999" width="150" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="390.7999999999999" width="176" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="413.1999999999999" width="268" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="435.59999999999985" width="303" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="457.99999999999983" width="133" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="480.3999999999998" width="140" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="502.7999999999998" width="229" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="523.1999999999998" width="235" height="7" rx="3.5" fill="#2C4BE0" opacity="0.64"/>
+    <rect x="860" y="545.5999999999998" width="158" height="7" rx="3.5" fill="#2C4BE0" opacity="0.36"/>
+    <rect x="860" y="567.9999999999998" width="248" height="7" rx="3.5" fill="#2C4BE0" opacity="0.85"/>
+    <rect x="860" y="592.3999999999997" width="222" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="839" y="495.79999999999995" width="6" height="27" rx="4" fill="#2C4BE0"/>
   </g>
-  <text x="110" y="150" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="24" letter-spacing="4.5" fill="#1B2EA0">PUT AI TO WORK</text>
-  <text y="347.03999999999996" font-family="Georgia,'Times New Roman',serif" font-size="116" font-weight="700" fill="#1a1a1a"><tspan x="110" dy="0">The three-tool</tspan><tspan x="110" dy="122.96000000000001">stack I</tspan><tspan x="110" dy="122.96000000000001">actually use</tspan></text>
-  <rect x="110" y="644.96" width="120" height="4" fill="#2C4BE0"/>
-  <text x="110" y="800" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="22" letter-spacing="4" fill="#1a1a1a" opacity="0.55">SHIFT &amp; LEAD</text>
-  <text x="110" y="836" font-family="Georgia,'Times New Roman',serif" font-size="24" font-style="italic" fill="#1a1a1a" opacity="0.45">guides.shiftandlead.com</text>
+  <text x="88" y="120" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="19" letter-spacing="3.6" fill="#1B2EA0">PUT AI TO WORK</text>
+  <text y="277.42" font-family="Georgia,'Times New Roman',serif" font-size="93" font-weight="700" fill="#1a1a1a"><tspan x="88" dy="0">The three-tool</tspan><tspan x="88" dy="98.58">stack I</tspan><tspan x="88" dy="98.58">actually use</tspan></text>
+  <rect x="88" y="516.58" width="96" height="3" fill="#2C4BE0"/>
+  <text x="88" y="640" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="18" letter-spacing="3.2" fill="#1a1a1a" opacity="0.55">SHIFT &amp; LEAD</text>
+  <text x="88" y="669" font-family="Georgia,'Times New Roman',serif" font-size="19" font-style="italic" fill="#1a1a1a" opacity="0.45">guides.shiftandlead.com</text>
 </svg>

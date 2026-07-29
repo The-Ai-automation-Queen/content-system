@@ -114,6 +114,8 @@ const isRedirectStub = (html) =>
 let PASS = 0;
 let FAIL = 0;
 const failures = [];
+const PLACEHOLDER_FORMS = [];
+const PLACEHOLDER_COPY = [];
 let quiet = false;
 
 function record(ok, file, check, reason) {
@@ -257,6 +259,15 @@ function checkLangAndCharset(ctx) {
     `lang=${hasLang} charset=${hasCharset} viewport=${hasViewport}`);
 }
 
+// Read a <meta property="..."> or <meta name="..."> content value.
+function metaContent(html, key) {
+  const re = new RegExp(
+    `<meta[^>]*(?:property|name)=["']${key}["'][^>]*content=("([^"]*)"|'([^']*)')`, 'i');
+  const m = html.match(re);
+  if (!m) return null;
+  return (m[2] ?? m[3] ?? '').trim();
+}
+
 function checkSeoHead(ctx) {
   const title = ctx.html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
   // Match the closing quote to the opening one, so an apostrophe inside a
@@ -266,6 +277,138 @@ function checkSeoHead(ctx) {
   const ok = !!title && title[1].trim().length > 10 && desc && canonical;
   record(ok, ctx.rel, 'title, meta description and canonical present',
     `title=${!!title} desc=${desc} canonical=${canonical}`);
+
+  // Open Graph: present AND non-empty. A blank content attribute renders as a
+  // blank share card, which is worse than no tag at all.
+  const missing = ['og:title', 'og:description', 'og:url', 'og:image']
+    .filter((k) => {
+      const v = metaContent(ctx.html, k);
+      return v === null || v.length === 0;
+    });
+  record(missing.length === 0, ctx.rel, 'og:title/description/url/image present and non-empty',
+    `missing or empty: ${missing.join(', ')}`);
+}
+
+// The brief fixes cover and share art at 1280x720. SVG carries its intrinsic
+// size in the root element, so this reads the file rather than trusting the
+// markup.
+const COVER_W = 1280;
+const COVER_H = 720;
+
+function svgSize(file) {
+  const head = fs.readFileSync(file, 'utf8').slice(0, 800);
+  const w = head.match(/\bwidth="(\d+(?:\.\d+)?)"/);
+  const h = head.match(/\bheight="(\d+(?:\.\d+)?)"/);
+  if (w && h) return { w: Number(w[1]), h: Number(h[1]) };
+  const vb = head.match(/viewBox="0 0 (\d+(?:\.\d+)?) (\d+(?:\.\d+)?)"/);
+  return vb ? { w: Number(vb[1]), h: Number(vb[2]) } : null;
+}
+
+function localAssetPath(ctx, src) {
+  if (/^(https?:)?\/\//.test(src)) {
+    // Own-domain absolute URL: map it back onto the site root on disk.
+    const m = src.match(/^https?:\/\/[^/]+(\/.*)$/);
+    if (!m) return null;
+    return path.join(ctx.siteDir, m[1].slice(1).split('?')[0]);
+  }
+  if (src.startsWith('data:')) return null;
+  const clean = src.split('?')[0];
+  return clean.startsWith('/')
+    ? path.join(ctx.siteDir, clean.slice(1))
+    : path.join(path.dirname(ctx.abs), clean);
+}
+
+function checkCoverDimensions(ctx) {
+  const problems = [];
+  const targets = [];
+
+  const og = metaContent(ctx.html, 'og:image');
+  if (og) targets.push(['og:image', og]);
+
+  const heroMatch = ctx.html.match(
+    /class=["'][^"']*\bcover\b[^"']*["'][\s\S]{0,400}?<img[^>]*src=["']([^"']+)["']/i);
+  if (heroMatch) targets.push(['hero cover', heroMatch[1]]);
+
+  for (const [label, src] of targets) {
+    const file = localAssetPath(ctx, src);
+    if (!file) continue;                       // off-site asset, not ours to check
+    if (!fs.existsSync(file)) { problems.push(`${label} missing on disk: ${src}`); continue; }
+    if (!file.endsWith('.svg')) continue;      // only SVG carries a readable size here
+    const size = svgSize(file);
+    if (!size) { problems.push(`${label} has no readable size: ${src}`); continue; }
+    if (size.w !== COVER_W || size.h !== COVER_H) {
+      problems.push(`${label} is ${size.w}x${size.h}, expected ${COVER_W}x${COVER_H}: ${src}`);
+    }
+  }
+  record(problems.length === 0, ctx.rel,
+    `og:image and hero cover exist at ${COVER_W}x${COVER_H}`,
+    problems.slice(0, 3).join('; '));
+}
+
+// In-body figures must declare width and height so the page does not reflow as
+// they load.
+function checkFigureDimensions(ctx) {
+  const figs = [...ctx.html.matchAll(/<figure[^>]*class=["'][^"']*\bfig\b[^"']*["'][\s\S]*?<\/figure>/gi)]
+    .map((m) => m[0]);
+  const problems = [];
+  for (const fig of figs) {
+    const img = fig.match(/<img[^>]*>/i);
+    if (!img) { problems.push('.fig with no <img>'); continue; }
+    const src = attr(img[0], 'src');
+    if (!attr(img[0], 'width') || !attr(img[0], 'height')) {
+      problems.push(`.fig img missing width/height: ${src || '(no src)'}`);
+    }
+    const file = src ? localAssetPath(ctx, src) : null;
+    if (file && !fs.existsSync(file)) problems.push(`.fig img missing on disk: ${src}`);
+  }
+  record(problems.length === 0, ctx.rel, 'in-body .fig images exist and declare width/height',
+    problems.slice(0, 3).join('; '));
+}
+
+// Everything below the fold should be lazy. The hero cover must not be, since
+// it is the largest contentful paint.
+// A hero image is the largest contentful paint and must load eagerly. That is
+// the guide template's .cover, and on the marketing pages the portrait inside
+// the first .hero block.
+function heroImageTags(html) {
+  const tags = [];
+  const cover = html.match(/class=["'][^"']*\bcover\b[^"']*["'][\s\S]{0,400}?(<img[^>]*>)/i);
+  if (cover) tags.push(cover[1]);
+  const hero = html.match(/class=["'][^"']*\bhero(?:-portrait|-inner|-art)?\b[^"']*["'][\s\S]{0,1200}?(<img[^>]*>)/i);
+  if (hero) tags.push(hero[1]);
+  return tags;
+}
+
+function checkLazyImages(ctx) {
+  const heroes = heroImageTags(ctx.html);
+  const problems = [];
+
+  for (const tag of heroes) {
+    if (/loading=["']lazy["']/i.test(tag)) {
+      problems.push(`hero image is lazy-loaded and should not be: ${attr(tag, 'src')}`);
+    }
+  }
+  for (const m of ctx.html.matchAll(/<img[^>]*>/gi)) {
+    const tag = m[0];
+    if (heroes.includes(tag)) continue;
+    const src = attr(tag, 'src') || '';
+    if (src.startsWith('data:')) continue;
+    if (!/loading=["']lazy["']/i.test(tag)) problems.push(`not lazy: ${src}`);
+  }
+  record(problems.length === 0, ctx.rel, 'images lazy-loaded except the hero image',
+    problems.slice(0, 3).join('; '));
+}
+
+// Page-specific CSS belongs in a stylesheet, not in the document. A short
+// inline block is fine; a whole design system is not.
+const INLINE_STYLE_LIMIT = 500;
+
+function checkInlineStyle(ctx) {
+  const blocks = [...ctx.html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)].map((m) => m[1]);
+  const oversized = blocks.filter((b) => b.length > INLINE_STYLE_LIMIT);
+  record(oversized.length === 0, ctx.rel,
+    `no inline <style> over ${INLINE_STYLE_LIMIT} chars`,
+    oversized.map((b) => `${b.length} chars`).join(', '));
 }
 
 function checkImages(ctx) {
@@ -289,6 +432,20 @@ function checkImages(ctx) {
 function checkLocalLinks(ctx) {
   const anchors = ctx.parsed.tags.filter((t) => t.name === 'a' || t.name === 'link');
   const problems = [];
+
+  // Internal srcs (scripts, images, iframes) resolve too, not just hrefs.
+  for (const t of ctx.parsed.tags) {
+    const src = attr(t.attrs, 'src');
+    if (!src) continue;
+    if (/^(https?:|data:)/i.test(src) || src.startsWith('//')) continue;
+    const clean = src.split('#')[0].split('?')[0];
+    if (!clean) continue;
+    const resolved = clean.startsWith('/')
+      ? path.join(ctx.siteDir, clean.slice(1))
+      : path.join(path.dirname(ctx.abs), clean);
+    if (!fs.existsSync(resolved)) problems.push(`dead src: ${src}`);
+  }
+
   for (const a of anchors) {
     const href = attr(a.attrs, 'href');
     if (!href) continue;
@@ -386,24 +543,58 @@ function checkScriptCopyVoice(ctx) {
      dashes ? `${dashes} literal(s) with an em-dash` : ''].filter(Boolean).join('; '));
 }
 
+// Every form: honeypot, a non-empty action, and a source tag so the funnel is
+// measurable. A {{PLACEHOLDER}} action counts as non-empty but is reported, so
+// an unfilled form ID cannot quietly ship.
 function checkForms(ctx) {
   const forms = [...ctx.html.matchAll(/<form[\s\S]*?<\/form>/gi)].map((m) => m[0]);
   if (forms.length === 0) {
-    record(true, ctx.rel, 'email forms keep honeypot and endpoint', '');
+    record(true, ctx.rel, 'forms have honeypot, action and source tag', '');
     return;
   }
   const problems = [];
+  const placeholders = [];
   for (const form of forms) {
-    if (!/name\s*=\s*["']email["']/i.test(form)) continue; // not an email capture
-    if (!/name\s*=\s*["']_gotcha["']/i.test(form)) problems.push('email form missing _gotcha honeypot');
+    const openTag = form.match(/<form[^>]*>/i)[0];
+    const action = attr(openTag, 'action');
+    const label = attr(openTag, 'data-source') || attr(openTag, 'class') || 'form';
+
+    if (!/name\s*=\s*["']_gotcha["']/i.test(form)) {
+      problems.push(`${label}: missing _gotcha honeypot`);
+    }
+    if (!action || !action.trim()) {
+      problems.push(`${label}: empty or missing action`);
+    } else if (/\{\{[A-Z_]+\}\}/.test(action)) {
+      placeholders.push(`${label}: ${action}`);
+    } else if (!ALLOWED_FORM_ENDPOINTS.some((e) => action.includes(e))) {
+      problems.push(`${label}: unrecognised endpoint ${action}`);
+    }
+    // Source tracking: hidden input, or the data-source the shared capture
+    // script reads and sends.
+    const hasSource = /name\s*=\s*["']source["']/i.test(form)
+      || /data-source\s*=\s*["'][^"']+["']/i.test(openTag);
+    if (!hasSource) problems.push(`${label}: no source tag`);
   }
-  // endpoint may live in the form action or in the page script
-  const endpointFound = ALLOWED_FORM_ENDPOINTS.some((e) => ctx.html.includes(e));
-  if (!endpointFound && forms.some((f) => /name\s*=\s*["']email["']/i.test(f))) {
-    problems.push('email form has no recognised endpoint');
+
+  record(problems.length === 0, ctx.rel, 'forms have honeypot, action and source tag',
+    problems.slice(0, 4).join('; '));
+
+  // Reported separately so it reads as "waiting on Fatiha", not "broken".
+  if (placeholders.length) {
+    console.log(`  NOTE  form action still a placeholder - ${placeholders.join('; ')}`);
+    PLACEHOLDER_FORMS.push({ file: ctx.rel, forms: placeholders });
   }
-  record(problems.length === 0, ctx.rel, 'email forms keep honeypot and endpoint',
-    problems.join('; '));
+}
+
+// A {{PLACEHOLDER}} left in visible copy would render literally to a reader.
+// Not a failure, because the brief asks for placeholders where a real figure
+// is unknown, but it is collected so it cannot ship unnoticed.
+function checkPlaceholderCopy(ctx) {
+  const hits = [...new Set((visibleText(ctx.html).match(/\{\{[A-Z_]+\}\}/g) || []))];
+  if (hits.length) {
+    console.log(`  NOTE  visible placeholder copy - ${hits.join(', ')}`);
+    PLACEHOLDER_COPY.push({ file: ctx.rel, tokens: hits });
+  }
 }
 
 function checkSharedCss(ctx) {
@@ -532,7 +723,12 @@ function checkFile(abs, siteDir, opts = {}) {
   checkVoiceBans(ctx);
   checkScriptCopyVoice(ctx);
   checkForms(ctx);
+  checkPlaceholderCopy(ctx);
   checkSharedCss(ctx);
+  checkInlineStyle(ctx);
+  checkCoverDimensions(ctx);
+  checkFigureDimensions(ctx);
+  checkLazyImages(ctx);
 
   if (opts.guide) {
     checkGuideTemplate(ctx);
@@ -599,7 +795,23 @@ function main() {
   }
 
   console.log(`\n${'-'.repeat(64)}`);
+  const filesChecked = files.length;
+  const filesFailed = new Set(failures.map((f) => f.file)).size;
   console.log(`PASS ${PASS}   FAIL ${FAIL}`);
+  console.log(`Files green: ${filesChecked - filesFailed}/${filesChecked}`);
+
+  if (PLACEHOLDER_COPY.length) {
+    console.log('\nPlaceholder copy still visible to readers:');
+    for (const p of PLACEHOLDER_COPY) console.log(`  ${p.file}: ${p.tokens.join(', ')}`);
+  }
+
+  if (PLACEHOLDER_FORMS.length) {
+    console.log('\nForm IDs still to be filled in by Fatiha:');
+    for (const p of PLACEHOLDER_FORMS) {
+      console.log(`  ${p.file}`);
+      for (const f of p.forms) console.log(`    - ${f}`);
+    }
+  }
   if (failures.length) {
     console.log('\nFailures:');
     const byFile = new Map();

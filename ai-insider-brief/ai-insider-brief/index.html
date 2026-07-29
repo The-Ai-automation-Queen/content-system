@@ -74,6 +74,14 @@
 </head>
 <body data-page="insider-brief">
 
+  <form class="sl-ribbon capture-form" action="https://formspree.io/f/xgojoyka" method="POST" data-source="brief-ribbon">
+    <label for="ribbon-email">One clear verdict on the AI news that matters. Every week, free.</label>
+    <input id="ribbon-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
+    <input type="hidden" name="source" value="brief-ribbon">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+    <button type="submit">Subscribe free</button>
+  </form>
+
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="header-logo">The Insider Brief</a>
@@ -89,6 +97,7 @@
       <div id="topic-bubbles" class="topic-bubbles"></div>
       <div class="hero-content">
         <h1>Stay ahead of AI changes<br>that affect your business.</h1>
+        <p class="hero-cadence" style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#1B2EA0;margin:18px 0 0">Every week &middot; free &middot; join {{SUBSCRIBER_COUNT}} operators</p>
         <p class="hero-subtitle">A focused briefing that filters the noise, explains what matters, and helps you decide what deserves your attention.</p>
       </div>
     </section>
@@ -142,10 +151,11 @@
       <p class="eyebrow mono">The Insider Brief</p>
       <h2 id="nl-title">One clear verdict on the AI news that matters.</h2>
       <p>Every week. What changed, whether you should care, and what to do about it. Free.</p>
-      <form class="capture-form" data-source="brief">
+      <form class="capture-form" action="https://formspree.io/f/xgojoyka" method="POST" data-source="brief">
         <label class="visually-hidden" for="nl-email">Email address</label>
         <input id="nl-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="source" value="newsletter">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <button type="submit">Subscribe free</button>
       </form>
       <p class="capture-fineprint">No cost, no catch. Unsubscribe anytime.</p>
