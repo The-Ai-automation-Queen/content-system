@@ -22,6 +22,10 @@ body {
   background: #ffffff;
   color: #1a1a1a;
   font-family: "Source Serif 4", Georgia, serif;
+  /* The shared stylesheet sets 1.65 for long-form guide prose. This page is a
+     feed of short cards with their own line-heights, and inheriting 1.65 pushed
+     the header and every unstyled run of text taller. Hold the browser default. */
+  line-height: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
