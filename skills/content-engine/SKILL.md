@@ -142,6 +142,24 @@ Follow the Script Application Rules from `inspiration-library` in order:
    Test, the 3-Letter Filter, the Lazy Brief Rule, the 4D Score). A list of
    steps without a name is advice; a named framework is an asset. Never two
    posts sharing a framework name unless it's deliberately a series.
+1d. **Humanizer pass, mandatory** (operator direction 30/07/2026): every
+   draft goes through the `humanizer` skill's checks before it enters the
+   vault. The tells that made the first 37 drafts unpublishable, in order of
+   how often they appeared:
+   - The "isn't X. It's Y." / "not just X, it's Y" skeleton. Once per batch
+     at most; it appeared in 5 of 11 posts and reads as a template.
+   - The 2-beat aphorism close ("Delegation, not expertise. That's the
+     move."). Vary the closes: a confession, an aside, a specific number, a
+     plain sentence. Identical close rhythm across posts is a fingerprint.
+   - Bold-header list items (`**Email triage.** …`). Plain numbered or plain
+     paragraph lists.
+   - Stacked rule-of-three ("streamline, enhance, foster"). Real lists have
+     2 items, or 4, or 1 long one.
+   - Perfect uniform paragraph rhythm. Let 1 short paragraph sit next to a
+     long one. An aside ("by the way", "honestly") is allowed to survive.
+   - Zero mixed feelings. One human admission per post minimum: "I broke
+     this rule twice", "some mornings that still feels like cheating".
+   Em-dashes stay banned (voice.md). Straight quotes only.
 1a. **Result Recipe quota** — of the 5 daily drafts, at least 2 must be
    Result Recipes: one complete first win the reader can execute today
    (3-5 numbered steps, exactly one copy-paste prompt with redaction
