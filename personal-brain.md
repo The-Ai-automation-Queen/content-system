@@ -1,7 +1,7 @@
 # Personal Brain — Fatiha Chikh
 
 > Last sync: 2026-07-05 — partial seed (round 1 of `/brain-manager seed`, round 2 paused by operator)
-> Total entries: 5
+> Total entries: 6
 > Categories active: 2/11
 
 This file is the operator's living memory. It feeds `content-engine` so posts
@@ -13,6 +13,14 @@ reference real life — not generic AI content. Updated daily by `brain-manager`
 
 
 ## Opinions
+
+- [2026-07-30] POSITIONING (dual, her words): she has various angles under
+  one identity. (1) Turn AI into ROI RESPONSIBLY: help business owners
+  innovate and bring ideas to life at a fraction of the cost. (2) Governance
+  watchdog: help people understand what is at stake when the red line is
+  crossed. Builder AND watchdog, not one or the other. This supersedes the old
+  "win back your time / escape 9-to-5" freedom lane in positioning.md, which
+  needs a deliberate rewrite once she confirms.
 
 - [2026-07-30] On AI and rights: copyright and data ownership should not be
   given away "for the sake of innovation" any more than privacy is. Objects to
@@ -34,9 +42,16 @@ reference real life — not generic AI content. Updated daily by `brain-manager`
 
 ## Current Projects
 
-- [2026-07-30] Building an OPEN library for advisors/counsel preparing for AI
-  governance. GitHub repo: `aigp` (related: aigp-certification). "Will share
-  more soon." This is a proof asset for the governance positioning.
+- [2026-07-30] AIGP governance library (repo `AIGP`, currently PRIVATE). A
+  credential-grade IAPP AI Governance Professional study workspace she built:
+  EU AI Act, NIST AI RMF, ISO 42001, GDPR-for-AI, 4 domain summaries, 130+
+  flashcards, 40 scenario questions, cheat sheets, 8-week schedule. Proof
+  asset for the governance lane. CAVEAT before making public: the repo root
+  holds IAPP's copyrighted source PDFs and named third-party study notes.
+  Only her OWN derived work (aigp-cert/ summaries, flashcards, cheat sheets,
+  schedule) can be shared publicly. Sharing the copyrighted PDFs, under a post
+  criticising copyright violations, would be a legal and reputational
+  own-goal. Strip sources first.
 
 - [2026-07-05] Actively building the content/creator-OS system itself (this
   repo) as the current flagship project. Stage and next milestone not yet
