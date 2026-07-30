@@ -13,12 +13,11 @@
 // than quietly falling back to "post now". Immediate publishing is still
 // reachable, but only by passing publishNow: true on purpose.
 //
-// So this route is DRY RUN unless BOTH are true:
-//   BLOTATO_LIVE=1        explicitly armed
-//   BLOTATO_API_KEY=...   key present in the environment, never in the repo
-//
-// and the target account carries a non-null `verified` date, because the ids on
-// file predate the 22/06/2026 rebrand and may point at old accounts.
+// On top of that, the route stays DRY RUN unless ALL THREE hold:
+//   BLOTATO_LIVE=1              explicitly armed
+//   BLOTATO_API_KEY=...         key in the environment, never in the repo
+//   account.verified is set     the ids on file predate the 22/06/2026 rebrand,
+//                               so an unchecked one may point at an old account
 //
 // Dry run returns the payload it *would* send and changes nothing.
 
