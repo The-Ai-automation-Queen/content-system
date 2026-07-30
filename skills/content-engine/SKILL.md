@@ -133,6 +133,16 @@ Follow the Script Application Rules from `inspiration-library` in order:
    The outcome-first law still binds: whatever the shape, the reader must know
    what they get within the first 2 lines. A hook that only teases fails.
    Never open 2 consecutive vault entries with the same shape.
+   **Operator's ranked hook preference (30/07/2026, chosen by direct test over
+   fear-first, provocation, and confession):** the SHOCKING NUMBER hook wins.
+   Line 1 leads with a specific, real, slightly jarring number. Line 2 lands a
+   concrete human stake or consequence. Line 3 teases the named framework.
+   Example she approved: "I run 7 employees. Payroll: $40 a month. None of them
+   are human, and 1 just saved a client I forgot to follow up." Every post
+   should carry its OWN number as the hook (not the same stat reused), so the
+   batch still reads varied. A flat claim as line 1 ("AI skills are management
+   skills") is the failure mode she rejected 4 times; lead with the number
+   that makes the claim undeniable instead.
 1b. **Numbers are figures, never words** (operator direction 30/07/2026):
    write 3, not three; 7 jobs, not seven jobs; 10 minutes, not ten minutes.
    Applies to every number in customer-facing copy including the first word
