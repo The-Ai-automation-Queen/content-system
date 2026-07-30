@@ -523,8 +523,9 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
                     <button class="btn edit-btn" data-num={e.num}>Edit</button>
                     <button class="btn save save-btn" data-num={e.num} style="display:none">Save</button>
                     <button class="btn cancel-btn" data-num={e.num} style="display:none">Cancel</button>
+                    {e.body && <button class="btn copy-btn" data-copy={e.body}>Copy post</button>}
                     {e.status === 'READY TO POST' && (
-                      <button class="btn approve-btn" data-num={e.num}>Approve → Blotato</button>
+                      <button class="btn approve-btn" data-num={e.num}>Schedule → Blotato</button>
                     )}
                   </div>
                 </div>
@@ -1392,46 +1393,92 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
         });
       });
 
-      // ── Approve → Blotato ──
-      // Two-step on purpose. Blotato has no draft state: useNextFreeSlot against
-      // an empty queue publishes immediately and cannot be undone. So the first
-      // click only asks the server what it WOULD send, renders it, and waits.
+      // ── Schedule → Blotato ──
+      // Two-step on purpose, and scheduled rather than immediate. Blotato has no
+      // draft state, and useNextFreeSlot against an empty queue posts instantly
+      // with no undo — so the server requires a future scheduledTime and this UI
+      // never offers "post now". First click previews, second click schedules.
+      //
+      // Default is tomorrow 09:00 Dubai (UTC+4), i.e. 05:00 UTC.
+      function defaultSlot() {
+        const d = new Date();
+        d.setUTCDate(d.getUTCDate() + 1);
+        d.setUTCHours(5, 0, 0, 0);
+        // datetime-local wants local wall-clock, so offset it back.
+        const local = new Date(d.getTime() - d.getTimezoneOffset() * 60000);
+        return local.toISOString().slice(0, 16);
+      }
+
+      function renderResult(panel, j) {
+        const lines = [];
+        lines.push(j.sent ? '✅ SCHEDULED ON BLOTATO' : '🔎 PREVIEW — nothing sent');
+        if (j.reason) lines.push('why: ' + j.reason);
+        if (j.target) lines.push('target: ' + j.target);
+        if (j.timing) lines.push('timing: ' + j.timing);
+        if (j.chars != null) lines.push('chars: ' + j.chars);
+        (j.blockers || []).forEach(b => lines.push('BLOCKED: ' + b));
+        (j.warnings || []).forEach(w => lines.push('warning: ' + w));
+        if (j.error) lines.push('error: ' + j.error);
+        lines.push('', 'payload for POST /v2/posts:', JSON.stringify(j.payload, null, 2));
+        panel.textContent = lines.join('\n');
+      }
+
       document.querySelectorAll('.approve-btn').forEach(btn => {
         btn.addEventListener('click', async (ev) => {
           ev.stopPropagation();
           const card = btn.closest('.entry-card');
-          let panel = card.querySelector('.approve-panel');
-          if (!panel) {
-            panel = document.createElement('pre');
-            panel.className = 'approve-panel';
-            panel.style.cssText = 'margin-top:12px;padding:12px;border:1px solid var(--line);background:var(--bg);font-size:11px;white-space:pre-wrap;max-height:340px;overflow:auto';
-            card.querySelector('.entry-actions').after(panel);
+          const num = btn.dataset.num;
+
+          let wrap = card.querySelector('.approve-wrap');
+          if (!wrap) {
+            wrap = document.createElement('div');
+            wrap.className = 'approve-wrap';
+            wrap.innerHTML =
+              '<div style="margin-top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">' +
+                '<label style="font-size:12px">Publish at </label>' +
+                '<input type="datetime-local" class="sched-at" value="' + defaultSlot() + '" style="padding:4px">' +
+                '<button class="btn sched-go" type="button">Schedule it</button>' +
+                '<span class="sched-note" style="font-size:11px;color:var(--mut)"></span>' +
+              '</div>' +
+              '<pre class="approve-panel" style="margin-top:12px;padding:12px;border:1px solid var(--line);background:var(--bg);font-size:11px;white-space:pre-wrap;max-height:340px;overflow:auto"></pre>';
+            card.querySelector('.entry-actions').after(wrap);
+
+            wrap.querySelector('.sched-go').addEventListener('click', async (e2) => {
+              e2.stopPropagation();
+              const at = wrap.querySelector('.sched-at').value;
+              if (!at) { wrap.querySelector('.sched-note').textContent = 'pick a time first'; return; }
+              const go = wrap.querySelector('.sched-go');
+              go.disabled = true;
+              try {
+                const r = await fetch('/api/publish', {
+                  method: 'POST',
+                  headers: { 'content-type': 'application/json' },
+                  body: JSON.stringify({ num, scheduledTime: new Date(at).toISOString() }),
+                });
+                const j = await r.json();
+                renderResult(wrap.querySelector('.approve-panel'), j);
+                if (j.sent) { showToast('#' + num + ' scheduled'); setTimeout(() => location.reload(), 1200); }
+                else go.disabled = false;
+              } catch (err) {
+                wrap.querySelector('.approve-panel').textContent = 'Failed: ' + err;
+                go.disabled = false;
+              }
+            });
           }
-          btn.disabled = true;
+
+          // First click: preview with the currently selected time, sending nothing.
+          const panel = wrap.querySelector('.approve-panel');
           panel.textContent = 'Checking…';
           try {
+            const at = wrap.querySelector('.sched-at').value;
             const r = await fetch('/api/publish', {
               method: 'POST',
               headers: { 'content-type': 'application/json' },
-              body: JSON.stringify({ num: btn.dataset.num }),
+              body: JSON.stringify({ num, scheduledTime: at ? new Date(at).toISOString() : undefined }),
             });
-            const j = await r.json();
-            const lines = [];
-            lines.push(j.sent ? '✅ SENT TO BLOTATO' : '🔎 DRY RUN — nothing was sent');
-            if (j.reason) lines.push('why: ' + j.reason);
-            if (j.target) lines.push('target: ' + j.target);
-            if (j.timing) lines.push('timing: ' + j.timing);
-            if (j.chars != null) lines.push('chars: ' + j.chars);
-            (j.blockers || []).forEach(b => lines.push('BLOCKED: ' + b));
-            (j.warnings || []).forEach(w => lines.push('warning: ' + w));
-            if (j.error) lines.push('error: ' + j.error);
-            lines.push('', 'payload that would be POSTed to /v2/posts:', JSON.stringify(j.payload, null, 2));
-            panel.textContent = lines.join('\n');
-            if (j.sent) { showToast('#' + btn.dataset.num + ' sent to Blotato'); setTimeout(() => location.reload(), 1200); }
-            else btn.disabled = false;
+            renderResult(panel, await r.json());
           } catch (err) {
             panel.textContent = 'Failed: ' + err;
-            btn.disabled = false;
           }
         });
       });

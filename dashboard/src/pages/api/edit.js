@@ -1,7 +1,14 @@
-// Edit vault entry body content. Replaces the body section (everything after
-// the first --- inside an ENTRY block) while preserving metadata fields.
+// Edit vault entry body content.
+//
+// Read and write MUST agree on where the body is, so this uses the same shared
+// parser as data.js, next-post.mjs and api/publish.js (tools/vault-parse.mjs).
+// It previously assumed the body was "everything after the first ---", which is
+// an older entry format. In the current format --- ENDS an entry, so that
+// assumption both hid the body from the dashboard and, on save, would have
+// appended the edited text after the real post instead of replacing it.
 import fs from 'node:fs';
 import path from 'node:path';
+import { replaceBody } from '../../../../tools/vault-parse.mjs';
 
 export const prerender = false;
 
@@ -25,41 +32,11 @@ export async function POST({ request }) {
       return json({ ok: false, error: 'bad request' }, 400);
     }
 
-    let raw = fs.readFileSync(VAULT, 'utf8');
+    const raw = fs.readFileSync(VAULT, 'utf8');
+    const updated = replaceBody(raw, num, body);
+    if (updated === null) return json({ ok: false, error: 'entry not found' }, 404);
 
-    const headerRe = new RegExp(`^## ENTRY\\s+${escapeReg(String(num))}\\b.*$`, 'm');
-    const hm = raw.match(headerRe);
-    if (!hm) return json({ ok: false, error: 'entry not found' }, 404);
-
-    const headerStart = raw.indexOf(hm[0]);
-    const nextEntry = raw.indexOf('\n## ENTRY', headerStart + hm[0].length);
-    const blockEnd = nextEntry === -1 ? raw.length : nextEntry;
-    const block = raw.slice(headerStart, blockEnd);
-
-    // Find the body separator (first --- after metadata fields)
-    const lines = block.split('\n');
-    let bodyStart = -1;
-    let metaSepCount = 0;
-    for (let i = 1; i < lines.length; i++) {
-      if (/^---\s*$/.test(lines[i])) {
-        metaSepCount++;
-        if (metaSepCount === 1) {
-          bodyStart = i;
-          break;
-        }
-      }
-    }
-
-    if (bodyStart === -1) {
-      return json({ ok: false, error: 'cannot find body separator' }, 400);
-    }
-
-    // Rebuild: metadata lines + separator + new body
-    const metaLines = lines.slice(0, bodyStart + 1);
-    const newBlock = metaLines.join('\n') + '\n' + body.trim() + '\n';
-
-    raw = raw.slice(0, headerStart) + newBlock + raw.slice(blockEnd);
-    fs.writeFileSync(VAULT, raw);
+    fs.writeFileSync(VAULT, updated);
 
     return json({ ok: true, num });
   } catch (e) {

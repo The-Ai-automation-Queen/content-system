@@ -1,14 +1,17 @@
 // Approve → Blotato. Takes a READY TO POST vault entry, builds the exact
-// Blotato payload, and (only when explicitly armed) sends it, then flips the
-// entry to SCHEDULED.
+// Blotato payload, schedules it for a future time, and flips the entry to
+// SCHEDULED.
 //
 // SAFETY MODEL — read before changing anything here.
 //
 // Blotato has no draft state. Every scheduling mode on POST /posts fires on its
-// own, and `useNextFreeSlot` against an empty queue publishes IMMEDIATELY. The
-// account's queue is currently empty, so "approve" means "post now" unless a
-// scheduledTime is given. There is no undo. A carousel already went live by
-// accident on 27/05/2026 because useNextFreeSlot was mislabelled a review hold.
+// own, and `useNextFreeSlot` against an EMPTY queue publishes IMMEDIATELY —
+// this account's queue is empty. A carousel already went live by accident on
+// 27/05/2026 because useNextFreeSlot was mislabelled a review hold.
+//
+// So a scheduledTime is REQUIRED. Without one the request is blocked, rather
+// than quietly falling back to "post now". Immediate publishing is still
+// reachable, but only by passing publishNow: true on purpose.
 //
 // So this route is DRY RUN unless BOTH are true:
 //   BLOTATO_LIVE=1        explicitly armed
@@ -22,6 +25,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { ACCOUNTS, resolvePlatform, BLOTATO_BASE } from '../../lib/blotato-accounts.js';
+import { parseVault, findEntry, countEmDashes, ctaKeyword } from '../../../../tools/vault-parse.mjs';
 
 export const prerender = false;
 
@@ -35,50 +39,11 @@ const json = (obj, status = 200) =>
     headers: { 'content-type': 'application/json' },
   });
 
-const HEADER = /^## ENTRY (\d+) — (\d{2}\/\d{2}\/\d{4}) \| ([^|]+?) \| (.*?) \| ([A-Z][A-Z ]*[A-Z])(?: .*)?$/;
-
-// Same extraction rules as tools/next-post.mjs: drop the header, the backtick
-// metadata line, any **Status:** field, and everything from the critic notes on.
-function readEntry(raw, num) {
-  const lines = raw.split('\n');
-  let found = null;
-  let meta = null;
-  const body = [];
-  let inEntry = false;
-  let done = false;
-
-  for (const line of lines) {
-    const m = line.match(HEADER);
-    if (m) {
-      if (inEntry) break;
-      if (m[1] !== String(num).padStart(3, '0') && m[1] !== String(num)) continue;
-      found = { num: m[1], date: m[2], platform: m[3].trim(), title: m[4], status: m[5].trim() };
-      inEntry = true;
-      continue;
-    }
-    if (!inEntry || done) continue;
-    if (meta === null && body.length === 0 && /^`.*`$/.test(line.trim())) {
-      meta = line.trim().replace(/^`|`$/g, '');
-      continue;
-    }
-    if (/^>\s*\*\*Critic notes:/.test(line) || /^---\s*$/.test(line)) { done = true; continue; }
-    if (/^\*\*Status:\*\*/.test(line)) continue;
-    body.push(line);
-  }
-  if (!found) return null;
-  while (body.length && !body[0].trim()) body.shift();
-  while (body.length && !body[body.length - 1].trim()) body.pop();
-  found.meta = meta;
-  found.text = body.join('\n');
-  return found;
-}
-
 // Engine Law 2: a CTA pointing at an inactive lead-magnet row is a leak.
 function checkCta(meta) {
   if (!meta) return null;
-  const m = meta.match(/CTA:\s*([A-Z][A-Z ]*?)\s*(?:·|$)/);
-  if (!m) return null;
-  const keyword = m[1].trim();
+  const keyword = ctaKeyword(meta);
+  if (!keyword) return null;
   let rows;
   try { rows = fs.readFileSync(MAGNETS, 'utf8').split('\n'); }
   catch { return { keyword, known: false }; }
@@ -105,17 +70,17 @@ function setStatus(raw, num, status) {
 
 export async function POST({ request }) {
   try {
-    const { num, scheduledTime } = await request.json();
+    const { num, scheduledTime, publishNow } = await request.json();
     if (!num) return json({ ok: false, error: 'num required' }, 400);
 
     const raw = fs.readFileSync(VAULT, 'utf8');
-    const entry = readEntry(raw, num);
+    const entry = findEntry(parseVault(raw), num);
     if (!entry) return json({ ok: false, error: `ENTRY ${num} not found` }, 404);
 
     if (entry.status !== 'READY TO POST') {
       return json({ ok: false, error: `ENTRY ${num} is ${entry.status}, not READY TO POST` }, 409);
     }
-    if (!entry.text) return json({ ok: false, error: 'entry has no body' }, 422);
+    if (!entry.text.trim()) return json({ ok: false, error: 'entry has no body' }, 422);
 
     // ── gates ────────────────────────────────────────────────────────────
     const blockers = [];
@@ -136,7 +101,7 @@ export async function POST({ request }) {
     }
 
     // Engine Law 5: no em-dashes in public words.
-    const dashes = (entry.text.match(/—/g) || []).length;
+    const dashes = countEmDashes(entry.text);
     if (dashes) warnings.push(`${dashes} em-dash${dashes > 1 ? 'es' : ''} — Engine Law 5 forbids them in public words.`);
 
     const cta = checkCta(entry.meta);
@@ -154,8 +119,23 @@ export async function POST({ request }) {
         target: { targetType: account?.platform },
       },
     };
-    if (scheduledTime) payload.post.scheduledTime = scheduledTime;
-    else payload.post.useNextFreeSlot = true;
+    // Scheduling is the default and the safe path. useNextFreeSlot is only
+    // reachable via an explicit publishNow, because with an empty queue it
+    // means "publish this second, irreversibly".
+    if (scheduledTime) {
+      const when = new Date(scheduledTime);
+      if (Number.isNaN(when.getTime())) {
+        blockers.push(`scheduledTime "${scheduledTime}" is not a valid date.`);
+      } else if (when.getTime() <= Date.now()) {
+        blockers.push(`scheduledTime ${when.toISOString()} is in the past.`);
+      } else {
+        payload.post.scheduledTime = when.toISOString();
+      }
+    } else if (publishNow) {
+      payload.post.useNextFreeSlot = true;
+    } else {
+      blockers.push('No scheduledTime given. Pick a date and time — this route will not publish immediately by default.');
+    }
 
     const armed = process.env.BLOTATO_LIVE === '1';
     const hasKey = Boolean(process.env.BLOTATO_API_KEY);
@@ -166,9 +146,11 @@ export async function POST({ request }) {
       entry: { num: entry.num, date: entry.date, platform: entry.platform, title: entry.title },
       target: account ? `${account.platform} · ${account.accountId} · ${account.handle}` : null,
       chars: entry.text.length,
-      timing: scheduledTime
-        ? `scheduledTime ${scheduledTime}`
-        : 'useNextFreeSlot — PUBLISHES IMMEDIATELY if the Blotato queue is empty',
+      timing: payload.post.scheduledTime
+        ? `scheduled for ${payload.post.scheduledTime}`
+        : payload.post.useNextFreeSlot
+          ? 'useNextFreeSlot — PUBLISHES IMMEDIATELY, the queue is empty'
+          : 'no timing set',
       blockers,
       warnings,
       payload,
