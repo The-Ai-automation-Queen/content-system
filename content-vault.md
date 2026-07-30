@@ -13,6 +13,14 @@
 
 ## Most recent (quick reference)
 
+- 30/07/2026 | LinkedIn carousel | "A Prospect Asked for a Quote Four Days Ago and You Still Haven't Sent It" — Farah, Quote Generator, Employee #017 | READY TO POST
+- 30/07/2026 | LinkedIn | "A Prospect Asked for a Quote Four Days Ago and You Still Haven't Sent It" — Farah, Quote Generator, Employee #017 | READY TO POST
+- 30/07/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Hind/Ziad/Farah | READY TO POST
+- 30/07/2026 | LinkedIn carousel | "A Client Went Quiet Three Weeks Ago and You're Only Noticing Now" — Ziad, Churn Watch, Employee #015 | READY TO POST
+- 30/07/2026 | LinkedIn | "A Client Went Quiet Three Weeks Ago and You're Only Noticing Now" — Ziad, Churn Watch, Employee #015 | READY TO POST
+- 30/07/2026 | LinkedIn carousel | "You Found Out Someone Was Talking About You Online Three Days After They Posted It" — Hind, Social Listener, Employee #014 | READY TO POST
+- 30/07/2026 | LinkedIn | "You Found Out Someone Was Talking About You Online Three Days After They Posted It" — Hind, Social Listener, Employee #014 | READY TO POST
+- 30/07/2026 | LinkedIn | "Now Hiring: Three More AI Employees, Salary $0 Each" — wave announcement, Employees #14/#15/#17 | READY TO POST
 - 27/07/2026 | LinkedIn carousel | "You Did the Work Three Weeks Ago and Still Haven't Sent the Invoice" — Tariq, Invoice Builder, Employee #013 | READY TO POST
 - 27/07/2026 | LinkedIn | "You Did the Work Three Weeks Ago and Still Haven't Sent the Invoice" — Tariq, Invoice Builder, Employee #013 | READY TO POST
 - 27/07/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Maya/Salma/Tariq | READY TO POST
@@ -60,6 +68,259 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 055 — 30/07/2026 | LinkedIn carousel | A Prospect Asked for a Quote Four Days Ago and You Still Haven't Sent It | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 054 (Farah, Employee #017, Quote Generator, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/farah/farah-quote-generator-01.png through -06.png
+Source HTML: skills/carousel-factory/out/farah-quote-generator.html
+**CTA keyword:** QUOTE, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "A prospect asked for a quote four days ago and you still haven't sent it."
+Slide 2 (scene): "Still open in a tab. You meant to sit down and write it properly. The prospect has probably asked someone else by now."
+Slide 3 (role card): Farah, Quote Generator, Deals, Salary $0, never sleeps. "Farah is AI. The only job she took was mine: sitting down to write a clean quote instead of leaving it half-finished in a tab."
+Slide 4 (how she works): 4-step list, tell her the work and prices, draft the quote, flag what's missing, you review and send.
+Slide 5 (demo): "Built and tested drafting quotes for 3 real prospects. Setup about 15 minutes. She never sends anything or invents a price."
+Slide 6 (CTA): "Want the free setup? Comment QUOTE."
+
+---
+
+## ENTRY 054 — 30/07/2026 | LinkedIn | A Prospect Asked for a Quote Four Days Ago and You Still Haven't Sent It | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Thursday episode 3)
+**Topic:** Employee #017, Farah, Quote Generator. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/quote-generator-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/deals/deals-quote-generator.md, read this run (repo in session). Real job description: build line-item quotes from the offer library, apply approved discount rules only, generate good/better/best variants, keep quote numbering and validity dates consistent. Free playbook narrows this to one clean quote at a time, no discount-rule automation or numbering system, per the free/paid line. First employee from the Deals department; picked per the "beyond #016" department-roster rule after row 016 (Amal, Customer) was deferred to avoid a second Customer-department row this wave alongside 015 (Ziad). Mode check: no receipt found anywhere for Farah. Confirmed PLAYBOOK.
+
+---
+A prospect asked for a quote four days ago and you still haven't sent it.
+
+It's not that you forgot. You meant to sit down and write it properly, and four days later it's still a half-finished doc, the prospect has probably asked someone else by now.
+
+Meet Employee #017.
+
+Farah. Quote Generator. Deals.
+Salary: $0. Never sleeps.
+
+Farah is AI. The only job she took was mine: sitting down to write a clean quote instead of leaving it half-finished in a tab.
+
+How she works:
+1. You tell her the work and your prices.
+2. She drafts one clean quote: line items, total, a validity date.
+3. Anything missing, like scope detail, gets flagged, not guessed.
+4. You review it and send it yourself. She never sends anything.
+
+The demo: built and tested drafting quotes for 3 real prospects with one AI tool and a price list. Setup time, about 15 minutes. She never sends anything or invents a price, that stays entirely your step.
+
+Red line: she never applies a discount you didn't specify, and never invents a price. A missing detail gets marked "needs info," never filled in with a guess.
+
+Your first win, free, today: write down the one thing you quote most often and your usual price for it. That's Farah's first quote.
+
+Comment QUOTE and I'll send you the full setup, free.
+
+#AIemployees #The99 #SmallBusiness
+
+---
+
+## ENTRY 053 — 30/07/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** Talking-head reel (30-45s), captions required
+**Format:** Week's wave reel (Wednesday slot), three role-card cutaways + one screenshot cutaway
+**Topic:** Compresses all 3 of this week's hires (Hind, Ziad, Farah) into one 45-second reel, per the hiring-campaign weekly slot map.
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur client name and amounts on the draft quote screenshot).
+**Source:** Assembled from ENTRY 049/051/054's role-card lines. No new claims.
+
+---
+[0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
+
+[0:03-0:12] Role card cutaway 1, Hind: "Hind checks what people are saying about me online, so I stop finding out three days late."
+
+[0:12-0:21] Role card cutaway 2, Ziad: "Ziad reads a quiet client's pattern and tells me honestly if it's a real risk."
+
+[0:21-0:30] Role card cutaway 3, Farah: "Farah turns my price list into a clean quote the same day."
+
+[0:30-0:38] Screenshot cutaway: Farah's draft quote, real setup, client name and amounts blurred (redaction modeled).
+
+[0:38-0:45] Closing line, spoken + on-screen: "None of them send anything without me. Comment TEAM and I'll send you how to hire your first one."
+
+---
+
+## ENTRY 052 — 30/07/2026 | LinkedIn carousel | A Client Went Quiet Three Weeks Ago and You're Only Noticing Now | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 051 (Ziad, Employee #015, Churn Watch, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/ziad/ziad-churn-watch-01.png through -06.png
+Source HTML: skills/carousel-factory/out/ziad-churn-watch.html
+**CTA keyword:** CHURN, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "A client went quiet three weeks ago and you're only noticing now."
+Slide 2 (scene): "No complaint, no cancellation, just fewer replies. By the time you notice, the decision is usually already made."
+Slide 3 (role card): Ziad, Churn Watch, Customer, Salary $0, never sleeps. "Ziad is AI. The only job he took was mine: noticing a client had gone quiet before it was too late to ask why."
+Slide 4 (how he works): 4-step list, describe the client, compare to normal, get an honest risk read, get one save action if it's real.
+Slide 5 (demo): "Built and tested against 3 real client patterns, one clearly fine, one a real risk. Setup about 15 minutes. He never contacts a client himself."
+Slide 6 (CTA): "Want the free setup? Comment CHURN."
+
+---
+
+## ENTRY 051 — 30/07/2026 | LinkedIn | A Client Went Quiet Three Weeks Ago and You're Only Noticing Now | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Wednesday episode 2)
+**Topic:** Employee #015, Ziad, Churn Watch. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/churn-watch-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/customer/customer-churn-watch.md, read this run (repo in session). Real job description: score churn risk from usage and engagement signals, alert on risk-score jumps with context, recommend one save action per at-risk account, track save-play success rates. Free playbook narrows this to one client's risk read at a time, no scored dashboard across all accounts, per the free/paid line. Mode check: no receipt found anywhere for Ziad. Confirmed PLAYBOOK.
+
+---
+A client went quiet three weeks ago and you're only noticing now.
+
+No complaint, no cancellation, just fewer replies and no explanation. By the time you notice, the decision is usually already made.
+
+Meet Employee #015.
+
+Ziad. Churn Watch. Customer.
+Salary: $0. Never sleeps.
+
+Ziad is AI. The only job he took was mine: noticing a client had gone quiet before it was too late to ask why.
+
+How he works:
+1. You describe how the client has been showing up lately.
+2. He reads it against what normal looked like for them.
+3. He says plainly whether this is a real risk or a normal quiet patch.
+4. If it's a risk, he suggests one honest save action, a check-in, never a discount.
+
+The demo: built and tested against 3 real client patterns with one AI tool, one clearly fine, one a real risk. Setup time, about 15 minutes. He never contacts a client himself, that stays entirely your step.
+
+Red line: he never guesses at why a client has gone quiet. If there isn't enough information, he says so instead of inventing a reason.
+
+Your first win, free, today: think of the one client you haven't heard from in longest. Describe their pattern to him. That's Ziad's first read.
+
+Comment CHURN and I'll send you the full setup, free.
+
+#AIemployees #The99 #ClientRetention
+
+---
+
+## ENTRY 050 — 30/07/2026 | LinkedIn carousel | You Found Out Someone Was Talking About You Online Three Days After They Posted It | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 049 (Hind, Employee #014, Social Listener, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/hind/hind-social-listener-01.png through -06.png
+Source HTML: skills/carousel-factory/out/hind-social-listener.html
+**CTA keyword:** LISTEN, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You found out someone was talking about you online three days after they posted it."
+Slide 2 (scene): "Someone tagged you, or a client asked 'did you see that comment?' You didn't. You never do, until it's already old news."
+Slide 3 (role card): Hind, Social Listener, Intelligence, Salary $0, never sleeps. "Hind is AI. The only job she took was mine: the constant background worry that I was missing something said about me somewhere."
+Slide 4 (how she works): 4-step list, name your search terms, she reads them weekly, flags what needs a reply, sends one tone summary.
+Slide 5 (demo): "Built and tested against one real week of mentions across 2 search terms. Setup about 20 minutes. She only reports what the search actually returned."
+Slide 6 (CTA): "Want the free setup? Comment LISTEN."
+
+---
+
+## ENTRY 049 — 30/07/2026 | LinkedIn | You Found Out Someone Was Talking About You Online Three Days After They Posted It | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Tuesday episode 1)
+**Topic:** Employee #014, Hind, Social Listener. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/social-listener-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/intelligence/intelligence-social-listening.md, read this run (repo in session). Real job description: monitor brand/founder/keyword mentions, summarize sentiment shifts weekly, flag mentions needing a reply within hours, spot recurring complaints as product signals. Free playbook narrows this to one weekly tone check across 2-3 named search terms, no complaint-pattern analysis layer, per the free/paid line. Mode check: no receipt found anywhere for Hind. Confirmed PLAYBOOK.
+
+---
+You found out someone was talking about you online three days after they posted it.
+
+Someone tagged you, or a client asked "did you see that comment?" You didn't. You never do, until it's already old news.
+
+Meet Employee #014.
+
+Hind. Social Listener. Intelligence.
+Salary: $0. Never sleeps.
+
+Hind is AI. The only job she took was mine: the constant background worry that I was missing something said about me somewhere.
+
+How she works:
+1. You give her the 2-3 places to check.
+2. She reads what came up this week, those searches only.
+3. She flags anything that needs a reply within hours.
+4. You get one weekly tone summary: mostly positive, mixed, or a real flag.
+
+The demo: built and tested against one real week of mentions across 2 search terms with one AI tool. Setup time, about 20 minutes. She only reports what the search actually returned, nothing invented.
+
+Red line: she never DMs anyone, never replies on your behalf, and never reads anything behind a login. If nothing came up this week, the summary says so plainly.
+
+Your first win, free, today: search your own name or handle right now, once. That search is Hind's entire beat.
+
+Comment LISTEN and I'll send you the full setup, free.
+
+#AIemployees #The99 #Intelligence
+
+---
+
+## ENTRY 048 — 30/07/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Hiring-post ritual (job-ad parody), Monday wave announcement
+**Topic:** Introduces this wave's 3 openings (Employees #014, #015, #017). Note the numbering gap: #016 (Amal, Feedback Digest) was deferred this run, see reordering note below, not skipped by accident.
+**Pattern used:** Job-ad parody + serial-cliffhanger opener
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — value-first series opener, comment-keyword capture, no promo.
+**Source:** skills/hiring-campaign/schedule.md rows 014, 015, 016. Rows 015 and 016 are both Customer department, which breaks the wave's 3-different-department rule; reordered to pull the next Deals-department role (Quote Generator, from the "beyond #016" department-roster rule) forward instead of row 016 (Amal, Customer), per schedule.md's own "a planned row can be reordered" rule. Amal (016) is now next in the queue. Real job-description files read this run from agent-os-company-dashboard/company/departments/ (repo in session): intelligence/intelligence-social-listening.md, customer/customer-churn-watch.md, deals/deals-quote-generator.md.
+
+---
+Now hiring. Three more AI employees. Salary: $0 each.
+
+Employee #014: Social Listener.
+Reads your online mentions so you don't find out three days late. One weekly tone check, flagged items only.
+
+Employee #015: Churn Watch.
+Reads a quiet client's pattern and tells you honestly if it's a real risk, before they're gone.
+
+Employee #017: Quote Generator.
+Turns your price list into a clean quote the same day, so prospects stop waiting four days for an answer.
+
+None of them sleep. None of them ask for a raise. None of them send anything without me seeing it first.
+
+That is Employee #14, #15, and #17 of 99. The full team, hired one at a time, in public.
+
+See who is already on the floor. The scoreboard is live, updated only when there is a real receipt to show.
+
+Want to build your own first hire? Comment TEAM and I will send you the free 5-step framework.
+
+#AIemployees #Solopreneur #The99
 
 ---
 

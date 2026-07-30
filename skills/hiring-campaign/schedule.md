@@ -20,9 +20,10 @@ real files in agent-os-company-dashboard/company/departments/.
 | 011 | Idris | SOP Writer | operations/operations-sop-writer.md | PLAYBOOK | announced, playbook live 13/07/2026 | 2026-W30 |
 | 012 | Salma | Client Onboarding | operations/operations-client-onboarding.md | PLAYBOOK | announced, playbook live 27/07/2026 | 2026-W31 |
 | 013 | Tariq | Invoice Builder | backoffice/backoffice-invoicing.md | PLAYBOOK | announced, playbook live 27/07/2026 | 2026-W31 |
-| 014 | Hind | Social Listener | intelligence/intelligence-social-listening.md | PLAYBOOK | planned | 2026-W32 |
-| 015 | Ziad | Churn Watch | customer/customer-churn-watch.md | PLAYBOOK | planned | 2026-W32 |
-| 016 | Amal | Feedback Digest | customer/customer-feedback-digest.md | PLAYBOOK | planned | 2026-W32 |
+| 014 | Hind | Social Listener | intelligence/intelligence-social-listening.md | PLAYBOOK | announced, playbook live 30/07/2026 | 2026-W32 |
+| 015 | Ziad | Churn Watch | customer/customer-churn-watch.md | PLAYBOOK | announced, playbook live 30/07/2026 | 2026-W32 |
+| 016 | Amal | Feedback Digest | customer/customer-feedback-digest.md | PLAYBOOK | planned, deferred from 2026-W32 (row reordered to keep the wave to 3 distinct departments alongside 015 Customer; 017 Quote Generator, Deals, pulled forward instead per the "beyond #016" department-roster rule) | 2026-W33 |
+| 017 | Farah | Quote Generator | deals/deals-quote-generator.md | PLAYBOOK | announced, playbook live 30/07/2026 | 2026-W32 |
 
 Beyond #016: the campaign run picks the next 3 most audience-relevant
 roles from the departments roster (3 different departments per wave) and
