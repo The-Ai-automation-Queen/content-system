@@ -109,7 +109,13 @@ export function getVault(base) {
       date,
       platform,
       title,
-      status: status.toUpperCase().replace(/[.\s]+$/, ''),
+      // Normalize to the base status so filters can match it. Exit statuses
+      // carry suffixes in the header — "STALE 20/07/2026 (auto)",
+      // "KILLED 14/07/2026 — reason" — which matched no filter chip and left
+      // those entries reachable only through "All".
+      status: (status.toUpperCase().match(
+        /^(READY TO POST|DRAFT|SCHEDULED|POSTED|STALE|KILLED|SUPERSEDED|BLOCKED)/
+      )?.[1]) || status.toUpperCase().replace(/[.\s]+$/, ''),
       critic: fCritic ? parseFloat(fCritic[1]) : null,
       pillar: fPillar ? fPillar[1].trim() : '',
       flags,

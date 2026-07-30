@@ -33,6 +33,29 @@ const FIELD = /^\*\*[A-Za-z][A-Za-z ]*:\*\*/;
 /**
  * Parse every entry. Each carries byte offsets for its body region so callers
  * can splice precisely instead of re-deriving the boundaries.
+ *
+ * TWO entry formats coexist in the vault, and both must work:
+ *
+ * Format A — the pre-14/07 era (roughly ENTRY 001–046):
+ *     ## ENTRY 002 — … | STALE …
+ *     **Status:** … / **Platform:** … / **Source:** … (may wrap over lines,
+ *     may include **⚠️ PREP/PERSONALIZE** operator warnings)
+ *     ---                      ← separator
+ *     <the actual post body>
+ *
+ * Format B — the current era (roughly ENTRY 047+):
+ *     ## ENTRY 093 — … | READY TO POST
+ *     `A · pillar · CTA: STACK · …`
+ *     <the actual post body>
+ *     > **Critic notes:** …    ← ends the body
+ *     ---                      ← ends the entry
+ *
+ * The original data.js handled only format A; the first version of this parser
+ * handled only format B. Each "fix" silently flipped which half of the vault
+ * rendered. The discriminator used here: a `**Field:**` line before the first
+ * `---` with real content after that `---` means format A; otherwise format B.
+ * If a format-A read comes back empty it falls through to the format-B rules,
+ * so a stray field line can never blank an entry.
  */
 export function parseVault(raw) {
   const lines = raw.split('\n');
@@ -41,64 +64,81 @@ export function parseVault(raw) {
   let acc = 0;
   for (const l of lines) { offs.push(acc); acc += l.length + 1; }
 
-  const entries = [];
-  let cur = null;
+  // Locate blocks.
+  const heads = [];
+  for (let i = 0; i < lines.length; i++) {
+    if (HEADER.test(lines[i])) heads.push(i);
+  }
 
-  const close = (endLine) => {
-    if (!cur) return;
-    // Trim blank lines off both ends of the body region.
-    let s = cur.bodyStartLine;
-    let e = endLine;
-    while (s < e && !lines[s].trim()) s++;
-    while (e > s && !lines[e - 1].trim()) e--;
-    cur.text = lines.slice(s, e).join('\n');
+  const entries = [];
+  for (let h = 0; h < heads.length; h++) {
+    const start = heads[h];
+    const end = h + 1 < heads.length ? heads[h + 1] : lines.length;
+    const m = lines[start].match(HEADER);
+
+    const cur = {
+      num: m[1],
+      date: m[2],
+      platform: m[3].trim(),
+      title: m[4].trim(),
+      status: m[5].trim(),
+      meta: null,
+      text: '',
+      headerLine: start,
+      bodyStart: 0,
+      bodyEnd: 0,
+    };
+
+    // Consume backtick metadata lines directly under the header. Keep the
+    // FIRST as `meta` (it carries the CTA); ENTRY 067 has a second
+    // (`Series: …`) which is skipped, not allowed to overwrite the first.
+    let top = start + 1;
+    while (top < end && META.test(lines[top].trim())) {
+      if (cur.meta === null) cur.meta = lines[top].trim().replace(/^`|`$/g, '');
+      top++;
+    }
+
+    // First horizontal rule in the block, if any.
+    let firstRule = -1;
+    for (let i = top; i < end; i++) {
+      if (RULE.test(lines[i])) { firstRule = i; break; }
+    }
+    const fieldBeforeRule =
+      firstRule !== -1 &&
+      lines.slice(top, firstRule).some((l) => FIELD.test(l));
+
+    // Given a candidate start line, the body runs to the next rule / critic
+    // notes / end of block.
+    const regionFrom = (s) => {
+      let e = end;
+      for (let i = s; i < end; i++) {
+        if (RULE.test(lines[i]) || CRITIC.test(lines[i])) { e = i; break; }
+      }
+      while (s < e && !lines[s].trim()) s++;
+      while (e > s && !lines[e - 1].trim()) e--;
+      return [s, e];
+    };
+
+    let s;
+    let e;
+    if (fieldBeforeRule) {
+      // Format A: everything before the rule is metadata (fields, their
+      // wrapped continuation lines, operator ⚠️ warnings). Body is after it.
+      [s, e] = regionFrom(firstRule + 1);
+    }
+    if (!fieldBeforeRule || s >= e) {
+      // Format B (or a format-A block whose post-rule region is empty):
+      // skip leading blank and field lines, then read to rule/critic.
+      let t = top;
+      while (t < end && (!lines[t].trim() || FIELD.test(lines[t]))) t++;
+      [s, e] = regionFrom(t);
+    }
+
+    cur.text = s < e ? lines.slice(s, e).join('\n') : '';
     cur.bodyStart = offs[s] ?? raw.length;
     cur.bodyEnd = e > s ? offs[e - 1] + lines[e - 1].length : cur.bodyStart;
     entries.push(cur);
-    cur = null;
-  };
-
-  for (let i = 0; i < lines.length; i++) {
-    const m = lines[i].match(HEADER);
-    if (m) {
-      close(i);
-      cur = {
-        num: m[1],
-        date: m[2],
-        platform: m[3].trim(),
-        title: m[4].trim(),
-        status: m[5].trim(),
-        meta: null,
-        text: '',
-        headerLine: i,
-        bodyStartLine: i + 1,
-        done: false,
-      };
-      continue;
-    }
-    if (!cur || cur.done) continue;
-
-    // Metadata and review fields sit between the header and the body.
-    if (i === cur.bodyStartLine) {
-      if (META.test(lines[i].trim())) {
-        cur.meta = lines[i].trim().replace(/^`|`$/g, '');
-        cur.bodyStartLine = i + 1;
-        continue;
-      }
-    }
-    if (cur.bodyStartLine === i && (FIELD.test(lines[i]) || !lines[i].trim())) {
-      cur.bodyStartLine = i + 1;
-      continue;
-    }
-    if (FIELD.test(lines[i]) && cur.bodyStartLine === i) { cur.bodyStartLine = i + 1; continue; }
-
-    if (CRITIC.test(lines[i]) || RULE.test(lines[i])) {
-      cur.done = true;
-      cur.bodyEndLine = i;
-      close(i);
-    }
   }
-  close(lines.length);
   return entries;
 }
 
