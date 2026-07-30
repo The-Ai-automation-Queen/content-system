@@ -82,6 +82,16 @@ if python3 -m venv --help >/dev/null 2>&1; then
     # so schedule the venv binary by absolute path instead.
     mkdir -p "$HOME/.local/bin"
     ln -sf "$AGENT_REACH_VENV/bin/agent-reach" "$HOME/.local/bin/agent-reach"
+
+    # Register the skill so `claude -p` in run-machine.sh actually knows these
+    # commands exist. Two upstream gotchas, both load-bearing:
+    #   1. The installer only targets ~/.claude/skills if that directory
+    #      ALREADY exists. Otherwise it silently falls back to ~/.agents/skills,
+    #      which Claude Code never reads — the skill installs and does nothing.
+    #   2. It ships a Chinese SKILL.md by default and only picks the English one
+    #      when the locale says so. AGENT_REACH_LANG=en forces it.
+    mkdir -p "$HOME/.claude/skills"
+    AGENT_REACH_LANG=en "$AGENT_REACH_VENV/bin/agent-reach" skill --install
   ) && echo "    agent-reach $("$AGENT_REACH_VENV/bin/agent-reach" version 2>/dev/null || echo '(installed)')" \
     || echo "    [!] Agent Reach install failed — non-fatal, see deploy/README.md"
 else

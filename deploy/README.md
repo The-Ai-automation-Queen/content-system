@@ -37,6 +37,43 @@ It lives in `~/.agent-reach-venv`, symlinked to `~/.local/bin/agent-reach`.
 $HOME/.agent-reach-venv/bin/agent-reach doctor
 ```
 
+### How the machines actually reach it
+
+Installing the binary is not enough — the agent has to know the commands exist.
+Step 8 registers Agent Reach's own skill into `~/.claude/skills/agent-reach/`,
+which is where Claude Code looks for user-level skills. That is what makes it
+available to the `claude -p` call inside `run-machine.sh`.
+
+Note this is a **user-level** skill, deliberately outside this repo. Our 42
+machines live in `skills/` and are found by convention, via `CLAUDE.md`. Agent
+Reach is vendored third-party content, so it stays out of git rather than
+drifting from upstream inside our tree. The consequence: it exists on the VPS
+and on any machine where `install.sh` has run, but **not** in cloud agent
+sessions. Those should use the Apify/Blotato connectors instead.
+
+Two upstream behaviours the bootstrap works around, both silent if missed:
+
+- The skill installer targets `~/.claude/skills` **only when that directory
+  already exists**. Otherwise it falls back to `~/.agents/skills`, which Claude
+  Code never reads — you get a successful-looking install that does nothing.
+  Step 8 creates the directory first.
+- It ships a Chinese `SKILL.md` and only selects the English one when the locale
+  agrees. Step 8 sets `AGENT_REACH_LANG=en`.
+
+Re-running `install.sh` overwrites the skill, so bumping `AGENT_REACH_COMMIT`
+refreshes the docs along with the code.
+
+### Routing
+
+The skill dispatches by intent to `references/{search,social,career,dev,web,video}.md`,
+and instructs the agent to run `agent-reach doctor --json` first to see which
+backend currently serves each platform. Backends change when a platform breaks
+something — read `active_backend`, don't assume:
+
+```bash
+$HOME/.agent-reach-venv/bin/agent-reach doctor --json
+```
+
 Three things to know before you extend it:
 
 - **Pinned, not floating.** `AGENT_REACH_COMMIT` in `install.sh` pins an audited
