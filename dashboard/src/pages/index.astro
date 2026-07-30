@@ -29,6 +29,24 @@ const STATUSES = [
 ];
 
 const platformChip = (p) => (p || '').split('(')[0].trim();
+
+// One color per status, used on the card edge and the active status button.
+// "Everything has the same color codes" (operator, 30/07) — it did: .sbtn.cur
+// was the same ink-black for every status.
+const STATUS_COLOR = Object.fromEntries(STATUSES.map((s) => [s.key, s.color]));
+
+// Old-format entries mix the post with production sections (### SPOKEN SCRIPT,
+// ### CAPTION, ### SLIDES, ### LINKEDIN POST). Rendered as one <pre> they read
+// as one confusing blob. Split into labeled sections instead.
+function bodySections(body) {
+  const parts = (body || '').split(/^### (.+)$/m);
+  const out = [];
+  if (parts[0] && parts[0].trim()) out.push({ label: null, text: parts[0].trim() });
+  for (let i = 1; i < parts.length; i += 2) {
+    out.push({ label: parts[i].trim(), text: (parts[i + 1] || '').trim() });
+  }
+  return out.length ? out : [{ label: null, text: '' }];
+}
 const maxPillar = Math.max(1, ...d.pillars.map((p) => p.n));
 
 const CRONS = [
@@ -268,7 +286,10 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
       .entry-status { display: flex; gap: 6px; flex-shrink: 0; margin-top: 2px; }
       .sbtn { font-family: var(--mono); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 7px 11px; border-radius: 2px; background: var(--panel); color: var(--mut); border: 1px solid var(--line); cursor: pointer; transition: all 0.12s; }
       .sbtn:hover { border-color: var(--accent); color: var(--accent); }
-      .sbtn.cur { background: var(--ink); color: var(--canvas); border-color: var(--ink); }
+      /* Current status takes its own status color, set inline per button. */
+      .sbtn.cur { background: var(--sc, var(--ink)); color: #fff; border-color: var(--sc, var(--ink)); }
+      .body-sec { margin-bottom: 14px; }
+      .body-sec-label { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-deep); background: var(--accent-tint); display: inline-block; padding: 3px 8px; border-radius: 2px; margin-bottom: 6px; }
       .sbtn:disabled { opacity: 0.4; cursor: wait; }
 
       /* ── Pillar bars ── */
@@ -507,7 +528,8 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
 
         <div class="entry-list" id="brain-list">
           {d.entries.map((e) => (
-            <div class="entry-card" data-entry-status={e.status} data-entry-num={e.num}>
+            <div class="entry-card" data-entry-status={e.status} data-entry-num={e.num}
+                 style={`border-left: 3px solid ${STATUS_COLOR[e.status] || 'var(--line)'}; padding-left: 12px;`}>
               <span class="entry-num">#{e.num}</span>
               <div class="entry-body">
                 <div class="entry-title">{e.title}</div>
@@ -519,7 +541,14 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
                   {e.hasVisual && <span class="chip vis">Visual</span>}
                 </div>
                 <div class="entry-expand">
-                  <pre>{e.body || '(no content yet)'}</pre>
+                  {e.body
+                    ? bodySections(e.body).map((s) => (
+                        <div class="body-sec">
+                          {s.label && <div class="body-sec-label">{s.label}</div>}
+                          <pre>{s.text}</pre>
+                        </div>
+                      ))
+                    : <pre>(no content yet)</pre>}
                   <textarea class="entry-edit-area" data-num={e.num}>{e.body || ''}</textarea>
                   <div class="entry-actions">
                     <button class="btn edit-btn" data-num={e.num}>Edit</button>
@@ -534,7 +563,9 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
               </div>
               <div class="entry-status">
                 {STATUSES.map((s) => (
-                  <button class={`sbtn ${e.status === s.key ? 'cur' : ''}`} data-num={e.num} data-status={s.key}>{s.short}</button>
+                  <button class={`sbtn ${e.status === s.key ? 'cur' : ''}`}
+                          style={e.status === s.key ? `--sc: ${s.color}` : undefined}
+                          data-num={e.num} data-status={s.key}>{s.short}</button>
                 ))}
               </div>
             </div>

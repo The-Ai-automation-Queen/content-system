@@ -116,13 +116,32 @@ urgency, follow-forcing):
 
 Follow the Script Application Rules from `inspiration-library` in order:
 
-1. **Open how-to-first** (operator-calibrated 14/07/2026, chosen over
-   claim-first and you-problem-first): the title and the first line name the
-   deliverable plainly, like a lesson title. "How to find your first AI
-   employee in 10 minutes. Step by step, tonight." A stranger must know what
-   they get before the second line (obvious-beats-clever law,
-   `queen-brain/voice.md`). Provocations, clever lines, and story tension go
-   AFTER the promise, never instead of it. No warm-up, no title restatement.
+1. **Rotate the hook shape** (operator direction 30/07/2026, superseding the
+   14/07 "how-to-first always" calibration). That rule, applied 37 times,
+   produced 37 posts opening with the identical "How do you X?" formula.
+   Fatiha's verdict on the result: slop she will not put her name on.
+   Every batch of 5 drafts must use at least 4 DIFFERENT hook shapes:
+   - **Pain-first**: name the cost the reader is paying right now.
+     ("You did the same task 4 times this week and didn't notice.")
+   - **Desire/receipt-first**: show the after-state or a real receipt.
+     ("7 AM on a Tuesday. 5 finished drafts are waiting. I didn't write a word.")
+   - **Curiosity gap**: a specific fact that demands resolution.
+     ("The most valuable AI employee in my company sorts email.")
+   - **Contrarian claim**: invert the reader's assumption, then prove it.
+     ("The most technical workforce on earth just stopped typing its own code.")
+   - **How-to**: allowed, MAX 1 per batch of 5, reserved for Result Recipes.
+   The outcome-first law still binds: whatever the shape, the reader must know
+   what they get within the first 2 lines. A hook that only teases fails.
+   Never open 2 consecutive vault entries with the same shape.
+1b. **Numbers are figures, never words** (operator direction 30/07/2026):
+   write 3, not three; 7 jobs, not seven jobs; 10 minutes, not ten minutes.
+   Applies to every number in customer-facing copy including the first word
+   of a sentence. Figures stop the scroll; words hide the specificity.
+1c. **One named framework per post** (operator direction 30/07/2026): the
+   post's method carries a NAME the reader can save and repeat (the Phone-Plan
+   Test, the 3-Letter Filter, the Lazy Brief Rule, the 4D Score). A list of
+   steps without a name is advice; a named framework is an asset. Never two
+   posts sharing a framework name unless it's deliberately a series.
 1a. **Result Recipe quota** — of the 5 daily drafts, at least 2 must be
    Result Recipes: one complete first win the reader can execute today
    (3-5 numbered steps, exactly one copy-paste prompt with redaction

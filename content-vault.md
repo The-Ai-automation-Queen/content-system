@@ -660,25 +660,17 @@ Comment TEAM and I'll send you the free guide to setting up your first AI employ
 ## ENTRY 077 — 20/07/2026 | LinkedIn | How to Build the 3-Tool AI Stack That Actually Works. Tonight. | READY TO POST
 `A · What's Worth It · CTA: STACK · critic 8.0 · src: RESEARCH 040-S1 (Technology Radar Jul 6 2026, Hector Pincheira), RESEARCH 040-S2 (OpenAI ROI Scorecard Jul 19 2026, Lilach Bullock)`
 
-How to build the 3-tool AI stack that actually works. Tonight.
+78% of organisations have adopted AI tools. 74% failed to improve results. That's the July 2026 Technology Radar, and it's not a technology problem. It's a stack problem.
 
-New data from the Technology Radar, July 2026: 78% of organisations have adopted AI tools. 74% failed to improve results.
+The ones getting results aren't using more tools. They're using fewer, better-matched ones. Run what I call the Stack Audit tonight, 5 steps:
 
-That's not a technology problem. That's a stack problem.
+1. Write down every AI tool you pay for or use. Include free ones. "Tried it twice" counts.
+2. For each, complete: "this saves me [N] hours on [task] every week." Can't fill both blanks? Circle it.
+3. Everything circled is budget to recover. Cut it.
+4. Look at what's left. Does tool A's output feed tool B's input, or do they sit in separate tabs? Separate tabs isn't a stack.
+5. Name your 3 biggest remaining time drains, and the 1 tool that covers each. That's your real stack.
 
-The organisations getting results aren't using more tools. They're using fewer, better-matched ones. Here's the 5-step audit to find yours tonight:
-
-1. Write down every AI tool you pay for or use regularly. Include free ones. "I tried it twice" still counts.
-
-2. For each tool, complete this sentence: this saves me [N] hours on [specific task] every week. If you can't fill in both blanks, circle it.
-
-3. Everything you circled is budget to recover. Remove it. Your working stack just got shorter and cleaner.
-
-4. Look at what's left. Do these pass work to each other, or do they sit in separate tabs? A stack is when tool A's output feeds tool B's input. Independent tabs isn't a stack.
-
-5. Where are your three biggest remaining time drains? Name the one tool that covers each one. That's your real stack.
-
-OpenAI just published a 4-question framework to measure AI ROI: work completion rate, task cost, result reliability, and value scaling. Most organisations can't answer any of the four. Not because AI doesn't work. Because they never defined what each tool was supposed to do.
+OpenAI just published 4 questions to measure AI ROI: completion rate, task cost, reliability, value scaling. Most organisations can't answer any of them. Not because AI doesn't work. Because they never defined what each tool was for.
 
 Define it first. The stack follows.
 
@@ -1119,19 +1111,19 @@ Comment STACK and I'll send you the 3 tools that passed.
 ## ENTRY 061 — 14/07/2026 | LinkedIn | How to Pick the Right First Thing to Automate | READY TO POST
 `A · Stop Doing That by Hand · CTA: TEAM · supersedes 016 · src: RESEARCH 018 + 021, proof.md`
 
-How do you pick the right first thing to automate, so you don't quit like most people do? Ten minutes and a notebook.
+Most people quit automation in week 1, and it's not because the tools are hard. They picked the wrong first project. The fix is a notebook and 10 minutes.
 
-**Step 1. Catch yourself in the act.** For one day, write down every task the second you do it. The inbox triage. The DM you've typed 40 times. The copy-paste between two apps.
+**Step 1. Catch yourself in the act.** For 1 day, write down every task the second you do it. The inbox triage. The DM you've typed 40 times. The copy-paste between 2 apps.
 
-**Step 2. Run the three-letter filter.** Mark every task that is (a) boring, (b) repetitive, and (c) needs zero real judgment. If it needs your taste, your face, or your decision, leave it. That's your job.
+**Step 2. Run the 3-Letter Filter.** Mark every task that is (a) boring, (b) repetitive, (c) needs zero real judgment. If it needs your taste, your face, or your decision, leave it. That's your job.
 
-**Step 3. Pick the most boring one.** Not the hardest. Not the most impressive. The one that eats the most time for the least thought. That's your first AI employee.
+**Step 3. Pick the most boring one.** Not the hardest. Not the most impressive. The one eating the most time for the least thought.
 
 **Step 4. Automate only that.** Get it running. Trust it for a week. Then hire the next one.
 
-My own first hire was the inbox manager. Not glamorous. It's still the employee I'd rehire first, because it bought back the hour I now spend on things that grow the business.
+My first hire was the inbox manager. Not glamorous, still the employee I'd rehire first, because it bought back the hour I now spend growing the business.
 
-People fail because they try to automate the whole company in a weekend. You're not building a robot army. You're hiring one employee at a time. Everyone starts at one.
+You're not building a robot army in a weekend. You're hiring 1 employee at a time. Everyone starts at 1.
 
 Comment TEAM and I'll send you the setup for that first employee.
 
@@ -1179,42 +1171,38 @@ Comment WHAT and I'll send you the plain-English guide to what AI actually is ri
 ## ENTRY 058 — 14/07/2026 | LinkedIn | How to Score Your AI Skills in 2 Minutes | READY TO POST
 `A · Time Wins · CTA: STACK · supersedes 031 · src: RESEARCH 030-S6 (Anthropic 4D framework)`
 
-How good are you actually at working with AI? Score yourself in 2 minutes on the four skills Anthropic just named. Grade 1 to 5 on each:
+Managers make the best AI users, and most of them have no idea. Score yourself on what I call the 4D Score: the 4 skills Anthropic just named, graded 1 to 5.
 
-**Delegation.** Do I know which tasks AI should be doing instead of me? (5 = I have a list. 1 = I ask it random things when I remember it exists.)
+**Delegation.** Do I know which tasks AI should do instead of me? (5 = I keep a list. 1 = I ask it random things when I remember it exists.)
 
-**Description.** When I hand over a task, do I give it my business, my customer, my voice, and what good looks like? (5 = it has my context every time. 1 = one rushed sentence.)
+**Description.** Does it get my business, my customer, my voice, and what good looks like? (5 = full context every time. 1 = one rushed sentence.)
 
 **Discernment.** Do I know when to trust the output and when to push back? (5 = I challenge it and it gets better. 1 = I take the first answer.)
 
 **Diligence.** Do I check the work before it ships? (5 = always, with a method. 1 = "AI said so.")
 
-Now the move: your LOWEST score is your entire focus for the next two weeks. Not a new tool. That one skill.
+Now the move: your LOWEST score is your only focus for the next 2 weeks. Not a new tool. That 1 skill.
 
-I've been teaching three of these for months without knowing they had a name. And if you've ever managed people, you'll recognize them: they're exactly the four skills you'd want in a human hire. That's the point. You're not learning software. You're learning to manage.
+Recognize the list? They're exactly the 4 skills you'd want in a human hire. That's the point. You're not learning software. You're learning to manage.
 
-Comment STACK and I'll send you my 3-tool setup. The tools are the small part; these four skills are the rest.
+Comment STACK and I'll send you my 3-tool setup. The tools are the small part; these 4 skills are the rest.
 
 ---
 
 ## ENTRY 057 — 14/07/2026 | LinkedIn | How the Top 3.6% of Solopreneurs Use AI Differently | READY TO POST
 `A · Stop Doing That by Hand · CTA: TEAM · supersedes 032 · src: RESEARCH 030-S7`
 
-How do the top 3.6% of solopreneurs use AI differently from the other 64%? One habit. Copy it this week.
+64% of solopreneurs use AI. 3.6% earn over $1 million with it. The gap isn't the tool, the model, or the price. It's 1 habit, and you can copy it tonight.
 
-The numbers first: 64% of solopreneurs use AI now. Only 3.6% earn over $1 million. The gap isn't the tool. It's the question they ask it.
+The 64% ask: "Write me a LinkedIn post about productivity."
 
-The 64% version:
-"Write me a LinkedIn post about productivity."
-
-The 3.6% version:
-"You write for my business. I help [audience] get [result]. My voice: [3 lines that sound like me]. My point of view on productivity: [your actual opinion]. Write a post that makes my ideal client save it. 1,400 to 1,800 characters."
+The 3.6% ask: "You write for my business. I help [audience] get [result]. My voice: [3 lines that sound like me]. My point of view on productivity: [your actual opinion]. Write a post my ideal client would save. 1,400 to 1,800 characters."
 
 Same tool. Same price. Completely different business.
 
-Here's how to copy the habit tonight, in 10 minutes: take the last thing you asked AI to do. Rewrite the request with your business, your customer, your voice, and what you want the output to achieve. Compare the two results. Fill in the blanks from your own business, and leave client names and private numbers out of it. Context, not confidential data.
+I learned this years before AI existed, briefing marketing agencies: a lazy brief gets you generic work at any budget. I call it the Lazy Brief Rule, and AI just made the feedback loop instant.
 
-Years of briefing marketing agencies taught me this exact lesson: a lazy brief gets you generic work at any budget. AI just made the feedback loop instant.
+Copy the habit in 10 minutes: take the last thing you asked AI for. Rewrite the request with your business, your customer, your voice, and what the output must achieve. Leave client names and private numbers out; context, not confidential data. Compare the 2 results.
 
 Comment TEAM and I'll send you the first thing I'd automate with it.
 
@@ -1223,19 +1211,21 @@ Comment TEAM and I'll send you the first thing I'd automate with it.
 ## ENTRY 056 — 14/07/2026 | LinkedIn | How to Find Your First AI Employee in 10 Minutes | READY TO POST
 `A · Build Once, Runs Forever · CTA: INBOX · supersedes 033 · src: pillar method, prompt redaction-modeled`
 
-How to find your first AI employee in 10 minutes. Step by step, tonight.
+You did the same task 4 times this week and didn't notice. That's the one quietly eating your margin, and catching it takes 10 minutes.
 
-**Step 1 (5 min).** List everything you did more than once this week. Don't organize it. Just dump it: inbox sorting, the same DM replies, invoice chasing, the Monday report, reformatting content for each platform.
+I call it the Repeat Audit. 3 steps, tonight:
 
-**Step 2 (1 min).** Paste this into Claude or ChatGPT, with your list. Swap real client names for placeholders first; the AI needs your patterns, not your private data:
+**Step 1 (5 min).** List everything you did more than once this week. Don't organize, just dump: inbox sorting, the same DM replies, invoice chasing, the Monday report.
 
-"Here are tasks I repeated this week: [your list]. For each one, tell me: does it repeat on a schedule, does it follow the same steps every time, and does it need a fresh judgment call each run? Rank the top 3 I should hand to an AI assistant first, and say why."
+**Step 2 (1 min).** Paste this into Claude or ChatGPT with your list. Swap real client names for placeholders first; it needs your patterns, not your private data:
 
-**Step 3 (4 min).** Read the ranking. The #1 answer is your first AI employee. Write down every step of that task exactly as you do it. That page is its job description.
+"Here are tasks I repeated this week: [your list]. For each one: does it repeat on a schedule, follow the same steps every time, need a fresh judgment call each run? Rank the top 3 I should hand to an AI assistant first, and say why."
 
-That's the whole audit. Mine turned out to be inbox triage. Boring, and still the best hire I ever made.
+**Step 3 (4 min).** The #1 answer is your first AI employee. Write down every step of that task exactly as you do it. That page is its job description.
 
-Do the audit, then comment INBOX with what your #1 turned out to be, and I'll send you the full setup for the first employee it usually finds.
+Mine turned out to be inbox triage. Boring, and still the best hire I ever made.
+
+Do the audit, then comment INBOX with what your #1 turned out to be, and I'll send you the full setup for it.
 
 ---
 
@@ -1262,17 +1252,19 @@ Comment WHAT and I'll send you the plain-English guide to what AI actually is ri
 ## ENTRY 054 — 14/07/2026 | LinkedIn | How the Boring AI Businesses Are Making the Money | READY TO POST
 `C · Build Once, Runs Forever · CTA: community invite · supersedes 037 · src: RESEARCH 031-S5, 028-S1 · ⚠️ PREP: community link required before queueing`
 
-How is the AI money actually being made in 2026? Not agents. Not chatbots. Not AI avatars. One boring system, run every day. And I mean boring as a compliment.
+The most valuable AI employee in my company sorts email.
 
-The solopreneurs quietly winning didn't demo the flashiest tool. They picked one thing that needed to happen daily, built one reliable system around it, and left it running.
+Not the content engine. Not the research crawler. The boring inbox manager that hands me 1 clean summary instead of 60 open tabs of anxiety. It has returned more hours than every shiny tool I've tested combined.
 
-Want proof from my own company? Of all the AI employees I run, the most valuable one sorts email. Not the content engine, not the research crawler. The boring inbox manager that hands me a clean summary instead of 60 open tabs of anxiety. It has quietly returned more hours than anything shiny I've experimented with.
+That's where the AI money is actually being made in 2026. Not agents, not chatbots, not avatars. The solopreneurs quietly winning picked 1 thing that must happen daily, built 1 reliable system around it, and left it running. I call it the Boring Millionaire System, and boring is a compliment.
 
-Meanwhile, the flashy autonomous agent everyone watches demos of? Enterprise teams with $145 billion budgets can't get it to run reliably yet.
+Meanwhile the flashy autonomous agents everyone watches demos of? Enterprise teams with $145 billion budgets can't get them to run reliably yet.
 
-Here's how to find yours. Finish this sentence: "Every single day, my business needs ___ to happen, and right now it only happens if I do it."
+Find yours by finishing this sentence:
 
-Whatever you wrote in that blank is your boring millionaire system. Email triage. Lead follow-up. Research summaries. Content drafts. Pick yours, build it once, and let it be boring at scale while you do the human parts.
+"Every single day, my business needs ___ to happen, and right now it only happens if I do it."
+
+Whatever's in that blank is your system. Email triage. Lead follow-up. Research summaries. Build it once, let it be boring at scale, and keep the human parts for yourself.
 
 This is exactly what people come to build inside the community. One boring system, shipped. Come do it with us. [PREP: insert community waitlist link before queueing]
 
@@ -1281,17 +1273,17 @@ This is exactly what people come to build inside the community. One boring syste
 ## ENTRY 053 — 14/07/2026 | LinkedIn | How I Stopped Being the Writer and Became the Judge | READY TO POST
 `A · Build Once, Runs Forever · CTA: TEAM · supersedes 039 · src: personal experience (vault count verifiable)`
 
-How do you go from doing all the work yourself to judging work a system did overnight? Here's the morning it happened to me, and the one-line exercise that starts it.
+7 AM on a Tuesday. I open my laptop and 5 finished drafts are waiting. Sourced, structured, in my voice. I didn't write a word of them.
 
-It was a Tuesday. The machine had been set up for three weeks: research notes filling, angles tagged, a workflow meant to produce five drafts overnight. I checked the vault at 7 AM. The drafts were there. Sourced, structured, in my voice. The count now sits at 43 entries, and I didn't type them.
+My first instinct was pure corporate reflex: read every line, redo half. 20 years of "nothing ships unless someone bleeds over it" trains that into you.
 
-My first instinct was to read every line and redo half of it. Corporate trains that reflex into you: nothing ships without someone bleeding over it.
+Then I remembered the best leaders I ever worked for. They never did the work themselves. They set the standard, built the team, judged the output. Nobody called them lazy. They called them managers.
 
-But here's what those years actually taught me, once I looked at it honestly. The best leaders I worked for never did the work themselves. They set the standard, built the team, and judged the output. Nobody called them lazy. They called them managers.
+That's the shift I call going from Writer to Judge. The system drafts, researches and sources overnight. I set the voice, approve what ships, and own every position it takes. My vault sits at 43 entries I didn't type.
 
-That's the shift. The system drafts, researches and sources while I sleep. I set the voice, approve what goes live, and own every position. Writer to judge.
+Your version starts tonight with 1 line: write down the standard for the ONE task you keep redoing. What does "good" look like, specifically? That page is what you'll manage against, and it doubles as the job description of your first AI employee.
 
-Your version starts tonight with one line: write down the standard for ONE task you keep redoing. What does "good" look like? That page is what you'll manage against.
+Stop being the writer. Start being the judge.
 
 Comment TEAM and I'll send you the setup for your first one.
 
@@ -1300,19 +1292,17 @@ Comment TEAM and I'll send you the setup for your first one.
 ## ENTRY 052 — 14/07/2026 | LinkedIn | How to Run AI Agents Without Being Technical | READY TO POST
 `A · Stop Doing That by Hand · CTA: WHAT · supersedes 040 · src: RESEARCH 033-S1`
 
-How do you run AI agents if you're not technical? The same way Uber's engineers do. Because here's the surprise: they aren't typing the code either.
+The most technical workforce on earth just stopped typing its own code. 99% of Uber's engineers use AI tools. Over 70% of their code now comes from agents.
 
-This week Uber's VP of Engineering shared that 99% of their engineers use AI tools and over 70% of their code output now comes from agents. Read what that actually means: the most technical workforce on earth stopped doing the work by hand. They describe, review, and approve.
+Read that again if you think YOU'RE not technical enough for AI. The engineers aren't doing the work by hand either. They run a loop I call Describe, Review, Approve, and none of its 3 steps needs a computer science degree:
 
-That loop has three steps, and none of them require a computer science degree:
+1. **Describe.** Brief the agent like a new hire: the job, what good looks like, 1 example. Plain English.
+2. **Review.** Look at what comes back. You've been reviewing other people's work your whole career.
+3. **Approve or send back.** With a note, exactly like you would with a colleague.
 
-1. **Describe.** Tell the agent the job like you'd brief a new hire: what to do, what good looks like, one example. In plain English.
-2. **Review.** Look at what comes back. You already know how to do this. You've been reviewing other people's work your whole career.
-3. **Approve or send it back.** With a note, exactly like you would with a colleague.
+I'm not an engineer. I come from marketing. My whole business runs on AI agents, and my only technical skills are a good brief, an honest review, and a strict approval. You already have all 3.
 
-I'm living proof. I'm not an engineer. I come from marketing. Today my whole business runs on AI agents, and my technical skill is that I'm good at the brief, honest in the review, and strict at the approval. Skills every professional already has.
-
-The excuse died. What's left is the decision to start.
+The "I'm not technical" excuse died this week. What's left is the decision.
 
 Comment WHAT and I'll send you the plain-English guide to what AI actually is. No hype, no jargon.
 
@@ -1321,19 +1311,19 @@ Comment WHAT and I'll send you the plain-English guide to what AI actually is. N
 ## ENTRY 051 — 14/07/2026 | LinkedIn | How Solopreneurs Hit 60-80% Margins With AI | READY TO POST
 `A · The Freedom Business · CTA: TEAM · supersedes 041 · src: RESEARCH 033-S7, 030-S7, 033-S2 (Forbes)`
 
-How do solopreneurs hit 60 to 80% profit margins while staffed businesses average 10 to 20? One decision, made over and over.
+Staffed businesses average 10 to 20% profit margins. Solopreneurs running AI systems hit 60 to 80%. Same markets, same clients. So where do the other 50 points go?
 
-The decision: every time work piles up, most people ask "who can I hire or outsource this to?" The 60-80% group asks a different question first: "can a system do this instead?"
+Payroll for jobs a system should be doing.
 
-Here's how to run it, next time you feel the pile-up:
+The 60-80% group makes 1 decision differently, over and over. I call it the Pile-Up Question. When work stacks up, most people ask "who can I hire to take this?" They ask "can a system do this instead?" first, and hire humans only for what's left.
 
-1. Name the job you'd hire for. Not the person, the actual output: "someone to follow up with leads," "someone to draft content," "someone to sort my inbox."
-2. Ask: does this job repeat, follow rules, and produce checkable output? If yes, it's a system, not a salary. An AI stack covering seven of these roles costs $3,000 to $12,000 a year. The staffed version costs six figures.
-3. Only hire humans for what's left: judgment, relationships, taste, the face of the thing.
+Run it next time you feel the pile-up:
 
-The wider numbers say most people never make this switch: 29.8 million US solopreneurs generating $1.7 trillion, and 68% still sitting on less than six months of savings. The model works. Running it entirely by hand is what doesn't.
+1. Name the job you'd hire for. Not the person, the output: "someone to follow up with leads," "someone to sort my inbox."
+2. Ask: does it repeat, follow rules, produce checkable output? Then it's a system, not a salary. An AI stack covering 7 of these roles costs $3,000 to $12,000 a year.
+3. Keep the humans for judgment, relationships, taste, and the face of the thing.
 
-Forbes calls the modern solo owner "part operator, part marketer, part service provider, part strategist." You can be all four. You just can't be them manually.
+29.8 million US solopreneurs generate $1.7 trillion, and 68% still sit on less than 6 months of savings. The model works. Running it by hand is what doesn't.
 
 Comment TEAM and I'll send you the free guide to setting up the first role.
 
@@ -1342,19 +1332,21 @@ Comment TEAM and I'll send you the free guide to setting up the first role.
 ## ENTRY 050 — 14/07/2026 | LinkedIn | How to Hand 7 Jobs to AI Without Hiring Anyone | READY TO POST
 `A · Time Wins · CTA: STACK · supersedes 043 · src: RESEARCH 033-S7`
 
-How do you hand seven jobs to AI without hiring anyone? In this exact order. I run all seven in my own business.
+My business runs 7 jobs I never do. Total payroll: $3,000 to $12,000 a year. The staffed version costs 6 figures.
 
-1. **Email triage.** Highest daily time drain, lowest setup cost. Mine reads, sorts, drafts the routine replies, and hands me one summary. Start here.
-2. **Lead follow-up.** Most solopreneurs don't lose clients from bad work. They lose them from forgetting to follow up. AI doesn't forget.
-3. **Research summaries.** Give it your criteria once. It reads everything; you decide.
-4. **Content drafting.** You own the voice and the opinions. It handles the first pass.
-5. **Support replies.** The questions people ask you are 80% the same questions. Answer each one brilliantly once.
-6. **Finance admin.** Categorising, invoice chasing, cashflow summaries. None of this deserves your best hours.
-7. **Founder ops.** The weekly review, the priority sort, the "what actually moved this week" report.
+Here's the exact hiring order, because order is what people get wrong:
 
-Build one until it runs without you. Then the next. That's how I filled all seven, one at a time. The full stack costs $3,000 to $12,000 a year. The staffed version costs six figures. The math isn't close.
+1. **Email triage.** Highest daily drain, lowest setup cost. Mine reads, sorts, drafts routine replies, hands me 1 summary. Start here, always.
+2. **Lead follow-up.** Solopreneurs don't lose clients from bad work. They lose them from forgetting to follow up. AI doesn't forget.
+3. **Research summaries.** Give it your criteria once. It reads everything. You decide.
+4. **Content drafting.** You own the voice and the opinions. It does the first pass.
+5. **Support replies.** 80% of the questions repeat. Answer each one brilliantly once.
+6. **Finance admin.** Categorising, invoice chasing, cashflow summaries. None of it deserves your best hours.
+7. **Founder ops.** The weekly review, the priority sort, the "what actually moved" report.
 
-Comment STACK and I'll send you the 3-tool setup behind the first three.
+The rule: build 1 until it runs without you. Then hire the next. That's how I filled all 7.
+
+Comment STACK and I'll send you the 3-tool setup behind the first 3.
 
 ---
 
@@ -1436,23 +1428,23 @@ Comment TEAM and I'll show you how to set up your first AI employee.
 ## ENTRY 047 — 14/07/2026 | LinkedIn | How to Decide What to Hand to AI First | READY TO POST
 `A · What's Worth It · CTA: WORDS · supersedes 046 · src: RESEARCH 033-S1, 032-S6`
 
-How do you decide what to hand to AI first? One question: "What would I delegate to someone smarter and faster than me, if that person cost less than my phone plan?"
+Uber ships 70% of its production code from AI agents. Anthropic writes 80% of its own code with AI. And you're still answering your own email.
 
-That question is the entire difference between the companies compounding with AI and the ones still debating it.
+The gap isn't talent. It's 1 question nobody taught you to ask.
 
-Uber: 70% of production code now ships from AI agents. Anthropic: the team building the most capable AI on earth writes 80% of its own code with it. These organizations finished the "should we?" meeting seasons ago.
+I sat in corporate meetings for 20 years watching smart people debate AI and land on "let's revisit next quarter." The companies that pulled ahead skipped the debate and asked what I call the Phone-Plan Test:
 
-I know that meeting. I sat in it for most of my career. Smart people, honest concerns, and a decision that always landed on "let's revisit next quarter."
+"What would I delegate to someone smarter and faster than me, if that person cost less than my phone plan?"
 
-Here's how to answer the delegation question on paper, tonight:
+Answer it on paper tonight:
 
 1. Write down 3 things you did this week that drained you.
-2. Next to each, write what a capable assistant would have needed to know to do it for you.
-3. Pick the one with the shortest answer. That's your first delegation, this week.
+2. Next to each, write what a capable assistant would need to know to do it for you.
+3. Pick the one with the shortest answer. That's your first delegation.
 
-You don't need to understand how the engine works. The Uber engineers didn't build their agents. They learned to delegate to them.
+The Uber engineers didn't build their agents. They learned to delegate to them. You don't need to understand the engine. You need to hand over the wheel.
 
-Delegation, not expertise. That's the move.
+Delegation, not expertise. That's the whole move.
 
 Comment WORDS and I'll send you the plain-English guide to what's actually happening in AI right now.
 
