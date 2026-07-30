@@ -174,9 +174,40 @@ Follow the Script Application Rules from `inspiration-library` in order:
      the plain word carries the meaning.
    - Sophistication is a cost, not a virtue. The round-2 rewrites failed
      exactly here: openers like "Staffed businesses average 10 to 20%
-     profit margins" made a busy reader do math before knowing why to care.
+     profit margins" made a busy reader do maths before knowing why to care.
    Verify mechanically, not by feel: compute the grade before saving
    (0.39*(words/sentences) + 11.8*(syllables/words) - 15.59).
+1f. **UK English, everywhere, always** (operator rule, recorded 30/07/2026 —
+   she has held this rule all along, but until today it was written down
+   nowhere in the estate, which is why every writer session broke it).
+   Applies to every public word AND every internal doc: normalised not
+   normalized, organise not organize, maths not math, colour not color,
+   analyse not analyze, favourite, behaviour, licence (noun), programme
+   (initiative; software stays "program"). The -ise forms, not -ize.
+   Exceptions: proper nouns and product names keep their own spelling
+   (Blotato "color" CSS properties, "Technology Radar" titles, quoted
+   American sources stay verbatim). When quoting a US source, the quote
+   keeps its spelling; the surrounding prose is UK.
+   This rule belongs in queen-brain/voice.md as canon; add it there from a
+   session with queen-brain write access and then trim this note.
+1g. **Platform shape outranks brevity** (operator direction 30/07/2026,
+   after a rewrite round shipped LinkedIn posts at reel-caption pacing).
+   The Skim Law governs SENTENCES: plain words, low reading grade, 1 idea
+   per line. It does not set post LENGTH. Length and structure come from
+   the platform rules in `skills/copy-craft/SKILL.md` and the rvd doctrine:
+   - LinkedIn text: hook lands inside the first 210 characters as a
+     complete thought; body 1,400-1,800 characters and 150-300 words of
+     real substance in 1-3 line paragraphs, because dwell time is the
+     ranking signal and "short for the sake of short" loses to it. Use one
+     of the 4 durable structures: Case Story, Mistakes List, Before/After,
+     Playbook.
+   - Reels / short-form video: the staccato pacing that round 3 wrongly
+     applied to LinkedIn belongs HERE. Spoken lines under 12 words,
+     hook inside 2 seconds.
+   - X: 280 hard limit, threads via additionalPosts.
+   Never carry one platform's shape onto another. A LinkedIn post that
+   reads like a reel caption starves the dwell signal; a reel script that
+   reads like a LinkedIn post dies in the first 2 seconds.
 1a. **Result Recipe quota** — of the 5 daily drafts, at least 2 must be
    Result Recipes: one complete first win the reader can execute today
    (3-5 numbered steps, exactly one copy-paste prompt with redaction

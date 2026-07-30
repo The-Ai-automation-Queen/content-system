@@ -4,7 +4,7 @@ Produced by: /creative-strategy (Creative Strategy Engine)
 Context loaded: positioning/SKILL.md · inspiration-library/SKILL.md (formats) · content-vault.md (73 entries checked for angle duplication)
 Note: hook-bank.md does not exist in this repo; mechanism tags use the taxonomy from the skill definition.
 
-## Organizing principle
+## Organising principle
 
 **Dual, pain-primary.**
 
@@ -33,8 +33,8 @@ All angles checked against the vault: none duplicates the 73 existing entries (w
 | # | Angle (hook-ready line) | Lens | Mechanism |
 |---|---|---|---|
 | 1 | "It's 9 PM. Dinner is cold. You're still invoicing." | Use case | relatable-moment |
-| 2 | "You've normalized answering DMs at 11 PM. That's not hustle. That's a missing employee." | Acceptance | reframe |
-| 3 | "Your price per hour is falling every week. Here's the math nobody shows you." | Consequences | curiosity-gap |
+| 2 | "You've normalised answering DMs at 11 PM. That's not hustle. That's a missing employee." | Acceptance | reframe |
+| 3 | "Your price per hour is falling every week. Here's the maths nobody shows you." | Consequences | curiosity-gap |
 | 4 | "You don't need more discipline. You need a second pair of hands that costs $20 a month." | Misconceptions | contrarian |
 | 5 | "The VA didn't work out. Not because VAs are bad. Because the job was never human-shaped." | Failed solutions | insider-reveal |
 
