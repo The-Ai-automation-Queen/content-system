@@ -63,6 +63,17 @@ SHELL=/bin/bash
 # (LinkedIn). Harmless to leave running — it just reports status until wired.
 */5 * * * *  __REPO__/deploy/run-machine.sh "/dm-responder" 0 0
 
+# ── Hermes watchdog ──────────────────────────────────────────
+# Hourly — checks Hermes is actually alive. Deliberately NOT run through
+# Hermes itself (see hermes-watchdog.sh for why): if Hermes dies, this still
+# fires and tells you. The 99-campaign Monday trigger (hiring-campaign) is
+# NOT scheduled here anymore — it's fired by Hermes' own cron so it can
+# verify its own output and write a real report instead of a fixed ping. See
+# agent-os-company-dashboard/hermes/ACTIVATION-RUNBOOK.md and
+# skills/hiring-campaign/hermes-cron-prompt.md for that setup. This line is
+# what makes sure that trigger hasn't gone silently dark.
+0 * * * *    __REPO__/deploy/hermes-watchdog.sh
+
 # =============================================================
 # AI Insider Brief (paths assume the estate VPS after deploy/brief-migration;
 # on the legacy brief VPS use /root/ai-insider-brief-pipeline instead) (runs on the brief VPS, not the estate VPS)
