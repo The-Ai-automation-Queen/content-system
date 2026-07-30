@@ -1,7 +1,7 @@
 # Personal Brain — Fatiha Chikh
 
 > Last sync: 2026-07-05 — partial seed (round 1 of `/brain-manager seed`, round 2 paused by operator)
-> Total entries: 2
+> Total entries: 3
 > Categories active: 2/11
 
 This file is the operator's living memory. It feeds `content-engine` so posts
@@ -13,6 +13,15 @@ reference real life — not generic AI content. Updated daily by `brain-manager`
 
 
 ## Opinions
+
+- [2026-07-30] Believes AI insiders must call out the industry's ethical
+  red lines, not leave criticism to outsiders who already distrust it. Trigger
+  case: Anthropic's destructive book-scanning (bought print books, stripped
+  bindings, scanned, destroyed originals; ruled fair use by Judge Alsup, June
+  2025) and NYT v OpenAI. Her line: "legal and moral are not the same line."
+  Reads AI through pattern-recognition, including the pattern of destroying
+  knowledge to control it. Voice here is serious and morally engaged, not the
+  casual best-friend register.
 
 
 ## Current Projects
