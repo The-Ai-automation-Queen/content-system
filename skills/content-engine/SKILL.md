@@ -160,6 +160,23 @@ Follow the Script Application Rules from `inspiration-library` in order:
    - Zero mixed feelings. One human admission per post minimum: "I broke
      this rule twice", "some mornings that still feels like cheating".
    Em-dashes stay banned (voice.md). Straight quotes only.
+1e. **The Skim Law** (operator direction 30/07/2026, and it outranks 1d when
+   they pull in opposite directions): the reader is busy, on a phone, with
+   the attention of a tired 10-year-old. Write for THAT person.
+   - The FIRST LINE names what the reader gets or loses, in plain words.
+     "Your first AI employee costs less than your phone plan." Never context,
+     never a scene, never a statistic the reader must interpret first.
+   - Reading grade 7 or below (Flesch-Kincaid), target grade 3-5. Sentences
+     average under 12 words. No sentence over 20.
+   - 1 idea per line. Blank line between thoughts. A skimmer reading only
+     the first line of each paragraph must still get the post.
+   - Plain words. "hand over" not "delegate", "check" not "verify", where
+     the plain word carries the meaning.
+   - Sophistication is a cost, not a virtue. The round-2 rewrites failed
+     exactly here: openers like "Staffed businesses average 10 to 20%
+     profit margins" made a busy reader do math before knowing why to care.
+   Verify mechanically, not by feel: compute the grade before saving
+   (0.39*(words/sentences) + 11.8*(syllables/words) - 15.59).
 1a. **Result Recipe quota** — of the 5 daily drafts, at least 2 must be
    Result Recipes: one complete first win the reader can execute today
    (3-5 numbered steps, exactly one copy-paste prompt with redaction
