@@ -71,12 +71,12 @@
 
 ---
 
-## ENTRY 055 — 30/07/2026 | LinkedIn carousel | A Prospect Asked for a Quote Four Days Ago and You Still Haven't Sent It | READY TO POST
+## ENTRY 126 — 30/07/2026 | LinkedIn carousel | A Prospect Asked for a Quote Four Days Ago and You Still Haven't Sent It | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
 **Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
-**Topic:** Visual companion to ENTRY 054 (Farah, Employee #017, Quote Generator, PLAYBOOK).
+**Topic:** Visual companion to ENTRY 125 (Farah, Employee #017, Quote Generator, PLAYBOOK).
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Rendered assets (inspected, no overflow, electric used once per slide):**
@@ -94,7 +94,7 @@ Slide 6 (CTA): "Want the free setup? Comment QUOTE."
 
 ---
 
-## ENTRY 054 — 30/07/2026 | LinkedIn | A Prospect Asked for a Quote Four Days Ago and You Still Haven't Sent It | READY TO POST
+## ENTRY 125 — 30/07/2026 | LinkedIn | A Prospect Asked for a Quote Four Days Ago and You Still Haven't Sent It | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
@@ -135,7 +135,7 @@ Comment QUOTE and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 053 — 30/07/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+## ENTRY 124 — 30/07/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** Talking-head reel (30-45s), captions required
@@ -144,7 +144,7 @@ Comment QUOTE and I'll send you the full setup, free.
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur client name and amounts on the draft quote screenshot).
-**Source:** Assembled from ENTRY 049/051/054's role-card lines. No new claims.
+**Source:** Assembled from ENTRY 120/122/125's role-card lines. No new claims.
 
 ---
 [0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
@@ -161,12 +161,12 @@ Comment QUOTE and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 052 — 30/07/2026 | LinkedIn carousel | A Client Went Quiet Three Weeks Ago and You're Only Noticing Now | READY TO POST
+## ENTRY 123 — 30/07/2026 | LinkedIn carousel | A Client Went Quiet Three Weeks Ago and You're Only Noticing Now | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
 **Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
-**Topic:** Visual companion to ENTRY 051 (Ziad, Employee #015, Churn Watch, PLAYBOOK).
+**Topic:** Visual companion to ENTRY 122 (Ziad, Employee #015, Churn Watch, PLAYBOOK).
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Rendered assets (inspected, no overflow, electric used once per slide):**
@@ -184,7 +184,7 @@ Slide 6 (CTA): "Want the free setup? Comment CHURN."
 
 ---
 
-## ENTRY 051 — 30/07/2026 | LinkedIn | A Client Went Quiet Three Weeks Ago and You're Only Noticing Now | READY TO POST
+## ENTRY 122 — 30/07/2026 | LinkedIn | A Client Went Quiet Three Weeks Ago and You're Only Noticing Now | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
@@ -225,12 +225,12 @@ Comment CHURN and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 050 — 30/07/2026 | LinkedIn carousel | You Found Out Someone Was Talking About You Online Three Days After They Posted It | READY TO POST
+## ENTRY 121 — 30/07/2026 | LinkedIn carousel | You Found Out Someone Was Talking About You Online Three Days After They Posted It | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
 **Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
-**Topic:** Visual companion to ENTRY 049 (Hind, Employee #014, Social Listener, PLAYBOOK).
+**Topic:** Visual companion to ENTRY 120 (Hind, Employee #014, Social Listener, PLAYBOOK).
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Rendered assets (inspected, no overflow, electric used once per slide):**
@@ -248,7 +248,7 @@ Slide 6 (CTA): "Want the free setup? Comment LISTEN."
 
 ---
 
-## ENTRY 049 — 30/07/2026 | LinkedIn | You Found Out Someone Was Talking About You Online Three Days After They Posted It | READY TO POST
+## ENTRY 120 — 30/07/2026 | LinkedIn | You Found Out Someone Was Talking About You Online Three Days After They Posted It | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
@@ -289,7 +289,7 @@ Comment LISTEN and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 048 — 30/07/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+## ENTRY 119 — 30/07/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
@@ -324,12 +324,12 @@ Want to build your own first hire? Comment TEAM and I will send you the free 5-s
 
 ---
 
-## ENTRY 047 — 27/07/2026 | LinkedIn carousel | You Did the Work Three Weeks Ago and Still Haven't Sent the Invoice | READY TO POST
+## ENTRY 118 — 27/07/2026 | LinkedIn carousel | You Did the Work Three Weeks Ago and Still Haven't Sent the Invoice | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
 **Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
-**Topic:** Visual companion to ENTRY 046 (Tariq, Employee #013, Invoice Builder, PLAYBOOK).
+**Topic:** Visual companion to ENTRY 117 (Tariq, Employee #013, Invoice Builder, PLAYBOOK).
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Rendered assets (inspected, no overflow, electric used once per slide):**
@@ -347,7 +347,7 @@ Slide 6 (CTA): "Want the free setup? Comment INVOICE."
 
 ---
 
-## ENTRY 046 — 27/07/2026 | LinkedIn | You Did the Work Three Weeks Ago and Still Haven't Sent the Invoice | READY TO POST
+## ENTRY 117 — 27/07/2026 | LinkedIn | You Did the Work Three Weeks Ago and Still Haven't Sent the Invoice | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
@@ -388,7 +388,7 @@ Comment INVOICE and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 045 — 27/07/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+## ENTRY 116 — 27/07/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** Talking-head reel (30-45s), captions required
@@ -397,7 +397,7 @@ Comment INVOICE and I'll send you the full setup, free.
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur client name and amounts on the invoice draft screenshot).
-**Source:** Assembled from ENTRY 041/043/046's role-card lines. No new claims.
+**Source:** Assembled from ENTRY 112/114/117's role-card lines. No new claims.
 
 ---
 [0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
@@ -414,12 +414,12 @@ Comment INVOICE and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 044 — 27/07/2026 | LinkedIn carousel | You've Answered "What Do You Need From Me" for the Fifth New Client This Month | READY TO POST
+## ENTRY 115 — 27/07/2026 | LinkedIn carousel | You've Answered "What Do You Need From Me" for the Fifth New Client This Month | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
 **Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
-**Topic:** Visual companion to ENTRY 043 (Salma, Employee #012, Client Onboarding, PLAYBOOK).
+**Topic:** Visual companion to ENTRY 114 (Salma, Employee #012, Client Onboarding, PLAYBOOK).
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Rendered assets (inspected, no overflow, electric used once per slide):**
@@ -437,7 +437,7 @@ Slide 6 (CTA): "Want the free setup? Comment ONBOARD."
 
 ---
 
-## ENTRY 043 — 27/07/2026 | LinkedIn | You've Answered "What Do You Need From Me" for the Fifth New Client This Month | READY TO POST
+## ENTRY 114 — 27/07/2026 | LinkedIn | You've Answered "What Do You Need From Me" for the Fifth New Client This Month | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
@@ -478,12 +478,12 @@ Comment ONBOARD and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 042 — 27/07/2026 | LinkedIn carousel | You Have 14 Unread AI Newsletters and a Nagging Feeling You're Missing Something | READY TO POST
+## ENTRY 113 — 27/07/2026 | LinkedIn carousel | You Have 14 Unread AI Newsletters and a Nagging Feeling You're Missing Something | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
 **Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
-**Topic:** Visual companion to ENTRY 041 (Maya, Employee #010, News Digest, PLAYBOOK).
+**Topic:** Visual companion to ENTRY 112 (Maya, Employee #010, News Digest, PLAYBOOK).
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Rendered assets (inspected, no overflow, electric used once per slide):**
@@ -501,7 +501,7 @@ Slide 6 (CTA): "Want the free setup? Comment DIGEST."
 
 ---
 
-## ENTRY 041 — 27/07/2026 | LinkedIn | You Have 14 Unread AI Newsletters and a Nagging Feeling You're Missing Something | READY TO POST
+## ENTRY 112 — 27/07/2026 | LinkedIn | You Have 14 Unread AI Newsletters and a Nagging Feeling You're Missing Something | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
@@ -542,7 +542,7 @@ Comment DIGEST and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 040 — 27/07/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+## ENTRY 111 — 27/07/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
@@ -577,12 +577,12 @@ Want to build your own first hire? Comment TEAM and I will send you the free 5-s
 
 ---
 
-## ENTRY 039 — 13/07/2026 | LinkedIn carousel | You've Explained the Same Process to Someone Three Separate Times This Year | READY TO POST
+## ENTRY 110 — 13/07/2026 | LinkedIn carousel | You've Explained the Same Process to Someone Three Separate Times This Year | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
 **Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
-**Topic:** Visual companion to ENTRY 038 (Idris, Employee #011, SOP Writer, PLAYBOOK).
+**Topic:** Visual companion to ENTRY 109 (Idris, Employee #011, SOP Writer, PLAYBOOK).
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Rendered assets (inspected, no overflow, electric used once per slide):**
@@ -600,7 +600,7 @@ Slide 6 (CTA): "Want the free setup? Comment SOP."
 
 ---
 
-## ENTRY 038 — 13/07/2026 | LinkedIn | You've Explained the Same Process to Someone Three Separate Times This Year | READY TO POST
+## ENTRY 109 — 13/07/2026 | LinkedIn | You've Explained the Same Process to Someone Three Separate Times This Year | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
@@ -609,7 +609,7 @@ Slide 6 (CTA): "Want the free setup? Comment SOP."
 **Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A — playbook value post, comment-keyword capture.
-**Source:** schedule.md row 011 (operations/operations-sop-writer.md, not read this run, repo absent; pulled forward from 2026-W31 to this run's wave for department diversity, see ENTRY 032's reordering note). Mode check: no receipt found anywhere. Confirmed PLAYBOOK.
+**Source:** schedule.md row 011 (operations/operations-sop-writer.md, not read this run, repo absent; pulled forward from 2026-W31 to this run's wave for department diversity, see ENTRY 103's reordering note). Mode check: no receipt found anywhere. Confirmed PLAYBOOK.
 
 ---
 You've explained the same process to someone three separate times this year.
@@ -641,7 +641,7 @@ Comment SOP and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 037 — 13/07/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+## ENTRY 108 — 13/07/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** Talking-head reel (30-45s), captions required
@@ -650,7 +650,7 @@ Comment SOP and I'll send you the full setup, free.
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur amounts/vendor names on the receipt-log screenshot).
-**Source:** Assembled from ENTRY 033/035/038's role-card lines. No new claims.
+**Source:** Assembled from ENTRY 104/106/109's role-card lines. No new claims.
 
 ---
 [0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
@@ -667,12 +667,12 @@ Comment SOP and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 036 — 13/07/2026 | LinkedIn carousel | You Have a Shoebox of Receipts You Keep Meaning to Log | READY TO POST
+## ENTRY 107 — 13/07/2026 | LinkedIn carousel | You Have a Shoebox of Receipts You Keep Meaning to Log | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
 **Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
-**Topic:** Visual companion to ENTRY 035 (Omar, Employee #009, Receipt Processor, PLAYBOOK).
+**Topic:** Visual companion to ENTRY 106 (Omar, Employee #009, Receipt Processor, PLAYBOOK).
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Rendered assets (inspected, no overflow, electric used once per slide):**
@@ -690,7 +690,7 @@ Slide 6 (CTA): "Want the free setup? Comment RECEIPTS."
 
 ---
 
-## ENTRY 035 — 13/07/2026 | LinkedIn | You Have a Shoebox of Receipts You Keep Meaning to Log | READY TO POST
+## ENTRY 106 — 13/07/2026 | LinkedIn | You Have a Shoebox of Receipts You Keep Meaning to Log | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
@@ -731,12 +731,12 @@ Comment RECEIPTS and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 034 — 13/07/2026 | LinkedIn carousel | You Check Your Competitor's Page for the Third Time Today | READY TO POST
+## ENTRY 105 — 13/07/2026 | LinkedIn carousel | You Check Your Competitor's Page for the Third Time Today | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
 **Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
-**Topic:** Visual companion to ENTRY 033 (Yara, Employee #008, Competitor Watch, PLAYBOOK).
+**Topic:** Visual companion to ENTRY 104 (Yara, Employee #008, Competitor Watch, PLAYBOOK).
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Rendered assets (inspected, no overflow, electric used once per slide):**
@@ -754,7 +754,7 @@ Slide 6 (CTA): "Want the free setup? Comment WATCH."
 
 ---
 
-## ENTRY 033 — 13/07/2026 | LinkedIn | You Check Your Competitor's Page for the Third Time Today | READY TO POST
+## ENTRY 104 — 13/07/2026 | LinkedIn | You Check Your Competitor's Page for the Third Time Today | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
@@ -795,7 +795,7 @@ Comment WATCH and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 032 — 13/07/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+## ENTRY 103 — 13/07/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
@@ -830,12 +830,12 @@ Want to build your own first hire? Comment TEAM and I will send you the free 5-s
 
 ---
 
-## ENTRY 031 — 13/07/2026 | LinkedIn carousel | You Have Answered "What Are Your Hours" by Hand for the Hundredth Time | DRAFT
+## ENTRY 102 — 13/07/2026 | LinkedIn carousel | You Have Answered "What Are Your Hours" by Hand for the Hundredth Time | DRAFT
 
 **Status:** READY TO POST
 **Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
 **Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
-**Topic:** Visual companion to ENTRY 030 (Karim, Employee #007, FAQ Engine, PLAYBOOK).
+**Topic:** Visual companion to ENTRY 101 (Karim, Employee #007, FAQ Engine, PLAYBOOK).
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Rendered assets (inspected, no overflow, electric used once per slide):**
@@ -853,7 +853,7 @@ Slide 6 (CTA): "Want the free setup? Comment FAQ."
 
 ---
 
-## ENTRY 030 — 13/07/2026 | LinkedIn | You Have Answered "What Are Your Hours" by Hand for the Hundredth Time | DRAFT
+## ENTRY 101 — 13/07/2026 | LinkedIn | You Have Answered "What Are Your Hours" by Hand for the Hundredth Time | DRAFT
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
@@ -894,7 +894,7 @@ Comment FAQ and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 029 — 13/07/2026 | Short-form video (Reel / TikTok / YouTube Short) | I Hired Three More AI Employees This Week | DRAFT
+## ENTRY 100 — 13/07/2026 | Short-form video (Reel / TikTok / YouTube Short) | I Hired Three More AI Employees This Week | DRAFT
 
 **Status:** READY TO POST
 **Platform:** Talking-head reel (30-45s), captions required
@@ -903,7 +903,7 @@ Comment FAQ and I'll send you the full setup, free.
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur client names/data on the invoice-tracker screenshot).
-**Source:** Assembled from ENTRY 025/027/030's role-card lines. No new claims.
+**Source:** Assembled from ENTRY 096/098/101's role-card lines. No new claims.
 
 ---
 [0:00-0:03] HOOK, on-screen text + spoken: "I hired three more AI employees this week."
@@ -920,12 +920,12 @@ Comment FAQ and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 028 — 13/07/2026 | LinkedIn carousel | You Have Typed "Does Tuesday Work for You?" More Times Than You Can Count | DRAFT
+## ENTRY 099 — 13/07/2026 | LinkedIn carousel | You Have Typed "Does Tuesday Work for You?" More Times Than You Can Count | DRAFT
 
 **Status:** READY TO POST
 **Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
 **Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
-**Topic:** Visual companion to ENTRY 027 (Lina, Employee #006, Meeting Scheduler, PLAYBOOK).
+**Topic:** Visual companion to ENTRY 098 (Lina, Employee #006, Meeting Scheduler, PLAYBOOK).
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Rendered assets (inspected, no overflow, electric used once per slide):**
@@ -943,7 +943,7 @@ Slide 6 (CTA): "Want the free setup? Comment SCHEDULE."
 
 ---
 
-## ENTRY 027 — 13/07/2026 | LinkedIn | You Have Typed "Does Tuesday Work for You?" More Times Than You Can Count | DRAFT
+## ENTRY 098 — 13/07/2026 | LinkedIn | You Have Typed "Does Tuesday Work for You?" More Times Than You Can Count | DRAFT
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
@@ -984,12 +984,12 @@ Comment SCHEDULE and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 026 — 13/07/2026 | LinkedIn carousel | You've Sent That "Just Following Up" Email Four Times This Month | DRAFT
+## ENTRY 097 — 13/07/2026 | LinkedIn carousel | You've Sent That "Just Following Up" Email Four Times This Month | DRAFT
 
 **Status:** READY TO POST
 **Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
 **Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
-**Topic:** Visual companion to ENTRY 025 (Sami, Employee #005, Late-Payment Chaser, PLAYBOOK).
+**Topic:** Visual companion to ENTRY 096 (Sami, Employee #005, Late-Payment Chaser, PLAYBOOK).
 **Pillar:** Stop Doing That by Hand (The 99 series)
 **ACP stage:** A
 **Rendered assets (inspected, no overflow, electric used once per slide):**
@@ -1007,7 +1007,7 @@ Slide 6 (CTA): "Want the free setup? Comment CHASER."
 
 ---
 
-## ENTRY 025 — 13/07/2026 | LinkedIn | You've Sent That "Just Following Up" Email Four Times This Month | DRAFT
+## ENTRY 096 — 13/07/2026 | LinkedIn | You've Sent That "Just Following Up" Email Four Times This Month | DRAFT
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
@@ -1048,7 +1048,7 @@ Comment CHASER and I'll send you the full setup, free.
 
 ---
 
-## ENTRY 024 — 13/07/2026 | LinkedIn | Now Hiring: Three AI Employees, Salary $0 Each | DRAFT
+## ENTRY 095 — 13/07/2026 | LinkedIn | Now Hiring: Three AI Employees, Salary $0 Each | DRAFT
 
 **Status:** READY TO POST
 **Platform:** LinkedIn (text post)
