@@ -11,9 +11,21 @@ the system learns what works.
 - `linkedin-update` mode: on demand (manual paste)
 
 ## Tools
-- **Meta Graph API** (preferred for IG/FB — richer data)
-- **Apify** scrapers (fallback for all platforms)
-- Manual paste for LinkedIn (no reliable API)
+Free-first. Every default source costs nothing; Apify is opt-in and skipped
+unless `APIFY_TOKEN` is set.
+
+- **Meta Graph API** (preferred for IG/FB — richer data, free, needs a token)
+- **Blotato analytics** (Twitter/X, Instagram, Facebook, Threads, Bluesky)
+- **yt-dlp** for YouTube (free, no key, installed by `deploy/install.sh`)
+- Manual paste for LinkedIn (no free automated route)
+- **Apify** scrapers — optional paid fallback only
+
+### What Blotato analytics cannot see
+It reports only on posts published **through Blotato**. Engine Law 1 makes this
+repo queue-only with manual release, so anything posted natively in the app is
+invisible. An empty result usually means "not published via Blotato", not "no
+engagement" — say which, do not conflate them. It also covers five platforms
+only: LinkedIn, YouTube and TikTok never return metrics.
 
 ## Inputs
 - Platform API credentials (Meta access token, IG business ID, FB page ID)
@@ -27,6 +39,8 @@ the system learns what works.
 - `reports/competitor-watch-*.md` (in competitors mode)
 
 ## Validation criteria
+0. A run with no `APIFY_TOKEN` is a **normal run**, not a failure. Judge it on
+   whether the free sources were tried and reported honestly.
 1. All connected platforms scraped successfully
 2. Engagement data attached to the correct vault entries
 3. Competitor data uses real handles from `creators.csv`

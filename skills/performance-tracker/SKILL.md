@@ -2,17 +2,19 @@
 name: performance-tracker
 version: 1.0.0
 description: |
-  Machine M06 — scrapes social media metrics via Apify + Blotato, writes
-  performance data to performance-log.md, and updates POSTED vault entries
-  with real engagement numbers. Runs daily on the cron. No API keys needed
-  (Apify + Blotato are MCP-connected). Tracks: Instagram, YouTube, TikTok,
-  LinkedIn (profile-level). Competitors optional via handles.
+  Machine M06 — measures real engagement and writes it to performance-log.md,
+  then updates POSTED vault entries with the numbers. Runs daily on the cron.
+  Free-first: every default source costs nothing. Apify is optional and only
+  runs when APIFY_TOKEN is set. Tracks Instagram, Facebook, Twitter/X, Threads,
+  YouTube, LinkedIn. Competitors optional via handles.
 
   Preferred source hierarchy per platform:
-    Instagram/Facebook — Meta Graph API (when META_ACCESS_TOKEN is set) → Apify scraper fallback
-    YouTube — Apify scraper (free tier)
-    LinkedIn — Apify curious_coder/linkedin-profile-scraper ($0.004/scrape, max 1/day) + manual paste
-    TikTok — Apify clockworks/tiktok-scraper (when connected)
+    Instagram/Facebook — Meta Graph API (when META_ACCESS_TOKEN is set) → Blotato analytics
+    Twitter/X, Threads — Blotato analytics (free, Blotato-published posts only)
+    YouTube — yt-dlp (free, installed by deploy/install.sh)
+    LinkedIn — manual paste via 'linkedin-update' (no free automated route)
+    TikTok — not connected
+    Apify — optional paid fallback, skipped entirely unless APIFY_TOKEN is set
 argument-hint: "[nothing needed | 'competitors' to also scrape tracked creators | 'linkedin-update' for manual LinkedIn stats paste]"
 allowed-tools:
   - Read
@@ -26,6 +28,8 @@ allowed-tools:
   - mcp__APIFY_-_Trends_listener__search-actors
   - mcp__Blotato__blotato_list_posts
   - mcp__Blotato__blotato_get_post_status
+  - mcp__Blotato__blotato_list_top_posts
+  - mcp__Blotato__blotato_get_post_analytics
 ---
 
 # Performance Tracker — Machine M06
@@ -56,20 +60,46 @@ whether a piece got 40 views or 40,000. This skill closes that feedback loop.
 
 ## Source hierarchy — preferred vs. fallback for every platform
 
-Each platform has a **preferred** data source (cheaper, richer, or first-party)
-and a **fallback** (Apify scraper). At run time, try the preferred source first;
-if it errors or is not configured, fall back silently and log which path was
-taken.
+**Every default source in this table is free.** Apify is the only paid path and
+it is **opt-in**: skip it entirely unless `APIFY_TOKEN` is set in the
+environment. A run with no `APIFY_TOKEN` is a normal run, not a degraded one —
+do not report it as a failure.
 
-| Platform | Preferred source | Fallback source | Cost note |
+At run time, try the preferred source first. If it errors or is not configured,
+fall back and log which path was taken.
+
+| Platform | Preferred source (free) | Fallback (free) | Paid fallback — only if `APIFY_TOKEN` set |
 |---|---|---|---|
-| **Instagram** | Meta Graph API (`/me/media`, `/me` insights) — requires `META_ACCESS_TOKEN` + `IG_BUSINESS_ID` in env | Apify `apify/instagram-profile-scraper` + `apify/instagram-post-scraper` | Graph API = free (rate-limited); Apify ~$0.01/run |
-| **Facebook** | Meta Graph API (`/{page-id}/published_posts`, `/{page-id}` insights) — requires `META_ACCESS_TOKEN` + `FB_PAGE_ID` in env | Apify `apify/facebook-posts-scraper` ($0.005/post) | Graph API = free; Apify = pay-per-post |
-| **YouTube** | Apify `streamers/youtube-channel-scraper` (channel) + `bernardo/youtube-scraper` (videos) | Apify `bernardo/youtube-scraper` keyword search | ~$0.005/run |
-| **LinkedIn** | Apify `curious_coder/linkedin-profile-scraper` ($0.004/scrape, **max 1/day**) | Manual paste via `linkedin-update` argument | Scraper is cheap but rate-limited; manual is free |
-| **TikTok** | Apify `clockworks/tiktok-scraper` | *(none — flag NOT CONNECTED)* | Only when operator wires a TikTok account |
-| **Twitter / X** | Apify `apidojo/twitter-user-scraper` | Apify `apify/twitter-scraper` | ~$0.01/run |
-| **Threads** | Apify `apify/threads-scraper` | *(none)* | ~$0.005/run |
+| **Instagram** | Meta Graph API (`/me/media`, `/me` insights) — requires `META_ACCESS_TOKEN` + `IG_BUSINESS_ID` | Blotato analytics | `apify/instagram-profile-scraper` + `apify/instagram-post-scraper` |
+| **Facebook** | Meta Graph API (`/{page-id}/published_posts`, `/{page-id}` insights) — requires `META_ACCESS_TOKEN` + `FB_PAGE_ID` | Blotato analytics | `apify/facebook-posts-scraper` ($0.005/post) |
+| **Twitter / X** | Blotato analytics | *(none)* | `apidojo/twitter-user-scraper` |
+| **Threads** | Blotato analytics | *(none)* | `apify/threads-scraper` |
+| **YouTube** | `yt-dlp --dump-single-json` on the channel URL (installed by `deploy/install.sh`) | *(none)* | `streamers/youtube-channel-scraper` |
+| **LinkedIn** | Manual paste via `linkedin-update` argument | *(none)* | `curious_coder/linkedin-profile-scraper` (max 1/day) |
+| **TikTok** | *(not connected — flag NOT CONNECTED)* | — | `clockworks/tiktok-scraper` |
+
+### Blotato analytics — how to read it, and what it cannot see
+
+Two tools: `blotato_list_top_posts` to find posts, then
+`blotato_get_post_analytics` with a post `id` for the metric history. Metrics
+come back as **strings**, not numbers — cast before doing arithmetic. Analytics
+refresh in the background, so a post published today may legitimately have
+`metrics: null`; when that happens check `lastError` before treating it as a
+failure.
+
+Three hard limits. Encode all three in the report rather than working around
+them:
+
+1. **Blotato covers only five platforms**: Twitter/X, Instagram, Facebook,
+   Threads, Bluesky. LinkedIn, YouTube and TikTok return no metrics, ever.
+2. **It sees only posts published *through Blotato*.** Anything Fatiha posts
+   natively in the app is invisible to it. Per Engine Law 1 this repo is
+   queue-only and she releases manually, so native posts are the norm, not the
+   exception. A zero result usually means "not published via Blotato", not
+   "no engagement".
+3. **LinkedIn has no free automated route at all.** It is the highest-value
+   platform here and manual paste is the only free path. Ask for it rather than
+   silently reporting LinkedIn as unavailable.
 
 ---
 
@@ -79,10 +109,10 @@ taken.
 |---|---|---|
 | Instagram | `thefatihachikh` | `META_ACCESS_TOKEN`, `IG_BUSINESS_ID` |
 | Facebook | Page "AI Automation Queen" | `META_ACCESS_TOKEN`, `FB_PAGE_ID` |
-| YouTube | `AI-Automation-Queen` | *(none — Apify only)* |
-| LinkedIn | Fatiha Chikh | *(none — Apify + manual)* |
-| Twitter / X | `aiautomatik` | *(none — Apify only)* |
-| Threads | `thefatihachikh` | *(none — Apify only)* |
+| YouTube | `AI-Automation-Queen` | *(none — yt-dlp needs no key)* |
+| LinkedIn | Fatiha Chikh | *(none — manual paste)* |
+| Twitter / X | `aiautomatik` | *(none — Blotato analytics)* |
+| Threads | `thefatihachikh` | *(none — Blotato analytics)* |
 | TikTok | *(not yet connected)* | *(connect to Blotato first)* |
 
 Always re-read `inventory.md` at run time for the live handle list. If a handle
@@ -90,10 +120,10 @@ changes there, follow it — do not hardcode.
 
 > **Env-var placeholders for `inventory.md`** (the operator fills these once):
 > `META_ACCESS_TOKEN`, `IG_BUSINESS_ID`, `FB_PAGE_ID`. Until they are set,
-> the Meta Graph API path is skipped and the Apify fallback runs instead.
-> These tokens must **never** be committed to the repo — they live in the
-> shell environment or a `.env` file excluded by `.gitignore` (see
-> `security.md`).
+> the Meta Graph API path is skipped and Blotato analytics runs instead.
+> `APIFY_TOKEN` is **optional** and unlocks only the paid fallbacks.
+> These tokens must **never** be committed to the repo — they live in Doppler
+> on the VPS or a `.env` file excluded by `.gitignore` (see `security.md`).
 
 ---
 
@@ -103,9 +133,13 @@ changes there, follow it — do not hardcode.
 
 1. Read `CLAUDE.md` (system orientation).
 2. Read `inventory.md` — extract the handles from the Channels table (section 3).
-3. **Check environment** — test whether `META_ACCESS_TOKEN` is set (Bash:
-   `[ -n "$META_ACCESS_TOKEN" ] && echo "meta-ok"`). Record the result so you
-   know which source path to take for Instagram and Facebook.
+3. **Check environment** — record which paths are open before fetching anything:
+   - `[ -n "$META_ACCESS_TOKEN" ] && echo "meta-ok"` — Graph API for IG/FB.
+   - `[ -n "$APIFY_TOKEN" ] && echo "apify-ok"` — paid fallbacks. **If unset,
+     skip every Apify actor for the whole run and do not report it as a
+     failure.** Free sources are the design, not a workaround.
+   - `command -v yt-dlp` — YouTube path. Installed by `deploy/install.sh`; if
+     missing, note it and skip YouTube.
 4. Read `performance-log.md` — find the most recent `## PERFORMANCE` entry to
    know the prior snapshot (needed for deltas). If the file does not exist,
    create it with the header shown in the Output section below.
