@@ -27,7 +27,7 @@ workflow is **plan → validate → backup → apply → test in a second sessio
 |---|---|---|
 | **Auto-updates** | `unattended-upgrades`, security only | Patches land without you |
 | **fail2ban** | sshd jail · bantime 1h · findtime 10m · maxretry 3 | Bans SSH brute-force |
-| **UFW firewall** | `deny incoming` / `allow outgoing`; SSH port only | Closes everything else, incl. dashboard :4321 |
+| **UFW firewall** | `deny incoming` / `allow outgoing`; SSH port only | Closes everything else, incl. dashboard :4322 |
 | **SSH** | drop-in `99-content-os-hardening.conf`: root off, key-only*, `MaxAuthTries 3`, `LoginGraceTime 30`, `ClientAliveInterval 300`/`CountMax 2`, `X11Forwarding no`, `AllowTcpForwarding no`, `AllowUsers <you>` | Shrinks the SSH attack surface |
 
 \* **Key-only is auto-guarded:** the script disables password login **only if**
@@ -37,12 +37,12 @@ safeguard.
 
 ## The dashboard is now private-by-default
 
-With UFW `deny incoming`, port **4321 is not exposed** to the internet. Reach
+With UFW `deny incoming`, port **4322 is not exposed** to the internet. Reach
 Mission Control securely with an SSH tunnel:
 
 ```bash
-ssh -L 4321:localhost:4321 <user>@<vps-ip>
-# then open http://localhost:4321 in your local browser
+ssh -L 4322:localhost:4322 <user>@<vps-ip>
+# then open http://localhost:4322 in your local browser
 ```
 
 (Or put it on a Tailscale tailnet — the script auto-allows `tailscale0` if

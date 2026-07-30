@@ -282,13 +282,13 @@ the first terminal (see `deploy/SECURITY.md`).
 
 ### Step 20: Access the dashboard via SSH tunnel
 
-UFW closes port 4321, so the dashboard is private. Access it through a tunnel:
+UFW closes port 4322, so the dashboard is private. Access it through a tunnel:
 
 ```bash
-ssh -L 4321:localhost:4321 your-user@your-vps-ip
+ssh -L 4322:localhost:4322 your-user@your-vps-ip
 ```
 
-Then open `http://localhost:4321` in your browser. You should see Mission
+Then open `http://localhost:4322` in your browser. You should see Mission
 Control with the machine status panels.
 
 ---
@@ -432,10 +432,10 @@ Check the output:
 ### Step 31: Check the dashboard
 
 ```bash
-ssh -L 4321:localhost:4321 your-user@your-vps-ip
+ssh -L 4322:localhost:4322 your-user@your-vps-ip
 ```
 
-Open `http://localhost:4321`:
+Open `http://localhost:4322`:
 - Machine status panels should show green/live
 - Pipeline should show your vault entries
 - Calendar should show any scheduled posts
@@ -523,7 +523,7 @@ journalctl -u cron -n 20 # cron daemon running?
 ```bash
 systemctl status content-os-dashboard
 journalctl -u content-os-dashboard -n 50
-# Remember: access via SSH tunnel, not direct IP (UFW blocks :4321)
+# Remember: access via SSH tunnel, not direct IP (UFW blocks :4322)
 ```
 
 **A machine fails:**
