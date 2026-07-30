@@ -11,9 +11,26 @@ the system learns what works.
 - `linkedin-update` mode: on demand (manual paste)
 
 ## Tools
-- **Meta Graph API** (preferred for IG/FB — richer data)
-- **Apify** scrapers (fallback for all platforms)
-- Manual paste for LinkedIn (no reliable API)
+Free-first. Every default source costs nothing; Apify is opt-in and skipped
+unless `APIFY_TOKEN` is set.
+
+- **Meta Graph API** for Instagram, Facebook, and Threads if the token is
+  scoped for it (free, first-party, needs `META_ACCESS_TOKEN`)
+- **yt-dlp** for YouTube (free, no key, installed by `deploy/install.sh`)
+- Manual paste for LinkedIn and Twitter/X (no free automated route)
+- **Apify** scrapers — optional paid fallback only
+
+### Blotato is not a metrics source
+Operator decision, 2026-07-30: performance does not go through Blotato, and its
+analytics feature is not built correctly. `blotato_list_posts` and
+`blotato_get_post_status` stay in use for the **queue cross-reference** — what
+was scheduled — but never for engagement numbers.
+
+### The real gate is `META_ACCESS_TOKEN`
+One credential covers Instagram, Facebook and possibly Threads, independent of
+how posts are published. Until it is set, those three fall through to manual
+paste and the machine cannot measure them on its own. Report the token status
+explicitly rather than logging a generic scrape failure.
 
 ## Inputs
 - Platform API credentials (Meta access token, IG business ID, FB page ID)
@@ -27,6 +44,8 @@ the system learns what works.
 - `reports/competitor-watch-*.md` (in competitors mode)
 
 ## Validation criteria
+0. A run with no `APIFY_TOKEN` is a **normal run**, not a failure. Judge it on
+   whether the free sources were tried and reported honestly.
 1. All connected platforms scraped successfully
 2. Engagement data attached to the correct vault entries
 3. Competitor data uses real handles from `creators.csv`
