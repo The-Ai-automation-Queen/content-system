@@ -1,53 +1,53 @@
 // Blotato connected accounts and API contract.
 //
-// ⚠️ THESE IDS ARE UNVERIFIED SINCE THE 22/06/2026 REBRAND.
+// Account ids come from the publish skill's reference and content-factory's
+// config.py, which agree exactly. Both predate the 22/06/2026 rebrand, and the
+// handles they recorded (@fati_chic_, @AIAutomati82400) did not match the ones
+// inventory.md tracks — so the ids were treated as suspect until checked.
 //
-// They come from the publish skill's reference, marked "verified 26/04/2026" —
-// two months before the rebrand — and the handles recorded there do not match
-// the ones content-system tracks in inventory.md:
+// Resolved 30/07/2026: the operator confirmed in the Blotato dashboard that
+// LinkedIn, Instagram and X show the current post-rebrand handles. The accounts
+// were renamed during the rebrand rather than replaced, so the ids never
+// changed and only the handle labels here were stale.
 //
-//     reference (Apr)        inventory.md (now)
-//     @fati_chic_            thefatihachikh      (instagram, threads)
-//     @AIAutomati82400       aiautomatik         (twitter)
+// Threads and Facebook were NOT part of that check and stay unverified.
 //
-// So at least three of these ids may point at pre-rebrand accounts. Publishing
-// against a stale id posts to the wrong audience, silently and irreversibly.
-// Re-confirm each one in the Blotato dashboard, set `verified` to the date you
-// checked, and only then let it go live. `verified: null` is treated as unsafe
-// and blocks live sends in api/publish.js.
+// `verified: null` blocks live sends in api/publish.js. Only set a date after
+// seeing the handle in the Blotato dashboard yourself — publishing against a
+// wrong id posts to the wrong audience, silently, with no undo.
 
 export const ACCOUNTS = {
   linkedin: {
     accountId: '16438',
     platform: 'linkedin',
     handle: 'Fatiha Chikh (personal profile)',
-    verified: null,
+    verified: '2026-07-30',
     // LeLabPlus company page instead: content.pageId = '73909738'
   },
   instagram: {
     accountId: '38092',
     platform: 'instagram',
-    handle: '@fati_chic_  (inventory.md says thefatihachikh)',
-    verified: null,
-    requiresMedia: true,
+    handle: 'thefatihachikh',
+    verified: '2026-07-30',
+    requiresMedia: true,   // text-only IG posts are not supported by this route
   },
   threads: {
     accountId: '5509',
     platform: 'threads',
-    handle: '@fati_chic_  (inventory.md says thefatihachikh)',
+    handle: 'unconfirmed — not checked 30/07',
     verified: null,
   },
   twitter: {
     accountId: '15654',
     platform: 'twitter',
-    handle: '@AIAutomati82400  (inventory.md says aiautomatik)',
-    verified: null,
+    handle: 'aiautomatik',
+    verified: '2026-07-30',
     maxChars: 280,
   },
   facebook: {
     accountId: '24785',
     platform: 'facebook',
-    handle: 'Page: AI Automation Queen',
+    handle: 'Page: AI Automation Queen — not checked 30/07',
     pageId: '482165944989431',
     verified: null,
   },
