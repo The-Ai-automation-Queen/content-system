@@ -10,7 +10,8 @@
 // were renamed during the rebrand rather than replaced, so the ids never
 // changed and only the handle labels here were stale.
 //
-// Threads and Facebook were NOT part of that check and stay unverified.
+// Facebook (24785) confirmed separately the same day. Threads was NOT part of
+// either check and stays unverified.
 //
 // `verified: null` blocks live sends in api/publish.js. Only set a date after
 // seeing the handle in the Blotato dashboard yourself — publishing against a
@@ -47,9 +48,12 @@ export const ACCOUNTS = {
   facebook: {
     accountId: '24785',
     platform: 'facebook',
-    handle: 'Page: AI Automation Queen — not checked 30/07',
+    handle: 'Page: AI Automation Queen',
+    // pageId still comes from content-factory's config.py and was not itself
+    // read back from the Blotato dashboard. If a Facebook post lands on the
+    // wrong page, this is the value to check first.
     pageId: '482165944989431',
-    verified: null,
+    verified: '2026-07-30',
   },
 };
 
