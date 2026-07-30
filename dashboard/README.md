@@ -15,10 +15,10 @@ page to see the new state.
 ```bash
 cd dashboard
 npm install        # first time only
-npm run dev        # serves http://localhost:4321
+npm run dev        # serves http://localhost:4322
 ```
 
-Then open **http://localhost:4321**. Edit a vault entry or run an agent skill,
+Then open **http://localhost:4322**. Edit a vault entry or run an agent skill,
 refresh the page, and the cockpit reflects it.
 
 ## What it shows
@@ -35,7 +35,7 @@ refresh the page, and the cockpit reflects it.
 
 ## Notes
 
-- Built with Astro (port 4321, `host: true` so the remote/web harness can
+- Built with Astro (port 4322, `host: true` so the remote/web harness can
   preview the port).
 - Parsing lives in `src/lib/data.js` — pure Node, no parsing deps. If the vault
   format changes, adjust the regexes there.

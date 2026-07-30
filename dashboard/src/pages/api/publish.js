@@ -150,6 +150,15 @@ export async function POST({ request }) {
         : payload.post.useNextFreeSlot
           ? 'useNextFreeSlot — PUBLISHES IMMEDIATELY, the queue is empty'
           : 'no timing set',
+      // Booleans only, never the key itself. This is what tells the operator at
+      // a glance which of the three arming conditions is missing, instead of
+      // leaving them to guess from a one-line reason.
+      gates: {
+        blotatoLive: armed,
+        apiKeyPresent: hasKey,
+        accountVerified: accountOk,
+        noBlockers: blockers.length === 0,
+      },
       blockers,
       warnings,
       payload,

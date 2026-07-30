@@ -123,6 +123,6 @@ Next steps (see deploy/README.md for the full runbook):
   5. ./deploy/run-machine.sh "/vault-audit" 0 0   # smoke-test one machine
   6. sed -i "s|__REPO__|\$PWD|g" deploy/crontab.example && crontab deploy/crontab.example
 
-Dashboard:  http://localhost:4321  via SSH tunnel  (ssh -L 4321:localhost:4321 $USER@<vps-ip>)
-            UFW keeps :4321 private — see deploy/SECURITY.md.
+Dashboard:  http://localhost:4322  via SSH tunnel  (ssh -L 4322:localhost:4322 $USER@<vps-ip>)
+            UFW keeps :4322 private — see deploy/SECURITY.md.
 EOF

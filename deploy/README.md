@@ -192,8 +192,8 @@ sudo ./deploy/harden-vps.sh apply     # APPLY — backs up every file it edits
 ```
 
 A useful side effect: UFW closes everything except SSH, so the **dashboard
-(:4321) becomes private** — reach it through a tunnel:
-`ssh -L 4321:localhost:4321 $USER@<vps-ip>`. Full details, the manual extras
+(:4322) becomes private** — reach it through a tunnel:
+`ssh -L 4322:localhost:4322 $USER@<vps-ip>`. Full details, the manual extras
 (SSH port change, disabling unused users), and how to revert are in
 **`deploy/SECURITY.md`**.
 

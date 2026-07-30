@@ -1416,6 +1416,13 @@ const truncate = (s, len = 40) => s.length > len ? s.slice(0, len) + '...' : s;
         if (j.target) lines.push('target: ' + j.target);
         if (j.timing) lines.push('timing: ' + j.timing);
         if (j.chars != null) lines.push('chars: ' + j.chars);
+        if (j.gates) {
+          const g = j.gates, tick = (b) => (b ? '✓' : '✗');
+          lines.push('gates: ' + tick(g.blotatoLive) + ' BLOTATO_LIVE   ' +
+                     tick(g.apiKeyPresent) + ' API key   ' +
+                     tick(g.accountVerified) + ' account verified   ' +
+                     tick(g.noBlockers) + ' no blockers');
+        }
         (j.blockers || []).forEach(b => lines.push('BLOCKED: ' + b));
         (j.warnings || []).forEach(w => lines.push('warning: ' + w));
         if (j.error) lines.push('error: ' + j.error);

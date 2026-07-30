@@ -15,7 +15,7 @@ Two machines are involved:
 estate VPS (SETUP-GUIDE.md step 1; bootstrap-vps.sh runs as that user, not
 root, and there is no user named "deploy" unless you happened to create
 one). If you forgot the name: it is the one that works in
-`ssh -L 4321:localhost:4321 YOUR-USER@YOUR-ESTATE-IP`, the tunnel you use
+`ssh -L 4322:localhost:4322 YOUR-USER@YOUR-ESTATE-IP`, the tunnel you use
 for the dashboard.
 
 Placeholders you replace while typing: `YOUR-USER`, `YOUR-ESTATE-IP`, and

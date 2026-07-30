@@ -88,13 +88,13 @@ if applying; then
   command -v tailscale >/dev/null 2>&1 && { a "Tailscale detected → allow in on tailscale0"; ufw allow in on tailscale0 >/dev/null || true; }
   a "enable UFW"
   ufw --force enable >/dev/null
-  warn "Dashboard port 4321 is intentionally NOT opened — reach it via SSH tunnel:"
-  warn "    ssh -L 4321:localhost:4321 ${SSH_USER}@<vps-ip>   then open http://localhost:4321"
+  warn "Dashboard port 4322 is intentionally NOT opened — reach it via SSH tunnel:"
+  warn "    ssh -L 4322:localhost:4322 ${SSH_USER}@<vps-ip>   then open http://localhost:4322"
   warn "Open 80/443 ONLY if you put a reverse proxy in front:  ufw allow 80/tcp && ufw allow 443/tcp"
 else
   p "ufw default deny incoming / allow outgoing"
   p "ufw allow ${SSH_PORT}/tcp   (SSH); allow in on tailscale0 if Tailscale present"
-  p "ufw --force enable  — everything else closed, incl. dashboard :4321 (reach via SSH tunnel/Tailscale)"
+  p "ufw --force enable  — everything else closed, incl. dashboard :4322 (reach via SSH tunnel/Tailscale)"
   p "80/443 left CLOSED unless you add a reverse proxy"
 fi
 
