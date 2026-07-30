@@ -116,13 +116,108 @@ urgency, follow-forcing):
 
 Follow the Script Application Rules from `inspiration-library` in order:
 
-1. **Open how-to-first** (operator-calibrated 14/07/2026, chosen over
-   claim-first and you-problem-first): the title and the first line name the
-   deliverable plainly, like a lesson title. "How to find your first AI
-   employee in 10 minutes. Step by step, tonight." A stranger must know what
-   they get before the second line (obvious-beats-clever law,
-   `queen-brain/voice.md`). Provocations, clever lines, and story tension go
-   AFTER the promise, never instead of it. No warm-up, no title restatement.
+1. **Rotate the hook shape** (operator direction 30/07/2026, superseding the
+   14/07 "how-to-first always" calibration). That rule, applied 37 times,
+   produced 37 posts opening with the identical "How do you X?" formula.
+   Fatiha's verdict on the result: slop she will not put her name on.
+   Every batch of 5 drafts must use at least 4 DIFFERENT hook shapes:
+   - **Pain-first**: name the cost the reader is paying right now.
+     ("You did the same task 4 times this week and didn't notice.")
+   - **Desire/receipt-first**: show the after-state or a real receipt.
+     ("7 AM on a Tuesday. 5 finished drafts are waiting. I didn't write a word.")
+   - **Curiosity gap**: a specific fact that demands resolution.
+     ("The most valuable AI employee in my company sorts email.")
+   - **Contrarian claim**: invert the reader's assumption, then prove it.
+     ("The most technical workforce on earth just stopped typing its own code.")
+   - **How-to**: allowed, MAX 1 per batch of 5, reserved for Result Recipes.
+   The outcome-first law still binds: whatever the shape, the reader must know
+   what they get within the first 2 lines. A hook that only teases fails.
+   Never open 2 consecutive vault entries with the same shape.
+   **Operator's ranked hook preference (30/07/2026, chosen by direct test over
+   fear-first, provocation, and confession):** the SHOCKING NUMBER hook wins.
+   Line 1 leads with a specific, real, slightly jarring number. Line 2 lands a
+   concrete human stake or consequence. Line 3 teases the named framework.
+   Example she approved: "I run 7 employees. Payroll: $40 a month. None of them
+   are human, and 1 just saved a client I forgot to follow up." Every post
+   should carry its OWN number as the hook (not the same stat reused), so the
+   batch still reads varied. A flat claim as line 1 ("AI skills are management
+   skills") is the failure mode she rejected 4 times; lead with the number
+   that makes the claim undeniable instead.
+1b. **Numbers are figures, never words** (operator direction 30/07/2026):
+   write 3, not three; 7 jobs, not seven jobs; 10 minutes, not ten minutes.
+   Applies to every number in customer-facing copy including the first word
+   of a sentence. Figures stop the scroll; words hide the specificity.
+1c. **One named framework per post** (operator direction 30/07/2026): the
+   post's method carries a NAME the reader can save and repeat (the Phone-Plan
+   Test, the 3-Letter Filter, the Lazy Brief Rule, the 4D Score). A list of
+   steps without a name is advice; a named framework is an asset. Never two
+   posts sharing a framework name unless it's deliberately a series.
+1d. **Humanizer pass, mandatory** (operator direction 30/07/2026): every
+   draft goes through the `humanizer` skill's checks before it enters the
+   vault. The tells that made the first 37 drafts unpublishable, in order of
+   how often they appeared:
+   - The "isn't X. It's Y." / "not just X, it's Y" skeleton. Once per batch
+     at most; it appeared in 5 of 11 posts and reads as a template.
+   - The 2-beat aphorism close ("Delegation, not expertise. That's the
+     move."). Vary the closes: a confession, an aside, a specific number, a
+     plain sentence. Identical close rhythm across posts is a fingerprint.
+   - Bold-header list items (`**Email triage.** …`). Plain numbered or plain
+     paragraph lists.
+   - Stacked rule-of-three ("streamline, enhance, foster"). Real lists have
+     2 items, or 4, or 1 long one.
+   - Perfect uniform paragraph rhythm. Let 1 short paragraph sit next to a
+     long one. An aside ("by the way", "honestly") is allowed to survive.
+   - Zero mixed feelings. One human admission per post minimum: "I broke
+     this rule twice", "some mornings that still feels like cheating".
+   Em-dashes stay banned (voice.md). Straight quotes only.
+1e. **The Skim Law** (operator direction 30/07/2026, and it outranks 1d when
+   they pull in opposite directions): the reader is busy, on a phone, with
+   the attention of a tired 10-year-old. Write for THAT person.
+   - The FIRST LINE names what the reader gets or loses, in plain words.
+     "Your first AI employee costs less than your phone plan." Never context,
+     never a scene, never a statistic the reader must interpret first.
+   - Reading grade 7 or below (Flesch-Kincaid), target grade 3-5. Sentences
+     average under 12 words. No sentence over 20.
+   - 1 idea per line. Blank line between thoughts. A skimmer reading only
+     the first line of each paragraph must still get the post.
+   - Plain words. "hand over" not "delegate", "check" not "verify", where
+     the plain word carries the meaning.
+   - Sophistication is a cost, not a virtue. The round-2 rewrites failed
+     exactly here: openers like "Staffed businesses average 10 to 20%
+     profit margins" made a busy reader do maths before knowing why to care.
+   Verify mechanically, not by feel: compute the grade before saving
+   (0.39*(words/sentences) + 11.8*(syllables/words) - 15.59).
+1f. **UK English, everywhere, always** (operator rule, recorded 30/07/2026 —
+   she has held this rule all along, but until today it was written down
+   nowhere in the estate, which is why every writer session broke it).
+   Applies to every public word AND every internal doc: normalised not
+   normalized, organise not organize, maths not math, colour not color,
+   analyse not analyze, favourite, behaviour, licence (noun), programme
+   (initiative; software stays "program"). The -ise forms, not -ize.
+   Exceptions: proper nouns and product names keep their own spelling
+   (Blotato "color" CSS properties, "Technology Radar" titles, quoted
+   American sources stay verbatim). When quoting a US source, the quote
+   keeps its spelling; the surrounding prose is UK.
+   This rule belongs in queen-brain/voice.md as canon; add it there from a
+   session with queen-brain write access and then trim this note.
+1g. **Platform shape outranks brevity** (operator direction 30/07/2026,
+   after a rewrite round shipped LinkedIn posts at reel-caption pacing).
+   The Skim Law governs SENTENCES: plain words, low reading grade, 1 idea
+   per line. It does not set post LENGTH. Length and structure come from
+   the platform rules in `skills/copy-craft/SKILL.md` and the rvd doctrine:
+   - LinkedIn text: hook lands inside the first 210 characters as a
+     complete thought; body 1,400-1,800 characters and 150-300 words of
+     real substance in 1-3 line paragraphs, because dwell time is the
+     ranking signal and "short for the sake of short" loses to it. Use one
+     of the 4 durable structures: Case Story, Mistakes List, Before/After,
+     Playbook.
+   - Reels / short-form video: the staccato pacing that round 3 wrongly
+     applied to LinkedIn belongs HERE. Spoken lines under 12 words,
+     hook inside 2 seconds.
+   - X: 280 hard limit, threads via additionalPosts.
+   Never carry one platform's shape onto another. A LinkedIn post that
+   reads like a reel caption starves the dwell signal; a reel script that
+   reads like a LinkedIn post dies in the first 2 seconds.
 1a. **Result Recipe quota** — of the 5 daily drafts, at least 2 must be
    Result Recipes: one complete first win the reader can execute today
    (3-5 numbered steps, exactly one copy-paste prompt with redaction

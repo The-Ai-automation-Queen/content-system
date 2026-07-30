@@ -59,24 +59,31 @@ can too."*
 
 ## The promise
 
-> **"I help everyday entrepreneurs use AI and automation to win back their time —
-> so their business runs without running their life. I've already done the
-> building. Now I hand you the systems, the shortcuts, and the proof that you don't
-> need to be technical to get your freedom back."**
+> **"I help business owners turn AI into real return: build, innovate, and ship
+> ideas at a fraction of what they used to cost. I do it responsibly, with my
+> eyes open to the lines that should not be crossed. I have built the systems,
+> and I have read the governance the hard way, so I can hand you both the
+> upside and the guardrails."**
 
-The transformation she sells: **time and freedom.** Work less, live more. A
-business that does not depend on you being online 24/7.
+The transformation she sells: **AI that pays off without costing you later.**
+Real output at a fraction of the cost, built by someone who also knows where
+the ethical and legal red lines sit and refuses to pretend they are not there.
 
 ## The differentiator (her edge)
 
-- **She's one step ahead on the same road.** She made the corporate → entrepreneur
-  jump herself and built the systems — so she's not a distant guru, she's the person
-  just ahead of them who already did it.
-- **Leverage over labor.** She does not sell her time. She hands over systems,
-  shortcuts, and proof so people get there without her doing it for them.
-- **You don't need to be technical.** She removes the intimidation, not by
-  hand-holding beginners forever, but by handing over things that just work.
-- **Automation as freedom, not as a tech flex.** The point is the life it buys you.
+- **Builder AND watchdog.** Almost every AI creator is one or the other: the
+  hype-builder who sells the demo, or the doom-critic who only warns. She does
+  both, and that combination is the whole edge. She ships real AI results and
+  she names the red lines, from the same seat.
+- **Responsible ROI, not blind adoption.** She helps business owners get real
+  return from AI, at a fraction of the old cost, without walking them into the
+  data, copyright, and privacy traps that cost more later.
+- **She has read the governance the hard way.** Her AIGP library (EU AI Act,
+  NIST, ISO 42001, GDPR-for-AI) is proof she can speak to what is actually at
+  stake, not vibes. Insiders should be the ones calling it out.
+- **One step ahead on the same road.** She made the corporate → builder jump
+  herself. Not a distant guru, the person just ahead who already did it, and
+  who did it with her eyes open.
 
 ## How the brand makes money (monetization — active *now*, not "someday")
 
@@ -127,25 +134,33 @@ impatient with you wasting time doing things by hand.
 
 ---
 
-## Content pillars (the six she owns)
+## Content pillars (the six she owns) — dual lane (updated 30/07/2026)
 
 Every piece maps to exactly one pillar (inspiration-library Pattern 15). If a topic
-fits none, question whether to publish it.
+fits none, question whether to publish it. Pillars 1-3 are the ROI/build lane;
+pillars 4-5 are the governance/red-line lane; pillar 6 is the human seam that
+proves both come from the same person. Keep a rough balance across a rolling 10:
+the audience should see the builder and the watchdog, not one alone.
 
-1. **Time Wins** — quick, specific AI + automation moves that save real hours this
-   week. Snackable, practical, highly shareable.
+1. **AI to ROI** — real business return from AI: build, innovate, and ship ideas
+   at a fraction of the old cost. The practical, shareable "here is what it made
+   possible and what it cost" pillar. (Absorbs the retired Time Wins.)
 2. **Build Once, Runs Forever** — systems and automations that keep working while
    you sleep. Show the finished build as proof (she is out of the weeds).
-3. **The Freedom Business** — work less, live more. Designing a business and a life
-   that does not depend on you being online 24/7. Aspirational + mindset.
-4. **Stop Doing That by Hand** — provocative call-outs ("You're STILL doing this
-   manually?"), before/after contrast. The warm-but-edgy hook pillar.
-5. **What's Worth It** — occasional curated takes on the AI tools/news that actually
-   matter for solopreneurs. Filters the noise. Not daily news.
-6. **Real Talk** — relatable founder moments and lessons, including the
-   corporate → entrepreneur journey that bridges to her audience ("here's what
-   leaving the 9-to-5 actually looked like"). Seasoning and relatability — the story
-   is the bridge, not the whole show.
+3. **Responsible by Design** — getting the return without walking into the data,
+   copyright, and privacy traps that cost more later. The bridge pillar: ROI with
+   the guardrails on. (Absorbs the retired Stop-Doing-That-by-Hand hook energy,
+   pointed at doing it *right*, not just doing it.)
+4. **The Red Line** — the governance watchdog. What is actually at stake when AI
+   crosses ethical and legal lines: real cases (Project Panama, NYT v OpenAI),
+   what regulators are doing, what business owners will have to answer for.
+   Serious register, sourced, "legal and moral are not the same line."
+5. **What's Worth It** — curated takes on the AI tools, news, and rules that
+   actually matter. Filters the noise, including the governance noise. Not daily
+   news.
+6. **Real Talk** — the founder from inside the industry: mixed feelings, honest
+   lessons, the corporate → builder journey. The seam that makes both lanes
+   credibly one person. Seasoning and relatability, not the whole show.
 
 ---
 
