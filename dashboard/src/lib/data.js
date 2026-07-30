@@ -4,6 +4,7 @@
 // the repo root. Pure Node, zero parsing deps.
 import fs from 'node:fs';
 import path from 'node:path';
+import { parseVault } from '../../../tools/vault-parse.mjs';
 
 // dashboard/ runs with cwd = dashboard/, so the repo root is one level up.
 const REPO_ROOT = path.resolve(process.cwd(), '..');
@@ -51,6 +52,7 @@ const PILLARS = [
 
 export function getVault(base) {
   const raw = readSafe(base, 'content-vault.md');
+  const parsedByNum = new Map(parseVault(raw).map((e) => [e.num, e]));
   const re = /^## ENTRY\s+(\d+)\s+—\s+(.+)$/gm;
   const headers = [];
   let m;
@@ -93,27 +95,14 @@ export function getVault(base) {
     const hasVisual = /\*\*Visual:\*\*/.test(block);
     const visualUrl = (block.match(/\*\*Visual:\*\*[\s\S]*?(https?:\/\/\S+)/) || [])[1] || '';
 
-    // Extract the body content for dashboard review.
-    // Strip the metadata header (everything up to and including the first ---)
-    // and spoken-script / caption sections are preserved for reading.
-    let body = '';
-    const bodyMatch = block.match(/^---\s*$([\s\S]*)/m);
-    if (bodyMatch) {
-      body = bodyMatch[1]
-        .replace(/^### (SPOKEN SCRIPT|CAPTION)\s*$/gm, '\n**$1**\n')
-        .replace(/\*\*Status:\*\*.+\n?/g, '')
-        .replace(/\*\*Platform:\*\*.+\n?/g, '')
-        .replace(/\*\*Format:\*\*.+\n?/g, '')
-        .replace(/\*\*Topic:\*\*.+\n?/g, '')
-        .replace(/\*\*Pattern used:\*\*.+\n?/g, '')
-        .replace(/\*\*Pillar:\*\*.+\n?/g, '')
-        .replace(/\*\*Critic score:\*\*.+\n?/g, '')
-        .replace(/\*\*Source:\*\*.+\n?/g, '')
-        .replace(/^---\s*$/gm, '')
-        .replace(/^\s*>\s+\*\*Production note.+$/gm, '')
-        .replace(/\n{3,}/g, '\n\n')
-        .trim();
-    }
+    // Post body via the one shared parser (tools/vault-parse.mjs).
+    // This used to look for "everything after the first ---", which was an
+    // older entry format. In the current format --- ENDS an entry, so this
+    // returned an empty body for 46 of 73 entries and 35 of the 37 that were
+    // READY TO POST: Mission Control showed "(no content yet)" for nearly the
+    // whole publishable queue, which is why nothing could be reviewed here.
+    const parsed = parsedByNum.get(headers[i].num);
+    const body = parsed ? parsed.text : '';
 
     entries.push({
       num: headers[i].num,
