@@ -114,6 +114,29 @@
 
 ---
 
+## ENTRY 095 — 30/07/2026 | LinkedIn | Project Panama: the AI industry destroyed the books it scanned, and a court called it legal | DRAFT
+`C · Real Talk · CTA: discussion (no keyword) · critic pending · src: Bartz v. Anthropic Case 3:24-cv-05417-AMO Doc 560-26 (Project Panama filing) + Datamation SOW ANT_BARTZ_000004034 + Alsup order p.14 + Aug 2025 settlement; operator-sourced court exhibits 30/07/2026`
+
+I came across a video this week that I cannot unsee. Books being fed into machines, their spines sliced off by hydraulic cutters, the pages scanned and the paper thrown away. This was not a fringe operation. It was run by one of the most valued companies in AI.
+
+Some days it gets harder to advocate for this industry, and this was one of them.
+
+Here is what the court filings actually show, because the detail is the whole story. Anthropic ran an internal effort under the codename Project Panama. Its own privileged planning document, now unsealed, describes it in a single line: "our effort to destructively scan all the books in the world." They hired a contractor, Datamation, to convert between 500,000 and 2 million books over 6 months in 2024. The books were cut apart on hydraulic machines, scanned, and the originals destroyed. The court put it plainly: "It destroyed each print copy."
+
+In June 2025 a federal judge ruled this was legal. If you lawfully own the book, converting your own copy to digital counts as fair use. A separate claim over pirated books was settled for 1.5 billion dollars in August 2025, with no admission of wrongdoing. The New York Times is pursuing OpenAI over the same underlying question.
+
+So the law has given its answer. That does not mean the question is settled.
+
+Legal and moral are not the same line, and this is the exact place where they separate. They chose a secret codename because, in their own words, they did not want it known they were working on this. When a plan has to be hidden from the people it affects, that is usually the tell.
+
+I work in AI. I build with it every day, and I believe in what it can do. That is precisely why I think the people inside this field have to be the ones who say this out loud, rather than leaving it to the people who already distrust all of it.
+
+Patterns are the core of how this technology works, and they are also how we should read its behaviour. The pattern of destroying knowledge in order to control it is one that history has shown us before, in its darkest chapters.
+
+Where is the line for you: between what AI is allowed to do, and what it should do?
+
+---
+
 ## ENTRY 094 — 24/07/2026 | LinkedIn | How to Show Your Automation Working Instead of Explaining How It Works. | DRAFT
 `C · Build Once, Runs Forever · CTA: community tease · critic 7.2 · src: RESEARCH 043-S3 (Lightreel.ai Result-First Tutorial, Jul 2026) · ⚠️ VERIFY: view-multiplier claim — confirm from Lightreel.ai before posting · ⚠️ PREP: insert community link or member story before queueing`
 
