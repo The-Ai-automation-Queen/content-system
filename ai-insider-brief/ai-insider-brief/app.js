@@ -242,40 +242,6 @@ function clearTopicFilter() {
 // MODULE C: Card Rendering
 // ============================================================
 
-// An inline opt-in inside the feed. The brief is a feed, so its job is capture
-// and freshness, never a content gate.
-function createInlineOptIn(n) {
-  var wrap = document.createElement('section');
-  wrap.className = 'feed-optin';
-  var h = document.createElement('p');
-  h.className = 'feed-optin-title';
-  h.textContent = 'One clear verdict on the AI news that matters.';
-  var sub = document.createElement('p');
-  sub.className = 'feed-optin-sub';
-  sub.textContent = 'Every week, free. What changed, whether you should care, and what to do.';
-  var form = document.createElement('form');
-  form.className = 'capture-form';
-  form.setAttribute('action', 'https://formspree.io/f/xgojoyka');
-  form.setAttribute('method', 'POST');
-  form.setAttribute('data-source', 'brief-inline-' + n);
-  var email = document.createElement('input');
-  email.type = 'email'; email.name = 'email'; email.required = true;
-  email.autocomplete = 'email'; email.placeholder = 'your@email.com';
-  var source = document.createElement('input');
-  source.type = 'hidden'; source.name = 'source'; source.value = 'brief-inline-' + n;
-  var pot = document.createElement('input');
-  pot.type = 'text'; pot.name = '_gotcha'; pot.tabIndex = -1;
-  pot.autocomplete = 'off'; pot.style.display = 'none';
-  var btn = document.createElement('button');
-  btn.type = 'submit'; btn.textContent = 'Subscribe free';
-  form.appendChild(email); form.appendChild(source); form.appendChild(pot); form.appendChild(btn);
-  // Copy is one flex item, the form is the other, so the band reads as a row.
-  var copy = document.createElement('div');
-  copy.className = 'feed-optin-copy';
-  copy.appendChild(h); copy.appendChild(sub);
-  wrap.appendChild(copy); wrap.appendChild(form);
-  return wrap;
-}
 
 function createCardElement(card, index) {
   var el = document.createElement('div');
@@ -383,17 +349,9 @@ function renderFeed(cards) {
     return;
   }
 
-  // One opt-in, once, on a row boundary. Deeper than the fold so the feed has
-  // already earned it, and only one so the page reads as a briefing rather than
-  // a sales page.
-  var OPTIN_AFTER = 6;
-
   for (var i = 0; i < cards.length; i++) {
     var cardEl = createCardElement(cards[i], i);
     feed.appendChild(cardEl);
-    if (i + 1 === OPTIN_AFTER && i + 1 < cards.length) {
-      feed.appendChild(createInlineOptIn(1));
-    }
   }
   if (window.slWireCaptureForms) window.slWireCaptureForms();
 
