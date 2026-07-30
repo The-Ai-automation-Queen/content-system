@@ -14,18 +14,23 @@ the system learns what works.
 Free-first. Every default source costs nothing; Apify is opt-in and skipped
 unless `APIFY_TOKEN` is set.
 
-- **Meta Graph API** (preferred for IG/FB — richer data, free, needs a token)
-- **Blotato analytics** (Twitter/X, Instagram, Facebook, Threads, Bluesky)
+- **Meta Graph API** for Instagram, Facebook, and Threads if the token is
+  scoped for it (free, first-party, needs `META_ACCESS_TOKEN`)
 - **yt-dlp** for YouTube (free, no key, installed by `deploy/install.sh`)
-- Manual paste for LinkedIn (no free automated route)
+- Manual paste for LinkedIn and Twitter/X (no free automated route)
 - **Apify** scrapers — optional paid fallback only
 
-### What Blotato analytics cannot see
-It reports only on posts published **through Blotato**. Engine Law 1 makes this
-repo queue-only with manual release, so anything posted natively in the app is
-invisible. An empty result usually means "not published via Blotato", not "no
-engagement" — say which, do not conflate them. It also covers five platforms
-only: LinkedIn, YouTube and TikTok never return metrics.
+### Blotato is not a metrics source
+Operator decision, 2026-07-30: performance does not go through Blotato, and its
+analytics feature is not built correctly. `blotato_list_posts` and
+`blotato_get_post_status` stay in use for the **queue cross-reference** — what
+was scheduled — but never for engagement numbers.
+
+### The real gate is `META_ACCESS_TOKEN`
+One credential covers Instagram, Facebook and possibly Threads, independent of
+how posts are published. Until it is set, those three fall through to manual
+paste and the machine cannot measure them on its own. Report the token status
+explicitly rather than logging a generic scrape failure.
 
 ## Inputs
 - Platform API credentials (Meta access token, IG business ID, FB page ID)

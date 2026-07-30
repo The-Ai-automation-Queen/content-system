@@ -9,12 +9,15 @@ description: |
   YouTube, LinkedIn. Competitors optional via handles.
 
   Preferred source hierarchy per platform:
-    Instagram/Facebook — Meta Graph API (when META_ACCESS_TOKEN is set) → Blotato analytics
-    Twitter/X, Threads — Blotato analytics (free, Blotato-published posts only)
-    YouTube — yt-dlp (free, installed by deploy/install.sh)
-    LinkedIn — manual paste via 'linkedin-update' (no free automated route)
+    Instagram/Facebook/Threads — Meta Graph API (requires META_ACCESS_TOKEN) → manual paste
+    YouTube — yt-dlp (free, no key, installed by deploy/install.sh)
+    LinkedIn, Twitter/X — manual paste (no free automated route)
     TikTok — not connected
     Apify — optional paid fallback, skipped entirely unless APIFY_TOKEN is set
+
+  Blotato is NOT a metrics source (operator decision 2026-07-30). Its
+  list_posts/get_post_status tools stay available for queue cross-reference
+  only, never for engagement data.
 argument-hint: "[nothing needed | 'competitors' to also scrape tracked creators | 'linkedin-update' for manual LinkedIn stats paste]"
 allowed-tools:
   - Read
@@ -28,8 +31,6 @@ allowed-tools:
   - mcp__APIFY_-_Trends_listener__search-actors
   - mcp__Blotato__blotato_list_posts
   - mcp__Blotato__blotato_get_post_status
-  - mcp__Blotato__blotato_list_top_posts
-  - mcp__Blotato__blotato_get_post_analytics
 ---
 
 # Performance Tracker — Machine M06
@@ -70,36 +71,50 @@ fall back and log which path was taken.
 
 | Platform | Preferred source (free) | Fallback (free) | Paid fallback — only if `APIFY_TOKEN` set |
 |---|---|---|---|
-| **Instagram** | Meta Graph API (`/me/media`, `/me` insights) — requires `META_ACCESS_TOKEN` + `IG_BUSINESS_ID` | Blotato analytics | `apify/instagram-profile-scraper` + `apify/instagram-post-scraper` |
-| **Facebook** | Meta Graph API (`/{page-id}/published_posts`, `/{page-id}` insights) — requires `META_ACCESS_TOKEN` + `FB_PAGE_ID` | Blotato analytics | `apify/facebook-posts-scraper` ($0.005/post) |
-| **Twitter / X** | Blotato analytics | *(none)* | `apidojo/twitter-user-scraper` |
-| **Threads** | Blotato analytics | *(none)* | `apify/threads-scraper` |
+| **Instagram** | Meta Graph API (`/me/media`, `/me` insights) — requires `META_ACCESS_TOKEN` + `IG_BUSINESS_ID` | Manual paste | `apify/instagram-profile-scraper` + `apify/instagram-post-scraper` |
+| **Facebook** | Meta Graph API (`/{page-id}/published_posts`, `/{page-id}` insights) — requires `META_ACCESS_TOKEN` + `FB_PAGE_ID` | Manual paste | `apify/facebook-posts-scraper` ($0.005/post) |
+| **Threads** | Meta's Threads API, **if** the `META_ACCESS_TOKEN` in use is scoped for it. Probe once, record the answer in the report, do not re-probe daily | Manual paste | `apify/threads-scraper` |
 | **YouTube** | `yt-dlp --dump-single-json` on the channel URL (installed by `deploy/install.sh`) | *(none)* | `streamers/youtube-channel-scraper` |
 | **LinkedIn** | Manual paste via `linkedin-update` argument | *(none)* | `curious_coder/linkedin-profile-scraper` (max 1/day) |
+| **Twitter / X** | Manual paste | *(none)* | `kaitoeasyapi/twitter-x-data-tweet-scraper-pay-per-result-cheapest` ($0.25/1k, 99.6% success) |
 | **TikTok** | *(not connected — flag NOT CONNECTED)* | — | `clockworks/tiktok-scraper` |
 
-### Blotato analytics — how to read it, and what it cannot see
+### Blotato is NOT a metrics source
 
-Two tools: `blotato_list_top_posts` to find posts, then
-`blotato_get_post_analytics` with a post `id` for the metric history. Metrics
-come back as **strings**, not numbers — cast before doing arithmetic. Analytics
-refresh in the background, so a post published today may legitimately have
-`metrics: null`; when that happens check `lastError` before treating it as a
-failure.
+**Do not call `blotato_list_top_posts` or `blotato_get_post_analytics` for
+engagement data.** Operator decision, 2026-07-30: performance measurement does
+not go through Blotato, and its analytics feature is not built correctly.
+Verified the same day against the live connector — the account authenticates
+(9,088 credits) and returns zero published posts, so those tools yield nothing
+regardless.
 
-Three hard limits. Encode all three in the report rather than working around
-them:
+Blotato's analytics would also have been structurally wrong for this repo even
+if it worked: it covers five platforms only (no LinkedIn, YouTube or TikTok),
+and it sees only posts published *through Blotato*, while Engine Law 1 makes
+this repo queue-only with manual release.
 
-1. **Blotato covers only five platforms**: Twitter/X, Instagram, Facebook,
-   Threads, Bluesky. LinkedIn, YouTube and TikTok return no metrics, ever.
-2. **It sees only posts published *through Blotato*.** Anything Fatiha posts
-   natively in the app is invisible to it. Per Engine Law 1 this repo is
-   queue-only and she releases manually, so native posts are the norm, not the
-   exception. A zero result usually means "not published via Blotato", not
-   "no engagement".
-3. **LinkedIn has no free automated route at all.** It is the highest-value
-   platform here and manual paste is the only free path. Ask for it rather than
-   silently reporting LinkedIn as unavailable.
+`blotato_list_posts` and `blotato_get_post_status` remain allowed for the
+**queue cross-reference** in step 3 — what was scheduled, not how it performed.
+Keep that distinction.
+
+### The real gate is `META_ACCESS_TOKEN`
+
+With that token set, one credential covers Instagram, Facebook and possibly
+Threads — first-party, free, accurate, and independent of how Fatiha publishes.
+That is the single highest-value unblock for this machine. Until it is set,
+Instagram and Facebook have **no automated free route** and fall through to
+manual paste.
+
+So state the token status plainly at the top of every report. "Meta Graph API
+not configured, 3 platforms on manual paste" is a useful sentence. "Scrape
+failed" is not.
+
+### Manual paste is a first-class path, not an apology
+
+Four platforms may land on manual paste. When they do, do not silently report
+them as unavailable. Ask for exactly the numbers needed, name the platform, and
+say what the operator should open to find them. One clear ask beats a report
+full of gaps.
 
 ---
 
@@ -111,16 +126,17 @@ them:
 | Facebook | Page "AI Automation Queen" | `META_ACCESS_TOKEN`, `FB_PAGE_ID` |
 | YouTube | `AI-Automation-Queen` | *(none — yt-dlp needs no key)* |
 | LinkedIn | Fatiha Chikh | *(none — manual paste)* |
-| Twitter / X | `aiautomatik` | *(none — Blotato analytics)* |
-| Threads | `thefatihachikh` | *(none — Blotato analytics)* |
-| TikTok | *(not yet connected)* | *(connect to Blotato first)* |
+| Twitter / X | `aiautomatik` | *(none — manual paste, or Apify if opted in)* |
+| Threads | `thefatihachikh` | `META_ACCESS_TOKEN` (if scoped for Threads) |
+| TikTok | *(not yet connected)* | *(no route — flag NOT CONNECTED)* |
 
 Always re-read `inventory.md` at run time for the live handle list. If a handle
 changes there, follow it — do not hardcode.
 
 > **Env-var placeholders for `inventory.md`** (the operator fills these once):
 > `META_ACCESS_TOKEN`, `IG_BUSINESS_ID`, `FB_PAGE_ID`. Until they are set,
-> the Meta Graph API path is skipped and Blotato analytics runs instead.
+> the Meta Graph API path is skipped and Instagram, Facebook and Threads fall
+> through to manual paste.
 > `APIFY_TOKEN` is **optional** and unlocks only the paid fallbacks.
 > These tokens must **never** be committed to the repo — they live in Doppler
 > on the VPS or a `.env` file excluded by `.gitignore` (see `security.md`).
