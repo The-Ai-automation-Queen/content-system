@@ -70,8 +70,20 @@ export function getVault(base) {
     const title = parts[2] || '(untitled)';
     let status = parts[3] || '';
 
-    const fStatus = block.match(/\*\*Status:\*\*\s*(.+)/);
-    if (fStatus) status = fStatus[1].trim();
+    // The header's last pipe field is authoritative. `**Status:**` is a fallback
+    // for entries that predate the header convention, never an override.
+    //
+    // Both are written by api/update.js, so they normally agree. When they drift
+    // the header is the one to trust: weekly-ops auto-stales by rewriting the
+    // header, and on 20/07/2026 it staled ENTRY 002/003/004/006 there while
+    // leaving `**Status:** READY TO POST` behind. Preferring the field made the
+    // dashboard report 41 ready against the vault's 37, and offered Approve on
+    // four entries the vault had already retired — which "Exit statuses never
+    // queue" forbids.
+    if (!status) {
+      const fStatus = block.match(/\*\*Status:\*\*\s*(.+)/);
+      if (fStatus) status = fStatus[1].trim();
+    }
     const fPlatform = block.match(/\*\*Platform:\*\*\s*(.+)/);
     if (fPlatform) platform = fPlatform[1].trim();
     const fCritic = block.match(/\*\*Critic score:\*\*\s*([\d.]+)/);

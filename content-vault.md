@@ -2298,7 +2298,7 @@ Which number is your weakest? 👇
 
 ## ENTRY 006 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Turn One Idea Into a Week of Content | STALE 20/07/2026 (auto)
 
-**Status:** READY TO POST
+**Status:** STALE 20/07/2026 (auto)
 **Platform:** Instagram Reels / TikTok / YouTube Shorts (vertical 9:16)
 **Format:** ~35s talking-head + on-screen text + caption
 **Topic:** You don't need more ideas — you need to squeeze more out of the ones you have.
@@ -2339,7 +2339,7 @@ Drop your last good idea below 👇
 
 ## ENTRY 004 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Stop Using AI Like a Vending Machine | STALE 20/07/2026 (auto)
 
-**Status:** READY TO POST
+**Status:** STALE 20/07/2026 (auto)
 **Platform:** Instagram Reels / TikTok / YouTube Shorts (vertical 9:16)
 **Format:** ~35s talking-head + on-screen text + caption
 **Topic:** The move isn't asking AI to do a task today — it's building a system once that does it forever.
@@ -2379,7 +2379,7 @@ What would you turn into a system? 👇
 
 ## ENTRY 003 — 23/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | I Haven't Built a Slide Deck in 9 Months | STALE 20/07/2026 (auto)
 
-**Status:** READY TO POST
+**Status:** STALE 20/07/2026 (auto)
 **Platform:** Instagram Reels / TikTok / YouTube Shorts (vertical 9:16)
 **Format:** ~35s talking-head + on-screen text + caption
 **Topic:** You don't have to build the busywork by hand anymore — describe it, let AI draft it, you just tweak.
@@ -2421,7 +2421,7 @@ What would you hand off first? 👇
 
 ## ENTRY 002 — 23/06/2026 | LinkedIn | Stop Doing Robot Work With Human Hands | STALE 20/07/2026 (auto)
 
-**Status:** READY TO POST
+**Status:** STALE 20/07/2026 (auto)
 **Platform:** LinkedIn (text post)
 **Format:** Short text post + comment-trigger CTA
 **Topic:** The real AI wins aren't impressive — they're the boring repetitive tasks quietly eating your week.
