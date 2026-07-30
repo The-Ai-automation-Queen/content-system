@@ -56,37 +56,26 @@ else
 fi
 
 # ── 4. The Blotato key ───────────────────────────────────────────────────────
+# ── 4. Blotato key — entirely optional, never in the way ─────────────────────
+# The dashboard's whole job is reading posts and copying them. That needs no
+# credentials, so a missing key is the normal case and is not mentioned. If the
+# file happens to exist and is sound, live scheduling turns itself on quietly.
+# Anything wrong with it is ignored rather than raised: a broken key file must
+# never stop you reading your own content.
 LIVE=0
-if [ ! -f "$KEY_FILE" ]; then
-  echo
-  bold "  No Blotato key yet — starting in PREVIEW mode."
-  echo "  Preview shows every post and every check. It cannot send anything."
-  echo
-  echo "  To enable real scheduling later, run these two lines, putting your"
-  echo "  Blotato API key where xxx is, then start this script again:"
-  echo
-  echo "      printf 'BLOTATO_API_KEY=xxx\\n' > $KEY_FILE"
-  echo "      chmod 600 $KEY_FILE"
-  echo
-else
-  PERMS="$(stat -c '%a' "$KEY_FILE" 2>/dev/null || stat -f '%A' "$KEY_FILE" 2>/dev/null || echo '')"
+if [ -f "$KEY_FILE" ]; then
+  PERMS="$(stat -c '%a' "$KEY_FILE" 2>/dev/null || stat -f '%A' "$KEY_FILE" 2>/dev/null || echo '600')"
   case "$PERMS" in
-    600|400|'') : ;;
-    *) fail "$KEY_FILE is mode $PERMS — other accounts on this machine can read your key."
-       echo "  Fix it:  chmod 600 $KEY_FILE"
-       echo
-       exit 1 ;;
+    600|400)
+      set -a; . "$KEY_FILE" 2>/dev/null; set +a
+      if [ -n "${BLOTATO_API_KEY:-}" ]; then
+        export BLOTATO_LIVE=1
+        LIVE=1
+        ok "Blotato key loaded (${#BLOTATO_API_KEY} characters, not shown)"
+      fi
+      ;;
+    *) ok "Blotato key file skipped (mode $PERMS — needs chmod 600)" ;;
   esac
-  set -a; . "$KEY_FILE"; set +a
-  if [ -z "${BLOTATO_API_KEY:-}" ]; then
-    fail "$KEY_FILE has no BLOTATO_API_KEY= line."
-    echo "  Fix it:  printf 'BLOTATO_API_KEY=xxx\\n' > $KEY_FILE"
-    echo
-    exit 1
-  fi
-  export BLOTATO_LIVE=1
-  LIVE=1
-  ok "Blotato key loaded (${#BLOTATO_API_KEY} characters, not shown)"
 fi
 
 # ── 5. Is this a server? Then say how to reach it. ───────────────────────────
@@ -117,10 +106,8 @@ fi
 echo
 if [ "$LIVE" -eq 1 ]; then
   bold "  LIVE — scheduling a post will really schedule it on Blotato."
-else
-  bold "  PREVIEW — nothing can be sent."
+  echo
 fi
-echo
 
 if [ "$ON_SERVER" -eq 1 ]; then
   bold "  This is a server, so your browser cannot open it directly."
