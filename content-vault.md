@@ -133,6 +133,8 @@ I work in AI. I build with it every day, and I believe in what it can do. That i
 
 Patterns are the core of how this technology works, and they are also how we should read its behaviour. The pattern of destroying knowledge in order to control it is one that history has shown us before, in its darkest chapters.
 
+Calling it out is not enough on its own, so I have started building something in response. It is an open library for the advisors and counsel who will have to prepare organisations for AI governance, because the regulators need to catch up now, and sooner than ever. I will share it properly soon. [VERIFY: confirm the exact description and public link for the aigp repo before this line goes live]
+
 Where is the line for you: between what AI is allowed to do, and what it should do?
 
 ---
