@@ -114,7 +114,7 @@
 
 ---
 
-## ENTRY 095 — 30/07/2026 | LinkedIn | Project Panama: the AI industry destroyed the books it scanned, and a court called it legal | DRAFT
+## ENTRY 095 — 30/07/2026 | LinkedIn | Project Panama: the AI industry destroyed the books it scanned, and a court called it legal | POSTED
 `C · Real Talk · CTA: discussion (no keyword) · critic pending · src: Bartz v. Anthropic Case 3:24-cv-05417-AMO Doc 560-26 (Project Panama filing) + Datamation SOW ANT_BARTZ_000004034 + Alsup order p.14 + Aug 2025 settlement; operator-sourced court exhibits 30/07/2026`
 
 I came across a video this week that I cannot unsee. Books being fed into machines, their spines sliced off by hydraulic cutters, the pages scanned and the paper thrown away. This was not a fringe operation. It was run by one of the most valued companies in AI.
