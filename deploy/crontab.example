@@ -33,6 +33,9 @@ SHELL=/bin/bash
 
 # Daily @ 02:30 — generate 5 scripts (1 story, 2 news, 1 opinion, 1 edu).
 # Scripts are ready when the operator wakes up. Uses personal-brain.md + latest signals.
+# PAUSED 31/07/2026 via deploy/paused-machines.txt (run-machine.sh skips it).
+# The cron line stays so nothing breaks; the runner no-ops until content-engine
+# is removed from paused-machines.txt. Repoint to the Panama register first.
 30 2 * * *   __REPO__/deploy/run-machine.sh "/content-engine daily" 1 120
 
 # ── M06 — Performance Tracker ────────────────────────────────

@@ -1,0 +1,11 @@
+# Paused machines — one skill name per line ('#' starts a comment).
+# deploy/run-machine.sh reads this on every run and skips any skill listed here.
+# Pause  = add the bare skill name.   Resume = delete its line.
+# This is source-of-truth: the VPS picks up changes on its next pull, no
+# crontab edit needed.
+
+# Paused 31/07/2026: content-engine was producing 5 how-to drafts a day onto
+# the retired positioning, which buried the queue. Off until it is repointed
+# to the Panama register (flowing essays on the responsible-ROI / governance
+# lane, only on a real moment). Resume by deleting the next line.
+content-engine

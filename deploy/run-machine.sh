@@ -39,6 +39,19 @@ echo "== ${SKILL} @ ${TS} (branch ${BRANCH}) ==" | tee -a "$LOG"
 git pull --rebase --autostash origin "$BRANCH" >>"$LOG" 2>&1 || \
   echo "warn: git pull failed (continuing offline)" >>"$LOG"
 
+# Pause switch. deploy/paused-machines.txt lists skill names (one per line,
+# '#' comments allowed) that must NOT run. Checked AFTER the pull so toggling
+# a machine on/off is a one-line commit to main — the VPS picks it up on its
+# next run with no crontab edit and no VPS access. To pause: add the bare skill
+# name (e.g. content-engine). To resume: remove the line.
+PAUSE_FILE="$HERE/paused-machines.txt"
+SKILL_NAME="${SKILL#/}"; SKILL_NAME="${SKILL_NAME%% *}"
+if [ -f "$PAUSE_FILE" ] && grep -vE '^\s*(#|$)' "$PAUSE_FILE" | grep -qxF "$SKILL_NAME"; then
+  echo "paused: ${SKILL_NAME} is listed in paused-machines.txt — skipping this run" | tee -a "$LOG"
+  notify "⏸ ${SKILL_NAME} is paused (deploy/paused-machines.txt). Skipped this run."
+  exit 0
+fi
+
 run_once() {
   # Headless / non-interactive. --dangerously-skip-permissions is acceptable
   # here: it is YOUR VPS, YOUR repo, on a cron, and the skills are queue-only
