@@ -139,7 +139,7 @@ Where is the line for you: between what AI is allowed to do, and what it should 
 
 ---
 
-## ENTRY 094 — 24/07/2026 | LinkedIn | How to Show Your Automation Working Instead of Explaining How It Works. | DRAFT
+## ENTRY 094 — 24/07/2026 | LinkedIn | How to Show Your Automation Working Instead of Explaining How It Works. | STALE
 `C · Build Once, Runs Forever · CTA: community tease · critic 7.2 · src: RESEARCH 043-S3 (Lightreel.ai Result-First Tutorial, Jul 2026) · ⚠️ VERIFY: view-multiplier claim — confirm from Lightreel.ai before posting · ⚠️ PREP: insert community link or member story before queueing`
 
 How to show your automation working instead of explaining how it works. The Reels format breaking out right now.
@@ -171,7 +171,7 @@ Inside the community, we work on systems exactly like this every month — so th
 
 ---
 
-## ENTRY 093 — 24/07/2026 | LinkedIn | How to Use AI for the 23% of Tasks It's Actually Built For. And What to Do With the Other 77%. | READY TO POST
+## ENTRY 093 — 24/07/2026 | LinkedIn | How to Use AI for the 23% of Tasks It's Actually Built For. And What to Do With the Other 77%. | STALE
 `A · What's Worth It · CTA: STACK · critic 8.0 · src: RESEARCH 043-S1 (MIT study / @unusual_whales / Forbes, Jul 2026), RESEARCH 043-S2 (Forbes Tech Council / Saklani, Jul 2026)`
 
 How to use AI for the 23% of tasks it's actually built for. And what to do with the other 77%.
@@ -196,7 +196,7 @@ Comment STACK — I'll send my actual 3-tool setup. The one that handles my 23% 
 
 ---
 
-## ENTRY 092 — 24/07/2026 | LinkedIn | How to Build Your Head Start Before OpenAI Teaches AI to Your Competition for Free. This Week. | READY TO POST
+## ENTRY 092 — 24/07/2026 | LinkedIn | How to Build Your Head Start Before OpenAI Teaches AI to Your Competition for Free. This Week. | STALE
 `A · The Freedom Business · CTA: TEAM · critic 8.0 · src: RESEARCH 043-S7 (OpenAI Small Business Program, Jul 2026)`
 
 How to build your head start before OpenAI teaches AI to your competition for free. This week.
@@ -235,7 +235,7 @@ Comment TEAM — I'll send you the guide I use to set up a first AI employee fro
 
 ---
 
-## ENTRY 091 — 24/07/2026 | LinkedIn | How to Cut Your AI Costs to Under $50 a Month When Enterprises Are Burning $500M. The 23% Rule. | READY TO POST
+## ENTRY 091 — 24/07/2026 | LinkedIn | How to Cut Your AI Costs to Under $50 a Month When Enterprises Are Burning $500M. The 23% Rule. | STALE
 `A · What's Worth It · CTA: STACK · critic 8.3 · src: RESEARCH 043-S1 (MIT study / @unusual_whales / Forbes, Jul 2026)`
 
 How to cut your AI costs to under $50 a month when enterprises are burning $500M. The 23% rule.
@@ -279,7 +279,7 @@ Do this today and comment STACK with the task you identified. I'll send my actua
 
 ---
 
-## ENTRY 090 — 24/07/2026 | LinkedIn | How to Build the System First, Ship Second, and Stop Confusing the Two. | DRAFT
+## ENTRY 090 — 24/07/2026 | LinkedIn | How to Build the System First, Ship Second, and Stop Confusing the Two. | STALE
 `C · Real Talk · CTA: community tease · critic 7.0 · src: personal-brain.md (current project — content OS build-in-public), performance-log.md (89-entry vault, 0 POSTED) · ⚠️ personal-brain sparse — rebuild middle section when trigger story is seeded · ⚠️ PREP: insert Whop community link before queueing`
 
 How to build the system first, ship second, and stop confusing the two.
@@ -308,7 +308,7 @@ The community I'm building is for the people doing exactly this — already buil
 
 ---
 
-## ENTRY 089 — 22/07/2026 | LinkedIn | How to Find the Exact Hours AI Can Give You Back. In 20 Minutes. | DRAFT
+## ENTRY 089 — 22/07/2026 | LinkedIn | How to Find the Exact Hours AI Can Give You Back. In 20 Minutes. | STALE
 `P · Time Wins · CTA: AI Time Audit ($47) · critic 7.8 · src: pillar method, Time Wins · ⚠️ PREP: insert Whop checkout link for AI Time Audit ($47) before queueing · ⚠️ PREP: add time pressure only if a genuine scarcity window exists (monetisation SKILL.md §ACP Rules)`
 
 How to find the exact hours in your week that AI can give you back. In 20 minutes.
@@ -336,7 +336,7 @@ The AI Time Audit is $47. → [WHOP LINK]
 
 ---
 
-## ENTRY 088 — 22/07/2026 | Short-form video | How to Turn Your Morning Routine Into the Most Shareable Reel of Your Week. No Editing. | READY TO POST
+## ENTRY 088 — 22/07/2026 | Short-form video | How to Turn Your Morning Routine Into the Most Shareable Reel of Your Week. No Editing. | STALE
 `A · Stop Doing That by Hand · CTA: TEAM · critic 8.0 · src: RESEARCH 042-S3 (Later.com Netflix Documentary Style, Jul 2026), RESEARCH 042-S4 (Lightreel.ai emotion-first hyper-specific text hooks, Jul 2026) · ⚠️ VERIFY: "hundreds of followers hitting hundreds of thousands of views" — confirm with Lightreel.ai examples (@judysxo_ 465.7x, @wfh.girl 248.4x) before posting`
 
 [OPEN — face to camera, natural setting, morning light]
@@ -371,7 +371,7 @@ Caption: How to turn your morning routine into the most shareable Reel of your w
 
 ---
 
-## ENTRY 087 — 22/07/2026 | LinkedIn | How to Get to Your First Automated Workflow When 74% of Solopreneurs Already Run 12. Tonight. | READY TO POST
+## ENTRY 087 — 22/07/2026 | LinkedIn | How to Get to Your First Automated Workflow When 74% of Solopreneurs Already Run 12. Tonight. | STALE
 `A · The Freedom Business · CTA: TEAM · critic 8.2 · src: RESEARCH 042-S7 (blog.mean.ceo solopreneur intelligence roundup Jul 2026 — 74%/12-18 workflows/$3k-$12k/33% time barrier), RESEARCH 042-S5 (YouTube solopreneur tech stack economics Jul 2026)`
 
 How to get to your first automated workflow when 74% of solopreneurs already run 12 of them. Tonight.
@@ -402,7 +402,7 @@ Do it tonight. Comment TEAM with the task you circled.
 
 ---
 
-## ENTRY 086 — 22/07/2026 | LinkedIn | How to Stop Using AI to Write Things and Start Using It to Run Things. The 3 Flows That Matter. | READY TO POST
+## ENTRY 086 — 22/07/2026 | LinkedIn | How to Stop Using AI to Write Things and Start Using It to Run Things. The 3 Flows That Matter. | STALE
 `A · What's Worth It · CTA: STACK · critic 8.2 · src: RESEARCH 042-S1 (Prayag Sonar, X, Jul 2026 — AI automation flows), RESEARCH 042-S2 (mean.ceo "boring operators win", Jul 2026)`
 
 How to stop using AI to write things and start using it to run things. The 3 flows solo founders are actually building in 2026.
@@ -435,7 +435,7 @@ Comment STACK and I'll send you the full 3-tool setup I actually run. Do it toni
 
 ---
 
-## ENTRY 085 — 22/07/2026 | LinkedIn | How to Know When AI Stops Being a Tool and Starts Running Your Business. One Question. | DRAFT
+## ENTRY 085 — 22/07/2026 | LinkedIn | How to Know When AI Stops Being a Tool and Starts Running Your Business. One Question. | STALE
 `A · Real Talk · CTA: STACK · critic 7.5 · src: RESEARCH 042-S1 (Prayag Sonar framing), RESEARCH 042-S2 (mean.ceo "boring operators win", Jul 2026)`
 
 How to know when AI stops being a tool you use and starts being a system that runs. One question reveals the difference.
@@ -462,7 +462,7 @@ Comment STACK and I'll send you the 3-tool setup I use to run this. No developer
 
 ---
 
-## ENTRY 084 — 21/07/2026 | LinkedIn | How to Build a Content System That Posts for You Every Week. The 4-Step Method. | READY TO POST
+## ENTRY 084 — 21/07/2026 | LinkedIn | How to Build a Content System That Posts for You Every Week. The 4-Step Method. | STALE
 `A · Build Once, Runs Forever · CTA: PIPELINE · critic 8.0 · src: pillar method · receipt: vault count (79 entries, 1st use in this window)`
 
 How to build a content system that posts for you every week. The 4-step method.
@@ -489,7 +489,7 @@ Comment PIPELINE and I'll send you the voice clone pipeline — the one I use to
 
 ---
 
-## ENTRY 083 — 21/07/2026 | LinkedIn | How to Tell If Your AI Tools Are Actually Working. Forbes Just Named the Question. | DRAFT
+## ENTRY 083 — 21/07/2026 | LinkedIn | How to Tell If Your AI Tools Are Actually Working. Forbes Just Named the Question. | STALE
 `C · What's Worth It · CTA: community waitlist · critic 7.5 · src: RESEARCH 041-S2 (Forbes, Vivian Toh, Jul 17 2026), RESEARCH 040-S1 (Technology Radar Jul 6 2026, Hector Pincheira), RESEARCH 040-S2 (OpenAI ROI Scorecard Jul 19 2026, Lilach Bullock) · ⚠️ PREP: insert community waitlist link before queueing · ⚠️ Note: "tabs vs. stack" distinction also appears in ENTRY 077 — different framing, separated by 7 entries; flag for operator awareness`
 
 How to tell if your AI tools are actually working. Forbes just named the question.
@@ -520,7 +520,7 @@ The answers are always more surprising than the tools. Come in →
 
 ---
 
-## ENTRY 082 — 21/07/2026 | LinkedIn | How to Set Up the Comment-to-DM System That Captures Leads While You Sleep. 4 Steps. | READY TO POST
+## ENTRY 082 — 21/07/2026 | LinkedIn | How to Set Up the Comment-to-DM System That Captures Leads While You Sleep. 4 Steps. | STALE
 `A · Stop Doing That by Hand · CTA: TEAM · critic 8.2 · src: RESEARCH 041-S4 (mean.ceo Instagram Trends Jul 2026, comment-to-DM highest-converting strategy)`
 
 How to set up the comment-to-DM system that captures leads while you sleep. 4 steps.
@@ -555,7 +555,7 @@ Do it and comment TEAM with the keyword you chose. I'll send you the free guide 
 
 ---
 
-## ENTRY 081 — 21/07/2026 | LinkedIn | How to Beat a $145 Billion AI Budget. Tonight. | READY TO POST
+## ENTRY 081 — 21/07/2026 | LinkedIn | How to Beat a $145 Billion AI Budget. Tonight. | STALE
 `A · What's Worth It · CTA: STACK · critic 8.2 · src: RESEARCH 041-S1 (TechCrunch Jul 2 2026, Zuckerberg town hall, Meta $145B infrastructure cut)`
 
 How to beat a $145 billion AI budget. Tonight.
@@ -590,7 +590,7 @@ Comment STACK and I'll send you the 3-tool setup I actually use.
 
 ---
 
-## ENTRY 080 — 21/07/2026 | LinkedIn | How to Unlearn the Instinct That Makes AI Automation Feel Wrong. And What to Do Instead. | DRAFT
+## ENTRY 080 — 21/07/2026 | LinkedIn | How to Unlearn the Instinct That Makes AI Automation Feel Wrong. And What to Do Instead. | STALE
 `C · Real Talk · CTA: community waitlist · critic 7.3 · src: personal-brain.md (20+ years corporate background; current project: building content OS) · ⚠️ PREP: insert community waitlist link before queueing · ⚠️ Note: no specific logged anecdote available in personal-brain — post is framed as shared observation grounded in her background; lifts to ~8.5 when (a) PREP resolved and (b) a specific trigger moment is seeded in personal-brain`
 
 How to unlearn the instinct that makes AI automation feel wrong. And what to do instead.
@@ -621,7 +621,7 @@ The answers are always more honest than the tools. Come in →
 
 ---
 
-## ENTRY 079 — 20/07/2026 | Short-form video | How to Build an Interactive Lead Magnet for Free. No Code. 20 Minutes. | READY TO POST
+## ENTRY 079 — 20/07/2026 | Short-form video | How to Build an Interactive Lead Magnet for Free. No Code. 20 Minutes. | STALE
 `A · Build Once, Runs Forever · CTA: PROMPT · critic 8.0 · src: RESEARCH 040-S7 (Canva Code 2.0, Marcus Mendes/9to5Mac Jul 14 2026)`
 
 **[HOOK — 0:00, on camera]**
@@ -649,7 +649,7 @@ How to build an interactive lead magnet using Canva Code 2.0. Free plan. No code
 
 ---
 
-## ENTRY 078 — 20/07/2026 | LinkedIn | How to Hand Your First Business Task to an AI Employee. 5 Steps, 10 Minutes. | READY TO POST
+## ENTRY 078 — 20/07/2026 | LinkedIn | How to Hand Your First Business Task to an AI Employee. 5 Steps, 10 Minutes. | STALE
 `A · The Freedom Business · CTA: TEAM · critic 8.2 · src: RESEARCH 039-S1 (John Werner, Forbes Jul 18 2026)`
 
 How to hand your first business task to an AI employee. 5 steps, 10 minutes.
@@ -682,7 +682,7 @@ Comment TEAM and I'll send you the free guide to setting up your first AI employ
 
 ---
 
-## ENTRY 077 — 20/07/2026 | LinkedIn | How to Build the 3-Tool AI Stack That Actually Works. Tonight. | READY TO POST
+## ENTRY 077 — 20/07/2026 | LinkedIn | How to Build the 3-Tool AI Stack That Actually Works. Tonight. | STALE
 `A · What's Worth It · CTA: STACK · critic 8.0 · src: RESEARCH 040-S1 (Technology Radar Jul 6 2026, Hector Pincheira), RESEARCH 040-S2 (OpenAI ROI Scorecard Jul 19 2026, Lilach Bullock)`
 
 78% of companies bought AI tools. 74% got nothing back.
@@ -709,7 +709,7 @@ Comment STACK and I'll send you the 3-tool setup I actually use.
 
 ---
 
-## ENTRY 076 — 16/07/2026 | LinkedIn | How to Find Out Exactly Which Hours AI Can Give You Back. In 20 Minutes. | DRAFT
+## ENTRY 076 — 16/07/2026 | LinkedIn | How to Find Out Exactly Which Hours AI Can Give You Back. In 20 Minutes. | STALE
 `P · Time Wins · CTA: AI Time Audit $47 → [PREP: Whop checkout link] · critic 7.3 · src: pillar method (Time Wins) · ⚠️ PREP: insert Whop checkout link for AI Time Audit before queueing · ⚠️ PREP: add time pressure / launch window once live`
 
 How to find out exactly which hours AI can give you back. In 20 minutes.
@@ -743,7 +743,7 @@ If you want the structured template that turns this 20-minute audit into a runni
 
 ---
 
-## ENTRY 075 — 16/07/2026 | LinkedIn | How to Skip the AI Debate and Get Your Time Back This Tuesday | READY TO POST
+## ENTRY 075 — 16/07/2026 | LinkedIn | How to Skip the AI Debate and Get Your Time Back This Tuesday | STALE
 `A · What's Worth It · CTA: WHAT · critic 8.0 · src: RESEARCH 036-S1 (Paul Graham, @paulg X Jul 7 2026), RESEARCH 036-S7 (Bloomberg Jul 10 2026), RESEARCH 036 contrarian take`
 
 How to skip the AI debate and get your time back this Tuesday.
@@ -772,7 +772,7 @@ Comment WHAT and I'll send you the plain-English guide to what AI actually is ri
 
 ---
 
-## ENTRY 074 — 16/07/2026 | LinkedIn | How to Join the 41 Million Solopreneurs Already Winning With AI | READY TO POST
+## ENTRY 074 — 16/07/2026 | LinkedIn | How to Join the 41 Million Solopreneurs Already Winning With AI | STALE
 `A · The Freedom Business · CTA: WHAT · critic 8.0 · src: RESEARCH 036-S7 (Bloomberg Jul 10 2026) · Note: CTA map designates FREEDOM for Freedom Business A posts — FREEDOM is inactive (lead-magnets.csv); WHAT used as closest active alternative for educational next step`
 
 How to join the 41 million solopreneurs already winning with AI. Starting today.
@@ -807,7 +807,7 @@ Comment WHAT and I'll send you the plain-English guide to what AI actually is ri
 
 ---
 
-## ENTRY 073 — 16/07/2026 | LinkedIn | How to Stop Waiting for the Perfect AI and Hire the One That Exists Right Now | READY TO POST
+## ENTRY 073 — 16/07/2026 | LinkedIn | How to Stop Waiting for the Perfect AI and Hire the One That Exists Right Now | STALE
 `A · Stop Doing That by Hand · CTA: TEAM · critic 8.2 · src: RESEARCH 036-S1 (Paul Graham, @paulg X Jul 7 2026, 173 replies), RESEARCH 036-S3 (@bizgenix.ai contrast reel May 2026)`
 
 How to stop waiting for the perfect AI and hire the one that exists right now.
@@ -840,7 +840,7 @@ Do it today and comment TEAM with the task you automated. I'll send you the full
 
 ---
 
-## ENTRY 072 — 16/07/2026 | LinkedIn | How to Stop Doing the Work and Start Being the Decision-Maker | DRAFT
+## ENTRY 072 — 16/07/2026 | LinkedIn | How to Stop Doing the Work and Start Being the Decision-Maker | STALE
 `C · Real Talk · CTA: community waitlist · critic 7.0 · src: personal-brain.md (current project, system live 6+ weeks) · ⚠️ PREP: insert community waitlist link before queueing`
 
 How to stop doing the work and start being the decision-maker. What the shift actually feels like.
@@ -871,7 +871,7 @@ The waitlist is open. Come in →
 
 ---
 
-## ENTRY 071 — 15/07/2026 | LinkedIn | How to Give AI the Full Picture of Your Business Without Sharing Private Data | DRAFT
+## ENTRY 071 — 15/07/2026 | LinkedIn | How to Give AI the Full Picture of Your Business Without Sharing Private Data | STALE
 `C · Time Wins · CTA: community waitlist · critic 7.5 · src: pillar method, vault practice · ⚠️ PREP: insert community waitlist link before queueing`
 
 How to give AI the full picture of your business without sharing private data. The method in 4 steps.
@@ -902,7 +902,7 @@ If you want to do this alongside people who are building for real: join us → [
 
 ---
 
-## ENTRY 070 — 15/07/2026 | LinkedIn | How to Take the AI Timing Window That Most Solopreneurs Don't Know Is Open | READY TO POST
+## ENTRY 070 — 15/07/2026 | LinkedIn | How to Take the AI Timing Window That Most Solopreneurs Don't Know Is Open | STALE
 `A · What's Worth It · CTA: WHAT · critic 8.0 · src: RESEARCH 035-S2 (Zuckerberg/TechCrunch Jul 2 2026), RESEARCH 035-S6 (Claude for Teachers, Anthropic Jul 14 2026)`
 
 How to take the AI timing window that most solopreneurs don't know is open.
@@ -933,7 +933,7 @@ Comment WHAT and I'll send you the plain-English guide to what AI actually is ri
 
 ---
 
-## ENTRY 069 — 15/07/2026 | LinkedIn | How to Handle Customer Support for $0.46 Per Ticket | READY TO POST
+## ENTRY 069 — 15/07/2026 | LinkedIn | How to Handle Customer Support for $0.46 Per Ticket | STALE
 `A · Stop Doing That by Hand · CTA: INBOX · critic 8.0 · src: RESEARCH 035-S7 (Mean CEO Blog, AI Agents News Jul 2026)`
 
 How to handle customer support for $0.46 per ticket. Step by step, this week.
@@ -966,7 +966,7 @@ Do it and comment INBOX with the question it handles best. I'll send you the ful
 
 ---
 
-## ENTRY 068 — 15/07/2026 | LinkedIn | How to Make Your Business Agent-Ready Starting Tonight | READY TO POST
+## ENTRY 068 — 15/07/2026 | LinkedIn | How to Make Your Business Agent-Ready Starting Tonight | STALE
 `A · Build Once, Runs Forever · CTA: TEAM · critic 8.0 · src: RESEARCH 035-S1 (Greg Isenberg, X ~Jul 2026)`
 
 How to make your business agent-ready starting tonight. One SOP, one document, 30 minutes.
@@ -997,7 +997,7 @@ Do it tonight, then comment TEAM with what process you documented. I'll send you
 
 ---
 
-## ENTRY 067 — 15/07/2026 | LinkedIn | Day 1 of Switching My Machine On — Build a Content Machine That Runs Without You | READY TO POST
+## ENTRY 067 — 15/07/2026 | LinkedIn | Day 1 of Switching My Machine On — Build a Content Machine That Runs Without You | STALE
 `A · Build Once, Runs Forever · CTA: TEAM · critic 8.0 · src: personal-brain.md (current project), performance-log.md (vault count 66 verified, 0 POSTED verified)`
 `Series: Activation Arc — Day 1`
 
@@ -1032,7 +1032,7 @@ Tomorrow: the first posts go live. I'll show you the numbers from Day 1.
 
 ---
 
-## ENTRY 066 — 14/07/2026 | Short-form video | How One Person Runs a Company of 137 AI Employees | READY TO POST
+## ENTRY 066 — 14/07/2026 | Short-form video | How One Person Runs a Company of 137 AI Employees | STALE
 `A · The Freedom Business · CTA: TEAM · supersedes 010 · src: proof.md`
 
 **[0–4s HOOK, on camera]** "My company has 137 employees. Human headcount: one. Here's how that actually works."
@@ -1074,7 +1074,7 @@ Comment WORDS and I'll send you the plain-English AI guide I wish I'd had that S
 
 ---
 
-## ENTRY 064 — 14/07/2026 | LinkedIn | How to Run Your Whole Business on 3 Tools | READY TO POST
+## ENTRY 064 — 14/07/2026 | LinkedIn | How to Run Your Whole Business on 3 Tools | STALE
 `A · What's Worth It · CTA: STACK · supersedes 005 · src: opinion/curation`
 
 How many tools does an AI-run business actually need? Three. Not thirty. Here's the filter.
@@ -1095,7 +1095,7 @@ Comment STACK and I'll send you the exact 3-tool setup my whole company runs on.
 
 ---
 
-## ENTRY 063 — 14/07/2026 | LinkedIn | How to Automate Without Scaling Your Chaos | READY TO POST
+## ENTRY 063 — 14/07/2026 | LinkedIn | How to Automate Without Scaling Your Chaos | STALE
 `A · Build Once, Runs Forever · CTA: PROMPT · supersedes 009 · src: RESEARCH 018 · ⚠️ VERIFY: 95% stat before queueing`
 
 How do most AI projects fail? They automate the mess instead of fixing it first. Something like 95% of them never make a business any money, and the tech is almost never the reason.
@@ -1117,7 +1117,7 @@ Comment PROMPT and I'll send you the guide to writing the instruction that turns
 
 ---
 
-## ENTRY 062 — 14/07/2026 | LinkedIn | How to Test If an AI Tool Is Worth Your Money | READY TO POST
+## ENTRY 062 — 14/07/2026 | LinkedIn | How to Test If an AI Tool Is Worth Your Money | STALE
 `A · What's Worth It · CTA: STACK · supersedes 014 · src: RESEARCH 021-S7`
 
 How do you know if an AI tool is worth your money? One test: does it save you 5 hours a week without creating new problems?
@@ -1137,7 +1137,7 @@ Comment STACK and I'll send you the 3 tools that passed.
 
 ---
 
-## ENTRY 061 — 14/07/2026 | LinkedIn | How to Pick the Right First Thing to Automate | READY TO POST
+## ENTRY 061 — 14/07/2026 | LinkedIn | How to Pick the Right First Thing to Automate | STALE
 `A · Stop Doing That by Hand · CTA: TEAM · supersedes 016 · src: RESEARCH 018 + 021, proof.md`
 
 9 out of 10 people quit automation in week 1. Not because it's hard, because they automate the wrong thing first.
@@ -1180,7 +1180,7 @@ Comment WORDS and I'll send you the plain-English AI jargon guide. It's the firs
 
 ---
 
-## ENTRY 059 — 14/07/2026 | LinkedIn | How a One-Person Business Outruns Meta's $145 Billion | READY TO POST
+## ENTRY 059 — 14/07/2026 | LinkedIn | How a One-Person Business Outruns Meta's $145 Billion | STALE
 `A · What's Worth It · CTA: WHAT · supersedes 030 · src: RESEARCH 030-S2, 028-S1`
 
 How does a one-person business move faster than $145 billion? This week gave us the answer.
@@ -1201,7 +1201,7 @@ Comment WHAT and I'll send you the plain-English guide to what AI actually is ri
 
 ---
 
-## ENTRY 058 — 14/07/2026 | LinkedIn | How to Score Your AI Skills in 2 Minutes | READY TO POST
+## ENTRY 058 — 14/07/2026 | LinkedIn | How to Score Your AI Skills in 2 Minutes | STALE
 `A · Time Wins · CTA: STACK · supersedes 031 · src: RESEARCH 030-S6 (Anthropic 4D framework)`
 
 Anthropic just named the 4 skills that separate people who get real work from AI from people who get slop.
@@ -1228,7 +1228,7 @@ Comment STACK and I'll send you my 3-tool setup. The tools are the small part. T
 
 ---
 
-## ENTRY 057 — 14/07/2026 | LinkedIn | How the Top 3.6% of Solopreneurs Use AI Differently | READY TO POST
+## ENTRY 057 — 14/07/2026 | LinkedIn | How the Top 3.6% of Solopreneurs Use AI Differently | STALE
 `A · Stop Doing That by Hand · CTA: TEAM · supersedes 032 · src: RESEARCH 030-S7`
 
 64% of solopreneurs use AI. Only 3.6% earn $1 million with it.
@@ -1253,7 +1253,7 @@ Comment TEAM and I'll send you the first thing I'd automate with it.
 
 ---
 
-## ENTRY 056 — 14/07/2026 | LinkedIn | How to Find Your First AI Employee in 10 Minutes | READY TO POST
+## ENTRY 056 — 14/07/2026 | LinkedIn | How to Find Your First AI Employee in 10 Minutes | STALE
 `A · Build Once, Runs Forever · CTA: INBOX · supersedes 033 · src: pillar method, prompt redaction-modeled`
 
 You did the same task 4 times this week and didn't notice. Across a month it's the biggest bill in your week, and nobody invoices you for it.
@@ -1278,7 +1278,7 @@ Do the audit tonight, then comment INBOX with your number 1, and I'll send you t
 
 ---
 
-## ENTRY 055 — 14/07/2026 | LinkedIn | How to Use This Week's AI News to Your Advantage | READY TO POST
+## ENTRY 055 — 14/07/2026 | LinkedIn | How to Use This Week's AI News to Your Advantage | STALE
 `A · What's Worth It · CTA: WHAT · supersedes 035 · src: RESEARCH 031-S2, 028-S2, 031-S4`
 
 How does a one-person business actually use this week's AI news? Three headlines, three moves.
@@ -1298,7 +1298,7 @@ Comment WHAT and I'll send you the plain-English guide to what AI actually is ri
 
 ---
 
-## ENTRY 054 — 14/07/2026 | LinkedIn | How the Boring AI Businesses Are Making the Money | READY TO POST
+## ENTRY 054 — 14/07/2026 | LinkedIn | How the Boring AI Businesses Are Making the Money | STALE
 `C · Build Once, Runs Forever · CTA: community invite · supersedes 037 · src: RESEARCH 031-S5, 028-S1 · ⚠️ PREP: community link required before queueing`
 
 Teams with $145 billion budgets can't keep their flashy AI agents running. My most valuable one sorts email.
@@ -1321,7 +1321,7 @@ This is exactly what people come to build inside the community. One boring syste
 
 ---
 
-## ENTRY 053 — 14/07/2026 | LinkedIn | How I Stopped Being the Writer and Became the Judge | READY TO POST
+## ENTRY 053 — 14/07/2026 | LinkedIn | How I Stopped Being the Writer and Became the Judge | STALE
 `A · Build Once, Runs Forever · CTA: TEAM · supersedes 039 · src: personal experience (vault count verifiable)`
 
 I woke up to 5 finished posts I hadn't written. My vault now holds 43 of them.
@@ -1346,7 +1346,7 @@ Comment TEAM and I'll send you the setup for your first one.
 
 ---
 
-## ENTRY 052 — 14/07/2026 | LinkedIn | How to Run AI Agents Without Being Technical | READY TO POST
+## ENTRY 052 — 14/07/2026 | LinkedIn | How to Run AI Agents Without Being Technical | STALE
 `A · Stop Doing That by Hand · CTA: WHAT · supersedes 040 · src: RESEARCH 033-S1`
 
 99% of Uber's engineers use AI. 70% of their code now comes from agents they didn't build.
@@ -1373,7 +1373,7 @@ Comment WHAT and I'll send you the plain-English guide to what AI actually is. N
 
 ---
 
-## ENTRY 051 — 14/07/2026 | LinkedIn | How Solopreneurs Hit 60-80% Margins With AI | READY TO POST
+## ENTRY 051 — 14/07/2026 | LinkedIn | How Solopreneurs Hit 60-80% Margins With AI | STALE
 `A · The Freedom Business · CTA: TEAM · supersedes 041 · src: RESEARCH 033-S7, 030-S7, 033-S2 (Forbes)`
 
 Solo founders running AI systems keep 60 to 80% of what they earn. Staffed businesses keep 10 to 20%.
@@ -1398,7 +1398,7 @@ Comment TEAM and I'll send you the free guide to setting up the first role.
 
 ---
 
-## ENTRY 050 — 14/07/2026 | LinkedIn | How to Hand 7 Jobs to AI Without Hiring Anyone | READY TO POST
+## ENTRY 050 — 14/07/2026 | LinkedIn | How to Hand 7 Jobs to AI Without Hiring Anyone | STALE
 `A · Time Wins · CTA: STACK · supersedes 043 · src: RESEARCH 033-S7`
 
 I run 7 jobs in my business for less than $12,000 a year. A human team doing the same work would cost 6 figures.
@@ -1425,7 +1425,7 @@ Comment STACK and I'll send you the 3-tool setup behind the first 3.
 
 ---
 
-## ENTRY 049 — 14/07/2026 | Short-form video | How My Content Posts While I'm in Meetings | READY TO POST
+## ENTRY 049 — 14/07/2026 | Short-form video | How My Content Posts While I'm in Meetings | STALE
 `A · Build Once, Runs Forever · CTA: TEAM · supersedes 044 · src: RESEARCH 033 format signals`
 
 **[OPEN: phone screen, LinkedIn notification pop. Text: "While I was on a call this morning..."]**
@@ -1450,7 +1450,7 @@ VOICEOVER: "Comment TEAM and I'll send you the setup for your first one. Start w
 
 ---
 
-## ENTRY 048 — 14/07/2026 | X/Twitter thread | How Solo Founders Hit 60-80% Margins in 2026 | READY TO POST
+## ENTRY 048 — 14/07/2026 | X/Twitter thread | How Solo Founders Hit 60-80% Margins in 2026 | STALE
 `A · The Freedom Business · CTA: TEAM · supersedes 045 · src: RESEARCH 032-S7, 033-S1, 032-S6, proof.md`
 
 **1/** How are one-person companies hitting 60-80% profit margins in 2026?
@@ -1500,7 +1500,7 @@ Comment TEAM and I'll show you how to set up your first AI employee.
 
 ---
 
-## ENTRY 047 — 14/07/2026 | LinkedIn | How to Decide What to Hand to AI First | READY TO POST
+## ENTRY 047 — 14/07/2026 | LinkedIn | How to Decide What to Hand to AI First | STALE
 `A · What's Worth It · CTA: WORDS · supersedes 046 · src: RESEARCH 033-S1, 032-S6`
 
 70% of Uber's code now ships without an engineer typing it.
@@ -1529,9 +1529,9 @@ Comment WORDS and I'll send you the plain-English guide to what's actually happe
 
 ---
 
-## ENTRY 042 — 13/07/2026 | LinkedIn | Anthropic Just Admitted They Don't Have All the Answers. That's Actually Good News. | DRAFT
+## ENTRY 042 — 13/07/2026 | LinkedIn | Anthropic Just Admitted They Don't Have All the Answers. That's Actually Good News. | READY TO POST
 
-**Status:** DRAFT
+**Status:** READY TO POST
 **Platform:** LinkedIn (text post)
 **Format:** Contrarian Operational Hook (14), ~230 words
 **Topic:** Opinion — Anthropic's "Inviting Hard Questions" public forum (July 9, 2026) as evidence that you don't need to understand AI completely before starting. The builders admit uncertainty; waiting for certainty is the real mistake.
@@ -1543,26 +1543,26 @@ Comment WORDS and I'll send you the plain-English guide to what's actually happe
 **Source:** RESEARCH 033 Signal 6 (Anthropic "Inviting Hard Questions," July 9, 2026 — https://www.anthropic.com/news/hard-questions). No [VERIFY] flags.
 
 ---
-### LINKEDIN POST
+Anthropic just admitted they do not have all the answers about AI. For everyday entrepreneurs, that is the best news of the week.
 
-Anthropic just admitted they don't have all the answers about AI. That's actually the best news for everyday entrepreneurs.
+This week the company opened a public forum. Anyone can submit their hardest questions about AI. Who decides the rules? Does it make the world more dangerous? Can it give my children a better future? Each question gets tracked, and they have committed to answering every one in public.
 
-This week, Anthropic opened a public forum — anyone can submit their hardest questions about AI. "Who decides the rules?" "Does it make the world more dangerous?" "Can AI give my children a better future?" They're tracking each question and committing to answer it publicly.
+Sit with that for a second. This is one of the companies running the most capable AI systems in the world, and it is not claiming to have the thing figured out. It is asking.
 
-Here's the point most people are missing: this is the company running the most capable AI system in the world. They don't claim to have it figured out. They're asking.
+So if you have been waiting to start until you understand AI completely, until you can explain how it works, until the dust finally settles, you are waiting for something the people building it are not even claiming to have.
 
-So if you've been waiting to start until you understand AI completely — until you can explain how it works, until you've read all the analysis, until the dust settles — you're waiting for something the people building it aren't even claiming to have.
+The entrepreneurs winning with AI right now have worked out something smaller and more useful. You do not need the whole map. You need to know which few tools solve your specific problem this week, and you need to check their work before you trust it.
 
-What the entrepreneurs actually winning with AI have worked out: you don't need to understand the whole map. You need to know which three tools solve your specific problem this week. That's it.
+If the people at the frontier are comfortable saying they do not know yet, that is permission for the rest of us to begin before we feel ready.
 
-Comment WHAT and I'll send you the plain-English guide to what AI actually is — no theory, no jargon, just what matters for your business right now.
+Where are you still waiting to feel ready before you start?
 
 ---
 
 
-## ENTRY 038 — 11/07/2026 | LinkedIn | You Don't Need a Week to Set Up Your First AI Automation. You Need 30 Minutes. | DRAFT
+## ENTRY 038 — 11/07/2026 | LinkedIn | You Don't Need a Week to Set Up Your First AI Automation. You Need 30 Minutes. | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** LinkedIn (text post)
 **Format:** Teach Your System, Not the Tool (3), ~200 words
 **Topic:** Educational — three-question filter for finding your first automatable task. Concrete examples: email triage and research summaries. Ends with founding-member community invite.
@@ -1597,9 +1597,9 @@ Founding spots for the AI Automation Queen community are open at $27 a month, lo
 ---
 
 
-## ENTRY 036 — 11/07/2026 | LinkedIn | Instagram Quietly Changed What Gets You Reach. If You're Still Chasing Likes, You're Playing Last Year's Game. | DRAFT
+## ENTRY 036 — 11/07/2026 | LinkedIn | Instagram Quietly Changed What Gets You Reach. If You're Still Chasing Likes, You're Playing Last Year's Game. | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** LinkedIn (text post)
 **Format:** Provocation-First Hook (1) + Result-First Demo (10), ~210 words
 **Topic:** AI News — Instagram shifted its algorithm in May 2026: DM shares now weighted 3-5x higher than likes for Reels reach. Down-ranking generic AI-generated content. Explains the comment-trigger automation mechanic and why it's now the highest-leverage distribution move.
@@ -1631,9 +1631,9 @@ This is exactly what we build inside the community. Come join us. [PREP: insert 
 ---
 
 
-## ENTRY 034 — 11/07/2026 | LinkedIn | I Didn't Plan My Exit From Corporate. It Was a Regular Tuesday. | DRAFT
+## ENTRY 034 — 11/07/2026 | LinkedIn | I Didn't Plan My Exit From Corporate. It Was a Regular Tuesday. | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** LinkedIn (text post)
 **Format:** Vulnerability Before Credentials (7) + Provocation-First Hook (1), ~230 words
 **Topic:** Storytelling — the sudden, decisive corporate exit and how AI made the transition survivable. Bridges to the audience: if you're still in corporate wondering if there's something else, you're not wrong.
@@ -1669,9 +1669,9 @@ Comment TEAM and I'll send you how I set up my first AI employee. That's where t
 ---
 
 
-## ENTRY 028 — 07/07/2026 | X / Twitter (thread) | $5–10K/Month Agency? One Claude Code Session Replaced the Whole Stack | DRAFT
+## ENTRY 028 — 07/07/2026 | X / Twitter (thread) | $5–10K/Month Agency? One Claude Code Session Replaced the Whole Stack | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** X / Twitter (numbered thread, 6 tweets)
 **Format:** Contrarian claim-first thread — hook tweet + evidence beats + operational close
 **Topic:** A widely-shared claim that one Claude Code session can replace what small businesses pay a $5–10K/month agency for. Reframes "Stop Doing That by Hand" around agency spend rather than manual tasks — fills the vault's Twitter/X coverage gap (0 dedicated entries per `reports/vault-audit-2026-07-05.md` §4).
@@ -1701,9 +1701,9 @@ Comment TEAM and I'll send you how I set up my first AI employee. That's where t
 
 ---
 
-## ENTRY 027 — 07/07/2026 | Facebook | The Woman Who Made Someone Else $20M — and Still Won't Show Her Face | DRAFT
+## ENTRY 027 — 07/07/2026 | Facebook | The Woman Who Made Someone Else $20M — and Still Won't Show Her Face | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** Facebook (personal-toned text post — the lighter, more-personal LinkedIn reformat `vault-audit-2026-07-05.md` §5 recommends)
 **Format:** Fear-first hook → personal mirror → community invite, ~180 words
 **Topic:** A researched Real Talk mirror — reacting to a documented case of someone building eight figures in launch revenue for other people's brands while staying anonymous herself — set against Fatiha's own choice to build under her real face and name from a genuinely small following. Fills the vault's Facebook coverage gap (0 entries per `reports/vault-audit-2026-07-05.md` §4) and Real Talk, the pillar RESEARCH 026 flags as the thinnest-fed across the whole research backlog.
@@ -1734,9 +1734,9 @@ If you're building the thing that's actually yours — even quietly, even small 
 
 ---
 
-## ENTRY 026 — 07/07/2026 | LinkedIn (carousel) | Everyone's Selling "Build a Faceless AI Avatar Empire." Here's Why I Kept My Actual Face. | DRAFT
+## ENTRY 026 — 07/07/2026 | LinkedIn (carousel) | Everyone's Selling "Build a Faceless AI Avatar Empire." Here's Why I Kept My Actual Face. | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** LinkedIn (carousel / PDF-style document post)
 **Format:** Myth/reality contrast carousel (Chris Donnelly format) + vulnerability-before-credentials framing, 7 slides + caption
 **Topic:** RESEARCH 026 What's Worth It candidate #3 — evaluates the current wave of "build a faceless AI avatar channel" courses/opt-ins against a brand built on a real face and real voice.
@@ -1793,9 +1793,9 @@ If you want the plain-English translation of what these pitches are actually sel
 
 ---
 
-## ENTRY 025 — 07/07/2026 | Short-form video (Reel / TikTok / YouTube Short) | One AI Grading Its Own Homework? I Stopped Trusting That. | DRAFT
+## ENTRY 025 — 07/07/2026 | Short-form video (Reel / TikTok / YouTube Short) | One AI Grading Its Own Homework? I Stopped Trusting That. | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** Short-form video (Reel / TikTok / YouTube Short)
 **Format:** Contrarian hook + system reveal, ~35–45s talking-head
 **Topic:** RESEARCH 026 What's Worth It candidate #2 — is a multi-model "AI Executive Board" critic worth the engineering time over the single-model critic the content system runs today? An honest, undecided evaluation, not a finished build.
@@ -1830,9 +1830,9 @@ What we actually debated in the community this week: whether one AI grading itse
 
 ---
 
-## ENTRY 024 — 07/07/2026 | LinkedIn | Your Whole Business for $8 a Month? Read the Fine Print First | DRAFT
+## ENTRY 024 — 07/07/2026 | LinkedIn | Your Whole Business for $8 a Month? Read the Fine Print First | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** LinkedIn (text post)
 **Format:** Specific-number hook + contrarian evidence stack, ~230 words
 **Topic:** RESEARCH 026 What's Worth It candidate #1 — is the "$8/month runs your whole business" genre (Hermes Agent and similar) worth taking seriously, set against the real-dollar case studies logged in the same research sweep.
@@ -1862,9 +1862,9 @@ This is exactly the kind of pitch we pick apart before anyone spends a dollar on
 
 ---
 
-## ENTRY 023 — 30/06/2026 | LinkedIn | I Trust AI Now *Because* of 20 Years at Dell | DRAFT
+## ENTRY 023 — 30/06/2026 | LinkedIn | I Trust AI Now *Because* of 20 Years at Dell | READY TO POST
 
-**Status:** DRAFT
+**Status:** READY TO POST
 **Platform:** LinkedIn (text post)
 **Format:** Vulnerability-before-credentials story → soft CTA
 **Topic:** Real Talk seasoning + credibility bridge. The corporate rigor that made her skeptical of AI is the same rigor that now lets her trust it — because she makes it prove its work. Closes the "4 Upgrades" sprint with the why-you-can-trust-me layer.
@@ -1874,33 +1874,27 @@ This is exactly the kind of pitch we pick apart before anyone spends a dollar on
 **Source:** RESEARCH 019 (self-verify angle + builder→judge shift).
 
 ---
-For years, I was the person in the room who didn't trust the shiny new thing.
+For years, I was the person in the room who did not trust the shiny new thing.
 
-Twenty years at Dell, Intel, Microsoft will do that to you. You learn the hard way that "it works on my machine" isn't proof. That "trust me, it's fine" is how things blow up in production. You learn to ask, every single time: how do we *know*?
+20 years at Dell, Intel and Microsoft will do that to you. You learn the hard way that "it works on my machine" is not proof, and that "trust me, it is fine" is how things blow up in production. You learn to ask, every single time: how do we know?
 
-So when AI showed up promising to run my business, my first reaction wasn't excitement. It was the same question I'd asked for two decades. How do I know it's actually right?
+So when AI showed up promising to run my business, my first reaction was not excitement. It was the same question I had asked for two decades. How do I know it is actually right?
 
-Here's the twist I didn't expect.
+The twist I did not expect is that the instinct which made me sceptical is the exact thing that lets me trust AI now.
 
-That instinct — the one that made me skeptical — is exactly the thing that lets me trust AI now.
+I stopped asking it to just do the work, and started making it prove the work. Show me the reasoning, check it against the edge cases, hand me the receipts rather than your word.
 
-Because I stopped asking it to just *do* the work. I started making it *prove* the work. Show me. Check it. Test it against the messy edge cases. Hand me the receipts, not your word.
+Once I did that, everything changed. I am not crossing my fingers and hoping the output is good. I have built the checks in, so I can hand off the task and trust what comes back without redoing it myself.
 
-Once I did that, everything changed. I'm not crossing my fingers and hoping the output is good. I've built the checks in. So I can hand off the task and trust what comes back — without redoing it myself.
+The people who get burned by AI are the ones who took "done" at face value. It turns out the corporate habits I thought I was leaving behind are the ones making this whole thing work.
 
-The people who get burned by AI aren't the careful ones. They're the ones who took "done" at face value.
-
-Turns out the corporate habits I thought I was leaving behind are the ones making this whole thing work.
-
-What's a skill from your old job that's quietly running your new one? I'd love to hear it.
-
-#AIautomation #Solopreneur #CareerPivot
+What is a skill from your old job that is quietly running your new one?
 
 ---
 
-## ENTRY 022 — 30/06/2026 | LinkedIn | I'm Not the Builder Anymore. I'm the Judge. | DRAFT
+## ENTRY 022 — 30/06/2026 | LinkedIn | I'm Not the Builder Anymore. I'm the Judge. | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** LinkedIn (text post)
 **Format:** Provocation-first mindset reframe → soft CTA
 **Topic:** The payoff of the "4 Upgrades" sprint. The real shift isn't that AI does the work faster — it's that your job changes from builder/producer to decision-maker/judge. Lands on the win-back-time promise.
@@ -1940,9 +1934,9 @@ What's one thing on your list this week that doesn't actually need you — just 
 
 ---
 
-## ENTRY 021 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | 6 Helpers, 8 Minutes, a Full Launch Plan | DRAFT
+## ENTRY 021 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | 6 Helpers, 8 Minutes, a Full Launch Plan | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** Short-form video (Reel / TikTok / YouTube Short)
 **Format:** Result-first demo, ~35–45s talking-head + screen B-roll
 **Topic:** The unattended-delegation payoff. Set the goal, walk away, come back to finished work done by multiple AI helpers in parallel. Proof of the Freedom Business.
@@ -1975,9 +1969,9 @@ Want the exact setup I use to run things while I'm away from my desk? Comment "R
 
 ---
 
-## ENTRY 020 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Generic AI Answers? You're Starving It. | DRAFT
+## ENTRY 020 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Generic AI Answers? You're Starving It. | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** Short-form video (Reel / TikTok / YouTube Short)
 **Format:** Fear/call-out hook, ~30–40s talking-head
 **Topic:** Why people get bland, generic AI output — they give it no context. Feed it your actual business (your offer, your customer, your voice) and the output stops sounding like everyone else's.
@@ -2006,9 +2000,9 @@ Want the one-page "business brain" I paste in every time so my AI stops sounding
 
 ---
 
-## ENTRY 019 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | AI Said It Was Done. It Wasn't. | DRAFT
+## ENTRY 019 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | AI Said It Was Done. It Wasn't. | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** Short-form video (Reel / TikTok / YouTube Short)
 **Format:** Before/after, ~35–45s talking-head + screen B-roll
 **Topic:** The self-verify upgrade — her ownable angle. Don't trust "done." Make AI test its own work and prove it before you ship. Where her corporate rigor becomes a differentiator.
@@ -2041,9 +2035,9 @@ Want the exact line I add so AI checks its own work before I ever look? Comment 
 
 ---
 
-## ENTRY 018 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Your AI Agrees With Everything. That's Costing You. | DRAFT
+## ENTRY 018 — 30/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | Your AI Agrees With Everything. That's Costing You. | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** Short-form video (Reel / TikTok / YouTube Short)
 **Format:** Provocation/contrarian hook, ~30–40s talking-head
 **Topic:** AI is a people-pleaser — it validates your bad ideas. The upgrade: make it argue with you and find the flaws *before* you spend a week building the wrong thing.
@@ -2074,9 +2068,9 @@ Want the exact prompt I use to make AI argue with me before I build anything? Co
 
 ---
 
-## ENTRY 017 — 30/06/2026 | LinkedIn (carousel) | The 4 Upgrades: Stop Using AI Like an Intern | DRAFT
+## ENTRY 017 — 30/06/2026 | LinkedIn (carousel) | The 4 Upgrades: Stop Using AI Like an Intern | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** LinkedIn (carousel)
 **Format:** Named-numbered-series carousel (anchor piece) + soft CTA caption
 **Topic:** The series anchor. Four upgrades that turn AI from an intern you babysit into a business partner you delegate to: make it argue, make it prove it, give it your business brain, let it run without you. Each slide seeds a follow-on short (ENTRY 012–015).
@@ -2142,9 +2136,9 @@ Breaking down each upgrade this week. Which one do you need most — 1, 2, 3, or
 ---
 
 
-## ENTRY 015 — 27/06/2026 | LinkedIn | Selling AI Agents for $5k Isn't Freedom — It's Freelancing With Extra Steps | DRAFT
+## ENTRY 015 — 27/06/2026 | LinkedIn | Selling AI Agents for $5k Isn't Freedom — It's Freelancing With Extra Steps | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** LinkedIn (text post)
 **Format:** Opinion / contrarian LinkedIn post, ~210 words
 **Topic:** The "build agents, charge clients $5k" dream is the agency treadmill rebranded. Real leverage is building the one system that runs your own business — and selling the system, not your time.
@@ -2178,9 +2172,9 @@ If that's the room you want, comment FOUNDING and I'll make sure you get first a
 ---
 
 
-## ENTRY 012 — 27/06/2026 | LinkedIn | The First Weekend I Didn't Open My Laptop, I Felt Sick | DRAFT
+## ENTRY 012 — 27/06/2026 | LinkedIn | The First Weekend I Didn't Open My Laptop, I Felt Sick | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** LinkedIn (text post)
 **Format:** Storytelling LinkedIn post, ~230 words
 **Topic:** The fear of stepping away when the business depends on you — and the moment a system carried the work without you. The corporate→entrepreneur "you just became your own worst boss" beat.
@@ -2217,9 +2211,9 @@ If you want the exact first thing I'd automate to buy back your weekends — com
 
 ---
 
-## ENTRY 011 — 25/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | You're Talking to the Most Powerful AI on the Planet Like It's Google | DRAFT
+## ENTRY 011 — 25/06/2026 | Short-form video (Reel / TikTok / YouTube Short) | You're Talking to the Most Powerful AI on the Planet Like It's Google | STALE
 
-**Status:** DRAFT
+**Status:** STALE
 **Platform:** Instagram Reels / TikTok / YouTube Shorts (vertical 9:16)
 **Format:** ~45s talking-head (AI twin) + on-screen text
 **Topic:** Most people type one sentence into Claude and wonder why the answer is mid. This reel shows the gap between how people use AI and how it actually works when you talk to it right, then offers the free Chez Claude guide.
