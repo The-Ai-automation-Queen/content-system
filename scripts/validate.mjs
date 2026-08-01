@@ -107,9 +107,9 @@ for (const p of all) {
 }
 
 /* F: every live guide's cover exists and is rendered on the library index */
-const lib = all.find(p => p.f === 'site/free-resources.html');
+const lib = all.find(p => p.f === 'main-site/guides/index.html');
 for (const g of guides) {
-  if (!existsSync(join(ROOT, 'site', g.cover.slice(1)))) fail('F', `guides.json: cover missing on disk for ${g.slug}`);
+  if (!existsSync(join(ROOT, 'main-site', g.cover.slice(1)))) fail('F', `guides.json: cover missing on disk for ${g.slug}`);
   if (g.status === 'live' && lib && !lib.html.includes(g.cover)) fail('F', `library index never shows cover for ${g.slug}`);
 }
 
@@ -153,10 +153,10 @@ for (const p of all.filter(p => !p.stub && !/noindex/.test(p.html))) {
 {
   const age = (Date.now() - new Date(the99.lastUpdated)) / 864e5;
   if (age > 14) {
-    const page99 = all.find(p => p.f === 'site/99.html');
+    const page99 = all.find(p => p.f === 'main-site/the-99.html');
     if (page99 && !page99.txt.toLowerCase().includes(the99.cadenceFallback.toLowerCase()))
-      fail('I', `site/99.html: the99.lastUpdated is ${Math.round(age)} days old and the page does not show "${the99.cadenceFallback}"`);
-    for (const p of all.filter(x => x.f !== 'site/99.html' && !x.stub)) {
+      fail('I', `main-site/the-99.html: the99.lastUpdated is ${Math.round(age)} days old and the page does not show "${the99.cadenceFallback}"`);
+    for (const p of all.filter(x => x.f !== 'main-site/the-99.html' && !x.stub)) {
       if (/NEXT HIRING WAVE LANDS MONDAY/i.test(p.txt)) fail('I', `${p.f}: stale "next hiring wave lands Monday" promise`);
     }
   }
@@ -189,7 +189,7 @@ for (const p of all.filter(p => !p.stub && !/noindex/.test(p.html))) {
 const knownPrices = new Set(JSON.stringify(site.offers).match(/[£$€]\s?\d[\d,]*/g) || []);
 for (const p of all.filter(p => !p.stub)) {
   for (const m of p.txt.matchAll(/[£$€]\s?\d[\d,]{1,9}/g)) {
-    if (p.prop !== 'www') continue; // tool prices in guides and news figures in the Brief are content, not our offers
+    if (p.prop !== 'www' || p.f.includes('/guides/')) continue; // tool prices in guides and news figures in the Brief are content, not our offers
     if (/case-study|privacy|terms|refund|licensing|99\.html|issues\//.test(p.f)) continue;
     if (!knownPrices.has(m[0].replace(/\s/, ''))) fail('M', `${p.f}: price "${m[0]}" not in site.json offers`);
   }

@@ -780,7 +780,7 @@ const GUIDE_SLUGS = new Set(
 function optsFor(abs) {
   const rel = path.relative(ROOT, abs);
   const slug = path.basename(abs, '.html');
-  const guide = rel.includes(`site${path.sep}guides${path.sep}`) && GUIDE_SLUGS.has(slug);
+  const guide = /(?:^|\/)(?:site|main-site)\/guides\//.test(rel.replace(/\\/g,'/')) && GUIDE_SLUGS.has(slug);
   return { guide, tool: guide && TOOL_GUIDES.has(slug) };
 }
 
