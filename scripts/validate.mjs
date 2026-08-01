@@ -57,7 +57,9 @@ for (const m of JSON.stringify(site).matchAll(/TODO\(fatiha\)[^"]*/g)) todos.add
 /* A + B: nav and footer identical everywhere, matching site.json */
 const navSig = site.nav.map(n => n.label).join('|');
 const footSig = site.footer.map(c => c.title + ':' + c.links.map(l => l.label).join(',')).join('|');
-for (const p of all.filter(p => !p.stub)) {
+/* noindex utility pages (e.g. the coming-soon holding page) stand alone by
+   design: no chrome, so no drift to measure. */
+for (const p of all.filter(p => !p.stub && !/name="robots" content="noindex"/.test(p.html))) {
   const nav = p.html.match(/<!-- chrome:nav -->([\s\S]*?)<!-- \/chrome:nav -->/);
   if (!nav) { fail('A', `${p.f}: no shared nav (chrome:nav markers missing)`); }
   else {

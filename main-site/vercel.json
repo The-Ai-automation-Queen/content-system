@@ -11,6 +11,11 @@
       "source": "/work-with-fatiha.html",
       "destination": "/workshops.html",
       "permanent": true
+    },
+    {
+      "source": "/((?!coming-soon\\.html|assets/|favicon|Portrait\\.jpeg).*)",
+      "destination": "/coming-soon.html",
+      "permanent": false
     }
   ],
   "buildCommand": "cd .. && node tools/include.mjs",
