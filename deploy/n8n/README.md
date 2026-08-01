@@ -15,7 +15,24 @@ Both payloads carry `email`, `source` (the per-form tag, e.g.
 honeypot. Applications add `name`, `business`, `task`, `team`, `timeline`.
 The workflows drop any submission where the honeypot is filled.
 
-## One-time setup (~15 minutes, Fatiha)
+## Fast path: one script (~5 minutes, Fatiha)
+
+On the VPS, from the repo root:
+
+```
+export N8N_API_KEY='...'      # n8n -> Settings -> n8n API -> create key
+export GHL_API_KEY='...'      # GHL -> Settings -> Private Integrations
+export GHL_LOCATION_ID='...'  # GHL -> Settings -> Business Profile
+bash deploy/n8n/setup.sh
+```
+
+Prerequisite: a GHL pipeline named "Build Sprint" whose first stage is
+"New application" (the GHL public API cannot create pipelines). The script
+looks up the pipeline IDs, creates the n8n credential from env, imports both
+workflows with everything filled in, activates them, and fires a test
+submission. Keys touch only your shell env, per security.md.
+
+## Manual path (~15 minutes, if you prefer clicking)
 
 1. **GHL API key.** GHL → Settings → Private Integrations (or API keys) →
    create a key with contacts + opportunities scopes. Copy it.
