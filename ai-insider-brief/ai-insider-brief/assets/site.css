@@ -281,3 +281,22 @@ body.guide{background:var(--paper);color:var(--ink);font-family:var(--serif);fon
 .timeline-item p{font-size:16px;color:#555;margin:0}
 
 
+
+/* --------------------------------------- 18. chrome footer (from site.json) */
+
+.chrome-foot{background:var(--ink);color:#c9c5be;padding:56px 24px 32px;margin-top:64px}
+.chrome-foot-grid{max-width:var(--wrap-wide);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.chrome-foot h2{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8ea8ff;margin:0 0 14px}
+.chrome-foot ul{list-style:none;margin:0;padding:0}
+.chrome-foot li{margin:0 0 9px}
+.chrome-foot a{color:#c9c5be;text-decoration:none;font-size:15px}
+.chrome-foot a:hover{color:#fff}
+.chrome-foot-legal{max-width:var(--wrap-wide);margin:40px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#888}
+@media(max-width:720px){.chrome-foot-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* guide byline under the h1, values stamped from data/guides.json */
+.guide-byline{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#666;margin:2px 0 18px}
+.lib-track{margin:44px 0 0}
+.lib-track h2{font-family:var(--display);font-size:30px;margin:0 0 4px}
+.lib-track-sub{font-size:16px;color:#555;margin:0 0 18px}
+.lib-more{list-style:none;padding:14px 0 0;margin:0;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:15px}
