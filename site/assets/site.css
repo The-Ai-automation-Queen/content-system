@@ -293,3 +293,10 @@ body.guide{background:var(--paper);color:var(--ink);font-family:var(--serif);fon
 .chrome-foot a:hover{color:#fff}
 .chrome-foot-legal{max-width:var(--wrap-wide);margin:40px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#888}
 @media(max-width:720px){.chrome-foot-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* guide byline under the h1, values stamped from data/guides.json */
+.guide-byline{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#666;margin:2px 0 18px}
+.lib-track{margin:44px 0 0}
+.lib-track h2{font-family:var(--display);font-size:30px;margin:0 0 4px}
+.lib-track-sub{font-size:16px;color:#555;margin:0 0 18px}
+.lib-more{list-style:none;padding:14px 0 0;margin:0;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:15px}

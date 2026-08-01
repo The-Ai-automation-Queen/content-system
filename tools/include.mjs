@@ -176,6 +176,16 @@ function stampLibrary(html) {
     `$1\n${libraryCards}\n${demotedList}\n$2`);
 }
 
+/* Visible byline under each guide H1, from that guide's row in guides.json. */
+function stampByline(html, file) {
+  const slug = path.basename(file, '.html');
+  const g = guidesData.guides.find((x) => x.slug === slug);
+  if (!g) return html;
+  const byline = `<p class="guide-byline mono">${g.formatLabel} &middot; Updated ${asTime(g.dateModified)} &middot; ${g.readMinutes} min read</p>`;
+  return html.replace(/(<!-- data:guide-byline -->)[\s\S]*?(<!-- \/data:guide-byline -->)/,
+    `$1${byline}$2`);
+}
+
 function walk(dir, out = []) {
   if (!fs.existsSync(dir)) return out;
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -249,6 +259,7 @@ for (const file of files) {
   html = stampChrome(html);
   html = stampSpans(html);
   html = stampLibrary(html);
+  html = stampByline(html, file);
   html = stampVersions(html, file, siteRootOf(file));
 
   if (html === before) continue;
