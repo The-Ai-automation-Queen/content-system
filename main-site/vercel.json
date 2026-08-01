@@ -2,7 +2,18 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": false,
   "redirects": [
-    { "source": "/work-with-me.html", "destination": "/build-sprint.html", "permanent": true },
-    { "source": "/work-with-fatiha.html", "destination": "/workshops.html", "permanent": true }
-  ]
+    {
+      "source": "/work-with-me.html",
+      "destination": "/build-sprint.html",
+      "permanent": true
+    },
+    {
+      "source": "/work-with-fatiha.html",
+      "destination": "/workshops.html",
+      "permanent": true
+    }
+  ],
+  "buildCommand": "cd .. && node tools/include.mjs",
+  "outputDirectory": ".",
+  "installCommand": ""
 }

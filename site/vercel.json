@@ -1,16 +1,63 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
-    { "source": "/guides/chez-claude.html", "destination": "/guides/claude.html", "permanent": true },
-    { "source": "/guides/chez-claude-preview.html", "destination": "/guides/claude.html", "permanent": true },
-    { "source": "/guides/chez-openai.html", "destination": "/guides/chatgpt.html", "permanent": true },
-    { "source": "/guides/chez-gemini.html", "destination": "/guides/gemini.html", "permanent": true },
-    { "source": "/guides/chez-copilot.html", "destination": "/guides/copilot.html", "permanent": true },
-    { "source": "/guides/chez-grok.html", "destination": "/guides/grok.html", "permanent": true },
-    { "source": "/guides/chez-mistral.html", "destination": "/guides/mistral.html", "permanent": true },
-    { "source": "/guides/chez-deepseek.html", "destination": "/guides/deepseek.html", "permanent": true },
-    { "source": "/guides/chez-kimi.html", "destination": "/guides/kimi.html", "permanent": true },
-    { "source": "/guides/chez-meta-ai.html", "destination": "/guides/meta-ai.html", "permanent": true },
-    { "source": "/guides/chez-manus.html", "destination": "/guides/manus.html", "permanent": true }
-  ]
+    {
+      "source": "/guides/chez-claude.html",
+      "destination": "/guides/claude.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-claude-preview.html",
+      "destination": "/guides/claude.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-openai.html",
+      "destination": "/guides/chatgpt.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-gemini.html",
+      "destination": "/guides/gemini.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-copilot.html",
+      "destination": "/guides/copilot.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-grok.html",
+      "destination": "/guides/grok.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-mistral.html",
+      "destination": "/guides/mistral.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-deepseek.html",
+      "destination": "/guides/deepseek.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-kimi.html",
+      "destination": "/guides/kimi.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-meta-ai.html",
+      "destination": "/guides/meta-ai.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-manus.html",
+      "destination": "/guides/manus.html",
+      "permanent": true
+    }
+  ],
+  "buildCommand": "cd .. && node tools/include.mjs",
+  "outputDirectory": ".",
+  "installCommand": ""
 }
