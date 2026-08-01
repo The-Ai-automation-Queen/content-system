@@ -105,6 +105,77 @@ function stampChrome(html) {
       `$1\n${chromeFooter}\n$2`);
 }
 
+/* ------------------------------------------- data + copy spans from /data
+
+   <!-- data:the99.hired -->3<!-- /data:the99.hired -->   number/string values
+   <!-- copy:home.pain_cta -->...<!-- /copy:home.pain_cta -->  copy.json keys
+   <!-- date:guides.0.dateModified -->...<!-- /date... -->  as <time> element
+
+   Re-running the script re-stamps in place, so nothing drifts from the data
+   files and no year ever needs hand-editing in a page again. */
+
+const the99 = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'the99.json'), 'utf8'));
+const briefData = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'brief.json'), 'utf8'));
+const guidesData = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'guides.json'), 'utf8'));
+const copy = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'copy.json'), 'utf8'));
+const CTX = { site, quiz: site.quiz, the99, brief: briefData, guides: guidesData.guides,
+  guideCount: guidesData.guides.length };
+
+const get = (obj, dotted) => dotted.split('.').reduce((o, k) => (o == null ? o : o[k]), obj);
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const asTime = (iso) => {
+  const d = new Date(iso);
+  return `<time datetime="${iso}">${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}</time>`;
+};
+
+function stampSpans(html) {
+  return html
+    .replace(/<!-- data:([\w.]+) -->[\s\S]*?<!-- \/data:\1 -->/g,
+      (_m, key) => `<!-- data:${key} -->${get(CTX, key) ?? 'MISSING:' + key}<!-- /data:${key} -->`)
+    .replace(/<!-- copy:([\w.]+) -->[\s\S]*?<!-- \/copy:\1 -->/g,
+      (_m, key) => `<!-- copy:${key} -->${get(copy, key) ?? 'MISSING:' + key}<!-- /copy:${key} -->`)
+    .replace(/<!-- date:([\w.]+) -->[\s\S]*?<!-- \/date:\1 -->/g,
+      (_m, key) => `<!-- date:${key} -->${asTime(get(CTX, key))}<!-- /date:${key} -->`);
+}
+
+/* Library cards, grouped into the three tracks, generated from guides.json.
+   Covers ship with real width/height so the grid never shifts as they load. */
+const TRACKS = [
+  ['understand', 'Understand it', 'Plain answers to what AI is and what the words mean.'],
+  ['tools', 'Choose your tools', 'One honest verdict per tool: where it earns its keep, where it will burn you.'],
+  ['setup', 'Put it to work', 'Step-by-step setups that hand a real task to AI this week.']
+];
+const libraryCards =
+  TRACKS.map(([track, title, sub]) => {
+    const items = guidesData.guides.filter((g) => g.track === track && g.status === 'live');
+    return `  <section class="lib-track" id="track-${track}">\n` +
+      `    <h2>${title}</h2>\n    <p class="lib-track-sub">${sub}</p>\n` +
+      `    <div class="card-grid">\n` +
+      items.map((g) =>
+        `      <a class="card" href="guides/${g.slug}.html">\n` +
+        `        <img src="${g.cover}" alt="Cover art for the guide: ${g.title.replace(/"/g, '&quot;')}" width="411" height="231" loading="lazy" decoding="async">\n` +
+        `        <div class="card-body">\n` +
+        `          <p class="card-kicker mono">${g.formatLabel}</p>\n` +
+        `          <h3>${g.title.replace(/&/g, '&amp;')}</h3>\n` +
+        `          <p class="card-desc">Updated ${asTime(g.dateModified)} &middot; ${g.readMinutes} min read</p>\n` +
+        `        </div>\n      </a>`
+      ).join('\n') +
+      `\n    </div>\n  </section>`;
+  }).join('\n');
+
+const demoted = guidesData.guides.filter((g) => g.status === 'demoted');
+const demotedList = demoted.length
+  ? `  <section class="lib-track" id="track-more-tools">\n` +
+    `    <h3>More tool verdicts</h3>\n    <ul class="lib-more">\n` +
+    demoted.map((g) => `      <li><a href="guides/${g.slug}.html">${g.title.replace(/&/g, '&amp;')}</a></li>`).join('\n') +
+    `\n    </ul>\n  </section>`
+  : '';
+
+function stampLibrary(html) {
+  return html.replace(/(<!-- data:library-cards -->)[\s\S]*?(<!-- \/data:library-cards -->)/,
+    `$1\n${libraryCards}\n${demotedList}\n$2`);
+}
+
 function walk(dir, out = []) {
   if (!fs.existsSync(dir)) return out;
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -176,6 +247,8 @@ for (const file of files) {
   }
 
   html = stampChrome(html);
+  html = stampSpans(html);
+  html = stampLibrary(html);
   html = stampVersions(html, file, siteRootOf(file));
 
   if (html === before) continue;
