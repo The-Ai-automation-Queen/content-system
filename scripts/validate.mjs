@@ -61,7 +61,8 @@ for (const p of all.filter(p => !p.stub)) {
   const nav = p.html.match(/<!-- chrome:nav -->([\s\S]*?)<!-- \/chrome:nav -->/);
   if (!nav) { fail('A', `${p.f}: no shared nav (chrome:nav markers missing)`); }
   else {
-    const labels = [...nav[1].matchAll(/<a [^>]*>([^<]+)</g)].map(m => text(m[1]).trim()).filter(Boolean);
+    const labels = [...nav[1].matchAll(/<a ([^>]*)>([^<]+)</g)]
+      .filter(m => !m[1].includes('site-nav-logo')).map(m => text(m[2]).trim()).filter(Boolean);
     if (labels.join('|') !== navSig) fail('A', `${p.f}: nav is [${labels.join('|')}] not [${navSig}]`);
   }
   const foot = p.html.match(/<!-- chrome:footer -->([\s\S]*?)<!-- \/chrome:footer -->/);
@@ -195,7 +196,7 @@ for (const p of all.filter(p => !p.stub)) {
 
 /* N: redirect integrity — every stub's destination exists */
 for (const p of all.filter(p => p.stub)) {
-  const m = p.html.match(/url=([^">]+)/i);
+  const m = p.html.match(/url=([^"#>]+)/i);
   if (!m) { fail('N', `${p.f}: stub without destination`); continue; }
   let u = m[1]; const abs = u.match(/^https?:\/\/([^/]+)(\/.*)?$/);
   let root = p.root, path = u;

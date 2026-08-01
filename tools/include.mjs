@@ -69,6 +69,42 @@ for (const file of fs.readdirSync(path.join(SHARED, 'partials'))) {
   );
 }
 
+/* -------------------------------------------------- chrome from site.json
+
+   One nav and one footer for the whole estate, generated from data/site.json
+   and stamped between <!-- chrome:nav --> / <!-- chrome:footer --> markers.
+   Editing site.json and re-running this script is the only way chrome
+   changes; nothing is hand-edited per page. */
+
+const site = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'site.json'), 'utf8'));
+const esc = (s) => s.replace(/&/g, '&amp;');
+
+const chromeNav =
+  `<nav class="site-nav" aria-label="Site">\n  <div class="site-nav-inner">\n` +
+  `    <a class="site-nav-logo" href="${site.hosts.www}/">${esc(site.brand)}</a>\n` +
+  `    <div class="site-nav-links">\n` +
+  site.nav.map((n) =>
+    `      <a${n.cta ? ' class="nav-cta"' : ''} href="${n.url}">${esc(n.label)}</a>`
+  ).join('\n') +
+  `\n    </div>\n  </div>\n</nav>`;
+
+const chromeFooter =
+  `<footer class="chrome-foot">\n  <div class="chrome-foot-grid">\n` +
+  site.footer.map((col) =>
+    `    <section>\n      <h2>${esc(col.title)}</h2>\n      <ul>\n` +
+    col.links.map((l) => `        <li><a href="${l.url}">${esc(l.label)}</a></li>`).join('\n') +
+    `\n      </ul>\n    </section>`
+  ).join('\n') +
+  `\n  </div>\n  <p class="chrome-foot-legal">&copy; <time datetime="${site.year}">${site.year}</time> ${esc(site.brand)}. All rights reserved.</p>\n</footer>`;
+
+function stampChrome(html) {
+  return html
+    .replace(/(<!-- chrome:nav -->)[\s\S]*?(<!-- \/chrome:nav -->)/,
+      `$1\n${chromeNav}\n$2`)
+    .replace(/(<!-- chrome:footer -->)[\s\S]*?(<!-- \/chrome:footer -->)/,
+      `$1\n${chromeFooter}\n$2`);
+}
+
 function walk(dir, out = []) {
   if (!fs.existsSync(dir)) return out;
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -139,6 +175,7 @@ for (const file of files) {
       `${open}\n${carryAttributes(previous, body)}\n${close}`);
   }
 
+  html = stampChrome(html);
   html = stampVersions(html, file, siteRootOf(file));
 
   if (html === before) continue;
