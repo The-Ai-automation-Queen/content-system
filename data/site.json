@@ -33,11 +33,11 @@
     },
     {
       "label": "Workshops",
-      "url": "https://www.shiftandlead.com/work-with-fatiha.html"
+      "url": "https://www.shiftandlead.com/workshops.html"
     },
     {
       "label": "Work with me",
-      "url": "https://www.shiftandlead.com/work-with-me.html",
+      "url": "https://www.shiftandlead.com/build-sprint.html",
       "cta": true
     }
   ],
@@ -72,11 +72,11 @@
       "links": [
         {
           "label": "Work with me",
-          "url": "https://www.shiftandlead.com/work-with-me.html"
+          "url": "https://www.shiftandlead.com/build-sprint.html"
         },
         {
           "label": "Workshops",
-          "url": "https://www.shiftandlead.com/work-with-fatiha.html"
+          "url": "https://www.shiftandlead.com/workshops.html"
         },
         {
           "label": "Case studies",
@@ -150,16 +150,32 @@
     {
       "id": "build-sprint",
       "name": "1:1 build sprint",
-      "url": "https://www.shiftandlead.com/work-with-me.html",
+      "url": "https://www.shiftandlead.com/build-sprint.html",
       "priceBand": "TODO(fatiha): real price or 'from £___'",
       "audience": "solo"
     },
     {
       "id": "workshops",
       "name": "Keynotes & workshops",
-      "url": "https://www.shiftandlead.com/work-with-fatiha.html",
+      "url": "https://www.shiftandlead.com/workshops.html",
       "priceBand": "TODO(fatiha): price or 'on request'",
       "audience": "teams"
+    },
+    {
+      "id": "fast-forward",
+      "name": "Fast Forward (self-paced system)",
+      "url": "https://www.shiftandlead.com/fast-forward.html",
+      "priceBand": "$299 founding / $499 public; depth add-on $199",
+      "audience": "solo",
+      "note": "Prices as published on the live page; offers.md marks the pivot NEEDS RATIFICATION"
+    },
+    {
+      "id": "masterclass",
+      "name": "Hire Your First AI Employee masterclass",
+      "url": "https://www.shiftandlead.com/masterclass.html",
+      "priceBand": "$150",
+      "audience": "solo",
+      "note": "Price decided by Fatiha 14/07/2026 per offers.md"
     }
   ]
 }

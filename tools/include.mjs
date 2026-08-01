@@ -164,12 +164,11 @@ const libraryCards =
   }).join('\n');
 
 const demoted = guidesData.guides.filter((g) => g.status === 'demoted');
-const demotedList = demoted.length
-  ? `  <section class="lib-track" id="track-more-tools">\n` +
-    `    <h3>More tool verdicts</h3>\n    <ul class="lib-more">\n` +
-    demoted.map((g) => `      <li><a href="guides/${g.slug}.html">${g.title.replace(/&/g, '&amp;')}</a></li>`).join('\n') +
-    `\n    </ul>\n  </section>`
-  : '';
+// The demoted verdicts live on their own hub; the library links the hub and
+// the comparison page rather than repeating six low-traffic cards.
+const demotedList =
+  `  <p class="lib-more"><a href="guides/which-ai-tool-for-what.html">See which AI tool fits which job</a>` +
+  ` &middot; <a href="guides/tool-verdicts.html">Read ${demoted.length} more tool verdicts</a></p>`;
 
 function stampLibrary(html) {
   return html.replace(/(<!-- data:library-cards -->)[\s\S]*?(<!-- \/data:library-cards -->)/,
@@ -266,6 +265,121 @@ for (const file of files) {
   if (check) { wouldChange.push(path.relative(ROOT, file)); continue; }
   fs.writeFileSync(file, html);
   changed++;
+}
+
+
+/* ------------------------------------------------- sitemaps from the tree
+
+   One sitemap per property, listing every indexable page with a lastmod:
+   guides use their dateModified from guides.json, everything else the day
+   the build ran. A page opted out with noindex never appears. */
+
+function buildSitemap(rootDir, host) {
+  const urls = [];
+  const today = new Date().toISOString().slice(0, 10);
+  (function walk(d) {
+    for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+      if (e.name.startsWith('.') || e.name === 'node_modules' || e.name === '_archive') continue;
+      const f = path.join(d, e.name);
+      if (e.isDirectory()) { walk(f); continue; }
+      if (!e.name.endsWith('.html')) continue;
+      const html = fs.readFileSync(f, 'utf8');
+      if (/noindex/.test(html)) continue;
+      if (/http-equiv="refresh"/.test(html)) continue;
+      const relPath = f.slice(path.join(ROOT, rootDir).length).replace(/\\/g, '/');
+      const g = guidesData.guides.find((x) => relPath === `/guides/${x.slug}.html`);
+      urls.push({ loc: host + relPath, lastmod: g ? g.dateModified : today });
+    }
+  })(path.join(ROOT, rootDir));
+  urls.sort((a, b) => a.loc.localeCompare(b.loc));
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n` +
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+    urls.map((u) => `  <url><loc>${u.loc}</loc><lastmod>${u.lastmod}</lastmod></url>`).join('\n') +
+    `\n</urlset>\n`;
+  fs.writeFileSync(path.join(ROOT, rootDir, 'sitemap.xml'), xml);
+}
+
+/* -------------------------------------------- brief issue permalinks
+
+   The feed is rendered by JS, which a crawler may never run. Each ISO week
+   of briefing cards gets a static permalink page under /issues/, generated
+   from data/briefs.json, plus an index. Titles only: the full card lives in
+   the feed, the permalink makes the issue linkable and crawlable. */
+
+function isoWeek(d) {
+  const dt = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  const day = dt.getUTCDay() || 7;
+  dt.setUTCDate(dt.getUTCDate() + 4 - day);
+  const y0 = new Date(Date.UTC(dt.getUTCFullYear(), 0, 1));
+  return [dt.getUTCFullYear(), Math.ceil((((dt - y0) / 864e5) + 1) / 7)];
+}
+
+function buildBriefIssues() {
+  const briefRoot = path.join(ROOT, 'ai-insider-brief/ai-insider-brief');
+  const cards = JSON.parse(fs.readFileSync(path.join(briefRoot, 'data', 'briefs.json'), 'utf8')).cards || [];
+  const weeks = new Map();
+  for (const c of cards) {
+    const d = new Date(c.timestamp);
+    const [y, w] = isoWeek(d);
+    const key = `${y}-w${String(w).padStart(2, '0')}`;
+    if (!weeks.has(key)) weeks.set(key, []);
+    weeks.get(key).push(c);
+  }
+  const dir = path.join(briefRoot, 'issues');
+  fs.mkdirSync(dir, { recursive: true });
+  const shell = (title, desc, canonical, h1, inner) => `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${title}</title>
+<meta name="description" content="${desc}">
+<link rel="canonical" href="${canonical}">
+<meta property="og:title" content="${title}">
+<meta property="og:description" content="${desc}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="${canonical}">
+<meta property="og:image" content="${site.hosts.brief}/og-image.png">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="guide">
+<!-- chrome:nav --><!-- /chrome:nav -->
+<main class="guide-doc">
+<h1>${h1}</h1>
+${inner}
+<p><a href="/">Read the full cards on the live feed</a></p>
+</main>
+<!-- chrome:footer --><!-- /chrome:footer -->
+</body>
+</html>`;
+  const keys = [...weeks.keys()].sort().reverse();
+  for (const key of keys) {
+    const list = weeks.get(key).sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    const first = new Date(list[list.length - 1].timestamp);
+    const items = list.map((c) =>
+      `  <li>${asTime(c.timestamp.slice(0, 10))} &middot; ${(c.category || '')} &middot; ${String(c.title || c.headline || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\b(20\d\d)\b/g, '<time datetime="$1">$1</time>')}</li>`
+    ).join('\n');
+    fs.writeFileSync(path.join(dir, `${key}.html`), stampChrome(shell(
+      `AI Insider Brief: the week ${key.slice(-2)} briefings in review`,
+      `Every AI briefing card from week ${key.slice(-2)}: what changed, whether it matters for your business, and what to watch next, in plain English and free.`,
+      `${site.hosts.brief}/issues/${key}.html`,
+      `The week of ${asTime(first.toISOString().slice(0, 10))}`,
+      `<ul class="prose">\n${items}\n</ul>`)));
+  }
+  const idx = keys.map((k) => `  <li><a href="/issues/${k}.html">Week ${k.slice(-2)} of <time datetime="${k.slice(0, 4)}">${k.slice(0, 4)}</time></a> &middot; ${weeks.get(k).length} briefings</li>`).join('\n');
+  fs.writeFileSync(path.join(dir, 'index.html'), stampChrome(shell(
+    'AI Insider Brief archive: every weekly issue | Shift & Lead',
+    'Every issue of the AI Insider Brief, week by week: plain-English verdicts on the AI news that matters to business owners. Free, no email needed to read.',
+    `${site.hosts.brief}/issues/`,
+    'Every issue, week by week',
+    `<ul class="prose">\n${idx}\n</ul>`)));
+}
+if (!check) buildBriefIssues();
+
+if (!check) {
+  buildSitemap('site', site.hosts.guides);
+  buildSitemap('main-site', site.hosts.www);
+  buildSitemap('ai-insider-brief/ai-insider-brief', site.hosts.brief);
 }
 
 /* ------------------------------------------------------------------ report */

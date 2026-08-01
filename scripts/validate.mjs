@@ -189,7 +189,8 @@ for (const p of all.filter(p => !p.stub && !/noindex/.test(p.html))) {
 const knownPrices = new Set(JSON.stringify(site.offers).match(/[£$€]\s?\d[\d,]*/g) || []);
 for (const p of all.filter(p => !p.stub)) {
   for (const m of p.txt.matchAll(/[£$€]\s?\d[\d,]{1,9}/g)) {
-    if (/case-study|privacy|terms|refund|licensing|99\.html/.test(p.f)) continue;
+    if (p.prop !== 'www') continue; // tool prices in guides and news figures in the Brief are content, not our offers
+    if (/case-study|privacy|terms|refund|licensing|99\.html|issues\//.test(p.f)) continue;
     if (!knownPrices.has(m[0].replace(/\s/, ''))) fail('M', `${p.f}: price "${m[0]}" not in site.json offers`);
   }
 }
