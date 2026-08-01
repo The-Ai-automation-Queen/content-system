@@ -110,7 +110,7 @@
     <div class="r-email">
       <h4>Email me my full audit.</h4>
       <p>Your result, the breakdown, and the fix-first plan, in your inbox so it doesn't vanish with this tab.</p>
-      <form action="https://auto.shiftandlead.com/webhook/lead-capture" method="POST" class="r-email-row" id="email-form">
+      <form action="https://auto.shiftandlead.com/webhook/formspree-lead" method="POST" class="r-email-row" id="email-form">
         <input type="email" name="email" placeholder="your@email.com" required>
         <input type="hidden" name="source" value="guides-time-audit-result">
   <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
@@ -354,12 +354,12 @@
       hoursLeaked: result.dataset.total || '',
       worstArea: result.dataset.worst || ''
     };
-    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
       method: 'POST', keepalive: true,
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
       body: JSON.stringify(payload)
     });
-    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
       method: 'POST', keepalive: true,
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(payload)

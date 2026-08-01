@@ -10,9 +10,11 @@
 (function () {
   'use strict';
 
-  // One endpoint: the n8n webhook on the VPS. n8n adds the contact to GHL,
-  // tagged with the form's source, and notifies Fatiha. See deploy/n8n/.
-  var WEBHOOK = 'https://auto.shiftandlead.com/webhook/lead-capture';
+  // One endpoint: the n8n webhook that has been receiving every submission
+  // all along and hands off to GHL by source tag. The path name is a relic of
+  // the retired Formspree era; renaming it would mean touching n8n for zero
+  // benefit, so it stays. Upgrade path (pipeline + notifications): deploy/n8n/.
+  var WEBHOOK = 'https://auto.shiftandlead.com/webhook/formspree-lead';
 
   function source(form) {
     var s = form.getAttribute('data-source') || 'site';

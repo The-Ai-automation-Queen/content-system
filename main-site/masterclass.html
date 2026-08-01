@@ -116,7 +116,7 @@
 <section class="waitlist" id="waitlist"><div class="waitlist-inner">
   <h2>Get first word.</h2>
   <p>Seats are limited and the waitlist hears the date and the price before anyone else.</p>
-  <form action="https://auto.shiftandlead.com/webhook/lead-capture" method="POST" class="waitlist-form" id="waitlist-form">
+  <form action="https://auto.shiftandlead.com/webhook/formspree-lead" method="POST" class="waitlist-form" id="waitlist-form">
     <input id="waitlist-email" name="email" type="email" placeholder="your@email.com" required>
     <input type="hidden" name="source" value="www-masterclass-waitlist">
   <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
@@ -148,12 +148,12 @@
     if (gotcha) { btn.textContent = 'Done.'; return; }
     btn.disabled = true;
     btn.textContent = 'Joining...';
-    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
       body: JSON.stringify({email: email, source: 'masterclass-waitlist', _gotcha: gotcha})
     });
-    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({email: email, source: 'masterclass-waitlist'})

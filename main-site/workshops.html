@@ -147,7 +147,7 @@
     <div class="kicker" style="color:#E4EAFB">Apply</div>
     <h2>Apply to bring Shift &amp; Lead to your team.</h2>
     <p>I take a small number of these a quarter, because each one gets rebuilt around the team in the room. Tell me who they're and what you want them doing differently afterwards. I reply with fit, format and a firm quote, usually within 48 hours, and I'll say so plainly if I'm not the right person for it.</p>
-    <form action="https://auto.shiftandlead.com/webhook/apply" method="POST" class="booking-form" id="booking-form">
+    <form action="https://auto.shiftandlead.com/webhook/formspree-lead" method="POST" class="booking-form" id="booking-form">
       <input type="text" name="name" placeholder="Your name" required>
       <input type="email" name="email" placeholder="Work email" required>
       <input type="text" name="company" placeholder="Organisation" required>
@@ -187,13 +187,13 @@
     btn.disabled = true;
     btn.textContent = 'Sending...';
 
-    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
       body: JSON.stringify({name: name, email: email, company: company, team_size: teamSize, event_date: eventDate, details: details, source: 'www-workshops-apply', _gotcha: gotcha})
     });
 
-    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({name: name, email: email, company: company, team_size: teamSize, event_date: eventDate, details: details, source: 'www-workshops-apply'})

@@ -74,7 +74,7 @@
 </nav>
 <!-- /chrome:nav -->
 
-<form action="https://auto.shiftandlead.com/webhook/lead-capture" method="POST" class="ribbon" id="ribbon-form">
+<form action="https://auto.shiftandlead.com/webhook/formspree-lead" method="POST" class="ribbon" id="ribbon-form">
   <label for="ribbon-email">Get the AI Insider Brief, free</label>
   <input id="ribbon-email" name="email" type="email" placeholder="your@email.com" required>
   <input type="hidden" name="source" value="www-index-ribbon">
@@ -295,7 +295,7 @@
   <div class="section-eyebrow">Let&rsquo;s talk</div>
   <h2>Speaking, bespoke builds, or just say hello.</h2>
   <p>For workshops, keynotes, or a quoted done-with-you project, or if you just want to be first in line when the Community opens.</p>
-  <form action="https://auto.shiftandlead.com/webhook/lead-capture" method="POST" class="contact-form" id="contact-form" style="display:flex;flex-direction:column;gap:8px;max-width:480px;margin:0 auto 12px">
+  <form action="https://auto.shiftandlead.com/webhook/formspree-lead" method="POST" class="contact-form" id="contact-form" style="display:flex;flex-direction:column;gap:8px;max-width:480px;margin:0 auto 12px">
     <input type="text" name="name" placeholder="Your name" style="padding:12px 14px;border:1px solid #E8E4DD;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
     <input type="email" name="email" placeholder="your@email.com" required style="padding:12px 14px;border:1px solid #E8E4DD;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
     <textarea name="message" placeholder="What are you working on?" rows="3" style="padding:12px 14px;border:1px solid #E8E4DD;border-radius:4px;font-family:Inter,sans-serif;font-size:14px;resize:vertical"></textarea>
@@ -319,13 +319,13 @@
     btn.innerHTML = '<strong>Subscribed!</strong>';
     btn.disabled = true;
 
-    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
       body: JSON.stringify({email: email, source: 'main-site-ribbon', _gotcha: gotcha})
     });
 
-    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({email: email, source: 'main-site-ribbon'})
@@ -341,13 +341,13 @@
     var email = form.querySelector('[name="email"]').value;
     var btn = form.querySelector('button');
 
-    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
       body: JSON.stringify({email: email, name: (form.querySelector('[name=\'name\']')||{}).value || '', message: (form.querySelector('[name=\'message\']')||{}).value || '', source: 'main-site-contact'})
     });
 
-    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({email: email, name: (form.querySelector('[name=\'name\']')||{}).value || '', message: (form.querySelector('[name=\'message\']')||{}).value || '', source: 'main-site-contact'})
