@@ -376,6 +376,9 @@ function heroImageTags(html) {
   if (cover) tags.push(cover[1]);
   const hero = html.match(/class=["'][^"']*\bhero(?:-portrait|-inner|-art)?\b[^"']*["'][\s\S]{0,1200}?(<img[^>]*>)/i);
   if (hero) tags.push(hero[1]);
+  // An image inside the page's opening <header> is above the fold: hero too.
+  const head = html.match(/<header[\s\S]{0,2500}?(<img[^>]*>)[\s\S]*?<\/header>/i);
+  if (head) tags.push(head[1]);
   return tags;
 }
 
@@ -766,10 +769,18 @@ const TOOL_GUIDES = new Set([
   'mistral', 'deepseek', 'kimi', 'meta-ai', 'manus',
 ]);
 
+// Hub and index pages under /guides/ (the comparison table, the verdicts
+// list) are not guides; only slugs present in data/guides.json get the full
+// guide-template checks.
+const GUIDE_SLUGS = new Set(
+  JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'guides.json'), 'utf8'))
+    .guides.map((g) => g.slug)
+);
+
 function optsFor(abs) {
   const rel = path.relative(ROOT, abs);
-  const guide = rel.includes(`site${path.sep}guides${path.sep}`);
   const slug = path.basename(abs, '.html');
+  const guide = rel.includes(`site${path.sep}guides${path.sep}`) && GUIDE_SLUGS.has(slug);
   return { guide, tool: guide && TOOL_GUIDES.has(slug) };
 }
 

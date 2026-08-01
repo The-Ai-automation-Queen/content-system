@@ -63,7 +63,7 @@
       <div class="form-eyebrow">Send it to my inbox</div>
       <div class="form-heading" id="form-heading">One email. Instant access.</div>
       <p class="form-sub">Enter your details and the guide opens immediately. No spam. Unsubscribe any time.</p>
-      <form action="https://formspree.io/f/xgojoyka" method="POST" id="optin-form">
+      <form action="https://auto.shiftandlead.com/webhook/lead-capture" method="POST" id="optin-form">
         <div class="form-group">
           <label class="form-label" for="firstName">First name</label>
           <input class="form-input" id="firstName" name="firstName" type="text" placeholder="Your first name" required autocomplete="given-name">
@@ -383,14 +383,14 @@ var SLUG_ALIASES = {
     var gotcha = document.querySelector('[name="_gotcha"]').value;
 
     // Fire Formspree (email backup)
-    fetch('https://formspree.io/f/xgojoyka', {
+    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
       method: 'POST', keepalive: true,
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({ firstName: firstName, email: email, guide: slug, _gotcha: gotcha })
     });
 
     // Fire n8n webhook (GHL contact + tag)
-    if (!gotcha) fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
+    if (!gotcha) fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
       method: 'POST', keepalive: true,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ firstName: firstName, email: email, guide: slug, source: 'guide-optin' })

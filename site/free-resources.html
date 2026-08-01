@@ -45,7 +45,7 @@
 </nav>
 <!-- /chrome:nav -->
 
-<form action="https://formspree.io/f/xgojoyka" method="POST" class="ribbon" id="ribbon-form">
+<form action="https://auto.shiftandlead.com/webhook/lead-capture" method="POST" class="ribbon" id="ribbon-form">
   <label for="ribbon-email">Get the AI Insider Brief, free</label>
   <input id="ribbon-email" name="email" type="email" placeholder="your@email.com" required>
   <input type="hidden" name="source" value="guides-library-ribbon">
@@ -513,12 +513,12 @@
     var btn = form.querySelector('button');
     if (gotcha) { btn.innerHTML = '<strong>Subscribed!</strong>'; btn.disabled = true; return; }
     btn.disabled = true; btn.innerHTML = 'Sending&hellip;';
-    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
+    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
       method: 'POST', keepalive: true,
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({email: email, source: 'ribbon'})
     });
-    fetch('https://formspree.io/f/xgojoyka', {
+    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
       method: 'POST', keepalive: true,
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
       body: JSON.stringify({email: email, source: 'ribbon'})

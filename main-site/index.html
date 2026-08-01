@@ -74,7 +74,7 @@
 </nav>
 <!-- /chrome:nav -->
 
-<form action="https://formspree.io/f/xgojoyka" method="POST" class="ribbon" id="ribbon-form">
+<form action="https://auto.shiftandlead.com/webhook/lead-capture" method="POST" class="ribbon" id="ribbon-form">
   <label for="ribbon-email">Get the AI Insider Brief, free</label>
   <input id="ribbon-email" name="email" type="email" placeholder="your@email.com" required>
   <input type="hidden" name="source" value="www-index-ribbon">
@@ -88,7 +88,7 @@
   <div>
     <div class="hero-kicker"><span class="rule"></span>Shift &amp; Lead</div>
     <h1><!-- copy:home.hero_h1 -->Hand one task a week to an AI employee.<!-- /copy:home.hero_h1 --><br><em><!-- copy:home.hero_h1_accent -->You don't need to be technical.<!-- /copy:home.hero_h1_accent --></em></h1>
-    <p class="hero-sub"><!-- copy:home.hero_sub -->The method I used on Fortune 500 teams at Dell, Intel and Microsoft — rebuilt for a business of one to ten people. What to automate, what to skip, and how.<!-- /copy:home.hero_sub --></p>
+    <p class="hero-sub"><!-- copy:home.hero_sub -->The method I used on Fortune 500 teams at Dell, Intel and Microsoft, rebuilt for a business of one to ten people. What to automate, what to skip, and how.<!-- /copy:home.hero_sub --></p>
     <div class="hero-ctas">
       <a class="btn-primary" href="https://guides.shiftandlead.com">Get the free guides</a>
       <a class="btn-ghost" href="#further">See how to go further</a>
@@ -173,7 +173,7 @@
 <!-- The 99 Scoreboard: compact mirror of site/99.html (guides.shiftandlead.com/99.html is canonical) -->
 <section class="scoreboard-mini" id="the-99-scoreboard"><div class="scoreboard-mini-inner">
   <div class="section-eyebrow"><!-- copy:home.the99_teaser_eyebrow -->Built in public<!-- /copy:home.the99_teaser_eyebrow --></div>
-  <h2><!-- copy:home.the99_teaser_h2 -->I'm hiring 99 AI employees to run my business — with receipts.<!-- /copy:home.the99_teaser_h2 --></h2>
+  <h2><!-- copy:home.the99_teaser_h2 -->I'm hiring 99 AI employees to run my business, with receipts.<!-- /copy:home.the99_teaser_h2 --></h2>
   <p><!-- copy:home.the99_teaser_body -->A live scoreboard of every task I've handed to AI, what it did, and proof it worked.<!-- /copy:home.the99_teaser_body --></p>
   <p class="scoreboard-counter"><span class="big"><!-- data:the99.hired -->3<!-- /data:the99.hired --></span><span class="of">/ <!-- data:the99.total -->99<!-- /data:the99.total --> hired &middot; <!-- data:the99.cadenceFallback -->Updated monthly<!-- /data:the99.cadenceFallback --></span></p>
   <p><a class="btn-primary" href="https://guides.shiftandlead.com/99.html"><!-- copy:home.the99_teaser_cta -->See the scoreboard<!-- /copy:home.the99_teaser_cta --> &rarr;</a></p>
@@ -295,7 +295,7 @@
   <div class="section-eyebrow">Let&rsquo;s talk</div>
   <h2>Speaking, bespoke builds, or just say hello.</h2>
   <p>For workshops, keynotes, or a quoted done-with-you project, or if you just want to be first in line when the Community opens.</p>
-  <form action="https://formspree.io/f/xgojoyka" method="POST" class="contact-form" id="contact-form" style="display:flex;flex-direction:column;gap:8px;max-width:480px;margin:0 auto 12px">
+  <form action="https://auto.shiftandlead.com/webhook/lead-capture" method="POST" class="contact-form" id="contact-form" style="display:flex;flex-direction:column;gap:8px;max-width:480px;margin:0 auto 12px">
     <input type="text" name="name" placeholder="Your name" style="padding:12px 14px;border:1px solid #E8E4DD;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
     <input type="email" name="email" placeholder="your@email.com" required style="padding:12px 14px;border:1px solid #E8E4DD;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
     <textarea name="message" placeholder="What are you working on?" rows="3" style="padding:12px 14px;border:1px solid #E8E4DD;border-radius:4px;font-family:Inter,sans-serif;font-size:14px;resize:vertical"></textarea>
@@ -319,13 +319,13 @@
     btn.innerHTML = '<strong>Subscribed!</strong>';
     btn.disabled = true;
 
-    fetch('https://formspree.io/f/xgojoyka', {
+    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
       body: JSON.stringify({email: email, source: 'main-site-ribbon', _gotcha: gotcha})
     });
 
-    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
+    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({email: email, source: 'main-site-ribbon'})
@@ -341,13 +341,13 @@
     var email = form.querySelector('[name="email"]').value;
     var btn = form.querySelector('button');
 
-    fetch('https://formspree.io/f/xgojoyka', {
+    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
       body: JSON.stringify({email: email, name: (form.querySelector('[name=\'name\']')||{}).value || '', message: (form.querySelector('[name=\'message\']')||{}).value || '', source: 'main-site-contact'})
     });
 
-    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
+    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({email: email, name: (form.querySelector('[name=\'name\']')||{}).value || '', message: (form.querySelector('[name=\'message\']')||{}).value || '', source: 'main-site-contact'})

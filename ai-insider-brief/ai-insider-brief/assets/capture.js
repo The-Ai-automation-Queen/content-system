@@ -10,8 +10,9 @@
 (function () {
   'use strict';
 
-  var FORMSPREE = 'https://formspree.io/f/xgojoyka';
-  var WEBHOOK = 'https://auto.shiftandlead.com/webhook/formspree-lead';
+  // One endpoint: the n8n webhook on the VPS. n8n adds the contact to GHL,
+  // tagged with the form's source, and notifies Fatiha. See deploy/n8n/.
+  var WEBHOOK = 'https://auto.shiftandlead.com/webhook/lead-capture';
 
   function source(form) {
     var s = form.getAttribute('data-source') || 'site';
@@ -44,7 +45,7 @@
       button.disabled = true;
       button.textContent = 'Sending...';
 
-      fetch(FORMSPREE, {
+      fetch(WEBHOOK, {
         method: 'POST',
         keepalive: true,
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
@@ -61,13 +62,6 @@
         button.disabled = false;
         button.textContent = 'Try again';
       });
-
-      fetch(WEBHOOK, {
-        method: 'POST',
-        keepalive: true,
-        headers: { 'Content-Type': 'application/json' },
-        body: payload
-      }).catch(function () { /* delivery already handled by Formspree */ });
     });
   }
 

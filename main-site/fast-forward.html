@@ -243,7 +243,7 @@
 <section class="waitlist" id="waitlist"><div class="waitlist-inner">
   <h2>Join the founding waitlist.</h2>
   <p>Founding price closes when the course launches publicly. Get first word, plus the founding rate locked in.</p>
-  <form action="https://formspree.io/f/xgojoyka" method="POST" class="waitlist-form" id="waitlist-form">
+  <form action="https://auto.shiftandlead.com/webhook/lead-capture" method="POST" class="waitlist-form" id="waitlist-form">
     <input id="waitlist-email" name="email" type="email" placeholder="your@email.com" required>
     <input type="hidden" name="source" value="www-fast-forward-waitlist">
   <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
@@ -276,13 +276,13 @@
     btn.disabled = true;
     btn.textContent = 'Joining...';
 
-    fetch('https://formspree.io/f/xgojoyka', {
+    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
       body: JSON.stringify({email: email, source: 'fast-forward-waitlist', _gotcha: gotcha})
     });
 
-    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
+    fetch('https://auto.shiftandlead.com/webhook/lead-capture', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({email: email, source: 'fast-forward-waitlist'})
