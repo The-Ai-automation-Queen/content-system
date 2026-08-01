@@ -37,5 +37,6 @@
    "receipt": null,
    "statusLine": "Interviewing. Starts when the receipts do."
   }
- ]
+ ],
+ "_update": "Source of truth for the public scoreboard. hiring-campaign (or Fatiha) appends each new hire here: bump 'hired', add an employees[] entry {n,name,role,dept,hired:'YYYY-MM-DD',receipt}, set lastUpdated. Run node tools/include.mjs (or merge; Vercel builds it) and every page that shows the count regenerates. Never edit counts in HTML."
 }

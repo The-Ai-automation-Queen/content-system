@@ -94,10 +94,6 @@
         {
           "label": "Contact",
           "url": "https://www.shiftandlead.com/index.html#contact"
-        },
-        {
-          "label": "Community",
-          "url": "https://www.skool.com/@ai-automation-queen-5858"
         }
       ]
     },
@@ -127,14 +123,6 @@
     {
       "label": "LinkedIn",
       "url": "https://linkedin.com/in/fatihachikh"
-    },
-    {
-      "label": "Instagram",
-      "url": "https://www.instagram.com/fati_chic_/"
-    },
-    {
-      "label": "Skool community",
-      "url": "https://www.skool.com/@ai-automation-queen-5858"
     }
   ],
   "quiz": {
@@ -144,7 +132,7 @@
   },
   "community": {
     "status": "waitlist",
-    "url": "https://www.skool.com/@ai-automation-queen-5858"
+    "url": ""
   },
   "offers": [
     {
@@ -160,6 +148,14 @@
       "url": "https://www.shiftandlead.com/workshops.html",
       "priceBand": "TODO(fatiha): price or 'on request'",
       "audience": "teams"
+    },
+    {
+      "id": "fast-forward",
+      "name": "Fast Forward (self-paced system)",
+      "url": "https://www.shiftandlead.com/fast-forward.html",
+      "priceBand": "$299 founding / $499 public; depth add-on $199",
+      "audience": "solo",
+      "note": "Prices as published on the live page; offers.md marks the pivot NEEDS RATIFICATION"
     }
   ]
 }

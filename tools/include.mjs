@@ -128,6 +128,12 @@ const asTime = (iso) => {
   return `<time datetime="${iso}">${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}</time>`;
 };
 
+function priceOf(id) {
+  const o = site.offers.find((x) => x.id === id);
+  if (!o || !o.priceBand || o.priceBand.includes('TODO')) return '';
+  return `<p class="price-band mono">${o.priceBand}</p>`;
+}
+
 function stampSpans(html) {
   return html
     .replace(/<!-- data:([\w.]+) -->[\s\S]*?<!-- \/data:\1 -->/g,
@@ -135,7 +141,9 @@ function stampSpans(html) {
     .replace(/<!-- copy:([\w.]+) -->[\s\S]*?<!-- \/copy:\1 -->/g,
       (_m, key) => `<!-- copy:${key} -->${get(copy, key) ?? 'MISSING:' + key}<!-- /copy:${key} -->`)
     .replace(/<!-- date:([\w.]+) -->[\s\S]*?<!-- \/date:\1 -->/g,
-      (_m, key) => `<!-- date:${key} -->${asTime(get(CTX, key))}<!-- /date:${key} -->`);
+      (_m, key) => `<!-- date:${key} -->${asTime(get(CTX, key))}<!-- /date:${key} -->`)
+    .replace(/<!-- price:([\w-]+) -->[\s\S]*?<!-- \/price:\1 -->/g,
+      (_m, id) => `<!-- price:${id} -->${priceOf(id)}<!-- /price:${id} -->`);
 }
 
 /* Library cards, grouped into the three tracks, generated from guides.json.

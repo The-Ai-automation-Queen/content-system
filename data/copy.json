@@ -217,7 +217,8 @@
   "not_for_title": "This isn't for you if",
   "not_for": [
    "TODO(fatiha): confirm the disqualifiers from the live page."
-  ]
+  ],
+  "dynamic_note": "Topics change with the news. Each session is built from what shifted in AI that month, pulled from the same briefing I publish every week, so your team works on what matters now."
  },
  "case_studies": {
   "shared_cta_h2": "Want the plain-English version of how this works?",
