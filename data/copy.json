@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "voice": "Outcome-first, plain English, grade-7. Reader is the hero, Fatiha is the guide. No mood taglines, no self-quotes, max one 'not X, Y' per page, every claim followed by a number or named example.",
+  "voice": "Outcome-first, plain English, grade-7 reading level. Reader is the hero, Fatiha is the guide. No mood taglines, no self-quotes, max one 'not X, but Y' per page, every claim followed by a number or named example.",
   "identity": "Fatiha Chikh · AI operator · 20 years at Dell, Intel, Microsoft",
   "positioning": "Hand your busywork to AI, one task at a time — without hiring, coding, or a six-month project. Twenty years of Fortune 500 method, sized for a team of one.",
   "retired_strings": [
@@ -9,8 +9,7 @@
    "Get your time back",
    "Lead with AI, without drowning in it",
    "The winners don't work harder"
-  ],
-  "truncation": "TODO(fatiha): the source prompt was cut off inside guide_template after cards_labels_enum. Missing sections (guide_template body keys, library_index, brief, about, quiz and anything after) need to be re-sent; placeholders below mark where they land."
+  ]
  },
  "global": {
   "brief_ribbon_label": "Get the AI Insider Brief, free",
@@ -294,11 +293,71 @@
    "FREE TOOL VERDICT",
    "FREE SETUP"
   ],
-  "triplet_labels": "TODO(fatiha): prompt truncated here — re-send guide_template from triplet_labels onward",
-  "byline_format": "{formatLabel} · Updated {dateModified} · {readMinutes} min read",
+  "triplet_labels": {
+   "best_for": "BEST FOR",
+   "careful_with": "CAREFUL WITH",
+   "what_i_would_do": "WHAT I'D DO"
+  },
+  "byline_pattern": "{formatLabel} · Updated {dateModified} · {readMinutes} min read",
+  "mid_capture_h2": "Want the rest of these as they land?",
+  "mid_capture_body": "This guide stays open. Add your email and you also get every new guide plus the weekly Insider Brief. Unsubscribe anytime.",
+  "mid_capture_cta": "Email me the guides",
+  "mid_capture_note": "Already on the list? Just keep reading.",
   "keep_going_h2": "Keep going",
-  "build_cta": "TODO(fatiha): re-send from truncated prompt",
-  "brief_cta": "TODO(fatiha): re-send from truncated prompt"
+  "build_cta_h2": "Want this built with you, not just explained?",
+  "build_cta_body": "I'll build your first AI employee with you in a week, using the same systems as the case studies. You keep it, and you can change it.",
+  "build_cta": "See how it works",
+  "brief_cta_h2": "One clear verdict on the AI news that matters.",
+  "brief_cta_body": "Every Tuesday, free. The week's AI news, filtered, with a plain verdict on each story.",
+  "brief_cta": "Subscribe free"
  },
- "library_index": "TODO(fatiha): section missing from truncated prompt — re-send library_index (three-track copy)"
+ "library_index": {
+  "eyebrow": "The free library",
+  "h1": "Understand AI in plain English.",
+  "sub": "The guides I wish I'd had when I started. Free, no email wall.",
+  "byline": "Fatiha Chikh · 20 years at Dell, Intel, Microsoft · hiring 99 AI employees in public",
+  "pullquote": "You're not behind. You just haven't had someone explain it properly yet.",
+  "tracks_eyebrow": "Start here",
+  "tracks_h2": "Where are you starting from?",
+  "tracks_sub": "Pick the one that sounds like you. It tells you exactly what to read next, in order.",
+  "kit_banner": "Looking for the prompts and templates? Open the Freedom OS Starter Kit →"
+ },
+ "kit": {
+  "eyebrow": "Free, forever",
+  "h1": "The Freedom OS Starter Kit",
+  "sub": "Every prompt, template and setup I use — in plain English, for people who don't code. Add your email and new ones come to you as I add them.",
+  "cta": "Email me the new templates",
+  "note": "No cost, no catch. The whole kit is on this page either way."
+ },
+ "the99": {
+  "eyebrow": "A public experiment",
+  "h1": "99 employees, and not one on payroll.",
+  "sub": "I'm building a company staffed by AI — 99 employees, hired one at a time, in public. This is the scoreboard, and it doesn't get to flatter me.",
+  "counter_label": "hired",
+  "cta_h2": "Want to hire your own Employee #1?",
+  "cta": "Read 'Hire your first AI employee'"
+ },
+ "about": {
+  "eyebrow": "About",
+  "h1": "One step ahead of you, on the same path.",
+  "intro": "I'm Fatiha Chikh. I spent 20 years inside the world's biggest tech companies. Now I'm hiring 99 AI employees to run my business, in public — and I share everything I build.",
+  "story_h2": "It was never about the technology.",
+  "proof_h2": "Proof, not promises.",
+  "cta_solo": "Build your first AI employee with me",
+  "cta_team": "Bring this into your company"
+ },
+ "quiz": {
+  "eyebrow": "The time-leak quiz · free · 3 minutes",
+  "h1": "How many hours a week is your business leaking?",
+  "sub": "Eight quick questions about how your week really runs — content, leads, admin, and the work only you can do. At the end: your leak in hours per week, where it's worst, and the exact free guide to fix it first.",
+  "cta": "Start the quiz",
+  "note": "No sign-up wall. Your result shows straight away."
+ },
+ "brief": {
+  "eyebrow": "Every Tuesday · free · one clear verdict",
+  "h1": "Know which AI changes actually affect your business.",
+  "sub": "A short weekly briefing that filters the noise, explains what matters, and tells you what deserves your attention this week.",
+  "cta": "Subscribe free",
+  "archive_cta": "Read past issues"
+ }
 }
