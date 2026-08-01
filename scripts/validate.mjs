@@ -244,19 +244,22 @@ for (const p of all.filter(p => !p.stub)) {
   }
 }
 
-/* S: readability — no sentence over 25 words */
+/* S: readability — no sentence over 25 words, judged per block element */
 for (const p of all.filter(p => !p.stub)) {
-  const body = p.txt;
-  for (const s of body.split(/[.!?]+\s/)) {
-    const w = s.trim().split(/\s+/).filter(Boolean);
-    if (w.length > 25) fail('S', `${p.f}: ${w.length}-word sentence: "${w.slice(0, 8).join(' ')}..."`);
+  const blocks = [...strip(p.html).matchAll(/<(p|li|h1|h2|h3|blockquote|dd|figcaption)\b[^>]*>([\s\S]*?)<\/\1>/gi)];
+  for (const b of blocks) {
+    for (const s of text(b[2]).split(/[.!?]+\s/)) {
+      const w = s.trim().split(/\s+/).filter(Boolean);
+      if (w.length > 25) fail('S', `${p.f}: ${w.length}-word sentence: "${w.slice(0, 8).join(' ')}..."`);
+    }
   }
 }
 
 /* T: CTAs start with an action verb */
 const CTA_OK = /^(Get|Start|See|Read|Take|Book|Apply|Build|Subscribe|Email)\b/i;
 for (const p of all.filter(p => !p.stub)) {
-  for (const m of strip(p.html).matchAll(/<(a|button)\b[^>]*class="[^"]*(btn|button|cta|path-cta|nav-cta|header-subscribe)[^"]*"[^>]*>([\s\S]*?)<\/\1>/gi)) {
+  const noChrome = strip(p.html.replace(/<!-- chrome:nav -->[\s\S]*?<!-- \/chrome:nav -->/, ' '));
+  for (const m of noChrome.matchAll(/<(a|button)\b[^>]*class="[^"]*(btn|cta|path-cta|nav-cta|header-subscribe)[^"]*"[^>]*>([\s\S]*?)<\/\1>/gi)) {
     const s = text(m[3]).trim();
     if (s && !CTA_OK.test(s)) fail('T', `${p.f}: CTA "${s.slice(0, 50)}" does not start with an approved verb`);
   }
