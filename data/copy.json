@@ -2,7 +2,7 @@
  "_meta": {
   "voice": "Outcome-first, plain English, grade-7 reading level. Reader is the hero, Fatiha is the guide. No mood taglines, no self-quotes, max one 'not X, but Y' per page, every claim followed by a number or named example.",
   "identity": "Fatiha Chikh · AI operator · 20 years at Dell, Intel, Microsoft",
-  "positioning": "Hand your busywork to AI, one task at a time — without hiring, coding, or a six-month project. Twenty years of Fortune 500 method, sized for a team of one.",
+  "positioning": "Hand your busywork to AI, one task at a time, without hiring, coding, or a six-month project. Twenty years of Fortune 500 method, sized for a team of one.",
   "retired_strings": [
    "The AI Automation Queen",
    "AI, explained quietly",
@@ -39,13 +39,13 @@
    "Leads go cold because follow-up is too slow.",
    "You pay for five tools and use two.",
    "Your big goals are on hold because admin ate the day again.",
-   "You miss chances because you're buried — not because you're not good enough."
+   "You miss chances because you're buried, not because you're not good enough."
   ],
   "pain_cta_line": "Find out what it's actually costing you, then fix it.",
   "pain_cta": "Take the free time-leak quiz",
   "pain_cta_note": "8 questions, 3 minutes, no email needed to see your number.",
   "credential_h2": "I've installed new tech inside big companies for 20 years.",
-  "credential_body": "The internet, the cloud, subscriptions — every wave, capable people froze and waited too long. My job at Dell, Intel and Microsoft was to turn new tech into something ordinary teams actually use. AI is the same job, faster. I'm doing it in public on my own business so you can copy what works.",
+  "credential_body": "The internet, the cloud, subscriptions, every wave, capable people froze and waited too long. My job at Dell, Intel and Microsoft was to turn new tech into something ordinary teams actually use. AI is the same job, faster. I'm doing it in public on my own business so you can copy what works.",
   "credential_cta": "Read the full story",
   "the99_teaser_eyebrow": "Built in public",
   "the99_teaser_h2": "I'm hiring 99 AI employees to run my business, with receipts.",
@@ -76,7 +76,7 @@
   "help_eyebrow": "When free isn't enough",
   "help_h2": "Two ways to go further.",
   "help_solo_title": "Build your first AI employee with me",
-  "help_solo_body": "One task that eats your week, gone for good — built with you in a week, and yours to keep.",
+  "help_solo_body": "One task that eats your week, gone for good, built with you in a week, and yours to keep.",
   "help_solo_cta": "See how it works",
   "help_team_title": "Bring AI adoption to your team",
   "help_team_body": "Keynotes and workshops your people will actually use on Monday.",
@@ -86,7 +86,7 @@
   "faq": [
    {
     "q": "I'm not technical. Can I still do this?",
-    "a": "Yes — that's the whole point. You don't need to code. I hand you shortcuts in plain English that just work."
+    "a": "Yes, that's the whole point. You don't need to code. I hand you shortcuts in plain English that just work."
    },
    {
     "q": "Do I have to replace the tools I already use?",
@@ -94,7 +94,7 @@
    },
    {
     "q": "What if the free guides aren't enough?",
-    "a": "That's what the build sprint and workshops are for. Start free, go further when you're ready — never before."
+    "a": "That's what the build sprint and workshops are for. Start free, go further when you're ready, never before."
    },
    {
     "q": "How fast will I see results?",
@@ -104,7 +104,7 @@
  },
  "build_sprint": {
   "eyebrow": "Work with me · 1:1 build sprint",
-  "h1": "One task that's eating your week — gone for good.",
+  "h1": "One task that's eating your week, gone for good.",
   "sub": "In one week I build your first AI employee with you, not for you. You watch every decision, you keep the logins, and your team runs it after I leave.",
   "price_band": "TODO(fatiha): add a real price or 'from £___'. A money page with no price does not convert.",
   "cta": "Apply for a build sprint",
@@ -112,7 +112,7 @@
   "what_you_get": [
    {
     "title": "The right task, picked properly",
-    "body": "We start with the task that costs you most — usually the one you resent doing by hand, not the one you'd have guessed."
+    "body": "We start with the task that costs you most, usually the one you resent doing by hand, not the one you'd have guessed."
    },
    {
     "title": "The build, done together",
@@ -120,7 +120,7 @@
    },
    {
     "title": "A written job description",
-    "body": "One page: what it does, what it never does, and what good looks like. The part that makes it reliable — and the part everyone skips."
+    "body": "One page: what it does, what it never does, and what good looks like. The part that makes it reliable, and the part everyone skips."
    },
    {
     "title": "Full handover",
@@ -128,7 +128,7 @@
    },
    {
     "title": "Clear safety rules",
-    "body": "What it can touch, what it must never send, and how to decide what data goes near it — written down so it survives a busy week."
+    "body": "What it can touch, what it must never send, and how to decide what data goes near it, written down so it survives a busy week."
    },
    {
     "title": "Two weeks of follow-up",
@@ -154,7 +154,7 @@
    }
   ],
   "examples_h2": "The kind of thing we build",
-  "examples_note": "Real builds from my case studies — examples of the shape of the work, not a promise your numbers will match.",
+  "examples_note": "Real builds from my case studies, examples of the shape of the work, not a promise your numbers will match.",
   "examples": [
    {
     "stat": "1 min",
@@ -248,11 +248,11 @@
   },
   "daycare": {
    "eyebrow": "Case study · day care",
-   "h1": "Every lead got a reply in two minutes — and booked a tour.",
+   "h1": "Every lead got a reply in two minutes, and booked a tour.",
    "challenge_h2": "The problem",
    "challenge": "Short-staffed, the coordinator couldn't keep up with leads from Facebook ads. Replies were slow, some leads went untouched, and ad spend was wasted.",
    "built_h2": "What I built",
-   "built": "An agent that reaches every new lead within two minutes, greets and qualifies them against the coordinator's own criteria, and books a tour on her behalf — so nothing slips and nobody waits.",
+   "built": "An agent that reaches every new lead within two minutes, greets and qualifies them against the coordinator's own criteria, and books a tour on her behalf, so nothing slips and nobody waits.",
    "stats": [
     {
      "stat": "97%",
@@ -325,14 +325,14 @@
  "kit": {
   "eyebrow": "Free, forever",
   "h1": "The Freedom OS Starter Kit",
-  "sub": "Every prompt, template and setup I use — in plain English, for people who don't code. Add your email and new ones come to you as I add them.",
+  "sub": "Every prompt, template and setup I use, in plain English, for people who don't code. Add your email and new ones come to you as I add them.",
   "cta": "Email me the new templates",
   "note": "No cost, no catch. The whole kit is on this page either way."
  },
  "the99": {
   "eyebrow": "A public experiment",
   "h1": "99 employees, and not one on payroll.",
-  "sub": "I'm building a company staffed by AI — 99 employees, hired one at a time, in public. This is the scoreboard, and it doesn't get to flatter me.",
+  "sub": "I'm building a company staffed by AI, 99 employees, hired one at a time, in public. This is the scoreboard, and it doesn't get to flatter me.",
   "counter_label": "hired",
   "cta_h2": "Want to hire your own Employee #1?",
   "cta": "Read 'Hire your first AI employee'"
@@ -340,7 +340,7 @@
  "about": {
   "eyebrow": "About",
   "h1": "One step ahead of you, on the same path.",
-  "intro": "I'm Fatiha Chikh. I spent 20 years inside the world's biggest tech companies. Now I'm hiring 99 AI employees to run my business, in public — and I share everything I build.",
+  "intro": "I'm Fatiha Chikh. I spent 20 years inside the world's biggest tech companies. Now I'm hiring 99 AI employees to run my business, in public, and I share everything I build.",
   "story_h2": "It was never about the technology.",
   "proof_h2": "Proof, not promises.",
   "cta_solo": "Build your first AI employee with me",
@@ -349,7 +349,7 @@
  "quiz": {
   "eyebrow": "The time-leak quiz · free · 3 minutes",
   "h1": "How many hours a week is your business leaking?",
-  "sub": "Eight quick questions about how your week really runs — content, leads, admin, and the work only you can do. At the end: your leak in hours per week, where it's worst, and the exact free guide to fix it first.",
+  "sub": "Eight quick questions about how your week really runs, content, leads, admin, and the work only you can do. At the end: your leak in hours per week, where it's worst, and the exact free guide to fix it first.",
   "cta": "Start the quiz",
   "note": "No sign-up wall. Your result shows straight away."
  },

@@ -24,7 +24,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "The 99",
-  "description": "A public experiment: hiring 99 AI employees, one at a time, with receipts.",
+  "description": "<!-- copy:the99.eyebrow -->A public experiment<!-- /copy:the99.eyebrow -->: hiring 99 AI employees, one at a time, with receipts.",
   "url": "https://guides.shiftandlead.com/99.html",
   "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"}
 }
@@ -60,7 +60,7 @@
   <div class="hero-inner">
     <div class="hero-kicker">A public experiment</div>
     <h1><!-- copy:the99.h1 -->99 employees, and not one on payroll.<!-- /copy:the99.h1 --></h1>
-    <p class="hero-sub">I'm building a company staffed by AI. 99 employees, hired one at a time, in public. This page is the scoreboard, and it's not allowed to flatter me.</p>
+    <p class="hero-sub"><!-- copy:the99.sub -->I'm building a company staffed by AI, 99 employees, hired one at a time, in public. This is the scoreboard, and it doesn't get to flatter me.<!-- /copy:the99.sub --></p>
     <div class="counter"><span class="big" id="hired-count"><!-- data:the99.hired -->3<!-- /data:the99.hired --></span><span class="of">/ 99 hired</span></div>
     <div class="counter-label">updated when the receipts say so, not before</div>
     <div class="counter-label" id="wave-stamp" style="margin-top:6px;color:var(--accent)"><!-- data:the99.cadenceFallback -->Updated monthly<!-- /data:the99.cadenceFallback --></div>
@@ -143,7 +143,7 @@
 </section>
 
 <section class="cta-band">
-  <h2>Want to hire your own Employee #1?</h2>
+  <h2><!-- copy:the99.cta_h2 -->Want to hire your own Employee #1?<!-- /copy:the99.cta_h2 --></h2>
   <p>The free guide walks you through your first AI hire in a day: pick the task, write the job description, run the first shift.</p>
   <a class="btn" href="opt-in.html?guide=first-ai-employee">Get the free hiring guide</a>
   <span class="cta-sub">Not sure what to delegate first? <a href="time-audit.html">Take the free time-leak quiz</a></span>
@@ -154,14 +154,14 @@
   <div class="nl-grid">
     <div class="nl-copy">
       <p class="eyebrow mono">The Insider Brief</p>
-      <h2 id="nl-title">Get one clear verdict a week on the AI news that matters.</h2>
-      <p>Every week. What changed, whether you should care, and what to do about it. Free.</p>
+      <h2 id="nl-title"><!-- copy:guide_template.brief_cta_h2 -->One clear verdict on the AI news that matters.<!-- /copy:guide_template.brief_cta_h2 --></h2>
+      <p><!-- copy:guide_template.brief_cta_body -->Every Tuesday, free. The week's AI news, filtered, with a plain verdict on each story.<!-- /copy:guide_template.brief_cta_body --></p>
       <form class="capture-form" action="https://auto.shiftandlead.com/webhook/formspree-lead" method="POST" data-source="the-99">
         <label class="visually-hidden" for="nl-email">Email address</label>
         <input id="nl-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
         <input type="hidden" name="source" value="newsletter">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-        <button type="submit">Subscribe free</button>
+        <button type="submit"><!-- copy:guide_template.brief_cta -->Subscribe free<!-- /copy:guide_template.brief_cta --></button>
       </form>
       <p class="capture-fineprint">No cost, no catch. Unsubscribe anytime.</p>
     </div>
