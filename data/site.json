@@ -13,7 +13,7 @@
   "nav": [
     {
       "label": "Guides",
-      "url": "https://guides.shiftandlead.com/free-resources.html"
+      "url": "https://www.shiftandlead.com/guides/"
     },
     {
       "label": "The Brief",
@@ -21,15 +21,15 @@
     },
     {
       "label": "The 99",
-      "url": "https://guides.shiftandlead.com/99.html"
+      "url": "https://www.shiftandlead.com/the-99.html"
     },
     {
       "label": "Quiz",
-      "url": "https://guides.shiftandlead.com/time-audit.html"
+      "url": "https://www.shiftandlead.com/quiz.html"
     },
     {
       "label": "About",
-      "url": "https://guides.shiftandlead.com/about.html"
+      "url": "https://www.shiftandlead.com/about.html"
     },
     {
       "label": "Workshops",
@@ -47,7 +47,7 @@
       "links": [
         {
           "label": "Guides",
-          "url": "https://guides.shiftandlead.com/free-resources.html"
+          "url": "https://www.shiftandlead.com/guides/"
         },
         {
           "label": "The Brief",
@@ -55,15 +55,15 @@
         },
         {
           "label": "The 99",
-          "url": "https://guides.shiftandlead.com/99.html"
+          "url": "https://www.shiftandlead.com/the-99.html"
         },
         {
           "label": "Quiz",
-          "url": "https://guides.shiftandlead.com/time-audit.html"
+          "url": "https://www.shiftandlead.com/quiz.html"
         },
         {
           "label": "Starter Kit",
-          "url": "https://guides.shiftandlead.com/freedom-os-kit.html"
+          "url": "https://www.shiftandlead.com/starter-kit.html"
         }
       ]
     },
@@ -89,15 +89,11 @@
       "links": [
         {
           "label": "About",
-          "url": "https://guides.shiftandlead.com/about.html"
+          "url": "https://www.shiftandlead.com/about.html"
         },
         {
           "label": "Contact",
           "url": "https://www.shiftandlead.com/index.html#contact"
-        },
-        {
-          "label": "Community",
-          "url": "https://www.skool.com/@ai-automation-queen-5858"
         }
       ]
     },
@@ -127,14 +123,6 @@
     {
       "label": "LinkedIn",
       "url": "https://linkedin.com/in/fatihachikh"
-    },
-    {
-      "label": "Instagram",
-      "url": "https://www.instagram.com/fati_chic_/"
-    },
-    {
-      "label": "Skool community",
-      "url": "https://www.skool.com/@ai-automation-queen-5858"
     }
   ],
   "quiz": {
@@ -144,7 +132,7 @@
   },
   "community": {
     "status": "waitlist",
-    "url": "https://www.skool.com/@ai-automation-queen-5858"
+    "url": ""
   },
   "offers": [
     {
@@ -168,14 +156,6 @@
       "priceBand": "$299 founding / $499 public; depth add-on $199",
       "audience": "solo",
       "note": "Prices as published on the live page; offers.md marks the pivot NEEDS RATIFICATION"
-    },
-    {
-      "id": "masterclass",
-      "name": "Hire Your First AI Employee masterclass",
-      "url": "https://www.shiftandlead.com/masterclass.html",
-      "priceBand": "$150",
-      "audience": "solo",
-      "note": "Price decided by Fatiha 14/07/2026 per offers.md"
     }
   ]
 }

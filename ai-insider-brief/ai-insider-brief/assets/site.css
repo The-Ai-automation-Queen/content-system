@@ -300,3 +300,6 @@ body.guide{background:var(--paper);color:var(--ink);font-family:var(--serif);fon
 .lib-track h2{font-family:var(--display);font-size:30px;margin:0 0 4px}
 .lib-track-sub{font-size:16px;color:#555;margin:0 0 18px}
 .lib-more{list-style:none;padding:14px 0 0;margin:0;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:15px}
+
+/* offer price band, stamped from site.json offers; hidden until a price exists */
+.price-band{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-deep);margin:6px 0 14px}

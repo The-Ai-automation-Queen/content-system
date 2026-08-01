@@ -128,6 +128,12 @@ const asTime = (iso) => {
   return `<time datetime="${iso}">${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}</time>`;
 };
 
+function priceOf(id) {
+  const o = site.offers.find((x) => x.id === id);
+  if (!o || !o.priceBand || o.priceBand.includes('TODO')) return '';
+  return `<p class="price-band mono">${o.priceBand}</p>`;
+}
+
 function stampSpans(html) {
   return html
     .replace(/<!-- data:([\w.]+) -->[\s\S]*?<!-- \/data:\1 -->/g,
@@ -135,7 +141,9 @@ function stampSpans(html) {
     .replace(/<!-- copy:([\w.]+) -->[\s\S]*?<!-- \/copy:\1 -->/g,
       (_m, key) => `<!-- copy:${key} -->${get(copy, key) ?? 'MISSING:' + key}<!-- /copy:${key} -->`)
     .replace(/<!-- date:([\w.]+) -->[\s\S]*?<!-- \/date:\1 -->/g,
-      (_m, key) => `<!-- date:${key} -->${asTime(get(CTX, key))}<!-- /date:${key} -->`);
+      (_m, key) => `<!-- date:${key} -->${asTime(get(CTX, key))}<!-- /date:${key} -->`)
+    .replace(/<!-- price:([\w-]+) -->[\s\S]*?<!-- \/price:\1 -->/g,
+      (_m, id) => `<!-- price:${id} -->${priceOf(id)}<!-- /price:${id} -->`);
 }
 
 /* Library cards, grouped into the three tracks, generated from guides.json.
@@ -152,7 +160,7 @@ const libraryCards =
       `    <h2>${title}</h2>\n    <p class="lib-track-sub">${sub}</p>\n` +
       `    <div class="card-grid">\n` +
       items.map((g) =>
-        `      <a class="card" href="guides/${g.slug}.html">\n` +
+        `      <a class="card" href="${g.slug}.html">\n` +
         `        <img src="${g.cover}" alt="Cover art for the guide: ${g.title.replace(/"/g, '&quot;')}" width="411" height="231" loading="lazy" decoding="async">\n` +
         `        <div class="card-body">\n` +
         `          <p class="card-kicker mono">${g.formatLabel}</p>\n` +
@@ -167,8 +175,8 @@ const demoted = guidesData.guides.filter((g) => g.status === 'demoted');
 // The demoted verdicts live on their own hub; the library links the hub and
 // the comparison page rather than repeating six low-traffic cards.
 const demotedList =
-  `  <p class="lib-more"><a href="guides/which-ai-tool-for-what.html">See which AI tool fits which job</a>` +
-  ` &middot; <a href="guides/tool-verdicts.html">Read ${demoted.length} more tool verdicts</a></p>`;
+  `  <p class="lib-more"><a href="which-ai-tool-for-what.html">See which AI tool fits which job</a>` +
+  ` &middot; <a href="tool-verdicts.html">Read ${demoted.length} more tool verdicts</a></p>`;
 
 function stampLibrary(html) {
   return html.replace(/(<!-- data:library-cards -->)[\s\S]*?(<!-- \/data:library-cards -->)/,

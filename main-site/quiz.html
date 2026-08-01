@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#FFFFFF">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="index, follow, max-image-preview:large, noai, noimageai">
+<meta name="description" content="The free Time Leak Quiz, 8 questions in 3 minutes: find out how many hours a week your business leaks to manual work, where the biggest leak is, and the exact free guide to fix it first.">
+<title>The Time Leak Quiz: How Many Hours Are You Leaking? | Shift &amp; Lead</title>
+<link rel="canonical" href="https://www.shiftandlead.com/quiz.html">
+<meta property="og:title" content="The Time Leak Quiz: How Many Hours Are You Leaking?">
+<meta property="og:description" content="8 questions, 3 minutes. Find out how many hours a week your business leaks to manual work, and the exact first fix.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.shiftandlead.com/quiz.html">
+<meta property="og:image" content="https://www.shiftandlead.com/Portrait.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Time Leak Quiz: How Many Hours Are You Leaking?">
+<meta name="twitter:description" content="8 questions, 3 minutes. Find out how many hours a week your business leaks to manual work, and the exact first fix.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "The Time Leak Quiz",
+  "description": "8 questions, 3 minutes. Find out how many hours a week your business leaks to manual work, and the exact first fix.",
+  "url": "https://www.shiftandlead.com/quiz.html",
+  "applicationCategory": "BusinessApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"},
+  "publisher": {"@type": "Organization", "name": "Shift & Lead", "url": "https://www.shiftandlead.com"}
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css?v=a64c4c5a">
+<link rel="stylesheet" href="/assets/pages/time-audit.css?v=28a26f34">
+<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
+<script defer src="/lib/motion.js?v=12d3e96d"></script>
+</head>
+<body>
+
+<!-- chrome:nav -->
+<nav class="site-nav" aria-label="Site">
+  <div class="site-nav-inner">
+    <a class="site-nav-logo" href="https://www.shiftandlead.com/">Shift &amp; Lead</a>
+    <div class="site-nav-links">
+      <a href="https://www.shiftandlead.com/guides/">Guides</a>
+      <a href="https://brief.shiftandlead.com/">The Brief</a>
+      <a href="https://www.shiftandlead.com/the-99.html">The 99</a>
+      <a href="https://www.shiftandlead.com/quiz.html">Quiz</a>
+      <a href="https://www.shiftandlead.com/about.html">About</a>
+      <a href="https://www.shiftandlead.com/workshops.html">Workshops</a>
+      <a class="nav-cta" href="https://www.shiftandlead.com/build-sprint.html">Work with me</a>
+    </div>
+  </div>
+</nav>
+<!-- /chrome:nav -->
+
+
+
+<div class="stage">
+
+  <!-- INTRO -->
+  <section class="intro" id="intro">
+    <div class="intro-kicker"><!-- copy:quiz.eyebrow -->The time-leak quiz · free · 3 minutes<!-- /copy:quiz.eyebrow --></div>
+    <h1><!-- copy:quiz.h1 -->How many hours a week is your business leaking?<!-- /copy:quiz.h1 --></h1>
+    <p class="sub">Eight questions about how your week actually runs, content, leads, admin, and the stuff only you can do. At the end: your leak in hours per week, where it leaks worst, and the exact free guide to fix that first.</p>
+    <div class="intro-facts">
+      <span class="intro-fact"><strong>8</strong> questions</span>
+      <span class="intro-fact"><strong>3</strong> minutes</span>
+      <span class="intro-fact"><strong>0</strong> email required to see your result</span>
+    </div>
+    <button class="btn-start" id="start-btn" type="button">Start the audit &rarr;</button>
+    <p class="intro-note">No sign-up wall. Your result shows immediately.</p>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" hidden>
+    <div class="progress">
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+      <span class="progress-label" id="progress-label">1 / 8</span>
+    </div>
+    <div class="q-area" id="q-area"></div>
+    <h2 class="q-text" id="q-text"></h2>
+    <div class="options" id="options" role="group" aria-label="Answer options"></div>
+    <button class="q-back" id="q-back" type="button" hidden>&larr; Previous question</button>
+  </section>
+
+  <!-- RESULT -->
+  <section id="result" hidden>
+    <div class="r-kicker">Your audit result</div>
+    <div class="r-hours" id="r-hours">0h</div>
+    <div class="r-hours-label">leaking per week &middot; <span id="r-yearly"></span> per year</div>
+    <h2 class="r-type" id="r-type"></h2>
+    <p class="r-desc" id="r-desc"></p>
+
+    <div class="r-bars" id="r-bars"></div>
+
+    <div class="r-cta">
+      <div class="k" id="cta-k">Fix the biggest leak first</div>
+      <h3 id="cta-title"></h3>
+      <p id="cta-desc"></p>
+      <a id="cta-link" href="/guides/">Get the free guide &rarr;</a>
+    </div>
+    <!-- Fast Forward CTA hidden pending launch (restore by removing this comment wrapper): <p class="r-secondary">Want the full fix, not just the score? Fast Forward turns your audit into working systems, lesson by lesson. <a href="https://www.shiftandlead.com/fast-forward.html?utm_source=guides&utm_medium=site&utm_campaign=estate&utm_content=time-audit">See Fast Forward &rarr;</a></p> -->
+    <p class="r-secondary">Prefer to fix it with people one step ahead of you? <a href="about.html#community">The founding community is opening soon. Get on the list.</a></p>
+
+    <div class="r-email">
+      <h4>Email me my full audit.</h4>
+      <p>Your result, the breakdown, and the fix-first plan, in your inbox so it doesn't vanish with this tab.</p>
+      <form action="https://auto.shiftandlead.com/webhook/formspree-lead" method="POST" class="r-email-row" id="email-form">
+        <input type="email" name="email" placeholder="your@email.com" required>
+        <input type="hidden" name="source" value="guides-time-audit-result">
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit">Send it</button>
+      </form>
+      <p class="r-email-note" id="email-note">No spam. No sequences you didn't ask for.</p>
+    </div>
+
+    <div class="r-retake"><button type="button" id="retake">&larr; Retake the quiz</button></div>
+  </section>
+
+</div>
+
+
+
+<script>
+(function(){
+  var AREAS = { content: 'Content', leads: 'Leads', ops: 'Admin & Ops', brain: 'Focus' };
+
+  var QUESTIONS = [
+    { area: 'content', text: 'How does your content actually get posted?',
+      opts: [
+        { label: 'I write and post everything by hand, platform by platform.', hrs: 3 },
+        { label: 'I batch sometimes, but posting is still manual.', hrs: 2 },
+        { label: 'A scheduler handles some of it.', hrs: 1 },
+        { label: 'One system posts everywhere. I just approve.', hrs: 0 }
+      ]},
+    { area: 'content', text: 'Turning one piece of content into many, clips, captions, carousels?',
+      opts: [
+        { label: 'I don’t. Every piece is made from scratch.', hrs: 2.5 },
+        { label: 'I repurpose by hand, when I find the time.', hrs: 1.5 },
+        { label: 'Some repurposing is automated.', hrs: 0.5 },
+        { label: 'Fully systemized, one input, many outputs.', hrs: 0 }
+      ]},
+    { area: 'leads', text: 'Someone shows interest, a comment, a DM, a form. What happens?',
+      opts: [
+        { label: 'I reply personally when I see it… sometimes days later.', hrs: 3 },
+        { label: 'I try to reply same-day. All by hand.', hrs: 2 },
+        { label: 'Some auto-replies, but capture is still manual.', hrs: 1 },
+        { label: 'Auto-DM, auto-capture, auto-follow-up.', hrs: 0 }
+      ]},
+    { area: 'leads', text: 'And the leads who didn’t buy yet, how do they get followed up?',
+      opts: [
+        { label: 'Honestly? They don’t. Leads go cold.', hrs: 2.5 },
+        { label: 'Occasionally, from memory.', hrs: 2 },
+        { label: 'I keep a list and work through it by hand.', hrs: 1.5 },
+        { label: 'A sequence runs automatically.', hrs: 0 }
+      ]},
+    { area: 'ops', text: 'Scheduling, invoicing, onboarding paperwork, who runs it?',
+      opts: [
+        { label: 'Me. All of it, manually.', hrs: 3 },
+        { label: 'I have templates, but I run every step.', hrs: 2 },
+        { label: 'Partially automated.', hrs: 1 },
+        { label: 'It runs itself. I approve.', hrs: 0 }
+      ]},
+    { area: 'ops', text: 'Answering the same questions over and over, email, DMs, support?',
+      opts: [
+        { label: 'Every answer typed fresh, every time.', hrs: 2 },
+        { label: 'Copy-paste from a doc I keep.', hrs: 1.5 },
+        { label: 'Saved replies and a little automation.', hrs: 0.5 },
+        { label: 'An agent handles the common ones.', hrs: 0 }
+      ]},
+    { area: 'brain', text: 'Staying on top of AI, what’s worth it, what’s noise?',
+      opts: [
+        { label: 'Doom-scrolling and 40 open tabs.', hrs: 2 },
+        { label: 'A few newsletters, when I get to them.', hrs: 1 },
+        { label: 'I have a trusted filter or two.', hrs: 0.5 },
+        { label: 'A curated brief lands in my inbox. Done.', hrs: 0 }
+      ]},
+    { area: 'brain', text: 'Last one. How much of your week runs without you touching it?',
+      opts: [
+        { label: 'None. If I stop, everything stops.', hrs: 2 },
+        { label: 'A little, the rest is all me.', hrs: 1.5 },
+        { label: 'Some key parts run themselves.', hrs: 1 },
+        { label: 'Most of it. I mostly approve.', hrs: 0 }
+      ]}
+  ];
+
+  var TYPES = [
+    { min: 14, name: 'The Do-It-All Founder',
+      desc: 'Right now, <strong>you are the system</strong>. Every post, every reply, every invoice routes through your hands, which means the business only moves when you do. The good news: you have the most to win back, and the first fix takes under an hour.' },
+    { min: 8, name: 'The Half-Systemized',
+      desc: 'You’ve automated the parts that annoyed you most, and the rest quietly eats your week. This is the most common place to stall: <strong>good enough to survive, too leaky to scale.</strong> One more system closes most of the gap.' },
+    { min: 3, name: 'The Almost-Automated',
+      desc: 'Most of your machine runs. You’re past the overwhelm stage, now it’s about <strong>closing the last leaks</strong> and letting go of the tasks you’re still holding out of habit, not necessity.' },
+    { min: 0, name: 'The System Owner',
+      desc: 'Your business runs without running you, rare air. The leak that’s left is small, but at your level, <strong>every hour back is pure margin.</strong> Worth closing.' }
+  ];
+
+  var CTAS = {
+    content: { title: 'Your biggest leak is content.',
+      desc: 'You’re paying the manual-posting tax every single week. The 3-Tool AI Stack shows the exact brain → megaphone → net setup that creates once and posts everywhere.',
+      href: 'opt-in.html?guide=stack-3-tool-ai-stack', label: 'Get the 3-Tool AI Stack (free) →' },
+    leads: { title: 'Your biggest leak is lead follow-up.',
+      desc: 'Attention you already earned is going cold in your DMs. The Lead Follow-Up Setup is the build-once system that catches every raised hand and follows up on its own, with the messages to copy.',
+      href: 'opt-in.html?guide=follow-up-setup', label: 'Get the Lead Follow-Up Setup (free) →' },
+    ops: { title: 'Your biggest leak is admin & operations.',
+      desc: 'The repeating tasks you resent are exactly the ones an AI employee should own. The First AI Employee guide is the 5-step hire, one task, off your plate for good, this week.',
+      href: 'opt-in.html?guide=first-ai-employee', label: 'Set up your first AI employee (free) →' },
+    brain: { title: 'Your biggest leak is attention.',
+      desc: 'You’re spending real hours filtering AI noise that someone should filter for you. The AI Insider Brief does it every Tuesday: plain English, an ACT / WATCH / IGNORE verdict on every story, free.',
+      href: 'https://brief.shiftandlead.com', label: 'Get the AI Insider Brief (free) →' }
+  };
+
+  var current = 0;
+  var answers = new Array(QUESTIONS.length).fill(null);
+
+  var intro = document.getElementById('intro');
+  var quiz = document.getElementById('quiz');
+  var result = document.getElementById('result');
+  var qArea = document.getElementById('q-area');
+  var qText = document.getElementById('q-text');
+  var optionsEl = document.getElementById('options');
+  var backBtn = document.getElementById('q-back');
+  var fill = document.getElementById('progress-fill');
+  var progressLabel = document.getElementById('progress-label');
+
+  function show(section){
+    [intro, quiz, result].forEach(function(s){ s.hidden = s !== section; });
+    window.scrollTo({top: 0});
+  }
+
+  function renderQuestion(){
+    var q = QUESTIONS[current];
+    qArea.textContent = 'Part ' + (['content','leads','ops','brain'].indexOf(q.area) + 1) + ' of 4 · ' + AREAS[q.area];
+    qText.textContent = q.text;
+    optionsEl.innerHTML = '';
+    q.opts.forEach(function(opt, i){
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'opt';
+      var key = document.createElement('span');
+      key.className = 'key';
+      key.textContent = i + 1;
+      btn.appendChild(key);
+      btn.appendChild(document.createTextNode(opt.label));
+      btn.addEventListener('click', function(){ answer(i); });
+      optionsEl.appendChild(btn);
+    });
+    fill.style.width = (current / QUESTIONS.length * 100) + '%';
+    progressLabel.textContent = (current + 1) + ' / ' + QUESTIONS.length;
+    backBtn.hidden = current === 0;
+  }
+
+  function answer(i){
+    answers[current] = i;
+    if (current < QUESTIONS.length - 1) {
+      current++;
+      renderQuestion();
+    } else {
+      showResult();
+    }
+  }
+
+  function showResult(){
+    var total = 0;
+    var byArea = { content: 0, leads: 0, ops: 0, brain: 0 };
+    var maxByArea = { content: 0, leads: 0, ops: 0, brain: 0 };
+    QUESTIONS.forEach(function(q, idx){
+      var hrs = q.opts[answers[idx]].hrs;
+      total += hrs;
+      byArea[q.area] += hrs;
+      maxByArea[q.area] += q.opts[0].hrs;
+    });
+
+    var hoursTxt = (total % 1 === 0 ? total : total.toFixed(1));
+    document.getElementById('r-hours').textContent = '~' + hoursTxt + 'h';
+    var weeks = Math.round(total * 48 / 40);
+    document.getElementById('r-yearly').textContent = weeks + ' full work-week' + (weeks === 1 ? '' : 's');
+
+    var type = TYPES.find(function(t){ return total >= t.min; });
+    document.getElementById('r-type').textContent = type.name;
+    document.getElementById('r-desc').innerHTML = type.desc;
+
+    var worst = Object.keys(byArea).reduce(function(a, b){ return byArea[b] > byArea[a] ? b : a; });
+
+    var bars = document.getElementById('r-bars');
+    bars.innerHTML = '';
+    Object.keys(byArea).forEach(function(area){
+      var row = document.createElement('div');
+      row.className = 'r-bar-row' + (area === worst && byArea[area] > 0 ? ' worst' : '');
+      var pct = maxByArea[area] ? Math.round(byArea[area] / maxByArea[area] * 100) : 0;
+      var v = byArea[area] % 1 === 0 ? byArea[area] : byArea[area].toFixed(1);
+      row.innerHTML = '<span class="r-bar-name">' + AREAS[area] + '</span>' +
+        '<div class="r-bar-track"><div class="r-bar-fill" style="width:' + pct + '%"></div></div>' +
+        '<span class="r-bar-val">' + v + 'h</span>';
+      bars.appendChild(row);
+    });
+
+    var cta = (byArea[worst] > 0) ? CTAS[worst] : {
+      title: 'Honestly? You’re already running tight.',
+      desc: 'No major leak to plug, so the next win is staying ahead of what’s changing. The AI Insider Brief filters the noise for you, every Tuesday.',
+      href: 'https://brief.shiftandlead.com', label: 'Get the AI Insider Brief (free) →'
+    };
+    document.getElementById('cta-title').textContent = cta.title;
+    document.getElementById('cta-desc').textContent = cta.desc;
+    var link = document.getElementById('cta-link');
+    link.href = cta.href;
+    link.textContent = cta.label;
+
+    result.dataset.total = hoursTxt;
+    if (window.slSaveQuiz) window.slSaveQuiz(hoursTxt);
+    result.dataset.type = type.name;
+    result.dataset.worst = worst;
+
+    show(result);
+  }
+
+  document.getElementById('start-btn').addEventListener('click', function(){
+    show(quiz);
+    renderQuestion();
+  });
+
+  backBtn.addEventListener('click', function(){
+    if (current > 0) { current--; renderQuestion(); }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (quiz.hidden) return;
+    var n = parseInt(e.key, 10);
+    if (n >= 1 && n <= QUESTIONS[current].opts.length) answer(n - 1);
+  });
+
+  document.getElementById('retake').addEventListener('click', function(){
+    current = 0;
+    answers = new Array(QUESTIONS.length).fill(null);
+    show(quiz);
+    renderQuestion();
+  });
+
+  document.getElementById('email-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = this;
+    var email = form.querySelector('[name="email"]').value;
+    var btn = form.querySelector('button');
+    if (form.querySelector('[name="_gotcha"]').value) { btn.textContent = 'Sent!'; return; }
+    var payload = {
+      email: email,
+      source: 'time-audit',
+      tier: result.dataset.type || '',
+      hoursLeaked: result.dataset.total || '',
+      worstArea: result.dataset.worst || ''
+    };
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
+      method: 'POST', keepalive: true,
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(payload)
+    });
+    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
+      method: 'POST', keepalive: true,
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    });
+    btn.disabled = true;
+    btn.textContent = 'Sent!';
+    document.getElementById('email-note').textContent = 'On its way. If it doesn’t appear in 5 minutes, check spam.';
+  });
+})();
+</script>
+
+<script>
+(function(){
+  try {
+    var prev = JSON.parse(localStorage.getItem('sl_quiz') || 'null');
+    if (prev && prev.hours != null) {
+      var intro = document.querySelector('.intro-kicker');
+      if (intro) {
+        var note = document.createElement('p');
+        note.style.cssText = "font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.08em;color:#2C4BE0;margin-top:10px";
+        note.textContent = 'Your last score: ' + prev.hours + ' hrs/week on ' + prev.date + '. Retake and compare.';
+        intro.parentNode.insertBefore(note, intro.nextSibling);
+      }
+    }
+    window.slSaveQuiz = function(hours){
+      localStorage.setItem('sl_quiz', JSON.stringify({hours: hours, date: new Date().toISOString().slice(0,10)}));
+    };
+  } catch(e){}
+})();
+</script>
+<!-- chrome:footer -->
+<footer class="chrome-foot">
+  <div class="chrome-foot-grid">
+    <section>
+      <h2>Learn</h2>
+      <ul>
+        <li><a href="https://www.shiftandlead.com/guides/">Guides</a></li>
+        <li><a href="https://brief.shiftandlead.com/">The Brief</a></li>
+        <li><a href="https://www.shiftandlead.com/the-99.html">The 99</a></li>
+        <li><a href="https://www.shiftandlead.com/quiz.html">Quiz</a></li>
+        <li><a href="https://www.shiftandlead.com/starter-kit.html">Starter Kit</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Work</h2>
+      <ul>
+        <li><a href="https://www.shiftandlead.com/build-sprint.html">Work with me</a></li>
+        <li><a href="https://www.shiftandlead.com/workshops.html">Workshops</a></li>
+        <li><a href="https://www.shiftandlead.com/case-study-1.html">Case studies</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>About</h2>
+      <ul>
+        <li><a href="https://www.shiftandlead.com/about.html">About</a></li>
+        <li><a href="https://www.shiftandlead.com/index.html#contact">Contact</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Legal</h2>
+      <ul>
+        <li><a href="https://www.shiftandlead.com/privacy.html">Privacy</a></li>
+        <li><a href="https://www.shiftandlead.com/terms.html">Terms</a></li>
+        <li><a href="https://www.shiftandlead.com/refund-policy.html">Refunds</a></li>
+        <li><a href="https://www.shiftandlead.com/licensing.html">Licensing</a></li>
+      </ul>
+    </section>
+  </div>
+  <p class="chrome-foot-legal">&copy; <time datetime="2026">2026</time> Shift &amp; Lead. All rights reserved.</p>
+</footer>
+<!-- /chrome:footer -->
+</body></html>

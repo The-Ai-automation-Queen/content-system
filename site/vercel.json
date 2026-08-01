@@ -2,62 +2,89 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
+      "source": "/free-resources.html",
+      "destination": "https://www.shiftandlead.com/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/time-audit.html",
+      "destination": "https://www.shiftandlead.com/quiz.html",
+      "permanent": true
+    },
+    {
+      "source": "/99.html",
+      "destination": "https://www.shiftandlead.com/the-99.html",
+      "permanent": true
+    },
+    {
+      "source": "/freedom-os-kit.html",
+      "destination": "https://www.shiftandlead.com/starter-kit.html",
+      "permanent": true
+    },
+    {
+      "source": "/opt-in.html",
+      "destination": "https://www.shiftandlead.com/opt-in.html",
+      "permanent": true
+    },
+    {
       "source": "/guides/chez-claude.html",
-      "destination": "/guides/claude.html",
+      "destination": "https://www.shiftandlead.com/guides/claude.html",
       "permanent": true
     },
     {
       "source": "/guides/chez-claude-preview.html",
-      "destination": "/guides/claude.html",
+      "destination": "https://www.shiftandlead.com/guides/claude.html",
       "permanent": true
     },
     {
       "source": "/guides/chez-openai.html",
-      "destination": "/guides/chatgpt.html",
+      "destination": "https://www.shiftandlead.com/guides/chatgpt.html",
       "permanent": true
     },
     {
       "source": "/guides/chez-gemini.html",
-      "destination": "/guides/gemini.html",
+      "destination": "https://www.shiftandlead.com/guides/gemini.html",
       "permanent": true
     },
     {
       "source": "/guides/chez-copilot.html",
-      "destination": "/guides/copilot.html",
+      "destination": "https://www.shiftandlead.com/guides/copilot.html",
       "permanent": true
     },
     {
       "source": "/guides/chez-grok.html",
-      "destination": "/guides/grok.html",
+      "destination": "https://www.shiftandlead.com/guides/grok.html",
       "permanent": true
     },
     {
       "source": "/guides/chez-mistral.html",
-      "destination": "/guides/mistral.html",
+      "destination": "https://www.shiftandlead.com/guides/mistral.html",
       "permanent": true
     },
     {
       "source": "/guides/chez-deepseek.html",
-      "destination": "/guides/deepseek.html",
+      "destination": "https://www.shiftandlead.com/guides/deepseek.html",
       "permanent": true
     },
     {
       "source": "/guides/chez-kimi.html",
-      "destination": "/guides/kimi.html",
+      "destination": "https://www.shiftandlead.com/guides/kimi.html",
       "permanent": true
     },
     {
       "source": "/guides/chez-meta-ai.html",
-      "destination": "/guides/meta-ai.html",
+      "destination": "https://www.shiftandlead.com/guides/meta-ai.html",
       "permanent": true
     },
     {
       "source": "/guides/chez-manus.html",
-      "destination": "/guides/manus.html",
+      "destination": "https://www.shiftandlead.com/guides/manus.html",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://www.shiftandlead.com/$1",
       "permanent": true
     }
-  ],
-  "buildCommand": "cd .. && node tools/include.mjs",
-  "outputDirectory": ".",
-  "installCommand": ""
+  ]
 }
