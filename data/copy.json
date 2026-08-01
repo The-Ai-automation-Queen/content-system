@@ -1,0 +1,304 @@
+{
+ "_meta": {
+  "voice": "Outcome-first, plain English, grade-7. Reader is the hero, Fatiha is the guide. No mood taglines, no self-quotes, max one 'not X, Y' per page, every claim followed by a number or named example.",
+  "identity": "Fatiha Chikh · AI operator · 20 years at Dell, Intel, Microsoft",
+  "positioning": "Hand your busywork to AI, one task at a time — without hiring, coding, or a six-month project. Twenty years of Fortune 500 method, sized for a team of one.",
+  "retired_strings": [
+   "The AI Automation Queen",
+   "AI, explained quietly",
+   "Get your time back",
+   "Lead with AI, without drowning in it",
+   "The winners don't work harder"
+  ],
+  "truncation": "TODO(fatiha): the source prompt was cut off inside guide_template after cards_labels_enum. Missing sections (guide_template body keys, library_index, brief, about, quiz and anything after) need to be re-sent; placeholders below mark where they land."
+ },
+ "global": {
+  "brief_ribbon_label": "Get the AI Insider Brief, free",
+  "brief_ribbon_cta": "Subscribe free",
+  "primary_cta": "Get the free guides",
+  "secondary_cta": "See what I'll build with you"
+ },
+ "home": {
+  "hero_eyebrow": "For business owners who don't code",
+  "hero_h1": "Hand one task a week to an AI employee.",
+  "hero_h1_accent": "You don't need to be technical.",
+  "hero_sub": "The method I used on Fortune 500 teams at Dell, Intel and Microsoft — rebuilt for a business of one to ten people. What to automate, what to skip, and how.",
+  "hero_cta_primary": "Get the free guides",
+  "hero_cta_secondary": "See what I'll build with you",
+  "start_here_eyebrow": "Start here",
+  "start_here_h2": "Which of these is you right now?",
+  "door_team_title": "You lead a team or a company",
+  "door_team_body": "You want your people using AI on Monday, not just hearing about it on Friday.",
+  "door_team_cta": "See workshops for teams",
+  "door_solo_title": "You're figuring it out solo",
+  "door_solo_body": "Start free, learn the words, and automate your first task this week.",
+  "door_solo_cta": "Read the free guides",
+  "pain_eyebrow": "Sound familiar?",
+  "pain_h2": "Every week you wait costs you time, leads, and revenue.",
+  "pain_items": [
+   "You can't say how many hours busywork steals from your week.",
+   "Leads go cold because follow-up is too slow.",
+   "You pay for five tools and use two.",
+   "Your big goals are on hold because admin ate the day again.",
+   "You miss chances because you're buried — not because you're not good enough."
+  ],
+  "pain_cta_line": "Find out what it's actually costing you, then fix it.",
+  "pain_cta": "Take the free time-leak quiz",
+  "pain_cta_note": "8 questions, 3 minutes, no email needed to see your number.",
+  "credential_h2": "I've installed new tech inside big companies for 20 years.",
+  "credential_body": "The internet, the cloud, subscriptions — every wave, capable people froze and waited too long. My job at Dell, Intel and Microsoft was to turn new tech into something ordinary teams actually use. AI is the same job, faster. I'm doing it in public on my own business so you can copy what works.",
+  "credential_cta": "Read the full story",
+  "the99_teaser_eyebrow": "Built in public",
+  "the99_teaser_h2": "I'm hiring 99 AI employees to run my business — with receipts.",
+  "the99_teaser_body": "A live scoreboard of every task I've handed to AI, what it did, and proof it worked.",
+  "the99_teaser_cta": "See the scoreboard",
+  "proof_eyebrow": "Proof, not theory",
+  "proof_h2": "Real businesses, real results.",
+  "proof_items": [
+   {
+    "stat": "1 min",
+    "label": "average support reply for an online store, down from hours",
+    "cta": "Read the story"
+   },
+   {
+    "stat": "97%",
+    "label": "faster first contact for a day care that was losing leads from Facebook ads",
+    "cta": "Read the story"
+   },
+   {
+    "stat": "30%",
+    "label": "sales growth for a tire shop that stopped losing calls to voicemail",
+    "cta": "Read the story"
+   }
+  ],
+  "testimonials_eyebrow": "In their words",
+  "testimonials_h2": "People who built it with me.",
+  "testimonials_note": "TODO(fatiha): confirm written permission to keep first-name + photo for Pauline, Myriam, Nazima. Named proof converts better than initials.",
+  "help_eyebrow": "When free isn't enough",
+  "help_h2": "Two ways to go further.",
+  "help_solo_title": "Build your first AI employee with me",
+  "help_solo_body": "One task that eats your week, gone for good — built with you in a week, and yours to keep.",
+  "help_solo_cta": "See how it works",
+  "help_team_title": "Bring AI adoption to your team",
+  "help_team_body": "Keynotes and workshops your people will actually use on Monday.",
+  "help_team_cta": "See formats and booking",
+  "faq_eyebrow": "Before you ask",
+  "faq_h2": "Questions people actually have.",
+  "faq": [
+   {
+    "q": "I'm not technical. Can I still do this?",
+    "a": "Yes — that's the whole point. You don't need to code. I hand you shortcuts in plain English that just work."
+   },
+   {
+    "q": "Do I have to replace the tools I already use?",
+    "a": "No. We work with your CRM, your email, your calendar. I never make you switch just to switch."
+   },
+   {
+    "q": "What if the free guides aren't enough?",
+    "a": "That's what the build sprint and workshops are for. Start free, go further when you're ready — never before."
+   },
+   {
+    "q": "How fast will I see results?",
+    "a": "Some wins land the same week: one task automated, one hour back. A full system takes a few weeks. Real change, not a hack."
+   }
+  ]
+ },
+ "build_sprint": {
+  "eyebrow": "Work with me · 1:1 build sprint",
+  "h1": "One task that's eating your week — gone for good.",
+  "sub": "In one week I build your first AI employee with you, not for you. You watch every decision, you keep the logins, and your team runs it after I leave.",
+  "price_band": "TODO(fatiha): add a real price or 'from £___'. A money page with no price does not convert.",
+  "cta": "Apply for a build sprint",
+  "what_you_get_h2": "What you get",
+  "what_you_get": [
+   {
+    "title": "The right task, picked properly",
+    "body": "We start with the task that costs you most — usually the one you resent doing by hand, not the one you'd have guessed."
+   },
+   {
+    "title": "The build, done together",
+    "body": "I build it while you watch and ask questions. No black box. You see every decision, because you're the one who lives with it."
+   },
+   {
+    "title": "A written job description",
+    "body": "One page: what it does, what it never does, and what good looks like. The part that makes it reliable — and the part everyone skips."
+   },
+   {
+    "title": "Full handover",
+    "body": "Your logins, your accounts, your tools. When we finish, you own it. No retainer, no keys held back."
+   },
+   {
+    "title": "Clear safety rules",
+    "body": "What it can touch, what it must never send, and how to decide what data goes near it — written down so it survives a busy week."
+   },
+   {
+    "title": "Two weeks of follow-up",
+    "body": "The real questions surface in the first fortnight. That's when a build sticks instead of quietly getting abandoned. You can ask them."
+   }
+  ],
+  "how_h2": "How it works",
+  "how": [
+   {
+    "step": "1",
+    "title": "Apply",
+    "body": "A five-minute form. Tell me the one task eating your week and I'll tell you honestly whether this is the right fix."
+   },
+   {
+    "step": "2",
+    "title": "A 20-minute fit call",
+    "body": "Not a sales call. We check whether the task is ready to hand over. Sometimes the honest answer is you don't need me yet."
+   },
+   {
+    "step": "3",
+    "title": "We build it in a week",
+    "body": "Sessions across one week, work happening between them. At the end it runs, it's documented, and it's yours."
+   }
+  ],
+  "examples_h2": "The kind of thing we build",
+  "examples_note": "Real builds from my case studies — examples of the shape of the work, not a promise your numbers will match.",
+  "examples": [
+   {
+    "stat": "1 min",
+    "label": "average support reply for an online store, with an automated support bot",
+    "cta": "Read the case study"
+   },
+   {
+    "stat": "97%",
+    "label": "faster first contact for a day care, with an agent that qualifies leads and books tours",
+    "cta": "Read the case study"
+   },
+   {
+    "stat": "30%",
+    "label": "sales growth for a tire shop, by recovering every missed call",
+    "cta": "Read the case study"
+   }
+  ],
+  "fit_h2": "Who this is for",
+  "fit_yes": [
+   "You run a small business or team and the busywork is yours.",
+   "You can name one task you do every week and resent.",
+   "You're not technical and don't plan to become technical.",
+   "You want to own the result, not rent it."
+  ],
+  "fit_no_title": "Not for you if",
+  "fit_no": [
+   "You want a course or a strategy deck rather than a working build.",
+   "You can't yet name the task you'd hand over.",
+   "TODO(fatiha): confirm the third disqualifier from the live page."
+  ],
+  "fit_note": "Solo operators welcome. So are teams of three. There's no revenue number you have to clear."
+ },
+ "workshops": {
+  "eyebrow": "Keynotes · workshops · team enablement",
+  "h1": "AI your team will actually adopt.",
+  "sub": "I led AI, cloud and SaaS adoption across Fortune 500 teams in a dozen markets and four languages. I bring that same playbook in-house: practical, non-technical, built from a business that runs on it.",
+  "cta": "Apply to bring this to your team",
+  "why_h2": "Adoption is the hard part. That's what I teach.",
+  "why_body": "Most AI talks inspire the room and change nothing on Monday. For 20 years my job at Dell, Intel and Microsoft was getting real teams to use new tech, repeatedly. The workshops install a clear method that hands your team's busywork to AI, in order, without anyone becoming technical.",
+  "formats_h2": "Three ways to bring this in.",
+  "formats": [
+   {
+    "title": "Keynote",
+    "body": "TODO(fatiha): confirm keynote length + what the room leaves with.",
+    "price": "TODO(fatiha): price or 'on request'"
+   },
+   {
+    "title": "Half-day workshop",
+    "body": "TODO(fatiha): confirm outcome + group size.",
+    "price": "TODO(fatiha)"
+   },
+   {
+    "title": "Full-day workshop",
+    "body": "TODO(fatiha): confirm outcome + the 'one automation, guaranteed' deliverable.",
+    "price": "TODO(fatiha)"
+   }
+  ],
+  "guarantee_h2": "Your team leaves with one automation built.",
+  "guarantee_body": "TODO(fatiha): confirm exact guarantee wording from live page.",
+  "not_for_title": "This isn't for you if",
+  "not_for": [
+   "TODO(fatiha): confirm the disqualifiers from the live page."
+  ]
+ },
+ "case_studies": {
+  "shared_cta_h2": "Want the plain-English version of how this works?",
+  "shared_cta_body": "Start with the free guides. No pitch, no email wall.",
+  "shared_cta": "Read the free guides",
+  "shared_disclaimer": "TODO(fatiha): replace 'A real client project, not named here' with a named business or first-name + role quote. Anonymous proof reads as invented.",
+  "ecommerce": {
+   "eyebrow": "Case study · online store",
+   "h1": "Customers got answers in a minute, not a day.",
+   "challenge_h2": "The problem",
+   "challenge": "A growing online store couldn't keep up with questions about orders, stock, and returns. With a small support team, replies lagged and customers got frustrated waiting.",
+   "built_h2": "What I built",
+   "built": "A support bot that instantly answers the common questions, gives live order status, and hands anything complex to a person. It runs on the website and the store's messaging apps, so customers get an answer the moment they ask.",
+   "stats": [
+    {
+     "stat": "1 min",
+     "label": "average support reply, down from hours"
+    },
+    {
+     "stat": "15%",
+     "label": "more questions resolved on first contact"
+    },
+    {
+     "stat": "22%",
+     "label": "higher customer satisfaction score"
+    }
+   ]
+  },
+  "daycare": {
+   "eyebrow": "Case study · day care",
+   "h1": "Every lead got a reply in two minutes — and booked a tour.",
+   "challenge_h2": "The problem",
+   "challenge": "Short-staffed, the coordinator couldn't keep up with leads from Facebook ads. Replies were slow, some leads went untouched, and ad spend was wasted.",
+   "built_h2": "What I built",
+   "built": "An agent that reaches every new lead within two minutes, greets and qualifies them against the coordinator's own criteria, and books a tour on her behalf — so nothing slips and nobody waits.",
+   "stats": [
+    {
+     "stat": "97%",
+     "label": "faster first contact"
+    },
+    {
+     "stat": "40%",
+     "label": "more tours scheduled"
+    },
+    {
+     "stat": "30%",
+     "label": "more registrations"
+    }
+   ]
+  },
+  "tireshop": {
+   "eyebrow": "Case study · tire shop",
+   "h1": "No missed call turned into a lost sale.",
+   "challenge_h2": "The problem",
+   "challenge": "TODO(fatiha): confirm the tire shop challenge copy from the live case-study-3 page.",
+   "built_h2": "What I built",
+   "built": "A system that catches every missed call and follows up before the customer rings a competitor.",
+   "stats": [
+    {
+     "stat": "42 sec",
+     "label": "average time to respond to a lead"
+    },
+    {
+     "stat": "30%",
+     "label": "sales growth"
+    }
+   ]
+  }
+ },
+ "guide_template": {
+  "cards_labels_enum": [
+   "FREE GUIDE",
+   "FREE TOOL VERDICT",
+   "FREE SETUP"
+  ],
+  "triplet_labels": "TODO(fatiha): prompt truncated here — re-send guide_template from triplet_labels onward",
+  "byline_format": "{formatLabel} · Updated {dateModified} · {readMinutes} min read",
+  "keep_going_h2": "Keep going",
+  "build_cta": "TODO(fatiha): re-send from truncated prompt",
+  "brief_cta": "TODO(fatiha): re-send from truncated prompt"
+ },
+ "library_index": "TODO(fatiha): section missing from truncated prompt — re-send library_index (three-track copy)"
+}

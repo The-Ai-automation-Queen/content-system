@@ -1,0 +1,41 @@
+{
+ "hired": 3,
+ "total": 99,
+ "lastUpdated": "2026-07-07",
+ "cadenceFallback": "Updated monthly",
+ "employees": [
+  {
+   "n": 1,
+   "name": "Nour",
+   "role": "Board Secretary",
+   "dept": "Back Office",
+   "hired": "2026-07-06",
+   "receipt": "Ran the Monday board meeting and wrote the minutes. Tells me the truth even when the truth is $0."
+  },
+  {
+   "n": 2,
+   "name": "Rashid",
+   "role": "Head of Research",
+   "dept": "Intelligence",
+   "hired": "2026-07-07",
+   "receipt": "Audited this whole brand and fact-checked 10 competitor funnels against live sources, in one day."
+  },
+  {
+   "n": 3,
+   "name": "Zeina",
+   "role": "Design Studio",
+   "dept": "Marketing",
+   "hired": "2026-07-06",
+   "receipt": "Rendered the first on-brand carousel from a plain text brief. Pixel-perfect, in seconds, for $0."
+  },
+  {
+   "n": 4,
+   "name": "Nadia",
+   "role": "Inbox Manager",
+   "dept": "Operations",
+   "hired": null,
+   "receipt": null,
+   "statusLine": "Interviewing. Starts when the receipts do."
+  }
+ ]
+}

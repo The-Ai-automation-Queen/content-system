@@ -1,0 +1,9 @@
+{
+  "name": "shift-and-lead-estate",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build": "node tools/include.mjs"
+  }
+}

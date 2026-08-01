@@ -1,0 +1,56 @@
+{
+  "brand": "Shift & Lead",
+  "promise": "Hire your first AI employee.",
+  "positioning": "Hand your busywork to AI, one task at a time — without hiring, coding, or a six-month project. Twenty years of Fortune 500 method, sized for a team of one.",
+  "identity": "Fatiha Chikh · AI operator · 20 years at Dell, Intel, Microsoft",
+  "audience": "Owner-operators, 1-10 people, non-technical.",
+  "year": 2026,
+  "hosts": {
+    "www": "https://www.shiftandlead.com",
+    "guides": "https://guides.shiftandlead.com",
+    "brief": "https://brief.shiftandlead.com"
+  },
+  "nav": [
+    { "label": "Guides", "url": "https://guides.shiftandlead.com/free-resources.html" },
+    { "label": "The Brief", "url": "https://brief.shiftandlead.com/" },
+    { "label": "The 99", "url": "https://guides.shiftandlead.com/99.html" },
+    { "label": "Quiz", "url": "https://guides.shiftandlead.com/time-audit.html" },
+    { "label": "About", "url": "https://guides.shiftandlead.com/about.html" },
+    { "label": "Workshops", "url": "https://www.shiftandlead.com/workshops.html" },
+    { "label": "Work with me", "url": "https://www.shiftandlead.com/build-sprint.html", "cta": true }
+  ],
+  "footer": [
+    { "title": "Learn", "links": [
+      { "label": "Guides", "url": "https://guides.shiftandlead.com/free-resources.html" },
+      { "label": "The Brief", "url": "https://brief.shiftandlead.com/" },
+      { "label": "The 99", "url": "https://guides.shiftandlead.com/99.html" },
+      { "label": "Quiz", "url": "https://guides.shiftandlead.com/time-audit.html" },
+      { "label": "Starter Kit", "url": "https://guides.shiftandlead.com/freedom-os-kit.html" } ] },
+    { "title": "Work", "links": [
+      { "label": "Work with me", "url": "https://www.shiftandlead.com/build-sprint.html" },
+      { "label": "Workshops", "url": "https://www.shiftandlead.com/workshops.html" },
+      { "label": "Case studies", "url": "https://www.shiftandlead.com/case-study-1.html" } ] },
+    { "title": "About", "links": [
+      { "label": "About", "url": "https://guides.shiftandlead.com/about.html" },
+      { "label": "Contact", "url": "https://www.shiftandlead.com/index.html#contact" },
+      { "label": "Community", "url": "https://www.skool.com/@ai-automation-queen-5858" } ] },
+    { "title": "Legal", "links": [
+      { "label": "Privacy", "url": "https://www.shiftandlead.com/privacy.html" },
+      { "label": "Terms", "url": "https://www.shiftandlead.com/terms.html" },
+      { "label": "Refunds", "url": "https://www.shiftandlead.com/refund-policy.html" },
+      { "label": "Licensing", "url": "https://www.shiftandlead.com/licensing.html" } ] }
+  ],
+  "socials": [
+    { "label": "LinkedIn", "url": "https://linkedin.com/in/fatihachikh" },
+    { "label": "Instagram", "url": "https://www.instagram.com/fati_chic_/" },
+    { "label": "Skool community", "url": "https://www.skool.com/@ai-automation-queen-5858" }
+  ],
+  "quiz": { "questions": 8, "minutes": 3, "emailRequired": false },
+  "community": { "status": "waitlist", "url": "https://www.skool.com/@ai-automation-queen-5858" },
+  "offers": [
+    { "id": "build-sprint", "name": "1:1 build sprint", "url": "https://www.shiftandlead.com/build-sprint.html",
+      "priceBand": "TODO(fatiha): real price or 'from £___'", "audience": "solo" },
+    { "id": "workshops", "name": "Keynotes & workshops", "url": "https://www.shiftandlead.com/workshops.html",
+      "priceBand": "TODO(fatiha): price or 'on request'", "audience": "teams" }
+  ]
+}
