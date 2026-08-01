@@ -97,7 +97,7 @@ function categoryColor(category) {
 // button, one smaller secondary link to the free guides. Nothing else
 // competes with it.
 var FAST_FORWARD_URL = 'https://www.shiftandlead.com/fast-forward.html?utm_source=brief&utm_medium=email&utm_campaign=insider-brief';
-var GUIDES_URL = 'https://guides.shiftandlead.com/?utm_source=brief&utm_medium=email&utm_campaign=insider-brief';
+var GUIDES_URL = 'https://www.shiftandlead.com/guides/?utm_source=brief&utm_medium=email&utm_campaign=insider-brief';
 
 function buildCtaRow() {
   return `

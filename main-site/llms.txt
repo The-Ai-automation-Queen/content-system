@@ -8,13 +8,12 @@
 Fatiha Chikh built her career inside large enterprise tech companies before
 starting Shift & Lead. She also co-founded LeLabPlus, a zero-carbon fashion
 factory in France that supplied Nike and produced 2 million masks for French
-hospitals during COVID. She speaks 4 languages and is based in Dubai. Some
-people know her as "The AI Automation Queen," a nickname, not a title.
+hospitals during COVID. She speaks 4 languages and is based in Dubai.
 
-This site (www.shiftandlead.com) is the business front door: the Fast
-Forward course, Workshops & Keynotes for teams, and case studies from real
-work. The free guide library, quiz, and opt-ins live on the sister site,
-guides.shiftandlead.com.
+This site (www.shiftandlead.com) is the business front door and the free
+library in one place: the Fast Forward course, Workshops & Keynotes for
+teams, case studies from real work, the free guide library, the Time Audit
+quiz, and The 99 scoreboard.
 
 ## Offer
 
@@ -26,10 +25,10 @@ guides.shiftandlead.com.
 
 - Homepage: https://www.shiftandlead.com/
 - Fast Forward course: https://www.shiftandlead.com/fast-forward.html
-- Workshops & Keynotes: https://www.shiftandlead.com/work-with-fatiha.html
+- Workshops & Keynotes: https://www.shiftandlead.com/workshops.html
 - Case studies: https://www.shiftandlead.com/case-study-1.html
-- Free guide library (sister site): https://guides.shiftandlead.com/free-resources.html
-- The 99 Scoreboard (sister site): https://guides.shiftandlead.com/99.html
+- Free guide library: https://www.shiftandlead.com/guides/
+- The 99 Scoreboard: https://www.shiftandlead.com/the-99.html
 - The AI Insider Brief (newsletter): https://brief.shiftandlead.com
 
 ## Usage terms
