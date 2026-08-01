@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Back soon | Shift &amp; Lead</title>
+<meta name="description" content="Shift &amp; Lead is down for a short rebuild. Leave your email to hear the moment it is back.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://www.shiftandlead.com/">
+<meta property="og:title" content="Back soon | Shift &amp; Lead">
+<meta property="og:description" content="The site is down for a short rebuild.">
+<meta property="og:url" content="https://www.shiftandlead.com/">
+<meta property="og:image" content="https://www.shiftandlead.com/Portrait.jpeg">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=f5dd9399">
+<!-- Holding page: every other path on this host 302s here while the site is
+     paused, so this page carries no chrome and links only /assets/. -->
+<style>
+main{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+.hold{max-width:34rem}
+.hold h1{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-size:clamp(2rem,6vw,3rem);line-height:1.1;color:var(--blue);margin:16px 0}
+.hold .capture-form{justify-content:center;margin-top:24px}
+.gotcha{position:absolute;left:-9999px}
+.brief-line{margin-top:28px;font-size:.95rem}
+</style>
+<script src="/assets/capture.js?v=fbc55811" defer></script>
+</head>
+<body>
+<main>
+  <div class="hold">
+    <p class="mono">Shift &amp; Lead</p>
+    <h1><!-- copy:coming_soon.h1 -->Closed for a quick rebuild.<!-- /copy:coming_soon.h1 --></h1>
+    <p><!-- copy:coming_soon.sub -->I'm reworking the site and it will be back shortly. Leave your email and I'll tell you the moment it's live again.<!-- /copy:coming_soon.sub --></p>
+    <form class="capture-form" action="https://auto.shiftandlead.com/webhook/formspree-lead" method="POST" data-source="coming-soon">
+      <label class="gotcha" aria-hidden="true">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+      <input type="email" name="email" required placeholder="you@business.com" aria-label="Email address">
+      <button type="submit"><!-- copy:coming_soon.cta -->Tell me when it's back<!-- /copy:coming_soon.cta --></button>
+    </form>
+    <p class="brief-line"><!-- copy:coming_soon.brief_line -->While you wait, the AI Insider Brief is still publishing every week.<!-- /copy:coming_soon.brief_line --> <a href="https://brief.shiftandlead.com/">Read it here</a>.</p>
+  </div>
+</main>
+</body>
+</html>
