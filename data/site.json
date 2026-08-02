@@ -19,11 +19,7 @@
       "label": "The Brief",
       "url": "https://brief.shiftandlead.com/"
     },
-    {
-      "label": "The 99",
-      "url": "https://www.shiftandlead.com/the-99.html"
-    },
-    {
+        {
       "label": "Quiz",
       "url": "https://www.shiftandlead.com/quiz.html"
     },
@@ -53,11 +49,7 @@
           "label": "The Brief",
           "url": "https://brief.shiftandlead.com/"
         },
-        {
-          "label": "The 99",
-          "url": "https://www.shiftandlead.com/the-99.html"
-        },
-        {
+              {
           "label": "Quiz",
           "url": "https://www.shiftandlead.com/quiz.html"
         },
@@ -78,11 +70,7 @@
           "label": "Workshops",
           "url": "https://www.shiftandlead.com/workshops.html"
         },
-        {
-          "label": "Case studies",
-          "url": "https://www.shiftandlead.com/case-study-1.html"
-        }
-      ]
+          ]
     },
     {
       "title": "About",
