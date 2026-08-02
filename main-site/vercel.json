@@ -1,7 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": false,
-  "redirects": [
+  "redirects":
+    [
     {
       "source": "/work-with-me.html",
       "destination": "/build-sprint.html",
