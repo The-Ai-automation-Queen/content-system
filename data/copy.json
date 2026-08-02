@@ -2,13 +2,13 @@
   "_meta": {
     "voice": "Outcome-first, plain English, grade-7 reading level. Reader is the hero, Fatiha is the guide. No mood taglines, no self-quotes, max one 'not X, but Y' per page, every claim followed by a number or named example.",
     "identity": "Fatiha Chikh · Tech & AI Marketing Expert · 20 years at Dell, Intel, Microsoft",
-    "positioning": "Hand your busywork to AI, one task at a time, without hiring, coding, or a six-month project. Twenty years of Fortune 500 method, sized for a team of one.",
+    "positioning": "Hand your busywork to AI, one task at a time, without hiring, coding, or a six-month project. Twenty years of Fortune 500 method, sized for a team of one."
   },
   "global": {
     "brief_ribbon_label": "Get the AI Insider Brief",
     "brief_ribbon_cta": "Subscribe free",
-    "primary_cta": "Get the free guides",
-     },
+    "primary_cta": "Get the free guides"
+  },
   "home": {
     "hero_eyebrow": "For ambitious professionals ready to master AI.",
     "hero_h1": "You are still on time to build an AI system that runs your marketing while you sleep",
@@ -32,7 +32,7 @@
       "Your big goals are on hold because admin ate the day again.",
       "You miss new business because you're drained, not because you're not good enough."
     ],
-     {  "testimonials_eyebrow": "In their words",
+    "testimonials_eyebrow": "In their words",
     "testimonials_h2": "People who built it with me.",
     "help_eyebrow": "If you want to go deeper",
     "help_h2": "Two ways to go further.",
@@ -86,8 +86,8 @@
       {
         "title": "Clear safety rules",
         "body": "What it can touch, what it must never send, and how to decide what data goes near it, written down so it survives a busy week."
-      },
-     ],
+      }
+    ],
     "how_h2": "How it works",
     "how": [
       {
@@ -106,8 +106,6 @@
         "body": "Sessions across one week, work happening between them. At the end it runs, it's documented, and it's yours."
       }
     ],
-      }
-    ],
     "fit_h2": "Who this is for",
     "fit_yes": [
       "You run a small business or team and the busywork is yours.",
@@ -120,7 +118,7 @@
       "You want theory on a strategy deck.",
       "You can't yet name the task you'd hand over.",
       "What goals you want to reach with AI amplification."
-    ],
+    ]
   },
   "workshops": {
     "eyebrow": " Workshops · team enablement",
@@ -128,10 +126,10 @@
     "sub": "I led Technology waves, cloud and SaaS adoption across Fortune 500 teams in a dozen markets and five languages. I bring that same playbook in-house: practical, non-technical, built from a business that runs on it.",
     "cta": "Apply to bring this to your team",
     "why_h2": "Adoption is the hard part. That's what I teach.",
-    "why_body": Most AI talks inspire the room and change nothing on Monday. For 20 years my job in big corporations was getting real teams to use new tech, repeatedly, across cultures and time zones. The workshops install a clear method without anyone becoming technical. Your team leaves with a system, not just a slide deck",
+    "why_body": "Most AI talks inspire the room and change nothing on Monday. For 20 years my job in big corporations was getting real teams to use new tech, repeatedly, across cultures and time zones. The workshops install a clear method without anyone becoming technical. Your team leaves with a system, not just a slide deck",
     "formats_h2": "Two ways to bring this in.",
     "formats": [
-           {
+      {
         "title": "Half-day workshop",
         "body": "3.5 hours. Up to 20 participants. We audit one business area — marketing, operations, or content — and map the exact automation that will move the needle. Your team leaves with a built roadmap, a selected tool stack, and one scoped workflow ready to implement. WIth a plan that fits your business.",
         "price": "upon request"
@@ -145,12 +143,12 @@
     "guarantee_h2": "Your team leaves with one automation built.",
     "guarantee_body": "The full-day workshop comes with a simple guarantee: if we do not have at least one working automation running in your team's tools by the end of the day, I follow up until you do. I have done it for my own business. The method works. The only requirement is that your team shows up ready to build, not just watch.",
     "not_for_title": "This isn't for you if",
-    "not_for": [     
-  "You want a motivational keynote. I build systems, not inspiration.",
-  "Your team is not ready to touch the tools. This is hands-on, not theory.",
-  "You are looking for a technical coding workshop. I work with no-code and low-code tools your team can actually use.",
-  "The decision-maker is not in the room. Adoption dies when leadership is not present."
-],
+    "not_for": [
+      "You want a motivational keynote. I build systems, not inspiration.",
+      "Your team is not ready to touch the tools. This is hands-on, not theory.",
+      "You are looking for a technical coding workshop. I work with no-code and low-code tools your team can actually use.",
+      "The decision-maker is not in the room. Adoption dies when leadership is not present."
+    ],
     "dynamic_note": "Topics change with the news. Each session is based on the latest most valuable information, not the noise or hype so your team works on what matters now but don't get distracted."
   },
   "guide_template": {
@@ -188,7 +186,6 @@
     "tracks_sub": "Pick the one that sounds like you. It tells you exactly what to read next, in order.",
     "kit_banner": "Looking for the prompts and templates? Open the Freedom OS Starter Kit →"
   },
-
   "quiz": {
     "eyebrow": "The time-leak quiz · free · 3 minutes",
     "h1": "How many hours a week is your business leaking?",
