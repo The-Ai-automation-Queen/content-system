@@ -1,8 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": false,
-  "redirects":"",
-    [
+  "redirects": [
     {
       "source": "/work-with-me.html",
       "destination": "/build-sprint.html",
@@ -12,7 +11,7 @@
       "source": "/work-with-fatiha.html",
       "destination": "/workshops.html",
       "permanent": true
-    },
+    }
   ],
   "buildCommand": "cd .. && node tools/include.mjs",
   "outputDirectory": ".",
