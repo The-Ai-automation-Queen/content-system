@@ -12,18 +12,16 @@
     ]
   },
   "global": {
-    "brief_ribbon_label": "Get the AI Insider Brief, free",
+    "brief_ribbon_label": "Get the AI Insider Brief",
     "brief_ribbon_cta": "Subscribe free",
     "primary_cta": "Get the free guides",
-    "secondary_cta": "See what I'll build with you"
-  },
+     },
   "home": {
-    "hero_eyebrow": "For business owners who don't code",
-    "hero_h1": ""Build an AI system that runs your marketing while you sleep",
-    "hero_h1_accent": "step by step.",
-    "hero_sub": "The method I used on Fortune 500 teams at Dell, Intel and Microsoft. Now I teach ambitious professionals how to do the same. What to focus on, what to skip, and how.",
+    "hero_eyebrow": "For ambitious professionals ready to master AI.",
+    "hero_h1": "You are still on time to build an AI system that runs your marketing while you sleep",
+    "hero_h1_accent": "step by step, with no technical skills required.",
+    "hero_sub": "The methodology I used on Fortune 500 teams at Dell, Intel and Microsoft. Now I teach ambitious professionals how to do the same. What to focus on, what to skip, and how.",
     "hero_cta_primary": "Get my free guides",
-    "hero_cta_secondary": "See what I'll build with you",
     "start_here_eyebrow": "Start here",
     "start_here_h2": "Which of these is you right now?",
     "door_team_title": "You lead a team or a company",
@@ -43,7 +41,6 @@
     ],
      {  "testimonials_eyebrow": "In their words",
     "testimonials_h2": "People who built it with me.",
-    "testimonials_note": "TODO(fatiha): confirm written permission to keep first-name + photo for Pauline, Myriam, Nazima. Named proof converts better than initials.",
     "help_eyebrow": "If you want to go deeper",
     "help_h2": "Two ways to go further.",
     "help_solo_title": "Join the Fast Forward Academy",
