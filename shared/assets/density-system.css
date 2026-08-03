@@ -1,0 +1,133 @@
+/* Shift & Lead page-density pass.
+   Keeps the editorial breathing room while removing excessive vertical travel. */
+
+:root{
+  --space-section:clamp(40px,4.5vw,56px);
+}
+
+/* Shared chrome */
+.chrome-foot{margin-top:36px!important;padding:44px 24px 28px!important}
+.chrome-foot-grid{gap:26px!important}
+.chrome-foot-legal{margin-top:28px!important;padding-top:16px!important}
+
+/* Homepage */
+body[data-page-kind="home"] .hero{padding-top:44px!important;padding-bottom:48px!important}
+body[data-page-kind="home"] .possibilities-journey{padding-top:52px!important;padding-bottom:52px!important}
+body[data-page-kind="home"] .possibilities-head{margin-bottom:34px!important}
+body[data-page-kind="home"] .founder,
+body[data-page-kind="home"] .cases,
+body[data-page-kind="home"] .ladder{padding-top:50px!important;padding-bottom:50px!important}
+body[data-page-kind="home"] .testimonials{padding-top:42px!important;padding-bottom:42px!important}
+body[data-page-kind="home"] .router{padding-top:44px!important;padding-bottom:24px!important}
+body[data-page-kind="home"] .section-head{margin-bottom:24px!important}
+body[data-page-kind="home"] .live-week{padding-top:28px!important;padding-bottom:28px!important}
+
+/* FAQ should scan quickly when closed, and expand only when needed. */
+body[data-page-kind="home"] .faq{padding:40px 28px!important}
+body[data-page-kind="home"] .faq-item{padding:0!important}
+body[data-page-kind="home"] .faq-item details{margin:0!important;padding:0!important}
+body[data-page-kind="home"] .faq-item summary{padding:17px 0!important;font-size:18px!important;line-height:1.35!important;cursor:pointer}
+body[data-page-kind="home"] .faq-item details[open] summary{padding-bottom:9px!important}
+body[data-page-kind="home"] .faq-item details p{margin:0 0 16px!important;line-height:1.5!important}
+
+/* Blue conversion panel: enforce accessible foregrounds over the dark blue. */
+body[data-page-kind="home"] .contact{padding:38px 28px!important;background:var(--blue-deep,#1B2EA0)!important;color:#fff!important}
+body[data-page-kind="home"] .contact h2,
+body[data-page-kind="home"] .contact p,
+body[data-page-kind="home"] .contact .contact-note{color:#fff!important}
+body[data-page-kind="home"] .contact .section-eyebrow{color:#DCE3FF!important;margin-bottom:10px!important}
+body[data-page-kind="home"] .contact h2{margin-bottom:8px!important}
+body[data-page-kind="home"] .contact p{margin-left:auto!important;margin-right:auto!important;margin-bottom:14px!important;opacity:.9!important}
+body[data-page-kind="home"] .contact-form{gap:7px!important;margin-bottom:10px!important}
+body[data-page-kind="home"] .contact-form input,
+body[data-page-kind="home"] .contact-form textarea{background:rgba(255,255,255,.10)!important;border-color:rgba(255,255,255,.42)!important;color:#fff!important}
+body[data-page-kind="home"] .contact-form input::placeholder,
+body[data-page-kind="home"] .contact-form textarea::placeholder{color:rgba(255,255,255,.68)!important}
+
+/* Guides hub */
+body[data-page-kind="guides"] .hero{padding-top:52px!important;padding-bottom:56px!important}
+body[data-page-kind="guides"] .pull{padding-top:48px!important;padding-bottom:48px!important}
+body[data-page-kind="guides"] .pull-attrib{margin-top:20px!important}
+body[data-page-kind="guides"] .paths{padding-top:52px!important;padding-bottom:52px!important}
+body[data-page-kind="guides"] .spotlight{padding-top:52px!important;padding-bottom:52px!important}
+body[data-page-kind="guides"] .spotlight-head{margin-bottom:26px!important}
+body[data-page-kind="guides"] .spot-feat{min-height:0!important;padding:30px!important}
+body[data-page-kind="guides"] .spot-mini{padding:20px!important}
+body[data-page-kind="guides"] .controls{padding-top:48px!important;padding-bottom:18px!important}
+body[data-page-kind="guides"] .controls-head{padding-bottom:14px!important;margin-bottom:4px!important}
+body[data-page-kind="guides"] .library{padding-top:16px!important;padding-bottom:60px!important}
+body[data-page-kind="guides"] .row{padding-top:24px!important;padding-bottom:24px!important}
+body[data-page-kind="guides"] .cta-band{padding-top:56px!important;padding-bottom:56px!important}
+body[data-page-kind="guides"] .cta-head{margin-bottom:30px!important}
+
+/* Individual guides: compact the frame, not the reading line-height. */
+body[data-page-kind="guide"] .guide-hero{padding-top:48px!important;padding-bottom:38px!important}
+body[data-page-kind="guide"] .guide-byline{margin-top:14px!important}
+body[data-page-kind="guide"] .guide-doc{padding-top:42px!important;padding-bottom:48px!important}
+body[data-page-kind="guide"] .callout{margin-top:26px!important;margin-bottom:26px!important}
+
+/* About and Workshops */
+body[data-page-kind="about"] section,
+body[data-page-kind="workshops"] section{padding-top:44px!important;padding-bottom:44px!important}
+body[data-page-kind="about"] .hero,
+body[data-page-kind="workshops"] .hero{padding-top:48px!important;padding-bottom:42px!important}
+body[data-page-kind="about"] .receipt,
+body[data-page-kind="workshops"] .talk{padding-top:22px!important;padding-bottom:22px!important}
+
+/* Work with me */
+body[data-page-kind="build"] .offer-hero{padding-top:52px!important;padding-bottom:52px!important}
+body[data-page-kind="build"] .offer-section{padding-top:46px!important;padding-bottom:46px!important}
+body[data-page-kind="build"] .offer-grid,
+body[data-page-kind="build"] .offer-steps{gap:18px!important}
+body[data-page-kind="build"] .client-proof{margin-top:0!important;margin-bottom:0!important}
+
+/* Starter kit */
+body[data-page-kind="starter-kit"] .kit-hero{padding-top:52px!important;padding-bottom:48px!important}
+body[data-page-kind="starter-kit"] .kit-section,
+body[data-page-kind="starter-kit"] .kit-library{padding-top:46px!important;padding-bottom:46px!important}
+body[data-page-kind="starter-kit"] .kit-grid{gap:18px!important}
+
+/* Quiz */
+body[data-page-kind="quiz"] .stage{padding-top:42px!important;padding-bottom:42px!important}
+body[data-page-kind="quiz"] .intro h1{margin-bottom:16px!important}
+body[data-page-kind="quiz"] .intro-facts{margin-top:22px!important;margin-bottom:22px!important}
+body[data-page-kind="quiz"] .options{gap:10px!important}
+body[data-page-kind="quiz"] .opt{padding-top:15px!important;padding-bottom:15px!important}
+body[data-page-kind="quiz"] .r-bars,
+body[data-page-kind="quiz"] .r-cta,
+body[data-page-kind="quiz"] .r-email{margin-top:28px!important}
+
+/* Insider Brief */
+body[data-page-kind="brief"] .hero{padding-top:64px!important;padding-bottom:64px!important}
+body[data-page-kind="brief"] .hero-content{padding-top:26px!important;padding-bottom:26px!important}
+body[data-page-kind="brief"] .brief-mascot{margin-top:16px!important;margin-bottom:-10px!important}
+body[data-page-kind="brief"] .feed-section{padding-top:44px!important;padding-bottom:44px!important}
+body[data-page-kind="brief"] .briefing-header{margin-bottom:24px!important}
+body[data-page-kind="brief"] .curator-note{margin-top:34px!important;margin-bottom:34px!important}
+
+@media(max-width:760px){
+  :root{--space-section:40px}
+  .chrome-foot{margin-top:28px!important;padding-top:38px!important}
+  body[data-page-kind="home"] .hero,
+  body[data-page-kind="home"] .possibilities-journey,
+  body[data-page-kind="home"] .founder,
+  body[data-page-kind="home"] .cases,
+  body[data-page-kind="home"] .testimonials,
+  body[data-page-kind="home"] .ladder,
+  body[data-page-kind="home"] .faq,
+  body[data-page-kind="home"] .contact{padding-top:38px!important;padding-bottom:38px!important}
+  body[data-page-kind="home"] .faq-item summary{padding:15px 0!important;font-size:17px!important}
+  body[data-page-kind="guides"] .hero,
+  body[data-page-kind="guides"] .pull,
+  body[data-page-kind="guides"] .paths,
+  body[data-page-kind="guides"] .spotlight,
+  body[data-page-kind="guides"] .cta-band{padding-top:42px!important;padding-bottom:42px!important}
+  body[data-page-kind="guides"] .controls{padding-top:40px!important}
+  body[data-page-kind="about"] section,
+  body[data-page-kind="workshops"] section,
+  body[data-page-kind="build"] .offer-section,
+  body[data-page-kind="starter-kit"] .kit-section,
+  body[data-page-kind="starter-kit"] .kit-library{padding-top:38px!important;padding-bottom:38px!important}
+  body[data-page-kind="brief"] .hero{padding-top:48px!important;padding-bottom:48px!important}
+  body[data-page-kind="brief"] .feed-section{padding-top:38px!important;padding-bottom:38px!important}
+}
