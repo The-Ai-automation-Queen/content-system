@@ -263,26 +263,44 @@
   </div>
 </div></section>
 
+<style>
+.faq-item{padding:0}
+.faq-item details{border:0}
+.faq-item summary{list-style:none;cursor:pointer;position:relative;padding:26px 46px 26px 0;font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:400;line-height:1.35}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';position:absolute;right:4px;top:50%;transform:translateY(-50%);font-family:'Inter',sans-serif;font-size:24px;font-weight:400;color:var(--accent-deep)}
+.faq-item details[open] summary::after{content:'−'}
+.faq-item details p{font-size:15.5px;color:var(--muted);line-height:1.6;padding:0 46px 26px 0;margin:0}
+.faq-item summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+</style>
 <section class="faq"><div class="faq-inner">
   <div class="section-head">
     <div class="section-eyebrow"><!-- copy:home.faq_eyebrow -->Before you ask<!-- /copy:home.faq_eyebrow --></div>
     <div class="section-title"><!-- copy:home.faq_h2 -->Questions people actually have.<!-- /copy:home.faq_h2 --></div>
   </div>
   <div class="faq-item">
-    <h3><!-- copy:home.faq.0.q -->I'm not technical. Can I still do this?<!-- /copy:home.faq.0.q --></h3>
-    <p><!-- copy:home.faq.0.a -->Yes, that's the whole point. You don't need to code. I hand you shortcuts in plain English that just work.<!-- /copy:home.faq.0.a --></p>
+    <details>
+      <summary><!-- copy:home.faq.0.q -->I'm not technical. Can I still do this?<!-- /copy:home.faq.0.q --></summary>
+      <p><!-- copy:home.faq.0.a -->Yes, that's the whole point. You don't need to code. I hand you shortcuts in plain English that just work.<!-- /copy:home.faq.0.a --></p>
+    </details>
   </div>
   <div class="faq-item">
-    <h3><!-- copy:home.faq.1.q -->Do I have to replace the tools I already use?<!-- /copy:home.faq.1.q --></h3>
-    <p><!-- copy:home.faq.1.a -->No. We work with your CRM, your email, your calendar. I never make you switch just to switch.<!-- /copy:home.faq.1.a --></p>
+    <details>
+      <summary><!-- copy:home.faq.1.q -->Do I have to replace the tools I already use?<!-- /copy:home.faq.1.q --></summary>
+      <p><!-- copy:home.faq.1.a -->No. We work with your CRM, your email, your calendar. I never make you switch just to switch.<!-- /copy:home.faq.1.a --></p>
+    </details>
   </div>
   <div class="faq-item">
-    <h3><!-- copy:home.faq.2.q -->What if the free guides aren't enough?<!-- /copy:home.faq.2.q --></h3>
-    <p><!-- copy:home.faq.2.a -->That's what the build sprint and workshops are for. Start free, go further when you're ready, never before.<!-- /copy:home.faq.2.a --></p>
+    <details>
+      <summary><!-- copy:home.faq.2.q -->What if the free guides aren't enough?<!-- /copy:home.faq.2.q --></summary>
+      <p><!-- copy:home.faq.2.a -->That's what the build sprint and workshops are for. Start free, go further when you're ready, never before.<!-- /copy:home.faq.2.a --></p>
+    </details>
   </div>
   <div class="faq-item">
-    <h3><!-- copy:home.faq.3.q -->How fast will I see results?<!-- /copy:home.faq.3.q --></h3>
-    <p><!-- copy:home.faq.3.a -->Some wins land the same week: one task automated, one hour back. A full system takes a few weeks. Real change, not a hack.<!-- /copy:home.faq.3.a --></p>
+    <details>
+      <summary><!-- copy:home.faq.3.q -->How fast will I see results?<!-- /copy:home.faq.3.q --></summary>
+      <p><!-- copy:home.faq.3.a -->Some wins land the same week: one task automated, one hour back. A full system takes a few weeks. Real change, not a hack.<!-- /copy:home.faq.3.a --></p>
+    </details>
   </div>
 </div></section>
 
