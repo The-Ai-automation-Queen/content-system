@@ -1,17 +1,6 @@
-name: Deploy newsletter to VPS
+name: Legacy newsletter VPS deploy, manual only
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - ai-insider-brief/ai-insider-brief/**
-      - deploy/deploy-newsletter.sh
-      - deploy/deploy-newsletter-agent.sh
-      - deploy/vps-deploy-newsletter.sh
-      - deploy/brief-migration/insider-brief-bot.service
-      - .github/workflows/deploy-newsletter.yml
-      - .github/newsletter-known-hosts
   workflow_dispatch:
 
 permissions:
