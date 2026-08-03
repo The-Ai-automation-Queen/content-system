@@ -1,18 +1,64 @@
 /* Shift & Lead mobile-first polish for the current HTML site.
    Final visual safeguards before the Next.js migration. */
 
-/* Final CTA contrast safeguard. The global anchor color is intentionally blue,
-   so button-style links need an explicit white foreground on blue surfaces. */
+/* Blue CTA contrast safeguard across the estate.
+   The shared anchor rule is blue, so every CTA that renders on a blue button
+   gets an explicit white foreground in every interaction state. */
+body[data-page-kind] .btn-primary:not(.contact-submit),
+body[data-page-kind] .btn-primary:not(.contact-submit):visited,
+body[data-page-kind] .btn-primary:not(.contact-submit):hover,
+body[data-page-kind] .btn-primary:not(.contact-submit):focus-visible,
+body[data-page-kind] .button.primary,
+body[data-page-kind] .button.primary:visited,
+body[data-page-kind] .button.primary:hover,
+body[data-page-kind] .button.primary:focus-visible,
+body[data-page-kind="guides"] .path-cta:not(.ghost),
+body[data-page-kind="guides"] .path-cta:not(.ghost):visited,
+body[data-page-kind="guides"] .path-cta:not(.ghost):hover,
+body[data-page-kind="guides"] .path-cta:not(.ghost):focus-visible,
 body[data-page-kind="home"] .router-cta,
 body[data-page-kind="home"] .router-cta:visited,
 body[data-page-kind="home"] .router-cta:hover,
-body[data-page-kind="home"] .router-cta:focus-visible{
-  background:var(--blue,#2C4BE0)!important;
+body[data-page-kind="home"] .router-cta:focus-visible,
+body[data-page-kind="quiz"] .btn-start,
+body[data-page-kind="quiz"] .btn-start:hover,
+body[data-page-kind="quiz"] .btn-start:focus-visible,
+body[data-page-kind="quiz"] .tlq-start,
+body[data-page-kind="quiz"] .tlq-start:hover,
+body[data-page-kind="quiz"] .tlq-start:focus-visible,
+body[data-page-kind="quiz"] .tlq-result-cta,
+body[data-page-kind="quiz"] .tlq-result-cta:visited,
+body[data-page-kind="quiz"] .tlq-result-cta:hover,
+body[data-page-kind="quiz"] .tlq-result-cta:focus-visible,
+body[data-page-kind="brief"] .header-subscribe,
+body[data-page-kind="brief"] .header-subscribe:visited,
+body[data-page-kind="build"] .apply-form button,
+body[data-page-kind="workshops"] .booking-form button,
+body[data-page-kind="guide"] .gate-form button,
+body[data-page-kind="guide"] .capture-form button,
+body[data-page-kind="starter-kit"] .kit-filter[aria-pressed="true"]{
   color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
 }
-body[data-page-kind="home"] .router-cta:hover{
+
+body[data-page-kind="home"] .router-cta,
+body[data-page-kind="guides"] .path-cta:not(.ghost){
+  background:var(--blue,#2C4BE0)!important;
+}
+body[data-page-kind="home"] .router-cta:hover,
+body[data-page-kind="guides"] .path-cta:not(.ghost):hover{
   background:var(--blue-deep,#1B2EA0)!important;
   color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+
+/* Keep the homepage contact CTA intentionally light on the dark blue panel. */
+body[data-page-kind="home"] .contact .contact-submit,
+body[data-page-kind="home"] .contact .contact-submit:visited,
+body[data-page-kind="home"] .contact .contact-submit:hover,
+body[data-page-kind="home"] .contact .contact-submit:focus-visible{
+  color:#1B2EA0!important;
+  -webkit-text-fill-color:#1B2EA0!important;
 }
 
 /* Keep the hero promise as one sentence while tightening the visual beat. */
@@ -39,6 +85,113 @@ body[data-page-kind="home"] .hero h1 em{
   body[data-page-kind="home"] .ribbon{padding:9px 14px!important;gap:8px!important;font-size:10px!important;letter-spacing:.11em!important}
   body[data-page-kind="home"] .ribbon input[type="email"]{width:min(56vw,220px)!important;min-width:0!important}
   body[data-page-kind="home"] .ribbon button{white-space:nowrap!important}
+
+  /* Compact mobile footer. Keep desktop groupings, flatten them on phones. */
+  .chrome-foot{
+    margin-top:24px!important;
+    padding:28px 18px 22px!important;
+  }
+  .chrome-foot::before{
+    content:"SHIFT & LEAD";
+    display:block;
+    max-width:var(--content,1080px);
+    margin:0 auto 16px;
+    font-family:var(--display,"Playfair Display",Georgia,serif);
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:.02em;
+    color:#fff;
+  }
+  .chrome-foot-grid{
+    max-width:var(--content,1080px)!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:6px 22px!important;
+  }
+  .chrome-foot-grid>section{margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:not(:last-child){display:contents!important}
+  .chrome-foot-grid>section:not(:last-child)>h2{display:none!important}
+  .chrome-foot-grid>section:not(:last-child)>ul{display:contents!important}
+  .chrome-foot-grid>section:not(:last-child)>ul>li{
+    list-style:none!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .chrome-foot-grid>section:not(:last-child)>ul>li>a{
+    display:block!important;
+    padding:6px 0!important;
+    font-family:var(--ui,"Inter",Arial,sans-serif)!important;
+    font-size:14px!important;
+    font-weight:500!important;
+    line-height:1.25!important;
+    color:#E7E3DC!important;
+    text-decoration:none!important;
+  }
+
+  /* Main mobile link order: Guides | Work with me / Brief | Workshops / Quiz | About. */
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(1){order:1}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(1){order:2}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(2){order:3}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(2){order:4}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(3){order:5}
+  .chrome-foot-grid>section:nth-child(3)>ul>li:nth-child(1){order:6}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(4),
+  .chrome-foot-grid>section:nth-child(3)>ul>li:nth-child(2){display:none!important}
+
+  /* Legal becomes one compact wrapped row. */
+  .chrome-foot-grid>section:nth-child(4){
+    order:7;
+    grid-column:1/-1;
+    margin-top:14px!important;
+    padding-top:12px!important;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+  .chrome-foot-grid>section:nth-child(4)>h2{display:none!important}
+  .chrome-foot-grid>section:nth-child(4)>ul{
+    display:flex!important;
+    flex-wrap:wrap!important;
+    gap:6px 0!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .chrome-foot-grid>section:nth-child(4)>ul>li{
+    list-style:none!important;
+    display:flex!important;
+    align-items:center!important;
+    margin:0!important;
+  }
+  .chrome-foot-grid>section:nth-child(4)>ul>li:not(:last-child)::after{
+    content:"·";
+    margin:0 9px;
+    color:#777;
+  }
+  .chrome-foot-grid>section:nth-child(4)>ul>li>a{
+    font-family:var(--ui,"Inter",Arial,sans-serif)!important;
+    font-size:12px!important;
+    line-height:1.25!important;
+    color:#B9B5AE!important;
+    text-decoration:none!important;
+  }
+  .chrome-foot-legal{
+    max-width:var(--content,1080px)!important;
+    margin:14px auto 0!important;
+    padding:0!important;
+    border:0!important;
+    font-size:0!important;
+    line-height:1!important;
+    text-align:left!important;
+    text-transform:none!important;
+    letter-spacing:0!important;
+  }
+  .chrome-foot-legal::before{
+    content:"© 2026 Shift & Lead";
+    font-family:var(--ui,"Inter",Arial,sans-serif);
+    font-size:11px;
+    font-weight:400;
+    letter-spacing:.03em;
+    color:#85817B;
+  }
 
   /* Home hero */
   body[data-page-kind="home"] .hero{padding-left:18px!important;padding-right:18px!important}
