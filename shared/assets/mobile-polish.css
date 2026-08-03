@@ -1,6 +1,20 @@
 /* Shift & Lead mobile-first polish for the current HTML site.
    Final visual safeguards before the Next.js migration. */
 
+/* Final CTA contrast safeguard. The global anchor color is intentionally blue,
+   so button-style links need an explicit white foreground on blue surfaces. */
+body[data-page-kind="home"] .router-cta,
+body[data-page-kind="home"] .router-cta:visited,
+body[data-page-kind="home"] .router-cta:hover,
+body[data-page-kind="home"] .router-cta:focus-visible{
+  background:var(--blue,#2C4BE0)!important;
+  color:#fff!important;
+}
+body[data-page-kind="home"] .router-cta:hover{
+  background:var(--blue-deep,#1B2EA0)!important;
+  color:#fff!important;
+}
+
 /* Keep the hero promise as one sentence while tightening the visual beat. */
 body[data-page-kind="home"] .hero h1 em{
   position:relative;
