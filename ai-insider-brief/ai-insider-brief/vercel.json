@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "cd ../.. && node tools/include.mjs && node tools/site-positioning-patches.mjs",
+  "buildCommand": "cd ../.. && node tools/include.mjs && node tools/proof-patches.mjs && node tools/site-positioning-patches.mjs",
   "outputDirectory": ".",
   "installCommand": ""
 }
