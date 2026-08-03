@@ -13,7 +13,7 @@
       "permanent": true
     }
   ],
-  "buildCommand": "cd .. && node tools/include.mjs && node tools/proof-patches.mjs",
+  "buildCommand": "cd .. && node tools/include.mjs && node tools/proof-patches.mjs && node tools/site-positioning-patches.mjs",
   "outputDirectory": ".",
   "installCommand": ""
 }
