@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -9,7 +10,18 @@ const ROOTS = [
   path.join(ROOT, 'main-site'),
   path.join(ROOT, 'ai-insider-brief', 'ai-insider-brief')
 ];
-const LINK = '<link rel="stylesheet" href="/assets/density-system.css">';
+const STYLESHEETS = ['density-system.css', 'mobile-polish.css'];
+
+function versionFor(name) {
+  const source = path.join(ROOT, 'shared', 'assets', name);
+  if (!fs.existsSync(source)) return '';
+  return crypto.createHash('sha256').update(fs.readFileSync(source)).digest('hex').slice(0, 8);
+}
+
+function linkFor(name) {
+  const version = versionFor(name);
+  return `<link rel="stylesheet" href="/assets/${name}${version ? `?v=${version}` : ''}">`;
+}
 
 function walk(dir, out = []) {
   if (!fs.existsSync(dir)) return out;
@@ -25,10 +37,18 @@ function walk(dir, out = []) {
 for (const root of ROOTS) {
   for (const file of walk(root)) {
     const before = fs.readFileSync(file, 'utf8');
-    let html = before.replace(/\s*<link rel="stylesheet" href="\/assets\/density-system\.css(?:\?v=[^"]*)?">/g, '');
-    html = html.replace('</head>', `${LINK}\n</head>`);
+    let html = before;
+
+    for (const name of STYLESHEETS) {
+      const escaped = name.replaceAll('.', '\\.');
+      html = html.replace(new RegExp(`\\s*<link rel="stylesheet" href="\\/assets\\/${escaped}(?:\\?v=[^"]*)?">`, 'g'), '');
+    }
+
+    const links = STYLESHEETS.map(linkFor).join('\n');
+    html = html.replace('</head>', `${links}\n</head>`);
+
     if (html !== before) fs.writeFileSync(file, html);
   }
 }
 
-console.log('Applied compact page-density system.');
+console.log('Applied page-density and mobile polish systems with cache-busted stylesheets.');
