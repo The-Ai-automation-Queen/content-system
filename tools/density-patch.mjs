@@ -7,9 +7,10 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const MAIN_HOME = path.join(ROOT, 'main-site', 'index.html');
+const BRIEF_ROOT = path.join(ROOT, 'ai-insider-brief', 'ai-insider-brief');
 const ROOTS = [
   path.join(ROOT, 'main-site'),
-  path.join(ROOT, 'ai-insider-brief', 'ai-insider-brief')
+  BRIEF_ROOT
 ];
 const STYLESHEETS = ['density-system.css', 'mobile-polish.css'];
 
@@ -32,6 +33,29 @@ body[data-page-kind="home"] .contact .contact-submit:disabled{
 }
 body[data-page-kind="home"] #contact-status{
   min-height:1.4em;
+}
+</style>`;
+
+const BRIEF_SURFACE_STYLE = `<style id="brief-surface-alignment">
+body[data-page-kind="brief"]{
+  background:#fff!important;
+}
+body[data-page-kind="brief"] .hero{
+  background:#fff!important;
+  border-bottom:1px solid var(--line,#E8E4DD)!important;
+}
+body[data-page-kind="brief"] .hero-content{
+  background:transparent!important;
+}
+body[data-page-kind="brief"] .category-bar{
+  background:rgba(255,255,255,.97)!important;
+  border-bottom:1px solid var(--line,#E8E4DD)!important;
+}
+body[data-page-kind="brief"] .feed-section{
+  background:#fff!important;
+}
+body[data-page-kind="brief"] .feed-view-switch{
+  background:var(--cream,#FAF7F2)!important;
 }
 </style>`;
 
@@ -120,6 +144,11 @@ function patchHomeContact(html) {
   return html;
 }
 
+function patchBriefSurface(html) {
+  html = html.replace(/\s*<style id="brief-surface-alignment">[\s\S]*?<\/style>/g, '');
+  return html.replace('</head>', `${BRIEF_SURFACE_STYLE}\n</head>`);
+}
+
 for (const root of ROOTS) {
   for (const file of walk(root)) {
     const before = fs.readFileSync(file, 'utf8');
@@ -134,9 +163,10 @@ for (const root of ROOTS) {
     html = html.replace('</head>', `${links}\n</head>`);
 
     if (file === MAIN_HOME) html = patchHomeContact(html);
+    if (file.startsWith(BRIEF_ROOT)) html = patchBriefSurface(html);
 
     if (html !== before) fs.writeFileSync(file, html);
   }
 }
 
-console.log('Applied page-density, mobile polish and final homepage contact safeguards.');
+console.log('Applied page-density, mobile polish, homepage contact and Brief surface safeguards.');
