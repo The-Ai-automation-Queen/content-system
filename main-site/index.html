@@ -81,8 +81,6 @@
   <button type="submit"><strong><!-- copy:global.brief_ribbon_cta -->Subscribe free<!-- /copy:global.brief_ribbon_cta --></strong></button>
 </form>
 
-
-
 <section class="hero" id="top"><div class="hero-inner">
   <div>
     <div class="hero-kicker"><span class="rule"></span><!-- copy:home.hero_eyebrow -->For business owners who don't code<!-- /copy:home.hero_eyebrow --></div>
@@ -136,8 +134,6 @@
   <p style="margin-top:28px"><a class="btn-primary" href="/quiz.html"><!-- copy:home.pain_cta -->Take the free time-leak quiz<!-- /copy:home.pain_cta --> &rarr;</a></p>
 </div></section>
 
-
-
 <section class="founder" id="story"><div class="founder-inner">
   <div class="founder-photo"><img src="fatiha-desk.jpg" loading="lazy" decoding="async" alt="Fatiha Chikh working at her desk" style="object-position:32% center"></div>
   <div>
@@ -149,7 +145,6 @@
     <div class="founder-sign">Fatiha Chikh, Founder of Shift &amp; Lead</div>
   </div>
 </div></section>
-
 
 <section class="live-week" style="background:#FAF7F2;border-top:1px solid #E4EAFB;border-bottom:1px solid #E4EAFB;padding:40px 32px">
   <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:24px" class="live-week-grid">
@@ -178,7 +173,8 @@
   <p><a class="btn-primary" href="/the-99.html"><!-- copy:home.the99_teaser_cta -->See the scoreboard<!-- /copy:home.the99_teaser_cta --> &rarr;</a></p>
 </div></section>
 
-<section class="cases" id="cases"><div class="cases-inner">
+<!-- Legacy case-study cards hidden until newer proof reflects the current work. -->
+<section class="cases" id="cases" hidden><div class="cases-inner">
   <div class="section-head">
     <div class="section-eyebrow"><!-- copy:home.proof_eyebrow -->Proof, not theory<!-- /copy:home.proof_eyebrow --></div>
     <div class="section-title">I built these results for real businesses.</div>
@@ -210,33 +206,34 @@
 
 <section class="testimonials"><div class="testimonials-inner">
   <div class="section-head">
-    <div class="section-eyebrow"><!-- copy:home.testimonials_eyebrow -->In their words<!-- /copy:home.testimonials_eyebrow --></div>
-    <div class="section-title"><!-- copy:home.testimonials_h2 -->People who built it with me.<!-- /copy:home.testimonials_h2 --></div>
+    <div class="section-eyebrow">Client outcomes</div>
+    <div class="section-title">What changed after we built it together.</div>
   </div>
   <div class="testi-grid">
     <div class="testi-card">
+      <div class="testi-stat">Work part-time while marketing keeps moving.</div>
       <p class="testi-quote">&ldquo;Working with Fatiha was a game-changer. I can work part-time, take care of my sons, and the automations for my marketing content handle everything in the background. Total peace of mind.&rdquo;</p>
       <div class="testi-attrib">
-        <div class="testi-name">Pauline P., Freelancer </div>
-        <!-- Role/industry attribution intentionally omitted until Fatiha releases attributed results. Add <div class="testi-role">Role, Industry</div> here when confirmed. -->
+        <div class="testi-name">Pauline P., Freelancer</div>
       </div>
     </div>
     <div class="testi-card">
+      <div class="testi-stat">Less admin. More innovation.</div>
       <p class="testi-quote">&ldquo;Fatiha helped us centralise our tools, document our systems, and Structure our organisation before we started using AI. Now we focus on innovation, not admin.&rdquo;</p>
       <div class="testi-attrib">
         <div class="testi-name">Myriam M.</div>
-        <!-- Role/industry attribution intentionally omitted until Fatiha releases attributed results. Add <div class="testi-role">Role, Industry</div> here when confirmed. -->
       </div>
     </div>
     <div class="testi-card">
-      <p class="testi-quote">&ldquo;"Fatiha helped me move from simple AI prompts to a truly strategic way of working. By developing the right AI agents for my business, she has saved me countless hours and enabled me to focus on growth, opportunities, and creative direction.&rdquo;</p>
+      <div class="testi-stat">From simple prompts to strategic AI agents.</div>
+      <p class="testi-quote">&ldquo;Fatiha helped me move from simple AI prompts to a truly strategic way of working. By developing the right AI agents for my business, she has saved me countless hours and enabled me to focus on growth, opportunities, and creative direction.&rdquo;</p>
       <div class="testi-attrib">
-        <div class="testi-name"> Zouhour H, Maison Ellem.</div>
-        <!-- Role/industry attribution intentionally omitted until Fatiha releases attributed results. Add <div class="testi-role">Role, Industry</div> here when confirmed. -->
+        <div class="testi-name">Zouhour H., Maison Ellem</div>
       </div>
     </div>
   </div>
 </div></section>
+
 <section class="ladder" id="further"><div class="ladder-inner">
   <div class="section-head">
     <div class="section-eyebrow"><!-- copy:home.help_eyebrow -->When free isn't enough<!-- /copy:home.help_eyebrow --></div>
@@ -298,13 +295,11 @@
     <input type="email" name="email" placeholder="your@email.com" required style="padding:12px 14px;border:1px solid #E8E4DD;border-radius:4px;font-family:Inter,sans-serif;font-size:14px">
     <textarea name="message" placeholder="What are you working on?" rows="3" style="padding:12px 14px;border:1px solid #E8E4DD;border-radius:4px;font-family:Inter,sans-serif;font-size:14px;resize:vertical"></textarea>
     <input type="hidden" name="source" value="www-index-contact">
-  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
     <button type="submit" class="btn-primary" style="border:none;cursor:pointer;align-self:center">Email me your question</button>
   </form>
   <p class="contact-note" id="contact-status"></p>
 </div></section>
-
-
 
 <script>
 (function(){
@@ -358,12 +353,7 @@
 })();
 </script>
 
-
-<!-- Count-up stats on scroll (case studies), respects prefers-reduced-motion.
-     The number is only zeroed for the ~900ms it is actively counting up, and
-     that only starts once the card is genuinely in view. If the observer never
-     fires (or JS stalls), the stat keeps its real value instead of sticking at
-     "0", and every animation lands exactly on data-original. -->
+<!-- Count-up stats on scroll (legacy case studies), respects prefers-reduced-motion. -->
 <script>
 (function(){
   var stats = document.querySelectorAll('.case-card .stat');
@@ -371,8 +361,6 @@
 
   var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Parse and remember each stat's real value up front, but do NOT overwrite the
-  // visible text yet: the source value stays on screen until the count-up runs.
   stats.forEach(function(el){
     var original = el.textContent.trim();
     el.dataset.original = original;
@@ -382,7 +370,6 @@
     el.dataset.suffix = match[2];
   });
 
-  // No-animation path: leave the real values on screen (never zero, never blank).
   if (prefersReduced || !('IntersectionObserver' in window)) return;
 
   function runCount(el){
@@ -400,16 +387,12 @@
       var progress = Math.min((ts - startTime) / duration, 1);
       var current = target * progress;
       el.textContent = (isInt ? Math.round(current) : current.toFixed(1)) + suffix;
-      // Stop when done or if the node leaves the DOM; always finish on the exact
-      // source value so a stat can never freeze part-way (e.g. at "0").
       if (progress < 1 && el.isConnected) requestAnimationFrame(step);
       else el.textContent = el.dataset.original;
     }
     requestAnimationFrame(step);
   }
 
-  // Start counting only when the stat is actually visible (same trigger the
-  // reveal animation uses), so it can never finish while the card is hidden.
   var observer = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if (!entry.isIntersecting) return;
@@ -422,8 +405,6 @@
     if (el.dataset.skip !== 'true') observer.observe(el);
   });
 
-  // Safety net: any stat still not counted after 3s but currently on screen is
-  // snapped to its real value, so a card is never left showing a partial number.
   setTimeout(function(){
     var vh = window.innerHeight || document.documentElement.clientHeight;
     stats.forEach(function(el){
@@ -456,7 +437,6 @@
       <ul>
         <li><a href="https://www.shiftandlead.com/build-sprint.html">Work with me</a></li>
         <li><a href="https://www.shiftandlead.com/workshops.html">Workshops</a></li>
-        <li><a href="https://www.shiftandlead.com/case-study-1.html">Case studies</a></li>
       </ul>
     </section>
     <section>
