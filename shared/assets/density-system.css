@@ -1,113 +1,240 @@
-/* Shift & Lead page-density pass.
-   Keeps the editorial breathing room while removing excessive vertical travel. */
+/* Shift & Lead final page polish.
+   Page-aware corrections for density, contrast, hierarchy and responsive flow. */
 
-:root{
-  --space-section:clamp(40px,4.5vw,56px);
-}
+:root{--space-section:clamp(38px,4vw,52px)}
 
 /* Shared chrome */
-.chrome-foot{margin-top:36px!important;padding:44px 24px 28px!important}
-.chrome-foot-grid{gap:26px!important}
-.chrome-foot-legal{margin-top:28px!important;padding-top:16px!important}
+.chrome-foot{margin-top:30px!important;padding:40px 24px 26px!important}
+.chrome-foot-grid{gap:24px!important}
+.chrome-foot-legal{margin-top:26px!important;padding-top:14px!important}
 
-/* Homepage */
-body[data-page-kind="home"] .hero{padding-top:44px!important;padding-bottom:48px!important}
-body[data-page-kind="home"] .possibilities-journey{padding-top:52px!important;padding-bottom:52px!important}
-body[data-page-kind="home"] .possibilities-head{margin-bottom:34px!important}
-body[data-page-kind="home"] .founder,
-body[data-page-kind="home"] .cases,
-body[data-page-kind="home"] .ladder{padding-top:50px!important;padding-bottom:50px!important}
-body[data-page-kind="home"] .testimonials{padding-top:42px!important;padding-bottom:42px!important}
-body[data-page-kind="home"] .router{padding-top:44px!important;padding-bottom:24px!important}
-body[data-page-kind="home"] .section-head{margin-bottom:24px!important}
-body[data-page-kind="home"] .live-week{padding-top:28px!important;padding-bottom:28px!important}
+/* Strict contrast on blue surfaces */
+body[data-page-kind="home"] .contact,
+body[data-page-kind="home"] .ladder-card,
+body[data-page-kind="guides"] .cta-band,
+body[data-page-kind="guides"] .cta-card,
+body[data-page-kind="quiz"] .r-cta{color:#fff!important}
 
-/* FAQ should scan quickly when closed, and expand only when needed. */
-body[data-page-kind="home"] .faq{padding:40px 28px!important}
-body[data-page-kind="home"] .faq-item{padding:0!important}
-body[data-page-kind="home"] .faq-item details{margin:0!important;padding:0!important}
-body[data-page-kind="home"] .faq-item summary{padding:17px 0!important;font-size:18px!important;line-height:1.35!important;cursor:pointer}
-body[data-page-kind="home"] .faq-item details[open] summary{padding-bottom:9px!important}
-body[data-page-kind="home"] .faq-item details p{margin:0 0 16px!important;line-height:1.5!important}
-
-/* Blue conversion panel: enforce accessible foregrounds over the dark blue. */
-body[data-page-kind="home"] .contact{padding:38px 28px!important;background:var(--blue-deep,#1B2EA0)!important;color:#fff!important}
 body[data-page-kind="home"] .contact h2,
 body[data-page-kind="home"] .contact p,
-body[data-page-kind="home"] .contact .contact-note{color:#fff!important}
-body[data-page-kind="home"] .contact .section-eyebrow{color:#DCE3FF!important;margin-bottom:10px!important}
-body[data-page-kind="home"] .contact h2{margin-bottom:8px!important}
-body[data-page-kind="home"] .contact p{margin-left:auto!important;margin-right:auto!important;margin-bottom:14px!important;opacity:.9!important}
-body[data-page-kind="home"] .contact-form{gap:7px!important;margin-bottom:10px!important}
+body[data-page-kind="home"] .contact .contact-note,
+body[data-page-kind="home"] .ladder-card h3,
+body[data-page-kind="home"] .ladder-card p,
+body[data-page-kind="home"] .ladder-card .kicker,
+body[data-page-kind="home"] .ladder-card .price,
+body[data-page-kind="guides"] .cta-band .cta-title,
+body[data-page-kind="guides"] .cta-band .cta-eyebrow,
+body[data-page-kind="guides"] .cta-card h3,
+body[data-page-kind="guides"] .cta-card p,
+body[data-page-kind="guides"] .cta-card .kicker,
+body[data-page-kind="quiz"] .r-cta h3,
+body[data-page-kind="quiz"] .r-cta p,
+body[data-page-kind="quiz"] .r-cta .k{color:#fff!important}
+
+body[data-page-kind="home"] .contact .section-eyebrow,
+body[data-page-kind="guides"] .cta-band .cta-eyebrow,
+body[data-page-kind="guides"] .cta-card .kicker,
+body[data-page-kind="quiz"] .r-cta .k{color:#DCE3FF!important}
+
+body[data-page-kind="home"] .ladder-card a,
+body[data-page-kind="guides"] .cta-card .btn-cream,
+body[data-page-kind="quiz"] .r-cta a{background:#fff!important;color:#1A1A1A!important;border-color:#fff!important}
+
+/* Home */
+body[data-page-kind="home"] .hero{padding-top:42px!important;padding-bottom:46px!important}
+body[data-page-kind="home"] .possibilities-journey{padding-top:48px!important;padding-bottom:48px!important}
+body[data-page-kind="home"] .possibilities-head{margin-bottom:30px!important}
+body[data-page-kind="home"] .founder,
+body[data-page-kind="home"] .cases,
+body[data-page-kind="home"] .ladder{padding-top:46px!important;padding-bottom:46px!important}
+body[data-page-kind="home"] .testimonials{padding-top:38px!important;padding-bottom:38px!important}
+body[data-page-kind="home"] .testi-grid{gap:14px!important;margin-top:22px!important}
+body[data-page-kind="home"] .testi-card{padding:18px!important}
+body[data-page-kind="home"] .testi-quote{font-size:15.5px!important;line-height:1.48!important}
+body[data-page-kind="home"] .router{padding-top:40px!important;padding-bottom:20px!important}
+body[data-page-kind="home"] .router-grid{gap:16px!important}
+body[data-page-kind="home"] .router-card{padding:22px!important}
+body[data-page-kind="home"] .section-head{margin-bottom:22px!important}
+body[data-page-kind="home"] .live-week{padding-top:24px!important;padding-bottom:24px!important}
+
+body[data-page-kind="home"] .faq{padding:36px 28px!important}
+body[data-page-kind="home"] .faq-inner{max-width:760px!important}
+body[data-page-kind="home"] .faq-item{padding:0!important}
+body[data-page-kind="home"] .faq-item details{margin:0!important;padding:0!important}
+body[data-page-kind="home"] .faq-item summary{padding:15px 0!important;font-size:17px!important;line-height:1.35!important;cursor:pointer}
+body[data-page-kind="home"] .faq-item details[open] summary{padding-bottom:8px!important}
+body[data-page-kind="home"] .faq-item details p{margin:0 0 14px!important;line-height:1.5!important}
+
+body[data-page-kind="home"] .contact{padding:34px 28px!important;background:var(--blue-deep,#1B2EA0)!important}
+body[data-page-kind="home"] .contact .section-eyebrow{margin-bottom:8px!important}
+body[data-page-kind="home"] .contact h2{margin-bottom:7px!important}
+body[data-page-kind="home"] .contact p{margin-left:auto!important;margin-right:auto!important;margin-bottom:12px!important;opacity:.92!important}
+body[data-page-kind="home"] .contact-form{gap:7px!important;margin-bottom:8px!important}
 body[data-page-kind="home"] .contact-form input,
-body[data-page-kind="home"] .contact-form textarea{background:rgba(255,255,255,.10)!important;border-color:rgba(255,255,255,.42)!important;color:#fff!important}
+body[data-page-kind="home"] .contact-form textarea{background:rgba(255,255,255,.10)!important;border-color:rgba(255,255,255,.44)!important;color:#fff!important}
 body[data-page-kind="home"] .contact-form input::placeholder,
-body[data-page-kind="home"] .contact-form textarea::placeholder{color:rgba(255,255,255,.68)!important}
+body[data-page-kind="home"] .contact-form textarea::placeholder{color:rgba(255,255,255,.72)!important}
 
 /* Guides hub */
-body[data-page-kind="guides"] .hero{padding-top:52px!important;padding-bottom:56px!important}
-body[data-page-kind="guides"] .pull{padding-top:48px!important;padding-bottom:48px!important}
-body[data-page-kind="guides"] .pull-attrib{margin-top:20px!important}
-body[data-page-kind="guides"] .paths{padding-top:52px!important;padding-bottom:52px!important}
-body[data-page-kind="guides"] .spotlight{padding-top:52px!important;padding-bottom:52px!important}
-body[data-page-kind="guides"] .spotlight-head{margin-bottom:26px!important}
-body[data-page-kind="guides"] .spot-feat{min-height:0!important;padding:30px!important}
-body[data-page-kind="guides"] .spot-mini{padding:20px!important}
-body[data-page-kind="guides"] .controls{padding-top:48px!important;padding-bottom:18px!important}
-body[data-page-kind="guides"] .controls-head{padding-bottom:14px!important;margin-bottom:4px!important}
-body[data-page-kind="guides"] .library{padding-top:16px!important;padding-bottom:60px!important}
-body[data-page-kind="guides"] .row{padding-top:24px!important;padding-bottom:24px!important}
-body[data-page-kind="guides"] .cta-band{padding-top:56px!important;padding-bottom:56px!important}
-body[data-page-kind="guides"] .cta-head{margin-bottom:30px!important}
+body[data-page-kind="guides"] .hero{padding-top:46px!important;padding-bottom:50px!important}
+body[data-page-kind="guides"] .pull{padding-top:40px!important;padding-bottom:40px!important}
+body[data-page-kind="guides"] .pull-attrib{margin-top:18px!important}
+body[data-page-kind="guides"] .paths{padding-top:46px!important;padding-bottom:46px!important}
+body[data-page-kind="guides"] .spotlight{padding-top:46px!important;padding-bottom:46px!important}
+body[data-page-kind="guides"] .spotlight-head{margin-bottom:22px!important}
+body[data-page-kind="guides"] .spot-feat{min-height:0!important;padding:26px!important}
+body[data-page-kind="guides"] .spot-mini{padding:18px!important}
+body[data-page-kind="guides"] .controls{padding-top:42px!important;padding-bottom:14px!important;gap:16px!important}
+body[data-page-kind="guides"] .controls-head{padding-bottom:12px!important;margin-bottom:2px!important}
+body[data-page-kind="guides"] .library{padding-top:12px!important;padding-bottom:52px!important}
+body[data-page-kind="guides"] .lib-track{margin-bottom:40px!important}
+body[data-page-kind="guides"] .card-grid{gap:16px!important}
+body[data-page-kind="guides"] .card{background:#fff!important;overflow:hidden!important;border:1px solid var(--line)!important;box-shadow:none!important}
+body[data-page-kind="guides"] .card-grid .card>img{width:100%!important;height:190px!important;aspect-ratio:auto!important;object-fit:contain!important;object-position:center bottom!important;padding:18px 34px 4px!important;border-bottom:1px solid var(--line)!important;background:#F7F5EF!important;filter:drop-shadow(0 10px 16px rgba(26,26,26,.08));transition:transform .2s ease!important}
+body[data-page-kind="guides"] #track-tools .card>img{background:#EEF2FF!important}
+body[data-page-kind="guides"] #track-setup .card>img{background:#E9EEFF!important}
+body[data-page-kind="guides"] .card:hover>img{transform:translateY(-3px) scale(1.02)!important}
+body[data-page-kind="guides"] .card-body{padding:14px 16px 16px!important}
+body[data-page-kind="guides"] .card-kicker{margin-bottom:5px!important;color:var(--blue-deep)!important}
+body[data-page-kind="guides"] .card h3{font-size:19px!important;line-height:1.18!important;margin-bottom:5px!important}
+body[data-page-kind="guides"] .card-desc{font-size:13.5px!important}
+body[data-page-kind="guides"] .row{padding-top:22px!important;padding-bottom:22px!important}
+body[data-page-kind="guides"] .cta-band{padding-top:48px!important;padding-bottom:48px!important;background:var(--blue-deep)!important}
+body[data-page-kind="guides"] .cta-head{margin-bottom:24px!important}
+body[data-page-kind="guides"] .cta-card{background:var(--blue)!important;border-color:rgba(255,255,255,.20)!important}
 
-/* Individual guides: compact the frame, not the reading line-height. */
-body[data-page-kind="guide"] .guide-hero{padding-top:48px!important;padding-bottom:38px!important}
-body[data-page-kind="guide"] .guide-byline{margin-top:14px!important}
-body[data-page-kind="guide"] .guide-doc{padding-top:42px!important;padding-bottom:48px!important}
-body[data-page-kind="guide"] .callout{margin-top:26px!important;margin-bottom:26px!important}
+/* Individual guides */
+body[data-page-kind="guide"] .guide-hero{padding-top:44px!important;padding-bottom:28px!important}
+body[data-page-kind="guide"] .guide-byline{margin-top:12px!important}
+body[data-page-kind="guide"] .guide-doc{padding-top:34px!important;padding-bottom:44px!important}
+body[data-page-kind="guide"] .prose h2{margin-top:40px!important}
+body[data-page-kind="guide"] .prose h3{margin-top:28px!important}
+body[data-page-kind="guide"] .callout{margin-top:24px!important;margin-bottom:24px!important}
+body[data-page-kind="guide"] .newsletter{margin-top:46px!important;padding-top:44px!important;padding-bottom:44px!important}
 
-/* About and Workshops */
-body[data-page-kind="about"] section,
-body[data-page-kind="workshops"] section{padding-top:44px!important;padding-bottom:44px!important}
-body[data-page-kind="about"] .hero,
-body[data-page-kind="workshops"] .hero{padding-top:48px!important;padding-bottom:42px!important}
-body[data-page-kind="about"] .receipt,
-body[data-page-kind="workshops"] .talk{padding-top:22px!important;padding-bottom:22px!important}
+/* About */
+body[data-page-kind="about"] .hero{padding-top:42px!important;padding-bottom:34px!important}
+body[data-page-kind="about"] section{padding-top:36px!important;padding-bottom:36px!important}
+body[data-page-kind="about"] .timeline{position:relative;display:grid;gap:18px;padding-left:26px;margin-top:18px}
+body[data-page-kind="about"] .timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:8px;width:1px;background:linear-gradient(var(--blue),var(--line))}
+body[data-page-kind="about"] .timeline-item{position:relative;padding:0 0 0 10px!important}
+body[data-page-kind="about"] .timeline-item::before{content:"";position:absolute;left:-25px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px #fff}
+body[data-page-kind="about"] .timeline-item p{margin-top:4px!important;margin-bottom:4px!important}
+body[data-page-kind="about"] .timeline-item h3{margin:3px 0 5px!important;font-size:21px!important}
+body[data-page-kind="about"] .receipts{gap:12px!important;margin-top:16px!important}
+body[data-page-kind="about"] .receipt{padding:16px 18px!important}
+body[data-page-kind="about"] .client-pullquote{padding-top:32px!important;padding-bottom:32px!important}
+body[data-page-kind="about"] .cta-row{margin-top:16px!important}
+body[data-page-kind="about"] .newsletter{margin-top:18px!important;padding-top:38px!important;padding-bottom:38px!important}
+
+/* Workshops */
+body[data-page-kind="workshops"] .hero{padding-top:44px!important;padding-bottom:36px!important}
+body[data-page-kind="workshops"] section{padding-top:36px!important;padding-bottom:36px!important}
+body[data-page-kind="workshops"] .talks{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
+body[data-page-kind="workshops"] .talk{display:flex!important;flex-direction:column!important;gap:10px!important;padding:20px!important;border:1px solid var(--line)!important;border-top:2px solid var(--blue)!important;background:#fff!important}
+body[data-page-kind="workshops"] .talk h3{font-size:20px!important;line-height:1.2!important}
+body[data-page-kind="workshops"] .talk p{line-height:1.5!important}
+body[data-page-kind="workshops"] .talk .fee{margin-top:auto!important;max-width:none!important;text-align:left!important;background:var(--cream)!important;border-color:var(--line)!important;color:var(--ink)!important}
+body[data-page-kind="workshops"] .leave,
+body[data-page-kind="workshops"] .guarantee,
+body[data-page-kind="workshops"] .not-for,
+body[data-page-kind="workshops"] .book{padding:24px 26px!important;background:var(--neutral)!important;color:var(--ink)!important;border:1px solid var(--line)!important}
+body[data-page-kind="workshops"] .leave h2,
+body[data-page-kind="workshops"] .guarantee h2,
+body[data-page-kind="workshops"] .guarantee p,
+body[data-page-kind="workshops"] .book h2,
+body[data-page-kind="workshops"] .book p{color:var(--ink)!important}
+body[data-page-kind="workshops"] .why{position:relative!important;padding-right:112px!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+body[data-page-kind="workshops"] .why::after{content:"";position:absolute;right:6px;top:50%;transform:translateY(-50%);width:88px;height:88px;background:url('/assets/mascot/explaining.png') center/contain no-repeat;filter:drop-shadow(0 10px 16px rgba(26,26,26,.08))}
+body[data-page-kind="workshops"] .why>div{padding:16px 18px!important;border-top:2px solid var(--blue)!important}
+body[data-page-kind="workshops"] .booking-form{gap:9px!important;margin-top:16px!important;max-width:560px!important}
+body[data-page-kind="workshops"] .booking-form input,
+body[data-page-kind="workshops"] .booking-form textarea{background:#fff!important;border-color:var(--line)!important;color:var(--ink)!important}
+body[data-page-kind="workshops"] .booking-form input::placeholder,
+body[data-page-kind="workshops"] .booking-form textarea::placeholder{color:#777!important}
+body[data-page-kind="workshops"] .booking-status{color:var(--blue-deep)!important}
 
 /* Work with me */
-body[data-page-kind="build"] .offer-hero{padding-top:52px!important;padding-bottom:52px!important}
-body[data-page-kind="build"] .offer-section{padding-top:46px!important;padding-bottom:46px!important}
-body[data-page-kind="build"] .offer-grid,
-body[data-page-kind="build"] .offer-steps{gap:18px!important}
-body[data-page-kind="build"] .client-proof{margin-top:0!important;margin-bottom:0!important}
+body[data-page-kind="build"] .offer-hero{position:relative!important;overflow:hidden!important;isolation:isolate!important;padding-top:50px!important;padding-bottom:50px!important;background:linear-gradient(180deg,var(--cream) 0%,#fff 100%)!important}
+body[data-page-kind="build"] .offer-hero::after{content:"";position:absolute;z-index:0;right:0;top:0;bottom:0;width:min(41%,520px);background:url('/fatiha-desk.jpg') center 38%/cover no-repeat;border-left:1px solid var(--line)}
+body[data-page-kind="build"] .offer-hero-inner{position:relative!important;z-index:1!important;padding-right:min(43%,540px)!important}
+body[data-page-kind="build"] .offer-section{padding-top:40px!important;padding-bottom:40px!important}
+body[data-page-kind="build"] .offer-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
+body[data-page-kind="build"] .offer-card{padding:19px!important}
+body[data-page-kind="build"] .offer-card h3{font-size:20px!important}
+body[data-page-kind="build"] .client-proof{padding:30px!important;background:var(--neutral)!important}
+body[data-page-kind="build"] .client-proof blockquote{margin:14px 0!important}
+body[data-page-kind="build"] .offer-steps{position:relative!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:0!important;padding-bottom:58px!important}
+body[data-page-kind="build"] .offer-step{position:relative!important;padding:24px 26px 18px!important;border-top:1px solid var(--line)!important}
+body[data-page-kind="build"] .offer-step::before{content:"";position:absolute;top:-5px;left:26px;width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px #fff}
+body[data-page-kind="build"] .offer-step:not(:last-child)::after{content:"→";position:absolute;right:-10px;top:-17px;width:22px;height:22px;display:grid;place-items:center;border:1px solid #C9D3FF;border-radius:50%;background:#fff;color:var(--blue);font-family:var(--ui);font-size:11px;z-index:2}
+body[data-page-kind="build"] .offer-step .n{margin:0 0 7px!important;color:var(--blue-deep)!important}
+body[data-page-kind="build"] .offer-step h3{font-size:22px!important;margin:0 0 8px!important}
+body[data-page-kind="build"] .offer-steps::after{content:"";position:absolute;right:18px;bottom:-4px;width:72px;height:72px;background:url('/assets/mascot/planning.png') center/contain no-repeat;filter:drop-shadow(0 10px 16px rgba(26,26,26,.08))}
+body[data-page-kind="build"] .fit-lists{gap:24px!important}
+body[data-page-kind="build"] .apply-form{max-width:760px!important;display:grid!important;grid-template-columns:1fr 1fr!important;gap:11px 16px!important}
+body[data-page-kind="build"] .apply-form label:nth-of-type(1){grid-column:1;grid-row:1}
+body[data-page-kind="build"] .apply-form label:nth-of-type(2){grid-column:2;grid-row:1}
+body[data-page-kind="build"] .apply-form label:nth-of-type(3){grid-column:1;grid-row:2}
+body[data-page-kind="build"] .apply-form label:nth-of-type(6){grid-column:2;grid-row:2}
+body[data-page-kind="build"] .apply-form label:nth-of-type(4){grid-column:1/-1;grid-row:3}
+body[data-page-kind="build"] .apply-form label:nth-of-type(5){grid-column:1/-1;grid-row:4}
+body[data-page-kind="build"] .apply-form button{grid-column:1/-1;grid-row:5;justify-self:start!important;width:auto!important}
+body[data-page-kind="build"] .apply-form textarea{min-height:88px!important}
+body[data-page-kind="build"] .faq details{border-top:1px solid var(--line)!important;padding:0!important}
+body[data-page-kind="build"] .faq details:last-of-type{border-bottom:1px solid var(--line)!important}
+body[data-page-kind="build"] .faq summary{padding:13px 0!important;cursor:pointer}
+body[data-page-kind="build"] .faq details p{margin:0 0 13px!important}
 
 /* Starter kit */
-body[data-page-kind="starter-kit"] .kit-hero{padding-top:52px!important;padding-bottom:48px!important}
+body[data-page-kind="starter-kit"] .kit-hero{padding-top:46px!important;padding-bottom:42px!important}
 body[data-page-kind="starter-kit"] .kit-section,
-body[data-page-kind="starter-kit"] .kit-library{padding-top:46px!important;padding-bottom:46px!important}
-body[data-page-kind="starter-kit"] .kit-grid{gap:18px!important}
+body[data-page-kind="starter-kit"] .kit-library{padding-top:40px!important;padding-bottom:40px!important}
+body[data-page-kind="starter-kit"] .kit-grid{gap:14px!important}
+body[data-page-kind="starter-kit"] .kit-item{padding:18px!important}
 
 /* Quiz */
-body[data-page-kind="quiz"] .stage{padding-top:42px!important;padding-bottom:42px!important}
-body[data-page-kind="quiz"] .intro h1{margin-bottom:16px!important}
-body[data-page-kind="quiz"] .intro-facts{margin-top:22px!important;margin-bottom:22px!important}
-body[data-page-kind="quiz"] .options{gap:10px!important}
-body[data-page-kind="quiz"] .opt{padding-top:15px!important;padding-bottom:15px!important}
-body[data-page-kind="quiz"] .r-bars,
-body[data-page-kind="quiz"] .r-cta,
-body[data-page-kind="quiz"] .r-email{margin-top:28px!important}
+body[data-page-kind="quiz"] .stage{min-height:0!important;padding-top:34px!important;padding-bottom:26px!important}
+body[data-page-kind="quiz"] .intro h1{margin-bottom:14px!important}
+body[data-page-kind="quiz"] .intro .sub{margin-bottom:24px!important}
+body[data-page-kind="quiz"] .intro-facts{margin-top:18px!important;margin-bottom:20px!important;gap:22px!important}
+body[data-page-kind="quiz"] .options{gap:9px!important}
+body[data-page-kind="quiz"] .opt{padding-top:14px!important;padding-bottom:14px!important}
+body[data-page-kind="quiz"] .progress{margin-bottom:28px!important}
+body[data-page-kind="quiz"] .q-text{margin-bottom:22px!important}
+body[data-page-kind="quiz"] .r-bars{margin-bottom:28px!important}
+body[data-page-kind="quiz"] .r-cta{margin-top:24px!important;padding:28px!important;background:var(--blue-deep)!important}
+body[data-page-kind="quiz"] .r-email{margin-top:26px!important;padding-top:24px!important}
+body[data-page-kind="quiz"] .chrome-foot{margin-top:18px!important}
 
 /* Insider Brief */
-body[data-page-kind="brief"] .hero{padding-top:64px!important;padding-bottom:64px!important}
-body[data-page-kind="brief"] .hero-content{padding-top:26px!important;padding-bottom:26px!important}
-body[data-page-kind="brief"] .brief-mascot{margin-top:16px!important;margin-bottom:-10px!important}
-body[data-page-kind="brief"] .feed-section{padding-top:44px!important;padding-bottom:44px!important}
-body[data-page-kind="brief"] .briefing-header{margin-bottom:24px!important}
-body[data-page-kind="brief"] .curator-note{margin-top:34px!important;margin-bottom:34px!important}
+body[data-page-kind="brief"] .hero{min-height:auto!important;padding-top:50px!important;padding-bottom:48px!important}
+body[data-page-kind="brief"] .hero-content{padding-top:22px!important;padding-bottom:22px!important}
+body[data-page-kind="brief"] .hero-subtitle{margin-top:14px!important}
+body[data-page-kind="brief"] .category-bar{padding-top:10px!important;padding-bottom:10px!important}
+body[data-page-kind="brief"] .feed-section{padding-top:34px!important;padding-bottom:30px!important}
+body[data-page-kind="brief"] .briefing-header{margin-bottom:18px!important}
+body[data-page-kind="brief"] .feed{gap:10px!important}
+body[data-page-kind="brief"] .feed-card{padding:18px!important}
+body[data-page-kind="brief"] .feed-footer-controls{margin-top:20px!important;margin-bottom:32px!important}
+body[data-page-kind="brief"] .curator-note{margin-top:26px!important;margin-bottom:28px!important}
+body[data-page-kind="brief"] .chrome-foot{margin-top:24px!important}
+
+@media(max-width:900px){
+  body[data-page-kind="workshops"] .talks{grid-template-columns:1fr!important}
+  body[data-page-kind="workshops"] .talk{min-height:0!important}
+  body[data-page-kind="build"] .offer-hero::after{display:none!important}
+  body[data-page-kind="build"] .offer-hero-inner{padding-right:0!important}
+  body[data-page-kind="build"] .offer-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  body[data-page-kind="build"] .offer-steps{grid-template-columns:1fr!important;padding-bottom:48px!important}
+  body[data-page-kind="build"] .offer-step{padding:22px 20px 22px 42px!important;border-top:1px solid var(--line)!important}
+  body[data-page-kind="build"] .offer-step::before{left:18px;top:28px!important}
+  body[data-page-kind="build"] .offer-step:not(:last-child)::after{content:"";left:22px;right:auto;top:36px;bottom:-14px;width:1px;height:auto;border:0;border-radius:0;background:linear-gradient(var(--blue),var(--line))}
+}
 
 @media(max-width:760px){
-  :root{--space-section:40px}
-  .chrome-foot{margin-top:28px!important;padding-top:38px!important}
+  :root{--space-section:36px}
+  .chrome-foot{margin-top:24px!important;padding-top:34px!important}
   body[data-page-kind="home"] .hero,
   body[data-page-kind="home"] .possibilities-journey,
   body[data-page-kind="home"] .founder,
@@ -115,19 +242,37 @@ body[data-page-kind="brief"] .curator-note{margin-top:34px!important;margin-bott
   body[data-page-kind="home"] .testimonials,
   body[data-page-kind="home"] .ladder,
   body[data-page-kind="home"] .faq,
-  body[data-page-kind="home"] .contact{padding-top:38px!important;padding-bottom:38px!important}
-  body[data-page-kind="home"] .faq-item summary{padding:15px 0!important;font-size:17px!important}
+  body[data-page-kind="home"] .contact{padding-top:34px!important;padding-bottom:34px!important}
+  body[data-page-kind="home"] .faq-item summary{padding:14px 0!important;font-size:16.5px!important}
+
   body[data-page-kind="guides"] .hero,
   body[data-page-kind="guides"] .pull,
   body[data-page-kind="guides"] .paths,
   body[data-page-kind="guides"] .spotlight,
-  body[data-page-kind="guides"] .cta-band{padding-top:42px!important;padding-bottom:42px!important}
-  body[data-page-kind="guides"] .controls{padding-top:40px!important}
+  body[data-page-kind="guides"] .cta-band{padding-top:38px!important;padding-bottom:38px!important}
+  body[data-page-kind="guides"] .controls{padding-top:34px!important}
+  body[data-page-kind="guides"] .card-grid .card>img{height:170px!important;padding:15px 26px 2px!important}
+
   body[data-page-kind="about"] section,
   body[data-page-kind="workshops"] section,
   body[data-page-kind="build"] .offer-section,
   body[data-page-kind="starter-kit"] .kit-section,
-  body[data-page-kind="starter-kit"] .kit-library{padding-top:38px!important;padding-bottom:38px!important}
-  body[data-page-kind="brief"] .hero{padding-top:48px!important;padding-bottom:48px!important}
-  body[data-page-kind="brief"] .feed-section{padding-top:38px!important;padding-bottom:38px!important}
+  body[data-page-kind="starter-kit"] .kit-library{padding-top:32px!important;padding-bottom:32px!important}
+
+  body[data-page-kind="workshops"] .why{padding-right:0!important;grid-template-columns:1fr!important}
+  body[data-page-kind="workshops"] .why::after{position:static!important;display:block!important;transform:none!important;width:76px!important;height:76px!important;margin:8px auto 0!important}
+
+  body[data-page-kind="build"] .offer-grid{grid-template-columns:1fr!important}
+  body[data-page-kind="build"] .apply-form{grid-template-columns:1fr!important}
+  body[data-page-kind="build"] .apply-form label,
+  body[data-page-kind="build"] .apply-form button{grid-column:1!important;grid-row:auto!important}
+  body[data-page-kind="build"] .apply-form button{width:100%!important;justify-self:stretch!important}
+
+  body[data-page-kind="quiz"] .stage{padding-top:28px!important;padding-bottom:22px!important}
+  body[data-page-kind="brief"] .hero{padding-top:40px!important;padding-bottom:40px!important}
+  body[data-page-kind="brief"] .feed-section{padding-top:30px!important;padding-bottom:26px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  body[data-page-kind="guides"] .card>img{transition:none!important}
 }
