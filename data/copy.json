@@ -2,23 +2,7 @@
   "_meta": {
     "voice": "Outcome-first, plain English, grade-7 reading level. Reader is the hero, Fatiha is the guide. No mood taglines, no self-quotes, max one 'not X, but Y' per page, every claim followed by a number or named example.",
     "identity": "Fatiha Chikh · Tech & AI Marketing Expert · 20 years at Dell, Intel, Microsoft",
-    "positioning": "Hand your busywork to AI, one task at a time, without hiring, coding, or a six-month project. Twenty years of Fortune 500 method. Every promise must describe something a 10-year-old could draw.
-Bad:
-master AI
-transform your business
-AI adoption
-build a workflow
-scale with automation
-become AI-powered
-optimize your operations
-Good:
-open one morning summary instead of 50 emails
-every new enquiry gets a reply
-wake up to a first draft already written
-a missed call gets a reply in 42 seconds
-your team leaves with one real job working better
-AI writes the first draft and you check it
-If you cannot draw the before and after, rewrite the sentence."
+    "positioning": "Every promise must describe an outcome a 10-year-old could draw. The reader is the hero. Outcome first, operation second. Do not reduce the value to drafting emails or saving a few minutes. The value is helping ambitious professionals build real business capability with AI, step by step. Use proof, named examples and visible before/after outcomes. Avoid jargon in promises. Put technical terms in the explanation, not the headline."
   },
   "global": {
     "brief_ribbon_label": "Get the AI Insider Brief",
@@ -26,58 +10,91 @@ If you cannot draw the before and after, rewrite the sentence."
     "primary_cta": "Get the free guides"
   },
   "home": {
-    "hero_eyebrow": "For ambitious professionals ready to master AI.",
-    "hero_h1": "You are still on time to build an AI system that runs your marketing while you sleep",
-    "hero_h1_accent": "step by step, with no technical skills required.",
-    "hero_sub": "The methodology I used on Fortune 500 teams at Dell, Intel and Microsoft. Now I teach ambitious professionals how to do the same. What to focus on, what to skip, and how.",
+    "hero_eyebrow": "For ambitious professionals ready to build with AI.",
+    "hero_h1": "Build the business you thought would need a much bigger team.",
+    "hero_h1_accent": "step by step.",
+    "hero_sub": "The method I used on Fortune 500 teams at Dell, Intel and Microsoft. Now I teach ambitious professionals how to do the same. What to focus on, what to skip, and how.",
     "hero_cta_primary": "Get my free guides",
+    "hero_cta_secondary": "See how I can help",
     "start_here_eyebrow": "Start here",
-    "start_here_h2": "Which of these is you right now?",
-    "door_team_title": "You lead a team or a company",
-    "door_team_body": "You want your people using AI from actual experts, not AI influencers.",
+    "start_here_h2": "What do you want to build next?",
+    "start_here_sub": "Pick the one that sounds like where you are now.",
+    "door_team_title": "You want your team building with AI",
+    "door_team_body": "You want your people using AI on real work, with clear rules about what it can do and what stays human.",
     "door_team_cta": "See workshops for teams",
-    "door_solo_title": "You're figuring it out solo",
-    "door_solo_body": "Start free, learn the words, and automate your first task this week.",
+    "door_solo_title": "You're building it yourself",
+    "door_solo_body": "Start with the free guides: what to build, which tools to use, what to skip, and how to put the pieces together.",
     "door_solo_cta": "Read the free guides",
-    "pain_eyebrow": "Sound familiar?",
-    "pain_h2": "Every week you wait costs you time, leads, and revenue.",
+    "pain_eyebrow": "The ideas are not the problem",
+    "pain_h2": "Getting them built is.",
     "pain_items": [
-      "You can't say how many hours busywork steals from your week.",
-      "Leads go cold because follow-up is too slow.",
-      "You pay for ten tools subscriptions and barely use two.",
-      "Your big goals are on hold because admin ate the day again.",
-      "You miss new business because you're drained, not because you're not good enough."
+      "You can see what the business needs, but every new idea creates another project.",
+      "Research, content, follow-up and admin all wait for the same few people.",
+      "You keep trying AI tools without knowing which ones belong in the business.",
+      "Projects stay in drafts because the work around them takes longer than the idea.",
+      "You want to move faster without handing important decisions to a machine."
+    ],
+    "pain_close": "Start with the part of the business where AI can create the most useful capacity.",
+    "pain_cta": "Show me where to start",
+    "credential_h2": "I've spent 20 years turning new technology into something teams can actually use.",
+    "the99_teaser_eyebrow": "Built in public",
+    "the99_teaser_h2": "See the AI jobs behind my own business.",
+    "the99_teaser_body": "I build them in public: what each one does, the tools behind it, what stays human, and the proof that it worked.",
+    "the99_teaser_cta": "See the scoreboard",
+    "proof_eyebrow": "Real businesses. Real results.",
+    "proof_h2": "What changes when AI is given a proper job.",
+    "proof_items": [
+      {
+        "stat": "1 min",
+        "title": "Customers got answers in about a minute instead of waiting for hours.",
+        "cta": "Read the story"
+      },
+      {
+        "stat": "97%",
+        "title": "A day care centre cut the time it took to respond to a new enquiry by 97%.",
+        "cta": "Read the story"
+      },
+      {
+        "stat": "30%",
+        "title": "A tyre shop grew sales by 30% after missed calls stopped disappearing.",
+        "cta": "Read the story"
+      }
     ],
     "testimonials_eyebrow": "In their words",
-    "testimonials_h2": "People who built it with me.",
-    "help_eyebrow": "If you want to go deeper",
-    "help_h2": "Two ways to go further.",
-    "help_solo_title": "Join the Fast Forward Academy",
-    "help_solo_body": " Boost your business with AI strategies and tools, I tested and approved, One step at a time, from beginner to expert at your pace.",
-    "help_solo_cta": "See how it works",
-    "help_team_title": "Bring AI adoption to your team",
-    "help_team_body": "Workshops for teams' enablement.",
+    "testimonials_h2": "What changed after we built it together.",
+    "help_eyebrow": "Choose your next step",
+    "help_h2": "Learn it yourself or bring it to your team.",
+    "help_solo_title": "Start with the free library",
+    "help_solo_body": "Plain-English guides to help you choose the right tools, understand what matters, and start building with AI.",
+    "help_solo_cta": "Get the free guides",
+    "help_team_title": "Bring AI into real team work",
+    "help_team_body": "Workshops built around the work your team actually does: where AI can help, what needs a person, and what to build first.",
     "help_team_cta": "See formats and booking",
     "faq_eyebrow": "Before you ask",
     "faq_h2": "Questions people actually have.",
     "faq": [
       {
         "q": "I'm not technical. Can I still do this?",
-        "a": "Yes, that's the whole point. You don't need to learn how to code, I bring you the steps to follow and how it works."
+        "a": "Yes. You need to understand the work you want done, not learn to code. I teach the business logic first and the tools second."
       },
       {
         "q": "Do I have to replace the tools I already use?",
-        "a": "No. We work with your CRM, your email, your calendar. I never make you switch just to switch."
+        "a": "Usually no. Start with the tools and information your business already uses, then add something new only when it earns its place."
       },
       {
         "q": "What if the free guides aren't enough?",
-        "a": "That's what the Fast Foward Academy and workshops are for. Start free, go further when you're ready, never before."
+        "a": "Use the guides to get oriented. If you want to bring this into a team, the workshops are the next step."
       },
       {
         "q": "How fast will I see results?",
-        "a": "Some wins land the same week, how  much time you will save on tasks that used to drain you. Real change, not hacks."
+        "a": "You can test a useful first use case in days. Building AI into several parts of a business takes longer because the goal is something reliable, not a demo."
       }
-    ]
+    ],
+    "contact_eyebrow": "Let's talk",
+    "contact_h2": "Tell me what you want to build with AI.",
+    "contact_body": "Tell me what you are trying to make possible, what is slowing it down, and where you think AI could help.",
+    "contact_message_placeholder": "What are you trying to build?",
+    "contact_cta": "Email me your question"
   },
   "build_sprint": {
     "eyebrow": "Work with me · 1:1",
@@ -93,15 +110,23 @@ If you cannot draw the before and after, rewrite the sentence."
       },
       {
         "title": "The build, done together",
-        "body": " We build your agent based on your requests. You see everything and make the final decisions, not AI."
+        "body": "We build your agent based on your requests. You see everything and make the final decisions, not AI."
       },
       {
         "title": "A written job description",
         "body": "One page: what it does, what it never does, and what good looks like. The part that makes it reliable, and the part everyone skips."
       },
       {
+        "title": "Full handover",
+        "body": "Your logins, your accounts, your tools. When we finish, you own it. No retainer, no keys held back."
+      },
+      {
         "title": "Clear safety rules",
         "body": "What it can touch, what it must never send, and how to decide what data goes near it, written down so it survives a busy week."
+      },
+      {
+        "title": "Two weeks of follow-up",
+        "body": "The real questions surface in the first fortnight. That's when a build sticks instead of quietly getting abandoned. You can ask them."
       }
     ],
     "how_h2": "How it works",
@@ -122,6 +147,13 @@ If you cannot draw the before and after, rewrite the sentence."
         "body": "Sessions across one week, work happening between them. At the end it runs, it's documented, and it's yours."
       }
     ],
+    "examples_h2": "The kind of thing we build",
+    "examples_note": "Real builds from my case studies. Examples of the shape of the work, not a promise your numbers will match.",
+    "examples": [
+      {"stat": "1 min", "cta": "Read the case study"},
+      {"stat": "97%", "cta": "Read the case study"},
+      {"stat": "30%", "cta": "Read the case study"}
+    ],
     "fit_h2": "Who this is for",
     "fit_yes": [
       "You run a small business or team and the busywork is yours.",
@@ -129,6 +161,7 @@ If you cannot draw the before and after, rewrite the sentence."
       "You're not technical and don't plan to become technical.",
       "You want to own the result, not rent it."
     ],
+    "fit_note": "Solo operators welcome. So are teams of three. There's no revenue number you have to clear.",
     "fit_no_title": "Not for you if",
     "fit_no": [
       "You want theory on a strategy deck.",
@@ -168,11 +201,7 @@ If you cannot draw the before and after, rewrite the sentence."
     "dynamic_note": "Topics change with the news. Each session is based on the latest most valuable information, not the noise or hype so your team works on what matters now but don't get distracted."
   },
   "guide_template": {
-    "cards_labels_enum": [
-      "FREE GUIDE",
-      "FREE TOOL VERDICT",
-      "FREE SETUP"
-    ],
+    "cards_labels_enum": ["FREE GUIDE", "FREE TOOL VERDICT", "FREE SETUP"],
     "triplet_labels": {
       "best_for": "BEST FOR",
       "careful_with": "CAREFUL WITH",
