@@ -1,9 +1,9 @@
 {
   "brand": "Shift & Lead",
-  "promise": "Hire your first AI employee.",
-  "positioning": "Hand your busywork to AI, one task at a time — without hiring, coding, or a six-month project. Twenty years of Fortune 500 method, sized for a team of one.",
-  "identity": "Fatiha Chikh · AI operator · 20 years at Dell, Intel, Microsoft",
-  "audience": "Owner-operators, 1-10 people, non-technical.",
+  "promise": "Build more of what your business needs with AI.",
+  "positioning": "Learn what to build, what to skip, and how to turn AI into real business capability without losing human judgment.",
+  "identity": "Fatiha Chikh · AI builder and educator · 20 years at Dell, Intel, Microsoft",
+  "audience": "Ambitious professionals and business builders ready to put AI to work.",
   "year": 2026,
   "hosts": {
     "www": "https://www.shiftandlead.com",
@@ -129,7 +129,7 @@
   "offers": [
     {
       "id": "1:1",
-      "name": "1:1 custom project",
+      "name": "Build with Fatiha",
       "url": "https://www.shiftandlead.com/build-sprint.html",
       "priceBand": "TODO(fatiha): real price or 'from £___'",
       "audience": "solo"
