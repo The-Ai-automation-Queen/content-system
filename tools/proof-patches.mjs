@@ -14,6 +14,11 @@ function patchFile(relativePath, transform) {
   if (after !== before) fs.writeFileSync(file, after);
 }
 
+function ensureNeutralCss(html) {
+  if (html.includes('/assets/section-overrides.css')) return html;
+  return html.replace('</head>', '<link rel="stylesheet" href="/assets/section-overrides.css">\n</head>');
+}
+
 const coccoShortCard = `    <div class="testi-card">
       <div class="testi-stat">From no AI experience to building AI products.</div>
       <p class="testi-quote">&ldquo;I went from having no AI experience to automating much of my workflow and building AI products faster than I thought possible. Fatiha made something complex feel simple and practical.&rdquo;</p>
@@ -33,7 +38,7 @@ patchFile('main-site/index.html', (html) => {
     .replace('placeholder="What are you working on?"', 'placeholder="What are you trying to build?"')
     .replace('>Email me your question</button>', '><!-- copy:home.contact_cta -->Tell me what you\'re building<!-- /copy:home.contact_cta --></button>');
 
-  return html;
+  return ensureNeutralCss(html);
 });
 
 const aboutQuote = `<section class="client-pullquote">
@@ -43,9 +48,11 @@ const aboutQuote = `<section class="client-pullquote">
 </section>`;
 
 patchFile('main-site/about.html', (html) => {
-  if (html.includes('HighPerfomanceBusinessAcademy')) return html;
-  const anchor = `</section>\n\n<section>\n  <div class="company">`;
-  return html.replace(anchor, `</section>\n\n${aboutQuote}\n\n<section>\n  <div class="company">`);
+  if (!html.includes('HighPerfomanceBusinessAcademy')) {
+    const anchor = `</section>\n\n<section>\n  <div class="company">`;
+    html = html.replace(anchor, `</section>\n\n${aboutQuote}\n\n<section>\n  <div class="company">`);
+  }
+  return ensureNeutralCss(html);
 });
 
 const fullTestimonial = `<section class="offer-section client-proof">
@@ -69,8 +76,10 @@ patchFile('main-site/build-sprint.html', (html) => {
     html = html.replace(anchor, `${fullTestimonial}\n\n${anchor}`);
   }
 
-  return html;
+  return ensureNeutralCss(html);
 });
+
+patchFile('main-site/workshops.html', (html) => ensureNeutralCss(html));
 
 patchFile('main-site/starter-kit.html', (html) => {
   html = html
