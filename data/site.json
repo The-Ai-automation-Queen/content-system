@@ -5,11 +5,7 @@
   "identity": "Fatiha Chikh · AI builder and educator · 20 years at Dell, Intel, Microsoft",
   "audience": "Ambitious professionals and business builders ready to put AI to work.",
   "year": 2026,
-  "hosts": {
-    "www": "https://www.shiftandlead.com",
-    "guides": "https://guides.shiftandlead.com",
-    "brief": "https://brief.shiftandlead.com"
-  },
+  "hosts": {"www": "https://www.shiftandlead.com", "guides": "https://guides.shiftandlead.com", "brief": "https://brief.shiftandlead.com"},
   "nav": [
     {"label": "Guides", "url": "https://www.shiftandlead.com/guides/"},
     {"label": "The Brief", "url": "https://brief.shiftandlead.com/"},
