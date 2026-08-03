@@ -12,6 +12,10 @@
   },
   "nav": [
     {
+      "label": "Home",
+      "url": "https://www.shiftandlead.com/"
+    },
+    {
       "label": "Guides",
       "url": "https://www.shiftandlead.com/guides/"
     },
@@ -19,7 +23,7 @@
       "label": "The AI Insider Brief",
       "url": "https://brief.shiftandlead.com/"
     },
-        {
+    {
       "label": "Quiz",
       "url": "https://www.shiftandlead.com/quiz.html"
     },
@@ -49,7 +53,7 @@
           "label": "The Brief",
           "url": "https://brief.shiftandlead.com/"
         },
-              {
+        {
           "label": "Quiz",
           "url": "https://www.shiftandlead.com/quiz.html"
         },
@@ -70,7 +74,7 @@
           "label": "Workshops",
           "url": "https://www.shiftandlead.com/workshops.html"
         }
-          ]
+      ]
     },
     {
       "title": "About",
