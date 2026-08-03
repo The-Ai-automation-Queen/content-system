@@ -24,7 +24,16 @@ const coccoShortCard = `    <div class="testi-card">
 
 patchFile('main-site/index.html', (html) => {
   const myriamCard = /    <div class="testi-card">\s*<div class="testi-stat">Less admin\. More innovation\.<\/div>[\s\S]*?<div class="testi-name">Myriam M\.<\/div>[\s\S]*?<\/div>\s*<\/div>/;
-  return html.replace(myriamCard, coccoShortCard);
+  html = html.replace(myriamCard, coccoShortCard);
+
+  html = html
+    .replace('<div class="section-eyebrow">Let&rsquo;s talk</div>', '<div class="section-eyebrow"><!-- copy:home.contact_eyebrow -->Have something you want to build?<!-- /copy:home.contact_eyebrow --></div>')
+    .replace('<h2>Speaking, bespoke builds, or just say hello.</h2>', '<h2><!-- copy:home.contact_h2 -->Tell me what you want AI to make possible.<!-- /copy:home.contact_h2 --></h2>')
+    .replace('<p>For workshops, keynotes, or a quoted done-with-you project, or if you just want to be first in line when the Community opens.</p>', '<p><!-- copy:home.contact_body -->Share what you are trying to build, what is slowing it down, and where you think AI could help. I will point you to the most useful next step.<!-- /copy:home.contact_body --></p>')
+    .replace('placeholder="What are you working on?"', 'placeholder="What are you trying to build?"')
+    .replace('>Email me your question</button>', '><!-- copy:home.contact_cta -->Tell me what you\'re building<!-- /copy:home.contact_cta --></button>');
+
+  return html;
 });
 
 const aboutQuote = `<section class="client-pullquote">
@@ -52,9 +61,23 @@ const fullTestimonial = `<section class="offer-section client-proof">
 </section>`;
 
 patchFile('main-site/build-sprint.html', (html) => {
-  if (html.includes('Beauty Business Coach, HighPerfomanceBusinessAcademy')) return html;
-  const anchor = `<section class="offer-section">\n  <h2><!-- copy:build_sprint.fit_h2 -->Who this is for<!-- /copy:build_sprint.fit_h2 -->, and who it's not</h2>`;
-  return html.replace(anchor, `${fullTestimonial}\n\n${anchor}`);
+  const oldProof = /<section class="offer-section">\s*<h2><!-- copy:build_sprint\.examples_h2 -->[\s\S]*?<\/section>\s*/;
+  html = html.replace(oldProof, '');
+
+  if (!html.includes('Beauty Business Coach, HighPerfomanceBusinessAcademy')) {
+    const anchor = `<section class="offer-section">\n  <h2><!-- copy:build_sprint.fit_h2 -->Who this is for<!-- /copy:build_sprint.fit_h2 -->, and who it's not</h2>`;
+    html = html.replace(anchor, `${fullTestimonial}\n\n${anchor}`);
+  }
+
+  return html;
 });
 
-console.log('Applied testimonial proof patches.');
+patchFile('main-site/starter-kit.html', (html) => {
+  html = html
+    .replace('Every prompt, template and setup I use, written in plain English for people who don\'t code and don\'t want to. Nothing here\'s locked. Put your email in and the new ones come to you as I add them.', 'Use the same briefs, guardrails and setup templates I use to turn an AI idea into something you can actually run. Start with what you need now, then come back as the library grows.')
+    .replace('<h3>The lead-qualifier brief</h3>\n      <p>The shape behind the day care build: qualify, answer, book, hand over. From the case study.</p>\n      <a href="https://www.shiftandlead.com/case-study-2.html">Read the case study</a>', '<h3>The first-use-case scorecard</h3>\n      <p>A simple way to choose what AI should handle first: repeatable work, clear inputs, visible output, human review.</p>\n      <a href="/guides/first-ai-employee.html">Open the guide</a>')
+    .replace('<h3>The missed-call recovery loop</h3>\n      <p>Catch the call you didn\'t answer and get back to them before they ring a competitor. From the tire shop build.</p>\n      <a href="https://www.shiftandlead.com/case-study-3.html">Read the case study</a>', '<h3>The human handoff rule</h3>\n      <p>Define what AI can finish, what it must flag, and exactly when a person takes over before you automate the work.</p>\n      <a href="/guides/24-7-operations-system.html">Open the guide</a>');
+  return html;
+});
+
+console.log('Applied proof and copy patches.');
