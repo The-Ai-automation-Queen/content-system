@@ -71,41 +71,41 @@ const MOBILE = mobileNav();
 
 const HOME_FLOW = `<section class="possibilities-journey" aria-labelledby="possibilities-title">
   <div class="possibilities-shell">
-    <div class="possibilities-head">
-      <div class="possibilities-eyebrow">The ideas are not the problem</div>
-      <h2 id="possibilities-title">More of them should get built.</h2>
-      <p class="possibilities-intro">The shift is not doing more for the sake of it. It is turning the right ideas into working capability without giving up judgment.</p>
+    <div class="possibilities-head" style="max-width:820px;margin-left:0;text-align:left">
+      <div class="possibilities-eyebrow" style="font-size:12px">You should not have to do every step</div>
+      <h2 id="possibilities-title" style="font-style:normal">Let AI carry the work<br><em style="font-style:italic;color:var(--blue,#2C4BE0)">that keeps coming back.</em></h2>
+      <p class="possibilities-intro" style="margin-left:0">Research, content, follow-up and repeated admin can keep moving without everything waiting for you.</p>
     </div>
-    <div class="possibilities-flow" aria-label="From idea to working capability">
+    <div class="possibilities-flow" aria-label="From repeated work to more finished work">
       <article class="possibilities-step">
         <div class="possibilities-number">01</div>
-        <div class="possibilities-stage">You bring</div>
-        <h3>The outcome you want.</h3>
+        <div class="possibilities-stage">Start with</div>
+        <h3>The work that keeps piling up.</h3>
         <ul class="possibilities-outcomes">
-          <li>The offer in your notes gets launched.</li>
-          <li>The research is ready when a decision appears.</li>
+          <li>Research you have to gather again and again.</li>
+          <li>Content that always starts from the same information.</li>
         </ul>
       </article>
       <div class="possibilities-connector" aria-hidden="true"></div>
       <article class="possibilities-step">
         <div class="possibilities-number">02</div>
-        <div class="possibilities-stage">We design</div>
-        <h3>The system around the work.</h3>
+        <div class="possibilities-stage">Let AI handle</div>
+        <h3>The repeatable steps.</h3>
         <ul class="possibilities-outcomes">
-          <li>Content starts from your knowledge, not a blank page.</li>
+          <li>Information gets organised before you need it.</li>
           <li>Follow-up happens when it should.</li>
         </ul>
       </article>
       <div class="possibilities-connector" aria-hidden="true"></div>
       <article class="possibilities-step is-final">
         <div class="possibilities-number">03</div>
-        <div class="possibilities-stage">You leave with</div>
-        <h3>More capacity, with the decisions still yours.</h3>
+        <div class="possibilities-stage">You keep</div>
+        <h3>The decisions that need you.</h3>
         <ul class="possibilities-outcomes">
-          <li>Repeated work keeps moving in the background.</li>
-          <li>You understand what was built and where the human stays in control.</li>
+          <li>More work gets finished in the background.</li>
+          <li>You review, decide and stay in control.</li>
         </ul>
-        <p class="possibilities-principle">You keep the judgment. AI helps carry more of the work.</p>
+        <p class="possibilities-principle">AI carries the repeatable work. You keep the judgment.</p>
       </article>
     </div>
     <div class="possibilities-action"><a class="btn-primary" href="#further">Show me what to build first →</a></div>
@@ -152,6 +152,7 @@ function patch(file) {
     html = html.replace(/\s*<link rel="stylesheet" href="\/assets\/home-possibilities\.css(?:\?v=[^"]*)?">/g, '');
     html = html.replace('</head>', `${HOME_FLOW_LINK}\n</head>`);
     html = html.replace(/<section class="pains possibilities">[\s\S]*?<\/section>/, HOME_FLOW);
+    html = html.replace(/<section class="possibilities-journey"[\s\S]*?<\/section>/, HOME_FLOW);
   }
 
   if (html !== before) fs.writeFileSync(file, html);
