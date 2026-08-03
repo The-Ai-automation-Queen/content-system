@@ -95,6 +95,14 @@
     "contact_body": "Tell me what you are trying to make possible, what is slowing it down, and where you think AI could help.",
     "contact_message_placeholder": "What are you trying to build?",
     "contact_cta": "Email me your question"
+    "about": {
+  "eyebrow": "About",
+  "h1": "One step ahead of you, on the same path.",
+  "intro": "I'm Fatiha Chikh. I spent 20 years inside the world's biggest tech companies. Now I'm hiring 99 AI employees to run my business, in public, and I share everything I build.",
+  "story_h2": "It was never about the technology.",
+  "proof_h2": "Proof, not promises.",
+  "cta_team": "Bring this into your company"
+},
   },
   "build_sprint": {
     "eyebrow": "Work with me · 1:1",
