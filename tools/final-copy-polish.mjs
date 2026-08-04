@@ -25,6 +25,18 @@ function walk(dir, out = []) {
   return out;
 }
 
+const HOME_STYLE = `<style id="final-home-accessibility">
+body[data-page-kind="home"] .possibilities-number{
+  color:var(--blue,#2C4BE0)!important;
+  opacity:1!important;
+}
+body[data-page-kind="home"] .possibilities-stage,
+body[data-page-kind="home"] .possibilities-eyebrow{
+  color:var(--blue-deep,#1B2EA0)!important;
+  opacity:1!important;
+}
+</style>`;
+
 const WORKSHOP_STYLE = `<style id="final-workshop-polish">
 body[data-page-kind="workshops"] .talk{padding:28px!important}
 body[data-page-kind="workshops"] .talk .fmt{margin-bottom:16px!important}
@@ -59,6 +71,15 @@ const BRIEF_STYLE = `<style id="final-brief-polish">
 }
 </style>`;
 
+patchFile(path.join(MAIN, 'index.html'), html => {
+  html = html.replace(/\s*<style id="final-home-accessibility">[\s\S]*?<\/style>/g, '');
+  html = html.replace('</head>', `${HOME_STYLE}\n</head>`);
+  html = html
+    .replace(/\s*<p class="possibilities-principle">[\s\S]*?<\/p>/g, '')
+    .replace(/\s*<section class="live-week"[\s\S]*?<\/section>/g, '');
+  return html;
+});
+
 patchFile(path.join(MAIN, 'workshops.html'), html => {
   html = html.replace(/\s*<style id="final-workshop-polish">[\s\S]*?<\/style>/g, '');
   html = html.replace('</head>', `${WORKSHOP_STYLE}\n</head>`);
@@ -92,4 +113,4 @@ patchFile(path.join(BRIEF, 'index.html'), html => {
   return html;
 });
 
-console.log('Applied final copy and mobile polish.');
+console.log('Applied final copy, accessibility and mobile polish.');
