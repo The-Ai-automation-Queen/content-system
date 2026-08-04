@@ -50,6 +50,12 @@ body.guide .byline{margin-top:46px!important}
 body.guide .byline-in{background:#fff!important;border:0!important;border-top:1px solid var(--line)!important;border-radius:0!important;padding:22px 0!important;align-items:flex-start!important}
 body.guide .byline-in img{width:52px!important;height:52px!important}
 body.guide .upsell{margin-top:46px!important;margin-bottom:46px!important}
+body.guide .term-grid{display:grid;gap:0;margin:26px 0;border-top:1px solid var(--line)}
+body.guide .term-item{padding:24px 0;border-bottom:1px solid var(--line)}
+body.guide .term-item h3{font-family:var(--display);font-size:26px;line-height:1.15;margin:0 0 8px}
+body.guide .term-item p{margin:0 0 8px}
+body.guide .term-item p:last-child{margin-bottom:0}
+body.guide .term-item .picture{color:#2C4BE0;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
 @media(max-width:700px){
   body.guide{font-size:18px!important;line-height:1.62!important}
   body.guide .guide-doc{padding-left:18px!important;padding-right:18px!important;padding-bottom:48px!important}
@@ -72,70 +78,52 @@ body.guide .upsell{margin-top:46px!important;margin-bottom:46px!important}
   body.guide .related .card-grid{grid-template-columns:1fr!important;gap:14px!important}
   body.guide .byline-in{gap:14px!important}
   body.guide .byline-in p{font-size:16px!important;line-height:1.5!important}
+  body.guide .term-item{padding:20px 0!important}
+  body.guide .term-item h3{font-size:24px!important}
 }
 </style>`;
 
-patch(path.join(MAIN, 'index.html'), html => html
-  .replace(/\s*<style id="final-home-accessibility">[\s\S]*?<\/style>/g, '')
-  .replace('</head>', `${HOME_STYLE}\n</head>`)
-  .replace(/\s*<p class="possibilities-principle">[\s\S]*?<\/p>/g, '')
-  .replace(/\s*<section class="live-week"[\s\S]*?<\/section>/g, ''));
+patch(path.join(MAIN, 'index.html'), html => html.replace(/\s*<style id="final-home-accessibility">[\s\S]*?<\/style>/g, '').replace('</head>', `${HOME_STYLE}\n</head>`).replace(/\s*<p class="possibilities-principle">[\s\S]*?<\/p>/g, '').replace(/\s*<section class="live-week"[\s\S]*?<\/section>/g, ''));
 
-patch(path.join(MAIN, 'workshops.html'), html => html
-  .replace(/\s*<style id="final-workshop-polish">[\s\S]*?<\/style>/g, '')
-  .replace('</head>', `${WORKSHOP_STYLE}\n</head>`)
-  .replace(/<div class="fmt">MISSING:WORKSHOPS\.FORMATS\.2\.TITLE\s*&middot;\s*TEAMS<\/div>/i, '<div class="fmt">Team transformation &middot; multi-session</div>')
-  .replace(/<div class="fmt">[^<]*workshops\.formats\.2[^<]*<\/div>/i, '<div class="fmt">Team transformation &middot; multi-session</div>')
-  .replace('<h3>From Corporate to AI-Powered: The Deep Build</h3>', '<h3>Build Your AI Operating System</h3>')
-  .replace('A full day inside the method: the team audits its work, picks the highest-value automations, and builds the first ones together. Includes a 30-day follow-up check-in.', 'Your team maps the highest-value work, builds the first automations together, and leaves with a system they can keep improving after the engagement ends.')
-  .replace(/<section>\s*<div class="kicker">What changes after<\/div>[\s\S]*?<\/section>/, '<section><div class="kicker">What changes after</div><div class="guarantee"><h2>You leave with something real.</h2><p class="line">Hands-on workshops end with a working first version, while keynotes leave your leaders clear on what to act on, what to wait on, and what stays human.</p></div></section>'));
+patch(path.join(MAIN, 'workshops.html'), html => html.replace(/\s*<style id="final-workshop-polish">[\s\S]*?<\/style>/g, '').replace('</head>', `${WORKSHOP_STYLE}\n</head>`).replace(/<div class="fmt">MISSING:WORKSHOPS\.FORMATS\.2\.TITLE\s*&middot;\s*TEAMS<\/div>/i, '<div class="fmt">Team transformation &middot; multi-session</div>').replace(/<div class="fmt">[^<]*workshops\.formats\.2[^<]*<\/div>/i, '<div class="fmt">Team transformation &middot; multi-session</div>').replace('<h3>From Corporate to AI-Powered: The Deep Build</h3>', '<h3>Build Your AI Operating System</h3>').replace('A full day inside the method: the team audits its work, picks the highest-value automations, and builds the first ones together. Includes a 30-day follow-up check-in.', 'Your team maps the highest-value work, builds the first automations together, and leaves with a system they can keep improving after the engagement ends.').replace(/<section>\s*<div class="kicker">What changes after<\/div>[\s\S]*?<\/section>/, '<section><div class="kicker">What changes after</div><div class="guarantee"><h2>You leave with something real.</h2><p class="line">Hands-on workshops end with a working first version, while keynotes leave your leaders clear on what to act on, what to wait on, and what stays human.</p></div></section>'));
 
-patch(path.join(MAIN, 'how-i-can-help.html'), html => html
-  .replace('Contact Fatiha', 'contact me')
-  .replace('>CONTACT FATIHA<', '>contact me<'));
-
-for (const file of walk(MAIN)) {
-  patch(file, html => html.replaceAll('Starter Kit', 'AI Build Kit').replaceAll('starter kit', 'AI Build Kit').replaceAll('STARTER KIT', 'AI BUILD KIT'));
-}
-
-patch(path.join(BRIEF, 'index.html'), html => html
-  .replace(/\s*<style id="final-brief-polish">[\s\S]*?<\/style>/g, '')
-  .replace('</head>', `${BRIEF_STYLE}\n</head>`)
-  .replace(/<h1>Know which AI changes actually affect what you can build\.<\/h1>/, '<h1>I curate the AI news. You get the brief.</h1>')
-  .replace(/<h1><!-- copy:brief\.h1 -->[\s\S]*?<!-- \/copy:brief\.h1 --><\/h1>/, '<h1>I curate the AI news. You get the brief.</h1>')
-  .replace(/\s*<p class="curator-note">[\s\S]*?<\/p>/, ''));
-
-patch(path.join(GUIDES, 'index.html'), html => html
-  .replace('THE FULL LIBRARY', 'AI, EXPLAINED CLEARLY')
-  .replace('The full library', 'AI, explained clearly')
-  .replace('Every guide, every track.', 'Know what the AI tools are. Know which ones matter to you.')
-  .replace('Claude. For anything that needs careful reading.', 'Claude is the AI people reach for when the work gets complicated.')
-  .replace('Where it earns its keep, and where it will burn you.', 'What Claude is best at, how it differs from ChatGPT, and when it is worth using.')
-  .replace('Read the Claude verdict', 'Read the Claude guide'));
+patch(path.join(MAIN, 'how-i-can-help.html'), html => html.replace('Contact Fatiha', 'contact me').replace('>CONTACT FATIHA<', '>contact me<'));
+for (const file of walk(MAIN)) patch(file, html => html.replaceAll('Starter Kit', 'AI Build Kit').replaceAll('starter kit', 'AI Build Kit').replaceAll('STARTER KIT', 'AI BUILD KIT'));
+patch(path.join(BRIEF, 'index.html'), html => html.replace(/\s*<style id="final-brief-polish">[\s\S]*?<\/style>/g, '').replace('</head>', `${BRIEF_STYLE}\n</head>`).replace(/<h1>Know which AI changes actually affect what you can build\.<\/h1>/, '<h1>I curate the AI news. You get the brief.</h1>').replace(/<h1><!-- copy:brief\.h1 -->[\s\S]*?<!-- \/copy:brief\.h1 --><\/h1>/, '<h1>I curate the AI news. You get the brief.</h1>').replace(/\s*<p class="curator-note">[\s\S]*?<\/p>/, ''));
+patch(path.join(GUIDES, 'index.html'), html => html.replace('THE FULL LIBRARY', 'AI, EXPLAINED CLEARLY').replace('The full library', 'AI, explained clearly').replace('Every guide, every track.', 'Know what the AI tools are. Know which ones matter to you.').replace('Claude. For anything that needs careful reading.', 'Claude is the AI people reach for when the work gets complicated.').replace('Where it earns its keep, and where it will burn you.', 'What Claude is best at, how it differs from ChatGPT, and when it is worth using.').replace('Read the Claude verdict', 'Read the Claude guide'));
 
 for (const file of walk(GUIDES)) {
   if (path.basename(file) === 'index.html') continue;
   patch(file, html => {
-    html = html
-      .replace(/\s*<style id="final-guide-clarity">[\s\S]*?<\/style>/g, '')
-      .replace('</head>', `${GUIDE_STYLE}\n</head>`)
-      .replace(/\s*<ul class="tldr">[\s\S]*?<\/ul>/g, '')
-      .replace(/\s*<figure class="cover">[\s\S]*?<\/figure>/g, '')
-      .replace(/\s*<figure class="fig">[\s\S]*?<\/figure>/g, '')
-      .replace(/\s*<blockquote class="pull">[\s\S]*?<\/blockquote>/g, '')
-      .replace(/\s*<!-- data:guide-byline -->[\s\S]*?<!-- \/data:guide-byline -->/g, '')
-      .replace(/<p class="card-desc">Updated [\s\S]*? min read<\/p>/g, '')
-      .replace('Free, forever. No cost, no catch.', 'GET THE NEXT GUIDE')
-      .replace('Want the rest of these as they land?', 'Get one useful AI guide each week.')
-      .replace('This guide stays open. Add your email and you also get every new guide plus the weekly Insider Brief. Unsubscribe anytime.', 'Plain-English guides and the Insider Brief, sent when there is something worth reading.')
-      .replace('Email me the guides', 'Send me the next guide')
-      .replace('Already on the list? Just keep reading.', 'Already subscribed? Keep reading.')
-      .replace("I'll build your first AI employee with you in a week, using the same systems as the case studies. You keep it, and you can change it.", 'If you have a real workflow you want AI to take on, I can help you choose the right first build and set the boundaries.')
-      .replace('See how it works', 'See how I can help');
-
+    html = html.replace(/\s*<style id="final-guide-clarity">[\s\S]*?<\/style>/g, '').replace('</head>', `${GUIDE_STYLE}\n</head>`).replace(/\s*<ul class="tldr">[\s\S]*?<\/ul>/g, '').replace(/\s*<figure class="cover">[\s\S]*?<\/figure>/g, '').replace(/\s*<figure class="fig">[\s\S]*?<\/figure>/g, '').replace(/\s*<blockquote class="pull">[\s\S]*?<\/blockquote>/g, '').replace(/\s*<!-- data:guide-byline -->[\s\S]*?<!-- \/data:guide-byline -->/g, '').replace(/<p class="card-desc">Updated [\s\S]*? min read<\/p>/g, '').replace('Free, forever. No cost, no catch.', 'GET THE NEXT GUIDE').replace('Want the rest of these as they land?', 'Get one useful AI guide each week.').replace('This guide stays open. Add your email and you also get every new guide plus the weekly Insider Brief. Unsubscribe anytime.', 'Plain-English guides and the Insider Brief, sent when there is something worth reading.').replace('Email me the guides', 'Send me the next guide').replace('Already on the list? Just keep reading.', 'Already subscribed? Keep reading.').replace("I'll build your first AI employee with you in a week, using the same systems as the case studies. You keep it, and you can change it.", 'If you have a real workflow you want AI to take on, I can help you choose the right first build and set the boundaries.').replace('See how it works', 'See how I can help');
     html = html.replace(/<section class="related">[\s\S]*?<\/section>/g, section => section.replace(/\s*<img[^>]*>/g, ''));
     return html;
   });
 }
+
+patch(path.join(GUIDES, 'ai-jargon-guide.html'), html => {
+  const hero = `<header class="guide-hero"><p class="eyebrow mono">AI TERMS, MADE SIMPLE</p><h1>12 AI words you'll hear everywhere — explained so you can picture them.</h1><p class="verdict">You do not need to memorise AI jargon. You need a simple picture in your head when someone says the word.</p></header>`;
+  const content = `<div class="prose"><h2>Start with this picture</h2><p>Think of AI like a very fast helper sitting at a desk. You give it instructions. It reads information. It gives you something back. Most AI terms describe one part of that simple loop.</p><div class="callout"><p class="callout-label">THE WHOLE GUIDE IN ONE LINE</p><p><strong>You give AI a prompt → it reads what it can see → it works with a model → it gives you an answer or takes an action.</strong></p></div><h2>12 AI terms in plain English</h2><div class="term-grid">
+<div class="term-item"><h3>Prompt</h3><p>The instruction you give the AI.</p><p class="picture">Picture it</p><p>A note you hand to a helper: “Read these emails and tell me what needs my reply.”</p><p><strong>Why it matters:</strong> clearer instructions usually give you a better result.</p></div>
+<div class="term-item"><h3>Token</h3><p>A small piece of text the AI reads and writes.</p><p class="picture">Picture it</p><p>A sentence cut into lots of little tiles. AI counts the tiles, not whole pages.</p><p><strong>Why it matters:</strong> more text means more tokens, and sometimes more cost.</p></div>
+<div class="term-item"><h3>Context window</h3><p>How much information the AI can keep in front of it at one time.</p><p class="picture">Picture it</p><p>A desk. If the desk is full, you have to remove some papers before adding more.</p><p><strong>Why it matters:</strong> if important information falls off the desk, the answer can get worse.</p></div>
+<div class="term-item"><h3>Hallucination</h3><p>When AI gives you something false as if it were true.</p><p class="picture">Picture it</p><p>A student who does not know the answer but writes one anyway instead of saying “I don't know.”</p><p><strong>Why it matters:</strong> confident does not mean correct.</p></div>
+<div class="term-item"><h3>RAG</h3><p><strong>Retrieval-augmented generation</strong> means the AI looks up information before it answers.</p><p class="picture">Picture it</p><p>Open-book exam: question → look in the right folder → answer using what you found.</p><p><strong>Why it matters:</strong> it helps AI answer from your documents instead of guessing from general knowledge.</p></div>
+<div class="term-item"><h3>Fine-tuning</h3><p>Extra training that changes a model so it becomes better at a narrower kind of task.</p><p class="picture">Picture it</p><p>A general cook going to pastry school to get much better at cakes.</p><p><strong>Why it matters:</strong> it can be useful, but many businesses do not need it for everyday AI work.</p></div>
+<div class="term-item"><h3>AI agent</h3><p>AI that can take several steps toward a goal instead of only answering once.</p><p class="picture">Picture it</p><p>Not “tell me how to book the trip.” More like “find the options, compare them, prepare the booking, then ask me before paying.”</p><p><strong>Why it matters:</strong> agents move AI from answering to doing.</p></div>
+<div class="term-item"><h3>MCP</h3><p><strong>Model Context Protocol</strong> is a standard way for AI tools to connect to other software and data.</p><p class="picture">Picture it</p><p>A universal plug. Instead of making a different cable for every tool, MCP gives them a shared connection.</p><p><strong>Why it matters:</strong> it can make it easier for AI to work with files, databases and business tools.</p></div>
+<div class="term-item"><h3>System prompt</h3><p>Hidden or fixed instructions that tell an AI how it should behave.</p><p class="picture">Picture it</p><p>The house rules written on the wall before you enter the room.</p><p><strong>Why it matters:</strong> two tools can use a similar model but behave differently because their rules are different.</p></div>
+<div class="term-item"><h3>Multimodal AI</h3><p>AI that can work with more than text, such as images, audio or video.</p><p class="picture">Picture it</p><p>An assistant that can read, look, listen and sometimes watch.</p><p><strong>Why it matters:</strong> you can show the AI a screenshot or speak to it instead of typing everything.</p></div>
+<div class="term-item"><h3>Open-weight model</h3><p>An AI model whose trained model files are available for others to run under its licence.</p><p class="picture">Picture it</p><p>Instead of always using someone else's kitchen, you can bring the recipe and equipment into your own kitchen.</p><p><strong>Why it matters:</strong> some companies want more control over where the AI runs and where their data goes.</p></div>
+<div class="term-item"><h3>Guardrails</h3><p>Rules and technical limits that stop AI from doing things it should not do.</p><p class="picture">Picture it</p><p>The rail at the edge of a staircase. It does not walk for you. It helps stop a bad fall.</p><p><strong>Why it matters:</strong> important actions should have limits, permissions and human approval.</p></div>
+</div><h2>The three questions to ask when jargon appears</h2><p>You do not need to repeat the technical word back. Ask:</p><div class="callout"><p><strong>1. What does it do?</strong><br><strong>2. What information can it see?</strong><br><strong>3. What can go wrong?</strong></p></div><p>If someone can answer those three questions clearly, you understand enough to keep the conversation useful.</p></div>`;
+
+  html = html
+    .replace(/<title>[\s\S]*?<\/title>/, '<title>AI Terms Explained: 12 AI Words in Plain English | Shift &amp; Lead</title>')
+    .replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="AI terms explained in plain English: prompt, token, context window, hallucination, RAG, fine-tuning, AI agent, MCP, multimodal AI, open-weight models and guardrails.">')
+    .replace(/<header class="guide-hero">[\s\S]*?<\/header>/, hero)
+    .replace(/<div class="prose">[\s\S]*?<\/div>\s*<!-- partial:gate -->[\s\S]*?<!-- \/partial:gate -->\s*<div class="prose">[\s\S]*?<\/div>/, content);
+  return html;
+});
 
 console.log('Applied final site patches.');
