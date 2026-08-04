@@ -29,6 +29,7 @@ function walk(dir, out = []) {
 const HOME_STYLE = `<style id="final-home-accessibility">body[data-page-kind="home"] .possibilities-number{color:var(--blue,#2C4BE0)!important;opacity:1!important}body[data-page-kind="home"] .possibilities-stage,body[data-page-kind="home"] .possibilities-eyebrow{color:var(--blue-deep,#1B2EA0)!important;opacity:1!important}</style>`;
 const WORKSHOP_STYLE = `<style id="final-workshop-polish">body[data-page-kind="workshops"] .talk{padding:28px!important}body[data-page-kind="workshops"] .talk .fmt{margin-bottom:16px!important}body[data-page-kind="workshops"] .talk h3{margin:0 0 14px!important}body[data-page-kind="workshops"] .talk p{margin:0 0 20px!important}body[data-page-kind="workshops"] .talk .fee{display:block!important;margin-top:10px!important}body[data-page-kind="workshops"] .guarantee h2{font-size:clamp(34px,4.6vw,46px)!important;line-height:1.08!important;margin-bottom:18px!important}body[data-page-kind="workshops"] .guarantee .line{font-size:18px!important;line-height:1.55!important;font-weight:400!important;margin:0!important}body[data-page-kind="workshops"] .guarantee .support{display:none!important}@media(max-width:700px){body[data-page-kind="workshops"] .talk{padding:24px 20px!important}body[data-page-kind="workshops"] .talk h3{font-size:27px!important;line-height:1.12!important}body[data-page-kind="workshops"] .talk p{font-size:17px!important;line-height:1.55!important}body[data-page-kind="workshops"] .guarantee{padding:24px 20px!important}body[data-page-kind="workshops"] .guarantee h2{font-size:36px!important}body[data-page-kind="workshops"] .guarantee .line{font-size:17px!important;line-height:1.5!important}}</style>`;
 const BRIEF_STYLE = `<style id="final-brief-polish">@media(max-width:700px){body[data-page-kind="brief"] .category-bar-inner{justify-content:flex-start!important;overflow-x:auto!important;padding-left:18px!important;padding-right:18px!important;scroll-padding-inline:18px!important}body[data-page-kind="brief"] .category-pill{flex:0 0 auto!important;padding-left:18px!important;padding-right:18px!important}}</style>`;
+const GUIDE_STYLE = `<style id="final-guide-clarity">body.guide .mono,body.guide .eyebrow,body.guide .callout-label,body.guide .gate-proof,body.guide .guide-table th{color:#2C4BE0!important}body.guide .pull{color:#2C4BE0!important}body.guide .callout{border-left-color:#2C4BE0!important}body.guide .chip-strong{background:#2C4BE0!important;border-color:#2C4BE0!important;color:#fff!important}</style>`;
 
 patch(path.join(MAIN, 'index.html'), html => html
   .replace(/\s*<style id="final-home-accessibility">[\s\S]*?<\/style>/g, '')
@@ -69,7 +70,11 @@ patch(path.join(GUIDES, 'index.html'), html => html
   .replace('Read the Claude verdict', 'Read the Claude guide'));
 
 for (const file of walk(GUIDES)) {
+  if (path.basename(file) === 'index.html') continue;
   patch(file, html => html
+    .replace(/\s*<style id="final-guide-clarity">[\s\S]*?<\/style>/g, '')
+    .replace('</head>', `${GUIDE_STYLE}\n</head>`)
+    .replace(/\s*<ul class="tldr">[\s\S]*?<\/ul>/g, '')
     .replace(/\s*<!-- data:guide-byline -->[\s\S]*?<!-- \/data:guide-byline -->/g, '')
     .replace(/<p class="card-desc">Updated [\s\S]*? min read<\/p>/g, ''));
 }
