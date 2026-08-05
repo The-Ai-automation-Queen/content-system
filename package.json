@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate.mjs",
-    "build": "node tools/include.mjs",
-    "ship": "npm run validate && node tools/include.mjs && git add -A && git commit -m \"${MSG:-content update}\" && git push"
+    "build": "node tools/include.mjs && node tools/guides-finalize.mjs",
+    "ship": "npm run validate && npm run build && git add -A && git commit -m \"${MSG:-content update}\" && git push"
   }
 }
