@@ -18,5 +18,8 @@
         "repo": "Blotato-Inc/blotato-skills"
       }
     }
+  },
+  "enabledPlugins": {
+    "blotato@blotato-skills": true
   }
 }
