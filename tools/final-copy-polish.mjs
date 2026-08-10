@@ -5,4 +5,5 @@ import './guide-batch-2.mjs';
 import './site-repair.mjs';
 import './site-repair-final.mjs';
 import './site-repair-hotfix.mjs';
+import './site-repair-polish.mjs';
 console.log('Applied final site and guide polish plus repair, architecture, consistency and hotfix passes.');
