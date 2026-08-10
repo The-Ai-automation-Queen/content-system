@@ -18,11 +18,11 @@ const figure = `
   <figcaption>Start with one repeatable job, give AI clear rules and minimum access, then keep a human approval point before the final output.</figcaption>
 </figure>`;
 
-// Replace the older compact flow explainer with the richer instructional diagram.
-// This prevents the page from repeating the same idea twice.
-const oldExplainer = /\s*<div class="callout"[^>]*>[\s\S]*?<p class="callout-label">PICTURE IT<\/p>[\s\S]*?<\/div>\s*<div class="guide-flow"[^>]*>[\s\S]*?<\/div>/i;
+// Replace the entire older compact PICTURE IT + workflow block up to Step 1.
+// Using the Step 1 heading as the boundary avoids stopping on nested workflow divs.
+const oldExplainer = /\s*<div class="callout"[^>]*>\s*<p class="callout-label">PICTURE IT<\/p>[\s\S]*?(?=<h2[^>]*data-guide-step="1")/i;
 if (oldExplainer.test(html)) {
-  html = html.replace(oldExplainer, `\n${figure}`);
+  html = html.replace(oldExplainer, `\n${figure}\n`);
 } else if (!html.includes('first-ai-assistant-flow.svg')) {
   // Fallback for future copy revisions: place it after the short definition paragraph.
   const anchor = /(<p>It might sort an inbox, prepare a report, qualify a lead or turn meeting notes into actions\.<\/p>)/i;
