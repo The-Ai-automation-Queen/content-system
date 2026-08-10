@@ -9,7 +9,9 @@ platforms. Queue-only — the operator releases in the Blotato dashboard.
 - On demand for specific entries
 
 ## Tools
-- **Blotato** — multi-platform scheduling queue
+- **Blotato** — multi-platform scheduling queue. Media handling (when upload
+  is needed vs. a direct URL, presigned upload steps, Drive gotchas):
+  `docs/BLOTATO-MEDIA-UPLOAD-GUIDE.md`.
 
 ## Connected platforms
 LinkedIn, Instagram, Facebook, YouTube Shorts, Threads, Twitter/X.

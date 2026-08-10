@@ -97,10 +97,15 @@ If more than ~5 entries are ready and unblocked, ask the operator once (with
    short-form video, the primary is Instagram Reels / YouTube Shorts; you may also
    queue a repurposed text version to Threads/Twitter/LinkedIn if the entry has a
    companion caption. One `create_post` call per platform.
-2. **Handle media.** If the entry needs an image/video/carousel asset:
-   - If `visual-engine` already produced the asset and left a path/URL in the entry,
-     upload it via `blotato_create_presigned_upload_url` (then attach the returned
-     media URL), or use `blotato_create_visual` where appropriate.
+2. **Handle media.** If the entry needs an image/video/carousel asset, check what
+   the `**Visual:**` line on the entry actually holds — full method + troubleshooting
+   in `docs/BLOTATO-MEDIA-UPLOAD-GUIDE.md`:
+   - **Already a public URL** (a `blotato_create_visual` output, a Canva/Gamma
+     export link)? Attach it straight to the post — uploading is optional now,
+     skip `blotato_create_presigned_upload_url` entirely.
+   - **Only a local path** (carousel-factory PNGs, HyperFrames/Remotion renders,
+     captioned talking-head exports)? Upload it via
+     `blotato_create_presigned_upload_url` first, then attach the returned URL.
    - If no asset exists yet and the platform requires media (Instagram, YouTube),
      **do not queue** — mark the entry `NEEDS VISUAL` and report it. Text-only
      platforms (LinkedIn, Threads, Twitter, Facebook) can queue without media.
