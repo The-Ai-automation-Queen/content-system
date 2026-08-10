@@ -137,5 +137,8 @@ if (ctaPattern.test(html)) {
 // Remove obsolete progress/course code written for the old three-level start-here layout.
 html = html.replace(/\n\s*\/\/ ---- start-here cards: course progress lines ----[\s\S]*?\n\s*\/\/ ---- Tool verdict mini-index inside the series intro card ----/, '\n\n  // ---- Tool verdict mini-index inside the series intro card ----');
 
+// The filter pills moved out of the old .controls container.
+html = html.replace("var pills = document.querySelectorAll('.controls .pill');", "var pills = document.querySelectorAll('.library-nav .pill');");
+
 fs.writeFileSync(file, html);
 console.log('Applied clean editorial guides layout.');
