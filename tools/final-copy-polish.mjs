@@ -8,4 +8,5 @@ import './site-repair-hotfix.mjs';
 import './site-repair-polish.mjs';
 import './site-repair-final-clean.mjs';
 import './site-guides-editorial.mjs';
-console.log('Applied final site and guide polish plus repair, architecture, consistency and editorial guides pass.');
+import './site-guides-covers.mjs';
+console.log('Applied final site and guide polish plus repair, architecture, consistency, editorial layout and unified guide covers.');
