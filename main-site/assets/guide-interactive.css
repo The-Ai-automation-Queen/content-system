@@ -88,9 +88,73 @@
   color:var(--guide-blue-deep);
 }
 
+/* Reusable workflow explainer. Useful with or without JavaScript. */
+.guide-flow{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);
+  gap:12px;
+  align-items:stretch;
+  margin:28px 0 42px;
+  padding:18px;
+  background:var(--guide-offwhite);
+  border:1px solid #E2E2DC;
+  border-radius:6px;
+}
+.guide-flow-node{
+  min-width:0;
+  padding:16px 14px;
+  background:#fff;
+  border:1px solid #E4E4DE;
+  border-radius:4px;
+}
+.guide-flow-node span{
+  display:block;
+  margin-bottom:12px;
+  font-family:'Space Mono',monospace;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.12em;
+  color:var(--guide-blue-deep);
+}
+.guide-flow-node strong{
+  display:block;
+  font-family:'Inter',Arial,sans-serif;
+  font-size:12px;
+  line-height:1.2;
+  letter-spacing:.04em;
+  color:var(--guide-ink);
+}
+.guide-flow-node p{
+  margin:8px 0 0!important;
+  font-family:'Inter',Arial,sans-serif!important;
+  font-size:12px!important;
+  line-height:1.45!important;
+  color:#5B5B56!important;
+}
+.guide-flow-arrow{
+  display:grid;
+  place-items:center;
+  color:var(--guide-blue);
+  font-family:'Inter',Arial,sans-serif;
+  font-size:18px;
+  font-weight:700;
+}
+
+@media(max-width:900px){
+  .guide-flow{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+  .guide-flow-arrow{
+    min-height:18px;
+    transform:rotate(90deg);
+  }
+}
+
 @media(max-width:700px){
   .guide-progress{height:2px}
   .guide [data-guide-step]{padding-left:30px}
+  .guide-flow{padding:12px;margin:22px 0 34px}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -102,4 +166,5 @@
     transform:none!important;
     opacity:1!important;
   }
+  .guide-flow-arrow{transform:none}
 }
