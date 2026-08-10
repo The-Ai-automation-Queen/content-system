@@ -8,7 +8,6 @@
   "hosts": {"www": "https://www.shiftandlead.com", "guides": "https://guides.shiftandlead.com", "brief": "https://brief.shiftandlead.com"},
   "nav": [
     {"label": "Guides", "url": "https://www.shiftandlead.com/guides/"},
-    {"label": "The Brief", "url": "https://brief.shiftandlead.com/"},
     {"label": "Quiz", "url": "https://www.shiftandlead.com/quiz.html"},
     {"label": "About", "url": "https://www.shiftandlead.com/about.html"},
     {"label": "Contact", "url": "https://www.shiftandlead.com/contact.html"},
@@ -17,7 +16,6 @@
   "footer": [
     {"title": "Learn", "links": [
       {"label": "Guides", "url": "https://www.shiftandlead.com/guides/"},
-      {"label": "The Brief", "url": "https://brief.shiftandlead.com/"},
       {"label": "Quiz", "url": "https://www.shiftandlead.com/quiz.html"}
     ]},
     {"title": "Work", "links": [
