@@ -1,0 +1,13 @@
+{
+  "pipeline_version": 1,
+  "source_repository": "The-Ai-automation-Queen/research-inbox",
+  "bootstrap_since": "2026-08-06",
+  "bootstrap_status": "pending",
+  "last_seen_commit": "6cadb8c28c7e08b716261730cfd513ef323ed1c0",
+  "last_seen_commit_at": "2026-08-10T16:11:04Z",
+  "last_triage_at": null,
+  "last_daily_factory_at": null,
+  "last_weekly_plan_at": null,
+  "processed_source_ids": [],
+  "notes": "Hourly watch starts after last_seen_commit. Bootstrap separately processes recent high-signal research from bootstrap_since through last_seen_commit, then marks bootstrap_status complete."
+}
