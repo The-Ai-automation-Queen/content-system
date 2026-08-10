@@ -19,8 +19,12 @@ a{color:var(--accent)}
 h1{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.08;margin:.4rem 0 1rem}
 h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.7rem;line-height:1.2;margin:0 0 .8rem}
 .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:64px 0 48px}
-@media(max-width:720px){.hero{grid-template-columns:1fr}}
-.hero img{width:100%;max-width:360px;display:block;border-radius:4px}
+.hero img{width:100%;max-width:380px;height:auto;display:block;border-radius:16px}
+@media(max-width:720px){
+  .hero{grid-template-columns:1fr}
+  .hero img{width:min(82vw,300px);margin-inline:auto}
+}
+@media(max-width:480px){.hero img{width:min(78vw,270px)}}
 .hero-sub{font-size:1.15rem;color:var(--muted);max-width:54ch}
 .spine{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;font-family:'Inter',sans-serif;font-size:13px}
 .spine span{padding:5px 12px;border:1px solid var(--rule);border-radius:999px;background:#fff}
