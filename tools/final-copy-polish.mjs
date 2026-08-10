@@ -9,4 +9,5 @@ import './site-repair-polish.mjs';
 import './site-repair-final-clean.mjs';
 import './site-guides-editorial.mjs';
 import './site-guides-covers.mjs';
-console.log('Applied final site and guide polish plus repair, architecture, consistency, editorial layout and unified guide covers.');
+import './site-guides-no-meta.mjs';
+console.log('Applied final site and guide polish plus repair, architecture, consistency, editorial layout, unified guide covers and clean guide tiles.');
