@@ -176,6 +176,9 @@ permanent. Assigned so far:
 | 014 | Hind | Social Listener (interviewing) | Intelligence |
 | 015 | Ziad | Churn Watch (interviewing) | Customer |
 | 017 | Farah | Quote Generator (interviewing) | Deals |
+| 016 | Amal | Feedback Digest (interviewing) | Customer |
+| 018 | Nassim | Reactivation Writer (interviewing) | Sales |
+| 019 | Yasmine | Content Repurposer (interviewing) | Marketing |
 
 New names: short, warm, easy to say in English and French, no name
 reuse, never the name of a real client or contact. Log new assignments

@@ -13,6 +13,14 @@
 
 ## Most recent (quick reference)
 
+- 10/08/2026 | LinkedIn carousel | "You Wrote One Good Post Three Months Ago and Never Touched the Idea Again" — Yasmine, Content Repurposer, Employee #019 | READY TO POST
+- 10/08/2026 | LinkedIn | "You Wrote One Good Post Three Months Ago and Never Touched the Idea Again" — Yasmine, Content Repurposer, Employee #019 | READY TO POST
+- 10/08/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Amal/Nassim/Yasmine | READY TO POST
+- 10/08/2026 | LinkedIn carousel | "You Have a List of Leads Who Went Quiet, and You Haven't Emailed a Single One in Months" — Nassim, Reactivation Writer, Employee #018 | READY TO POST
+- 10/08/2026 | LinkedIn | "You Have a List of Leads Who Went Quiet, and You Haven't Emailed a Single One in Months" — Nassim, Reactivation Writer, Employee #018 | READY TO POST
+- 10/08/2026 | LinkedIn carousel | "You Have Forty Scattered Pieces of Feedback and No Idea Which Complaint Actually Matters" — Amal, Feedback Digest, Employee #016 | READY TO POST
+- 10/08/2026 | LinkedIn | "You Have Forty Scattered Pieces of Feedback and No Idea Which Complaint Actually Matters" — Amal, Feedback Digest, Employee #016 | READY TO POST
+- 10/08/2026 | LinkedIn | "Now Hiring: Three More AI Employees, Salary $0 Each" — wave announcement, Employees #16/#18/#19 | READY TO POST
 - 30/07/2026 | LinkedIn carousel | "A Prospect Asked for a Quote Four Days Ago and You Still Haven't Sent It" — Farah, Quote Generator, Employee #017 | READY TO POST
 - 30/07/2026 | LinkedIn | "A Prospect Asked for a Quote Four Days Ago and You Still Haven't Sent It" — Farah, Quote Generator, Employee #017 | READY TO POST
 - 30/07/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Hind/Ziad/Farah | READY TO POST
@@ -68,6 +76,259 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 134 — 10/08/2026 | LinkedIn carousel | You Wrote One Good Post Three Months Ago and Never Touched the Idea Again | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 133 (Yasmine, Employee #019, Content Repurposer, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/yasmine/yasmine-content-repurposer-01.png through -06.png
+Source HTML: skills/carousel-factory/out/yasmine-content-repurposer.html
+**CTA keyword:** REPURPOSE, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You wrote one good post three months ago and never touched the idea again."
+Slide 2 (scene): "It did fine. Then you moved on, because turning it into anything else felt like starting over."
+Slide 3 (role card): Yasmine, Content Repurposer, Marketing, Salary $0, never sleeps. "Yasmine is AI. The only job she took was mine: sitting down to reshape one good idea into its second and third format, instead of only ever using it once."
+Slide 4 (how she works): 4-step list, paste the content, pull the core insight, reshape into short formats, you review and post.
+Slide 5 (demo): "Built and tested repurposing 3 real posts into 2 formats each. Setup about 15 minutes. She only reshapes what you actually wrote."
+Slide 6 (CTA): "Want the free setup? Comment REPURPOSE."
+
+---
+
+## ENTRY 133 — 10/08/2026 | LinkedIn | You Wrote One Good Post Three Months Ago and Never Touched the Idea Again | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Thursday episode 3)
+**Topic:** Employee #019, Yasmine, Content Repurposer. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/content-repurposer-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/marketing/marketing-repurposer.md, read this run (repo in session). Real job description: turn long-form into threads, carousels, shorts scripts, quotes, adapt tone and length per platform, keep the core insight intact, batch outputs for the scheduling pipeline. Free playbook narrows this to one piece at a time, 2-3 formats, no batching or scheduling pipeline, per the free/paid line. First employee from the Marketing department beyond Zeina (a PROOF employee for carousel-factory itself). Mode check: no receipt found anywhere for Yasmine. Confirmed PLAYBOOK.
+
+---
+You wrote one good post three months ago and never touched the idea again.
+
+It did fine. Then you moved on to the next thing, because turning it into anything else felt like starting over.
+
+Meet Employee #019.
+
+Yasmine. Content Repurposer. Marketing.
+Salary: $0. Never sleeps.
+
+Yasmine is AI. The only job she took was mine: sitting down to reshape one good idea into its second and third format, instead of only ever using it once.
+
+How she works:
+1. You paste in one piece of long-form content you already wrote.
+2. She pulls out the one core insight worth keeping.
+3. She reshapes it into 2-3 shorter formats: a short post and a few pull-quotes.
+4. You review and post them yourself, in your own voice.
+
+The demo: built and tested repurposing 3 real posts into 2 formats each with one AI tool. Setup time, about 15 minutes. She only reshapes what you actually wrote, nothing invented.
+
+Red line: she never adds a claim or a number that wasn't in your original piece, and never sharpens what you said to make a format work better.
+
+Your first win, free, today: find the one post you wrote that did best and paste it in. That's Yasmine's first repurpose.
+
+Comment REPURPOSE and I'll send you the full setup, free.
+
+#AIemployees #The99 #ContentStrategy
+
+---
+
+## ENTRY 132 — 10/08/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** Talking-head reel (30-45s), captions required
+**Format:** Week's wave reel (Wednesday slot), three role-card cutaways + one screenshot cutaway
+**Topic:** Compresses all 3 of this week's hires (Amal, Nassim, Yasmine) into one 45-second reel, per the hiring-campaign weekly slot map.
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur lead name and details on the reactivation-email screenshot).
+**Source:** Assembled from ENTRY 128/130/133's role-card lines. No new claims.
+
+---
+[0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
+
+[0:03-0:12] Role card cutaway 1, Amal: "Amal reads through my scattered feedback and finds the pattern I already suspected."
+
+[0:12-0:21] Role card cutaway 2, Nassim: "Nassim writes the first honest line back to a lead who went quiet, and tells me when it's not worth it."
+
+[0:21-0:30] Role card cutaway 3, Yasmine: "Yasmine reshapes one good post into its second and third format."
+
+[0:30-0:38] Screenshot cutaway: Nassim's draft reactivation email, real setup, lead name and details blurred (redaction modeled).
+
+[0:38-0:45] Closing line, spoken + on-screen: "None of them send anything without me. Comment TEAM and I'll send you how to hire your first one."
+
+---
+
+## ENTRY 131 — 10/08/2026 | LinkedIn carousel | You Have a List of Leads Who Went Quiet, and You Haven't Emailed a Single One in Months | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 130 (Nassim, Employee #018, Reactivation Writer, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/nassim/nassim-reactivation-writer-01.png through -06.png
+Source HTML: skills/carousel-factory/out/nassim-reactivation-writer.html
+**CTA keyword:** REVIVE, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You have a list of leads who went quiet, and you haven't emailed a single one in months."
+Slide 2 (scene): "They were interested once. Then life happened, and the thread just stopped. Reopening it feels awkward, so it stays closed."
+Slide 3 (role card): Nassim, Reactivation Writer, Sales, Salary $0, never sleeps. "Nassim is AI. The only job he took was mine: sitting down to write the first line back to someone who went quiet, instead of letting the silence become permanent."
+Slide 4 (how he works): 4-step list, tell him the lead, draft one honest email, flag if not worth it, you review and send.
+Slide 5 (demo): "Built and tested drafting reactivation emails for 3 real cold leads. Setup about 15 minutes. He'll tell you when a lead isn't worth the effort."
+Slide 6 (CTA): "Want the free setup? Comment REVIVE."
+
+---
+
+## ENTRY 130 — 10/08/2026 | LinkedIn | You Have a List of Leads Who Went Quiet, and You Haven't Emailed a Single One in Months | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Wednesday episode 2)
+**Topic:** Employee #018, Nassim, Reactivation Writer. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/reactivation-writer-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/sales/sales-reactivation-writer.md, read this run (repo in session). Real job description: segment dormant leads by reason they went cold, write reactivation emails with a new angle per segment, reference what changed since the last conversation, suggest which leads are not worth reactivating. Free playbook narrows this to one lead's drafted email at a time, no automated list-wide segmentation, per the free/paid line. First employee from the Sales department, never used before in this series. Mode check: no receipt found anywhere for Nassim. Confirmed PLAYBOOK.
+
+---
+You have a list of leads who went quiet, and you haven't emailed a single one of them in months.
+
+They were interested once. Then life happened, yours or theirs, and the thread just stopped. Reopening it feels awkward, so it stays closed.
+
+Meet Employee #018.
+
+Nassim. Reactivation Writer. Sales.
+Salary: $0. Never sleeps.
+
+Nassim is AI. The only job he took was mine: sitting down to write the first line back to someone who went quiet, instead of letting the silence become permanent.
+
+How he works:
+1. You tell him about the lead: who they are, why they went quiet, what's changed since.
+2. He drafts one honest reactivation email, referencing the real gap, not pretending it didn't happen.
+3. If the lead genuinely doesn't look worth reactivating, he says so instead of forcing a draft.
+4. You review it and send it yourself.
+
+The demo: built and tested drafting reactivation emails for 3 real cold leads with one AI tool. Setup time, about 15 minutes. He never sends anything, and he'll tell you when a lead isn't worth the effort.
+
+Red line: he never sends anything, never fabricates a reason to reach out, and never pretends time didn't pass.
+
+Your first win, free, today: name the one lead who went quiet that you still think about. That's Nassim's first email.
+
+Comment REVIVE and I'll send you the full setup, free.
+
+#AIemployees #The99 #SalesOps
+
+---
+
+## ENTRY 129 — 10/08/2026 | LinkedIn carousel | You Have Forty Scattered Pieces of Feedback and No Idea Which Complaint Actually Matters | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 128 (Amal, Employee #016, Feedback Digest, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/amal/amal-feedback-digest-01.png through -06.png
+Source HTML: skills/carousel-factory/out/amal-feedback-digest.html
+**CTA keyword:** FEEDBACK, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You have forty scattered pieces of feedback and no idea which complaint actually matters."
+Slide 2 (scene): "A review here, a DM there, a comment on a post. Each one alone seems small. Together they might be telling you something you're missing."
+Slide 3 (role card): Amal, Feedback Digest, Customer, Salary $0, never sleeps. "Amal is AI. The only job she took was mine: reading through scattered feedback one more time, trying to spot the pattern I already suspected but couldn't prove."
+Slide 4 (how she works): 4-step list, paste this month's feedback, she groups by theme, counts frequency, gives you one digest.
+Slide 5 (demo): "Built and tested against one real month of scattered feedback, 23 pieces across 4 sources. Setup about 15 minutes. She only counts what was actually said."
+Slide 6 (CTA): "Want the free setup? Comment FEEDBACK."
+
+---
+
+## ENTRY 128 — 10/08/2026 | LinkedIn | You Have Forty Scattered Pieces of Feedback and No Idea Which Complaint Actually Matters | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Tuesday episode 1)
+**Topic:** Employee #016, Amal, Feedback Digest. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/feedback-digest-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/customer/customer-feedback-digest.md, read this run (repo in session). Real job description: aggregate feedback from tickets, calls and reviews, tag by theme/severity/frequency, publish the monthly feedback digest, route feature asks to the roadmap list. Free playbook narrows this to grouping and counting only, no ticket-system integration or roadmap routing, per the free/paid line. This was schedule.md's oldest "planned" row (016, deferred from 2026-W32 when it collided with 015 Ziad on department diversity); picked up this wave since it no longer collides with the other two picks (Sales, Marketing). Mode check: no receipt found anywhere for Amal. Confirmed PLAYBOOK.
+
+---
+You have forty scattered pieces of feedback and no idea which complaint actually matters.
+
+A review here, a DM there, a comment on a post. Each one alone seems small. Together they might be telling you something you're missing.
+
+Meet Employee #016.
+
+Amal. Feedback Digest. Customer.
+Salary: $0. Never sleeps.
+
+Amal is AI. The only job she took was mine: reading through scattered feedback one more time, trying to spot the pattern I already suspected but couldn't prove.
+
+How she works:
+1. You paste in whatever feedback you've collected this month, reviews, DMs, comments, support notes.
+2. She reads all of it and groups it by theme.
+3. She counts how often each theme came up, most frequent first.
+4. You get one digest: the patterns, not just the noise.
+
+The demo: built and tested against one real month of scattered feedback with one AI tool, 23 pieces across 4 sources. Setup time, about 15 minutes. She only counts what was actually said, nothing invented.
+
+Red line: she never invents a theme that wasn't actually said, and never guesses at severity beyond what the words themselves show.
+
+Your first win, free, today: gather the last 10 pieces of feedback you received, wherever they're sitting. That pile is Amal's first digest.
+
+Comment FEEDBACK and I'll send you the full setup, free.
+
+#AIemployees #The99 #CustomerSuccess
+
+---
+
+## ENTRY 127 — 10/08/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Hiring-post ritual (job-ad parody), Monday wave announcement
+**Topic:** Introduces this wave's 3 openings (Employees #016, #018, #019).
+**Pattern used:** Job-ad parody + serial-cliffhanger opener
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — value-first series opener, comment-keyword capture, no promo.
+**Source:** skills/hiring-campaign/schedule.md row 016 (the only remaining "planned" row, deferred from wave W32) plus two new picks from the departments roster per the "beyond #016" rule, Sales and Marketing, both never used in this series before this wave. Departments: Customer, Sales, Marketing, 3 distinct, no reordering needed. Real job-description files read this run from agent-os-company-dashboard/company/departments/ (repo freshly cloned this session): customer/customer-feedback-digest.md, sales/sales-reactivation-writer.md, marketing/marketing-repurposer.md.
+
+---
+Now hiring. Three more AI employees. Salary: $0 each.
+
+Employee #016: Feedback Digest.
+Reads through your scattered feedback and finds the pattern you already suspected. One monthly digest, patterns not noise.
+
+Employee #018: Reactivation Writer.
+Writes the first honest line back to a lead who went quiet, and tells you when they're not worth reactivating.
+
+Employee #019: Content Repurposer.
+Reshapes one good post into its second and third format, so a good idea earns more than one use.
+
+None of them sleep. None of them ask for a raise. None of them send anything without me seeing it first.
+
+That is Employee #16, #18, and #19 of 99. The full team, hired one at a time, in public.
+
+See who is already on the floor. The scoreboard is live, updated only when there is a real receipt to show.
+
+Want to build your own first hire? Comment TEAM and I will send you the free 5-step framework.
+
+#AIemployees #Solopreneur #The99
 
 ---
 
