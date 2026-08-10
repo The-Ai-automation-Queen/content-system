@@ -7,4 +7,5 @@ import './site-repair-final.mjs';
 import './site-repair-hotfix.mjs';
 import './site-repair-polish.mjs';
 import './site-repair-final-clean.mjs';
-console.log('Applied final site and guide polish plus repair, architecture, consistency and hotfix passes.');
+import './site-guides-editorial.mjs';
+console.log('Applied final site and guide polish plus repair, architecture, consistency and editorial guides pass.');
