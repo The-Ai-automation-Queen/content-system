@@ -31,7 +31,9 @@
   ],
   "routes": [
     "guide_open",
+    "guide_update",
     "lead_magnet",
+    "lead_magnet_update",
     "linkedin",
     "carousel",
     "paid_quick_win",
@@ -84,6 +86,7 @@
   "publication_policy": {
     "internal_queue_updates_may_write_to_main": true,
     "full_guide_requires_draft_pr": true,
+    "guide_update_requires_draft_pr": true,
     "lead_magnet_requires_draft_pr": true,
     "paid_product_requires_human_approval": true,
     "automation_may_merge_its_own_content_pr": false
