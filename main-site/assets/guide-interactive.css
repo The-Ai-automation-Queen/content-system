@@ -7,164 +7,49 @@
   --guide-blue-pale:#E8ECFF;
 }
 
-.guide-progress{
-  position:fixed;
-  z-index:1000;
-  top:0;
-  left:0;
-  width:100%;
-  height:3px;
-  pointer-events:none;
-  background:transparent;
-}
-.guide-progress-bar{
-  display:block;
-  width:100%;
-  height:100%;
-  background:var(--guide-blue);
-  transform:scaleX(0);
-  transform-origin:0 50%;
-}
-
-/* Never hide content in CSS by default. JS/GSAP owns transient states. */
+.guide-progress{position:fixed;z-index:1000;top:0;left:0;width:100%;height:3px;pointer-events:none;background:transparent}
+.guide-progress-bar{display:block;width:100%;height:100%;background:var(--guide-blue);transform:scaleX(0);transform-origin:0 50%}
 .guide [data-animate]{will-change:auto}
+.guide .prose h2{scroll-margin-top:88px}
+.guide .callout,.guide .guide-table,.guide .related{border-radius:4px}
+.guide .callout[data-animate="reveal"]{position:relative;overflow:hidden}
+.guide .callout[data-animate="reveal"]::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--guide-blue)}
 
-.guide .prose h2{
-  scroll-margin-top:88px;
-}
+.guide [data-guide-step]{position:relative;padding-left:32px}
+.guide [data-guide-step]::before{content:attr(data-guide-step);position:absolute;left:0;top:.23em;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--guide-blue-pale);color:var(--guide-blue-deep);font-family:'Space Mono',monospace;font-size:9px;font-weight:700;line-height:1}
+.guide [data-guide-step].is-active::before{background:var(--guide-blue-deep);color:#fff}
+.guide [data-animate="stagger"] > li{transform-origin:0 50%}
+.guide .callout-label{color:var(--guide-blue-deep)}
 
-.guide .callout,
-.guide .guide-table,
-.guide .related{
-  border-radius:4px;
-}
+.guide-flow{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:stretch;margin:28px 0 42px;padding:18px;background:var(--guide-offwhite);border:1px solid #E2E2DC;border-radius:6px}
+.guide-flow-node{min-width:0;padding:16px 14px;background:#fff;border:1px solid #E4E4DE;border-radius:4px}
+.guide-flow-node span{display:block;margin-bottom:12px;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.12em;color:var(--guide-blue-deep)}
+.guide-flow-node strong{display:block;font-family:'Inter',Arial,sans-serif;font-size:12px;line-height:1.2;letter-spacing:.04em;color:var(--guide-ink)}
+.guide-flow-node p{margin:8px 0 0!important;font-family:'Inter',Arial,sans-serif!important;font-size:12px!important;line-height:1.45!important;color:#5B5B56!important}
+.guide-flow-arrow{display:grid;place-items:center;color:var(--guide-blue);font-family:'Inter',Arial,sans-serif;font-size:18px;font-weight:700}
 
-.guide .callout[data-animate="reveal"]{
-  position:relative;
-  overflow:hidden;
-}
-.guide .callout[data-animate="reveal"]::before{
-  content:"";
-  position:absolute;
-  inset:0 auto 0 0;
-  width:3px;
-  background:var(--guide-blue);
-}
-
-/* Practical guides: make the build sequence feel like a progression. */
-.guide [data-guide-step]{
-  position:relative;
-  padding-left:32px;
-}
-.guide [data-guide-step]::before{
-  content:attr(data-guide-step);
-  position:absolute;
-  left:0;
-  top:.23em;
-  display:grid;
-  place-items:center;
-  width:22px;
-  height:22px;
-  border-radius:50%;
-  background:var(--guide-blue-pale);
-  color:var(--guide-blue-deep);
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  font-weight:700;
-  line-height:1;
-}
-.guide [data-guide-step].is-active::before{
-  background:var(--guide-blue-deep);
-  color:#fff;
-}
-
-/* Lists revealed by GSAP remain normal semantic lists. */
-.guide [data-animate="stagger"] > li{
-  transform-origin:0 50%;
-}
-
-/* A restrained visual reward for useful reusable assets. */
-.guide .callout-label{
-  color:var(--guide-blue-deep);
-}
-
-/* Reusable workflow explainer. Useful with or without JavaScript. */
-.guide-flow{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);
-  gap:12px;
-  align-items:stretch;
-  margin:28px 0 42px;
-  padding:18px;
-  background:var(--guide-offwhite);
-  border:1px solid #E2E2DC;
-  border-radius:6px;
-}
-.guide-flow-node{
-  min-width:0;
-  padding:16px 14px;
-  background:#fff;
-  border:1px solid #E4E4DE;
-  border-radius:4px;
-}
-.guide-flow-node span{
-  display:block;
-  margin-bottom:12px;
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:.12em;
-  color:var(--guide-blue-deep);
-}
-.guide-flow-node strong{
-  display:block;
-  font-family:'Inter',Arial,sans-serif;
-  font-size:12px;
-  line-height:1.2;
-  letter-spacing:.04em;
-  color:var(--guide-ink);
-}
-.guide-flow-node p{
-  margin:8px 0 0!important;
-  font-family:'Inter',Arial,sans-serif!important;
-  font-size:12px!important;
-  line-height:1.45!important;
-  color:#5B5B56!important;
-}
-.guide-flow-arrow{
-  display:grid;
-  place-items:center;
-  color:var(--guide-blue);
-  font-family:'Inter',Arial,sans-serif;
-  font-size:18px;
-  font-weight:700;
-}
+/* Before -> after explainer for visible transformations. */
+.guide-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0 40px;padding:18px;background:var(--guide-offwhite);border:1px solid #E2E2DC;border-radius:6px}
+.guide-compare-panel{padding:20px;background:#fff;border:1px solid #E3E3DD;border-radius:4px}
+.guide-compare-panel[data-compare="after"]{border-color:#C9D2F7;box-shadow:inset 0 3px 0 var(--guide-blue)}
+.guide-compare-kicker{margin:0 0 10px!important;font-family:'Space Mono',monospace!important;font-size:9px!important;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#5C5C57!important}
+.guide-compare-panel[data-compare="after"] .guide-compare-kicker{color:var(--guide-blue-deep)!important}
+.guide-compare-text{margin:0!important;font-family:'Source Serif 4',Georgia,serif!important;font-size:18px!important;line-height:1.5!important;color:var(--guide-ink)!important}
+.guide-compare-note{grid-column:1/-1;margin:2px 2px 0!important;font-family:'Inter',Arial,sans-serif!important;font-size:12px!important;line-height:1.45!important;color:#5B5B56!important}
 
 @media(max-width:900px){
-  .guide-flow{
-    grid-template-columns:1fr;
-    gap:8px;
-  }
-  .guide-flow-arrow{
-    min-height:18px;
-    transform:rotate(90deg);
-  }
+  .guide-flow{grid-template-columns:1fr;gap:8px}
+  .guide-flow-arrow{min-height:18px;transform:rotate(90deg)}
 }
-
 @media(max-width:700px){
   .guide-progress{height:2px}
   .guide [data-guide-step]{padding-left:30px}
   .guide-flow{padding:12px;margin:22px 0 34px}
+  .guide-compare{grid-template-columns:1fr;padding:12px;margin:20px 0 34px}
+  .guide-compare-note{grid-column:1}
 }
-
 @media(prefers-reduced-motion:reduce){
   .guide-progress{display:none}
-  .guide [data-animate],
-  .guide [data-animate] *{
-    animation:none!important;
-    transition:none!important;
-    transform:none!important;
-    opacity:1!important;
-  }
+  .guide [data-animate],.guide [data-animate] *{animation:none!important;transition:none!important;transform:none!important;opacity:1!important}
   .guide-flow-arrow{transform:none}
 }
