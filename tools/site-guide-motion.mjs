@@ -22,7 +22,6 @@ for (const name of files) {
   html = html.replace('<header class="guide-hero">', '<header class="guide-hero" data-animate="hero">');
   html = html.replace('<section class="related">', '<section class="related" data-animate="reveal">');
 
-  // Work only inside the main prose body so navigation/footer structures remain untouched.
   const proseStart = html.indexOf('<div class="prose">');
   const proseEnd = proseStart === -1 ? -1 : html.indexOf('</div>\n<section class="related"', proseStart);
   if (proseStart !== -1 && proseEnd !== -1) {
@@ -41,11 +40,16 @@ for (const name of files) {
     html = head + prose + tail;
   }
 
-  // First practical assistant guide gets a compact visual process rail.
   if (name === 'first-ai-employee.html' && !html.includes('class="guide-flow"')) {
     const marker = '<div class="callout" data-animate="reveal"><p class="callout-label">PICTURE IT</p><p><strong>Input → AI does the repeatable steps → you review or decide → output.</strong></p></div>';
     const flow = `${marker}\n<div class="guide-flow" data-animate="workflow" aria-label="AI assistant workflow">\n  <div class="guide-flow-node" data-flow-node><span>01</span><strong>INPUT</strong><p>The email, file, form or event that starts the job.</p></div>\n  <div class="guide-flow-arrow" aria-hidden="true">→</div>\n  <div class="guide-flow-node" data-flow-node><span>02</span><strong>AI TASK</strong><p>AI handles the repeatable steps you already understand.</p></div>\n  <div class="guide-flow-arrow" aria-hidden="true">→</div>\n  <div class="guide-flow-node" data-flow-node><span>03</span><strong>HUMAN REVIEW</strong><p>You keep judgment, approval and sensitive decisions.</p></div>\n  <div class="guide-flow-arrow" aria-hidden="true">→</div>\n  <div class="guide-flow-node" data-flow-node><span>04</span><strong>OUTPUT</strong><p>A draft, summary, decision brief or completed task.</p></div>\n</div>`;
     html = html.replace(marker, flow);
+  }
+
+  if (name === 'what-is-a-prompt.html' && !html.includes('class="guide-compare"')) {
+    const marker = '<p>The second prompt works better because the AI can see the situation.</p>';
+    const compare = `<div class="guide-compare" data-animate="compare" aria-label="Weak prompt compared with a useful prompt">\n  <div class="guide-compare-panel" data-compare="before">\n    <p class="guide-compare-kicker">BEFORE · VAGUE</p>\n    <p class="guide-compare-text">“Write a follow-up email.”</p>\n  </div>\n  <div class="guide-compare-panel" data-compare="after">\n    <p class="guide-compare-kicker">AFTER · USEFUL</p>\n    <p class="guide-compare-text">Give the goal, context, tone, limit and desired outcome.</p>\n  </div>\n  <p class="guide-compare-note">The improvement is not a clever phrase. It is the missing information the AI needs to do the job well.</p>\n</div>`;
+    html = html.replace(marker, marker + '\n' + compare);
   }
 
   if (html !== before) {
