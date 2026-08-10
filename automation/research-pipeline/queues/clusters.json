@@ -1,4 +1,60 @@
 {
   "version": 1,
-  "clusters": []
+  "clusters": [
+    {
+      "id": "research-to-content-loop",
+      "label": "Research → content feedback loop",
+      "capability": "Turn research and performance signals into repeatable content ideas without staring at a blank page.",
+      "source_ids": ["6c78f4f526c75e783575a34122b9730c17180903"],
+      "signals": [
+        "specialised agents can divide research, performance review and idea generation",
+        "a shared memory/second-brain layer makes later recommendations better",
+        "start with one agent before expanding the system"
+      ],
+      "status": "active",
+      "last_updated": "2026-08-11"
+    },
+    {
+      "id": "business-ai-operating-system",
+      "label": "AI business operating system",
+      "capability": "Give AI durable business context, separate workstreams and useful feedback so it can support a one-person or small business coherently.",
+      "source_ids": [
+        "e7d5989c43d7ac6551553948f2b2718fc541322d",
+        "b1cbb1c433ca52f444c52951576a5e97f81e3c26"
+      ],
+      "signals": [
+        "business context and memory matter more than a pretty dashboard",
+        "separate venture/context, workstreams, learning and customer/business data",
+        "security, permissions and isolation are core system design concerns"
+      ],
+      "status": "active",
+      "last_updated": "2026-08-11"
+    },
+    {
+      "id": "always-on-ai-assistants",
+      "label": "Always-on AI assistants",
+      "capability": "Keep a narrowly defined AI job running without depending on the operator's laptop or memory to start it.",
+      "source_ids": ["7df8a6dda7b02ca08e2d507aa448c83d7e71ac09"],
+      "signals": [
+        "running an orchestrator continuously is attractive to solo operators",
+        "technical hosting/setup complexity is a real implementation cost",
+        "the business-facing lesson is continuity and boundaries, not VPS configuration"
+      ],
+      "status": "active",
+      "last_updated": "2026-08-11"
+    },
+    {
+      "id": "independent-ai-review",
+      "label": "Independent AI review",
+      "capability": "Use a separate reviewer/checker to catch errors the AI that created the work may miss.",
+      "source_ids": ["6cadb8c28c7e08b716261730cfd513ef323ed1c0"],
+      "signals": [
+        "separate AI sessions can divide build, preparation and review roles",
+        "an independent reviewer can be useful precisely because it does not share the builder's context",
+        "experimental tool mechanics should not be the public-facing promise"
+      ],
+      "status": "active",
+      "last_updated": "2026-08-11"
+    }
+  ]
 }
