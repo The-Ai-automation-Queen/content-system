@@ -1,0 +1,105 @@
+/* Shift & Lead interactive guide layer. Motion is progressive enhancement. */
+:root{
+  --guide-offwhite:#F7F7F3;
+  --guide-ink:#1A1A1A;
+  --guide-blue:#2C4BE0;
+  --guide-blue-deep:#1B2EA0;
+  --guide-blue-pale:#E8ECFF;
+}
+
+.guide-progress{
+  position:fixed;
+  z-index:1000;
+  top:0;
+  left:0;
+  width:100%;
+  height:3px;
+  pointer-events:none;
+  background:transparent;
+}
+.guide-progress-bar{
+  display:block;
+  width:100%;
+  height:100%;
+  background:var(--guide-blue);
+  transform:scaleX(0);
+  transform-origin:0 50%;
+}
+
+/* Never hide content in CSS by default. JS/GSAP owns transient states. */
+.guide [data-animate]{will-change:auto}
+
+.guide .prose h2{
+  scroll-margin-top:88px;
+}
+
+.guide .callout,
+.guide .guide-table,
+.guide .related{
+  border-radius:4px;
+}
+
+.guide .callout[data-animate="reveal"]{
+  position:relative;
+  overflow:hidden;
+}
+.guide .callout[data-animate="reveal"]::before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:3px;
+  background:var(--guide-blue);
+}
+
+/* Practical guides: make the build sequence feel like a progression. */
+.guide [data-guide-step]{
+  position:relative;
+  padding-left:32px;
+}
+.guide [data-guide-step]::before{
+  content:attr(data-guide-step);
+  position:absolute;
+  left:0;
+  top:.23em;
+  display:grid;
+  place-items:center;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:var(--guide-blue-pale);
+  color:var(--guide-blue-deep);
+  font-family:'Space Mono',monospace;
+  font-size:9px;
+  font-weight:700;
+  line-height:1;
+}
+.guide [data-guide-step].is-active::before{
+  background:var(--guide-blue-deep);
+  color:#fff;
+}
+
+/* Lists revealed by GSAP remain normal semantic lists. */
+.guide [data-animate="stagger"] > li{
+  transform-origin:0 50%;
+}
+
+/* A restrained visual reward for useful reusable assets. */
+.guide .callout-label{
+  color:var(--guide-blue-deep);
+}
+
+@media(max-width:700px){
+  .guide-progress{height:2px}
+  .guide [data-guide-step]{padding-left:30px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .guide-progress{display:none}
+  .guide [data-animate],
+  .guide [data-animate] *{
+    animation:none!important;
+    transition:none!important;
+    transform:none!important;
+    opacity:1!important;
+  }
+}
