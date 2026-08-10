@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow,noai,noimageai">
+<title>AI Assistant Builder | Shift & Lead</title>
+<meta name="description" content="A practical one-page worksheet for defining one useful AI assistant: job, inputs, rules, permissions, human review and tests.">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="stylesheet" href="/assets/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--off:#F7F7F3;--ink:#1A1A1A;--blue:#2C4BE0;--deep:#1B2EA0;--pale:#E8ECFF;--teal:#168C91;--amber:#C96F13;--line:#DDDCD6}
+body{margin:0;background:var(--off);color:var(--ink);font-family:'Source Serif 4',Georgia,serif}
+.resource{max-width:900px;margin:0 auto;padding:70px 24px 90px}
+.eyebrow{font:700 11px/1.2 'Space Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--deep);margin:0 0 14px}
+h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(44px,6vw,72px);font-weight:400;line-height:.98;letter-spacing:-.035em;margin:0 0 20px;max-width:780px}
+.lede{font-size:20px;line-height:1.55;color:#4E4E49;max-width:700px;margin:0 0 30px}
+.resource-actions{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 48px}
+.resource-actions a,.resource-actions button{appearance:none;border:1px solid var(--deep);background:var(--deep);color:#fff;padding:11px 15px;border-radius:4px;font:600 13px/1 'Inter',sans-serif;text-decoration:none;cursor:pointer}
+.resource-actions .secondary{background:transparent;color:var(--deep)}
+.sheet{display:grid;gap:18px}
+.block{background:#fff;border:1px solid var(--line);border-radius:7px;padding:24px}
+.block-number{font:700 10px/1 'Space Mono',monospace;color:var(--blue);letter-spacing:.15em;margin-bottom:12px}
+.block h2{font-family:'Playfair Display',Georgia,serif;font-size:30px;font-weight:400;line-height:1.1;margin:0 0 8px}
+.block p{font-size:16px;line-height:1.55;color:#585853;margin:0 0 16px}
+.prompt{display:grid;gap:10px}
+.line{min-height:42px;border-bottom:1px solid #AAA9A3;font:14px/1.4 'Inter',sans-serif;color:#777;padding-top:8px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.rule{border-left:4px solid var(--blue);background:var(--pale);padding:18px 20px;margin-top:2px;font:600 15px/1.5 'Inter',sans-serif}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.test{border:1px solid var(--line);padding:16px;background:#fff;min-height:110px}
+.test strong{display:block;font:700 11px/1.2 'Space Mono',monospace;color:var(--deep);letter-spacing:.08em;margin-bottom:10px}
+.note{font:14px/1.5 'Inter',sans-serif;color:#5C5C57}
+@media(max-width:700px){.resource{padding:48px 18px 70px}.two,.test-grid{grid-template-columns:1fr}.block{padding:20px}h1{font-size:46px}}
+@media print{.site-nav,.chrome-foot,.resource-actions{display:none!important}.resource{padding:0;max-width:none}.block{break-inside:avoid}.line{min-height:52px}body{background:#fff}}
+</style>
+</head>
+<body>
+<!-- chrome:nav --><!-- /chrome:nav -->
+<main class="resource">
+  <p class="eyebrow">Free companion · Build AI help</p>
+  <h1>Build one AI assistant around one real job.</h1>
+  <p class="lede">Use this worksheet before you choose tools or automate anything. Define the job, the information it needs, the limits, the human review point and the tests that prove it is useful.</p>
+  <div class="resource-actions">
+    <button type="button" onclick="window.print()">Print / save as PDF</button>
+    <a class="secondary" href="/guides/first-ai-employee.html">Back to the guide</a>
+  </div>
+
+  <div class="sheet">
+    <section class="block">
+      <div class="block-number">01 · JOB</div>
+      <h2>What repeatable job are you handing off?</h2>
+      <p>Choose one task with a clear beginning and end. Start with work around a decision, not the most important decision itself.</p>
+      <div class="prompt"><div class="line">The job is:</div><div class="line">It starts when:</div><div class="line">It is finished when:</div></div>
+    </section>
+
+    <section class="block two">
+      <div>
+        <div class="block-number">02 · INPUTS</div>
+        <h2>What does it need?</h2>
+        <p>List the minimum information needed to do the job well.</p>
+        <div class="prompt"><div class="line">Files / messages / forms:</div><div class="line">Examples of good work:</div><div class="line">Business context:</div></div>
+      </div>
+      <div>
+        <div class="block-number">03 · OUTPUT</div>
+        <h2>What should come back?</h2>
+        <p>Make the finished result obvious enough to test.</p>
+        <div class="prompt"><div class="line">Format:</div><div class="line">Must include:</div><div class="line">Where it should go:</div></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-number">04 · RULES</div>
+      <h2>What must always be true?</h2>
+      <p>Write the rules you would give a new person before trusting them with the job.</p>
+      <div class="prompt"><div class="line">Always:</div><div class="line">Never:</div><div class="line">If uncertain:</div></div>
+    </section>
+
+    <section class="block two">
+      <div>
+        <div class="block-number">05 · PERMISSIONS</div>
+        <h2>What can it access?</h2>
+        <p>Give only the access the job requires. Reading and drafting are different permissions from sending, deleting or spending.</p>
+        <div class="prompt"><div class="line">Can read:</div><div class="line">Can create / draft:</div><div class="line">Cannot:</div></div>
+      </div>
+      <div>
+        <div class="block-number">06 · HUMAN REVIEW</div>
+        <h2>Where must it stop?</h2>
+        <p>Mark the point where judgement, approval or accountability comes back to you.</p>
+        <div class="prompt"><div class="line">Human approval is required before:</div><div class="line">Escalate when:</div></div>
+      </div>
+    </section>
+
+    <div class="rule">AI prepares. You approve. Increase autonomy only after the job has been tested and the boundaries are clear.</div>
+
+    <section class="block">
+      <div class="block-number">07 · TEST</div>
+      <h2>Test three cases before you rely on it.</h2>
+      <p>Use a normal case, a messy case and a case where the AI should stop and ask for help.</p>
+      <div class="test-grid">
+        <div class="test"><strong>NORMAL CASE</strong><div class="line">Expected result:</div></div>
+        <div class="test"><strong>MESSY CASE</strong><div class="line">Expected result:</div></div>
+        <div class="test"><strong>STOP / ESCALATE</strong><div class="line">It should ask for help when:</div></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-number">08 · SUCCESS</div>
+      <h2>How will you know it is worth keeping?</h2>
+      <p>Choose one or two measures that matter to the job rather than measuring AI activity for its own sake.</p>
+      <div class="prompt"><div class="line">Time saved / response time / completion rate:</div><div class="line">Quality check:</div><div class="line">Review again on:</div></div>
+      <p class="note">A useful assistant should reduce repeatable work without hiding uncertainty or removing the decisions that still need you.</p>
+    </section>
+  </div>
+</main>
+<!-- chrome:footer --><!-- /chrome:footer -->
+</body>
+</html>
