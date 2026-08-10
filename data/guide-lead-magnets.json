@@ -1,0 +1,187 @@
+{
+  "strategy": {
+    "updated": "2026-08-10",
+    "model": "open-guide-to-contextual-companion-to-email-to-relevant-next-step",
+    "newsletterPromotion": "paused",
+    "rules": [
+      "Guides remain open and indexable.",
+      "Email is exchanged for a companion asset that saves work or helps the reader act.",
+      "Use one submission per form action.",
+      "Do not promise a newsletter cadence while the AI Insider Brief is paused.",
+      "Do not publish legacy lead-magnet copy without rewriting it to current positioning.",
+      "Only link to paid products that are actually live."
+    ]
+  },
+  "active": [
+    {
+      "guide": "first-ai-employee",
+      "guideTitle": "Build your first AI assistant",
+      "asset": "AI Assistant Builder",
+      "type": "worksheet",
+      "resourceUrl": "/resources/ai-assistant-builder.html",
+      "captureSource": "guide-first-ai-assistant-builder",
+      "status": "live-build",
+      "commercialPath": "Build Your First AI Assistant Quick Win"
+    }
+  ],
+  "planned": [
+    {
+      "priority": 1,
+      "guideTitle": "Give AI the context it needs to understand your business",
+      "category": "build-ai-help",
+      "asset": "Business Brain Starter Canvas",
+      "type": "canvas",
+      "commercialPath": "AI Business OS"
+    },
+    {
+      "priority": 2,
+      "guideTitle": "Turn saved research into content you can actually publish",
+      "category": "think-create",
+      "asset": "Research-to-Content Workflow",
+      "type": "workflow",
+      "commercialPath": "Content Engine / AI Business OS"
+    },
+    {
+      "priority": 3,
+      "guideTitle": "Turn one idea into a week of useful content with AI",
+      "category": "think-create",
+      "asset": "Content Workflow Map",
+      "type": "workflow",
+      "commercialPath": "Content Quick Win"
+    },
+    {
+      "priority": 4,
+      "guideTitle": "Build an AI content team without hiring more people",
+      "category": "automate-scale",
+      "asset": "AI Content Team Role Map",
+      "type": "role-map",
+      "commercialPath": "Content specialist build"
+    },
+    {
+      "priority": 5,
+      "guideTitle": "Give AI reusable skills instead of repeating the same prompts",
+      "category": "build-ai-help",
+      "asset": "AI Skill Builder Template",
+      "type": "template",
+      "commercialPath": "Assistant / skills implementation"
+    },
+    {
+      "priority": 6,
+      "guideTitle": "Keep an AI assistant working when you are offline",
+      "category": "automate-scale",
+      "asset": "Always-On AI Checklist",
+      "type": "checklist",
+      "commercialPath": "Automation Quick Win"
+    },
+    {
+      "priority": 7,
+      "guideTitle": "Run several AI assistants without creating chaos",
+      "category": "automate-scale",
+      "asset": "AI Team Operating Map",
+      "type": "system-map",
+      "commercialPath": "AI Business OS"
+    },
+    {
+      "priority": 8,
+      "guideTitle": "Decide what AI can do and what must stay human",
+      "category": "build-ai-help",
+      "asset": "Permission & Human Review Checklist",
+      "type": "checklist",
+      "commercialPath": "Workshops / governance"
+    },
+    {
+      "priority": 9,
+      "guideTitle": "Connect AI to your business tools safely",
+      "category": "automate-scale",
+      "asset": "AI Connections Map",
+      "type": "system-map",
+      "commercialPath": "Implementation / Workflow Sprint"
+    },
+    {
+      "priority": 10,
+      "guideTitle": "Build an AI dashboard that shows what your business is doing",
+      "category": "understand-data",
+      "asset": "AI Operations Dashboard Blueprint",
+      "type": "blueprint",
+      "commercialPath": "AI Business OS / implementation"
+    },
+    {
+      "priority": 11,
+      "guideTitle": "Choose the right job for an AI agent",
+      "category": "build-ai-help",
+      "asset": "AI Job Scorecard",
+      "type": "scorecard",
+      "commercialPath": "Build Your First AI Assistant Quick Win"
+    },
+    {
+      "priority": 12,
+      "guideTitle": "Know when you need one AI assistant or several",
+      "category": "build-ai-help",
+      "asset": "One Agent vs Multi-Agent Decision Tree",
+      "type": "decision-tree",
+      "commercialPath": "AI Business OS"
+    },
+    {
+      "priority": 13,
+      "guideTitle": "Create an AI version of your expertise",
+      "category": "think-create",
+      "asset": "AI Twin Readiness Checklist",
+      "type": "checklist",
+      "commercialPath": "Build Your AI Twin"
+    },
+    {
+      "priority": 14,
+      "guideTitle": "Turn your expertise into videos without recording everything yourself",
+      "category": "think-create",
+      "asset": "AI Video Workflow Map",
+      "type": "workflow",
+      "commercialPath": "Build Your AI Twin"
+    },
+    {
+      "priority": 15,
+      "guideTitle": "Create lead magnets with AI that people actually want",
+      "category": "sell-market",
+      "asset": "Lead Magnet Scorecard + Brief",
+      "type": "scorecard",
+      "commercialPath": "Marketing / Content Quick Win"
+    },
+    {
+      "priority": 16,
+      "guideTitle": "Protect your business before giving AI more access",
+      "category": "build-ai-help",
+      "asset": "AI Safety Checklist for Small Businesses",
+      "type": "checklist",
+      "commercialPath": "Workshops / implementation"
+    },
+    {
+      "priority": 17,
+      "guideTitle": "Choose AI tools without buying everything",
+      "category": "choose-ai",
+      "asset": "AI Stack Decision Sheet",
+      "type": "decision-sheet",
+      "commercialPath": "AI Business OS"
+    },
+    {
+      "priority": 18,
+      "guideTitle": "Build a simple AI operating system for your business",
+      "category": "automate-scale",
+      "asset": "AI Business OS Map",
+      "type": "system-map",
+      "commercialPath": "AI Business OS"
+    }
+  ],
+  "flagshipDiagnostic": {
+    "currentUrl": "/quiz.html",
+    "currentTitle": "What should you build with AI first?",
+    "futureAsset": "AI Opportunity Map",
+    "resultLanes": [
+      "Save time",
+      "Content & marketing",
+      "Sales & follow-up",
+      "Data & decisions",
+      "AI assistant",
+      "Automation"
+    ],
+    "rule": "Keep the visible diagnostic result free; use email to unlock or save the useful companion map."
+  }
+}
