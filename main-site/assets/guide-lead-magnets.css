@@ -16,6 +16,17 @@
   border:1px solid var(--lm-line);
   border-radius:8px;
 }
+.guide-lead-magnet .sr-only{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
 .guide-lead-magnet .lm-eyebrow{
   margin:0 0 11px;
   font-family:'Space Mono',monospace;
