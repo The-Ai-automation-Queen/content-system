@@ -24,6 +24,50 @@ address needs the two-step upload.
   repo the real key lives in Doppler and is injected at runtime; it is never
   written into a file (see `security.md` §1).
 
+## Where does a "public URL" actually come from?
+
+A public URL isn't a special kind of link — it's just a web address where a
+server is sitting, ready to hand back a file's raw bytes to anyone who asks,
+no login required. Three things have to be true: the bytes are stored
+somewhere, a server answers requests for that exact path over HTTPS, and that
+server is reachable from the open internet, not just one laptop.
+
+**A tool creates one for you, automatically.** This already covers most of
+this pipeline's output:
+- `blotato_create_visual` (AI images/video from `visual-engine`) — Blotato's
+  own server stores the result the moment it's generated and hands back a
+  `mediaUrl`. No hosting step to think about.
+- Canva / Gamma exports — exporting uploads the design to their storage and
+  hands back a link.
+- Anything deployed to `site/` (guides.shiftandlead.com) — once a file is on
+  the VPS in a public folder, its address is a public URL for free.
+
+**You host the file yourself**, for anything that only exists on a disk
+somewhere (a laptop, the VPS, a phone). Options, ranked by fit for this repo:
+
+| Option | How it works | Fit here |
+|---|---|---|
+| **Blotato Presigned Upload** | Ask Blotato for a temporary write slot, push the file to it, get a permanent URL back | Best fit — no new account, no new service. This *is* "create a public URL," built into the API already in use (Method 2 below). |
+| **The site itself (`site/`)** | Drop the file in a public folder, let the VPS pull/deploy it | Free, already-owned infrastructure, no expiry, no rate limit |
+| **Dropbox** | Upload, grab the share link, change `?dl=0` to `?dl=1` (or add `raw=1`) to force a direct file link instead of Dropbox's preview page | Solid manual fallback — handles large video without Drive's virus-scan block |
+| **S3 / Google Cloud Storage / Cloudflare R2** | Create a bucket, upload the file, set it (or the link) to public-read | More setup (cloud account, bucket, permissions policy) — the exact pattern Blotato's own presigned upload is modeled on, just self-hosted |
+| **Google Drive** | Upload, share as "Anyone with the link," reformat to the direct-download URL | Works, but see the gotchas below — last resort, not the default |
+
+**The "presigned" mechanism, unpacked:** a presigned URL is a temporary,
+cryptographically signed permission slip that lets you write directly into
+someone else's storage — for one file, one time — without ever exposing your
+real API key for that write. It expires in minutes on purpose. This isn't a
+Blotato-only trick; S3 and most cloud storage systems use the identical
+pattern.
+
+**What this means for this repo in practice:** for the pipeline's actual local
+outputs (carousel-factory PNGs, HyperFrames/Remotion renders, captioned
+talking-head exports), nobody needs to pick a hosting service and manually
+create a URL — Presigned Upload already *is* that step, automated inside
+`distribution`. The table above matters most for the manual case: a file on
+your own machine that you want to post without routing it through the
+pipeline first.
+
 ## The three ways to get media into a post
 
 | # | Method | Use it when | Steps | Output |
