@@ -12,4 +12,5 @@ import './site-guides-covers.mjs';
 import './site-guides-no-meta.mjs';
 import './site-guide-motion.mjs';
 import './site-guide-image-prune.mjs';
-console.log('Applied final site and guide polish plus repair, architecture, consistency, editorial layout, unified guide covers, clean guide tiles, interactive motion, workflows, before-after explainers and final image-value pruning.');
+import './site-guide-infographics.mjs';
+console.log('Applied final site and guide polish plus repair, architecture, consistency, editorial layout, unified guide covers, clean guide tiles, interactive motion, image-value pruning and instructional infographics.');
