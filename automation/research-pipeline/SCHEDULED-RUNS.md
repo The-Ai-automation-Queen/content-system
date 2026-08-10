@@ -40,12 +40,25 @@ These are the operating contracts for the ChatGPT scheduled tasks. The tasks use
 - Do not publish or merge.
 - Notify the operator with the weekly plan summary.
 
-## 4. Publish & QA Watch — hourly condition watch
+## 4. Approved Draft Builder — hourly condition watch
+
+- Read `queues/approved.json`.
+- If there is no item with `status: "approved_to_build"`, do nothing and do not notify.
+- For each approved item, read its opportunity, brief, cited research sources and `skills/guide-builder/SKILL.md`.
+- Create/reuse branch `research/<opportunity-id>` from the latest `main`.
+- Build the guide or guide update, contextual lead magnet/resource and required metadata/library changes on that branch only.
+- Run `skills/editorial-qa/SKILL.md` before opening/refreshing the draft PR.
+- Open a draft PR titled `Research guide: <outcome-first title>` and include the opportunity id, brief path, source ids, companion asset and QA verdict in the PR body.
+- Never merge the PR.
+- Update the approved queue item to `status: "pr_open"` with PR number/url after the draft PR exists.
+- Notify when the PR reaches `PASS_FOR_HUMAN_REVIEW` or when evidence/product decisions block completion.
+
+## 5. Publish & QA Watch — hourly condition watch
 
 - Search `content-system` for open/merged PRs created from approved research opportunities.
 - For open draft PRs, run `skills/editorial-qa/SKILL.md`. If fixable, update the branch; if blocked by evidence/product decision, leave a clear PR comment and notify.
 - Never approve by merging the PR yourself.
 - When a human has merged a research-derived content PR, wait for the relevant Vercel production deployment.
 - Verify the real custom domain, not just source files or preview HTML.
-- Confirm titles, terminology, links, forms, lead-magnet unlock, accessibility-critical markup, no duplicate POST, and no stale Brief CTA.
+- Confirm titles, terminology, links, forms, lead-magnet unlock, accessibility-critical markup, no duplicate POST, no unnecessary decorative article image, reduced-motion support where relevant, and no stale Brief CTA.
 - Notify only after production is verified or when a non-quota blocker needs a human decision.
