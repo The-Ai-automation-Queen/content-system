@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const MAIN = path.join(ROOT, 'main-site');
+const BRIEF = path.join(ROOT, 'ai-insider-brief', 'ai-insider-brief');
 
 function read(rel) { return fs.readFileSync(path.join(MAIN, rel), 'utf8'); }
 function write(rel, content) { fs.writeFileSync(path.join(MAIN, rel), content); }
@@ -100,6 +101,42 @@ if (fs.existsSync(llmsPath)) {
   }
 }
 
+// The Brief itself becomes a quiet archive: accessible to old links, but not an active acquisition promise.
+const briefIndex = path.join(BRIEF, 'index.html');
+if (fs.existsSync(briefIndex)) {
+  let html = fs.readFileSync(briefIndex, 'utf8');
+  const before = html;
+
+  if (!/<meta\s+name=["']robots["']/i.test(html)) {
+    html = html.replace(/(<meta name="viewport"[^>]*>)/i, '$1\n  <meta name="robots" content="noindex, follow">');
+  } else {
+    html = html.replace(/<meta\s+name=["']robots["'][^>]*>/i, '<meta name="robots" content="noindex, follow">');
+  }
+
+  html = html
+    .replace(/<title>[\s\S]*?<\/title>/i, '<title>AI Insider Brief Archive | Shift & Lead</title>')
+    .replace(/<meta name="description" content="[^"]*">/i, '<meta name="description" content="Archive of the AI Insider Brief. The publication is paused while Shift & Lead focuses on practical AI guides and new content.">')
+    .replace(/<h1>[\s\S]*?<\/h1>/i, '<h1>The AI Insider Brief is paused.</h1>')
+    .replace(/<p class="hero-subtitle">[\s\S]*?<\/p>/i, '<p class="hero-subtitle">I’m focusing on practical AI guides and new content. The archive stays here if you want to browse what was published before.</p>')
+    .replace(/<p class="briefing-kicker" id="briefing-kicker">[\s\S]*?<\/p>/i, '<p class="briefing-kicker" id="briefing-kicker">FROM THE ARCHIVE</p>')
+    .replace(/<h2 class="briefing-title" id="briefing-title">[\s\S]*?<\/h2>/i, '<h2 class="briefing-title" id="briefing-title">Previous briefings and research notes</h2>');
+
+  if (!html.includes('brief-pause-route')) {
+    html = html.replace(
+      /(<\/section>\s*<nav class="category-bar")/i,
+      `<div id="brief-pause-route" style="max-width:760px;margin:0 auto 34px;padding:0 20px;text-align:center"><a href="https://www.shiftandlead.com/guides/" style="display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;background:#1B2EA0;color:#fff;text-decoration:none;font-family:Inter,Arial,sans-serif;font-size:14px;font-weight:700;border-radius:4px">Browse the current AI Guides →</a></div>\n\n$1`
+    );
+  }
+
+  // The shared chrome has already been stamped from site.json. Remove any stale self-promotional Brief link left by older markup.
+  html = removeBriefLinks(html);
+
+  if (html !== before) {
+    fs.writeFileSync(briefIndex, html);
+    console.log('funnel-reset Brief archive');
+  }
+}
+
 // Guard the pages that matter most so a later edit cannot silently put the paused Brief back into acquisition.
 for (const rel of ['index.html', 'guides/index.html']) {
   const html = read(rel);
@@ -108,4 +145,4 @@ for (const rel of ['index.html', 'guides/index.html']) {
   }
 }
 
-console.log('Funnel reset complete: Guides + diagnostic + contextual companion assets are the active acquisition path; Brief archive preserved but unpromoted.');
+console.log('Funnel reset complete: Guides + diagnostic + contextual companion assets are the active acquisition path; Brief preserved as a noindex archive.');
