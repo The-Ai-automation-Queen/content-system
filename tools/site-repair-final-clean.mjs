@@ -32,4 +32,9 @@ patch('index.html', h => h
   .replace(/Ask about the next cohort/g, 'Talk about the next step')
 );
 
+patch('the-99.html', h => h
+  .replace(/Interviewing &middot; starts when the receipts do/g, 'Testing &middot; counts when the receipts do')
+  .replace(/<div class=\"state\">Hiring<\/div>/g, '<div class="state">Planned test</div>')
+);
+
 console.log('final clean pass complete');
