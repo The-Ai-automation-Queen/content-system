@@ -158,6 +158,34 @@
       });
     });
 
+    document.querySelectorAll('[data-animate="compare"]').forEach(function(compare){
+      var before = compare.querySelector('[data-compare="before"]');
+      var after = compare.querySelector('[data-compare="after"]');
+      if(!before || !after) return;
+      var tl = gsap.timeline({
+        scrollTrigger:{
+          trigger:compare,
+          start:'top 80%',
+          once:true
+        }
+      });
+      tl.from(before, {
+        opacity:0,
+        x:isMobile ? 0 : -18,
+        y:isMobile ? 10 : 0,
+        duration:.42,
+        ease:'power2.out',
+        clearProps:'opacity,transform'
+      }).from(after, {
+        opacity:0,
+        x:isMobile ? 0 : 18,
+        y:isMobile ? 10 : 0,
+        duration:.48,
+        ease:'power2.out',
+        clearProps:'opacity,transform'
+      }, '-=.18');
+    });
+
     ScrollTrigger.refresh();
   }
 
