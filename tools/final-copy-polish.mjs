@@ -15,4 +15,5 @@ import './site-guide-image-prune.mjs';
 import './site-guide-infographics.mjs';
 import './site-funnel-reset.mjs';
 import './site-first-ai-assistant-polish.mjs';
-console.log('Applied final site and guide polish plus repair, architecture, consistency, editorial layout, unified guide covers, clean guide tiles, interactive motion, image-value pruning, instructional infographics, the guide-led acquisition funnel, and final AI assistant terminology/spacing consistency.');
+import './site-research-content.mjs';
+console.log('Applied final site and guide polish plus repair, architecture, consistency, editorial layout, unified guide covers, clean guide tiles, interactive motion, image-value pruning, instructional infographics, the guide-led acquisition funnel, final AI assistant terminology/spacing consistency, and approved research-derived content.');
