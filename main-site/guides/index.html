@@ -23,8 +23,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css?v=f5dd9399">
 <link rel="stylesheet" href="/assets/pages/free-resources.css?v=d659cb34">
+<link rel="stylesheet" href="/assets/guide-gate.css?v=1">
 <script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 <script defer src="/lib/motion.js?v=12d3e96d"></script>
+<script defer src="/assets/guide-gate.js?v=1"></script>
 </head>
 <body>
 
@@ -44,16 +46,6 @@
   </div>
 </nav>
 <!-- /chrome:nav -->
-
-<form action="https://auto.shiftandlead.com/webhook/formspree-lead" method="POST" class="ribbon" id="ribbon-form">
-  <label for="ribbon-email">Get the AI Insider Brief, free</label>
-  <input id="ribbon-email" name="email" type="email" placeholder="your@email.com" required>
-  <input type="hidden" name="source" value="guides-library-ribbon">
-  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-  <button type="submit"><strong>Subscribe free</strong></button>
-</form>
-
-
 
 <section class="hero"><div class="hero-inner">
   <div>
@@ -204,7 +196,7 @@
     inner.appendChild(makeEl('h3', null, guide.title || ''));
     inner.appendChild(makeEl('p', null, guide.desc || guide.summary || ''));
     var cta = makeEl('a', 'row-cta', guide.cta || 'Read the guide →');
-    cta.href = 'guides/' + encodeURIComponent(slug) + '.html';
+    cta.href = encodeURIComponent(slug) + '.html';
     slot.appendChild(inner);
     slot.appendChild(cta);
   }
@@ -218,7 +210,7 @@
       inner.appendChild(makeEl('h4', null, item.data.title || ''));
       inner.appendChild(makeEl('p', null, item.data.desc || item.data.summary || ''));
       var cta = makeEl('a', 'row-cta', item.data.cta || 'Read the guide →');
-      cta.href = 'guides/' + encodeURIComponent(item.slug) + '.html';
+      cta.href = encodeURIComponent(item.slug) + '.html';
       mini.appendChild(inner);
       mini.appendChild(cta);
       slot.appendChild(mini);
@@ -504,30 +496,6 @@
   });
 })();
 
-(function(){
-  document.getElementById('ribbon-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    var form = this;
-    var email = form.querySelector('[name="email"]').value;
-    var gotcha = form.querySelector('[name="_gotcha"]').value;
-    var btn = form.querySelector('button');
-    if (gotcha) { btn.innerHTML = '<strong>Subscribed!</strong>'; btn.disabled = true; return; }
-    btn.disabled = true; btn.innerHTML = 'Sending&hellip;';
-    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
-      method: 'POST', keepalive: true,
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({email: email, source: 'ribbon'})
-    });
-    fetch('https://auto.shiftandlead.com/webhook/formspree-lead', {
-      method: 'POST', keepalive: true,
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify({email: email, source: 'ribbon'})
-    }).then(function(r){
-      if (r.ok) { btn.innerHTML = '<strong>Subscribed!</strong>'; }
-      else { btn.disabled = false; btn.innerHTML = 'Try again'; }
-    }).catch(function(){ btn.disabled = false; btn.innerHTML = 'Try again'; });
-  });
-})();
 </script>
 
 <script>
@@ -622,7 +590,7 @@
       strip.textContent = html;
       if (firstUnread) {
         var cont = document.createElement('a');
-        cont.href = 'guides/' + firstUnread.slug + '.html';
+        cont.href = firstUnread.slug + '.html';
         cont.style.cssText = 'color:#2C4BE0;margin-left:10px';
         cont.textContent = 'pick up where you left off \u2192';
         strip.appendChild(cont);
@@ -661,7 +629,7 @@
         el.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;padding:5px 10px;border:1px dashed #E8E4DD;color:#555';
       } else {
         el = document.createElement('a');
-        el.href = 'guides/' + slug + '.html';
+        el.href = slug + '.html';
         var visited = read.indexOf(slug) !== -1;
         el.textContent = (visited ? '\u2713 ' : '') + name;
         el.style.cssText = 'font-family:Space Mono,monospace;font-size:11px;padding:5px 10px;border:1px solid ' + (visited ? '#2C4BE0' : '#E8E4DD') + ';color:' + (visited ? '#2C4BE0' : '#1A1A1A') + ';text-decoration:none';
