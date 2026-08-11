@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "opportunity_statuses": [
+    "new",
+    "research_more",
+    "cluster_candidate",
+    "brief_candidate",
+    "brief_ready_for_approval",
+    "approved_to_build",
+    "building",
+    "pr_open",
+    "needs_decision",
+    "pass_for_human_review",
+    "merged_by_human",
+    "production_verified",
+    "hold",
+    "archive"
+  ],
+  "approval_actions": [
+    "approve_guide",
+    "approve_lead_magnet",
+    "approve_guide_and_lead_magnet",
+    "approve_linkedin_draft",
+    "approve_quick_win_brief",
+    "approve_workshop_brief",
+    "hold",
+    "reject"
+  ],
+  "transition_rules": {
+    "brief_ready_for_approval": ["approved_to_build", "hold", "archive"],
+    "approved_to_build": ["building", "needs_decision"],
+    "building": ["pr_open", "needs_decision"],
+    "pr_open": ["pass_for_human_review", "needs_decision"],
+    "pass_for_human_review": ["merged_by_human", "pr_open"],
+    "merged_by_human": ["production_verified", "needs_decision"]
+  },
+  "human_gates": {
+    "full_guide_build_requires_approved_queue": true,
+    "lead_magnet_build_requires_approved_queue": true,
+    "paid_offer_publication_requires_human_decision": true,
+    "automation_may_merge_content_pr": false
+  },
+  "approved_queue_record": {
+    "required_fields": [
+      "opportunity_id",
+      "action",
+      "status",
+      "approved_at"
+    ],
+    "optional_fields": [
+      "notes",
+      "branch",
+      "pr_number",
+      "pr_url",
+      "qa_verdict",
+      "merged_at",
+      "production_verified_at"
+    ]
+  }
+}
