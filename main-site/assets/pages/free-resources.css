@@ -23,14 +23,6 @@
 html,body{background:var(--canvas);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 
-.ribbon{display:flex;width:100%;background:var(--navy);color:var(--canvas);font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;padding:11px 32px;text-align:center;text-decoration:none;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-.ribbon label{cursor:default}
-.ribbon input[type="email"]{padding:7px 14px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);color:var(--canvas);font-family:'Inter',sans-serif;font-size:13px;border-radius:3px;letter-spacing:0.02em;text-transform:none;width:220px}
-.ribbon input[type="email"]::placeholder{color:rgba(255,255,255,0.45)}
-.ribbon input[type="email"]:focus{outline:none;border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.15)}
-.ribbon button{background:transparent;border:1px solid rgba(255,255,255,0.3);color:#E4EAFB;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:7px 16px;border-radius:3px;cursor:pointer}
-.ribbon button:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.5)}
-
 .nav{border-bottom:1px solid var(--rule);background:var(--canvas)}
 .nav-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;color:var(--ink);text-decoration:none}
@@ -160,9 +152,6 @@ img{max-width:100%;height:auto}
 
 @media (max-width:560px){
   html,body{font-size:16px}
-  .ribbon{padding:10px 16px;font-size:11px;letter-spacing:0.12em;gap:8px}
-  .ribbon input[type="email"]{width:170px;font-size:12px;padding:6px 10px}
-  .ribbon button{padding:6px 12px;font-size:11px}
   .nav-inner{padding:14px 16px;flex-wrap:wrap;gap:10px;justify-content:center}
   .nav-logo{font-size:19px}
   .nav-links{gap:12px;font-size:10px;flex-wrap:wrap;justify-content:center}

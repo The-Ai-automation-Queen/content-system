@@ -1,0 +1,109 @@
+/* One-email guide library gate. Intentionally isolated from the guide layout. */
+body.guide-gate-open{overflow:hidden}
+
+.guide-gate[hidden]{display:none}
+.guide-gate{
+  position:fixed;
+  inset:0;
+  z-index:10000;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  font-family:'Inter',Arial,sans-serif;
+}
+.guide-gate__backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(16,20,39,.72);
+  backdrop-filter:blur(8px);
+}
+.guide-gate__dialog{
+  position:relative;
+  width:min(100%,540px);
+  max-height:calc(100dvh - 48px);
+  overflow:auto;
+  padding:42px;
+  border:1px solid #DDE1F4;
+  border-radius:14px;
+  background:#fff;
+  color:#1A1A1A;
+  box-shadow:0 28px 80px rgba(19,36,127,.24);
+}
+.guide-gate__close{
+  position:absolute;
+  top:14px;
+  right:14px;
+  display:grid;
+  width:40px;
+  height:40px;
+  place-items:center;
+  border:0;
+  border-radius:50%;
+  background:#F1F3FC;
+  color:#1A1A1A;
+  font:500 24px/1 Arial,sans-serif;
+  cursor:pointer;
+}
+.guide-gate__eyebrow{
+  margin:0 48px 12px 0;
+  color:#1B2EA0;
+  font-family:'Space Mono',monospace;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.guide-gate__title{
+  margin:0 0 14px;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(32px,7vw,44px);
+  font-weight:400;
+  letter-spacing:-.025em;
+  line-height:1.08;
+}
+.guide-gate__copy{
+  max-width:44ch;
+  margin:0 0 26px;
+  color:#555;
+  font-size:16px;
+  line-height:1.55;
+}
+.guide-gate__form-frame{
+  width:100%;
+  height:270px;
+  border-radius:6px;
+  overflow:hidden;
+}
+.guide-gate__form-frame iframe{
+  display:block;
+  width:100%;
+  height:300px;
+  border:0;
+  background:#fff;
+}
+.guide-gate__close:focus-visible{outline:3px solid #2C4BE0;outline-offset:3px}
+.guide-gate__fineprint{
+  margin:12px 0 0;
+  color:#5C5C58;
+  font-size:12px;
+  line-height:1.5;
+}
+.guide-gate__fineprint a{color:#1B2EA0;text-decoration:underline;text-underline-offset:2px}
+.guide-gate__status{
+  min-height:0;
+  margin:0;
+  color:#8A1C31;
+  font-size:13px;
+  line-height:1.4;
+}
+.guide-gate__status:not(:empty){margin-top:10px}
+@media(max-width:600px){
+  .guide-gate{align-items:end;padding:12px}
+  .guide-gate__dialog{max-height:calc(100dvh - 24px);padding:34px 22px 24px;border-radius:14px}
+  .guide-gate__form-frame{height:270px}
+  .guide-gate__form-frame iframe{height:300px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .guide-gate *{transition:none!important;animation:none!important}
+}
