@@ -1,0 +1,22 @@
+{
+  "provider": "google_sheets",
+  "spreadsheet_id": "1taMB04FQBcdAGkAkkCRnsxF1WMLbl7B1IwPqHBQpKJw",
+  "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1taMB04FQBcdAGkAkkCRnsxF1WMLbl7B1IwPqHBQpKJw/edit",
+  "approval_sheet": "Approval Queue",
+  "calendar_sheet": "Content Calendar",
+  "activity_sheet": "Activity Log",
+  "decision_column": "J",
+  "notes_column": "K",
+  "status_column": "L",
+  "url_column": "M",
+  "decision_values": ["Review", "Approve", "Hold", "Reject", "Research more"],
+  "approval_mapping": {
+    "Approve": "approved_to_build",
+    "Hold": "hold",
+    "Reject": "archive",
+    "Research more": "research_more",
+    "Review": "brief_ready_for_approval"
+  },
+  "source_of_truth_for_human_decisions": "google_sheet",
+  "github_approved_queue_role": "machine_mirror_only"
+}
