@@ -4,14 +4,19 @@
     {
       "opportunity_id": "research-to-content-workflow",
       "action": "approve_guide_and_lead_magnet",
-      "status": "pass_for_human_review",
+      "status": "production_verified",
       "approved_at": "2026-08-11T15:01:00+04:00",
       "source": "google_sheet",
       "sheet_decision": "Approve",
       "branch": "research/research-to-content-workflow",
       "pr_number": 101,
       "pr_url": "https://github.com/The-Ai-automation-Queen/content-system/pull/101",
+      "merge_commit": "d8c22d2fe5dc13789601b7f7a076c300d21c1f27",
+      "deployment_id": "dpl_8UHuhhZYFY1xXVMFihyhf27oTA8c",
+      "live_url": "https://www.shiftandlead.com/guides/research-to-content-workflow.html",
+      "resource_url": "https://www.shiftandlead.com/resources/research-to-content-workflow.html",
       "qa_verdict": "PASS_FOR_HUMAN_REVIEW",
+      "production_verified": true,
       "notes": ""
     }
   ]
