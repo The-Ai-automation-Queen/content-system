@@ -1,4 +1,14 @@
 {
   "version": 1,
-  "approved": []
+  "approved": [
+    {
+      "opportunity_id": "research-to-content-workflow",
+      "action": "approve_guide_and_lead_magnet",
+      "status": "approved_to_build",
+      "approved_at": "2026-08-11T15:01:00+04:00",
+      "source": "google_sheet",
+      "sheet_decision": "Approve",
+      "notes": ""
+    }
+  ]
 }
