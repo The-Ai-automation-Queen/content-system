@@ -25,8 +25,8 @@
       "paid_bridge": "AI Content Engine Quick Win",
       "paid_bridge_status": "concept_not_live",
       "visual_or_interaction": "Flow diagram: Capture → Distil → Find the angle → Add your point of view → Draft → Verify → Publish → Learn from performance",
-      "evidence_status": "adequate_for_guide_if_tool-specific claims remain examples rather than universal facts",
-      "status": "brief_candidate",
+      "evidence_status": "adequate_for_guide_if_tool-specific claims_remain_examples_rather_than_universal_facts",
+      "status": "brief_ready_for_approval",
       "reason": "Strong alignment with the existing research inbox and a repeatable system Shift & Lead can demonstrate with real receipts."
     },
     {
@@ -57,7 +57,7 @@
       "paid_bridge_status": "concept_not_live",
       "visual_or_interaction": "Business Brain map: Business → Customers → Offers → Voice → Rules → Examples → Decisions → AI assistant",
       "evidence_status": "adequate_for_evergreen_principles; source-specific performance claims must not be repeated without verification",
-      "status": "brief_candidate",
+      "status": "brief_ready_for_approval",
       "reason": "Multiple sources independently point to business context/memory as the useful layer beneath flashy AI dashboards."
     },
     {
