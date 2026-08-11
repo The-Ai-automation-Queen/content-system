@@ -27,7 +27,8 @@
   white-space:nowrap!important;
   border:0!important;
 }
-.guide-lead-magnet .lm-eyebrow{
+.guide-lead-magnet .lm-eyebrow,
+.guide-lead-magnet .guide-lead-kicker{
   margin:0 0 11px;
   font-family:'Space Mono',monospace;
   font-size:10px;
@@ -47,7 +48,8 @@
   letter-spacing:-.02em;
   color:var(--lm-ink);
 }
-.guide-lead-magnet .lm-copy{
+.guide-lead-magnet .lm-copy,
+.guide-lead-magnet > p:not(.guide-lead-kicker):not(.lm-eyebrow):not(.lm-fineprint):not(.lm-status):not(.form-status){
   max-width:670px;
   margin:0 0 22px!important;
   font-size:17px!important;
@@ -60,6 +62,17 @@
   gap:10px;
   max-width:680px;
   margin:0;
+}
+.guide-lead-magnet .resource-inline-form > label[for]{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;
+  border:0!important;
 }
 .guide-lead-magnet input[type="email"]{
   width:100%;
@@ -78,6 +91,7 @@
 .guide-lead-magnet input[type="email"]::placeholder{color:#70706A}
 .guide-lead-magnet input[type="email"]:focus-visible,
 .guide-lead-magnet button:focus-visible,
+.guide-lead-magnet input[type="checkbox"]:focus-visible,
 .guide-lead-magnet .lm-resource-link:focus-visible{
   outline:3px solid var(--lm-blue);
   outline-offset:3px;
@@ -97,6 +111,18 @@
 }
 .guide-lead-magnet button:hover{background:#13247F;border-color:#13247F}
 .guide-lead-magnet button:disabled{opacity:.72;cursor:wait}
+.guide-lead-magnet .consent-row{
+  grid-column:1/-1;
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+  margin:2px 0 0;
+  font-family:'Inter',Arial,sans-serif;
+  font-size:12px;
+  line-height:1.45;
+  color:#62625D;
+}
+.guide-lead-magnet .consent-row input{margin-top:2px;flex:0 0 auto}
 .guide-lead-magnet .lm-fineprint{
   margin:10px 0 0!important;
   max-width:680px;
@@ -105,9 +131,11 @@
   line-height:1.45!important;
   color:#62625D!important;
 }
-.guide-lead-magnet .lm-status{
+.guide-lead-magnet .lm-status,
+.guide-lead-magnet .form-status{
+  grid-column:1/-1;
   min-height:1.4em;
-  margin:12px 0 0!important;
+  margin:2px 0 0!important;
   font-family:'Inter',Arial,sans-serif!important;
   font-size:13px!important;
   line-height:1.45!important;
