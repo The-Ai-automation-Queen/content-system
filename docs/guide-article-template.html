@@ -1,0 +1,138 @@
+<!--
+AUTHOR FORMULA:
+eyebrow → heading → one short "why" paragraph → one structured block
+(cards/steps/prompt) → optional tip; guides open with the intro callout and
+close with proof → honest notes → links.
+
+Reusable article fragment. Site chrome remains owned by tools/include.mjs.
+Requires /assets/site.css, /assets/guide-article.css and /assets/guide-article.js.
+-->
+
+<main class="g-guide">
+  <header class="g-guide-head">
+    <a class="g-back" href="/guides/">← All guides</a>
+
+    <div class="g-tags" aria-label="Guide categories">
+      <span class="g-tag">Topic</span>
+      <span class="g-tag g-tag-type">Guide type</span>
+    </div>
+
+    <h1>Your guide title goes here</h1>
+
+    <div class="g-intro">
+      <p>Open with two to four warm sentences that tell the reader what this guide will make easier. Keep it concrete and useful.</p>
+    </div>
+  </header>
+
+  <div class="g-guide-body">
+    <section class="g-section">
+      <p class="g-eyebrow">PART ONE</p>
+      <h2>Use cards when the reader is comparing options</h2>
+      <p>Cards work best when each choice needs the same amount of explanation.</p>
+
+      <div class="g-cards">
+        <article class="g-card">
+          <strong>Option one</strong>
+          <p>One or two sentences explaining what this option is and when it earns its place.</p>
+        </article>
+        <article class="g-card">
+          <strong>Option two</strong>
+          <p>One or two sentences explaining what this option is and when it earns its place.</p>
+        </article>
+      </div>
+
+      <div class="g-tip">
+        <strong>Tip:</strong>
+        <p>Use a tip only when it helps the reader act on the section above.</p>
+      </div>
+    </section>
+
+    <section class="g-section">
+      <p class="g-eyebrow">PART TWO</p>
+      <h2>Use steps when order matters</h2>
+      <p>A numbered sequence makes the next action obvious and keeps the explanation compact.</p>
+
+      <ol class="g-steps">
+        <li>
+          <strong class="g-step-head">Name the outcome.</strong>
+          Say what should be different when the step is complete.
+        </li>
+        <li>
+          <strong class="g-step-head">Give it context.</strong>
+          Add the information and constraints the process needs, including inline <code>examples</code> when useful.
+        </li>
+        <li>
+          <strong class="g-step-head">Check the result.</strong>
+          Review the output before adding more complexity.
+        </li>
+      </ol>
+    </section>
+
+    <section class="g-section">
+      <p class="g-eyebrow">PART THREE</p>
+      <h2>Use a prompt box for reusable text</h2>
+      <p>Make anything the reader may want to reuse easy to copy without losing its formatting.</p>
+
+      <div class="g-prompt">
+        <div class="g-prompt-label">
+          <span>Starter prompt</span>
+          <button class="g-copy" type="button" aria-live="polite" onclick="copyPrompt(this)">Copy</button>
+        </div>
+        <pre><code>My goal:
+[Describe the outcome]
+
+Context:
+[Add the information that matters]
+
+Give me:
+1. The clearest recommendation.
+2. The reasoning in plain English.
+3. The next three actions.</code></pre>
+      </div>
+
+      <div class="g-tip g-warn">
+        <strong>Watch for this:</strong>
+        <p>Use warnings for genuine cautions, limitations, or risks, not for ordinary advice.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="g-guide-foot">
+    <section>
+      <p class="g-eyebrow">THE PROOF</p>
+      <h2>Show why the reader should trust this</h2>
+      <p>Use first-hand experience, a documented result, a cited source, or a clearly described test. Remove this section when there is no real proof.</p>
+
+      <div class="g-tip">
+        <strong>Useful proof:</strong>
+        <p>Specific evidence is stronger than broad claims.</p>
+      </div>
+    </section>
+
+    <section>
+      <p class="g-eyebrow">READ THIS FIRST</p>
+      <h2>Say where the guidance stops</h2>
+      <p>Use honest notes to expose the assumptions or limits a reader should know before acting.</p>
+
+      <div class="g-tip g-warn">
+        <strong>Context matters:</strong>
+        <p>Replace this with a real caveat from the guide.</p>
+      </div>
+    </section>
+
+    <section>
+      <p class="g-eyebrow">THE LINKS</p>
+      <h2>Keep going</h2>
+      <p>Point to the smallest useful set of next resources.</p>
+
+      <ul class="g-links">
+        <li><a href="/guides/">Browse all Shift &amp; Lead guides</a></li>
+        <li><a href="/about.html">How Shift &amp; Lead approaches AI</a></li>
+      </ul>
+    </section>
+
+    <section class="g-next">
+      <p class="g-closing">Close with one clear next step or newsletter invitation.</p>
+    </section>
+  </footer>
+</main>
