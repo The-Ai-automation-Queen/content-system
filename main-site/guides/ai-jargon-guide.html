@@ -7,13 +7,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="robots" content="noai, noimageai, max-image-preview:large">
-<title>AI Jargon Decoded: Twelve Words in Plain English | Shift &amp; Lead</title>
-<meta name="description" content="Twelve AI terms, tokens, context window, RAG, hallucination, agent, MCP and more, decoded in plain English so you stop nodding through meetings.">
+<title>AI Terms Explained: 12 AI Words in Plain English | Shift &amp; Lead</title>
+<meta name="description" content="AI terms explained in plain English: prompt, token, context window, hallucination, RAG, fine-tuning, AI agent, MCP, multimodal AI, open-weight models and guardrails.">
 <link rel="canonical" href="https://www.shiftandlead.com/guides/ai-jargon-guide.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Shift &amp; Lead">
-<meta property="og:title" content="The AI words they keep using">
-<meta property="og:description" content="Most AI jargon is one ordinary idea wearing a lab coat. Here they are, in plain English.">
+<meta property="og:title" content="Understand the AI terms you actually need">
+<meta property="og:description" content="You do not need to memorise AI jargon. You need a simple picture in your head when someone says the word.">
 <meta property="og:url" content="https://www.shiftandlead.com/guides/ai-jargon-guide.html">
 <meta property="og:image" content="https://www.shiftandlead.com/assets/covers/ai-jargon-guide.svg">
 <meta name="twitter:card" content="summary_large_image">
@@ -21,8 +21,8 @@
 {
   "@context":"https://schema.org",
   "@type":"Article",
-  "headline":"The AI words they keep using",
-  "description":"Most AI jargon is one ordinary idea wearing a lab coat. Here they are, in plain English.",
+  "headline":"Understand the AI terms you actually need",
+  "description":"You do not need to memorise AI jargon. You need a simple picture in your head when someone says the word.",
   "image":"https://www.shiftandlead.com/assets/covers/ai-jargon-guide.svg",
   "datePublished":"2026-06-10",
   "dateModified":"2026-07-28",
@@ -34,12 +34,14 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400;0,700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css?v=f5dd9399">
+<link rel="stylesheet" href="/assets/guide-article.css">
 <script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 <script defer src="/assets/capture.js?v=fbc55811"></script>
+<script defer src="/assets/guide-article.js"></script>
 </head>
-<body class="guide" data-page="ai-jargon-guide">
+<body data-page="ai-jargon-guide">
 
 <!-- chrome:nav -->
 <nav class="site-nav" aria-label="Site">
@@ -58,192 +60,210 @@
 </nav>
 <!-- /chrome:nav -->
 
-<article class="guide-doc">
+<!--
+AUTHOR FORMULA:
+eyebrow → heading → one short "why" paragraph → one structured block
+(cards/steps/prompt) → optional tip; guides open with the intro callout and
+close with proof → honest notes → links.
+-->
 
-  <header class="guide-hero">
-    <p class="eyebrow mono">The basics</p>
-    <h1>The AI words they keep using</h1>
-<!-- data:guide-byline --><p class="guide-byline mono">FREE GUIDE &middot; Updated <time datetime="2026-07-28">28 Jul 2026</time> &middot; 5 min read</p><!-- /data:guide-byline -->
-    <p class="verdict">Most AI jargon is one ordinary idea wearing a lab coat. Here they're, in plain English.</p>
+<main class="g-guide">
+  <header class="g-guide-head">
+    <a class="g-back" href="/guides/">← All guides</a>
 
-    <figure class="cover">
-      <img src="/assets/covers/ai-jargon-guide.svg" alt="Cover: the AI words they keep using, from Shift and Lead" width="1280" height="720">
-    </figure>
+    <div class="g-tags" aria-label="Guide categories">
+      <span class="g-tag">Understand it</span>
+      <span class="g-tag g-tag-type">Plain-English guide</span>
+    </div>
 
-    <ul class="tldr">
-      <li><span>Best for</span>Sitting in a meeting and knowing exactly what is being said.</li>
-      <li><span>Careful with</span>Nodding. Nodding is how you end up on the wrong project.</li>
-      <li><span>What I would do</span>Keep this open in a tab for a fortnight. After that you won't need it.</li>
-    </ul>
+    <p class="g-eyebrow">AI TERMS, MADE SIMPLE</p>
+    <h1>Understand the AI terms you actually need</h1>
+
+    <div class="g-intro">
+      <p>You do not need to memorise AI jargon. You need a simple picture in your head when someone says the word. <!-- TODO: author confirm -->Keep this guide nearby until those pictures become automatic.</p>
+    </div>
   </header>
 
-  <div class="prose">
+  <div class="g-guide-body">
+    <section class="g-section">
+      <p class="g-eyebrow">START HERE</p>
+      <h2>Start with this picture</h2>
+      <p>Think of AI like a very fast helper sitting at a desk. You give it instructions. It reads information. It gives you something back. Most AI terms describe one part of that simple loop.</p>
 
-    <h2>The sentence this started with</h2>
+      <div class="g-tip">
+        <strong>THE WHOLE GUIDE IN ONE LINE</strong>
+        <p>You give AI a prompt → it reads what it can see → it works with a model → it gives you an answer or takes an action.</p>
+      </div>
+    </section>
 
-    <p>Somebody said this to me, in a real meeting, with a straight face:</p>
+    <section class="g-section">
+      <p class="g-eyebrow">THE VOCABULARY</p>
+      <h2>12 AI terms in plain English</h2>
+      <p><!-- TODO: author confirm -->These are the terms worth being able to picture when they come up in a conversation.</p>
 
-    <blockquote class="pull">"We're running a RAG pipeline with a fine-tuned model, but the context window is limiting the agent, so we're looking at MCP to cut the token spend."</blockquote>
+      <div class="g-cards">
+        <article class="g-card">
+          <strong>Prompt</strong>
+          <p>The instruction you give the AI.</p>
+          <p class="g-card-label">Picture it</p>
+          <p>A note you hand to a helper: “Read these emails and tell me what needs my reply.”</p>
+          <p><strong>Why it matters:</strong> clearer instructions usually give you a better result.</p>
+        </article>
 
-    <p>Everyone around the table nodded. I would guess two of them followed it. That sentence contains six pieces of jargon and one actual idea, and the actual idea is roughly "our thing is expensive and doesn't remember enough".</p>
+        <article class="g-card">
+          <strong>Token</strong>
+          <p>A small piece of text the AI reads and writes.</p>
+          <p class="g-card-label">Picture it</p>
+          <p>A sentence cut into lots of little tiles. AI counts the tiles, not whole pages.</p>
+          <p><strong>Why it matters:</strong> more text means more tokens, and sometimes more cost.</p>
+        </article>
 
-    <p>Here's every word in it, and six more you'll meet this week. My translation job is to give you the plain version, not to make you sound clever.</p>
+        <article class="g-card">
+          <strong>Context window</strong>
+          <p>How much information the AI can keep in front of it at one time.</p>
+          <p class="g-card-label">Picture it</p>
+          <p>A desk. If the desk is full, you have to remove some papers before adding more.</p>
+          <p><strong>Why it matters:</strong> if important information falls off the desk, the answer can get worse.</p>
+        </article>
 
-    <h2>The six words in that sentence</h2>
+        <article class="g-card">
+          <strong>Hallucination</strong>
+          <p>When AI gives you something false as if it were true.</p>
+          <p class="g-card-label">Picture it</p>
+          <p>A student who does not know the answer but writes one anyway instead of saying “I don't know.”</p>
+          <p><strong>Why it matters:</strong> confident does not mean correct.</p>
+        </article>
 
-    <div class="guide-table">
-      <table>
-        <thead><tr><th>The word</th><th>What it actually means</th><th>Why anyone cares</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Token</strong></td><td>A chunk of text, roughly three quarters of a word. How the tools count what you send and receive.</td><td>It's how you're billed. Longer conversations cost more.</td></tr>
-          <tr><td><strong>Context window</strong></td><td>Everything it can hold in mind at once: your instructions, the conversation, the files.</td><td>When a long session goes strange, this is usually why.</td></tr>
-          <tr><td><strong>RAG</strong></td><td>Retrieval augmented generation. It looks something up in your documents before answering, rather than answering from memory.</td><td>The standard way to make a tool that knows about your business.</td></tr>
-          <tr><td><strong>Fine-tuning</strong></td><td>Extra training to make a model better at one narrow thing.</td><td>Expensive, and usually unnecessary. A good brief solves most of what people fine-tune for.</td></tr>
-          <tr><td><strong>Agent</strong></td><td>Software that takes multi-step actions towards a goal rather than answering once.</td><td>Useful, and the word most likely to be stretched in a sales pitch.</td></tr>
-          <tr><td><strong>MCP</strong></td><td>Model Context Protocol. An agreed standard for connecting AI tools to other software and data.</td><td>It's why connecting things is getting easier and cheaper.</td></tr>
-        </tbody>
-      </table>
-    </div>
+        <article class="g-card">
+          <strong>RAG</strong>
+          <p><strong>Retrieval-augmented generation</strong> means the AI looks up information before it answers.</p>
+          <p class="g-card-label">Picture it</p>
+          <p>Open-book exam: question → look in the right folder → answer using what you found.</p>
+          <p><strong>Why it matters:</strong> it helps AI answer from your documents instead of guessing from general knowledge.</p>
+        </article>
 
-    <figure class="fig">
-      <img src="/assets/art/ai-jargon-guide-fit.svg" alt="Two columns: where knowing the vocabulary helps against where nodding along will burn you." width="1600" height="800" loading="lazy" decoding="async">
-      <figcaption>The words that come up most, and what each one really means.</figcaption>
-    </figure>
+        <article class="g-card">
+          <strong>Fine-tuning</strong>
+          <p>Extra training that changes a model so it becomes better at a narrower kind of task.</p>
+          <p class="g-card-label">Picture it</p>
+          <p>A general cook going to pastry school to get much better at cakes.</p>
+          <p><strong>Why it matters:</strong> it can be useful, but many businesses do not need it for everyday AI work.</p>
+        </article>
 
-    <div class="callout">
-      <p class="callout-label">Do this</p>
-      <p>Next time a word goes past that you don't know, say so. "Can you put that in plain English?" You'll find at least one other person in the room was waiting for someone to ask, and the person who cannot answer it has told you something useful.</p>
-    </div>
+        <article class="g-card">
+          <strong>AI agent</strong>
+          <p>AI that can take several steps toward a goal instead of only answering once.</p>
+          <p class="g-card-label">Picture it</p>
+          <p>Not “tell me how to book the trip.” More like “find the options, compare them, prepare the booking, then ask me before paying.”</p>
+          <p><strong>Why it matters:</strong> agents move AI from answering to doing.</p>
+        </article>
 
-  
+        <article class="g-card">
+          <strong>MCP</strong>
+          <p><strong>Model Context Protocol</strong> is a standard way for AI tools to connect to other software and data.</p>
+          <p class="g-card-label">Picture it</p>
+          <p>A universal plug. Instead of making a different cable for every tool, MCP gives them a shared connection.</p>
+          <p><strong>Why it matters:</strong> it can make it easier for AI to work with files, databases and business tools.</p>
+        </article>
 
-    <h2>Six more you'll hear this week</h2>
+        <article class="g-card">
+          <strong>System prompt</strong>
+          <p>Hidden or fixed instructions that tell an AI how it should behave.</p>
+          <p class="g-card-label">Picture it</p>
+          <p>The house rules written on the wall before you enter the room.</p>
+          <p><strong>Why it matters:</strong> two tools can use a similar model but behave differently because their rules are different.</p>
+        </article>
 
-    <div class="guide-table">
-      <table>
-        <thead><tr><th>The word</th><th>What it actually means</th><th>Why anyone cares</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Hallucination</strong></td><td>It stated something false as though it were fact.</td><td>The single most important failure to know about. It never warns you.</td></tr>
-          <tr><td><strong>Prompt</strong></td><td>What you type. The brief.</td><td>The difference between a useless answer and a good one is almost always here.</td></tr>
-          <tr><td><strong>System prompt</strong></td><td>Standing instructions the builder set, which you don't see, shaping how it behaves.</td><td>Explains why the same model behaves differently in two products.</td></tr>
-          <tr><td><strong>Multimodal</strong></td><td>It handles more than text: images, audio, sometimes video.</td><td>You can photograph a document instead of typing it out.</td></tr>
-          <tr><td><strong>Open weights</strong></td><td>The model file is published, so you can download and run it on your own hardware.</td><td>The answer when data cannot leave your building.</td></tr>
-          <tr><td><strong>Guardrails</strong></td><td>Rules and checks meant to stop it doing something unsafe or off-limits.</td><td>Ask what they're before you put anything customer-facing on it.</td></tr>
-        </tbody>
-      </table>
-    </div>
+        <article class="g-card">
+          <strong>Multimodal AI</strong>
+          <p>AI that can work with more than text, such as images, audio or video.</p>
+          <p class="g-card-label">Picture it</p>
+          <p>An assistant that can read, look, listen and sometimes watch.</p>
+          <p><strong>Why it matters:</strong> you can show the AI a screenshot or speak to it instead of typing everything.</p>
+        </article>
 
+        <article class="g-card">
+          <strong>Open-weight model</strong>
+          <p>An AI model whose trained model files are available for others to run under its licence.</p>
+          <p class="g-card-label">Picture it</p>
+          <p>Instead of always using someone else's kitchen, you can bring the recipe and equipment into your own kitchen.</p>
+          <p><strong>Why it matters:</strong> some companies want more control over where the AI runs and where their data goes.</p>
+        </article>
+
+        <article class="g-card">
+          <strong>Guardrails</strong>
+          <p>Rules and technical limits that stop AI from doing things it should not do.</p>
+          <p class="g-card-label">Picture it</p>
+          <p>The rail at the edge of a staircase. It does not walk for you. It helps stop a bad fall.</p>
+          <p><strong>Why it matters:</strong> important actions should have limits, permissions and human approval.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="g-section">
+      <p class="g-eyebrow">A QUICK TEST</p>
+      <h2>The three questions to ask when jargon appears</h2>
+      <p>You do not need to repeat the technical word back. Ask:</p>
+
+      <ol class="g-steps">
+        <li><strong class="g-step-head">What does it do?</strong></li>
+        <li><strong class="g-step-head">What information can it see?</strong></li>
+        <li><strong class="g-step-head">What can go wrong?</strong></li>
+      </ol>
+
+      <div class="g-tip">
+        <strong>Keep the conversation useful.</strong>
+        <p>If someone can answer those three questions clearly, you understand enough to keep the conversation useful.</p>
+      </div>
+    </section>
   </div>
 
-  <!-- partial:gate -->
-<aside class="gate" aria-labelledby="gate-title">
-  <div class="gate-inner">
-    <p class="gate-proof">Free, forever. No cost, no catch.</p>
-    <h2 class="gate-title" id="gate-title"><!-- copy:guide_template.mid_capture_h2 -->Want the rest of these as they land?<!-- /copy:guide_template.mid_capture_h2 --></h2>
-    <p class="gate-sub"><!-- copy:guide_template.mid_capture_body -->This guide stays open. Add your email and you also get every new guide plus the weekly Insider Brief. Unsubscribe anytime.<!-- /copy:guide_template.mid_capture_body --></p>
-    <form class="gate-form capture-form" action="https://auto.shiftandlead.com/webhook/formspree-lead" method="POST" data-source="guide">
-      <label class="visually-hidden" for="gate-email">Email address</label>
-      <input id="gate-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
-      <input type="hidden" name="source" value="guide">
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-      <button type="submit"><!-- copy:guide_template.mid_capture_cta -->Email me the guides<!-- /copy:guide_template.mid_capture_cta --></button>
-    </form>
-    <p class="gate-fineprint"><!-- copy:guide_template.mid_capture_note -->Already on the list? Just keep reading.<!-- /copy:guide_template.mid_capture_note --></p>
-  </div>
-</aside>
-<!-- /partial:gate -->
+  <footer class="g-guide-foot">
+    <!-- TODO: author confirm — THE PROOF intentionally omitted because this source contains no proof section to migrate. -->
 
-  <div class="prose">
-    <h2>Read that sentence one more time</h2>
+    <section>
+      <p class="g-eyebrow">READ THIS FIRST</p>
+      <div class="g-tip g-warn">
+        <!-- TODO: author confirm -->
+        <strong>Terminology shifts over time.</strong>
+        <p><!-- TODO: author confirm -->Names, capabilities and common usage can change as the tools develop.</p>
+      </div>
+    </section>
 
-    <p>"We're running a RAG pipeline with a fine-tuned model, but the context window is limiting the agent, so we're looking at MCP to cut the token spend."</p>
+    <section>
+      <p class="g-eyebrow">THE LINKS</p>
+      <h2>Keep going</h2>
+      <ul class="g-links">
+        <li>
+          <a href="/guides/what-is-ai.html">
+            <span class="g-link-label">The basics</span>
+            <span class="g-link-title">ChatGPT and AI aren't the same thing</span>
+            <span class="g-link-desc">Six words used as if they mean one thing.</span>
+          </a>
+        </li>
+        <li>
+          <a href="/guides/what-is-ai.html">
+            <span class="g-link-label">The basics</span>
+            <span class="g-link-title">What AI actually is</span>
+            <span class="g-link-desc">Pattern-matching at enormous scale.</span>
+          </a>
+        </li>
+        <li>
+          <a href="/guides/what-is-a-prompt.html">
+            <span class="g-link-label">The basics</span>
+            <span class="g-link-title">What a prompt actually is</span>
+            <span class="g-link-desc">A prompt is a brief. Write it like one.</span>
+          </a>
+        </li>
+      </ul>
+    </section>
 
-    <p>In plain English: we built something that looks up our own documents before answering, we paid to train it on our data, it cannot hold enough in mind to do the multi-step job properly, and we're hoping a standard connector will bring the bill down.</p>
-
-    <p>That version invites the useful questions. Why did you fine-tune before trying a better brief? Which multi-step job, specifically? What is the bill? None of those questions are available while the jargon is doing its work.</p>
-
-    <h2>What you walk away with</h2>
-
-    <p>Not the ability to use these words. The ability to hear through them. Jargon in this field isn't usually there to deceive you, it's there because the person speaking is repeating what they heard. But it does the same job as deception, because it stops you asking.</p>
-
-    <p>You don't need to be technical to make good decisions here. You need to be the person who says "in plain English, what does this do, what does it cost, and what happens when it's wrong?" That question works whether you understand the answer or not, and it's the only one that matters.</p>
-
-  </div>
-
-  <section class="related">
-    <h2>Keep going</h2>
-    <div class="card-grid">
-      <a class="card" href="/guides/what-is-ai.html">
-        <img src="/assets/covers/chatgpt-vs-ai.svg" alt="Cover art for the guide: ChatGPT and AI are not the same thing" width="1280" height="720" loading="lazy" decoding="async">
-        <div class="card-body">
-          <p class="card-kicker mono">The basics</p>
-          <h3>ChatGPT and AI aren't the same thing</h3>
-          <p class="card-desc">Six words used as if they mean one thing.</p>
-        </div>
-      </a>
-      <a class="card" href="/guides/what-is-ai.html">
-        <img src="/assets/covers/what-is-ai.svg" alt="Cover art for the guide: What AI actually is" width="1280" height="720" loading="lazy" decoding="async">
-        <div class="card-body">
-          <p class="card-kicker mono">The basics</p>
-          <h3>What AI actually is</h3>
-          <p class="card-desc">Pattern-matching at enormous scale.</p>
-        </div>
-      </a>
-      <a class="card" href="/guides/what-is-a-prompt.html">
-        <img src="/assets/covers/what-is-a-prompt.svg" alt="Cover art for the guide: What a prompt actually is" width="1280" height="720" loading="lazy" decoding="async">
-        <div class="card-body">
-          <p class="card-kicker mono">The basics</p>
-          <h3>What a prompt actually is</h3>
-          <p class="card-desc">A prompt is a brief. Write it like one.</p>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- partial:upsell -->
-<section class="upsell">
-  <div class="upsell-inner">
-    <p class="eyebrow mono">When free isn't enough</p>
-    <h2><!-- copy:guide_template.build_cta_h2 -->Want this built with you, not just explained?<!-- /copy:guide_template.build_cta_h2 --></h2>
-    <p><!-- copy:guide_template.build_cta_body -->I'll build your first AI employee with you in a week, using the same systems as the case studies. You keep it, and you can change it.<!-- /copy:guide_template.build_cta_body --></p>
-    <a class="btn-primary" href="https://www.shiftandlead.com/build-sprint.html?utm_source=guides&amp;utm_medium=guide&amp;utm_campaign=upsell"><!-- copy:guide_template.build_cta -->See how it works<!-- /copy:guide_template.build_cta --></a>
-  </div>
-</section>
-<!-- /partial:upsell -->
-
-</article>
-
-<!-- partial:newsletter -->
-<section class="newsletter" aria-labelledby="nl-title">
-  <div class="nl-grid">
-    <div class="nl-copy">
-      <p class="eyebrow mono">The Insider Brief</p>
-      <h2 id="nl-title"><!-- copy:guide_template.brief_cta_h2 -->One clear verdict on the AI news that matters.<!-- /copy:guide_template.brief_cta_h2 --></h2>
-      <p><!-- copy:guide_template.brief_cta_body -->Every Tuesday, free. The week's AI news, filtered, with a plain verdict on each story.<!-- /copy:guide_template.brief_cta_body --></p>
-      <form class="capture-form" action="https://auto.shiftandlead.com/webhook/formspree-lead" method="POST" data-source="newsletter">
-        <label class="visually-hidden" for="nl-email">Email address</label>
-        <input id="nl-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
-        <input type="hidden" name="source" value="newsletter">
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-        <button type="submit"><!-- copy:guide_template.brief_cta -->Subscribe free<!-- /copy:guide_template.brief_cta --></button>
-      </form>
-      <p class="capture-fineprint">No cost, no catch. Unsubscribe anytime.</p>
-    </div>
-    <div class="nl-art">
-      <img src="/assets/art/insider-brief.svg" alt="A weekly briefing card showing three headlines each marked with a plain verdict." loading="lazy" decoding="async" width="480" height="360">
-    </div>
-  </div>
-</section>
-<!-- /partial:newsletter -->
-
-<!-- partial:byline -->
-<div class="byline">
-  <div class="byline-in">
-    <img src="/closeUp.jpeg" alt="Fatiha Chikh" loading="lazy" decoding="async" width="62" height="62">
-    <p>Written by <strong>Fatiha Chikh</strong>. Years inside big corporate tech, now hiring 99 AI employees to run her business in public. <a href="/about.html">Read the story</a></p>
-  </div>
-</div>
-<!-- /partial:byline -->
+    <section class="g-next">
+      <p class="g-closing">Want this built with you, not just explained?</p>
+      <a class="g-next-link" href="https://www.shiftandlead.com/build-sprint.html?utm_source=guides&amp;utm_medium=guide&amp;utm_campaign=upsell">See how it works</a>
+    </section>
+  </footer>
+</main>
 
 <!-- chrome:footer -->
 <footer class="chrome-foot">
