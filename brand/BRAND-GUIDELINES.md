@@ -6,9 +6,34 @@ Voice and positioning live in `positioning/SKILL.md` and `queen-brain/voice.md`.
 
 ## Current premium direction
 
-Shift & Lead should feel editorial, sharp, premium, practical and confident. The premium look is **pure white, ink, electric blue, deep blue, crisp rules, strong typography and controlled high-contrast accents**.
+Shift & Lead should feel editorial, sharp, premium, practical and confident. The premium look is **pure white, ink, electric blue, deep blue, crisp rules, strong accessible typography and controlled high-contrast accents**.
 
 Do not revive the older warm background direction for new premium assets. No beige, cream or off-white canvas in the premium deck system.
+
+## Agency accessibility standard
+
+Accessibility is not an afterthought. It is part of the premium feeling.
+
+For presentation decks and designer handoffs:
+
+| Role | Minimum | Preferred | Notes |
+|---|---:|---:|---|
+| Hero / keynote headline | 52 pt | 58–72 pt | Use Playfair Display Regular/Medium. Avoid heavy 700/800 for long headlines. |
+| Slide title | 40 pt | 42–54 pt | Use display regular/medium or Inter SemiBold when clarity matters more than editorial character. |
+| Body copy | **20 pt** | 20–24 pt | Inter Regular/Medium is the default for decks. Source Serif 4 is for longer reading. |
+| Eyebrow / kicker / section label | **16 pt** | 16–18 pt | Space Mono or Inter, short and structural. Never decorative microtype. |
+| Diagram / chart label | **16 pt** | 16–18 pt | Direct labels. Avoid tiny legends. |
+| Footer / source | **14 pt** | 14–16 pt | Non-essential information only. Never carry a key message in the footer. |
+
+Rules:
+
+- No visible informational text below 14 pt in presentation or template work.
+- No 10 pt or 12 pt eyebrows, legends, diagram labels or footer systems for premium collateral.
+- Never use automatic text shrink / AutoFit to force copy into a box. Re-edit the copy or change the layout.
+- Avoid all-caps for long labels. Short eyebrows may be uppercase, but tracking must stay restrained.
+- For low-vision readers, prefer Inter for body, labels, tables and diagrams. Keep Playfair Display for large display moments only.
+- Normal text contrast must meet at least 4.5:1; large text at least 3:1.
+- Accessibility is judged at realistic viewing distance, not only at 100% zoom on the designer’s screen.
 
 ## Core colors
 
@@ -40,20 +65,22 @@ These colors are approved as a controlled extension palette. They do not replace
 ### How to use contrast colors
 
 - Core system: White, Ink, Electric Blue and Deep Blue must still carry most collateral.
-- Contrast accents should normally stay below 10–20% of the design.
+- Contrast accents normally stay below 10–20% of the design.
 - Acid Lime is a signal color, not a replacement brand blue.
-- Velvet Purple can support speaker-kit and stage assets, but it should not replace Ink or Deep Blue everywhere.
+- Velvet Purple supports speaker-kit and stage assets, but it does not replace Ink or Deep Blue everywhere.
 - Do not use all accent colors together. Pick one primary accent and one support accent per asset.
 
-## Color hierarchy
+## Approved pairing matrix
 
-- White is the dominant canvas.
-- Ink carries authority and readability.
-- Electric Blue is the signature action color.
-- Deep Blue creates premium section contrast.
-- Pale Blue is a functional support color, not a decorative wash.
-- Accent colors add meaning only when they clarify the asset.
-- Do not use black text on saturated Electric Blue. Use white text on Electric Blue or Deep Blue.
+| Surface | Text | Accent | Use |
+|---|---|---|---|
+| Paper `#FFFFFF` | Ink `#1A1A1A` | Electric Blue `#2C4BE0` | Default deck, guide, worksheet and social surface |
+| Deep Blue `#1B2EA0` | Paper `#FFFFFF` | Electric Blue `#2C4BE0` | Section dividers, closing slides, premium contrast panels |
+| Velvet Purple `#241558` | Paper `#FFFFFF` | Acid Lime `#CAFF00` | Speaker-kit capsule, stage visuals, keynote collateral |
+| Pale Blue `#E4EAFB` | Ink `#1A1A1A` | Electric Blue `#2C4BE0` | Support panels, diagrams, instructional examples |
+| Paper `#FFFFFF` | Ink `#1A1A1A` | Amber `#F2A900` or Coral `#FF6B4A` | Human review, caution, exceptions and campaign emphasis |
+
+Never use Ink text on Electric Blue or Deep Blue. Use Paper text on saturated blue surfaces.
 
 ## Speaker-kit capsule
 
@@ -73,31 +100,6 @@ Do not transfer:
 - Decorative crosshairs, labels or overlays that collide with headlines.
 - A separate speaker identity that competes with Shift & Lead.
 
-## Accessibility and reading standard
-
-Accessibility is part of the premium system, not a compliance layer added afterwards.
-
-For presentation decks and designer handoffs:
-
-| Role | Minimum | Preferred | Notes |
-|---|---:|---:|---|
-| Hero / keynote headline | 48 pt | 56–72 pt | Use Playfair Display Regular or Medium; avoid heavy 700/800 for long headlines |
-| Slide title | 34 pt | 38–48 pt | Playfair Display Regular/Medium or Inter SemiBold when clarity is more important than editorial character |
-| Body copy | **18 pt** | 20–24 pt | Inter Regular/Medium; Source Serif 4 only for longer reading blocks |
-| Eyebrow / kicker / section label | **14 pt** | 14–16 pt | Space Mono Regular or Inter SemiBold; short, tracked lightly, never decorative microtype |
-| Diagram / chart label | **14 pt** | 16–18 pt | Direct labels; avoid tiny legends |
-| Footer / source | **12 pt** | 12–14 pt | Non-essential information only; never use the footer to carry a key message |
-
-Rules:
-
-- Do not use visible informational text below 12 pt in a deck.
-- Do not use 10 pt eyebrows, footers, legends or diagram labels in premium presentation work.
-- Do not use automatic text shrink / AutoFit to force copy into a box. Re-edit or re-layout instead.
-- Avoid all-caps for long labels. Short eyebrows may be uppercase, but keep tracking restrained.
-- For low-vision readers, prefer Inter for body, labels, tables and diagrams. Keep Playfair Display for large display moments only.
-- Normal text contrast must meet at least 4.5:1; large text at least 3:1.
-- Accessibility is judged at realistic viewing distance, not only at 100% zoom on the designer’s screen.
-
 ## Typography
 
 | Role | Face | Weight guidance | Notes |
@@ -105,7 +107,7 @@ Rules:
 | Signature display | Playfair Display | Regular / Medium; Bold only for the wordmark or very short statements | Large headlines and editorial moments |
 | Long-form body | Source Serif 4 | Regular / Medium | Guides, worksheets and narrative reading |
 | Screen / presentation body | Inter | Regular / Medium / SemiBold | Default for deck body, tables, charts, captions, UI and utility copy |
-| Labels / kickers / eyebrows | Space Mono or Inter | Regular / Medium / SemiBold | Use at 14 pt+ in decks; short, structural and readable |
+| Labels / kickers / eyebrows | Space Mono or Inter | Regular / Medium / SemiBold | Use at 16 pt+ in decks; short, structural and readable |
 
 ### Anti-blur typography rule
 
@@ -118,7 +120,7 @@ Rules:
 ## Text placement rules
 
 - Eyebrows/kickers must sit on their own line and never overlap or touch the headline.
-- Keep at least 24–32 px / 18–24 pt visual separation between eyebrow and headline in deck or social formats.
+- Keep at least 32 px / 24 pt visual separation between eyebrow and headline in deck or social formats.
 - Avoid placing a section label inside the same text box as a headline.
 - Avoid stacked labels around logo, title and footer areas.
 - If a label becomes decorative rather than readable, remove it.
@@ -195,9 +197,9 @@ Use strict grids, direct labels, simple arrows and a maximum of 5-6 primary node
 
 For decks, flyers, carousels and worksheets:
 
-- Deck body: 18 pt minimum.
-- Deck eyebrows/labels/diagram text: 14 pt minimum.
-- Deck footer/source: 12 pt minimum and non-essential only.
+- Deck body: 20 pt minimum.
+- Deck eyebrows/labels/diagram text: 16 pt minimum.
+- Deck footer/source: 14 pt minimum and non-essential only.
 - Never use AutoFit/shrink-to-fit to solve layout problems.
 - Use white or dark backgrounds as the primary families.
 - Keep one clear message per slide/post/flyer whenever possible.
