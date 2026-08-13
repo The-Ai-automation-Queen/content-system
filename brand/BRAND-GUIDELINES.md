@@ -8,7 +8,7 @@ Voice and positioning live in `positioning/SKILL.md` and `queen-brain/voice.md`.
 
 Shift & Lead should feel editorial, sharp, premium, practical and confident. The current premium look is **pure white, ink, electric blue, deep blue, crisp rules and strong typography**.
 
-Do not revive the older warm beige / cream / off-white collateral direction for new premium assets.
+Do not revive the older warm background direction for new premium assets.
 
 ## Colors
 
@@ -77,7 +77,7 @@ Rules:
 
 ## Premium layout principles
 
-- Use white space, not tinted backgrounds, as the main premium device.
+- Use white space as the main premium device.
 - Use strong typographic contrast: large Playfair statements, restrained body copy, crisp mono labels.
 - Use blue as an intentional signal, not as decoration everywhere.
 - Use thin rules and exact alignment to create structure.
