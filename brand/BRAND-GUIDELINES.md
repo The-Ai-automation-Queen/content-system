@@ -41,7 +41,7 @@ These colors are approved as a controlled extension palette. They do not replace
 
 - Core system: White, Ink, Electric Blue and Deep Blue must still carry most collateral.
 - Contrast accents should normally stay below 10–20% of the design.
-- Acid Lime can come from the speaker-kit direction, but it is a **signal color**, not a new brand blue.
+- Acid Lime is a signal color, not a replacement brand blue.
 - Velvet Purple can support speaker-kit and stage assets, but it should not replace Ink or Deep Blue everywhere.
 - Do not use all accent colors together. Pick one primary accent and one support accent per asset.
 
@@ -69,28 +69,60 @@ Approved transfer from the speaker-kit direction:
 Do not transfer:
 
 - Warm parchment / beige / off-white backgrounds into the premium deck system.
-- Microtype below 10 px.
+- Microtype that sacrifices readability.
 - Decorative crosshairs, labels or overlays that collide with headlines.
 - A separate speaker identity that competes with Shift & Lead.
 
+## Accessibility and reading standard
+
+Accessibility is part of the premium system, not a compliance layer added afterwards.
+
+For presentation decks and designer handoffs:
+
+| Role | Minimum | Preferred | Notes |
+|---|---:|---:|---|
+| Hero / keynote headline | 48 pt | 56–72 pt | Use Playfair Display Regular or Medium; avoid heavy 700/800 for long headlines |
+| Slide title | 34 pt | 38–48 pt | Playfair Display Regular/Medium or Inter SemiBold when clarity is more important than editorial character |
+| Body copy | **18 pt** | 20–24 pt | Inter Regular/Medium; Source Serif 4 only for longer reading blocks |
+| Eyebrow / kicker / section label | **14 pt** | 14–16 pt | Space Mono Regular or Inter SemiBold; short, tracked lightly, never decorative microtype |
+| Diagram / chart label | **14 pt** | 16–18 pt | Direct labels; avoid tiny legends |
+| Footer / source | **12 pt** | 12–14 pt | Non-essential information only; never use the footer to carry a key message |
+
+Rules:
+
+- Do not use visible informational text below 12 pt in a deck.
+- Do not use 10 pt eyebrows, footers, legends or diagram labels in premium presentation work.
+- Do not use automatic text shrink / AutoFit to force copy into a box. Re-edit or re-layout instead.
+- Avoid all-caps for long labels. Short eyebrows may be uppercase, but keep tracking restrained.
+- For low-vision readers, prefer Inter for body, labels, tables and diagrams. Keep Playfair Display for large display moments only.
+- Normal text contrast must meet at least 4.5:1; large text at least 3:1.
+- Accessibility is judged at realistic viewing distance, not only at 100% zoom on the designer’s screen.
+
 ## Typography
 
-| Role | Face | Minimum size | Notes |
-|---|---|---:|---|
-| Display / headlines | Playfair Display | 28 px / 24 pt | Main titles, statements, section dividers, wordmark face |
-| Body | Source Serif 4 | 17 px / 16 pt | Long-form reading, guide copy, worksheet explanations |
-| UI / chrome | Inter | 12 px / 11 pt | Nav, buttons, captions, forms, tables, slide body and utility copy |
-| Labels / kickers / eyebrows | Space Mono or system mono | **10 px minimum** | Uppercase, tracked, used sparingly for structure and navigation |
+| Role | Face | Weight guidance | Notes |
+|---|---|---|---|
+| Signature display | Playfair Display | Regular / Medium; Bold only for the wordmark or very short statements | Large headlines and editorial moments |
+| Long-form body | Source Serif 4 | Regular / Medium | Guides, worksheets and narrative reading |
+| Screen / presentation body | Inter | Regular / Medium / SemiBold | Default for deck body, tables, charts, captions, UI and utility copy |
+| Labels / kickers / eyebrows | Space Mono or Inter | Regular / Medium / SemiBold | Use at 14 pt+ in decks; short, structural and readable |
 
-No public brand asset should use visible text below 10 px. Eyebrows, footers, diagram labels and microcopy must remain readable.
+### Anti-blur typography rule
+
+- Do not fake bold or rely on synthetic browser weights.
+- Do not use Playfair Display Bold as the default deck headline style.
+- Use scale, spacing, color and contrast before adding weight.
+- Avoid placing heavily bolded high-contrast serif text at small or medium sizes where screen anti-aliasing softens the edges.
+- PPTX files reference fonts but do not guarantee font embedding; final PDFs must be exported with fonts embedded and checked visually.
 
 ## Text placement rules
 
 - Eyebrows/kickers must sit on their own line and never overlap or touch the headline.
-- Keep at least 18–24 px visual separation between eyebrow and headline in deck or social formats.
+- Keep at least 24–32 px / 18–24 pt visual separation between eyebrow and headline in deck or social formats.
 - Avoid placing a section label inside the same text box as a headline.
-- Avoid stacked micro-labels around logo, title and footer areas.
+- Avoid stacked labels around logo, title and footer areas.
 - If a label becomes decorative rather than readable, remove it.
+- Headlines must never collide with swatches, photography, charts or supporting panels. Reflow the slide instead of shrinking the type.
 
 ## The wordmark
 
@@ -126,10 +158,11 @@ Rules:
 ## Premium layout principles
 
 - Use white space as the main premium device.
-- Use strong typographic contrast: large Playfair statements, restrained body copy, crisp mono labels.
+- Use strong typographic contrast without relying on heavy bold everywhere.
 - Use blue as an intentional signal, not as decoration everywhere.
 - Use thin rules and exact alignment to create structure.
 - Use one high-contrast accent only when it adds meaning.
+- Prefer fewer, larger elements over more, smaller elements.
 - Avoid generic SaaS card grids, rainbow palettes, cyberpunk AI visuals and decorative stock illustrations.
 
 ## Imagery
@@ -162,8 +195,10 @@ Use strict grids, direct labels, simple arrows and a maximum of 5-6 primary node
 
 For decks, flyers, carousels and worksheets:
 
-- Minimum visible type size: 10 px.
-- Eyebrows and labels must be readable, not decorative microtype.
+- Deck body: 18 pt minimum.
+- Deck eyebrows/labels/diagram text: 14 pt minimum.
+- Deck footer/source: 12 pt minimum and non-essential only.
+- Never use AutoFit/shrink-to-fit to solve layout problems.
 - Use white or dark backgrounds as the primary families.
 - Keep one clear message per slide/post/flyer whenever possible.
 - One CTA per asset.
