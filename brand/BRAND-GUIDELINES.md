@@ -1,16 +1,16 @@
 # Shift & Lead — premium visual identity
 
-The visual canon for every Shift & Lead property and every external brand handoff: `www.shiftandlead.com`, guides, lead magnets, workshops, decks, flyers, social templates and partner-facing collateral.
+The visual canon for every Shift & Lead property and every external brand handoff: `www.shiftandlead.com`, guides, lead magnets, workshops, decks, flyers, social templates, speaker kits and partner-facing collateral.
 
 Voice and positioning live in `positioning/SKILL.md` and `queen-brain/voice.md`. This file covers the visual identity. If a page, deck, flyer or template drifts from this, the asset is wrong.
 
 ## Current premium direction
 
-Shift & Lead should feel editorial, sharp, premium, practical and confident. The current premium look is **pure white, ink, electric blue, deep blue, crisp rules and strong typography**.
+Shift & Lead should feel editorial, sharp, premium, practical and confident. The premium look is **pure white, ink, electric blue, deep blue, crisp rules, strong typography and controlled high-contrast accents**.
 
-Do not revive the older warm background direction for new premium assets.
+Do not revive the older warm background direction for new premium assets. No beige, cream or off-white canvas in the premium deck system.
 
-## Colors
+## Core colors
 
 | Token | Hex | Use |
 |---|---|---|
@@ -24,14 +24,54 @@ Do not revive the older warm background direction for new premium assets.
 | Cool Panel | `#F5F7FA` | Neutral utility panel when white-on-white needs structure; never as a dominant brand background |
 | Signal Red | `#E63955` | Reserved for critical warning/breaking/error signals only. Never decorative. |
 
-### Color hierarchy
+## Contrast accent palette
+
+These colors are approved as a controlled extension palette. They do not replace Electric Blue. They exist to add meaning, energy and color-wheel contrast when the asset needs more range.
+
+| Token | Hex | Color logic | Use |
+|---|---|---|---|
+| Velvet Purple | `#241558` | Dark violet neighbour of brand blue | Speaker-kit dark surfaces, premium keynotes, authority sections |
+| Acid Lime | `#CAFF00` | High-contrast yellow-green opposite the blue/violet family | Speaker CTA signal, proof sparks, stage-kit accent, never long text on white |
+| Amber | `#F2A900` | Warm complement to Electric Blue | Human review, decision moments, caution without alarm |
+| Teal | `#00A9B7` | Cool neighbour for systems and data | Inputs, data flow, dashboards, diagrams |
+| Violet | `#7C3AED` | Blue-violet extension | Strategy, context, thinking layers, AI capability maps |
+| Coral | `#FF6B4A` | Warm contrast accent | Marketing emphasis, exceptions, campaign energy; not body text on white |
+
+### How to use contrast colors
+
+- Core system: White, Ink, Electric Blue and Deep Blue must still carry most collateral.
+- Contrast accents should normally stay below 10–20% of the design.
+- Acid Lime can come from the speaker-kit direction, but it is a **signal color**, not a new brand blue.
+- Velvet Purple can support speaker-kit and stage assets, but it should not replace Ink or Deep Blue everywhere.
+- Do not use all accent colors together. Pick one primary accent and one support accent per asset.
+
+## Color hierarchy
 
 - White is the dominant canvas.
 - Ink carries authority and readability.
 - Electric Blue is the signature action color.
 - Deep Blue creates premium section contrast.
 - Pale Blue is a functional support color, not a decorative wash.
+- Accent colors add meaning only when they clarify the asset.
 - Do not use black text on saturated Electric Blue. Use white text on Electric Blue or Deep Blue.
+
+## Speaker-kit capsule
+
+The bureau-grade speaker-kit direction can fit inside Shift & Lead as a capsule system for keynotes, speaking pages, stage visuals and booking collateral.
+
+Approved transfer from the speaker-kit direction:
+
+- Velvet Purple `#241558` for dramatic dark speaker surfaces.
+- Acid Lime `#CAFF00` for high-impact speaker CTAs, live-room signals and proof highlights.
+- Large, architectural typography and strong asymmetric spacing.
+- Editorial photo treatment with dark overlays and precise rules.
+
+Do not transfer:
+
+- Warm parchment / beige / off-white backgrounds into the premium deck system.
+- Microtype below 10 px.
+- Decorative crosshairs, labels or overlays that collide with headlines.
+- A separate speaker identity that competes with Shift & Lead.
 
 ## Typography
 
@@ -43,6 +83,14 @@ Do not revive the older warm background direction for new premium assets.
 | Labels / kickers / eyebrows | Space Mono or system mono | **10 px minimum** | Uppercase, tracked, used sparingly for structure and navigation |
 
 No public brand asset should use visible text below 10 px. Eyebrows, footers, diagram labels and microcopy must remain readable.
+
+## Text placement rules
+
+- Eyebrows/kickers must sit on their own line and never overlap or touch the headline.
+- Keep at least 18–24 px visual separation between eyebrow and headline in deck or social formats.
+- Avoid placing a section label inside the same text box as a headline.
+- Avoid stacked micro-labels around logo, title and footer areas.
+- If a label becomes decorative rather than readable, remove it.
 
 ## The wordmark
 
@@ -81,13 +129,14 @@ Rules:
 - Use strong typographic contrast: large Playfair statements, restrained body copy, crisp mono labels.
 - Use blue as an intentional signal, not as decoration everywhere.
 - Use thin rules and exact alignment to create structure.
+- Use one high-contrast accent only when it adds meaning.
 - Avoid generic SaaS card grids, rainbow palettes, cyberpunk AI visuals and decorative stock illustrations.
 
 ## Imagery
 
 Photography should feel editorial and real: founder portraits, speaking, teaching, working sessions, workshops and behind-the-scenes build moments.
 
-For premium promotional collateral, desaturated or black-and-white photography may be paired with Ink / Deep Blue overlays and Electric Blue accents.
+For premium promotional collateral, desaturated or black-and-white photography may be paired with Ink, Deep Blue or Velvet Purple overlays and Electric Blue or Acid Lime accents.
 
 Avoid generic glowing robots, neon brains, fake holograms and stock “AI future” imagery.
 
