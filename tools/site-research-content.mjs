@@ -12,7 +12,7 @@ function write(rel, content) { fs.writeFileSync(file(rel), content); }
 
 const guideRel = 'guides/research-to-content-workflow.html';
 const resourceRel = 'resources/research-to-content-workflow.html';
-const coverRel = 'assets/covers/research-to-content-workflow.svg';
+const coverRel = 'images/guides/research-to-content-workflow.png';
 for (const rel of [guideRel, resourceRel, coverRel]) {
   if (!fs.existsSync(file(rel))) throw new Error(`Research content build is missing ${rel}`);
 }
@@ -31,7 +31,7 @@ for (const rel of [guideRel, resourceRel, coverRel]) {
   html = html.replace(/20 free guides/g, '21 free guides');
 
   if (!html.includes('href="research-to-content-workflow.html"')) {
-    const card = `      <a class="card" href="research-to-content-workflow.html">\n        <img src="/assets/covers/research-to-content-workflow.svg" alt="Cover art for the guide: Turn saved research into content you can actually publish" width="411" height="231" loading="lazy" decoding="async">\n        <div class="card-body">\n          <p class="card-kicker mono">FREE GUIDE</p>\n          <h3>Turn saved research into content you can actually publish</h3>\n          <p class="card-desc">Updated <time datetime="2026-08-11">11 Aug 2026</time> &middot; 7 min read</p>\n        </div>\n      </a>\n`;
+    const card = `      <a class="card" href="research-to-content-workflow.html">\n        <img src="/images/guides/research-to-content-workflow.png" alt="Cover art for the guide: Turn saved research into content you can actually publish" width="411" height="231" loading="lazy" decoding="async">\n        <div class="card-body">\n          <p class="card-kicker mono">FREE GUIDE</p>\n          <h3>Turn saved research into content you can actually publish</h3>\n          <p class="card-desc">Updated <time datetime="2026-08-11">11 Aug 2026</time> &middot; 7 min read</p>\n        </div>\n      </a>\n`;
 
     const anchor = '    </div>\n  </section>\n  <p class="lib-more"><a href="which-ai-tool-for-what.html">';
     if (!html.includes(anchor)) throw new Error('Could not find the Put it to work library insertion point');
@@ -67,6 +67,7 @@ for (const rel of [guideRel, resourceRel, coverRel]) {
     'Turn saved research into content you can actually publish',
     'data-resource-path="/resources/research-to-content-workflow.html"',
     '/assets/guide-lead-magnets.js',
+    '/images/guides/research-to-content-workflow.png',
     'AI can organise your notes. You provide the judgement.'
   ];
   for (const token of required) {
