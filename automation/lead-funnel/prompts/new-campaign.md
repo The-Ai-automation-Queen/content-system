@@ -1,9 +1,34 @@
-# New Lead Magnet / Campaign Agent
+# New Lead Magnet / Campaign Planning Agent
 
-Input: topic, audience, desired outcome, primary offer, optional DM keyword, optional publish date.
+Input: topic, audience, desired outcome, primary offer, optional DM keyword, optional publish date, and explicit build approval.
 
-Do not rebuild infrastructure. Inspect registry first for duplicate topic/ID/slug/keyword/campaign. Define or reuse leadMagnetId, title, slug, guide URL, unique keyword, campaign ID, primary interest, nurture track and GHL tag.
+This stage prepares repository/content state only. The orchestrator owns GHL verification, Blotato configuration, release, QA and activation in later gated stages.
 
-Create/update the guide using existing site design; add the registry record; create the social/email campaign package; verify the reusable capture recognizes the record; verify GHL master workflows can route/deliver it; prepare the Blotato keyword automation inactive; run preview QA; deploy; run production QA; activate the approved DM automation; run full E2E.
+Do not configure external SaaS, deploy, merge, publish or activate messaging in this stage.
 
-At every stage reuse existing objects and stop on failed gates. Do not activate social/DM sends before QA.
+Before work:
+- inspect the canonical registry;
+- check for duplicate topic, ID, slug, keyword and campaign ID;
+- preserve existing campaign identifiers when updating.
+
+Define/reuse:
+- leadMagnetId;
+- title;
+- slug/guide URL;
+- unique DM keyword;
+- campaign ID;
+- primary interest;
+- nurture track;
+- GHL tag;
+- guideStatus;
+- captureEnabled;
+- dmAutomationEnabled;
+- campaignStatus.
+
+Do not set `campaignStatus=approved` or `dmAutomationEnabled=true` unless the input explicitly authorizes that DM campaign.
+
+Create/update the guide/content assets using the existing site design and current editorial/build rules. Keep the guide public. The v2 email offer is `Get this guide in your inbox`; do not use the retired guide capture endpoint.
+
+Create the social/email campaign package but do not publish it.
+
+Do not push or merge. Return changed paths and the campaign record in `handoff`.
