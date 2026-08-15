@@ -5,5 +5,8 @@
   "productionBranch": "main",
   "vercelProject": "content-system-oqbp",
   "testEmailEnv": "FUNNEL_TEST_EMAIL",
-  "activationPolicy": "qa-gated"
+  "captureVersion": "guide-v2",
+  "legacyGuideCaptureEndpoint": "https://auto.shiftandlead.com/webhook/formspree-lead",
+  "reuseLegacyGuideCapture": false,
+  "activationPolicy": "qa-gated-human-merge"
 }
