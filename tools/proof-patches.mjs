@@ -313,7 +313,7 @@ const guidesDir = path.join(ROOT, 'main-site', 'guides');
 if (fs.existsSync(guidesDir)) {
   for (const name of fs.readdirSync(guidesDir)) {
     if (!name.endsWith('.html') || name === 'index.html') continue;
-    patchFile(path.join('main-site', 'guides', name), (html) => ensureBrandConsistency(html, 'guide'));
+    patchFile(path.join('main-site', 'guides', name), (html) => html.includes('/_next/static/') ? html : ensureBrandConsistency(html, 'guide'));
   }
 }
 
