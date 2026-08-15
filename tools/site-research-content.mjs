@@ -22,6 +22,12 @@ for (const rel of [guideRel, resourceRel, coverRel]) {
   const rel = 'guides/index.html';
   let html = read(rel);
   const before = html;
+
+  if (html.includes('/_next/static/')) {
+    if (!html.includes('/guides/research-to-content-workflow.html')) {
+      throw new Error('React guide library is missing the research-to-content workflow guide');
+    }
+  } else {
   html = html.replace(/20 free guides/g, '21 free guides');
 
   if (!html.includes('href="research-to-content-workflow.html"')) {
@@ -35,6 +41,7 @@ for (const rel of [guideRel, resourceRel, coverRel]) {
   if (html !== before) {
     write(rel, html);
     console.log('research-content guides/index.html');
+  }
   }
 }
 
