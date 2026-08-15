@@ -2,9 +2,9 @@
 
 This folder manages the v2 content-to-lead system:
 
-`Instagram -> Blotato -> tracked public guide -> email-only inline capture -> GoHighLevel -> guide delivery -> nurture -> conversion/exit`
+`Instagram -> Blotato -> tracked public guide -> inline email capture -> GoHighLevel -> guide/companion delivery -> nurture -> conversion/exit`
 
-The guide stays public. The new capture is `Get this guide in your inbox`, not a content gate.
+The guide stays public. For guides without a stronger companion asset, the default offer is `Get this guide in your inbox`.
 
 ## Important migration rule
 
@@ -12,14 +12,34 @@ The previous guide capture that posts to:
 
 `https://auto.shiftandlead.com/webhook/formspree-lead`
 
-and the existing `main-site/assets/guide-lead-magnets.js` integration are **legacy for this project**. They may remain in the repository for old pages, but the new guide funnel must not reuse that endpoint or depend on the old capture behavior.
+and the old `main-site/assets/guide-lead-magnets.js` submission behavior are **legacy for this project**. Existing useful companion assets may remain, but their old form mechanism must not be reused by the new guide funnel.
 
-The v2 funnel must integrate with GoHighLevel using one of these verified methods:
+The v2 funnel must integrate with GoHighLevel using one verified method:
 
-1. a native GHL form/embed only if it supports the required dynamic guide metadata, attribution and styling; or
+1. a native GHL form/embed only if it supports the required dynamic guide/offer metadata, attribution and styling; or
 2. a new secure server-side website/Vercel endpoint that talks to GHL without exposing credentials in browser code.
 
 The GHL browser audit decides which supported integration is used. Do not guess.
+
+## Existing companion assets are preserved
+
+This repository already has a separate companion-asset strategy in:
+
+`data/guide-lead-magnets.json`
+
+That remains the source of truth for companion-asset strategy. The new orchestrator does not replace it.
+
+The v2 routing source is:
+
+`automation/lead-funnel/config/guide-funnels.json`
+
+It decides what each guide captures and delivers. If a useful companion asset is already built, the v2 form should preserve that stronger offer and route delivery through GHL. If no companion exists, the form can simply send the public guide to the subscriber's inbox.
+
+Current built companion routes include:
+- First AI Employee -> `/resources/ai-assistant-builder.html`
+- Research to Content -> `/resources/research-to-content-workflow.html`
+
+The audit must verify these routes rather than trusting stale planning metadata.
 
 ## Runtime
 
@@ -68,7 +88,7 @@ python orchestrator.py repair --incident incidents/funnel-failure.md
 
 ### `audit`
 
-Read-only. Confirms the repository, GHL account/location, Blotato/Instagram account, current forms, legacy capture wiring, Vercel project and available browser capabilities.
+Read-only. Confirms the repository, GHL account/location, Blotato/Instagram account, current/legacy forms, existing companion assets, Vercel project and available browser capabilities.
 
 ### `bootstrap`
 
@@ -77,7 +97,7 @@ Builds/prepares the reusable v2 infrastructure and stops after a draft PR plus p
 Sequence:
 
 1. audit;
-2. registry validation;
+2. guide-funnel registry validation against guides + companion strategy + real resource routes;
 3. GHL v2 architecture and website integration contract;
 4. website capture + content assets;
 5. approved Blotato automations prepared inactive;
@@ -113,13 +133,15 @@ Creates one approved content/lead-magnet campaign using the existing infrastruct
 
 Finds the earliest failing point and makes the smallest responsible repair, followed by regression QA.
 
-## Canonical registry
+## Funnel registry
 
-`config/lead-magnets.json` separates four different concepts:
+`config/guide-funnels.json` separates:
 
-- `guideStatus`: whether the guide itself is public/live;
+- `guideStatus`: whether the guide is public/live;
 - `captureEnabled`: whether the new email capture should appear;
-- `dmAutomationEnabled`: whether Blotato DM automation may exist for that campaign;
+- `offerType`: `guide_email` or `companion_asset`;
+- `offerTitle` and `deliveryUrl`: what GHL actually sends;
+- `dmAutomationEnabled`: whether Blotato DM automation may exist;
 - `campaignStatus`: `planned`, `approved`, or `active`.
 
 A live guide does **not** automatically mean its Instagram DM automation is approved.
@@ -134,7 +156,7 @@ Blotato sends the production guide URL with:
 ?utm_source=instagram&utm_medium=dm&utm_campaign={campaignId}&utm_content={dmKeyword}
 ```
 
-The website submits the guide/campaign metadata and incoming attribution to GHL.
+The website submits guide/offer/campaign metadata and incoming attribution to GHL.
 
 Original attribution is write-once. Latest attribution updates on later requests.
 
@@ -146,12 +168,15 @@ GHL owns:
 - consent record;
 - first/latest lead magnet;
 - original/latest attribution;
-- guide delivery email;
+- offer/delivery URL;
+- delivery email;
 - nurture;
 - unsubscribe/DND;
 - conversion exits.
 
 The v2 workflows must be scoped to the v2 capture source/version so they cannot accidentally enroll contacts from unrelated legacy forms.
+
+If a server-side GHL credential is required, it must be provisioned directly into the Vercel/secret environment. It must never be returned in agent handoffs, logs or client code.
 
 ## Safety
 
