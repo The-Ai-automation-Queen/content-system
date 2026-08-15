@@ -126,6 +126,28 @@ Do not transfer:
 - If a label becomes decorative rather than readable, remove it.
 - Headlines must never collide with swatches, photography, charts or supporting panels. Reflow the slide instead of shrinking the type.
 
+### Readability floor — permanent rule
+
+Shift & Lead is designed to remain comfortably readable for an audience aged
+40 and above. Small uppercase type is an accent, not an excuse for tiny text.
+
+- Blue instructional labels such as **Best for**, **Careful with**, **What I
+  would do**, **In plain English**, and **Why it matters** must be at least
+  **14px** on desktop and mobile, with a line height of at least **1.35**.
+- Secondary kickers, eyebrows, metadata and card labels must be at least
+  **13px**. Never use 9px, 10px, 11px or 12px for meaningful information.
+- Body copy must be at least **17px**; long-form guide body copy should remain
+  **18–19px** with a line height between **1.6 and 1.75**.
+- Uppercase Space Mono text must use letter-spacing between **0.06em and
+  0.10em** at these sizes. Wider spacing may make short labels harder to scan.
+- Muted or coloured text must still pass WCAG AA contrast. Never compensate
+  for poor contrast with font weight alone.
+- These are minimums, not targets to shrink toward. When in doubt, make the
+  type larger and preserve whitespace around it.
+
+This rule overrides older components and examples that use smaller label text.
+All new pages and any page being revised must comply.
+
 ## The wordmark
 
 **Shift & Lead** set in Playfair Display 700, ink on light, white on dark. In page navs it renders as live text, not an image.
