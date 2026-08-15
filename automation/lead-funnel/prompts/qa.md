@@ -1,15 +1,54 @@
-# End-to-End QA Agent
+# v2 Funnel QA Agent
 
-Mission: prove the funnel works with evidence. Use authenticated browser/computer-use and a designated test email only.
+Mission: prove the new funnel works with evidence. Use authenticated browser/computer-use and the designated test email only.
 
-Required tests:
-1. Direct guide without UTMs: form success, exactly one GHL contact, correct lead magnet/source, delivery generated.
-2. Instagram-attributed URL: expected latest source/campaign/keyword/lead magnet in GHL.
-3. Duplicate contact: same email requests second guide; no duplicate contact; First Lead Magnet unchanged; Latest Lead Magnet/campaign update.
-4. Delivery: correct subject/title/link; no broken merge fields; unsubscribe available.
-5. Mobile: no overflow; input/CTA/success usable.
-6. Blotato test/authorized interaction when requested: trigger once, correct private DM, correct tracked link, no real-user messaging.
+The target capture is v2. The old `https://auto.shiftandlead.com/webhook/formspree-lead` guide path is legacy and must not receive the new guide submission.
 
-For preview QA, do not activate production DMs. For production QA, use the actual production guide and one test submission. For final E2E, test Instagram trigger -> Blotato DM -> tracked production URL -> guide -> capture -> GHL -> delivery -> nurture enrollment.
+Required tests when applicable:
 
-Any failure: identify earliest incorrect state, return failed, and do not paper over downstream symptoms.
+1. Direct guide without UTMs:
+   - v2 form renders;
+   - one submit creates/updates exactly one GHL contact;
+   - correct guide metadata/source;
+   - delivery email generated.
+
+2. Instagram-attributed guide URL:
+   - expected latest source/campaign/keyword/lead magnet in GHL;
+   - incoming UTMs preserved.
+
+3. Duplicate contact:
+   - same email requests a second guide;
+   - no duplicate contact;
+   - First Lead Magnet unchanged;
+   - Latest Lead Magnet/campaign update.
+
+4. Delivery:
+   - correct subject/title/link;
+   - no broken merge fields;
+   - unsubscribe/DND behavior available.
+
+5. Capture mechanics:
+   - one user action causes one capture request;
+   - double-click protection works;
+   - success is shown only after a successful response;
+   - failure shows a useful error;
+   - legacy guide endpoint is not called.
+
+6. Mobile:
+   - no overflow;
+   - input/CTA/status usable.
+
+7. Blotato, only when an approved automation is being tested:
+   - one authorized trigger;
+   - exactly one private DM;
+   - correct tracked production link;
+   - no real-user test messaging.
+
+For preview QA, do not activate production DMs.
+For production QA, test the actual production guide with one test submission.
+For final E2E, test only when at least one approved Blotato automation is active:
+`Instagram -> Blotato -> tracked production guide -> v2 capture -> GHL -> delivery -> nurture enrollment`.
+
+Any failure: identify the earliest incorrect state, return failed and do not paper over downstream symptoms.
+
+Put concrete evidence and any machine-usable values in `handoff`.
