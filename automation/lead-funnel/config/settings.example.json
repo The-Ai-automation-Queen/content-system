@@ -1,0 +1,9 @@
+{
+  "productionDomain": "https://www.shiftandlead.com",
+  "guidesSource": "next-app/content/guides.json",
+  "leadMagnetRegistry": "automation/lead-funnel/config/lead-magnets.json",
+  "productionBranch": "main",
+  "vercelProject": "content-system-oqbp",
+  "testEmailEnv": "FUNNEL_TEST_EMAIL",
+  "activationPolicy": "qa-gated"
+}

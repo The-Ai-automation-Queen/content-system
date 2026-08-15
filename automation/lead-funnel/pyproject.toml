@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shiftandlead-lead-funnel"
+version = "0.1.0"
+description = "Codex SDK orchestrator for Shift & Lead lead-magnet funnels"
+requires-python = ">=3.10"
+dependencies = [
+  "openai-codex==0.144.4"
+]
+
+[tool.setuptools]
+py-modules = []

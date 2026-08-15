@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "agent": {"type": "string"},
+    "status": {"type": "string", "enum": ["done", "blocked", "failed"]},
+    "summary": {"type": "string"},
+    "inspected": {"type": "array", "items": {"type": "string"}},
+    "changed": {"type": "array", "items": {"type": "string"}},
+    "object_ids": {"type": "array", "items": {"type": "string"}},
+    "urls": {"type": "array", "items": {"type": "string"}},
+    "evidence": {"type": "array", "items": {"type": "string"}},
+    "tests_passed": {"type": "boolean"},
+    "blockers": {"type": "array", "items": {"type": "string"}},
+    "next_action": {"type": "string"}
+  },
+  "required": ["agent", "status", "summary", "tests_passed", "blockers", "next_action"],
+  "additionalProperties": false
+}
