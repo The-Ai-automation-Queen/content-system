@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shift & Lead Guide Covers"
+  short_description: "Create consistent engraved covers for new guides"
+  default_prompt: "Use $shift-lead-guide-covers to create a visual cover for my new guide."
