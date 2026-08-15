@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Run a business around the clock without working around the clock">
+  <rect width="1280" height="720" fill="#FAF7F2"/>
+  <rect x="0" y="0" width="1280" height="8" fill="#2C4BE0"/>
+  <rect x="816" y="0" width="1" height="720" fill="#E8E4DD"/>
+  <g>
+    <rect x="860" y="120" width="139" height="7" rx="3.5" fill="#2C4BE0" opacity="0.68"/>
+    <rect x="860" y="144.4" width="144" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="166.8" width="289" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="189.20000000000002" width="289" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="209.60000000000002" width="219" height="7" rx="3.5" fill="#2C4BE0" opacity="0.58"/>
+    <rect x="860" y="232.00000000000003" width="194" height="7" rx="3.5" fill="#2C4BE0" opacity="0.74"/>
+    <rect x="860" y="256.40000000000003" width="154" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="278.8" width="198" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="301.2" width="261" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="323.59999999999997" width="178" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="345.99999999999994" width="136" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="368.3999999999999" width="175" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="388.7999999999999" width="153" height="7" rx="3.5" fill="#2C4BE0" opacity="0.68"/>
+    <rect x="860" y="413.1999999999999" width="244" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="435.59999999999985" width="135" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="457.99999999999983" width="292" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="478.3999999999998" width="276" height="7" rx="3.5" fill="#2C4BE0" opacity="0.49"/>
+    <rect x="860" y="500.7999999999998" width="267" height="7" rx="3.5" fill="#2C4BE0" opacity="0.68"/>
+    <rect x="860" y="525.1999999999998" width="179" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="547.5999999999998" width="154" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="569.9999999999998" width="282" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="592.3999999999997" width="221" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="839" y="249.39999999999998" width="6" height="27" rx="4" fill="#2C4BE0"/>
+  </g>
+  <text x="88" y="120" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="19" letter-spacing="3.6" fill="#1B2EA0">PUT AI TO WORK</text>
+  <text y="248.79999999999998" font-family="Georgia,'Times New Roman',serif" font-size="80" font-weight="700" fill="#1a1a1a"><tspan x="88" dy="0">Run a business</tspan><tspan x="88" dy="84.80000000000001">around the clock</tspan><tspan x="88" dy="84.80000000000001">without working</tspan><tspan x="88" dy="84.80000000000001">around the clock</tspan></text>
+  <rect x="88" y="545.2" width="96" height="3" fill="#2C4BE0"/>
+  <text x="88" y="640" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="18" letter-spacing="3.2" fill="#1a1a1a" opacity="0.55">SHIFT &amp; LEAD</text>
+  <text x="88" y="669" font-family="Georgia,'Times New Roman',serif" font-size="19" font-style="italic" fill="#1a1a1a" opacity="0.45">www.shiftandlead.com</text>
+</svg>

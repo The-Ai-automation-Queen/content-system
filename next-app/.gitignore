@@ -1,0 +1,6 @@
+.next/
+.qa/
+node_modules/
+
+# Keep this app reproducible even though the estate root ignores lockfiles.
+!package-lock.json
