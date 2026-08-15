@@ -4,7 +4,13 @@ Mission: understand the current v2 funnel state without changing anything.
 
 Inspect repository architecture, current live guides, canonical guide sources/build scripts, reusable components, analytics/tracking, environment handling, GitHub/Vercel flow and production domain/project.
 
-Explicitly identify legacy guide-capture wiring, including `https://auto.shiftandlead.com/webhook/formspree-lead`, `main-site/assets/guide-lead-magnets.js`, old inline forms and any build scripts that stamp them. Record them as legacy; do not recommend reusing them for the new request.
+Inspect both acquisition data sources:
+- `automation/lead-funnel/config/guide-funnels.json` for v2 routing/activation;
+- `data/guide-lead-magnets.json` for companion-asset strategy.
+
+Verify actual built companion resources under `main-site/resources/` and the corresponding guide markup. Actual built routes are runtime evidence; do not assume planning metadata is current.
+
+Explicitly identify legacy guide-capture wiring, including `https://auto.shiftandlead.com/webhook/formspree-lead`, `main-site/assets/guide-lead-magnets.js`, old inline forms and any build scripts that stamp them. Record the submission mechanism as legacy; do not recommend reusing it for the new request. Preserve useful companion assets themselves.
 
 Using authenticated browser/computer-use, inspect GHL:
 - correct location/sub-account;
@@ -31,6 +37,7 @@ Do not create/edit/delete/activate anything.
 
 In `handoff`, return at least:
 - `legacy_capture_found`;
+- `built_companion_assets`;
 - `recommended_ghl_integration_mode`;
 - `ghl_location_identifier` when safe to record;
 - `blotato_instagram_account`;
