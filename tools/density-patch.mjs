@@ -25,6 +25,7 @@ function walk(dir, out = []) {
 for (const root of ROOTS) {
   for (const file of walk(root)) {
     const before = fs.readFileSync(file, 'utf8');
+    if (before.includes('/_next/static/')) continue;
     let html = before.replace(/\s*<link rel="stylesheet" href="\/assets\/density-system\.css(?:\?v=[^"]*)?">/g, '');
     html = html.replace('</head>', `${LINK}\n</head>`);
     if (html !== before) fs.writeFileSync(file, html);
