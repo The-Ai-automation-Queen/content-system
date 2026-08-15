@@ -1,99 +1,160 @@
 # Shift & Lead Lead-Funnel Orchestrator
 
-This folder manages the reusable content-to-lead system:
+This folder manages the v2 content-to-lead system:
 
-Instagram content -> Blotato DM/comment automation -> Shift & Lead guide -> inline email capture -> GoHighLevel contact + attribution -> guide delivery -> nurture -> conversion/exit.
+`Instagram -> Blotato -> tracked public guide -> email-only inline capture -> GoHighLevel -> guide delivery -> nurture -> conversion/exit`
 
-The public guides stay public. Email capture is an inline "Get this guide in your inbox" offer, not a hard content gate.
+The guide stays public. The new capture is `Get this guide in your inbox`, not a content gate.
+
+## Important migration rule
+
+The previous guide capture that posts to:
+
+`https://auto.shiftandlead.com/webhook/formspree-lead`
+
+and the existing `main-site/assets/guide-lead-magnets.js` integration are **legacy for this project**. They may remain in the repository for old pages, but the new guide funnel must not reuse that endpoint or depend on the old capture behavior.
+
+The v2 funnel must integrate with GoHighLevel using one of these verified methods:
+
+1. a native GHL form/embed only if it supports the required dynamic guide metadata, attribution and styling; or
+2. a new secure server-side website/Vercel endpoint that talks to GHL without exposing credentials in browser code.
+
+The GHL browser audit decides which supported integration is used. Do not guess.
 
 ## Runtime
 
 - Python 3.10+
 - `openai-codex==0.144.4`
+- `python-dotenv`
 - Codex authentication available to the runtime
-- Authenticated browser/computer-use capability available to Codex for GoHighLevel and Blotato
-- GitHub/Vercel access available to the runtime when deployment is requested
+- authenticated browser/computer-use capability available to Codex for GHL and Blotato
+- GitHub/Vercel access available when release work is requested
 
-The Codex SDK orchestrates threads and turns. Browser actions are performed by whatever browser/computer-use tool is installed in the Codex environment; they are not a dedicated Codex SDK method.
+The Codex SDK orchestrates threads and turns. Browser actions are performed by the browser/computer-use capability installed in the Codex environment; they are not a dedicated SDK method.
 
-## Commands
+## Install
 
 ```bash
 cd automation/lead-funnel
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .
-
-python orchestrator.py audit
-python orchestrator.py bootstrap
-python orchestrator.py campaign --brief briefs/new-campaign.md
-python orchestrator.py repair --incident incidents/funnel-failure.md
+cp .env.example .env
 ```
 
-Set a designated test address before any integration QA:
+Set a designated test address in `.env`:
 
-```bash
-export FUNNEL_TEST_EMAIL="your-test-address@example.com"
+```text
+FUNNEL_TEST_EMAIL=your-test-address@example.com
 ```
 
 Optional:
 
-```bash
-export CODEX_MODEL="<model-name>"
+```text
+CODEX_MODEL=<model-name>
 ```
 
-Do not store credentials in this folder. GHL, Blotato, Instagram, GitHub and Vercel authentication should remain in their normal authenticated environments or secret stores.
+`.env`, `.venv`, caches and local run reports are ignored by Git. Never store GHL, Instagram, Blotato, GitHub or Vercel credentials in this folder.
 
-## Execution order
+## Commands
 
-Bootstrap uses hard gates:
+```bash
+python orchestrator.py audit
+python orchestrator.py bootstrap
+python orchestrator.py launch --pr 123
+python orchestrator.py campaign --brief briefs/new-campaign.md
+python orchestrator.py repair --incident incidents/funnel-failure.md
+```
 
-1. Audit only.
-2. Validate/update canonical lead-magnet registry.
-3. Configure reusable GHL fields/tags/workflows.
-4. Build the reusable website capture and content campaign assets.
-5. Prepare Blotato automations in draft/inactive state.
-6. Preview QA.
-7. Production deployment.
-8. Production QA.
-9. Activate approved Blotato automations.
-10. Full Instagram-to-email end-to-end test.
+### `audit`
 
-The orchestrator stops on a failed/blocked gate. It must not report complete until final E2E QA passes.
+Read-only. Confirms the repository, GHL account/location, Blotato/Instagram account, current forms, legacy capture wiring, Vercel project and available browser capabilities.
 
-## Folder map
+### `bootstrap`
 
-- `orchestrator.py` — AsyncCodex dependency graph and CLI.
-- `config/settings.example.json` — non-secret operating settings.
-- `config/lead-magnets.json` — canonical current lead-magnet IDs, keywords and campaign metadata.
-- `schemas/agent-result.schema.json` — structured handoff contract for every subagent.
-- `prompts/` — durable developer instructions for each specialized thread.
-- `state/` — local run reports; intentionally ignored by Git.
+Builds/prepares the reusable v2 infrastructure and stops after a draft PR plus preview QA. It does **not** merge the PR or publish production by itself.
 
-## Ownership boundaries
+Sequence:
 
-**Codex/repository:** content, registry, campaign metadata, social assets, orchestration.
+1. audit;
+2. registry validation;
+3. GHL v2 architecture and website integration contract;
+4. website capture + content assets;
+5. approved Blotato automations prepared inactive;
+6. dedicated branch + draft PR + Vercel preview;
+7. preview/integration QA;
+8. stop at `ready_for_human_review`.
 
-**Shift & Lead website:** public guide experience, email capture, UTM/referrer capture, secure subscriber submission.
+### Human gate
 
-**GoHighLevel:** CRM, consent, original/latest attribution, tags, delivery, nurture, booking/purchase exits, unsubscribe/DND.
+Review and merge the draft PR manually after preview QA passes.
 
-**Blotato:** Instagram publishing/DM handoff and tracked-link delivery. Blotato is not the CRM.
+The existing repository production policy requires a human merge. The orchestrator must never merge its own content/site PR.
 
-## Safety rules
+### `launch --pr <number>`
 
-Agents must inspect before creating, reuse equivalent objects, and be idempotent. They must never bulk-message existing contacts, DM users who did not trigger an automation, alter DNS, purchase/upgrade plans, delete production workflows/contacts, or expose secrets. 2FA, ambiguous accounts, paid-plan changes, DNS, destructive changes, or broad-audience messaging are stop conditions requiring human input.
+Run only after the reviewed PR was manually merged.
 
-## Canonical tracking
+Sequence:
 
-Tracked DM URLs follow:
+1. verify the PR was human-merged;
+2. verify Vercel production is READY;
+3. run production guide -> GHL capture/delivery QA;
+4. activate only explicitly approved Blotato DM automations;
+5. if at least one DM automation is active, run the full Instagram E2E test.
+
+If no DM campaign is approved yet, launch ends with `capture_live_dm_pending`: the website/GHL funnel is live, but DM activation waits for an approved campaign.
+
+### `campaign`
+
+Creates one approved content/lead-magnet campaign using the existing infrastructure. It prepares a draft PR and preview QA, then stops for human review. It does not rebuild the master CRM architecture or merge itself.
+
+### `repair`
+
+Finds the earliest failing point and makes the smallest responsible repair, followed by regression QA.
+
+## Canonical registry
+
+`config/lead-magnets.json` separates four different concepts:
+
+- `guideStatus`: whether the guide itself is public/live;
+- `captureEnabled`: whether the new email capture should appear;
+- `dmAutomationEnabled`: whether Blotato DM automation may exist for that campaign;
+- `campaignStatus`: `planned`, `approved`, or `active`.
+
+A live guide does **not** automatically mean its Instagram DM automation is approved.
+
+All current guides are seeded with capture enabled and DM automation disabled. DM activation must be explicit per campaign.
+
+## Tracking
+
+Blotato sends the production guide URL with:
 
 ```text
-{guideUrl}?utm_source=instagram&utm_medium=dm&utm_campaign={campaignId}&utm_content={dmKeyword}
+?utm_source=instagram&utm_medium=dm&utm_campaign={campaignId}&utm_content={dmKeyword}
 ```
 
-Original attribution fields are write-once. Latest attribution fields update on subsequent requests.
+The website submits the guide/campaign metadata and incoming attribution to GHL.
 
-## Current guide registry
+Original attribution is write-once. Latest attribution updates on later requests.
 
-The registry is seeded from the live guides in `next-app/content/guides.json`. The audit/data-model agent must verify it against the repository before any external automation is activated.
+## GHL ownership
+
+GHL owns:
+
+- contact upsert/deduplication;
+- consent record;
+- first/latest lead magnet;
+- original/latest attribution;
+- guide delivery email;
+- nurture;
+- unsubscribe/DND;
+- conversion exits.
+
+The v2 workflows must be scoped to the v2 capture source/version so they cannot accidentally enroll contacts from unrelated legacy forms.
+
+## Safety
+
+Agents must inspect before creating, reuse equivalent objects, and remain idempotent. They must never bulk-message existing contacts, send unsolicited DMs, alter DNS, purchase/upgrade plans, delete production data, expose secrets, or bypass 2FA.
+
+2FA, ambiguous accounts/locations, destructive changes, DNS, billing changes or broad-audience messaging are stop conditions requiring human action.
