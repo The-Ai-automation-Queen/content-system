@@ -1,0 +1,104 @@
+name: Generate lightweight guide cover WebP files
+
+on:
+  push:
+    branches:
+      - agent/restore-guide-cover-fidelity
+    paths:
+      - .github/workflows/optimize-guide-covers.yml
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install WebP encoder
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y webp
+
+      - name: Generate lightweight covers from original PNG artwork
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd next-app/public/images/guides
+          files=(
+            24-7-operations-system
+            learn-master
+            chatgpt
+            claude
+            copilot
+            first-ai-employee
+            follow-up-setup
+            gemini
+            inbox-manager-setup
+            stack-3-tool-ai-stack
+            research-to-content-workflow
+            what-is-a-prompt
+            what-is-agentic
+            what-is-ai
+          )
+          for name in "${files[@]}"; do
+            test -f "$name.png"
+            cwebp -quiet -q 90 -m 6 -metadata icc -resize 1280 0 "$name.png" -o "$name.webp"
+          done
+
+      - name: Point live guides to the matching WebP made from each original PNG
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const file = 'next-app/content/guides.json';
+          const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+          const coverBySlug = {
+            '24-7-operations-system': '/images/guides/24-7-operations-system.webp',
+            'ai-jargon-guide': '/images/guides/learn-master.webp',
+            'chatgpt': '/images/guides/chatgpt.webp',
+            'claude': '/images/guides/claude.webp',
+            'copilot': '/images/guides/copilot.webp',
+            'first-ai-employee': '/images/guides/first-ai-employee.webp',
+            'follow-up-setup': '/images/guides/follow-up-setup.webp',
+            'gemini': '/images/guides/gemini.webp',
+            'inbox-manager-setup': '/images/guides/inbox-manager-setup.webp',
+            'stack-3-tool-ai-stack': '/images/guides/stack-3-tool-ai-stack.webp',
+            'research-to-content-workflow': '/images/guides/research-to-content-workflow.webp',
+            'what-is-a-prompt': '/images/guides/what-is-a-prompt.webp',
+            'what-is-agentic': '/images/guides/what-is-agentic.webp',
+            'what-is-ai': '/images/guides/what-is-ai.webp'
+          };
+          for (const guide of data.guides) {
+            if (coverBySlug[guide.slug]) guide.cover = coverBySlug[guide.slug];
+          }
+          fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n');
+          NODE
+
+      - name: Verify all WebP covers exist and report sizes
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const data = JSON.parse(fs.readFileSync('next-app/content/guides.json', 'utf8'));
+          for (const guide of data.guides.filter(g => g.status === 'live' && g.cover.endsWith('.webp'))) {
+            const p = path.join('next-app/public', guide.cover);
+            if (!fs.existsSync(p)) throw new Error(`Missing ${p}`);
+            const kb = Math.round(fs.statSync(p).size / 1024);
+            console.log(`${guide.slug}: ${kb} KB`);
+          }
+          NODE
+
+      - name: Commit optimized derivatives
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add next-app/public/images/guides/*.webp next-app/content/guides.json
+          git commit -m "fix: preserve original guide artwork with lightweight webp covers"
+          git push
