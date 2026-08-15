@@ -307,7 +307,7 @@ patchFile('main-site/starter-kit.html', (html) => {
 });
 
 patchFile('main-site/quiz.html', (html) => ensureBrandConsistency(html, 'quiz'));
-patchFile('main-site/guides/index.html', (html) => ensureBrandConsistency(html, 'guides'));
+patchFile('main-site/guides/index.html', (html) => html.includes('/_next/static/') ? html : ensureBrandConsistency(html, 'guides'));
 
 const guidesDir = path.join(ROOT, 'main-site', 'guides');
 if (fs.existsSync(guidesDir)) {

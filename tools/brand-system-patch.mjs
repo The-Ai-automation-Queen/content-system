@@ -124,6 +124,7 @@ function cleanOldInjectedMedia(html) {
 
 function patch(file) {
   let html = fs.readFileSync(file, 'utf8');
+  if (html.includes('/_next/static/')) return;
   const before = html;
   const kind = kindFor(file);
 

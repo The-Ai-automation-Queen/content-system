@@ -282,6 +282,7 @@ function patchMobileFooter(html) {
 for (const root of ROOTS) {
   for (const file of walk(root)) {
     const before = fs.readFileSync(file, 'utf8');
+    if (before.includes('/_next/static/')) continue;
     let html = before;
 
     for (const name of STYLESHEETS) {
@@ -295,7 +296,6 @@ for (const root of ROOTS) {
     if (file === MAIN_HOME) html = patchHomeContact(html);
     if (file.startsWith(BRIEF_ROOT)) html = patchBriefSurface(html);
     html = patchMobileFooter(html);
-
     if (html !== before) fs.writeFileSync(file, html);
   }
 }
