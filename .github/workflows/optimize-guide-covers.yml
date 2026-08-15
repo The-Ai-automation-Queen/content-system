@@ -49,7 +49,7 @@ jobs:
             cwebp -quiet -q 90 -m 6 -metadata icc -resize 1280 0 "$name.png" -o "$name.webp"
           done
 
-      - name: Point live guides to the matching WebP made from each original PNG
+      - name: Point source guides to matching WebP derivatives
         run: |
           node <<'NODE'
           const fs = require('fs');
@@ -77,7 +77,61 @@ jobs:
           fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n');
           NODE
 
-      - name: Verify all WebP covers exist and report sizes
+      - name: Apply derivatives to the committed main-site build
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p main-site/images/guides
+          cp next-app/public/images/guides/*.webp main-site/images/guides/
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const names = [
+            '24-7-operations-system',
+            'learn-master',
+            'chatgpt',
+            'claude',
+            'copilot',
+            'first-ai-employee',
+            'follow-up-setup',
+            'gemini',
+            'inbox-manager-setup',
+            'stack-3-tool-ai-stack',
+            'research-to-content-workflow',
+            'what-is-a-prompt',
+            'what-is-agentic',
+            'what-is-ai'
+          ];
+
+          const indexPath = 'main-site/guides/index.html';
+          let html = fs.readFileSync(indexPath, 'utf8');
+          for (const name of names) {
+            const png = `/images/guides/${name}.png`;
+            const webp = `/images/guides/${name}.webp`;
+            html = html.split(`src="${png}"`).join(`src="${webp}"`);
+            html = html.split(`href="${png}"`).join(`href="${webp}"`);
+          }
+          fs.writeFileSync(indexPath, html);
+
+          const chunksRoot = 'main-site/_next/static/chunks';
+          function walk(dir) {
+            for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+              const full = path.join(dir, entry.name);
+              if (entry.isDirectory()) walk(full);
+              else if (entry.isFile() && full.endsWith('.js')) {
+                let text = fs.readFileSync(full, 'utf8');
+                const before = text;
+                for (const name of names) {
+                  text = text.split(`/images/guides/${name}.png`).join(`/images/guides/${name}.webp`);
+                }
+                if (text !== before) fs.writeFileSync(full, text);
+              }
+            }
+          }
+          walk(chunksRoot);
+          NODE
+
+      - name: Verify optimized covers and production paths
         shell: bash
         run: |
           set -euo pipefail
@@ -86,10 +140,16 @@ jobs:
           const path = require('path');
           const data = JSON.parse(fs.readFileSync('next-app/content/guides.json', 'utf8'));
           for (const guide of data.guides.filter(g => g.status === 'live' && g.cover.endsWith('.webp'))) {
-            const p = path.join('next-app/public', guide.cover);
-            if (!fs.existsSync(p)) throw new Error(`Missing ${p}`);
-            const kb = Math.round(fs.statSync(p).size / 1024);
+            const source = path.join('next-app/public', guide.cover);
+            const prod = path.join('main-site', guide.cover);
+            if (!fs.existsSync(source)) throw new Error(`Missing ${source}`);
+            if (!fs.existsSync(prod)) throw new Error(`Missing ${prod}`);
+            const kb = Math.round(fs.statSync(source).size / 1024);
             console.log(`${guide.slug}: ${kb} KB`);
+          }
+          const html = fs.readFileSync('main-site/guides/index.html', 'utf8');
+          if (html.includes('src="/images/guides/research-to-content-workflow.png"')) {
+            throw new Error('Newest research cover still points to PNG in main-site');
           }
           NODE
 
@@ -99,6 +159,10 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add next-app/public/images/guides/*.webp next-app/content/guides.json
-          git commit -m "fix: preserve original guide artwork with lightweight webp covers"
-          git push
+          git add next-app/public/images/guides/*.webp next-app/content/guides.json main-site/images/guides/*.webp main-site/guides/index.html main-site/_next/static/chunks
+          if git diff --cached --quiet; then
+            echo "No additional optimized files to commit"
+          else
+            git commit -m "fix: serve original guide artwork as lightweight webp"
+            git push
+          fi
