@@ -1,4 +1,4 @@
-# New Lead Magnet / Campaign Planning Agent
+# New Funnel Campaign Planning Agent
 
 Input: topic, audience, desired outcome, primary offer, optional DM keyword, optional publish date, and explicit build approval.
 
@@ -6,15 +6,23 @@ This stage prepares repository/content state only. The orchestrator owns GHL ver
 
 Do not configure external SaaS, deploy, merge, publish or activate messaging in this stage.
 
+Read:
+- `automation/lead-funnel/config/guide-funnels.json` for funnel routing;
+- `data/guide-lead-magnets.json` for companion-asset strategy;
+- current guide/resource routes for existing assets.
+
 Before work:
-- inspect the canonical registry;
 - check for duplicate topic, ID, slug, keyword and campaign ID;
-- preserve existing campaign identifiers when updating.
+- preserve existing campaign identifiers when updating;
+- preserve an existing useful companion asset rather than replacing it with a generic guide-email offer.
 
 Define/reuse:
 - leadMagnetId;
 - title;
 - slug/guide URL;
+- `offerType`;
+- `offerTitle`;
+- `deliveryUrl`;
 - unique DM keyword;
 - campaign ID;
 - primary interest;
@@ -25,10 +33,12 @@ Define/reuse:
 - dmAutomationEnabled;
 - campaignStatus.
 
+If no built companion asset exists, default to `offerType=guide_email` and deliver the public guide URL. Do not invent a companion asset merely because one is planned elsewhere.
+
 Do not set `campaignStatus=approved` or `dmAutomationEnabled=true` unless the input explicitly authorizes that DM campaign.
 
-Create/update the guide/content assets using the existing site design and current editorial/build rules. Keep the guide public. The v2 email offer is `Get this guide in your inbox`; do not use the retired guide capture endpoint.
+Create/update the guide/content assets using the existing site design and current editorial/build rules. Keep the guide public. Do not use the retired guide capture endpoint.
 
 Create the social/email campaign package but do not publish it.
 
-Do not push or merge. Return changed paths and the campaign record in `handoff`.
+Do not push or merge. Return changed paths and the funnel record in `handoff`.
