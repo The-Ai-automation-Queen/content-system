@@ -12,8 +12,9 @@
     "evidence": {"type": "array", "items": {"type": "string"}},
     "tests_passed": {"type": "boolean"},
     "blockers": {"type": "array", "items": {"type": "string"}},
-    "next_action": {"type": "string"}
+    "next_action": {"type": "string"},
+    "handoff": {"type": "object", "additionalProperties": true}
   },
-  "required": ["agent", "status", "summary", "tests_passed", "blockers", "next_action"],
+  "required": ["agent", "status", "summary", "tests_passed", "blockers", "next_action", "handoff"],
   "additionalProperties": false
 }
