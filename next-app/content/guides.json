@@ -7,7 +7,7 @@
       "datePublished": "2026-06-15",
       "dateModified": "2026-07-28",
       "readMinutes": 5,
-      "cover": "/images/guides/24-7-operations-system.svg",
+      "cover": "/images/guides/24-7-operations-system.webp",
       "track": "setup",
       "status": "live",
       "formatLabel": "FREE SETUP"
@@ -19,7 +19,7 @@
       "datePublished": "2026-06-10",
       "dateModified": "2026-07-28",
       "readMinutes": 5,
-      "cover": "/images/guides/ai-jargon-guide.svg",
+      "cover": "/images/guides/learn-master.webp",
       "track": "understand",
       "status": "live",
       "formatLabel": "FREE GUIDE"
@@ -31,7 +31,7 @@
       "datePublished": "2026-06-23",
       "dateModified": "2026-07-28",
       "readMinutes": 6,
-      "cover": "/images/guides/chatgpt.svg",
+      "cover": "/images/guides/chatgpt.webp",
       "track": "tools",
       "status": "live",
       "formatLabel": "FREE TOOL VERDICT"
@@ -43,7 +43,7 @@
       "datePublished": "2026-07-08",
       "dateModified": "2026-07-28",
       "readMinutes": 7,
-      "cover": "/images/guides/claude.svg",
+      "cover": "/images/guides/claude.webp",
       "track": "tools",
       "status": "live",
       "formatLabel": "FREE TOOL VERDICT"
@@ -55,7 +55,7 @@
       "datePublished": "2026-06-23",
       "dateModified": "2026-07-28",
       "readMinutes": 6,
-      "cover": "/images/guides/copilot.svg",
+      "cover": "/images/guides/copilot.webp",
       "track": "tools",
       "status": "live",
       "formatLabel": "FREE TOOL VERDICT"
@@ -79,7 +79,7 @@
       "datePublished": "2026-06-15",
       "dateModified": "2026-07-28",
       "readMinutes": 5,
-      "cover": "/images/guides/first-ai-employee.svg",
+      "cover": "/images/guides/first-ai-employee.webp",
       "track": "setup",
       "status": "live",
       "formatLabel": "FREE SETUP"
@@ -91,7 +91,7 @@
       "datePublished": "2026-06-15",
       "dateModified": "2026-07-28",
       "readMinutes": 5,
-      "cover": "/images/guides/follow-up-setup.svg",
+      "cover": "/images/guides/follow-up-setup.webp",
       "track": "setup",
       "status": "live",
       "formatLabel": "FREE SETUP"
@@ -103,7 +103,7 @@
       "datePublished": "2026-06-23",
       "dateModified": "2026-07-28",
       "readMinutes": 5,
-      "cover": "/images/guides/gemini.svg",
+      "cover": "/images/guides/gemini.webp",
       "track": "tools",
       "status": "live",
       "formatLabel": "FREE TOOL VERDICT"
@@ -127,7 +127,7 @@
       "datePublished": "2026-06-15",
       "dateModified": "2026-07-28",
       "readMinutes": 5,
-      "cover": "/images/guides/inbox-manager-setup.svg",
+      "cover": "/images/guides/inbox-manager-setup.webp",
       "track": "setup",
       "status": "live",
       "formatLabel": "FREE SETUP"
@@ -187,7 +187,7 @@
       "datePublished": "2026-06-15",
       "dateModified": "2026-07-28",
       "readMinutes": 5,
-      "cover": "/images/guides/stack-3-tool-ai-stack.svg",
+      "cover": "/images/guides/stack-3-tool-ai-stack.webp",
       "track": "setup",
       "status": "live",
       "formatLabel": "FREE SETUP"
@@ -199,7 +199,7 @@
       "datePublished": "2026-08-11",
       "dateModified": "2026-08-11",
       "readMinutes": 7,
-      "cover": "/images/guides/research-to-content-workflow.png",
+      "cover": "/images/guides/research-to-content-workflow.webp",
       "track": "setup",
       "status": "live",
       "formatLabel": "FREE GUIDE"
@@ -211,7 +211,7 @@
       "datePublished": "2026-06-10",
       "dateModified": "2026-07-28",
       "readMinutes": 5,
-      "cover": "/images/guides/what-is-a-prompt.svg",
+      "cover": "/images/guides/what-is-a-prompt.webp",
       "track": "understand",
       "status": "live",
       "formatLabel": "FREE GUIDE"
@@ -223,7 +223,7 @@
       "datePublished": "2026-06-10",
       "dateModified": "2026-07-28",
       "readMinutes": 5,
-      "cover": "/images/guides/what-is-agentic.svg",
+      "cover": "/images/guides/what-is-agentic.webp",
       "track": "understand",
       "status": "live",
       "formatLabel": "FREE GUIDE"
@@ -235,7 +235,7 @@
       "datePublished": "2026-06-10",
       "dateModified": "2026-07-28",
       "readMinutes": 5,
-      "cover": "/images/guides/what-is-ai.svg",
+      "cover": "/images/guides/what-is-ai.webp",
       "track": "understand",
       "status": "live",
       "formatLabel": "FREE GUIDE"
