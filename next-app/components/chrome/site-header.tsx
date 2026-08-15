@@ -2,7 +2,6 @@ import Link from "next/link";
 
 const links = [
   ["Guides", "/guides"],
-  ["The Brief", "https://brief.shiftandlead.com"],
   ["The 99", "/the-99.html"],
   ["About", "/about.html"],
 ] as const;

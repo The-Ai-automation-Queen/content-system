@@ -114,8 +114,8 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
         <div className="more-guides__grid">{related.map((item) => <GuideCard guide={item} key={item.slug} />)}</div>
       </section>
       <section className="article-newsletter">
-        <div><p className="article-label">The Insider Brief</p><h2>One clear verdict on the AI news that matters.</h2><p>Every Tuesday, free. The week’s AI news, filtered and translated into plain English.</p></div>
-        <form action="https://auto.shiftandlead.com/webhook/formspree-lead" method="POST"><label htmlFor="guide-email">Email address</label><div><input id="guide-email" type="email" name="email" required placeholder="your@email.com" /><input type="hidden" name="source" value="guide" /><button type="submit">Subscribe free</button></div></form>
+        <div><p className="article-label">Your next useful step</p><h2>Find the first AI system worth building.</h2><p>Answer eight practical questions and get the most useful place to start for the work you want AI to help with.</p></div>
+        <Link className="article-newsletter__action" href="/quiz.html">Take the free diagnostic →</Link>
       </section>
     </main>
   );
