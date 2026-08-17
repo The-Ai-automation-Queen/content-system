@@ -179,6 +179,9 @@ permanent. Assigned so far:
 | 016 | Amal | Feedback Digest (interviewing) | Customer |
 | 018 | Nassim | Reactivation Writer (interviewing) | Sales |
 | 019 | Yasmine | Content Repurposer (interviewing) | Marketing |
+| 020 | Rami | Subscription Auditor (interviewing) | Back Office |
+| 021 | Layla | Time Digest (interviewing) | Operations |
+| 022 | Adam | Signature Chaser (interviewing) | Deals |
 
 New names: short, warm, easy to say in English and French, no name
 reuse, never the name of a real client or contact. Log new assignments

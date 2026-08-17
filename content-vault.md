@@ -13,6 +13,14 @@
 
 ## Most recent (quick reference)
 
+- 17/08/2026 | LinkedIn carousel | "You Sent That Contract Six Days Ago and Haven't Followed Up Because It Feels Pushy" — Adam, Signature Chaser, Employee #022 | READY TO POST
+- 17/08/2026 | LinkedIn | "You Sent That Contract Six Days Ago and Haven't Followed Up Because It Feels Pushy" — Adam, Signature Chaser, Employee #022 | READY TO POST
+- 17/08/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Rami/Layla/Adam | READY TO POST
+- 17/08/2026 | LinkedIn carousel | "You Planned This Week Around Three Priorities and Can't Name What You Actually Did With the Time" — Layla, Time Digest, Employee #021 | READY TO POST
+- 17/08/2026 | LinkedIn | "You Planned This Week Around Three Priorities and Can't Name What You Actually Did With the Time" — Layla, Time Digest, Employee #021 | READY TO POST
+- 17/08/2026 | LinkedIn carousel | "You're Paying for Three Tools You Haven't Opened in Months" — Rami, Subscription Auditor, Employee #020 | READY TO POST
+- 17/08/2026 | LinkedIn | "You're Paying for Three Tools You Haven't Opened in Months" — Rami, Subscription Auditor, Employee #020 | READY TO POST
+- 17/08/2026 | LinkedIn | "Now Hiring: Three More AI Employees, Salary $0 Each" — wave announcement, Employees #20/#21/#22 | READY TO POST
 - 10/08/2026 | LinkedIn carousel | "You Wrote One Good Post Three Months Ago and Never Touched the Idea Again" — Yasmine, Content Repurposer, Employee #019 | READY TO POST
 - 10/08/2026 | LinkedIn | "You Wrote One Good Post Three Months Ago and Never Touched the Idea Again" — Yasmine, Content Repurposer, Employee #019 | READY TO POST
 - 10/08/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Amal/Nassim/Yasmine | READY TO POST
@@ -76,6 +84,259 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 142 — 17/08/2026 | LinkedIn carousel | You Sent That Contract Six Days Ago and Haven't Followed Up Because It Feels Pushy | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 141 (Adam, Employee #022, Signature Chaser, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/adam/adam-signature-chaser-01.png through -06.png
+Source HTML: skills/carousel-factory/out/adam-signature-chaser.html
+**CTA keyword:** SIGN, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You sent that contract six days ago and haven't followed up because it feels pushy."
+Slide 2 (scene): "The work is basically agreed. It's just sitting there, unsigned, and every day makes the follow-up feel more awkward to send."
+Slide 3 (role card): Adam, Signature Chaser, Deals, Salary $0, never sleeps. "Adam is AI. The only job he took was mine: sending the polite nudge on a stalled contract instead of letting it go quiet out of politeness."
+Slide 4 (how he works): 4-step list, tell him about the contract and how long it's waited, he drafts one polite reminder, past 7 days he flags it plainly, you review and send it yourself.
+Slide 5 (demo): "Built and tested drafting reminders for 3 real stalled contracts. Setup about 10 minutes. He never sends anything or touches the terms."
+Slide 6 (CTA): "Want the free setup? Comment SIGN."
+
+---
+
+## ENTRY 141 — 17/08/2026 | LinkedIn | You Sent That Contract Six Days Ago and Haven't Followed Up Because It Feels Pushy | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Thursday episode 3)
+**Topic:** Employee #022, Adam, Signature Chaser. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/signature-chaser-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/deals/deals-signature-chaser.md, read this run (repo in session). Real job description: send polite signature reminders on a schedule, escalate tone gently across attempts, flag contracts stalled past 7 days, confirm and celebrate on signature. Free playbook narrows this to one drafted reminder at a time, no scheduled multi-attempt escalation or auto-confirmation, per the free/paid line. First employee from the Deals department, never used before in this series. Mode check: no receipt found anywhere for Adam. Confirmed PLAYBOOK.
+
+---
+You sent that contract six days ago and haven't followed up because it feels pushy.
+
+The work is basically agreed. It's just sitting there, unsigned, and every day makes the follow-up feel more awkward to send.
+
+Meet Employee #022.
+
+Adam. Signature Chaser. Deals.
+Salary: $0. Never sleeps.
+
+Adam is AI. The only job he took was mine: sending the polite nudge on a stalled contract instead of letting it go quiet out of politeness.
+
+How he works:
+1. You tell him about the contract: who it's with, how long it's waited.
+2. He drafts one polite reminder, tone matched to how long it's been waiting.
+3. Past 7 days, he flags it plainly instead of staying gentle forever.
+4. You review it and send it yourself.
+
+The demo: built and tested drafting reminders for 3 real stalled contracts with one AI tool. Setup time, about 10 minutes. He never sends anything or touches the terms.
+
+Red line: he never invents urgency or a reason that isn't true, and never marks anything as sent, that is always my step.
+
+Your first win, free, today: name the one contract you've been meaning to follow up on. That's Adam's first nudge.
+
+Comment SIGN and I'll send you the full setup, free.
+
+#AIemployees #The99 #DealsOps
+
+---
+
+## ENTRY 140 — 17/08/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** Talking-head reel (30-45s), captions required
+**Format:** Week's wave reel (Wednesday slot), three role-card cutaways + one screenshot cutaway
+**Topic:** Compresses all 3 of this week's hires (Rami, Layla, Adam) into one 45-second reel, per the hiring-campaign weekly slot map.
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur subscription names and prices on the audit-list screenshot).
+**Source:** Assembled from ENTRY 136/138/141's role-card lines. No new claims.
+
+---
+[0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
+
+[0:03-0:12] Role card cutaway 1, Rami: "Rami reads my subscription list and tells me honestly what's earning its place."
+
+[0:12-0:21] Role card cutaway 2, Layla: "Layla compares how my week actually went to what I meant to focus on."
+
+[0:21-0:30] Role card cutaway 3, Adam: "Adam sends the polite nudge on a contract I've been putting off."
+
+[0:30-0:38] Screenshot cutaway: Rami's draft subscription audit, real setup, subscription names and prices blurred (redaction modeled).
+
+[0:38-0:45] Closing line, spoken + on-screen: "None of them act without me. Comment TEAM and I'll send you how to hire your first one."
+
+---
+
+## ENTRY 139 — 17/08/2026 | LinkedIn carousel | You Planned This Week Around Three Priorities and Can't Name What You Actually Did With the Time | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 138 (Layla, Employee #021, Time Digest, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/layla/layla-time-digest-01.png through -06.png
+Source HTML: skills/carousel-factory/out/layla-time-digest.html
+**CTA keyword:** HOURS, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You planned this week around three priorities and can't name what you actually did with the time."
+Slide 2 (scene): "Monday you knew exactly what mattered. By Friday the week is a blur of meetings, and you can't say where the hours actually went."
+Slide 3 (role card): Layla, Time Digest, Operations, Salary $0, never sleeps. "Layla is AI. The only job she took was mine: sitting down on Friday to ask where the week actually went, instead of just starting the next one."
+Slide 4 (how she works): 4-step list, describe roughly how the week went, she compares it to what you planned, flags the biggest gap, suggests one calendar change.
+Slide 5 (demo): "Built and tested against one real week of planned versus actual priorities. Setup about 10 minutes. She never accesses your calendar directly."
+Slide 6 (CTA): "Want the free setup? Comment HOURS."
+
+---
+
+## ENTRY 138 — 17/08/2026 | LinkedIn | You Planned This Week Around Three Priorities and Can't Name What You Actually Did With the Time | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Wednesday episode 2)
+**Topic:** Employee #021, Layla, Time Digest. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/time-digest-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/operations/operations-time-digest.md, read this run (repo in session). Real job description: summarize time allocation weekly from available signals, compare planned vs actual focus areas, flag low-value time sinks, suggest one calendar change per week. Free playbook narrows this to a manually described week, no automatic signal pull from calendar or tools, per the free/paid line. First employee from the Operations department, never used before in this series. Mode check: no receipt found anywhere for Layla. Confirmed PLAYBOOK.
+
+---
+You planned this week around three priorities and can't name what you actually did with the time.
+
+Monday you knew exactly what mattered. By Friday the week is a blur of meetings, and you can't say where the hours actually went.
+
+Meet Employee #021.
+
+Layla. Time Digest. Operations.
+Salary: $0. Never sleeps.
+
+Layla is AI. The only job she took was mine: sitting down on Friday to ask where the week actually went, instead of just starting the next one.
+
+How she works:
+1. You describe roughly how the week went, meetings, tasks, what ate time.
+2. She compares it to what you meant to focus on.
+3. She flags the biggest gap between planned and actual.
+4. She suggests one calendar change for next week, not a whole system.
+
+The demo: built and tested comparing one real week's plan against how it actually went, with one AI tool. Setup time, about 10 minutes. She never accesses your actual calendar, email, or messages.
+
+Red line: she never guesses at how you spent time you didn't describe, a gap in the story stays a gap, not a filled-in assumption.
+
+Your first win, free, today: write down the 2-3 things you meant to focus on this week. That's Layla's first digest, ready for Friday.
+
+Comment HOURS and I'll send you the full setup, free.
+
+#AIemployees #The99 #OperationsOps
+
+---
+
+## ENTRY 137 — 17/08/2026 | LinkedIn carousel | You're Paying for Three Tools You Haven't Opened in Months | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 136 (Rami, Employee #020, Subscription Auditor, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/rami/rami-subscription-auditor-01.png through -06.png
+Source HTML: skills/carousel-factory/out/rami-subscription-auditor.html
+**CTA keyword:** SUBS, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You're paying for three tools you haven't opened in months."
+Slide 2 (scene): "They looked useful when you signed up. Now they're a line on a statement you skim past, still charging you every month."
+Slide 3 (role card): Rami, Subscription Auditor, Back Office, Salary $0, never sleeps. "Rami is AI. The only job he took was mine: sitting down once a quarter to ask whether every subscription still earned its place."
+Slide 4 (how he works): 4-step list, list your subscriptions and what each costs, he calculates the annual total, flags what's barely used, you get one plain keep-or-cancel list.
+Slide 5 (demo): "Built and tested auditing one real list of subscriptions and prices. Setup about 10 minutes. He never cancels anything or touches an account."
+Slide 6 (CTA): "Want the free setup? Comment SUBS."
+
+---
+
+## ENTRY 136 — 17/08/2026 | LinkedIn | You're Paying for Three Tools You Haven't Opened in Months | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Tuesday episode 1)
+**Topic:** Employee #020, Rami, Subscription Auditor. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/subscription-auditor-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/backoffice/backoffice-subscription-auditor.md, read this run (repo in session). Real job description: inventory all recurring charges across accounts, flag price increases and unused subscriptions, calculate annual cost of every subscription, recommend cancellations with switching notes. Free playbook narrows this to a manually provided list, no account-wide inventory pull or switching-note research, per the free/paid line. No more "planned" rows remained in schedule.md this wave; picked per the "beyond #016" rule from the departments roster, Back Office, Operations, Deals, 3 distinct, none reused from last wave (Customer, Sales, Marketing). Mode check: no receipt found anywhere for Rami. Confirmed PLAYBOOK.
+
+---
+You're paying for three tools you haven't opened in months.
+
+They looked useful when you signed up. Now they're a line on a statement you skim past, still charging you every month.
+
+Meet Employee #020.
+
+Rami. Subscription Auditor. Back Office.
+Salary: $0. Never sleeps.
+
+Rami is AI. The only job he took was mine: sitting down once a quarter to ask whether every subscription still earned its place.
+
+How he works:
+1. You list your subscriptions and what each costs, that's the whole input.
+2. He calculates the annual cost of the whole pile, not just the monthly total.
+3. He flags which ones you barely use.
+4. You get one plain list: keep, cancel, or downgrade.
+
+The demo: built and tested auditing one real list of subscriptions with one AI tool. Setup time, about 10 minutes. He never cancels anything himself, and never touches a card or account.
+
+Red line: a missing price gets marked "[NEEDS INFO]," never estimated, a wrong total is worse than an incomplete one.
+
+Your first win, free, today: open your bank statement and list every recurring charge you can find. That's Rami's first audit.
+
+Comment SUBS and I'll send you the full setup, free.
+
+#AIemployees #The99 #BackOfficeOps
+
+---
+
+## ENTRY 135 — 17/08/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Hiring-post ritual (job-ad parody), Monday wave announcement
+**Topic:** Introduces this wave's 3 openings (Employees #020, #021, #022).
+**Pattern used:** Job-ad parody + serial-cliffhanger opener
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — value-first series opener, comment-keyword capture, no promo.
+**Source:** schedule.md had no remaining "planned" rows this wave (confirmed via full read at wave start); three picks made per the "beyond #016" rule from the departments roster, Back Office, Operations, Deals, 3 distinct, none reused from last wave. Real job-description files read this run from agent-os-company-dashboard/company/departments/ (repo already in session): backoffice/backoffice-subscription-auditor.md, operations/operations-time-digest.md, deals/deals-signature-chaser.md.
+
+---
+Now hiring. Three more AI employees. Salary: $0 each.
+
+Employee #020: Subscription Auditor.
+Reads your subscription list and tells you honestly what's earning its place and what isn't. Never cancels anything.
+
+Employee #021: Time Digest.
+Compares how your week actually went to what you meant to focus on, and flags the biggest gap.
+
+Employee #022: Signature Chaser.
+Sends the polite nudge on a stalled contract, so it doesn't sit unsigned out of politeness.
+
+None of them sleep. None of them ask for a raise. None of them act without me seeing it first.
+
+That is Employee #20, #21, and #22 of 99. The full team, hired one at a time, in public.
+
+See who is already on the floor. The scoreboard is live, updated only when there is a real receipt to show.
+
+Want to build your own first hire? Comment TEAM and I will send you the free 5-step framework.
+
+#AIemployees #Solopreneur #The99
 
 ---
 
