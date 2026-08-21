@@ -188,6 +188,69 @@ button, input { font: inherit; }
   .article-newsletter button { height: 48px; }
 }
 
+/* Plain-English editorial guide */
+.simple-guide { background: #fff; }
+.simple-guide__hero { color: #fff; background: var(--blue-deep); }
+.simple-guide__hero-inner { padding-top: clamp(58px, 8vw, 105px); padding-bottom: clamp(62px, 9vw, 118px); }
+.simple-guide__hero .article-label { color: #cbd4ff; }
+.simple-guide__hero h1 { max-width: 970px; margin: 0 0 26px; font: 400 clamp(56px, 7vw, 96px)/.94 var(--font-display), serif; letter-spacing: -.055em; }
+.simple-guide__deck { max-width: 730px; margin: 0 0 30px; color: #eef1ff; font-size: clamp(19px, 2vw, 24px); line-height: 1.5; }
+.simple-guide__hero .article-meta { margin: 0; color: #cbd4ff; }
+.simple-guide__cover { position: relative; aspect-ratio: 16/8.5; margin-top: -34px; overflow: hidden; background: var(--blue); box-shadow: 14px 14px 0 var(--cream); }
+.simple-guide__cover img { object-fit: cover; }
+.simple-guide__body { width: min(calc(100% - 48px), 760px); margin: 0 auto; padding: 82px 0 110px; }
+.simple-guide__opening > p, .simple-guide__section-intro, .simple-term > p, .simple-guide__translation div p, .simple-guide__questions > div > p:not(.article-label) { color: #383530; font-size: 19px; line-height: 1.72; }
+.simple-guide__opening > p { margin: 0 0 22px; }
+.simple-guide__scene { color: var(--ink) !important; font: 400 clamp(27px, 3vw, 36px)/1.35 var(--font-display), serif !important; }
+.simple-guide__opening blockquote { margin: 42px -55px 0; padding: 34px 42px; border-left: 4px solid var(--blue); background: var(--cream); font: italic 400 25px/1.48 var(--font-display), serif; }
+.simple-guide__section { padding-top: 104px; }
+.simple-guide__section h2, .simple-guide__translation h2, .simple-guide__questions h2 { margin: 0 0 18px; font: 400 clamp(42px, 5vw, 60px)/1 var(--font-display), serif; letter-spacing: -.04em; }
+.simple-guide__section-intro { margin: 0 0 52px; }
+.simple-guide__terms { border-top: 1px solid var(--ink); }
+.simple-term { padding: 42px 0 46px; border-bottom: 1px solid var(--line); }
+.simple-term__heading { display: grid; grid-template-columns: 48px 1fr; gap: 16px; align-items: baseline; margin-bottom: 15px; }
+.simple-term__heading span { color: var(--blue-deep); font: 700 11px/1 var(--font-mono), monospace; letter-spacing: .1em; }
+.simple-term__heading h3 { margin: 0; font: 600 clamp(30px, 3.5vw, 40px)/1 var(--font-display), serif; }
+.simple-term > p { margin: 0 0 24px; }
+.simple-term__picture { margin: 28px 0 20px; padding: 24px 26px; background: var(--cream); }
+.simple-term__picture strong, .simple-guide__translation div > strong { color: var(--blue-deep); font: 700 11px/1 var(--font-mono), monospace; letter-spacing: .09em; text-transform: uppercase; }
+.simple-term__picture p { margin: 8px 0 0; color: #413d38; font-size: 17px; line-height: 1.6; }
+.simple-term__question { margin: 0 !important; color: var(--blue-deep) !important; font-size: 17px !important; line-height: 1.55 !important; }
+.simple-term__question strong { font-family: var(--font-ui), sans-serif; font-size: 14px; }
+.simple-guide__translation { margin: 110px -55px 0; padding: 48px 52px; color: #fff; background: var(--ink); }
+.simple-guide__translation .article-label { color: #b8c4ff; }
+.simple-guide__translation blockquote { margin: 30px 0; padding: 25px 28px; border-left: 3px solid #8194ff; background: #272727; font: italic 400 25px/1.45 var(--font-display), serif; }
+.simple-guide__translation div { padding: 22px 0; border-top: 1px solid #454545; }
+.simple-guide__translation div > strong { color: #b8c4ff; }
+.simple-guide__translation div p { margin: 8px 0 0; color: #eeeae3; font-size: 17px; }
+.simple-guide__questions { margin: 105px -55px 0; padding: 48px 52px; border: 1px solid var(--ink); background: var(--cream); }
+.simple-guide__questions > div:first-child > p:not(.article-label) { margin: 0 0 34px; }
+.simple-guide__questions ol { margin: 0; padding: 0; list-style: none; counter-reset: guide-question; border-top: 1px solid var(--ink); }
+.simple-guide__questions li { counter-increment: guide-question; display: grid; grid-template-columns: 42px 1fr; gap: 12px; padding: 20px 0; border-bottom: 1px solid #d8d1c7; font-size: 17px; line-height: 1.5; }
+.simple-guide__questions li::before { content: counter(guide-question, decimal-leading-zero); padding-top: 4px; color: var(--blue-deep); font: 700 11px/1 var(--font-mono), monospace; }
+.simple-guide__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.simple-guide__actions button, .simple-guide__actions a { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; border: 1px solid var(--ink); padding: 0 17px; font: 700 12px/1.2 var(--font-ui), sans-serif; text-decoration: none; cursor: pointer; }
+.simple-guide__actions button { color: #fff; background: var(--ink); }
+.simple-guide__actions a { background: #fff; }
+.simple-guide__ending { margin-top: 86px; padding-top: 36px; border-top: 1px solid var(--ink); }
+.simple-guide__ending p { margin: 0; font: 400 clamp(28px, 3.4vw,38px)/1.4 var(--font-display), serif; }
+
+@media (max-width: 760px) {
+  .simple-guide__hero-inner { width: min(calc(100% - 36px), var(--shell)); padding-top: 46px; padding-bottom: 74px; }
+  .simple-guide__hero h1 { font-size: 48px; }
+  .simple-guide__cover { width: 100%; aspect-ratio: 4/3; margin-top: -24px; box-shadow: none; }
+  .simple-guide__body { width: min(calc(100% - 36px), 760px); padding-top: 58px; padding-bottom: 76px; }
+  .simple-guide__opening blockquote, .simple-guide__translation, .simple-guide__questions { margin-inline: 0; }
+  .simple-guide__opening blockquote { padding: 26px 24px; font-size: 22px; }
+  .simple-guide__section { padding-top: 76px; }
+  .simple-guide__section-intro { margin-bottom: 34px; }
+  .simple-term { padding-block: 34px; }
+  .simple-term__heading { grid-template-columns: 36px 1fr; }
+  .simple-guide__translation, .simple-guide__questions { margin-top: 76px; padding: 34px 24px; }
+  .simple-guide__translation blockquote { padding: 20px; font-size: 22px; }
+  .simple-guide__actions { display: grid; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .guide-card, .pathway { transition: none; }

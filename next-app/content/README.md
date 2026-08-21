@@ -1,11 +1,11 @@
 # Editing the AI jargon guide
 
-The words users see in the interactive guide live in one file:
+The words users see in the guide live in one file:
 
-- `ai-jargon-guide.ts` — title, introduction, glossary terms, examples, meeting questions, and quiz copy.
+- `ai-jargon-guide.ts` — title, opening story, terms, examples, questions, and closing copy.
 
-The page layout lives in `app/guides/[slug]/page.tsx`, and the interactive behavior lives in
-`components/guides/jargon-lab.tsx`.
+The page layout lives in `app/guides/[slug]/page.tsx`. The small copy button lives in
+`components/guides/copy-questions.tsx`.
 
 After editing the copy, preview it from `next-app` with `npm run dev`. To rebuild the guide and
 copy the deployable files into `main-site`, run this command from the repository root:
