@@ -237,6 +237,9 @@ button, input { font: inherit; }
 .simple-guide__hero-inner { padding-top: clamp(58px, 8vw, 105px); padding-bottom: clamp(62px, 9vw, 118px); }
 .simple-guide__hero .article-label { color: #cbd4ff; }
 .simple-guide__hero h1 { max-width: 970px; margin: 0 0 26px; font: 400 clamp(56px, 7vw, 96px)/.94 var(--font-display), serif; letter-spacing: -.055em; }
+.simple-guide__hero-action { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; margin-top: 30px; }
+.simple-guide__hero-action > button { min-height: 52px; border: 1px solid #fff; padding: 0 20px; color: var(--blue-deep); background: #fff; font: 700 13px/1.2 var(--font-ui),sans-serif; cursor: pointer; }
+.simple-guide__hero-action > p { margin: 0; color: #dce2ff; font: 500 13px/1.45 var(--font-ui),sans-serif; }
 .simple-guide__deck { max-width: 730px; margin: 0 0 30px; color: #eef1ff; font-size: clamp(19px, 2vw, 24px); line-height: 1.5; }
 .simple-guide__hero .article-meta { margin: 0; color: #cbd4ff; }
 .simple-guide__cover { position: relative; aspect-ratio: 16/8.5; margin-top: -34px; overflow: hidden; background: var(--blue); box-shadow: 14px 14px 0 var(--cream); }

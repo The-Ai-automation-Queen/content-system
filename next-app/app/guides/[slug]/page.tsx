@@ -46,6 +46,10 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
           <div className="article-shell simple-guide__hero-inner" data-guide-hero>
             <h1>{aiJargonGuide.title}</h1>
             <p className="simple-guide__deck">{aiJargonGuide.deck}</p>
+            <div className="simple-guide__hero-action">
+              <GuideCaptureModal guideSlug={aiJargonGuide.slug} {...aiJargonGuide.capture} />
+              <p>Get the 10-word reference in your inbox.</p>
+            </div>
           </div>
         </header>
 
@@ -94,9 +98,8 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
           </section>
 
           <section className="simple-guide__save" data-guide-reveal>
-            <div><p className="article-label">Use it when you need it</p><h2>Do not let an AI term derail the conversation</h2><p>Email yourself the 10-word reference. Check a definition in seconds when a tool, proposal or meeting uses language you do not know.</p></div>
+            <div><p className="article-label">Keep it nearby</p><h2>Do not let an AI term derail the conversation</h2><p>Copy the 10-word reference and check a definition when a tool, proposal or meeting uses language you do not know.</p></div>
             <div className="simple-guide__actions">
-              <GuideCaptureModal guideSlug={aiJargonGuide.slug} {...aiJargonGuide.capture} />
               <CopyGuideNotes items={aiJargonGuide.terms} />
             </div>
           </section>
