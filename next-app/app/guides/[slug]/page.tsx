@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CopyGuideNotes } from "@/components/guides/copy-guide-notes";
 import { GuideMotion } from "@/components/guides/guide-motion";
 import { GuideCaptureModal } from "@/components/guides/guide-capture-modal";
 import { GuideCard } from "@/components/guides/guide-card";
@@ -93,21 +92,19 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
           </section>
 
           <section className="simple-guide__bonus" data-guide-reveal>
-            <p className="article-label">Keep going</p>
+            <p className="article-label">You may hear these next</p>
             <h2>{aiJargonGuide.bonusTitle}</h2>
             <div>
-              {aiJargonGuide.bonus.map((item) => <article key={item.term}><h3>{item.term}</h3><p>{item.meaning}</p></article>)}
+              {aiJargonGuide.bonus.map((item) => <article key={item.term}><div><h3>{item.term}</h3>{"fullName" in item && <span>{item.fullName}</span>}</div><p>{item.meaning}</p></article>)}
             </div>
           </section>
 
-          <section className="simple-guide__save" data-guide-reveal>
-            <div><p className="article-label">Keep it nearby</p><h2>Do not let an AI term derail the conversation</h2><p>Copy the 10-word reference and check a definition when a tool, proposal or meeting uses language you do not know.</p></div>
-            <div className="simple-guide__actions">
-              <CopyGuideNotes items={aiJargonGuide.terms} />
-            </div>
+          <section className="simple-guide__closing" data-guide-reveal>
+            <p className="article-label">When a new term appears</p>
+            <h2>{aiJargonGuide.closingTitle}</h2>
+            <p>{aiJargonGuide.closingIntro}</p>
+            <ol>{aiJargonGuide.closingQuestions.map((question) => <li key={question}>{question}</li>)}</ol>
           </section>
-
-          <section className="simple-guide__ending" data-guide-reveal><p>{aiJargonGuide.ending}</p></section>
         </div>
       </article>
 
