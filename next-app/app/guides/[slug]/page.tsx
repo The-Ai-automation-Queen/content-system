@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CopyGuideNotes } from "@/components/guides/copy-guide-notes";
 import { GuideMotion } from "@/components/guides/guide-motion";
+import { GuideCaptureModal } from "@/components/guides/guide-capture-modal";
 import { GuideCard } from "@/components/guides/guide-card";
 import { aiJargonGuide } from "@/content/ai-jargon-guide";
 import { guides } from "@/content/guides";
@@ -54,12 +55,12 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
 
         <div className="simple-guide__body">
           <section className="simple-guide__opening" data-guide-reveal>
-            {aiJargonGuide.intro.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            <p>{aiJargonGuide.intro}</p>
           </section>
 
           <section className="simple-guide__terms" aria-label="10 AI words">
             {aiJargonGuide.terms.map((entry, index) => (
-              <div key={entry.term}>
+              <div className={index === 4 || index === 6 ? "simple-guide__term-row simple-guide__term-row--illustrated" : "simple-guide__term-row"} key={entry.term}>
                 <article className="simple-term" data-guide-reveal>
                   <div className="simple-term__heading">
                     <span>Term {index + 1}</span>
@@ -71,12 +72,12 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
                 </article>
 
                 {index === 4 && (
-                  <figure className="simple-guide__illustration" data-guide-image data-guide-reveal>
+                  <figure className="simple-guide__illustration simple-guide__illustration--learning" data-guide-image data-guide-reveal>
                     <Image src="/images/guides/ai-words-learning.webp" alt="The Blue Princess sorting small idea tiles at a library desk" fill sizes="(max-width: 760px) 100vw, 860px" />
                   </figure>
                 )}
                 {index === 6 && (
-                  <figure className="simple-guide__illustration" data-guide-image data-guide-reveal>
+                  <figure className="simple-guide__illustration simple-guide__illustration--connections" data-guide-image data-guide-reveal>
                     <Image src="/images/guides/ai-words-connections.webp" alt="The Blue Princess inspecting connections between books, a chat and a toolbox" fill sizes="(max-width: 760px) 100vw, 860px" />
                   </figure>
                 )}
@@ -93,10 +94,10 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
           </section>
 
           <section className="simple-guide__save" data-guide-reveal>
-            <div><p className="article-label">Save the list</p><h2>Keep the 10 words nearby</h2><p>Copy the short definitions or download them for the next time an AI term comes up.</p></div>
+            <div><p className="article-label">Use it when you need it</p><h2>Do not let an AI term derail the conversation</h2><p>Email yourself the 10-word reference. Check a definition in seconds when a tool, proposal or meeting uses language you do not know.</p></div>
             <div className="simple-guide__actions">
+              <GuideCaptureModal guideSlug={aiJargonGuide.slug} {...aiJargonGuide.capture} />
               <CopyGuideNotes items={aiJargonGuide.terms} />
-              <a href="/downloads/10-ai-words-you-need-to-know.md" download>Download the 10 words</a>
             </div>
           </section>
 

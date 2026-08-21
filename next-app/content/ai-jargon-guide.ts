@@ -12,10 +12,7 @@ export const aiJargonGuide = {
   deck: "What each word means, with simple examples that make it easy to remember.",
   cover: "/images/guides/learn-master.webp",
   coverAlt: "The Blue Princess learning from an open book filled with AI symbols",
-  intro: [
-    "People use AI words without explaining them.",
-    "Here are 10 words you will hear often, what they mean and why they matter.",
-  ],
+  intro: "People use AI words without explaining them. Here are 10 words you will hear often, what they mean and why they matter.",
   terms: [
     {
       term: "LLM",
@@ -89,5 +86,10 @@ export const aiJargonGuide = {
     { term: "Multimodal", meaning: "AI that can work with more than text, such as images, audio or video." },
     { term: "Open-source model", meaning: "A model people can download and run under the rules of its licence." },
   ],
-  ending: "You do not need to memorise every AI word. Save this guide and return when a term comes up. Once these 10 make sense, the rest of the conversation becomes much easier to follow.",
+  capture: {
+    buttonLabel: "Email me the 10 words",
+    title: "Send the 10 AI words to your inbox",
+    description: "Use this reference when a tool, sales pitch or meeting assumes you already know the language.",
+  },
+  ending: "You do not need to memorise every AI word. Use the reference when an unfamiliar term appears, then return to the decision you were trying to make.",
 } as const;
