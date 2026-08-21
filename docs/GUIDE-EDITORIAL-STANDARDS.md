@@ -23,6 +23,7 @@ Do not apply one repeated anatomy to every topic.
 - Add a warning only where the reader can make a real mistake.
 - Prefer grouped layouts, comparison tables, short sequences and compact reference cards over long stacks of identical cards.
 - If the useful information can be said in 2 sentences, do not turn it into 4 paragraphs.
+- A beginner definition must make sense without knowing another AI term. Replace words such as model, training, retrieval and data source with a familiar example or explain them immediately.
 - Write numbers as digits.
 - Do not use em dashes.
 

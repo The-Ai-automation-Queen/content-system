@@ -109,11 +109,11 @@ export const aiJargonGuide = {
   ] satisfies GuideTerm[],
   bonusTitle: "5 more terms worth recognising",
   bonus: [
-    { term: "Agent", meaning: "An AI system that works through a task in several steps. It may search, choose an action, use a tool and check the result before moving on." },
-    { term: "RAG", fullName: "Retrieval-Augmented Generation", meaning: "A method that lets AI search trusted documents or data before answering. It gives the model relevant information instead of asking it to rely only on what it learned during training." },
-    { term: "Fine-tuning", meaning: "Additional training that teaches a model a specific style, subject or type of task." },
-    { term: "Multimodal", meaning: "AI that can understand or create more than one type of content, such as text, images, audio and video." },
-    { term: "Open-source model", meaning: "A model whose files are available for people to download, adapt or run themselves under its licence rules." },
+    { term: "Agent", meaning: "An AI tool that completes a job by doing several steps in order. For example, it could read new emails, find the urgent ones, draft replies and add follow-up dates to your calendar." },
+    { term: "RAG", fullName: "Retrieval-Augmented Generation", meaning: "A way to let AI look through information you choose before it answers. Give it your company handbook, for example, and it can search that handbook instead of guessing." },
+    { term: "Fine-tuning", meaning: "Teaching an AI to respond in a particular way by showing it many examples. A company might use past customer replies to teach an AI its preferred tone." },
+    { term: "Multimodal", meaning: "AI that can work with more than typed words. You can show it a photo, give it an audio recording or ask it to create a video." },
+    { term: "Open-source model", meaning: "An AI system that people can download and run on their own computers. It offers more control, but someone still has to set it up, protect it and keep it working." },
   ],
   capture: {
     buttonLabel: "Send me the guide",
