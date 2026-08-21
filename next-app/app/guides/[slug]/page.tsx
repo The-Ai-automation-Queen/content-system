@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (slug !== aiJargonGuide.slug) return {};
   const canonical = `/guides/${aiJargonGuide.slug}.html`;
   return {
-    title: "12 AI Terms Explained in Plain English",
+    title: "12 AI Terms Explained Clearly",
     description: aiJargonGuide.deck,
     alternates: { canonical },
     openGraph: {
@@ -41,10 +41,8 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
 
         <header className="simple-guide__hero">
           <div className="article-shell simple-guide__hero-inner">
-            <p className="article-label">{aiJargonGuide.label}</p>
             <h1>{aiJargonGuide.title}</h1>
             <p className="simple-guide__deck">{aiJargonGuide.deck}</p>
-            <div className="article-meta"><span>By {aiJargonGuide.author}</span><span>Updated {aiJargonGuide.updated}</span></div>
           </div>
         </header>
 
@@ -84,7 +82,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
 
           <section className="simple-guide__translation">
             <p className="article-label">Put it together</p>
-            <h2>One sentence. No fog.</h2>
+            <h2>1 sentence. No fog.</h2>
             <blockquote>“{aiJargonGuide.example.quote}”</blockquote>
             <div><strong>What it means</strong><p>{aiJargonGuide.example.translation}</p></div>
             <div><strong>What matters next</strong><p>{aiJargonGuide.example.decision}</p></div>
@@ -99,7 +97,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
             <ol>{aiJargonGuide.questions.map((question) => <li key={question}>{question}</li>)}</ol>
             <div className="simple-guide__actions">
               <CopyQuestions questions={aiJargonGuide.questions} />
-              <a href="/downloads/five-questions-for-ai-meetings.md" download>Download the five questions</a>
+              <a href="/downloads/five-questions-for-ai-meetings.md" download>Download the 5 questions</a>
             </div>
           </section>
 
