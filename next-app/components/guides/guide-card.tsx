@@ -14,12 +14,10 @@ export function GuideCard({ guide, featured = false }: { guide: Guide; featured?
           className="guide-card__image"
           priority={featured}
         />
-        <span className="guide-card__stamp">{featured ? "Start here" : guide.formatLabel}</span>
       </div>
       <div className="guide-card__body">
-        <p className="guide-card__meta">{guide.readMinutes} min read</p>
         <h2>{guide.title}</h2>
-        <p>{guide.summary}</p>
+        {guide.summary && <p>{guide.summary}</p>}
         <span className="guide-card__link">Open guide <span aria-hidden="true">→</span></span>
       </div>
     </Link>
