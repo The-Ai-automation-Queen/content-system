@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GuideMotion } from "@/components/guides/guide-motion";
 import { GuideCaptureModal } from "@/components/guides/guide-capture-modal";
-import { GuideCard } from "@/components/guides/guide-card";
+import { RelatedGuides } from "@/components/guides/related-guides";
 import { aiJargonGuide } from "@/content/ai-jargon-guide";
 import { guides } from "@/content/guides";
 
@@ -89,10 +89,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
         </div>
       </article>
 
-      <section className="more-guides article-shell">
-        <div><h2>Choose what to learn next.</h2></div>
-        <div className="more-guides__grid">{related.map((item) => <GuideCard guide={item} key={item.slug} />)}</div>
-      </section>
+      <RelatedGuides guides={related} />
     </main>
   );
 }

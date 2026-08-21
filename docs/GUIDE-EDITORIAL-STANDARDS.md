@@ -52,6 +52,8 @@ Do not apply one repeated anatomy to every topic.
 - Keep supporting illustrations beside the relevant content on desktop and controlled in size on mobile.
 - Vary section composition when the content function changes.
 - Animation should reveal hierarchy and progress. It must not slow reading or make the page feel longer.
+- End every guide with the shared related-guides component. Give the section heading the full content width, use 3 topic-specific guide covers, add 1 short reason to open each guide and align all card actions to the same baseline.
+- Do not add a separate decorative image beside the related-guides heading. The guide covers provide the visual system for that section.
 
 ## Final test
 
