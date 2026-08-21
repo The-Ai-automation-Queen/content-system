@@ -44,18 +44,19 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
 
         <header className="simple-guide__hero">
           <div className="article-shell simple-guide__hero-inner" data-guide-hero>
-            <h1>{aiJargonGuide.title}</h1>
-            <p className="simple-guide__deck">{aiJargonGuide.deck}</p>
-            <div className="simple-guide__hero-action">
-              <GuideCaptureModal guideSlug={aiJargonGuide.slug} {...aiJargonGuide.capture} />
-              <p>Get the 10-word reference in your inbox.</p>
+            <div className="simple-guide__hero-copy">
+              <h1>{aiJargonGuide.title}</h1>
+              <p className="simple-guide__deck">{aiJargonGuide.deck}</p>
+              <div className="simple-guide__hero-action">
+                <GuideCaptureModal guideSlug={aiJargonGuide.slug} {...aiJargonGuide.capture} />
+                <p>Get the reference in your inbox.</p>
+              </div>
             </div>
+            <figure className="simple-guide__cover" data-guide-image>
+              <Image src={aiJargonGuide.cover} alt={aiJargonGuide.coverAlt} fill priority sizes="(max-width: 760px) 100vw, 520px" />
+            </figure>
           </div>
         </header>
-
-        <figure className="article-shell simple-guide__cover" data-guide-image>
-          <Image src={aiJargonGuide.cover} alt={aiJargonGuide.coverAlt} fill priority sizes="(max-width: 760px) 100vw, 1240px" />
-        </figure>
 
         <div className="simple-guide__body">
           <section className="simple-guide__opening" data-guide-reveal>
@@ -63,29 +64,31 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
           </section>
 
           <section className="simple-guide__terms" aria-label="10 AI words">
-            {aiJargonGuide.terms.map((entry, index) => (
-              <div className={index === 4 || index === 6 ? "simple-guide__term-row simple-guide__term-row--illustrated" : "simple-guide__term-row"} key={entry.term}>
-                <article className="simple-term" data-guide-reveal>
-                  <div className="simple-term__heading">
-                    <span>Term {index + 1}</span>
-                    <div><h2>{entry.term}</h2>{entry.fullName && <p>{entry.fullName}</p>}</div>
-                  </div>
-                  <p className="simple-term__meaning">{entry.meaning}</p>
-                  <div className="simple-term__picture"><strong>Picture it</strong><p>{entry.example}</p></div>
-                  <div className="simple-term__why"><strong>Why it matters</strong><p>{entry.why}</p></div>
-                </article>
-
-                {index === 4 && (
-                  <figure className="simple-guide__illustration simple-guide__illustration--learning" data-guide-image data-guide-reveal>
-                    <Image src="/images/guides/ai-words-learning.webp" alt="The Blue Princess sorting small idea tiles at a library desk" fill sizes="(max-width: 760px) 100vw, 860px" />
-                  </figure>
-                )}
-                {index === 6 && (
-                  <figure className="simple-guide__illustration simple-guide__illustration--connections" data-guide-image data-guide-reveal>
-                    <Image src="/images/guides/ai-words-connections.webp" alt="The Blue Princess inspecting connections between books, a chat and a toolbox" fill sizes="(max-width: 760px) 100vw, 860px" />
-                  </figure>
-                )}
-              </div>
+            {aiJargonGuide.groups.map((group) => (
+              <section className="term-group" key={group.id} data-guide-reveal>
+                <header className="term-group__header">
+                  <span>{group.number}</span>
+                  <div><h2>{group.title}</h2><p>{group.description}</p></div>
+                  {"image" in group && (
+                    <figure data-guide-image>
+                      <Image src={group.image} alt={group.imageAlt} fill sizes="(max-width: 760px) 42vw, 180px" />
+                    </figure>
+                  )}
+                </header>
+                <div className="term-group__grid">
+                  {aiJargonGuide.terms.filter((entry) => entry.group === group.id).map((entry) => (
+                    <article className="term-brief" key={entry.term} data-guide-reveal>
+                      <div className="term-brief__title">
+                        <span>{String(aiJargonGuide.terms.indexOf(entry) + 1).padStart(2, "0")}</span>
+                        <div><h3>{entry.term}</h3>{entry.fullName && <p>{entry.fullName}</p>}</div>
+                      </div>
+                      <p className="term-brief__definition">{entry.definition}</p>
+                      <p className="term-brief__conversation">{entry.inConversation}</p>
+                      {entry.caution && <p className="term-brief__caution"><strong>Watch:</strong> {entry.caution}</p>}
+                    </article>
+                  ))}
+                </div>
+              </section>
             ))}
           </section>
 

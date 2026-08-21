@@ -1,0 +1,54 @@
+# Shift & Lead guide editorial standards
+
+## The outcome
+
+A guide must help a capable non-specialist understand something, make a decision or complete a useful action. It is not a decorated blog post and it is not a place to display everything we know.
+
+## Choose the structure from the reader's job
+
+Do not apply one repeated anatomy to every topic.
+
+- A glossary should group related terms and make each definition quick to scan.
+- A tutorial should show the finished result, then the shortest reliable path to reproduce it.
+- A decision guide should compare options, tradeoffs and the recommended choice.
+- A checklist should make the sequence and completion criteria obvious.
+- A story-led guide should earn each section through tension, proof and change. It should not hide the practical answer.
+
+## Density rules
+
+- Every screen should deliver a new idea, decision, example or action.
+- Remove repeated labels such as "Picture it" and "Why it matters" when they do not add meaning.
+- Do not force every item into the same content fields.
+- Use one concrete example only when it makes the idea easier to understand.
+- Add a warning only where the reader can make a real mistake.
+- Prefer grouped layouts, comparison tables, short sequences and compact reference cards over long stacks of identical cards.
+- If the useful information can be said in 2 sentences, do not turn it into 4 paragraphs.
+- Write numbers as digits.
+- Do not use em dashes.
+
+## Opening and capture
+
+- Start with the title and one direct promise.
+- Put the primary email capture immediately below that promise when the guide is a lead magnet.
+- The capture opens in a popup. Do not send the reader to a separate capture page.
+- Explain what will arrive and when it will be useful.
+- Do not repeat the same capture at the bottom. A secondary action such as copy or download is enough there.
+
+## Visual rhythm
+
+- Use illustration to orient, explain or reset attention. Do not insert a large image merely to fill space.
+- Keep supporting illustrations beside the relevant content on desktop and controlled in size on mobile.
+- Vary section composition when the content function changes.
+- Animation should reveal hierarchy and progress. It must not slow reading or make the page feel longer.
+
+## Final test
+
+Before publishing, ask:
+
+1. Can the reader explain the subject after skimming the headings and highlighted lines?
+2. Does each section do a different job?
+3. Is any repeated component making the page longer without adding value?
+4. Is the primary action visible before the reader starts scrolling?
+5. Would removing anything make the guide more useful?
+
+If the answer to question 3 is yes, or question 4 is no, restructure the page before styling it.
