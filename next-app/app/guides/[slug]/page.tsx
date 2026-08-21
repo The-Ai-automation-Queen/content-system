@@ -43,6 +43,9 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
 
         <header className="simple-guide__hero">
           <div className="article-shell simple-guide__hero-inner" data-guide-hero>
+            <figure className="simple-guide__cover" data-guide-image>
+              <Image src={aiJargonGuide.cover} alt={aiJargonGuide.coverAlt} fill priority sizes="100vw" />
+            </figure>
             <div className="simple-guide__hero-copy">
               <h1>{aiJargonGuide.title}</h1>
               <p className="simple-guide__deck">{aiJargonGuide.deck}</p>
@@ -50,9 +53,6 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
                 <GuideCaptureModal guideSlug={aiJargonGuide.slug} {...aiJargonGuide.capture} />
               </div>
             </div>
-            <figure className="simple-guide__cover" data-guide-image>
-              <Image src={aiJargonGuide.cover} alt={aiJargonGuide.coverAlt} fill priority sizes="(max-width: 760px) 100vw, 520px" />
-            </figure>
           </div>
         </header>
 
