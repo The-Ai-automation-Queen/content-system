@@ -35,6 +35,7 @@ Do not apply one repeated anatomy to every topic.
 - Do not repeat the same capture at the bottom.
 - Do not add a copy or download button unless the reader receives a practical asset they can use somewhere else. Copying article text is not a useful call to action.
 - A guide can end with a decision rule, diagnostic or next action instead of another button.
+- Do not manufacture a closing framework when the guide has already delivered its promise. Ending cleanly is better than adding another screen of summary.
 
 ## Visual rhythm
 

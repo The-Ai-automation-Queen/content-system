@@ -120,11 +120,4 @@ export const aiJargonGuide = {
     title: "Send the 10 AI words to your inbox",
     description: "Keep the reference for the next time a tool, sales pitch or meeting assumes you know the language.",
   },
-  closingTitle: "You do not need to pretend you understand it",
-  closingIntro: "When someone introduces a new AI term, bring the conversation back to what changes in practice. Ask 3 questions:",
-  closingQuestions: [
-    "What does it actually do?",
-    "What information or tools can it access?",
-    "What still needs a person to check or decide?",
-  ],
 } as const;

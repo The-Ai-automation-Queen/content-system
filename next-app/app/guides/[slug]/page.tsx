@@ -99,12 +99,6 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
             </div>
           </section>
 
-          <section className="simple-guide__closing" data-guide-reveal>
-            <p className="article-label">When a new term appears</p>
-            <h2>{aiJargonGuide.closingTitle}</h2>
-            <p>{aiJargonGuide.closingIntro}</p>
-            <ol>{aiJargonGuide.closingQuestions.map((question) => <li key={question}>{question}</li>)}</ol>
-          </section>
         </div>
       </article>
 
