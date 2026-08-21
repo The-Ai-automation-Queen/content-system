@@ -27,6 +27,8 @@ Do not apply one repeated anatomy to every topic.
 - A numbered promise is a contract. If the title promises 10 items, the guide contains exactly 10. Move secondary material into a separate guide instead of adding a bonus list.
 - Choose beginner terms by how often the reader will meet them and how much the definition improves a real decision. Do not promote a fashionable technical term above a foundational one.
 - A glossary entry should give the plain meaning and a recognisable example. Add a direct instruction only when the reader could make a consequential mistake.
+- In a Shift & Lead guide, examples should expose a decision about evidence, access, approval, cost, privacy, customers or reputation. Generic examples that merely demonstrate a feature are not enough.
+- State instructions as instructions. Do not weaken them with repeated labels such as "Remember," "Watch" or "Keep in mind."
 - Write numbers as digits.
 - Do not use em dashes.
 
@@ -37,6 +39,7 @@ Do not apply one repeated anatomy to every topic.
 - The capture opens in a popup. Do not send the reader to a separate capture page.
 - Explain what will arrive and when it will be useful.
 - The email must deliver something meaningfully different from the page already open, such as a printable reference, editable template or email lesson. Do not ask for an email merely to send the same URL.
+- After a successful capture, make the promised asset available immediately as well as by email. A delayed or misconfigured email must not leave the reader empty-handed.
 - Do not place helper copy beside a CTA when it only repeats the button. Make the button label specific enough to stand alone.
 - Do not repeat the same capture at the bottom.
 - Do not add a copy or download button unless the reader receives a practical asset they can use somewhere else. Copying article text is not a useful call to action.

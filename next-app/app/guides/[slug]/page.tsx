@@ -57,16 +57,12 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
         </header>
 
         <div className="simple-guide__body">
-          <section className="simple-guide__opening" data-guide-reveal>
-            <p>{aiJargonGuide.intro}</p>
-          </section>
-
           <section className="simple-guide__terms" aria-label="10 AI words">
             {aiJargonGuide.groups.map((group) => (
               <section className="term-group" key={group.id} data-guide-reveal>
                 <header className="term-group__header">
                   <span>{group.number}</span>
-                  <div><h2>{group.title}</h2><p>{group.description}</p></div>
+                  <div><h2>{group.title}</h2></div>
                   {"image" in group && (
                     <figure data-guide-image>
                       <Image src={group.image} alt={group.imageAlt} fill sizes="(max-width: 760px) 42vw, 180px" />
@@ -81,8 +77,8 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
                         <div><h3>{entry.term}</h3>{entry.fullName && <p>{entry.fullName}</p>}</div>
                       </div>
                       <p className="term-brief__definition">{entry.definition}</p>
-                      <p className="term-brief__conversation">{entry.inConversation}</p>
-                      {entry.caution && <p className="term-brief__caution"><strong>Remember:</strong> {entry.caution}</p>}
+                      <p className="term-brief__example">{entry.example}</p>
+                      <p className="term-brief__action">{entry.action}</p>
                     </article>
                   ))}
                 </div>
@@ -94,7 +90,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
       </article>
 
       <section className="more-guides article-shell">
-        <div><p className="article-label">Read next</p><h2>Learn what AI can do next.</h2></div>
+        <div><h2>Choose what to learn next.</h2></div>
         <div className="more-guides__grid">{related.map((item) => <GuideCard guide={item} key={item.slug} />)}</div>
       </section>
     </main>

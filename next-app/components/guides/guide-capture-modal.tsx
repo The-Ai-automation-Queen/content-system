@@ -7,9 +7,10 @@ type GuideCaptureModalProps = {
   buttonLabel: string;
   title: string;
   description: string;
+  downloadHref: string;
 };
 
-export function GuideCaptureModal({ guideSlug, buttonLabel, title, description }: GuideCaptureModalProps) {
+export function GuideCaptureModal({ guideSlug, buttonLabel, title, description, downloadHref }: GuideCaptureModalProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
@@ -35,7 +36,8 @@ export function GuideCaptureModal({ guideSlug, buttonLabel, title, description }
     setStatus("sending");
     setMessage("");
 
-    const form = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const form = new FormData(formElement);
     try {
       const response = await fetch("/api/guide-capture", {
         method: "POST",
@@ -50,8 +52,8 @@ export function GuideCaptureModal({ guideSlug, buttonLabel, title, description }
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || "Unable to send the guide right now. Please try again.");
       setStatus("success");
-      setMessage("Check your inbox. Your 1-page reference is on its way.");
-      event.currentTarget.reset();
+      setMessage("Your 1-page PDF is ready. We have also sent the reference to your inbox.");
+      formElement.reset();
     } catch (error) {
       setStatus("error");
       setMessage(error instanceof Error ? error.message : "Unable to send the guide right now.");
@@ -64,13 +66,13 @@ export function GuideCaptureModal({ guideSlug, buttonLabel, title, description }
       <dialog className="guide-capture" ref={dialogRef} aria-labelledby="guide-capture-title">
         <button className="guide-capture__close" type="button" aria-label="Close" onClick={() => dialogRef.current?.close()}>Close</button>
         <div className="guide-capture__content">
-          <p className="article-label">Your 1-page reference</p>
           <h2 id="guide-capture-title">{title}</h2>
           <p>{description}</p>
           {status === "success" ? (
             <div className="guide-capture__success" role="status">
               <strong>{message}</strong>
-              <button type="button" onClick={() => dialogRef.current?.close()}>Back to the guide</button>
+              <a href={downloadHref} download>Download the PDF</a>
+              <button type="button" onClick={() => dialogRef.current?.close()}>Continue reading</button>
             </div>
           ) : (
             <form onSubmit={submit}>

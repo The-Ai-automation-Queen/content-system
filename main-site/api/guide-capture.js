@@ -2,6 +2,10 @@ const GUIDE_TAGS = {
   "ai-jargon-guide": "guide-ai-jargon",
 };
 
+const GUIDE_FILES = {
+  "ai-jargon-guide": "https://www.shiftandlead.com/downloads/10-ai-words-you-need-to-know.pdf",
+};
+
 module.exports = async function handler(request, response) {
   if (request.method !== "POST") {
     response.setHeader("Allow", "POST");
@@ -30,7 +34,10 @@ module.exports = async function handler(request, response) {
       body: JSON.stringify({
         email: email.trim().toLowerCase(),
         tags: ["shift-and-lead-guide", guideTag],
-        fields: { source: typeof source === "string" ? source.slice(0, 200) : `/guides/${guideSlug}.html` },
+        fields: {
+          source: typeof source === "string" ? source.slice(0, 200) : `/guides/${guideSlug}.html`,
+          guide_url: GUIDE_FILES[guideSlug],
+        },
         replaceTags: false,
         resubscribe: true,
         triggerWorkflows: true,
