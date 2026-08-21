@@ -48,7 +48,6 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
               <p className="simple-guide__deck">{aiJargonGuide.deck}</p>
               <div className="simple-guide__hero-action">
                 <GuideCaptureModal guideSlug={aiJargonGuide.slug} {...aiJargonGuide.capture} />
-                <p>Get the reference in your inbox.</p>
               </div>
             </div>
             <figure className="simple-guide__cover" data-guide-image>

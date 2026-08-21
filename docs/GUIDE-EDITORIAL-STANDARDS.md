@@ -32,6 +32,7 @@ Do not apply one repeated anatomy to every topic.
 - Put the primary email capture immediately below that promise when the guide is a lead magnet.
 - The capture opens in a popup. Do not send the reader to a separate capture page.
 - Explain what will arrive and when it will be useful.
+- Do not place helper copy beside a CTA when it only repeats the button. Make the button label specific enough to stand alone.
 - Do not repeat the same capture at the bottom.
 - Do not add a copy or download button unless the reader receives a practical asset they can use somewhere else. Copying article text is not a useful call to action.
 - A guide can end with a decision rule, diagnostic or next action instead of another button.
