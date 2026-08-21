@@ -24,6 +24,9 @@ Do not apply one repeated anatomy to every topic.
 - Prefer grouped layouts, comparison tables, short sequences and compact reference cards over long stacks of identical cards.
 - If the useful information can be said in 2 sentences, do not turn it into 4 paragraphs.
 - A beginner definition must make sense without knowing another AI term. Replace words such as model, training, retrieval and data source with a familiar example or explain them immediately.
+- A numbered promise is a contract. If the title promises 10 items, the guide contains exactly 10. Move secondary material into a separate guide instead of adding a bonus list.
+- Choose beginner terms by how often the reader will meet them and how much the definition improves a real decision. Do not promote a fashionable technical term above a foundational one.
+- A glossary entry should give the plain meaning and a recognisable example. Add a direct instruction only when the reader could make a consequential mistake.
 - Write numbers as digits.
 - Do not use em dashes.
 
@@ -33,6 +36,7 @@ Do not apply one repeated anatomy to every topic.
 - Put the primary email capture immediately below that promise when the guide is a lead magnet.
 - The capture opens in a popup. Do not send the reader to a separate capture page.
 - Explain what will arrive and when it will be useful.
+- The email must deliver something meaningfully different from the page already open, such as a printable reference, editable template or email lesson. Do not ask for an email merely to send the same URL.
 - Do not place helper copy beside a CTA when it only repeats the button. Make the button label specific enough to stand alone.
 - Do not repeat the same capture at the bottom.
 - Do not add a copy or download button unless the reader receives a practical asset they can use somewhere else. Copying article text is not a useful call to action.

@@ -50,7 +50,7 @@ export function GuideCaptureModal({ guideSlug, buttonLabel, title, description }
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || "Unable to send the guide right now. Please try again.");
       setStatus("success");
-      setMessage("Check your inbox. The guide is on its way.");
+      setMessage("Check your inbox. Your 1-page reference is on its way.");
       event.currentTarget.reset();
     } catch (error) {
       setStatus("error");
@@ -64,7 +64,7 @@ export function GuideCaptureModal({ guideSlug, buttonLabel, title, description }
       <dialog className="guide-capture" ref={dialogRef} aria-labelledby="guide-capture-title">
         <button className="guide-capture__close" type="button" aria-label="Close" onClick={() => dialogRef.current?.close()}>Close</button>
         <div className="guide-capture__content">
-          <p className="article-label">Get the reference</p>
+          <p className="article-label">Your 1-page reference</p>
           <h2 id="guide-capture-title">{title}</h2>
           <p>{description}</p>
           {status === "success" ? (

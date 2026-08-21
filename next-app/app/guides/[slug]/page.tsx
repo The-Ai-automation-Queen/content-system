@@ -82,20 +82,12 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
                       </div>
                       <p className="term-brief__definition">{entry.definition}</p>
                       <p className="term-brief__conversation">{entry.inConversation}</p>
-                      {entry.caution && <p className="term-brief__caution"><strong>Watch:</strong> {entry.caution}</p>}
+                      {entry.caution && <p className="term-brief__caution"><strong>Remember:</strong> {entry.caution}</p>}
                     </article>
                   ))}
                 </div>
               </section>
             ))}
-          </section>
-
-          <section className="simple-guide__bonus" data-guide-reveal>
-            <p className="article-label">You may hear these next</p>
-            <h2>{aiJargonGuide.bonusTitle}</h2>
-            <div>
-              {aiJargonGuide.bonus.map((item) => <article key={item.term}><div><h3>{item.term}</h3>{"fullName" in item && <span>{item.fullName}</span>}</div><p>{item.meaning}</p></article>)}
-            </div>
           </section>
 
         </div>

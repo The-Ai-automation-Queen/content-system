@@ -206,14 +206,6 @@ button, input { font: inherit; }
 .simple-guide__illustration img { object-fit: cover; will-change: transform; }
 .simple-guide__illustration--learning img { object-position: 56% center; }
 .simple-guide__illustration--connections img { object-position: 72% center; }
-.simple-guide__bonus { margin: 110px -55px 0; padding: 50px 52px; color: #fff; background: var(--blue-deep); }
-.simple-guide__bonus .article-label { color: #cbd4ff; }
-.simple-guide__bonus h2, .simple-guide__save h2 { margin: 0 0 30px; font: 400 clamp(40px,5vw,58px)/1 var(--font-display),serif; letter-spacing: -.04em; }
-.simple-guide__bonus > div { border-top: 1px solid rgba(255,255,255,.45); }
-.simple-guide__bonus article { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.22); }
-.simple-guide__bonus article h3 { margin: 0; font: 600 22px/1.2 var(--font-display),serif; }
-.simple-guide__bonus article span { display: block; margin-top: 6px; color: #cbd4ff; font: 600 10px/1.4 var(--font-ui),sans-serif; }
-.simple-guide__bonus article p { margin: 0; color: #eef1ff; font-size: 17px; line-height: 1.55; }
 .simple-guide__save { margin: 90px -55px 0; padding: 44px 52px; border: 1px solid var(--ink); background: var(--cream); }
 .simple-guide__save h2 { margin-bottom: 14px; }
 .simple-guide__save > div:first-child > p:not(.article-label) { max-width: 560px; margin: 0; color: #403c37; font-size: 18px; line-height: 1.6; }
@@ -223,8 +215,6 @@ button, input { font: inherit; }
   .simple-guide__opening { padding-bottom: 54px; }
   .simple-guide__term-row--illustrated { display: block; }
   .simple-guide__illustration { width: min(76%, 290px); aspect-ratio: 1/1; margin: -18px 0 48px auto; }
-  .simple-guide__bonus, .simple-guide__save { margin: 76px 0 0; padding: 34px 24px; }
-  .simple-guide__bonus article { grid-template-columns: 1fr; gap: 6px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

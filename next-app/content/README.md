@@ -2,7 +2,7 @@
 
 The words users see in the guide live in one file:
 
-- `ai-jargon-guide.ts` — title, introduction, 10 terms, examples, bonus terms, and closing copy.
+- `ai-jargon-guide.ts` — title, direct opening, exactly 10 terms, examples, warnings, and capture copy.
 
 The page layout lives in `app/guides/[slug]/page.tsx`. The copy control lives in
 `components/guides/copy-guide-notes.tsx`, and the GSAP scroll behavior lives in
