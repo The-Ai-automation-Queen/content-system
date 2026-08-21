@@ -2,7 +2,7 @@ const GUIDE_TAGS = {
   "ai-jargon-guide": "guide-ai-jargon",
 };
 
-module.exports = async function handler(request, response) {
+export default async function handler(request, response) {
   if (request.method !== "POST") {
     response.setHeader("Allow", "POST");
     return response.status(405).json({ error: "Method not allowed." });
