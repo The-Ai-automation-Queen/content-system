@@ -47,8 +47,8 @@ export function GuideCaptureModal({ guideSlug, buttonLabel, title, description }
           source: window.location.pathname,
         }),
       });
-      const result = await response.json();
-      if (!response.ok) throw new Error(result.error || "Unable to send the guide.");
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || "Unable to send the guide right now. Please try again.");
       setStatus("success");
       setMessage("Check your inbox. The guide is on its way.");
       event.currentTarget.reset();
