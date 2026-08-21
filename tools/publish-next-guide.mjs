@@ -29,4 +29,9 @@ await cp(path.join(publicRoot, "downloads"), path.join(destinationRoot, "downloa
   force: true,
 });
 
+await cp(path.join(publicRoot, "images", "guides"), path.join(destinationRoot, "images", "guides"), {
+  recursive: true,
+  force: true,
+});
+
 console.log(`Published ${slug} to main-site/guides/${slug}.html`);

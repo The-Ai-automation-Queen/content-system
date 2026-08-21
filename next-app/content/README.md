@@ -2,10 +2,11 @@
 
 The words users see in the guide live in one file:
 
-- `ai-jargon-guide.ts` — title, opening story, terms, examples, questions, and closing copy.
+- `ai-jargon-guide.ts` — title, introduction, 10 terms, examples, bonus terms, and closing copy.
 
-The page layout lives in `app/guides/[slug]/page.tsx`. The small copy button lives in
-`components/guides/copy-questions.tsx`.
+The page layout lives in `app/guides/[slug]/page.tsx`. The copy control lives in
+`components/guides/copy-guide-notes.tsx`, and the GSAP scroll behavior lives in
+`components/guides/guide-motion.tsx`.
 
 After editing the copy, preview it from `next-app` with `npm run dev`. To rebuild the guide and
 copy the deployable files into `main-site`, run this command from the repository root:
