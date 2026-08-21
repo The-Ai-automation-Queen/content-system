@@ -287,12 +287,12 @@ button, input { font: inherit; }
 /* Compact editorial glossary. The grouping carries meaning, not repeated subheadings. */
 .simple-guide__terms { display: grid; gap: 90px; border-top: 0; }
 .term-group { border-top: 1px solid var(--ink); }
-.term-group__header { display: grid; grid-template-columns: 42px minmax(0,1fr) 160px; gap: 20px; align-items: start; padding: 24px 0 30px; }
+.term-group__header { display: grid; grid-template-columns: 42px minmax(0,1fr) 210px; gap: 20px; align-items: start; padding: 24px 0 30px; }
 .term-group__header > span, .term-brief__title > span { padding-top: 6px; color: var(--blue-deep); font: 700 11px/1 var(--font-mono),monospace; letter-spacing: .1em; }
 .term-group__header h2 { max-width: 650px; margin: 0 0 10px; font: 400 clamp(34px,4.5vw,54px)/1.02 var(--font-display),serif; letter-spacing: -.04em; }
 .term-group__header p { max-width: 570px; margin: 0; color: #4d4943; font-size: 17px; line-height: 1.55; }
-.term-group__header figure { position: relative; width: 150px; aspect-ratio: 1/1; margin: 0 0 0 auto; overflow: hidden; background: var(--cream); }
-.term-group__header figure img { object-fit: cover; }
+.term-group__header figure { position: relative; width: 210px; aspect-ratio: 3/2; margin: 0 0 0 auto; overflow: hidden; background: var(--cream); }
+.term-group__header figure img { object-fit: contain; }
 .term-group__grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .term-brief { min-height: 0; padding: 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .term-brief:last-child:nth-child(odd) { grid-column: 1 / -1; }
@@ -341,7 +341,7 @@ button, input { font: inherit; }
   .simple-guide__actions { display: grid; }
   .simple-guide__terms { gap: 68px; }
   .term-group__header { grid-template-columns: 34px 1fr; }
-  .term-group__header figure { grid-column: 2; width: 112px; margin: 4px 0 0; }
+  .term-group__header figure { grid-column: 2; width: min(100%, 220px); aspect-ratio: 3/2; margin: 4px 0 0; }
   .term-group__grid { grid-template-columns: 1fr; }
   .term-brief { padding: 26px 22px; }
   .term-brief:last-child:nth-child(odd) { grid-column: auto; }

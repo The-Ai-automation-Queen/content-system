@@ -116,7 +116,7 @@ export const aiJargonGuide = {
     { term: "Open-source model", meaning: "A model whose files are available for people to download, adapt or run themselves under its licence rules." },
   ],
   capture: {
-    buttonLabel: "Send me the 10-word guide",
+    buttonLabel: "Send me the guide",
     title: "Send the guide to your inbox",
     description: "Keep it for the next time a tool, sales pitch or meeting uses an AI term you do not know.",
   },
