@@ -52,12 +52,52 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
           </figure>
         </header>
 
+        <section className="jargon-story article-shell" aria-label="The story behind the guide">
+          <div className="jargon-story__success">
+            <p className="article-label">{aiJargonGuide.story.success.label}</p>
+            <h2>{aiJargonGuide.story.success.title}</h2>
+            <p>{aiJargonGuide.story.success.body}</p>
+          </div>
+          <div className="jargon-story__gap">
+            <p className="article-label">{aiJargonGuide.story.gap.label}</p>
+            <h2>{aiJargonGuide.story.gap.title}</h2>
+            <p>{aiJargonGuide.story.gap.body}</p>
+          </div>
+        </section>
+
+        <section className="jargon-proof article-shell">
+          <p className="article-label">{aiJargonGuide.story.proof.label}</p>
+          <h2>{aiJargonGuide.story.proof.title}</h2>
+          <p>{aiJargonGuide.story.proof.body}</p>
+        </section>
+
         <section className="jargon-tool-intro article-shell">
           <p className="article-label">Use it now</p>
           <h2 id="translator-title">{aiJargonGuide.translatorTitle}</h2>
           <p>{aiJargonGuide.translatorIntro}</p>
         </section>
         <div className="article-shell"><JargonLab example={aiJargonGuide.translatorExample} /></div>
+
+        <section className="jargon-reframe article-shell">
+          <p className="article-label">{aiJargonGuide.story.realProblem.label}</p>
+          <h2>{aiJargonGuide.story.realProblem.title}</h2>
+          <p>{aiJargonGuide.story.realProblem.body}</p>
+        </section>
+
+        <section className="jargon-system article-shell">
+          <div className="jargon-system__heading">
+            <p className="article-label">{aiJargonGuide.story.system.label}</p>
+            <h2>{aiJargonGuide.story.system.title}</h2>
+          </div>
+          <ol>
+            {aiJargonGuide.story.system.steps.map((step, index) => (
+              <li key={step.name}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div><h3>{step.name}</h3><p>{step.detail}</p></div>
+              </li>
+            ))}
+          </ol>
+        </section>
 
         <section className="meeting-card article-shell">
           <div>
@@ -71,6 +111,16 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
           </div>
           <ol>{aiJargonGuide.meetingQuestions.map((question) => <li key={question}>{question}</li>)}</ol>
         </section>
+
+        <section className="jargon-transformation article-shell">
+          <p className="article-label">{aiJargonGuide.story.transformation.label}</p>
+          <h2>{aiJargonGuide.story.transformation.title}</h2>
+          <div className="jargon-transformation__compare">
+            <p>{aiJargonGuide.story.transformation.before}</p>
+            <p>{aiJargonGuide.story.transformation.after}</p>
+          </div>
+          <p>{aiJargonGuide.story.transformation.body}</p>
+        </section>
       </article>
 
       <section className="more-guides article-shell">
@@ -78,7 +128,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
         <div className="more-guides__grid">{related.map((item) => <GuideCard guide={item} key={item.slug} />)}</div>
       </section>
       <section className="article-newsletter">
-        <div><p className="article-label">Your next useful step</p><h2>Find the first AI system worth building.</h2><p>Answer eight practical questions and get the most useful place to start for the work you want AI to help with.</p></div>
+        <div><p className="article-label">{aiJargonGuide.story.openLoop.label}</p><h2>{aiJargonGuide.story.openLoop.title}</h2><p>{aiJargonGuide.story.openLoop.body}</p></div>
         <Link className="article-newsletter__action" href="/quiz.html">Take the free diagnostic →</Link>
       </section>
     </main>

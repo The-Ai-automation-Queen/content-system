@@ -11,19 +11,19 @@ export type JargonEntry = {
 
 export const aiJargonGuide = {
   slug: "ai-jargon-guide",
-  label: "Interactive guide · 8 minute read",
-  title: "AI jargon, translated for the meeting you’re already in",
-  deck: "Paste the sentence that lost you, find the words that matter, and leave with the questions that bring the conversation back to a decision.",
+  label: "Interactive field guide · 8 minute read",
+  title: "Walk into your next AI meeting knowing what to ask",
+  deck: "You do not need to sound technical. Learn the three moves that turn a fog of AI jargon into a decision everyone can understand.",
   updated: "21 August 2026",
   cover: "/images/guides/learn-master.webp",
   coverAlt: "The Blue Princess sorting a cloud of AI symbols into clear shapes",
-  translatorTitle: "What did they just say?",
-  translatorIntro: "Paste a sentence from a meeting, proposal or sales deck. This tool spots the terms in this guide and translates each one locally in your browser. Nothing is sent anywhere.",
+  translatorTitle: "Your turn: stop the meeting without stopping the momentum",
+  translatorIntro: "Paste the sentence that made the room nod too quickly. The decoder spots the terms in this guide and gives you the question that brings the conversation back to earth. It works locally in your browser; nothing is sent anywhere.",
   translatorExample: "We’re using RAG with an agent and an MCP connection, but the context window is pushing up our token spend.",
-  glossaryTitle: "The words worth knowing",
-  glossaryIntro: "You do not need to memorise a dictionary. Learn enough to understand the claim, expose the trade-off, and ask what happens when the system is wrong.",
-  quizTitle: "Would you catch the weak claim?",
-  quizIntro: "Four quick scenarios. The goal is not vocabulary. It is knowing which question to ask next.",
+  glossaryTitle: "Build your translation deck",
+  glossaryIntro: "Do not memorise the dictionary. Pick the words showing up in your work and learn three things: what each means, where it appears, and what to ask next.",
+  quizTitle: "Can you spot the decision hiding behind the jargon?",
+  quizIntro: "Four quick situations. No points for sounding clever. You win by asking the question that protects the decision.",
   meetingCardTitle: "Take the meeting card",
   meetingCardIntro: "Five questions that work when jargon starts replacing a clear explanation.",
   meetingQuestions: [
@@ -33,6 +33,49 @@ export const aiJargonGuide = {
     "How will we know when the answer or action is wrong?",
     "What does the full workflow cost—not just the model call?",
   ],
+  story: {
+    success: {
+      label: "Success",
+      title: "The room goes quiet—and this time, you know exactly what to say.",
+      body: "A vendor has just promised an agentic, RAG-powered assistant. Everyone looks impressed. You ask one calm question: ‘What can it do without approval, and how do we verify the answer?’ The conversation changes. Features become decisions. Risks become visible. You are no longer trying to keep up with the words; you are leading the room toward clarity.",
+    },
+    gap: {
+      label: "The gap",
+      title: "Right now, the words arrive faster than the meaning.",
+      body: "You recognise ‘AI’. Then come tokens, context windows, embeddings and MCP. You can either interrupt every sentence, pretend it makes sense, or quietly search later—after the decision has already moved on. None of those options helps you lead.",
+    },
+    proof: {
+      label: "Proof in 30 seconds",
+      title: "You already know how to do the important part.",
+      body: "The technical sentence below is only hiding three ordinary questions: What information does the system use? What action can it take? What will that access cost or expose? Decode it and watch the fog disappear.",
+    },
+    realProblem: {
+      label: "The real problem",
+      title: "Jargon is not the enemy. Unexamined decisions are.",
+      body: "You do not need an engineer’s vocabulary. You need enough understanding to find the claim, expose the trade-off and locate the human decision. A perfect definition with no next question is trivia. A plain explanation that changes what the team decides is useful.",
+    },
+    system: {
+      label: "The system",
+      title: "Use the S.A.Y. method when the room gets foggy.",
+      steps: [
+        { name: "Spot the claim", detail: "What is the system supposed to know, produce or do? Ignore the impressive adjectives." },
+        { name: "Ask for plain English", detail: "Replace the term with its job: retrieve information, generate an answer, connect a tool or take an action." },
+        { name: "Yield to the decision", detail: "Ask about evidence, access, approval, failure or full cost. Choose the question that changes what happens next." },
+      ],
+    },
+    transformation: {
+      label: "Transformation",
+      title: "From ‘I should know this’ to ‘the team should explain this.’",
+      before: "Before: you collect definitions so you can survive the conversation.",
+      after: "After: you translate claims so the whole team can make a better decision.",
+      body: "That is the shift: fluency is not using more jargon. It is making complexity discussable without removing the important nuance.",
+    },
+    openLoop: {
+      label: "The open loop",
+      title: "Knowing the words gets you into the decision. Designing the system is the next move.",
+      body: "Your next AI conversation will raise a harder question: should this be a prompt, a predictable workflow or an agent with room to act? That choice shapes the cost, control and risk of everything that follows.",
+    },
+  },
 } as const;
 
 export const jargonEntries: JargonEntry[] = [
