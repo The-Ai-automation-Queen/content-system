@@ -14,11 +14,9 @@ export function GuideMotion() {
     if (reduceMotion) return;
 
     const context = gsap.context(() => {
-      gsap.from("[data-guide-hero] > *", {
-        opacity: 0,
-        y: 24,
-        duration: 0.7,
-        stagger: 0.1,
+      gsap.from("[data-guide-hero-copy]", {
+        y: 16,
+        duration: 0.35,
         ease: "power2.out",
       });
 

@@ -75,7 +75,7 @@
       "readMinutes": 5,
       "cover": "/assets/mascot/planning.png",
       "track": "tools",
-      "status": "demoted",
+      "status": "live",
       "formatLabel": "AI PLAYER GUIDE"
     },
     {
@@ -127,7 +127,7 @@
       "readMinutes": 5,
       "cover": "/assets/mascot/hero-seated.png",
       "track": "tools",
-      "status": "demoted",
+      "status": "live",
       "formatLabel": "AI PLAYER GUIDE"
     },
     {
@@ -153,7 +153,7 @@
       "readMinutes": 5,
       "cover": "/assets/mascot/pointing-right.png",
       "track": "tools",
-      "status": "demoted",
+      "status": "live",
       "formatLabel": "AI PLAYER GUIDE"
     },
     {
@@ -166,7 +166,7 @@
       "readMinutes": 5,
       "cover": "/assets/mascot/hero-seated.png",
       "track": "tools",
-      "status": "demoted",
+      "status": "live",
       "formatLabel": "AI PLAYER GUIDE"
     },
     {
@@ -179,7 +179,7 @@
       "readMinutes": 5,
       "cover": "/assets/mascot/explaining.png",
       "track": "tools",
-      "status": "demoted",
+      "status": "live",
       "formatLabel": "AI PLAYER GUIDE"
     },
     {
@@ -192,7 +192,7 @@
       "readMinutes": 5,
       "cover": "/assets/mascot/planning.png",
       "track": "tools",
-      "status": "demoted",
+      "status": "live",
       "formatLabel": "AI PLAYER GUIDE"
     },
     {

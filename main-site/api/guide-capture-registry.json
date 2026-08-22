@@ -1,0 +1,405 @@
+{
+  "version": "1.0.0",
+  "audience": {
+    "name": "Shift & Lead guide readers",
+    "lumailTag": "shift-and-lead-guide"
+  },
+  "guides": {
+    "what-is-ai": {
+      "guideId": "guide.what-is-ai",
+      "active": true,
+      "lumailTag": "guide_ai_essentials_task_sorter",
+      "deliverable": {
+        "name": "AI or automation? 1-page task sorter",
+        "format": "PDF",
+        "file": "ai-or-automation-task-sorter.pdf",
+        "downloadLabel": "Download the task sorter",
+        "successCopy": "Your task sorter is ready. We have also sent it to your inbox."
+      }
+    },
+    "ai-jargon-guide": {
+      "guideId": "guide.ai-jargon-guide",
+      "active": true,
+      "lumailTag": "guide_ai_10_words_pdf",
+      "deliverable": {
+        "name": "10 AI words you need to know",
+        "format": "PDF",
+        "file": "10-ai-words-you-need-to-know.pdf",
+        "downloadLabel": "Download the PDF",
+        "successCopy": "Your 1-page PDF is ready. We have also sent the reference to your inbox."
+      }
+    },
+    "what-is-a-prompt": {
+      "guideId": "guide.what-is-a-prompt",
+      "active": true,
+      "lumailTag": "guide_prompt_brief",
+      "deliverable": {
+        "name": "The useful prompt brief",
+        "format": "PDF",
+        "file": "useful-prompt-brief.pdf",
+        "downloadLabel": "Download the prompt brief",
+        "successCopy": "Your prompt brief is ready. We have also sent it to your inbox."
+      }
+    },
+    "what-is-agentic": {
+      "guideId": "guide.what-is-agentic",
+      "active": true,
+      "lumailTag": "guide_agent_or_workflow_card",
+      "deliverable": {
+        "name": "Workflow or agent worksheet",
+        "format": "PDF",
+        "file": "workflow-or-agent-decision-card.pdf",
+        "downloadLabel": "Download the worksheet",
+        "successCopy": "Your workflow or agent worksheet is ready. We have also sent it to your inbox."
+      }
+    },
+    "chatgpt": {
+      "guideId": "guide.chatgpt",
+      "active": true,
+      "lumailTag": "guide_tool_chatgpt_fit_test",
+      "deliverable": {
+        "name": "ChatGPT 30-minute fit test",
+        "format": "PDF",
+        "file": "chatgpt-30-minute-fit-test.pdf",
+        "downloadLabel": "Download the fit test",
+        "successCopy": "Your ChatGPT fit test is ready. We have also sent it to your inbox."
+      }
+    },
+    "claude": {
+      "guideId": "guide.claude",
+      "active": true,
+      "lumailTag": "guide_tool_claude_document_test",
+      "deliverable": {
+        "name": "Claude document-work test",
+        "format": "PDF",
+        "file": "claude-document-work-test.pdf",
+        "downloadLabel": "Download the document test",
+        "successCopy": "Your Claude document test is ready. We have also sent it to your inbox."
+      }
+    },
+    "gemini": {
+      "guideId": "guide.gemini",
+      "active": true,
+      "lumailTag": "guide_tool_gemini_workspace_test",
+      "deliverable": {
+        "name": "Gemini Workspace fit checklist",
+        "format": "PDF",
+        "file": "gemini-workspace-fit-checklist.pdf",
+        "downloadLabel": "Download the checklist",
+        "successCopy": "Your Gemini checklist is ready. We have also sent it to your inbox."
+      }
+    },
+    "copilot": {
+      "guideId": "guide.copilot",
+      "active": true,
+      "lumailTag": "guide_tool_copilot_permission_test",
+      "deliverable": {
+        "name": "Copilot task and permission test",
+        "format": "PDF",
+        "file": "copilot-task-and-permission-test.pdf",
+        "downloadLabel": "Download the permission test",
+        "successCopy": "Your Copilot permission test is ready. We have also sent it to your inbox."
+      }
+    },
+    "grok": {
+      "guideId": "guide.grok",
+      "active": true,
+      "lumailTag": "guide_tool_grok_signal_check",
+      "deliverable": {
+        "name": "Live signal verification checklist",
+        "format": "PDF",
+        "file": "live-signal-verification-checklist.pdf",
+        "downloadLabel": "Download the checklist",
+        "successCopy": "Your verification checklist is ready. We have also sent it to your inbox."
+      }
+    },
+    "meta-ai": {
+      "guideId": "guide.meta-ai",
+      "active": true,
+      "lumailTag": "guide_tool_meta_safe_use",
+      "deliverable": {
+        "name": "Meta AI safe-use card",
+        "format": "PDF",
+        "file": "meta-ai-safe-use-card.pdf",
+        "downloadLabel": "Download the safe-use card",
+        "successCopy": "Your Meta AI safe-use card is ready. We have also sent it to your inbox."
+      }
+    },
+    "deepseek": {
+      "guideId": "guide.deepseek",
+      "active": true,
+      "lumailTag": "guide_tool_deepseek_data_check",
+      "deliverable": {
+        "name": "DeepSeek data and deployment checklist",
+        "format": "PDF",
+        "file": "deepseek-data-and-deployment-checklist.pdf",
+        "downloadLabel": "Download the checklist",
+        "successCopy": "Your DeepSeek checklist is ready. We have also sent it to your inbox."
+      }
+    },
+    "kimi": {
+      "guideId": "guide.kimi",
+      "active": true,
+      "lumailTag": "guide_tool_kimi_long_file_test",
+      "deliverable": {
+        "name": "Kimi long-file and coding test brief",
+        "format": "PDF",
+        "file": "kimi-long-file-and-coding-test.pdf",
+        "downloadLabel": "Download the test brief",
+        "successCopy": "Your Kimi test brief is ready. We have also sent it to your inbox."
+      }
+    },
+    "manus": {
+      "guideId": "guide.manus",
+      "active": true,
+      "lumailTag": "guide_tool_manus_permission_map",
+      "deliverable": {
+        "name": "Manus task and permission map",
+        "format": "PDF",
+        "file": "manus-task-and-permission-map.pdf",
+        "downloadLabel": "Download the permission map",
+        "successCopy": "Your Manus permission map is ready. We have also sent it to your inbox."
+      }
+    },
+    "mistral": {
+      "guideId": "guide.mistral",
+      "active": true,
+      "lumailTag": "guide_tool_mistral_deployment_brief",
+      "deliverable": {
+        "name": "Private AI deployment requirements brief",
+        "format": "PDF",
+        "file": "private-ai-deployment-requirements.pdf",
+        "downloadLabel": "Download the requirements brief",
+        "successCopy": "Your deployment brief is ready. We have also sent it to your inbox."
+      }
+    },
+    "stack-3-tool-ai-stack": {
+      "guideId": "guide.stack-3-tool-ai-stack",
+      "active": true,
+      "lumailTag": "guide_3_tool_stack_audit",
+      "deliverable": {
+        "name": "3-tool stack audit",
+        "format": "PDF",
+        "file": "3-tool-stack-audit.pdf",
+        "downloadLabel": "Download the stack audit",
+        "successCopy": "Your 3-tool stack audit is ready. We have also sent it to your inbox."
+      }
+    },
+    "research-to-content-workflow": {
+      "guideId": "guide.research-to-content-workflow",
+      "active": true,
+      "lumailTag": "guide_research_content_workflow_map",
+      "deliverable": {
+        "name": "Research-to-Content Workflow Map",
+        "format": "PDF",
+        "file": "research-to-content-workflow-map.pdf",
+        "downloadLabel": "Download the workflow map",
+        "successCopy": "Your workflow map is ready. We have also sent it to your inbox."
+      }
+    },
+    "follow-up-setup": {
+      "guideId": "guide.follow-up-setup",
+      "active": true,
+      "lumailTag": "guide_lead_follow_up_builder",
+      "deliverable": {
+        "name": "Lead follow-up map and 3-message builder",
+        "format": "PDF",
+        "file": "lead-follow-up-map-and-message-builder.pdf",
+        "downloadLabel": "Download the follow-up builder",
+        "successCopy": "Your follow-up builder is ready. We have also sent it to your inbox."
+      }
+    },
+    "inbox-manager-setup": {
+      "guideId": "guide.inbox-manager-setup",
+      "active": true,
+      "lumailTag": "guide_inbox_summary_template",
+      "deliverable": {
+        "name": "Inbox triage rules and daily summary template",
+        "format": "PDF",
+        "file": "inbox-triage-rules-and-daily-summary-template.pdf",
+        "downloadLabel": "Download the inbox template",
+        "successCopy": "Your inbox template is ready. We have also sent it to your inbox."
+      }
+    },
+    "first-ai-employee": {
+      "guideId": "guide.first-ai-employee",
+      "active": true,
+      "lumailTag": "guide_ai_teammate_job_description",
+      "deliverable": {
+        "name": "AI teammate job description",
+        "format": "PDF",
+        "file": "ai-teammate-job-description.pdf",
+        "downloadLabel": "Download the job description",
+        "successCopy": "Your AI teammate job description is ready. We have also sent it to your inbox."
+      }
+    },
+    "24-7-operations-system": {
+      "guideId": "guide.24-7-operations-system",
+      "active": true,
+      "lumailTag": "guide_247_operations_blueprint",
+      "deliverable": {
+        "name": "24/7 operations blueprint",
+        "format": "PDF",
+        "file": "24-7-operations-blueprint.pdf",
+        "downloadLabel": "Download the blueprint",
+        "successCopy": "Your operations blueprint is ready. We have also sent it to your inbox."
+      }
+    },
+    "ai-essentials": {
+      "guideId": "hub.ai-essentials",
+      "active": true,
+      "lumailTag": "hub_ai_essentials_7_day_plan",
+      "deliverable": {
+        "name": "7-day AI starter worksheet and practice log",
+        "format": "PDF",
+        "file": "your-first-7-days-with-ai.pdf",
+        "downloadLabel": "Download the 7-day plan",
+        "successCopy": "Your 7-day plan is ready. We have also sent it to your inbox."
+      }
+    },
+    "get-better-at-ai": {
+      "guideId": "guide.get-better-at-ai",
+      "active": true,
+      "lumailTag": "guide_get_better_at_ai_4_week_tracker",
+      "deliverable": {
+        "name": "4-week AI improvement tracker",
+        "format": "PDF",
+        "file": "4-week-ai-improvement-tracker.pdf",
+        "downloadLabel": "Download the 4-week tracker",
+        "successCopy": "Your tracker is ready. We have also sent it to your inbox."
+      }
+    },
+    "check-ai-answers": {
+      "guideId": "guide.check-ai-answers",
+      "active": true,
+      "lumailTag": "guide_check_ai_answers_source_check",
+      "deliverable": {
+        "name": "AI answer source-checking worksheet",
+        "format": "PDF",
+        "file": "ai-answer-source-checking-worksheet.pdf",
+        "downloadLabel": "Download the worksheet",
+        "successCopy": "Your source-checking worksheet is ready. We have also sent it to your inbox."
+      }
+    },
+    "make-ai-clear-and-concise": {
+      "guideId": "guide.make-ai-clear-and-concise",
+      "active": true,
+      "lumailTag": "guide_clear_concise_revision_worksheet",
+      "deliverable": {
+        "name": "Clear writing revision worksheet",
+        "format": "PDF",
+        "file": "clear-writing-revision-worksheet.pdf",
+        "downloadLabel": "Download the worksheet",
+        "successCopy": "Your clear writing worksheet is ready. We have also sent it to your inbox."
+      }
+    },
+    "build-taste-with-ai": {
+      "guideId": "guide.build-taste-with-ai",
+      "active": true,
+      "lumailTag": "guide_ai_taste_practice_workbook",
+      "deliverable": {
+        "name": "AI creative review workbook",
+        "format": "PDF",
+        "file": "ai-creative-review-workbook.pdf",
+        "downloadLabel": "Download the creative review workbook",
+        "successCopy": "Your creative review workbook is ready. We have also sent it to your inbox."
+      }
+    },
+    "show-up-in-ai-search": {
+      "guideId": "guide.show-up-in-ai-search",
+      "active": true,
+      "lumailTag": "guide_ai_search_visibility_workbook",
+      "deliverable": {
+        "name": "AI search visibility workbook",
+        "format": "PDF",
+        "file": "ai-search-visibility-workbook.pdf",
+        "downloadLabel": "Download the AI search workbook",
+        "successCopy": "Your AI search visibility workbook is ready. We have also sent it to your inbox."
+      }
+    },
+    "better-prompts-and-answers": {
+      "guideId": "hub.better-prompts-and-answers",
+      "active": true,
+      "lumailTag": "hub_prompt_builder_scorecard",
+      "deliverable": {
+        "name": "Prompt builder and answer-quality scorecard",
+        "format": "PDF",
+        "file": "prompt-builder-and-answer-quality-scorecard.pdf",
+        "downloadLabel": "Download the prompt builder",
+        "successCopy": "Your prompt builder is ready. We have also sent it to your inbox."
+      }
+    },
+    "which-ai-tool-for-what": {
+      "guideId": "hub.ai-tools",
+      "active": true,
+      "lumailTag": "hub_ai_tool_comparison_scorecard",
+      "deliverable": {
+        "name": "10-tool comparison scorecard",
+        "format": "PDF",
+        "file": "10-tool-comparison-scorecard.pdf",
+        "downloadLabel": "Download the scorecard",
+        "successCopy": "Your 10-tool scorecard is ready. We have also sent it to your inbox."
+      }
+    },
+    "content-and-creative-work": {
+      "guideId": "hub.content-and-creative-work",
+      "active": true,
+      "lumailTag": "hub_source_to_publish_planner",
+      "deliverable": {
+        "name": "Source-to-publish content planner",
+        "format": "PDF",
+        "file": "source-to-publish-content-planner.pdf",
+        "downloadLabel": "Download the content planner",
+        "successCopy": "Your content planner is ready. We have also sent it to your inbox."
+      }
+    },
+    "workflows-and-automation": {
+      "guideId": "hub.workflows-and-automation",
+      "active": true,
+      "lumailTag": "hub_task_to_workflow_canvas",
+      "deliverable": {
+        "name": "Task-to-workflow canvas",
+        "format": "PDF",
+        "file": "task-to-workflow-canvas.pdf",
+        "downloadLabel": "Download the workflow canvas",
+        "successCopy": "Your workflow canvas is ready. We have also sent it to your inbox."
+      }
+    },
+    "ai-agents": {
+      "guideId": "hub.ai-agents",
+      "active": true,
+      "lumailTag": "hub_agent_role_permission_canvas",
+      "deliverable": {
+        "name": "Agent role, permission and test canvas",
+        "format": "PDF",
+        "file": "agent-role-permission-and-test-canvas.pdf",
+        "downloadLabel": "Download the agent canvas",
+        "successCopy": "Your agent canvas is ready. We have also sent it to your inbox."
+      }
+    },
+    "business-operations": {
+      "guideId": "hub.business-operations",
+      "active": true,
+      "lumailTag": "hub_business_operations_map",
+      "deliverable": {
+        "name": "What to automate first worksheet",
+        "format": "PDF",
+        "file": "business-operations-automation-map.pdf",
+        "downloadLabel": "Download the worksheet",
+        "successCopy": "Your worksheet is ready. We have also sent it to your inbox."
+      }
+    },
+    "build-a-business-dashboard-with-ai": {
+      "guideId": "guide.build-a-business-dashboard-with-ai",
+      "active": true,
+      "lumailTag": "guide_business_dashboard_workbook",
+      "deliverable": {
+        "name": "Business dashboard build workbook",
+        "format": "XLSX",
+        "file": "business-dashboard-build-workbook.xlsx",
+        "downloadLabel": "Download the dashboard workbook",
+        "successCopy": "Your business dashboard workbook is ready. We have also sent it to your inbox."
+      }
+    }
+  }
+}

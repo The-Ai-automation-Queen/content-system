@@ -171,12 +171,10 @@ const libraryCards =
       `\n    </div>\n  </section>`;
   }).join('\n');
 
-const demoted = guidesData.guides.filter((g) => g.status === 'demoted');
-// The demoted verdicts live on their own hub; the library links the hub and
-// the comparison page rather than repeating six low-traffic cards.
+// The current AI tools hub links all 10 full verdicts. Keep the old comparison
+// route retired so the legacy builder cannot reintroduce a second tool hub.
 const demotedList =
-  `  <p class="lib-more"><a href="which-ai-tool-for-what.html">See which AI tool fits which job</a>` +
-  ` &middot; <a href="tool-verdicts.html">Read ${demoted.length} more tool verdicts</a></p>`;
+  `  <p class="lib-more"><a href="which-ai-tool-for-what.html">See which AI tool fits which job</a></p>`;
 
 function stampLibrary(html) {
   return html.replace(/(<!-- data:library-cards -->)[\s\S]*?(<!-- \/data:library-cards -->)/,

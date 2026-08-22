@@ -12,21 +12,21 @@ export const aiJargonGuide = {
   title: "10 AI words you need to know",
   deck: "Follow the AI conversation, question the sales pitch and know what to check before you approve the work.",
   cover: "/images/guides/learn-master.webp",
-  coverAlt: "The Blue Princess learning from an open book filled with AI symbols",
+  coverAlt: "The small blue robot mascot learning from an open book filled with AI symbols",
   groups: [
     {
       id: "basics",
       number: "01",
       title: "What the technology is",
       image: "/images/guides/ai-words-learning.webp",
-      imageAlt: "The Blue Princess sorting small idea tiles at a library desk",
+      imageAlt: "The small blue robot mascot sorting small idea tiles at a library desk",
     },
     {
       id: "conversation",
       number: "02",
       title: "What happens in the chat",
       image: "/images/guides/ai-words-connections.webp",
-      imageAlt: "The Blue Princess inspecting connections between books, a chat and a toolbox",
+      imageAlt: "The small blue robot mascot inspecting connections between books, a chat and a toolbox",
     },
     {
       id: "work",

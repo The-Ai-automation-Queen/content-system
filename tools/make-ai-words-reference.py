@@ -39,6 +39,10 @@ def wrap(text, font, size, max_width):
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
 c = canvas.Canvas(str(OUT), pagesize=A4, pageCompression=1)
+c.setTitle("10 AI words you need to know")
+c.setAuthor("The AI Automation Queen, Shift & Lead")
+c.setCreator("The AI Automation Queen · Shift & Lead")
+c.setSubject("A 1-page Shift & Lead reference for understanding 10 common AI terms.")
 width, height = A4
 ink, blue, cream, muted = map(HexColor, ["#1a1a1a", "#1b2ea0", "#f3efe8", "#5d5851"])
 
