@@ -156,7 +156,7 @@ export const checkAiAnswersGuide = defineGuideArticle({
       "The person responsible approves the final answer before use.",
     ],
     limitations: [
-      "A confident answer, including one labelled high confidence, is not proof.",
+      "A confident answer, including 1 labelled high confidence, is not proof.",
       "A working link does not prove that the page supports the claim.",
       "A 2nd AI answer is not an original source or final approval.",
       "This check cannot replace a qualified review when the decision needs expert knowledge.",

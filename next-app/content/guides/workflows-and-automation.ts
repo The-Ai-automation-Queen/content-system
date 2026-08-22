@@ -36,7 +36,7 @@ export const workflowsAndAutomationGuide = defineGuideArticle({
   answer: {
     heading: "If the steps stay the same, build a workflow",
     paragraphs: [
-      "A workflow is a fixed path. One event starts it, each step has an owner and the process ends with a result you can check. Normal software, automation or AI may complete a step, but people set the path and decide what happens when something goes wrong.",
+      "A workflow is a fixed path. 1 event starts it, each step has an owner and the process ends with a result you can check. Normal software, automation or AI may complete a step, but people set the path and decide what happens when something goes wrong.",
       "Use an agent only when the system must choose its next step from approved options. If several live workflows run across the business, add logs, alerts, an exception queue, a manual fallback and a stop switch. That is business operations, not just 1 workflow.",
     ],
     keyLine:

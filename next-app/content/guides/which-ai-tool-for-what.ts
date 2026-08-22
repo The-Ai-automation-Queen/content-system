@@ -12,7 +12,7 @@ export const whichAiToolForWhatGuide = defineGuideArticle({
       "Compare 10 tools by the work you need done, then choose 1 to test before you pay for another subscription.",
     illustration: {
       src: "/images/guides/which-ai-tool-for-what.webp",
-      alt: "The small blue robot mascot routing one work request toward 10 tool stations",
+      alt: "The small blue robot mascot routing 1 work request toward 10 tool stations",
       focalPoint: "72% center",
     },
     copyPosition: "left",
@@ -57,6 +57,8 @@ export const whichAiToolForWhatGuide = defineGuideArticle({
           "Its range can hide a weak fit. A tool that does many things still needs to pass the exact task you repeat.",
         decision:
           "Choose ChatGPT when you need a broad starting point and do not yet have a stronger workspace or deployment requirement.",
+        href: "/guides/chatgpt.html",
+        actionLabel: "Open the ChatGPT guide",
       },
       {
         name: "Long documents and careful writing: Claude",
@@ -66,6 +68,8 @@ export const whichAiToolForWhatGuide = defineGuideArticle({
           "A strong document result does not prove it fits the apps, permissions or actions around your wider process.",
         decision:
           "Choose Claude when reading, reasoning and writing from your source material are the center of the job.",
+        href: "/guides/claude.html",
+        actionLabel: "Open the Claude guide",
       },
       {
         name: "Google-based work: Gemini",
@@ -75,6 +79,8 @@ export const whichAiToolForWhatGuide = defineGuideArticle({
           "Access and actions vary by account, plan, location and administrator settings. Confirm the exact connection before you design the process.",
         decision:
           "Choose Gemini when the shortest path to the work runs through Google Workspace.",
+        href: "/guides/gemini.html",
+        actionLabel: "Open the Gemini guide",
       },
       {
         name: "Microsoft-based work: Copilot",
@@ -84,6 +90,8 @@ export const whichAiToolForWhatGuide = defineGuideArticle({
           "The result depends on licensing, setup and existing permissions. Poor access rules become an AI access problem too.",
         decision:
           "Choose Copilot when Microsoft 365 is already the operating system for the work.",
+        href: "/guides/copilot.html",
+        actionLabel: "Open the Copilot guide",
       },
       {
         name: "Live public signals: Grok",
@@ -93,6 +101,8 @@ export const whichAiToolForWhatGuide = defineGuideArticle({
           "A live post is a signal, not proof. Open the original source before you publish a claim or make a decision.",
         decision:
           "Choose Grok when current public conversation is the source you need to inspect first.",
+        href: "/guides/grok.html",
+        actionLabel: "Open the Grok guide",
       },
       {
         name: "Research and finished files: Kimi",
@@ -102,6 +112,8 @@ export const whichAiToolForWhatGuide = defineGuideArticle({
           "Kimi includes several product modes. Confirm which mode, data access and credit model the task will use.",
         decision:
           "Choose Kimi when the job ends with a research package or editable work file, not only a chat answer.",
+        href: "/guides/kimi.html",
+        actionLabel: "Open the Kimi guide",
       },
       {
         name: "Multi-step deliverables: Manus",
@@ -111,6 +123,8 @@ export const whichAiToolForWhatGuide = defineGuideArticle({
           "More action creates more to review. Check its plan, connected tools, source material and final output before anything is shared or launched.",
         decision:
           "Choose Manus when the task needs execution across several steps and you can supervise the checkpoints.",
+        href: "/guides/manus.html",
+        actionLabel: "Open the Manus guide",
       },
       {
         name: "Work inside Meta apps: Meta AI",
@@ -120,6 +134,8 @@ export const whichAiToolForWhatGuide = defineGuideArticle({
           "In-app access is useful for quick help, but it is not a reason to share confidential business or customer information.",
         decision:
           "Choose Meta AI for quick ideas or assistance where you already communicate in Meta apps.",
+        href: "/guides/meta-ai.html",
+        actionLabel: "Open the Meta AI guide",
       },
       {
         name: "Developer-led model testing: DeepSeek",
@@ -129,6 +145,8 @@ export const whichAiToolForWhatGuide = defineGuideArticle({
           "A low barrier to testing does not settle data location, support, model fit or production risk.",
         decision:
           "Choose DeepSeek when the model or its direct software connection is the product decision and a technical owner can evaluate it properly.",
+        href: "/guides/deepseek.html",
+        actionLabel: "Open the DeepSeek guide",
       },
       {
         name: "Deployment control: Mistral",
@@ -138,6 +156,8 @@ export const whichAiToolForWhatGuide = defineGuideArticle({
           "A private or custom setup needs technical work, vendor approval and ongoing care. It is unnecessary when a standard assistant already meets the requirement.",
         decision:
           "Choose Mistral when control is a written business requirement, not a preference added after the tool search starts.",
+        href: "/guides/mistral.html",
+        actionLabel: "Open the Mistral guide",
       },
     ],
     decisionRule:
@@ -182,6 +202,10 @@ export const whichAiToolForWhatGuide = defineGuideArticle({
     ],
     decisionRule:
       "Keep the tool that produces the best checkable result with the least access and upkeep. Add another tool only when a different job has a clear gap.",
+  },
+  ending: {
+    kind: "clean",
+    statement: "Test 1 real job before you pay. Keep the tool that produces the best result you can check with the least access and maintenance.",
   },
   relatedGuideSlugs: ["chatgpt", "claude", "stack-3-tool-ai-stack"],
   relatedHeading: "Test the shortlist next.",

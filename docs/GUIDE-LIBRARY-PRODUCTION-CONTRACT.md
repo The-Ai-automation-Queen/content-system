@@ -59,8 +59,8 @@ The cornerstone tool chooser links to the individual guide for each tool. No too
 Every guide card must:
 
 - use a 16:9 cover;
-- place the guide title over the cover as live HTML;
-- show `The AI Automation Queen · Shift & Lead` in a consistent safe zone;
+- show only the level and `The AI Automation Queen` over the image as live HTML;
+- place the guide title below the image in compact, readable type;
 - show the useful level, not `FREE` or reading-time metadata;
 - include a maximum 2-line outcome statement;
 - make the complete card one accessible link;
@@ -88,7 +88,8 @@ Do not force decorative sections, repeated component labels or unnecessary summa
 
 ## Brand ownership
 
-- Display `The AI Automation Queen · Shift & Lead` as live HTML on guide and card visuals.
+- Display `The AI Automation Queen` as live HTML on guide and card visuals. The mascot represents the Queen.
+- Keep `Shift & Lead` in the site identity, metadata and creator footer, not in the image-area label.
 - Add `Created by The AI Automation Queen · Shift & Lead` to the guide footer.
 - Apply the signature to downloadable assets and social-sharing artwork.
 - Keep the generated illustration itself free of baked-in text. The overlay remains editable, accessible and responsive.

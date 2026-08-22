@@ -85,7 +85,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
               <Image src={aiJargonGuide.cover} alt={aiJargonGuide.coverAlt} fill priority sizes="100vw" />
             </figure>
             <div className="simple-guide__hero-copy" data-guide-hero-copy>
-              <p className="guide-brand-mark">The AI Automation Queen · Shift &amp; Lead</p>
+              <p className="guide-brand-mark">The AI Automation Queen</p>
               <h1>{aiJargonGuide.title}</h1>
               <p className="simple-guide__deck">{aiJargonGuide.deck}</p>
               <div className="simple-guide__hero-action">
@@ -127,6 +127,10 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
 
         </div>
       </article>
+
+      <section className="simple-guide__ending article-shell" data-guide-reveal>
+        <p>You now know the 10 AI words that come up most often. Use the definition you need, then get back to the decision in front of you.</p>
+      </section>
 
       <RelatedGuides guides={related} />
       <p className="article-credit article-shell">Created by The AI Automation Queen · Shift &amp; Lead</p>

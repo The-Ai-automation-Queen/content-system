@@ -1,11 +1,12 @@
 import { chromium } from "/Users/fatiha/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs";
 import assert from "node:assert/strict";
 
-const base = "http://127.0.0.1:4173";
+const base = process.env.GUIDE_AUDIT_BASE ?? "http://127.0.0.1:4173";
 const guidePath = "/guides/build-a-business-dashboard-with-ai.html";
 const canonical = `https://www.shiftandlead.com${guidePath}`;
 const buttonLabel = "Send me the dashboard workbook";
 const signature = "The AI Automation Queen · Shift & Lead";
+const visualBrand = "The AI Automation Queen";
 const expectedDescription =
   "Use approved business data to build 1 decision dashboard, check every result against its source and record who approves the final use.";
 const expectedPromise =
@@ -22,7 +23,7 @@ const captureDescription =
 const downloadPath = "/downloads/business-dashboard-build-workbook.xlsx";
 const downloadMime =
   "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-const downloadBytes = 13529;
+const downloadBytes = 13771;
 
 const browser = await chromium.launch({
   executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
@@ -123,19 +124,17 @@ async function heroCropFacts(page) {
   });
 }
 
-function assertPlaceholderImageLoads(facts) {
+function assertHeroImageLoads(facts, objectFit = "cover") {
   assert.equal(facts.complete, true);
   assert.equal(facts.naturalWidth, 1280);
   assert.equal(facts.naturalHeight, 720);
-  assert.equal(facts.objectFit, "cover");
+  assert.equal(facts.objectFit, objectFit);
   assert.equal(
     facts.alt,
     "The small blue robot mascot checks blank ivory data cards through a brass gauge before they reach 1 clear decision panel",
   );
   assert.ok(facts.rendered.width > 0 && facts.rendered.height > 0);
 
-  // The current artwork is an explicit release placeholder. Its crop is not a
-  // Guide 6 acceptance gate; final crop-safe artwork will be checked separately.
 }
 
 async function assertDialogFocusTrap(page, dialog) {
@@ -178,7 +177,7 @@ try {
   assert.equal(await desktop.page.locator("h1").textContent(), "Build a business dashboard with AI");
   assert.equal(
     await desktop.page.locator("[data-guide-hero-copy] > p").first().textContent(),
-    signature,
+    visualBrand,
   );
   assert.equal(
     await desktop.page.locator("[data-guide-hero-copy] > p").nth(1).textContent(),
@@ -200,7 +199,7 @@ try {
     1,
   );
   assert.equal(await desktop.page.locator("dialog.guide-capture").count(), 1);
-  assertPlaceholderImageLoads(await heroCropFacts(desktop.page));
+  assertHeroImageLoads(await heroCropFacts(desktop.page));
   assert.equal(
     await desktop.page.locator("main").evaluate((node) => node.scrollWidth <= node.clientWidth),
     true,
@@ -209,12 +208,9 @@ try {
   const readerText = await desktop.page.locator("body").innerText();
   assertReaderCleanup(readerText);
   await assertNoInternalStoryLabels(desktop.page);
-  assert.equal(
-    await desktop.page
-      .locator(".article-credit, .source-label, [data-source-label], [data-editorial-source]")
-      .count(),
-    0,
-  );
+  assert.equal(await desktop.page.locator(".article-credit").count(), 1);
+  assert.equal((await desktop.page.locator(".article-credit").textContent())?.trim(), `Created by ${signature}`);
+  assert.equal(await desktop.page.locator(".source-label, [data-source-label], [data-editorial-source]").count(), 0);
   assert.match(readerText, /Start with the decision, not the chart/);
   assert.match(readerText, /Build 1 decision dashboard in 6 steps/);
   assert.match(readerText, /Use only a dashboard you can trace and explain/);
@@ -264,7 +260,7 @@ try {
   );
   assert.deepEqual(
     await desktop.page.locator(".more-guides__grid .guide-card__brand").allTextContents(),
-    [signature, signature, signature],
+    [visualBrand, visualBrand, visualBrand],
   );
 
   const trigger = desktop.page.getByRole("button", { name: buttonLabel, exact: true }).first();
@@ -331,7 +327,7 @@ try {
     await mobile.page.locator("body").evaluate((node) => node.scrollWidth <= node.clientWidth),
     true,
   );
-  assertPlaceholderImageLoads(await heroCropFacts(mobile.page));
+  assertHeroImageLoads(await heroCropFacts(mobile.page), "contain");
   const mobileHeroBox = await mobile.page.locator("[data-guide-hero]").boundingBox();
   const mobileButtonBox = await mobile.page
     .getByRole("button", { name: buttonLabel, exact: true })
@@ -362,8 +358,8 @@ try {
   assert.equal(await card.count(), 1);
   assert.equal(await card.evaluate((node) => node.tagName), "A");
   assert.equal(await card.getAttribute("aria-label"), "Open guide: Build a business dashboard with AI");
-  assert.equal(await card.locator(".guide-card__art h2").textContent(), "Build a business dashboard with AI");
-  assert.equal(await card.locator(".guide-card__brand").textContent(), signature);
+  assert.equal(await card.locator(".guide-card__body h2").textContent(), "Build a business dashboard with AI");
+  assert.equal(await card.locator(".guide-card__brand").textContent(), visualBrand);
   assert.equal(await card.locator(".guide-card__level").textContent(), "Expert");
   assert.equal(await card.locator(".guide-card__body > p").textContent(), expectedCardSummary);
   assert.equal(await card.locator(".guide-card__link").textContent(), "Open guide →");
@@ -460,7 +456,7 @@ try {
   await motion.context.close();
 
   console.log(
-    "Guide 6 non-cover browser QA passed on the published static guide, exact metadata and copy contract, desktop/mobile/card image loading and layout, reduced-motion and GSAP states, keyboard-safe capture fallback, exact XLSX delivery, exactly 3 related guides, library Expert/Business operations classification, brand attribution and Business operations task route. The explicit placeholder cover crop is deferred.",
+    "Guide 6 browser QA passed on the published static guide, final cover, exact metadata and copy contract, desktop/mobile/card image loading and layout, reduced-motion and GSAP states, keyboard-safe capture fallback, exact XLSX delivery, exactly 3 related guides, library Expert/Business operations classification, brand attribution and Business operations task route.",
   );
 } finally {
   await browser.close();

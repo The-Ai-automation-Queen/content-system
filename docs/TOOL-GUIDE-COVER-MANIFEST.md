@@ -7,7 +7,7 @@ This manifest is the production source of truth for the AI tool chooser and its 
 - Use the exact small blue robot mascot established in the approved WebP covers. Preserve its round cobalt helmet and body, ivory face, large dark eyes, small silver crown with a blue diamond, white and silver jointed limbs and glowing blue chest symbol.
 - The robot must perform the action named below. It cannot be a decorative cameo.
 - Never illustrate a human queen, realistic woman, generic princess, generic humanoid or a different robot.
-- `The AI Automation Queen · Shift & Lead`, the guide title and the level label stay as live HTML. Do not bake words, letters, logos or brand names into the artwork.
+- `The AI Automation Queen`, the open-guide hero title and the level label stay as live HTML. Listing-card titles sit below the image. Keep `Shift & Lead` in metadata and the creator footer. Do not bake words, letters, logos or brand names into the artwork.
 - Every final cover is 16:9, readable at card size and built around 1 central metaphor.
 - Reserve the left 42% as a quiet live-title safe zone. Keep the robot, its hands and the decisive action in the right 58%.
 - Approved existing art still requires desktop, mobile and library-card crop checks. Crop QA is not permission to replace its concept.

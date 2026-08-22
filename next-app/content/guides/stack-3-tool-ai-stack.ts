@@ -55,14 +55,14 @@ export const stackThreeToolAiStackGuide = defineGuideArticle({
         tradeoff:
           "A general AI assistant can prepare many types of work, but every result still needs a named quality check and a person who approves it.",
         decision:
-          "Choose 1 main assistant for this job. Add a second only when a repeated task has a clear quality gap that the first tool cannot close.",
+          "Choose 1 main assistant for this job. Add a 2nd only when a repeated task has a clear quality gap that the 1st tool cannot close.",
       },
       {
         name: "2. Capture the response",
         bestWhen:
           "A reader, lead or customer raises a hand and their details, request or next step must not disappear.",
         tradeoff:
-          "Two forms or 2 contact databases create duplicates and broken follow-up. Store the response once and make 1 system responsible for what happens next.",
+          "2 forms or 2 contact databases create duplicates and broken follow-up. Store the response once and make 1 system responsible for what happens next.",
         decision:
           "Set up capture before adding more promotion. Confirm the person receives what was promised and the contact enters the correct sequence.",
       },
@@ -146,10 +146,10 @@ export const stackThreeToolAiStackGuide = defineGuideArticle({
     ],
     limitations: [
       "Product features, plans and connections change. Confirm the capability in your own account before redesigning the stack.",
-      "The 3 jobs do not require exactly 3 paid subscriptions. One product may own more than 1 job when the boundary remains clear.",
+      "The 3 jobs do not require exactly 3 paid subscriptions. 1 product may own more than 1 job when the boundary remains clear.",
     ],
     stopConditions: [
-      "Two systems capture the same contact without a written reason.",
+      "2 systems capture the same contact without a written reason.",
       "A tool can access more customer or business information than its job requires.",
       "No person owns failed delivery, an incorrect link or a broken follow-up sequence.",
     ],
@@ -163,7 +163,7 @@ export const stackThreeToolAiStackGuide = defineGuideArticle({
     body:
       "The Shift & Lead Build Sprint turns 1 approved workflow into a working system with clear ownership, checks and failure handling.",
     action: {
-      label: "See the Build Sprint",
+      label: "Simplify my AI stack",
       href: "/work-with-me.html",
     },
   },

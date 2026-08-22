@@ -1,7 +1,7 @@
 import { chromium } from "/Users/fatiha/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs";
 import assert from "node:assert/strict";
 
-const base = "http://127.0.0.1:4173";
+const base = process.env.GUIDE_AUDIT_BASE ?? "http://127.0.0.1:4173";
 const guidePath = "/guides/build-taste-with-ai.html";
 const buttonLabel = "Send me the creative review workbook";
 const expectedRelated = [
@@ -41,7 +41,7 @@ try {
   assert.equal(await desktop.page.locator("h1").textContent(), "Choose and improve AI creative work");
   assert.equal(
     await desktop.page.locator("[data-guide-hero-copy] > p").first().textContent(),
-    "The AI Automation Queen · Shift & Lead",
+    "The AI Automation Queen",
   );
   assert.equal(
     await desktop.page.locator("[data-guide-hero-copy] > p").nth(1).textContent(),
@@ -172,8 +172,8 @@ try {
   const card = library.page.locator(`a[href="${guidePath}"]`).filter({ hasText: "Choose and improve AI creative work" });
   assert.equal(await card.count(), 1);
   assert.equal(await card.evaluate((node) => node.tagName), "A");
-  assert.equal(await card.locator(".guide-card__art h2").textContent(), "Choose and improve AI creative work");
-  assert.equal(await card.locator(".guide-card__brand").textContent(), "The AI Automation Queen · Shift & Lead");
+  assert.equal(await card.locator(".guide-card__body h2").textContent(), "Choose and improve AI creative work");
+  assert.equal(await card.locator(".guide-card__brand").textContent(), "The AI Automation Queen");
   assert.equal(await card.locator(".guide-card__level").textContent(), "Intermediate");
   assert.match((await card.textContent()) || "", /Open guide/);
   assert.doesNotMatch(await library.page.locator("body").innerText(), /The 99|\bFREE\b|\bMIN READ\b/i);

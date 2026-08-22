@@ -209,7 +209,7 @@ export const contentAndCreativeWorkGuide = defineGuideArticle({
       },
     ],
     completionRule:
-      "The planner is complete when the source and rights can be checked, the human point of view is clear, every version passed a separate check, a named person approved publishing, final URLs are recorded and 1 reader response has a clear next use.",
+      "The planner is complete when you can reopen the source and prove you may use it. The point of view is clear, every version passed a separate check, a named person approved publishing, final URLs are recorded and 1 reader response has a clear next use.",
   },
   resultCheck: {
     heading: "Publish only when the content still belongs to you",

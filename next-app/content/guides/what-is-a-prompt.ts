@@ -132,6 +132,10 @@ Before the final answer:
       "A person still owns facts, permissions and decisions that affect money, access, customers or reputation.",
     ],
   },
+  ending: {
+    kind: "clean",
+    statement: "Use the brief on 1 real task. If the answer is weak, improve the missing source, rule or example before you add more instructions.",
+  },
   relatedGuideSlugs: ["chatgpt", "research-to-content-workflow", "what-is-agentic"],
   relatedHeading: "Choose what to learn next.",
 });

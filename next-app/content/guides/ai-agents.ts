@@ -107,7 +107,7 @@ export const aiAgentsGuide = defineGuideArticle({
         level: "Intermediate",
         title: "Run the normal and failure tests",
         action:
-          "Test a normal run, missing information, 2 sources that disagree, a request outside the job, a command hidden inside a document or webpage, blocked access, a broken tool, a poor result, a repeat start and an attempt to send, publish, spend, delete or change a lasting record.",
+          "Start with a normal run. Then test missing information, 2 sources that disagree, a request outside the job, hidden instructions, blocked access, a broken tool, a poor result and a repeat start. Finally, try to make it send, publish, spend, delete or change a lasting record without approval.",
         finishLine:
           "Every test ends as Completed, Stopped or Failed. It includes links or record IDs that show what the agent used and produced, a record of its actions, an alert to the owner and the safest next step.",
       },
@@ -171,16 +171,16 @@ Name what starts the job, how a repeat start is blocked, approved inputs, requir
 List the decisions allowed, named tools, resources and actions, and the smallest read and write access. Add an explicit never list.
 
 5. OUTPUT AND PROOF
-Define the exact output, destination, approved example, links or record IDs that show what the agent used and produced, counts and timestamps, clear rule for what counts as correct and Completed, Stopped or Failed status.
+Name the exact output and where it goes. Include an approved example, links or record IDs for the sources and result, counts, timestamps and the rule for a correct result. End with 1 status: Completed, Stopped or Failed.
 
 6. APPROVAL, STOP AND FALLBACK
-List every action that can send, publish, spend, delete or change a lasting record. Name who approves it, what evidence that person sees, the deadline and where the agent pauses. Stop when information is missing, conflicting, sensitive, uncertain or outside the job. Name who gets the alert, how to turn the agent off, how to undo a change and how a person finishes the work while it is off.
+List every action that can send, publish, spend, delete or change a lasting record. Name the approver, the evidence they see, the deadline and where the agent pauses. Stop when information is missing, conflicting, sensitive, uncertain or outside the job. Write who gets the alert, how to turn the agent off, how to undo a change and how a person finishes the work while it is off.
 
 7. LIMITS AND RECORDS
-Set the maximum items, attempts, time and cost. Name where each action is recorded. Save only corrections and results from earlier runs that a person approved. Name who may correct or delete those saved records, when they expire and who can remove access.
+Set limits for items, attempts, time and cost. Name where each action is recorded. Save only corrections and results a person approved. Write who can correct or delete saved records, when they expire and who can remove access.
 
 8. TEST SET AND FIRST-RUN DECISION
-Test a normal run, missing or invalid input, conflicting input, a command hidden inside a document or webpage, a request outside the job, blocked access, an attempt to send, publish, spend, delete or change a lasting record, a broken tool, a bad or partial result and a repeat start. Choose Keep in draft mode, Run 1 supervised test, Change it or Stop.
+Test a normal run and every likely failure. Include missing, invalid or conflicting input, a hidden command, a request outside the job, blocked access, a broken tool, a repeat start and an attempt to take a blocked action. Also test a bad or partial result. Then choose 1 next step: Keep in draft mode, Run 1 supervised test, Change it or Stop.
 
 PROCESSING RULES
 1. Run the workflow-or-agent test.

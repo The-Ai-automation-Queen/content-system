@@ -1,7 +1,7 @@
 import { chromium } from "/Users/fatiha/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs";
 import assert from "node:assert/strict";
 
-const base = "http://127.0.0.1:4173";
+const base = process.env.GUIDE_AUDIT_BASE ?? "http://127.0.0.1:4173";
 const guidePath = "/guides/show-up-in-ai-search.html";
 const buttonLabel = "Send me the AI search workbook";
 const expectedDescription =
@@ -14,6 +14,7 @@ const expectedRelated = [
 const captureDescription =
   "Enter your email to get the fillable 3-page workbook. Download it immediately and use its 6-question map, 8-source audit and 12-test log to find the source gap behind a missing or wrong AI answer.";
 const signature = "The AI Automation Queen · Shift & Lead";
+const visualBrand = "The AI Automation Queen";
 
 const browser = await chromium.launch({
   executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
@@ -158,7 +159,7 @@ try {
   assert.equal(await desktop.page.locator("h1").textContent(), "Show up in AI search");
   assert.equal(
     await desktop.page.locator("[data-guide-hero-copy] > p").first().textContent(),
-    signature,
+    visualBrand,
   );
   assert.equal(
     await desktop.page.locator("[data-guide-hero-copy] > p").nth(1).textContent(),
@@ -312,8 +313,8 @@ try {
     .filter({ hasText: "Show up in AI search" });
   assert.equal(await card.count(), 1);
   assert.equal(await card.evaluate((node) => node.tagName), "A");
-  assert.equal(await card.locator(".guide-card__art h2").textContent(), "Show up in AI search");
-  assert.equal(await card.locator(".guide-card__brand").textContent(), signature);
+  assert.equal(await card.locator(".guide-card__body h2").textContent(), "Show up in AI search");
+  assert.equal(await card.locator(".guide-card__brand").textContent(), visualBrand);
   assert.equal(await card.locator(".guide-card__level").textContent(), "Intermediate");
   assert.equal(
     await card.locator(".guide-card__body > p").textContent(),

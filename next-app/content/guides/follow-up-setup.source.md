@@ -1,4 +1,4 @@
-# Source brief: The lead follow-up that runs itself
+# Source brief: Send the guide, follow up and stop on reply
 
 ## Published route
 

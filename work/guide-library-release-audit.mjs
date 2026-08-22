@@ -10,6 +10,8 @@ const captureRegistry = JSON.parse(
 const guides = catalogue.guides.filter((guide) => guide.status === "live");
 const base = process.env.GUIDE_AUDIT_BASE ?? "http://127.0.0.1:4173";
 const brandSignature = "The AI Automation Queen · Shift & Lead";
+const visualBrand = "The AI Automation Queen";
+const requiredTools = ["chatgpt", "claude", "gemini", "copilot", "deepseek", "grok", "kimi", "manus", "meta-ai", "mistral"];
 const expectedHubs = new Set([
   "AI essentials",
   "Better prompts and answers",
@@ -77,6 +79,23 @@ try {
   assert.equal(libraryResponse?.status(), 200);
   assert.equal(await library.locator("h1").count(), 1);
   assert.equal(await library.locator(".guide-grid .guide-card").count(), 33);
+  assert.equal(await library.locator(".guide-grid .guide-card__art h2").count(), 0);
+  assert.equal(await library.locator(".guide-grid .guide-card__body h2").count(), 33);
+  assert.equal(
+    await library.locator(".guide-grid .guide-card__brand").evaluateAll(
+      (nodes, expected) => nodes.every((node) => node.textContent?.trim() === expected),
+      visualBrand,
+    ),
+    true,
+  );
+  assert.equal(
+    await library.locator(".guide-grid .guide-card").evaluateAll((cards) => cards.every((card) => {
+      const art = card.querySelector(".guide-card__art")?.getBoundingClientRect();
+      const title = card.querySelector(".guide-card__body h2")?.getBoundingClientRect();
+      return Boolean(art && title && title.top >= art.bottom - 1 && card.getBoundingClientRect().height < 500);
+    })),
+    true,
+  );
   assert.equal(await library.locator(".level-nav button").count(), 3);
   assert.equal(await library.locator(".hub-nav button").count(), 7);
   assert.equal(await library.locator(".start-here__steps > li").count(), 4);
@@ -159,10 +178,18 @@ try {
           bodyText,
           /\bguide_[a-z0-9_]+\b|\b(?:datePublished|dateModified|readMinutes|formatLabel)\b|\.source\.md|Editorial brief/i,
         );
+        assert.doesNotMatch(
+          bodyText,
+          /Lumail tag|guide slug|guide ID|capture event|primary CTA|internal review queue|commercial CTA/i,
+        );
         assert.doesNotMatch(bodyText, /—/);
       });
       await check(guide.slug, viewport.name, "brand signature", () => {
         assert.equal(bodyText.toLocaleLowerCase().includes(brandSignature.toLocaleLowerCase()), true);
+      });
+      await check(guide.slug, viewport.name, "visual brand", async () => {
+        assert.equal((await page.locator("[data-guide-hero-copy] > p").first().textContent())?.trim(), visualBrand);
+        assert.equal(await page.locator(".article-credit", { hasText: brandSignature }).count(), 1);
       });
       await check(guide.slug, viewport.name, "navigation", async () => {
         assert.equal(await page.getByRole("navigation", { name: "Main navigation" }).count(), 1);
@@ -183,6 +210,15 @@ try {
       });
       await check(guide.slug, viewport.name, "related guides", async () => {
         assert.equal(await page.locator(".more-guides__grid > .guide-card").count(), 3);
+        assert.equal(await page.locator(".more-guides__grid .guide-card__art h2").count(), 0);
+        assert.equal(await page.locator(".more-guides__grid .guide-card__body h2").count(), 3);
+        assert.equal(
+          await page.locator(".more-guides__grid .guide-card__brand").evaluateAll(
+            (nodes, expected) => nodes.every((node) => node.textContent?.trim() === expected),
+            visualBrand,
+          ),
+          true,
+        );
         const hrefs = await page.locator(".more-guides__grid > .guide-card").evaluateAll((nodes) => nodes.map((node) => node.getAttribute("href")));
         assert.equal(new Set(hrefs).size, 3);
         for (const href of hrefs) assert.ok(guides.some((entry) => `/guides/${entry.slug}.html` === href));
@@ -195,6 +231,13 @@ try {
         );
         const heroImage = page.locator("[data-guide-hero] img").first();
         assert.ok((await heroImage.getAttribute("alt"))?.trim());
+        if (viewport.name === "mobile" && guide.slug !== "ai-jargon-guide") {
+          const framing = await heroImage.evaluate((image) => ({
+            objectFit: getComputedStyle(image).objectFit,
+            transform: getComputedStyle(image).transform,
+          }));
+          assert.deepEqual(framing, { objectFit: "contain", transform: "none" });
+        }
       });
       await check(guide.slug, viewport.name, "responsive layout", async () => {
         assert.equal(await page.locator("html").evaluate((node) => node.scrollWidth <= node.clientWidth), true);
@@ -220,10 +263,35 @@ try {
       page.off("pageerror", onPageError);
       page.off("console", onConsole);
       page.off("requestfailed", onRequestFailed);
+
+      if (guide.slug === "which-ai-tool-for-what") {
+        await check(guide.slug, viewport.name, "10 direct tool routes", async () => {
+          assert.equal(await page.locator("a[class*='optionAction']").count(), 10);
+          for (const slug of requiredTools) {
+            assert.equal(await page.locator(`a[class*='optionAction'][href="/guides/${slug}.html"]`).count(), 1);
+          }
+        });
+      }
     }
 
     await context.close();
   }
+
+  const mobileMotionContext = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+    reducedMotion: "no-preference",
+  });
+  const mobileMotionPage = await mobileMotionContext.newPage();
+  for (const guide of guides.filter((entry) => entry.slug !== "ai-jargon-guide")) {
+    await mobileMotionPage.goto(`${base}/guides/${guide.slug}.html`, { waitUntil: "networkidle" });
+    await mobileMotionPage.waitForTimeout(120);
+    const framing = await mobileMotionPage.locator("[data-guide-hero] img").first().evaluate((image) => ({
+      objectFit: getComputedStyle(image).objectFit,
+      transform: getComputedStyle(image).transform,
+    }));
+    assert.deepEqual(framing, { objectFit: "contain", transform: "none" }, `${guide.slug} mobile hero framing`);
+  }
+  await mobileMotionContext.close();
 
   for (const guide of guides) {
     const capture = captureRegistry.guides[guide.slug];

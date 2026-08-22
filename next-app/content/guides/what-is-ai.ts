@@ -137,6 +137,10 @@ export const whatIsAiGuide = defineGuideArticle({
     decisionRule:
       "Choose automation for fixed steps, AI for variable work with a clear quality check, and a person for decisions where a wrong answer carries a serious consequence.",
   },
+  ending: {
+    kind: "clean",
+    statement: "Sort 1 real task first. Choose the smallest system that can do it reliably and keep the final decision with a person when a mistake matters.",
+  },
   relatedGuideSlugs: ["ai-jargon-guide", "what-is-a-prompt", "which-ai-tool-for-what"],
   relatedHeading: "Choose what to learn next.",
 });

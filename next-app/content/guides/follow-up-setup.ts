@@ -7,7 +7,7 @@ export const followUpSetupGuide = defineGuideArticle({
   outcomes: ["Automate a task", "Run business operations"],
   composition: "workflow",
   hero: {
-    title: "The lead follow-up that runs itself",
+    title: "Send the guide, follow up and stop on reply",
     promise:
       "Deliver the right guide, send 3 useful messages and put every real reply back in a person's hands.",
     illustration: {
@@ -73,7 +73,7 @@ export const followUpSetupGuide = defineGuideArticle({
         owner: "Automation",
         title: "3. Create or update 1 contact",
         action:
-          "Lumail creates or updates 1 contact, records the source, applies the guide-specific tag and checks the start and exclusion rules. Do not create a second contact in another system.",
+          "Lumail creates or updates 1 contact, records the source, applies the label for the requested guide and checks the start and exclusion rules. Do not create a 2nd contact in another system.",
         output: "1 contact with the correct source, owner, next action and guide tag.",
       },
       {
@@ -81,7 +81,7 @@ export const followUpSetupGuide = defineGuideArticle({
         title: "4. Let AI prepare follow-up",
         action:
           "Use AI to prepare or revise messages from the approved guide, offer and tone rules. Keep facts inside the approved material. For a direct reply, AI drafts and Fatiha sends.",
-        output: "A short draft with 1 job, 1 CTA and no invented detail.",
+        output: "A short draft with 1 job, 1 main action and no invented detail.",
         approvalRequired: true,
       },
       {
@@ -131,7 +131,7 @@ export const followUpSetupGuide = defineGuideArticle({
     introduction:
       "Complete the workflow setup, 3 messages, contact record, handoff, failure controls and launch test for 1 guide.",
     instructions:
-      "Every message needs 1 job, 1 CTA, a send rule, a stop rule and a fallback. Leave the workflow off until the test contact reaches every expected state.",
+      "Every message needs 1 job, 1 main action, a send rule, a stop rule and a fallback. Leave the workflow off until the test contact reaches every expected state.",
     workedExample: {
       label: "Use these 3 approved message templates",
       content: `MESSAGE 1: IMMEDIATE
@@ -188,17 +188,17 @@ Ignore this email if you have what you need. No pressure and no endless follow-u
       {
         label: "2. Immediate message",
         instruction:
-          "Record its single job, template, 1 CTA, send rule, stop rule and fallback.",
+          "Record its single job, template, 1 main action, send rule, stop rule and fallback.",
       },
       {
         label: "3. Day 2 message",
         instruction:
-          "Record its single job, template, 1 CTA, eligible and no-reply send rule, stop rule and fallback.",
+          "Record its single job, template, 1 main action, eligible and no-reply send rule, stop rule and fallback.",
       },
       {
         label: "4. Day 5 message",
         instruction:
-          "Record its single job, template, 1 CTA, eligibility send rule, stop rule and fallback.",
+          "Record its single job, template, 1 main action, eligibility send rule, stop rule and fallback.",
       },
       {
         label: "5. Contact record and handoff",
@@ -255,7 +255,7 @@ Ignore this email if you have what you need. No pressure and no endless follow-u
     body:
       "Complete the builder and pass the test contact first. The Shift & Lead Build Sprint can then build the workflow with clear ownership, stop rules and recovery paths.",
     action: {
-      label: "See the Build Sprint",
+      label: "Build my follow-up system",
       href: "/work-with-me.html",
     },
   },

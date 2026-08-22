@@ -153,9 +153,9 @@ export const firstAiEmployeeGuide = defineGuideArticle({
     weakApproach:
       "Let the system retry every failure, edit contact records and email readers until the delivery appears successful.",
     decision:
-      "Assign 1 bounded job: prepare failed guide deliveries for Fatiha's review. Give the system read access to guide-delivery records and write access only to an internal review queue.",
+      "Assign 1 bounded job: prepare failed guide deliveries for Fatiha's review. Give the system read access to guide-delivery records and write access only to Fatiha's review list.",
     action:
-      "When a Lumail delivery status changes to failed, or the daily review starts, the system checks the guide ID, reader email, timestamp, last attempt and error. It rejects duplicate events, groups failures by reason and recommends a safe next step. An unknown guide, missing email, stale status, provider outage or permission error becomes a visible exception. The system never sends the guide, changes the CRM, suppresses a reader or retries indefinitely.",
+      "When a delivery status changes to failed, or the daily review starts, the system checks the guide name, reader email, timestamp, last attempt and error. It rejects duplicate events, groups failures by reason and recommends a safe next step. An unknown guide, missing email, stale status, provider outage or permission error becomes a visible exception. The system never sends the guide, changes the CRM, suppresses a reader or retries indefinitely.",
     result:
       "Fatiha receives a review queue with the affected reader, guide, failure reason, source record and recommended next step. She decides whether to resend, contact the reader, correct the mapping or stop.",
     lesson:
@@ -171,7 +171,7 @@ export const firstAiEmployeeGuide = defineGuideArticle({
     workedExample: {
       label: "Shift & Lead example",
       content:
-        "Job: prepare failed guide deliveries for Fatiha's review. Trigger: failed delivery status or daily review. Inputs: guide ID, reader email, status, timestamp, last attempt and error. Access: read delivery records and write only to the internal review queue. Output: affected reader, guide, failure reason, safe next step and source record. Never send, change the CRM, suppress a reader or retry indefinitely. Stop on unknown guides, missing emails, duplicates, stale statuses, provider outages or permission errors. Fatiha decides whether to resend, contact the reader, correct the mapping or stop.",
+        "Job: prepare failed guide deliveries for Fatiha's review. Trigger: failed delivery status or daily review. Inputs: guide name, reader email, status, timestamp, last attempt and error. Access: read delivery records and write only to Fatiha's review list. Output: affected reader, guide, failure reason, safe next step and source record. Never send, change the CRM, suppress a reader or retry indefinitely. Stop on unknown guides, missing emails, duplicates, stale statuses, provider outages or permission errors. Fatiha decides whether to resend, contact the reader, correct the mapping or stop.",
     },
     fields: [
       {
@@ -279,7 +279,7 @@ export const firstAiEmployeeGuide = defineGuideArticle({
     body:
       "Complete the worksheet and pass the normal, ambiguity and failure tests first. The Shift & Lead Build Sprint can then build the bounded workflow or agent with minimum access, visible stops and human approval.",
     action: {
-      label: "See the Build Sprint",
+      label: "Build my AI teammate",
       href: "/work-with-me.html",
     },
   },

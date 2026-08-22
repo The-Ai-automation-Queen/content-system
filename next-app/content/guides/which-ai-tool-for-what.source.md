@@ -95,7 +95,8 @@ The on-page decision tool asks 4 questions: where the source lives, what finishe
 - Final cover: `/images/guides/which-ai-tool-for-what.webp`.
 - Final artwork: 16:9 small blue robot mascot operating an antique switchboard that routes 1 work request toward 10 equal symbolic stations, with a clean live-title safe zone.
 - Alt text: `The small blue robot mascot routing one work request toward 10 tool stations`.
-- Keep the live title, level and `The AI Automation Queen · Shift & Lead` brand overlay outside the raster image.
+- Keep the level and `The AI Automation Queen` visual label as live HTML over the raster image. Put the compact card title below the image. Keep `Shift & Lead` in metadata and the creator footer.
+- Link each of the 10 decision options directly to its full standalone tool guide.
 - Confirm the crop on desktop, mobile and library cards before publication.
 - Confirm `/downloads/10-tool-comparison-scorecard.pdf` exists and is editable or printable.
 - Confirm `hub.ai-tools` maps to `hub_ai_tool_comparison_scorecard` and the exact download.

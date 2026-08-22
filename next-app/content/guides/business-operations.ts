@@ -21,7 +21,7 @@ export const businessOperationsGuide = defineGuideArticle({
     guideSlug: "business-operations",
     guideId: "hub.business-operations",
     lumailTag: "hub_business_operations_map",
-    buttonLabel: "Send me the worksheet",
+    buttonLabel: "Send me the automation priority worksheet",
     modalTitle: "Get the worksheet: What to automate first",
     description:
       "Enter your email to get the fillable worksheet. Download it immediately, compare 5 real tasks and choose 1 safe first build.",
@@ -160,7 +160,7 @@ export const businessOperationsGuide = defineGuideArticle({
     decision:
       "Put all 5 candidates into the same worksheet. Compare the evidence in the same order and send each task to the guide that owns the detailed build.",
     action:
-      "Record the current process, how often it happens, the time people spend on it now, owner and backup, approved data source and rule for what information the task may use, proof, highest-risk action, whether it contacts a customer or creates a lasting record, failure cost and how to recover. Mark overlapping tool work Remove or merge and open the stack guide. Send the guide-delivery path to follow-up, the daily reply brief to inbox and the failed-delivery review to the guide for an AI task with clear limits only if a simpler process that only prepares the review for a person cannot do the useful work. Keep shared monitoring in Prepare controls until each process passes. Start the candidate that has the strongest proof, happens most often, has the lowest failure cost and has the clearest recovery route. After the test, record the baseline, result, corrections, unusual cases and Keep, Change or Stop decision.",
+      "Put all 5 candidates in the same worksheet. For each task, record how it works now, how often it happens, monthly time, owner and backup, approved information, proof, highest-risk action, failure cost and recovery route. Mark overlapping tools Remove or merge. Route guide delivery to the follow-up guide, the daily reply brief to the inbox guide and the failed-delivery review to the AI teammate guide only when a simpler process cannot do the job. Keep shared monitoring in Prepare controls until each process passes. Start with the task that has the strongest proof, happens most often, has the lowest failure cost and has the clearest recovery route. After the test, record the baseline, result, corrections, unusual cases and Keep, Change or Stop decision.",
     result:
       "Fatiha can see which process should start 1st, who owns it, what proof matters and which guide shows the full build. Work that is not ready moves to Prepare controls, Keep manual or Remove or merge.",
     lesson:
@@ -201,7 +201,7 @@ export const businessOperationsGuide = defineGuideArticle({
       },
     ],
     completionRule:
-      "The preview is complete when 5 tasks become 3 ordered finalists, each with an owner, proof, decision and recovery route. One task has a safe test, the next worksheet for that task and an action due within 48 hours.",
+      "The preview is complete when 5 tasks become 3 ordered finalists, each with an owner, proof, decision and recovery route. 1 task has a safe test, the next worksheet for that task and an action due within 48 hours.",
   },
   resultCheck: {
     heading: "The order is useful only when proof supports it",
@@ -238,7 +238,7 @@ export const businessOperationsGuide = defineGuideArticle({
     body:
       "Complete the worksheet and choose 1 reversible process with strong proof and a clear recovery route. The Shift & Lead Build Sprint can then build the workflow, handoffs and controls around your real business.",
     action: {
-      label: "See the Build Sprint",
+      label: "Build my 1st automation",
       href: "/build-sprint.html",
     },
   },

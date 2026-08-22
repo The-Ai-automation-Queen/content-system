@@ -282,7 +282,7 @@ This example is original to Shift & Lead. It does not claim that any provider su
 - Planned file: `/downloads/business-operations-automation-map.pdf`
 - Guide ID: `hub.business-operations`
 - Lumail tag: `hub_business_operations_map`
-- Capture button: `Send me the worksheet`
+- Capture button: `Send me the automation priority worksheet`
 - Modal title: `Get the worksheet: What to automate first`
 - Reader PDF subtitle: `Compare 5 real tasks. Choose 1 safe first build. Put the rest in order.`
 - Internal asset record: `Business operations automation map`
@@ -512,7 +512,7 @@ Related heading: `Choose what to fix next.`
 - Live copy position: left.
 - Planned focal point: `82% center`.
 - Planned alt text: `The small blue robot mascot moving a blank task card to the front of a short ordered queue at a single antique dispatch table in warm ivory`.
-- Keep the title, `The AI Automation Queen · Shift & Lead` and creator signature as live HTML. Do not bake text into the art.
+- Keep the guide-page title and `The AI Automation Queen` visual label as live HTML. Keep the card title below the image. Do not bake text into the art.
 - Do not include a dashboard, pipeline, railway, gates, permission gates, screens, labels, numbers or embedded text.
 - Current status: no cover is created in either publish target.
 
@@ -523,7 +523,7 @@ Use a commercial ending because the reader has completed a portfolio decision an
 - Eyebrow: `Ready to build the 1st process?`
 - Heading: `Turn the approved 1st process into a working business system`
 - Body: `Complete the worksheet and choose 1 reversible process with strong proof and a clear recovery route. The Shift & Lead Build Sprint can then build the workflow, handoffs and controls around your real business.`
-- Action: `See the Build Sprint`
+- Action: `Build my 1st automation`
 - Href: `/build-sprint.html`
 
 Do not add another bottom capture or a second commercial action.

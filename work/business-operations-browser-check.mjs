@@ -1,6 +1,6 @@
 import { chromium } from "/Users/fatiha/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs";
 
-const base = "http://127.0.0.1:4173";
+const base = process.env.GUIDE_AUDIT_BASE ?? "http://127.0.0.1:4173";
 const executablePath = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const browser = await chromium.launch({ headless: true, executablePath });
 const results = {};
@@ -38,7 +38,7 @@ async function inspectGuide(name, viewport, screenshotPath, testModal) {
   const relatedHrefs = await page.locator('.more-guides__grid a.guide-card').evaluateAll((links) =>
     links.map((link) => link.getAttribute("href")),
   );
-  const ctaHref = await page.getByRole("link", { name: /See the Build Sprint/ }).getAttribute("href");
+  const ctaHref = await page.getByRole("link", { name: /Build my 1st automation/ }).getAttribute("href");
   const overflow = await page.evaluate(() => ({
     innerWidth,
     scrollWidth: document.documentElement.scrollWidth,
@@ -57,7 +57,7 @@ async function inspectGuide(name, viewport, screenshotPath, testModal) {
 
   let modal = null;
   if (testModal) {
-    await page.getByRole("button", { name: "Send me the worksheet" }).click();
+    await page.getByRole("button", { name: "Send me the automation priority worksheet" }).click();
     const dialog = page.getByRole("dialog");
     modal = {
       visible: await dialog.isVisible(),
@@ -90,11 +90,11 @@ async function inspectGuide(name, viewport, screenshotPath, testModal) {
       worksheetBlocks: await page.locator("dl").filter({ hasText: "5 real tasks" }).locator("div").count(),
     },
     exactText: {
-      capture: bodyText.includes("Send me the worksheet"),
+      capture: bodyText.includes("Send me the automation priority worksheet"),
       directAnswer: bodyText.includes("Use real records, not guesses"),
       example: bodyText.includes("Choose the next Shift & Lead operations build"),
       relatedHeading: bodyText.includes("Choose what to fix next."),
-      brand: await page.locator("[data-guide-hero-copy] p").first().evaluate((element) => element.textContent?.trim()) === "The AI Automation Queen · Shift & Lead",
+      brand: await page.locator("[data-guide-hero-copy] p").first().evaluate((element) => element.textContent?.trim()) === "The AI Automation Queen",
       forbiddenMetadata: ["MIN READ", "Updated", "FREE GUIDE", "FREE SETUP"].filter((text) => bodyText.includes(text)),
     },
     diagnostics,
@@ -115,7 +115,7 @@ await inspectGuide("mobile", { width: 390, height: 844 }, "/private/tmp/business
   await page.waitForTimeout(350);
   const cardData = await card.evaluate((element) => {
     const art = element.querySelector(".guide-card__art");
-    const title = element.querySelector(".guide-card__title");
+    const title = element.querySelector(".guide-card__body h2");
     const image = element.querySelector("img");
     const cardRect = element.getBoundingClientRect();
     const artRect = art.getBoundingClientRect();
@@ -124,7 +124,7 @@ await inspectGuide("mobile", { width: 390, height: 844 }, "/private/tmp/business
       tagName: element.tagName,
       ariaLabel: element.getAttribute("aria-label"),
       cardHeight: cardRect.height,
-      titleInsideArt: titleRect.top >= artRect.top && titleRect.bottom <= artRect.bottom,
+      titleBelowArt: titleRect.top >= artRect.bottom - 1,
       imageLoaded: image.complete && image.naturalWidth > 0,
       brand: element.querySelector(".guide-card__brand")?.textContent,
       title: element.querySelector("h2")?.textContent,
@@ -179,7 +179,7 @@ const assertions = {
   cta: results.desktop.ctaHref === "/build-sprint.html",
   text: Object.entries(results.desktop.exactText).every(([key, value]) => key === "forbiddenMetadata" ? value.length === 0 : value === true),
   images: results.desktop.imagesLoaded && results.mobile.imagesLoaded,
-  libraryCard: results.library.cardCount === 1 && results.library.cardData.tagName === "A" && results.library.cardData.titleInsideArt && results.library.cardData.imageLoaded && results.library.cardData.brand === "The AI Automation Queen · Shift & Lead" && results.library.cardData.action.includes("Open guide") && results.library.brokenImages.length === 0,
+  libraryCard: results.library.cardCount === 1 && results.library.cardData.tagName === "A" && results.library.cardData.titleBelowArt && results.library.cardData.imageLoaded && results.library.cardData.brand === "The AI Automation Queen" && results.library.cardData.action.includes("Open guide") && results.library.brokenImages.length === 0,
   tools: Object.values(results.library.toolCards).every((count) => count === 1),
   libraryCleanup: results.library.noThe99 && results.library.noFreeOrReadTime,
   diagnostics: [...results.desktop.diagnostics, ...results.mobile.diagnostics, ...results.library.diagnostics].length === 0,

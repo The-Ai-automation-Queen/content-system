@@ -259,7 +259,7 @@ No-action count: [count]
     body:
       "Complete the template and pass the exception test first. The Shift & Lead Build Sprint can then build the workflow with limited access, visible failures and human review.",
     action: {
-      label: "See the Build Sprint",
+      label: "Build my daily inbox brief",
       href: "/work-with-me.html",
     },
   },

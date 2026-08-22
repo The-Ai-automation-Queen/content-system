@@ -1,6 +1,7 @@
 import type { GuideHub, GuideLevel, GuideOutcome } from "@/content/guides";
 
 export const GUIDE_BRAND_SIGNATURE = "The AI Automation Queen · Shift & Lead" as const;
+export const GUIDE_VISUAL_BRAND = "The AI Automation Queen" as const;
 
 export const guideCompositions = [
   "glossary",
@@ -131,6 +132,8 @@ export type DecisionFramework = {
     bestWhen: string;
     tradeoff: string;
     decision: string;
+    href?: `/guides/${string}.html`;
+    actionLabel?: string;
   }>;
   decisionRule: string;
 };

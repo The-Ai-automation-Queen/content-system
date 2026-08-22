@@ -21,7 +21,7 @@ export const whatIsAgenticGuide = defineGuideArticle({
     guideSlug: "what-is-agentic",
     guideId: "guide.what-is-agentic",
     lumailTag: "guide_agent_or_workflow_card",
-    buttonLabel: "Send me the worksheet",
+    buttonLabel: "Send me the workflow or agent worksheet",
     modalTitle: "Get the workflow or agent worksheet",
     description:
       "Enter your email to get the 1-page worksheet. Download it immediately and use it before you give an AI tool access to your work.",
@@ -123,6 +123,10 @@ export const whatIsAgenticGuide = defineGuideArticle({
     ],
     decisionRule:
       "When in doubt, choose the workflow. If the path must change, let the agent prepare drafts or require a person to approve each action until its access, results and failures are understood.",
+  },
+  ending: {
+    kind: "clean",
+    statement: "Build the fixed path first. Give an agent a choice only when the task needs it, the choices are limited and a person can stop or undo every important action.",
   },
   relatedGuideSlugs: ["first-ai-employee", "manus", "24-7-operations-system"],
   relatedHeading: "Choose what to build next.",

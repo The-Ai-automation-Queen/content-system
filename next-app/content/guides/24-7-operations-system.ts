@@ -122,13 +122,13 @@ export const operationsSystemGuide = defineGuideArticle({
   example: {
     heading: "The Shift & Lead guide-delivery operation",
     situation:
-      "Readers request Shift & Lead guides across different time zones. The requested file, capture event, Lumail tag, delivery result, replies and follow-up state all need to stay visible while Fatiha is offline.",
+      "Readers request Shift & Lead guides across different time zones. The requested file, guide request, delivery label, delivery result, replies and follow-up state all need to stay visible while Fatiha is offline.",
     weakApproach:
       "Give 1 broad agent access to the website, email system and inbox, then ask it to handle every request, reply and delivery problem on its own.",
     decision:
       "Use separate bounded workflows for capture, approved guide delivery, follow-up state and the daily inbox brief. Monitor all of them from 1 operations dashboard and keep exceptions and changes with Fatiha.",
     action:
-      "The delivery runs only when the submitted guide slug, recipient, approved template, downloadable file and Lumail tag all match. The dashboard records the capture, tag, delivery result and proof. A missing file, tag mismatch, delivery failure, reply, opt-out or complaint enters the exception queue. Follow-up stops on a reply, opt-out or complaint. Fatiha owns the queue, approves any changed message or mapping and controls restart after failure.",
+      "The delivery runs only when the submitted guide name, recipient, approved template, downloadable file and delivery label all match. The dashboard records the request, label, delivery result and proof. A missing file, label mismatch, delivery failure, reply, opt-out or complaint enters the exception queue. Follow-up stops on a reply, opt-out or complaint. Fatiha owns the queue, approves any changed message or mapping and controls restart after failure.",
     result:
       "Routine requested guides can be delivered during the approved operating window. Fatiha returns to current proof and a short queue of decisions instead of hidden background activity.",
     lesson:
@@ -144,7 +144,7 @@ export const operationsSystemGuide = defineGuideArticle({
     workedExample: {
       label: "Shift & Lead example",
       content:
-        "Job: deliver the guide a reader requested. Trigger: approved capture. Pass: the guide slug, file, recipient, template and Lumail tag match, then delivery proof is recorded. Exceptions: missing file, tag mismatch, failure, reply, opt-out or complaint. Owner: Fatiha. Shutdown: disable delivery and follow-up, preserve the queue and use manual delivery after verification.",
+        "Job: deliver the guide a reader requested. Trigger: approved guide request. Pass: the guide name, file, recipient, template and delivery label match, then delivery proof is recorded. Exceptions: missing file, label mismatch, failure, reply, opt-out or complaint. Owner: Fatiha. Shutdown: disable delivery and follow-up, preserve the queue and use manual delivery after verification.",
     },
     fields: [
       {
@@ -226,7 +226,7 @@ export const operationsSystemGuide = defineGuideArticle({
     body:
       "Complete the 10-minute map and test the approval, exception, failure and shutdown routes first. The Shift & Lead Build Sprint can then build the bounded workflows, dashboard and handoffs around your real business process.",
     action: {
-      label: "See the Build Sprint",
+      label: "Build my operations system",
       href: "/work-with-me.html",
     },
   },

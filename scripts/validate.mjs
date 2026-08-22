@@ -172,7 +172,7 @@ for (const p of all.filter(p => !p.stub)) {
 
 /* K: banned strings */
 for (const p of all.filter(p => !p.stub)) {
-  for (const s of copy._meta.retired_strings) {
+  for (const s of copy._meta?.retired_strings ?? []) {
     if (p.txt.toLowerCase().includes(s.toLowerCase())) fail('K', `${p.f}: retired string "${s}"`);
   }
 }

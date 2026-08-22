@@ -88,7 +88,7 @@ export const researchToContentWorkflowGuide = defineGuideArticle({
         owner: "AI",
         title: "Draft",
         action:
-          "Give AI the approved source brief, reader outcome, angle, point of view, output format, 3 required points and primary CTA. Tell it to use only the approved source links for factual claims.",
+          "Give AI the approved source brief, reader outcome, angle, point of view, output format, 3 required points and main action. Tell it to use only the approved source links for factual claims.",
         output: "A grounded draft with a clear job and no unsupported additions.",
       },
       {
@@ -103,7 +103,7 @@ export const researchToContentWorkflowGuide = defineGuideArticle({
         owner: "Automation",
         title: "Publish",
         action:
-          "Move only the approved version to the chosen channel. Confirm the title, format, CTA, links, source rights and final URL before release.",
+          "Move only the approved version to the chosen channel. Confirm the title, format, main action, links, source rights and final URL before release.",
         output: "A published piece at a recorded final URL, or a clear do not publish decision.",
         approvalRequired: true,
       },
@@ -168,7 +168,7 @@ export const researchToContentWorkflowGuide = defineGuideArticle({
       {
         label: "5. Draft",
         instruction:
-          "Set the outcome-first title or hook, output format, primary CTA, 3 required points, approved source links and destination guide or resource.",
+          "Set the outcome-first title or hook, output format, main action, 3 required points, approved source links and destination guide or resource.",
       },
       {
         label: "6. Verify",
@@ -216,7 +216,7 @@ export const researchToContentWorkflowGuide = defineGuideArticle({
     body:
       "Complete the Workflow Map first. If the manual method produces an approved piece, the Shift & Lead Build Sprint can turn the repeatable steps into a working process with clear ownership, checks and failure handling.",
     action: {
-      label: "See the Build Sprint",
+      label: "Build my content workflow",
       href: "/work-with-me.html",
     },
   },

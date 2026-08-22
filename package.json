@@ -3,8 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "validate": "node scripts/validate-guide-library.mjs && node scripts/validate.mjs",
+    "validate": "node scripts/validate-guide-library.mjs && node --test main-site/api/guide-capture.test.js",
     "validate:guides": "node scripts/validate-guide-library.mjs",
+    "validate:legacy": "node scripts/validate.mjs",
     "build": "node tools/include.mjs && node tools/guides-finalize.mjs && node tools/site-repair.mjs && node tools/site-repair-final.mjs",
     "build:main-site": "npm run publish:guides && node tools/include.mjs && node tools/proof-patches.mjs && node tools/site-positioning-patches.mjs && node tools/quiz-result-patch.mjs && node tools/brand-system-patch.mjs && node tools/density-patch.mjs && node tools/final-copy-polish.mjs",
     "publish:guides": "npm --prefix next-app run build && node tools/publish-next-guides.mjs",

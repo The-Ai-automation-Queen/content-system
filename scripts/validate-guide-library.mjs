@@ -30,6 +30,22 @@ const allowedOutcomes = new Set([
   "Run business operations",
 ]);
 const requiredTools = ["chatgpt", "claude", "gemini", "copilot", "deepseek", "grok", "kimi", "manus", "meta-ai", "mistral"];
+const requiredLegacyRedirects = new Map([
+  ["/guides/tool-verdicts.html", "/guides/which-ai-tool-for-what.html"],
+  ["/guides/chatgpt-vs-ai.html", "/guides/what-is-ai.html"],
+  ["/guides/chez-claude-preview.html", "/guides/claude.html"],
+  ["/guides/chez-claude.html", "/guides/claude.html"],
+  ["/guides/chez-copilot.html", "/guides/copilot.html"],
+  ["/guides/chez-deepseek.html", "/guides/deepseek.html"],
+  ["/guides/chez-gemini.html", "/guides/gemini.html"],
+  ["/guides/chez-grok.html", "/guides/grok.html"],
+  ["/guides/chez-kimi.html", "/guides/kimi.html"],
+  ["/guides/chez-manus.html", "/guides/manus.html"],
+  ["/guides/chez-meta-ai.html", "/guides/meta-ai.html"],
+  ["/guides/chez-mistral.html", "/guides/mistral.html"],
+  ["/guides/chez-openai.html", "/guides/chatgpt.html"],
+  ["/guides/voice-clone-pipeline.html", "/"],
+]);
 
 const slugs = new Set();
 const sequences = new Set();
@@ -84,6 +100,9 @@ for (const slug of requiredTools) {
 const structuredGuideDirectory = path.join(root, "next-app", "content", "guides");
 for (const filename of readdirSync(structuredGuideDirectory).filter((name) => name.endsWith(".ts"))) {
   const source = readFileSync(path.join(structuredGuideDirectory, filename), "utf8");
+  if (source.includes("defineStructuredGuide") && !source.includes("ending:")) {
+    errors.push(`${filename}: every structured guide needs an intentional commercial or clean ending.`);
+  }
   if (!source.includes("capture:")) continue;
 
   const readLiteral = (field) => source.match(new RegExp(`${field}:\\s*\"([^\"]+)\"`))?.[1];
@@ -114,6 +133,33 @@ for (const filename of readdirSync(structuredGuideDirectory).filter((name) => na
 
 const siteHeader = readFileSync(path.join(root, "next-app", "components", "chrome", "site-header.tsx"), "utf8");
 if (siteHeader.includes("The 99")) errors.push("The 99 remains in the shared Next.js guide navigation.");
+
+const guideCardSource = readFileSync(path.join(root, "next-app", "components", "guides", "guide-card.tsx"), "utf8");
+if (!guideCardSource.includes('<span className="guide-card__brand">The AI Automation Queen</span>')) {
+  errors.push("Shared guide cards must show only The AI Automation Queen in the image-area brand label.");
+}
+const guideCardArtSource = guideCardSource.match(/<div className="guide-card__art">([\s\S]*?)<\/div>/)?.[1] ?? "";
+if (guideCardArtSource.includes("<h2>")) {
+  errors.push("Shared guide card titles must not render inside the image area.");
+}
+if (!guideCardSource.match(/<div className="guide-card__body">\s*<h2>/)) {
+  errors.push("Shared guide card titles must render below the image in the card body.");
+}
+
+const structuredRendererSource = readFileSync(
+  path.join(root, "next-app", "components", "guides", "structured-guide-article.tsx"),
+  "utf8",
+);
+if (!structuredRendererSource.includes("Created by The AI Automation Queen · Shift &amp; Lead")) {
+  errors.push("The shared guide renderer is missing the full creator footer credit.");
+}
+
+const toolHubSource = readFileSync(path.join(structuredGuideDirectory, "which-ai-tool-for-what.ts"), "utf8");
+for (const slug of requiredTools) {
+  if (!toolHubSource.includes(`href: "/guides/${slug}.html"`)) {
+    errors.push(`The AI tools hub does not link directly to the ${slug} guide.`);
+  }
+}
 
 const sitemap = readFileSync(path.join(root, "main-site", "sitemap.xml"), "utf8");
 const sitemapGuideUrls = new Set(
@@ -154,15 +200,16 @@ if (!/rel="canonical" href="https:\/\/www\.shiftandlead\.com\/guides\/which-ai-t
   errors.push("The obsolete tool-verdicts page does not canonicalize to the current AI tools hub.");
 }
 const vercelConfig = JSON.parse(readFileSync(path.join(root, "main-site", "vercel.json"), "utf8"));
-const toolVerdictsRedirect = vercelConfig.redirects?.find(
-  (redirect) => redirect.source === "/guides/tool-verdicts.html",
-);
-if (
-  !toolVerdictsRedirect ||
-  toolVerdictsRedirect.destination !== "/guides/which-ai-tool-for-what.html" ||
-  toolVerdictsRedirect.permanent !== true
-) {
-  errors.push("Vercel is missing the permanent tool-verdicts redirect to the current AI tools hub.");
+for (const [source, destination] of requiredLegacyRedirects) {
+  const redirect = vercelConfig.redirects?.find((entry) => entry.source === source);
+  if (!redirect || redirect.destination !== destination || redirect.permanent !== true) {
+    errors.push(`Vercel is missing the permanent redirect ${source} -> ${destination}.`);
+  }
+}
+
+const migrationMatrix = readFileSync(path.join(root, "docs", "GUIDE-MIGRATION-MATRIX.md"), "utf8");
+if (/Status:\s*planning contract/i.test(migrationMatrix)) {
+  errors.push("The guide migration matrix still reports the pre-release planning status.");
 }
 
 if (errors.length > 0) {

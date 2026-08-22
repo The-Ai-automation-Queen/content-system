@@ -33,18 +33,18 @@ export const copilotGuide = defineGuideArticle({
     },
   },
   answer: {
-    heading: "Choose Microsoft 365 Copilot when the job depends on Microsoft work context",
+    heading: "Use Copilot when the work already lives in Microsoft 365",
     paragraphs: [
-      "Microsoft 365 Copilot is an AI assistant that can work with Microsoft apps and information the signed-in user is allowed to access, including emails, chats, documents and meetings.",
-      "That makes it useful when the job already happens in Outlook, Teams, Word, Excel or PowerPoint. The value is less copying between systems, not an automatic guarantee of a better answer.",
-      "Copilot follows existing access controls. If people can already open information they should not need, Copilot can make that oversharing easier to discover.",
+      "Microsoft 365 Copilot works inside apps such as Outlook, Teams, Word, Excel and PowerPoint. It can use the files, emails, chats and meetings the signed-in person is allowed to open.",
+      "It can save copying when the work is already in Microsoft 365. You still need to check the answer and open the source it used.",
+      "Check access first. If someone can open a file they should not see, Copilot may make that file easier to find.",
     ],
     keyLine:
-      "Review permissions before rollout. Then test Copilot on the work, with the people, who can benefit from Microsoft context.",
+      "Check who can open the source files, then test Copilot on 1 real Microsoft 365 task.",
   },
   framework: {
     kind: "tool-verdict",
-    heading: "Copilot is useful where Microsoft context removes a handoff",
+    heading: "Copilot saves copying between Microsoft apps",
     verdict:
       "Copilot is worth testing for people who spend much of the day inside Microsoft 365 and repeatedly search, summarize or draft from company information. Do not buy it for everyone merely because the company uses Microsoft.",
     bestFor: [
@@ -89,7 +89,7 @@ export const copilotGuide = defineGuideArticle({
     kind: "worksheet",
     heading: "Run the task and permission test",
     introduction:
-      "Choose 3 low-risk tasks and 1 representative user. The test must show useful time saved and whether the user can reach the right information.",
+      "Choose 3 low-risk tasks and 1 person who does this work. The test must show useful time saved and whether the person can reach the right information.",
     instructions:
       "List the information each task should use before Copilot runs. Treat any surprising source as a permission issue to investigate.",
     fields: [

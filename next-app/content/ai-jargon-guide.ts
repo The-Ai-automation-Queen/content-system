@@ -110,7 +110,7 @@ export const aiJargonGuide = {
     },
   ] satisfies GuideTerm[],
   capture: {
-    buttonLabel: "Get the 1-page PDF",
+    buttonLabel: "Send me the guide",
     title: "Take the 10 terms with you",
     description: "Enter your email to get the printable 1-page reference for your next tool demo, proposal or meeting.",
     downloadHref: "/downloads/10-ai-words-you-need-to-know.pdf",

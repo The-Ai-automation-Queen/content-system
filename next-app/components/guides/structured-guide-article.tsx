@@ -5,7 +5,7 @@ import { GuideMotion } from "@/components/guides/guide-motion";
 import { RelatedGuides } from "@/components/guides/related-guides";
 import type { Guide } from "@/content/guides";
 import {
-  GUIDE_BRAND_SIGNATURE,
+  GUIDE_VISUAL_BRAND,
   type GuideArticleDefinition,
   type GuideFramework,
   type PracticalAsset,
@@ -187,6 +187,11 @@ function Framework({ framework }: { framework: GuideFramework }) {
                 <div><dt>Tradeoff</dt><dd>{option.tradeoff}</dd></div>
                 <div><dt>Choose it if</dt><dd>{option.decision}</dd></div>
               </dl>
+              {option.href && (
+                <a className={styles.optionAction} href={option.href}>
+                  {option.actionLabel ?? "Open guide"} <span aria-hidden="true">→</span>
+                </a>
+              )}
             </article>
           ))}
         </div>
@@ -349,7 +354,7 @@ export function StructuredGuideArticle({ guide, relatedGuides }: StructuredGuide
               />
             </figure>
             <div className={styles.heroCopy} data-guide-hero-copy>
-              <p className={styles.brand}>{GUIDE_BRAND_SIGNATURE}</p>
+              <p className={styles.brand}>{GUIDE_VISUAL_BRAND}</p>
               <h1>{guide.hero.title}</h1>
               <p className={styles.promise}>{guide.hero.promise}</p>
               {guide.capture && (
@@ -421,6 +426,7 @@ export function StructuredGuideArticle({ guide, relatedGuides }: StructuredGuide
       </article>
 
       <RelatedGuides guides={Array.from(relatedGuides)} title={guide.relatedHeading} />
+      <p className="article-credit article-shell">Created by The AI Automation Queen · Shift &amp; Lead</p>
     </main>
   );
 }

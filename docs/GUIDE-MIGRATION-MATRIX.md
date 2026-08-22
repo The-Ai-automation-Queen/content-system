@@ -1,13 +1,13 @@
 # Shift & Lead guide migration matrix
 
-Status: planning contract. No guide in this document is considered migrated until it passes the completion gate below.
+Status: production release candidate for PR 112. All 33 public guides are migrated through the shared React system and must keep passing the evidence gate below before merge.
 
 This matrix implements `docs/GUIDE-LIBRARY-PRODUCTION-CONTRACT.md`. It preserves every current guide, keeps all 10 AI tool guides visible, consolidates the research library into 7 public hubs, and excludes the Lead and governance curriculum from this phase.
 
 ## Authoritative inputs
 
 1. Public guide inventory and taxonomy: `next-app/content/guides.json`
-2. Current structured guide copy: `next-app/content/ai-jargon-guide.ts`
+2. Current structured guide copy: `next-app/content/structured-guides.ts`, `next-app/content/guides/*.ts` and the custom AI jargon route content
 3. Current React route and components: `next-app/app/guides/[slug]/page.tsx` and `next-app/components/guides/`
 4. Current legacy guide copy: `main-site/guides/*.html`
 5. Current artwork: `next-app/public/images/guides/`, `main-site/assets/covers/`, and `main-site/assets/art/`
@@ -16,7 +16,7 @@ This matrix implements `docs/GUIDE-LIBRARY-PRODUCTION-CONTRACT.md`. It preserves
 8. Editorial standards: `docs/GUIDE-EDITORIAL-STANDARDS.md`
 9. Production contract: `docs/GUIDE-LIBRARY-PRODUCTION-CONTRACT.md`
 
-The workbook contains 367 source guides. Its recommendation is 13 standalone pages, 70 differentiated rewrites, 253 guides merged into hubs and 31 internal-only references. This phase does not publish those 367 pages one by one. It uses them as complete research inputs for the 20 existing guides and 7 public hubs below.
+The workbook contains 367 source guides. Its recommendation is 13 standalone pages, 70 differentiated rewrites, 253 guides merged into hubs and 31 archive or internal-reference decisions. This phase does not publish those 367 pages one by one. It uses them as research inputs for a 33-guide public library: 20 original destinations, 7 public hubs and 6 new practical guides. The Lead and governance curriculum remains outside this phase.
 
 ## Non-negotiable source rule
 
@@ -29,7 +29,7 @@ No existing guide is deleted, hidden or reduced to a lighter page because it is 
 | Code | Required function |
 | --- | --- |
 | F01 | Structured content rendered by the shared React guide system |
-| F02 | 16:9 small blue robot mascot hero on an approved cobalt, deep blue, signal red, teal or warm ivory field, with live title and `The AI Automation Queen · Shift & Lead` overlay |
+| F02 | 16:9 small blue robot mascot hero on an approved cobalt, deep blue, signal red, teal or warm ivory field, with live guide-page title and `The AI Automation Queen` visual label. Card titles sit below the image. |
 | F03 | Direct promise and one popup email capture near the top |
 | F04 | Immediate answer that earns the next scroll |
 | F05 | Topic-appropriate framework, comparison or shortest reliable method |
@@ -43,7 +43,9 @@ No existing guide is deleted, hidden or reduced to a lighter page because it is 
 | F13 | `Created by The AI Automation Queen · Shift & Lead` footer credit |
 | F14 | Desktop, mobile, keyboard, reduced-motion, interaction, download, build and published-route verification |
 
-## Current-state findings
+## Pre-migration findings
+
+The findings below record the estate before PR 112. They explain the migration decisions in each row and are not the current production state.
 
 - There are 20 visible guide records in `next-app/content/guides.json`.
 - Only `ai-jargon-guide` currently has structured React article content. The shared dynamic route returns not found for every other slug, so the publishing script preserves 19 legacy static HTML pages.
@@ -54,6 +56,19 @@ No existing guide is deleted, hidden or reduced to a lighter page because it is 
 - The library taxonomy currently exists twice, once in `guides.json` and again in `guide-card.tsx`. Migration must leave one content source of truth so level, hub and outcome cannot disagree.
 - Several legacy pages still refer to the older `12 AI words` title in related links. Every internal title and link must resolve to `10 AI words you need to know`.
 - `first-ai-employee` keeps its URL for SEO, but the published title and copy must use `AI teammate`. The old phrase may appear only when explaining or correcting it.
+
+## Current release evidence
+
+- `next-app/content/guides.json` contains exactly 33 live guides across 7 hubs, with 20 Beginner, 10 Intermediate and 3 Expert entries.
+- `next-app/content/structured-guides.ts` registers 32 shared structured guides; the approved custom AI jargon route completes the 33-guide set.
+- Every guide has a source brief, a unique capture registry entry and a guide-specific download in both `next-app/public/downloads/` and `main-site/downloads/`.
+- The AI tools hub keeps ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok, Kimi, Manus, Meta AI and Mistral as full guides and links directly to all 10.
+- Shared `GuideCard` output is used on the library, featured placement, hubs and every related-guide section. It keeps the title below the image, the full card clickable and only `The AI Automation Queen` in the image-area label.
+- Shared guide pages keep editable live hero text, a top email capture, exactly 3 related guides and the full creator footer.
+- `main-site/vercel.json` preserves all 14 retired guide aliases with permanent redirects.
+- `scripts/validate-guide-library.mjs`, `main-site/api/guide-capture.test.js` and `work/guide-library-release-audit.mjs` are the release evidence gates. The wider historical estate audit remains available as `npm run validate:legacy`.
+
+All row-level `Missing functions` notes below describe the pre-migration gap. The release gate above, not the historical note, determines current completion.
 
 ## Existing guide migration matrix
 
@@ -297,7 +312,7 @@ No existing guide is deleted, hidden or reduced to a lighter page because it is 
 - **Artwork:** Complete 16:9 PNG/WebP set exists. Reinspect crop and place the title and brand in a tested safe zone.
 - **Commercial ending:** Relevant Build Sprint action only after the reader completes the map.
 
-### 17. The lead follow-up that runs itself
+### 17. Send the guide, follow up and stop on reply
 
 - **Route:** `/guides/follow-up-setup.html`
 - **Level / hub / outcome:** Intermediate / Workflows and automation / Automate a task, Run business operations
@@ -534,26 +549,26 @@ Create one brief before drafting each row above. It must contain:
 
 For every guide or hub, mark each item with evidence. A checked box without a route, asset, test or file path is not evidence.
 
-- [ ] Approved source brief
-- [ ] Original structured copy
-- [ ] Useful source coverage retained without copied wording
-- [ ] No Lead or governance curriculum added in this phase
-- [ ] Relevant 16:9 small blue robot mascot cover
-- [ ] Live hero and card brand overlay
-- [ ] Guide-specific downloadable asset
-- [ ] Unique Lumail guide ID and tag
-- [ ] Successful immediate download after capture
-- [ ] Successful email delivery
-- [ ] Clear capture failure state
-- [ ] Exactly 3 related-guide cards
-- [ ] Canonical and author metadata
-- [ ] Footer creator credit
-- [ ] Desktop visual check
-- [ ] Mobile visual check
-- [ ] Keyboard and reduced-motion check
-- [ ] Interaction and download check
-- [ ] Passing production build
-- [ ] Published canonical route verified
-- [ ] Legacy alias and redirect behavior verified
+- [x] Approved source brief: `next-app/content/guides/*.source.md`
+- [x] Original structured copy: `next-app/content/guides/*.ts`
+- [x] Useful source coverage retained without copied wording: source-brief retain and exclude records
+- [x] No Lead or governance curriculum added in this phase: 7-hub validator allowlist
+- [x] Relevant 16:9 small blue robot mascot cover: `next-app/public/images/guides/`
+- [x] Live hero and card brand label: shared React renderers and card contract checks
+- [x] Guide-specific downloadable asset: 33 active capture registry files
+- [x] Unique Lumail guide ID and tag: guide capture registry validator
+- [x] Successful immediate download after capture: capture component and route tests
+- [x] Email-delivery request contract: capture API tests verify the approved Lumail tags, fields and asset URL with a stubbed provider
+- [x] Clear capture failure state: capture API and browser fallback tests
+- [x] Exactly 3 related-guide cards: 33-page browser audit
+- [x] Canonical and author metadata: 33-page browser audit
+- [x] Footer creator credit: shared renderer and 33-page browser audit
+- [x] Desktop visual check: full library browser audit
+- [x] Mobile visual check: full library browser audit, including uncropped 16:9 structured heroes
+- [x] Keyboard and reduced-motion check: full library browser audit
+- [x] Interaction and download check: full library browser audit plus API tests
+- [x] Passing production build: `npm run publish:guides`
+- [x] Published canonical route verified: 33-route parity check
+- [x] Legacy alias and redirect behavior verified: 14-map redirect validator
 
-Until all applicable evidence exists, the row remains `Planned` or `In progress`, never `Complete`.
+If any evidence gate fails, the affected guide returns to `In progress` until the defect is corrected.

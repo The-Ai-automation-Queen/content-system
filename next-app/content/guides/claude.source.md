@@ -41,4 +41,4 @@ These sources support the current file, project, writing, research and analysis 
 - Live-title safe zone: left 42%. Keep the robot and focal action in the right 58%.
 - The recurring character is the exact small blue robot mascot already established in the approved AI jargon, prompt and tool artwork. Preserve its round cobalt helmet and body, ivory face, large dark eyes, small silver crown with a blue diamond, white and silver jointed limbs and glowing blue chest symbol.
 - Never depict a human queen, realistic woman, generic princess, generic humanoid or a different robot.
-- Keep the live title, level and `The AI Automation Queen · Shift & Lead` brand overlay outside the raster image.
+- Keep the open-guide hero title, level and `The AI Automation Queen` visual label as live HTML outside the raster image. Put listing-card titles below the image. Keep `Shift & Lead` in metadata and the creator footer.

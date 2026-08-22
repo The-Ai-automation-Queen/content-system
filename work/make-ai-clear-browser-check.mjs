@@ -1,7 +1,7 @@
 import { chromium } from "/Users/fatiha/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs";
 import assert from "node:assert/strict";
 
-const base = "http://127.0.0.1:4173";
+const base = process.env.GUIDE_AUDIT_BASE ?? "http://127.0.0.1:4173";
 const guidePath = "/guides/make-ai-clear-and-concise.html";
 const buttonLabel = "Send me the clear writing worksheet";
 const expectedRelated = [
@@ -171,8 +171,8 @@ try {
   const card = library.page.locator(`a[href="${guidePath}"]`).filter({ hasText: "Make AI clear and concise" });
   assert.equal(await card.count(), 1);
   assert.equal(await card.evaluate((node) => node.tagName), "A");
-  assert.equal(await card.locator(".guide-card__art h2").textContent(), "Make AI clear and concise");
-  assert.equal(await card.locator(".guide-card__brand").textContent(), "The AI Automation Queen · Shift & Lead");
+  assert.equal(await card.locator(".guide-card__body h2").textContent(), "Make AI clear and concise");
+  assert.equal(await card.locator(".guide-card__brand").textContent(), "The AI Automation Queen");
   assert.equal(await card.locator(".guide-card__level").textContent(), "Beginner");
   assert.match((await card.textContent()) || "", /Open guide/);
   const libraryText = await library.page.locator("body").innerText();

@@ -33,20 +33,20 @@ export const metaAiGuide = defineGuideArticle({
     },
   },
   answer: {
-    heading: "Choose Meta AI when convenience inside a Meta app is the main benefit",
+    heading: "Use Meta AI for quick, non-private tasks inside Meta apps",
     paragraphs: [
-      "Meta AI is Meta's AI assistant. It is available across Meta products such as WhatsApp, Instagram, Facebook and Messenger, as well as a standalone app in supported accounts and regions.",
-      "It can help with a quick question, a caption idea, an explanation or a simple creative task while you are already inside the app.",
-      "That convenience does not make a consumer chat the right place for confidential client details, employee information, financial records or unreleased plans.",
+      "Meta AI is built into apps such as WhatsApp, Instagram, Facebook and Messenger. Some people can also use it in a separate Meta AI app.",
+      "Use it for a quick question, caption idea, simple explanation or creative idea while you are already in a Meta app.",
+      "Do not paste private client details, employee information, financial records or plans that are not public.",
     ],
     keyLine:
       "Use Meta AI for work you could safely show in public. Move private work into an approved business system.",
   },
   framework: {
     kind: "tool-verdict",
-    heading: "Meta AI is a low-friction helper, not your default business workspace",
+    heading: "Meta AI is a quick helper, not your default business workspace",
     verdict:
-      "Meta AI is worth using when the task starts and ends inside a Meta app and needs no private business context. Choose a dedicated work tool when the job depends on controlled sources, team permissions, files or an audit trail.",
+      "Meta AI is worth using when the task starts and ends inside a Meta app and needs no private business information. Choose a dedicated work tool when the job depends on approved files, team permissions or a record of what happened.",
     bestFor: [
       "Brainstorming caption angles from information that is already public",
       "Rewriting a public announcement in simpler language",

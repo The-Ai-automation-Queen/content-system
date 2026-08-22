@@ -12,7 +12,7 @@ export const geminiGuide = defineGuideArticle({
       "Find out whether Gemini can save useful work where your email, documents and files already live.",
     illustration: {
       src: "/images/guides/gemini.webp",
-      alt: "The small blue robot mascot plugging several work sources into one antique switchboard",
+      alt: "The small blue robot mascot plugging several work sources into 1 antique switchboard",
       focalPoint: "84% center",
     },
     copyPosition: "left",
