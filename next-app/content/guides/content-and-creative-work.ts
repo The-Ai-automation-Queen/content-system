@@ -241,9 +241,9 @@ export const contentAndCreativeWorkGuide = defineGuideArticle({
     ],
   },
   relatedGuideSlugs: [
-    "research-to-content-workflow",
-    "show-up-in-ai-search",
-    "which-ai-tool-for-what",
+    "build-taste-with-ai",
+    "make-ai-clear-and-concise",
+    "better-prompts-and-answers",
   ],
   relatedHeading: "Choose the next content job.",
   ending: {

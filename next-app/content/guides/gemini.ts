@@ -103,7 +103,7 @@ export const geminiGuide = defineGuideArticle({
     completionRule:
       "You can show that Gemini found the right Google context, supported the answer and saved useful time on at least 2 of the 3 tasks.",
   },
-  relatedGuideSlugs: ["which-ai-tool-for-what", "research-to-content-workflow", "copilot"],
+  relatedGuideSlugs: ["which-ai-tool-for-what", "copilot", "check-ai-answers"],
   relatedHeading: "Choose what to test next.",
   ending: {
     kind: "clean",

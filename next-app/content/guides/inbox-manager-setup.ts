@@ -250,7 +250,7 @@ No-action count: [count]
       "A connector failure produces an empty brief or false all-clear.",
     ],
   },
-  relatedGuideSlugs: ["follow-up-setup", "first-ai-employee", "24-7-operations-system"],
+  relatedGuideSlugs: ["get-better-at-ai", "check-ai-answers", "what-is-agentic"],
   relatedHeading: "Build the next safe handoff.",
   ending: {
     kind: "commercial",

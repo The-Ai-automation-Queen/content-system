@@ -103,7 +103,7 @@ export const grokGuide = defineGuideArticle({
     completionRule:
       "You can open the original evidence, explain its limits and write a statement that does not claim more than the evidence proves.",
   },
-  relatedGuideSlugs: ["which-ai-tool-for-what", "meta-ai", "research-to-content-workflow"],
+  relatedGuideSlugs: ["which-ai-tool-for-what", "meta-ai", "check-ai-answers"],
   relatedHeading: "Choose what to test next.",
   ending: {
     kind: "clean",

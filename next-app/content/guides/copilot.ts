@@ -117,7 +117,7 @@ export const copilotGuide = defineGuideArticle({
     completionRule:
       "At least 2 tasks save useful time, every important result has been checked and no unexplained access remains open.",
   },
-  relatedGuideSlugs: ["which-ai-tool-for-what", "inbox-manager-setup", "gemini"],
+  relatedGuideSlugs: ["which-ai-tool-for-what", "gemini", "chatgpt"],
   relatedHeading: "Choose what to test next.",
   ending: {
     kind: "clean",

@@ -217,7 +217,7 @@ export const operationsSystemGuide = defineGuideArticle({
       "The system takes an unapproved action or hides a partial result as complete.",
     ],
   },
-  relatedGuideSlugs: ["first-ai-employee", "inbox-manager-setup", "follow-up-setup"],
+  relatedGuideSlugs: ["what-is-agentic", "manus", "check-ai-answers"],
   relatedHeading: "Build the systems that sit underneath the dashboard.",
   ending: {
     kind: "commercial",

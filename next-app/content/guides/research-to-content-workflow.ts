@@ -207,7 +207,7 @@ export const researchToContentWorkflowGuide = defineGuideArticle({
       "Automation is being added before the manual 1-source test produces an approved result.",
     ],
   },
-  relatedGuideSlugs: ["what-is-a-prompt", "stack-3-tool-ai-stack", "first-ai-employee"],
+  relatedGuideSlugs: ["what-is-a-prompt", "build-taste-with-ai", "make-ai-clear-and-concise"],
   relatedHeading: "Build the next useful skill.",
   ending: {
     kind: "commercial",

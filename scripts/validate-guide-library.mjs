@@ -132,8 +132,33 @@ for (const slug of requiredTools) {
 }
 
 const structuredGuideDirectory = path.join(root, "next-app", "content", "guides");
+const guideCatalogueSource = readFileSync(path.join(root, "next-app", "content", "guides.ts"), "utf8");
+const hiddenGuideSlugsSource = guideCatalogueSource.match(
+  /export const hiddenGuideSlugs = \[([\s\S]*?)\] as const;/,
+)?.[1];
+const hiddenGuideSlugs = new Set(
+  Array.from(hiddenGuideSlugsSource?.matchAll(/"([^"]+)"/g) ?? [], (match) => match[1]),
+);
+
 for (const filename of readdirSync(structuredGuideDirectory).filter((name) => name.endsWith(".ts"))) {
   const source = readFileSync(path.join(structuredGuideDirectory, filename), "utf8");
+  const currentGuideSlug = source.match(/\n\s*slug:\s*"([^"]+)"/)?.[1];
+  const relatedGuideSlugsSource = source.match(/relatedGuideSlugs:\s*\[([\s\S]*?)\]/)?.[1];
+  const relatedGuideSlugs = Array.from(
+    relatedGuideSlugsSource?.matchAll(/"([^"]+)"/g) ?? [],
+    (match) => match[1],
+  );
+  if (relatedGuideSlugs.length !== 3 || new Set(relatedGuideSlugs).size !== 3) {
+    errors.push(`${filename}: relatedGuideSlugs must contain exactly 3 unique guides.`);
+  }
+  for (const relatedSlug of relatedGuideSlugs) {
+    if (!slugs.has(relatedSlug)) errors.push(`${filename}: related guide does not exist: ${relatedSlug}.`);
+    if (relatedSlug === currentGuideSlug) errors.push(`${filename}: a guide cannot relate to itself.`);
+    if (hiddenGuideSlugs.has(relatedSlug)) {
+      errors.push(`${filename}: hidden guide must not appear in relatedGuideSlugs: ${relatedSlug}.`);
+    }
+  }
+
   if (source.includes("defineStructuredGuide") && !source.includes("ending:")) {
     errors.push(`${filename}: every structured guide needs an intentional commercial or clean ending.`);
   }

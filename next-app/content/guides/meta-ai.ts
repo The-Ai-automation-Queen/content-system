@@ -117,7 +117,7 @@ export const metaAiGuide = defineGuideArticle({
     decisionRule:
       "Use Meta AI only when the information is safe to share, the result is easy to check and the task does not need controlled business access.",
   },
-  relatedGuideSlugs: ["which-ai-tool-for-what", "grok", "research-to-content-workflow"],
+  relatedGuideSlugs: ["which-ai-tool-for-what", "grok", "ai-essentials"],
   relatedHeading: "Choose what to test next.",
   ending: {
     kind: "clean",

@@ -279,9 +279,9 @@ STOP RULES
     ],
   },
   relatedGuideSlugs: [
-    "follow-up-setup",
-    "inbox-manager-setup",
-    "research-to-content-workflow",
+    "what-is-agentic",
+    "get-better-at-ai",
+    "check-ai-answers",
   ],
   relatedHeading: "Choose the next workflow to build.",
   ending: {

@@ -186,9 +186,9 @@ export const buildTasteWithAiGuide = defineGuideArticle({
     ],
   },
   relatedGuideSlugs: [
-    "content-and-creative-work",
-    "research-to-content-workflow",
     "make-ai-clear-and-concise",
+    "better-prompts-and-answers",
+    "check-ai-answers",
   ],
   relatedHeading: "Choose what the creative work needs next.",
   ending: {

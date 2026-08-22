@@ -117,7 +117,7 @@ export const claudeGuide = defineGuideArticle({
     completionRule:
       "You can show whether Claude preserved the source, found useful differences and saved enough review time to earn a place in the work.",
   },
-  relatedGuideSlugs: ["which-ai-tool-for-what", "what-is-a-prompt", "research-to-content-workflow"],
+  relatedGuideSlugs: ["which-ai-tool-for-what", "what-is-a-prompt", "check-ai-answers"],
   relatedHeading: "Choose what to test next.",
   ending: {
     kind: "clean",

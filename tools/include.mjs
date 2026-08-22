@@ -292,7 +292,12 @@ function buildSitemap(rootDir, host) {
       const html = fs.readFileSync(f, 'utf8');
       if (/noindex/.test(html)) continue;
       if (/http-equiv="refresh"/.test(html)) continue;
-      const relPath = f.slice(path.join(ROOT, rootDir).length).replace(/\\/g, '/');
+      const filePath = f.slice(path.join(ROOT, rootDir).length).replace(/\\/g, '/');
+      const relPath = filePath.endsWith('/index.html')
+        ? filePath.slice(0, -'index.html'.length)
+        : filePath === '/index.html'
+          ? '/'
+          : filePath;
       const g = guidesData.guides.find((x) => relPath === `/guides/${x.slug}.html`);
       urls.push({ loc: host + relPath, lastmod: g ? g.dateModified : today });
     }

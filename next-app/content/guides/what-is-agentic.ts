@@ -128,6 +128,6 @@ export const whatIsAgenticGuide = defineGuideArticle({
     kind: "clean",
     statement: "Build the fixed path first. Give an agent a choice only when the task needs it, the choices are limited and a person can stop or undo every important action.",
   },
-  relatedGuideSlugs: ["first-ai-employee", "manus", "24-7-operations-system"],
+  relatedGuideSlugs: ["manus", "check-ai-answers", "what-is-ai"],
   relatedHeading: "Choose what to build next.",
 });

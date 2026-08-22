@@ -243,7 +243,7 @@ STOP RULES
       "Past results, another agent or a schedule are proposed before the agent with 1 clearly limited job passes.",
     ],
   },
-  relatedGuideSlugs: ["what-is-agentic", "first-ai-employee", "manus"],
+  relatedGuideSlugs: ["what-is-agentic", "manus", "check-ai-answers"],
   relatedHeading: "Choose the next safe level.",
   ending: {
     kind: "clean",

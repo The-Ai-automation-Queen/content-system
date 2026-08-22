@@ -175,7 +175,7 @@ export const checkAiAnswersGuide = defineGuideArticle({
   relatedGuideSlugs: [
     "better-prompts-and-answers",
     "what-is-a-prompt",
-    "research-to-content-workflow",
+    "get-better-at-ai",
   ],
   relatedHeading: "Choose what the answer needs next.",
   ending: {

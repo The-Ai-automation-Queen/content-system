@@ -193,8 +193,8 @@ export const showUpInAiSearchGuide = defineGuideArticle({
   },
   relatedGuideSlugs: [
     "check-ai-answers",
-    "content-and-creative-work",
-    "research-to-content-workflow",
+    "build-taste-with-ai",
+    "make-ai-clear-and-concise",
   ],
   relatedHeading: "Choose what the source or answer needs next.",
   ending: {

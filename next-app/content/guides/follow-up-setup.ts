@@ -246,7 +246,7 @@ Ignore this email if you have what you need. No pressure and no endless follow-u
       "A failure or open handoff has no alert, owner or manual fallback.",
     ],
   },
-  relatedGuideSlugs: ["inbox-manager-setup", "first-ai-employee", "24-7-operations-system"],
+  relatedGuideSlugs: ["get-better-at-ai", "check-ai-answers", "what-is-agentic"],
   relatedHeading: "Build the next safe handoff.",
   ending: {
     kind: "commercial",

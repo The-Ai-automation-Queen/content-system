@@ -117,7 +117,7 @@ export const manusGuide = defineGuideArticle({
     decisionRule:
       "Run only when the finish line, access, approval, log, cost limit, stop condition and rollback are all written.",
   },
-  relatedGuideSlugs: ["which-ai-tool-for-what", "what-is-agentic", "first-ai-employee"],
+  relatedGuideSlugs: ["which-ai-tool-for-what", "what-is-agentic", "check-ai-answers"],
   relatedHeading: "Choose what to build next.",
   ending: {
     kind: "clean",

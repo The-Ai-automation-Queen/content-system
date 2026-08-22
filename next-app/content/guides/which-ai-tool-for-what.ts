@@ -207,6 +207,6 @@ export const whichAiToolForWhatGuide = defineGuideArticle({
     kind: "clean",
     statement: "Test 1 real job before you pay. Keep the tool that produces the best result you can check with the least access and maintenance.",
   },
-  relatedGuideSlugs: ["chatgpt", "claude", "stack-3-tool-ai-stack"],
+  relatedGuideSlugs: ["chatgpt", "claude", "mistral"],
   relatedHeading: "Test the shortlist next.",
 });

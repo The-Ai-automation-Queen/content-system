@@ -17,16 +17,14 @@ for (const rel of [guideRel, resourceRel, coverRel]) {
   if (!fs.existsSync(file(rel))) throw new Error(`Research content build is missing ${rel}`);
 }
 
-// Make the new guide discoverable in the library after all earlier library rewrites have run.
+// Keep the legacy static library discoverable. The React library owns its own visibility policy.
 {
   const rel = 'guides/index.html';
   let html = read(rel);
   const before = html;
 
   if (html.includes('/_next/static/')) {
-    if (!html.includes('/guides/research-to-content-workflow.html')) {
-      throw new Error('React guide library is missing the research-to-content workflow guide');
-    }
+    console.log('React guide library visibility is controlled by next-app/content/guides.ts');
   } else {
   html = html.replace(/20 free guides/g, '21 free guides');
 

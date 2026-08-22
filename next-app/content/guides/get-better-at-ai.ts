@@ -163,7 +163,7 @@ export const getBetterAtAiGuide = defineGuideArticle({
   },
   relatedGuideSlugs: [
     "better-prompts-and-answers",
-    "workflows-and-automation",
+    "check-ai-answers",
     "ai-essentials",
   ],
   relatedHeading: "Choose what your result needs next.",

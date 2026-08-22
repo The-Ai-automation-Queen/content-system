@@ -12,7 +12,6 @@ The site is organised around a simple path: learn what matters, build one useful
 - Workshops and team programmes: https://www.shiftandlead.com/workshops.html
 - Build with Fatiha: https://www.shiftandlead.com/build-sprint.html
 - About and proof: https://www.shiftandlead.com/about.html
-- AI Insider Brief: https://brief.shiftandlead.com
 
 ## Editorial approach
 

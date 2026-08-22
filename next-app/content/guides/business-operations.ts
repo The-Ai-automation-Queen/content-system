@@ -226,9 +226,9 @@ export const businessOperationsGuide = defineGuideArticle({
     ],
   },
   relatedGuideSlugs: [
-    "stack-3-tool-ai-stack",
-    "follow-up-setup",
-    "24-7-operations-system",
+    "get-better-at-ai",
+    "what-is-agentic",
+    "check-ai-answers",
   ],
   relatedHeading: "Choose what to fix next.",
   ending: {

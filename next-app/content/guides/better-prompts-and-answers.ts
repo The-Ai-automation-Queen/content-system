@@ -275,7 +275,7 @@ AUTOMATIC STOP
   relatedGuideSlugs: [
     "what-is-a-prompt",
     "chatgpt",
-    "research-to-content-workflow",
+    "check-ai-answers",
   ],
   relatedHeading: "Choose the next useful test.",
   ending: {

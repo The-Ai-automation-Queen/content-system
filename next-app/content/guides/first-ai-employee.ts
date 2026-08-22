@@ -270,7 +270,7 @@ export const firstAiEmployeeGuide = defineGuideArticle({
       "Completion is reported without source evidence.",
     ],
   },
-  relatedGuideSlugs: ["what-is-agentic", "inbox-manager-setup", "24-7-operations-system"],
+  relatedGuideSlugs: ["what-is-agentic", "manus", "check-ai-answers"],
   relatedHeading: "Choose what to build next.",
   ending: {
     kind: "commercial",

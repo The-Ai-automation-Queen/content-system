@@ -154,7 +154,7 @@ export const stackThreeToolAiStackGuide = defineGuideArticle({
       "No person owns failed delivery, an incorrect link or a broken follow-up sequence.",
     ],
   },
-  relatedGuideSlugs: ["which-ai-tool-for-what", "follow-up-setup", "research-to-content-workflow"],
+  relatedGuideSlugs: ["which-ai-tool-for-what", "chatgpt", "claude"],
   relatedHeading: "Build the next handoff.",
   ending: {
     kind: "commercial",

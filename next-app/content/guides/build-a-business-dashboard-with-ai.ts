@@ -217,9 +217,9 @@ export const buildABusinessDashboardWithAiGuide = defineGuideArticle({
     ],
   },
   relatedGuideSlugs: [
-    "business-operations",
-    "workflows-and-automation",
-    "24-7-operations-system",
+    "check-ai-answers",
+    "get-better-at-ai",
+    "which-ai-tool-for-what",
   ],
   relatedHeading: "Choose what the dashboard needs next.",
   ending: {

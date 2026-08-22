@@ -136,6 +136,6 @@ Before the final answer:
     kind: "clean",
     statement: "Use the brief on 1 real task. If the answer is weak, improve the missing source, rule or example before you add more instructions.",
   },
-  relatedGuideSlugs: ["chatgpt", "research-to-content-workflow", "what-is-agentic"],
+  relatedGuideSlugs: ["chatgpt", "better-prompts-and-answers", "what-is-agentic"],
   relatedHeading: "Choose what to learn next.",
 });
