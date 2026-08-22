@@ -63,13 +63,20 @@ for (const rel of [guideRel, resourceRel, coverRel]) {
 // Guard the lead-magnet and evidence boundaries that matter for this guide.
 {
   const html = read(guideRel);
-  const required = [
-    'Turn saved research into content you can actually publish',
-    'data-resource-path="/resources/research-to-content-workflow.html"',
-    '/assets/guide-lead-magnets.js',
-    '/images/guides/research-to-content-workflow.png',
-    'AI can organise your notes. You provide the judgement.'
-  ];
+  const required = html.includes('/_next/static/')
+    ? [
+        'Turn saved research into content you can actually publish',
+        'Send me the workflow map',
+        '/images/guides/research-to-content-workflow.webp',
+        'AI can prepare notes and a draft.'
+      ]
+    : [
+        'Turn saved research into content you can actually publish',
+        'data-resource-path="/resources/research-to-content-workflow.html"',
+        '/assets/guide-lead-magnets.js',
+        '/images/guides/research-to-content-workflow.png',
+        'AI can organise your notes. You provide the judgement.'
+      ];
   for (const token of required) {
     if (!html.includes(token)) throw new Error(`Research guide guard failed: missing ${token}`);
   }

@@ -24,7 +24,7 @@
       "permanent": true
     }
   ],
-  "buildCommand": "cd .. && npm run publish:guides && node tools/include.mjs && node tools/proof-patches.mjs && node tools/site-positioning-patches.mjs && node tools/quiz-result-patch.mjs && node tools/brand-system-patch.mjs && node tools/density-patch.mjs && node tools/final-copy-polish.mjs",
+  "buildCommand": "cd .. && npm run build:main-site",
   "outputDirectory": ".",
   "installCommand": "cd ../next-app && npm ci"
 }
