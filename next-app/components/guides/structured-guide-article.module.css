@@ -105,10 +105,6 @@
 }
 
 .capture {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 18px;
-  align-items: center;
   margin-top: 28px;
 }
 
@@ -126,13 +122,6 @@
 .capture > :global(button):hover {
   color: #fff;
   background: transparent;
-}
-
-.capture > p {
-  max-width: 330px;
-  margin: 0;
-  color: #dce2ff;
-  font: 500 13px/1.45 var(--font-ui), sans-serif;
 }
 
 .body {

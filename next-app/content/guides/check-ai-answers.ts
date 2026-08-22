@@ -14,7 +14,7 @@ export const checkAiAnswersGuide = defineGuideArticle({
   hero: {
     title: "Check an AI answer before you use it",
     promise:
-      "Find the claims that matter, check them against the original information and decide what to keep, rewrite, remove or send to a qualified reviewer.",
+      "Check important claims against original sources before you use, rewrite or share the answer.",
     illustration: {
       src: "/images/guides/check-ai-answers.webp",
       alt: "The small blue robot mascot checks an ivory card under a brass magnifying glass while a red card waits on a separate tray",

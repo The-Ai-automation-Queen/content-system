@@ -18,12 +18,12 @@ The source phase creates only this brief. It does not create TypeScript, artwork
 ## Title, promise and SEO locks
 
 - Locked H1: `Show up in AI search`
-- Direct promise: `Make your important business facts reachable, current and easier for a person to verify when they appear in AI search.`
+- Direct promise: `Make your business facts easier for people and AI tools to find and verify.`
 - SEO title: `Show up in AI search | Shift & Lead`
 - Meta description: `Map customer questions to clear public sources, check access and conflicting profiles, then record and correct what current AI search answers show.`
 - Search intent: show up in AI search, get cited by AI, improve AI search visibility, make a website easy for AI to understand, fix wrong AI business information.
 - Cover title: use the locked H1 as live HTML. Do not bake text into the artwork.
-- Creator signature: show `The AI Automation Queen · Shift & Lead` as live HTML on the hero and library card.
+- Creator signature: show `The AI Automation Queen` as simple live HTML in the open-guide hero and the full signature in metadata and the footer. Cards use the mascot and level without a creator-name box.
 
 ## Distinct reader job and hub boundary
 
@@ -415,7 +415,7 @@ Completion rule: another person can see the question, approved answer, strongest
 - Guide slug: `show-up-in-ai-search`
 - Guide ID: `guide.show-up-in-ai-search`
 - Lumail tag: `guide_ai_search_visibility_workbook`
-- Button label: `Send me the AI search workbook`
+- Button label: `Send me the workbook`
 - Modal title: `Get the AI search visibility workbook`
 - Description: `Enter your email to get the fillable 3-page workbook. Download it immediately and use its 6-question map, 8-source audit and 12-test log to find the source gap behind a missing or wrong AI answer.`
 - Deliverable name: `AI search visibility workbook`

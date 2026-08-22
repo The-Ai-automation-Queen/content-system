@@ -69,7 +69,7 @@ test("Guide 5 page and registry share the approved AI search capture contract", 
   assert.match(guideSource, /guideSlug: "show-up-in-ai-search"/);
   assert.match(guideSource, /guideId: "guide\.show-up-in-ai-search"/);
   assert.match(guideSource, /lumailTag: "guide_ai_search_visibility_workbook"/);
-  assert.match(guideSource, /buttonLabel: "Send me the AI search workbook"/);
+  assert.match(guideSource, /buttonLabel: "Send me the workbook"/);
   assert.match(guideSource, /modalTitle: "Get the AI search visibility workbook"/);
   assert.match(
     guideSource,
@@ -396,6 +396,58 @@ test("sends the approved tags and returns the canonical deliverable", async () =
       operationsWorksheetResponse.body.deliverable.downloadLabel,
       "Download the worksheet",
     );
+  } finally {
+    global.fetch = originalFetch;
+    if (originalToken === undefined) delete process.env.LUMAIL_API_TOKEN;
+    else process.env.LUMAIL_API_TOKEN = originalToken;
+    if (originalSiteUrl === undefined) delete process.env.SHIFT_AND_LEAD_SITE_URL;
+    else process.env.SHIFT_AND_LEAD_SITE_URL = originalSiteUrl;
+  }
+});
+
+test("every guide unlock sends its own Lumail tag and resource", async () => {
+  const originalFetch = global.fetch;
+  const originalToken = process.env.LUMAIL_API_TOKEN;
+  const originalSiteUrl = process.env.SHIFT_AND_LEAD_SITE_URL;
+  let request;
+
+  process.env.LUMAIL_API_TOKEN = "test-token";
+  process.env.SHIFT_AND_LEAD_SITE_URL = "https://preview.shiftandlead.com";
+  global.fetch = async (url, options) => {
+    request = { url, options };
+    return { ok: true, status: 200, json: async () => ({ success: true }) };
+  };
+
+  try {
+    for (const [guideSlug, capture] of Object.entries(registry.guides)) {
+      const response = await run({
+        guideSlug,
+        email: "reader@example.com",
+        source: `/guides/${guideSlug}.html`,
+      });
+      const body = JSON.parse(request.options.body);
+
+      assert.equal(response.statusCode, 200, `${guideSlug} must be accepted.`);
+      assert.equal(request.url, "https://lumail.io/api/v1/subscribers");
+      assert.deepEqual(
+        body.tags,
+        [registry.audience.lumailTag, capture.lumailTag],
+        `${guideSlug} must send only the audience tag and its own guide tag.`,
+      );
+      assert.equal(body.fields.source, `/guides/${guideSlug}.html`);
+      assert.equal(
+        body.fields.guide_url,
+        `https://preview.shiftandlead.com/downloads/${capture.deliverable.file}`,
+        `${guideSlug} must send its own resource URL.`,
+      );
+      assert.equal(body.triggerWorkflows, true);
+      assert.equal(body.replaceTags, false);
+      assert.equal(response.body.guideId, capture.guideId);
+      assert.equal(
+        response.body.deliverable.downloadHref,
+        `/downloads/${capture.deliverable.file}`,
+      );
+    }
   } finally {
     global.fetch = originalFetch;
     if (originalToken === undefined) delete process.env.LUMAIL_API_TOKEN;

@@ -59,7 +59,10 @@ The cornerstone tool chooser links to the individual guide for each tool. No too
 Every guide card must:
 
 - use a 16:9 cover;
-- show only the level and `The AI Automation Queen` over the image as live HTML;
+- publish every image requested by a guide page as WebP;
+- keep each published guide image at 250 KB or less;
+- size standard covers at 1280 by 720 pixels and smaller inline illustrations to their real display need;
+- show only the useful level over the image as live HTML;
 - place the guide title below the image in compact, readable type;
 - show the useful level, not `FREE` or reading-time metadata;
 - include a maximum 2-line outcome statement;
@@ -73,7 +76,7 @@ Every guide card must:
 
 The shared React guide system must support glossary, explainer, tutorial, workflow, decision and tool-verdict compositions. The page composition can change, but each guide brief must account for these functions:
 
-1. Branded illustrated hero with a concrete title and direct promise.
+1. Branded illustrated hero with a concrete title and 1 short outcome sentence.
 2. Primary email capture directly below the promise when the guide has a deliverable.
 3. Immediate answer that earns the next scroll.
 4. Essential framework or shortest reliable method.
@@ -88,12 +91,17 @@ Do not force decorative sections, repeated component labels or unnecessary summa
 
 ## Brand ownership
 
-- Display `The AI Automation Queen` as live HTML on guide and card visuals. The mascot represents the Queen.
+- Display `The AI Automation Queen` as simple live HTML in the open-guide hero. The mascot represents the Queen on cards.
+- Do not place a creator-name box on library, hub, featured or related-guide card images.
 - Keep `Shift & Lead` in the site identity, metadata and creator footer, not in the image-area label.
 - Add `Created by The AI Automation Queen · Shift & Lead` to the guide footer.
 - Apply the signature to downloadable assets and social-sharing artwork.
 - Keep the generated illustration itself free of baked-in text. The overlay remains editable, accessible and responsive.
 - Use canonical URLs and author metadata on every guide.
+
+## Hero clarity
+
+Every guide hero uses exactly 4 reader-facing elements: creator label, title, 1 short outcome sentence and 1 capture button. Do not repeat the deliverable name, format or use case beneath the button. That explanation belongs inside the capture popup. Keep the promise to 20 words or fewer and the button label to 5 words or fewer.
 
 ## Mascot identity
 
@@ -103,6 +111,7 @@ Do not force decorative sections, repeated component labels or unnecessary summa
 - Never depict a human queen, realistic woman, generic princess, generic humanoid or a different robot.
 - `The AI Automation Queen` is the creator brand shown in live HTML. It is not a human character to illustrate.
 - No character or brand name is baked into the image itself.
+- PNG files may remain as working sources, but public page markup, metadata and catalogue data must reference only the optimized WebP file.
 
 ## Cover colour rhythm
 

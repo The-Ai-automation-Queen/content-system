@@ -7,7 +7,10 @@ type GuideCaptureModalProps = {
   buttonLabel: string;
   title: string;
   description: string;
-  downloadHref?: string;
+  onSuccess?: () => void;
+  autoOpen?: boolean;
+  dismissible?: boolean;
+  submitLabel?: string;
 };
 
 type DeliveredAsset = {
@@ -36,7 +39,10 @@ export function GuideCaptureModal({
   buttonLabel,
   title,
   description,
-  downloadHref,
+  onSuccess,
+  autoOpen = false,
+  dismissible = true,
+  submitLabel,
 }: GuideCaptureModalProps) {
   const triggerRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -49,7 +55,10 @@ export function GuideCaptureModal({
     const dialog = dialogRef.current;
     if (!dialog) return;
     const closeOnBackdrop = (event: MouseEvent) => {
-      if (event.target === dialog) dialog.close();
+      if (dismissible && event.target === dialog) dialog.close();
+    };
+    const preventDismissal = (event: Event) => {
+      if (!dismissible) event.preventDefault();
     };
     const keepFocusInside = (event: KeyboardEvent) => {
       if (event.key !== "Tab" || !dialog.open) return;
@@ -76,13 +85,15 @@ export function GuideCaptureModal({
     const returnFocus = () => triggerRef.current?.focus();
     dialog.addEventListener("click", closeOnBackdrop);
     dialog.addEventListener("keydown", keepFocusInside);
+    dialog.addEventListener("cancel", preventDismissal);
     dialog.addEventListener("close", returnFocus);
     return () => {
       dialog.removeEventListener("click", closeOnBackdrop);
       dialog.removeEventListener("keydown", keepFocusInside);
+      dialog.removeEventListener("cancel", preventDismissal);
       dialog.removeEventListener("close", returnFocus);
     };
-  }, []);
+  }, [dismissible]);
 
   const open = () => {
     setStatus("idle");
@@ -91,6 +102,10 @@ export function GuideCaptureModal({
     dialogRef.current?.showModal();
     emailRef.current?.focus();
   };
+
+  useEffect(() => {
+    if (autoOpen && !dialogRef.current?.open) open();
+  }, [autoOpen]);
 
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -119,6 +134,7 @@ export function GuideCaptureModal({
       setDeliveredAsset(asset);
       setStatus("success");
       setMessage(asset.successCopy);
+      onSuccess?.();
       formElement.reset();
     } catch (error) {
       setStatus("error");
@@ -128,16 +144,23 @@ export function GuideCaptureModal({
 
   return (
     <>
-      <button ref={triggerRef} type="button" onClick={open}>{buttonLabel}</button>
+      <button id={`guide-capture-trigger-${guideSlug}`} ref={triggerRef} type="button" onClick={open}>{buttonLabel}</button>
       <dialog className="guide-capture" ref={dialogRef} aria-labelledby={`guide-capture-title-${guideSlug}`}>
-        <button className="guide-capture__close" type="button" aria-label="Close" onClick={() => dialogRef.current?.close()}>Close</button>
+        {dismissible && (
+          <button className="guide-capture__close" type="button" aria-label="Close" onClick={() => dialogRef.current?.close()}>Close</button>
+        )}
         <div className="guide-capture__content">
+          {!dismissible && (
+            <div className="guide-capture__lock" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg>
+            </div>
+          )}
+          {!dismissible && <p className="article-label">Immediate access</p>}
           <h2 id={`guide-capture-title-${guideSlug}`}>{title}</h2>
-          <p>{description}</p>
+          <p>{description}{!dismissible ? " The full guide will open here immediately." : ""}</p>
           {status === "success" && deliveredAsset ? (
             <div className="guide-capture__success" role="status">
               <strong>{message}</strong>
-              <a href={deliveredAsset.downloadHref} download>{deliveredAsset.downloadLabel}</a>
               <button type="button" onClick={() => dialogRef.current?.close()}>Continue reading</button>
             </div>
           ) : (
@@ -145,12 +168,9 @@ export function GuideCaptureModal({
               <label htmlFor={`guide-email-${guideSlug}`}>Email address</label>
               <input ref={emailRef} id={`guide-email-${guideSlug}`} name="email" type="email" autoComplete="email" required placeholder="you@example.com" />
               <input className="guide-capture__honeypot" name="website" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
-              <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Sending..." : buttonLabel}</button>
+              <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Sending..." : (submitLabel ?? buttonLabel)}</button>
               <small>You will also receive practical Shift & Lead emails. Unsubscribe at any time.</small>
               {message && <p className="guide-capture__error" role="alert">{message}</p>}
-              {status === "error" && downloadHref && (
-                <a className="guide-capture__fallback" href={downloadHref} download>Download it now</a>
-              )}
             </form>
           )}
         </div>

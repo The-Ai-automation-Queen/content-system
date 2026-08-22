@@ -29,8 +29,8 @@ No existing guide is deleted, hidden or reduced to a lighter page because it is 
 | Code | Required function |
 | --- | --- |
 | F01 | Structured content rendered by the shared React guide system |
-| F02 | 16:9 small blue robot mascot hero on an approved cobalt, deep blue, signal red, teal or warm ivory field, with live guide-page title and `The AI Automation Queen` visual label. Card titles sit below the image. |
-| F03 | Direct promise and one popup email capture near the top |
+| F02 | 16:9 small blue robot mascot hero on an approved cobalt, deep blue, signal red, teal or warm ivory field. The open guide keeps a live title and `The AI Automation Queen` label. Cards keep only the level over the image, with titles below. |
+| F03 | Short direct promise and one popup email capture near the top, with no repeated deliverable paragraph beneath the button |
 | F04 | Immediate answer that earns the next scroll |
 | F05 | Topic-appropriate framework, comparison or shortest reliable method |
 | F06 | Recognisable Shift & Lead business example |
@@ -63,8 +63,8 @@ The findings below record the estate before PR 112. They explain the migration d
 - `next-app/content/structured-guides.ts` registers 32 shared structured guides; the approved custom AI jargon route completes the 33-guide set.
 - Every guide has a source brief, a unique capture registry entry and a guide-specific download in both `next-app/public/downloads/` and `main-site/downloads/`.
 - The AI tools hub keeps ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok, Kimi, Manus, Meta AI and Mistral as full guides and links directly to all 10.
-- Shared `GuideCard` output is used on the library, featured placement, hubs and every related-guide section. It keeps the title below the image, the full card clickable and only `The AI Automation Queen` in the image-area label.
-- Shared guide pages keep editable live hero text, a top email capture, exactly 3 related guides and the full creator footer.
+- Shared `GuideCard` output is used on the library, featured placement, hubs and every related-guide section. It keeps the title below the image, the full card clickable and only the level over the image.
+- Shared guide pages keep editable live hero text, a short outcome sentence, 1 capture button with no repeated support paragraph, exactly 3 related guides and the full creator footer.
 - `main-site/vercel.json` preserves all 14 retired guide aliases with permanent redirects.
 - `scripts/validate-guide-library.mjs`, `main-site/api/guide-capture.test.js` and `work/guide-library-release-audit.mjs` are the release evidence gates. The wider historical estate audit remains available as `npm run validate:legacy`.
 

@@ -9,7 +9,7 @@ export const copilotGuide = defineGuideArticle({
   hero: {
     title: "Should you use Copilot?",
     promise:
-      "Test Microsoft 365 Copilot on 3 jobs and check the permissions before it makes company information easier to find.",
+      "Test Copilot on 3 Microsoft 365 tasks and check what information it can access.",
     illustration: {
       src: "/images/guides/copilot.webp",
       alt: "The small blue robot mascot holding a permission key at a connected office work machine",

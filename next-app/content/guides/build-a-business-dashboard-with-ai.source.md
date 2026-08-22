@@ -20,12 +20,12 @@ The source phase creates only this brief. It does not create TypeScript, artwork
 ## Title, promise and SEO locks
 
 - Locked H1: `Build a business dashboard with AI`
-- Direct promise: `Turn approved business data into 1 clear dashboard that helps a named person make 1 decision.`
+- Direct promise: `Turn approved business data into 1 clear dashboard for 1 named decision.`
 - SEO title: `Build a business dashboard with AI | Shift & Lead`
 - Meta description: `Use approved business data to build 1 decision dashboard, check every result against its source and record who approves the final use.`
 - Search intent: build a business dashboard with AI, AI dashboard from business data, make a dashboard from a spreadsheet, AI data dashboard, customer data dashboard.
 - Cover title: use the locked H1 as live HTML. Do not bake words into the artwork.
-- Creator signature: show `The AI Automation Queen · Shift & Lead` as live HTML on the hero and library card.
+- Creator signature: show `The AI Automation Queen` as simple live HTML in the open-guide hero and the full signature in metadata and the footer. Cards use the mascot and level without a creator-name box.
 
 ## Distinct reader job and guide boundaries
 

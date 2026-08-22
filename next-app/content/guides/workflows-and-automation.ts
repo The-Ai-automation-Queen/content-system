@@ -9,7 +9,7 @@ export const workflowsAndAutomationGuide = defineGuideArticle({
   hero: {
     title: "Build 1 workflow that finishes the task and shows you when it fails",
     promise:
-      "Map the trigger, steps, owner, finish line and failure path before you connect a tool.",
+      "Map the trigger, steps, owner, finish line and failure path before connecting a tool.",
     illustration: {
       src: "/images/guides/workflows-and-automation.webp",
       alt: "The small blue robot mascot mapping a workflow from 1 trigger through ordered steps to a checked result and visible failure path",

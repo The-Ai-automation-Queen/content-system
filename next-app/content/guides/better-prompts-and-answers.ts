@@ -69,11 +69,11 @@ export const betterPromptsAndAnswersGuide = defineGuideArticle({
         actionLabel: "Run the fit test",
       },
       {
-        signal: "I have sources and need publishable content",
+        signal: "I have several good answers and need to choose the strongest one",
         direction:
-          "Choose the main point, draft it, check the facts and let a person approve publication.",
-        href: "/guides/research-to-content-workflow.html",
-        actionLabel: "Build the workflow",
+          "Set a visible standard, compare 3 options and explain why the strongest answer wins.",
+        href: "/guides/build-taste-with-ai.html",
+        actionLabel: "Choose the strongest",
       },
       {
         signal: "I need to check the facts before I use the answer",

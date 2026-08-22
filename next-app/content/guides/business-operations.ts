@@ -9,7 +9,7 @@ export const businessOperationsGuide = defineGuideArticle({
   hero: {
     title: "Run business operations in the right order",
     promise:
-      "Compare 5 real tasks, choose what to automate 1st, name the person responsible and show what works and what happens when it fails.",
+      "Compare 5 tasks, choose what to automate 1st and define what happens when it fails.",
     illustration: {
       src: "/images/guides/business-operations.webp",
       alt: "The small blue robot mascot moving a blank task card to the front of a short ordered queue at a single antique dispatch table in warm ivory",
@@ -21,7 +21,7 @@ export const businessOperationsGuide = defineGuideArticle({
     guideSlug: "business-operations",
     guideId: "hub.business-operations",
     lumailTag: "hub_business_operations_map",
-    buttonLabel: "Send me the automation priority worksheet",
+    buttonLabel: "Send me the worksheet",
     modalTitle: "Get the worksheet: What to automate first",
     description:
       "Enter your email to get the fillable worksheet. Download it immediately, compare 5 real tasks and choose 1 safe first build.",

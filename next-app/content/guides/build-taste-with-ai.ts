@@ -14,7 +14,7 @@ export const buildTasteWithAiGuide = defineGuideArticle({
   hero: {
     title: "Choose and improve AI creative work",
     promise:
-      "Turn vague preferences into a clear standard you can use to choose, improve and approve AI-assisted creative work.",
+      "Turn vague preferences into a clear standard for choosing and improving AI-assisted creative work.",
     illustration: {
       src: "/images/guides/build-taste-with-ai.webp",
       alt: "The small blue robot mascot compares 3 blank ivory design cards at a brass table and frames the selected card before improving it",
@@ -26,7 +26,7 @@ export const buildTasteWithAiGuide = defineGuideArticle({
     guideSlug: "build-taste-with-ai",
     guideId: "guide.build-taste-with-ai",
     lumailTag: "guide_ai_taste_practice_workbook",
-    buttonLabel: "Send me the creative review workbook",
+    buttonLabel: "Send me the workbook",
     modalTitle: "Get the AI creative review workbook",
     description:
       "Enter your email to get the fillable 3-page workbook. Download it immediately and use its 3-option comparison and 6-change finish log on a real draft or design.",

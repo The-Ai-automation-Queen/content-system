@@ -512,7 +512,7 @@ Related heading: `Choose what to fix next.`
 - Live copy position: left.
 - Planned focal point: `82% center`.
 - Planned alt text: `The small blue robot mascot moving a blank task card to the front of a short ordered queue at a single antique dispatch table in warm ivory`.
-- Keep the guide-page title and `The AI Automation Queen` visual label as live HTML. Keep the card title below the image. Do not bake text into the art.
+- Keep the guide-page title and `The AI Automation Queen` visual label as live HTML. Keep the card title below the image and only the level over the art. Do not bake text into the image.
 - Do not include a dashboard, pipeline, railway, gates, permission gates, screens, labels, numbers or embedded text.
 - Current status: no cover is created in either publish target.
 

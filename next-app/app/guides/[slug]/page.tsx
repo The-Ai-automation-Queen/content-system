@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { GuideMotion } from "@/components/guides/guide-motion";
-import { GuideCaptureModal } from "@/components/guides/guide-capture-modal";
+import {
+  GuideAccessCaptureButton,
+  GuideAccessProvider,
+  ProtectedGuideContent,
+} from "@/components/guides/guide-access-gate";
 import { RelatedGuides } from "@/components/guides/related-guides";
 import { StructuredGuideArticle } from "@/components/guides/structured-guide-article";
 import { aiJargonGuide } from "@/content/ai-jargon-guide";
-import { guides, type Guide } from "@/content/guides";
+import { getPublicRelatedGuides, guides, type Guide } from "@/content/guides";
 import { getStructuredGuide, structuredGuides } from "@/content/structured-guides";
 
 export function generateStaticParams() {
@@ -56,11 +60,14 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   const structuredGuide = getStructuredGuide(slug);
 
   if (structuredGuide) {
-    const relatedGuides = structuredGuide.relatedGuideSlugs.map((relatedSlug) =>
-      guides.find((guide) => guide.slug === relatedSlug),
-    );
-    if (relatedGuides.some((guide) => !guide)) {
-      throw new Error(`Structured guide ${slug} refers to a guide that is not in the live catalogue.`);
+    const relatedGuides = getPublicRelatedGuides({
+      currentSlug: slug,
+      preferredSlugs: structuredGuide.relatedGuideSlugs,
+      hub: structuredGuide.hub,
+      outcomes: structuredGuide.outcomes,
+    });
+    if (relatedGuides.length !== 3) {
+      throw new Error(`Structured guide ${slug} does not have 3 public related guides.`);
     }
     return (
       <StructuredGuideArticle
@@ -71,9 +78,15 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   }
 
   if (slug !== aiJargonGuide.slug) notFound();
-  const related = guides.filter((item) => ["what-is-ai", "what-is-a-prompt", "what-is-agentic"].includes(item.slug));
+  const related = getPublicRelatedGuides({
+    currentSlug: slug,
+    preferredSlugs: ["what-is-ai", "what-is-a-prompt", "what-is-agentic"],
+    hub: "AI essentials",
+    outcomes: ["Understand AI"],
+  });
 
   return (
+    <GuideAccessProvider guideSlug={aiJargonGuide.slug}>
     <main className="article-page simple-guide" data-guide-article>
       <GuideMotion />
       <article>
@@ -89,12 +102,13 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
               <h1>{aiJargonGuide.title}</h1>
               <p className="simple-guide__deck">{aiJargonGuide.deck}</p>
               <div className="simple-guide__hero-action">
-                <GuideCaptureModal guideSlug={aiJargonGuide.slug} {...aiJargonGuide.capture} />
+                <GuideAccessCaptureButton guideSlug={aiJargonGuide.slug} {...aiJargonGuide.capture} />
               </div>
             </div>
           </div>
         </header>
 
+        <ProtectedGuideContent>
         <div className="simple-guide__body">
           <section className="simple-guide__terms" aria-label="10 AI words">
             {aiJargonGuide.groups.map((group) => (
@@ -126,14 +140,15 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
           </section>
 
         </div>
+        <section className="simple-guide__ending article-shell" data-guide-reveal>
+          <p>You now know the 10 AI words that come up most often. Use the definition you need, then get back to the decision in front of you.</p>
+        </section>
+        </ProtectedGuideContent>
       </article>
-
-      <section className="simple-guide__ending article-shell" data-guide-reveal>
-        <p>You now know the 10 AI words that come up most often. Use the definition you need, then get back to the decision in front of you.</p>
-      </section>
 
       <RelatedGuides guides={related} />
       <p className="article-credit article-shell">Created by The AI Automation Queen · Shift &amp; Lead</p>
     </main>
+    </GuideAccessProvider>
   );
 }

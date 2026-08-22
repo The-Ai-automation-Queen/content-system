@@ -9,7 +9,7 @@ export const getBetterAtAiGuide = defineGuideArticle({
   hero: {
     title: "Get better at AI with 1 real task",
     promise:
-      "Use 1 real task to find what works, fix what fails and get a result you can repeat.",
+      "Improve 1 real AI task until you get a result you can repeat.",
     illustration: {
       src: "/images/guides/get-better-at-ai.webp",
       alt: "The small blue robot adjusts a brass machine beside 4 ivory cards arranged from uneven to straight",

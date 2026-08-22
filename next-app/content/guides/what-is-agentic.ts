@@ -9,7 +9,7 @@ export const whatIsAgenticGuide = defineGuideArticle({
   hero: {
     title: "What AI agents actually do",
     promise:
-      "See when you need a chatbot, a workflow or an agent, and where a person should keep control.",
+      "Choose between a chatbot, workflow or agent while keeping the right person in control.",
     illustration: {
       src: "/images/guides/what-is-agentic.webp",
       alt: "The small blue robot mascot operating the final machine in a connected mechanical process",
@@ -21,7 +21,7 @@ export const whatIsAgenticGuide = defineGuideArticle({
     guideSlug: "what-is-agentic",
     guideId: "guide.what-is-agentic",
     lumailTag: "guide_agent_or_workflow_card",
-    buttonLabel: "Send me the workflow or agent worksheet",
+    buttonLabel: "Send me the worksheet",
     modalTitle: "Get the workflow or agent worksheet",
     description:
       "Enter your email to get the 1-page worksheet. Download it immediately and use it before you give an AI tool access to your work.",

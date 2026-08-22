@@ -1,9 +1,13 @@
 import Image from "next/image";
-import { GuideCaptureModal } from "@/components/guides/guide-capture-modal";
+import {
+  GuideAccessCaptureButton,
+  GuideAccessProvider,
+  ProtectedGuideContent,
+} from "@/components/guides/guide-access-gate";
 import { CopyBlock } from "@/components/guides/copy-block";
 import { GuideMotion } from "@/components/guides/guide-motion";
 import { RelatedGuides } from "@/components/guides/related-guides";
-import type { Guide } from "@/content/guides";
+import { isPublicGuide, type Guide } from "@/content/guides";
 import {
   GUIDE_VISUAL_BRAND,
   type GuideArticleDefinition,
@@ -326,14 +330,18 @@ function PracticalAssetSection({ asset }: { asset: PracticalAsset }) {
 
 export function StructuredGuideArticle({ guide, relatedGuides }: StructuredGuideArticleProps) {
   const actualRelatedSlugs = relatedGuides.map((item) => item.slug);
-  const wrongRelatedGuide = guide.relatedGuideSlugs.some((slug, index) => slug !== actualRelatedSlugs[index]);
-  if (wrongRelatedGuide) {
-    throw new Error(`Related guides for ${guide.slug} must match relatedGuideSlugs in the declared order.`);
+  if (
+    new Set(actualRelatedSlugs).size !== 3 ||
+    actualRelatedSlugs.includes(guide.slug) ||
+    relatedGuides.some((item) => !isPublicGuide(item))
+  ) {
+    throw new Error(`Related guides for ${guide.slug} must be 3 different public guides.`);
   }
 
   const copyPosition = guide.hero.copyPosition ?? "left";
 
   return (
+    <GuideAccessProvider guideSlug={guide.slug}>
     <main className={`${styles.page} article-page`} data-guide-article>
       <GuideMotion />
       <article>
@@ -359,20 +367,20 @@ export function StructuredGuideArticle({ guide, relatedGuides }: StructuredGuide
               <p className={styles.promise}>{guide.hero.promise}</p>
               {guide.capture && (
                 <div className={styles.capture}>
-                  <GuideCaptureModal
+                  <GuideAccessCaptureButton
                     guideSlug={guide.capture.guideSlug}
                     buttonLabel={guide.capture.buttonLabel}
                     title={guide.capture.modalTitle}
                     description={guide.capture.description}
-                    downloadHref={guide.capture.deliverable.downloadHref}
                   />
-                  <p>{guide.capture.deliverable.name}. {guide.capture.deliverable.usefulWhen}</p>
                 </div>
               )}
             </div>
           </div>
         </header>
 
+        {guide.capture ? (
+          <ProtectedGuideContent>
         <div className={styles.body}>
           <section className={styles.answer} aria-labelledby="immediate-answer-title" data-guide-reveal>
             <p className={styles.eyebrow}>The direct answer</p>
@@ -423,10 +431,24 @@ export function StructuredGuideArticle({ guide, relatedGuides }: StructuredGuide
             <p className={styles.cleanEnding} data-guide-reveal>{guide.ending.statement}</p>
           ) : null}
         </div>
+          </ProtectedGuideContent>
+        ) : (
+          <div className={styles.body}>
+            <section className={styles.answer} aria-labelledby="immediate-answer-title" data-guide-reveal>
+              <p className={styles.eyebrow}>The direct answer</p>
+              <h2 id="immediate-answer-title">{guide.answer.heading}</h2>
+              {guide.answer.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {guide.answer.keyLine && <p className={styles.keyLine}>{guide.answer.keyLine}</p>}
+            </section>
+            <Framework framework={guide.framework} />
+            <PracticalAssetSection asset={guide.practicalAsset} />
+          </div>
+        )}
       </article>
 
       <RelatedGuides guides={Array.from(relatedGuides)} title={guide.relatedHeading} />
       <p className="article-credit article-shell">Created by The AI Automation Queen · Shift &amp; Lead</p>
     </main>
+    </GuideAccessProvider>
   );
 }

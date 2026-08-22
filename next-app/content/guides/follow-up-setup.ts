@@ -9,7 +9,7 @@ export const followUpSetupGuide = defineGuideArticle({
   hero: {
     title: "Send the guide, follow up and stop on reply",
     promise:
-      "Deliver the right guide, send 3 useful messages and put every real reply back in a person's hands.",
+      "Deliver the right guide, send 3 useful messages and stop when a person replies.",
     illustration: {
       src: "/images/guides/follow-up-setup.webp",
       alt: "The small blue robot mascot holding an envelope beside a connected follow-up pipeline",

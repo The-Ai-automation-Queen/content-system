@@ -9,7 +9,7 @@ export const aiAgentsGuide = defineGuideArticle({
   hero: {
     title: "Build 1 AI agent you can test, limit and stop",
     promise:
-      "Give it 1 job, the smallest access, a clear approval point and failure tests before it touches live work.",
+      "Give 1 AI agent a clear job, limited access and a stopping point you control.",
     illustration: {
       src: "/images/guides/ai-agents.webp",
       alt: "The small blue robot mascot controlling a 3-stage machine with 2 red gates and an emergency stop lever",

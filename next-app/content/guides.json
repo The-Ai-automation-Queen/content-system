@@ -407,7 +407,7 @@
       "track": "tools",
       "status": "live",
       "formatLabel": "FREE TOOL VERDICT",
-      "level": "Expert",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": ["Choose an AI tool", "Build an agent"],
       "tags": ["Mistral", "open models", "self-hosting", "deployment", "data control"],

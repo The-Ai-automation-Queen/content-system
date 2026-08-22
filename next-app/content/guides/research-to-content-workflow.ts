@@ -9,7 +9,7 @@ export const researchToContentWorkflowGuide = defineGuideArticle({
   hero: {
     title: "Turn saved research into content you can actually publish",
     promise:
-      "Move 1 useful source through a clear process that protects the evidence, adds your point of view and produces an original piece ready to publish.",
+      "Turn 1 trusted source into an original piece that is ready to publish.",
     illustration: {
       src: "/images/guides/research-to-content-workflow.webp",
       alt: "The small blue robot mascot operating a machine that turns research cards into organised content files",

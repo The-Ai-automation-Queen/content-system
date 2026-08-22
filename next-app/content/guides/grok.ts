@@ -9,7 +9,7 @@ export const grokGuide = defineGuideArticle({
   hero: {
     title: "Should you use Grok?",
     promise:
-      "Use Grok to inspect a live public conversation, then separate the signal from the claim that still needs proof.",
+      "Inspect a live public conversation and separate useful signals from claims that still need proof.",
     illustration: {
       src: "/images/guides/grok.webp",
       alt: "The small blue robot mascot weighing fast public signals against a bound evidence ledger",

@@ -19,12 +19,12 @@ The source phase creates only this brief. It does not create TypeScript, artwork
 ## Title, promise and SEO locks
 
 - Locked H1: `Make AI clear and concise`
-- Direct promise: `Turn a long or vague AI answer into writing that gets to the point, keeps the useful detail and makes the next action clear.`
+- Direct promise: `Turn long AI answers into clear writing with an obvious next step.`
 - SEO title: `Make AI clear and concise | Shift & Lead`
 - Meta description: `Turn a long or vague AI answer into clear writing that gets to the point, keeps the details that matter and tells the reader what to do next.`
 - Search intent: make AI concise, shorten AI answers, make AI writing clearer, edit AI writing, remove AI filler.
 - Cover title: use the locked H1 as live HTML. Do not bake text into the artwork.
-- Creator signature: show `The AI Automation Queen · Shift & Lead` as live HTML on the hero and library card.
+- Creator signature: show `The AI Automation Queen` as simple live HTML in the open-guide hero and the full signature in metadata and the footer. Cards use the mascot and level without a creator-name box.
 
 ## Exact boundary inside Better prompts and answers
 
@@ -271,7 +271,7 @@ Completion rule: the opening gives the point and useful reason, the next action 
 - Guide slug: `make-ai-clear-and-concise`
 - Guide ID: `guide.make-ai-clear-and-concise`
 - Lumail tag: `guide_clear_concise_revision_worksheet`
-- Button label: `Send me the clear writing worksheet`
+- Button label: `Send me the worksheet`
 - Modal title: `Get the clear writing revision worksheet`
 - Description: `Enter your email to get the fillable 3-page worksheet. Download it immediately and use its 8-row edit map to turn a long AI answer into writing a real reader can understand and use.`
 - Deliverable name: `Clear writing revision worksheet`

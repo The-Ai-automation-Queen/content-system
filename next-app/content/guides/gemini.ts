@@ -9,7 +9,7 @@ export const geminiGuide = defineGuideArticle({
   hero: {
     title: "Should you use Gemini?",
     promise:
-      "Find out whether Gemini can save useful work where your email, documents and files already live.",
+      "Test Gemini where your email, documents and files already live.",
     illustration: {
       src: "/images/guides/gemini.webp",
       alt: "The small blue robot mascot plugging several work sources into 1 antique switchboard",

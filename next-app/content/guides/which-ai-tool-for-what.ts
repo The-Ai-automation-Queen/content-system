@@ -9,7 +9,7 @@ export const whichAiToolForWhatGuide = defineGuideArticle({
   hero: {
     title: "Which AI tool should you use?",
     promise:
-      "Compare 10 tools by the work you need done, then choose 1 to test before you pay for another subscription.",
+      "Compare 10 AI tools by the work you need done, then choose 1 to test.",
     illustration: {
       src: "/images/guides/which-ai-tool-for-what.webp",
       alt: "The small blue robot mascot routing 1 work request toward 10 tool stations",

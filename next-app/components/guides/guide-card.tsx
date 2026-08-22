@@ -17,7 +17,6 @@ export function GuideCard({ guide, featured = false }: { guide: Guide; featured?
           className="guide-card__image"
           priority={featured}
         />
-        <span className="guide-card__brand">The AI Automation Queen</span>
         <span className="guide-card__level">{guide.level}</span>
       </div>
       <div className="guide-card__body">

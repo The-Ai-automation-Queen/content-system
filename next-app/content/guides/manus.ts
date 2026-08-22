@@ -9,7 +9,7 @@ export const manusGuide = defineGuideArticle({
   hero: {
     title: "Should you use Manus?",
     promise:
-      "Give Manus 1 bounded multi-step task, with the access, approvals and stopping points written before it starts.",
+      "Test Manus on 1 bounded task with access, approvals and stopping points defined first.",
     illustration: {
       src: "/images/guides/manus.webp",
       alt: "The small blue robot mascot supervising a task conveyor with review gates and a stop lever",

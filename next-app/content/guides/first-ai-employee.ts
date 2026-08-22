@@ -9,7 +9,7 @@ export const firstAiEmployeeGuide = defineGuideArticle({
   hero: {
     title: "Build your 1st AI teammate",
     promise:
-      "Give 1 AI system a clear job, limited access and a human stopping point before it touches your business.",
+      "Give 1 AI teammate a clear job, limited access and a human stopping point.",
     illustration: {
       src: "/images/guides/first-ai-employee.webp",
       alt: "The small blue robot mascot operating a role-design machine that produces approved task cards",

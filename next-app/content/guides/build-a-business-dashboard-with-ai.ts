@@ -14,7 +14,7 @@ export const buildABusinessDashboardWithAiGuide = defineGuideArticle({
   hero: {
     title: "Build a business dashboard with AI",
     promise:
-      "Turn approved business data into 1 clear dashboard that helps a named person make 1 decision.",
+      "Turn approved business data into 1 clear dashboard for 1 named decision.",
     illustration: {
       src: "/images/guides/build-a-business-dashboard-with-ai.webp",
       alt: "The small blue robot mascot checks blank ivory data cards through a brass gauge before they reach 1 clear decision panel",

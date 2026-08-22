@@ -9,7 +9,7 @@ export const operationsSystemGuide = defineGuideArticle({
   hero: {
     title: "Run a business around the clock without being on 24/7",
     promise:
-      "Keep routine work moving with a live dashboard, human approval, visible exceptions and a shutdown route you have already tested.",
+      "Keep routine work moving with visible exceptions, human approval and a shutdown route you have tested.",
     illustration: {
       src: "/images/guides/24-7-operations-system.webp",
       alt: "The small blue robot mascot beside a day-and-night operations machine that separates completed work from alerts",

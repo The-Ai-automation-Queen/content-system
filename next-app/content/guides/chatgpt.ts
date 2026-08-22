@@ -9,7 +9,7 @@ export const chatgptGuide = defineGuideArticle({
   hero: {
     title: "Should you use ChatGPT?",
     promise:
-      "Use 3 real tasks to decide whether ChatGPT should be your main AI tool or just another subscription.",
+      "Test ChatGPT on 3 real tasks before making it your main AI tool.",
     illustration: {
       src: "/images/guides/chatgpt.webp",
       alt: "The small blue robot mascot choosing an attachment on an antique multi-tool beside a stack of papers",

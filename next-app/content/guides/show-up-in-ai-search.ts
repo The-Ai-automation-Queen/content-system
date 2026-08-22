@@ -14,7 +14,7 @@ export const showUpInAiSearchGuide = defineGuideArticle({
   hero: {
     title: "Show up in AI search",
     promise:
-      "Make your important business facts reachable, current and easier for a person to verify when they appear in AI search.",
+      "Make your business facts easier for people and AI tools to find and verify.",
     illustration: {
       src: "/images/guides/show-up-in-ai-search.webp",
       alt: "The small blue robot mascot connects 3 matching public source tiles to a brass routing board that releases an evidence slip",
@@ -26,7 +26,7 @@ export const showUpInAiSearchGuide = defineGuideArticle({
     guideSlug: "show-up-in-ai-search",
     guideId: "guide.show-up-in-ai-search",
     lumailTag: "guide_ai_search_visibility_workbook",
-    buttonLabel: "Send me the AI search workbook",
+    buttonLabel: "Send me the workbook",
     modalTitle: "Get the AI search visibility workbook",
     description:
       "Enter your email to get the fillable 3-page workbook. Download it immediately and use its 6-question map, 8-source audit and 12-test log to find the source gap behind a missing or wrong AI answer.",
@@ -92,15 +92,15 @@ export const showUpInAiSearchGuide = defineGuideArticle({
     ],
   },
   example: {
-    heading: "Point an old guide link to the current Shift & Lead source",
+    heading: "Point an old AI explainer link to the current Shift & Lead source",
     situation:
-      "Shift & Lead wants a person asking how to turn saved AI research into publishable content to reach the current Research-to-content workflow guide. An older route still exists, and different pages describe the guide differently.",
+      "Shift & Lead wants a person asking what AI actually is to reach the current What AI actually is guide. An older route still exists, and different pages describe the guide differently.",
     weakApproach:
       "Publish several short pages that repeat the question, add search terms to every heading and hope that more pages create more citations.",
     decision:
-      "Keep 1 current guide as the strongest source. The approved answer is: use a source you may use, add a distinct point of view, check important claims and let a named person approve publishing.",
+      "Keep 1 current guide as the strongest source. The approved answer is: AI finds patterns in information and uses them to produce a result, while a person remains responsible for consequential decisions.",
     action:
-      "Fatiha checks that the current guide states the answer near the top, uses the correct main URL, appears in the sitemap and receives a direct link from the Content and creative work hub. The developer checks access and sends the old route directly to the current page. Fatiha then aligns the guide description on the About page and official profile. The team runs the 6 approved questions across 2 current systems, opens every cited page and records any missing or old result.",
+      "Fatiha checks that the current guide states the answer near the top, uses the correct main URL, appears in the sitemap and receives a direct link from the guide library. The developer checks access and sends the old route directly to the current page. Fatiha then aligns the guide description on the About page and official profile. The team runs the 6 approved questions across 2 current systems, opens every cited page and records any missing or old result.",
     result:
       "Shift & Lead has 1 current answer, old links lead to it and the team has a dated record of what each system showed.",
     lesson:
@@ -114,9 +114,9 @@ export const showUpInAiSearchGuide = defineGuideArticle({
     instructions:
       "Use an approved answer and open every page you record. A dated result is evidence of 1 test, not proof of a stable ranking.",
     workedExample: {
-      label: "Shift & Lead research guide",
+      label: "Shift & Lead AI explainer",
       content:
-        "Question: How do I turn saved AI research into content I can publish? Correct answer: use an allowed source, add a distinct point of view, check important claims and name the publisher. Owned source: /guides/research-to-content-workflow.html. Reach check: public page, main URL, sitemap entry, hub link and technical access checked. Outside record: current description on the About page and official profile. Test result: 1 dated result links to an old route and is marked Seen with an error. Fix: developer checks the redirect, Fatiha checks the wording and the team records a later test date.",
+        "Question: What is AI? Correct answer: AI finds patterns in information and uses them to produce a result, while a person remains responsible for consequential decisions. Owned source: /guides/what-is-ai.html. Reach check: public page, main URL, sitemap entry, library link and technical access checked. Outside record: current description on the About page and official profile. Test result: 1 dated result links to an old route and is marked Seen with an error. Fix: developer checks the redirect, Fatiha checks the wording and the team records a later test date.",
     },
     fields: [
       {

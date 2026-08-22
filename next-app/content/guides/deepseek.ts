@@ -9,7 +9,7 @@ export const deepseekGuide = defineGuideArticle({
   hero: {
     title: "Should you use DeepSeek?",
     promise:
-      "Choose between the hosted service, the API and a model you run elsewhere before any business data moves.",
+      "Choose how to use DeepSeek before any business data moves.",
     illustration: {
       src: "/images/guides/deepseek.webp",
       alt: "The small blue robot mascot switching between a hosted service and a locked private model",

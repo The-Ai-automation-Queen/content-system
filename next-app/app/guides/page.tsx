@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { GuideLibrary } from "@/components/guides/guide-library";
-import { guides } from "@/content/guides";
+import { publicGuides } from "@/content/guides";
 
 export const metadata: Metadata = {
   title: "Practical AI guides for every level",
@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     description: "Start at your level or go directly to the AI task, tool or system you need.",
     url: "/guides/",
     type: "website",
-    images: [{ url: "/images/guides/learn-master.png", width: 1680, height: 945 }],
+    images: [{ url: "/images/guides/learn-master.webp", width: 1280, height: 720 }],
   },
 };
 
 export default function GuidesPage() {
   return (
     <main>
-      <GuideLibrary guides={guides} />
+      <GuideLibrary guides={publicGuides} />
 
       <section className="guides-cta">
         <div>

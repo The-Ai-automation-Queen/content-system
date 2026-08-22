@@ -8,6 +8,22 @@ const captureRegistry = JSON.parse(
   await readFile(new URL("../main-site/api/guide-capture-registry.json", import.meta.url), "utf8"),
 );
 const guides = catalogue.guides.filter((guide) => guide.status === "live");
+const hiddenLibrarySlugs = new Set([
+  "business-operations",
+  "first-ai-employee",
+  "24-7-operations-system",
+  "research-to-content-workflow",
+  "workflows-and-automation",
+  "follow-up-setup",
+  "inbox-manager-setup",
+  "ai-agents",
+  "build-a-business-dashboard-with-ai",
+  "stack-3-tool-ai-stack",
+  "content-and-creative-work",
+  "show-up-in-ai-search",
+]);
+const publicLibraryGuides = guides.filter((guide) => !hiddenLibrarySlugs.has(guide.slug));
+const hiddenLibraryHrefs = new Set(Array.from(hiddenLibrarySlugs, (slug) => `/guides/${slug}.html`));
 const base = process.env.GUIDE_AUDIT_BASE ?? "http://127.0.0.1:4173";
 const brandSignature = "The AI Automation Queen · Shift & Lead";
 const visualBrand = "The AI Automation Queen";
@@ -59,6 +75,7 @@ async function loadAllImages(page) {
 
 assert.equal(guides.length, 33, "The release catalogue must contain exactly 33 live guides.");
 assert.equal(new Set(guides.map((guide) => guide.slug)).size, 33, "Every guide slug must be unique.");
+assert.equal(publicLibraryGuides.length, 21, "The public library must contain exactly 21 visible guides.");
 assert.deepEqual(new Set(guides.map((guide) => guide.hub)), expectedHubs, "All 7 public hubs must be represented.");
 assert.equal(Object.values(captureRegistry.guides).filter((entry) => entry.active).length, 33);
 
@@ -78,16 +95,10 @@ try {
   const libraryResponse = await library.goto(`${base}/guides/`, { waitUntil: "networkidle" });
   assert.equal(libraryResponse?.status(), 200);
   assert.equal(await library.locator("h1").count(), 1);
-  assert.equal(await library.locator(".guide-grid .guide-card").count(), 33);
+  assert.equal(await library.locator(".guide-grid .guide-card").count(), 21);
   assert.equal(await library.locator(".guide-grid .guide-card__art h2").count(), 0);
-  assert.equal(await library.locator(".guide-grid .guide-card__body h2").count(), 33);
-  assert.equal(
-    await library.locator(".guide-grid .guide-card__brand").evaluateAll(
-      (nodes, expected) => nodes.every((node) => node.textContent?.trim() === expected),
-      visualBrand,
-    ),
-    true,
-  );
+  assert.equal(await library.locator(".guide-grid .guide-card__body h2").count(), 21);
+  assert.equal(await library.locator(".guide-grid .guide-card__brand").count(), 0);
   assert.equal(
     await library.locator(".guide-grid .guide-card").evaluateAll((cards) => cards.every((card) => {
       const art = card.querySelector(".guide-card__art")?.getBoundingClientRect();
@@ -96,8 +107,8 @@ try {
     })),
     true,
   );
-  assert.equal(await library.locator(".level-nav button").count(), 3);
-  assert.equal(await library.locator(".hub-nav button").count(), 7);
+  assert.equal(await library.locator(".level-nav button").count(), 2);
+  assert.equal(await library.locator(".hub-nav button").count(), 5);
   assert.equal(await library.locator(".start-here__steps > li").count(), 4);
   assert.doesNotMatch(await library.locator("body").innerText(), /The 99/i);
   assert.equal(await library.locator("main").evaluate((node) => node.scrollWidth <= node.clientWidth), true);
@@ -108,20 +119,47 @@ try {
   );
   assert.deepEqual(libraryRuntimeErrors, []);
 
-  for (const guide of guides) {
+  for (const guide of publicLibraryGuides) {
     const expectedHref = `/guides/${guide.slug}.html`;
     assert.equal(await library.locator(`.guide-grid .guide-card[href="${expectedHref}"]`).count(), 1);
   }
+  for (const slug of hiddenLibrarySlugs) {
+    assert.equal(await library.locator(`.guide-grid .guide-card[href="/guides/${slug}.html"]`).count(), 0);
+  }
 
-  await library.getByRole("button", { name: "Expert", exact: true }).first().click();
+  await library.getByRole("button", { name: "Intermediate", exact: true }).first().click();
   assert.equal(
     Number.parseInt(await library.locator(".result-count").innerText(), 10),
-    guides.filter((guide) => guide.level === "Expert").length,
+    publicLibraryGuides.filter((guide) => guide.level === "Intermediate").length,
   );
-  await library.locator("#guide-search").fill("dashboard");
+  await library.locator("#guide-search").fill("Claude");
   assert.equal(Number.parseInt(await library.locator(".result-count").innerText(), 10) > 0, true);
-  assert.equal(await library.locator('.guide-card[href="/guides/build-a-business-dashboard-with-ai.html"]').count(), 1);
+  assert.equal(await library.locator('.guide-card[href="/guides/claude.html"]').count(), 1);
   await libraryContext.close();
+
+  const gatedContext = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: "reduce" });
+  const gatedPage = await gatedContext.newPage();
+  await gatedPage.goto(`${base}/guides/ai-jargon-guide.html`, { waitUntil: "networkidle" });
+  assert.equal(await gatedPage.locator(".guide-access-gate").count(), 1);
+  assert.equal(await gatedPage.locator(".term-brief").count(), 0);
+  const automaticGate = gatedPage.locator("dialog.guide-capture");
+  await automaticGate.waitFor({ state: "visible" });
+  assert.equal((await automaticGate.locator("h2").innerText()).trim(), "Unlock this guide");
+  assert.match(await automaticGate.innerText(), /Enter your email for immediate access/);
+  assert.equal(await automaticGate.getByRole("button", { name: "Unlock the guide" }).count(), 1);
+  assert.equal(await automaticGate.getByLabel("Email address").count(), 1);
+  assert.equal(await automaticGate.getByRole("button", { name: "Close" }).count(), 0);
+  await gatedPage.keyboard.press("Escape");
+  assert.equal(await automaticGate.isVisible(), true);
+  await gatedContext.close();
+
+  const reviewContext = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: "reduce" });
+  const reviewPage = await reviewContext.newPage();
+  await reviewPage.goto(`${base}/guides/ai-jargon-guide.html?review=1`, { waitUntil: "networkidle" });
+  assert.equal(await reviewPage.locator("dialog.guide-capture:visible").count(), 0);
+  assert.equal(await reviewPage.locator(".guide-access-gate").count(), 0);
+  assert.equal(await reviewPage.locator(".term-brief").count(), 10);
+  await reviewContext.close();
 
   for (const viewport of [
     { name: "desktop", width: 1440, height: 1000 },
@@ -131,6 +169,11 @@ try {
       viewport: { width: viewport.width, height: viewport.height },
       reducedMotion: "reduce",
     });
+    await context.addInitScript((guideSlugs) => {
+      for (const slug of guideSlugs) {
+        window.localStorage.setItem(`shift-lead-guide-unlocked:${slug}`, "true");
+      }
+    }, guides.map((guide) => guide.slug));
     const page = await context.newPage();
 
     for (const guide of guides) {
@@ -189,12 +232,20 @@ try {
       });
       await check(guide.slug, viewport.name, "visual brand", async () => {
         assert.equal((await page.locator("[data-guide-hero-copy] > p").first().textContent())?.trim(), visualBrand);
+        assert.equal(await page.locator("[data-guide-hero-copy] > p").count(), 2);
+        assert.equal(await page.locator("[data-guide-hero-copy] > div > p").count(), 0);
         assert.equal(await page.locator(".article-credit", { hasText: brandSignature }).count(), 1);
       });
       await check(guide.slug, viewport.name, "navigation", async () => {
         assert.equal(await page.getByRole("navigation", { name: "Main navigation" }).count(), 1);
         assert.equal(await page.getByRole("link", { name: "Shift and Lead home" }).count(), 1);
         assert.equal(await page.locator('a[href="/guides/"]').count() > 0, true);
+        if (!hiddenLibrarySlugs.has(guide.slug)) {
+          const linkedGuides = await page.locator('a[href^="/guides/"]').evaluateAll((links) =>
+            links.map((link) => link.getAttribute("href")).filter(Boolean),
+          );
+          assert.equal(linkedGuides.some((href) => hiddenLibraryHrefs.has(href)), false);
+        }
       });
       await check(guide.slug, viewport.name, "capture", async () => {
         const dialog = page.locator("dialog.guide-capture");
@@ -212,16 +263,10 @@ try {
         assert.equal(await page.locator(".more-guides__grid > .guide-card").count(), 3);
         assert.equal(await page.locator(".more-guides__grid .guide-card__art h2").count(), 0);
         assert.equal(await page.locator(".more-guides__grid .guide-card__body h2").count(), 3);
-        assert.equal(
-          await page.locator(".more-guides__grid .guide-card__brand").evaluateAll(
-            (nodes, expected) => nodes.every((node) => node.textContent?.trim() === expected),
-            visualBrand,
-          ),
-          true,
-        );
+        assert.equal(await page.locator(".more-guides__grid .guide-card__brand").count(), 0);
         const hrefs = await page.locator(".more-guides__grid > .guide-card").evaluateAll((nodes) => nodes.map((node) => node.getAttribute("href")));
         assert.equal(new Set(hrefs).size, 3);
-        for (const href of hrefs) assert.ok(guides.some((entry) => `/guides/${entry.slug}.html` === href));
+        for (const href of hrefs) assert.ok(publicLibraryGuides.some((entry) => `/guides/${entry.slug}.html` === href));
       });
       await check(guide.slug, viewport.name, "images", async () => {
         await loadAllImages(page);

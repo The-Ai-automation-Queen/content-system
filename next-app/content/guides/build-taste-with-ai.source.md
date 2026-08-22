@@ -23,7 +23,7 @@ The source phase creates only this brief. It does not create TypeScript, artwork
 - Meta description: `Build better creative judgment by setting a clear standard, comparing AI options, finishing the selected work and saving what you learn.`
 - Search intent: build taste with AI, improve AI creative work, choose between AI drafts, review AI design, develop creative judgment.
 - Cover title: use the locked H1 as live HTML. Do not bake text into the artwork.
-- Creator signature: show `The AI Automation Queen · Shift & Lead` as live HTML on the hero and library card.
+- Creator signature: show `The AI Automation Queen` as simple live HTML in the open-guide hero and the full signature in metadata and the footer. Cards use the mascot and level without a creator-name box.
 
 ## Distinct reader job and hub boundary
 
@@ -286,7 +286,7 @@ Completion rule: another reviewer can see the standard, the 3 options, the reaso
 - Guide slug: `build-taste-with-ai`
 - Guide ID: `guide.build-taste-with-ai`
 - Lumail tag: `guide_ai_taste_practice_workbook`
-- Button label: `Send me the creative review workbook`
+- Button label: `Send me the workbook`
 - Modal title: `Get the AI creative review workbook`
 - Description: `Enter your email to get the fillable 3-page workbook. Download it immediately and use its 3-option comparison and 6-change finish log on a real draft or design.`
 - Deliverable name: `AI creative review workbook`

@@ -9,7 +9,7 @@ export const whatIsAPromptGuide = defineGuideArticle({
   hero: {
     title: "What a prompt actually is",
     promise:
-      "Turn a vague request into a clear brief that gives you an answer you can use and check.",
+      "Turn a vague request into a clear brief that produces an answer you can check.",
     illustration: {
       src: "/images/guides/what-is-a-prompt.webp",
       alt: "The small blue robot mascot using a compass and a written brief to set a clear direction",

@@ -9,7 +9,7 @@ export const stackThreeToolAiStackGuide = defineGuideArticle({
   hero: {
     title: "Build your 3-tool AI stack",
     promise:
-      "Give 1 tool the job of preparing work, 1 the job of publishing it and 1 the job of capturing what happens next. Remove the overlap.",
+      "Give 3 AI tools distinct jobs for preparing, publishing and capturing what happens next.",
     illustration: {
       src: "/images/guides/stack-3-tool-ai-stack.webp",
       alt: "The small blue robot mascot operating a mechanism that connects a work drawer, megaphone and capture net",

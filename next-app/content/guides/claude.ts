@@ -9,7 +9,7 @@ export const claudeGuide = defineGuideArticle({
   hero: {
     title: "Should you use Claude?",
     promise:
-      "Test Claude on 3 source-heavy tasks and see whether it helps you read, compare and write without losing the evidence.",
+      "Test Claude on 3 document-heavy tasks without losing the evidence behind the answer.",
     illustration: {
       src: "/images/guides/claude.webp",
       alt: "The small blue robot mascot checking a long document as it leaves an antique press",

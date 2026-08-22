@@ -30,7 +30,7 @@ The source phase creates only this brief. It does not create TypeScript, artwork
 - SEO title: `Get better at AI with 1 real task | Shift & Lead`
 - Meta description: `Use 1 task you already completed to practise AI, compare real results, keep what works and know when to repeat, raise the difficulty or stop.`
 - Cover title overlay: use the locked H1 as live HTML. Do not bake words into the artwork.
-- Creator signature: show `The AI Automation Queen · Shift & Lead` as live HTML on the hero and library card.
+- Creator signature: show `The AI Automation Queen` as simple live HTML in the open-guide hero and the full signature in metadata and the footer. Cards use the mascot and level without a creator-name box.
 
 ## Distinct reader job
 

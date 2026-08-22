@@ -14,7 +14,7 @@ export const makeAiClearAndConciseGuide = defineGuideArticle({
   hero: {
     title: "Make AI clear and concise",
     promise:
-      "Turn a long or vague AI answer into writing that gets to the point, keeps the useful detail and makes the next action clear.",
+      "Turn long AI answers into clear writing with an obvious next step.",
     illustration: {
       src: "/images/guides/make-ai-clear-and-concise.webp",
       alt: "The small blue robot mascot turns a brass bookbinding press that compresses a long folded manuscript into 1 clear reader card while a red thread preserves the essential message",
@@ -26,7 +26,7 @@ export const makeAiClearAndConciseGuide = defineGuideArticle({
     guideSlug: "make-ai-clear-and-concise",
     guideId: "guide.make-ai-clear-and-concise",
     lumailTag: "guide_clear_concise_revision_worksheet",
-    buttonLabel: "Send me the clear writing worksheet",
+    buttonLabel: "Send me the worksheet",
     modalTitle: "Get the clear writing revision worksheet",
     description:
       "Enter your email to get the fillable 3-page worksheet. Download it immediately and use its 8-row edit map to turn a long AI answer into writing a real reader can understand and use.",

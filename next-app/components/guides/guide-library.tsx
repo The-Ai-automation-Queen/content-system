@@ -17,7 +17,7 @@ type OutcomeFilter = "all" | GuideOutcome;
 const levelDescriptions: Record<GuideLevel, string> = {
   Beginner: "Understand the basics, choose a tool and get your first useful result.",
   Intermediate: "Improve your work, connect repeatable steps and build reliable workflows.",
-  Expert: "Design advanced agents and operating systems with clear human control.",
+  Expert: "Evaluate deployment, data control and technical tradeoffs.",
 };
 
 const outcomeDescriptions: Record<GuideOutcome, string> = {
@@ -57,6 +57,12 @@ export function GuideLibrary({ guides }: { guides: Guide[] }) {
   const startHere = startHereSlugs
     .map((slug) => guides.find((guide) => guide.slug === slug))
     .filter((guide): guide is Guide => Boolean(guide));
+  const availableOutcomes = guideOutcomes.filter((item) =>
+    guides.some((guide) => guide.outcomes.includes(item)),
+  );
+  const availableLevels = guideLevels.filter((item) =>
+    guides.some((guide) => guide.level === item),
+  );
 
   const visible = useMemo(() => {
     const search = query.trim().toLowerCase();
@@ -116,7 +122,7 @@ export function GuideLibrary({ guides }: { guides: Guide[] }) {
                   setOutcome("all");
                 }}
                 type="search"
-                placeholder="Try prompts, Claude, inbox or agents"
+                placeholder="Try prompts, Claude, content or tools"
                 autoComplete="off"
               />
               <a href="#all-guides" aria-label="See matching guides">Search</a>
@@ -137,7 +143,7 @@ export function GuideLibrary({ guides }: { guides: Guide[] }) {
           <p>You do not need to follow every guide. Pick the level that matches the work you are ready to do.</p>
         </div>
         <div className="level-nav__grid" role="group" aria-label="Filter guides by experience level">
-          {guideLevels.map((item, index) => {
+          {availableLevels.map((item, index) => {
             const count = guides.filter((guide) => guide.level === item).length;
             return (
               <button
@@ -184,7 +190,7 @@ export function GuideLibrary({ guides }: { guides: Guide[] }) {
           <p>Choose an outcome and see only the guides that help you reach it.</p>
         </div>
         <div className="hub-nav__grid" role="group" aria-label="Filter guides by outcome">
-          {guideOutcomes.map((item) => {
+          {availableOutcomes.map((item) => {
             const count = guides.filter((guide) => guide.outcomes.includes(item)).length;
             return (
               <button
@@ -226,7 +232,7 @@ export function GuideLibrary({ guides }: { guides: Guide[] }) {
 
         <div className="library__active-filters" aria-label="Current guide filter">
           <button type="button" aria-pressed={level === "all" && outcome === "all"} onClick={() => chooseLevel("all")}>All guides</button>
-          {guideLevels.map((item) => (
+          {availableLevels.map((item) => (
             <button key={item} type="button" aria-pressed={level === item} onClick={() => chooseLevel(item)}>
               {item}
             </button>

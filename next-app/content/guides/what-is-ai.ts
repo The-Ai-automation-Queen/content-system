@@ -28,7 +28,7 @@ export const whatIsAiGuide = defineGuideArticle({
   hero: {
     title: "What AI actually is",
     promise:
-      "Know when a task needs AI, when a simple automation is enough and when a person must decide.",
+      "Know when to use AI, simple automation or human judgment.",
     illustration: {
       src: "/images/guides/what-is-ai.webp",
       alt: "The small blue robot mascot studying a machine that turns information into useful outputs",

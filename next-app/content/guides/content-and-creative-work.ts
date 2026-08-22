@@ -9,7 +9,7 @@ export const contentAndCreativeWorkGuide = defineGuideArticle({
   hero: {
     title: "Create useful content without handing AI your voice",
     promise:
-      "Turn 1 trusted source into a clear piece, create versions for the right channels and keep the facts, voice and publish decision with you.",
+      "Turn 1 trusted source into useful content while keeping control of facts, voice and publishing.",
     illustration: {
       src: "/images/guides/content-and-creative-work.webp",
       alt: "The small blue robot mascot guiding a source through notes, a draft, channel cards and a publish check",
@@ -49,11 +49,11 @@ export const contentAndCreativeWorkGuide = defineGuideArticle({
       "Open the path that matches what is blocking the work. You do not need every content tool or every guide before you publish something useful.",
     pathways: [
       {
-        signal: "I saved research but have published nothing",
+        signal: "I have a draft and need to know whether the claims hold",
         direction:
-          "Move 1 source through notes, point of view, draft, fact-check and a clear publish decision.",
-        href: "/guides/research-to-content-workflow.html",
-        actionLabel: "Build the 1st piece",
+          "Check every important claim against the original information before you publish or repurpose the work.",
+        href: "/guides/check-ai-answers.html",
+        actionLabel: "Check the claims",
       },
       {
         signal: "I published the answer, but search misses it or points to an old or wrong page",

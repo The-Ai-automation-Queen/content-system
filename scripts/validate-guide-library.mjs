@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
 import process from "node:process";
 
@@ -82,6 +82,40 @@ for (const guide of guides) {
     errors.push(`${label}: cover must use a root-relative path.`);
   } else if (!existsSync(path.join(root, "next-app", "public", guide.cover.slice(1)))) {
     errors.push(`${label}: cover does not exist at ${guide.cover}.`);
+  } else {
+    if (!guide.cover.endsWith(".webp")) errors.push(`${label}: live guide covers must use WebP.`);
+    if (statSync(path.join(root, "next-app", "public", guide.cover.slice(1))).size > 250_000) {
+      errors.push(`${label}: live guide cover exceeds the 250 KB delivery limit.`);
+    }
+  }
+}
+
+const guideImageSourceFiles = [
+  path.join(root, "next-app", "app", "guides", "page.tsx"),
+  path.join(root, "next-app", "app", "guides", "[slug]", "page.tsx"),
+  path.join(root, "next-app", "content", "ai-jargon-guide.ts"),
+  path.join(root, "next-app", "content", "guides.json"),
+  ...readdirSync(path.join(root, "next-app", "content", "guides"))
+    .filter((name) => name.endsWith(".ts"))
+    .map((name) => path.join(root, "next-app", "content", "guides", name)),
+];
+const liveGuideImages = new Set();
+for (const filename of guideImageSourceFiles) {
+  const source = readFileSync(filename, "utf8");
+  for (const match of source.matchAll(/\/images\/guides\/[^"'\s)]+/g)) {
+    const imagePath = match[0];
+    liveGuideImages.add(imagePath);
+    if (!imagePath.endsWith(".webp")) {
+      errors.push(`${path.relative(root, filename)}: live guide image must use WebP: ${imagePath}.`);
+    }
+  }
+}
+for (const imagePath of liveGuideImages) {
+  const absolutePath = path.join(root, "next-app", "public", imagePath.slice(1));
+  if (!existsSync(absolutePath)) {
+    errors.push(`Live guide image is missing: ${imagePath}.`);
+  } else if (statSync(absolutePath).size > 250_000) {
+    errors.push(`Live guide image exceeds the 250 KB delivery limit: ${imagePath}.`);
   }
 }
 
@@ -135,8 +169,8 @@ const siteHeader = readFileSync(path.join(root, "next-app", "components", "chrom
 if (siteHeader.includes("The 99")) errors.push("The 99 remains in the shared Next.js guide navigation.");
 
 const guideCardSource = readFileSync(path.join(root, "next-app", "components", "guides", "guide-card.tsx"), "utf8");
-if (!guideCardSource.includes('<span className="guide-card__brand">The AI Automation Queen</span>')) {
-  errors.push("Shared guide cards must show only The AI Automation Queen in the image-area brand label.");
+if (guideCardSource.includes("guide-card__brand")) {
+  errors.push("Shared guide cards must not place a creator-name box over the artwork.");
 }
 const guideCardArtSource = guideCardSource.match(/<div className="guide-card__art">([\s\S]*?)<\/div>/)?.[1] ?? "";
 if (guideCardArtSource.includes("<h2>")) {
@@ -152,6 +186,21 @@ const structuredRendererSource = readFileSync(
 );
 if (!structuredRendererSource.includes("Created by The AI Automation Queen · Shift &amp; Lead")) {
   errors.push("The shared guide renderer is missing the full creator footer credit.");
+}
+if (structuredRendererSource.includes("guide.capture.deliverable.name") || structuredRendererSource.includes("guide.capture.deliverable.usefulWhen")) {
+  errors.push("The shared hero must not repeat deliverable details beneath the capture button.");
+}
+
+for (const filename of readdirSync(structuredGuideDirectory).filter((name) => name.endsWith(".ts"))) {
+  const source = readFileSync(path.join(structuredGuideDirectory, filename), "utf8");
+  const promise = source.match(/hero:\s*\{[\s\S]*?promise:\s*(?:\n\s*)?"([^"]+)"/)?.[1];
+  const buttonLabel = source.match(/buttonLabel:\s*"([^"]+)"/)?.[1];
+  if (promise && promise.trim().split(/\s+/).length > 20) {
+    errors.push(`${filename}: hero promise must stay at 20 words or fewer.`);
+  }
+  if (buttonLabel && buttonLabel.trim().split(/\s+/).length > 5) {
+    errors.push(`${filename}: hero capture button must stay at 5 words or fewer.`);
+  }
 }
 
 const toolHubSource = readFileSync(path.join(structuredGuideDirectory, "which-ai-tool-for-what.ts"), "utf8");

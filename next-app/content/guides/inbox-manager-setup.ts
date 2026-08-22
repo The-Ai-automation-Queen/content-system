@@ -9,7 +9,7 @@ export const inboxManagerSetupGuide = defineGuideArticle({
   hero: {
     title: "1 summary a day: the inbox manager",
     promise:
-      "Open 1 daily brief that shows what needs you, what has a draft and what went wrong, without letting AI send or remove anything.",
+      "Get 1 daily brief showing what needs you, what has a draft and what failed.",
     illustration: {
       src: "/images/guides/inbox-manager-setup.webp",
       alt: "The small blue robot mascot inspecting a machine that sorts incoming envelopes into labelled trays",

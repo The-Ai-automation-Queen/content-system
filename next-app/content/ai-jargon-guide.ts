@@ -10,7 +10,7 @@ export type GuideTerm = {
 export const aiJargonGuide = {
   slug: "ai-jargon-guide",
   title: "10 AI words you need to know",
-  deck: "Follow the AI conversation, question the sales pitch and know what to check before you approve the work.",
+  deck: "Understand the 10 AI words you will hear most often and know what to question.",
   cover: "/images/guides/learn-master.webp",
   coverAlt: "The small blue robot mascot learning from an open book filled with AI symbols",
   groups: [

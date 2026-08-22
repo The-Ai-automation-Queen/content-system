@@ -9,7 +9,7 @@ export const kimiGuide = defineGuideArticle({
   hero: {
     title: "Should you use Kimi?",
     promise:
-      "Test Kimi on 1 long file or code task and decide whether its finished output solves a gap your current tool does not.",
+      "Test Kimi on 1 long file or coding task your current tool cannot finish.",
     illustration: {
       src: "/images/guides/kimi.webp",
       alt: "The small blue robot mascot checking a long document through an inspection and punch-card machine",

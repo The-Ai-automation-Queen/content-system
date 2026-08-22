@@ -9,7 +9,7 @@ export const metaAiGuide = defineGuideArticle({
   hero: {
     title: "Should you use Meta AI?",
     promise:
-      "Use the AI already inside Meta apps for low-risk help, without turning a convenient chat into a place for private business information.",
+      "Use Meta AI for low-risk help without putting private business information into the chat.",
     illustration: {
       src: "/images/guides/meta-ai.webp",
       alt: "The small blue robot mascot using a conversation switchboard while locking private business files away",

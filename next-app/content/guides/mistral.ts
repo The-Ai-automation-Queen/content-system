@@ -2,14 +2,14 @@ import { defineGuideArticle } from "@/content/structured-guide";
 
 export const mistralGuide = defineGuideArticle({
   slug: "mistral",
-  level: "Expert",
+  level: "Intermediate",
   hub: "AI tools",
   outcomes: ["Choose an AI tool", "Build an agent"],
   composition: "tool-verdict",
   hero: {
     title: "Should you use Mistral?",
     promise:
-      "Start with the deployment, data and operating requirements, then decide whether Mistral is the right way to meet them.",
+      "Decide whether Mistral fits your deployment, data and operating requirements.",
     illustration: {
       src: "/images/guides/mistral.webp",
       alt: "The small blue robot mascot unlocking and inspecting a privately controlled engine room",

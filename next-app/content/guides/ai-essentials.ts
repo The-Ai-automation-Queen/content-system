@@ -9,7 +9,7 @@ export const aiEssentialsGuide = defineGuideArticle({
   hero: {
     title: "Start using AI without learning everything",
     promise:
-      "Choose 1 real task, follow the right guide and finish 1 useful result you can check in 7 days.",
+      "Choose 1 real task and finish 1 useful AI result you can check this week.",
     illustration: {
       src: "/images/guides/ai-essentials.webp",
       alt: "The small blue robot mascot choosing a route on a simple AI learning map",
