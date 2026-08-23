@@ -1,14 +1,14 @@
 {
   "brand": "Shift & Lead",
   "promise": "Build more of what your business needs with AI.",
-  "positioning": "Learn what to build, what to skip, and how to turn AI into real business capability without losing human judgment.",
+  "positioning": "Learn what to build, what to skip, what AI can handle, and when a person needs to decide or step in.",
   "identity": "Fatiha Chikh · AI builder and educator · 20 years at Dell, Intel, Microsoft",
   "audience": "Ambitious professionals and business builders ready to put AI to work.",
   "year": 2026,
   "hosts": {"www": "https://www.shiftandlead.com", "guides": "https://guides.shiftandlead.com", "brief": "https://brief.shiftandlead.com"},
   "nav": [
     {"label": "Guides", "url": "https://www.shiftandlead.com/guides/"},
-    {"label": "Quiz", "url": "https://www.shiftandlead.com/quiz.html"},
+    {"label": "Workbooks", "url": "https://www.shiftandlead.com/workbooks.html"},
     {"label": "About", "url": "https://www.shiftandlead.com/about.html"},
     {"label": "Contact", "url": "https://www.shiftandlead.com/contact.html"},
     {"label": "How I can help", "url": "https://www.shiftandlead.com/how-i-can-help.html", "cta": true}
@@ -16,7 +16,7 @@
   "footer": [
     {"title": "Learn", "links": [
       {"label": "Guides", "url": "https://www.shiftandlead.com/guides/"},
-      {"label": "Quiz", "url": "https://www.shiftandlead.com/quiz.html"}
+      {"label": "Workbooks", "url": "https://www.shiftandlead.com/workbooks.html"}
     ]},
     {"title": "Work", "links": [
       {"label": "How I can help", "url": "https://www.shiftandlead.com/how-i-can-help.html"},

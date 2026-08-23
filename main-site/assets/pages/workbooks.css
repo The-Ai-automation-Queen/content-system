@@ -1,0 +1,17 @@
+body{background:#fff;color:#1A1A1A}
+.workbook-hero{padding:88px 32px 76px;border-bottom:1px solid #E8E4DD}
+.workbook-wrap{max-width:1080px;margin:0 auto}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#1B2EA0;margin-bottom:18px}
+.workbook-hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(42px,7vw,72px);font-weight:400;line-height:1.02;letter-spacing:-.02em;max-width:850px;margin:0 0 24px}
+.workbook-hero p{font-size:20px;line-height:1.55;color:#555;max-width:680px}
+.workbook-list{padding:72px 32px;background:#FAF7F2}
+.workbook-grid{display:grid;gap:22px}
+.workbook-card{display:grid;grid-template-columns:90px 1fr;gap:26px;background:#fff;border:1px solid #E8E4DD;padding:34px}
+.workbook-number{font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.16em;color:#1B2EA0}
+.workbook-card h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,4vw,38px);font-weight:400;line-height:1.15;margin:0 0 12px}
+.workbook-card p{font-size:17px;line-height:1.6;color:#555;max-width:680px}
+.workbook-note{padding:64px 32px;text-align:center}
+.workbook-note h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,4vw,42px);font-weight:400;margin:0 0 14px}
+.workbook-note p{font-size:17px;color:#555;max-width:640px;margin:0 auto}
+.workbook-status{display:inline-block;margin-top:24px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#1B2EA0;border-bottom:1px solid #1B2EA0;padding-bottom:4px}
+@media(max-width:650px){.workbook-hero,.workbook-list,.workbook-note{padding-left:20px;padding-right:20px}.workbook-card{grid-template-columns:1fr;padding:26px;gap:10px}}
