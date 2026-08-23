@@ -1,11 +1,12 @@
 # Content System
 
-A **Business OS** for Fatiha Chikh's content operation — a Claude-Code-run engine
-structured on the 8-step framework from
-[*"I Automated My Entire Business with Claude Code"*](https://youtu.be/RCzvjTgH-Nw).
+A **Content OS** for Fatiha Chikh's content operation — a Codex-run engine
+inspired by an 8-step agentic content framework and rebuilt around Notion as the
+business brain, Codex as the operator, reusable skills, explicit approval gates,
+and provider integrations that must be verified before use.
 
-> **Agents start here:** read [`CLAUDE.md`](CLAUDE.md) — it is the operating
-> manual (what exists, where it lives, which skill to run).
+> **Agents start here:** read [`AGENTS.md`](AGENTS.md). `CLAUDE.md` remains only
+> as a compatibility entry point for older automation.
 
 ## Structure
 
@@ -40,10 +41,9 @@ Run `weekly-ops` to execute it end to end (schedule it with the `/loop` skill).
 
 ## Sync
 
-**GitHub `main` is the source of truth** (since 2026-07-08). The VPS pulls
-before every autonomous run and pushes its output back to `main`. Any other
-copy (operator's local machine, web/agent sessions) is a normal git client:
-`git pull origin main` before editing, push or PR when done.
+**Notion is the business source of truth. GitHub `main` is the execution source.**
+The VPS pulls executable skills and code from `main`; agents read approved brand,
+product-readiness, and production state from Notion before taking campaign action.
 
 **Hosting topology (verified 15/07/2026):** one server. `srv1485425`
 (Hostinger) and `187.77.153.212` are the same machine: hostname and IPv4 of

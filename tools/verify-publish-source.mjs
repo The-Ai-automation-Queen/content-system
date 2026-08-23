@@ -48,8 +48,9 @@ for (const guide of sourceGuides) {
 }
 const nextGate = read('next-app/components/guides/guide-access-boundary.tsx');
 const nextArticle = read('next-app/app/guides/[slug]/page.tsx');
+const nextReadingPage = read('next-app/components/guides/guide-reading-page.tsx');
 if (!nextGate.includes('/api/guide-capture') || !nextGate.includes('shift-lead-guide-access')) failures.push('The Next.js guide gate contract is missing.');
-if (!nextArticle.includes('GuideAccessBoundary')) failures.push('A generated guide can render without the shared access boundary.');
+if (!nextArticle.includes('GuideReadingPage') || !nextReadingPage.includes('GuideAccessBoundary')) failures.push('A generated guide can render without the shared access boundary.');
 
 for (const [id, page] of Object.entries(statuses)) {
   if (page.status === 'active') {

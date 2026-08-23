@@ -19,6 +19,11 @@ await copyFile(
   path.join(destinationRoot, "guides", `${slug}.html`),
 );
 
+await copyFile(
+  path.join(sourceRoot, "guides", "index.html"),
+  path.join(destinationRoot, "guides", "index.html"),
+);
+
 await cp(path.join(sourceRoot, "_next"), path.join(destinationRoot, "_next"), {
   recursive: true,
   force: true,

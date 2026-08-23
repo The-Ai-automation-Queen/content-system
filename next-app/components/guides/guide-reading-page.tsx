@@ -12,6 +12,35 @@ function RichText({ children }: { children: string }) {
 }
 
 function Section({ section }: { section: GuideSection }) {
+  if (section.kind === "accordion") {
+    return (
+      <section className={styles.section}>
+        <h2>{section.heading}</h2>
+        <p className={styles.sectionIntro}><RichText>{section.introduction}</RichText></p>
+        <div className={styles.accordion}>
+          {section.items.map((item) => (
+            <details key={item.title}>
+              <summary>
+                <span>{item.title}</span>
+                <span aria-hidden="true">+</span>
+              </summary>
+              <div className={styles.accordionBody}>
+                <p><RichText>{item.body}</RichText></p>
+                {item.links && (
+                  <div className={styles.stepLinks}>
+                    {item.links.map((link) => (
+                      <a href={link.href} key={link.href} rel="noreferrer" target="_blank">{link.label} ↗</a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
   if (section.kind === "cards") {
     return (
       <section className={styles.section}>
@@ -56,7 +85,19 @@ function Section({ section }: { section: GuideSection }) {
         <h2>{section.heading}</h2>
         <p className={styles.sectionIntro}><RichText>{section.introduction}</RichText></p>
         <ol className={styles.steps}>
-          {section.steps.map((step) => <li key={step.title}><h3>{step.title}</h3><p><RichText>{step.body}</RichText></p></li>)}
+          {section.steps.map((step) => (
+            <li key={step.title}>
+              <h3>{step.title}</h3>
+              <p><RichText>{step.body}</RichText></p>
+              {step.links && (
+                <div className={styles.stepLinks}>
+                  {step.links.map((link) => (
+                    <a href={link.href} key={link.href} rel="noreferrer" target="_blank">{link.label} ↗</a>
+                  ))}
+                </div>
+              )}
+            </li>
+          ))}
         </ol>
       </section>
     );
@@ -98,6 +139,16 @@ export function GuideReadingPage({ guide }: { guide: GuidePage }) {
               <h2>{guide.tryNow.heading}</h2>
               <p><RichText>{guide.tryNow.introduction}</RichText></p>
               <CopyPrompt prompt={guide.tryNow.prompt} />
+              {guide.tryNow.instructions && (
+                <ol className={`${styles.steps} ${styles.promptInstructions}`}>
+                  {guide.tryNow.instructions.map((step) => (
+                    <li key={step.title}>
+                      <h3>{step.title}</h3>
+                      <p><RichText>{step.body}</RichText></p>
+                    </li>
+                  ))}
+                </ol>
+              )}
               <p className={styles.promptCheck}><RichText>{guide.tryNow.check}</RichText></p>
             </section>
             <section className={styles.conclusion}>
@@ -124,7 +175,7 @@ export function GuideReadingPage({ guide }: { guide: GuidePage }) {
             <div className={styles.relatedGrid}>
               {guide.related.map((item) => (
                 <Link href={`/guides/${item.slug}.html`} className={styles.relatedCard} key={item.slug}>
-                  <figure><Image src={item.cover} alt="" fill sizes="(max-width: 760px) 100vw, 33vw" /></figure>
+                  <figure><Image src={item.cover} alt="" aria-hidden="true" fill sizes="(max-width: 760px) 100vw, 33vw" /></figure>
                   <div><h3>{item.title}</h3><p>{item.reason}</p><span>Start the guide →</span></div>
                 </Link>
               ))}

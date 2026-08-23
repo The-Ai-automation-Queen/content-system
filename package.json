@@ -6,6 +6,7 @@
     "validate": "node tools/verify-publish-source.mjs",
     "build": "node tools/sync-current-chrome.mjs && node tools/wire-guide-system.mjs && node tools/build-public-discovery.mjs && node tools/build-guide-review-queue.mjs && node tools/verify-publish-source.mjs",
     "publish:ai-jargon": "npm --prefix next-app run build && node tools/publish-next-guide.mjs ai-jargon-guide",
+    "publish:guides": "npm --prefix next-app run build && node tools/publish-next-guide.mjs what-is-ai && node tools/publish-next-guide.mjs ai-jargon-guide && node tools/publish-next-guide.mjs what-is-agentic && node tools/publish-next-guide.mjs what-should-you-never-share-with-ai",
     "ship": "npm run validate && npm run build && git add -A && git commit -m \"${MSG:-content update}\" && git push"
   }
 }

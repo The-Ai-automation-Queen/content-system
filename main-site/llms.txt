@@ -27,6 +27,7 @@ Shift & Lead helps professionals, business owners and teams use AI for real work
 - Three AI tools are enough if each one has a real job: https://www.shiftandlead.com/guides/stack-3-tool-ai-stack.html
 - A good AI prompt is just a clear brief: https://www.shiftandlead.com/guides/what-is-a-prompt.html
 - Agentic AI means AI can do more than answer: https://www.shiftandlead.com/guides/what-is-agentic.html
+- What should you never share with AI?: https://www.shiftandlead.com/guides/what-should-you-never-share-with-ai.html
 - What is AI? The simplest explanation I know: https://www.shiftandlead.com/guides/what-is-ai.html
 
 ## Editorial approach

@@ -11,7 +11,8 @@ const GUIDE_TAGS = {
   "stack-3-tool-ai-stack": "guide-stack-3-tool-ai-stack",
   "what-is-a-prompt": "guide-what-is-a-prompt",
   "what-is-agentic": "guide-what-is-agentic",
-  "what-is-ai": "guide-what-is-ai"
+  "what-is-ai": "guide-what-is-ai",
+  "what-should-you-never-share-with-ai": "guide-what-not-to-share-with-ai"
 };
 
 module.exports = async function handler(request, response) {
