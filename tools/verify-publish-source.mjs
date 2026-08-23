@@ -29,6 +29,7 @@ const unlisted = Object.entries(statuses).filter(([, page]) => page.status === '
 const siteData = JSON.parse(read('data/site.json'));
 const publicSurfaces = [
   ['homepage', read('main-site/index.html')],
+  ['guide library', read('main-site/guides/index.html')],
   ['sitemap', read('main-site/sitemap.xml')],
   ['AI discovery', read('main-site/llms.txt')],
   ['canonical navigation data', JSON.stringify({nav: siteData.nav, footer: siteData.footer})]
@@ -80,10 +81,17 @@ for (const file of fs.readdirSync(MAIN).filter(name => name.endsWith('.html'))) 
 }
 
 const homepage = read('main-site/index.html');
+const guideLibrary = read('main-site/guides/index.html');
 const vercel = JSON.parse(read('main-site/vercel.json'));
 if (!/<title>[^<]+<\/title>/i.test(homepage)) failures.push('Homepage is missing a title');
 if (!/<h1\b/i.test(homepage)) failures.push('Homepage is missing an H1');
 if (!/href=["']\/guides\//i.test(homepage)) failures.push('Homepage no longer links to the guides');
+if (!/Learn AI at your level\./i.test(guideLibrary) || !/Get something done\./i.test(guideLibrary)) {
+  failures.push('Guide library is not the approved 21-guide implementation');
+}
+if (!/>21(?:<!-- -->|\s)+<!-- -->guides</i.test(guideLibrary)) {
+  failures.push('Guide library no longer identifies the 21 public guides');
+}
 if (vercel.buildCommand !== 'cd .. && node tools/verify-publish-source.mjs') {
   failures.push('Vercel buildCommand must verify the committed source without rewriting it');
 }
