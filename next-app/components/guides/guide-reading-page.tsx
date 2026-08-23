@@ -73,7 +73,7 @@ function Section({ section }: { section: GuideSection }) {
 
 export function GuideReadingPage({ guide }: { guide: GuidePage }) {
   return (
-    <GuideAccessBoundary guideSlug={guide.slug}>
+    <GuideAccessBoundary guideSlug={guide.slug} cover={guide.cover}>
       <main className={styles.page}>
         <article>
           <div className={styles.shell}>

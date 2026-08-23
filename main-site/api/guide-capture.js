@@ -48,10 +48,16 @@ module.exports = async function handler(request, response) {
 
     const result = await lumailResponse.json().catch(() => ({}));
     if (!lumailResponse.ok) {
-      return response.status(lumailResponse.status).json({ error: result.message || "Unable to send the guide right now." });
+      console.error("Lumail guide capture failed", {
+        status: lumailResponse.status,
+        guideSlug,
+        detail: result.message || result.error || "Unknown Lumail error",
+      });
+      return response.status(502).json({ error: "We could not open the guide. Please try again." });
     }
     return response.status(200).json({ success: true });
-  } catch {
-    return response.status(502).json({ error: "Unable to reach the email service right now." });
+  } catch (error) {
+    console.error("Lumail guide capture request failed", { guideSlug, error });
+    return response.status(502).json({ error: "We could not open the guide. Please try again." });
   }
 };

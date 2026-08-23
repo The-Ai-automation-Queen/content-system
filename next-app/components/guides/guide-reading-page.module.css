@@ -70,8 +70,10 @@
 .footer strong { font: 600 22px/1 var(--font-display), serif; }
 .footer span { color: #aaa49a; font-weight: 400; }
 .footer a { text-decoration: none; }
-.gatePage { min-height: calc(100vh - 72px); display: grid; place-items: center; padding: 32px 20px; background: #eef1ff; }
-.gate { width: min(100%, 560px); padding: clamp(34px, 6vw, 54px); border: 1px solid var(--ink); background: #fff; box-shadow: 12px 12px 0 rgba(27, 46, 160, .18); }
+.gatePage { position: relative; isolation: isolate; min-height: calc(100vh - 72px); display: grid; place-items: center; overflow: hidden; padding: 32px 20px; background: #eef1ff; }
+.gatePage::before { position: absolute; z-index: -2; inset: -24px; content: ""; background-image: var(--guide-gate-cover); background-position: center; background-size: cover; filter: blur(14px) saturate(.9); transform: scale(1.04); }
+.gatePage::after { position: absolute; z-index: -1; inset: 0; content: ""; background: rgba(238, 241, 255, .56); }
+.gate { width: min(100%, 560px); padding: clamp(34px, 6vw, 54px); border: 1px solid var(--ink); background: rgba(255, 255, 255, .96); box-shadow: 12px 12px 0 rgba(27, 46, 160, .22); }
 .gateIcon { display: grid; width: 48px; height: 48px; place-items: center; margin-bottom: 28px; color: #fff; background: var(--blue-deep); font: 700 20px/1 var(--font-ui), sans-serif; }
 .gate h1 { margin: 0 0 14px; font: 600 clamp(38px, 6vw, 54px)/1 var(--font-display), serif; letter-spacing: -.04em; }
 .gate > p { margin: 0 0 28px; color: #4b4741; font-size: 18px; line-height: 1.55; }

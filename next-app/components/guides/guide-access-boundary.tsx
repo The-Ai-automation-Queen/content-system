@@ -1,11 +1,19 @@
 "use client";
 
-import { FormEvent, type ReactNode, useEffect, useState } from "react";
+import { type CSSProperties, FormEvent, type ReactNode, useEffect, useState } from "react";
 import styles from "./guide-reading-page.module.css";
 
 const ACCESS_KEY = "shift-lead-guide-access";
 
-export function GuideAccessBoundary({ guideSlug, children }: { guideSlug: string; children: ReactNode }) {
+export function GuideAccessBoundary({
+  guideSlug,
+  cover,
+  children,
+}: {
+  guideSlug: string;
+  cover: string;
+  children: ReactNode;
+}) {
   const [ready, setReady] = useState(false);
   const [unlocked, setUnlocked] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
@@ -52,7 +60,10 @@ export function GuideAccessBoundary({ guideSlug, children }: { guideSlug: string
   if (unlocked) return <>{children}</>;
 
   return (
-    <main className={styles.gatePage}>
+    <main
+      className={styles.gatePage}
+      style={{ "--guide-gate-cover": `url("${cover}")` } as CSSProperties}
+    >
       <section className={styles.gate} role="dialog" aria-modal="true" aria-labelledby="guide-gate-title">
         <div className={styles.gateIcon} aria-hidden="true">↗</div>
         <h1 id="guide-gate-title">Access the guide</h1>
