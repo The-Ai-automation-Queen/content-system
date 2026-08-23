@@ -143,7 +143,7 @@ Text:
   conclusion: {
     heading: "You have enough to get started",
     paragraphs: [
-      "You do not need to learn how every AI system is built. You now understand what the term means, why AI can produce different answers and why a confident answer can still be wrong.",
+      "You now understand what the term means, why AI can produce different answers and why a confident answer can still be wrong.",
     ],
     questions: {
       introduction: "When you meet a new AI tool, ask 3 questions:",
