@@ -86,11 +86,11 @@ const vercel = JSON.parse(read('main-site/vercel.json'));
 if (!/<title>[^<]+<\/title>/i.test(homepage)) failures.push('Homepage is missing a title');
 if (!/<h1\b/i.test(homepage)) failures.push('Homepage is missing an H1');
 if (!/href=["']\/guides\//i.test(homepage)) failures.push('Homepage no longer links to the guides');
-if (!/Learn AI at your level\./i.test(guideLibrary) || !/Get something done\./i.test(guideLibrary)) {
-  failures.push('Guide library is not the approved 21-guide implementation');
+if (!/Understand AI\./i.test(guideLibrary) || !/Then use it well\./i.test(guideLibrary)) {
+  failures.push('Guide library is not the approved port-4196 implementation');
 }
-if (!/>21(?:<!-- -->|\s)+<!-- -->guides</i.test(guideLibrary)) {
-  failures.push('Guide library no longer identifies the 21 public guides');
+if (!/>14(?:<!-- -->|\s)+<!-- -->guides</i.test(guideLibrary)) {
+  failures.push('Guide library no longer identifies the 14 public guides');
 }
 if (vercel.buildCommand !== 'cd .. && node tools/verify-publish-source.mjs') {
   failures.push('Vercel buildCommand must verify the committed source without rewriting it');

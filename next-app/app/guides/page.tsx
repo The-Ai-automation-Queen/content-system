@@ -24,7 +24,7 @@ const paths: Array<{ track: GuideTrack; number: string; action: string }> = [
 ];
 
 export default function GuidesPage() {
-  const featured = guides.find((guide) => guide.slug === "ai-jargon-guide") ?? guides[0];
+  const featured = guides.find((guide) => guide.slug === "what-is-agentic") ?? guides[0];
 
   return (
     <main>
