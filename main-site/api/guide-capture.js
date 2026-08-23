@@ -1,11 +1,15 @@
 const GUIDE_TAGS = {
   "ai-jargon-guide": "guide-ai-jargon",
   "what-is-ai": "guide-what-is-ai",
+  "what-is-agentic": "guide-what-is-agentic",
+  "what-should-you-never-share-with-ai": "guide-what-not-to-share-with-ai",
 };
 
 const GUIDE_FILES = {
-  "ai-jargon-guide": "https://www.shiftandlead.com/downloads/10-ai-words-you-need-to-know.pdf",
+  "ai-jargon-guide": "https://www.shiftandlead.com/guides/ai-jargon-guide.html",
   "what-is-ai": "https://www.shiftandlead.com/guides/what-is-ai.html",
+  "what-is-agentic": "https://www.shiftandlead.com/guides/what-is-agentic.html",
+  "what-should-you-never-share-with-ai": "https://www.shiftandlead.com/guides/what-should-you-never-share-with-ai.html",
 };
 
 module.exports = async function handler(request, response) {

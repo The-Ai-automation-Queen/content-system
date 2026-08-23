@@ -39,6 +39,21 @@
 .steps li::before { content: counter(step, decimal-leading-zero); color: var(--blue-deep); font: 700 var(--guide-label-size)/1.4 var(--font-mono), monospace; }
 .steps h3 { margin: 0 0 6px; font: 600 22px/1.15 var(--font-display), serif; }
 .steps p { grid-column: 2; margin: 0; color: #4b4741; font-size: 16px; line-height: 1.55; }
+.stepLinks { grid-column: 2; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.stepLinks a { border: 1px solid var(--ink); padding: 9px 11px; color: var(--ink); background: #fff; font: 700 12px/1 var(--font-ui), sans-serif; text-decoration: none; }
+.stepLinks a:hover { color: #fff; background: var(--ink); }
+.stepLinks a:focus-visible { outline: 3px solid rgba(44,75,224,.28); outline-offset: 2px; }
+.accordion { margin-top: 28px; border-top: 1px solid var(--ink); }
+.accordion details { border-bottom: 1px solid var(--ink); }
+.accordion summary { display: flex; min-height: 68px; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 2px; color: var(--ink); cursor: pointer; list-style: none; }
+.accordion summary::-webkit-details-marker { display: none; }
+.accordion summary span:first-child { font: 600 clamp(20px, 2.4vw, 24px)/1.15 var(--font-display), serif; }
+.accordion summary span:last-child { display: grid; width: 32px; height: 32px; flex: 0 0 32px; place-items: center; border: 1px solid var(--ink); font: 500 19px/1 var(--font-ui), sans-serif; }
+.accordion details[open] summary span:last-child { color: #fff; background: var(--ink); transform: rotate(45deg); }
+.accordion summary:focus-visible { outline: 3px solid rgba(44,75,224,.28); outline-offset: 3px; }
+.accordionBody { max-width: var(--guide-copy-width); padding: 0 52px 24px 2px; }
+.accordionBody p { margin: 0; color: #403d38; font-size: 16px; line-height: 1.62; }
+.promptInstructions { margin-top: 28px; }
 .tryNow { padding: 34px 0 0; border-top: 1px solid var(--ink); }
 .promptBlock { position: relative; margin-top: 26px; background: var(--cream); }
 .promptHeader { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 12px; border-bottom: 1px solid #ded8ce; }
