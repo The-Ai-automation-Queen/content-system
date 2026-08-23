@@ -1,7 +1,7 @@
 {
   "homepage": {"status": "active", "path": "/"},
   "guides": {"status": "active", "path": "/guides/"},
-  "workbooks": {"status": "planned", "path": "/workbooks.html"},
+  "workbooks": {"status": "active", "path": "/workbooks.html"},
   "quiz": {"status": "unlisted", "path": "/quiz.html"},
   "newsletter": {"status": "retired", "path": "https://brief.shiftandlead.com"},
   "the99": {"status": "retired", "path": "/the-99.html"}
