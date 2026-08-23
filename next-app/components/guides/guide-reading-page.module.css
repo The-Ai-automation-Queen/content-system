@@ -1,20 +1,25 @@
-.page { --guide-label-size: 12px; background: #fff; }
+.page {
+  --guide-label-size: 12px;
+  --guide-body-width: 920px;
+  --guide-copy-width: 820px;
+  background: #fff;
+}
 .shell { width: min(calc(100% - 48px), 1160px); margin-inline: auto; }
 .back { display: inline-block; margin: 32px 0 20px; font: 700 12px/1 var(--font-ui), sans-serif; text-decoration: none; }
 .cover { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0; overflow: hidden; background: var(--blue-deep); }
 .cover img { object-fit: cover; }
-.intro { width: min(calc(100% - 48px), 720px); margin: 0 auto; padding: 52px 0 34px; border-bottom: 1px solid var(--line); }
+.intro { width: min(calc(100% - 48px), var(--guide-body-width)); margin: 0 auto; padding: 52px 0 34px; border-bottom: 1px solid var(--line); }
 .intro h1 { margin: 0 0 18px; font: 600 clamp(34px, 6vw, 64px)/1.02 var(--font-display), serif; letter-spacing: -.045em; text-wrap: balance; }
-.intro p { max-width: 640px; margin: 0; color: #4c4842; font-size: clamp(19px, 2.2vw, 22px); line-height: 1.5; }
-.readingColumn { width: min(calc(100% - 48px), 720px); margin-inline: auto; padding: 42px 0 96px; }
+.intro p { max-width: var(--guide-copy-width); margin: 0; color: #4c4842; font-size: clamp(19px, 2.2vw, 22px); line-height: 1.5; }
+.readingColumn { width: min(calc(100% - 48px), var(--guide-body-width)); margin-inline: auto; padding: 42px 0 96px; }
 .answer { margin-bottom: 70px; padding: 30px 32px; background: #f2f4ff; }
 .answer h2 { margin: 0 0 14px; font: 700 13px/1 var(--font-ui), sans-serif; letter-spacing: .04em; text-transform: uppercase; }
-.answer p { margin: 0 0 13px; color: #282725; font-size: 19px; line-height: 1.62; }
+.answer p { max-width: var(--guide-copy-width); margin: 0 0 13px; color: #282725; font-size: 19px; line-height: 1.62; }
 .answer p:last-child { margin-bottom: 0; }
 .section { padding: 0 0 70px; }
 .section + .section { padding-top: 4px; }
 .section h2, .tryNow h2 { max-width: none; margin: 0 0 16px; font: 600 clamp(25px, 3.2vw, 36px)/1.08 var(--font-display), serif; letter-spacing: -.03em; text-wrap: pretty; }
-.section > p, .sectionIntro, .tryNow > p { margin: 0 0 18px; color: #403d38; font-size: 18px; line-height: 1.66; }
+.section > p, .sectionIntro, .tryNow > p { max-width: var(--guide-copy-width); margin: 0 0 18px; color: #403d38; font-size: 18px; line-height: 1.66; }
 .answer p strong, .section p strong, .tryNow p strong { color: var(--ink); font-weight: 700; }
 .section blockquote { margin: 28px 0 0; padding: 22px 24px; border: 1px solid var(--ink); color: var(--ink); background: var(--cream); font: 600 21px/1.45 var(--font-display), serif; }
 .cards { display: grid; grid-template-columns: 1fr 1fr; margin-top: 28px; border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); }
@@ -46,6 +51,7 @@
 .promptCheck { margin: 18px 0 0 !important; color: #312f2b !important; font-size: 16px !important; }
 .conclusion { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--ink); }
 .conclusion h2 { margin: 0 0 18px; font: 600 clamp(25px, 3.2vw, 36px)/1.08 var(--font-display), serif; letter-spacing: -.03em; text-wrap: pretty; }
+.conclusion > p { max-width: var(--guide-copy-width); }
 .conclusion p { margin: 0 0 16px; color: #403d38; font-size: 18px; line-height: 1.66; }
 .conclusion p strong { color: var(--ink); font-weight: 700; }
 .conclusionQuestions { margin-top: 24px; padding: 22px 24px; background: #f2f4ff; }
