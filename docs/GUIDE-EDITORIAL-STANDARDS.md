@@ -4,6 +4,40 @@
 
 A guide must help a capable non-specialist understand something, make a decision or complete a useful action. It is not a decorated blog post and it is not a place to display everything we know.
 
+## Keep the library and the guide interior separate
+
+The `/guides` library and the page inside each guide have different jobs. Do not force them into one visual system.
+
+- The library cover can be visually rich. It helps readers choose a level, pathway or guide.
+- The inside of a guide must be quiet, narrow and easy to use. It helps one reader answer one question or complete one task.
+- Never reuse library-card composition, oversized editorial headings or title-on-image treatments inside the reading column.
+- Never place guide text over the cover image. The image is a standalone cover, followed by the title and promise.
+- Do not turn the guide interior into a marketing landing page.
+
+## Default inside-guide structure
+
+Use this structure unless the reader's job clearly requires a different one:
+
+1. A standalone cover image with no text overlay.
+2. The guide title and a promise of no more than 2 sentences.
+3. A compact answer or summary that tells the reader what matters immediately.
+4. Short sections that each perform one job.
+5. Practical components only where they help the reader act: steps, examples, checklists, comparisons or a copyable tool.
+6. One action the reader can complete now.
+7. Exactly 3 relevant guides that continue the reader's journey.
+
+The reading column should normally be 680-760px wide. Use comfortable body text and modest headings. A guide should feel closer to a clear workbook or teaching page than an editorial magazine.
+
+Do not publish:
+
+- long unbroken walls of prose;
+- a full viewport hero inside the guide;
+- giant headings repeated down the page;
+- ornamental labels above every section;
+- identical cards used for every kind of information;
+- animation that delays reading;
+- decorative scrolling sections with no reader action.
+
 ## Choose the structure from the reader's job
 
 Do not apply one repeated anatomy to every topic.
@@ -35,12 +69,12 @@ Do not apply one repeated anatomy to every topic.
 ## Opening and capture
 
 - Start with the title and one direct promise.
-- Put the primary email capture immediately below that promise when the guide is a lead magnet.
-- The capture opens in a popup. Do not send the reader to a separate capture page.
-- Explain what will arrive and when it will be useful.
-- The email must deliver something meaningfully different from the page already open, such as a printable reference, editable template or email lesson. Do not ask for an email merely to send the same URL.
-- After a successful capture, make the promised asset available immediately as well as by email. A delayed or misconfigured email must not leave the reader empty-handed.
-- Do not place helper copy beside a CTA when it only repeats the button. Make the button label specific enough to stand alone.
+- When a guide is an email lead magnet, show one generic access wall before the guide content appears. Do not wait for a button click inside the page.
+- Use the same plain access-wall copy for every guide. The guide-specific identifier and Lumail tag come from the guide record, not from handwritten form copy.
+- After a successful submission, open the guide immediately in the same page and send the guide link by email.
+- Do not offer a download fallback button.
+- Do not ask for the email again while the access session remains valid.
+- Provide a review-only bypass for editorial checking. It must never be the default public experience.
 - Do not repeat the same capture at the bottom.
 - Do not add a copy or download button unless the reader receives a practical asset they can use somewhere else. Copying article text is not a useful call to action.
 - A guide can end with a decision rule, diagnostic or next action instead of another button.
@@ -49,6 +83,10 @@ Do not apply one repeated anatomy to every topic.
 ## Visual rhythm
 
 - Use illustration to orient, explain or reset attention. Do not insert a large image merely to fill space.
+- Keep the cover image separate from the title. Do not overlay, overlap or crop the title into the artwork.
+- Keep paragraphs short enough to scan. Most sections should contain 1-3 short paragraphs before a practical element or the next heading.
+- Use body text that remains comfortable at desktop and mobile sizes. Do not shrink the entire article to make excessive copy appear shorter.
+- Use animation only when it explains a change or confirms an action. Static is the default for the reading experience.
 - Keep supporting illustrations beside the relevant content on desktop and controlled in size on mobile.
 - Vary section composition when the content function changes.
 - Animation should reveal hierarchy and progress. It must not slow reading or make the page feel longer.
