@@ -1,9 +1,11 @@
 const GUIDE_TAGS = {
   "ai-jargon-guide": "guide-ai-jargon",
+  "what-is-ai": "guide-what-is-ai",
 };
 
 const GUIDE_FILES = {
   "ai-jargon-guide": "https://www.shiftandlead.com/downloads/10-ai-words-you-need-to-know.pdf",
+  "what-is-ai": "https://www.shiftandlead.com/guides/what-is-ai.html",
 };
 
 module.exports = async function handler(request, response) {

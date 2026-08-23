@@ -5,33 +5,39 @@ import { notFound } from "next/navigation";
 import { GuideMotion } from "@/components/guides/guide-motion";
 import { GuideCaptureModal } from "@/components/guides/guide-capture-modal";
 import { RelatedGuides } from "@/components/guides/related-guides";
+import { GuideReadingPage } from "@/components/guides/guide-reading-page";
 import { aiJargonGuide } from "@/content/ai-jargon-guide";
+import { getGuidePage, guidePages } from "@/content/guide-page";
 import { guides } from "@/content/guides";
 
 export function generateStaticParams() {
-  return [{ slug: aiJargonGuide.slug }];
+  return [{ slug: aiJargonGuide.slug }, ...guidePages.map((guide) => ({ slug: guide.slug }))];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  if (slug !== aiJargonGuide.slug) return {};
-  const canonical = `/guides/${aiJargonGuide.slug}.html`;
+  const structuredGuide = getGuidePage(slug);
+  const guide = structuredGuide ?? (slug === aiJargonGuide.slug ? aiJargonGuide : undefined);
+  if (!guide) return {};
+  const canonical = `/guides/${guide.slug}.html`;
   return {
-    title: aiJargonGuide.title,
-    description: aiJargonGuide.deck,
+    title: guide.title,
+    description: structuredGuide?.seoDescription ?? aiJargonGuide.deck,
     alternates: { canonical },
     openGraph: {
-      title: aiJargonGuide.title,
-      description: aiJargonGuide.deck,
+      title: guide.title,
+      description: structuredGuide?.seoDescription ?? aiJargonGuide.deck,
       url: canonical,
       type: "article",
-      images: [{ url: aiJargonGuide.cover, width: 1536, height: 1024 }],
+      images: [{ url: guide.cover, width: 1536, height: 1024 }],
     },
   };
 }
 
 export default async function GuideArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const structuredGuide = getGuidePage(slug);
+  if (structuredGuide) return <GuideReadingPage guide={structuredGuide} />;
   if (slug !== aiJargonGuide.slug) notFound();
   const related = guides.filter((item) => ["what-is-ai", "what-is-a-prompt", "what-is-agentic"].includes(item.slug));
 
