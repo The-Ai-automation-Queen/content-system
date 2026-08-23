@@ -7,14 +7,14 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="robots" content="index, follow, max-image-preview:large, noai, noimageai">
-<meta name="description" content="The public scoreboard of an experiment: one founder, hiring 99 AI employees, one at a time, receipts required. 99 employees, but a payroll ain't one.">
-<title>The 99: 99 employees, but a payroll ain&rsquo;t one | Shift &amp; Lead</title>
+<meta name="description" content="The 99 is a public AI build log: 99 real business jobs tested with AI, with receipts, human boundaries and failed experiments included.">
+<title>The 99: 99 Real Business Jobs Tested With AI | Shift &amp; Lead</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="canonical" href="https://www.shiftandlead.com/the-99.html">
-<meta property="og:title" content="The 99: 99 employees, but a payroll ain't one">
-<meta property="og:description" content="One founder. 99 AI employees, hired one at a time, in public. An employee only counts when it did real work this week. This page is the scoreboard.">
+<meta property="og:title" content="The 99: 99 Real Business Jobs Tested With AI">
+<meta property="og:description" content="A public AI build log. A job only counts when it produces useful work and there is a receipt.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.shiftandlead.com/the-99.html">
 <meta property="og:image" content="https://www.shiftandlead.com/Portrait.jpeg">
@@ -24,18 +24,82 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "The 99",
-  "description": "<!-- copy:the99.eyebrow -->A public experiment<!-- /copy:the99.eyebrow -->: hiring 99 AI employees, one at a time, with receipts.",
+  "description": "A public AI build log: 99 real business jobs tested with AI, with receipts and clear human boundaries.",
   "url": "https://www.shiftandlead.com/the-99.html",
   "author": {"@type": "Person", "name": "Fatiha Chikh", "url": "https://www.shiftandlead.com"}
 }
 </script>
-<link rel="stylesheet" href="/assets/site.css?v=f5dd9399">
+<link rel="stylesheet" href="/assets/site.css?v=ca5d5e6e">
 <link rel="stylesheet" href="/assets/pages/99.css?v=679ef5e5">
-<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
 <script defer src="/lib/motion.js?v=12d3e96d"></script>
 <script defer src="/assets/capture.js?v=fbc55811"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/brand-system.css">
+<link rel="stylesheet" href="/assets/density-system.css?v=37adda98">
+<link rel="stylesheet" href="/assets/mobile-polish.css?v=58114b4b">
+<style id="mobile-footer-final">
+@media(max-width:700px){
+  .chrome-foot{margin-top:24px!important;padding:28px 18px 22px!important}
+  .chrome-foot::before{
+    content:"SHIFT & LEAD";
+    display:block;
+    max-width:1080px;
+    margin:0 auto 16px;
+    font-family:var(--display,"Playfair Display",Georgia,serif);
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:.02em;
+    color:#fff;
+  }
+  .chrome-foot-grid{
+    max-width:1080px!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:6px 22px!important;
+  }
+  .chrome-foot-grid>section{margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(-n+3){display:contents!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>h2{display:none!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>ul{display:contents!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>ul>li{list-style:none!important;margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>ul>li>a{
+    display:block!important;
+    padding:6px 0!important;
+    font-family:var(--ui,"Inter",Arial,sans-serif)!important;
+    font-size:14px!important;
+    font-weight:500!important;
+    line-height:1.25!important;
+    color:#E7E3DC!important;
+    text-decoration:none!important;
+  }
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(1){order:1}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(1){order:2}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(2){order:3}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(3){order:4}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(3){order:5}
+  .chrome-foot-grid>section:nth-child(3)>ul>li:nth-child(1){order:6}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(2),
+  .chrome-foot-grid>section:nth-child(3)>ul>li:nth-child(2){display:none!important}
+  .chrome-foot-grid>section:nth-child(4){
+    order:7;
+    grid-column:1/-1;
+    margin-top:14px!important;
+    padding-top:12px!important;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+  .chrome-foot-grid>section:nth-child(4)>h2{display:none!important}
+  .chrome-foot-grid>section:nth-child(4)>ul{display:flex!important;flex-wrap:wrap!important;gap:6px 0!important;margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(4)>ul>li{list-style:none!important;display:flex!important;align-items:center!important;margin:0!important}
+  .chrome-foot-grid>section:nth-child(4)>ul>li:not(:last-child)::after{content:"·";margin:0 9px;color:#777}
+  .chrome-foot-grid>section:nth-child(4)>ul>li>a{font-family:var(--ui,"Inter",Arial,sans-serif)!important;font-size:12px!important;line-height:1.25!important;color:#B9B5AE!important;text-decoration:none!important}
+  .chrome-foot-legal{max-width:1080px!important;margin:14px auto 0!important;padding:0!important;border:0!important;font-size:0!important;line-height:1!important;text-align:left!important;text-transform:none!important;letter-spacing:0!important}
+  .chrome-foot-legal::before{content:"© 2026 Shift & Lead";font-family:var(--ui,"Inter",Arial,sans-serif);font-size:11px;font-weight:400;letter-spacing:.03em;color:#85817B}
+}
+</style>
+<script defer src="/assets/events.js"></script>
 </head>
-<body>
+<body data-page-kind="standard">
 
 <!-- chrome:nav -->
 <nav class="site-nav" aria-label="Site">
@@ -43,13 +107,12 @@
     <a class="site-nav-logo" href="https://www.shiftandlead.com/">Shift &amp; Lead</a>
     <div class="site-nav-links">
       <a href="https://www.shiftandlead.com/guides/">Guides</a>
-      <a href="https://brief.shiftandlead.com/">The Brief</a>
-      <a href="https://www.shiftandlead.com/the-99.html">The 99</a>
       <a href="https://www.shiftandlead.com/quiz.html">Quiz</a>
       <a href="https://www.shiftandlead.com/about.html">About</a>
-      <a href="https://www.shiftandlead.com/workshops.html">Workshops</a>
-      <a class="nav-cta" href="https://www.shiftandlead.com/build-sprint.html">Work with me</a>
+      <a href="https://www.shiftandlead.com/contact.html">Contact</a>
+      <a class="nav-cta" href="https://www.shiftandlead.com/how-i-can-help.html">How I can help</a>
     </div>
+    <details class="site-nav-mobile"><summary>Menu</summary><div class="site-nav-mobile-panel"><a href="https://www.shiftandlead.com/guides/">Guides</a><a href="https://www.shiftandlead.com/quiz.html">Quiz</a><a href="https://www.shiftandlead.com/about.html">About</a><a href="https://www.shiftandlead.com/contact.html">Contact</a><a class="nav-cta" href="https://www.shiftandlead.com/how-i-can-help.html">How I can help</a></div></details>
   </div>
 </nav>
 <!-- /chrome:nav -->
@@ -59,9 +122,9 @@
 <header class="hero">
   <div class="hero-inner">
     <div class="hero-kicker">A public experiment</div>
-    <h1><!-- copy:the99.h1 -->99 employees, and not one on payroll.<!-- /copy:the99.h1 --></h1>
-    <p class="hero-sub"><!-- copy:the99.sub -->I'm building a company staffed by AI, 99 employees, hired one at a time, in public. This is the scoreboard, and it doesn't get to flatter me.<!-- /copy:the99.sub --></p>
-    <div class="counter"><span class="big" id="hired-count"><!-- data:the99.hired -->3<!-- /data:the99.hired --></span><span class="of">/ 99 hired</span></div>
+    <h1><!-- copy:the99.h1 -->99 jobs I test handing to AI.<!-- /copy:the99.h1 --></h1>
+    <p class="hero-sub"><!-- copy:the99.sub -->I test real jobs in my business, one at a time, in public. A role only counts when it produces useful work and I can show the receipt.<!-- /copy:the99.sub --></p>
+    <div class="counter"><span class="big" id="hired-count"><!-- data:the99.hired -->3<!-- /data:the99.hired --></span><span class="of">/ 99 jobs tested</span></div>
     <div class="counter-label">updated when the receipts say so, not before</div>
     <div class="counter-label" id="wave-stamp" style="margin-top:6px;color:var(--accent)"><!-- data:the99.cadenceFallback -->Updated monthly<!-- /data:the99.cadenceFallback --></div>
   </div>
@@ -70,28 +133,28 @@
 <section class="rules">
   <div class="rule-card">
     <div class="n">Rule 01 &middot; Receipts or it didn&rsquo;t happen</div>
-    <p>An employee counts as hired only if it did real work in the last 7 days and I can show the output. No receipt, no badge.</p>
+    <p>A job counts only if AI did useful work in the last 7 days and I can show the output. No receipt, no badge.</p>
   </div>
   <div class="rule-card">
     <div class="n">Rule 02 &middot; They prepare, I release</div>
-    <p>No employee sends anything to a human on its own. Drafts land in my review queue. The send button stays human.</p>
+    <p>No AI workflow sends anything to a human on its own. Drafts land in my review queue. The send button stays human.</p>
   </div>
   <div class="rule-card">
     <div class="n">Rule 03 &middot; The counter can go down</div>
-    <p>An employee that stops working loses its badge until it earns it back. Small and true beats big and hollow.</p>
+    <p>A workflow that stops working loses its badge until it earns it back. Small and true beats big and hollow.</p>
   </div>
 </section>
 
 <main class="board">
   <div class="board-head">
-    <h2>The org chart</h2>
-    <div class="open-count"><span id="open-count">95</span> roles still open</div>
+    <h2>The build log</h2>
+    <div class="open-count"><span id="open-count">95</span> jobs left to test</div>
   </div>
   <div class="grid" id="grid">
 
     <div class="slot hired">
       <div>
-        <div class="num">EMPLOYEE #001 &middot; HIRED <time datetime="2026-07-06">06 JUL 2026</time></div>
+        <div class="num">JOB #001 &middot; TESTED <time datetime="2026-07-06">06 JUL 2026</time></div>
         <div class="name">Nour</div>
         <div class="role">Board Secretary</div>
         <div class="dept">Back Office</div>
@@ -101,7 +164,7 @@
 
     <div class="slot hired">
       <div>
-        <div class="num">EMPLOYEE #002 &middot; HIRED <time datetime="2026-07-07">07 JUL 2026</time></div>
+        <div class="num">JOB #002 &middot; TESTED <time datetime="2026-07-07">07 JUL 2026</time></div>
         <div class="name">Rashid</div>
         <div class="role">Head of Research</div>
         <div class="dept">Intelligence</div>
@@ -111,7 +174,7 @@
 
     <div class="slot hired">
       <div>
-        <div class="num">EMPLOYEE #003 &middot; HIRED <time datetime="2026-07-06">06 JUL 2026</time></div>
+        <div class="num">JOB #003 &middot; TESTED <time datetime="2026-07-06">06 JUL 2026</time></div>
         <div class="name">Zeina</div>
         <div class="role">Design Studio</div>
         <div class="dept">Marketing</div>
@@ -121,32 +184,32 @@
 
     <div class="slot interviewing">
       <div>
-        <div class="num">EMPLOYEE #004</div>
+        <div class="num">JOB #004</div>
         <div class="name">Nadia</div>
         <div class="role">Inbox Manager</div>
         <div class="dept">Operations</div>
       </div>
-      <div class="state">Interviewing &middot; starts when the receipts do</div>
+      <div class="state">Testing &middot; counts when the receipts do</div>
     </div>
 
   </div>
 </main>
 
 <section class="how">
-  <h2>How hiring works here</h2>
+  <h2>How a job earns its place here</h2>
   <ol>
-    <li>A role gets a job description: one founder problem it exists to kill.</li>
-    <li>The new hire works a real trial shift on my business, not a demo.</li>
+    <li>A job gets a clear brief: one founder problem it exists to kill.</li>
+    <li>AI runs a real trial on my business, not a demo.</li>
     <li>The output becomes a public receipt. Real screenshots, real numbers.</li>
-    <li>Only then does the badge appear on this page. Every hire gets its own story.</li>
+    <li>Only then does the badge appear on this page. Kept, assisted, automated or failed: the result is recorded.</li>
   </ol>
 </section>
 
 <section class="cta-band">
-  <h2><!-- copy:the99.cta_h2 -->Want to hire your own Employee #1?<!-- /copy:the99.cta_h2 --></h2>
-  <p>The free guide walks you through your first AI hire in a day: pick the task, write the job description, run the first shift.</p>
-  <a class="btn" href="opt-in.html?guide=first-ai-employee">Get the free hiring guide</a>
-  <span class="cta-sub">Not sure what to delegate first? <a href="/quiz.html">Take the free time-leak quiz</a></span>
+  <h2><!-- copy:the99.cta_h2 -->Want to test your own first AI job?<!-- /copy:the99.cta_h2 --></h2>
+  <p>The free guide helps you choose one real task, define the job, set the boundaries and run the first useful test.</p>
+  <a class="btn" href="opt-in.html?guide=first-ai-employee">Get the free first-build guide</a>
+  <span class="cta-sub">Not sure what to delegate first? <a href="/quiz.html">Take the free first-build diagnostic</a></span>
 </section>
 
 <!-- partial:newsletter -->
@@ -186,7 +249,7 @@
   function openSlot(i){
     var d = document.createElement('div');
     d.className = 'slot open';
-    d.innerHTML = '<div class="num">EMPLOYEE #' + String(i).padStart(3,'0') + '</div><div class="state">Hiring</div>';
+    d.innerHTML = '<div class="num">JOB #' + String(i).padStart(3,'0') + '</div><div class="state">Planned test</div>';
     return d;
   }
 
@@ -199,7 +262,7 @@
     more.type = 'button';
     more.className = 'slot open';
     more.style.cssText = 'cursor:pointer;font:inherit;color:inherit;text-align:left;border-style:dashed';
-    more.innerHTML = '<div class="num">+ ' + (open - shown) + ' MORE ROLES</div><div class="state" style="color:var(--accent-deep)">Show the full org chart &rarr;</div>';
+    more.innerHTML = '<div class="num">+ ' + (open - shown) + ' MORE JOBS</div><div class="state" style="color:var(--accent-deep)">Show the full build log &rarr;</div>';
     more.addEventListener('click', function(){
       more.remove();
       for (var i = filled + shown + 1; i <= 99; i++) grid.appendChild(openSlot(i));
@@ -216,25 +279,22 @@
       <h2>Learn</h2>
       <ul>
         <li><a href="https://www.shiftandlead.com/guides/">Guides</a></li>
-        <li><a href="https://brief.shiftandlead.com/">The Brief</a></li>
-        <li><a href="https://www.shiftandlead.com/the-99.html">The 99</a></li>
         <li><a href="https://www.shiftandlead.com/quiz.html">Quiz</a></li>
-        <li><a href="https://www.shiftandlead.com/starter-kit.html">Starter Kit</a></li>
       </ul>
     </section>
     <section>
       <h2>Work</h2>
       <ul>
-        <li><a href="https://www.shiftandlead.com/build-sprint.html">Work with me</a></li>
+        <li><a href="https://www.shiftandlead.com/how-i-can-help.html">How I can help</a></li>
+        <li><a href="https://www.shiftandlead.com/build-sprint.html">Build with me</a></li>
         <li><a href="https://www.shiftandlead.com/workshops.html">Workshops</a></li>
-        <li><a href="https://www.shiftandlead.com/case-study-1.html">Case studies</a></li>
       </ul>
     </section>
     <section>
       <h2>About</h2>
       <ul>
         <li><a href="https://www.shiftandlead.com/about.html">About</a></li>
-        <li><a href="https://www.shiftandlead.com/index.html#contact">Contact</a></li>
+        <li><a href="https://www.shiftandlead.com/contact.html">Contact</a></li>
       </ul>
     </section>
     <section>

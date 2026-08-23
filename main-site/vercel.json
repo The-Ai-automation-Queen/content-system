@@ -14,7 +14,7 @@
       "permanent": true
     }
   ],
-  "buildCommand": "cd .. && node tools/include.mjs && node tools/proof-patches.mjs && node tools/site-positioning-patches.mjs && node tools/quiz-result-patch.mjs && node tools/brand-system-patch.mjs && node tools/density-patch.mjs && node tools/final-copy-polish.mjs",
+  "buildCommand": "cd .. && node tools/verify-publish-source.mjs",
   "outputDirectory": ".",
   "installCommand": ""
 }

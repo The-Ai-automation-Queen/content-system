@@ -11,8 +11,73 @@
 :root{--paper:#F7F7F3;--ink:#1A1A1A;--blue:#2C4BE0;--deep:#1B2EA0;--pale:#E8ECFF;--teal:#14939A;--amber:#F28C28;--line:rgba(26,26,26,.18)}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.5}.wrap{width:min(1040px,calc(100% - 32px));margin:0 auto;padding:36px 0 64px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:32px}.brand{font-weight:800;color:var(--deep);text-decoration:none}.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{appearance:none;border:1px solid var(--blue);border-radius:999px;padding:10px 15px;background:var(--blue);color:#fff;font-weight:700;text-decoration:none;cursor:pointer}.btn.secondary{background:transparent;color:var(--deep)}header{padding:34px;border:2px solid var(--ink);border-radius:24px;background:#fff;box-shadow:7px 7px 0 var(--pale);margin-bottom:26px}.kicker{font:700 13px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;color:var(--deep);text-transform:uppercase}h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(36px,6vw,64px);line-height:1.02;margin:12px 0 14px;max-width:820px}header p{font-size:18px;max-width:760px;margin:0;color:#444}.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:24px 0 30px}.flow div{padding:13px;border-radius:14px;background:#fff;border:1px solid var(--line);font-weight:800;text-align:center}.flow div:nth-child(2),.flow div:nth-child(6){border-color:rgba(20,147,154,.5)}.flow div:nth-child(4),.flow div:nth-child(8){border-color:rgba(242,140,40,.55)}.section{margin:18px 0;padding:24px;border:1.5px solid var(--line);border-radius:20px;background:#fff}.section h2{margin:0 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:27px}.section-intro{margin:0 0 18px;color:#555}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{min-height:105px;padding:14px;border:1px dashed rgba(26,26,26,.35);border-radius:14px;background:linear-gradient(#fff,#fff) padding-box,repeating-linear-gradient(to bottom,transparent 0,transparent 28px,rgba(26,26,26,.08) 29px) border-box}.field strong{display:block;margin-bottom:8px;color:var(--deep);font-size:14px}.wide{grid-column:1/-1}.checks{display:grid;grid-template-columns:1fr 1fr;gap:10px}.check{display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:12px;background:var(--paper)}.box{width:18px;height:18px;flex:0 0 18px;border:2px solid var(--deep);border-radius:4px;margin-top:2px}.footer-note{margin-top:24px;padding:24px;border-radius:20px;background:var(--deep);color:#fff;text-align:center}.footer-note strong{display:block;font-family:Georgia,'Times New Roman',serif;font-size:28px;margin-bottom:4px}@media(max-width:700px){.grid,.checks,.flow{grid-template-columns:1fr}.wide{grid-column:auto}.topbar{align-items:flex-start;flex-direction:column}header{padding:24px}.section{padding:20px}}@media print{body{background:#fff}.wrap{width:100%;padding:0}.topbar{display:none}header{box-shadow:none}.section{break-inside:avoid}.flow{break-inside:avoid}.btn{display:none}}
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/brand-system.css">
+<link rel="stylesheet" href="/assets/density-system.css?v=37adda98">
+<link rel="stylesheet" href="/assets/mobile-polish.css?v=58114b4b">
+<style id="mobile-footer-final">
+@media(max-width:700px){
+  .chrome-foot{margin-top:24px!important;padding:28px 18px 22px!important}
+  .chrome-foot::before{
+    content:"SHIFT & LEAD";
+    display:block;
+    max-width:1080px;
+    margin:0 auto 16px;
+    font-family:var(--display,"Playfair Display",Georgia,serif);
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:.02em;
+    color:#fff;
+  }
+  .chrome-foot-grid{
+    max-width:1080px!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:6px 22px!important;
+  }
+  .chrome-foot-grid>section{margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(-n+3){display:contents!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>h2{display:none!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>ul{display:contents!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>ul>li{list-style:none!important;margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>ul>li>a{
+    display:block!important;
+    padding:6px 0!important;
+    font-family:var(--ui,"Inter",Arial,sans-serif)!important;
+    font-size:14px!important;
+    font-weight:500!important;
+    line-height:1.25!important;
+    color:#E7E3DC!important;
+    text-decoration:none!important;
+  }
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(1){order:1}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(1){order:2}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(2){order:3}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(3){order:4}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(3){order:5}
+  .chrome-foot-grid>section:nth-child(3)>ul>li:nth-child(1){order:6}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(2),
+  .chrome-foot-grid>section:nth-child(3)>ul>li:nth-child(2){display:none!important}
+  .chrome-foot-grid>section:nth-child(4){
+    order:7;
+    grid-column:1/-1;
+    margin-top:14px!important;
+    padding-top:12px!important;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+  .chrome-foot-grid>section:nth-child(4)>h2{display:none!important}
+  .chrome-foot-grid>section:nth-child(4)>ul{display:flex!important;flex-wrap:wrap!important;gap:6px 0!important;margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(4)>ul>li{list-style:none!important;display:flex!important;align-items:center!important;margin:0!important}
+  .chrome-foot-grid>section:nth-child(4)>ul>li:not(:last-child)::after{content:"·";margin:0 9px;color:#777}
+  .chrome-foot-grid>section:nth-child(4)>ul>li>a{font-family:var(--ui,"Inter",Arial,sans-serif)!important;font-size:12px!important;line-height:1.25!important;color:#B9B5AE!important;text-decoration:none!important}
+  .chrome-foot-legal{max-width:1080px!important;margin:14px auto 0!important;padding:0!important;border:0!important;font-size:0!important;line-height:1!important;text-align:left!important;text-transform:none!important;letter-spacing:0!important}
+  .chrome-foot-legal::before{content:"© 2026 Shift & Lead";font-family:var(--ui,"Inter",Arial,sans-serif);font-size:11px;font-weight:400;letter-spacing:.03em;color:#85817B}
+}
+</style>
+<script defer src="/assets/events.js"></script>
 </head>
-<body>
+<body data-page-kind="standard">
 <div class="wrap">
   <div class="topbar">
     <a class="brand" href="/">Shift &amp; Lead</a>

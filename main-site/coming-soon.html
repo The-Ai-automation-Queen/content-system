@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=f5dd9399">
+<link rel="stylesheet" href="/assets/site.css?v=ca5d5e6e">
 <!-- Holding page: every other path on this host 302s here while the site is
      paused, so this page carries no chrome and links only /assets/. -->
 <style>
@@ -27,19 +27,84 @@ main{min-height:100vh;display:flex;align-items:center;justify-content:center;tex
 .brief-line{margin-top:28px;font-size:.95rem}
 </style>
 <script src="/assets/capture.js?v=fbc55811" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/brand-system.css">
+<link rel="stylesheet" href="/assets/density-system.css?v=37adda98">
+<link rel="stylesheet" href="/assets/mobile-polish.css?v=58114b4b">
+<style id="mobile-footer-final">
+@media(max-width:700px){
+  .chrome-foot{margin-top:24px!important;padding:28px 18px 22px!important}
+  .chrome-foot::before{
+    content:"SHIFT & LEAD";
+    display:block;
+    max-width:1080px;
+    margin:0 auto 16px;
+    font-family:var(--display,"Playfair Display",Georgia,serif);
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:.02em;
+    color:#fff;
+  }
+  .chrome-foot-grid{
+    max-width:1080px!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:6px 22px!important;
+  }
+  .chrome-foot-grid>section{margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(-n+3){display:contents!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>h2{display:none!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>ul{display:contents!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>ul>li{list-style:none!important;margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>ul>li>a{
+    display:block!important;
+    padding:6px 0!important;
+    font-family:var(--ui,"Inter",Arial,sans-serif)!important;
+    font-size:14px!important;
+    font-weight:500!important;
+    line-height:1.25!important;
+    color:#E7E3DC!important;
+    text-decoration:none!important;
+  }
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(1){order:1}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(1){order:2}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(2){order:3}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(3){order:4}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(3){order:5}
+  .chrome-foot-grid>section:nth-child(3)>ul>li:nth-child(1){order:6}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(2),
+  .chrome-foot-grid>section:nth-child(3)>ul>li:nth-child(2){display:none!important}
+  .chrome-foot-grid>section:nth-child(4){
+    order:7;
+    grid-column:1/-1;
+    margin-top:14px!important;
+    padding-top:12px!important;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+  .chrome-foot-grid>section:nth-child(4)>h2{display:none!important}
+  .chrome-foot-grid>section:nth-child(4)>ul{display:flex!important;flex-wrap:wrap!important;gap:6px 0!important;margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(4)>ul>li{list-style:none!important;display:flex!important;align-items:center!important;margin:0!important}
+  .chrome-foot-grid>section:nth-child(4)>ul>li:not(:last-child)::after{content:"·";margin:0 9px;color:#777}
+  .chrome-foot-grid>section:nth-child(4)>ul>li>a{font-family:var(--ui,"Inter",Arial,sans-serif)!important;font-size:12px!important;line-height:1.25!important;color:#B9B5AE!important;text-decoration:none!important}
+  .chrome-foot-legal{max-width:1080px!important;margin:14px auto 0!important;padding:0!important;border:0!important;font-size:0!important;line-height:1!important;text-align:left!important;text-transform:none!important;letter-spacing:0!important}
+  .chrome-foot-legal::before{content:"© 2026 Shift & Lead";font-family:var(--ui,"Inter",Arial,sans-serif);font-size:11px;font-weight:400;letter-spacing:.03em;color:#85817B}
+}
+</style>
+<script defer src="/assets/events.js"></script>
 </head>
-<body>
+<body data-page-kind="standard">
 <main>
   <div class="hold">
     <p class="mono">Shift &amp; Lead</p>
-    <h1><!-- copy:coming_soon.h1 -->Closed for a quick rebuild.<!-- /copy:coming_soon.h1 --></h1>
-    <p><!-- copy:coming_soon.sub -->I'm reworking the site and it will be back shortly. Leave your email and I'll tell you the moment it's live again.<!-- /copy:coming_soon.sub --></p>
+    <h1><!-- copy:coming_soon.h1 -->MISSING:coming_soon.h1<!-- /copy:coming_soon.h1 --></h1>
+    <p><!-- copy:coming_soon.sub -->MISSING:coming_soon.sub<!-- /copy:coming_soon.sub --></p>
     <form class="capture-form" action="https://auto.shiftandlead.com/webhook/formspree-lead" method="POST" data-source="coming-soon">
       <label class="gotcha" aria-hidden="true">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
       <input type="email" name="email" required placeholder="you@business.com" aria-label="Email address">
-      <button type="submit"><!-- copy:coming_soon.cta -->Tell me when it's back<!-- /copy:coming_soon.cta --></button>
+      <button type="submit"><!-- copy:coming_soon.cta -->MISSING:coming_soon.cta<!-- /copy:coming_soon.cta --></button>
     </form>
-    <p class="brief-line"><!-- copy:coming_soon.brief_line -->While you wait, the AI Insider Brief is still publishing every week.<!-- /copy:coming_soon.brief_line --> <a href="https://brief.shiftandlead.com/">Read it here</a>.</p>
+    <p class="brief-line"><!-- copy:coming_soon.brief_line -->MISSING:coming_soon.brief_line<!-- /copy:coming_soon.brief_line -->.</p>
   </div>
 </main>
 </body>

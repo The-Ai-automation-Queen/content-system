@@ -1,0 +1,32 @@
+name: Site source guard
+
+on:
+  pull_request:
+    paths:
+      - "main-site/**"
+      - "data/page-status.json"
+      - "data/site.json"
+      - "tools/verify-publish-source.mjs"
+      - ".github/workflows/site-source-guard.yml"
+  push:
+    branches: [main]
+    paths:
+      - "main-site/**"
+      - "data/page-status.json"
+      - "data/site.json"
+      - "tools/verify-publish-source.mjs"
+      - ".github/workflows/site-source-guard.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Verify final publish source
+        run: node tools/verify-publish-source.mjs
