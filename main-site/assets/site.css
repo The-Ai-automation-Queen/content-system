@@ -307,3 +307,7 @@ body.guide{background:var(--paper);color:var(--ink);font-family:var(--serif);fon
 
 /* offer price band, stamped from site.json offers; hidden until a price exists */
 .price-band{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-deep);margin:6px 0 14px}
+
+/* Keep the shared copyright visible once and suppress legacy inline duplicates. */
+.chrome-foot-legal{font-family:var(--mono)!important;font-size:11px!important;line-height:1.4!important;letter-spacing:.08em!important;color:#888!important}
+.chrome-foot-legal::before{content:none!important}

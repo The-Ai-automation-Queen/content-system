@@ -199,8 +199,7 @@ body[data-page-kind="home"] .hero h1 em{position:relative;top:-.055em}
   .chrome-foot-grid>section:nth-child(4)>ul>li{list-style:none!important;display:flex!important;align-items:center!important;margin:0!important}
   .chrome-foot-grid>section:nth-child(4)>ul>li:not(:last-child)::after{content:"·";margin:0 9px;color:#777}
   .chrome-foot-grid>section:nth-child(4)>ul>li>a{font-family:var(--ui,"Inter",Arial,sans-serif)!important;font-size:12px!important;line-height:1.25!important;color:#B9B5AE!important;text-decoration:none!important}
-  .chrome-foot-legal{max-width:var(--content,1080px)!important;margin:14px auto 0!important;padding:0!important;border:0!important;font-size:0!important;line-height:1!important;text-align:left!important;text-transform:none!important;letter-spacing:0!important}
-  .chrome-foot-legal::before{content:"© 2026 Shift & Lead";font-family:var(--ui,"Inter",Arial,sans-serif);font-size:11px;font-weight:400;letter-spacing:.03em;color:#85817B}
+  .chrome-foot-legal{max-width:var(--content,1080px)!important;margin:14px auto 0!important;padding:0!important;border:0!important;font-size:11px!important;line-height:1.4!important;text-align:left!important;text-transform:none!important;letter-spacing:.03em!important;color:#85817B!important}
 
   /* Home. */
   body[data-page-kind="home"] .ribbon{padding:9px 14px!important;gap:8px!important;font-size:10px!important;letter-spacing:.11em!important}

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display, Source_Serif_4, Space_Mono } from "next/font/google";
 import { SiteHeader } from "@/components/chrome/site-header";
+import { SiteFooter } from "@/components/chrome/site-footer";
+import Script from "next/script";
 import "./globals.css";
 
 const display = Playfair_Display({ subsets: ["latin"], variable: "--font-display" });
@@ -20,6 +22,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <SiteHeader />
         {children}
+        <SiteFooter />
+        <Script src="/assets/events.js" strategy="afterInteractive" />
       </body>
     </html>
   );

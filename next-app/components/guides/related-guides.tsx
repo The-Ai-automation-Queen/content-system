@@ -6,7 +6,7 @@ type RelatedGuidesProps = {
   title?: string;
 };
 
-export function RelatedGuides({ guides, title = "Choose what to learn next." }: RelatedGuidesProps) {
+export function RelatedGuides({ guides, title = "What do you want to do next?" }: RelatedGuidesProps) {
   return (
     <section className="more-guides article-shell" aria-labelledby="related-guides-title">
       <header className="more-guides__header">

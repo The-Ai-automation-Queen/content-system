@@ -12,6 +12,66 @@
       "source": "/work-with-fatiha.html",
       "destination": "/workshops.html",
       "permanent": true
+    },
+    {
+      "source": "/starter-kit.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/opt-in.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/research-to-content-workflow.html",
+      "destination": "/workbooks.html",
+      "permanent": true
+    },
+    {
+      "source": "/resources/research-to-content-workflow.html",
+      "destination": "/workbooks.html",
+      "permanent": true
+    },
+    {
+      "source": "/the-99.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/fast-forward.html",
+      "destination": "/workbooks.html",
+      "permanent": true
+    },
+    {
+      "source": "/bootcamp.html",
+      "destination": "/workshops.html",
+      "permanent": true
+    },
+    {
+      "source": "/masterclass.html",
+      "destination": "/workshops.html",
+      "permanent": true
+    },
+    {
+      "source": "/store.html",
+      "destination": "/how-i-can-help.html",
+      "permanent": true
+    },
+    {
+      "source": "/get-it-done.html",
+      "destination": "/how-i-can-help.html",
+      "permanent": true
+    },
+    {
+      "source": "/coming-soon.html",
+      "destination": "/how-i-can-help.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-study-4.html",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "buildCommand": "cd .. && node tools/verify-publish-source.mjs",

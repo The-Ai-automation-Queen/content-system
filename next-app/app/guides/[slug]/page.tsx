@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GuideMotion } from "@/components/guides/guide-motion";
-import { GuideCaptureModal } from "@/components/guides/guide-capture-modal";
+import { GuideAccessBoundary } from "@/components/guides/guide-access-boundary";
 import { RelatedGuides } from "@/components/guides/related-guides";
 import { GuideReadingPage } from "@/components/guides/guide-reading-page";
 import { aiJargonGuide } from "@/content/ai-jargon-guide";
@@ -42,6 +42,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   const related = guides.filter((item) => ["what-is-ai", "what-is-a-prompt", "what-is-agentic"].includes(item.slug));
 
   return (
+    <GuideAccessBoundary guideSlug={aiJargonGuide.slug} cover={aiJargonGuide.cover}>
     <main className="article-page simple-guide" data-guide-article>
       <GuideMotion />
       <article>
@@ -55,9 +56,6 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
             <div className="simple-guide__hero-copy">
               <h1>{aiJargonGuide.title}</h1>
               <p className="simple-guide__deck">{aiJargonGuide.deck}</p>
-              <div className="simple-guide__hero-action">
-                <GuideCaptureModal guideSlug={aiJargonGuide.slug} {...aiJargonGuide.capture} />
-              </div>
             </div>
           </div>
         </header>
@@ -97,5 +95,6 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
 
       <RelatedGuides guides={related} />
     </main>
+    </GuideAccessBoundary>
   );
 }

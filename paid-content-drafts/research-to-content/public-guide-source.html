@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index, follow, max-image-preview:large, noai, noimageai">
+<title>Turn saved research into content you can actually publish · Shift &amp; Lead</title>
+<meta name="description" content="A practical research-to-content workflow for business owners: capture the source, distil what matters, add your point of view, verify the claims and publish something useful.">
+<link rel="canonical" href="https://www.shiftandlead.com/guides/research-to-content-workflow.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shift &amp; Lead">
+<meta property="og:title" content="Turn saved research into content you can actually publish">
+<meta property="og:description" content="Turn useful sources into grounded, original content with a repeatable workflow from capture to verification and learning.">
+<meta property="og:url" content="https://www.shiftandlead.com/guides/research-to-content-workflow.html">
+<meta property="og:image" content="https://www.shiftandlead.com/images/guides/research-to-content-workflow.png">
+<meta property="og:image:width" content="1672">
+<meta property="og:image:height" content="941">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.shiftandlead.com/images/guides/research-to-content-workflow.png">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/guide.css">
+<link rel="stylesheet" href="/assets/guide-lead-magnets.css?v=bd20fbef">
+<style>
+.research-flow{list-style:none;margin:2rem 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;counter-reset:flow}
+.research-flow li{counter-increment:flow;position:relative;min-height:8.6rem;padding:1rem 1rem 1rem 3.15rem;border:1.5px solid rgba(26,26,26,.16);border-radius:18px;background:#fff}
+.research-flow li::before{content:counter(flow);position:absolute;left:1rem;top:1rem;width:1.65rem;height:1.65rem;display:grid;place-items:center;border-radius:50%;background:#2C4BE0;color:#fff;font:700 .78rem/1 Inter,sans-serif}
+.research-flow li::after{content:"→";position:absolute;right:-.72rem;top:50%;transform:translateY(-50%);z-index:2;color:#2C4BE0;font:700 1.1rem/1 Inter,sans-serif}
+.research-flow li:nth-child(4n)::after,.research-flow li:last-child::after{display:none}
+.research-flow strong{display:block;margin:.05rem 0 .4rem;font-family:Inter,sans-serif;font-size:.92rem}
+.research-flow span{display:block;color:#4c4c4c;font-size:.88rem;line-height:1.45}
+.guide-example{margin:2rem 0;padding:1.25rem 1.35rem;border-left:4px solid #2C4BE0;background:#E8ECFF;border-radius:0 16px 16px 0}
+.guide-example-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.guide-example-cell{padding:1rem;border-radius:12px;background:#fff}
+.guide-example-cell strong{display:block;margin-bottom:.4rem;font-family:Inter,sans-serif}
+.verify-list{list-style:none;padding:0;margin:1.25rem 0}
+.verify-list li{position:relative;padding:.35rem 0 .35rem 1.8rem}
+.verify-list li::before{content:"✓";position:absolute;left:0;top:.35rem;width:1.2rem;height:1.2rem;border-radius:50%;background:#E8ECFF;color:#1B2EA0;display:grid;place-items:center;font:700 .72rem/1 Inter,sans-serif}
+.research-guide-cover{margin:2rem auto 0;max-width:75rem;aspect-ratio:16/9;overflow:hidden;border-radius:22px;background:#e62b1e}
+.research-guide-cover img{display:block;width:100%;height:100%;object-fit:cover}
+@media(max-width:860px){.research-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.research-flow li:nth-child(4n)::after{display:block}.research-flow li:nth-child(2n)::after{display:none}}
+@media(max-width:600px){.research-flow{grid-template-columns:1fr}.research-flow li{min-height:0}.research-flow li::after{content:"↓";right:auto;left:50%;top:auto;bottom:-1rem;transform:translateX(-50%)}.research-flow li:nth-child(2n)::after,.research-flow li:nth-child(4n)::after{display:block}.research-flow li:last-child::after{display:none}.guide-example-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/brand-system.css">
+<link rel="stylesheet" href="/assets/density-system.css?v=37adda98">
+<link rel="stylesheet" href="/assets/mobile-polish.css?v=58114b4b">
+<style id="mobile-footer-final">
+@media(max-width:700px){
+  .chrome-foot{margin-top:24px!important;padding:28px 18px 22px!important}
+  .chrome-foot::before{
+    content:"SHIFT & LEAD";
+    display:block;
+    max-width:1080px;
+    margin:0 auto 16px;
+    font-family:var(--display,"Playfair Display",Georgia,serif);
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:.02em;
+    color:#fff;
+  }
+  .chrome-foot-grid{
+    max-width:1080px!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:6px 22px!important;
+  }
+  .chrome-foot-grid>section{margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(-n+3){display:contents!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>h2{display:none!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>ul{display:contents!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>ul>li{list-style:none!important;margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>ul>li>a{
+    display:block!important;
+    padding:6px 0!important;
+    font-family:var(--ui,"Inter",Arial,sans-serif)!important;
+    font-size:14px!important;
+    font-weight:500!important;
+    line-height:1.25!important;
+    color:#E7E3DC!important;
+    text-decoration:none!important;
+  }
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(1){order:1}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(1){order:2}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(2){order:3}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(3){order:4}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(3){order:5}
+  .chrome-foot-grid>section:nth-child(3)>ul>li:nth-child(1){order:6}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(2),
+  .chrome-foot-grid>section:nth-child(3)>ul>li:nth-child(2){display:none!important}
+  .chrome-foot-grid>section:nth-child(4){
+    order:7;
+    grid-column:1/-1;
+    margin-top:14px!important;
+    padding-top:12px!important;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+  .chrome-foot-grid>section:nth-child(4)>h2{display:none!important}
+  .chrome-foot-grid>section:nth-child(4)>ul{display:flex!important;flex-wrap:wrap!important;gap:6px 0!important;margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(4)>ul>li{list-style:none!important;display:flex!important;align-items:center!important;margin:0!important}
+  .chrome-foot-grid>section:nth-child(4)>ul>li:not(:last-child)::after{content:"·";margin:0 9px;color:#777}
+  .chrome-foot-grid>section:nth-child(4)>ul>li>a{font-family:var(--ui,"Inter",Arial,sans-serif)!important;font-size:12px!important;line-height:1.25!important;color:#B9B5AE!important;text-decoration:none!important}
+  .chrome-foot-legal{max-width:1080px!important;margin:14px auto 0!important;padding:0!important;border:0!important;font-size:0!important;line-height:1!important;text-align:left!important;text-transform:none!important;letter-spacing:0!important}
+  .chrome-foot-legal::before{content:"© 2026 Shift & Lead";font-family:var(--ui,"Inter",Arial,sans-serif);font-size:11px;font-weight:400;letter-spacing:.03em;color:#85817B}
+}
+</style>
+<style id="final-guide-clarity">
+body.guide .mono,body.guide .eyebrow,body.guide .callout-label,body.guide .gate-proof,body.guide .guide-table th{color:#2C4BE0!important}
+body.guide .guide-hero{padding-top:38px!important;padding-bottom:18px!important}
+body.guide .guide-hero h1{margin-bottom:16px!important}
+body.guide .verdict{margin-bottom:0!important;max-width:650px}
+body.guide .prose{padding-top:0!important}
+body.guide .prose h2{margin-top:40px!important}
+body.guide .callout{background:transparent!important;border:0!important;border-left:3px solid #2C4BE0!important;border-radius:0!important;padding:2px 0 2px 18px!important;margin:28px 0!important}
+body.guide .callout-label{margin-bottom:8px!important}
+body.guide .gate{margin-top:42px!important;margin-bottom:42px!important;padding:30px 22px!important}
+body.guide .gate-title{font-size:28px!important;line-height:1.15!important}
+body.guide .gate-sub{font-size:16px!important;line-height:1.55!important}
+body.guide .gate-fineprint{color:#555!important}
+body.guide .related{margin-top:46px!important}
+body.guide .related .card{border-top:3px solid #2C4BE0!important;border-radius:12px!important;box-shadow:none!important}
+body.guide .related .card:hover{transform:none!important;box-shadow:none!important}
+body.guide .related .card-body{padding:18px!important}
+body.guide .byline{margin-top:46px!important}
+body.guide .byline-in{background:#fff!important;border:0!important;border-top:1px solid var(--line)!important;border-radius:0!important;padding:22px 0!important;align-items:flex-start!important}
+body.guide .byline-in img{width:52px!important;height:52px!important}
+body.guide .upsell{margin-top:46px!important;margin-bottom:46px!important}
+body.guide .term-grid{display:grid;gap:0;margin:26px 0;border-top:1px solid var(--line)}
+body.guide .term-item{padding:24px 0;border-bottom:1px solid var(--line)}
+body.guide .term-item h3{font-family:var(--display);font-size:26px;line-height:1.15;margin:0 0 8px}
+body.guide .term-item p{margin:0 0 8px}
+body.guide .term-item p:last-child{margin-bottom:0}
+body.guide .term-item .picture{color:#2C4BE0;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+@media(max-width:700px){
+  body.guide{font-size:18px!important;line-height:1.62!important}
+  body.guide .guide-doc{padding-left:18px!important;padding-right:18px!important;padding-bottom:48px!important}
+  body.guide .guide-hero{padding-top:34px!important}
+  body.guide .guide-hero h1{font-size:42px!important;line-height:1.05!important}
+  body.guide .verdict{font-size:21px!important;line-height:1.48!important}
+  body.guide .prose h2{font-size:31px!important;line-height:1.12!important;margin-top:36px!important;margin-bottom:12px!important}
+  body.guide .prose p{margin-bottom:18px!important}
+  body.guide .guide-table{overflow:visible!important;border:0!important;border-radius:0!important;margin:26px 0!important;background:transparent!important}
+  body.guide .guide-table table,body.guide .guide-table tbody,body.guide .guide-table tr,body.guide .guide-table td{display:block!important;width:100%!important;min-width:0!important}
+  body.guide .guide-table thead{display:none!important}
+  body.guide .guide-table tr{padding:18px 0!important;border-bottom:1px solid var(--line)!important}
+  body.guide .guide-table tr:first-child{border-top:1px solid var(--line)!important}
+  body.guide .guide-table td{padding:4px 0!important;border:0!important;font-size:17px!important;line-height:1.5!important;white-space:normal!important;overflow-wrap:anywhere!important}
+  body.guide .guide-table td:first-child{font-family:var(--display)!important;font-size:23px!important;font-weight:700!important;line-height:1.2!important;margin-bottom:6px!important}
+  body.guide .gate{margin-left:-18px!important;margin-right:-18px!important;padding:28px 18px!important}
+  body.guide .gate-form{display:block!important}
+  body.guide .gate-form input[type=email],body.guide .gate-form button{width:100%!important;min-width:0!important}
+  body.guide .gate-form button{margin-top:10px!important}
+  body.guide .related .card-grid{grid-template-columns:1fr!important;gap:14px!important}
+  body.guide .byline-in{gap:14px!important}
+  body.guide .byline-in p{font-size:16px!important;line-height:1.5!important}
+  body.guide .term-item{padding:20px 0!important}
+  body.guide .term-item h3{font-size:24px!important}
+}
+</style>
+<script defer src="/assets/events.js"></script>
+</head>
+<body data-page-kind="guide">
+<!--#include file="/_partials/site-header.html" -->
+<main class="guide">
+  <header class="guide-hero">
+    <p class="eyebrow">THINK &amp; CREATE BETTER</p>
+    <h1>Turn saved research into content you can actually publish</h1>
+    <p class="intro">The goal is not to collect more links. It is to turn useful evidence into a point of view, a draft you can verify, and something worth publishing.</p>
+  </header>
+
+  <figure class="research-guide-cover">
+    <img src="/images/guides/research-to-content-workflow.png" alt="The Blue Princess turning scattered research into an orderly stream of publishable content" width="1672" height="941" fetchpriority="high">
+  </figure>
+
+  <article class="guide-content">
+    <div class="prose">
+      <h2>The simple answer</h2>
+      <p>Research becomes content only after you decide what is useful, what it means for your audience, what you think about it, and what still needs checking.</p>
+      <p>AI can help organise the evidence and prepare the draft. It should not invent your judgement or turn an unverified claim into a fact.</p>
+
+      <h2>Use one repeatable workflow</h2>
+      <p>Instead of opening every saved link again when it is time to write, move each useful source through the same eight stages.</p>
+
+      <ol class="research-flow" aria-label="Research to content workflow">
+        <li><strong>Capture</strong><span>Save the source, URL, date and why it caught your attention.</span></li>
+        <li><strong>Distil</strong><span>Pull out the claim, evidence, useful detail and obvious risks.</span></li>
+        <li><strong>Find the angle</strong><span>Decide what changes for your reader if this is true.</span></li>
+        <li><strong>Add your point of view</strong><span>Bring the judgement, context and experience the source cannot provide.</span></li>
+        <li><strong>Draft</strong><span>Build from grounded notes rather than a blank page or fresh unsupported claims.</span></li>
+        <li><strong>Verify</strong><span>Check dates, numbers, quotes, versions and sensitive claims before publishing.</span></li>
+        <li><strong>Publish</strong><span>Choose the format and one next action for the reader.</span></li>
+        <li><strong>Learn</strong><span>Feed useful audience response back into the next research cycle.</span></li>
+      </ol>
+
+      <h2>Step 1: capture the source, not just the idea</h2>
+      <p>A useful research note needs enough context to trace the claim later. At minimum, keep the title, source URL, publication date when available, and one sentence on why you saved it.</p>
+      <p>If you only save a screenshot or a clever sentence, verification becomes much harder when the post is ready to publish.</p>
+
+      <h2>Step 2: distil what is actually useful</h2>
+      <p>Do not summarise everything. Pull out the parts that could change a decision, teach a method, challenge an assumption, or show a useful example.</p>
+      <p>A compact source brief can contain four things:</p>
+      <ul>
+        <li><strong>Claim:</strong> what is the source actually saying?</li>
+        <li><strong>Evidence:</strong> what in the source supports it?</li>
+        <li><strong>Why it matters:</strong> why should your audience care?</li>
+        <li><strong>Risk:</strong> what is uncertain, promotional, experimental or version-specific?</li>
+      </ul>
+
+      <h2>Step 3: find your angle</h2>
+      <p>The source is not the post. Ask a more useful question: <strong>what will my reader understand or do differently because I found this?</strong></p>
+      <p>That question turns research into an audience outcome instead of a retelling of somebody else's content.</p>
+
+      <h2>Step 4: add your point of view</h2>
+      <p>This is the part AI cannot supply from the source alone. Add what you agree with, what you would change, where the idea breaks in a real business, or how you would make it simpler for your audience.</p>
+      <p>AI can organise your notes. You provide the judgement.</p>
+
+      <h2>Step 5: draft from grounded notes</h2>
+      <p>Give the drafting step the source brief, your angle, your point of view and the intended reader. That is safer and usually more useful than asking an AI tool to research and write everything in one uncontrolled step.</p>
+      <p>The draft should know its job: teach one idea, demonstrate one method, make one argument, or lead into one relevant resource.</p>
+
+      <h2>Step 6: verify before publishing</h2>
+      <p>Run a separate checking pass before anything goes public. The closer a claim is to money, security, law, health, performance or a fast-changing product feature, the more careful that check should be.</p>
+      <ul class="verify-list">
+        <li>Open the original source again for important claims.</li>
+        <li>Check dates and product versions.</li>
+        <li>Recalculate or remove statistics you cannot support.</li>
+        <li>Keep quotes faithful to the source.</li>
+        <li>Label examples and opinions as examples and opinions.</li>
+      </ul>
+
+      <h2>Step 7: publish, then learn from the response</h2>
+      <p>Publishing is not the end of the workflow. Record what people saved, replied to, clicked or asked next. Those signals can improve the next content brief.</p>
+      <p>This does not magically train an AI model. It simply gives your future research and drafting steps better context about what your audience actually found useful.</p>
+
+      <h2>A practical example</h2>
+      <div class="guide-example">
+        <p>Suppose you save a creator's five-agent content system. The source is useful, but copying the stack would make your content dependent on that creator's exact tools and assumptions.</p>
+        <div class="guide-example-grid">
+          <div class="guide-example-cell"><strong>Weak angle</strong><span>“How to copy this exact five-agent Claude stack.”</span></div>
+          <div class="guide-example-cell"><strong>Stronger angle</strong><span>“How to turn saved research into a repeatable content workflow.”</span></div>
+        </div>
+        <p>The stronger version keeps the durable business idea — a repeatable research-to-content loop — while treating the specific tools as examples rather than universal requirements.</p>
+      </div>
+
+      <h2>Start with one source</h2>
+      <p>You do not need a giant knowledge base before this becomes useful. Take one source you saved this week and move it through all eight stages. Once the workflow works once, then automate the repetitive parts.</p>
+    </div>
+
+    <section class="guide-lead-magnet" aria-labelledby="research-map-title">
+      <p class="guide-lead-kicker">FREE COMPANION WORKSHEET</p>
+      <h2 id="research-map-title">Build your own research-to-content workflow</h2>
+      <p>Get the printable Workflow Map to define where ideas enter, what AI can prepare, what you verify, and how published content feeds the next cycle.</p>
+      <form class="resource-inline-form js-guide-lead-form"
+            data-resource-name="Research-to-Content Workflow Map"
+            data-resource-path="/resources/research-to-content-workflow.html"
+            data-resource-copy="Research-to-Content Workflow Map requested">
+        <label for="research-map-email">Email address</label>
+        <input id="research-map-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <input type="hidden" name="source" value="guide-research-to-content-workflow">
+        <input type="hidden" name="intent" value="download_research_to_content_workflow">
+        <label class="consent-row"><input type="checkbox" name="consent" value="yes" required> <span>Send me the workflow map and useful follow-up resources. I can unsubscribe at any time.</span></label>
+        <button type="submit">Send me the workflow map</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="related-guides">
+      <h2>Keep building</h2>
+      <div class="related-grid">
+        <a href="first-ai-employee.html"><strong>Build your first AI assistant</strong><span>Give AI one repeatable job, with clear rules and a human approval point.</span></a>
+        <a href="what-is-a-prompt.html"><strong>Write prompts that give AI useful context</strong><span>Understand the inputs that make an AI task clearer and more reliable.</span></a>
+      </div>
+    </section>
+  </article>
+</main>
+<!--#include file="/_partials/site-footer.html" -->
+<script defer src="/assets/site.js"></script>
+<script defer src="/assets/guide-lead-magnets.js?v=074b03ee"></script>
+</body>
+</html>

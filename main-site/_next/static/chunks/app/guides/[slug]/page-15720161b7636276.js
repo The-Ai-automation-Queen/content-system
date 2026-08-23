@@ -1,3 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[54],{3662:(e,t,n)=>{Promise.resolve().then(n.bind(n,4614)),Promise.resolve().then(n.t.bind(n,8500,23)),Promise.resolve().then(n.t.bind(n,8437,23))},4614:(e,t,n)=>{"use strict";n.d(t,{CopyQuestions:()=>i});var s=n(5155),o=n(2115);function i({questions:e}){let[t,n]=(0,o.useState)(!1),r=async()=>{await navigator.clipboard.writeText(`5 questions to use when AI jargon makes a meeting unclear
-
-${e.map((e,t)=>`${t+1}. ${e}`).join("\n")}`),n(!0),window.setTimeout(()=>n(!1),1800)};return(0,s.jsx)("button",{type:"button",onClick:r,children:t?"Copied":"Copy the 5 questions"})}}},e=>{e.O(0,[500,437,441,794,358],()=>e(e.s=3662)),_N_E=e.O()}]);
