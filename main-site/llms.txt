@@ -2,13 +2,12 @@
 
 > Shift & Lead helps non-technical professionals, business owners and teams build practical business capability with AI.
 
-The site is organised around a simple path: learn what matters, build one useful capability, connect the pieces into how the business runs, and bring the method into a team when needed.
+The site offers four clear routes: learn how to use AI through free guides, explore your own experience through guided workbooks, build a practical system with Fatiha, or bring AI into a team through workshops.
 
 ## Current resources
 
 - Free AI guides: https://www.shiftandlead.com/guides/
-- First-build diagnostic: https://www.shiftandlead.com/quiz.html
-- AI Starter Toolkit: https://www.shiftandlead.com/starter-kit.html
+- Guided workbooks: https://www.shiftandlead.com/workbooks.html
 - Workshops and team programmes: https://www.shiftandlead.com/workshops.html
 - Build with Fatiha: https://www.shiftandlead.com/build-sprint.html
 - About and proof: https://www.shiftandlead.com/about.html

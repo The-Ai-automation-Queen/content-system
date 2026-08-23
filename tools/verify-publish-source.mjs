@@ -25,6 +25,7 @@ function chrome(html) {
 }
 
 const retired = Object.entries(statuses).filter(([, page]) => page.status === 'retired');
+const unlisted = Object.entries(statuses).filter(([, page]) => page.status === 'unlisted');
 const siteData = JSON.parse(read('data/site.json'));
 const publicSurfaces = [
   ['homepage', read('main-site/index.html')],
@@ -47,12 +48,33 @@ for (const [id, page] of retired) {
   }
 }
 
+for (const [id, page] of unlisted) {
+  const escapedPath = page.path.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const patterns = [new RegExp(escapedPath, 'i')];
+  for (const [surface, text] of publicSurfaces) {
+    for (const pattern of patterns) {
+      if (pattern.test(text)) failures.push(`${id} is unlisted but appears in ${surface}: ${pattern}`);
+    }
+  }
+}
+
+for (const [id, page] of Object.entries(statuses).filter(([, value]) => value.status === 'active')) {
+  const relative = page.path === '/' ? 'main-site/index.html' : `main-site${page.path}`;
+  const expected = relative.endsWith('/') ? `${relative}index.html` : relative;
+  if (!fs.existsSync(path.join(ROOT, expected))) failures.push(`${id} is active but its source file is missing: ${expected}`);
+}
+
 for (const file of fs.readdirSync(MAIN).filter(name => name.endsWith('.html'))) {
   if (file === 'the-99.html') continue;
   const shell = chrome(fs.readFileSync(path.join(MAIN, file), 'utf8'));
   for (const [id] of retired) {
     for (const pattern of retiredTerms[id] || []) {
       if (pattern.test(shell)) failures.push(`${id} is retired but appears in ${file} navigation or footer`);
+    }
+  }
+  for (const [id, page] of unlisted) {
+    if (new RegExp(page.path.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i').test(shell)) {
+      failures.push(`${id} is unlisted but appears in ${file} navigation or footer`);
     }
   }
 }
