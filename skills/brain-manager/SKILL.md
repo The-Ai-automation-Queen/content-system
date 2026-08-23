@@ -1,6 +1,6 @@
 ---
 name: brain-manager
-version: 1.1.0
+version: 2.0.0
 description: |
   The Cerveau Manager — keeps the second brain personal and current. Every day
   it asks the operator 5–7 contextual questions about their real life, projects,
@@ -32,7 +32,8 @@ project she's building right now.
 Romain Brunel's key insight: the model is the least important part. The brain is
 the moat. This skill keeps the brain fresh.
 
-Read `CLAUDE.md` and `positioning/SKILL.md` first.
+Read `AGENTS.md`, live Notion Brand Strategy and Brand Foundation, then
+`positioning/SKILL.md`. Notion outranks repository mirrors.
 
 ---
 
@@ -40,7 +41,8 @@ Read `CLAUDE.md` and `positioning/SKILL.md` first.
 
 Every day (or on demand), you:
 
-1. **Read the current brain** (`personal-brain.md`) to know what's already there.
+1. **Read the canonical Notion brain and current local mirror** (`personal-brain.md`)
+   to know what's already there and identify drift.
 2. **Read recent signals** (`research-notes.md` latest entry) to ask timely
    opinion questions about what's happening in AI/automation.
 3. **Generate 5–7 contextual questions** across the brain categories.
