@@ -22,6 +22,8 @@
   --blue:#2C4BE0;
   --blue-deep:#1B2EA0;
   --line:#E8E4DD;
+  --section-dark-bg:#F5F7FA;
+  --section-dark-text:#1A1A1A;
   --wrap:720px;
   --wrap-wide:1080px;
   --serif:"Source Serif 4",Georgia,serif;
@@ -239,6 +241,10 @@ body.guide{background:var(--paper);color:var(--ink);font-family:var(--serif);fon
 .proof .n{font-family:var(--display);font-size:34px;color:var(--blue);line-height:1}
 .proof p{font-size:15px;color:#555;margin:8px 0 0}
 .proof a{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.client-proof{background:var(--section-dark-bg);color:var(--section-dark-text);border:1px solid var(--line);border-radius:14px;margin-top:32px;margin-bottom:32px}
+.client-proof blockquote{margin:0;max-width:68ch}
+.client-proof blockquote p{font-size:18px;line-height:1.65;color:var(--section-dark-text)}
+.client-proof .eyebrow{color:var(--blue-deep)}
 .fit-lists{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
 .fit-lists ul{margin:0;padding-left:20px}
 .fit-lists li{margin:0 0 10px;font-size:17px}
@@ -279,8 +285,6 @@ body.guide{background:var(--paper);color:var(--ink);font-family:var(--serif);fon
 .timeline-item .when{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-deep)}
 .timeline-item h3{font-family:var(--display);font-size:20px;margin:4px 0 6px}
 .timeline-item p{font-size:16px;color:#555;margin:0}
-
-
 
 /* --------------------------------------- 18. chrome footer (from site.json) */
 

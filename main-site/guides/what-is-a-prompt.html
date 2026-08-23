@@ -20,74 +20,256 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
-<script defer src="https://stats.shiftandlead.com/script.js" data-website-id="UMAMI-GUIDES-ID"></script>
-<script defer src="/assets/capture.js"></script>
+<link rel="stylesheet" href="/assets/site.css?v=ca5d5e6e">
+<script defer src="/assets/capture.js?v=fbc55811"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/brand-system.css">
+<link rel="stylesheet" href="/assets/density-system.css?v=37adda98">
+<link rel="stylesheet" href="/assets/mobile-polish.css?v=58114b4b">
+<style id="mobile-footer-final">
+@media(max-width:700px){
+  .chrome-foot{margin-top:24px!important;padding:28px 18px 22px!important}
+  .chrome-foot::before{
+    content:"SHIFT & LEAD";
+    display:block;
+    max-width:1080px;
+    margin:0 auto 16px;
+    font-family:var(--display,"Playfair Display",Georgia,serif);
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:.02em;
+    color:#fff;
+  }
+  .chrome-foot-grid{
+    max-width:1080px!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:6px 22px!important;
+  }
+  .chrome-foot-grid>section{margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(-n+3){display:contents!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>h2{display:none!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>ul{display:contents!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>ul>li{list-style:none!important;margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(-n+3)>ul>li>a{
+    display:block!important;
+    padding:6px 0!important;
+    font-family:var(--ui,"Inter",Arial,sans-serif)!important;
+    font-size:14px!important;
+    font-weight:500!important;
+    line-height:1.25!important;
+    color:#E7E3DC!important;
+    text-decoration:none!important;
+  }
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(1){order:1}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(1){order:2}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(2){order:3}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(3){order:4}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(3){order:5}
+  .chrome-foot-grid>section:nth-child(3)>ul>li:nth-child(1){order:6}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(2),
+  .chrome-foot-grid>section:nth-child(3)>ul>li:nth-child(2){display:none!important}
+  .chrome-foot-grid>section:nth-child(4){
+    order:7;
+    grid-column:1/-1;
+    margin-top:14px!important;
+    padding-top:12px!important;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+  .chrome-foot-grid>section:nth-child(4)>h2{display:none!important}
+  .chrome-foot-grid>section:nth-child(4)>ul{display:flex!important;flex-wrap:wrap!important;gap:6px 0!important;margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(4)>ul>li{list-style:none!important;display:flex!important;align-items:center!important;margin:0!important}
+  .chrome-foot-grid>section:nth-child(4)>ul>li:not(:last-child)::after{content:"·";margin:0 9px;color:#777}
+  .chrome-foot-grid>section:nth-child(4)>ul>li>a{font-family:var(--ui,"Inter",Arial,sans-serif)!important;font-size:12px!important;line-height:1.25!important;color:#B9B5AE!important;text-decoration:none!important}
+  .chrome-foot-legal{max-width:1080px!important;margin:14px auto 0!important;padding:0!important;border:0!important;font-size:0!important;line-height:1!important;text-align:left!important;text-transform:none!important;letter-spacing:0!important}
+  .chrome-foot-legal::before{content:"© 2026 Shift & Lead";font-family:var(--ui,"Inter",Arial,sans-serif);font-size:11px;font-weight:400;letter-spacing:.03em;color:#85817B}
+}
+</style>
+<style id="final-guide-clarity">
+body.guide .mono,body.guide .eyebrow,body.guide .callout-label,body.guide .gate-proof,body.guide .guide-table th{color:#2C4BE0!important}
+body.guide .guide-hero{padding-top:38px!important;padding-bottom:18px!important}
+body.guide .guide-hero h1{margin-bottom:16px!important}
+body.guide .verdict{margin-bottom:0!important;max-width:650px}
+body.guide .prose{padding-top:0!important}
+body.guide .prose h2{margin-top:40px!important}
+body.guide .callout{background:transparent!important;border:0!important;border-left:3px solid #2C4BE0!important;border-radius:0!important;padding:2px 0 2px 18px!important;margin:28px 0!important}
+body.guide .callout-label{margin-bottom:8px!important}
+body.guide .gate{margin-top:42px!important;margin-bottom:42px!important;padding:30px 22px!important}
+body.guide .gate-title{font-size:28px!important;line-height:1.15!important}
+body.guide .gate-sub{font-size:16px!important;line-height:1.55!important}
+body.guide .gate-fineprint{color:#555!important}
+body.guide .related{margin-top:46px!important}
+body.guide .related .card{border-top:3px solid #2C4BE0!important;border-radius:12px!important;box-shadow:none!important}
+body.guide .related .card:hover{transform:none!important;box-shadow:none!important}
+body.guide .related .card-body{padding:18px!important}
+body.guide .byline{margin-top:46px!important}
+body.guide .byline-in{background:#fff!important;border:0!important;border-top:1px solid var(--line)!important;border-radius:0!important;padding:22px 0!important;align-items:flex-start!important}
+body.guide .byline-in img{width:52px!important;height:52px!important}
+body.guide .upsell{margin-top:46px!important;margin-bottom:46px!important}
+body.guide .term-grid{display:grid;gap:0;margin:26px 0;border-top:1px solid var(--line)}
+body.guide .term-item{padding:24px 0;border-bottom:1px solid var(--line)}
+body.guide .term-item h3{font-family:var(--display);font-size:26px;line-height:1.15;margin:0 0 8px}
+body.guide .term-item p{margin:0 0 8px}
+body.guide .term-item p:last-child{margin-bottom:0}
+body.guide .term-item .picture{color:#2C4BE0;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+@media(max-width:700px){
+  body.guide{font-size:18px!important;line-height:1.62!important}
+  body.guide .guide-doc{padding-left:18px!important;padding-right:18px!important;padding-bottom:48px!important}
+  body.guide .guide-hero{padding-top:34px!important}
+  body.guide .guide-hero h1{font-size:42px!important;line-height:1.05!important}
+  body.guide .verdict{font-size:21px!important;line-height:1.48!important}
+  body.guide .prose h2{font-size:31px!important;line-height:1.12!important;margin-top:36px!important;margin-bottom:12px!important}
+  body.guide .prose p{margin-bottom:18px!important}
+  body.guide .guide-table{overflow:visible!important;border:0!important;border-radius:0!important;margin:26px 0!important;background:transparent!important}
+  body.guide .guide-table table,body.guide .guide-table tbody,body.guide .guide-table tr,body.guide .guide-table td{display:block!important;width:100%!important;min-width:0!important}
+  body.guide .guide-table thead{display:none!important}
+  body.guide .guide-table tr{padding:18px 0!important;border-bottom:1px solid var(--line)!important}
+  body.guide .guide-table tr:first-child{border-top:1px solid var(--line)!important}
+  body.guide .guide-table td{padding:4px 0!important;border:0!important;font-size:17px!important;line-height:1.5!important;white-space:normal!important;overflow-wrap:anywhere!important}
+  body.guide .guide-table td:first-child{font-family:var(--display)!important;font-size:23px!important;font-weight:700!important;line-height:1.2!important;margin-bottom:6px!important}
+  body.guide .gate{margin-left:-18px!important;margin-right:-18px!important;padding:28px 18px!important}
+  body.guide .gate-form{display:block!important}
+  body.guide .gate-form input[type=email],body.guide .gate-form button{width:100%!important;min-width:0!important}
+  body.guide .gate-form button{margin-top:10px!important}
+  body.guide .related .card-grid{grid-template-columns:1fr!important;gap:14px!important}
+  body.guide .byline-in{gap:14px!important}
+  body.guide .byline-in p{font-size:16px!important;line-height:1.5!important}
+  body.guide .term-item{padding:20px 0!important}
+  body.guide .term-item h3{font-size:24px!important}
+}
+</style>
+<script defer src="/assets/events.js"></script>
+<link rel="stylesheet" href="/assets/guide-interactive.css?v=20260810">
+<script defer src="/assets/guide-motion.js?v=20260810"></script>
 </head>
-<body class="guide" data-page="what-is-a-prompt">
-<!-- chrome:nav --><!-- /chrome:nav -->
+<body class="guide" data-page="what-is-a-prompt" data-page-kind="guide">
+<!-- chrome:nav -->
+<nav class="site-nav" aria-label="Site">
+  <div class="site-nav-inner">
+    <a class="site-nav-logo" href="https://www.shiftandlead.com/">Shift &amp; Lead</a>
+    <div class="site-nav-links">
+      <a href="https://www.shiftandlead.com/guides/">Guides</a>
+      <a href="https://www.shiftandlead.com/quiz.html">Quiz</a>
+      <a href="https://www.shiftandlead.com/about.html">About</a>
+      <a href="https://www.shiftandlead.com/contact.html">Contact</a>
+      <a class="nav-cta" href="https://www.shiftandlead.com/how-i-can-help.html">How I can help</a>
+    </div>
+    <details class="site-nav-mobile"><summary>Menu</summary><div class="site-nav-mobile-panel"><a href="https://www.shiftandlead.com/guides/">Guides</a><a href="https://www.shiftandlead.com/quiz.html">Quiz</a><a href="https://www.shiftandlead.com/about.html">About</a><a href="https://www.shiftandlead.com/contact.html">Contact</a><a class="nav-cta" href="https://www.shiftandlead.com/how-i-can-help.html">How I can help</a></div></details>
+  </div>
+</nav>
+<!-- /chrome:nav -->
 <article class="guide-doc">
-<header class="guide-hero">
+<header class="guide-hero" data-animate="hero">
 <p class="eyebrow mono">USE AI BETTER</p>
-<h1>A good AI prompt is just a clear brief.</h1>
+<h1>Write prompts that get better results</h1>
 <p class="verdict">If another person could not do the job from your instructions, AI probably cannot do it well either.</p>
 </header>
 <div class="prose">
-<h2>What is an AI prompt?</h2>
+<h2 data-animate="reveal">What is an AI prompt?</h2>
 <p>An <strong>AI prompt</strong> is the instruction you give an AI tool such as ChatGPT, Claude or Gemini.</p>
 <p>It can be one sentence, a long brief, a file, an image or a conversation. The important part is not the length. The important part is whether the AI knows what job you want done.</p>
-<div class="callout"><p class="callout-label">PICTURE IT</p><p>A prompt is the note you hand to a helper before they start the job.</p></div>
-<h2>Why do vague prompts give vague answers?</h2>
+<div class="callout" data-animate="reveal"><p class="callout-label">PICTURE IT</p><p>A prompt is the note you hand to a helper before they start the job.</p></div>
+<h2 data-animate="reveal">Why do vague prompts give vague answers?</h2>
 <p>If you type, “Write me a marketing email,” the AI has to guess almost everything.</p>
 <p>Who is the email for? What are you selling? What happened before this email? What tone do you want? How long should it be?</p>
 <p>When the brief is empty, the AI fills the gaps with generic choices.</p>
-<h2>The four parts of a useful AI prompt</h2>
+<h2 data-animate="reveal">The four parts of a useful AI prompt</h2>
 <p>You do not need a complicated prompt formula. Start with four things:</p>
-<ol>
+<ol data-animate="stagger">
 <li><strong>Goal.</strong> What should the AI do?</li>
 <li><strong>Context.</strong> What does it need to know?</li>
 <li><strong>Example.</strong> What does good look like?</li>
 <li><strong>Format.</strong> What should come back?</li>
 </ol>
-<div class="callout"><p class="callout-label">THE SIMPLE FORMULA</p><p><strong>Goal + context + example + format.</strong></p></div>
-<h2>AI prompt example: weak vs useful</h2>
+<div class="callout" data-animate="reveal"><p class="callout-label">THE SIMPLE FORMULA</p><p><strong>Goal + context + example + format.</strong></p></div>
+<h2 data-animate="reveal">AI prompt example: weak vs useful</h2>
 <p><strong>Weak prompt:</strong> “Write a follow-up email.”</p>
 <p><strong>Useful prompt:</strong> “Write a follow-up email to a client who asked for a quote two weeks ago and has not replied. We have worked together before, so keep it warm and direct. Keep it under 100 words. Give them an easy way to tell me the timing is wrong.”</p>
 <p>The second prompt works better because the AI can see the situation.</p>
-<h2>What does context mean in a prompt?</h2>
+<div class="guide-compare" data-animate="compare" aria-label="Weak prompt compared with a useful prompt">
+  <div class="guide-compare-panel" data-compare="before">
+    <p class="guide-compare-kicker">BEFORE · VAGUE</p>
+    <p class="guide-compare-text">“Write a follow-up email.”</p>
+  </div>
+  <div class="guide-compare-panel" data-compare="after">
+    <p class="guide-compare-kicker">AFTER · USEFUL</p>
+    <p class="guide-compare-text">Give the goal, context, tone, limit and desired outcome.</p>
+  </div>
+  <p class="guide-compare-note">The improvement is not a clever phrase. It is the missing information the AI needs to do the job well.</p>
+</div>
+<h2 data-animate="reveal">What does context mean in a prompt?</h2>
 <p><strong>Context</strong> is the information the AI needs before it can do a good job.</p>
 <p>Think about what a new person would ask you before starting:</p>
-<ul><li>Who is this for?</li><li>What happened before?</li><li>What are we trying to achieve?</li><li>What should we avoid?</li><li>What information is already available?</li></ul>
+<ul data-animate="stagger"><li>Who is this for?</li><li>What happened before?</li><li>What are we trying to achieve?</li><li>What should we avoid?</li><li>What information is already available?</li></ul>
 <p>If the answer matters, include it.</p>
-<h2>Why examples improve AI prompts</h2>
+<h2 data-animate="reveal">Why examples improve AI prompts</h2>
 <p>Examples are often faster than long explanations.</p>
 <p>If you want the AI to match your tone, paste one email you already like. If you want a certain structure, show one example of that structure.</p>
-<div class="callout"><p class="callout-label">PICTURE IT</p><p>Telling someone “make it warm” is vague. Showing them one warm email lets them see what you mean.</p></div>
-<h2>What should you tell AI not to do?</h2>
+<div class="callout" data-animate="reveal"><p class="callout-label">PICTURE IT</p><p>Telling someone “make it warm” is vague. Showing them one warm email lets them see what you mean.</p></div>
+<h2 data-animate="reveal">What should you tell AI not to do?</h2>
 <p>Useful prompts can include limits too.</p>
-<ul><li>No exclamation marks</li><li>Do not invent facts</li><li>Do not make legal claims</li><li>Do not use jargon</li><li>Ask me if information is missing</li></ul>
+<ul data-animate="stagger"><li>No exclamation marks</li><li>Do not invent facts</li><li>Do not make legal claims</li><li>Do not use jargon</li><li>Ask me if information is missing</li></ul>
 <p>Limits are especially useful when the output could create risk.</p>
-<h2>Should you use role prompts?</h2>
+<h2 data-animate="reveal">Should you use role prompts?</h2>
 <p>Sometimes. “Act as a lawyer” or “act as a marketer” is not magic.</p>
 <p>A useful role explains the point of view you need. For example: “Explain this like an accountant speaking to a small business owner who does not work with numbers every day.”</p>
 <p>The job and context still matter more than the label.</p>
-<h2>How to improve a prompt after the first answer</h2>
+<h2 data-animate="reveal">How to improve a prompt after the first answer</h2>
 <p>You do not need to get the perfect prompt on the first try.</p>
-<ul><li>Make it shorter.</li><li>Use simpler words.</li><li>Give me three options.</li><li>Explain what you are unsure about.</li><li>Keep the facts but change the tone.</li></ul>
+<ul data-animate="stagger"><li>Make it shorter.</li><li>Use simpler words.</li><li>Give me three options.</li><li>Explain what you are unsure about.</li><li>Keep the facts but change the tone.</li></ul>
 <p>A good AI conversation often looks like editing with a fast assistant.</p>
-<h2>A prompt you can use today</h2>
-<div class="callout"><p class="callout-label">COPY THIS</p><p><strong>Goal:</strong> [What I need done]<br><strong>Context:</strong> [What you need to know]<br><strong>Example:</strong> [What good looks like]<br><strong>Format:</strong> [How I want the answer]</p></div>
-<h2>The question to ask before you press send</h2>
+<h2 data-animate="reveal">A prompt you can use today</h2>
+<div class="callout" data-animate="reveal"><p class="callout-label">COPY THIS</p><p><strong>Goal:</strong> [What I need done]<br><strong>Context:</strong> [What you need to know]<br><strong>Example:</strong> [What good looks like]<br><strong>Format:</strong> [How I want the answer]</p></div>
+<h2 data-animate="reveal">The question to ask before you press send</h2>
 <p><strong>Could a capable stranger do this job from what I wrote?</strong></p>
 <p>If the answer is no, add the missing information.</p>
 <p>That one habit will improve your prompts more than collecting a hundred clever prompt tricks.</p>
 </div>
-<section class="related"><h2>Read next</h2><div class="card-grid">
+<section class="related" data-animate="reveal"><h2>Read next</h2><div class="card-grid">
 <a class="card" href="/guides/what-is-ai.html"><div class="card-body"><p class="card-kicker mono">THE BASICS</p><h3>What is AI?</h3><p class="card-desc">The simplest explanation of AI, machine learning, LLMs and ChatGPT.</p></div></a>
 <a class="card" href="/guides/ai-jargon-guide.html"><div class="card-body"><p class="card-kicker mono">THE BASICS</p><h3>12 AI words explained so you can picture them</h3><p class="card-desc">Prompt, token, RAG, agent, MCP and more.</p></div></a>
 <a class="card" href="/guides/first-ai-employee.html"><div class="card-body"><p class="card-kicker mono">PUT AI TO WORK</p><h3>Build your first AI worker</h3><p class="card-desc">Turn a clear brief into one repeatable job.</p></div></a>
 </div></section>
 </article>
-<!-- chrome:footer --><!-- /chrome:footer -->
+<!-- chrome:footer -->
+<footer class="chrome-foot">
+  <div class="chrome-foot-grid">
+    <section>
+      <h2>Learn</h2>
+      <ul>
+        <li><a href="https://www.shiftandlead.com/guides/">Guides</a></li>
+        <li><a href="https://www.shiftandlead.com/quiz.html">Quiz</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Work</h2>
+      <ul>
+        <li><a href="https://www.shiftandlead.com/how-i-can-help.html">How I can help</a></li>
+        <li><a href="https://www.shiftandlead.com/build-sprint.html">Build with me</a></li>
+        <li><a href="https://www.shiftandlead.com/workshops.html">Workshops</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>About</h2>
+      <ul>
+        <li><a href="https://www.shiftandlead.com/about.html">About</a></li>
+        <li><a href="https://www.shiftandlead.com/contact.html">Contact</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Legal</h2>
+      <ul>
+        <li><a href="https://www.shiftandlead.com/privacy.html">Privacy</a></li>
+        <li><a href="https://www.shiftandlead.com/terms.html">Terms</a></li>
+        <li><a href="https://www.shiftandlead.com/refund-policy.html">Refunds</a></li>
+        <li><a href="https://www.shiftandlead.com/licensing.html">Licensing</a></li>
+      </ul>
+    </section>
+  </div>
+  <p class="chrome-foot-legal">&copy; <time datetime="2026">2026</time> Shift &amp; Lead. All rights reserved.</p>
+</footer>
+<!-- /chrome:footer -->
 </body>
 </html>
