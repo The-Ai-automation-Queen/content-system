@@ -6,7 +6,7 @@ import { guides, trackDetails, type GuideTrack } from "@/content/guides";
 
 export const metadata: Metadata = {
   title: "Free AI guides for business owners",
-  description: "Free, practical guides for understanding AI, choosing the right tools, and building useful systems with human judgment.",
+  description: "Free, practical guides for understanding AI, choosing the right tools, and deciding what AI can do alone or still needs a person.",
   alternates: { canonical: "/guides/" },
   openGraph: {
     title: "Free AI guides for business owners · Shift & Lead",

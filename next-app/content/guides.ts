@@ -22,6 +22,6 @@ export const guides = (source.guides as Guide[])
 
 export const trackDetails: Record<GuideTrack, { label: string; description: string }> = {
   understand: { label: "Learn", description: "See what AI is, how it works, and what the language really means." },
-  setup: { label: "Build", description: "Turn one useful idea into a working system with clear human control." },
+  setup: { label: "Build", description: "Turn one useful idea into a working system with clear approval points." },
   tools: { label: "Choose", description: "Pick tools for the work they do well, not for the noise around them." },
 };

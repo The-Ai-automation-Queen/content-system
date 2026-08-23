@@ -27,13 +27,17 @@ export function GuideAccessBoundary({
     const hasAccess = window.localStorage.getItem(ACCESS_KEY) === "true";
     setUnlocked(!forceGate && (review || hasAccess));
     setReady(true);
-  }, []);
+    const tracker = (window as Window & { slTrack?: (name: string, data?: Record<string, string>) => void }).slTrack;
+    tracker?.(review || hasAccess ? "guide_open" : "guide_gate_view", { guide_slug: guideSlug, source_page: window.location.pathname });
+  }, [guideSlug]);
 
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus("sending");
     setMessage("");
     const form = new FormData(event.currentTarget);
+    const tracker = (window as Window & { slTrack?: (name: string, data?: Record<string, string>) => void }).slTrack;
+    tracker?.("guide_gate_submit", { guide_slug: guideSlug, source_page: window.location.pathname });
 
     try {
       const response = await fetch("/api/guide-capture", {
@@ -41,15 +45,19 @@ export function GuideAccessBoundary({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: form.get("email"),
+          firstName: form.get("firstName"),
           website: form.get("website"),
           guideSlug,
           source: window.location.pathname,
+          consent: true,
+          timestamp: new Date().toISOString(),
         }),
       });
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || "We could not open the guide. Please try again.");
       window.localStorage.setItem(ACCESS_KEY, "true");
       setUnlocked(true);
+      tracker?.("guide_unlock", { guide_slug: guideSlug, source_page: window.location.pathname });
     } catch (error) {
       setStatus("error");
       setMessage(error instanceof Error ? error.message : "We could not open the guide. Please try again.");
@@ -64,16 +72,18 @@ export function GuideAccessBoundary({
       className={styles.gatePage}
       style={{ "--guide-gate-cover": `url("${cover}")` } as CSSProperties}
     >
-      <section className={styles.gate} role="dialog" aria-modal="true" aria-labelledby="guide-gate-title">
+      <section className={styles.gate} aria-labelledby="guide-gate-title">
         <div className={styles.gateIcon} aria-hidden="true">↗</div>
         <h1 id="guide-gate-title">Access the guide</h1>
-        <p>Enter your email to open the guide. We will also send it to your inbox so you can find it later.</p>
+        <p>Enter your email to read the guide. I will also send occasional practical guides and product updates. You can leave at any time.</p>
         <form onSubmit={submit}>
+          <label htmlFor={`guide-first-name-${guideSlug}`}>First name <span>(optional)</span></label>
+          <input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" />
           <label htmlFor={`guide-email-${guideSlug}`}>Email address</label>
           <input id={`guide-email-${guideSlug}`} name="email" type="email" autoComplete="email" required placeholder="you@example.com" />
           <input className={styles.honeypot} name="website" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
           <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Opening..." : "Access the guide"}</button>
-          <small>You will receive practical Shift & Lead emails. Unsubscribe at any time.</small>
+          <small>One email unlocks all free guides on this device. <a href="/privacy.html">Privacy</a>.</small>
           {status === "error" && <strong role="alert">{message}</strong>}
         </form>
       </section>

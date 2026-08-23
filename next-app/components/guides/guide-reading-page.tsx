@@ -171,23 +171,18 @@ export function GuideReadingPage({ guide }: { guide: GuidePage }) {
 
         <section className={styles.related} aria-labelledby="guide-next-title">
           <div className={styles.relatedInner}>
-            <h2 id="guide-next-title">Keep learning from here</h2>
+            <h2 id="guide-next-title">What do you want to do next?</h2>
             <div className={styles.relatedGrid}>
               {guide.related.map((item) => (
                 <Link href={`/guides/${item.slug}.html`} className={styles.relatedCard} key={item.slug}>
                   <figure><Image src={item.cover} alt="" aria-hidden="true" fill sizes="(max-width: 760px) 100vw, 33vw" /></figure>
-                  <div><h3>{item.title}</h3><p>{item.reason}</p><span>Open guide →</span></div>
+                  <div><h3>{item.title}</h3><p>{item.reason}</p><span>Start the guide →</span></div>
                 </Link>
               ))}
             </div>
           </div>
         </section>
 
-        <footer className={styles.footer}>
-          <div><strong>Shift &amp; Lead</strong><span>Practical AI guidance with human judgment.</span></div>
-          <Link href="/guides/">Guides</Link>
-          <Link href="/about.html">About</Link>
-        </footer>
       </main>
     </GuideAccessBoundary>
   );

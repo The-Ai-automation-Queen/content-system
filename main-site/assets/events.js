@@ -14,6 +14,8 @@
     var f=e.target; if(!f || !f.matches('form')) return;
     var source=(f.querySelector('[name=source]')||{}).value||f.getAttribute('data-source')||'unknown';
     track('form_submit',{source:source});
+    if(f.matches('.apply-form')) track('build_application',{source_page:window.location.pathname});
+    if(f.matches('.booking-form')) track('workshop_application',{source_page:window.location.pathname});
   }, true);
   window.slTrack=track;
 })();

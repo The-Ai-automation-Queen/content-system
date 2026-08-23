@@ -1,17 +1,17 @@
 {
   "brand": "Shift & Lead",
-  "promise": "Build more of what your business needs with AI.",
-  "positioning": "Learn what to build, what to skip, and how to turn AI into real business capability without losing human judgment.",
+  "promise": "Use AI for what it does well. Keep what only you can bring. Build something valuable from the combination.",
+  "positioning": "Learn how to use AI for real work, decide what needs a person, and build from the experience and ideas that are uniquely yours.",
   "identity": "Fatiha Chikh · AI builder and educator · 20 years at Dell, Intel, Microsoft",
   "audience": "Ambitious professionals and business builders ready to put AI to work.",
   "year": 2026,
-  "hosts": {"www": "https://www.shiftandlead.com", "guides": "https://guides.shiftandlead.com", "brief": "https://brief.shiftandlead.com"},
+  "hosts": {"www": "https://www.shiftandlead.com", "guides": "https://www.shiftandlead.com/guides"},
   "nav": [
     {"label": "Guides", "url": "https://www.shiftandlead.com/guides/"},
     {"label": "Workbooks", "url": "https://www.shiftandlead.com/workbooks.html"},
+    {"label": "How I can help", "url": "https://www.shiftandlead.com/how-i-can-help.html"},
     {"label": "About", "url": "https://www.shiftandlead.com/about.html"},
-    {"label": "Contact", "url": "https://www.shiftandlead.com/contact.html"},
-    {"label": "How I can help", "url": "https://www.shiftandlead.com/how-i-can-help.html", "cta": true}
+    {"label": "Build with me", "url": "https://www.shiftandlead.com/build-sprint.html", "cta": true}
   ],
   "footer": [
     {"title": "Learn", "links": [
@@ -39,7 +39,6 @@
   "community": {"status": "waitlist", "url": ""},
   "offers": [
     {"id": "1:1", "name": "Build with Fatiha", "url": "https://www.shiftandlead.com/build-sprint.html", "priceBand": "TODO(fatiha): real price or 'from £___'", "audience": "solo"},
-    {"id": "workshops", "name": "Keynotes & workshops", "url": "https://www.shiftandlead.com/workshops.html", "priceBand": "TODO(fatiha): price or 'on request'", "audience": "teams"},
-    {"id": "fast-forward", "name": "Fast Forward (self-paced system)", "url": "https://www.shiftandlead.com/fast-forward.html", "priceBand": "$299 founding / $499 public; depth add-on $199", "audience": "solo", "note": "Prices as published on the live page; offers.md marks the pivot NEEDS RATIFICATION"}
+    {"id": "workshops", "name": "Workshops and keynotes", "url": "https://www.shiftandlead.com/workshops.html", "priceBand": "TODO(fatiha): price or 'on request'", "audience": "teams"}
   ]
 }

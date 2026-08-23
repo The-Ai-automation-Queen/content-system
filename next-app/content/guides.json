@@ -193,18 +193,6 @@
       "formatLabel": "FREE SETUP"
     },
     {
-      "slug": "research-to-content-workflow",
-      "title": "Turn saved research into content you can actually publish",
-      "h1": "Turn saved research into content you can actually publish",
-      "datePublished": "2026-08-11",
-      "dateModified": "2026-08-11",
-      "readMinutes": 7,
-      "cover": "/images/guides/research-to-content-workflow.webp",
-      "track": "setup",
-      "status": "live",
-      "formatLabel": "FREE GUIDE"
-    },
-    {
       "slug": "what-is-a-prompt",
       "title": "What a prompt actually is",
       "h1": "What a prompt actually is",

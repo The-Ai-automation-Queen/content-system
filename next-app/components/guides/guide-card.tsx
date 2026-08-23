@@ -18,7 +18,7 @@ export function GuideCard({ guide, featured = false }: { guide: Guide; featured?
       <div className="guide-card__body">
         <h2>{guide.title}</h2>
         {guide.summary && <p>{guide.summary}</p>}
-        <span className="guide-card__link">Open guide <span aria-hidden="true">→</span></span>
+        <span className="guide-card__link">Start the guide <span aria-hidden="true">→</span></span>
       </div>
     </Link>
   );

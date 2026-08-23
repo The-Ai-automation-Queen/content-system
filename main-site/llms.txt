@@ -1,21 +1,39 @@
 # Shift & Lead
 
-> Shift & Lead helps non-technical professionals, business owners and teams build practical business capability with AI.
+> Use AI for what it does well. Keep what only you can bring. Build something valuable from the combination.
 
-The site offers four clear routes: learn how to use AI through free guides, explore your own experience through guided workbooks, build a practical system with Fatiha, or bring AI into a team through workshops.
+Shift & Lead helps professionals, business owners and teams use AI for real work, remove repetitive steps and decide what should stay with a person. It also offers a three-part workbook journey for finding personal patterns, recovering lived evidence and choosing what those experiences could become.
 
-## Current resources
+## Start here
 
-- Free AI guides: https://www.shiftandlead.com/guides/
+- Free practical AI guides: https://www.shiftandlead.com/guides/
 - Guided workbooks: https://www.shiftandlead.com/workbooks.html
-- Workshops and team programmes: https://www.shiftandlead.com/workshops.html
-- Build with Fatiha: https://www.shiftandlead.com/build-sprint.html
-- About and proof: https://www.shiftandlead.com/about.html
+- How I can help: https://www.shiftandlead.com/how-i-can-help.html
+- Selective build projects: https://www.shiftandlead.com/build-sprint.html
+- Workshops and keynotes: https://www.shiftandlead.com/workshops.html
+- About Fatiha Chikh: https://www.shiftandlead.com/about.html
+
+## Public guide library
+
+- Keep repeatable work moving while you are offline: https://www.shiftandlead.com/guides/24-7-operations-system.html
+- 12 AI words explained so you can picture them: https://www.shiftandlead.com/guides/ai-jargon-guide.html
+- ChatGPT is the AI most people start with for a reason: https://www.shiftandlead.com/guides/chatgpt.html
+- Claude is the AI people reach for when the work gets complicated: https://www.shiftandlead.com/guides/claude.html
+- Copilot works best when your business lives in Microsoft 365: https://www.shiftandlead.com/guides/copilot.html
+- Your first AI worker should have one job: https://www.shiftandlead.com/guides/first-ai-employee.html
+- Build lead follow-up that does not get forgotten: https://www.shiftandlead.com/guides/follow-up-setup.html
+- Gemini gets more useful when your business already lives inside Google: https://www.shiftandlead.com/guides/gemini.html
+- Let AI sort your inbox. Keep the Send button.: https://www.shiftandlead.com/guides/inbox-manager-setup.html
+- Three AI tools are enough if each one has a real job: https://www.shiftandlead.com/guides/stack-3-tool-ai-stack.html
+- A good AI prompt is just a clear brief: https://www.shiftandlead.com/guides/what-is-a-prompt.html
+- Agentic AI means AI can do more than answer: https://www.shiftandlead.com/guides/what-is-agentic.html
+- What should you never share with AI?: https://www.shiftandlead.com/guides/what-should-you-never-share-with-ai.html
+- What is AI? The simplest explanation I know: https://www.shiftandlead.com/guides/what-is-ai.html
 
 ## Editorial approach
 
-Shift & Lead explains AI in plain English and starts with the business outcome, not the tool. Current guide navigation is organised around saving time, thinking and creating, understanding data, selling and marketing, building AI help, automating and scaling, plus choosing the right AI tool.
+The writing is practical, conversational and specific. Guide access uses an intentional email gate. Private workbook answers and personal reflection text are not collected by general website analytics.
 
 ## Usage terms
 
-Content may be cited or quoted with attribution and a link to the source page. It may not be used to train, fine-tune or build machine-learning models.
+Content may be cited with attribution and a link to the source. It may not be used to train, fine-tune or build machine-learning models.

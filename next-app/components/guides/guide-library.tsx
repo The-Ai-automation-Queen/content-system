@@ -20,6 +20,10 @@ export function GuideLibrary({ guides }: { guides: Guide[] }) {
     return matchesTrack && text.includes(query.trim().toLowerCase());
   }), [filter, guides, query]);
 
+  const track = (name: string, data: Record<string, string>) => {
+    (window as Window & { slTrack?: (event: string, detail?: Record<string, string>) => void }).slTrack?.(name, data);
+  };
+
   return (
     <section className="library" id="library" aria-labelledby="library-title">
       <div className="library__head">
@@ -29,12 +33,12 @@ export function GuideLibrary({ guides }: { guides: Guide[] }) {
         </div>
         <label className="search">
           <span>Search guides</span>
-          <input value={query} onChange={(event) => setQuery(event.target.value)} type="search" placeholder="Try: prompts, inbox, Claude" />
+          <input value={query} onChange={(event) => { setQuery(event.target.value); track("guide_search", { query: event.target.value }); }} type="search" placeholder="Try: prompts, inbox, Claude" />
         </label>
       </div>
       <div className="filters" role="group" aria-label="Filter guides">
         {filters.map((item) => (
-          <button key={item.value} type="button" aria-pressed={filter === item.value} onClick={() => setFilter(item.value)}>
+          <button key={item.value} type="button" aria-pressed={filter === item.value} onClick={() => { setFilter(item.value); track("guide_filter", { filter: item.value }); }}>
             {item.label}
           </button>
         ))}
