@@ -89,8 +89,8 @@ if (!/href=["']\/guides\//i.test(homepage)) failures.push('Homepage no longer li
 if (!/Understand AI\./i.test(guideLibrary) || !/Then use it well\./i.test(guideLibrary)) {
   failures.push('Guide library is not the approved port-4196 implementation');
 }
-if (!/>14(?:<!-- -->|\s)+<!-- -->guides</i.test(guideLibrary)) {
-  failures.push('Guide library no longer identifies the 14 public guides');
+if (!/>15(?:<!-- -->|\s)+<!-- -->guides</i.test(guideLibrary)) {
+  failures.push('Guide library no longer identifies the 15 public guides');
 }
 if (vercel.buildCommand !== 'cd .. && node tools/verify-publish-source.mjs') {
   failures.push('Vercel buildCommand must verify the committed source without rewriting it');
