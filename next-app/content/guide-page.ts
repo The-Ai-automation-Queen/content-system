@@ -1,3 +1,6 @@
+import { copilotGuide, deepSeekGuide, grokGuide, kimiGuide, manusGuide, metaAiGuide, mistralGuide } from "./tool-guide-batch";
+import { aiBrowserGuide, aiConnectionsGuide, aiSearchGuide, aiSkillsGuide, promptGuide } from "./guide-batch-three";
+
 export type GuideStep = {
   title: string;
   body: string;
@@ -58,6 +61,7 @@ export type GuideRelated = {
   title: string;
   reason: string;
   cover: string;
+  status?: "coming-next";
 };
 
 export type GuidePage = {
@@ -89,6 +93,12 @@ export type GuidePage = {
       items: readonly [string, string, string];
     };
     finishLine: string;
+  };
+  paidNextStep?: {
+    label: string;
+    title: string;
+    body: string;
+    status: "coming-soon";
   };
   related: readonly [GuideRelated, GuideRelated, GuideRelated];
 };
@@ -176,16 +186,16 @@ Text:
       cover: "/images/guides/learn-master.webp",
     },
     {
-      slug: "what-is-a-prompt",
-      title: "What a prompt actually is",
-      reason: "Learn how to give an AI tool a clear job and enough useful context.",
-      cover: "/images/guides/what-is-a-prompt.webp",
+      slug: "what-should-you-never-share-with-ai",
+      title: "What should you never share with AI?",
+      reason: "See what must stay out and which privacy setting to check before you paste anything.",
+      cover: "/images/guides/learn-master.webp",
     },
     {
-      slug: "which-ai-tool-for-what",
-      title: "Which AI tool should you use?",
-      reason: "Match the job to the tool before you open another account.",
-      cover: "/images/guides/chatgpt.webp",
+      slug: "what-is-agentic",
+      title: "What AI agents actually do",
+      reason: "See what changes when AI can use tools, access information and take several steps.",
+      cover: "/images/guides/what-is-agentic.webp",
     },
   ],
 } as const satisfies GuidePage;
@@ -364,16 +374,16 @@ Text:
   },
   related: [
     {
-      slug: "what-is-a-prompt",
-      title: "What a prompt actually is",
-      reason: "Learn how to give an AI tool a clear job, useful context and a result you can check.",
-      cover: "/images/guides/what-is-a-prompt.webp",
+      slug: "what-is-ai",
+      title: "What AI actually is",
+      reason: "Get a clear view of what an AI system can produce and what you still need to check.",
+      cover: "/images/guides/what-is-ai.webp",
     },
     {
-      slug: "which-ai-tool-for-what",
-      title: "Which AI tool should you use?",
-      reason: "Match the job to the tool before you open another account.",
-      cover: "/images/guides/chatgpt.webp",
+      slug: "what-should-you-never-share-with-ai",
+      title: "What should you never share with AI?",
+      reason: "Know what stays out before you try a prompt with real work.",
+      cover: "/images/guides/learn-master.webp",
     },
     {
       slug: "what-is-agentic",
@@ -556,22 +566,22 @@ Use everyday language. Do not recommend a tool or design the complete system yet
     heading: "You can now look past the label",
     paragraphs: [
       "You do not need to be impressed because a product calls itself an agent. Inspect the **job, access, permitted actions, approval point and stopping rule**.",
-      "Start with one low-risk task and keep the first test in preparation mode.",
+      "Start with one simple task and keep the first test in preparation mode.",
     ],
     finishLine: "Move forward only when you can see what the agent did and correct it safely.",
   },
   related: [
     {
-      slug: "which-ai-tool-for-what",
-      title: "Which AI tool should you use?",
-      reason: "Match the work to the right kind of tool before you open another account.",
-      cover: "/images/guides/chatgpt.webp",
+      slug: "what-is-ai",
+      title: "What AI actually is",
+      reason: "Understand the larger technology before you decide whether a task needs an agent.",
+      cover: "/images/guides/what-is-ai.webp",
     },
     {
-      slug: "what-is-a-prompt",
-      title: "What a prompt actually is",
-      reason: "Learn how to give an AI tool a clear job, useful context and a result you can check.",
-      cover: "/images/guides/what-is-a-prompt.webp",
+      slug: "what-should-you-never-share-with-ai",
+      title: "What should you never share with AI?",
+      reason: "Check what information and access must stay out before you connect an agent.",
+      cover: "/images/guides/learn-master.webp",
     },
     {
       slug: "ai-jargon-guide",
@@ -723,16 +733,16 @@ If you cannot know whether I have permission, tell me who I need to ask.`,
   },
   related: [
     {
-      slug: "which-ai-tool-for-what",
-      title: "Which AI tool should you use?",
-      reason: "Match the task to the right tool and account before you share any work.",
-      cover: "/images/guides/chatgpt.webp",
+      slug: "what-is-ai",
+      title: "What AI actually is",
+      reason: "Understand what an AI system can produce and why every result still needs checking.",
+      cover: "/images/guides/what-is-ai.webp",
     },
     {
-      slug: "what-is-a-prompt",
-      title: "What a prompt actually is",
-      reason: "Learn what to include without sharing more information than the task needs.",
-      cover: "/images/guides/what-is-a-prompt.webp",
+      slug: "ai-jargon-guide",
+      title: "12 AI words you need to know",
+      reason: "Learn the everyday terms that explain what a tool can see, use and change.",
+      cover: "/images/guides/learn-master.webp",
     },
     {
       slug: "what-is-agentic",
@@ -743,7 +753,582 @@ If you cannot know whether I have permission, tell me who I need to ask.`,
   ],
 } as const satisfies GuidePage;
 
-export const guidePages = [whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide] as const;
+export const whichAiToolGuide = {
+  slug: "which-ai-tool-for-what",
+  title: "Which AI tool should you use?",
+  promise: "Stop choosing AI tools because everyone is talking about them. Choose based on what you need done, where your work lives and what information the tool is allowed to see.",
+  cover: "/images/guides/which-ai-tool-for-what.webp",
+  coverAlt: "The small blue robot mascot choosing between several tools connected to a control machine",
+  seoDescription: "Choose the right AI tool for your work by comparing the job, where your work lives, what the tool must access and what information it is allowed to see.",
+  lumailTag: "guide-which-ai-tool-for-what",
+  sourceNotes: [
+    { label: "OpenAI: What is ChatGPT?", url: "https://help.openai.com/en/articles/12677804-what-is-chatgpt-faq" },
+    { label: "Anthropic: What can I use Claude for?", url: "https://support.anthropic.com/en/articles/7996845-what-are-some-things-i-can-use-claude-for" },
+    { label: "Google: Workspace with Gemini", url: "https://knowledge.workspace.google.com/admin/generative-ai/workspace-with-gemini/google-workspace-with-gemini" },
+    { label: "Microsoft: Microsoft 365 Copilot overview", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview" },
+    { label: "Perplexity: How Perplexity works", url: "https://www.perplexity.ai/help-center/en/articles/10352895-how-does-perplexity-work" },
+    { label: "Google: NotebookLM sources", url: "https://support.google.com/notebooklm/answer/16215270" },
+    { label: "xAI: Grok", url: "https://x.ai/grok" },
+    { label: "DeepSeek", url: "https://www.deepseek.com/en/" },
+    { label: "Kimi: product overview", url: "https://www.kimi.ai/help/getting-started/overview" },
+    { label: "Manus: Browser Operator", url: "https://manus.im/docs/features/browser-operator" },
+    { label: "Meta AI", url: "https://ai.meta.com/meta-ai/assistant/" },
+    { label: "Mistral AI: Le Chat", url: "https://help.mistral.ai/en/collections/701669-le-chat" },
+  ],
+  answer: {
+    paragraphs: [
+      "You probably do not need every AI tool. You need **one that fits the work in front of you**.",
+      "Start with the job, the apps you already use and the information involved. Then test the smallest suitable option before you pay for another subscription.",
+    ],
+  },
+  sections: [
+    {
+      kind: "cards",
+      heading: "Start with the job",
+      introduction: "Use the work you need to finish as your first filter.",
+      items: [
+        {
+          title: "Everyday writing and thinking",
+          body: "Start with **ChatGPT, Claude or Gemini**. All 3 can help you draft, explain, summarise, organise ideas and work with files. Test the same task in 2 of them and keep the answer that is easiest to use and check.",
+        },
+        {
+          title: "Work inside Microsoft 365",
+          body: "Look at **Microsoft Copilot** when your work already happens in Word, Excel, PowerPoint, Outlook and Teams.",
+        },
+        {
+          title: "Work inside Google Workspace",
+          body: "Look at **Gemini** when your work already lives in Gmail, Docs, Sheets, Slides and Drive.",
+        },
+        {
+          title: "Research you need to verify",
+          body: "Use **Perplexity** for current web research with visible sources. Use **NotebookLM** when you want answers based on documents and sources you selected yourself.",
+        },
+      ],
+    },
+    {
+      kind: "accordion",
+      heading: "The other tools you will hear about",
+      introduction: "These tools are not less important. They simply solve different problems.",
+      items: [
+        {
+          title: "Grok",
+          body: "Useful when you want current information from the web and conversations happening on X.",
+          links: [{ label: "Open Grok", href: "https://grok.com/" }],
+        },
+        {
+          title: "DeepSeek",
+          body: "Another option for chat, reasoning and technical work. Check its privacy terms before using workplace information.",
+          links: [{ label: "Open DeepSeek", href: "https://chat.deepseek.com/" }],
+        },
+        {
+          title: "Kimi",
+          body: "Useful for working with long files, research and tasks that need several steps.",
+          links: [{ label: "Open Kimi", href: "https://www.kimi.com/" }],
+        },
+        {
+          title: "Manus",
+          body: "Designed to carry out multi-step tasks using websites, files and browser tools. Review every permission before allowing it to act.",
+          links: [{ label: "Open Manus", href: "https://manus.im/" }],
+        },
+        {
+          title: "Meta AI",
+          body: "Easy to access inside WhatsApp, Instagram, Messenger and Facebook. Better suited to everyday questions than confidential work.",
+          links: [{ label: "Open Meta AI", href: "https://www.meta.ai/" }],
+        },
+        {
+          title: "Mistral Le Chat",
+          body: "A general AI assistant from the European company Mistral AI. It is worth considering when provider location, deployment choice or organisational control matters to you.",
+          links: [{ label: "Open Le Chat", href: "https://chat.mistral.ai/" }],
+        },
+      ],
+    },
+    {
+      kind: "prose",
+      heading: "What about Codex and Claude Code?",
+      paragraphs: [
+        "**Codex and Claude Code are advanced tools for working inside software projects.**",
+        "You do not need them to write an email, understand a document or research a topic. We will cover them properly in the ChatGPT and Claude guides.",
+      ],
+    },
+    {
+      kind: "steps",
+      heading: "Do not buy several subscriptions yet",
+      introduction: "Test the same real task before you make a decision.",
+      steps: [
+        {
+          title: "Choose one task you understand",
+          body: "Use work you already know well, so you can recognise a weak or wrong result.",
+        },
+        {
+          title: "Test no more than 2 tools",
+          body: "Give both tools the same information and ask for the same result.",
+        },
+        {
+          title: "Compare what matters",
+          body: "Check which answer was more useful, needed fewer corrections, was easier to work with and fitted the apps you already use.",
+        },
+        {
+          title: "Check the account before real work",
+          body: "Confirm that the tool and account are approved for the information you need to use.",
+        },
+      ],
+    },
+    {
+      kind: "steps",
+      heading: "Never used an AI chat tool? Start here",
+      introduction: "Use one free chat tool to create your shortlist. You do not need to subscribe first.",
+      steps: [
+        {
+          title: "Open one AI chat tool",
+          body: "Choose any one you can access.",
+          links: [
+            { label: "Open ChatGPT", href: "https://chatgpt.com/" },
+            { label: "Open Claude", href: "https://claude.ai/" },
+            { label: "Open Gemini", href: "https://gemini.google.com/" },
+          ],
+        },
+        {
+          title: "Start a new conversation",
+          body: "Choose **New chat**, the plus sign or the empty message box.",
+        },
+        {
+          title: "Copy the instruction below",
+          body: "Click **Copy**, paste it into the message box and replace the words inside square brackets.",
+        },
+        {
+          title: "Remove private information",
+          body: "Do not include names, customer details, passwords, confidential files or private conversations.",
+        },
+        {
+          title: "Send it",
+          body: "Answer the questions one at a time, then verify the recommendation on the provider’s official pages.",
+        },
+      ],
+    },
+  ],
+  tryNow: {
+    heading: "Try it now: build your shortlist",
+    introduction: "Copy this into one AI chat tool. You will finish with no more than 2 options to test.",
+    prompt: `Help me choose one AI tool for this job:
+
+[Describe the task you want help with.]
+
+My work mainly lives in:
+
+[Microsoft 365, Google Workspace or other tools.]
+
+The information involved is:
+
+[Public, internal or confidential.]
+
+Ask me up to 5 short questions, one at a time.
+
+Then recommend no more than 2 options from ChatGPT, Claude, Gemini, Microsoft Copilot, Perplexity, NotebookLM, Grok, DeepSeek, Kimi, Manus, Meta AI or Mistral Le Chat.
+
+For each option, explain:
+
+1. Why it fits this task.
+2. What I should test first.
+3. What information I should not share.
+4. What limitation I should watch for.
+5. Which official product, pricing and privacy pages I should check.
+
+Do not recommend a tool simply because it is popular.`,
+    check: "Treat the answer as a shortlist, not a final decision. Open the official links and check the current plan, privacy terms and availability before connecting files or paying.",
+  },
+  conclusion: {
+    heading: "You now have a shortlist",
+    paragraphs: [
+      "You have one real task, one tool to test, a reason it fits, a clear idea of what you will not share and a result you know how to check.",
+    ],
+    finishLine: "Do not collect tools. Choose one, test it properly and keep it only if it makes the work easier to finish.",
+  },
+  related: [
+    {
+      slug: "chatgpt",
+      title: "Should you use ChatGPT?",
+      reason: "See the everyday, connected-work and advanced Codex routes.",
+      cover: "/images/guides/chatgpt.webp",
+    },
+    {
+      slug: "claude",
+      title: "Should you use Claude?",
+      reason: "See where Claude fits, how to start and when Claude Code becomes useful.",
+      cover: "/images/guides/claude.webp",
+    },
+    {
+      slug: "gemini",
+      title: "Should you use Gemini?",
+      reason: "See how Gemini works across Google tools and which route fits your account.",
+      cover: "/images/guides/gemini.webp",
+    },
+  ],
+} as const satisfies GuidePage;
+
+export const chatGptGuide = {
+  slug: "chatgpt",
+  title: "Should you use ChatGPT?",
+  promise: "Use ChatGPT when you want one flexible place to write, research, work with files or think through a task. You do not need every feature, and you should not connect your work accounts on day one.",
+  cover: "/images/guides/chatgpt.webp",
+  coverAlt: "The small blue robot mascot considering a vintage multi-tool for writing, files, images and ideas",
+  seoDescription: "A beginner-friendly guide to choosing ChatGPT, using Chat, Projects, Work and Codex, checking privacy settings and completing a useful first task.",
+  lumailTag: "guide-chatgpt",
+  sourceNotes: [
+    { label: "OpenAI: ChatGPT capabilities", url: "https://help.openai.com/en/articles/9260256-chatgpt-capabilities-overview" },
+    { label: "OpenAI: The ChatGPT home page", url: "https://help.openai.com/en/articles/9125172-the-chatgpt-home-page" },
+    { label: "OpenAI: Projects in ChatGPT", url: "https://help.openai.com/en/articles/10169521-projects-in-chatgpt" },
+    { label: "OpenAI: ChatGPT Work and Codex", url: "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex" },
+    { label: "OpenAI: Apps in ChatGPT", url: "https://help.openai.com/en/articles/11487775-apps-in-chatgpt" },
+    { label: "OpenAI: Data Controls FAQ", url: "https://help.openai.com/en/articles/7730893-chatgpt-data-controls-faq" },
+    { label: "OpenAI: Memory FAQ", url: "https://help.openai.com/en/articles/8590148-memory-faq" },
+    { label: "OpenAI: Using Codex with your ChatGPT plan", url: "https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan" },
+  ],
+  answer: {
+    paragraphs: [
+      "**Yes, ChatGPT is a useful first AI tool for everyday work.** Start with the free plan and one simple task. Keep it only if the result saves you time and is easy to check.",
+      "Choose another tool first if your organisation requires an approved system or your work needs to remain inside a specific company platform.",
+    ],
+  },
+  sections: [
+    {
+      kind: "cards",
+      heading: "Choose the part you actually need",
+      items: [
+        { title: "Chat", body: "Use Chat for one question or task. Ask it to explain something, improve a draft, organise notes, compare options or help you think through a problem." },
+        { title: "Projects", body: "Use a Project when you keep returning to the same work. It keeps related chats, files and instructions together, so you do not need to explain the background every time." },
+        { title: "Work", body: "Use **Work** for a longer task that needs several steps, research or a finished deliverable. If it does not appear in your account, ignore it for now because availability varies." },
+        { title: "Codex", body: "Codex is OpenAI's tool for working with code. If you do not work with software, you do not need it yet." },
+      ],
+    },
+    {
+      kind: "cards",
+      heading: "Match the feature to the job",
+      items: [
+        { title: "Search", body: "Use Search when the answer may have changed recently. Ask for sources, then open them yourself before using the information." },
+        { title: "Files and data", body: "Select the **+** button to attach a document, image or spreadsheet. Say exactly what you want ChatGPT to find, compare or explain, then check the answer against the original file." },
+        { title: "Images", body: "Upload an image or screenshot and ask a specific question, or ask ChatGPT to create or edit an image. Check text, numbers, logos, faces and small details before using it." },
+        { title: "Voice", body: "Select the voice button when talking is easier than typing. Review the written result because names, numbers and specialist words can be misunderstood." },
+        { title: "Canvas", body: "Use Canvas when you want to work through a longer piece of writing or code. Select the section you want to change instead of rebuilding the entire draft." },
+      ],
+    },
+    {
+      kind: "steps",
+      heading: "Check these settings first",
+      introduction: "Set the account up before you use it for real work.",
+      steps: [
+        { title: "Choose whether chats help train the models", body: "On a personal account, open **Profile → Settings → Data Controls**. Turn off **Improve the model for everyone** if you do not want new conversations used to improve OpenAI's models." },
+        { title: "Check what ChatGPT remembers", body: "Open **Settings → Personalization → Memory**. Review what is stored, turn Memory off or use a Temporary Chat when you do not want a conversation added to your history or memory." },
+        { title: "Follow your organisation's rules", body: "Do not place confidential work inside a personal account simply because you pay for Plus or Pro. Use the workspace and tools your organisation has approved." },
+      ],
+    },
+    {
+      kind: "steps",
+      heading: "Connect an app only when it solves a real problem",
+      introduction: "ChatGPT can connect to email, calendars, cloud storage and other work tools. Do not connect everything because the option exists.",
+      steps: [
+        { title: "Open the app directory", body: "Open **Settings → Apps**, or open the Plugin directory from the tools menu." },
+        { title: "Review the access", body: "Choose the app, read what information and actions it can access, then connect the correct account." },
+        { title: "Start with permission prompts", body: "Choose **Always ask** when it is available, so ChatGPT asks before it uses the connected app." },
+        { title: "Use the app deliberately", body: "Open a chat and select the connected app from the tools menu only when the task needs it." },
+        { title: "Disconnect it properly", body: "Return to **Settings → Apps**, select the app and disconnect it. This stops future access but does not remove information already used in previous chats or memories." },
+      ],
+    },
+    {
+      kind: "prose",
+      heading: "Start free and upgrade for a reason",
+      paragraphs: [
+        "The free plan is enough to find out whether ChatGPT helps with your work.",
+        "Consider paying only when you repeatedly reach a limit during useful work, need a feature unavailable on your plan or can clearly see that the time saved is worth the subscription.",
+      ],
+      keyLine: "Do not upgrade because one vague instruction produced a weak answer. Improve the task, context and checking process first.",
+    },
+  ],
+  tryNow: {
+    heading: "Try it now",
+    introduction: "Use rough notes that contain no private information. You will finish with a short plan you can check against your original words.",
+    prompt: `I have rough notes and need a clear plan for what to do next.
+
+Use only the information in my notes.
+
+Please give me:
+
+1. The outcome I appear to be working towards, in one sentence.
+2. The next 3 actions, in the order I should do them.
+3. The information I still need before I can act.
+4. Any name, date, number or commitment that you could not verify.
+
+Do not invent missing information. Mark it as "Needs checking."
+
+My notes:
+
+[Paste your non-confidential notes here]`,
+    instructions: [
+      { title: "Open ChatGPT", body: "Go to **chatgpt.com**, sign in if you want to save the conversation and select **New chat**.", links: [{ label: "Open ChatGPT", href: "https://chatgpt.com/" }] },
+      { title: "Copy the instruction", body: "Select **Copy**, paste the instruction into the message box and replace the bracketed text." },
+      { title: "Remove private information", body: "Use notes without customer details, passwords, financial information or confidential company material." },
+      { title: "Send and check", body: "Send the message, then compare every action, name, date and number with your original notes." },
+    ],
+    check: "If ChatGPT added something that was not in your notes, remove it or verify it before acting.",
+  },
+  conclusion: {
+    heading: "You now know where ChatGPT fits",
+    paragraphs: [
+      "Use **Chat** for one-off tasks, **Projects** for work you return to, **Work** for longer deliverables and **Codex** for software work.",
+    ],
+    finishLine: "Keep ChatGPT if it makes useful work easier to finish without creating more risk or checking than it saves.",
+  },
+  related: [
+    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Know what must stay outside an AI tool before you connect files or accounts.", cover: "/images/guides/learn-master.webp" },
+    { slug: "which-ai-tool-for-what", title: "Which AI tool should you use?", reason: "Compare the main tools before deciding which one belongs in your everyday work.", cover: "/images/guides/which-ai-tool-for-what.webp" },
+    { slug: "claude", title: "Should you use Claude?", reason: "Compare ChatGPT with Claude before choosing your main everyday tool.", cover: "/images/guides/claude.webp" },
+  ],
+} as const satisfies GuidePage;
+
+export const claudeGuide = {
+  slug: "claude",
+  title: "Should you use Claude?",
+  promise: "Use Claude when you want help reading, writing or thinking through detailed work without losing the thread. Start with Chat, then add Projects, connectors or Claude Code only when the job needs them.",
+  cover: "/images/guides/claude.webp",
+  coverAlt: "The small blue robot mascot checking a long document as it passes through a vintage writing machine",
+  seoDescription: "A beginner-friendly guide to Claude Chat, Projects, connectors and Claude Code, with current access steps, privacy controls and a useful first task.",
+  lumailTag: "guide-claude",
+  sourceNotes: [
+    { label: "Anthropic: Get started with Claude", url: "https://support.claude.com/en/articles/8114491-get-started-with-claude" },
+    { label: "Anthropic: Create and manage projects", url: "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" },
+    { label: "Anthropic: Use connectors", url: "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities" },
+    { label: "Anthropic: Use incognito chats", url: "https://support.claude.com/en/articles/12260368-use-incognito-chats" },
+    { label: "Anthropic: Claude memory", url: "https://support.claude.com/en/articles/11817273-use-claudes-chat-search-and-memory-to-build-on-previous-context" },
+    { label: "Anthropic: Claude Code user FAQ", url: "https://support.claude.com/en/articles/14554922-claude-code-user-faq" },
+  ],
+  answer: {
+    paragraphs: [
+      "**Yes, Claude is worth trying when your work involves long documents, careful writing or a problem you need to think through over several rounds.**",
+      "Start with the free plan and one document or task you already understand. Choose something else first if the main value you need is direct access to Microsoft 365 or Google Workspace.",
+    ],
+  },
+  sections: [
+    {
+      kind: "cards",
+      heading: "Choose the part you actually need",
+      items: [
+        { title: "Claude Chat", body: "Use Chat for writing, explanations, document questions, comparisons and one-off thinking. This is where most beginners should start." },
+        { title: "Projects", body: "Use a Project for work you return to. It keeps related chats, instructions and source material together. Free accounts can create a limited number of Projects." },
+        { title: "Cowork", body: "Use Cowork for longer or shared work when it appears in your account. If you do not have it, ignore it and continue with Chat or Projects." },
+        { title: "Claude Code", body: "Use Claude Code when you work inside a software project. It can read, edit and check code from a terminal or supported coding tool." },
+      ],
+    },
+    {
+      kind: "cards",
+      heading: "Match Claude to the job",
+      items: [
+        { title: "Read a long document", body: "Attach the file, say what decision or question matters and ask Claude to point to the passages supporting its answer." },
+        { title: "Improve a draft", body: "Give Claude the audience, purpose and parts that must stay. Ask it to explain its changes instead of silently replacing your meaning." },
+        { title: "Keep work together", body: "Create a Project when the same source material and instructions will be used more than once." },
+        { title: "Create a working file", body: "Claude can create or edit documents, spreadsheets, presentations and PDFs when that feature is available on your account. Check the finished file, not only the chat explanation." },
+      ],
+    },
+    {
+      kind: "steps",
+      heading: "Start safely",
+      introduction: "Use Claude without giving it unnecessary information.",
+      steps: [
+        { title: "Open Claude", body: "Go to **claude.ai**, create or sign in to an account and type your first request in the message box.", links: [{ label: "Open Claude", href: "https://claude.ai/" }] },
+        { title: "Start free", body: "Use the free plan to test one real task. Pay only when useful work repeatedly reaches a plan limit or needs a paid feature." },
+        { title: "Use Incognito when appropriate", body: "For a temporary conversation outside a Project, select the **ghost icon** before you start. Incognito chats are not saved to your history or memory and are not used for training, but they are still retained for a limited safety period." },
+        { title: "Review Memory", body: "Open **Settings → Memory** to see what Claude remembers or to turn memory and past-chat search off." },
+      ],
+    },
+    {
+      kind: "steps",
+      heading: "Connect another service only when the task needs it",
+      introduction: "A connector can let Claude read information or take actions using access you already have in another service.",
+      steps: [
+        { title: "Open the directory", body: "Open **Customize → Connectors**, select the **+** button and browse the directory. You can also open it from **+ → Connectors → Manage connectors** inside a chat." },
+        { title: "Read the capabilities", body: "Choose the connector and check whether it can read, write or take actions before selecting **Connect** or **Install**." },
+        { title: "Grant only the access you need", body: "Sign in to the correct account and review every permission. Claude inherits your access from the connected service." },
+        { title: "Enable it for the conversation", body: "Inside the chat, select **+ → Connectors** and turn on only the service needed for that task." },
+        { title: "Disconnect it", body: "Return to **Customize → Connectors**, choose the service and select **Disconnect** when it is no longer needed." },
+      ],
+    },
+    {
+      kind: "steps",
+      heading: "Claude Code is the advanced route",
+      introduction: "Stop here unless you work with code or have technical help. Claude Code can change real project files.",
+      steps: [
+        { title: "Check the prerequisite", body: "You need a software project, access to its files and comfort using a terminal or supported coding tool." },
+        { title: "Use the official installer", body: "Follow Anthropic's current Claude Code setup guide for your operating system. Do not copy installation commands from an old article or random video.", links: [{ label: "Open the Claude Code setup", href: "https://docs.anthropic.com/en/docs/claude-code/getting-started" }] },
+        { title: "Open the project first", body: "Navigate to the correct project folder, start Claude Code and sign in with an eligible Claude plan or Anthropic Console account." },
+        { title: "Keep control", body: "Review the plan and file changes before approval. Do not give it a confidential repository or live deployment access until your technical and security rules are clear." },
+      ],
+    },
+  ],
+  tryNow: {
+    heading: "Try it now",
+    introduction: "Use a short, non-confidential document or set of notes. Claude will turn it into a decision brief without filling gaps with guesses.",
+    prompt: `Help me turn the source below into a short decision brief.
+
+Use only the source I provide.
+
+Give me:
+
+1. The decision or question at the centre of the source.
+2. The 3 facts that matter most.
+3. The options mentioned, with the evidence for each one.
+4. What is still missing or unclear.
+5. The next question I should answer before deciding.
+
+Quote the exact line supporting every fact. If the source does not support a claim, write "Not in the source."
+
+Source:
+
+[Paste non-confidential text here]`,
+    instructions: [
+      { title: "Open Claude", body: "Go to **claude.ai** and start a new conversation.", links: [{ label: "Open Claude", href: "https://claude.ai/" }] },
+      { title: "Copy and paste", body: "Select **Copy**, paste the instruction and replace the bracketed text." },
+      { title: "Remove private information", body: "Do not use names, customer records, passwords, confidential files or private conversations." },
+      { title: "Check every quote", body: "Compare Claude's quoted evidence with your source before you use the brief." },
+    ],
+    check: "If a quote does not support the point beside it, remove that point or ask Claude to correct it using only the source.",
+  },
+  conclusion: {
+    heading: "You now know where Claude fits",
+    paragraphs: [
+      "Use **Chat** for one task, **Projects** for repeated work, **connectors** only when access is necessary and **Claude Code** only for software work.",
+    ],
+    finishLine: "Keep Claude if it helps you understand or improve detailed work while making its evidence easy to check.",
+  },
+  related: [
+    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Decide what must stay out before you upload documents or connect another service.", cover: "/images/guides/learn-master.webp" },
+    { slug: "chatgpt", title: "Should you use ChatGPT?", reason: "Compare Claude with a broader everyday tool before choosing a main assistant.", cover: "/images/guides/chatgpt.webp" },
+    { slug: "gemini", title: "Should you use Gemini?", reason: "See whether working closer to Google Workspace would save more time.", cover: "/images/guides/gemini.webp" },
+  ],
+} as const satisfies GuidePage;
+
+export const geminiGuide = {
+  slug: "gemini",
+  title: "Should you use Gemini?",
+  promise: "Use Gemini when your work already lives in Google and you want AI closer to Gmail, Drive, Docs or Calendar. Start with the Gemini app, then connect only the Google services the task genuinely needs.",
+  cover: "/images/guides/gemini.webp",
+  coverAlt: "The small blue robot mascot connecting mail, calendar, files and images to a vintage control desk",
+  seoDescription: "A beginner-friendly guide to Gemini, Google Workspace connections, privacy settings, AI Studio and Gemini CLI, with one useful first task.",
+  lumailTag: "guide-gemini",
+  sourceNotes: [
+    { label: "Google: Connected Apps with a work or school account", url: "https://support.google.com/gemini/answer/14959807" },
+    { label: "Google: Manage Connected Apps", url: "https://support.google.com/gemini/answer/13695044" },
+    { label: "Google: Gemini Apps Activity", url: "https://support.google.com/gemini/answer/13278892" },
+    { label: "Google: Gemini Apps Privacy Hub", url: "https://support.google.com/gemini/answer/13594961" },
+    { label: "Google: AI Studio quickstart", url: "https://ai.google.dev/gemini-api/docs/ai-studio-quickstart" },
+    { label: "Google: Gemini CLI getting started", url: "https://github.com/google-gemini/gemini-cli/blob/main/docs/get-started/index.md" },
+  ],
+  answer: {
+    paragraphs: [
+      "**Yes, Gemini is worth trying when Gmail, Drive, Docs, Sheets and Calendar are already where your work happens.** Its main advantage is being close to the Google tools and information you use.",
+      "Start with the free Gemini app and one simple task. Do not connect your Google account data until you understand the activity setting, permissions and information involved.",
+    ],
+  },
+  sections: [
+    {
+      kind: "cards",
+      heading: "Choose the part you actually need",
+      items: [
+        { title: "Gemini app", body: "Use **gemini.google.com** for questions, drafts, research, files, images and everyday tasks. This is where beginners should start." },
+        { title: "Gemini in Google Workspace", body: "Use Gemini inside Gmail, Docs, Sheets, Slides or Meet when your account and organisation include it. This keeps the help closer to the work." },
+        { title: "NotebookLM", body: "Use NotebookLM when you want answers and summaries based on sources you choose, such as reports, PDFs and notes." },
+        { title: "AI Studio and Gemini CLI", body: "Use AI Studio to test prompts or build with the Gemini API. Use Gemini CLI from a terminal for technical and coding work. Most beginners can ignore both for now." },
+      ],
+    },
+    {
+      kind: "cards",
+      heading: "Match Gemini to the job",
+      items: [
+        { title: "Find work in Google", body: "Ask Gemini to find or summarise information from a connected Gmail, Drive, Calendar, Keep or Tasks account when the connection is available and approved." },
+        { title: "Work with a file", body: "Attach a document, image or spreadsheet and ask one exact question. Check the answer against the original file." },
+        { title: "Research current information", body: "Ask for current information and open the sources shown beneath the answer before you rely on it." },
+        { title: "Talk through an idea", body: "Use Gemini Live when speaking is easier than typing. Review the transcript and any actions before you keep or send them." },
+      ],
+    },
+    {
+      kind: "steps",
+      heading: "Check the account and activity setting first",
+      introduction: "Personal and work accounts do not use the same controls.",
+      steps: [
+        { title: "Open Gemini", body: "Go to **gemini.google.com** and sign in with the Google account you intend to use.", links: [{ label: "Open Gemini", href: "https://gemini.google.com/" }] },
+        { title: "Review personal activity", body: "On a personal account, open **Settings & help → Activity**. You can review, delete or turn off **Keep Activity**. When it is off, future chats are not used to train Google's AI models, but many Connected Apps become unavailable." },
+        { title: "Use a Temporary Chat when suitable", body: "Use a Temporary Chat when you do not want the conversation saved in your activity. It does not turn a personal account into an approved place for confidential work." },
+        { title: "Check work or school controls", body: "On a work or school account, your Google Workspace administrator controls availability, retention and which apps Gemini can use." },
+      ],
+    },
+    {
+      kind: "steps",
+      heading: "Connect Google apps deliberately",
+      introduction: "A connection can expose email, files, calendar information or other account data to the task. Connect only what you need.",
+      steps: [
+        { title: "Open Connected Apps", body: "On a personal account, open **Settings & help → Personal Intelligence → Connected Apps**. Choose individual apps rather than selecting **Connect all**." },
+        { title: "Use the correct Google account", body: "For work or school, sign in to Gemini with the same account used for Google Workspace. Your administrator must have enabled the app." },
+        { title: "Call the app into the chat", body: "Type **@** in the message box and select Gmail, Drive, Calendar or another available app. Then name the file, email or task Gemini should use." },
+        { title: "Check the source", body: "Open the source shown beneath Gemini's response. It can select an older email or misunderstand which file matters." },
+        { title: "Disconnect when finished", body: "Return to **Connected Apps** and turn the app off. Disconnecting does not delete information already stored in Gemini Apps Activity, so review and delete that activity separately if needed." },
+      ],
+    },
+    {
+      kind: "steps",
+      heading: "The advanced route",
+      introduction: "Stop here unless you are building software or have technical help.",
+      steps: [
+        { title: "Use Google AI Studio to experiment", body: "Open AI Studio to test prompts, models and tools. An API key may be created for you, so treat it like a password and never place it in public code.", links: [{ label: "Open Google AI Studio", href: "https://aistudio.google.com/" }] },
+        { title: "Use Gemini CLI from a terminal", body: "Gemini CLI can work with files and code on your computer. It requires a terminal, Node.js and a Google sign-in or API setup.", links: [{ label: "Open the Gemini CLI guide", href: "https://github.com/google-gemini/gemini-cli/blob/main/docs/get-started/index.md" }] },
+        { title: "Keep the first technical task reversible", body: "Use a copy of the project, review every file change and do not connect production systems until a technical owner has checked the setup." },
+      ],
+    },
+  ],
+  tryNow: {
+    heading: "Try it now",
+    introduction: "Use short notes that contain no private information. Gemini will turn them into a follow-up email and a clear action list.",
+    prompt: `Turn the notes below into a short follow-up email and an action list.
+
+Use only the information I provide.
+
+For the email:
+
+1. State the purpose in the first sentence.
+2. Keep it under 150 words.
+3. Include only confirmed decisions and dates.
+4. Mark missing information as [NEEDS CHECKING].
+
+After the email, give me an action list with:
+
+1. The action.
+2. The person responsible, if named.
+3. The date, if confirmed.
+
+Do not invent names, dates or commitments.
+
+Notes:
+
+[Paste non-confidential notes here]`,
+    instructions: [
+      { title: "Open Gemini", body: "Go to **gemini.google.com** and start a new chat.", links: [{ label: "Open Gemini", href: "https://gemini.google.com/" }] },
+      { title: "Copy and paste", body: "Select **Copy**, paste the instruction and replace the bracketed text." },
+      { title: "Remove private information", body: "Do not include customer details, private email, passwords or confidential company information." },
+      { title: "Check before sending", body: "Compare every decision, owner and date with your original notes. Do not send the draft directly from a connected app until you have checked it." },
+    ],
+    check: "The result is ready only when every action, name and date can be traced back to your notes.",
+  },
+  conclusion: {
+    heading: "You now know where Gemini fits",
+    paragraphs: [
+      "Use the **Gemini app** for one task, **Workspace features** when the work already lives in Google, **NotebookLM** for selected sources and **AI Studio or Gemini CLI** only for technical work.",
+    ],
+    finishLine: "Keep Gemini if working closer to your Google tools saves more time than the connection and checking create.",
+  },
+  related: [
+    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Check what stays out before you connect Gmail, Drive or Calendar.", cover: "/images/guides/learn-master.webp" },
+    { slug: "chatgpt", title: "Should you use ChatGPT?", reason: "Compare Gemini with a broader standalone assistant before choosing your main tool.", cover: "/images/guides/chatgpt.webp" },
+    { slug: "claude", title: "Should you use Claude?", reason: "See whether careful document work matters more than Google integration.", cover: "/images/guides/claude.webp" },
+  ],
+} as const satisfies GuidePage;
+
+export const guidePages = [whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide, whichAiToolGuide, chatGptGuide, claudeGuide, geminiGuide, copilotGuide, metaAiGuide, grokGuide, deepSeekGuide, kimiGuide, manusGuide, mistralGuide, promptGuide, aiBrowserGuide, aiConnectionsGuide, aiSkillsGuide, aiSearchGuide] as const;
 
 export function getGuidePage(slug: string) {
   return guidePages.find((guide) => guide.slug === slug);

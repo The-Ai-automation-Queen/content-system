@@ -155,8 +155,8 @@ body[data-page-kind="workshops"] .booking-form textarea::placeholder{color:#777!
 body[data-page-kind="workshops"] .booking-status{color:var(--blue-deep)!important}
 
 /* Work with me */
-body[data-page-kind="build"] .offer-hero{position:relative!important;overflow:hidden!important;isolation:isolate!important;padding-top:50px!important;padding-bottom:50px!important;background:linear-gradient(180deg,var(--cream) 0%,#fff 100%)!important}
-body[data-page-kind="build"] .offer-hero::after{content:"";position:absolute;z-index:0;right:0;top:0;bottom:0;width:min(41%,520px);background:url('/fatiha-desk.jpg') center 38%/cover no-repeat;border-left:1px solid var(--line)}
+body[data-page-kind="build"] .offer-hero{position:relative!important;overflow:hidden!important;isolation:isolate!important;padding-top:50px!important;padding-bottom:50px!important;background:#fff!important}
+body[data-page-kind="build"] .offer-hero::after{content:"";position:absolute;z-index:0;right:0;top:0;bottom:0;width:min(43%,540px);background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.2) 28%,rgba(255,255,255,0) 58%),url('/fatiha-desk.jpg') center 38%/cover no-repeat;border-left:0}
 body[data-page-kind="build"] .offer-hero-inner{position:relative!important;z-index:1!important;padding-right:min(43%,540px)!important}
 body[data-page-kind="build"] .offer-section{padding-top:40px!important;padding-bottom:40px!important}
 body[data-page-kind="build"] .offer-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}

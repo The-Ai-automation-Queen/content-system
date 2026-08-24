@@ -10,4 +10,8 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## Shift & Lead guide rules
 
-Before writing or restructuring any guide, read `../docs/GUIDE-EDITORIAL-STANDARDS.md`. These rules override any default blog-post or glossary pattern.
+Before writing, restructuring or publishing a guide, use the
+`shift-lead-guide-builder` skill as the single source of truth. Repository files
+are implementation and state, not competing guide rulebooks. A guide that is not
+explicitly listed in `../data/guide-publication.json` must remain hidden from the
+public library and related-guide components.

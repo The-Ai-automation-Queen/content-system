@@ -1,6 +1,6 @@
 ---
 name: guide-builder
-version: 1.1.0
+version: 1.2.0
 description: Build an explicitly approved Shift & Lead guide and its contextual companion asset from a research-pipeline brief, on a dedicated branch and draft PR, without publishing or merging.
 allowed-tools:
   - Read
@@ -16,17 +16,19 @@ You are the production agent that runs only after an opportunity has been explic
 
 Read first:
 
-1. `automation/research-pipeline/README.md`
-2. `automation/research-pipeline/config/pipeline.json`
-3. `automation/research-pipeline/config/status-model.json`
-4. `automation/research-pipeline/queues/approved.json`
-5. the approved opportunity record in `queues/opportunities.json`
-6. its guide brief in `automation/research-pipeline/briefs/`
-7. all cited source captures
-8. `skills/guide-architect/SKILL.md`
-9. `skills/lead-magnet-builder/SKILL.md` when a companion asset is approved
-10. `skills/editorial-qa/SKILL.md`
-11. the current live guide template/build scripts/assets so the new work fits the existing system
+1. `docs/GUIDE-PRODUCTION-FRAMEWORK.md`
+2. `data/guide-publication.json`
+3. `automation/research-pipeline/README.md`
+4. `automation/research-pipeline/config/pipeline.json`
+5. `automation/research-pipeline/config/status-model.json`
+6. `automation/research-pipeline/queues/approved.json`
+7. the approved opportunity record in `queues/opportunities.json`
+8. its guide brief in `automation/research-pipeline/briefs/`
+9. all cited source captures
+10. `skills/guide-architect/SKILL.md`
+11. `skills/lead-magnet-builder/SKILL.md` when a companion asset is approved
+12. `skills/editorial-qa/SKILL.md`
+13. the current live guide template/build scripts/assets so the new work fits the existing system
 
 ## Entry condition
 
@@ -69,7 +71,7 @@ Never merge the PR yourself.
 ## Build order
 
 1. Build/modify the guide HTML through the current canonical guide architecture and final build pipeline.
-2. Keep the guide fully open; do not insert an email wall into the article.
+2. Keep the shared first-visit email access gate. Do not create a second gate, separate capture page or guide-specific gate design.
 3. Build the contextual companion asset and accessible email-capture component only when approved.
 4. Add/update library metadata/card only if the guide is new.
 5. Add one useful visual only when the brief calls for it and it teaches something.
@@ -83,6 +85,8 @@ Never merge the PR yourself.
 Use:
 
 `ANSWER → SEE IT → TRY IT → USE IT → GO FURTHER`
+
+This is a thinking sequence, not a set of visible labels that must appear on every page. The published section structure must match the reader's job.
 
 The answer must appear early.
 

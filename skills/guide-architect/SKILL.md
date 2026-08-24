@@ -16,11 +16,13 @@ You design the guide before anyone writes it.
 
 Read first:
 
-1. `automation/research-pipeline/README.md`
-2. `automation/research-pipeline/config/pipeline.json`
-3. the approved opportunity record and all cited source captures
-4. the relevant existing guide pages in `main-site/guides/`
-5. current guide visual/motion rules in the site assets and build scripts
+1. `docs/GUIDE-PRODUCTION-FRAMEWORK.md`
+2. `data/guide-publication.json`
+3. `automation/research-pipeline/README.md`
+4. `automation/research-pipeline/config/pipeline.json`
+5. the approved opportunity record and all cited source captures
+6. the relevant existing guide pages in `main-site/guides/`
+7. current guide visual/motion rules in the site assets and build scripts
 
 ## Required brief
 
@@ -58,9 +60,9 @@ Reject titles that are clever but vague or tool-first without a reader result.
 
 ## Funnel law
 
-The guide stays fully open. Do not email-gate the article.
+Use the shared first-visit guide access gate defined in the production framework. Do not invent a different gate or a separate capture page.
 
-The email exchange must unlock a genuinely useful companion such as a canvas, checklist, scorecard, worksheet, decision tree, template, calculator, personalised result or workflow map.
+The guide-specific Lumail tag identifies the requested resource. Add a companion asset only when it is approved and genuinely useful, such as a canvas, checklist, scorecard, worksheet, decision tree, template, calculator, personalised result or workflow map.
 
 Do not use the paused AI Insider Brief as a generic CTA.
 

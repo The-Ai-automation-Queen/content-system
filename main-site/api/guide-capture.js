@@ -1,18 +1,47 @@
 const GUIDE_TAGS = {
-  "24-7-operations-system": "guide-24-7-operations-system",
   "ai-jargon-guide": "guide-ai-jargon",
+  "what-is-ai": "guide-what-is-ai",
+  "what-is-agentic": "guide-what-is-agentic",
+  "what-should-you-never-share-with-ai": "guide-what-not-to-share-with-ai",
+  "which-ai-tool-for-what": "guide-which-ai-tool-for-what",
   "chatgpt": "guide-chatgpt",
   "claude": "guide-claude",
-  "copilot": "guide-copilot",
-  "first-ai-employee": "guide-first-ai-employee",
-  "follow-up-setup": "guide-follow-up-setup",
   "gemini": "guide-gemini",
-  "inbox-manager-setup": "guide-inbox-manager-setup",
-  "stack-3-tool-ai-stack": "guide-stack-3-tool-ai-stack",
+  "copilot": "guide-copilot",
+  "meta-ai": "guide-meta-ai",
+  "grok": "guide-grok",
+  "deepseek": "guide-deepseek",
+  "kimi": "guide-kimi",
+  "manus": "guide-manus",
+  "mistral": "guide-mistral",
   "what-is-a-prompt": "guide-what-is-a-prompt",
-  "what-is-agentic": "guide-what-is-agentic",
-  "what-is-ai": "guide-what-is-ai",
-  "what-should-you-never-share-with-ai": "guide-what-not-to-share-with-ai"
+  "what-is-an-ai-browser": "guide-what-is-an-ai-browser",
+  "connect-ai-to-email-files-calendar": "guide-connect-ai-to-email-files-calendar",
+  "ai-skills-worth-learning-for-work": "guide-ai-skills-worth-learning-for-work",
+  "show-up-in-ai-search": "guide-show-up-in-ai-search",
+};
+
+const GUIDE_FILES = {
+  "ai-jargon-guide": "https://www.shiftandlead.com/guides/ai-jargon-guide.html",
+  "what-is-ai": "https://www.shiftandlead.com/guides/what-is-ai.html",
+  "what-is-agentic": "https://www.shiftandlead.com/guides/what-is-agentic.html",
+  "what-should-you-never-share-with-ai": "https://www.shiftandlead.com/guides/what-should-you-never-share-with-ai.html",
+  "which-ai-tool-for-what": "https://www.shiftandlead.com/guides/which-ai-tool-for-what.html",
+  "chatgpt": "https://www.shiftandlead.com/guides/chatgpt.html",
+  "claude": "https://www.shiftandlead.com/guides/claude.html",
+  "gemini": "https://www.shiftandlead.com/guides/gemini.html",
+  "copilot": "https://www.shiftandlead.com/guides/copilot.html",
+  "meta-ai": "https://www.shiftandlead.com/guides/meta-ai.html",
+  "grok": "https://www.shiftandlead.com/guides/grok.html",
+  "deepseek": "https://www.shiftandlead.com/guides/deepseek.html",
+  "kimi": "https://www.shiftandlead.com/guides/kimi.html",
+  "manus": "https://www.shiftandlead.com/guides/manus.html",
+  "mistral": "https://www.shiftandlead.com/guides/mistral.html",
+  "what-is-a-prompt": "https://www.shiftandlead.com/guides/what-is-a-prompt.html",
+  "what-is-an-ai-browser": "https://www.shiftandlead.com/guides/what-is-an-ai-browser.html",
+  "connect-ai-to-email-files-calendar": "https://www.shiftandlead.com/guides/connect-ai-to-email-files-calendar.html",
+  "ai-skills-worth-learning-for-work": "https://www.shiftandlead.com/guides/ai-skills-worth-learning-for-work.html",
+  "show-up-in-ai-search": "https://www.shiftandlead.com/guides/show-up-in-ai-search.html",
 };
 
 module.exports = async function handler(request, response) {
@@ -20,51 +49,51 @@ module.exports = async function handler(request, response) {
     response.setHeader("Allow", "POST");
     return response.status(405).json({ error: "Method not allowed." });
   }
+
   const token = process.env.LUMAIL_API_TOKEN;
   if (!token) return response.status(503).json({ error: "Email delivery is not configured yet." });
 
-  const body = request.body || {};
-  if (body.website) return response.status(200).json({ success: true });
-  const email = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254) {
+  const { email, website, guideSlug, source } = request.body || {};
+  if (website) return response.status(200).json({ success: true });
+  if (typeof email !== "string" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254) {
     return response.status(400).json({ error: "Enter a valid email address." });
   }
-  const guideTag = GUIDE_TAGS[body.guideSlug];
+
+  const guideTag = GUIDE_TAGS[guideSlug];
   if (!guideTag) return response.status(400).json({ error: "This guide is not configured for email delivery." });
 
-  const guideUrl = `https://www.shiftandlead.com/guides/${body.guideSlug}.html`;
   try {
     const lumailResponse = await fetch("https://lumail.io/api/v1/subscribers", {
       method: "POST",
-      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
-        email,
+        email: email.trim().toLowerCase(),
         tags: ["shift-and-lead-guide", guideTag],
         fields: {
-          first_name: typeof body.firstName === "string" ? body.firstName.trim().slice(0, 80) : "",
-          source: typeof body.source === "string" ? body.source.slice(0, 200) : `/guides/${body.guideSlug}.html`,
-          guide_slug: body.guideSlug,
-          guide_url: guideUrl,
-          consent: body.consent === true ? "guide-access-and-updates" : "guide-access",
-          captured_at: typeof body.timestamp === "string" ? body.timestamp.slice(0, 40) : new Date().toISOString(),
-          utm_source: typeof body.utmSource === "string" ? body.utmSource.slice(0, 100) : "",
-          utm_medium: typeof body.utmMedium === "string" ? body.utmMedium.slice(0, 100) : "",
-          utm_campaign: typeof body.utmCampaign === "string" ? body.utmCampaign.slice(0, 100) : "",
-          utm_content: typeof body.utmContent === "string" ? body.utmContent.slice(0, 100) : ""
+          source: typeof source === "string" ? source.slice(0, 200) : `/guides/${guideSlug}.html`,
+          guide_url: GUIDE_FILES[guideSlug],
         },
         replaceTags: false,
         resubscribe: true,
-        triggerWorkflows: true
-      })
+        triggerWorkflows: true,
+      }),
     });
+
     const result = await lumailResponse.json().catch(() => ({}));
     if (!lumailResponse.ok) {
-      console.error("Lumail guide capture failed", { status: lumailResponse.status, guideSlug: body.guideSlug, detail: result.message || result.error || "Unknown error" });
+      console.error("Lumail guide capture failed", {
+        status: lumailResponse.status,
+        guideSlug,
+        detail: result.message || result.error || "Unknown Lumail error",
+      });
       return response.status(502).json({ error: "We could not open the guide. Please try again." });
     }
     return response.status(200).json({ success: true });
   } catch (error) {
-    console.error("Lumail guide capture request failed", { guideSlug: body.guideSlug, error });
+    console.error("Lumail guide capture request failed", { guideSlug, error });
     return response.status(502).json({ error: "We could not open the guide. Please try again." });
   }
 };

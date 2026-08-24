@@ -16,11 +16,13 @@ You are the final critic before human review and the production verifier after m
 
 Read first:
 
-1. `automation/research-pipeline/README.md`
-2. `automation/research-pipeline/config/pipeline.json`
-3. the opportunity record and approved guide brief
-4. all cited source captures
-5. the PR diff or changed files
+1. `docs/GUIDE-PRODUCTION-FRAMEWORK.md`
+2. `data/guide-publication.json`
+3. `automation/research-pipeline/README.md`
+4. `automation/research-pipeline/config/pipeline.json`
+5. the opportunity record and approved guide brief
+6. all cited source captures
+7. the PR diff or changed files
 
 ## Required checks
 
@@ -42,7 +44,7 @@ Read first:
 
 ### Funnel
 
-- Guide remains open.
+- The shared first-visit gate uses the guide-specific Lumail tag and does not reappear unnecessarily between related guides.
 - Companion asset is genuinely useful and not a duplicate of the article.
 - Exactly one primary CTA.
 - AI Insider Brief is not used as the default acquisition CTA while paused.
