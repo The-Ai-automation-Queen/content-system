@@ -11,7 +11,7 @@
     "hero_eyebrow": "For ambitious professionals ready to build with AI.",
     "hero_h1": "Get more of your business done with AI,",
     "hero_h1_accent": "step by step.",
-    "hero_sub": "The method I used on Fortune 500 teams at Dell, Intel and Microsoft. Now I teach ambitious professionals how to do the same. What to focus on, what to skip, and how.",
+    "hero_sub": "Learn how to use AI, automate repeated work and build systems you can actually use. I help you decide what to start with, what AI can handle and when the decision needs to come back to you.",
     "hero_cta_primary": "Explore the free guides",
     "hero_cta_secondary": "Explore the workbooks",
     "start_here_eyebrow": "Start here",
@@ -69,19 +69,19 @@
     "faq": [
       {
         "q": "I'm not technical. Can I still do this?",
-        "a": "Yes. You need to understand the work you want done, not learn to code. I teach the business logic first and the tools second."
+        "a": "Yes. You need to understand the work you want done, not learn to code. I explain the tools in plain language and start with the work itself."
       },
       {
-        "q": "Do I have to replace the tools I already use?",
-        "a": "Usually no. Start with the tools and information your business already uses, then add something new only when it earns its place."
+        "q": "Do I need an AI agent?",
+        "a": "Not necessarily. Some work needs a good prompt. Some needs an automation between tools. An agent makes sense when AI needs to complete several steps and return a finished result."
       },
       {
-        "q": "What if the free guides aren't enough?",
-        "a": "Use the guides to get oriented. If you want to bring this into a team, the workshops are the next step."
+        "q": "What is the difference between the guides and the workbooks?",
+        "a": "The guides help you use AI in your work and business. The workbooks help you find the patterns in your own experience and decide what to do with them."
       },
       {
-        "q": "How fast will I see results?",
-        "a": "You can test a useful first use case in days. Building AI into several parts of a business takes longer because the goal is something reliable, not a demo."
+        "q": "What if the free guides are not enough?",
+        "a": "If you want to build something specific, see Build with me. If you want to help a team use AI in real work, explore the workshops."
       }
     ],
     "contact_eyebrow": "Have something you want to build?",
