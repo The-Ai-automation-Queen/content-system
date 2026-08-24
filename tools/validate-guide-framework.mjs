@@ -14,6 +14,7 @@ const pageSource = [
 ].join("\n");
 const librarySource = read("next-app/content/guides.ts");
 const headerSource = read("next-app/components/chrome/site-header.tsx");
+const globalStyles = read("next-app/app/globals.css");
 const footerSource = read("next-app/components/chrome/site-footer.tsx");
 const guidesIndex = read("main-site/guides/index.html");
 const buildSprint = read("main-site/build-sprint.html");
@@ -41,6 +42,7 @@ if (!librarySource.includes('import publication from "../../data/guide-publicati
 }
 
 const expectedNav = [
+  ["Home", "/"],
   ["Guides", "/guides/"],
   ["Workbooks", "/workbooks.html"],
   ["About", "/about.html"],
@@ -52,6 +54,14 @@ for (const [label, href] of expectedNav) {
   if (!headerSource.includes(`"${label}", "${href}"`) && !headerSource.includes(`href="${href}">${label}`)) {
     failures.push(`Guide header is missing ${label} → ${href}`);
   }
+}
+
+if (!/\.wordmark\s*\{[^}]*font-weight:\s*400/.test(globalStyles)) {
+  failures.push("The guide wordmark must use regular font weight.");
+}
+
+if (!/\.site-header nav\s*\{[^}]*font:\s*400\s+12px/.test(globalStyles)) {
+  failures.push("The guide navigation must use regular font weight.");
 }
 
 if (/\bQuiz\b/.test(headerSource) || /\bQuiz\b/.test(footerSource)) {

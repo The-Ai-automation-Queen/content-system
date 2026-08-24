@@ -122,9 +122,12 @@ Before adding a guide to the registry, confirm all of the following:
 
 ## Current site shell
 
-The canonical header order, verified against the live homepage on 24 August 2026, is:
+The guide header uses the live site navigation plus a direct route back to the homepage:
 
-`Guides · Workbooks · About · Contact · How I can help`
+`Home · Guides · Workbooks · About · Contact · How I can help`
+
+The logo, menu links and mobile menu control use regular font weight. Do not
+reintroduce bold navigation typography.
 
 The footer groups are:
 
