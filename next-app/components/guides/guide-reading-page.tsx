@@ -145,6 +145,13 @@ export function GuideReadingPage({ guide }: { guide: GuidePage }) {
                     <li key={step.title}>
                       <h3>{step.title}</h3>
                       <p><RichText>{step.body}</RichText></p>
+                      {step.links && (
+                        <div className={styles.stepLinks}>
+                          {step.links.map((link) => (
+                            <a href={link.href} key={link.href} rel="noreferrer" target="_blank">{link.label} ↗</a>
+                          ))}
+                        </div>
+                      )}
                     </li>
                   ))}
                 </ol>
@@ -166,6 +173,14 @@ export function GuideReadingPage({ guide }: { guide: GuidePage }) {
               )}
               <p className={styles.conclusionLine}><RichText>{guide.conclusion.finishLine}</RichText></p>
             </section>
+            {guide.paidNextStep && (
+              <aside className={styles.paidNextStep} aria-labelledby="paid-next-step-title">
+                <span>{guide.paidNextStep.label}</span>
+                <h2 id="paid-next-step-title">{guide.paidNextStep.title}</h2>
+                <p>{guide.paidNextStep.body}</p>
+                <strong>Coming soon</strong>
+              </aside>
+            )}
           </div>
         </article>
 

@@ -10,6 +10,7 @@ const inventory = JSON.parse(read("next-app/content/guides.json")).guides;
 const pageSource = [
   read("next-app/content/guide-page.ts"),
   read("next-app/content/tool-guide-batch.ts"),
+  read("next-app/content/guide-batch-three.ts"),
 ].join("\n");
 const librarySource = read("next-app/content/guides.ts");
 const headerSource = read("next-app/components/chrome/site-header.tsx");

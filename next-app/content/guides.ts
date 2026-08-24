@@ -40,6 +40,8 @@ export type Guide = {
   cover: string;
   track: GuideTrack;
   status: string;
+  access?: "free" | "paid-candidate" | "do-not-publish";
+  positioningLane?: "Use AI at work" | "Keep learning as work changes" | "Protect and develop your human value";
   reviewStatus?: "idea" | "copy review" | "copy approved" | "page review" | "page approved" | "published" | "paid candidate" | "rejected";
   formatLabel: string;
   level: GuideLevel;
@@ -94,6 +96,11 @@ export const guideNextStepRotation: Record<string, readonly [string, string, str
   "kimi": ["deepseek", "manus", "what-is-agentic"],
   "manus": ["what-is-agentic", "what-should-you-never-share-with-ai", "kimi"],
   "mistral": ["deepseek", "manus", "what-should-you-never-share-with-ai"],
+  "what-is-a-prompt": ["which-ai-tool-for-what", "what-should-you-never-share-with-ai", "what-is-an-ai-browser"],
+  "what-is-an-ai-browser": ["connect-ai-to-email-files-calendar", "what-should-you-never-share-with-ai", "which-ai-tool-for-what"],
+  "connect-ai-to-email-files-calendar": ["what-should-you-never-share-with-ai", "what-is-an-ai-browser", "which-ai-tool-for-what"],
+  "ai-skills-worth-learning-for-work": ["what-is-a-prompt", "which-ai-tool-for-what", "what-is-agentic"],
+  "show-up-in-ai-search": ["what-is-a-prompt", "which-ai-tool-for-what", "claude"],
 };
 
 for (const guide of publicGuides) {

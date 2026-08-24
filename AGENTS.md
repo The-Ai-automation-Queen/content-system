@@ -60,5 +60,10 @@ and selective services are supporting revenue, not the core promise.
 `Schedule approved content`, `Review Instagram performance`, `Build my funnel`, and
 `Create an affiliate campaign`.
 
+`/prompts:build-guide [topic or working title]` starts the Shift & Lead
+guide workflow. Use the `shift-lead-guide-builder` skill as its single source of
+truth. Advance only to the next approval gate and never infer that copy or page
+approval means publish.
+
 For a broad command, advance only to the next human approval gate. Never spend
 production credits or publish from implied approval.

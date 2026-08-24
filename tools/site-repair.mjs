@@ -91,7 +91,7 @@ patch('about.html', html => html
   .replace(/Multi-billions dollars/g, 'global technology')
 );
 
-// 6. Starter kit: clean naming and establish a clearer free boundary.
+// 6. Legacy starter-kit route: keep existing copy stable until the route is retired.
 patch('starter-kit.html', html => html
   .replace(/Free AI AI Build Kit/g, 'Free AI Starter Toolkit')
   .replace(/Free AI Build Kit/g, 'Free AI Starter Toolkit')
@@ -114,7 +114,7 @@ patch('quiz.html', html => html
 );
 
 // 10. AI-facing estate description: current truth only; no hidden Fast Forward pricing.
-const llms = `# Shift & Lead\n\n> Shift & Lead helps non-technical professionals, business owners and teams build practical business capability with AI.\n\nThe site is organised around a simple path: learn what matters, build one useful capability, connect the pieces into how the business runs, and bring the method into a team when needed.\n\n## Current resources\n\n- Free AI guides: https://www.shiftandlead.com/guides/\n- First-build diagnostic: https://www.shiftandlead.com/quiz.html\n- AI Starter Toolkit: https://www.shiftandlead.com/starter-kit.html\n- Workshops and team programmes: https://www.shiftandlead.com/workshops.html\n- Build with Fatiha: https://www.shiftandlead.com/build-sprint.html\n- About and proof: https://www.shiftandlead.com/about.html\n- Public AI build log, The 99: https://www.shiftandlead.com/the-99.html\n- AI Insider Brief: https://brief.shiftandlead.com\n\n## Editorial approach\n\nShift & Lead explains AI in plain English and starts with the business outcome, not the tool. Current guide navigation is organised around saving time, thinking and creating, understanding data, selling and marketing, building AI help, automating and scaling, plus choosing the right AI tool.\n\n## Usage terms\n\nContent may be cited or quoted with attribution and a link to the source page. It may not be used to train, fine-tune or build machine-learning models.\n`;
+const llms = `# Shift & Lead\n\n> Shift & Lead helps non-technical professionals, business owners and teams build practical business capability with AI.\n\nThe site is organised around a simple path: learn what matters, build one useful capability, connect the pieces into how the business runs, and bring the method into a team when needed.\n\n## Current resources\n\n- Free AI guides: https://www.shiftandlead.com/guides/\n- First-build diagnostic: https://www.shiftandlead.com/quiz.html\n- Workbooks: https://www.shiftandlead.com/workbooks.html\n- Workshops and team programmes: https://www.shiftandlead.com/workshops.html\n- Build with Fatiha: https://www.shiftandlead.com/build-sprint.html\n- About and proof: https://www.shiftandlead.com/about.html\n- AI Insider Brief: https://brief.shiftandlead.com\n\n## Editorial approach\n\nShift & Lead explains AI in plain English and starts with the business outcome, not the tool. Current guide navigation is organised around saving time, thinking and creating, understanding data, selling and marketing, building AI help, automating and scaling, plus choosing the right AI tool.\n\n## Usage terms\n\nContent may be cited or quoted with attribution and a link to the source page. It may not be used to train, fine-tune or build machine-learning models.\n`;
 fs.writeFileSync(path.join(MAIN,'llms.txt'), llms);
 
 // 11. Product-specific legal pages remain available but are noindex until a checkout/product is actually live.

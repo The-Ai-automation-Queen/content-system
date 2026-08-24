@@ -1,4 +1,5 @@
 import { copilotGuide, deepSeekGuide, grokGuide, kimiGuide, manusGuide, metaAiGuide, mistralGuide } from "./tool-guide-batch";
+import { aiBrowserGuide, aiConnectionsGuide, aiSearchGuide, aiSkillsGuide, promptGuide } from "./guide-batch-three";
 
 export type GuideStep = {
   title: string;
@@ -92,6 +93,12 @@ export type GuidePage = {
       items: readonly [string, string, string];
     };
     finishLine: string;
+  };
+  paidNextStep?: {
+    label: string;
+    title: string;
+    body: string;
+    status: "coming-soon";
   };
   related: readonly [GuideRelated, GuideRelated, GuideRelated];
 };
@@ -1321,7 +1328,7 @@ Notes:
   ],
 } as const satisfies GuidePage;
 
-export const guidePages = [whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide, whichAiToolGuide, chatGptGuide, claudeGuide, geminiGuide, copilotGuide, metaAiGuide, grokGuide, deepSeekGuide, kimiGuide, manusGuide, mistralGuide] as const;
+export const guidePages = [whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide, whichAiToolGuide, chatGptGuide, claudeGuide, geminiGuide, copilotGuide, metaAiGuide, grokGuide, deepSeekGuide, kimiGuide, manusGuide, mistralGuide, promptGuide, aiBrowserGuide, aiConnectionsGuide, aiSkillsGuide, aiSearchGuide] as const;
 
 export function getGuidePage(slug: string) {
   return guidePages.find((guide) => guide.slug === slug);

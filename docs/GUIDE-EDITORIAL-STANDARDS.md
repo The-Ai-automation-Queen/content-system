@@ -1,5 +1,7 @@
 # Shift & Lead guide editorial standards
 
+These editorial standards are subordinate to `GUIDE-PRODUCTION-FRAMEWORK.md`, which controls approval, page structure, the access gate and publishing.
+
 ## The outcome
 
 A guide must help a capable non-specialist understand something, make a decision or complete a useful action. It is not a decorated blog post and it is not a place to display everything we know.
@@ -29,17 +31,16 @@ Do not apply one repeated anatomy to every topic.
 - A glossary entry should give the plain meaning and a recognisable example. Add a direct instruction only when the reader could make a consequential mistake.
 - In a Shift & Lead guide, examples should expose a decision about evidence, access, approval, cost, privacy, customers or reputation. Generic examples that merely demonstrate a feature are not enough.
 - State instructions as instructions. Do not weaken them with repeated labels such as "Remember," "Watch" or "Keep in mind."
-- Write numbers as digits.
+- Write `one` as a word in normal prose or a title when it sounds natural. Use digits for numbered steps, promised list counts, measurements, prices and technical values.
 - Do not use em dashes.
 
 ## Opening and capture
 
 - Start with the title and one direct promise.
-- Put the primary email capture immediately below that promise when the guide is a lead magnet.
-- The capture opens in a popup. Do not send the reader to a separate capture page.
-- Explain what will arrive and when it will be useful.
-- The email must deliver something meaningfully different from the page already open, such as a printable reference, editable template or email lesson. Do not ask for an email merely to send the same URL.
-- After a successful capture, make the promised asset available immediately as well as by email. A delayed or misconfigured email must not leave the reader empty-handed.
+- Put the reusable email access gate before the guide body on a visitor's first guide visit. Do not send the reader to a separate capture page.
+- Keep the gate copy generic. Send one Lumail request with the guide-specific tag, then open the requested guide.
+- Remember a successful access state so a reader following related guides is not asked for the same email on every page.
+- Do not promise a separate download unless one has actually been built and connected.
 - Do not place helper copy beside a CTA when it only repeats the button. Make the button label specific enough to stand alone.
 - Do not repeat the same capture at the bottom.
 - Do not add a copy or download button unless the reader receives a practical asset they can use somewhere else. Copying article text is not a useful call to action.

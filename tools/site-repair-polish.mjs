@@ -49,7 +49,7 @@ patch('workshops.html', h => {
   h=h
     .replace(/<title>AI Workshops for Teams \| Fatiha Chikh<\/title>/, '<title>Practical AI Workshops for Business Owners & Teams | Fatiha Chikh</title>')
     .replace(/Practical AI workshops for teams that want to know where AI belongs in real work, what to build first, and what still needs human judgment\./g, 'Practical AI workshops for business owners and teams: choose what to build first, make it useful in real work, and keep human judgment where it belongs.')
-    .replace(/<h1>AI your team will actually use\.<\/h1>/, '<h1>Build AI people will actually use.</h1>')
+    .replace(/<h1>AI your team will actually use\.<\/h1>/, '<h1>Build AI people will actually <span class="hero-accent">use.</span></h1>')
     .replace(/Your team leaves knowing where AI belongs in their work, what to build first, and what still needs human judgment\. Practical, non-technical, built around the work they already do\./g, 'For business owners and organisations who want practical AI in real work. Choose what to build first, make it useful, and keep clear boundaries for what stays human.')
     .replace(/Apply to bring this to your team/g, 'Tell me what you want to build')
     .replace(/Apply to bring Shift &amp; Lead to your team\./g, 'Tell me what you want to build or bring to your team.')

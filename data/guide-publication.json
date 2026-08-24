@@ -103,6 +103,31 @@
       "slug": "mistral",
       "section": "AI tools",
       "journeyOrder": 150
+    },
+    {
+      "slug": "what-is-a-prompt",
+      "section": "Better prompts and answers",
+      "journeyOrder": 160
+    },
+    {
+      "slug": "what-is-an-ai-browser",
+      "section": "AI tools",
+      "journeyOrder": 170
+    },
+    {
+      "slug": "connect-ai-to-email-files-calendar",
+      "section": "AI essentials",
+      "journeyOrder": 180
+    },
+    {
+      "slug": "ai-skills-worth-learning-for-work",
+      "section": "AI essentials",
+      "journeyOrder": 190
+    },
+    {
+      "slug": "show-up-in-ai-search",
+      "section": "Content and creative work",
+      "journeyOrder": 200
     }
   ]
 }
