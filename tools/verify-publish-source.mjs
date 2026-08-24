@@ -111,6 +111,7 @@ for (const hiddenSlug of guideInventory
 }
 const guideHeader = guideLibrary.match(/<header class="site-header">([\s\S]*?)<\/header>/i)?.[1] || '';
 for (const [label, href] of [
+  ['Home', '/'],
   ['Guides', '/guides/'],
   ['Workbooks', '/workbooks.html'],
   ['About', '/about.html'],
