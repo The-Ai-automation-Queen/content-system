@@ -3,10 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "validate": "node tools/verify-publish-source.mjs",
-    "build": "node tools/sync-current-chrome.mjs && node tools/wire-guide-system.mjs && node tools/build-public-discovery.mjs && node tools/build-guide-review-queue.mjs && node tools/verify-publish-source.mjs",
+    "validate": "node scripts/validate.mjs",
+    "validate:guides": "node tools/validate-guide-framework.mjs && node tools/verify-publish-source.mjs",
+    "build": "node tools/include.mjs && node tools/guides-finalize.mjs && node tools/site-repair.mjs && node tools/site-repair-final.mjs",
     "publish:ai-jargon": "npm --prefix next-app run build && node tools/publish-next-guide.mjs ai-jargon-guide",
-    "publish:guides": "npm --prefix next-app run build && node tools/publish-next-guide.mjs what-is-ai && node tools/publish-next-guide.mjs ai-jargon-guide && node tools/publish-next-guide.mjs what-is-agentic && node tools/publish-next-guide.mjs what-should-you-never-share-with-ai",
+    "publish:guides": "npm --prefix next-app run build && node tools/publish-approved-guides.mjs",
+    "guide:ship": "node tools/ship-approved-guide.mjs",
     "ship": "npm run validate && npm run build && git add -A && git commit -m \"${MSG:-content update}\" && git push"
   }
 }

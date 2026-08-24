@@ -80,6 +80,9 @@
 .relatedGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .relatedCard { display: flex; min-width: 0; flex-direction: column; border: 1px solid #d8d2c9; color: inherit; background: #fff; text-decoration: none; transition: transform .2s ease, border-color .2s ease; }
 .relatedCard:hover { transform: translateY(-4px); border-color: var(--ink); }
+.relatedCardPending { cursor: default; }
+.relatedCardPending:hover { transform: none; border-color: #d8d2c9; }
+.relatedCardPending > div > span { color: var(--blue-deep); text-transform: uppercase; letter-spacing: .06em; }
 .relatedCard figure { position: relative; aspect-ratio: 16 / 9; margin: 0; overflow: hidden; background: var(--blue-deep); }
 .relatedCard figure img { object-fit: cover; }
 .relatedCard > div { display: flex; min-height: 220px; flex-direction: column; padding: 22px; }

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "rule": "A guide is public only after Fatiha explicitly approves its copy and complete page.",
+  "shellReference": {
+    "url": "https://www.shiftandlead.com/",
+    "verifiedAt": "2026-08-24",
+    "navigation": ["Guides", "Workbooks", "How I can help", "About", "Build with me"]
+  },
+  "postGuideCopyReview": [
+    {
+      "path": "/privacy.html",
+      "title": "Privacy",
+      "job": "Verify the information and replace editorial styling with a simple, readable legal page."
+    },
+    {
+      "path": "/terms.html",
+      "title": "Terms",
+      "job": "Verify the information and replace editorial styling with a simple, readable legal page."
+    },
+    {
+      "path": "/refund-policy.html",
+      "title": "Refunds",
+      "job": "Verify the information and replace editorial styling with a simple, readable legal page."
+    },
+    {
+      "path": "/licensing.html",
+      "title": "Licensing",
+      "job": "Verify the information and replace editorial styling with a simple, readable legal page."
+    }
+  ],
+  "approved": [
+    {
+      "slug": "what-is-ai",
+      "section": "AI essentials",
+      "journeyOrder": 10
+    },
+    {
+      "slug": "ai-jargon-guide",
+      "section": "AI essentials",
+      "journeyOrder": 20
+    },
+    {
+      "slug": "what-is-agentic",
+      "section": "AI agents",
+      "journeyOrder": 30
+    },
+    {
+      "slug": "what-should-you-never-share-with-ai",
+      "section": "AI essentials",
+      "journeyOrder": 40
+    },
+    {
+      "slug": "which-ai-tool-for-what",
+      "section": "AI tools",
+      "journeyOrder": 50
+    },
+    {
+      "slug": "chatgpt",
+      "section": "AI tools",
+      "journeyOrder": 60
+    },
+    {
+      "slug": "claude",
+      "section": "AI tools",
+      "journeyOrder": 70
+    },
+    {
+      "slug": "gemini",
+      "section": "AI tools",
+      "journeyOrder": 80
+    },
+    {
+      "slug": "copilot",
+      "section": "AI tools",
+      "journeyOrder": 90
+    },
+    {
+      "slug": "meta-ai",
+      "section": "AI tools",
+      "journeyOrder": 100
+    },
+    {
+      "slug": "grok",
+      "section": "AI tools",
+      "journeyOrder": 110
+    },
+    {
+      "slug": "deepseek",
+      "section": "AI tools",
+      "journeyOrder": 120
+    },
+    {
+      "slug": "kimi",
+      "section": "AI tools",
+      "journeyOrder": 130
+    },
+    {
+      "slug": "manus",
+      "section": "AI tools",
+      "journeyOrder": 140
+    },
+    {
+      "slug": "mistral",
+      "section": "AI tools",
+      "journeyOrder": 150
+    }
+  ]
+}

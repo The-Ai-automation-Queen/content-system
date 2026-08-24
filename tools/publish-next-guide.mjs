@@ -1,4 +1,4 @@
-import { cp, copyFile, mkdir } from "node:fs/promises";
+import { cp, copyFile, mkdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 
@@ -9,6 +9,17 @@ if (!slug || !/^[a-z0-9-]+$/.test(slug)) {
 }
 
 const root = process.cwd();
+const publication = JSON.parse(
+  await readFile(path.join(root, "data", "guide-publication.json"), "utf8"),
+);
+const approvedSlugs = new Set(publication.approved.map((guide) => guide.slug));
+
+if (!approvedSlugs.has(slug)) {
+  throw new Error(
+    `Refusing to publish unapproved guide: ${slug}. Approve its complete page and add it to data/guide-publication.json first.`,
+  );
+}
+
 const sourceRoot = path.join(root, "next-app", "out");
 const publicRoot = path.join(root, "next-app", "public");
 const destinationRoot = path.join(root, "main-site");

@@ -173,7 +173,12 @@ export function GuideReadingPage({ guide }: { guide: GuidePage }) {
           <div className={styles.relatedInner}>
             <h2 id="guide-next-title">What do you want to do next?</h2>
             <div className={styles.relatedGrid}>
-              {guide.related.map((item) => (
+              {guide.related.map((item) => item.status === "coming-next" ? (
+                <article className={`${styles.relatedCard} ${styles.relatedCardPending}`} key={item.slug}>
+                  <figure><Image src={item.cover} alt="" aria-hidden="true" fill sizes="(max-width: 760px) 100vw, 33vw" /></figure>
+                  <div><h3>{item.title}</h3><p>{item.reason}</p><span>Coming next</span></div>
+                </article>
+              ) : (
                 <Link href={`/guides/${item.slug}.html`} className={styles.relatedCard} key={item.slug}>
                   <figure><Image src={item.cover} alt="" aria-hidden="true" fill sizes="(max-width: 760px) 100vw, 33vw" /></figure>
                   <div><h3>{item.title}</h3><p>{item.reason}</p><span>Start the guide →</span></div>

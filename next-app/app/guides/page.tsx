@@ -1,67 +1,35 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { GuideCard } from "@/components/guides/guide-card";
 import { GuideLibrary } from "@/components/guides/guide-library";
-import { guides, trackDetails, type GuideTrack } from "@/content/guides";
+import { publicGuides } from "@/content/guides";
 
 export const metadata: Metadata = {
-  title: "Free AI guides for business owners",
-  description: "Free, practical guides for understanding AI, choosing the right tools, and deciding what AI can do alone or still needs a person.",
+  title: "Free AI guides for real work",
+  description: "Choose the right AI tool, use it safely and get one useful piece of work done without losing your judgment.",
   alternates: { canonical: "/guides/" },
   openGraph: {
-    title: "Free AI guides for business owners · Shift & Lead",
-    description: "Understand AI clearly, choose what matters, and build useful systems step by step.",
+    title: "Free AI guides for real work · Shift & Lead",
+    description: "Pick the task. Find the right guide. Keep the decisions that still need you.",
     url: "/guides/",
     type: "website",
-    images: [{ url: "/images/guides/learn-master.png", width: 1680, height: 945 }],
+    images: [{ url: "/images/guides/learn-master.webp", width: 1280, height: 720 }],
   },
 };
 
-const paths: Array<{ track: GuideTrack; number: string; action: string }> = [
-  { track: "understand", number: "01", action: "Start with the basics" },
-  { track: "setup", number: "02", action: "Build something useful" },
-  { track: "tools", number: "03", action: "Choose your tools" },
-];
-
 export default function GuidesPage() {
-  const featured = guides.find((guide) => guide.slug === "what-is-agentic") ?? guides[0];
-
   return (
     <main>
-      <section className="guides-hero">
-        <div className="guides-hero__copy">
-          <p className="eyebrow">The free library</p>
-          <h1>Understand AI.<br /><em>Then use it well.</em></h1>
-          <p>Visual, practical guides for making clearer decisions and building with AI step by step.</p>
-          <a className="text-link" href="#library">Explore all guides <span aria-hidden="true">↓</span></a>
-        </div>
-        <div className="guides-hero__feature">
-          <GuideCard guide={featured} featured />
-        </div>
-      </section>
+      <GuideLibrary guides={publicGuides} />
 
-      <section className="pathways" aria-labelledby="pathways-title">
-        <h2 id="pathways-title">Choose where you are now.</h2>
-        <div className="pathways__grid">
-          {paths.map(({ track, number, action }) => (
-            <Link href={`#library`} className={`pathway pathway--${track}`} key={track}>
-              <span>{number}</span>
-              <h3>{trackDetails[track].label}</h3>
-              <p>{trackDetails[track].description}</p>
-              <b>{action} →</b>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <GuideLibrary guides={guides} />
-
-      <section className="guides-cta">
+      <section className="guides-cta" aria-labelledby="guides-cta-title">
         <div>
-          <p>Ready to move from reading to building?</p>
-          <h2>Choose one task.<br />Build the system around it.</h2>
+          <p>When a guide is not enough</p>
+          <h2 id="guides-cta-title">Find the next useful thing to build.</h2>
+          <span>Start with the result you want. Then decide what AI should handle and what still needs you.</span>
         </div>
-        <Link href="/build-sprint.html">See how we can build together <span aria-hidden="true">→</span></Link>
+        <div className="guides-cta__actions">
+          <a href="/workbooks.html">Explore the workbooks <span aria-hidden="true">→</span></a>
+          <a href="/build-sprint.html">Build with me <span aria-hidden="true">→</span></a>
+        </div>
       </section>
     </main>
   );
