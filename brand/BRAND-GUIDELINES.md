@@ -104,7 +104,7 @@ Do not transfer:
 
 | Role | Face | Weight guidance | Notes |
 |---|---|---|---|
-| Signature display | Playfair Display | Regular / Medium; Bold only for the wordmark or very short statements | Large headlines and editorial moments |
+| Signature display | Playfair Display | Regular / Medium | Large headlines, the site wordmark and editorial moments |
 | Long-form body | Source Serif 4 | Regular / Medium | Guides, worksheets and narrative reading |
 | Screen / presentation body | Inter | Regular / Medium / SemiBold | Default for deck body, tables, charts, captions, UI and utility copy |
 | Labels / kickers / eyebrows | Space Mono or Inter | Regular / Medium / SemiBold | Use at 16 pt+ in decks; short, structural and readable |
@@ -150,7 +150,11 @@ All new pages and any page being revised must comply.
 
 ## The wordmark
 
-**Shift & Lead** set in Playfair Display 700, ink on light, white on dark. In page navs it renders as live text, not an image.
+On the website, the Shift & Lead wordmark is one consistent text lockup everywhere: Playfair Display, 21px, line-height 1, regular weight 400 and -0.03em letter spacing. At 700px and below it may reduce to 20px, but its weight and spacing do not change. Never create a page-specific bold, larger or smaller wordmark.
+
+The desktop navigation uses Inter at 12px, line-height 1, regular weight 400, 0.08em letter spacing and uppercase labels. The website and guides must share this exact header treatment.
+
+**Shift & Lead** set in Playfair Display 400, ink on light, white on dark. In page navs it renders as live text, not an image.
 
 ## The mark: the ampersand
 

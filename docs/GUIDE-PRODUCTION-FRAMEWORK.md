@@ -91,6 +91,8 @@ Do not assume the reader already knows where prompts go, where settings live or 
 
 ## Fixed design rules
 
+The site header is shared across the main website and every guide. The Shift & Lead wordmark uses Playfair Display at 21px, line-height 1, regular weight 400 and -0.03em letter spacing. Desktop navigation uses Inter at 12px, line-height 1, regular weight 400, 0.08em letter spacing and uppercase labels. Never create a page-specific bold, larger or smaller version of the logo or navigation.
+
 - The guide library keeps its approved structure. A copy revision must not redesign it.
 - The guide page keeps one clean reading layout with a full-width cover, readable body and clear sections.
 - Never place text over an image where it overlaps the mascot or illustration.

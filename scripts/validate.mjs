@@ -20,6 +20,22 @@ const failures = {};      // check letter -> [messages]
 const todos = new Set();
 function fail(check, msg) { (failures[check] ||= []).push(msg); }
 
+const headerStyleFiles = [
+  'shared/assets/site.css',
+  'shared/assets/brand-system.css',
+  'main-site/assets/site.css',
+  'main-site/assets/brand-system.css'
+];
+for (const file of headerStyleFiles) {
+  const css = readFileSync(join(ROOT, file), 'utf8');
+  if (!/\.site-nav-logo\s*\{[^}]*font-size:\s*21px[^}]*line-height:\s*1(?:!important)?[^}]*font-weight:\s*400[^}]*letter-spacing:\s*-\.03em/.test(css)) {
+    fail('A', `${file}: the site wordmark must use the canonical 21px regular-weight treatment`);
+  }
+  if (!/\.site-nav-links\s*\{[^}]*font-size:\s*12px[^}]*line-height:\s*1[^}]*font-weight:\s*400[^}]*letter-spacing:\s*\.08em/.test(css)) {
+    fail('A', `${file}: the desktop navigation must use the canonical 12px regular-weight treatment`);
+  }
+}
+
 function pages(root) {
   const out = [];
   (function walk(d) {
