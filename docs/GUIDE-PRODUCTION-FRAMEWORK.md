@@ -124,7 +124,7 @@ Before adding a guide to the registry, confirm all of the following:
 
 The canonical header order, verified against the live homepage on 24 August 2026, is:
 
-`Guides · Workbooks · How I can help · About · Build with me`
+`Guides · Workbooks · About · Contact · How I can help`
 
 The footer groups are:
 
