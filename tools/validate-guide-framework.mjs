@@ -43,9 +43,9 @@ if (!librarySource.includes('import publication from "../../data/guide-publicati
 const expectedNav = [
   ["Guides", "/guides/"],
   ["Workbooks", "/workbooks.html"],
-  ["How I can help", "/how-i-can-help.html"],
   ["About", "/about.html"],
-  ["Build with me", "/build-sprint.html"],
+  ["Contact", "/contact.html"],
+  ["How I can help", "/how-i-can-help.html"],
 ];
 
 for (const [label, href] of expectedNav) {

@@ -113,9 +113,9 @@ const guideHeader = guideLibrary.match(/<header class="site-header">([\s\S]*?)<\
 for (const [label, href] of [
   ['Guides', '/guides/'],
   ['Workbooks', '/workbooks.html'],
-  ['How I can help', '/how-i-can-help.html'],
   ['About', '/about.html'],
-  ['Build with me', '/build-sprint.html'],
+  ['Contact', '/contact.html'],
+  ['How I can help', '/how-i-can-help.html'],
 ]) {
   if (!guideHeader.includes(`href="${href}"`) || !guideHeader.includes(`>${label}<`)) {
     failures.push(`Guide header does not match the live shell: ${label} → ${href}`);
