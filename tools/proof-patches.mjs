@@ -59,7 +59,7 @@ body[data-brand-page] h4{
   letter-spacing:-.012em;
 }
 body[data-brand-page] .site-nav-logo,
-body[data-brand-page] .header-logo{font-weight:700}
+body[data-brand-page] .header-logo{font-weight:400;letter-spacing:-.03em}
 
 body[data-brand-page] .site-nav-links,
 body[data-brand-page] .site-nav-links a,
@@ -108,7 +108,7 @@ body[data-brand-page] .card-kicker{
 }
 
 body[data-brand-page] .site-nav-inner{padding:16px 26px}
-body[data-brand-page] .site-nav-links{font-size:12px;font-weight:600;letter-spacing:.08em}
+body[data-brand-page] .site-nav-links{font-size:12px;line-height:1;font-weight:400;letter-spacing:.08em}
 body[data-brand-page] .site-nav-links .nav-cta{border-radius:var(--brand-radius-ui)}
 
 body[data-brand-page] .button,
