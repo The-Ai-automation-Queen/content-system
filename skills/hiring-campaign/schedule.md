@@ -29,6 +29,9 @@ real files in agent-os-company-dashboard/company/departments/.
 | 020 | Rami | Subscription Auditor | backoffice/backoffice-subscription-auditor.md | PLAYBOOK | announced, playbook live 17/08/2026 | 2026-W34 |
 | 021 | Layla | Time Digest | operations/operations-time-digest.md | PLAYBOOK | announced, playbook live 17/08/2026 | 2026-W34 |
 | 022 | Adam | Signature Chaser | deals/deals-signature-chaser.md | PLAYBOOK | announced, playbook live 17/08/2026 | 2026-W34 |
+| 023 | Samir | Follow-Up Nudger | sales/sales-follow-up-nudger.md | PLAYBOOK | announced, playbook live 31/08/2026 | 2026-W36 |
+| 024 | Dania | Renewal Reminder | customer/customer-renewal-reminder.md | PLAYBOOK | announced, playbook live 31/08/2026 | 2026-W36 |
+| 025 | Reem | Social Calendar | marketing/marketing-social-calendar.md | PLAYBOOK | announced, playbook live 31/08/2026 | 2026-W36 |
 
 Beyond #016: the campaign run picks the next 3 most audience-relevant
 roles from the departments roster (3 different departments per wave) and

@@ -182,6 +182,9 @@ permanent. Assigned so far:
 | 020 | Rami | Subscription Auditor (interviewing) | Back Office |
 | 021 | Layla | Time Digest (interviewing) | Operations |
 | 022 | Adam | Signature Chaser (interviewing) | Deals |
+| 023 | Samir | Follow-Up Nudger (interviewing) | Sales |
+| 024 | Dania | Renewal Reminder (interviewing) | Customer |
+| 025 | Reem | Social Calendar (interviewing) | Marketing |
 
 New names: short, warm, easy to say in English and French, no name
 reuse, never the name of a real client or contact. Log new assignments

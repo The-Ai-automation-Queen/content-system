@@ -13,6 +13,14 @@
 
 ## Most recent (quick reference)
 
+- 31/08/2026 | LinkedIn carousel | "It's Sunday Night and You Still Don't Know What You're Posting This Week" — Reem, Social Calendar, Employee #025 | READY TO POST
+- 31/08/2026 | LinkedIn | "It's Sunday Night and You Still Don't Know What You're Posting This Week" — Reem, Social Calendar, Employee #025 | READY TO POST
+- 31/08/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Samir/Dania/Reem | READY TO POST
+- 31/08/2026 | LinkedIn carousel | "A Client's Renewal Date Passed Three Weeks Ago and You Only Just Noticed" — Dania, Renewal Reminder, Employee #024 | READY TO POST
+- 31/08/2026 | LinkedIn | "A Client's Renewal Date Passed Three Weeks Ago and You Only Just Noticed" — Dania, Renewal Reminder, Employee #024 | READY TO POST
+- 31/08/2026 | LinkedIn carousel | "You Sent a Great First Message to a Prospect Two Weeks Ago and They Just Went Quiet" — Samir, Follow-Up Nudger, Employee #023 | READY TO POST
+- 31/08/2026 | LinkedIn | "You Sent a Great First Message to a Prospect Two Weeks Ago and They Just Went Quiet" — Samir, Follow-Up Nudger, Employee #023 | READY TO POST
+- 31/08/2026 | LinkedIn | "Now Hiring: Three More AI Employees, Salary $0 Each" — wave announcement, Employees #23/#24/#25 | READY TO POST
 - 17/08/2026 | LinkedIn carousel | "You Sent That Contract Six Days Ago and Haven't Followed Up Because It Feels Pushy" — Adam, Signature Chaser, Employee #022 | READY TO POST
 - 17/08/2026 | LinkedIn | "You Sent That Contract Six Days Ago and Haven't Followed Up Because It Feels Pushy" — Adam, Signature Chaser, Employee #022 | READY TO POST
 - 17/08/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Rami/Layla/Adam | READY TO POST
@@ -84,6 +92,259 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 150 — 31/08/2026 | LinkedIn carousel | It's Sunday Night and You Still Don't Know What You're Posting This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 149 (Reem, Employee #025, Social Calendar, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/reem/reem-social-calendar-01.png through -06.png
+Source HTML: skills/carousel-factory/out/reem-social-calendar.html
+**CTA keyword:** CALENDAR, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "It's Sunday night and you still don't know what you're posting this week."
+Slide 2 (scene): "Your ideas are scattered across notes, screenshots, and half-drafts. No plan means most weeks you just post whatever's fastest to finish."
+Slide 3 (role card): Reem, Social Calendar, Marketing, Salary $0, never sleeps. "Reem is AI. The only job she took was mine: turning scattered ideas into one week's plan, instead of deciding what to post the same morning I'm posting it."
+Slide 4 (how she works): 4-step list, give her the ideas already sitting around, she slots them across the week, she balances the mix, you review and adjust.
+Slide 5 (demo): "Built and tested planning one real week from 8 scattered ideas. Setup about 10 minutes. She never posts or schedules anything herself."
+Slide 6 (CTA): "Want the free setup? Comment CALENDAR."
+
+---
+
+## ENTRY 149 — 31/08/2026 | LinkedIn | It's Sunday Night and You Still Don't Know What You're Posting This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Thursday episode 3)
+**Topic:** Employee #025, Reem, Social Calendar. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/social-calendar-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/marketing/marketing-social-calendar.md, read this run (repo freshly re-cloned this session). Real job description: plan monthly calendars across platforms and pillars, balance content mix per platform norms, slot campaigns and launches first, evergreen second, output in scheduler-ready format. Free playbook narrows this to one week at a time (not a full month), manually gathered ideas (no platform-norm automation), and a plain day-by-day list rather than scheduler-ready output, per the free/paid line. No more "planned" rows remained in schedule.md this wave; picked per the "beyond #016" rule from the departments roster, Sales, Customer, Marketing, 3 distinct, none reused from last wave (Back Office, Operations, Deals). Mode check: no receipt found anywhere for Reem. Confirmed PLAYBOOK.
+
+---
+It's Sunday night and you still don't know what you're posting this week.
+
+Your ideas are scattered across notes, screenshots, and half-drafts. No plan means most weeks you just post whatever's fastest to finish.
+
+Meet Employee #025.
+
+Reem. Social Calendar. Marketing.
+Salary: $0. Never sleeps.
+
+Reem is AI. The only job she took was mine: turning scattered ideas into one week's plan, instead of deciding what to post the same morning I'm posting it.
+
+How she works:
+1. You give her the ideas already sitting around.
+2. She slots them across the week, campaigns and launches first, evergreen content filling the rest.
+3. She balances the mix so one platform isn't carrying the whole week.
+4. You review the plan and adjust before it goes anywhere.
+
+The demo: built and tested planning one real week from 8 scattered ideas with one AI tool. Setup time, about 10 minutes. She never posts or schedules anything herself.
+
+Red line: she never invents a topic you didn't give her, an empty week stays empty rather than getting filled with something made up.
+
+Your first win, free, today: list the 3 ideas you already have sitting in notes right now. That's Reem's first week to plan.
+
+Comment CALENDAR and I'll send you the full setup, free.
+
+#AIemployees #The99 #MarketingOps
+
+---
+
+## ENTRY 148 — 31/08/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** Talking-head reel (30-45s), captions required
+**Format:** Week's wave reel (Wednesday slot), three role-card cutaways + one screenshot cutaway
+**Topic:** Compresses all 3 of this week's hires (Samir, Dania, Reem) into one 45-second reel, per the hiring-campaign weekly slot map.
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur prospect name and details on the bump-message screenshot).
+**Source:** Assembled from ENTRY 144/146/149's role-card lines. No new claims.
+
+---
+[0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
+
+[0:03-0:12] Role card cutaway 1, Samir: "Samir writes the next polite bump when a conversation with a prospect goes quiet."
+
+[0:12-0:21] Role card cutaway 2, Dania: "Dania tracks a client's renewal date and flags it before it becomes a surprise."
+
+[0:21-0:30] Role card cutaway 3, Reem: "Reem turns my scattered content ideas into one week's plan."
+
+[0:30-0:38] Screenshot cutaway: Samir's draft bump message, real setup, prospect name and details blurred (redaction modeled).
+
+[0:38-0:45] Closing line, spoken + on-screen: "None of them act without me. Comment TEAM and I'll send you how to hire your first one."
+
+---
+
+## ENTRY 147 — 31/08/2026 | LinkedIn carousel | A Client's Renewal Date Passed Three Weeks Ago and You Only Just Noticed | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 146 (Dania, Employee #024, Renewal Reminder, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/dania/dania-renewal-reminder-01.png through -06.png
+Source HTML: skills/carousel-factory/out/dania-renewal-reminder.html
+**CTA keyword:** RENEW, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "A client's renewal date passed three weeks ago and you only just noticed."
+Slide 2 (scene): "You built something good for them. They've kept paying without a word. Somewhere in the daily noise, the renewal date slid past with nobody watching."
+Slide 3 (role card): Dania, Renewal Reminder, Customer, Salary $0, never sleeps. "Dania is AI. The only job she took was mine: tracking a renewal date and saying something before it becomes a surprise, instead of finding out after the fact."
+Slide 4 (how she works): 4-step list, tell her the renewal date and account, she flags it at 60/30/7 days out, drafts one reminder email, you review and send.
+Slide 5 (demo): "Built and tested tracking 3 real renewal dates against the 60/30/7 window. Setup about 10 minutes. She never sends anything or touches billing."
+Slide 6 (CTA): "Want the free setup? Comment RENEW."
+
+---
+
+## ENTRY 146 — 31/08/2026 | LinkedIn | A Client's Renewal Date Passed Three Weeks Ago and You Only Just Noticed | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Wednesday episode 2)
+**Topic:** Employee #024, Dania, Renewal Reminder. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/renewal-reminder-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/customer/customer-renewal-reminder.md, read this run (repo freshly re-cloned this session). Real job description: track renewal dates and notify 60/30/7 days out, draft renewal reminder emails per account tone, coordinate with Renewal Drafter on proposals, flag accounts ignoring renewal notices. Free playbook narrows this to a single manually tracked account (no coordination with a separate Renewal Drafter role, no ignored-notice escalation), per the free/paid line. First employee from the Customer department this wave; department diversity held against last wave (Back Office, Operations, Deals). Mode check: no receipt found anywhere for Dania. Confirmed PLAYBOOK.
+
+---
+A client's renewal date passed three weeks ago and you only just noticed.
+
+You built something good for them. They've kept paying without a word. Somewhere in the daily noise, the renewal date slid past with nobody watching.
+
+Meet Employee #024.
+
+Dania. Renewal Reminder. Customer.
+Salary: $0. Never sleeps.
+
+Dania is AI. The only job she took was mine: tracking a renewal date and saying something before it becomes a surprise, instead of finding out after the fact.
+
+How she works:
+1. You tell her the renewal date and the account.
+2. She flags it at 60, 30, and 7 days out, whichever window applies now.
+3. She drafts one renewal reminder email, matched to the account's tone.
+4. You review it and send it yourself.
+
+The demo: built and tested tracking 3 real renewal dates against the 60/30/7 window with one AI tool. Setup time, about 10 minutes. She never sends anything or touches billing.
+
+Red line: she never assumes a renewal is happening, she only flags the date, whether it renews is always my call.
+
+Your first win, free, today: write down the next renewal date you actually know off the top of your head. That's Dania's first flag.
+
+Comment RENEW and I'll send you the full setup, free.
+
+#AIemployees #The99 #CustomerOps
+
+---
+
+## ENTRY 145 — 31/08/2026 | LinkedIn carousel | You Sent a Great First Message to a Prospect Two Weeks Ago and They Just Went Quiet | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 144 (Samir, Employee #023, Follow-Up Nudger, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/samir/samir-follow-up-nudger-01.png through -06.png
+Source HTML: skills/carousel-factory/out/samir-follow-up-nudger.html
+**CTA keyword:** NUDGE, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You sent a great first message to a prospect two weeks ago and they just went quiet."
+Slide 2 (scene): "It started warm, then went quiet somewhere in the back-and-forth. Following up now feels like admitting you've been ignoring it too."
+Slide 3 (role card): Samir, Follow-Up Nudger, Sales, Salary $0, never sleeps. "Samir is AI. The only job he took was mine: writing the next polite bump on a conversation that went quiet, instead of leaving it to die of silence."
+Slide 4 (how he works): 4-step list, tell him about the thread, he drafts one bump escalating the angle, never repeats a message, you review and send.
+Slide 5 (demo): "Built and tested drafting bump messages for 3 real quiet threads. Setup about 10 minutes. He stops the sequence the moment a reply arrives."
+Slide 6 (CTA): "Want the free setup? Comment NUDGE."
+
+---
+
+## ENTRY 144 — 31/08/2026 | LinkedIn | You Sent a Great First Message to a Prospect Two Weeks Ago and They Just Went Quiet | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Tuesday episode 1)
+**Topic:** Employee #023, Samir, Follow-Up Nudger. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/follow-up-nudger-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/sales/sales-follow-up-nudger.md, read this run (repo freshly re-cloned this session). Real job description: draft bump messages for threads gone quiet, escalate angle every bump (value add, question, breakup), time nudges to business days and time zones, stop sequences the moment a reply arrives. Free playbook narrows this to one manually described thread at a time (no timezone/business-day automation), per the free/paid line. No more "planned" rows remained in schedule.md this wave; picked per the "beyond #016" rule from the departments roster, Sales, Customer, Marketing, 3 distinct, none reused from last wave (Back Office, Operations, Deals). Note: this role is distinct from Employee #018 Nassim (Reactivation Writer, fully cold leads) and Employee #022 Adam (Signature Chaser, signed-but-unsigned contracts); Samir covers the earlier stage, an active conversation that has simply gone quiet. Mode check: no receipt found anywhere for Samir. Confirmed PLAYBOOK.
+
+---
+You sent a great first message to a prospect two weeks ago and they just went quiet.
+
+It started warm, then went quiet somewhere in the back-and-forth. Following up now feels like admitting you've been ignoring it too.
+
+Meet Employee #023.
+
+Samir. Follow-Up Nudger. Sales.
+Salary: $0. Never sleeps.
+
+Samir is AI. The only job he took was mine: writing the next polite bump on a conversation that went quiet, instead of leaving it to die of silence.
+
+How he works:
+1. You tell him about the thread: who it's with, what was last said, how long since.
+2. He drafts one bump message, escalating the angle each time.
+3. He never sends the same message twice.
+4. You review it and send it yourself.
+
+The demo: built and tested drafting bump messages for 3 real quiet threads with one AI tool. Setup time, about 10 minutes. He stops the sequence the moment a reply arrives.
+
+Red line: he never invents urgency or a reason to reach out that isn't true, a quiet thread gets an honest bump, not a manufactured excuse.
+
+Your first win, free, today: name the one warm conversation that's gone quiet on you. That's Samir's first bump.
+
+Comment NUDGE and I'll send you the full setup, free.
+
+#AIemployees #The99 #SalesOps
+
+---
+
+## ENTRY 143 — 31/08/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Hiring-post ritual (job-ad parody), Monday wave announcement
+**Topic:** Introduces this wave's 3 openings (Employees #023, #024, #025).
+**Pattern used:** Job-ad parody + serial-cliffhanger opener
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — value-first series opener, comment-keyword capture, no promo.
+**Source:** schedule.md had no remaining "planned" rows this wave (confirmed via full read at wave start); three picks made per the "beyond #016" rule from the departments roster, Sales, Customer, Marketing, 3 distinct, none reused from last wave (Back Office, Operations, Deals). Real job-description files read this run from agent-os-company-dashboard/company/departments/ (repo freshly re-cloned this session, container had no sibling repos at wave start): sales/sales-follow-up-nudger.md, customer/customer-renewal-reminder.md, marketing/marketing-social-calendar.md.
+
+---
+Now hiring. Three more AI employees. Salary: $0 each.
+
+Employee #023: Follow-Up Nudger.
+Writes the next polite bump on a conversation that went quiet, instead of letting it die of silence.
+
+Employee #024: Renewal Reminder.
+Tracks a client's renewal date and says something before it becomes a surprise.
+
+Employee #025: Social Calendar.
+Turns scattered content ideas into one week's plan, instead of deciding what to post the same morning.
+
+None of them sleep. None of them ask for a raise. None of them act without me seeing it first.
+
+That is Employee #23, #24, and #25 of 99. The full team, hired one at a time, in public.
+
+See who is already on the floor. The scoreboard is live, updated only when there is a real receipt to show.
+
+Want to build your own first hire? Comment TEAM and I will send you the free 5-step framework.
+
+#AIemployees #Solopreneur #The99
 
 ---
 
