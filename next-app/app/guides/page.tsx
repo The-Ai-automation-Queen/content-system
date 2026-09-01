@@ -20,6 +20,13 @@ export default function GuidesPage() {
     <main>
       <GuideLibrary guides={publicGuides} />
 
+      <section className="zone-genius-card" data-zone-genius-card="true" aria-labelledby="zone-genius-card-title">
+        <p>Private reflection workbook</p>
+        <h2 id="zone-genius-card-title">Find Your Zone of Genius</h2>
+        <span>Use your own life as evidence. Let AI find the patterns. Leave with a direction you can explain and test.</span>
+        <a href="/workbooks/find-your-zone-of-genius.html">Start my private reflection <span aria-hidden="true">→</span></a>
+      </section>
+
       <section className="guides-cta" aria-labelledby="guides-cta-title">
         <div>
           <p>When a guide is not enough</p>
