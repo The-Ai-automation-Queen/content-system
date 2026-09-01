@@ -40,10 +40,10 @@ test('checkout fails closed when enablement is requested without every approved 
     'CHECKOUT_PROVIDER must be whop for the existing protected-delivery integration',
     'CHECKOUT_ACCOUNT_REFERENCE is required',
     'CHECKOUT_PAYMENT_URL must be an HTTPS whop.com URL',
-    'CHECKOUT_PAYOUT_CURRENCY must be a three-letter currency code',
-    'CHECKOUT_REFUND_TERMS_URL must be an HTTPS shiftandlead.com URL',
+    'CHECKOUT_PAYOUT_CURRENCY must be USD',
+    'CHECKOUT_REFUND_TERMS_URL must be https://www.shiftandlead.com/workbooks/find-your-zone-of-genius-refund-terms.html',
     'CHECKOUT_REFUND_TERMS_APPROVED must be true',
-    'CHECKOUT_SUPPORT_EMAIL is required',
+    'CHECKOUT_SUPPORT_EMAIL must be Fatiha@shiftandlead.ai',
     'CHECKOUT_BETA_CAP_VERIFIED must be true',
     'CHECKOUT_DELIVERY_VERIFIED must be true',
     'CHECKOUT_TEST_PURCHASE_VERIFIED must be true',
@@ -91,7 +91,7 @@ test('confirmation and delivery email name both protected files and set the priv
     assert.match(content, /open the workbook PDF first/i);
     assert.ok(content.replaceAll('&amp;', '&').includes(privacy));
   }
-  assert.match(email, /\{\{SUPPORT_EMAIL\}\}/);
+  assert.match(email, /Fatiha@shiftandlead\.ai/);
   assert.match(confirmation, /<!-- chrome:nav -->[\s\S]*<!-- \/chrome:nav -->/);
   assert.match(confirmation, /<!-- chrome:footer -->[\s\S]*<!-- \/chrome:footer -->/);
   assert.doesNotMatch(combined, /send (?:me |us )?your (?:answers|reflection)|reply with your (?:answers|reflection)/i);
@@ -110,6 +110,17 @@ test('handoff requires provider-protected files, a hard 12-sale cap, and a test 
   assert.match(setup, /CHECKOUT_ACCOUNT_REFERENCE/);
   assert.match(setup, /CHECKOUT_PAYOUT_CURRENCY/);
   assert.match(setup, /CHECKOUT_REFUND_TERMS_APPROVED/);
+});
+
+test('approved operational values are explicit in the non-secret handoff and delivery email', () => {
+  const setup = read('checkout/README.md');
+  const email = read('checkout/delivery-email.md');
+
+  assert.match(setup, /CHECKOUT_PAYOUT_CURRENCY=USD/);
+  assert.match(setup, /CHECKOUT_SUPPORT_EMAIL=Fatiha@shiftandlead\.ai/);
+  assert.match(setup, /CHECKOUT_REFUND_TERMS_URL=https:\/\/www\.shiftandlead\.com\/workbooks\/find-your-zone-of-genius-refund-terms\.html/);
+  assert.match(email, /Fatiha@shiftandlead\.ai/);
+  assert.doesNotMatch(email, /\{\{SUPPORT_EMAIL\}\}/);
 });
 
 test('the publish build validates checkout configuration before serving committed files', () => {
@@ -135,6 +146,45 @@ test('the product page exposes only the fail-closed checkout control at US$39 fo
   assert.doesNotMatch(productPage, /https:\/\/(?:www\.)?whop\.com/i);
 });
 
+test('the product has clear product-specific no-refund terms linked from its sales page', () => {
+  const productPage = read('main-site/workbooks/find-your-zone-of-genius.html');
+  const refundTerms = read('main-site/workbooks/find-your-zone-of-genius-refund-terms.html');
+  const approvedTerms = 'No refunds are available because this is a downloadable product.';
+
+  assert.match(productPage, /href="\/workbooks\/find-your-zone-of-genius-refund-terms\.html"/);
+  assert.ok(refundTerms.includes(approvedTerms));
+  assert.match(refundTerms, /Find Your Zone of Genius/);
+  assert.match(refundTerms, /Fatiha@shiftandlead\.ai/);
+  assert.doesNotMatch(refundTerms, /—/);
+});
+
+test('checkout accepts only the approved payout currency, support identity, and product refund page', () => {
+  const result = validateCheckoutConfiguration({
+    CHECKOUT_ENABLED: 'true',
+    CHECKOUT_PRICE_CENTS: '3900',
+    CHECKOUT_CURRENCY: 'USD',
+    CHECKOUT_BETA_LIMIT: '12',
+    CHECKOUT_PROVIDER: 'whop',
+    CHECKOUT_ACCOUNT_REFERENCE: 'approved-account-label',
+    CHECKOUT_PAYMENT_URL: 'https://whop.com/checkout/example',
+    CHECKOUT_PAYOUT_CURRENCY: 'AED',
+    CHECKOUT_REFUND_TERMS_URL: 'https://www.shiftandlead.com/refund-policy.html',
+    CHECKOUT_REFUND_TERMS_APPROVED: 'true',
+    CHECKOUT_SUPPORT_EMAIL: 'support@example.com',
+    CHECKOUT_BETA_CAP_VERIFIED: 'true',
+    CHECKOUT_DELIVERY_VERIFIED: 'true',
+    CHECKOUT_TEST_PURCHASE_VERIFIED: 'true',
+  });
+
+  assert.equal(result.enabled, false);
+  assert.deepEqual(result.errors, [
+    'CHECKOUT_PAYOUT_CURRENCY must be USD',
+    'CHECKOUT_REFUND_TERMS_URL must be https://www.shiftandlead.com/workbooks/find-your-zone-of-genius-refund-terms.html',
+    'CHECKOUT_SUPPORT_EMAIL must be Fatiha@shiftandlead.ai',
+  ]);
+  assert.equal(result.publicConfig.paymentUrl, null);
+});
+
 test('a fully approved configuration exposes only public checkout values', () => {
   const accountReference = 'approved-account-label';
   const result = validateCheckoutConfiguration({
@@ -145,10 +195,10 @@ test('a fully approved configuration exposes only public checkout values', () =>
     CHECKOUT_PROVIDER: 'whop',
     CHECKOUT_ACCOUNT_REFERENCE: accountReference,
     CHECKOUT_PAYMENT_URL: 'https://whop.com/checkout/example',
-    CHECKOUT_PAYOUT_CURRENCY: 'AED',
-    CHECKOUT_REFUND_TERMS_URL: 'https://www.shiftandlead.com/refund-policy.html',
+    CHECKOUT_PAYOUT_CURRENCY: 'USD',
+    CHECKOUT_REFUND_TERMS_URL: 'https://www.shiftandlead.com/workbooks/find-your-zone-of-genius-refund-terms.html',
     CHECKOUT_REFUND_TERMS_APPROVED: 'true',
-    CHECKOUT_SUPPORT_EMAIL: 'support@example.com',
+    CHECKOUT_SUPPORT_EMAIL: 'Fatiha@shiftandlead.ai',
     CHECKOUT_BETA_CAP_VERIFIED: 'true',
     CHECKOUT_DELIVERY_VERIFIED: 'true',
     CHECKOUT_TEST_PURCHASE_VERIFIED: 'true',

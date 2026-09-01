@@ -24,7 +24,7 @@ Keep this email so you can return to the protected purchase area if you need the
 
 Install the reflection agent inside your own ChatGPT Project. Shift & Lead does not receive your answers, analysis or final page. ChatGPT still processes and stores what you enter according to your account, workspace and data-control settings.
 
-For a technical delivery problem, contact {{SUPPORT_EMAIL}}. You only need to describe the file or access problem.
+For a technical delivery problem, contact Fatiha@shiftandlead.ai. You only need to describe the file or access problem.
 
 Fatiha  
 Shift & Lead

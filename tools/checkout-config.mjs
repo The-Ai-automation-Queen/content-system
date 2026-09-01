@@ -1,3 +1,7 @@
+const APPROVED_PAYOUT_CURRENCY = 'USD';
+const APPROVED_REFUND_TERMS_URL = 'https://www.shiftandlead.com/workbooks/find-your-zone-of-genius-refund-terms.html';
+const APPROVED_SUPPORT_EMAIL = 'Fatiha@shiftandlead.ai';
+
 const BASE_PUBLIC_CONFIG = Object.freeze({
   enabled: false,
   provider: null,
@@ -16,10 +20,6 @@ function isApprovedHttpsUrl(value, allowedHost) {
   } catch {
     return false;
   }
-}
-
-function looksLikeEmail(value) {
-  return typeof value === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
 export function validateCheckoutConfiguration(env = process.env) {
@@ -42,10 +42,10 @@ export function validateCheckoutConfiguration(env = process.env) {
   if (env.CHECKOUT_PROVIDER !== 'whop') errors.push('CHECKOUT_PROVIDER must be whop for the existing protected-delivery integration');
   if (!env.CHECKOUT_ACCOUNT_REFERENCE?.trim()) errors.push('CHECKOUT_ACCOUNT_REFERENCE is required');
   if (!isApprovedHttpsUrl(env.CHECKOUT_PAYMENT_URL, 'whop.com')) errors.push('CHECKOUT_PAYMENT_URL must be an HTTPS whop.com URL');
-  if (!/^[A-Z]{3}$/.test(env.CHECKOUT_PAYOUT_CURRENCY || '')) errors.push('CHECKOUT_PAYOUT_CURRENCY must be a three-letter currency code');
-  if (!isApprovedHttpsUrl(env.CHECKOUT_REFUND_TERMS_URL, 'shiftandlead.com')) errors.push('CHECKOUT_REFUND_TERMS_URL must be an HTTPS shiftandlead.com URL');
+  if (env.CHECKOUT_PAYOUT_CURRENCY !== APPROVED_PAYOUT_CURRENCY) errors.push(`CHECKOUT_PAYOUT_CURRENCY must be ${APPROVED_PAYOUT_CURRENCY}`);
+  if (env.CHECKOUT_REFUND_TERMS_URL !== APPROVED_REFUND_TERMS_URL) errors.push(`CHECKOUT_REFUND_TERMS_URL must be ${APPROVED_REFUND_TERMS_URL}`);
   if (env.CHECKOUT_REFUND_TERMS_APPROVED !== 'true') errors.push('CHECKOUT_REFUND_TERMS_APPROVED must be true');
-  if (!looksLikeEmail(env.CHECKOUT_SUPPORT_EMAIL)) errors.push('CHECKOUT_SUPPORT_EMAIL is required');
+  if (env.CHECKOUT_SUPPORT_EMAIL !== APPROVED_SUPPORT_EMAIL) errors.push(`CHECKOUT_SUPPORT_EMAIL must be ${APPROVED_SUPPORT_EMAIL}`);
   if (env.CHECKOUT_BETA_CAP_VERIFIED !== 'true') errors.push('CHECKOUT_BETA_CAP_VERIFIED must be true');
   if (env.CHECKOUT_DELIVERY_VERIFIED !== 'true') errors.push('CHECKOUT_DELIVERY_VERIFIED must be true');
   if (env.CHECKOUT_TEST_PURCHASE_VERIFIED !== 'true') errors.push('CHECKOUT_TEST_PURCHASE_VERIFIED must be true');
