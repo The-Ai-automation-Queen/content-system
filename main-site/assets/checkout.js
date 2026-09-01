@@ -17,10 +17,17 @@
     setStatus(button, message || 'Checkout is not open yet');
   }
 
-  function approvedUrl(value, hostname) {
+  function approvedCheckoutUrl(value) {
     try {
       var url = new URL(value);
-      return url.protocol === 'https:' && (url.hostname === hostname || url.hostname.endsWith('.' + hostname));
+      return url.protocol === 'https:' &&
+        url.hostname === 'whop.com' &&
+        url.port === '' &&
+        url.username === '' &&
+        url.password === '' &&
+        url.search === '' &&
+        url.hash === '' &&
+        /^\/checkout\/plan_[A-Za-z0-9]+\/?$/.test(url.pathname);
     } catch (error) {
       return false;
     }
@@ -35,8 +42,8 @@
       config.price.currency === 'USD' &&
       config.betaLimit === 12 &&
       config.deliveryMode === 'provider-protected' &&
-      approvedUrl(config.paymentUrl, 'whop.com') &&
-      approvedUrl(config.refundTermsUrl, 'shiftandlead.com');
+      approvedCheckoutUrl(config.paymentUrl) &&
+      config.refundTermsUrl === 'https://www.shiftandlead.com/workbooks/find-your-zone-of-genius-refund-terms.html';
   }
 
   async function init() {

@@ -78,6 +78,26 @@ test('form keeps reflection content private and cannot submit to an unapproved c
   assert.doesNotMatch(combined, /fetch\s*\(|XMLHttpRequest|sendBeacon|form\.submit\s*\(/);
 });
 
+test('raw feedback HTML cannot submit named answers when JavaScript is absent', () => {
+  const page = read('main-site/workbooks/find-your-zone-of-genius-feedback.html');
+  const script = read('main-site/assets/zone-genius-feedback.js');
+  const form = page.match(/<form\b[\s\S]*?<\/form>/i)?.[0];
+  assert.ok(form, 'feedback form is present');
+
+  const namedControls = [...form.matchAll(/<(?:input|select|textarea)\b[^>]*\bname=["'][^"']+["'][^>]*>/gi)]
+    .map((match) => match[0]);
+  assert.ok(namedControls.length > 0, 'feedback fields are present');
+  for (const control of namedControls) {
+    assert.match(control, /\sdisabled(?:\s|>|=)/i, `named control must fail closed: ${control}`);
+  }
+
+  const submit = form.match(/<button\b[^>]*type=["']submit["'][^>]*>/i)?.[0];
+  assert.ok(submit, 'submit button is present');
+  assert.match(submit, /\sdisabled(?:\s|>|=)/i, 'submit button must fail closed');
+  assert.match(script, /querySelectorAll\([^)]*data-feedback-submit[^)]*\)/);
+  assert.match(script, /control\.disabled = false/);
+});
+
 test('four unsent email templates use the approved copy and privacy boundary', () => {
   const templates = [
     'checkout/delivery-email.md',

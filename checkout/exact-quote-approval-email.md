@@ -26,5 +26,5 @@ The quote will not be published unless you approve the exact quote and attributi
 
 Keep your reflection private. Shift & Lead does not receive your reflection answers, analysis or final page. Do not send private reflection answers by email.
 
-Fatiha  
+Fatiha
 Shift & Lead

@@ -13,10 +13,17 @@ const BASE_PUBLIC_CONFIG = Object.freeze({
   deliveryMode: 'provider-protected',
 });
 
-function isApprovedHttpsUrl(value, allowedHost) {
+function isExactWhopCheckoutUrl(value) {
   try {
     const url = new URL(value);
-    return url.protocol === 'https:' && (url.hostname === allowedHost || url.hostname.endsWith(`.${allowedHost}`));
+    return url.protocol === 'https:' &&
+      url.hostname === 'whop.com' &&
+      url.port === '' &&
+      url.username === '' &&
+      url.password === '' &&
+      url.search === '' &&
+      url.hash === '' &&
+      /^\/checkout\/plan_[A-Za-z0-9]+\/?$/.test(url.pathname);
   } catch {
     return false;
   }
@@ -41,10 +48,23 @@ export function validateCheckoutConfiguration(env = process.env) {
   if (env.CHECKOUT_BETA_LIMIT !== '12') errors.push('CHECKOUT_BETA_LIMIT must be 12');
   if (env.CHECKOUT_PROVIDER !== 'whop') errors.push('CHECKOUT_PROVIDER must be whop for the existing protected-delivery integration');
   if (!env.CHECKOUT_ACCOUNT_REFERENCE?.trim()) errors.push('CHECKOUT_ACCOUNT_REFERENCE is required');
-  if (!isApprovedHttpsUrl(env.CHECKOUT_PAYMENT_URL, 'whop.com')) errors.push('CHECKOUT_PAYMENT_URL must be an HTTPS whop.com URL');
+  if (!env.CHECKOUT_APPROVED_ACCOUNT_REFERENCE?.trim() ||
+      env.CHECKOUT_ACCOUNT_REFERENCE !== env.CHECKOUT_APPROVED_ACCOUNT_REFERENCE) {
+    errors.push('CHECKOUT_ACCOUNT_REFERENCE must match CHECKOUT_APPROVED_ACCOUNT_REFERENCE');
+  }
+  if (!isExactWhopCheckoutUrl(env.CHECKOUT_PAYMENT_URL)) {
+    errors.push('CHECKOUT_PAYMENT_URL must be an exact HTTPS whop.com/checkout/plan_<id> URL');
+  }
+
+  if (!env.CHECKOUT_APPROVED_PAYMENT_URL ||
+      env.CHECKOUT_PAYMENT_URL !== env.CHECKOUT_APPROVED_PAYMENT_URL) {
+    errors.push('CHECKOUT_PAYMENT_URL must match CHECKOUT_APPROVED_PAYMENT_URL');
+  }
+
   if (env.CHECKOUT_PAYOUT_CURRENCY !== APPROVED_PAYOUT_CURRENCY) errors.push(`CHECKOUT_PAYOUT_CURRENCY must be ${APPROVED_PAYOUT_CURRENCY}`);
   if (env.CHECKOUT_REFUND_TERMS_URL !== APPROVED_REFUND_TERMS_URL) errors.push(`CHECKOUT_REFUND_TERMS_URL must be ${APPROVED_REFUND_TERMS_URL}`);
   if (env.CHECKOUT_REFUND_TERMS_APPROVED !== 'true') errors.push('CHECKOUT_REFUND_TERMS_APPROVED must be true');
+  if (env.CHECKOUT_PROVIDER_REFUND_TERMS_VERIFIED !== 'true') errors.push('CHECKOUT_PROVIDER_REFUND_TERMS_VERIFIED must be true');
   if (env.CHECKOUT_SUPPORT_EMAIL !== APPROVED_SUPPORT_EMAIL) errors.push(`CHECKOUT_SUPPORT_EMAIL must be ${APPROVED_SUPPORT_EMAIL}`);
   if (env.CHECKOUT_BETA_CAP_VERIFIED !== 'true') errors.push('CHECKOUT_BETA_CAP_VERIFIED must be true');
   if (env.CHECKOUT_DELIVERY_VERIFIED !== 'true') errors.push('CHECKOUT_DELIVERY_VERIFIED must be true');

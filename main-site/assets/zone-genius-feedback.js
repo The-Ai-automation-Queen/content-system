@@ -18,4 +18,8 @@
     status.textContent = 'Feedback collection is not open yet. Nothing has been sent.';
     status.focus();
   });
+
+  for (const control of form.querySelectorAll('[name], [data-feedback-submit]')) {
+    control.disabled = false;
+  }
 })();

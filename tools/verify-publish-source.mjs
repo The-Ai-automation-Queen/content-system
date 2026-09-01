@@ -7,6 +7,23 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const MAIN = path.join(ROOT, 'main-site');
 const statuses = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'page-status.json'), 'utf8'));
 const failures = [];
+const protectedArtifactNames = new Set([
+  'find-your-zone-of-genius-workbook-v2.pdf',
+  'find-your-zone-of-genius-private-agent.zip',
+]);
+
+function guardProtectedArtifacts(directory) {
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const absolute = path.join(directory, entry.name);
+    const relative = path.relative(ROOT, absolute);
+    if (protectedArtifactNames.has(entry.name)) {
+      failures.push(`Protected checkout artifact must not be published from main-site: ${relative}`);
+    }
+    if (entry.isDirectory()) guardProtectedArtifacts(absolute);
+  }
+}
+
+guardProtectedArtifacts(MAIN);
 
 function read(rel) {
   const file = path.join(ROOT, rel);

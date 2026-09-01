@@ -18,5 +18,5 @@ Shift & Lead does not receive your answers, analysis or final page. ChatGPT stil
 
 If the tool does not work as expected, reply to this email with the technical problem only, or contact Fatiha@shiftandlead.ai. Do not send private reflection answers by email.
 
-Fatiha  
+Fatiha
 Shift & Lead

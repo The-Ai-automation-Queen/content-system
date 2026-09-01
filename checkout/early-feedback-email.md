@@ -14,5 +14,5 @@ The form does not require public quote permission. That choice is separate and o
 
 Shift & Lead does not receive your reflection answers, analysis or final page. Please keep those inside your own ChatGPT Project. Do not send private reflection answers by email.
 
-Fatiha  
+Fatiha
 Shift & Lead
