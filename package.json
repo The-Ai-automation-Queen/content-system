@@ -5,6 +5,7 @@
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "test:checkout": "node --test tests/checkout.test.mjs",
+    "test:landing": "node --test tests/landing.test.mjs",
     "checkout:validate": "node tools/validate-checkout-config.mjs",
     "validate:guides": "node tools/validate-guide-framework.mjs && node tools/verify-publish-source.mjs",
     "build": "node tools/include.mjs && node tools/guides-finalize.mjs && node tools/site-repair.mjs && node tools/site-repair-final.mjs",

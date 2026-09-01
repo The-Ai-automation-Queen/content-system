@@ -1,11 +1,20 @@
 (function () {
   'use strict';
 
+  function setStatus(button, message) {
+    var container = button.parentElement;
+    var status = container && container.querySelector('[data-checkout-status]');
+    if (!status && container && container.parentElement) {
+      status = container.parentElement.querySelector('[data-checkout-status]');
+    }
+    if (status) status.textContent = message || '';
+  }
+
   function disable(button, message) {
     button.removeAttribute('href');
     button.setAttribute('aria-disabled', 'true');
     button.setAttribute('role', 'link');
-    button.textContent = message || 'Checkout is not open yet';
+    setStatus(button, message || 'Checkout is not open yet');
   }
 
   function approvedUrl(value, hostname) {
@@ -43,7 +52,7 @@
       buttons.forEach(function (button) {
         button.href = config.paymentUrl;
         button.removeAttribute('aria-disabled');
-        button.textContent = 'Start my private reflection';
+        setStatus(button, '');
       });
     } catch (error) {
       buttons.forEach(function (button) { disable(button, 'Checkout is not open yet'); });
