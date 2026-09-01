@@ -10,6 +10,24 @@ import { validateCheckoutConfiguration } from '../tools/checkout-config.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (relativePath) => fs.readFileSync(path.join(root, relativePath), 'utf8');
 
+const approvedCheckoutEnv = (overrides = {}) => ({
+  CHECKOUT_ENABLED: 'true',
+  CHECKOUT_PRICE_CENTS: '3900',
+  CHECKOUT_CURRENCY: 'USD',
+  CHECKOUT_BETA_LIMIT: '12',
+  CHECKOUT_PROVIDER: 'whop',
+  CHECKOUT_ACCOUNT_REFERENCE: 'approved-account-label',
+  CHECKOUT_PAYMENT_URL: 'https://whop.com/checkout/example',
+  CHECKOUT_PAYOUT_CURRENCY: 'USD',
+  CHECKOUT_REFUND_TERMS_URL: 'https://www.shiftandlead.com/workbooks/find-your-zone-of-genius-refund-terms.html',
+  CHECKOUT_REFUND_TERMS_APPROVED: 'true',
+  CHECKOUT_SUPPORT_EMAIL: 'Fatiha@shiftandlead.ai',
+  CHECKOUT_BETA_CAP_VERIFIED: 'true',
+  CHECKOUT_DELIVERY_VERIFIED: 'true',
+  CHECKOUT_TEST_PURCHASE_VERIFIED: 'true',
+  ...overrides,
+});
+
 test('checkout remains safely disabled when no approved account configuration is present', () => {
   const result = validateCheckoutConfiguration({});
 
@@ -159,22 +177,11 @@ test('the product has clear product-specific no-refund terms linked from its sal
 });
 
 test('checkout accepts only the approved payout currency, support identity, and product refund page', () => {
-  const result = validateCheckoutConfiguration({
-    CHECKOUT_ENABLED: 'true',
-    CHECKOUT_PRICE_CENTS: '3900',
-    CHECKOUT_CURRENCY: 'USD',
-    CHECKOUT_BETA_LIMIT: '12',
-    CHECKOUT_PROVIDER: 'whop',
-    CHECKOUT_ACCOUNT_REFERENCE: 'approved-account-label',
-    CHECKOUT_PAYMENT_URL: 'https://whop.com/checkout/example',
+  const result = validateCheckoutConfiguration(approvedCheckoutEnv({
     CHECKOUT_PAYOUT_CURRENCY: 'AED',
     CHECKOUT_REFUND_TERMS_URL: 'https://www.shiftandlead.com/refund-policy.html',
-    CHECKOUT_REFUND_TERMS_APPROVED: 'true',
     CHECKOUT_SUPPORT_EMAIL: 'support@example.com',
-    CHECKOUT_BETA_CAP_VERIFIED: 'true',
-    CHECKOUT_DELIVERY_VERIFIED: 'true',
-    CHECKOUT_TEST_PURCHASE_VERIFIED: 'true',
-  });
+  }));
 
   assert.equal(result.enabled, false);
   assert.deepEqual(result.errors, [
