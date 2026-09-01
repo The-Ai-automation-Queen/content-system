@@ -1,30 +1,22 @@
 # Purchase delivery email
 
-**Subject:** Your Find Your Zone of Genius files
+Status: Draft only. Do not send.
 
-Thank you for buying Find Your Zone of Genius.
+**Subject: Your Find Your Zone of Genius reflection**
 
-Your protected purchase area contains two files:
+You are in. Here is the best way to begin.
 
-1. `find-your-zone-of-genius-workbook-v2.pdf`
-2. `find-your-zone-of-genius-private-agent.zip`
+1. Download the workbook: [protected `find-your-zone-of-genius-workbook-v2.pdf` link]
+2. Do not try to finish in one sitting. Stop when your answers become tired or vague.
+3. Start with specific moments. What happened is more useful than what sounds impressive.
+4. Download the private-agent file: [protected `find-your-zone-of-genius-private-agent.zip` link]
+5. Follow the instructions inside the file to create your ChatGPT Project and begin.
 
-## Start here
+Open the workbook PDF first. You do not need to agree with the result. Keep what is supported, edit what is partly true and reject what is wrong. The goal is one direction you can test, not a final label.
 
-Open the workbook PDF first. Work through it at your own pace. When the workbook tells you to continue with the reflection agent:
+Shift & Lead does not receive your answers, analysis or final page. ChatGPT still processes and stores what you enter according to your account, workspace and data-control settings.
 
-1. Download and unzip `find-your-zone-of-genius-private-agent.zip`.
-2. Create a new ChatGPT Project in your own account.
-3. Add the Markdown agent file from the ZIP to that project.
-4. Start the project and follow the instructions one question at a time.
-
-Keep this email so you can return to the protected purchase area if you need the files again.
-
-## Privacy
-
-Install the reflection agent inside your own ChatGPT Project. Shift & Lead does not receive your answers, analysis or final page. ChatGPT still processes and stores what you enter according to your account, workspace and data-control settings.
-
-For a technical delivery problem, contact Fatiha@shiftandlead.ai. You only need to describe the file or access problem.
+If the tool does not work as expected, reply to this email with the technical problem only, or contact Fatiha@shiftandlead.ai. Do not send private reflection answers by email.
 
 Fatiha  
 Shift & Lead
