@@ -128,8 +128,8 @@ if (/\bQuiz\b/i.test(guideHeader)) {
 if (!/href="\/workbooks\.html">Workbooks</i.test(guideLibrary)) {
   failures.push('Guide footer does not match the live shell: Workbooks is missing');
 }
-if (vercel.buildCommand !== 'cd .. && node tools/verify-publish-source.mjs') {
-  failures.push('Vercel buildCommand must verify the committed source without rewriting it');
+if (vercel.buildCommand !== 'cd .. && npm run checkout:validate && node tools/verify-publish-source.mjs') {
+  failures.push('Vercel buildCommand must validate checkout, then verify the committed source without rewriting it');
 }
 
 if (failures.length) {

@@ -1,0 +1,13 @@
+{
+  "enabled": false,
+  "provider": null,
+  "paymentUrl": null,
+  "price": {
+    "amountCents": 3900,
+    "currency": "USD"
+  },
+  "betaLimit": 12,
+  "refundTermsUrl": null,
+  "confirmationUrl": "https://www.shiftandlead.com/purchase/confirmed.html",
+  "deliveryMode": "provider-protected"
+}

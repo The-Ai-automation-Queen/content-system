@@ -74,7 +74,7 @@
       "permanent": true
     }
   ],
-  "buildCommand": "cd .. && node tools/verify-publish-source.mjs",
+  "buildCommand": "cd .. && npm run checkout:validate && node tools/verify-publish-source.mjs",
   "outputDirectory": ".",
   "installCommand": ""
 }
