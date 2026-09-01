@@ -162,13 +162,15 @@ test('the publish build validates checkout configuration before serving committe
   assert.match(vercel.buildCommand, /checkout:validate/);
 });
 
-test('the product page exposes only the fail-closed checkout control at US$39 for 12 buyers', () => {
+test('the product page shows a useful waitlist while checkout remains safely disabled', () => {
   const productPage = read('main-site/workbooks/find-your-zone-of-genius.html');
 
-  assert.match(productPage, /src="\/assets\/checkout\.js"/);
-  assert.match(productPage, /data-checkout-button/);
+  assert.match(productPage, /src="\/assets\/zone-genius-waitlist\.js"/);
+  assert.match(productPage, /action="\/api\/zone-genius-waitlist"/);
   assert.match(productPage, /US\$39/);
-  assert.match(productPage, /12 beta buyers/);
+  assert.match(productPage, /12 beta (?:buyers|places)/);
+  assert.match(productPage, /No payment today/);
+  assert.doesNotMatch(productPage, /data-checkout-button|src="\/assets\/checkout\.js"/);
   assert.doesNotMatch(productPage, /https:\/\/(?:www\.)?whop\.com/i);
 });
 

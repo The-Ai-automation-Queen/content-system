@@ -7,6 +7,9 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const page = fs.readFileSync(path.join(root, 'main-site/workbooks/find-your-zone-of-genius.html'), 'utf8');
 const checkoutScript = fs.readFileSync(path.join(root, 'main-site/assets/checkout.js'), 'utf8');
+const styles = fs.readFileSync(path.join(root, 'main-site/assets/pages/zone-genius.css'), 'utf8');
+const waitlistScriptPath = path.join(root, 'main-site/assets/zone-genius-waitlist.js');
+const waitlistApiPath = path.join(root, 'main-site/api/zone-genius-waitlist.js');
 const canonical = 'https://www.shiftandlead.com/workbooks/find-your-zone-of-genius.html';
 const title = 'Find Your Zone of Genius | A private reflection with AI';
 const description = 'Think you have nothing special? Use your own life as evidence, let AI find the patterns and leave with a direction you can test.';
@@ -94,12 +97,27 @@ test('landing page includes all six approved FAQ answers', () => {
   }
 });
 
-test('every product CTA keeps the exact approved label through checkout handoff', () => {
-  const productCtas = [...page.matchAll(/<a\b[^>]*class="[^"]*product-cta[^"]*"[^>]*>([\s\S]*?)<\/a>/g)];
-  assert.ok(productCtas.length >= 3, 'expected a CTA in the hero, offer, and final section');
-  for (const match of productCtas) assert.equal(visibleText(match[1]), cta);
-  assert.equal((page.match(/data-checkout-button/g) || []).length, productCtas.length);
-  assert.doesNotMatch(checkoutScript, /button\.textContent\s*=/);
+test('unfinished checkout is replaced by a useful Lumail waitlist', () => {
+  assert.doesNotMatch(page, /data-checkout-button|Checkout is not open yet|src="\/assets\/checkout\.js"/);
+  assert.match(page, /href="#zone-genius-waitlist"[^>]*>Join the beta waitlist<\/a>/);
+  assert.match(page, /<form[^>]+id="zone-genius-waitlist"[^>]+action="\/api\/zone-genius-waitlist"/);
+  assert.match(page, /<input[^>]+type="email"[^>]+name="email"[^>]+required/);
+  assert.match(page, /<input[^>]+name="consent"[^>]+required/);
+  assert.match(page, /<input[^>]+name="website"/);
+  assert.match(page, /<button[^>]+type="submit"[^>]*>Join the beta waitlist<\/button>/);
+  assert.ok(fs.existsSync(waitlistScriptPath));
+  assert.ok(fs.existsSync(waitlistApiPath));
+  const waitlistScript = fs.readFileSync(waitlistScriptPath, 'utf8');
+  const waitlistApi = fs.readFileSync(waitlistApiPath, 'utf8');
+  assert.match(waitlistScript, /fetch\(form\.action/);
+  assert.match(waitlistApi, /LUMAIL_API_TOKEN/);
+  assert.match(waitlistApi, /zone-genius-beta-waitlist/);
+  assert.doesNotMatch(`${waitlistScript}\n${waitlistApi}`, /reflection_answers|analysis|final_page|hypothesis_text/);
+});
+
+test('blue CTAs force readable white text while the light CTA stays blue on white', () => {
+  assert.match(styles, /body\[data-page-kind\] \.product-cta\{[^}]*color:#fff!important/);
+  assert.match(styles, /body\[data-page-kind\] \.product-cta--light\{[^}]*color:#1b2ea0!important/);
 });
 
 test('landing page preserves site chrome and avoids banned landing copy', () => {

@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/assets/pages/workbook-product.css">
   <link rel="stylesheet" href="/assets/pages/zone-genius.css">
   <script defer src="/assets/events.js"></script>
-  <script defer src="/assets/checkout.js"></script>
+  <script defer src="/assets/zone-genius-waitlist.js"></script>
 </head>
 <body class="zone-page" data-page-kind="standard" data-product="find-your-zone-of-genius">
 <!-- chrome:nav -->
@@ -37,9 +37,8 @@
         <p class="zone-eyebrow">Find Your Zone of Genius</p>
         <h1>Think you have nothing special? Let&#39;s look more closely.</h1>
         <p class="zone-lead">Your experience may look ordinary when you see each part on its own. This private reflection helps you bring the pieces together, use AI to find the patterns and choose a direction to test.</p>
-        <a class="product-cta" data-checkout-button aria-disabled="true">Start my private reflection</a>
-        <p class="zone-purchase">US$39 · Workbook and private reflection agent · No call required</p>
-        <p class="checkout-status" data-checkout-status role="status" aria-live="polite">Checkout is not open yet</p>
+        <a class="product-cta" href="#zone-genius-waitlist">Join the beta waitlist</a>
+        <p class="zone-purchase">US$39 at launch · 12 beta places · No payment today</p>
       </div>
       <div class="product-cover zone-cover" aria-label="Find Your Zone of Genius workbook cover">
         <small>Shift &amp; Lead</small>
@@ -117,8 +116,16 @@
       <div class="zone-offer__buy">
         <strong>US$39</strong>
         <span>Limited to 12 beta buyers</span>
-        <a class="product-cta" data-checkout-button aria-disabled="true">Start my private reflection</a>
-        <p class="checkout-status" data-checkout-status role="status" aria-live="polite">Checkout is not open yet</p>
+        <p class="zone-waitlist-note">Join the waitlist and I will email you when the 12 beta places open. No payment today.</p>
+        <form id="zone-genius-waitlist" class="zone-waitlist-form" action="/api/zone-genius-waitlist" method="post">
+          <label for="zone-waitlist-email">Email address</label>
+          <input id="zone-waitlist-email" type="email" name="email" autocomplete="email" required>
+          <div class="zone-honeypot" aria-hidden="true"><label for="zone-waitlist-website">Website</label><input id="zone-waitlist-website" type="text" name="website" tabindex="-1" autocomplete="off"></div>
+          <label class="zone-waitlist-consent"><input type="checkbox" name="consent" value="yes" required> Email me when Find Your Zone of Genius opens and send essential beta updates. I can unsubscribe at any time.</label>
+          <input type="hidden" name="source" value="zone-genius-product-page">
+          <button class="product-cta" type="submit">Join the beta waitlist</button>
+          <p class="zone-waitlist-status" data-waitlist-status role="status" aria-live="polite"></p>
+        </form>
         <p>No refunds are available because this is a downloadable product. <a href="/workbooks/find-your-zone-of-genius-refund-terms.html">Read the refund terms</a>.</p>
       </div>
     </div>
@@ -141,9 +148,8 @@
   <section class="zone-final">
     <div class="zone-shell zone-narrow">
       <h2>You may not need a new identity. You may need to see the pattern in the life you already lived.</h2>
-      <a class="product-cta product-cta--light" data-checkout-button aria-disabled="true">Start my private reflection</a>
-      <p class="zone-purchase">US$39 · Private workbook and reflection-agent file · No call required</p>
-      <p class="checkout-status" data-checkout-status role="status" aria-live="polite">Checkout is not open yet</p>
+      <a class="product-cta product-cta--light" href="#zone-genius-waitlist">Join the beta waitlist</a>
+      <p class="zone-purchase">US$39 at launch · 12 beta places · No payment today</p>
     </div>
   </section>
 </main>
