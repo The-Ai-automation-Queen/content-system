@@ -4,6 +4,11 @@
   "ignoreCommand": "git diff --quiet HEAD^ HEAD -- . ../tools ../shared ../data ../chrome",
   "redirects": [
     {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/work-with-me.html",
       "destination": "/build-sprint.html",
       "permanent": true

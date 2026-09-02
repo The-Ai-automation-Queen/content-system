@@ -83,6 +83,8 @@ for (const file of fs.readdirSync(MAIN).filter(name => name.endsWith('.html'))) 
 
 const homepage = read('main-site/index.html');
 const guideLibrary = read('main-site/guides/index.html');
+const workbookLibrary = read('main-site/workbooks.html');
+const sitemap = read('main-site/sitemap.xml');
 const vercel = JSON.parse(read('main-site/vercel.json'));
 if (!/<title>[^<]+<\/title>/i.test(homepage)) failures.push('Homepage is missing a title');
 if (!/<h1\b/i.test(homepage)) failures.push('Homepage is missing an H1');
@@ -109,6 +111,57 @@ for (const hiddenSlug of guideInventory
     failures.push(`Unapproved guide appears in the public library: ${hiddenSlug}`);
   }
 }
+
+const retiredGuideSlugs = new Set((guidePublication.retired ?? []).map((guide) => guide.slug));
+for (const slug of retiredGuideSlugs) {
+  const sourceGuide = guideInventory.find((guide) => guide.slug === slug);
+  if (!sourceGuide) failures.push(`Retired guide source is missing: ${slug}`);
+  else if (sourceGuide.status !== 'retired') failures.push(`Retired guide source is not marked retired: ${slug}`);
+  const publicFile = path.join(MAIN, 'guides', `${slug}.html`);
+  if (fs.existsSync(publicFile)) failures.push(`Retired guide is still deployed: /guides/${slug}.html`);
+}
+
+for (const file of fs.readdirSync(path.join(MAIN, 'guides')).filter((name) => name.endsWith('.html') && name !== 'index.html')) {
+  const slug = file.slice(0, -5);
+  if (approvedGuideSlugSet.has(slug)) continue;
+  const html = fs.readFileSync(path.join(MAIN, 'guides', file), 'utf8');
+  if (!/<meta[^>]+name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(html)) {
+    failures.push(`Unapproved guide export is indexable: /guides/${file}`);
+  }
+}
+
+const sitemapPaths = new Set(
+  [...sitemap.matchAll(/<loc>https:\/\/www\.shiftandlead\.com([^<]*)<\/loc>/g)].map((match) => match[1] || '/'),
+);
+const expectedSitemapPaths = new Set([
+  ...Object.values(statuses).filter((page) => page.status === 'active').map((page) => page.path),
+  ...approvedGuideSlugs.map((slug) => `/guides/${slug}.html`),
+]);
+for (const expectedPath of expectedSitemapPaths) {
+  if (!sitemapPaths.has(expectedPath)) failures.push(`Active URL is missing from sitemap: ${expectedPath}`);
+}
+for (const sitemapPath of sitemapPaths) {
+  if (!expectedSitemapPaths.has(sitemapPath)) failures.push(`Sitemap contains a non-active URL: ${sitemapPath}`);
+}
+if (sitemapPaths.size !== expectedSitemapPaths.size) {
+  failures.push(`Sitemap URL count ${sitemapPaths.size} does not match expected count ${expectedSitemapPaths.size}`);
+}
+
+for (const workbookPath of [
+  '/workbooks/find-your-zone-of-genius.html',
+  '/workbooks/your-human-evidence.html',
+  '/workbooks/use-what-is-unique-about-you.html',
+]) {
+  if (!workbookLibrary.includes(`href="${workbookPath}"`)) {
+    failures.push(`Workbook overview is missing its detail-page link: ${workbookPath}`);
+  }
+}
+
+const indexRedirect = vercel.redirects?.find((redirect) => redirect.source === '/index.html');
+if (!indexRedirect || indexRedirect.destination !== '/' || indexRedirect.permanent !== true) {
+  failures.push('Vercel must permanently redirect /index.html to /');
+}
+
 const guideHeader = guideLibrary.match(/<header class="site-header">([\s\S]*?)<\/header>/i)?.[1] || '';
 for (const [label, href] of [
   ['Home', '/'],

@@ -129,5 +129,27 @@
       "section": "Content and creative work",
       "journeyOrder": 200
     }
+  ],
+  "retired": [
+    {
+      "slug": "24-7-operations-system",
+      "reason": "Retired from free publication; preserve the source for possible paid use."
+    },
+    {
+      "slug": "first-ai-employee",
+      "reason": "Retired from free publication; preserve the source for possible paid use."
+    },
+    {
+      "slug": "follow-up-setup",
+      "reason": "Retired from free publication; preserve the source for possible paid use."
+    },
+    {
+      "slug": "inbox-manager-setup",
+      "reason": "Retired from free publication; preserve the source for possible paid use."
+    },
+    {
+      "slug": "stack-3-tool-ai-stack",
+      "reason": "Retired from free publication; preserve the source for possible paid use."
+    }
   ]
 }
