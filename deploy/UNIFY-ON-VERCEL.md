@@ -4,7 +4,7 @@ Today guides deploys on merge (Vercel) while www and the Brief wait for the
 VPS cron to pull. Two speeds, one repo: that split is where every "why is it
 not live yet" moment has come from. The fix is three Vercel projects, one per
 site, all watching this repo. After this, `git push` deploys everything, and
-the VPS only runs the machines (n8n, crawler, bots) — which already push
+the VPS only runs the crawler and bots — which already push
 their output to main, so the Brief redeploys itself when new issues land.
 
 ## One-time setup (~10 minutes, then never again)
@@ -18,10 +18,9 @@ In Vercel (vercel.com/new, pick the content-system repo each time):
    in `shiftandlead-brief` add `brief.shiftandlead.com`.
 4. DNS (where shiftandlead.com is managed): change the two records Vercel
    shows you — CNAME `www` and CNAME `brief` → `cname.vercel-dns.com`.
-   `auto.` and `stats.` DO NOT change; they stay on the VPS.
+   `stats.` does not change; it stays on the VPS.
 
-Nothing breaks during the switch: the VPS keeps serving until DNS flips, and
-forms post to auto.shiftandlead.com (n8n) which never moves.
+Nothing breaks during the switch: the VPS keeps serving until DNS flips. Email capture is handled by server-side Vercel functions that write to Lumail.
 
 ## After the flip
 
@@ -29,4 +28,4 @@ forms post to auto.shiftandlead.com (n8n) which never moves.
 - Ship local edits in one command: `MSG="what changed" npm run ship`
   (runs the validator, the build, commits, pushes; Vercel does the rest).
 - VPS cleanup, whenever convenient: remove the nginx server blocks for
-  www/brief and the site-pull cron. Keep n8n, the crawler, the bots, umami.
+  www/brief and the site-pull cron. Keep the crawler, bots and analytics.

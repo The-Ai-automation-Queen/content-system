@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  var endpoint = 'https://auto.shiftandlead.com/webhook/formspree-lead';
+  var endpoint = '/api/workbook-waitlist';
   function track(name, data) { if (typeof window.slTrack === 'function') window.slTrack(name, data || {}); }
   function localTestMode() {
     var local = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
@@ -33,6 +33,7 @@
                 product: product,
                 source: 'workbook-waitlist-' + product,
                 consent: true,
+                website: form.querySelector('[name=website]').value,
                 timestamp: new Date().toISOString()
               })
             });

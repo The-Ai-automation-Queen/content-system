@@ -4,21 +4,7 @@ The email gate is intentional lead capture. It must not be removed while a guide
 
 ## Gated guides
 
-The active guide registry in `data/guides.json` is the source of truth. The current public set contains 13 guides:
-
-- `24-7-operations-system`
-- `ai-jargon-guide`
-- `chatgpt`
-- `claude`
-- `copilot`
-- `first-ai-employee`
-- `follow-up-setup`
-- `gemini`
-- `inbox-manager-setup`
-- `stack-3-tool-ai-stack`
-- `what-is-a-prompt`
-- `what-is-agentic`
-- `what-is-ai`
+The approved registry in `data/guide-publication.json` is the source of truth. Every approved guide must render through `GuideAccessBoundary`, submit to `/api/guide-capture`, and have its own `guide-*` tag in Lumail. The current public set contains 20 guides.
 
 ## Visitor experience
 

@@ -1,5 +1,5 @@
 # Self-hosted Umami analytics for shiftandlead.com (all properties).
-# Runs on the existing VPS next to n8n. Cookieless, GDPR-friendly,
+# Runs on the existing VPS. Cookieless, GDPR-friendly,
 # no third-party vendor, no per-month cost.
 services:
   umami:

@@ -12,8 +12,7 @@ silently and does not affect visitors).
 2. Secrets (Doppler): set `UMAMI_DB_PASSWORD` (random 32 chars) and
    `UMAMI_APP_SECRET` (random 32 chars).
 3. `cd deploy/analytics && doppler run -- docker compose up -d`
-4. Reverse proxy: route `stats.shiftandlead.com` -> `127.0.0.1:3100`
-   (same nginx/caddy pattern as auto.shiftandlead.com), with TLS.
+4. Reverse proxy: route `stats.shiftandlead.com` -> `127.0.0.1:3100`, with TLS.
 5. Log into Umami (default admin/umami, change the password immediately).
    Create 3 websites: www.shiftandlead.com, guides.shiftandlead.com,
    brief.shiftandlead.com. Copy each website ID.
@@ -29,8 +28,6 @@ silently and does not affect visitors).
 - The guide-reader -> buyer journey: cross-domain CTAs already carry
   utm_source=guides / utm_source=brief with per-page utm_content, so the
   www property shows exactly which guide sent each visitor to the money
-  pages. Form conversions stay measured first-party via the n8n -> GHL
-  source tags (fast-forward-waitlist, workshops-fit-call,
-  homepage-time-leak-quiz).
+  pages. Email conversions are attributed through the source and product fields stored in Lumail.
 - No cookies, no consent banner needed under GDPR/ePrivacy for
   cookieless, non-identifying analytics; privacy.html discloses it anyway.

@@ -16,6 +16,8 @@ const librarySource = read("next-app/content/guides.ts");
 const headerSource = read("next-app/components/chrome/site-header.tsx");
 const globalStyles = read("next-app/app/globals.css");
 const footerSource = read("next-app/components/chrome/site-footer.tsx");
+const guideAccessSource = read("next-app/components/guides/guide-access-boundary.tsx");
+const guideCaptureApi = read("main-site/api/guide-capture.js");
 const guidesIndex = read("main-site/guides/index.html");
 const buildSprint = read("main-site/build-sprint.html");
 const sharedBrandSystem = read("shared/assets/brand-system.css");
@@ -35,6 +37,14 @@ for (const guide of approved) {
   if (!inventorySlugs.has(guide.slug)) failures.push(`Approved guide is missing from inventory: ${guide.slug}`);
   if (!pageSource.includes(`slug: "${guide.slug}"`)) failures.push(`Approved guide has no structured page: ${guide.slug}`);
   if (!guide.section || !Number.isFinite(guide.journeyOrder)) failures.push(`Approved guide needs a section and journeyOrder: ${guide.slug}`);
+  if (!guideCaptureApi.includes(`"${guide.slug}": "guide-`)) failures.push(`Approved guide has no Lumail tag mapping: ${guide.slug}`);
+}
+
+if (!guideAccessSource.includes('fetch("/api/guide-capture"')) {
+  failures.push("The guide gate no longer submits to the server-side Lumail endpoint.");
+}
+if (!guideAccessSource.includes("<GuideAccessBoundary") && !read("next-app/components/guides/guide-reading-page.tsx").includes("<GuideAccessBoundary")) {
+  failures.push("Published guide pages are no longer protected by the shared email gate.");
 }
 
 if (!librarySource.includes('import publication from "../../data/guide-publication.json"')) {

@@ -69,7 +69,7 @@ vs released.
 ## What "working" means here
 
 Weekly, the board meeting asks this repo four things. Be able to answer:
-- Emails captured this week (n8n → GHL, by source tag).
+- Emails captured this week (Lumail, by source tag).
 - Store clicks / checkout starts driven from the site.
 - Drafts produced vs drafts released (queue health).
 - Which posts won and what `performance-tracker` says to do differently.

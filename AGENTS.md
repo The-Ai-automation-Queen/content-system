@@ -48,6 +48,7 @@ and selective services are supporting revenue, not the core promise.
 - Use the cheapest representative test before a batch render.
 - Never claim a provider was called without a tool result or visible browser result.
 - Secrets stay in authenticated connectors or environment variables, never Notion or git.
+- Lumail is the only active email capture provider. Website forms must use server-side `/api/*` routes with `LUMAIL_API_TOKEN`; historical infrastructure notes must never be used to wire a form.
 - After a successful external action, log its ID, URL, timestamp, status, and errors in Notion.
 - Historical offers, keywords, and reports are evidence only. `BUILD`, `TWIN`, AI Readiness
   Audit, Voice Anchor, Fast Forward, Always-On Content System, the old community ladder,
