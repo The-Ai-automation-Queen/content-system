@@ -86,7 +86,12 @@ const chromeNav =
   site.nav.map((n) =>
     `      <a${n.cta ? ' class="nav-cta"' : ''} href="${n.url}">${esc(n.label)}</a>`
   ).join('\n') +
-  `\n    </div>\n  </div>\n</nav>`;
+  `\n    </div>\n` +
+  `    <details class="site-nav-mobile"><summary>Menu</summary><div class="site-nav-mobile-panel">` +
+  site.nav.map((n) =>
+    `<a${n.cta ? ' class="nav-cta"' : ''} href="${n.url}">${esc(n.label)}</a>`
+  ).join('') +
+  `</div></details>\n  </div>\n</nav>`;
 
 const chromeFooter =
   `<footer class="chrome-foot">\n  <div class="chrome-foot-grid">\n` +

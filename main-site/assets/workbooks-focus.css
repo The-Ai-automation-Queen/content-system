@@ -18,9 +18,5 @@ body[data-page-kind="workbooks"] .workbook-number{margin:0 0 18px;color:#2c4be0;
 body[data-page-kind="workbooks"] .workbook-card h2{margin:0 0 12px;color:#171717;font:400 clamp(27px,2.5vw,34px)/1.08 'Playfair Display',Georgia,serif}
 body[data-page-kind="workbooks"] .workbook-card p{margin:0 0 24px;color:#565861;font:400 15px/1.62 Inter,Arial,sans-serif}
 body[data-page-kind="workbooks"] .workbook-card strong{margin-top:auto;color:#1b2ea0;font:700 12px/1.3 Inter,Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase}
-body[data-page-kind="workbooks"] .workbook-note{padding:64px 24px;background:#fff}
-body[data-page-kind="workbooks"] .workbook-note h2{color:#171717}
-body[data-page-kind="workbooks"] .workbook-note p{font-family:Inter,Arial,sans-serif;font-size:17px}
-body[data-page-kind="workbooks"] .workbook-status{display:inline-block;margin-top:24px;padding:10px 14px;border:1px solid #cfd5f8;background:#f4f6ff;color:#1b2ea0}
 @media(max-width:900px){body[data-page-kind="workbooks"] .workbook-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body[data-page-kind="workbooks"] .workbook-card:last-child{grid-column:1/-1;width:calc(50% - 12px);justify-self:center}}
 @media(max-width:650px){body[data-page-kind="workbooks"] .workbook-hero{padding:48px 0 44px}body[data-page-kind="workbooks"] .workbook-hero h1{font-size:43px}body[data-page-kind="workbooks"] .workbook-explain{text-align:left;padding:42px 0}body[data-page-kind="workbooks"] .workbook-explain-inner{text-align:left}body[data-page-kind="workbooks"] .workbook-list{padding:46px 0}body[data-page-kind="workbooks"] .workbook-grid{grid-template-columns:1fr;gap:28px}body[data-page-kind="workbooks"] .workbook-card:last-child{grid-column:auto;width:100%}body[data-page-kind="workbooks"] .workbook-card:hover{transform:none}body[data-page-kind="workbooks"] .workbook-card-art{aspect-ratio:16/10}body[data-page-kind="workbooks"] .workbook-card-copy{padding:23px 22px 25px}}
