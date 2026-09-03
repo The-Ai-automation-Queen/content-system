@@ -124,9 +124,9 @@ Before adding a guide to the registry, confirm all of the following:
 
 ## Current site shell
 
-The guide header uses the live site navigation plus a direct route back to the homepage:
+The guide header uses the focused live site navigation. The Shift & Lead wordmark is the route back to the homepage:
 
-`Home · Guides · Workbooks · About · Contact · How I can help`
+`Guides · Workbooks · About`
 
 The logo, menu links and mobile menu control use regular font weight. Do not
 reintroduce bold navigation typography.
@@ -134,8 +134,9 @@ reintroduce bold navigation typography.
 The footer groups are:
 
 - **Learn:** Guides, Workbooks
-- **Work:** How I can help, Build with me, Workshops
-- **About:** About, Contact
+- **Explore:** Guides, Workbooks
+- **About:** About Fatiha
+- **Legal:** Privacy, Terms
 - **Legal:** Privacy, Terms, Refunds, Licensing
 
 On screens up to 760px, keep the footer compact: navigation links are 14px,

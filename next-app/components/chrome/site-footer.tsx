@@ -1,9 +1,8 @@
 import Link from "next/link";
 
 const columns = [
-  { title: "Learn", links: [["Guides", "/guides/"], ["Workbooks", "/workbooks.html"]] },
-  { title: "Work", links: [["How I can help", "/how-i-can-help.html"], ["Build with me", "/build-sprint.html"], ["Workshops", "/workshops.html"]] },
-  { title: "About", links: [["About", "/about.html"], ["Contact", "/contact.html"]] },
+  { title: "Explore", links: [["Guides", "/guides/"], ["Workbooks", "/workbooks.html"]] },
+  { title: "About", links: [["About Fatiha", "/about.html"]] },
   { title: "Legal", links: [["Privacy", "/privacy.html"], ["Terms", "/terms.html"], ["Refunds", "/refund-policy.html"], ["Licensing", "/licensing.html"]] },
 ] as const;
 

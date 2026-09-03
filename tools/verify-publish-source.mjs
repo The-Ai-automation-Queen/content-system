@@ -164,12 +164,9 @@ if (!indexRedirect || indexRedirect.destination !== '/' || indexRedirect.permane
 
 const guideHeader = guideLibrary.match(/<header class="site-header">([\s\S]*?)<\/header>/i)?.[1] || '';
 for (const [label, href] of [
-  ['Home', '/'],
   ['Guides', '/guides/'],
   ['Workbooks', '/workbooks.html'],
   ['About', '/about.html'],
-  ['Contact', '/contact.html'],
-  ['How I can help', '/how-i-can-help.html'],
 ]) {
   if (!guideHeader.includes(`href="${href}"`) || !guideHeader.includes(`>${label}<`)) {
     failures.push(`Guide header does not match the live shell: ${label} → ${href}`);

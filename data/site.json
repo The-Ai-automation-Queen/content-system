@@ -1,31 +1,23 @@
 {
   "brand": "Shift & Lead",
-  "promise": "Use AI for what it does well. Keep what only you can bring. Build something valuable from the combination.",
-  "positioning": "Learn how to use AI for real work, decide what needs a person, and build from the experience and ideas that are uniquely yours.",
-  "identity": "Fatiha Chikh · AI builder and educator · 20 years at Dell, Intel, Microsoft",
-  "audience": "Ambitious professionals and business builders ready to put AI to work.",
+  "promise": "Find what you actually need from AI without losing the judgment, creativity and experience that make your work yours.",
+  "positioning": "Practical AI guides and thoughtful workbooks for people who want clarity before adding another tool or system.",
+  "identity": "Fatiha Chikh · AI educator and business architect · 20 years translating new technology into useful work",
+  "audience": "Professionals and business owners who want AI to support their work without losing their voice.",
   "year": 2026,
   "hosts": {"www": "https://www.shiftandlead.com", "guides": "https://www.shiftandlead.com/guides"},
   "nav": [
     {"label": "Guides", "url": "https://www.shiftandlead.com/guides/"},
     {"label": "Workbooks", "url": "https://www.shiftandlead.com/workbooks.html"},
-    {"label": "About", "url": "https://www.shiftandlead.com/about.html"},
-    {"label": "Contact", "url": "https://www.shiftandlead.com/contact.html"},
-    {"label": "How I can help", "url": "https://www.shiftandlead.com/how-i-can-help.html", "cta": true}
+    {"label": "About", "url": "https://www.shiftandlead.com/about.html"}
   ],
   "footer": [
-    {"title": "Learn", "links": [
+    {"title": "Explore", "links": [
       {"label": "Guides", "url": "https://www.shiftandlead.com/guides/"},
       {"label": "Workbooks", "url": "https://www.shiftandlead.com/workbooks.html"}
     ]},
-    {"title": "Work", "links": [
-      {"label": "How I can help", "url": "https://www.shiftandlead.com/how-i-can-help.html"},
-      {"label": "Build with me", "url": "https://www.shiftandlead.com/build-sprint.html"},
-      {"label": "Workshops", "url": "https://www.shiftandlead.com/workshops.html"}
-    ]},
     {"title": "About", "links": [
-      {"label": "About", "url": "https://www.shiftandlead.com/about.html"},
-      {"label": "Contact", "url": "https://www.shiftandlead.com/contact.html"}
+      {"label": "About Fatiha", "url": "https://www.shiftandlead.com/about.html"}
     ]},
     {"title": "Legal", "links": [
       {"label": "Privacy", "url": "https://www.shiftandlead.com/privacy.html"},

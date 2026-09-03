@@ -22,13 +22,12 @@ export default function GuidesPage() {
 
       <section className="guides-cta" aria-labelledby="guides-cta-title">
         <div>
-          <p>When a guide is not enough</p>
-          <h2 id="guides-cta-title">Find the next useful thing to build.</h2>
-          <span>Start with the result you want. Then decide what AI should handle and what still needs you.</span>
+          <p>Continue when you are ready</p>
+          <h2 id="guides-cta-title">Choose what would help you next.</h2>
+          <span>Keep learning with a free guide, or go deeper with a guided workbook.</span>
         </div>
         <div className="guides-cta__actions">
           <a href="/workbooks.html">Explore the workbooks <span aria-hidden="true">→</span></a>
-          <a href="/build-sprint.html">Build with me <span aria-hidden="true">→</span></a>
         </div>
       </section>
     </main>
