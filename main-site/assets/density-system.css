@@ -145,7 +145,7 @@ body[data-page-kind="workshops"] .guarantee p,
 body[data-page-kind="workshops"] .book h2,
 body[data-page-kind="workshops"] .book p{color:var(--ink)!important}
 body[data-page-kind="workshops"] .why{position:relative!important;padding-right:112px!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
-body[data-page-kind="workshops"] .why::after{content:"";position:absolute;right:6px;top:50%;transform:translateY(-50%);width:88px;height:88px;background:url('/assets/mascot/explaining.png') center/contain no-repeat;filter:drop-shadow(0 10px 16px rgba(26,26,26,.08))}
+body[data-page-kind="workshops"] .why::after{content:"";position:absolute;right:6px;top:50%;transform:translateY(-50%);width:88px;height:88px;background:url('/assets/mascot/explaining.webp') center/contain no-repeat;filter:drop-shadow(0 10px 16px rgba(26,26,26,.08))}
 body[data-page-kind="workshops"] .why>div{padding:16px 18px!important;border-top:2px solid var(--blue)!important}
 body[data-page-kind="workshops"] .booking-form{gap:9px!important;margin-top:16px!important;max-width:560px!important}
 body[data-page-kind="workshops"] .booking-form input,
@@ -156,7 +156,7 @@ body[data-page-kind="workshops"] .booking-status{color:var(--blue-deep)!importan
 
 /* Work with me */
 body[data-page-kind="build"] .offer-hero{position:relative!important;overflow:hidden!important;isolation:isolate!important;padding-top:50px!important;padding-bottom:50px!important;background:#fff!important}
-body[data-page-kind="build"] .offer-hero::after{content:"";position:absolute;z-index:0;right:0;top:0;bottom:0;width:min(43%,540px);background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.2) 28%,rgba(255,255,255,0) 58%),url('/fatiha-desk.jpg') center 38%/cover no-repeat;border-left:0}
+body[data-page-kind="build"] .offer-hero::after{content:"";position:absolute;z-index:0;right:0;top:0;bottom:0;width:min(43%,540px);background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.2) 28%,rgba(255,255,255,0) 58%),url('/fatiha-desk.webp') center 38%/cover no-repeat;border-left:0}
 body[data-page-kind="build"] .offer-hero-inner{position:relative!important;z-index:1!important;padding-right:min(43%,540px)!important}
 body[data-page-kind="build"] .offer-section{padding-top:40px!important;padding-bottom:40px!important}
 body[data-page-kind="build"] .offer-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
@@ -170,7 +170,7 @@ body[data-page-kind="build"] .offer-step::before{content:"";position:absolute;to
 body[data-page-kind="build"] .offer-step:not(:last-child)::after{content:"→";position:absolute;right:-10px;top:-17px;width:22px;height:22px;display:grid;place-items:center;border:1px solid #C9D3FF;border-radius:50%;background:#fff;color:var(--blue);font-family:var(--ui);font-size:11px;z-index:2}
 body[data-page-kind="build"] .offer-step .n{margin:0 0 7px!important;color:var(--blue-deep)!important}
 body[data-page-kind="build"] .offer-step h3{font-size:22px!important;margin:0 0 8px!important}
-body[data-page-kind="build"] .offer-steps::after{content:"";position:absolute;right:18px;bottom:-4px;width:72px;height:72px;background:url('/assets/mascot/planning.png') center/contain no-repeat;filter:drop-shadow(0 10px 16px rgba(26,26,26,.08))}
+body[data-page-kind="build"] .offer-steps::after{content:"";position:absolute;right:18px;bottom:-4px;width:72px;height:72px;background:url('/assets/mascot/planning.webp') center/contain no-repeat;filter:drop-shadow(0 10px 16px rgba(26,26,26,.08))}
 body[data-page-kind="build"] .fit-lists{gap:24px!important}
 body[data-page-kind="build"] .apply-form{max-width:760px!important;display:grid!important;grid-template-columns:1fr 1fr!important;gap:11px 16px!important}
 body[data-page-kind="build"] .apply-form label:nth-of-type(1){grid-column:1;grid-row:1}
