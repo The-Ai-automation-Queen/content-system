@@ -2,6 +2,7 @@
   "homepage": {"status": "active", "path": "/"},
   "guides": {"status": "active", "path": "/guides/"},
   "workbooks": {"status": "active", "path": "/workbooks.html"},
+  "where-ai-fits": {"status": "active", "path": "/ai-opportunity-map.html"},
   "workbook-zone-of-genius": {"status": "active", "path": "/workbooks/find-your-zone-of-genius.html"},
   "workbook-human-evidence": {"status": "active", "path": "/workbooks/your-human-evidence.html"},
   "workbook-use-what-is-unique": {"status": "active", "path": "/workbooks/use-what-is-unique-about-you.html"},
