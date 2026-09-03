@@ -114,7 +114,7 @@ body[data-page-kind="guide"] .newsletter{margin-top:46px!important;padding-top:4
 
 /* About */
 body[data-page-kind="about"] .hero{padding-top:42px!important;padding-bottom:34px!important}
-body[data-page-kind="about"] section{padding-top:36px!important;padding-bottom:36px!important}
+body[data-page-kind="about"] .wrap>section{padding-top:36px!important;padding-bottom:36px!important}
 body[data-page-kind="about"] .timeline{position:relative;display:grid;gap:18px;padding-left:26px;margin-top:18px}
 body[data-page-kind="about"] .timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:8px;width:1px;background:linear-gradient(var(--blue),var(--line))}
 body[data-page-kind="about"] .timeline-item{position:relative;padding:0 0 0 10px!important}
@@ -253,7 +253,7 @@ body[data-page-kind="brief"] .chrome-foot{margin-top:24px!important}
   body[data-page-kind="guides"] .controls{padding-top:34px!important}
   body[data-page-kind="guides"] .card-grid .card>img{height:170px!important;padding:15px 26px 2px!important}
 
-  body[data-page-kind="about"] section,
+  body[data-page-kind="about"] .wrap>section,
   body[data-page-kind="workshops"] section,
   body[data-page-kind="build"] .offer-section,
   body[data-page-kind="starter-kit"] .kit-section,

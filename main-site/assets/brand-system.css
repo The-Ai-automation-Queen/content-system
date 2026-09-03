@@ -202,7 +202,7 @@ body[data-page-kind] .r-bar-row.worst .r-bar-fill{background:var(--blue-deep)!im
 /* Page rhythm and widths */
 body[data-page-kind="about"] .wrap,
 body[data-page-kind="workshops"] .wrap{max-width:var(--content)!important;padding-left:28px!important;padding-right:28px!important}
-body[data-page-kind="about"] section,
+body[data-page-kind="about"] .wrap>section,
 body[data-page-kind="workshops"] section{padding-top:var(--space-section)!important;padding-bottom:var(--space-section)!important}
 body[data-page-kind="build"] .offer-hero-inner,
 body[data-page-kind="build"] .offer-section,
@@ -250,7 +250,7 @@ body[data-page-kind="quiz"] .opt:focus-visible{border-color:var(--blue)!importan
 
 /* About */
 body[data-page-kind="about"] h1{font-size:clamp(40px,5.4vw,60px)!important;font-weight:400!important}
-body[data-page-kind="about"] h2{font-size:clamp(28px,3.2vw,38px)!important;font-weight:400!important}
+body[data-page-kind="about"] .wrap h2{font-size:clamp(28px,3.2vw,38px)!important;font-weight:400!important}
 body[data-page-kind="about"] .story .big{color:var(--blue-deep)!important}
 body[data-page-kind="about"] .receipt{border-top:2px solid var(--blue)!important}
 

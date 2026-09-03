@@ -29,7 +29,9 @@ h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.7rem
 .spine{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;font-family:'Inter',sans-serif;font-size:13px}
 .spine span{padding:5px 12px;border:1px solid var(--rule);border-radius:999px;background:#fff}
 .spine .crown{background:var(--ink);color:#fff;border-color:var(--ink)}
-section{padding:40px 0;border-top:1px solid var(--rule)}
+.wrap>section{padding:40px 0;border-top:1px solid var(--rule)}
+body[data-page-kind="about"] .chrome-foot-grid>section{padding:0!important;border-top:0!important}
+body[data-page-kind="about"] .chrome-foot-grid h2{font-size:11px!important;line-height:1.12!important;font-weight:700!important}
 .story p{max-width:64ch;font-size:1.05rem}
 .story .big{font-family:'Playfair Display',Georgia,serif;font-size:1.45rem;line-height:1.45;color:var(--accent-deep);max-width:30ch}
 .receipts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:20px}

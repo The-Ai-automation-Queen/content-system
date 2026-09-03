@@ -111,7 +111,7 @@ body[data-page-kind="home"] .hero h1 em{position:relative;top:-.055em}
     line-height:1.04!important;
   }
   body[data-page-kind="guide"] .guide-hero h1{font-size:clamp(34px,9.5vw,42px)!important;line-height:1.06!important}
-  body[data-page-kind="about"] h2,
+  body[data-page-kind="about"] .wrap h2,
   body[data-page-kind="workshops"] h2,
   body[data-page-kind="build"] .offer-section h2,
   body[data-page-kind="starter-kit"] .newsletter h2{
@@ -293,7 +293,7 @@ body[data-page-kind="home"] .hero h1 em{position:relative;top:-.055em}
   body[data-page-kind="about"] .wrap{padding-left:18px!important;padding-right:18px!important}
   body[data-page-kind="about"] .hero{padding-top:34px!important;padding-bottom:30px!important}
   body[data-page-kind="about"] .hero img{width:min(72vw,280px)!important;max-width:280px!important}
-  body[data-page-kind="about"] section{padding-top:32px!important;padding-bottom:32px!important}
+  body[data-page-kind="about"] .wrap>section{padding-top:32px!important;padding-bottom:32px!important}
   body[data-page-kind="about"] .story p,
   body[data-page-kind="about"] .timeline-item p{font-size:16px!important;line-height:1.55!important}
 
