@@ -22,12 +22,13 @@ export default function GuidesPage() {
 
       <section className="guides-cta" aria-labelledby="guides-cta-title">
         <div>
-          <p>Continue when you are ready</p>
-          <h2 id="guides-cta-title">Choose what would help you next.</h2>
-          <span>Keep learning with a free guide, or go deeper with a guided workbook.</span>
+          <p>From understanding to decision</p>
+          <h2 id="guides-cta-title">Know enough to ask the next question?</h2>
+          <span>Use Where AI Fits to decide where AI belongs in your business, what should remain human and what to test first.</span>
         </div>
         <div className="guides-cta__actions">
-          <a href="/workbooks.html">Explore the workbooks <span aria-hidden="true">→</span></a>
+          <a href="/ai-opportunity-map.html">Explore Where AI Fits <span aria-hidden="true">→</span></a>
+          <a href="/workbooks.html">Looking for a personal starting point? <span aria-hidden="true">→</span></a>
         </div>
       </section>
     </main>

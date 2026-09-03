@@ -9,12 +9,14 @@
   "nav": [
     {"label": "Guides", "url": "https://www.shiftandlead.com/guides/"},
     {"label": "Workbooks", "url": "https://www.shiftandlead.com/workbooks.html"},
+    {"label": "Where AI Fits", "url": "https://www.shiftandlead.com/ai-opportunity-map.html"},
     {"label": "About", "url": "https://www.shiftandlead.com/about.html"}
   ],
   "footer": [
     {"title": "Explore", "links": [
       {"label": "Guides", "url": "https://www.shiftandlead.com/guides/"},
-      {"label": "Workbooks", "url": "https://www.shiftandlead.com/workbooks.html"}
+      {"label": "Workbooks", "url": "https://www.shiftandlead.com/workbooks.html"},
+      {"label": "Where AI Fits", "url": "https://www.shiftandlead.com/ai-opportunity-map.html"}
     ]},
     {"title": "About", "links": [
       {"label": "About Fatiha", "url": "https://www.shiftandlead.com/about.html"}
