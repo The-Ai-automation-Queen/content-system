@@ -1,5 +1,46 @@
 node_modules/
 package-lock.json
 
-.vercel
-.env*
+# Local secrets and environment settings
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# Build and deployment output
+.next/
+out/
+dist/
+build/
+.vercel/
+.turbo/
+.cache/
+*.tsbuildinfo
+next-env.d.ts
+
+# Test output and generated reports
+coverage/
+test-results/
+playwright-report/
+test_result*.md
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+
+# Logs, editors and operating-system files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.DS_Store
+.idea/
+.vscode/
