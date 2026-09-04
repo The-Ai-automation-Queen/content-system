@@ -102,7 +102,7 @@ The site header is shared across the main website and every guide. The Shift & L
 - Export covers at 16:9, no more than 1280px wide and no more than 200 KB. Keep the generator original outside the production path when preservation is useful.
 - Keep hero covers at 16:9 on every screen. Mobile must scale the complete artwork down and must not switch to a taller crop. The main cover remains preloaded; related-card covers remain deferred until needed.
 - Use responsive title sizes with `clamp()` and no manual line breaks.
-- Use Sunset Orange `#FF5733` for the guide H1. Keep major H2 text dark and add a restrained Sunset Orange rule beside white-background H2 headings. Keep H3, body copy, small labels and headings on cream or tinted panels dark.
+- Use Sunset Orange `#FF5733` for the guide H1 and major H2 headings on white only. Keep H3, body copy, small labels and headings on cream or tinted panels dark.
 - Eyebrows and small labels are at least 12px.
 - Do not use decorative vertical lines.
 - Cream may be used only where the approved template already uses it. Do not introduce new beige sections during a guide build.
@@ -118,7 +118,7 @@ These values belong to the reusable template, not to an individual guide:
 - normal section gap: 46px desktop and 38px mobile;
 - major content break: no more than 48px desktop;
 - body copy: 18px with compact but readable line spacing;
-- heading accent: Sunset Orange `#FF5733` on the guide H1 and as a 4px left rule beside dark white-background major H2 headings;
+- heading accent: Sunset Orange `#FF5733` on the guide H1 and white-background major H2 headings, with no orange marker;
 - gate: the real next section must blur and fade beneath the inline form;
 - cover asset: 16:9 WebP, at most 1280px wide and at most 200 KB.
 
@@ -139,7 +139,7 @@ Before adding a guide to the registry, confirm all of the following:
 - Desktop and mobile have no clipped text, forced title break, broken image or horizontal scroll.
 - The cover is a 16:9 WebP no wider than 1280px and no larger than 200 KB, and the hero aligns with the reading column.
 - The preview includes every explanatory section before the faded inline boundary; the practical-email disclosure appears once in the explicit consent control.
-- The H1 uses Sunset Orange `#FF5733`; white-background major H2 headings stay dark with a 4px orange left rule, while H3, body copy, labels and tinted-panel headings remain dark.
+- The H1 and white-background major H2 headings use Sunset Orange `#FF5733` without an orange marker; H3, body copy, labels and tinted-panel headings remain dark.
 - The header and footer match the current live homepage.
 
 ## Current site shell

@@ -12,8 +12,8 @@
 .cover { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0; overflow: hidden; background: var(--blue-deep); }
 .cover img { object-fit: cover; }
 .intro { width: min(calc(100% - 48px), var(--guide-body-width)); margin: 0 auto; padding: 40px 0 28px; border-bottom: 1px solid var(--line); }
-.intro h1 { margin: 0 0 18px; color: var(--guide-heading-accent); font: 600 clamp(34px, 6vw, 64px)/1.02 var(--font-display), serif; letter-spacing: -.045em; text-wrap: balance; }
-.section h2, .tryNow h2, .conclusion h2, .gateTeaser h2 { color: var(--ink); border-left: 4px solid var(--guide-heading-accent); padding-left: 14px; }
+.intro h1 { margin: 0 0 18px; font: 600 clamp(34px, 6vw, 64px)/1.02 var(--font-display), serif; letter-spacing: -.045em; text-wrap: balance; }
+.intro h1, .section h2, .tryNow h2, .conclusion h2, .gateTeaser h2 { color: var(--guide-heading-accent); }
 .intro p { max-width: var(--guide-copy-width); margin: 0; color: #4c4842; font-size: clamp(19px, 2.2vw, 22px); line-height: 1.5; }
 .readingColumn { width: min(calc(100% - 48px), var(--guide-body-width)); margin-inline: auto; padding: 32px 0 52px; }
 .answer { margin-bottom: var(--guide-major-space); padding: 24px 26px; background: #f2f4ff; }
