@@ -88,6 +88,22 @@ if (!/\.shell\s*\{[^}]*var\(--guide-body-width\)/s.test(guideReadingStyles)) {
   failures.push("The shared guide hero must align with the reading column.");
 }
 
+if (!/--guide-heading-accent:\s*#FF5733\b/i.test(guideReadingStyles)) {
+  failures.push("The shared guide heading accent must remain Sunset Orange #FF5733.");
+}
+if (!/\.intro h1\s*\{[^}]*color:\s*var\(--guide-heading-accent\)/s.test(guideReadingStyles)) {
+  failures.push("The shared guide H1 must use the heading accent.");
+}
+if (!/\.section h2,\s*\.tryNow h2,\s*\.conclusion h2,\s*\.gateTeaser h2\s*\{[^}]*color:\s*var\(--ink\)[^}]*border-left:\s*4px solid var\(--guide-heading-accent\)[^}]*padding-left:\s*14px/s.test(guideReadingStyles)) {
+  failures.push("White-background major guide H2 headings must stay dark with a Sunset Orange marker.");
+}
+if (/(?:\.section|\.tryNow|\.conclusion|\.gateTeaser) h2[^{}]*\{[^}]*color:\s*var\(--guide-heading-accent\)/s.test(guideReadingStyles)) {
+  failures.push("Guide H2 text must remain dark rather than use the heading accent.");
+}
+if (/h3[^{}]*\{[^}]*color:\s*var\(--guide-heading-accent\)/s.test(guideReadingStyles)) {
+  failures.push("Guide H3 headings must remain dark rather than use the heading accent.");
+}
+
 if (!librarySource.includes('import publication from "../../data/guide-publication.json"')) {
   failures.push("The public library is not controlled by the approval registry.");
 }

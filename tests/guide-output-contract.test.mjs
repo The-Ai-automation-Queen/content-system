@@ -67,6 +67,24 @@ test("guide hero aligns with the reading column", () => {
   assert.match(guideStyles, /\.shell\s*\{[^}]*width:\s*min\(calc\(100% - 48px\),\s*var\(--guide-body-width\)\)/s, "hero must use the guide body width");
 });
 
+test("shared guide headings use Sunset Orange as a restrained title and section marker", () => {
+  assert.match(guideStyles, /--guide-heading-accent:\s*#FF5733\b/i, "shared guide accent must be Sunset Orange #FF5733");
+  assert.match(
+    guideStyles,
+    /\.intro h1\s*\{[^}]*color:\s*var\(--guide-heading-accent\)/s,
+    "guide H1 must use the shared accent",
+  );
+  assert.match(
+    guideStyles,
+    /\.section h2,\s*\.tryNow h2,\s*\.conclusion h2,\s*\.gateTeaser h2\s*\{[^}]*color:\s*var\(--ink\)[^}]*border-left:\s*4px solid var\(--guide-heading-accent\)[^}]*padding-left:\s*14px/s,
+    "white-background major H2 headings must stay dark with a Sunset Orange marker",
+  );
+  assert.doesNotMatch(guideStyles, /(?:\.section|\.tryNow|\.conclusion|\.gateTeaser) h2[^{}]*\{[^}]*color:\s*var\(--guide-heading-accent\)/s, "H2 text must remain dark");
+  assert.doesNotMatch(guideStyles, /h3[^{}]*\{[^}]*color:\s*var\(--guide-heading-accent\)/s, "H3 headings must remain dark");
+  assert.doesNotMatch(guideStyles, /\.(?:answer|captureBoundary|paidNextStep|related) h2[^{}]*\{[^}]*color:\s*var\(--guide-heading-accent\)/s, "headings on tinted panels must remain dark");
+  assert.match(framework, /Sunset Orange[^\n]*#FF5733[^\n]*(?:rule|marker)/i, "production framework must preserve the approved title-and-marker accent");
+});
+
 test("future guide production rules preserve the approved image and layout system", () => {
   for (const rule of ["920px", "1280px", "200 KB", "46px", "38px", "48px", "blur", "fade"]) {
     assert.ok(framework.includes(rule), `production framework must preserve the ${rule} rule`);

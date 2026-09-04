@@ -12,7 +12,7 @@ The shared page layout lives in `components/guides/guide-reading-page.tsx`. The 
 `components/guides/guide-access-boundary.tsx`, and the design rules live in
 `components/guides/guide-reading-page.module.css`.
 
-Every new guide inherits that shared production template. Do not add per-guide layout or spacing overrides. Its production cover must be `public/images/guides/<slug>.webp`, 16:9, no more than 1280px wide and no more than 200 KB. The template keeps the hero aligned to the 920px reading column, uses compact section spacing, shows all explanatory sections before the gate, and fades the real “Try it now” section beneath the inline capture form.
+Every new guide inherits that shared production template. Do not add per-guide layout or spacing overrides. Its production cover must be `public/images/guides/<slug>.webp`, 16:9, no more than 1280px wide and no more than 200 KB. The template keeps the hero aligned to the 920px reading column, uses compact section spacing, shows all explanatory sections before the gate, and fades the real “Try it now” section beneath the inline capture form. The guide H1 uses Sunset Orange `#FF5733`; white-background major H2 headings stay dark with a 4px orange left rule, and H3, body copy, labels and headings on cream or tinted panels remain dark.
 
 After explicit copy approval, edit and preview the guide from `next-app` with `npm run dev`. After page approval, add the slug to the publication registry. To rebuild the approved guides and copy the deployable files into `main-site`, run this command from the repository root:
 
