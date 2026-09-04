@@ -113,28 +113,59 @@ function Section({ section }: { section: GuideSection }) {
 }
 
 export function GuideReadingPage({ guide }: { guide: GuidePage }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: guide.title,
+    description: guide.seoDescription,
+    image: guide.cover,
+    isAccessibleForFree: false,
+    hasPart: {
+      "@type": "WebPageElement",
+      isAccessibleForFree: false,
+      cssSelector: ".guide-gated-content",
+    },
+  };
+
   return (
-    <GuideAccessBoundary guideSlug={guide.slug} cover={guide.cover}>
-      <main className={styles.page}>
-        <article>
-          <div className={styles.shell}>
-            <Link className={styles.back} href="/guides/">← All guides</Link>
-            <figure className={styles.cover}>
-              <Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 820px) 100vw, 1160px" />
-            </figure>
-          </div>
+    <main className={styles.page}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+      />
+      <article>
+        <div className={styles.shell}>
+          <Link className={styles.back} href="/guides/">← All guides</Link>
+          <figure className={styles.cover}>
+            <Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 820px) 100vw, 1160px" />
+          </figure>
+        </div>
 
-          <header className={styles.intro}>
-            <h1>{guide.title}</h1>
-            <p>{guide.promise}</p>
-          </header>
+        <header className={styles.intro}>
+          <h1>{guide.title}</h1>
+          <p>{guide.promise}</p>
+        </header>
 
-          <div className={styles.readingColumn}>
+        <div className={styles.readingColumn}>
+          <div className={styles.previewContent} data-guide-preview>
             <section className={styles.answer}>
               {guide.answer.heading && <h2>{guide.answer.heading}</h2>}
               {guide.answer.paragraphs.map((paragraph) => <p key={paragraph}><RichText>{paragraph}</RichText></p>)}
             </section>
             {guide.sections.map((section) => <Section section={section} key={section.heading} />)}
+          </div>
+
+          <GuideAccessBoundary
+            guideSlug={guide.slug}
+            guideTitle={guide.title}
+            teaser={(
+              <>
+                <h2>{guide.tryNow.heading}</h2>
+                <p><RichText>{guide.tryNow.introduction}</RichText></p>
+                <p>{guide.tryNow.prompt}</p>
+              </>
+            )}
+          >
             <section className={styles.tryNow}>
               <h2>{guide.tryNow.heading}</h2>
               <p><RichText>{guide.tryNow.introduction}</RichText></p>
@@ -181,10 +212,11 @@ export function GuideReadingPage({ guide }: { guide: GuidePage }) {
                 <strong>Coming soon</strong>
               </aside>
             )}
-          </div>
-        </article>
+          </GuideAccessBoundary>
+        </div>
+      </article>
 
-        <section className={styles.related} aria-labelledby="guide-next-title">
+      <section className={styles.related} aria-labelledby="guide-next-title">
           <div className={styles.relatedInner}>
             <h2 id="guide-next-title">What do you want to do next?</h2>
             <div className={styles.relatedGrid}>
@@ -201,9 +233,7 @@ export function GuideReadingPage({ guide }: { guide: GuidePage }) {
               ))}
             </div>
           </div>
-        </section>
-
-      </main>
-    </GuideAccessBoundary>
+      </section>
+    </main>
   );
 }

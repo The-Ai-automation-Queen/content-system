@@ -1,30 +1,38 @@
 "use client";
 
-import { type CSSProperties, FormEvent, type ReactNode, useEffect, useState } from "react";
+import { FormEvent, type ReactNode, useEffect, useRef, useState } from "react";
 import styles from "./guide-reading-page.module.css";
 
 const ACCESS_KEY = "shift-lead-guide-access";
 
 export function GuideAccessBoundary({
   guideSlug,
-  cover,
+  guideTitle,
+  teaser,
   children,
 }: {
   guideSlug: string;
-  cover: string;
+  guideTitle: string;
+  teaser: ReactNode;
   children: ReactNode;
 }) {
   const [ready, setReady] = useState(false);
   const [unlocked, setUnlocked] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
   const [message, setMessage] = useState("");
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const reviewHost = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.hostname.endsWith(".vercel.app");
     const review = reviewHost && params.get("review") === "1";
     const forceGate = params.get("gate") === "1";
-    const hasAccess = window.localStorage.getItem(ACCESS_KEY) === "true";
+    let hasAccess = false;
+    try {
+      hasAccess = window.localStorage.getItem(ACCESS_KEY) === "true";
+    } catch {
+      // Storage can be unavailable in privacy-restricted browsing modes.
+    }
     setUnlocked(!forceGate && (review || hasAccess));
     setReady(true);
     const tracker = (window as Window & { slTrack?: (name: string, data?: Record<string, string>) => void }).slTrack;
@@ -49,44 +57,65 @@ export function GuideAccessBoundary({
           website: form.get("website"),
           guideSlug,
           source: window.location.pathname,
-          consent: true,
+          consent: form.get("consent") === "on",
           timestamp: new Date().toISOString(),
         }),
       });
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || "We could not open the guide. Please try again.");
-      window.localStorage.setItem(ACCESS_KEY, "true");
+      try {
+        window.localStorage.setItem(ACCESS_KEY, "true");
+      } catch {
+        // A successful request still grants access for the current page view.
+      }
       setUnlocked(true);
+      setStatus("idle");
       tracker?.("guide_unlock", { guide_slug: guideSlug, source_page: window.location.pathname });
+      window.requestAnimationFrame(() => contentRef.current?.focus());
     } catch (error) {
       setStatus("error");
       setMessage(error instanceof Error ? error.message : "We could not open the guide. Please try again.");
     }
   };
 
-  if (!ready) return null;
-  if (unlocked) return <>{children}</>;
-
   return (
-    <main
-      className={styles.gatePage}
-      style={{ "--guide-gate-cover": `url("${cover}")` } as CSSProperties}
-    >
-      <section className={styles.gate} aria-labelledby="guide-gate-title">
-        <div className={styles.gateIcon} aria-hidden="true">↗</div>
-        <h1 id="guide-gate-title">Access the guide</h1>
-        <p>Enter your email to read the guide. I will also send occasional practical guides and product updates. You can leave at any time.</p>
-        <form onSubmit={submit}>
-          <label htmlFor={`guide-first-name-${guideSlug}`}>First name <span>(optional)</span></label>
-          <input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" />
-          <label htmlFor={`guide-email-${guideSlug}`}>Email address</label>
-          <input id={`guide-email-${guideSlug}`} name="email" type="email" autoComplete="email" required placeholder="you@example.com" />
-          <input className={styles.honeypot} name="website" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
-          <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Opening..." : "Access the guide"}</button>
-          <small>One email unlocks all free guides on this device. <a href="/privacy.html">Privacy</a>.</small>
-          {status === "error" && <strong role="alert">{message}</strong>}
-        </form>
-      </section>
-    </main>
+    <>
+      <div
+        className={styles.captureTransition}
+        data-guide-capture-boundary
+        hidden={ready && unlocked}
+      >
+        <div className={styles.gateTeaser} data-guide-gate-teaser aria-hidden="true">
+          {teaser}
+        </div>
+        <section className={styles.captureBoundary} aria-labelledby={`guide-gate-title-${guideSlug}`}>
+          <span className={styles.gateLabel}>Continue this guide</span>
+          <h2 id={`guide-gate-title-${guideSlug}`}>Keep reading {guideTitle}</h2>
+          <p>Enter your details to open the rest of this guide now.</p>
+          <form onSubmit={submit}>
+            <label htmlFor={`guide-first-name-${guideSlug}`}>First name</label>
+            <input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" required />
+            <label htmlFor={`guide-email-${guideSlug}`}>Email address</label>
+            <input id={`guide-email-${guideSlug}`} name="email" type="email" autoComplete="email" required placeholder="you@example.com" />
+            <input className={styles.honeypot} name="website" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+            <label className={styles.consent}>
+              <input name="consent" type="checkbox" required />
+              <span>I agree to receive this guide and practical Shift &amp; Lead emails. I can unsubscribe at any time.</span>
+            </label>
+            <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Opening..." : "Open the rest of the guide"}</button>
+            <small>This also unlocks all free guides on this device. Read the <a href="/privacy.html">privacy notice</a>.</small>
+            {status === "error" && <strong role="alert">{message}</strong>}
+          </form>
+        </section>
+      </div>
+      <div
+        className="guide-gated-content"
+        ref={contentRef}
+        tabIndex={-1}
+        hidden={!ready || !unlocked}
+      >
+        {children}
+      </div>
+    </>
   );
 }

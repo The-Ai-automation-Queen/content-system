@@ -64,10 +64,10 @@ Every guide answers one useful question for a capable non-specialist. It should 
 ### Required page sequence
 
 1. **Title and direct promise.** No metadata, reading time, date, byline or internal labels.
-2. **Email access gate on first visit.** One reusable gate, one email field, one Lumail request and the guide-specific tag. A recognised visitor should not be asked again on every related guide.
-3. **The answer.** Two or three short paragraphs that answer the title in language a beginner can repeat.
-4. **The useful explanation.** Choose the format that fits the reader's job: comparison, grouped definitions, steps, checklist or decision guide. Do not force every guide into identical sections.
-5. **What still needs the reader.** Weave the relevant judgement, context or responsibility into the explanation. Do not add a repeated “human layer” label.
+2. **The answer.** Two or three short paragraphs that answer the title in language a beginner can repeat.
+3. **The useful explanation.** Choose the format that fits the reader's job: comparison, grouped definitions, steps, checklist or decision guide. Do not force every guide into identical sections.
+4. **What still needs the reader.** Weave the relevant judgement, context or responsibility into the explanation. Do not add a repeated “human layer” label.
+5. **Email access boundary on first visit.** Place the reusable boundary after all explanatory sections and before “Try it now”. Begin the real next section, blur and fade it into the inline form, and remove that duplicate teaser after access is granted. Require first name, valid email and explicit consent. State the practical-email purpose once, in the consent control. A recognised visitor should not be asked again on every related guide.
 6. **Try it now.** Give a useful copy-and-paste prompt or a specific action that takes about 10 minutes or less. Show where to open the tool, what to copy, what to replace, how to send it and how to check the result.
 7. **Conclusion.** Tell the reader what they now understand or can do. Do not repeat the opening.
 8. **Continue.** Show exactly three logical next-step slots. Use approved guides when available. A planned guide awaiting copy approval may appear as a clearly marked, non-clickable `Coming next` placeholder, never as a broken link.
@@ -94,11 +94,13 @@ Do not assume the reader already knows where prompts go, where settings live or 
 The site header is shared across the main website and every guide. The Shift & Lead wordmark uses Playfair Display at 21px, line-height 1, regular weight 400 and -0.03em letter spacing. Desktop navigation uses Inter at 12px, line-height 1, regular weight 400, 0.08em letter spacing and uppercase labels. Never create a page-specific bold, larger or smaller version of the logo or navigation.
 
 - The guide library keeps its approved structure. A copy revision must not redesign it.
-- The guide page keeps one clean reading layout with a full-width cover, readable body and clear sections.
+- The guide page uses only the shared renderer and stylesheet. Do not create per-guide layout, spacing or gate overrides.
+- Keep the hero and back link in the same 920px frame as the guide body on desktop. On mobile they use the available width with 16px side margins.
 - Never place text over an image where it overlaps the mascot or illustration.
 - Do not put titles over library-card images. Card titles sit below the image.
-- Keep cover images in WebP and use the blue robot mascot, not a human queen.
-- Keep hero covers at 16:9 on every screen. Mobile must scale the complete artwork down and must not switch to a taller crop.
+- Keep production cover images in WebP at `public/images/guides/<slug>.webp`; use the blue robot mascot, not a human queen.
+- Export covers at 16:9, no more than 1280px wide and no more than 200 KB. Keep the generator original outside the production path when preservation is useful.
+- Keep hero covers at 16:9 on every screen. Mobile must scale the complete artwork down and must not switch to a taller crop. The main cover remains preloaded; related-card covers remain deferred until needed.
 - Use responsive title sizes with `clamp()` and no manual line breaks.
 - Eyebrows and small labels are at least 12px.
 - Do not use decorative vertical lines.
@@ -106,6 +108,19 @@ The site header is shared across the main website and every guide. The Shift & L
 - Use bold sparingly to make dense copy skimmable.
 - Keep three related cards equal in height with their actions aligned.
 - Motion is optional and must improve hierarchy or comprehension. Do not add Three.js or GSAP to decorate a simple guide.
+
+### Shared template contract
+
+These values belong to the reusable template, not to an individual guide:
+
+- guide body and hero frame: 920px maximum;
+- normal section gap: 46px desktop and 38px mobile;
+- major content break: no more than 48px desktop;
+- body copy: 18px with compact but readable line spacing;
+- gate: the real next section must blur and fade beneath the inline form;
+- cover asset: 16:9 WebP, at most 1280px wide and at most 200 KB.
+
+Every current and upcoming guide inherits these rules through `guide-reading-page.tsx`, `guide-access-boundary.tsx` and `guide-reading-page.module.css`. Never copy the page component or stylesheet for one guide. If the shared system changes, update its output contract and review all approved guides.
 
 ## Approval checklist
 
@@ -120,6 +135,8 @@ Before adding a guide to the registry, confirm all of the following:
 - The page has a useful conclusion.
 - All three journey slots are present. Live cards point to approved guides; planned cards are clearly marked, non-clickable placeholders.
 - Desktop and mobile have no clipped text, forced title break, broken image or horizontal scroll.
+- The cover is a 16:9 WebP no wider than 1280px and no larger than 200 KB, and the hero aligns with the reading column.
+- The preview includes every explanatory section before the faded inline boundary; the practical-email disclosure appears once in the explicit consent control.
 - The header and footer match the current live homepage.
 
 ## Current site shell

@@ -17,6 +17,8 @@ const headerSource = read("next-app/components/chrome/site-header.tsx");
 const globalStyles = read("next-app/app/globals.css");
 const footerSource = read("next-app/components/chrome/site-footer.tsx");
 const guideAccessSource = read("next-app/components/guides/guide-access-boundary.tsx");
+const guideReadingSource = read("next-app/components/guides/guide-reading-page.tsx");
+const guideReadingStyles = read("next-app/components/guides/guide-reading-page.module.css");
 const guideCaptureApi = read("main-site/api/guide-capture.js");
 const guidesIndex = read("main-site/guides/index.html");
 const buildSprint = read("main-site/build-sprint.html");
@@ -37,14 +39,53 @@ for (const guide of approved) {
   if (!inventorySlugs.has(guide.slug)) failures.push(`Approved guide is missing from inventory: ${guide.slug}`);
   if (!pageSource.includes(`slug: "${guide.slug}"`)) failures.push(`Approved guide has no structured page: ${guide.slug}`);
   if (!guide.section || !Number.isFinite(guide.journeyOrder)) failures.push(`Approved guide needs a section and journeyOrder: ${guide.slug}`);
-  if (!guideCaptureApi.includes(`"${guide.slug}": "guide-`)) failures.push(`Approved guide has no Lumail tag mapping: ${guide.slug}`);
+  if (!/^guide-[a-z0-9-]+$/.test(guide.lumailTag || "")) failures.push(`Approved guide has no Lumail tag mapping: ${guide.slug}`);
+  if (!pageSource.includes(`lumailTag: "${guide.lumailTag}"`)) failures.push(`Approved guide Lumail tag differs from its structured page: ${guide.slug}`);
+}
+
+const structuredCovers = new Set([...pageSource.matchAll(/cover:\s*["']([^"']+)["']/g)].map((match) => match[1]));
+for (const cover of structuredCovers) {
+  if (!/\.webp$/i.test(cover)) {
+    failures.push(`Structured guide cover must use WebP: ${cover}`);
+    continue;
+  }
+  const coverFile = path.join(root, "next-app", "public", cover.replace(/^\//, ""));
+  if (!fs.existsSync(coverFile)) {
+    failures.push(`Structured guide cover is missing: ${cover}`);
+  } else if (fs.statSync(coverFile).size > 200 * 1024) {
+    failures.push(`Structured guide cover exceeds 200 KB: ${cover}`);
+  }
+}
+
+if (!guideCaptureApi.includes('require("../../data/guide-publication.json")')) {
+  failures.push("Guide capture API does not read approved guide metadata from the publication registry.");
+}
+if (/const GUIDE_(?:TAGS|FILES)\s*=/.test(guideCaptureApi)) {
+  failures.push("Guide capture API duplicates approved guide metadata.");
 }
 
 if (!guideAccessSource.includes('fetch("/api/guide-capture"')) {
   failures.push("The guide gate no longer submits to the server-side Lumail endpoint.");
 }
-if (!guideAccessSource.includes("<GuideAccessBoundary") && !read("next-app/components/guides/guide-reading-page.tsx").includes("<GuideAccessBoundary")) {
+if (!guideAccessSource.includes("<GuideAccessBoundary") && !guideReadingSource.includes("<GuideAccessBoundary")) {
   failures.push("Published guide pages are no longer protected by the shared email gate.");
+}
+if (guideReadingSource.indexOf("guide.sections.map") > guideReadingSource.indexOf("<GuideAccessBoundary")) {
+  failures.push("The shared guide gate must remain after all explanatory sections.");
+}
+if (!guideReadingSource.includes("teaser={(") || !guideAccessSource.includes("data-guide-gate-teaser")) {
+  failures.push("The shared guide gate must preserve the real faded next-section teaser.");
+}
+if (!guideReadingStyles.includes("filter: blur(2px)") || !guideReadingStyles.includes("mask-image: linear-gradient")) {
+  failures.push("The shared guide gate must preserve its blur-and-fade transition.");
+}
+const sectionSpace = Number(guideReadingStyles.match(/--guide-section-space:\s*(\d+)px/)?.[1]);
+const majorSpace = Number(guideReadingStyles.match(/--guide-major-space:\s*(\d+)px/)?.[1]);
+if (!(sectionSpace > 0 && sectionSpace <= 48) || !(majorSpace > 0 && majorSpace <= 48)) {
+  failures.push("The shared guide template exceeds the approved compact spacing limits.");
+}
+if (!/\.shell\s*\{[^}]*var\(--guide-body-width\)/s.test(guideReadingStyles)) {
+  failures.push("The shared guide hero must align with the reading column.");
 }
 
 if (!librarySource.includes('import publication from "../../data/guide-publication.json"')) {

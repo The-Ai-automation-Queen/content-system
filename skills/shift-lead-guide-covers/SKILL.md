@@ -27,8 +27,8 @@ Ask one concise question only when the guide's outcome cannot be inferred. Do no
 5. Use the built-in image-generation tool with `assets/style-reference.png` as a style reference.
 6. Generate one 16:9 image at a time. Do not place the guide title or category inside the artwork; the website supplies those labels.
 7. Inspect the output. Reject malformed hands, accidental words, logos, copied compositions, muddy silhouettes, and concepts that need explanation.
-8. Save the approved image as `public/images/guides/<slug>.png` in the active Shift & Lead Next.js project. Leave the generator's original file in place.
-9. Update the guide record's `cover` path when required, then run the site build.
+8. Preserve the generator's original outside the production path when useful. Export the website asset as `public/images/guides/<slug>.webp`, 16:9, no more than 1280px wide and no more than 200 KB. Start with WebP quality 76 and reduce only as needed after visual inspection.
+9. Confirm the cover remains clear at desktop hero and 320px card sizes, then update the guide record's `cover` path and run the site build plus `node --test tests/guide-output-contract.test.mjs`.
 
 ## Prompt construction
 
@@ -54,5 +54,6 @@ The cover must:
 - feel related to the style reference without copying it
 - use a single dominant metaphor rather than a scene full of explanations
 - look deliberately commissioned for Shift & Lead
+- remain 16:9 after export, use WebP, and stay within the 1280px / 200 KB production limits
 
 If the first output misses the metaphor or contains generation defects, revise the prompt and regenerate. Do not accept it merely because it is attractive.

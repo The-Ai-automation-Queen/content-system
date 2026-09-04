@@ -31,101 +31,121 @@
   "approved": [
     {
       "slug": "what-is-ai",
+      "lumailTag": "guide-what-is-ai",
       "section": "AI essentials",
       "journeyOrder": 10
     },
     {
       "slug": "ai-jargon-guide",
+      "lumailTag": "guide-ai-jargon",
       "section": "AI essentials",
       "journeyOrder": 20
     },
     {
       "slug": "what-is-agentic",
+      "lumailTag": "guide-what-is-agentic",
       "section": "AI agents",
       "journeyOrder": 30
     },
     {
       "slug": "what-should-you-never-share-with-ai",
+      "lumailTag": "guide-what-not-to-share-with-ai",
       "section": "AI essentials",
       "journeyOrder": 40
     },
     {
       "slug": "which-ai-tool-for-what",
+      "lumailTag": "guide-which-ai-tool-for-what",
       "section": "AI tools",
       "journeyOrder": 50
     },
     {
       "slug": "chatgpt",
+      "lumailTag": "guide-chatgpt",
       "section": "AI tools",
       "journeyOrder": 60
     },
     {
       "slug": "claude",
+      "lumailTag": "guide-claude",
       "section": "AI tools",
       "journeyOrder": 70
     },
     {
       "slug": "gemini",
+      "lumailTag": "guide-gemini",
       "section": "AI tools",
       "journeyOrder": 80
     },
     {
       "slug": "copilot",
+      "lumailTag": "guide-copilot",
       "section": "AI tools",
       "journeyOrder": 90
     },
     {
       "slug": "meta-ai",
+      "lumailTag": "guide-meta-ai",
       "section": "AI tools",
       "journeyOrder": 100
     },
     {
       "slug": "grok",
+      "lumailTag": "guide-grok",
       "section": "AI tools",
       "journeyOrder": 110
     },
     {
       "slug": "deepseek",
+      "lumailTag": "guide-deepseek",
       "section": "AI tools",
       "journeyOrder": 120
     },
     {
       "slug": "kimi",
+      "lumailTag": "guide-kimi",
       "section": "AI tools",
       "journeyOrder": 130
     },
     {
       "slug": "manus",
+      "lumailTag": "guide-manus",
       "section": "AI tools",
       "journeyOrder": 140
     },
     {
       "slug": "mistral",
+      "lumailTag": "guide-mistral",
       "section": "AI tools",
       "journeyOrder": 150
     },
     {
       "slug": "what-is-a-prompt",
+      "lumailTag": "guide-what-is-a-prompt",
       "section": "Better prompts and answers",
       "journeyOrder": 160
     },
     {
       "slug": "what-is-an-ai-browser",
+      "lumailTag": "guide-what-is-an-ai-browser",
       "section": "AI tools",
       "journeyOrder": 170
     },
     {
       "slug": "connect-ai-to-email-files-calendar",
+      "lumailTag": "guide-connect-ai-to-email-files-calendar",
       "section": "AI essentials",
       "journeyOrder": 180
     },
     {
       "slug": "ai-skills-worth-learning-for-work",
+      "lumailTag": "guide-ai-skills-worth-learning-for-work",
       "section": "AI essentials",
       "journeyOrder": 190
     },
     {
       "slug": "show-up-in-ai-search",
+      "lumailTag": "guide-show-up-in-ai-search",
       "section": "Content and creative work",
       "journeyOrder": 200
     }
