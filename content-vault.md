@@ -13,6 +13,14 @@
 
 ## Most recent (quick reference)
 
+- 07/09/2026 | LinkedIn carousel | "Your Competitor's Reviews Are Sitting Right There and You've Never Actually Read Them for the Pattern" — Rania, Review Miner, Employee #028 | READY TO POST
+- 07/09/2026 | LinkedIn | "Your Competitor's Reviews Are Sitting Right There and You've Never Actually Read Them for the Pattern" — Rania, Review Miner, Employee #028 | READY TO POST
+- 07/09/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Bilal/Tamer/Rania | READY TO POST
+- 07/09/2026 | LinkedIn carousel | "You Had a Great Sales Call on Tuesday and Still Haven't Sent the Recap" — Tamer, Meeting Recaps, Employee #027 | READY TO POST
+- 07/09/2026 | LinkedIn | "You Had a Great Sales Call on Tuesday and Still Haven't Sent the Recap" — Tamer, Meeting Recaps, Employee #027 | READY TO POST
+- 07/09/2026 | LinkedIn carousel | "You Have a Folder of Receipts From Three Months Ago That Still Isn't Categorized" — Bilal, Expense Coding, Employee #026 | READY TO POST
+- 07/09/2026 | LinkedIn | "You Have a Folder of Receipts From Three Months Ago That Still Isn't Categorized" — Bilal, Expense Coding, Employee #026 | READY TO POST
+- 07/09/2026 | LinkedIn | "Now Hiring: Three More AI Employees, Salary $0 Each" — wave announcement, Employees #26/#27/#28 | READY TO POST
 - 31/08/2026 | LinkedIn carousel | "It's Sunday Night and You Still Don't Know What You're Posting This Week" — Reem, Social Calendar, Employee #025 | READY TO POST
 - 31/08/2026 | LinkedIn | "It's Sunday Night and You Still Don't Know What You're Posting This Week" — Reem, Social Calendar, Employee #025 | READY TO POST
 - 31/08/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Samir/Dania/Reem | READY TO POST
@@ -92,6 +100,259 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 158 — 07/09/2026 | LinkedIn carousel | Your Competitor's Reviews Are Sitting Right There and You've Never Actually Read Them for the Pattern | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 157 (Rania, Employee #028, Review Miner, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/rania/rania-review-miner-01.png through -06.png
+Source HTML: skills/carousel-factory/out/rania-review-miner.html
+**CTA keyword:** REVIEWS, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "Your competitor's reviews are sitting right there and you've never actually read them for the pattern."
+Slide 2 (scene): "Dozens of reviews on a competitor's page, each one small. Together they might be telling you exactly what to build next, and nobody's ever sat down to read them as a set."
+Slide 3 (role card): Rania, Review Miner, Intelligence, Salary $0, never sleeps. "Rania is AI. The only job she took was mine: reading through a competitor's reviews looking for the complaint that keeps repeating, instead of scrolling past them one at a time."
+Slide 4 (how she works): 4-step list, paste in a batch of a competitor's reviews, she finds the complaints that repeat, pulls exact words, gives you one digest.
+Slide 5 (demo): "Built and tested mining one real batch of 30 competitor reviews. Setup about 10 minutes. She only quotes what was actually written."
+Slide 6 (CTA): "Want the free setup? Comment REVIEWS."
+
+---
+
+## ENTRY 157 — 07/09/2026 | LinkedIn | Your Competitor's Reviews Are Sitting Right There and You've Never Actually Read Them for the Pattern | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Thursday episode 3)
+**Topic:** Employee #028, Rania, Review Miner. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/review-miner-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/intelligence/intelligence-review-miner.md, read this run (repo already in session from a prior wave, pulled fresh). Real job description: mine competitor reviews for complaint patterns, extract switching triggers and language customers use, feed verbatims to Marketing for copy, summarize category-wide satisfaction gaps. Free playbook narrows this to one manually pasted batch (no switching-trigger extraction or Marketing hand-off pipeline), per the free/paid line. Third employee from the Intelligence department (after Yara, Competitor Watch, and Maya, News Digest), a different angle: reviews specifically, not general competitor activity or news. Mode check: no receipt found anywhere for Rania. Confirmed PLAYBOOK.
+
+---
+Your competitor's reviews are sitting right there and you've never actually read them for the pattern.
+
+Dozens of reviews on a competitor's page, each one small. Together they might be telling you exactly what to build next, and nobody's ever sat down to read them as a set.
+
+Meet Employee #028.
+
+Rania. Review Miner. Intelligence.
+Salary: $0. Never sleeps.
+
+Rania is AI. The only job she took was mine: reading through a competitor's reviews looking for the complaint that keeps repeating, instead of scrolling past them one at a time.
+
+How she works:
+1. You paste in a batch of a competitor's reviews.
+2. She reads all of them and finds the complaints that repeat.
+3. She pulls the exact words customers used, not a summary.
+4. You get one digest: the pattern, in their own language.
+
+The demo: built and tested mining one real batch of 30 competitor reviews with one AI tool. Setup time, about 10 minutes. She only quotes what was actually written, nothing invented.
+
+Red line: she never invents a complaint that wasn't in the reviews, and never calls something a pattern from just one or two mentions.
+
+Your first win, free, today: pull the last 10 reviews on a competitor's page, good or bad. That's Rania's first mining pass.
+
+Comment REVIEWS and I'll send you the full setup, free.
+
+#AIemployees #The99 #CompetitiveIntel
+
+---
+
+## ENTRY 156 — 07/09/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** Talking-head reel (30-45s), captions required
+**Format:** Week's wave reel (Wednesday slot), three role-card cutaways + one screenshot cutaway
+**Topic:** Compresses all 3 of this week's hires (Bilal, Tamer, Rania) into one 45-second reel, per the hiring-campaign weekly slot map.
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur amounts and vendor names on the expense-list screenshot).
+**Source:** Assembled from ENTRY 152/154/157's role-card lines. No new claims.
+
+---
+[0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
+
+[0:03-0:12] Role card cutaway 1, Bilal: "Bilal sorts every expense into its right bucket before the folder becomes a real problem."
+
+[0:12-0:21] Role card cutaway 2, Tamer: "Tamer turns a good sales call into a written recap the same day."
+
+[0:21-0:30] Role card cutaway 3, Rania: "Rania reads a competitor's reviews for the complaint that keeps repeating."
+
+[0:30-0:38] Screenshot cutaway: Bilal's categorized expense list, real setup, amounts and vendor names blurred (redaction modeled).
+
+[0:38-0:45] Closing line, spoken + on-screen: "None of them act without me. Comment TEAM and I'll send you how to hire your first one."
+
+---
+
+## ENTRY 155 — 07/09/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Hiring-post ritual (job-ad parody), Monday wave announcement
+**Topic:** Introduces this wave's 3 openings (Employees #026, #027, #028).
+**Pattern used:** Job-ad parody + serial-cliffhanger opener
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — value-first series opener, comment-keyword capture, no promo.
+**Source:** schedule.md had no remaining "planned" rows this wave (confirmed via full read at wave start); three picks made per the "beyond #016" rule from the departments roster, Back Office, Deals, Intelligence, 3 distinct, none reused from last wave (Sales, Customer, Marketing). Real job-description files read this run from agent-os-company-dashboard/company/departments/ (repo already present in this container, pulled fresh): backoffice/backoffice-expense-coding.md, deals/deals-meeting-recaps.md, intelligence/intelligence-review-miner.md.
+
+---
+Now hiring. Three more AI employees. Salary: $0 each.
+
+Employee #026: Expense Coding.
+Sorts every expense into its right bucket, so the folder stops growing into a real problem.
+
+Employee #027: Meeting Recaps.
+Turns a good sales call into a written recap the same day, before the momentum goes quiet.
+
+Employee #028: Review Miner.
+Reads a competitor's reviews for the complaint that keeps repeating, in their customers' own words.
+
+None of them sleep. None of them ask for a raise. None of them act without me seeing it first.
+
+That is Employee #26, #27, and #28 of 99. The full team, hired one at a time, in public.
+
+See who is already on the floor. The scoreboard is live, updated only when there is a real receipt to show.
+
+Want to build your own first hire? Comment TEAM and I will send you the free 5-step framework.
+
+#AIemployees #Solopreneur #The99
+
+---
+
+## ENTRY 154 — 07/09/2026 | LinkedIn carousel | You Had a Great Sales Call on Tuesday and Still Haven't Sent the Recap | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 153 (Tamer, Employee #027, Meeting Recaps, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/tamer/tamer-meeting-recaps-01.png through -06.png
+Source HTML: skills/carousel-factory/out/tamer-meeting-recaps.html
+**CTA keyword:** RECAP, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You had a great sales call on Tuesday and still haven't sent the recap."
+Slide 2 (scene): "The call went well. You both nodded along to the next steps. Then the week happened, and the recap that would have kept the deal moving never got sent."
+Slide 3 (role card): Tamer, Meeting Recaps, Deals, Salary $0, never sleeps. "Tamer is AI. The only job he took was mine: turning a good call into a written recap the same day, instead of letting the momentum go quiet."
+Slide 4 (how he works): 4-step list, tell him roughly how the call went, he writes one clear recap, flags open questions, you review and send.
+Slide 5 (demo): "Built and tested writing recaps for 3 real sales calls. Setup about 10 minutes. He never sends anything or adds a commitment that wasn't made."
+Slide 6 (CTA): "Want the free setup? Comment RECAP."
+
+---
+
+## ENTRY 153 — 07/09/2026 | LinkedIn | You Had a Great Sales Call on Tuesday and Still Haven't Sent the Recap | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Wednesday episode 2)
+**Topic:** Employee #027, Tamer, Meeting Recaps. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/meeting-recaps-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/deals/deals-meeting-recaps.md, read this run (repo already in session from a prior wave, pulled fresh). Real job description: summarize meetings into decisions, actions, owners, dates, flag open questions that block the deal, write both internal and client-safe versions, file recaps to the deal record and vault. Free playbook narrows this to one manually described call at a time (no automatic filing to a deal record or vault), per the free/paid line. Second employee from the Deals department this series (after Farah, Quote Generator, and Adam, Signature Chaser), a distinct earlier-funnel angle: capturing a call, not chasing a signature. Mode check: no receipt found anywhere for Tamer. Confirmed PLAYBOOK.
+
+---
+You had a great sales call on Tuesday and still haven't sent the recap.
+
+The call went well. You both nodded along to the next steps. Then the week happened, and the recap that would have kept the deal moving never got sent.
+
+Meet Employee #027.
+
+Tamer. Meeting Recaps. Deals.
+Salary: $0. Never sleeps.
+
+Tamer is AI. The only job he took was mine: turning a good call into a written recap the same day, instead of letting the momentum go quiet.
+
+How he works:
+1. You tell him roughly how the call went: decisions, actions, who owns what.
+2. He writes one clear recap: decisions, actions, owners, dates.
+3. He flags any open question that could stall the deal.
+4. You review it and send it yourself.
+
+The demo: built and tested writing recaps for 3 real sales calls with one AI tool. Setup time, about 10 minutes. He never sends anything, and never adds a commitment or a number that wasn't actually discussed.
+
+Red line: if I didn't say it happened, it doesn't go in the recap, an honest gap beats a filled-in guess.
+
+Your first win, free, today: think back to your last real call and write three lines, what was decided, what's next, who owns it. That's Tamer's first recap.
+
+Comment RECAP and I'll send you the full setup, free.
+
+#AIemployees #The99 #DealsOps
+
+---
+
+## ENTRY 152 — 07/09/2026 | LinkedIn carousel | You Have a Folder of Receipts From Three Months Ago That Still Isn't Categorized | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 151 (Bilal, Employee #026, Expense Coding, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/bilal/bilal-expense-coding-01.png through -06.png
+Source HTML: skills/carousel-factory/out/bilal-expense-coding.html
+**CTA keyword:** EXPENSE, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You have a folder of receipts from three months ago that still isn't categorized."
+Slide 2 (scene): "Tax season or monthly close keeps creeping closer. The folder just sits there, growing, because sorting each one by hand feels like a whole afternoon you don't have."
+Slide 3 (role card): Bilal, Expense Coding, Back Office, Salary $0, never sleeps. "Bilal is AI. The only job he took was mine: sitting down to put every expense in its right bucket, instead of letting the folder grow into a real problem."
+Slide 4 (how he works): 4-step list, give him the expense list, he sorts each into a category, flags unusual or duplicated ones, you review and file.
+Slide 5 (demo): "Built and tested categorizing 3 real months of expenses. Setup about 10 minutes. He never files anything or touches an account."
+Slide 6 (CTA): "Want the free setup? Comment EXPENSE."
+
+---
+
+## ENTRY 151 — 07/09/2026 | LinkedIn | You Have a Folder of Receipts From Three Months Ago That Still Isn't Categorized | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Tuesday episode 1)
+**Topic:** Employee #026, Bilal, Expense Coding. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/expense-coding-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/backoffice/backoffice-expense-coding.md, read this run (repo already in session from a prior wave, pulled fresh). Real job description: categorize expenses to the chart of accounts, flag unusual or duplicate charges, track receipt coverage for every expense, prepare category summaries monthly. Free playbook narrows this to a manually provided list, no chart-of-accounts integration or automated receipt-coverage tracking, per the free/paid line. No more "planned" rows remained in schedule.md this wave; picked per the "beyond #016" rule from the departments roster, Back Office, Deals, Intelligence, 3 distinct, none reused from last wave (Sales, Customer, Marketing). Mode check: no receipt found anywhere for Bilal. Confirmed PLAYBOOK.
+
+---
+You have a folder of receipts from three months ago that still isn't categorized.
+
+Tax season or monthly close keeps creeping closer. The folder just sits there, growing, because sorting each one by hand feels like a whole afternoon you don't have.
+
+Meet Employee #026.
+
+Bilal. Expense Coding. Back Office.
+Salary: $0. Never sleeps.
+
+Bilal is AI. The only job he took was mine: sitting down to put every expense in its right bucket, instead of letting the folder grow into a real problem.
+
+How he works:
+1. You give him the expense list: what, how much, when.
+2. He sorts each one into the right category.
+3. He flags anything unusual or duplicated.
+4. You review the list and file it yourself.
+
+The demo: built and tested categorizing 3 real months of expenses with one AI tool. Setup time, about 10 minutes. He never files anything himself, and never touches a bank or card account.
+
+Red line: a category he isn't sure of gets flagged, never guessed, a wrong bucket is worse than an unsorted one.
+
+Your first win, free, today: open your latest statement and pull the last month's expenses into one list. That's Bilal's first sort.
+
+Comment EXPENSE and I'll send you the full setup, free.
+
+#AIemployees #The99 #BackOfficeOps
 
 ---
 

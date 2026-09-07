@@ -185,6 +185,9 @@ permanent. Assigned so far:
 | 023 | Samir | Follow-Up Nudger (interviewing) | Sales |
 | 024 | Dania | Renewal Reminder (interviewing) | Customer |
 | 025 | Reem | Social Calendar (interviewing) | Marketing |
+| 026 | Bilal | Expense Coding (interviewing) | Back Office |
+| 027 | Tamer | Meeting Recaps (interviewing) | Deals |
+| 028 | Rania | Review Miner (interviewing) | Intelligence |
 
 New names: short, warm, easy to say in English and French, no name
 reuse, never the name of a real client or contact. Log new assignments
