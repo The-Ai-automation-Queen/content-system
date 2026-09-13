@@ -9,6 +9,7 @@ import { analyzeContent } from "./analyzer.mjs";
 import { buildNote } from "./note-builder.mjs";
 import { saveAndPush } from "./git-sync.mjs";
 import { config } from "./config.mjs";
+import { formatTelegramReply } from "./reply-format.mjs";
 
 // --- Queue system for batch processing ---
 const queue = [];
@@ -73,43 +74,6 @@ async function processLink(link) {
   return { extracted, analysis, filePath };
 }
 
-function formatTelegramReply(analysis, type, url, filePath) {
-  const label = type === "gdocs" ? "GOOGLE DOC" : type.toUpperCase();
-  let reply = `<b>${label} — Saved to Obsidian</b>\n\n`;
-  if (type === "text") {
-    reply += `<b>Source:</b> pasted text (${url.split(/\s+/).length} words)\n\n`;
-  } else {
-    reply += `<b>Source:</b> ${url}\n\n`;
-  }
-  reply += `<b>Summary:</b>\n${analysis.summary}\n\n`;
-  if (analysis.highlights?.length > 0) {
-    reply += `<b>Key Highlights:</b>\n`;
-    for (const h of analysis.highlights) {
-      reply += `- ${h}\n`;
-    }
-    reply += `\n`;
-  }
-  reply += `<b>ICP:</b> ${analysis.icp}\n`;
-  reply += `<b>Pillar:</b> ${analysis.pillar}\n`;
-  reply += `<b>Relevance:</b> ${analysis.relevance}/10\n`;
-  reply += `<b>Source quality:</b> ${analysis.sourceQuality}\n`;
-  reply += `<b>Status:</b> ${analysis.contentStatus}\n`;
-  reply += `<b>Offer fit:</b> ${analysis.offerFit}\n\n`;
-  if (analysis.riskFlags?.length > 0) {
-    reply += `<b>Verify before publishing:</b>\n`;
-    for (const risk of analysis.riskFlags) reply += `- ${risk}\n`;
-    reply += `\n`;
-  }
-  if (analysis.contentDirections?.length > 0) {
-    reply += `<b>Content Directions:</b>\n`;
-    for (const direction of analysis.contentDirections) {
-      reply += `<b>${direction.format}:</b> ${direction.angle}\n`;
-    }
-  }
-  reply += `\n<code>${filePath}</code>`;
-  return reply;
-}
-
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
@@ -172,7 +136,7 @@ setInterval(async () => {
     if (String(msg.chat.id) !== String(config.chatId)) continue;
 
     if (msg.text === "/start") {
-      await sendMessage("Research bot ready. Drop any link (YouTube, Twitter/X, GitHub, Google Docs, article) or paste plain text and I will extract, analyze, and save it to Obsidian.\n\nBatch mode: forward as many links as you want, they will be queued and processed one by one.");
+      await sendMessage("Research bot ready. Drop any link (YouTube, Twitter/X, GitHub, Google Docs, article) or paste plain text and I will extract and save it to the GitHub research inbox. Analysis may be pending; Obsidian imports separately while your Mac and app are running.\n\nBatch mode: forward as many links as you want, they will be queued and processed one by one.");
       continue;
     }
     if (msg.text === "/status") {

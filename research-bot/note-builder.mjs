@@ -16,16 +16,20 @@ export function buildNote(extracted, analysis, type, url) {
     `time: ${yaml(timeStr)}`,
     `context_version: ${yaml(analysis.contextVersion || "unknown")}`,
     `analysis_engine: ${yaml(analysis.analysisEngine || "unknown")}`,
-    `icp: ${yaml(analysis.icp || "Low_Relevance")}`,
-    `lane: ${yaml(analysis.icp || analysis.lane || "Low_Relevance")}`,
+    `context_commit: ${yaml(analysis.contextCommit || "unavailable")}`,
+    `capture_status: ${yaml(analysis.captureStatus || "partial")}`,
+    `analysis_status: ${yaml(analysis.analysisStatus || "needs_analysis")}`,
+    `public_eligibility: ${yaml(analysis.publicEligibility || "unassessed")}`,
+    `icp: ${yaml(analysis.icp || "Unassessed")}`,
+    `lane: ${yaml(analysis.icp || analysis.lane || "Unassessed")}`,
     `pillar: ${yaml(analysis.pillar || "Unassigned")}`,
-    `relevance: ${Number(analysis.relevance) || 0}`,
+    "relevance: null",
     `source_quality: ${yaml(analysis.sourceQuality || "unverified")}`,
     `content_status: ${yaml(analysis.contentStatus || "research_more")}`,
     `offer_fit: ${yaml(analysis.offerFit || "none")}`,
     `funnel_stage: ${yaml(analysis.funnelStage || "none")}`,
     `risk_flags: ${JSON.stringify(riskFlags.map(String))}`,
-    `tags: [research-inbox, ${type}, hermes-ready]`,
+    `tags: ${JSON.stringify(["research-inbox", type, "unreviewed"])}`,
     "---",
   ].join("\n");
 
@@ -43,15 +47,14 @@ export function buildNote(extracted, analysis, type, url) {
     body += "\n";
   }
 
-  body += "## Strategic Fit\n";
-  body += `- **ICP:** ${analysis.icp}\n`;
-  body += `- **Pillar:** ${analysis.pillar}\n`;
-  body += `- **Relevance:** ${analysis.relevance}/10\n`;
+  body += "## Research assessment\n";
+  body += `- **Analysis:** ${analysis.analysisStatus || "needs_analysis"}\n`;
   body += `- **Source quality:** ${analysis.sourceQuality}\n`;
-  body += `- **Content status:** ${analysis.contentStatus}\n`;
-  body += `- **Offer fit:** ${analysis.offerFit}\n`;
-  body += `- **Funnel stage:** ${analysis.funnelStage}\n`;
+  body += `- **Public eligibility:** unassessed; saving is not publishing approval\n`;
   body += `- **Why:** ${analysis.reasoning}\n\n`;
+  for (const project of analysis.projectFit || []) {
+    body += `### ${project.project}\n${project.fit}: ${project.reason}\n\nPossible use: ${project.possibleUse}\n\nSource excerpt: ${project.sourceExcerpt}\n\n`;
+  }
 
   if (analysis.evidence?.length) {
     body += "## Evidence From Source\n";

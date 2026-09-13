@@ -2,7 +2,7 @@ import { readFileSync } from "fs";
 import { resolve } from "path";
 
 function loadEnv() {
-  const envPath = resolve(
+  const envPath = process.env.RESEARCH_ENV || resolve(
     process.env.HOME || process.env.USERPROFILE,
     "research-bot",
     ".env"
@@ -31,6 +31,7 @@ export const config = {
   telegramToken: process.env.TELEGRAM_BOT_TOKEN,
   chatId: process.env.TELEGRAM_CHAT_ID,
   groqKey: process.env.GROQ_API_KEY,
+  groqModel: process.env.RESEARCH_GROQ_MODEL,
   anthropicKey: process.env.ANTHROPIC_API_KEY,
   supadataKey: process.env.SUPADATA_API_KEY,
   githubToken: process.env.GITHUB_TOKEN,
