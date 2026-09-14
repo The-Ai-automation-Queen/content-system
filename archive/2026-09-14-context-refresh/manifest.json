@@ -1,0 +1,27 @@
+{
+  "source_commit": "134ad5bbc8e4d7a3afa59145a0aab06206a57ada",
+  "sha256": {
+    "CLAUDE.md": "19ac654f609a4936b005b90513ec5aec757e784400628e90a742d45839bcff28",
+    "AGENTS.md": "afe677cad0412991a14508899bcfd0ceaff3fee57fff8bea1c3fac379fc449b0",
+    "positioning/SKILL.md": "3fda0c11049d69fcb589fde128e7356ec1e5947a87460fd32992dcaea66ce1b0",
+    "skills/research-router/SKILL.md": "e2c90e05fcad920038dd514cf6de3e206537d28503e6be6fa390a047f6d3b825",
+    "skills/inbox-distiller/SKILL.md": "76050788af925bc04539f200872166b86cbb50bcf5dcf14760754d63f0b2a02e",
+    "skills/inbox-to-content/SKILL.md": "f813822ba57a0a786d072f7487e0c01c8ebcca516d2a4f39fb1b3bd55003e636",
+    "skills/content-engine/SKILL.md": "760ea20da412c1d7ce908cc01ccdce938794309ce73dbf365c8ea9b1e1a2cfb9",
+    "skills/weekly-ops/SKILL.md": "2bb953d23cab8c2dd05a2c7b650957d953f4f743a853aadcecbea8fa58db5c82",
+    "skills/brain-manager/SKILL.md": "ac64a8e9720165b2276213ee104147616e2fef15dd0a101a66b26a412f7e0ace",
+    "skills/dm-responder/SKILL.md": "f729f3c72d0a08948f109ad41d26898b925a21415da9e04980b3a3d5c0d8b6be",
+    "scheduler.config.json": "7d06798a7438c7f03cc58de7cd450eb7c48efb8b266767328a091b4ed3627068",
+    "automation/research-pipeline/config/pipeline.json": "291ee7a1b1586155d65157252ec05a8ab54d8e5d82a1b72cd1838ebecb41a11d",
+    "automation/research-pipeline/README.md": "23284c2153a627ee54a285d1b1a6d695308ef1581524760f88d245b7545ff541",
+    "automation/research-pipeline/briefs/business-brain-memory.md": "8cc1b13164bd00723b72af007b9f16eae0815eca04653c7e754245379ce8c603",
+    "automation/research-pipeline/briefs/ai-brand-rules.md": "367d50de01652383c7b325c6d7569c0501bd191fb8cf58f6b6de326ba7802c0b",
+    "automation/research-pipeline/briefs/research-to-content-workflow.md": "17aa00a17a592b7322a293116e2034c4bce5b737809faf65a2371bd332c7a196",
+    "automation/research-pipeline/queues/triage.json": "76f844a5705dd3d8f7f4253e2decaf7bbfbdf1e3f488c9d708bebe380108babb",
+    "automation/research-pipeline/queues/opportunities.json": "fe0bdcadcc5ca8cc4fb91e4b1440f5e105d82b69b4e917a980f3a5cbeaac7435",
+    "automation/research-pipeline/queues/approved.json": "a02df6941bfda228cc548a56f25d0db11878e16b9694ca2f571440b26df0eb23",
+    "skills/distribution/SKILL.md": "2ee82d25b4a6d1b7608ff475c3ef98518c59213e50db3bd2608e3849432fb9cf",
+    "skills/monetisation/SKILL.md": "2b476271223f107b4fda57818833cebef77c81da2ff534727bea83de8e966ef7",
+    "skills/signal-harvester/SKILL.md": "3c0f7f6e6adf524026f7b3810a4f1bf1f4ce01e869d3f37108f7e2d5a20a7c39"
+  }
+}

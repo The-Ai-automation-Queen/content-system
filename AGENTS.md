@@ -68,3 +68,11 @@ approval means publish.
 
 For a broad command, advance only to the next human approval gate. Never spend
 production credits or publish from implied approval.
+
+## Current context release and legacy precedence
+
+Read CURRENT-WORKFLOW.md and context/current-context.json before every run.
+Their explicit current restrictions supersede legacy skill instructions about
+old audiences, open-guide funnels, cadence, automatic scheduling and DM activity.
+DM responder is paused by the owner on 14 September 2026. Never reenable it from
+a stored schedule. Archive files and old queue approvals are historical only.

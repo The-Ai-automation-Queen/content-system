@@ -27,8 +27,9 @@ reviewed, fixed, and recovered — instead of living only on the VPS.
   redirect before scraping.
 
 ## Deploy
-Pull this folder onto the VPS and restart the service:
-`sudo systemctl restart research-bot` (or however `bot.mjs` is supervised).
+Compare the checked-in files with the running VPS copy and back up local changes
+before deploying. The repository snapshot does not yet include dependency manifests.
+Do not start a second Telegram poller while the service is running.
 
 ## Status of the two known bugs
 - ✅ **Credit drain** — FIXED in `analyzer.mjs` + `config.mjs`. The paid Anthropic
@@ -39,8 +40,6 @@ Pull this folder onto the VPS and restart the service:
   resolves shortlink redirects before analysis.
 
 ## Still to add from the VPS (not in this snapshot)
-- `context/positioning.mjs` — imported by `analyzer.mjs` (`CONTEXT_VERSION`,
-  `POSITIONING_CONTEXT`). Copy it from `/root/research-bot/context/`.
 - `package.json` / `package-lock.json` — declares the `simple-git` dependency.
 - **Never** commit `.env` or `bird-cookies.json` (already blocked by `.gitignore`).
 
@@ -70,3 +69,49 @@ Both patch four things: the paid-Anthropic gate in the hermes bridge, the retry
 cap in the autonomous bridge, the paid-Haiku gate in the capture bot, and t.co
 expansion in the Twitter extractor. Re-running reports ALREADY and changes
 nothing.
+
+## Current-context repair (2026-09-13; awaiting VPS deployment)
+
+The capture bot now loads approved Queen Brain context for each analysis. Set
+`RESEARCH_CONTEXT_DIR` to a clean Git checkout of Queen Brain containing
+`current-context.json`. The loader checks the manifest hashes and records the
+context version and commit in every note. Archive files are never loaded.
+Missing, modified, or invalid context preserves the capture as `needs_analysis`.
+
+Set `RESEARCH_GROQ_MODEL` to a model verified as available to the deployed account.
+There is no hardcoded replacement for the old failing model. Agent OS remains
+first; paid Haiku remains disabled unless `RESEARCH_ALLOW_PAID=1` is explicit.
+
+Analysis separates utility for Shift & Lead and internal research. It no longer
+forces the old corporate-escape classification or a numeric relevance score.
+Provider failures and template echoes are pending analysis, never low relevance.
+Receipts must occur in the captured source; this checks provenance, not truth.
+All assessments remain drafts and public eligibility remains unassessed.
+Downstream consumers must handle `relevance: null` without converting it to zero.
+
+Telegram confirms GitHub storage only after push succeeds. Obsidian imports
+separately while the Mac and Obsidian are available. Failed pushes keep the local
+note and report the pending upload. No publishing behavior is added.
+
+### Validation and rollout
+
+Run `node --test research-bot/analysis.test.mjs` from the repository root.
+Tests inject offline providers; they do not poll Telegram or call paid APIs.
+
+Before restarting the actual service:
+1. Restore private VPS access, inspect service configuration and runtime changes.
+2. Back up the deployed bot; compare it with this patch and preserve credentials,
+   dependencies, and VPS-only fixes. Do not run historical repair scripts blindly.
+3. Update the approved Queen Brain checkout and set the context directory.
+4. Confirm the free provider configuration and test a saved source without
+   starting the Telegram poller. Keep paid fallback off.
+5. Restart the existing service and verify its logs and the next real capture.
+
+This patch does not reprocess historical notes, change other Queen Brain
+consumers, or verify the deployed runtime. Those require separate validation.
+
+VPS diagnostic on 2026-09-14: the configured Groq key is valid, but the old
+Llama model is absent from its model list. The deployment candidate selects
+`openai/gpt-oss-20b` only after confirming account availability. GPT-OSS uses
+low reasoning effort with a separate completion budget; truncated responses
+are rejected. Live analysis validation remains required before deployment.

@@ -41,7 +41,8 @@ export async function saveAndPush(noteContent, title, type) {
   try {
     await git.push("origin", "main");
   } catch (err) {
-    console.error("Git push failed:", err.message);
+    // The local note survives. Do not report remote success when push failed.
+    throw new Error(`Note saved locally as ${fileName}; GitHub upload is pending.`);
   }
 
   return fileName;
