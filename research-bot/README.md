@@ -109,3 +109,9 @@ Before restarting the actual service:
 
 This patch does not reprocess historical notes, change other Queen Brain
 consumers, or verify the deployed runtime. Those require separate validation.
+
+VPS diagnostic on 2026-09-14: the configured Groq key is valid, but the old
+Llama model is absent from its model list. The deployment candidate selects
+`openai/gpt-oss-20b` only after confirming account availability. GPT-OSS uses
+low reasoning effort with a separate completion budget; truncated responses
+are rejected. Live analysis validation remains required before deployment.

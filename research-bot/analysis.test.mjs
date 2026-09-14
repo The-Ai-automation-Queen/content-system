@@ -77,3 +77,19 @@ test('context loads committed approved files and rejects altered source or manif
   writeFileSync(manifestPath,JSON.stringify({...manifest,context_version:'uncommitted'}));
   assert.throws(()=>loadPositioningContext(dir),/uncommitted/);
 });
+
+test('Groq GPT-OSS request reserves output budget and rejects truncated JSON',async()=>{
+  const {config}=await import('./config.mjs');
+  const oldModel=config.groqModel,oldKey=config.groqKey,oldFetch=globalThis.fetch;
+  config.groqModel='openai/gpt-oss-20b';config.groqKey='offline-test-key';
+  let request;
+  try {
+    globalThis.fetch=async(url,options)=>{request=JSON.parse(options.body);return {ok:true,json:async()=>({choices:[{finish_reason:'length',message:{content:JSON.stringify(raw)}}]})};};
+    const result=await analyzeContent(extracted,'github',{loadContext:()=>context,agentOS:async()=>{throw new Error('offline');}});
+    assert.equal(request.reasoning_effort,'low');assert.equal(request.max_completion_tokens,3500);
+    assert.equal(result.analysisStatus,'needs_analysis');
+    globalThis.fetch=async()=>({ok:true,json:async()=>({choices:[{finish_reason:'stop',message:{content:JSON.stringify(raw)}}]})});
+    const valid=await analyzeContent(extracted,'github',{loadContext:()=>context,agentOS:async()=>{throw new Error('offline');}});
+    assert.equal(valid.analysisStatus,'draft');
+  } finally {config.groqModel=oldModel;config.groqKey=oldKey;globalThis.fetch=oldFetch;}
+});

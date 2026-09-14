@@ -46,7 +46,9 @@ async function analyzeWithGroq(userPrompt) {
       body: JSON.stringify({
         model: config.groqModel,
         temperature: 0.2,
-        max_tokens: 2500,
+        ...(config.groqModel.startsWith("openai/gpt-oss-")
+          ? { max_completion_tokens: 3500, reasoning_effort: "low" }
+          : { max_tokens: 2500 }),
         response_format: { type: "json_object" },
         messages: [
           { role: "system", content: SYSTEM_INSTRUCTION },
@@ -56,6 +58,7 @@ async function analyzeWithGroq(userPrompt) {
     });
     if (res.ok) {
       const data = await res.json();
+      if (data.choices?.[0]?.finish_reason === "length") throw new Error("Groq response truncated");
       return parseJsonObject(data.choices?.[0]?.message?.content);
     }
     if ([429, 500, 502, 503].includes(res.status) && attempt < maxRetries) {
