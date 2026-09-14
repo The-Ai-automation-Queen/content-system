@@ -7,7 +7,7 @@ export function capture(text,path){
  if(!match)return null;
  const content=match[1].replace(/^>\s?/gm,'').replace(/^\[!\w+\].*$/gm,'').trim();
  if(content.length<120)return null;
- return {id:createHash('sha256').update(path+'\0'+content).digest('hex'),path,title:text.match(/^# (.+)$/m)?.[1]||path,content,sourceHash:createHash('sha256').update(content).digest('hex'),contextVersion:text.match(/^context_version:\s*["']?([^"'\n]+)/m)?.[1]||'legacy'};
+ return {type:text.match(/^source:\s*["']?([^"'\n]+)/m)?.[1]||'article',id:createHash('sha256').update(path+'\0'+content).digest('hex'),path,title:text.match(/^# (.+)$/m)?.[1]||path,content,sourceHash:createHash('sha256').update(content).digest('hex'),contextVersion:text.match(/^context_version:\s*["']?([^"'\n]+)/m)?.[1]||'legacy'};
 }
 export function inventory(repo){
  const files=execFileSync('git',['-C',repo,'ls-files','-z'],{encoding:'utf8'}).split('\0');

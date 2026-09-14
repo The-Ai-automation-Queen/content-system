@@ -93,3 +93,13 @@ test('Groq GPT-OSS request reserves output budget and rejects truncated JSON',as
     assert.equal(valid.analysisStatus,'draft');
   } finally {config.groqModel=oldModel;config.groqKey=oldKey;globalThis.fetch=oldFetch;}
 });
+
+test('historical reassessment preserves captures and resumes without repeating completed work',async()=>{
+  const {reassess}=await import('./reassess.mjs');
+  const destination=join(temp,'assessments');let calls=0;
+  const items=[{id:'source-one',path:'source.md',sourceHash:'hash',title:extracted.title,content:extracted.content}];
+  const analyze=async()=>{calls++;return normalizeAnalysis(raw,'offline',extracted,'article',context)};
+  const first=await reassess({destination,items,analyze,load:()=>context});
+  const second=await reassess({destination,items,analyze,load:()=>context});
+  assert.equal(first.status,'complete');assert.equal(second.attempted,0);assert.equal(calls,1);assert.equal(items[0].content,extracted.content);
+});
