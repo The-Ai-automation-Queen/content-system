@@ -1,5 +1,52 @@
 node_modules/
 package-lock.json
+<<<<<<< Updated upstream
 
 .vercel
 .env*
+=======
+package.json
+
+# BEGIN VPS SECURITY MANAGED — do not place secret values in this file
+.env
+.env.*
+*.env
+*.env.*
+!.env.example
+!*.env.example
+!*.env*.example
+.git-credentials
+credentials.json
+service-account*.json
+auth.json
+auth-profiles.json
+bridge-secrets.conf
+*-secrets.conf
+*.token
+.telegram-*-token
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.kdbx
+Cookies
+Login Data
+Web Data
+.claude/
+.hermes/
+sessions/
+state.db
+response_store.db
+kanban.db
+*.db-wal
+*.db-shm
+*.sqlite-wal
+*.sqlite-shm
+*.log
+*.pid
+# END VPS SECURITY MANAGED
+>>>>>>> Stashed changes
