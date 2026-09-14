@@ -6,10 +6,20 @@ digest run overwrites it.
 
 ## Telegram offset
 
-- Last `getUpdates` consumed offset: none pending (queue was empty at both
-  the pre-digest process sweep and the post-send check on 14/09/2026).
+- Last `getUpdates` consumed offset: still none pending — checked again at
+  the 14/09/2026 ~20:30 GST `process` slot (run on operator request), queue
+  empty (`{"ok":true,"result":[]}`). No card replies, no unblocker replies,
+  no voice notes since the 07:30 digest.
 - Next `process` run should call `getUpdates` with no offset filter until a
   reply produces an `update_id` to anchor to.
+
+## Process sweeps log
+
+- 14/09/2026 ~20:30 GST — operator-requested sweep. `getUpdates` empty.
+  Nothing to route, nothing applied to the vault, nothing added to
+  decisions-log.md. All 9 cards from the 07:30 digest (#1–#6, R1–R3) remain
+  outstanding. Sent one confirmation line to Telegram per skill step 5
+  (message_id 991).
 
 ## Last digest served — 14/09/2026 (07:30 GST slot, run on operator request)
 
