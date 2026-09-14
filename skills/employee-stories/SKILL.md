@@ -188,6 +188,9 @@ permanent. Assigned so far:
 | 026 | Bilal | Expense Coding (interviewing) | Back Office |
 | 027 | Tamer | Meeting Recaps (interviewing) | Deals |
 | 028 | Rania | Review Miner (interviewing) | Intelligence |
+| 029 | Mona | Lead Scorer (interviewing) | Sales |
+| 030 | Wael | Case Study Writer (interviewing) | Marketing |
+| 031 | Sara | NPS Analyst (interviewing) | Customer |
 
 New names: short, warm, easy to say in English and French, no name
 reuse, never the name of a real client or contact. Log new assignments

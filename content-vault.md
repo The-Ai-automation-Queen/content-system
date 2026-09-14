@@ -13,6 +13,14 @@
 
 ## Most recent (quick reference)
 
+- 14/09/2026 | LinkedIn carousel | "You Sent an NPS Survey and Never Actually Read What People Wrote in the Comments" — Sara, NPS Analyst, Employee #031 | READY TO POST
+- 14/09/2026 | LinkedIn | "You Sent an NPS Survey and Never Actually Read What People Wrote in the Comments" — Sara, NPS Analyst, Employee #031 | READY TO POST
+- 14/09/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Mona/Wael/Sara | READY TO POST
+- 14/09/2026 | LinkedIn carousel | "You Did Great Work for a Client Three Months Ago and Never Wrote It Up" — Wael, Case Study Writer, Employee #030 | READY TO POST
+- 14/09/2026 | LinkedIn | "You Did Great Work for a Client Three Months Ago and Never Wrote It Up" — Wael, Case Study Writer, Employee #030 | READY TO POST
+- 14/09/2026 | LinkedIn | "Now Hiring: Three More AI Employees, Salary $0 Each" — wave announcement, Employees #29/#30/#31 | READY TO POST
+- 14/09/2026 | LinkedIn carousel | "You Have 40 Leads Sitting in a Spreadsheet and No Idea Which One to Call First" — Mona, Lead Scorer, Employee #029 | READY TO POST
+- 14/09/2026 | LinkedIn | "You Have 40 Leads Sitting in a Spreadsheet and No Idea Which One to Call First" — Mona, Lead Scorer, Employee #029 | READY TO POST
 - 07/09/2026 | LinkedIn carousel | "Your Competitor's Reviews Are Sitting Right There and You've Never Actually Read Them for the Pattern" — Rania, Review Miner, Employee #028 | READY TO POST
 - 07/09/2026 | LinkedIn | "Your Competitor's Reviews Are Sitting Right There and You've Never Actually Read Them for the Pattern" — Rania, Review Miner, Employee #028 | READY TO POST
 - 07/09/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Bilal/Tamer/Rania | READY TO POST
@@ -100,6 +108,259 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 166 — 14/09/2026 | LinkedIn carousel | You Sent an NPS Survey and Never Actually Read What People Wrote in the Comments | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 165 (Sara, Employee #031, NPS Analyst, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/sara/sara-nps-analyst-01.png through -06.png
+Source HTML: skills/carousel-factory/out/sara-nps-analyst.html
+**CTA keyword:** NPS, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You sent an NPS survey and never actually read what people wrote in the comments."
+Slide 2 (scene): "The score came back fine, you glanced at it and moved on. The actual sentences people took the time to write just sat there, unread, telling you exactly what to fix."
+Slide 3 (role card): Sara, NPS Analyst, Customer, Salary $0, never sleeps. "Sara is AI. The only job she took was mine: reading every comment on the survey, not just the number, and telling me the pattern I was missing."
+Slide 4 (how she works): 4-step list, paste in survey responses, she finds repeating themes, drafts detractor and promoter follow-ups, you get the top 3 issues.
+Slide 5 (demo): "Built and tested analyzing one real batch of 25 survey responses. Setup about 10 minutes. She only reports what was actually written."
+Slide 6 (CTA): "Want the free setup? Comment NPS."
+
+---
+
+## ENTRY 165 — 14/09/2026 | LinkedIn | You Sent an NPS Survey and Never Actually Read What People Wrote in the Comments | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Thursday episode 3)
+**Topic:** Employee #031, Sara, NPS Analyst. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/nps-analyst-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/customer/customer-nps-analyst.md, read this run (repo already in session, pulled fresh, unchanged since 28/07). Real job description: analyze NPS and survey verbatims for themes, track score movement against changes shipped, draft follow-ups for detractors and promoters, report the top 3 fixable issues per cycle. Free playbook narrows this to one manually pasted batch (no score-movement tracking across cycles), per the free/paid line. Third employee from the Customer department (after Ziad, Churn Watch, and Amal, Feedback Digest, and Dania, Renewal Reminder), a distinct angle: structured survey verbatims specifically, not general scattered feedback or churn signals. Mode check: no receipt found anywhere for Sara. Confirmed PLAYBOOK.
+
+---
+You sent an NPS survey and never actually read what people wrote in the comments.
+
+The score came back fine, you glanced at it and moved on. The actual sentences people took the time to write just sat there, unread, telling you exactly what to fix.
+
+Meet Employee #031.
+
+Sara. NPS Analyst. Customer.
+Salary: $0. Never sleeps.
+
+Sara is AI. The only job she took was mine: reading every comment on the survey, not just the number, and telling me the pattern I was missing.
+
+How she works:
+1. You paste in the survey responses: scores and comments.
+2. She reads every comment and finds the themes that repeat.
+3. She drafts one follow-up for a detractor and one for a promoter.
+4. You get the top three fixable issues, in plain language.
+
+The demo: built and tested analyzing one real batch of 25 survey responses with one AI tool. Setup time, about 10 minutes. She only reports what was actually written, nothing invented.
+
+Red line: she never sends a follow-up herself, and never invents a theme that wasn't actually in the comments.
+
+Your first win, free, today: pull the last 10 survey responses you have, scores and comments both. That's Sara's first read.
+
+Comment NPS and I'll send you the full setup, free.
+
+#AIemployees #The99 #CustomerOps
+
+---
+
+## ENTRY 164 — 14/09/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** Talking-head reel (30-45s), captions required
+**Format:** Week's wave reel (Wednesday slot), three role-card cutaways + one screenshot cutaway
+**Topic:** Compresses all 3 of this week's hires (Mona, Wael, Sara) into one 45-second reel, per the hiring-campaign weekly slot map.
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur lead names and details on the scored-lead-list screenshot).
+**Source:** Assembled from ENTRY 160/162/165's role-card lines. No new claims.
+
+---
+[0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
+
+[0:03-0:12] Role card cutaway 1, Mona: "Mona reads through my pile of leads and tells me which one to call first."
+
+[0:12-0:21] Role card cutaway 2, Wael: "Wael turns a finished client win into a written story before it disappears."
+
+[0:21-0:30] Role card cutaway 3, Sara: "Sara reads every comment on my survey, not just the number."
+
+[0:30-0:38] Screenshot cutaway: Mona's scored lead list, real setup, lead names and details blurred (redaction modeled).
+
+[0:38-0:45] Closing line, spoken + on-screen: "None of them act without me. Comment TEAM and I'll send you how to hire your first one."
+
+---
+
+## ENTRY 163 — 14/09/2026 | LinkedIn carousel | You Did Great Work for a Client Three Months Ago and Never Wrote It Up | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 162 (Wael, Employee #030, Case Study Writer, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/wael/wael-case-study-writer-01.png through -06.png
+Source HTML: skills/carousel-factory/out/wael-case-study-writer.html
+**CTA keyword:** CASESTUDY, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You did great work for a client three months ago and never wrote it up."
+Slide 2 (scene): "The result was real, the client was happy. Somewhere between finishing the project and starting the next one, the story that would have sold the next five clients never got written."
+Slide 3 (role card): Wael, Case Study Writer, Marketing, Salary $0, never sleeps. "Wael is AI. The only job he took was mine: turning a finished win into a written story, instead of letting a good result disappear the moment the project ended."
+Slide 4 (how he works): 4-step list, tell him what happened, he writes one case study in your voice, pulls the proof number, you review and publish.
+Slide 5 (demo): "Built and tested writing one real case study from a finished project. Setup about 15 minutes. He never publishes anything or invents a number."
+Slide 6 (CTA): "Want the free setup? Comment CASESTUDY."
+
+---
+
+## ENTRY 162 — 14/09/2026 | LinkedIn | You Did Great Work for a Client Three Months Ago and Never Wrote It Up | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Wednesday episode 2)
+**Topic:** Employee #030, Wael, Case Study Writer. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/case-study-writer-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/marketing/marketing-case-study-writer.md, read this run (repo already in session, pulled fresh, unchanged since 28/07). Real job description: write case studies (situation, approach, result, quote), extract numbers that prove the outcome, draft the client-approval version and promo cuts, produce social snippets from each study. Free playbook narrows this to one project, one written case study plus one promo version (no batch social-snippet production), per the free/paid line. Third employee from the Marketing department (after Zeina, a PROOF/carousel-factory employee, and Yasmine, Content Repurposer, and Reem, Social Calendar), a distinct angle: proof-of-work storytelling, not repurposing or planning. Mode check: no receipt found anywhere for Wael. Confirmed PLAYBOOK.
+
+---
+You did great work for a client three months ago and never wrote it up.
+
+The result was real, the client was happy. Somewhere between finishing the project and starting the next one, the story that would have sold the next five clients never got written.
+
+Meet Employee #030.
+
+Wael. Case Study Writer. Marketing.
+Salary: $0. Never sleeps.
+
+Wael is AI. The only job he took was mine: turning a finished win into a written story, instead of letting a good result disappear the moment the project ended.
+
+How he works:
+1. You tell him what happened: situation, approach, result.
+2. He writes one case study, in your voice.
+3. He pulls out the number that actually proves the outcome.
+4. You review it, get the client's okay, and publish it yourself.
+
+The demo: built and tested writing one real case study from a finished project with one AI tool. Setup time, about 15 minutes. He never publishes anything, and never invents a result or a number that wasn't part of what actually happened.
+
+Red line: if you can't point to where a number came from, it doesn't go in the case study, a modest real result beats an impressive invented one.
+
+Your first win, free, today: think of the one project you're proudest of and write three lines, situation, approach, result. That's Wael's first draft.
+
+Comment CASESTUDY and I'll send you the full setup, free.
+
+#AIemployees #The99 #MarketingOps
+
+---
+
+## ENTRY 161 — 14/09/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Hiring-post ritual (job-ad parody), Monday wave announcement
+**Topic:** Introduces this wave's 3 openings (Employees #029, #030, #031).
+**Pattern used:** Job-ad parody + serial-cliffhanger opener
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — value-first series opener, comment-keyword capture, no promo.
+**Source:** schedule.md had no remaining "planned" rows this wave (confirmed via full read at wave start); three picks made per the "beyond #016" rule from the departments roster, Sales, Marketing, Customer, 3 distinct, none reused from last wave (Back Office, Deals, Intelligence). Real job-description files read this run from agent-os-company-dashboard/company/departments/ (repo already present in this container, pulled fresh, unchanged since 28/07): sales/sales-lead-scorer.md, marketing/marketing-case-study-writer.md, customer/customer-nps-analyst.md.
+
+---
+Now hiring. Three more AI employees. Salary: $0 each.
+
+Employee #029: Lead Scorer.
+Reads through your pile of leads and tells you which one to call first, instead of guessing.
+
+Employee #030: Case Study Writer.
+Turns a finished client win into a written story before it disappears.
+
+Employee #031: NPS Analyst.
+Reads every comment on your survey, not just the number, and finds the pattern you're missing.
+
+None of them sleep. None of them ask for a raise. None of them act without me seeing it first.
+
+That is Employee #29, #30, and #31 of 99. The full team, hired one at a time, in public.
+
+See who is already on the floor. The scoreboard is live, updated only when there is a real receipt to show.
+
+Want to build your own first hire? Comment TEAM and I will send you the free 5-step framework.
+
+#AIemployees #Solopreneur #The99
+
+---
+
+## ENTRY 160 — 14/09/2026 | LinkedIn carousel | You Have 40 Leads Sitting in a Spreadsheet and No Idea Which One to Call First | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 159 (Mona, Employee #029, Lead Scorer, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/mona/mona-lead-scorer-01.png through -06.png
+Source HTML: skills/carousel-factory/out/mona-lead-scorer.html
+**CTA keyword:** SCORE, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You have 40 leads sitting in a spreadsheet and no idea which one to call first."
+Slide 2 (scene): "They came in over weeks, from different sources. Now they're just a list, with no way to tell the ready-to-buy one from the just-browsing one without reading every row again."
+Slide 3 (role card): Mona, Lead Scorer, Sales, Salary $0, never sleeps. "Mona is AI. The only job she took was mine: reading through the pile and telling me which lead to call first, instead of guessing or working them in whatever order they arrived."
+Slide 4 (how she works): 4-step list, give her the lead list, she scores each against your criteria, explains each score, you call the highest scores first.
+Slide 5 (demo): "Built and tested scoring 20 real leads against one ICP. Setup about 10 minutes. She never contacts a lead herself, only ranks the list."
+Slide 6 (CTA): "Want the free setup? Comment SCORE."
+
+---
+
+## ENTRY 159 — 14/09/2026 | LinkedIn | You Have 40 Leads Sitting in a Spreadsheet and No Idea Which One to Call First | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Tuesday episode 1)
+**Topic:** Employee #029, Mona, Lead Scorer. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/lead-scorer-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/sales/sales-lead-scorer.md, read this run (repo already present in this container, pulled fresh, unchanged since 28/07). Real job description: score leads 0-100 against ICP fit and intent signals, explain each score in one line, batch-rescore when ICP or signals change, flag hot leads for same-day action. Free playbook narrows this to a manually provided list scored once (no automatic batch-rescoring on signal change), per the free/paid line. No more "planned" rows remained in schedule.md this wave; picked per the "beyond #016" rule from the departments roster, Sales, Marketing, Customer, 3 distinct, none reused from last wave (Back Office, Deals, Intelligence). Mode check: no receipt found anywhere for Mona. Confirmed PLAYBOOK.
+
+---
+You have 40 leads sitting in a spreadsheet and no idea which one to call first.
+
+They came in over weeks, from different sources. Now they're just a list, with no way to tell the ready-to-buy one from the just-browsing one without reading every row again.
+
+Meet Employee #029.
+
+Mona. Lead Scorer. Sales.
+Salary: $0. Never sleeps.
+
+Mona is AI. The only job she took was mine: reading through the pile and telling me which lead to call first, instead of guessing or working them in whatever order they arrived.
+
+How she works:
+1. You give her the lead list: who they are, how they found you, anything they said.
+2. She scores each one 0-100 against what a good-fit lead looks like for you.
+3. She explains each score in one line, so you can sanity-check it.
+4. You call the highest scores first, in whatever order you choose.
+
+The demo: built and tested scoring 20 real leads against one ICP with one AI tool. Setup time, about 10 minutes. She never contacts a lead herself, only ranks the list you give her.
+
+Red line: she never reaches out to a lead herself, and never invents a signal that wasn't actually in what you told her.
+
+Your first win, free, today: pull your last 10 leads into one list, whatever you have on each. That's Mona's first scoring pass.
+
+Comment SCORE and I'll send you the full setup, free.
+
+#AIemployees #The99 #SalesOps
 
 ---
 
