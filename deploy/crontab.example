@@ -61,7 +61,7 @@ SHELL=/bin/bash
 # ── M05 — DM/Lead Responder ─────────────────────────────────
 # Every 5 min — polls comments for keyword CTAs, sends DMs via GHL (IG) + Unipile
 # (LinkedIn). Harmless to leave running — it just reports status until wired.
-*/5 * * * *  __REPO__/deploy/run-machine.sh "/dm-responder" 0 0
+# PAUSED by owner 2026-09-14: */5 * * * *  __REPO__/deploy/run-machine.sh "/dm-responder" 0 0
 
 # =============================================================
 # AI Insider Brief (paths assume the estate VPS after deploy/brief-migration;

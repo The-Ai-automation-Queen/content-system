@@ -9,6 +9,12 @@
 # scheduler.config.json describes but doesn't execute on its own.
 set -uo pipefail
 
+# Owner pause, 14 September 2026. Legacy cron examples must not restart DMs.
+if [ "${1:-}" = "/dm-responder" ]; then
+  echo "DM responder is paused by the owner."
+  exit 0
+fi
+
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO="$(cd "$HERE/.." && pwd)"
 cd "$REPO"

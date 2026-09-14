@@ -1,0 +1,11 @@
+{
+  "status": "needs_reassessment",
+  "reason": "Queue scores, routes and approvals predate the current context; they cannot authorize a changed version.",
+  "source_release": "shift-lead-2026-09-12",
+  "preserved_files": [
+    "triage.json",
+    "opportunities.json",
+    "approved.json"
+  ],
+  "archived_at": "2026-09-14"
+}

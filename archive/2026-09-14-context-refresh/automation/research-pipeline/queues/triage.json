@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "source_id": "d1163ecc687e8c938264a150c37f2f3128e81b08:2026-08-11-article-title-notion-where-teams-and-agents-work-together.md",
+      "source_commit": "d1163ecc687e8c938264a150c37f2f3128e81b08",
+      "filename": "2026-08-11-article-title-notion-where-teams-and-agents-work-together.md",
+      "source_type": "article",
+      "source_date": "2026-08-11",
+      "metadata": {"icp":"Corporate_Escapee","lane":"Corporate_Escapee","pillar":"AI_Agents","relevance":7,"source_quality":"primary","content_status":"content_candidate","offer_fit":"Fast Forward","funnel_stage":"consideration","risk_flags":["Requires specific Mac/Windows/Linux setup verification","Claude Code /rc functionality depends on subscription status"],"tags":["research-inbox","article","hermes-ready"]},
+      "business_translation": "A file-driven reel production workflow could become a practical example of replacing hours of manual editing with a repeatable AI-assisted production system, but its technical setup and /rc availability need verification before any public recommendation.",
+      "urgent": false,
+      "time_sensitive": false,
+      "status": "pending_triage"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "source_repository": "The-Ai-automation-Queen/research-inbox",
+  "target_repository": "The-Ai-automation-Queen/content-system",
+  "bootstrap_since": "2026-08-06",
+  "max_items_per_hourly_watch": 20,
+  "max_items_per_daily_factory": 40,
+  "score_weights": {
+    "audience_usefulness": 25,
+    "positioning_fit": 20,
+    "evidence_quality": 15,
+    "lead_magnet_potential": 15,
+    "distinctive_point_of_view": 10,
+    "paid_path_fit": 10,
+    "timeliness": 5
+  },
+  "score_thresholds": {
+    "strong_opportunity": 80,
+    "cluster_or_social": 65,
+    "inspiration_only": 50
+  },
+  "hard_blockers": [
+    "unsupported_statistics_or_financial_claims",
+    "single_weak_source_for_definitive_claim",
+    "pure_tool_hype_without_business_outcome",
+    "very_technical_topic_without_a_clear_business_translation",
+    "duplicate_of_existing_guide_or_recent_draft",
+    "outside_current_positioning",
+    "stale_or_version_specific_instructions_without_reverification",
+    "legal_or_security_claims_presented_as_advice_without_qualification"
+  ],
+  "routes": [
+    "guide_open",
+    "guide_update",
+    "lead_magnet",
+    "lead_magnet_update",
+    "linkedin",
+    "carousel",
+    "paid_quick_win",
+    "specialist_product",
+    "ai_business_os",
+    "workshop",
+    "corporate",
+    "research_more",
+    "archive"
+  ],
+  "guide_categories": [
+    "save_time_with_ai",
+    "think_and_create_better",
+    "understand_your_data",
+    "sell_and_market_better",
+    "build_the_ai_help_you_need",
+    "automate_and_scale",
+    "choose_the_right_ai",
+    "start_here_understand_ai"
+  ],
+  "guide_rules": {
+    "title_law": "Outcome first. Tool second. Explanation third.",
+    "learning_pattern": ["answer", "see_it", "try_it", "use_it", "go_further"],
+    "guide_is_open": true,
+    "generic_newsletter_cta_allowed": false,
+    "companion_asset_requires_email": true,
+    "max_primary_ctas": 1,
+    "visual_rule": "A visual must explain a relationship, sequence, comparison, decision or transformation.",
+    "threejs_default": false,
+    "gsap_default_for_motion": true
+  },
+  "funnel": {
+    "public": "open_guide",
+    "email_exchange": "contextual_companion_asset",
+    "first_paid": "quick_win_or_specialist_build",
+    "flagship": "ai_business_os",
+    "b2b": "workshop_to_workflow_sprint_to_implementation"
+  },
+  "approved_companion_asset_types": [
+    "canvas",
+    "checklist",
+    "scorecard",
+    "worksheet",
+    "decision_tree",
+    "template",
+    "calculator",
+    "personalised_result",
+    "workflow_map"
+  ],
+  "publication_policy": {
+    "internal_queue_updates_may_write_to_main": true,
+    "full_guide_requires_draft_pr": true,
+    "guide_update_requires_draft_pr": true,
+    "lead_magnet_requires_draft_pr": true,
+    "paid_product_requires_human_approval": true,
+    "automation_may_merge_its_own_content_pr": false
+  }
+}

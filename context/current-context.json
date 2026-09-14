@@ -1,0 +1,57 @@
+{
+  "context_version": "shift-lead-2026-09-12",
+  "refreshed_on": "2026-09-12",
+  "active_files": [
+    "CLAUDE.md",
+    "README.md",
+    "positioning.md",
+    "voice.md",
+    "offers.md",
+    "brand.md",
+    "GOALS.md",
+    "STATUS.md",
+    "program.md",
+    "dwy-blueprint.md",
+    "proof.md",
+    "personal-brain.md",
+    "Career Profile.md",
+    "clients.md",
+    "research-policy.md",
+    "sources.md"
+  ],
+  "active_skills": [
+    "skills/board-meeting/SKILL.md"
+  ],
+  "exclude_from_routine_context": [
+    "archive/**",
+    "board/**",
+    "approvals/**",
+    "proposals/**"
+  ],
+  "upstream_authority": "sources.md",
+  "research_policy": "research-policy.md",
+  "runtime_reload_verified": false,
+  "supersedes": "July Queen Brain business context",
+  "sha256": {
+    "CLAUDE.md": "0fba14d796d319e9f53594e15876788f8754732a0508001d86a560244cccc952",
+    "AGENTS.md": "7383aa10ee6cfd3fe4befebff7b32782688fe444d8177f6a7df55c200cc9e011",
+    "README.md": "a6ab7f0182786654c0aaae20cb2e7f00ca809f242d521c4e28687a9029424de9",
+    "positioning.md": "c7041b86de0ad26c0175b57500944ba8b99b3f7c27e8671ff887b37543a6aadd",
+    "voice.md": "dfa695e457c9b2b488c779a910d23d1e38f5f535c6de9015bba37a32ce19792c",
+    "offers.md": "7cea7ce4412bc1f575187f3463c729ea453d9aeac2c244ff469982777fab8d3e",
+    "brand.md": "d701d04bf724bc2eac53f853cecf974bf04e90bf7998e7dba1849a7e17d132c1",
+    "GOALS.md": "7e37b3a3c096a4801f7084f98eaa1d79951d7cf295444a072a2d4f64a53b3247",
+    "STATUS.md": "1b44639c2ea794afabe870a71eb9d2d460bcf1295dc8610aa624f6371a94b4dd",
+    "program.md": "244695a64e53b36836c60aff8710c790cf664efebba261d933ae352612a10ff0",
+    "dwy-blueprint.md": "fe190a32de7a6ab5e9be6567418fc941fd8d0febb8ec612f7cc1c9cdc00f4fa2",
+    "proof.md": "3a77f661cb7d5a8e6ed08eaa435be815ecc2cc0c51cd6a4ecc53b408a4ed0eac",
+    "personal-brain.md": "150cb0a07670e036c451476f0120f7dd8ef4a31093f93390a4809f750e3f1254",
+    "Career Profile.md": "6307dfe8faf7d57a216014516f436f4a4d4d1ecf4ec78641476470a1477a9f52",
+    "clients.md": "a1640b8cf04c1a3649df6b938287e6ea70c7f15dd440d904e6dc18adeb621642",
+    "research-policy.md": "c539b0386649a2171baec3e5a54091112dcad5ecbfbe0485f9c8586a3a0ad3f5",
+    "sources.md": "79e83deb3907cab458feca0541e492c45558483e09eeea22f9641d66db3d7408",
+    "skills/board-meeting/SKILL.md": "7b8c49a7083a323cb423f93fc5b114465dca3d8befede853ac597e50f14ad9a1"
+  },
+  "source_repository": "The-Ai-automation-Queen/queen-brain",
+  "source_commit": "3092c78d7a95fb70f6c41f11ab4d477f7391b5e6"
+}

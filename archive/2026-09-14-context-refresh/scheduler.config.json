@@ -1,0 +1,50 @@
+{
+  "_comment": "REFERENCE config for the autonomous cadence. The EXECUTABLE runner that turns this into reality now lives in deploy/ (run-machine.sh + crontab.example + telegram-notify.sh). Two ways to run it: EITHER the harness `/loop` skill (e.g. `/loop weekly /weekly-ops`) OR a VPS cron via deploy/crontab.example calling deploy/run-machine.sh. This file stays the single source of truth for the intended schedule + alerts. See deploy/README.md for the step-by-step wiring runbook.",
+
+  "loops": [
+    {
+      "name": "daily-signal-harvest",
+      "skill": "/signal-harvester",
+      "cron": "0 2 * * *",
+      "timezone": "Asia/Dubai",
+      "retry": { "max": 1, "after_minutes": 120 },
+      "alert_on_fail": "telegram"
+    },
+    {
+      "name": "weekly-full-loop",
+      "skill": "/weekly-ops",
+      "cron": "0 6 * * 1",
+      "timezone": "Asia/Dubai",
+      "retry": { "max": 1, "after_minutes": 240 },
+      "alert_on_fail": "telegram"
+    },
+    {
+      "name": "daily-performance-tracker",
+      "skill": "/performance-tracker",
+      "cron": "0 3 * * *",
+      "timezone": "Asia/Dubai",
+      "retry": { "max": 1, "after_minutes": 120 },
+      "alert_on_fail": "telegram",
+      "_note": "Runs 1 hour after signal-harvester (02:00). Scrapes all platforms for follower counts + post engagement, writes performance-log.md."
+    },
+    {
+      "name": "dm-poll",
+      "skill": "/dm-responder",
+      "cron": "*/5 * * * *",
+      "timezone": "Asia/Dubai",
+      "retry": { "max": 0 },
+      "alert_on_fail": "telegram",
+      "_note": "Every 5 min — only works with an always-on host (the DM webhook needs to be reachable too)."
+    }
+  ],
+
+  "alerts": {
+    "telegram": {
+      "wired": "runner-ready",
+      "chat_id_env": "TELEGRAM_CHAT_ID",
+      "bot_token_env": "TELEGRAM_BOT_TOKEN",
+      "_note": "deploy/telegram-notify.sh sends the alerts; run-machine.sh calls it on every run's success/failure. Set TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID in deploy/.env to activate. Mirrors Romain's Telegram failure alerts."
+    },
+    "email": { "wired": false, "to_env": "ALERT_EMAIL_TO" }
+  }
+}
