@@ -2,6 +2,60 @@
 
 ---
 
+## RESEARCH 044 — 2026-09-15 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `861b561`; source (queen-brain) commit `3092c78d`.
+**Audience problem worked (positioning.md):** experienced professionals, founders and consultants who feel overwhelmed by AI or struggle to turn their knowledge into visible, valuable work.
+**Internal tooling discoveries this run:** none. This entry is `shift-lead` (public-topic) evidence only.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority and recency were weighed.
+
+### Signals
+
+1. **Anthropic — "Detecting and countering misuse of AI: September 2026"** — published 2026-09-10 — https://www.anthropic.com/threat-intelligence-report-september-2026 — fetched direct via WebFetch (inventory.md RSS slot, High priority, fresh ≤7 days).
+   - `project_id`: shift-lead — `fit`: possible — `reason`: not audience-problem content directly, but documents that even the frontier labs are still actively fighting AI misuse in the wild.
+   - `supporting_source_excerpt`: report title/topic as fetched: "Detecting and countering misuse of AI" (full text not extracted beyond title/summary this run).
+   - `possible_use`: supports the "AI still needs your judgement, it is not a solved autopilot" pillar — pair with a source-verified example only if the full report is read in a follow-up pass.
+   - `assessed_at`: 2026-09-15
+
+2. **Thomson Reuters Institute — "Future of Professionals 2026: As AI adoption grows, so do the challenges"** — published 2026-07-08 — https://www.thomsonreuters.com/en-us/posts/technology/future-of-professionals-analysis-human-side-of-ai/ — WebFetch, high-authority primary research publisher.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: direct, sourced evidence of the audience problem (professionals overwhelmed / mismatched to AI strategy).
+   - `supporting_source_excerpt`: "More than 90% of professionals say they are experiencing some degree of this AI-value disconnect." / one-quarter of that group are "contemplating departure from their organization within two years if circumstances remain unchanged," estimated at $232,000 replacement cost per employee.
+   - `possible_use`: quantifies the "overwhelmed, not sure where to start" half of the audience problem with a citable, traceable stat (Thomson Reuters Future of Professionals Report 2026).
+   - `assessed_at`: 2026-09-15
+
+3. **Fortune, reporting a Boston Consulting Group study — "'AI brain fry' is real — and it's making workers more exhausted, not more productive"** — published 2026-03-10 — https://fortune.com/2026/03/10/ai-brain-fry-workplace-productivity-bcg-study/ — WebFetch, secondary reporting of a named primary study (BCG).
+   - `project_id`: shift-lead — `fit`: useful — `reason`: names a specific mechanism (tool sprawl, oversight load) behind the overwhelm, not just the symptom.
+   - `supporting_source_excerpt`: workers using 4+ AI tools saw productivity decline vs. 3-or-fewer; high AI-oversight workers reported "14% more mental effort, 12% greater mental fatigue, and 19% greater information overload"; 34% of workers experiencing "AI brain fry" intend to leave their company. Quote: "People were using the tool and getting a lot more done, but also feeling like they were reaching the limits of their brain power, like there were too many decisions to make."
+   - `possible_use`: directly supports "use AI for what it does well, keep what only you can bring" — the evidence-backed case for fewer tools used well over tool sprawl.
+   - `assessed_at`: 2026-09-15
+
+4. **gptcentral (Substack) — "Top 1% of consultants are using AI"** — published 2026-05-17 — https://gptcentral.substack.com/p/top-1-of-consultants-are-using-ai — WebFetch; independent Substack, author authority not verified.
+   - `project_id`: shift-lead — `fit`: possible — `reason`: on-topic claim (AI frees top consultants for strategic/client work) but single-author opinion piece, not a study; source quality is lower than signals 2–3.
+   - `supporting_source_excerpt`: "AI won't take your job. The consultant who uses AI will."
+   - `possible_use`: a punchy line worth checking for originality/prior use before quoting; do not treat as an original claim without a novelty check.
+   - `assessed_at`: 2026-09-15
+
+5. **Chitika — "How Consultants Can Turn Their Expertise Into an AI Assistant in 2026"** — published 2026-06-10 — https://www.chitika.com/how-consultants-can-turn-their-expertise-into-an-ai-assistant-in-2026/ — WebFetch; marketing/content-farm site, source quality low, claim is a vendor-style pitch.
+   - `project_id`: shift-lead — `fit`: possible — `reason`: names the "turn your knowledge into a working asset" mechanic that overlaps the owned product direction, but it is a promotional piece for AI-assistant tooling, not independent evidence.
+   - `supporting_source_excerpt`: "An AI trained exclusively on your thinking, your research, and your methodology, deployed under your brand, generating value for your clients and your business simultaneously."
+   - `possible_use`: treat as evidence that this narrative exists in the market, not as a template to copy — do not adopt vendor framing as Fatiha's own claim without independent verification.
+   - `assessed_at`: 2026-09-15
+
+### Source health this run
+
+- Anthropic News (High): direct WebFetch worked, fresh post found within 7 days — inventory.md RSS slot filled without falling through to Medium/Low.
+- OpenAI Blog (High): direct WebFetch returned HTTP 403 (blocked). WebSearch fallback found their most recent dated announcement (GPT-6 Astra, ~2026-09-03) but it is outside the 7-day freshness window anyway, so this would not have changed the RSS pick. Operator: confirm whether OpenAI's blog needs a different fetch path if a fresher post is needed later.
+- Hugging Face Blog (High) and a16z AI (Medium): fetched successfully but not used — Hugging Face posts are model/tooling-technical, not audience-problem evidence; a16z's page did not expose reliable publish dates in the fetched markup, so freshness could not be confirmed. Logged here as a source-health note, not as a signal.
+- Lenny's Newsletter (Low): not checked this run — higher-priority feeds already produced a fresh RSS signal (Anthropic) and enough audience-problem evidence (signals 2–3), so the fallback tier was not needed.
+- No signals were invented; every URL above is one actually returned by a fetch or search this run.
+
+### Historical-audience check
+
+Confirmed none of the above signals were forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only.
+
+---
+
 ## RESEARCH 043 — 2026-07-23 | Daily signal harvest
 
 **Status:** NOTED
