@@ -6,6 +6,65 @@
 
 ---
 
+## PERFORMANCE 2026-09-15
+
+**Run date:** 2026-09-15 UTC
+**Sources scraped:** Instagram (FAILED — no route open), Facebook (FAILED — no route open), YouTube (FAILED — yt-dlp not installed), LinkedIn (manual paste required — not provided this run), Twitter/X (manual paste required — not provided this run), Threads (FAILED — no route open), TikTok (NOT CONNECTED), Blotato (FAILED — MCP not connected)
+**Data path:** ALL automated paths blocked. This is the first run in 53 days (last append was 2026-07-24) — the gap is not a fresh daily streak, it is a dead measurement layer that was never restarted.
+- `META_ACCESS_TOKEN` / `IG_BUSINESS_ID` / `FB_PAGE_ID` not in env → Meta Graph API skipped for Instagram, Facebook, Threads.
+- `APIFY_TOKEN` not in env, and no Apify MCP tools resolve in this session → paid fallback unavailable for every platform that needs it. Per skill design this is a normal (not degraded) state — but it means IG/FB/YT/X/Threads have zero automated route right now.
+- `yt-dlp` not installed on this host → YouTube's free, keyless path is unavailable.
+- Blotato MCP tools do not resolve in this session → no queue cross-reference possible (step 2 skipped).
+- No `linkedin-update` or `competitors` argument was passed this run, so LinkedIn/Twitter manual-paste prompts were not solicited interactively.
+- TikTok: still not connected to Blotato (pre-existing inventory.md gap).
+
+> **Structural finding, not a scraper bug:** `content-vault.md` has 74 entries — 37 READY TO POST, 29 DRAFT, 6 STALE, 2 KILLED — and **zero POSTED**. Even with every scraper wired, there is nothing live yet to match metrics against. Release, not measurement, is the bottleneck (confirmed independently by this session's startup reality check).
+>
+> **Separate finding:** `deploy/logs/performance-tracker-*.log` shows a cron firing daily through 2026-09-15, but each log is only a `git fetch` — the skill's actual scrape logic has not been executing on schedule despite being "15 live" per the deploy docs. Documented automation is not the same as running automation.
+
+### Profile snapshot
+
+| Platform | Handle | Followers | Delta | Posts/Videos | Other |
+|---|---|---|---|---|---|
+| Instagram | @thefatihachikh | (no data — last baseline: 636 on 04/07/2026 per inventory.md) | (no data — 73 days since baseline) | (no data) | No `META_ACCESS_TOKEN`; no Apify route |
+| Facebook | AI Automation Queen | (no data) | — | — | No Meta token; no Apify route |
+| YouTube | @AI-Automation-Queen | (no data) | — | — | `yt-dlp` not installed; no Apify route |
+| LinkedIn | Fatiha Chikh | (no data — manual paste not provided) | — | — | Re-run with `linkedin-update` to paste weekly stats |
+| Twitter/X | @aiautomatik | (no data — manual paste not provided) | — | — | No automated route by design; needs manual paste |
+| Threads | @thefatihachikh | (no data) | — | — | No `META_ACCESS_TOKEN` scoped route |
+| TikTok | — | NOT CONNECTED | — | — | Connect TikTok to Blotato first (inventory.md gap) |
+
+### Top posts by engagement (last 12 posts per platform)
+
+> **(no data returned this run)** — no scraper produced results, and vault has 0 POSTED entries to cross-reference regardless. Nothing to rank.
+
+### Blotato queue status
+
+> **(scrape failed — Blotato MCP not connected this session)**. Last known state carried from 2026-06-27: 14 published, 0 scheduled, 5 failed. Current queue health unknown.
+
+### Week-over-week summary
+
+- Instagram followers: 636 (last confirmed 04/07/2026 — delta unknown, 73 days elapsed)
+- Facebook / YouTube / LinkedIn / Twitter / Threads: (no data)
+- Top-performing piece: none post-rebrand — carried reference only, see Lessons below
+- Weakest signal: the measurement layer itself, and the release step upstream of it
+- **Structural gap (unchanged and now confirmed by the session's own startup check):** 37 entries sit READY TO POST with 0 POSTED. M06 cannot measure what has not been released.
+
+### Lessons — repeatable patterns
+
+> Insufficient data this run — 0 posts scraped, 0 POSTED vault entries to match. No ranking attempted (skill rule: fewer than 6 posts this run means skip ranking rather than force a conclusion).
+
+**Carried forward from 2026-06-27 (now 80 days stale — treat as historical, pre-rebrand reference only, not an actionable finding):**
+Personal narrative + face/voice/actual story format ran ~4–8x the engagement rate of generic AI-explainer/glossary-pack format (7.9%/7.8%/5.2% vs. 0.5–1.9% across 12 posts). This predates the current brand/positioning and has never been validated against it — do not treat as current guidance.
+
+**Action required (operator):**
+1. **Release content.** This is the highest-leverage single action: 37 READY TO POST entries exist and 0 are live. Releasing even 3–5 through Blotato gives the next run something real to measure.
+2. **Wire a metrics route.** Either set `APIFY_TOKEN` (unlocks paid fallback for IG/YT/X/Threads) or add `META_ACCESS_TOKEN` + `IG_BUSINESS_ID` + `FB_PAGE_ID` (free, first-party for IG/FB/Threads) as session env vars — never commit them to the repo.
+3. **Check why the daily cron isn't running the skill.** Logs exist for today but contain only a `git fetch`, not a scrape — the "15 live" machines claim in deploy docs does not match observed behavior for M06.
+4. **Optional:** re-run with `linkedin-update` to paste this week's LinkedIn analytics manually — that path needs no token and works today.
+
+---
+
 ## PERFORMANCE 2026-07-24
 
 **Run date:** 2026-07-24 UTC
