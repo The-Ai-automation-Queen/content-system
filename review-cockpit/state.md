@@ -26,12 +26,19 @@ digest run overwrites it.
   (no offset, none stored) returned empty. Nothing to route, nothing applied
   to the vault. All 9 cards from the 14/09 digest were still outstanding
   going into this run.
-- 15/09/2026 (operator-requested `process` run, this run) — `getUpdates`
+- 15/09/2026 ~12:32 GST (operator-requested `process` run) — `getUpdates`
   (no offset) returned empty (`{"ok":true,"result":[]}`). Nothing to route:
   no card decisions, no unblocker replies, no voice notes. Nothing applied
   to the vault, decisions-log.md unchanged. All 9 cards from the 15/09
   digest (#1–#6, R1–R3) remain outstanding. Sent one confirmation line to
   Telegram (message_id 1003).
+- 15/09/2026 (operator-requested `process` run, this run) — `getUpdates`
+  (no offset) returned empty (`{"ok":true,"result":[]}`). Nothing to route:
+  no card decisions, no unblocker replies, no voice notes. Nothing applied
+  to the vault (still 37 READY TO POST / 29 DRAFT / 6 STALE / 2 KILLED,
+  matching the reality-check hook), decisions-log.md unchanged. All 9 cards
+  from the 15/09 digest (#1–#6, R1–R3) remain outstanding. Sent one
+  confirmation line to Telegram (message_id 1004).
 
 ## Last digest served — 15/09/2026 (run on operator request)
 
