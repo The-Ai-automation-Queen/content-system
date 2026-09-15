@@ -6,17 +6,45 @@
 
 ## Queue (next up, in order)
 
-1. UNB-001 — Telegram butler bot + VPS crons *(served 06/07 — pack ready)*
-2. UNB-002 — Whop checkout: The Judge's Prompts $27 *(pack ready)*
-3. UNB-003 — VPS pull: take the new site + store live
-4. UNB-004 — Whop checkout: The Prompt Menu $19
-5. UNB-005 — Whop checkout: The AI Time Audit $47
-6. UNB-006 — Seed personal-brain, part 1 (15 min)
-7. UNB-008 — Release the 11 READY posts via Blotato
+1. UNB-025 — Queue 3 clean READY TO POST entries into Blotato yourself *(served 15/09 — pack ready)*
+
+> UNB-001 through UNB-024 (below) are the original 06/07/2026 seed batch, built
+> entirely from the pre-pivot offer model (Whop SKU checkouts, Fast Forward
+> course, founding-tier community, raw-identity capture). `context/GOALS.md`
+> (refreshed 11–12/09/2026, current authority) states: "The old membership
+> target, Fast Forward launch and forced single-SKU rule are archived" and
+> "Do not repeatedly assign obsolete tasks to Fatiha." They are left in place
+> as evidence per `CLAUDE.md` ("historical schedules and offers... are
+> evidence only") but are not eligible for selection until re-grounded in a
+> current source (live website / Notion Product Hub / Content Factory Brand
+> Strategy) — see the 15/09/2026 superseded-batch note before Entries.
 
 ---
 
 ## Entries
+
+### Superseded batch — 15/09/2026 scan
+
+UNB-001 through UNB-024 (all entries below, added 06/07/2026) score on
+revenue/effort/dependency figures pulled from `queen-brain/STATUS.md` and
+`ROADMAP.md` as they read on 06/07/2026 — a repo/context version that
+predates both the 24/08/2026 strategic pivot (`AGENTS.md` §Current strategic
+decision — Zone of Genius / Human Evidence / Use What Is Unique, replacing
+the Whop-SKU-ladder model) and the 12/09/2026 context refresh
+(`context/current-context.json`, `context/GOALS.md`: "the old membership
+target, Fast Forward launch and forced single-SKU rule are archived").
+`queen-brain` is not present in this session (see session reality-check
+banner: "canon: queen-brain NOT in this session... ask for the repo instead
+of reconstructing it from this one's copies") and this run has no Notion
+access, so none of these entries' revenue figures, SKU/price claims, or
+offer statuses can be re-verified from a current source today. Per
+`context/GOALS.md` ("do not repeatedly assign obsolete tasks to Fatiha")
+none of UNB-001–024 were eligible for selection this run. Bodies kept
+below unedited as evidence, not as an active queue. Re-activate only after
+re-grounding a given item in a current source (live website / Notion
+Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
+
+---
 
 ### UNB-001 — Create the Telegram butler bot + install the VPS crons
 - **why:** unblocks daily delivery of this system AND the 20:00 brain-manager cron; the whole autonomous loop is waiting on this one token
@@ -189,6 +217,36 @@
 - **effort_min:** 10 · **depends_on:** — · **source:** inventory.md §Channels + MISSING
 - **verify:** operator ✅ (then update inventory.md channels table)
 - **status:** open · served_count: 0 · added: 2026-07-06
+
+---
+
+### UNB-025 — Queue 3 clean READY TO POST vault entries into Blotato, manually
+- **why:** the estate's actual current bottleneck (confirmed this run): 37
+  READY TO POST entries sit in the vault, all 63+ days old, and nothing has
+  moved into Blotato since 20/07/2026 (57+ days). `skills/distribution/
+  SKILL.md` lost its Blotato write scope in the 14/09/2026 context refresh
+  (PR #131) and was never on a cron — no agent can queue anything right now,
+  only Fatiha, manually, inside Blotato itself
+- **revenue_unlocked:** unblocks the entire content funnel's top (0 posts
+  have gone out since the 22/06/2026 vault reset) · **effort_min:** 15 (3
+  posts, copy pre-pasted, click-path enumerated)
+- **depends_on:** — · **unblocks:** performance-tracker data, review-cockpit's
+  shelf actually clearing, future unblocker serves in this lane
+- **source:** `skills/distribution/SKILL.md:6-8` ("prepare a handoff... do
+  not create a Blotato job"); `reports/distribution-2026-07-20.md` (last
+  distribution report, SCHEDULED=0 POSTED=0); `deploy/crontab.example` (no
+  `/distribution` line); `review-cockpit/state.md` 15/09/2026 digest ("Ready
+  shelf... 37 READY TO POST entries, all 63+ days old... shelf cap of
+  3/digest"); `content-vault.md` ENTRY 093/092/091 (verified clean: no
+  VERIFY/PREP flag, active CTA)
+- **verify:** `content-vault.md` ENTRY 093/092/091 status lines flip to
+  `SCHEDULED`, or operator ✅
+- **status:** served · served_count: 1 · added: 2026-09-15 · pack:
+  `packs/2026-09-15-UNB-025-queue-three-ready-posts.md`
+- **note:** this does not fix the systemic gap — `distribution` still can't
+  queue on its own. The systemic fix (reconnect Blotato + re-authorize
+  `distribution` to queue per `security.md` §5) is a bigger decision for
+  Fatiha, flagged in today's briefing, not folded into this 15-minute task.
 
 ---
 
