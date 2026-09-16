@@ -6,7 +6,7 @@
 
 ## Queue (next up, in order)
 
-1. UNB-025 — Queue 3 clean READY TO POST entries into Blotato yourself *(served 15/09 — pack ready)*
+1. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 2, 16/09 — shrunk from 3 posts to 1)*
 
 > UNB-001 through UNB-024 (below) are the original 06/07/2026 seed batch, built
 > entirely from the pre-pivot offer model (Whop SKU checkouts, Fast Forward
@@ -241,12 +241,18 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   VERIFY/PREP flag, active CTA)
 - **verify:** `content-vault.md` ENTRY 093/092/091 status lines flip to
   `SCHEDULED`, or operator ✅
-- **status:** served · served_count: 1 · added: 2026-09-15 · pack:
-  `packs/2026-09-15-UNB-025-queue-three-ready-posts.md`
+- **status:** served · served_count: 2 · added: 2026-09-15 · pack:
+  `packs/2026-09-15-UNB-025-queue-three-ready-posts.md`,
+  `packs/2026-09-16-UNB-025-queue-one-ready-post.md`
 - **note:** this does not fix the systemic gap — `distribution` still can't
   queue on its own. The systemic fix (reconnect Blotato + re-authorize
   `distribution` to queue per `security.md` §5) is a bigger decision for
   Fatiha, flagged in today's briefing, not folded into this 15-minute task.
+- **16/09/2026 follow-up:** checked `content-vault.md` ENTRY 093/092/091 —
+  all three still `READY TO POST`; `review-cockpit/state.md` confirms
+  `getUpdates` returned no unblocker replies since the 15/09 serve. Not
+  done. Per the skill's serve-2 rule, re-served today shrunk to just 1 post
+  (ENTRY 093 only) instead of 3, same task, smaller ask.
 
 ---
 
