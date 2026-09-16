@@ -21,6 +21,24 @@
 
 ## Most recent (quick reference)
 
+> **16/09/2026 content-engine daily run:** ENTRY 096-099 from RESEARCH 044/045
+> (Sep 15-16 2026 signal harvest, current `shift-lead-2026-09-12` audience
+> problem). 1 educational Reel script, 2 evidence-based written posts, 1
+> opinion post drawing on personal-brain.md's logged 30/07/2026 governance
+> position. No storytelling slot filled: `context/personal-brain.md` confirms
+> no approved, populated story bank exists yet — a first-person anecdote was
+> not invented to fill the gap (see `CURRENT-WORKFLOW.md` step 5 and
+> `voice.md`). No CTA in this batch names a price, tier, or offer — this
+> session had no live Notion/website access to verify current campaign
+> readiness, and the reality-check at session start warned the canonical
+> queen-brain repo is not available here, so no offer copy was reconstructed
+> from local mirrors. All four entries are DRAFT with critic pending (no
+> automated critic tool is wired into this session; scoring is the operator's
+> to do). **Operator note: the vault already holds 37 READY TO POST / 0
+> POSTED entries and weekly-ops is 41+ days overdue — see
+> `reports/vault-audit-2026-08-30.md` Priority 1. Producing this batch does
+> not address the release bottleneck, which is the actual constraint.**
+
 > **14/07/2026 batch note:** ENTRY 047-066 are Cordiner-method rewrites (outcome hook + one-win recipe + real receipts + involvement close, per docs/2026-07-14-cordiner-vault-comparison.md). Each supersedes the READY entry named in its meta line. The superseded originals (and BLOCKED ENTRY 013) were moved to `content-vault-archive.md` the same day, statuses preserved — do not draw from them.
 
 > **20/07/2026 weekly-ops:** ENTRY 077-079 from RESEARCH 040 (Jul 20 2026). 2 LinkedIn Result Recipes + 1 short-form video. All READY TO POST. 6 entries (002, 003, 004, 006, 007, 008) marked STALE 20/07/2026 (auto) — 27 days READY TO POST, no shelf-check keep note.
@@ -111,6 +129,89 @@
 - 23/06/2026 | Short-form video | "Stop Using AI Like a Vending Machine" — build systems, not answers | STALE 20/07/2026 (auto)
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | STALE 20/07/2026 (auto)
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | STALE 20/07/2026 (auto)
+
+---
+
+## ENTRY 099 — 16/09/2026 | Instagram (carousel) | 40% of Professionals Were Told to Use AI. And Not to Use It. By the Same Client. | DRAFT
+`Educational/evidence · Use AI for real work · CTA: reflective question, no offer · critic pending · src: Thomson Reuters Institute, "2026 AI in Professional Services Report," published 2026-02-09 (RESEARCH 045-S3)`
+
+**Panel 1 (cover):** "40% of professionals were told to use AI on a matter. And told not to use AI on the same kind of matter. By different clients. Sometimes the same one."
+
+**Panel 2:** Thomson Reuters surveyed professional-services firms in 2026. Only 18% said their organization even tracks whether AI use is producing a return. Most people are making the call with no data and no consistent instruction from above.
+
+**Panel 3:** So the honest situation isn't "AI is confusing." It's "nobody above you has finished deciding, and you're being asked to act anyway." Waiting for that clarity to arrive is a plan that depends on someone else's timeline.
+
+**Panel 4:** A rule that doesn't need permission: separate the work into two piles before you touch a tool. Pile one — the outcome depends on your judgment (a client call, a strategic recommendation, a diagnosis). Pile two — the outcome depends on a repeatable process (a first draft, a summary, a format conversion). AI earns a seat in pile two immediately. Pile one still needs you to decide, on a case-by-case basis, how much of it AI should touch — and to say so out loud to whoever's affected.
+
+**Panel 5 (close):** Nobody is going to hand you a finished rulebook this year. Which pile did today's work actually belong to?
+
+---
+### CAPTION
+No one's coming to tell you exactly when to use AI and when not to. 40% of professionals in a 2026 industry survey got contradictory instructions on the same question. The fix isn't waiting for clarity — it's a rule you can apply yourself. Which pile is today's work in?
+
+> **Editorial notes (self-check, not a scored critic pass):** Stat is a named, dated, primary-research source (Thomson Reuters) with the exact figure carried over verbatim from RESEARCH 045 — no rounding or embellishment. No personal anecdote invented. No CTA offer, price or tier. Voice check: no em-dash, no "it's not X, it's Y" construction, no freedom/time-back catchphrase. Gap: this is the vault's first Instagram-native entry (vault-audit 2026-08-30 flagged a complete Instagram gap) — format/length should be sanity-checked against actual Instagram carousel specs before queueing, since no carousel was rendered or tested this session.
+
+---
+
+## ENTRY 098 — 16/09/2026 | LinkedIn (text post) | More Tools Isn't More Leverage. It's More Oversight Load. | DRAFT
+`Opinion · Find what is uniquely yours · CTA: reflective question, no offer · critic pending · src: personal-brain.md logged opinion, 30/07/2026 (builder-and-watchdog positioning) + Boston Consulting Group study via Fortune, "'AI brain fry' is real," published 2026-03-10 (RESEARCH 044-S3)`
+
+Here's a position I hold that doesn't get said out loud enough in this field: being someone who builds with AI every day doesn't mean defending everything the industry does with it. Those are two different jobs, and I try to do both — build the useful thing, and stay honest about where the line is.
+
+A study from Boston Consulting Group put a number on something I see constantly: people using four or more AI tools saw productivity go *down* compared to people using three or fewer. Workers with heavy AI oversight duties reported 14% more mental effort and 19% greater information overload. More tools didn't buy them more capacity. It bought them more decisions to make about which tool to trust, when.
+
+That's not an argument against AI. It's an argument against collecting it. The instinct to add another subscription every time something feels slow is the same instinct that got enterprises to a $500M AI bill nobody meant to approve. Fewer tools, used with actual judgment about what they're for, beats a stack you can't explain in one sentence.
+
+If you're both using this technology and willing to question it, you're not being inconsistent. You're doing the job properly.
+
+Where's the line you won't move, no matter how good the next tool's demo looks?
+
+> **Editorial notes (self-check, not a scored critic pass):** Opinion content is the operator's own logged, dated position (not invented for this post) — attributed to personal-brain.md rather than presented as a fresh claim. BCG figures quoted match RESEARCH 044 verbatim. No price/offer/tier. Voice check passes (no em-dash, no forced provocation, contractions used naturally). Flag for operator: confirm the "builder-and-watchdog" framing is still how she wants this positioned publicly — the logged opinion notes it "supersedes the old freedom lane... needs a deliberate rewrite once she confirms," so this draft should get an explicit yes/no on the framing itself, not just the copy.
+
+---
+
+## ENTRY 097 — 16/09/2026 | Instagram / LinkedIn (text post) | Nobody Voted on Your AI Rules. Write Them Anyway. | DRAFT
+`Educational/evidence · Use AI for real work · CTA: reflective question, no offer · critic pending · src: Writer, "Enterprise AI adoption in 2026," published 2026-04-07 — vendor blog, stats are vendor-selected and not independently audited (RESEARCH 045-S2), flagged accordingly per research-policy.md`
+
+A vendor survey on enterprise AI adoption (Writer, 2026 — worth knowing it's a company that sells AI tools, so treat the numbers as directional, not audited) found 55% of respondents describe AI use at their company as a "chaotic free-for-all," and 67% of executives believe their company has already had a data leak or breach caused by an AI tool nobody approved.
+
+You don't need a company-wide policy to close most of that gap. You need one rule, written down, before you add the next tool: what never gets pasted into an AI product you don't control. Client names. Unreleased numbers. Anything you'd need to explain to the client if it leaked. Write that line once, and every future "should I paste this in" question answers itself in two seconds instead of becoming a judgment call under deadline pressure.
+
+That's the actual difference between "using AI" and using it responsibly at a size of one. It's not a bigger stack. It's a rule you didn't wait for someone else to hand you.
+
+What's the one thing you've already decided never goes into a tool you don't control?
+
+> **Editorial notes (self-check, not a scored critic pass):** Source is explicitly flagged in-post as a vendor blog per research-policy.md ("treat source quality separate from popularity"); figures are not laundered as independently audited fact. No price/offer/tier — the practical step offered is a free personal rule, not a product. Overlaps thematically with ENTRY 098 (both touch tool sprawl/governance) — recommend the operator pick one to run first and hold the other back a few days so they don't post back-to-back with the same underlying argument.
+
+---
+
+## ENTRY 096 — 16/09/2026 | Instagram Reel (faceless narrated, ~40s) | The Skill Nobody's Heard You Name Isn't Worth Anything Yet | DRAFT
+`Educational · Find what is uniquely yours · CTA: reflective question, no offer · critic pending · src: angle checked against Valchanova.me, "The Expertise-Visibility Gap" (RESEARCH 045-S4, single-author opinion piece, unconfirmed date — used only to confirm the angle is real, not quoted; script below is original wording per research-policy.md`
+
+**[0-4s — HOOK]** *(voiceover over screen text, no face)*
+"You can be genuinely great at your work and still be invisible to the people who'd pay for it."
+`[ON SCREEN: "Great at the work. Invisible for it."]`
+
+**[4-28s — BODY]**
+"Here's the gap nobody names: your actual skill lives in your head, your inbox, your meetings. It never gets written down in a way anyone outside the room can find.
+AI can't close that gap for you — it can only make more of whatever you already decided to say out loud. So before you ask it to write anything, answer three questions honestly.
+`[ON SCREEN: "1. What do people already ask you for, unprompted?"]`
+One — what do people already come to you for, without being asked?
+`[ON SCREEN: "2. What do you do on autopilot that others find hard?"]`
+Two — what do you do without thinking that other people visibly struggle with?
+`[ON SCREEN: "3. What did you learn the hard way you'd explain in 5 minutes flat?"]`
+Three — what did you learn the hard way that you could explain to a friend in five minutes?
+That's your actual material. Not a personal-brand template — the specific thing only you would say that way."
+
+**[28-40s — CLOSE]**
+"Nobody can see what you don't say out loud. Which one of those three could you actually answer this week?"
+`[ON SCREEN: "Which one could you answer?"]`
+
+---
+### CAPTION
+Being great at something and being known for it are two different jobs. Here's the 3-question test to find the part of your expertise actually worth saying out loud. Which one can you answer today?
+
+> **Editorial notes (self-check, not a scored critic pass):** No first-person anecdote invented — script stays in second person / general instruction, consistent with `context/personal-brain.md` having no populated story bank yet. Source used only to confirm the angle exists (per its own caveat: unverified authority/date), not quoted or cited as fact in the script itself. No price/offer/tier. This is the vault's first Reel script aimed at the Instagram gap — needs an actual read-aloud/timing check before queueing, since duration wasn't verified against a recording.
 
 ---
 
