@@ -47,6 +47,15 @@ digest run overwrites it.
   DRAFT count rose 29→33 since 15/09 from the overnight content-engine
   runs), decisions-log.md unchanged. All 9 cards from the 15/09 digest
   (#1–#6, R1–R3) go stale as of this run, superseded by the digest below.
+- 16/09/2026 (operator-requested `process` run, this run — scheduled 12:30
+  cron already ran today per `deploy/logs/review-cockpit
+  process-2026-09-16T12-30-02.log`) — `getUpdates` (no offset, none stored)
+  returned empty (`{"ok":true,"result":[]}`). Nothing to route: no card
+  decisions, no unblocker replies, no voice notes. Nothing applied to the
+  vault (still 37 READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED, matching
+  the reality-check hook), decisions-log.md unchanged. All 9 cards from the
+  16/09 digest (#1–#6, R1–R3) remain outstanding. Sent one confirmation line
+  to Telegram (message_id 1017).
 
 ## Last digest served — 16/09/2026 (run on operator request)
 
