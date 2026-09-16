@@ -7,7 +7,7 @@ digest run overwrites it.
 ## Telegram offset
 
 - Last `getUpdates` consumed offset: still none pending — checked again
-  on 15/09/2026 (operator-requested `process` run), queue empty
+  on 16/09/2026 (operator-requested `digest` run), queue empty
   (`{"ok":true,"result":[]}`). No card replies, no unblocker replies, no
   voice notes since the 15/09/2026 digest.
 - Next `process` run should call `getUpdates` with no offset filter until a
@@ -39,35 +39,49 @@ digest run overwrites it.
   matching the reality-check hook), decisions-log.md unchanged. All 9 cards
   from the 15/09 digest (#1–#6, R1–R3) remain outstanding. Sent one
   confirmation line to Telegram (message_id 1004).
+- 16/09/2026 (operator-requested `digest` run, pre-digest sweep) —
+  `getUpdates` (no offset, none stored) returned empty
+  (`{"ok":true,"result":[]}`). Nothing to route: no card decisions, no
+  unblocker replies, no voice notes. Nothing applied to the vault (37 READY
+  TO POST / 33 DRAFT / 6 STALE / 2 KILLED, matching the reality-check hook —
+  DRAFT count rose 29→33 since 15/09 from the overnight content-engine
+  runs), decisions-log.md unchanged. All 9 cards from the 15/09 digest
+  (#1–#6, R1–R3) go stale as of this run, superseded by the digest below.
 
-## Last digest served — 15/09/2026 (run on operator request)
+## Last digest served — 16/09/2026 (run on operator request)
 
-Header message_id: 992
-Footer message_id: 1002
+Header message_id: 1005
+Footer message_id: 1015
 
 | Card | ENTRY | message_id | Platform | Pillar | Critic | CTA |
 |---|---|---|---|---|---|---|
-| #1 | ENTRY 095 | 993 | LinkedIn | Real Talk | pending | discussion (no keyword) |
-| #2 | ENTRY 094 | 994 | LinkedIn | Build Once, Runs Forever | 7.2 | community tease — CTA-BLOCKED (VERIFY + PREP) |
-| #3 | ENTRY 090 | 995 | LinkedIn | Real Talk | 7.0 | community tease — CTA-BLOCKED (PREP: Whop link) |
-| #4 | ENTRY 089 | 996 | LinkedIn | Time Wins | 7.8 | AI Time Audit $47 — CTA-BLOCKED (PREP: Whop checkout link) |
-| #5 | ENTRY 085 | 997 | LinkedIn | Real Talk | 7.5 | STACK (live) |
-| #6 | ENTRY 083 | 998 | LinkedIn | What's Worth It | 7.5 | community waitlist — CTA-BLOCKED (PREP: link) |
-| R1 | ENTRY 047 | 999 | LinkedIn | What's Worth It | n/a | WORDS (live) — READY since 14/07/2026 (63d) |
-| R2 | ENTRY 048 | 1000 | X/Twitter thread | The Freedom Business | n/a | TEAM (live) — READY since 14/07/2026 (63d) |
-| R3 | ENTRY 049 | 1001 | Short-form video | Build Once, Runs Forever | n/a | TEAM (live) — READY since 14/07/2026 (63d) |
+| #1 | ENTRY 099 | 1006 | Instagram (carousel) | Use AI for real work | pending | reflective question, no offer |
+| #2 | ENTRY 098 | 1007 | LinkedIn (text post) | Find what is uniquely yours | pending | reflective question, no offer — flags "builder-and-watchdog" framing for explicit yes/no |
+| #3 | ENTRY 097 | 1008 | Instagram / LinkedIn (text post) | Use AI for real work | pending | reflective question, no offer — overlaps #2's theme |
+| #4 | ENTRY 096 | 1009 | Instagram Reel (~40s) | Find what is uniquely yours | pending | reflective question, no offer — needs timing check |
+| #5 | ENTRY 095 | 1010 | LinkedIn | Real Talk | pending | discussion (no keyword) |
+| #6 | ENTRY 094 | 1011 | LinkedIn | Build Once, Runs Forever | 7.2 | community tease — CTA-BLOCKED (VERIFY + PREP) |
+| R1 | ENTRY 047 | 1012 | LinkedIn | What's Worth It | n/a | WORDS (live) — READY since 14/07/2026 (64d) |
+| R2 | ENTRY 048 | 1013 | X/Twitter thread | The Freedom Business | n/a | TEAM (live) — READY since 14/07/2026 (64d) |
+| R3 | ENTRY 049 | 1014 | Short-form video | Build Once, Runs Forever | n/a | TEAM (live) — READY since 14/07/2026 (64d) |
 
 Notes:
-- Same 9 entries as the 14/09 digest (#1–#6, R1–R3) — nothing changed
-  upstream (no replies, no new production, no kills) since that run, so the
-  DRAFT-newest-six and Ready-shelf-oldest-three selection was identical.
-  The 14/09 cards (message_ids 975–983) are superseded by this run's
-  975→993 etc.; treat this table as authoritative for card→entry mapping
-  until the next digest.
-- DRAFT pool at digest time: 29 entries. 6 shown; 23 rotate in on future runs.
-- Ready shelf at digest time: 37 READY TO POST entries, all 63+ days old
+- DRAFT pool shifted since 15/09: entries 090/089/085/083 (previous #3–#6)
+  aged out of the top-6-newest window because the overnight content-engine
+  run added 4 newer DRAFTs (096–099, dated 16/09/2026) ahead of them. New
+  top-6 by date: 099, 098, 097, 096 (all 16/09), then 095 (30/07), 094 (24/07).
+  090/089/085/083 remain in the DRAFT pool and will rotate back in on a
+  future digest.
+- Ready shelf unchanged from 15/09 (047/048/049) — no approvals or kills
+  landed since then, so the oldest-three selection is identical, now at 64d.
+- DRAFT pool at digest time: 33 entries. 6 shown; 27 rotate in on future runs.
+- Ready shelf at digest time: 37 READY TO POST entries, all 64+ days old
   (oldest batch dated 14/07/2026 — every READY TO POST entry in the vault
   already qualifies for the shelf). Shelf cap of 3/digest means the other
   34 wait for subsequent runs; flagged to operator in the briefing.
 - No replies processed this run (getUpdates queue was empty before and
   after send). decisions-log.md unchanged.
+- SCHEDULED count not confirmed: the only distribution report on file
+  (`reports/distribution-2026-07-20.md`) is 58 days stale and recorded
+  "Blotato MCP not connected" at that time — footer flagged this as
+  unconfirmed rather than reporting a stale number as current.
