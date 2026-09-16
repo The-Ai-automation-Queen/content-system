@@ -56,6 +56,14 @@ digest run overwrites it.
   the reality-check hook), decisions-log.md unchanged. All 9 cards from the
   16/09 digest (#1–#6, R1–R3) remain outstanding. Sent one confirmation line
   to Telegram (message_id 1017).
+- 16/09/2026 (operator-requested `process` run, second sweep today) —
+  `getUpdates` (no offset, none stored) returned empty
+  (`{"ok":true,"result":[]}`). Nothing to route: no card decisions, no
+  unblocker replies, no voice notes. Nothing applied to the vault (still 37
+  READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED per header-line count in
+  `content-vault.md`, matching the reality-check hook), decisions-log.md
+  unchanged. All 9 cards from the 16/09 digest (#1–#6, R1–R3) remain
+  outstanding. Sent one confirmation line to Telegram (message_id 1018).
 
 ## Last digest served — 16/09/2026 (run on operator request)
 
