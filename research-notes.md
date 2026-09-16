@@ -2,6 +2,54 @@
 
 ---
 
+## RESEARCH 045 — 2026-09-16 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `9857250`; source (queen-brain) commit `3092c78d`.
+**Audience problem worked (positioning.md):** experienced professionals, founders and consultants who feel overwhelmed by AI or struggle to turn their knowledge into visible, valuable work.
+**Internal tooling discoveries this run:** none. This entry is `shift-lead` (public-topic) evidence only.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority and recency were weighed.
+
+### Signals
+
+1. **Anthropic — "Detecting and countering misuse of AI: September 2026"** — published 2026-09-10 — https://www.anthropic.com/threat-intelligence-report-september-2026 — fetched direct via WebFetch (inventory.md RSS slot, High priority). Re-checked the Anthropic News index for anything newer: the next-most-recent post is 2026-09-01 ("Introducing Claude Fable 5.1 and Claude Mythos 5.1"), so this Sep 10 post is still the freshest item ≤7 days old — same RSS pick as RESEARCH 044, carried forward rather than re-discovered.
+   - `project_id`: shift-lead — `fit`: possible — `reason`: same as prior assessment; documents frontier labs still actively fighting AI misuse, supports "AI is not a solved autopilot" framing rather than the audience problem directly.
+   - `supporting_source_excerpt`: "case studies from those operations and describe how malicious use of Claude has evolved since our previous threat reports in 2025" (per prior fetch; not re-extracted in full this run since no new post exists).
+   - `possible_use`: same as RESEARCH 044 — pair with a source-verified example only if the full report is read in a follow-up pass.
+   - `assessed_at`: 2026-09-16
+
+2. **Writer — "Enterprise AI adoption in 2026: Why 79% face challenges despite high investment"** — published 2026-04-07 — https://writer.com/blog/enterprise-ai-adoption-2026/ — WebFetch; vendor blog (Writer sells enterprise AI tooling), so treat stats as vendor-selected, not independently audited.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: names a different mechanism behind the overwhelm than previously logged sources — trust breakdown and ungoverned tool sprawl, not just cognitive load.
+   - `supporting_source_excerpt`: "67% of executives believe their company has already suffered a data leak or breach due to unapproved AI tools"; "55% describe AI use as a 'chaotic free-for-all' at their company"; "29% of employees admit to sabotaging their company's AI strategy" (44% among Gen Z); "54% of C-suite executives admit that adopting AI is tearing their company apart."
+   - `possible_use`: evidence for "AI without a clear stack/rules becomes chaos, not leverage" — supports the "use AI for what it does well, keep what only you can bring" pillar from a governance angle rather than a personal-productivity angle.
+   - `assessed_at`: 2026-09-16
+
+3. **Thomson Reuters Institute — "2026 AI in Professional Services Report"** — published 2026-02-09 — https://www.thomsonreuters.com/en/institute/articles/ai-in-professional-services-report-2026 — WebFetch; high-authority primary research publisher, same publisher as the report already logged in RESEARCH 044 but a distinct report.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: names a concrete confusion mechanism — professionals are getting contradictory instructions about whether to use AI at all, which is a sharper, more citable version of "overwhelmed."
+   - `supporting_source_excerpt`: "Only 18% of respondents said they knew their organization was tracking return-on-investment (ROI) of AI tools in some manner"; "40% of firm respondents said they have received orders both to use AI on matters and not to use AI on matters from various clients."
+   - `possible_use`: the "contradictory orders" stat is a strong, specific hook for a post about needing your own judgement/rules for AI use rather than waiting for top-down clarity that isn't coming.
+   - `assessed_at`: 2026-09-16
+
+4. **Valchanova.me — "The Expertise-Visibility Gap: Why Being Great at Your Work Isn't Enough to Be Seen"** — publish date not exposed on the page (copyright/context suggests 2026) — https://valchanova.me/personal-branding-for-experts/ — WebFetch; independent personal-branding blog, author authority not verified, date unconfirmed — treat as directional, not as a dated/citable fact.
+   - `project_id`: shift-lead — `fit`: possible — `reason`: directly names the second half of the audience problem (knowledge that doesn't translate into visible, valuable work) in almost the same terms as `positioning.md`, but it is a single-author opinion piece with no confirmed publish date.
+   - `supporting_source_excerpt`: "If your expertise isn't visible, the opportunities that depend on it never reach you. The clients don't call. The hiring manager never hears your name." / "visibility is what turns expertise into opportunity."
+   - `possible_use`: a framing check that the "expertise ≠ visibility" problem is a live, named category elsewhere — do not quote this source directly (unverified date/authority); use only to confirm the angle is real, then write an original line.
+   - `assessed_at`: 2026-09-16
+
+### Source health this run
+
+- Anthropic News (High): direct WebFetch worked; no new post since RESEARCH 044, Sep 10 item remains the freshest ≤7-day signal, so the RSS slot is filled without falling through to Medium/Low.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 (blocked), same as RESEARCH 044. Not re-attempted via WebSearch this run since the Anthropic RSS slot was already filled and no OpenAI-specific claim was needed. Operator: this fetch path has now failed on two consecutive runs — worth a fix or a documented fallback if OpenAI coverage is wanted going forward.
+- A Gallup "workforce changes" article was fetched to verify a widely-repeated "9% of employees feel comfortable using AI" claim seen in search snippets; the source page did not actually contain that statistic, so it was **not** logged as a signal — per security.md, an unverifiable number was cut rather than softened and used anyway.
+- Hugging Face, DeepMind, a16z, Lenny's Newsletter (Medium/Low RSS tiers): not checked this run — the High-priority Anthropic feed already filled the RSS slot per `inventory.md`'s fallback order.
+- No signals were invented; every URL above is one actually returned by a fetch or search this run.
+
+### Historical-audience check
+
+Confirmed none of the above signals were forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only, consistent with security.md's queue-only publishing rule (which was not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 044 — 2026-09-15 | Signal harvest (current audience problem)
 
 **Status:** NOTED
