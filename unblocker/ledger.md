@@ -241,7 +241,7 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   VERIFY/PREP flag, active CTA)
 - **verify:** `content-vault.md` ENTRY 093/092/091 status lines flip to
   `SCHEDULED`, or operator ✅
-- **status:** served · served_count: 2 · added: 2026-09-15 · pack:
+- **status:** served · served_count: 3 · added: 2026-09-15 · pack:
   `packs/2026-09-15-UNB-025-queue-three-ready-posts.md`,
   `packs/2026-09-16-UNB-025-queue-one-ready-post.md`
 - **note:** this does not fix the systemic gap — `distribution` still can't
@@ -253,6 +253,15 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   `getUpdates` returned no unblocker replies since the 15/09 serve. Not
   done. Per the skill's serve-2 rule, re-served today shrunk to just 1 post
   (ENTRY 093 only) instead of 3, same task, smaller ask.
+- **17/09/2026 follow-up (serve 3):** checked `content-vault.md` ENTRY
+  093/092/091 — all three still `READY TO POST`, unchanged.
+  `review-cockpit/state.md` confirms `getUpdates` has returned empty on
+  every sweep 14/09 through 17/09 — no unblocker reply, no card reply, no
+  voice note in three days. Not done, third morning running. Per the
+  skill's serve-3 rule this is not re-served as the same ask a fourth time;
+  sent the gentle-confrontation message instead (kill / shrink further /
+  name a real blocker), Telegram send confirmed. Awaiting operator reply
+  before next action on this entry.
 
 ---
 
