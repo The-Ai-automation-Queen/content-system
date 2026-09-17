@@ -2,6 +2,56 @@
 
 ---
 
+## RESEARCH 046 — 2026-09-17 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `3a462c2`; source (queen-brain) commit `3092c78d`.
+**Audience problem worked (positioning.md):** experienced professionals, founders and consultants who feel overwhelmed by AI or struggle to turn their knowledge into visible, valuable work.
+**Internal tooling discoveries this run:** none. This entry is `shift-lead` (public-topic) evidence only.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority and recency were weighed.
+
+### Signals
+
+1. **Anthropic — "Detecting and countering misuse of AI: September 2026"** — published 2026-09-10 — https://www.anthropic.com/threat-intelligence-report-september-2026 — fetched direct via WebFetch (inventory.md RSS slot, High priority). Re-checked the Anthropic News index for anything newer: still nothing after Sep 10 (next-most-recent remains 2026-09-01, "Introducing Claude Fable 5.1 and Claude Mythos 5.1"). Sep 10 is exactly 7 days before this run, so it stays inside the ≤7-day RSS window, but this is now the third consecutive run (044, 045, 046) carrying the same post forward rather than finding a new one.
+   - `project_id`: shift-lead — `fit`: possible — `reason`: unchanged from prior assessment; same carried-forward item, same use.
+   - `supporting_source_excerpt`: not re-extracted this run; see RESEARCH 044 for the title/topic-level excerpt.
+   - `possible_use`: same as RESEARCH 044/045 — pair with a source-verified example only if the full report is read in a follow-up pass.
+   - `assessed_at`: 2026-09-17
+
+2. **Recon Analytics — "The Judgment Premium: How AI Is Repricing American Work"** — published 2026-08-18 — https://www.reconanalytics.com/the-judgment-premium-how-ai-is-repricing-american-work/ — WebFetch; independent analytics/telecom-research firm publishing original labor-market analysis.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: gives a labor-market mechanism, not just sentiment, for why the audience's existing judgement/expertise is an appreciating asset rather than a liability — directly evidences positioning.md's "human judgement, creativity, experience... are part of the value being protected."
+   - `supporting_source_excerpt`: "18% of workers say AI skills have already earned them a raise, and nearly as many say AI skills helped them get a job or position"; "Entry-level workers report AI-driven job disruption at up to two and a half times the rate of the most senior workers"; customer-service reps "lost 130,000 jobs, the largest decline of any American occupation" while judgment-heavy roles (software developers, lawyers, data scientists) grew.
+   - `possible_use`: reframes "overwhelmed by AI" from threat to opportunity for this specific audience — their years of judgement are the scarce, repricing-upward asset while execution work is commoditized; supports the "find what is uniquely yours" pillar with a citable stat rather than a motivational claim.
+   - `assessed_at`: 2026-09-17
+
+3. **VentureBeat — "The AI governance mirage: Why 72% of enterprises don't have the control and security they think they do"** — published 2026-04-21 — https://venturebeat.com/orchestration/the-ai-governance-mirage-why-72-of-enterprises-dont-have-the-control-and-security-they-think-they-do — WebFetch; VentureBeat's own survey research (40–70 qualified respondents per topic area, self-described as directional, not statistically significant).
+   - `project_id`: shift-lead — `fit`: possible — `reason`: names a distinct mechanism behind organizational AI overwhelm — false confidence rather than open chaos (already logged via the Writer stats in RESEARCH 045) — useful as a different angle on the same audience problem, not a duplicate.
+   - `supporting_source_excerpt`: "56% say they're 'very confident' detecting misbehaving AI models" while "nearly one-third lack systematic mechanisms to detect AI misbehavior until problems surface"; "29% cite 'no single owner or accountable team' as the biggest governance obstacle."
+   - `possible_use`: source notes its own sample is small/directional — treat the exact percentages as illustrative, not headline-worthy on their own; useful to support a "confidence is not the same as control" framing if paired with a more authoritative stat.
+   - `assessed_at`: 2026-09-17
+
+4. **Legal Futures — "Faster, leaner, smarter: How AI lets small firms compete with BigLaw"** — published 2026-06-15 — https://www.legalfutures.co.uk/features/faster-leaner-smarter-how-ai-lets-small-firms-compete-with-biglaw — WebFetch; trade publication covering the UK legal sector.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: opportunity-side evidence rather than problem-side (the first three signals and most of RESEARCH 044/045 are overwhelm/chaos framed) — a concrete, sector-specific case of small/solo operators converting AI leverage into visible competitive results, which maps to the audience's desired outcome of turning knowledge into valuable work.
+   - `supporting_source_excerpt`: "A small practice can pick a tool, start using it, and save hours each week before a big firm even finishes its risk review"; Australian data showed "boutique and small practices reported three to five times faster research turnaround"; "AI won't replace you, but people who use AI well will replace those who don't."
+   - `possible_use`: the closing line is a strong, source-attributable hook for the "use AI for what it does well, keep what only you can bring" pillar — cite Legal Futures/the underlying UK legal-sector data if using the line, since it is a sector-specific finding, not a universal claim.
+   - `assessed_at`: 2026-09-17
+
+### Source health this run
+
+- Anthropic News (High): direct WebFetch worked; no new post since RESEARCH 044/045 — third consecutive run carrying the same Sep 10 item forward.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 (blocked) — third consecutive failed run (044, 045, 046). Not retried via WebSearch fallback since the Anthropic slot was already filled. Operator: this fetch path has now failed three runs in a row; worth a fix (different fetch method, or drop it from the High-priority RSS list) if OpenAI coverage is actually wanted.
+- Hugging Face Blog (Medium): checked this run — WebFetch worked, but the ten most recent posts are all deep ML-infrastructure topics (quantization, PEFT, agent RL training) with no line to the shift-lead audience problem; nothing logged.
+- a16z AI (Medium): checked this run — WebFetch returned post titles (product management, venture process, health plans) with no visible publish dates and no relevance to the audience problem; nothing logged.
+- DeepMind blog, Lenny's Newsletter (Medium/Low): not checked this run — the RSS slot was already resolved by the carried-forward Anthropic item, consistent with inventory.md's fallback order (only fall through when the higher-priority slot is unfilled).
+- WebSearch: functional throughout; used to source the three non-RSS signals above from labor-market, enterprise-governance, and small-firm-competition angles.
+- No signals were invented; every URL above is one actually returned by a fetch or search this run.
+
+### Historical-audience check
+
+Confirmed none of the above signals were forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only, consistent with security.md's queue-only publishing rule (which was not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 045 — 2026-09-16 | Signal harvest (current audience problem)
 
 **Status:** NOTED
