@@ -65,6 +65,44 @@ digest run overwrites it.
   unchanged. All 9 cards from the 16/09 digest (#1–#6, R1–R3) remain
   outstanding. Sent one confirmation line to Telegram (message_id 1018).
 
+- 17/09/2026 — pre-digest sweep (operator-requested `digest` run). `getUpdates`
+  (no offset, none stored) returned empty (`{"ok":true,"result":[]}`).
+  Nothing to route, nothing applied to the vault. All 9 cards from the 16/09
+  digest (#1–#6, R1–R3) go stale as of this run, superseded by the digest
+  below. Digest send followed immediately (no separate confirmation line —
+  the digest send itself is this run's output per skill step 3).
+
+## Last digest served — 17/09/2026 (run on operator request)
+
+Header message_id: 1019
+Footer message_id: 1029
+
+| Card | ENTRY | message_id | Platform | Pillar | Critic | CTA |
+|---|---|---|---|---|---|---|
+| #1 | ENTRY 099 | 1020 | Instagram (carousel) | Use AI for real work | pending | reflective question, no offer |
+| #2 | ENTRY 098 | 1021 | LinkedIn (text post) | Find what is uniquely yours | pending | reflective question, no offer — flags "builder-and-watchdog" framing for explicit yes/no |
+| #3 | ENTRY 097 | 1022 | Instagram / LinkedIn (text post) | Use AI for real work | pending | reflective question, no offer — overlaps #2's theme |
+| #4 | ENTRY 096 | 1023 | Instagram Reel (~40s) | Find what is uniquely yours | pending | reflective question, no offer — needs timing check |
+| #5 | ENTRY 095 | 1024 | LinkedIn | Real Talk | pending | discussion (no keyword) |
+| #6 | ENTRY 094 | 1025 | LinkedIn | Build Once, Runs Forever | 7.2 | community tease — CTA-BLOCKED (VERIFY + PREP) |
+| R1 | ENTRY 047 | 1026 | LinkedIn | What's Worth It | n/a | WORDS (live) — READY since 14/07/2026 (65d) |
+| R2 | ENTRY 048 | 1027 | X/Twitter thread | The Freedom Business | n/a | TEAM (live) — READY since 14/07/2026 (65d) |
+| R3 | ENTRY 049 | 1028 | Short-form video | Build Once, Runs Forever | n/a | TEAM (live) — READY since 14/07/2026 (65d) |
+
+Notes:
+- Card set is identical to the 16/09 digest (same top-6 DRAFT window, same
+  Ready-shelf three) — content-engine's 17/09 run deliberately produced no
+  new entries (see content-vault.md "Most recent" note), so nothing rotated.
+  This is the third consecutive digest with zero operator replies in between
+  (14/09 → 15/09 → 16/09 → 17/09, `getUpdates` empty every sweep).
+- DRAFT pool at digest time: 33 entries, unchanged from 16/09. Ready shelf:
+  37 READY TO POST, all 65+ days old (oldest batch 14/07/2026); shelf cap of
+  3/digest means the other 34 wait for subsequent runs.
+- SCHEDULED count still unconfirmed: latest distribution report
+  (`reports/distribution-2026-07-20.md`) is 59 days stale.
+- No replies processed this run (pre-digest `getUpdates` sweep was empty).
+  decisions-log.md unchanged.
+
 ## Last digest served — 16/09/2026 (run on operator request)
 
 Header message_id: 1005
