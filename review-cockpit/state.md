@@ -103,6 +103,17 @@ Notes:
 - No replies processed this run (pre-digest `getUpdates` sweep was empty).
   decisions-log.md unchanged.
 
+- 17/09/2026 (operator-requested `process` run, this run — the scheduled
+  12:30 cron only did a git sync per `deploy/logs/review-cockpit
+  process-2026-09-17T12-30-03.log`, no actual sweep) — `getUpdates` (no
+  offset, none stored) returned empty (`{"ok":true,"result":[]}`). Nothing
+  to route: no card decisions, no unblocker replies, no voice notes.
+  Nothing applied to the vault (37 READY TO POST / 33 DRAFT / 6 STALE / 2
+  KILLED per the reality-check hook), decisions-log.md unchanged. All 9
+  cards from the 17/09 digest (#1–#6, R1–R3) remain outstanding — fourth
+  consecutive sweep with zero operator replies since the 14/09 digest.
+  Confirmation sent to Telegram (message_id 1031).
+
 ## Last digest served — 16/09/2026 (run on operator request)
 
 Header message_id: 1005
