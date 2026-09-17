@@ -21,6 +21,21 @@
 
 ## Most recent (quick reference)
 
+> **17/09/2026 content-engine daily run — no new entries produced (deliberate):**
+> RESEARCH 046 (17/09/2026 signal harvest) was loaded and is available for the
+> next batch. This run stopped short of drafting because `review-cockpit/state.md`
+> shows the 16/09 batch (ENTRY 096-099) demonstrably made review harder, not
+> easier: it pushed older DRAFT entries (090/089/085/083) out of the digest's
+> top-6 rotation with zero operator replies received in the meantime (`getUpdates`
+> has returned empty on every process sweep since 14/09/2026). The vault holds 37
+> READY TO POST (oldest 64+ days, since 14/07/2026) and 33 DRAFT with 0 POSTED —
+> matching the session's reality-check hook and `reports/vault-audit-2026-08-30.md`
+> Priority 1. Producing more this run would repeat the same crowding effect on a
+> backlog that isn't being read, not move any item closer to release. RESEARCH 046
+> stays queued for the first content-engine run after the Ready shelf sees
+> operator decisions. See the operator briefing in this session's chat for the
+> recommended next action.
+
 > **16/09/2026 content-engine daily run:** ENTRY 096-099 from RESEARCH 044/045
 > (Sep 15-16 2026 signal harvest, current `shift-lead-2026-09-12` audience
 > problem). 1 educational Reel script, 2 evidence-based written posts, 1
