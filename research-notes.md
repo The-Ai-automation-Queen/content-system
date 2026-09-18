@@ -2,6 +2,58 @@
 
 ---
 
+## RESEARCH 047 — 2026-09-18 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `30950ce`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (positioning.md):** experienced professionals, founders and consultants who feel overwhelmed by AI or struggle to turn their knowledge into visible, valuable work.
+**Internal tooling discoveries this run:** none. This entry is `shift-lead` (public-topic) evidence only.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority and recency were weighed.
+
+### Signals
+
+1. **Anthropic — "Measurements for understanding the pace of AI development inside frontier labs"** — published 2026-09-17 — https://www.anthropic.com/institute/measuring-pace-of-ai-development — fetched via WebFetch/WebSearch cross-check (inventory.md RSS slot, High priority). This breaks the 3-run streak (RESEARCH 044/045/046) of carrying forward the same Sep 10 threat-intelligence post — the Anthropic News index also added a second new item today ("Introducing the Life Sciences Verification Program," Sep 17), and this one was chosen as more relevant to the audience problem.
+   - `project_id`: shift-lead — `fit`: possible — `reason`: introduces a public "R&D Automation Index" (AL0–AL5 automation-level scale, developed with Epoch AI) meant to show outsiders how much of frontier AI R&D is already AI-automated — directly useful for grounding "where AI actually stands right now" claims rather than vague overwhelm framing.
+   - `supporting_source_excerpt`: first published results show Claude models "lead" roughly 26% of Anthropic's own AI research and development work as of August 2026; the index scores tasks on an Automation Level scale from AL0 (no AI involvement) to AL5 (fully autonomous, no human in the loop).
+   - `possible_use`: a citable, source-verified answer to "how automated is AI development, really" — useful as a fact-check anchor if a draft ever claims frontier labs are already "fully autonomous," which this data does not support.
+   - `assessed_at`: 2026-09-18
+
+2. **Boston Consulting Group / Harvard Business Review (via Fortune) — "AI brain fry" workplace study** — published 2026-03-10 — https://fortune.com/2026/03/10/ai-brain-fry-workplace-productivity-bcg-study/ — WebSearch + WebFetch; BCG surveyed 1,488 full-time U.S.-based workers, findings ran in Harvard Business Review.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: gives a specific mechanism and threshold for AI overwhelm rather than a vague "too many tools" complaint — directly evidences the positioning.md audience problem with a number, not a mood.
+   - `supporting_source_excerpt`: productivity rose with 3 or fewer AI tools in use but "plummeted" at 4 or more; workers under high AI oversight showed 14% more mental effort, 12% greater mental fatigue and 19% more information overload; 34% of workers experiencing "AI brain fry" intended to leave their company, versus 25% without it. Quote: "the more capability you have, the more you feel compelled to use it... the more fragmented your attention, the less you actually ship."
+   - `possible_use`: a concrete, numeric answer to "how many AI tools is too many" — supports a "fewer tools, used on purpose" angle rather than a generic productivity-hacks post; the 4th-tool cliff is a strong, specific hook.
+   - `assessed_at`: 2026-09-18
+
+3. **emlyon business school — "1st Consulting & AI Barometer"** — published 2026-07-02 — https://em-lyon.com/en/press-releases/consulting-ai-barometer — WebFetch; anonymous survey of 100+ professional consultants, fielded October 2025–January 2026 by a business school (independent of any AI vendor).
+   - `project_id`: shift-lead — `fit`: useful — `reason`: names precisely what AI does *not* replace in expert work, in the audience's own occupation (consulting) — a sharper, source-attributable version of "what only you can bring" than a motivational claim.
+   - `supporting_source_excerpt`: 72% of consultants use AI daily and 65% report significant productivity gains, but only 11% believe AI significantly helps their teams "prioritize information, identify weak signals or determine what truly matters" in an engagement; the study names "judgement, contextual understanding, trusted client relationships and the ability to make decisions under uncertainty" as what cannot be automated, and warns of an "apprenticeship gap" where juniors gain speed but lose the developmental reps that build expertise.
+   - `possible_use`: strong source for the "find what is uniquely yours" pillar — the 11% stat is a citable, non-vendor number showing that heavy AI use and judgement-still-matters are not in tension; the "apprenticeship gap" framing is also usable for a distinct angle about how expertise gets built now.
+   - `assessed_at`: 2026-09-18
+
+4. **Toptal High-Skilled Job Report, Q2 2026 (syndicated via Stacker)** — published 2026-08-14 — https://kvia.com/stacker-careers-education/2026/08/14/report-experienced-job-seekers-have-an-edge-in-todays-ai-driven-job-market/ — WebSearch + WebFetch; Toptal's proprietary "Market Strength Score," which blends job-posting, compensation and hiring-activity data from Lightcast, Indeed, LinkedIn, Staffing Industry Analysts and others to correct for ghost postings.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: opportunity-side evidence rather than problem-side (signals 1–3 above are all overwhelm/limits-framed) — a labor-market data point that experienced, judgement-heavy professionals are the ones gaining ground, balancing recent runs' problem-heavy mix.
+   - `supporting_source_excerpt`: demand for experienced technology and professional-services talent rose 7.1% quarter-over-quarter and 12.6% year-over-year while the market contracted for junior, routine-execution-focused roles; finance consultants specifically saw 31% QoQ / 39% YoY growth. Quote: "Rather than viewing AI as a replacement for expertise, many employers increasingly see it as a tool that extends the value of experienced professionals."
+   - `possible_use`: a market-data (not sentiment-survey) answer to "does experience still matter" — pairs well with signal 3's "what AI can't replace" framing to make an evidence-backed case that judgement is the appreciating asset, not the liability.
+   - `assessed_at`: 2026-09-18
+
+### Rejected this run
+
+- A "solo consultant, $12K/month AI delivery pipeline" post (demg.ai blog, published 2026-08-26) surfaced in WebSearch as a named case study ("Sarah," a manufacturing-framework consultant). Direct WebFetch of the source confirmed the text itself says "a solo management consultant we'll call Sarah" — a pseudonymous, illustrative composite, not a verifiable real client — published by a marketing agency (demg.ai, sells "AI marketing systems for owner-operators": websites, funnels, automated content, LinkedIn outbound). Excluded per research-policy.md's caution against laundering a vendor's illustrative anecdote as fact; not logged as a signal.
+
+### Source health this run
+
+- Anthropic News (High): direct WebFetch worked; two new posts today (Sep 17) after three straight runs (044–046) carrying forward the same Sep 10 item — the RSS gap flagged in RESEARCH 046 resolved itself before lapsing.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 (blocked) — 4th consecutive failed run (044, 045, 046, 047). Not retried via WebSearch fallback since the Anthropic slot was already filled. Operator: this is now a month-plus of consistent failure on the same fetch path — recommend either fixing the fetch method (the site appears to block the default WebFetch user agent) or dropping OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md` so future runs stop re-attempting a dead path.
+- Hugging Face, a16z, DeepMind, Lenny's (Medium/Low): not checked this run — RSS slot was already resolved by the fresh Anthropic item, consistent with inventory.md's fallback order (only fall through when the higher-priority slot is unfilled).
+- WebSearch: functional throughout; used to source the three non-RSS signals and to screen out the rejected vendor anecdote above.
+- No signals were invented; every URL above is one actually returned by a fetch or search this run.
+
+### Historical-audience check
+
+Confirmed none of the above signals were forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only, consistent with security.md's queue-only publishing rule (which was not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 046 — 2026-09-17 | Signal harvest (current audience problem)
 
 **Status:** NOTED
