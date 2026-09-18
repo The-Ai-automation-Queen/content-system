@@ -262,6 +262,14 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   sent the gentle-confrontation message instead (kill / shrink further /
   name a real blocker), Telegram send confirmed. Awaiting operator reply
   before next action on this entry.
+- **18/09/2026 follow-up:** `content-vault.md` ENTRY 093/092/091 still
+  `READY TO POST`, unchanged. `review-cockpit/state.md` pre-digest sweep
+  confirms `getUpdates` still empty — no reply to the 17/09 confrontation in
+  24h. Did not re-send the same/escalated message (skill has no serve-4
+  rule and repeating it would be a guilt mechanic). This run is interactive
+  with Fatiha directly, so the kill/shrink/blocker question was put to her
+  in the end-of-run briefing instead of over Telegram. `served_count` left
+  at 3 pending her answer.
 
 ---
 
