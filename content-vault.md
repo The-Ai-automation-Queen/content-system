@@ -21,6 +21,23 @@
 
 ## Most recent (quick reference)
 
+> **18/09/2026 content-engine daily run — no new entries produced (deliberate):**
+> RESEARCH 047 (18/09/2026 signal harvest) was loaded and is available for the
+> next batch. This run stopped short of drafting for the same reason as 17/09,
+> unchanged: `review-cockpit/state.md` shows zero operator replies on every
+> `getUpdates` sweep since 14/09/2026 (now six consecutive empty sweeps), and
+> the vault still holds 37 READY TO POST (oldest 65+ days, since 14/07/2026)
+> and 33 DRAFT with 0 POSTED — matching this session's reality-check hook.
+> Adding more DRAFT volume would again crowd the digest's top-6 rotation
+> without moving any existing item toward release. Separately, this session's
+> reality-check hook confirms the queen-brain canonical repo is not available
+> here and explicitly warns against writing customer-facing copy reconstructed
+> from this repo's local mirror copies (`context/`) — a second, independent
+> reason not to draft public posts this run even if the backlog were clear.
+> RESEARCH 047 stays queued for the first content-engine run after the Ready
+> shelf sees operator decisions and queen-brain access is confirmed. See the
+> operator briefing in this session's chat for the recommended next action.
+
 > **17/09/2026 content-engine daily run — no new entries produced (deliberate):**
 > RESEARCH 046 (17/09/2026 signal harvest) was loaded and is available for the
 > next batch. This run stopped short of drafting because `review-cockpit/state.md`
