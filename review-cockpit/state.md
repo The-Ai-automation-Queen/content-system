@@ -7,9 +7,9 @@ digest run overwrites it.
 ## Telegram offset
 
 - Last `getUpdates` consumed offset: still none pending — checked again
-  on 16/09/2026 (operator-requested `digest` run), queue empty
+  on 19/09/2026 (operator-requested `digest` run), queue empty
   (`{"ok":true,"result":[]}`). No card replies, no unblocker replies, no
-  voice notes since the 15/09/2026 digest.
+  voice notes since the 14/09/2026 digest (nine consecutive empty sweeps).
 - Next `process` run should call `getUpdates` with no offset filter until a
   reply produces an `update_id` to anchor to.
 
@@ -102,6 +102,52 @@ digest run overwrites it.
   reality-check hook and reconfirmed against `content-vault.md`),
   decisions-log.md unchanged. All 9 cards from the 18/09 digest (#1–#6,
   R1–R3) remain outstanding. Confirmation sent to Telegram (message_id 1045).
+
+- 19/09/2026 — pre-digest sweep (operator-requested `digest` run, run end-to-end
+  per operator request). `getUpdates` (no offset, none stored) returned empty
+  (`{"ok":true,"result":[]}`). Nothing to route: no card decisions, no
+  unblocker replies, no voice notes — ninth consecutive empty sweep since the
+  14/09/2026 digest. Nothing applied to the vault (37 READY TO POST / 33
+  DRAFT / 6 STALE / 2 KILLED, matching this session's reality-check hook and
+  confirmed against `content-vault.md`'s exact header-line status tally),
+  decisions-log.md unchanged. All 9 cards from the 18/09 digest (#1–#6,
+  R1–R3) go stale as of this run, superseded by the digest below. Digest
+  send followed immediately (no separate confirmation line — the digest
+  send itself is this run's output per skill step 3).
+
+## Last digest served — 19/09/2026 (run on operator request)
+
+Header message_id: 1046
+Footer message_id: 1056
+
+| Card | ENTRY | message_id | Platform | Pillar | Critic | CTA |
+|---|---|---|---|---|---|---|
+| #1 | ENTRY 099 | 1047 | Instagram (carousel) | Use AI for real work | pending | reflective question, no offer |
+| #2 | ENTRY 098 | 1048 | LinkedIn (text post) | Find what is uniquely yours | pending | reflective question, no offer — flags "builder-and-watchdog" framing for explicit yes/no |
+| #3 | ENTRY 097 | 1049 | Instagram / LinkedIn (text post) | Use AI for real work | pending | reflective question, no offer — overlaps #2's theme |
+| #4 | ENTRY 096 | 1050 | Instagram Reel (~40s) | Find what is uniquely yours | pending | reflective question, no offer — needs timing check |
+| #5 | ENTRY 095 | 1051 | LinkedIn | Real Talk | pending | discussion (no keyword) |
+| #6 | ENTRY 094 | 1052 | LinkedIn | Build Once, Runs Forever | 7.2 | community tease — CTA-BLOCKED (VERIFY + PREP) |
+| R1 | ENTRY 047 | 1053 | LinkedIn | What's Worth It | n/a | WORDS (live) — READY since 14/07/2026 (67d) |
+| R2 | ENTRY 048 | 1054 | X/Twitter thread | The Freedom Business | n/a | TEAM (live) — READY since 14/07/2026 (67d) |
+| R3 | ENTRY 049 | 1055 | Short-form video | Build Once, Runs Forever | n/a | TEAM (live) — READY since 14/07/2026 (67d) |
+
+Notes:
+- Card set is identical to the 16/09–18/09 digests (same top-6 DRAFT window,
+  same Ready-shelf three) — no new content-engine entries landed and no
+  operator decisions moved anything since 18/09. This is the seventh
+  consecutive digest with zero operator replies in between (14/09 → 15/09 →
+  16/09 → 17/09 → 18/09 → 19/09, `getUpdates` empty every sweep — nine
+  consecutive empty sweeps total across digest + process runs).
+- DRAFT pool at digest time: 33 entries, unchanged since 16/09. Ready shelf:
+  37 READY TO POST, all 67+ days old (oldest batch 14/07/2026); shelf cap of
+  3/digest means the other 34 wait for subsequent runs.
+- SCHEDULED count still unconfirmed: latest distribution report
+  (`reports/distribution-2026-07-20.md`) is 61 days stale.
+- Ready-shelf CTA keywords (WORDS, TEAM) confirmed `active=yes` in
+  `lead-magnets.csv` — no CTA-BLOCKED needed for R1–R3.
+- No replies processed this run (pre-digest `getUpdates` sweep was empty).
+  decisions-log.md unchanged.
 
 ## Last digest served — 18/09/2026 (run on operator request)
 
