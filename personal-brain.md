@@ -57,6 +57,9 @@ reference real life — not generic AI content. Updated daily by `brain-manager`
   repo) as the current flagship project. Stage and next milestone not yet
   detailed — follow up in next brain-manager run.
 
+- [2026-09-19] Shipped: TEAM/STACK/PROMPT lead magnets confirmed live
+  (`lead-magnets.csv` active=yes, verified via UNB-009/011/012 write-back).
+
 ## Numbers & Stats
 
 

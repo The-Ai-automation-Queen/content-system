@@ -38,7 +38,7 @@ written. They just need a public URL.
 
 ### Quick path (30 min — do this TODAY)
 
-- [ ] Pick 3 lead magnets to activate first:
+- [x] Pick 3 lead magnets to activate first: (done, confirmed 19/09/2026, UNB-009/011/012)
   1. **TEAM** — "How to Set Up Your First AI Employee" (highest overlap with your
      audience + Alicia Lyttle's viral topic)
   2. **STACK** — "The 3-Tool AI Stack I Actually Use" (easy win, curiosity-driven)
@@ -60,7 +60,7 @@ written. They just need a public URL.
   3. Copy the URL
   4. (You lose email capture — upgrade to GHL within a week)
 
-- [ ] Update `lead-magnets.csv` with the live URLs and set `active=yes`
+- [x] Update `lead-magnets.csv` with the live URLs and set `active=yes` (done, confirmed 19/09/2026, UNB-009/011/012 — TEAM/STACK/PROMPT rows all `active=yes` with live URLs)
 
 ### I can do right now:
 - [ ] Create `lead-magnets.csv` with all 8 rows (URLs blank, ready for you to fill)

@@ -116,7 +116,12 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
 - **depends_on:** — · **unblocks:** UNB-010, keyword CTAs on posts
 - **source:** ROADMAP Priority-0 Action 1; ACTION-PLAN Phase 2; lead-magnets.csv row TEAM
 - **verify:** lead-magnets.csv TEAM row has URL + active=yes
-- **status:** open · served_count: 0 · added: 2026-07-06
+- **status:** done (found already complete on 19/09/2026 scan) · served_count: 0 · added: 2026-07-06
+- **19/09/2026 write-back:** `lead-magnets.csv` TEAM row confirmed `active=yes` with a
+  live `guides.shiftandlead.com` URL (csv note dates activation 2026-07-04, pre-dating
+  this ledger entry — a scan gap, never actually a live blocker). Ticked the matching
+  box in `ACTION-PLAN-CASH-MACHINE.md` Phase 2. No queen-brain STATUS.md write-back
+  possible this run (repo not present in this session).
 
 ### UNB-010 — Build the GHL comment→DM workflow for TEAM
 - **why:** turns comments into captured leads automatically; the money engine's first live wire
@@ -129,12 +134,16 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
 ### UNB-011 — Host the STACK lead magnet on GHL, flip active=yes
 - **source:** ROADMAP Priority-0 Action 1; lead-magnets.csv row STACK
 - **depends_on:** UNB-009 (warm flow) · **effort_min:** 10 · **verify:** csv row live
-- **status:** open · served_count: 0 · added: 2026-07-06
+- **status:** done (found already complete on 19/09/2026 scan) · served_count: 0 · added: 2026-07-06
+- **19/09/2026 write-back:** `lead-magnets.csv` STACK row confirmed `active=yes` with a
+  live URL. Same scan-gap pattern as UNB-009 — see its note.
 
 ### UNB-012 — Host the PROMPT lead magnet on GHL, flip active=yes
 - **source:** ROADMAP Priority-0 Action 1; lead-magnets.csv row PROMPT
 - **depends_on:** UNB-009 (warm flow) · **effort_min:** 10 · **verify:** csv row live
-- **status:** open · served_count: 0 · added: 2026-07-06
+- **status:** done (found already complete on 19/09/2026 scan) · served_count: 0 · added: 2026-07-06
+- **19/09/2026 write-back:** `lead-magnets.csv` PROMPT row confirmed `active=yes` with a
+  live URL. Same scan-gap pattern as UNB-009 — see its note.
 
 ### UNB-013 — Paste the 5-email nurture sequence into GHL
 - **why:** downloads currently go cold by design; this converts them. Agent drafts the emails first (agent-side prep, not a human blocker)
@@ -270,12 +279,35 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   with Fatiha directly, so the kill/shrink/blocker question was put to her
   in the end-of-run briefing instead of over Telegram. `served_count` left
   at 3 pending her answer.
+- **19/09/2026 follow-up:** `content-vault.md` ENTRY 093/092/091 still
+  `READY TO POST`, unchanged. `review-cockpit/state.md` confirms nine
+  consecutive empty `getUpdates` sweeps through today's 19/09 digest run —
+  no Telegram reply, and no record in `review-cockpit/decisions-log.md` or
+  elsewhere of an answer to the 18/09 in-chat kill/shrink/blocker question
+  (that answer, if given, was not in this session's history). Did not
+  re-serve or re-escalate (same no-serve-4-rule reasoning as 18/09). Full
+  estate scan this run found no other ledger-eligible entry (UNB-001–024
+  remain out of scope per the 15/09 superseded-batch note; `queen-brain`
+  still absent from this session, so no new items could be re-grounded from
+  it). Did find and write back three stale-but-already-complete entries
+  (UNB-009/011/012 — see their notes) via `lead-magnets.csv`,
+  `ACTION-PLAN-CASH-MACHINE.md`, and `personal-brain.md`. Put the
+  kill/shrink/blocker question to Fatiha directly again in today's
+  end-of-run briefing. `served_count` left at 3 pending her answer.
 
 ---
 
 ## Done
 
-*(nothing yet — the first ✅ goes here)*
+- **UNB-009** — TEAM lead magnet hosted + active=yes. Found already complete
+  on the 19/09/2026 scan (csv note dates actual activation 2026-07-04,
+  before this ledger entry existed — a scan gap, not a same-day ship).
+  Write-back: `ACTION-PLAN-CASH-MACHINE.md` Phase 2 checkboxes ticked,
+  `personal-brain.md` Current Projects line added.
+- **UNB-011** — STACK lead magnet hosted + active=yes. Same scan-gap pattern
+  and write-back as UNB-009, found 19/09/2026.
+- **UNB-012** — PROMPT lead magnet hosted + active=yes. Same scan-gap
+  pattern and write-back as UNB-009, found 19/09/2026.
 
 ## Killed
 
