@@ -297,6 +297,67 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
 
 ---
 
+### UNB-026 — Restore estate-repo access so estate-janitor/unblocker can see the full estate again
+- **why:** `queen-brain` and 5 other of the 8 documented estate repos
+  (`fast-forward`, `agent-os-company-dashboard`, `agent-os-dashboard`,
+  `research-inbox`, `AI-Creator-OS`, `LinkedinAudit2`) are not present in
+  this session — only `content-system` is. This fully blocks the janitor's
+  highest-ranked check (price/offer/customer-copy drift, class 5) and two
+  cross-repo standing cases (agent-os-dashboard overlap,
+  `fast-forward/MASTER-MANIFEST.md` phantoms). It also blocked yesterday's
+  unblocker run the same way.
+- **revenue_unlocked:** indirect — unblocks the one drift class the skill
+  itself calls customer-visible, plus repo-duplication/manifest checks
+  across 6 of 8 repos · **effort_min:** 5 (grant read access / clone the
+  repos into whatever environment runs these skills)
+- **depends_on:** — · **unblocks:** `estate-janitor` classes 1/2/5 full-estate
+  coverage, `unblocker`'s re-grounding of UNB-001–024
+- **source:** `ls /home/fatiha/` (only `content-system`,
+  `content-system-DUPLICATE` present); session reality-check banner ("canon:
+  queen-brain NOT in this session... Ask for the repo instead of
+  reconstructing it from this one's copies"); `unblocker/ledger.md` 19/09/2026
+  follow-up note (same absence, one day earlier); `reports/janitor-2026-09-20.md`
+  JAN-01/JAN-06
+- **verify:** the next `estate-janitor scan` completes classes 1, 2, and 5
+  without a "repo absent" caveat
+- **status:** open · added: 2026-09-20
+
+### UNB-027 — Decide fate of `/home/fatiha/content-system-DUPLICATE`
+- **why:** a full second git checkout of this repo, frozen at commit
+  `a2e2bc1f` (2026-07-30) — 381 commits / 52 days behind `main` — with 2
+  locally modified files (`.gitignore`, `deploy/crontab.example`) never
+  committed anywhere. Sitting in `$HOME` next to the real repo, it risks
+  someone editing or running against stale skills/config without noticing.
+- **revenue_unlocked:** none direct; risk reduction · **effort_min:** 10
+  (delete, archive outside `$HOME` with a label, or diff+merge the 2
+  uncommitted files into `content-system` first)
+- **depends_on:** — · **unblocks:** —
+- **source:** `reports/janitor-2026-09-20.md` JAN-03 (`git -C
+  content-system-DUPLICATE rev-parse HEAD` / `git status`; `git -C
+  content-system log --oneline a2e2bc1f..main | wc -l` → 381)
+- **verify:** directory removed, archived elsewhere with a note, or
+  explicitly kept with a documented reason
+- **status:** open · added: 2026-09-20
+
+### UNB-028 — Review and prune stale branches (64 of 87, oldest 167 days)
+- **why:** `git branch -a` on `content-system` shows 64 non-main branches
+  last committed before 2026-08-21 (the 30-day cutoff for this run); oldest
+  is `origin/claude/html-plugin-system-9uohC` (2026-04-06, 167 days stale).
+  Branch deletion is a guardrail-reserved human decision regardless, and
+  this session has no `gh` CLI to cross-check which of the 64 (if any) still
+  have open PRs attached, so the list needs a human pass either way.
+- **revenue_unlocked:** none direct; repo hygiene / reduces confusion about
+  which branch is live · **effort_min:** 20-30 (skim for unmerged intent,
+  bulk-delete the rest)
+- **depends_on:** — · **unblocks:** —
+- **source:** `reports/janitor-2026-09-20.md` JAN-04 (`git branch -a` +
+  per-branch `git log -1 --format=%cd`, run 2026-09-20)
+- **verify:** `git branch -a` no longer lists >30-day-stale branches without
+  an explicit keep-reason
+- **status:** open · added: 2026-09-20
+
+---
+
 ## Done
 
 - **UNB-009** — TEAM lead magnet hosted + active=yes. Found already complete
