@@ -6,7 +6,8 @@
 
 ## Queue (next up, in order)
 
-1. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 2, 16/09 — shrunk from 3 posts to 1)*
+1. UNB-026 — Restore estate-repo access for this session *(served, 20/09)*
+2. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since)*
 
 > UNB-001 through UNB-024 (below) are the original 06/07/2026 seed batch, built
 > entirely from the pre-pivot offer model (Whop SKU checkouts, Fast Forward
@@ -294,11 +295,22 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   `ACTION-PLAN-CASH-MACHINE.md`, and `personal-brain.md`. Put the
   kill/shrink/blocker question to Fatiha directly again in today's
   end-of-run briefing. `served_count` left at 3 pending her answer.
+- **20/09/2026 follow-up:** `content-vault.md` ENTRY 093/092/091 still
+  `READY TO POST`, unchanged. `review-cockpit/decisions-log.md` confirms
+  the 19/09 sweeps were still empty (12 consecutive empty `getUpdates`
+  sweeps through yesterday) — no Telegram reply, and no answer to the
+  18/09 or 19/09 in-chat kill/shrink/blocker question recorded anywhere in
+  this session's history. Same no-serve-4-rule reasoning as 18/09 and
+  19/09: did not re-send the same or an escalated message. This run found
+  a fresh, higher-scoring, differently-shaped item (UNB-026, added today
+  by `estate-janitor`) and served that instead, satisfying the variety
+  rule. Put the kill/shrink/blocker question to Fatiha again in today's
+  end-of-run briefing. `served_count` left at 3 pending her answer.
 
 ---
 
 ### UNB-026 — Restore estate-repo access so estate-janitor/unblocker can see the full estate again
-- **why:** `queen-brain` and 5 other of the 8 documented estate repos
+- **why:** `queen-brain` and 6 other of the 8 documented estate repos
   (`fast-forward`, `agent-os-company-dashboard`, `agent-os-dashboard`,
   `research-inbox`, `AI-Creator-OS`, `LinkedinAudit2`) are not present in
   this session — only `content-system` is. This fully blocks the janitor's
@@ -320,7 +332,22 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   JAN-01/JAN-06
 - **verify:** the next `estate-janitor scan` completes classes 1, 2, and 5
   without a "repo absent" caveat
-- **status:** open · added: 2026-09-20
+- **status:** served · served_count: 1 · added: 2026-09-20 · pack:
+  `packs/2026-09-20-UNB-026-restore-estate-repo-access.md`
+- **20/09/2026 prep note:** re-ran the access check live instead of only
+  citing the janitor report. `git ls-remote` over HTTPS returns
+  `403 Write access to repository not granted` for `queen-brain`,
+  `fast-forward`, `agent-os-company-dashboard`, `research-inbox`, and
+  `AI-Creator-OS` (repo exists, this session's credential isn't scoped to
+  read it — consistent with the fine-grained PAT being scoped to only
+  `content-system`), but `agent-os-dashboard` returns `404 Repository not
+  found` (different problem — likely renamed/deleted/wrong owner, not an
+  access-scope issue). Pack narrows the ask to a single PAT repository-access
+  edit for the 403 set, flags `agent-os-dashboard` for a one-line answer
+  instead of blind re-adding, and leaves `LinkedinAudit2` as her call
+  (unclear if still active estate scope). Not folding `LinkedinAudit2` into
+  the "confirmed" count since that's a judgment call, not a verified fact.
+  Delivered via Telegram (message_id 1070).
 
 ### UNB-027 — Decide fate of `/home/fatiha/content-system-DUPLICATE`
 - **why:** a full second git checkout of this repo, frozen at commit
