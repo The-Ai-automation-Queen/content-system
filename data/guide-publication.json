@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "rule": "A guide is public only after Fatiha explicitly approves its copy and complete page.",
+  "lastApprovedPublication": "2026-09-21",
   "shellReference": {
     "url": "https://www.shiftandlead.com/",
     "verifiedAt": "2026-08-24",
