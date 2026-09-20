@@ -21,6 +21,29 @@
 
 ## Most recent (quick reference)
 
+> **20/09/2026 content-engine daily run — no new entries produced (deliberate):**
+> Two signal harvests have landed since the last content-engine run
+> (`reports/signal-harvest-2026-09-19.md`, `reports/signal-harvest-2026-09-20.md`)
+> but neither has been logged as a numbered `RESEARCH` entry in
+> `research-notes.md` yet (still shows RESEARCH 047 / 18/09 as latest) — new
+> source material exists but isn't in the format this skill draws from, so
+> nothing new was available to draft against even setting the two blockers
+> below aside. Both blockers from 18/09 and 19/09 are unchanged: (1) the vault
+> still holds 37 READY TO POST (oldest 67+ days, since 14/07/2026) and 33
+> DRAFT with 0 POSTED, and `review-cockpit/state.md` confirms nine consecutive
+> empty `getUpdates` sweeps since the 14/09 digest — no operator replies, no
+> approvals, no kills, so adding more DRAFT volume would still just crowd the
+> digest's top-6 rotation without moving any existing item toward release; (2)
+> this session's reality-check hook again confirms queen-brain is NOT in this
+> session and repeats the explicit instruction not to write price, tier, offer
+> status or customer-facing copy from this repo's local mirror copies — this
+> skill's entire output is customer-facing copy, so that instruction blocks
+> drafting outright regardless of the backlog. No Notion, Blotato, or
+> queen-brain connector was reachable from this session either (checked via
+> tool discovery), so even a cleared backlog couldn't be queued today. See the
+> operator briefing in this session's chat for the three-option recommendation
+> (unchanged from 19/09, still unanswered).
+
 > **18/09/2026 content-engine daily run — no new entries produced (deliberate):**
 > RESEARCH 047 (18/09/2026 signal harvest) was loaded and is available for the
 > next batch. This run stopped short of drafting for the same reason as 17/09,
