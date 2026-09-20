@@ -144,6 +144,17 @@ digest run overwrites it.
   R1–R3) go stale as of this run, superseded by the digest below. Digest
   send followed immediately (no separate confirmation line — the digest
   send itself is this run's output per skill step 3).
+- 20/09/2026 ~12:31 UTC / ~16:31 GST (operator-requested `process` run, this
+  run — the scheduled 12:30 cron only did a git sync per `deploy/logs/review-cockpit
+  process-2026-09-20T12-30-02.log`, no actual sweep) — `getUpdates` (no
+  offset, none stored) returned empty (`{"ok":true,"result":[]}`). Nothing
+  to route: no card decisions, no unblocker replies, no voice notes — 13th
+  consecutive empty sweep since the 14/09/2026 digest. Nothing applied to
+  the vault (still 37 READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED per the
+  reality-check hook), decisions-log.md unchanged. All 9 cards from the
+  20/09 digest (#1–#6, R1–R3) remain outstanding. Publishing stayed
+  queue-only throughout (`security.md` §3.1) — no post released, no Blotato
+  queue touched. Confirmation sent to Telegram (message_id 1071).
 
 ## Last digest served — 20/09/2026 (run on operator request)
 
