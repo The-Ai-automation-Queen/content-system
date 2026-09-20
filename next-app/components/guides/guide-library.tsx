@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { type FormEvent, useMemo, useState } from "react";
 import { GuideCard } from "./guide-card";
 import {
   guideLevels,
@@ -36,6 +36,14 @@ function track(name: string, detail: Record<string, string>) {
   (window as Window & { slTrack?: (event: string, data?: Record<string, string>) => void }).slTrack?.(name, detail);
 }
 
+function normaliseSearchText(value: string) {
+  return value
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[’']/g, "")
+    .toLowerCase();
+}
+
 export function GuideLibrary({ guides, reviewMode = false }: { guides: Guide[]; reviewMode?: boolean }) {
   const [level, setLevel] = useState<LevelFilter>("all");
   const [outcome, setOutcome] = useState<OutcomeFilter>("all");
@@ -50,23 +58,31 @@ export function GuideLibrary({ guides, reviewMode = false }: { guides: Guide[]; 
   );
 
   const visible = useMemo(() => {
-    const search = query.trim().toLowerCase();
+    const searchTerms = normaliseSearchText(query).trim().split(/\s+/).filter(Boolean);
 
     return guides.filter((guide) => {
       const matchesLevel = level === "all" || guide.level === level;
       const matchesOutcome = outcome === "all" || guide.outcomes.includes(outcome);
       const searchableText = [
+        guide.slug,
         guide.title,
         guide.summary,
         guide.level,
         guide.hub,
         ...guide.outcomes,
         ...guide.tags,
-      ].join(" ").toLowerCase();
+      ].join(" ");
+      const normalisedGuide = normaliseSearchText(searchableText);
 
-      return matchesLevel && matchesOutcome && (!search || searchableText.includes(search));
+      return matchesLevel
+        && matchesOutcome
+        && (searchTerms.length === 0 || searchTerms.every((term) => normalisedGuide.includes(term)));
     });
   }, [guides, level, outcome, query]);
+
+  const searchStatus = query.trim()
+    ? `${visible.length} matching ${visible.length === 1 ? "guide" : "guides"}`
+    : "Search by a task, tool or concern.";
 
   const resultLabel = outcome !== "all"
     ? outcome
@@ -95,6 +111,14 @@ export function GuideLibrary({ guides, reviewMode = false }: { guides: Guide[]; 
     setQuery("");
   }
 
+  function submitSearch(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setOutcome("all");
+    setLevel("all");
+    track("guide_search_submit", { query: query.trim(), results: String(visible.length) });
+    scrollToLibrary();
+  }
+
   return (
     <>
       <section className="guides-hero" aria-labelledby="guides-title">
@@ -103,8 +127,8 @@ export function GuideLibrary({ guides, reviewMode = false }: { guides: Guide[]; 
           <h1 id="guides-title">Use AI for real work. Keep the decisions that need <em>you.</em></h1>
           <p>Pick the task you want done. I will show you which tool fits, what to give it, what to keep private and what you still need to check.</p>
           {reviewMode && <p className="review-banner">Review mode · Approved and unpublished guide pages are shown together.</p>}
-          <label className="hero-search" htmlFor="guide-search">
-            <span>What do you need help with?</span>
+          <form className="hero-search" role="search" onSubmit={submitSearch}>
+            <label htmlFor="guide-search">What do you need help with?</label>
             <span className="hero-search__field">
               <input
                 id="guide-search"
@@ -119,9 +143,10 @@ export function GuideLibrary({ guides, reviewMode = false }: { guides: Guide[]; 
                 placeholder="Try prompts or privacy"
                 autoComplete="off"
               />
-              <a href="#all-guides">Search</a>
+              <button type="submit">Show guides</button>
             </span>
-          </label>
+            <span className="hero-search__status" aria-live="polite">{searchStatus}</span>
+          </form>
         </div>
         {featured && (
           <div className="guides-hero__feature" aria-label="Featured guide">
