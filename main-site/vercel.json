@@ -34,6 +34,46 @@
       "permanent": true
     },
     {
+      "source": "/guides/chatgpt.html",
+      "destination": "/guides/make-chatgpt-answers-shorter.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/gemini.html",
+      "destination": "/guides/gemini-cannot-find-drive-file.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/copilot.html",
+      "destination": "/guides/check-copilot-excel-edits.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/grok.html",
+      "destination": "/guides/verify-grok-current-research.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/deepseek.html",
+      "destination": "/guides/fix-deepseek-wall-of-text.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/kimi.html",
+      "destination": "/guides/is-kimi-worth-paying-for.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/manus.html",
+      "destination": "/guides/test-manus-without-burning-credits.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/mistral.html",
+      "destination": "/guides/switch-from-chatgpt-to-mistral.html",
+      "permanent": true
+    },
+    {
       "source": "/resources/research-to-content-workflow.html",
       "destination": "/workbooks.html",
       "permanent": true

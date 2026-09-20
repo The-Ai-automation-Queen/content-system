@@ -36,7 +36,8 @@
               email: form.querySelector('[name=email]').value,
               offer: selected.value,
               source: window.location.pathname,
-              consent: true,
+              consent: form.querySelector('[name=consent]').checked,
+                marketingConsent: form.querySelector('[name=marketingConsent]').checked,
               website: form.querySelector('[name=website]').value
             })
           });

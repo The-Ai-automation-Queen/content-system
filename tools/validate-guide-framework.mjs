@@ -6,11 +6,16 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (relativePath) => fs.readFileSync(path.join(root, relativePath), "utf8");
 const publication = JSON.parse(read("data/guide-publication.json"));
+const preview = JSON.parse(read("data/guide-preview.json"));
 const inventory = JSON.parse(read("next-app/content/guides.json")).guides;
+const modelSeriesSource = read("next-app/content/model-guide-series.ts");
 const pageSource = [
   read("next-app/content/guide-page.ts"),
   read("next-app/content/tool-guide-batch.ts"),
   read("next-app/content/guide-batch-three.ts"),
+  read("next-app/content/claude-series.ts"),
+  read("next-app/content/instagram-dashboard-guide.ts"),
+  modelSeriesSource,
 ].join("\n");
 const librarySource = read("next-app/content/guides.ts");
 const headerSource = read("next-app/components/chrome/site-header.tsx");
@@ -30,6 +35,10 @@ const failures = [];
 const approved = publication.approved ?? [];
 const slugs = approved.map((guide) => guide.slug);
 const inventorySlugs = new Set(inventory.map((guide) => guide.slug));
+const approvedSlugSet = new Set(slugs);
+const reviewGuides = inventory.filter((guide) => guide.reviewStatus === "page review" && !approvedSlugSet.has(guide.slug));
+const previewBySlug = new Map((preview.guides ?? []).map((guide) => [guide.slug, guide]));
+const hasStructuredSlug = (slug) => pageSource.includes(`slug: "${slug}"`) || pageSource.includes(`"slug": "${slug}"`);
 
 if (publication.schemaVersion !== 1) failures.push("Unsupported guide publication schema version.");
 if (!approved.length) failures.push("The publication registry has no approved guides.");
@@ -37,13 +46,29 @@ if (new Set(slugs).size !== slugs.length) failures.push("The publication registr
 
 for (const guide of approved) {
   if (!inventorySlugs.has(guide.slug)) failures.push(`Approved guide is missing from inventory: ${guide.slug}`);
-  if (!pageSource.includes(`slug: "${guide.slug}"`)) failures.push(`Approved guide has no structured page: ${guide.slug}`);
+  if (!hasStructuredSlug(guide.slug)) failures.push(`Approved guide has no structured page: ${guide.slug}`);
   if (!guide.section || !Number.isFinite(guide.journeyOrder)) failures.push(`Approved guide needs a section and journeyOrder: ${guide.slug}`);
   if (!/^guide-[a-z0-9-]+$/.test(guide.lumailTag || "")) failures.push(`Approved guide has no Lumail tag mapping: ${guide.slug}`);
-  if (!pageSource.includes(`lumailTag: "${guide.lumailTag}"`)) failures.push(`Approved guide Lumail tag differs from its structured page: ${guide.slug}`);
+  const hasLiteralTag = pageSource.includes(`lumailTag: "${guide.lumailTag}"`) || pageSource.includes(`"lumailTag": "${guide.lumailTag}"`);
+  const hasSeriesTag = guide.lumailTag === `guide-${guide.slug}` && modelSeriesSource.includes(`slug: "${guide.slug}"`);
+  if (!hasLiteralTag && !hasSeriesTag) failures.push(`Approved guide Lumail tag differs from its structured page: ${guide.slug}`);
+}
+
+for (const guide of reviewGuides) {
+  const previewGuide = previewBySlug.get(guide.slug);
+  if (!previewGuide) failures.push(`Review guide is missing from the preview email allowlist: ${guide.slug}`);
+  if (previewGuide && !/^guide-[a-z0-9-]+$/.test(previewGuide.lumailTag || "")) {
+    failures.push(`Review guide has no valid preview Lumail tag: ${guide.slug}`);
+  }
+  if (previewGuide && !hasStructuredSlug(guide.slug)) {
+    failures.push(`Review guide has no structured page: ${guide.slug}`);
+  }
 }
 
 const structuredCovers = new Set([...pageSource.matchAll(/cover:\s*["']([^"']+)["']/g)].map((match) => match[1]));
+for (const match of modelSeriesSource.matchAll(/^\s*slug:\s*"([^"]+)"/gm)) {
+  structuredCovers.add(`/images/guides/${match[1]}.webp`);
+}
 for (const cover of structuredCovers) {
   if (!/\.webp$/i.test(cover)) {
     failures.push(`Structured guide cover must use WebP: ${cover}`);

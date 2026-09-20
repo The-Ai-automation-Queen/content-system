@@ -47,6 +47,7 @@ button, input { font: inherit; }
 .guides-hero h1 { margin: 0 0 24px; font: 400 clamp(50px,5.2vw,74px)/.95 var(--font-display), serif; letter-spacing: -.048em; text-wrap: balance; }
 .guides-hero h1 em { color: var(--blue); font-weight: 400; font-style: inherit; }
 .guides-hero__copy > p:not(.eyebrow) { max-width: 570px; margin: 0 0 30px; color: var(--muted); font-size: 20px; line-height: 1.5; }
+.guides-hero__copy > .review-banner { display: inline-flex; width: fit-content; margin: -10px 0 24px; border: 1px solid var(--ink); padding: 9px 12px; color: var(--ink); background: var(--cream); font: 700 11px/1.25 var(--font-mono), monospace; letter-spacing: .04em; text-transform: uppercase; }
 .guides-hero__feature { min-width: 0; }
 .hero-search { display: grid; max-width: 570px; gap: 8px; color: var(--ink); font: 700 12px/1.2 var(--font-ui), sans-serif; }
 .hero-search__field { display: grid; grid-template-columns: 1fr auto; border: 1px solid var(--ink); background: #fff; }

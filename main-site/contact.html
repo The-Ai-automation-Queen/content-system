@@ -17,9 +17,9 @@
 <meta property="og:image" content="https://www.shiftandlead.com/Portrait.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://www.shiftandlead.com/contact.html">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+
+
 <link rel="stylesheet" href="/assets/site.css?v=20260824">
 <style>
 .contact-page{background:#fff}
@@ -56,7 +56,7 @@
   .contact-form button{width:100%;justify-content:center}
 }
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="/assets/brand-system.css?v=d1ac8ee9">
 <link rel="stylesheet" href="/assets/density-system.css?v=37adda98">
 <link rel="stylesheet" href="/assets/mobile-polish.css?v=20260824">
@@ -120,6 +120,7 @@
 }
 </style>
 <script defer src="/assets/events.js"></script>
+<link rel="stylesheet" href="/assets/local-fonts.css">
 </head>
 <body class="contact-page" data-page-kind="standard">
 <!-- chrome:nav -->
@@ -145,13 +146,13 @@
     <h2 id="contact-form-title">Tell me the situation.</h2>
     <p>I read these myself. If I can help, I will tell you what I think the most useful next step is.</p>
     <form class="contact-form" id="site-contact-form" action="https://auto.shiftandlead.com/webhook/formspree-lead" method="POST">
-      <label>Your name
+      <label>Your name (required)
         <input type="text" name="name" autocomplete="name" required>
       </label>
-      <label>Your email
+      <label>Your email (required)
         <input type="email" name="email" autocomplete="email" required>
       </label>
-      <label class="full">What do you want help with?
+      <label class="full">What do you want help with? (required)
         <select name="reason" required>
           <option value="">Choose one</option>
           <option value="build-with-ai">Build something with AI</option>
@@ -159,14 +160,14 @@
           <option value="general-question">General question</option>
         </select>
       </label>
-      <label class="full">What is happening now, and what would you like to change?
+      <label class="full">What is happening now, and what would you like to change? (required)
         <textarea name="message" required></textarea>
       </label>
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
       <input type="hidden" name="source" value="main-site-contact-page">
       <button class="button primary" type="submit">Send my message</button>
       <p class="contact-status" id="site-contact-status" role="status" aria-live="polite"></p>
-    </form>
+    <p class="form-privacy-note">We use your contact details and message to respond to this enquiry. Required fields are marked by the form; please leave out sensitive information. <a href="/privacy.html">Privacy notice</a>.</p></form>
     <p class="contact-note">For a specific build, you can also go straight to <a href="/build-sprint.html">Build with me</a>. For teams, see <a href="/workshops.html">workshops and keynotes</a>.</p>
   </section>
 </main>

@@ -80,45 +80,83 @@ export const copilotGuide = {
 } as const satisfies GuidePage;
 
 export const metaAiGuide = {
-  slug: "meta-ai", title: "Should you use Meta AI?",
-  promise: "Use Meta AI for quick questions, voice help and creative work inside apps you already use. Do not treat a convenient chat inside WhatsApp or Instagram as a private place for sensitive information.",
-  cover: "/images/guides/meta-ai.webp", coverAlt: "The small blue robot mascot using a vintage messaging console", seoDescription: "A practical guide to Meta AI in WhatsApp, Instagram, Facebook, Messenger and the Meta AI app, including privacy and Incognito Chat.", lumailTag: "guide-meta-ai",
+  slug: "meta-ai", title: "What is Meta Muse, and should you let it act for you?",
+  promise: "Muse can browse, fill forms and continue a task after you close the app. Start with a public comparison that cannot send, book, buy or change anything.",
+  cover: "/images/guides/meta-muse.webp", coverAlt: "The Blue Princess directing a clockwork browser while holding the final approval key", seoDescription: "A current beginner guide to Meta Muse, Meta AI, Muse Spark, permissions and a safe first task.", lumailTag: "guide-meta-ai",
   sourceNotes: [
-    { label: "Meta: Introducing the Meta AI app", url: "https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/" },
-    { label: "Meta: Incognito Chat", url: "https://about.fb.com/news/2026/05/incognito-chat-whatsapp-meta-ai/" },
+    { label: "Meta: Introducing Muse", url: "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" },
+    { label: "Meta: Security and safety for Muse", url: "https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse" },
+    { label: "Meta: Meta AI powered by Muse Spark", url: "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/" },
+    { label: "Meta: Introducing Muse Spark", url: "https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/" },
+    { label: "Meta: Meta One subscription", url: "https://about.fb.com/news/2026/09/introducing-meta-one-subscription-service-more-features-ai/" },
   ],
-  answer: { paragraphs: ["**Yes, for quick everyday help and creative tasks inside Meta's apps.** It is easy to reach, but that convenience is not a reason to share private messages, customer data or confidential work.", "Choose ChatGPT, Claude, Gemini or Copilot first when you need a dedicated work space, detailed document controls or company approval."] },
+  answer: { paragraphs: ["**Use Muse when a task needs several browser steps and you can set a clear stop point.** It is a personal agent, which means it can take actions rather than only answer a question.", "Keep it away from private work until you understand the accounts, read and send permissions, approval requests, memory and audit trail involved."] },
   sections: [
-    { kind: "cards", heading: "Choose where to use it", items: [
-      { title: "WhatsApp and Messenger", body: "Ask a quick question, create an image or get help inside a conversation. Check what context is being sent to Meta AI." },
-      { title: "Instagram and Facebook", body: "Use Meta AI for search, ideas and creative work close to the content you are viewing or making." },
-      { title: "Meta AI app and web", body: "Use voice or text in a separate assistant. Personalisation may use information you chose to share across connected Meta accounts." },
-      { title: "Incognito Chat", body: "Use it when available for a private, temporary Meta AI conversation. It is rolling out gradually and may not appear in every account yet." },
+    { kind: "cards", heading: "The Meta names are not the same product", items: [
+      { title: "Muse", body: "The personal agent at **muse.ai**. It can browse, fill forms, use connected apps and keep working in a dedicated virtual computer." },
+      { title: "Meta AI", body: "The assistant in Meta apps and on the web. New action features can use Muse Spark underneath, but Meta AI is not the Muse app." },
+      { title: "Muse Spark", body: "The underlying model family. Most readers do not need to use it directly." },
+      { title: "Muse Image and Video", body: "Creative models used for images and video. They are separate from giving a personal agent permission to act." },
+      { title: "Meta One", body: "A subscription bundle with higher limits and extra tools. It is not another name for the Muse personal agent." },
     ] },
-    { kind: "steps", heading: "Start without oversharing", introduction: "Treat Meta AI as a separate participant, even when it appears inside a private messaging app.", steps: [
-      { title: "Open Meta AI", body: "Go to **meta.ai**, open the Meta AI app or select the Meta AI icon inside a supported Meta app.", links: [{ label: "Open Meta AI", href: "https://www.meta.ai/" }] },
-      { title: "Use a harmless first task", body: "Ask for ideas, a public explanation or help rewriting text that contains no private information." },
-      { title: "Check before sharing", body: "Nothing is posted to the Discover feed unless you choose to share it. Still check the audience before publishing any result." },
-      { title: "Use Incognito Chat when available", body: "Select the Incognito option in WhatsApp or the Meta AI app for a temporary conversation that is not saved. Availability is still rolling out." },
+    { kind: "steps", heading: "Know what changes when Muse can act", introduction: "Meta says Muse runs work inside a dedicated virtual computer and uses a separate safety system for outbound actions. Your permissions still matter.", steps: [
+      { title: "Choose the connected apps", body: "Connect only the service needed for the task. Read access lets Muse see information. Send or action access can let it change something outside Muse." },
+      { title: "Read every approval", body: "Check the exact action, account and destination before approving a message, form, booking or other sensitive step." },
+      { title: "Use the audit trail", body: "Review what Muse did instead of judging only the final answer." },
+      { title: "Review memory and training", body: "Use the settings to opt out of model training when you want to, and ask Muse to forget a specific memory when it should no longer keep it." },
     ] },
-    { kind: "cards", heading: "What to keep outside", items: [
-      { title: "Private conversations", body: "Do not copy another person's messages into Meta AI without their knowledge." },
-      { title: "Customer and employee data", body: "Names, contact details, account information and private records do not belong in a casual AI chat." },
-      { title: "Passwords and financial details", body: "Never share login codes, payment details or identity documents." },
-      { title: "Confidential work", body: "Use an approved business tool and account instead of moving company information into a personal Meta account." },
+    { kind: "cards", heading: "What the safety claims mean today", items: [
+      { title: "Separate credentials", body: "Meta says passwords and payment details are stored separately so Muse does not see them directly." },
+      { title: "No ad-system sharing", body: "Meta says Muse conversations and virtual-computer data are not shared with its advertising systems." },
+      { title: "Confidential VM is later", body: "Meta says a Confidential VM is planned for later in 2026. Do not treat that planned protection as available now." },
+      { title: "Your judgement remains", body: "A technical control cannot decide whether a booking, message, purchase or data use is appropriate for your work." },
     ] },
-    { kind: "prose", heading: "The advanced route", paragraphs: ["Developers can build with Meta's Llama models, but that is a different decision from using Meta AI in an app.", "You need a technical owner, hosting choice, security review and clear data rules before running an open model for business work."], keyLine: "The Meta AI app is a consumer assistant. Llama deployment is a technical project." },
+    { kind: "prose", heading: "If Muse is not available", paragraphs: ["Meta launched Muse first in the United States on iOS, Android and the web. Availability and plans can vary as the rollout continues.", "Use the official Muse site or waitlist for your account. Do not pay a stranger for an invite code or try to bypass a regional rollout."], keyLine: "A missing access button is an availability issue, not a reason to hand account details to someone else." },
   ],
-  tryNow: { heading: "Try it now", introduction: "Use a public idea you want to explain more clearly.", prompt: safePrompt("short social post"), instructions: [
-    { title: "Open Meta AI", body: "Open **meta.ai** or the Meta AI app and start a new chat.", links: [{ label: "Open Meta AI", href: "https://www.meta.ai/" }] },
-    { title: "Copy and paste", body: "Select **Copy**, paste the instruction and add your non-confidential idea." },
-    { title: "Check the meaning", body: "Remove anything Meta AI invented and make sure the post still sounds like you." },
-  ], check: "Do not publish until every claim is accurate and the audience setting is correct." },
-  conclusion: { heading: "You now know when convenience is enough", paragraphs: ["Use Meta AI for quick, low-stakes help inside familiar apps. Choose a work-focused tool when the task needs controlled files, company information or a longer working space."], finishLine: "Keep it for convenience, not for information that needs stronger control." },
+  tryNow: { heading: "Test Muse without giving it an account", introduction: "Use one public comparison that must stop before any login, contact, booking or payment.", prompt: `You are helping me test whether a browser agent can research a simple task and respect a strict stop point.
+
+GOAL
+Find 3 publicly listed meeting rooms near King’s Cross for 4 people on Tuesday 6 October 2026 from 2–4 pm. Produce a comparison only. I am not asking you to make a booking or contact a venue.
+
+USE
+- Public venue pages.
+- Public booking pages that can be read without signing in.
+- A public map source for walking distance.
+
+FOR EACH OPTION, RETURN
+1. Venue and room name.
+2. Full address.
+3. Public price for the requested 2-hour period, including the currency and whether tax is included. If the exact price is not public, write “Price needs checking”.
+4. Whether Wi-Fi is included, with the wording from the source.
+5. The cancellation policy. If it is not public, write “Cancellation policy needs checking”.
+6. Walking distance from King’s Cross station.
+7. A direct source link for the venue, price and cancellation claim.
+
+OUTPUT
+- Start with a table containing the 7 fields above.
+- Under the table, add “Best-supported option” and name the option with the fewest missing facts. Explain the choice in 2 sentences without making a booking recommendation.
+- Finish with “Completion check” and confirm whether all 3 options, requested fields, dates and source links were checked.
+
+STRICT LIMITS
+- Do not log in or ask me to log in.
+- Do not connect email, calendar, contacts, payment or another account.
+- Do not enter personal details or payment details.
+- Do not fill or submit a form.
+- Do not contact a venue, hold a room, request a quote or make a booking.
+- Do not use a sponsored result as evidence without opening the venue’s own page.
+- Do not invent an unavailable price, policy, facility or distance.
+
+If a page requires a login, payment detail or form submission, skip it and find another public option. Stop immediately after the comparison and completion check.`, instructions: [
+    { title: "Open Muse", body: "Go to **muse.ai** and sign in only through the official service if Muse is available to your account.", links: [{ label: "Open Muse", href: "https://muse.ai/" }] },
+    { title: "Copy the complete test", body: "Paste the instruction without connecting email, calendar, payment or another account." },
+    { title: "Open every source", body: "Check the venue, date, price, cancellation wording and walking distance yourself." },
+    { title: "Check the stop rule", body: "Confirm that Muse did not open a login, fill a form, contact a venue or attempt a booking." },
+  ], check: "The test passes only when all three options trace to public sources and Muse stops after the comparison." },
+  conclusion: { heading: "You now know what access Muse deserves", paragraphs: ["Use Muse for a larger task only after it completes the public test, respects the stop point and gives you an audit trail you can understand."], finishLine: "Grant the next permission only when the next action genuinely needs it." },
   related: [
-    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Set the privacy boundary before using AI inside messaging apps.", cover: "/images/guides/learn-master.webp" },
-    { slug: "copilot", title: "Should you use Copilot?", reason: "Compare a consumer assistant with an approved work route.", cover: "/images/guides/copilot.webp" },
-    { slug: "grok", title: "Should you use Grok?", reason: "Compare Meta's social context with Grok's access to X.", cover: "/images/guides/grok.webp" },
+    { slug: "test-meta-business-agent-customer-replies", title: "Should Meta Business Agent answer customers?", reason: "Test the separate WhatsApp Business reply product before using it live.", cover: "/images/guides/test-meta-business-agent-customer-replies.webp" },
+    { slug: "what-is-an-ai-browser", title: "What is an AI browser?", reason: "Understand what changes when an agent can work inside a browser.", cover: "/images/guides/what-is-an-ai-browser.webp" },
+    { slug: "connect-ai-to-email-files-calendar", title: "Should you connect AI to your accounts?", reason: "Review connected-app permissions before granting Muse more access.", cover: "/images/guides/connect-ai-to-email-files-calendar.webp" },
   ],
 } as const satisfies GuidePage;
 

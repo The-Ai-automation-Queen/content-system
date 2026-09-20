@@ -20,14 +20,14 @@
 <link rel="canonical" href="https://www.shiftandlead.com/workshops.html">
 
 <meta name="description" content="Practical AI workshops for business owners and teams: choose what to build first, make it useful in real work, and decide what still needs a person.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+
+
 <link rel="stylesheet" href="/assets/site.css?v=20260824">
 <link rel="stylesheet" href="/assets/pages/work-with-fatiha.css?v=9adbef2d">
 <script defer src="/motion.js?v=12d3e96d"></script>
 <link rel="stylesheet" href="/assets/section-overrides.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="/assets/brand-system.css?v=d1ac8ee9">
 <link rel="stylesheet" href="/assets/density-system.css?v=37adda98">
 <link rel="stylesheet" href="/assets/mobile-polish.css?v=20260824">
@@ -92,6 +92,7 @@
 </style>
 <style id="final-workshop-polish">body[data-page-kind="workshops"] .talk{padding:28px!important}body[data-page-kind="workshops"] .talk .fmt{margin-bottom:16px!important}body[data-page-kind="workshops"] .talk h3{margin:0 0 14px!important}body[data-page-kind="workshops"] .talk p{margin:0 0 20px!important}body[data-page-kind="workshops"] .talk .fee{display:block!important;margin-top:10px!important}body[data-page-kind="workshops"] .guarantee h2{font-size:clamp(34px,4.6vw,46px)!important;line-height:1.08!important;margin-bottom:18px!important}body[data-page-kind="workshops"] .guarantee .line{font-size:18px!important;line-height:1.55!important;font-weight:400!important;margin:0!important}body[data-page-kind="workshops"] .guarantee .support{display:none!important}@media(max-width:700px){body[data-page-kind="workshops"] .talk{padding:24px 20px!important}body[data-page-kind="workshops"] .talk h3{font-size:27px!important;line-height:1.12!important}body[data-page-kind="workshops"] .talk p{font-size:17px!important;line-height:1.55!important}body[data-page-kind="workshops"] .guarantee{padding:24px 20px!important}body[data-page-kind="workshops"] .guarantee h2{font-size:36px!important}body[data-page-kind="workshops"] .guarantee .line{font-size:17px!important;line-height:1.5!important}}</style>
 <script defer src="/assets/events.js"></script>
+<link rel="stylesheet" href="/assets/local-fonts.css">
 </head>
 <body data-page-kind="workshops">
 
@@ -194,16 +195,16 @@
     <h2>Tell me what you want to build or bring to your team.</h2>
     <p>Tell me who the session is for and what you want to be different afterwards. I reply within 48 hours.</p>
     <form action="https://auto.shiftandlead.com/webhook/formspree-lead" method="POST" class="booking-form" id="booking-form" data-offer-form="signature-workshop" data-event="workshop_application" data-success="Got it. I will reply with the fit, format and a firm quote, usually within 48 hours.">
-      <input type="text" name="name" placeholder="Your name" required>
-      <input type="email" name="email" placeholder="Work email" required>
-      <input type="text" name="company" placeholder="Organisation" required>
-      <input type="text" name="team_size" placeholder="How many people in the room" required>
-      <input type="text" name="event_date" placeholder="Date or rough window" required>
-      <textarea name="details" placeholder="What do you want them doing differently afterwards?" required></textarea>
+      <label>Your name (required)<input type="text" name="name" placeholder="Your name" required></label>
+      <label>Work email (required)<input type="email" name="email" placeholder="Work email" required></label>
+      <label>Organisation (required)<input type="text" name="company" placeholder="Organisation" required></label>
+      <label>How many people in the room (required)<input type="text" name="team_size" placeholder="How many people in the room" required></label>
+      <label>Date or rough window (required)<input type="text" name="event_date" placeholder="Date or rough window" required></label>
+      <label>What do you want them doing differently afterwards? (required)<textarea name="details" required></textarea></label>
       <input type="hidden" name="source" value="www-workshops-apply">
   <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <button type="submit" class="btn">Apply with this form &rarr;</button>
-    </form>
+    <p class="form-privacy-note">We use your contact details and message to respond to this enquiry. Required fields are marked by the form; please leave out sensitive information. <a href="/privacy.html">Privacy notice</a>.</p></form>
     <p class="booking-status" id="booking-status" role="status" aria-live="polite" data-form-status hidden></p>
     <p style="margin-top:14px;font-size:14px;color:#E4EAFB"> Want to connect on LinkedIn? <a href="https://www.linkedin.com/in/fatihachikh" style="color:#E4EAFB">Message me.</a></p>
     <p style="margin-top:16px;font-size:14px"><a href="/guides/" style="color:#E4EAFB">Share the knowledge and start with the free guides &rarr;</a></p>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { approvedGuideSlugs } from "@/content/guides";
 import { GuideReadingPage } from "@/components/guides/guide-reading-page";
 import { getGuidePage, guidePages } from "@/content/guide-page";
 
@@ -14,6 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const canonical = `/guides/${guide.slug}.html`;
   return {
     title: guide.title,
+    ...(approvedGuideSlugs.includes(slug) ? {} : { robots: { index: false, follow: false } }),
     description: guide.seoDescription,
     alternates: { canonical },
     openGraph: {

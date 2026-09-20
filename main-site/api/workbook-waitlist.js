@@ -1,3 +1,4 @@
+const { validateRequest } = require("../lib/form-privacy");
 const WORKBOOKS = new Set([
   "find-your-zone-of-genius",
   "your-human-evidence",
@@ -5,15 +6,12 @@ const WORKBOOKS = new Set([
 ]);
 
 module.exports = async function handler(request, response) {
-  if (request.method !== "POST") {
-    response.setHeader("Allow", "POST");
-    return response.status(405).json({ error: "Method not allowed." });
-  }
+  if (!validateRequest(request, response)) return;
 
   const token = process.env.LUMAIL_API_TOKEN;
   if (!token) return response.status(503).json({ error: "The waitlist is not configured yet." });
 
-  const { email, firstName, product, source, website, consent } = request.body || {};
+  const { email, firstName, product, source, website, consent, marketingConsent } = request.body || {};
   if (website) return response.status(200).json({ success: true });
   if (consent !== true) return response.status(400).json({ error: "Consent is required." });
   if (!WORKBOOKS.has(product)) return response.status(400).json({ error: "This workbook is not configured." });
@@ -33,11 +31,16 @@ module.exports = async function handler(request, response) {
         name: typeof firstName === "string" ? firstName.trim().slice(0, 100) : "",
         tags: ["book-waitlist-ai-empowerment", `workbook-${product}`],
         fields: {
-          source: typeof source === "string" ? source.slice(0, 200) : `workbook-waitlist-${product}`,
+          consent: "true",
+          consent_version: "workbook-request-v2-2026-09-20",
+          consent_timestamp: new Date().toISOString(),
+          workbook_marketing_choice: marketingConsent === true ? "true" : "false",
+          ...(marketingConsent === true ? { marketing_consent: "true", marketing_consent_version: "optional-marketing-v1-2026-09-20", marketing_consent_timestamp: new Date().toISOString() } : {}),
+          source: `workbook-waitlist-${product}`,
           product,
         },
         replaceTags: false,
-        resubscribe: true,
+        resubscribe: false,
         triggerWorkflows: true,
       }),
     });
@@ -47,13 +50,13 @@ module.exports = async function handler(request, response) {
       console.error("Lumail workbook waitlist failed", {
         status: lumailResponse.status,
         product,
-        detail: result.message || result.error || "Unknown Lumail error",
+
       });
       return response.status(502).json({ error: "We could not join the waitlist. Please try again." });
     }
     return response.status(200).json({ success: true });
   } catch (error) {
-    console.error("Lumail workbook waitlist request failed", { product, error });
+    console.error("Lumail workbook waitlist request failed", { product });
     return response.status(502).json({ error: "We could not join the waitlist. Please try again." });
   }
 };

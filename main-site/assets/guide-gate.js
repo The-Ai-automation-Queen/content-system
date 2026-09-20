@@ -48,15 +48,16 @@
       '<section class="sl-guide-access__panel" aria-labelledby="sl-guide-access-title">' +
         '<p class="sl-guide-access__eyebrow">Free guide</p>' +
         '<h1 id="sl-guide-access-title">Access the guide</h1>' +
-        '<p>Enter your email to read the guide. I will also send occasional practical guides and product updates. You can leave at any time.</p>' +
+        '<p>Enter your email to read the guide and receive its link. Marketing emails are optional.</p>' +
         '<form novalidate>' +
           '<label for="sl-guide-first-name">First name <span>(optional)</span></label>' +
           '<input id="sl-guide-first-name" name="firstName" type="text" autocomplete="given-name">' +
           '<label for="sl-guide-email">Email address</label>' +
           '<input id="sl-guide-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">' +
           '<input class="sl-guide-access__trap" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">' +
+          '<label><input name="marketingConsent" type="checkbox"> Also send me practical Shift &amp; Lead emails and product updates (optional). Unsubscribe at any time.</label>' +
           '<button type="submit">Access the guide</button>' +
-          '<small>One email unlocks all free guides on this device. <a href="/privacy.html">Privacy</a>.</small>' +
+          '<small>We use Lumail to deliver the requested email. One email unlocks all free guides on this device. <a href="/privacy.html">Privacy</a>.</small>' +
           '<strong class="sl-guide-access__status" role="alert" aria-live="polite"></strong>' +
         '</form>' +
       '</section>';
@@ -92,6 +93,7 @@
             guideSlug: slug,
             source: window.location.pathname,
             consent: true,
+            marketingConsent: form.elements.marketingConsent.checked,
             timestamp: new Date().toISOString()
           }, campaign()))
         });

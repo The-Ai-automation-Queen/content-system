@@ -15,14 +15,15 @@
 <meta property="og:url" content="https://www.shiftandlead.com/ai-opportunity-map.html">
 <meta property="og:image" content="https://www.shiftandlead.com/Portrait.webp">
 <link rel="canonical" href="https://www.shiftandlead.com/ai-opportunity-map.html">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;family=Source+Serif+4:wght@400;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+
+
+
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/brand-system.css">
 <link rel="stylesheet" href="/assets/pages/ai-opportunity-map.css?v=20260904">
 <script defer src="/assets/events.js"></script>
 <script defer src="/assets/opportunity-interest.js?v=20260904"></script>
+<link rel="stylesheet" href="/assets/local-fonts.css">
 </head>
 <body data-page-kind="opportunity-map">
 <!-- chrome:nav -->
@@ -98,9 +99,9 @@
       <div><p class="map-eyebrow">Early access</p><h2 id="interest-title">Which format would help you most?</h2><p>Choose one and I will let you know when the first version is ready.</p></div>
       <form data-opportunity-interest>
         <fieldset><legend>I am interested in</legend><label><input type="radio" name="offer" value="ai-opportunity-map" required> The self-guided Map</label><label><input type="radio" name="offer" value="ai-decision-lab" required> The facilitated Decision Lab</label></fieldset>
-        <div class="map-form-row"><label>First name<input name="firstName" type="text" autocomplete="given-name" required></label><label>Email address<input name="email" type="email" autocomplete="email" required></label></div>
+        <div class="map-form-row"><label>First name (optional)<input name="firstName" type="text" autocomplete="given-name" maxlength="100"></label><label>Email address (required)<input name="email" type="email" autocomplete="email" required></label></div>
         <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="map-honeypot">
-        <label class="map-consent"><input name="consent" type="checkbox" required> I agree to receive this product update and occasional practical emails. I can unsubscribe at any time.</label>
+        <label class="map-consent"><input name="consent" type="checkbox" required> Email me about the product I selected. I can unsubscribe at any time.</label><label class="waitlist__consent map-consent"><input name="marketingConsent" type="checkbox"> Also send me practical Shift &amp; Lead emails and other product updates (optional).</label><p>We use Lumail to send these emails. Email is required; your name is optional. Read the <a href="/privacy.html">privacy notice</a>.</p>
         <button class="map-button map-button-primary" type="submit">Register my interest</button>
         <p class="map-status" role="status" aria-live="polite"></p>
       </form>

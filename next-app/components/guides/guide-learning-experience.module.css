@@ -1,0 +1,67 @@
+.experience { scroll-margin-top:100px; margin:28px 0; overflow-wrap:anywhere; }
+.experience [hidden] { display:none!important; }
+.header { display:flex; align-items:center; gap:12px; color:#2c4be0; }
+.header h2 { margin:0; color:#ff5733; font:600 clamp(25px,3vw,34px)/1.2 var(--font-display),serif; }
+.experience p { font-size:17px; line-height:1.6; }
+.experience .hint { font:13px/1.5 var(--font-ui),sans-serif; color:#57534e; }
+.experience button,.experience select,.experience input,.experience textarea { font:15px/1.5 var(--font-ui),sans-serif; }
+.experience button { cursor:pointer; min-height:44px; padding:10px 14px; background:white; border:1px solid #b9c2dd; color:#24211d; }
+.experience button:disabled { opacity:.4; cursor:default; }
+.experience button[aria-pressed=true] { background:#2c4be0; border-color:#2c4be0; color:white; }
+.experience :is(button,input,select,textarea,summary,a):focus-visible { outline:3px solid #2c4be0; outline-offset:3px; }
+.experience input:not([type=checkbox]),.experience select,.experience textarea { display:block; padding:10px; width:100%; box-sizing:border-box; border:1px solid #b9c2dd; border-radius:0; color:#24211d; background:white; }
+.experience textarea { min-height:92px; resize:vertical; }
+.experience label { font:600 14px/1.5 var(--font-ui),sans-serif; }
+.toolbar,.filters { display:flex; align-items:end; gap:14px; margin:24px 0; }
+.toolbar label,.filters label { flex:1; min-width:0; }
+.toolbar select,.filters input,.filters select { margin-top:7px; }
+.section { border-top:1px solid #ddd; padding-top:18px; margin:18px 0; }
+.section h3 { margin:0 0 14px; font:600 24px/1.25 var(--font-display),serif; }
+.experience details { padding:14px 16px; margin:8px 0; border:1px solid #dce2fa; background:#fafbff; }
+.experience summary { display:flex; align-items:center; gap:10px; cursor:pointer; font:600 17px/1.45 var(--font-ui),sans-serif; }
+.experience summary:after { content:'+'; margin-left:auto; }
+.experience details[open]>summary:after { content:'−'; }
+.experience summary::-webkit-details-marker { display:none; }
+.experience summary { list-style:none; }
+.options { display:flex; flex-wrap:wrap; gap:8px; }
+.result { padding:16px; margin-top:14px; background:#f2f4ff; border:1px solid #dce2fa; }
+.steps { padding:0; list-style:none; display:grid; gap:10px; }
+.steps li { padding:14px; border:1px solid #ddd; }
+.steps label,.check { display:flex; gap:12px; align-items:flex-start; }
+.experience input[type=checkbox] { accent-color:#2c4be0; width:18px; height:18px; flex-shrink:0; margin-top:2px; }
+.check { margin-top:20px; padding-top:12px; border-top:1px solid #ddd; }
+.steps p { margin:10px 0; }
+.links { display:flex; flex-wrap:wrap; gap:12px; font:14px/1.5 var(--font-ui),sans-serif; }
+.links a { color:#2c4be0; text-underline-offset:3px; }
+.footer { display:flex; align-items:center; justify-content:space-between; gap:12px; font:14px var(--font-ui),sans-serif; }
+.builder { display:grid; gap:10px; padding:20px; border:1px solid #dce2fa; background:#faf7f2; margin:22px 0; }
+.comparison { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.comparison>div { padding:14px; background:#f2f4ff; }
+.tryNow { margin-top:28px!important; }
+@media(max-width:600px) { .toolbar,.filters { align-items:stretch; flex-direction:column; } .comparison { grid-template-columns:1fr; } .builder { padding:14px; } .header { align-items:flex-start; } }
+
+.agentPanel { scroll-margin-top:88px; }
+.supportTitle { font:600 22px/1.25 var(--font-display),serif; margin-top:24px; }
+.header h2 { font-size:28px; }
+.section h3 { font-size:22px; }
+.experience li { font-size:17px; line-height:1.55; }
+.experience .hint { font-size:14px; }
+.steps details { margin-bottom:0; background:white; }
+.steps summary { font-size:14px; min-height:24px; }
+.experience input:not([type=checkbox]),.experience select,.experience textarea { font-size:16px; }
+@media(max-width:600px) {
+ .experience { margin:20px 0; }
+ .header h2 { font-size:23px; }
+ .section h3 { font-size:20px; }
+ .experience p,.experience li { font-size:16px; line-height:1.55; }
+ .experience .hint { font-size:14px; }
+ .experience summary { font-size:16px; }
+ .steps summary { font-size:14px; }
+ .section { margin:14px 0; padding-top:14px; }
+ .toolbar { margin:16px 0; gap:8px; }
+ .toolbar button { align-self:flex-start; }
+ .builder { margin:14px 0; }
+ .options { gap:6px; }
+ .options button { padding:8px 10px; font-size:14px; }
+ .experience details { padding:10px 12px; }
+}

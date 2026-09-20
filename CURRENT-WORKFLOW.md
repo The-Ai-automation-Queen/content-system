@@ -72,3 +72,11 @@ Product Hub approval and working destination evidence control each conversion.
 archive/, _archive/, reports/, old vault entries and archived queue decisions are
 historical evidence. Do not recursively concatenate them into a system prompt.
 Only context/current-context.json allowlisted context files are active knowledge.
+
+## Owner correction: archived workshops (20 September 2026)
+
+The old public workshops section is archived. Do not restore it, link guides to
+`/workshops.html`, or reuse “Explore the workshops”. The owner explicitly allows
+a plain statement that workshops are available for companies. No booking link,
+schedule or replacement destination has been approved. Preserve this restriction
+when building or publishing guides; older CTA approvals are superseded.

@@ -32,7 +32,8 @@
                 email: form.querySelector('[name=email]').value,
                 product: product,
                 source: 'workbook-waitlist-' + product,
-                consent: true,
+                consent: form.querySelector('[name=consent]').checked,
+                marketingConsent: form.querySelector('[name=marketingConsent]').checked,
                 website: form.querySelector('[name=website]').value,
                 timestamp: new Date().toISOString()
               })

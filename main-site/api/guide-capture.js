@@ -1,4 +1,6 @@
+const { validateRequest } = require("../lib/form-privacy");
 const publication = require("../../data/guide-publication.json");
+const preview = require("../../data/guide-preview.json");
 
 const APPROVED_GUIDES = new Map(
   publication.approved.map((guide) => [guide.slug, guide]),
@@ -11,10 +13,7 @@ function cleanText(value, maxLength) {
 }
 
 module.exports = async function handler(request, response) {
-  if (request.method !== "POST") {
-    response.setHeader("Allow", "POST");
-    return response.status(405).json({ error: "Method not allowed." });
-  }
+  if (!validateRequest(request, response)) return;
 
   const token = process.env.LUMAIL_API_TOKEN;
   if (!token) return response.status(503).json({ error: "Email delivery is not configured yet." });
@@ -38,16 +37,19 @@ module.exports = async function handler(request, response) {
   }
 
   const name = cleanText(firstName, 100);
-  if (!name) return response.status(400).json({ error: "Enter your first name." });
   if (consent !== true) return response.status(400).json({ error: "Consent is required." });
 
-  const guide = APPROVED_GUIDES.get(guideSlug);
+  // Draft forms work on local development and verified Vercel preview deployments.
+  // Publication remains controlled by the approved registry, never a client flag.
+  const allowPreview = process.env.VERCEL_ENV === "preview" ||
+    (process.env.NODE_ENV === "development" && !process.env.VERCEL_ENV);
+  const guide = APPROVED_GUIDES.get(guideSlug) ||
+    (allowPreview ? preview.guides.find((item) => item.slug === guideSlug) : undefined);
   if (!guide?.lumailTag) return response.status(400).json({ error: "This guide is not configured for email delivery." });
 
-  const consentTimestamp = cleanText(timestamp, 40) || new Date().toISOString();
-  const consentTextVersion = cleanText(consentVersion, 80) || "guide-access-v1";
-  const sourcePage = cleanText(source, 200) || `/guides/${guideSlug}.html`;
-  const campaign = attribution && typeof attribution === "object" ? attribution : {};
+  const consentTimestamp = new Date().toISOString();
+  const consentTextVersion = "guide-request-v2-2026-09-20";
+  const sourcePage = `/guides/${guideSlug}.html`;
 
   try {
     const lumailResponse = await fetch("https://lumail.io/api/v1/subscribers", {
@@ -66,12 +68,9 @@ module.exports = async function handler(request, response) {
           consent: "true",
           consent_version: consentTextVersion,
           consent_timestamp: consentTimestamp,
-          marketing_consent: marketingConsent === true ? "true" : "false",
-          utm_source: cleanText(campaign.utmSource, 100),
-          utm_medium: cleanText(campaign.utmMedium, 100),
-          utm_campaign: cleanText(campaign.utmCampaign, 100),
-          utm_content: cleanText(campaign.utmContent, 100),
-          referring_site: cleanText(campaign.referrer, 300),
+          guide_marketing_choice: marketingConsent === true ? "true" : "false",
+          ...(marketingConsent === true ? { marketing_consent: "true", marketing_consent_version: "optional-marketing-v1-2026-09-20", marketing_consent_timestamp: consentTimestamp } : {}),
+
         },
         replaceTags: false,
         resubscribe: false,
@@ -84,13 +83,13 @@ module.exports = async function handler(request, response) {
       console.error("Lumail guide capture failed", {
         status: lumailResponse.status,
         guideSlug,
-        detail: result.message || result.error || "Unknown Lumail error",
+
       });
       return response.status(502).json({ error: "We could not open the guide. Please try again." });
     }
     return response.status(200).json({ success: true });
   } catch (error) {
-    console.error("Lumail guide capture request failed", { guideSlug, error });
+    console.error("Lumail guide capture request failed", { guideSlug });
     return response.status(502).json({ error: "We could not open the guide. Please try again." });
   }
 };

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { GuideLibrary } from "@/components/guides/guide-library";
-import { publicGuides } from "@/content/guides";
+import { publicGuides, reviewGuides } from "@/content/guides";
 
 export const metadata: Metadata = {
   title: "Free AI guides for real work",
@@ -16,9 +16,10 @@ export const metadata: Metadata = {
 };
 
 export default function GuidesPage() {
+  const reviewMode = process.env.NODE_ENV === "development";
   return (
     <main>
-      <GuideLibrary guides={publicGuides} />
+      <GuideLibrary guides={reviewMode ? reviewGuides : publicGuides} reviewMode={reviewMode} />
 
       <section className="guides-cta" aria-labelledby="guides-cta-title">
         <div>

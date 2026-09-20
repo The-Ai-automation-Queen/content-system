@@ -36,7 +36,7 @@ function track(name: string, detail: Record<string, string>) {
   (window as Window & { slTrack?: (event: string, data?: Record<string, string>) => void }).slTrack?.(name, detail);
 }
 
-export function GuideLibrary({ guides }: { guides: Guide[] }) {
+export function GuideLibrary({ guides, reviewMode = false }: { guides: Guide[]; reviewMode?: boolean }) {
   const [level, setLevel] = useState<LevelFilter>("all");
   const [outcome, setOutcome] = useState<OutcomeFilter>("all");
   const [query, setQuery] = useState("");
@@ -102,6 +102,7 @@ export function GuideLibrary({ guides }: { guides: Guide[] }) {
           <p className="eyebrow">Free AI guides</p>
           <h1 id="guides-title">Use AI for real work. Keep the decisions that need <em>you.</em></h1>
           <p>Pick the task you want done. I will show you which tool fits, what to give it, what to keep private and what you still need to check.</p>
+          {reviewMode && <p className="review-banner">Review mode · Approved and unpublished guide pages are shown together.</p>}
           <label className="hero-search" htmlFor="guide-search">
             <span>What do you need help with?</span>
             <span className="hero-search__field">

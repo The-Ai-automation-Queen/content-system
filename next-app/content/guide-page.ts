@@ -1,5 +1,9 @@
+import { claudeGuide, claudeProjectsGuide } from "./claude-series";
+export { claudeGuide, claudeProjectsGuide } from "./claude-series";
+import { instagramDashboardGuide } from "./instagram-dashboard-guide";
 import { copilotGuide, deepSeekGuide, grokGuide, kimiGuide, manusGuide, metaAiGuide, mistralGuide } from "./tool-guide-batch";
 import { aiBrowserGuide, aiConnectionsGuide, aiSearchGuide, aiSkillsGuide, promptGuide } from "./guide-batch-three";
+import { modelSeriesGuides } from "./model-guide-series";
 
 export type GuideStep = {
   title: string;
@@ -7,7 +11,16 @@ export type GuideStep = {
   links?: readonly { label: string; href: string }[];
 };
 
+export type WalkthroughBlock =
+  | { kind: "heading" | "paragraph"; text: string }
+  | { kind: "note"; text: string; icon: string }
+  | { kind: "code"; text: string; label: string }
+  | { kind: "list"; items: readonly string[] }
+  | { kind: "table"; rows: readonly (readonly [string, string])[] };
+
 export type GuideSection =
+  | { kind: "walkthrough"; heading: string; introduction: string; blocks: readonly WalkthroughBlock[] }
+  | { kind: "tutorial"; heading: string; introduction: string; steps: readonly GuideStep[]; prompt?: string; check: string }
   | {
       kind: "prose";
       heading: string;
@@ -77,8 +90,12 @@ export type GuidePage = {
     heading?: string;
     paragraphs: readonly [string, ...string[]];
   };
-  sections: readonly [GuideSection, GuideSection, ...GuideSection[]];
-  tryNow: {
+  sections: readonly GuideSection[];
+  series?: { part: 1; tasks: readonly { id: string; title: string; outcome: string; example: string; prompt: string; result: string }[]; correction: string } | { part: 2; instructions: string; exercise: string };
+  workshopInvitation?: { title: string; body: string; href?: string; label?: string };
+  tutorial?: readonly GuideSection[];
+  gateTeaser?: { heading: string; body: string };
+  tryNow?: {
     heading: string;
     introduction: string;
     prompt: string;
@@ -93,6 +110,7 @@ export type GuidePage = {
       items: readonly [string, string, string];
     };
     finishLine: string;
+    extensions?: readonly string[];
   };
   paidNextStep?: {
     label: string;
@@ -1084,126 +1102,6 @@ My notes:
   ],
 } as const satisfies GuidePage;
 
-export const claudeGuide = {
-  slug: "claude",
-  title: "Should you use Claude?",
-  promise: "Use Claude when you want help reading, writing or thinking through detailed work without losing the thread. Start with Chat, then add Projects, connectors or Claude Code only when the job needs them.",
-  cover: "/images/guides/claude.webp",
-  coverAlt: "The small blue robot mascot checking a long document as it passes through a vintage writing machine",
-  seoDescription: "A beginner-friendly guide to Claude Chat, Projects, connectors and Claude Code, with current access steps, privacy controls and a useful first task.",
-  lumailTag: "guide-claude",
-  sourceNotes: [
-    { label: "Anthropic: Get started with Claude", url: "https://support.claude.com/en/articles/8114491-get-started-with-claude" },
-    { label: "Anthropic: Create and manage projects", url: "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" },
-    { label: "Anthropic: Use connectors", url: "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities" },
-    { label: "Anthropic: Use incognito chats", url: "https://support.claude.com/en/articles/12260368-use-incognito-chats" },
-    { label: "Anthropic: Claude memory", url: "https://support.claude.com/en/articles/11817273-use-claudes-chat-search-and-memory-to-build-on-previous-context" },
-    { label: "Anthropic: Claude Code user FAQ", url: "https://support.claude.com/en/articles/14554922-claude-code-user-faq" },
-  ],
-  answer: {
-    paragraphs: [
-      "**Yes, Claude is worth trying when your work involves long documents, careful writing or a problem you need to think through over several rounds.**",
-      "Start with the free plan and one document or task you already understand. Choose something else first if the main value you need is direct access to Microsoft 365 or Google Workspace.",
-    ],
-  },
-  sections: [
-    {
-      kind: "cards",
-      heading: "Choose the part you actually need",
-      items: [
-        { title: "Claude Chat", body: "Use Chat for writing, explanations, document questions, comparisons and one-off thinking. This is where most beginners should start." },
-        { title: "Projects", body: "Use a Project for work you return to. It keeps related chats, instructions and source material together. Free accounts can create a limited number of Projects." },
-        { title: "Cowork", body: "Use Cowork for longer or shared work when it appears in your account. If you do not have it, ignore it and continue with Chat or Projects." },
-        { title: "Claude Code", body: "Use Claude Code when you work inside a software project. It can read, edit and check code from a terminal or supported coding tool." },
-      ],
-    },
-    {
-      kind: "cards",
-      heading: "Match Claude to the job",
-      items: [
-        { title: "Read a long document", body: "Attach the file, say what decision or question matters and ask Claude to point to the passages supporting its answer." },
-        { title: "Improve a draft", body: "Give Claude the audience, purpose and parts that must stay. Ask it to explain its changes instead of silently replacing your meaning." },
-        { title: "Keep work together", body: "Create a Project when the same source material and instructions will be used more than once." },
-        { title: "Create a working file", body: "Claude can create or edit documents, spreadsheets, presentations and PDFs when that feature is available on your account. Check the finished file, not only the chat explanation." },
-      ],
-    },
-    {
-      kind: "steps",
-      heading: "Start safely",
-      introduction: "Use Claude without giving it unnecessary information.",
-      steps: [
-        { title: "Open Claude", body: "Go to **claude.ai**, create or sign in to an account and type your first request in the message box.", links: [{ label: "Open Claude", href: "https://claude.ai/" }] },
-        { title: "Start free", body: "Use the free plan to test one real task. Pay only when useful work repeatedly reaches a plan limit or needs a paid feature." },
-        { title: "Use Incognito when appropriate", body: "For a temporary conversation outside a Project, select the **ghost icon** before you start. Incognito chats are not saved to your history or memory and are not used for training, but they are still retained for a limited safety period." },
-        { title: "Review Memory", body: "Open **Settings → Memory** to see what Claude remembers or to turn memory and past-chat search off." },
-      ],
-    },
-    {
-      kind: "steps",
-      heading: "Connect another service only when the task needs it",
-      introduction: "A connector can let Claude read information or take actions using access you already have in another service.",
-      steps: [
-        { title: "Open the directory", body: "Open **Customize → Connectors**, select the **+** button and browse the directory. You can also open it from **+ → Connectors → Manage connectors** inside a chat." },
-        { title: "Read the capabilities", body: "Choose the connector and check whether it can read, write or take actions before selecting **Connect** or **Install**." },
-        { title: "Grant only the access you need", body: "Sign in to the correct account and review every permission. Claude inherits your access from the connected service." },
-        { title: "Enable it for the conversation", body: "Inside the chat, select **+ → Connectors** and turn on only the service needed for that task." },
-        { title: "Disconnect it", body: "Return to **Customize → Connectors**, choose the service and select **Disconnect** when it is no longer needed." },
-      ],
-    },
-    {
-      kind: "steps",
-      heading: "Claude Code is the advanced route",
-      introduction: "Stop here unless you work with code or have technical help. Claude Code can change real project files.",
-      steps: [
-        { title: "Check the prerequisite", body: "You need a software project, access to its files and comfort using a terminal or supported coding tool." },
-        { title: "Use the official installer", body: "Follow Anthropic's current Claude Code setup guide for your operating system. Do not copy installation commands from an old article or random video.", links: [{ label: "Open the Claude Code setup", href: "https://docs.anthropic.com/en/docs/claude-code/getting-started" }] },
-        { title: "Open the project first", body: "Navigate to the correct project folder, start Claude Code and sign in with an eligible Claude plan or Anthropic Console account." },
-        { title: "Keep control", body: "Review the plan and file changes before approval. Do not give it a confidential repository or live deployment access until your technical and security rules are clear." },
-      ],
-    },
-  ],
-  tryNow: {
-    heading: "Try it now",
-    introduction: "Use a short, non-confidential document or set of notes. Claude will turn it into a decision brief without filling gaps with guesses.",
-    prompt: `Help me turn the source below into a short decision brief.
-
-Use only the source I provide.
-
-Give me:
-
-1. The decision or question at the centre of the source.
-2. The 3 facts that matter most.
-3. The options mentioned, with the evidence for each one.
-4. What is still missing or unclear.
-5. The next question I should answer before deciding.
-
-Quote the exact line supporting every fact. If the source does not support a claim, write "Not in the source."
-
-Source:
-
-[Paste non-confidential text here]`,
-    instructions: [
-      { title: "Open Claude", body: "Go to **claude.ai** and start a new conversation.", links: [{ label: "Open Claude", href: "https://claude.ai/" }] },
-      { title: "Copy and paste", body: "Select **Copy**, paste the instruction and replace the bracketed text." },
-      { title: "Remove private information", body: "Do not use names, customer records, passwords, confidential files or private conversations." },
-      { title: "Check every quote", body: "Compare Claude's quoted evidence with your source before you use the brief." },
-    ],
-    check: "If a quote does not support the point beside it, remove that point or ask Claude to correct it using only the source.",
-  },
-  conclusion: {
-    heading: "You now know where Claude fits",
-    paragraphs: [
-      "Use **Chat** for one task, **Projects** for repeated work, **connectors** only when access is necessary and **Claude Code** only for software work.",
-    ],
-    finishLine: "Keep Claude if it helps you understand or improve detailed work while making its evidence easy to check.",
-  },
-  related: [
-    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Decide what must stay out before you upload documents or connect another service.", cover: "/images/guides/learn-master.webp" },
-    { slug: "chatgpt", title: "Should you use ChatGPT?", reason: "Compare Claude with a broader everyday tool before choosing a main assistant.", cover: "/images/guides/chatgpt.webp" },
-    { slug: "gemini", title: "Should you use Gemini?", reason: "See whether working closer to Google Workspace would save more time.", cover: "/images/guides/gemini.webp" },
-  ],
-} as const satisfies GuidePage;
-
 export const geminiGuide = {
   slug: "gemini",
   title: "Should you use Gemini?",
@@ -1328,7 +1226,7 @@ Notes:
   ],
 } as const satisfies GuidePage;
 
-export const guidePages = [whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide, whichAiToolGuide, chatGptGuide, claudeGuide, geminiGuide, copilotGuide, metaAiGuide, grokGuide, deepSeekGuide, kimiGuide, manusGuide, mistralGuide, promptGuide, aiBrowserGuide, aiConnectionsGuide, aiSkillsGuide, aiSearchGuide] as const;
+export const guidePages = [instagramDashboardGuide, whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide, whichAiToolGuide, chatGptGuide, claudeGuide, claudeProjectsGuide, geminiGuide, copilotGuide, metaAiGuide, grokGuide, deepSeekGuide, kimiGuide, manusGuide, mistralGuide, promptGuide, aiBrowserGuide, aiConnectionsGuide, aiSkillsGuide, aiSearchGuide, ...modelSeriesGuides] as const;
 
 export function getGuidePage(slug: string) {
   return guidePages.find((guide) => guide.slug === slug);

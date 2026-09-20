@@ -57,7 +57,8 @@ export function GuideAccessBoundary({
           website: form.get("website"),
           guideSlug,
           source: window.location.pathname,
-          consent: form.get("consent") === "on",
+          consent: true,
+          marketingConsent: form.get("marketingConsent") === "on",
           timestamp: new Date().toISOString(),
         }),
       });
@@ -91,19 +92,19 @@ export function GuideAccessBoundary({
         <section className={styles.captureBoundary} aria-labelledby={`guide-gate-title-${guideSlug}`}>
           <span className={styles.gateLabel}>Continue this guide</span>
           <h2 id={`guide-gate-title-${guideSlug}`}>Keep reading {guideTitle}</h2>
-          <p>Enter your details to open the rest of this guide now.</p>
+          <p>Your email is required to open the guide and receive its link. Your name is optional.</p>
           <form onSubmit={submit}>
-            <label htmlFor={`guide-first-name-${guideSlug}`}>First name</label>
-            <input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" required />
-            <label htmlFor={`guide-email-${guideSlug}`}>Email address</label>
+            <label htmlFor={`guide-first-name-${guideSlug}`}>First name (optional)</label>
+            <input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} />
+            <label htmlFor={`guide-email-${guideSlug}`}>Email address (required)</label>
             <input id={`guide-email-${guideSlug}`} name="email" type="email" autoComplete="email" required placeholder="you@example.com" />
             <input className={styles.honeypot} name="website" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
             <label className={styles.consent}>
-              <input name="consent" type="checkbox" required />
-              <span>I agree to receive this guide and practical Shift &amp; Lead emails. I can unsubscribe at any time.</span>
+              <input name="marketingConsent" type="checkbox" />
+              <span>Also send me practical Shift &amp; Lead emails and product updates (optional). I can unsubscribe at any time.</span>
             </label>
             <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Opening..." : "Open the rest of the guide"}</button>
-            <small>This also unlocks all free guides on this device. Read the <a href="/privacy.html">privacy notice</a>.</small>
+            <small>We use Lumail to deliver your requested email. Marketing is optional. This also unlocks all free guides on this device. Read the <a href="/privacy.html">privacy notice</a>.</small>
             {status === "error" && <strong role="alert">{message}</strong>}
           </form>
         </section>

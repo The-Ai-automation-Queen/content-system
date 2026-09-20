@@ -1,4 +1,9 @@
+import { ClaudeSeriesExperience, SeriesGuideLink } from "./claude-series-experience";
 import Image from "next/image";
+import { GuideLearningExperience } from "./guide-learning-experience";
+import { guideFormats } from "@/content/guide-formats";
+import { GuideIcon, cleanLabel } from "./guide-icon";
+import { InteractiveWalkthrough } from "./interactive-walkthrough";
 import Link from "next/link";
 import { GuideAccessBoundary } from "./guide-access-boundary";
 import { CopyPrompt } from "./copy-prompt";
@@ -12,6 +17,46 @@ function RichText({ children }: { children: string }) {
 }
 
 function Section({ section }: { section: GuideSection }) {
+  if (section.kind === "walkthrough") {
+    return (
+      <section className={`${styles.section} ${styles.walkthrough}`}>
+        <h2>{section.heading}</h2>
+        <p className={styles.sectionIntro}>{section.introduction}</p>
+        {section.blocks.map((block, index) => {
+          if (block.kind === "heading") return <h3 key={index}>{block.text}</h3>;
+          if (block.kind === "paragraph") return <p key={index}>{block.text}</p>;
+          if (block.kind === "code") return <CopyPrompt key={index} label={block.label} prompt={block.text} />;
+          if (block.kind === "note") return <aside className={styles.sourceNote} key={index}><span aria-hidden="true">{block.icon}</span><p>{block.text}</p></aside>;
+          if (block.kind === "list") return <ol className={styles.sourceSteps} key={index}>{block.items.map((item) => <li key={item}>{item}</li>)}</ol>;
+          if (block.kind === "table") return <table className={styles.sourceTable} key={index}><thead><tr><th scope="col">Error</th><th scope="col">Fix</th></tr></thead><tbody>{block.rows.map(([error, fix]) => <tr key={error}><th scope="row">{error}</th><td>{fix}</td></tr>)}</tbody></table>;
+          return null;
+        })}
+      </section>
+    );
+  }
+
+  if (section.kind === "tutorial") {
+    return (
+      <section className={styles.section}>
+        <h2>{section.heading}</h2>
+        <p className={styles.sectionIntro}><RichText>{section.introduction}</RichText></p>
+        <ol className={styles.steps}>
+          {section.steps.map((step) => (
+            <li key={step.title}>
+              <h3>{step.title}</h3>
+              <p><RichText>{step.body}</RichText></p>
+              {step.links && <div className={styles.stepLinks}>{step.links.map((link) => (
+                <a href={link.href} key={link.href} rel="noreferrer" target="_blank">{link.label} ↗</a>
+              ))}</div>}
+            </li>
+          ))}
+        </ol>
+        {section.prompt && <CopyPrompt prompt={section.prompt} />}
+        <p className={styles.promptCheck}><strong>Check before continuing: </strong><RichText>{section.check}</RichText></p>
+      </section>
+    );
+  }
+
   if (section.kind === "accordion") {
     return (
       <section className={styles.section}>
@@ -50,7 +95,7 @@ function Section({ section }: { section: GuideSection }) {
           {section.items.map((item, index) => (
             <article key={item.title}>
               <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{item.title}</h3>
+              <h3>{cleanLabel(item.title)}</h3>
               <p><RichText>{item.body}</RichText></p>
             </article>
           ))}
@@ -113,6 +158,25 @@ function Section({ section }: { section: GuideSection }) {
 }
 
 export function GuideReadingPage({ guide }: { guide: GuidePage }) {
+  const RelatedLink = guide.series ? SeriesGuideLink : Link;
+  const learningFormat = guide.series ? undefined : guideFormats[guide.slug];
+  const interactive = guide.tutorial?.every((section) => section.kind === "walkthrough");
+  const conclusion = (<section className={styles.conclusion}>
+              <h2>{cleanLabel(guide.conclusion.heading)}</h2>
+              {guide.conclusion.paragraphs.map((paragraph) => (
+                <p key={paragraph}><RichText>{paragraph}</RichText></p>
+              ))}
+              {guide.conclusion.questions && (
+                <div className={styles.conclusionQuestions}>
+                  <p>{guide.conclusion.questions.introduction}</p>
+                  <ul>
+                    {guide.conclusion.questions.items.map((question) => <li key={question}>{question}</li>)}
+                  </ul>
+                </div>
+              )}
+              {guide.conclusion.finishLine && <p className={styles.conclusionLine}><RichText>{guide.conclusion.finishLine}</RichText></p>}
+              {guide.conclusion.extensions && <div className={styles.conclusionQuestions}><h3>Want to take it further?</h3><ul>{guide.conclusion.extensions.map((item) => <li key={item}>{item}</li>)}</ul></div>}
+            </section>);
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -152,7 +216,7 @@ export function GuideReadingPage({ guide }: { guide: GuidePage }) {
               {guide.answer.heading && <h2>{guide.answer.heading}</h2>}
               {guide.answer.paragraphs.map((paragraph) => <p key={paragraph}><RichText>{paragraph}</RichText></p>)}
             </section>
-            {guide.sections.map((section) => <Section section={section} key={section.heading} />)}
+            {learningFormat ? <div className={styles.learningPreview}><GuideIcon name="book"/><p>Explore the guide one section at a time, then put it into practice.</p></div> : guide.sections.map((section) => <Section section={section} key={section.heading} />)}
           </div>
 
           <GuideAccessBoundary
@@ -160,13 +224,16 @@ export function GuideReadingPage({ guide }: { guide: GuidePage }) {
             guideTitle={guide.title}
             teaser={(
               <>
-                <h2>{guide.tryNow.heading}</h2>
-                <p><RichText>{guide.tryNow.introduction}</RichText></p>
-                <p>{guide.tryNow.prompt}</p>
+                <h2>{guide.gateTeaser?.heading ?? guide.tryNow?.heading}</h2>
+                <p><RichText>{guide.gateTeaser?.body ?? guide.tryNow?.introduction ?? ""}</RichText></p>
+                {!guide.gateTeaser && <p>{guide.tryNow?.prompt}</p>}
               </>
             )}
           >
-            <section className={styles.tryNow}>
+            {guide.series && <ClaudeSeriesExperience series={guide.series} />}
+            {learningFormat && <GuideLearningExperience guide={guide} format={learningFormat} conclusion={conclusion} />}
+            {guide.tutorial?.every((section) => section.kind === "walkthrough") ? <InteractiveWalkthrough sections={guide.tutorial} slug={guide.slug} conclusion={conclusion} /> : guide.tutorial?.map((section) => <Section section={section} key={section.heading} />)}
+            {!learningFormat && guide.tryNow && <section className={styles.tryNow}>
               <h2>{guide.tryNow.heading}</h2>
               <p><RichText>{guide.tryNow.introduction}</RichText></p>
               <CopyPrompt prompt={guide.tryNow.prompt} />
@@ -188,22 +255,9 @@ export function GuideReadingPage({ guide }: { guide: GuidePage }) {
                 </ol>
               )}
               <p className={styles.promptCheck}><RichText>{guide.tryNow.check}</RichText></p>
-            </section>
-            <section className={styles.conclusion}>
-              <h2>{guide.conclusion.heading}</h2>
-              {guide.conclusion.paragraphs.map((paragraph) => (
-                <p key={paragraph}><RichText>{paragraph}</RichText></p>
-              ))}
-              {guide.conclusion.questions && (
-                <div className={styles.conclusionQuestions}>
-                  <p>{guide.conclusion.questions.introduction}</p>
-                  <ul>
-                    {guide.conclusion.questions.items.map((question) => <li key={question}>{question}</li>)}
-                  </ul>
-                </div>
-              )}
-              <p className={styles.conclusionLine}><RichText>{guide.conclusion.finishLine}</RichText></p>
-            </section>
+            </section>}
+            {!interactive && !learningFormat && conclusion}
+            {guide.workshopInvitation && <aside className={`${styles.paidNextStep} ${styles.workshopInvitation}`}><h2>{guide.workshopInvitation.title}</h2><p>{guide.workshopInvitation.body}</p>{guide.workshopInvitation.href && guide.workshopInvitation.label && <a className={styles.workshopLink} href={guide.workshopInvitation.href}>{guide.workshopInvitation.label}</a>}</aside>}
             {guide.paidNextStep && (
               <aside className={styles.paidNextStep} aria-labelledby="paid-next-step-title">
                 <span>{guide.paidNextStep.label}</span>
@@ -223,13 +277,13 @@ export function GuideReadingPage({ guide }: { guide: GuidePage }) {
               {guide.related.map((item) => item.status === "coming-next" ? (
                 <article className={`${styles.relatedCard} ${styles.relatedCardPending}`} key={item.slug}>
                   <figure><Image src={item.cover} alt="" aria-hidden="true" fill sizes="(max-width: 760px) 100vw, 33vw" /></figure>
-                  <div><h3>{item.title}</h3><p>{item.reason}</p><span>Coming next</span></div>
+                  <div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div>
                 </article>
               ) : (
-                <Link href={`/guides/${item.slug}.html`} className={styles.relatedCard} key={item.slug}>
+                <RelatedLink href={`/guides/${item.slug}.html`} className={styles.relatedCard} key={item.slug}>
                   <figure><Image src={item.cover} alt="" aria-hidden="true" fill sizes="(max-width: 760px) 100vw, 33vw" /></figure>
-                  <div><h3>{item.title}</h3><p>{item.reason}</p><span>Start the guide →</span></div>
-                </Link>
+                  <div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div>
+                </RelatedLink>
               ))}
             </div>
           </div>

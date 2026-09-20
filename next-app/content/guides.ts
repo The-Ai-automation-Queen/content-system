@@ -1,5 +1,6 @@
 import source from "./guides.json";
 import publication from "../../data/guide-publication.json";
+import preview from "../../data/guide-preview.json";
 
 export type GuideTrack = "understand" | "create" | "setup" | "tools";
 
@@ -51,9 +52,12 @@ export type Guide = {
   sequence: number;
 };
 
-export const guides = (source.guides as Guide[])
-  .filter((guide) => guide.status === "live")
+const inventoryGuides = (source.guides as Guide[])
   .sort((a, b) => a.sequence - b.sequence || a.title.localeCompare(b.title))
+  .map((guide) => ({ ...guide }));
+
+export const guides = inventoryGuides
+  .filter((guide) => guide.status === "live")
   .map((guide) => ({ ...guide }));
 
 /**
@@ -66,62 +70,13 @@ export const approvedGuideSlugs = publication.approved
   .map((guide) => guide.slug);
 
 const approvedGuideSlugSet = new Set<string>(approvedGuideSlugs);
+const previewGuideSlugSet = new Set<string>(((preview.guides ?? []) as Array<{ slug: string }>).map((guide) => guide.slug));
 
 export const publicGuides = guides.filter((guide) => approvedGuideSlugSet.has(guide.slug));
+export const reviewGuides = inventoryGuides.filter((guide) => approvedGuideSlugSet.has(guide.slug) || previewGuideSlugSet.has(guide.slug));
 export const hiddenGuideSlugs = guides
   .filter((guide) => !approvedGuideSlugSet.has(guide.slug))
   .map((guide) => guide.slug);
-
-/**
- * Editorially chosen next steps for the public guide series.
- *
- * These are deliberately stable rather than randomly shuffled. Each set gives
- * the reader a logical next lesson, something practical to use, and a relevant
- * alternative or deeper path. Keeping the rotation here prevents every article
- * from falling back to the same popular guides.
- */
-export const guideNextStepRotation: Record<string, readonly [string, string, string]> = {
-  "what-is-ai": ["ai-jargon-guide", "what-should-you-never-share-with-ai", "what-is-agentic"],
-  "ai-jargon-guide": ["what-is-ai", "what-is-agentic", "what-should-you-never-share-with-ai"],
-  "what-is-agentic": ["what-is-ai", "what-should-you-never-share-with-ai", "ai-jargon-guide"],
-  "what-should-you-never-share-with-ai": ["what-is-ai", "ai-jargon-guide", "what-is-agentic"],
-  "which-ai-tool-for-what": ["what-should-you-never-share-with-ai", "ai-jargon-guide", "what-is-agentic"],
-  "chatgpt": ["what-should-you-never-share-with-ai", "ai-jargon-guide", "what-is-ai"],
-  "claude": ["chatgpt", "what-should-you-never-share-with-ai", "gemini"],
-  "gemini": ["chatgpt", "what-should-you-never-share-with-ai", "claude"],
-  "copilot": ["chatgpt", "gemini", "what-should-you-never-share-with-ai"],
-  "meta-ai": ["what-should-you-never-share-with-ai", "grok", "gemini"],
-  "grok": ["what-should-you-never-share-with-ai", "meta-ai", "deepseek"],
-  "deepseek": ["what-should-you-never-share-with-ai", "mistral", "kimi"],
-  "kimi": ["deepseek", "manus", "what-is-agentic"],
-  "manus": ["what-is-agentic", "what-should-you-never-share-with-ai", "kimi"],
-  "mistral": ["deepseek", "manus", "what-should-you-never-share-with-ai"],
-  "what-is-a-prompt": ["which-ai-tool-for-what", "what-should-you-never-share-with-ai", "what-is-an-ai-browser"],
-  "what-is-an-ai-browser": ["connect-ai-to-email-files-calendar", "what-should-you-never-share-with-ai", "which-ai-tool-for-what"],
-  "connect-ai-to-email-files-calendar": ["what-should-you-never-share-with-ai", "what-is-an-ai-browser", "which-ai-tool-for-what"],
-  "ai-skills-worth-learning-for-work": ["what-is-a-prompt", "which-ai-tool-for-what", "what-is-agentic"],
-  "show-up-in-ai-search": ["what-is-a-prompt", "which-ai-tool-for-what", "claude"],
-};
-
-for (const guide of publicGuides) {
-  if (!guideNextStepRotation[guide.slug]) {
-    throw new Error(`Public guide ${guide.slug} is missing its editorial next-step rotation.`);
-  }
-}
-
-for (const [currentSlug, nextSlugs] of Object.entries(guideNextStepRotation)) {
-  if (!publicGuides.some((guide) => guide.slug === currentSlug)) {
-    throw new Error(`Next-step rotation contains a hidden or missing guide: ${currentSlug}.`);
-  }
-  if (new Set(nextSlugs).size !== 3 || nextSlugs.includes(currentSlug)) {
-    throw new Error(`Next-step rotation for ${currentSlug} must contain 3 different guides and no self-link.`);
-  }
-  for (const nextSlug of nextSlugs) {
-    if (!publicGuides.some((guide) => guide.slug === nextSlug)) {
-      throw new Error(`Next-step rotation for ${currentSlug} points to a hidden or missing guide: ${nextSlug}.`);
-    }
-  }
-}
 
 export function isPublicGuide(guide: Guide): boolean {
   return approvedGuideSlugSet.has(guide.slug);
@@ -138,9 +93,7 @@ export function getPublicRelatedGuides({
   hub?: GuideHub;
   outcomes?: readonly GuideOutcome[];
 }): Guide[] {
-  const rotatedSlugs = guideNextStepRotation[currentSlug] ?? [];
   const candidates = [
-    ...rotatedSlugs.map((slug) => publicGuides.find((guide) => guide.slug === slug)),
     ...preferredSlugs.map((slug) => publicGuides.find((guide) => guide.slug === slug)),
     ...publicGuides.filter((guide) => guide.hub === hub),
     ...publicGuides.filter((guide) => outcomes?.some((outcome) => guide.outcomes.includes(outcome))),
