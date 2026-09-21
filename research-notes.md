@@ -2,6 +2,53 @@
 
 ---
 
+## RESEARCH 048 — 2026-09-21 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `80d0704`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (positioning.md):** experienced professionals, founders and consultants who feel overwhelmed by AI or struggle to turn their knowledge into visible, valuable work.
+**Internal tooling discoveries this run:** none. This entry is `shift-lead` (public-topic) evidence only.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority and recency were weighed.
+
+### Signals
+
+1. **Anthropic — "Partnering with Accenture on embedded evaluation"** — published 2026-09-18 — https://www.anthropic.com/news/accenture-embedded-evaluation — fetched direct via WebFetch (inventory.md RSS slot, High priority); newest item on the Anthropic News index, one day fresher than RESEARCH 047's Sep 17 pick, not previously logged.
+   - `project_id`: shift-lead — `fit`: possible — `reason`: not direct audience-problem evidence (it's Anthropic/Accenture's own AI-safety-evaluation infrastructure, an internal-industry story), but usable as a credibility-grounding fact the way RESEARCH 047's "pace of AI development" item was used — shows frontier labs are now paying outsiders (Accenture's Faculty division, $1B+ over five years) to independently check their own claims, which supports a "verify, don't just trust the hype" framing rather than adding overwhelm/opportunity evidence directly.
+   - `supporting_source_excerpt`: "Embedded evaluators will work inside AI companies, with access comparable to an employee's"; both organizations plan to invest at least $1 billion over five years; the partnership is explicitly non-exclusive, with Anthropic "expect[ing] frontier labs to work with several organizations at once."
+   - `possible_use`: a citable anchor if a draft ever claims AI labs "grade their own homework" — this is a dated, named counterexample; low priority relative to signals 2–3 below.
+   - `assessed_at`: 2026-09-21
+
+2. **Resume Now — "AI-Whelmed Worker Report"** (via CPA Practice Advisor) — published 2026-09-17 — https://www.cpapracticeadvisor.com/2026/09/17/44-of-skilled-workers-feel-overwhelmed-by-the-pressure-to-learn-and-use-ai-at-work/190236/ — WebSearch + WebFetch; survey of 1,000+ U.S. employed workers fielded via Resume Now's qualified-panel research partners, syndicated by an independent accounting-trade publication (not a raw vendor press release).
+   - `project_id`: shift-lead — `fit`: useful — `reason`: names the exact shape of the audience problem in positioning.md — not "AI is bad" but "unsure where to start, no confidence, no clear employer expectations" — a direct, numeric match for "feel overwhelmed by AI."
+   - `supporting_source_excerpt`: "44% of skilled workers feel overwhelmed by pressure to learn and use AI at work"; "42% lack confidence integrating AI into workflows"; "44% uncertain where to start building AI skills"; "60% report AI expectations either absent or poorly defined at their workplace." Quote: "Being AI-whelmed does not mean workers are against AI. It means they are trying to keep up with a fast-changing workplace while feeling unsure of where to start or how to build confidence in their AI skills." — Keith Spencer, Resume Now.
+   - `possible_use`: source note — Resume Now is a commercial AI-resume vendor; this is treated as legitimate stats-based survey research (checked methodology: 1,000+ respondent panel, anonymized/aggregated), not a laundered anecdote like the RESEARCH 047 "Sarah" case study — still, attribute the vendor by name if quoting the exact percentages rather than presenting them as independent academic data. The "unsure where to start" framing is a strong, source-attributable hook for a "here's where to actually start" angle.
+   - `assessed_at`: 2026-09-21
+
+3. **Thomson Reuters Institute — "Future of Professionals Report 2026"** — published 2026-07-08 — https://www.thomsonreuters.com/en/institute/articles/future-of-professionals-analysis-human-side-of-ai — WebFetch; survey of 1,800+ professionals across 62 countries in law, tax, audit, accounting, compliance, risk and global trade.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: a large, credentialed, cross-sector survey that quantifies both the risk of losing judgement and the retention cost of getting AI wrong — strong evidence for the "protect human judgement" side of positioning.md, and distinct from RESEARCH 046's emlyon consulting-only survey (different sector mix, different angle: retention/flight-risk rather than task-automation).
+   - `supporting_source_excerpt`: "Over 90% of professionals experience some degree of AI-value misalignment"; "25% of affected professionals are considering leaving within two years" (cited at $232,000 replacement cost per person); "Nearly 50% worry about AI's impact on developing independent professional judgment"; "71% believe early-career roles need experienced mentorship to develop skills threatened by AI."
+   - `possible_use`: the "nearly 50% worry about losing independent judgement" stat is a direct, source-attributable line for the "what only you can bring" pillar — pairs with RESEARCH 046 signal 3 (emlyon's 11% stat) as two independent surveys reaching the same conclusion from different sectors, which is stronger than either alone.
+   - `assessed_at`: 2026-09-21
+
+### Rejected this run
+
+- "Consulting's 2026 Reckoning: AI, Niches and the Specialist Surge" (webpronews.com, dated 2026-01-25) — an SEO aggregator piece citing Mordor Intelligence, McKinsey, PwC, Gartner and others secondhand with no primary methodology of its own; excluded per research-policy.md's source-quality standard (a roundup of others' numbers is not itself a verified source).
+- MBO Partners "State of Independence" — a WebSearch snippet surfaced a "74% of independent workers now use generative AI, up from 65% in 2024" stat, but the primary MBO Partners report page did not display the figure directly and the secondary citation (staffingindustry.com) returned HTTP 403 on WebFetch. Not logged — could not independently confirm the number or its exact publication date against a readable source.
+
+### Source health this run
+
+- Anthropic News (High): direct WebFetch worked; fresh post today (Sep 18, one day newer than RESEARCH 047's pick) — no repeat-carry-forward this run.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 (blocked) — 5th consecutive failed run (044, 045, 046, 047, 048), now more than a month of the same failure on the same fetch path. Not retried via WebSearch fallback since the Anthropic slot was already filled. Operator: repeating RESEARCH 047's recommendation — either fix the fetch method (site appears to block the default WebFetch user agent) or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md` so future runs stop re-attempting a dead path.
+- Hugging Face, DeepMind, a16z, Lenny's (Medium/Low): not checked this run — RSS slot was already resolved by the fresh Anthropic item, consistent with inventory.md's fallback order (only fall through when the higher-priority slot is unfilled).
+- WebSearch: functional throughout; used to source the two non-RSS signals and to screen out the rejected aggregator/unverified-stat items above.
+- No signals were invented; every URL above is one actually returned by a fetch or search this run.
+
+### Historical-audience check
+
+Confirmed none of the above signals were forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only, consistent with security.md's queue-only publishing rule (which was not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 047 — 2026-09-18 | Signal harvest (current audience problem)
 
 **Status:** NOTED
