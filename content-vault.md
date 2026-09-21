@@ -13,6 +13,14 @@
 
 ## Most recent (quick reference)
 
+- 21/09/2026 | LinkedIn carousel | "You Owe a Client a Status Update and It's Been Sitting in Your Drafts for Three Days" — Fadi, Status Updates, Employee #034 | READY TO POST
+- 21/09/2026 | LinkedIn | "You Owe a Client a Status Update and It's Been Sitting in Your Drafts for Three Days" — Fadi, Status Updates, Employee #034 | READY TO POST
+- 21/09/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Khalil/Hana/Fadi | READY TO POST
+- 21/09/2026 | LinkedIn carousel | "You Know You Should Map Out Where You Actually Stand Before the Big Decision, But You Never Sit Down to Do It Properly" — Hana, SWOT Builder, Employee #033 | READY TO POST
+- 21/09/2026 | LinkedIn | "You Know You Should Map Out Where You Actually Stand Before the Big Decision, But You Never Sit Down to Do It Properly" — Hana, SWOT Builder, Employee #033 | READY TO POST
+- 21/09/2026 | LinkedIn | "Now Hiring: Three More AI Employees, Salary $0 Each" — wave announcement, Employees #32/#33/#34 | READY TO POST
+- 21/09/2026 | LinkedIn carousel | "You Had a Great Discovery Call and the Proposal's Been Sitting Half-Written for a Week" — Khalil, Proposal Writer, Employee #032 | READY TO POST
+- 21/09/2026 | LinkedIn | "You Had a Great Discovery Call and the Proposal's Been Sitting Half-Written for a Week" — Khalil, Proposal Writer, Employee #032 | READY TO POST
 - 14/09/2026 | LinkedIn carousel | "You Sent an NPS Survey and Never Actually Read What People Wrote in the Comments" — Sara, NPS Analyst, Employee #031 | READY TO POST
 - 14/09/2026 | LinkedIn | "You Sent an NPS Survey and Never Actually Read What People Wrote in the Comments" — Sara, NPS Analyst, Employee #031 | READY TO POST
 - 14/09/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Mona/Wael/Sara | READY TO POST
@@ -108,6 +116,259 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 174 — 21/09/2026 | LinkedIn carousel | You Owe a Client a Status Update and It's Been Sitting in Your Drafts for Three Days | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 173 (Fadi, Employee #034, Status Updates, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/fadi/fadi-status-updates-01.png through -06.png
+Source HTML: skills/carousel-factory/out/fadi-status-updates.html
+**CTA keyword:** STATUS, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You owe a client a status update and it's been sitting in your drafts for three days."
+Slide 2 (scene): "The work is actually going fine. Writing 'here's where things stand' keeps losing to whatever's more urgent that day, and the silence starts to feel worse than the update would."
+Slide 3 (role card): Fadi, Status Updates, Operations, Salary $0, never sleeps. "Fadi is AI. The only job he took was mine: turning what's actually happening into a clean status update, instead of letting silence stand in for progress."
+Slide 4 (how he works): 4-step list, tell him what's done/in progress/blocked, he writes one clean update, flags client-action items, you review and send.
+Slide 5 (demo): "Built and tested writing one real weekly status update. Setup about 10 minutes. He never sends anything or claims something is done that isn't."
+Slide 6 (CTA): "Want the free setup? Comment STATUS."
+
+---
+
+## ENTRY 173 — 21/09/2026 | LinkedIn | You Owe a Client a Status Update and It's Been Sitting in Your Drafts for Three Days | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Thursday episode 3)
+**Topic:** Employee #034, Fadi, Status Updates. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/status-updates-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/operations/operations-status-updates.md, read this run (repo already in session, pulled fresh, unchanged since 28/07). Real job description: write weekly per-client status notes, format done/in progress/blocked/next, keep updates under 200 words, flag blockers needing client action. Free playbook narrows this to one manually described snapshot at a time, per the free/paid line. Sixth employee from the Operations department (after Nadia/task-router, Lina/meeting-scheduler, Idris/SOP writer, Salma/client onboarding, Layla/time digest), a distinct angle: recurring client-facing status comms, not internal scheduling or process docs. Mode check: no receipt found anywhere for Fadi. Confirmed PLAYBOOK.
+
+---
+You owe a client a status update and it's been sitting in your drafts for three days.
+
+The work is actually going fine. Writing "here's where things stand" keeps losing to whatever's more urgent that day, and the silence starts to feel worse than the update would.
+
+Meet Employee #034.
+
+Fadi. Status Updates. Operations.
+Salary: $0. Never sleeps.
+
+Fadi is AI. The only job he took was mine: turning what's actually happening into a clean status update, instead of letting silence stand in for progress.
+
+How he works:
+1. You tell him what's done, in progress, and blocked.
+2. He writes one clean update: done, in progress, blocked, next.
+3. He flags anything that needs the client's action.
+4. You review it and send it yourself.
+
+The demo: built and tested writing one real weekly status update with one AI tool. Setup time, about 10 minutes. He never sends anything, and never marks something done or in progress that I didn't tell him.
+
+Red line: if I didn't say it's done, it isn't done in the update either, an honest "still in progress" beats a comfortable overstatement.
+
+Your first win, free, today: write three lines right now, done, in progress, blocked, for whatever you're behind on updating. That's Fadi's first draft.
+
+Comment STATUS and I'll send you the full setup, free.
+
+#AIemployees #The99 #OperationsOps
+
+---
+
+## ENTRY 172 — 21/09/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** Talking-head reel (30-45s), captions required
+**Format:** Week's wave reel (Wednesday slot), three role-card cutaways + one screenshot cutaway
+**Topic:** Compresses all 3 of this week's hires (Khalil, Hana, Fadi) into one 45-second reel, per the hiring-campaign weekly slot map.
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur client name and pricing on the draft-proposal screenshot).
+**Source:** Assembled from ENTRY 168/170/173's role-card lines. No new claims.
+
+---
+[0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
+
+[0:03-0:12] Role card cutaway 1, Khalil: "Khalil turns a good discovery call into a real proposal before the moment passes."
+
+[0:12-0:21] Role card cutaway 2, Hana: "Hana writes the honest snapshot before a big decision, strengths and weaknesses both."
+
+[0:21-0:30] Role card cutaway 3, Fadi: "Fadi turns what's actually happening into a clean status update."
+
+[0:30-0:38] Screenshot cutaway: Khalil's draft proposal, real setup, client name and pricing blurred (redaction modeled).
+
+[0:38-0:45] Closing line, spoken + on-screen: "None of them act without me. Comment TEAM and I'll send you how to hire your first one."
+
+---
+
+## ENTRY 171 — 21/09/2026 | LinkedIn carousel | You Know You Should Map Out Where You Actually Stand Before the Big Decision, But You Never Sit Down to Do It Properly | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 170 (Hana, Employee #033, SWOT Builder, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/hana/hana-swot-builder-01.png through -06.png
+Source HTML: skills/carousel-factory/out/hana-swot-builder.html
+**CTA keyword:** SWOT, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You know you should map out where you actually stand before the big decision, but you never sit down to do it properly."
+Slide 2 (scene): "It keeps circling in your head, because doing it properly means writing down the weaknesses too, and that's the part that's easy to skip."
+Slide 3 (role card): Hana, SWOT Builder, Intelligence, Salary $0, never sleeps. "Hana is AI. The only job she took was mine: writing the honest snapshot, strengths and weaknesses both, instead of only thinking through the parts that feel good."
+Slide 4 (how she works): 4-step list, tell her the decision and your position, she builds one SWOT, turns weaknesses into action items, you review and decide.
+Slide 5 (demo): "Built and tested one real SWOT for one real decision. Setup about 15 minutes. She never claims a point you didn't actually mention."
+Slide 6 (CTA): "Want the free setup? Comment SWOT."
+
+---
+
+## ENTRY 170 — 21/09/2026 | LinkedIn | You Know You Should Map Out Where You Actually Stand Before the Big Decision, But You Never Sit Down to Do It Properly | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Wednesday episode 2)
+**Topic:** Employee #033, Hana, SWOT Builder. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/swot-builder-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/intelligence/intelligence-swot-builder.md, read this run (repo already in session, pulled fresh, unchanged since 28/07). Real job description: build SWOTs for us and named competitors, support every point with observed evidence, update after major market events, turn weaknesses into prioritized action items. Free playbook narrows this to one manually described decision at a time (no competitor SWOTs, no cross-cycle update tracking), per the free/paid line. Fifth employee from the Intelligence department (after Yara/Competitor Watch, Maya/News Digest, Hind/Social Listening, Rania/Review Miner), a distinct angle: internal decision-support, not external market signals. Mode check: no receipt found anywhere for Hana. Confirmed PLAYBOOK.
+
+---
+You know you should map out where you actually stand before the big decision, but you never sit down to do it properly.
+
+It keeps circling in your head, because doing it properly means writing down the weaknesses too, and that's the part that's easy to skip.
+
+Meet Employee #033.
+
+Hana. SWOT Builder. Intelligence.
+Salary: $0. Never sleeps.
+
+Hana is AI. The only job she took was mine: writing the honest snapshot, strengths and weaknesses both, instead of only thinking through the parts that feel good.
+
+How she works:
+1. You tell her the decision and what you know about your position.
+2. She builds one SWOT, backed by what you actually told her.
+3. She turns the weaknesses into a short list of things you could act on.
+4. You review it and decide, with the full picture in front of you.
+
+The demo: built and tested one real SWOT for one real decision with one AI tool. Setup time, about 15 minutes. She never invents evidence for a point, every item traces back to something I actually said.
+
+Red line: she never claims a strength, weakness, opportunity, or threat I didn't actually mention.
+
+Your first win, free, today: name the one decision you've been circling and write three lines about where you stand. That's Hana's first SWOT.
+
+Comment SWOT and I'll send you the full setup, free.
+
+#AIemployees #The99 #IntelligenceOps
+
+---
+
+## ENTRY 169 — 21/09/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Hiring-post ritual (job-ad parody), Monday wave announcement
+**Topic:** Introduces this wave's 3 openings (Employees #032, #033, #034).
+**Pattern used:** Job-ad parody + serial-cliffhanger opener
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — value-first series opener, comment-keyword capture, no promo.
+**Source:** schedule.md had no remaining "planned" rows this wave (confirmed via full read at wave start); three picks made per the "beyond #016" rule from the departments roster, Deals, Intelligence, Operations, 3 distinct, none reused from last wave (Sales, Marketing, Customer). Real job-description files read this run from agent-os-company-dashboard/company/departments/ (repo already present in this container, pulled fresh, unchanged since 28/07): deals/deals-proposal-writer.md, intelligence/intelligence-swot-builder.md, operations/operations-status-updates.md.
+
+---
+Now hiring. Three more AI employees. Salary: $0 each.
+
+Employee #032: Proposal Writer.
+Turns a good discovery call into a real proposal, before the moment passes.
+
+Employee #033: SWOT Builder.
+Writes the honest snapshot before a big decision, strengths and weaknesses both.
+
+Employee #034: Status Updates.
+Turns what's actually happening into a clean update, instead of letting silence stand in for progress.
+
+None of them sleep. None of them ask for a raise. None of them act without me seeing it first.
+
+That is Employee #32, #33, and #34 of 99. The full team, hired one at a time, in public.
+
+See who is already on the floor. The scoreboard is live, updated only when there is a real receipt to show.
+
+Want to build your own first hire? Comment TEAM and I will send you the free 5-step framework.
+
+#AIemployees #Solopreneur #The99
+
+---
+
+## ENTRY 168 — 21/09/2026 | LinkedIn carousel | You Had a Great Discovery Call and the Proposal's Been Sitting Half-Written for a Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 167 (Khalil, Employee #032, Proposal Writer, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/khalil/khalil-proposal-writer-01.png through -06.png
+Source HTML: skills/carousel-factory/out/khalil-proposal-writer.html
+**CTA keyword:** PROPOSAL, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You had a great discovery call and the proposal's been sitting half-written for a week."
+Slide 2 (scene): "The call went well. You both know what needs to happen next. The blank document just sits there, because turning a good conversation into a real proposal feels like starting from scratch every time."
+Slide 3 (role card): Khalil, Proposal Writer, Deals, Salary $0, never sleeps. "Khalil is AI. The only job he took was mine: turning a good discovery call into a real proposal, instead of letting it sit half-written until the moment passes."
+Slide 4 (how he works): 4-step list, give him discovery notes, he drafts the full proposal, writes a short summary, you review and send.
+Slide 5 (demo): "Built and tested drafting one real proposal from discovery notes. Setup about 15 minutes. He never sends anything or invents a scope item."
+Slide 6 (CTA): "Want the free setup? Comment PROPOSAL."
+
+---
+
+## ENTRY 167 — 21/09/2026 | LinkedIn | You Had a Great Discovery Call and the Proposal's Been Sitting Half-Written for a Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Tuesday episode 1)
+**Topic:** Employee #032, Khalil, Proposal Writer. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/proposal-writer-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard/company/departments/deals/deals-proposal-writer.md, read this run (repo already present in this container, pulled fresh, unchanged since 28/07). Real job description: draft full proposals from discovery notes and the offer library, mirror the client's language and stated goals, include scope/timeline/pricing/next steps, produce an executive summary under 150 words. Free playbook narrows this to one manually described discovery call at a time (no offer-library integration), per the free/paid line. No more "planned" rows remained in schedule.md this wave; picked per the "beyond #016" rule from the departments roster, Deals, Intelligence, Operations, 3 distinct, none reused from last wave (Sales, Marketing, Customer). Mode check: no receipt found anywhere for Khalil. Confirmed PLAYBOOK.
+
+---
+You had a great discovery call and the proposal's been sitting half-written for a week.
+
+The call went well. You both know what needs to happen next. The blank document just sits there, because turning a good conversation into a real proposal feels like starting from scratch every time.
+
+Meet Employee #032.
+
+Khalil. Proposal Writer. Deals.
+Salary: $0. Never sleeps.
+
+Khalil is AI. The only job he took was mine: turning a good discovery call into a real proposal, instead of letting it sit half-written until the moment passes.
+
+How he works:
+1. You give him your discovery notes: need, deliverable, rough cost.
+2. He drafts the full proposal: scope, timeline, pricing, next steps.
+3. He writes a summary short enough that a busy client will actually read it.
+4. You review it and send it yourself.
+
+The demo: built and tested drafting one real proposal from discovery notes with one AI tool. Setup time, about 15 minutes. He never sends anything, and never adds a scope item, a timeline, or a price I didn't actually give him.
+
+Red line: nothing gets promised that wasn't in my notes, a shorter honest proposal beats an impressive invented one.
+
+Your first win, free, today: pull your notes from your last discovery call and write four lines, need, deliverable, rough cost, timeline. That's Khalil's first draft.
+
+Comment PROPOSAL and I'll send you the full setup, free.
+
+#AIemployees #The99 #DealsOps
 
 ---
 

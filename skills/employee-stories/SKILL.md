@@ -191,6 +191,9 @@ permanent. Assigned so far:
 | 029 | Mona | Lead Scorer (interviewing) | Sales |
 | 030 | Wael | Case Study Writer (interviewing) | Marketing |
 | 031 | Sara | NPS Analyst (interviewing) | Customer |
+| 032 | Khalil | Proposal Writer (interviewing) | Deals |
+| 033 | Hana | SWOT Builder (interviewing) | Intelligence |
+| 034 | Fadi | Status Updates (interviewing) | Operations |
 
 New names: short, warm, easy to say in English and French, no name
 reuse, never the name of a real client or contact. Log new assignments

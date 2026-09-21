@@ -38,6 +38,9 @@ real files in agent-os-company-dashboard/company/departments/.
 | 029 | Mona | Lead Scorer | sales/sales-lead-scorer.md | PLAYBOOK | announced, playbook live 14/09/2026 | 2026-W38 |
 | 030 | Wael | Case Study Writer | marketing/marketing-case-study-writer.md | PLAYBOOK | announced, playbook live 14/09/2026 | 2026-W38 |
 | 031 | Sara | NPS Analyst | customer/customer-nps-analyst.md | PLAYBOOK | announced, playbook live 14/09/2026 | 2026-W38 |
+| 032 | Khalil | Proposal Writer | deals/deals-proposal-writer.md | PLAYBOOK | announced, playbook live 21/09/2026 | 2026-W39 |
+| 033 | Hana | SWOT Builder | intelligence/intelligence-swot-builder.md | PLAYBOOK | announced, playbook live 21/09/2026 | 2026-W39 |
+| 034 | Fadi | Status Updates | operations/operations-status-updates.md | PLAYBOOK | announced, playbook live 21/09/2026 | 2026-W39 |
 
 Beyond #016: the campaign run picks the next 3 most audience-relevant
 roles from the departments roster (3 different departments per wave) and
