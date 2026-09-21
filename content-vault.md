@@ -21,6 +21,31 @@
 
 ## Most recent (quick reference)
 
+> **21/09/2026 content-engine daily run — no new entries produced (deliberate):**
+> RESEARCH 048 (2026-09-21 signal harvest, three signals: Anthropic/Accenture
+> embedded evaluation, Resume Now "AI-Whelmed Worker Report" 44%/42%/44%/60%
+> stats, Thomson Reuters Future of Professionals Report ~50%-worry-about-
+> judgement stat) landed this morning via the autonomous signal-harvester run
+> and is logged and available for the next batch — so, unlike 18–20/09, fresh
+> source material in the right format does exist today. That does not change
+> the outcome: this session's reality-check hook again states queen-brain is
+> NOT in this session and repeats the explicit instruction not to write price,
+> tier, offer status or customer-facing copy reconstructed from this repo's
+> local mirror copies. Content-engine's entire output is customer-facing copy
+> (multi-format public drafts), so that instruction blocks drafting regardless
+> of research availability. Separately and independently, the release backlog
+> is also unchanged: vault still holds 37 READY TO POST (oldest 68+ days,
+> since 14/07/2026), 33 DRAFT, 0 POSTED; `review-cockpit/state.md` and
+> `review-cockpit/decisions-log.md` show no operator replies, approvals, or
+> kills since the 14/09/2026 digest (12 consecutive empty sweeps confirmed as
+> of the 20/09 evening sweep; no sweep has run yet today to confirm a 13th) —
+> so adding more DRAFT volume would still only crowd the digest's top-6
+> rotation without moving any existing item toward release. No Notion,
+> Blotato, or queen-brain connector was reachable from this session either
+> (checked via tool discovery). See the operator briefing in this session's
+> chat for the recommendation (same three options open since 18/09, still
+> unanswered).
+
 > **20/09/2026 content-engine daily run — no new entries produced (deliberate):**
 > Two signal harvests have landed since the last content-engine run
 > (`reports/signal-harvest-2026-09-19.md`, `reports/signal-harvest-2026-09-20.md`)
