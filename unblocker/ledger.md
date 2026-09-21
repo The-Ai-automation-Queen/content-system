@@ -6,8 +6,10 @@
 
 ## Queue (next up, in order)
 
-1. UNB-026 — Restore estate-repo access for this session *(served, 20/09)*
-2. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since)*
+1. UNB-026 — Restore estate-repo access for this session *(serve 2, 21/09 — shrunk to one click)*
+2. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 21/09 check confirms still unanswered)*
+3. UNB-027 — Decide fate of `content-system-DUPLICATE` *(open, unserved, 20/09)*
+4. UNB-028 — Review and prune stale branches *(open, unserved, 20/09)*
 
 > UNB-001 through UNB-024 (below) are the original 06/07/2026 seed batch, built
 > entirely from the pre-pivot offer model (Whop SKU checkouts, Fast Forward
@@ -306,6 +308,15 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   by `estate-janitor`) and served that instead, satisfying the variety
   rule. Put the kill/shrink/blocker question to Fatiha again in today's
   end-of-run briefing. `served_count` left at 3 pending her answer.
+- **21/09/2026 follow-up:** `content-vault.md` ENTRY 093/092/091 still
+  `READY TO POST`, unchanged (7th morning running). `review-cockpit/
+  state.md` confirms the 21/09 pre-digest sweep was still empty — fifteen
+  consecutive empty `getUpdates` sweeps since the 14/09 digest, no reply to
+  the 17/09 confrontation in four days. Same no-serve-4-rule reasoning:
+  did not re-send or escalate over Telegram. Today's single serve went to
+  UNB-026 (day 2, not yet done either) rather than repeating UNB-025 a
+  fourth time. Put the kill/shrink/blocker question to Fatiha again in
+  today's end-of-run briefing. `served_count` left at 3 pending her answer.
 
 ---
 
@@ -332,8 +343,9 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   JAN-01/JAN-06
 - **verify:** the next `estate-janitor scan` completes classes 1, 2, and 5
   without a "repo absent" caveat
-- **status:** served · served_count: 1 · added: 2026-09-20 · pack:
-  `packs/2026-09-20-UNB-026-restore-estate-repo-access.md`
+- **status:** served · served_count: 2 · added: 2026-09-20 · pack:
+  `packs/2026-09-20-UNB-026-restore-estate-repo-access.md`,
+  `packs/2026-09-21-UNB-026-widen-token-access.md`
 - **20/09/2026 prep note:** re-ran the access check live instead of only
   citing the janitor report. `git ls-remote` over HTTPS returns
   `403 Write access to repository not granted` for `queen-brain`,
@@ -348,6 +360,13 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   (unclear if still active estate scope). Not folding `LinkedinAudit2` into
   the "confirmed" count since that's a judgment call, not a verified fact.
   Delivered via Telegram (message_id 1070).
+- **21/09/2026 follow-up (serve 2):** re-ran `git ls-remote` on all 5 repos
+  live this morning — identical `403 Write access to repository not
+  granted` on every one, unchanged from 20/09. Not done. Per the skill's
+  serve-2 rule, shrunk the ask rather than repeating yesterday's message:
+  today's pack drops the `agent-os-dashboard`/`LinkedinAudit2` side
+  questions (not blocking) and states only the one setting that clears the
+  403s. Delivered via Telegram (message_id 1084).
 
 ### UNB-027 — Decide fate of `/home/fatiha/content-system-DUPLICATE`
 - **why:** a full second git checkout of this repo, frozen at commit
