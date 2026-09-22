@@ -2,6 +2,54 @@
 
 ---
 
+## RESEARCH 049 — 2026-09-22 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `b56a865`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (positioning.md):** experienced professionals, founders and consultants who feel overwhelmed by AI or struggle to turn their knowledge into visible, valuable work.
+**Internal tooling discoveries this run:** none. This entry is `shift-lead` (public-topic) evidence only.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority and recency were weighed.
+
+### Signals
+
+1. **PwC — "2026 Global AI Jobs Barometer"** — published 2026-06-15 — https://www.pwc.com/gx/en/news-room/press-releases/2026/pwc-2026-ai-jobs-barometer.html (direct WebFetch returned HTTP 403; verified via the syndicated press release at https://www.prnewswire.com/news-releases/ai-reshapes-global-labour-market-into-two-distinct-paths-rewarding-human-skills-pwc-2026-global-ai-jobs-barometer-302798989.html) — WebSearch + WebFetch; PwC's own global analysis of over 1 billion job advertisements across 27 countries and territories, combined with company financials and occupational task data.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: names the exact split the audience is living through — judgement/leadership-heavy "professionalised" roles are growing faster and paying more, while AI-easy "democratised" roles are not — a market-data answer to "does my experience still matter," distinct from RESEARCH 047's Toptal signal (hiring-activity data) and RESEARCH 046's Recon Analytics signal (payroll data), reaching the same direction by a third, independent route.
+   - `supporting_source_excerpt`: "'Professionalised' roles ... are seeing twice the growth in available jobs and 42% faster salary growth than those categorised as 'democratised'"; AI-exposed entry-level US roles "are now seven times more likely to require skills traditionally associated with senior employees," and these "seniorised" entry-level roles "grown by 35% since 2019, while other entry-level positions have declined by 10%"; wage premium for AI skills "reached 62%, up from 57% the previous year." Quote — Pete Brown, PwC Global Workforce Leader: "AI is removing routine work that acted as apprenticeship, while increasing demand for judgment and leadership much earlier."
+   - `possible_use`: the largest-scale, most-authoritative evidence found to date (1B+ job listings) for the "what only you can bring" pillar; the "professionalised vs. democratised" vocabulary is a clean, citable pair for a draft, and stacks with the two prior independent labor-market signals (046, 047) rather than duplicating either.
+   - `assessed_at`: 2026-09-22
+
+2. **Knight (Maplebear/Instacart), Mitrofanov (Boston College) & Netessine (Wharton) — Instacart shopper field experiment** (via phys.org) — published 2026-08-25 — https://phys.org/news/2026-08-ai-workers-paired.html — WebSearch + WebFetch; randomized controlled field experiment, nearly 6,000 Instacart shoppers across ~160 U.S. grocery stores.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: unlike the survey/sentiment sources in RESEARCH 044-048, this is causal RCT evidence (not self-report) that experience is what makes AI assistance pay off — a stronger evidentiary class for the "find what is uniquely yours" pillar.
+   - `supporting_source_excerpt`: AI navigation/recommendations cut refund rates 3.83%, improved picking speed 3.29%, lifted overall productivity 3.16%, and expanded cross-store shopping capacity 32.5% versus control; "less experienced shoppers relied heavily on AI but didn't consistently achieve better outcomes," while "experienced workers excelled by strategically blending algorithmic guidance with personal judgment." Quote — Benjamin Knight: "AI is most effective when workers have enough experience to understand when to trust its recommendations and when to rely on their own judgment."
+   - `possible_use`: an accessible, non-knowledge-work illustration (grocery picking, not consulting) of "experience decides how well AI works for you" before applying the same logic to the audience's own expert work. Source-quality caveat for drafting: co-author Benjamin Knight is affiliated with Maplebear Inc. (Instacart's parent company) — attribute as an Instacart-co-authored academic study (with Boston College/Wharton co-authors), not as fully independent research.
+   - `assessed_at`: 2026-09-22
+
+3. **Korn Ferry — "Workforce 2026 Global Insights Report"** (via Journal of Accountancy) — published 2026-09-15 — https://www.journalofaccountancy.com/news/2026/sep/driving-efficiency-or-driving-workers-toward-burnout-how-ai-is-being-used/ — WebSearch + WebFetch; Korn Ferry's proprietary survey of over 16,000 employees, reported by an independent AICPA accounting-trade publication rather than a raw vendor release.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: a different mechanism than RESEARCH 048's Resume Now survey — that measured confidence/pressure to *learn* AI; this measures AI already having expanded scope and workload once adopted — a non-duplicate facet of the same audience problem.
+   - `supporting_source_excerpt`: "63% report AI increased their efficiency" but "52% say AI tools increased expected tasks in their role"; "62% experienced significantly increased workload in two years"; "61% feel they're performing multiple roles"; "45% describe themselves as 'too busy to deliver meaningful results.'" Quote — Jenna Young, Korn Ferry: "Can we sustain people feeling like they're permanently working two jobs? Will you keep your highest performers?"
+   - `possible_use`: a source-attributable answer to "why does AI feel like more work, not less" — the efficiency-up/workload-up pairing is a sharper, numeric hook than a generic exhaustion claim; Young's retention-risk quote extends the same "protect judgement and your best people" thread used with RESEARCH 048 signal 3.
+   - `assessed_at`: 2026-09-22
+
+### Rejected this run
+
+- Shibumi — "AI Fatigue Statistics 2026" (shibumi.com blog) — WebFetch-confirmed vendor blog from an enterprise-software company that rolls up 30+ other publications' statistics as "thought leadership marketing" for its own strategic-execution platform, not original research. Excluded per research-policy.md's source-quality standard, consistent with RESEARCH 047's rejection of the demg.ai case study.
+
+### Source health this run
+
+- Anthropic News (High): direct WebFetch worked; still the same "Partnering with Accenture on embedded evaluation" (Sep 18) post already logged as RESEARCH 048's signal 1 — no new post in the 4 days since. Not re-logged as a numbered signal this run since it adds no information beyond 048.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 (blocked) — 6th consecutive failed run (044, 045, 046, 047, 048, 049), now well over a month on the same dead fetch path. Operator: repeating the standing recommendation from 047/048 — either fix the fetch method (the site appears to block the default WebFetch user agent) or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- DeepMind blog (Medium): checked this run — WebFetch worked; the ten most recent posts are all new-model/product launch announcements (Gemini 3.8 Flash/Live, AlphaGenome Atlas, WeatherNext 3, agentic video) with no line to the audience problem; nothing logged.
+- Hugging Face Blog (Medium): checked this run — WebFetch worked; the five most recent posts are pure ML-engineering topics (PEFT adapters, inference infrastructure, model leaderboards, safety filtering) with no line to the audience problem, consistent with RESEARCH 046's finding; nothing logged.
+- a16z AI, Lenny's Newsletter (Medium/Low): not checked this run — three non-RSS signals above already filled the run at a higher confirmed-fit rate; time budget allocated there instead of falling further down the RSS priority list.
+- WebSearch: functional throughout; used to source all three signals above and to screen out the rejected vendor aggregator.
+- No signals were invented; every URL above is one actually returned by a fetch or search this run.
+
+### Historical-audience check
+
+Confirmed none of the above signals were forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only, consistent with security.md's queue-only publishing rule (which was not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 048 — 2026-09-21 | Signal harvest (current audience problem)
 
 **Status:** NOTED
