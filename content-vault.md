@@ -21,6 +21,31 @@
 
 ## Most recent (quick reference)
 
+> **22/09/2026 content-engine daily run — no new entries produced (deliberate):**
+> RESEARCH 049 (2026-09-22 operator-requested signal harvest, three signals:
+> PwC 2026 AI Jobs Barometer, Instacart/Wharton/Boston College RCT, Korn Ferry
+> Workforce 2026 report) landed this morning via the signal-harvester and is
+> logged and available for the next batch — fresh, correctly-formatted source
+> material exists today, same as 21/09. That does not change the outcome:
+> this session's reality-check hook again states queen-brain is NOT in this
+> session and repeats the explicit instruction not to write price, tier,
+> offer status or customer-facing copy reconstructed from this repo's local
+> mirror copies. Content-engine's entire output is customer-facing copy
+> (multi-format public drafts), so that instruction blocks drafting
+> regardless of research availability. No Notion, Blotato, or queen-brain
+> connector was reachable from this session either (checked via tool
+> discovery). Separately and independently, the release backlog is also
+> unchanged: vault still holds 37 READY TO POST (oldest 69+ days, since
+> 14/07/2026), 33 DRAFT, 0 POSTED — confirmed by direct header-line tally
+> against the reality-check hook. `review-cockpit/state.md` and
+> `decisions-log.md` show no operator replies, approvals, or kills since the
+> 14/09/2026 digest (17 consecutive empty sweeps confirmed as of the 21/09
+> evening sweep; no sweep has run yet today to confirm an 18th) — so adding
+> more DRAFT volume would still only crowd the digest's top-6 rotation
+> without moving any existing item toward release. See the operator
+> briefing in this session's chat for the recommendation (same three
+> options open since 18/09, still unanswered).
+
 > **21/09/2026 content-engine daily run — no new entries produced (deliberate):**
 > RESEARCH 048 (2026-09-21 signal harvest, three signals: Anthropic/Accenture
 > embedded evaluation, Resume Now "AI-Whelmed Worker Report" 44%/42%/44%/60%
