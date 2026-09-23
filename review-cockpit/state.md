@@ -230,6 +230,20 @@ digest run overwrites it.
   stayed queue-only throughout (`security.md` §3.1) — no post released, no
   Blotato queue touched.
 
+- 23/09/2026, second sweep today (operator-requested `process` run, this
+  run — end-to-end per operator request) — `getUpdates` (no offset, none
+  stored) returned empty (`{"ok":true,"result":[]}`). Nothing to route: no
+  card decisions, no unblocker replies, no voice notes — 22nd consecutive
+  empty sweep since the 14/09/2026 digest. Nothing applied to the vault
+  (still 37 READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED / 0 POSTED,
+  reconfirmed against `content-vault.md`'s exact `## ENTRY` header-line
+  status tally and matching this session's reality-check hook),
+  decisions-log.md unchanged. `unblocker/ledger.md` also checked — no
+  pending replies to route. All 9 cards from the 23/09 digest (#1–#6,
+  R1–R3) remain outstanding. Publishing stayed queue-only throughout
+  (`security.md` §3.1) — no post released, no Blotato queue touched.
+  Confirmation sent to Telegram (message_id 1113).
+
 ## Last digest served — 23/09/2026 (run on operator request)
 
 Header message_id: 1101
