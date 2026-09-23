@@ -22,3 +22,5 @@ Keep the user updated briefly. Do not make them re-explain the approved Instagra
 ```
 
 Run `npm run guide:rebuild:audit` to see the whole queue; `npm run guide:rebuild:check` is the strict completion gate. Use `node tools/guide-rebuild-harness.mjs --slug <slug>` for one guide and `node tools/guide-rebuild-harness.mjs --live` to recheck footer URLs.
+
+The queue runner uses this exact prompt and stops a guide at `review`, before publication. `npm run guide:rebuild:next` prints the next guide-specific task; `npm run guide:rebuild:run-one` runs one pending guide in Codex; `npm run guide:rebuild:loop` works through the remaining pending guides sequentially and stops on the first failure or missing review status. Use `-- --limit 3` to cap a loop run, or `-- --slug <slug>` to target one pending guide. Each guide still needs Fatiha's page approval before the separate publishing and Notion handoff.
