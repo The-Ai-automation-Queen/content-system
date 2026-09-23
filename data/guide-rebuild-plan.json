@@ -4,7 +4,7 @@
   "formatReferences": ["instagram-content-dashboard", "what-is-ai"],
   "guides": [
     { "slug": "what-is-ai", "pattern": "explorer", "status": "approved", "component": "what-is-ai-page" },
-    { "slug": "ai-jargon-guide", "pattern": "glossary", "status": "pending" },
+    { "slug": "ai-jargon-guide", "pattern": "glossary", "status": "review", "component": "ai-jargon-page" },
     { "slug": "what-is-agentic", "pattern": "decision", "status": "pending" },
     { "slug": "what-should-you-never-share-with-ai", "pattern": "audit", "status": "pending" },
     { "slug": "which-ai-tool-for-what", "pattern": "decision", "status": "pending" },
