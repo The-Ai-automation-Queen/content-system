@@ -114,11 +114,18 @@ test("guide capture sends name and consent evidence without forced resubscriptio
   assert.equal(payload.fields.marketing_consent, undefined);
 });
 
+test("Instagram gate requires both name fields before sending to Lumail", async () => {
+  const { response, calls } = await invoke({ firstName: "Reader", email: "reader@example.com", consent: true, guideSlug: "instagram-content-dashboard" });
+  assert.equal(response.statusCode, 400);
+  assert.equal(response.body.error, "Enter your first and last name.");
+  assert.equal(calls.length, 0);
+});
+
 
 test("published guide capture uses its approved slug and rejects unknown slugs", async () => {
   const oldEnv = process.env.VERCEL_ENV;
   const oldNode = process.env.NODE_ENV;
-  const input = { firstName: "Reader", email: "reader@example.com", consent: true, guideSlug: "instagram-content-dashboard" };
+  const input = { firstName: "Reader", lastName: "Example", email: "reader@example.com", consent: true, guideSlug: "instagram-content-dashboard" };
   try {
     process.env.VERCEL_ENV = "production";
     process.env.NODE_ENV = "production";
@@ -126,6 +133,9 @@ test("published guide capture uses its approved slug and rejects unknown slugs",
     assert.equal(production.response.statusCode, 200);
     const productionPayload = JSON.parse(production.calls[0][1].body);
     assert.deepEqual(productionPayload.tags, ["shift-and-lead-guide", "guide-instagram-content-dashboard"]);
+    assert.equal(productionPayload.name, "Reader Example");
+    assert.equal(productionPayload.fields.first_name, "Reader");
+    assert.equal(productionPayload.fields.last_name, "Example");
     process.env.VERCEL_ENV = "preview";
     const allowed = await invoke(input);
     assert.equal(allowed.response.statusCode, 200);

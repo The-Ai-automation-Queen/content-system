@@ -4,34 +4,34 @@ The Lumail form is intentional lead capture, but its position and whether it gat
 
 ## Published guides
 
-The approved registry in `data/guide-publication.json` is the source of truth. Every approved guide needs an embedded Lumail form and its own `guide-*` tag. A reusable component may handle submission, but it must not impose a generic page layout or form position. The Instagram guide shows one compact, optional email form after the first manual step, after the copyable agent prompt, or at the finish if the reader skips ahead. It remains readable without submitting the form.
+The approved registry in `data/guide-publication.json` is the source of truth. Every approved guide needs an embedded Lumail form and its own `guide-*` tag. A reusable component may handle submission, but it must not impose a generic page layout or form position. The Instagram guide shows its compact email modal before any walkthrough content. The full guide opens only after a successful submission.
 
 ## Visitor experience
 
 - The guide URL and cover identify the requested guide.
 - The form appears at that guide's approved point in the reading journey.
-- Do not blur the guide cover or hide the Instagram steps behind an access screen.
-- The form asks for email and an optional first name.
+- For Instagram, show the complete cover artwork and email form in a compact modal; keep all walkthrough steps hidden until successful capture.
+- The Instagram gate requires first name, last name, and email. Other guide forms keep their own approved fields.
 - Requested-guide delivery is separate from optional marketing consent.
-- A privacy link is visible beside the form.
-- A successful submission may unlock guides that are approved as gated. It must not be required to read the Instagram walkthrough.
+- Do not expose provider names or implementation notes in the reader-facing form. The site footer retains the Privacy link.
+- A successful Lumail submission unlocks the Instagram walkthrough in place.
 - The reader is not offered a PDF download as a fallback.
 
 ## Submission contract
 
 - Endpoint: `POST /api/guide-capture`
 - Required: `email`, `guideSlug`, `source`, `consent`
-- Optional: `firstName`, campaign fields
+- Instagram required: `firstName`, `lastName`. Other guide forms may omit these fields. Campaign fields are optional.
 - Honeypot: `website`
 - Recorded server-side: guide URL, guide tag, shared guide tag, source, timestamp and campaign fields
 - Provider credential: `LUMAIL_API_TOKEN`, server-side only
-- For an access-gated guide, unlock only after a successful Lumail response. For a save-link form, send the return link and show success without claiming to unlock content.
+- For an access-gated guide, unlock only after a successful Lumail response.
 
 ## Persistence and review
 
-- Storage key: `shift-lead-guide-access`
+- Instagram storage key: `shift-lead-guide-access:instagram-content-dashboard`. Other gated guides currently use the shared `shift-lead-guide-access` key.
 - Stored value: `true`
-- `?gate=1` forces the unsaved form state for testing when the reader reaches an inline save-link form.
+- `?gate=1` forces the Instagram entry form for testing.
 - `?review=1` bypasses the gate only on localhost, `127.0.0.1` and Vercel preview hosts.
 - Production does not accept the review bypass.
 
@@ -39,7 +39,7 @@ The approved registry in `data/guide-publication.json` is the source of truth. E
 
 - Invalid email is rejected before submission.
 - Provider or network failure shows a generic retry message.
-- A gated guide remains locked after a failed request. A save-link form leaves the guide readable and offers a retry.
+- A gated guide remains locked after a failed request.
 - Provider details and credentials are never exposed to the browser.
 
 ## Analytics

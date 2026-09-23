@@ -8,13 +8,17 @@ const ACCESS_KEY = "shift-lead-guide-access";
 export function GuideAccessBoundary({
   guideSlug,
   guideTitle,
+  guideCover,
+  guideCoverAlt,
   children,
   variant = "unlock",
 }: {
   guideSlug: string;
   guideTitle: string;
+  guideCover?: string;
+  guideCoverAlt?: string;
   children: ReactNode;
-  variant?: "unlock" | "save";
+  variant?: "unlock" | "entry";
 }) {
   const [ready, setReady] = useState(false);
   const [unlocked, setUnlocked] = useState(false);
@@ -29,14 +33,14 @@ export function GuideAccessBoundary({
     const forceGate = params.get("gate") === "1";
     let hasAccess = false;
     try {
-      hasAccess = window.localStorage.getItem(variant === "save" ? `${ACCESS_KEY}:${guideSlug}` : ACCESS_KEY) === "true";
+      hasAccess = window.localStorage.getItem(variant === "unlock" ? ACCESS_KEY : `${ACCESS_KEY}:${guideSlug}`) === "true";
     } catch {
       // Storage can be unavailable in privacy-restricted browsing modes.
     }
-    setUnlocked(!forceGate && ((variant === "unlock" && review) || hasAccess));
+    setUnlocked(!forceGate && (review || hasAccess));
     setReady(true);
     const tracker = (window as Window & { slTrack?: (name: string, data?: Record<string, string>) => void }).slTrack;
-    tracker?.(((variant === "unlock" && review) || hasAccess) ? "guide_open" : "guide_gate_view", { guide_slug: guideSlug, source_page: window.location.pathname });
+    tracker?.((review || hasAccess) && !forceGate ? "guide_open" : "guide_gate_view", { guide_slug: guideSlug, source_page: window.location.pathname });
   }, [guideSlug, variant]);
 
   const submit = async (event: FormEvent<HTMLFormElement>) => {
@@ -54,6 +58,7 @@ export function GuideAccessBoundary({
         body: JSON.stringify({
           email: form.get("email"),
           firstName: form.get("firstName"),
+          lastName: form.get("lastName"),
           website: form.get("website"),
           guideSlug,
           source: window.location.pathname,
@@ -65,7 +70,7 @@ export function GuideAccessBoundary({
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || "We could not open the guide. Please try again.");
       try {
-        window.localStorage.setItem(variant === "save" ? `${ACCESS_KEY}:${guideSlug}` : ACCESS_KEY, "true");
+        window.localStorage.setItem(variant === "unlock" ? ACCESS_KEY : `${ACCESS_KEY}:${guideSlug}`, "true");
       } catch {
         // A successful request still grants access for the current page view.
       }
@@ -82,18 +87,24 @@ export function GuideAccessBoundary({
   return (
     <>
       <div
-        className={`${styles.captureTransition} ${variant === "save" ? styles.captureSaveTransition : ""}`}
+        className={`${styles.captureTransition} ${variant === "entry" ? styles.captureEntryTransition : ""}`}
         data-guide-capture-boundary
         hidden={ready && unlocked}
       >
-        <section className={`${styles.captureBoundary} ${variant === "save" ? styles.captureSave : ""}`} aria-labelledby={`guide-gate-title-${guideSlug}`}>
-          <span className={styles.gateLabel}>{variant === "save" ? "Keep this guide" : "Continue this guide"}</span>
-          <h2 id={`guide-gate-title-${guideSlug}`}>{variant === "save" ? "Keep this walkthrough handy" : `Keep reading ${guideTitle}`}</h2>
-          <p>{variant === "save" ? "Get the link by email so you can revisit the steps and copyable prompts when you need them." : "You have the main idea and first steps. Add your email to open the full exercise and receive a link you can return to. Your name is optional."}</p>
+        <section className={`${styles.captureBoundary} ${variant === "entry" ? styles.captureEntry : ""}`} role={variant === "entry" ? "dialog" : undefined} aria-modal={variant === "entry" ? true : undefined} aria-labelledby={`guide-gate-title-${guideSlug}`}>
+          {variant === "entry" && guideCover && <div className={styles.entryCover}><img src={guideCover} alt={guideCoverAlt || ""} /></div>}
+          <div className={variant === "entry" ? styles.entryContent : undefined}>
+          <span className={styles.gateLabel}>{variant === "entry" ? "Free practical guide" : "Continue this guide"}</span>
+          <h2 id={`guide-gate-title-${guideSlug}`}>{variant === "entry" ? guideTitle : `Keep reading ${guideTitle}`}</h2>
+          <p>{variant === "entry" ? "Build a working Instagram dashboard with five practical steps, screenshots and copyable prompts. Enter your email to open the guide." : "You have the main idea and first steps. Add your email to open the full exercise and receive a link you can return to. Your name is optional."}</p>
           <form onSubmit={submit}>
-            {variant === "unlock" && <>
-              <label htmlFor={`guide-first-name-${guideSlug}`}>First name (optional)</label>
-              <input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} />
+            <>
+              <label htmlFor={`guide-first-name-${guideSlug}`}>First name {variant === "unlock" ? "(optional)" : ""}</label>
+              <input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} required={variant === "entry"} />
+            </>
+            {variant === "entry" && <>
+              <label htmlFor={`guide-last-name-${guideSlug}`}>Last name</label>
+              <input id={`guide-last-name-${guideSlug}`} name="lastName" type="text" autoComplete="family-name" maxLength={100} required />
             </>}
             <label htmlFor={`guide-email-${guideSlug}`}>Email address (required)</label>
             <input id={`guide-email-${guideSlug}`} name="email" type="email" autoComplete="email" required placeholder="you@example.com" />
@@ -102,21 +113,21 @@ export function GuideAccessBoundary({
               <input name="marketingConsent" type="checkbox" />
               <span>Also send me practical Shift &amp; Lead emails and product updates (optional). I can unsubscribe at any time.</span>
             </label>
-            <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Sending..." : variant === "save" ? "Send me the link" : "Open the rest of the guide"}</button>
-            <small>We use Lumail to deliver your requested email. Marketing is optional. {variant === "unlock" && "This also unlocks all free guides on this device. "}Read the <a href="/privacy.html">privacy notice</a>.</small>
+            <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Opening guide..." : variant === "entry" ? "Open the free guide" : "Open the rest of the guide"}</button>
+            {variant === "unlock" && <small>This also unlocks all free guides on this device. Read the <a href="/privacy.html">privacy notice</a>.</small>}
             {status === "error" && <strong role="alert">{message}</strong>}
           </form>
+          </div>
         </section>
       </div>
-      {variant === "save" && ready && unlocked && <p role="status" className={styles.captureSuccess}>Link requested. Check your inbox.</p>}
-      {variant === "unlock" && <div
+      <div
         className="guide-gated-content"
         ref={contentRef}
         tabIndex={-1}
         hidden={!ready || !unlocked}
       >
         {children}
-      </div>}
+      </div>
     </>
   );
 }

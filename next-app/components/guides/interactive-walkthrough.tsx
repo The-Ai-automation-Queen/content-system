@@ -15,7 +15,7 @@ const shots: Record<string, { src: string; caption: string }> = {
   "1.1 — Create the App": { src: "/images/guides/instagram-steps/meta-app-setup.png", caption: "Current Meta app setup. Personal details removed. The interface may differ from the original instructions." },
 };
 
-export function InteractiveWalkthrough({ sections, slug, conclusion, variant = "standard", afterSteps }: { sections: readonly Step[]; slug: string; conclusion: ReactNode; variant?: "standard" | "instagram"; afterSteps?: ReactNode }) {
+export function InteractiveWalkthrough({ sections, slug, conclusion, variant = "standard" }: { sections: readonly Step[]; slug: string; conclusion: ReactNode; variant?: "standard" | "instagram" }) {
   const key = `shift-lead-progress:${slug}:source-v1`;
   const [mode, setMode] = useState<"agent" | "manual" | null>(null);
   const masterPrompt = buildGuideAgentPrompt(sections);
@@ -66,7 +66,6 @@ export function InteractiveWalkthrough({ sections, slug, conclusion, variant = "
       <aside className={styles.note}><p>You will still handle account login, permissions and entering credentials privately. Browser assistance depends on the tools available to your agent.</p></aside>
       <CopyPrompt label="Master prompt — Claude Code or Codex" prompt={masterPrompt} collapsible />
       <p className={styles.hint}>Includes all five steps and their prompts. The agent is instructed to flag outdated steps and ask before changing the method.</p>
-      {mode === "agent" && afterSteps}
       <button onClick={() => setMode("manual")}>Open the manual walkthrough →</button>
     </section>
     <div id="manual-build-path" hidden={mode !== "manual"}>
@@ -93,11 +92,9 @@ export function InteractiveWalkthrough({ sections, slug, conclusion, variant = "
         return null;
       })}
       <label className={styles.finished}><input type="checkbox" checked={done[`step-${i}`] === true} onChange={e => setDone({ ...done, [`step-${i}`]: e.target.checked })} />I’ve completed this step</label>
-      {mode === "manual" && i === 0 && (expanded || active === 0) && afterSteps}
       {!expanded && <div className={styles.footer}><button disabled={i === 0} onClick={() => go(i - 1)}>← Back</button><span>Step {i + 1} of {sections.length}</span><button disabled={i === sections.length - 1} onClick={() => go(i + 1)}>Next step →</button></div>}
     </section>)}
     {(expanded || active === sections.length - 1) && conclusion}
-    {mode === "manual" && !expanded && active === sections.length - 1 && afterSteps}
     </div>
     <dialog ref={dialog} className={styles.lightbox} onClose={() => setPhoto(null)} onClick={e => { if (e.target === e.currentTarget) dialog.current?.close(); }}>
       <button onClick={() => dialog.current?.close()} autoFocus>Close screenshot ×</button>

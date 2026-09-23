@@ -24,6 +24,7 @@ module.exports = async function handler(request, response) {
     consentVersion,
     email,
     firstName,
+    lastName,
     guideSlug,
     marketingConsent,
     source,
@@ -36,7 +37,9 @@ module.exports = async function handler(request, response) {
     return response.status(400).json({ error: "Enter a valid email address." });
   }
 
-  const name = cleanText(firstName, 100);
+  const givenName = cleanText(firstName, 100);
+  const familyName = cleanText(lastName, 100);
+  const name = [givenName, familyName].filter(Boolean).join(" ");
   if (consent !== true) return response.status(400).json({ error: "Consent is required." });
 
   // Draft forms work on local development and verified Vercel preview deployments.
@@ -46,6 +49,9 @@ module.exports = async function handler(request, response) {
   const guide = APPROVED_GUIDES.get(guideSlug) ||
     (allowPreview ? preview.guides.find((item) => item.slug === guideSlug) : undefined);
   if (!guide?.lumailTag) return response.status(400).json({ error: "This guide is not configured for email delivery." });
+  if (guideSlug === "instagram-content-dashboard" && (!givenName || !familyName)) {
+    return response.status(400).json({ error: "Enter your first and last name." });
+  }
 
   const consentTimestamp = new Date().toISOString();
   const consentTextVersion = "guide-request-v2-2026-09-20";
@@ -63,6 +69,7 @@ module.exports = async function handler(request, response) {
         name,
         tags: ["shift-and-lead-guide", guide.lumailTag],
         fields: {
+          ...(guideSlug === "instagram-content-dashboard" ? { first_name: givenName, last_name: familyName } : {}),
           source: sourcePage,
           guide_url: `${GUIDE_ORIGIN}/guides/${guideSlug}.html`,
           consent: "true",

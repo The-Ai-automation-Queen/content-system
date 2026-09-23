@@ -10,7 +10,7 @@ Public visibility is controlled only by `../../data/guide-publication.json`. Do 
 
 `components/guides/guide-reading-page.tsx` is a legacy article renderer for existing routes. Do not use it as the format or layout specification for a new or rebuilt guide. Use a page-specific Next.js composition based on the owner's approved full-page reference. Reuse interaction and form components where they fit without inheriting the legacy article frame.
 
-The approved Instagram page uses a dedicated compact, sectioned walkthrough modeled on the owner's Tenfold reference in Shift & Lead colours. It keeps the two build choices, five-step map, screenshots, checklists, complete prompts, and one optional Lumail save-link form after the first manual step, after the agent prompt, or at the finish when a reader skips ahead. Other guides need their own approved interaction and form position. Use the original topic-specific WebP cover and inspect the rendered desktop and mobile layout before publishing.
+The approved Instagram page uses a dedicated compact, sectioned walkthrough modeled on the owner's Tenfold reference in Shift & Lead colours. It keeps the two build choices, five-step map, screenshots, checklists, complete prompts, and one Lumail email gate before the walkthrough opens. Other guides need their own approved interaction and form position. Use the original topic-specific WebP cover and inspect the rendered desktop and mobile layout before publishing.
 
 After explicit copy approval, edit and preview the guide from `next-app` with `npm run dev`. After page approval, add the slug to the publication registry. To rebuild the approved guides and copy the deployable files into `main-site`, run this command from the repository root:
 

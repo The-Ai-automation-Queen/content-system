@@ -121,11 +121,10 @@ if (genericPreview < 0 || genericGate < genericPreview ||
 if (!guideRouteSource.includes('slug === "instagram-content-dashboard"') ||
     !guideRouteSource.includes("<InstagramDashboardPage guide={guide} />") ||
     !instagramPageSource.includes('variant="instagram"') ||
-    !instagramPageSource.includes('variant="save"') ||
-    !interactiveWalkthroughSource.includes('mode === "agent" && afterSteps') ||
-    !interactiveWalkthroughSource.includes('i === 0 && (expanded || active === 0) && afterSteps') ||
-    !interactiveWalkthroughSource.includes('active === sections.length - 1 && afterSteps')) {
-  failures.push("The Instagram guide must use its dedicated Next.js walkthrough, with one optional save-link form after meaningful content and at the finish.");
+    !guideRouteSource.includes('variant="entry"') ||
+    instagramPageSource.includes('variant="save"') ||
+    interactiveWalkthroughSource.includes('afterSteps')) {
+  failures.push("The Instagram guide must use its dedicated Next.js walkthrough behind a pre-guide Lumail entry gate.");
 }
 if (!libraryUiSource.includes('role="search"') || !libraryPageSource.includes("searchIndex={searchIndex}")) {
   failures.push("The guide library search must stay visible and index published guide content.");

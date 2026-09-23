@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { GuidePage, GuideSection } from "@/content/guide-page";
-import { GuideAccessBoundary } from "./guide-access-boundary";
 import { GuideIcon, cleanLabel } from "./guide-icon";
 import { InteractiveWalkthrough } from "./interactive-walkthrough";
 import styles from "./instagram-dashboard-page.module.css";
@@ -38,8 +37,7 @@ export function InstagramDashboardPage({ guide }: { guide: GuidePage }) {
       <aside className={styles.prerequisite}><GuideIcon name="alert" /><p>{guide.answer.paragraphs[0]}</p></aside>
       {needs?.kind === "prose" && <p className={styles.needs}>{needs.paragraphs[0]}</p>}
 
-      <InteractiveWalkthrough sections={steps} slug={guide.slug} conclusion={conclusion} variant="instagram"
-        afterSteps={<div key="instagram-save-form"><GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} variant="save">{null}</GuideAccessBoundary></div>} />
+      <InteractiveWalkthrough sections={steps} slug={guide.slug} conclusion={conclusion} variant="instagram" />
     </div>
     <section className={styles.related} aria-labelledby="instagram-next-title">
       <div className={styles.relatedInner}>
