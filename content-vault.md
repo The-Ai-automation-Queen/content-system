@@ -21,6 +21,38 @@
 
 ## Most recent (quick reference)
 
+> **23/09/2026 content-engine daily run — no new entries produced (deliberate):**
+> Fresh source material exists: `reports/signal-harvest-2026-09-23.md` landed
+> this morning via the autonomous signal-harvester with two shift-lead
+> (public-eligible) findings — S1 (Resume Now "AI-Whelmed Worker Report":
+> 44% feel overwhelmed by pressure to learn AI, 44% have no clear starting
+> point) and S2 (FreshBooks/Wakefield "Era of the Solopreneur": 86% of
+> solopreneurs try AI before hiring for a stuck task) — plus two
+> internal-research-only items correctly excluded from public drafting (R1
+> Claude Opus 5.5 release, R2 Hugging Face agent-memory post). Neither has
+> been logged yet as a numbered `RESEARCH` entry in `research-notes.md`
+> (latest is still RESEARCH 049, dated 2026-09-22), so it is not yet in the
+> format this skill draws from even setting the two blockers below aside.
+> Both blockers from every prior run since 17/09 are unchanged today: (1)
+> this session's reality-check hook again states queen-brain is NOT in this
+> session and repeats the explicit instruction not to write price, tier,
+> offer status or customer-facing copy reconstructed from this repo's local
+> mirror copies — content-engine's entire output is customer-facing copy
+> (multi-format public drafts), so that instruction blocks drafting outright
+> regardless of research availability; (2) the release backlog is also
+> unchanged and now worse by duration: vault still holds 37 READY TO POST
+> (oldest 70+ days, since 14/07/2026), 33 DRAFT, 0 POSTED — confirmed by the
+> reality-check hook. `review-cockpit/state.md` confirms 20 consecutive empty
+> `getUpdates` sweeps since the 14/09/2026 digest as of 22/09 evening (no
+> sweep has run yet today to confirm a 21st) and `decisions-log.md` shows no
+> operator replies, approvals, or kills since then — so adding more DRAFT
+> volume would still only crowd the digest's top-6 rotation without moving
+> any existing item toward release. No Notion, Blotato, or queen-brain
+> connector was reachable from this session either (checked via tool
+> discovery — only generic WebFetch is registered). See the operator
+> briefing in this session's chat for the recommendation (same three options
+> open since 18/09, still unanswered).
+
 > **22/09/2026 content-engine daily run — no new entries produced (deliberate):**
 > RESEARCH 049 (2026-09-22 operator-requested signal harvest, three signals:
 > PwC 2026 AI Jobs Barometer, Instacart/Wharton/Boston College RCT, Korn Ferry
