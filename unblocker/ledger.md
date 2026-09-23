@@ -6,9 +6,9 @@
 
 ## Queue (next up, in order)
 
-1. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply)*
-2. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 22/09 check confirms still unanswered)*
-3. UNB-027 — Decide fate of `content-system-DUPLICATE` *(open, unserved, 20/09)*
+1. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 23/09 check confirms still unanswered)*
+2. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 23/09 check confirms still unanswered, 9th morning)*
+3. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 1, 23/09 — recommended delete, awaiting reply)*
 4. UNB-028 — Review and prune stale branches *(open, unserved, 20/09)*
 
 > UNB-001 through UNB-024 (below) are the original 06/07/2026 seed batch, built
@@ -327,6 +327,16 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   its own serve-3 threshold today (see below). Put the kill/shrink/blocker
   question to Fatiha again in today's end-of-run briefing. `served_count`
   left at 3 pending her answer.
+- **23/09/2026 follow-up:** `content-vault.md` ENTRY 093/092/091 still
+  `READY TO POST`, unchanged (9th morning running). `review-cockpit/
+  state.md` confirms today's pre-digest sweep (already run this morning,
+  operator-requested, see `deploy/logs`) was still empty — 21 consecutive
+  empty `getUpdates` sweeps since the 14/09 digest, no reply to the 17/09
+  confrontation in six days. Same no-serve-4-rule reasoning: did not
+  re-send or escalate over Telegram. Today's single serve went to
+  UNB-027 (fresh, unserved, satisfies the variety rule). Put the
+  kill/shrink/blocker question to Fatiha again in today's end-of-run
+  briefing. `served_count` left at 3 pending her answer.
 
 ---
 
@@ -391,8 +401,12 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   (relevant to UNB-027, not this entry). Full estate scan this run found
   no new ledger-eligible items and no completions among UNB-001–028 beyond
   what was already marked done.
-
-### UNB-027 — Decide fate of `/home/fatiha/content-system-DUPLICATE`
+- **23/09/2026 follow-up:** re-ran `git ls-remote` on all 5 repos live this
+  morning — identical `403 Write access to repository not granted` on
+  every one, unchanged from 20/09 through 22/09. Not done, no reply to the
+  22/09 confrontation yet (one day since, not yet at a re-escalation
+  point). Did not re-send. Today's serve went to UNB-027 instead (fresh
+  item, variety rule).
 - **why:** a full second git checkout of this repo, frozen at commit
   `a2e2bc1f` (2026-07-30) — 381 commits / 52 days behind `main` — with 2
   locally modified files (`.gitignore`, `deploy/crontab.example`) never
@@ -407,7 +421,17 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   content-system log --oneline a2e2bc1f..main | wc -l` → 381)
 - **verify:** directory removed, archived elsewhere with a note, or
   explicitly kept with a documented reason
-- **status:** open · added: 2026-09-20
+- **status:** served · served_count: 1 · added: 2026-09-20 · pack:
+  `packs/2026-09-23-UNB-027-delete-duplicate-checkout.md`
+- **23/09/2026 prep note:** diffed the 2 uncommitted files
+  (`.gitignore`, `deploy/crontab.example`) against the live repo before
+  serving. Both are fully superseded — the live `.gitignore` already
+  contains the same "VPS SECURITY MANAGED" block the duplicate added
+  locally, and the crontab edit is just a one-off hardcoded path that
+  shouldn't be merged back (the example file correctly keeps the
+  `__REPO__` placeholder). Nothing unique to preserve, so the pack
+  recommends outright deletion with an archive-rename as the alternative.
+  Delivered via Telegram, confirmed sent.
 
 ### UNB-028 — Review and prune stale branches (64 of 87, oldest 167 days)
 - **why:** `git branch -a` on `content-system` shows 64 non-main branches
