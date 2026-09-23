@@ -13,6 +13,13 @@
 .experience textarea { min-height:92px; resize:vertical; }
 .experience label { font:600 14px/1.5 var(--font-ui),sans-serif; }
 .toolbar,.filters { display:flex; align-items:end; gap:14px; margin:24px 0; }
+.toolbar { justify-content:space-between; align-items:center; }
+.toolbar strong { font:700 13px/1.4 var(--font-mono),monospace; color:#243a87; text-transform:uppercase; letter-spacing:.04em; }
+.progress { display:flex; gap:8px; overflow-x:auto; padding:2px 2px 12px; margin:0 0 18px; scroll-snap-type:x proximity; }
+.experience .progress button { display:flex; flex:1 0 150px; align-items:center; gap:9px; min-height:54px; text-align:left; font-weight:600; scroll-snap-align:start; }
+.progress button span { color:#2c4be0; font:700 13px/1 var(--font-mono),monospace; }
+.progress button[aria-current=step] { background:#2c4be0; color:white; border-color:#2c4be0; }
+.progress button[aria-current=step] span { color:white; }
 .toolbar label,.filters label { flex:1; min-width:0; }
 .toolbar select,.filters input,.filters select { margin-top:7px; }
 .section { border-top:1px solid #ddd; padding-top:18px; margin:18px 0; }
@@ -58,8 +65,9 @@
  .experience summary { font-size:16px; }
  .steps summary { font-size:14px; }
  .section { margin:14px 0; padding-top:14px; }
- .toolbar { margin:16px 0; gap:8px; }
+ .toolbar { margin:16px 0; gap:8px; flex-direction:row; flex-wrap:wrap; }
  .toolbar button { align-self:flex-start; }
+ .experience .progress button { flex-basis:74%; }
  .builder { margin:14px 0; }
  .options { gap:6px; }
  .options button { padding:8px 10px; font-size:14px; }
