@@ -88,8 +88,8 @@ export function GuideAccessBoundary({
       >
         <section className={styles.captureBoundary} aria-labelledby={`guide-gate-title-${guideSlug}`}>
           <span className={styles.gateLabel}>{variant === "save" ? "Keep this guide" : "Continue this guide"}</span>
-          <h2 id={`guide-gate-title-${guideSlug}`}>{variant === "save" ? `Get ${guideTitle} in your inbox` : `Keep reading ${guideTitle}`}</h2>
-          <p>{variant === "save" ? "Send yourself a link so you can return to these steps on your laptop. Your name is optional." : "You have the main idea and first steps. Add your email to open the full exercise and receive a link you can return to. Your name is optional."}</p>
+          <h2 id={`guide-gate-title-${guideSlug}`}>{variant === "save" ? "Keep this walkthrough handy" : `Keep reading ${guideTitle}`}</h2>
+          <p>{variant === "save" ? "Get the link by email so you can revisit the steps and copyable prompts when you need them." : "You have the main idea and first steps. Add your email to open the full exercise and receive a link you can return to. Your name is optional."}</p>
           <form onSubmit={submit}>
             <label htmlFor={`guide-first-name-${guideSlug}`}>First name (optional)</label>
             <input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} />
@@ -100,13 +100,13 @@ export function GuideAccessBoundary({
               <input name="marketingConsent" type="checkbox" />
               <span>Also send me practical Shift &amp; Lead emails and product updates (optional). I can unsubscribe at any time.</span>
             </label>
-            <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Sending..." : variant === "save" ? "Email me this guide" : "Open the rest of the guide"}</button>
+            <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Sending..." : variant === "save" ? "Send me the link" : "Open the rest of the guide"}</button>
             <small>We use Lumail to deliver your requested email. Marketing is optional. {variant === "unlock" && "This also unlocks all free guides on this device. "}Read the <a href="/privacy.html">privacy notice</a>.</small>
             {status === "error" && <strong role="alert">{message}</strong>}
           </form>
         </section>
       </div>
-      {variant === "save" && ready && unlocked && <p role="status" className={styles.captureSuccess}>Your guide link has been requested. Check your inbox.</p>}
+      {variant === "save" && ready && unlocked && <p role="status" className={styles.captureSuccess}>Link requested. Check your inbox.</p>}
       {variant === "unlock" && <div
         className="guide-gated-content"
         ref={contentRef}
