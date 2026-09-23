@@ -28,7 +28,10 @@
 .relatedInner { width:min(100%,790px); margin:auto; }
 .related h2 { margin:0 0 16px; color:var(--ink); font:700 22px/1.25 var(--font-ui),sans-serif; }
 .relatedInner > div { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
-.related a,.related article { display:flex; flex-direction:column; gap:9px; min-height:145px; padding:17px; border:1px solid var(--line); border-radius:9px; color:var(--ink); background:var(--paper); text-decoration:none; }
+.related a,.related article { display:flex; flex-direction:column; min-height:145px; border:1px solid var(--line); color:var(--ink); background:var(--paper); text-decoration:none; overflow:hidden; }
+.relatedArt { position:relative; width:100%; aspect-ratio:16/9; background:var(--blue-deep); }
+.relatedArt img { object-fit:cover; }
+.relatedCopy { display:flex; flex:1; flex-direction:column; gap:9px; padding:17px; }
 .related strong { font:700 16px/1.35 var(--font-ui),sans-serif; }
 .related p { margin:0; color:var(--muted); font:400 13px/1.45 var(--font-ui),sans-serif; }
 .related span { margin-top:auto; color:var(--blue-deep); font:700 12px/1.3 var(--font-ui),sans-serif; }
@@ -40,7 +43,7 @@
  .heroImage { aspect-ratio:16/9; }
  .features article { padding:13px; min-height:0; }
  .relatedInner > div { grid-template-columns:1fr; }
- .related a,.related article { min-height:0; }
+.related a,.related article { min-height:0; }
 }
 @media(max-width:520px) {
  .hero h1 { font-size:clamp(30px,9vw,39px); }

@@ -45,8 +45,8 @@ export function InstagramDashboardPage({ guide }: { guide: GuidePage }) {
       <div className={styles.relatedInner}>
         <h2 id="instagram-next-title">What do you want to do next?</h2>
         <div>{guide.related.map((item) => item.status === "coming-next"
-          ? <article key={item.slug}><strong>{cleanLabel(item.title)}</strong><p>{item.reason}</p><span>Coming next</span></article>
-          : <Link key={item.slug} href={`/guides/${item.slug}.html`}><strong>{cleanLabel(item.title)}</strong><p>{item.reason}</p><span>Start the guide →</span></Link>)}</div>
+          ? <article key={item.slug}><div className={styles.relatedArt}><Image src={item.cover} alt="" fill sizes="(max-width: 720px) 100vw, 250px" /></div><div className={styles.relatedCopy}><strong>{cleanLabel(item.title)}</strong><p>{item.reason}</p><span>Coming next</span></div></article>
+          : <Link key={item.slug} href={`/guides/${item.slug}.html`}><div className={styles.relatedArt}><Image src={item.cover} alt="" fill sizes="(max-width: 720px) 100vw, 250px" /></div><div className={styles.relatedCopy}><strong>{cleanLabel(item.title)}</strong><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div>
       </div>
     </section>
   </main>;
