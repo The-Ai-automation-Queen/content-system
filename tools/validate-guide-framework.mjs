@@ -28,6 +28,7 @@ const footerSource = read("next-app/components/chrome/site-footer.tsx");
 const guideAccessSource = read("next-app/components/guides/guide-access-boundary.tsx");
 const guideReadingSource = read("next-app/components/guides/guide-reading-page.tsx");
 const guideRouteSource = read("next-app/app/guides/[slug]/page.tsx");
+const legacyGuideSlugsSource = read("next-app/content/legacy-guide-slugs.ts");
 const instagramPageSource = read("next-app/components/guides/instagram-dashboard-page.tsx");
 const interactiveWalkthroughSource = read("next-app/components/guides/interactive-walkthrough.tsx");
 const guideFormatsSource = read("next-app/content/guide-formats.ts");
@@ -127,6 +128,11 @@ if (!guideRouteSource.includes('slug === "instagram-content-dashboard"') ||
     instagramPageSource.includes('variant="save"') ||
     interactiveWalkthroughSource.includes('afterSteps')) {
   failures.push("The Instagram guide must use its dedicated Next.js walkthrough behind a pre-guide Lumail entry gate.");
+}
+if (!guideRouteSource.includes("legacyGuideSlugs.has(slug)") ||
+    !guideRouteSource.includes("needs an approved interactive Next.js composition") ||
+    !legacyGuideSlugsSource.includes("Frozen migration allowlist")) {
+  failures.push("New guides must not fall back to the legacy static article renderer.");
 }
 if (!libraryUiSource.includes('role="search"') || !libraryPageSource.includes("searchIndex={searchIndex}")) {
   failures.push("The guide library search must stay visible and index published guide content.");

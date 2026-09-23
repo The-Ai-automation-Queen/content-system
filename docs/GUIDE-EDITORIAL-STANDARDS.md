@@ -37,9 +37,9 @@ Do not apply one repeated anatomy to every topic.
 ## Opening and capture
 
 - Start with the title and one direct promise.
-- Put the reusable email access gate before the guide body on a visitor's first guide visit. Do not send the reader to a separate capture page.
-- Keep the gate copy generic. Send one Lumail request with the guide-specific tag, then open the requested guide.
-- Remember a successful access state so a reader following related guides is not asked for the same email on every page.
+- Put the compact, guide-specific email modal before the guide body on every rebuilt guide. Do not send the reader to a separate capture page.
+- Use that guide's original artwork and specific promise. Collect first name, last name, and email, with a separate optional marketing choice. Send one Lumail request with the guide-specific tag, then open the requested guide.
+- Remember a successful access state for the appropriate guide; do not use the old generic first-visit gate or static article layout as the rebuild default.
 - Do not promise a separate download unless one has actually been built and connected.
 - Do not place helper copy beside a CTA when it only repeats the button. Make the button label specific enough to stand alone.
 - Do not repeat the same capture at the bottom.

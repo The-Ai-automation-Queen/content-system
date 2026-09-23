@@ -20,7 +20,7 @@ These are the operating contracts for the ChatGPT scheduled tasks. The tasks use
 - Process pending triage items using `skills/research-router/SKILL.md` and `config/pipeline.json`.
 - Merge related items into durable clusters rather than creating a cluster per capture.
 - Update `queues/clusters.json` and `queues/opportunities.json`.
-- For strong opportunities (normally score >= 80) with no hard blocker, create/update a guide/funnel brief using `skills/guide-architect/SKILL.md` and mark the opportunity `brief_ready_for_approval`.
+- For strong opportunities (normally score >= 80) with no hard blocker, create/update a guide/funnel brief using the current `shift-lead-guide-builder` skill and mark the opportunity `brief_ready_for_approval`.
 - Do **not** create the full guide unless its opportunity is explicitly present in `queues/approved.json` with `status: "approved_to_build"`.
 - Regenerate `EDITORIAL-DASHBOARD.md` after meaningful state changes.
 - Produce `automation/research-pipeline/reports/daily-YYYY-MM-DD.md` containing: files triaged, clusters changed, strong guide candidates, LinkedIn angles, lead-magnet opportunities, paid/B2B signals, items killed, and items needing more research.
@@ -33,7 +33,7 @@ These are the operating contracts for the ChatGPT scheduled tasks. The tasks use
 - Create `automation/research-pipeline/reports/weekly-YYYY-MM-DD.md` with a 5-day plan:
   - authority/opinion post
   - practical demo/result post
-  - open guide or guide update
+  - practical guide or guide update
   - proof/behind-the-scenes post
   - contextual lead-magnet or conversion post
 - Every item must point back to a cluster/opportunity and specify its CTA.
@@ -52,9 +52,9 @@ This task combines the previously separate Approved Draft Builder and Publish & 
 - Process one approved opportunity at a time.
 - Set the queue item to `building` before substantive work.
 - Create/reuse branch `research/<opportunity-id>` from latest `main`.
-- Build only the explicitly approved artifacts using `skills/guide-builder/SKILL.md` and, when approved, `skills/lead-magnet-builder/SKILL.md`.
-- Keep the public guide open; companion assets may exchange value for email.
-- Use one terminology system, one primary CTA, no decorative hero image and no unsupported/time-sensitive claims.
+- Build only the explicitly approved artifacts using the current `shift-lead-guide-builder` skill and, when approved, `skills/lead-magnet-builder/SKILL.md`.
+- Use a compact pre-guide email modal, the approved interactive Next.js layout adapted to the reader's job, and original topic-specific cover art. Do not return to the static HTML guide format.
+- Use one terminology system, one primary CTA, and no unsupported/time-sensitive claims.
 - Run `skills/editorial-qa/SKILL.md`.
 - Open or refresh a draft PR titled `Research guide: <outcome-first title>`.
 - Store branch, PR number/url and QA verdict in `queues/approved.json`.

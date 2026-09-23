@@ -1,10 +1,12 @@
 # Guide email form contract
 
-The Lumail form is intentional lead capture, but its position and whether it gates content are page-specific owner decisions. The `shift-lead-guide-builder` skill and the approved page design take precedence over older gate patterns.
+The Lumail form is intentional lead capture. The owner approved a compact pre-guide capture modal across the library. The `shift-lead-guide-builder` skill and the approved page design take precedence over older inline gate patterns.
 
 ## Published guides
 
-The approved registry in `data/guide-publication.json` is the source of truth. Every approved guide needs an embedded Lumail form and its own `guide-*` tag. A reusable component may handle submission, but it must not impose a generic page layout or form position. The Instagram guide shows its compact email modal before any walkthrough content. The full guide opens only after a successful submission.
+The approved registry in `data/guide-publication.json` is the source of truth. Every approved guide needs a Lumail capture modal and its own `guide-*` tag. A reusable component may handle submission, but it must not impose a generic page layout. The Instagram guide already shows its compact email modal before any walkthrough content. The full guide opens only after a successful submission.
+
+For the library rebuild, the owner approved that same compact **pre-guide capture behavior for every guide**: first name, last name, email, optional marketing consent, a unique guide tag, and unlock only after a successful capture. The modal's cover and promise are guide-specific. Existing guides that still use the older inline gate have not yet been migrated; this paragraph is the target, not a claim about current production.
 
 ## Visitor experience
 

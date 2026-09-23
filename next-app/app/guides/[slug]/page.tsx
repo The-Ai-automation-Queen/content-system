@@ -5,6 +5,7 @@ import { GuideReadingPage } from "@/components/guides/guide-reading-page";
 import { InstagramDashboardPage } from "@/components/guides/instagram-dashboard-page";
 import { GuideAccessBoundary } from "@/components/guides/guide-access-boundary";
 import { getGuidePage, guidePages } from "@/content/guide-page";
+import { legacyGuideSlugs } from "@/content/legacy-guide-slugs";
 
 export function generateStaticParams() {
   return guidePages.map((guide) => ({ slug: guide.slug }));
@@ -35,5 +36,6 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   const guide = getGuidePage(slug);
   if (!guide) notFound();
   if (slug === "instagram-content-dashboard") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} variant="entry"><InstagramDashboardPage guide={guide} /></GuideAccessBoundary>;
-  return <GuideReadingPage guide={guide} />;
+  if (legacyGuideSlugs.has(slug)) return <GuideReadingPage guide={guide} />;
+  throw new Error(`Guide ${slug} needs an approved interactive Next.js composition before it can be built.`);
 }

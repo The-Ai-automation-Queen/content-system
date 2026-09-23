@@ -37,7 +37,7 @@ Each guide moves through these gates in order:
 4. **Build the approved copy and layout.** Use the guide's approved full-page visual reference. Reuse site chrome and working components where appropriate; do not let a legacy renderer decide the page format.
 5. **Preview the complete page.** Check desktop and mobile, the email gate, images, links, prompt and three related guides.
 6. **Page approval.** Add the guide to `data/guide-publication.json` in its correct section and journey order.
-7. **Publish only that guide.** Build, run the framework validator, copy the generated guide and library files, then push only after Fatiha asks.
+7. **Publish only that guide.** After final page approval, build, run the framework validator, copy the generated guide and library files, and push unless Fatiha explicitly holds release.
 8. **Verify production.** Check the custom-domain guide, library card, image, Lumail tag and internal links.
 
 If approval is unclear, stop before step 4 or step 7, whichever applies.
@@ -61,16 +61,13 @@ Every guide answers one useful question for a capable non-specialist. It should 
 - Do not use em dashes.
 - Write `one` as a word in normal prose or a title when it sounds natural. Use digits for numbered steps, promised list counts, measurements, prices and technical values.
 
-### Required page sequence
+### Approved page anatomy, adapted to the reader's job
 
-1. **Title and direct promise.** No metadata, reading time, date, byline or internal labels.
-2. **The answer.** Two or three short paragraphs that answer the title in language a beginner can repeat.
-3. **The useful explanation.** Choose the format that fits the reader's job: comparison, grouped definitions, steps, checklist or decision guide. Do not force every guide into identical sections.
-4. **What still needs the reader.** Weave the relevant judgement, context or responsibility into the explanation. Do not add a repeated “human layer” label.
-5. **Email form at the approved point.** Use the guide's agreed form position and purpose. For the Instagram walkthrough, collect first name, last name, and email in a compact modal before the walkthrough opens. Show the complete cover artwork, not a crop. The full guide appears only after successful capture. Other guides may use an inline access gate only when that guide's approved journey calls for one.
-6. **Try it now.** Give a useful copy-and-paste prompt or a specific action that takes about 10 minutes or less. Show where to open the tool, what to copy, what to replace, how to send it and how to check the result.
-7. **Conclusion.** Tell the reader what they now understand or can do. Do not repeat the opening.
-8. **Continue.** Show exactly three logical next-step slots. Use approved guides when available. A planned guide awaiting copy approval may appear as a clearly marked, non-clickable `Coming next` placeholder, never as a broken link.
+1. **Pre-guide email modal.** Before content opens, collect first name, last name, and email. Show that guide's complete artwork and specific promise. Unlock only after successful capture. Existing inline gates are legacy implementations to replace during migration.
+2. **Compact hero and orientation.** Put the title, direct promise, and useful result near the top. Avoid the old article cover/title stack and repeated introductory paragraphs.
+3. **Interactive teaching path.** Choose the structure that fits this guide: build steps, diagnosis, decision helper, worked example, or a short concept check. Show one useful stage at a time where that improves comprehension. Do not impose Instagram's five tabs or agent/manual choice on unrelated topics.
+4. **Practical action and result check.** Give complete copyable instructions when an AI action helps, show a worked example, and explain how to judge the result. Use verified, identity-scrubbed screenshots only where the interface matters.
+5. **Finish and continue.** Name the result the reader gained and show exactly three logical next-guide cards with the appropriate artwork. A planned guide may appear only as a clearly marked, non-clickable placeholder.
 
 ### Tool-specific guide addition
 
@@ -94,7 +91,7 @@ Do not assume the reader already knows where prompts go, where settings live or 
 The site header is shared across the main website and every guide. The Shift & Lead wordmark uses Playfair Display at 21px, line-height 1, regular weight 400 and -0.03em letter spacing. Desktop navigation uses Inter at 12px, line-height 1, regular weight 400, 0.08em letter spacing and uppercase labels. Never create a page-specific bold, larger or smaller version of the logo or navigation.
 
 - The guide library keeps its approved structure. A copy revision must not redesign it.
-- A guide may use a dedicated Next.js page composition when the owner-approved design differs from the legacy article renderer. Do not use `GuideReadingPage` as a template for rebuilt guides.
+- Every rebuilt guide uses a dedicated, task-appropriate interactive Next.js composition. The current static article renderer is legacy infrastructure, not the target layout. Use the approved Instagram guide's compact visual hierarchy as the reference without copying its five steps or two choices into unrelated topics.
 - Keep the back link, site header and footer consistent with the live site. Set each guide's content width from its approved layout and check it at desktop and mobile sizes.
 - Never place text over an image where it overlaps the mascot or illustration.
 - Do not put titles over library-card images. Card titles sit below the image.
@@ -102,10 +99,10 @@ The site header is shared across the main website and every guide. The Shift & L
 - Export covers at 16:9, no more than 1280px wide and no more than 200 KB. Keep the generator original outside the production path when preservation is useful.
 - Keep original topic-specific artwork visible without cropping out the subject. The cover may be placed within the approved hero composition rather than imposed as a full-width article banner.
 - Use responsive title sizes with `clamp()` and no manual line breaks.
-- Use Shift & Lead colours with sufficient contrast. The Instagram walkthrough adapts the compact, sectioned Tenfold design using the brand's cobalt and deep blue palette, with cool pale-blue panels instead of cream.
+- Use Shift & Lead colours with sufficient contrast across every rebuilt guide: white reading surface, cobalt and deep blue hierarchy, and cool pale-blue supporting panels. Do not carry cream panels or the current static article styling into the new guide format.
 - Eyebrows and small labels are at least 12px.
 - Do not use decorative vertical lines.
-- Use cream or tinted panels only where they help the approved guide's hierarchy.
+- Use pale-blue panels only where they help the approved guide's hierarchy.
 - Use bold sparingly to make dense copy skimmable.
 - Keep three related cards equal in height with their actions aligned.
 - Motion is optional and must improve hierarchy or comprehension. Do not add Three.js or GSAP to decorate a simple guide.
@@ -113,6 +110,8 @@ The site header is shared across the main website and every guide. The Shift & L
 ### Reusable behavior contract
 
 Reuse working components for prompt copying, progress, screenshots and Lumail submission when they fit the approved guide. A shared component supplies behavior, not a mandatory layout. The Instagram walkthrough is a dedicated Next.js composition with the approved two choices, five-step map and compact pre-guide email modal. When the owner changes a page design or form position, update the relevant source, validation and instructions together so an older template cannot reappear on the next build.
+
+The approved library-wide target is a compact pre-guide email modal for every published guide, with first name, last name, email, optional marketing consent, and that guide's own Lumail tag. The interaction after capture adapts to the reader's job: build, diagnose, decide, or learn. Migrate existing guides to this target; do not describe their current legacy rendering as already updated.
 
 On the Instagram guide, keep the current layout but select “Let an agent guide me” and the first “Meta setup” tab when the guide opens. Reopening may retain completed checkmarks, but it must begin on the first tab rather than a previously visited step. This default does not apply to other guides.
 
