@@ -4,7 +4,7 @@ The Lumail form is intentional lead capture, but its position and whether it gat
 
 ## Published guides
 
-The approved registry in `data/guide-publication.json` is the source of truth. Every approved guide needs an embedded Lumail form and its own `guide-*` tag. A reusable component may handle submission, but it must not impose a generic page layout or form position. The approved Instagram guide places its form after all five steps and remains readable without submitting it.
+The approved registry in `data/guide-publication.json` is the source of truth. Every approved guide needs an embedded Lumail form and its own `guide-*` tag. A reusable component may handle submission, but it must not impose a generic page layout or form position. The Instagram guide shows one compact, optional email form after the first manual step, after the copyable agent prompt, or at the finish if the reader skips ahead. It remains readable without submitting the form.
 
 ## Visitor experience
 
@@ -25,13 +25,13 @@ The approved registry in `data/guide-publication.json` is the source of truth. E
 - Honeypot: `website`
 - Recorded server-side: guide URL, guide tag, shared guide tag, source, timestamp and campaign fields
 - Provider credential: `LUMAIL_API_TOKEN`, server-side only
-- For an access-gated guide, unlock only after a successful Lumail response. For an after-guide form, send the return link and show success without claiming to unlock content.
+- For an access-gated guide, unlock only after a successful Lumail response. For a save-link form, send the return link and show success without claiming to unlock content.
 
 ## Persistence and review
 
 - Storage key: `shift-lead-guide-access`
 - Stored value: `true`
-- `?gate=1` forces the form for testing, including after-guide forms.
+- `?gate=1` forces the unsaved form state for testing when the reader reaches an inline save-link form.
 - `?review=1` bypasses the gate only on localhost, `127.0.0.1` and Vercel preview hosts.
 - Production does not accept the review bypass.
 
@@ -39,7 +39,7 @@ The approved registry in `data/guide-publication.json` is the source of truth. E
 
 - Invalid email is rejected before submission.
 - Provider or network failure shows a generic retry message.
-- A gated guide remains locked after a failed request. An after-guide form leaves the guide readable and offers a retry.
+- A gated guide remains locked after a failed request. A save-link form leaves the guide readable and offers a retry.
 - Provider details and credentials are never exposed to the browser.
 
 ## Analytics

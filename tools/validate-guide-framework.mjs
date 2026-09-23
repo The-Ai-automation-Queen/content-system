@@ -29,6 +29,7 @@ const guideAccessSource = read("next-app/components/guides/guide-access-boundary
 const guideReadingSource = read("next-app/components/guides/guide-reading-page.tsx");
 const guideRouteSource = read("next-app/app/guides/[slug]/page.tsx");
 const instagramPageSource = read("next-app/components/guides/instagram-dashboard-page.tsx");
+const interactiveWalkthroughSource = read("next-app/components/guides/interactive-walkthrough.tsx");
 const guideFormatsSource = read("next-app/content/guide-formats.ts");
 const guideReadingStyles = read("next-app/components/guides/guide-reading-page.module.css");
 const guideCaptureApi = read("main-site/api/guide-capture.js");
@@ -120,8 +121,11 @@ if (genericPreview < 0 || genericGate < genericPreview ||
 if (!guideRouteSource.includes('slug === "instagram-content-dashboard"') ||
     !guideRouteSource.includes("<InstagramDashboardPage guide={guide} />") ||
     !instagramPageSource.includes('variant="instagram"') ||
-    !instagramPageSource.includes('variant="save"')) {
-  failures.push("The Instagram guide must use its dedicated Next.js walkthrough, with the email form after the steps.");
+    !instagramPageSource.includes('variant="save"') ||
+    !interactiveWalkthroughSource.includes('mode === "agent" && afterSteps') ||
+    !interactiveWalkthroughSource.includes('i === 0 && (expanded || active === 0) && afterSteps') ||
+    !interactiveWalkthroughSource.includes('active === sections.length - 1 && afterSteps')) {
+  failures.push("The Instagram guide must use its dedicated Next.js walkthrough, with one optional save-link form after meaningful content and at the finish.");
 }
 if (!libraryUiSource.includes('role="search"') || !libraryPageSource.includes("searchIndex={searchIndex}")) {
   failures.push("The guide library search must stay visible and index published guide content.");

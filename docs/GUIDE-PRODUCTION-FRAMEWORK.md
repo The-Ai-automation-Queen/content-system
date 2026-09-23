@@ -67,7 +67,7 @@ Every guide answers one useful question for a capable non-specialist. It should 
 2. **The answer.** Two or three short paragraphs that answer the title in language a beginner can repeat.
 3. **The useful explanation.** Choose the format that fits the reader's job: comparison, grouped definitions, steps, checklist or decision guide. Do not force every guide into identical sections.
 4. **What still needs the reader.** Weave the relevant judgement, context or responsibility into the explanation. Do not add a repeated “human layer” label.
-5. **Email form at the approved point.** Use the guide's agreed form position and purpose. For the Instagram walkthrough, the Lumail form follows all five steps and emails a return link. Do not introduce a blurred teaser or move the form to the top. Other guides may use an inline access gate only when that guide's approved journey calls for one.
+5. **Email form at the approved point.** Use the guide's agreed form position and purpose. For the Instagram walkthrough, show one compact, optional Lumail form after the first manual step, after the agent prompt, or at the finish if the reader skips ahead. It emails a return link without gating the steps. Do not introduce a blurred teaser or top-of-page wall. Other guides may use an inline access gate only when that guide's approved journey calls for one.
 6. **Try it now.** Give a useful copy-and-paste prompt or a specific action that takes about 10 minutes or less. Show where to open the tool, what to copy, what to replace, how to send it and how to check the result.
 7. **Conclusion.** Tell the reader what they now understand or can do. Do not repeat the opening.
 8. **Continue.** Show exactly three logical next-step slots. Use approved guides when available. A planned guide awaiting copy approval may appear as a clearly marked, non-clickable `Coming next` placeholder, never as a broken link.
@@ -112,7 +112,7 @@ The site header is shared across the main website and every guide. The Shift & L
 
 ### Reusable behavior contract
 
-Reuse working components for prompt copying, progress, screenshots and Lumail submission when they fit the approved guide. A shared component supplies behavior, not a mandatory layout. The Instagram walkthrough is a dedicated Next.js composition with the approved two choices, five-step map and after-guide email form. When the owner changes a page design or form position, update the relevant source, validation and instructions together so an older template cannot reappear on the next build.
+Reuse working components for prompt copying, progress, screenshots and Lumail submission when they fit the approved guide. A shared component supplies behavior, not a mandatory layout. The Instagram walkthrough is a dedicated Next.js composition with the approved two choices, five-step map and optional save-link form after meaningful content. When the owner changes a page design or form position, update the relevant source, validation and instructions together so an older template cannot reappear on the next build.
 
 ## Approval checklist
 
@@ -128,7 +128,7 @@ Before adding a guide to the registry, confirm all of the following:
 - All three journey slots are present. Live cards point to approved guides; planned cards are clearly marked, non-clickable placeholders.
 - Desktop and mobile have no clipped text, forced title break, broken image or horizontal scroll.
 - The cover is a topic-specific WebP used in the approved page composition.
-- The form appears at the approved point; for Instagram, after all five steps. Consent text is clear and marketing consent remains optional.
+- The form appears at the approved point; for Instagram, after the first manual step or agent prompt, with a finish fallback. Consent text is clear and marketing consent remains optional.
 - Typography, contrast and section hierarchy match the approved full-page reference at desktop and mobile sizes.
 - The header and footer match the current live homepage.
 

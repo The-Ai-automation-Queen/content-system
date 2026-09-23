@@ -82,17 +82,19 @@ export function GuideAccessBoundary({
   return (
     <>
       <div
-        className={styles.captureTransition}
+        className={`${styles.captureTransition} ${variant === "save" ? styles.captureSaveTransition : ""}`}
         data-guide-capture-boundary
         hidden={ready && unlocked}
       >
-        <section className={styles.captureBoundary} aria-labelledby={`guide-gate-title-${guideSlug}`}>
+        <section className={`${styles.captureBoundary} ${variant === "save" ? styles.captureSave : ""}`} aria-labelledby={`guide-gate-title-${guideSlug}`}>
           <span className={styles.gateLabel}>{variant === "save" ? "Keep this guide" : "Continue this guide"}</span>
           <h2 id={`guide-gate-title-${guideSlug}`}>{variant === "save" ? "Keep this walkthrough handy" : `Keep reading ${guideTitle}`}</h2>
           <p>{variant === "save" ? "Get the link by email so you can revisit the steps and copyable prompts when you need them." : "You have the main idea and first steps. Add your email to open the full exercise and receive a link you can return to. Your name is optional."}</p>
           <form onSubmit={submit}>
-            <label htmlFor={`guide-first-name-${guideSlug}`}>First name (optional)</label>
-            <input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} />
+            {variant === "unlock" && <>
+              <label htmlFor={`guide-first-name-${guideSlug}`}>First name (optional)</label>
+              <input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} />
+            </>}
             <label htmlFor={`guide-email-${guideSlug}`}>Email address (required)</label>
             <input id={`guide-email-${guideSlug}`} name="email" type="email" autoComplete="email" required placeholder="you@example.com" />
             <input className={styles.honeypot} name="website" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
