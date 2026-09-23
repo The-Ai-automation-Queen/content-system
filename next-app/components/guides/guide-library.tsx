@@ -1,6 +1,6 @@
 "use client";
 
-import { type FormEvent, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { GuideCard } from "./guide-card";
 import {
   guideLevels,
@@ -36,18 +36,9 @@ function track(name: string, detail: Record<string, string>) {
   (window as Window & { slTrack?: (event: string, data?: Record<string, string>) => void }).slTrack?.(name, detail);
 }
 
-function normaliseSearchText(value: string) {
-  return value
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[’']/g, "")
-    .toLowerCase();
-}
-
 export function GuideLibrary({ guides, reviewMode = false }: { guides: Guide[]; reviewMode?: boolean }) {
   const [level, setLevel] = useState<LevelFilter>("all");
   const [outcome, setOutcome] = useState<OutcomeFilter>("all");
-  const [query, setQuery] = useState("");
 
   const featured = guides.find((guide) => guide.slug === "what-should-you-never-share-with-ai") ?? guides[0];
   const foundations = foundationSlugs
@@ -58,44 +49,20 @@ export function GuideLibrary({ guides, reviewMode = false }: { guides: Guide[]; 
   );
 
   const visible = useMemo(() => {
-    const searchTerms = normaliseSearchText(query).trim().split(/\s+/).filter(Boolean);
-
     return guides.filter((guide) => {
       const matchesLevel = level === "all" || guide.level === level;
       const matchesOutcome = outcome === "all" || guide.outcomes.includes(outcome);
-      const searchableText = [
-        guide.slug,
-        guide.title,
-        guide.summary,
-        guide.level,
-        guide.hub,
-        ...guide.outcomes,
-        ...guide.tags,
-      ].join(" ");
-      const normalisedGuide = normaliseSearchText(searchableText);
-
-      return matchesLevel
-        && matchesOutcome
-        && (searchTerms.length === 0 || searchTerms.every((term) => normalisedGuide.includes(term)));
+      return matchesLevel && matchesOutcome;
     });
-  }, [guides, level, outcome, query]);
-
-  const searchStatus = query.trim()
-    ? `${visible.length} matching ${visible.length === 1 ? "guide" : "guides"}`
-    : "Search by a task, tool or concern.";
+  }, [guides, level, outcome]);
 
   const resultLabel = outcome !== "all"
     ? outcome
-    : level !== "all"
-      ? `${level} guides`
-      : query.trim()
-        ? "Search results"
-        : "All guides";
+    : level !== "all" ? `${level} guides` : "All guides";
 
   function chooseOutcome(value: OutcomeFilter) {
     setOutcome(value);
     setLevel("all");
-    setQuery("");
     track("guide_outcome", { outcome: value });
     scrollToLibrary();
   }
@@ -108,15 +75,6 @@ export function GuideLibrary({ guides, reviewMode = false }: { guides: Guide[]; 
   function resetFilters() {
     setLevel("all");
     setOutcome("all");
-    setQuery("");
-  }
-
-  function submitSearch(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setOutcome("all");
-    setLevel("all");
-    track("guide_search_submit", { query: query.trim(), results: String(visible.length) });
-    scrollToLibrary();
   }
 
   return (
@@ -127,26 +85,6 @@ export function GuideLibrary({ guides, reviewMode = false }: { guides: Guide[]; 
           <h1 id="guides-title">Use AI for real work. Keep the decisions that need <em>you.</em></h1>
           <p>Pick the task you want done. I will show you which tool fits, what to give it, what to keep private and what you still need to check.</p>
           {reviewMode && <p className="review-banner">Review mode · Approved and unpublished guide pages are shown together.</p>}
-          <form className="hero-search" role="search" onSubmit={submitSearch}>
-            <label htmlFor="guide-search">What do you need help with?</label>
-            <span className="hero-search__field">
-              <input
-                id="guide-search"
-                value={query}
-                onChange={(event) => {
-                  setQuery(event.target.value);
-                  setOutcome("all");
-                  setLevel("all");
-                  track("guide_search", { query: event.target.value });
-                }}
-                type="search"
-                placeholder="Try prompts or privacy"
-                autoComplete="off"
-              />
-              <button type="submit">Show guides</button>
-            </span>
-            <span className="hero-search__status" aria-live="polite">{searchStatus}</span>
-          </form>
         </div>
         {featured && (
           <div className="guides-hero__feature" aria-label="Featured guide">
@@ -211,7 +149,7 @@ export function GuideLibrary({ guides, reviewMode = false }: { guides: Guide[]; 
             className="library__reset"
             type="button"
             onClick={resetFilters}
-            disabled={level === "all" && outcome === "all" && !query}
+            disabled={level === "all" && outcome === "all"}
           >
             Show all guides
           </button>
@@ -234,7 +172,7 @@ export function GuideLibrary({ guides, reviewMode = false }: { guides: Guide[]; 
         </div>
         {visible.length === 0 && (
           <div className="empty-state">
-            <p>{level === "Expert" && outcome === "all" && !query
+            <p>{level === "Expert" && outcome === "all"
               ? "Expert guides are being reviewed before they return. Choose Intermediate for the most advanced guides available now."
               : "No guide matches that search yet."}</p>
             <button type="button" onClick={resetFilters}>Show all guides</button>

@@ -13,4 +13,13 @@ export const guideFormats: Record<string, LearningFormat> = {
   "test-manus-without-burning-credits": "walkthrough", "manus-browser-workflow": "decision",
   "switch-from-chatgpt-to-mistral": "decision", "is-mistral-pro-worth-it": "decision",
   "test-meta-business-agent-customer-replies": "practice", "fix-deepseek-wall-of-text": "practice", "edit-long-writing-with-deepseek": "walkthrough",
+  "chatgpt-customer-research-with-evidence": "audit",
+  "teach-claude-a-repeatable-workflow": "walkthrough",
+  "fix-gemini-workspace-action": "walkthrough",
+  "what-can-copilot-see-at-work": "audit",
+  "test-meta-muse-money-saving-task": "decision",
+  "test-grok-repeated-image-edits": "walkthrough",
+  "test-deepseek-v4-document-work": "decision",
+  "protect-a-long-deepseek-project": "audit",
+  "mistral-multilingual-research": "walkthrough",
 };

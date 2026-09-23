@@ -2,11 +2,12 @@ import { ClaudeSeriesExperience, SeriesGuideLink } from "./claude-series-experie
 import Image from "next/image";
 import { GuideLearningExperience } from "./guide-learning-experience";
 import { guideFormats } from "@/content/guide-formats";
-import { GuideIcon, cleanLabel } from "./guide-icon";
+import { cleanLabel } from "./guide-icon";
 import { InteractiveWalkthrough } from "./interactive-walkthrough";
 import Link from "next/link";
 import { GuideAccessBoundary } from "./guide-access-boundary";
 import { CopyPrompt } from "./copy-prompt";
+import { ScreenRecordingExperience } from "./screen-recording-experience";
 import type { GuidePage, GuideSection } from "@/content/guide-page";
 import styles from "./guide-reading-page.module.css";
 
@@ -160,6 +161,7 @@ function Section({ section }: { section: GuideSection }) {
 export function GuideReadingPage({ guide }: { guide: GuidePage }) {
   const RelatedLink = guide.series ? SeriesGuideLink : Link;
   const learningFormat = guide.series ? undefined : guideFormats[guide.slug];
+  const screenRecording = guide.slug === "chatgpt-screen-recording-to-process-guide";
   const interactive = guide.tutorial?.every((section) => section.kind === "walkthrough");
   const conclusion = (<section className={styles.conclusion}>
               <h2>{cleanLabel(guide.conclusion.heading)}</h2>
@@ -216,24 +218,18 @@ export function GuideReadingPage({ guide }: { guide: GuidePage }) {
               {guide.answer.heading && <h2>{guide.answer.heading}</h2>}
               {guide.answer.paragraphs.map((paragraph) => <p key={paragraph}><RichText>{paragraph}</RichText></p>)}
             </section>
-            {learningFormat ? <div className={styles.learningPreview}><GuideIcon name="book"/><p>Explore the guide one section at a time, then put it into practice.</p></div> : guide.sections.map((section) => <Section section={section} key={section.heading} />)}
+            {learningFormat ? <Section section={guide.sections[0]} /> : (screenRecording ? guide.sections.filter((section) => section.kind === "cards") : guide.sections).map((section) => <Section section={section} key={section.heading} />)}
           </div>
 
           <GuideAccessBoundary
             guideSlug={guide.slug}
             guideTitle={guide.title}
-            teaser={(
-              <>
-                <h2>{guide.gateTeaser?.heading ?? guide.tryNow?.heading}</h2>
-                <p><RichText>{guide.gateTeaser?.body ?? guide.tryNow?.introduction ?? ""}</RichText></p>
-                {!guide.gateTeaser && <p>{guide.tryNow?.prompt}</p>}
-              </>
-            )}
           >
             {guide.series && <ClaudeSeriesExperience series={guide.series} />}
-            {learningFormat && <GuideLearningExperience guide={guide} format={learningFormat} conclusion={conclusion} />}
+            {screenRecording && <ScreenRecordingExperience guide={guide} />}
+            {learningFormat && <GuideLearningExperience guide={guide} format={learningFormat} conclusion={conclusion} skipFirstSection />}
             {guide.tutorial?.every((section) => section.kind === "walkthrough") ? <InteractiveWalkthrough sections={guide.tutorial} slug={guide.slug} conclusion={conclusion} /> : guide.tutorial?.map((section) => <Section section={section} key={section.heading} />)}
-            {!learningFormat && guide.tryNow && <section className={styles.tryNow}>
+            {!screenRecording && !learningFormat && guide.tryNow && <section className={styles.tryNow}>
               <h2>{guide.tryNow.heading}</h2>
               <p><RichText>{guide.tryNow.introduction}</RichText></p>
               <CopyPrompt prompt={guide.tryNow.prompt} />

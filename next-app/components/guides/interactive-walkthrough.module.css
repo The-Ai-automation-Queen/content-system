@@ -7,6 +7,7 @@
 .walkthrough button:disabled { opacity:.4; cursor:default; }
 .walkthrough progress { width:100%; height:5px; margin:18px 0; accent-color:#2c4be0; }
 .navigation { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:6px; }
+.navigationThree { grid-template-columns:repeat(3,minmax(0,1fr)); }
 .navigation button { display:flex; gap:8px; align-items:center; text-align:left; padding:10px; }
 .navigation button[aria-current] { background:#2c4be0; color:white; border-color:#2c4be0; }
 .navigation span { font-family:var(--font-mono),monospace; }

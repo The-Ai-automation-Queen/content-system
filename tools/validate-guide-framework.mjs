@@ -98,14 +98,12 @@ if (!guideAccessSource.includes('fetch("/api/guide-capture"')) {
 if (!guideAccessSource.includes("<GuideAccessBoundary") && !guideReadingSource.includes("<GuideAccessBoundary")) {
   failures.push("Published guide pages are no longer protected by the shared email gate.");
 }
-if (guideReadingSource.indexOf("guide.sections.map") > guideReadingSource.indexOf("<GuideAccessBoundary")) {
-  failures.push("The shared guide gate must remain after all explanatory sections.");
+if (guideReadingSource.indexOf("data-guide-preview") > guideReadingSource.indexOf("<GuideAccessBoundary") ||
+    !guideReadingSource.includes("<Section section={guide.sections[0]} />")) {
+  failures.push("The inline opt-in must follow a useful first section of the guide.");
 }
-if (!guideReadingSource.includes("teaser={(") || !guideAccessSource.includes("data-guide-gate-teaser")) {
-  failures.push("The shared guide gate must preserve the real faded next-section teaser.");
-}
-if (!guideReadingStyles.includes("filter: blur(2px)") || !guideReadingStyles.includes("mask-image: linear-gradient")) {
-  failures.push("The shared guide gate must preserve its blur-and-fade transition.");
+if (guideAccessSource.includes("data-guide-gate-teaser") || guideReadingStyles.includes(".gateTeaser") || guideReadingStyles.includes("filter: blur(2px)")) {
+  failures.push("The guide gate must not use a blurred teaser or overlay.");
 }
 const sectionSpace = Number(guideReadingStyles.match(/--guide-section-space:\s*(\d+)px/)?.[1]);
 const majorSpace = Number(guideReadingStyles.match(/--guide-major-space:\s*(\d+)px/)?.[1]);
@@ -119,10 +117,10 @@ if (!/\.shell\s*\{[^}]*var\(--guide-body-width\)/s.test(guideReadingStyles)) {
 if (!/--guide-heading-accent:\s*#FF5733\b/i.test(guideReadingStyles)) {
   failures.push("The shared guide heading accent must remain Sunset Orange #FF5733.");
 }
-if (!/\.intro h1,\s*\.section h2,\s*\.tryNow h2,\s*\.conclusion h2,\s*\.gateTeaser h2\s*\{[^}]*color:\s*var\(--guide-heading-accent\)/s.test(guideReadingStyles)) {
+if (!/\.intro h1,\s*\.section h2,\s*\.tryNow h2,\s*\.conclusion h2\s*\{[^}]*color:\s*var\(--guide-heading-accent\)/s.test(guideReadingStyles)) {
   failures.push("The shared guide H1 and white-background major H2 headings must use the heading accent.");
 }
-if (/(?:\.section|\.tryNow|\.conclusion|\.gateTeaser) h2[^{}]*\{[^}]*(?:border-left|border-inline-start):[^}]*var\(--guide-heading-accent\)/s.test(guideReadingStyles)) {
+if (/(?:\.section|\.tryNow|\.conclusion) h2[^{}]*\{[^}]*(?:border-left|border-inline-start):[^}]*var\(--guide-heading-accent\)/s.test(guideReadingStyles)) {
   failures.push("Major guide H2 headings must not use an orange marker.");
 }
 if (/h3[^{}]*\{[^}]*color:\s*var\(--guide-heading-accent\)/s.test(guideReadingStyles)) {

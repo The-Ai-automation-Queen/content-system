@@ -3,26 +3,26 @@ import { existingGuide, makeGuide, promptGuide } from "./model-guide-series";
 export const chatgptScreenRecordingGuide = makeGuide({
   slug: "chatgpt-screen-recording-to-process-guide",
   title: "Can ChatGPT turn a screen recording into a usable process guide?",
-  promise: "Give ChatGPT a transcript and a few clean screenshots, then check whether another person could follow the process without watching the recording.",
+  promise: "Upload a short screen recording, turn what it actually shows into clear steps, then test whether someone else can follow them. A transcript and screenshots provide a fallback when video upload is unavailable.",
   coverAlt: "The Blue Princess feeding a film reel and picture cards into a press that produces an ordered instruction booklet",
   seoDescription: "Turn a screen-recording transcript and screenshots into a checked step-by-step process guide with ChatGPT.",
   sources: [
+    { label: "OpenAI: Video attachments and their limits", url: "https://help.openai.com/en/articles/8400551-chatgpt-image-inputs-faq" },
     { label: "OpenAI: File uploads in ChatGPT", url: "https://help.openai.com/en/articles/8555545-file-uploads-faq" },
-    { label: "OpenAI: Image inputs in ChatGPT", url: "https://help.openai.com/en/articles/8400551-chatgpt-image-inputs-faq" },
   ],
   answer: [
-    "**A recording shows the work, but it rarely explains the decisions.** A useful process guide needs the spoken steps, the screen state and a check that proves each step worked.",
+    "**Yes, but treat the recording as evidence, not a finished guide.** ChatGPT can accept a video attachment where that upload method is available. It may miss actions or audio, so every written step still needs to be checked against the recording.",
   ],
   sections: [
     {
       kind: "steps",
-      heading: "Prepare the recording for a clear guide",
-      introduction: "Use a practice process with no names, customer data, passwords or private account details.",
+      heading: "Prepare a recording ChatGPT can inspect",
+      introduction: "Use a short practice task in a demo account or clean workspace. Do not record names, customer data, passwords or private account details.",
       steps: [
-        { title: "Narrate the reason", body: "Say what you are doing, where you click and what should happen next." },
-        { title: "Export the transcript", body: "Use the transcript from your recording tool. Correct product names, menu labels and numbers before uploading it." },
-        { title: "Add only useful screenshots", body: "Capture the starting screen, any choice that is hard to describe and the finished result. Crop out your identity and private information." },
-        { title: "Ask for missing details", body: "Tell ChatGPT to mark a step **Needs clarification** when the transcript or image does not prove it." },
+        { title: "Record one complete task", body: "Start with the screen where the task begins. Say why you make each choice and show the finished result." },
+        { title: "Remove identifying details", body: "Use demo information or permanently remove names, emails, account details and notifications before uploading the recording." },
+        { title: "Attach the video", body: "In ChatGPT, use **+ → Add photos & files** and choose the video. If Photos will not accept it, try **Files**. Availability depends on the account and platform." },
+        { title: "Keep a fallback ready", body: "If video upload is unavailable or ChatGPT misses part of it, provide a corrected transcript and a few clean screenshots from the same recording. Do not fill gaps from memory." },
       ],
     },
     {
@@ -37,25 +37,34 @@ export const chatgptScreenRecordingGuide = makeGuide({
     },
   ],
   tryNow: {
-    heading: "Create the first draft",
-    introduction: "Upload the corrected transcript and the clean screenshots, then copy this complete instruction.",
-    prompt: `Create a process guide from the transcript and screenshots I uploaded.
+    heading: "Create a guide from the recording",
+    introduction: "Attach the clean video, replace the two brackets below and copy the complete instruction.",
+    prompt: `Create a process guide from the screen recording I attached.
 
 The guide is for [WHO WILL USE IT]. The result they need is [FINISHED RESULT].
 
-Requirements
-1. Start with a short checklist called “Before you begin”.
-2. Write numbered steps in the order shown in the source material.
-3. Put one user action in each step.
-4. Use the exact button, menu and field names visible in the transcript or screenshots.
-5. After every step, add “You should see:” followed by the visible result.
-6. Add the relevant screenshot after the step it supports. Do not use a screenshot as decoration.
-7. If the source does not show a required detail, write “Needs clarification:” and name the missing detail. Do not invent it.
-8. End with a 3-point final check that proves the process is complete.
+First, tell me whether you can inspect the attached video. If you cannot, stop and ask for a corrected transcript and clean screenshots. Do not claim to have watched a video you could not inspect.
 
-Use plain English. Do not add features, shortcuts or advice that are absent from my source material.`,
-    check: "Give the draft to someone who has not watched the recording. The guide passes only when they can complete the practice process and every screen matches the written check.",
+Before drafting, list the actions you can actually observe in order. Give a timestamp for each video action when possible. Mark anything you cannot see or hear as “Needs clarification”. Ask me about missing decisions rather than guessing.
+
+Then write the process guide with:
+1. A short “Before you begin” checklist.
+2. Numbered steps in the order shown in the recording, one user action per step.
+3. The exact button, menu and field names you can verify from the source. If a label is unreadable, mark it “Needs clarification”.
+4. “You should see:” after each step, naming the visible result.
+5. A timestamp or source screenshot beside the step it supports, where available.
+6. A 3-point final check that proves the process is complete.
+
+Use plain English. Do not invent a click, feature, result, shortcut or reason that the source does not support. At the end, list every step that still needs a human check.`,
+    instructions: [
+      { title: "Open ChatGPT", body: "Start a new chat at chatgpt.com. Use a recording with no private or identifying details." },
+      { title: "Attach the recording", body: "Select **+ → Add photos & files** and choose your video. Try **Files** if Photos does not offer it." },
+      { title: "Copy and send", body: "Select **Copy**, paste the full instruction, replace both brackets and send it with the recording." },
+      { title: "Use the fallback if needed", body: "If video upload is unavailable or ChatGPT cannot inspect it, attach a corrected transcript and clean screenshots. Keep the same checks and do not let it guess missing steps." },
+    ],
+    check: "Give the draft to someone who has not watched the recording. Keep it only if they can finish the practice task and the written screen checks match what they see.",
   },
+  promptMode: "as-written",
   finish: "You now have a repeatable way to turn a demonstration into instructions that can be followed and checked.",
   related: [
     promptGuide("chatgpt-customer-research-with-evidence", "Can ChatGPT group customer research without inventing themes?", "Use the same evidence-first method with interviews and survey notes."),

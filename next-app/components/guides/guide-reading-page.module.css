@@ -13,7 +13,7 @@
 .cover img { object-fit: cover; }
 .intro { width: min(calc(100% - 48px), var(--guide-body-width)); margin: 0 auto; padding: 40px 0 28px; border-bottom: 1px solid var(--line); }
 .intro h1 { margin: 0 0 18px; font: 600 clamp(34px, 6vw, 64px)/1.02 var(--font-display), serif; letter-spacing: -.045em; text-wrap: balance; }
-.intro h1, .section h2, .tryNow h2, .conclusion h2, .gateTeaser h2 { color: var(--guide-heading-accent); }
+.intro h1, .section h2, .tryNow h2, .conclusion h2 { color: var(--guide-heading-accent); }
 .intro p { max-width: var(--guide-copy-width); margin: 0; color: #4c4842; font-size: clamp(19px, 2.2vw, 22px); line-height: 1.5; }
 .readingColumn { width: min(calc(100% - 48px), var(--guide-body-width)); margin-inline: auto; padding: 32px 0 52px; }
 .answer { margin-bottom: var(--guide-major-space); padding: 24px 26px; background: #f2f4ff; }
@@ -104,12 +104,9 @@
 .footer span { color: #aaa49a; font-weight: 400; }
 .footer a { text-decoration: none; }
 .previewContent .section:last-child { padding-bottom: 12px; }
-.captureTransition { position: relative; margin: 0 0 var(--guide-major-space); overflow: hidden; }
+.captureTransition { position: relative; margin: var(--guide-major-space) 0; }
 .captureTransition[hidden] { display: none; }
-.gateTeaser { height: 230px; overflow: hidden; opacity: .42; filter: blur(2px); pointer-events: none; user-select: none; -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,.75) 38%, transparent 94%); mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,.75) 38%, transparent 94%); }
-.gateTeaser h2 { margin: 0 0 16px; font: 600 clamp(25px, 3.2vw, 36px)/1.08 var(--font-display), serif; letter-spacing: -.03em; }
-.gateTeaser p { max-width: var(--guide-copy-width); margin: 0 0 18px; color: #403d38; font-size: 18px; line-height: 1.66; }
-.captureBoundary { position: relative; z-index: 1; box-sizing: border-box; width: min(100%, 650px); margin: -118px auto 0; padding: clamp(26px, 3vw, 34px); border: 1px solid #d7d0c6; background: rgba(250,247,242,.98); box-shadow: 0 18px 48px rgba(32,29,25,.12); }
+.captureBoundary { position: relative; box-sizing: border-box; width: min(100%, 650px); margin: 0 auto; padding: clamp(26px, 3vw, 34px); border: 1px solid #d7d0c6; background: #faf7f2; }
 .gateLabel { display: block; margin-bottom: 14px; color: var(--blue-deep); font: 700 var(--guide-label-size)/1.2 var(--font-mono), monospace; letter-spacing: .07em; text-align: center; text-transform: uppercase; }
 .captureBoundary h2 { max-width: 560px; margin: 0 auto 12px; font: 600 clamp(28px, 4vw, 38px)/1.06 var(--font-display), serif; letter-spacing: -.035em; text-align: center; text-wrap: balance; }
 .captureBoundary > p { max-width: 560px; margin: 0 auto 18px; color: #403d38; font-size: 16px; line-height: 1.5; text-align: center; }
@@ -154,8 +151,7 @@
   .cards h3 { font-size: clamp(21px, 6vw, 25px); }
   .related h2 { font-size: clamp(28px, 8vw, 34px); }
   .relatedCard h3 { font-size: clamp(22px, 6.5vw, 28px); }
-  .gateTeaser { height: 190px; }
-  .captureBoundary { margin-top: -98px; padding: 24px 18px; }
+  .captureBoundary { padding: 24px 18px; }
   .captureBoundary form { grid-template-columns: 1fr; }
   .captureBoundary form > label:nth-of-type(2), .captureBoundary form > input[name="firstName"], .captureBoundary form > input[name="email"] { grid-column: 1; grid-row: auto; }
   .footer { min-height: 0; align-items: flex-start; flex-wrap: wrap; gap: 18px; padding: 24px 18px; font-size: 12px; }
@@ -195,7 +191,7 @@
 .intro p { font-size:18px; line-height:1.5; }
 .answer { padding:18px 20px; }
 .answer p,.section > p,.sectionIntro,.tryNow > p,.conclusion p,.conclusionQuestions li,.sourceSteps li,.paidNextStep p { font-size:17px; line-height:1.55; }
-.section h2,.tryNow h2,.conclusion h2,.gateTeaser h2 { font-size:clamp(23px,2.8vw,29px); line-height:1.2; }
+.section h2,.tryNow h2,.conclusion h2 { font-size:clamp(23px,2.8vw,29px); line-height:1.2; }
 .captureBoundary h2 { font-size:clamp(24px,3vw,30px); line-height:1.2; }
 .related h2 { font-size:28px; }
 .relatedCard h3 { font-size:22px; line-height:1.2; }
@@ -210,7 +206,7 @@
  .intro p,.answer p,.section > p,.sectionIntro,.tryNow > p,.conclusion p,.conclusionQuestions li,.sourceSteps li,.paidNextStep p { font-size:16px; line-height:1.55; }
  .readingColumn { padding:20px 0 32px; }
  .answer { padding:16px; }
- .section h2,.tryNow h2,.conclusion h2,.gateTeaser h2,.related h2 { font-size:23px; }
+ .section h2,.tryNow h2,.conclusion h2,.related h2 { font-size:23px; }
  .cards h3,.steps h3,.relatedCard h3 { font-size:20px; }
  .related { padding:28px 16px; }
  .relatedGrid { gap:10px; }

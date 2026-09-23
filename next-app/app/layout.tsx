@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Source_Serif_4, Space_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { SiteHeader } from "@/components/chrome/site-header";
 import { SiteFooter } from "@/components/chrome/site-footer";
 import Script from "next/script";
 import "./globals.css";
 
-const display = Playfair_Display({ subsets: ["latin"], variable: "--font-display" });
-const body = Source_Serif_4({ subsets: ["latin"], variable: "--font-body" });
-const ui = Inter({ subsets: ["latin"], variable: "--font-ui" });
-const mono = Space_Mono({ weight: ["400", "700"], subsets: ["latin"], variable: "--font-mono" });
+const display = localFont({ src: "../public/fonts/playfair-display-latin.woff2", weight: "400 900", variable: "--font-display", display: "swap" });
+const body = localFont({ src: "../public/fonts/source-serif-4-latin.woff2", weight: "200 900", variable: "--font-body", display: "swap" });
+const ui = localFont({ src: "../public/fonts/inter-latin.woff2", weight: "100 900", variable: "--font-ui", display: "swap" });
+const mono = localFont({ src: [
+  { path: "../public/fonts/space-mono-regular-latin.woff2", weight: "400" },
+  { path: "../public/fonts/space-mono-bold-latin.woff2", weight: "700" },
+], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.shiftandlead.com"),

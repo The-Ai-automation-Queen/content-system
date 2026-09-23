@@ -8,12 +8,10 @@ const ACCESS_KEY = "shift-lead-guide-access";
 export function GuideAccessBoundary({
   guideSlug,
   guideTitle,
-  teaser,
   children,
 }: {
   guideSlug: string;
   guideTitle: string;
-  teaser: ReactNode;
   children: ReactNode;
 }) {
   const [ready, setReady] = useState(false);
@@ -86,13 +84,10 @@ export function GuideAccessBoundary({
         data-guide-capture-boundary
         hidden={ready && unlocked}
       >
-        <div className={styles.gateTeaser} data-guide-gate-teaser aria-hidden="true">
-          {teaser}
-        </div>
         <section className={styles.captureBoundary} aria-labelledby={`guide-gate-title-${guideSlug}`}>
           <span className={styles.gateLabel}>Continue this guide</span>
           <h2 id={`guide-gate-title-${guideSlug}`}>Keep reading {guideTitle}</h2>
-          <p>Your email is required to open the guide and receive its link. Your name is optional.</p>
+          <p>You have the main idea and first steps. Add your email to open the full exercise and receive a link you can return to. Your name is optional.</p>
           <form onSubmit={submit}>
             <label htmlFor={`guide-first-name-${guideSlug}`}>First name (optional)</label>
             <input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} />

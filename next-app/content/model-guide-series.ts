@@ -12,6 +12,7 @@ export type SeriesGuide = {
   tryNow: NonNullable<GuidePage["tryNow"]>;
   finish: string;
   related: readonly [GuideRelated, GuideRelated, GuideRelated];
+  promptMode?: "as-written";
 };
 
 const completePrompt = (task: string) => `You are helping me complete one small, practical task. Follow the instructions exactly and do not broaden the job.
@@ -52,7 +53,7 @@ export const makeGuide = (guide: SeriesGuide): GuidePage => ({
   sections: guide.sections,
   tryNow: {
     ...guide.tryNow,
-    prompt: completePrompt(guide.tryNow.prompt),
+    prompt: guide.promptMode === "as-written" ? guide.tryNow.prompt : completePrompt(guide.tryNow.prompt),
     instructions: guide.tryNow.instructions ?? [
       { title: "Open the tool", body: "Open the product named in this guide and start a new conversation or task in the place described above." },
       { title: "Copy the complete instruction", body: "Select **Copy** and paste the full instruction into the message box. Keep the limits and completion check." },
