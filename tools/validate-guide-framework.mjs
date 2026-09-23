@@ -25,6 +25,7 @@ const globalStyles = read("next-app/app/globals.css");
 const footerSource = read("next-app/components/chrome/site-footer.tsx");
 const guideAccessSource = read("next-app/components/guides/guide-access-boundary.tsx");
 const guideReadingSource = read("next-app/components/guides/guide-reading-page.tsx");
+const guideFormatsSource = read("next-app/content/guide-formats.ts");
 const guideReadingStyles = read("next-app/components/guides/guide-reading-page.module.css");
 const guideCaptureApi = read("main-site/api/guide-capture.js");
 const guidesIndex = read("main-site/guides/index.html");
@@ -55,6 +56,14 @@ for (const guide of approved) {
   const hasSeriesTag = guide.lumailTag === `guide-${guide.slug}` &&
     (modelSeriesSource.includes(`slug: "${guide.slug}"`) || researchSeriesSource.includes(`slug: "${guide.slug}"`));
   if (!hasLiteralTag && !hasSeriesTag) failures.push(`Approved guide Lumail tag differs from its structured page: ${guide.slug}`);
+}
+
+const mappedFormats = new Set([...guideFormatsSource.matchAll(/(?:"([a-z0-9-]+)"|\b([a-z0-9-]+)):\s*"(?:explorer|glossary|decision|walkthrough|prompt-builder|practice|audit)"/g)].map((match) => match[1] || match[2]));
+const customExperiences = new Set(["instagram-content-dashboard", "claude-projects", "chatgpt-screen-recording-to-process-guide"]);
+for (const slug of slugs) {
+  if (!mappedFormats.has(slug) && !customExperiences.has(slug)) {
+    failures.push(`Approved guide lacks an interactive route: ${slug}`);
+  }
 }
 
 for (const guide of reviewGuides) {
