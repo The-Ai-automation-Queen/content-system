@@ -46,7 +46,6 @@ export const legacyGuideSlugs = new Set([
   "what-can-copilot-see-at-work",
   "what-is-a-prompt",
   "what-is-agentic",
-  "what-is-ai",
   "what-is-an-ai-browser",
   "what-should-you-never-share-with-ai",
   "which-ai-tool-for-what",

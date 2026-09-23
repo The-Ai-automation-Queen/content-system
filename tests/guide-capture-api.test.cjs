@@ -64,12 +64,12 @@ test("guide capture requires explicit consent", async () => {
   assert.equal(calls.length, 0);
 });
 
-test("guide capture accepts an omitted optional first name", async () => {
+test("legacy guide capture accepts an omitted optional first name", async () => {
   const { response, calls } = await invoke({
     firstName: " ",
     email: "amina@example.com",
-    guideSlug: "what-is-ai",
-    source: "/guides/what-is-ai.html",
+    guideSlug: "ai-jargon-guide",
+    source: "/guides/ai-jargon-guide.html",
     consent: true,
   });
 
@@ -77,10 +77,11 @@ test("guide capture accepts an omitted optional first name", async () => {
   assert.equal(JSON.parse(calls[0][1].body).name, "");
 });
 
-test("guide capture sends name and consent evidence without forced resubscription", async () => {
+test("entry guide capture sends both name fields and consent evidence without forced resubscription", async () => {
   const timestamp = "2026-09-03T20:00:00.000Z";
   const { response, calls } = await invoke({
     firstName: " Amina ",
+    lastName: " Example ",
     email: " AMINA@EXAMPLE.COM ",
     guideSlug: "what-is-ai",
     source: "/guides/what-is-ai.html?utm_source=linkedin",
@@ -101,7 +102,9 @@ test("guide capture sends name and consent evidence without forced resubscriptio
   assert.equal(url, "https://lumail.io/api/v1/subscribers");
   const payload = JSON.parse(request.body);
   assert.equal(payload.email, "amina@example.com");
-  assert.equal(payload.name, "Amina");
+  assert.equal(payload.name, "Amina Example");
+  assert.equal(payload.fields.first_name, "Amina");
+  assert.equal(payload.fields.last_name, "Example");
   assert.equal(payload.resubscribe, false);
   assert.equal(payload.triggerWorkflows, true);
   assert.equal(payload.fields.consent, "true");
@@ -116,6 +119,13 @@ test("guide capture sends name and consent evidence without forced resubscriptio
 
 test("Instagram gate requires both name fields before sending to Lumail", async () => {
   const { response, calls } = await invoke({ firstName: "Reader", email: "reader@example.com", consent: true, guideSlug: "instagram-content-dashboard" });
+  assert.equal(response.statusCode, 400);
+  assert.equal(response.body.error, "Enter your first and last name.");
+  assert.equal(calls.length, 0);
+});
+
+test("What AI entry gate requires both name fields before sending to Lumail", async () => {
+  const { response, calls } = await invoke({ firstName: "Reader", email: "reader@example.com", consent: true, guideSlug: "what-is-ai" });
   assert.equal(response.statusCode, 400);
   assert.equal(response.body.error, "Enter your first and last name.");
   assert.equal(calls.length, 0);

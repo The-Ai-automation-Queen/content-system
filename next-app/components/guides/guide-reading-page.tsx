@@ -149,6 +149,13 @@ function Section({ section }: { section: GuideSection }) {
     );
   }
 
+  if (section.kind === "diagram") {
+    return <section className={styles.section}>
+      <h2>{section.heading}</h2>
+      <ol className={styles.steps}>{section.nodes.map(node => <li key={node.title}><h3>{node.title}</h3><p>{node.body}</p></li>)}</ol>
+    </section>;
+  }
+
   return (
     <section className={styles.section}>
       <h2>{section.heading}</h2>

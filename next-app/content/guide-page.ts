@@ -22,6 +22,7 @@ export type WalkthroughBlock =
 export type GuideSection =
   | { kind: "walkthrough"; heading: string; introduction: string; blocks: readonly WalkthroughBlock[] }
   | { kind: "tutorial"; heading: string; introduction: string; steps: readonly GuideStep[]; prompt?: string; check: string }
+  | { kind: "diagram"; heading: string; variant?: "checks"; nodes: readonly [GuideStep, GuideStep, GuideStep] }
   | {
       kind: "prose";
       heading: string;
@@ -99,6 +100,7 @@ export type GuidePage = {
   tryNow?: {
     heading: string;
     introduction: string;
+    workedExample?: { task: string; signals: readonly string[]; decision: string };
     prompt: string;
     check: string;
     instructions?: readonly [GuideStep, GuideStep, ...Array<GuideStep>];
@@ -125,7 +127,7 @@ export type GuidePage = {
 export const whatIsAiGuide = {
   slug: "what-is-ai",
   title: "What AI actually is",
-  promise: "You do not need to understand how AI is built. You just need to know what it can do, where it can go wrong and what you still need to check.",
+  promise: "Could AI help with your work this week? Pick what you need, try one small task and judge the result for yourself.",
   cover: "/images/guides/what-is-ai.webp",
   coverAlt: "The small blue robot mascot beside a mechanical machine that sorts different shapes",
   seoDescription: "A clear beginner guide to what AI is, what it can do and how to test it safely at work.",
@@ -137,65 +139,82 @@ export const whatIsAiGuide = {
   ],
   answer: {
     paragraphs: [
-      "**AI is not one app.** It is a name for technologies that can work with language, recognise images, make predictions and create content.",
-      "An AI system takes in information and produces a result for a specific job. **That result can still be wrong, so you need to check it.**",
+      "**AI is software that works with information and gives you a result.** It might sort a message, suggest an option or draft something for you.",
+      "The useful part is a first pass you can build on. **The catch: a convincing answer can still be wrong.**",
     ],
   },
   sections: [
     {
       kind: "cards",
-      heading: "What an AI system can produce",
-      introduction: "You will usually see 1 or more of these 4 kinds of output.",
+      heading: "What would you like help with?",
+      introduction: "Pick one to see the kind of result AI could give you.",
       items: [
-        { title: "Classification", body: "It can place something into a category, like marking a message as **spam or not spam**." },
-        { title: "Prediction", body: "It can estimate what may happen next, like which customers may **need support soon**." },
-        { title: "Recommendation", body: "It can suggest an option, like the **next product to show** or the fastest route to take." },
-        { title: "Content", body: "It can produce a **draft, image, summary, translation or piece of code** from the input it receives." },
+        { title: "Sort", body: "It can group similar feedback or mark a message as **spam or not spam**. You check that the labels make sense." },
+        { title: "Predict", body: "It can estimate who may **need support soon**. That is a prediction to investigate, not a fact." },
+        { title: "Suggest", body: "It can suggest a **next product or route**. You decide if the suggestion fits the real situation." },
+        { title: "Draft", body: "It can make a **summary, translation, image, email or code draft**. You check and edit it before use." },
       ],
     },
     {
-      kind: "prose",
-      heading: "What makes an AI system different",
-      paragraphs: [
-        "AI systems still use software. What changes is **how they produce the result**.",
-        "Give an AI tool a new email, image or question, and it can respond to that new information. That is why the same tool can **summarise a document, sort messages, recommend an option or create a draft**.",
+      kind: "diagram",
+      heading: "What happens when you use it?",
+      nodes: [
+        { title: "You give it material", body: "A question, note or public text." },
+        { title: "AI gives a first pass", body: "It can sort, suggest or draft from new material." },
+        { title: "You check it", body: "Compare the result with your original before using it." },
       ],
     },
     {
-      kind: "prose",
-      heading: "What AI cannot decide for you",
-      paragraphs: [
-        "An AI system only works with the input, data and sources available to it. It does not automatically know **which source you trust**, **what your customer expects** or **what a mistake would cost**.",
-        "It can sound completely sure and still be wrong. Check the answer against the original information, especially when it could affect **money, access, rights, customers or reputation**.",
+      kind: "diagram",
+      heading: "What should you check?",
+      variant: "checks",
+      nodes: [
+        { title: "Match the source", body: "Can you find each point in the original?" },
+        { title: "Spot guesses", body: "Did AI add or leave out a detail?" },
+        { title: "Check the stakes", body: "Could an error affect money, customers, access or rights? Ask a person to review before anyone acts." },
       ],
-      keyLine: "AI gives you an output. You decide whether it is accurate, appropriate and safe to use.",
     },
   ],
   tryNow: {
-    heading: "Try it now",
-    introduction: "Copy this into an AI tool. Use a short piece of text that **contains no private information**.",
-    prompt: `I am testing how carefully you use source text. Use only the text I provide below.
+    heading: "Try it on a task from this week",
+    introduction: "Start with a short public excerpt. The prompt asks AI for a result you can check against the original.",
+    workedExample: {
+      task: "Find the key points in a public article you need for work.",
+      signals: [
+        "Paste one short paragraph from the article.",
+        "Ask for 3 key points and the sentence behind each one.",
+        "Compare each point with the original paragraph. Cross out anything the article did not say.",
+      ],
+      decision: "If the points are accurate and save you time, try a longer public or approved text.",
+    },
+    prompt: `I want to test if AI can help with a small part of a task I do at work.
 
-Please:
-1. Summarise it in 3 clear bullets.
-2. Under each bullet, quote the exact sentence or detail from my text that supports it.
-3. If my text does not support a bullet, write "Not provided."
-4. Do not add facts or assumptions.
+The task: [Describe the task in one sentence. Example: find the key points in a public article before a meeting.]
+Here is a small sample: [Paste 3 to 5 lines of public, made-up or approved non-confidential material. Do not paste names, private messages, customer records or confidential work.]
+A useful result would be: [Describe what you want to receive. Example: 3 key points, each with the sentence that supports it.]
+I will check the result by: [Name the original material or a simple check you can do yourself.]
 
-Text:
-[Paste a short, non-confidential email, note or document here]`,
-    check: "When the answer comes back, **check every quote against your original text**. If a quote does not support the bullet, do not use that bullet.",
+First, tell me if the sample is enough for a small test. If it is not, ask for the single missing detail and stop. Do not guess or claim to have opened my files or accounts.
+
+If it is enough, do only this small sample. Use only the material above. Give me the requested result in a short list. Show which part of the sample supports each point. Mark anything you are unsure about instead of making it up.
+
+End with two short lines:
+- Check: the specific part I should compare with my original material.
+- Next step: if this small result is useful enough to test on more material, and what I should still do myself.
+
+Do not treat your answer as a final work decision.`,
+    check: "Check the answer against your sample. If it saved time and the details match, you can try it on more approved material. **You decide what to use.**",
   },
   conclusion: {
-    heading: "You have enough to get started",
+    heading: "Before you use the result",
     paragraphs: [
-      "You now understand what the term means, why AI can produce different answers and why a confident answer can still be wrong.",
+      "A quick first pass is useful only if the details hold up.",
     ],
     questions: {
-      introduction: "When you meet a new AI tool, ask 3 questions:",
-      items: ["What goes in?", "What comes out?", "Who checks the result?"],
+      introduction: "Ask yourself:",
+      items: ["Can I trace this back to the original?", "What did AI guess or leave out?", "Would a mistake matter here?"],
     },
-    finishLine: "If you can answer those, you can decide whether the tool is useful for your work.",
+    finishLine: "If it saves time and passes your checks, try it on a larger approved task.",
   },
   related: [
     {

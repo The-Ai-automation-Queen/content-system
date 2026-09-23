@@ -10,6 +10,7 @@ export function GuideAccessBoundary({
   guideTitle,
   guideCover,
   guideCoverAlt,
+  guidePromise,
   children,
   variant = "unlock",
 }: {
@@ -17,6 +18,7 @@ export function GuideAccessBoundary({
   guideTitle: string;
   guideCover?: string;
   guideCoverAlt?: string;
+  guidePromise?: string;
   children: ReactNode;
   variant?: "unlock" | "entry";
 }) {
@@ -96,7 +98,7 @@ export function GuideAccessBoundary({
           <div className={variant === "entry" ? styles.entryContent : undefined}>
           <span className={styles.gateLabel}>{variant === "entry" ? "Free practical guide" : "Continue this guide"}</span>
           <h2 id={`guide-gate-title-${guideSlug}`}>{variant === "entry" ? guideTitle : `Keep reading ${guideTitle}`}</h2>
-          <p>{variant === "entry" ? "Build a working Instagram dashboard with five practical steps, screenshots and copyable prompts. Enter your email to open the guide." : "You have the main idea and first steps. Add your email to open the full exercise and receive a link you can return to. Your name is optional."}</p>
+          <p>{variant === "entry" ? (guidePromise || "Build a working Instagram dashboard with five practical steps, screenshots and copyable prompts. Enter your email to open the guide.") : "You have the main idea and first steps. Add your email to open the full exercise and receive a link you can return to. Your name is optional."}</p>
           <form onSubmit={submit}>
             <>
               <label htmlFor={`guide-first-name-${guideSlug}`}>First name {variant === "unlock" ? "(optional)" : ""}</label>

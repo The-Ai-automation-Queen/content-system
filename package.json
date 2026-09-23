@@ -5,6 +5,10 @@
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "validate:guides": "node tools/validate-guide-framework.mjs && node tools/verify-publish-source.mjs",
+    "guide:rebuild:audit": "node tools/guide-rebuild-harness.mjs",
+    "guide:rebuild:check": "node tools/guide-rebuild-harness.mjs --strict",
+    "guide:rebuild:release-check": "node tools/guide-rebuild-harness.mjs --strict --live",
+    "guide:rebuild:links": "node tools/guide-rebuild-harness.mjs --live",
     "build": "node tools/include.mjs && node tools/guides-finalize.mjs && node tools/site-repair.mjs && node tools/site-repair-final.mjs",
     "publish:ai-jargon": "npm --prefix next-app run build && node tools/publish-next-guide.mjs ai-jargon-guide",
     "publish:guides": "npm --prefix next-app run build && node tools/publish-approved-guides.mjs",

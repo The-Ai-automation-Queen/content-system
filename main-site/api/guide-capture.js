@@ -49,7 +49,7 @@ module.exports = async function handler(request, response) {
   const guide = APPROVED_GUIDES.get(guideSlug) ||
     (allowPreview ? preview.guides.find((item) => item.slug === guideSlug) : undefined);
   if (!guide?.lumailTag) return response.status(400).json({ error: "This guide is not configured for email delivery." });
-  if (guideSlug === "instagram-content-dashboard" && (!givenName || !familyName)) {
+  if (["instagram-content-dashboard", "what-is-ai"].includes(guideSlug) && (!givenName || !familyName)) {
     return response.status(400).json({ error: "Enter your first and last name." });
   }
 
@@ -69,7 +69,8 @@ module.exports = async function handler(request, response) {
         name,
         tags: ["shift-and-lead-guide", guide.lumailTag],
         fields: {
-          ...(guideSlug === "instagram-content-dashboard" ? { first_name: givenName, last_name: familyName } : {}),
+          ...(givenName ? { first_name: givenName } : {}),
+          ...(familyName ? { last_name: familyName } : {}),
           source: sourcePage,
           guide_url: `${GUIDE_ORIGIN}/guides/${guideSlug}.html`,
           consent: "true",
