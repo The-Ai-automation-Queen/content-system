@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "rule": "A guide is public only after Fatiha explicitly approves its copy and complete page.",
-  "lastApprovedPublication": "2026-09-21",
+  "lastApprovedPublication": "2026-09-23",
   "shellReference": {
     "url": "https://www.shiftandlead.com/",
     "verifiedAt": "2026-08-24",
@@ -225,6 +225,66 @@
       "lumailTag": "guide-show-up-in-ai-search",
       "section": "Content and creative work",
       "journeyOrder": 200
+    },
+    {
+      "slug": "chatgpt-screen-recording-to-process-guide",
+      "lumailTag": "guide-chatgpt-screen-recording-to-process-guide",
+      "section": "Workflows and automation",
+      "journeyOrder": 64
+    },
+    {
+      "slug": "chatgpt-customer-research-with-evidence",
+      "lumailTag": "guide-chatgpt-customer-research-with-evidence",
+      "section": "Business operations",
+      "journeyOrder": 65
+    },
+    {
+      "slug": "teach-claude-a-repeatable-workflow",
+      "lumailTag": "guide-teach-claude-a-repeatable-workflow",
+      "section": "Workflows and automation",
+      "journeyOrder": 72
+    },
+    {
+      "slug": "fix-gemini-workspace-action",
+      "lumailTag": "guide-fix-gemini-workspace-action",
+      "section": "AI tools",
+      "journeyOrder": 83
+    },
+    {
+      "slug": "what-can-copilot-see-at-work",
+      "lumailTag": "guide-what-can-copilot-see-at-work",
+      "section": "AI tools",
+      "journeyOrder": 92
+    },
+    {
+      "slug": "test-meta-muse-money-saving-task",
+      "lumailTag": "guide-test-meta-muse-money-saving-task",
+      "section": "AI agents",
+      "journeyOrder": 102
+    },
+    {
+      "slug": "test-grok-repeated-image-edits",
+      "lumailTag": "guide-test-grok-repeated-image-edits",
+      "section": "Content and creative work",
+      "journeyOrder": 114
+    },
+    {
+      "slug": "test-deepseek-v4-document-work",
+      "lumailTag": "guide-test-deepseek-v4-document-work",
+      "section": "AI tools",
+      "journeyOrder": 123
+    },
+    {
+      "slug": "protect-a-long-deepseek-project",
+      "lumailTag": "guide-protect-a-long-deepseek-project",
+      "section": "Workflows and automation",
+      "journeyOrder": 124
+    },
+    {
+      "slug": "mistral-multilingual-research",
+      "lumailTag": "guide-mistral-multilingual-research",
+      "section": "AI tools",
+      "journeyOrder": 153
     }
   ],
   "retired": [

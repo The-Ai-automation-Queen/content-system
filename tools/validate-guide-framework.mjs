@@ -9,6 +9,7 @@ const publication = JSON.parse(read("data/guide-publication.json"));
 const preview = JSON.parse(read("data/guide-preview.json"));
 const inventory = JSON.parse(read("next-app/content/guides.json")).guides;
 const modelSeriesSource = read("next-app/content/model-guide-series.ts");
+const researchSeriesSource = read("next-app/content/research-guide-series.ts");
 const pageSource = [
   read("next-app/content/guide-page.ts"),
   read("next-app/content/tool-guide-batch.ts"),
@@ -16,6 +17,7 @@ const pageSource = [
   read("next-app/content/claude-series.ts"),
   read("next-app/content/instagram-dashboard-guide.ts"),
   modelSeriesSource,
+  researchSeriesSource,
 ].join("\n");
 const librarySource = read("next-app/content/guides.ts");
 const headerSource = read("next-app/components/chrome/site-header.tsx");
@@ -50,7 +52,8 @@ for (const guide of approved) {
   if (!guide.section || !Number.isFinite(guide.journeyOrder)) failures.push(`Approved guide needs a section and journeyOrder: ${guide.slug}`);
   if (!/^guide-[a-z0-9-]+$/.test(guide.lumailTag || "")) failures.push(`Approved guide has no Lumail tag mapping: ${guide.slug}`);
   const hasLiteralTag = pageSource.includes(`lumailTag: "${guide.lumailTag}"`) || pageSource.includes(`"lumailTag": "${guide.lumailTag}"`);
-  const hasSeriesTag = guide.lumailTag === `guide-${guide.slug}` && modelSeriesSource.includes(`slug: "${guide.slug}"`);
+  const hasSeriesTag = guide.lumailTag === `guide-${guide.slug}` &&
+    (modelSeriesSource.includes(`slug: "${guide.slug}"`) || researchSeriesSource.includes(`slug: "${guide.slug}"`));
   if (!hasLiteralTag && !hasSeriesTag) failures.push(`Approved guide Lumail tag differs from its structured page: ${guide.slug}`);
 }
 
@@ -66,7 +69,7 @@ for (const guide of reviewGuides) {
 }
 
 const structuredCovers = new Set([...pageSource.matchAll(/cover:\s*["']([^"']+)["']/g)].map((match) => match[1]));
-for (const match of modelSeriesSource.matchAll(/^\s*slug:\s*"([^"]+)"/gm)) {
+for (const match of `${modelSeriesSource}\n${researchSeriesSource}`.matchAll(/^\s*slug:\s*"([^"]+)"/gm)) {
   structuredCovers.add(`/images/guides/${match[1]}.webp`);
 }
 for (const cover of structuredCovers) {

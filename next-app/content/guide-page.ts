@@ -4,6 +4,7 @@ import { instagramDashboardGuide } from "./instagram-dashboard-guide";
 import { copilotGuide, deepSeekGuide, grokGuide, kimiGuide, manusGuide, metaAiGuide, mistralGuide } from "./tool-guide-batch";
 import { aiBrowserGuide, aiConnectionsGuide, aiSearchGuide, aiSkillsGuide, promptGuide } from "./guide-batch-three";
 import { modelSeriesGuides } from "./model-guide-series";
+import { researchGuideSeries } from "./research-guide-series";
 
 export type GuideStep = {
   title: string;
@@ -1226,7 +1227,7 @@ Notes:
   ],
 } as const satisfies GuidePage;
 
-export const guidePages = [instagramDashboardGuide, whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide, whichAiToolGuide, chatGptGuide, claudeGuide, claudeProjectsGuide, geminiGuide, copilotGuide, metaAiGuide, grokGuide, deepSeekGuide, kimiGuide, manusGuide, mistralGuide, promptGuide, aiBrowserGuide, aiConnectionsGuide, aiSkillsGuide, aiSearchGuide, ...modelSeriesGuides] as const;
+export const guidePages = [instagramDashboardGuide, whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide, whichAiToolGuide, chatGptGuide, claudeGuide, claudeProjectsGuide, geminiGuide, copilotGuide, metaAiGuide, grokGuide, deepSeekGuide, kimiGuide, manusGuide, mistralGuide, promptGuide, aiBrowserGuide, aiConnectionsGuide, aiSkillsGuide, aiSearchGuide, ...modelSeriesGuides, ...researchGuideSeries] as const;
 
 export function getGuidePage(slug: string) {
   return guidePages.find((guide) => guide.slug === slug);

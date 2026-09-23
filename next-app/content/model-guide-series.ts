@@ -1,6 +1,6 @@
 import type { GuidePage, GuideRelated, GuideSection } from "./guide-page";
 
-type SeriesGuide = {
+export type SeriesGuide = {
   slug: string;
   title: string;
   promise: string;
@@ -39,7 +39,7 @@ FINAL RESPONSE
 
 Stop when the requested result and completion check are complete.`;
 
-const makeGuide = (guide: SeriesGuide): GuidePage => ({
+export const makeGuide = (guide: SeriesGuide): GuidePage => ({
   slug: guide.slug,
   title: guide.title,
   promise: guide.promise,
@@ -68,14 +68,14 @@ const makeGuide = (guide: SeriesGuide): GuidePage => ({
   related: guide.related,
 });
 
-const promptGuide = (slug: string, title: string, reason: string): GuideRelated => ({
+export const promptGuide = (slug: string, title: string, reason: string): GuideRelated => ({
   slug,
   title,
   reason,
   cover: `/images/guides/${slug}.webp`,
 });
 
-const existingGuide = (slug: string, title: string, reason: string, cover: string): GuideRelated => ({ slug, title, reason, cover });
+export const existingGuide = (slug: string, title: string, reason: string, cover: string): GuideRelated => ({ slug, title, reason, cover });
 
 export const makeChatgptAnswersShorterGuide = makeGuide({
   slug: "make-chatgpt-answers-shorter",
@@ -503,7 +503,8 @@ export const kimiValueGuide = makeGuide({
   coverAlt: "The Blue Princess weighing one finished work result against a meter of remaining usage",
   seoDescription: "Decide whether Kimi is worth paying for by comparing completed work, checking time, limits and current price.",
   sources: [
-    { label: "Kimi: Membership benefits", url: "https://www.kimi.com/en/help/membership" },
+    { label: "Kimi: Membership plans and shared credit pool", url: "https://www.kimi.com/en/help/membership/membership-overview" },
+    { label: "Kimi: Additional usage", url: "https://www.kimi.com/en/help/membership/membership-extra-usage" },
     { label: "Kimi Code overview", url: "https://www.kimi.com/code/docs/en/" },
   ],
   answer: [
@@ -515,10 +516,10 @@ export const kimiValueGuide = makeGuide({
       heading: "Measure one job",
       introduction: "Choose a long document, a small code change or a five-slide draft. Do not combine all three.",
       steps: [
-        { title: "Record today’s offer", body: "Note the price, included usage, reset period and any visible restriction. Write **Not clear** when the allowance is unclear." },
+        { title: "Record today’s offer", body: "Note the price, included credits, reset period and any visible restriction. Kimi products share one credit pool. Write **Not clear** when the allowance is unclear." },
         { title: "Use the same input", body: "Run the same public task in Kimi and the tool you already use." },
         { title: "Check the result", body: "Record whether it finished, how many corrections it needed and how long checking took." },
-        { title: "Check repeatability", body: "Compare the usage consumed with how often your work needs this task." },
+        { title: "Check repeatability", body: "Open **My → Membership Plan → Credits and Invoices → My Credits → Usage Details**. Compare the credits used with how often you need this task. Check the cost of any extra usage before buying it." },
       ],
     },
     {
@@ -534,7 +535,7 @@ export const kimiValueGuide = makeGuide({
   tryNow: {
     heading: "Write the decision from evidence",
     introduction: "Complete the fields after running the same task in both tools.",
-    prompt: `Job tested: [ONE REPEATED JOB]\nUsable result completed: [YES / NO]\nCorrections needed: [NUMBER AND TYPE]\nChecking time: [MINUTES]\nUsage or limit consumed: [WHAT THE PLAN SHOWED]\nCurrent price shown to me: [PRICE AND BILLING PERIOD]\nFrequency I need: [FREQUENCY]\n\nBased only on this information, write a 3-sentence Pay, Retest or Skip decision.`,
+    prompt: `Job tested: [ONE REPEATED JOB]\nUsable result completed: [YES / NO]\nCorrections needed: [NUMBER AND TYPE]\nChecking time: [MINUTES]\nCredits consumed in the shared pool: [WHAT USAGE DETAILS SHOW]\nCurrent price shown to me: [PRICE AND BILLING PERIOD]\nExtra usage cost or spending limit, if shown: [COST OR NOT SHOWN]\nFrequency I need: [FREQUENCY]\n\nBased only on this information, write a 3-sentence Pay, Retest or Skip decision.`,
     check: "You are done when the decision names the job, usable result, checking time, visible limit and current price.",
   },
   finish: "You can now decide from completed work rather than a product comparison or feature list.",
@@ -566,7 +567,7 @@ export const controlKimiCodeChangesGuide = makeGuide({
       introduction: "Kimi Code Desktop, CLI and VS Code can show plans and file changes. Labels can differ by product.",
       steps: [
         { title: "Open a practice copy", body: "Use a small project you can restore. Confirm Kimi opened the intended folder." },
-        { title: "Enter Plan mode", body: "In Desktop choose **Plan**. In the CLI use **Shift-Tab**, **/plan** or start with **kimi --plan**." },
+        { title: "Enter Plan mode", body: "In Kimi Code CLI use **Shift-Tab** to switch modes, or type **/plan**. Confirm the interface says **Plan** before sending the request. In Desktop, choose **Plan** if that control is available." },
         { title: "Approve only the right plan", body: "The plan should name one file, one visible change and one check. Ask for a revision if it adds refactoring or dependencies." },
         { title: "Inspect File Changes", body: "Open the diff after execution. Keep or undo each change from the file-change view." },
       ],
@@ -627,7 +628,8 @@ export const manusCreditTestGuide = makeGuide({
       steps: [
         { title: "Open the source", body: "Check all five rows against the original article." },
         { title: "Mark unsupported rows", body: "Do not accept a claim because the table looks professional." },
-        { title: "Record credits after checking", body: "Compare the usable result with the credits consumed." },
+        { title: "Repeat the same task", body: "Run the identical request 3 times. Record whether each run finishes, keeps the source rule and produces 5 traceable rows." },
+        { title: "Record credits after checking", body: "Add the credits used across all 3 runs, then compare the cost with the number of usable results." },
       ],
     },
   ],
@@ -635,7 +637,7 @@ export const manusCreditTestGuide = makeGuide({
     heading: "Run one bounded Manus task",
     introduction: "Choose a public article and replace its URL.",
     prompt: `Use only this public source: [ARTICLE URL].\n\nCreate one table with exactly 5 rows and these columns:\n- Claim\n- Evidence quoted or paraphrased from the source\n- Section or heading where it appears\n- Needs checking: Yes or No\n\nDo not browse for additional sources. Do not create slides, a website or extra files. If the source cannot support 5 rows, stop and explain what is missing.\n\nThe task is complete only when the table has 5 traceable rows and every row can be checked against the source.`,
-    check: "You are done when all five rows trace to the source and you know the credits used for the checked result.",
+    check: "You are done when all 3 runs have been checked, you know how many results were usable and you know the total credits consumed.",
   },
   finish: "You can now decide whether Manus deserves a larger task without guessing from an unfinished experiment.",
   related: [
@@ -675,6 +677,7 @@ export const manusBrowserWorkflowGuide = makeGuide({
       heading: "Test Browser Operator with control",
       introduction: "Use a harmless read-only job before any form, message, purchase or deletion.",
       steps: [
+        { title: "Stop before connecting", body: "Confirm the exact account, site and read-only task. If public browsing can answer the question, keep the browser disconnected." },
         { title: "Turn on My Browser", body: "Open Manus connectors, enable **My Browser** and authorise the browser only when the task requests it." },
         { title: "Use a new task tab", body: "Watch the dedicated tab and confirm it opened the intended site and account." },
         { title: "Intervene when needed", body: "Click into the tab to take control. Close the task tab to stop the browser work immediately." },

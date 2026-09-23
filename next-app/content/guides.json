@@ -1564,6 +1564,276 @@
       ],
       "summary": "Protect the approved facts and voice, then revise only the passage that needs work.",
       "sequence": 218
+    },
+    {
+      "slug": "chatgpt-screen-recording-to-process-guide",
+      "title": "Can ChatGPT turn a screen recording into a usable process guide?",
+      "h1": "Can ChatGPT turn a screen recording into a usable process guide?",
+      "datePublished": "2026-09-23",
+      "dateModified": "2026-09-23",
+      "readMinutes": 6,
+      "cover": "/images/guides/chatgpt-screen-recording-to-process-guide.webp",
+      "track": "create",
+      "status": "live",
+      "access": "free",
+      "reviewStatus": "page approved",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "Workflows and automation",
+      "outcomes": [
+        "Create content",
+        "Automate a task"
+      ],
+      "tags": [
+        "ChatGPT",
+        "process guide",
+        "screen recording"
+      ],
+      "summary": "Turn a transcript and clean screenshots into steps another person can follow and check.",
+      "sequence": 219
+    },
+    {
+      "slug": "chatgpt-customer-research-with-evidence",
+      "title": "Can ChatGPT group customer research without inventing themes?",
+      "h1": "Can ChatGPT group customer research without inventing themes?",
+      "datePublished": "2026-09-23",
+      "dateModified": "2026-09-23",
+      "readMinutes": 6,
+      "cover": "/images/guides/chatgpt-customer-research-with-evidence.webp",
+      "track": "create",
+      "status": "live",
+      "access": "free",
+      "reviewStatus": "page approved",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "Business operations",
+      "outcomes": [
+        "Get better answers",
+        "Run business operations"
+      ],
+      "tags": [
+        "ChatGPT",
+        "customer research",
+        "evidence"
+      ],
+      "summary": "Group interview or survey notes into themes with supporting extracts, disagreements and gaps.",
+      "sequence": 220
+    },
+    {
+      "slug": "teach-claude-a-repeatable-workflow",
+      "title": "How do you teach Claude a job you repeat every week?",
+      "h1": "How do you teach Claude a job you repeat every week?",
+      "datePublished": "2026-09-23",
+      "dateModified": "2026-09-23",
+      "readMinutes": 6,
+      "cover": "/images/guides/teach-claude-a-repeatable-workflow.webp",
+      "track": "setup",
+      "status": "live",
+      "access": "free",
+      "reviewStatus": "page approved",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "Workflows and automation",
+      "outcomes": [
+        "Automate a task",
+        "Get better answers"
+      ],
+      "tags": [
+        "Claude",
+        "workflow",
+        "repeatable task"
+      ],
+      "summary": "Test and save a reusable instruction for one weekly task with a visible quality check.",
+      "sequence": 221
+    },
+    {
+      "slug": "fix-gemini-workspace-action",
+      "title": "Why won’t Gemini create the Doc, Task or Calendar item you requested?",
+      "h1": "Why won’t Gemini create the Doc, Task or Calendar item you requested?",
+      "datePublished": "2026-09-23",
+      "dateModified": "2026-09-23",
+      "readMinutes": 6,
+      "cover": "/images/guides/fix-gemini-workspace-action.webp",
+      "track": "setup",
+      "status": "live",
+      "access": "free",
+      "reviewStatus": "page approved",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "AI tools",
+      "outcomes": [
+        "Get better answers",
+        "Use AI safely"
+      ],
+      "tags": [
+        "Gemini",
+        "Google Workspace",
+        "connected apps"
+      ],
+      "summary": "Find whether an account, connection or feature is preventing one simple Google Workspace action.",
+      "sequence": 222
+    },
+    {
+      "slug": "what-can-copilot-see-at-work",
+      "title": "What can Copilot see in your emails, files and meetings?",
+      "h1": "What can Copilot see in your emails, files and meetings?",
+      "datePublished": "2026-09-23",
+      "dateModified": "2026-09-23",
+      "readMinutes": 6,
+      "cover": "/images/guides/what-can-copilot-see-at-work.webp",
+      "track": "tools",
+      "status": "live",
+      "access": "free",
+      "reviewStatus": "page approved",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "AI tools",
+      "outcomes": [
+        "Use AI safely",
+        "Choose an AI tool"
+      ],
+      "tags": [
+        "Copilot",
+        "Microsoft 365",
+        "permissions"
+      ],
+      "summary": "Test three harmless sources and verify what Microsoft 365 Copilot can access in your account.",
+      "sequence": 223
+    },
+    {
+      "slug": "test-meta-muse-money-saving-task",
+      "title": "Can Muse save you money without taking over the purchase?",
+      "h1": "Can Muse save you money without taking over the purchase?",
+      "datePublished": "2026-09-23",
+      "dateModified": "2026-09-23",
+      "readMinutes": 6,
+      "cover": "/images/guides/test-meta-muse-money-saving-task.webp",
+      "track": "tools",
+      "status": "live",
+      "access": "free",
+      "reviewStatus": "page approved",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "AI agents",
+      "outcomes": [
+        "Build an agent",
+        "Use AI safely"
+      ],
+      "tags": [
+        "Meta Muse",
+        "shopping",
+        "money"
+      ],
+      "summary": "Compare the complete cost of three options while keeping checkout under your control.",
+      "sequence": 224
+    },
+    {
+      "slug": "test-grok-repeated-image-edits",
+      "title": "How many times can you edit a Grok image before it changes the parts you approved?",
+      "h1": "How many times can you edit a Grok image before it changes the parts you approved?",
+      "datePublished": "2026-09-23",
+      "dateModified": "2026-09-23",
+      "readMinutes": 6,
+      "cover": "/images/guides/test-grok-repeated-image-edits.webp",
+      "track": "create",
+      "status": "live",
+      "access": "free",
+      "reviewStatus": "page approved",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "Content and creative work",
+      "outcomes": [
+        "Create content",
+        "Choose an AI tool"
+      ],
+      "tags": [
+        "Grok",
+        "image editing",
+        "version control"
+      ],
+      "summary": "Save a master image and test whether each one-detail edit preserves the approved parts.",
+      "sequence": 225
+    },
+    {
+      "slug": "test-deepseek-v4-document-work",
+      "title": "Can DeepSeek V4.1 replace your current AI for document work?",
+      "h1": "Can DeepSeek V4.1 replace your current AI for document work?",
+      "datePublished": "2026-09-23",
+      "dateModified": "2026-09-23",
+      "readMinutes": 6,
+      "cover": "/images/guides/test-deepseek-v4-document-work.webp",
+      "track": "tools",
+      "status": "live",
+      "access": "free",
+      "reviewStatus": "page approved",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "AI tools",
+      "outcomes": [
+        "Choose an AI tool",
+        "Get better answers"
+      ],
+      "tags": [
+        "DeepSeek",
+        "V4.1",
+        "documents"
+      ],
+      "summary": "Compare two tools on the same document task and score accuracy, coverage and checking time.",
+      "sequence": 226
+    },
+    {
+      "slug": "protect-a-long-deepseek-project",
+      "title": "What should you save before a DeepSeek project becomes unavailable?",
+      "h1": "What should you save before a DeepSeek project becomes unavailable?",
+      "datePublished": "2026-09-23",
+      "dateModified": "2026-09-23",
+      "readMinutes": 6,
+      "cover": "/images/guides/protect-a-long-deepseek-project.webp",
+      "track": "setup",
+      "status": "live",
+      "access": "free",
+      "reviewStatus": "page approved",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "Workflows and automation",
+      "outcomes": [
+        "Use AI safely",
+        "Automate a task"
+      ],
+      "tags": [
+        "DeepSeek",
+        "backup",
+        "long project"
+      ],
+      "summary": "Build a recovery pack containing sources, decisions, approved work and a restart instruction.",
+      "sequence": 227
+    },
+    {
+      "slug": "mistral-multilingual-research",
+      "title": "Can Mistral research in two languages without losing the source?",
+      "h1": "Can Mistral research in two languages without losing the source?",
+      "datePublished": "2026-09-23",
+      "dateModified": "2026-09-23",
+      "readMinutes": 6,
+      "cover": "/images/guides/mistral-multilingual-research.webp",
+      "track": "tools",
+      "status": "live",
+      "access": "free",
+      "reviewStatus": "page approved",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "AI tools",
+      "outcomes": [
+        "Get better answers",
+        "Choose an AI tool"
+      ],
+      "tags": [
+        "Mistral",
+        "multilingual",
+        "research"
+      ],
+      "summary": "Keep original wording, translations and direct links beside claims found in two languages.",
+      "sequence": 228
     }
   ]
 }

@@ -48,6 +48,16 @@ Workshops are available for companies.
 - Should you let Meta Business Agent answer your customers?: https://www.shiftandlead.com/guides/test-meta-business-agent-customer-replies.html
 - Why did DeepSeek turn your scene into a wall of text?: https://www.shiftandlead.com/guides/fix-deepseek-wall-of-text.html
 - How do you edit a long DeepSeek story without losing what worked?: https://www.shiftandlead.com/guides/edit-long-writing-with-deepseek.html
+- Can ChatGPT turn a screen recording into a usable process guide?: https://www.shiftandlead.com/guides/chatgpt-screen-recording-to-process-guide.html
+- Can ChatGPT group customer research without inventing themes?: https://www.shiftandlead.com/guides/chatgpt-customer-research-with-evidence.html
+- How do you teach Claude a job you repeat every week?: https://www.shiftandlead.com/guides/teach-claude-a-repeatable-workflow.html
+- Why won’t Gemini create the Doc, Task or Calendar item you requested?: https://www.shiftandlead.com/guides/fix-gemini-workspace-action.html
+- What can Copilot see in your emails, files and meetings?: https://www.shiftandlead.com/guides/what-can-copilot-see-at-work.html
+- Can Muse save you money without taking over the purchase?: https://www.shiftandlead.com/guides/test-meta-muse-money-saving-task.html
+- How many times can you edit a Grok image before it changes the parts you approved?: https://www.shiftandlead.com/guides/test-grok-repeated-image-edits.html
+- Can DeepSeek V4.1 replace your current AI for document work?: https://www.shiftandlead.com/guides/test-deepseek-v4-document-work.html
+- What should you save before a DeepSeek project becomes unavailable?: https://www.shiftandlead.com/guides/protect-a-long-deepseek-project.html
+- Can Mistral research in two languages without losing the source?: https://www.shiftandlead.com/guides/mistral-multilingual-research.html
 
 ## Editorial approach
 
