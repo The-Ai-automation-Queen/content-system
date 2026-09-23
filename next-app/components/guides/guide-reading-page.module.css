@@ -127,6 +127,7 @@
 .captureBoundary small { color: var(--muted); font: 400 12px/1.45 var(--font-ui), sans-serif; }
 .captureBoundary form > strong { color: #a12621; font: 600 13px/1.45 var(--font-ui), sans-serif; }
 .captureBoundary a { color: inherit; }
+.captureSuccess { margin:32px 0 0; padding:18px; border:1px solid #5a8c70; color:#f4fff7; background:#153727; font:600 15px/1.5 var(--font-ui),sans-serif; }
 .honeypot { position: absolute !important; width: 1px !important; height: 1px !important; opacity: 0; pointer-events: none; }
 
 @media (max-width: 760px) {

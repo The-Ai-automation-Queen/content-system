@@ -20,11 +20,15 @@ const pageSource = [
   researchSeriesSource,
 ].join("\n");
 const librarySource = read("next-app/content/guides.ts");
+const libraryUiSource = read("next-app/components/guides/guide-library.tsx");
+const libraryPageSource = read("next-app/app/guides/page.tsx");
 const headerSource = read("next-app/components/chrome/site-header.tsx");
 const globalStyles = read("next-app/app/globals.css");
 const footerSource = read("next-app/components/chrome/site-footer.tsx");
 const guideAccessSource = read("next-app/components/guides/guide-access-boundary.tsx");
 const guideReadingSource = read("next-app/components/guides/guide-reading-page.tsx");
+const guideRouteSource = read("next-app/app/guides/[slug]/page.tsx");
+const instagramPageSource = read("next-app/components/guides/instagram-dashboard-page.tsx");
 const guideFormatsSource = read("next-app/content/guide-formats.ts");
 const guideReadingStyles = read("next-app/components/guides/guide-reading-page.module.css");
 const guideCaptureApi = read("main-site/api/guide-capture.js");
@@ -107,9 +111,20 @@ if (!guideAccessSource.includes('fetch("/api/guide-capture"')) {
 if (!guideAccessSource.includes("<GuideAccessBoundary") && !guideReadingSource.includes("<GuideAccessBoundary")) {
   failures.push("Published guide pages are no longer protected by the shared email gate.");
 }
-if (guideReadingSource.indexOf("data-guide-preview") > guideReadingSource.indexOf("<GuideAccessBoundary") ||
+const genericPreview = guideReadingSource.indexOf("data-guide-preview");
+const genericGate = guideReadingSource.indexOf("<GuideAccessBoundary", genericPreview);
+if (genericPreview < 0 || genericGate < genericPreview ||
     !guideReadingSource.includes("<Section section={guide.sections[0]} />")) {
   failures.push("The inline opt-in must follow a useful first section of the guide.");
+}
+if (!guideRouteSource.includes('slug === "instagram-content-dashboard"') ||
+    !guideRouteSource.includes("<InstagramDashboardPage guide={guide} />") ||
+    !instagramPageSource.includes('variant="instagram"') ||
+    !instagramPageSource.includes('variant="save"')) {
+  failures.push("The Instagram guide must use its dedicated Next.js walkthrough, with the email form after the steps.");
+}
+if (!libraryUiSource.includes('role="search"') || !libraryPageSource.includes("searchIndex={searchIndex}")) {
+  failures.push("The guide library search must stay visible and index published guide content.");
 }
 if (guideAccessSource.includes("data-guide-gate-teaser") || guideReadingStyles.includes(".gateTeaser") || guideReadingStyles.includes("filter: blur(2px)")) {
   failures.push("The guide gate must not use a blurred teaser or overlay.");

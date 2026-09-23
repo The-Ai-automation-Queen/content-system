@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { approvedGuideSlugs } from "@/content/guides";
 import { GuideReadingPage } from "@/components/guides/guide-reading-page";
+import { InstagramDashboardPage } from "@/components/guides/instagram-dashboard-page";
 import { getGuidePage, guidePages } from "@/content/guide-page";
 
 export function generateStaticParams() {
@@ -32,5 +33,6 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   const { slug } = await params;
   const guide = getGuidePage(slug);
   if (!guide) notFound();
+  if (slug === "instagram-content-dashboard") return <InstagramDashboardPage guide={guide} />;
   return <GuideReadingPage guide={guide} />;
 }

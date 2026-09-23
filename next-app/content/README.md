@@ -1,18 +1,16 @@
 # Editing a structured guide
 
-Before editing any guide, read `../../docs/GUIDE-PRODUCTION-FRAMEWORK.md`. It is the canonical writing, design, approval and publishing workflow.
+Before editing any guide, read the `shift-lead-guide-builder` skill. It is the current writing, design, approval and publishing workflow. `../../docs/GUIDE-PRODUCTION-FRAMEWORK.md` records repository-specific production details and must agree with that skill.
 
-The active copy for approved guides lives in one file:
+The active copy for approved guides lives in structured content records, including:
 
-- `guide-page.ts` contains the title, promise, sections, prompt, conclusion, Lumail tag and exactly 3 related guides.
+- `guide-page.ts` and the imported guide-specific records contain the title, promise, sections, prompts, conclusion, Lumail tag and exactly 3 related guides. The Instagram record is `instagram-dashboard-guide.ts`.
 
 Public visibility is controlled only by `../../data/guide-publication.json`. Do not use an inventory `status` to infer approval.
 
-The shared page layout lives in `components/guides/guide-reading-page.tsx`. The access gate lives in
-`components/guides/guide-access-boundary.tsx`, and the design rules live in
-`components/guides/guide-reading-page.module.css`.
+`components/guides/guide-reading-page.tsx` is a legacy article renderer for existing routes. Do not use it as the format or layout specification for a new or rebuilt guide. Use a page-specific Next.js composition based on the owner's approved full-page reference. Reuse interaction and form components where they fit without inheriting the legacy article frame.
 
-Every new guide inherits that shared production template. Do not add per-guide layout or spacing overrides. Its production cover must be `public/images/guides/<slug>.webp`, 16:9, no more than 1280px wide and no more than 200 KB. The template keeps the hero aligned to the 920px reading column, uses compact section spacing, shows all explanatory sections before the gate, and fades the real “Try it now” section beneath the inline capture form. Sunset Orange `#FF5733` is reserved for the guide H1 and white-background major H2 text, with no orange marker; H3, body copy, labels and headings on cream or tinted panels remain dark.
+The approved Instagram page uses a dedicated compact, sectioned walkthrough modeled on the owner's Tenfold reference in Shift & Lead colours. It keeps the two build choices, five-step map, screenshots, checklists, complete prompts, and Lumail form after all five steps. Other guides need their own approved interaction and form position. Use the original topic-specific WebP cover and inspect the rendered desktop and mobile layout before publishing.
 
 After explicit copy approval, edit and preview the guide from `next-app` with `npm run dev`. After page approval, add the slug to the publication registry. To rebuild the approved guides and copy the deployable files into `main-site`, run this command from the repository root:
 
@@ -23,4 +21,4 @@ npm run publish:guides
 Run `npm run validate:guides` before any push. Commit both the editable source and the generated `main-site` files. Vercel publishes
 `main-site`, so this step keeps the live pages synchronized with their source.
 
-Run `node --test tests/guide-output-contract.test.mjs` after every guide build. It checks current and upcoming structured cover assets as well as the shared layout, gate and generated-page contracts.
+Run `node --test tests/guide-output-contract.test.mjs` after every guide build. If a legacy shared-layout assertion conflicts with an owner-approved page-specific layout, update the assertion to test the approved result instead.

@@ -1,20 +1,20 @@
-# Free-guide email access contract
+# Guide email form contract
 
-The email gate is intentional lead capture. It must not be removed while a guide is public and free.
+The Lumail form is intentional lead capture, but its position and whether it gates content are page-specific owner decisions. The `shift-lead-guide-builder` skill and the approved page design take precedence over older gate patterns.
 
-## Gated guides
+## Published guides
 
-The approved registry in `data/guide-publication.json` is the source of truth. Every approved guide must render through `GuideAccessBoundary`, submit to `/api/guide-capture`, and have its own `guide-*` tag in Lumail. The current public set contains 20 guides.
+The approved registry in `data/guide-publication.json` is the source of truth. Every approved guide needs an embedded Lumail form and its own `guide-*` tag. A reusable component may handle submission, but it must not impose a generic page layout or form position. The approved Instagram guide places its form after all five steps and remains readable without submitting it.
 
 ## Visitor experience
 
 - The guide URL and cover identify the requested guide.
-- The access screen appears before the guide body.
-- The access screen uses the guide cover as a blurred background.
+- The form appears at that guide's approved point in the reading journey.
+- Do not blur the guide cover or hide the Instagram steps behind an access screen.
 - The form asks for email and an optional first name.
-- The copy says that access also includes occasional practical guides and product updates.
+- Requested-guide delivery is separate from optional marketing consent.
 - A privacy link is visible beside the form.
-- One successful submission unlocks all free guides on that device.
+- A successful submission may unlock guides that are approved as gated. It must not be required to read the Instagram walkthrough.
 - The reader is not offered a PDF download as a fallback.
 
 ## Submission contract
@@ -25,13 +25,13 @@ The approved registry in `data/guide-publication.json` is the source of truth. E
 - Honeypot: `website`
 - Recorded server-side: guide URL, guide tag, shared guide tag, source, timestamp and campaign fields
 - Provider credential: `LUMAIL_API_TOKEN`, server-side only
-- The guide unlocks only after a successful Lumail response.
+- For an access-gated guide, unlock only after a successful Lumail response. For an after-guide form, send the return link and show success without claiming to unlock content.
 
 ## Persistence and review
 
 - Storage key: `shift-lead-guide-access`
 - Stored value: `true`
-- `?gate=1` forces the access screen for testing.
+- `?gate=1` forces the form for testing, including after-guide forms.
 - `?review=1` bypasses the gate only on localhost, `127.0.0.1` and Vercel preview hosts.
 - Production does not accept the review bypass.
 
@@ -39,7 +39,7 @@ The approved registry in `data/guide-publication.json` is the source of truth. E
 
 - Invalid email is rejected before submission.
 - Provider or network failure shows a generic retry message.
-- The guide remains locked after a failed request.
+- A gated guide remains locked after a failed request. An after-guide form leaves the guide readable and offers a retry.
 - Provider details and credentials are never exposed to the browser.
 
 ## Analytics

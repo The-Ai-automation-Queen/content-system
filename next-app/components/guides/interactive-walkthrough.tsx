@@ -15,7 +15,7 @@ const shots: Record<string, { src: string; caption: string }> = {
   "1.1 — Create the App": { src: "/images/guides/instagram-steps/meta-app-setup.png", caption: "Current Meta app setup. Personal details removed. The interface may differ from the original instructions." },
 };
 
-export function InteractiveWalkthrough({ sections, slug, conclusion }: { sections: readonly Step[]; slug: string; conclusion: ReactNode }) {
+export function InteractiveWalkthrough({ sections, slug, conclusion, variant = "standard", afterSteps }: { sections: readonly Step[]; slug: string; conclusion: ReactNode; variant?: "standard" | "instagram"; afterSteps?: ReactNode }) {
   const key = `shift-lead-progress:${slug}:source-v1`;
   const [mode, setMode] = useState<"agent" | "manual" | null>(null);
   const masterPrompt = buildGuideAgentPrompt(sections);
@@ -45,7 +45,8 @@ export function InteractiveWalkthrough({ sections, slug, conclusion }: { section
     requestAnimationFrame(() => { anchor.current?.scrollIntoView({ block: "start" }); anchor.current?.focus({ preventScroll: true }); });
   }
   const complete = sections.filter((_, i) => done[`step-${i}`]).length;
-  return <div className={styles.walkthrough} ref={anchor} tabIndex={-1}>
+  const navigation = <nav className={styles.navigation} aria-label="Walkthrough steps">{sections.map((s, i) => <button key={s.heading} onClick={() => { if (variant === "instagram") setMode("manual"); go(i); }} aria-current={active === i ? "step" : undefined}><span aria-hidden="true">{done[`step-${i}`] ? "✓" : i + 1}</span>{labels[i] ?? s.heading}</button>)}</nav>;
+  return <div className={`${styles.walkthrough} ${variant === "instagram" ? styles.instagram : ""}`} ref={anchor} tabIndex={-1}>
     <div className={styles.choiceIntro}>
       <h2>How would you like to build it?</h2>
       <p>Choose the support you want. You can switch at any time.</p>
@@ -54,6 +55,7 @@ export function InteractiveWalkthrough({ sections, slug, conclusion }: { section
         <button aria-pressed={mode === "manual"} aria-controls="manual-build-path" onClick={() => setMode("manual")}><strong>Follow the steps myself</strong><span>Work through the five steps with checklists and individual prompts.</span></button>
       </div>
     </div>
+    {variant === "instagram" && navigation}
     <section id="agent-build-path" hidden={mode !== "agent"} aria-labelledby="agent-build-title">
       <h2 id="agent-build-title">Let your agent handle the build</h2>
       <ol className={styles.agentStart}>
@@ -72,7 +74,7 @@ export function InteractiveWalkthrough({ sections, slug, conclusion }: { section
       <button onClick={() => setExpanded(!expanded)} aria-pressed={expanded}>{expanded ? "One step at a time" : "Expand all steps"}</button>
     </div>
     <progress value={complete} max={sections.length} aria-label="Self-reported step completion" />
-    <nav className={styles.navigation} aria-label="Walkthrough steps">{sections.map((s, i) => <button key={s.heading} onClick={() => go(i)} aria-current={active === i ? "step" : undefined}><span aria-hidden="true">{done[`step-${i}`] ? "✓" : i + 1}</span>{labels[i] ?? s.heading}</button>)}</nav>
+    {variant !== "instagram" && navigation}
     <p className={styles.hint}>Tick actions as you go. Checkmarks record your progress; they do not verify your setup.</p>
     {sections.map((section, i) => <section key={section.heading} hidden={!expanded && active !== i} aria-labelledby={`walkthrough-step-${i}`}>
       <h2 id={`walkthrough-step-${i}`}>{section.heading}</h2><p>{section.introduction}</p>
@@ -94,6 +96,7 @@ export function InteractiveWalkthrough({ sections, slug, conclusion }: { section
     </section>)}
     {(expanded || active === sections.length - 1) && conclusion}
     </div>
+    {afterSteps && (mode === "agent" || (mode === "manual" && (expanded || active === sections.length - 1))) && afterSteps}
     <dialog ref={dialog} className={styles.lightbox} onClose={() => setPhoto(null)} onClick={e => { if (e.target === e.currentTarget) dialog.current?.close(); }}>
       <button onClick={() => dialog.current?.close()} autoFocus>Close screenshot ×</button>
       {photo && <><img src={photo.src} alt={photo.caption} /><p>{photo.caption}</p></>}

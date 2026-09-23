@@ -587,7 +587,7 @@
       "status": "live",
       "reviewStatus": "page approved",
       "formatLabel": "GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool",
@@ -893,7 +893,7 @@
       "positioningLane": "Use AI at work",
       "reviewStatus": "page approved",
       "formatLabel": "GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI essentials",
       "outcomes": [
         "Use AI safely"
@@ -1073,7 +1073,7 @@
       "status": "live",
       "reviewStatus": "page approved",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool",
@@ -1129,7 +1129,7 @@
       "access": "free",
       "reviewStatus": "page approved",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Better prompts and answers",
       "outcomes": [
         "Get better answers"
@@ -1155,7 +1155,7 @@
       "access": "free",
       "reviewStatus": "page approved",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI agents",
       "outcomes": [
         "Build an agent"
@@ -1181,7 +1181,7 @@
       "access": "free",
       "reviewStatus": "page approved",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool",
@@ -1208,7 +1208,7 @@
       "access": "free",
       "reviewStatus": "page approved",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool"
@@ -1313,7 +1313,7 @@
       "access": "free",
       "reviewStatus": "page approved",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Better prompts and answers",
       "outcomes": [
         "Get better answers"
@@ -1391,7 +1391,7 @@
       "access": "free",
       "reviewStatus": "page approved",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI agents",
       "outcomes": [
         "Choose an AI tool",
@@ -1686,7 +1686,7 @@
       "access": "free",
       "reviewStatus": "page approved",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
         "Use AI safely",
@@ -1713,7 +1713,7 @@
       "access": "free",
       "reviewStatus": "page approved",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI agents",
       "outcomes": [
         "Build an agent",
@@ -1740,7 +1740,7 @@
       "access": "free",
       "reviewStatus": "page approved",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Content and creative work",
       "outcomes": [
         "Create content",
