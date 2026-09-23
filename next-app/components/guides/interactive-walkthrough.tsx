@@ -17,7 +17,7 @@ const shots: Record<string, { src: string; caption: string }> = {
 
 export function InteractiveWalkthrough({ sections, slug, conclusion, variant = "standard" }: { sections: readonly Step[]; slug: string; conclusion: ReactNode; variant?: "standard" | "instagram" }) {
   const key = `shift-lead-progress:${slug}:source-v1`;
-  const [mode, setMode] = useState<"agent" | "manual" | null>(null);
+  const [mode, setMode] = useState<"agent" | "manual" | null>(variant === "instagram" ? "agent" : null);
   const masterPrompt = buildGuideAgentPrompt(sections);
   const [active, setActive] = useState(0);
   const [expanded, setExpanded] = useState(false);
@@ -30,15 +30,15 @@ export function InteractiveWalkthrough({ sections, slug, conclusion, variant = "
   useEffect(() => {
     try {
       const saved = JSON.parse(localStorage.getItem(key) || "null");
-      if (saved && Number.isInteger(saved.active) && saved.active >= 0 && saved.active < sections.length) setActive(saved.active);
+      if (variant !== "instagram" && saved && Number.isInteger(saved.active) && saved.active >= 0 && saved.active < sections.length) setActive(saved.active);
       if (saved?.done && typeof saved.done === "object" && !Array.isArray(saved.done)) setDone(Object.fromEntries(Object.entries(saved.done).filter(([, v]) => v === true)) as Record<string, boolean>);
     } catch { setStorageOk(false); }
     setReady(true);
-  }, [key, sections.length]);
+  }, [key, sections.length, variant]);
   useEffect(() => {
     if (!ready) return;
-    try { localStorage.setItem(key, JSON.stringify({ active, done })); } catch { setStorageOk(false); }
-  }, [active, done, key, ready]);
+    try { localStorage.setItem(key, JSON.stringify(variant === "instagram" ? { done } : { active, done })); } catch { setStorageOk(false); }
+  }, [active, done, key, ready, variant]);
   useEffect(() => { if (photo) dialog.current?.showModal(); }, [photo]);
   function go(index: number) {
     setActive(index);

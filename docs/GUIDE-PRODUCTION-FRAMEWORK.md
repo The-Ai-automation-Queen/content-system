@@ -114,6 +114,8 @@ The site header is shared across the main website and every guide. The Shift & L
 
 Reuse working components for prompt copying, progress, screenshots and Lumail submission when they fit the approved guide. A shared component supplies behavior, not a mandatory layout. The Instagram walkthrough is a dedicated Next.js composition with the approved two choices, five-step map and compact pre-guide email modal. When the owner changes a page design or form position, update the relevant source, validation and instructions together so an older template cannot reappear on the next build.
 
+On the Instagram guide, keep the current layout but select “Let an agent guide me” and the first “Meta setup” tab when the guide opens. Reopening may retain completed checkmarks, but it must begin on the first tab rather than a previously visited step. This default does not apply to other guides.
+
 ## Approval checklist
 
 Before adding a guide to the registry, confirm all of the following:

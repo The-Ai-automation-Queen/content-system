@@ -122,6 +122,8 @@ if (!guideRouteSource.includes('slug === "instagram-content-dashboard"') ||
     !guideRouteSource.includes("<InstagramDashboardPage guide={guide} />") ||
     !instagramPageSource.includes('variant="instagram"') ||
     !guideRouteSource.includes('variant="entry"') ||
+    !interactiveWalkthroughSource.includes('variant === "instagram" ? "agent" : null') ||
+    !interactiveWalkthroughSource.includes('variant !== "instagram" && saved') ||
     instagramPageSource.includes('variant="save"') ||
     interactiveWalkthroughSource.includes('afterSteps')) {
   failures.push("The Instagram guide must use its dedicated Next.js walkthrough behind a pre-guide Lumail entry gate.");
