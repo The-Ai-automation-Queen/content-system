@@ -72,24 +72,24 @@
 
 /* Dedicated compact Instagram walkthrough in the shared Shift & Lead guide palette. */
 .instagram { margin-top:0; color:var(--ink); }
-.instagram h2 { color:var(--ink); font:700 clamp(23px,3vw,29px)/1.2 var(--font-ui),sans-serif; }
-.instagram h3 { color:var(--ink); font:700 17px/1.35 var(--font-ui),sans-serif; }
-.instagram p { color:#403d38; font-size:15px; line-height:1.55; }
+.instagram h2 { color:var(--ink); font:500 clamp(23px,3vw,29px)/1.2 var(--font-display),serif; }
+.instagram h3 { color:var(--ink); font:600 19px/1.3 var(--font-display),serif; }
+.instagram p { color:#403d38; font:400 16px/1.5 var(--font-body),serif; }
 .instagram .choiceIntro { padding:22px 0 0; border-top:1px solid var(--line); }
 .instagram .choiceIntro h2 { margin-bottom:5px; text-align:center; }
 .instagram .choiceIntro > p { margin:0; text-align:center; }
 .instagram .choices { margin:18px 0 24px; }
 .instagram .choices button { border:1px solid var(--line); border-radius:9px; background:var(--cream); color:var(--ink); padding:18px; }
 .instagram .choices button[aria-pressed="true"] { border:2px solid var(--blue); background:#f2f4ff; padding:17px; }
-.instagram .choices strong { color:var(--blue-deep); font:700 18px/1.3 var(--font-ui),sans-serif; }
-.instagram .choices span { color:var(--muted); font-size:13px; }
+.instagram .choices strong { color:var(--blue-deep); font:600 19px/1.3 var(--font-display),serif; }
+.instagram .choices span { color:var(--muted); font:400 14px/1.5 var(--font-body),serif; }
 .instagram .navigation { gap:8px; margin:0 0 28px; padding:20px 0 22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .instagram .navigation button { display:flex; flex-direction:column; gap:8px; justify-content:center; min-height:78px; padding:6px; border:0; border-radius:8px; background:transparent; color:var(--muted); text-align:center; font-size:12px; }
 .instagram .navigation button[aria-current] { background:var(--blue-deep); color:#fff; }
 .instagram .navigation span { display:grid; width:29px; height:29px; place-items:center; border:1px solid #aaa49a; border-radius:50%; color:var(--blue-deep); }
 .instagram .navigation button[aria-current] span { border-color:#fff; background:#fff; color:var(--blue-deep); }
 .instagram .toolbar { padding-top:2px; }
-.instagram .toolbar strong { color:var(--ink); font:700 19px/1.3 var(--font-ui),sans-serif; }
+.instagram .toolbar strong { color:var(--ink); font:600 21px/1.3 var(--font-display),serif; }
 .instagram .toolbar small,.instagram .hint { color:var(--muted); }
 .instagram .toolbar button,.instagram .footer button,.instagram [id="agent-build-path"] > button { border:1px solid var(--ink); border-radius:6px; background:var(--paper); color:var(--ink); }
 .instagram .toolbar button:hover,.instagram .footer button:hover,.instagram [id="agent-build-path"] > button:hover { border-color:var(--blue); color:var(--blue-deep); }
@@ -97,10 +97,10 @@
 .instagram section { margin-top:20px; }
 .instagram section > h2 { margin-bottom:7px; color:#ff5733; }
 .instagram .checklist { gap:5px; }
-.instagram .checklist label { padding:10px 12px; border:1px solid var(--line); border-radius:7px; background:var(--cream); color:var(--ink); font:500 14px/1.5 var(--font-ui),sans-serif; }
+.instagram .checklist label { padding:10px 12px; border:1px solid var(--line); border-radius:7px; background:var(--cream); color:var(--ink); font:400 15px/1.5 var(--font-body),serif; }
 .instagram input { accent-color:var(--blue); }
 .instagram .note { border:1px solid #dce2fa; border-radius:7px; background:#f2f4ff; color:var(--blue-deep); }
-.instagram .note p { color:#403d38; font-size:13px; }
+.instagram .note p { color:#403d38; font-size:14px; }
 .instagram .photoButton { width:min(100%,420px); border:1px solid var(--line); border-radius:7px; background:var(--paper); color:var(--ink); overflow:hidden; }
 .instagram .photoButton small { color:var(--muted); }
 .instagram .help,.instagram .demo { border-color:var(--line); border-radius:7px; background:var(--cream); }
