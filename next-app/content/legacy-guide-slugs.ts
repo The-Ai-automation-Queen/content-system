@@ -1,7 +1,6 @@
 // Frozen migration allowlist. Existing guides may keep their current renderer until rebuilt.
 // New guides must provide an approved interactive Next.js composition.
 export const legacyGuideSlugs = new Set([
-  "ai-skills-worth-learning-for-work",
   "chatgpt",
   "chatgpt-customer-research-with-evidence",
   "chatgpt-screen-recording-to-process-guide",

@@ -33,7 +33,7 @@
     { "slug": "what-is-a-prompt", "pattern": "prompt-builder", "status": "review", "component": "prompt-builder-page" },
     { "slug": "what-is-an-ai-browser", "pattern": "audit", "status": "review", "component": "ai-browser-page" },
     { "slug": "connect-ai-to-email-files-calendar", "pattern": "audit", "status": "pending" },
-    { "slug": "ai-skills-worth-learning-for-work", "pattern": "practice", "status": "pending" },
+    { "slug": "ai-skills-worth-learning-for-work", "pattern": "practice", "status": "review", "component": "ai-skills-page" },
     { "slug": "show-up-in-ai-search", "pattern": "audit", "status": "pending" },
     { "slug": "chatgpt-screen-recording-to-process-guide", "pattern": "walkthrough", "status": "pending" },
     { "slug": "chatgpt-customer-research-with-evidence", "pattern": "audit", "status": "pending" },
