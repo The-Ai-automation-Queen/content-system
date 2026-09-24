@@ -17,6 +17,5 @@ export const legacyGuideSlugs = new Set([
   "switch-from-chatgpt-to-mistral",
   "test-manus-without-burning-credits",
   "test-meta-business-agent-customer-replies",
-  "test-meta-muse-money-saving-task",
   "what-can-copilot-see-at-work",
 ]);

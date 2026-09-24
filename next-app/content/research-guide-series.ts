@@ -340,6 +340,7 @@ Use only sources available through my current work account. If you cannot find e
 
 export const metaMuseSavingGuide = makeGuide({
   slug: "test-meta-muse-money-saving-task",
+  promptMode: "as-written",
   title: "Can Muse save you money without taking over the purchase?",
   promise: "Ask Muse to compare a real buying decision while keeping the budget, evidence and final purchase under your control.",
   coverAlt: "The Blue Princess holding the final lever while a shopping machine compares three price tags through a magnifying glass",
