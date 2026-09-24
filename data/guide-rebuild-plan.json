@@ -41,7 +41,7 @@
     { "slug": "fix-gemini-workspace-action", "pattern": "walkthrough", "status": "pending" },
     { "slug": "what-can-copilot-see-at-work", "pattern": "audit", "status": "pending" },
     { "slug": "test-meta-muse-money-saving-task", "pattern": "decision", "status": "pending" },
-    { "slug": "test-grok-repeated-image-edits", "pattern": "walkthrough", "status": "pending" },
+    { "slug": "test-grok-repeated-image-edits", "pattern": "walkthrough", "status": "review", "component": "grok-image-edits-page" },
     { "slug": "test-deepseek-v4-document-work", "pattern": "decision", "status": "review", "component": "deepseek-document-page" },
     { "slug": "protect-a-long-deepseek-project", "pattern": "audit", "status": "review", "component": "deepseek-recovery-page" },
     { "slug": "mistral-multilingual-research", "pattern": "walkthrough", "status": "pending" }

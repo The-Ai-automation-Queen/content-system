@@ -404,6 +404,7 @@ Do not purchase, subscribe, book, add to a basket, sign in, contact a seller or 
 
 export const grokRepeatedImageEditsGuide = makeGuide({
   slug: "test-grok-repeated-image-edits",
+  promptMode: "as-written",
   title: "How many times can you edit a Grok image before it changes the parts you approved?",
   promise: "Save a master image, change one thing at a time and compare each version before the next edit.",
   coverAlt: "The Blue Princess comparing four prints from one image press while protecting the approved master under glass",
