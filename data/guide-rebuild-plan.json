@@ -35,7 +35,7 @@
     { "slug": "connect-ai-to-email-files-calendar", "pattern": "audit", "status": "pending" },
     { "slug": "ai-skills-worth-learning-for-work", "pattern": "practice", "status": "review", "component": "ai-skills-page" },
     { "slug": "show-up-in-ai-search", "pattern": "audit", "status": "review", "component": "ai-search-page" },
-    { "slug": "chatgpt-screen-recording-to-process-guide", "pattern": "walkthrough", "status": "pending" },
+    { "slug": "chatgpt-screen-recording-to-process-guide", "pattern": "walkthrough", "status": "review", "component": "screen-recording-page" },
     { "slug": "chatgpt-customer-research-with-evidence", "pattern": "audit", "status": "review", "component": "customer-research-page" },
     { "slug": "teach-claude-a-repeatable-workflow", "pattern": "walkthrough", "status": "review", "component": "claude-workflow-page" },
     { "slug": "fix-gemini-workspace-action", "pattern": "walkthrough", "status": "pending" },

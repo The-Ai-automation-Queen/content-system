@@ -5,7 +5,7 @@ export const chatgptScreenRecordingGuide = makeGuide({
   title: "Can ChatGPT turn a screen recording into a usable process guide?",
   promise: "Upload a short screen recording, turn what it actually shows into clear steps, then test whether someone else can follow them. A transcript and screenshots provide a fallback when video upload is unavailable.",
   coverAlt: "The Blue Princess feeding a film reel and picture cards into a press that produces an ordered instruction booklet",
-  seoDescription: "Turn a screen-recording transcript and screenshots into a checked step-by-step process guide with ChatGPT.",
+  seoDescription: "Upload a clean screen recording to ChatGPT, turn visible actions into a process guide, and test the steps with someone new.",
   sources: [
     { label: "OpenAI: Video attachments and their limits", url: "https://help.openai.com/en/articles/8400551-chatgpt-image-inputs-faq" },
     { label: "OpenAI: File uploads in ChatGPT", url: "https://help.openai.com/en/articles/8555545-file-uploads-faq" },
