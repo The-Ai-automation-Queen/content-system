@@ -185,7 +185,7 @@ export const chatgptScheduledTasksGuide = makeGuide({
   slug: "chatgpt-scheduled-tasks",
   promptMode: "as-written",
   title: "Can ChatGPT do the boring checking for you?",
-  promise: "Use a scheduled task for one public check with a clear trigger, a useful notification and an end date.",
+  promise: "Use a scheduled task for one public check with a clear trigger, a useful notification and a stop rule.",
   coverAlt: "The small blue robot princess setting a clockwork lookout beside a public noticeboard",
   seoDescription: "Create and verify one harmless scheduled task in ChatGPT without producing daily notification noise.",
   sources: [{ label: "OpenAI: Tasks in ChatGPT", url: "https://help.openai.com/en/articles/10291617-tasks-in-chatgpt" }],
@@ -199,9 +199,9 @@ export const chatgptScheduledTasksGuide = makeGuide({
       introduction: "Start with a public page you already trust.",
       steps: [
         { title: "Open Scheduled tasks", body: "Open ChatGPT on the web and go to **Scheduled**. Availability can vary by account or workspace." },
-        { title: "Add the instruction", body: "Use the complete example below and replace only the public URL, condition and end date." },
-        { title: "Check the controls", body: "Review the schedule, time zone, condition and end date before confirming." },
-        { title: "Test one result", body: "Open the source yourself and compare it with the reported status and check time." },
+        { title: "Add the instruction", body: "Use the complete example below and replace only the public URL, condition and stop rule." },
+        { title: "Check the controls", body: "Review the schedule, time zone, condition and stop rule before confirming." },
+        { title: "Check it was saved", body: "Find the task in Scheduled and confirm its instruction and next run. Compare any later alert with the public source." },
       ],
     },
     {
@@ -216,8 +216,8 @@ export const chatgptScheduledTasksGuide = makeGuide({
   tryNow: {
     heading: "Build one quiet monitoring task",
     introduction: "Replace the 3 bracketed details.",
-    prompt: `Every weekday morning, check [PUBLIC PAGE URL].\n\nNotify me only if [EXACT CONDITION] has changed since the previous check.\n\nIn the notification, include:\n- what changed;\n- the current wording or status;\n- the source link;\n- the time you checked.\n\nIf nothing changed, do not notify me. Stop this task on [END DATE].`,
-    check: "You are done when the task appears in Scheduled, the notification route works and one result matches the public source.",
+    prompt: `Every weekday morning, check [PUBLIC PAGE URL].\n\nOnly notify me if this condition is met: [EXACT CONDITION]. Compare the page with the previous check before sending an alert.\n\nIn the notification, include:\n- what changed;\n- the current wording or status;\n- the source link;\n- the time you checked.\n\nIf nothing changed, do not notify me. Stop checking [STOP RULE].`,
+    check: "You are done setting it up when the task appears in Scheduled with the right instruction and next run. Check any later alert against the public source.",
   },
   finish: "You can now decide whether the repeated check deserves a scheduled task or should stay manual.",
   related: [

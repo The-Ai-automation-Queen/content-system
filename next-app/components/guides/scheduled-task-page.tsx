@@ -14,7 +14,7 @@ function Text({ value }: { value: string }) {
 export function ScheduledTaskPage({ guide }: { guide: GuidePage }) {
   const [url, setUrl] = useState("https://status.openai.com/");
   const [condition, setCondition] = useState("the ChatGPT service status changes");
-  const [endDate, setEndDate] = useState("31 October 2026");
+  const [stopRule, setStopRule] = useState("14 days after the task is created");
   const [step, setStep] = useState(0);
   const [showAll, setShowAll] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -24,7 +24,7 @@ export function ScheduledTaskPage({ guide }: { guide: GuidePage }) {
   const prompt = guide.tryNow.prompt
     .replace("[PUBLIC PAGE URL]", url.trim() || "[PUBLIC PAGE URL]")
     .replace("[EXACT CONDITION]", condition.trim() || "[EXACT CONDITION]")
-    .replace("[END DATE]", endDate.trim() || "[END DATE]");
+    .replace("[STOP RULE]", stopRule.trim() || "[STOP RULE]");
 
   async function copy() {
     await navigator.clipboard.writeText(prompt);
@@ -47,7 +47,7 @@ export function ScheduledTaskPage({ guide }: { guide: GuidePage }) {
         <div className={styles.fields}>
           <label>Page to check<input type="url" value={url} onChange={event => setUrl(event.target.value)} placeholder="https://example.com/status" /></label>
           <label>Tell me only when<input value={condition} onChange={event => setCondition(event.target.value)} placeholder="a specific public result changes" /></label>
-          <label>Stop checking on<input value={endDate} onChange={event => setEndDate(event.target.value)} placeholder="a date you choose" /></label>
+          <label>Stop checking<input value={stopRule} onChange={event => setStopRule(event.target.value)} placeholder="14 days after the task is created" /></label>
         </div>
         <div className={styles.preview}><strong>Your instruction</strong><details><summary>View the complete instruction</summary><pre>{prompt}</pre></details><button type="button" onClick={copy} aria-label="Copy the complete scheduled task instruction">{copied ? "Copied" : "Copy"}</button></div>
       </section>
@@ -58,8 +58,8 @@ export function ScheduledTaskPage({ guide }: { guide: GuidePage }) {
         {steps.steps.map((item, index) => <div key={item.title} hidden={!showAll && step !== index}><article className={styles.stage}><span>Step {index + 1} / {steps.steps.length}</span><h3>{item.title}</h3><p><Text value={item.body} /></p>
           {index === 0 && <a href="https://chatgpt.com/schedules" target="_blank" rel="noopener noreferrer">Open Scheduled in ChatGPT ↗</a>}
           {index === 1 && <p className={styles.tip}>Use <strong>Copy</strong> above, paste the instruction into ChatGPT, and replace the example fields first if you need a different public page.</p>}
-          {index === 2 && <p className={styles.tip}>Check the time zone and notification choice in <strong>Settings → Notifications</strong>. If you cannot see an end-date control, keep the stop date in the instruction and review the task in Scheduled.</p>}
-          {index === 3 && <p className={styles.tip}>The first run may have no change to report. Check the task in Scheduled and compare any future alert with the linked public page.</p>}
+          {index === 2 && <p className={styles.tip}>Check the time zone and notification choice in <strong>Settings → Notifications</strong>. Keep the stop rule in the instruction if there is no separate end control.</p>}
+          {index === 3 && <p className={styles.tip}>You can check the setup now. If an alert arrives later, compare it with the linked public page before trusting it.</p>}
         </article></div>)}
         {!showAll && <div className={styles.actions}><button type="button" disabled={step === 0} onClick={() => setStep(Math.max(0, step - 1))}>Back</button><button type="button" disabled={step === steps.steps.length - 1} onClick={() => setStep(Math.min(steps.steps.length - 1, step + 1))}>Next step</button></div>}
       </section>
