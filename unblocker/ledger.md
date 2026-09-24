@@ -6,10 +6,10 @@
 
 ## Queue (next up, in order)
 
-1. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 23/09 check confirms still unanswered)*
-2. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 23/09 check confirms still unanswered, 9th morning)*
-3. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 1, 23/09 — recommended delete, awaiting reply)*
-4. UNB-028 — Review and prune stale branches *(open, unserved, 20/09)*
+1. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 2, 24/09 — shrunk to a one-word reply, awaiting reply)*
+2. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 23/09 and 24/09 checks confirm still unanswered)*
+3. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 24/09 check confirms still unanswered, 10th morning)*
+4. UNB-028 — Review and prune stale branches *(open, unserved, 20/09; 90 branches now vs 87 on 20/09)*
 
 > UNB-001 through UNB-024 (below) are the original 06/07/2026 seed batch, built
 > entirely from the pre-pivot offer model (Whop SKU checkouts, Fast Forward
@@ -337,6 +337,16 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   UNB-027 (fresh, unserved, satisfies the variety rule). Put the
   kill/shrink/blocker question to Fatiha again in today's end-of-run
   briefing. `served_count` left at 3 pending her answer.
+- **24/09/2026 follow-up:** `content-vault.md` ENTRY 093/092/091 still
+  `READY TO POST`, unchanged (10th morning running). `review-cockpit/
+  state.md`'s 24/09 pre-digest sweep (already run this morning,
+  operator-requested) confirms `getUpdates` still empty — 24 consecutive
+  empty sweeps since the 14/09 digest, no reply to the 17/09 confrontation
+  in seven days. Same no-serve-4-rule reasoning: did not re-send or
+  escalate over Telegram. Today's single serve went to UNB-027 (serve 2,
+  continuing yesterday's follow-up cycle). Put the kill/shrink/blocker
+  question to Fatiha again in today's end-of-run briefing. `served_count`
+  left at 3 pending her answer.
 
 ---
 
@@ -407,6 +417,12 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   22/09 confrontation yet (one day since, not yet at a re-escalation
   point). Did not re-send. Today's serve went to UNB-027 instead (fresh
   item, variety rule).
+- **24/09/2026 follow-up:** re-ran `git ls-remote` on all 5 repos live this
+  morning — identical `403 Write access to repository not granted` on
+  every one, unchanged from 20/09 through 23/09. Not done, no reply to the
+  22/09 confrontation yet (two days since, still not at a re-escalation
+  point — no serve-4 rule). Did not re-send. Today's serve went to UNB-027
+  serve 2 (continuing yesterday's follow-up cycle).
 - **why:** a full second git checkout of this repo, frozen at commit
   `a2e2bc1f` (2026-07-30) — 381 commits / 52 days behind `main` — with 2
   locally modified files (`.gitignore`, `deploy/crontab.example`) never
@@ -421,8 +437,9 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   content-system log --oneline a2e2bc1f..main | wc -l` → 381)
 - **verify:** directory removed, archived elsewhere with a note, or
   explicitly kept with a documented reason
-- **status:** served · served_count: 1 · added: 2026-09-20 · pack:
-  `packs/2026-09-23-UNB-027-delete-duplicate-checkout.md`
+- **status:** served · served_count: 2 · added: 2026-09-20 · pack:
+  `packs/2026-09-23-UNB-027-delete-duplicate-checkout.md`,
+  `packs/2026-09-24-UNB-027-one-word-reply.md`
 - **23/09/2026 prep note:** diffed the 2 uncommitted files
   (`.gitignore`, `deploy/crontab.example`) against the live repo before
   serving. Both are fully superseded — the live `.gitignore` already
@@ -432,6 +449,13 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   `__REPO__` placeholder). Nothing unique to preserve, so the pack
   recommends outright deletion with an archive-rename as the alternative.
   Delivered via Telegram, confirmed sent.
+- **24/09/2026 follow-up (serve 2):** `ls -ld ~/content-system-DUPLICATE`
+  confirms it's still there, unchanged. Not done. Per the skill's serve-2
+  rule, shrunk the ask rather than repeating yesterday's three-command
+  pack: today's message asks for a single one-word reply (delete / archive
+  / keep-with-reason) and offers to run the chosen action myself next
+  session under the ledger's write authority, cutting the operator's part
+  to zero terminal commands. Delivered via Telegram.
 
 ### UNB-028 — Review and prune stale branches (64 of 87, oldest 167 days)
 - **why:** `git branch -a` on `content-system` shows 64 non-main branches
