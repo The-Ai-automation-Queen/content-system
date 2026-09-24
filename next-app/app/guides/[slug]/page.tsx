@@ -25,6 +25,7 @@ import { DeepseekLongEditPage } from "@/components/guides/deepseek-long-edit-pag
 import { KimiValuePage } from "@/components/guides/kimi-value-page";
 import { KimiCodePage } from "@/components/guides/kimi-code-page";
 import { ManusBrowserPage } from "@/components/guides/manus-browser-page";
+import { AiBrowserPage } from "@/components/guides/ai-browser-page";
 import { GuideAccessBoundary } from "@/components/guides/guide-access-boundary";
 import { getGuidePage, guidePages } from "@/content/guide-page";
 import { legacyGuideSlugs } from "@/content/legacy-guide-slugs";
@@ -80,6 +81,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "is-kimi-worth-paying-for") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Test one repeated job against the current Kimi limit and price before paying. Enter your email to open the guide." variant="entry"><KimiValuePage guide={guide} /></GuideAccessBoundary>;
   if (slug === "control-kimi-code-changes") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Plan one small file change and check every difference before keeping it. Enter your email to open the guide." variant="entry"><KimiCodePage guide={guide} /></GuideAccessBoundary>;
   if (slug === "manus-browser-workflow") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Choose the least access Manus needs, then test the browser route safely if your job requires it. Enter your email to open the guide." variant="entry"><ManusBrowserPage guide={guide} /></GuideAccessBoundary>;
+  if (slug === "what-is-an-ai-browser") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Compare two public pages with an AI browser, then check what it may see or remember. Enter your email to open the guide." variant="entry"><AiBrowserPage guide={guide} /></GuideAccessBoundary>;
   if (legacyGuideSlugs.has(slug)) return <GuideReadingPage guide={guide} />;
   throw new Error(`Guide ${slug} needs an approved interactive Next.js composition before it can be built.`);
 }

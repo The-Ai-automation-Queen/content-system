@@ -27,5 +27,4 @@ export const legacyGuideSlugs = new Set([
   "test-meta-business-agent-customer-replies",
   "test-meta-muse-money-saving-task",
   "what-can-copilot-see-at-work",
-  "what-is-an-ai-browser",
 ]);
