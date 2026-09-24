@@ -253,7 +253,7 @@ export const geminiDriveFileGuide = makeGuide({
       kind: "prose",
       heading: "If Drive does not appear",
       paragraphs: [
-        "With a work or school account, your Workspace edition, Gemini access, activity setting or administrator policy may block the connection. Ask your administrator to check those four items for your account.",
+        "Check Gemini’s Connected Apps and Keep Activity first. If Google Workspace appears but will not connect, check Gmail’s Smart features in other Google products setting. With a work or school account, ask your administrator if connected apps are enabled.",
       ],
     },
   ],
