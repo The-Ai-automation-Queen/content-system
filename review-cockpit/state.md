@@ -259,6 +259,61 @@ digest run overwrites it.
   (`security.md` §3.1) — no post released, no Blotato queue touched.
   Confirmation sent to Telegram (message_id 1114).
 
+- 24/09/2026 — pre-digest sweep (operator-requested `digest` run, run
+  end-to-end per operator request; the scheduled 07:30 cron today only did
+  a git sync per `deploy/logs/review-cockpit digest-2026-09-24T07-30-02.log`,
+  no actual send). `getUpdates` (no offset, none stored) returned empty
+  (`{"ok":true,"result":[]}`). Nothing to route: no card decisions, no
+  unblocker replies, no voice notes — 24th consecutive empty sweep since the
+  14/09/2026 digest. Nothing applied to the vault (37 READY TO POST / 33
+  DRAFT / 6 STALE / 2 KILLED / 0 POSTED, recomputed directly from
+  `content-vault.md`'s `## ENTRY ... |` status suffixes and matching this
+  session's reality-check hook). All 9 cards from the 23/09 digest (#1–#6,
+  R1–R3) go stale as of this run, superseded by the digest below. Digest
+  send followed immediately (no separate confirmation line — the digest
+  send itself is this run's output per skill step 3). Publishing stayed
+  queue-only throughout (`security.md` §3.1, `CLAUDE.md`) — no post
+  released, no Blotato queue touched.
+
+## Last digest served — 24/09/2026 (run on operator request)
+
+Header message_id: 1115
+Footer message_id: 1125
+
+| Card | ENTRY | message_id | Platform | Pillar | Critic | CTA |
+|---|---|---|---|---|---|---|
+| #1 | ENTRY 099 | 1116 | Instagram (carousel) | Use AI for real work | pending | reflective question, no offer |
+| #2 | ENTRY 098 | 1117 | LinkedIn (text post) | Find what is uniquely yours | pending | reflective question, no offer — flags "builder-and-watchdog" framing for explicit yes/no |
+| #3 | ENTRY 097 | 1118 | Instagram / LinkedIn (text post) | Use AI for real work | pending | reflective question, no offer — overlaps #2's theme |
+| #4 | ENTRY 096 | 1119 | Instagram Reel (~40s) | Find what is uniquely yours | pending | reflective question, no offer — needs timing check |
+| #5 | ENTRY 095 | 1120 | LinkedIn | Real Talk | pending | discussion (no keyword) |
+| #6 | ENTRY 094 | 1121 | LinkedIn | Build Once, Runs Forever | 7.2 | community tease — CTA-BLOCKED (VERIFY + PREP) |
+| R1 | ENTRY 047 | 1122 | LinkedIn | What's Worth It | n/a | WORDS (live) — READY since 14/07/2026 (72d) |
+| R2 | ENTRY 048 | 1123 | X/Twitter thread | The Freedom Business | n/a | TEAM (live) — READY since 14/07/2026 (72d) |
+| R3 | ENTRY 049 | 1124 | Short-form video | Build Once, Runs Forever | n/a | TEAM (live) — READY since 14/07/2026 (72d) |
+
+Notes:
+- Card set is identical to the 16/09–23/09 digests (same top-6 DRAFT window,
+  same Ready-shelf three) — content-engine's 24/09 run again deliberately
+  produced no new entries (see `content-vault.md` "Most recent" note:
+  RESEARCH 050/signal-harvest-2026-09-24 findings landed but queen-brain is
+  still NOT in this session, blocking customer-facing drafting per the
+  reality-check hook — same two blockers as every run since 17/09). This is
+  the twelfth consecutive digest with zero operator replies in between
+  (14/09 → 15/09 → 16/09 → 17/09 → 18/09 → 19/09 → 20/09 → 21/09 → 22/09 →
+  23/09 → 24/09, `getUpdates` empty every sweep — 24 consecutive empty
+  sweeps total across digest + process runs).
+- DRAFT pool at digest time: 33 entries, unchanged since 16/09. Ready shelf:
+  37 READY TO POST, all 72+ days old (oldest batch 14/07/2026); shelf cap of
+  3/digest means the other 34 wait for subsequent runs.
+- SCHEDULED count still unconfirmed: latest distribution report
+  (`reports/distribution-2026-07-20.md`) is 66 days stale.
+- Ready-shelf CTA keywords (WORDS, TEAM) confirmed `active=yes` in
+  `lead-magnets.csv` — no CTA-BLOCKED needed for R1–R3.
+- No replies processed this run (pre-digest `getUpdates` sweep was empty).
+  decisions-log.md unchanged. Publishing stayed queue-only throughout
+  (`security.md` §3.1) — no post released, no Blotato queue touched.
+
 ## Last digest served — 23/09/2026 (run on operator request)
 
 Header message_id: 1101
