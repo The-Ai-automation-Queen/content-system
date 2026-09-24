@@ -18,6 +18,7 @@ import { GeminiTasksPage } from "@/components/guides/gemini-tasks-page";
 import { GrokReviewPage } from "@/components/guides/grok-review-page";
 import { CopilotExcelPage } from "@/components/guides/copilot-excel-page";
 import { PromptBuilderPage } from "@/components/guides/prompt-builder-page";
+import { GrokResearchPage } from "@/components/guides/grok-research-page";
 import { GuideAccessBoundary } from "@/components/guides/guide-access-boundary";
 import { getGuidePage, guidePages } from "@/content/guide-page";
 import { legacyGuideSlugs } from "@/content/legacy-guide-slugs";
@@ -66,6 +67,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "review-grok-suggestions") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Sort Grok’s edits into corrections, options and changes you did not ask for. Enter your email to open the guide." variant="entry"><GrokReviewPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "check-copilot-excel-edits") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Make one edit in a practice workbook and check exactly what changed. Enter your email to open the guide." variant="entry"><CopilotExcelPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "what-is-a-prompt") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="See a complete example, then build a prompt for one real task. Enter your email to open the guide." variant="entry"><PromptBuilderPage guide={guide} /></GuideAccessBoundary>;
+  if (slug === "verify-grok-current-research") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Separate current conversation from claims you can verify in opened sources. Enter your email to open the guide." variant="entry"><GrokResearchPage guide={guide} /></GuideAccessBoundary>;
   if (legacyGuideSlugs.has(slug)) return <GuideReadingPage guide={guide} />;
   throw new Error(`Guide ${slug} needs an approved interactive Next.js composition before it can be built.`);
 }

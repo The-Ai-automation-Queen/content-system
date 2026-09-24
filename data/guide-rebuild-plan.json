@@ -20,7 +20,7 @@
     { "slug": "test-meta-business-agent-customer-replies", "pattern": "practice", "status": "pending" },
     { "slug": "review-grok-suggestions", "pattern": "practice", "status": "review", "component": "grok-review-page" },
     { "slug": "get-better-professional-writing-from-grok", "pattern": "practice", "status": "pending" },
-    { "slug": "verify-grok-current-research", "pattern": "audit", "status": "pending" },
+    { "slug": "verify-grok-current-research", "pattern": "audit", "status": "review", "component": "grok-research-page" },
     { "slug": "fix-deepseek-wall-of-text", "pattern": "practice", "status": "pending" },
     { "slug": "edit-long-writing-with-deepseek", "pattern": "walkthrough", "status": "pending" },
     { "slug": "is-kimi-worth-paying-for", "pattern": "decision", "status": "pending" },

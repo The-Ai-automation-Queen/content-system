@@ -1,4 +1,5 @@
 import type { GuidePage, GuideRelated, GuideSection } from "./guide-page";
+import { grokResearchPrompt } from "./grok-research-prompt";
 
 export type SeriesGuide = {
   slug: string;
@@ -458,6 +459,7 @@ export const grokProfessionalWritingGuide = makeGuide({
 
 export const verifyGrokResearchGuide = makeGuide({
   slug: "verify-grok-current-research",
+  promptMode: "as-written",
   title: "Can Grok research a current topic without turning posts into facts?",
   promise: "Use Grok to find the conversation, then separate public reaction from claims you verified in primary sources.",
   coverAlt: "The Blue Princess tracing many speech bubbles back to one opened official document",
@@ -493,7 +495,7 @@ export const verifyGrokResearchGuide = makeGuide({
   tryNow: {
     heading: "Research one harmless current question",
     introduction: "Avoid health, money, legal rights and personal safety for this first test.",
-    prompt: `Research this current question: [QUESTION].\n\nSeparate the answer into:\n1. what people are saying;\n2. what an official or primary source confirms;\n3. what remains unverified.\n\nFor every factual claim, include the direct source link and publication date. Do not treat repeated posts as independent confirmation. Do not fill a gap with an assumption.`,
+    prompt: grokResearchPrompt("[WRITE ONE PUBLIC QUESTION]"),
     check: "You are done when every confirmed claim has an opened source and social reaction remains separate from verified facts.",
   },
   finish: "You can now use Grok as a route into current discussion without treating the discussion itself as evidence.",
