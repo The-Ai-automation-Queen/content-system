@@ -781,8 +781,8 @@ export const mistralProValueGuide = makeGuide({
   coverAlt: "The Blue Princess using one measured key to open a machine blocked by a clear usage limit",
   seoDescription: "Decide whether Mistral Pro is worth paying for by testing one repeated blocker against the current plan.",
   sources: [
-    { label: "Mistral: Plans", url: "https://mistral.ai/products/le-chat" },
-    { label: "Mistral: Help centre", url: "https://help.mistral.ai/" },
+    { label: "Mistral: Current pricing and plan features", url: "https://mistral.ai/pricing/" },
+    { label: "Mistral: Usage and limits", url: "https://docs.mistral.ai/admin/billing-usage/usage-limits" },
   ],
   answer: [
     "**Upgrade for a repeated blocker, not a longer feature list.** The current paid plan must remove a limit that affects work you do often enough to justify its price.",
@@ -817,7 +817,7 @@ export const mistralProValueGuide = makeGuide({
   },
   finish: "You can now separate a real paid-plan benefit from a problem that a subscription will not solve.",
   related: [
-    promptGuide("switch-from-chatgpt-to-mistral", "Should you switch from ChatGPT to Mistral?", "Compare the tools on one checked task."),
+    comingNextGuide("switch-from-chatgpt-to-mistral", "Should you switch from ChatGPT to Mistral?", "Compare the tools on one checked task."),
     existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Check if another tool already covers the work.", "/images/guides/which-ai-tool-for-what.webp"),
     promptGuide("is-kimi-worth-paying-for", "Is Kimi worth paying for?", "Use the same completed-work test for another plan."),
   ],
