@@ -32,7 +32,7 @@
     { "slug": "instagram-content-dashboard", "pattern": "agent-assisted", "status": "approved", "component": "instagram-dashboard-page" },
     { "slug": "what-is-a-prompt", "pattern": "prompt-builder", "status": "review", "component": "prompt-builder-page" },
     { "slug": "what-is-an-ai-browser", "pattern": "audit", "status": "review", "component": "ai-browser-page" },
-    { "slug": "connect-ai-to-email-files-calendar", "pattern": "audit", "status": "pending" },
+    { "slug": "connect-ai-to-email-files-calendar", "pattern": "audit", "status": "review", "component": "ai-connections-page" },
     { "slug": "ai-skills-worth-learning-for-work", "pattern": "practice", "status": "review", "component": "ai-skills-page" },
     { "slug": "show-up-in-ai-search", "pattern": "audit", "status": "review", "component": "ai-search-page" },
     { "slug": "chatgpt-screen-recording-to-process-guide", "pattern": "walkthrough", "status": "review", "component": "screen-recording-page" },

@@ -143,10 +143,11 @@ export const aiConnectionsGuide = {
   seoDescription: "Decide whether to connect AI to email, files and calendars, understand the permissions and learn where to disconnect ChatGPT, Claude, Gemini and Copilot.",
   lumailTag: "guide-connect-ai-to-email-files-calendar",
   sourceNotes: [
-    { label: "OpenAI: Apps with sync", url: "https://help.openai.com/en/articles/10847137-chatgpt-synced-con" },
+    { label: "OpenAI: Connected apps in ChatGPT", url: "https://help.openai.com/en/articles/11487775-connected-apps-in-chatgpt" },
     { label: "Anthropic: Use connectors", url: "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities" },
-    { label: "Google: Gemini Privacy Hub", url: "https://support.google.com/gemini/answer/13594961" },
-    { label: "Microsoft: Connect Copilot to other services", url: "https://support.microsoft.com/en-us/microsoft-copilot/connecting-microsoft-copilot-to-other-services" },
+    { label: "Google: Manage Connected Apps in Gemini", url: "https://support.google.com/gemini/answer/13695044?co=GENIE.Platform%3DDesktop" },
+    { label: "Microsoft: Personal Copilot connectors", url: "https://support.microsoft.com/en-us/microsoft-copilot/connecting-microsoft-copilot-to-other-services" },
+    { label: "Microsoft: Work Copilot data and permissions", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy" },
   ],
   answer: { paragraphs: [
     "Connect an AI tool only when a repeated task genuinely needs information from another service. Start with the **smallest amount of access** that can complete the job.",
@@ -159,10 +160,10 @@ export const aiConnectionsGuide = {
       { title: "Allow actions", body: "Use only when you understand what the tool can create, edit, send or delete." },
     ] },
     { kind: "steps", heading: "Where to review or disconnect access", introduction: "Menu names can vary by plan, device or workspace policy.", steps: [
-      { title: "ChatGPT", body: "Open **Profile → Settings → Apps**. Choose the connected app to review or disconnect it." },
+      { title: "ChatGPT", body: "Open **Settings → Apps** (or **Plugins**, if shown). Choose the connected account to review or disconnect it." },
       { title: "Claude", body: "Open **Customize → Connectors**. Choose the service and select disconnect." },
-      { title: "Gemini", body: "Open **Settings & help → Connected Apps**. Turn off the apps you do not want Gemini to use." },
-      { title: "Microsoft Copilot", body: "On mobile, open **Profile → Connectors**. On Copilot.com, use **+ → Use connectors**." },
+      { title: "Gemini", body: "Open **Settings & help → Connected Apps**. If that is not shown, open **Personal Intelligence → Connected Apps**. Turn off the app you do not want Gemini to use." },
+      { title: "Personal Copilot", body: "On Copilot.com, open **+ → Use connectors**. On mobile, open **Profile → Connectors**. Turn off a connector you do not want used in this conversation." },
     ] },
     { kind: "prose", heading: "Disconnecting is not the same as deleting", paragraphs: [
       "Disconnecting normally stops future access. It does not always remove information already present in a chat or activity history.",

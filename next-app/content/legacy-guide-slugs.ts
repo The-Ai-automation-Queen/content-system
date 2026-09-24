@@ -2,7 +2,6 @@
 // New guides must provide an approved interactive Next.js composition.
 export const legacyGuideSlugs = new Set([
   "chatgpt",
-  "connect-ai-to-email-files-calendar",
   "copilot",
   "deepseek",
   "fix-gemini-workspace-action",
