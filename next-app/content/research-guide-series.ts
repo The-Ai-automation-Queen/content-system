@@ -281,6 +281,7 @@ After creating it, give me the item title, the app where it was created and the 
 
 export const copilotVisibilityGuide = makeGuide({
   slug: "what-can-copilot-see-at-work",
+  promptMode: "as-written",
   title: "What can Copilot see in your emails, files and meetings?",
   promise: "Run three harmless source checks so you know what Copilot can find before you use it for sensitive work.",
   coverAlt: "The Blue Princess using a brass viewing scope to inspect three separate locked cabinets for mail files and meetings",
