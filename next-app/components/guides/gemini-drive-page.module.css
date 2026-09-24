@@ -4,3 +4,5 @@
 @media(max-width:480px){.demo{padding:15px}.checkBody{padding:12px}}
 .recovery{display:grid;gap:6px;margin:8px 0 0;padding:0;list-style:none}
 .recovery li{padding:9px 10px;border:1px solid #cbd5ff;background:#fff;font-size:14px;line-height:1.45}
+
+.copyBox>p{margin:8px 0 0;color:#8c2413;font-size:14px;line-height:1.45}

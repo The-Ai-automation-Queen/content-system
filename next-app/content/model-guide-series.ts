@@ -251,7 +251,7 @@ export const geminiDriveFileGuide = makeGuide({
         { title: "Connection", body: "Type **@** in a new Gemini chat and select **Google Drive** if it appears." },
         { title: "Request", body: "Ask for the file by its exact, unique title and request the source." },
         { title: "Source", body: "Open the source Gemini lists and check that it is the demo file." },
-        { title: "File support", body: "If it still fails, test a supported document, spreadsheet, presentation or PDF rather than an image or video." },
+        { title: "Your original file", body: "If Gemini finds the demo Doc but not your original file, check the original's type. Google Workspace connection can read documents, spreadsheets, presentations and PDFs, but not Drive pictures or videos." },
       ],
     },
     {
