@@ -606,6 +606,7 @@ export const mistralMultilingualResearchGuide = makeGuide({
   sources: [
     { label: "Mistral and Mozilla: Private multilingual AI browsing", url: "https://mistral.ai/news/mistral-x-mozilla/" },
     { label: "Mistral: Le Chat", url: "https://mistral.ai/products/le-chat" },
+    { label: "Mistral: Search the web in Work", url: "https://docs.mistral.ai/vibe/work/web-search-open-url" },
   ],
   answer: [
     "**Translation can make two sources look more similar than they are.** Keep the original wording, a short translation and the direct link beside every important claim.",
