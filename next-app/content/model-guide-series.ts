@@ -868,6 +868,7 @@ export const metaBusinessAgentGuide = makeGuide({
 
 export const deepseekWallOfTextGuide = makeGuide({
   slug: "fix-deepseek-wall-of-text",
+  promptMode: "as-written",
   title: "Why did DeepSeek turn your scene into a wall of text?",
   promise: "Ask for paragraph and dialogue breaks while protecting the characters, facts and tone you already like.",
   coverAlt: "The Blue Princess cutting one dense wall of type into clear scene and dialogue panels",
@@ -909,7 +910,7 @@ export const deepseekWallOfTextGuide = makeGuide({
   finish: "You can now repair a dense scene without inviting a new story or a different voice.",
   related: [
     promptGuide("edit-long-writing-with-deepseek", "How do you edit a long DeepSeek story safely?", "Protect approved facts while revising one passage."),
-    existingGuide("deepseek", "Should you use DeepSeek?", "Choose the right DeepSeek route before adding longer work.", "/images/guides/deepseek.webp"),
+    promptGuide("review-grok-suggestions", "Did Grok catch an error or rewrite your work?", "Use the same careful review on another writing tool."),
     existingGuide("what-is-a-prompt", "How to write an AI prompt that gets a useful answer", "Make the edit boundary clearer.", "/images/guides/what-is-a-prompt.webp"),
   ],
 });

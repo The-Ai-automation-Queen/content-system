@@ -10,7 +10,6 @@ export const legacyGuideSlugs = new Set([
   "copilot",
   "deepseek",
   "edit-long-writing-with-deepseek",
-  "fix-deepseek-wall-of-text",
   "fix-gemini-workspace-action",
   "gemini",
   "grok",
