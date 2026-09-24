@@ -12,7 +12,6 @@ export const legacyGuideSlugs = new Set([
   "is-mistral-pro-worth-it",
   "kimi",
   "manus",
-  "meta-ai",
   "mistral",
   "mistral-multilingual-research",
   "switch-from-chatgpt-to-mistral",

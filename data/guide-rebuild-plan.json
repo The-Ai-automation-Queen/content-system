@@ -16,7 +16,7 @@
     { "slug": "gemini-cannot-find-drive-file", "pattern": "walkthrough", "status": "review", "component": "gemini-drive-page" },
     { "slug": "gemini-google-tasks-limits", "pattern": "practice", "status": "review", "component": "gemini-tasks-page" },
     { "slug": "check-copilot-excel-edits", "pattern": "audit", "status": "review", "component": "copilot-excel-page" },
-    { "slug": "meta-ai", "pattern": "explorer", "status": "pending" },
+    { "slug": "meta-ai", "pattern": "explorer", "status": "review", "component": "meta-muse-page" },
     { "slug": "test-meta-business-agent-customer-replies", "pattern": "practice", "status": "pending" },
     { "slug": "review-grok-suggestions", "pattern": "practice", "status": "review", "component": "grok-review-page" },
     { "slug": "get-better-professional-writing-from-grok", "pattern": "practice", "status": "review", "component": "grok-writing-page" },
