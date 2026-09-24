@@ -223,9 +223,10 @@ export const chatgptScheduledTasksGuide = makeGuide({
 
 export const geminiDriveFileGuide = makeGuide({
   slug: "gemini-cannot-find-drive-file",
+  promptMode: "as-written",
   title: "Why can’t Gemini see the file that is already in your Drive?",
   promise: "Check the account and connection first, then test one clearly named demo file before rewriting the request again.",
-  coverAlt: "The Blue Princess tracing one document through a maze of account keys and file drawers",
+  coverAlt: "The small blue robot princess tracing one document through account keys and file drawers",
   seoDescription: "Diagnose why Gemini cannot find a Google Drive file with one safe demo document and five checks.",
   sources: [
     { label: "Google: Connect Google Workspace apps to Gemini", url: "https://support.google.com/gemini/answer/15229592" },
@@ -264,7 +265,7 @@ export const geminiDriveFileGuide = makeGuide({
   finish: "You now know whether to fix the account, connection, administrator setting, file type or search wording.",
   related: [
     promptGuide("gemini-google-tasks-limits", "Can Gemini organise Google Tasks by project?", "Test another connected Google boundary."),
-    existingGuide("gemini", "Should you use Gemini?", "See where the Gemini app and Google Workspace features fit.", "/images/guides/gemini.webp"),
+    existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Compare Gemini with other tools for your next task.", "/images/guides/which-ai-tool-for-what.webp"),
     existingGuide("connect-ai-to-email-files-calendar", "Should you connect AI to your accounts?", "Review the access you grant to files and email.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
   ],
 });
