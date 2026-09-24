@@ -21,6 +21,14 @@ export function ScheduledTaskPage({ guide }: { guide: GuidePage }) {
   const [copyError, setCopyError] = useState(false);
   const steps = guide.sections[0];
   if (steps.kind !== "steps" || !guide.tryNow) return null;
+  let publicUrlReady = false;
+  try {
+    const page = new URL(url.trim());
+    publicUrlReady = ["http:", "https:"].includes(page.protocol) && page.hostname.includes(".");
+  } catch {
+    // Wait for a complete page URL before enabling Copy.
+  }
+  const promptReady = publicUrlReady && Boolean(condition.trim()) && Boolean(stopRule.trim());
 
   const prompt = guide.tryNow.prompt
     .replace("[PUBLIC PAGE URL]", url.trim() || "[PUBLIC PAGE URL]")
@@ -28,6 +36,7 @@ export function ScheduledTaskPage({ guide }: { guide: GuidePage }) {
     .replace("[STOP RULE]", stopRule.trim() || "[STOP RULE]");
 
   async function copy() {
+    if (!promptReady) return;
     try {
       await navigator.clipboard.writeText(prompt);
       setCopied(true);
@@ -55,7 +64,8 @@ export function ScheduledTaskPage({ guide }: { guide: GuidePage }) {
           <label>Tell me only when<input value={condition} onChange={event => setCondition(event.target.value)} placeholder="a specific public result changes" /></label>
           <label>Stop checking<input value={stopRule} onChange={event => setStopRule(event.target.value)} placeholder="14 days after the task is created" /></label>
         </div>
-        <div className={styles.preview}><strong>Your instruction</strong><details><summary>View the complete instruction</summary><pre>{prompt}</pre></details><button type="button" onClick={copy} aria-label="Copy the complete scheduled task instruction">{copied ? "Copied" : "Copy"}</button></div>
+        <div className={styles.preview}><strong>Your instruction</strong><details><summary>View the complete instruction</summary><pre>{prompt}</pre></details><button type="button" disabled={!promptReady} onClick={copy} aria-label="Copy the complete scheduled task instruction">{copied ? "Copied" : "Copy"}</button></div>
+        {!promptReady && <p className={styles.inputHelp}>Add a public page URL, an alert condition and a stop rule before copying.</p>}
         {copyError && <p role="alert">Copy failed. Open the complete instruction and select the text instead.</p>}
       </section>
 

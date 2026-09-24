@@ -5,3 +5,5 @@
 @media(max-width:480px){.builder{padding:15px}.fields{grid-template-columns:1fr}.fields label:first-child{grid-column:auto}.walkthroughHead>button{min-width:100px}.stage{padding:13px}}
 
 @media(max-width:700px){.stepNav{grid-template-columns:repeat(2,minmax(0,1fr))}.stepNav button{justify-content:flex-start;min-height:64px}.stepNav button strong{display:block;line-height:1.3}}
+.preview button:disabled{opacity:.5;cursor:not-allowed}
+.inputHelp{margin:8px 0 0;color:#8c2413;font-size:14px;line-height:1.45}
