@@ -1,4 +1,5 @@
 import type { GuidePage } from "./guide-page";
+import { buildPrompt, promptExample } from "./prompt-builder-example";
 
 export const promptGuide = {
   slug: "what-is-a-prompt",
@@ -35,8 +36,8 @@ export const promptGuide = {
       { title: "The format", body: "Ask for the result as an email, checklist, table, plan or another format you can use." },
     ] },
     { kind: "comparison", heading: "See the difference", introduction: "The improvement is not a clever phrase. It is the missing information.", columns: ["Too vague", "More useful"], rows: [
-      ["Write an email.", "Write a friendly follow-up email to a potential client who requested a proposal 5 days ago."],
-      ["No limit or tone is given.", "Keep it under 120 words, do not sound pushy and end with one clear question."],
+      ["Make an agenda.", "Turn this rough project note into an agenda for a 15-minute team meeting."],
+      ["No result or check is given.", "Give three agenda items and flag the pricing decision. Do not invent owners or approvals."],
     ] },
     { kind: "prose", heading: "Let the AI ask before it answers", paragraphs: [
       "You will not always know which details the AI needs. Ask it to question you before it starts.",
@@ -44,24 +45,16 @@ export const promptGuide = {
     ] },
   ],
   tryNow: {
-    heading: "Try it now",
-    introduction: "Use this for a real task you need to complete today.",
-    prompt: `I need help with [describe the task].
-
-Before you answer, ask me up to 3 questions that would help you give me a more useful result.
-
-Use only the information I provide. If something important is missing, tell me instead of making it up.
-
-The finished result should be [email, summary, checklist, plan or another format].
-
-Keep it [short, friendly, professional, direct or another style].`,
+    heading: "Try the complete example, then make it yours",
+    introduction: "Start with a made-up project note. See what a full instruction looks like before changing it for your work.",
+    prompt: buildPrompt(promptExample),
     instructions: [
       { title: "Choose one AI chat", body: "Open ChatGPT, Claude or Gemini and start a new conversation." },
       { title: "Copy and paste", body: "Select **Copy**, paste the instruction and replace every bracketed section." },
       { title: "Remove private details", body: "Do not include confidential, personal or customer information." },
       { title: "Check the result", body: "Confirm it followed the request, kept the important details and did not add unsupported information." },
     ],
-    check: "Use the result only when you would be comfortable putting your name on it.",
+    check: "The agenda must keep pricing approval as an open decision, use only the note and name any missing owner as ‘Not specified’.",
   },
   conclusion: {
     heading: "You now know how to brief an AI tool",
@@ -71,7 +64,7 @@ Keep it [short, friendly, professional, direct or another style].`,
   related: [
     { slug: "which-ai-tool-for-what", title: "Which AI tool should you use?", reason: "Match the task to the right tool before opening another account.", cover: "/images/guides/which-ai-tool-for-what.webp" },
     { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Know what to remove before you paste information into a prompt.", cover: "/images/guides/learn-master.webp" },
-    { slug: "check-ai-answers", title: "How to check an AI answer before you use it", reason: "Learn the quickest way to catch unsupported claims and missing details.", cover: "/images/guides/check-ai-answers.webp", status: "coming-next" },
+    { slug: "make-chatgpt-answers-shorter", title: "Why does ChatGPT keep giving you an essay?", reason: "Keep useful detail while cutting the length of an answer.", cover: "/images/guides/make-chatgpt-answers-shorter.webp" },
   ],
 } as const satisfies GuidePage;
 

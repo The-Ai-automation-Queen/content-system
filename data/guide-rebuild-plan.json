@@ -30,7 +30,7 @@
     { "slug": "switch-from-chatgpt-to-mistral", "pattern": "decision", "status": "pending" },
     { "slug": "is-mistral-pro-worth-it", "pattern": "decision", "status": "pending" },
     { "slug": "instagram-content-dashboard", "pattern": "agent-assisted", "status": "approved", "component": "instagram-dashboard-page" },
-    { "slug": "what-is-a-prompt", "pattern": "prompt-builder", "status": "pending" },
+    { "slug": "what-is-a-prompt", "pattern": "prompt-builder", "status": "review", "component": "prompt-builder-page" },
     { "slug": "what-is-an-ai-browser", "pattern": "audit", "status": "pending" },
     { "slug": "connect-ai-to-email-files-calendar", "pattern": "audit", "status": "pending" },
     { "slug": "ai-skills-worth-learning-for-work", "pattern": "practice", "status": "pending" },

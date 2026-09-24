@@ -34,6 +34,5 @@ export const legacyGuideSlugs = new Set([
   "test-meta-muse-money-saving-task",
   "verify-grok-current-research",
   "what-can-copilot-see-at-work",
-  "what-is-a-prompt",
   "what-is-an-ai-browser",
 ]);
