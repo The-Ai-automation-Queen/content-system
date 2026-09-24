@@ -152,8 +152,8 @@ export const stopChatgptForgettingContextGuide = makeGuide({
       steps: [
         { title: "Create the Project", body: "In ChatGPT select **New project** and name it **Autumn event plan**." },
         { title: "Add the fixed facts", body: "Open the Project settings and add the instruction in the practice section below." },
-        { title: "Start a chat inside it", body: "Ask for an 80-word event description that includes the audience, format and outcome." },
-        { title: "Compare outside the Project", body: "Open a normal new chat and send only the drafting request. Compare what the Project brief contributed." },
+        { title: "Start a chat inside it", body: "Send the test message below in a new chat inside the Project." },
+        { title: "Compare outside the Project", body: "Send the same test message in a normal new chat. See which facts the Project supplied without a reminder." },
       ],
     },
     {

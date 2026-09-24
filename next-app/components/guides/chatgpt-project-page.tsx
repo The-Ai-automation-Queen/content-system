@@ -11,11 +11,14 @@ function Text({ value }: { value: string }) {
   return <>{value.split("**").map((part, index) => index % 2 ? <strong key={index}>{part}</strong> : part)}</>;
 }
 
+const testMessage = "Write an event description in 80 words or fewer. State who it is for, the format and what people will learn. Use only facts available in this chat or Project. If a detail is missing, write ‘Not decided’ instead of guessing.";
+
 export function ChatGptProjectPage({ guide }: { guide: GuidePage }) {
   const [mode, setMode] = useState<"chat" | "project">("project");
   const [step, setStep] = useState(0);
   const [showAll, setShowAll] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [testCopied, setTestCopied] = useState(false);
   const stages = guide.sections[0];
   const facts = guide.sections[1];
   if (stages.kind !== "steps" || facts.kind !== "cards") return null;
@@ -29,11 +32,18 @@ export function ChatGptProjectPage({ guide }: { guide: GuidePage }) {
     window.setTimeout(() => setCopied(false), 1800);
   }
 
+  async function copyTestMessage() {
+    await navigator.clipboard.writeText(testMessage);
+    setTestCopied(true);
+    window.setTimeout(() => setTestCopied(false), 1800);
+  }
+
   function stage(index: number) {
     const item = stageSteps[index];
     return <article className={styles.stage} key={item.title}><span>Step {index + 1} / {stageSteps.length}</span><h3>{item.title}</h3><p><Text value={item.body} /></p>
       {index === 0 && <a className={styles.openChat} href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Open ChatGPT ↗</a>}
       {index === 1 && guide.tryNow && <><div className={styles.facts}>{factItems.map(fact => <div key={fact.title}><strong>{fact.title}</strong><span><Text value={fact.body} /></span></div>)}</div><p className={styles.instructionNote}>In your Project, open <strong>••• → Project settings</strong>. Copy this instruction into the Project instructions field.</p><div className={styles.prompt}><details><summary>View the complete Project instruction</summary><pre>{guide.tryNow.prompt}</pre></details><button type="button" onClick={copyInstruction} aria-label="Copy the complete Project instruction">{copied ? "Copied" : "Copy"}</button></div></>}
+      {(index === 2 || index === 3) && <div className={styles.prompt}><pre>{testMessage}</pre><button type="button" onClick={copyTestMessage} aria-label="Copy the test message">{testCopied ? "Copied" : "Copy"}</button></div>}
       {index === 3 && guide.tryNow && <div className={styles.check}><GuideIcon name="check" /><p><Text value={guide.tryNow.check} /></p></div>}
     </article>;
   }
