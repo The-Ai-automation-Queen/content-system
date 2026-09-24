@@ -467,6 +467,7 @@ Do not add text, logos, watermarks, people or objects. Do not crop, rotate or ex
 
 export const deepseekV4DocumentGuide = makeGuide({
   slug: "test-deepseek-v4-document-work",
+  promptMode: "as-written",
   title: "Can DeepSeek V4.1 replace your current AI for document work?",
   promise: "Run the same document task in both tools and compare factual accuracy, instruction-following and checking time.",
   coverAlt: "The Blue Princess running one document through two parallel presses and inspecting the outputs with a ruler",
