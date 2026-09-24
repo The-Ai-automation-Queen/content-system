@@ -6,7 +6,6 @@ export const legacyGuideSlugs = new Set([
   "chatgpt-customer-research-with-evidence",
   "chatgpt-screen-recording-to-process-guide",
   "connect-ai-to-email-files-calendar",
-  "control-kimi-code-changes",
   "copilot",
   "deepseek",
   "fix-gemini-workspace-action",

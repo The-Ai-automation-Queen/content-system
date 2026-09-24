@@ -560,6 +560,7 @@ export const kimiValueGuide = makeGuide({
 
 export const controlKimiCodeChangesGuide = makeGuide({
   slug: "control-kimi-code-changes",
+  promptMode: "as-written",
   title: "How do you stop Kimi changing things you did not ask for?",
   promise: "Start in Plan mode, limit the task to one file and inspect the diff before you keep the change.",
   coverAlt: "The Blue Princess holding a gate across many files while allowing one marked file through",
@@ -603,7 +604,7 @@ export const controlKimiCodeChangesGuide = makeGuide({
   finish: "You now have a plan, scope and diff check that make a small Kimi Code change reviewable.",
   related: [
     promptGuide("is-kimi-worth-paying-for", "Is Kimi worth paying for?", "Measure whether the controlled workflow produces enough value."),
-    existingGuide("kimi", "Should you use Kimi?", "Choose between Kimi chat and the coding tools.", "/images/guides/kimi.webp"),
+    existingGuide("what-is-a-prompt", "Write a prompt that gets a useful answer", "Use the same scope-setting habit for another task.", "/images/guides/what-is-a-prompt.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Keep secrets and private repositories out of an unapproved tool.", "/images/guides/learn-master.webp"),
   ],
 });

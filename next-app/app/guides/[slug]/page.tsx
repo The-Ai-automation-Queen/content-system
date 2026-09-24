@@ -23,6 +23,7 @@ import { GrokWritingPage } from "@/components/guides/grok-writing-page";
 import { DeepseekWallPage } from "@/components/guides/deepseek-wall-page";
 import { DeepseekLongEditPage } from "@/components/guides/deepseek-long-edit-page";
 import { KimiValuePage } from "@/components/guides/kimi-value-page";
+import { KimiCodePage } from "@/components/guides/kimi-code-page";
 import { GuideAccessBoundary } from "@/components/guides/guide-access-boundary";
 import { getGuidePage, guidePages } from "@/content/guide-page";
 import { legacyGuideSlugs } from "@/content/legacy-guide-slugs";
@@ -76,6 +77,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "fix-deepseek-wall-of-text") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Make a dense scene easier to read without changing its words or meaning. Enter your email to open the guide." variant="entry"><DeepseekWallPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "edit-long-writing-with-deepseek") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Protect the story you like, revise one passage and check what DeepSeek changed. Enter your email to open the guide." variant="entry"><DeepseekLongEditPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "is-kimi-worth-paying-for") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Test one repeated job against the current Kimi limit and price before paying. Enter your email to open the guide." variant="entry"><KimiValuePage guide={guide} /></GuideAccessBoundary>;
+  if (slug === "control-kimi-code-changes") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Plan one small file change and check every difference before keeping it. Enter your email to open the guide." variant="entry"><KimiCodePage guide={guide} /></GuideAccessBoundary>;
   if (legacyGuideSlugs.has(slug)) return <GuideReadingPage guide={guide} />;
   throw new Error(`Guide ${slug} needs an approved interactive Next.js composition before it can be built.`);
 }
