@@ -57,13 +57,6 @@ export function ToolChooserPage({ guide }: { guide: GuidePage }) {
         <p className={styles.jobNote}>A shortlist is a starting point. You still need to test the result and check your account rules.</p>
       </section>
 
-      <section className={styles.test} aria-labelledby="tool-test-title">
-        <div className={styles.sectionHead}><span>Before you pay or connect files</span><h2 id="tool-test-title">Run the same small test in 2 tools</h2></div>
-        <div className={styles.stepNav} aria-label="Test steps">{test.steps.map((item, index) => <button type="button" key={item.title} aria-current={step === index ? "step" : undefined} onClick={() => setStep(index)}><span>{index + 1}</span><strong>{item.title}</strong></button>)}</div>
-        <div className={styles.stepBody} aria-live="polite"><span>Step {step + 1} / {test.steps.length}</span><h3>{test.steps[step].title}</h3><p><Text value={test.steps[step].body} /></p>{step === 1 && <p className={styles.sameInput}>Use the same prompt and the same non-confidential material in both tools. The differences will be easier to judge.</p>}</div>
-        <div className={styles.stepActions}><button type="button" onClick={() => setStep(Math.max(0, step - 1))} disabled={step === 0}>Back</button><button type="button" onClick={() => setStep(Math.min(test.steps.length - 1, step + 1))} disabled={step === test.steps.length - 1}>Next step</button></div>
-      </section>
-
       {guide.tryNow && <section className={styles.action} aria-labelledby="tool-action-title">
         <div className={styles.sectionHead}><span>Build your shortlist</span><h2 id="tool-action-title">Ask one tool to narrow the choice</h2></div>
         <p>Open one AI chat you are allowed to use. Copy the prompt, replace the brackets with a real task but leave private details out, then send it.</p>
@@ -72,6 +65,13 @@ export function ToolChooserPage({ guide }: { guide: GuidePage }) {
         {copyError && <p role="alert">Copy failed. Open the complete prompt and select the text instead.</p>}
         <div className={styles.check}><GuideIcon name="check" /><p><Text value={guide.tryNow.check} /></p></div>
       </section>}
+
+      <section className={styles.test} aria-labelledby="tool-test-title">
+        <div className={styles.sectionHead}><span>Before you pay or connect files</span><h2 id="tool-test-title">Run the same small test in 2 tools</h2></div>
+        <div className={styles.stepNav} aria-label="Test steps">{test.steps.map((item, index) => <button type="button" key={item.title} aria-current={step === index ? "step" : undefined} onClick={() => setStep(index)}><span>{index + 1}</span><strong>{item.title}</strong></button>)}</div>
+        <div className={styles.stepBody} aria-live="polite"><span>Step {step + 1} / {test.steps.length}</span><h3>{test.steps[step].title}</h3><p><Text value={test.steps[step].body} /></p>{step === 1 && <p className={styles.sameInput}>Use the same prompt and the same non-confidential material in both tools. The differences will be easier to judge.</p>}</div>
+        <div className={styles.stepActions}><button type="button" onClick={() => setStep(Math.max(0, step - 1))} disabled={step === 0}>Back</button><button type="button" onClick={() => setStep(Math.min(test.steps.length - 1, step + 1))} disabled={step === test.steps.length - 1}>Next step</button></div>
+      </section>
 
       <section className={styles.more} aria-labelledby="tool-more-title"><div className={styles.sectionHead}><span>If the first shortlist does not fit</span><h2 id="tool-more-title">What about the other tools?</h2></div><div className={styles.moreGrid}>{otherTools.items.map(item => <details key={item.title}><summary>{item.title}</summary><p><Text value={item.body} /></p>{item.links?.map(link => <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}</details>)}</div></section>
       <p className={styles.finish}><strong>Keep the tool that helps you finish the task</strong> with fewer corrections and without sharing information you should keep private.</p>
