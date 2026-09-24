@@ -44,8 +44,6 @@ export const legacyGuideSlugs = new Set([
   "verify-grok-current-research",
   "what-can-copilot-see-at-work",
   "what-is-a-prompt",
-  "what-is-agentic",
   "what-is-an-ai-browser",
-  "what-should-you-never-share-with-ai",
   "which-ai-tool-for-what",
 ]);

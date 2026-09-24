@@ -5,8 +5,8 @@
   "guides": [
     { "slug": "what-is-ai", "pattern": "explorer", "status": "approved", "component": "what-is-ai-page" },
     { "slug": "ai-jargon-guide", "pattern": "glossary", "status": "approved", "component": "ai-jargon-page" },
-    { "slug": "what-is-agentic", "pattern": "decision", "status": "pending" },
-    { "slug": "what-should-you-never-share-with-ai", "pattern": "audit", "status": "pending" },
+    { "slug": "what-is-agentic", "pattern": "decision", "status": "approved", "component": "agentic-page" },
+    { "slug": "what-should-you-never-share-with-ai", "pattern": "audit", "status": "approved", "component": "privacy-guide-page" },
     { "slug": "which-ai-tool-for-what", "pattern": "decision", "status": "pending" },
     { "slug": "make-chatgpt-answers-shorter", "pattern": "practice", "status": "pending" },
     { "slug": "stop-chatgpt-forgetting-context", "pattern": "walkthrough", "status": "pending" },
