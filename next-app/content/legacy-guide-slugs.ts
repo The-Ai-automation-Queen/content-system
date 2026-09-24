@@ -12,7 +12,6 @@ export const legacyGuideSlugs = new Set([
   "fix-gemini-workspace-action",
   "gemini",
   "grok",
-  "is-kimi-worth-paying-for",
   "is-mistral-pro-worth-it",
   "kimi",
   "manus",

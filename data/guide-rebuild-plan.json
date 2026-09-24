@@ -23,7 +23,7 @@
     { "slug": "verify-grok-current-research", "pattern": "audit", "status": "review", "component": "grok-research-page" },
     { "slug": "fix-deepseek-wall-of-text", "pattern": "practice", "status": "review", "component": "deepseek-wall-page" },
     { "slug": "edit-long-writing-with-deepseek", "pattern": "walkthrough", "status": "review", "component": "deepseek-long-edit-page" },
-    { "slug": "is-kimi-worth-paying-for", "pattern": "decision", "status": "pending" },
+    { "slug": "is-kimi-worth-paying-for", "pattern": "decision", "status": "review", "component": "kimi-value-page" },
     { "slug": "control-kimi-code-changes", "pattern": "walkthrough", "status": "pending" },
     { "slug": "test-manus-without-burning-credits", "pattern": "walkthrough", "status": "pending" },
     { "slug": "manus-browser-workflow", "pattern": "decision", "status": "pending" },

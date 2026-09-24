@@ -509,6 +509,7 @@ export const verifyGrokResearchGuide = makeGuide({
 
 export const kimiValueGuide = makeGuide({
   slug: "is-kimi-worth-paying-for",
+  promptMode: "as-written",
   title: "Is Kimi worth paying for, or will the limits stop you working?",
   promise: "Test whether Kimi can finish one repeated job before the current limit interrupts it.",
   coverAlt: "The Blue Princess weighing one finished work result against a meter of remaining usage",
@@ -552,7 +553,7 @@ export const kimiValueGuide = makeGuide({
   finish: "You can now decide from completed work rather than a product comparison or feature list.",
   related: [
     promptGuide("control-kimi-code-changes", "How do you stop Kimi changing extra files?", "Test the coding workflow with plan and diff controls."),
-    existingGuide("kimi", "Should you use Kimi?", "See the main Kimi routes before choosing a plan.", "/images/guides/kimi.webp"),
+    existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Check whether Kimi is the right tool for this repeated task.", "/images/guides/which-ai-tool-for-what.webp"),
     promptGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Use the same evidence-led upgrade decision."),
   ],
 });
