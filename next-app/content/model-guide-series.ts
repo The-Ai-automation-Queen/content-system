@@ -114,16 +114,16 @@ export const makeChatgptAnswersShorterGuide = makeGuide({
       items: [
         { title: "Count the parts", body: "There should be exactly **3 questions, 2 decisions and one closing sentence**." },
         { title: "Count the words", body: "The complete answer should be **90 words or fewer**." },
-        { title: "Find the action", body: "The closing sentence should be usable as written." },
+        { title: "Find the action", body: "The closing sentence should name what still needs agreement, without claiming a decision was made." },
         { title: "Remove extras", body: "Delete scene-setting, repetition and offers you did not request." },
       ],
     },
   ],
   tryNow: {
     heading: "Try the difference",
-    introduction: "Paste this complete example into a new ChatGPT conversation.",
-    prompt: `I need to prepare for a 20-minute project check-in.\n\nGive me:\n1. the 3 questions I should ask;\n2. the 2 decisions the meeting must produce;\n3. one sentence I can use to close the meeting.\n\nUse no introduction, repeated summary or offer to do more. Stop after the closing sentence. Keep the whole answer to 90 words or fewer.`,
-    check: "You are done when the answer fits the stated limit and contains every requested item.",
+    introduction: "Try this fictional project first, then replace its facts with your own non-confidential work.",
+    prompt: `I need to prepare for a 20-minute project check-in. Use only these facts:\n\nWe are updating an internal onboarding checklist. The draft is ready. Team leads have not reviewed it. No publication date has been agreed.\n\nGive me:\n1. the 3 questions I should ask;\n2. the 2 decisions we need to make in the meeting;\n3. one sentence I can use to close the meeting if those decisions are still open.\n\nDo not invent an approval, owner or deadline. Do not present a decision we still need to make as one already agreed. Use no introduction, repeated summary or offer to do more. Stop after the closing sentence. Keep the whole answer to 90 words or fewer.`,
+    check: "Count the parts and words. Check that the answer uses only the stated facts and does not invent a decision or deadline.",
   },
   finish: "You now have a response rule you can reuse when an answer is longer than the job requires.",
   related: [
