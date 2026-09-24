@@ -12,18 +12,22 @@ const stageLabels = ["Prepare", "Make the draft", "Test the guide"] as const;
 
 function PromptBox({ label, prompt }: { label: string; prompt: string }) {
   const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState(false);
   async function copy() {
     try {
       await navigator.clipboard.writeText(prompt);
       setCopied(true);
+      setCopyError(false);
       window.setTimeout(() => setCopied(false), 2000);
     } catch {
       setCopied(false);
+      setCopyError(true);
     }
   }
   return <div className={styles.prompt}>
     <div className={styles.promptTop}><strong>{label}</strong><button type="button" onClick={copy} aria-label={`Copy ${label.toLowerCase()}`}>{copied ? "Copied" : "Copy"}</button></div>
     <details><summary>View the complete instruction</summary><pre>{prompt}</pre></details>
+    {copyError && <p className={styles.copyError} role="alert">Copy failed. Open the instruction and select the text instead.</p>}
   </div>;
 }
 
