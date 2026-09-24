@@ -9,7 +9,6 @@ export const legacyGuideSlugs = new Set([
   "control-kimi-code-changes",
   "copilot",
   "deepseek",
-  "edit-long-writing-with-deepseek",
   "fix-gemini-workspace-action",
   "gemini",
   "grok",

@@ -917,6 +917,7 @@ export const deepseekWallOfTextGuide = makeGuide({
 
 export const deepseekLongEditGuide = makeGuide({
   slug: "edit-long-writing-with-deepseek",
+  promptMode: "as-written",
   title: "How do you edit a long DeepSeek story without losing what worked?",
   promise: "Lock the approved facts and voice, revise one selected passage, then compare it with the protected brief.",
   coverAlt: "The Blue Princess pinning protected story cards in place while revising one removable page",
@@ -958,7 +959,7 @@ export const deepseekLongEditGuide = makeGuide({
   finish: "You can now make a controlled long-form edit without sacrificing the parts you already approved.",
   related: [
     promptGuide("fix-deepseek-wall-of-text", "Why did DeepSeek create a wall of text?", "Fix readability before changing the story."),
-    existingGuide("deepseek", "Should you use DeepSeek?", "See where DeepSeek fits before using it for long writing.", "/images/guides/deepseek.webp"),
+    promptGuide("review-grok-suggestions", "Did Grok catch an error or rewrite your work?", "Check whether an edit stays within the job you gave it."),
     existingGuide("what-is-a-prompt", "Write a prompt that gets a useful answer", "Adapt the same checking habit to another task.", "/images/guides/what-is-a-prompt.webp"),
   ],
 });
