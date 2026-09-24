@@ -340,8 +340,8 @@ export const copilotExcelGuide = makeGuide({
       heading: "Build the practice workbook",
       introduction: "Save one untouched original and one working copy.",
       blocks: [
-        { kind: "table", rows: [["Item", "Units", "Price", "Total"], ["Pens", "10", "2", "20"], ["Notebooks", "5", "6", "30"], ["Folders", "8", "3", "24"]] },
-        { kind: "note", icon: "check", text: "Use formulas in the Total column: =B2*C2, =B3*C3 and =B4*C4." },
+        { kind: "table", rows: [["Item (A)", "Units (B)", "Price (C)", "Total formula (D)"], ["Pens", "10", "2", "=B2*C2"], ["Notebooks", "5", "6", "=B3*C3"], ["Folders", "8", "3", "=B4*C4"]] },
+        { kind: "note", icon: "check", text: "Enter the formulas in column D. Excel displays 20, 30 and 24 before the edit." },
       ],
     },
     {
