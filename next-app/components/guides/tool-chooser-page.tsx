@@ -21,6 +21,7 @@ export function ToolChooserPage({ guide }: { guide: GuidePage }) {
   const [job, setJob] = useState<number | null>(null);
   const [step, setStep] = useState(0);
   const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState(false);
   const jobs = guide.sections[0];
   const otherTools = guide.sections[1];
   const test = guide.sections[3];
@@ -28,9 +29,14 @@ export function ToolChooserPage({ guide }: { guide: GuidePage }) {
 
   async function copyPrompt() {
     if (!guide.tryNow) return;
-    await navigator.clipboard.writeText(guide.tryNow.prompt);
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 1800);
+    try {
+      await navigator.clipboard.writeText(guide.tryNow.prompt);
+      setCopied(true);
+      setCopyError(false);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      setCopyError(true);
+    }
   }
 
   return <main className={styles.page}>
@@ -63,6 +69,7 @@ export function ToolChooserPage({ guide }: { guide: GuidePage }) {
         <p>Open one AI chat you are allowed to use. Copy the prompt, replace the brackets with a real task but leave private details out, then send it.</p>
         <div className={styles.chatLinks}>{chatLinks.map(link => <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">Open {link.label} ↗</a>)}</div>
         <div className={styles.prompt}><details><summary>View the complete prompt</summary><pre>{guide.tryNow.prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button></div>
+        {copyError && <p role="alert">Copy failed. Open the complete prompt and select the text instead.</p>}
         <div className={styles.check}><GuideIcon name="check" /><p><Text value={guide.tryNow.check} /></p></div>
       </section>}
 
