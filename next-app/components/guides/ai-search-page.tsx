@@ -27,6 +27,14 @@ export function AiSearchPage({ guide }: { guide: GuidePage }) {
   const [missing, setMissing] = useState("");
   const facts = guide.sections[0];
   if (facts.kind !== "cards" || !guide.tryNow) return null;
+  const neutralReady = [service, customer, market].every((value) => value.trim().length > 0);
+  let siteReady = false;
+  try {
+    const url = new URL(website.trim());
+    siteReady = ["http:", "https:"].includes(url.protocol) && url.hostname.includes(".");
+  } catch {
+    // A complete public URL is needed before copying the website check.
+  }
   const prompt = guide.tryNow.prompt
     .replace("[type of service or product]", service.trim() || "[type of service or product]")
     .replace("[type of customer]", customer.trim() || "[type of customer]")
@@ -42,6 +50,7 @@ Use only pages you can open. Tell me what a customer can verify about:
 Give the exact page URL for each fact. Write “Not verified” if a page is unavailable or a fact is missing. Do not guess. Name up to 3 important facts a buyer still could not check.`;
 
   async function copyPrompt(value: string, kind: "neutral" | "site") {
+    if ((kind === "neutral" && !neutralReady) || (kind === "site" && !siteReady)) return;
     try {
       await navigator.clipboard.writeText(value);
       setCopied(kind);
@@ -63,13 +72,15 @@ Give the exact page URL for each fact. Write “Not verified” if a page is una
         <div className={styles.sectionHead}><span>Run a neutral test</span><h2 id="search-test-title">Search without naming your business</h2></div>
         <p className={styles.intro}>Use an AI tool that can search the web. Describe the service, customer and location a buyer would use. Results vary by tool, place and date.</p>
         <div className={styles.fields}>
-          <label><span>Service or product</span><input value={service} onChange={event => setService(event.target.value)} placeholder="Type your service" /></label>
-          <label><span>Customer</span><input value={customer} onChange={event => setCustomer(event.target.value)} placeholder="Type your customer" /></label>
-          <label><span>Location or market</span><input value={market} onChange={event => setMarket(event.target.value)} placeholder="Type your market" /></label>
+          <label><span>Service or product</span><input value={service} onChange={event => setService(event.target.value)} placeholder="e.g. payroll software" /></label>
+          <label><span>Customer</span><input value={customer} onChange={event => setCustomer(event.target.value)} placeholder="e.g. small design studios" /></label>
+          <label><span>Location or market</span><input value={market} onChange={event => setMarket(event.target.value)} placeholder="e.g. UK" /></label>
         </div>
-        <div className={styles.prompt}><details><summary>View the search instruction</summary><pre>{prompt}</pre></details><button type="button" onClick={() => copyPrompt(prompt, "neutral")} aria-label="Copy the neutral search instruction">{copied === "neutral" ? "Copied" : "Copy"}</button></div>
+        <div className={styles.prompt}><details><summary>View the search instruction</summary><pre>{prompt}</pre></details><button type="button" disabled={!neutralReady} onClick={() => copyPrompt(prompt, "neutral")} aria-label="Copy the neutral search instruction">{copied === "neutral" ? "Copied" : "Copy"}</button></div>
+        {!neutralReady && <p className={styles.message}>Fill the three fields to copy a complete search instruction.</p>}
         <label className={styles.siteField}><span>Then check your public website</span><input type="url" value={website} onChange={event => setWebsite(event.target.value)} placeholder="https://your-site.example" /></label>
-        <div className={styles.prompt}><details><summary>View the website check instruction</summary><pre>{sitePrompt}</pre></details><button type="button" onClick={() => copyPrompt(sitePrompt, "site")} aria-label="Copy the website check instruction">{copied === "site" ? "Copied" : "Copy"}</button></div>
+        <div className={styles.prompt}><details><summary>View the website check instruction</summary><pre>{sitePrompt}</pre></details><button type="button" disabled={!siteReady} onClick={() => copyPrompt(sitePrompt, "site")} aria-label="Copy the website check instruction">{copied === "site" ? "Copied" : "Copy"}</button></div>
+        {!siteReady && <p className={styles.message}>Enter your public website URL to copy this check.</p>}
         {copyError && <p className={styles.message} role="alert">Copy failed. Open the instruction and select the text instead.</p>}
         <p className={styles.note}>Run both instructions in the same web-search-capable tool. Open every cited public source yourself.</p>
       </section>
