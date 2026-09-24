@@ -29,18 +29,29 @@ export function CopilotExcelPage({ guide }: { guide: GuidePage }) {
   const [checked, setChecked] = useState<boolean[]>([false, false, false]);
   const [copied, setCopied] = useState(false);
   const [sheetCopied, setSheetCopied] = useState(false);
+  const [copyError, setCopyError] = useState<"sheet" | "prompt" | null>(null);
   if (!guide.tryNow) return null;
 
   async function copyPrompt() {
-    await navigator.clipboard.writeText(guide.tryNow!.prompt);
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 2000);
+    try {
+      await navigator.clipboard.writeText(guide.tryNow!.prompt);
+      setCopied(true);
+      setCopyError(null);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopyError("prompt");
+    }
   }
 
   async function copySheet() {
-    await navigator.clipboard.writeText(starterSheet);
-    setSheetCopied(true);
-    window.setTimeout(() => setSheetCopied(false), 2000);
+    try {
+      await navigator.clipboard.writeText(starterSheet);
+      setSheetCopied(true);
+      setCopyError(null);
+      window.setTimeout(() => setSheetCopied(false), 2000);
+    } catch {
+      setCopyError("sheet");
+    }
   }
 
   return <main className={styles.page}>
@@ -56,6 +67,7 @@ export function CopilotExcelPage({ guide }: { guide: GuidePage }) {
         <div className={styles.sectionHead}><span>Practice workbook</span><h2 id="excel-table-title">Build this four-column sheet</h2></div>
         <p>Copy the starter sheet into cell A1 in Excel, or enter the rows yourself. Enter the formulas shown in column D. Save an untouched original, then open a working copy.</p>
         <button className={styles.copySheet} type="button" onClick={copySheet}>{sheetCopied ? "Copied for Excel" : "Copy starter sheet for Excel"}</button>
+        {copyError === "sheet" && <p role="alert">Copy failed. Enter the four columns from the table below in Excel.</p>}
         <div className={styles.stateSwitch} role="group" aria-label="Practice workbook view">
           <button type="button" aria-pressed={!showAfter} onClick={() => setShowAfter(false)}>Before Copilot</button>
           <button type="button" aria-pressed={showAfter} onClick={() => setShowAfter(true)}>Expected after</button>
@@ -75,7 +87,7 @@ export function CopilotExcelPage({ guide }: { guide: GuidePage }) {
         <p className={styles.sheetNote} aria-live="polite">{showAfter ? "Only B3 changed. D3 still uses =B3*C3, so its displayed total becomes 36." : "In the original, B3 is 5 and D3 shows 30."}</p>
       </section>
 
-      <section className={styles.activity} aria-labelledby="excel-prompt-title"><div className={styles.sectionHead}><span>One edit</span><h2 id="excel-prompt-title">Ask Copilot to change B3</h2></div><p>Open Copilot in Excel with the working copy. Paste this instruction:</p><div className={styles.prompt}><pre>{guide.tryNow.prompt}</pre><button type="button" onClick={copyPrompt} aria-label="Copy the complete Copilot instruction">{copied ? "Copied" : "Copy"}</button></div></section>
+      <section className={styles.activity} aria-labelledby="excel-prompt-title"><div className={styles.sectionHead}><span>One edit</span><h2 id="excel-prompt-title">Ask Copilot to change B3</h2></div><p>Open Copilot in Excel with the working copy. Paste this instruction:</p><div className={styles.prompt}><pre>{guide.tryNow.prompt}</pre><button type="button" onClick={copyPrompt} aria-label="Copy the complete Copilot instruction">{copied ? "Copied" : "Copy"}</button></div>{copyError === "prompt" && <p role="alert">Copy failed. Select the instruction above instead.</p>}</section>
 
       <section className={styles.activity} aria-labelledby="excel-check-title"><div className={styles.sectionHead}><span>Check before using it</span><h2 id="excel-check-title">Compare the working copy</h2></div><p>Use your untouched original as the reference. Tick each point only when you see it in Excel.</p><div className={styles.checks}>{checks.map((check, index) => <label key={check}><input type="checkbox" checked={checked[index] ?? false} onChange={() => setChecked(current => current.map((value, i) => i === index ? !value : value))} /><span>{check}</span></label>)}</div><p className={styles.result} aria-live="polite">{checked.every(Boolean) ? "All three checks marked. Keep the edit only if your workbook matches." : `${checked.filter(Boolean).length} of 3 checks marked. If anything else changed, compare with the original before using this workbook.`}</p></section>
     </div>
