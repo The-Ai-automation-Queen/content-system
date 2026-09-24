@@ -50,12 +50,12 @@ export function CopilotExcelPage({ guide }: { guide: GuidePage }) {
         <div className={styles.tableWrap}>
           <table><caption className={styles.srOnly}>{showAfter ? "Expected workbook after changing Notebooks units" : "Original practice workbook"}</caption><thead><tr><th scope="col">Item <small>A1</small></th><th scope="col">Units <small>B1</small></th><th scope="col">Price <small>C1</small></th><th scope="col">Total <small>D1</small></th></tr></thead><tbody>{rows.map(row => {
             const changed = showAfter && row.item === "Notebooks";
-            return <tr key={row.item} className={changed ? styles.changed : undefined}><th scope="row">{row.item}{" "}<small>A{row.row} · row {row.row}</small></th><td>{changed ? <><strong>6</strong>{" "}<small>was 5</small></> : row.units}</td><td>{row.price}</td><td><strong>{changed ? 36 : row.total}</strong><small>D{row.row}: enter <code>{row.formula}</code></small></td></tr>;
+            return <tr key={row.item}><th scope="row">{row.item}<small>A{row.row}</small></th><td className={changed ? styles.editedCell : undefined}>{changed ? <><strong>6</strong><small>B{row.row} · was 5</small></> : <>{row.units}<small>B{row.row}</small></>}</td><td>{row.price}<small>C{row.row}</small></td><td><strong>{changed ? 36 : row.total}</strong><small>D{row.row} · <code>{row.formula}</code></small></td></tr>;
           })}</tbody></table>
         </div>
         <div className={styles.mobileRows}>{rows.map(row => {
           const changed = showAfter && row.item === "Notebooks";
-          return <article key={row.item} className={changed ? styles.changed : undefined}><h3>Row {row.row} · {row.item} <small>A{row.row}</small></h3><dl><div><dt>Units · B{row.row}</dt><dd>{changed ? <><strong>6</strong> <small>was 5</small></> : row.units}</dd></div><div><dt>Price · C{row.row}</dt><dd>{row.price}</dd></div><div><dt>Total · D{row.row}</dt><dd><strong>{changed ? 36 : row.total}</strong><small>Enter <code>{row.formula}</code></small></dd></div></dl></article>;
+          return <article key={row.item}><h3>Row {row.row} · {row.item} <small>A{row.row}</small></h3><dl><div className={changed ? styles.editedCell : undefined}><dt>Units · B{row.row}</dt><dd>{changed ? <><strong>6</strong> <small>was 5</small></> : row.units}</dd></div><div><dt>Price · C{row.row}</dt><dd>{row.price}</dd></div><div><dt>Total · D{row.row}</dt><dd><strong>{changed ? 36 : row.total}</strong><small><code>{row.formula}</code></small></dd></div></dl></article>;
         })}</div>
         <p className={styles.sheetNote} aria-live="polite">{showAfter ? "Only B3 changed. D3 still uses =B3*C3, so its displayed total becomes 36." : "In the original, B3 is 5 and D3 shows 30."}</p>
       </section>
