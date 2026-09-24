@@ -21,6 +21,33 @@
 
 ## Most recent (quick reference)
 
+> **24/09/2026 content-engine daily run — no new entries produced (deliberate):**
+> Fresh source material exists: `RESEARCH 050` (`research-notes.md`) landed
+> this morning via an operator-requested signal harvest with three shift-lead
+> (public-eligible) signals — Trinity College Dublin / TU Dublin's "Right-Sizing
+> AI at Work" (task/workflow-transformation framing, judgment-over-output angle),
+> IBM IBV's "Rewiring the C-suite" CEO study (leadership-side confirmation that
+> adoption, not tooling, is the gap), and Adriana Tica's "State of
+> Solopreneurship 2026" (pillar-3 placement angle, flagged low-confidence/N=153
+> by RESEARCH 050 itself). Both blockers from every prior run since 17/09 are
+> unchanged today: (1) this session's reality-check hook again states
+> queen-brain is NOT in this session and repeats the explicit instruction not
+> to write price, tier, offer status or customer-facing copy reconstructed
+> from this repo's local mirror copies — content-engine's entire output is
+> customer-facing copy (multi-format public drafts), so that instruction
+> blocks drafting outright regardless of research availability; (2) the
+> release backlog is also unchanged: vault still holds 37 READY TO POST
+> (oldest 71+ days, since 14/07/2026), 33 DRAFT, 6 STALE, 2 KILLED, 0 POSTED —
+> confirmed by the reality-check hook. `review-cockpit/state.md` confirms 21
+> consecutive empty `getUpdates` sweeps since the 14/09/2026 digest as of
+> 23/09 (pre-digest sweep) and `decisions-log.md` shows no operator replies,
+> approvals, or kills since then — so adding more DRAFT volume would still
+> only crowd the digest's top-6 rotation without moving any existing item
+> toward release. No Notion, Blotato, or queen-brain connector was reachable
+> from this session either (checked via tool discovery — no such MCP tools
+> registered). See the operator briefing in this session's chat for the
+> recommendation (same three options open since 18/09, still unanswered).
+
 > **23/09/2026 content-engine daily run — no new entries produced (deliberate):**
 > Fresh source material exists: `reports/signal-harvest-2026-09-23.md` landed
 > this morning via the autonomous signal-harvester with two shift-lead
