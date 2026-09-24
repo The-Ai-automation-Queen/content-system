@@ -18,6 +18,7 @@ export function ScheduledTaskPage({ guide }: { guide: GuidePage }) {
   const [step, setStep] = useState(0);
   const [showAll, setShowAll] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState(false);
   const steps = guide.sections[0];
   if (steps.kind !== "steps" || !guide.tryNow) return null;
 
@@ -27,9 +28,14 @@ export function ScheduledTaskPage({ guide }: { guide: GuidePage }) {
     .replace("[STOP RULE]", stopRule.trim() || "[STOP RULE]");
 
   async function copy() {
-    await navigator.clipboard.writeText(prompt);
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 2000);
+    try {
+      await navigator.clipboard.writeText(prompt);
+      setCopied(true);
+      setCopyError(false);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopyError(true);
+    }
   }
 
   return <main className={styles.page}>
@@ -50,6 +56,7 @@ export function ScheduledTaskPage({ guide }: { guide: GuidePage }) {
           <label>Stop checking<input value={stopRule} onChange={event => setStopRule(event.target.value)} placeholder="14 days after the task is created" /></label>
         </div>
         <div className={styles.preview}><strong>Your instruction</strong><details><summary>View the complete instruction</summary><pre>{prompt}</pre></details><button type="button" onClick={copy} aria-label="Copy the complete scheduled task instruction">{copied ? "Copied" : "Copy"}</button></div>
+        {copyError && <p role="alert">Copy failed. Open the complete instruction and select the text instead.</p>}
       </section>
 
       <section className={styles.walkthrough} aria-labelledby="scheduled-steps-title">
