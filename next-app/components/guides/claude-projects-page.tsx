@@ -20,17 +20,23 @@ export function ClaudeProjectsPage({ guide }: { guide: GuidePage }) {
   const [showAll, setShowAll] = useState(false);
   const [marked, setMarked] = useState<boolean[]>([false, false, false, false]);
   const [copied, setCopied] = useState("");
+  const [copyError, setCopyError] = useState("");
   const series = guide.series;
   if (!series || series.part !== 2) return null;
 
   async function copy(value: string, key: string) {
-    await navigator.clipboard.writeText(value);
-    setCopied(key);
-    window.setTimeout(() => setCopied(""), 2000);
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopied(key);
+      setCopyError("");
+      window.setTimeout(() => setCopied(""), 2000);
+    } catch {
+      setCopyError(key);
+    }
   }
 
   function prompt(value: string, key: string, label: string) {
-    return <div className={styles.prompt}><details><summary>View the complete {label}</summary><pre>{value}</pre></details><button type="button" onClick={() => copy(value, key)} aria-label={`Copy the complete ${label}`}>{copied === key ? "Copied" : "Copy"}</button></div>;
+    return <><div className={styles.prompt}><details><summary>View the complete {label}</summary><pre>{value}</pre></details><button type="button" onClick={() => copy(value, key)} aria-label={`Copy the complete ${label}`}>{copied === key ? "Copied" : "Copy"}</button></div>{copyError === key && <p role="alert">Copy failed. Open the complete {label} and select the text instead.</p>}</>;
   }
 
   return <main className={styles.page}>
