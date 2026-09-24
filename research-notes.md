@@ -2,6 +2,59 @@
 
 ---
 
+## RESEARCH 050 — 2026-09-24 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `77cdec6`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (positioning.md):** experienced professionals, founders and consultants who feel overwhelmed by AI or struggle to turn their knowledge into visible, valuable work.
+**Internal tooling discoveries this run:** none. This entry is `shift-lead` (public-topic) evidence only.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority and recency were weighed.
+
+### Signals
+
+1. **Trinity College Dublin / TU Dublin (SOHAM centre) — "Right-Sizing AI at Work"** — published 2026-09-10 — commissioned by Technology Ireland DIGITAL Skillnet — direct WebFetch confirmed.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: academic (not vendor-survey) evidence that the audience problem is being reframed as task/workflow transformation rather than displacement, and it names the exact mechanism positioning.md points to — humans spending their AI-adjacent time reviewing, verifying and exercising judgment over outputs. A different evidentiary class from the labor-market/wage-premium signals already logged in RESEARCH 046, 047 and 049.
+   - `supporting_source_excerpt`: "AI's impact on work in Ireland is currently best understood as task and workflow transformation rather than immediate large-scale job displacement." — Professor Taha Yasseri (Trinity College Dublin). 47.4% of workers use AI tools daily; 64.7% describe themselves as confident/very confident using it; yet 40.9% report no dependency on AI tools, and workers "increasingly review, verify, coordinate and exercise judgment over AI-generated outputs."
+   - `possible_use`: a citable, non-US, academic counterweight to the overwhelm-only framing used across RESEARCH 044-049 — supports a "your job is shifting to directing and verifying AI, not being replaced by it" angle for the "use AI for real work" pillar.
+   - `assessed_at`: 2026-09-24
+
+2. **IBM Institute for Business Value — "Rewiring the C-suite: The fast track to 2030"** — published 2026-05-08 (updated 2026-05-18) — https://www.ibm.com/think/news/workers-using-ai-2026-ceo-study — direct WebFetch confirmed; survey of 2,000+ CEOs globally.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: flips the vantage point from worker self-report (every survey signal in 044-049) to leadership-reported behavior — corroborates the "unsure where to start" shape of the audience problem from the employer side instead of duplicating another worker-sentiment poll.
+   - `supporting_source_excerpt`: "Only 25% of workers regularly use AI in their jobs," against the same study's finding that the large majority are technically able to; "86% of CEOs believe their workforce is ready for AI"; "83% of CEOs say AI success depends more on adoption than technology." Quote (Ganesh Harinath, on closing the gap): making AI "the standard operating layer inside the tools employees already use" rather than a separate optional tool.
+   - `possible_use`: a leadership-side citation for "the tool isn't the bottleneck, starting is" — pairs with RESEARCH 048's Resume Now "44% uncertain where to start" stat as employer-side confirmation of the same gap. Caveat: published in May, four months old — use as a corroborating angle, not as this week's news.
+   - `assessed_at`: 2026-09-24
+
+3. **Adriana Tica — "State of Solopreneurship 2026"** — fielded September–November 2025, released 2026 (exact release date not published on the report page) — https://www.adrianatica.com/state-of-solopreneurship/ — direct WebFetch confirmed; independent survey, 153 valid responses, solo operators/creator-founders/2–5-person teams, mostly North America and Europe, B2B-leaning.
+   - `project_id`: shift-lead — `fit`: possible — `reason`: the only signal found this run speaking directly to pillar 3 ("build from what you find") rather than the judgment/overwhelm pillars that dominated 044-049 — frames AI as a placement question ("where," not "if") and shows services still outearning the products built from expertise.
+   - `supporting_source_excerpt`: "9 in 10 use AI" among respondents; "the advantage now is where you plug it in, not 'if'"; despite most respondents also offering digital products, "services still pay the bills."
+   - `possible_use`: a low-confidence but on-pillar counterpoint to "just turn your knowledge into a course" — worth a follow-up search for a larger-N study before using its numbers in a draft. Quality caveat: N=153, self-selected respondents, independent single-author report with no disclosed release date — treat as directional, not authoritative, and do not quote the percentage without naming the small sample.
+   - `assessed_at`: 2026-09-24
+
+### Rejected this run
+
+- The Deerborne Group — "AI reshapes consulting" press release (2026-09-22, via PR Newswire) — self-issued by the consulting firm whose own thesis it promotes, no disclosed sample size, and the underlying "pulse survey" was of life-sciences/oncology-diagnostics executives at ASCO, not a general professional population. Excluded per research-policy.md's source-quality standard — same class of exclusion as RESEARCH 049's Shibumi rejection.
+- Forbes (Bryan Robinson) — "5 'Execution Premium' Skills..." (2026-09-22) — direct WebFetch returned HTTP 403; the specific "316,011 vs 15,093 SQL-vs-data-storytelling profiles" statistic only appeared inside a WebSearch-synthesized answer, never inside any independently fetched page (two other syndicated Robinson pieces fetched directly did not contain it). Per security.md's "facts before hooks" rule, a number that cannot be traced to actual fetched text is cut, not softened and kept.
+- The Influencer Marketing Factory — "Creator Economy Report 2026" — direct WebFetch returned HTTP 403; the "72% of creators use AI but don't check LLM visibility" stat could not be verified against fetched source text — same cut-not-keep treatment as above.
+- ManpowerGroup — "Global Talent Barometer 2026" — surfaces in searches under a "2026" title but its actual release date is 2026-01-20 (confirmed via its PR Newswire URL); over 8 months old and superseded by fresher signals already logged in 046-049; not re-logged.
+- Henley Business School / Prof. Keiichi Nakata overwhelm survey — published 2026-06-04, 2,900 UK workers — checked, content confirmed, but its finding ("61% overwhelmed, unchanged from 2025") adds no new information beyond RESEARCH 048's Resume Now and Korn Ferry signals already covering the same overwhelm/confidence territory; not logged as a numbered signal.
+
+### Source health this run
+
+- Anthropic News (High): direct WebFetch worked; newest post is "Claude discovers a novel enzyme system with CRISPR-like repeats" (Sep 23) — a science/product story with no line to the audience problem; not logged. Second-newest is the Accenture item already logged as RESEARCH 048 signal 1.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — 7th consecutive failed run (044, 045, 046, 047, 048, 049, 050), now well over a month on the same dead fetch path. Operator: repeating the standing recommendation from 047/048/049 — either fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): checked this run — WebFetch worked; the five most recent posts are pure ML-engineering topics (multi-speaker diarization, a video world model, inference-benchmarking, a coding-agent memory tool), consistent with 046/049's finding; nothing logged.
+- DeepMind blog (Medium): not checked this run — time budget spent on three non-RSS signals with higher confirmed fit, consistent with 049's prioritization note.
+- a16z AI (Medium): checked this run — WebFetch worked but returned no visible publish dates on any post, so freshness (≤7 days) could not be confirmed for any item; nothing logged per inventory.md's "do not hallucinate" freshness rule.
+- Lenny's Newsletter (Low): not checked this run.
+- WebSearch: functional throughout; used to source and then verify (or reject) every signal above.
+- No signals were invented; every URL in the Signals section above is one actually returned by a fetch or search this run, and every quoted figure was confirmed inside directly fetched page text.
+
+### Historical-audience check
+
+Confirmed none of the above signals were forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only, consistent with security.md's queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 049 — 2026-09-22 | Signal harvest (current audience problem)
 
 **Status:** NOTED
