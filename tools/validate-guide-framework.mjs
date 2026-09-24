@@ -27,13 +27,15 @@ const headerSource = read("next-app/components/chrome/site-header.tsx");
 const globalStyles = read("next-app/app/globals.css");
 const footerSource = read("next-app/components/chrome/site-footer.tsx");
 const guideAccessSource = read("next-app/components/guides/guide-access-boundary.tsx");
-const guideReadingSource = read("next-app/components/guides/guide-reading-page.tsx");
 const guideRouteSource = read("next-app/app/guides/[slug]/page.tsx");
 const legacyGuideSlugsSource = read("next-app/content/legacy-guide-slugs.ts");
 const instagramPageSource = read("next-app/components/guides/instagram-dashboard-page.tsx");
 const interactiveWalkthroughSource = read("next-app/components/guides/interactive-walkthrough.tsx");
 const guideFormatsSource = read("next-app/content/guide-formats.ts");
-const guideReadingStyles = read("next-app/components/guides/guide-reading-page.module.css");
+const guideComponentDir = path.join(root, "next-app/components/guides");
+const activeGuideStyles = fs.readdirSync(guideComponentDir)
+  .filter((name) => name.endsWith("-page.module.css") && name !== "guide-reading-page.module.css")
+  .map((name) => [name, fs.readFileSync(path.join(guideComponentDir, name), "utf8")]);
 const guideCaptureApi = read("main-site/api/guide-capture.js");
 const guidesIndex = read("main-site/guides/index.html");
 const buildSprint = read("main-site/build-sprint.html");
@@ -122,14 +124,15 @@ if (/const GUIDE_(?:TAGS|FILES)\s*=/.test(guideCaptureApi)) {
 if (!guideAccessSource.includes('fetch("/api/guide-capture"')) {
   failures.push("The guide gate no longer submits to the server-side Lumail endpoint.");
 }
-if (!guideAccessSource.includes("<GuideAccessBoundary") && !guideReadingSource.includes("<GuideAccessBoundary")) {
-  failures.push("Published guide pages are no longer protected by the shared email gate.");
+const entryRouteSlugs = new Set([...guideRouteSource.matchAll(/if \(slug === "([^"]+)"\) return <GuideAccessBoundary\b[^\n]*variant="entry"[^\n]*<\/GuideAccessBoundary>;/g)].map((match) => match[1]));
+for (const guide of rebuildPlan.guides.filter((item) => item.status !== "pending")) {
+  if (!entryRouteSlugs.has(guide.slug)) failures.push(`Rebuilt guide lacks a dedicated page behind the pre-guide email modal: ${guide.slug}`);
 }
-const genericPreview = guideReadingSource.indexOf("data-guide-preview");
-const genericGate = guideReadingSource.indexOf("<GuideAccessBoundary", genericPreview);
-if (genericPreview < 0 || genericGate < genericPreview ||
-    !guideReadingSource.includes("<Section section={guide.sections[0]} />")) {
-  failures.push("The inline opt-in must follow a useful first section of the guide.");
+if (!guideAccessSource.includes('fetch("/api/guide-capture"') ||
+    !guideAccessSource.includes('role={variant === "entry" ? "dialog"') ||
+    !guideAccessSource.includes('hidden={!ready || !unlocked}') ||
+    !["firstName", "lastName", "email", "marketingConsent"].every((field) => guideAccessSource.includes(`name="${field}"`))) {
+  failures.push("The pre-guide modal must block reading and collect first name, last name, email and optional marketing consent through Lumail.");
 }
 if (!guideRouteSource.includes('slug === "instagram-content-dashboard"') ||
     !guideRouteSource.includes("<InstagramDashboardPage guide={guide} />") ||
@@ -149,29 +152,10 @@ if (!guideRouteSource.includes("legacyGuideSlugs.has(slug)") ||
 if (!libraryUiSource.includes('role="search"') || !libraryPageSource.includes("searchIndex={searchIndex}")) {
   failures.push("The guide library search must stay visible and index published guide content.");
 }
-if (guideAccessSource.includes("data-guide-gate-teaser") || guideReadingStyles.includes(".gateTeaser") || guideReadingStyles.includes("filter: blur(2px)")) {
-  failures.push("The guide gate must not use a blurred teaser or overlay.");
-}
-const sectionSpace = Number(guideReadingStyles.match(/--guide-section-space:\s*(\d+)px/)?.[1]);
-const majorSpace = Number(guideReadingStyles.match(/--guide-major-space:\s*(\d+)px/)?.[1]);
-if (!(sectionSpace > 0 && sectionSpace <= 48) || !(majorSpace > 0 && majorSpace <= 48)) {
-  failures.push("The shared guide template exceeds the approved compact spacing limits.");
-}
-if (!/\.shell\s*\{[^}]*var\(--guide-body-width\)/s.test(guideReadingStyles)) {
-  failures.push("The shared guide hero must align with the reading column.");
-}
-
-if (!/--guide-heading-accent:\s*#FF5733\b/i.test(guideReadingStyles)) {
-  failures.push("The shared guide heading accent must remain Sunset Orange #FF5733.");
-}
-if (!/\.intro h1,\s*\.section h2,\s*\.tryNow h2,\s*\.conclusion h2\s*\{[^}]*color:\s*var\(--guide-heading-accent\)/s.test(guideReadingStyles)) {
-  failures.push("The shared guide H1 and white-background major H2 headings must use the heading accent.");
-}
-if (/(?:\.section|\.tryNow|\.conclusion) h2[^{}]*\{[^}]*(?:border-left|border-inline-start):[^}]*var\(--guide-heading-accent\)/s.test(guideReadingStyles)) {
-  failures.push("Major guide H2 headings must not use an orange marker.");
-}
-if (/h3[^{}]*\{[^}]*color:\s*var\(--guide-heading-accent\)/s.test(guideReadingStyles)) {
-  failures.push("Guide H3 headings must remain dark rather than use the heading accent.");
+for (const [name, styles] of activeGuideStyles) {
+  if (/var\(--cream\)|(?:border-left|border-inline-start)\s*:/.test(styles)) {
+    failures.push(`Rebuilt guide styling has returned to cream or decorative vertical lines: ${name}`);
+  }
 }
 
 if (!librarySource.includes('import publication from "../../data/guide-publication.json"')) {
