@@ -8,9 +8,9 @@ import { cleanLabel } from "./guide-icon";
 import styles from "./copilot-excel-page.module.css";
 
 const rows = [
-  { item: "Pens", units: 10, price: 2, formula: "=B2*C2", total: 20 },
-  { item: "Notebooks", units: 5, price: 6, formula: "=B3*C3", total: 30 },
-  { item: "Folders", units: 8, price: 3, formula: "=B4*C4", total: 24 },
+  { row: 2, item: "Pens", units: 10, price: 2, formula: "=B2*C2", total: 20 },
+  { row: 3, item: "Notebooks", units: 5, price: 6, formula: "=B3*C3", total: 30 },
+  { row: 4, item: "Folders", units: 8, price: 3, formula: "=B4*C4", total: 24 },
 ] as const;
 
 const checks = [
@@ -42,20 +42,20 @@ export function CopilotExcelPage({ guide }: { guide: GuidePage }) {
 
       <section className={styles.activity} aria-labelledby="excel-table-title">
         <div className={styles.sectionHead}><span>Practice workbook</span><h2 id="excel-table-title">Build this four-column sheet</h2></div>
-        <p>In Excel, enter these values in columns A–C. In column D, enter the formulas shown. Save an untouched original, then open a working copy.</p>
+        <p>In Excel, put Item, Units, Price and Total in row 1, across columns A–D. Enter the 3 rows below and type the shown formulas in column D. Save an untouched original, then open a working copy.</p>
         <div className={styles.stateSwitch} role="group" aria-label="Practice workbook view">
           <button type="button" aria-pressed={!showAfter} onClick={() => setShowAfter(false)}>Before Copilot</button>
           <button type="button" aria-pressed={showAfter} onClick={() => setShowAfter(true)}>Expected after</button>
         </div>
         <div className={styles.tableWrap}>
-          <table><caption className={styles.srOnly}>{showAfter ? "Expected workbook after changing Notebooks units" : "Original practice workbook"}</caption><thead><tr><th scope="col">Item <small>A</small></th><th scope="col">Units <small>B</small></th><th scope="col">Price <small>C</small></th><th scope="col">Total <small>D</small></th></tr></thead><tbody>{rows.map(row => {
+          <table><caption className={styles.srOnly}>{showAfter ? "Expected workbook after changing Notebooks units" : "Original practice workbook"}</caption><thead><tr><th scope="col">Row</th><th scope="col">Item <small>A</small></th><th scope="col">Units <small>B</small></th><th scope="col">Price <small>C</small></th><th scope="col">Total <small>D</small></th></tr></thead><tbody>{rows.map(row => {
             const changed = showAfter && row.item === "Notebooks";
-            return <tr key={row.item} className={changed ? styles.changed : undefined}><th scope="row">{row.item}</th><td>{changed ? <><strong>6</strong><small>was 5</small></> : row.units}</td><td>{row.price}</td><td><code>{row.formula}</code><small>shows {changed ? 36 : row.total}</small></td></tr>;
+            return <tr key={row.item} className={changed ? styles.changed : undefined}><th scope="row">{row.row}</th><td>{row.item}</td><td>{changed ? <><strong>6</strong><small>was 5</small></> : row.units}</td><td>{row.price}</td><td><code>{row.formula}</code><small>shows {changed ? 36 : row.total}</small></td></tr>;
           })}</tbody></table>
         </div>
         <div className={styles.mobileRows}>{rows.map(row => {
           const changed = showAfter && row.item === "Notebooks";
-          return <article key={row.item} className={changed ? styles.changed : undefined}><h3>{row.item}</h3><dl><div><dt>Units · B</dt><dd>{changed ? <><strong>6</strong> <small>was 5</small></> : row.units}</dd></div><div><dt>Price · C</dt><dd>{row.price}</dd></div><div><dt>Total · D</dt><dd><code>{row.formula}</code><small>shows {changed ? 36 : row.total}</small></dd></div></dl></article>;
+          return <article key={row.item} className={changed ? styles.changed : undefined}><h3>Row {row.row} · {row.item} <small>A{row.row}</small></h3><dl><div><dt>Units · B{row.row}</dt><dd>{changed ? <><strong>6</strong> <small>was 5</small></> : row.units}</dd></div><div><dt>Price · C{row.row}</dt><dd>{row.price}</dd></div><div><dt>Total · D{row.row}</dt><dd><code>{row.formula}</code><small>shows {changed ? 36 : row.total}</small></dd></div></dl></article>;
         })}</div>
         <p className={styles.sheetNote} aria-live="polite">{showAfter ? "Only B3 changed. D3 still uses =B3*C3, so its displayed total becomes 36." : "In the original, B3 is 5 and D3 shows 30."}</p>
       </section>
