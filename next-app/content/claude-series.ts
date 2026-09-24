@@ -32,7 +32,9 @@ export const claudeGuide = {
         "outcome": "Find who needs to do what.",
         "example": "Your team agreed to run a pilot, but left some details open.",
         "prompt": "Turn these notes into decisions, an action table and open questions. Use only the notes. For each action, show the owner and deadline. Write \"Not agreed\" for missing details. Keep suggestions separate from decisions. Draft only; don't take actions in another app.\n\nNotes: We agreed to run a pilot. Programme lead will draft the invitation by 8 October. Operations lead will check room availability; no deadline agreed. Budget approval is pending. A launch on 22 October was suggested, not confirmed.",
-        "result": "Look for the invitation assigned to the programme lead for 8 October; the room-check deadline marked “Not agreed”; the launch date still unconfirmed."
+        "result": "Look for the invitation assigned to the programme lead for 8 October; the room-check deadline marked “Not agreed”; the launch date still unconfirmed.",
+        "wrongLine": "The launch is confirmed for 22 October.",
+        "correctionFact": "A launch on 22 October was suggested, not confirmed."
       },
       {
         "id": "document",
@@ -40,7 +42,9 @@ export const claudeGuide = {
         "outcome": "Find the answer and the words supporting it.",
         "example": "You need to know whether a training recording is included.",
         "prompt": "Answer my question using only the source. Quote the words supporting your answer and flag anything unresolved. Keep it under 100 words. If the source doesn't answer, say so.\n\nQuestion: Is a recording included?\nSource: The training includes 2 live sessions. A recording may be offered later, subject to speaker approval. Pricing has not been agreed.",
-        "result": "A recording isn’t confirmed. The source says “may be offered later, subject to speaker approval.”"
+        "result": "A recording isn’t confirmed. The source says “may be offered later, subject to speaker approval.”",
+        "wrongLine": "A recording is included.",
+        "correctionFact": "The source says a recording may be offered later, subject to speaker approval."
       },
       {
         "id": "email",
@@ -48,10 +52,12 @@ export const claudeGuide = {
         "outcome": "Turn rough points into a short message.",
         "example": "You need a supplier’s delivery date before you can plan an event.",
         "prompt": "Write a warm, direct email under 80 words, with a subject line. Use these points only. Don't invent names or commitments. Draft only; don't send.\n\nPoints: Ask the supplier to confirm when the display stands will arrive. Our event is on 12 October. We need delivery by 10 October. Ask them to flag any risk of delay.",
-        "result": "Could you confirm when the display stands will arrive? We need them by 10 October for our event on 12 October. Please let us know if there’s any risk of delay."
+        "result": "Could you confirm when the display stands will arrive? We need them by 10 October for our event on 12 October. Please let us know if there’s any risk of delay.",
+        "wrongLine": "Thank you for confirming delivery on 10 October.",
+        "correctionFact": "The supplier has not confirmed delivery. We need to ask if the stands can arrive by 10 October."
       }
     ],
-    "correction": "Correct this line: [paste it].\nUse this information: [paste the correction].\nKeep the rest unchanged. Show any remaining gap instead of guessing."
+    "correction": "Correct this line: [paste it]\nUse this information: [paste the correction]\nKeep the rest unchanged. Show any remaining gap instead of guessing."
   },
   "conclusion": {
     "heading": "Keep what worked",

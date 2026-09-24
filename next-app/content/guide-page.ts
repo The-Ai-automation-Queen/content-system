@@ -93,7 +93,7 @@ export type GuidePage = {
     paragraphs: readonly [string, ...string[]];
   };
   sections: readonly GuideSection[];
-  series?: { part: 1; tasks: readonly { id: string; title: string; outcome: string; example: string; prompt: string; result: string }[]; correction: string } | { part: 2; instructions: string; exercise: string };
+  series?: { part: 1; tasks: readonly { id: string; title: string; outcome: string; example: string; prompt: string; result: string; wrongLine: string; correctionFact: string }[]; correction: string } | { part: 2; instructions: string; exercise: string };
   workshopInvitation?: { title: string; body: string; href?: string; label?: string };
   tutorial?: readonly GuideSection[];
   gateTeaser?: { heading: string; body: string };
