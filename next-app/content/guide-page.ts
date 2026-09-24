@@ -627,7 +627,7 @@ export const whatNotToShareWithAiGuide = {
     { label: "Anthropic: model improvement privacy settings", url: "https://privacy.claude.com/en/articles/12109829-how-do-i-change-my-model-improvement-privacy-settings" },
     { label: "Google: Gemini Apps Activity", url: "https://support.google.com/gemini/answer/13278892" },
     { label: "Microsoft: Copilot privacy controls", url: "https://support.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-privacy-controls" },
-    { label: "Microsoft: Microsoft 365 Copilot privacy", url: "https://learn.microsoft.com/en-us/deployoffice/privacy/microsoft-365-copilot" },
+    { label: "Microsoft: Microsoft 365 Copilot privacy", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy" },
     { label: "xAI: Grok consumer privacy controls", url: "https://x.ai/legal/faq" },
     { label: "Meta: Incognito Chat", url: "https://about.fb.com/news/2026/05/incognito-chat-whatsapp-meta-ai/" },
     { label: "DeepSeek Privacy Policy", url: "https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html" },
@@ -675,7 +675,7 @@ export const whatNotToShareWithAiGuide = {
         },
         {
           title: "Gemini",
-          body: "On the website, go to **Menu → Settings & help → Activity → Turn off**. On mobile, go to **Menu → Profile → Gemini Apps Activity → Turn off**. You can also start a Temporary Chat. Google may still keep temporary conversations for up to 72 hours to operate and protect the service.",
+          body: "On the website, go to **Settings & help → Activity**. Under **Keep Activity**, choose **Turn off**. You can also start a Temporary Chat. Google may still keep temporary conversations for up to 72 hours to operate and protect the service. Work or school accounts may be controlled by an administrator.",
           links: [{ label: "Official instructions", href: "https://support.google.com/gemini/answer/13278892" }],
         },
         {
@@ -683,7 +683,7 @@ export const whatNotToShareWithAiGuide = {
           body: "With a personal account, go to **Profile → Profile name → Privacy** and switch off **Training on conversation activity** and **Training on voice conversations**. Microsoft 365 Copilot work prompts and responses are not used to train the underlying models. Still use only the account and information your employer has approved.",
           links: [
             { label: "Personal Copilot instructions", href: "https://support.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-privacy-controls" },
-            { label: "Microsoft 365 information", href: "https://learn.microsoft.com/en-us/deployoffice/privacy/microsoft-365-copilot" },
+            { label: "Microsoft 365 information", href: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy" },
           ],
         },
         {
