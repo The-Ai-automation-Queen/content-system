@@ -553,8 +553,8 @@ export const kimiValueGuide = makeGuide({
   tryNow: {
     heading: "Write the decision from evidence",
     introduction: "Complete the fields after running the same task in both tools.",
-    prompt: `Job tested: [ONE REPEATED JOB]\nUsable result completed: [YES / NO]\nCorrections needed: [NUMBER AND TYPE]\nChecking time: [MINUTES]\nCredits consumed in the shared pool: [WHAT USAGE DETAILS SHOW]\nCurrent price shown to me: [PRICE AND BILLING PERIOD]\nExtra usage cost or spending limit, if shown: [COST OR NOT SHOWN]\nFrequency I need: [FREQUENCY]\n\nBased only on this information, write a 3-sentence Pay, Retest or Skip decision.`,
-    check: "You are done when the decision names the job, usable result, checking time, visible limit and current price.",
+    prompt: `Job tested: [ONE REPEATED JOB]\nInput used in both tools: [SAME PUBLIC OR INVENTED INPUT]\n\nKIMI RESULT\nFinished the job: [YES / NO]\nCorrections needed: [NUMBER AND TYPE]\nTime spent checking and correcting: [MINUTES]\nCredits consumed in the shared pool: [WHAT USAGE DETAILS SHOW]\n\nCURRENT TOOL RESULT\nTool used: [NAME]\nFinished the same job: [YES / NO]\nCorrections needed: [NUMBER AND TYPE]\nTime spent checking and correcting: [MINUTES]\n\nPAYMENT FACTS\nCurrent Kimi price shown to me: [PRICE AND BILLING PERIOD]\nIncluded credits and reset period: [WHAT THE PLAN SHOWS OR NOT CLEAR]\nExtra usage cost or spending limit: [COST, LIMIT OR NOT SHOWN]\nHow often I need this job: [FREQUENCY]\n\nCompare the two completed results and the checking effort. Based only on the facts above, write a 3-sentence Pay, Retest or Skip decision. Say Retest if the current price, usable credit allowance or repeatability is unclear. Do not invent a missing figure.`,
+    check: "You are done when the decision compares both results, checking time, visible limit and current price for the same job.",
   },
   finish: "You can now decide from completed work rather than a product comparison or feature list.",
   related: [
