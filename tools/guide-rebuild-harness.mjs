@@ -132,6 +132,7 @@ for (const { slug, lumailTag } of approved) {
     if (fs.existsSync(stylePath)) {
       const css = fs.readFileSync(stylePath, "utf8");
       if (/var\(--cream\)|#faf7f2\b/i.test(css)) problems.push("Cream styling remains in rebuilt page");
+      if (/border-(?:left|inline-start)\s*:\s*(?:[2-9]|\d{2,})px\b/i.test(css)) problems.push("Decorative left-edge accent remains in rebuilt page");
       if (/white-space:\s*pre-line|\.page\s+p\s+strong\s*\{\s*display:\s*block/i.test(css)) problems.push("Forced prose line breaks remain");
       if (slug !== plan.reference && !/#ff5733|--guide-heading-accent/i.test(css)) problems.push("Orange section-heading accent missing");
     }
