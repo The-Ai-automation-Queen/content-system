@@ -412,6 +412,7 @@ export const reviewGrokSuggestionsGuide = makeGuide({
 
 export const grokProfessionalWritingGuide = makeGuide({
   slug: "get-better-professional-writing-from-grok",
+  promptMode: "as-written",
   title: "Why is Grok’s professional writing too thin?",
   promise: "Give Grok the reader, decision, evidence and structure, then decide whether the improved draft is worth keeping.",
   coverAlt: "The Blue Princess rebuilding a thin paper draft around four solid evidence blocks",
