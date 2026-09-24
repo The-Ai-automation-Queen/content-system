@@ -13,6 +13,11 @@ const rows = [
   { row: 4, item: "Folders", units: 8, price: 3, formula: "=B4*C4", total: 24 },
 ] as const;
 
+const starterSheet = [
+  ["Item", "Units", "Price", "Total"].join("\t"),
+  ...rows.map(({ item, units, price, formula }) => [item, units, price, formula].join("\t")),
+].join("\n");
+
 const checks = [
   "Only B3 changed, from 5 to 6.",
   "D3 still contains =B3*C3 and now shows 36.",
@@ -23,12 +28,19 @@ export function CopilotExcelPage({ guide }: { guide: GuidePage }) {
   const [showAfter, setShowAfter] = useState(false);
   const [checked, setChecked] = useState<boolean[]>([false, false, false]);
   const [copied, setCopied] = useState(false);
+  const [sheetCopied, setSheetCopied] = useState(false);
   if (!guide.tryNow) return null;
 
   async function copyPrompt() {
     await navigator.clipboard.writeText(guide.tryNow!.prompt);
     setCopied(true);
     window.setTimeout(() => setCopied(false), 2000);
+  }
+
+  async function copySheet() {
+    await navigator.clipboard.writeText(starterSheet);
+    setSheetCopied(true);
+    window.setTimeout(() => setSheetCopied(false), 2000);
   }
 
   return <main className={styles.page}>
@@ -42,7 +54,8 @@ export function CopilotExcelPage({ guide }: { guide: GuidePage }) {
 
       <section className={styles.activity} aria-labelledby="excel-table-title">
         <div className={styles.sectionHead}><span>Practice workbook</span><h2 id="excel-table-title">Build this four-column sheet</h2></div>
-        <p>In Excel, put Item, Units, Price and Total in row 1, across columns A–D. Enter the 3 rows below and type the shown formulas in column D. Save an untouched original, then open a working copy.</p>
+        <p>Copy the starter sheet into cell A1 in Excel, or enter the rows yourself. Column D contains formulas. Save an untouched original, then open a working copy.</p>
+        <button className={styles.copySheet} type="button" onClick={copySheet}>{sheetCopied ? "Copied for Excel" : "Copy starter sheet for Excel"}</button>
         <div className={styles.stateSwitch} role="group" aria-label="Practice workbook view">
           <button type="button" aria-pressed={!showAfter} onClick={() => setShowAfter(false)}>Before Copilot</button>
           <button type="button" aria-pressed={showAfter} onClick={() => setShowAfter(true)}>Expected after</button>
@@ -50,12 +63,12 @@ export function CopilotExcelPage({ guide }: { guide: GuidePage }) {
         <div className={styles.tableWrap}>
           <table><caption className={styles.srOnly}>{showAfter ? "Expected workbook after changing Notebooks units" : "Original practice workbook"}</caption><thead><tr><th scope="col">Item <small>A1</small></th><th scope="col">Units <small>B1</small></th><th scope="col">Price <small>C1</small></th><th scope="col">Total <small>D1</small></th></tr></thead><tbody>{rows.map(row => {
             const changed = showAfter && row.item === "Notebooks";
-            return <tr key={row.item}><th scope="row">{row.item}<small>A{row.row}</small></th><td className={changed ? styles.editedCell : undefined}>{changed ? <><strong>6</strong><small>B{row.row} · was 5</small></> : <>{row.units}<small>B{row.row}</small></>}</td><td>{row.price}<small>C{row.row}</small></td><td><strong>{changed ? 36 : row.total}</strong><small>D{row.row} · <code>{row.formula}</code></small></td></tr>;
+            return <tr key={row.item}><th scope="row">{row.item}<small>A{row.row}</small></th><td className={changed ? styles.editedCell : undefined}>{changed ? <><strong>6</strong><small>B{row.row} · edited from 5</small></> : <>{row.units}<small>B{row.row}</small></>}</td><td>{row.price}<small>C{row.row}</small></td><td><strong>{changed ? 36 : row.total}</strong><small>D{row.row} · <code>{row.formula}</code>{changed ? " · recalculated from 30" : ""}</small></td></tr>;
           })}</tbody></table>
         </div>
         <div className={styles.mobileRows}>{rows.map(row => {
           const changed = showAfter && row.item === "Notebooks";
-          return <article key={row.item}><h3>Row {row.row} · {row.item} <small>A{row.row}</small></h3><dl><div className={changed ? styles.editedCell : undefined}><dt>Units · B{row.row}</dt><dd>{changed ? <><strong>6</strong> <small>was 5</small></> : row.units}</dd></div><div><dt>Price · C{row.row}</dt><dd>{row.price}</dd></div><div><dt>Total · D{row.row}</dt><dd><strong>{changed ? 36 : row.total}</strong><small><code>{row.formula}</code></small></dd></div></dl></article>;
+          return <article key={row.item}><h3>Row {row.row} · {row.item} <small>A{row.row}</small></h3><dl><div className={changed ? styles.editedCell : undefined}><dt>Units · B{row.row}</dt><dd>{changed ? <><strong>6</strong> <small>edited from 5</small></> : row.units}</dd></div><div><dt>Price · C{row.row}</dt><dd>{row.price}</dd></div><div><dt>Total · D{row.row}</dt><dd><strong>{changed ? 36 : row.total}</strong><small><code>{row.formula}</code>{changed ? " · recalculated from 30" : ""}</small></dd></div></dl></article>;
         })}</div>
         <p className={styles.sheetNote} aria-live="polite">{showAfter ? "Only B3 changed. D3 still uses =B3*C3, so its displayed total becomes 36." : "In the original, B3 is 5 and D3 shows 30."}</p>
       </section>
