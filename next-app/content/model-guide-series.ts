@@ -319,6 +319,7 @@ export const geminiTasksGuide = makeGuide({
 
 export const copilotExcelGuide = makeGuide({
   slug: "check-copilot-excel-edits",
+  promptMode: "as-written",
   title: "Did Copilot change only the Excel cells you asked it to change?",
   promise: "Make one small change in a practice workbook and check every cell, formula and total Copilot touched.",
   coverAlt: "The Blue Princess inspecting one changed cell through a brass magnifier while guarding the rest of a spreadsheet",
@@ -333,7 +334,7 @@ export const copilotExcelGuide = makeGuide({
       heading: "Build the practice workbook",
       introduction: "Save one untouched original and one working copy.",
       blocks: [
-        { kind: "table", rows: [["Item", "Units × Price"], ["Pens", "10 × 2 = 20"], ["Notebooks", "5 × 6 = 30"], ["Folders", "8 × 3 = 24"]] },
+        { kind: "table", rows: [["Item", "Units", "Price", "Total"], ["Pens", "10", "2", "=B2*C2 → 20"], ["Notebooks", "5", "6", "=B3*C3 → 30"], ["Folders", "8", "3", "=B4*C4 → 24"]] },
         { kind: "note", icon: "check", text: "Use formulas in the Total column: =B2*C2, =B3*C3 and =B4*C4." },
       ],
     },
@@ -352,12 +353,12 @@ export const copilotExcelGuide = makeGuide({
   tryNow: {
     heading: "Ask for one exact change",
     introduction: "Send this in Copilot in Excel while the working copy is open.",
-    prompt: `Change only the Units value for Notebooks from 5 to 6.\n\nDo not change any other number, label or formula. Before I accept the edit, tell me which cell you changed.`,
+    prompt: `In the open working copy of my practice workbook, find the row where Item is Notebooks. The columns are Item (A), Units (B), Price (C) and Total (D). In that row, Units is 5, Price is 6 and Total uses the formula =B3*C3.\n\nChange only the Notebooks Units cell, B3, from 5 to 6. Keep the formula =B3*C3 in D3. Do not change the Pens or Folders rows, any labels, prices or other formulas.\n\nAfter the edit, tell me the cell you changed and its old and new values. Tell me the three displayed totals in row order. If you cannot make the edit, say so and do not claim the workbook changed.`,
     check: "You are done when only the requested cell changed, the formula still works and all three totals are correct.",
   },
   finish: "You now have a repeatable way to check a small Copilot edit before trusting it with a larger workbook.",
   related: [
-    existingGuide("copilot", "Should you use Copilot?", "Choose the Microsoft Copilot that fits your account and work.", "/images/guides/copilot.webp"),
+    existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Check when a spreadsheet task belongs in Copilot.", "/images/guides/which-ai-tool-for-what.webp"),
     existingGuide("what-is-a-prompt", "Write a prompt that gets a useful answer", "Give the tool a clearer job and a result you can check.", "/images/guides/what-is-a-prompt.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Protect workbook data before using connected tools.", "/images/guides/learn-master.webp"),
   ],
@@ -365,9 +366,10 @@ export const copilotExcelGuide = makeGuide({
 
 export const reviewGrokSuggestionsGuide = makeGuide({
   slug: "review-grok-suggestions",
+  promptMode: "as-written",
   title: "Did Grok catch an error or rewrite your work into something else?",
   promise: "Sort every suggestion into a factual correction, an optional improvement or a change you did not ask for.",
-  coverAlt: "The Blue Princess sorting marked pages into correction, option and reject trays",
+  coverAlt: "The small blue robot princess sorting marked pages into correction, option and reject trays",
   seoDescription: "Review Grok writing suggestions without accepting factual changes or broad rewrites you did not request.",
   sources: [{ label: "xAI: Grok consumer FAQ", url: "https://x.ai/legal/faq" }],
   answer: [

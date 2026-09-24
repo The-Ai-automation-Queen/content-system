@@ -17,7 +17,7 @@ export type WalkthroughBlock =
   | { kind: "note"; text: string; icon: string }
   | { kind: "code"; text: string; label: string }
   | { kind: "list"; items: readonly string[] }
-  | { kind: "table"; rows: readonly (readonly [string, string])[] };
+  | { kind: "table"; rows: readonly (readonly string[])[] };
 
 export type GuideSection =
   | { kind: "walkthrough"; heading: string; introduction: string; blocks: readonly WalkthroughBlock[] }

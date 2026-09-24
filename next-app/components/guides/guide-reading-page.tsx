@@ -29,7 +29,7 @@ function Section({ section }: { section: GuideSection }) {
           if (block.kind === "code") return <CopyPrompt key={index} label={block.label} prompt={block.text} />;
           if (block.kind === "note") return <aside className={styles.sourceNote} key={index}><span aria-hidden="true">{block.icon}</span><p>{block.text}</p></aside>;
           if (block.kind === "list") return <ol className={styles.sourceSteps} key={index}>{block.items.map((item) => <li key={item}>{item}</li>)}</ol>;
-          if (block.kind === "table") return <table className={styles.sourceTable} key={index}><thead><tr><th scope="col">Error</th><th scope="col">Fix</th></tr></thead><tbody>{block.rows.map(([error, fix]) => <tr key={error}><th scope="row">{error}</th><td>{fix}</td></tr>)}</tbody></table>;
+          if (block.kind === "table") return <table className={styles.sourceTable} key={index}><thead><tr>{block.rows[0]?.map((heading) => <th scope="col" key={heading}>{heading}</th>)}</tr></thead><tbody>{block.rows.slice(1).map((row) => <tr key={row[0]}>{row.map((cell, cellIndex) => cellIndex === 0 ? <th scope="row" key={cellIndex}>{cell}</th> : <td key={cellIndex}>{cell}</td>)}</tr>)}</tbody></table>;
           return null;
         })}
       </section>
