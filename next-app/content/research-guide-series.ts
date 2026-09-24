@@ -144,6 +144,7 @@ After the table, propose 3 next research questions. Do not recommend a product d
 
 export const teachClaudeWorkflowGuide = makeGuide({
   slug: "teach-claude-a-repeatable-workflow",
+  promptMode: "as-written",
   title: "How do you teach Claude a job you repeat every week?",
   promise: "Turn one weekly task into a saved instruction with a clear input, output, stop rule and quality check.",
   coverAlt: "The Blue Princess teaching a clockwork apprentice to move one weekly task through four precise stations",

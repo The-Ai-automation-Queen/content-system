@@ -29,6 +29,7 @@ import { AiBrowserPage } from "@/components/guides/ai-browser-page";
 import { AiSkillsPage } from "@/components/guides/ai-skills-page";
 import { AiSearchPage } from "@/components/guides/ai-search-page";
 import { CustomerResearchPage } from "@/components/guides/customer-research-page";
+import { ClaudeWorkflowPage } from "@/components/guides/claude-workflow-page";
 import { GuideAccessBoundary } from "@/components/guides/guide-access-boundary";
 import { getGuidePage, guidePages } from "@/content/guide-page";
 import { legacyGuideSlugs } from "@/content/legacy-guide-slugs";
@@ -88,6 +89,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "ai-skills-worth-learning-for-work") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Choose one skill to practise on a task you already do at work. Enter your email to open the guide." variant="entry"><AiSkillsPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "show-up-in-ai-search") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Test what AI search can verify about your business and find one public fact to improve. Enter your email to open the guide." variant="entry"><AiSearchPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "chatgpt-customer-research-with-evidence") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Group customer research into themes you can trace back to the original notes. Enter your email to open the guide." variant="entry"><CustomerResearchPage guide={guide} /></GuideAccessBoundary>;
+  if (slug === "teach-claude-a-repeatable-workflow") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Test a repeatable Claude instruction on two different weeks, then save the version that works. Enter your email to open the guide." variant="entry"><ClaudeWorkflowPage guide={guide} /></GuideAccessBoundary>;
   if (legacyGuideSlugs.has(slug)) return <GuideReadingPage guide={guide} />;
   throw new Error(`Guide ${slug} needs an approved interactive Next.js composition before it can be built.`);
 }

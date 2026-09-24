@@ -17,7 +17,6 @@ export const legacyGuideSlugs = new Set([
   "mistral-multilingual-research",
   "protect-a-long-deepseek-project",
   "switch-from-chatgpt-to-mistral",
-  "teach-claude-a-repeatable-workflow",
   "test-deepseek-v4-document-work",
   "test-grok-repeated-image-edits",
   "test-manus-without-burning-credits",

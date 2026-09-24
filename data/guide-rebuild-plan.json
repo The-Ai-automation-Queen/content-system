@@ -37,7 +37,7 @@
     { "slug": "show-up-in-ai-search", "pattern": "audit", "status": "review", "component": "ai-search-page" },
     { "slug": "chatgpt-screen-recording-to-process-guide", "pattern": "walkthrough", "status": "pending" },
     { "slug": "chatgpt-customer-research-with-evidence", "pattern": "audit", "status": "review", "component": "customer-research-page" },
-    { "slug": "teach-claude-a-repeatable-workflow", "pattern": "walkthrough", "status": "pending" },
+    { "slug": "teach-claude-a-repeatable-workflow", "pattern": "walkthrough", "status": "review", "component": "claude-workflow-page" },
     { "slug": "fix-gemini-workspace-action", "pattern": "walkthrough", "status": "pending" },
     { "slug": "what-can-copilot-see-at-work", "pattern": "audit", "status": "pending" },
     { "slug": "test-meta-muse-money-saving-task", "pattern": "decision", "status": "pending" },
