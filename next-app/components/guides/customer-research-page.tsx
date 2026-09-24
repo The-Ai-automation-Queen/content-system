@@ -15,8 +15,8 @@ const readyChecks = [
 ] as const;
 
 const resultChecks = [
-  "Every main theme has at least two different participant IDs.",
-  "I can find every short extract in the original notes.",
+  "Every main theme has at least two participant IDs and one extract from each person.",
+  "I can find every short extract under the right participant ID in the original notes.",
   "Disagreement and one-person signals stay visible.",
   "The answer does not claim this sample represents all customers.",
 ] as const;

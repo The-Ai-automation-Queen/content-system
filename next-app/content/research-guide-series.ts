@@ -104,7 +104,7 @@ export const chatgptCustomerResearchGuide = makeGuide({
         ["Participant IDs", "Shows how many different people support the theme."],
         ["Short source extracts", "Lets you verify the wording in the original notes."],
         ["Contradictions", "Stops a neat summary from hiding disagreement."],
-        ["Confidence", "Separates repeated evidence from an early signal."],
+        ["Evidence pattern", "Separates repeated evidence, disagreement and one-person signals."],
       ],
     },
   ],
@@ -119,13 +119,13 @@ Create a table with these columns:
 - Theme
 - What people are trying to achieve
 - Participant IDs supporting it
-- 2 short supporting extracts
+- 2 short supporting extracts, each from a different participant ID
 - Contradicting or different evidence
-- Confidence: strong, mixed or early signal
+- Evidence pattern: repeated or mixed
 - What we still need to ask
 
 Rules
-1. A theme needs support from at least 2 different participant IDs. Put a single response under “Early signals”, not the main table.
+1. A theme needs support from at least 2 different participant IDs. Show an extract from each of those people. Put one-person findings under “Early signals” after the main table, with the participant ID and extract.
 2. Keep complaints, requests and suggested solutions separate.
 3. Do not claim that the sample represents all customers.
 4. Do not merge responses that describe different problems merely because they use similar words.
