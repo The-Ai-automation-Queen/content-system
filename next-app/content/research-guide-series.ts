@@ -659,8 +659,8 @@ End with 3 conclusions supported by the table and 3 questions that still need re
   },
   finish: "You can now use Mistral to widen a search across languages without hiding where each claim came from.",
   related: [
-    promptGuide("switch-from-chatgpt-to-mistral", "Should you switch from ChatGPT to Mistral?", "Compare both tools on the same checked work task."),
-    promptGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Measure whether the feature improves work you repeat."),
+    comingNextGuide("switch-from-chatgpt-to-mistral", "Should you switch from ChatGPT to Mistral?", "Compare both tools on the same checked work task."),
+    comingNextGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Measure whether the feature improves work you repeat."),
     promptGuide("verify-grok-current-research", "How do you verify current research from Grok?", "Use another evidence-first research workflow."),
   ],
 });
