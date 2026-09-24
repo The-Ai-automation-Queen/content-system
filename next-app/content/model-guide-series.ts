@@ -283,7 +283,7 @@ export const geminiTasksGuide = makeGuide({
   promise: "Test whether Gemini can preserve the list that separates your projects before you rely on it to organise real tasks.",
   coverAlt: "The small blue robot princess sorting three tasks into two separate trays",
   seoDescription: "Test whether Gemini can retrieve Google Tasks and identify the project list for each task.",
-  sources: [{ label: "Google: Use Google Tasks with Gemini Apps", url: "https://support.google.com/gemini/answer/15330265" }],
+  sources: [{ label: "Google: Capture tasks and reminders with Gemini Apps", url: "https://support.google.com/gemini/answer/15230285?co=GENIE.Platform%3DDesktop&hl=en" }],
   answer: [
     "**Gemini may find a task without exposing every detail you use to organise it.** Test the list name directly with harmless tasks before you depend on it for project separation.",
   ],
