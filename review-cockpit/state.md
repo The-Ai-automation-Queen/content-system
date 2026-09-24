@@ -7,9 +7,9 @@ digest run overwrites it.
 ## Telegram offset
 
 - Last `getUpdates` consumed offset: still none pending — checked again
-  on 23/09/2026 (operator-requested `digest` run, pre-digest sweep), queue
-  empty (`{"ok":true,"result":[]}`). No card replies, no unblocker replies,
-  no voice notes since the 14/09/2026 digest (21st consecutive empty sweep).
+  on 24/09/2026 (operator-requested `process` run), queue empty
+  (`{"ok":true,"result":[]}`). No card replies, no unblocker replies,
+  no voice notes since the 14/09/2026 digest (25th consecutive empty sweep).
 - Next `process` run should call `getUpdates` with no offset filter until a
   reply produces an `update_id` to anchor to.
 
@@ -274,6 +274,19 @@ digest run overwrites it.
   send itself is this run's output per skill step 3). Publishing stayed
   queue-only throughout (`security.md` §3.1, `CLAUDE.md`) — no post
   released, no Blotato queue touched.
+- 24/09/2026 (operator-requested `process` run, this run — first process
+  sweep of the day; today's 07:30 digest cron only did a git sync, no send,
+  per the pre-digest sweep entry above) — `getUpdates` (no offset, none
+  stored) returned empty (`{"ok":true,"result":[]}`). Nothing to route: no
+  card decisions, no unblocker replies, no voice notes — 25th consecutive
+  empty sweep since the 14/09/2026 digest. `unblocker/ledger.md` also
+  checked — no pending review-cockpit replies to route. Nothing applied to
+  the vault (still 37 READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED / 0
+  POSTED, matching this session's reality-check hook and `content-vault.md`
+  header counts), decisions-log.md unchanged. All 9 cards from the 24/09
+  digest (#1–#6, R1–R3) remain outstanding. Publishing stayed queue-only
+  throughout (`security.md` §3.1, `CLAUDE.md`) — no post released, no
+  Blotato queue touched. Confirmation sent to Telegram (message_id 1127).
 
 ## Last digest served — 24/09/2026 (run on operator request)
 
