@@ -105,15 +105,15 @@ export const makeChatgptAnswersShorterGuide = makeGuide({
       rows: [
         ["Be concise.", "Use 5 bullets, one sentence each."],
         ["Tell me what matters.", "Give me 3 questions, 2 decisions and one closing sentence."],
-        ["Do not ramble.", "No introduction, conclusion or offer to do more."],
+        ["Do not ramble.", "No introduction, repeated summary or offer to do more."],
       ],
     },
     {
       kind: "cards",
       heading: "Check the answer, not the tone",
       items: [
-        { title: "Count the parts", body: "There should be exactly **3 questions and 2 decisions**." },
-        { title: "Count the words", body: "The complete answer should stay below **90 words**." },
+        { title: "Count the parts", body: "There should be exactly **3 questions, 2 decisions and one closing sentence**." },
+        { title: "Count the words", body: "The complete answer should be **90 words or fewer**." },
         { title: "Find the action", body: "The closing sentence should be usable as written." },
         { title: "Remove extras", body: "Delete scene-setting, repetition and offers you did not request." },
       ],
@@ -122,7 +122,7 @@ export const makeChatgptAnswersShorterGuide = makeGuide({
   tryNow: {
     heading: "Try the difference",
     introduction: "Paste this complete example into a new ChatGPT conversation.",
-    prompt: `I need to prepare for a 20-minute project check-in.\n\nGive me:\n1. the 3 questions I should ask;\n2. the 2 decisions the meeting must produce;\n3. one sentence I can use to close the meeting.\n\nUse no introduction, no conclusion and no more than 90 words.`,
+    prompt: `I need to prepare for a 20-minute project check-in.\n\nGive me:\n1. the 3 questions I should ask;\n2. the 2 decisions the meeting must produce;\n3. one sentence I can use to close the meeting.\n\nUse no introduction, repeated summary or offer to do more. Stop after the closing sentence. Keep the whole answer to 90 words or fewer.`,
     check: "You are done when the answer fits the stated limit and contains every requested item.",
   },
   finish: "You now have a response rule you can reuse when an answer is longer than the job requires.",
