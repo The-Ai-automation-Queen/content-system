@@ -831,7 +831,7 @@ export const metaBusinessAgentGuide = makeGuide({
   seoDescription: "Test Meta Business Agent customer replies in WhatsApp Business before allowing a wider live rollout.",
   sources: [
     { label: "Meta: Be There for Every Customer With Meta Business Agent", url: "https://about.fb.com/news/2026/06/meta-business-agent/" },
-    { label: "WhatsApp Business help", url: "https://faq.whatsapp.com/" },
+    { label: "WhatsApp: How to set up Meta Business Agent", url: "https://faq.whatsapp.com/1153795669452207/?cms_platform=web" },
   ],
   answer: [
     "**Do not switch on automatic replies and hope for the best.** Prepare the correct answers first, test one practice chat and keep the agent paused if one reply is wrong or risky.",
