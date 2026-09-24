@@ -168,14 +168,14 @@ for (const [label, href] of [
   ['Workbooks', '/workbooks.html'],
   ['About', '/about.html'],
 ]) {
-  if (!guideHeader.includes(`href="${href}"`) || !guideHeader.includes(`>${label}<`)) {
+  if (!(guideHeader.includes(`href="${href}"`) || guideHeader.includes(`href="https://www.shiftandlead.com${href}"`)) || !guideHeader.includes(`>${label}<`)) {
     failures.push(`Guide header does not match the live shell: ${label} → ${href}`);
   }
 }
 if (/\bQuiz\b/i.test(guideHeader)) {
   failures.push('Stale Quiz navigation appears in the guide header');
 }
-if (!/href="\/workbooks\.html">Workbooks</i.test(guideLibrary)) {
+if (!/href="(?:https:\/\/www\.shiftandlead\.com)?\/workbooks\.html">Workbooks</i.test(guideLibrary)) {
   failures.push('Guide footer does not match the live shell: Workbooks is missing');
 }
 if (vercel.buildCommand !== 'cd .. && node tools/verify-publish-source.mjs') {

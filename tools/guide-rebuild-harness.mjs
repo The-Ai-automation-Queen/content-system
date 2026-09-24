@@ -42,7 +42,12 @@ const iconSource = read("next-app", "components", "guides", "guide-icon.tsx");
 if (iconSource.includes("m4 6 6 6-6 6 M13 18h7")) globalProblems.push("Old >_ prompt icon is still in the shared GuideIcon component.");
 
 const footerSource = read("next-app", "components", "chrome", "site-footer.tsx");
-const footerPaths = [...footerSource.matchAll(/\["[^"]+",\s*"(\/[^"]+)"\]/g)].map((match) => match[1]);
+const footerLinks = [...footerSource.matchAll(/\["[^"]+",\s*"([^"]+)"\]/g)].map((match) => match[1]);
+const footerPaths = footerLinks.map((href) => {
+  if (href.startsWith("/")) return href;
+  const url = new URL(href);
+  return url.hostname === "www.shiftandlead.com" ? url.pathname : href;
+});
 if (footerPaths.length !== 8 || new Set(footerPaths).size !== footerPaths.length) {
   globalProblems.push(`Expected 8 unique footer links; found ${footerPaths.length}.`);
 }

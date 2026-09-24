@@ -173,7 +173,7 @@ const expectedNav = [
 ];
 
 for (const [label, href] of expectedNav) {
-  if (!headerSource.includes(`"${label}", "${href}"`) && !headerSource.includes(`href="${href}">${label}`)) {
+  if (!headerSource.includes(`"${label}", "${href}"`) && !headerSource.includes(`href="${href}">${label}`) && !headerSource.includes(`"${label}", "https://www.shiftandlead.com${href}"`)) {
     failures.push(`Guide header is missing ${label} → ${href}`);
   }
 }
@@ -189,7 +189,7 @@ if (!/\.site-header nav\s*\{[^}]*font:\s*400\s+12px/.test(globalStyles)) {
 if (/\bQuiz\b/.test(headerSource) || /\bQuiz\b/.test(footerSource)) {
   failures.push("The stale Quiz link has returned to the guide shell.");
 }
-if (!footerSource.includes('["Workbooks", "/workbooks.html"]')) {
+if (!footerSource.includes('["Workbooks", "/workbooks.html"]') && !footerSource.includes('["Workbooks", "https://www.shiftandlead.com/workbooks.html"]')) {
   failures.push("The guide footer is missing Workbooks.");
 }
 if (!guidesIndex.includes('<link rel="canonical" href="https://www.shiftandlead.com/guides/"')) {
