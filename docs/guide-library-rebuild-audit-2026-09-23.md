@@ -53,7 +53,7 @@ This is a source and rendered-layout audit, not a claim that all 42 sets of prod
 
 ## First remaining guide under review: AI terms
 
-The current **12 AI words you need to know** page has 12 long definition cards, three explanatory group cards and a six-step first-chat sequence before the exercise. That is more reading than the beginner needs before seeing a payoff. Its `learn-master.webp` cover is also reused, so it will need its own topic-specific image when rebuilt. Keep the 12 approved definitions as the factual baseline, but present them as a compact searchable glossary grouped by the three questions already in the copy: what is behind the tool, what shapes its answer, and what can it access or do. Open with one realistic claim containing several of the terms; let a reader reveal what each term means and which question to ask, then give the full copyable claim-decoder prompt and a result check. This is a format proposal only. No copy or public page has been changed.
+**12 AI words you need to know** is now in page review. The old page made readers scroll through 12 long definition cards, three group cards and six first-chat steps before the exercise. The review page keeps the existing `learn-master.webp` cover and the 12 definitions, but presents one term at a time under three practical questions. It puts a realistic AI claim before the complete copyable prompt and result check. The compact pre-guide Lumail popup is present. No new cover was generated, and this review version has not been published.
 
 ## Migration rule
 

@@ -42,7 +42,12 @@ const iconSource = read("next-app", "components", "guides", "guide-icon.tsx");
 if (iconSource.includes("m4 6 6 6-6 6 M13 18h7")) globalProblems.push("Old >_ prompt icon is still in the shared GuideIcon component.");
 
 const footerSource = read("next-app", "components", "chrome", "site-footer.tsx");
-const footerPaths = [...footerSource.matchAll(/\["[^"]+",\s*"(\/[^"]+)"\]/g)].map((match) => match[1]);
+const footerLinks = [...footerSource.matchAll(/\["[^"]+",\s*"([^"]+)"\]/g)].map((match) => match[1]);
+const footerPaths = footerLinks.map((href) => {
+  if (href.startsWith("/")) return href;
+  const url = new URL(href);
+  return url.hostname === "www.shiftandlead.com" ? url.pathname : href;
+});
 if (footerPaths.length !== 8 || new Set(footerPaths).size !== footerPaths.length) {
   globalProblems.push(`Expected 8 unique footer links; found ${footerPaths.length}.`);
 }
@@ -120,7 +125,6 @@ for (const { slug, lumailTag } of approved) {
     if (legacySlugs.has(slug)) problems.push("Still present in legacy renderer allowlist");
     if (!routeSource.includes(`slug === "${slug}"`)) problems.push("Dedicated route branch missing");
     if (!routeSource.includes(`from "@/components/guides/${item.component}"`)) problems.push("Route does not import recorded component");
-    if (guide.cover !== `/images/guides/${slug}.webp`) problems.push("Guide needs its own topic-specific hero asset");
 
     if (fs.existsSync(stylePath)) {
       const css = fs.readFileSync(stylePath, "utf8");

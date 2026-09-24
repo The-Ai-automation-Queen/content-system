@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const columns = [
-  { title: "Explore", links: [["Guides", "/guides/"], ["Workbooks", "/workbooks.html"], ["Where AI Fits", "/ai-opportunity-map.html"]] },
-  { title: "About", links: [["About Fatiha", "/about.html"]] },
-  { title: "Legal", links: [["Privacy", "/privacy.html"], ["Terms", "/terms.html"], ["Refunds", "/refund-policy.html"], ["Licensing", "/licensing.html"]] },
+  { title: "Explore", links: [["Guides", "/guides/"], ["Workbooks", "https://www.shiftandlead.com/workbooks.html"], ["Where AI Fits", "https://www.shiftandlead.com/ai-opportunity-map.html"]] },
+  { title: "About", links: [["About Fatiha", "https://www.shiftandlead.com/about.html"]] },
+  { title: "Legal", links: [["Privacy", "https://www.shiftandlead.com/privacy.html"], ["Terms", "https://www.shiftandlead.com/terms.html"], ["Refunds", "https://www.shiftandlead.com/refund-policy.html"], ["Licensing", "https://www.shiftandlead.com/licensing.html"]] },
 ] as const;
 
 export function SiteFooter() {

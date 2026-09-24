@@ -277,19 +277,19 @@ export const aiJargonGuidePage = {
       items: [
         {
           title: "AI model",
-          body: "The app is what you open. The **AI model** is one of the parts doing the work behind it. A product can use one or more models. **Why it matters:** A newer model may be more capable, but its name alone does not prove the product is useful for your work.",
+          body: "In ChatGPT, you open the app and type a message. An **AI model** behind the app produces the reply.",
         },
         {
           title: "Generative AI",
-          body: "AI that creates new **text, images, audio, video or code** from instructions and input. **Why it matters:** The result may look convincing without being accurate, original or safe to use.",
+          body: "Ask ChatGPT to turn rough notes into a first draft. Creating that new text is **generative AI** at work.",
         },
         {
           title: "LLM",
-          body: "Short for **large language model**. It is a type of AI model built to work with language, such as writing, summarising, translating, classifying and answering questions. **Why it matters:** Polished language can still contain a wrong claim.",
+          body: "**Large language model**. It is the kind of model that lets ChatGPT understand a question and write a reply in everyday language.",
         },
         {
           title: "Chatbot or AI assistant",
-          body: "The conversational screen where you type or speak to an AI tool. An assistant may also use files, search, memory or connected apps. **Why it matters:** The word assistant does not tell you what it can access. Check the permissions.",
+          body: "The message box and reply you see in ChatGPT make it an **AI assistant**. Some assistants can also search or use connected apps.",
         },
       ],
     },
@@ -300,19 +300,19 @@ export const aiJargonGuidePage = {
       items: [
         {
           title: "Prompt",
-          body: "What you give the AI to guide its response. A prompt can include a question, instructions, background, examples, files and the format you want. **Why it matters:** A prompt is a brief. If important information is missing, the tool may guess.",
+          body: "The message you type is the **prompt**. For example: ‘Summarise this public article in three points, with links to the passages you used.’",
         },
         {
           title: "Context and context window",
-          body: "**Context** is the information available to the AI for this response. The **context window** is the limit on how much it can work with at once. **Why it matters:** In a long chat, earlier instructions or details may be missed.",
+          body: "Paste a public article into a chat and ask about it: the article is part of that chat's **context**. A **context window** limits how much the model can use at once.",
         },
         {
-          title: "Training data",
-          body: "The data and examples used to develop a model before you use it. This is not the same as the information you enter in your current chat. **Why it matters:** Whether your chats are stored or used to improve a service depends on the product, account and settings.",
+          title: "Memory",
+          body: "**Memory** can carry a detail from one chat into a later one. Ask ChatGPT ‘What do you remember about me?’ to see what it reports, then check your settings.",
         },
         {
           title: "Hallucination",
-          body: "Information the AI invents or cannot support but presents as true. It may be a whole answer or one false name, date, quote, link or statistic. **Why it matters:** Check important claims against the original source.",
+          body: "If an AI answer confidently names a source that does not exist, that is a **hallucination**. Open important links and check the original material.",
         },
       ],
     },
@@ -322,20 +322,20 @@ export const aiJargonGuidePage = {
       introduction: "These words tell you whether the tool goes beyond a simple text response.",
       items: [
         {
-          title: "Multimodal",
-          body: "AI that can work with more than one type of content, such as **text, images, audio or video**. **Why it matters:** Supporting several formats does not mean it handles every format equally well.",
+          title: "Permissions",
+          body: "Before connecting a work app to ChatGPT, review the **permissions** shown: can it only read information, or can it also create, change or send it?",
         },
         {
           title: "Connector or integration",
-          body: "A link between the AI tool and another service, such as your email, calendar, cloud drive or customer system. It may let the tool read information or take an action. **Why it matters:** Check what it can see, change, send or delete.",
+          body: "A **connector** links an AI assistant to another app. A ChatGPT connection to Drive, for example, may let it find files your connected account can access.",
         },
         {
           title: "Automation",
-          body: "Software that runs a process when a trigger or rule is met. An automation may use AI for one step, but automation and AI are not the same thing. **Why it matters:** Ask what starts it, what happens next and what happens if it fails.",
+          body: "An **automation** follows a set rule. A reminder sent every Monday is one example; it does not need an AI model to run.",
         },
         {
           title: "AI agent",
-          body: "A system that uses an AI model, instructions and tools to work towards a goal across several steps. What it can actually do depends on the tools, connections and permissions it has. **Why it matters:** More capability needs clearer limits and approval points.",
+          body: "An **AI agent** can choose steps and use available tools toward a goal. In a coding tool such as Codex, it can inspect files, make an edit and run a check.",
         },
       ],
     },
@@ -377,30 +377,14 @@ export const aiJargonGuidePage = {
     },
   ],
   tryNow: {
-    heading: "Try it now: decode one AI claim",
-    introduction: "Copy this prompt into your AI tool, then paste one product description, meeting note or sentence you want explained.",
-    prompt: `I am new to AI.
+    heading: "See what ChatGPT remembers",
+    introduction: "Use your own ChatGPT account. You do not need to upload a file or connect another app.",
+    prompt: `What do you remember about me from earlier chats? List the details you can use to personalize a new answer. Keep each detail to one short line.
 
-Explain the text below like a friend who understands the technology, not like a salesperson.
+If you cannot see or verify my saved memories, say so. Do not guess my account settings, connected apps, or information you cannot access. Do not invent personal details.
 
-For every AI term or technical claim:
-
-1. Tell me what it means in everyday language.
-2. Tell me what it changes in practice.
-3. Tell me what the tool may be able to access or do.
-4. Give me one question I should ask before I trust the claim.
-
-If a phrase is vague marketing language, write:
-
-“This does not tell you enough yet.”
-
-Do not introduce new AI terms without explaining them.
-
-Only use information supported by the text. Do not invent product features.
-
-Text:
-[Paste the sentence, product description or meeting note here]`,
-    check: "Check the answer against the original text. You should be able to see **the actual task**, **the information used**, **what the tool may access** and **what a person still needs to check**. Remove any claim that is not supported by the original.",
+At the end, tell me how I can check the actual memory controls in ChatGPT so I can compare your answer with what my account shows.`,
+    check: "Compare the reply with **Memory or Personalization in ChatGPT settings**. Correct or remove outdated details there; the chat reply may be incomplete.",
   },
   conclusion: {
     heading: "You can now question the language",
@@ -412,16 +396,16 @@ Text:
   },
   related: [
     {
-      slug: "what-is-ai",
-      title: "What AI actually is",
-      reason: "Get a clear view of what an AI system can produce and what you still need to check.",
-      cover: "/images/guides/what-is-ai.webp",
+      slug: "what-is-a-prompt",
+      title: "How to write an AI prompt that gets a useful answer",
+      reason: "Put the word prompt to work on a real task.",
+      cover: "/images/guides/what-is-a-prompt.webp",
     },
     {
-      slug: "what-should-you-never-share-with-ai",
-      title: "What should you never share with AI?",
-      reason: "Know what stays out before you try a prompt with real work.",
-      cover: "/images/guides/learn-master.webp",
+      slug: "connect-ai-to-email-files-calendar",
+      title: "Should you let AI connect to your email, files and calendar?",
+      reason: "See what permissions mean before linking a work account.",
+      cover: "/images/guides/connect-ai-to-email-files-calendar.webp",
     },
     {
       slug: "what-is-agentic",

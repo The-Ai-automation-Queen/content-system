@@ -2,9 +2,9 @@ import Link from "next/link";
 
 const links = [
   ["Guides", "/guides/"],
-  ["Workbooks", "/workbooks.html"],
-  ["Where AI Fits", "/ai-opportunity-map.html"],
-  ["About", "/about.html"],
+  ["Workbooks", "https://www.shiftandlead.com/workbooks.html"],
+  ["Where AI Fits", "https://www.shiftandlead.com/ai-opportunity-map.html"],
+  ["About", "https://www.shiftandlead.com/about.html"],
 ] as const;
 
 export function SiteHeader() {
