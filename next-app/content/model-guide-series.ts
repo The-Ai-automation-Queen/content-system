@@ -473,6 +473,7 @@ export const verifyGrokResearchGuide = makeGuide({
   sources: [
     { label: "X: About Grok", url: "https://help.x.com/en/using-x/about-grok" },
     { label: "xAI: Grok", url: "https://x.ai/grok" },
+    { label: "Meta: Introducing Muse", url: "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" },
   ],
   answer: [
     "**Grok can surface fast-moving discussion, but repetition is not proof.** Keep every important source link and mark what you could not confirm.",
