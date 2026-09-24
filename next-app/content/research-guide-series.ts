@@ -529,6 +529,7 @@ Keep the brief under 500 words. End with a table listing any statement you could
 
 export const protectDeepseekProjectGuide = makeGuide({
   slug: "protect-a-long-deepseek-project",
+  promptMode: "as-written",
   title: "What should you save before a DeepSeek project becomes unavailable?",
   promise: "Create a local recovery pack so a long project can continue in DeepSeek or another approved tool.",
   coverAlt: "The Blue Princess moving project cards from a flickering machine into a sturdy labelled archive case",
