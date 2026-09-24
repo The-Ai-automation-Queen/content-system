@@ -48,9 +48,9 @@ export function CopilotExcelPage({ guide }: { guide: GuidePage }) {
           <button type="button" aria-pressed={showAfter} onClick={() => setShowAfter(true)}>Expected after</button>
         </div>
         <div className={styles.tableWrap}>
-          <table><caption className={styles.srOnly}>{showAfter ? "Expected workbook after changing Notebooks units" : "Original practice workbook"}</caption><thead><tr><th scope="col">Row</th><th scope="col">Item <small>A</small></th><th scope="col">Units <small>B</small></th><th scope="col">Price <small>C</small></th><th scope="col">Total <small>D</small></th></tr></thead><tbody>{rows.map(row => {
+          <table><caption className={styles.srOnly}>{showAfter ? "Expected workbook after changing Notebooks units" : "Original practice workbook"}</caption><thead><tr><th scope="col">Item <small>A1</small></th><th scope="col">Units <small>B1</small></th><th scope="col">Price <small>C1</small></th><th scope="col">Total <small>D1</small></th></tr></thead><tbody>{rows.map(row => {
             const changed = showAfter && row.item === "Notebooks";
-            return <tr key={row.item} className={changed ? styles.changed : undefined}><th scope="row">{row.row}</th><td>{row.item}</td><td>{changed ? <><strong>6</strong><small>was 5</small></> : row.units}</td><td>{row.price}</td><td><code>{row.formula}</code><small>shows {changed ? 36 : row.total}</small></td></tr>;
+            return <tr key={row.item} className={changed ? styles.changed : undefined}><th scope="row">{row.item}{" "}<small>A{row.row} · row {row.row}</small></th><td>{changed ? <><strong>6</strong>{" "}<small>was 5</small></> : row.units}</td><td>{row.price}</td><td><code>{row.formula}</code>{" "}<small>shows {changed ? 36 : row.total}</small></td></tr>;
           })}</tbody></table>
         </div>
         <div className={styles.mobileRows}>{rows.map(row => {
