@@ -11,7 +11,6 @@ export const legacyGuideSlugs = new Set([
   "kimi",
   "manus",
   "mistral",
-  "mistral-multilingual-research",
   "switch-from-chatgpt-to-mistral",
   "test-manus-without-burning-credits",
   "test-meta-business-agent-customer-replies",
