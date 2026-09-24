@@ -9,7 +9,7 @@
 .hero figure img{object-fit:contain}
 .activity{margin:12px 0;padding:20px;border:1px solid #aab9ee;background:#f4f6ff}
 .sectionHead span{color:#203bb4;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-.sectionHead h2{margin:5px 0 16px;color:#ef5439;font-size:clamp(23px,3vw,28px);line-height:1.2}
+.sectionHead h2{margin:5px 0 16px;color:#ff5733;font-size:clamp(23px,3vw,28px);line-height:1.2}
 .sourceTabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-bottom:12px}
 .sourceTabs button{min-height:56px;padding:9px 7px;border:1px solid #aab9ee;background:#fff;color:#172d9e;text-align:center;font:800 15px var(--font-ui),Arial,sans-serif;cursor:pointer}
 .sourceTabs button[aria-selected=true]{border-color:#203bb4;background:#203bb4;color:#fff}
