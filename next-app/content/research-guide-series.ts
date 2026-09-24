@@ -328,6 +328,8 @@ Return only:
 4. a direct source link or source reference;
 5. one sentence explaining why it matched.
 
+For the FILE test, also quote the one sentence containing “Cobalt orchard 47” so I can compare it with the document.
+
 Use only sources available through my current work account. If you cannot find exactly one matching item, say what you searched and stop. Do not infer content, contact anyone, edit a file or create an item.`,
     check: "Open every cited source yourself. The test passes only when Copilot found the intended demo item and did not claim access to a source you cannot verify.",
   },
