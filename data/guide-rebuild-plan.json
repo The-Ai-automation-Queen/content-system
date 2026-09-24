@@ -26,7 +26,7 @@
     { "slug": "is-kimi-worth-paying-for", "pattern": "decision", "status": "review", "component": "kimi-value-page" },
     { "slug": "control-kimi-code-changes", "pattern": "walkthrough", "status": "review", "component": "kimi-code-page" },
     { "slug": "test-manus-without-burning-credits", "pattern": "walkthrough", "status": "pending" },
-    { "slug": "manus-browser-workflow", "pattern": "decision", "status": "pending" },
+    { "slug": "manus-browser-workflow", "pattern": "decision", "status": "review", "component": "manus-browser-page" },
     { "slug": "switch-from-chatgpt-to-mistral", "pattern": "decision", "status": "pending" },
     { "slug": "is-mistral-pro-worth-it", "pattern": "decision", "status": "pending" },
     { "slug": "instagram-content-dashboard", "pattern": "agent-assisted", "status": "approved", "component": "instagram-dashboard-page" },

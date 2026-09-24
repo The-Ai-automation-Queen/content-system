@@ -14,7 +14,6 @@ export const legacyGuideSlugs = new Set([
   "is-mistral-pro-worth-it",
   "kimi",
   "manus",
-  "manus-browser-workflow",
   "meta-ai",
   "mistral",
   "mistral-multilingual-research",

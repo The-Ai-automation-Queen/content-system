@@ -662,6 +662,7 @@ export const manusCreditTestGuide = makeGuide({
 
 export const manusBrowserWorkflowGuide = makeGuide({
   slug: "manus-browser-workflow",
+  promptMode: "as-written",
   title: "When does a Manus browser workflow make sense?",
   promise: "Use the cloud browser for public work, a connector for one supported service, and Browser Operator only when the task truly needs your signed-in browser.",
   coverAlt: "The Blue Princess choosing between a public cloud browser, one connector key and a guarded local browser door",
