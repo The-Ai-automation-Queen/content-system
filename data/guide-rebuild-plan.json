@@ -14,7 +14,7 @@
     { "slug": "claude", "pattern": "practice", "status": "review", "component": "claude-task-page" },
     { "slug": "claude-projects", "pattern": "walkthrough", "status": "review", "component": "claude-projects-page" },
     { "slug": "gemini-cannot-find-drive-file", "pattern": "walkthrough", "status": "review", "component": "gemini-drive-page" },
-    { "slug": "gemini-google-tasks-limits", "pattern": "practice", "status": "pending" },
+    { "slug": "gemini-google-tasks-limits", "pattern": "practice", "status": "review", "component": "gemini-tasks-page" },
     { "slug": "check-copilot-excel-edits", "pattern": "audit", "status": "pending" },
     { "slug": "meta-ai", "pattern": "explorer", "status": "pending" },
     { "slug": "test-meta-business-agent-customer-replies", "pattern": "practice", "status": "pending" },

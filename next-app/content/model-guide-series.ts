@@ -272,9 +272,10 @@ export const geminiDriveFileGuide = makeGuide({
 
 export const geminiTasksGuide = makeGuide({
   slug: "gemini-google-tasks-limits",
+  promptMode: "as-written",
   title: "Can Gemini organise your Google Tasks by project?",
   promise: "Test whether Gemini can preserve the list that separates your projects before you rely on it to organise real tasks.",
-  coverAlt: "The Blue Princess sorting three task cards into two separate mechanical trays",
+  coverAlt: "The small blue robot princess sorting three tasks into two separate trays",
   seoDescription: "Test whether Gemini can retrieve Google Tasks and identify the project list for each task.",
   sources: [{ label: "Google: Use Google Tasks with Gemini Apps", url: "https://support.google.com/gemini/answer/15330265" }],
   answer: [
@@ -311,7 +312,7 @@ export const geminiTasksGuide = makeGuide({
   finish: "You can now keep Gemini for task retrieval or keep project organisation inside Google Tasks.",
   related: [
     promptGuide("gemini-cannot-find-drive-file", "Why can’t Gemini see your Drive file?", "Diagnose another connected Google problem."),
-    existingGuide("gemini", "Should you use Gemini?", "Choose the part of Gemini that matches the job.", "/images/guides/gemini.webp"),
+    existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Compare Gemini with other tools before changing your task system.", "/images/guides/which-ai-tool-for-what.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Keep private task details outside an unapproved account.", "/images/guides/learn-master.webp"),
   ],
 });

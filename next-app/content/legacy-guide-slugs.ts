@@ -14,7 +14,6 @@ export const legacyGuideSlugs = new Set([
   "fix-deepseek-wall-of-text",
   "fix-gemini-workspace-action",
   "gemini",
-  "gemini-google-tasks-limits",
   "get-better-professional-writing-from-grok",
   "grok",
   "is-kimi-worth-paying-for",

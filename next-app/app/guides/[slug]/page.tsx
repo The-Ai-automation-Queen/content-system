@@ -14,6 +14,7 @@ import { ScheduledTaskPage } from "@/components/guides/scheduled-task-page";
 import { ClaudeTaskPage } from "@/components/guides/claude-task-page";
 import { ClaudeProjectsPage } from "@/components/guides/claude-projects-page";
 import { GeminiDrivePage } from "@/components/guides/gemini-drive-page";
+import { GeminiTasksPage } from "@/components/guides/gemini-tasks-page";
 import { GuideAccessBoundary } from "@/components/guides/guide-access-boundary";
 import { getGuidePage, guidePages } from "@/content/guide-page";
 import { legacyGuideSlugs } from "@/content/legacy-guide-slugs";
@@ -58,6 +59,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "claude") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Pick one real task and use a complete example in Claude. Enter your email to open the guide." variant="entry"><ClaudeTaskPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "claude-projects") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Save your meeting-note instructions once in Claude, then test a new meeting. Enter your email to open the guide." variant="entry"><ClaudeProjectsPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "gemini-cannot-find-drive-file") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Find out why Gemini cannot open a file you can see in Drive. Enter your email to open the guide." variant="entry"><GeminiDrivePage guide={guide} /></GuideAccessBoundary>;
+  if (slug === "gemini-google-tasks-limits") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Check if Gemini can see which project list each Google task belongs to. Enter your email to open the guide." variant="entry"><GeminiTasksPage guide={guide} /></GuideAccessBoundary>;
   if (legacyGuideSlugs.has(slug)) return <GuideReadingPage guide={guide} />;
   throw new Error(`Guide ${slug} needs an approved interactive Next.js composition before it can be built.`);
 }
