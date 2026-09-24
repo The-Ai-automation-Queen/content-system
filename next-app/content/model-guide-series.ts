@@ -655,7 +655,7 @@ export const manusCreditTestGuide = makeGuide({
   finish: "You can now decide whether Manus deserves a larger task without guessing from an unfinished experiment.",
   related: [
     promptGuide("manus-browser-workflow", "When does a Manus browser workflow make sense?", "Choose whether a connected browser is justified."),
-    existingGuide("manus", "Should you use Manus?", "See the main Manus routes and their boundaries.", "/images/guides/manus.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what belongs outside a connected task.", "/images/guides/learn-master.webp"),
     promptGuide("is-kimi-worth-paying-for", "Is Kimi worth paying for?", "Compare value using completed work rather than features."),
   ],
 });
@@ -763,7 +763,7 @@ export const switchToMistralGuide = makeGuide({
   finish: "You can now choose a tool from the quality and effort of one real job rather than a general model ranking.",
   related: [
     promptGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Test whether a paid plan removes a real blocker."),
-    existingGuide("mistral", "Should you use Mistral?", "See the Mistral product routes before switching.", "/images/guides/mistral.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what is safe to use in either service.", "/images/guides/learn-master.webp"),
     existingGuide("which-ai-tool-for-what", "Which AI tool should you use for what?", "Choose a tool from the job rather than the brand.", "/images/guides/which-ai-tool-for-what.webp"),
   ],
 });
@@ -812,7 +812,7 @@ export const mistralProValueGuide = makeGuide({
   finish: "You can now separate a real paid-plan benefit from a problem that a subscription will not solve.",
   related: [
     promptGuide("switch-from-chatgpt-to-mistral", "Should you switch from ChatGPT to Mistral?", "Compare the tools on one checked task."),
-    existingGuide("mistral", "Should you use Mistral?", "Understand the product family before paying.", "/images/guides/mistral.webp"),
+    existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Check if another tool already covers the work.", "/images/guides/which-ai-tool-for-what.webp"),
     promptGuide("is-kimi-worth-paying-for", "Is Kimi worth paying for?", "Use the same completed-work test for another plan."),
   ],
 });
