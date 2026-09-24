@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (relativePath) => fs.readFileSync(path.join(root, relativePath), "utf8");
 const publication = JSON.parse(read("data/guide-publication.json"));
+const rebuildPlan = JSON.parse(read("data/guide-rebuild-plan.json"));
 const preview = JSON.parse(read("data/guide-preview.json"));
 const inventory = JSON.parse(read("next-app/content/guides.json")).guides;
 const modelSeriesSource = read("next-app/content/model-guide-series.ts");
@@ -45,6 +46,9 @@ const approved = publication.approved ?? [];
 const slugs = approved.map((guide) => guide.slug);
 const inventorySlugs = new Set(inventory.map((guide) => guide.slug));
 const approvedSlugSet = new Set(slugs);
+const rebuildStatuses = new Set(["approved", "review", "pending"]);
+const rebuildSlugs = rebuildPlan.guides.map((guide) => guide.slug);
+const rebuildCounts = Object.fromEntries([...rebuildStatuses].map((status) => [status, rebuildPlan.guides.filter((guide) => guide.status === status).length]));
 const reviewGuides = inventory.filter((guide) => guide.reviewStatus === "page review" && !approvedSlugSet.has(guide.slug));
 const previewBySlug = new Map((preview.guides ?? []).map((guide) => [guide.slug, guide]));
 const hasStructuredSlug = (slug) => pageSource.includes(`slug: "${slug}"`) || pageSource.includes(`"slug": "${slug}"`);
@@ -52,6 +56,14 @@ const hasStructuredSlug = (slug) => pageSource.includes(`slug: "${slug}"`) || pa
 if (publication.schemaVersion !== 1) failures.push("Unsupported guide publication schema version.");
 if (!approved.length) failures.push("The publication registry has no approved guides.");
 if (new Set(slugs).size !== slugs.length) failures.push("The publication registry contains a duplicate slug.");
+if (new Set(rebuildSlugs).size !== rebuildSlugs.length) failures.push("The guide rebuild plan contains a duplicate slug.");
+for (const guide of rebuildPlan.guides) {
+  if (!approvedSlugSet.has(guide.slug)) failures.push(`Rebuild plan guide is missing from the publication registry: ${guide.slug}`);
+  if (!rebuildStatuses.has(guide.status)) failures.push(`Rebuild plan guide has an invalid status: ${guide.slug}`);
+}
+for (const slug of slugs) {
+  if (!rebuildSlugs.includes(slug)) failures.push(`Publication registry guide is missing from the rebuild plan: ${slug}`);
+}
 
 for (const guide of approved) {
   if (!inventorySlugs.has(guide.slug)) failures.push(`Approved guide is missing from inventory: ${guide.slug}`);
@@ -219,4 +231,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Guide framework passed: ${approved.length} explicitly approved guides.`);
+console.log(`Guide framework passed: ${approved.length} registry guides; rebuilt pages: ${rebuildCounts.approved} approved, ${rebuildCounts.review} in review, ${rebuildCounts.pending} pending.`);
