@@ -1,4 +1,4 @@
-import { existingGuide, makeGuide, promptGuide } from "./model-guide-series";
+import { comingNextGuide, existingGuide, makeGuide, promptGuide } from "./model-guide-series";
 
 export const chatgptScreenRecordingGuide = makeGuide({
   slug: "chatgpt-screen-recording-to-process-guide",
@@ -398,8 +398,8 @@ Do not purchase, subscribe, book, add to a basket, sign in, contact a seller or 
   finish: "You can now judge whether Muse reduces the work of comparing options without handing over the buying decision.",
   related: [
     existingGuide("meta-ai", "What can Meta’s Muse agent do for you?", "Understand the wider Muse workflow before connecting more services.", "/images/guides/meta-muse.webp"),
-    promptGuide("test-meta-business-agent-customer-replies", "Should Meta Business Agent answer customers?", "Test a business use with a separate approval boundary."),
-    existingGuide("connect-ai-to-email-files-calendar", "Should you connect AI to your accounts?", "Review access before authorising a personal agent.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
+    comingNextGuide("test-meta-business-agent-customer-replies", "Should Meta Business Agent answer customers?", "Test a business use with a separate approval boundary."),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what stays out of a connected agent.", "/images/guides/learn-master.webp"),
   ],
 });
 

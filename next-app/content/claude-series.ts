@@ -135,10 +135,10 @@ export const claudeProjectsGuide = {
       "cover": "/images/guides/what-is-a-prompt.webp"
     },
     {
-      "slug": "connect-ai-to-email-files-calendar",
-      "title": "Review your connected apps",
-      "reason": "Understand permissions before giving AI access to another service.",
-      "cover": "/images/guides/connect-ai-to-email-files-calendar.webp"
+      "slug": "teach-claude-a-repeatable-workflow",
+      "title": "Teach Claude a repeatable workflow",
+      "reason": "Test whether saved instructions work on a second task.",
+      "cover": "/images/guides/teach-claude-a-repeatable-workflow.webp"
     }
   ]
 } as const satisfies GuidePage;

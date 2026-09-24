@@ -77,6 +77,11 @@ export const promptGuide = (slug: string, title: string, reason: string): GuideR
   cover: `/images/guides/${slug}.webp`,
 });
 
+export const comingNextGuide = (slug: string, title: string, reason: string): GuideRelated => ({
+  ...promptGuide(slug, title, reason),
+  status: "coming-next",
+});
+
 export const existingGuide = (slug: string, title: string, reason: string, cover: string): GuideRelated => ({ slug, title, reason, cover });
 
 export const makeChatgptAnswersShorterGuide = makeGuide({
@@ -218,7 +223,7 @@ export const chatgptScheduledTasksGuide = makeGuide({
   related: [
     promptGuide("make-chatgpt-answers-shorter", "Why does ChatGPT keep giving you an essay?", "Keep task notifications short and usable."),
     promptGuide("stop-chatgpt-forgetting-context", "Why does ChatGPT forget what you told it?", "Use Projects for continuing context rather than schedules."),
-    existingGuide("connect-ai-to-email-files-calendar", "Should you connect AI to your accounts?", "Check permissions before scheduling connected work.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what the scheduled task may access.", "/images/guides/learn-master.webp"),
   ],
 });
 
@@ -267,7 +272,7 @@ export const geminiDriveFileGuide = makeGuide({
   related: [
     promptGuide("gemini-google-tasks-limits", "Can Gemini organise Google Tasks by project?", "Test another connected Google boundary."),
     existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Compare Gemini with other tools for your next task.", "/images/guides/which-ai-tool-for-what.webp"),
-    existingGuide("connect-ai-to-email-files-calendar", "Should you connect AI to your accounts?", "Review the access you grant to files and email.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what belongs outside a connected chat.", "/images/guides/learn-master.webp"),
   ],
 });
 
@@ -554,7 +559,7 @@ export const kimiValueGuide = makeGuide({
   related: [
     promptGuide("control-kimi-code-changes", "How do you stop Kimi changing extra files?", "Test the coding workflow with plan and diff controls."),
     existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Check whether Kimi is the right tool for this repeated task.", "/images/guides/which-ai-tool-for-what.webp"),
-    promptGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Use the same evidence-led upgrade decision."),
+    comingNextGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Use the same evidence-led upgrade decision."),
   ],
 });
 
@@ -715,9 +720,9 @@ export const manusBrowserWorkflowGuide = makeGuide({
   },
   finish: "You can now choose between public browsing, a narrow connector and a local browser session from the access the job actually needs.",
   related: [
-    promptGuide("test-manus-without-burning-credits", "How do you test Manus without wasting credits?", "Prove one small result before connecting accounts."),
+    comingNextGuide("test-manus-without-burning-credits", "How do you test Manus without wasting credits?", "Prove one small result before connecting accounts."),
     existingGuide("what-is-an-ai-browser", "What is an AI browser?", "Understand what an AI browser can see and do.", "/images/guides/what-is-an-ai-browser.webp"),
-    existingGuide("connect-ai-to-email-files-calendar", "Should you connect AI to your accounts?", "Check permissions and disconnection before connected work.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what stays outside connected work.", "/images/guides/learn-master.webp"),
   ],
 });
 

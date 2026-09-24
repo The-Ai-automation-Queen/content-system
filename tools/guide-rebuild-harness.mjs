@@ -112,6 +112,9 @@ for (const { slug, lumailTag } of approved) {
     for (const link of guide.related ?? []) {
       if (link.status !== "coming-next" && !approvedSlugs.has(link.slug)) problems.push(`Related guide is not published: ${link.slug}`);
       if (!link.cover || !fs.existsSync(fromRoot("next-app", "public", link.cover.replace(/^\//, "")))) problems.push(`Related cover missing: ${link.slug}`);
+      const relatedPlan = planBySlug.get(link.slug);
+      if (item.status !== "pending" && relatedPlan?.status === "pending" && link.status !== "coming-next") problems.push(`Related guide still uses the static layout: ${link.slug}`);
+      if (relatedPlan && relatedPlan.status !== "pending" && link.status === "coming-next") problems.push(`Related guide placeholder can link to rebuilt page: ${link.slug}`);
     }
     if (!instructions(guide).length) problems.push("No complete copyable instruction found");
   }

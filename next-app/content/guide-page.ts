@@ -402,10 +402,10 @@ At the end, tell me how I can check the actual memory controls in ChatGPT so I c
       cover: "/images/guides/what-is-a-prompt.webp",
     },
     {
-      slug: "connect-ai-to-email-files-calendar",
-      title: "Should you let AI connect to your email, files and calendar?",
-      reason: "See what permissions mean before linking a work account.",
-      cover: "/images/guides/connect-ai-to-email-files-calendar.webp",
+      slug: "what-should-you-never-share-with-ai",
+      title: "What should you never share with AI?",
+      reason: "See what stays out before linking a work account.",
+      cover: "/images/guides/learn-master.webp",
     },
     {
       slug: "what-is-agentic",

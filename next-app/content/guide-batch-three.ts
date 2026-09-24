@@ -128,7 +128,7 @@ Quote the exact section of each page that supports your answer. Do not add infor
     finishLine: "Before using it around private work, know what the AI can see, remember and act on.",
   },
   related: [
-    { slug: "connect-ai-to-email-files-calendar", title: "Should you let AI connect to your email, files and calendar?", reason: "Decide how much account access the task really needs.", cover: "/images/guides/connect-ai-to-email-files-calendar.webp" },
+    { slug: "manus-browser-workflow", title: "When does a Manus browser workflow make sense?", reason: "See what changes when AI uses your browser.", cover: "/images/guides/manus-browser-workflow.webp" },
     { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "See which information must stay out of any AI tool.", cover: "/images/guides/learn-master.webp" },
     { slug: "what-is-agentic", title: "What AI agents actually do", reason: "Understand what changes when AI can take several steps and use tools.", cover: "/images/guides/what-is-agentic.webp" },
   ],
