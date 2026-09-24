@@ -4,3 +4,5 @@
 @media(max-width:480px){.choice{padding:15px}.walkthroughHead{display:block}.walkthroughHead>button{margin:0 0 12px}.facts{grid-template-columns:1fr}.stage{padding:14px}}
 
 .prompt>pre{padding:55px 14px 14px;border:1px solid #cbd5ff;background:#fff}
+
+@media(max-width:700px){.stepNav{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.stepNav button{justify-content:flex-start;min-height:64px}.stepNav button strong{display:block;line-height:1.3}}
