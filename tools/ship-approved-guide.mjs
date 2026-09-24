@@ -13,8 +13,11 @@ const root = process.cwd();
 const publication = JSON.parse(
   await readFile(path.join(root, "data", "guide-publication.json"), "utf8"),
 );
+const rebuildPlan = JSON.parse(
+  await readFile(path.join(root, "data", "guide-rebuild-plan.json"), "utf8"),
+);
 
-if (!publication.approved.some((guide) => guide.slug === slug)) {
+if (!publication.approved.some((guide) => guide.slug === slug) || rebuildPlan.guides.find((guide) => guide.slug === slug)?.status !== "approved") {
   throw new Error(`Refusing to ship unapproved guide: ${slug}`);
 }
 
