@@ -10,7 +10,7 @@ import styles from "./ai-search-page.module.css";
 const checks = [
   "The page says who the service helps and what it does.",
   "The location or market is clear where it matters.",
-  "The main title answers a question a customer would ask.",
+  "The main title clearly describes what the page helps a customer understand or decide.",
   "Important claims have examples or evidence to check.",
   "The contact and offer details agree with public profiles.",
 ] as const;
