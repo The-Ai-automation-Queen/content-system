@@ -80,9 +80,10 @@ export const existingGuide = (slug: string, title: string, reason: string, cover
 
 export const makeChatgptAnswersShorterGuide = makeGuide({
   slug: "make-chatgpt-answers-shorter",
+  promptMode: "as-written",
   title: "Why does ChatGPT keep giving you an essay?",
   promise: "Tell ChatGPT exactly what a short answer must contain, compare the result and keep the rule only if the answer becomes easier to use.",
-  coverAlt: "The Blue Princess trimming an overflowing paper scroll into a compact work brief",
+  coverAlt: "The small blue robot trimming an overflowing paper scroll into a compact work brief",
   seoDescription: "A practical test for making ChatGPT answers shorter without losing the useful parts.",
   sources: [
     { label: "OpenAI: Custom Instructions", url: "https://help.openai.com/en/articles/8096356-custom-instructions-for-chatgpt" },
@@ -128,9 +129,10 @@ export const makeChatgptAnswersShorterGuide = makeGuide({
 
 export const stopChatgptForgettingContextGuide = makeGuide({
   slug: "stop-chatgpt-forgetting-context",
+  promptMode: "as-written",
   title: "Why does ChatGPT forget what you already told it?",
   promise: "Put the small set of facts that must stay stable in a Project, then test whether the next answer uses them without another correction.",
-  coverAlt: "The Blue Princess filing four fixed facts into a cabinet while loose chat pages drift away",
+  coverAlt: "The small blue robot filing four fixed facts into a cabinet while loose chat pages drift away",
   seoDescription: "Use a ChatGPT Project to keep a short working brief available across related conversations.",
   sources: [{ label: "OpenAI: Projects in ChatGPT", url: "https://help.openai.com/en/articles/10169521-projects-in-chatgpt" }],
   answer: [
@@ -175,9 +177,10 @@ export const stopChatgptForgettingContextGuide = makeGuide({
 
 export const chatgptScheduledTasksGuide = makeGuide({
   slug: "chatgpt-scheduled-tasks",
-  title: "Can ChatGPT do the boring checking for you every day?",
+  promptMode: "as-written",
+  title: "Can ChatGPT do the boring checking for you?",
   promise: "Use a scheduled task for one public check with a clear trigger, a useful notification and an end date.",
-  coverAlt: "The Blue Princess setting a small clockwork lookout to watch one public noticeboard",
+  coverAlt: "The small blue robot princess setting a clockwork lookout beside a public noticeboard",
   seoDescription: "Create and verify one harmless scheduled task in ChatGPT without producing daily notification noise.",
   sources: [{ label: "OpenAI: Tasks in ChatGPT", url: "https://help.openai.com/en/articles/10291617-tasks-in-chatgpt" }],
   answer: [

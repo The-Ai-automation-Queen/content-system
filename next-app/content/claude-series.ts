@@ -111,7 +111,7 @@ export const claudeProjectsGuide = {
   ],
   "series": {
     "part": 2,
-    "instructions": "Turn my meeting notes into a short follow-up I can review.\nUse these 3 headings: Decisions, Who does what, Questions to resolve.\nUnder Who does what, show a table with Task, Person and Due date.\nUse only the notes in my current message. Write “Not agreed” where a person or date is missing.\nKeep suggestions separate from agreed decisions. Don’t carry facts over from other meetings.\nUse plain English. Don’t send messages or create tasks in another app.\n\nThis instruction is for a regular Claude chat Project. If your account shows the newer Claude Code Projects beta, use a regular chat Project for this exercise.",
+    "instructions": "Turn my meeting notes into a short follow-up I can review.\nUse these 3 headings: Decisions, Who does what, Questions to resolve.\nUnder Who does what, show a table with Task, Person and Due date.\nUse only the notes in my current message. Write “Not agreed” where a person or date is missing.\nKeep suggestions separate from agreed decisions. Don’t carry facts over from other meetings.\nUse plain English. Don’t send messages or create tasks in another app.",
     "exercise": "Please organise these meeting notes.\nWe agreed to test a shorter weekly team meeting for 2 weeks. Alex will send the new agenda by Friday. Someone needs to collect feedback, but we didn’t choose who or set a deadline. Recording the meetings was suggested, not agreed."
   },
   "conclusion": {
