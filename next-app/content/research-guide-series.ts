@@ -1,11 +1,11 @@
-import { existingGuide, makeGuide, promptGuide } from "./model-guide-series";
+import { comingNextGuide, existingGuide, makeGuide, promptGuide } from "./model-guide-series";
 
 export const chatgptScreenRecordingGuide = makeGuide({
   slug: "chatgpt-screen-recording-to-process-guide",
   title: "Can ChatGPT turn a screen recording into a usable process guide?",
   promise: "Upload a short screen recording, turn what it actually shows into clear steps, then test whether someone else can follow them. A transcript and screenshots provide a fallback when video upload is unavailable.",
   coverAlt: "The Blue Princess feeding a film reel and picture cards into a press that produces an ordered instruction booklet",
-  seoDescription: "Turn a screen-recording transcript and screenshots into a checked step-by-step process guide with ChatGPT.",
+  seoDescription: "Upload a clean screen recording to ChatGPT, turn visible actions into a process guide, and test the steps with someone new.",
   sources: [
     { label: "OpenAI: Video attachments and their limits", url: "https://help.openai.com/en/articles/8400551-chatgpt-image-inputs-faq" },
     { label: "OpenAI: File uploads in ChatGPT", url: "https://help.openai.com/en/articles/8555545-file-uploads-faq" },
@@ -75,6 +75,7 @@ Use plain English. Do not invent a click, feature, result, shortcut or reason th
 
 export const chatgptCustomerResearchGuide = makeGuide({
   slug: "chatgpt-customer-research-with-evidence",
+  promptMode: "as-written",
   title: "Can ChatGPT group customer research without inventing themes?",
   promise: "Turn interview or survey notes into themes that keep their supporting evidence, disagreements and gaps visible.",
   coverAlt: "The Blue Princess sorting interview cards through a glass evidence cabinet into labelled clusters",
@@ -103,7 +104,7 @@ export const chatgptCustomerResearchGuide = makeGuide({
         ["Participant IDs", "Shows how many different people support the theme."],
         ["Short source extracts", "Lets you verify the wording in the original notes."],
         ["Contradictions", "Stops a neat summary from hiding disagreement."],
-        ["Confidence", "Separates repeated evidence from an early signal."],
+        ["Evidence pattern", "Separates repeated evidence, disagreement and one-person signals."],
       ],
     },
   ],
@@ -118,13 +119,13 @@ Create a table with these columns:
 - Theme
 - What people are trying to achieve
 - Participant IDs supporting it
-- 2 short supporting extracts
+- 2 short supporting extracts, each from a different participant ID
 - Contradicting or different evidence
-- Confidence: strong, mixed or early signal
+- Evidence pattern: repeated or mixed
 - What we still need to ask
 
 Rules
-1. A theme needs support from at least 2 different participant IDs. Put a single response under “Early signals”, not the main table.
+1. A theme needs support from at least 2 different participant IDs. Show an extract from each of those people. Put one-person findings under “Early signals” after the main table, with the participant ID and extract.
 2. Keep complaints, requests and suggested solutions separate.
 3. Do not claim that the sample represents all customers.
 4. Do not merge responses that describe different problems merely because they use similar words.
@@ -143,6 +144,7 @@ After the table, propose 3 next research questions. Do not recommend a product d
 
 export const teachClaudeWorkflowGuide = makeGuide({
   slug: "teach-claude-a-repeatable-workflow",
+  promptMode: "as-written",
   title: "How do you teach Claude a job you repeat every week?",
   promise: "Turn one weekly task into a saved instruction with a clear input, output, stop rule and quality check.",
   coverAlt: "The Blue Princess teaching a clockwork apprentice to move one weekly task through four precise stations",
@@ -279,6 +281,7 @@ After creating it, give me the item title, the app where it was created and the 
 
 export const copilotVisibilityGuide = makeGuide({
   slug: "what-can-copilot-see-at-work",
+  promptMode: "as-written",
   title: "What can Copilot see in your emails, files and meetings?",
   promise: "Run three harmless source checks so you know what Copilot can find before you use it for sensitive work.",
   coverAlt: "The Blue Princess using a brass viewing scope to inspect three separate locked cabinets for mail files and meetings",
@@ -325,6 +328,8 @@ Return only:
 4. a direct source link or source reference;
 5. one sentence explaining why it matched.
 
+For the FILE test, also quote the one sentence containing “Cobalt orchard 47” so I can compare it with the document.
+
 Use only sources available through my current work account. If you cannot find exactly one matching item, say what you searched and stop. Do not infer content, contact anyone, edit a file or create an item.`,
     check: "Open every cited source yourself. The test passes only when Copilot found the intended demo item and did not claim access to a source you cannot verify.",
   },
@@ -338,6 +343,7 @@ Use only sources available through my current work account. If you cannot find e
 
 export const metaMuseSavingGuide = makeGuide({
   slug: "test-meta-muse-money-saving-task",
+  promptMode: "as-written",
   title: "Can Muse save you money without taking over the purchase?",
   promise: "Ask Muse to compare a real buying decision while keeping the budget, evidence and final purchase under your control.",
   coverAlt: "The Blue Princess holding the final lever while a shopping machine compares three price tags through a magnifying glass",
@@ -395,13 +401,14 @@ Do not purchase, subscribe, book, add to a basket, sign in, contact a seller or 
   finish: "You can now judge whether Muse reduces the work of comparing options without handing over the buying decision.",
   related: [
     existingGuide("meta-ai", "What can Meta’s Muse agent do for you?", "Understand the wider Muse workflow before connecting more services.", "/images/guides/meta-muse.webp"),
-    promptGuide("test-meta-business-agent-customer-replies", "Should Meta Business Agent answer customers?", "Test a business use with a separate approval boundary."),
-    existingGuide("connect-ai-to-email-files-calendar", "Should you connect AI to your accounts?", "Review access before authorising a personal agent.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
+    comingNextGuide("test-meta-business-agent-customer-replies", "Should Meta Business Agent answer customers?", "Test a business use with a separate approval boundary."),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what stays out of a connected agent.", "/images/guides/learn-master.webp"),
   ],
 });
 
 export const grokRepeatedImageEditsGuide = makeGuide({
   slug: "test-grok-repeated-image-edits",
+  promptMode: "as-written",
   title: "How many times can you edit a Grok image before it changes the parts you approved?",
   promise: "Save a master image, change one thing at a time and compare each version before the next edit.",
   coverAlt: "The Blue Princess comparing four prints from one image press while protecting the approved master under glass",
@@ -465,6 +472,7 @@ Do not add text, logos, watermarks, people or objects. Do not crop, rotate or ex
 
 export const deepseekV4DocumentGuide = makeGuide({
   slug: "test-deepseek-v4-document-work",
+  promptMode: "as-written",
   title: "Can DeepSeek V4.1 replace your current AI for document work?",
   promise: "Run the same document task in both tools and compare factual accuracy, instruction-following and checking time.",
   coverAlt: "The Blue Princess running one document through two parallel presses and inspecting the outputs with a ruler",
@@ -527,6 +535,7 @@ Keep the brief under 500 words. End with a table listing any statement you could
 
 export const protectDeepseekProjectGuide = makeGuide({
   slug: "protect-a-long-deepseek-project",
+  promptMode: "as-written",
   title: "What should you save before a DeepSeek project becomes unavailable?",
   promise: "Create a local recovery pack so a long project can continue in DeepSeek or another approved tool.",
   coverAlt: "The Blue Princess moving project cards from a flickering machine into a sturdy labelled archive case",
@@ -599,6 +608,7 @@ export const mistralMultilingualResearchGuide = makeGuide({
   sources: [
     { label: "Mistral and Mozilla: Private multilingual AI browsing", url: "https://mistral.ai/news/mistral-x-mozilla/" },
     { label: "Mistral: Le Chat", url: "https://mistral.ai/products/le-chat" },
+    { label: "Mistral: Search the web in Work", url: "https://docs.mistral.ai/vibe/work/web-search-open-url" },
   ],
   answer: [
     "**Translation can make two sources look more similar than they are.** Keep the original wording, a short translation and the direct link beside every important claim.",
@@ -652,8 +662,8 @@ End with 3 conclusions supported by the table and 3 questions that still need re
   },
   finish: "You can now use Mistral to widen a search across languages without hiding where each claim came from.",
   related: [
-    promptGuide("switch-from-chatgpt-to-mistral", "Should you switch from ChatGPT to Mistral?", "Compare both tools on the same checked work task."),
-    promptGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Measure whether the feature improves work you repeat."),
+    comingNextGuide("switch-from-chatgpt-to-mistral", "Should you switch from ChatGPT to Mistral?", "Compare both tools on the same checked work task."),
+    comingNextGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Measure whether the feature improves work you repeat."),
     promptGuide("verify-grok-current-research", "How do you verify current research from Grok?", "Use another evidence-first research workflow."),
   ],
 });

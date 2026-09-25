@@ -1,4 +1,5 @@
 import type { GuidePage } from "./guide-page";
+import { buildPrompt, promptExample } from "./prompt-builder-example";
 
 export const promptGuide = {
   slug: "what-is-a-prompt",
@@ -35,8 +36,8 @@ export const promptGuide = {
       { title: "The format", body: "Ask for the result as an email, checklist, table, plan or another format you can use." },
     ] },
     { kind: "comparison", heading: "See the difference", introduction: "The improvement is not a clever phrase. It is the missing information.", columns: ["Too vague", "More useful"], rows: [
-      ["Write an email.", "Write a friendly follow-up email to a potential client who requested a proposal 5 days ago."],
-      ["No limit or tone is given.", "Keep it under 120 words, do not sound pushy and end with one clear question."],
+      ["Make an agenda.", "Turn this rough project note into an agenda for a 15-minute team meeting."],
+      ["No result or check is given.", "Give three agenda items and flag the pricing decision. Do not invent owners or approvals."],
     ] },
     { kind: "prose", heading: "Let the AI ask before it answers", paragraphs: [
       "You will not always know which details the AI needs. Ask it to question you before it starts.",
@@ -44,24 +45,16 @@ export const promptGuide = {
     ] },
   ],
   tryNow: {
-    heading: "Try it now",
-    introduction: "Use this for a real task you need to complete today.",
-    prompt: `I need help with [describe the task].
-
-Before you answer, ask me up to 3 questions that would help you give me a more useful result.
-
-Use only the information I provide. If something important is missing, tell me instead of making it up.
-
-The finished result should be [email, summary, checklist, plan or another format].
-
-Keep it [short, friendly, professional, direct or another style].`,
+    heading: "Try the complete example, then make it yours",
+    introduction: "Start with a made-up project note. See what a full instruction looks like before changing it for your work.",
+    prompt: buildPrompt(promptExample),
     instructions: [
       { title: "Choose one AI chat", body: "Open ChatGPT, Claude or Gemini and start a new conversation." },
       { title: "Copy and paste", body: "Select **Copy**, paste the instruction and replace every bracketed section." },
       { title: "Remove private details", body: "Do not include confidential, personal or customer information." },
       { title: "Check the result", body: "Confirm it followed the request, kept the important details and did not add unsupported information." },
     ],
-    check: "Use the result only when you would be comfortable putting your name on it.",
+    check: "The agenda must keep pricing approval as an open decision, use only the note and name any missing owner as ‘Not specified’.",
   },
   conclusion: {
     heading: "You now know how to brief an AI tool",
@@ -71,7 +64,7 @@ Keep it [short, friendly, professional, direct or another style].`,
   related: [
     { slug: "which-ai-tool-for-what", title: "Which AI tool should you use?", reason: "Match the task to the right tool before opening another account.", cover: "/images/guides/which-ai-tool-for-what.webp" },
     { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Know what to remove before you paste information into a prompt.", cover: "/images/guides/learn-master.webp" },
-    { slug: "check-ai-answers", title: "How to check an AI answer before you use it", reason: "Learn the quickest way to catch unsupported claims and missing details.", cover: "/images/guides/check-ai-answers.webp", status: "coming-next" },
+    { slug: "make-chatgpt-answers-shorter", title: "Why does ChatGPT keep giving you an essay?", reason: "Keep useful detail while cutting the length of an answer.", cover: "/images/guides/make-chatgpt-answers-shorter.webp" },
   ],
 } as const satisfies GuidePage;
 
@@ -135,7 +128,7 @@ Quote the exact section of each page that supports your answer. Do not add infor
     finishLine: "Before using it around private work, know what the AI can see, remember and act on.",
   },
   related: [
-    { slug: "connect-ai-to-email-files-calendar", title: "Should you let AI connect to your email, files and calendar?", reason: "Decide how much account access the task really needs.", cover: "/images/guides/connect-ai-to-email-files-calendar.webp" },
+    { slug: "manus-browser-workflow", title: "When does a Manus browser workflow make sense?", reason: "See what changes when AI uses your browser.", cover: "/images/guides/manus-browser-workflow.webp" },
     { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "See which information must stay out of any AI tool.", cover: "/images/guides/learn-master.webp" },
     { slug: "what-is-agentic", title: "What AI agents actually do", reason: "Understand what changes when AI can take several steps and use tools.", cover: "/images/guides/what-is-agentic.webp" },
   ],
@@ -150,10 +143,11 @@ export const aiConnectionsGuide = {
   seoDescription: "Decide whether to connect AI to email, files and calendars, understand the permissions and learn where to disconnect ChatGPT, Claude, Gemini and Copilot.",
   lumailTag: "guide-connect-ai-to-email-files-calendar",
   sourceNotes: [
-    { label: "OpenAI: Apps with sync", url: "https://help.openai.com/en/articles/10847137-chatgpt-synced-con" },
+    { label: "OpenAI: Connected apps in ChatGPT", url: "https://help.openai.com/en/articles/11487775-connected-apps-in-chatgpt" },
     { label: "Anthropic: Use connectors", url: "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities" },
-    { label: "Google: Gemini Privacy Hub", url: "https://support.google.com/gemini/answer/13594961" },
-    { label: "Microsoft: Connect Copilot to other services", url: "https://support.microsoft.com/en-us/microsoft-copilot/connecting-microsoft-copilot-to-other-services" },
+    { label: "Google: Manage Connected Apps in Gemini", url: "https://support.google.com/gemini/answer/13695044?co=GENIE.Platform%3DDesktop" },
+    { label: "Microsoft: Personal Copilot connectors", url: "https://support.microsoft.com/en-us/microsoft-copilot/connecting-microsoft-copilot-to-other-services" },
+    { label: "Microsoft: Work Copilot data and permissions", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy" },
   ],
   answer: { paragraphs: [
     "Connect an AI tool only when a repeated task genuinely needs information from another service. Start with the **smallest amount of access** that can complete the job.",
@@ -166,10 +160,10 @@ export const aiConnectionsGuide = {
       { title: "Allow actions", body: "Use only when you understand what the tool can create, edit, send or delete." },
     ] },
     { kind: "steps", heading: "Where to review or disconnect access", introduction: "Menu names can vary by plan, device or workspace policy.", steps: [
-      { title: "ChatGPT", body: "Open **Profile → Settings → Apps**. Choose the connected app to review or disconnect it." },
+      { title: "ChatGPT", body: "Open **Settings → Apps** (or **Plugins**, if shown). Choose the connected account to review or disconnect it." },
       { title: "Claude", body: "Open **Customize → Connectors**. Choose the service and select disconnect." },
-      { title: "Gemini", body: "Open **Settings & help → Connected Apps**. Turn off the apps you do not want Gemini to use." },
-      { title: "Microsoft Copilot", body: "On mobile, open **Profile → Connectors**. On Copilot.com, use **+ → Use connectors**." },
+      { title: "Gemini", body: "Open **Settings & help → Connected Apps**. If that is not shown, open **Personal Intelligence → Connected Apps**. Turn off the app you do not want Gemini to use." },
+      { title: "Personal Copilot", body: "On Copilot.com, open **+ → Use connectors**. On mobile, open **Profile → Connectors**. Turn off a connector you do not want used in this conversation." },
     ] },
     { kind: "prose", heading: "Disconnecting is not the same as deleting", paragraphs: [
       "Disconnecting normally stops future access. It does not always remove information already present in a chat or activity history.",

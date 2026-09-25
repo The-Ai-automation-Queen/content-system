@@ -1,4 +1,5 @@
 import type { GuidePage, GuideRelated, GuideSection } from "./guide-page";
+import { grokResearchPrompt } from "./grok-research-prompt";
 
 export type SeriesGuide = {
   slug: string;
@@ -76,13 +77,19 @@ export const promptGuide = (slug: string, title: string, reason: string): GuideR
   cover: `/images/guides/${slug}.webp`,
 });
 
+export const comingNextGuide = (slug: string, title: string, reason: string): GuideRelated => ({
+  ...promptGuide(slug, title, reason),
+  status: "coming-next",
+});
+
 export const existingGuide = (slug: string, title: string, reason: string, cover: string): GuideRelated => ({ slug, title, reason, cover });
 
 export const makeChatgptAnswersShorterGuide = makeGuide({
   slug: "make-chatgpt-answers-shorter",
+  promptMode: "as-written",
   title: "Why does ChatGPT keep giving you an essay?",
   promise: "Tell ChatGPT exactly what a short answer must contain, compare the result and keep the rule only if the answer becomes easier to use.",
-  coverAlt: "The Blue Princess trimming an overflowing paper scroll into a compact work brief",
+  coverAlt: "The small blue robot trimming an overflowing paper scroll into a compact work brief",
   seoDescription: "A practical test for making ChatGPT answers shorter without losing the useful parts.",
   sources: [
     { label: "OpenAI: Custom Instructions", url: "https://help.openai.com/en/articles/8096356-custom-instructions-for-chatgpt" },
@@ -98,25 +105,25 @@ export const makeChatgptAnswersShorterGuide = makeGuide({
       rows: [
         ["Be concise.", "Use 5 bullets, one sentence each."],
         ["Tell me what matters.", "Give me 3 questions, 2 decisions and one closing sentence."],
-        ["Do not ramble.", "No introduction, conclusion or offer to do more."],
+        ["Do not ramble.", "No introduction, repeated summary or offer to do more."],
       ],
     },
     {
       kind: "cards",
       heading: "Check the answer, not the tone",
       items: [
-        { title: "Count the parts", body: "There should be exactly **3 questions and 2 decisions**." },
-        { title: "Count the words", body: "The complete answer should stay below **90 words**." },
-        { title: "Find the action", body: "The closing sentence should be usable as written." },
+        { title: "Count the parts", body: "There should be exactly **3 questions, 2 decisions and one closing sentence**." },
+        { title: "Count the words", body: "The complete answer should be **90 words or fewer**." },
+        { title: "Find the action", body: "The closing sentence should name what still needs agreement, without claiming a decision was made." },
         { title: "Remove extras", body: "Delete scene-setting, repetition and offers you did not request." },
       ],
     },
   ],
   tryNow: {
     heading: "Try the difference",
-    introduction: "Paste this complete example into a new ChatGPT conversation.",
-    prompt: `I need to prepare for a 20-minute project check-in.\n\nGive me:\n1. the 3 questions I should ask;\n2. the 2 decisions the meeting must produce;\n3. one sentence I can use to close the meeting.\n\nUse no introduction, no conclusion and no more than 90 words.`,
-    check: "You are done when the answer fits the stated limit and contains every requested item.",
+    introduction: "Try this fictional project first, then replace its facts with your own non-confidential work.",
+    prompt: `I need to prepare for a 20-minute project check-in. Use only these facts:\n\nWe are updating an internal onboarding checklist. The draft is ready. Team leads have not reviewed it. No publication date has been agreed.\n\nGive me:\n1. the 3 questions I should ask;\n2. the 2 decisions we need to make in the meeting;\n3. one sentence I can use to close the meeting if those decisions are still open.\n\nDo not invent an approval, owner or deadline. Do not present a decision we still need to make as one already agreed. Use no introduction, repeated summary or offer to do more. Stop after the closing sentence. Keep the whole answer to 90 words or fewer.`,
+    check: "Count the parts and words. Check that the answer uses only the stated facts and does not invent a decision or deadline.",
   },
   finish: "You now have a response rule you can reuse when an answer is longer than the job requires.",
   related: [
@@ -128,9 +135,10 @@ export const makeChatgptAnswersShorterGuide = makeGuide({
 
 export const stopChatgptForgettingContextGuide = makeGuide({
   slug: "stop-chatgpt-forgetting-context",
+  promptMode: "as-written",
   title: "Why does ChatGPT forget what you already told it?",
   promise: "Put the small set of facts that must stay stable in a Project, then test whether the next answer uses them without another correction.",
-  coverAlt: "The Blue Princess filing four fixed facts into a cabinet while loose chat pages drift away",
+  coverAlt: "The small blue robot filing four fixed facts into a cabinet while loose chat pages drift away",
   seoDescription: "Use a ChatGPT Project to keep a short working brief available across related conversations.",
   sources: [{ label: "OpenAI: Projects in ChatGPT", url: "https://help.openai.com/en/articles/10169521-projects-in-chatgpt" }],
   answer: [
@@ -144,8 +152,8 @@ export const stopChatgptForgettingContextGuide = makeGuide({
       steps: [
         { title: "Create the Project", body: "In ChatGPT select **New project** and name it **Autumn event plan**." },
         { title: "Add the fixed facts", body: "Open the Project settings and add the instruction in the practice section below." },
-        { title: "Start a chat inside it", body: "Ask for an 80-word event description that includes the audience, format and outcome." },
-        { title: "Compare outside the Project", body: "Open a normal new chat and send only the drafting request. Compare what the Project brief contributed." },
+        { title: "Start a chat inside it", body: "Send the test message below in a new chat inside the Project." },
+        { title: "Compare outside the Project", body: "Send the same test message in a normal new chat. Compare which of the four event facts appear, and check if either answer invents a detail." },
       ],
     },
     {
@@ -175,9 +183,10 @@ export const stopChatgptForgettingContextGuide = makeGuide({
 
 export const chatgptScheduledTasksGuide = makeGuide({
   slug: "chatgpt-scheduled-tasks",
-  title: "Can ChatGPT do the boring checking for you every day?",
-  promise: "Use a scheduled task for one public check with a clear trigger, a useful notification and an end date.",
-  coverAlt: "The Blue Princess setting a small clockwork lookout to watch one public noticeboard",
+  promptMode: "as-written",
+  title: "Can ChatGPT do the boring checking for you?",
+  promise: "Use a scheduled task for one public check with a clear trigger, a useful notification and a stop rule.",
+  coverAlt: "The small blue robot princess setting a clockwork lookout beside a public noticeboard",
   seoDescription: "Create and verify one harmless scheduled task in ChatGPT without producing daily notification noise.",
   sources: [{ label: "OpenAI: Tasks in ChatGPT", url: "https://help.openai.com/en/articles/10291617-tasks-in-chatgpt" }],
   answer: [
@@ -190,9 +199,9 @@ export const chatgptScheduledTasksGuide = makeGuide({
       introduction: "Start with a public page you already trust.",
       steps: [
         { title: "Open Scheduled tasks", body: "Open ChatGPT on the web and go to **Scheduled**. Availability can vary by account or workspace." },
-        { title: "Add the instruction", body: "Use the complete example below and replace only the public URL, condition and end date." },
-        { title: "Check the controls", body: "Review the schedule, time zone, condition and end date before confirming." },
-        { title: "Test one result", body: "Open the source yourself and compare it with the reported status and check time." },
+        { title: "Add the instruction", body: "Use the complete example below and replace only the public URL, condition and stop rule." },
+        { title: "Check the controls", body: "Review the schedule, time zone, condition and stop rule before confirming." },
+        { title: "Check it was saved", body: "Find the task in Scheduled and confirm its instruction and next run. Compare any later alert with the public source." },
       ],
     },
     {
@@ -207,22 +216,23 @@ export const chatgptScheduledTasksGuide = makeGuide({
   tryNow: {
     heading: "Build one quiet monitoring task",
     introduction: "Replace the 3 bracketed details.",
-    prompt: `Every weekday morning, check [PUBLIC PAGE URL].\n\nNotify me only if [EXACT CONDITION] has changed since the previous check.\n\nIn the notification, include:\n- what changed;\n- the current wording or status;\n- the source link;\n- the time you checked.\n\nIf nothing changed, do not notify me. Stop this task on [END DATE].`,
-    check: "You are done when the task appears in Scheduled, the notification route works and one result matches the public source.",
+    prompt: `Every weekday morning, check [PUBLIC PAGE URL].\n\nOnly notify me if this condition is met: [EXACT CONDITION]. Compare the page with the previous check before sending an alert.\n\nIn the notification, include:\n- what changed;\n- the current wording or status;\n- the source link;\n- the time you checked.\n\nIf nothing changed, do not notify me. Stop checking [STOP RULE].`,
+    check: "You are done setting it up when the task appears in Scheduled with the right instruction and next run. Check any later alert against the public source.",
   },
   finish: "You can now decide whether the repeated check deserves a scheduled task or should stay manual.",
   related: [
     promptGuide("make-chatgpt-answers-shorter", "Why does ChatGPT keep giving you an essay?", "Keep task notifications short and usable."),
     promptGuide("stop-chatgpt-forgetting-context", "Why does ChatGPT forget what you told it?", "Use Projects for continuing context rather than schedules."),
-    existingGuide("connect-ai-to-email-files-calendar", "Should you connect AI to your accounts?", "Check permissions before scheduling connected work.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what the scheduled task may access.", "/images/guides/learn-master.webp"),
   ],
 });
 
 export const geminiDriveFileGuide = makeGuide({
   slug: "gemini-cannot-find-drive-file",
+  promptMode: "as-written",
   title: "Why can’t Gemini see the file that is already in your Drive?",
   promise: "Check the account and connection first, then test one clearly named demo file before rewriting the request again.",
-  coverAlt: "The Blue Princess tracing one document through a maze of account keys and file drawers",
+  coverAlt: "The small blue robot princess tracing one document through account keys and file drawers",
   seoDescription: "Diagnose why Gemini cannot find a Google Drive file with one safe demo document and five checks.",
   sources: [
     { label: "Google: Connect Google Workspace apps to Gemini", url: "https://support.google.com/gemini/answer/15229592" },
@@ -241,14 +251,14 @@ export const geminiDriveFileGuide = makeGuide({
         { title: "Connection", body: "Type **@** in a new Gemini chat and select **Google Drive** if it appears." },
         { title: "Request", body: "Ask for the file by its exact, unique title and request the source." },
         { title: "Source", body: "Open the source Gemini lists and check that it is the demo file." },
-        { title: "File support", body: "If it still fails, test a supported document, spreadsheet, presentation or PDF rather than an image or video." },
+        { title: "Your original file", body: "If Gemini finds the demo Doc but not your original file, check the original's type. Google Workspace connection can read documents, spreadsheets, presentations and PDFs, but not Drive pictures or videos." },
       ],
     },
     {
       kind: "prose",
       heading: "If Drive does not appear",
       paragraphs: [
-        "With a work or school account, your Workspace edition, Gemini access, activity setting or administrator policy may block the connection. Ask your administrator to check those four items for your account.",
+        "Check Gemini’s Connected Apps and Keep Activity first. If Google Workspace appears but will not connect, check Gmail’s Smart features in other Google products setting. With a work or school account, ask your administrator if connected apps are enabled.",
       ],
     },
   ],
@@ -261,18 +271,19 @@ export const geminiDriveFileGuide = makeGuide({
   finish: "You now know whether to fix the account, connection, administrator setting, file type or search wording.",
   related: [
     promptGuide("gemini-google-tasks-limits", "Can Gemini organise Google Tasks by project?", "Test another connected Google boundary."),
-    existingGuide("gemini", "Should you use Gemini?", "See where the Gemini app and Google Workspace features fit.", "/images/guides/gemini.webp"),
-    existingGuide("connect-ai-to-email-files-calendar", "Should you connect AI to your accounts?", "Review the access you grant to files and email.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
+    existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Compare Gemini with other tools for your next task.", "/images/guides/which-ai-tool-for-what.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what belongs outside a connected chat.", "/images/guides/learn-master.webp"),
   ],
 });
 
 export const geminiTasksGuide = makeGuide({
   slug: "gemini-google-tasks-limits",
+  promptMode: "as-written",
   title: "Can Gemini organise your Google Tasks by project?",
   promise: "Test whether Gemini can preserve the list that separates your projects before you rely on it to organise real tasks.",
-  coverAlt: "The Blue Princess sorting three task cards into two separate mechanical trays",
+  coverAlt: "The small blue robot princess sorting three tasks into two separate trays",
   seoDescription: "Test whether Gemini can retrieve Google Tasks and identify the project list for each task.",
-  sources: [{ label: "Google: Use Google Tasks with Gemini Apps", url: "https://support.google.com/gemini/answer/15330265" }],
+  sources: [{ label: "Google: Capture tasks and reminders with Gemini Apps", url: "https://support.google.com/gemini/answer/15230285?co=GENIE.Platform%3DDesktop&hl=en" }],
   answer: [
     "**Gemini may find a task without exposing every detail you use to organise it.** Test the list name directly with harmless tasks before you depend on it for project separation.",
   ],
@@ -307,13 +318,14 @@ export const geminiTasksGuide = makeGuide({
   finish: "You can now keep Gemini for task retrieval or keep project organisation inside Google Tasks.",
   related: [
     promptGuide("gemini-cannot-find-drive-file", "Why can’t Gemini see your Drive file?", "Diagnose another connected Google problem."),
-    existingGuide("gemini", "Should you use Gemini?", "Choose the part of Gemini that matches the job.", "/images/guides/gemini.webp"),
+    existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Compare Gemini with other tools before changing your task system.", "/images/guides/which-ai-tool-for-what.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Keep private task details outside an unapproved account.", "/images/guides/learn-master.webp"),
   ],
 });
 
 export const copilotExcelGuide = makeGuide({
   slug: "check-copilot-excel-edits",
+  promptMode: "as-written",
   title: "Did Copilot change only the Excel cells you asked it to change?",
   promise: "Make one small change in a practice workbook and check every cell, formula and total Copilot touched.",
   coverAlt: "The Blue Princess inspecting one changed cell through a brass magnifier while guarding the rest of a spreadsheet",
@@ -328,8 +340,8 @@ export const copilotExcelGuide = makeGuide({
       heading: "Build the practice workbook",
       introduction: "Save one untouched original and one working copy.",
       blocks: [
-        { kind: "table", rows: [["Item", "Units × Price"], ["Pens", "10 × 2 = 20"], ["Notebooks", "5 × 6 = 30"], ["Folders", "8 × 3 = 24"]] },
-        { kind: "note", icon: "check", text: "Use formulas in the Total column: =B2*C2, =B3*C3 and =B4*C4." },
+        { kind: "table", rows: [["Item (A)", "Units (B)", "Price (C)", "Total formula (D)"], ["Pens", "10", "2", "=B2*C2"], ["Notebooks", "5", "6", "=B3*C3"], ["Folders", "8", "3", "=B4*C4"]] },
+        { kind: "note", icon: "check", text: "Enter the formulas in column D. Excel displays 20, 30 and 24 before the edit." },
       ],
     },
     {
@@ -347,12 +359,12 @@ export const copilotExcelGuide = makeGuide({
   tryNow: {
     heading: "Ask for one exact change",
     introduction: "Send this in Copilot in Excel while the working copy is open.",
-    prompt: `Change only the Units value for Notebooks from 5 to 6.\n\nDo not change any other number, label or formula. Before I accept the edit, tell me which cell you changed.`,
+    prompt: `In the open working copy of my practice workbook, find the row where Item is Notebooks. The columns are Item (A), Units (B), Price (C) and Total (D). In that row, Units is 5, Price is 6 and Total uses the formula =B3*C3.\n\nChange only the Notebooks Units cell, B3, from 5 to 6. Keep the formula =B3*C3 in D3. Do not change the Pens or Folders rows, any labels, prices or other formulas.\n\nAfter the edit, tell me the cell you changed and its old and new values. Tell me the three displayed totals in row order. If you cannot make the edit, say so and do not claim the workbook changed.`,
     check: "You are done when only the requested cell changed, the formula still works and all three totals are correct.",
   },
   finish: "You now have a repeatable way to check a small Copilot edit before trusting it with a larger workbook.",
   related: [
-    existingGuide("copilot", "Should you use Copilot?", "Choose the Microsoft Copilot that fits your account and work.", "/images/guides/copilot.webp"),
+    existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Check when a spreadsheet task belongs in Copilot.", "/images/guides/which-ai-tool-for-what.webp"),
     existingGuide("what-is-a-prompt", "Write a prompt that gets a useful answer", "Give the tool a clearer job and a result you can check.", "/images/guides/what-is-a-prompt.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Protect workbook data before using connected tools.", "/images/guides/learn-master.webp"),
   ],
@@ -360,9 +372,10 @@ export const copilotExcelGuide = makeGuide({
 
 export const reviewGrokSuggestionsGuide = makeGuide({
   slug: "review-grok-suggestions",
+  promptMode: "as-written",
   title: "Did Grok catch an error or rewrite your work into something else?",
   promise: "Sort every suggestion into a factual correction, an optional improvement or a change you did not ask for.",
-  coverAlt: "The Blue Princess sorting marked pages into correction, option and reject trays",
+  coverAlt: "The small blue robot princess sorting marked pages into correction, option and reject trays",
   seoDescription: "Review Grok writing suggestions without accepting factual changes or broad rewrites you did not request.",
   sources: [{ label: "xAI: Grok consumer FAQ", url: "https://x.ai/legal/faq" }],
   answer: [
@@ -391,7 +404,7 @@ export const reviewGrokSuggestionsGuide = makeGuide({
   tryNow: {
     heading: "Ask for the smallest useful review",
     introduction: "Paste the sample paragraph above this instruction.",
-    prompt: `Review this paragraph only for:\n1. contradictions;\n2. unclear wording;\n3. claims that need a source.\n\nFor each suggestion, quote the exact sentence, name the problem and propose the smallest possible change. Do not change the purpose, tone, dates or structure. Do not rewrite the whole paragraph.`,
+    prompt: `Use the fact sheet above as the source of truth. Review the paragraph only for:\n1. claims that contradict the fact sheet;\n2. unclear wording;\n3. claims the fact sheet cannot confirm.\n\nFor each suggestion, quote the exact sentence, name the problem and propose the smallest possible change. Label a factual conflict as a correction and a wording change as optional. If the fact sheet cannot confirm a claim, flag it for me to check rather than inventing a replacement fact. Do not change the purpose, tone, dates or structure. Do not rewrite the whole paragraph.`,
     check: "You are done when every accepted factual change matches the fact sheet and no accepted suggestion exceeds the review scope.",
   },
   finish: "You can now separate a useful correction from a stylistic preference or an unwanted rewrite.",
@@ -404,6 +417,7 @@ export const reviewGrokSuggestionsGuide = makeGuide({
 
 export const grokProfessionalWritingGuide = makeGuide({
   slug: "get-better-professional-writing-from-grok",
+  promptMode: "as-written",
   title: "Why is Grok’s professional writing too thin?",
   promise: "Give Grok the reader, decision, evidence and structure, then decide whether the improved draft is worth keeping.",
   coverAlt: "The Blue Princess rebuilding a thin paper draft around four solid evidence blocks",
@@ -438,7 +452,7 @@ export const grokProfessionalWritingGuide = makeGuide({
   tryNow: {
     heading: "Build the draft around evidence",
     introduction: "Use this complete work example.",
-    prompt: `Write a short recommendation for an operations director about whether to continue a meeting pilot.\n\nUse only these facts:\n- 18 people joined the pilot.\n- 14 used the new agenda.\n- 3 meetings were delayed because pre-reading arrived late.\n- The team wants to continue for one month.\n\nStructure:\n1. recommendation;\n2. evidence;\n3. risk;\n4. next step.\n\nDo not invent cost savings, satisfaction scores or causes.`,
+    prompt: `Write a short recommendation for an operations director about whether to continue a meeting pilot.\n\nUse all four facts below and no others:\n- 18 people joined the pilot.\n- 14 used the new agenda.\n- 3 meetings were delayed because pre-reading arrived late.\n- The team wants to continue for one month.\n\nTreat the team's wish to continue as a proposal, not a decision already approved.\n\nStructure:\n1. recommendation;\n2. evidence;\n3. risk;\n4. next step.\n\nDo not invent cost savings, satisfaction scores or causes.`,
     check: "You are done when you can point to the decision, evidence, risk and next step without repairing most of the draft.",
   },
   finish: "You can now keep Grok for this writing job, retest it or choose another tool based on a visible result.",
@@ -451,6 +465,7 @@ export const grokProfessionalWritingGuide = makeGuide({
 
 export const verifyGrokResearchGuide = makeGuide({
   slug: "verify-grok-current-research",
+  promptMode: "as-written",
   title: "Can Grok research a current topic without turning posts into facts?",
   promise: "Use Grok to find the conversation, then separate public reaction from claims you verified in primary sources.",
   coverAlt: "The Blue Princess tracing many speech bubbles back to one opened official document",
@@ -458,6 +473,7 @@ export const verifyGrokResearchGuide = makeGuide({
   sources: [
     { label: "X: About Grok", url: "https://help.x.com/en/using-x/about-grok" },
     { label: "xAI: Grok", url: "https://x.ai/grok" },
+    { label: "Meta: Introducing Muse", url: "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" },
   ],
   answer: [
     "**Grok can surface fast-moving discussion, but repetition is not proof.** Keep every important source link and mark what you could not confirm.",
@@ -486,7 +502,7 @@ export const verifyGrokResearchGuide = makeGuide({
   tryNow: {
     heading: "Research one harmless current question",
     introduction: "Avoid health, money, legal rights and personal safety for this first test.",
-    prompt: `Research this current question: [QUESTION].\n\nSeparate the answer into:\n1. what people are saying;\n2. what an official or primary source confirms;\n3. what remains unverified.\n\nFor every factual claim, include the direct source link and publication date. Do not treat repeated posts as independent confirmation. Do not fill a gap with an assumption.`,
+    prompt: grokResearchPrompt("[WRITE ONE PUBLIC QUESTION]"),
     check: "You are done when every confirmed claim has an opened source and social reaction remains separate from verified facts.",
   },
   finish: "You can now use Grok as a route into current discussion without treating the discussion itself as evidence.",
@@ -499,6 +515,7 @@ export const verifyGrokResearchGuide = makeGuide({
 
 export const kimiValueGuide = makeGuide({
   slug: "is-kimi-worth-paying-for",
+  promptMode: "as-written",
   title: "Is Kimi worth paying for, or will the limits stop you working?",
   promise: "Test whether Kimi can finish one repeated job before the current limit interrupts it.",
   coverAlt: "The Blue Princess weighing one finished work result against a meter of remaining usage",
@@ -536,19 +553,20 @@ export const kimiValueGuide = makeGuide({
   tryNow: {
     heading: "Write the decision from evidence",
     introduction: "Complete the fields after running the same task in both tools.",
-    prompt: `Job tested: [ONE REPEATED JOB]\nUsable result completed: [YES / NO]\nCorrections needed: [NUMBER AND TYPE]\nChecking time: [MINUTES]\nCredits consumed in the shared pool: [WHAT USAGE DETAILS SHOW]\nCurrent price shown to me: [PRICE AND BILLING PERIOD]\nExtra usage cost or spending limit, if shown: [COST OR NOT SHOWN]\nFrequency I need: [FREQUENCY]\n\nBased only on this information, write a 3-sentence Pay, Retest or Skip decision.`,
-    check: "You are done when the decision names the job, usable result, checking time, visible limit and current price.",
+    prompt: `Job tested: [ONE REPEATED JOB]\nInput used in both tools: [SAME PUBLIC OR INVENTED INPUT]\n\nKIMI RESULT\nFinished the job: [YES / NO]\nCorrections needed: [NUMBER AND TYPE]\nTime spent checking and correcting: [MINUTES]\nCredits consumed in the shared pool: [WHAT USAGE DETAILS SHOW]\n\nCURRENT TOOL RESULT\nTool used: [NAME]\nFinished the same job: [YES / NO]\nCorrections needed: [NUMBER AND TYPE]\nTime spent checking and correcting: [MINUTES]\n\nPAYMENT FACTS\nCurrent Kimi price shown to me: [PRICE AND BILLING PERIOD]\nIncluded credits and reset period: [WHAT THE PLAN SHOWS OR NOT CLEAR]\nExtra usage cost or spending limit: [COST, LIMIT OR NOT SHOWN]\nHow often I need this job: [FREQUENCY]\n\nCompare the two completed results and the checking effort. Based only on the facts above, write a 3-sentence Pay, Retest or Skip decision. Say Retest if the current price, usable credit allowance or repeatability is unclear. Do not invent a missing figure.`,
+    check: "You are done when the decision compares both results, checking time, visible limit and current price for the same job.",
   },
   finish: "You can now decide from completed work rather than a product comparison or feature list.",
   related: [
     promptGuide("control-kimi-code-changes", "How do you stop Kimi changing extra files?", "Test the coding workflow with plan and diff controls."),
-    existingGuide("kimi", "Should you use Kimi?", "See the main Kimi routes before choosing a plan.", "/images/guides/kimi.webp"),
-    promptGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Use the same evidence-led upgrade decision."),
+    existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Check whether Kimi is the right tool for this repeated task.", "/images/guides/which-ai-tool-for-what.webp"),
+    comingNextGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Use the same evidence-led upgrade decision."),
   ],
 });
 
 export const controlKimiCodeChangesGuide = makeGuide({
   slug: "control-kimi-code-changes",
+  promptMode: "as-written",
   title: "How do you stop Kimi changing things you did not ask for?",
   promise: "Start in Plan mode, limit the task to one file and inspect the diff before you keep the change.",
   coverAlt: "The Blue Princess holding a gate across many files while allowing one marked file through",
@@ -592,7 +610,7 @@ export const controlKimiCodeChangesGuide = makeGuide({
   finish: "You now have a plan, scope and diff check that make a small Kimi Code change reviewable.",
   related: [
     promptGuide("is-kimi-worth-paying-for", "Is Kimi worth paying for?", "Measure whether the controlled workflow produces enough value."),
-    existingGuide("kimi", "Should you use Kimi?", "Choose between Kimi chat and the coding tools.", "/images/guides/kimi.webp"),
+    existingGuide("what-is-a-prompt", "Write a prompt that gets a useful answer", "Use the same scope-setting habit for another task.", "/images/guides/what-is-a-prompt.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Keep secrets and private repositories out of an unapproved tool.", "/images/guides/learn-master.webp"),
   ],
 });
@@ -643,13 +661,14 @@ export const manusCreditTestGuide = makeGuide({
   finish: "You can now decide whether Manus deserves a larger task without guessing from an unfinished experiment.",
   related: [
     promptGuide("manus-browser-workflow", "When does a Manus browser workflow make sense?", "Choose whether a connected browser is justified."),
-    existingGuide("manus", "Should you use Manus?", "See the main Manus routes and their boundaries.", "/images/guides/manus.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what belongs outside a connected task.", "/images/guides/learn-master.webp"),
     promptGuide("is-kimi-worth-paying-for", "Is Kimi worth paying for?", "Compare value using completed work rather than features."),
   ],
 });
 
 export const manusBrowserWorkflowGuide = makeGuide({
   slug: "manus-browser-workflow",
+  promptMode: "as-written",
   title: "When does a Manus browser workflow make sense?",
   promise: "Use the cloud browser for public work, a connector for one supported service, and Browser Operator only when the task truly needs your signed-in browser.",
   coverAlt: "The Blue Princess choosing between a public cloud browser, one connector key and a guarded local browser door",
@@ -702,9 +721,9 @@ export const manusBrowserWorkflowGuide = makeGuide({
   },
   finish: "You can now choose between public browsing, a narrow connector and a local browser session from the access the job actually needs.",
   related: [
-    promptGuide("test-manus-without-burning-credits", "How do you test Manus without wasting credits?", "Prove one small result before connecting accounts."),
+    comingNextGuide("test-manus-without-burning-credits", "How do you test Manus without wasting credits?", "Prove one small result before connecting accounts."),
     existingGuide("what-is-an-ai-browser", "What is an AI browser?", "Understand what an AI browser can see and do.", "/images/guides/what-is-an-ai-browser.webp"),
-    existingGuide("connect-ai-to-email-files-calendar", "Should you connect AI to your accounts?", "Check permissions and disconnection before connected work.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what stays outside connected work.", "/images/guides/learn-master.webp"),
   ],
 });
 
@@ -750,7 +769,7 @@ export const switchToMistralGuide = makeGuide({
   finish: "You can now choose a tool from the quality and effort of one real job rather than a general model ranking.",
   related: [
     promptGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Test whether a paid plan removes a real blocker."),
-    existingGuide("mistral", "Should you use Mistral?", "See the Mistral product routes before switching.", "/images/guides/mistral.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what is safe to use in either service.", "/images/guides/learn-master.webp"),
     existingGuide("which-ai-tool-for-what", "Which AI tool should you use for what?", "Choose a tool from the job rather than the brand.", "/images/guides/which-ai-tool-for-what.webp"),
   ],
 });
@@ -762,8 +781,8 @@ export const mistralProValueGuide = makeGuide({
   coverAlt: "The Blue Princess using one measured key to open a machine blocked by a clear usage limit",
   seoDescription: "Decide whether Mistral Pro is worth paying for by testing one repeated blocker against the current plan.",
   sources: [
-    { label: "Mistral: Plans", url: "https://mistral.ai/products/le-chat" },
-    { label: "Mistral: Help centre", url: "https://help.mistral.ai/" },
+    { label: "Mistral: Current pricing and plan features", url: "https://mistral.ai/pricing/" },
+    { label: "Mistral: Usage and limits", url: "https://docs.mistral.ai/admin/billing-usage/usage-limits" },
   ],
   answer: [
     "**Upgrade for a repeated blocker, not a longer feature list.** The current paid plan must remove a limit that affects work you do often enough to justify its price.",
@@ -798,8 +817,8 @@ export const mistralProValueGuide = makeGuide({
   },
   finish: "You can now separate a real paid-plan benefit from a problem that a subscription will not solve.",
   related: [
-    promptGuide("switch-from-chatgpt-to-mistral", "Should you switch from ChatGPT to Mistral?", "Compare the tools on one checked task."),
-    existingGuide("mistral", "Should you use Mistral?", "Understand the product family before paying.", "/images/guides/mistral.webp"),
+    comingNextGuide("switch-from-chatgpt-to-mistral", "Should you switch from ChatGPT to Mistral?", "Compare the tools on one checked task."),
+    existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Check if another tool already covers the work.", "/images/guides/which-ai-tool-for-what.webp"),
     promptGuide("is-kimi-worth-paying-for", "Is Kimi worth paying for?", "Use the same completed-work test for another plan."),
   ],
 });
@@ -812,7 +831,7 @@ export const metaBusinessAgentGuide = makeGuide({
   seoDescription: "Test Meta Business Agent customer replies in WhatsApp Business before allowing a wider live rollout.",
   sources: [
     { label: "Meta: Be There for Every Customer With Meta Business Agent", url: "https://about.fb.com/news/2026/06/meta-business-agent/" },
-    { label: "WhatsApp Business help", url: "https://faq.whatsapp.com/" },
+    { label: "WhatsApp: How to set up Meta Business Agent", url: "https://faq.whatsapp.com/1153795669452207/?cms_platform=web" },
   ],
   answer: [
     "**Do not switch on automatic replies and hope for the best.** Prepare the correct answers first, test one practice chat and keep the agent paused if one reply is wrong or risky.",
@@ -858,6 +877,7 @@ export const metaBusinessAgentGuide = makeGuide({
 
 export const deepseekWallOfTextGuide = makeGuide({
   slug: "fix-deepseek-wall-of-text",
+  promptMode: "as-written",
   title: "Why did DeepSeek turn your scene into a wall of text?",
   promise: "Ask for paragraph and dialogue breaks while protecting the characters, facts and tone you already like.",
   coverAlt: "The Blue Princess cutting one dense wall of type into clear scene and dialogue panels",
@@ -899,13 +919,14 @@ export const deepseekWallOfTextGuide = makeGuide({
   finish: "You can now repair a dense scene without inviting a new story or a different voice.",
   related: [
     promptGuide("edit-long-writing-with-deepseek", "How do you edit a long DeepSeek story safely?", "Protect approved facts while revising one passage."),
-    existingGuide("deepseek", "Should you use DeepSeek?", "Choose the right DeepSeek route before adding longer work.", "/images/guides/deepseek.webp"),
+    promptGuide("review-grok-suggestions", "Did Grok catch an error or rewrite your work?", "Use the same careful review on another writing tool."),
     existingGuide("what-is-a-prompt", "How to write an AI prompt that gets a useful answer", "Make the edit boundary clearer.", "/images/guides/what-is-a-prompt.webp"),
   ],
 });
 
 export const deepseekLongEditGuide = makeGuide({
   slug: "edit-long-writing-with-deepseek",
+  promptMode: "as-written",
   title: "How do you edit a long DeepSeek story without losing what worked?",
   promise: "Lock the approved facts and voice, revise one selected passage, then compare it with the protected brief.",
   coverAlt: "The Blue Princess pinning protected story cards in place while revising one removable page",
@@ -947,7 +968,7 @@ export const deepseekLongEditGuide = makeGuide({
   finish: "You can now make a controlled long-form edit without sacrificing the parts you already approved.",
   related: [
     promptGuide("fix-deepseek-wall-of-text", "Why did DeepSeek create a wall of text?", "Fix readability before changing the story."),
-    existingGuide("deepseek", "Should you use DeepSeek?", "See where DeepSeek fits before using it for long writing.", "/images/guides/deepseek.webp"),
+    promptGuide("review-grok-suggestions", "Did Grok catch an error or rewrite your work?", "Check whether an edit stays within the job you gave it."),
     existingGuide("what-is-a-prompt", "Write a prompt that gets a useful answer", "Adapt the same checking habit to another task.", "/images/guides/what-is-a-prompt.webp"),
   ],
 });

@@ -69,8 +69,7 @@ export function GuideAccessBoundary({
           timestamp: new Date().toISOString(),
         }),
       });
-      const result = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(result.error || "We could not open the guide. Please try again.");
+      if (!response.ok) throw new Error("We could not open the guide. Please try again.");
       try {
         window.localStorage.setItem(variant === "unlock" ? ACCESS_KEY : `${ACCESS_KEY}:${guideSlug}`, "true");
       } catch {
@@ -80,9 +79,9 @@ export function GuideAccessBoundary({
       setStatus("idle");
       tracker?.("guide_unlock", { guide_slug: guideSlug, source_page: window.location.pathname });
       window.requestAnimationFrame(() => contentRef.current?.focus());
-    } catch (error) {
+    } catch {
       setStatus("error");
-      setMessage(error instanceof Error ? error.message : "We could not open the guide. Please try again.");
+      setMessage("We could not open the guide. Please try again.");
     }
   };
 

@@ -8,6 +8,15 @@ const root = process.cwd();
 const publication = JSON.parse(
   await readFile(path.join(root, "data", "guide-publication.json"), "utf8"),
 );
+const rebuildPlan = JSON.parse(
+  await readFile(path.join(root, "data", "guide-rebuild-plan.json"), "utf8"),
+);
+const notReady = publication.approved.filter(
+  (guide) => rebuildPlan.guides.find((item) => item.slug === guide.slug)?.status !== "approved",
+);
+if (notReady.length) {
+  throw new Error(`Bulk publication stopped: ${notReady.length} guide pages remain in review or pending. Ship only individually approved rebuilt pages.`);
+}
 
 // The Next.js build uses content-hashed filenames. Remove the previous generated
 // bundle before publishing so production contains one coherent asset set instead

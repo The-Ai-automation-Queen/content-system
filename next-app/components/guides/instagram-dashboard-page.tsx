@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { GuidePage, GuideSection } from "@/content/guide-page";
 import { GuideIcon, cleanLabel } from "./guide-icon";
 import { InteractiveWalkthrough } from "./interactive-walkthrough";
+import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./instagram-dashboard-page.module.css";
 
 const featureIcons = ["settings", "image", "route", "check", "search", "book"] as const;
@@ -44,7 +45,7 @@ export function InstagramDashboardPage({ guide }: { guide: GuidePage }) {
         <h2 id="instagram-next-title">What do you want to do next?</h2>
         <div>{guide.related.map((item) => item.status === "coming-next"
           ? <article key={item.slug}><div className={styles.relatedArt}><Image src={item.cover} alt="" fill sizes="(max-width: 720px) 100vw, 250px" /></div><div className={styles.relatedCopy}><strong>{cleanLabel(item.title)}</strong><p>{item.reason}</p><span>Coming next</span></div></article>
-          : <Link key={item.slug} href={`/guides/${item.slug}.html`}><div className={styles.relatedArt}><Image src={item.cover} alt="" fill sizes="(max-width: 720px) 100vw, 250px" /></div><div className={styles.relatedCopy}><strong>{cleanLabel(item.title)}</strong><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div>
+          : <GuideRelatedLink key={item.slug} slug={item.slug}><div className={styles.relatedArt}><Image src={item.cover} alt="" fill sizes="(max-width: 720px) 100vw, 250px" /></div><div className={styles.relatedCopy}><strong>{cleanLabel(item.title)}</strong><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div>
       </div>
     </section>
   </main>;

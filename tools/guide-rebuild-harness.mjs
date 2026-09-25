@@ -112,6 +112,9 @@ for (const { slug, lumailTag } of approved) {
     for (const link of guide.related ?? []) {
       if (link.status !== "coming-next" && !approvedSlugs.has(link.slug)) problems.push(`Related guide is not published: ${link.slug}`);
       if (!link.cover || !fs.existsSync(fromRoot("next-app", "public", link.cover.replace(/^\//, "")))) problems.push(`Related cover missing: ${link.slug}`);
+      const relatedPlan = planBySlug.get(link.slug);
+      if (item.status !== "pending" && relatedPlan?.status === "pending" && link.status !== "coming-next") problems.push(`Related guide still uses the static layout: ${link.slug}`);
+      if (relatedPlan && relatedPlan.status !== "pending" && link.status === "coming-next") problems.push(`Related guide placeholder can link to rebuilt page: ${link.slug}`);
     }
     if (!instructions(guide).length) problems.push("No complete copyable instruction found");
   }
@@ -129,6 +132,7 @@ for (const { slug, lumailTag } of approved) {
     if (fs.existsSync(stylePath)) {
       const css = fs.readFileSync(stylePath, "utf8");
       if (/var\(--cream\)|#faf7f2\b/i.test(css)) problems.push("Cream styling remains in rebuilt page");
+      if (/border-(?:left|inline-start)\s*:\s*(?:[2-9]|\d{2,})px\b/i.test(css)) problems.push("Decorative left-edge accent remains in rebuilt page");
       if (/white-space:\s*pre-line|\.page\s+p\s+strong\s*\{\s*display:\s*block/i.test(css)) problems.push("Forced prose line breaks remain");
       if (slug !== plan.reference && !/#ff5733|--guide-heading-accent/i.test(css)) problems.push("Orange section-heading accent missing");
     }

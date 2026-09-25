@@ -17,7 +17,7 @@ export type WalkthroughBlock =
   | { kind: "note"; text: string; icon: string }
   | { kind: "code"; text: string; label: string }
   | { kind: "list"; items: readonly string[] }
-  | { kind: "table"; rows: readonly (readonly [string, string])[] };
+  | { kind: "table"; rows: readonly (readonly string[])[] };
 
 export type GuideSection =
   | { kind: "walkthrough"; heading: string; introduction: string; blocks: readonly WalkthroughBlock[] }
@@ -93,7 +93,7 @@ export type GuidePage = {
     paragraphs: readonly [string, ...string[]];
   };
   sections: readonly GuideSection[];
-  series?: { part: 1; tasks: readonly { id: string; title: string; outcome: string; example: string; prompt: string; result: string }[]; correction: string } | { part: 2; instructions: string; exercise: string };
+  series?: { part: 1; tasks: readonly { id: string; title: string; outcome: string; example: string; prompt: string; result: string; wrongLine: string; correctionFact: string }[]; correction: string } | { part: 2; instructions: string; exercise: string };
   workshopInvitation?: { title: string; body: string; href?: string; label?: string };
   tutorial?: readonly GuideSection[];
   gateTeaser?: { heading: string; body: string };
@@ -402,10 +402,10 @@ At the end, tell me how I can check the actual memory controls in ChatGPT so I c
       cover: "/images/guides/what-is-a-prompt.webp",
     },
     {
-      slug: "connect-ai-to-email-files-calendar",
-      title: "Should you let AI connect to your email, files and calendar?",
-      reason: "See what permissions mean before linking a work account.",
-      cover: "/images/guides/connect-ai-to-email-files-calendar.webp",
+      slug: "what-should-you-never-share-with-ai",
+      title: "What should you never share with AI?",
+      reason: "See what stays out before linking a work account.",
+      cover: "/images/guides/learn-master.webp",
     },
     {
       slug: "what-is-agentic",
@@ -789,7 +789,7 @@ export const whichAiToolGuide = {
     { label: "Google: Workspace with Gemini", url: "https://knowledge.workspace.google.com/admin/generative-ai/workspace-with-gemini/google-workspace-with-gemini" },
     { label: "Microsoft: Microsoft 365 Copilot overview", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview" },
     { label: "Perplexity: How Perplexity works", url: "https://www.perplexity.ai/help-center/en/articles/10352895-how-does-perplexity-work" },
-    { label: "Google: NotebookLM sources", url: "https://support.google.com/notebooklm/answer/16215270" },
+    { label: "Google: NotebookLM is now Gemini Notebook", url: "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/" },
     { label: "xAI: Grok", url: "https://x.ai/grok" },
     { label: "DeepSeek", url: "https://www.deepseek.com/en/" },
     { label: "Kimi: product overview", url: "https://www.kimi.ai/help/getting-started/overview" },
@@ -823,7 +823,7 @@ export const whichAiToolGuide = {
         },
         {
           title: "Research you need to verify",
-          body: "Use **Perplexity** for current web research with visible sources. Use **NotebookLM** when you want answers based on documents and sources you selected yourself.",
+          body: "Use **Perplexity** for current web research with visible sources. Use **Gemini Notebook** when you want answers based on documents and sources you selected yourself.",
         },
       ],
     },
@@ -945,7 +945,7 @@ The information involved is:
 
 Ask me up to 5 short questions, one at a time.
 
-Then recommend no more than 2 options from ChatGPT, Claude, Gemini, Microsoft Copilot, Perplexity, NotebookLM, Grok, DeepSeek, Kimi, Manus, Meta AI or Mistral Le Chat.
+Then recommend no more than 2 options from ChatGPT, Claude, Gemini, Microsoft Copilot, Perplexity, Gemini Notebook, Grok, DeepSeek, Kimi, Manus, Meta AI or Mistral Le Chat.
 
 For each option, explain:
 
@@ -967,22 +967,22 @@ Do not recommend a tool simply because it is popular.`,
   },
   related: [
     {
-      slug: "chatgpt",
-      title: "Should you use ChatGPT?",
-      reason: "See the everyday, connected-work and advanced Codex routes.",
-      cover: "/images/guides/chatgpt.webp",
+      slug: "what-should-you-never-share-with-ai",
+      title: "What should you never share with AI?",
+      reason: "Check what information should stay out before testing any tool.",
+      cover: "/images/guides/learn-master.webp",
     },
     {
       slug: "claude",
-      title: "Should you use Claude?",
-      reason: "See where Claude fits, how to start and when Claude Code becomes useful.",
-      cover: "/images/guides/claude.webp",
+      title: "Get one useful thing done with Claude",
+      reason: "Try a complete example before choosing a tool for daily work.",
+      cover: "/images/guides/claude-first-task.webp",
     },
     {
-      slug: "gemini",
-      title: "Should you use Gemini?",
-      reason: "See how Gemini works across Google tools and which route fits your account.",
-      cover: "/images/guides/gemini.webp",
+      slug: "what-is-agentic",
+      title: "What AI agents actually do",
+      reason: "Decide if your task needs an agent or a simpler AI chat.",
+      cover: "/images/guides/what-is-agentic.webp",
     },
   ],
 } as const satisfies GuidePage;

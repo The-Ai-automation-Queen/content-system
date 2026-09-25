@@ -13,10 +13,14 @@ const publication = JSON.parse(
   await readFile(path.join(root, "data", "guide-publication.json"), "utf8"),
 );
 const approvedSlugs = new Set(publication.approved.map((guide) => guide.slug));
+const rebuildPlan = JSON.parse(
+  await readFile(path.join(root, "data", "guide-rebuild-plan.json"), "utf8"),
+);
+const rebuildStatus = rebuildPlan.guides.find((guide) => guide.slug === slug)?.status;
 
-if (!approvedSlugs.has(slug)) {
+if (!approvedSlugs.has(slug) || rebuildStatus !== "approved") {
   throw new Error(
-    `Refusing to publish unapproved guide: ${slug}. Approve its complete page and add it to data/guide-publication.json first.`,
+    `Refusing to publish ${slug}: its rebuilt page needs final approval in data/guide-rebuild-plan.json and a matching entry in data/guide-publication.json.`,
   );
 }
 
