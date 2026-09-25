@@ -137,12 +137,6 @@
       "journeyOrder": 112
     },
     {
-      "slug": "verify-grok-current-research",
-      "lumailTag": "guide-verify-grok-current-research",
-      "section": "AI tools",
-      "journeyOrder": 113
-    },
-    {
       "slug": "fix-deepseek-wall-of-text",
       "lumailTag": "guide-fix-deepseek-wall-of-text",
       "section": "AI tools",
@@ -263,12 +257,6 @@
       "journeyOrder": 102
     },
     {
-      "slug": "test-grok-repeated-image-edits",
-      "lumailTag": "guide-test-grok-repeated-image-edits",
-      "section": "Content and creative work",
-      "journeyOrder": 114
-    },
-    {
       "slug": "test-deepseek-v4-document-work",
       "lumailTag": "guide-test-deepseek-v4-document-work",
       "section": "AI tools",
@@ -288,6 +276,14 @@
     }
   ],
   "retired": [
+    {
+      "slug": "verify-grok-current-research",
+      "reason": "Withdrawn by the owner on 2026-09-25; preserve the draft for a later rebuild."
+    },
+    {
+      "slug": "test-grok-repeated-image-edits",
+      "reason": "Withdrawn by the owner on 2026-09-25; preserve the draft for a later rebuild."
+    },
     {
       "slug": "24-7-operations-system",
       "reason": "Retired from free publication; preserve the source for possible paid use."

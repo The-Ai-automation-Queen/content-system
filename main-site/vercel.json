@@ -51,7 +51,7 @@
     },
     {
       "source": "/guides/grok.html",
-      "destination": "/guides/verify-grok-current-research.html",
+      "destination": "/guides/",
       "permanent": true
     },
     {
