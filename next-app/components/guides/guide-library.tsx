@@ -122,7 +122,7 @@ export function GuideLibrary({ guides, searchIndex, reviewMode = false }: { guid
         </div>
         {featured && (
           <div className="guides-hero__feature" aria-label="Featured guide">
-            <GuideCard guide={featured} featured />
+            <GuideCard guide={featured} featured reviewMode={reviewMode} />
           </div>
         )}
       </section>
@@ -161,7 +161,7 @@ export function GuideLibrary({ guides, searchIndex, reviewMode = false }: { guid
           <ol>
             {foundations.map((guide, index) => (
               <li key={guide.slug}>
-                <a href={`/guides/${guide.slug}.html`}>
+                <a href={reviewMode ? `/guides/${guide.slug}/?review=1` : `/guides/${guide.slug}.html`}>
                   <span>0{index + 1}</span>
                   <strong>{guide.title}</strong>
                   <span aria-hidden="true">→</span>
@@ -202,7 +202,7 @@ export function GuideLibrary({ guides, searchIndex, reviewMode = false }: { guid
           {visible.length} {visible.length === 1 ? "guide" : "guides"}
         </p>
         <div className="guide-grid">
-          {visible.map((guide) => <GuideCard key={guide.slug} guide={guide} />)}
+          {visible.map((guide) => <GuideCard key={guide.slug} guide={guide} reviewMode={reviewMode} />)}
         </div>
         {visible.length === 0 && (
           <div className="empty-state">

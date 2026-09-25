@@ -1,11 +1,11 @@
 import Image from "next/image";
 import type { Guide } from "@/content/guides";
 
-export function GuideCard({ guide, featured = false }: { guide: Guide; featured?: boolean }) {
+export function GuideCard({ guide, featured = false, reviewMode = false }: { guide: Guide; featured?: boolean; reviewMode?: boolean }) {
   return (
     <a
       className={`guide-card${featured ? " guide-card--featured" : ""}`}
-      href={`/guides/${guide.slug}.html`}
+      href={reviewMode ? `/guides/${guide.slug}/?review=1` : `/guides/${guide.slug}.html`}
       aria-label={`Open guide: ${guide.title}`}
     >
       <div className="guide-card__art">
