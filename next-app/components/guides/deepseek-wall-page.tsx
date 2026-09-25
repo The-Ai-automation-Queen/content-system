@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { cleanLabel } from "./guide-icon";
-import { relatedGuideHref } from "./guide-preview-href";
+import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./deepseek-wall-page.module.css";
 
 const formattedScene = [
@@ -48,6 +48,6 @@ export function DeepseekWallPage({ guide }: { guide: GuidePage }) {
 
       <section className={styles.activity} aria-labelledby="wall-check-title"><div className={styles.sectionHead}><span>Before you keep it</span><h2 id="wall-check-title">Did it change more than the layout?</h2></div><div className={styles.checks}>{checkSection.items.map((item, index) => <label key={item.title}><input type="checkbox" checked={checked[index] ?? false} onChange={() => setChecked(current => current.map((value, i) => i === index ? !value : value))} /><span><strong>{item.title}</strong>{item.body}</span></label>)}</div><p className={styles.result} aria-live="polite">{checked.every(Boolean) ? "All four checks marked. Keep the formatting only if the original scene still says the same thing." : `${checked.filter(Boolean).length} of 4 checks marked. Compare the result with the original before keeping it.`}</p></section>
     </div>
-    <section className={styles.related} aria-labelledby="wall-related-title"><div className={styles.relatedInner}><h2 id="wall-related-title">Keep control of the next edit</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={relatedGuideHref(item.slug)}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="wall-related-title"><div className={styles.relatedInner}><h2 id="wall-related-title">Keep control of the next edit</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
   </main>;
 }

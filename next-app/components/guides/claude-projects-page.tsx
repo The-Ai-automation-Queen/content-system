@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { cleanLabel } from "./guide-icon";
-import { relatedGuideHref } from "./guide-preview-href";
+import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./claude-projects-page.module.css";
 
 const stages = ["Create a Project", "Save the instructions", "Try new notes", "Check the follow-up"] as const;
@@ -57,6 +57,6 @@ export function ClaudeProjectsPage({ guide }: { guide: GuidePage }) {
       <p className={styles.finish}><strong>Try the next meeting without repeating the format.</strong> If Claude keeps the headings and separates decisions from suggestions, the saved instruction is doing its job.</p>
       {guide.workshopInvitation && <p className={styles.workshop}>{guide.workshopInvitation.body}</p>}
     </div>
-    <section className={styles.related} aria-labelledby="claude-project-related-title"><div className={styles.relatedInner}><h2 id="claude-project-related-title">Give Claude another useful job</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={relatedGuideHref(item.slug)}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="claude-project-related-title"><div className={styles.relatedInner}><h2 id="claude-project-related-title">Give Claude another useful job</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
   </main>;
 }

@@ -6,7 +6,7 @@ import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { grokResearchPrompt } from "@/content/grok-research-prompt";
 import { cleanLabel } from "./guide-icon";
-import { relatedGuideHref } from "./guide-preview-href";
+import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./grok-research-page.module.css";
 
 const initialQuestion = "What did Meta officially announce about Muse?";
@@ -42,6 +42,6 @@ export function GrokResearchPage({ guide }: { guide: GuidePage }) {
 
       <section className={styles.learning} aria-labelledby="research-check-title"><div className={styles.sectionHead}><span>After Grok replies</span><h2 id="research-check-title">Check one important claim</h2></div><p>Pick the claim you might use at work. Open its cited source yourself, then mark these checks.</p><div className={styles.checks}>{["I opened the original source, not just a post or search snippet.", "The source date and exact wording support the claim.", "I moved anything without an opened primary source to Unverified."].map((item, index) => <label key={item}><input type="checkbox" checked={checked[index] ?? false} onChange={() => setChecked(current => current.map((value, i) => i === index ? !value : value))} /><span>{item}</span></label>)}</div><p className={styles.result} aria-live="polite">{checked.every(Boolean) ? "All checks marked. Use the claim only if the opened source really supports it." : `${checked.filter(Boolean).length} of 3 checks marked. Keep the claim out of Confirmed until you have checked its source.`}</p></section>
     </div>
-    <section className={styles.related} aria-labelledby="grok-research-related-title"><div className={styles.relatedInner}><h2 id="grok-research-related-title">Use the evidence in your next task</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={relatedGuideHref(item.slug)}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="grok-research-related-title"><div className={styles.relatedInner}><h2 id="grok-research-related-title">Use the evidence in your next task</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
   </main>;
 }

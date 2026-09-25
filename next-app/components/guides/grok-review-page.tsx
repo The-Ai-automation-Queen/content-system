@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { cleanLabel } from "./guide-icon";
-import { relatedGuideHref } from "./guide-preview-href";
+import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./grok-review-page.module.css";
 
 const practiceSuggestions = [
@@ -51,6 +51,6 @@ export function GrokReviewPage({ guide }: { guide: GuidePage }) {
       <section className={styles.sort} aria-labelledby="grok-sort-title"><div className={styles.sectionHead}><span>Review each suggestion</span><h2 id="grok-sort-title">Correction, option or reject?</h2></div><p className={styles.sortIntro}>Try these three example suggestions, then use the same labels on Grok’s reply.</p><div className={styles.sortGrid}>{practiceSuggestions.map((example, index) => <article key={example.text}><p>{example.text}</p><div className={styles.sortChoices} role="group" aria-label={`Classify suggestion ${index + 1}`}>{labels.items.map(item => { const label = cleanLabel(item.title); return <button key={label} type="button" aria-pressed={choices[index] === label} onClick={() => setChoices(current => current.map((choice, choiceIndex) => choiceIndex === index ? label : choice))}>{label}</button>; })}</div>{choices[index] && <p className={styles.sortFeedback} role="status">{choices[index] === example.answer ? "Yes. " : "Not quite. "}<strong>{example.answer}:</strong> {example.reason}</p>}</article>)}</div></section>
       <p className={styles.finish}><strong>Keep only what you can defend.</strong> The recording claim must match the fact sheet. A clearer sentence is optional; an invented fact is out.</p>
     </div>
-    <section className={styles.related} aria-labelledby="grok-related-title"><div className={styles.relatedInner}><h2 id="grok-related-title">Put the next Grok answer to work</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={relatedGuideHref(item.slug)}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="grok-related-title"><div className={styles.relatedInner}><h2 id="grok-related-title">Put the next Grok answer to work</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
   </main>;
 }

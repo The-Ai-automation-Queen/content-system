@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { cleanLabel } from "./guide-icon";
-import { relatedGuideHref } from "./guide-preview-href";
+import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./mistral-multilingual-page.module.css";
 
 const example = {
@@ -101,6 +101,6 @@ export function MistralMultilingualPage({ guide }: { guide: GuidePage }) {
         <p className={styles.result} aria-live="polite">{checked.every(Boolean) ? "All four checks marked. Keep only the conclusions you can trace to an opened source." : `${checked.filter(Boolean).length} of 4 checks marked. Leave unsupported conclusions out of your notes.`}</p>
       </section>
     </div>
-    <section className={styles.related} aria-labelledby="bilingual-related-title"><div className={styles.relatedInner}><h2 id="bilingual-related-title">Take the source-checking habit further</h2><div className={styles.relatedGrid}>{guide.related.map((item) => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={relatedGuideHref(item.slug)}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="bilingual-related-title"><div className={styles.relatedInner}><h2 id="bilingual-related-title">Take the source-checking habit further</h2><div className={styles.relatedGrid}>{guide.related.map((item) => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
   </main>;
 }

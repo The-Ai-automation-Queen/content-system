@@ -6,7 +6,7 @@ import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { buildPrompt, promptExample, type PromptBrief } from "@/content/prompt-builder-example";
 import { cleanLabel } from "./guide-icon";
-import { relatedGuideHref } from "./guide-preview-href";
+import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./prompt-builder-page.module.css";
 
 const stages = ["See an example", "Make it yours", "Use and check"] as const;
@@ -70,7 +70,7 @@ export function PromptBuilderPage({ guide }: { guide: GuidePage }) {
         </div>}
       </section>
     </div>
-    <section className={styles.related} aria-labelledby="prompt-related-title"><div className={styles.relatedInner}><h2 id="prompt-related-title">Get more from your next AI answer</h2><div className={styles.relatedGrid}>{guide.related.map(item => <Link key={item.slug} href={relatedGuideHref(item.slug)}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="prompt-related-title"><div className={styles.relatedInner}><h2 id="prompt-related-title">Get more from your next AI answer</h2><div className={styles.relatedGrid}>{guide.related.map(item => <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
   </main>;
 }
 
