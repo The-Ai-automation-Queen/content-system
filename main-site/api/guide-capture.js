@@ -2,6 +2,7 @@ const { validateRequest } = require("../lib/form-privacy");
 const publication = require("../../data/guide-publication.json");
 const rebuildPlan = require("../../data/guide-rebuild-plan.json");
 const preview = require("../../data/guide-preview.json");
+const guideInventory = require("../../next-app/content/guides.json");
 
 const APPROVED_GUIDES = new Map(
   publication.approved.map((guide) => [guide.slug, guide]),
@@ -11,6 +12,7 @@ const REBUILT_APPROVED_SLUGS = new Set(
 );
 
 const GUIDE_ORIGIN = "https://www.shiftandlead.com";
+const GUIDE_TITLES = new Map(guideInventory.guides.map((guide) => [guide.slug, guide.title]));
 
 function cleanText(value, maxLength) {
   return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
@@ -90,13 +92,31 @@ module.exports = async function handler(request, response) {
       }),
     });
 
-    const result = await lumailResponse.json().catch(() => ({}));
     if (!lumailResponse.ok) {
       console.error("Lumail guide capture failed", {
         status: lumailResponse.status,
         guideSlug,
 
       });
+      return response.status(502).json({ error: "We could not open the guide. Please try again." });
+    }
+    const guideUrl = `${GUIDE_ORIGIN}/guides/${guideSlug}/`;
+    const title = GUIDE_TITLES.get(guideSlug) || "your Shift & Lead guide";
+    const emailResponse = await fetch("https://lumail.io/api/v2/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "fatiha@email.shiftandlead.com",
+        to: normalizedEmail,
+        subject: `Your guide: ${title}`,
+        markdown: `Your guide is ready.\n\n[Open ${title}](${guideUrl})\n\nYou can use this link whenever you want to return to the steps.`,
+      }),
+    });
+    if (!emailResponse.ok) {
+      console.error("Lumail guide email failed", { status: emailResponse.status, guideSlug });
       return response.status(502).json({ error: "We could not open the guide. Please try again." });
     }
     return response.status(200).json({ success: true });
