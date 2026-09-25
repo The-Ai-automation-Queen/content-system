@@ -1118,16 +1118,16 @@
     },
     {
       "slug": "stop-chatgpt-forgetting-context",
-      "title": "Why does ChatGPT forget what you already told it?",
-      "h1": "Why does ChatGPT forget what you already told it?",
+      "title": "Why does ChatGPT forget what you told it?",
+      "h1": "Why does ChatGPT forget what you told it?",
       "datePublished": "2026-09-20",
-      "dateModified": "2026-09-20",
+      "dateModified": "2026-09-25",
       "readMinutes": 5,
       "cover": "/images/guides/stop-chatgpt-forgetting-context.webp",
       "track": "tools",
       "status": "live",
       "access": "free",
-      "reviewStatus": "page approved",
+      "reviewStatus": "page review",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Intermediate",
       "hub": "Better prompts and answers",
@@ -1139,7 +1139,7 @@
         "Projects",
         "context"
       ],
-      "summary": "Use one short Project brief to keep stable facts available across related chats.",
+      "summary": "Save a short Project brief, then check that a new chat keeps the facts you need.",
       "sequence": 202
     },
     {
