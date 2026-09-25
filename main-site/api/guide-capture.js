@@ -12,7 +12,7 @@ const REBUILT_APPROVED_SLUGS = new Set(
 );
 
 const GUIDE_ORIGIN = "https://www.shiftandlead.com";
-const GUIDE_TITLES = new Map(guideInventory.guides.map((guide) => [guide.slug, guide.title]));
+const GUIDE_DETAILS = new Map(guideInventory.guides.map((guide) => [guide.slug, guide]));
 
 function cleanText(value, maxLength) {
   return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
@@ -101,7 +101,23 @@ module.exports = async function handler(request, response) {
       return response.status(502).json({ error: "We could not open the guide. Please try again." });
     }
     const guideUrl = `${GUIDE_ORIGIN}/guides/${guideSlug}/`;
-    const title = GUIDE_TITLES.get(guideSlug) || "your Shift & Lead guide";
+    const guideDetails = GUIDE_DETAILS.get(guideSlug);
+    const title = guideDetails?.title || "your Shift & Lead guide";
+    const summary = guideDetails?.summary || "A practical guide to help you take the next step.";
+    const guideEmail = `Hi ${givenName},
+
+Here’s the guide you asked for.
+
+**${title}**
+${summary}
+
+[Open your guide](${guideUrl})
+
+The steps and any copyable instructions are together on the page. Start with the part you need today, then check the result before using it. You can come back to the rest when you have time.
+
+Keep this email so you can return to the guide. If you opened it on your phone, use the same link on your laptop when you’re ready to try the steps.
+
+The AI Automation Queen`;
     const emailResponse = await fetch("https://lumail.io/api/v2/emails", {
       method: "POST",
       headers: {
@@ -112,7 +128,7 @@ module.exports = async function handler(request, response) {
         from: "fatiha@email.shiftandlead.com",
         to: normalizedEmail,
         subject: `Your guide: ${title}`,
-        markdown: `Your guide is ready.\n\n[Open ${title}](${guideUrl})\n\nYou can use this link whenever you want to return to the steps.`,
+        markdown: guideEmail,
       }),
     });
     if (!emailResponse.ok) {
