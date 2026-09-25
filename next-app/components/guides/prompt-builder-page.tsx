@@ -75,5 +75,5 @@ export function PromptBuilderPage({ guide }: { guide: GuidePage }) {
 }
 
 function PromptBox({ title, text, copied, error, onCopy }: { title: string; text: string; copied: boolean; error: boolean; onCopy: (text: string) => void }) {
-  return <div className={styles.promptBox}><details><summary>{title}</summary><pre>{text}</pre></details><button type="button" onClick={() => onCopy(text)} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button>{error && <p role="alert">Copy failed. Open the instruction and select the text instead.</p>}</div>;
+  return <div className={styles.promptBox}><details open><summary>{title}</summary><pre>{text}</pre></details><button type="button" onClick={() => onCopy(text)} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button>{error && <p role="alert">Copy failed. Open the instruction and select the text instead.</p>}</div>;
 }

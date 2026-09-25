@@ -65,7 +65,7 @@ export function ScheduledTaskPage({ guide }: { guide: GuidePage }) {
           <label>Tell me only when<input value={condition} onChange={event => setCondition(event.target.value)} placeholder="a specific public result changes" /></label>
           <label>Stop checking<input value={stopRule} onChange={event => setStopRule(event.target.value)} placeholder="14 days after the task is created" /></label>
         </div>
-        <div className={styles.preview}><strong>Your instruction</strong><details><summary>View the complete instruction</summary><pre>{prompt}</pre></details><button type="button" disabled={!promptReady} onClick={copy} aria-label="Copy the complete scheduled task instruction">{copied ? "Copied" : "Copy"}</button></div>
+        <div className={styles.preview}><strong>Your instruction</strong><details open><summary>Complete instruction</summary><pre>{prompt}</pre></details><button type="button" disabled={!promptReady} onClick={copy} aria-label="Copy the complete scheduled task instruction">{copied ? "Copied" : "Copy"}</button></div>
         {!promptReady && <p className={styles.inputHelp}>Add a public page URL, an alert condition and a stop rule before copying.</p>}
         {copyError && <p role="alert">Copy failed. Open the complete instruction and select the text instead.</p>}
       </section>

@@ -34,7 +34,7 @@ export function GeminiDrivePage({ guide }: { guide: GuidePage }) {
   }
 
   function copyBox(value: string, key: string, label: string) {
-    return <div className={styles.copyBox}><details><summary>View the complete {label}</summary><pre>{value}</pre></details><button type="button" onClick={() => copy(value, key)} aria-label={`Copy the complete ${label}`}>{copied === key ? "Copied" : "Copy"}</button>{copyError === key && <p role="alert">Copy failed. Open the text and select it instead.</p>}</div>;
+    return <div className={styles.copyBox}><details open><summary>Complete {label}</summary><pre>{value}</pre></details><button type="button" onClick={() => copy(value, key)} aria-label={`Copy the complete ${label}`}>{copied === key ? "Copied" : "Copy"}</button>{copyError === key && <p role="alert">Copy failed. Open the text and select it instead.</p>}</div>;
   }
 
   return <main className={styles.page}>
