@@ -1,7 +1,8 @@
 "use client";
 
-import { type FormEvent, useMemo, useState } from "react";
+import { type FormEvent, useEffect, useMemo, useState } from "react";
 import { GuideCard } from "./guide-card";
+import { guideHref } from "@/content/guide-url";
 import {
   guideLevels,
   guideOutcomes,
@@ -40,22 +41,28 @@ function normalise(value: string) {
   return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[’']/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
 
-export function GuideLibrary({ guides, searchIndex, reviewMode = false }: { guides: Guide[]; searchIndex: Record<string, string>; reviewMode?: boolean }) {
+export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: Guide[]; previewGuides?: Guide[]; searchIndex: Record<string, string> }) {
+  const [reviewMode, setReviewMode] = useState(false);
   const [level, setLevel] = useState<LevelFilter>("all");
   const [outcome, setOutcome] = useState<OutcomeFilter>("all");
   const [query, setQuery] = useState("");
+  const listedGuides = reviewMode && previewGuides ? previewGuides : guides;
 
-  const featured = guides.find((guide) => guide.slug === "what-should-you-never-share-with-ai") ?? guides[0];
+  useEffect(() => {
+    setReviewMode(Boolean(previewGuides) && new URLSearchParams(window.location.search).get("review") === "1");
+  }, [previewGuides]);
+
+  const featured = listedGuides.find((guide) => guide.slug === "what-should-you-never-share-with-ai") ?? listedGuides[0];
   const foundations = foundationSlugs
-    .map((slug) => guides.find((guide) => guide.slug === slug))
+    .map((slug) => listedGuides.find((guide) => guide.slug === slug))
     .filter((guide): guide is Guide => Boolean(guide));
   const availableOutcomes = guideOutcomes.filter((item) =>
-    guides.some((guide) => guide.outcomes.includes(item)),
+    listedGuides.some((guide) => guide.outcomes.includes(item)),
   );
 
   const visible = useMemo(() => {
     const terms = normalise(query).split(" ").filter(Boolean);
-    return guides.map((guide, order) => {
+    return listedGuides.map((guide, order) => {
       const title = normalise(guide.title);
       const tags = normalise([guide.hub, guide.level, ...guide.outcomes, ...guide.tags].join(" "));
       const summary = normalise(guide.summary);
@@ -68,7 +75,7 @@ export function GuideLibrary({ guides, searchIndex, reviewMode = false }: { guid
       const matchesOutcome = outcome === "all" || guide.outcomes.includes(outcome);
       return matchesLevel && matchesOutcome && matchesSearch;
     }).sort((a, b) => b.score - a.score || a.order - b.order).map(({ guide }) => guide);
-  }, [guides, searchIndex, level, outcome, query]);
+  }, [listedGuides, searchIndex, level, outcome, query]);
 
   const resultLabel = query.trim() ? `Search results for “${query.trim()}”` : outcome !== "all"
     ? outcome
@@ -135,7 +142,7 @@ export function GuideLibrary({ guides, searchIndex, reviewMode = false }: { guid
         </div>
         <div className="outcome-nav__grid" role="group" aria-label="Filter guides by outcome">
           {availableOutcomes.map((item) => {
-            const count = guides.filter((guide) => guide.outcomes.includes(item)).length;
+            const count = listedGuides.filter((guide) => guide.outcomes.includes(item)).length;
             return (
               <button
                 key={item}
@@ -161,7 +168,7 @@ export function GuideLibrary({ guides, searchIndex, reviewMode = false }: { guid
           <ol>
             {foundations.map((guide, index) => (
               <li key={guide.slug}>
-                <a href={reviewMode ? `/guides/${guide.slug}/?review=1` : `/guides/${guide.slug}.html`}>
+                <a href={guideHref(guide.slug, reviewMode)}>
                   <span>0{index + 1}</span>
                   <strong>{guide.title}</strong>
                   <span aria-hidden="true">→</span>

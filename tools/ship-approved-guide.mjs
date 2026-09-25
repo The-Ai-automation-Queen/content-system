@@ -31,4 +31,4 @@ run(process.execPath, [path.join(root, "tools", "publish-next-guide.mjs"), slug]
 run("npm", ["run", "validate:guides"]);
 run(process.execPath, [path.join(root, "tools", "guide-rebuild-harness.mjs"), "--slug", slug]);
 
-console.log(`Guide ready: http://127.0.0.1:4197/guides/${slug}.html?review=1`);
+console.log(`Guide ready: http://127.0.0.1:4197/guides/${slug}/?review=1`);

@@ -797,7 +797,7 @@ export const switchToMistralGuide = makeGuide({
   },
   finish: "You can now choose a tool from the quality and effort of one real job rather than a general model ranking.",
   related: [
-    promptGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Test whether a paid plan removes a real blocker."),
+    comingNextGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Test whether a paid plan removes a real blocker."),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what is safe to use in either service.", "/images/guides/learn-master.webp"),
     existingGuide("which-ai-tool-for-what", "Which AI tool should you use for what?", "Choose a tool from the job rather than the brand.", "/images/guides/which-ai-tool-for-what.webp"),
   ],

@@ -59,7 +59,7 @@ module.exports = async function handler(request, response) {
 
   const consentTimestamp = new Date().toISOString();
   const consentTextVersion = "guide-request-v2-2026-09-20";
-  const sourcePage = `/guides/${guideSlug}.html`;
+  const sourcePage = `/guides/${guideSlug}/`;
 
   try {
     const lumailResponse = await fetch("https://lumail.io/api/v1/subscribers", {
@@ -76,7 +76,7 @@ module.exports = async function handler(request, response) {
           ...(givenName ? { first_name: givenName } : {}),
           ...(familyName ? { last_name: familyName } : {}),
           source: sourcePage,
-          guide_url: `${GUIDE_ORIGIN}/guides/${guideSlug}.html`,
+          guide_url: `${GUIDE_ORIGIN}/guides/${guideSlug}/`,
           consent: "true",
           consent_version: consentTextVersion,
           consent_timestamp: consentTimestamp,

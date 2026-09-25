@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const guide = getGuidePage(slug);
   if (!guide) return {};
-  const canonical = `/guides/${guide.slug}.html`;
+  const canonical = `/guides/${guide.slug}/`;
   return {
     title: guide.title,
     ...(approvedGuideSlugs.includes(slug) ? {} : { robots: { index: false, follow: false } }),

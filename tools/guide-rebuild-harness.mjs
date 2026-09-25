@@ -35,7 +35,7 @@ for (const name of ["README.md", "instagram-dashboard-desktop.jpg", "instagram-d
 }
 if (plannedSlugs.size !== plan.guides.length) globalProblems.push("Duplicate slug in rebuild plan.");
 for (const slug of approvedSlugs) if (!plannedSlugs.has(slug)) globalProblems.push(`Approved guide missing from rebuild plan: ${slug}`);
-for (const slug of plannedSlugs) if (!approvedSlugs.has(slug)) globalProblems.push(`Unapproved guide in rebuild plan: ${slug}`);
+for (const { slug, status } of plan.guides) if (!approvedSlugs.has(slug) && status !== "pending") globalProblems.push(`Unapproved guide in rebuild plan is not parked as pending: ${slug}`);
 if (onlySlug && !approvedSlugs.has(onlySlug)) globalProblems.push(`Unknown approved guide: ${onlySlug}`);
 
 const iconSource = read("next-app", "components", "guides", "guide-icon.tsx");
@@ -148,7 +148,7 @@ for (const { slug, lumailTag } of approved) {
       }
       if (html.includes("guide-reading-page_page") || html.includes("data-guide-preview")) problems.push("Old static reading layout still rendered");
       if (!html.includes(guide.cover)) problems.push("Topic-specific cover not rendered");
-      if (!guide.related.every((link) => html.includes(link.cover) && (link.status === "coming-next" ? html.includes("Coming next") : html.includes(`/guides/${link.slug}.html`)))) problems.push("Three-card next-guide section missing");
+      if (!guide.related.every((link) => html.includes(link.cover) && (link.status === "coming-next" ? html.includes("Coming next") : html.includes(`/guides/${link.slug}/`)))) problems.push("Three-card next-guide section missing");
       if (slug !== plan.reference && html.includes("What do you want to do next?")) problems.push("Generic next-guide heading remains");
       if (!html.includes("Copy")) problems.push("Copyable instruction control missing");
       if (!html.includes("guide-gated-content")) problems.push("Guide body not protected behind email capture");

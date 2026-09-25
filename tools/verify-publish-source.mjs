@@ -100,14 +100,24 @@ if (!guideCountPattern.test(guideLibrary)) {
   failures.push(`Guide library no longer identifies the ${approvedGuideSlugs.length} approved guides`);
 }
 for (const slug of approvedGuideSlugs) {
-  if (!guideLibrary.includes(`/guides/${slug}.html`)) {
+  if (!guideLibrary.includes(`/guides/${slug}/`)) {
     failures.push(`Approved guide is missing from the public library: ${slug}`);
+  }
+  if (!fs.existsSync(path.join(MAIN, 'guides', slug, 'index.html'))) {
+    failures.push(`Approved Next.js guide export is missing: /guides/${slug}/`);
+  }
+  if (fs.existsSync(path.join(MAIN, 'guides', `${slug}.html`))) {
+    failures.push(`Old .html guide copy remains deployed: /guides/${slug}.html`);
+  }
+  const redirect = vercel.redirects?.find((item) => item.source === `/guides/${slug}.html`);
+  if (redirect?.destination !== `/guides/${slug}/` || redirect.permanent !== true) {
+    failures.push(`Old guide URL needs a permanent redirect: /guides/${slug}.html`);
   }
 }
 for (const hiddenSlug of guideInventory
   .filter((guide) => !approvedGuideSlugSet.has(guide.slug))
   .map((guide) => guide.slug)) {
-  if (guideLibrary.includes(`/guides/${hiddenSlug}.html`)) {
+  if (guideLibrary.includes(`/guides/${hiddenSlug}/`)) {
     failures.push(`Unapproved guide appears in the public library: ${hiddenSlug}`);
   }
 }
@@ -119,6 +129,7 @@ for (const slug of retiredGuideSlugs) {
   else if (sourceGuide.status !== 'retired') failures.push(`Retired guide source is not marked retired: ${slug}`);
   const publicFile = path.join(MAIN, 'guides', `${slug}.html`);
   if (fs.existsSync(publicFile)) failures.push(`Retired guide is still deployed: /guides/${slug}.html`);
+  if (fs.existsSync(path.join(MAIN, 'guides', slug, 'index.html'))) failures.push(`Retired guide is still deployed: /guides/${slug}/`);
 }
 
 for (const file of fs.readdirSync(path.join(MAIN, 'guides')).filter((name) => name.endsWith('.html') && name !== 'index.html')) {
@@ -135,7 +146,7 @@ const sitemapPaths = new Set(
 );
 const expectedSitemapPaths = new Set([
   ...Object.values(statuses).filter((page) => page.status === 'active').map((page) => page.path),
-  ...approvedGuideSlugs.map((slug) => `/guides/${slug}.html`),
+  ...approvedGuideSlugs.map((slug) => `/guides/${slug}/`),
 ]);
 for (const expectedPath of expectedSitemapPaths) {
   if (!sitemapPaths.has(expectedPath)) failures.push(`Active URL is missing from sitemap: ${expectedPath}`);

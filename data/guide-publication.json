@@ -119,12 +119,6 @@
       "journeyOrder": 100
     },
     {
-      "slug": "test-meta-business-agent-customer-replies",
-      "lumailTag": "guide-test-meta-business-agent-customer-replies",
-      "section": "AI tools",
-      "journeyOrder": 101
-    },
-    {
       "slug": "review-grok-suggestions",
       "lumailTag": "guide-review-grok-suggestions",
       "section": "AI tools",
@@ -161,28 +155,10 @@
       "journeyOrder": 132
     },
     {
-      "slug": "test-manus-without-burning-credits",
-      "lumailTag": "guide-test-manus-without-burning-credits",
-      "section": "AI tools",
-      "journeyOrder": 141
-    },
-    {
       "slug": "manus-browser-workflow",
       "lumailTag": "guide-manus-browser-workflow",
       "section": "AI tools",
       "journeyOrder": 142
-    },
-    {
-      "slug": "switch-from-chatgpt-to-mistral",
-      "lumailTag": "guide-switch-from-chatgpt-to-mistral",
-      "section": "AI tools",
-      "journeyOrder": 151
-    },
-    {
-      "slug": "is-mistral-pro-worth-it",
-      "lumailTag": "guide-is-mistral-pro-worth-it",
-      "section": "AI tools",
-      "journeyOrder": 152
     },
     {
       "slug": "instagram-content-dashboard",
@@ -237,12 +213,6 @@
       "lumailTag": "guide-teach-claude-a-repeatable-workflow",
       "section": "Workflows and automation",
       "journeyOrder": 72
-    },
-    {
-      "slug": "fix-gemini-workspace-action",
-      "lumailTag": "guide-fix-gemini-workspace-action",
-      "section": "AI tools",
-      "journeyOrder": 83
     },
     {
       "slug": "what-can-copilot-see-at-work",
@@ -335,6 +305,38 @@
     {
       "slug": "mistral",
       "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
+    }
+  ],
+  "drafts": [
+    {
+      "slug": "fix-gemini-workspace-action",
+      "lumailTag": "guide-fix-gemini-workspace-action",
+      "section": "AI tools",
+      "reason": "Parked by owner on 2026-09-25; rebuild and review before publication."
+    },
+    {
+      "slug": "is-mistral-pro-worth-it",
+      "lumailTag": "guide-is-mistral-pro-worth-it",
+      "section": "AI tools",
+      "reason": "Parked by owner on 2026-09-25; rebuild and review before publication."
+    },
+    {
+      "slug": "switch-from-chatgpt-to-mistral",
+      "lumailTag": "guide-switch-from-chatgpt-to-mistral",
+      "section": "AI tools",
+      "reason": "Parked by owner on 2026-09-25; rebuild and review before publication."
+    },
+    {
+      "slug": "test-manus-without-burning-credits",
+      "lumailTag": "guide-test-manus-without-burning-credits",
+      "section": "AI tools",
+      "reason": "Parked by owner on 2026-09-25; rebuild and review before publication."
+    },
+    {
+      "slug": "test-meta-business-agent-customer-replies",
+      "lumailTag": "guide-test-meta-business-agent-customer-replies",
+      "section": "AI tools",
+      "reason": "Parked by owner on 2026-09-25; rebuild and review before publication."
     }
   ]
 }
