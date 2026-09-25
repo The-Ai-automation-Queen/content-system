@@ -119,7 +119,12 @@ test("entry guide capture sends both name fields and consent evidence without fo
   assert.equal(emailUrl, "https://lumail.io/api/v2/emails");
   const emailPayload = JSON.parse(emailRequest.body);
   assert.equal(emailPayload.to, "amina@example.com");
+  assert.match(emailPayload.markdown, /^Hi Amina,/);
+  assert.match(emailPayload.markdown, /Understand what AI does, what it cannot know/);
+  assert.match(emailPayload.markdown, /\[Open your guide\]/);
   assert.match(emailPayload.markdown, /https:\/\/www\.shiftandlead\.com\/guides\/what-is-ai\//);
+  assert.match(emailPayload.markdown, /The AI Automation Queen$/);
+  assert.ok(emailPayload.markdown.split(/\s+/).length > 80);
 });
 
 test("Instagram gate requires both name fields before sending to Lumail", async () => {
