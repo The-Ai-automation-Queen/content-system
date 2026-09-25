@@ -1009,7 +1009,6 @@ export const modelSeriesGuides = [
   copilotExcelGuide,
   reviewGrokSuggestionsGuide,
   grokProfessionalWritingGuide,
-  verifyGrokResearchGuide,
   kimiValueGuide,
   controlKimiCodeChangesGuide,
   manusCreditTestGuide,

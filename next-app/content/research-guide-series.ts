@@ -137,7 +137,7 @@ After the table, propose 3 next research questions. Do not recommend a product d
   finish: "You can now use AI to organise customer research while keeping the final interpretation open to inspection.",
   related: [
     promptGuide("chatgpt-screen-recording-to-process-guide", "Can ChatGPT turn a screen recording into a process guide?", "Turn observed work into checked instructions."),
-    promptGuide("verify-grok-current-research", "How do you verify research from Grok?", "Separate discussion from confirmed sources."),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Remove private information before asking AI to review research.", "/images/guides/learn-master.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Remove personal and confidential information before uploading research.", "/images/guides/learn-master.webp"),
   ],
 });
@@ -664,7 +664,7 @@ End with 3 conclusions supported by the table and 3 questions that still need re
   related: [
     comingNextGuide("switch-from-chatgpt-to-mistral", "Should you switch from ChatGPT to Mistral?", "Compare both tools on the same checked work task."),
     comingNextGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Measure whether the feature improves work you repeat."),
-    promptGuide("verify-grok-current-research", "How do you verify current research from Grok?", "Use another evidence-first research workflow."),
+    existingGuide("show-up-in-ai-search", "Can customers find your business in AI search?", "Check which claims an AI answer can trace to your public pages.", "/images/guides/show-up-in-ai-search.webp"),
   ],
 });
 
@@ -675,7 +675,6 @@ export const researchGuideSeries = [
   fixGeminiWorkspaceActionGuide,
   copilotVisibilityGuide,
   metaMuseSavingGuide,
-  grokRepeatedImageEditsGuide,
   deepseekV4DocumentGuide,
   protectDeepseekProjectGuide,
   mistralMultilingualResearchGuide,

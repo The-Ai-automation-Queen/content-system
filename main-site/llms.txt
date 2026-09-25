@@ -38,7 +38,6 @@ Workshops are available for companies.
 - Did Copilot change only the Excel cells you asked it to change?: https://www.shiftandlead.com/guides/check-copilot-excel-edits.html
 - Did Grok catch an error or rewrite your work into something else?: https://www.shiftandlead.com/guides/review-grok-suggestions.html
 - Why is Grok’s professional writing too thin?: https://www.shiftandlead.com/guides/get-better-professional-writing-from-grok.html
-- Can Grok research a current topic without turning posts into facts?: https://www.shiftandlead.com/guides/verify-grok-current-research.html
 - Is Kimi worth paying for, or will the limits stop you working?: https://www.shiftandlead.com/guides/is-kimi-worth-paying-for.html
 - How do you stop Kimi changing things you did not ask for?: https://www.shiftandlead.com/guides/control-kimi-code-changes.html
 - How do you test Manus without burning credits on an unfinished result?: https://www.shiftandlead.com/guides/test-manus-without-burning-credits.html
@@ -54,7 +53,6 @@ Workshops are available for companies.
 - Why won’t Gemini create the Doc, Task or Calendar item you requested?: https://www.shiftandlead.com/guides/fix-gemini-workspace-action.html
 - What can Copilot see in your emails, files and meetings?: https://www.shiftandlead.com/guides/what-can-copilot-see-at-work.html
 - Can Muse save you money without taking over the purchase?: https://www.shiftandlead.com/guides/test-meta-muse-money-saving-task.html
-- How many times can you edit a Grok image before it changes the parts you approved?: https://www.shiftandlead.com/guides/test-grok-repeated-image-edits.html
 - Can DeepSeek V4.1 replace your current AI for document work?: https://www.shiftandlead.com/guides/test-deepseek-v4-document-work.html
 - What should you save before a DeepSeek project becomes unavailable?: https://www.shiftandlead.com/guides/protect-a-long-deepseek-project.html
 - Can Mistral research in two languages without losing the source?: https://www.shiftandlead.com/guides/mistral-multilingual-research.html
