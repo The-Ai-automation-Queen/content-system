@@ -404,7 +404,7 @@ export const reviewGrokSuggestionsGuide = makeGuide({
   tryNow: {
     heading: "Ask for the smallest useful review",
     introduction: "Paste the sample paragraph above this instruction.",
-    prompt: `Review this paragraph only for:\n1. contradictions;\n2. unclear wording;\n3. claims that need a source.\n\nFor each suggestion, quote the exact sentence, name the problem and propose the smallest possible change. Do not change the purpose, tone, dates or structure. Do not rewrite the whole paragraph.`,
+    prompt: `Use the fact sheet above as the source of truth. Review the paragraph only for:\n1. claims that contradict the fact sheet;\n2. unclear wording;\n3. claims the fact sheet cannot confirm.\n\nFor each suggestion, quote the exact sentence, name the problem and propose the smallest possible change. Label a factual conflict as a correction and a wording change as optional. If the fact sheet cannot confirm a claim, flag it for me to check rather than inventing a replacement fact. Do not change the purpose, tone, dates or structure. Do not rewrite the whole paragraph.`,
     check: "You are done when every accepted factual change matches the fact sheet and no accepted suggestion exceeds the review scope.",
   },
   finish: "You can now separate a useful correction from a stylistic preference or an unwanted rewrite.",
@@ -452,7 +452,7 @@ export const grokProfessionalWritingGuide = makeGuide({
   tryNow: {
     heading: "Build the draft around evidence",
     introduction: "Use this complete work example.",
-    prompt: `Write a short recommendation for an operations director about whether to continue a meeting pilot.\n\nUse only these facts:\n- 18 people joined the pilot.\n- 14 used the new agenda.\n- 3 meetings were delayed because pre-reading arrived late.\n- The team wants to continue for one month.\n\nStructure:\n1. recommendation;\n2. evidence;\n3. risk;\n4. next step.\n\nDo not invent cost savings, satisfaction scores or causes.`,
+    prompt: `Write a short recommendation for an operations director about whether to continue a meeting pilot.\n\nUse all four facts below and no others:\n- 18 people joined the pilot.\n- 14 used the new agenda.\n- 3 meetings were delayed because pre-reading arrived late.\n- The team wants to continue for one month.\n\nTreat the team's wish to continue as a proposal, not a decision already approved.\n\nStructure:\n1. recommendation;\n2. evidence;\n3. risk;\n4. next step.\n\nDo not invent cost savings, satisfaction scores or causes.`,
     check: "You are done when you can point to the decision, evidence, risk and next step without repairing most of the draft.",
   },
   finish: "You can now keep Grok for this writing job, retest it or choose another tool based on a visible result.",
