@@ -8,29 +8,22 @@ import { cleanLabel } from "./guide-icon";
 import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./grok-review-page.module.css";
 
-const practiceSuggestions = [
-  { text: "Replace ‘A recording was promised’ with ‘A recording was discussed, not promised.’", answer: "Correction", reason: "The fact sheet says it was discussed, not promised." },
-  { text: "Change ‘Twelve managers joined’ to ‘Twelve managers took part.’", answer: "Optional", reason: "The meaning stays the same; this is a wording choice." },
-  { text: "Add ‘The pilot improved team performance.’", answer: "Reject", reason: "The fact sheet gives no evidence for that claim." },
+const actions = [
+  { text: "Read five public posts and return their links.", answer: "Read", reason: "This is the job you gave the Bot. Check the links in its result." },
+  { text: "Connect your X account to find your mentions.", answer: "Ask first", reason: "You need to review the access request and sign in yourself." },
+  { text: "Post a reply to someone who mentioned you.", answer: "Stop", reason: "This Bot may draft a reply for review, but this job does not allow posting." },
 ] as const;
+const choices = ["Read", "Ask first", "Stop"] as const;
 
 export function GrokReviewPage({ guide }: { guide: GuidePage }) {
-  const [revealed, setRevealed] = useState(false);
-  const [choices, setChoices] = useState<(string | null)[]>([null, null, null]);
+  const [answers, setAnswers] = useState<(string | null)[]>([null, null, null]);
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
-  const sample = guide.sections[0];
-  const labels = guide.sections[1];
-  if (sample.kind !== "walkthrough" || labels.kind !== "cards" || !guide.tryNow) return null;
-  const paragraph = sample.blocks.find(block => block.kind === "paragraph");
-  const facts = sample.blocks.find(block => block.kind === "list");
-  if (!paragraph || paragraph.kind !== "paragraph" || !facts || facts.kind !== "list") return null;
-
-  const prompt = `Paragraph to review:\n${paragraph.text.replace(/^Paragraph:\s*/, "")}\n\nFact sheet:\n${facts.items.map(item => `- ${item}`).join("\n")}\n\n${guide.tryNow.prompt}`;
+  if (!guide.tryNow) return null;
 
   async function copy() {
     try {
-      await navigator.clipboard.writeText(prompt);
+      await navigator.clipboard.writeText(guide.tryNow!.prompt);
       setCopied(true);
       setCopyError(false);
       window.setTimeout(() => setCopied(false), 2000);
@@ -42,15 +35,34 @@ export function GrokReviewPage({ guide }: { guide: GuidePage }) {
   return <main className={styles.page}>
     <div className={styles.shell}>
       <Link className={styles.back} href="/guides/">← All guides</Link>
-      <header className={styles.hero}><h1>Did Grok spot an error or <span>rewrite your point?</span></h1><p>Give Grok a paragraph and a fact sheet. Keep the corrections; decide for yourself about style changes.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
+      <header className={styles.hero}><h1>When should Grok Bot <span>ask you first?</span></h1><p>Give it one job. Decide what it can do on its own and what needs your say-so.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
-      <section className={styles.example} aria-labelledby="grok-example-title"><div className={styles.sectionHead}><span>Spot the problem first</span><h2 id="grok-example-title">One sentence cannot stay as written</h2></div><div className={styles.sampleGrid}><div><strong>In the paragraph</strong><p>“A recording was promised to every participant.”</p></div><div><strong>In the fact sheet</strong><p>“Recording: discussed, not promised.”</p></div></div><button className={styles.reveal} type="button" aria-expanded={revealed} onClick={() => setRevealed(!revealed)}>{revealed ? "Hide the correction" : "Show the correction"}</button>{revealed && <p className={styles.revealResult}>Change the claim to “A recording was discussed but not promised.” This is a factual correction, not a style choice.</p>}</section>
+      <section className={styles.example} aria-labelledby="grok-example-title">
+        <div className={styles.sectionHead}><span>Know the difference</span><h2 id="grok-example-title">Read, draft, act</h2></div>
+        <div className={styles.sampleGrid}>
+          <div><strong>Read and prepare</strong><p>Find public posts, collect links and draft possible replies.</p></div>
+          <div><strong>Act outside the chat</strong><p>Connect an account, post a reply or send a message. Review the exact action first.</p></div>
+        </div>
+      </section>
 
-      <section className={styles.action} aria-labelledby="grok-action-title"><div className={styles.sectionHead}><span>Try the complete example</span><h2 id="grok-action-title">Ask Grok for the smallest useful review</h2></div><ol><li><a href="https://grok.com/" target="_blank" rel="noopener noreferrer">Open Grok ↗</a> and start a new chat.</li><li>Copy and send the paragraph, fact sheet and review instruction together.</li><li>Compare every suggested factual change with the fact sheet before you keep it.</li></ol><div className={styles.prompt}><details><summary>View the complete instruction and example</summary><pre>{prompt}</pre></details><button type="button" onClick={copy} aria-label="Copy the complete Grok review example">{copied ? "Copied" : "Copy"}</button></div>{copyError && <p role="alert">Copy failed. Open the complete example and select the text instead.</p>}</section>
+      <section className={styles.sort} aria-labelledby="grok-sort-title">
+        <div className={styles.sectionHead}><span>Try three examples</span><h2 id="grok-sort-title">What would you allow?</h2></div>
+        <p className={styles.sortIntro}>This Bot checks public X posts but must not post anything. What would you let it do? The answer appears beside your choice.</p>
+        <div className={styles.sortGrid}>{actions.map((action, index) => <article key={action.text}>
+          <p>{action.text}</p>
+          <div className={styles.sortChoices} role="group" aria-label={`Choose a rule for action ${index + 1}`}>{choices.map(choice => <button key={choice} type="button" aria-pressed={answers[index] === choice} onClick={() => setAnswers(current => current.map((answer, i) => i === index ? choice : answer))}>{choice}</button>)}</div>
+          {answers[index] && <p className={styles.sortFeedback} role="status">{answers[index] === action.answer ? "Yes. " : "For this job, choose another rule. "}<strong>{action.answer}:</strong> {action.reason}</p>}
+        </article>)}</div>
+      </section>
 
-      <section className={styles.sort} aria-labelledby="grok-sort-title"><div className={styles.sectionHead}><span>Review each suggestion</span><h2 id="grok-sort-title">Correction, option or reject?</h2></div><p className={styles.sortIntro}>Try these three example suggestions, then use the same labels on Grok’s reply.</p><div className={styles.sortGrid}>{practiceSuggestions.map((example, index) => <article key={example.text}><p>{example.text}</p><div className={styles.sortChoices} role="group" aria-label={`Classify suggestion ${index + 1}`}>{labels.items.map(item => { const label = cleanLabel(item.title); return <button key={label} type="button" aria-pressed={choices[index] === label} onClick={() => setChoices(current => current.map((choice, choiceIndex) => choiceIndex === index ? label : choice))}>{label}</button>; })}</div>{choices[index] && <p className={styles.sortFeedback} role="status">{choices[index] === example.answer ? "Yes. " : "Not quite. "}<strong>{example.answer}:</strong> {example.reason}</p>}</article>)}</div></section>
-      <p className={styles.finish}><strong>Keep only what you can defend.</strong> The recording claim must match the fact sheet. A clearer sentence is optional; an invented fact is out.</p>
+      <section className={styles.action} aria-labelledby="grok-action-title">
+        <div className={styles.sectionHead}><span>Tell it when to stop</span><h2 id="grok-action-title">Copy this instruction into Grok Bot</h2></div>
+        <p>Open the Bot you created, replace the bracketed job, then copy and paste the full instruction. If this is your first Bot, <GuideRelatedLink slug="get-better-professional-writing-from-grok">start with the setup guide</GuideRelatedLink>. Check <a href="https://docs.x.ai/grok-bot/approvals-security-and-privacy" target="_blank" rel="noopener noreferrer">xAI’s approval settings ↗</a> before connecting an account.</p>
+        <div className={styles.prompt}><pre>{guide.tryNow.prompt}</pre><button type="button" onClick={copy} aria-label="Copy the complete Grok Bot boundaries">{copied ? "Copied" : "Copy"}</button></div>
+        {copyError && <p role="alert">Copy failed. Select the visible instruction text instead.</p>}
+      </section>
+      <p className={styles.finish}><strong>Start with reading and drafting.</strong> You decide before the Bot connects an account, sends a message or changes anything.</p>
     </div>
-    <section className={styles.related} aria-labelledby="grok-related-title"><div className={styles.relatedInner}><h2 id="grok-related-title">Put the next Grok answer to work</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="grok-related-title"><div className={styles.relatedInner}><h2 id="grok-related-title">Give your Bot a job with a clear finish</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
   </main>;
 }
