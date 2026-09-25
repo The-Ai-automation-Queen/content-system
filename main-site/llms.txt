@@ -16,46 +16,41 @@ Workshops are available for companies.
 
 ## Public guide library
 
-- 12 AI words you need to know: https://www.shiftandlead.com/guides/ai-jargon-guide.html
-- Which AI tool should you use?: https://www.shiftandlead.com/guides/which-ai-tool-for-what.html
-- Get one useful thing done with Claude: https://www.shiftandlead.com/guides/claude.html
-- What is Meta Muse, and should you let it act for you?: https://www.shiftandlead.com/guides/meta-ai.html
-- How to show up in AI search results: https://www.shiftandlead.com/guides/show-up-in-ai-search.html
-- How to write an AI prompt that gets a useful answer: https://www.shiftandlead.com/guides/what-is-a-prompt.html
-- What is an AI browser, and should you use one?: https://www.shiftandlead.com/guides/what-is-an-ai-browser.html
-- Should you let AI connect to your email, files and calendar?: https://www.shiftandlead.com/guides/connect-ai-to-email-files-calendar.html
-- Which AI skills are worth learning for work in 2026?: https://www.shiftandlead.com/guides/ai-skills-worth-learning-for-work.html
-- What AI agents actually do: https://www.shiftandlead.com/guides/what-is-agentic.html
-- What should you never share with AI?: https://www.shiftandlead.com/guides/what-should-you-never-share-with-ai.html
-- What AI actually is: https://www.shiftandlead.com/guides/what-is-ai.html
-- Build Your Own Instagram Dashboard: https://www.shiftandlead.com/guides/instagram-content-dashboard.html
-- Stop repeating your instructions to Claude: https://www.shiftandlead.com/guides/claude-projects.html
-- Why does ChatGPT keep giving you an essay?: https://www.shiftandlead.com/guides/make-chatgpt-answers-shorter.html
-- Why does ChatGPT forget what you already told it?: https://www.shiftandlead.com/guides/stop-chatgpt-forgetting-context.html
-- Can ChatGPT do the boring checking for you every day?: https://www.shiftandlead.com/guides/chatgpt-scheduled-tasks.html
-- Why can’t Gemini see the file that is already in your Drive?: https://www.shiftandlead.com/guides/gemini-cannot-find-drive-file.html
-- Can Gemini organise your Google Tasks by project?: https://www.shiftandlead.com/guides/gemini-google-tasks-limits.html
-- Did Copilot change only the Excel cells you asked it to change?: https://www.shiftandlead.com/guides/check-copilot-excel-edits.html
-- Did Grok catch an error or rewrite your work into something else?: https://www.shiftandlead.com/guides/review-grok-suggestions.html
-- Why is Grok’s professional writing too thin?: https://www.shiftandlead.com/guides/get-better-professional-writing-from-grok.html
-- Is Kimi worth paying for, or will the limits stop you working?: https://www.shiftandlead.com/guides/is-kimi-worth-paying-for.html
-- How do you stop Kimi changing things you did not ask for?: https://www.shiftandlead.com/guides/control-kimi-code-changes.html
-- How do you test Manus without burning credits on an unfinished result?: https://www.shiftandlead.com/guides/test-manus-without-burning-credits.html
-- When does a Manus browser workflow make sense?: https://www.shiftandlead.com/guides/manus-browser-workflow.html
-- Should you switch from ChatGPT to Mistral?: https://www.shiftandlead.com/guides/switch-from-chatgpt-to-mistral.html
-- Is Mistral Pro worth paying for?: https://www.shiftandlead.com/guides/is-mistral-pro-worth-it.html
-- Should you let Meta Business Agent answer your customers?: https://www.shiftandlead.com/guides/test-meta-business-agent-customer-replies.html
-- Why did DeepSeek turn your scene into a wall of text?: https://www.shiftandlead.com/guides/fix-deepseek-wall-of-text.html
-- How do you edit a long DeepSeek story without losing what worked?: https://www.shiftandlead.com/guides/edit-long-writing-with-deepseek.html
-- Can ChatGPT turn a screen recording into a usable process guide?: https://www.shiftandlead.com/guides/chatgpt-screen-recording-to-process-guide.html
-- Can ChatGPT group customer research without inventing themes?: https://www.shiftandlead.com/guides/chatgpt-customer-research-with-evidence.html
-- How do you teach Claude a job you repeat every week?: https://www.shiftandlead.com/guides/teach-claude-a-repeatable-workflow.html
-- Why won’t Gemini create the Doc, Task or Calendar item you requested?: https://www.shiftandlead.com/guides/fix-gemini-workspace-action.html
-- What can Copilot see in your emails, files and meetings?: https://www.shiftandlead.com/guides/what-can-copilot-see-at-work.html
-- Can Muse save you money without taking over the purchase?: https://www.shiftandlead.com/guides/test-meta-muse-money-saving-task.html
-- Can DeepSeek V4.1 replace your current AI for document work?: https://www.shiftandlead.com/guides/test-deepseek-v4-document-work.html
-- What should you save before a DeepSeek project becomes unavailable?: https://www.shiftandlead.com/guides/protect-a-long-deepseek-project.html
-- Can Mistral research in two languages without losing the source?: https://www.shiftandlead.com/guides/mistral-multilingual-research.html
+- 12 AI words you need to know: https://www.shiftandlead.com/guides/ai-jargon-guide/
+- Which AI tool should you use?: https://www.shiftandlead.com/guides/which-ai-tool-for-what/
+- Get one useful thing done with Claude: https://www.shiftandlead.com/guides/claude/
+- What is Meta Muse, and should you let it act for you?: https://www.shiftandlead.com/guides/meta-ai/
+- How to show up in AI search results: https://www.shiftandlead.com/guides/show-up-in-ai-search/
+- How to write an AI prompt that gets a useful answer: https://www.shiftandlead.com/guides/what-is-a-prompt/
+- What is an AI browser, and should you use one?: https://www.shiftandlead.com/guides/what-is-an-ai-browser/
+- Should you let AI connect to your email, files and calendar?: https://www.shiftandlead.com/guides/connect-ai-to-email-files-calendar/
+- Which AI skills are worth learning for work in 2026?: https://www.shiftandlead.com/guides/ai-skills-worth-learning-for-work/
+- What AI agents actually do: https://www.shiftandlead.com/guides/what-is-agentic/
+- What should you never share with AI?: https://www.shiftandlead.com/guides/what-should-you-never-share-with-ai/
+- What AI actually is: https://www.shiftandlead.com/guides/what-is-ai/
+- Build Your Own Instagram Dashboard: https://www.shiftandlead.com/guides/instagram-content-dashboard/
+- Stop repeating your instructions to Claude: https://www.shiftandlead.com/guides/claude-projects/
+- Why does ChatGPT keep giving you an essay?: https://www.shiftandlead.com/guides/make-chatgpt-answers-shorter/
+- Why does ChatGPT forget what you already told it?: https://www.shiftandlead.com/guides/stop-chatgpt-forgetting-context/
+- Can ChatGPT do the boring checking for you every day?: https://www.shiftandlead.com/guides/chatgpt-scheduled-tasks/
+- Why can’t Gemini see the file that is already in your Drive?: https://www.shiftandlead.com/guides/gemini-cannot-find-drive-file/
+- Can Gemini organise your Google Tasks by project?: https://www.shiftandlead.com/guides/gemini-google-tasks-limits/
+- Did Copilot change only the Excel cells you asked it to change?: https://www.shiftandlead.com/guides/check-copilot-excel-edits/
+- Did Grok catch an error or rewrite your work into something else?: https://www.shiftandlead.com/guides/review-grok-suggestions/
+- Why is Grok’s professional writing too thin?: https://www.shiftandlead.com/guides/get-better-professional-writing-from-grok/
+- Is Kimi worth paying for, or will the limits stop you working?: https://www.shiftandlead.com/guides/is-kimi-worth-paying-for/
+- How do you stop Kimi changing things you did not ask for?: https://www.shiftandlead.com/guides/control-kimi-code-changes/
+- When does a Manus browser workflow make sense?: https://www.shiftandlead.com/guides/manus-browser-workflow/
+- Why did DeepSeek turn your scene into a wall of text?: https://www.shiftandlead.com/guides/fix-deepseek-wall-of-text/
+- How do you edit a long DeepSeek story without losing what worked?: https://www.shiftandlead.com/guides/edit-long-writing-with-deepseek/
+- Can ChatGPT turn a screen recording into a usable process guide?: https://www.shiftandlead.com/guides/chatgpt-screen-recording-to-process-guide/
+- Can ChatGPT group customer research without inventing themes?: https://www.shiftandlead.com/guides/chatgpt-customer-research-with-evidence/
+- How do you teach Claude a job you repeat every week?: https://www.shiftandlead.com/guides/teach-claude-a-repeatable-workflow/
+- What can Copilot see in your emails, files and meetings?: https://www.shiftandlead.com/guides/what-can-copilot-see-at-work/
+- Can Muse save you money without taking over the purchase?: https://www.shiftandlead.com/guides/test-meta-muse-money-saving-task/
+- Can DeepSeek V4.1 replace your current AI for document work?: https://www.shiftandlead.com/guides/test-deepseek-v4-document-work/
+- What should you save before a DeepSeek project becomes unavailable?: https://www.shiftandlead.com/guides/protect-a-long-deepseek-project/
+- Can Mistral research in two languages without losing the source?: https://www.shiftandlead.com/guides/mistral-multilingual-research/
 
 ## Editorial approach
 

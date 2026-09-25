@@ -1,0 +1,11 @@
+:HL["/_next/static/media/806de4d605d3ad01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/97ac91773d3121b2-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/eaead17c7dbfcd5d-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/fc727f226c737876-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/fa43282e43cdff2a.css","style"]
+:HL["/_next/static/css/f481ecc29308644b.css","style"]
+:HL["/_next/static/css/80440345e7940972.css","style"]
+:HL["/_next/static/css/f3205ffc14d1e1bd.css","style"]
+:HL["/_next/static/css/4cb22025a7d9a722.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"guides","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"stop-chatgpt-forgetting-context","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"rT5lbFNpqXA5uarOxM1xF"}

@@ -48,10 +48,11 @@ const approved = publication.approved ?? [];
 const slugs = approved.map((guide) => guide.slug);
 const inventorySlugs = new Set(inventory.map((guide) => guide.slug));
 const approvedSlugSet = new Set(slugs);
+const parkedSlugSet = new Set((publication.drafts ?? []).map((guide) => guide.slug));
 const rebuildStatuses = new Set(["approved", "review", "pending"]);
 const rebuildSlugs = rebuildPlan.guides.map((guide) => guide.slug);
 const rebuildCounts = Object.fromEntries([...rebuildStatuses].map((status) => [status, rebuildPlan.guides.filter((guide) => guide.status === status).length]));
-const reviewGuides = inventory.filter((guide) => guide.reviewStatus === "page review" && !approvedSlugSet.has(guide.slug));
+const reviewGuides = inventory.filter((guide) => guide.status !== "draft" && guide.reviewStatus === "page review" && !approvedSlugSet.has(guide.slug));
 const previewBySlug = new Map((preview.guides ?? []).map((guide) => [guide.slug, guide]));
 const hasStructuredSlug = (slug) => pageSource.includes(`slug: "${slug}"`) || pageSource.includes(`"slug": "${slug}"`);
 
@@ -60,7 +61,7 @@ if (!approved.length) failures.push("The publication registry has no approved gu
 if (new Set(slugs).size !== slugs.length) failures.push("The publication registry contains a duplicate slug.");
 if (new Set(rebuildSlugs).size !== rebuildSlugs.length) failures.push("The guide rebuild plan contains a duplicate slug.");
 for (const guide of rebuildPlan.guides) {
-  if (!approvedSlugSet.has(guide.slug)) failures.push(`Rebuild plan guide is missing from the publication registry: ${guide.slug}`);
+  if (!approvedSlugSet.has(guide.slug) && !(parkedSlugSet.has(guide.slug) && guide.status === "pending")) failures.push(`Rebuild plan guide is missing from the publication registry or parked drafts: ${guide.slug}`);
   if (!rebuildStatuses.has(guide.status)) failures.push(`Rebuild plan guide has an invalid status: ${guide.slug}`);
 }
 for (const slug of slugs) {

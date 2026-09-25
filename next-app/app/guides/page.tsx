@@ -24,15 +24,14 @@ export const metadata: Metadata = {
 };
 
 export default function GuidesPage() {
-  const reviewMode = process.env.NODE_ENV === "development";
-  const listedGuides = reviewMode ? reviewGuides : publicGuides;
-  const searchIndex = Object.fromEntries(listedGuides.map((guide) => {
+  const previewGuides = process.env.NODE_ENV === "development" ? reviewGuides : undefined;
+  const searchIndex = Object.fromEntries((previewGuides ?? publicGuides).map((guide) => {
     const page = guidePages.find((item) => item.slug === guide.slug) as GuidePage | undefined;
     return [guide.slug, page ? readingText({ answer: page.answer, sections: page.sections, tutorial: page.tutorial, tryNow: page.tryNow, series: page.series, conclusion: page.conclusion }) : ""];
   }));
   return (
     <main>
-      <GuideLibrary guides={listedGuides} searchIndex={searchIndex} reviewMode={reviewMode} />
+      <GuideLibrary guides={publicGuides} previewGuides={previewGuides} searchIndex={searchIndex} />
 
       <section className="guides-cta" aria-labelledby="guides-cta-title">
         <div>

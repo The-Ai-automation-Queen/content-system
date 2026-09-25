@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const guide = getGuidePage(slug);
   if (!guide) return {};
-  const canonical = `/guides/${guide.slug}.html`;
+  const canonical = `/guides/${guide.slug}/`;
   return {
     title: guide.title,
     ...(approvedGuideSlugs.includes(slug) ? {} : { robots: { index: false, follow: false } }),
@@ -76,7 +76,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "what-should-you-never-share-with-ai") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="See what to keep out of AI, what needs permission and where to check your tool's privacy setting. Enter your email to open the guide." variant="entry"><PrivacyGuidePage guide={guide} /></GuideAccessBoundary>;
   if (slug === "which-ai-tool-for-what") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Choose a first AI tool based on your task and where your work lives. Enter your email to open the guide." variant="entry"><ToolChooserPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "make-chatgpt-answers-shorter") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Give ChatGPT a clear answer limit, then check if it kept the parts you needed. Enter your email to open the guide." variant="entry"><ShortAnswerPage guide={guide} /></GuideAccessBoundary>;
-  if (slug === "stop-chatgpt-forgetting-context") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Put the facts ChatGPT keeps forgetting in one Project, then test a new chat. Enter your email to open the guide." variant="entry"><ChatGptProjectPage guide={guide} /></GuideAccessBoundary>;
+  if (slug === "stop-chatgpt-forgetting-context") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Save a short Project brief and see if a new chat keeps the facts you need. Enter your email to open the guide." variant="entry"><ChatGptProjectPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "chatgpt-scheduled-tasks") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Set one public page to check each weekday. Get an update only when the change matters. Enter your email to open the guide." variant="entry"><ScheduledTaskPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "claude") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Pick one real task and use a complete example in Claude. Enter your email to open the guide." variant="entry"><ClaudeTaskPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "claude-projects") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Save your meeting-note instructions once in Claude, then test a new meeting. Enter your email to open the guide." variant="entry"><ClaudeProjectsPage guide={guide} /></GuideAccessBoundary>;

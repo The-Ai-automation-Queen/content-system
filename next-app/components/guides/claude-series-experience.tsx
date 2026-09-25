@@ -12,7 +12,7 @@ export function SeriesGuideLink({ href, children, className, current }: {href:st
   useEffect(() => {
     if (["localhost", "127.0.0.1"].includes(location.hostname)) {
       const review = new URLSearchParams(location.search).get("review") === "1";
-      setDestination(href.replace(/\.html$/, "/") + (review ? "?review=1" : ""));
+      setDestination(href + (review ? "?review=1" : ""));
     }
   }, [href]);
   return <a href={destination} className={className} aria-current={current ? "page" : undefined}>{children}</a>;
@@ -40,8 +40,8 @@ export function ClaudeSeriesExperience({ series }: { series: NonNullable<GuidePa
   };
   return <div className={s.experience}>
     <nav className={s.seriesNav} aria-label="Claude guide series">
-      <SeriesGuideLink href="/guides/claude.html" current={series.part === 1}>1. Finish a task</SeriesGuideLink>
-      <SeriesGuideLink href="/guides/claude-projects.html" current={series.part === 2}>2. Reuse your instructions</SeriesGuideLink>
+      <SeriesGuideLink href="/guides/claude/" current={series.part === 1}>1. Finish a task</SeriesGuideLink>
+      <SeriesGuideLink href="/guides/claude-projects/" current={series.part === 2}>2. Reuse your instructions</SeriesGuideLink>
     </nav>
     <p className={s.returnNote}><GuideIcon name="book"/>Reading on your phone? Bookmark this guide to return to it on your laptop. Access is remembered in this browser; another browser may ask for your email again.</p>
     {series.part === 1 ? <ProjectWalkthrough project={false} labels={["Choose a task", "Try the example", "Check your result"]} storageKey="shift-lead-claude-task-step">
