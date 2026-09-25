@@ -62,7 +62,13 @@ export function ChatGptProjectPage({ guide }: { guide: GuidePage }) {
   return <main className={styles.page}>
     <div className={styles.shell}>
       <Link className={styles.back} href="/guides/">← All guides</Link>
-      <header className={styles.hero}><h1>Why does ChatGPT forget <span>what you told it?</span></h1><p>It may use past chats, but it does not keep every detail as a rule. Give ongoing work a short Project brief, then check the next answer against it.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
+      <header className={styles.hero}>
+        <div className={styles.heroCopy}>
+          <h1>Why does ChatGPT forget <span>what you told it?</span></h1>
+          <p>It may use past chats, but it does not keep every detail as a rule. Give ongoing work a short Project brief, then check the next answer against it.</p>
+        </div>
+        <figure className={styles.heroImage}><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 500px" /></figure>
+      </header>
 
       <section className={styles.choice} aria-labelledby="project-choice-title"><div className={styles.sectionHead}><span>Find the right fix</span><h2 id="project-choice-title">Will you need these facts again?</h2></div><div className={styles.choiceGrid}><div><button type="button" aria-pressed={mode === "chat"} onClick={() => setMode("chat")}><GuideIcon name="prompt" /><strong>No, this is one question</strong></button>{mode === "chat" && <p className={styles.choiceResult}>Stay in a normal chat. Put the essential facts beside the request you are sending now.</p>}</div><div><button type="button" aria-pressed={mode === "project"} onClick={() => setMode("project")}><GuideIcon name="book" /><strong>Yes, across several chats</strong></button>{mode === "project" && <p className={styles.choiceResult}>Use a Project. Save the facts once as instructions, then check the answer in a new chat inside it.</p>}</div></div></section>
 
