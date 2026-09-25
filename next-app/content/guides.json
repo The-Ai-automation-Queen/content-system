@@ -1250,10 +1250,10 @@
     },
     {
       "slug": "review-grok-suggestions",
-      "title": "Did Grok catch an error or rewrite your work into something else?",
-      "h1": "Did Grok catch an error or rewrite your work into something else?",
+      "title": "When should Grok Bot ask you first?",
+      "h1": "When should Grok Bot ask you first?",
       "datePublished": "2026-09-20",
-      "dateModified": "2026-09-20",
+      "dateModified": "2026-09-25",
       "readMinutes": 4,
       "cover": "/images/guides/review-grok-suggestions.webp",
       "track": "tools",
@@ -1261,17 +1261,17 @@
       "access": "free",
       "reviewStatus": "page approved",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
-      "hub": "Better prompts and answers",
+      "level": "Intermediate",
+      "hub": "AI agents",
       "outcomes": [
-        "Get better answers"
+        "Build an agent"
       ],
       "tags": [
-        "Grok",
-        "writing review",
-        "fact checking"
+        "Grok Bot",
+        "permissions",
+        "AI agents"
       ],
-      "summary": "Sort Grok suggestions into factual corrections, optional improvements and unwanted rewrites.",
+      "summary": "Choose what a Grok Bot can do on its own and what needs your permission.",
       "sequence": 207
     },
     {

@@ -374,45 +374,54 @@ export const copilotExcelGuide = makeGuide({
 export const reviewGrokSuggestionsGuide = makeGuide({
   slug: "review-grok-suggestions",
   promptMode: "as-written",
-  title: "Did Grok catch an error or rewrite your work into something else?",
-  promise: "Sort every suggestion into a factual correction, an optional improvement or a change you did not ask for.",
-  coverAlt: "The small blue robot princess sorting marked pages into correction, option and reject trays",
-  seoDescription: "Review Grok writing suggestions without accepting factual changes or broad rewrites you did not request.",
-  sources: [{ label: "xAI: Grok consumer FAQ", url: "https://x.ai/legal/faq" }],
+  title: "When should Grok Bot ask you first?",
+  promise: "Decide which parts of a Bot's job it may do alone and which need your permission.",
+  coverAlt: "The blue robot sorting proposed work into review trays",
+  seoDescription: "Set simple approval boundaries for Grok Bot before connecting an account or letting it act.",
+  sources: [{ label: "xAI: Grok Bot approvals, security and privacy", url: "https://docs.x.ai/grok-bot/approvals-security-and-privacy" }],
   answer: [
-    "**Judge one suggestion at a time.** A factual correction needs evidence, an optional improvement needs your preference, and a rewrite outside the request should be rejected.",
+    "**Start with read-only work.** Let your Bot collect public links and prepare drafts. Review any account connection or external action yourself.",
   ],
   sections: [
     {
-      kind: "walkthrough",
-      heading: "Use one paragraph and one fact sheet",
-      introduction: "The example is invented, so every factual change can be checked.",
-      blocks: [
-        { kind: "paragraph", text: "Paragraph: The pilot ran from 3 to 14 June. Twelve managers joined. Nine completed the final exercise. The team will decide in July whether to repeat the session. A recording was promised to every participant." },
-        { kind: "list", items: ["Pilot dates: 3 to 14 June", "Participants: 12", "Completed: 9", "Repeat decision: July", "Recording: discussed, not promised"] },
+      kind: "cards",
+      heading: "Three kinds of action",
+      items: [
+        { title: "Read", body: "Search public posts and bring back links for you to check." },
+        { title: "Ask first", body: "Show you the access request before connecting an account." },
+        { title: "Stop", body: "Draft a reply, but do not post or send it for this job." },
       ],
     },
     {
-      kind: "cards",
-      heading: "Sort every suggestion",
-      items: [
-        { title: "Correction", body: "It fixes a claim that conflicts with the fact sheet." },
-        { title: "Optional", body: "It improves clarity without changing the meaning." },
-        { title: "Reject", body: "It adds facts, changes the scope or rewrites more than requested." },
+      kind: "steps",
+      heading: "Set the boundary before connecting tools",
+      introduction: "Open Grok Bot settings and choose narrow rules for this Bot.",
+      steps: [
+        { title: "Describe the job", body: "Name what the Bot may read and what it must return." },
+        { title: "Review a request", body: "Check the account, target and exact action before allowing it." },
+        { title: "Keep sending separate", body: "Drafts stay in chat until you decide to send or publish them yourself." },
       ],
     },
   ],
   tryNow: {
-    heading: "Ask for the smallest useful review",
-    introduction: "Paste the sample paragraph above this instruction.",
-    prompt: `Use the fact sheet above as the source of truth. Review the paragraph only for:\n1. claims that contradict the fact sheet;\n2. unclear wording;\n3. claims the fact sheet cannot confirm.\n\nFor each suggestion, quote the exact sentence, name the problem and propose the smallest possible change. Label a factual conflict as a correction and a wording change as optional. If the fact sheet cannot confirm a claim, flag it for me to check rather than inventing a replacement fact. Do not change the purpose, tone, dates or structure. Do not rewrite the whole paragraph.`,
-    check: "You are done when every accepted factual change matches the fact sheet and no accepted suggestion exceeds the review scope.",
+    heading: "Tell Grok Bot where to stop",
+    introduction: "Replace the bracketed job, then paste the full instruction into the Bot you created.",
+    prompt: `This Bot helps me with [ONE PUBLIC MONITORING JOB]. For now, it may read public pages or posts and return a brief with original links. It may prepare draft replies or suggested next steps, but must label them as drafts.
+
+Before connecting any account, opening private work, changing a permission, or signing in, stop and tell me which account you need and why. I will complete any login myself.
+
+Do not send a message, post a reply, publish, buy, delete, edit an account or create a recurring routine for this job. Do not treat a broad request such as “handle it” as permission to do those things.
+
+When you report back, give me: what you read, the original links, the result, anything uncertain, and any action you want me to approve. If an action needs approval, show the exact destination and text before asking. If you cannot complete the read-only job, say what blocked you and stop.
+
+Confirm these boundaries in one short list, then wait for my first task.`,
+    check: "The Bot confirms it will read and draft only. It asks before connecting an account, and nothing is sent or scheduled.",
   },
-  finish: "You can now separate a useful correction from a stylistic preference or an unwanted rewrite.",
+  finish: "The first useful boundary is simple: read and draft now, ask before connecting or acting.",
   related: [
-    promptGuide("get-better-professional-writing-from-grok", "Why is Grok’s professional writing too thin?", "Give the next draft a stronger structure."),
-    promptGuide("verify-grok-current-research", "Can Grok research a current topic safely?", "Keep public conversation separate from verified facts."),
-    existingGuide("what-is-a-prompt", "Write a prompt that gets a useful answer", "Use the same checking habit with a complete instruction.", "/images/guides/what-is-a-prompt.webp"),
+    existingGuide("get-better-professional-writing-from-grok", "Can Grok Bot take one recurring check off your plate?", "Set up one Bot and give it a first job.", "/images/guides/grok.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Choose what stays out of a Bot's workspace.", "/images/guides/learn-master.webp"),
+    existingGuide("what-is-agentic", "When do you need an AI agent?", "Check if this task needs an agent at all.", "/images/guides/what-is-agentic.webp"),
   ],
 });
 
@@ -525,7 +534,7 @@ export const verifyGrokResearchGuide = makeGuide({
   },
   finish: "You can now use Grok as a route into current discussion without treating the discussion itself as evidence.",
   related: [
-    promptGuide("review-grok-suggestions", "Did Grok catch an error or rewrite your work?", "Sort suggestions before accepting them."),
+    promptGuide("review-grok-suggestions", "When should Grok Bot ask you first?", "Choose which Bot actions need your approval."),
     promptGuide("get-better-professional-writing-from-grok", "Why is Grok’s professional writing too thin?", "Turn checked evidence into a structured draft."),
     existingGuide("what-is-a-prompt", "Write a prompt that gets a useful answer", "Build another instruction with a clear evidence check.", "/images/guides/what-is-a-prompt.webp"),
   ],
@@ -937,7 +946,7 @@ export const deepseekWallOfTextGuide = makeGuide({
   finish: "You can now repair a dense scene without inviting a new story or a different voice.",
   related: [
     promptGuide("edit-long-writing-with-deepseek", "How do you edit a long DeepSeek story safely?", "Protect approved facts while revising one passage."),
-    promptGuide("review-grok-suggestions", "Did Grok catch an error or rewrite your work?", "Use the same careful review on another writing tool."),
+    promptGuide("review-grok-suggestions", "When should Grok Bot ask you first?", "Decide when a Bot needs to ask before acting."),
     existingGuide("what-is-a-prompt", "How to write an AI prompt that gets a useful answer", "Make the edit boundary clearer.", "/images/guides/what-is-a-prompt.webp"),
   ],
 });
@@ -986,7 +995,7 @@ export const deepseekLongEditGuide = makeGuide({
   finish: "You can now make a controlled long-form edit without sacrificing the parts you already approved.",
   related: [
     promptGuide("fix-deepseek-wall-of-text", "Why did DeepSeek create a wall of text?", "Fix readability before changing the story."),
-    promptGuide("review-grok-suggestions", "Did Grok catch an error or rewrite your work?", "Check whether an edit stays within the job you gave it."),
+    promptGuide("review-grok-suggestions", "When should Grok Bot ask you first?", "Set clear boundaries before the Bot acts."),
     existingGuide("what-is-a-prompt", "Write a prompt that gets a useful answer", "Adapt the same checking habit to another task.", "/images/guides/what-is-a-prompt.webp"),
   ],
 });
