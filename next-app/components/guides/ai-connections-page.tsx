@@ -64,6 +64,12 @@ export function AiConnectionsPage({ guide }: { guide: GuidePage }) {
         <div className={styles.sectionHead}><span>Review access</span><h2 id="connection-off-title">Which tool are you using?</h2></div>
         <div className={styles.products} role="group" aria-label="Choose an AI tool">{products.steps.map((item, index) => <button key={item.title} type="button" aria-pressed={product === index} onClick={() => setProduct(index)}>{item.title}</button>)}</div>
         <div className={styles.productResult} aria-live="polite"><strong>{products.steps[product].title}</strong><p><Text value={products.steps[product].body} /></p>{productSource && <a href={productSource.url} target="_blank" rel="noopener noreferrer">Check the current help page ↗</a>}</div>
+        {product === 0 && <div className={styles.permissionExample}>
+          <strong>For example: “Allow read actions” in ChatGPT</strong>
+          <div><span>It can read from the connected app without asking each time.</span><span>It still asks before making changes.</span></div>
+          <p>This setting does not remove access already granted to the connected account. To stop future access, disconnect the app.</p>
+          <a href="https://help.openai.com/en/articles/20001495-managing-app-permissions-in-chatgpt" target="_blank" rel="noopener noreferrer">See OpenAI’s permission options ↗</a>
+        </div>}
         {product === 3 && <p className={styles.workNote}><strong>Using Copilot at work?</strong> Microsoft 365 data follows your organisation’s permissions. The personal connector switch above does not replace those controls. <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy" target="_blank" rel="noopener noreferrer">See Microsoft’s work-account explanation ↗</a></p>}
         <p className={styles.hint}>Turning a connector off for one chat may leave the account connected. Check the account connection and saved activity separately.</p>
       </section>
