@@ -2,6 +2,53 @@
 
 ---
 
+## RESEARCH 051 — 2026-09-25 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `5d17b7b`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (positioning.md):** experienced professionals, founders and consultants who feel overwhelmed by AI or struggle to turn their knowledge into visible, valuable work.
+**Internal tooling discoveries this run:** none. This entry is `shift-lead` (public-topic) evidence only.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority and recency were weighed.
+
+### Signals
+
+1. **David Autor, Tanya Rodchenko, Josh Martin, Zanna Iscenko, Scott Strand, David Pearl, Melissa Ferere (NBER Working Paper) — "Does AI Assistance Enhance or Erode Expertise? Evidence from a Three-Month Field Experiment in Patent Drafting"** — published 2026-09 — https://www.nber.org/papers/w35720 — WebFetch confirmed; randomized controlled field experiment, 133 practicing patent lawyers across 11 U.S. IP law firms, measured at 10 and 90 days plus a without-AI evaluation after three months.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: the strongest evidentiary class found across RESEARCH 044-050 (causal RCT, not survey/self-report) directly testing whether AI helps or hollows out expertise — names foundational experience as a precondition for durable AI-assisted skill, the load-bearing claim behind pillar 2 ("find what is uniquely yours").
+   - `supporting_source_excerpt`: AI access improved drafting quality at both 10 days (0.34 SD) and 90 days (0.38 SD); junior lawyers showed the largest headline gains but also a bifurcated spread — fewer mediocre scores, more poor and more good ones; senior lawyers kept their performance edge with or without AI. Researchers: "foundational expertise may be a prerequisite for extracting durable skill from AI-assisted practice."
+   - `possible_use`: a rigorous, source-attributable answer to "does AI make experience less valuable" — a direct counter to the flatten-the-playing-field narrative, and a sharper, causal complement to RESEARCH 049's PwC "professionalised vs democratised" market data and RESEARCH 048's Thomson Reuters judgment-erosion stat.
+   - `assessed_at`: 2026-09-25
+
+2. **Federal Reserve Bank of New York — Liberty Street Economics — "Businesses Are Using AI to Transform Work, Not Cut Jobs"** (Abel, Deitz, Emanuel, Montalbano) — published 2026-09-01 — https://libertystreeteconomics.newyorkfed.org/2026/09/businesses-are-using-ai-to-transform-work-not-cut-jobs/ — WebFetch confirmed; regional business survey (New York/Northern New Jersey Federal Reserve district), fielded August 2024/2025/2026.
+   - `project_id`: shift-lead — `fit`: possible — `reason`: a central-bank primary-data source (not a vendor survey) showing the pace of AI adoption is real but still shallow — a useful counterweight to the overwhelm-framed signals dominating 044-050, though four weeks old, so treat as corroborating rather than this week's news — same caveat class as RESEARCH 050's IBM signal.
+   - `supporting_source_excerpt`: service-firm AI use rose to 61% in 2026 (from 40% in 2025, 25% in 2024), but "the median share of workers using it was just 17 percent for service firms and 7 percent for manufacturers"; three-quarters of service firms call their AI investment "minimal to modest"; only 4% of service firms reported AI-driven layoffs and no manufacturers did.
+   - `possible_use`: evidence against the "AI is about to replace you" panic hook — most firms are barely investing and few workers use it day to day, which supports a "you have more time to get this right than the hype implies" framing for pillar 1.
+   - `assessed_at`: 2026-09-25
+
+### Rejected this run
+
+- phys.org "AI is reshaping workplace, not replacing jobs, new research finds" — confirmed to be syndicated coverage of the same Trinity College Dublin/TU Dublin SOHAM study already logged as RESEARCH 050 signal 1 (same 47.4% daily-use figure); not re-logged.
+- GoTo/Workplace Intelligence "Pulse of Work in 2026" — published 2026-05-19, over four months old; its overreliance/confidence stats (50% over-rely, 28% trust AI over own judgment) add nothing beyond RESEARCH 048's Thomson Reuters judgment-erosion signal already on file; not logged.
+- ManpowerGroup "Global Talent Barometer 2026" — same report already excluded in RESEARCH 050 as more than 8 months old (published 2026-01-20); resurfaced in this run's search and excluded again for the same reason.
+- Adriana Tica "State of Solopreneurship 2026" resurfaced in a pillar-3 search — already logged as RESEARCH 050 signal 3; not re-logged.
+- FreshBooks/Wakefield "The Era of the Solopreneur" (86% try-AI-before-hiring stat) — already surfaced and logged in `reports/signal-harvest-2026-09-23.md` (a parallel session's report-file track, not this ledger); no new information versus that prior capture, so not duplicated here as a new numbered signal.
+
+### Source health this run
+
+- Anthropic News (High): direct WebFetch worked; newest post is still "Claude discovers a novel enzyme system with CRISPR-like repeats" (Sep 23), already checked and rejected in RESEARCH 050 for having no line to the audience problem — no new post in the 2 days since. Not re-logged.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — 8th consecutive failed run (044 through 050, now 051), over five weeks on the same dead fetch path. Operator: repeating the standing recommendation from 047-050 — fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): checked this run — WebFetch worked; the ten most recent posts are pure ML-engineering/developer-tooling topics (multi-speaker diarization, a fine-tunable world-action model, a "decision model" product line, local-inference benchmarking), consistent with every prior run's finding; nothing logged.
+- DeepMind blog (Medium): checked this run — WebFetch worked; the ten most recent posts are all model/product/science launches (Gemini 3.8 variants, AlphaGenome Atlas, WeatherNext 3, agentic video), no line to the audience problem; nothing logged.
+- a16z AI (Medium): checked this run — WebFetch worked but most posts show no visible publish dates, so freshness (≤7 days) could not be confirmed for any item; content is general venture/product commentary with no direct audience-problem match either way; nothing logged per inventory.md's "do not hallucinate" freshness rule.
+- Lenny's Newsletter (Low): not checked this run — two non-RSS signals above (NBER, NY Fed) already filled the run at a higher confirmed-fit rate than the Low-priority feed typically returns.
+- WebSearch: functional throughout; used to source and then verify (or reject) every signal and rejection above.
+- No signals were invented; every URL in the Signals section above is one actually returned by a fetch or search this run, and every quoted figure was confirmed inside directly fetched page text.
+
+### Historical-audience check
+
+Confirmed none of the above signals were forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only, consistent with security.md's queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 050 — 2026-09-24 | Signal harvest (current audience problem)
 
 **Status:** NOTED
