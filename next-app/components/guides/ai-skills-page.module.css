@@ -5,3 +5,4 @@
 @media(max-width:560px){.skillGrid,.taskGrid{grid-template-columns:1fr}}
 .addTask{min-height:44px;margin-top:10px;padding:9px 13px;border:1px solid #203bb4;background:#fff;color:#172d9e;font:700 14px var(--font-ui),Arial,sans-serif;cursor:pointer}.addTask:hover{background:#e4ebff}.addTask:focus-visible{outline:3px solid #203bb4;outline-offset:3px}
 .prompt button:disabled{opacity:.5;cursor:not-allowed}
+.practiceLabel select{width:100%;min-height:44px;padding:9px 11px;border:1px solid #aab9ee;background:#fff;color:#1b2034;font:16px var(--font-ui),Arial,sans-serif}.practiceLabel select:disabled{color:#64708b;background:#f4f6ff}.page .practiceLabel select:focus-visible{outline:3px solid #203bb4;outline-offset:3px}
