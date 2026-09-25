@@ -6,10 +6,10 @@
 
 ## Queue (next up, in order)
 
-1. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 2, 24/09 — shrunk to a one-word reply, awaiting reply)*
-2. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 23/09 and 24/09 checks confirm still unanswered)*
-3. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 24/09 check confirms still unanswered, 10th morning)*
-4. UNB-028 — Review and prune stale branches *(open, unserved, 20/09; 90 branches now vs 87 on 20/09)*
+1. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply)*
+2. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 23/09, 24/09 and 25/09 checks confirm still unanswered)*
+3. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 25/09 check confirms still unanswered, 11th morning)*
+4. UNB-028 — Review and prune stale branches *(open, unserved, 20/09; 92 branches now vs 87 on 20/09)*
 
 > UNB-001 through UNB-024 (below) are the original 06/07/2026 seed batch, built
 > entirely from the pre-pivot offer model (Whop SKU checkouts, Fast Forward
@@ -437,9 +437,10 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   content-system log --oneline a2e2bc1f..main | wc -l` → 381)
 - **verify:** directory removed, archived elsewhere with a note, or
   explicitly kept with a documented reason
-- **status:** served · served_count: 2 · added: 2026-09-20 · pack:
+- **status:** served · served_count: 3 · added: 2026-09-20 · pack:
   `packs/2026-09-23-UNB-027-delete-duplicate-checkout.md`,
-  `packs/2026-09-24-UNB-027-one-word-reply.md`
+  `packs/2026-09-24-UNB-027-one-word-reply.md`,
+  `packs/2026-09-25-UNB-027-serve-3-confrontation.md`
 - **23/09/2026 prep note:** diffed the 2 uncommitted files
   (`.gitignore`, `deploy/crontab.example`) against the live repo before
   serving. Both are fully superseded — the live `.gitignore` already
@@ -456,6 +457,20 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   / keep-with-reason) and offers to run the chosen action myself next
   session under the ledger's write authority, cutting the operator's part
   to zero terminal commands. Delivered via Telegram.
+- **25/09/2026 follow-up (serve 3):** `ls -ld ~/content-system-DUPLICATE`
+  confirms it's still there, unchanged, third morning running. No reply to
+  yesterday's one-word-reply ask. Per the skill's serve-3 rule, sent the
+  gentle confrontation (done / swap / smaller / not-doing-this-one) instead
+  of repeating the same ask a third time. `deploy/telegram-notify.sh`
+  confirmed the send. Also re-checked UNB-026 (5 repos, still identical 403s)
+  and UNB-025 (`content-vault.md` ENTRY 093/092/091 still READY TO POST,
+  11th unchanged morning) — both already at their serve-3 cap with no
+  serve-4 rule, so neither was re-sent; today's single serve went to
+  UNB-027. Full estate scan found no new ledger-eligible items and no
+  completions beyond what was already marked done (`content-vault.md`
+  "Most recent" note confirms content-engine again produced no new drafts
+  this morning — queen-brain still absent from this session, same blocker
+  as every run since 17/09).
 
 ### UNB-028 — Review and prune stale branches (64 of 87, oldest 167 days)
 - **why:** `git branch -a` on `content-system` shows 64 non-main branches
