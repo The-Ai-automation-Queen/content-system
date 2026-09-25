@@ -60,7 +60,7 @@ export function ClaudeSeriesExperience({ series }: { series: NonNullable<GuidePa
           <p>{task.example}</p>
           <div className={s.workspace}>
             <div className={s.sample}><h4>{task.id === "meeting" ? "What to look for" : "A useful result"}</h4><p>{task.result}</p></div>
-            <CopyPrompt label="Instructions to try" prompt={task.prompt} collapsible/>
+            <CopyPrompt label="Instructions to try" prompt={task.prompt}/>
           </div>
         </article>)}
       </section>
@@ -74,8 +74,8 @@ export function ClaudeSeriesExperience({ series }: { series: NonNullable<GuidePa
         </fieldset>}
         {!selected && <p className={s.note}>Choose a task in step 1 to get its result checklist.</p>}
         <p>Now replace the sample notes or source with your own approved, non-confidential material. Keep the instruction above it.</p>
-        <details><summary>Correct a wrong line</summary><CopyPrompt label="Correction instructions" prompt={series.correction}/></details>
-        <details><summary>Make a wordy answer clearer</summary><CopyPrompt label="Clearer answer instructions" prompt="Give me the result first, in plain English. Keep the explanation to 3 short bullets. Preserve important uncertainty."/></details>
+        <details open><summary>Correct a wrong line</summary><CopyPrompt label="Correction instructions" prompt={series.correction}/></details>
+        <details open><summary>Make a wordy answer clearer</summary><CopyPrompt label="Clearer answer instructions" prompt="Give me the result first, in plain English. Keep the explanation to 3 short bullets. Preserve important uncertainty."/></details>
       </section>
     </ProjectWalkthrough> : <ProjectWalkthrough>
       <section>

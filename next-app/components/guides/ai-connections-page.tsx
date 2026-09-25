@@ -78,7 +78,7 @@ export function AiConnectionsPage({ guide }: { guide: GuidePage }) {
         <div className={styles.sectionHead}><span>Before you approve</span><h2 id="connection-permission-title">What will it be allowed to do?</h2></div>
         <p>Copy the wording from the permission screen. Leave out account details, passwords and private information.</p>
         <label className={styles.permissionField}><span>Permission wording</span><textarea rows={4} value={permissionText} onChange={event => setPermissionText(event.target.value)} placeholder="Paste the permission wording here" /></label>
-        <div className={styles.prompt}><details><summary>View your complete instruction</summary><pre>{prompt}</pre></details><button type="button" disabled={!ready} onClick={copyPrompt} aria-label="Copy the complete permission-check instruction">{copied ? "Copied" : "Copy"}</button></div>
+        <div className={styles.prompt}><details open><summary>Your complete instruction</summary><pre>{prompt}</pre></details><button type="button" disabled={!ready} onClick={copyPrompt} aria-label="Copy the complete permission-check instruction">{copied ? "Copied" : "Copy"}</button></div>
         {!ready && <p className={styles.message}>Add the permission wording before copying.</p>}
         {copyError && <p className={styles.message} role="alert">Copy failed. Open the instruction and select the text instead.</p>}
         <p className={styles.hint}>Compare any AI explanation with the original permission screen. The screen, not the AI answer, controls your decision.</p>

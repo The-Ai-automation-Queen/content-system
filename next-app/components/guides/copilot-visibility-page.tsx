@@ -55,7 +55,7 @@ export function CopilotVisibilityPage({ guide }: { guide: GuidePage }) {
           <p className={styles.accountNote}>Use the same work account in Copilot and {selected.app}. Keep the original open for comparison.</p>
           <h3>Ask Copilot for the source</h3>
           <p>Send this for the {selected.label.toLowerCase()} example only:</p>
-          <div className={styles.prompt}><details><summary>View the complete instruction</summary><pre>{prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label={`Copy the complete ${selected.label.toLowerCase()} test instruction`}>{copied ? "Copied" : "Copy"}</button></div>
+          <div className={styles.prompt}><details open><summary>Complete instruction</summary><pre>{prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label={`Copy the complete ${selected.label.toLowerCase()} test instruction`}>{copied ? "Copied" : "Copy"}</button></div>
           {copyError && <p className={styles.copyError} role="alert">Copy failed. Open the instruction and select its text instead.</p>}
           <h3>Did it find the right item?</h3>
           <p>Open the source Copilot cites in {selected.app}. {selected.expect}</p>

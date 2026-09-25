@@ -41,6 +41,25 @@ if (onlySlug && !approvedSlugs.has(onlySlug)) globalProblems.push(`Unknown appro
 const iconSource = read("next-app", "components", "guides", "guide-icon.tsx");
 if (iconSource.includes("m4 6 6 6-6 6 M13 18h7")) globalProblems.push("Old >_ prompt icon is still in the shared GuideIcon component.");
 
+const guideComponents = fromRoot("next-app", "components", "guides");
+for (const filename of fs.readdirSync(guideComponents)) {
+  const source = fs.readFileSync(path.join(guideComponents, filename), "utf8");
+  if (filename.endsWith(".tsx")) {
+    for (const [, opening, body] of source.matchAll(/(<details\b[^>]*>)([\s\S]*?)<\/details>/g)) {
+      if (/(?:<pre\b|<CopyPrompt\b)/.test(body) && !/\bopen\b/.test(opening)) {
+        globalProblems.push(`Copyable instruction starts collapsed: ${filename}`);
+      }
+    }
+  }
+  if (filename.endsWith(".module.css")) {
+    for (const [, selector, rules] of source.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
+      if (/prompt/i.test(selector) && /\bpre\b/.test(selector) && /max-height\s*:/.test(rules)) {
+        globalProblems.push(`Copyable instruction has an inner height limit: ${filename}`);
+      }
+    }
+  }
+}
+
 const footerSource = read("next-app", "components", "chrome", "site-footer.tsx");
 const footerLinks = [...footerSource.matchAll(/\["[^"]+",\s*"([^"]+)"\]/g)].map((match) => match[1]);
 const footerPaths = footerLinks.map((href) => {

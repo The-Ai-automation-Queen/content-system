@@ -60,7 +60,7 @@ export function GrokWritingPage({ guide }: { guide: GuidePage }) {
       <section className={styles.activity} aria-labelledby="writing-prompt-title">
         <div className={styles.sectionHead}><span>Try the complete example</span><h2 id="writing-prompt-title">Ask for a recommendation you can check</h2></div>
         <p>Use the meeting-pilot example. The instruction includes the reader, decision, evidence and structure.</p>
-        <div className={styles.prompt}><details><summary>View the complete instruction</summary><pre>{guide.tryNow.prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label="Copy the complete Grok writing instruction">{copied ? "Copied" : "Copy"}</button></div>
+        <div className={styles.prompt}><details open><summary>Complete instruction</summary><pre>{guide.tryNow.prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label="Copy the complete Grok writing instruction">{copied ? "Copied" : "Copy"}</button></div>
         {copyError && <p className={styles.message} role="alert">Copy failed. Open the instruction and select the text instead.</p>}
         <p className={styles.toolStep}><a href="https://grok.com/" target="_blank" rel="noopener noreferrer">Open Grok ↗</a> Start a new chat, paste the instruction and send it.</p>
       </section>

@@ -91,7 +91,7 @@ export function AiJargonPage({ guide }: { guide: GuidePage }) {
       {guide.tryNow && <section className={styles.action} aria-labelledby="jargon-action-title">
         <div className={styles.sectionHead}><span>See it in a real tool</span><h2 id="jargon-action-title">{guide.tryNow.heading}</h2></div>
         <div className={styles.practiceFlow}><div><span>1</span><strong>Ask</strong><small>Paste the prompt in a new <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a> chat.</small></div><div><span>2</span><strong>Inspect</strong><small>Open Memory or Personalization in your account settings.</small></div><div><span>3</span><strong>Decide</strong><small>Correct anything wrong or outdated.</small></div></div>
-        <div className={styles.prompt}><details><summary>View the complete prompt</summary><pre>{guide.tryNow.prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button></div>
+        <div className={styles.prompt}><details open><summary>Complete prompt</summary><pre>{guide.tryNow.prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button></div>
         <div className={styles.wordStrip}><span><strong>Prompt</strong> what you paste</span><span><strong>Context</strong> what this chat can use</span><span><strong>Memory</strong> what may carry over</span></div>
         <div className={styles.check}><GuideIcon name="check" /><p><Text value={guide.tryNow.check} /></p></div>
       </section>}

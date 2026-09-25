@@ -64,7 +64,7 @@ export function InteractiveWalkthrough({ sections, slug, conclusion, variant = "
         <li>Send it, then follow the agent’s short requests when it needs your help.</li>
       </ol>
       <aside className={styles.note}><p>You will still handle account login, permissions and entering credentials privately. Browser assistance depends on the tools available to your agent.</p></aside>
-      <CopyPrompt label="Master prompt — Claude Code or Codex" prompt={masterPrompt} collapsible />
+      <CopyPrompt label="Master prompt — Claude Code or Codex" prompt={masterPrompt} />
       <p className={styles.hint}>Includes all five steps and their prompts. The agent is instructed to flag outdated steps and ask before changing the method.</p>
       <button onClick={() => setMode("manual")}>Open the manual walkthrough →</button>
     </section>
@@ -83,7 +83,7 @@ export function InteractiveWalkthrough({ sections, slug, conclusion, variant = "
         if (block.kind === "heading") return <div key={b}><h3>{block.text}</h3>{shots[block.text] && <button className={styles.photoButton} onClick={() => setPhoto(shots[block.text])}><img src={shots[block.text].src} alt={shots[block.text].caption} /><span>View screenshot ↗</span><small>{shots[block.text].caption}</small></button>}</div>;
         if (block.kind === "paragraph") return <p key={b}>{cleanLabel(block.text)}</p>;
         if (block.kind === "note") return <aside key={b} className={styles.note}><GuideIcon name={block.icon.includes("⚠") ? "alert" : "check"}/><p>{block.text}</p></aside>;
-        if (block.kind === "code") return <CopyPrompt key={b} label={block.label} prompt={block.text} collapsible />;
+        if (block.kind === "code") return <CopyPrompt key={b} label={block.label} prompt={block.text} />;
         if (block.kind === "list") return <ul key={b} className={styles.checklist}>{block.items.map((item, n) => {
           const id = `${i}-${b}-${n}`;
           return <li key={id}><label><input type="checkbox" checked={done[id] === true} onChange={e => setDone({ ...done, [id]: e.target.checked })} /><span>{item}</span></label></li>;

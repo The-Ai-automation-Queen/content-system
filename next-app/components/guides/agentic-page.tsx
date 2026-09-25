@@ -72,7 +72,7 @@ export function AgenticPage({ guide }: { guide: GuidePage }) {
       {guide.tryNow && <section className={styles.action} aria-labelledby="agentic-action-title">
         <div className={styles.sectionHead}><span>Try it with one task</span><h2 id="agentic-action-title">Does your task need an agent?</h2></div>
         <p>Think of a task you do repeatedly. Open <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a> or another work-approved AI chat, copy the prompt, replace the brackets and send it. Do not include private information.</p>
-        <div className={styles.prompt}><details><summary>View the complete prompt</summary><pre>{guide.tryNow.prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button></div>
+        <div className={styles.prompt}><details open><summary>Complete prompt</summary><pre>{guide.tryNow.prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button></div>
         <div className={styles.check}><GuideIcon name="check" /><p><Text value={guide.tryNow.check} /></p></div>
       </section>}
     </div>

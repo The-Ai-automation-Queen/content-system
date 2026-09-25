@@ -82,7 +82,7 @@ export function WhatIsAiPage({ guide }: { guide: GuidePage }) {
         {guide.tryNow.workedExample && <div className={styles.example}><strong>Example</strong><p><b>Task:</b> {guide.tryNow.workedExample.task}</p><ol className={styles.exampleFlow}>{guide.tryNow.workedExample.signals.map((line, index) => <li key={line}><span>{String(index + 1).padStart(2, "0")}</span><p>{line}</p></li>)}</ol><p><b>Next:</b> {guide.tryNow.workedExample.decision}</p></div>}
         <p><Text value={guide.tryNow.introduction} /></p>
         <p className={styles.firstUse}>Open <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a> or another AI chat approved for work. Start a new chat, press <strong>Copy</strong>, paste the prompt, replace the brackets and send.</p>
-        <div className={styles.promptBlock}><details><summary>View the complete copyable prompt</summary><pre>{guide.tryNow.prompt}</pre></details><button className={styles.promptCopy} type="button" onClick={copy} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button><span className={styles.srOnly} role="status" aria-live="polite">{copied ? "Prompt copied" : ""}</span></div>
+        <div className={styles.promptBlock}><details open><summary>Complete copyable prompt</summary><pre>{guide.tryNow.prompt}</pre></details><button className={styles.promptCopy} type="button" onClick={copy} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button><span className={styles.srOnly} role="status" aria-live="polite">{copied ? "Prompt copied" : ""}</span></div>
         <div className={styles.resultCheck}><GuideIcon name="check" /><p><Text value={guide.tryNow.check} /></p></div>
       </section>}
 
