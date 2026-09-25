@@ -49,6 +49,16 @@ Use only pages you can open. Tell me what a customer can verify about:
 4. How to contact it.
 
 Give the exact page URL for each fact. Write “Not verified” if a page is unavailable or a fact is missing. Do not guess. Name up to 3 important facts a buyer still could not check.`;
+  const nextCheckIndex = checked.findIndex(value => !value);
+  const auditResult = nextCheckIndex >= 0
+    ? `${checked.filter(Boolean).length} of ${checks.length} page checks done. Next page check: ${checks[nextCheckIndex]}`
+    : found === "not-checked"
+      ? "Now mark if the neutral search mentioned your business."
+      : missing.trim()
+        ? `Check if “${missing.trim()}” is missing or wrong on your public page. Correct it there if needed, then test again later.`
+        : found === "no"
+          ? "Your business was not mentioned. Save the question and date, then check the page that explains your offer before creating another one."
+          : "Your business appeared. Save the question, date, tool and cited sources so you can check those claims again later.";
 
   async function copyPrompt(value: string, kind: "neutral" | "site") {
     if ((kind === "neutral" && !neutralReady) || (kind === "site" && !siteReady)) return;
@@ -86,7 +96,7 @@ Give the exact page URL for each fact. Write “Not verified” if a page is una
         <p className={styles.note}>Run both instructions in the same web-search-capable tool. Open every cited public source yourself.</p>
       </section>
 
-      <section className={styles.activity} aria-labelledby="search-audit-title"><div className={styles.sectionHead}><span>Record what happened</span><h2 id="search-audit-title">What did the answer miss?</h2></div><div className={styles.choice} role="group" aria-label="Was your business mentioned?"><span>Was your business mentioned?</span><button type="button" aria-pressed={found === "yes"} onClick={() => setFound("yes")}>Yes</button><button type="button" aria-pressed={found === "no"} onClick={() => setFound("no")}>No</button></div><label className={styles.missing}><span>One important missing or wrong fact</span><input value={missing} onChange={event => setMissing(event.target.value)} placeholder="Write one fact to check" /></label><div className={styles.checks}>{checks.map((check, index) => <label key={check}><input type="checkbox" checked={checked[index] ?? false} onChange={() => setChecked(current => current.map((value, i) => i === index ? !value : value))} /><span>{check}</span></label>)}</div><p className={styles.result} aria-live="polite">{missing.trim() ? `Next: check if “${missing.trim()}” is missing or wrong on your public page. Correct it there if needed, then test again later.` : found === "no" ? "Start with the page that should explain your offer. Check its facts before creating another page." : "Save the date, tool, question and sources. Correct a public fact only if your source check shows it is missing or wrong."}</p></section>
+      <section className={styles.activity} aria-labelledby="search-audit-title"><div className={styles.sectionHead}><span>Record what happened</span><h2 id="search-audit-title">What did the answer miss?</h2></div><div className={styles.choice} role="group" aria-label="Was your business mentioned?"><span>Was your business mentioned?</span><button type="button" aria-pressed={found === "yes"} onClick={() => setFound("yes")}>Yes</button><button type="button" aria-pressed={found === "no"} onClick={() => setFound("no")}>No</button></div><label className={styles.missing}><span>One important missing or wrong fact</span><input value={missing} onChange={event => setMissing(event.target.value)} placeholder="Write one fact to check" /></label><div className={styles.checks}>{checks.map((check, index) => <label key={check}><input type="checkbox" checked={checked[index] ?? false} onChange={() => setChecked(current => current.map((value, i) => i === index ? !value : value))} /><span>{check}</span></label>)}</div><p className={styles.result} aria-live="polite">{auditResult}</p></section>
     </div>
     <section className={styles.related} aria-labelledby="search-related-title"><div className={styles.relatedInner}><h2 id="search-related-title">Make the next public page more useful</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={relatedGuideHref(item.slug)}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
   </main>;
