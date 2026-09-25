@@ -1675,8 +1675,8 @@
     },
     {
       "slug": "what-can-copilot-see-at-work",
-      "title": "What can Copilot see in your emails, files and meetings?",
-      "h1": "What can Copilot see in your emails, files and meetings?",
+      "title": "Can Copilot make your morning inbox easier?",
+      "h1": "Can Copilot make your morning inbox easier?",
       "datePublished": "2026-09-23",
       "dateModified": "2026-09-23",
       "readMinutes": 6,
@@ -1689,15 +1689,15 @@
       "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
-        "Use AI safely",
-        "Choose an AI tool"
+        "Automate a task",
+        "Get better answers"
       ],
       "tags": [
         "Copilot",
         "Microsoft 365",
-        "permissions"
+        "Outlook"
       ],
-      "summary": "Test three harmless sources and verify what Microsoft 365 Copilot can access in your account.",
+      "summary": "Set up a checked morning email brief, then schedule it if your work account supports it.",
       "sequence": 223
     },
     {

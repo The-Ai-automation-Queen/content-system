@@ -37,7 +37,7 @@ export function ClaudeProjectsPage({ guide }: { guide: GuidePage }) {
   }
 
   function prompt(value: string, key: string, label: string) {
-    return <><div className={styles.prompt}><details><summary>View the complete {label}</summary><pre>{value}</pre></details><button type="button" onClick={() => copy(value, key)} aria-label={`Copy the complete ${label}`}>{copied === key ? "Copied" : "Copy"}</button></div>{copyError === key && <p role="alert">Copy failed. Open the complete {label} and select the text instead.</p>}</>;
+    return <><div className={styles.prompt}><details open><summary>Complete {label}</summary><pre>{value}</pre></details><button type="button" onClick={() => copy(value, key)} aria-label={`Copy the complete ${label}`}>{copied === key ? "Copied" : "Copy"}</button></div>{copyError === key && <p role="alert">Copy failed. Open the complete {label} and select the text instead.</p>}</>;
   }
 
   return <main className={styles.page}>

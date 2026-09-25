@@ -27,7 +27,7 @@ function PromptBox({ label, prompt }: { label: string; prompt: string }) {
   }
   return <div className={styles.prompt}>
     <div className={styles.promptTop}><strong>{label}</strong><button type="button" onClick={copy} aria-label={`Copy ${label.toLowerCase()}`}>{copied ? "Copied" : "Copy"}</button></div>
-    <details><summary>View the complete instruction</summary><pre>{prompt}</pre></details>
+    <details open><summary>Complete instruction</summary><pre>{prompt}</pre></details>
     {copyError && <p className={styles.copyError} role="alert">Copy failed. Open the instruction and select the text instead.</p>}
   </div>;
 }

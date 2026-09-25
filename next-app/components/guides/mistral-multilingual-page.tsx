@@ -83,7 +83,7 @@ export function MistralMultilingualPage({ guide }: { guide: GuidePage }) {
           <label><span>Published after</span><input type="date" value={startDate} onChange={(event) => setStartDate(event.target.value)} /></label>
           <label><span>Published before</span><input type="date" value={endDate} onChange={(event) => setEndDate(event.target.value)} /></label>
         </div>
-        <div className={styles.prompt}><details><summary>View the complete research instruction</summary><pre>{prompt}</pre></details><button type="button" disabled={!ready} onClick={copyPrompt} aria-label="Copy the complete bilingual research instruction">{copied ? "Copied" : "Copy"}</button></div>
+        <div className={styles.prompt}><details open><summary>Complete research instruction</summary><pre>{prompt}</pre></details><button type="button" disabled={!ready} onClick={copyPrompt} aria-label="Copy the complete bilingual research instruction">{copied ? "Copied" : "Copy"}</button></div>
         {!ready && <p className={styles.message}>Add a question, two different languages and a valid date range before copying.</p>}
         {copyError && <p className={styles.message} role="alert">Copy failed. Open the instruction and select the text instead.</p>}
         <p className={styles.toolStep}><a href="https://chat.mistral.ai/" target="_blank" rel="noopener noreferrer">Open Mistral ↗</a> Choose Work, then <strong>+ → Tools → Web search</strong>. Paste the instruction into the chat. <a href="https://docs.mistral.ai/vibe/work/web-search-open-url" target="_blank" rel="noopener noreferrer">See Mistral’s current steps ↗</a></p>

@@ -87,10 +87,10 @@ Give the exact page URL for each fact. Write “Not verified” if a page is una
           <label><span>Customer</span><input value={customer} onChange={event => setCustomer(event.target.value)} placeholder="e.g. small design studios" /></label>
           <label><span>Location or market</span><input value={market} onChange={event => setMarket(event.target.value)} placeholder="e.g. UK" /></label>
         </div>
-        <div className={styles.prompt}><details><summary>View the search instruction</summary><pre>{prompt}</pre></details><button type="button" disabled={!neutralReady} onClick={() => copyPrompt(prompt, "neutral")} aria-label="Copy the neutral search instruction">{copied === "neutral" ? "Copied" : "Copy"}</button></div>
+        <div className={styles.prompt}><details open><summary>Search instruction</summary><pre>{prompt}</pre></details><button type="button" disabled={!neutralReady} onClick={() => copyPrompt(prompt, "neutral")} aria-label="Copy the neutral search instruction">{copied === "neutral" ? "Copied" : "Copy"}</button></div>
         {!neutralReady && <p className={styles.message}>Fill the three fields to copy a complete search instruction.</p>}
         <label className={styles.siteField}><span>Then check your public website</span><input type="url" value={website} onChange={event => setWebsite(event.target.value)} placeholder="https://your-site.example" /></label>
-        <div className={styles.prompt}><details><summary>View the website check instruction</summary><pre>{sitePrompt}</pre></details><button type="button" disabled={!siteReady} onClick={() => copyPrompt(sitePrompt, "site")} aria-label="Copy the website check instruction">{copied === "site" ? "Copied" : "Copy"}</button></div>
+        <div className={styles.prompt}><details open><summary>Website check instruction</summary><pre>{sitePrompt}</pre></details><button type="button" disabled={!siteReady} onClick={() => copyPrompt(sitePrompt, "site")} aria-label="Copy the website check instruction">{copied === "site" ? "Copied" : "Copy"}</button></div>
         {!siteReady && <p className={styles.message}>Enter your public website URL to copy this check.</p>}
         {copyError && <p className={styles.message} role="alert">Copy failed. Open the instruction and select the text instead.</p>}
         <p className={styles.note}>Run both instructions in the same web-search-capable tool. Open every cited public source yourself.</p>

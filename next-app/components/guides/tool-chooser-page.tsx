@@ -62,7 +62,7 @@ export function ToolChooserPage({ guide }: { guide: GuidePage }) {
         <div className={styles.sectionHead}><span>Build your shortlist</span><h2 id="tool-action-title">Ask one tool to narrow the choice</h2></div>
         <p>Open one AI chat you are allowed to use. Copy the prompt, replace the brackets with a real task but leave private details out, then send it.</p>
         <div className={styles.chatLinks}>{chatLinks.map(link => <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">Open {link.label} ↗</a>)}</div>
-        <div className={styles.prompt}><details><summary>View the complete prompt</summary><pre>{guide.tryNow.prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button></div>
+        <div className={styles.prompt}><details open><summary>Complete prompt</summary><pre>{guide.tryNow.prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button></div>
         {copyError && <p role="alert">Copy failed. Open the complete prompt and select the text instead.</p>}
         <div className={styles.check}><GuideIcon name="check" /><p><Text value={guide.tryNow.check} /></p></div>
       </section>}

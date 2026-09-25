@@ -282,58 +282,60 @@ After creating it, give me the item title, the app where it was created and the 
 export const copilotVisibilityGuide = makeGuide({
   slug: "what-can-copilot-see-at-work",
   promptMode: "as-written",
-  title: "What can Copilot see in your emails, files and meetings?",
-  promise: "Run three harmless source checks so you know what Copilot can find before you use it for sensitive work.",
+  title: "Can Copilot make your morning inbox easier?",
+  promise: "Set up a checked morning email brief, then schedule it if your work account supports it.",
   coverAlt: "The Blue Princess using a brass viewing scope to inspect three separate locked cabinets for mail files and meetings",
-  seoDescription: "Test what Microsoft 365 Copilot can access in your work account and verify every source it uses.",
+  seoDescription: "Build a practical Copilot inbox brief, check it against Outlook, and schedule the prompt when available.",
   sources: [
-    { label: "Microsoft: Work IQ", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq" },
-    { label: "Microsoft: Microsoft 365 Copilot data and access", url: "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy" },
+    { label: "Microsoft: Copilot in Outlook", url: "https://support.microsoft.com/en-us/outlook/copilot-outlook/chat-with-copilot-in-outlook" },
+    { label: "Microsoft: Schedule Copilot prompts", url: "https://support.microsoft.com/en-us/microsoft-365-copilot/schedule-your-most-used-copilot-prompts" },
   ],
   answer: [
-    "**Copilot’s answer depends on your work account, licence, permissions and connected sources.** Ask it to show the source, then confirm that you can open the same item yourself.",
+    "**Yes, if your work account has Copilot access to Outlook.** Ask for a short list of messages that may need you, check the originals, then draft only the replies you choose. Scheduling is optional and needs a Microsoft Copilot licence.",
   ],
   sections: [
     {
       kind: "cards",
-      heading: "Test one source at a time",
+      heading: "Your inbox routine",
       items: [
-        { title: "Email", body: "Use a harmless message you sent to yourself with a unique phrase." },
-        { title: "File", body: "Use a demo document you own and can open in the same account." },
-        { title: "Meeting", body: "Use a test event with no guests and a unique title." },
-        { title: "External source", body: "If Copilot shows a web or connected source, open it and check its origin." },
+        { title: "Set up", body: "Give Copilot your role, tone and the result you need in one reusable instruction." },
+        { title: "Try it", body: "Compare its morning brief with Outlook before using a draft." },
+        { title: "Schedule", body: "Only automate a prompt you have already checked." },
       ],
     },
     {
       kind: "steps",
-      heading: "Check access without exposing real work",
-      introduction: "Create three demo items containing the phrase **Cobalt orchard 47**.",
+      heading: "Use your own inbox, with your organisation’s permission",
+      introduction: "Copilot Chat needs work-data access for this task. A web-only chat cannot inspect your inbox.",
       steps: [
-        { title: "Ask for the email", body: "Request the subject and source link for the demo message only." },
-        { title: "Ask for the file", body: "Request the document title and one sentence from the demo file only." },
-        { title: "Ask for the meeting", body: "Request the test event title, date and source only." },
-        { title: "Remove the demos", body: "Delete the test items when you have recorded which sources appeared." },
+        { title: "Open Copilot Chat", body: "Sign in with your work account in Outlook or the Microsoft Copilot app. Check that work data is available." },
+        { title: "Run one complete prompt", body: "Ask for up to five recent messages that appear to need a reply, why they matter, and a link to each source." },
+        { title: "Check the originals", body: "Open the emails in Outlook and confirm the request, date, sender and whether you have already replied." },
+        { title: "Schedule only if useful", body: "Use Schedule this prompt when available. Read the result in Copilot Chat; no reply is sent for you." },
       ],
     },
   ],
   tryNow: {
-    heading: "Ask Copilot to show its evidence",
-    introduction: "Run this separately for the email, file and meeting test.",
-    prompt: `Find the [EMAIL / FILE / MEETING] in my work account that contains the exact phrase “Cobalt orchard 47”.
+    heading: "Make a morning email brief you can trust",
+    introduction: "Replace the bracketed details, then run this once manually before scheduling it.",
+    prompt: `Help me manage my work email. My name is [NAME]. My role is [ROLE] in [TEAM OR DEPARTMENT] at [ORGANISATION]. I mainly email [TYPES OF CONTACTS]. The email tasks that take most of my time are [YOUR TWO OR THREE COMMON TASKS].
 
-Return only:
-1. the item title or subject;
-2. the date;
-3. the application where you found it;
-4. a direct source link or source reference;
-5. one sentence explaining why it matched.
+Write in a [YOUR PREFERRED TONE] tone. Keep it professional, clear and concise. Avoid em dashes. Turn my rough notes into polished drafts without changing their meaning. Keep drafts under 150 words unless I ask for more.
 
-For the FILE test, also quote the one sentence containing “Cobalt orchard 47” so I can compare it with the document.
+When I ask for help with an email:
+- Triage: suggest action now, reply later, delegate or no action. Explain the reason briefly.
+- Summarise a thread: show the main issue, decisions already made, next actions with owners, and what I need to answer. Link each point to the original email when possible.
+- Draft: give me two versions, one under 100 words and one with more detail. I will choose and edit.
+- Follow up: draft a polite message under 80 words for an unanswered request. Do not invent a deadline or imply a commitment nobody made.
 
-Use only sources available through my current work account. If you cannot find exactly one matching item, say what you searched and stop. Do not infer content, contact anyone, edit a file or create an item.`,
-    check: "Open every cited source yourself. The test passes only when Copilot found the intended demo item and did not claim access to a source you cannot verify.",
+For today's morning brief, look at work emails received in the last 24 hours that I have not replied to, if you can verify that status. Show up to five messages that may need a response or decision. Rank each from 1 to 5 for urgency, using an explicit deadline, a direct request or work blocking someone as evidence. Do not rank by sender seniority alone.
+
+For each message, give me its subject, sender, request, stated deadline, urgency score, reason, Outlook source link or citation, and a suggested action. For scores of 3 or higher, add a short reply draft for my review. If you cannot confirm whether I replied, write "check reply status" instead of guessing. Tell me if more relevant messages were left out of the five.
+
+End with the two messages I should check first and why. Do not invent facts, dates or commitments. Do not send, move, delete or change any email. I will open the originals, decide what matters and send any reply myself.`,
+    check: "Open the cited messages in Outlook. Confirm the requests, deadlines and reply status before drafting or scheduling anything.",
   },
-  finish: "You now have a practical map of the sources Copilot can use in your account and a habit of checking them.",
+  finish: "You have a checked morning brief. If scheduling is available, let Copilot prepare the first pass; you still decide and send every reply.",
   related: [
     promptGuide("check-copilot-excel-edits", "How do you know Copilot changed the right Excel cells?", "Check a visible Copilot edit."),
     existingGuide("connect-ai-to-email-files-calendar", "Should you connect AI to your accounts?", "Review account permissions and disconnection.", "/images/guides/connect-ai-to-email-files-calendar.webp"),

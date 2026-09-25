@@ -59,7 +59,7 @@ export function ScreenRecordingExperience({ guide }: { guide: GuidePage }) {
     <section id="recording-agent-route" hidden={route !== "agent"} aria-labelledby="recording-agent-title">
       <h2 id="recording-agent-title">Let an agent guide the work</h2>
       <ol className={styles.agentStart}><li>Open Claude Code or Codex with access to a new task.</li><li>Copy the complete instruction below and paste it into the task.</li><li>Attach the clean recording when asked. Handle any account access yourself.</li></ol>
-      <CopyPrompt label="Complete agent instructions" prompt={agentPrompt} collapsible />
+      <CopyPrompt label="Complete agent instructions" prompt={agentPrompt} />
       <button type="button" onClick={() => setRoute("manual")}>Open the manual route →</button>
     </section>
     <div id="recording-manual-route" hidden={route !== "manual"}>
@@ -67,7 +67,7 @@ export function ScreenRecordingExperience({ guide }: { guide: GuidePage }) {
       <nav className={`${styles.navigation} ${styles.navigationThree}`} aria-label="Walkthrough steps">{labels.map((label, index) => <button type="button" key={label} aria-current={!all && step === index ? "step" : undefined} onClick={() => go(index)}><span>{index + 1}</span>{label}</button>)}</nav>
       <div ref={panel} tabIndex={-1}>
         <section hidden={!all && step !== 0} aria-labelledby="recording-prepare"><h2 id="recording-prepare">{preparation.heading}</h2><p>{preparation.introduction}</p><ul className={styles.checklist}>{preparation.steps.map((item, index) => <li key={item.title}><label><input type="checkbox" checked={done[`prepare-${index}`] === true} onChange={event => setDone({ ...done, [`prepare-${index}`]: event.target.checked })}/><span><strong>{item.title}.</strong> <InlineEmphasis text={item.body} /></span></label></li>)}</ul></section>
-        <section hidden={!all && step !== 1} aria-labelledby="recording-draft"><h2 id="recording-draft">{action.heading}</h2><p>{action.introduction}</p><CopyPrompt label="Complete instructions" prompt={action.prompt} collapsible />{action.instructions && <details className={styles.help}><summary>How do I use this instruction?</summary><ol>{action.instructions.map(item => <li key={item.title}><strong>{item.title}</strong><p><InlineEmphasis text={item.body} /></p></li>)}</ol></details>}</section>
+        <section hidden={!all && step !== 1} aria-labelledby="recording-draft"><h2 id="recording-draft">{action.heading}</h2><p>{action.introduction}</p><CopyPrompt label="Complete instructions" prompt={action.prompt} />{action.instructions && <details className={styles.help}><summary>How do I use this instruction?</summary><ol>{action.instructions.map(item => <li key={item.title}><strong>{item.title}</strong><p><InlineEmphasis text={item.body} /></p></li>)}</ol></details>}</section>
         <section hidden={!all && step !== 2} aria-labelledby="recording-check"><h2 id="recording-check">Check the result</h2><p>{action.check}</p><label className={styles.finished}><input type="checkbox" checked={done.test === true} onChange={event => setDone({ ...done, test: event.target.checked })}/>I tested the guide against the recording and with someone who had not seen it.</label></section>
       </div>
       {!all && <div className={styles.footer}><button type="button" disabled={step === 0} onClick={() => go(step - 1)}>← Back</button><span>Step {step + 1} of {labels.length}</span><button type="button" disabled={step === labels.length - 1} onClick={() => go(step + 1)}>Next step →</button></div>}
