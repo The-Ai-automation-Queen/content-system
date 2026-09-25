@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { cleanLabel } from "./guide-icon";
+import { relatedGuideHref } from "./guide-preview-href";
 import styles from "./copilot-excel-page.module.css";
 
 const rows = [
@@ -91,6 +92,6 @@ export function CopilotExcelPage({ guide }: { guide: GuidePage }) {
 
       <section className={styles.activity} aria-labelledby="excel-check-title"><div className={styles.sectionHead}><span>Check before using it</span><h2 id="excel-check-title">Compare the working copy</h2></div><p>Use your untouched original as the reference. Tick each point only when you see it in Excel.</p><div className={styles.checks}>{checks.map((check, index) => <label key={check}><input type="checkbox" checked={checked[index] ?? false} onChange={() => setChecked(current => current.map((value, i) => i === index ? !value : value))} /><span>{check}</span></label>)}</div><p className={styles.result} aria-live="polite">{checked.every(Boolean) ? "All three checks marked. Keep the edit only if your workbook matches." : `${checked.filter(Boolean).length} of 3 checks marked. If anything else changed, compare with the original before using this workbook.`}</p></section>
     </div>
-    <section className={styles.related} aria-labelledby="excel-related-title"><div className={styles.relatedInner}><h2 id="excel-related-title">Keep a useful check in your toolkit</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={`/guides/${item.slug}.html`}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="excel-related-title"><div className={styles.relatedInner}><h2 id="excel-related-title">Keep a useful check in your toolkit</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={relatedGuideHref(item.slug)}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
   </main>;
 }

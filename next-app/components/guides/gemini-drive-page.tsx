@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { cleanLabel } from "./guide-icon";
+import { relatedGuideHref } from "./guide-preview-href";
 import styles from "./gemini-drive-page.module.css";
 
 function Text({ value }: { value: string }) {
@@ -47,6 +48,6 @@ export function GeminiDrivePage({ guide }: { guide: GuidePage }) {
 
       <div className={styles.finish}><strong>What did the test show?</strong> If Gemini cannot find the demo Doc, revisit the account, connection and request checks. If it finds the Doc, compare its decision, owner and review date with the source before trying your original file.</div>
     </div>
-    <section className={styles.related} aria-labelledby="gemini-related-title"><div className={styles.relatedInner}><h2 id="gemini-related-title">Keep working with the right access</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={`/guides/${item.slug}.html`}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="gemini-related-title"><div className={styles.relatedInner}><h2 id="gemini-related-title">Keep working with the right access</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={relatedGuideHref(item.slug)}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
   </main>;
 }

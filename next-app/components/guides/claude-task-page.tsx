@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { cleanLabel } from "./guide-icon";
+import { relatedGuideHref } from "./guide-preview-href";
 import styles from "./claude-task-page.module.css";
 
 export function ClaudeTaskPage({ guide }: { guide: GuidePage }) {
@@ -43,6 +44,6 @@ export function ClaudeTaskPage({ guide }: { guide: GuidePage }) {
       <p className={styles.finish}><strong>Keep the instruction that helped.</strong> Next time, replace the example with your own non-confidential material and check the same result.</p>
       {guide.workshopInvitation && <p className={styles.workshop}>{guide.workshopInvitation.body}</p>}
     </div>
-    <section className={styles.related} aria-labelledby="claude-related-title"><div className={styles.relatedInner}><h2 id="claude-related-title">Keep the task moving</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={`/guides/${item.slug}.html`}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="claude-related-title"><div className={styles.relatedInner}><h2 id="claude-related-title">Keep the task moving</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={relatedGuideHref(item.slug)}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
   </main>;
 }

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { GuideIcon, cleanLabel } from "./guide-icon";
+import { relatedGuideHref } from "./guide-preview-href";
 import styles from "./chatgpt-project-page.module.css";
 
 function Text({ value }: { value: string }) {
@@ -70,6 +71,6 @@ export function ChatGptProjectPage({ guide }: { guide: GuidePage }) {
 
       <p className={styles.finish}><strong>The test is simple:</strong> does a new chat inside the Project keep the four facts and leave undecided details undecided?</p>
     </div>
-    <section className={styles.related} aria-labelledby="project-related-title"><div className={styles.relatedInner}><h2 id="project-related-title">Keep the next ChatGPT answer on track</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={`/guides/${item.slug}.html`}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="project-related-title"><div className={styles.relatedInner}><h2 id="project-related-title">Keep the next ChatGPT answer on track</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={relatedGuideHref(item.slug)}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
   </main>;
 }

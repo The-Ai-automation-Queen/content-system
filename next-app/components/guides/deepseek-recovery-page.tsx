@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { cleanLabel } from "./guide-icon";
+import { relatedGuideHref } from "./guide-preview-href";
 import styles from "./deepseek-recovery-page.module.css";
 
 const restartChecks = [
@@ -43,6 +44,6 @@ export function DeepseekRecoveryPage({ guide }: { guide: GuidePage }) {
 
       <section className={styles.activity} aria-labelledby="recovery-test-title"><div className={styles.sectionHead}><span>Test the backup</span><h2 id="recovery-test-title">Start again without the old chat</h2></div><div className={styles.testFlow}><span>Clean chat</span><span aria-hidden="true">→</span><span>Needed files only</span><span aria-hidden="true">→</span><span>Restart instruction</span></div><p className={styles.intro}>Open a new conversation in DeepSeek or another approved tool. Add only the files needed for the next step, then paste the Restart prompt you saved from item 10.</p><div className={styles.checks}>{restartChecks.map((label, index) => <label key={label}><input type="checkbox" checked={checked[index] ?? false} onChange={() => setChecked(current => current.map((value, i) => i === index ? !value : value))} /><span>{label}</span></label>)}</div><p className={styles.result} aria-live="polite">{checked.every(Boolean) ? "The recovery pack passed your restart test. Keep it updated as the project changes." : "If the new chat is missing context, repair the relevant file and test again."}</p></section>
     </div>
-    <section className={styles.related} aria-labelledby="recovery-related-title"><div className={styles.relatedInner}><h2 id="recovery-related-title">Keep control of the next step</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={`/guides/${item.slug}.html`}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="recovery-related-title"><div className={styles.relatedInner}><h2 id="recovery-related-title">Keep control of the next step</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={relatedGuideHref(item.slug)}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
   </main>;
 }

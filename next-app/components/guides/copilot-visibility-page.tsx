@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { cleanLabel } from "./guide-icon";
+import { relatedGuideHref } from "./guide-preview-href";
 import styles from "./copilot-visibility-page.module.css";
 
 const sources = [
@@ -64,6 +65,6 @@ export function CopilotVisibilityPage({ guide }: { guide: GuidePage }) {
 
       <section className={styles.activity} aria-labelledby="copilot-result-title"><div className={styles.sectionHead}><span>Your result</span><h2 id="copilot-result-title">What did Copilot actually find?</h2></div><div className={styles.resultGrid}>{sources.map((source, index) => <div key={source.label}><strong>{source.label}</strong><span>{outcomes[index] === "found" ? "Source verified" : outcomes[index] === "missing" ? "Wrong or missing" : outcomes[index] === "unavailable" ? "Not available" : "Not tested"}</span></div>)}</div><p className={styles.resultNote} aria-live="polite">{outcomes.every(Boolean) ? "You have checked all 3 examples. Use only the sources you could open and verify yourself." : "A missing result does not prove Copilot has no access. It means this example did not confirm access."}</p><p>Delete the demo email, document and event when you finish.</p></section>
     </div>
-    <section className={styles.related} aria-labelledby="copilot-related-title"><div className={styles.relatedInner}><h2 id="copilot-related-title">Check what happens after Copilot finds a source</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={`/guides/${item.slug}.html`}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="copilot-related-title"><div className={styles.relatedInner}><h2 id="copilot-related-title">Check what happens after Copilot finds a source</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={relatedGuideHref(item.slug)}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
   </main>;
 }

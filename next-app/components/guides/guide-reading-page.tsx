@@ -9,6 +9,7 @@ import { GuideAccessBoundary } from "./guide-access-boundary";
 import { CopyPrompt } from "./copy-prompt";
 import { ScreenRecordingExperience } from "./screen-recording-experience";
 import type { GuidePage, GuideSection } from "@/content/guide-page";
+import { relatedGuideHref } from "./guide-preview-href";
 import styles from "./guide-reading-page.module.css";
 
 function RichText({ children }: { children: string }) {
@@ -283,7 +284,7 @@ export function GuideReadingPage({ guide }: { guide: GuidePage }) {
                   <div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div>
                 </article>
               ) : (
-                <RelatedLink href={`/guides/${item.slug}.html`} className={styles.relatedCard} key={item.slug}>
+                <RelatedLink href={relatedGuideHref(item.slug)} className={styles.relatedCard} key={item.slug}>
                   <figure><Image src={item.cover} alt="" aria-hidden="true" fill sizes="(max-width: 760px) 100vw, 33vw" /></figure>
                   <div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div>
                 </RelatedLink>

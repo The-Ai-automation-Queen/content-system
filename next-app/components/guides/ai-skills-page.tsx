@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { cleanLabel } from "./guide-icon";
+import { relatedGuideHref } from "./guide-preview-href";
 import styles from "./ai-skills-page.module.css";
 
 const problems = [
@@ -51,6 +52,6 @@ export function AiSkillsPage({ guide }: { guide: GuidePage }) {
 
       <section className={styles.activity} aria-labelledby="skills-plan-title"><div className={styles.sectionHead}><span>Your next practice</span><h2 id="skills-plan-title">Make it one task this week</h2></div><label className={styles.practiceLabel}><span>Which task will you try?</span><input value={practiceTask} onChange={event => setPracticeTask(event.target.value)} placeholder="Choose one from your list" /></label><div className={styles.plan} aria-live="polite"><strong>{practiceTask.trim() ? `Try: ${practiceTask.trim()}` : "Choose one familiar task."}</strong><span>Practise: {skills.items[selected].title}.</span><span>Check: did the result help with that task, and what did you still need to correct?</span></div></section>
     </div>
-    <section className={styles.related} aria-labelledby="skills-related-title"><div className={styles.relatedInner}><h2 id="skills-related-title">Keep building the skills that matter</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={`/guides/${item.slug}.html`}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="skills-related-title"><div className={styles.relatedInner}><h2 id="skills-related-title">Keep building the skills that matter</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <Link key={item.slug} href={relatedGuideHref(item.slug)}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></Link>)}</div></div></section>
   </main>;
 }
