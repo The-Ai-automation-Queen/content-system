@@ -11,6 +11,11 @@
 .sectionHead span{color:#203bb4;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
 .sectionHead h2{margin:5px 0 14px;color:#ff5733;font-size:clamp(22px,3vw,28px);line-height:1.2}
 .activity>p{margin:0 0 14px;font-size:16px;line-height:1.55}
+.setupList{display:grid;gap:8px;margin:0;padding:0;list-style:none;counter-reset:setup}
+.setupList li{position:relative;min-height:48px;padding:11px 12px 11px 48px;border:1px solid #cbd5ff;background:#fff;font-size:15px;line-height:1.5;counter-increment:setup}
+.setupList li:before{content:counter(setup);position:absolute;left:12px;top:11px;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#203bb4;color:#fff;font-size:13px;font-weight:800}
+.setupList a,.setupSource a{color:#172d9e;font-weight:700;text-underline-offset:3px}
+.activity .setupSource{margin:11px 0 0;font-size:14px}
 .partGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;align-items:start}
 .partGroup{min-width:0;border:1px solid #b8c6f4;background:#fff}
 .partButton{display:flex;justify-content:space-between;align-items:center;width:100%;min-height:46px;padding:10px 13px;border:0;background:#fff;color:#172d9e;text-align:left;font:750 15px var(--font-ui),Arial,sans-serif;cursor:pointer}
@@ -22,7 +27,7 @@
 .partResult p:last-child{margin-bottom:0;color:#172d9e;font-weight:700}
 .prompt{position:relative;border:1px solid #aab9ee;background:#fff}
 .prompt summary{min-height:48px;padding:13px 92px 13px 12px;font-size:15px;font-weight:750;cursor:pointer}
-.prompt pre{overflow:auto;max-height:430px;margin:0;padding:13px;border-top:1px solid #cbd5ff;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.55 ui-monospace,SFMono-Regular,monospace}
+.prompt pre{overflow:auto;margin:0;padding:52px 13px 13px;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.55 ui-monospace,SFMono-Regular,monospace}
 .prompt>button{position:absolute;top:7px;right:7px;min-height:35px;padding:7px 12px;border:0;background:#203bb4;color:#fff;font:700 13px var(--font-ui),Arial,sans-serif;cursor:pointer}
 .activity .message{margin:8px 0 0;color:#a22722;font-size:14px}
 .activity .toolStep{margin:12px 0 0;font-size:15px}

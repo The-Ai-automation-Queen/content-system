@@ -5,6 +5,7 @@ export type SeriesGuide = {
   slug: string;
   title: string;
   promise: string;
+  cover?: string;
   coverAlt: string;
   seoDescription: string;
   sources: readonly { label: string; url: string }[];
@@ -45,7 +46,7 @@ export const makeGuide = (guide: SeriesGuide): GuidePage => ({
   slug: guide.slug,
   title: guide.title,
   promise: guide.promise,
-  cover: `/images/guides/${guide.slug}.webp`,
+  cover: guide.cover ?? `/images/guides/${guide.slug}.webp`,
   coverAlt: guide.coverAlt,
   seoDescription: guide.seoDescription,
   lumailTag: `guide-${guide.slug}`,
@@ -418,48 +419,65 @@ export const reviewGrokSuggestionsGuide = makeGuide({
 export const grokProfessionalWritingGuide = makeGuide({
   slug: "get-better-professional-writing-from-grok",
   promptMode: "as-written",
-  title: "Why is Grok’s professional writing too thin?",
-  promise: "Give Grok the reader, decision, evidence and structure, then decide whether the improved draft is worth keeping.",
-  coverAlt: "The Blue Princess rebuilding a thin paper draft around four solid evidence blocks",
-  seoDescription: "Turn a vague Grok writing request into a structured workplace draft and judge the result.",
-  sources: [{ label: "xAI: Grok", url: "https://x.ai/grok" }],
+  title: "Can Grok Bot take one recurring check off your plate?",
+  promise: "Ask Grok Bot to find useful public posts on one topic. Check the links and your usage before asking it to do more.",
+  cover: "/images/guides/grok.webp",
+  coverAlt: "The blue robot reviewing public updates against their original sources",
+  seoDescription: "Set up one Grok Bot to prepare a source-linked brief from public X posts, with no posting or automatic routine.",
+  sources: [
+    { label: "xAI: Get started with Grok Bot", url: "https://docs.x.ai/grok-bot/get-started" },
+    { label: "xAI: Grok Bot and X", url: "https://x.ai/news/grok-bot-and-x" },
+    { label: "Cursor: Grok Bot plans and usage", url: "https://cursor.com/help/grok-bot/plans" },
+  ],
   answer: [
-    "**Professional writing needs more than a topic.** Name the reader, the decision, the evidence and the structure you need.",
+    "**Grok Bot is worth testing when a job repeats and needs more than a chat answer.** Give it one public source to watch and one review-ready result. Check the result and usage before adding a routine.",
   ],
   sections: [
     {
-      kind: "comparison",
-      heading: "See what the stronger instruction adds",
-      columns: ["Vague", "Useful"],
-      rows: [
-        ["Write a professional update.", "Write for the operations director."],
-        ["Explain the pilot.", "Recommend whether to continue it for one month."],
-        ["Make it convincing.", "Use the 4 facts provided and name the main risk."],
-        ["Make it clear.", "Use recommendation, evidence, risk and next step."],
+      kind: "steps",
+      heading: "Set up one Bot, not a team",
+      introduction: "Start with public information and one read-only pass.",
+      steps: [
+        { title: "Check access", body: "Grok Bot needs an eligible paid Cursor plan or a linked individual SuperGrok plan. Check your current entitlement before buying another plan.", links: [{ label: "Check plans", href: "https://cursor.com/help/grok-bot/plans" }] },
+        { title: "Create the Bot", body: "Open Grok Bot, sign in with Cursor, choose **Create your own**, name it **Signal Scout**, and give it one job: prepare a source-linked brief from public X posts.", links: [{ label: "Open setup steps", href: "https://docs.x.ai/grok-bot/get-started" }] },
+        { title: "Connect X only if needed", body: "Use the X connector if your chosen search needs your account. Review the permission request yourself. Do not connect email, CRM or other accounts for this test.", links: [{ label: "See the X connection", href: "https://x.ai/news/grok-bot-and-x" }] },
       ],
     },
     {
       kind: "cards",
-      heading: "What a usable answer shows",
+      heading: "What makes this a useful first job",
       items: [
-        { title: "Decision", body: "The recommendation is visible immediately." },
-        { title: "Evidence", body: "All four facts appear without invented benefits." },
-        { title: "Risk", body: "Late pre-reading is named as a real issue." },
-        { title: "Next step", body: "The action follows from the evidence." },
+        { title: "One outcome", body: "A short brief you can scan and use at work." },
+        { title: "Named sources", body: "Every item links to the original public post." },
+        { title: "No surprise actions", body: "The Bot does not post, reply, message or set a routine." },
+        { title: "A value check", body: "Compare the brief and usage with doing the check yourself." },
       ],
     },
   ],
   tryNow: {
-    heading: "Build the draft around evidence",
-    introduction: "Use this complete work example.",
-    prompt: `Write a short recommendation for an operations director about whether to continue a meeting pilot.\n\nUse all four facts below and no others:\n- 18 people joined the pilot.\n- 14 used the new agenda.\n- 3 meetings were delayed because pre-reading arrived late.\n- The team wants to continue for one month.\n\nTreat the team's wish to continue as a proposal, not a decision already approved.\n\nStructure:\n1. recommendation;\n2. evidence;\n3. risk;\n4. next step.\n\nDo not invent cost savings, satisfaction scores or causes.`,
-    check: "You are done when you can point to the decision, evidence, risk and next step without repairing most of the draft.",
+    heading: "Give Signal Scout its first job",
+    introduction: "Replace the bracketed public topic before sending. Run it once; decide about a routine later.",
+    prompt: `You are Signal Scout. For this first test, prepare one read-only brief about [PUBLIC TOPIC OR BUSINESS NAME] from public X posts.
+
+Search only posts from the past seven days. Find up to five relevant original posts that show a question, complaint, request or meaningful change. Open each post before including it. Do not treat repost counts or repeated claims as proof.
+
+Return a compact table with: the date, a one-sentence description, the link to the original post, and why I might need to pay attention. Group similar posts together only when the wording supports it. If you find fewer than five useful posts, return fewer. If you cannot access X or verify a post, say exactly what blocked you and stop rather than filling the gap.
+
+Then give me three possible follow-ups for my review. Label each as a draft idea, not an action you have taken. Do not post, reply, send a message, contact anyone, connect another account, create another Bot or schedule a routine. Ask me before any sign-in or permission change.
+
+Stop after this one brief. Do not repeat the search automatically.`,
+    instructions: [
+      { title: "Open your Bot", body: "Open Signal Scout in Grok Bot. If X asks you to sign in, do that yourself after checking the permission request." },
+      { title: "Copy the full job", body: "Copy the instruction, replace the bracketed public topic, and send it to Signal Scout." },
+      { title: "Check and decide", body: "Open two source links, check their dates and wording, then look at your Grok Bot usage. Schedule nothing until a second brief is useful too." },
+    ],
+    check: "The Bot returned a source-linked brief without posting or scheduling anything. You checked two originals and your remaining usage before deciding if it is worth repeating.",
   },
-  finish: "You can now keep Grok for this writing job, retest it or choose another tool based on a visible result.",
+  finish: "If the posts are useful and the links check out, you can ask Grok Bot to search again when you need it.",
   related: [
-    promptGuide("review-grok-suggestions", "Did Grok catch an error or rewrite your work?", "Review changes one at a time."),
-    promptGuide("verify-grok-current-research", "Can Grok research a current topic safely?", "Trace current claims to opened sources."),
-    existingGuide("what-is-a-prompt", "How to write an AI prompt that gets a useful answer", "Build clearer work instructions from examples.", "/images/guides/what-is-a-prompt.webp"),
+    existingGuide("what-is-agentic", "When do you need an AI agent?", "See when a task needs an agent instead of a chat answer.", "/images/guides/what-is-agentic.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Choose what to keep out of your Bot’s workspace.", "/images/guides/learn-master.webp"),
+    existingGuide("what-is-a-prompt", "Write a prompt that gets a useful answer", "Give the Bot a clear job and a result you can check.", "/images/guides/what-is-a-prompt.webp"),
   ],
 });
 

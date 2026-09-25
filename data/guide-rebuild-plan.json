@@ -19,7 +19,7 @@
     { "slug": "meta-ai", "pattern": "explorer", "status": "review", "component": "meta-muse-page" },
     { "slug": "test-meta-business-agent-customer-replies", "pattern": "practice", "status": "pending" },
     { "slug": "review-grok-suggestions", "pattern": "practice", "status": "approved", "component": "grok-review-page" },
-    { "slug": "get-better-professional-writing-from-grok", "pattern": "practice", "status": "review", "component": "grok-writing-page" },
+    { "slug": "get-better-professional-writing-from-grok", "pattern": "practice", "status": "approved", "component": "grok-writing-page" },
     { "slug": "verify-grok-current-research", "pattern": "audit", "status": "review", "component": "grok-research-page" },
     { "slug": "fix-deepseek-wall-of-text", "pattern": "practice", "status": "review", "component": "deepseek-wall-page" },
     { "slug": "edit-long-writing-with-deepseek", "pattern": "walkthrough", "status": "review", "component": "deepseek-long-edit-page" },
