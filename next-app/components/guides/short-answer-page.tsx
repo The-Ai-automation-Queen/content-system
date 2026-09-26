@@ -15,7 +15,6 @@ function Text({ value }: { value: string }) {
 
 export function ShortAnswerPage({ guide }: { guide: GuidePage }) {
   const [selected, setSelected] = useState(0);
-  const [checks, setChecks] = useState<boolean[]>([false, false, false, false]);
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
   const compare = guide.sections[0];
@@ -40,7 +39,7 @@ export function ShortAnswerPage({ guide }: { guide: GuidePage }) {
       <header className={styles.hero}><h1>Why does ChatGPT keep giving you <span>an essay?</span></h1><p>Give it a finish line you can count. Try the example, then check if the shorter answer still contains what you need.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <nav className={styles.contents} aria-label="In this guide"><strong>IN THIS GUIDE</strong><a href="#short-compare-title">01 · Set the limit</a><a href="#short-example-title">02 · See the difference</a><a href="#short-access-title">03 · Try the full prompt</a><a href="#short-check-title">04 · Check the answer</a></nav>
-      <p className={styles.promise}>You will leave with one sentence you can reuse to stop long answers without losing the facts you need.</p>
+      <p className={styles.promise}>Try a short meeting brief, then reuse its word limit and structure for your own work.</p>
 
       <section className={styles.compare} aria-labelledby="short-compare-title"><div className={styles.sectionHead}><span>Start with the instruction</span><h2 id="short-compare-title">Make “short” something you can check</h2></div><div className={styles.compareGrid}>{compare.rows.map((row, index) => <div className={styles.compareOption} key={row[0]}><button type="button" aria-pressed={selected === index} onClick={() => setSelected(index)}><span>{row[0]}</span><GuideIcon name="route" /></button>{selected === index && <div className={styles.compareResult} aria-live="polite"><strong>Try this instead</strong><p>{row[1]}</p></div>}</div>)}</div></section>
 
@@ -50,7 +49,7 @@ export function ShortAnswerPage({ guide }: { guide: GuidePage }) {
 
       {guide.tryNow && <section className={styles.action} aria-labelledby="short-action-title"><div className={styles.sectionHead}><span>Try the worked example</span><h2 id="short-action-title">Ask for a meeting brief, not an essay</h2></div><p className={styles.exampleIntro}>Start with the fictional project in this prompt. Once you see the result, replace its facts with a task from your own work.</p><ol className={styles.quickSteps}><li><span className={styles.stepNumber} aria-hidden="true">1</span><a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Open ChatGPT ↗</a> and start a new chat.</li><li><span className={styles.stepNumber} aria-hidden="true">2</span>Copy the full prompt below and paste it into the message box.</li><li><span className={styles.stepNumber} aria-hidden="true">3</span>Send it, then check the answer against the limits.</li></ol><div className={styles.prompt}><pre>{guide.tryNow.prompt}</pre><button type="button" onClick={copyPrompt} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button></div>{copyError && <p role="alert">Copy failed. Select the visible prompt text instead.</p>}</section>}
 
-      <section className={styles.check} aria-labelledby="short-check-title"><div className={styles.sectionHead}><span>Check the answer yourself</span><h2 id="short-check-title">Did it give you something usable?</h2></div><div className={styles.checkList}>{checkSection.items.map((item, index) => <label key={item.title}><input type="checkbox" checked={checks[index] ?? false} onChange={() => setChecks(current => current.map((value, i) => i === index ? !value : value))} /><span><strong>{item.title}</strong><span><Text value={item.body} /></span></span></label>)}</div><p className={styles.checkResult} aria-live="polite">{checks.every(Boolean) ? "You marked all four checks. Keep the rule only if the ChatGPT answer really meets them." : `${checks.filter(Boolean).length} of 4 checks marked. Compare the answer with the prompt before you use it.`}</p></section>
+      <section className={styles.check} aria-labelledby="short-check-title"><div className={styles.sectionHead}><span>Check the answer yourself</span><h2 id="short-check-title">Did it give you something usable?</h2></div><ol className={styles.checkList}>{checkSection.items.map((item, index) => <li key={item.title}><span className={styles.checkNumber}>{String(index + 1).padStart(2, "0")}</span><span><strong>{item.title}</strong><span><Text value={item.body} /></span></span></li>)}</ol></section>
 
       <p className={styles.finish}><strong>Reuse the limit, not the topic.</strong> Tell ChatGPT how many parts you need, how long the whole answer can be and what it should leave out.</p>
       </GuideAccessBoundary></div>
