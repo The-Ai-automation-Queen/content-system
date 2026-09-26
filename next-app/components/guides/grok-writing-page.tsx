@@ -51,7 +51,7 @@ export function GrokWritingPage({ guide }: { guide: GuidePage }) {
       <section className={styles.activity} aria-labelledby="grok-start-title">
         <div className={styles.sectionHead}><span>Start here</span><h2 id="grok-start-title">New to Grok Bot?</h2></div>
         <ol className={styles.setupList}>
-          <li><strong>Check access.</strong> Grok Bot needs an eligible paid Cursor plan, or a linked individual SuperGrok or X Premium+ plan. <a href="https://cursor.com/help/grok-bot/plans" target="_blank" rel="noopener noreferrer">See which plans include it ↗</a></li>
+          <li><strong>Check access.</strong> Confirm your plan on the Grok Bot screen before starting. Eligible paid Cursor plans and some linked individual SuperGrok or X Premium+ subscriptions can provide access. <a href="https://cursor.com/help/grok-bot/plans" target="_blank" rel="noopener noreferrer">See which plans include it ↗</a></li>
           <li><strong>Install the app.</strong> Go to <a href="https://x.ai/bot" target="_blank" rel="noopener noreferrer">x.ai/bot ↗</a>, choose the download for your computer, install it and open Grok Bot.</li>
           <li><strong>Sign in.</strong> Select <strong>Sign in</strong>, finish the Cursor sign-in in your browser, then return to Grok Bot. If you use SuperGrok for access, link that account when the app asks.</li>
           <li><strong>Create one Bot.</strong> After the welcome screens, select <strong>Create your own</strong>. Name it <strong>Signal Scout</strong>. Give it one job: prepare a short brief from public X posts. If you have already passed the welcome screen, choose <strong>New → Create new Bot</strong>.</li>

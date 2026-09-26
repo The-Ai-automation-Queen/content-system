@@ -34,7 +34,7 @@ export function PrivacyGuidePage({ guide }: { guide: GuidePage }) {
       <Link className={styles.back} href="/guides/">← All guides</Link>
       <header className={styles.hero}>
         <h1>Before you paste it into AI, <span>check this</span></h1>
-        <p>Some details should stay out. Others need permission. Sort what you have, then check the tool you use.</p>
+        <p>For the task in front of you, sort the information first. Keep sensitive details out, get permission when needed, then use the approved tool.</p>
         <figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure>
       </header>
 
@@ -44,7 +44,7 @@ export function PrivacyGuidePage({ guide }: { guide: GuidePage }) {
           <button type="button" aria-pressed={category === index} onClick={() => setCategory(category === index ? null : index)}><span className={styles.number}>0{index + 1}</span><strong>{categoryLabels[index]}</strong><span className={styles.chevron}>{category === index ? "−" : "+"}</span></button>
           {category === index && <div className={styles.sortResult} aria-live="polite"><Text value={item.body} /></div>}
         </div>)}</div>
-        <p className={styles.sortNote}>If you are unsure, remove the real details and use an invented example.</p>
+        <p className={styles.sortNote}>If you are unsure, stop there. Remove the real details and test with an invented example.</p>
       </section>
 
       <section className={styles.flow} aria-label="Three checks before using AI"><div><GuideIcon name="alert" /><strong>Need it?</strong><span>Can you do the task without the real details?</span></div><div><GuideIcon name="check" /><strong>Allowed?</strong><span>Do you have permission to share them?</span></div><div><GuideIcon name="settings" /><strong>Right tool?</strong><span>Is this account approved for the task?</span></div></section>

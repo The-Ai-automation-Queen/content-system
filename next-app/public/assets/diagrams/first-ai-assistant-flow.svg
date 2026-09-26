@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 1448 936" role="img" aria-labelledby="title desc">
+  <title id="title">Build your first AI assistant</title>
+  <desc id="desc">A five-step hand-drawn style diagram: input, context and rules, AI task, human review, and output. A Queen Bot with an F on her dress stands beneath the AI task. The key principle is AI prepares, you approve.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L11,6 L1,11" fill="none" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrow-teal" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L11,6 L1,11" fill="none" stroke="#14939A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrow-lav" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L11,6 L1,11" fill="none" stroke="#8167D9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L11,6 L1,11" fill="none" stroke="#F28C28" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="0.3"/></filter>
+    <style>
+      .ink{fill:#1A1A1A}.blue{fill:#2C4BE0}.deep{fill:#1B2EA0}.teal{fill:#14939A}.lav{fill:#8167D9}.amber{fill:#F28C28}
+      .hand{font-family:'Comic Sans MS','Bradley Hand','Segoe Print',cursive}.sans{font-family:Inter,Arial,sans-serif}
+      .outline{fill:#F7F7F3;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .small{font-size:24px}.body{font-size:27px}.label{font-size:30px;font-weight:700}.num{font-size:24px;font-weight:700}
+    </style>
+  </defs>
+
+  <rect width="1448" height="1086" rx="28" fill="#F7F7F3"/>
+
+
+
+  <!-- Callouts -->
+  <path d="M72 222 C82 190 112 180 148 187 C166 163 210 166 225 191 C259 181 287 201 284 227 C309 239 301 271 276 278 C262 303 220 299 205 285 C174 303 133 291 128 269 C96 276 69 255 72 222Z" fill="#F7F7F3" stroke="#14939A" stroke-width="4"/>
+  <path d="M92 196 l10 22 24 2 -18 15 6 23 -22 -12 -21 12 6 -23 -18 -15 24 -2Z" fill="none" stroke="#14939A" stroke-width="3" transform="scale(.55) translate(75 135)"/>
+  <text x="181" y="229" text-anchor="middle" class="hand ink small">Start with</text><text x="181" y="263" text-anchor="middle" class="hand ink small">one job</text>
+  <path d="M182 297 C176 328 160 351 145 372" fill="none" stroke="#14939A" stroke-width="4" marker-end="url(#arrow-teal)"/>
+
+  <path d="M516 218 C523 190 553 178 587 188 C608 161 647 169 662 191 C690 176 728 190 731 217 C761 226 765 258 742 273 C736 300 696 308 674 292 C644 311 607 303 594 281 C558 293 521 275 523 247 C510 238 509 226 516 218Z" fill="#F7F7F3" stroke="#8167D9" stroke-width="4"/>
+  <rect x="548" y="215" width="32" height="32" rx="4" fill="none" stroke="#8167D9" stroke-width="3"/>
+  <path d="M555 230 l9 9 18 -23" fill="none" stroke="#8167D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="641" y="228" text-anchor="middle" class="hand ink small">Good first tasks</text><text x="641" y="260" text-anchor="middle" class="hand ink small">are repeatable</text>
+  <path d="M682 295 C690 324 693 344 682 367" fill="none" stroke="#8167D9" stroke-width="4" marker-end="url(#arrow-lav)"/>
+
+  <path d="M1110 220 C1118 187 1150 177 1182 187 C1201 161 1242 170 1256 191 C1291 179 1322 200 1320 227 C1344 239 1338 270 1315 278 C1300 305 1260 300 1245 286 C1212 304 1178 291 1170 269 C1139 277 1110 255 1110 220Z" fill="#F7F7F3" stroke="#14939A" stroke-width="4"/>
+  <rect x="1146" y="209" width="28" height="30" rx="5" fill="none" stroke="#14939A" stroke-width="3"/><path d="M1152 209 v-12 c0-18 16-18 16 0 v12" fill="none" stroke="#14939A" stroke-width="3"/><circle cx="1160" cy="223" r="3" fill="#14939A"/>
+  <text x="1237" y="228" text-anchor="middle" class="hand ink small">Permissions</text><text x="1237" y="260" text-anchor="middle" class="hand ink small">matter</text>
+  <path d="M1183 294 C1176 320 1165 343 1150 367" fill="none" stroke="#14939A" stroke-width="4" marker-end="url(#arrow-teal)"/>
+
+  <!-- Step numbers -->
+  <g class="hand ink num" text-anchor="middle">
+    <circle cx="154" cy="385" r="26" fill="none" stroke="#1A1A1A" stroke-width="4"/><text x="154" y="394">1</text>
+    <circle cx="421" cy="385" r="26" fill="none" stroke="#1A1A1A" stroke-width="4"/><text x="421" y="394">2</text>
+    <circle cx="689" cy="385" r="26" fill="none" stroke="#1A1A1A" stroke-width="4"/><text x="689" y="394">3</text>
+    <circle cx="957" cy="385" r="26" fill="none" stroke="#1A1A1A" stroke-width="4"/><text x="957" y="394">4</text>
+    <circle cx="1225" cy="385" r="26" fill="none" stroke="#1A1A1A" stroke-width="4"/><text x="1225" y="394">5</text>
+  </g>
+
+  <!-- Main boxes -->
+  <rect x="50" y="425" width="208" height="245" rx="28" class="outline" stroke="#14939A"/>
+  <text x="154" y="480" text-anchor="middle" class="hand teal label">INPUT</text><path d="M93 497 C130 501 181 493 216 497" fill="none" stroke="#14939A" stroke-width="3"/>
+  <text x="154" y="548" text-anchor="middle" class="hand ink body"><tspan x="154">email, form,</tspan><tspan x="154" dy="38">file, meeting</tspan><tspan x="154" dy="38">notes</tspan></text>
+
+  <rect x="317" y="425" width="208" height="245" rx="28" class="outline" stroke="#8167D9"/>
+  <text x="421" y="466" text-anchor="middle" class="hand lav label"><tspan x="421">CONTEXT /</tspan><tspan x="421" dy="36">RULES</tspan></text><path d="M360 510 C393 514 455 506 488 510" fill="none" stroke="#8167D9" stroke-width="3"/>
+  <text x="421" y="557" text-anchor="middle" class="hand ink body"><tspan x="421">what to do,</tspan><tspan x="421" dy="38">what never</tspan><tspan x="421" dy="38">to do</tspan></text>
+
+  <rect x="585" y="425" width="208" height="245" rx="28" class="outline" stroke="#2C4BE0"/>
+  <text x="689" y="480" text-anchor="middle" class="hand blue label">AI TASK</text><path d="M630 497 C665 501 713 493 750 497" fill="none" stroke="#2C4BE0" stroke-width="3"/>
+  <text x="689" y="548" text-anchor="middle" class="hand ink body"><tspan x="689">draft, sort,</tspan><tspan x="689" dy="38">summarise,</tspan><tspan x="689" dy="38">classify</tspan></text>
+
+  <rect x="853" y="425" width="208" height="245" rx="28" class="outline" stroke="#F28C28"/>
+  <text x="957" y="466" text-anchor="middle" class="hand amber label"><tspan x="957">HUMAN</tspan><tspan x="957" dy="36">REVIEW</tspan></text><path d="M895 510 C930 514 986 506 1022 510" fill="none" stroke="#F28C28" stroke-width="3"/>
+  <text x="957" y="568" text-anchor="middle" class="hand ink body"><tspan x="957">approve,</tspan><tspan x="957" dy="38">edit, decide</tspan></text>
+
+  <rect x="1121" y="425" width="208" height="245" rx="28" class="outline" stroke="#2C4BE0"/>
+  <text x="1225" y="480" text-anchor="middle" class="hand blue label">OUTPUT</text><path d="M1165 497 C1196 502 1256 493 1290 497" fill="none" stroke="#2C4BE0" stroke-width="3"/>
+  <text x="1225" y="548" text-anchor="middle" class="hand ink body"><tspan x="1225">draft sent,</tspan><tspan x="1225" dy="38">summary,</tspan><tspan x="1225" dy="38">next action</tspan></text>
+
+  <!-- Flow arrows -->
+  <path d="M267 548 C282 548 293 548 306 548" fill="none" stroke="#1A1A1A" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M534 548 C550 548 562 548 575 548" fill="none" stroke="#1A1A1A" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M802 548 C818 548 829 548 842 548" fill="none" stroke="#1A1A1A" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M1070 548 C1086 548 1098 548 1111 548" fill="none" stroke="#1A1A1A" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <!-- Input icons -->
+  <path d="M76 735 h58 v42 H76z M76 735 l29 24 29-24" fill="none" stroke="#14939A" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="149" y="730" width="46" height="56" rx="5" fill="none" stroke="#14939A" stroke-width="4"/><path d="M160 745 h24 M160 757 h24 M160 769 h18" stroke="#14939A" stroke-width="3"/>
+  <path d="M210 742 q0-18 23-18 h8 q23 0 23 18 v13 q0 18-23 18 h-5 l-10 13 v-13 q-16-3-16-18z" fill="none" stroke="#14939A" stroke-width="4"/><path d="M223 744 h30 M223 755 h23" stroke="#14939A" stroke-width="3"/>
+  <path d="M93 681 C96 702 99 712 106 721 M153 681 C153 701 153 713 153 723 M215 681 C210 702 204 712 195 721" fill="none" stroke="#14939A" stroke-width="3" stroke-dasharray="8 8"/>
+
+  <!-- Rule note -->
+  <path d="M340 745 L488 738 L493 842 L346 848 Z" fill="#FFFFFF" stroke="#8167D9" stroke-width="3"/><rect x="396" y="729" width="40" height="16" fill="#DCD4F7" transform="rotate(-3 416 737)"/>
+  <text x="418" y="780" text-anchor="middle" class="hand ink small"><tspan x="418">Clear rules</tspan><tspan x="418" dy="31">get better</tspan><tspan x="418" dy="31">results.</tspan></text>
+  <path d="M418 733 C417 713 418 700 420 682" fill="none" stroke="#8167D9" stroke-width="3" marker-end="url(#arrow-lav)"/>
+
+  <!-- Queen Bot -->
+  <g transform="translate(625 694)">
+    <!-- cape -->
+    <path d="M42 112 C21 147 18 199 28 226 L90 211 L151 227 C162 192 157 148 136 113 Z" fill="#1B2EA0" stroke="#1A1A1A" stroke-width="4"/>
+    <!-- crown -->
+    <path d="M58 28 L67 0 L83 21 L100 -4 L116 22 L132 2 L140 30 Z" fill="#2C4BE0" stroke="#1A1A1A" stroke-width="4"/><circle cx="67" cy="0" r="6" fill="#F2B544" stroke="#1A1A1A" stroke-width="3"/><circle cx="100" cy="-4" r="6" fill="#F2B544" stroke="#1A1A1A" stroke-width="3"/><circle cx="132" cy="2" r="6" fill="#F2B544" stroke="#1A1A1A" stroke-width="3"/>
+    <!-- head -->
+    <rect x="46" y="31" width="96" height="76" rx="25" fill="#2C4BE0" stroke="#1A1A1A" stroke-width="4"/><rect x="58" y="44" width="72" height="50" rx="18" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="3"/><circle cx="80" cy="66" r="5" fill="#1A1A1A"/><circle cx="108" cy="66" r="5" fill="#1A1A1A"/><path d="M82 80 q12 10 24 0" fill="none" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+    <!-- body + dress -->
+    <rect x="66" y="105" width="58" height="54" rx="13" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4"/><text x="95" y="143" text-anchor="middle" class="sans blue" font-size="38" font-weight="800">F</text>
+    <path d="M67 154 C57 174 49 197 46 221 C73 231 116 231 143 221 C140 196 132 174 123 154 Z" fill="#2C4BE0" stroke="#1A1A1A" stroke-width="4"/><path d="M58 213 C82 219 111 219 135 213" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="3 8"/>
+    <!-- arms -->
+    <path d="M67 119 C48 122 42 136 34 148" fill="none" stroke="#2C4BE0" stroke-width="13" stroke-linecap="round"/><path d="M123 119 C142 123 147 136 153 150" fill="none" stroke="#2C4BE0" stroke-width="13" stroke-linecap="round"/>
+    <circle cx="32" cy="150" r="9" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="3"/><circle cx="154" cy="152" r="9" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="3"/>
+    <!-- scepter -->
+    <path d="M22 154 L3 228" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round"/><path d="M5 223 L13 230 L4 238 L-4 230 Z" fill="#F2B544" stroke="#1A1A1A" stroke-width="3"/><path d="M14 147 L22 135 L30 147 L22 159 Z" fill="#14939A" stroke="#1A1A1A" stroke-width="3"/>
+    <!-- feet -->
+    <path d="M62 222 v16 h25 M126 222 v16 h-25" fill="none" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <text x="805" y="867" class="hand blue small"><tspan x="805">Queen Bot</tspan><tspan x="805" dy="31">gets to work!</tspan></text>
+  <path d="M790 833 C770 822 758 812 748 799" fill="none" stroke="#2C4BE0" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Human review note -->
+  <path d="M882 744 L1038 739 L1044 837 L888 843 Z" fill="#FFFFFF" stroke="#F28C28" stroke-width="3"/><rect x="945" y="730" width="40" height="16" fill="#F7C78F" transform="rotate(2 965 738)"/>
+  <text x="963" y="776" text-anchor="middle" class="hand ink" font-size="20"><tspan x="963">You bring judgment,</tspan><tspan x="963" dy="27">context and</tspan><tspan x="963" dy="27">accountability.</tspan></text>
+  <path d="M961 735 C958 714 958 699 958 682" fill="none" stroke="#F28C28" stroke-width="3" marker-end="url(#arrow-amber)"/>
+
+  <!-- Output icons -->
+  <path d="M1150 750 L1210 724 L1186 781 L1175 758 Z" fill="none" stroke="#2C4BE0" stroke-width="4" stroke-linejoin="round"/><path d="M1175 758 L1210 724" stroke="#2C4BE0" stroke-width="3"/>
+  <path d="M1225 727 h44 l18 18 v53 h-62z M1269 727 v20 h18" fill="none" stroke="#2C4BE0" stroke-width="4" stroke-linejoin="round"/><path d="M1237 763 h34 M1237 777 h27" stroke="#2C4BE0" stroke-width="3"/>
+  <rect x="1301" y="740" width="54" height="54" rx="7" fill="none" stroke="#2C4BE0" stroke-width="4"/><path d="M1315 766 l11 11 22 -28" fill="none" stroke="#2C4BE0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Bottom principle -->
+  <rect x="478" y="955" width="492" height="74" rx="18" fill="#FFFFFF" stroke="#2C4BE0" stroke-width="4"/>
+  <path d="M520 974 l7 17 19 1 -15 12 5 18 -16-10 -16 10 5-18 -15-12 19-1z" fill="none" stroke="#2C4BE0" stroke-width="3"/>
+  <text x="735" y="1002" text-anchor="middle" class="hand blue" font-size="32">AI prepares. <tspan text-decoration="underline">You approve.</tspan></text>
+</svg>

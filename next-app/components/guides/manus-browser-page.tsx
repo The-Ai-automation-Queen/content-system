@@ -51,7 +51,7 @@ export function ManusBrowserPage({ guide }: { guide: GuidePage }) {
   return <main className={styles.page}>
     <div className={styles.shell}>
       <Link className={styles.back} href="/guides/">← All guides</Link>
-      <header className={styles.hero}><h1>Does Manus need <span>your browser at all?</span></h1><p>Choose the smallest route that can finish the job. Use your signed-in browser only when public pages or a connector cannot do it.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
+      <header className={styles.hero}><h1>Does Manus need <span>your browser at all?</span></h1><p>Pick the narrowest access route that can complete one defined task. Use your signed-in browser only when a public page or one supported connector cannot provide what the task needs.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <section className={styles.activity} aria-labelledby="manus-route-title"><div className={styles.sectionHead}><span>Choose the access</span><h2 id="manus-route-title">Where does the job live?</h2></div><div className={styles.routeGrid}>{comparison.rows.map((row, index) => <div key={row[0]} className={styles.routeOption}><button type="button" aria-pressed={route === index} onClick={() => setRoute(index)}><strong>{row[0]}</strong><small>{routeDetails[index].access}</small></button>{route === index && <div className={styles.routeResult}><p>{row[1]}</p><p>{routeDetails[index].next}</p></div>}</div>)}</div></section>
 

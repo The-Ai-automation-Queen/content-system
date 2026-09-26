@@ -9,6 +9,71 @@
       "permanent": true
     },
     {
+      "source": "/guides/chez-manus.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-meta-ai.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-kimi.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-deepseek.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-mistral.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-grok.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-copilot.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-gemini.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-openai.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-claude.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chez-claude-preview.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/voice-clone-pipeline.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/chatgpt-vs-ai.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
       "source": "/work-with-me.html",
       "destination": "/build-sprint.html",
       "permanent": true

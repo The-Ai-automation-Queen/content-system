@@ -65,7 +65,7 @@ export function ChatGptProjectPage({ guide }: { guide: GuidePage }) {
       <header className={styles.hero}>
         <div className={styles.heroCopy}>
           <h1>Why does ChatGPT forget <span>what you told it?</span></h1>
-          <p>It may use past chats, but it does not keep every detail as a rule. Give ongoing work a short Project brief, then check the next answer against it.</p>
+          <p>ChatGPT can use relevant past context, but it will not retain every detail. For continuing work, save a short Project brief, then test a fresh answer against it.</p>
         </div>
         <figure className={styles.heroImage}><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 500px" /></figure>
       </header>

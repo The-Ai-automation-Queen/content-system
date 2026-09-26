@@ -1,0 +1,50 @@
+/* Light neutral replacement for editorial sections that previously used charcoal.
+   White surfaces and electric blue brand accents remain unchanged. */
+
+.pains,
+.testimonials,
+.company,
+.book,
+.guarantee{
+  background:var(--section-dark-bg) !important;
+  color:var(--section-dark-text) !important;
+}
+
+.pains-title,
+.pains-list li,
+.pains-close,
+.testimonials .section-title,
+.testi-quote,
+.testi-name,
+.testi-role,
+.company h2,
+.company p,
+.company .label,
+.book h2,
+.book p,
+.guarantee h2,
+.guarantee .line,
+.guarantee p.support{
+  color:var(--section-dark-text) !important;
+}
+
+/* Keep brand accents blue on the new light neutral background. */
+.testimonials .section-eyebrow,
+.testi-stat,
+.company .label{
+  color:var(--blue-deep) !important;
+}
+
+.testi-card{
+  background:#FFFFFF !important;
+  border-color:var(--line) !important;
+}
+
+.testi-attrib{
+  border-top-color:var(--line) !important;
+}
+
+.company .depts span{
+  border-color:var(--line) !important;
+  color:var(--section-dark-text) !important;
+}

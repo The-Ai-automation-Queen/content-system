@@ -1,0 +1,317 @@
+{
+  "what-is-ai": {
+    "public_lesson": {
+      "heading": "Turn one public paragraph into a checkable first draft",
+      "lead": "Before asking AI to help with reports, emails or plans, use a short paragraph from a public article you are already reading. Ask for three key points and the sentence supporting each point, so the response stays tied to material you can see.",
+      "practice": "Practice example, fictional: use this made-up sample: \"Northside Library will close at 3 p.m. Friday for staff training and reopen at 9 a.m. Saturday.\" Ask AI for the change, the time and the exact supporting text.",
+      "check": "Pass if each point points to words in the sample and nothing new appears. If any detail cannot be traced back, cross it out and keep the task at a small sample."
+    },
+    "verdict": "targeted-repair"
+  },
+  "ai-jargon-guide": {
+    "public_lesson": {
+      "heading": "Use three labels before you trial a work AI tool",
+      "lead": "Before you connect an AI tool to a work account, make a tiny inventory: what produces the answer, what information shapes it, and what the tool can do. The ChatGPT memory exercise in this guide applies the same habit to your own account by comparing a chat reply with the controls you can inspect.",
+      "practice": "Practice, not a real case: you are reviewing a fictional meeting-notes assistant. Write three lines: “Model: not yet confirmed”; “Context: a meeting note pasted into chat”; “Permissions: asks to read calendar only”. Then ask which line changes if the assistant can create or send something.",
+      "check": "Pass if you can say whether the tool only drafts a response or can also read, create, change or send information. If you cannot, pause the connection and ask to see the permission screen or supporting documentation before adding a work account."
+    },
+    "verdict": "targeted-repair"
+  },
+  "what-is-agentic": {
+    "public_lesson": {
+      "heading": "Set a boundary before you connect a tool",
+      "lead": "Before you compare options, turn the request into a boundary. In this guide's fictional example of comparing three public pricing pages, the agent's job ends with a shortlist and any missing details. It does not sign up, contact a vendor or spend money.",
+      "practice": "Practice, fictional example: write, 'Compare the plans on these three public pricing pages. Return a shortlist with source links and flag missing details. Do not create accounts, contact vendors or make purchases.' The desired output is a list you can check, not a buying decision.",
+      "check": "Pass if your request names the sources, the output and the actions the agent must not take. If any one is unclear, use chat or preparation mode until you can state it."
+    },
+    "verdict": "targeted-repair"
+  },
+  "what-should-you-never-share-with-ai": {
+    "public_lesson": {
+      "heading": "Run a safe first pass on one work task",
+      "lead": "AI Automation Queen’s safe-first move is to separate the task from the real material before you open a chat. If you want AI to summarise a fictional team meeting, it does not need the actual names, notes or attendee details to help you plan the task. Start with categories of information, then decide what stays out and what needs permission.",
+      "practice": "Practice, not a real case: enter “Help me plan a summary of a fictional project meeting with no names, files or customer details.” A useful response identifies what must stay out, who may need to approve information and a safer sample you can use.",
+      "check": "Pass if you can describe the task without real names, files or private details, and the response gives you a safer test input. Fail if the next step requires you to upload or paste the real material. Before you email or share anything, stop and ask for approval or use an invented example."
+    },
+    "verdict": "targeted-repair"
+  },
+  "which-ai-tool-for-what": {
+    "public_lesson": {
+      "heading": "The AI Automation Queen two-tool test",
+      "lead": "Before you ask an AI tool to recommend itself, run a tiny comparison you can judge without specialist knowledge. Practice, fictional example: give two approved chat tools the same three invented meeting notes and ask for an action list with an owner and next step.",
+      "practice": "Practice prompt: `Turn these fictional notes into three action items. For each, give an owner, a next step and one question that needs a human answer.` Use only invented or approved non-confidential material, and do not connect a file for this first comparison.",
+      "check": "Pass if the answer preserves all three notes, separates unknowns from assumptions and gives a usable action list. If it drops a note, invents a decision or needs too much repair, do not pay or connect data yet: test the other option or simplify the task."
+    },
+    "verdict": "targeted-repair"
+  },
+  "make-chatgpt-answers-shorter": {
+    "public_lesson": {
+      "heading": "Turn an open meeting into a 3-2-1 brief",
+      "lead": "Before a 20-minute project check-in, a long answer makes you sort out what is still missing. In the fictional onboarding checklist example, the useful output is three questions team leads can answer, two decisions that remain open, and a closing sentence that names the unresolved point. That limited shape also makes it easier to spot whether ChatGPT quietly invented an owner, approval or date.",
+      "practice": "Practice, fictional example: With “the onboarding checklist draft is ready, team leads have not reviewed it, and no publication date is agreed,” ask for 3 questions, 2 decisions and one closing sentence in 90 words or fewer. Tell ChatGPT to use no introduction and not invent an approval, owner or deadline.",
+      "check": "Pass only if you can count all six requested parts, stay within 90 words, and point to every statement in the three facts you supplied."
+    },
+    "verdict": "targeted-repair"
+  },
+  "stop-chatgpt-forgetting-context": {
+    "public_lesson": {
+      "heading": "AI Automation Queen quick check: test a Project before you rely on it",
+      "lead": "When work continues across several chats, a remembered detail is not the same as a confirmed instruction. In the fictional Service launch exercise, the essentials are the audience, the two service choices, no approved price or launch date, and human approval of public wording.",
+      "practice": "Practice, fictional: Save those four facts in a Project called Service launch. In a new chat, request a two-sentence introduction and expect the right audience and choices, with no price, date, or claim that wording is final.",
+      "check": "Pass if the answer preserves all four constraints. If it changes or omits one, correct the brief and repeat the test before using the method for real work."
+    },
+    "verdict": "targeted-repair"
+  },
+  "chatgpt-scheduled-tasks": {
+    "public_lesson": {
+      "heading": "Turn a public status page into a decision-ready check",
+      "lead": "An alert is useful only when it changes what you will do next. For a first practice run, choose a public service-status page you could inspect yourself instead of asking ChatGPT to watch a private workspace.",
+      "practice": "Practice, fictional: suppose a made-up service page says \"All systems operational.\" Set the condition to notify you only if that status is no longer shown, and set the stop rule to 14 days. Desired output: one alert that states the current public status and links to the page.",
+      "check": "Before you leave the setup screen, pass only if the task shows the intended page, condition, stop rule, time zone and next run. If the condition would alert on routine wording changes, or the task has no stop rule, tighten it or keep the check manual."
+    },
+    "verdict": "retain-most"
+  },
+  "claude": {
+    "public_lesson": {
+      "heading": "Turn a small set of notes into a checkable action list",
+      "lead": "You can leave a meeting with one confirmed deadline, one missing deadline and one suggestion that could be mistaken for a decision. Claude can structure those notes, but the useful result is the one that clearly separates what was agreed from what was merely suggested.",
+      "practice": "Practice, fictional notes: paste “Pilot agreed. Programme lead drafts invitation by 8 October. Room check has no deadline. A 22 October launch was suggested.” Ask for decisions, actions with owner and deadline, and open questions. Ask it to write “Not agreed” where the notes are silent.",
+      "check": "Pass only if the invitation deadline is 8 October, the room check has no invented deadline, and the 22 October launch is not labelled confirmed. If any one of those is wrong, use the correction instruction to fix that line before using the list."
+    },
+    "verdict": "targeted-repair"
+  },
+  "claude-projects": {
+    "public_lesson": {
+      "heading": "Turn one fictional meeting into a reviewable format",
+      "lead": "Meeting notes often mix decisions, tasks and ideas that were only discussed. A Claude Project is useful when you want the same reviewable format every time while the notes change. Start with a short set of notes you can compare against the reply.",
+      "practice": "Practice, fictional notes: “Sam will share the draft on Tuesday. We discussed adding a second review, but did not decide.” Ask for Decisions, Who does what and Questions to resolve. The desired result is one assigned action, no second review presented as a decision, and no missing facts filled in.",
+      "check": "Pass if the reply gives Sam’s task as an action, treats the second review as a suggestion, and marks any missing owner or date as “Not agreed.” If it does not, revise the saved instruction before using it on a real meeting."
+    },
+    "verdict": "targeted-repair"
+  },
+  "gemini-cannot-find-drive-file": {
+    "public_lesson": {
+      "heading": "Diagnose Drive access before you use a live work file",
+      "lead": "Looking for a Drive file is not yet a reason to expose the actual brief. Start with the fictional “Autumn launch brief demo” and a result you can check: the blue cover decision, Sam as owner, and 18 October as review date. This is practice content, not evidence about a real launch.",
+      "practice": "Practice only: create the demo document with the supplied text under the same account you use for Gemini. In a new Gemini chat, select @Google Drive and ask for the exact title, then request the source.",
+      "check": "Pass: the sources identify the demo document and the three returned details match the opened document. Fail: if the demo cannot be found or any detail differs, stop before you email anyone or use the answer for work, then return to the relevant account, connection, request, or source check."
+    },
+    "verdict": "targeted-repair"
+  },
+  "gemini-google-tasks-limits": {
+    "public_lesson": {
+      "heading": "Check the project list before you trust the task result",
+      "lead": "A task title can look correct while still being unhelpful for project work if its list is absent or wrong. The fictional North and South lists give you a low-risk way to test the detail that separates one project from another. Do the check before you use Gemini to retrieve real work tasks.",
+      "practice": "Practice only, using the fictional demo: ask Gemini for “Review demo budget” and its Google Tasks list. The desired practice result pairs that exact title with “Demo project North”, rather than a guessed project name.",
+      "check": "Pass only if all three demo titles match their lists in Google Tasks. If any list is missing or a task is wrong, keep project organisation in Google Tasks and do not use Gemini for that decision."
+    },
+    "verdict": "retain-most"
+  },
+  "check-copilot-excel-edits": {
+    "public_lesson": {
+      "heading": "Check one Excel edit before it reaches your real workbook",
+      "lead": "A single changed number can be correct while the surrounding sheet is not. In this fictional mini-inventory, changing Notebooks units from 5 to 6 should leave the formula in D3 intact, change its displayed total from 30 to 36, and leave Pens and Folders alone.",
+      "practice": "Practice, not a real client workbook: copy the four-row sheet into a new file, save an untouched original, and ask for only B3 to change from 5 to 6. Your desired output is one edited input cell and a recalculated D3, not a rewritten sheet.",
+      "check": "Pass if B3 is 6, D3 still reads =B3*C3 and displays 36, and D2 and D4 remain 20 and 24. If any other value, label or formula changed, do not use that working copy until you compare it with the original."
+    },
+    "verdict": "retain-most"
+  },
+  "meta-ai": {
+    "public_lesson": {
+      "heading": "Set the boundary before you set the task",
+      "lead": "Before Muse sees a work inbox or calendar, define the evidence you need, the action it must not take and the format you will inspect. The guide’s fictional King’s Cross room comparison works because it asks for public facts, direct source links and no contact or booking. That same structure gives you a small, reviewable first result instead of a vague trial.",
+      "practice": "Practice, fictional: write three lines before opening Muse. Goal: compare three public meeting rooms for a fictional four-person planning session. Do not: log in, contact, hold or book. Return: a table with source links and missing facts marked. This creates a bounded request and an output you can inspect without exposing workplace data.",
+      "check": "Before connecting email, pass only if all three options have public source links and the action trail shows no login, form, contact or booking. If one item fails, keep the next trial public and correct the instruction instead of granting access."
+    },
+    "verdict": "targeted-repair"
+  },
+  "review-grok-suggestions": {
+    "public_lesson": {
+      "heading": "Set one boundary before your first public-post check",
+      "lead": "A Bot can be useful before it has access to any account. For a public X monitoring task, start by having it collect links and prepare possible replies while you keep account connections and posting under your control. You get a result to inspect without giving the Bot a way to act outside the chat.",
+      "practice": "Practice, fictional: ask the Bot to read five public posts about a fictional product launch and return each original link with a two-sentence summary. Desired output: five links and summaries, with any possible reply clearly marked as a draft.",
+      "check": "Pass if the response contains only the requested links, summaries, and labeled drafts. If it asks to connect an account, send a reply, or do something beyond the brief, stop and tighten the instruction before continuing."
+    },
+    "verdict": "targeted-repair"
+  },
+  "get-better-professional-writing-from-grok": {
+    "public_lesson": {
+      "heading": "Turn a public X check into a brief you can verify",
+      "lead": "When you need to understand a public conversation about a product, event, or topic, the first useful win is not an automatic monitor. It is a short brief that lets you decide whether there is a real signal worth following. Signal Scout is a fictional practice Bot name, not evidence of a client workflow.",
+      "practice": "Practice, fictional example: replace the bracket with \"Northstar Desk update\" and ask for up to five original posts from the past seven days. The desired output is a compact list with dates, original links, and a one-sentence reason each item may matter. Do not ask it to act or connect any account beyond X.",
+      "check": "Pass if you can open two links, find dates and wording consistent with the brief, and explain why one item matters. If either link cannot be verified or the brief is not useful, treat it as a one-off test and do not schedule a repeat."
+    },
+    "verdict": "targeted-repair"
+  },
+  "fix-deepseek-wall-of-text": {
+    "public_lesson": {
+      "heading": "AI Automation Queen practice: control the formatting pass",
+      "lead": "A dense response can make a simple scene feel harder to review, and a cleaner version can quietly change the story. In the fictional Mara and Ben scene, the train has gone, Ben used the Sunday timetable, and they have 20 minutes to walk to the ferry. Your job is to make those facts easier to scan, not to make the scene more dramatic.",
+      "practice": "Practice, fictional example: use the Mara and Ben scene first and ask for paragraph and dialogue breaks only. Desired output: short readable paragraphs, the same speaker attached to the same line, and a clear report of any words changed.",
+      "check": "Pass if the result keeps all four facts, preserves the restrained tone, and leaves each spoken line with the same speaker. If any of those fail, do not use the revision. Keep the original and repeat the request with the protected details named again."
+    },
+    "verdict": "targeted-repair"
+  },
+  "edit-long-writing-with-deepseek": {
+    "public_lesson": {
+      "heading": "AI Automation Queen's protected-brief check",
+      "lead": "In the fictional Mara and Ben scene, the useful edit is not a better story overall. It is a clearer handoff between Mara's complaint and Ben's Sunday-timetable mistake, while the 7.15 arrival, missed train, and ferry deadline remain fixed.",
+      "practice": "Practice example, not a real client case: write five short lines for characters, protected facts, voice, one problem, and one passage. Ask for the revised passage plus a list of changes, with no continuation of the story.",
+      "check": "Before you keep or share the result, compare it with the five lines. Pass only if the one problem is clearer and every protected name, fact, relationship, and voice choice still matches."
+    },
+    "verdict": "retain-most"
+  },
+  "is-kimi-worth-paying-for": {
+    "public_lesson": {
+      "heading": "A five-minute test before you consider a Kimi plan",
+      "lead": "Practice scenario, not a client result: imagine you make a five-slide weekly update every Friday from a public source. A polished-looking draft is not enough evidence to pay. You need to know whether it finishes the same brief, how much you repair, and whether the visible credit allowance can support next Friday too.",
+      "practice": "Use an invented five-slide brief and the same public source in Kimi and your current tool. Write down whether each finishes, the corrections you make and the minutes you spend checking before you look at either plan price.",
+      "check": "Choose Pay only if both the completed result and the current allowance are visible and workable for your frequency. If either is missing or unclear, the correct next decision is Retest."
+    },
+    "verdict": "targeted-repair"
+  },
+  "control-kimi-code-changes": {
+    "public_lesson": {
+      "heading": "Make one wording fix without inviting a project-wide cleanup",
+      "lead": "In this practice example, not a real client case, you need to change Welcome to Start here in index.html. That sounds tiny, but it is exactly the kind of request that can become an unwanted formatting sweep unless you set a file boundary and read the proposed work first.",
+      "practice": "Practice: in a disposable index.html file, request only Welcome to Start here. The desired output is a plan naming index.html, followed by a diff that changes that visible wording and nothing else.",
+      "check": "Pass only if index.html is the only changed file and the page displays Start here. If the plan or diff names another file, dependency or command, stop and revise the request before approving anything."
+    },
+    "verdict": "targeted-repair"
+  },
+  "manus-browser-workflow": {
+    "public_lesson": {
+      "heading": "Make the access decision with one bounded page check",
+      "lead": "Before you connect a browser, define one small task such as reading the plan name, renewal date and seat count on your own account overview. This is a practice example, not evidence about a real account or an outcome.",
+      "practice": "Practice: enter a non-sensitive overview page and exactly those three visible fields in the builder. Desired output: the three fields and the page URL, with no message, form submission, download or account change.",
+      "check": "Pass only if the result contains the intended three fields and page URL, and the task stopped without another action. If any other page opened or anything changed, stop and review the task boundary before continuing."
+    },
+    "verdict": "targeted-repair"
+  },
+  "instagram-content-dashboard": {
+    "public_lesson": {
+      "heading": "Choose one content question before you build",
+      "lead": "A dashboard is useful when it helps you make one content decision, not when it produces every possible number. For a fictional practice account, compare saves and shares from two recent Reel formats instead of trying to optimize the whole feed at once.",
+      "practice": "Practice, not client evidence: write one decision in a note: \"For my next two posts, I will test whether a shorter tutorial earns more saves per reach.\" List the fields you would need to check it: post date, reach, saves, shares, and format.",
+      "check": "Pass if you can say what result would change your next post and which source metric you will verify. If you cannot, narrow the question before you begin an integration."
+    },
+    "verdict": "factual-hold"
+  },
+  "what-is-a-prompt": {
+    "public_lesson": {
+      "heading": "AI Automation Queen practice: turn a rough note into a meeting agenda",
+      "lead": "Imagine a fictional website-launch note: the landing page is approved, final graphics are expected Friday, and pricing is still awaiting approval. The task is not to make an impressive agenda. It is to create three agenda items that expose the pricing decision and do not assign an owner who was never named.",
+      "practice": "Practice, using only the fictional note above: ask AI for a 15-minute agenda with three items, one useful question per item, and a final ‘Decision to make’ line. Add: ‘If an owner is not in the note, write Not specified.’",
+      "check": "Pass only if pricing is still described as unresolved, no names or dates are added, and each agenda item comes from the note. If any detail cannot be traced back, remove it or ask a follow-up before using it."
+    },
+    "verdict": "targeted-repair"
+  },
+  "what-is-an-ai-browser": {
+    "public_lesson": {
+      "heading": "Make a source-checked comparison before you sign in",
+      "lead": "When you need to choose between two public services, the useful output is not a quick summary. It is a short comparison whose claims you can trace to the original pages. Use the browser only on pages you would be comfortable opening in a signed-out window.",
+      "practice": "Practice with two real public policy pages from providers you are considering. Ask the browser to compare one shared question and return three claims, each with a direct quotation and link. Do not sign in or enter private information for this first check.",
+      "check": "Pass if you can open every quoted section and it supports the claim beside it. If any quote is missing, misplaced or broader than the source, remove that claim or verify it directly before you share the comparison."
+    },
+    "verdict": "targeted-repair"
+  },
+  "connect-ai-to-email-files-calendar": {
+    "public_lesson": {
+      "heading": "AI Automation Queen's two-minute connection check",
+      "lead": "You need a weekly meeting summary from your own calendar. Before you connect an account, decide whether one copied event description or a single exported file would answer the question. A wider connection is justified only when the same lookup will recur and needs live information.",
+      "practice": "Practice, not a real case: For a fictional Northstar launch meeting, upload one redacted agenda and ask for three follow-up questions. Desired output: a short checklist, with no calendar connection. If that is enough, stop there.",
+      "check": "Pass if you can write one sentence that names the repeated task, the exact data needed, and the smallest access option. If not, upload one file or leave the connection off."
+    },
+    "verdict": "targeted-repair"
+  },
+  "ai-skills-worth-learning-for-work": {
+    "public_lesson": {
+      "heading": "Find the skill behind a weak meeting update",
+      "lead": "Imagine a fictional weekly project update. You ask an AI chat to turn your notes into a short update, but it adds a deadline that is not in the notes. The problem is not that you need a newer tool. It shows you need to practise checking results against the source.",
+      "practice": "Practice example, not a real case: write five general tasks such as 'turn meeting notes into an update' and 'sort recurring questions into themes.' Select one task, remove private details, then use the guide's instruction to identify one skill to practise and one risk to check.",
+      "check": "Pass if the plan chooses one task and one skill, and you can name the source or fact you will compare before using the output. If it only suggests tools, or you cannot state what you would verify, choose a smaller familiar task."
+    },
+    "verdict": "targeted-repair"
+  },
+  "show-up-in-ai-search": {
+    "public_lesson": {
+      "heading": "Make one public claim checkable before you test AI search",
+      "lead": "Before asking an AI tool to compare providers, inspect the page that should explain your offer. The form's payroll-software example is a practice scenario, not evidence about a real provider: a buyer should be able to find who the service helps, what it offers, its market and a contact route in one visit.",
+      "practice": "Practice, fictional example only: create a four-line note for a pretend payroll software page: 'Helps: small design studios'; 'Offer: payroll software'; 'Market: UK'; 'Contact: [public URL].' For each line, paste the exact public page URL that proves it, or mark it 'missing' and revise the source page before testing.",
+      "check": "Pass if all four lines point to an open public page and the wording matches the page. If one line is missing, vague or conflicts with a profile, fix that source first. Do not treat an AI mention as proof."
+    },
+    "verdict": "targeted-repair"
+  },
+  "chatgpt-screen-recording-to-process-guide": {
+    "public_lesson": {
+      "heading": "AI Automation Queen practice: Make one visible task teachable",
+      "lead": "Someone records a small task so a teammate can do it without asking for a repeat demonstration. In a fictional practice workspace, that might be adding a project label and confirming it appears on the project card. The useful outcome is a draft that names only the visible actions and tells the reader what success looks like, not a polished guess.",
+      "practice": "Practice example, not client evidence: In a demo project, record yourself adding the label 'Ready for review' and capture the screen where it appears. Ask for a three-step draft with a visible check after each action, then flag any menu label the recording does not make readable.",
+      "check": "Pass if a person who did not watch the recording can add the label in the demo project and sees the named result. If they need to ask what a step means, revise the guide before sharing it by email."
+    },
+    "verdict": "targeted-repair"
+  },
+  "chatgpt-customer-research-with-evidence": {
+    "public_lesson": {
+      "heading": "Start with one answer you can trace",
+      "lead": "When two fictional participants say they left sign-up because pricing appeared too late, you may have a theme worth checking, not proof of what every customer wants. The useful next move is to link each claim to its participant ID and exact wording.",
+      "practice": "Practice, using the fictional P01 and P02 example in this guide: write “Price information appears too late” only if you can attach one short extract from each participant. If either extract is missing or says something different, put it under a gap or early signal instead.",
+      "check": "Pass if you can open the original notes and locate every ID and extract in your table. If not, remove or revise the theme before it informs a product decision."
+    },
+    "verdict": "targeted-repair"
+  },
+  "teach-claude-a-repeatable-workflow": {
+    "public_lesson": {
+      "heading": "Build a weekly update Claude can safely draft",
+      "lead": "A weekly update can look complete while hiding an important gap. In this guide's fictional practice notes, the venue opening hours have no agreed owner or date, so the instruction must preserve that uncertainty instead of turning it into a fact.",
+      "practice": "Practice, not real case evidence: set a 150-word limit and paste the fictional completed-week notes from this guide into a new Claude conversation. Desired output: the five headings, with the missing owner and date under “Details to check”.",
+      "check": "Pass if the owner and date remain visibly missing and no action is taken. If Claude adds either detail, do not save the instruction: tighten the missing-information rule and test a different completed week."
+    },
+    "verdict": "targeted-repair"
+  },
+  "what-can-copilot-see-at-work": {
+    "public_lesson": {
+      "heading": "Test one email before you build a daily brief",
+      "lead": "A morning brief is only useful if it points you to the right original messages. Before you ask Copilot to rank your inbox, test it against one recent email you can open in Outlook.",
+      "practice": "Practice, not a real case: choose one ordinary recent work email and ask for its subject, sender, direct request and stated deadline. Your desired output is a four-item summary with a link or citation to that email, not a reply draft.",
+      "check": "Pass if the subject, sender, request and deadline match the original email. If any item is missing, unsupported or wrong, do not schedule the prompt. Use Outlook directly and ask your IT team which work-data access is available."
+    },
+    "verdict": "targeted-repair"
+  },
+  "test-meta-muse-money-saving-task": {
+    "public_lesson": {
+      "heading": "Turn a price question into a checkable brief",
+      "lead": "Before you ask Muse to compare anything, write the conditions that make an option usable. The lowest displayed price is not a saving if it excludes delivery, needs an extra purchase, or comes with different cancellation terms. This lets you judge the shortlist instead of treating it as a recommendation.",
+      "practice": "Practice example, not a real result: for a fictional desk lamp, set a total budget of 40 currency units, require delivery to your location and a return option, then ask for up to three source-linked options. The desired output is a small table that marks any unknown delivery fee or return term as “Needs checking”.",
+      "check": "Pass if you can open each source and explain why every option meets the same requirements. If a required cost or term is unknown, do not choose a winner yet."
+    },
+    "verdict": "targeted-repair"
+  },
+  "test-deepseek-v4-document-work": {
+    "public_lesson": {
+      "heading": "Make one document comparison that can change your next workflow choice",
+      "lead": "A convincing first answer is not yet a reliable document brief. This guide gives you a small test: ask two tools for the same source-backed summary, then check whether each claim, deadline and decision is actually supported by the document. The result is a decision based on repair effort as well as writing quality.",
+      "practice": "Practice example, fictional: use a three-page invented project update containing a proposed launch date and an undecided budget. Paste the guide's instruction into both tools and look for an output that labels the date as proposed and keeps the budget as unanswered rather than filling either gap.",
+      "check": "Pass only if every listed fact has a page or section reference, every required heading appears and no proposal, estimate or missing detail is presented as a confirmed fact. If either tool fails, record the repair time and run the second safe document before changing your regular tool."
+    },
+    "verdict": "targeted-repair"
+  },
+  "protect-a-long-deepseek-project": {
+    "public_lesson": {
+      "heading": "Make the next step portable before you need it",
+      "lead": "A long chat can feel like the whole project until one source, decision or next instruction cannot be recovered. AI Automation Queen's practical rule is to save the project record in files you control, then test whether a clean chat has enough context to continue.",
+      "practice": "Fictional practice, not client evidence: For a one-page community-event invite, save `sources.txt` with approved event facts, `decisions.txt` with \"Use a welcoming tone,\" and `next-step.txt` with \"Draft a 120-word invite from these files. Do not add details.\"",
+      "check": "Start a clean conversation with only those notes. It passes if the draft preserves the facts and tone without referring to an earlier chat; if it does not, add the missing context to the appropriate note and test again."
+    },
+    "verdict": "targeted-repair"
+  },
+  "mistral-multilingual-research": {
+    "public_lesson": {
+      "heading": "A clean bilingual evidence check",
+      "lead": "Practice example only: use the guide’s sample question about what help EU institutions offer small businesses that want to use AI. Ask it in English and French, then aim first for two source rows whose wording you can trace rather than a quick combined answer.",
+      "practice": "Practice, not current case evidence: copy one short claim from each language into a table with its original wording, source date, direct link and careful English translation. Keep the two claims separate if their conditions or definitions differ.",
+      "check": "Pass only if both rows open to the cited pages and you can point to the original text, a publication date and a translation that retains any condition. If a page does not meet that test, leave the claim out and keep it as an open research question."
+    },
+    "verdict": "targeted-repair"
+  }
+}

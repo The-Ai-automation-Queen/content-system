@@ -1,0 +1,183 @@
+/* Contextual guide companion capture. Guides stay open; useful companion assets earn the email. */
+:root{
+  --lm-offwhite:#F7F7F3;
+  --lm-ink:#1A1A1A;
+  --lm-blue:#2C4BE0;
+  --lm-blue-deep:#1B2EA0;
+  --lm-blue-pale:#E8ECFF;
+  --lm-line:#DCDCD6;
+  --lm-muted:#585853;
+}
+
+.guide-lead-magnet{
+  margin:54px 0 12px;
+  padding:30px;
+  background:var(--lm-offwhite);
+  border:1px solid var(--lm-line);
+  border-radius:8px;
+}
+.guide-lead-magnet .sr-only{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+.guide-lead-magnet .lm-eyebrow,
+.guide-lead-magnet .guide-lead-kicker{
+  margin:0 0 11px;
+  font-family:'Space Mono',monospace;
+  font-size:10px;
+  line-height:1.2;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--lm-blue-deep);
+}
+.guide-lead-magnet h2{
+  margin:0 0 12px!important;
+  max-width:650px;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(30px,4vw,42px)!important;
+  line-height:1.08!important;
+  font-weight:400!important;
+  letter-spacing:-.02em;
+  color:var(--lm-ink);
+}
+.guide-lead-magnet .lm-copy,
+.guide-lead-magnet > p:not(.guide-lead-kicker):not(.lm-eyebrow):not(.lm-fineprint):not(.lm-status):not(.form-status){
+  max-width:670px;
+  margin:0 0 22px!important;
+  font-size:17px!important;
+  line-height:1.55!important;
+  color:var(--lm-muted)!important;
+}
+.guide-lead-magnet form{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:10px;
+  max-width:680px;
+  margin:0;
+}
+.guide-lead-magnet .resource-inline-form > label[for]{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+.guide-lead-magnet input[type="email"]{
+  width:100%;
+  min-width:0;
+  min-height:48px;
+  box-sizing:border-box;
+  border:1px solid #B8B8B1;
+  border-radius:4px;
+  background:#fff;
+  color:var(--lm-ink);
+  padding:11px 13px;
+  font-family:'Inter',Arial,sans-serif;
+  font-size:15px;
+  line-height:1.3;
+}
+.guide-lead-magnet input[type="email"]::placeholder{color:#70706A}
+.guide-lead-magnet input[type="email"]:focus-visible,
+.guide-lead-magnet button:focus-visible,
+.guide-lead-magnet input[type="checkbox"]:focus-visible,
+.guide-lead-magnet .lm-resource-link:focus-visible{
+  outline:3px solid var(--lm-blue);
+  outline-offset:3px;
+}
+.guide-lead-magnet button{
+  min-height:48px;
+  border:1px solid var(--lm-blue-deep);
+  border-radius:4px;
+  background:var(--lm-blue-deep);
+  color:#fff;
+  padding:11px 18px;
+  font-family:'Inter',Arial,sans-serif;
+  font-size:14px;
+  line-height:1.2;
+  font-weight:700;
+  cursor:pointer;
+}
+.guide-lead-magnet button:hover{background:#13247F;border-color:#13247F}
+.guide-lead-magnet button:disabled{opacity:.72;cursor:wait}
+.guide-lead-magnet .consent-row{
+  grid-column:1/-1;
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+  margin:2px 0 0;
+  font-family:'Inter',Arial,sans-serif;
+  font-size:12px;
+  line-height:1.45;
+  color:#62625D;
+}
+.guide-lead-magnet .consent-row input{margin-top:2px;flex:0 0 auto}
+.guide-lead-magnet .lm-fineprint{
+  margin:10px 0 0!important;
+  max-width:680px;
+  font-family:'Inter',Arial,sans-serif!important;
+  font-size:12px!important;
+  line-height:1.45!important;
+  color:#62625D!important;
+}
+.guide-lead-magnet .lm-status,
+.guide-lead-magnet .form-status{
+  grid-column:1/-1;
+  min-height:1.4em;
+  margin:2px 0 0!important;
+  font-family:'Inter',Arial,sans-serif!important;
+  font-size:13px!important;
+  line-height:1.45!important;
+  color:var(--lm-ink)!important;
+}
+.guide-lead-magnet .lm-resource{
+  display:none;
+  margin-top:18px;
+  padding-top:18px;
+  border-top:1px solid var(--lm-line);
+}
+.guide-lead-magnet.is-ready .lm-resource{display:block}
+.guide-lead-magnet .lm-resource p{
+  margin:0 0 10px!important;
+  font-family:'Inter',Arial,sans-serif!important;
+  font-size:14px!important;
+  line-height:1.45!important;
+  color:var(--lm-ink)!important;
+}
+.guide-lead-magnet .lm-resource-link{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding:10px 14px;
+  border:1px solid var(--lm-blue-deep);
+  border-radius:4px;
+  background:#fff;
+  color:var(--lm-blue-deep)!important;
+  font-family:'Inter',Arial,sans-serif;
+  font-size:13px;
+  line-height:1.2;
+  font-weight:700;
+  text-decoration:none!important;
+}
+.guide-lead-magnet .lm-resource-link:hover{background:var(--lm-blue-pale)}
+
+@media(max-width:700px){
+  .guide-lead-magnet{margin:44px -18px 8px;padding:26px 18px;border-left:0;border-right:0;border-radius:0}
+  .guide-lead-magnet form{grid-template-columns:1fr}
+  .guide-lead-magnet button{width:100%}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .guide-lead-magnet *{transition:none!important;animation:none!important}
+}

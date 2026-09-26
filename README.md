@@ -8,6 +8,28 @@ and provider integrations that must be verified before use.
 > **Agents start here:** read [`AGENTS.md`](AGENTS.md). `CLAUDE.md` remains only
 > as a compatibility entry point for older automation.
 
+## Website (September 2026 migration branch)
+
+The intended web application is **`next-app/`**, not the retired `site/` guide tree.
+Its public routes are the personally branded homepage, the guide library, and the
+**35 owner-approved guides** in `data/guide-publication.json`. A small, generated
+`next-app/public/` bridge preserves still-active HTML offer pages until their
+Next.js equivalents are ready. Do not put unpublished guides or private product
+source pages in public assets.
+
+- Local: `cd next-app && npm ci && npm run dev` (the predev step syncs approved static offers).
+- Verify: `node tools/audit-approved-guides.mjs && npm run validate:guides && cd next-app && npm run build`.
+- Lumail: `LUMAIL_API_TOKEN` stays server-side; guide email delivery and **optional**
+  marketing subscription are separate. The guide pass is local to the current device,
+  **not a member account**.
+- Deploy: see [`docs/NEXT-VERCEL-MIGRATION.md`](docs/NEXT-VERCEL-MIGRATION.md).
+  Repository configuration is ready, but Vercel's live project Root Directory must
+  be reviewed and updated on a tested preview before a production cutover.
+
+The older hosting-topology note below is historical. On 26 September 2026,
+`www.shiftandlead.com` responded from Vercel and `guides.shiftandlead.com`
+redirected to `www`; confirm the assigned Vercel project in the dashboard.
+
 ## Structure
 
 | File / folder | Step | Purpose |

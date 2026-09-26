@@ -75,13 +75,13 @@ Give the exact page URL for each fact. Write “Not verified” if a page is una
   return <main className={styles.page}>
     <div className={styles.shell}>
       <Link className={styles.back} href="/guides/">← All guides</Link>
-      <header className={styles.hero}><h1>Why doesn’t AI search mention <span>your business?</span></h1><p>You cannot make every AI tool recommend you. You can make your public facts easier to find and verify, then test what an answer actually shows.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
+      <header className={styles.hero}><h1>Why doesn’t AI search mention <span>your business?</span></h1><p>A buyer needs facts they can check. Make your public information easy to find and verify, then test what an answer actually cites.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <section className={styles.activity} aria-labelledby="search-facts-title"><div className={styles.sectionHead}><span>Start with the source</span><h2 id="search-facts-title">Can someone find these facts on your site?</h2></div><div className={styles.factGrid}>{facts.items.map(item => <div key={item.title}><strong>{item.title}</strong><span>{item.body}</span></div>)}</div><p className={styles.note}>A useful page answers a real customer question. More vague pages will not fix a missing or inaccurate fact.</p></section>
 
       <section className={styles.activity} aria-labelledby="search-test-title">
         <div className={styles.sectionHead}><span>Run a neutral test</span><h2 id="search-test-title">Search without naming your business</h2></div>
-        <p className={styles.intro}>Use an AI tool that can search the web. Describe the service, customer and location a buyer would use. Results vary by tool, place and date.</p>
+        <p className={styles.intro}>If you use a web-search-capable AI tool, describe the service, customer and location a buyer would use. Results vary by tool, place and date.</p>
         <div className={styles.fields}>
           <label><span>Service or product</span><input value={service} onChange={event => setService(event.target.value)} placeholder="e.g. payroll software" /></label>
           <label><span>Customer</span><input value={customer} onChange={event => setCustomer(event.target.value)} placeholder="e.g. small design studios" /></label>

@@ -55,56 +55,17 @@ module.exports = async function handler(request, response) {
   const guide = APPROVED_GUIDES.get(guideSlug) ||
     (allowPreview ? preview.guides.find((item) => item.slug === guideSlug) : undefined);
   if (!guide?.lumailTag) return response.status(400).json({ error: "This guide is not configured for email delivery." });
-  if (REBUILT_APPROVED_SLUGS.has(guideSlug) && (!givenName || !familyName)) {
-    return response.status(400).json({ error: "Enter your first and last name." });
-  }
 
   const consentTimestamp = new Date().toISOString();
   const consentTextVersion = "guide-request-v2-2026-09-20";
   const sourcePage = `/guides/${guideSlug}/`;
 
   try {
-    const lumailResponse = await fetch("https://lumail.io/api/v1/subscribers", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: normalizedEmail,
-        name,
-        tags: ["shift-and-lead-guide", guide.lumailTag],
-        fields: {
-          ...(givenName ? { first_name: givenName } : {}),
-          ...(familyName ? { last_name: familyName } : {}),
-          source: sourcePage,
-          guide_url: `${GUIDE_ORIGIN}/guides/${guideSlug}/`,
-          consent: "true",
-          consent_version: consentTextVersion,
-          consent_timestamp: consentTimestamp,
-          guide_marketing_choice: marketingConsent === true ? "true" : "false",
-          ...(marketingConsent === true ? { marketing_consent: "true", marketing_consent_version: "optional-marketing-v1-2026-09-20", marketing_consent_timestamp: consentTimestamp } : {}),
-
-        },
-        replaceTags: false,
-        resubscribe: false,
-        triggerWorkflows: true,
-      }),
-    });
-
-    if (!lumailResponse.ok) {
-      console.error("Lumail guide capture failed", {
-        status: lumailResponse.status,
-        guideSlug,
-
-      });
-      return response.status(502).json({ error: "We could not open the guide. Please try again." });
-    }
     const guideUrl = `${GUIDE_ORIGIN}/guides/${guideSlug}/`;
     const guideDetails = GUIDE_DETAILS.get(guideSlug);
     const title = guideDetails?.title || "your Shift & Lead guide";
     const summary = guideDetails?.summary || "A practical guide to help you take the next step.";
-    const guideEmail = `Hi ${givenName},
+    const guideEmail = `Hi ${givenName || "there"},
 
 Here’s the guide you asked for.
 
@@ -135,7 +96,30 @@ The AI Automation Queen`;
       console.error("Lumail guide email failed", { status: emailResponse.status, guideSlug });
       return response.status(502).json({ error: "We could not open the guide. Please try again." });
     }
-    return response.status(200).json({ success: true });
+    let marketingEnrolled = false;
+    if (marketingConsent === true) {
+      // Subscriber API is for marketing. A guide delivery request alone must not subscribe someone.
+      const lumailResponse = await fetch("https://lumail.io/api/v1/subscribers", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: normalizedEmail, name,
+          tags: ["shift-and-lead-guide", guide.lumailTag],
+          fields: {
+            ...(givenName ? { first_name: givenName } : {}),
+            ...(familyName ? { last_name: familyName } : {}),
+            source: sourcePage, guide_url: guideUrl,
+            marketing_consent: "true",
+            marketing_consent_version: "optional-marketing-v1-2026-09-20",
+            marketing_consent_timestamp: consentTimestamp,
+          },
+          replaceTags: false, resubscribe: false, triggerWorkflows: true,
+        }),
+      });
+      marketingEnrolled = lumailResponse.ok;
+      if (!lumailResponse.ok) console.error("Optional Lumail marketing signup failed", { status: lumailResponse.status, guideSlug });
+    }
+    return response.status(200).json({ success: true, marketingEnrolled });
   } catch (error) {
     console.error("Lumail guide capture request failed", { guideSlug });
     return response.status(502).json({ error: "We could not open the guide. Please try again." });

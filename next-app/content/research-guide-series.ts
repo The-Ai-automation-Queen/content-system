@@ -138,7 +138,7 @@ After the table, propose 3 next research questions. Do not recommend a product d
   related: [
     promptGuide("chatgpt-screen-recording-to-process-guide", "Can ChatGPT turn a screen recording into a process guide?", "Turn observed work into checked instructions."),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Remove private information before asking AI to review research.", "/images/guides/learn-master.webp"),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Remove personal and confidential information before uploading research.", "/images/guides/learn-master.webp"),
+    existingGuide("show-up-in-ai-search", "How to show up in AI search", "Turn checked customer evidence into clearer public facts.", "/images/guides/show-up-in-ai-search.webp"),
   ],
 });
 
@@ -403,7 +403,7 @@ Do not purchase, subscribe, book, add to a basket, sign in, contact a seller or 
   finish: "You can now judge whether Muse reduces the work of comparing options without handing over the buying decision.",
   related: [
     existingGuide("meta-ai", "What can Meta’s Muse agent do for you?", "Understand the wider Muse workflow before connecting more services.", "/images/guides/meta-muse.webp"),
-    comingNextGuide("test-meta-business-agent-customer-replies", "Should Meta Business Agent answer customers?", "Test a business use with a separate approval boundary."),
+    existingGuide("what-is-agentic", "What AI agents actually do", "Set an approval boundary before an agent can act.", "/images/guides/what-is-agentic.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what stays out of a connected agent.", "/images/guides/learn-master.webp"),
   ],
 });
@@ -664,8 +664,8 @@ End with 3 conclusions supported by the table and 3 questions that still need re
   },
   finish: "You can now use Mistral to widen a search across languages without hiding where each claim came from.",
   related: [
-    comingNextGuide("switch-from-chatgpt-to-mistral", "Should you switch from ChatGPT to Mistral?", "Compare both tools on the same checked work task."),
-    comingNextGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Measure whether the feature improves work you repeat."),
+    existingGuide("which-ai-tool-for-what", "Which AI tool should you use?", "Choose a tool from the job and the evidence you need.", "/images/guides/which-ai-tool-for-what.webp"),
+    existingGuide("chatgpt-customer-research-with-evidence", "Group customer research without inventing themes", "Apply the same original-source check to research notes.", "/images/guides/chatgpt-customer-research-with-evidence.webp"),
     existingGuide("show-up-in-ai-search", "Can customers find your business in AI search?", "Check which claims an AI answer can trace to your public pages.", "/images/guides/show-up-in-ai-search.webp"),
   ],
 });

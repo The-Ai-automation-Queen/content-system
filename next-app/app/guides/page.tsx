@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { GuideLibrary } from "@/components/guides/guide-library";
 import { publicGuides, reviewGuides } from "@/content/guides";
-import { guidePages, type GuidePage } from "@/content/guide-page";
+import { getGuidePage } from "@/content/guide-page";
 
 function readingText(value: unknown): string {
   if (typeof value === "string") return value;
@@ -11,11 +11,11 @@ function readingText(value: unknown): string {
 }
 
 export const metadata: Metadata = {
-  title: "Free AI guides for real work",
+  title: { absolute: "Free AI guides for real work · AI Automation Queen" },
   description: "Choose the right AI tool, use it safely and get one useful piece of work done without losing your judgment.",
   alternates: { canonical: "/guides/" },
   openGraph: {
-    title: "Free AI guides for real work · Shift & Lead",
+    title: "Free AI guides for real work · AI Automation Queen",
     description: "Pick the task. Find the right guide. Keep the decisions that still need you.",
     url: "/guides/",
     type: "website",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function GuidesPage() {
   const previewGuides = process.env.NODE_ENV === "development" ? reviewGuides : undefined;
   const searchIndex = Object.fromEntries((previewGuides ?? publicGuides).map((guide) => {
-    const page = guidePages.find((item) => item.slug === guide.slug) as GuidePage | undefined;
+    const page = getGuidePage(guide.slug);
     return [guide.slug, page ? readingText({ answer: page.answer, sections: page.sections, tutorial: page.tutorial, tryNow: page.tryNow, series: page.series, conclusion: page.conclusion }) : ""];
   }));
   return (

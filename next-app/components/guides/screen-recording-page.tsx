@@ -88,7 +88,7 @@ When the draft is ready, ask me to test it with someone who has not seen the rec
       <header className={styles.hero}>
         <span className={styles.eyebrow}>ChatGPT · Practical guide</span>
         <h1>Turn a screen recording into a guide someone can follow</h1>
-        <p>Record one task, ask ChatGPT for steps it can actually see, then test the draft with someone new.</p>
+        <p>Capture one repeatable task, ask ChatGPT for only the steps it can inspect, then have a new reader test the draft.</p>
         <figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 450px" /></figure>
       </header>
 
@@ -100,7 +100,7 @@ When the draft is ready, ask me to test it with someone who has not seen the rec
 
       <section className={styles.choice} aria-labelledby="recording-choice-title">
         <h2 id="recording-choice-title">How would you like to make it?</h2>
-        <p>Choose a route. You can switch at any time.</p>
+        <p>Choose a starting route. You can switch whenever the recording or draft needs a different approach.</p>
         <div className={styles.choices}>
           <button type="button" aria-pressed={route === "agent"} aria-controls="recording-agent-route" onClick={() => setRoute("agent")}><strong>Let an agent guide me</strong><span>Paste one complete instruction into Claude Code or Codex.</span></button>
           <button type="button" aria-pressed={route === "manual"} aria-controls="recording-manual-route" onClick={() => setRoute("manual")}><strong>Follow the steps myself</strong><span>Prepare the video, make the draft and test it.</span></button>

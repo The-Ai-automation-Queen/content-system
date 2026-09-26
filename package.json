@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate.mjs",
-    "validate:guides": "node tools/validate-guide-framework.mjs && node tools/verify-publish-source.mjs",
+    "validate:guides": "node tools/validate-guide-framework.mjs && node tools/verify-publish-source.mjs && node tools/check-guide-editorial.mjs",
     "guide:rebuild:audit": "node tools/guide-rebuild-harness.mjs",
     "guide:rebuild:next": "node tools/guide-rebuild-loop.mjs --next",
     "guide:rebuild:run-one": "node tools/guide-rebuild-loop.mjs --run-one",

@@ -45,7 +45,7 @@ export function ToolChooserPage({ guide }: { guide: GuidePage }) {
       <Link className={styles.back} href="/guides/">← All guides</Link>
       <header className={styles.hero}>
         <h1>Which AI tool <span>should you try first?</span></h1>
-        <p>Start with the job you need to finish. You can leave with a shortlist of no more than 2 tools to test.</p>
+        <p>Start with one task you need to complete. Leave with no more than 2 options you can compare safely using the same small test.</p>
         <figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure>
       </header>
 
@@ -68,7 +68,7 @@ export function ToolChooserPage({ guide }: { guide: GuidePage }) {
       </section>}
 
       <section className={styles.test} aria-labelledby="tool-test-title">
-        <div className={styles.sectionHead}><span>Before you pay or connect files</span><h2 id="tool-test-title">Run the same small test in 2 tools</h2></div>
+        <div className={styles.sectionHead}><span>Before you pay or connect files</span><h2 id="tool-test-title">Compare 2 tools using the same small task</h2></div>
         <div className={styles.stepNav} aria-label="Test steps">{test.steps.map((item, index) => <button type="button" key={item.title} aria-current={step === index ? "step" : undefined} onClick={() => setStep(index)}><span>{index + 1}</span><strong>{item.title}</strong></button>)}</div>
         <div className={styles.stepBody} aria-live="polite"><span>Step {step + 1} / {test.steps.length}</span><h3>{test.steps[step].title}</h3><p><Text value={test.steps[step].body} /></p>{step === 1 && <p className={styles.sameInput}>Use the same prompt and the same non-confidential material in both tools. The differences will be easier to judge.</p>}</div>
         <div className={styles.stepActions}><button type="button" onClick={() => setStep(Math.max(0, step - 1))} disabled={step === 0}>Back</button><button type="button" onClick={() => setStep(Math.min(test.steps.length - 1, step + 1))} disabled={step === test.steps.length - 1}>Next step</button></div>

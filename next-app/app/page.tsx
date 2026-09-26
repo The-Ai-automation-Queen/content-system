@@ -1,5 +1,34 @@
-import { redirect } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { publicGuides } from "@/content/guides";
+import styles from "./home.module.css";
 
-export default function Home() {
-  redirect("/guides");
+const featuredSlugs = ["what-is-ai", "which-ai-tool-for-what", "what-should-you-never-share-with-ai"];
+const featured = featuredSlugs.map((slug) => publicGuides.find((guide) => guide.slug === slug)).filter((guide): guide is (typeof publicGuides)[number] => Boolean(guide));
+
+export default function HomePage() {
+  return <main className={styles.home}>
+    <section className={styles.hero} aria-labelledby="home-title">
+      <div className={styles.heroVisual} aria-hidden="true"><Image src="/fatiha-podcast-editorial.webp" alt="" fill priority sizes="(max-width: 800px) 100vw, 48vw" /></div>
+      <div className={styles.heroContent}>
+        <span className={styles.eyebrow}><span className={styles.eyebrowRule} /> AI education · Business architecture · With Fatiha Chikh</span>
+        <h1 id="home-title">Use AI with <em>confidence.</em><br />Keep what makes your work <span>yours.</span></h1>
+        <p>Practical guidance to understand the tools, choose what belongs in your business, and turn the right idea into something you can actually use.</p>
+        <div className={styles.heroActions}><Link className={styles.buttonPink} href="/guides/">Explore the 35 free guides <span aria-hidden="true">↗</span></Link><Link className={styles.textLinkLight} href="/how-i-can-help.html">See how we can work together <span aria-hidden="true">↗</span></Link></div>
+        <div className={styles.heroAside}><span>For people with real work to do.</span><span>Built for the decisions behind the tools.</span></div>
+      </div>
+      <div className={styles.heroIndex} aria-hidden="true">01 / A DIFFERENT WAY FORWARD</div>
+    </section>
+    <section className={styles.proof} aria-label="Experience and credibility"><div className={styles.proofIntro}><strong>20+ years</strong><span>turning complex technology into practical decisions</span></div><div className={styles.proofBrands}><span className={styles.proofLabel}>Experience across</span><div><strong>Dell</strong><strong>intel</strong><strong>Microsoft</strong><strong>Quest</strong></div></div></section>
+    <section className={styles.chooser} aria-labelledby="choose-title"><div className={styles.sectionIntro}><span className={styles.sectionTag}>The starting point</span><h2 id="choose-title">Where do you want to <em>move forward?</em></h2><p>You do not need every AI tool. Start with the decision, question or capability in front of you.</p></div><div className={styles.paths}>
+      <Link href="/guides/" className={styles.path}><span className={styles.pathNumber}>01 / LEARN</span><h3>Get clear on AI.</h3><p>35 free, practical guides. Find the answer to one real question and try the next step today.</p><span className={styles.pathAction}>Find your guide <b aria-hidden="true">↗</b></span></Link>
+      <Link href="/workbooks.html" className={styles.path}><span className={styles.pathNumber}>02 / DISCOVER</span><h3>Know what is yours.</h3><p>Workbooks to name the experience, judgement and strengths AI cannot replace.</p><span className={styles.pathAction}>Explore the workbooks <b aria-hidden="true">↗</b></span></Link>
+      <Link href="/ai-opportunity-map.html" className={styles.path}><span className={styles.pathNumber}>03 / DECIDE</span><h3>Find where AI fits.</h3><p>Use the Map to identify the value, protect your human advantage and choose a credible first test.</p><span className={styles.pathAction}>Explore the Map <b aria-hidden="true">↗</b></span></Link>
+      <Link href="/how-i-can-help.html" className={styles.path}><span className={styles.pathNumber}>04 / BUILD</span><h3>Make it real.</h3><p>Work with me to turn a useful direction into a working first version—or bring your team along.</p><span className={styles.pathAction}>Work with Fatiha <b aria-hidden="true">↗</b></span></Link>
+    </div></section>
+    <section className={styles.guides} aria-labelledby="guides-home-title"><div className={styles.guidesHead}><div><span className={styles.sectionTag}>The free library</span><h2 id="guides-home-title">A guide for the <em>question in front of you.</em></h2></div><Link href="/guides/" className={styles.textLink}>Browse all 35 guides <span aria-hidden="true">↗</span></Link></div><div className={styles.guideGrid}>{featured.map((guide, index) => <Link key={guide.slug} href={`/guides/${guide.slug}/`} className={styles.guideCard}><span className={styles.guideCover}><Image src={guide.cover} alt="" fill sizes="(max-width: 760px) 100vw, 33vw" /></span><span className={styles.guideMeta}>GUIDE {String(index+1).padStart(2,"0")} <i aria-hidden="true" /> {guide.readMinutes} MIN READ</span><h3>{guide.title}</h3><span className={styles.guideLink}>Read the guide <b aria-hidden="true">↗</b></span></Link>)}</div><p className={styles.guideNote}>Preview the guide before you share an email. One free library pass unlocks the complete collection on this device; the link to your chosen guide arrives by email.</p></section>
+    <section className={styles.about} aria-labelledby="about-home-title"><div className={styles.aboutImage}><Image src="/fatiha-stage-editorial.webp" alt="Fatiha Chikh speaking at an event" fill sizes="(max-width: 760px) 100vw, 42vw" /></div><div className={styles.aboutCopy}><span className={styles.sectionTag}>Behind Shift &amp; Lead</span><h2 id="about-home-title">Technology changes. <em>Good judgement still matters.</em></h2><p>I’m Fatiha Chikh. I spent more than 20 years translating ambitious technology into useful work across marketing, operations and transformation. I’ve also built a business of my own. I know that a promising idea only matters when it works in the real world.</p><p>Today, I help you understand AI, decide where it belongs and keep the expertise that makes your work distinct.</p><Link href="/about.html" className={styles.textLink}>Get to know me <span aria-hidden="true">↗</span></Link></div></section>
+    <section className={styles.testimonials} aria-labelledby="voice-title"><div className={styles.testimonialHead}><span className={styles.sectionTag}>In their words</span><h2 id="voice-title">Clear thinking. <em>Real momentum.</em></h2></div><div className={styles.testimonialGrid}><blockquote><p>“Fatiha made something complex feel simple and practical.”</p><cite>Cocco M. · Beauty Business Coach</cite></blockquote><blockquote><p>“She enabled me to focus on growth, opportunities and creative direction.”</p><cite>Zouhour H. · Maison Ellem</cite></blockquote></div></section>
+    <section className={styles.final} aria-labelledby="next-title"><span className={styles.sectionTag}>Your next move</span><h2 id="next-title">Bring me the question you&apos;re <em>really trying to answer.</em></h2><p>Start independently with a free guide, or tell me what you want to make possible in your business or team.</p><div><Link className={styles.buttonPink} href="/guides/">Find a free guide <span aria-hidden="true">↗</span></Link><Link className={styles.outlineButton} href="/contact.html">Start a conversation <span aria-hidden="true">↗</span></Link></div></section>
+  </main>;
 }

@@ -51,7 +51,7 @@ export function KimiCodePage({ guide }: { guide: GuidePage }) {
   return <main className={styles.page}>
     <div className={styles.shell}>
       <Link className={styles.back} href="/guides/">← All guides</Link>
-      <header className={styles.hero}><h1>Asked Kimi for one change? <span>Keep it to one file.</span></h1><p>Plan first. Check the diff before you keep what the coding agent changed.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
+      <header className={styles.hero}><h1>Asked Kimi for one change? <span>Keep it to one file.</span></h1><p>Plan first. Allow one bounded edit, then inspect the diff before you keep it.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <nav className={styles.stageNav} aria-label="Guide steps">{instructions.steps.map((item, index) => <button key={item.title} type="button" aria-current={!showAll && step === index ? "step" : undefined} onClick={() => { setShowAll(false); goTo(index); }}><span>{index + 1}</span>{item.title}</button>)}</nav>
       <button type="button" className={styles.allButton} aria-pressed={showAll} onClick={() => setShowAll(!showAll)}>{showAll ? "Show one step" : "Read all steps"}</button>

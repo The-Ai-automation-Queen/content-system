@@ -4,7 +4,7 @@
   --guide-copy-width: 820px;
   --guide-section-space: 46px;
   --guide-major-space: 48px;
-  --guide-heading-accent: #FF5733;
+  --guide-heading-accent: #FF007F;
   background: #fff;
 }
 .shell { width: min(calc(100% - 48px), var(--guide-body-width)); margin-inline: auto; }

@@ -43,7 +43,7 @@ export function KimiValuePage({ guide }: { guide: GuidePage }) {
   return <main className={styles.page}>
     <div className={styles.shell}>
       <Link className={styles.back} href="/guides/">← All guides</Link>
-      <header className={styles.hero}><h1>Would paying for Kimi <span>finish more work?</span></h1><p>Test one repeated job. Check the result, the effort and the credit limit before you decide.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
+      <header className={styles.hero}><h1>Would paying for Kimi <span>finish more work?</span></h1><p>Test one repeated, low-risk job. Compare the finished result, checking effort and visible credit limit before you decide.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <section className={styles.activity} aria-labelledby="kimi-job-title"><div className={styles.sectionHead}><span>Start with the work</span><h2 id="kimi-job-title">Which job would you repeat?</h2></div><div className={styles.jobGrid}>{jobs.map((item, index) => <div key={item.label} className={styles.jobOption}><button type="button" aria-pressed={job === index} onClick={() => setJob(index)}>{item.label}</button>{job === index && <p>{item.check}</p>}</div>)}</div><p className={styles.jobNote}>Use a public or invented input for the test. Do not combine several jobs into one result.</p></section>
 

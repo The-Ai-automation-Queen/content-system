@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build --webpack",
-    "start": "next start"
+    "start": "next start",
+    "prebuild": "node ../tools/sync-next-public.mjs",
+    "predev": "node ../tools/sync-next-public.mjs"
   },
   "dependencies": {
     "gsap": "^3.15.0",

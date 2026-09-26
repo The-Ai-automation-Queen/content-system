@@ -1,0 +1,163 @@
+/* Shift & Lead guide cover system: outcome-first, off-white, accessible. */
+:root{
+  --sl-offwhite:#F7F7F3;
+  --sl-ink:#1A1A1A;
+  --sl-blue:#2C4BE0;
+  --sl-blue-deep:#1B2EA0;
+  --sl-blue-pale:#E8ECFF;
+  --sl-white:#FFFFFF;
+}
+
+body[data-page-kind="guides"] .library .card .guide-cover{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(96px,.75fr);
+  gap:12px;
+  width:100%;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  padding:20px 18px 18px 20px;
+  background:var(--sl-offwhite);
+  border-bottom:1px solid #E7E7E1;
+  isolation:isolate;
+}
+body[data-page-kind="guides"] .guide-cover-copy{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+body[data-page-kind="guides"] .guide-cover-label{
+  margin:0 0 10px;
+  font-family:'Space Mono',monospace;
+  font-size:9px;
+  line-height:1.15;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--sl-blue-deep);
+}
+body[data-page-kind="guides"] .guide-cover-title{
+  margin:0;
+  max-width:11ch;
+  font-family:'Inter',Arial,sans-serif;
+  font-size:clamp(20px,2vw,30px);
+  line-height:.98;
+  letter-spacing:-.035em;
+  font-weight:800;
+  color:var(--sl-ink);
+  text-transform:uppercase;
+}
+body[data-page-kind="guides"] .guide-cover-highlight{
+  align-self:flex-start;
+  margin-top:auto;
+  padding:7px 9px;
+  background:var(--sl-blue-deep);
+  color:var(--sl-white);
+  font-family:'Inter',Arial,sans-serif;
+  font-size:9px;
+  line-height:1.15;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+body[data-page-kind="guides"] .guide-cover-mascot{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  min-width:0;
+}
+body[data-page-kind="guides"] .guide-cover-mascot::before{
+  content:"";
+  position:absolute;
+  width:124px;
+  height:124px;
+  right:-14px;
+  bottom:-18px;
+  border-radius:50%;
+  background:var(--sl-blue-pale);
+  z-index:-1;
+}
+body[data-page-kind="guides"] .guide-cover-mascot img{
+  width:100%!important;
+  height:100%!important;
+  max-height:178px;
+  object-fit:contain!important;
+  object-position:center bottom;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+}
+
+/* Library titles are readable and outcome-led; metadata stays secondary. */
+body[data-page-kind="guides"] .library .card h3{
+  color:var(--sl-ink)!important;
+  font-size:24px;
+  line-height:1.13;
+}
+body[data-page-kind="guides"] .library .card-kicker{color:var(--sl-blue-deep)!important}
+body[data-page-kind="guides"] .library .card-desc{color:#62625E!important}
+
+/* Bottom conversion area: never use black on saturated blue. */
+body[data-page-kind="guides"] .guides-next{
+  background:var(--sl-blue-deep)!important;
+  color:var(--sl-white)!important;
+}
+body[data-page-kind="guides"] .guides-next .eyebrow{
+  color:#DDE4FF!important;
+}
+body[data-page-kind="guides"] .guides-next h2,
+body[data-page-kind="guides"] .guides-next h3,
+body[data-page-kind="guides"] .guides-next-card h3{
+  color:var(--sl-white)!important;
+}
+body[data-page-kind="guides"] .guides-next p,
+body[data-page-kind="guides"] .guides-next-card p{
+  color:#F2F4FF!important;
+}
+body[data-page-kind="guides"] .guides-next-card span{
+  color:#DDE4FF!important;
+}
+body[data-page-kind="guides"] .guides-next-card b{
+  color:var(--sl-white)!important;
+}
+body[data-page-kind="guides"] .guides-next-card{
+  color:var(--sl-white)!important;
+  background:rgba(255,255,255,.055)!important;
+  border-color:rgba(255,255,255,.34)!important;
+}
+body[data-page-kind="guides"] .guides-next-card:hover{
+  background:rgba(255,255,255,.10)!important;
+  border-color:rgba(255,255,255,.56)!important;
+}
+body[data-page-kind="guides"] .guides-next-card:focus-visible,
+body[data-page-kind="guides"] .outcome-card:focus-visible,
+body[data-page-kind="guides"] .library .card:focus-visible{
+  outline:3px solid #FFFFFF;
+  outline-offset:4px;
+}
+body[data-page-kind="guides"] .outcome-card:focus-visible,
+body[data-page-kind="guides"] .library .card:focus-visible{
+  outline-color:var(--sl-blue-deep);
+}
+
+/* More breathing room around the actual library. */
+body[data-page-kind="guides"] .library .card-grid{gap:28px!important}
+body[data-page-kind="guides"] .lib-track{margin-top:84px!important}
+body[data-page-kind="guides"] .lib-track:first-of-type{margin-top:30px!important}
+body[data-page-kind="guides"] .library .card-body{padding:20px 20px 24px!important}
+
+@media(max-width:960px){
+  body[data-page-kind="guides"] .guide-cover-title{font-size:25px}
+}
+@media(max-width:700px){
+  body[data-page-kind="guides"] .library .card .guide-cover{padding:20px;grid-template-columns:minmax(0,1.35fr) minmax(105px,.65fr)}
+  body[data-page-kind="guides"] .guide-cover-title{font-size:28px;max-width:12ch}
+  body[data-page-kind="guides"] .guide-cover-highlight{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  body[data-page-kind="guides"] .library .card,
+  body[data-page-kind="guides"] .outcome-card{transition:none!important}
+}

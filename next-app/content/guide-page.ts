@@ -5,6 +5,7 @@ import { copilotGuide, deepSeekGuide, grokGuide, kimiGuide, manusGuide, metaAiGu
 import { aiBrowserGuide, aiConnectionsGuide, aiSearchGuide, aiSkillsGuide, promptGuide } from "./guide-batch-three";
 import { modelSeriesGuides } from "./model-guide-series";
 import { researchGuideSeries } from "./research-guide-series";
+import editorial from "./guide-editorial.json";
 
 export type GuideStep = {
   title: string;
@@ -1232,6 +1233,28 @@ Notes:
 
 export const guidePages = [instagramDashboardGuide, whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide, whichAiToolGuide, chatGptGuide, claudeGuide, claudeProjectsGuide, geminiGuide, copilotGuide, metaAiGuide, grokGuide, deepSeekGuide, kimiGuide, manusGuide, mistralGuide, promptGuide, aiBrowserGuide, aiConnectionsGuide, aiSkillsGuide, aiSearchGuide, ...modelSeriesGuides, ...researchGuideSeries] as const;
 
-export function getGuidePage(slug: string) {
-  return guidePages.find((guide) => guide.slug === slug);
+type EditorialEdit = { path: string; old: string; value: string };
+type EditorialEntry = { edits: EditorialEdit[] };
+const editorialBySlug = editorial as Record<string, EditorialEntry>;
+
+export function getGuidePage(slug: string): GuidePage | undefined {
+  const original = guidePages.find((guide) => guide.slug === slug);
+  if (!original) return undefined;
+  const edits = editorialBySlug[slug]?.edits ?? [];
+  if (!edits.length) return original as GuidePage;
+  const guide = structuredClone(original) as GuidePage;
+  for (const edit of edits) {
+    const keys = edit.path.match(/[^.[\]]+/g);
+    if (!keys?.length) throw new Error(`Invalid editorial path for ${slug}`);
+    let field: Record<string, unknown> | unknown[] = guide as unknown as Record<string, unknown>;
+    for (const key of keys.slice(0, -1)) {
+      field = (field as Record<string, unknown>)[key] as Record<string, unknown>;
+      if (!field || typeof field !== "object") throw new Error(`Missing editorial path ${edit.path} on ${slug}`);
+    }
+    const key = keys[keys.length - 1];
+    const record = field as Record<string, unknown>;
+    if (record[key] !== edit.old) throw new Error(`Outdated editorial source ${edit.path} on ${slug}`);
+    record[key] = edit.value;
+  }
+  return guide;
 }

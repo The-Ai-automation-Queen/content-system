@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const guides = JSON.parse(fs.readFileSync(path.join(root, 'data/guides.json'), 'utf8')).guides.filter((guide) => guide.status === 'live');
 const rows = guides.map((guide) => {
-  const file = path.join(root, 'main-site/guides', `${guide.slug}.html`);
+  const file = path.join(root, 'main-site/guides', `${guide.slug}/index.html`);
   const html = fs.readFileSync(file, 'utf8');
   const browser = (html.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || '').replace(/&amp;/g, '&').replace(/<[^>]+>/g, '').trim();
   const gate = html.includes('/assets/guide-gate.js') || ['ai-jargon-guide', 'what-is-ai'].includes(guide.slug) ? 'Configured' : 'Missing';
