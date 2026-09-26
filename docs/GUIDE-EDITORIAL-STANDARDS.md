@@ -6,6 +6,8 @@ These editorial standards are subordinate to `GUIDE-PRODUCTION-FRAMEWORK.md`, wh
 
 A guide must help a capable non-specialist understand something, make a decision or complete a useful action. It is not a decorated blog post and it is not a place to display everything we know.
 
+Production instructions belong in internal documents and code only. Never put review status, template directions, source-checking notes, implementation details, capture rules or instructions to the site team into a reader-facing heading, paragraph, prompt, form or email. Describe only what the reader can do and why it helps. Check the rendered page and email copy before release.
+
 ## Choose the structure from the reader's job
 
 Do not apply one repeated anatomy to every topic.
@@ -37,9 +39,9 @@ Do not apply one repeated anatomy to every topic.
 ## Opening and capture
 
 - Start with the title and one direct promise.
-- Put the compact, guide-specific email modal before the guide body on every rebuilt guide. Do not send the reader to a separate capture page.
-- Use that guide's original artwork and specific promise. Collect first name, last name, and email, with a separate optional marketing choice. Send one Lumail request with the guide-specific tag, then open the requested guide.
-- Remember a successful access state for the appropriate guide; do not use the old generic first-visit gate or static article layout as the rebuild default.
+- Show useful teaching and a worked example before asking for an email. Put a compact inline form at the natural point where the reader wants the next practical resource. If the guide includes a copyable prompt, the form comes before that complete prompt and its Copy button.
+- Tell the reader exactly what the form unlocks. Collect first name, last name and email, with a separate optional marketing choice. Send one Lumail request with the guide-specific tag, then reveal the promised resource after success.
+- Do not use a page-load popup, separate capture page, reader account or old static article layout as the rebuild default.
 - Do not promise a separate download unless one has actually been built and connected.
 - Do not place helper copy beside a CTA when it only repeats the button. Make the button label specific enough to stand alone.
 - Do not repeat the same capture at the bottom.

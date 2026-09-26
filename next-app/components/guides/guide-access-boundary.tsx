@@ -103,16 +103,11 @@ export function GuideAccessBoundary({
           <h2 id={`guide-gate-title-${guideSlug}`}>{variant === "entry" ? guideTitle : (heading || "Get the next step")}</h2>
           <p>{variant === "entry" ? (guidePromise || "Enter your email to open this guide.") : (guidePromise || `Get the next practical part of ${guideTitle} and a link to return to this guide.`)}</p>
           <form onSubmit={submit}>
-            <>
-              <label htmlFor={`guide-first-name-${guideSlug}`}>First name</label>
-              <input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} required />
-            </>
-            <>
-              <label htmlFor={`guide-last-name-${guideSlug}`}>Last name</label>
-              <input id={`guide-last-name-${guideSlug}`} name="lastName" type="text" autoComplete="family-name" maxLength={100} required />
-            </>
-            <label htmlFor={`guide-email-${guideSlug}`}>Email address (required)</label>
-            <input id={`guide-email-${guideSlug}`} name="email" type="email" autoComplete="email" required placeholder="you@example.com" />
+            <div className={styles.nameFields}>
+              <label htmlFor={`guide-first-name-${guideSlug}`}>First name<input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} required /></label>
+              <label htmlFor={`guide-last-name-${guideSlug}`}>Last name<input id={`guide-last-name-${guideSlug}`} name="lastName" type="text" autoComplete="family-name" maxLength={100} required /></label>
+            </div>
+            <label className={styles.emailField} htmlFor={`guide-email-${guideSlug}`}>Email address (required)<input id={`guide-email-${guideSlug}`} name="email" type="email" autoComplete="email" required placeholder="you@example.com" /></label>
             <input className={styles.honeypot} name="website" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
             <label className={styles.consent}>
               <input name="marketingConsent" type="checkbox" />

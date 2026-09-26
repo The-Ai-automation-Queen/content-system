@@ -43,7 +43,7 @@ export type Guide = {
   status: string;
   access?: "free" | "paid-candidate" | "do-not-publish";
   positioningLane?: "Use AI at work" | "Keep learning as work changes" | "Protect and develop your human value";
-  reviewStatus?: "idea" | "copy review" | "copy approved" | "page review" | "page approved" | "published" | "paid candidate" | "rejected";
+  reviewStatus?: "idea" | "copy review" | "copy approved" | "page review" | "page approved" | "published" | "parked" | "paid candidate" | "rejected";
   formatLabel: string;
   level: GuideLevel;
   hub: GuideHub;

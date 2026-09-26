@@ -121,7 +121,7 @@ export type GuidePage = {
     body: string;
     status: "coming-soon";
   };
-  related: readonly [GuideRelated, GuideRelated, GuideRelated];
+  related: readonly GuideRelated[];
 };
 
 export const whatIsAiGuide = {
@@ -973,10 +973,10 @@ Do not recommend a tool simply because it is popular.`,
       cover: "/images/guides/learn-master.webp",
     },
     {
-      slug: "claude",
-      title: "Get one useful thing done with Claude",
-      reason: "Try a complete example before choosing a tool for daily work.",
-      cover: "/images/guides/claude-first-task.webp",
+      slug: "what-is-ai",
+      title: "What AI actually is",
+      reason: "Try a small task and see which part of the result you need to check.",
+      cover: "/images/guides/what-is-ai.webp",
     },
     {
       slug: "what-is-agentic",

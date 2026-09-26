@@ -47,6 +47,14 @@ const failures = [];
 
 const approved = publication.approved ?? [];
 const parkedPending = new Set((publication.parkedPending ?? []).map((guide) => guide.slug));
+const inventoryReviewStatus = new Map(inventory.map((guide) => [guide.slug, guide.reviewStatus]));
+for (const [group, expected] of [["approved", "published"], ["heldForReview", "page review"], ["parkedPending", "parked"]]) {
+  for (const guide of publication[group] ?? []) {
+    if (inventoryReviewStatus.get(guide.slug) !== expected) {
+      failures.push(`Inventory editorial status differs from publication registry: ${guide.slug} should be ${expected}`);
+    }
+  }
+}
 const slugs = approved.map((guide) => guide.slug);
 const inventorySlugs = new Set(inventory.map((guide) => guide.slug));
 const approvedSlugSet = new Set(slugs);
