@@ -13,7 +13,7 @@ export type SeriesGuide = {
   sections: readonly GuideSection[];
   tryNow: NonNullable<GuidePage["tryNow"]>;
   finish: string;
-  related: readonly [GuideRelated, GuideRelated, GuideRelated];
+  related: readonly GuideRelated[];
   promptMode?: "as-written";
 };
 
@@ -93,7 +93,7 @@ export const makeChatgptAnswersShorterGuide = makeGuide({
   coverAlt: "The small blue robot trimming an overflowing paper scroll into a compact work brief",
   seoDescription: "A practical test for making ChatGPT answers shorter without losing the useful parts.",
   sources: [
-    { label: "OpenAI: Custom Instructions", url: "https://help.openai.com/en/articles/8096356-custom-instructions-for-chatgpt" },
+    { label: "OpenAI: Prompt engineering best practices", url: "https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt" },
   ],
   answer: [
     "**ChatGPT needs a visible limit.** “Be concise” is vague. Ask for a fixed number of items, a word limit and the parts it must leave out.",
@@ -128,9 +128,8 @@ export const makeChatgptAnswersShorterGuide = makeGuide({
   },
   finish: "You now have a response rule you can reuse when an answer is longer than the job requires.",
   related: [
-    promptGuide("stop-chatgpt-forgetting-context", "Why does ChatGPT forget what you told it?", "Keep stable information available across related chats."),
-    promptGuide("chatgpt-scheduled-tasks", "Can ChatGPT do a repeated check for you?", "Turn one public check into a quiet scheduled task."),
-    existingGuide("what-is-a-prompt", "How to write an AI prompt that gets a useful answer", "Build a clear instruction from a complete example.", "/images/guides/what-is-a-prompt.webp"),
+    existingGuide("what-is-ai", "What AI actually is", "Try a small task and check what the answer got right.", "/images/guides/what-is-ai.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Know what to leave out before pasting work into a chat.", "/images/guides/learn-master.webp"),
   ],
 });
 

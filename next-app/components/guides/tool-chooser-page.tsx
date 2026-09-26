@@ -26,6 +26,8 @@ const jobInstructions = [
     why: "You can try this without connecting a work account. The useful difference is how much editing the result needs.",
     steps: ["Choose a non-confidential note you wrote yourself.", "Ask two available chat tools for a five-bullet update: progress, blocker, next action, owner and date.", "Compare both drafts with your note. Keep the clearer one and correct anything it invented."],
     check: "Every fact in the update should be present in your original note.",
+    example: "You have a rough note from Monday’s project meeting. Try a chat tool with a short, non-confidential version of the note. Ask for five bullets: progress, blocker, next action, owner and date. Read each bullet against your note before you send the update.",
+    result: "A short update you can edit, with no names, dates or promises the note did not contain.",
   },
   {
     task: "Find something in your Microsoft work",
@@ -33,6 +35,8 @@ const jobInstructions = [
     why: "A personal AI chat cannot automatically see your Outlook mail, Teams conversations or Word files. Copilot access depends on your account, licence and permissions.",
     steps: ["Open Microsoft 365 Copilot with your work account and see which apps and work sources are available.", "Pick one message or document you already have permission to use. Ask for a short summary with a link back to it.", "Open the original and check the dates, names and any action it says you agreed to."],
     check: "If the work source is unavailable, ask your IT team what access your account has. Do not paste private work into a personal chat to get around it.",
+    example: "You need the decision from a long email thread you can already access in Outlook. If Copilot is available in your work account, ask for the decision and a link to the message that states it. Open the message and check the decision yourself.",
+    result: "The decision and its original message, or a clear sign that this account cannot access it.",
   },
   {
     task: "Work with a Google document or email",
@@ -40,6 +44,8 @@ const jobInstructions = [
     why: "Using the tool where your work already lives can reduce copying between apps, but features and access vary by account.",
     steps: ["Open a document or email in your work account that you are allowed to use.", "If Gemini is available there, ask it for three key points and one unanswered question.", "Read the original yourself and correct any missed condition, number or commitment."],
     check: "If Gemini is not available in that account, check with your administrator before moving the content elsewhere.",
+    example: "You are preparing for a meeting from a Google document your team owns. If Gemini is available inside that work account, ask for three key points and one unanswered question. Check each point in the document.",
+    result: "Three checked points and one question to take into the meeting.",
   },
   {
     task: "Compare claims you need to verify",
@@ -47,17 +53,21 @@ const jobInstructions = [
     why: "The starting result should point you to sources you can open, not just give a confident-sounding answer.",
     steps: ["Write one precise question, such as which of three vendors publicly documents a feature you need.", "Ask for a short table with a link beside every claim and a separate 'not found' row for missing evidence.", "Open each linked page. Check the wording, date and product plan before using the table."],
     check: "A citation is a route to the original. It is not proof until you open it and confirm the claim.",
+    example: "You have public product pages from three vendors and a meeting on Friday. Ask a research tool such as Perplexity for a short comparison with a source link beside each claim. Open the vendor pages and check the wording, plan and date yourself.",
+    result: "A small table of checked claims, their source pages and anything the pages did not answer.",
   },
 ] as const;
 
 export function ToolChooserPage({ guide }: { guide: GuidePage }) {
   const [step, setStep] = useState(0);
+  const [jobIndex, setJobIndex] = useState(0);
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
   const jobs = guide.sections[0];
   const otherTools = guide.sections[1];
   const test = guide.sections[3];
   if (jobs.kind !== "cards" || otherTools.kind !== "accordion" || test.kind !== "steps") return null;
+  const selectedJob = jobInstructions[jobIndex];
 
   async function copyPrompt() {
     if (!guide.tryNow) return;
@@ -85,19 +95,21 @@ export function ToolChooserPage({ guide }: { guide: GuidePage }) {
 
       <section className={styles.job} aria-labelledby="tool-job-title">
         <div className={styles.sectionHead}><span>Start with the work</span><h2 id="tool-job-title">What do you need help with?</h2></div>
-        <div className={styles.jobGrid}>{jobs.items.map((item, index) => <article className={styles.jobOption} key={item.title}>
-          <span className={styles.jobNumber}>{String(index + 1).padStart(2, "0")}</span><h3>{jobInstructions[index].task}</h3>
-          <p><strong>Start with:</strong> {jobInstructions[index].use}</p>
-          <p><strong>Why this fits:</strong> {jobInstructions[index].why}</p>
-          <ol>{jobInstructions[index].steps.map(action => <li key={action}>{action}</li>)}</ol>
-          <p className={styles.jobCheck}><strong>Check:</strong> {jobInstructions[index].check}</p>
-        </article>)}</div>
-        <p className={styles.jobNote}>A shortlist is a starting point. You still need to test the result and check your account rules.</p>
+        <div className={styles.jobGrid} role="tablist" aria-label="Choose your work task">{jobs.items.map((item, index) => <button type="button" role="tab" id={`tool-job-tab-${index}`} aria-controls="tool-job-panel" aria-selected={jobIndex === index} className={styles.jobChoice} key={item.title} onClick={() => setJobIndex(index)}>
+          <span className={styles.jobNumber}>{String(index + 1).padStart(2, "0")}</span><span>{jobInstructions[index].task}</span>
+        </button>)}</div>
+        <article className={styles.jobOption} role="tabpanel" id="tool-job-panel" aria-labelledby={`tool-job-tab-${jobIndex}`} key={jobIndex}>
+          <h3>{selectedJob.task}</h3>
+          <p><strong>Start with:</strong> {selectedJob.use}</p>
+          <p><strong>Why this fits:</strong> {selectedJob.why}</p>
+          <ol>{selectedJob.steps.map(action => <li key={action}>{action}</li>)}</ol>
+          <p className={styles.jobCheck}><strong>Check:</strong> {selectedJob.check}</p>
+        </article>
       </section>
 
-      <section className={styles.example} aria-labelledby="tool-example-title"><div className={styles.sectionHead}><span>One choice in practice</span><h2 id="tool-example-title">You need to compare three vendors</h2></div><p>You have public product pages and a meeting on Friday. Start with a research tool such as Perplexity to find the vendors&apos; current claims and source links. Open each original page and check the facts yourself.</p><p>If the comparison also needs your company&apos;s private evaluation notes, use a work-approved tool with the right access instead. Do not move those notes into a personal chat account just to make the search easier.</p><div className={styles.exampleResult}><strong>Your first useful result</strong><span>A small table of claims, each linked to the vendor page it came from, plus any questions the pages did not answer.</span></div></section>
+      <section className={styles.example} aria-labelledby="tool-example-title"><div className={styles.sectionHead}><span>See the choice in practice</span><h2 id="tool-example-title">{selectedJob.task}</h2></div><p>{selectedJob.example}</p><div className={styles.exampleResult}><strong>What you should have</strong><span>{selectedJob.result}</span></div></section>
 
-      <div id="tool-access-title"><GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} variant="unlock" heading="Get the comparison prompt" guidePromise="Get the full prompt, a four-step test and a link back to this guide." actionLabel="Show me the prompt and steps">
+      <div id="tool-access-title"><GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} variant="unlock" heading="Choose a tool for your task" guidePromise="Get the full prompt to narrow your shortlist, four steps to test it and a link back to this guide." actionLabel="Show me the prompt and steps">
       {guide.tryNow && <section className={styles.action} aria-labelledby="tool-action-title">
         <div className={styles.sectionHead}><span>Build your shortlist</span><h2 id="tool-action-title">Ask one tool to narrow the choice</h2></div>
         <p>Open one AI chat you are allowed to use. Copy the prompt, replace the brackets with a real task but leave private details out, then send it.</p>
