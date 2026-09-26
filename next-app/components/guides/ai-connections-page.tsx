@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { cleanLabel } from "./guide-icon";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./ai-connections-page.module.css";
 
@@ -78,12 +79,14 @@ export function AiConnectionsPage({ guide }: { guide: GuidePage }) {
         <div className={styles.sectionHead}><span>Before you approve</span><h2 id="connection-permission-title">What will it be allowed to do?</h2></div>
         <p>Copy the wording from the permission screen. Leave out account details, passwords and private information.</p>
         <label className={styles.permissionField}><span>Permission wording</span><textarea rows={4} value={permissionText} onChange={event => setPermissionText(event.target.value)} placeholder="Paste the permission wording here" /></label>
+        <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} heading="Get the permission-check instruction" guidePromise="Use the complete instruction to understand what this connection can read or change before you approve it." actionLabel="Show the instruction" variant="unlock">
         <div className={styles.prompt}><details open><summary>Your complete instruction</summary><pre>{prompt}</pre></details><button type="button" disabled={!ready} onClick={copyPrompt} aria-label="Copy the complete permission-check instruction">{copied ? "Copied" : "Copy"}</button></div>
         {!ready && <p className={styles.message}>Add the permission wording before copying.</p>}
         {copyError && <p className={styles.message} role="alert">Copy failed. Open the instruction and select the text instead.</p>}
         <p className={styles.hint}>Compare any AI explanation with the original permission screen. The screen, not the AI answer, controls your decision.</p>
         <div className={styles.checks}>{checks.map((item, index) => <label key={item}><input type="checkbox" checked={checked[index] ?? false} onChange={() => setChecked(current => current.map((value, i) => i === index ? !value : value))} /><span>{item}</span></label>)}</div>
         <p className={styles.result} aria-live="polite">{checked.every(Boolean) ? "You can decide from the actual permissions. Connect only if this repeated job needs them." : `${checked.filter(Boolean).length} of 3 checks marked. Leave the connection off until you can explain the access.`}</p>
+        </GuideAccessBoundary>
       </section>
     </div>
     <section className={styles.related} aria-labelledby="connection-related-title"><div className={styles.relatedInner}><h2 id="connection-related-title">Before your next connected task</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>

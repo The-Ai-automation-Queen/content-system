@@ -6,6 +6,7 @@ import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { GuideIcon, cleanLabel } from "./guide-icon";
 import { GuideRelatedLink } from "./guide-related-link";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import styles from "./ai-jargon-page.module.css";
 
 function Text({ value }: { value: string }) {
@@ -91,9 +92,11 @@ export function AiJargonPage({ guide }: { guide: GuidePage }) {
       {guide.tryNow && <section className={styles.action} aria-labelledby="jargon-action-title">
         <div className={styles.sectionHead}><span>See it in a real tool</span><h2 id="jargon-action-title">{guide.tryNow.heading}</h2></div>
         <div className={styles.practiceFlow}><div><span>1</span><strong>Ask</strong><small>Paste the prompt in a new <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a> chat.</small></div><div><span>2</span><strong>Inspect</strong><small>Open Memory or Personalization in your account settings.</small></div><div><span>3</span><strong>Decide</strong><small>Correct anything wrong or outdated.</small></div></div>
+        <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} heading="Try the example yourself" guidePromise="Get the complete prompt for checking what ChatGPT remembers, plus a link to return to this guide." actionLabel="Show me the full prompt" variant="unlock">
         <div className={styles.prompt}><details open><summary>Complete prompt</summary><pre>{guide.tryNow.prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button></div>
         <div className={styles.wordStrip}><span><strong>Prompt</strong> what you paste</span><span><strong>Context</strong> what this chat can use</span><span><strong>Memory</strong> what may carry over</span></div>
         <div className={styles.check}><GuideIcon name="check" /><p><Text value={guide.tryNow.check} /></p></div>
+        </GuideAccessBoundary>
       </section>}
     </div>
     <section className={styles.related} aria-labelledby="jargon-related-title"><div className={styles.relatedInner}><h2 id="jargon-related-title">Put these words to use</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>

@@ -11,6 +11,8 @@ export function GuideAccessBoundary({
   guideCover,
   guideCoverAlt,
   guidePromise,
+  heading,
+  actionLabel,
   children,
   variant = "unlock",
 }: {
@@ -19,6 +21,8 @@ export function GuideAccessBoundary({
   guideCover?: string;
   guideCoverAlt?: string;
   guidePromise?: string;
+  heading?: string;
+  actionLabel?: string;
   children: ReactNode;
   variant?: "unlock" | "entry";
 }) {
@@ -96,17 +100,17 @@ export function GuideAccessBoundary({
           {variant === "entry" && guideCover && <div className={styles.entryCover}><img src={guideCover} alt={guideCoverAlt || ""} /></div>}
           <div className={variant === "entry" ? styles.entryContent : undefined}>
           <span className={styles.gateLabel}>{variant === "entry" ? "Free practical guide" : "Continue this guide"}</span>
-          <h2 id={`guide-gate-title-${guideSlug}`}>{variant === "entry" ? guideTitle : `Keep reading ${guideTitle}`}</h2>
-          <p>{variant === "entry" ? (guidePromise || "Build a working Instagram dashboard with five practical steps, screenshots and copyable prompts. Enter your email to open the guide.") : "You have the main idea and first steps. Add your email to open the full exercise and receive a link you can return to. Your name is optional."}</p>
+          <h2 id={`guide-gate-title-${guideSlug}`}>{variant === "entry" ? guideTitle : (heading || "Get the next step")}</h2>
+          <p>{variant === "entry" ? (guidePromise || "Enter your email to open this guide.") : (guidePromise || `Get the next practical part of ${guideTitle} and a link to return to this guide.`)}</p>
           <form onSubmit={submit}>
             <>
-              <label htmlFor={`guide-first-name-${guideSlug}`}>First name {variant === "unlock" ? "(optional)" : ""}</label>
-              <input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} required={variant === "entry"} />
+              <label htmlFor={`guide-first-name-${guideSlug}`}>First name</label>
+              <input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} required />
             </>
-            {variant === "entry" && <>
+            <>
               <label htmlFor={`guide-last-name-${guideSlug}`}>Last name</label>
               <input id={`guide-last-name-${guideSlug}`} name="lastName" type="text" autoComplete="family-name" maxLength={100} required />
-            </>}
+            </>
             <label htmlFor={`guide-email-${guideSlug}`}>Email address (required)</label>
             <input id={`guide-email-${guideSlug}`} name="email" type="email" autoComplete="email" required placeholder="you@example.com" />
             <input className={styles.honeypot} name="website" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
@@ -114,8 +118,8 @@ export function GuideAccessBoundary({
               <input name="marketingConsent" type="checkbox" />
               <span>Also send me practical Shift &amp; Lead emails and product updates (optional). I can unsubscribe at any time.</span>
             </label>
-            <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Opening guide..." : variant === "entry" ? "Open the free guide" : "Open the rest of the guide"}</button>
-            {variant === "unlock" && <small>This also unlocks all free guides on this device. Read the <a href="/privacy.html">privacy notice</a>.</small>}
+            <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Opening guide..." : variant === "entry" ? "Open the free guide" : (actionLabel || "Open the rest of the guide")}</button>
+            {variant === "unlock" && <small>Save the link we email you to return later. <a href="/privacy.html">Privacy notice</a>.</small>}
             {status === "error" && <strong role="alert">{message}</strong>}
           </form>
           </div>

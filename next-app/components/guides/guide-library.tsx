@@ -113,7 +113,6 @@ export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: G
           <p className="eyebrow">Free AI guides</p>
           <h1 id="guides-title">Use AI for real work. Keep the decisions that need <em>you.</em></h1>
           <p>Pick the task you want done. I will show you which tool fits, what to give it, what to keep private and what you still need to check.</p>
-          {reviewMode && <p className="review-banner">Review mode · Approved and unpublished guide pages are shown together.</p>}
           <form className="hero-search" role="search" onSubmit={submitSearch}>
             <label htmlFor="guide-search">What do you need help with?</label>
             <span className="hero-search__field">

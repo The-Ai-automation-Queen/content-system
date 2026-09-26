@@ -35,12 +35,12 @@
     },
     {
       "source": "/guides/chatgpt.html",
-      "destination": "/guides/make-chatgpt-answers-shorter/",
+      "destination": "/guides/",
       "permanent": true
     },
     {
       "source": "/guides/gemini.html",
-      "destination": "/guides/gemini-cannot-find-drive-file/",
+      "destination": "/guides/",
       "permanent": true
     },
     {
@@ -50,17 +50,27 @@
     },
     {
       "source": "/guides/grok.html",
-      "destination": "/guides/",
+      "destination": "/guides/review-grok-suggestions/",
       "permanent": true
     },
     {
       "source": "/guides/deepseek.html",
-      "destination": "/guides/fix-deepseek-wall-of-text/",
+      "destination": "/guides/",
       "permanent": true
     },
     {
       "source": "/guides/kimi.html",
       "destination": "/guides/is-kimi-worth-paying-for/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/control-kimi-code-changes",
+      "destination": "/guides/make-work-tracker-with-kimi/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/control-kimi-code-changes.html",
+      "destination": "/guides/make-work-tracker-with-kimi/",
       "permanent": true
     },
     {
@@ -139,53 +149,8 @@
       "permanent": true
     },
     {
-      "source": "/guides/which-ai-tool-for-what.html",
-      "destination": "/guides/which-ai-tool-for-what/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/make-chatgpt-answers-shorter.html",
-      "destination": "/guides/make-chatgpt-answers-shorter/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/stop-chatgpt-forgetting-context.html",
-      "destination": "/guides/stop-chatgpt-forgetting-context/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/chatgpt-scheduled-tasks.html",
-      "destination": "/guides/chatgpt-scheduled-tasks/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/claude.html",
-      "destination": "/guides/claude/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/claude-projects.html",
-      "destination": "/guides/claude-projects/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/gemini-cannot-find-drive-file.html",
-      "destination": "/guides/gemini-cannot-find-drive-file/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/gemini-google-tasks-limits.html",
-      "destination": "/guides/gemini-google-tasks-limits/",
-      "permanent": true
-    },
-    {
       "source": "/guides/check-copilot-excel-edits.html",
       "destination": "/guides/check-copilot-excel-edits/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/meta-ai.html",
-      "destination": "/guides/meta-ai/",
       "permanent": true
     },
     {
@@ -199,13 +164,8 @@
       "permanent": true
     },
     {
-      "source": "/guides/fix-deepseek-wall-of-text.html",
-      "destination": "/guides/fix-deepseek-wall-of-text/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/edit-long-writing-with-deepseek.html",
-      "destination": "/guides/edit-long-writing-with-deepseek/",
+      "source": "/guides/make-work-tracker-with-kimi.html",
+      "destination": "/guides/make-work-tracker-with-kimi/",
       "permanent": true
     },
     {
@@ -214,28 +174,8 @@
       "permanent": true
     },
     {
-      "source": "/guides/control-kimi-code-changes.html",
-      "destination": "/guides/control-kimi-code-changes/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/manus-browser-workflow.html",
-      "destination": "/guides/manus-browser-workflow/",
-      "permanent": true
-    },
-    {
       "source": "/guides/instagram-content-dashboard.html",
       "destination": "/guides/instagram-content-dashboard/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/what-is-a-prompt.html",
-      "destination": "/guides/what-is-a-prompt/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/what-is-an-ai-browser.html",
-      "destination": "/guides/what-is-an-ai-browser/",
       "permanent": true
     },
     {
@@ -244,62 +184,392 @@
       "permanent": true
     },
     {
-      "source": "/guides/ai-skills-worth-learning-for-work.html",
-      "destination": "/guides/ai-skills-worth-learning-for-work/",
-      "permanent": true
-    },
-    {
       "source": "/guides/show-up-in-ai-search.html",
       "destination": "/guides/show-up-in-ai-search/",
       "permanent": true
     },
     {
-      "source": "/guides/chatgpt-screen-recording-to-process-guide.html",
-      "destination": "/guides/chatgpt-screen-recording-to-process-guide/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/chatgpt-customer-research-with-evidence.html",
-      "destination": "/guides/chatgpt-customer-research-with-evidence/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/teach-claude-a-repeatable-workflow.html",
-      "destination": "/guides/teach-claude-a-repeatable-workflow/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/what-can-copilot-see-at-work.html",
-      "destination": "/guides/what-can-copilot-see-at-work/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/test-meta-muse-money-saving-task.html",
-      "destination": "/guides/test-meta-muse-money-saving-task/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/test-deepseek-v4-document-work.html",
-      "destination": "/guides/test-deepseek-v4-document-work/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/protect-a-long-deepseek-project.html",
-      "destination": "/guides/protect-a-long-deepseek-project/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/mistral-multilingual-research.html",
-      "destination": "/guides/mistral-multilingual-research/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/switch-from-chatgpt-to-mistral.html",
+      "source": "/guides/which-ai-tool-for-what",
       "destination": "/guides/",
       "permanent": false
     },
     {
-      "source": "/guides/is-mistral-pro-worth-it.html",
+      "source": "/guides/which-ai-tool-for-what/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/which-ai-tool-for-what.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/make-chatgpt-answers-shorter",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/make-chatgpt-answers-shorter/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/make-chatgpt-answers-shorter.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/stop-chatgpt-forgetting-context",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/stop-chatgpt-forgetting-context/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/stop-chatgpt-forgetting-context.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/chatgpt-scheduled-tasks",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/chatgpt-scheduled-tasks/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/chatgpt-scheduled-tasks.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/claude",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/claude/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/claude.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/claude-projects",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/claude-projects/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/claude-projects.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/gemini-cannot-find-drive-file",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/gemini-cannot-find-drive-file/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/gemini-cannot-find-drive-file.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/gemini-google-tasks-limits",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/gemini-google-tasks-limits/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/gemini-google-tasks-limits.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/meta-ai",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/meta-ai/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/meta-ai.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/verify-grok-current-research",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/verify-grok-current-research/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/verify-grok-current-research.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/fix-deepseek-wall-of-text",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/fix-deepseek-wall-of-text/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/fix-deepseek-wall-of-text.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/edit-long-writing-with-deepseek",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/edit-long-writing-with-deepseek/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/edit-long-writing-with-deepseek.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/manus-browser-workflow",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/manus-browser-workflow/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/manus-browser-workflow.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/what-is-a-prompt",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/what-is-a-prompt/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/what-is-a-prompt.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/what-is-an-ai-browser",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/what-is-an-ai-browser/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/what-is-an-ai-browser.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/ai-skills-worth-learning-for-work",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/ai-skills-worth-learning-for-work/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/ai-skills-worth-learning-for-work.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/chatgpt-screen-recording-to-process-guide",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/chatgpt-screen-recording-to-process-guide/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/chatgpt-screen-recording-to-process-guide.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/chatgpt-customer-research-with-evidence",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/chatgpt-customer-research-with-evidence/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/chatgpt-customer-research-with-evidence.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/teach-claude-a-repeatable-workflow",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/teach-claude-a-repeatable-workflow/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/teach-claude-a-repeatable-workflow.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/what-can-copilot-see-at-work",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/what-can-copilot-see-at-work/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/what-can-copilot-see-at-work.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-meta-muse-money-saving-task",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-meta-muse-money-saving-task/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-meta-muse-money-saving-task.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-grok-repeated-image-edits",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-grok-repeated-image-edits/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-grok-repeated-image-edits.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-deepseek-v4-document-work",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-deepseek-v4-document-work/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-deepseek-v4-document-work.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/protect-a-long-deepseek-project",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/protect-a-long-deepseek-project/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/protect-a-long-deepseek-project.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/mistral-multilingual-research",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/mistral-multilingual-research/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/mistral-multilingual-research.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-meta-business-agent-customer-replies",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-meta-business-agent-customer-replies/",
       "destination": "/guides/",
       "permanent": false
     },
@@ -309,22 +579,7 @@
       "permanent": false
     },
     {
-      "source": "/guides/fix-gemini-workspace-action.html",
-      "destination": "/guides/",
-      "permanent": false
-    },
-    {
-      "source": "/guides/test-manus-without-burning-credits.html",
-      "destination": "/guides/",
-      "permanent": false
-    },
-    {
-      "source": "/guides/fix-gemini-workspace-action/",
-      "destination": "/guides/",
-      "permanent": false
-    },
-    {
-      "source": "/guides/is-mistral-pro-worth-it/",
+      "source": "/guides/test-manus-without-burning-credits",
       "destination": "/guides/",
       "permanent": false
     },
@@ -334,12 +589,52 @@
       "permanent": false
     },
     {
+      "source": "/guides/test-manus-without-burning-credits.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/switch-from-chatgpt-to-mistral",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
       "source": "/guides/switch-from-chatgpt-to-mistral/",
       "destination": "/guides/",
       "permanent": false
     },
     {
-      "source": "/guides/test-meta-business-agent-customer-replies/",
+      "source": "/guides/switch-from-chatgpt-to-mistral.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/is-mistral-pro-worth-it",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/is-mistral-pro-worth-it/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/is-mistral-pro-worth-it.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/fix-gemini-workspace-action",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/fix-gemini-workspace-action/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/fix-gemini-workspace-action.html",
       "destination": "/guides/",
       "permanent": false
     }

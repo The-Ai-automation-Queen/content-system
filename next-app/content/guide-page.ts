@@ -1232,6 +1232,32 @@ Notes:
 
 export const guidePages = [instagramDashboardGuide, whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide, whichAiToolGuide, chatGptGuide, claudeGuide, claudeProjectsGuide, geminiGuide, copilotGuide, metaAiGuide, grokGuide, deepSeekGuide, kimiGuide, manusGuide, mistralGuide, promptGuide, aiBrowserGuide, aiConnectionsGuide, aiSkillsGuide, aiSearchGuide, ...modelSeriesGuides, ...researchGuideSeries] as const;
 
-export function getGuidePage(slug: string) {
-  return guidePages.find((guide) => guide.slug === slug);
+// Every public recommendation points to a currently approved guide. Review pages
+// retain their own draft recommendations until their individual editorial pass.
+export const approvedRelatedSelections: Record<string, readonly [string, string, string]> = {
+  "what-is-ai": ["ai-jargon-guide", "what-is-agentic", "what-should-you-never-share-with-ai"],
+  "ai-jargon-guide": ["what-is-ai", "what-is-agentic", "what-should-you-never-share-with-ai"],
+  "what-is-agentic": ["what-is-ai", "connect-ai-to-email-files-calendar", "what-should-you-never-share-with-ai"],
+  "what-should-you-never-share-with-ai": ["connect-ai-to-email-files-calendar", "what-is-agentic", "what-is-ai"],
+  "check-copilot-excel-edits": ["make-work-tracker-with-kimi", "connect-ai-to-email-files-calendar", "what-should-you-never-share-with-ai"],
+  "review-grok-suggestions": ["get-better-professional-writing-from-grok", "connect-ai-to-email-files-calendar", "what-should-you-never-share-with-ai"],
+  "get-better-professional-writing-from-grok": ["review-grok-suggestions", "show-up-in-ai-search", "what-should-you-never-share-with-ai"],
+  "make-work-tracker-with-kimi": ["is-kimi-worth-paying-for", "check-copilot-excel-edits", "what-should-you-never-share-with-ai"],
+  "is-kimi-worth-paying-for": ["make-work-tracker-with-kimi", "check-copilot-excel-edits", "what-should-you-never-share-with-ai"],
+  "instagram-content-dashboard": ["what-should-you-never-share-with-ai", "what-is-agentic", "show-up-in-ai-search"],
+  "connect-ai-to-email-files-calendar": ["what-should-you-never-share-with-ai", "what-is-agentic", "review-grok-suggestions"],
+  "show-up-in-ai-search": ["what-is-ai", "get-better-professional-writing-from-grok", "what-should-you-never-share-with-ai"],
+};
+
+export function getGuidePage(slug: string): GuidePage | undefined {
+  const guide = guidePages.find((item) => item.slug === slug) as GuidePage | undefined;
+  if (!guide) return undefined;
+  const selections = approvedRelatedSelections[slug];
+  if (!selections) return guide;
+  const related = selections.map((targetSlug) => {
+    const target = guidePages.find((item) => item.slug === targetSlug) as GuidePage | undefined;
+    if (!target) throw new Error(`Unknown related guide: ${targetSlug}`);
+    return { slug: target.slug, title: target.title, reason: target.promise, cover: target.cover };
+  }) as [GuideRelated, GuideRelated, GuideRelated];
+  return { ...guide, related };
 }

@@ -62,8 +62,9 @@ The old Business OS ladder, paid quick-win routes, BUILD/TWIN keywords, retired
 Women_Entrepreneurs/Corporate_Teams audience lanes and forced numeric relevance
 are not current defaults.
 
-Free AI Guides is the approved email-acquisition campaign; guides require email
-before access. Workbooks are still in production. Where AI Fits/AI Decision Lab
+Free AI Guides is the approved email-acquisition campaign. Readers see useful
+teaching and an example before an inline Lumail form unlocks the next resource;
+the old pre-guide popup rule is superseded. Workbooks are still in production. Where AI Fits/AI Decision Lab
 are public register-interest directions, not automatically active campaigns.
 Product Hub approval and working destination evidence control each conversion.
 

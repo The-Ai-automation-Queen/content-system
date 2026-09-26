@@ -6,6 +6,7 @@ import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { GuideIcon, cleanLabel } from "./guide-icon";
 import { GuideRelatedLink } from "./guide-related-link";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import styles from "./what-is-ai-page.module.css";
 
 function Text({ value }: { value: string }) {
@@ -17,6 +18,7 @@ export function WhatIsAiPage({ guide }: { guide: GuidePage }) {
   const [selected, setSelected] = useState(0);
   const [readAll, setReadAll] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [decision, setDecision] = useState<"use" | "correct" | "review" | null>(null);
   const choiceSection = guide.sections[0];
   const sections = guide.sections.slice(1);
 
@@ -81,12 +83,22 @@ export function WhatIsAiPage({ guide }: { guide: GuidePage }) {
         <div className={styles.actionHeading}><GuideIcon name="prompt" /><div><span>Try it at work</span><h2 id="ai-action-title">{guide.tryNow.heading}</h2></div></div>
         {guide.tryNow.workedExample && <div className={styles.example}><strong>Example</strong><p><b>Task:</b> {guide.tryNow.workedExample.task}</p><ol className={styles.exampleFlow}>{guide.tryNow.workedExample.signals.map((line, index) => <li key={line}><span>{String(index + 1).padStart(2, "0")}</span><p>{line}</p></li>)}</ol><p><b>Next:</b> {guide.tryNow.workedExample.decision}</p></div>}
         <p><Text value={guide.tryNow.introduction} /></p>
+        <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} heading="Try this with your own task" guidePromise="Get the complete prompt and a short check for your result. We’ll email you a link to return to the guide." actionLabel="Show me the full prompt" variant="unlock">
         <p className={styles.firstUse}>Open <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a> or another AI chat approved for work. Start a new chat, press <strong>Copy</strong>, paste the prompt, replace the brackets and send.</p>
         <div className={styles.promptBlock}><details open><summary>Complete copyable prompt</summary><pre>{guide.tryNow.prompt}</pre></details><button className={styles.promptCopy} type="button" onClick={copy} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button><span className={styles.srOnly} role="status" aria-live="polite">{copied ? "Prompt copied" : ""}</span></div>
         <div className={styles.resultCheck}><GuideIcon name="check" /><p><Text value={guide.tryNow.check} /></p></div>
+        <section className={styles.finish} aria-labelledby="ai-finish-title">
+          <h2 id="ai-finish-title">What should you do with your result?</h2>
+          <p>Compare the answer with your original material. Then choose what happened.</p>
+          <div className={styles.decisionChoices} role="group" aria-label="Choose what happened in your AI test">
+            <button type="button" aria-pressed={decision === "use"} onClick={() => setDecision("use")}>The details match</button>
+            <button type="button" aria-pressed={decision === "correct"} onClick={() => setDecision("correct")}>It guessed or missed something</button>
+            <button type="button" aria-pressed={decision === "review"} onClick={() => setDecision("review")}>A mistake could matter</button>
+          </div>
+          {decision && <p className={styles.decisionResult} role="status">{decision === "use" ? "Good first test. If it saved you time, try a larger piece of approved material. Keep checking the source." : decision === "correct" ? "Correct the answer and try again on the same small sample. Do not use the uncorrected version." : "Have a person review it before anyone acts on it, especially if money, customers, access or rights could be affected."}</p>}
+        </section>
+        </GuideAccessBoundary>
       </section>}
-
-      <section className={styles.finish}><h2>{cleanLabel(guide.conclusion.heading)}</h2>{guide.conclusion.paragraphs.map(paragraph => <p key={paragraph}><Text value={paragraph} /></p>)}{guide.conclusion.questions && <div><strong>{guide.conclusion.questions.introduction}</strong><ul>{guide.conclusion.questions.items.map(item => <li key={item}>{item}</li>)}</ul></div>}<p><Text value={guide.conclusion.finishLine} /></p></section>
     </div>
     <section className={styles.related} aria-labelledby="ai-related-title"><div className={styles.relatedInner}><h2 id="ai-related-title">What would you like to know before using AI at work?</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
   </main>;

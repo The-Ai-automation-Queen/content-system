@@ -6,3 +6,4 @@
 .recovery li{padding:9px 10px;border:1px solid #cbd5ff;background:#fff;font-size:14px;line-height:1.45}
 
 .copyBox>p{margin:8px 0 0;color:#8c2413;font-size:14px;line-height:1.45}
+.contents{display:flex;flex-wrap:wrap;align-items:center;gap:9px 17px;margin:0 0 16px;padding:14px 16px;border:1px solid #cbd5ff;background:#f4f6ff}.contents strong{color:#203bb4;font-size:12px;letter-spacing:.08em}.contents a{color:#172d9e;font-size:13px;font-weight:700;text-decoration:none}.contents a:hover{text-decoration:underline}.promise{margin:0 0 20px;font-size:17px;line-height:1.5;font-weight:700}.checks>p{margin:0 0 12px;font-size:16px;line-height:1.5}.copyBox{border:1px solid #aab9ee;background:#fff}.copyBox>strong{display:block;min-height:48px;padding:13px 94px 13px 12px;font-size:15px}.copyBox>pre{border-top:1px solid #cbd5ff}

@@ -18,6 +18,11 @@ if (notReady.length) {
   throw new Error(`Bulk publication stopped: ${notReady.length} guide pages remain in review or pending. Ship only individually approved rebuilt pages.`);
 }
 
+for (const guide of [...(publication.heldForReview ?? []), ...(publication.parkedPending ?? [])]) {
+  await rm(path.join(root, "main-site", "guides", `${guide.slug}.html`), { force: true });
+  await rm(path.join(root, "main-site", "guides", guide.slug), { recursive: true, force: true });
+}
+
 // The Next.js build uses content-hashed filenames. Remove the previous generated
 // bundle before publishing so production contains one coherent asset set instead
 // of a mixture of current and stale builds.

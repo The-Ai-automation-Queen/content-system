@@ -6,6 +6,7 @@ import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { GuideIcon, cleanLabel } from "./guide-icon";
 import { GuideRelatedLink } from "./guide-related-link";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import styles from "./privacy-guide-page.module.css";
 
 function Text({ value }: { value: string }) {
@@ -58,7 +59,7 @@ export function PrivacyGuidePage({ guide }: { guide: GuidePage }) {
         </div>)}</div>
       </section>
 
-      {guide.tryNow && <section className={styles.action} aria-labelledby="privacy-action-title"><div className={styles.sectionHead}><span>3. Test without sharing it</span><h2 id="privacy-action-title">Check one task before you paste anything</h2></div><p>Open a work-approved AI chat. Copy this prompt and replace the brackets with <strong>types of information only</strong>, such as “customer emails”. Do not paste real names or files.</p><div className={styles.prompt}><details open><summary>Complete prompt</summary><pre>{guide.tryNow.prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button></div><div className={styles.check}><GuideIcon name="check" /><p><Text value={guide.tryNow.check} /></p></div></section>}
+      {guide.tryNow && <section className={styles.action} aria-labelledby="privacy-action-title"><div className={styles.sectionHead}><span>3. Test without sharing it</span><h2 id="privacy-action-title">Check one task before you paste anything</h2></div><p>Open a work-approved AI chat. Replace the brackets in the prompt with <strong>types of information only</strong>, such as “customer emails”. Do not paste real names or files.</p><GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} variant="unlock" heading="Get the privacy-check prompt"><div className={styles.prompt}><details open><summary>Complete prompt</summary><pre>{guide.tryNow.prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button></div><div className={styles.check}><GuideIcon name="check" /><p><Text value={guide.tryNow.check} /></p></div></GuideAccessBoundary></section>}
 
       <p className={styles.finish}><strong>Still unsure?</strong> Leave the information out until you have permission and an approved tool.</p>
     </div>

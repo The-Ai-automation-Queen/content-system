@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { cleanLabel } from "./guide-icon";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./copilot-excel-page.module.css";
 
@@ -63,6 +64,8 @@ export function CopilotExcelPage({ guide }: { guide: GuidePage }) {
         <p>Make a tiny practice sheet, request one edit, then compare the cells before trusting the result.</p>
         <figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure>
       </header>
+      <nav className={styles.contents} aria-label="In this guide"><strong>IN THIS GUIDE</strong><a href="#excel-table-title">01 · Make the practice sheet</a><a href="#excel-prompt-title">02 · Change one cell</a><a href="#excel-check-title">03 · Compare the result</a></nav>
+      <p className={styles.promise}>You will have a before-and-after sheet that makes an unwanted edit easy to spot.</p>
 
       <section className={styles.activity} aria-labelledby="excel-table-title">
         <div className={styles.sectionHead}><span>Practice workbook</span><h2 id="excel-table-title">Build this four-column sheet</h2></div>
@@ -88,7 +91,7 @@ export function CopilotExcelPage({ guide }: { guide: GuidePage }) {
         <p className={styles.sheetNote} aria-live="polite">{showAfter ? "Only B3 was edited. D3 keeps its formula; Excel recalculates the displayed result to 36." : "In the original, B3 is 5 and the formula in D3 displays 30."}</p>
       </section>
 
-      <section className={styles.activity} aria-labelledby="excel-prompt-title"><div className={styles.sectionHead}><span>One edit</span><h2 id="excel-prompt-title">Ask Copilot to change B3</h2></div><p>Open Copilot in Excel with the working copy. Paste this instruction:</p><div className={styles.prompt}><pre>{guide.tryNow.prompt}</pre><button type="button" onClick={copyPrompt} aria-label="Copy the complete Copilot instruction">{copied ? "Copied" : "Copy"}</button></div>{copyError === "prompt" && <p role="alert">Copy failed. Select the instruction above instead.</p>}</section>
+      <section className={styles.activity} aria-labelledby="excel-prompt-title"><div className={styles.sectionHead}><span>One edit</span><h2 id="excel-prompt-title">Ask Copilot to change B3</h2></div><p>Open Copilot in Excel with the working copy. Choose Edit mode if it is not already selected. The instruction below asks for one change: Notebooks units from 5 to 6.</p><GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} variant="unlock" heading="Get the one-cell Copilot instruction" guidePromise="Copy the exact request, then use the before-and-after sheet to check what changed." actionLabel="Show me the instruction"><div className={styles.prompt}><pre>{guide.tryNow.prompt}</pre><button type="button" onClick={copyPrompt} aria-label="Copy the complete Copilot instruction">{copied ? "Copied" : "Copy"}</button></div>{copyError === "prompt" && <p role="alert">Copy failed. Select the instruction above instead.</p>}</GuideAccessBoundary></section>
 
       <section className={styles.activity} aria-labelledby="excel-check-title"><div className={styles.sectionHead}><span>Check before using it</span><h2 id="excel-check-title">Compare the working copy</h2></div><p>Use your untouched original as the reference. Tick each point only when you see it in Excel.</p><div className={styles.checks}>{checks.map((check, index) => <label key={check}><input type="checkbox" checked={checked[index] ?? false} onChange={() => setChecked(current => current.map((value, i) => i === index ? !value : value))} /><span>{check}</span></label>)}</div><p className={styles.result} aria-live="polite">{checked.every(Boolean) ? "All three checks marked. Keep the edit only if your workbook matches." : `${checked.filter(Boolean).length} of 3 checks marked. If anything else changed, compare with the original before using this workbook.`}</p></section>
     </div>

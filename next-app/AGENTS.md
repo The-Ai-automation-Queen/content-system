@@ -10,8 +10,11 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## Shift & Lead guide rules
 
-Before writing, restructuring or publishing a guide, use the
-`shift-lead-guide-builder` skill as the single source of truth. Repository files
-are implementation and state, not competing guide rulebooks. A guide that is not
-explicitly listed in `../data/guide-publication.json` must remain hidden from the
-public library and related-guide components.
+Before writing, restructuring or publishing a guide, read
+`../docs/shift-lead-website-and-guides-goal-2026-09-27.md`, `../docs/GUIDE-COPY-STRUCTURE.md` and the latest owner
+instructions. Do not invoke the superseded `shift-lead-guide-builder` skill,
+restore `GuideReadingPage`, or use an opening email popup. Show a useful lesson
+and example first; place the compact inline Lumail form before the full copyable
+prompt and its Copy button. The publication registry does
+not override the owner's editorial decision. Hide parked and pending guides
+from public discovery and related-guide components.

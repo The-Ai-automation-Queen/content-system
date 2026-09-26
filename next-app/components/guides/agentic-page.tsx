@@ -6,6 +6,7 @@ import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { GuideIcon, cleanLabel } from "./guide-icon";
 import { GuideRelatedLink } from "./guide-related-link";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import styles from "./agentic-page.module.css";
 
 function Text({ value }: { value: string }) {
@@ -72,8 +73,10 @@ export function AgenticPage({ guide }: { guide: GuidePage }) {
       {guide.tryNow && <section className={styles.action} aria-labelledby="agentic-action-title">
         <div className={styles.sectionHead}><span>Try it with one task</span><h2 id="agentic-action-title">Does your task need an agent?</h2></div>
         <p>Think of a task you do repeatedly. Open <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a> or another work-approved AI chat, copy the prompt, replace the brackets and send it. Do not include private information.</p>
+        <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} heading="Get the task-check prompt" guidePromise="Use this complete prompt to describe your task and see if a chat, fixed automation or agent fits. We’ll email you a link back to the guide." actionLabel="Show me the prompt" variant="unlock">
         <div className={styles.prompt}><details open><summary>Complete prompt</summary><pre>{guide.tryNow.prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button></div>
         <div className={styles.check}><GuideIcon name="check" /><p><Text value={guide.tryNow.check} /></p></div>
+        </GuideAccessBoundary>
       </section>}
     </div>
     <section className={styles.related} aria-labelledby="agentic-related-title"><div className={styles.relatedInner}><h2 id="agentic-related-title">Before you give an agent access</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
