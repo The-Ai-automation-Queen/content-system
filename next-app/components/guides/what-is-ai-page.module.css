@@ -58,6 +58,7 @@
 .actionHeading svg { color:#203bb4; margin-top:3px; }
 .action h2 { margin:4px 0 12px; color:#ff5733; font-size:25px; }
 .action > p { margin:0 0 12px; font-size:16px; line-height:1.55; }
+.firstUse { margin:0 0 14px; font-size:16px; line-height:1.55; }
 .firstUse a { color:#172d9e; font-weight:700; text-decoration:underline; text-underline-offset:3px; }
 .example { margin:4px 0 16px; padding:14px 16px; border:1px solid #cbd5ff; background:#fff; }
 .example > strong { display:block; margin-bottom:8px; color:#172d9e; font-size:15px; }
@@ -79,6 +80,11 @@
 .finish > p:last-child { margin-bottom:0; }
 .finish > div { margin:0 0 18px; padding:15px 18px; border:1px solid #cbd5ff; background:#eef2ff; }
 .finish ul { margin:8px 0 0; padding-left:22px; list-style:disc; }
+.decisionChoices { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin:18px 0; }
+.decisionChoices button { min-height:54px; padding:10px 12px; border:1px solid #aab9f5; background:#f4f6ff; color:#172d9e; font:700 14px/1.3 var(--font-ui),Arial,sans-serif; text-align:left; cursor:pointer; }
+.decisionChoices button[aria-pressed="true"] { border-color:#203bb4; background:#203bb4; color:#fff; }
+.decisionChoices button:focus-visible { outline:3px solid #ff007f; outline-offset:2px; }
+.decisionResult { padding:15px 18px; background:#eef2ff; border:1px solid #cbd5ff; }
 .related { padding:34px 16px 48px; border-top:1px solid #cbd5ff; background:#e9eeff; }
 .relatedInner { width:min(100%,820px); margin:auto; }
 .related h2 { margin:0 0 16px; font-size:24px; font-weight:800; line-height:1.2; }
@@ -94,3 +100,4 @@
 @media(min-width:701px) and (max-width:900px) { .answer p,.choiceResult p,.stage > p,.action > p,.finish p,.finish li { font-size:15.5px; } .controls h2,.related h2 { font-size:22px; } .stageHead h2,.quickHead h2,.action h2,.finish h2 { font-size:23px; } }
 @media(max-width:700px) { .shell { width:min(100% - 28px,610px); padding-top:16px; } .back { margin-bottom:24px; } .relatedGrid { grid-template-columns:1fr; } .controls { align-items:flex-start; } .flow,.exampleFlow { grid-template-columns:1fr; } .flow li:not(:last-child)::after,.exampleFlow li:not(:last-child)::after { right:calc(50% - 14px); top:auto; bottom:-18px; transform:rotate(90deg); } .checkDiagram li:not(:last-child)::after { content:none; } .flow li,.exampleFlow li { padding:12px 14px; } .flowNumber,.exampleFlow li > span { margin-bottom:5px; } .flow p,.exampleFlow p { margin-top:3px; } .answer p,.choiceResult p,.stage > p,.action > p,.finish p,.finish li { font-size:15.5px; } .controls h2,.related h2 { font-size:22px; } .stageHead h2,.quickHead h2,.action h2,.finish h2 { font-size:23px; } }
 @media(max-width:480px) { .controls { flex-direction:column; } .map { gap:5px; } .map button { min-height:48px; padding:8px 10px; } .choiceGrid { grid-template-columns:1fr; } .stage { padding:16px; } .hero h1 { font-size:clamp(29px,8.5vw,34px); } .hero p,.answer p,.choiceResult p,.stage > p,.action > p,.finish p,.finish li { font-size:15px; } .stageHead h2,.quickHead h2,.action h2,.finish h2 { font-size:21px; } .flow strong { font-size:15px; } }
+@media(max-width:700px) { .decisionChoices { grid-template-columns:1fr; } }

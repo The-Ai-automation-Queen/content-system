@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "rule": "A guide is public only after Fatiha explicitly approves its copy and complete page.",
-  "lastApprovedPublication": "2026-09-24",
+  "lastApprovedPublication": "2026-09-26",
   "shellReference": {
     "url": "https://www.shiftandlead.com/",
     "verifiedAt": "2026-08-24",
@@ -59,6 +59,114 @@
       "journeyOrder": 40
     },
     {
+      "slug": "check-copilot-excel-edits",
+      "lumailTag": "guide-check-copilot-excel-edits",
+      "section": "AI tools",
+      "journeyOrder": 91
+    },
+    {
+      "slug": "review-grok-suggestions",
+      "lumailTag": "guide-review-grok-suggestions",
+      "section": "AI tools",
+      "journeyOrder": 111
+    },
+    {
+      "slug": "get-better-professional-writing-from-grok",
+      "lumailTag": "guide-get-better-professional-writing-from-grok",
+      "section": "AI tools",
+      "journeyOrder": 112
+    },
+    {
+      "slug": "make-work-tracker-with-kimi",
+      "lumailTag": "guide-make-work-tracker-with-kimi",
+      "section": "AI tools",
+      "journeyOrder": 131
+    },
+    {
+      "slug": "is-kimi-worth-paying-for",
+      "lumailTag": "guide-is-kimi-worth-paying-for",
+      "section": "AI tools",
+      "journeyOrder": 132
+    },
+    {
+      "slug": "instagram-content-dashboard",
+      "lumailTag": "guide-instagram-content-dashboard",
+      "section": "Content and creative work",
+      "journeyOrder": 156
+    },
+    {
+      "slug": "connect-ai-to-email-files-calendar",
+      "lumailTag": "guide-connect-ai-to-email-files-calendar",
+      "section": "AI essentials",
+      "journeyOrder": 180
+    },
+    {
+      "slug": "show-up-in-ai-search",
+      "lumailTag": "guide-show-up-in-ai-search",
+      "section": "Content and creative work",
+      "journeyOrder": 200
+    }
+  ],
+  "retired": [
+    {
+      "slug": "24-7-operations-system",
+      "reason": "Retired from free publication; preserve the source for possible paid use."
+    },
+    {
+      "slug": "first-ai-employee",
+      "reason": "Retired from free publication; preserve the source for possible paid use."
+    },
+    {
+      "slug": "follow-up-setup",
+      "reason": "Retired from free publication; preserve the source for possible paid use."
+    },
+    {
+      "slug": "inbox-manager-setup",
+      "reason": "Retired from free publication; preserve the source for possible paid use."
+    },
+    {
+      "slug": "stack-3-tool-ai-stack",
+      "reason": "Retired from free publication; preserve the source for possible paid use."
+    },
+    {
+      "slug": "chatgpt",
+      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
+    },
+    {
+      "slug": "copilot",
+      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
+    },
+    {
+      "slug": "deepseek",
+      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
+    },
+    {
+      "slug": "gemini",
+      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
+    },
+    {
+      "slug": "grok",
+      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
+    },
+    {
+      "slug": "kimi",
+      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
+    },
+    {
+      "slug": "control-kimi-code-changes",
+      "reason": "Parked for later review on 2026-09-26. The requested replacement is a non-technical Kimi Sheets guide."
+    },
+    {
+      "slug": "manus",
+      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
+    },
+    {
+      "slug": "mistral",
+      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
+    }
+  ],
+  "heldForReview": [
+    {
       "slug": "which-ai-tool-for-what",
       "lumailTag": "guide-which-ai-tool-for-what",
       "section": "AI tools",
@@ -107,28 +215,16 @@
       "journeyOrder": 82
     },
     {
-      "slug": "check-copilot-excel-edits",
-      "lumailTag": "guide-check-copilot-excel-edits",
-      "section": "AI tools",
-      "journeyOrder": 91
-    },
-    {
       "slug": "meta-ai",
       "lumailTag": "guide-meta-ai",
       "section": "AI tools",
       "journeyOrder": 100
     },
     {
-      "slug": "review-grok-suggestions",
-      "lumailTag": "guide-review-grok-suggestions",
+      "slug": "verify-grok-current-research",
+      "lumailTag": "guide-verify-grok-current-research",
       "section": "AI tools",
-      "journeyOrder": 111
-    },
-    {
-      "slug": "get-better-professional-writing-from-grok",
-      "lumailTag": "guide-get-better-professional-writing-from-grok",
-      "section": "AI tools",
-      "journeyOrder": 112
+      "journeyOrder": 113
     },
     {
       "slug": "fix-deepseek-wall-of-text",
@@ -143,28 +239,10 @@
       "journeyOrder": 122
     },
     {
-      "slug": "is-kimi-worth-paying-for",
-      "lumailTag": "guide-is-kimi-worth-paying-for",
-      "section": "AI tools",
-      "journeyOrder": 131
-    },
-    {
-      "slug": "control-kimi-code-changes",
-      "lumailTag": "guide-control-kimi-code-changes",
-      "section": "AI tools",
-      "journeyOrder": 132
-    },
-    {
       "slug": "manus-browser-workflow",
       "lumailTag": "guide-manus-browser-workflow",
       "section": "AI tools",
       "journeyOrder": 142
-    },
-    {
-      "slug": "instagram-content-dashboard",
-      "lumailTag": "guide-instagram-content-dashboard",
-      "section": "Content and creative work",
-      "journeyOrder": 156
     },
     {
       "slug": "what-is-a-prompt",
@@ -179,22 +257,10 @@
       "journeyOrder": 170
     },
     {
-      "slug": "connect-ai-to-email-files-calendar",
-      "lumailTag": "guide-connect-ai-to-email-files-calendar",
-      "section": "AI essentials",
-      "journeyOrder": 180
-    },
-    {
       "slug": "ai-skills-worth-learning-for-work",
       "lumailTag": "guide-ai-skills-worth-learning-for-work",
       "section": "AI essentials",
       "journeyOrder": 190
-    },
-    {
-      "slug": "show-up-in-ai-search",
-      "lumailTag": "guide-show-up-in-ai-search",
-      "section": "Content and creative work",
-      "journeyOrder": 200
     },
     {
       "slug": "chatgpt-screen-recording-to-process-guide",
@@ -227,6 +293,12 @@
       "journeyOrder": 102
     },
     {
+      "slug": "test-grok-repeated-image-edits",
+      "lumailTag": "guide-test-grok-repeated-image-edits",
+      "section": "Content and creative work",
+      "journeyOrder": 114
+    },
+    {
       "slug": "test-deepseek-v4-document-work",
       "lumailTag": "guide-test-deepseek-v4-document-work",
       "section": "AI tools",
@@ -245,98 +317,36 @@
       "journeyOrder": 153
     }
   ],
-  "retired": [
+  "parkedPending": [
     {
-      "slug": "verify-grok-current-research",
-      "reason": "Withdrawn by the owner on 2026-09-25; preserve the draft for a later rebuild."
-    },
-    {
-      "slug": "test-grok-repeated-image-edits",
-      "reason": "Withdrawn by the owner on 2026-09-25; preserve the draft for a later rebuild."
-    },
-    {
-      "slug": "24-7-operations-system",
-      "reason": "Retired from free publication; preserve the source for possible paid use."
-    },
-    {
-      "slug": "first-ai-employee",
-      "reason": "Retired from free publication; preserve the source for possible paid use."
-    },
-    {
-      "slug": "follow-up-setup",
-      "reason": "Retired from free publication; preserve the source for possible paid use."
-    },
-    {
-      "slug": "inbox-manager-setup",
-      "reason": "Retired from free publication; preserve the source for possible paid use."
-    },
-    {
-      "slug": "stack-3-tool-ai-stack",
-      "reason": "Retired from free publication; preserve the source for possible paid use."
-    },
-    {
-      "slug": "chatgpt",
-      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
-    },
-    {
-      "slug": "copilot",
-      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
-    },
-    {
-      "slug": "deepseek",
-      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
-    },
-    {
-      "slug": "gemini",
-      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
-    },
-    {
-      "slug": "grok",
-      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
-    },
-    {
-      "slug": "kimi",
-      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
-    },
-    {
-      "slug": "manus",
-      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
-    },
-    {
-      "slug": "mistral",
-      "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
-    }
-  ],
-  "drafts": [
-    {
-      "slug": "fix-gemini-workspace-action",
-      "lumailTag": "guide-fix-gemini-workspace-action",
+      "slug": "test-meta-business-agent-customer-replies",
+      "lumailTag": "guide-test-meta-business-agent-customer-replies",
       "section": "AI tools",
-      "reason": "Parked by owner on 2026-09-25; rebuild and review before publication."
-    },
-    {
-      "slug": "is-mistral-pro-worth-it",
-      "lumailTag": "guide-is-mistral-pro-worth-it",
-      "section": "AI tools",
-      "reason": "Parked by owner on 2026-09-25; rebuild and review before publication."
-    },
-    {
-      "slug": "switch-from-chatgpt-to-mistral",
-      "lumailTag": "guide-switch-from-chatgpt-to-mistral",
-      "section": "AI tools",
-      "reason": "Parked by owner on 2026-09-25; rebuild and review before publication."
+      "journeyOrder": 101
     },
     {
       "slug": "test-manus-without-burning-credits",
       "lumailTag": "guide-test-manus-without-burning-credits",
       "section": "AI tools",
-      "reason": "Parked by owner on 2026-09-25; rebuild and review before publication."
+      "journeyOrder": 141
     },
     {
-      "slug": "test-meta-business-agent-customer-replies",
-      "lumailTag": "guide-test-meta-business-agent-customer-replies",
+      "slug": "switch-from-chatgpt-to-mistral",
+      "lumailTag": "guide-switch-from-chatgpt-to-mistral",
       "section": "AI tools",
-      "reason": "Parked by owner on 2026-09-25; rebuild and review before publication."
+      "journeyOrder": 151
+    },
+    {
+      "slug": "is-mistral-pro-worth-it",
+      "lumailTag": "guide-is-mistral-pro-worth-it",
+      "section": "AI tools",
+      "journeyOrder": 152
+    },
+    {
+      "slug": "fix-gemini-workspace-action",
+      "lumailTag": "guide-fix-gemini-workspace-action",
+      "section": "AI tools",
+      "journeyOrder": 83
     }
   ]
 }

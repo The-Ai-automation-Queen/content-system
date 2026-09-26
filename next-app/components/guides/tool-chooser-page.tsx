@@ -6,6 +6,7 @@ import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { GuideIcon, cleanLabel } from "./guide-icon";
 import { GuideRelatedLink } from "./guide-related-link";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import styles from "./tool-chooser-page.module.css";
 
 function Text({ value }: { value: string }) {
@@ -18,8 +19,38 @@ const chatLinks = [
   { label: "Gemini", href: "https://gemini.google.com/" },
 ];
 
+const jobInstructions = [
+  {
+    task: "Turn a rough note into a clear update",
+    use: "ChatGPT, Claude or Gemini can help you turn your own notes into a draft you can edit.",
+    why: "You can try this without connecting a work account. The useful difference is how much editing the result needs.",
+    steps: ["Choose a non-confidential note you wrote yourself.", "Ask two available chat tools for a five-bullet update: progress, blocker, next action, owner and date.", "Compare both drafts with your note. Keep the clearer one and correct anything it invented."],
+    check: "Every fact in the update should be present in your original note.",
+  },
+  {
+    task: "Find something in your Microsoft work",
+    use: "Check whether your organisation has given you Microsoft 365 Copilot access to the app and work information you need.",
+    why: "A personal AI chat cannot automatically see your Outlook mail, Teams conversations or Word files. Copilot access depends on your account, licence and permissions.",
+    steps: ["Open Microsoft 365 Copilot with your work account and see which apps and work sources are available.", "Pick one message or document you already have permission to use. Ask for a short summary with a link back to it.", "Open the original and check the dates, names and any action it says you agreed to."],
+    check: "If the work source is unavailable, ask your IT team what access your account has. Do not paste private work into a personal chat to get around it.",
+  },
+  {
+    task: "Work with a Google document or email",
+    use: "Check whether Gemini is available in the Google Workspace account and app your organisation uses.",
+    why: "Using the tool where your work already lives can reduce copying between apps, but features and access vary by account.",
+    steps: ["Open a document or email in your work account that you are allowed to use.", "If Gemini is available there, ask it for three key points and one unanswered question.", "Read the original yourself and correct any missed condition, number or commitment."],
+    check: "If Gemini is not available in that account, check with your administrator before moving the content elsewhere.",
+  },
+  {
+    task: "Compare claims you need to verify",
+    use: "Try Perplexity for public web pages. For a set of documents you choose yourself, check whether a notebook tool fits better.",
+    why: "The starting result should point you to sources you can open, not just give a confident-sounding answer.",
+    steps: ["Write one precise question, such as which of three vendors publicly documents a feature you need.", "Ask for a short table with a link beside every claim and a separate 'not found' row for missing evidence.", "Open each linked page. Check the wording, date and product plan before using the table."],
+    check: "A citation is a route to the original. It is not proof until you open it and confirm the claim.",
+  },
+] as const;
+
 export function ToolChooserPage({ guide }: { guide: GuidePage }) {
-  const [job, setJob] = useState<number | null>(null);
   const [step, setStep] = useState(0);
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
@@ -45,25 +76,34 @@ export function ToolChooserPage({ guide }: { guide: GuidePage }) {
       <Link className={styles.back} href="/guides/">← All guides</Link>
       <header className={styles.hero}>
         <h1>Which AI tool <span>should you try first?</span></h1>
-        <p>Start with the job you need to finish. You can leave with a shortlist of no more than 2 tools to test.</p>
+        <p>Choose a tool for one real task, then test your shortlist before you pay for anything.</p>
         <figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure>
       </header>
 
+      <nav className={styles.contents} aria-label="In this guide"><strong>IN THIS GUIDE</strong><a href="#tool-job-title">01 · Find your task</a><a href="#tool-example-title">02 · See a real choice</a><a href="#tool-access-title">03 · Get the prompt</a><a href="#tool-test-title">04 · Test two tools</a></nav>
+      <p className={styles.orientation}>You will leave with one tool to try, a first task for it and a way to tell if it helped. Find the job closest to yours below.</p>
+
       <section className={styles.job} aria-labelledby="tool-job-title">
         <div className={styles.sectionHead}><span>Start with the work</span><h2 id="tool-job-title">What do you need help with?</h2></div>
-        <div className={styles.jobGrid}>{jobs.items.map((item, index) => <div className={styles.jobOption} key={item.title}>
-          <button type="button" aria-pressed={job === index} onClick={() => setJob(job === index ? null : index)}><GuideIcon name={index === 3 ? "search" : index === 0 ? "prompt" : "settings"} /><strong>{item.title}</strong><span>{job === index ? "−" : "+"}</span></button>
-          {job === index && <div className={styles.jobResult} aria-live="polite"><Text value={item.body} /></div>}
-        </div>)}</div>
+        <div className={styles.jobGrid}>{jobs.items.map((item, index) => <article className={styles.jobOption} key={item.title}>
+          <span className={styles.jobNumber}>{String(index + 1).padStart(2, "0")}</span><h3>{jobInstructions[index].task}</h3>
+          <p><strong>Start with:</strong> {jobInstructions[index].use}</p>
+          <p><strong>Why this fits:</strong> {jobInstructions[index].why}</p>
+          <ol>{jobInstructions[index].steps.map(action => <li key={action}>{action}</li>)}</ol>
+          <p className={styles.jobCheck}><strong>Check:</strong> {jobInstructions[index].check}</p>
+        </article>)}</div>
         <p className={styles.jobNote}>A shortlist is a starting point. You still need to test the result and check your account rules.</p>
       </section>
 
+      <section className={styles.example} aria-labelledby="tool-example-title"><div className={styles.sectionHead}><span>One choice in practice</span><h2 id="tool-example-title">You need to compare three vendors</h2></div><p>You have public product pages and a meeting on Friday. Start with a research tool such as Perplexity to find the vendors&apos; current claims and source links. Open each original page and check the facts yourself.</p><p>If the comparison also needs your company&apos;s private evaluation notes, use a work-approved tool with the right access instead. Do not move those notes into a personal chat account just to make the search easier.</p><div className={styles.exampleResult}><strong>Your first useful result</strong><span>A small table of claims, each linked to the vendor page it came from, plus any questions the pages did not answer.</span></div></section>
+
+      <div id="tool-access-title"><GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} variant="unlock" heading="Get the comparison prompt" guidePromise="Get the full prompt, a four-step test and a link back to this guide." actionLabel="Show me the prompt and steps">
       {guide.tryNow && <section className={styles.action} aria-labelledby="tool-action-title">
         <div className={styles.sectionHead}><span>Build your shortlist</span><h2 id="tool-action-title">Ask one tool to narrow the choice</h2></div>
         <p>Open one AI chat you are allowed to use. Copy the prompt, replace the brackets with a real task but leave private details out, then send it.</p>
         <div className={styles.chatLinks}>{chatLinks.map(link => <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">Open {link.label} ↗</a>)}</div>
-        <div className={styles.prompt}><details open><summary>Complete prompt</summary><pre>{guide.tryNow.prompt}</pre></details><button type="button" onClick={copyPrompt} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button></div>
-        {copyError && <p role="alert">Copy failed. Open the complete prompt and select the text instead.</p>}
+        <div className={styles.prompt}><pre>{guide.tryNow.prompt}</pre><button type="button" onClick={copyPrompt} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button></div>
+        {copyError && <p role="alert">Copy failed. Select the visible prompt text instead.</p>}
         <div className={styles.check}><GuideIcon name="check" /><p><Text value={guide.tryNow.check} /></p></div>
       </section>}
 
@@ -76,6 +116,7 @@ export function ToolChooserPage({ guide }: { guide: GuidePage }) {
 
       <section className={styles.more} aria-labelledby="tool-more-title"><div className={styles.sectionHead}><span>If the first shortlist does not fit</span><h2 id="tool-more-title">What about the other tools?</h2></div><div className={styles.moreGrid}>{otherTools.items.map(item => <details key={item.title}><summary>{item.title}</summary><p><Text value={item.body} /></p>{item.links?.map(link => <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}</details>)}</div></section>
       <p className={styles.finish}><strong>Keep the tool that helps you finish the task</strong> with fewer corrections and without sharing information you should keep private.</p>
+      </GuideAccessBoundary></div>
     </div>
     <section className={styles.related} aria-labelledby="tool-related-title"><div className={styles.relatedInner}><h2 id="tool-related-title">Choose what to learn before you connect a tool</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
   </main>;

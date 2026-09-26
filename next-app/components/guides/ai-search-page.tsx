@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { cleanLabel } from "./guide-icon";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./ai-search-page.module.css";
 
@@ -87,6 +88,7 @@ Give the exact page URL for each fact. Write “Not verified” if a page is una
           <label><span>Customer</span><input value={customer} onChange={event => setCustomer(event.target.value)} placeholder="e.g. small design studios" /></label>
           <label><span>Location or market</span><input value={market} onChange={event => setMarket(event.target.value)} placeholder="e.g. UK" /></label>
         </div>
+        <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} heading="Get the two search instructions" guidePromise="Test if your business appears, then check which facts a buyer can verify on your website." actionLabel="Show the instructions" variant="unlock">
         <div className={styles.prompt}><details open><summary>Search instruction</summary><pre>{prompt}</pre></details><button type="button" disabled={!neutralReady} onClick={() => copyPrompt(prompt, "neutral")} aria-label="Copy the neutral search instruction">{copied === "neutral" ? "Copied" : "Copy"}</button></div>
         {!neutralReady && <p className={styles.message}>Fill the three fields to copy a complete search instruction.</p>}
         <label className={styles.siteField}><span>Then check your public website</span><input type="url" value={website} onChange={event => setWebsite(event.target.value)} placeholder="https://your-site.example" /></label>
@@ -94,6 +96,7 @@ Give the exact page URL for each fact. Write “Not verified” if a page is una
         {!siteReady && <p className={styles.message}>Enter your public website URL to copy this check.</p>}
         {copyError && <p className={styles.message} role="alert">Copy failed. Open the instruction and select the text instead.</p>}
         <p className={styles.note}>Run both instructions in the same web-search-capable tool. Open every cited public source yourself.</p>
+        </GuideAccessBoundary>
       </section>
 
       <section className={styles.activity} aria-labelledby="search-audit-title"><div className={styles.sectionHead}><span>Record what happened</span><h2 id="search-audit-title">What did the answer miss?</h2></div><div className={styles.choice} role="group" aria-label="Was your business mentioned?"><span>Was your business mentioned?</span><button type="button" aria-pressed={found === "yes"} onClick={() => setFound("yes")}>Yes</button><button type="button" aria-pressed={found === "no"} onClick={() => setFound("no")}>No</button></div><label className={styles.missing}><span>One important missing or wrong fact</span><input value={missing} onChange={event => setMissing(event.target.value)} placeholder="Write one fact to check" /></label><div className={styles.checks}>{checks.map((check, index) => <label key={check}><input type="checkbox" checked={checked[index] ?? false} onChange={() => setChecked(current => current.map((value, i) => i === index ? !value : value))} /><span>{check}</span></label>)}</div><p className={styles.result} aria-live="polite">{auditResult}</p></section>

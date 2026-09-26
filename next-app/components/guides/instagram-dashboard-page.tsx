@@ -24,7 +24,7 @@ export function InstagramDashboardPage({ guide }: { guide: GuidePage }) {
       <header className={styles.hero}>
         <div className={styles.heroCopy}>
           <h1>Build Your Own <span>Instagram Dashboard</span></h1>
-          <p>{guide.promise}</p>
+          <p>Build a dashboard from your Instagram data with Claude Code or Codex. Follow the Meta setup, test the result and check its numbers against Instagram.</p>
         </div>
         <figure className={styles.heroImage}><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 720px) 100vw, 380px" /></figure>
       </header>

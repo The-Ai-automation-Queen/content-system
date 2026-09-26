@@ -57,7 +57,7 @@
           '<input class="sl-guide-access__trap" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">' +
           '<label><input name="marketingConsent" type="checkbox"> Also send me practical Shift &amp; Lead emails and product updates (optional). Unsubscribe at any time.</label>' +
           '<button type="submit">Access the guide</button>' +
-          '<small>We use Lumail to deliver the requested email. One email unlocks all free guides on this device. <a href="/privacy.html">Privacy</a>.</small>' +
+          '<small><a href="/privacy.html">Privacy notice</a></small>' +
           '<strong class="sl-guide-access__status" role="alert" aria-live="polite"></strong>' +
         '</form>' +
       '</section>';

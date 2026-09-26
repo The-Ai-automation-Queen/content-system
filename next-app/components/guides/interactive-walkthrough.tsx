@@ -5,6 +5,7 @@ import type { GuideSection } from "@/content/guide-page";
 import { buildGuideAgentPrompt } from "@/content/guide-agent-prompt";
 import { GuideIcon, cleanLabel } from "./guide-icon";
 import { CopyPrompt } from "./copy-prompt";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import styles from "./interactive-walkthrough.module.css";
 
 type Step = Extract<GuideSection, { kind: "walkthrough" }>;
@@ -56,6 +57,11 @@ export function InteractiveWalkthrough({ sections, slug, conclusion, variant = "
       </div>
     </div>
     {variant === "instagram" && navigation}
+    {variant === "instagram" && <section className={styles.preview} aria-labelledby="instagram-preview-title">
+      <div><span className={styles.previewEyebrow}>What you are building</span><h2 id="instagram-preview-title">See your Instagram numbers in one place</h2><p>This sample shows the kind of view your dashboard will create. You will connect your own account during Meta setup and check that its figures match Instagram.</p></div>
+      <div className={styles.previewStats} aria-label="Illustrative dashboard figures">{[["Likes", "128"], ["Comments", "12"], ["Reach", "2,400"], ["Saves", "24"]].map(([label, value]) => <div key={label}><small>{label}</small><strong>{value}</strong></div>)}</div>
+    </section>}
+    <GuideAccessBoundary guideSlug={slug} guideTitle="Build your Instagram dashboard" heading="Get the prompts and steps" guidePromise="Get the full agent prompt and the five-step walkthrough, plus a link back to this guide." actionLabel="Open the full walkthrough" variant="unlock">
     <section id="agent-build-path" hidden={mode !== "agent"} aria-labelledby="agent-build-title">
       <h2 id="agent-build-title">Let your agent handle the build</h2>
       <ol className={styles.agentStart}>
@@ -96,6 +102,7 @@ export function InteractiveWalkthrough({ sections, slug, conclusion, variant = "
     </section>)}
     {(expanded || active === sections.length - 1) && conclusion}
     </div>
+    </GuideAccessBoundary>
     <dialog ref={dialog} className={styles.lightbox} onClose={() => setPhoto(null)} onClick={e => { if (e.target === e.currentTarget) dialog.current?.close(); }}>
       <button onClick={() => dialog.current?.close()} autoFocus>Close screenshot ×</button>
       {photo && <><img src={photo.src} alt={photo.caption} /><p>{photo.caption}</p></>}

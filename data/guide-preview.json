@@ -1,3 +1,154 @@
 {
-  "guides": []
+  "guides": [
+    {
+      "slug": "which-ai-tool-for-what",
+      "lumailTag": "guide-which-ai-tool-for-what",
+      "section": "AI tools",
+      "journeyOrder": 50
+    },
+    {
+      "slug": "make-chatgpt-answers-shorter",
+      "lumailTag": "guide-make-chatgpt-answers-shorter",
+      "section": "AI tools",
+      "journeyOrder": 61
+    },
+    {
+      "slug": "stop-chatgpt-forgetting-context",
+      "lumailTag": "guide-stop-chatgpt-forgetting-context",
+      "section": "AI tools",
+      "journeyOrder": 62
+    },
+    {
+      "slug": "chatgpt-scheduled-tasks",
+      "lumailTag": "guide-chatgpt-scheduled-tasks",
+      "section": "AI tools",
+      "journeyOrder": 63
+    },
+    {
+      "slug": "claude",
+      "lumailTag": "guide-claude",
+      "section": "AI tools",
+      "journeyOrder": 70
+    },
+    {
+      "slug": "claude-projects",
+      "lumailTag": "guide-claude-projects",
+      "section": "AI tools",
+      "journeyOrder": 71
+    },
+    {
+      "slug": "gemini-cannot-find-drive-file",
+      "lumailTag": "guide-gemini-cannot-find-drive-file",
+      "section": "AI tools",
+      "journeyOrder": 81
+    },
+    {
+      "slug": "gemini-google-tasks-limits",
+      "lumailTag": "guide-gemini-google-tasks-limits",
+      "section": "AI tools",
+      "journeyOrder": 82
+    },
+    {
+      "slug": "meta-ai",
+      "lumailTag": "guide-meta-ai",
+      "section": "AI tools",
+      "journeyOrder": 100
+    },
+    {
+      "slug": "verify-grok-current-research",
+      "lumailTag": "guide-verify-grok-current-research",
+      "section": "AI tools",
+      "journeyOrder": 113
+    },
+    {
+      "slug": "fix-deepseek-wall-of-text",
+      "lumailTag": "guide-fix-deepseek-wall-of-text",
+      "section": "AI tools",
+      "journeyOrder": 121
+    },
+    {
+      "slug": "edit-long-writing-with-deepseek",
+      "lumailTag": "guide-edit-long-writing-with-deepseek",
+      "section": "AI tools",
+      "journeyOrder": 122
+    },
+    {
+      "slug": "manus-browser-workflow",
+      "lumailTag": "guide-manus-browser-workflow",
+      "section": "AI tools",
+      "journeyOrder": 142
+    },
+    {
+      "slug": "what-is-a-prompt",
+      "lumailTag": "guide-what-is-a-prompt",
+      "section": "Better prompts and answers",
+      "journeyOrder": 160
+    },
+    {
+      "slug": "what-is-an-ai-browser",
+      "lumailTag": "guide-what-is-an-ai-browser",
+      "section": "AI tools",
+      "journeyOrder": 170
+    },
+    {
+      "slug": "ai-skills-worth-learning-for-work",
+      "lumailTag": "guide-ai-skills-worth-learning-for-work",
+      "section": "AI essentials",
+      "journeyOrder": 190
+    },
+    {
+      "slug": "chatgpt-screen-recording-to-process-guide",
+      "lumailTag": "guide-chatgpt-screen-recording-to-process-guide",
+      "section": "Workflows and automation",
+      "journeyOrder": 64
+    },
+    {
+      "slug": "chatgpt-customer-research-with-evidence",
+      "lumailTag": "guide-chatgpt-customer-research-with-evidence",
+      "section": "Business operations",
+      "journeyOrder": 65
+    },
+    {
+      "slug": "teach-claude-a-repeatable-workflow",
+      "lumailTag": "guide-teach-claude-a-repeatable-workflow",
+      "section": "Workflows and automation",
+      "journeyOrder": 72
+    },
+    {
+      "slug": "what-can-copilot-see-at-work",
+      "lumailTag": "guide-what-can-copilot-see-at-work",
+      "section": "AI tools",
+      "journeyOrder": 92
+    },
+    {
+      "slug": "test-meta-muse-money-saving-task",
+      "lumailTag": "guide-test-meta-muse-money-saving-task",
+      "section": "AI agents",
+      "journeyOrder": 102
+    },
+    {
+      "slug": "test-grok-repeated-image-edits",
+      "lumailTag": "guide-test-grok-repeated-image-edits",
+      "section": "Content and creative work",
+      "journeyOrder": 114
+    },
+    {
+      "slug": "test-deepseek-v4-document-work",
+      "lumailTag": "guide-test-deepseek-v4-document-work",
+      "section": "AI tools",
+      "journeyOrder": 123
+    },
+    {
+      "slug": "protect-a-long-deepseek-project",
+      "lumailTag": "guide-protect-a-long-deepseek-project",
+      "section": "Workflows and automation",
+      "journeyOrder": 124
+    },
+    {
+      "slug": "mistral-multilingual-research",
+      "lumailTag": "guide-mistral-multilingual-research",
+      "section": "AI tools",
+      "journeyOrder": 153
+    }
+  ]
 }

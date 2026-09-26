@@ -6,6 +6,7 @@ import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { buildPrompt, promptExample, type PromptBrief } from "@/content/prompt-builder-example";
 import { cleanLabel } from "./guide-icon";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./prompt-builder-page.module.css";
 
@@ -41,15 +42,19 @@ export function PromptBuilderPage({ guide }: { guide: GuidePage }) {
     <div className={styles.shell}>
       <Link className={styles.back} href="/guides/">← All guides</Link>
       <header className={styles.hero}><h1>What should you actually <span>type into AI?</span></h1><p>See a complete example first. Then change four parts to make a prompt for your own task.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
+      <nav className={styles.contents} aria-label="In this guide"><strong>IN THIS GUIDE</strong><a href="#prompt-learning-title">01 · See a useful example</a><a href="#prompt-access">02 · Make it yours</a><a href="#prompt-related-title">03 · Keep practising</a></nav>
+      <p className={styles.promise}>You will leave with one complete instruction for a task you choose, plus three checks for its answer.</p>
       <section className={styles.learning} aria-labelledby="prompt-learning-title">
         <div className={styles.sectionHead}><span>One practical prompt</span><h2 id="prompt-learning-title">From rough note to useful answer</h2></div>
+        <p className={styles.stageIntro}>Imagine you need a 15-minute meeting agenda from this made-up project note. The answer should separate completed work from a decision that is still open.</p>
+        <div className={styles.exampleNote}><p>{promptExample.material}</p></div>
+        <div className={styles.flow}><div><strong>The job</strong><span>Make a 15-minute meeting agenda.</span></div><div><strong>The result</strong><span>Three agenda items and one decision.</span></div><div><strong>The check</strong><span>Pricing is still waiting for approval.</span></div></div>
+        <div className={styles.exampleResult}><strong>A useful answer would show</strong><ul><li>The approved landing page and graphics update.</li><li>Pricing approval as an open item.</li><li>A decision about launch timing, with no invented owner.</li></ul></div>
+        <div id="prompt-access"><GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} variant="unlock" heading="Get the complete example and make your own prompt" guidePromise="Use the full worked example, edit four parts for your task, and keep a link to this guide." actionLabel="Show me the complete example">
         <nav className={styles.stageNav} aria-label="Prompt guide stages">{stages.map((label, index) => <button type="button" key={label} aria-current={stage === index ? "step" : undefined} onClick={() => setStage(index)}><span>{index + 1}</span>{label}</button>)}</nav>
 
         {stage === 0 && <div className={styles.stage}>
-          <h3>Start with this made-up project note</h3>
-          <div className={styles.exampleNote}><p>{promptExample.material}</p></div>
-          <div className={styles.flow}><div><strong>The job</strong><span>Make a 15-minute meeting agenda.</span></div><div><strong>The result</strong><span>Three agenda items and one decision.</span></div><div><strong>The check</strong><span>Pricing is still waiting for approval.</span></div></div>
-          <div className={styles.exampleResult}><strong>A useful answer would show</strong><ul><li>The approved landing page and graphics update.</li><li>Pricing approval as an open item.</li><li>A decision about launch timing, with no invented owner.</li></ul></div>
+          <h3>Read the complete worked example</h3><p className={styles.stageIntro}>Notice how it names the job, the answer format and the fact that must stay open.</p>
           <PromptBox title="Copy the complete worked example" text={guide.tryNow?.prompt ?? buildPrompt(promptExample)} copied={copied} error={copyError} onCopy={copy} />
           <button className={styles.next} type="button" onClick={() => setStage(1)}>Make it yours →</button>
         </div>}
@@ -68,6 +73,7 @@ export function PromptBuilderPage({ guide }: { guide: GuidePage }) {
           <div className={styles.checks}><strong>Before you use the answer, check:</strong>{["Does it follow the format and length you asked for?", "Can you trace every fact to your original material?", "Did it mark missing details instead of guessing?"].map((item, index) => <label key={item}><input type="checkbox" checked={checked[index] ?? false} onChange={() => setChecked(current => current.map((value, i) => i === index ? !value : value))} /><span>{item}</span></label>)}</div>
           <p className={styles.checkResult} aria-live="polite">{checked.every(Boolean) ? "All three checks marked. Keep the answer only if the result itself passes." : `${checked.filter(Boolean).length} of 3 checks marked. Fix the instruction or ask a follow-up if the answer misses something.`}</p>
         </div>}
+        </GuideAccessBoundary></div>
       </section>
     </div>
     <section className={styles.related} aria-labelledby="prompt-related-title"><div className={styles.relatedInner}><h2 id="prompt-related-title">Get more from your next AI answer</h2><div className={styles.relatedGrid}>{guide.related.map(item => <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
@@ -75,5 +81,5 @@ export function PromptBuilderPage({ guide }: { guide: GuidePage }) {
 }
 
 function PromptBox({ title, text, copied, error, onCopy }: { title: string; text: string; copied: boolean; error: boolean; onCopy: (text: string) => void }) {
-  return <div className={styles.promptBox}><details open><summary>{title}</summary><pre>{text}</pre></details><button type="button" onClick={() => onCopy(text)} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button>{error && <p role="alert">Copy failed. Open the instruction and select the text instead.</p>}</div>;
+  return <div className={styles.promptBox}><strong>{title}</strong><pre>{text}</pre><button type="button" onClick={() => onCopy(text)} aria-label="Copy the complete prompt">{copied ? "Copied" : "Copy"}</button>{error && <p role="alert">Copy failed. Select the instruction text instead.</p>}</div>;
 }

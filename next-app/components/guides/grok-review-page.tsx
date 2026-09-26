@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { cleanLabel } from "./guide-icon";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./grok-review-page.module.css";
 
@@ -35,18 +36,28 @@ export function GrokReviewPage({ guide }: { guide: GuidePage }) {
   return <main className={styles.page}>
     <div className={styles.shell}>
       <Link className={styles.back} href="/guides/">← All guides</Link>
-      <header className={styles.hero}><h1>When should Grok Bot <span>ask you first?</span></h1><p>Give it one job. Decide what it can do on its own and what needs your say-so.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
+      <header className={styles.hero}><h1>When should Grok Bot <span>ask you first?</span></h1><p>Give it one public-post job, set the boundary before it starts, and keep the final decision with you.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
+
+      <nav className={styles.contents} aria-label="In this guide"><strong>In this guide</strong><a href="#grok-start-title">Set the job</a><a href="#grok-example-title">See the boundary</a><a href="#grok-sort-title">Make three decisions</a><a href="#grok-action-title">Get the instruction</a></nav>
+
+      <section className={styles.start} aria-labelledby="grok-start-title">
+        <div className={styles.sectionHead}><span>01 · Start here</span><h2 id="grok-start-title">Choose one job with a clear finish</h2></div>
+        <p>Have one public topic ready. Work through the three decisions below, then give your Bot the complete boundary instruction and check its first brief against the original posts.</p>
+        <p>Imagine you want to see how people discuss a new workplace policy on X. Ask a Bot to find up to five public posts from the past week and return the original links. You can open the links and decide whether its summary is fair. It does not need your account to prepare that brief.</p>
+        <p><strong>Your result:</strong> a short list you can verify, plus draft replies if you ask for them. Nothing gets posted or sent.</p>
+      </section>
 
       <section className={styles.example} aria-labelledby="grok-example-title">
-        <div className={styles.sectionHead}><span>Know the difference</span><h2 id="grok-example-title">Read, draft, act</h2></div>
+        <div className={styles.sectionHead}><span>02 · Draw the line</span><h2 id="grok-example-title">Read, draft, act</h2></div>
         <div className={styles.sampleGrid}>
-          <div><strong>Read and prepare</strong><p>Find public posts, collect links and draft possible replies.</p></div>
-          <div><strong>Act outside the chat</strong><p>Connect an account, post a reply or send a message. Review the exact action first.</p></div>
+          <div><strong>Read and prepare</strong><p>Find those public posts, collect links and draft a possible reply for you to inspect.</p></div>
+          <div><strong>Ask before acting</strong><p>If it wants to connect your X account, see the account and reason first. If it proposes a reply, check the exact text and destination. For this job, you send it yourself.</p></div>
         </div>
+        <p className={styles.exampleNote}>A clear boundary in the Bot’s instruction helps, but still check any approval request before allowing it. xAI says to review the target, scope and values of a proposed action.</p>
       </section>
 
       <section className={styles.sort} aria-labelledby="grok-sort-title">
-        <div className={styles.sectionHead}><span>Try three examples</span><h2 id="grok-sort-title">What would you allow?</h2></div>
+        <div className={styles.sectionHead}><span>03 · Try three decisions</span><h2 id="grok-sort-title">What would you allow?</h2></div>
         <p className={styles.sortIntro}>This Bot checks public X posts but must not post anything. What would you let it do? The answer appears beside your choice.</p>
         <div className={styles.sortGrid}>{actions.map((action, index) => <article key={action.text}>
           <p>{action.text}</p>
@@ -56,10 +67,13 @@ export function GrokReviewPage({ guide }: { guide: GuidePage }) {
       </section>
 
       <section className={styles.action} aria-labelledby="grok-action-title">
-        <div className={styles.sectionHead}><span>Tell it when to stop</span><h2 id="grok-action-title">Copy this instruction into Grok Bot</h2></div>
-        <p>Open the Bot you created, replace the bracketed job, then copy and paste the full instruction. If this is your first Bot, <GuideRelatedLink slug="get-better-professional-writing-from-grok">start with the setup guide</GuideRelatedLink>. Check <a href="https://docs.x.ai/grok-bot/approvals-security-and-privacy" target="_blank" rel="noopener noreferrer">xAI’s approval settings ↗</a> before connecting an account.</p>
-        <div className={styles.prompt}><pre>{guide.tryNow.prompt}</pre><button type="button" onClick={copy} aria-label="Copy the complete Grok Bot boundaries">{copied ? "Copied" : "Copy"}</button></div>
-        {copyError && <p role="alert">Copy failed. Select the visible instruction text instead.</p>}
+        <div className={styles.sectionHead}><span>04 · Put it to work</span><h2 id="grok-action-title">Give your Bot the boundary</h2></div>
+        <p>Open the Bot you created. If this is your first Bot, <GuideRelatedLink slug="get-better-professional-writing-from-grok">start with the setup guide</GuideRelatedLink>. The complete instruction below tells it what to read, what to return and when to stop. Replace the bracketed job with your public-post topic, then paste it into Grok Bot.</p>
+        <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} variant="unlock" heading="Get the complete Bot boundary" guidePromise="Copy the full instruction for a read-only Bot, plus a check for its first result. We’ll email you a link back to this guide." actionLabel="Show me the instruction">
+          <div className={styles.prompt}><pre>{guide.tryNow.prompt}</pre><button type="button" onClick={copy} aria-label="Copy the complete Grok Bot boundaries">{copied ? "Copied" : "Copy"}</button></div>
+          {copyError && <p role="alert">Copy failed. Select the visible instruction text instead.</p>}
+          <div className={styles.resultCheck}><strong>Check the first result</strong><p>Open two original posts. Do the dates and claims match the Bot’s brief? If it asks to connect an account or take another action, inspect the exact request before you decide. For this job, keep posting and sending in your hands.</p><a href="https://docs.x.ai/grok-bot/approvals-security-and-privacy" target="_blank" rel="noopener noreferrer">Read xAI’s approval guidance ↗</a></div>
+        </GuideAccessBoundary>
       </section>
       <p className={styles.finish}><strong>Start with reading and drafting.</strong> You decide before the Bot connects an account, sends a message or changes anything.</p>
     </div>

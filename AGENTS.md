@@ -61,11 +61,19 @@ and selective services are supporting revenue, not the core promise.
 `Schedule approved content`, `Review Instagram performance`, `Build my funnel`, and
 `Create an affiliate campaign`.
 
-`/prompts:build-guide [topic or working title]` starts the Shift & Lead
-guide workflow. Use the `shift-lead-guide-builder` skill as its single source of
-truth. Advance only to the next approval gate. Copy approval does not authorise publication; final
-approval of the completed guide authorises its release and Notion handoff unless
-Fatiha explicitly asks to hold publication.
+For current website and guide work, use `docs/shift-lead-website-and-guides-goal-2026-09-27.md`
+and `docs/GUIDE-COPY-STRUCTURE.md`
+and the latest owner instructions. The former `shift-lead-guide-builder` skill,
+static reading layout and pre-guide popup are superseded. Each guide needs a
+content-specific interactive reading path with useful material before a compact
+inline Lumail form at the natural handoff. Keep complete prompts visible after
+successful capture and assess each guide in the browser. Publication still
+requires the owner's current editorial approval for that page; a registry flag
+alone is not approval. Keep parked guides out of public discovery and mark them
+Draft in Notion rather than deleting them.
+Never put an internal brief, template direction, editorial checklist, approval
+status, source note, or production instruction into customer-facing copy. Check
+the rendered page text, not only the source file, before release.
 
 For a broad command, advance only to the next human approval gate. Never spend
 production credits or publish from implied approval.

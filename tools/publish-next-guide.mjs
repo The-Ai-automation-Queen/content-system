@@ -1,4 +1,4 @@
-import { cp, copyFile, mkdir, readFile, rm } from "node:fs/promises";
+import { cp, copyFile, mkdir, readFile, readdir, rm } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 
@@ -29,17 +29,22 @@ const publicRoot = path.join(root, "next-app", "public");
 const destinationRoot = path.join(root, "main-site");
 
 await mkdir(path.join(destinationRoot, "guides"), { recursive: true });
-await cp(
-  path.join(sourceRoot, "guides", slug),
-  path.join(destinationRoot, "guides", slug),
-  { recursive: true, force: true },
+await rm(path.join(destinationRoot, "guides", slug), { recursive: true, force: true });
+await cp(path.join(sourceRoot, "guides", slug), path.join(destinationRoot, "guides", slug), { recursive: true });
+await copyFile(
+  path.join(sourceRoot, "guides", slug, "index.html"),
+  path.join(destinationRoot, "guides", `${slug}.html`),
 );
-await rm(path.join(destinationRoot, "guides", `${slug}.html`), { force: true });
 
 await copyFile(
   path.join(sourceRoot, "guides", "index.html"),
   path.join(destinationRoot, "guides", "index.html"),
 );
+for (const file of await readdir(path.join(sourceRoot, "guides"))) {
+  if (file.endsWith(".txt")) {
+    await copyFile(path.join(sourceRoot, "guides", file), path.join(destinationRoot, "guides", file));
+  }
+}
 
 await cp(path.join(sourceRoot, "_next"), path.join(destinationRoot, "_next"), {
   recursive: true,
@@ -56,4 +61,4 @@ await cp(path.join(publicRoot, "images", "guides"), path.join(destinationRoot, "
   force: true,
 });
 
-console.log(`Published ${slug} to main-site/guides/${slug}/`);
+console.log(`Published ${slug} to main-site/guides/${slug}/ with a legacy .html copy for redirection`);

@@ -1,13 +1,13 @@
 # Shift & Lead guide production framework
 
-This records repository-specific production details for the Shift & Lead guide series. The `shift-lead-guide-builder` skill is the current source for writing, layout, approval and publishing decisions. If this file differs from the skill or a later explicit owner approval, update this file before building.
+This records repository-specific production details for the Shift & Lead guide series. The latest owner instructions and `docs/shift-lead-website-and-guides-goal-2026-09-27.md` control writing, layout, capture and release. The old `shift-lead-guide-builder` skill is superseded.
 
 ## The rule that prevents drift
 
 The guide inventory is not the public library.
 
 - `next-app/content/guides.json` keeps existing and future guide ideas.
-- `data/guide-publication.json` is the only public approval registry.
+- `data/guide-publication.json` is a publication registry, not proof of current editorial approval. Reconcile it with the owner's explicit decisions and `data/guide-rebuild-plan.json` before release.
 - A guide that is not in the registry stays hidden from the library, search, featured areas and related-guide cards.
 - Never infer approval from an old HTML page, an inventory status, a spreadsheet, a previous title or a finished draft.
 - Add one guide to the public registry only after Fatiha approves its copy and complete preview.
@@ -61,13 +61,14 @@ Every guide answers one useful question for a capable non-specialist. It should 
 - Do not use em dashes.
 - Write `one` as a word in normal prose or a title when it sounds natural. Use digits for numbered steps, promised list counts, measurements, prices and technical values.
 
-### Approved page anatomy, adapted to the reader's job
+### Current page anatomy, adapted to the reader's job
 
-1. **Pre-guide email modal.** Before content opens, collect first name, last name, and email. Show that guide's complete artwork and specific promise. Unlock only after successful capture. Existing inline gates are legacy implementations to replace during migration.
-2. **Compact hero and orientation.** Put the title, direct promise, and useful result near the top. Avoid the old article cover/title stack and repeated introductory paragraphs.
-3. **Interactive teaching path.** Choose the structure that fits this guide: build steps, diagnosis, decision helper, worked example, or a short concept check. Show one useful stage at a time where that improves comprehension. Do not impose Instagram's five tabs or agent/manual choice on unrelated topics.
-4. **Practical action and result check.** Give complete copyable instructions when an AI action helps, show a worked example, and explain how to judge the result. Use verified, identity-scrubbed screenshots only where the interface matters.
-5. **Finish and continue.** Name the result the reader gained and show exactly three logical next-guide cards with the appropriate artwork. A planned guide may appear only as a clearly marked, non-clickable placeholder.
+1. **Specific promise and map.** Say what the reader can accomplish. A compact contents map should show the journey, without forcing identical section counts.
+2. **Useful public opening.** Answer the immediate question and show a realistic worked example. A beginner should see how to use the guide before being asked to adapt it.
+3. **Task-specific teaching.** For a tool or method, explain what it does for this job, why it fits, how to start and what to check. Use a build map, diagnosis, decision aid, real tool example or short sequence as appropriate. Each section should earn its place.
+4. **Natural inline capture.** Put a compact Lumail form after useful teaching at the point where the reader wants the next resource. If the guide has a prompt, the form must precede the full prompt and Copy button. Tell readers exactly what unlocks. Keep first name, last name and email; marketing consent is separate and optional. Reveal gated content only after success.
+5. **Practical action and result check.** Give complete, uncollapsed copyable instructions with the Copy action inside the prompt block. Explain how to judge the result. Use verified, identity-scrubbed screenshots only where the interface matters.
+6. **Finish and continue.** Name the result the reader gained and offer varied relevant next guides with working links. Do not repeat the same footer cards across the library.
 
 ### Tool-specific guide addition
 
@@ -109,9 +110,9 @@ The site header is shared across the main website and every guide. The Shift & L
 
 ### Reusable behavior contract
 
-Reuse working components for prompt copying, progress, screenshots and Lumail submission when they fit the approved guide. A shared component supplies behavior, not a mandatory layout. The Instagram walkthrough is a dedicated Next.js composition with the approved two choices, five-step map and compact pre-guide email modal. When the owner changes a page design or form position, update the relevant source, validation and instructions together so an older template cannot reappear on the next build.
+Reuse working components for prompt copying, progress, screenshots and Lumail submission when they fit the approved guide. A shared component supplies behavior, not a mandatory layout. The Instagram walkthrough is a dedicated Next.js composition with its approved two choices and five-step map. Its inline capture follows useful material. When the owner changes a design or form position, update source, validation and instructions together.
 
-The approved library-wide target is a compact pre-guide email modal for every published guide, with first name, last name, email, optional marketing consent, and that guide's own Lumail tag. The interaction after capture adapts to the reader's job: build, diagnose, decide, or learn. Migrate existing guides to this target; do not describe their current legacy rendering as already updated.
+The library-wide target is a compact inline Lumail form with first name, last name, email, optional marketing consent and a guide-specific tag. The content before and after capture adapts to the reader's job. Do not describe an entry-modal guide as migrated.
 
 On the Instagram guide, keep the current layout but select “Let an agent guide me” and the first “Meta setup” tab when the guide opens. Reopening may retain completed checkmarks, but it must begin on the first tab rather than a previously visited step. This default does not apply to other guides.
 
@@ -129,7 +130,7 @@ Before adding a guide to the registry, confirm all of the following:
 - All three journey slots are present. Live cards point to approved guides; planned cards are clearly marked, non-clickable placeholders.
 - Desktop and mobile have no clipped text, forced title break, broken image or horizontal scroll.
 - The cover is a topic-specific WebP used in the approved page composition.
-- The form appears at the approved point; for Instagram, before the walkthrough content appears. Consent text is clear and marketing consent remains optional.
+- The form follows useful teaching and an example, at a natural handoff before the next resource. Consent text is clear and marketing consent remains optional.
 - Typography, contrast and section hierarchy match the approved full-page reference at desktop and mobile sizes.
 - The header and footer match the current live homepage.
 

@@ -11,24 +11,18 @@
 .sectionHead span{color:#203bb4;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
 .sectionHead h2{margin:5px 0 14px;color:#ff5733;font-size:clamp(22px,3vw,28px);line-height:1.2}
 .activity>p{margin:0 0 14px;font-size:16px;line-height:1.55}
-.jobGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-items:start}
-.jobOption{min-width:0;border:1px solid #b8c6f4;background:#fff}
-.jobOption button{width:100%;min-height:50px;padding:10px;border:0;background:#fff;color:#172d9e;text-align:left;font:750 15px var(--font-ui),Arial,sans-serif;cursor:pointer}
-.jobOption button[aria-pressed=true]{background:#203bb4;color:#fff}
-.jobOption p{margin:0;padding:11px;font-size:14px;line-height:1.45}
-.activity .jobNote{margin:11px 0 0;font-size:14px;color:#4c5777}
-.stepList{display:grid;gap:7px}
-.stepItem{border:1px solid #b8c6f4;background:#fff}
-.stepItem button{display:flex;justify-content:space-between;gap:8px;width:100%;min-height:46px;padding:10px 12px;border:0;background:#fff;color:#172d9e;text-align:left;font:750 15px var(--font-ui),Arial,sans-serif;cursor:pointer}
-.stepItem button[aria-expanded=true]{background:#e4ebff}
-.stepItem>div{padding:11px 12px;font-size:15px;line-height:1.5}
-.activity .sourceLink{margin:11px 0 0;font-size:14px}
-.sourceLink a{color:#172d9e;font-weight:750}
+.activity a{color:#172d9e;font-weight:750}
+.frequency{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 13px}
+.frequency button{min-height:46px;padding:9px;border:1px solid #b8c6f4;background:#fff;color:#172d9e;font:750 14px var(--font-ui),Arial,sans-serif;cursor:pointer}
+.frequency button[aria-pressed=true]{background:#203bb4;color:#fff}
+.usageInput{display:block;margin:0 0 12px;font-size:14px;font-weight:750}
+.usageInput span{display:block;margin-bottom:5px}
+.usageInput input{display:block;width:min(100%,280px);min-height:46px;padding:10px;border:1px solid #aab9ee;background:#fff;color:#1b2034;font:15px var(--font-ui),Arial,sans-serif}
+.activity .finePrint{margin:9px 0 0;color:#4c5777;font-size:13px}
 .decisions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-items:start;margin-bottom:13px}
-.decision{border:1px solid #b8c6f4;background:#fff}
-.decision button{display:flex;justify-content:space-between;gap:7px;width:100%;min-height:46px;padding:10px;border:0;background:#fff;color:#172d9e;text-align:left;font:750 15px var(--font-ui),Arial,sans-serif;cursor:pointer}
-.decision button[aria-expanded=true]{background:#203bb4;color:#fff}
-.decision p{margin:0;padding:10px;font-size:14px;line-height:1.45}
+.decisions article{min-height:100%;padding:12px;border:1px solid #b8c6f4;background:#fff}
+.decisions strong{display:block;margin-bottom:6px;color:#172d9e;font-size:15px}
+.decisions p{margin:0;font-size:14px;line-height:1.45}
 .prompt{position:relative;border:1px solid #aab9ee;background:#fff}
 .prompt summary{min-height:48px;padding:13px 92px 13px 12px;font-size:15px;font-weight:750;cursor:pointer}
 .prompt pre{overflow:auto;margin:0;padding:13px;border-top:1px solid #cbd5ff;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.55 ui-monospace,SFMono-Regular,monospace}
@@ -53,4 +47,4 @@
 .relatedGrid span{color:#172d9e;font-size:13px;font-weight:700}
 .page :is(button,a,summary,input):focus-visible{outline:3px solid #203bb4;outline-offset:3px}
 @media(max-width:700px){.shell{width:min(100% - 28px,610px);padding-top:16px}.back{margin-bottom:24px}.hero h1{font-size:clamp(29px,8.5vw,34px)}.relatedGrid{grid-template-columns:1fr}}
-@media(max-width:560px){.activity{padding:15px}.jobGrid{grid-template-columns:1fr}.decisions{grid-template-columns:1fr}}
+@media(max-width:560px){.activity{padding:15px}.frequency,.decisions{grid-template-columns:1fr}}

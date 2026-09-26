@@ -94,6 +94,19 @@ if (!/Use AI for real work\./i.test(guideLibrary) || !/Keep the decisions that n
 }
 const approvedGuideSlugs = guidePublication.approved.map((guide) => guide.slug);
 const approvedGuideSlugSet = new Set(approvedGuideSlugs);
+const redirectBySource = new Map(vercel.redirects.map((redirect) => [redirect.source, redirect.destination]));
+for (const guide of [...(guidePublication.heldForReview ?? []), ...(guidePublication.parkedPending ?? [])]) {
+  for (const source of [`/guides/${guide.slug}`, `/guides/${guide.slug}/`, `/guides/${guide.slug}.html`]) {
+    if (redirectBySource.get(source) !== '/guides/') {
+      failures.push(`Parked guide URL does not lead to the public library: ${source}`);
+    }
+  }
+}
+for (const match of homepage.matchAll(/href=["']\/guides\/([a-z0-9-]+)\/["']/g)) {
+  if (!approvedGuideSlugSet.has(match[1])) {
+    failures.push(`Homepage features an unpublished guide: ${match[1]}`);
+  }
+}
 const guideInventory = JSON.parse(read('next-app/content/guides.json')).guides;
 const guideCountPattern = new RegExp(`>${approvedGuideSlugs.length}(?:<!-- -->|\\s)+(?:<!-- -->)?guides`, 'i');
 if (!guideCountPattern.test(guideLibrary)) {
@@ -104,20 +117,55 @@ for (const slug of approvedGuideSlugs) {
     failures.push(`Approved guide is missing from the public library: ${slug}`);
   }
   if (!fs.existsSync(path.join(MAIN, 'guides', slug, 'index.html'))) {
-    failures.push(`Approved Next.js guide export is missing: /guides/${slug}/`);
+    failures.push(`Approved clean guide URL has no deployable page: /guides/${slug}/`);
+  } else {
+    const page = fs.readFileSync(path.join(MAIN, 'guides', slug, 'index.html'), 'utf8');
+    if (!page.includes(`href="https://www.shiftandlead.com/guides/${slug}/"`)) {
+      failures.push(`Approved guide canonical URL is not clean: ${slug}`);
+    }
+    for (const match of page.matchAll(/href=["']\/guides\/([a-z0-9-]+)\/["']/g)) {
+      if (!approvedGuideSlugSet.has(match[1])) failures.push(`Approved guide links to an unpublished page: ${slug} → ${match[1]}`);
+    }
   }
-  if (fs.existsSync(path.join(MAIN, 'guides', `${slug}.html`))) {
-    failures.push(`Old .html guide copy remains deployed: /guides/${slug}.html`);
-  }
-  const redirect = vercel.redirects?.find((item) => item.source === `/guides/${slug}.html`);
-  if (redirect?.destination !== `/guides/${slug}/` || redirect.permanent !== true) {
-    failures.push(`Old guide URL needs a permanent redirect: /guides/${slug}.html`);
-  }
+}
+// Check rendered copy, not build metadata or instructions embedded in scripts.
+const customerPages = [
+  ...fs.readdirSync(MAIN)
+    .filter((name) => name.endsWith('.html'))
+    .map((name) => [`/${name}`, fs.readFileSync(path.join(MAIN, name), 'utf8')]),
+  ...fs.readdirSync(path.join(MAIN, 'guides'))
+    .filter((name) => name.endsWith('.html'))
+    .map((name) => [`/guides/${name}`, fs.readFileSync(path.join(MAIN, 'guides', name), 'utf8')]),
+  ['guide library', guideLibrary],
+  ...['find-your-zone-of-genius', 'your-human-evidence', 'use-what-is-unique-about-you'].map((slug) => [
+    `/workbooks/${slug}.html`,
+    read(`main-site/workbooks/${slug}.html`),
+  ]),
+  ...approvedGuideSlugs.map((slug) => [
+    `/guides/${slug}/`,
+    fs.existsSync(path.join(MAIN, 'guides', slug, 'index.html'))
+      ? fs.readFileSync(path.join(MAIN, 'guides', slug, 'index.html'), 'utf8')
+      : '',
+  ]),
+];
+const internalCopy = /review mode|approved and unpublished|editorial (?:status|note|review|instruction)|internal (?:note|instruction|review)|production (?:note|instruction|brief)|implementation note|for internal use|not for publication|placeholder copy|preview only|we use lumail|saadia(?: karam)?(?:'s)? (?:website|guide|layout|structure)/i;
+for (const [page, html] of customerPages) {
+  const visibleCopy = html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ');
+  const leak = visibleCopy.match(internalCopy);
+  if (leak) failures.push(`Internal production wording appears in customer copy on ${page}: ${leak[0]}`);
+}
+if (/we use lumail/i.test(read('main-site/assets/guide-gate.js'))) {
+  failures.push('The legacy access screen exposes an internal email-provider note.');
 }
 for (const hiddenSlug of guideInventory
   .filter((guide) => !approvedGuideSlugSet.has(guide.slug))
   .map((guide) => guide.slug)) {
-  if (guideLibrary.includes(`/guides/${hiddenSlug}/`)) {
+  if (guideLibrary.includes(`/guides/${hiddenSlug}/`) || guideLibrary.includes(`/guides/${hiddenSlug}.html`)) {
     failures.push(`Unapproved guide appears in the public library: ${hiddenSlug}`);
   }
 }
@@ -129,7 +177,6 @@ for (const slug of retiredGuideSlugs) {
   else if (sourceGuide.status !== 'retired') failures.push(`Retired guide source is not marked retired: ${slug}`);
   const publicFile = path.join(MAIN, 'guides', `${slug}.html`);
   if (fs.existsSync(publicFile)) failures.push(`Retired guide is still deployed: /guides/${slug}.html`);
-  if (fs.existsSync(path.join(MAIN, 'guides', slug, 'index.html'))) failures.push(`Retired guide is still deployed: /guides/${slug}/`);
 }
 
 for (const file of fs.readdirSync(path.join(MAIN, 'guides')).filter((name) => name.endsWith('.html') && name !== 'index.html')) {
@@ -171,6 +218,14 @@ for (const workbookPath of [
 const indexRedirect = vercel.redirects?.find((redirect) => redirect.source === '/index.html');
 if (!indexRedirect || indexRedirect.destination !== '/' || indexRedirect.permanent !== true) {
   failures.push('Vercel must permanently redirect /index.html to /');
+}
+for (const redirect of vercel.redirects ?? []) {
+  if (!redirect.source.startsWith('/guides/') || !redirect.destination.startsWith('/guides/')) continue;
+  if (redirect.destination === '/guides/') continue;
+  const destinationSlug = redirect.destination.match(/^\/guides\/([a-z0-9-]+)\/$/)?.[1];
+  if (!destinationSlug || !approvedGuideSlugSet.has(destinationSlug)) {
+    failures.push(`Guide redirect leads to an unpublished or legacy page: ${redirect.source} → ${redirect.destination}`);
+  }
 }
 
 const guideHeader = guideLibrary.match(/<header class="site-header">([\s\S]*?)<\/header>/i)?.[1] || '';

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { cleanLabel } from "./guide-icon";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./grok-writing-page.module.css";
 
@@ -69,6 +70,7 @@ export function GrokWritingPage({ guide }: { guide: GuidePage }) {
         </div>)}</div>
       </section>
 
+      <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} heading="Get the Grok Bot instruction" guidePromise="Get the complete instruction for a source-linked brief, then check the posts it finds." actionLabel="Show the instruction" variant="unlock">
       <section className={styles.activity} aria-labelledby="writing-prompt-title">
         <div className={styles.sectionHead}><span>Run one read-only test</span><h2 id="writing-prompt-title">Ask for a source-linked brief</h2></div>
         <p>In Grok Bot, create one Bot called <strong>Signal Scout</strong>. Give it the public-topic job below. Replace the bracketed topic before sending.</p>
@@ -83,6 +85,7 @@ export function GrokWritingPage({ guide }: { guide: GuidePage }) {
         <div className={styles.checks}>{checks.map((check, index) => <label key={check}><input type="checkbox" checked={checked[index] ?? false} onChange={() => setChecked(current => current.map((value, i) => i === index ? !value : value))} /><span>{check}</span></label>)}</div>
         <p className={styles.result} aria-live="polite">{checked.every(Boolean) ? "If this helped, you can ask the Bot to check again when you need it. Decide later if you want automatic updates." : `${checked.filter(Boolean).length} of 3 checks complete. Check the posts before using the list.`}</p>
       </section>
+      </GuideAccessBoundary>
     </div>
     <section className={styles.related} aria-labelledby="writing-related-title"><div className={styles.relatedInner}><h2 id="writing-related-title">Keep learning about Grok Bot</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
   </main>;

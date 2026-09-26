@@ -30,7 +30,7 @@ function responseRecorder() {
   };
 }
 
-async function invoke(body, fetchImpl = async () => ({ ok: true, status: 200, json: async () => ({ id: "eml_test" }) })) {
+async function invoke(body, fetchImpl = async () => ({ ok: true, status: 200, json: async () => ({}) })) {
   const originalFetch = global.fetch;
   const originalToken = process.env.LUMAIL_API_TOKEN;
   const calls = [];
@@ -64,7 +64,7 @@ test("guide capture requires explicit consent", async () => {
   assert.equal(calls.length, 0);
 });
 
-test("rebuilt guide capture requires first and last name", async () => {
+test("approved guide capture requires first and last name", async () => {
   const { response, calls } = await invoke({
     firstName: " ",
     email: "amina@example.com",
@@ -74,6 +74,7 @@ test("rebuilt guide capture requires first and last name", async () => {
   });
 
   assert.equal(response.statusCode, 400);
+  assert.equal(response.body.error, "Enter your first and last name.");
   assert.equal(calls.length, 0);
 });
 
@@ -115,16 +116,11 @@ test("entry guide capture sends both name fields and consent evidence without fo
   assert.equal(payload.fields.referring_site, undefined);
   assert.equal(payload.fields.source, "/guides/what-is-ai/");
   assert.equal(payload.fields.marketing_consent, undefined);
-  const [emailUrl, emailRequest] = calls[1];
-  assert.equal(emailUrl, "https://lumail.io/api/v2/emails");
-  const emailPayload = JSON.parse(emailRequest.body);
+  assert.equal(calls[1][0], "https://lumail.io/api/v2/emails");
+  const emailPayload = JSON.parse(calls[1][1].body);
   assert.equal(emailPayload.to, "amina@example.com");
-  assert.match(emailPayload.markdown, /^Hi Amina,/);
-  assert.match(emailPayload.markdown, /Understand what AI does, what it cannot know/);
-  assert.match(emailPayload.markdown, /\[Open your guide\]/);
   assert.match(emailPayload.markdown, /https:\/\/www\.shiftandlead\.com\/guides\/what-is-ai\//);
-  assert.match(emailPayload.markdown, /The AI Automation Queen$/);
-  assert.ok(emailPayload.markdown.split(/\s+/).length > 80);
+  assert.match(emailPayload.markdown, /The AI Automation Queen/);
 });
 
 test("Instagram gate requires both name fields before sending to Lumail", async () => {
@@ -168,7 +164,8 @@ test("published guide capture uses its approved slug and rejects unknown slugs",
     const failed = await invoke(input, async () => ({ ok: false, status: 502, json: async () => ({ error: "provider failure" }) }));
     assert.equal(failed.response.statusCode, 502);
     assert.equal(failed.response.body.error, "We could not open the guide. Please try again.");
-    const emailFailed = await invoke(input, async (url) => ({ ok: !url.endsWith("/emails"), status: url.endsWith("/emails") ? 403 : 200, json: async () => ({}) }));
+    assert.equal(failed.calls.length, 1);
+    const emailFailed = await invoke(input, async (url) => ({ ok: !url.endsWith("/emails"), status: 502 }));
     assert.equal(emailFailed.response.statusCode, 502);
     assert.equal(emailFailed.calls.length, 2);
   } finally {

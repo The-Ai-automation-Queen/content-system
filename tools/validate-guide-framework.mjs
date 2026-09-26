@@ -20,6 +20,7 @@ const pageSource = [
   modelSeriesSource,
   researchSeriesSource,
 ].join("\n");
+const guidePageSource = read("next-app/content/guide-page.ts");
 const librarySource = read("next-app/content/guides.ts");
 const libraryUiSource = read("next-app/components/guides/guide-library.tsx");
 const libraryPageSource = read("next-app/app/guides/page.tsx");
@@ -45,14 +46,23 @@ const vercelConfig = JSON.parse(read("main-site/vercel.json"));
 const failures = [];
 
 const approved = publication.approved ?? [];
+const parkedPending = new Set((publication.parkedPending ?? []).map((guide) => guide.slug));
 const slugs = approved.map((guide) => guide.slug);
 const inventorySlugs = new Set(inventory.map((guide) => guide.slug));
 const approvedSlugSet = new Set(slugs);
-const parkedSlugSet = new Set((publication.drafts ?? []).map((guide) => guide.slug));
+const relatedSelectionSource = guidePageSource.match(/export const approvedRelatedSelections:[\s\S]*?= \{([\s\S]*?)\n\};/)?.[1] ?? "";
+const approvedRelatedSelections = new Map([...relatedSelectionSource.matchAll(/^\s*"([a-z0-9-]+)": \[([^\]]+)\],?$/gm)]
+  .map((match) => [match[1], [...match[2].matchAll(/"([a-z0-9-]+)"/g)].map((item) => item[1])]));
+for (const slug of slugs) {
+  const related = approvedRelatedSelections.get(slug);
+  if (!related || related.length !== 3 || new Set(related).size !== 3 || related.includes(slug) || related.some((item) => !approvedSlugSet.has(item))) {
+    failures.push(`Approved guide needs three distinct, approved next-guide links: ${slug}`);
+  }
+}
 const rebuildStatuses = new Set(["approved", "review", "pending"]);
 const rebuildSlugs = rebuildPlan.guides.map((guide) => guide.slug);
 const rebuildCounts = Object.fromEntries([...rebuildStatuses].map((status) => [status, rebuildPlan.guides.filter((guide) => guide.status === status).length]));
-const reviewGuides = inventory.filter((guide) => guide.status !== "draft" && guide.reviewStatus === "page review" && !approvedSlugSet.has(guide.slug));
+const reviewGuides = inventory.filter((guide) => guide.reviewStatus === "page review" && !approvedSlugSet.has(guide.slug));
 const previewBySlug = new Map((preview.guides ?? []).map((guide) => [guide.slug, guide]));
 const hasStructuredSlug = (slug) => pageSource.includes(`slug: "${slug}"`) || pageSource.includes(`"slug": "${slug}"`);
 
@@ -61,7 +71,10 @@ if (!approved.length) failures.push("The publication registry has no approved gu
 if (new Set(slugs).size !== slugs.length) failures.push("The publication registry contains a duplicate slug.");
 if (new Set(rebuildSlugs).size !== rebuildSlugs.length) failures.push("The guide rebuild plan contains a duplicate slug.");
 for (const guide of rebuildPlan.guides) {
-  if (!approvedSlugSet.has(guide.slug) && !(parkedSlugSet.has(guide.slug) && guide.status === "pending")) failures.push(`Rebuild plan guide is missing from the publication registry or parked drafts: ${guide.slug}`);
+  const correctlyListed = (guide.status === "approved" && approvedSlugSet.has(guide.slug)) ||
+    (guide.status === "review" && previewBySlug.has(guide.slug)) ||
+    (guide.status === "pending" && parkedPending.has(guide.slug));
+  if (!correctlyListed) failures.push(`Rebuild plan guide has no matching approved, review or parked listing: ${guide.slug}`);
   if (!rebuildStatuses.has(guide.status)) failures.push(`Rebuild plan guide has an invalid status: ${guide.slug}`);
 }
 for (const slug of slugs) {
@@ -126,24 +139,28 @@ if (!guideAccessSource.includes('fetch("/api/guide-capture"')) {
   failures.push("The guide gate no longer submits to the server-side Lumail endpoint.");
 }
 const entryRouteSlugs = new Set([...guideRouteSource.matchAll(/if \(slug === "([^"]+)"\) return <GuideAccessBoundary\b[^\n]*variant="entry"[^\n]*<\/GuideAccessBoundary>;/g)].map((match) => match[1]));
+const directRouteSlugs = new Set([...guideRouteSource.matchAll(/if \(slug === "([^"]+)"\) return <[A-Za-z]+Page guide=\{guide\} \/>;/g)].map((match) => match[1]));
+for (const slug of slugs) {
+  if (entryRouteSlugs.has(slug) || !directRouteSlugs.has(slug)) {
+    failures.push(`Approved guide must open on its public teaching, with capture inside the page: ${slug}`);
+  }
+}
 for (const guide of rebuildPlan.guides.filter((item) => item.status !== "pending")) {
-  if (!entryRouteSlugs.has(guide.slug)) failures.push(`Rebuilt guide lacks a dedicated page behind the pre-guide email modal: ${guide.slug}`);
+  if (!entryRouteSlugs.has(guide.slug) && !directRouteSlugs.has(guide.slug)) failures.push(`Rebuilt guide lacks a dedicated Next.js page: ${guide.slug}`);
 }
 if (!guideAccessSource.includes('fetch("/api/guide-capture"') ||
-    !guideAccessSource.includes('role={variant === "entry" ? "dialog"') ||
     !guideAccessSource.includes('hidden={!ready || !unlocked}') ||
     !["firstName", "lastName", "email", "marketingConsent"].every((field) => guideAccessSource.includes(`name="${field}"`))) {
-  failures.push("The pre-guide modal must block reading and collect first name, last name, email and optional marketing consent through Lumail.");
+  failures.push("The inline guide gate must unlock content after Lumail success and collect first name, last name, email and optional marketing consent.");
 }
 if (!guideRouteSource.includes('slug === "instagram-content-dashboard"') ||
     !guideRouteSource.includes("<InstagramDashboardPage guide={guide} />") ||
     !instagramPageSource.includes('variant="instagram"') ||
-    !guideRouteSource.includes('variant="entry"') ||
     !interactiveWalkthroughSource.includes('variant === "instagram" ? "agent" : null') ||
     !interactiveWalkthroughSource.includes('variant !== "instagram" && saved') ||
     instagramPageSource.includes('variant="save"') ||
     interactiveWalkthroughSource.includes('afterSteps')) {
-  failures.push("The Instagram guide must use its dedicated Next.js walkthrough behind a pre-guide Lumail entry gate.");
+  failures.push("The Instagram guide must retain its dedicated interactive Next.js walkthrough.");
 }
 if (!guideRouteSource.includes("legacyGuideSlugs.has(slug)") ||
     !guideRouteSource.includes("needs an approved interactive Next.js composition") ||
@@ -216,4 +233,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Guide framework passed: ${approved.length} registry guides; rebuilt pages: ${rebuildCounts.approved} approved, ${rebuildCounts.review} in review, ${rebuildCounts.pending} pending.`);
+console.log(`Guide framework passed: ${approved.length} registry guides; editorial plan: ${rebuildCounts.approved} approved, ${rebuildCounts.review} in review, ${rebuildCounts.pending} pending; ${entryRouteSlugs.size} routes still need migration from the old opening gate.`);
