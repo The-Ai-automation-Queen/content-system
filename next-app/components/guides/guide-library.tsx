@@ -213,7 +213,7 @@ export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: G
         {visible.length === 0 && (
           <div className="empty-state">
             <p>{query.trim() ? `No guide matches “${query.trim()}”. Try another word or browse by outcome.` : level === "Expert" && outcome === "all"
-              ? "Expert guides are being reviewed before they return. Choose Intermediate for the most advanced guides available now."
+              ? "No Expert guides match right now. Try Intermediate or choose another topic."
               : "No guide matches those filters yet."}</p>
             <button type="button" onClick={resetFilters}>Show all guides</button>
           </div>
