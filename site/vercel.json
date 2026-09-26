@@ -28,57 +28,57 @@
     },
     {
       "source": "/guides/chez-claude.html",
-      "destination": "https://www.shiftandlead.com/guides/claude.html",
+      "destination": "https://www.shiftandlead.com/guides/claude/",
       "permanent": true
     },
     {
       "source": "/guides/chez-claude-preview.html",
-      "destination": "https://www.shiftandlead.com/guides/claude.html",
+      "destination": "https://www.shiftandlead.com/guides/claude/",
       "permanent": true
     },
     {
       "source": "/guides/chez-openai.html",
-      "destination": "https://www.shiftandlead.com/guides/chatgpt.html",
+      "destination": "https://www.shiftandlead.com/guides/make-chatgpt-answers-shorter/",
       "permanent": true
     },
     {
       "source": "/guides/chez-gemini.html",
-      "destination": "https://www.shiftandlead.com/guides/gemini.html",
+      "destination": "https://www.shiftandlead.com/guides/gemini-cannot-find-drive-file/",
       "permanent": true
     },
     {
       "source": "/guides/chez-copilot.html",
-      "destination": "https://www.shiftandlead.com/guides/copilot.html",
+      "destination": "https://www.shiftandlead.com/guides/check-copilot-excel-edits/",
       "permanent": true
     },
     {
       "source": "/guides/chez-grok.html",
-      "destination": "https://www.shiftandlead.com/guides/grok.html",
+      "destination": "https://www.shiftandlead.com/guides/",
       "permanent": true
     },
     {
       "source": "/guides/chez-mistral.html",
-      "destination": "https://www.shiftandlead.com/guides/mistral.html",
+      "destination": "https://www.shiftandlead.com/guides/",
       "permanent": true
     },
     {
       "source": "/guides/chez-deepseek.html",
-      "destination": "https://www.shiftandlead.com/guides/deepseek.html",
+      "destination": "https://www.shiftandlead.com/guides/fix-deepseek-wall-of-text/",
       "permanent": true
     },
     {
       "source": "/guides/chez-kimi.html",
-      "destination": "https://www.shiftandlead.com/guides/kimi.html",
+      "destination": "https://www.shiftandlead.com/guides/is-kimi-worth-paying-for/",
       "permanent": true
     },
     {
       "source": "/guides/chez-meta-ai.html",
-      "destination": "https://www.shiftandlead.com/guides/meta-ai.html",
+      "destination": "https://www.shiftandlead.com/guides/meta-ai/",
       "permanent": true
     },
     {
       "source": "/guides/chez-manus.html",
-      "destination": "https://www.shiftandlead.com/guides/manus.html",
+      "destination": "https://www.shiftandlead.com/guides/",
       "permanent": true
     },
     {

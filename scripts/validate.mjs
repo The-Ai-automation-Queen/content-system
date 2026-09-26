@@ -115,6 +115,8 @@ for (const p of all) {
   for (const m of p.html.matchAll(/(?:href|src)="([^"#?]+)[^"]*"/g)) {
     let u = m[1];
     if (/^(mailto:|tel:|data:|javascript:)/.test(u)) continue;
+    // Next.js runtime chunks are generated during deployment and are not stored in main-site/.
+    if (u.startsWith('/_next/')) continue;
     let root = p.root, path = u;
     const abs = u.match(/^https?:\/\/([^/]+)(\/.*)?$/);
     if (abs) { if (!hostRoot[abs[1]]) continue; root = hostRoot[abs[1]]; path = abs[2] || '/'; }
