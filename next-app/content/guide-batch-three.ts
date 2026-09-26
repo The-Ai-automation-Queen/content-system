@@ -222,11 +222,11 @@ Permission text:
 
 export const aiSkillsGuide = {
   slug: "ai-skills-worth-learning-for-work",
-  title: "Which AI skills are worth learning for work in 2026?",
-  promise: "You do not need to chase every new AI tool. Build the skills that still help when the tool, model or feature changes.",
+  title: "Which AI skill should you practise first?",
+  promise: "Choose one familiar task, see which skill will help most, and try a small exercise you can check yourself.",
   cover: "/images/guides/ai-skills-worth-learning-for-work.webp",
   coverAlt: "The small blue robot mascot carrying a compass, magnifying glass, key and measuring gauge past changing machines",
-  seoDescription: "Learn which practical AI skills are worth developing for work in 2026 and create a simple learning plan from your everyday tasks.",
+  seoDescription: "Choose one practical AI skill to practise on a familiar work task, with a worked example and a checkable exercise.",
   lumailTag: "guide-ai-skills-worth-learning-for-work",
   sourceNotes: [
     { label: "PwC: 2026 Global AI Jobs Barometer", url: "https://www.pwc.com/gx/en/news-room/press-releases/2026/pwc-2026-ai-jobs-barometer.html" },
@@ -255,33 +255,33 @@ export const aiSkillsGuide = {
     ] },
   ],
   tryNow: {
-    heading: "Build your learning plan",
-    introduction: "Use a list of everyday tasks from your work. Remove private names and details.",
-    prompt: `Here are tasks I regularly do at work:
+    heading: "Practise one skill on a task you already do",
+    introduction: "Choose one familiar task. Use a general description with no private names or details.",
+    prompt: `I want to practise one skill while doing a familiar work task.
 
-[Paste 5 to 10 tasks]
+Task: [TASK]
+What usually goes wrong: [PROBLEM]
+Skill I want to practise: [SKILL]
 
-For each task, tell me:
+Give me one small exercise I can do with non-confidential or made-up material. Show:
+1. The first action I should take and what to give the AI tool.
+2. An example of the kind of answer I should expect.
+3. What I need to compare with my original material.
+4. One mistake I should watch for.
+5. What I should do myself before using the result at work.
 
-1. Where AI could save time.
-2. What information I would need to provide.
-3. What I would still need to check myself.
-4. What could go wrong.
-5. Which skill I should practise first: giving instructions, choosing sources, checking results, protecting information or making the final decision.
-
-Keep the advice practical. Do not recommend buying a tool.`,
+Keep the exercise focused on this one task. If the task is unsuitable for AI or needs access I may not have, say so and suggest a safer practice version. Do not recommend buying a tool or inventing facts about my workplace.`,
     instructions: [
-      { title: "List familiar tasks", body: "Use 5 to 10 tasks you already know how to complete and assess." },
-      { title: "Remove private details", body: "Replace names, customers and confidential information with general descriptions." },
-      { title: "Copy and paste", body: "Select **Copy**, paste the instruction into an AI chat and add your task list." },
-      { title: "Choose one practice", body: "Pick one skill and one task to practise this week." },
+      { title: "Choose a task", body: "Pick one task you know well enough to recognise a weak answer." },
+      { title: "Keep it safe", body: "Use a general description and non-confidential or made-up material." },
+      { title: "Try one exercise", body: "Copy the instruction, check the answer and keep the part you can use." },
     ],
-    check: "A useful plan names one skill you can practise through real work, not a list of tools to buy.",
+    check: "You should know what to try, what to compare with your source and what still needs your judgement.",
   },
   conclusion: {
-    heading: "You have a learning plan that can survive the next update",
-    paragraphs: ["The tools will keep changing. Your ability to define the work, choose the evidence, check the result and own the decision will continue to matter."],
-    finishLine: "Practise one skill through one familiar task before adding another tool.",
+    heading: "Practise one skill on work you already know",
+    paragraphs: ["Use a familiar task, compare the answer with your source and keep the part that helps."],
+    finishLine: "Try that skill once before adding another tool.",
   },
   paidNextStep: {
     label: "Your Human Evidence",
@@ -290,9 +290,8 @@ Keep the advice practical. Do not recommend buying a tool.`,
     status: "coming-soon",
   },
   related: [
-    { slug: "what-is-a-prompt", title: "How to write an AI prompt that gets a useful answer", reason: "Practise giving one task a clearer brief.", cover: "/images/guides/what-is-a-prompt.webp" },
-    { slug: "what-remains-valuable-when-ai-can-do-part-of-your-job", title: "What remains valuable when AI can do part of your job?", reason: "Separate tasks AI can help with from the judgement people still trust you to provide.", cover: "/images/guides/ai-skills-worth-learning-for-work.webp", status: "coming-next" },
-    { slug: "what-is-agentic", title: "What AI agents actually do", reason: "See which skills matter when AI can handle a longer sequence of work.", cover: "/images/guides/what-is-agentic.webp" },
+    { slug: "what-is-ai", title: "What AI actually is", reason: "See what the tool can and cannot know before you rely on an answer.", cover: "/images/guides/what-is-ai.webp" },
+    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Choose safe material for your first exercise.", cover: "/images/guides/learn-master.webp" },
   ],
 } as const satisfies GuidePage;
 
