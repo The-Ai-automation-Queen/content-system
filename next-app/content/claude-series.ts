@@ -2,10 +2,6 @@ import type { GuidePage } from "./guide-page";
 
 export const claudeGuide = {
   "sections": [],
-  "workshopInvitation": {
-    "title": "Workshops for companies",
-    "body": "Workshops are available for companies that want to help their teams use AI at work."
-  },
   "slug": "claude",
   "title": "Get one useful thing done with Claude",
   "promise": "Not sure how Claude would help in your working day? Choose something already on your to-do list: sorting meeting notes, finding an answer in a document or drafting an email.",
@@ -68,32 +64,22 @@ export const claudeGuide = {
   },
   "related": [
     {
-      "slug": "claude-projects",
-      "title": "Stop repeating your instructions to Claude",
-      "reason": "Save the context for recurring work.",
-      "cover": "/images/guides/claude-projects.webp"
+      "slug": "what-should-you-never-share-with-ai",
+      "title": "What should you never share with AI?",
+      "reason": "Check what belongs in a work chat before you use your own material.",
+      "cover": "/images/guides/learn-master.webp"
     },
     {
-      "slug": "what-is-a-prompt",
-      "title": "What is a prompt?",
-      "reason": "Adapt an instruction to a different task.",
-      "cover": "/images/guides/what-is-a-prompt.webp"
-    },
-    {
-      "slug": "which-ai-tool-for-what",
-      "title": "Which AI tool for what?",
-      "reason": "Compare tools for the job you need to finish.",
-      "cover": "/images/guides/which-ai-tool-for-what.webp"
+      "slug": "connect-ai-to-email-files-calendar",
+      "title": "Should you let AI connect to your email, files and calendar?",
+      "reason": "Know what access you are giving before you connect a work account.",
+      "cover": "/images/guides/connect-ai-to-email-files-calendar.webp"
     }
   ]
 } as const satisfies GuidePage;
 
 export const claudeProjectsGuide = {
   "sections": [],
-  "workshopInvitation": {
-    "title": "Workshops for companies",
-    "body": "Workshops are available for companies that want to help their teams use AI at work."
-  },
   "slug": "claude-projects",
   "title": "Stop repeating your instructions to Claude",
   "promise": "Meeting over, notes everywhere, and still no clear list of who does what? Save your instructions once so Claude can organise each meeting’s notes the same way.",
@@ -129,22 +115,16 @@ export const claudeProjectsGuide = {
   },
   "related": [
     {
-      "slug": "claude",
-      "title": "Get one useful thing done with Claude",
-      "reason": "Try a different everyday task.",
-      "cover": "/images/guides/claude-first-task.webp"
+      "slug": "what-should-you-never-share-with-ai",
+      "title": "What should you never share with AI?",
+      "reason": "Check what belongs in a Project before adding work material.",
+      "cover": "/images/guides/learn-master.webp"
     },
     {
-      "slug": "what-is-a-prompt",
-      "title": "What is a prompt?",
-      "reason": "Make your instructions more specific.",
-      "cover": "/images/guides/what-is-a-prompt.webp"
-    },
-    {
-      "slug": "teach-claude-a-repeatable-workflow",
-      "title": "Teach Claude a repeatable workflow",
-      "reason": "Test whether saved instructions work on a second task.",
-      "cover": "/images/guides/teach-claude-a-repeatable-workflow.webp"
+      "slug": "connect-ai-to-email-files-calendar",
+      "title": "Should you let AI connect to your email, files and calendar?",
+      "reason": "Understand the permissions before connecting a work account.",
+      "cover": "/images/guides/connect-ai-to-email-files-calendar.webp"
     }
   ]
 } as const satisfies GuidePage;
