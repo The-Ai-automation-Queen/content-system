@@ -37,6 +37,9 @@ const guideComponentDir = path.join(root, "next-app/components/guides");
 const activeGuideStyles = fs.readdirSync(guideComponentDir)
   .filter((name) => name.endsWith("-page.module.css") && name !== "guide-reading-page.module.css")
   .map((name) => [name, fs.readFileSync(path.join(guideComponentDir, name), "utf8")]);
+const readerFacingGuideSources = fs.readdirSync(guideComponentDir)
+  .filter((name) => name.endsWith(".tsx"))
+  .map((name) => [name, fs.readFileSync(path.join(guideComponentDir, name), "utf8")]);
 const guideCaptureApi = read("main-site/api/guide-capture.js");
 const guidesIndex = read("main-site/guides/index.html");
 const buildSprint = read("main-site/build-sprint.html");
@@ -181,6 +184,11 @@ if (!libraryUiSource.includes('role="search"') || !libraryPageSource.includes("s
 for (const [name, styles] of activeGuideStyles) {
   if (/var\(--cream\)|(?:border-left|border-inline-start)\s*:/.test(styles)) {
     failures.push(`Rebuilt guide styling has returned to cream or decorative vertical lines: ${name}`);
+  }
+}
+for (const [name, source] of [...readerFacingGuideSources, ["guide-library.tsx", libraryUiSource]]) {
+  if (/review mode|approved and unpublished|editorial (?:review|status)|internal (?:note|instruction)|\bLumail\b|Saadia Karam|guide builder/i.test(source)) {
+    failures.push(`Remove production language from reader-facing guide copy: ${name}`);
   }
 }
 
