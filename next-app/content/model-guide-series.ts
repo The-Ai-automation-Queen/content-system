@@ -270,8 +270,7 @@ export const geminiDriveFileGuide = makeGuide({
   },
   finish: "You now know whether to fix the account, connection, administrator setting, file type or search wording.",
   related: [
-    promptGuide("gemini-google-tasks-limits", "Can Gemini organise Google Tasks by project?", "Test another connected Google boundary."),
-    existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Compare Gemini with other tools for your next task.", "/images/guides/which-ai-tool-for-what.webp"),
+    existingGuide("connect-ai-to-email-files-calendar", "Should you let AI connect to your email, files and calendar?", "Check the access Gemini needs before connecting a work account.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what belongs outside a connected chat.", "/images/guides/learn-master.webp"),
   ],
 });
@@ -279,7 +278,7 @@ export const geminiDriveFileGuide = makeGuide({
 export const geminiTasksGuide = makeGuide({
   slug: "gemini-google-tasks-limits",
   promptMode: "as-written",
-  title: "Can Gemini organise your Google Tasks by project?",
+  title: "Can Gemini see which Google Tasks list a task is in?",
   promise: "Test whether Gemini can preserve the list that separates your projects before you rely on it to organise real tasks.",
   coverAlt: "The small blue robot princess sorting three tasks into two separate trays",
   seoDescription: "Test whether Gemini can retrieve Google Tasks and identify the project list for each task.",
@@ -317,8 +316,7 @@ export const geminiTasksGuide = makeGuide({
   },
   finish: "You can now keep Gemini for task retrieval or keep project organisation inside Google Tasks.",
   related: [
-    promptGuide("gemini-cannot-find-drive-file", "Why can’t Gemini see your Drive file?", "Diagnose another connected Google problem."),
-    existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Compare Gemini with other tools before changing your task system.", "/images/guides/which-ai-tool-for-what.webp"),
+    existingGuide("connect-ai-to-email-files-calendar", "Should you let AI connect to your email, files and calendar?", "Understand the access a connected tool receives.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Keep private task details outside an unapproved account.", "/images/guides/learn-master.webp"),
   ],
 });
