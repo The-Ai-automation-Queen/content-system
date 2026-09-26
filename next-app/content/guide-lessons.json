@@ -84,8 +84,8 @@
     "public_lesson": {
       "heading": "Turn one fictional meeting into a reviewable format",
       "lead": "Meeting notes often mix decisions, tasks and ideas that were only discussed. A Claude Project is useful when you want the same reviewable format every time while the notes change. Start with a short set of notes you can compare against the reply.",
-      "practice": "Practice, fictional notes: “Sam will share the draft on Tuesday. We discussed adding a second review, but did not decide.” Ask for Decisions, Who does what and Questions to resolve. The desired result is one assigned action, no second review presented as a decision, and no missing facts filled in.",
-      "check": "Pass if the reply gives Sam’s task as an action, treats the second review as a suggestion, and marks any missing owner or date as “Not agreed.” If it does not, revise the saved instruction before using it on a real meeting."
+      "practice": "Practice, fictional notes: “We agreed to test a shorter weekly team meeting for 2 weeks. Alex will send the new agenda by Friday. Someone needs to collect feedback, but we did not choose who or set a date. Recording the meetings was suggested, not agreed.” Ask for Decisions, Who does what and Questions to resolve. The desired result is Alex assigned to the Friday agenda, the two-week test as a decision, recording as a suggestion, and missing feedback ownership and date marked “Not agreed”.",
+      "check": "Pass if the reply gives Alex’s agenda task as an action, treats recording as a suggestion, and marks the missing feedback owner and date as “Not agreed.” If it does not, revise the saved instruction before using it on a real meeting."
     },
     "verdict": "targeted-repair"
   },
