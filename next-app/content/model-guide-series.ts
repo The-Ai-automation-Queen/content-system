@@ -188,7 +188,7 @@ export const chatgptScheduledTasksGuide = makeGuide({
   promise: "Use a scheduled task for one public check with a clear trigger, a useful notification and a stop rule.",
   coverAlt: "The small blue robot princess setting a clockwork lookout beside a public noticeboard",
   seoDescription: "Create and verify one harmless scheduled task in ChatGPT without producing daily notification noise.",
-  sources: [{ label: "OpenAI: Tasks in ChatGPT", url: "https://help.openai.com/en/articles/10291617-tasks-in-chatgpt" }],
+  sources: [{ label: "OpenAI: Scheduled tasks in ChatGPT", url: "https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt" }],
   answer: [
     "**Yes, when the repeated check has a specific condition.** “Check this every day” creates noise. “Tell me only when this named result changes” creates a decision.",
   ],
@@ -199,9 +199,9 @@ export const chatgptScheduledTasksGuide = makeGuide({
       introduction: "Start with a public page you already trust.",
       steps: [
         { title: "Open Scheduled tasks", body: "Open ChatGPT on the web and go to **Scheduled**. Availability can vary by account or workspace." },
-        { title: "Add the instruction", body: "Use the complete example below and replace only the public URL, condition and stop rule." },
-        { title: "Check the controls", body: "Review the schedule, time zone, condition and stop rule before confirming." },
-        { title: "Check it was saved", body: "Find the task in Scheduled and confirm its instruction and next run. Compare any later alert with the public source." },
+        { title: "Create the task", body: "In Scheduled, create a task and paste the complete instruction above. Ask ChatGPT to schedule it for weekday mornings." },
+        { title: "Check before saving", body: "Review the schedule and time zone. Confirm the saved instruction says to alert only when your condition is met and when to stop checking." },
+        { title: "Check it was saved", body: "Find the task in Scheduled and confirm its instruction and next run. If an alert arrives later, compare it with the linked public page." },
       ],
     },
     {
@@ -216,13 +216,13 @@ export const chatgptScheduledTasksGuide = makeGuide({
   tryNow: {
     heading: "Build one quiet monitoring task",
     introduction: "Replace the 3 bracketed details.",
-    prompt: `Every weekday morning, check [PUBLIC PAGE URL].\n\nOnly notify me if this condition is met: [EXACT CONDITION]. Compare the page with the previous check before sending an alert.\n\nIn the notification, include:\n- what changed;\n- the current wording or status;\n- the source link;\n- the time you checked.\n\nIf nothing changed, do not notify me. Stop checking [STOP RULE].`,
+    prompt: `Every weekday morning, check [PUBLIC PAGE URL].\n\nOnly notify me if this condition is met: [EXACT CONDITION]. Compare the page with the previous check before sending an alert. If you cannot open the page or confirm a change, do not claim that the condition was met.\n\nIn the notification, include:\n- what changed;\n- the current wording or status;\n- the source link;\n- the time you checked.\n\nIf nothing changed, do not notify me. Stop checking [STOP RULE].`,
     check: "You are done setting it up when the task appears in Scheduled with the right instruction and next run. Check any later alert against the public source.",
   },
   finish: "You can now decide whether the repeated check deserves a scheduled task or should stay manual.",
   related: [
-    promptGuide("make-chatgpt-answers-shorter", "Why does ChatGPT keep giving you an essay?", "Keep task notifications short and usable."),
-    promptGuide("stop-chatgpt-forgetting-context", "Why does ChatGPT forget what you told it?", "Use Projects for continuing context rather than schedules."),
+    existingGuide("what-is-ai", "What AI actually is", "Know why an automated answer still needs checking.", "/images/guides/what-is-ai.webp"),
+    existingGuide("what-is-agentic", "What AI agents actually do", "See when an agent makes sense instead of a scheduled check.", "/images/guides/what-is-agentic.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what the scheduled task may access.", "/images/guides/learn-master.webp"),
   ],
 });
