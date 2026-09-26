@@ -80,9 +80,9 @@ export const copilotGuide = {
 } as const satisfies GuidePage;
 
 export const metaAiGuide = {
-  slug: "meta-ai", title: "What is Meta Muse, and should you let it act for you?",
-  promise: "Muse can browse, fill forms and continue a task after you close the app. Start with a public comparison that cannot send, book, buy or change anything.",
-  cover: "/images/guides/meta-muse.webp", coverAlt: "The Blue Princess directing a clockwork browser while holding the final approval key", seoDescription: "A current beginner guide to Meta Muse, Meta AI, Muse Spark, permissions and a safe first task.", lumailTag: "guide-meta-ai",
+  slug: "meta-ai", title: "What can Meta Muse actually do for you?",
+  promise: "See how Muse differs from Meta AI, then try a public research task with a clear stop point.",
+  cover: "/images/guides/meta-muse.webp", coverAlt: "The Blue Princess directing a clockwork browser while holding the final approval key", seoDescription: "See how Meta Muse differs from Meta AI and Muse Spark. Try a public meeting-room comparison before connecting any account.", lumailTag: "guide-meta-ai",
   sourceNotes: [
     { label: "Meta: Introducing Muse", url: "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" },
     { label: "Meta: Security and safety for Muse", url: "https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse" },
@@ -113,10 +113,10 @@ export const metaAiGuide = {
     ] },
     { kind: "prose", heading: "If Muse is not available", paragraphs: ["Meta launched Muse first in the United States on iOS, Android and the web. Availability and plans can vary as the rollout continues.", "Use the official Muse site or waitlist for your account. Do not pay a stranger for an invite code or try to bypass a regional rollout."], keyLine: "A missing access button is an availability issue, not a reason to hand account details to someone else." },
   ],
-  tryNow: { heading: "Test Muse without giving it an account", introduction: "Use one public comparison that must stop before any login, contact, booking or payment.", prompt: `You are helping me test whether a browser agent can research a simple task and respect a strict stop point.
+  tryNow: { heading: "Test Muse without giving it an account", introduction: "Use one public comparison that must stop before any login, contact, booking or payment.", prompt: `Help me compare meeting rooms using public pages only. I want a shortlist, not a booking.
 
 GOAL
-Find 3 publicly listed meeting rooms near King’s Cross for 4 people on Tuesday 6 October 2026 from 2–4 pm. Produce a comparison only. I am not asking you to make a booking or contact a venue.
+First ask me for the city or station, date, two-hour time window, number of people and maximum budget. Wait for my answers. Then find 3 publicly listed meeting rooms that fit those details. If no rooms fit, tell me which requirement blocks the search. Do not silently change my requirements.
 
 USE
 - Public venue pages.
@@ -126,10 +126,10 @@ USE
 FOR EACH OPTION, RETURN
 1. Venue and room name.
 2. Full address.
-3. Public price for the requested 2-hour period, including the currency and whether tax is included. If the exact price is not public, write “Price needs checking”.
+3. Public price for my requested period, including the currency and whether tax is included. If the exact price is not public, write “Price needs checking”.
 4. Whether Wi-Fi is included, with the wording from the source.
 5. The cancellation policy. If it is not public, write “Cancellation policy needs checking”.
-6. Walking distance from King’s Cross station.
+6. Walking distance from the station or place I named.
 7. A direct source link for the venue, price and cancellation claim.
 
 OUTPUT
