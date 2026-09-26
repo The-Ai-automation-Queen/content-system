@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // tools/include.mjs - the tiny include script.
 //
-// The three sites share one design system. This script is the only build step:
+// The published HTML surfaces share one design system. This script is the only build step:
 // it copies shared/assets and shared/partials into each site root, then stamps
 // each partial's markup into every page that declares a slot for it.
 //
@@ -27,7 +27,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SHARED = path.join(ROOT, 'shared');
 
-const SITE_ROOTS = ['site', 'main-site', 'ai-insider-brief/ai-insider-brief'];
+const SITE_ROOTS = ['main-site', 'ai-insider-brief/ai-insider-brief'];
 
 const check = process.argv.includes('--check');
 let changed = 0;

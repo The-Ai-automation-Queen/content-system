@@ -98,8 +98,6 @@ try {
 
 const pagesBySlug = new Map(guidePages.map((guide) => [guide.slug, guide]));
 const routeSource = read("next-app", "app", "guides", "[slug]", "page.tsx");
-const legacySource = read("next-app", "content", "legacy-guide-slugs.ts");
-const legacySlugs = new Set([...legacySource.matchAll(/^\s*"([a-z0-9-]+)",?$/gm)].map((match) => match[1]));
 const wordCount = (text) => text.trim().split(/\s+/).filter(Boolean).length;
 function instructions(guide) {
   return [
@@ -144,7 +142,6 @@ for (const { slug, lumailTag } of approved) {
     const stylePath = fromRoot("next-app", "components", "guides", `${item.component}.module.css`);
     if (!item.component || !fs.existsSync(componentPath)) problems.push("Interactive page component missing");
     if (!item.component || !fs.existsSync(stylePath)) problems.push("Page-specific design CSS missing");
-    if (legacySlugs.has(slug)) problems.push("Still present in legacy renderer allowlist");
     if (!routeSource.includes(`slug === "${slug}"`)) problems.push("Dedicated route branch missing");
     if (!routeSource.includes(`from "@/components/guides/${item.component}"`)) problems.push("Route does not import recorded component");
 

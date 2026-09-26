@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { approvedGuideSlugs } from "@/content/guides";
-import { GuideReadingPage } from "@/components/guides/guide-reading-page";
 import { InstagramDashboardPage } from "@/components/guides/instagram-dashboard-page";
 import { WhatIsAiPage } from "@/components/guides/what-is-ai-page";
 import { AiJargonPage } from "@/components/guides/ai-jargon-page";
@@ -39,10 +38,9 @@ import { ScreenRecordingPage } from "@/components/guides/screen-recording-page";
 import { MistralMultilingualPage } from "@/components/guides/mistral-multilingual-page";
 import { GuideAccessBoundary } from "@/components/guides/guide-access-boundary";
 import { getGuidePage, guidePages } from "@/content/guide-page";
-import { legacyGuideSlugs } from "@/content/legacy-guide-slugs";
 
 export function generateStaticParams() {
-  return guidePages.map((guide) => ({ slug: guide.slug }));
+  return approvedGuideSlugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -67,6 +65,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function GuideArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (!approvedGuideSlugs.includes(slug)) notFound();
   const guide = getGuidePage(slug);
   if (!guide) notFound();
   if (slug === "instagram-content-dashboard") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} variant="entry"><InstagramDashboardPage guide={guide} /></GuideAccessBoundary>;
@@ -104,6 +103,5 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "protect-a-long-deepseek-project") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Build a five-file recovery pack and test whether a new chat can continue the project. Enter your email to open the guide." variant="entry"><DeepseekRecoveryPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "test-deepseek-v4-document-work") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Compare DeepSeek and your current tool on two safe documents, with source checks and repair time. Enter your email to open the guide." variant="entry"><DeepseekDocumentPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "mistral-multilingual-research") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Search one question in two languages, then check each claim against its original source. Enter your email to open the guide." variant="entry"><MistralMultilingualPage guide={guide} /></GuideAccessBoundary>;
-  if (legacyGuideSlugs.has(slug)) return <GuideReadingPage guide={guide} />;
   throw new Error(`Guide ${slug} needs an approved interactive Next.js composition before it can be built.`);
 }

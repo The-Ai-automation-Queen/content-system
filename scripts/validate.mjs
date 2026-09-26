@@ -15,7 +15,7 @@ const guides = JSON.parse(readFileSync(join(ROOT, 'data/guides.json'), 'utf8')).
 const the99 = JSON.parse(readFileSync(join(ROOT, 'data/the99.json'), 'utf8'));
 const copy = JSON.parse(readFileSync(join(ROOT, 'data/copy.json'), 'utf8'));
 
-const PROPS = { guides: 'site', www: 'main-site', brief: 'ai-insider-brief/ai-insider-brief' };
+const PROPS = { www: 'main-site', brief: 'ai-insider-brief/ai-insider-brief' };
 const failures = {};      // check letter -> [messages]
 const todos = new Set();
 function fail(check, msg) { (failures[check] ||= []).push(msg); }
@@ -110,7 +110,7 @@ for (const p of all.filter(p => !p.stub)) {
 }
 
 /* E: internal links + srcs resolve */
-const hostRoot = { 'guides.shiftandlead.com': 'site', 'www.shiftandlead.com': 'main-site', 'brief.shiftandlead.com': PROPS.brief };
+const hostRoot = { 'www.shiftandlead.com': 'main-site', 'brief.shiftandlead.com': PROPS.brief };
 for (const p of all) {
   for (const m of p.html.matchAll(/(?:href|src)="([^"#?]+)[^"]*"/g)) {
     let u = m[1];

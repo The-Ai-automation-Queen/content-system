@@ -371,22 +371,8 @@ var GUIDES = {
   }
 };
 
-// The tool guides were renamed on 2026-07-28 when the cafe framing was
-// retired. Posts and DMs already in the wild still point at the old slugs, so
-// those keep resolving here. Do not remove these: every one is a live promise.
-var SLUG_ALIASES = {
-  'chez-claude': 'claude',
-  'chez-claude-preview': 'claude',
-  'chez-openai': 'chatgpt',
-  'chez-gemini': 'gemini',
-  'chez-copilot': 'copilot',
-  'chez-grok': 'grok',
-  'chez-mistral': 'mistral',
-  'chez-deepseek': 'deepseek',
-  'chez-kimi': 'kimi',
-  'chez-meta-ai': 'meta-ai',
-  'chez-manus': 'manus'
-};
+// Deprecated guide aliases now fall through to the current Next.js guide library.
+var SLUG_ALIASES = {};
 
 (function() {
   var params = new URLSearchParams(window.location.search);

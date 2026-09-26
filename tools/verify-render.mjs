@@ -1,4 +1,4 @@
-/* Render check for the three sites.
+/* Render check for the published HTML surfaces.
 
    verify.mjs reads the HTML. This one looks at the page.
 
@@ -26,7 +26,7 @@
    the gate that must always run. This is the extra pass, and it says so plainly
    when it cannot run.
 
-   Usage:  node tools/verify-render.mjs [--site=brief|guides|www] [--shots=DIR]
+   Usage:  node tools/verify-render.mjs [--site=brief|www] [--shots=DIR]
 */
 
 import { createServer } from 'node:http';
@@ -38,7 +38,6 @@ import { fileURLToPath } from 'node:url';
 const ROOT = resolve(fileURLToPath(new URL('..', import.meta.url)));
 
 const SITES = {
-  guides: { root: join(ROOT, 'site'), label: 'guides.shiftandlead.com' },
   www: { root: join(ROOT, 'main-site'), label: 'www.shiftandlead.com' },
   brief: { root: join(ROOT, 'ai-insider-brief', 'ai-insider-brief'), label: 'brief.shiftandlead.com' }
 };
