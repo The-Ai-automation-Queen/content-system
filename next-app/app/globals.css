@@ -567,3 +567,12 @@ button, input { font: inherit; }
 .site-footer { background:var(--ink); color:#fff; }
 .site-footer h2, .site-footer a, .site-footer__legal { color:#fff; }
 @media (prefers-reduced-motion:reduce) { .site-header *, .site-footer * { animation:none!important; transition:none!important; } }
+
+/* AI Automation Queen belongs to the guide collection; professional pages retain Shift & Lead. */
+.aq-guides__imprint { width:min(calc(100% - 48px),var(--shell)); display:flex; align-items:center; justify-content:space-between; gap:18px; margin:26px auto 0; border-top:1px solid var(--blue); border-bottom:1px solid var(--line); padding:16px 0; font:600 11px/1.35 var(--font-ui),sans-serif; letter-spacing:.09em; text-transform:uppercase; }
+.aq-guides__brand { color:var(--ink); font:700 clamp(18px,2.4vw,28px)/1 var(--font-ui),sans-serif; letter-spacing:-.045em; text-decoration:none; text-transform:none; }
+.aq-guides__brand span { color:var(--blue); }
+.aq-guides__brand .aq-guides__dot { color:var(--signal); }
+.aq-guides__brand:focus-visible { outline:3px solid var(--signal); outline-offset:4px; }
+.aq-guides__imprint > span { color:var(--blue); text-align:right; }
+@media(max-width:600px){.aq-guides__imprint { width:calc(100% - 32px); flex-wrap:wrap; gap:8px; margin-top:16px; padding:12px 0; }.aq-guides__imprint > span { width:100%; text-align:left; }}

@@ -34,13 +34,13 @@ export async function POST(request: Request) {
   const guide = details.get(slug);
   const base = process.env.VERCEL_ENV === "preview" && process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : origin;
   const guideUrl = `${base}/guides/${slug}/`;
-  const title = guide?.title || "your Shift & Lead guide";
+  const title = guide?.title || "your AI Automation Queen guide";
   const summary = guide?.summary || "A practical guide to help you take the next step.";
   try {
     // A requested return link is transactional; it does not require marketing subscription.
     const sent = await fetch(`${endpoint}/api/v2/emails`, { method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" }, body: JSON.stringify({
       from: "fatiha@email.shiftandlead.com", to: email, subject: `Your guide: ${title}`,
-      markdown: `Hi ${firstName || "there"},\n\nHere is the guide you asked for.\n\n**${title}**\n${summary}\n\n[Return to your guide](${guideUrl})\n\nYou can also explore the [35 free guides](${base}/guides/). Keep this link for another device.\n\nFatiha · Shift & Lead`,
+      markdown: `Hi ${firstName || "there"},\n\nHere is the AI Automation Queen guide you requested.\n\n**${title}**\n${summary}\n\n[Return to your guide](${guideUrl})\n\nYou can also explore the [35 free guides](${base}/guides/). Keep this link for another device.\n\nAI Automation Queen`,
     }) });
     if (!sent.ok) { console.error("Guide email failed", { status: sent.status, slug }); return Response.json({ error: "We could not send your guide. Please try again." }, { status: 502, headers }); }
     let marketingEnrolled = false;

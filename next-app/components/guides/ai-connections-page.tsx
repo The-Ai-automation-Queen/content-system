@@ -49,7 +49,7 @@ export function AiConnectionsPage({ guide }: { guide: GuidePage }) {
       <Link className={styles.back} href="/guides/">← All guides</Link>
       <header className={styles.hero}>
         <h1>Should AI connect to <span>your accounts?</span></h1>
-        <p>Start with the access your task actually needs. Check the permission before connecting and know how to turn it off.</p>
+        <p>Choose access for one specific task. Review the permission before connecting, and know where you will disconnect it.</p>
         <figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure>
       </header>
 
@@ -57,7 +57,7 @@ export function AiConnectionsPage({ guide }: { guide: GuidePage }) {
         <div className={styles.sectionHead}><span>Choose the access</span><h2 id="connection-choice-title">What does the job need?</h2></div>
         <div className={styles.levels}>{levels.items.map((item, index) => <button key={item.title} type="button" aria-pressed={access === index} onClick={() => setAccess(index)}><span>0{index + 1}</span><strong>{item.title}</strong></button>)}</div>
         <p className={styles.choiceResult} aria-live="polite"><Text value={levels.items[access].body} /></p>
-        <p className={styles.hint}>If one file is enough, you do not need an account connection.</p>
+        <p className={styles.hint}>If one file can answer the question, use that instead of connecting an account.</p>
       </section>
 
       <section className={styles.activity} aria-labelledby="connection-off-title">
@@ -71,7 +71,7 @@ export function AiConnectionsPage({ guide }: { guide: GuidePage }) {
           <a href="https://help.openai.com/en/articles/20001495-managing-app-permissions-in-chatgpt" target="_blank" rel="noopener noreferrer">See OpenAI’s permission options ↗</a>
         </div>}
         {product === 3 && <p className={styles.workNote}><strong>Using Copilot at work?</strong> Microsoft 365 data follows your organisation’s permissions. The personal connector switch above does not replace those controls. <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy" target="_blank" rel="noopener noreferrer">See Microsoft’s work-account explanation ↗</a></p>}
-        <p className={styles.hint}>Turning a connector off for one chat may leave the account connected. Check the account connection and saved activity separately.</p>
+        <p className={styles.hint}>A conversation switch can be separate from an account connection. Check both the connection and saved activity.</p>
       </section>
 
       <section className={styles.activity} aria-labelledby="connection-permission-title">

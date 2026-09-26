@@ -40,7 +40,7 @@ export function PromptBuilderPage({ guide }: { guide: GuidePage }) {
   return <main className={styles.page}>
     <div className={styles.shell}>
       <Link className={styles.back} href="/guides/">← All guides</Link>
-      <header className={styles.hero}><h1>What should you actually <span>type into AI?</span></h1><p>See a complete example first. Then change four parts to make a prompt for your own task.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
+      <header className={styles.hero}><h1>What should you actually <span>type into AI?</span></h1><p>Start with a fictional work note. Then change four parts to create an instruction you can check before you use the answer.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
       <section className={styles.learning} aria-labelledby="prompt-learning-title">
         <div className={styles.sectionHead}><span>One practical prompt</span><h2 id="prompt-learning-title">From rough note to useful answer</h2></div>
         <nav className={styles.stageNav} aria-label="Prompt guide stages">{stages.map((label, index) => <button type="button" key={label} aria-current={stage === index ? "step" : undefined} onClick={() => setStage(index)}><span>{index + 1}</span>{label}</button>)}</nav>
@@ -55,7 +55,7 @@ export function PromptBuilderPage({ guide }: { guide: GuidePage }) {
         </div>}
 
         {stage === 1 && <div className={styles.stage}>
-          <h3>Change the parts that make this yours</h3><p className={styles.stageIntro}>The example is already filled in. Replace it with a task from your work, leaving out private details. Check that all four parts still agree.</p>
+          <h3>Change the parts that make this yours</h3><p className={styles.stageIntro}>The example is already filled in. Replace it with a task you are allowed to share, leaving out private details. Before copying, check that the job, source material, result and checks agree.</p>
           <div className={styles.fields}>{fields.map(field => <label key={field.key}><strong>{field.label}</strong><span>{field.hint}</span><textarea value={brief[field.key]} rows={field.rows} onChange={event => setBrief(current => ({ ...current, [field.key]: event.target.value }))} /></label>)}</div>
           <div className={styles.builderActions}><button type="button" onClick={() => setBrief(promptExample)}>Restore example</button><button className={styles.next} type="button" onClick={() => setStage(2)}>Use this prompt →</button></div>
         </div>}

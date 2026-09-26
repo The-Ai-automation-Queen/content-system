@@ -1,0 +1,2009 @@
+{
+  "what-is-ai": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The four Sort, Predict, Suggest and Draft cards, because they show distinct AI outputs while preserving the reader's judgment.",
+      "The worked example asking for supporting sentences, because it gives a beginner a bounded task whose answer can be traced to the source.",
+      "The copyable prompt's approved-material, no-access, uncertainty and final-decision instructions, because they establish practical privacy and verification boundaries.",
+      "The three review checks and closing questions, because they make source checking and human review a repeatable routine."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Could AI help with your work this week? Pick what you need, try one small task and judge the result for yourself.",
+        "value": "Could AI help with one task on your plate this week? Choose a small task, test a short approved sample and decide whether the result deserves a larger trial.",
+        "reason": "Makes the opening promise a concrete, bounded work test and signals that expansion must be earned."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**AI is software that works with information and gives you a result.** It might sort a message, suggest an option or draft something for you.",
+        "value": "**AI is software that turns information into a result you can inspect.** It can sort a message, suggest an option or draft a starting point for you.",
+        "reason": "Connects the definition directly to the reader's responsibility to inspect an output before relying on it."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Pick one to see the kind of result AI could give you.",
+        "value": "Choose the kind of work you want to make easier. You will see the kind of output to check before you act on it.",
+        "reason": "Frames the existing selectable cards as a work decision and makes the check explicit without changing their interaction."
+      },
+      {
+        "path": "sections[1].nodes[2].body",
+        "old": "Compare the result with your original before using it.",
+        "value": "Compare the result with the exact material you gave it before you use or share it.",
+        "reason": "Gives the custom renderer's step a more precise and practical verification boundary."
+      },
+      {
+        "path": "tryNow.heading",
+        "old": "Try it on a task from this week",
+        "value": "Test one small task from this week",
+        "reason": "Reinforces that the exercise is a limited trial, not an instruction to hand over a full task."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "Check the answer against your sample. If it saved time and the details match, you can try it on more approved material. **You decide what to use.**",
+        "value": "Check each point against your sample. If a detail is missing or unsupported, do not use it as written. If the details match and it saved time, test a slightly larger approved sample. **You decide what to use.**",
+        "reason": "Adds a clear stopping condition and a narrower next decision while retaining the reader's authority."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "If it saves time and passes your checks, try it on a larger approved task.",
+        "value": "If it saves time and passes your checks, move carefully to a larger approved task. If it does not, keep the task human-led and try a different small test.",
+        "reason": "Completes the guide with both a cautious scale-up path and a usable fallback."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Turn one public paragraph into a checkable first draft",
+      "lead": "Before asking AI to help with reports, emails or plans, use a short paragraph from a public article you are already reading. Ask for three key points and the sentence supporting each point, so the response stays tied to material you can see.",
+      "practice": "Practice example, fictional: use this made-up sample: \"Northside Library will close at 3 p.m. Friday for staff training and reopen at 9 a.m. Saturday.\" Ask AI for the change, the time and the exact supporting text.",
+      "check": "Pass if each point points to words in the sample and nothing new appears. If any detail cannot be traced back, cross it out and keep the task at a small sample."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new opening frames AI as a small, checkable work trial with a clear decision point. It leaves the existing interactive cards, source comparison exercise and privacy boundaries intact."
+  },
+  "ai-jargon-guide": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The three-question framework in sections[0] gives beginners a durable way to sort unfamiliar AI claims into model, answer-shaping inputs, and access or action.",
+      "The 12 term cards keep short, concrete examples and retain important boundaries around hallucinations, permissions, private information, and human review.",
+      "The existing ChatGPT memory exercise, its bounded prompt, copy control, and settings comparison remain intact because they turn an abstract term into an inspectable account check.",
+      "The step-by-step prompt setup stays in place for readers who have not used an AI chat tool before, including its public or non-confidential text boundary."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "AI conversations get confusing because the same words keep appearing with no explanation. Learn these 12 and you will understand what a tool is, what shapes its answers and what it may be able to do with your information.",
+        "value": "Before you try an AI tool for a work task or approve a connection, learn 12 words that help you identify what produces an answer, what shapes it, and what information or actions the tool may access.",
+        "reason": "Moves the promise from vocabulary recall to the real decision a beginner faces before using a tool at work."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "You do not need to memorise every technical term. Start with the words that tell you **what is behind the tool**, **what shapes its answer** and **what it may be able to access or do**.",
+        "value": "You do not need to memorise every technical term. When someone asks you to try an AI tool for a work task, start with the words that reveal **what is behind the tool**, **what shapes its answer** and **what it may be able to access or do**.",
+        "reason": "Keeps the useful three-part teaching device while giving the reader a concrete moment in which to use it."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Use these 3 questions whenever a new term appears.",
+        "value": "Use these 3 questions in a product demo, a work-tool trial or before you connect an account.",
+        "reason": "Shows exactly where the framework supports a practical, safer decision without changing the card interaction."
+      },
+      {
+        "path": "tryNow.introduction",
+        "old": "Use your own ChatGPT account. You do not need to upload a file or connect another app.",
+        "value": "Use your own ChatGPT account for a quick account-level privacy check. You do not need to upload a file or connect another app.",
+        "reason": "States the practical result of the existing exercise while preserving its scope and access boundaries."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "Compare the reply with **Memory or Personalization in ChatGPT settings**. Correct or remove outdated details there; the chat reply may be incomplete.",
+        "value": "Pass if you can identify any detail that needs correcting or removing, then confirm it in **Memory or Personalization in ChatGPT settings** rather than relying on the chat reply. If the reply cannot verify saved memories, go straight to settings.",
+        "reason": "Adds a clear pass condition and fallback while retaining the existing settings comparison and the warning that the chat reply is not definitive."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "That is enough to follow the conversation without letting impressive vocabulary make the decision for you.",
+        "value": "That is enough to ask a useful next question before a work task, connection or permission turns impressive vocabulary into a decision for you.",
+        "reason": "Ends with the reader action the guide now prepares them to take, rather than a general confidence claim."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Use three labels before you trial a work AI tool",
+      "lead": "Before you connect an AI tool to a work account, make a tiny inventory: what produces the answer, what information shapes it, and what the tool can do. The ChatGPT memory exercise in this guide applies the same habit to your own account by comparing a chat reply with the controls you can inspect.",
+      "practice": "Practice, not a real case: you are reviewing a fictional meeting-notes assistant. Write three lines: “Model: not yet confirmed”; “Context: a meeting note pasted into chat”; “Permissions: asks to read calendar only”. Then ask which line changes if the assistant can create or send something.",
+      "check": "Pass if you can say whether the tool only drafts a response or can also read, create, change or send information. If you cannot, pause the connection and ask to see the permission screen or supporting documentation before adding a work account."
+    },
+    "fact_notes": [
+      "ChatGPT memory and personalization setting labels, account availability, and what a chat can report about saved memories are time-sensitive OpenAI product behaviors that need current official verification before publication."
+    ],
+    "editorial_note": "The new opening gives readers a small, decision-ready inventory for a work-tool trial or account connection. It sharpens the purpose of the existing interactive exercise without replacing its prompt, copy control, or settings check."
+  },
+  "what-is-agentic": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The three-way chat, automation and agent comparison, including the selectable route exercise, because it helps a beginner choose the simplest option for a real task.",
+      "The tools and permissions cards, because they make access and permitted actions concrete rather than treating an agent as a black box.",
+      "The prepare, propose, act progression and the approval guidance, because they give readers a usable low-risk control model.",
+      "The existing decision prompt, its five-question limit and its requested approval, stopping and reversible-test checks, because they preserve the guide's practical interactive exercise."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "AI agents do more than give you an answer. They can work through a task, use connected tools and take actions on your behalf.",
+        "value": "Give an AI agent one bounded job. Learn how it can work through the task, what access it needs and where your approval belongs.",
+        "reason": "Frames the guide around a safe, specific work outcome before introducing capability."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "An AI agent is a system configured to carry out a task on your behalf. Instead of stopping after one reply, it can use an AI model to manage several steps and select from the tools and actions it has been given.",
+        "value": "An AI agent is a system set up to carry out a defined task on your behalf. Rather than stop after one response, it can work through several steps and choose from the tools and actions you have permitted.",
+        "reason": "Keeps the definition accurate while foregrounding a defined task and the reader's permission boundary."
+      },
+      {
+        "path": "sections[2].items[2].body",
+        "old": "The agent completes an action without asking every time. Use this only after you have tested it and confirmed how to **stop or reverse the action**.",
+        "value": "The agent completes an action without asking every time. Try this only after you have tested the task, confirmed how to **stop or reverse it**, and decided which exceptions still need approval.",
+        "reason": "Strengthens the final control level with an explicit exception decision while preserving its gated-action meaning."
+      },
+      {
+        "path": "sections[3].introduction",
+        "old": "For most first uses, preparing or proposing is enough. Keep human approval where an action affects money, customers, access, privacy, rights or reputation.",
+        "value": "For a first work task, preparing or proposing is usually enough. Keep human approval wherever an action could affect money, customers, access, privacy, rights or reputation.",
+        "reason": "Makes the recommendation feel more directly applicable to a beginner's first workplace task without weakening the safety boundary."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "Check that the answer gives you **the simplest option**, **minimum access**, **a real approval point**, **a stopping condition** and **a reversible first test**. If any of those are missing, you are not ready to connect an agent.",
+        "value": "Pass only if the answer gives you **the simplest option**, **minimum access**, **a real approval point**, **a stopping condition** and **a reversible first test**. If one is missing, keep the task in chat or preparation mode.",
+        "reason": "Turns the existing safety checklist into a clear pass or fallback decision after the interactive prompt."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Move forward only when you can see what the agent did and correct it safely.",
+        "value": "Move forward only when you can inspect what the agent did, stop it and correct a mistake safely.",
+        "reason": "Adds a concrete stopping control to the final readiness standard."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Set a boundary before you connect a tool",
+      "lead": "Before you compare options, turn the request into a boundary. In this guide's fictional example of comparing three public pricing pages, the agent's job ends with a shortlist and any missing details. It does not sign up, contact a vendor or spend money.",
+      "practice": "Practice, fictional example: write, 'Compare the plans on these three public pricing pages. Return a shortlist with source links and flag missing details. Do not create accounts, contact vendors or make purchases.' The desired output is a list you can check, not a buying decision.",
+      "check": "Pass if your request names the sources, the output and the actions the agent must not take. If any one is unclear, use chat or preparation mode until you can state it."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new opening gives the reader a bounded work-task lens and a small decision they can make before connecting anything. It complements rather than replaces the existing route selector and copyable diagnosis prompt."
+  },
+  "what-should-you-never-share-with-ai": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "Keep the three-way sorting exercise, Never paste, Ask first and Safer to test, because it turns a broad privacy concern into a decision the reader can make before a real task.",
+      "Keep the tool-by-tool accordion, its official links and the distinction between a privacy setting and permission, because the existing interaction lets readers check only the service they use.",
+      "Keep the structured Try it now prompt and its category-only constraint, because it creates a safe rehearsal without asking the reader to paste names, files or private details.",
+      "Keep the final three self-check questions, because they provide a memorable human-approval, access and privacy boundary before sharing information."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Know what must stay out, what needs permission and which privacy setting to change before you paste anything.",
+        "value": "Use one quick check before an AI work task: keep sensitive information out, get permission for other people’s information, and check the approved account setting.",
+        "reason": "Frames the guide around the immediate work decision while retaining the original three-part safety boundary."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "Do not put information into an AI tool if the wrong person seeing it could **give them access, identify someone, cost you money, harm someone or break a promise**.",
+        "value": "Before you put information into an AI tool, ask what happens if the wrong person sees it. Keep it out if it could unlock access, identify someone, cost money, harm a person or break a promise.",
+        "reason": "Gives a beginner a concrete question to use at the moment of pasting, then preserves the original risk test."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Most information fits into one of these three groups.",
+        "value": "Start with the exact information your task needs, not the whole file, email or meeting note. Place each item in one of these three groups.",
+        "reason": "Makes the sorting interaction usable for a specific work task and discourages unnecessary sharing."
+      },
+      {
+        "path": "sections[1].introduction",
+        "old": "Turning off training gives you more control. It does not make confidential information safe to share. Open only the tool you use.",
+        "value": "Check the approved tool and account after you sort the information. Turning off training gives you more control, but it never makes confidential information safe to share.",
+        "reason": "Puts tool settings in the correct order after information minimisation and reinforces that the setting is not permission."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "The answer is useful only if it **keeps real information out**, separates **permission** from **privacy settings** and gives you a safer way to test the task.",
+        "value": "Pass only if the answer keeps real information out, separates the permission decision from privacy settings, and gives you a fictional or redacted test input. If it asks for the real material, stop and use a safer example.",
+        "reason": "Adds a clear pass or stop decision to the existing interactive exercise without changing its prompt or copying behaviour."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "If any answer is unclear, remove the information or use an invented example.",
+        "value": "If one answer is unclear, stop. Remove the information, ask the right person or use an invented example.",
+        "reason": "Provides a more decisive fallback that preserves the original safe alternative and adds an approval route."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Run a safe first pass on one work task",
+      "lead": "AI Automation Queen’s safe-first move is to separate the task from the real material before you open a chat. If you want AI to summarise a fictional team meeting, it does not need the actual names, notes or attendee details to help you plan the task. Start with categories of information, then decide what stays out and what needs permission.",
+      "practice": "Practice, not a real case: enter “Help me plan a summary of a fictional project meeting with no names, files or customer details.” A useful response identifies what must stay out, who may need to approve information and a safer sample you can use.",
+      "check": "Pass if you can describe the task without real names, files or private details, and the response gives you a safer test input. Fail if the next step requires you to upload or paste the real material. Before you email or share anything, stop and ask for approval or use an invented example."
+    },
+    "fact_notes": [
+      "The existing tool-specific control names, navigation paths, account scopes, training statements, retention statement and feature-availability claims in sections[1].items[0] through sections[1].items[6] are time-sensitive and should be checked against the linked official vendor sources before publication. No new vendor claims are introduced."
+    ],
+    "editorial_note": "The new opening gives the reader a safe first move for the work task in front of them: minimise the information before they enter a chat. It retains the existing sorting, tool-setting and category-only prompt exercise rather than replacing those interactions."
+  },
+  "which-ai-tool-for-what": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The job-first card structure, including the Microsoft 365 and Google Workspace branches, stays because it gives beginners a quick, practical first filter.",
+      "The research distinction between visible web sources and reader-selected documents stays because it directs readers toward a verification habit rather than a generic tool ranking.",
+      "The two-tool, same-task comparison remains intact because it converts a shortlist into a decision a reader can judge.",
+      "The existing prompt's limits on questions, recommendations and information sharing stay because they keep the interactive exercise focused and privacy-aware.",
+      "The official-page check before connecting files or paying stays because plans, privacy terms and availability can change."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Stop choosing AI tools because everyone is talking about them. Choose based on what you need done, where your work lives and what information the tool is allowed to see.",
+        "value": "Choose an AI tool for the task you need to complete today. Start with the job, the apps where the work already lives, and what the tool is approved to see.",
+        "reason": "Replaces a broad warning with a concrete work moment while preserving the guide's job, workflow and access filters."
+      },
+      {
+        "path": "answer.paragraphs[1]",
+        "old": "Start with the job, the apps you already use and the information involved. Then test the smallest suitable option before you pay for another subscription.",
+        "value": "Begin with one familiar task, such as turning your own non-confidential meeting notes into a clear action list. Test the smallest suitable option before you add another subscription.",
+        "reason": "Gives the reader a bounded first task they can assess themselves without changing the subscription guidance."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Use the work you need to finish as your first filter.",
+        "value": "Name the finished result first: a draft, a source-checked answer, or help inside the apps you already use. Then use the cards to make a focused first choice.",
+        "reason": "Makes the existing job cards easier to use by asking for a concrete desired outcome before tool selection."
+      },
+      {
+        "path": "sections[3].steps[2].body",
+        "old": "Check which answer was more useful, needed fewer corrections, was easier to work with and fitted the apps you already use.",
+        "value": "Compare the outputs against the task: Which one is accurate enough to use, needs fewer corrections, fits your current apps and keeps you within your account rules?",
+        "reason": "Adds an explicit accuracy and approval check to the renderer's interactive comparison step without changing its two-tool test."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "Treat the answer as a shortlist, not a final decision. Open the official links and check the current plan, privacy terms and availability before connecting files or paying.",
+        "value": "Treat the answer as a shortlist, not a decision. Before you connect files or pay, confirm the current plan, privacy terms, availability and approval rules on the provider's official pages. If either option fails those checks, stop and choose a different approved tool.",
+        "reason": "Turns the existing caution into a clear pass or stop decision while retaining official-source verification."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Do not collect tools. Choose one, test it properly and keep it only if it makes the work easier to finish.",
+        "value": "Keep the tool that gives you a checkable result with fewer corrections, works in your approved setup and does not require sharing information you should protect.",
+        "reason": "Ends with specific selection criteria that reinforce the guide's privacy and workflow boundaries."
+      }
+    ],
+    "public_lesson": {
+      "heading": "The AI Automation Queen two-tool test",
+      "lead": "Before you ask an AI tool to recommend itself, run a tiny comparison you can judge without specialist knowledge. Practice, fictional example: give two approved chat tools the same three invented meeting notes and ask for an action list with an owner and next step.",
+      "practice": "Practice prompt: `Turn these fictional notes into three action items. For each, give an owner, a next step and one question that needs a human answer.` Use only invented or approved non-confidential material, and do not connect a file for this first comparison.",
+      "check": "Pass if the answer preserves all three notes, separates unknowns from assumptions and gives a usable action list. If it drops a note, invents a decision or needs too much repair, do not pay or connect data yet: test the other option or simplify the task."
+    },
+    "fact_notes": [
+      "Before publication, verify current plan, availability, privacy, integration and permission terms on official provider pages, especially the Microsoft 365 and Google Workspace integrations, Perplexity and Gemini Notebook source workflows, Grok's X-related access, Manus browser permissions, and Meta AI availability by surface and region."
+    ],
+    "editorial_note": "The new opening gives a reader a safe, tangible comparison before the interactive shortlist prompt. It preserves the existing job cards, copy prompt and two-tool exercise rather than replacing them."
+  },
+  "make-chatgpt-answers-shorter": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The fictional internal onboarding checklist scenario and its stated facts stay because they give beginners a bounded, realistic meeting task without presenting client evidence.",
+      "The 3-question, 2-decision and closing-sentence structure stays because it turns “short” into a countable output that the interactive comparison and prompt already reinforce.",
+      "The 90-word cap, no-invented-approval rule and checkbox review stay because they make the reader verify both brevity and factual restraint before using the answer.",
+      "The copy button, selectable comparison rows and four self-checks stay because they provide the guide’s useful interactive learning path."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Tell ChatGPT exactly what a short answer must contain, compare the result and keep the rule only if the answer becomes easier to use.",
+        "value": "Set a count, word cap and stopping point, then use the meeting example to see whether a shorter ChatGPT answer still supports the next decision.",
+        "reason": "Turns the promise into a concrete work outcome while retaining the guide’s test-and-keep decision."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**ChatGPT needs a visible limit.** “Be concise” is vague. Ask for a fixed number of items, a word limit and the parts it must leave out.",
+        "value": "**A short answer needs a measurable job.** Name the number of parts, the word cap and the point where ChatGPT should stop. Then check whether the remaining words help you prepare or decide.",
+        "reason": "Adds the reader’s practical test for whether brevity has preserved useful content."
+      },
+      {
+        "path": "sections[0].rows[1][1]",
+        "old": "Give me 3 questions, 2 decisions and one closing sentence.",
+        "value": "Give me 3 questions to resolve, 2 decisions to make, and one closing sentence if the decisions remain open.",
+        "reason": "Makes the selectable comparison example match the guide’s meeting task and keeps unresolved decisions explicit."
+      },
+      {
+        "path": "sections[1].items[3].body",
+        "old": "Delete scene-setting, repetition and offers you did not request.",
+        "value": "If you find scene-setting, repetition or an unrequested offer, rerun the request with the same limits. Keep any fact needed for a safe next step.",
+        "reason": "Replaces a vague removal instruction with a retry path and a boundary against cutting needed information."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "Count the parts and words. Check that the answer uses only the stated facts and does not invent a decision or deadline.",
+        "value": "Pass only if it has 3 questions, 2 decisions and one closing sentence, stays at 90 words or fewer, and uses no unstated approval, owner or deadline. If it fails, resend the prompt before sharing or acting on the answer.",
+        "reason": "Gives a complete pass/fail check and a clear fallback before the reader relies on the result."
+      },
+      {
+        "path": "tryNow.instructions[2].body",
+        "old": "Replace any bracketed details. Remove names, private messages, customer data, passwords and confidential work before you send it.",
+        "value": "Replace the fictional project facts with a low-risk task of your own. Remove names, private messages, customer data, passwords and confidential work before you send it.",
+        "reason": "Corrects the reference to bracketed details, which are not in this prompt, while preserving the privacy boundary."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Reuse the limit only when it leaves enough information for the next safe work step or makes clear what still needs agreement.",
+        "reason": "Ends with a sharper decision rule that values useful completeness as well as brevity."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Turn an open meeting into a 3-2-1 brief",
+      "lead": "Before a 20-minute project check-in, a long answer makes you sort out what is still missing. In the fictional onboarding checklist example, the useful output is three questions team leads can answer, two decisions that remain open, and a closing sentence that names the unresolved point. That limited shape also makes it easier to spot whether ChatGPT quietly invented an owner, approval or date.",
+      "practice": "Practice, fictional example: With “the onboarding checklist draft is ready, team leads have not reviewed it, and no publication date is agreed,” ask for 3 questions, 2 decisions and one closing sentence in 90 words or fewer. Tell ChatGPT to use no introduction and not invent an approval, owner or deadline.",
+      "check": "Pass only if you can count all six requested parts, stay within 90 words, and point to every statement in the three facts you supplied."
+    },
+    "fact_notes": [],
+    "editorial_note": "The revised opening gives the reader an immediate, bounded meeting-brief use case and a way to judge whether shortening helped. It leaves the existing copyable prompt, selectable comparisons and self-check exercise intact."
+  },
+  "stop-chatgpt-forgetting-context": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The fictional Service launch scenario and its four fixed facts, because they give the reader a bounded, safe context to test rather than an abstract explanation.",
+      "The three-part Create, Save, Test sequence, because it turns a context problem into a practical new-chat check.",
+      "The full Project instruction, including its conflict warning, human approval boundary, and Needs confirmation list, because it prevents the exercise from presenting suggestions as approved facts.",
+      "The copyable test message and explicit pass condition, because they let the reader verify the result before relying on it for real work.",
+      "The privacy reminder to remove names, customer data, passwords, and confidential work, because a useful practice exercise still needs a clear sharing boundary."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Give ongoing work a short Project brief. Then see if a new chat keeps the facts you need.",
+        "value": "Set up one short Project brief for continuing work. Then test a fresh chat to see whether it uses the facts that matter.",
+        "reason": "Makes the promised outcome observable and frames the new chat as a test, not a guarantee."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**ChatGPT can use past chats, but it does not keep every detail as a rule.** For work you return to, put the facts you need in a Project and check the next answer against them.",
+        "value": "**ChatGPT can use relevant context from past chats when that setting is available, but it does not retain every detail from every conversation.** For work you revisit, save the essential facts in a Project and test a fresh answer against them.",
+        "reason": "Explains the limitation precisely, acknowledges that memory settings vary, and gives the reader a concrete next action."
+      },
+      {
+        "path": "sections[0].steps[2].body",
+        "old": "Start a new chat **inside Service launch**. Paste the test request and compare the answer with the four facts below.",
+        "value": "Start a new chat **inside Service launch**. Paste the test request, then check the answer against the four facts before using the draft.",
+        "reason": "Adds the key decision point at the moment the reader performs the renderer's interactive test."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "The test passes if the audience and two service choices stay correct, the draft is not treated as approved, and no price or date is invented.",
+        "value": "Pass only if the audience and both service choices are correct, the wording remains a draft for human approval, and no price or launch date appears.",
+        "reason": "Sharpens the pass condition and names every consequential boundary the reader must inspect."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Use this method when a new-chat test keeps the confirmed facts intact. Update the brief whenever a decision changes.",
+        "reason": "Ends with a usable retention rule and makes upkeep of changing facts explicit."
+      }
+    ],
+    "public_lesson": {
+      "heading": "AI Automation Queen quick check: test a Project before you rely on it",
+      "lead": "When work continues across several chats, a remembered detail is not the same as a confirmed instruction. In the fictional Service launch exercise, the essentials are the audience, the two service choices, no approved price or launch date, and human approval of public wording.",
+      "practice": "Practice, fictional: Save those four facts in a Project called Service launch. In a new chat, request a two-sentence introduction and expect the right audience and choices, with no price, date, or claim that wording is final.",
+      "check": "Pass if the answer preserves all four constraints. If it changes or omits one, correct the brief and repeat the test before using the method for real work."
+    },
+    "fact_notes": [],
+    "editorial_note": "The revised opening explains the practical risk of relying on chat history and defines a visible new-chat test. The existing Project exercise, four facts, complete instruction, and copyable test remain the core learning experience."
+  },
+  "chatgpt-scheduled-tasks": {
+    "verdict": "retain-most",
+    "keep": [
+      "The public-page-only first exercise is retained because it gives a beginner a low-risk, inspectable starting point.",
+      "The bracketed prompt structure is retained because it makes the URL, alert condition and stop rule explicit while preserving the existing interactive builder.",
+      "The instruction to compare any alert with the public source is retained because it preserves human verification before action.",
+      "The privacy boundary excluding private dashboards, account numbers, health information and financial information is retained because it is concrete and appropriate for a first test."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Use a scheduled task for one public check with a clear trigger, a useful notification and a stop rule.",
+        "value": "Set up one public-page monitoring task with a specific trigger, a useful alert and a clear point to stop.",
+        "reason": "Makes the promised work result more direct while preserving the guide's bounded public-source scope."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Yes, when the repeated check has a specific condition.** “Check this every day” creates noise. “Tell me only when this named result changes” creates a decision.",
+        "value": "**Yes, if you give the repeated check a named condition and a stopping point.** A vague daily check produces noise. An alert tied to a visible change gives you something to review and decide.",
+        "reason": "Adds the missing stop boundary to the direct answer and connects an alert to a practical review decision."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Start with a public page you already trust.",
+        "value": "Choose one public page you could inspect yourself, then define exactly what would count as a change.",
+        "reason": "Turns the opening instruction into a viable first action and reinforces independent verification."
+      },
+      {
+        "path": "sections[0].steps[3].body",
+        "old": "Find the task in Scheduled and confirm its instruction and next run. Compare any later alert with the public source.",
+        "value": "In Scheduled, find the task and confirm its instruction, next run and time zone. When an alert arrives, compare it with the public source before you use it.",
+        "reason": "Strengthens the renderer's final setup step with a specific review item and a clear verification boundary before action."
+      },
+      {
+        "path": "sections[1].keyLine",
+        "old": "Pause or delete the task if it creates noise or cannot show the source it checked.",
+        "value": "Pause or delete the task if it sends repeated noise, or if you cannot check the source it used.",
+        "reason": "Makes the stop decision easier to apply in the reader's own work."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "You are done setting it up when the task appears in Scheduled with the right instruction and next run. Check any later alert against the public source.",
+        "value": "Your setup passes when the task appears in Scheduled with the correct instruction, time zone and next run. Treat any later alert as a prompt to check the linked public source, not as the source itself.",
+        "reason": "Provides a stronger pass check and distinguishes the alert from the evidence the reader should use."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Keep the task only if its alerts help you make a real decision and you can check each alert against its source.",
+        "reason": "Ends with a concrete retention test that combines usefulness with verification."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Turn a public status page into a decision-ready check",
+      "lead": "An alert is useful only when it changes what you will do next. For a first practice run, choose a public service-status page you could inspect yourself instead of asking ChatGPT to watch a private workspace.",
+      "practice": "Practice, fictional: suppose a made-up service page says \"All systems operational.\" Set the condition to notify you only if that status is no longer shown, and set the stop rule to 14 days. Desired output: one alert that states the current public status and links to the page.",
+      "check": "Before you leave the setup screen, pass only if the task shows the intended page, condition, stop rule, time zone and next run. If the condition would alert on routine wording changes, or the task has no stop rule, tighten it or keep the check manual."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new opening gives the reader a concrete definition of a useful monitoring task and a decision-ready standard for its alerts. It leaves the existing interactive public-page builder, prompt, safety guidance and step logic intact."
+  },
+  "claude": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The three task choices retain a low-risk starting point that maps to common work: meeting notes, document questions and email drafts.",
+      "Each complete instruction keeps useful safeguards: source-only answers, explicit unknowns, draft-only boundaries and no action in another app.",
+      "The selected-task correction exercise remains intact because it teaches a practical recovery method without asking the reader to redo a whole answer."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Not sure how Claude would help in your working day? Choose something already on your to-do list: sorting meeting notes, finding an answer in a document or drafting an email.",
+        "value": "Need to turn loose notes, a policy paragraph or rough points into something you can check before you use it? Pick one task you already need to finish today: sort meeting notes, find an answer in a document or draft an email.",
+        "reason": "Frames the guide around a concrete, checkable work result rather than learning the tool in the abstract."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Start with one small task, not a new system to learn.** Try a complete example below, then use the same instructions with your own material. No coding or connected apps needed.",
+        "value": "**Choose one bounded task and give Claude only the material it needs.** The exercises below ask for a draft or an answer, not action in another app. Use non-confidential practice material if you are trying this for the first time, then check each fact before you rely on it.",
+        "reason": "Keeps the simple starting point while making the action boundary, privacy choice and fact check explicit."
+      },
+      {
+        "path": "series.tasks[0].result",
+        "old": "Look for the invitation assigned to the programme lead for 8 October; the room-check deadline marked “Not agreed”; the launch date still unconfirmed.",
+        "value": "Pass if the reply separates the confirmed invitation deadline from the missing room deadline and the unconfirmed 22 October suggestion. If it calls the launch confirmed, use the correction step below.",
+        "reason": "Converts the meeting-note check into a clear pass or fix decision while retaining every fact in the fictional scenario."
+      },
+      {
+        "path": "series.tasks[1].result",
+        "old": "A recording isn’t confirmed. The source says “may be offered later, subject to speaker approval.”",
+        "value": "Pass if the reply says the recording is not confirmed and quotes “may be offered later, subject to speaker approval.” If it says a recording is included, correct that one line before using the answer.",
+        "reason": "Makes the desired evidence and the one-line fallback clear before the reader relies on the document answer."
+      },
+      {
+        "path": "series.tasks[2].result",
+        "old": "Could you confirm when the display stands will arrive? We need them by 10 October for our event on 12 October. Please let us know if there’s any risk of delay.",
+        "value": "Pass if the draft asks for confirmation instead of thanking the supplier for a confirmation they have not given. Check that it requests delivery by 10 October and flags the event date of 12 October.",
+        "reason": "Adds an easy verification check that prevents an invented delivery commitment from slipping into the email."
+      },
+      {
+        "path": "conclusion.paragraphs[0]",
+        "old": "Save the instruction if the result was useful. You can now repeat this task with new material.",
+        "value": "Save the instruction and the check that worked. When you repeat the task with new material, remove or anonymise confidential details and review the draft before you send or share anything.",
+        "reason": "Gives the reader a reusable close that preserves human review and a practical confidentiality boundary."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Turn a small set of notes into a checkable action list",
+      "lead": "You can leave a meeting with one confirmed deadline, one missing deadline and one suggestion that could be mistaken for a decision. Claude can structure those notes, but the useful result is the one that clearly separates what was agreed from what was merely suggested.",
+      "practice": "Practice, fictional notes: paste “Pilot agreed. Programme lead drafts invitation by 8 October. Room check has no deadline. A 22 October launch was suggested.” Ask for decisions, actions with owner and deadline, and open questions. Ask it to write “Not agreed” where the notes are silent.",
+      "check": "Pass only if the invitation deadline is 8 October, the room check has no invented deadline, and the 22 October launch is not labelled confirmed. If any one of those is wrong, use the correction instruction to fix that line before using the list."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new opening gives the reader a familiar work moment and a small result they can verify before acting. It preserves the existing task chooser, copyable instructions and correction exercise as the guide's core learning experience."
+  },
+  "claude-projects": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "series.instructions: Retained because the fixed headings, missing-information rule, and no-external-action boundary make the reusable format safe and testable.",
+      "series.exercise: Retained because the concise fictional notes deliberately distinguish an agreed action from an unresolved task and a suggestion.",
+      "Custom Step 4 checks: Retained because they require the reader to compare Claude’s draft with the source notes instead of trusting a fluent reply.",
+      "sourceNotes: Retained because they preserve the supporting Anthropic documentation and the stated audience-research context."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Meeting over, notes everywhere, and still no clear list of who does what? Save your instructions once so Claude can organise each meeting’s notes the same way.",
+        "value": "Turn fresh meeting notes into a reviewable follow-up: decisions, assigned actions and unresolved questions. Save the format in one Claude Project, then use it for each new meeting.",
+        "reason": "Names the concrete output and frames reuse as a way to make each follow-up easier to review."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**A Project keeps reusable instructions and reference material together.** You’ll still supply the details that change for each task.",
+        "value": "**A Project keeps reusable instructions and reference material together.** For each meeting, add only the new notes, then review the draft before relying on it.",
+        "reason": "Keeps the useful definition while adding a clear human-review boundary for real work."
+      },
+      {
+        "path": "conclusion.paragraphs[0]",
+        "old": "Keep the saved instructions if the second reply used the headings and action table you wanted without you typing them again. If it didn’t, adjust them and test again.",
+        "value": "Keep the saved instructions only after a second reply uses the headings and action table you want without repeating the format. If it misses a decision, treats a suggestion as agreed, or fills in a missing detail, adjust the instructions and test again.",
+        "reason": "Gives the reader concrete failure signals rather than a vague sense that the result was not right."
+      },
+      {
+        "path": "related[2].reason",
+        "old": "Test whether saved instructions work on a second task.",
+        "value": "Apply the saved workflow to a different repeatable task.",
+        "reason": "Makes the next-guide invitation more purposeful while preserving its original progression from one test to another task."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Turn one fictional meeting into a reviewable format",
+      "lead": "Meeting notes often mix decisions, tasks and ideas that were only discussed. A Claude Project is useful when you want the same reviewable format every time while the notes change. Start with a short set of notes you can compare against the reply.",
+      "practice": "Practice, fictional notes: “Sam will share the draft on Tuesday. We discussed adding a second review, but did not decide.” Ask for Decisions, Who does what and Questions to resolve. The desired result is one assigned action, no second review presented as a decision, and no missing facts filled in.",
+      "check": "Pass if the reply gives Sam’s task as an action, treats the second review as a suggestion, and marks any missing owner or date as “Not agreed.” If it does not, revise the saved instruction before using it on a real meeting."
+    },
+    "fact_notes": [
+      "Confirm the current Claude Projects interface and the exact labels “Set project instructions” and “Save instructions” before publication, as vendor interface wording can change."
+    ],
+    "editorial_note": "The new opening makes the reviewable output and verification boundary clear before the interactive steps. It leaves the existing fictional meeting exercise, copy prompts and checkbox check intact."
+  },
+  "gemini-cannot-find-drive-file": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The fictional \"Autumn launch brief demo\" and its three checkable details: they let readers test safely without exposing work content.",
+      "The five-check order of account, connection, request, source, and original file: it turns a vague failure into a bounded diagnosis.",
+      "The copyable demo text and Gemini request, expandable checks, and source comparison: the existing custom interactive exercise remains the core learning path.",
+      "The work or school administrator fallback and the file-type boundary for Drive pictures and videos: they direct readers to an appropriate next step instead of implying a workaround."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Check the account and connection first, then test one clearly named demo file before rewriting the request again.",
+        "value": "Use a fictional Drive document to identify the block, then verify Gemini’s answer before you rely on it for a real work task.",
+        "reason": "Sets a concrete, safe outcome and makes verification part of the promised result."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**The file is only one possible problem.** The blocker may be the Google account, the app connection, an administrator rule, the file type or the words used to find it.",
+        "value": "**Treat a missing file as an access check, not a prompt failure.** Use one fictional document to test the account, the Workspace connection, the request wording and the file type, then compare Gemini’s answer with the source before you rely on it.",
+        "reason": "Gives the reader a sharper mental model and a verification boundary before the exercise begins."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Create a Google document called **Autumn launch brief demo** with the decision, owner and review date shown below.",
+        "value": "Create a Google document called **Autumn launch brief demo** with the three fictional details shown below: the decision, owner and review date. You will use all three to check whether Gemini found the right source.",
+        "reason": "Explains why the invented details matter and makes the desired diagnosis measurable."
+      },
+      {
+        "path": "sections[0].steps[2].body",
+        "old": "Ask for the file by its exact, unique title and request the source.",
+        "value": "Ask for the demo file by its exact, unique title and request the source. Keep the request focused on one document so you can tell whether Gemini found the right file.",
+        "reason": "Turns the request step into a controlled test while preserving the existing request and source-check logic."
+      },
+      {
+        "path": "sections[0].steps[3].body",
+        "old": "Open the source Gemini lists and check that it is the demo file.",
+        "value": "Open the source list Gemini shows and confirm it is the demo file. Then compare the decision, owner and review date with the document.",
+        "reason": "Makes the verification action specific and connects it to the three known facts in the safe demo."
+      },
+      {
+        "path": "sections[1].paragraphs[0]",
+        "old": "Check Gemini’s Connected Apps and Keep Activity first. If Google Workspace appears but will not connect, check Gmail’s Smart features in other Google products setting. With a work or school account, ask your administrator if connected apps are enabled.",
+        "value": "If @Google Drive is missing, check Gemini’s Connected Apps settings and confirm Keep Activity is on. If Google Workspace appears but will not connect, check Gmail’s Smart features in other Google products setting; with a work or school account, ask your administrator whether connected apps are enabled.",
+        "reason": "Adds a clear trigger for the fallback and keeps the verified configuration and administrator routes in a usable order."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Use the result to choose your next step: resolve access or configuration, narrow the request, or check the original file type. Do not treat an unverified answer as evidence about the file.",
+        "reason": "Ends with a decision and a clear boundary against acting on an unchecked response."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Diagnose Drive access before you use a live work file",
+      "lead": "Looking for a Drive file is not yet a reason to expose the actual brief. Start with the fictional “Autumn launch brief demo” and a result you can check: the blue cover decision, Sam as owner, and 18 October as review date. This is practice content, not evidence about a real launch.",
+      "practice": "Practice only: create the demo document with the supplied text under the same account you use for Gemini. In a new Gemini chat, select @Google Drive and ask for the exact title, then request the source.",
+      "check": "Pass: the sources identify the demo document and the three returned details match the opened document. Fail: if the demo cannot be found or any detail differs, stop before you email anyone or use the answer for work, then return to the relevant account, connection, request, or source check."
+    },
+    "fact_notes": [],
+    "editorial_note": "The revised opening frames the lesson as a safe, testable diagnosis for a real work need. It keeps the copyable demo, five-check order, and source-comparison exercise as the core learning path."
+  },
+  "gemini-google-tasks-limits": {
+    "verdict": "retain-most",
+    "keep": [
+      "The bounded Demo project North and Demo project South exercise stays because it lets readers test project separation without exposing real work data.",
+      "The prompt continues to request the exact title, list, and due date, and keeps its no-guessing instruction, so the test produces a checkable result.",
+      "The three-row comparison and checkbox interaction remain because readers can verify each fictional task against Google Tasks before deciding how to use Gemini.",
+      "The fallback to organise lists directly in Google Tasks and the instruction to delete the demo data remain because both set a clear safety boundary."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Test whether Gemini can preserve the list that separates your projects before you rely on it to organise real tasks.",
+        "value": "Use three fictional tasks to check whether Gemini shows the project list for each one before you use it to retrieve work tasks.",
+        "reason": "Names the small, safe test and the specific decision it supports for a working reader."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Gemini may find a task without exposing every detail you use to organise it.** Test the list name directly with harmless tasks before you depend on it for project separation.",
+        "value": "**A task title alone is not enough for project organisation.** Before you use Gemini to look up work tasks, check whether it returns the correct Google Tasks list for each fictional test task.",
+        "reason": "Gives the reader a clear diagnostic and an immediate bounded action without adding an unverified product claim."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Create 2 temporary lists in Google Tasks.",
+        "value": "Create two temporary Google Tasks lists so you can test a clear project boundary without using real work.",
+        "reason": "Explains why the setup is deliberately fictional, making the first action safer and more purposeful."
+      },
+      {
+        "path": "tryNow.prompt",
+        "old": "Show my 3 open tasks whose titles contain the word “demo”.\n\nFor each task, give me:\n- the exact task title;\n- its Google Tasks list;\n- its due date, or “No due date”.\n\nDo not guess a list name. If the list is unavailable, say “List not available”.",
+        "value": "Show my 3 open tasks whose titles contain the word “demo”.\n\nFor each task, give me:\n- the exact task title;\n- its Google Tasks list;\n- its due date, or “No due date”.\n\nKeep the result to those 3 tasks. Do not guess a list name. If the list is unavailable, say “List not available”.",
+        "reason": "Keeps the existing test logic while adding a simple scope limit to make the returned rows easier to compare in the interactive exercise."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "You are done when you know whether Gemini can show the project list your work depends on. Delete the demo tasks and lists afterwards.",
+        "value": "You are done when you can make a clear choice: use Gemini for task retrieval only if it shows the project list you rely on. Otherwise, organise projects directly in Google Tasks. Delete the demo tasks and lists afterwards.",
+        "reason": "Turns the observation into a practical pass or fallback decision while retaining the cleanup step."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Use Gemini for this task only after the checked demo result shows the same project lists you need for your work.",
+        "reason": "Connects the finish directly to the list-matching evidence the reader just checked."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Check the project list before you trust the task result",
+      "lead": "A task title can look correct while still being unhelpful for project work if its list is absent or wrong. The fictional North and South lists give you a low-risk way to test the detail that separates one project from another. Do the check before you use Gemini to retrieve real work tasks.",
+      "practice": "Practice only, using the fictional demo: ask Gemini for “Review demo budget” and its Google Tasks list. The desired practice result pairs that exact title with “Demo project North”, rather than a guessed project name.",
+      "check": "Pass only if all three demo titles match their lists in Google Tasks. If any list is missing or a task is wrong, keep project organisation in Google Tasks and do not use Gemini for that decision."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new opening gives readers a specific reason to test list names and a clear decision to make from the result. It leaves the existing three-task interactive exercise, comparison checkboxes, fallback, and cleanup intact."
+  },
+  "check-copilot-excel-edits": {
+    "verdict": "retain-most",
+    "keep": [
+      "The fictional Pens, Notebooks and Folders practice sheet remains because it gives the reader a bounded before-and-after test with known formulas and expected totals.",
+      "The one-cell prompt, untouched original, and explicit checks for B3, D3, D2 and D4 remain because they turn a vague trust question into a visible workbook comparison.",
+      "The existing privacy reminder and the instruction not to claim an edit when it cannot be made remain because they set useful safety and honesty boundaries."
+    ],
+    "edits": [
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Copilot can edit a workbook, but you still need to prove what changed.** Keep an untouched copy and ask for one exact edit at a time.",
+        "value": "**Before you use a Copilot edit in a real workbook, make one change in a working copy and compare it with the untouched original.** This practice sheet shows what should change, what should recalculate and what must stay still.",
+        "reason": "Gives the reader a concrete work decision and previews the three-part check without replacing the exercise."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Save one untouched original and one working copy.",
+        "value": "Use this fictional mini-inventory first. Save an untouched original, then work only in a copy so you have a clear before-and-after comparison.",
+        "reason": "Labels the example as practice and explains why two copies make the check reliable."
+      },
+      {
+        "path": "sections[1].introduction",
+        "old": "Review the working copy before accepting the result.",
+        "value": "Before you keep the edit, compare B3, D3 and the two rows that should be untouched with the original.",
+        "reason": "Names the precise cells and rows the reader must inspect, making the review actionable."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "You are done when only the requested cell changed, the formula still works and all three totals are correct.",
+        "value": "Pass only if B3 alone changed from 5 to 6, D3 still contains =B3*C3 and displays 36, and D2 and D4 still display 20 and 24. Otherwise, stop and compare the working copy with the original.",
+        "reason": "Replaces a general completion statement with a pass-or-stop condition the reader can verify before using the workbook."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Use this routine on a copy first, then keep a Copilot edit only when the requested change, formulas and untouched cells all match your check.",
+        "reason": "Ends with a reusable, specific decision rule for real workbooks."
+      },
+      {
+        "path": "related[0].reason",
+        "old": "Check when a spreadsheet task belongs in Copilot.",
+        "value": "Decide whether a spreadsheet task belongs in Copilot before you open a working copy.",
+        "reason": "Makes the related next step more concrete while improving reader-facing copy rendered by the custom page."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Check one Excel edit before it reaches your real workbook",
+      "lead": "A single changed number can be correct while the surrounding sheet is not. In this fictional mini-inventory, changing Notebooks units from 5 to 6 should leave the formula in D3 intact, change its displayed total from 30 to 36, and leave Pens and Folders alone.",
+      "practice": "Practice, not a real client workbook: copy the four-row sheet into a new file, save an untouched original, and ask for only B3 to change from 5 to 6. Your desired output is one edited input cell and a recalculated D3, not a rewritten sheet.",
+      "check": "Pass if B3 is 6, D3 still reads =B3*C3 and displays 36, and D2 and D4 remain 20 and 24. If any other value, label or formula changed, do not use that working copy until you compare it with the original."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new opening gives the reader a concrete before-and-after decision before the existing interactive Excel exercise begins. It preserves the guide's bounded fictional workbook, exact prompt and checkbox-based verification."
+  },
+  "meta-ai": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "Keep the product-name cards because they distinguish Muse, Meta AI, Muse Spark, creative models and Meta One before a reader decides what access to grant.",
+      "Keep the public-only King’s Cross room-comparison exercise, its hard stop rules, required source links and completion check. It gives a practical, bounded first test without an account connection.",
+      "Keep the read, send or act, approval, audit-trail, memory and training guidance because it makes the permission decision concrete rather than abstract.",
+      "Keep the custom product tabs, prompt-copy control and three-item verification checklist. They turn the guide into an interactive review, not a passive definition page."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Muse can browse, fill forms and continue a task after you close the app. Start with a public comparison that cannot send, book, buy or change anything.",
+        "value": "Use Muse to compare three public meeting-room options without giving it an account. Then decide whether its sources and stop point are reliable enough for a work task.",
+        "reason": "Turns the opening promise into a concrete workplace outcome while preserving the public-only, no-action boundary."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Use Muse when a task needs several browser steps and you can set a clear stop point.** It is a personal agent, which means it can take actions rather than only answer a question.",
+        "value": "**For a work task, start with one public research job that has a clear stop point.** Muse is a personal agent: it can take actions as well as answer questions, so your first result should let you verify its sources and boundaries before it touches a work account.",
+        "reason": "Adds a usable decision rule and connects the definition to the reader’s first safe workplace test."
+      },
+      {
+        "path": "sections[1].introduction",
+        "old": "Meta says Muse runs work inside a dedicated virtual computer and uses a separate safety system for outbound actions. Your permissions still matter.",
+        "value": "Meta says Muse runs work inside a dedicated virtual computer and uses a separate safety system for outbound actions. Before you connect anything, decide what access the task needs and the exact point where Muse must ask you.",
+        "reason": "Retains the vendor fact while translating it into a pre-connection action the reader can take."
+      },
+      {
+        "path": "tryNow.introduction",
+        "old": "Use one public comparison that must stop before any login, contact, booking or payment.",
+        "value": "Treat this as a practice run: use one public comparison that must stop before any login, contact, booking or payment.",
+        "reason": "Frames the existing exercise as a low-risk rehearsal before a real work task."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "The test passes only when all three options trace to public sources and Muse stops after the comparison.",
+        "value": "The test passes only if all three options trace to public sources, missing facts are marked and Muse stops after the comparison.",
+        "reason": "Makes the pass condition more diagnostic by requiring honest treatment of missing information."
+      },
+      {
+        "path": "conclusion.paragraphs[0]",
+        "old": "Use Muse for a larger task only after it completes the public test, respects the stop point and gives you an audit trail you can understand.",
+        "value": "A good first result is not just a neat comparison. Use Muse for a larger work task only after it completes the public test, respects the stop point and gives you an audit trail you can understand.",
+        "reason": "Clarifies that presentation quality is not evidence of safe, dependable task execution."
+      },
+      {
+        "path": "related[0].reason",
+        "old": "Try another public-only comparison before granting more access.",
+        "value": "Run another public-only comparison before you grant an agent access to a work account.",
+        "reason": "Strengthens the next-step boundary in a field rendered by the custom interactive page."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Set the boundary before you set the task",
+      "lead": "Before Muse sees a work inbox or calendar, define the evidence you need, the action it must not take and the format you will inspect. The guide’s fictional King’s Cross room comparison works because it asks for public facts, direct source links and no contact or booking. That same structure gives you a small, reviewable first result instead of a vague trial.",
+      "practice": "Practice, fictional: write three lines before opening Muse. Goal: compare three public meeting rooms for a fictional four-person planning session. Do not: log in, contact, hold or book. Return: a table with source links and missing facts marked. This creates a bounded request and an output you can inspect without exposing workplace data.",
+      "check": "Before connecting email, pass only if all three options have public source links and the action trail shows no login, form, contact or booking. If one item fails, keep the next trial public and correct the instruction instead of granting access."
+    },
+    "fact_notes": [
+      "Muse availability, subscription plans, connector options, approval behavior and the status of Muse Confidential VM can change. Recheck Meta’s official Muse announcement and safety documentation before publication."
+    ],
+    "editorial_note": "The new opening gives a working reader a specific first outcome: a public, source-backed comparison that must stop before any account action. It keeps the existing prompt, product distinctions and interactive checks as the guide’s core learning exercise."
+  },
+  "review-grok-suggestions": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "Keep the three-part Read, Ask first, Stop model because it turns permission boundaries into a simple decision the reader can apply.",
+      "Keep the interactive three-action sorting exercise and its tailored feedback because it lets the reader test the boundary before using a real Bot.",
+      "Keep the full copyable instruction, including its explicit limits on account connections, private work, sending, publishing, purchases, deletion, edits, and recurring routines.",
+      "Keep the requirement to show the exact destination and text before approval because it makes review concrete rather than relying on a vague permission request.",
+      "Keep the safety reminder to remove names, private messages, customer data, passwords, and confidential work before sending the prompt."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Decide which parts of a Bot's job it may do alone and which need your permission.",
+        "value": "Set clear limits for one Grok Bot task: what it may read and draft, and when it must stop for your approval.",
+        "reason": "Names a practical result and frames the reader's first decision around a single bounded task."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Start with read-only work.** Let your Bot collect public links and prepare drafts. Review any account connection or external action yourself.",
+        "value": "Start with one bounded, read-only task, such as collecting public links for a weekly topic check. Let your Bot prepare drafts, then review any account connection, private material, or external action yourself.",
+        "reason": "Adds a viable work example while retaining the existing approval and privacy boundary."
+      },
+      {
+        "path": "sections[1].introduction",
+        "old": "Open Grok Bot settings and choose narrow rules for this Bot.",
+        "value": "Before you connect a tool, define the one task this Bot may do, what it may return, and which actions require your approval.",
+        "reason": "Gives the reader a usable planning step without depending on a potentially changing product interface label."
+      },
+      {
+        "path": "tryNow.heading",
+        "old": "Tell Grok Bot where to stop",
+        "value": "Set the approval boundary for your Grok Bot",
+        "reason": "States the concrete outcome of the copyable instruction more clearly."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "The Bot confirms it will read and draft only. It asks before connecting an account, and nothing is sent or scheduled.",
+        "value": "Pass if the Bot lists reading public pages and drafting as allowed, names account connections or external actions as approval points, and does not send or schedule anything.",
+        "reason": "Turns the completion check into an observable pass or fail decision before the reader uses the Bot."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Keep this boundary if the Bot gives you useful links or drafts while every account connection and external action stays with you.",
+        "reason": "Defines success in terms of a useful work output and preserved human control."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Set one boundary before your first public-post check",
+      "lead": "A Bot can be useful before it has access to any account. For a public X monitoring task, start by having it collect links and prepare possible replies while you keep account connections and posting under your control. You get a result to inspect without giving the Bot a way to act outside the chat.",
+      "practice": "Practice, fictional: ask the Bot to read five public posts about a fictional product launch and return each original link with a two-sentence summary. Desired output: five links and summaries, with any possible reply clearly marked as a draft.",
+      "check": "Pass if the response contains only the requested links, summaries, and labeled drafts. If it asks to connect an account, send a reply, or do something beyond the brief, stop and tighten the instruction before continuing."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new opening gives the reader a concrete first use case and a visible success check. It does not replace the existing sorting exercise, which remains the guide's hands-on way to practice approval boundaries."
+  },
+  "get-better-professional-writing-from-grok": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The fictional Signal Scout scenario and its narrow, read-only public-X brief retain a viable, bounded first task.",
+      "The prompt's seven-day window, limit of five original posts, source-link requirement, and explicit stopping conditions remain intact.",
+      "The two-post verification, usage review, and no-action boundaries remain intact because they teach a practical human review step.",
+      "The custom tap-to-diagnose exercise and interactive result check remain intact because they help readers turn a vague request into a checkable job."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Ask Grok Bot to find useful public posts on one topic. Check the links and your usage before asking it to do more.",
+        "value": "Use one Bot to turn public X posts about a chosen topic into a short, source-linked brief. Review the evidence and your usage before you repeat or automate anything.",
+        "reason": "Names the concrete work output and makes the review decision explicit before the reader starts."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Grok Bot is worth testing when a job repeats and needs more than a chat answer.** Give it one public source to watch and one review-ready result. Check the result and usage before adding a routine.",
+        "value": "**Use Grok Bot for a repeatable public-information check when a plain chat response is not enough.** Start with one topic and a brief you can verify against original posts. Review the evidence and usage before you ask for another run.",
+        "reason": "Replaces the abstract test with a clear task, evidence standard, and low-risk next decision."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Start with public information and one read-only pass.",
+        "value": "Start with one public-topic research check. Keep the first run read-only and stop for your review.",
+        "reason": "Connects the setup to the actual task while retaining the original safety boundary."
+      },
+      {
+        "path": "sections[0].steps[0].body",
+        "old": "Grok Bot needs an eligible paid Cursor plan or a linked individual SuperGrok plan. Check your current entitlement before buying another plan.",
+        "value": "Confirm access on the Grok Bot plan screen before you start. Eligible paid Cursor plans, certain individual SuperGrok subscriptions, and an X Premium+ account link can provide access.",
+        "reason": "Makes the time-sensitive access guidance more complete and directs the reader to confirm eligibility rather than infer it."
+      },
+      {
+        "path": "sections[0].steps[2].body",
+        "old": "Use the X connector if your chosen search needs your account. Review the permission request yourself. Do not connect email, CRM or other accounts for this test.",
+        "value": "For this public-X test, connect X only if Grok Bot asks for it. Review the permission request and complete the sign-in yourself. Do not connect email, a CRM, or any other account.",
+        "reason": "Gives a clearer trigger for connection and reinforces that the reader, not the Bot, handles authentication."
+      },
+      {
+        "path": "sections[1].items[3].body",
+        "old": "Compare the brief and usage with doing the check yourself.",
+        "value": "Compare the time saved with the source checks you still had to do, then review the usage you spent.",
+        "reason": "Makes the value check practical by accounting for both verification effort and tool usage."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Keep the method only if its source-linked brief is useful enough to justify the review time and usage it takes.",
+        "reason": "Ends with a sharper decision rule that reflects the guide's evidence and usage checks."
+      },
+      {
+        "path": "related[0].reason",
+        "old": "See when a task needs an agent instead of a chat answer.",
+        "value": "Decide whether this repeating research check needs a Bot or a one-off chat prompt.",
+        "reason": "Makes the related next step relevant to the reader's immediate workflow decision; this field is displayed by the custom renderer."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Turn a public X check into a brief you can verify",
+      "lead": "When you need to understand a public conversation about a product, event, or topic, the first useful win is not an automatic monitor. It is a short brief that lets you decide whether there is a real signal worth following. Signal Scout is a fictional practice Bot name, not evidence of a client workflow.",
+      "practice": "Practice, fictional example: replace the bracket with \"Northstar Desk update\" and ask for up to five original posts from the past seven days. The desired output is a compact list with dates, original links, and a one-sentence reason each item may matter. Do not ask it to act or connect any account beyond X.",
+      "check": "Pass if you can open two links, find dates and wording consistent with the brief, and explain why one item matters. If either link cannot be verified or the brief is not useful, treat it as a one-off test and do not schedule a repeat."
+    },
+    "fact_notes": [
+      "Grok Bot access options, X connector behavior, and usage allowances are time-sensitive. The revised access wording was checked against Cursor's Plans and billing page and xAI's Grok Bot Get started documentation on 2026-09-26; verify them again before publication."
+    ],
+    "editorial_note": "The revised opening frames Signal Scout as a bounded research check with a decision-ready output, so a working professional can see the practical purpose before starting. It preserves the existing prompt, tap-to-diagnose activity, source checks, and approval boundaries rather than replacing them."
+  },
+  "fix-deepseek-wall-of-text": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The Mara and Ben station scene, its four stated facts, and the restrained-tone instruction remain because they give the reader a bounded comparison point.",
+      "The Dense scene and With breaks switch remains because it makes the formatting-only distinction visible before the reader tries the prompt.",
+      "The copy control, DeepSeek link, and four interactive checks remain because they support a complete try, review and keep-or-retry workflow.",
+      "The existing prompt boundary against added description, emotion, backstory, dialogue and scene continuation remains because it is the guide's strongest safeguard against accidental rewriting."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Ask for paragraph and dialogue breaks while protecting the characters, facts and tone you already like.",
+        "value": "Turn a dense DeepSeek scene into a readable version while keeping the characters, facts and tone intact.",
+        "reason": "Makes the reader outcome concrete and sets the boundary between formatting and rewriting."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Separate formatting from rewriting.** Tell DeepSeek which facts and lines must stay, then ask only for readable paragraphs and dialogue breaks.",
+        "value": "**Protect meaning before you format.** Name the facts, dialogue and tone that must stay, then ask DeepSeek only for readable paragraph and dialogue breaks.",
+        "reason": "Gives beginners a clear sequence and explicitly protects speaker-linked dialogue."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Use this short invented scene so you can see whether the method preserves meaning.",
+        "value": "Use this fictional scene to practise spotting a formatting-only edit before you use the method on work you are allowed to share.",
+        "reason": "Frames the example as safe practice and adds a practical sharing boundary."
+      },
+      {
+        "path": "sections[1].items[2].body",
+        "old": "All four protected facts remain unchanged.",
+        "value": "All four protected facts are still present and mean the same thing.",
+        "reason": "Turns a broad claim into a comparison the reader can actually perform."
+      },
+      {
+        "path": "tryNow.prompt",
+        "old": "Reformat this scene so it is easier to read.\n\nUse short paragraphs and place spoken dialogue on a new line when the speaker changes.\n\nKeep every character, fact, time, event, sentence meaning and the restrained tone. Do not add description, emotion, backstory or dialogue. Do not continue the scene.\n\nAfter the edited scene, list any words you changed.",
+        "value": "Reformat this scene for readability only.\n\nUse short paragraphs. Put spoken dialogue on a new line when the speaker changes.\n\nKeep every character, fact, time, event, sentence meaning and the restrained tone. Do not add, remove or alter description, emotion, backstory or dialogue. Do not continue the scene.\n\nAfter the reformatted scene, list any words you changed. If no words changed, write \"No words changed.\"",
+        "reason": "Sharpens the formatting-only constraint and makes the model report whether wording moved beyond layout."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "You are done when the scene is easier to scan and every protected fact, line and tone remains intact.",
+        "value": "Pass only if the scene is easier to scan, every protected fact and line means the same thing, and each spoken line still belongs to the same speaker. If not, keep the original and ask for formatting only again.",
+        "reason": "Adds a usable pass or retry decision before the reader keeps an edited version."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Keep the result only when the layout is clearer and the original scene still says exactly what you intended.",
+        "reason": "Ends on a specific quality decision that reinforces reader control."
+      }
+    ],
+    "public_lesson": {
+      "heading": "AI Automation Queen practice: control the formatting pass",
+      "lead": "A dense response can make a simple scene feel harder to review, and a cleaner version can quietly change the story. In the fictional Mara and Ben scene, the train has gone, Ben used the Sunday timetable, and they have 20 minutes to walk to the ferry. Your job is to make those facts easier to scan, not to make the scene more dramatic.",
+      "practice": "Practice, fictional example: use the Mara and Ben scene first and ask for paragraph and dialogue breaks only. Desired output: short readable paragraphs, the same speaker attached to the same line, and a clear report of any words changed.",
+      "check": "Pass if the result keeps all four facts, preserves the restrained tone, and leaves each spoken line with the same speaker. If any of those fail, do not use the revision. Keep the original and repeat the request with the protected details named again."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new opening gives the reader a sharper work decision: improve scanability without accepting a rewritten scene. It keeps the existing switch, copy action and four-check exercise as the practical core of the guide."
+  },
+  "edit-long-writing-with-deepseek": {
+    "verdict": "retain-most",
+    "keep": [
+      "The protected brief sequence of characters, facts, voice, and edit target stays because it gives a beginner a compact boundary for a narrow revision.",
+      "The prompt's limits to one pasted passage, no new character or event, and a list of changes remain because they prevent a whole-story rewrite and create an auditable result.",
+      "The custom three-stage exercise, editable fictional Mara and Ben example, copy actions, and four comparison checks remain because they turn the advice into a usable controlled-edit workflow.",
+      "The privacy instruction to remove names, private messages, customer data, passwords, and confidential work remains because the reader must decide what is safe to share before using the tool."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Lock the approved facts and voice, revise one selected passage, then compare it with the protected brief.",
+        "value": "Protect the facts and voice you approved, revise one passage for one named problem, then compare the result with your brief.",
+        "reason": "Makes the promised outcome more concrete: one bounded work edit with a clear review step."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Do not ask for a whole-story rewrite when only one passage is weak.** Protect what already works, name the selected passage and ask for the smallest useful revision.",
+        "value": "**A safe long-form edit starts with a narrow boundary.** Give DeepSeek one passage, the facts and voice it must protect, and one problem to fix. Then review the result against that brief before you keep it.",
+        "reason": "Adds the practical input, output boundary, and decision point without replacing the guide's existing method."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Keep it short enough to compare with the result.",
+        "value": "Make a brief you can scan beside the revision, so drift is easy to catch.",
+        "reason": "Explains why the brief is deliberately short and connects it to the reader's review task."
+      },
+      {
+        "path": "sections[1].rows[3][1]",
+        "old": "Only the named problem was repaired.",
+        "value": "The named problem is clearer, and no change reaches beyond the selected passage.",
+        "reason": "Strengthens the scope check with a visible pass condition while preserving the custom renderer's comparison checklist."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "You are done when the selected problem is fixed and the character, continuity, voice and scope checks all pass.",
+        "value": "Pass only if the named problem is fixed and all four checks pass. If a protected fact, relationship, or voice choice has drifted, reject the revision and try again with a tighter brief.",
+        "reason": "Adds a clear stop or retry decision when the revision changes something that was meant to stay protected."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Keep an edit only when you can point to the improved line and confirm that nothing protected changed.",
+        "reason": "Ends with a specific, usable acceptance test instead of a general usefulness statement."
+      }
+    ],
+    "public_lesson": {
+      "heading": "AI Automation Queen's protected-brief check",
+      "lead": "In the fictional Mara and Ben scene, the useful edit is not a better story overall. It is a clearer handoff between Mara's complaint and Ben's Sunday-timetable mistake, while the 7.15 arrival, missed train, and ferry deadline remain fixed.",
+      "practice": "Practice example, not a real client case: write five short lines for characters, protected facts, voice, one problem, and one passage. Ask for the revised passage plus a list of changes, with no continuation of the story.",
+      "check": "Before you keep or share the result, compare it with the five lines. Pass only if the one problem is clearer and every protected name, fact, relationship, and voice choice still matches."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new public lesson gives the reader a concrete way to define a bounded revision using the existing fictional Mara and Ben scenario. It complements rather than replaces the existing three-stage interactive exercise, which still lets readers copy, adapt, and verify the prompt."
+  },
+  "is-kimi-worth-paying-for": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "Retain the one-job comparison because it prevents a vague feature-list decision and keeps the test achievable.",
+      "Retain the Pay, Retest and Skip cards because they give a clear stopping condition when price, allowance or checking effort is uncertain.",
+      "Retain the evidence-capture instruction and its private-data warning because the custom renderer already turns the chosen job into a useful, bounded decision prompt.",
+      "Retain the direct link to Kimi plan and usage details because the reader must check live terms rather than rely on a stale price or allowance."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Test whether Kimi can finish one repeated job before the current limit interrupts it.",
+        "value": "Use one repeated, low-risk task to see whether Kimi finishes it before the current credit limit interrupts the work.",
+        "reason": "Makes the test safer for a beginner while preserving the guide's narrow decision criterion."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Do not pay for a feature list.** Pay only when Kimi completes a repeated job well enough, often enough and with less checking than your current tool.",
+        "value": "**Do not buy a feature list.** Test one repeated, low-risk job in Kimi and your current tool. Pay only if the completed result needs less checking and the visible allowance covers how often you need it.",
+        "reason": "Turns the answer into an immediate comparison action and names the two evidence tests that matter."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Choose a long document, a small code change or a five-slide draft. Do not combine all three.",
+        "value": "Choose one bounded, low-risk job: a public long document, a disposable small code change or a five-slide practice draft. Do not combine them.",
+        "reason": "Clarifies safe input choices without changing the three existing test formats or the one-job constraint."
+      },
+      {
+        "path": "tryNow.introduction",
+        "old": "Complete the fields after running the same task in both tools.",
+        "value": "Complete the fields after repeating one safe, comparable task in both tools. Do not use private or confidential material.",
+        "reason": "Adds a practical safety boundary at the point where the reader starts the interactive evidence record."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "You are done when the decision compares both results, checking time, visible limit and current price for the same job.",
+        "value": "You are done when you can name the same job, compare both completed results and checking time, and see a current price and usable limit. If a price or limit is missing, choose Retest, not Pay.",
+        "reason": "Makes the completion check more observable and gives an unambiguous fallback for missing commercial information."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Pay only after the same repeated work finishes reliably within a visible allowance and needs less checking from you.",
+        "reason": "Ends on the guide's actual decision rule: repeatability, limits and human checking effort."
+      }
+    ],
+    "public_lesson": {
+      "heading": "A five-minute test before you consider a Kimi plan",
+      "lead": "Practice scenario, not a client result: imagine you make a five-slide weekly update every Friday from a public source. A polished-looking draft is not enough evidence to pay. You need to know whether it finishes the same brief, how much you repair, and whether the visible credit allowance can support next Friday too.",
+      "practice": "Use an invented five-slide brief and the same public source in Kimi and your current tool. Write down whether each finishes, the corrections you make and the minutes you spend checking before you look at either plan price.",
+      "check": "Choose Pay only if both the completed result and the current allowance are visible and workable for your frequency. If either is missing or unclear, the correct next decision is Retest."
+    },
+    "fact_notes": [
+      "Membership prices, shared-credit allowances, reset periods and extra-usage terms are time-sensitive. Verify them on Kimi's official membership and usage pages at the time of the test."
+    ],
+    "editorial_note": "The new opening gives the reader a safe, bounded comparison they can run immediately, then connects it to the existing job selector and decision instruction. It strengthens the evidence check without replacing the custom interactive exercise."
+  },
+  "control-kimi-code-changes": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The four-stage custom exercise remains intact: practice copy, Plan mode, plan approval and File Changes review create a safe, usable sequence.",
+      "The editable file and wording fields, ready-to-copy prompt and disabled-copy guard remain because they turn an abstract boundary into a small, repeatable task.",
+      "The stop cards and three confirmation checkboxes remain because they give readers explicit checks for extra files, dependencies and commands.",
+      "The prompt’s one-file limit, no-dependency and no-deployment constraints remain unchanged because they provide the guide’s core operational safeguards.",
+      "The privacy reminder to remove names, customer data, passwords and confidential work remains because it is a meaningful pre-send protection."
+    ],
+    "edits": [
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Control the scope before Kimi writes.** Use a disposable practice project, ask for a plan first and keep the change only after you have checked every changed file.",
+        "value": "**Set the boundary before Kimi writes.** In a disposable practice copy, ask for a plan for one visible change in one named file. Approve execution only when the file, change and check are clear, then inspect the diff before you keep it.",
+        "reason": "Turns the opening into a concrete approval decision while retaining the existing practice-copy, plan-first and review safeguards."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Kimi Code Desktop, CLI and VS Code can show plans and file changes. Labels can differ by product.",
+        "value": "Controls vary by Kimi Code product. Use the planning and change-review controls available in your version, and verify the workspace before you allow edits.",
+        "reason": "Avoids implying identical controls across products and gives the reader an immediate access and scope check."
+      },
+      {
+        "path": "sections[0].steps[1].body",
+        "old": "In Kimi Code CLI use **Shift-Tab** to switch modes, or type **/plan**. Confirm the interface says **Plan** before sending the request. In Desktop, choose **Plan** if that control is available.",
+        "value": "In Kimi Code CLI, press **Shift-Tab** or type **/plan**. Confirm the prompt or status shows **Plan** before you send the request. In another version, use a plan control only if your interface provides it.",
+        "reason": "Keeps the verified CLI actions, makes the confirmation more observable and avoids overpromising a matching Desktop control."
+      },
+      {
+        "path": "tryNow.introduction",
+        "old": "Replace the bracketed file and visible wording in a practice project.",
+        "value": "Use a practice project and replace the bracketed file and visible wording. Choose text you can recognize on the page, not a hidden setting.",
+        "reason": "Makes the interactive exercise easier to complete and aligns the requested change with its visible-result check."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "You are done when the diff contains only the requested line and the visible result matches it. Undo the change if any other file moved.",
+        "value": "Pass only when the diff contains the requested line in the named file and the page shows the new wording. If another file changed, undo the change and narrow the request before trying again.",
+        "reason": "Creates a clearer pass or stop decision and tells the reader exactly what to do when scope expands."
+      },
+      {
+        "path": "tryNow.instructions[0].body",
+        "old": "Open the product named in this guide and start a new conversation or task in the place described above.",
+        "value": "Open Kimi Code with a disposable local project. Before you start, confirm that the workspace path is the folder containing the practice file.",
+        "reason": "Replaces generic launch language with the practical folder check that prevents edits in the wrong project."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "If the plan or diff crosses your boundary, undo it and narrow the request before you try again.",
+        "reason": "Ends with a memorable, actionable stopping rule that reinforces the guide’s control habit."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Make one wording fix without inviting a project-wide cleanup",
+      "lead": "In this practice example, not a real client case, you need to change Welcome to Start here in index.html. That sounds tiny, but it is exactly the kind of request that can become an unwanted formatting sweep unless you set a file boundary and read the proposed work first.",
+      "practice": "Practice: in a disposable index.html file, request only Welcome to Start here. The desired output is a plan naming index.html, followed by a diff that changes that visible wording and nothing else.",
+      "check": "Pass only if index.html is the only changed file and the page displays Start here. If the plan or diff names another file, dependency or command, stop and revise the request before approving anything."
+    },
+    "fact_notes": [
+      "Kimi Code controls and labels are version-specific. CLI Plan mode controls and VS Code plan and File Changes behavior were checked against Kimi documentation on 2026-09-26; recheck vendor documentation before publication."
+    ],
+    "editorial_note": "The new opening gives the reader a concrete, fictional one-line task and an approval boundary before the Lumail form. It leaves the existing interactive exercise, prompt and verification mechanics in place."
+  },
+  "manus-browser-workflow": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The three-route comparison because it ties cloud browsing, a connector and Browser Operator to a clear access boundary.",
+      "The read-only first-test sequence because it preserves human oversight before any consequential browser action.",
+      "The three-field prompt builder, copy control and completion checks because they turn a safety principle into a bounded, reusable practice task.",
+      "The existing explicit exclusions for messages, forms, downloads, purchases, deletions and confidential material because they provide useful permission limits for beginners and working professionals."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Use the cloud browser for public work, a connector for one supported service, and Browser Operator only when the task truly needs your signed-in browser.",
+        "value": "Choose the smallest access route for one defined job: public browsing for public pages, a connector for one supported service, or Browser Operator only for a page in your signed-in browser.",
+        "reason": "Gives the reader a concrete decision rule before introducing the three routes."
+      },
+      {
+        "path": "sections[1].introduction",
+        "old": "Use a harmless read-only job before any form, message, purchase or deletion.",
+        "value": "Run one small, read-only test before you allow any form submission, message, purchase or deletion.",
+        "reason": "Frames the first action as a bounded test and makes the approval boundary more explicit."
+      },
+      {
+        "path": "sections[1].steps[0].body",
+        "old": "Confirm the exact account, site and read-only task. If public browsing can answer the question, keep the browser disconnected.",
+        "value": "Write down the exact account, page and three visible fields before you connect. If a public page answers the question, leave the browser disconnected.",
+        "reason": "Supplies a usable pre-authorization input that aligns with the later three-field exercise."
+      },
+      {
+        "path": "sections[1].steps[4].body",
+        "old": "Disable or remove the connector. Removing a connector clears its saved login information and credentials.",
+        "value": "When the test is over, disable or remove the browser connection. For any connector, review the provider’s disconnect and credential settings before you rely on removal as a cleanup step.",
+        "reason": "Retains the important access-removal habit without making an unverified claim about credential cleanup."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "You are done when Manus used the intended page, returned only the three fields and stopped without taking another action.",
+        "value": "Pass only when Manus opened the intended page, returned exactly the three requested fields plus the page URL, and stopped. If anything else opened or changed, stop and review the task before trying again.",
+        "reason": "Makes the pass condition observable and adds a clear fallback when the boundary is breached."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Keep the method only if the checked result is useful and you can state the access boundary before each future task.",
+        "reason": "Ends with a durable operational criterion instead of a general usefulness statement."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Make the access decision with one bounded page check",
+      "lead": "Before you connect a browser, define one small task such as reading the plan name, renewal date and seat count on your own account overview. This is a practice example, not evidence about a real account or an outcome.",
+      "practice": "Practice: enter a non-sensitive overview page and exactly those three visible fields in the builder. Desired output: the three fields and the page URL, with no message, form submission, download or account change.",
+      "check": "Pass only if the result contains the intended three fields and page URL, and the task stopped without another action. If any other page opened or anything changed, stop and review the task boundary before continuing."
+    },
+    "fact_notes": [
+      "The original text at guide.sections[1].steps[4].body says that removing a connector clears saved login information and credentials. The cited current Manus connector help page presents the heading “What happens when I remove a connector?” without explanatory text, while current Browser Operator documentation says Manus never stores passwords. Verify the precise connector cleanup behavior before publication.",
+      "Official Manus Browser Operator documentation confirms session authorization, local-browser use, closing the tab to stop a task, and that passwords are not stored. It does not establish that removing a connector clears credentials: https://manus.im/docs/features/browser-operator. The revised step makes no such guarantee."
+    ],
+    "editorial_note": "The revised opening gives the reader a practical way to name one account, page and three fields before granting access. It leaves the existing route selector and interactive read-only exercise intact, while making their success and stop conditions easier to apply."
+  },
+  "instagram-content-dashboard": {
+    "verdict": "factual-hold",
+    "keep": [
+      "Keep the concrete dashboard outcomes, including reach, saves, shares, watch time, timing, hashtags, and top and bottom posts. They give a working professional a useful reporting frame once the integration path is rebuilt and tested.",
+      "Keep the local .env pattern and the repeated reminders to save credentials. They establish an important privacy boundary for a reader using their own account data.",
+      "Keep the post-type metric distinction in the proxy prompt and the common-errors check. Both teach readers to verify data rather than assume every metric applies to every post type.",
+      "Keep the existing interactive walkthrough structure, the build prompts, and the extension ideas pending technical validation. The sequence is practical and should not be replaced by a generic explainer."
+    ],
+    "edits": [
+      {
+        "path": "gateTeaser.body",
+        "old": "This gives you access to Instagram’s API. You’ll create an app, add yourself as a test user, and generate a long-lived access token. Takes about 8 minutes.",
+        "value": "Pause before setup. This guide refers to Instagram Basic Display, which Meta retired on December 4, 2024. Do not create the app until this tutorial has been updated and tested against Meta’s current Instagram API documentation.",
+        "reason": "Prevents a reader from spending time on a retired API path before the gated walkthrough begins."
+      },
+      {
+        "path": "tutorial[0].introduction",
+        "old": "This gives you access to Instagram’s API. You’ll create an app, add yourself as a test user, and generate a long-lived access token. Takes about 8 minutes.",
+        "value": "This setup needs a technical update before you proceed. Meta retired Instagram Basic Display on December 4, 2024, so verify a current, tested Instagram API setup before creating an app or generating a token.",
+        "reason": "Carries the factual hold into Step 1, where the retired setup would otherwise be actioned."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "You need a Creator or Business account. Personal accounts don’t have API access to insights. Switch in Instagram → Settings → Account → Switch to Professional Account. It’s free.",
+        "value": "Use a Creator or Business account, not a Personal account. Before entering credentials anywhere, confirm that you are working in your own Meta developer app and that your local .env file will stay private.",
+        "reason": "Retains the professional-account prerequisite while adding a clear ownership and credential-handling boundary."
+      },
+      {
+        "path": "tutorial[1].introduction",
+        "old": "Create a folder, add your credentials, and build the backend server. Claude Code writes all of this — just paste the prompts.",
+        "value": "Create a local project folder and prepare a private .env file. Do not paste credentials into a prompt, chat, repository, or screen recording. Build the proxy only after the current Meta app and authorization path has been verified.",
+        "reason": "Gives readers a safer first action while preserving the local-project workflow and prompts."
+      },
+      {
+        "path": "tutorial[4].introduction",
+        "old": "Start the server, open the browser, you’re live.",
+        "value": "Start the local server and open the dashboard. Before using a number to choose a content experiment, spot-check one post against Instagram and record when you refreshed the data.",
+        "reason": "Adds a practical verification step at the moment the interactive dashboard is used."
+      },
+      {
+        "path": "conclusion.paragraphs[0]",
+        "old": "Free Instagram analytics dashboard. Direct API connection. No subscriptions, no middlemen, no monthly fees.",
+        "value": "Use the dashboard as a working view of your own account. Before you act on a pattern, verify one post at the source and write down the content experiment you will run next.",
+        "reason": "Replaces an over-promotional finish with a concrete, accountable decision routine after the custom walkthrough."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Choose one content question before you build",
+      "lead": "A dashboard is useful when it helps you make one content decision, not when it produces every possible number. For a fictional practice account, compare saves and shares from two recent Reel formats instead of trying to optimize the whole feed at once.",
+      "practice": "Practice, not client evidence: write one decision in a note: \"For my next two posts, I will test whether a shorter tutorial earns more saves per reach.\" List the fields you would need to check it: post date, reach, saves, shares, and format.",
+      "check": "Pass if you can say what result would change your next post and which source metric you will verify. If you cannot, narrow the question before you begin an integration."
+    },
+    "fact_notes": [
+      "Factual hold: Step 1.2 instructs readers to add Instagram Basic Display. Meta states that Instagram Basic Display API was no longer available from December 4, 2024, so this cannot be presented as a working setup path. Official source: https://developers.facebook.com/blog/post/2024/09/04/update-on-instagram-basic-display-api/",
+      "The replacement setup, permissions, authorization flow, API version, and media-insight fields require a tested technical rewrite before publication. Meta’s current Instagram API with Instagram Login documentation describes professional business and creator accounts and current scope names, including instagram_business_basic. Official source: https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login"
+    ],
+    "editorial_note": "The new opening gives the reader a small, decision-focused win and adds an explicit privacy boundary without replacing the existing interactive exercise. Publication should remain on hold until the retired Meta setup and its downstream prompts are technically rebuilt and tested."
+  },
+  "what-is-a-prompt": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "Keep the fictional website-launch note and its bounded facts. It gives beginners a concrete work task without implying client evidence.",
+      "Keep the four-part teaching device: job, context, boundaries and format. It is a compact, usable prompt checklist.",
+      "Keep the instruction to ask up to three questions and stop when a crucial detail is missing. It creates a clear fallback instead of encouraging guesses.",
+      "Keep the final traceability checks, including the open pricing decision and the use of ‘Not specified’ for unnamed owners. They make verification practical.",
+      "Keep the three-stage custom exercise, editable fields, copy action and checkboxes. Together they turn the explanation into safe practice."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Stop guessing what to type. This guide shows you where a prompt goes, what to include and how to get an answer you can actually use.",
+        "value": "Turn a rough work note into a clear AI instruction that asks for a useful, checkable answer. This guide shows you where to paste it, what to include and how to review the result before you use it.",
+        "reason": "Gives the reader a concrete work outcome and introduces checking as part of successful use."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "A prompt is simply **your instruction to the AI**. It can be a question, a request or a set of directions.",
+        "value": "A prompt is **your instruction to the AI**. For a work task, think of it as a short brief: the job, the information it can use and the result you need.",
+        "reason": "Moves quickly from a definition to a practical mental model that matches the guide’s exercise."
+      },
+      {
+        "path": "sections[2].introduction",
+        "old": "The improvement is not a clever phrase. It is the missing information.",
+        "value": "The improvement is not a clever phrase. It is the missing information that lets you check whether the answer stays true to the note.",
+        "reason": "Connects prompt detail to the reader’s later responsibility to verify the answer."
+      },
+      {
+        "path": "tryNow.introduction",
+        "old": "Start with a made-up project note. See what a full instruction looks like before changing it for your work.",
+        "value": "Start with a fictional project note. See how a complete instruction turns it into a checkable meeting agenda before you adapt the approach for your own work.",
+        "reason": "Makes the practice status explicit and names the small, tangible result the exercise produces."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "You do not need a collection of clever prompts. You need enough context and a clear idea of what good looks like.",
+        "value": "You do not need a collection of clever prompts. You need enough context, clear boundaries and a way to check what the AI gives back.",
+        "reason": "Reinforces the guide’s core safety and quality standard in a memorable finish."
+      },
+      {
+        "path": "related[0].reason",
+        "old": "Match the task to the right tool before opening another account.",
+        "value": "Choose an AI tool that suits the job before you open another account.",
+        "reason": "Uses plainer language in related-card copy rendered by the custom interactive page."
+      }
+    ],
+    "public_lesson": {
+      "heading": "AI Automation Queen practice: turn a rough note into a meeting agenda",
+      "lead": "Imagine a fictional website-launch note: the landing page is approved, final graphics are expected Friday, and pricing is still awaiting approval. The task is not to make an impressive agenda. It is to create three agenda items that expose the pricing decision and do not assign an owner who was never named.",
+      "practice": "Practice, using only the fictional note above: ask AI for a 15-minute agenda with three items, one useful question per item, and a final ‘Decision to make’ line. Add: ‘If an owner is not in the note, write Not specified.’",
+      "check": "Pass only if pricing is still described as unresolved, no names or dates are added, and each agenda item comes from the note. If any detail cannot be traced back, remove it or ask a follow-up before using it."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new opening frames prompting as a small, checkable work-briefing skill, so the reader has a clear reason to use the existing exercise. It retains the fictional scenario, privacy boundaries and interactive stages rather than replacing them."
+  },
+  "what-is-an-ai-browser": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The two-public-page comparison prompt and its exact evidence-only constraint, because it gives beginners a bounded task with source material they can inspect.",
+      "The interactive copy control, quoted-source check, and three verification checkboxes, because they preserve the guide's practical habit of checking an AI answer against the original pages.",
+      "The separate privacy questions about page visibility, browser memory, training, and connected accounts, because they focus the reader on access before private work begins.",
+      "The Atlas control summary, incognito warning, and official OpenAI source link, because the factual pattern is useful and was independently checked against the cited vendor documentation."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "An AI browser can help you understand and work with the pages you visit. It can also see more of your browsing than a normal AI chat, so the settings matter.",
+        "value": "An AI browser can help you turn two public pages into a checked comparison without manually moving every detail into a chat. Start signed out, then decide whether its visibility, memory and account access are appropriate for any more sensitive work.",
+        "reason": "Reframes the promise around a concrete work output while retaining the guide's privacy boundary."
+      },
+      {
+        "path": "answer.paragraphs[1]",
+        "old": "Use one when it makes public research or reading easier. Do not give it access to private pages simply because the feature is available.",
+        "value": "Use one for a bounded task, such as comparing two public product pages and locating the supporting sections. Treat its answer as a draft: open the quoted passages yourself, and keep private pages out of scope until you have checked its controls.",
+        "reason": "Gives the reader a viable first task and makes independent verification an explicit part of the workflow."
+      },
+      {
+        "path": "sections[0].items[0].body",
+        "old": "Compare product pages, policies or public information without copying every section into a separate chat.",
+        "value": "For a work decision, ask it to identify agreements, differences and the page section supporting each claim. Keep the two source pages open so you can check the answer.",
+        "reason": "Makes the expandable first use case produce a decision-ready, source-checkable output."
+      },
+      {
+        "path": "sections[1].introduction",
+        "old": "Before you use one, answer these questions.",
+        "value": "Before you ask it to inspect a work page, answer these questions about the current browser and the account signed in to it.",
+        "reason": "Connects the privacy questions to the real moment when workplace access can be exposed."
+      },
+      {
+        "path": "sections[1].items[3].body",
+        "old": "Is the browser signed into email, files, banking, customer systems or administrator pages?",
+        "value": "If you are signed in, which accounts could expose email, files, banking, customer data or administrator controls to the AI or an agent action?",
+        "reason": "Turns a passive inventory into an access-risk decision without adding product-specific claims."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "If a quote is missing or inaccurate, do not rely on that part of the comparison.",
+        "value": "Pass only if every material claim points to an accurate quote you opened yourself. If one does not, remove it from the comparison or verify it directly before deciding.",
+        "reason": "Adds a crisp pass condition and a clear fallback while preserving the existing source-check exercise."
+      },
+      {
+        "path": "conclusion.paragraphs[0]",
+        "old": "Use an AI browser when it saves time on public research or reading.",
+        "value": "Use an AI browser when a public research task has a clear question, limited source pages and time to check the evidence.",
+        "reason": "Gives the reader practical conditions for choosing the tool rather than a general convenience test."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Before using it around private work, know what the AI can see, remember and act on.",
+        "value": "The useful result is not a fast summary. It is a decision you can trace back to the original pages, with private access withheld unless you have deliberately reviewed the controls.",
+        "reason": "Finishes on the guide's central professional standard: traceable evidence and deliberate access."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Make a source-checked comparison before you sign in",
+      "lead": "When you need to choose between two public services, the useful output is not a quick summary. It is a short comparison whose claims you can trace to the original pages. Use the browser only on pages you would be comfortable opening in a signed-out window.",
+      "practice": "Practice with two real public policy pages from providers you are considering. Ask the browser to compare one shared question and return three claims, each with a direct quotation and link. Do not sign in or enter private information for this first check.",
+      "check": "Pass if you can open every quoted section and it supports the claim beside it. If any quote is missing, misplaced or broader than the source, remove that claim or verify it directly before you share the comparison."
+    },
+    "fact_notes": [
+      "ChatGPT Atlas privacy controls and defaults are time-sensitive. The cited OpenAI data-controls article was checked on 2026-09-26 and supports the guide's statements about separate web-browsing and chat-training controls, page visibility, browser memories, and incognito limits; recheck the setting names and defaults before publication."
+    ],
+    "editorial_note": "The new opening frames the existing two-page activity as a traceable work decision, giving readers a useful result before any signup prompt. It retains the custom interactive exercise, its copy behavior, and its source-checking safeguards."
+  },
+  "connect-ai-to-email-files-calendar": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The three-level access chooser remains because it turns the privacy principle into an immediate task decision: upload one file, connect one service, or allow actions.",
+      "The tool-specific review and disconnect steps remain, along with their linked official help pages, because they give readers a practical route to check an existing connection.",
+      "The permission-text exercise, copy gate, original-screen comparison, and three checks remain because they preserve human approval and make the reader inspect the actual access request.",
+      "The distinction between disconnecting and deleting remains because it prevents a reader from treating a connection switch as a complete data-cleanup action."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "A connection can save time, but it also gives the AI access to information you did not paste into the chat. Connect only what you need and know how to remove it.",
+        "value": "Before connecting an AI to a work account, name the repeated job it must do and the minimum information it needs. Then review the permission and the route to disconnect it.",
+        "reason": "Reframes the opening around a concrete work decision and a narrow outcome, rather than a general warning."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "Connect an AI tool only when a repeated task genuinely needs information from another service. Start with the **smallest amount of access** that can complete the job.",
+        "value": "Use a connection only when a repeated work task needs information from another service. Start with the **smallest amount of access** that can complete that task.",
+        "reason": "Makes the existing access-minimisation rule easier to apply to a specific job."
+      },
+      {
+        "path": "sections[0].items[2].body",
+        "old": "Use only when you understand what the tool can create, edit, send or delete.",
+        "value": "Choose this only when the task needs an action and you can name exactly what the tool may create, edit, send or delete.",
+        "reason": "Adds a clear stopping condition before a reader grants action permissions in the existing access chooser."
+      },
+      {
+        "path": "sections[2].keyLine",
+        "old": "After disconnecting, review the conversation or activity history separately.",
+        "value": "After disconnecting, check the original account connection and the relevant chat, activity or saved-information controls separately.",
+        "reason": "Gives the reader a more complete, concrete cleanup check without overstating what disconnection deletes."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "If you cannot explain why the task needs the permission, do not approve it yet.",
+        "value": "Pause if you cannot explain why this task needs each permission. Try one file or less access before you approve it.",
+        "reason": "Supplies a usable fallback that connects directly to the guide's smallest-access exercise."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "You can always connect it later. Start with less access and add only what the work proves it needs.",
+        "value": "You can connect it later. Begin with the smallest access that completes the job, then add more only when the work clearly requires it.",
+        "reason": "Ends with a crisp, task-based decision rule that reinforces the guide's interactive choices."
+      }
+    ],
+    "public_lesson": {
+      "heading": "AI Automation Queen's two-minute connection check",
+      "lead": "You need a weekly meeting summary from your own calendar. Before you connect an account, decide whether one copied event description or a single exported file would answer the question. A wider connection is justified only when the same lookup will recur and needs live information.",
+      "practice": "Practice, not a real case: For a fictional Northstar launch meeting, upload one redacted agenda and ask for three follow-up questions. Desired output: a short checklist, with no calendar connection. If that is enough, stop there.",
+      "check": "Pass if you can write one sentence that names the repeated task, the exact data needed, and the smallest access option. If not, upload one file or leave the connection off."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new opening gives the reader a fast way to decide whether a connection is needed for one work task. It leaves the existing permission-text exercise and its approval checks intact as the guide's practical core."
+  },
+  "ai-skills-worth-learning-for-work": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The five-part framework in the answer and skill cards is retained because it gives beginners durable, work-centred skills rather than a changing list of AI products.",
+      "The task-entry, five-task copy gate and selected-task practice flow in the custom renderer are retained because they turn an abstract learning plan into a bounded exercise based on the reader's own familiar work.",
+      "The existing redaction guidance and final-human-decision boundary are retained because they make the exercise safer for workplace use without overstating what an AI tool should decide."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "You do not need to chase every new AI tool. Build the skills that still help when the tool, model or feature changes.",
+        "value": "You do not need to chase every new AI tool. Build the skills that help you handle a familiar work task carefully, even when the tool, model or feature changes.",
+        "reason": "Connects the durable-skills promise to a concrete work task, which better prepares the reader for the interactive exercise."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "The most useful AI skills are not memorising menus or collecting prompts. Learn to **define the job, choose the source, check the result, protect the information and own the final decision**.",
+        "value": "When AI helps with a familiar work task, the useful skill is not memorising menus or collecting prompts. It is being able to **define the job, choose the source, check the result, protect the information and own the final decision**.",
+        "reason": "Adds an immediate reader situation while preserving the guide's complete five-skill framework."
+      },
+      {
+        "path": "sections[0].items[2].body",
+        "old": "Look for missing details, invented facts, weak reasoning and consequences if the answer is wrong.",
+        "value": "Compare the answer with the source or task context. Flag missing details, invented facts, weak reasoning and anything that could cause harm if acted on.",
+        "reason": "Makes the selected interactive skill actionable by naming a comparison step before the reader relies on an answer."
+      },
+      {
+        "path": "sections[2].steps[2].body",
+        "old": "Use one AI tool and one real example. Keep the test small enough to finish this week.",
+        "value": "Use one AI tool and one non-sensitive, familiar example. Compare the output with the result you would accept at work, and keep the test small enough to finish this week.",
+        "reason": "Adds a safe input boundary and a usable quality standard while keeping the original small-test constraint."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "A useful plan names one skill you can practise through real work, not a list of tools to buy.",
+        "value": "A useful plan selects one familiar task, one skill and a safe practice step you can finish this week. If it only recommends tools or cannot name what you will verify, revise it.",
+        "reason": "Turns the generic plan test into a clear pass or revise decision without changing the prompt's task-analysis structure."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Practise one skill through one familiar task before adding another tool.",
+        "value": "Before adding another tool, use one familiar task to practise a skill, check the result against what you know and record the correction you made.",
+        "reason": "Ends with a small repeatable loop of practice, verification and learning rather than a broad aspiration."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Find the skill behind a weak meeting update",
+      "lead": "Imagine a fictional weekly project update. You ask an AI chat to turn your notes into a short update, but it adds a deadline that is not in the notes. The problem is not that you need a newer tool. It shows you need to practise checking results against the source.",
+      "practice": "Practice example, not a real case: write five general tasks such as 'turn meeting notes into an update' and 'sort recurring questions into themes.' Select one task, remove private details, then use the guide's instruction to identify one skill to practise and one risk to check.",
+      "check": "Pass if the plan chooses one task and one skill, and you can name the source or fact you will compare before using the output. If it only suggests tools, or you cannot state what you would verify, choose a smaller familiar task."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new opening supplies a recognisable work moment and a practical definition of success before the existing task-based exercise. It keeps the original five-skill model and its privacy, verification and human-approval boundaries intact."
+  },
+  "show-up-in-ai-search": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "Keep the neutral, source-citing comparison prompt because it gives the reader a bounded way to test visibility without asking an AI tool to promote their business.",
+      "Keep the custom two-part exercise, including the website check, five page checks, missing-fact field and dated-result guidance. It turns a broad visibility question into a usable audit while preserving human review of cited sources.",
+      "Keep the guidance against thin AI-written pages and the conclusion that visibility is not controllable. These are clear safeguards against chasing volume or treating an AI answer as a ranking promise.",
+      "Keep the fact cards on audience, offer, market and trust. They provide a compact checklist that the custom renderer makes immediately actionable."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "There is no button that adds your business to every AI answer. You can make it easier for search systems to find, understand and verify what you do.",
+        "value": "If a buyer asked an AI search tool who offers your service in your market, could the public facts about your business stand up to the answer? You cannot control every recommendation, but you can make those facts easier to find, understand and verify.",
+        "reason": "Opens with a concrete work moment and a useful diagnostic without promising inclusion or recommendation."
+      },
+      {
+        "path": "answer.paragraphs[1]",
+        "old": "Start with useful pages that answer real questions and keep your important business facts accurate across your website and public profiles.",
+        "value": "Start with a buyer-style question, then compare the cited public sources with your website and profiles. Fix the source of any missing or inaccurate fact before you ask again.",
+        "reason": "Gives the reader a first action and connects content quality to the guide's existing test and correction loop."
+      },
+      {
+        "path": "sections[0].items[3].body",
+        "old": "Use evidence, examples, named responsibility and clear contact information.",
+        "value": "Point to evidence a buyer can inspect, name who is responsible and provide clear contact information.",
+        "reason": "Makes the trust card more concrete for a buyer and improves a fact-card field shown in the custom interactive renderer."
+      },
+      {
+        "path": "sections[2].introduction",
+        "old": "A search system has more to work with when the page is clear and the evidence agrees.",
+        "value": "When a page puts its core answer beside evidence people can inspect, a search system has clearer material to assess. That still cannot guarantee inclusion in an AI answer.",
+        "reason": "Explains the mechanism in reader terms while explicitly preserving the guide's no-guarantee boundary."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "The useful result is a dated record showing which public facts are visible, missing or wrong. It is not a promise that the tool will rank you.",
+        "value": "Pass if you have a dated note naming the question, tool, public sources, missing facts and wrong facts. Correct one source page before retesting later. This record is not a ranking promise.",
+        "reason": "Turns the closing check into a clear pass condition and next decision, while retaining the ranking safeguard."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Make one important fact clear, public and verifiable before creating another page.",
+        "value": "Choose one page where a buyer cannot verify a key fact. Make that fact clear, public and checkable before creating another page.",
+        "reason": "Ends with a specific page-level choice that a reader can act on immediately."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Make one public claim checkable before you test AI search",
+      "lead": "Before asking an AI tool to compare providers, inspect the page that should explain your offer. The form's payroll-software example is a practice scenario, not evidence about a real provider: a buyer should be able to find who the service helps, what it offers, its market and a contact route in one visit.",
+      "practice": "Practice, fictional example only: create a four-line note for a pretend payroll software page: 'Helps: small design studios'; 'Offer: payroll software'; 'Market: UK'; 'Contact: [public URL].' For each line, paste the exact public page URL that proves it, or mark it 'missing' and revise the source page before testing.",
+      "check": "Pass if all four lines point to an open public page and the wording matches the page. If one line is missing, vague or conflicts with a profile, fix that source first. Do not treat an AI mention as proof."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new opening turns the existing visibility advice into a pre-search source check, so readers have a concrete decision before the unchanged interactive audit. It retains the neutral test and verification boundaries rather than claiming any ranking result."
+  },
+  "chatgpt-screen-recording-to-process-guide": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "Keep the privacy boundary in `sections[0].introduction` and the identifying-detail removal step. It makes a real workplace recording safer before upload.",
+      "Keep the fallback in `sections[0].steps[3]` that requires a corrected transcript and clean screenshots from the same recording, and forbids filling gaps from memory. It preserves an evidence-first path when video inspection fails.",
+      "Keep `tryNow.prompt` unchanged. Its inspection check, observable-action list, clarification flags, source references, and final human check turn a draft into a reviewable working document.",
+      "Keep the custom three-stage route selector, saved checklist state, and new-reader test. They give the reader a practical path instead of presenting this as a definition-only answer.",
+      "Keep `tryNow.check` and the result checklist that require someone who did not watch the recording to complete the practice task. That is the guide's strongest real-world quality check."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Upload a short screen recording, turn what it actually shows into clear steps, then test whether someone else can follow them. A transcript and screenshots provide a fallback when video upload is unavailable.",
+        "value": "Turn a short, clean screen recording into a guide another person can test. Ask ChatGPT to draft only the actions it can inspect, then check those steps against the recording. Use a corrected transcript and clean screenshots when video inspection is unavailable or incomplete.",
+        "reason": "Narrows the promised outcome to a testable guide and makes source checking explicit before the reader starts."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Yes, but treat the recording as evidence, not a finished guide.** ChatGPT can accept a video attachment where that upload method is available. It may miss actions or audio, so every written step still needs to be checked against the recording.",
+        "value": "**Yes, if you treat the recording as evidence rather than a finished guide.** ChatGPT can accept a video attachment where that upload method is available, but it may miss actions or audio. Check every written step against the recording before another person relies on it.",
+        "reason": "Keeps the verified conditional capability claim while giving the reader a clearer decision boundary: the draft is not ready until it is checked."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Use a short practice task in a demo account or clean workspace. Do not record names, customer data, passwords or private account details.",
+        "value": "Choose a small, repeatable practice task with a clear finished screen, then use a demo account or clean workspace. Do not record names, customer data, passwords or private account details.",
+        "reason": "Adds a concrete selection criterion for the recording while retaining the existing workplace privacy boundary. This field is shown in the custom manual route."
+      },
+      {
+        "path": "sections[0].steps[0].body",
+        "old": "Start with the screen where the task begins. Say why you make each choice and show the finished result.",
+        "value": "Start on the screen where the task begins. Complete one task at a steady pace and show the finished result. Briefly name decisions that are not obvious on screen so you can confirm them later.",
+        "reason": "Produces cleaner source material without treating spoken explanation as proof when the tool may miss audio. This checklist item is shown in the custom manual route."
+      },
+      {
+        "path": "tryNow.instructions[3].body",
+        "old": "If video upload is unavailable or ChatGPT cannot inspect it, attach a corrected transcript and clean screenshots. Keep the same checks and do not let it guess missing steps.",
+        "value": "If video upload is unavailable or ChatGPT cannot inspect it, attach a corrected transcript and clean screenshots from the same recording. Mark any decision the source does not show or say, rather than letting it guess.",
+        "reason": "Makes the fallback traceable to one source and gives the reader a direct way to handle an unsupported decision."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Use the method only after a new reader completes the task and the visible result matches the guide's checks.",
+        "reason": "Replaces a broad usefulness test with the guide's own observable pass condition."
+      }
+    ],
+    "public_lesson": {
+      "heading": "AI Automation Queen practice: Make one visible task teachable",
+      "lead": "Someone records a small task so a teammate can do it without asking for a repeat demonstration. In a fictional practice workspace, that might be adding a project label and confirming it appears on the project card. The useful outcome is a draft that names only the visible actions and tells the reader what success looks like, not a polished guess.",
+      "practice": "Practice example, not client evidence: In a demo project, record yourself adding the label 'Ready for review' and capture the screen where it appears. Ask for a three-step draft with a visible check after each action, then flag any menu label the recording does not make readable.",
+      "check": "Pass if a person who did not watch the recording can add the label in the demo project and sees the named result. If they need to ask what a step means, revise the guide before sharing it by email."
+    },
+    "fact_notes": [
+      "OpenAI's Image Inputs FAQ was checked on 2026-09-26. It says ChatGPT can accept video-file attachments through supported upload methods, with availability varying by platform, upload method, and account, and notes that video analysis can be incomplete or inaccurate. The File Uploads FAQ confirms plan- and account-specific availability and limits. Recheck these product details before publication because they can change."
+    ],
+    "editorial_note": "The new opening gives the reader a bounded work moment and an observable definition of a useful draft. It does not replace the existing route selector, checklist, prompt, fallback, or new-reader validation exercise."
+  },
+  "chatgpt-customer-research-with-evidence": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The participant-ID preparation steps and one-row-per-response structure, because they make later claims auditable.",
+      "The evidence-table prompt requirements for two participant IDs, short extracts, contradictions, early signals and research gaps, because they prevent a tidy but unsupported summary.",
+      "The fictional P01 and P02 sign-up example and both interactive checklists, because they give the reader a bounded practice case and an explicit source-check routine.",
+      "The privacy reminder to remove names, private messages, customer data, passwords and confidential work before sending anything to an AI tool."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Turn interview or survey notes into themes that keep their supporting evidence, disagreements and gaps visible.",
+        "value": "Turn interview or survey notes into a checked theme table that keeps supporting evidence, disagreements and gaps visible.",
+        "reason": "Names the concrete work output, a checked table, while retaining the guide’s evidence and uncertainty boundaries."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Create a copy before using an AI tool.",
+        "value": "Create an anonymised working copy before using an AI tool. Keep the original notes unchanged for source checks.",
+        "reason": "Makes the first action safer and states why the untouched source is needed later."
+      },
+      {
+        "path": "tryNow.introduction",
+        "old": "Upload the anonymised notes and replace the decision in brackets.",
+        "value": "Upload an anonymised working copy, replace the decision in brackets, and keep the original notes open for checking.",
+        "reason": "Connects the upload step to the decision field and the verification task without changing the exercise."
+      },
+      {
+        "path": "tryNow.prompt",
+        "old": "Analyse the uploaded customer research to help with this decision: [DECISION].\n\nUse only the uploaded notes.\n\nCreate a table with these columns:\n- Theme\n- What people are trying to achieve\n- Participant IDs supporting it\n- 2 short supporting extracts, each from a different participant ID\n- Contradicting or different evidence\n- Evidence pattern: repeated or mixed\n- What we still need to ask\n\nRules\n1. A theme needs support from at least 2 different participant IDs. Show an extract from each of those people. Put one-person findings under “Early signals” after the main table, with the participant ID and extract.\n2. Keep complaints, requests and suggested solutions separate.\n3. Do not claim that the sample represents all customers.\n4. Do not merge responses that describe different problems merely because they use similar words.\n5. If an extract cannot be tied to a participant ID, exclude it and report the gap.\n\nAfter the table, propose 3 next research questions. Do not recommend a product decision that the evidence cannot support.",
+        "value": "Analyse the uploaded customer research to help with this decision: [DECISION].\n\nUse only the uploaded notes as evidence.\n\nCreate a table with these columns:\n- Theme\n- What people are trying to achieve\n- Participant IDs supporting it\n- 2 short supporting extracts, each from a different participant ID\n- Contradicting or different evidence\n- Evidence pattern: repeated or mixed\n- What we still need to ask\n\nRules\n1. A theme needs support from at least 2 different participant IDs. Show an extract from each of those people. Put one-person findings under “Early signals” after the main table, with the participant ID and extract.\n2. Keep complaints, requests and suggested solutions separate.\n3. Do not claim that the sample represents all customers.\n4. Do not merge responses that describe different problems merely because they use similar words.\n5. If an extract cannot be tied to a participant ID, exclude it and report the gap.\n\nAfter the table, propose 3 next research questions. Do not recommend a product decision that the evidence cannot support.",
+        "reason": "Clarifies that the uploaded notes are the evidence base while preserving every requested column, rule and completion step in the custom copy interaction."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "Open the original notes and verify every participant ID and extract. Remove any theme that cannot be traced to its evidence.",
+        "value": "Before you use the table, open the original notes and verify every participant ID and extract. Remove or revise any theme that cannot be traced to its evidence.",
+        "reason": "Turns the check into a clear stop point before the reader acts on the output."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Use the method when a checked evidence table helps the next decision. Stop and collect more research when the answer cannot be traced back to the notes.",
+        "reason": "Adds a practical stopping condition and reinforces that untraceable output is not decision-ready."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Start with one answer you can trace",
+      "lead": "When two fictional participants say they left sign-up because pricing appeared too late, you may have a theme worth checking, not proof of what every customer wants. The useful next move is to link each claim to its participant ID and exact wording.",
+      "practice": "Practice, using the fictional P01 and P02 example in this guide: write “Price information appears too late” only if you can attach one short extract from each participant. If either extract is missing or says something different, put it under a gap or early signal instead.",
+      "check": "Pass if you can open the original notes and locate every ID and extract in your table. If not, remove or revise the theme before it informs a product decision."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new opening gives the reader a small, bounded way to distinguish a traceable theme from an overclaim before guide delivery. It strengthens the existing P01 and P02 exercise rather than replacing the custom checklist, decision field or source check."
+  },
+  "teach-claude-a-repeatable-workflow": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "Retain the four-part Input, Method, Output and Stop rule model because it gives a beginner a compact way to specify a repeatable job.",
+      "Retain the fictional completed-week practice notes, adjustable word limit, Copy controls and two-week checklist because they let the reader test a bounded workflow before using personal work material.",
+      "Retain the prompt's instruction to use only the current message, label missing information as “Not provided” and take no external action because those are the guide's strongest privacy, verification and human-approval boundaries.",
+      "Retain the second-example test and the conditional Project or Skill saving guidance because the guide correctly treats a good-looking first answer as insufficient evidence for reuse."
+    ],
+    "edits": [
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Save the method only after it works on a real example.** Claude needs the material it receives, the result it must produce, the decisions it must leave to you and a visible test for success.",
+        "value": "**Start with one completed weekly update, not a blank template.** Give Claude the notes it may use, the format it must produce, the decisions it must leave to you and one visible test before you save anything.",
+        "reason": "Moves the reader directly to a safe, concrete first input while preserving the existing boundaries and test-first method."
+      },
+      {
+        "path": "sections[0].items[3].body",
+        "old": "What Claude must leave unresolved instead of guessing or acting.",
+        "value": "What Claude must list as missing or uncertain instead of guessing, sending or acting.",
+        "reason": "Makes the stop rule observable in the rendered four-part model and connects it to the guide's no-action boundary."
+      },
+      {
+        "path": "sections[1].introduction",
+        "old": "Use a safe example from a completed task.",
+        "value": "Use safe notes from a completed weekly update. The first run should show whether Claude keeps gaps visible before you save the method.",
+        "reason": "Names the guide's actual work task and gives the first test a concrete diagnostic purpose."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "The workflow passes when two different weeks produce the same useful structure, missing facts stay visible and no external action is taken.",
+        "value": "Pass only if both weeks use the five headings, put each missing or uncertain item in “Details to check”, and trigger no external action. If either week fails, revise the rule and test again.",
+        "reason": "Turns a general quality statement into a visible pass or fail check with a clear recovery step."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Save it only after the second test passes. If missing facts are being filled in, add a rule or example and test again.",
+        "reason": "Ends with a decisive saving threshold and a practical fallback when the model guesses."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Build a weekly update Claude can safely draft",
+      "lead": "A weekly update can look complete while hiding an important gap. In this guide's fictional practice notes, the venue opening hours have no agreed owner or date, so the instruction must preserve that uncertainty instead of turning it into a fact.",
+      "practice": "Practice, not real case evidence: set a 150-word limit and paste the fictional completed-week notes from this guide into a new Claude conversation. Desired output: the five headings, with the missing owner and date under “Details to check”.",
+      "check": "Pass if the owner and date remain visibly missing and no action is taken. If Claude adds either detail, do not save the instruction: tighten the missing-information rule and test a different completed week."
+    },
+    "fact_notes": [
+      "Confirm current Claude availability and supported use of Project instructions and Skills against Anthropic documentation before publication."
+    ],
+    "editorial_note": "The revised opening gives the reader a concrete success condition: keep missing information visible across two completed weeks. It complements the existing copy-and-test exercise rather than replacing its safe practice notes, word-limit control or checklist."
+  },
+  "what-can-copilot-see-at-work": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "tryNow.prompt: retain the complete, detailed instruction because its bounded triage, citation, uncertainty and no-send rules make the exercise genuinely usable.",
+      "sections[1].steps: retain the sequence of one complete prompt, original-email checks and optional scheduling because it gives beginners a safe progression from access to automation.",
+      "existing_renderer_source three-stage Set up, Try it and Schedule interaction: retain the outcome choices and their fallbacks because they help readers stop, retry or proceed based on what they actually see.",
+      "sourceNotes and the Outlook cross-check: retain the Microsoft sources and the instruction to confirm requests, dates, senders and reply status in the originals. They provide the guide's essential verification boundary."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Set up a checked morning email brief, then schedule it if your work account supports it.",
+        "value": "Create a short morning email brief, verify it in Outlook, then schedule the same tested prompt if your account supports it.",
+        "reason": "Names the tangible output and puts verification before automation."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Yes, if your work account has Copilot access to Outlook.** Ask for a short list of messages that may need you, check the originals, then draft only the replies you choose. Scheduling is optional and needs a Microsoft Copilot licence.",
+        "value": "**Yes, when you use Copilot in Outlook or Copilot Chat with a work or school account that has the access your organisation allows.** Ask for a short list of messages that may need you, verify each original in Outlook, then draft only the replies you choose. Scheduling is optional and requires a Microsoft Copilot license.",
+        "reason": "Makes the access condition clearer while retaining the human-review and no-send boundary."
+      },
+      {
+        "path": "sections[0].items[1].body",
+        "old": "Compare its morning brief with Outlook before using a draft.",
+        "value": "Open every cited email in Outlook. Confirm the request, deadline and reply status before you use a draft.",
+        "reason": "Turns a general comparison into a quick, observable review routine."
+      },
+      {
+        "path": "sections[1].introduction",
+        "old": "Copilot Chat needs work-data access for this task. A web-only chat cannot inspect your inbox.",
+        "value": "This task needs Copilot in Outlook or Copilot Chat signed in with a work or school account, plus the access your organisation permits. A personal or web-only chat without work-data access cannot inspect your inbox.",
+        "reason": "Clarifies the account and permission boundary without changing the guide's access constraint."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "Open the cited messages in Outlook. Confirm the requests, deadlines and reply status before drafting or scheduling anything.",
+        "value": "Pass the brief only when every cited email opens in Outlook and its request, deadline and reply status match the summary. If a citation is missing or a detail cannot be confirmed, check Outlook directly and do not schedule that version yet.",
+        "reason": "Adds a pass or pause decision before a reader acts on or automates the output."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Keep the routine only if the checked brief helps you find the right emails. If it does not, use Outlook directly or ask your IT team what work-data access is available.",
+        "reason": "Gives the reader a concrete usefulness test and a safe fallback."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Test one email before you build a daily brief",
+      "lead": "A morning brief is only useful if it points you to the right original messages. Before you ask Copilot to rank your inbox, test it against one recent email you can open in Outlook.",
+      "practice": "Practice, not a real case: choose one ordinary recent work email and ask for its subject, sender, direct request and stated deadline. Your desired output is a four-item summary with a link or citation to that email, not a reply draft.",
+      "check": "Pass if the subject, sender, request and deadline match the original email. If any item is missing, unsupported or wrong, do not schedule the prompt. Use Outlook directly and ask your IT team which work-data access is available."
+    },
+    "fact_notes": [
+      "Microsoft feature availability is time-sensitive. Official Microsoft Support pages checked on 2026-09-26 state that Copilot Chat in Outlook capabilities vary with the work or school account and add-on license, and that scheduled prompts require a Microsoft Copilot license and can be disabled by optional connected experiences or an administrator. Recheck both linked Microsoft sources before publication."
+    ],
+    "editorial_note": "The new opening gives the reader an early, observable access test and a concrete decision about whether to proceed. It retains the existing three-stage exercise, complete bounded prompt, Outlook checks and manual-send boundary."
+  },
+  "test-meta-muse-money-saving-task": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "Keep the total-cost cards because they make the comparison criteria concrete before the reader asks the tool for options.",
+      "Keep the source-opening and hidden-cost steps because they require the reader to verify seller information rather than accept a generated shortlist.",
+      "Keep the complete prompt and its explicit stop before sign-in, contact, basket, booking, subscription, purchase, or account changes.",
+      "Keep the interactive cost tabs, Copy control, and four-item checklist because they turn a general saving claim into a bounded comparison exercise with a human decision point."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Ask Muse to compare a real buying decision while keeping the budget, evidence and final purchase under your control.",
+        "value": "Use Muse to build a source-checked shortlist for one purchase while you keep the budget, evidence and final purchase decision under your control.",
+        "reason": "Names the usable output, a shortlist the reader can check, and reinforces the approval boundary."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Saving money means comparing the complete cost, not accepting the lowest visible price.** Give Muse a firm budget and require direct sources, exclusions and a stop before purchase.",
+        "value": "**A cheaper option is useful only when its complete cost and terms still match what you need.** Ask Muse for a source-linked comparison, then verify the seller pages and decide before any purchase action.",
+        "reason": "Gives the reader a clearer test for a valid comparison and an immediate verification action."
+      },
+      {
+        "path": "sections[1].introduction",
+        "old": "Use a low-risk purchase you already understand.",
+        "value": "Choose one small, familiar purchase. You should be able to spot a false match and verify every source yourself.",
+        "reason": "Defines a viable first task and explains why familiarity matters for safe checking."
+      },
+      {
+        "path": "tryNow.prompt",
+        "old": "Help me compare this purchase: [PRODUCT OR SERVICE].\n\nMy maximum total budget is [BUDGET AND CURRENCY].\nI need: [3 TO 5 NON-NEGOTIABLE REQUIREMENTS].\nI do not want: [EXCLUSIONS].\nMy location for delivery or availability is [LOCATION].\n\nFind up to 3 options. For each option, show:\n- exact product or plan name;\n- seller or provider;\n- item price;\n- delivery, required extras and recurring charges where shown;\n- estimated total cost;\n- which requirements it meets or misses;\n- return or cancellation terms;\n- direct source links and the time checked.\n\nDo not purchase, subscribe, book, add to a basket, sign in, contact a seller or change an account. Mark any missing cost or term “Needs checking”. Recommend nothing until I have opened the sources.",
+        "value": "Help me build a source-checked comparison for this purchase: [PRODUCT OR SERVICE].\n\nMy maximum total budget is [BUDGET AND CURRENCY].\nI need: [3 TO 5 NON-NEGOTIABLE REQUIREMENTS].\nI do not want: [EXCLUSIONS].\nMy location for delivery or availability is [LOCATION].\n\nFind up to 3 options. For each option, show:\n- exact product or plan name;\n- seller or provider;\n- item price;\n- delivery, required extras and recurring charges where shown;\n- estimated total cost;\n- which requirements it meets or misses;\n- return or cancellation terms;\n- direct source links and the time checked.\n\nDo not purchase, subscribe, book, add to a basket, sign in, contact a seller or change an account. Mark any missing cost or term “Needs checking”. Recommend nothing until I have opened the sources.",
+        "reason": "Improves the reader-facing instruction used by the custom Copy control while preserving its existing requested fields and all action limits."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "The shortlist passes when the three options are genuinely comparable, every cost has a source and no external action was taken.",
+        "value": "Pass only when the options meet the same needs, every stated cost and term can be traced to a source, and no external action has been taken.",
+        "reason": "Makes the success test more precise by checking requirements and terms as well as cost."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Use this method when you can verify the sources yourself. Stop and investigate if a required cost or term remains unknown.",
+        "reason": "Adds a crisp stopping condition for an unresolved comparison without changing the exercise."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Turn a price question into a checkable brief",
+      "lead": "Before you ask Muse to compare anything, write the conditions that make an option usable. The lowest displayed price is not a saving if it excludes delivery, needs an extra purchase, or comes with different cancellation terms. This lets you judge the shortlist instead of treating it as a recommendation.",
+      "practice": "Practice example, not a real result: for a fictional desk lamp, set a total budget of 40 currency units, require delivery to your location and a return option, then ask for up to three source-linked options. The desired output is a small table that marks any unknown delivery fee or return term as “Needs checking”.",
+      "check": "Pass if you can open each source and explain why every option meets the same requirements. If a required cost or term is unknown, do not choose a winner yet."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new opening teaches the reader to define a valid comparison before using the existing Muse exercise. It preserves the prompt, tabs, Copy control and checklist as the practical learning experience."
+  },
+  "test-deepseek-v4-document-work": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "Keep the two-document, same-instruction comparison because it gives the reader a fair, repeatable basis for a tool decision.",
+      "Keep the source-backed decision-brief prompt, including page or section references and the instruction not to turn proposals or estimates into facts.",
+      "Keep the scorecard for accuracy, coverage, restraint and checking time because it makes verification effort visible instead of rewarding a polished first draft.",
+      "Keep the privacy reminder and the requirement for public or invented documents so the exercise remains safe to try."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Run the same document task in both tools and compare factual accuracy, instruction-following and checking time.",
+        "value": "Test one document task in both tools, then compare factual accuracy, instruction-following and the time needed to check the result.",
+        "reason": "Makes the immediate action and decision criteria easier to scan without changing the comparison method."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**A newer model is useful only if it improves the work you repeat.** Compare both tools with the same safe document, instruction and scoring sheet.",
+        "value": "**A newer model earns a place in your workflow only when its checked output improves work you repeat.** Use the same safe document, instruction and scorecard in both tools.",
+        "reason": "Connects the test to a practical workflow decision while retaining the safety boundary and matched-input method."
+      },
+      {
+        "path": "sections[1].introduction",
+        "old": "Use a public or invented document of 2 to 5 pages.",
+        "value": "Choose a public or invented document that is 2 to 5 pages long and contains a few facts you can check quickly.",
+        "reason": "Helps a first-time tester select an input that supports the guide's source-checking exercise."
+      },
+      {
+        "path": "sections[1].steps[1].body",
+        "old": "Note the product, model name and date visible in each tool.",
+        "value": "Record the product, the model name shown and the date. If a model name is not shown, write that down rather than guessing.",
+        "reason": "Adds a clear fallback that prevents readers from treating an unverified model label as a fact."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "Score both tools for accuracy, coverage, restraint and checking time. A faster first answer loses if it takes longer to verify or repair.",
+        "value": "Score both tools for accuracy, coverage, restraint and checking time. Treat the faster first answer as the weaker result if it takes longer to verify or repair.",
+        "reason": "States the decision rule directly, so the reader knows how to weigh speed against dependable output."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Adopt the tool only if its checked result helps with the document work you actually repeat.",
+        "reason": "Gives the guide a crisp, action-oriented stopping decision tied to repeated real work."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Make one document comparison that can change your next workflow choice",
+      "lead": "A convincing first answer is not yet a reliable document brief. This guide gives you a small test: ask two tools for the same source-backed summary, then check whether each claim, deadline and decision is actually supported by the document. The result is a decision based on repair effort as well as writing quality.",
+      "practice": "Practice example, fictional: use a three-page invented project update containing a proposed launch date and an undecided budget. Paste the guide's instruction into both tools and look for an output that labels the date as proposed and keeps the budget as unanswered rather than filling either gap.",
+      "check": "Pass only if every listed fact has a page or section reference, every required heading appears and no proposal, estimate or missing detail is presented as a confirmed fact. If either tool fails, record the repair time and run the second safe document before changing your regular tool."
+    },
+    "fact_notes": [],
+    "editorial_note": "The revised opening gives the reader a sharper reason to run the existing exercise: decide whether a tool deserves a place in repeated document work. It preserves the matched-input test, source checks and interactive scorecard rather than replacing them with a generic comparison."
+  },
+  "protect-a-long-deepseek-project": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "Retain the five-file recovery-pack cards. They turn an abstract backup warning into a concrete, checkable set of project records.",
+      "Retain the ten-part restart-brief prompt, including the instruction to mark unsupported items \"Needs checking\". It distinguishes evidence and approved decisions from chat-generated suggestions.",
+      "Retain the clean-chat test flow and its three checkbox checks. They make recovery demonstrable instead of assuming a saved summary is sufficient.",
+      "Retain the approved-tool condition and the instruction to remove private, customer and confidential material before sending a prompt. Those boundaries keep the exercise appropriate for real work."
+    ],
+    "edits": [
+      {
+        "path": "promise",
+        "old": "Create a local recovery pack so a long project can continue in DeepSeek or another approved tool.",
+        "value": "Build a local recovery pack that lets you resume a long project in DeepSeek or another approved tool without relying on the original chat.",
+        "reason": "Names the practical outcome and makes the lost-chat constraint explicit before the reader begins."
+      },
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**The chat history is not the project.** Save the source material, confirmed decisions, working rules and current next step in files you control.",
+        "value": "**A chat transcript is not a recovery plan.** Save the source material, verified decisions, approved work and a self-contained next instruction in files you control.",
+        "reason": "Reframes the opening as a continuity task and uses the same evidence, approval and restart concepts the exercise teaches."
+      },
+      {
+        "path": "sections[0].items[4].body",
+        "old": "A complete instruction for the next step, with no dependence on old chat history.",
+        "value": "A self-contained instruction for the next step, written so a new chat does not need the old conversation.",
+        "reason": "Makes the purpose of the fifth file easier to test. This card body is displayed in the custom interactive renderer."
+      },
+      {
+        "path": "sections[1].introduction",
+        "old": "Use a new conversation or another approved tool.",
+        "value": "Use a new conversation in DeepSeek or another approved tool so you can see what the pack actually supplies.",
+        "reason": "Gives the clean-chat step a clear diagnostic purpose while preserving the existing tool and approval boundary."
+      },
+      {
+        "path": "tryNow.introduction",
+        "old": "Copy this into the existing project, then verify the result before saving it locally.",
+        "value": "Ask the current chat for a draft, then compare every claim with your source files and decision log before saving anything locally.",
+        "reason": "Adds a specific verification action so the reader does not mistake a generated draft for an approved project record."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "Save the verified brief and source files locally, then test the restart instruction in a clean conversation. The pack passes when the next step can continue without the original chat.",
+        "value": "Save the checked brief and original source files locally, then run the restart instruction in a clean conversation. The pack passes only when the next step can continue without the original chat.",
+        "reason": "Clarifies that original sources, not only the chat-created brief, belong in the recovery pack and provides a firmer pass condition."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Use this method for work that needs to survive a lost chat, and update the pack whenever an approved decision changes.",
+        "reason": "Ends with an operational maintenance rule that follows directly from the restart test."
+      }
+    ],
+    "public_lesson": {
+      "heading": "Make the next step portable before you need it",
+      "lead": "A long chat can feel like the whole project until one source, decision or next instruction cannot be recovered. AI Automation Queen's practical rule is to save the project record in files you control, then test whether a clean chat has enough context to continue.",
+      "practice": "Fictional practice, not client evidence: For a one-page community-event invite, save `sources.txt` with approved event facts, `decisions.txt` with \"Use a welcoming tone,\" and `next-step.txt` with \"Draft a 120-word invite from these files. Do not add details.\"",
+      "check": "Start a clean conversation with only those notes. It passes if the draft preserves the facts and tone without referring to an earlier chat; if it does not, add the missing context to the appropriate note and test again."
+    },
+    "fact_notes": [],
+    "editorial_note": "The new opening gives the reader a small, concrete continuity test before the existing interactive recovery-pack exercise. It reinforces rather than replaces the guide's five-file checklist, prompt and clean-chat verification."
+  },
+  "mistral-multilingual-research": {
+    "verdict": "targeted-repair",
+    "keep": [
+      "The evidence-table prompt retains its original-language extract, careful English translation, direct link, and ‘What this source does not prove’ columns because they create a usable audit trail for each claim.",
+      "The instruction to show conflicts without choosing a winner unless a stronger primary source resolves them remains because it prevents false agreement across languages.",
+      "The four interactive source checks remain because they require the reader to open the page, inspect the wording, and verify the translation before using a conclusion."
+    ],
+    "edits": [
+      {
+        "path": "answer.paragraphs[0]",
+        "old": "**Translation can make two sources look more similar than they are.** Keep the original wording, a short translation and the direct link beside every important claim.",
+        "value": "A translation can make two sources sound more aligned than they are. For each important claim, keep the original wording, a careful English translation, the source date and a direct link together.",
+        "reason": "Makes the reader’s immediate deliverable more concrete while retaining the guide’s source-preservation principle."
+      },
+      {
+        "path": "sections[0].introduction",
+        "old": "Start with a harmless topic covered by official sources in both languages.",
+        "value": "Start with one public, low-risk question that official sources address in both languages. This lets you compare wording before relying on the answer in work.",
+        "reason": "Connects the safe starting point to a practical workplace decision without expanding the research scope."
+      },
+      {
+        "path": "sections[0].steps[3].body",
+        "old": "Do not merge claims when dates, definitions or local rules differ.",
+        "value": "Keep claims separate when dates, definitions or local rules differ. Record the difference rather than forcing one combined answer.",
+        "reason": "Gives the interactive research step a clear action when language-specific evidence does not match."
+      },
+      {
+        "path": "tryNow.check",
+        "old": "Open each source, find the original extract and compare it with the translation. Remove any conclusion that lacks a verified source in the table.",
+        "value": "Open each cited page. Confirm the original extract and date, then compare the wording with its translation. Remove or label any conclusion that the evidence table cannot support.",
+        "reason": "Adds an explicit date check and a safe fallback for incomplete evidence while preserving the existing verification gate."
+      },
+      {
+        "path": "conclusion.paragraphs[0]",
+        "old": "You can now use Mistral to widen a search across languages without hiding where each claim came from.",
+        "value": "You can use Mistral to widen a search across languages while keeping each claim traceable to the page and wording that support it.",
+        "reason": "States the useful work outcome in a more testable way without promising research accuracy."
+      },
+      {
+        "path": "conclusion.finishLine",
+        "old": "Keep the method only when the checked result is useful for the work you actually do.",
+        "value": "Use the method when your checked table makes a decision, note or next research question clearer. Otherwise, narrow the question or find a stronger primary source.",
+        "reason": "Ends with a concrete usefulness test and a next step when the evidence is not yet good enough."
+      }
+    ],
+    "public_lesson": {
+      "heading": "A clean bilingual evidence check",
+      "lead": "Practice example only: use the guide’s sample question about what help EU institutions offer small businesses that want to use AI. Ask it in English and French, then aim first for two source rows whose wording you can trace rather than a quick combined answer.",
+      "practice": "Practice, not current case evidence: copy one short claim from each language into a table with its original wording, source date, direct link and careful English translation. Keep the two claims separate if their conditions or definitions differ.",
+      "check": "Pass only if both rows open to the cited pages and you can point to the original text, a publication date and a translation that retains any condition. If a page does not meet that test, leave the claim out and keep it as an open research question."
+    },
+    "fact_notes": [
+      "The renderer’s navigation route to Mistral web search, including Work, Tools and Web search, is time-sensitive and should be checked against current official Mistral documentation before publication."
+    ],
+    "editorial_note": "The new opening gives the reader a bounded practice win: two traceable rows before any combined conclusion. It leaves the existing interactive question builder, prompt and checkbox exercise intact."
+  }
+}

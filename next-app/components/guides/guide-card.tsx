@@ -3,11 +3,12 @@ import type { Guide } from "@/content/guides";
 import { guideHref } from "@/content/guide-url";
 
 export function GuideCard({ guide, featured = false, reviewMode = false }: { guide: Guide; featured?: boolean; reviewMode?: boolean }) {
+  const underReview = guide.slug === "instagram-content-dashboard";
   return (
     <a
       className={`guide-card${featured ? " guide-card--featured" : ""}`}
       href={guideHref(guide.slug, reviewMode)}
-      aria-label={`Open guide: ${guide.title}`}
+      aria-label={`${underReview ? "Read technical update for" : "Open guide:"} ${guide.title}`}
     >
       <div className="guide-card__art">
         <Image
@@ -18,12 +19,12 @@ export function GuideCard({ guide, featured = false, reviewMode = false }: { gui
           className="guide-card__image"
           priority={featured}
         />
-        <span className="guide-card__level">{guide.level}</span>
+        <span className="guide-card__level">{underReview ? "Under review" : guide.level}</span>
       </div>
       <div className="guide-card__body">
         <h2>{guide.title}</h2>
-        <p>{guide.summary}</p>
-        <span className="guide-card__link">Open guide <span aria-hidden="true">→</span></span>
+        <p>{underReview ? "The former Meta API setup has been retired. Read the technical update and try a safe first decision while the walkthrough is rebuilt." : guide.summary}</p>
+        <span className="guide-card__link">{underReview ? "Read update" : "Open guide"} <span aria-hidden="true">→</span></span>
       </div>
     </a>
   );

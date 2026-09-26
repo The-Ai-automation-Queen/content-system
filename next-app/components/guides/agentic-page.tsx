@@ -38,7 +38,7 @@ export function AgenticPage({ guide }: { guide: GuidePage }) {
       <Link className={styles.back} href="/guides/">← All guides</Link>
       <header className={styles.hero}>
         <h1>What AI agents <span>actually do</span></h1>
-        <p>Does your task need an agent, or would a simpler tool do? Find the right starting point before connecting anything.</p>
+        <p>Does your task need an agent, or will a simpler tool do? Choose the smallest safe starting point before you connect anything.</p>
         <figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 500px" /></figure>
       </header>
 

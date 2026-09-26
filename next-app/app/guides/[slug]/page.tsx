@@ -38,6 +38,7 @@ import { ScreenRecordingPage } from "@/components/guides/screen-recording-page";
 import { MistralMultilingualPage } from "@/components/guides/mistral-multilingual-page";
 import { GuideAccessBoundary } from "@/components/guides/guide-access-boundary";
 import { getGuidePage, guidePages, type GuidePage, type GuideSection } from "@/content/guide-page";
+import editorial from "@/content/guide-editorial.json";
 
 function excerpt(section: GuideSection): string {
   switch (section.kind) {
@@ -57,13 +58,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const guide = getGuidePage(slug);
   if (!guide) return {};
   const canonical = `/guides/${guide.slug}/`;
+  const technicalHold = slug === "instagram-content-dashboard" && (editorial as Record<string, { verdict: string }>)[slug]?.verdict === "factual-hold";
   return {
-    title: guide.title,
-    ...(approvedGuideSlugs.includes(slug) ? {} : { robots: { index: false, follow: false } }),
-    description: guide.seoDescription,
+    title: { absolute: `${guide.title} · AI Automation Queen` },
+    ...(approvedGuideSlugs.includes(slug) && !technicalHold ? {} : { robots: { index: false, follow: false } }),
+    description: technicalHold ? "The Instagram dashboard setup is under technical review because Meta retired the Basic Display API. Read the current safety note before attempting an integration." : guide.seoDescription,
     alternates: { canonical },
     openGraph: {
-      title: guide.title,
+      title: `${guide.title} · AI Automation Queen`,
       description: guide.seoDescription,
       url: canonical,
       type: "article",

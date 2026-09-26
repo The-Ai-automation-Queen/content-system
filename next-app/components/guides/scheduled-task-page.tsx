@@ -53,13 +53,13 @@ export function ScheduledTaskPage({ guide }: { guide: GuidePage }) {
       <Link className={styles.back} href="/guides/">← All guides</Link>
       <header className={styles.hero}>
         <h1>Can ChatGPT do the boring <span>checking for you?</span></h1>
-        <p>Set one public page to check each weekday. Get an update only when the change matters.</p>
+        <p>Set one public page to check each weekday. Ask for an alert only when a defined change needs your attention.</p>
         <figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure>
       </header>
 
       <section className={styles.builder} aria-labelledby="scheduled-builder-title">
         <div className={styles.sectionHead}><span>Start with a public page</span><h2 id="scheduled-builder-title">What would be worth an alert?</h2></div>
-        <p>This example watches a public service-status page. Change the fields to make the instruction yours.</p>
+        <p>This practice example watches a public service-status page. Choose a page you can inspect yourself, then say what change would matter.</p>
         <div className={styles.fields}>
           <label>Page to check<input type="url" value={url} onChange={event => setUrl(event.target.value)} placeholder="https://example.com/status" /></label>
           <label>Tell me only when<input value={condition} onChange={event => setCondition(event.target.value)} placeholder="a specific public result changes" /></label>

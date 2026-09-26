@@ -51,7 +51,7 @@ export function WhatIsAiPage({ guide }: { guide: GuidePage }) {
       </section>
 
       <div className={styles.controls}>
-        <div><h2>Two things worth knowing</h2><p>Pick one or read both.</p></div>
+        <div><h2>Two things to test before you rely on it</h2><p>Pick one or read both.</p></div>
         <button type="button" onClick={() => setReadAll(!readAll)} aria-pressed={readAll}>{readAll ? "Show one step" : "Read all steps"}</button>
       </div>
       <nav className={styles.map} aria-label="Guide steps">

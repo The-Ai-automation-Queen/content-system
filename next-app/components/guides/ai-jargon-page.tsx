@@ -68,7 +68,7 @@ export function AiJargonPage({ guide }: { guide: GuidePage }) {
       <Link className={styles.back} href="/guides/">← All guides</Link>
       <header className={styles.hero}>
         <h1>12 AI words <span>you need to know</span></h1>
-        <p>Hear an AI term in a meeting or sales pitch? Find out what it means and what to ask next.</p>
+        <p>Considering an AI tool for work? Learn what its language reveals before you share information or approve access.</p>
         <figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 500px" /></figure>
       </header>
 

@@ -8,6 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...active.map((entry) => ({ url: base + entry.path, changeFrequency: "monthly" as const, priority: entry.path === "/" ? 1 : .6 })),
     { url: `${base}/guides/`, changeFrequency: "weekly" as const, priority: .9 },
-    ...publicGuides.map((guide) => ({ url: `${base}/guides/${guide.slug}/`, lastModified: new Date(guide.dateModified), changeFrequency: "monthly" as const, priority: .65 })),
+    ...publicGuides.filter((guide) => guide.slug !== "instagram-content-dashboard").map((guide) => ({ url: `${base}/guides/${guide.slug}/`, lastModified: new Date(guide.dateModified), changeFrequency: "monthly" as const, priority: .65 })),
   ];
 }

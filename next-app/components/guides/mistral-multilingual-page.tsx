@@ -63,7 +63,7 @@ export function MistralMultilingualPage({ guide }: { guide: GuidePage }) {
       <Link className={styles.back} href="/guides/">← All guides</Link>
       <header className={styles.hero}>
         <h1>Can Mistral research in two languages <span>without losing the source?</span></h1>
-        <p>Keep the original wording, a careful translation and the direct link together. Then check each claim yourself.</p>
+        <p>Keep the original wording, a careful translation, the publication date and the direct link together. Then open the source before you use a claim.</p>
         <figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure>
       </header>
 

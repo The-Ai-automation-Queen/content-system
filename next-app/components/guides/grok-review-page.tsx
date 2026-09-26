@@ -46,7 +46,7 @@ export function GrokReviewPage({ guide }: { guide: GuidePage }) {
       </section>
 
       <section className={styles.sort} aria-labelledby="grok-sort-title">
-        <div className={styles.sectionHead}><span>Try three examples</span><h2 id="grok-sort-title">What would you allow?</h2></div>
+        <div className={styles.sectionHead}><span>Practice with three examples</span><h2 id="grok-sort-title">What would you allow?</h2></div>
         <p className={styles.sortIntro}>This Bot checks public X posts but must not post anything. What would you let it do? The answer appears beside your choice.</p>
         <div className={styles.sortGrid}>{actions.map((action, index) => <article key={action.text}>
           <p>{action.text}</p>
@@ -56,7 +56,7 @@ export function GrokReviewPage({ guide }: { guide: GuidePage }) {
       </section>
 
       <section className={styles.action} aria-labelledby="grok-action-title">
-        <div className={styles.sectionHead}><span>Tell it when to stop</span><h2 id="grok-action-title">Copy this instruction into Grok Bot</h2></div>
+        <div className={styles.sectionHead}><span>Set an approval boundary</span><h2 id="grok-action-title">Copy this instruction into Grok Bot</h2></div>
         <p>Open the Bot you created, replace the bracketed job, then copy and paste the full instruction. If this is your first Bot, <GuideRelatedLink slug="get-better-professional-writing-from-grok">start with the setup guide</GuideRelatedLink>. Check <a href="https://docs.x.ai/grok-bot/approvals-security-and-privacy" target="_blank" rel="noopener noreferrer">xAI’s approval settings ↗</a> before connecting an account.</p>
         <div className={styles.prompt}><pre>{guide.tryNow.prompt}</pre><button type="button" onClick={copy} aria-label="Copy the complete Grok Bot boundaries">{copied ? "Copied" : "Copy"}</button></div>
         {copyError && <p role="alert">Copy failed. Select the visible instruction text instead.</p>}
