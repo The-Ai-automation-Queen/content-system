@@ -291,7 +291,7 @@ Keep the advice practical. Do not recommend buying a tool.`,
   },
   related: [
     { slug: "what-is-a-prompt", title: "How to write an AI prompt that gets a useful answer", reason: "Practise giving one task a clearer brief.", cover: "/images/guides/what-is-a-prompt.webp" },
-    { slug: "what-remains-valuable-when-ai-can-do-part-of-your-job", title: "What remains valuable when AI can do part of your job?", reason: "Separate tasks AI can help with from the judgement people still trust you to provide.", cover: "/images/guides/ai-skills-worth-learning-for-work.webp", status: "coming-next" },
+    { slug: "ai-jargon-guide", title: "12 AI words you need to know", reason: "Understand the vocabulary you will encounter while building these skills.", cover: "/images/guides/ai-jargon-guide.webp" },
     { slug: "what-is-agentic", title: "What AI agents actually do", reason: "See which skills matter when AI can handle a longer sequence of work.", cover: "/images/guides/what-is-agentic.webp" },
   ],
 } as const satisfies GuidePage;
@@ -363,7 +363,7 @@ For each provider:
     finishLine: "Make one important fact clear, public and verifiable before creating another page.",
   },
   related: [
-    { slug: "create-useful-content-without-losing-your-voice", title: "Create useful content without handing AI your voice", reason: "Turn clear expertise into useful pages without publishing generic AI copy.", cover: "/images/guides/show-up-in-ai-search.webp", status: "coming-next" },
+    { slug: "chatgpt-customer-research-with-evidence", title: "Group customer research without inventing themes", reason: "Gather traceable customer evidence for the facts you publish.", cover: "/images/guides/chatgpt-customer-research-with-evidence.webp" },
     { slug: "what-is-a-prompt", title: "How to write an AI prompt that gets a useful answer", reason: "Give a research task a clearer brief and require verifiable evidence.", cover: "/images/guides/what-is-a-prompt.webp" },
     { slug: "which-ai-tool-for-what", title: "Which AI tool should you use?", reason: "Choose a search-capable tool that fits the work you need to check.", cover: "/images/guides/which-ai-tool-for-what.webp" },
   ],

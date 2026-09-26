@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="The Freedom OS Starter Kit">
+  <rect width="1280" height="720" fill="#FAF7F2"/>
+  <rect x="0" y="0" width="1280" height="8" fill="#2C4BE0"/>
+  <rect x="816" y="0" width="1" height="720" fill="#E8E4DD"/>
+  <g>
+    <rect x="860" y="122" width="151" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="144.4" width="153" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="166.8" width="301" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="187.20000000000002" width="155" height="7" rx="3.5" fill="#2C4BE0" opacity="0.35"/>
+    <rect x="860" y="209.60000000000002" width="182" height="7" rx="3.5" fill="#2C4BE0" opacity="0.57"/>
+    <rect x="860" y="232.00000000000003" width="115" height="7" rx="3.5" fill="#2C4BE0" opacity="0.59"/>
+    <rect x="860" y="256.40000000000003" width="299" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="278.8" width="285" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="301.2" width="211" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="323.59999999999997" width="125" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="345.99999999999994" width="304" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="368.3999999999999" width="247" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="390.7999999999999" width="138" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="413.1999999999999" width="124" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="433.59999999999985" width="143" height="7" rx="3.5" fill="#2C4BE0" opacity="0.53"/>
+    <rect x="860" y="457.99999999999983" width="204" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="478.3999999999998" width="191" height="7" rx="3.5" fill="#2C4BE0" opacity="0.59"/>
+    <rect x="860" y="502.7999999999998" width="205" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="523.1999999999998" width="158" height="7" rx="3.5" fill="#2C4BE0" opacity="0.43"/>
+    <rect x="860" y="547.5999999999998" width="170" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="569.9999999999998" width="172" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="860" y="592.3999999999997" width="158" height="2" rx="1" fill="#1B2EA0" opacity="0.16"/>
+    <rect x="839" y="204.6" width="6" height="27" rx="4" fill="#2C4BE0"/>
+  </g>
+  <text x="88" y="120" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="19" letter-spacing="3.6" fill="#1B2EA0">FREE, FOREVER</text>
+  <text y="326.71" font-family="Georgia,'Times New Roman',serif" font-size="93" font-weight="700" fill="#1a1a1a"><tspan x="88" dy="0">The Freedom OS</tspan><tspan x="88" dy="98.58">Starter Kit</tspan></text>
+  <rect x="88" y="467.28999999999996" width="96" height="3" fill="#2C4BE0"/>
+  <text x="88" y="640" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="18" letter-spacing="3.2" fill="#1a1a1a" opacity="0.55">SHIFT &amp; LEAD</text>
+  <text x="88" y="669" font-family="Georgia,'Times New Roman',serif" font-size="19" font-style="italic" fill="#1a1a1a" opacity="0.45">www.shiftandlead.com</text>
+</svg>

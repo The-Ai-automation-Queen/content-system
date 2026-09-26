@@ -1,0 +1,394 @@
+/* Shift & Lead mobile-first polish for the current HTML site.
+   Final responsive safeguards before the Next.js migration. */
+
+/* -------------------------------------------------------------------------
+   CTA contrast. Blue buttons always use white text, including visited links.
+   ------------------------------------------------------------------------- */
+body[data-page-kind] .btn-primary:not(.contact-submit),
+body[data-page-kind] .btn-primary:not(.contact-submit):visited,
+body[data-page-kind] .btn-primary:not(.contact-submit):hover,
+body[data-page-kind] .btn-primary:not(.contact-submit):focus-visible,
+body[data-page-kind] .button.primary,
+body[data-page-kind] .button.primary:visited,
+body[data-page-kind] .button.primary:hover,
+body[data-page-kind] .button.primary:focus-visible,
+body[data-page-kind="home"] .router-cta,
+body[data-page-kind="home"] .router-cta:visited,
+body[data-page-kind="home"] .router-cta:hover,
+body[data-page-kind="home"] .router-cta:focus-visible,
+body[data-page-kind="guides"] .path-cta:not(.ghost),
+body[data-page-kind="guides"] .path-cta:not(.ghost):visited,
+body[data-page-kind="guides"] .path-cta:not(.ghost):hover,
+body[data-page-kind="guides"] .path-cta:not(.ghost):focus-visible,
+body[data-page-kind="quiz"] .btn-start,
+body[data-page-kind="quiz"] .btn-start:hover,
+body[data-page-kind="quiz"] .btn-start:focus-visible,
+body[data-page-kind="quiz"] .tlq-start,
+body[data-page-kind="quiz"] .tlq-start:hover,
+body[data-page-kind="quiz"] .tlq-start:focus-visible,
+body[data-page-kind="quiz"] .tlq-result-cta,
+body[data-page-kind="quiz"] .tlq-result-cta:visited,
+body[data-page-kind="quiz"] .tlq-result-cta:hover,
+body[data-page-kind="quiz"] .tlq-result-cta:focus-visible,
+body[data-page-kind="brief"] .header-subscribe,
+body[data-page-kind="brief"] .header-subscribe:visited,
+body[data-page-kind="brief"] .category-pill.active,
+body[data-page-kind="brief"] .feed-view-button.active,
+body[data-page-kind="build"] .apply-form button,
+body[data-page-kind="workshops"] .btn,
+body[data-page-kind="workshops"] .btn:visited,
+body[data-page-kind="workshops"] .btn:hover,
+body[data-page-kind="workshops"] .btn:focus-visible,
+body[data-page-kind="workshops"] .booking-form button,
+body[data-page-kind="guide"] .gate-form button,
+body[data-page-kind="guide"] .capture-form button,
+body[data-page-kind="starter-kit"] .capture-form button,
+body[data-page-kind="starter-kit"] .kit-filter[aria-pressed="true"]{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+
+
+body[data-page-kind="home"] .router-cta,
+body[data-page-kind="guides"] .path-cta:not(.ghost),
+body[data-page-kind="workshops"] .btn{
+  background:var(--blue,#2C4BE0)!important;
+  border-color:var(--blue,#2C4BE0)!important;
+}
+body[data-page-kind="home"] .router-cta:hover,
+body[data-page-kind="guides"] .path-cta:not(.ghost):hover,
+body[data-page-kind="workshops"] .btn:hover{
+  background:var(--blue-deep,#1B2EA0)!important;
+  border-color:var(--blue-deep,#1B2EA0)!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+
+/* Homepage contact button intentionally reverses to light on the dark panel. */
+body[data-page-kind="home"] .contact .contact-submit,
+body[data-page-kind="home"] .contact .contact-submit:visited,
+body[data-page-kind="home"] .contact .contact-submit:hover,
+body[data-page-kind="home"] .contact .contact-submit:focus-visible{
+  background:#fff!important;
+  border-color:#fff!important;
+  color:#1B2EA0!important;
+  -webkit-text-fill-color:#1B2EA0!important;
+}
+body[data-page-kind="home"] .contact .contact-submit:hover{background:#FAF7F2!important;border-color:#FAF7F2!important}
+
+/* Mascot belongs in Guides, not service or workshop pages. */
+body[data-page-kind="build"] .offer-steps::after,
+body[data-page-kind="workshops"] .why::after{
+  content:none!important;
+  display:none!important;
+  background:none!important;
+}
+body[data-page-kind="workshops"] .why{padding-right:0!important}
+body[data-page-kind="build"] .offer-steps{padding-bottom:18px!important}
+
+/* Keep the homepage promise visually connected. */
+body[data-page-kind="home"] .hero h1 em{position:relative;top:-.055em}
+
+@media(max-width:900px){
+  body[data-page-kind="home"] .hero-inner{gap:26px!important}
+  body[data-page-kind="home"] .hero-portrait{width:min(78vw,320px)!important;max-width:320px!important;margin:4px auto 0!important}
+  body[data-page-kind="home"] .founder-inner{gap:28px!important}
+  body[data-page-kind="home"] .founder-photo{width:min(72vw,300px)!important;max-width:300px!important;margin:0 auto!important}
+  body[data-page-kind="about"] .hero img{width:min(78vw,320px)!important;max-width:320px!important}
+}
+
+@media(max-width:700px){
+  /* Shared mobile scale. Headings, body copy and buttons should feel related. */
+  body[data-page-kind]{font-size:16px!important;line-height:1.55!important}
+  body[data-page-kind="guides"] .hero h1,
+  body[data-page-kind="about"] h1,
+  body[data-page-kind="workshops"] h1,
+  body[data-page-kind="build"] .offer-hero h1,
+  body[data-page-kind="starter-kit"] .kit-hero h1,
+  body[data-page-kind="brief"] .hero h1,
+  body[data-page-kind="quiz"] .intro h1{
+    font-size:clamp(36px,10vw,44px)!important;
+    line-height:1.04!important;
+  }
+  body[data-page-kind="guide"] .guide-hero h1{font-size:clamp(34px,9.5vw,42px)!important;line-height:1.06!important}
+  body[data-page-kind="about"] .wrap h2,
+  body[data-page-kind="workshops"] h2,
+  body[data-page-kind="build"] .offer-section h2,
+  body[data-page-kind="starter-kit"] .newsletter h2{
+    font-size:clamp(27px,7.8vw,32px)!important;
+    line-height:1.13!important;
+  }
+
+  body[data-page-kind] .btn-primary,
+  body[data-page-kind] .button,
+  body[data-page-kind] .btn,
+  body[data-page-kind] .btn-start,
+  body[data-page-kind] .btn-cream,
+  body[data-page-kind] .router-cta,
+  body[data-page-kind] .path-cta,
+  body[data-page-kind] .tlq-start,
+  body[data-page-kind] .tlq-result-cta,
+  body[data-page-kind] .apply-form button,
+  body[data-page-kind] .booking-form button,
+  body[data-page-kind] .gate-form button,
+  body[data-page-kind] .capture-form button{
+    min-height:48px!important;
+    padding:13px 18px!important;
+    font-family:var(--ui,"Inter",Arial,sans-serif)!important;
+    font-size:14px!important;
+    font-weight:600!important;
+    line-height:1.2!important;
+    letter-spacing:.04em!important;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  /* Navigation and mobile menu. */
+  .site-nav-inner{min-height:58px;padding:13px 18px!important}
+  .site-nav-logo{font-size:20px!important}
+  .site-nav-mobile summary{min-height:42px;display:flex;align-items:center;justify-content:center}
+  .site-nav-mobile-panel{max-height:calc(100vh - 86px);overflow:auto}
+  .site-nav-mobile-panel a{font-size:14px!important;padding:11px 10px!important}
+
+  /* Compact footer. */
+  .chrome-foot{margin-top:24px!important;padding:28px 18px 22px!important}
+  .chrome-foot::before{
+    content:"SHIFT & LEAD";
+    display:block;
+    max-width:var(--content,1080px);
+    margin:0 auto 16px;
+    font-family:var(--display,"Playfair Display",Georgia,serif);
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:.02em;
+    color:#fff;
+  }
+  .chrome-foot-grid{
+    max-width:var(--content,1080px)!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:6px 22px!important;
+  }
+  .chrome-foot-grid>section{margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:not(:last-child){display:contents!important}
+  .chrome-foot-grid>section:not(:last-child)>h2{display:none!important}
+  .chrome-foot-grid>section:not(:last-child)>ul{display:contents!important}
+  .chrome-foot-grid>section:not(:last-child)>ul>li{list-style:none!important;margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:not(:last-child)>ul>li>a{
+    display:block!important;
+    padding:6px 0!important;
+    font-family:var(--ui,"Inter",Arial,sans-serif)!important;
+    font-size:14px!important;
+    font-weight:500!important;
+    line-height:1.25!important;
+    color:#E7E3DC!important;
+    text-decoration:none!important;
+  }
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(1){order:1}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(1){order:2}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(2){order:3}
+  .chrome-foot-grid>section:nth-child(2)>ul>li:nth-child(2){order:4}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(3){order:5}
+  .chrome-foot-grid>section:nth-child(3)>ul>li:nth-child(1){order:6}
+  .chrome-foot-grid>section:nth-child(1)>ul>li:nth-child(4),
+  .chrome-foot-grid>section:nth-child(3)>ul>li:nth-child(2){display:none!important}
+  .chrome-foot-grid>section:nth-child(4){order:7;grid-column:1/-1;margin-top:14px!important;padding-top:12px!important;border-top:1px solid rgba(255,255,255,.12)}
+  .chrome-foot-grid>section:nth-child(4)>h2{display:none!important}
+  .chrome-foot-grid>section:nth-child(4)>ul{display:flex!important;flex-wrap:wrap!important;gap:6px 0!important;margin:0!important;padding:0!important}
+  .chrome-foot-grid>section:nth-child(4)>ul>li{list-style:none!important;display:flex!important;align-items:center!important;margin:0!important}
+  .chrome-foot-grid>section:nth-child(4)>ul>li:not(:last-child)::after{content:"·";margin:0 9px;color:#777}
+  .chrome-foot-grid>section:nth-child(4)>ul>li>a{font-family:var(--ui,"Inter",Arial,sans-serif)!important;font-size:12px!important;line-height:1.25!important;color:#B9B5AE!important;text-decoration:none!important}
+  .chrome-foot-legal{max-width:var(--content,1080px)!important;margin:14px auto 0!important;padding:0!important;border:0!important;font-size:11px!important;line-height:1.4!important;text-align:left!important;text-transform:none!important;letter-spacing:.03em!important;color:#85817B!important}
+
+  /* Home. */
+  body[data-page-kind="home"] .ribbon{padding:9px 14px!important;gap:8px!important;font-size:10px!important;letter-spacing:.11em!important}
+  body[data-page-kind="home"] .ribbon input[type="email"]{width:min(56vw,220px)!important;min-width:0!important}
+  body[data-page-kind="home"] .ribbon button{white-space:nowrap!important}
+  body[data-page-kind="home"] .hero{padding-left:18px!important;padding-right:18px!important}
+  body[data-page-kind="home"] .hero-inner{gap:22px!important}
+  body[data-page-kind="home"] .hero-kicker{font-size:9.5px!important;line-height:1.45!important;letter-spacing:.16em!important;margin-bottom:12px!important}
+  body[data-page-kind="home"] .hero-kicker .rule{width:20px!important;flex:0 0 20px!important}
+  body[data-page-kind="home"] .hero h1{font-size:clamp(38px,11.2vw,48px)!important;line-height:.99!important;letter-spacing:-.025em!important;margin-bottom:14px!important}
+  body[data-page-kind="home"] .hero h1 em{top:-.045em}
+  body[data-page-kind="home"] .hero-sub{font-size:17px!important;line-height:1.48!important;margin-bottom:18px!important}
+  body[data-page-kind="home"] .hero-portrait{width:min(74vw,290px)!important;max-width:290px!important;margin-top:2px!important}
+  body[data-page-kind="home"] .founder-photo{width:min(68vw,270px)!important;max-width:270px!important}
+  body[data-page-kind="home"] .testi-card,
+  body[data-page-kind="home"] .router-card{padding:18px!important}
+  body[data-page-kind="home"] .router-sub{margin-bottom:20px!important}
+  body[data-page-kind="home"] .live-week{padding-left:18px!important;padding-right:18px!important}
+  body[data-page-kind="home"] .live-week-grid{gap:16px!important}
+
+  /* Guides hub and guide pages. */
+  body[data-page-kind="guides"] .hero{padding:36px 18px 40px!important}
+  body[data-page-kind="guides"] .hero-sub{font-size:17px!important;line-height:1.5!important}
+  body[data-page-kind="guides"] .paths{padding:34px 18px!important}
+  body[data-page-kind="guides"] .paths-grid{gap:14px!important}
+  body[data-page-kind="guides"] .path-col{padding:20px 18px!important}
+  body[data-page-kind="guides"] .path-name{font-size:28px!important;line-height:1.12!important}
+  body[data-page-kind="guides"] .path-tag{font-size:16px!important;line-height:1.5!important}
+  body[data-page-kind="guides"] .card-grid .card>img{height:150px!important;padding:12px 22px 2px!important}
+  body[data-page-kind="guides"] .filter-group{overflow-x:auto!important;overscroll-behavior-x:contain;scrollbar-width:thin;padding:0 0 6px!important}
+  body[data-page-kind="guides"] .filter-group::-webkit-scrollbar{height:3px}
+  body[data-page-kind="guides"] .filter-group::-webkit-scrollbar-thumb{background:#B9C4F7;border-radius:99px}
+  body[data-page-kind="guide"]{font-size:17px!important;line-height:1.68!important}
+  body[data-page-kind="guide"] .guide-doc{padding-left:18px!important;padding-right:18px!important}
+  body[data-page-kind="guide"] .prose h2{font-size:28px!important;line-height:1.18!important;margin-top:34px!important}
+  body[data-page-kind="guide"] .prose h3{font-size:22px!important;line-height:1.22!important}
+  body[data-page-kind="guide"] .gate,
+  body[data-page-kind="guide"] .newsletter{padding-left:18px!important;padding-right:18px!important}
+
+  /* Work with me. */
+  body[data-page-kind="build"] .offer-hero{padding:36px 18px!important}
+  body[data-page-kind="build"] .offer-hero-inner{padding-right:0!important}
+  body[data-page-kind="build"] .offer-hero::after{display:none!important}
+  body[data-page-kind="build"] .offer-promise{font-size:17px!important;line-height:1.52!important;margin-bottom:20px!important}
+  body[data-page-kind="build"] .offer-section{padding:32px 18px!important}
+  body[data-page-kind="build"] .offer-section p,
+  body[data-page-kind="build"] .offer-section li{font-size:16px!important;line-height:1.55!important}
+  body[data-page-kind="build"] .offer-grid{gap:12px!important}
+  body[data-page-kind="build"] .offer-card{padding:17px!important}
+  body[data-page-kind="build"] .offer-card h3{font-size:20px!important}
+  body[data-page-kind="build"] .offer-steps{padding-bottom:0!important}
+  body[data-page-kind="build"] .offer-step{padding:20px 12px 18px 40px!important}
+  body[data-page-kind="build"] .offer-step::before{left:10px!important}
+  body[data-page-kind="build"] .offer-step:not(:last-child)::after{display:none!important}
+  body[data-page-kind="build"] .offer-step h3{font-size:23px!important;line-height:1.2!important}
+  body[data-page-kind="build"] .fit-lists{gap:18px!important}
+  body[data-page-kind="build"] .apply-form{display:grid!important;grid-template-columns:1fr!important;gap:12px!important;max-width:100%!important}
+  body[data-page-kind="build"] .apply-form label{grid-column:1!important;grid-row:auto!important;font-size:14px!important}
+  body[data-page-kind="build"] .apply-form input,
+  body[data-page-kind="build"] .apply-form select,
+  body[data-page-kind="build"] .apply-form textarea{font-size:16px!important;padding:12px 13px!important;margin-top:5px!important}
+  body[data-page-kind="build"] .client-proof{padding:20px!important}
+
+  /* Workshops. */
+  body[data-page-kind="workshops"] .wrap{padding-left:18px!important;padding-right:18px!important}
+  body[data-page-kind="workshops"] .hero{padding:36px 0 32px!important}
+  body[data-page-kind="workshops"] .hero-sub{font-size:17px!important;line-height:1.5!important}
+  body[data-page-kind="workshops"] .hero-ctas{display:grid!important;grid-template-columns:1fr!important;margin-top:18px!important}
+  body[data-page-kind="workshops"] .hero-ctas .btn{width:100%!important;margin:0!important}
+  body[data-page-kind="workshops"] section{padding-top:32px!important;padding-bottom:32px!important}
+  body[data-page-kind="workshops"] .talks{grid-template-columns:1fr!important;gap:12px!important}
+  body[data-page-kind="workshops"] .talk{padding:18px!important;gap:8px!important}
+  body[data-page-kind="workshops"] .talk p,
+  body[data-page-kind="workshops"] .leave li,
+  body[data-page-kind="workshops"] .not-for li,
+  body[data-page-kind="workshops"] .book p{font-size:16px!important;line-height:1.5!important}
+  body[data-page-kind="workshops"] .leave,
+  body[data-page-kind="workshops"] .guarantee,
+  body[data-page-kind="workshops"] .not-for,
+  body[data-page-kind="workshops"] .book{padding:20px!important}
+  body[data-page-kind="workshops"] .guarantee .line{font-size:18px!important;line-height:1.45!important;font-weight:600!important;margin:10px 0!important}
+  body[data-page-kind="workshops"] .guarantee p.support{font-size:16px!important;line-height:1.5!important}
+  body[data-page-kind="workshops"] .why{grid-template-columns:1fr!important;gap:10px!important;padding-right:0!important}
+  body[data-page-kind="workshops"] .why>div{padding:15px 16px!important}
+  body[data-page-kind="workshops"] .booking-form{max-width:100%!important;gap:10px!important}
+  body[data-page-kind="workshops"] .booking-form input,
+  body[data-page-kind="workshops"] .booking-form textarea{font-size:16px!important;padding:12px 13px!important}
+
+  /* About. */
+  body[data-page-kind="about"] .wrap{padding-left:18px!important;padding-right:18px!important}
+  body[data-page-kind="about"] .hero{padding-top:34px!important;padding-bottom:30px!important}
+  body[data-page-kind="about"] .hero img{width:min(72vw,280px)!important;max-width:280px!important}
+  body[data-page-kind="about"] .wrap>section{padding-top:32px!important;padding-bottom:32px!important}
+  body[data-page-kind="about"] .story p,
+  body[data-page-kind="about"] .timeline-item p{font-size:16px!important;line-height:1.55!important}
+
+  /* Quiz stays a focused page, but the mobile flow is compact. */
+  body[data-page-kind="quiz"] .stage{padding:30px 18px 34px!important;min-height:0!important}
+  body[data-page-kind="quiz"] .intro .sub{font-size:17px!important;line-height:1.5!important;margin-bottom:24px!important}
+  body[data-page-kind="quiz"] .intro-facts{gap:14px!important;margin-bottom:24px!important}
+  body[data-page-kind="quiz"] .progress{margin-bottom:26px!important}
+  body[data-page-kind="quiz"] .q-text{font-size:27px!important;line-height:1.2!important;margin-bottom:20px!important}
+  body[data-page-kind="quiz"] .options{gap:10px!important}
+  body[data-page-kind="quiz"] .opt{padding:14px 15px!important;font-size:16px!important;line-height:1.45!important}
+  body[data-page-kind="quiz"] .r-cta{padding:22px 18px!important}
+  body[data-page-kind="quiz"] .r-bar-row{grid-template-columns:92px 1fr 38px!important;gap:10px!important}
+
+  /* Starter Kit. Filters become a real swipe strip rather than a cramped wrap. */
+  body[data-page-kind="starter-kit"] .kit-hero{padding:34px 18px!important}
+  body[data-page-kind="starter-kit"] .kit-hero p{font-size:16px!important;line-height:1.52!important}
+  body[data-page-kind="starter-kit"] .kit-filters{
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    gap:8px!important;
+    overflow-x:auto!important;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;
+    padding:0 2px 7px!important;
+    margin-bottom:22px!important;
+  }
+  body[data-page-kind="starter-kit"] .kit-filters::-webkit-scrollbar{height:3px}
+  body[data-page-kind="starter-kit"] .kit-filters::-webkit-scrollbar-thumb{background:#B9C4F7;border-radius:99px}
+  body[data-page-kind="starter-kit"] .kit-filter{flex:0 0 auto!important;font-size:12px!important;padding:9px 14px!important}
+  body[data-page-kind="starter-kit"] .kit-grid{gap:12px!important}
+  body[data-page-kind="starter-kit"] .kit-item{padding:17px!important}
+
+  /* Insider Brief. The topic strip is explicitly swipeable and visibly so. */
+  body[data-page-kind="brief"] .site-header{padding:0 16px!important}
+  body[data-page-kind="brief"] .header-inner{min-height:58px!important}
+  body[data-page-kind="brief"] .header-logo{font-size:19px!important}
+  body[data-page-kind="brief"] .header-subscribe{min-height:40px!important;padding:9px 12px!important;font-size:12px!important}
+  body[data-page-kind="brief"] .hero{padding:34px 18px 36px!important}
+  body[data-page-kind="brief"] .hero-content{padding:18px 0!important;max-width:100%!important}
+  body[data-page-kind="brief"] .hero-subtitle{font-size:17px!important;line-height:1.52!important;margin-top:14px!important}
+  body[data-page-kind="brief"] .category-bar{padding:8px 0 6px!important;overflow:visible!important}
+  body[data-page-kind="brief"] .category-bar-inner{
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0 16px 6px!important;
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    gap:8px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+    touch-action:pan-x;
+    scroll-snap-type:x proximity;
+    scrollbar-width:thin!important;
+    scrollbar-color:#A8B7F5 transparent!important;
+  }
+  body[data-page-kind="brief"] .category-bar-inner::-webkit-scrollbar{display:block!important;height:3px!important}
+  body[data-page-kind="brief"] .category-bar-inner::-webkit-scrollbar-track{background:transparent!important}
+  body[data-page-kind="brief"] .category-bar-inner::-webkit-scrollbar-thumb{background:#A8B7F5!important;border-radius:99px!important}
+  body[data-page-kind="brief"] .category-pill{flex:0 0 auto!important;scroll-snap-align:start;padding:9px 16px!important;font-size:14px!important;line-height:1.2!important}
+  body[data-page-kind="brief"] .feed-section{padding:30px 16px 24px!important}
+  body[data-page-kind="brief"] .briefing-header{display:block!important;margin-bottom:18px!important}
+  body[data-page-kind="brief"] .briefing-title{font-size:31px!important;line-height:1.12!important}
+  body[data-page-kind="brief"] .briefing-status{font-size:15px!important;line-height:1.4!important}
+  body[data-page-kind="brief"] .feed-view-switch{display:flex!important;width:100%!important;margin-top:16px!important;padding:3px!important}
+  body[data-page-kind="brief"] .feed-view-button{flex:1!important;min-height:44px!important;font-size:14px!important;padding:9px 12px!important}
+  body[data-page-kind="brief"] .feed{grid-template-columns:1fr!important;gap:12px!important}
+  body[data-page-kind="brief"] .feed-card{padding:16px!important}
+  body[data-page-kind="brief"] .topic-bubbles{display:none!important}
+}
+
+@media(max-width:480px){
+  body[data-page-kind="home"] .hero{padding-top:28px!important;padding-bottom:30px!important}
+  body[data-page-kind="home"] .hero h1{font-size:clamp(37px,10.8vw,44px)!important}
+  body[data-page-kind="home"] .hero-ctas{gap:9px!important}
+  body[data-page-kind="home"] .hero-ctas a{padding-top:13px!important;padding-bottom:13px!important}
+  body[data-page-kind="home"] .hero-portrait{width:min(72vw,260px)!important;max-width:260px!important}
+  body[data-page-kind="home"] .founder-photo{width:min(66vw,245px)!important;max-width:245px!important}
+  body[data-page-kind="home"] .ribbon{display:grid!important;grid-template-columns:1fr auto!important;text-align:left!important}
+  body[data-page-kind="home"] .ribbon label{grid-column:1/-1!important;text-align:center!important}
+  body[data-page-kind="home"] .ribbon input[type="email"]{width:100%!important}
+
+  body[data-page-kind="guides"] .card-grid .card>img{height:138px!important;padding:10px 18px 0!important}
+  body[data-page-kind="about"] .hero img{width:min(70vw,260px)!important;max-width:260px!important}
+  body[data-page-kind="quiz"] .r-bar-row{grid-template-columns:78px 1fr 34px!important}
+}
+
+@media(max-width:360px){
+  body[data-page-kind="home"] .hero h1{font-size:36px!important}
+  body[data-page-kind="home"] .hero-portrait{width:240px!important;max-width:100%!important}
+  body[data-page-kind="home"] .founder-photo{width:230px!important;max-width:100%!important}
+  body[data-page-kind="home"] .ribbon{grid-template-columns:1fr!important}
+  body[data-page-kind="home"] .ribbon button{width:100%!important}
+}

@@ -589,7 +589,7 @@ export const kimiValueGuide = makeGuide({
   related: [
     promptGuide("control-kimi-code-changes", "How do you stop Kimi changing extra files?", "Test the coding workflow with plan and diff controls."),
     existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Check whether Kimi is the right tool for this repeated task.", "/images/guides/which-ai-tool-for-what.webp"),
-    comingNextGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Use the same evidence-led upgrade decision."),
+    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Keep sensitive work out of a paid-tool comparison.", "/images/guides/learn-master.webp"),
   ],
 });
 
@@ -750,7 +750,7 @@ export const manusBrowserWorkflowGuide = makeGuide({
   },
   finish: "You can now choose between public browsing, a narrow connector and a local browser session from the access the job actually needs.",
   related: [
-    comingNextGuide("test-manus-without-burning-credits", "How do you test Manus without wasting credits?", "Prove one small result before connecting accounts."),
+    existingGuide("what-is-agentic", "What AI agents actually do", "Understand the agent before deciding how to grant it access.", "/images/guides/what-is-agentic.webp"),
     existingGuide("what-is-an-ai-browser", "What is an AI browser?", "Understand what an AI browser can see and do.", "/images/guides/what-is-an-ai-browser.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what stays outside connected work.", "/images/guides/learn-master.webp"),
   ],

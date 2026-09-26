@@ -1,0 +1,98 @@
+/* Shift & Lead shared email capture.
+   Source of truth: shared/assets/capture.js
+
+   Every capture form on every site uses this. It reads the lead source from
+   the form's data-source attribute, keeps the honeypot behaviour, and posts to
+   the same two endpoints the site has always used: Formspree for delivery and
+   the n8n webhook for the GHL handoff. Endpoints are not configurable here on
+   purpose. Changing one is a deliberate edit to this file. */
+
+(function () {
+  'use strict';
+
+  // One endpoint: the n8n webhook that has been receiving every submission
+  // all along and hands off to GHL by source tag. The path name is a relic of
+  // the retired Formspree era; renaming it would mean touching n8n for zero
+  // benefit, so it stays. Upgrade path (pipeline + notifications): deploy/n8n/.
+  var WEBHOOK = 'https://auto.shiftandlead.com/webhook/formspree-lead';
+
+  function source(form) {
+    var s = form.getAttribute('data-source') || 'site';
+    var page = document.body.getAttribute('data-page');
+    return page ? s + '-' + page : s;
+  }
+
+  function wire(form) {
+    // Feeds render opt-ins after this script has run, so wiring must be
+    // repeatable without double-binding a form.
+    if (form.getAttribute('data-wired') === 'yes') return;
+    form.setAttribute('data-wired', 'yes');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var button = form.querySelector('button');
+      var emailField = form.querySelector('[name="email"]');
+      var honeypot = form.querySelector('[name="_gotcha"]');
+      if (!button || !emailField) return;
+
+      // Bot filled the hidden field. Say nothing useful, send nothing.
+      if (honeypot && honeypot.value) {
+        button.textContent = 'Done.';
+        return;
+      }
+
+      var email = emailField.value;
+      var payload = JSON.stringify({ email: email, source: source(form) });
+
+      button.disabled = true;
+      button.textContent = 'Sending...';
+
+      fetch(WEBHOOK, {
+        method: 'POST',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: payload
+      }).then(function (r) {
+        if (r.ok) {
+          button.textContent = 'You are on the list.';
+          form.setAttribute('data-state', 'done');
+        } else {
+          button.disabled = false;
+          button.textContent = 'Try again';
+        }
+      }).catch(function () {
+        button.disabled = false;
+        button.textContent = 'Try again';
+      });
+    });
+  }
+
+  function wireAll() {
+    var forms = document.querySelectorAll('form.capture-form');
+    for (var i = 0; i < forms.length; i++) wire(forms[i]);
+  }
+
+  // Exposed so a page that renders forms later can re-run the wiring.
+  window.slWireCaptureForms = wireAll;
+
+  function init() {
+    wireAll();
+
+    // Remember which guides have been read, for the library page continue link.
+    var slug = document.body.getAttribute('data-page');
+    if (!slug) return;
+    try {
+      var read = JSON.parse(localStorage.getItem('sl_read') || '[]');
+      if (read.indexOf(slug) === -1) {
+        read.push(slug);
+        localStorage.setItem('sl_read', JSON.stringify(read));
+      }
+    } catch (err) { /* private mode, nothing to do */ }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

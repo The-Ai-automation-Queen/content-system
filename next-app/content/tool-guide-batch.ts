@@ -154,7 +154,7 @@ If a page requires a login, payment detail or form submission, skip it and find 
   ], check: "The test passes only when all three options trace to public sources and Muse stops after the comparison." },
   conclusion: { heading: "You now know what access Muse deserves", paragraphs: ["Use Muse for a larger task only after it completes the public test, respects the stop point and gives you an audit trail you can understand."], finishLine: "Grant the next permission only when the next action genuinely needs it." },
   related: [
-    { slug: "test-meta-business-agent-customer-replies", title: "Should Meta Business Agent answer customers?", reason: "Test the separate WhatsApp Business reply product before using it live.", cover: "/images/guides/test-meta-business-agent-customer-replies.webp", status: "coming-next" },
+    { slug: "test-meta-muse-money-saving-task", title: "Can Muse save you money without taking over the purchase?", reason: "Try another public-only comparison before granting more access.", cover: "/images/guides/test-meta-muse-money-saving-task.webp" },
     { slug: "what-is-an-ai-browser", title: "What is an AI browser?", reason: "Understand what changes when an agent can work inside a browser.", cover: "/images/guides/what-is-an-ai-browser.webp" },
     { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Check what stays out before giving Muse more access.", cover: "/images/guides/learn-master.webp" },
   ],

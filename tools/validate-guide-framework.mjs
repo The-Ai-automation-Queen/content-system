@@ -35,12 +35,12 @@ const guideComponentDir = path.join(root, "next-app/components/guides");
 const activeGuideStyles = fs.readdirSync(guideComponentDir)
   .filter((name) => name.endsWith("-page.module.css") && name !== "guide-reading-page.module.css")
   .map((name) => [name, fs.readFileSync(path.join(guideComponentDir, name), "utf8")]);
-const guideCaptureApi = read("main-site/api/guide-capture.js");
+const guideCaptureApi = read("next-app/app/api/guide-capture/route.ts");
 const guidesIndex = read("main-site/guides/index.html");
 const buildSprint = read("main-site/build-sprint.html");
 const sharedBrandSystem = read("shared/assets/brand-system.css");
 const sharedDensitySystem = read("shared/assets/density-system.css");
-const vercelConfig = JSON.parse(read("main-site/vercel.json"));
+const vercelConfig = JSON.parse(read("next-app/vercel.json"));
 const failures = [];
 
 const approved = publication.approved ?? [];
@@ -97,10 +97,7 @@ for (const guide of reviewGuides) {
   }
 }
 
-const structuredCovers = new Set([...pageSource.matchAll(/cover:\s*["']([^"']+)["']/g)].map((match) => match[1]));
-for (const match of `${modelSeriesSource}\n${researchSeriesSource}`.matchAll(/^\s*slug:\s*"([^"]+)"/gm)) {
-  structuredCovers.add(`/images/guides/${match[1]}.webp`);
-}
+const structuredCovers = new Set(inventory.filter((guide) => approvedSlugSet.has(guide.slug)).map((guide) => guide.cover));
 for (const cover of structuredCovers) {
   if (!/\.webp$/i.test(cover)) {
     failures.push(`Structured guide cover must use WebP: ${cover}`);
@@ -114,7 +111,7 @@ for (const cover of structuredCovers) {
   }
 }
 
-if (!guideCaptureApi.includes('require("../../data/guide-publication.json")')) {
+if (!guideCaptureApi.includes('guide-publication.json')) {
   failures.push("Guide capture API does not read approved guide metadata from the publication registry.");
 }
 if (/const GUIDE_(?:TAGS|FILES)\s*=/.test(guideCaptureApi)) {
@@ -129,10 +126,12 @@ for (const guide of rebuildPlan.guides.filter((item) => item.status !== "pending
   if (!entryRouteSlugs.has(guide.slug)) failures.push(`Rebuilt guide lacks a dedicated page behind the pre-guide email modal: ${guide.slug}`);
 }
 if (!guideAccessSource.includes('fetch("/api/guide-capture"') ||
-    !guideAccessSource.includes('role={variant === "entry" ? "dialog"') ||
+    !guideAccessSource.includes('className={styles.readingPreview}') ||
+    !guideAccessSource.includes('className={styles.captureInline}') ||
     !guideAccessSource.includes('hidden={!ready || !unlocked}') ||
-    !["firstName", "lastName", "email", "marketingConsent"].every((field) => guideAccessSource.includes(`name="${field}"`))) {
-  failures.push("The pre-guide modal must block reading and collect first name, last name, email and optional marketing consent through Lumail.");
+    !["firstName", "email", "marketingConsent"].every((field) => guideAccessSource.includes(`name="${field}"`)) ||
+    !guideCaptureApi.includes('if (body.marketingConsent === true)')) {
+  failures.push("The guide must show its public beginning before optional-marketing Lumail email capture and gate only the full reading.");
 }
 if (!guideRouteSource.includes('slug === "instagram-content-dashboard"') ||
     !guideRouteSource.includes("<InstagramDashboardPage guide={guide} />") ||
@@ -175,12 +174,12 @@ for (const [label, href] of expectedNav) {
   }
 }
 
-if (!/\.wordmark\s*\{[^}]*font-weight:\s*400/.test(globalStyles)) {
-  failures.push("The guide wordmark must use regular font weight.");
+if (!globalStyles.includes('.site-header .wordmark span { color:#FF007F; }')) {
+  failures.push("The guide wordmark must carry the brand pink accent.");
 }
 
-if (!/\.site-header nav\s*\{[^}]*font:\s*400\s+12px/.test(globalStyles)) {
-  failures.push("The guide navigation must use regular font weight.");
+if (!globalStyles.includes('.site-header nav .nav-action { color:#fff!important; background:var(--blue); }')) {
+  failures.push("The shared guide navigation must include the brand-blue action.");
 }
 
 if (/\bQuiz\b/.test(headerSource) || /\bQuiz\b/.test(footerSource)) {
@@ -192,8 +191,8 @@ if (!footerSource.includes('["Workbooks", "/workbooks.html"]') && !footerSource.
 if (!guidesIndex.includes('<link rel="canonical" href="https://www.shiftandlead.com/guides/"')) {
   failures.push("The deployable guide index does not declare the official /guides/ canonical URL.");
 }
-if (vercelConfig.outputDirectory !== ".") {
-  failures.push("Vercel is not configured to serve the committed main-site directory.");
+if (vercelConfig.framework !== "nextjs" || vercelConfig.outputDirectory || !guideCaptureApi.includes('export async function POST')) {
+  failures.push("The new Vercel root must build server-backed Next.js and keep guide email delivery available.");
 }
 if (/AI Build Kit|Open the Starter Kit/i.test(buildSprint)) {
   failures.push("The retired AI Build Kit offer has returned to the Build Sprint page.");

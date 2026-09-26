@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #1a1a1a;
+  --ink: #0D1117;
   --paper: #ffffff;
-  --cream: #faf7f2;
-  --blue: #2c4be0;
-  --blue-deep: #1b2ea0;
-  --line: #e8e4dd;
-  --muted: #595959;
-  --signal: #c92f28;
+  --cream: #C8C1F0;
+  --blue: #2C4BE0;
+  --blue-deep: #2C4BE0;
+  --line: #C8C1F0;
+  --muted: #0D1117;
+  --signal: #FF007F;
   --shell: 1240px;
 }
 
@@ -554,3 +554,16 @@ button, input { font: inherit; }
   .meeting-card__actions { display: grid; }
   .meeting-card__actions button, .meeting-card__actions a { justify-content: center; }
 }
+
+/* Brand v3 shared chrome. */
+.site-header { border-top-color:var(--blue); background:#fff; }
+.site-header .wordmark { color:var(--ink); font:700 22px/1 var(--font-ui),sans-serif; letter-spacing:-.055em; }
+.site-header .wordmark span { color:#FF007F; }
+.site-header nav { gap:clamp(12px,1.6vw,26px); letter-spacing:.01em; text-transform:none; font-size:13px; font-weight:600; }
+.site-header nav .nav-action { color:#fff!important; background:var(--blue); }
+.site-header nav .nav-action:hover { background:#FF007F; }
+.site-header__mobile > div { background:#fff; box-shadow:7px 7px 0 #C8C1F0; }
+.site-header a:focus-visible, .site-footer a:focus-visible { outline:3px solid #FF007F; outline-offset:4px; }
+.site-footer { background:var(--ink); color:#fff; }
+.site-footer h2, .site-footer a, .site-footer__legal { color:#fff; }
+@media (prefers-reduced-motion:reduce) { .site-header *, .site-footer * { animation:none!important; transition:none!important; } }
