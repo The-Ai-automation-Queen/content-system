@@ -277,7 +277,7 @@ Give me one small exercise I can finish this week. Tell me what to prepare, what
     finishLine: "Try that skill once before adding another tool.",
   },
   paidNextStep: {
-    label: "Your Human Evidence",
+    label: "Put Your Experience Into Words",
     title: "Collect the proof of what people trust you to notice, decide and handle",
     body: "This upcoming workbook will help you find evidence of your judgement and contribution without turning the process into another personality test.",
     status: "coming-soon",

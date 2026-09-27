@@ -7,7 +7,7 @@
   "workbook-human-evidence": {"status": "active", "path": "/workbooks/your-human-evidence.html"},
   "workbook-use-what-is-unique": {"status": "active", "path": "/workbooks/use-what-is-unique-about-you.html"},
   "how-i-can-help": {"status": "active", "path": "/how-i-can-help.html"},
-  "build-sprint": {"status": "active", "path": "/build-sprint.html"},
+  "work-with-fatiha": {"status": "active", "path": "/work-with-fatiha/"},
   "ai-opportunity-map": {"status": "unlisted", "path": "/ai-opportunity-map.html"},
   "workshops": {"status": "active", "path": "/workshops.html"},
   "about": {"status": "active", "path": "/about.html"},
@@ -32,6 +32,7 @@
   "store": {"status": "retired", "path": "/store.html"},
   "get-it-done": {"status": "retired", "path": "/get-it-done.html"},
   "coming-soon": {"status": "retired", "path": "/coming-soon.html"},
-  "legacy-work-with-me": {"status": "redirected", "path": "/work-with-me.html", "destination": "/build-sprint.html"},
-  "legacy-work-with-fatiha": {"status": "redirected", "path": "/work-with-fatiha.html", "destination": "/workshops.html"}
+  "legacy-build-sprint": {"status": "redirected", "path": "/build-sprint.html", "destination": "/work-with-fatiha/"},
+  "legacy-work-with-me": {"status": "redirected", "path": "/work-with-me.html", "destination": "/work-with-fatiha/"},
+  "legacy-work-with-fatiha": {"status": "redirected", "path": "/work-with-fatiha.html", "destination": "/work-with-fatiha/"}
 }
