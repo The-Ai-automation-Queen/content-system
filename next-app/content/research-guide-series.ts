@@ -150,8 +150,7 @@ export const teachClaudeWorkflowGuide = makeGuide({
   coverAlt: "The Blue Princess teaching a clockwork apprentice to move one weekly task through four precise stations",
   seoDescription: "Teach Claude a repeatable weekly workflow with a complete instruction, test case and quality check.",
   sources: [
-    { label: "Anthropic: What are Skills?", url: "https://support.claude.com/en/articles/12512176-what-are-skills" },
-    { label: "Anthropic: Use Skills in Claude", url: "https://support.claude.com/en/articles/12512180-use-skills-in-claude" },
+    { label: "Anthropic: Create and manage projects", url: "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" },
   ],
   answer: [
     "**Save the method only after it works on a real example.** Claude needs the material it receives, the result it must produce, the decisions it must leave to you and a visible test for success.",
