@@ -1,22 +1,23 @@
 import Link from "next/link";
 
 const links = [
+  ["Work with Fatiha", "/build-sprint.html"],
   ["Guides", "/guides/"],
-  ["Workbooks", "https://www.shiftandlead.com/workbooks.html"],
-  ["Where AI Fits", "https://www.shiftandlead.com/ai-opportunity-map.html"],
-  ["About", "https://www.shiftandlead.com/about.html"],
+  ["Workbooks", "/workbooks.html"],
+  ["Where AI Fits", "/ai-opportunity-map.html"],
+  ["About", "/about.html"],
 ] as const;
 
 export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <Link className="wordmark" href="/" aria-label="Shift and Lead home">Shift &amp; Lead</Link>
+        <Link className="wordmark" href="/" aria-label="Shift and Lead home">Shift <span>&amp;</span> <em>Lead</em></Link>
         <nav aria-label="Main navigation">
           {links.map(([label, href]) => <Link key={label} href={href}>{label}</Link>)}
         </nav>
         <details className="site-header__mobile">
-          <summary>Menu</summary>
+          <summary>MENU <span aria-hidden="true">☰</span></summary>
           <div>{links.map(([label, href]) => <Link key={label} href={href}>{label}</Link>)}</div>
         </details>
       </div>
