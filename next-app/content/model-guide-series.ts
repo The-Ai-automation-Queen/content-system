@@ -152,8 +152,8 @@ export const stopChatgptForgettingContextGuide = makeGuide({
       steps: [
         { title: "Create the Project", body: "In ChatGPT select **New project** and name it **Autumn event plan**." },
         { title: "Add the fixed facts", body: "Open the Project’s menu, choose **Project settings** and paste the brief below into its instructions field." },
-        { title: "Draft the event description", body: "Start a chat inside the Project and send the first test message. Check it against the four fixed facts." },
-        { title: "Try a second Project chat", body: "Start another new chat inside the same Project and ask for an invitation. Check that it keeps the same audience, format and boundary without you pasting the brief again." },
+        { title: "Draft the event description", body: "Start a chat inside the Project and send the first test message. Check it against the Project brief." },
+        { title: "Try a second Project chat", body: "Start another new chat inside the same Project and ask for an invitation. Check that it keeps the audience, format, goal and recording boundary without you pasting the brief again." },
       ],
     },
     {
@@ -171,7 +171,7 @@ export const stopChatgptForgettingContextGuide = makeGuide({
     heading: "Add this Project instruction",
     introduction: "Use the example as written before adapting it to your own work.",
     prompt: `Project facts\n- The event is a 60-minute online session for first-time managers.\n- The goal is to help them run a clearer weekly team meeting.\n- The tone must be practical and calm.\n- Do not promise a recording.\n\nFor every draft, separate confirmed facts from suggestions. If information is missing, label it “Not decided”.`,
-    check: "The second Project chat should keep the same four facts without you pasting them again. If it misses one, check the Project instruction and your account's memory settings before relying on it.",
+    check: "The second chat should use the Project brief without you pasting it again. If it misses a fact, confirm that both chats are in the same Project and that the instruction was saved in Project settings before relying on it.",
   },
   finish: "You can now judge whether a short Project brief reduces repeated corrections for work that continues.",
   related: [
