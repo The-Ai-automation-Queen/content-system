@@ -76,7 +76,7 @@ Use plain English. Do not invent a click, feature, result, shortcut or reason th
 export const chatgptCustomerResearchGuide = makeGuide({
   slug: "chatgpt-customer-research-with-evidence",
   promptMode: "as-written",
-  title: "Can ChatGPT group customer research without inventing themes?",
+  title: "Find patterns in customer feedback with ChatGPT",
   promise: "Turn interview or survey notes into themes that keep their supporting evidence, disagreements and gaps visible.",
   coverAlt: "The Blue Princess sorting interview cards through a glass evidence cabinet into labelled clusters",
   seoDescription: "Use ChatGPT to group customer research into traceable themes without losing quotes, disagreements or uncertainty.",
