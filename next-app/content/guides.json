@@ -577,10 +577,10 @@
     },
     {
       "slug": "meta-ai",
-      "title": "What is Meta Muse, and should you let it act for you?",
-      "h1": "What is Meta Muse, and should you let it act for you?",
+      "title": "What can Meta Muse actually do for you?",
+      "h1": "What can Meta Muse actually do for you?",
       "datePublished": "2026-06-23",
-      "dateModified": "2026-09-20",
+      "dateModified": "2026-09-27",
       "readMinutes": 6,
       "cover": "/images/guides/meta-muse.webp",
       "track": "tools",
@@ -600,7 +600,7 @@
         "AI agent",
         "browser permissions"
       ],
-      "summary": "Understand the current Meta Muse product family, test a harmless public task and decide what access the personal agent deserves.",
+      "summary": "See how Muse differs from Meta AI, then try a public meeting-room comparison before connecting any account.",
       "sequence": 100
     },
     {
@@ -1727,10 +1727,10 @@
     },
     {
       "slug": "test-meta-muse-money-saving-task",
-      "title": "Can Muse save you money without taking over the purchase?",
-      "h1": "Can Muse save you money without taking over the purchase?",
+      "title": "Can Muse find a better price without buying for you?",
+      "h1": "Can Muse find a better price without buying for you?",
       "datePublished": "2026-09-23",
-      "dateModified": "2026-09-23",
+      "dateModified": "2026-09-27",
       "readMinutes": 6,
       "cover": "/images/guides/test-meta-muse-money-saving-task.webp",
       "track": "tools",
@@ -1749,7 +1749,7 @@
         "shopping",
         "money"
       ],
-      "summary": "Compare the complete cost of three options while keeping checkout under your control.",
+      "summary": "Check the full cost behind two sample prices, then ask Muse for a sourced shortlist without handing over checkout.",
       "sequence": 224
     },
     {

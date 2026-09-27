@@ -346,7 +346,7 @@ End with the two messages I should check first and why. Do not invent facts, dat
 export const metaMuseSavingGuide = makeGuide({
   slug: "test-meta-muse-money-saving-task",
   promptMode: "as-written",
-  title: "Can Muse save you money without taking over the purchase?",
+  title: "Can Muse find a better price without buying for you?",
   promise: "Ask Muse to compare a real buying decision while keeping the budget, evidence and final purchase under your control.",
   coverAlt: "The Blue Princess holding the final lever while a shopping machine compares three price tags through a magnifying glass",
   seoDescription: "Test Meta Muse on one money-saving comparison without allowing it to purchase, subscribe or change an account.",
@@ -379,15 +379,12 @@ export const metaMuseSavingGuide = makeGuide({
   ],
   tryNow: {
     heading: "Build a checked buying shortlist",
-    introduction: "Replace the brackets and keep the first test below a budget you are comfortable reviewing.",
-    prompt: `Help me compare this purchase: [PRODUCT OR SERVICE].
+    introduction: "Give Muse your buying limits, then compare the full cost before deciding.",
+    prompt: `Help me compare a purchase. Do not buy anything.
 
-My maximum total budget is [BUDGET AND CURRENCY].
-I need: [3 TO 5 NON-NEGOTIABLE REQUIREMENTS].
-I do not want: [EXCLUSIONS].
-My location for delivery or availability is [LOCATION].
+Before searching, ask me for the item or service, my location, maximum total budget and currency, 3 to 5 must-haves, and anything I want excluded. Wait for my reply. Do not replace a must-have with a cheaper feature without asking me.
 
-Find up to 3 options. For each option, show:
+Find up to 3 public options that meet my answers. For each option, show:
 - exact product or plan name;
 - seller or provider;
 - item price;
