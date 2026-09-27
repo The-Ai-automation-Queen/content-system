@@ -93,8 +93,8 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "what-is-a-prompt") return <PromptBuilderPage guide={guide} />;
   if (slug === "verify-grok-current-research") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Separate current conversation from claims you can verify in opened sources. Enter your email to open the guide." variant="entry"><GrokResearchPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "get-better-professional-writing-from-grok") return <GrokWritingPage guide={guide} />;
-  if (slug === "fix-deepseek-wall-of-text") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Make a dense scene easier to read without changing its words or meaning. Enter your email to open the guide." variant="entry"><DeepseekWallPage guide={guide} /></GuideAccessBoundary>;
-  if (slug === "edit-long-writing-with-deepseek") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Protect the story you like, revise one passage and check what DeepSeek changed. Enter your email to open the guide." variant="entry"><DeepseekLongEditPage guide={guide} /></GuideAccessBoundary>;
+  if (slug === "fix-deepseek-wall-of-text") return <DeepseekWallPage guide={guide} />;
+  if (slug === "edit-long-writing-with-deepseek") return <DeepseekLongEditPage guide={guide} />;
   if (slug === "is-kimi-worth-paying-for") return <KimiValuePage guide={guide} />;
   if (slug === "make-work-tracker-with-kimi") return <KimiSheetsPage guide={guide} />;
   if (slug === "manus-browser-workflow") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Choose the least access Manus needs, then test the browser route safely if your job requires it. Enter your email to open the guide." variant="entry"><ManusBrowserPage guide={guide} /></GuideAccessBoundary>;
