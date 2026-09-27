@@ -184,10 +184,10 @@ export const stopChatgptForgettingContextGuide = makeGuide({
 export const chatgptScheduledTasksGuide = makeGuide({
   slug: "chatgpt-scheduled-tasks",
   promptMode: "as-written",
-  title: "Can ChatGPT do the boring checking for you?",
-  promise: "Use a scheduled task for one public check with a clear trigger, a useful notification and a stop rule.",
+  title: "Can ChatGPT tell you when a public page changes?",
+  promise: "Use a scheduled task for one non-urgent public-page check with a clear alert condition and stop rule.",
   coverAlt: "The small blue robot princess setting a clockwork lookout beside a public noticeboard",
-  seoDescription: "Create and verify one harmless scheduled task in ChatGPT without producing daily notification noise.",
+  seoDescription: "Set up one ChatGPT scheduled task to check a public page and alert you only when a relevant change occurs.",
   sources: [{ label: "OpenAI: Scheduled tasks in ChatGPT", url: "https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt" }],
   answer: [
     "**Yes, when the repeated check has a specific condition.** “Check this every day” creates noise. “Tell me only when this named result changes” creates a decision.",
@@ -216,7 +216,7 @@ export const chatgptScheduledTasksGuide = makeGuide({
   tryNow: {
     heading: "Build one quiet monitoring task",
     introduction: "Replace the 3 bracketed details.",
-    prompt: `Every weekday morning, check [PUBLIC PAGE URL].\n\nOnly notify me if this condition is met: [EXACT CONDITION]. Compare the page with the previous check before sending an alert. If you cannot open the page or confirm a change, do not claim that the condition was met.\n\nIn the notification, include:\n- what changed;\n- the current wording or status;\n- the source link;\n- the time you checked.\n\nIf nothing changed, do not notify me. Stop checking [STOP RULE].`,
+    prompt: `Every weekday morning, check [PUBLIC PAGE URL].\n\nOnly notify me if this condition is met: [EXACT CONDITION]. Compare the relevant part of the page with the previous check before sending an alert. If you cannot open the page or confirm a change, do not claim that the condition was met.\n\nIn the notification, include:\n- what changed;\n- the current wording and the previous wording if you can verify it;\n- a direct link to the source page;\n- the time you checked.\n\nIf nothing changed, do not notify me. Stop checking [STOP RULE].`,
     check: "You are done setting it up when the task appears in Scheduled with the right instruction and next run. Check any later alert against the public source.",
   },
   finish: "You can now decide whether the repeated check deserves a scheduled task or should stay manual.",

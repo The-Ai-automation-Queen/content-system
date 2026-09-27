@@ -1144,8 +1144,8 @@
     },
     {
       "slug": "chatgpt-scheduled-tasks",
-      "title": "Can ChatGPT do the boring checking for you?",
-      "h1": "Can ChatGPT do the boring checking for you?",
+      "title": "Can ChatGPT tell you when a public page changes?",
+      "h1": "Can ChatGPT tell you when a public page changes?",
       "datePublished": "2026-09-20",
       "dateModified": "2026-09-20",
       "readMinutes": 5,
@@ -1156,16 +1156,16 @@
       "reviewStatus": "page review",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Intermediate",
-      "hub": "AI agents",
+      "hub": "Workflows and automation",
       "outcomes": [
-        "Build an agent"
+        "Automate a task"
       ],
       "tags": [
         "ChatGPT",
         "scheduled tasks",
         "monitoring"
       ],
-      "summary": "Create and verify one quiet scheduled check using a public source and a clear trigger.",
+      "summary": "Watch one public help-page section and get an alert only when the detail you care about changes.",
       "sequence": 203
     },
     {
