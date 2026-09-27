@@ -553,3 +553,53 @@ button, input { font: inherit; }
   .meeting-card__actions { display: grid; }
   .meeting-card__actions button, .meeting-card__actions a { justify-content: center; }
 }
+
+/* Match the redesigned front page across the guide library and guide routes. */
+.site-header{height:auto;min-height:76px;border:0;border-bottom:1px solid #e4e4ee;position:sticky;background:#fff;color:#0d1117}
+.site-header__inner{max-width:1320px;min-height:76px;padding:0 28px;gap:44px}
+.site-header .wordmark,.site-footer__wordmark{font-family:var(--font-display),Georgia,serif;font-size:29px;font-weight:800;line-height:1;letter-spacing:-.055em;white-space:nowrap;text-decoration:none}
+.site-header .wordmark em,.site-footer__wordmark em{font-style:italic}
+.site-header nav{flex:1;gap:clamp(13px,1.8vw,29px);font:750 11px/1 var(--font-ui),Arial,sans-serif;letter-spacing:0;text-transform:none}
+.site-header nav a:hover{color:#2c4be0}
+.site-header__mobile{display:block;margin-left:auto}
+.site-header__mobile summary{display:flex;align-items:center;justify-content:center;gap:12px;min-width:102px;min-height:42px;padding:0 16px;border-radius:999px;background:#2c4be0;color:#fff;font:800 11px/1 var(--font-ui),Arial,sans-serif;list-style:none}
+.site-header__mobile summary span{font-size:16px;font-weight:400}
+.site-header__mobile > div{top:calc(100% + 9px);right:0;width:min(280px,calc(100vw - 30px));min-width:0;padding:10px;border:1px solid #d6d8e0;background:#fff;box-shadow:0 12px 40px #0d111733}
+.site-header__mobile a{border-bottom:1px solid #e6e8ee;padding:11px 12px;color:#0d1117;font:700 13px/1.3 var(--font-ui),Arial,sans-serif}
+.site-header__mobile a:last-child{border:0}
+.site-footer{margin:0;padding:44px 24px;background:#05080d;color:#fff}
+.site-footer__inner{width:min(100%,1320px);margin:auto;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.site-footer nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:13px 20px}
+.site-footer nav a{color:#fff;font:700 11px/1.3 var(--font-ui),Arial,sans-serif;text-decoration:none}
+.site-footer nav a:hover{color:#c8c1f0}
+.site-footer p{grid-column:1/-1;margin:0;color:#aeb5c7;font:400 11px/1.4 var(--font-ui),Arial,sans-serif}
+.guides-hero{position:relative;width:100%;max-width:none;min-height:620px;padding:clamp(70px,8vw,120px) max(28px,calc((100vw - 1320px)/2));gap:clamp(42px,6vw,90px);background:radial-gradient(circle at 89% 9%,#3146a9 0,transparent 30%),#0d1117;color:#fff}
+.guides-hero__copy{max-width:650px}
+.guides-hero .eyebrow{color:#c8c1f0}
+.guides-hero h1{max-width:760px;color:#fff;font:900 clamp(54px,6.2vw,88px)/.98 Impact,"Arial Narrow",var(--font-ui),sans-serif;letter-spacing:-.025em}
+.guides-hero h1 em{color:#c8c1f0;font:italic 700 .82em/1.04 var(--font-display),Georgia,serif}
+.guides-hero__copy>p:not(.eyebrow){color:#e2e6f4;font:500 clamp(17px,1.7vw,21px)/1.5 var(--font-ui),Arial,sans-serif}
+.hero-search{color:#fff}
+.hero-search__field{border:0}
+.hero-search__field>button{background:#ff007f}
+.hero-search__field>button:hover{background:#d5006d}
+.hero-search__status{color:#d5d9eb}
+.guides-hero .guide-card--featured{border:0;box-shadow:12px 12px 0 #ff007f;color:#0d1117}
+.outcome-nav{background:#eae8ff;border:0}
+.outcome-nav .eyebrow,.foundation-links .eyebrow,.library .eyebrow{color:#2c4be0}
+.outcome-nav__head h2,.foundation-links h2,.library__head h2{font:900 clamp(42px,4.6vw,68px)/1 Impact,"Arial Narrow",var(--font-ui),sans-serif;letter-spacing:-.025em}
+.outcome-nav__grid>button:hover,.outcome-nav__grid>button[aria-pressed="true"]{background:#2c4be0}
+.guide-card:hover{background:#eef0ff}
+.guides-cta{background:#2c4be0}
+@media(max-width:1050px){.site-header nav{display:none}.site-header__mobile{display:block}}
+@media(max-width:700px){
+  .site-header,.site-header__inner{min-height:66px}
+  .site-header__inner{width:100%;padding:0 18px}
+  .site-header .wordmark{font-size:25px}
+  .site-footer__inner{grid-template-columns:1fr}
+  .site-footer nav{justify-content:flex-start}
+  .site-footer p{grid-column:auto}
+  .guides-hero{grid-template-columns:1fr;min-height:0;padding:65px 18px 76px;gap:40px}
+  .guides-hero h1{font-size:clamp(47px,11vw,68px)}
+  .guides-hero__copy>p:not(.eyebrow){font-size:17px}
+}
