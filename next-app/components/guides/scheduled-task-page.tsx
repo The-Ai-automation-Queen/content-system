@@ -18,7 +18,7 @@ export function ScheduledTaskPage({ guide }: { guide: GuidePage }) {
   const [condition, setCondition] = useState("the ChatGPT service status changes");
   const [stopRule, setStopRule] = useState("14 days after the task is created");
   const [step, setStep] = useState(0);
-  const [showAll, setShowAll] = useState(false);
+  const [showAll, setShowAll] = useState(true);
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
   const steps = guide.sections[0];
@@ -82,10 +82,8 @@ export function ScheduledTaskPage({ guide }: { guide: GuidePage }) {
         <div className={styles.walkthroughHead}><div className={styles.sectionHead}><span>Make it work</span><h2 id="scheduled-steps-title">Set the task, then check it</h2></div><button type="button" onClick={() => setShowAll(!showAll)}>{showAll ? "Step by step" : "Show all steps"}</button></div>
         <nav className={styles.stepNav} aria-label="Scheduled task steps">{steps.steps.map((item, index) => <button type="button" key={item.title} aria-current={!showAll && step === index ? "step" : undefined} onClick={() => { setStep(index); setShowAll(false); }}><span>{index + 1}</span><strong>{item.title}</strong></button>)}</nav>
         {steps.steps.map((item, index) => <div key={item.title} hidden={!showAll && step !== index}><article className={styles.stage}><span>Step {index + 1} / {steps.steps.length}</span><h3>{item.title}</h3><p><Text value={item.body} /></p>
-          {index === 0 && <a href="https://chatgpt.com/schedules" target="_blank" rel="noopener noreferrer">Open Scheduled in ChatGPT ↗</a>}
-          {index === 1 && <p className={styles.tip}>Use <strong>Copy</strong> above, paste the instruction into ChatGPT, and replace the example fields first if you need a different public page.</p>}
-          {index === 2 && <p className={styles.tip}>Check the time zone and notification choice in <strong>Settings → Notifications</strong>. Keep the stop rule in the instruction if there is no separate end control.</p>}
-          {index === 3 && <p className={styles.tip}>You can check the setup now. If an alert arrives later, compare it with the linked public page before trusting it.</p>}
+          {index === 0 && <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Open ChatGPT ↗</a>}
+          {index === 2 && <p className={styles.tip}>Set email or push alerts under <strong>Settings → Notifications</strong>. A condition in the prompt will not help if you cannot receive notifications.</p>}
         </article></div>)}
         {!showAll && <div className={styles.actions}><button type="button" disabled={step === 0} onClick={() => setStep(Math.max(0, step - 1))}>Back</button><button type="button" disabled={step === steps.steps.length - 1} onClick={() => setStep(Math.min(steps.steps.length - 1, step + 1))}>Next step</button></div>}
       </section>

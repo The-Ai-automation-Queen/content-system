@@ -151,9 +151,9 @@ export const stopChatgptForgettingContextGuide = makeGuide({
       introduction: "Use invented information so you can test the method without exposing work data.",
       steps: [
         { title: "Create the Project", body: "In ChatGPT select **New project** and name it **Autumn event plan**." },
-        { title: "Add the fixed facts", body: "Open the Project settings and add the instruction in the practice section below." },
-        { title: "Start a chat inside it", body: "Send the test message below in a new chat inside the Project." },
-        { title: "Compare outside the Project", body: "Send the same test message in a normal new chat. Compare which of the four event facts appear, and check if either answer invents a detail." },
+        { title: "Add the fixed facts", body: "Open the Project’s menu, choose **Project settings** and paste the brief below into its instructions field." },
+        { title: "Draft the event description", body: "Start a chat inside the Project and send the first test message. Check it against the four fixed facts." },
+        { title: "Try a second Project chat", body: "Start another new chat inside the same Project and ask for an invitation. Check that it keeps the same audience, format and boundary without you pasting the brief again." },
       ],
     },
     {
@@ -171,12 +171,12 @@ export const stopChatgptForgettingContextGuide = makeGuide({
     heading: "Add this Project instruction",
     introduction: "Use the example as written before adapting it to your own work.",
     prompt: `Project facts\n- The event is a 60-minute online session for first-time managers.\n- The goal is to help them run a clearer weekly team meeting.\n- The tone must be practical and calm.\n- Do not promise a recording.\n\nFor every draft, separate confirmed facts from suggestions. If information is missing, label it “Not decided”.`,
-    check: "You are done when a new chat inside the Project keeps all four facts and leaves undecided details undecided.",
+    check: "The second Project chat should keep the same four facts without you pasting them again. If it misses one, check the Project instruction and your account's memory settings before relying on it.",
   },
   finish: "You can now judge whether a short Project brief reduces repeated corrections for work that continues.",
   related: [
-    promptGuide("make-chatgpt-answers-shorter", "Why does ChatGPT keep giving you an essay?", "Make the next Project answer easier to scan."),
-    promptGuide("chatgpt-scheduled-tasks", "Can ChatGPT do a repeated check for you?", "Use a separate route for recurring public checks."),
+    existingGuide("what-is-ai", "What AI actually is", "See why a convincing answer still needs a check against the source.", "/images/guides/what-is-ai.webp"),
+    existingGuide("connect-ai-to-email-files-calendar", "Should you let AI connect to your email, files and calendar?", "Understand access before you connect work tools to a Project.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Set the data boundary before adding real Project files.", "/images/guides/learn-master.webp"),
   ],
 });
@@ -188,7 +188,7 @@ export const chatgptScheduledTasksGuide = makeGuide({
   promise: "Use a scheduled task for one public check with a clear trigger, a useful notification and a stop rule.",
   coverAlt: "The small blue robot princess setting a clockwork lookout beside a public noticeboard",
   seoDescription: "Create and verify one harmless scheduled task in ChatGPT without producing daily notification noise.",
-  sources: [{ label: "OpenAI: Tasks in ChatGPT", url: "https://help.openai.com/en/articles/10291617-tasks-in-chatgpt" }],
+  sources: [{ label: "OpenAI: Scheduled tasks in ChatGPT", url: "https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt" }],
   answer: [
     "**Yes, when the repeated check has a specific condition.** “Check this every day” creates noise. “Tell me only when this named result changes” creates a decision.",
   ],
@@ -199,9 +199,9 @@ export const chatgptScheduledTasksGuide = makeGuide({
       introduction: "Start with a public page you already trust.",
       steps: [
         { title: "Open Scheduled tasks", body: "Open ChatGPT on the web and go to **Scheduled**. Availability can vary by account or workspace." },
-        { title: "Add the instruction", body: "Use the complete example below and replace only the public URL, condition and stop rule." },
-        { title: "Check the controls", body: "Review the schedule, time zone, condition and stop rule before confirming." },
-        { title: "Check it was saved", body: "Find the task in Scheduled and confirm its instruction and next run. Compare any later alert with the public source." },
+        { title: "Create the task", body: "In Scheduled, create a task and paste the complete instruction above. Ask ChatGPT to schedule it for weekday mornings." },
+        { title: "Check before saving", body: "Review the schedule and time zone. Confirm the saved instruction says to alert only when your condition is met and when to stop checking." },
+        { title: "Check it was saved", body: "Find the task in Scheduled and confirm its instruction and next run. If an alert arrives later, compare it with the linked public page." },
       ],
     },
     {
@@ -216,13 +216,13 @@ export const chatgptScheduledTasksGuide = makeGuide({
   tryNow: {
     heading: "Build one quiet monitoring task",
     introduction: "Replace the 3 bracketed details.",
-    prompt: `Every weekday morning, check [PUBLIC PAGE URL].\n\nOnly notify me if this condition is met: [EXACT CONDITION]. Compare the page with the previous check before sending an alert.\n\nIn the notification, include:\n- what changed;\n- the current wording or status;\n- the source link;\n- the time you checked.\n\nIf nothing changed, do not notify me. Stop checking [STOP RULE].`,
+    prompt: `Every weekday morning, check [PUBLIC PAGE URL].\n\nOnly notify me if this condition is met: [EXACT CONDITION]. Compare the page with the previous check before sending an alert. If you cannot open the page or confirm a change, do not claim that the condition was met.\n\nIn the notification, include:\n- what changed;\n- the current wording or status;\n- the source link;\n- the time you checked.\n\nIf nothing changed, do not notify me. Stop checking [STOP RULE].`,
     check: "You are done setting it up when the task appears in Scheduled with the right instruction and next run. Check any later alert against the public source.",
   },
   finish: "You can now decide whether the repeated check deserves a scheduled task or should stay manual.",
   related: [
-    promptGuide("make-chatgpt-answers-shorter", "Why does ChatGPT keep giving you an essay?", "Keep task notifications short and usable."),
-    promptGuide("stop-chatgpt-forgetting-context", "Why does ChatGPT forget what you told it?", "Use Projects for continuing context rather than schedules."),
+    existingGuide("what-is-ai", "What AI actually is", "Know why an automated answer still needs checking.", "/images/guides/what-is-ai.webp"),
+    existingGuide("what-is-agentic", "What AI agents actually do", "See when an agent makes sense instead of a scheduled check.", "/images/guides/what-is-agentic.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what the scheduled task may access.", "/images/guides/learn-master.webp"),
   ],
 });
