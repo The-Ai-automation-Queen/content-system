@@ -255,28 +255,21 @@ export const aiSkillsGuide = {
     ] },
   ],
   tryNow: {
-    heading: "Practise one skill on a task you already do",
-    introduction: "Choose one familiar task. Use a general description with no private names or details.",
-    prompt: `I want to practise one skill while doing a familiar work task.
+    heading: "Practise one useful skill",
+    introduction: "Start with one familiar task. Use a public, invented or non-confidential example.",
+    prompt: `I want to practise one AI skill on a task I already know how to do.
 
-Task: [TASK]
-What usually goes wrong: [PROBLEM]
-Skill I want to practise: [SKILL]
+Task: [Describe one familiar task]
+Skill to practise: [Choose clearer instructions, better sources, checking results, protecting information or keeping the final decision].
 
-Give me one small exercise I can do with non-confidential or made-up material. Show:
-1. The first action I should take and what to give the AI tool.
-2. An example of the kind of answer I should expect.
-3. What I need to compare with my original material.
-4. One mistake I should watch for.
-5. What I should do myself before using the result at work.
-
-Keep the exercise focused on this one task. If the task is unsuitable for AI or needs access I may not have, say so and suggest a safer practice version. Do not recommend buying a tool or inventing facts about my workplace.`,
+Give me one small exercise I can finish this week. Tell me what to prepare, what to ask the tool to do and how to compare the result with the original. Do not invent facts about my work or suggest that I buy a new tool. Use only public, invented or non-confidential material. Keep your answer to one exercise and one check. I will decide if the result is suitable for real work.`,
     instructions: [
-      { title: "Choose a task", body: "Pick one task you know well enough to recognise a weak answer." },
-      { title: "Keep it safe", body: "Use a general description and non-confidential or made-up material." },
-      { title: "Try one exercise", body: "Copy the instruction, check the answer and keep the part you can use." },
+      { title: "Choose a familiar task", body: "Pick one task you know well enough to judge." },
+      { title: "Choose one skill", body: "Use the part of that task that most often slows you down." },
+      { title: "Keep details safe", body: "Use public, invented or non-confidential material for the exercise." },
+      { title: "Check the result", body: "Compare the result with the original before using it at work." },
     ],
-    check: "You should know what to try, what to compare with your source and what still needs your judgement.",
+    check: "The exercise should help with one familiar task and give you a way to judge the result.",
   },
   conclusion: {
     heading: "Practise one skill on work you already know",
