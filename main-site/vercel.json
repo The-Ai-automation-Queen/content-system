@@ -10,12 +10,17 @@
     },
     {
       "source": "/work-with-me.html",
-      "destination": "/build-sprint.html",
+      "destination": "/work-with-fatiha/",
       "permanent": true
     },
     {
       "source": "/work-with-fatiha.html",
-      "destination": "/workshops.html",
+      "destination": "/work-with-fatiha/",
+      "permanent": true
+    },
+    {
+      "source": "/build-sprint.html",
+      "destination": "/work-with-fatiha/",
       "permanent": true
     },
     {

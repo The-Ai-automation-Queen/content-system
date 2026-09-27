@@ -42,9 +42,7 @@ const readerFacingGuideSources = fs.readdirSync(guideComponentDir)
   .map((name) => [name, fs.readFileSync(path.join(guideComponentDir, name), "utf8")]);
 const guideCaptureApi = read("main-site/api/guide-capture.js");
 const guidesIndex = read("main-site/guides/index.html");
-const buildSprint = read("main-site/build-sprint.html");
-const sharedBrandSystem = read("shared/assets/brand-system.css");
-const sharedDensitySystem = read("shared/assets/density-system.css");
+const workWithFatiha = read("main-site/work-with-fatiha/index.html");
 const vercelConfig = JSON.parse(read("main-site/vercel.json"));
 const failures = [];
 
@@ -228,20 +226,17 @@ if (!guidesIndex.includes('<link rel="canonical" href="https://www.shiftandlead.
 if (vercelConfig.outputDirectory !== ".") {
   failures.push("Vercel is not configured to serve the committed main-site directory.");
 }
-if (/AI Build Kit|Open the Starter Kit/i.test(buildSprint)) {
-  failures.push("The retired AI Build Kit offer has returned to the Build Sprint page.");
+if (/AI Build Kit|Open the Starter Kit/i.test(workWithFatiha)) {
+  failures.push("The retired AI Build Kit offer has returned to the Work with me page.");
 }
-if (!buildSprint.includes('href="/workbooks.html">Explore the workbooks</a>')) {
-  failures.push("The Build Sprint fallback path is missing the current Workbooks offer.");
+if (!workWithFatiha.includes('href="/workbooks.html">See the workbooks</a>')) {
+  failures.push("The Work with me page is missing its Workbooks link.");
 }
-if (!buildSprint.includes('<span class="offer-accent">possible.</span>')) {
-  failures.push("The Build Sprint hero is missing its approved electric-blue accent word.");
+if (!workWithFatiha.includes('Business and marketing transformation')) {
+  failures.push("The Work with me page is missing its current offer framing.");
 }
-if (!sharedBrandSystem.includes('body[data-page-kind="build"] .offer-hero .offer-accent{color:var(--blue)!important}')) {
-  failures.push("The Build Sprint accent word is no longer electric blue.");
-}
-if (/body\[data-page-kind="build"\] \.offer-hero\{[^}]*background:[^}]*(?:cream|var\(--blue\))/i.test(sharedDensitySystem)) {
-  failures.push("The Build Sprint hero background must stay white; electric blue is reserved for the accent word.");
+if (!vercelConfig.redirects.some(({ source, destination }) => source === "/build-sprint.html" && destination === "/work-with-fatiha/")) {
+  failures.push("The legacy Build Sprint URL must redirect to Work with me.");
 }
 
 if (failures.length) {

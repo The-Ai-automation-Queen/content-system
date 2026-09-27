@@ -30,7 +30,7 @@
   "quiz": {"questions": 8, "minutes": 3, "emailRequired": false},
   "community": {"status": "waitlist", "url": ""},
   "offers": [
-    {"id": "1:1", "name": "Build with Fatiha", "url": "https://www.shiftandlead.com/build-sprint.html", "priceBand": "TODO(fatiha): real price or 'from £___'", "audience": "solo"},
+    {"id": "1:1", "name": "Work with me", "url": "https://www.shiftandlead.com/work-with-fatiha/", "priceBand": "TODO(fatiha): real price or 'from £___'", "audience": "solo"},
     {"id": "workshops", "name": "Workshops and keynotes", "url": "https://www.shiftandlead.com/workshops.html", "priceBand": "TODO(fatiha): price or 'on request'", "audience": "teams"}
   ]
 }
