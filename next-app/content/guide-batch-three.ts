@@ -70,19 +70,19 @@ export const promptGuide = {
 
 export const aiBrowserGuide = {
   slug: "what-is-an-ai-browser",
-  title: "What is an AI browser, and should you use one?",
-  promise: "An AI browser can help you understand and work with the pages you visit. It can also see more of your browsing than a normal AI chat, so the settings matter.",
+  title: "What can an AI browser actually do?",
+  promise: "See the difference between asking about a page and letting an assistant act in your browser, then try a source-checked comparison on public pages.",
   cover: "/images/guides/what-is-an-ai-browser.webp",
   coverAlt: "The small blue robot mascot operating an antique viewing instrument while closing a privacy shutter",
-  seoDescription: "Learn what an AI browser can see and do, when it is useful and which privacy settings to check before you use one.",
+  seoDescription: "Learn what an AI browser can read or do, then compare two public pages and check every claim against its source.",
   lumailTag: "guide-what-is-an-ai-browser",
   sourceNotes: [
-    { label: "OpenAI: ChatGPT Atlas data controls and privacy", url: "https://help.openai.com/en/articles/12574142-chatgpt-atlas-data-controls-and-privacy" },
-    { label: "OpenAI: Setting up Atlas", url: "https://help.openai.com/en/articles/12628461-setting-up-the-atlas-browser" },
+    { label: "Microsoft: Using Copilot in Edge at work", url: "https://support.microsoft.com/en-us/microsoft-copilot/using-microsoft-copilot-in-edge-at-work" },
+    { label: "Microsoft: Getting started with Copilot in Edge", url: "https://support.microsoft.com/en-us/microsoft-copilot/getting-started-with-copilot-in-microsoft-edge" },
   ],
   answer: { paragraphs: [
-    "An AI browser is a web browser with AI help built into it. Depending on the product and your settings, it may **read a visible page, compare tabs, explain what you are viewing or complete an online task**.",
-    "Use one when it makes public research or reading easier. Do not give it access to private pages simply because the feature is available.",
+    "An AI browser puts an assistant beside the pages you visit. Depending on your browser, account and settings, it may **explain the current page, compare information or act on a page you authorise**.",
+    "Start with a public page. Check the assistant's answer against that page before allowing it into private work.",
   ] },
   sections: [
     { kind: "cards", heading: "Use it where the browser is doing the hard part", items: [
@@ -91,30 +91,30 @@ export const aiBrowserGuide = {
       { title: "Find a hidden detail", body: "Search a long website for a date, requirement or condition that would take time to locate manually." },
       { title: "Understand an unfamiliar page", body: "Ask for an explanation in everyday language while keeping the original page open beside it." },
     ] },
-    { kind: "cards", heading: "Check what the browser can see", introduction: "Before you use one, answer these questions.", items: [
-      { title: "Page visibility", body: "Can the AI see the full page, only selected text or every open tab?" },
-      { title: "Browser memory", body: "Is the browser saving facts or summaries from the pages you visit?" },
-      { title: "Model training", body: "Can chats or browsing information be used to improve the provider's AI?" },
-      { title: "Connected accounts", body: "Is the browser signed into email, files, banking, customer systems or administrator pages?" },
+    { kind: "cards", heading: "Check what the browser can see", introduction: "Before you use one on work pages, check access.", items: [
+      { title: "This page", body: "Is the assistant allowed to read the content on the page you are viewing, or only its title and address?" },
+      { title: "Other tabs", body: "Could the answer use titles, addresses or content from other open tabs? Close unrelated tabs before an action task." },
+      { title: "Work controls", body: "Has your organisation allowed page access, limited it to approved sites or blocked it on protected pages?" },
+      { title: "Taking action", body: "Are you only asking a question, or are you allowing the assistant to click and type? Watch each action and take back control if it goes off task." },
     ] },
-    { kind: "prose", heading: "Incognito is not invisibility", paragraphs: [
-      "For example, ChatGPT Atlas has separate controls for web browsing, browser memories and page visibility. Its web browsing training setting is off by default, but its chat training setting is separate.",
-      "Atlas also says incognito mode does not make you invisible to ChatGPT, your employer, your internet provider or the websites you visit.",
-    ], keyLine: "Do not test an AI browser first on banking, medical, payroll, customer or administrator pages." },
+    { kind: "prose", heading: "Start with public pages", paragraphs: [
+      "In Edge for work, Copilot can explain a webpage when page access is allowed. Browse with Copilot can take actions only where that separate feature is available to your account.",
+      "Read the original page yourself before relying on a price, deadline, policy or contract term in the answer.",
+    ], keyLine: "Do not test a new browser assistant first on banking, payroll, customer or administrator pages." },
   ],
   tryNow: {
     heading: "Try it with public information first",
-    introduction: "Open 2 public pages about the same product, service or topic. Do not sign in or use private documents.",
-    prompt: `Compare these 2 pages.
+    introduction: "Open a public pricing page and its terms page. Do not sign in or use private documents.",
+    prompt: `I am deciding whether a public service's terms fit my needs. Compare the two public pages I have open: its pricing page and its cancellation or service-terms page. If you cannot access both pages, tell me which one is missing before answering.
 
 Tell me:
 
-1. What they agree on.
-2. What is different.
-3. Which claims are supported by specific information on the pages.
-4. What I would still need to verify before making a decision.
+1. What I would pay, including any condition or extra charge stated on the pages.
+2. How and when I can cancel, according to the terms page.
+3. Where the two pages disagree or leave a question unanswered.
+4. What I should check with the provider before I decide.
 
-Quote the exact section of each page that supports your answer. Do not add information from elsewhere.`,
+For each finding, give a short exact quote and the page URL. Say "not found" when the pages do not answer a question. Do not fill gaps from memory, other websites or assumptions. Do not recommend a purchase.`,
     instructions: [
       { title: "Choose public pages", body: "Open 2 pages that do not require an account or contain private information." },
       { title: "Copy the instruction", body: "Select **Copy** and paste it into the browser's AI chat or sidebar." },
