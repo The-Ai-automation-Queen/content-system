@@ -105,7 +105,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "chatgpt-customer-research-with-evidence") return <CustomerResearchPage guide={guide} />;
   if (slug === "teach-claude-a-repeatable-workflow") return <ClaudeWorkflowPage guide={guide} />;
   if (slug === "protect-a-long-deepseek-project") return <DeepseekRecoveryPage guide={guide} />;
-  if (slug === "test-deepseek-v4-document-work") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Compare DeepSeek and your current tool on two safe documents, with source checks and repair time. Enter your email to open the guide." variant="entry"><DeepseekDocumentPage guide={guide} /></GuideAccessBoundary>;
+  if (slug === "test-deepseek-v4-document-work") return <DeepseekDocumentPage guide={guide} />;
   if (slug === "test-grok-repeated-image-edits") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle="Keep Grok image edits on track" guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Test three one-detail Grok image edits against an approved master. Enter your email to open the guide." variant="entry"><GrokImageEditsPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "mistral-multilingual-research") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Search one question in two languages, then check each claim against its original source. Enter your email to open the guide." variant="entry"><MistralMultilingualPage guide={guide} /></GuideAccessBoundary>;
   if (legacyGuideSlugs.has(slug)) return <GuideReadingPage guide={guide} />;

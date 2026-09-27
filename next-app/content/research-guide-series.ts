@@ -471,13 +471,13 @@ Do not add text, logos, watermarks, people or objects. Do not crop, rotate or ex
 export const deepseekV4DocumentGuide = makeGuide({
   slug: "test-deepseek-v4-document-work",
   promptMode: "as-written",
-  title: "Can DeepSeek V4.1 replace your current AI for document work?",
-  promise: "Run the same document task in both tools and compare factual accuracy, instruction-following and checking time.",
+  title: "Can DeepSeek handle your document work?",
+  promise: "Run the same document task in DeepSeek and your current tool. Compare the checked result and the time each takes to repair.",
   coverAlt: "The Blue Princess running one document through two parallel presses and inspecting the outputs with a ruler",
-  seoDescription: "Compare DeepSeek V4.1 with your current AI on the same document task before changing tools.",
+  seoDescription: "Compare DeepSeek with your current tool on the same document task before changing your workflow.",
   sources: [
-    { label: "DeepSeek: V4.1 Flash announcement", url: "https://deepseek.com/news/deepseek-v4-1-flash/" },
     { label: "DeepSeek: Product updates", url: "https://api-docs.deepseek.com/updates/" },
+    { label: "DeepSeek: App file upload", url: "https://api-docs.deepseek.com/news/news250115/" },
   ],
   answer: [
     "**A newer model is useful only if it improves the work you repeat.** Compare both tools with the same safe document, instruction and scoring sheet.",
@@ -490,7 +490,6 @@ export const deepseekV4DocumentGuide = makeGuide({
         { title: "Accuracy", body: "Every claim matches the source document." },
         { title: "Coverage", body: "Every requested part appears in the result." },
         { title: "Restraint", body: "Missing information remains missing instead of being guessed." },
-        { title: "Checking time", body: "Count the minutes needed to verify and repair the result." },
       ],
     },
     {
@@ -498,7 +497,7 @@ export const deepseekV4DocumentGuide = makeGuide({
       heading: "Keep the comparison fair",
       introduction: "Use a public or invented document of 2 to 5 pages.",
       steps: [
-        { title: "Use identical inputs", body: "Upload the same document and paste the same complete instruction into each tool." },
+        { title: "Use identical inputs", body: "Add the same safe document to each tool and paste the same complete instruction." },
         { title: "Record the model shown", body: "Note the product, model name and date visible in each tool." },
         { title: "Check against the document", body: "Mark every unsupported claim, missed requirement and formatting repair." },
         { title: "Repeat once", body: "Use a second document before changing your regular workflow." },
@@ -507,8 +506,8 @@ export const deepseekV4DocumentGuide = makeGuide({
   ],
   tryNow: {
     heading: "Run the document test",
-    introduction: "Upload the same safe document to DeepSeek and your current tool.",
-    prompt: `Use only the uploaded document.
+    introduction: "Add the same safe document to DeepSeek and your current tool.",
+    prompt: `Use only the document I provide. It may be attached or pasted below this instruction.
 
 Create a decision brief with these headings:
 1. Purpose
@@ -518,12 +517,12 @@ Create a decision brief with these headings:
 5. Decisions already made
 6. Questions the document does not answer
 
-For every fact, include the page number and a short supporting extract. If a page number is unavailable, name the section. Do not use outside knowledge. Do not turn a proposal into a decision or an estimate into a fact.
+For every fact, include the page number and a short supporting extract. If there are no page numbers, name the section or quote the exact line. If you cannot point to supporting text, write "Not found in the document". Do not use outside knowledge. Do not turn a proposal into an approved decision or an estimate into a confirmed fact.
 
 Keep the brief under 500 words. End with a table listing any statement you could not verify in the document.`,
     check: "Score both tools for accuracy, coverage, restraint and checking time. A faster first answer loses if it takes longer to verify or repair.",
   },
-  finish: "You can now decide whether DeepSeek V4.1 improves your document work using two checked results rather than release claims.",
+  finish: "You can now decide if DeepSeek improves this document task using two checked results rather than a first impression.",
   related: [
     promptGuide("protect-a-long-deepseek-project", "What should you save before a DeepSeek project becomes unavailable?", "Protect the work before it grows."),
     promptGuide("edit-long-writing-with-deepseek", "How do you edit long writing without losing what worked?", "Control a focused revision."),
@@ -591,7 +590,7 @@ Do not treat your own earlier suggestions as approved decisions. Mark any item w
   },
   finish: "You now own the working context needed to continue the project when a chat, account or service is unavailable.",
   related: [
-    promptGuide("test-deepseek-v4-document-work", "Can DeepSeek V4.1 replace your current AI for documents?", "Compare tools with the same safe material."),
+    promptGuide("test-deepseek-v4-document-work", "Can DeepSeek handle your document work?", "Compare tools with the same safe material."),
     promptGuide("edit-long-writing-with-deepseek", "Edit long DeepSeek writing without losing what worked", "Protect approved details during revision."),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Keep the recovery pack within your organisation’s data rules.", "/images/guides/learn-master.webp"),
   ],
