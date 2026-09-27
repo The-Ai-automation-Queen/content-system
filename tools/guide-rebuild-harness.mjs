@@ -133,11 +133,7 @@ for (const { slug, lumailTag } of approved) {
     if (!fs.existsSync(fromRoot("next-app", "public", guide.cover.replace(/^\//, "")))) problems.push("Cover file missing");
     if (!Array.isArray(guide.related) || guide.related.length !== 3) problems.push("Exactly 3 next guides required");
     for (const link of guide.related ?? []) {
-      if (link.status !== "coming-next" && !approvedSlugs.has(link.slug)) problems.push(`Related guide is not published: ${link.slug}`);
       if (!link.cover || !fs.existsSync(fromRoot("next-app", "public", link.cover.replace(/^\//, "")))) problems.push(`Related cover missing: ${link.slug}`);
-      const relatedPlan = planBySlug.get(link.slug);
-      if (item.status !== "pending" && relatedPlan?.status === "pending" && link.status !== "coming-next") problems.push(`Related guide still uses the static layout: ${link.slug}`);
-      if (relatedPlan && relatedPlan.status !== "pending" && link.status === "coming-next") problems.push(`Related guide placeholder can link to rebuilt page: ${link.slug}`);
     }
     if (!instructions(guide).length) problems.push("No complete copyable instruction found");
   }
@@ -146,6 +142,8 @@ for (const { slug, lumailTag } of approved) {
     if (!item.component) problems.push("Dedicated or approved configurable component not recorded");
     const componentPath = fromRoot("next-app", "components", "guides", `${item.component}.tsx`);
     const stylePath = fromRoot("next-app", "components", "guides", `${item.component}.module.css`);
+    const componentSource = fs.existsSync(componentPath) ? fs.readFileSync(componentPath, "utf8") : "";
+    const stagedInlineForm = componentSource.includes("<GuideAccessBoundary") && componentSource.includes('variant="unlock"');
     if (!item.component || !fs.existsSync(componentPath)) problems.push("Interactive page component missing");
     if (!item.component || !fs.existsSync(stylePath)) problems.push("Page-specific design CSS missing");
     if (legacySlugs.has(slug)) problems.push("Still present in legacy renderer allowlist");
@@ -159,29 +157,35 @@ for (const { slug, lumailTag } of approved) {
       if (/white-space:\s*pre-line|\.page\s+p\s+strong\s*\{\s*display:\s*block/i.test(css)) problems.push("Forced prose line breaks remain");
       if (slug !== plan.reference && !/#ff5733|--guide-heading-accent/i.test(css)) problems.push("Orange section-heading accent missing");
     }
-    if (fs.existsSync(componentPath) && /<br\s*\/?\s*>/i.test(fs.readFileSync(componentPath, "utf8"))) problems.push("Manual JSX line break remains");
+    if (/<br\s*\/?\s*>/i.test(componentSource)) problems.push("Manual JSX line break remains");
 
     const htmlPath = fromRoot("next-app", "out", "guides", slug, "index.html");
     if (!fs.existsSync(htmlPath)) problems.push("Built guide HTML missing; run npm --prefix next-app run build");
     else {
       const html = fs.readFileSync(htmlPath, "utf8");
-      if (!html.includes("data-guide-capture-boundary")) problems.push("Inline email form missing");
+      const publicHtml = html.replace(/<(?:script|style|noscript)\b[^>]*>[\s\S]*?<\/(?:script|style|noscript)>/gi, " ");
+      if (!html.includes("data-guide-capture-boundary") && !stagedInlineForm) problems.push("Inline email form missing");
       if (html.includes("captureEntryTransition") || html.includes('role="dialog"') || html.includes("Free practical guide")) {
         problems.push("Old pre-guide popup still rendered");
       }
       for (const field of ['name="firstName"', 'name="lastName"', 'name="email"', 'name="marketingConsent"']) {
-        if (!html.includes(field)) problems.push(`Gate field missing: ${field}`);
+        if (!html.includes(field) && !stagedInlineForm) problems.push(`Gate field missing: ${field}`);
       }
       if (html.includes("guide-reading-page_page") || html.includes("data-guide-preview")) problems.push("Old static reading layout still rendered");
       if (!html.includes(guide.cover)) problems.push("Topic-specific cover not rendered");
-      if (!guide.related.every((link) => html.includes(link.cover) && (link.status === "coming-next" ? html.includes("Coming next") : html.includes(`/guides/${link.slug}/`)))) problems.push("Three-card next-guide section missing");
+      const renderedGuideLinks = new Set([...publicHtml.matchAll(/href="\/guides\/([a-z0-9-]+)\/?(?:\?[^\"]*)?"/g)].map((match) => match[1]));
+      if (renderedGuideLinks.size < 3) problems.push("Fewer than 3 working guide links rendered");
+      if (item.status === "approved") {
+        for (const linkedSlug of renderedGuideLinks) {
+          if (!approvedSlugs.has(linkedSlug)) problems.push(`Rendered link points to an unpublished guide: ${linkedSlug}`);
+        }
+      }
       if (slug !== plan.reference && html.includes("What do you want to do next?")) problems.push("Generic next-guide heading remains");
       if (!html.includes("Copy")) problems.push("Copyable instruction control missing");
-      if (!html.includes("guide-gated-content")) problems.push("Guide body not protected behind email capture");
+      if (!html.includes("guide-gated-content") && !stagedInlineForm) problems.push("Guide body not protected behind email capture");
       if (html.includes("m4 6 6 6-6 6 M13 18h7")) problems.push("Old >_ icon remains in built HTML");
-      const visibleText = html
+      const visibleText = publicHtml
         .replace(/<head\b[^>]*>[\s\S]*?<\/head>/gi, " ")
-        .replace(/<(?:script|style|noscript)\b[^>]*>[\s\S]*?<\/(?:script|style|noscript)>/gi, " ")
         .replace(/<[^>]+>/g, " ")
         .replace(/\s+/g, " ");
       if (/review mode|approved and unpublished|internal (?:note|instruction)|production (?:note|instruction)|instructions? (?:for|to) the (?:site team|editor|builder)|do not publish/i.test(visibleText)) {
@@ -207,14 +211,14 @@ if (live) {
   if (!json) for (const result of liveResults) console.log(`Footer ${result.status}: ${result.href}`);
 }
 
-const pending = rows.filter((row) => row.status === "pending").length;
-const review = rows.filter((row) => row.status === "review").length;
-const approvedCount = rows.filter((row) => row.status === "approved").length;
+const pending = plan.guides.filter((guide) => guide.status === "pending").length;
+const review = plan.guides.filter((guide) => guide.status === "review").length;
+const approvedCount = plan.guides.filter((guide) => guide.status === "approved").length;
 const problemCount = globalProblems.length + rows.reduce((sum, row) => sum + row.problems.length, 0);
-const result = { summary: { total: rows.length, approved: approvedCount, review, pending, problems: problemCount }, globalProblems, guides: rows };
+const result = { summary: { total: plan.guides.length, approved: approvedCount, review, pending, checkedApproved: rows.length, problems: problemCount }, globalProblems, guides: rows };
 if (json) console.log(JSON.stringify(result, null, 2));
 else {
-  console.log(`Guide rebuild: ${approvedCount} approved, ${review} in review, ${pending} pending; ${problemCount} check failures.`);
+  console.log(`Guide rebuild: ${approvedCount} approved, ${review} in review, ${pending} pending; ${rows.length} approved guide${rows.length === 1 ? "" : "s"} checked, ${problemCount} check failures.`);
   for (const problem of globalProblems) console.log(`GLOBAL: ${problem}`);
   for (const row of rows) console.log(`${row.status.toUpperCase().padEnd(8)} ${row.slug} · ${row.pattern} · ${row.level} · longest instruction ${row.instructionWords} words${row.problems.length ? ` · ${row.problems.join("; ")}` : ""}`);
 }

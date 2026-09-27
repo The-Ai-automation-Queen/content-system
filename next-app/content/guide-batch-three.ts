@@ -62,9 +62,9 @@ export const promptGuide = {
     finishLine: "You do not need a collection of clever prompts. You need enough context and a clear idea of what good looks like.",
   },
   related: [
-    { slug: "which-ai-tool-for-what", title: "Which AI tool should you use?", reason: "Match the task to the right tool before opening another account.", cover: "/images/guides/which-ai-tool-for-what.webp" },
+    { slug: "what-is-ai", title: "What AI actually is", reason: "See what an AI answer can help with, and what you still need to check.", cover: "/images/guides/what-is-ai.webp" },
     { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Know what to remove before you paste information into a prompt.", cover: "/images/guides/learn-master.webp" },
-    { slug: "make-chatgpt-answers-shorter", title: "Why does ChatGPT keep giving you an essay?", reason: "Keep useful detail while cutting the length of an answer.", cover: "/images/guides/make-chatgpt-answers-shorter.webp" },
+    { slug: "check-copilot-excel-edits", title: "Did Copilot change only one cell?", reason: "Try a precise instruction in Excel and compare the result with the original.", cover: "/images/guides/check-copilot-excel-edits.webp" },
   ],
 } as const satisfies GuidePage;
 
