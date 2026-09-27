@@ -30,3 +30,5 @@ The approved Instagram walkthrough and *What AI actually is* provide Shift & Lea
 Rules about layout, approval, review status, source checking, capture placement, SEO, prompt visibility and editorial quality belong in this internal document and code only. Do not render them as reader-facing copy, headings, disclaimers or notes. The reader sees only the task, useful explanation, exact actions, the email offer and the promised resource. Review the rendered page for leaked production language before approval.
 
 Never paste this brief, a build prompt, a checklist for editors, or any instruction addressed to the website team into the page copy. Do not mention the reference website, template, review mode, publication status, the email provider, or why the form is positioned where it is. Instructions *for the reader's own exercise* are welcome when they help the reader act; production instructions are never part of the guide.
+
+This also applies inside copyable prompts and emails. A reader may copy task instructions for an AI tool, but must never copy editorial, implementation, approval, testing or publishing directions meant for the site team.

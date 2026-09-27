@@ -86,7 +86,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "gemini-google-tasks-limits") return <GeminiTasksPage guide={guide} />;
   if (slug === "review-grok-suggestions") return <GrokReviewPage guide={guide} />;
   if (slug === "check-copilot-excel-edits") return <CopilotExcelPage guide={guide} />;
-  if (slug === "what-can-copilot-see-at-work") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Build a morning email brief you can check, then schedule it if your work account supports it. Enter your email to open the guide." variant="entry"><CopilotVisibilityPage guide={guide} /></GuideAccessBoundary>;
+  if (slug === "what-can-copilot-see-at-work") return <CopilotVisibilityPage guide={guide} />;
   if (slug === "chatgpt-screen-recording-to-process-guide") return <ScreenRecordingPage guide={guide} />;
   if (slug === "meta-ai") return <MetaMusePage guide={guide} />;
   if (slug === "test-meta-muse-money-saving-task") return <MetaMuseSavingPage guide={guide} />;
