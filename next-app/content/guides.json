@@ -299,8 +299,8 @@
     },
     {
       "slug": "claude",
-      "title": "Get one useful thing done with Claude",
-      "h1": "Get one useful thing done with Claude",
+      "title": "What can you actually do with Claude at work?",
+      "h1": "What can you actually do with Claude at work?",
       "datePublished": "2026-07-08",
       "dateModified": "2026-09-20",
       "readMinutes": 4,
@@ -318,11 +318,11 @@
       "tags": [
         "Claude",
         "Anthropic",
-        "long documents",
-        "careful writing",
-        "coding"
+        "meeting notes",
+        "document questions",
+        "email drafts"
       ],
-      "summary": "Try one everyday task with Claude: meeting notes, a document question or an email draft. Complete examples, copyable instructions and simple checks.",
+      "summary": "See three worked Claude examples for common work tasks, then try one with a copyable prompt and check the result.",
       "sequence": 70,
       "access": "free"
     },

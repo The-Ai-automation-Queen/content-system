@@ -3,13 +3,15 @@ import type { GuidePage } from "./guide-page";
 export const claudeGuide = {
   "sections": [],
   "slug": "claude",
-  "title": "Get one useful thing done with Claude",
-  "promise": "Not sure how Claude would help in your working day? Choose something already on your to-do list: sorting meeting notes, finding an answer in a document or drafting an email.",
+  "title": "What can you actually do with Claude at work?",
+  "promise": "Choose meeting notes, a document question or an email. See the sample input and useful result before trying the prompt yourself.",
   "cover": "/images/guides/claude-first-task.webp",
   "coverAlt": "A small blue robot princess turning scattered notes into one finished document on an engraved wooden desk",
-  "seoDescription": "Try one everyday task with Claude: meeting notes, a document question or an email draft. Complete examples, copyable instructions and simple checks.",
+  "seoDescription": "See three complete Claude examples for work: sort meeting notes, answer a document question and draft an email. Try one and check the result.",
   "lumailTag": "guide-claude",
   "sourceNotes": [
+    { "label": "Anthropic: Get started with Claude", "url": "https://support.claude.com/en/articles/8114491-get-started-with-claude" },
+    { "label": "Anthropic: What can I use Claude for?", "url": "https://support.claude.com/en/articles/7996845-what-are-some-things-i-can-use-claude-for" },
     { "label": "Audience research: non-coders asking how to use Claude at work", "url": "https://www.reddit.com/r/ClaudeAI/comments/1vw0m4p/claude_in_your_daily_work_if_your_are_not_a/" },
     { "label": "Audience research: reported meeting, document and email workflows", "url": "https://www.reddit.com/r/ClaudeAI/comments/1w0wcvi/how_i_actually_use_claude_daily_and_none_of_it_is/" },
     { "label": "Audience research: frustration with long, hard-to-follow answers", "url": "https://www.reddit.com/r/ClaudeAI/comments/1vv14nh/is_anyone_else_finding_claude_really_hard_to/" }
@@ -26,9 +28,9 @@ export const claudeGuide = {
         "id": "meeting",
         "title": "Sort my meeting notes",
         "outcome": "Find who needs to do what.",
-        "example": "Your team agreed to run a pilot, but left some details open.",
+        "example": "Sample notes: The team agreed to run a pilot. The programme lead will draft the invitation by 8 October. Operations will check room availability, but no deadline was set. Budget approval is pending. A launch on 22 October was suggested, not confirmed.",
         "prompt": "Turn these notes into decisions, an action table and open questions. Use only the notes. For each action, show the owner and deadline. Write \"Not agreed\" for missing details. Keep suggestions separate from decisions. Draft only; don't take actions in another app.\n\nNotes: We agreed to run a pilot. Programme lead will draft the invitation by 8 October. Operations lead will check room availability; no deadline agreed. Budget approval is pending. A launch on 22 October was suggested, not confirmed.",
-        "result": "Look for the invitation assigned to the programme lead for 8 October; the room-check deadline marked “Not agreed”; the launch date still unconfirmed.",
+        "result": "Decision: run a pilot. Actions: programme lead to draft the invitation by 8 October; operations to check the room, deadline not agreed. Open: budget approval and the proposed launch date.",
         "wrongLine": "The launch is confirmed for 22 October.",
         "correctionFact": "A launch on 22 October was suggested, not confirmed."
       },
@@ -36,9 +38,9 @@ export const claudeGuide = {
         "id": "document",
         "title": "Answer a document question",
         "outcome": "Find the answer and the words supporting it.",
-        "example": "You need to know whether a training recording is included.",
+        "example": "Sample source: “The training includes 2 live sessions. A recording may be offered later, subject to speaker approval. Pricing has not been agreed.” Your question: Is a recording included?",
         "prompt": "Answer my question using only the source. Quote the words supporting your answer and flag anything unresolved. Keep it under 100 words. If the source doesn't answer, say so.\n\nQuestion: Is a recording included?\nSource: The training includes 2 live sessions. A recording may be offered later, subject to speaker approval. Pricing has not been agreed.",
-        "result": "A recording isn’t confirmed. The source says “may be offered later, subject to speaker approval.”",
+        "result": "No recording is confirmed. The source says it “may be offered later, subject to speaker approval.” Pricing is also still open.",
         "wrongLine": "A recording is included.",
         "correctionFact": "The source says a recording may be offered later, subject to speaker approval."
       },
@@ -46,9 +48,9 @@ export const claudeGuide = {
         "id": "email",
         "title": "Draft my email",
         "outcome": "Turn rough points into a short message.",
-        "example": "You need a supplier’s delivery date before you can plan an event.",
+        "example": "Sample points: Your event is on 12 October. You need display stands by 10 October, but the supplier has not confirmed delivery. Ask them to flag any risk of delay.",
         "prompt": "Write a warm, direct email under 80 words, with a subject line. Use these points only. Don't invent names or commitments. Draft only; don't send.\n\nPoints: Ask the supplier to confirm when the display stands will arrive. Our event is on 12 October. We need delivery by 10 October. Ask them to flag any risk of delay.",
-        "result": "Could you confirm when the display stands will arrive? We need them by 10 October for our event on 12 October. Please let us know if there’s any risk of delay.",
+        "result": "Subject: Display stand delivery. Could you confirm if the stands can arrive by 10 October for our event on 12 October? Please let us know if there is any risk of delay.",
         "wrongLine": "Thank you for confirming delivery on 10 October.",
         "correctionFact": "The supplier has not confirmed delivery. We need to ask if the stands can arrive by 10 October."
       }

@@ -213,7 +213,7 @@ Draft only. Do not send a message, update a project tool or create a task. End w
   finish: "You now have a tested workflow you can reuse, improve and save without rebuilding the instruction every week.",
   related: [
     promptGuide("claude-projects", "Stop repeating your instructions to Claude", "Store stable context for work that continues."),
-    existingGuide("claude", "Get one useful thing done with Claude", "Practise with a smaller one-off task first.", "/images/guides/claude-first-task.webp"),
+    existingGuide("claude", "What can you actually do with Claude at work?", "Practise with a smaller one-off task first.", "/images/guides/claude-first-task.webp"),
     promptGuide("chatgpt-screen-recording-to-process-guide", "Turn a screen recording into a process guide", "Document the human version of a repeatable job."),
   ],
 });
