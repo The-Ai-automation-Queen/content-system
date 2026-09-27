@@ -4,33 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
-import { cleanLabel } from "./guide-icon";
+import { publicGuides } from "@/content/guides";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./customer-research-page.module.css";
 
-const readyChecks = [
-  "I removed names, emails, company names and account details from a copy.",
-  "Each response has a participant ID such as P01 or P02.",
-  "Each row has a participant, question and answer.",
-  "I know which decision this research should inform.",
-] as const;
-
-const resultChecks = [
-  "Every main theme has at least two participant IDs and one extract from each person.",
-  "I can find every short extract under the right participant ID in the original notes.",
-  "Disagreement and one-person signals stay visible.",
-  "The answer does not claim this sample represents all customers.",
-] as const;
-
 export function CustomerResearchPage({ guide }: { guide: GuidePage }) {
-  const [ready, setReady] = useState<boolean[]>([false, false, false, false]);
   const [decision, setDecision] = useState("");
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
-  const [checked, setChecked] = useState<boolean[]>([false, false, false, false]);
   if (!guide.tryNow) return null;
-  const readyToCopy = decision.trim().length > 0;
-  const prompt = guide.tryNow.prompt.replace("[DECISION]", decision.trim() || "[DECISION]");
+  const prompt = guide.tryNow.prompt.replace("[DECISION]", decision.trim() || "[THE DECISION YOU WANT TO MAKE]");
+  const related = publicGuides.filter(item => ["what-should-you-never-share-with-ai", "what-is-ai"].includes(item.slug));
 
   async function copyPrompt() {
     try {
@@ -46,14 +31,18 @@ export function CustomerResearchPage({ guide }: { guide: GuidePage }) {
   return <main className={styles.page}>
     <div className={styles.shell}>
       <Link className={styles.back} href="/guides/">← All guides</Link>
-      <header className={styles.hero}><h1>Can ChatGPT find customer themes <span>without inventing them?</span></h1><p>Only if each theme leads back to the people and words behind it. Prepare the notes, ask for an evidence table, then check the original.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
+      <header className={styles.hero}><h1>Find patterns in customer feedback. <span>Keep the proof.</span></h1><p>Turn interview or survey notes into a table of themes, quotes and disagreements you can check before you make a decision.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
-      <section className={styles.activity} aria-labelledby="research-ready-title"><div className={styles.sectionHead}><span>Before uploading</span><h2 id="research-ready-title">Can you trace each response?</h2></div><div className={styles.example} aria-label="Illustrative customer research example"><p className={styles.exampleTitle}>Example: 2 people left sign-up</p><p className={styles.exampleQuestion}><strong>Question:</strong> What stopped you signing up?</p><div className={styles.exampleResponses}><blockquote><strong>P01</strong><p>“I couldn’t find the price before sign-up.”</p></blockquote><blockquote><strong>P02</strong><p>“I had to give my email before I could see the cost.”</p></blockquote></div><p className={styles.exampleTheme}><strong>Possible theme:</strong> The price appears too late. Both answers support it; neither tells you what all customers want.</p></div><div className={styles.checks}>{readyChecks.map((label, index) => <label key={label}><input type="checkbox" checked={ready[index] ?? false} onChange={() => setReady(current => current.map((value, i) => i === index ? !value : value))} /><span>{label}</span></label>)}</div><p className={styles.result} aria-live="polite">{ready.every(Boolean) ? "Your notes are ready for a first pass. Keep the original copy for checking." : `${ready.filter(Boolean).length} of 4 preparation checks marked. Use a copy of the notes, not your only original.`}</p></section>
+      <nav className={styles.contents} aria-label="In this guide"><strong>In this guide</strong><a href="#research-example-title">See an example</a><a href="#research-ready-title">Prepare your notes</a><a href="#research-prompt-title">Get the instruction</a><a href="#research-check-title">Check the result</a></nav>
 
-      <section className={styles.activity} aria-labelledby="research-prompt-title"><div className={styles.sectionHead}><span>One evidence table</span><h2 id="research-prompt-title">Tell ChatGPT which decision matters</h2></div><label className={styles.decision}><span>Decision this research should inform</span><input value={decision} onChange={event => setDecision(event.target.value)} placeholder="For example: Should we show the price before sign-up?" /></label><p className={styles.intro}>Upload the anonymised copy, then paste this complete instruction. It asks for participant IDs, supporting extracts, contradictions and gaps beside each theme.</p><div className={styles.prompt}><details open><summary>Complete instruction</summary><pre>{prompt}</pre></details><button type="button" disabled={!readyToCopy} onClick={copyPrompt} aria-label="Copy the complete customer research instruction">{copied ? "Copied" : "Copy"}</button></div>{!readyToCopy && <p className={styles.message}>Name the decision to unlock Copy.</p>}{copyError && <p className={styles.message} role="alert">Copy failed. Open the instruction and select the text instead.</p>}</section>
+      <section className={styles.activity} aria-labelledby="research-example-title"><div className={styles.sectionHead}><span>01 · See the method</span><h2 id="research-example-title">What counts as a theme?</h2></div><p>Two people can describe the same problem in different words. Keep the exact responses beside your interpretation.</p><div className={styles.example} aria-label="Illustrative customer research example"><p className={styles.exampleTitle}>Example: two people left before signing up</p><p className={styles.exampleQuestion}><strong>Question:</strong> What stopped you signing up?</p><div className={styles.exampleResponses}><blockquote><strong>P01</strong><p>“I couldn’t find the price before sign-up.”</p></blockquote><blockquote><strong>P02</strong><p>“I had to give my email before I could see the cost.”</p></blockquote></div><p className={styles.exampleTheme}><strong>Possible theme:</strong> The price appears too late. Both responses support this; two people do not tell you what all customers want.</p></div><p>That is the standard for the table you will ask ChatGPT to make: every theme must point back to participant IDs and short extracts.</p></section>
 
-      <section className={styles.activity} aria-labelledby="research-check-title"><div className={styles.sectionHead}><span>Check the answer</span><h2 id="research-check-title">Would each theme survive a source check?</h2></div><div className={styles.checks}>{resultChecks.map((label, index) => <label key={label}><input type="checkbox" checked={checked[index] ?? false} onChange={() => setChecked(current => current.map((value, i) => i === index ? !value : value))} /><span>{label}</span></label>)}</div><p className={styles.result} aria-live="polite">{checked.every(Boolean) ? "All checks marked. Keep only themes you can still trace to the original notes." : "Open the original notes. Remove or revise any theme whose IDs or extracts do not match."}</p></section>
+      <section className={styles.activity} aria-labelledby="research-ready-title"><div className={styles.sectionHead}><span>02 · Prepare the material</span><h2 id="research-ready-title">Make a copy you can trace</h2></div><ol className={styles.preparation}><li>Use research you have permission to upload. Remove names, email addresses, account details and sensitive business information. A participant ID such as P01 should replace each name.</li><li>Put each answer in its own row with the participant ID, question and response. Keep your original notes separately for checking.</li><li>Name the product or service decision you want the research to inform. The table should help you see evidence, not decide for you.</li></ol><p className={styles.sourceNote}>ChatGPT supports document and spreadsheet uploads, subject to your plan and workspace settings. Check your organisation’s rules first. <a href="https://help.openai.com/en/articles/8555545-file-uploads-faq" target="_blank" rel="noopener noreferrer">See OpenAI’s file-upload guidance ↗</a></p></section>
+
+      <section className={styles.activity} aria-labelledby="research-prompt-title"><div className={styles.sectionHead}><span>03 · Build the evidence table</span><h2 id="research-prompt-title">What decision are you trying to make?</h2></div><label className={styles.decision}><span>Write it in your own words</span><input value={decision} onChange={event => setDecision(event.target.value)} placeholder="For example: Should we show the price before sign-up?" /></label><p className={styles.intro}>The instruction below adds your decision to a table request. It asks ChatGPT to show the people and extracts behind each theme, plus disagreements and gaps.</p><GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} variant="unlock" heading="Get the customer-research instruction" guidePromise="Copy the full evidence-table instruction and keep a link back to this example." actionLabel="Show me the instruction"><div className={styles.prompt}><strong>Complete instruction</strong><button type="button" onClick={copyPrompt} aria-label="Copy the complete customer research instruction">{copied ? "Copied" : "Copy"}</button><pre>{prompt}</pre></div>{copyError && <p className={styles.message} role="alert">Copy failed. Select the instruction text instead.</p>}</GuideAccessBoundary></section>
+
+      <section className={styles.activity} aria-labelledby="research-check-title"><div className={styles.sectionHead}><span>04 · Check the answer</span><h2 id="research-check-title">Would the themes hold up in your notes?</h2></div><ul className={styles.reviewList}><li>Find each participant ID and extract in the original notes. Remove any line you cannot trace.</li><li>Keep disagreement and one-person signals visible. Do not turn two interviews into a claim about all customers.</li><li>Use the table to decide what to ask next. You still make the product decision.</li></ul></section>
     </div>
-    <section className={styles.related} aria-labelledby="research-related-title"><div className={styles.relatedInner}><h2 id="research-related-title">Keep the evidence attached to the work</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="research-related-title"><div className={styles.relatedInner}><h2 id="research-related-title">Keep reading</h2><div className={styles.relatedGrid}>{related.map(item => <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{item.title}</h3><p>{item.summary}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
   </main>;
 }

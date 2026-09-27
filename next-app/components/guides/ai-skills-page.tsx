@@ -4,34 +4,32 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
-import { cleanLabel } from "./guide-icon";
+import { publicGuides } from "@/content/guides";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./ai-skills-page.module.css";
 
-const problems = [
-  "AI misses the brief",
-  "The source may be wrong",
-  "The answer sounds right",
-  "Access feels too broad",
-  "The decision is still mine",
+const skills = [
+  { snag: "The answer misses what I asked for", title: "Give a clearer brief", habit: "State the job, the audience, the source material and what the answer must include.", focus: "Help me write a precise instruction for this task. Ask for any missing audience, source or output detail before drafting it.", check: "Could a colleague follow the instruction without guessing what you meant?" },
+  { snag: "I am not sure which information to use", title: "Choose the right source", habit: "Name the document or person with the latest facts before asking for an answer.", focus: "Tell me which original documents or people I need to check for this task. Separate facts I have from facts I still need.", check: "Can you point to the original for each important fact?" },
+  { snag: "The answer sounds right, but might be wrong", title: "Check the result", habit: "Compare names, numbers, dates and claims against the originals.", focus: "Give me a short check I can apply to the result of this task. Flag details that must be compared with the original material.", check: "What did the answer add, leave out or change?" },
+  { snag: "I do not know what is safe to share", title: "Protect the information", habit: "Use a public or made-up example first, then check your organisation's rules before adding work data.", focus: "Help me create a safe practice version of this task. Identify details I should remove or replace before using an AI tool.", check: "Would this practice example expose a customer, colleague, account or confidential plan?" },
+  { snag: "I still need to approve the outcome", title: "Keep the final decision", habit: "Decide what needs a person's approval before anyone acts on the answer.", focus: "Separate the draft work AI could help with from the decision or action a person must approve for this task.", check: "Who checks the result, and what happens before it is used?" },
 ] as const;
+
+const sampleTask = "Turn a short, non-confidential project note into a status update.";
 
 export function AiSkillsPage({ guide }: { guide: GuidePage }) {
   const [selected, setSelected] = useState(0);
-  const [tasks, setTasks] = useState<string[]>(["", "", "", "", ""]);
+  const [task, setTask] = useState(sampleTask);
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
-  const [practiceTaskIndex, setPracticeTaskIndex] = useState<number | null>(null);
-  const skills = guide.sections[0];
-  if (skills.kind !== "cards" || !guide.tryNow) return null;
-  const taskList = tasks.map(task => task.trim()).filter(Boolean);
-  const practiceTask = practiceTaskIndex === null ? "" : taskList[practiceTaskIndex] ?? "";
-  const prompt = taskList.length >= 5
-    ? guide.tryNow.prompt.replace("[Paste 5 to 10 tasks]", taskList.map((task, index) => `${index + 1}. ${task}`).join("\n"))
-    : guide.tryNow.prompt;
+  const current = skills[selected];
+  const prompt = `I want to practise one AI skill on a task I already know how to do.\n\nTask: ${task.trim()}\nSkill to practise: ${current.title}.\n\n${current.focus}\n\nGive me one small exercise I can finish this week. Use only public, invented or non-confidential material. Tell me what to prepare, what to ask the tool to do, and how to check the result against the original. Do not invent facts about my work or suggest that I buy a new tool. If you need an example, make it clearly fictional. Keep your answer to one exercise and one check. I will decide if the result is suitable for real work.`;
+  const related = publicGuides.filter(item => ["what-is-ai", "what-should-you-never-share-with-ai", "what-is-agentic"].includes(item.slug));
 
   async function copyPrompt() {
-    if (taskList.length < 5) return;
+    if (!task.trim()) return;
     try {
       await navigator.clipboard.writeText(prompt);
       setCopied(true);
@@ -45,14 +43,16 @@ export function AiSkillsPage({ guide }: { guide: GuidePage }) {
   return <main className={styles.page}>
     <div className={styles.shell}>
       <Link className={styles.back} href="/guides/">← All guides</Link>
-      <header className={styles.hero}><h1>Which AI skill is worth learning <span>for your work?</span></h1><p>Start with the part of a familiar task that slows you down. Practise one skill before learning another tool.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
+      <header className={styles.hero}><h1>Which AI skill is worth learning <span>for your work?</span></h1><p>You do not need to learn every tool. Find the part of a task that slows you down, then practise one skill on work you already understand.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
-      <section className={styles.activity} aria-labelledby="skills-pick-title"><div className={styles.sectionHead}><span>Find your starting point</span><h2 id="skills-pick-title">What keeps getting in the way?</h2></div><div className={styles.skillGrid}>{skills.items.map((skill, index) => <button key={skill.title} type="button" aria-pressed={selected === index} onClick={() => setSelected(index)}>{problems[index] ?? skill.title}</button>)}</div><div className={styles.skillResult} aria-live="polite"><span>Practise this skill</span><h3>{skills.items[selected].title}</h3><p>{skills.items[selected].body}</p></div></section>
+      <nav className={styles.contents} aria-label="In this guide"><strong>In this guide</strong><a href="#skills-example-title">See a real task</a><a href="#skills-pick-title">Find your skill</a><a href="#skills-task-title">Try one exercise</a></nav>
 
-      <section className={styles.activity} aria-labelledby="skills-task-title"><div className={styles.sectionHead}><span>Use your own work</span><h2 id="skills-task-title">Name five tasks you already know</h2></div><p className={styles.intro}>Use general descriptions, such as “turn meeting notes into an update”. Leave out names, customer details and confidential information.</p><div className={styles.taskGrid}>{tasks.map((task, index) => <label key={index}><span>Task {index + 1}</span><input value={task} onChange={event => { setTasks(current => current.map((value, i) => i === index ? event.target.value : value)); setPracticeTaskIndex(null); }} placeholder="A task I do regularly" /></label>)}</div>{tasks.length < 10 && taskList.length >= 5 && <button className={styles.addTask} type="button" onClick={() => setTasks(current => [...current, ""])}>Add another task (optional)</button>}<p className={styles.inputNote} aria-live="polite">{taskList.length >= 5 ? `${taskList.length} tasks are now in the instruction below.` : `${taskList.length} of 5 tasks added. Add five to unlock Copy.`}</p><div className={styles.prompt}><details open><summary>Complete instruction</summary><pre>{prompt}</pre></details><button type="button" disabled={taskList.length < 5} onClick={copyPrompt} aria-label="Copy the complete AI skills instruction">{copied ? "Copied" : "Copy"}</button></div>{copyError && <p className={styles.message} role="alert">Copy failed. Open the instruction and select the text instead.</p>}<p className={styles.inputNote}>Paste the instruction into an AI chat you are allowed to use. Check its advice against what you know about the task.</p></section>
+      <section className={styles.activity} aria-labelledby="skills-example-title"><div className={styles.sectionHead}><span>01 · See a real task</span><h2 id="skills-example-title">See what a useful check looks like</h2></div><p className={styles.intro}>Suppose you have a few safe project notes and need to send a short update. AI can draft it, but the useful skill is knowing what to give it and what to check.</p><div className={styles.example}><div><strong>Original note</strong><p>Draft ready. Team review still pending. Launch date not agreed.</p></div><span aria-hidden="true">→</span><div><strong>Useful update</strong><p>The draft is ready for team review. The launch date has not been agreed.</p></div></div><p className={styles.exampleCheck}>Before sending: check that the draft really is ready, the review is still pending and no date has been added.</p></section>
 
-      <section className={styles.activity} aria-labelledby="skills-plan-title"><div className={styles.sectionHead}><span>Your next practice</span><h2 id="skills-plan-title">Make it one task this week</h2></div><label className={styles.practiceLabel}><span>Which task will you try?</span><select value={practiceTaskIndex ?? ""} onChange={event => setPracticeTaskIndex(event.target.value === "" ? null : Number(event.target.value))} disabled={taskList.length === 0}><option value="">{taskList.length ? "Choose from your tasks" : "Add tasks above first"}</option>{taskList.map((task, index) => <option key={`${task}-${index}`} value={index}>{task}</option>)}</select></label><div className={styles.plan} aria-live="polite"><strong>{practiceTask ? `Try: ${practiceTask}` : "Choose one familiar task."}</strong><span>Practise: {skills.items[selected].title}.</span><span>Check: did the result help with that task, and what did you still need to correct?</span></div></section>
+      <section className={styles.activity} aria-labelledby="skills-pick-title"><div className={styles.sectionHead}><span>02 · Find your skill</span><h2 id="skills-pick-title">What tends to slow you down?</h2></div><div className={styles.skillGrid} role="group" aria-label="Choose a work snag">{skills.map((skill, index) => <button key={skill.title} type="button" aria-pressed={selected === index} onClick={() => setSelected(index)}>{skill.snag}</button>)}</div><div className={styles.skillResult} aria-live="polite"><span>Practise this</span><h3>{current.title}</h3><p>{current.habit}</p><strong>Check: {current.check}</strong></div></section>
+
+      <section className={styles.activity} aria-labelledby="skills-task-title"><div className={styles.sectionHead}><span>03 · Try one exercise</span><h2 id="skills-task-title">Use a task you know well</h2></div><p className={styles.intro}>Start with the example, or replace it with one familiar task. Keep names, customer details and confidential information out.</p><label className={styles.taskField}><span>Your task</span><textarea rows={3} value={task} onChange={event => setTask(event.target.value)} /></label><GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} variant="unlock" heading="Get your practice instruction" guidePromise="Open the complete instruction for your task and chosen skill, then copy it into an AI chat." actionLabel="Show the instruction"><div className={styles.prompt}><strong>Your complete instruction</strong><button type="button" disabled={!task.trim()} onClick={copyPrompt} aria-label="Copy your AI skills practice instruction">{copied ? "Copied" : "Copy"}</button><pre>{prompt}</pre></div>{!task.trim() && <p className={styles.message}>Add a task before copying.</p>}{copyError && <p className={styles.message} role="alert">Copy failed. Select the instruction text instead.</p>}<p className={styles.inputNote}>Paste it into an AI chat you are allowed to use. Check the suggested exercise against your own task before trying it.</p></GuideAccessBoundary></section>
     </div>
-    <section className={styles.related} aria-labelledby="skills-related-title"><div className={styles.relatedInner}><h2 id="skills-related-title">Keep building the skills that matter</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="skills-related-title"><div className={styles.relatedInner}><h2 id="skills-related-title">Keep learning through practice</h2><div className={styles.relatedGrid}>{related.map(item => <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{item.title}</h3><p>{item.summary}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
   </main>;
 }

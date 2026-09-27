@@ -1,0 +1,11 @@
+:HL["/_next/static/media/806de4d605d3ad01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/97ac91773d3121b2-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/eaead17c7dbfcd5d-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/fc727f226c737876-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/4d79168abe6909ad.css","style"]
+:HL["/_next/static/css/cf625bda45c032ef.css","style"]
+:HL["/_next/static/css/346f995d861f1bf2.css","style"]
+:HL["/_next/static/css/5e74f7eae9d5c9d1.css","style"]
+:HL["/_next/static/css/cd5545106ac6059f.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"guides","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"edit-long-writing-with-deepseek","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"ATnD6aeZ33QuBAxrnWVd_"}

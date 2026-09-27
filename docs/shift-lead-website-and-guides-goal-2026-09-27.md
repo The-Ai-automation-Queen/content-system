@@ -3,6 +3,7 @@
 Work in the active `content-system` repository until the website and its approved guides are ready to release. Treat my latest instructions in this task as the source of truth. Do not use the old Shift & Lead guide-builder skill or any stale guide template. Use `/Users/fatiha/.codex/skills/clone-website/SKILL.md` to inspect the **live** Saadia Karam website and my **live** Shift & Lead website in a browser. Adapt the reference site's clarity, page structure, visual rhythm, authority presentation, offer hierarchy and guide journey to my business. Do not copy her wording, images, identity, client claims, products, prices or account system.
 
 All production briefs and internal instructions stay out of customer-facing copy. The homepage and guides must speak only to visitors about their questions, actions and benefits. Never publish template directions, editorial notes, status labels, provider setup details or instructions addressed to the site team. Check the rendered text before release.
+Apply this rule to every visible surface, including copyable prompts, form messages, guide cards, emails, metadata and accessible labels. An instruction for the visitor's actual exercise is allowed; an instruction for producing, reviewing or publishing the page is not.
 
 ## Start with the actual offer
 

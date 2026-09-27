@@ -62,27 +62,27 @@ export const promptGuide = {
     finishLine: "You do not need a collection of clever prompts. You need enough context and a clear idea of what good looks like.",
   },
   related: [
-    { slug: "which-ai-tool-for-what", title: "Which AI tool should you use?", reason: "Match the task to the right tool before opening another account.", cover: "/images/guides/which-ai-tool-for-what.webp" },
+    { slug: "what-is-ai", title: "What AI actually is", reason: "See what an AI answer can help with, and what you still need to check.", cover: "/images/guides/what-is-ai.webp" },
     { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Know what to remove before you paste information into a prompt.", cover: "/images/guides/learn-master.webp" },
-    { slug: "make-chatgpt-answers-shorter", title: "Why does ChatGPT keep giving you an essay?", reason: "Keep useful detail while cutting the length of an answer.", cover: "/images/guides/make-chatgpt-answers-shorter.webp" },
+    { slug: "check-copilot-excel-edits", title: "Did Copilot change only one cell?", reason: "Try a precise instruction in Excel and compare the result with the original.", cover: "/images/guides/check-copilot-excel-edits.webp" },
   ],
 } as const satisfies GuidePage;
 
 export const aiBrowserGuide = {
   slug: "what-is-an-ai-browser",
-  title: "What is an AI browser, and should you use one?",
-  promise: "An AI browser can help you understand and work with the pages you visit. It can also see more of your browsing than a normal AI chat, so the settings matter.",
+  title: "What can an AI browser actually do?",
+  promise: "See the difference between asking about a page and letting an assistant act in your browser, then try a source-checked comparison on public pages.",
   cover: "/images/guides/what-is-an-ai-browser.webp",
   coverAlt: "The small blue robot mascot operating an antique viewing instrument while closing a privacy shutter",
-  seoDescription: "Learn what an AI browser can see and do, when it is useful and which privacy settings to check before you use one.",
+  seoDescription: "Learn what an AI browser can read or do, then compare two public pages and check every claim against its source.",
   lumailTag: "guide-what-is-an-ai-browser",
   sourceNotes: [
-    { label: "OpenAI: ChatGPT Atlas data controls and privacy", url: "https://help.openai.com/en/articles/12574142-chatgpt-atlas-data-controls-and-privacy" },
-    { label: "OpenAI: Setting up Atlas", url: "https://help.openai.com/en/articles/12628461-setting-up-the-atlas-browser" },
+    { label: "Microsoft: Using Copilot in Edge at work", url: "https://support.microsoft.com/en-us/microsoft-copilot/using-microsoft-copilot-in-edge-at-work" },
+    { label: "Microsoft: Getting started with Copilot in Edge", url: "https://support.microsoft.com/en-us/microsoft-copilot/getting-started-with-copilot-in-microsoft-edge" },
   ],
   answer: { paragraphs: [
-    "An AI browser is a web browser with AI help built into it. Depending on the product and your settings, it may **read a visible page, compare tabs, explain what you are viewing or complete an online task**.",
-    "Use one when it makes public research or reading easier. Do not give it access to private pages simply because the feature is available.",
+    "An AI browser puts an assistant beside the pages you visit. Depending on your browser, account and settings, it may **explain the current page, compare information or act on a page you authorise**.",
+    "Start with a public page. Check the assistant's answer against that page before allowing it into private work.",
   ] },
   sections: [
     { kind: "cards", heading: "Use it where the browser is doing the hard part", items: [
@@ -91,30 +91,30 @@ export const aiBrowserGuide = {
       { title: "Find a hidden detail", body: "Search a long website for a date, requirement or condition that would take time to locate manually." },
       { title: "Understand an unfamiliar page", body: "Ask for an explanation in everyday language while keeping the original page open beside it." },
     ] },
-    { kind: "cards", heading: "Check what the browser can see", introduction: "Before you use one, answer these questions.", items: [
-      { title: "Page visibility", body: "Can the AI see the full page, only selected text or every open tab?" },
-      { title: "Browser memory", body: "Is the browser saving facts or summaries from the pages you visit?" },
-      { title: "Model training", body: "Can chats or browsing information be used to improve the provider's AI?" },
-      { title: "Connected accounts", body: "Is the browser signed into email, files, banking, customer systems or administrator pages?" },
+    { kind: "cards", heading: "Check what the browser can see", introduction: "Before you use one on work pages, check access.", items: [
+      { title: "This page", body: "Is the assistant allowed to read the content on the page you are viewing, or only its title and address?" },
+      { title: "Other tabs", body: "Could the answer use titles, addresses or content from other open tabs? Close unrelated tabs before an action task." },
+      { title: "Work controls", body: "Has your organisation allowed page access, limited it to approved sites or blocked it on protected pages?" },
+      { title: "Taking action", body: "Are you only asking a question, or are you allowing the assistant to click and type? Watch each action and take back control if it goes off task." },
     ] },
-    { kind: "prose", heading: "Incognito is not invisibility", paragraphs: [
-      "For example, ChatGPT Atlas has separate controls for web browsing, browser memories and page visibility. Its web browsing training setting is off by default, but its chat training setting is separate.",
-      "Atlas also says incognito mode does not make you invisible to ChatGPT, your employer, your internet provider or the websites you visit.",
-    ], keyLine: "Do not test an AI browser first on banking, medical, payroll, customer or administrator pages." },
+    { kind: "prose", heading: "Start with public pages", paragraphs: [
+      "In Edge for work, Copilot can explain a webpage when page access is allowed. Browse with Copilot can take actions only where that separate feature is available to your account.",
+      "Read the original page yourself before relying on a price, deadline, policy or contract term in the answer.",
+    ], keyLine: "Do not test a new browser assistant first on banking, payroll, customer or administrator pages." },
   ],
   tryNow: {
     heading: "Try it with public information first",
-    introduction: "Open 2 public pages about the same product, service or topic. Do not sign in or use private documents.",
-    prompt: `Compare these 2 pages.
+    introduction: "Open a public pricing page and its terms page. Do not sign in or use private documents.",
+    prompt: `I am deciding whether a public service's terms fit my needs. Compare the two public pages I have open: its pricing page and its cancellation or service-terms page. If you cannot access both pages, tell me which one is missing before answering.
 
 Tell me:
 
-1. What they agree on.
-2. What is different.
-3. Which claims are supported by specific information on the pages.
-4. What I would still need to verify before making a decision.
+1. What I would pay, including any condition or extra charge stated on the pages.
+2. How and when I can cancel, according to the terms page.
+3. Where the two pages disagree or leave a question unanswered.
+4. What I should check with the provider before I decide.
 
-Quote the exact section of each page that supports your answer. Do not add information from elsewhere.`,
+For each finding, give a short exact quote and the page URL. Say "not found" when the pages do not answer a question. Do not fill gaps from memory, other websites or assumptions. Do not recommend a purchase.`,
     instructions: [
       { title: "Choose public pages", body: "Open 2 pages that do not require an account or contain private information." },
       { title: "Copy the instruction", body: "Select **Copy** and paste it into the browser's AI chat or sidebar." },
@@ -222,11 +222,11 @@ Permission text:
 
 export const aiSkillsGuide = {
   slug: "ai-skills-worth-learning-for-work",
-  title: "Which AI skills are worth learning for work in 2026?",
-  promise: "You do not need to chase every new AI tool. Build the skills that still help when the tool, model or feature changes.",
+  title: "Which AI skill should you practise first?",
+  promise: "Choose one familiar task, see which skill will help most, and try a small exercise you can check yourself.",
   cover: "/images/guides/ai-skills-worth-learning-for-work.webp",
   coverAlt: "The small blue robot mascot carrying a compass, magnifying glass, key and measuring gauge past changing machines",
-  seoDescription: "Learn which practical AI skills are worth developing for work in 2026 and create a simple learning plan from your everyday tasks.",
+  seoDescription: "Choose one practical AI skill to practise on a familiar work task, with a worked example and a checkable exercise.",
   lumailTag: "guide-ai-skills-worth-learning-for-work",
   sourceNotes: [
     { label: "PwC: 2026 Global AI Jobs Barometer", url: "https://www.pwc.com/gx/en/news-room/press-releases/2026/pwc-2026-ai-jobs-barometer.html" },
@@ -255,33 +255,26 @@ export const aiSkillsGuide = {
     ] },
   ],
   tryNow: {
-    heading: "Build your learning plan",
-    introduction: "Use a list of everyday tasks from your work. Remove private names and details.",
-    prompt: `Here are tasks I regularly do at work:
+    heading: "Practise one useful skill",
+    introduction: "Start with one familiar task. Use a public, invented or non-confidential example.",
+    prompt: `I want to practise one AI skill on a task I already know how to do.
 
-[Paste 5 to 10 tasks]
+Task: [Describe one familiar task]
+Skill to practise: [Choose clearer instructions, better sources, checking results, protecting information or keeping the final decision].
 
-For each task, tell me:
-
-1. Where AI could save time.
-2. What information I would need to provide.
-3. What I would still need to check myself.
-4. What could go wrong.
-5. Which skill I should practise first: giving instructions, choosing sources, checking results, protecting information or making the final decision.
-
-Keep the advice practical. Do not recommend buying a tool.`,
+Give me one small exercise I can finish this week. Tell me what to prepare, what to ask the tool to do and how to compare the result with the original. Do not invent facts about my work or suggest that I buy a new tool. Use only public, invented or non-confidential material. Keep your answer to one exercise and one check. I will decide if the result is suitable for real work.`,
     instructions: [
-      { title: "List familiar tasks", body: "Use 5 to 10 tasks you already know how to complete and assess." },
-      { title: "Remove private details", body: "Replace names, customers and confidential information with general descriptions." },
-      { title: "Copy and paste", body: "Select **Copy**, paste the instruction into an AI chat and add your task list." },
-      { title: "Choose one practice", body: "Pick one skill and one task to practise this week." },
+      { title: "Choose a familiar task", body: "Pick one task you know well enough to judge." },
+      { title: "Choose one skill", body: "Use the part of that task that most often slows you down." },
+      { title: "Keep details safe", body: "Use public, invented or non-confidential material for the exercise." },
+      { title: "Check the result", body: "Compare the result with the original before using it at work." },
     ],
-    check: "A useful plan names one skill you can practise through real work, not a list of tools to buy.",
+    check: "The exercise should help with one familiar task and give you a way to judge the result.",
   },
   conclusion: {
-    heading: "You have a learning plan that can survive the next update",
-    paragraphs: ["The tools will keep changing. Your ability to define the work, choose the evidence, check the result and own the decision will continue to matter."],
-    finishLine: "Practise one skill through one familiar task before adding another tool.",
+    heading: "Practise one skill on work you already know",
+    paragraphs: ["Use a familiar task, compare the answer with your source and keep the part that helps."],
+    finishLine: "Try that skill once before adding another tool.",
   },
   paidNextStep: {
     label: "Your Human Evidence",
@@ -290,9 +283,8 @@ Keep the advice practical. Do not recommend buying a tool.`,
     status: "coming-soon",
   },
   related: [
-    { slug: "what-is-a-prompt", title: "How to write an AI prompt that gets a useful answer", reason: "Practise giving one task a clearer brief.", cover: "/images/guides/what-is-a-prompt.webp" },
-    { slug: "what-remains-valuable-when-ai-can-do-part-of-your-job", title: "What remains valuable when AI can do part of your job?", reason: "Separate tasks AI can help with from the judgement people still trust you to provide.", cover: "/images/guides/ai-skills-worth-learning-for-work.webp", status: "coming-next" },
-    { slug: "what-is-agentic", title: "What AI agents actually do", reason: "See which skills matter when AI can handle a longer sequence of work.", cover: "/images/guides/what-is-agentic.webp" },
+    { slug: "what-is-ai", title: "What AI actually is", reason: "See what the tool can and cannot know before you rely on an answer.", cover: "/images/guides/what-is-ai.webp" },
+    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Choose safe material for your first exercise.", cover: "/images/guides/learn-master.webp" },
   ],
 } as const satisfies GuidePage;
 

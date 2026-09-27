@@ -62,3 +62,5 @@
 @media(max-width:700px){.shell{width:min(100% - 28px,610px);padding-top:16px}.back{margin-bottom:24px}.hero h1{font-size:clamp(29px,8.5vw,34px)}.relatedGrid{grid-template-columns:1fr}}
 @media(max-width:700px){.routeGrid{grid-template-columns:1fr}.fieldGrid{grid-template-columns:1fr}}
 @media(max-width:560px){.activity{padding:15px}}
+.exampleFlow{display:flex;align-items:center;justify-content:center;gap:8px;margin:12px 0 0;color:#172d9e;font-size:14px;font-weight:700}.exampleFlow span:nth-child(odd){padding:10px 12px;border:1px solid #b8c6f4;background:#fff;text-align:center}.exampleFlow span:nth-child(even){font-size:21px}.prompt>strong{display:block;min-height:48px;padding:13px 92px 13px 12px;color:#172d9e;font-size:15px}.builder .message{margin:0 0 12px}.relatedGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:700px){.exampleFlow{display:grid;grid-template-columns:1fr;gap:5px}.exampleFlow span:nth-child(even){transform:rotate(90deg);text-align:center}.relatedGrid{grid-template-columns:1fr}}

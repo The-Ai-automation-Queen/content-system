@@ -4,11 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
+import { publicGuides } from "@/content/guides";
 import { cleanLabel } from "./guide-icon";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./screen-recording-page.module.css";
 
-type Route = "agent" | "manual" | null;
+type Route = "agent" | "manual";
 const stageLabels = ["Prepare", "Make the draft", "Test the guide"] as const;
 
 function PromptBox({ label, prompt }: { label: string; prompt: string }) {
@@ -27,7 +29,7 @@ function PromptBox({ label, prompt }: { label: string; prompt: string }) {
   }
   return <div className={styles.prompt}>
     <div className={styles.promptTop}><strong>{label}</strong><button type="button" onClick={copy} aria-label={`Copy ${label.toLowerCase()}`}>{copied ? "Copied" : "Copy"}</button></div>
-    <details open><summary>Complete instruction</summary><pre>{prompt}</pre></details>
+    <pre>{prompt}</pre>
     {copyError && <p className={styles.copyError} role="alert">Copy failed. Open the instruction and select the text instead.</p>}
   </div>;
 }
@@ -35,7 +37,7 @@ function PromptBox({ label, prompt }: { label: string; prompt: string }) {
 export function ScreenRecordingPage({ guide }: { guide: GuidePage }) {
   const preparation = guide.sections.find(section => section.kind === "steps");
   const action = guide.tryNow;
-  const [route, setRoute] = useState<Route>(null);
+  const [route, setRoute] = useState<Route>("agent");
   const [stage, setStage] = useState(0);
   const [checks, setChecks] = useState<Record<string, boolean>>({});
   const [loaded, setLoaded] = useState(false);
@@ -59,20 +61,21 @@ export function ScreenRecordingPage({ guide }: { guide: GuidePage }) {
 
   if (!preparation || !action) return null;
 
-  const agentPrompt = `Help me make a process guide from a screen recording. Work through one stage at a time and pause when you need something from me.
+  const agentPrompt = `Help me turn a short screen recording into a process guide someone else can follow. Work through one stage at a time and pause when you need an answer from me.
 
-First ask me to attach a short recording with private and identifying details removed. If you cannot inspect the video, tell me and ask for a corrected transcript and clean screenshots. Do not pretend to have inspected a file you cannot access.
+First ask who will use the guide and what they should be able to finish. Then ask me to attach a recording with names, account details, passwords and notifications removed. If you cannot inspect the video, say so and ask for a corrected transcript and clean screenshots instead. Never claim to have seen an action you could not inspect.
 
-Use this complete instruction once I provide the source:
+Before writing, list the actions you can observe in order, with timestamps when available. Mark any hidden control, unreadable label, missing decision or unclear audio as “Needs clarification”. Ask me about those gaps; do not guess.
 
-${action.prompt}
+Write a draft with a short “Before you begin” checklist, numbered actions in the observed order, the button or field name when you can verify it, and a “You should see” check after each action. Add a timestamp or source screenshot beside each supported step when possible. End with three checks that show the task is complete and a separate list of points I still need to verify.
 
-When the draft is ready, ask me to test it with someone who has not seen the recording. Do not publish or share it. List any steps the test shows need correction.`;
+Ask me to give the draft to someone who has not watched the recording. Use their missed steps to revise the guide. Do not publish or share it for me.`;
   const resultChecks = [
     "Every step matches an action visible in the recording.",
     "Unreadable labels and missing decisions are marked for review, not guessed.",
     "Someone new can finish the practice task using the guide.",
   ];
+  const related = publicGuides.filter(item => ["what-should-you-never-share-with-ai", "what-is-agentic"].includes(item.slug));
   function toggle(key: string) { setChecks(current => ({ ...current, [key]: !current[key] })); }
   function go(next: number) {
     setStage(next);
@@ -98,6 +101,13 @@ When the draft is ready, ask me to test it with someone who has not seen the rec
         <div><strong>3</strong><span>Someone new tries it</span></div>
       </section>
 
+      <section className={styles.preview} aria-labelledby="recording-preview-title">
+        <div className={styles.sectionHead}><span>See the finished job</span><h2 id="recording-preview-title">Could someone repeat it from your recording?</h2></div>
+        <p>In a demo task list, record yourself creating a sample task, setting a due date and marking it complete. Your guide should make those actions repeatable:</p>
+        <ol className={styles.previewSteps}><li><strong>Add the task</strong><span>See the sample task in the list.</span></li><li><strong>Set the date</strong><span>See the date beside that task.</span></li><li><strong>Mark it complete</strong><span>See it move out of the open list.</span></li></ol>
+        <p>If the video hides a control or a choice, mark that step for a human check. Do not let ChatGPT invent the missing click.</p>
+      </section>
+
       <section className={styles.choice} aria-labelledby="recording-choice-title">
         <h2 id="recording-choice-title">How would you like to make it?</h2>
         <p>Choose a route. You can switch at any time.</p>
@@ -107,6 +117,7 @@ When the draft is ready, ask me to test it with someone who has not seen the rec
         </div>
       </section>
 
+      <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} variant="unlock" heading="Get the recording-to-guide instructions" guidePromise="Use the complete instruction for your chosen route and keep a link back to these steps." actionLabel="Show me the instructions">
       {route === "agent" && <section id="recording-agent-route" className={styles.work} aria-labelledby="recording-agent-title">
         <div className={styles.sectionHead}><span>Agent route</span><h2 id="recording-agent-title">Give the agent one clear job</h2></div>
         <ol className={styles.shortSteps}><li>Open Claude Code or Codex in a new task.</li><li>Copy and paste the instruction below.</li><li>Attach a clean recording when asked. Handle account access yourself.</li></ol>
@@ -123,8 +134,9 @@ When the draft is ready, ask me to test it with someone who has not seen the rec
         </div>
         <div className={styles.stageFooter}><button type="button" onClick={() => go(stage - 1)} disabled={stage === 0}>← Back</button><span>Step {stage + 1} of 3</span><button type="button" onClick={() => go(stage + 1)} disabled={stage === 2}>Next step →</button></div>
       </div>}
+      </GuideAccessBoundary>
     </div>
 
-    <section className={styles.related} aria-labelledby="recording-related-title"><div className={styles.relatedInner}><h2 id="recording-related-title">Try another task you can check</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="recording-related-title"><div className={styles.relatedInner}><h2 id="recording-related-title">Keep reading</h2><div className={styles.relatedGrid}>{related.map(item => <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.summary}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
   </main>;
 }

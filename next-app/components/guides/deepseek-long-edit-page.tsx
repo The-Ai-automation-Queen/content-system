@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
-import { cleanLabel } from "./guide-icon";
+import { publicGuides } from "@/content/guides";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./deepseek-long-edit-page.module.css";
 
@@ -18,6 +19,8 @@ const example: Brief = {
   passage: "“You said it left at half past,” she told Ben, who checked the silent departure board. He had copied the Sunday timetable by mistake.",
 };
 
+const exampleRevision = "“You said it left at half past,” Mara told Ben.\n\nBen checked the silent departure board. He had copied the Sunday timetable by mistake.";
+
 const fields: { key: keyof Brief; label: string; rows: number }[] = [
   { key: "characters", label: "Characters and relationships", rows: 2 },
   { key: "facts", label: "Facts that must stay", rows: 3 },
@@ -25,8 +28,6 @@ const fields: { key: keyof Brief; label: string; rows: number }[] = [
   { key: "problem", label: "One problem to fix", rows: 2 },
   { key: "passage", label: "One passage to edit", rows: 4 },
 ];
-
-const stageLabels = ["See an example", "Adapt the brief", "Check the edit"] as const;
 
 function fillPrompt(template: string, brief: Brief) {
   return template
@@ -38,31 +39,22 @@ function fillPrompt(template: string, brief: Brief) {
 }
 
 export function DeepseekLongEditPage({ guide }: { guide: GuidePage }) {
-  const [stage, setStage] = useState(0);
-  const [showAll, setShowAll] = useState(false);
   const [brief, setBrief] = useState<Brief>(example);
-  const [copied, setCopied] = useState<"example" | "adapted" | null>(null);
+  const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
-  const [checked, setChecked] = useState<boolean[]>([false, false, false, false]);
-  const contentRef = useRef<HTMLDivElement>(null);
   const checkSection = guide.sections[1];
   if (!guide.tryNow || checkSection.kind !== "comparison") return null;
   const complete = Object.values(brief).every(value => value.trim().length > 0);
-  const examplePrompt = fillPrompt(guide.tryNow.prompt, example);
-  const adaptedPrompt = fillPrompt(guide.tryNow.prompt, brief);
+  const prompt = fillPrompt(guide.tryNow.prompt, brief);
+  const related = publicGuides.filter(item => ["what-is-a-prompt", "what-should-you-never-share-with-ai"].includes(item.slug));
 
-  function goTo(next: number) {
-    setStage(next);
-    window.requestAnimationFrame(() => contentRef.current?.focus());
-  }
-
-  async function copyPrompt(which: "example" | "adapted") {
-    if (which === "adapted" && !complete) return;
+  async function copyPrompt() {
+    if (!complete) return;
     try {
-      await navigator.clipboard.writeText(which === "example" ? examplePrompt : adaptedPrompt);
-      setCopied(which);
+      await navigator.clipboard.writeText(prompt);
+      setCopied(true);
       setCopyError(false);
-      window.setTimeout(() => setCopied(null), 2000);
+      window.setTimeout(() => setCopied(false), 2000);
     } catch {
       setCopyError(true);
     }
@@ -71,19 +63,16 @@ export function DeepseekLongEditPage({ guide }: { guide: GuidePage }) {
   return <main className={styles.page}>
     <div className={styles.shell}>
       <Link className={styles.back} href="/guides/">← All guides</Link>
-      <header className={styles.hero}><h1>Keep the story you like. <span>Edit only what is weak.</span></h1><p>Give DeepSeek one passage, the facts to protect and one problem to fix. Check its changes before you keep them.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
+      <header className={styles.hero}><h1>Keep the story you like. <span>Edit only what is weak.</span></h1><p>Give DeepSeek one passage, the facts to protect and one problem to fix. Compare its revision with your original before you keep it.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
-      <nav className={styles.stageNav} aria-label="Guide steps">{stageLabels.map((label, index) => <button key={label} type="button" aria-current={!showAll && stage === index ? "step" : undefined} onClick={() => { setShowAll(false); goTo(index); }}><span>{index + 1}</span>{label}</button>)}</nav>
-      <button type="button" className={styles.allButton} aria-pressed={showAll} onClick={() => setShowAll(!showAll)}>{showAll ? "Show one step" : "Read all steps"}</button>
-      <div ref={contentRef} tabIndex={-1} className={styles.stageContent}>
-        {(showAll || stage === 0) && <section className={styles.activity} aria-labelledby="long-example-title"><div className={styles.sectionHead}><span>Step 1 / 3</span><h2 id="long-example-title">See a filled brief first</h2></div><p>The Mara scene from the shorter DeepSeek guide gives us something specific to protect.</p><div className={styles.briefGrid}><article><strong>Characters</strong><p>{example.characters}</p></article><article><strong>Facts</strong><p>{example.facts}</p></article><article><strong>Voice</strong><p>{example.voice}</p></article><article><strong>Edit target</strong><p>{example.problem}</p></article></div><p>Only the selected passage goes to DeepSeek. The rest of the story stays outside this edit.</p><div className={styles.prompt}><details open><summary>Filled example instruction</summary><pre>{examplePrompt}</pre></details><button type="button" onClick={() => copyPrompt("example")} aria-label="Copy the complete filled DeepSeek example">{copied === "example" ? "Copied" : "Copy"}</button></div>{copyError && <p className={styles.message} role="alert">Copy failed. Open the instruction and select the text instead.</p>}</section>}
+      <nav className={styles.contents} aria-label="In this guide"><strong>In this guide</strong><a href="#long-example-title">See a filled brief</a><a href="#long-adapt-title">Make it yours</a><a href="#long-check-title">Check the edit</a></nav>
 
-        {(showAll || stage === 1) && <section className={styles.activity} aria-labelledby="long-adapt-title"><div className={styles.sectionHead}><span>Step 2 / 3</span><h2 id="long-adapt-title">Make the brief yours</h2></div><p>Replace the example fields with a passage you are allowed to share. Keep one problem to fix.</p><div className={styles.fields}>{fields.map(field => <label key={field.key}><span>{field.label}</span><textarea rows={field.rows} value={brief[field.key]} onChange={event => setBrief(current => ({ ...current, [field.key]: event.target.value }))} /></label>)}</div><div className={styles.prompt}><details open><summary>Your complete instruction</summary><pre>{adaptedPrompt}</pre></details><button type="button" disabled={!complete} onClick={() => copyPrompt("adapted")} aria-label="Copy your complete DeepSeek editing instruction">{copied === "adapted" ? "Copied" : "Copy"}</button></div>{!complete && <p className={styles.message}>Complete every field before copying.</p>}{copyError && <p className={styles.message} role="alert">Copy failed. Open the instruction and select the text instead.</p>}<p className={styles.toolStep}><a href="https://chat.deepseek.com/" target="_blank" rel="noopener noreferrer">Open DeepSeek ↗</a> Start a new chat, paste your instruction and send it.</p></section>}
+      <section className={styles.activity} aria-labelledby="long-example-title"><div className={styles.sectionHead}><span>01 · See an example</span><h2 id="long-example-title">Protect what already works</h2></div><p>This story needs a clearer transition between Mara’s line and Ben’s mistake. The brief names what must stay.</p><div className={styles.briefGrid}><article><strong>Characters</strong><p>{example.characters}</p></article><article><strong>Facts</strong><p>{example.facts}</p></article><article><strong>Voice</strong><p>{example.voice}</p></article><article><strong>Change wanted</strong><p>{example.problem}</p></article></div><div className={styles.revisionGrid}><article><strong>Original passage</strong><p>{example.passage}</p></article><article><strong>One possible revision</strong><p>{exampleRevision}</p></article></div><p>Mara’s line now stands apart from Ben’s action. The timetable mistake and the restrained voice stay. Only this passage needed editing.</p></section>
 
-        {(showAll || stage === 2) && <section className={styles.activity} aria-labelledby="long-check-title"><div className={styles.sectionHead}><span>Step 3 / 3</span><h2 id="long-check-title">Compare before you keep it</h2></div><p>Read the revised passage beside your original. Mark each check only when the result holds up.</p><div className={styles.checks}>{checkSection.rows.map((row, index) => <label key={row[0]}><input type="checkbox" checked={checked[index] ?? false} onChange={() => setChecked(current => current.map((value, i) => i === index ? !value : value))} /><span><strong>{row[0]}</strong><span>{row[1]}</span></span></label>)}</div><p className={styles.result} aria-live="polite">{checked.every(Boolean) ? "All four checks marked. Keep the passage only if the named problem is fixed too." : `${checked.filter(Boolean).length} of 4 checks marked. Reject changes outside your selected passage or protected brief.`}</p></section>}
-      </div>
-      {!showAll && <div className={styles.nextBar}>{stage > 0 && <button type="button" onClick={() => goTo(stage - 1)}>← Back</button>}{stage < 2 && <button type="button" onClick={() => goTo(stage + 1)}>Next: {stageLabels[stage + 1]} →</button>}</div>}
+      <section className={styles.activity} aria-labelledby="long-adapt-title"><div className={styles.sectionHead}><span>02 · Make it yours</span><h2 id="long-adapt-title">Name one change you want</h2></div><p>The fields start with the example. Replace them with a passage you are allowed to share, or use the example to see the method work.</p><div className={styles.fields}>{fields.map(field => <label key={field.key}><span>{field.label}</span><textarea rows={field.rows} value={brief[field.key]} onChange={event => setBrief(current => ({ ...current, [field.key]: event.target.value }))} /></label>)}</div><GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} variant="unlock" heading="Open the focused-edit instruction" guidePromise="Get the complete instruction built from the brief above and a link back to this guide." actionLabel="Show me the instruction"><div className={styles.prompt}><strong>Your complete instruction</strong><button type="button" disabled={!complete} onClick={copyPrompt} aria-label="Copy your complete DeepSeek editing instruction">{copied ? "Copied" : "Copy"}</button><pre>{prompt}</pre></div>{!complete && <p className={styles.message}>Complete every field before copying.</p>}{copyError && <p className={styles.message} role="alert">Copy failed. Select the instruction text instead.</p>}<p className={styles.toolStep}><a href="https://chat.deepseek.com/" target="_blank" rel="noopener noreferrer">Open DeepSeek ↗</a> Start a new chat, paste your instruction and send it.</p></GuideAccessBoundary></section>
+
+      <section className={styles.activity} aria-labelledby="long-check-title"><div className={styles.sectionHead}><span>03 · Check the edit</span><h2 id="long-check-title">Compare before you keep it</h2></div><p>Read the revised passage beside the original. Keep only the changes that solve the problem you named.</p><div className={styles.checks}>{checkSection.rows.map(row => <div key={row[0]}><strong>{row[0]}</strong><p>{row[1]}</p></div>)}</div><p className={styles.result}>If a protected fact changed, correct the instruction and run the passage again.</p></section>
     </div>
-    <section className={styles.related} aria-labelledby="long-related-title"><div className={styles.relatedInner}><h2 id="long-related-title">What kind of edit comes next?</h2><div className={styles.relatedGrid}>{guide.related.map(item => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="long-related-title"><div className={styles.relatedInner}><h2 id="long-related-title">Keep reading</h2><div className={styles.relatedGrid}>{related.map(item => <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{item.title}</h3><p>{item.summary}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
   </main>;
 }

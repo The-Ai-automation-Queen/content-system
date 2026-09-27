@@ -89,44 +89,44 @@ export const makeChatgptAnswersShorterGuide = makeGuide({
   slug: "make-chatgpt-answers-shorter",
   promptMode: "as-written",
   title: "Why does ChatGPT keep giving you an essay?",
-  promise: "Tell ChatGPT exactly what a short answer must contain, compare the result and keep the rule only if the answer becomes easier to use.",
+  promise: "Turn a long ChatGPT answer into a short update you can use, without losing the facts or adding new ones.",
   coverAlt: "The small blue robot trimming an overflowing paper scroll into a compact work brief",
   seoDescription: "A practical test for making ChatGPT answers shorter without losing the useful parts.",
   sources: [
     { label: "OpenAI: Prompt engineering best practices", url: "https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt" },
   ],
   answer: [
-    "**ChatGPT needs a visible limit.** “Be concise” is vague. Ask for a fixed number of items, a word limit and the parts it must leave out.",
+    "**Tell ChatGPT what the short answer is for.** Name the parts you need, set a length limit and say what it must not add.",
   ],
   sections: [
     {
       kind: "comparison",
-      heading: "Replace a vague request with a visible finish line",
+      heading: "Replace vague requests with clear ones",
       columns: ["Too vague", "Easy to check"],
       rows: [
-        ["Be concise.", "Use 5 bullets, one sentence each."],
-        ["Tell me what matters.", "Give me 3 questions, 2 decisions and one closing sentence."],
-        ["Do not ramble.", "No introduction, repeated summary or offer to do more."],
+        ["Make this shorter.", "Write a meeting update in 3 bullets, under 60 words."],
+        ["Tell me what matters.", "Use these headings: Status, Waiting on, Next action."],
+        ["Do not ramble.", "No introduction or closing offer. Do not add facts I did not give you."],
       ],
     },
     {
       kind: "cards",
       heading: "Check the answer, not the tone",
       items: [
-        { title: "Count the parts", body: "There should be exactly **3 questions, 2 decisions and one closing sentence**." },
-        { title: "Count the words", body: "The complete answer should be **90 words or fewer**." },
-        { title: "Find the action", body: "The closing sentence should name what still needs agreement, without claiming a decision was made." },
-        { title: "Remove extras", body: "Delete scene-setting, repetition and offers you did not request." },
+        { title: "Find the three parts", body: "Look for **Status, Waiting on and Next action**. Each should tell you something different." },
+        { title: "Count the words", body: "The complete update should be **60 words or fewer**." },
+        { title: "Check the facts", body: "The draft is ready, but it has **not been reviewed or approved**. There is **no agreed publication date**." },
+        { title: "Remove extras", body: "Delete repetition, invented details and any introduction you did not ask for." },
       ],
     },
   ],
   tryNow: {
     heading: "Try the difference",
     introduction: "Try this fictional project first, then replace its facts with your own non-confidential work.",
-    prompt: `I need to prepare for a 20-minute project check-in. Use only these facts:\n\nWe are updating an internal onboarding checklist. The draft is ready. Team leads have not reviewed it. No publication date has been agreed.\n\nGive me:\n1. the 3 questions I should ask;\n2. the 2 decisions we need to make in the meeting;\n3. one sentence I can use to close the meeting if those decisions are still open.\n\nDo not invent an approval, owner or deadline. Do not present a decision we still need to make as one already agreed. Use no introduction, repeated summary or offer to do more. Stop after the closing sentence. Keep the whole answer to 90 words or fewer.`,
-    check: "Count the parts and words. Check that the answer uses only the stated facts and does not invent a decision or deadline.",
+    prompt: `Write a short update for a work meeting. Use only these facts:\n\nWe are updating an internal onboarding checklist. The draft is ready. Team leads have not reviewed it. No publication date has been agreed.\n\nGive me exactly 3 bullets headed:\n- Status\n- Waiting on\n- Next action\n\nKeep the whole update to 60 words or fewer. Do not add an introduction or closing offer. Do not say the checklist is approved or ready to publish. Do not invent an owner, deadline or decision. If the next action is not stated directly, say what still needs to be agreed rather than guessing.`,
+    check: "Check the three bullets and the word count. Make sure the answer does not claim an approval, date or owner that was never given.",
   },
-  finish: "You now have a response rule you can reuse when an answer is longer than the job requires.",
+  finish: "For your next task, give ChatGPT the facts, the three parts you need and the length limit. Check the result before you use it.",
   related: [
     existingGuide("what-is-ai", "What AI actually is", "Try a small task and check what the answer got right.", "/images/guides/what-is-ai.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Know what to leave out before pasting work into a chat.", "/images/guides/learn-master.webp"),
@@ -151,9 +151,9 @@ export const stopChatgptForgettingContextGuide = makeGuide({
       introduction: "Use invented information so you can test the method without exposing work data.",
       steps: [
         { title: "Create the Project", body: "In ChatGPT select **New project** and name it **Autumn event plan**." },
-        { title: "Add the fixed facts", body: "Open the Project settings and add the instruction in the practice section below." },
-        { title: "Start a chat inside it", body: "Send the test message below in a new chat inside the Project." },
-        { title: "Compare outside the Project", body: "Send the same test message in a normal new chat. Compare which of the four event facts appear, and check if either answer invents a detail." },
+        { title: "Add the fixed facts", body: "Open the Project’s menu, choose **Project settings** and paste the brief below into its instructions field." },
+        { title: "Draft the event description", body: "Start a chat inside the Project and send the first test message. Check it against the Project brief." },
+        { title: "Try a second Project chat", body: "Start another new chat inside the same Project and ask for an invitation. Check that it keeps the audience, format, goal and recording boundary without you pasting the brief again." },
       ],
     },
     {
@@ -171,12 +171,12 @@ export const stopChatgptForgettingContextGuide = makeGuide({
     heading: "Add this Project instruction",
     introduction: "Use the example as written before adapting it to your own work.",
     prompt: `Project facts\n- The event is a 60-minute online session for first-time managers.\n- The goal is to help them run a clearer weekly team meeting.\n- The tone must be practical and calm.\n- Do not promise a recording.\n\nFor every draft, separate confirmed facts from suggestions. If information is missing, label it “Not decided”.`,
-    check: "You are done when a new chat inside the Project keeps all four facts and leaves undecided details undecided.",
+    check: "The second chat should use the Project brief without you pasting it again. If it misses a fact, confirm that both chats are in the same Project and that the instruction was saved in Project settings before relying on it.",
   },
   finish: "You can now judge whether a short Project brief reduces repeated corrections for work that continues.",
   related: [
-    promptGuide("make-chatgpt-answers-shorter", "Why does ChatGPT keep giving you an essay?", "Make the next Project answer easier to scan."),
-    promptGuide("chatgpt-scheduled-tasks", "Can ChatGPT do a repeated check for you?", "Use a separate route for recurring public checks."),
+    existingGuide("what-is-ai", "What AI actually is", "See why a convincing answer still needs a check against the source.", "/images/guides/what-is-ai.webp"),
+    existingGuide("connect-ai-to-email-files-calendar", "Should you let AI connect to your email, files and calendar?", "Understand access before you connect work tools to a Project.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Set the data boundary before adding real Project files.", "/images/guides/learn-master.webp"),
   ],
 });
@@ -184,11 +184,11 @@ export const stopChatgptForgettingContextGuide = makeGuide({
 export const chatgptScheduledTasksGuide = makeGuide({
   slug: "chatgpt-scheduled-tasks",
   promptMode: "as-written",
-  title: "Can ChatGPT do the boring checking for you?",
-  promise: "Use a scheduled task for one public check with a clear trigger, a useful notification and a stop rule.",
+  title: "Can ChatGPT tell you when a public page changes?",
+  promise: "Use a scheduled task for one non-urgent public-page check with a clear alert condition and stop rule.",
   coverAlt: "The small blue robot princess setting a clockwork lookout beside a public noticeboard",
-  seoDescription: "Create and verify one harmless scheduled task in ChatGPT without producing daily notification noise.",
-  sources: [{ label: "OpenAI: Tasks in ChatGPT", url: "https://help.openai.com/en/articles/10291617-tasks-in-chatgpt" }],
+  seoDescription: "Set up one ChatGPT scheduled task to check a public page and alert you only when a relevant change occurs.",
+  sources: [{ label: "OpenAI: Scheduled tasks in ChatGPT", url: "https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt" }],
   answer: [
     "**Yes, when the repeated check has a specific condition.** “Check this every day” creates noise. “Tell me only when this named result changes” creates a decision.",
   ],
@@ -199,9 +199,9 @@ export const chatgptScheduledTasksGuide = makeGuide({
       introduction: "Start with a public page you already trust.",
       steps: [
         { title: "Open Scheduled tasks", body: "Open ChatGPT on the web and go to **Scheduled**. Availability can vary by account or workspace." },
-        { title: "Add the instruction", body: "Use the complete example below and replace only the public URL, condition and stop rule." },
-        { title: "Check the controls", body: "Review the schedule, time zone, condition and stop rule before confirming." },
-        { title: "Check it was saved", body: "Find the task in Scheduled and confirm its instruction and next run. Compare any later alert with the public source." },
+        { title: "Create the task", body: "In Scheduled, create a task and paste the complete instruction above. Ask ChatGPT to schedule it for weekday mornings." },
+        { title: "Check before saving", body: "Review the schedule and time zone. Confirm the saved instruction says to alert only when your condition is met and when to stop checking." },
+        { title: "Check it was saved", body: "Find the task in Scheduled and confirm its instruction and next run. If an alert arrives later, compare it with the linked public page." },
       ],
     },
     {
@@ -216,13 +216,13 @@ export const chatgptScheduledTasksGuide = makeGuide({
   tryNow: {
     heading: "Build one quiet monitoring task",
     introduction: "Replace the 3 bracketed details.",
-    prompt: `Every weekday morning, check [PUBLIC PAGE URL].\n\nOnly notify me if this condition is met: [EXACT CONDITION]. Compare the page with the previous check before sending an alert.\n\nIn the notification, include:\n- what changed;\n- the current wording or status;\n- the source link;\n- the time you checked.\n\nIf nothing changed, do not notify me. Stop checking [STOP RULE].`,
+    prompt: `Every weekday morning, check [PUBLIC PAGE URL].\n\nOnly notify me if this condition is met: [EXACT CONDITION]. Compare the relevant part of the page with the previous check before sending an alert. If you cannot open the page or confirm a change, do not claim that the condition was met.\n\nIn the notification, include:\n- what changed;\n- the current wording and the previous wording if you can verify it;\n- a direct link to the source page;\n- the time you checked.\n\nIf nothing changed, do not notify me. Stop checking [STOP RULE].`,
     check: "You are done setting it up when the task appears in Scheduled with the right instruction and next run. Check any later alert against the public source.",
   },
   finish: "You can now decide whether the repeated check deserves a scheduled task or should stay manual.",
   related: [
-    promptGuide("make-chatgpt-answers-shorter", "Why does ChatGPT keep giving you an essay?", "Keep task notifications short and usable."),
-    promptGuide("stop-chatgpt-forgetting-context", "Why does ChatGPT forget what you told it?", "Use Projects for continuing context rather than schedules."),
+    existingGuide("what-is-ai", "What AI actually is", "Know why an automated answer still needs checking.", "/images/guides/what-is-ai.webp"),
+    existingGuide("what-is-agentic", "What AI agents actually do", "See when an agent makes sense instead of a scheduled check.", "/images/guides/what-is-agentic.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what the scheduled task may access.", "/images/guides/learn-master.webp"),
   ],
 });
@@ -270,8 +270,7 @@ export const geminiDriveFileGuide = makeGuide({
   },
   finish: "You now know whether to fix the account, connection, administrator setting, file type or search wording.",
   related: [
-    promptGuide("gemini-google-tasks-limits", "Can Gemini organise Google Tasks by project?", "Test another connected Google boundary."),
-    existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Compare Gemini with other tools for your next task.", "/images/guides/which-ai-tool-for-what.webp"),
+    existingGuide("connect-ai-to-email-files-calendar", "Should you let AI connect to your email, files and calendar?", "Check the access Gemini needs before connecting a work account.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what belongs outside a connected chat.", "/images/guides/learn-master.webp"),
   ],
 });
@@ -279,7 +278,7 @@ export const geminiDriveFileGuide = makeGuide({
 export const geminiTasksGuide = makeGuide({
   slug: "gemini-google-tasks-limits",
   promptMode: "as-written",
-  title: "Can Gemini organise your Google Tasks by project?",
+  title: "Can Gemini see which Google Tasks list a task is in?",
   promise: "Test whether Gemini can preserve the list that separates your projects before you rely on it to organise real tasks.",
   coverAlt: "The small blue robot princess sorting three tasks into two separate trays",
   seoDescription: "Test whether Gemini can retrieve Google Tasks and identify the project list for each task.",
@@ -317,8 +316,7 @@ export const geminiTasksGuide = makeGuide({
   },
   finish: "You can now keep Gemini for task retrieval or keep project organisation inside Google Tasks.",
   related: [
-    promptGuide("gemini-cannot-find-drive-file", "Why can’t Gemini see your Drive file?", "Diagnose another connected Google problem."),
-    existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Compare Gemini with other tools before changing your task system.", "/images/guides/which-ai-tool-for-what.webp"),
+    existingGuide("connect-ai-to-email-files-calendar", "Should you let AI connect to your email, files and calendar?", "Understand the access a connected tool receives.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Keep private task details outside an unapproved account.", "/images/guides/learn-master.webp"),
   ],
 });
@@ -492,17 +490,16 @@ Stop after this one brief. Do not repeat the search automatically.`,
 export const verifyGrokResearchGuide = makeGuide({
   slug: "verify-grok-current-research",
   promptMode: "as-written",
-  title: "Can Grok research a current topic without turning posts into facts?",
-  promise: "Use Grok to find the conversation, then separate public reaction from claims you verified in primary sources.",
+  title: "Can Grok Bot find the X posts worth your attention?",
+  promise: "Get a short brief with direct X links, then decide which posts deserve your attention.",
   coverAlt: "The Blue Princess tracing many speech bubbles back to one opened official document",
-  seoDescription: "Use Grok for current research while keeping social posts separate from verified facts.",
+  seoDescription: "Ask Grok Bot for current X posts with direct links, then separate public reaction from verified product facts.",
   sources: [
-    { label: "X: About Grok", url: "https://help.x.com/en/using-x/about-grok" },
-    { label: "xAI: Grok", url: "https://x.ai/grok" },
-    { label: "Meta: Introducing Muse", url: "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" },
+    { label: "xAI: Grok Bot now works with X", url: "https://x.ai/news/grok-bot-and-x" },
+    { label: "xAI: Grok Bot overview", url: "https://x.ai/bot" },
   ],
   answer: [
-    "**Grok can surface fast-moving discussion, but repetition is not proof.** Keep every important source link and mark what you could not confirm.",
+    "**A post can show what people are asking or saying.** Open its direct link before you use it, and check product claims at the original source.",
   ],
   sections: [
     {
@@ -526,15 +523,15 @@ export const verifyGrokResearchGuide = makeGuide({
     },
   ],
   tryNow: {
-    heading: "Research one harmless current question",
-    introduction: "Avoid health, money, legal rights and personal safety for this first test.",
-    prompt: grokResearchPrompt("[WRITE ONE PUBLIC QUESTION]"),
-    check: "You are done when every confirmed claim has an opened source and social reaction remains separate from verified facts.",
+    heading: "Find the posts worth opening",
+    introduction: "Start with Grok Bot, or enter a public topic relevant to your work.",
+    prompt: grokResearchPrompt("Grok Bot"),
+    check: "Open two post links. Check their dates and words, and confirm any factual product claim with the original announcement.",
   },
-  finish: "You can now use Grok as a route into current discussion without treating the discussion itself as evidence.",
+  finish: "You can now spot the public posts worth reviewing without treating reactions as verified facts.",
   related: [
     promptGuide("review-grok-suggestions", "When should Grok Bot ask you first?", "Choose which Bot actions need your approval."),
-    promptGuide("get-better-professional-writing-from-grok", "Why is Grok’s professional writing too thin?", "Turn checked evidence into a structured draft."),
+    promptGuide("get-better-professional-writing-from-grok", "Can Grok Bot take one recurring check off your plate?", "Test a source-linked brief before repeating it."),
     existingGuide("what-is-a-prompt", "Write a prompt that gets a useful answer", "Build another instruction with a clear evidence check.", "/images/guides/what-is-a-prompt.webp"),
   ],
 });
@@ -695,7 +692,7 @@ export const manusCreditTestGuide = makeGuide({
 export const manusBrowserWorkflowGuide = makeGuide({
   slug: "manus-browser-workflow",
   promptMode: "as-written",
-  title: "When does a Manus browser workflow make sense?",
+  title: "Does Manus need your browser at all?",
   promise: "Use the cloud browser for public work, a connector for one supported service, and Browser Operator only when the task truly needs your signed-in browser.",
   coverAlt: "The Blue Princess choosing between a public cloud browser, one connector key and a guarded local browser door",
   seoDescription: "Choose the safest Manus browser route and test one controlled workflow before granting account access.",
@@ -727,7 +724,7 @@ export const manusBrowserWorkflowGuide = makeGuide({
         { title: "Turn on My Browser", body: "Open Manus connectors, enable **My Browser** and authorise the browser only when the task requests it." },
         { title: "Use a new task tab", body: "Watch the dedicated tab and confirm it opened the intended site and account." },
         { title: "Intervene when needed", body: "Click into the tab to take control. Close the task tab to stop the browser work immediately." },
-        { title: "Remove access afterwards", body: "Disable or remove the connector. Removing a connector clears its saved login information and credentials." },
+        { title: "Remove access afterwards", body: "When the job is done, close the task tab and review the access you granted in Manus and your browser. Remove any connection you no longer need." },
       ],
     },
     {
@@ -939,7 +936,7 @@ export const deepseekWallOfTextGuide = makeGuide({
   tryNow: {
     heading: "Reformat without rewriting",
     introduction: "Paste the scene above after this instruction.",
-    prompt: `Reformat this scene so it is easier to read.\n\nUse short paragraphs and place spoken dialogue on a new line when the speaker changes.\n\nKeep every character, fact, time, event, sentence meaning and the restrained tone. Do not add description, emotion, backstory or dialogue. Do not continue the scene.\n\nAfter the edited scene, list any words you changed.`,
+    prompt: `Reformat this scene so it is easier to read.\n\nUse short paragraphs and place spoken dialogue on a new line when the speaker changes.\n\nKeep every character, fact, time, event, sentence meaning and the restrained tone. Do not add description, emotion, backstory or dialogue. Do not continue the scene.\n\nReturn only the reformatted scene.`,
     check: "You are done when the scene is easier to scan and every protected fact, line and tone remains intact.",
   },
   finish: "You can now repair a dense scene without inviting a new story or a different voice.",

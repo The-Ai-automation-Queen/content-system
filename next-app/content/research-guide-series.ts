@@ -76,7 +76,7 @@ Use plain English. Do not invent a click, feature, result, shortcut or reason th
 export const chatgptCustomerResearchGuide = makeGuide({
   slug: "chatgpt-customer-research-with-evidence",
   promptMode: "as-written",
-  title: "Can ChatGPT group customer research without inventing themes?",
+  title: "Find patterns in customer feedback with ChatGPT",
   promise: "Turn interview or survey notes into themes that keep their supporting evidence, disagreements and gaps visible.",
   coverAlt: "The Blue Princess sorting interview cards through a glass evidence cabinet into labelled clusters",
   seoDescription: "Use ChatGPT to group customer research into traceable themes without losing quotes, disagreements or uncertainty.",
@@ -150,8 +150,7 @@ export const teachClaudeWorkflowGuide = makeGuide({
   coverAlt: "The Blue Princess teaching a clockwork apprentice to move one weekly task through four precise stations",
   seoDescription: "Teach Claude a repeatable weekly workflow with a complete instruction, test case and quality check.",
   sources: [
-    { label: "Anthropic: What are Skills?", url: "https://support.claude.com/en/articles/12512176-what-are-skills" },
-    { label: "Anthropic: Use Skills in Claude", url: "https://support.claude.com/en/articles/12512180-use-skills-in-claude" },
+    { label: "Anthropic: Create and manage projects", url: "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" },
   ],
   answer: [
     "**Save the method only after it works on a real example.** Claude needs the material it receives, the result it must produce, the decisions it must leave to you and a visible test for success.",
@@ -214,7 +213,7 @@ Draft only. Do not send a message, update a project tool or create a task. End w
   finish: "You now have a tested workflow you can reuse, improve and save without rebuilding the instruction every week.",
   related: [
     promptGuide("claude-projects", "Stop repeating your instructions to Claude", "Store stable context for work that continues."),
-    existingGuide("claude", "Get one useful thing done with Claude", "Practise with a smaller one-off task first.", "/images/guides/claude-first-task.webp"),
+    existingGuide("claude", "What can you actually do with Claude at work?", "Practise with a smaller one-off task first.", "/images/guides/claude-first-task.webp"),
     promptGuide("chatgpt-screen-recording-to-process-guide", "Turn a screen recording into a process guide", "Document the human version of a repeatable job."),
   ],
 });
@@ -282,7 +281,7 @@ After creating it, give me the item title, the app where it was created and the 
 export const copilotVisibilityGuide = makeGuide({
   slug: "what-can-copilot-see-at-work",
   promptMode: "as-written",
-  title: "Can Copilot make your morning inbox easier?",
+  title: "Get through your inbox with Copilot",
   promise: "Set up a checked morning email brief, then schedule it if your work account supports it.",
   coverAlt: "The Blue Princess using a brass viewing scope to inspect three separate locked cabinets for mail files and meetings",
   seoDescription: "Build a practical Copilot inbox brief, check it against Outlook, and schedule the prompt when available.",
@@ -306,7 +305,7 @@ export const copilotVisibilityGuide = makeGuide({
     {
       kind: "steps",
       heading: "Use your own inbox, with your organisation’s permission",
-      introduction: "Copilot Chat needs work-data access for this task. A web-only chat cannot inspect your inbox.",
+      introduction: "Start in Outlook with your work account. What Copilot can see depends on your organisation's setup and licence.",
       steps: [
         { title: "Open Copilot Chat", body: "Sign in with your work account in Outlook or the Microsoft Copilot app. Check that work data is available." },
         { title: "Run one complete prompt", body: "Ask for up to five recent messages that appear to need a reply, why they matter, and a link to each source." },
@@ -346,7 +345,7 @@ End with the two messages I should check first and why. Do not invent facts, dat
 export const metaMuseSavingGuide = makeGuide({
   slug: "test-meta-muse-money-saving-task",
   promptMode: "as-written",
-  title: "Can Muse save you money without taking over the purchase?",
+  title: "Can Muse find a better price without buying for you?",
   promise: "Ask Muse to compare a real buying decision while keeping the budget, evidence and final purchase under your control.",
   coverAlt: "The Blue Princess holding the final lever while a shopping machine compares three price tags through a magnifying glass",
   seoDescription: "Test Meta Muse on one money-saving comparison without allowing it to purchase, subscribe or change an account.",
@@ -379,15 +378,12 @@ export const metaMuseSavingGuide = makeGuide({
   ],
   tryNow: {
     heading: "Build a checked buying shortlist",
-    introduction: "Replace the brackets and keep the first test below a budget you are comfortable reviewing.",
-    prompt: `Help me compare this purchase: [PRODUCT OR SERVICE].
+    introduction: "Give Muse your buying limits, then compare the full cost before deciding.",
+    prompt: `Help me compare a purchase. Do not buy anything.
 
-My maximum total budget is [BUDGET AND CURRENCY].
-I need: [3 TO 5 NON-NEGOTIABLE REQUIREMENTS].
-I do not want: [EXCLUSIONS].
-My location for delivery or availability is [LOCATION].
+Before searching, ask me for the item or service, my location, maximum total budget and currency, 3 to 5 must-haves, and anything I want excluded. Wait for my reply. Do not replace a must-have with a cheaper feature without asking me.
 
-Find up to 3 options. For each option, show:
+Find up to 3 public options that meet my answers. For each option, show:
 - exact product or plan name;
 - seller or provider;
 - item price;
@@ -411,16 +407,16 @@ Do not purchase, subscribe, book, add to a basket, sign in, contact a seller or 
 export const grokRepeatedImageEditsGuide = makeGuide({
   slug: "test-grok-repeated-image-edits",
   promptMode: "as-written",
-  title: "How many times can you edit a Grok image before it changes the parts you approved?",
-  promise: "Save a master image, change one thing at a time and compare each version before the next edit.",
+  title: "Can Grok edit one detail without changing the rest?",
+  promise: "Save the original, request one clear change and compare the result before using it.",
   coverAlt: "The Blue Princess comparing four prints from one image press while protecting the approved master under glass",
-  seoDescription: "Test repeated Grok image edits without losing approved composition, colours or objects.",
+  seoDescription: "Try one focused Grok Imagine edit and check the result against the original image before using it.",
   sources: [
     { label: "xAI: Image editing use case", url: "https://x.ai/grok/use-cases/image-editing" },
     { label: "xAI: Grok Imagine Image 2", url: "https://x.ai/news/grok-imagine-image-2" },
   ],
   answer: [
-    "**Every new edit can affect more than the requested detail.** Keep the approved image as the master and inspect the complete frame after each change.",
+    "**An edit is useful only if the rest of the image still works.** Save the original and compare the whole result, not just the part you asked Grok to change.",
   ],
   sections: [
     {
@@ -447,27 +443,23 @@ export const grokRepeatedImageEditsGuide = makeGuide({
     },
   ],
   tryNow: {
-    heading: "Run a three-edit stability test",
-    introduction: "Upload the saved master before each test so every version starts from the same approved image.",
-    prompt: `Edit the uploaded master image.
+    heading: "Try one focused image edit",
+    introduction: "Upload the original image, change one detail and list what must stay the same.",
+    prompt: `Edit the image I uploaded. Use it as the source for this edit, not a description to generate a new image.
 
-Change only this detail: [ONE VISIBLE CHANGE].
+Change only this: [ONE VISIBLE CHANGE]
 
-Keep all of these unchanged:
-- [SUBJECT AND POSE]
-- [COMPOSITION AND CAMERA ANGLE]
-- [BACKGROUND]
-- [COLOUR PALETTE]
-- [OBJECTS THAT MUST REMAIN]
-- [LIGHTING OR ILLUSTRATION STYLE]
+Keep this unchanged: [LOCKED DETAILS]
 
-Do not add text, logos, watermarks, people or objects. Do not crop, rotate or extend the image. If the requested change would require altering a locked detail, stop and explain the conflict instead of generating the edit.`,
-    check: "Repeat with three different one-detail edits, always from the master. Keep Grok for this workflow only if the requested edits pass without changing the lock list.",
+Preserve the frame size and the details outside the requested area. Do not add new people, objects or text. If the requested change conflicts with something I asked you to keep, tell me before making the edit.
+
+Show me the edited image. I will compare it with the original before using it.`,
+    check: "Put the edited image beside the original. Keep it only if the requested detail changed and the parts you named stayed intact.",
   },
-  finish: "You now have a controlled test for whether Grok can revise an image without slowly replacing it.",
+  finish: "You can now make a focused edit and decide if the result is ready to use.",
   related: [
-    promptGuide("review-grok-suggestions", "Did Grok catch an error or rewrite your work?", "Use the same keep-or-reject habit for text suggestions."),
-    promptGuide("get-better-professional-writing-from-grok", "Why is Grok’s professional writing too thin?", "Improve a written result with a structured brief."),
+    promptGuide("review-grok-suggestions", "When should Grok Bot ask you first?", "Keep control of a Bot before it acts on your behalf."),
+    promptGuide("get-better-professional-writing-from-grok", "Can Grok Bot take one recurring check off your plate?", "Test a source-linked brief before repeating it."),
     promptGuide("verify-grok-current-research", "How do you verify research from Grok?", "Check evidence when the task moves from images to current information."),
   ],
 });
@@ -475,13 +467,13 @@ Do not add text, logos, watermarks, people or objects. Do not crop, rotate or ex
 export const deepseekV4DocumentGuide = makeGuide({
   slug: "test-deepseek-v4-document-work",
   promptMode: "as-written",
-  title: "Can DeepSeek V4.1 replace your current AI for document work?",
-  promise: "Run the same document task in both tools and compare factual accuracy, instruction-following and checking time.",
+  title: "Can DeepSeek handle your document work?",
+  promise: "Run the same document task in DeepSeek and your current tool. Compare the checked result and the time each takes to repair.",
   coverAlt: "The Blue Princess running one document through two parallel presses and inspecting the outputs with a ruler",
-  seoDescription: "Compare DeepSeek V4.1 with your current AI on the same document task before changing tools.",
+  seoDescription: "Compare DeepSeek with your current tool on the same document task before changing your workflow.",
   sources: [
-    { label: "DeepSeek: V4.1 Flash announcement", url: "https://deepseek.com/news/deepseek-v4-1-flash/" },
     { label: "DeepSeek: Product updates", url: "https://api-docs.deepseek.com/updates/" },
+    { label: "DeepSeek: App file upload", url: "https://api-docs.deepseek.com/news/news250115/" },
   ],
   answer: [
     "**A newer model is useful only if it improves the work you repeat.** Compare both tools with the same safe document, instruction and scoring sheet.",
@@ -494,7 +486,6 @@ export const deepseekV4DocumentGuide = makeGuide({
         { title: "Accuracy", body: "Every claim matches the source document." },
         { title: "Coverage", body: "Every requested part appears in the result." },
         { title: "Restraint", body: "Missing information remains missing instead of being guessed." },
-        { title: "Checking time", body: "Count the minutes needed to verify and repair the result." },
       ],
     },
     {
@@ -502,7 +493,7 @@ export const deepseekV4DocumentGuide = makeGuide({
       heading: "Keep the comparison fair",
       introduction: "Use a public or invented document of 2 to 5 pages.",
       steps: [
-        { title: "Use identical inputs", body: "Upload the same document and paste the same complete instruction into each tool." },
+        { title: "Use identical inputs", body: "Add the same safe document to each tool and paste the same complete instruction." },
         { title: "Record the model shown", body: "Note the product, model name and date visible in each tool." },
         { title: "Check against the document", body: "Mark every unsupported claim, missed requirement and formatting repair." },
         { title: "Repeat once", body: "Use a second document before changing your regular workflow." },
@@ -511,8 +502,8 @@ export const deepseekV4DocumentGuide = makeGuide({
   ],
   tryNow: {
     heading: "Run the document test",
-    introduction: "Upload the same safe document to DeepSeek and your current tool.",
-    prompt: `Use only the uploaded document.
+    introduction: "Add the same safe document to DeepSeek and your current tool.",
+    prompt: `Use only the document I provide. It may be attached or pasted below this instruction.
 
 Create a decision brief with these headings:
 1. Purpose
@@ -522,12 +513,12 @@ Create a decision brief with these headings:
 5. Decisions already made
 6. Questions the document does not answer
 
-For every fact, include the page number and a short supporting extract. If a page number is unavailable, name the section. Do not use outside knowledge. Do not turn a proposal into a decision or an estimate into a fact.
+For every fact, include the page number and a short supporting extract. If there are no page numbers, name the section or quote the exact line. If you cannot point to supporting text, write "Not found in the document". Do not use outside knowledge. Do not turn a proposal into an approved decision or an estimate into a confirmed fact.
 
 Keep the brief under 500 words. End with a table listing any statement you could not verify in the document.`,
     check: "Score both tools for accuracy, coverage, restraint and checking time. A faster first answer loses if it takes longer to verify or repair.",
   },
-  finish: "You can now decide whether DeepSeek V4.1 improves your document work using two checked results rather than release claims.",
+  finish: "You can now decide if DeepSeek improves this document task using two checked results rather than a first impression.",
   related: [
     promptGuide("protect-a-long-deepseek-project", "What should you save before a DeepSeek project becomes unavailable?", "Protect the work before it grows."),
     promptGuide("edit-long-writing-with-deepseek", "How do you edit long writing without losing what worked?", "Control a focused revision."),
@@ -595,7 +586,7 @@ Do not treat your own earlier suggestions as approved decisions. Mark any item w
   },
   finish: "You now own the working context needed to continue the project when a chat, account or service is unavailable.",
   related: [
-    promptGuide("test-deepseek-v4-document-work", "Can DeepSeek V4.1 replace your current AI for documents?", "Compare tools with the same safe material."),
+    promptGuide("test-deepseek-v4-document-work", "Can DeepSeek handle your document work?", "Compare tools with the same safe material."),
     promptGuide("edit-long-writing-with-deepseek", "Edit long DeepSeek writing without losing what worked", "Protect approved details during revision."),
     existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Keep the recovery pack within your organisation’s data rules.", "/images/guides/learn-master.webp"),
   ],
@@ -603,14 +594,16 @@ Do not treat your own earlier suggestions as approved decisions. Mark any item w
 
 export const mistralMultilingualResearchGuide = makeGuide({
   slug: "mistral-multilingual-research",
+  promptMode: "as-written",
   title: "Can Mistral research in two languages without losing the source?",
   promise: "Ask one question in two languages, keep every claim tied to its original source and compare what each language reveals.",
   coverAlt: "The Blue Princess aligning two differently scripted newspapers through a bilingual brass lens into one evidence ledger",
   seoDescription: "Use Mistral for bilingual research while preserving original sources, dates, quotes and translation uncertainty.",
   sources: [
-    { label: "Mistral and Mozilla: Private multilingual AI browsing", url: "https://mistral.ai/news/mistral-x-mozilla/" },
-    { label: "Mistral: Le Chat", url: "https://mistral.ai/products/le-chat" },
     { label: "Mistral: Search the web in Work", url: "https://docs.mistral.ai/vibe/work/web-search-open-url" },
+    { label: "Mistral: Vibe interface update", url: "https://docs.mistral.ai/resources/release-notes" },
+    { label: "European Commission: European Digital Innovation Hubs", url: "https://digital-strategy.ec.europa.eu/en/policies/edihs" },
+    { label: "France Num: Autodiag IA", url: "https://www.francenum.gouv.fr/guides-et-conseils/strategie-numerique/diagnostic-numerique/autodiag-ia-evaluez-la-capacite-de" },
   ],
   answer: [
     "**Translation can make two sources look more similar than they are.** Keep the original wording, a short translation and the direct link beside every important claim.",
@@ -642,22 +635,24 @@ export const mistralMultilingualResearchGuide = makeGuide({
   tryNow: {
     heading: "Build a bilingual evidence table",
     introduction: "Replace the question, languages and date range.",
-    prompt: `Research this question: [QUESTION].
+    prompt: `Research this question: [QUESTION]
 
-Search in [LANGUAGE 1] and [LANGUAGE 2] for sources published between [START DATE] and [END DATE].
+Search in [LANGUAGE 1] and [LANGUAGE 2]. Prefer sources published or updated between [START DATE] and [END DATE]. You may include an older or undated official overview if it still describes a current service; label its date clearly instead of presenting it as new.
 
 Create a table with these columns:
 - Claim
 - Source title in the original language
 - Source language
 - Publisher
-- Publication date
+- Publication or last-updated date (or "Not shown")
 - Short supporting extract in the original language
-- Careful English translation
+- Careful English translation if the extract is not already in English
 - Direct link
 - What this source does not prove
 
 Use primary or official sources first. Keep facts found in only one language separate. Do not translate a condition, estimate or possibility into a certain statement. If two sources conflict, show both and explain the difference without choosing a winner unless a stronger primary source resolves it.
+
+Check if a second-language page is a translation of the first page. If it is, label it as the same source rather than independent confirmation. If you cannot open a page or verify an exact extract, write "Needs checking" instead of inventing one.
 
 End with 3 conclusions supported by the table and 3 questions that still need research.`,
     check: "Open each source, find the original extract and compare it with the translation. Remove any conclusion that lacks a verified source in the table.",

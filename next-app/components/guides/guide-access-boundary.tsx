@@ -8,23 +8,18 @@ const ACCESS_KEY = "shift-lead-guide-access";
 export function GuideAccessBoundary({
   guideSlug,
   guideTitle,
-  guideCover,
-  guideCoverAlt,
   guidePromise,
   heading,
   actionLabel,
   children,
-  variant = "unlock",
 }: {
   guideSlug: string;
   guideTitle: string;
-  guideCover?: string;
-  guideCoverAlt?: string;
   guidePromise?: string;
   heading?: string;
   actionLabel?: string;
   children: ReactNode;
-  variant?: "unlock" | "entry";
+  variant?: "unlock";
 }) {
   const [ready, setReady] = useState(false);
   const [unlocked, setUnlocked] = useState(false);
@@ -39,7 +34,7 @@ export function GuideAccessBoundary({
     const forceGate = params.get("gate") === "1";
     let hasAccess = false;
     try {
-      hasAccess = window.localStorage.getItem(variant === "unlock" ? ACCESS_KEY : `${ACCESS_KEY}:${guideSlug}`) === "true";
+      hasAccess = window.localStorage.getItem(ACCESS_KEY) === "true";
     } catch {
       // Storage can be unavailable in privacy-restricted browsing modes.
     }
@@ -47,7 +42,7 @@ export function GuideAccessBoundary({
     setReady(true);
     const tracker = (window as Window & { slTrack?: (name: string, data?: Record<string, string>) => void }).slTrack;
     tracker?.((review || hasAccess) && !forceGate ? "guide_open" : "guide_gate_view", { guide_slug: guideSlug, source_page: window.location.pathname });
-  }, [guideSlug, variant]);
+  }, [guideSlug]);
 
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -75,7 +70,7 @@ export function GuideAccessBoundary({
       });
       if (!response.ok) throw new Error("We could not open the guide. Please try again.");
       try {
-        window.localStorage.setItem(variant === "unlock" ? ACCESS_KEY : `${ACCESS_KEY}:${guideSlug}`, "true");
+        window.localStorage.setItem(ACCESS_KEY, "true");
       } catch {
         // A successful request still grants access for the current page view.
       }
@@ -92,16 +87,15 @@ export function GuideAccessBoundary({
   return (
     <>
       <div
-        className={`${styles.captureTransition} ${variant === "entry" ? styles.captureEntryTransition : ""}`}
+        className={styles.captureTransition}
         data-guide-capture-boundary
         hidden={ready && unlocked}
       >
-        <section className={`${styles.captureBoundary} ${variant === "entry" ? styles.captureEntry : ""}`} role={variant === "entry" ? "dialog" : undefined} aria-modal={variant === "entry" ? true : undefined} aria-labelledby={`guide-gate-title-${guideSlug}`}>
-          {variant === "entry" && guideCover && <div className={styles.entryCover}><img src={guideCover} alt={guideCoverAlt || ""} /></div>}
-          <div className={variant === "entry" ? styles.entryContent : undefined}>
-          <span className={styles.gateLabel}>{variant === "entry" ? "Free practical guide" : "Continue this guide"}</span>
-          <h2 id={`guide-gate-title-${guideSlug}`}>{variant === "entry" ? guideTitle : (heading || "Get the next step")}</h2>
-          <p>{variant === "entry" ? (guidePromise || "Enter your email to open this guide.") : (guidePromise || `Get the next practical part of ${guideTitle} and a link to return to this guide.`)}</p>
+        <section className={styles.captureBoundary} aria-labelledby={`guide-gate-title-${guideSlug}`}>
+          <div>
+          <span className={styles.gateLabel}>Continue this guide</span>
+          <h2 id={`guide-gate-title-${guideSlug}`}>{heading || "Get the next step"}</h2>
+          <p>{guidePromise || `Get the next practical part of ${guideTitle} and a link to return to this guide.`}</p>
           <form onSubmit={submit}>
             <div className={styles.nameFields}>
               <label htmlFor={`guide-first-name-${guideSlug}`}>First name<input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} required /></label>
@@ -113,8 +107,8 @@ export function GuideAccessBoundary({
               <input name="marketingConsent" type="checkbox" />
               <span>Also send me practical Shift &amp; Lead emails and product updates (optional). I can unsubscribe at any time.</span>
             </label>
-            <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Opening guide..." : variant === "entry" ? "Open the free guide" : (actionLabel || "Open the rest of the guide")}</button>
-            {variant === "unlock" && <small>Save the link we email you to return later. <a href="/privacy.html">Privacy notice</a>.</small>}
+            <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Opening guide..." : (actionLabel || "Open the rest of the guide")}</button>
+            <small>Save the link we email you to return later. <a href="/privacy.html">Privacy notice</a>.</small>
             {status === "error" && <strong role="alert">{message}</strong>}
           </form>
           </div>
