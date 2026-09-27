@@ -186,7 +186,7 @@ for (const [name, styles] of activeGuideStyles) {
     failures.push(`Rebuilt guide styling has returned to cream or decorative vertical lines: ${name}`);
   }
 }
-for (const [name, source] of [...readerFacingGuideSources, ["guide-library.tsx", libraryUiSource]]) {
+for (const [name, source] of [...readerFacingGuideSources, ["guide-library.tsx", libraryUiSource], ["guide content", pageSource]]) {
   if (/review mode|approved and unpublished|editorial (?:review|status)|internal (?:note|instruction)|\bLumail\b|Saadia Karam|guide builder/i.test(source)) {
     failures.push(`Remove production language from reader-facing guide copy: ${name}`);
   }
