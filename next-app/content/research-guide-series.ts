@@ -600,9 +600,10 @@ export const mistralMultilingualResearchGuide = makeGuide({
   coverAlt: "The Blue Princess aligning two differently scripted newspapers through a bilingual brass lens into one evidence ledger",
   seoDescription: "Use Mistral for bilingual research while preserving original sources, dates, quotes and translation uncertainty.",
   sources: [
-    { label: "Mistral and Mozilla: Private multilingual AI browsing", url: "https://mistral.ai/news/mistral-x-mozilla/" },
-    { label: "Mistral: Le Chat", url: "https://mistral.ai/products/le-chat" },
     { label: "Mistral: Search the web in Work", url: "https://docs.mistral.ai/vibe/work/web-search-open-url" },
+    { label: "Mistral: Vibe interface update", url: "https://docs.mistral.ai/resources/release-notes" },
+    { label: "European Commission: European Digital Innovation Hubs", url: "https://digital-strategy.ec.europa.eu/en/policies/edihs" },
+    { label: "France Num: Autodiag IA", url: "https://www.francenum.gouv.fr/guides-et-conseils/strategie-numerique/diagnostic-numerique/autodiag-ia-evaluez-la-capacite-de" },
   ],
   answer: [
     "**Translation can make two sources look more similar than they are.** Keep the original wording, a short translation and the direct link beside every important claim.",
@@ -636,16 +637,16 @@ export const mistralMultilingualResearchGuide = makeGuide({
     introduction: "Replace the question, languages and date range.",
     prompt: `Research this question: [QUESTION]
 
-Search in [LANGUAGE 1] and [LANGUAGE 2] for sources published between [START DATE] and [END DATE].
+Search in [LANGUAGE 1] and [LANGUAGE 2]. Prefer sources published or updated between [START DATE] and [END DATE]. You may include an older or undated official overview if it still describes a current service; label its date clearly instead of presenting it as new.
 
 Create a table with these columns:
 - Claim
 - Source title in the original language
 - Source language
 - Publisher
-- Publication date
+- Publication or last-updated date (or "Not shown")
 - Short supporting extract in the original language
-- Careful English translation
+- Careful English translation if the extract is not already in English
 - Direct link
 - What this source does not prove
 

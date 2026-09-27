@@ -2,31 +2,48 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { GuideAccessBoundary } from "./guide-access-boundary";
 import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./mistral-multilingual-page.module.css";
 
 const example = {
-  question: "What help do EU institutions offer small businesses that want to use AI?",
+  question: "Where can a small business in France get help to start using AI?",
   firstLanguage: "English",
   secondLanguage: "French",
-  startDate: "2026-01-01",
-  endDate: "2026-09-27",
 };
+
+function dateInputValue(date: Date) {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+}
+
+function recentYear() {
+  const end = new Date();
+  const start = new Date(end);
+  start.setFullYear(start.getFullYear() - 1);
+  return { start: dateInputValue(start), end: dateInputValue(end) };
+}
 
 export function MistralMultilingualPage({ guide }: { guide: GuidePage }) {
   const [question, setQuestion] = useState(example.question);
   const [firstLanguage, setFirstLanguage] = useState(example.firstLanguage);
   const [secondLanguage, setSecondLanguage] = useState(example.secondLanguage);
-  const [startDate, setStartDate] = useState(example.startDate);
-  const [endDate, setEndDate] = useState(example.endDate);
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
   const [step, setStep] = useState(0);
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
+  const stepBodyRef = useRef<HTMLDivElement>(null);
   const setup = guide.sections[0];
   const review = guide.sections[1];
+
+  useEffect(() => {
+    const dates = recentYear();
+    setStartDate(dates.start);
+    setEndDate(dates.end);
+  }, []);
+
   if (setup.kind !== "steps" || review.kind !== "comparison" || !guide.tryNow) return null;
 
   const ready = Boolean(question.trim() && firstLanguage.trim() && secondLanguage.trim() && startDate && endDate && startDate <= endDate && firstLanguage.trim().toLowerCase() !== secondLanguage.trim().toLowerCase());
@@ -41,8 +58,9 @@ export function MistralMultilingualPage({ guide }: { guide: GuidePage }) {
     setQuestion(example.question);
     setFirstLanguage(example.firstLanguage);
     setSecondLanguage(example.secondLanguage);
-    setStartDate(example.startDate);
-    setEndDate(example.endDate);
+    const dates = recentYear();
+    setStartDate(dates.start);
+    setEndDate(dates.end);
   }
 
   async function copyPrompt() {
@@ -55,6 +73,14 @@ export function MistralMultilingualPage({ guide }: { guide: GuidePage }) {
     } catch {
       setCopyError(true);
     }
+  }
+
+  function showStep(index: number) {
+    setStep(index);
+    window.requestAnimationFrame(() => {
+      stepBodyRef.current?.scrollIntoView({ block: "nearest" });
+      stepBodyRef.current?.focus({ preventScroll: true });
+    });
   }
 
   return <main className={styles.page}>
@@ -72,9 +98,9 @@ export function MistralMultilingualPage({ guide }: { guide: GuidePage }) {
         <div className={styles.exampleParts}><span>English + French</span><span>Official sources first</span><span>Original words beside translations</span></div>
         <div className={styles.sourceGrid}>
           <article><span>English page</span><strong>European Digital Innovation Hubs</strong><p>The European Commission says these hubs help businesses test technology and build skills.</p><a href="https://digital-strategy.ec.europa.eu/en/policies/edihs" target="_blank" rel="noopener noreferrer">Open the English page ↗</a></article>
-          <article><span>French page</span><strong>Pôles européens d’innovation numérique</strong><p>The Commission labels this page as machine translated. It is the same publisher and programme, not a second independent source.</p><a href="https://digital-strategy.ec.europa.eu/fr/policies/edihs" target="_blank" rel="noopener noreferrer">Open the French page ↗</a></article>
+          <article><span>French page</span><strong>Autodiag IA · France Num</strong><p>France Num points to a Bpifrance self-assessment for small businesses. This is a different publisher and a different kind of help.</p><a href="https://www.francenum.gouv.fr/guides-et-conseils/strategie-numerique/diagnostic-numerique/autodiag-ia-evaluez-la-capacite-de" target="_blank" rel="noopener noreferrer">Open the French page ↗</a></article>
         </div>
-        <p className={styles.takeaway}><strong>What to notice:</strong> Two languages do not mean two independent confirmations. Open the original page before using a claim.</p>
+        <p className={styles.takeaway}><strong>What changed?</strong> The EU page shows a network where businesses can test technology and build skills. The French page points to a self-assessment. They offer different next steps. A translation of the EU page would still count as the same source.</p>
         <button className={styles.exampleButton} type="button" onClick={useExample}>Reset to this example</button>
       </section>
 
@@ -92,13 +118,13 @@ export function MistralMultilingualPage({ guide }: { guide: GuidePage }) {
         </GuideAccessBoundary>
         {!ready && <p className={styles.message}>Add a question, two different languages and a valid date range before copying.</p>}
         {copyError && <p className={styles.message} role="alert">Copy failed. Open the instruction and select the text instead.</p>}
-        <p className={styles.toolStep}><a href="https://chat.mistral.ai/" target="_blank" rel="noopener noreferrer">Open Mistral ↗</a> Choose Work. Select <strong>+</strong> or type <strong>/</strong>, then choose <strong>Tools → Web search</strong>. Paste the request into the chat. <a href="https://docs.mistral.ai/vibe/work/web-search-open-url" target="_blank" rel="noopener noreferrer">See Mistral’s steps ↗</a></p>
+        <p className={styles.toolStep}><a href="https://chat.mistral.ai/" target="_blank" rel="noopener noreferrer">Open Mistral ↗</a> If your account still shows separate modes, choose <strong>Work</strong>. Select <strong>+</strong> or type <strong>/</strong>, then choose <strong>Tools → Web search</strong>. Paste the request into the chat. <a href="https://docs.mistral.ai/vibe/work/web-search-open-url" target="_blank" rel="noopener noreferrer">See Mistral’s steps ↗</a></p>
       </section>
 
       <section className={styles.activity} aria-labelledby="bilingual-steps-title">
         <div className={styles.sectionHead}><span>While you research</span><h2 id="bilingual-steps-title">Keep the differences visible</h2></div>
-        <nav className={styles.stepNav} aria-label="Research steps">{setup.steps.map((item, index) => <button key={item.title} type="button" aria-current={step === index ? "step" : undefined} onClick={() => setStep(index)}><span>{index + 1}</span>{item.title}</button>)}</nav>
-        <div className={styles.stepBody} aria-live="polite"><strong>{setup.steps[step].title}</strong><p>{setup.steps[step].body}</p></div>
+        <nav className={styles.stepNav} aria-label="Research steps">{setup.steps.map((item, index) => <button key={item.title} type="button" aria-current={step === index ? "step" : undefined} onClick={() => showStep(index)}><span>{index + 1}</span>{item.title}</button>)}</nav>
+        <div ref={stepBodyRef} tabIndex={-1} className={styles.stepBody} aria-live="polite"><strong>{setup.steps[step].title}</strong><p>{setup.steps[step].body}</p></div>
       </section>
 
       <section className={styles.activity} aria-labelledby="bilingual-check-title">
