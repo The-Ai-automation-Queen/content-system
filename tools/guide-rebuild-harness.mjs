@@ -35,7 +35,11 @@ for (const name of ["README.md", "instagram-dashboard-desktop.jpg", "instagram-d
 }
 if (plannedSlugs.size !== plan.guides.length) globalProblems.push("Duplicate slug in rebuild plan.");
 for (const slug of approvedSlugs) if (!plannedSlugs.has(slug)) globalProblems.push(`Approved guide missing from rebuild plan: ${slug}`);
-for (const { slug, status } of plan.guides) if (!approvedSlugs.has(slug) && status !== "pending") globalProblems.push(`Unapproved guide in rebuild plan is not parked as pending: ${slug}`);
+for (const { slug, status } of plan.guides) {
+  if (!approvedSlugs.has(slug) && !["review", "pending"].includes(status)) {
+    globalProblems.push(`Unapproved guide has an invalid rebuild status: ${slug}`);
+  }
+}
 if (onlySlug && !approvedSlugs.has(onlySlug)) globalProblems.push(`Unknown approved guide: ${onlySlug}`);
 
 const iconSource = read("next-app", "components", "guides", "guide-icon.tsx");
@@ -161,7 +165,10 @@ for (const { slug, lumailTag } of approved) {
     if (!fs.existsSync(htmlPath)) problems.push("Built guide HTML missing; run npm --prefix next-app run build");
     else {
       const html = fs.readFileSync(htmlPath, "utf8");
-      if (!html.includes("captureEntryTransition") || !html.includes("captureEntry")) problems.push("Compact pre-guide popup missing");
+      if (!html.includes("data-guide-capture-boundary")) problems.push("Inline email form missing");
+      if (html.includes("captureEntryTransition") || html.includes('role="dialog"') || html.includes("Free practical guide")) {
+        problems.push("Old pre-guide popup still rendered");
+      }
       for (const field of ['name="firstName"', 'name="lastName"', 'name="email"', 'name="marketingConsent"']) {
         if (!html.includes(field)) problems.push(`Gate field missing: ${field}`);
       }
@@ -172,6 +179,14 @@ for (const { slug, lumailTag } of approved) {
       if (!html.includes("Copy")) problems.push("Copyable instruction control missing");
       if (!html.includes("guide-gated-content")) problems.push("Guide body not protected behind email capture");
       if (html.includes("m4 6 6 6-6 6 M13 18h7")) problems.push("Old >_ icon remains in built HTML");
+      const visibleText = html
+        .replace(/<head\b[^>]*>[\s\S]*?<\/head>/gi, " ")
+        .replace(/<(?:script|style|noscript)\b[^>]*>[\s\S]*?<\/(?:script|style|noscript)>/gi, " ")
+        .replace(/<[^>]+>/g, " ")
+        .replace(/\s+/g, " ");
+      if (/review mode|approved and unpublished|internal (?:note|instruction)|production (?:note|instruction)|instructions? (?:for|to) the (?:site team|editor|builder)|do not publish/i.test(visibleText)) {
+        problems.push("Internal production language appears in reader-facing copy");
+      }
     }
   }
 
