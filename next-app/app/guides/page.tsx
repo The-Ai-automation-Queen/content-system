@@ -33,17 +33,6 @@ export default function GuidesPage() {
     <main>
       <GuideLibrary guides={publicGuides} previewGuides={previewGuides} searchIndex={searchIndex} />
 
-      <section className="guides-cta" aria-labelledby="guides-cta-title">
-        <div>
-          <p>From understanding to decision</p>
-          <h2 id="guides-cta-title">Know enough to ask the next question?</h2>
-          <span>Use Where AI Fits to decide where AI belongs in your business, what should remain human and what to test first.</span>
-        </div>
-        <div className="guides-cta__actions">
-          <a href="/ai-opportunity-map.html">Explore Where AI Fits <span aria-hidden="true">→</span></a>
-          <a href="/workbooks.html">Looking for a personal starting point? <span aria-hidden="true">→</span></a>
-        </div>
-      </section>
     </main>
   );
 }
