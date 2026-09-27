@@ -61,15 +61,15 @@ export function ScreenRecordingPage({ guide }: { guide: GuidePage }) {
 
   if (!preparation || !action) return null;
 
-  const agentPrompt = `Help me make a process guide from a screen recording. Work through one stage at a time and pause when you need something from me.
+  const agentPrompt = `Help me turn a short screen recording into a process guide someone else can follow. Work through one stage at a time and pause when you need an answer from me.
 
-First ask me to attach a short recording with private and identifying details removed. If you cannot inspect the video, tell me and ask for a corrected transcript and clean screenshots. Do not pretend to have inspected a file you cannot access.
+First ask who will use the guide and what they should be able to finish. Then ask me to attach a recording with names, account details, passwords and notifications removed. If you cannot inspect the video, say so and ask for a corrected transcript and clean screenshots instead. Never claim to have seen an action you could not inspect.
 
-Use this complete instruction once I provide the source:
+Before writing, list the actions you can observe in order, with timestamps when available. Mark any hidden control, unreadable label, missing decision or unclear audio as “Needs clarification”. Ask me about those gaps; do not guess.
 
-${action.prompt}
+Write a draft with a short “Before you begin” checklist, numbered actions in the observed order, the button or field name when you can verify it, and a “You should see” check after each action. Add a timestamp or source screenshot beside each supported step when possible. End with three checks that show the task is complete and a separate list of points I still need to verify.
 
-When the draft is ready, ask me to test it with someone who has not seen the recording. Do not publish or share it. List any steps the test shows need correction.`;
+Ask me to give the draft to someone who has not watched the recording. Use their missed steps to revise the guide. Do not publish or share it for me.`;
   const resultChecks = [
     "Every step matches an action visible in the recording.",
     "Unreadable labels and missing decisions are marked for review, not guessed.",
