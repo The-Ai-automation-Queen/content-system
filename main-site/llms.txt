@@ -17,21 +17,46 @@ Workshops are available for companies.
 ## Public guide library
 
 - 12 AI words you need to know: https://www.shiftandlead.com/guides/ai-jargon-guide/
+- Which AI tool should you use?: https://www.shiftandlead.com/guides/which-ai-tool-for-what/
+- What can you actually do with Claude at work?: https://www.shiftandlead.com/guides/claude/
+- What can Meta Muse actually do for you?: https://www.shiftandlead.com/guides/meta-ai/
 - How to show up in AI search results: https://www.shiftandlead.com/guides/show-up-in-ai-search/
+- How to write an AI prompt that gets a useful answer: https://www.shiftandlead.com/guides/what-is-a-prompt/
+- What can an AI browser actually do?: https://www.shiftandlead.com/guides/what-is-an-ai-browser/
 - Should you let AI connect to your email, files and calendar?: https://www.shiftandlead.com/guides/connect-ai-to-email-files-calendar/
+- Which AI skill should you practise first?: https://www.shiftandlead.com/guides/ai-skills-worth-learning-for-work/
 - What AI agents actually do: https://www.shiftandlead.com/guides/what-is-agentic/
 - What should you never share with AI?: https://www.shiftandlead.com/guides/what-should-you-never-share-with-ai/
 - What AI actually is: https://www.shiftandlead.com/guides/what-is-ai/
 - Build Your Own Instagram Dashboard: https://www.shiftandlead.com/guides/instagram-content-dashboard/
+- Stop repeating your instructions to Claude: https://www.shiftandlead.com/guides/claude-projects/
+- Why does ChatGPT keep giving you an essay?: https://www.shiftandlead.com/guides/make-chatgpt-answers-shorter/
+- Why does ChatGPT forget what you already told it?: https://www.shiftandlead.com/guides/stop-chatgpt-forgetting-context/
+- Can ChatGPT tell you when a public page changes?: https://www.shiftandlead.com/guides/chatgpt-scheduled-tasks/
+- Why can’t Gemini see the file that is already in your Drive?: https://www.shiftandlead.com/guides/gemini-cannot-find-drive-file/
+- Can Gemini see which Google Tasks list a task is in?: https://www.shiftandlead.com/guides/gemini-google-tasks-limits/
 - Did Copilot change only the Excel cells you asked it to change?: https://www.shiftandlead.com/guides/check-copilot-excel-edits/
 - When should Grok Bot ask you first?: https://www.shiftandlead.com/guides/review-grok-suggestions/
 - Can Grok Bot take one recurring check off your plate?: https://www.shiftandlead.com/guides/get-better-professional-writing-from-grok/
+- Can Grok Bot find the X posts worth your attention?: https://www.shiftandlead.com/guides/verify-grok-current-research/
 - Is Kimi worth paying for your work?: https://www.shiftandlead.com/guides/is-kimi-worth-paying-for/
 - Make a work tracker with Kimi: https://www.shiftandlead.com/guides/make-work-tracker-with-kimi/
+- Does Manus need your browser at all?: https://www.shiftandlead.com/guides/manus-browser-workflow/
+- Why did DeepSeek turn your scene into a wall of text?: https://www.shiftandlead.com/guides/fix-deepseek-wall-of-text/
+- How do you edit a long DeepSeek story without losing what worked?: https://www.shiftandlead.com/guides/edit-long-writing-with-deepseek/
+- Can ChatGPT turn a screen recording into a usable process guide?: https://www.shiftandlead.com/guides/chatgpt-screen-recording-to-process-guide/
+- Find patterns in customer feedback with ChatGPT: https://www.shiftandlead.com/guides/chatgpt-customer-research-with-evidence/
+- How do you teach Claude a job you repeat every week?: https://www.shiftandlead.com/guides/teach-claude-a-repeatable-workflow/
+- Get through your inbox with Copilot: https://www.shiftandlead.com/guides/what-can-copilot-see-at-work/
+- Can Muse find a better price without buying for you?: https://www.shiftandlead.com/guides/test-meta-muse-money-saving-task/
+- Can Grok edit one detail without changing the rest?: https://www.shiftandlead.com/guides/test-grok-repeated-image-edits/
+- Can DeepSeek handle your document work?: https://www.shiftandlead.com/guides/test-deepseek-v4-document-work/
+- What should you save before a DeepSeek project becomes unavailable?: https://www.shiftandlead.com/guides/protect-a-long-deepseek-project/
+- Can Mistral research in two languages without losing the source?: https://www.shiftandlead.com/guides/mistral-multilingual-research/
 
 ## Editorial approach
 
-The writing is practical, conversational and specific. Guide access uses an intentional email gate. Private workbook answers and personal reflection text are not collected by general website analytics.
+The guides offer practical, conversational instructions. Private workbook answers and personal reflection text are not collected by general website analytics.
 
 ## Usage terms
 

@@ -1,49 +1,257 @@
 {
   "schemaVersion": 1,
   "reference": "instagram-content-dashboard",
-  "formatReferences": ["instagram-content-dashboard", "what-is-ai"],
+  "formatReferences": [
+    "instagram-content-dashboard",
+    "what-is-ai"
+  ],
   "guides": [
-    { "slug": "what-is-ai", "pattern": "explorer", "status": "approved", "component": "what-is-ai-page" },
-    { "slug": "ai-jargon-guide", "pattern": "glossary", "status": "approved", "component": "ai-jargon-page" },
-    { "slug": "what-is-agentic", "pattern": "decision", "status": "approved", "component": "agentic-page" },
-    { "slug": "what-should-you-never-share-with-ai", "pattern": "audit", "status": "approved", "component": "privacy-guide-page" },
-    { "slug": "which-ai-tool-for-what", "pattern": "decision", "status": "review", "component": "tool-chooser-page" },
-    { "slug": "make-chatgpt-answers-shorter", "pattern": "practice", "status": "review", "component": "short-answer-page" },
-    { "slug": "stop-chatgpt-forgetting-context", "pattern": "walkthrough", "status": "review", "component": "chatgpt-project-page" },
-    { "slug": "chatgpt-scheduled-tasks", "pattern": "walkthrough", "status": "review", "component": "scheduled-task-page" },
-    { "slug": "claude", "pattern": "practice", "status": "review", "component": "claude-task-page" },
-    { "slug": "claude-projects", "pattern": "walkthrough", "status": "review", "component": "claude-projects-page" },
-    { "slug": "gemini-cannot-find-drive-file", "pattern": "walkthrough", "status": "review", "component": "gemini-drive-page" },
-    { "slug": "gemini-google-tasks-limits", "pattern": "practice", "status": "review", "component": "gemini-tasks-page" },
-    { "slug": "check-copilot-excel-edits", "pattern": "audit", "status": "approved", "component": "copilot-excel-page" },
-    { "slug": "meta-ai", "pattern": "explorer", "status": "review", "component": "meta-muse-page" },
-    { "slug": "test-meta-business-agent-customer-replies", "pattern": "practice", "status": "pending" },
-    { "slug": "review-grok-suggestions", "pattern": "practice", "status": "approved", "component": "grok-review-page" },
-    { "slug": "get-better-professional-writing-from-grok", "pattern": "practice", "status": "approved", "component": "grok-writing-page" },
-    { "slug": "verify-grok-current-research", "pattern": "audit", "status": "review", "component": "grok-research-page" },
-    { "slug": "fix-deepseek-wall-of-text", "pattern": "practice", "status": "review", "component": "deepseek-wall-page" },
-    { "slug": "edit-long-writing-with-deepseek", "pattern": "walkthrough", "status": "review", "component": "deepseek-long-edit-page" },
-    { "slug": "is-kimi-worth-paying-for", "pattern": "decision", "status": "approved", "component": "kimi-value-page" },
-    { "slug": "make-work-tracker-with-kimi", "pattern": "walkthrough", "status": "approved", "component": "kimi-sheets-page" },
-    { "slug": "test-manus-without-burning-credits", "pattern": "walkthrough", "status": "pending" },
-    { "slug": "manus-browser-workflow", "pattern": "decision", "status": "review", "component": "manus-browser-page" },
-    { "slug": "switch-from-chatgpt-to-mistral", "pattern": "decision", "status": "pending" },
-    { "slug": "is-mistral-pro-worth-it", "pattern": "decision", "status": "pending" },
-    { "slug": "instagram-content-dashboard", "pattern": "agent-assisted", "status": "approved", "component": "instagram-dashboard-page" },
-    { "slug": "what-is-a-prompt", "pattern": "prompt-builder", "status": "review", "component": "prompt-builder-page" },
-    { "slug": "what-is-an-ai-browser", "pattern": "audit", "status": "review", "component": "ai-browser-page" },
-    { "slug": "connect-ai-to-email-files-calendar", "pattern": "audit", "status": "approved", "component": "ai-connections-page" },
-    { "slug": "ai-skills-worth-learning-for-work", "pattern": "practice", "status": "review", "component": "ai-skills-page" },
-    { "slug": "show-up-in-ai-search", "pattern": "audit", "status": "approved", "component": "ai-search-page" },
-    { "slug": "chatgpt-screen-recording-to-process-guide", "pattern": "walkthrough", "status": "review", "component": "screen-recording-page" },
-    { "slug": "chatgpt-customer-research-with-evidence", "pattern": "audit", "status": "review", "component": "customer-research-page" },
-    { "slug": "teach-claude-a-repeatable-workflow", "pattern": "walkthrough", "status": "review", "component": "claude-workflow-page" },
-    { "slug": "fix-gemini-workspace-action", "pattern": "walkthrough", "status": "pending" },
-    { "slug": "what-can-copilot-see-at-work", "pattern": "audit", "status": "review", "component": "copilot-visibility-page" },
-    { "slug": "test-meta-muse-money-saving-task", "pattern": "decision", "status": "review", "component": "meta-muse-saving-page" },
-    { "slug": "test-grok-repeated-image-edits", "pattern": "walkthrough", "status": "review", "component": "grok-image-edits-page" },
-    { "slug": "test-deepseek-v4-document-work", "pattern": "decision", "status": "review", "component": "deepseek-document-page" },
-    { "slug": "protect-a-long-deepseek-project", "pattern": "audit", "status": "review", "component": "deepseek-recovery-page" },
-    { "slug": "mistral-multilingual-research", "pattern": "walkthrough", "status": "review", "component": "mistral-multilingual-page" }
+    {
+      "slug": "what-is-ai",
+      "pattern": "explorer",
+      "status": "approved",
+      "component": "what-is-ai-page"
+    },
+    {
+      "slug": "ai-jargon-guide",
+      "pattern": "glossary",
+      "status": "approved",
+      "component": "ai-jargon-page"
+    },
+    {
+      "slug": "what-is-agentic",
+      "pattern": "decision",
+      "status": "approved",
+      "component": "agentic-page"
+    },
+    {
+      "slug": "what-should-you-never-share-with-ai",
+      "pattern": "audit",
+      "status": "approved",
+      "component": "privacy-guide-page"
+    },
+    {
+      "slug": "which-ai-tool-for-what",
+      "pattern": "decision",
+      "status": "approved",
+      "component": "tool-chooser-page"
+    },
+    {
+      "slug": "make-chatgpt-answers-shorter",
+      "pattern": "practice",
+      "status": "approved",
+      "component": "short-answer-page"
+    },
+    {
+      "slug": "stop-chatgpt-forgetting-context",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "chatgpt-project-page"
+    },
+    {
+      "slug": "chatgpt-scheduled-tasks",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "scheduled-task-page"
+    },
+    {
+      "slug": "claude",
+      "pattern": "practice",
+      "status": "approved",
+      "component": "claude-task-page"
+    },
+    {
+      "slug": "claude-projects",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "claude-projects-page"
+    },
+    {
+      "slug": "gemini-cannot-find-drive-file",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "gemini-drive-page"
+    },
+    {
+      "slug": "gemini-google-tasks-limits",
+      "pattern": "practice",
+      "status": "approved",
+      "component": "gemini-tasks-page"
+    },
+    {
+      "slug": "check-copilot-excel-edits",
+      "pattern": "audit",
+      "status": "approved",
+      "component": "copilot-excel-page"
+    },
+    {
+      "slug": "meta-ai",
+      "pattern": "explorer",
+      "status": "approved",
+      "component": "meta-muse-page"
+    },
+    {
+      "slug": "test-meta-business-agent-customer-replies",
+      "pattern": "practice",
+      "status": "pending"
+    },
+    {
+      "slug": "review-grok-suggestions",
+      "pattern": "practice",
+      "status": "approved",
+      "component": "grok-review-page"
+    },
+    {
+      "slug": "get-better-professional-writing-from-grok",
+      "pattern": "practice",
+      "status": "approved",
+      "component": "grok-writing-page"
+    },
+    {
+      "slug": "verify-grok-current-research",
+      "pattern": "audit",
+      "status": "approved",
+      "component": "grok-research-page"
+    },
+    {
+      "slug": "fix-deepseek-wall-of-text",
+      "pattern": "practice",
+      "status": "approved",
+      "component": "deepseek-wall-page"
+    },
+    {
+      "slug": "edit-long-writing-with-deepseek",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "deepseek-long-edit-page"
+    },
+    {
+      "slug": "is-kimi-worth-paying-for",
+      "pattern": "decision",
+      "status": "approved",
+      "component": "kimi-value-page"
+    },
+    {
+      "slug": "make-work-tracker-with-kimi",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "kimi-sheets-page"
+    },
+    {
+      "slug": "test-manus-without-burning-credits",
+      "pattern": "walkthrough",
+      "status": "pending"
+    },
+    {
+      "slug": "manus-browser-workflow",
+      "pattern": "decision",
+      "status": "approved",
+      "component": "manus-browser-page"
+    },
+    {
+      "slug": "switch-from-chatgpt-to-mistral",
+      "pattern": "decision",
+      "status": "pending"
+    },
+    {
+      "slug": "is-mistral-pro-worth-it",
+      "pattern": "decision",
+      "status": "pending"
+    },
+    {
+      "slug": "instagram-content-dashboard",
+      "pattern": "agent-assisted",
+      "status": "approved",
+      "component": "instagram-dashboard-page"
+    },
+    {
+      "slug": "what-is-a-prompt",
+      "pattern": "prompt-builder",
+      "status": "approved",
+      "component": "prompt-builder-page"
+    },
+    {
+      "slug": "what-is-an-ai-browser",
+      "pattern": "audit",
+      "status": "approved",
+      "component": "ai-browser-page"
+    },
+    {
+      "slug": "connect-ai-to-email-files-calendar",
+      "pattern": "audit",
+      "status": "approved",
+      "component": "ai-connections-page"
+    },
+    {
+      "slug": "ai-skills-worth-learning-for-work",
+      "pattern": "practice",
+      "status": "approved",
+      "component": "ai-skills-page"
+    },
+    {
+      "slug": "show-up-in-ai-search",
+      "pattern": "audit",
+      "status": "approved",
+      "component": "ai-search-page"
+    },
+    {
+      "slug": "chatgpt-screen-recording-to-process-guide",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "screen-recording-page"
+    },
+    {
+      "slug": "chatgpt-customer-research-with-evidence",
+      "pattern": "audit",
+      "status": "approved",
+      "component": "customer-research-page"
+    },
+    {
+      "slug": "teach-claude-a-repeatable-workflow",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "claude-workflow-page"
+    },
+    {
+      "slug": "fix-gemini-workspace-action",
+      "pattern": "walkthrough",
+      "status": "pending"
+    },
+    {
+      "slug": "what-can-copilot-see-at-work",
+      "pattern": "audit",
+      "status": "approved",
+      "component": "copilot-visibility-page"
+    },
+    {
+      "slug": "test-meta-muse-money-saving-task",
+      "pattern": "decision",
+      "status": "approved",
+      "component": "meta-muse-saving-page"
+    },
+    {
+      "slug": "test-grok-repeated-image-edits",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "grok-image-edits-page"
+    },
+    {
+      "slug": "test-deepseek-v4-document-work",
+      "pattern": "decision",
+      "status": "approved",
+      "component": "deepseek-document-page"
+    },
+    {
+      "slug": "protect-a-long-deepseek-project",
+      "pattern": "audit",
+      "status": "approved",
+      "component": "deepseek-recovery-page"
+    },
+    {
+      "slug": "mistral-multilingual-research",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "mistral-multilingual-page"
+    }
   ]
 }
