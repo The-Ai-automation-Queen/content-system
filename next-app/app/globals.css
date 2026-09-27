@@ -591,6 +591,58 @@ button, input { font: inherit; }
 .outcome-nav__grid>button:hover,.outcome-nav__grid>button[aria-pressed="true"]{background:#2c4be0}
 .guide-card:hover{background:#eef0ff}
 .guides-cta{background:#2c4be0}
+
+/* Guide library: carry the new site design below the hero. */
+.outcome-nav{padding-block:clamp(76px,8vw,116px)}
+.outcome-nav__head{align-items:end;gap:24px 66px}
+.outcome-nav__head>p:last-child{color:#30374d;font:500 17px/1.55 var(--font-ui),sans-serif}
+.outcome-nav__grid{gap:14px;border:0}
+.outcome-nav__grid>button{min-height:210px;padding:25px;border:1px solid #bfc8fa;background:#fff;box-shadow:6px 6px 0 #0d1117}
+.outcome-nav__grid>button:hover,.outcome-nav__grid>button[aria-pressed="true"]{border-color:#2c4be0;box-shadow:6px 6px 0 #ff007f}
+.outcome-nav__title{font:900 clamp(25px,2.6vw,34px)/1.06 Impact,"Arial Narrow",var(--font-ui),sans-serif;letter-spacing:0}
+.outcome-nav__grid>button>span:nth-child(2){color:#30374d;font:500 15px/1.45 var(--font-ui),sans-serif}
+.outcome-nav__grid strong{font:800 12px/1.3 var(--font-ui),sans-serif}
+.foundation-links{padding-block:clamp(76px,8vw,116px)}
+.foundation-links>div{align-self:start}
+.foundation-links ol{border:0;display:grid;gap:9px}
+.foundation-links li{border:1px solid #c3cbf5;background:#eef0ff}
+.foundation-links a{min-height:78px;padding:16px 20px}
+.foundation-links a:hover{color:#fff;background:#2c4be0}
+.foundation-links a>span{color:#2c4be0;font:800 12px/1 var(--font-ui),sans-serif}
+.foundation-links a:hover>span{color:#fff}
+.foundation-links strong{font:800 clamp(18px,1.9vw,23px)/1.2 var(--font-ui),sans-serif}
+.library{padding-block:clamp(72px,8vw,112px)}
+.library__head h2{color:#0d1117}
+.library__head p{color:#30374d;font:500 17px/1.5 var(--font-ui),sans-serif}
+.library__reset,.empty-state button{border:0;border-radius:999px;background:#2c4be0;padding:13px 19px}
+.library__reset:disabled{border:1px solid #b8c1e5;background:#eef0ff;color:#34405c}
+.library__active-filters button{border-color:#b9c3f3;font:700 12px/1 var(--font-ui),sans-serif}
+.library__active-filters button:hover,.library__active-filters button[aria-pressed="true"]{border-color:#2c4be0;background:#2c4be0}
+.result-count{color:#4a526c;font:800 11px/1.3 var(--font-ui),sans-serif}
+.guide-grid{gap:26px 18px}
+.guide-grid .guide-card{border:1px solid #c4cbec;background:#fff}
+.guide-grid .guide-card:hover{border-color:#2c4be0;background:#eef0ff;box-shadow:6px 6px 0 #2c4be0}
+.guide-grid .guide-card h2{font:900 clamp(24px,2.3vw,31px)/1.05 Impact,"Arial Narrow",var(--font-ui),sans-serif;letter-spacing:0}
+.guide-grid .guide-card__body{gap:12px;padding:19px 21px 22px}
+.guide-grid .guide-card__body>p{color:#30374d;font:500 14px/1.5 var(--font-ui),sans-serif}
+.guide-grid .guide-card__link{border-color:#2c4be0;color:#243fc3;font:800 12px/1.2 var(--font-ui),sans-serif}
+.guide-grid .guide-card__level{background:#0d1117;font:800 10px/1 var(--font-ui),sans-serif}
+.guides-cta{margin-bottom:clamp(48px,6vw,80px);padding:clamp(40px,6vw,76px);background:radial-gradient(circle at 92% 6%,#4b5fef,transparent 33%),#0d1117}
+.guides-cta p{color:#c8c1f0;font:800 11px/1.4 var(--font-ui),sans-serif}
+.guides-cta h2{font:900 clamp(42px,5vw,70px)/1 Impact,"Arial Narrow",var(--font-ui),sans-serif;letter-spacing:0}
+.guides-cta div>span{font:500 17px/1.55 var(--font-ui),sans-serif}
+.guides-cta__actions>a{border:0;border-radius:999px;background:#ff007f;color:#fff;text-align:center;font:800 13px/1.3 var(--font-ui),sans-serif}
+.guides-cta__actions>a:last-child{border:1px solid #fff;background:transparent}
+@media(max-width:700px){
+  .outcome-nav__head{display:block}
+  .outcome-nav__grid{grid-template-columns:1fr}
+  .outcome-nav__grid>button{min-height:160px}
+  .foundation-links{display:block}
+  .foundation-links>div{margin-bottom:26px}
+  .library__head{grid-template-columns:1fr;gap:18px}
+  .guide-grid{grid-template-columns:1fr}
+  .guides-cta{grid-template-columns:1fr;margin-inline:18px}
+}
 @media(max-width:1050px){.site-header nav{display:none}.site-header__mobile{display:block}}
 @media(max-width:700px){
   .site-header,.site-header__inner{min-height:66px}

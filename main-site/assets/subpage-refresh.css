@@ -107,3 +107,152 @@ body.sk-subpage[data-page-kind="build"] .apply-form button[type="submit"]{border
   body.sk-subpage[data-page-kind="build"] .offer-hero h1{font-size:clamp(48px,11vw,68px)!important}
 }
 @media(prefers-reduced-motion:reduce){body.sk-subpage .sk-header,body.sk-subpage .sk-menu,body.sk-subpage .workbook-card{transition:none}}
+
+/* Complete section treatment: the hero palette continues through the entire page. */
+body.sk-subpage :is(.workbook-explain,.workbook-list,.workbook-next,.map-tension,.map-method,.map-result,.map-formats,.map-interest,.story,.point-of-view,.about-final-cta,.offer-section){scroll-margin-top:82px}
+body.sk-subpage :is(.workbook-card,.career-card,.offer-card,.map-format-grid article){transition:transform .2s ease,box-shadow .2s ease}
+body.sk-subpage :is(.workbook-card,.career-card,.offer-card,.map-format-grid article):hover{transform:translateY(-4px)}
+
+/* Workbooks */
+body.sk-subpage[data-page-kind="workbooks"] .workbook-explain-inner{width:min(1120px,calc(100% - 48px));display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);gap:clamp(30px,6vw,100px);align-items:end}
+body.sk-subpage[data-page-kind="workbooks"] .workbook-explain p{margin:0;max-width:38ch;font-size:clamp(18px,1.8vw,22px)}
+body.sk-subpage[data-page-kind="workbooks"] .workbook-list{padding:clamp(70px,8vw,110px) 0}
+body.sk-subpage[data-page-kind="workbooks"] .workbook-grid{gap:24px}
+body.sk-subpage[data-page-kind="workbooks"] .workbook-card{overflow:hidden;background:#fff;color:#0d1117;text-decoration:none}
+body.sk-subpage[data-page-kind="workbooks"] .workbook-card-art{aspect-ratio:4/3}
+body.sk-subpage[data-page-kind="workbooks"] .workbook-card-art img{object-position:center 40%}
+body.sk-subpage[data-page-kind="workbooks"] .workbook-card-copy{padding:27px 27px 30px}
+body.sk-subpage[data-page-kind="workbooks"] .workbook-number{color:#2c4be0;font:800 11px/1.3 Inter,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+body.sk-subpage[data-page-kind="workbooks"] .workbook-card h2{margin:12px 0 14px;font:900 clamp(28px,2.7vw,38px)/1.04 Impact,"Arial Narrow",Inter,sans-serif}
+body.sk-subpage[data-page-kind="workbooks"] .workbook-card-copy p{color:#30374d;font:500 15px/1.58 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="workbooks"] .workbook-card-copy strong{margin-top:auto;padding-top:25px;color:#243fc3;font:800 13px/1.3 Inter,Arial,sans-serif;text-decoration:underline;text-underline-offset:5px}
+body.sk-subpage[data-page-kind="workbooks"] .workbook-next{padding:clamp(76px,8vw,112px) 0}
+body.sk-subpage[data-page-kind="workbooks"] .workbook-next .workbook-eyebrow{color:#c8c1f0}
+body.sk-subpage[data-page-kind="workbooks"] .workbook-next p{font:500 18px/1.55 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="workbooks"] .workbook-next a{display:inline-flex;align-items:center;min-height:50px;padding:13px 23px;color:#fff;font:800 13px/1.3 Inter,Arial,sans-serif;text-decoration:none}
+
+/* Where AI Fits */
+body.sk-subpage[data-page-kind="opportunity-map"] .map-shell{width:min(1120px,calc(100% - 48px))}
+body.sk-subpage[data-page-kind="opportunity-map"] :is(.map-tension,.map-method,.map-result,.map-formats,.map-interest){padding-block:clamp(72px,8vw,112px)}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-tension .map-narrow{max-width:1120px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:16px clamp(42px,8vw,120px);align-items:start}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-tension .map-eyebrow{grid-column:1/-1}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-tension h2{grid-row:2/4;color:#0d1117}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-tension p:not(.map-eyebrow){margin:0;color:#30374d;font:500 clamp(17px,1.7vw,20px)/1.6 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-section-head>p:last-child{color:#30374d;font:500 18px/1.55 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;border:0}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-steps details{border:1px solid #bfc8fa;background:#fff}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-steps details:last-child{grid-column:1/-1}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-steps summary{min-height:86px;padding:18px 20px;grid-template-columns:36px 1fr 34px}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-steps summary span{font:800 12px/1 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-steps summary strong{font:800 clamp(19px,2.1vw,25px)/1.15 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-steps details>p{margin:0;padding:0 24px 23px 74px;color:#30374d;font:500 15px/1.55 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-result{background:#2c4be0}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-result h2{max-width:400px}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-result li{padding:18px 14px 18px 0;color:#fff;font:600 16px/1.4 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-formats{background:#fff}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-format-grid article{padding:clamp(28px,3.4vw,44px);border:1px solid #c5cdf4;box-shadow:8px 8px 0 #0d1117}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-format-grid .map-format-featured{border:1px solid #2c4be0;background:#eae8ff;box-shadow:8px 8px 0 #ff007f}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-format-grid h3{color:#0d1117;font:900 clamp(32px,3.6vw,45px)/1 Impact,"Arial Narrow",Inter,sans-serif}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-format-grid article>p:not(.map-format-label),body.sk-subpage[data-page-kind="opportunity-map"] .map-format-grid ul{color:#30374d;font:500 16px/1.58 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-honesty{margin-top:30px;color:#4a526c;font:500 13px/1.5 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-interest{background:#0d1117;color:#fff}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-interest .map-eyebrow{color:#c8c1f0}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-interest h2{color:#fff}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-interest-grid>div>p:last-child{color:#dfe3f3;font:500 18px/1.55 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-interest form{padding:clamp(24px,3vw,40px);border:0;background:#fff;color:#0d1117;box-shadow:10px 10px 0 #2c4be0}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-interest input:not([type=radio]):not([type=checkbox]){border-radius:0}
+body.sk-subpage[data-page-kind="opportunity-map"] .map-interest .map-consent{color:#30374d}
+
+/* About */
+body.sk-subpage[data-page-kind="about"] .story{max-width:1320px}
+body.sk-subpage[data-page-kind="about"] .story>.kicker,body.sk-subpage[data-page-kind="about"] .point-of-view>.kicker,body.sk-subpage[data-page-kind="about"] .about-final-cta>.kicker{color:#2c4be0;font:800 11px/1.4 Inter,Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+body.sk-subpage[data-page-kind="about"] .story h2{max-width:1000px;color:#0d1117}
+body.sk-subpage[data-page-kind="about"] .story>p{max-width:710px;color:#30374d;font:500 clamp(17px,1.7vw,21px)/1.55 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="about"] .career-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:42px}
+body.sk-subpage[data-page-kind="about"] .career-card{min-height:310px;padding:clamp(23px,3vw,36px);background:#eef0ff;color:#0d1117}
+body.sk-subpage[data-page-kind="about"] .career-card:nth-child(2){background:#c8c1f0;box-shadow:8px 8px 0 #ff007f}
+body.sk-subpage[data-page-kind="about"] .career-card:nth-child(3){background:#e7eaff}
+body.sk-subpage[data-page-kind="about"] .career-card span{color:#243fc3;font:800 11px/1.4 Inter,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+body.sk-subpage[data-page-kind="about"] .career-card h3{margin:26px 0 15px;color:#0d1117;font:900 clamp(30px,3vw,40px)/1.04 Impact,"Arial Narrow",Inter,sans-serif}
+body.sk-subpage[data-page-kind="about"] .career-card p{color:#263047;font:500 15px/1.55 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="about"] .point-of-view .kicker{color:#243fc3}
+body.sk-subpage[data-page-kind="about"] .point-of-view h2{max-width:850px;color:#0d1117}
+body.sk-subpage[data-page-kind="about"] .point-of-view>p{max-width:770px;color:#202844;font:500 clamp(18px,1.8vw,21px)/1.55 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="about"] .point-of-view blockquote{max-width:920px;padding:clamp(24px,3vw,38px);font:700 clamp(25px,2.6vw,36px)/1.25 "Playfair Display",Georgia,serif}
+body.sk-subpage[data-page-kind="about"] .about-final-cta{max-width:1320px}
+body.sk-subpage[data-page-kind="about"] .about-final-cta>p:not(.secondary-path){max-width:720px;color:#30374d;font:500 19px/1.55 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="about"] .about-final-cta .secondary-path{color:#4a526c;font:500 15px/1.5 Inter,Arial,sans-serif}
+
+/* Work with Fatiha */
+body.sk-subpage[data-page-kind="build"] .offer-section{max-width:none;margin:0;padding:clamp(72px,8vw,112px) max(28px,calc((100vw - 1120px)/2))}
+body.sk-subpage[data-page-kind="build"] .offer-section:nth-of-type(odd){background:#eef0ff}
+body.sk-subpage[data-page-kind="build"] .offer-section h2{max-width:930px;margin:0 0 34px;color:#0d1117}
+body.sk-subpage[data-page-kind="build"] .offer-grid{gap:16px}
+body.sk-subpage[data-page-kind="build"] .offer-card{min-height:230px;padding:28px;border:1px solid #bcc6f7;border-radius:0;background:#fff;box-shadow:6px 6px 0 #0d1117}
+body.sk-subpage[data-page-kind="build"] .offer-card h3,body.sk-subpage[data-page-kind="build"] .offer-step h3,body.sk-subpage[data-page-kind="build"] .fit-lists h3{color:#0d1117;font:900 clamp(24px,2.6vw,34px)/1.08 Impact,"Arial Narrow",Inter,sans-serif}
+body.sk-subpage[data-page-kind="build"] .offer-card p,body.sk-subpage[data-page-kind="build"] .offer-step p:not(.n),body.sk-subpage[data-page-kind="build"] .fit-lists li{color:#30374d;font:500 15px/1.55 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="build"] .offer-section.client-proof{background:#c8c1f0;color:#0d1117}
+body.sk-subpage[data-page-kind="build"] .client-proof .eyebrow{color:#243fc3}
+body.sk-subpage[data-page-kind="build"] .client-proof blockquote{max-width:930px;margin:20px 0;padding:28px 34px;border:0;border-radius:0;background:#fff;box-shadow:8px 8px 0 #ff007f}
+body.sk-subpage[data-page-kind="build"] .client-proof blockquote p{color:#172eaa;font:700 clamp(21px,2.4vw,31px)/1.35 "Playfair Display",Georgia,serif}
+body.sk-subpage[data-page-kind="build"] .offer-steps{gap:18px}
+body.sk-subpage[data-page-kind="build"] .offer-step{padding:25px;border:1px solid #c2c9f0;background:#fff}
+body.sk-subpage[data-page-kind="build"] .offer-step .n{font:800 11px/1.4 Inter,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+body.sk-subpage[data-page-kind="build"] .fit-lists{gap:18px}
+body.sk-subpage[data-page-kind="build"] .fit-lists>div{padding:clamp(24px,3vw,36px);border:1px solid #c2c9f0;background:#fff}
+body.sk-subpage[data-page-kind="build"] .fit-lists>div:first-child{background:#eae8ff}
+body.sk-subpage[data-page-kind="build"] #apply{background:#0d1117;color:#fff}
+body.sk-subpage[data-page-kind="build"] #apply h2{color:#fff}
+body.sk-subpage[data-page-kind="build"] #apply>.offer-promise{max-width:720px;color:#dfe3f3;font:500 18px/1.55 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="build"] .apply-form{max-width:760px;margin-top:34px;padding:clamp(24px,3.4vw,42px);border:0;border-radius:0;background:#fff;color:#0d1117;box-shadow:10px 10px 0 #2c4be0}
+body.sk-subpage[data-page-kind="build"] .apply-form label{font:700 13px/1.4 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="build"] .apply-form :is(input,textarea,select){border-radius:0;background:#fff;color:#0d1117}
+body.sk-subpage[data-page-kind="build"] .apply-form button[type="submit"]{min-height:50px;padding:13px 24px;font-weight:800}
+body.sk-subpage[data-page-kind="build"] #apply>.table-note{color:#dfe3f3}
+body.sk-subpage[data-page-kind="build"] .faq{background:#eef0ff}
+body.sk-subpage[data-page-kind="build"] .faq details{padding:0 20px;margin-bottom:9px;border:1px solid #bec7f6;background:#fff}
+body.sk-subpage[data-page-kind="build"] .faq summary{padding:19px 0;color:#0d1117;font:800 17px/1.35 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="build"] .faq details p{max-width:650px;color:#30374d;font:500 16px/1.55 Inter,Arial,sans-serif}
+body.sk-subpage[data-page-kind="build"] .offer-section:last-of-type{background:#2c4be0;color:#fff}
+body.sk-subpage[data-page-kind="build"] .offer-section:last-of-type h2{color:#fff}
+body.sk-subpage[data-page-kind="build"] .offer-section:last-of-type .offer-promise{color:#e9ecff}
+body.sk-subpage[data-page-kind="build"] .offer-section:last-of-type .btn-primary{border-radius:999px;background:#ff007f}
+
+/* Older global theme files used !important; retire their section geometry here. */
+body.sk-subpage[data-page-kind="build"] .offer-section{max-width:none!important;padding-block:clamp(72px,8vw,112px)!important;border:0!important;border-radius:0!important}
+body.sk-subpage[data-page-kind="build"] .offer-section.client-proof{margin:0!important;padding-inline:max(28px,calc((100vw - 1120px)/2))!important;background:#c8c1f0!important}
+body.sk-subpage[data-page-kind="build"] .offer-card{padding:28px!important;border-radius:0!important}
+body.sk-subpage[data-page-kind="build"] .offer-card h3{font-size:clamp(24px,2.6vw,34px)!important}
+body.sk-subpage[data-page-kind="build"] .client-proof blockquote{margin:24px 0!important;border:0!important;border-radius:0!important}
+body.sk-subpage[data-page-kind="build"] .offer-steps{gap:18px!important;padding-bottom:0!important}
+body.sk-subpage[data-page-kind="build"] .offer-step{padding:26px!important;border:1px solid #c2c9f0!important;border-radius:0!important}
+body.sk-subpage[data-page-kind="build"] .offer-step::before,body.sk-subpage[data-page-kind="build"] .offer-step::after{display:none!important}
+body.sk-subpage[data-page-kind="build"] .faq details{border-radius:0!important}
+body.sk-subpage[data-page-kind="about"] .career-card{border-radius:0!important}
+body.sk-subpage[data-page-kind="about"] .about-final-cta .btn-primary{border:0!important;border-radius:999px!important;background:#ff007f!important;color:#fff!important}
+
+@media(max-width:820px){
+  body.sk-subpage[data-page-kind="workbooks"] .workbook-explain-inner,body.sk-subpage[data-page-kind="opportunity-map"] .map-tension .map-narrow{grid-template-columns:1fr}
+  body.sk-subpage[data-page-kind="opportunity-map"] .map-tension h2{grid-row:auto}
+  body.sk-subpage[data-page-kind="opportunity-map"] .map-steps{grid-template-columns:1fr}
+  body.sk-subpage[data-page-kind="opportunity-map"] .map-steps details:last-child{grid-column:auto}
+  body.sk-subpage[data-page-kind="build"] .offer-section{padding-inline:28px}
+}
+@media(max-width:700px){
+  body.sk-subpage[data-page-kind="workbooks"] .workbook-explain-inner,body.sk-subpage[data-page-kind="opportunity-map"] .map-shell{width:calc(100% - 36px)}
+  body.sk-subpage[data-page-kind="workbooks"] .workbook-grid{grid-template-columns:1fr}
+  body.sk-subpage[data-page-kind="workbooks"] .workbook-card:last-child{width:100%}
+  body.sk-subpage[data-page-kind="workbooks"] .workbook-card-copy{padding:23px}
+  body.sk-subpage[data-page-kind="opportunity-map"] .map-steps summary{min-height:72px;padding:16px;grid-template-columns:30px 1fr 28px}
+  body.sk-subpage[data-page-kind="opportunity-map"] .map-steps details>p{padding:0 18px 19px 54px}
+  body.sk-subpage[data-page-kind="opportunity-map"] .map-format-grid{grid-template-columns:1fr}
+  body.sk-subpage[data-page-kind="opportunity-map"] .map-interest-grid{grid-template-columns:1fr;gap:34px}
+  body.sk-subpage[data-page-kind="about"] .career-grid{grid-template-columns:1fr}
+  body.sk-subpage[data-page-kind="about"] .career-card{min-height:0}
+  body.sk-subpage[data-page-kind="build"] .offer-section{padding:66px 18px}
+  body.sk-subpage[data-page-kind="build"] .offer-section{padding-block:66px!important;padding-inline:18px!important}
+  body.sk-subpage[data-page-kind="build"] .offer-section.client-proof{padding-inline:18px!important}
+  body.sk-subpage[data-page-kind="build"] .offer-grid,body.sk-subpage[data-page-kind="build"] .offer-steps,body.sk-subpage[data-page-kind="build"] .fit-lists{grid-template-columns:1fr}
+  body.sk-subpage[data-page-kind="build"] .offer-grid,body.sk-subpage[data-page-kind="build"] .offer-steps,body.sk-subpage[data-page-kind="build"] .fit-lists{grid-template-columns:1fr!important}
+  body.sk-subpage[data-page-kind="build"] .offer-card{min-height:0}
+}
