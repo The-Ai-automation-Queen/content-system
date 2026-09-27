@@ -496,7 +496,7 @@ export const verifyGrokResearchGuide = makeGuide({
   seoDescription: "Ask Grok Bot for current X posts with direct links, then separate public reaction from verified product facts.",
   sources: [
     { label: "xAI: Grok Bot now works with X", url: "https://x.ai/news/grok-bot-and-x" },
-    { label: "xAI: Introducing Grok 4.7", url: "https://x.ai/news/grok-4-7" },
+    { label: "xAI: Grok Bot overview", url: "https://x.ai/bot" },
   ],
   answer: [
     "**A post can show what people are asking or saying.** Open its direct link before you use it, and check product claims at the original source.",
@@ -524,8 +524,8 @@ export const verifyGrokResearchGuide = makeGuide({
   ],
   tryNow: {
     heading: "Find the posts worth opening",
-    introduction: "Start with Grok 4.7, or enter a public topic relevant to your work.",
-    prompt: grokResearchPrompt("Grok 4.7"),
+    introduction: "Start with Grok Bot, or enter a public topic relevant to your work.",
+    prompt: grokResearchPrompt("Grok Bot"),
     check: "Open two post links. Check their dates and words, and confirm any factual product claim with the original announcement.",
   },
   finish: "You can now spot the public posts worth reviewing without treating reactions as verified facts.",
