@@ -13,13 +13,20 @@
 .exampleQuestion{margin:0 0 12px;padding:14px;border:1px solid #b8c6f4;background:#fff;font-size:17px;font-weight:750;line-height:1.4}
 .exampleParts{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:13px}
 .exampleParts span{padding:8px 10px;border:1px solid #b8c6f4;background:#e4ebff;color:#172d9e;font-size:13px;font-weight:700}
+.sourceGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 12px}
+.sourceGrid article{min-width:0;padding:14px;border:1px solid #b8c6f4;background:#fff}
+.sourceGrid span{display:block;margin-bottom:6px;color:#203bb4;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.sourceGrid strong{display:block;font-size:16px;line-height:1.3}
+.sourceGrid p{margin:8px 0 10px;font-size:14px;line-height:1.5}
+.sourceGrid a{color:#172d9e;font-size:14px;font-weight:750}
+.takeaway{margin:0 0 12px;padding:12px;background:#e4ebff;font-size:15px;line-height:1.5}
 .exampleButton{min-height:44px;padding:9px 14px;border:0;background:#203bb4;color:#fff;font:700 14px var(--font-ui),Arial,sans-serif;cursor:pointer}
 .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:14px}
 .fields label{display:grid;gap:6px;min-width:0;color:#172d9e;font-size:14px;font-weight:700}
 .fields .full{grid-column:1/-1}
 .fields input{width:100%;min-height:44px;padding:9px 11px;border:1px solid #aab9ee;background:#fff;color:#1b2034;font:16px var(--font-ui),Arial,sans-serif}
 .prompt{position:relative;border:1px solid #aab9ee;background:#fff}
-.prompt summary{min-height:48px;padding:13px 90px 13px 12px;color:#172d9e;font-size:15px;font-weight:750;cursor:pointer}
+.prompt>strong{display:block;min-height:48px;padding:13px 90px 13px 12px;color:#172d9e;font-size:15px;font-weight:750}
 .prompt pre{overflow:auto;margin:0;padding:13px;border-top:1px solid #cbd5ff;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.55 ui-monospace,SFMono-Regular,monospace}
 .prompt button{position:absolute;top:7px;right:7px;min-height:35px;padding:7px 12px;border:0;background:#203bb4;color:#fff;font:700 13px var(--font-ui),Arial,sans-serif;cursor:pointer}
 .prompt button:disabled{opacity:.5;cursor:not-allowed}
@@ -34,9 +41,9 @@
 .stepBody strong{display:block;margin-bottom:5px;color:#172d9e}
 .stepBody p{margin:0}
 .checks{display:grid;gap:7px}
-.checks label{display:flex;align-items:start;gap:10px;padding:12px;border:1px solid #cbd5ff;background:#fff;font-size:15px;line-height:1.45;cursor:pointer}
-.checks input{flex:0 0 auto;width:19px;height:19px;margin:2px 0 0;accent-color:#203bb4}
+.checks>div{padding:12px;border:1px solid #cbd5ff;background:#fff;font-size:15px;line-height:1.45}
 .checks strong{display:block;margin-bottom:2px;color:#172d9e}
+.checks p{margin:0}
 .result{margin:10px 0 0;padding:11px;border:1px solid #aab9ee;background:#e4ebff;font-size:14px;line-height:1.45}
 .related{padding:34px 16px 48px;border-top:1px solid #cbd5ff;background:#e9eeff}
 .relatedInner{width:min(100%,820px);margin:auto}
@@ -51,4 +58,4 @@
 .relatedGrid span{color:#172d9e;font-size:13px;font-weight:700}
 .page :is(button,a,input,summary):focus-visible{outline:3px solid #203bb4;outline-offset:3px}
 @media(max-width:700px){.shell{width:min(100% - 28px,610px);padding-top:16px}.back{margin-bottom:24px}.hero h1{font-size:clamp(29px,8.5vw,34px)}.relatedGrid{grid-template-columns:1fr}}
-@media(max-width:560px){.activity{padding:15px}.fields{grid-template-columns:1fr}.stepNav{grid-template-columns:repeat(2,minmax(0,1fr))}.stepNav button{min-height:64px}}
+@media(max-width:560px){.activity{padding:15px}.fields,.sourceGrid{grid-template-columns:1fr}.stepNav{grid-template-columns:repeat(2,minmax(0,1fr))}.stepNav button{min-height:64px}}

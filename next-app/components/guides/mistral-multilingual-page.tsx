@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
-import { cleanLabel } from "./guide-icon";
+import { GuideAccessBoundary } from "./guide-access-boundary";
 import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./mistral-multilingual-page.module.css";
 
@@ -13,17 +13,16 @@ const example = {
   firstLanguage: "English",
   secondLanguage: "French",
   startDate: "2026-01-01",
-  endDate: "2026-08-31",
+  endDate: "2026-09-27",
 };
 
 export function MistralMultilingualPage({ guide }: { guide: GuidePage }) {
-  const [question, setQuestion] = useState("");
-  const [firstLanguage, setFirstLanguage] = useState("");
-  const [secondLanguage, setSecondLanguage] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+  const [question, setQuestion] = useState(example.question);
+  const [firstLanguage, setFirstLanguage] = useState(example.firstLanguage);
+  const [secondLanguage, setSecondLanguage] = useState(example.secondLanguage);
+  const [startDate, setStartDate] = useState(example.startDate);
+  const [endDate, setEndDate] = useState(example.endDate);
   const [step, setStep] = useState(0);
-  const [checked, setChecked] = useState<boolean[]>([false, false, false, false]);
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
   const setup = guide.sections[0];
@@ -71,7 +70,12 @@ export function MistralMultilingualPage({ guide }: { guide: GuidePage }) {
         <div className={styles.sectionHead}><span>See the job first</span><h2 id="bilingual-example-title">One question, two searches</h2></div>
         <p className={styles.exampleQuestion}>{example.question}</p>
         <div className={styles.exampleParts}><span>English + French</span><span>Official sources first</span><span>Original words beside translations</span></div>
-        <button className={styles.exampleButton} type="button" onClick={useExample}>Use this example</button>
+        <div className={styles.sourceGrid}>
+          <article><span>English page</span><strong>European Digital Innovation Hubs</strong><p>The European Commission says these hubs help businesses test technology and build skills.</p><a href="https://digital-strategy.ec.europa.eu/en/policies/edihs" target="_blank" rel="noopener noreferrer">Open the English page ↗</a></article>
+          <article><span>French page</span><strong>Pôles européens d’innovation numérique</strong><p>The Commission labels this page as machine translated. It is the same publisher and programme, not a second independent source.</p><a href="https://digital-strategy.ec.europa.eu/fr/policies/edihs" target="_blank" rel="noopener noreferrer">Open the French page ↗</a></article>
+        </div>
+        <p className={styles.takeaway}><strong>What to notice:</strong> Two languages do not mean two independent confirmations. Open the original page before using a claim.</p>
+        <button className={styles.exampleButton} type="button" onClick={useExample}>Reset to this example</button>
       </section>
 
       <section className={styles.activity} aria-labelledby="bilingual-build-title">
@@ -83,10 +87,12 @@ export function MistralMultilingualPage({ guide }: { guide: GuidePage }) {
           <label><span>Published after</span><input type="date" value={startDate} onChange={(event) => setStartDate(event.target.value)} /></label>
           <label><span>Published before</span><input type="date" value={endDate} onChange={(event) => setEndDate(event.target.value)} /></label>
         </div>
-        <div className={styles.prompt}><details open><summary>Complete research instruction</summary><pre>{prompt}</pre></details><button type="button" disabled={!ready} onClick={copyPrompt} aria-label="Copy the complete bilingual research instruction">{copied ? "Copied" : "Copy"}</button></div>
+        <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} variant="unlock" heading="Get the complete research request" guidePromise="Copy the request for Mistral and keep a link to return to this guide." actionLabel="Show the request">
+          <div className={styles.prompt}><strong>Complete request for Mistral</strong><pre>{prompt}</pre><button type="button" disabled={!ready} onClick={copyPrompt} aria-label="Copy the complete bilingual research request">{copied ? "Copied" : "Copy"}</button></div>
+        </GuideAccessBoundary>
         {!ready && <p className={styles.message}>Add a question, two different languages and a valid date range before copying.</p>}
         {copyError && <p className={styles.message} role="alert">Copy failed. Open the instruction and select the text instead.</p>}
-        <p className={styles.toolStep}><a href="https://chat.mistral.ai/" target="_blank" rel="noopener noreferrer">Open Mistral ↗</a> Choose Work, then <strong>+ → Tools → Web search</strong>. Paste the instruction into the chat. <a href="https://docs.mistral.ai/vibe/work/web-search-open-url" target="_blank" rel="noopener noreferrer">See Mistral’s current steps ↗</a></p>
+        <p className={styles.toolStep}><a href="https://chat.mistral.ai/" target="_blank" rel="noopener noreferrer">Open Mistral ↗</a> Choose Work. Select <strong>+</strong> or type <strong>/</strong>, then choose <strong>Tools → Web search</strong>. Paste the request into the chat. <a href="https://docs.mistral.ai/vibe/work/web-search-open-url" target="_blank" rel="noopener noreferrer">See Mistral’s steps ↗</a></p>
       </section>
 
       <section className={styles.activity} aria-labelledby="bilingual-steps-title">
@@ -97,10 +103,13 @@ export function MistralMultilingualPage({ guide }: { guide: GuidePage }) {
 
       <section className={styles.activity} aria-labelledby="bilingual-check-title">
         <div className={styles.sectionHead}><span>Before you use a claim</span><h2 id="bilingual-check-title">Open the source and check it</h2></div>
-        <div className={styles.checks}>{review.rows.map(([label, check], index) => <label key={label}><input type="checkbox" checked={checked[index] ?? false} onChange={() => setChecked((current) => current.map((value, i) => i === index ? !value : value))} /><span><strong>{label}</strong>{check}</span></label>)}</div>
-        <p className={styles.result} aria-live="polite">{checked.every(Boolean) ? "All four checks marked. Keep only the conclusions you can trace to an opened source." : `${checked.filter(Boolean).length} of 4 checks marked. Leave unsupported conclusions out of your notes.`}</p>
+        <div className={styles.checks}>{review.rows.map(([label, check]) => <div key={label}><strong>{label}</strong><p>{check}</p></div>)}</div>
+        <p className={styles.result}>A translated version of the same page is still one source. Find another publisher if the decision needs independent confirmation.</p>
       </section>
     </div>
-    <section className={styles.related} aria-labelledby="bilingual-related-title"><div className={styles.relatedInner}><h2 id="bilingual-related-title">Take the source-checking habit further</h2><div className={styles.relatedGrid}>{guide.related.map((item) => item.status === "coming-next" ? <article key={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Coming next</span></div></article> : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
+    <section className={styles.related} aria-labelledby="bilingual-related-title"><div className={styles.relatedInner}><h2 id="bilingual-related-title">Keep checking your sources</h2><div className={styles.relatedGrid}>
+      <GuideRelatedLink slug="what-is-ai"><figure><Image src="/images/guides/what-is-ai.webp" alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>What AI actually is</h3><p>Try a task and compare the answer with the original.</p><span>Start the guide →</span></div></GuideRelatedLink>
+      <GuideRelatedLink slug="what-should-you-never-share-with-ai"><figure><Image src="/images/guides/learn-master.webp" alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>What should you never share with AI?</h3><p>Decide what to leave out before you paste material into a tool.</p><span>Start the guide →</span></div></GuideRelatedLink>
+    </div></div></section>
   </main>;
 }
