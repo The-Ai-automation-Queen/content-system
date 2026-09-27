@@ -936,7 +936,7 @@ export const deepseekWallOfTextGuide = makeGuide({
   tryNow: {
     heading: "Reformat without rewriting",
     introduction: "Paste the scene above after this instruction.",
-    prompt: `Reformat this scene so it is easier to read.\n\nUse short paragraphs and place spoken dialogue on a new line when the speaker changes.\n\nKeep every character, fact, time, event, sentence meaning and the restrained tone. Do not add description, emotion, backstory or dialogue. Do not continue the scene.\n\nAfter the edited scene, list any words you changed.`,
+    prompt: `Reformat this scene so it is easier to read.\n\nUse short paragraphs and place spoken dialogue on a new line when the speaker changes.\n\nKeep every character, fact, time, event, sentence meaning and the restrained tone. Do not add description, emotion, backstory or dialogue. Do not continue the scene.\n\nReturn only the reformatted scene.`,
     check: "You are done when the scene is easier to scan and every protected fact, line and tone remains intact.",
   },
   finish: "You can now repair a dense scene without inviting a new story or a different voice.",
