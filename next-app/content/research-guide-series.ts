@@ -598,6 +598,7 @@ Do not treat your own earlier suggestions as approved decisions. Mark any item w
 
 export const mistralMultilingualResearchGuide = makeGuide({
   slug: "mistral-multilingual-research",
+  promptMode: "as-written",
   title: "Can Mistral research in two languages without losing the source?",
   promise: "Ask one question in two languages, keep every claim tied to its original source and compare what each language reveals.",
   coverAlt: "The Blue Princess aligning two differently scripted newspapers through a bilingual brass lens into one evidence ledger",
@@ -637,7 +638,7 @@ export const mistralMultilingualResearchGuide = makeGuide({
   tryNow: {
     heading: "Build a bilingual evidence table",
     introduction: "Replace the question, languages and date range.",
-    prompt: `Research this question: [QUESTION].
+    prompt: `Research this question: [QUESTION]
 
 Search in [LANGUAGE 1] and [LANGUAGE 2] for sources published between [START DATE] and [END DATE].
 
@@ -653,6 +654,8 @@ Create a table with these columns:
 - What this source does not prove
 
 Use primary or official sources first. Keep facts found in only one language separate. Do not translate a condition, estimate or possibility into a certain statement. If two sources conflict, show both and explain the difference without choosing a winner unless a stronger primary source resolves it.
+
+Check if a second-language page is a translation of the first page. If it is, label it as the same source rather than independent confirmation. If you cannot open a page or verify an exact extract, write "Needs checking" instead of inventing one.
 
 End with 3 conclusions supported by the table and 3 questions that still need research.`,
     check: "Open each source, find the original extract and compare it with the translation. Remove any conclusion that lacks a verified source in the table.",
