@@ -98,7 +98,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "is-kimi-worth-paying-for") return <KimiValuePage guide={guide} />;
   if (slug === "make-work-tracker-with-kimi") return <KimiSheetsPage guide={guide} />;
   if (slug === "manus-browser-workflow") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Choose the least access Manus needs, then test the browser route safely if your job requires it. Enter your email to open the guide." variant="entry"><ManusBrowserPage guide={guide} /></GuideAccessBoundary>;
-  if (slug === "what-is-an-ai-browser") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Compare two public pages with an AI browser, then check what it may see or remember. Enter your email to open the guide." variant="entry"><AiBrowserPage guide={guide} /></GuideAccessBoundary>;
+  if (slug === "what-is-an-ai-browser") return <AiBrowserPage guide={guide} />;
   if (slug === "connect-ai-to-email-files-calendar") return <AiConnectionsPage guide={guide} />;
   if (slug === "ai-skills-worth-learning-for-work") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Choose one skill to practise on a task you already do at work. Enter your email to open the guide." variant="entry"><AiSkillsPage guide={guide} /></GuideAccessBoundary>;
   if (slug === "show-up-in-ai-search") return <AiSearchPage guide={guide} />;
