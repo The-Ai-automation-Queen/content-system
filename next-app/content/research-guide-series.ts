@@ -282,7 +282,7 @@ After creating it, give me the item title, the app where it was created and the 
 export const copilotVisibilityGuide = makeGuide({
   slug: "what-can-copilot-see-at-work",
   promptMode: "as-written",
-  title: "Can Copilot make your morning inbox easier?",
+  title: "Get through your inbox with Copilot",
   promise: "Set up a checked morning email brief, then schedule it if your work account supports it.",
   coverAlt: "The Blue Princess using a brass viewing scope to inspect three separate locked cabinets for mail files and meetings",
   seoDescription: "Build a practical Copilot inbox brief, check it against Outlook, and schedule the prompt when available.",
@@ -306,7 +306,7 @@ export const copilotVisibilityGuide = makeGuide({
     {
       kind: "steps",
       heading: "Use your own inbox, with your organisation’s permission",
-      introduction: "Copilot Chat needs work-data access for this task. A web-only chat cannot inspect your inbox.",
+      introduction: "Start in Outlook with your work account. What Copilot can see depends on your organisation's setup and licence.",
       steps: [
         { title: "Open Copilot Chat", body: "Sign in with your work account in Outlook or the Microsoft Copilot app. Check that work data is available." },
         { title: "Run one complete prompt", body: "Ask for up to five recent messages that appear to need a reply, why they matter, and a link to each source." },
