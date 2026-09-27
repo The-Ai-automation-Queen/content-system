@@ -407,16 +407,16 @@ Do not purchase, subscribe, book, add to a basket, sign in, contact a seller or 
 export const grokRepeatedImageEditsGuide = makeGuide({
   slug: "test-grok-repeated-image-edits",
   promptMode: "as-written",
-  title: "How many times can you edit a Grok image before it changes the parts you approved?",
-  promise: "Save a master image, change one thing at a time and compare each version before the next edit.",
+  title: "Can Grok edit one detail without changing the rest?",
+  promise: "Save the original, request one clear change and compare the result before using it.",
   coverAlt: "The Blue Princess comparing four prints from one image press while protecting the approved master under glass",
-  seoDescription: "Test repeated Grok image edits without losing approved composition, colours or objects.",
+  seoDescription: "Try one focused Grok Imagine edit and check the result against the original image before using it.",
   sources: [
     { label: "xAI: Image editing use case", url: "https://x.ai/grok/use-cases/image-editing" },
     { label: "xAI: Grok Imagine Image 2", url: "https://x.ai/news/grok-imagine-image-2" },
   ],
   answer: [
-    "**Every new edit can affect more than the requested detail.** Keep the approved image as the master and inspect the complete frame after each change.",
+    "**An edit is useful only if the rest of the image still works.** Save the original and compare the whole result, not just the part you asked Grok to change.",
   ],
   sections: [
     {
@@ -443,27 +443,23 @@ export const grokRepeatedImageEditsGuide = makeGuide({
     },
   ],
   tryNow: {
-    heading: "Run a three-edit stability test",
-    introduction: "Upload the saved master before each test so every version starts from the same approved image.",
-    prompt: `Edit the uploaded master image.
+    heading: "Try one focused image edit",
+    introduction: "Upload the original image, change one detail and list what must stay the same.",
+    prompt: `Edit the image I uploaded. Use it as the source for this edit, not a description to generate a new image.
 
-Change only this detail: [ONE VISIBLE CHANGE].
+Change only this: [ONE VISIBLE CHANGE]
 
-Keep all of these unchanged:
-- [SUBJECT AND POSE]
-- [COMPOSITION AND CAMERA ANGLE]
-- [BACKGROUND]
-- [COLOUR PALETTE]
-- [OBJECTS THAT MUST REMAIN]
-- [LIGHTING OR ILLUSTRATION STYLE]
+Keep this unchanged: [LOCKED DETAILS]
 
-Do not add text, logos, watermarks, people or objects. Do not crop, rotate or extend the image. If the requested change would require altering a locked detail, stop and explain the conflict instead of generating the edit.`,
-    check: "Repeat with three different one-detail edits, always from the master. Keep Grok for this workflow only if the requested edits pass without changing the lock list.",
+Preserve the frame size and the details outside the requested area. Do not add new people, objects or text. If the requested change conflicts with something I asked you to keep, tell me before making the edit.
+
+Show me the edited image. I will compare it with the original before using it.`,
+    check: "Put the edited image beside the original. Keep it only if the requested detail changed and the parts you named stayed intact.",
   },
-  finish: "You now have a controlled test for whether Grok can revise an image without slowly replacing it.",
+  finish: "You can now make a focused edit and decide if the result is ready to use.",
   related: [
-    promptGuide("review-grok-suggestions", "Did Grok catch an error or rewrite your work?", "Use the same keep-or-reject habit for text suggestions."),
-    promptGuide("get-better-professional-writing-from-grok", "Why is Grok’s professional writing too thin?", "Improve a written result with a structured brief."),
+    promptGuide("review-grok-suggestions", "When should Grok Bot ask you first?", "Keep control of a Bot before it acts on your behalf."),
+    promptGuide("get-better-professional-writing-from-grok", "Can Grok Bot take one recurring check off your plate?", "Test a source-linked brief before repeating it."),
     promptGuide("verify-grok-current-research", "How do you verify research from Grok?", "Check evidence when the task moves from images to current information."),
   ],
 });

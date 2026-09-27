@@ -2,3 +2,5 @@
 @media(max-width:700px){.shell{width:min(100% - 28px,610px);padding-top:16px}.back{margin-bottom:24px}.hero h1{font-size:clamp(29px,8.5vw,34px)}.relatedGrid{grid-template-columns:1fr}}
 @media(max-width:560px){.learning{padding:15px}.map{grid-template-columns:1fr}.map article{padding:11px}.map h3{margin:3px 0}.map p{font-size:14px}}
 .workedExample{margin-top:10px;padding:12px 13px;border:1px solid #b8c6f4;background:#e7f0ff;font-size:15px;line-height:1.5}.workedExample strong{color:#172d9e}.workedExample p{margin:4px 0 0}.workedExample a{color:#172d9e;font-weight:700;text-underline-offset:2px}
+.learning>p a{color:#172d9e;font-weight:700}.prompt>strong{display:block;min-height:48px;padding:13px 92px 13px 12px;color:#172d9e;font-size:15px}.reviewGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.reviewGrid>div{min-width:0;padding:13px;border:1px solid #b8c6f4;background:#fff}.reviewGrid strong{display:block;color:#172d9e;font-size:15px}.reviewGrid p{margin:6px 0 0;font-size:14px;line-height:1.5}.relatedGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:700px){.reviewGrid,.relatedGrid{grid-template-columns:1fr}}

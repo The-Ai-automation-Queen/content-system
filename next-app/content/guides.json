@@ -1302,8 +1302,8 @@
     },
     {
       "slug": "verify-grok-current-research",
-      "title": "Can Grok research a current topic without turning posts into facts?",
-      "h1": "Can Grok research a current topic without turning posts into facts?",
+      "title": "Can Grok Bot find the X posts worth your attention?",
+      "h1": "Can Grok Bot find the X posts worth your attention?",
       "datePublished": "2026-09-20",
       "dateModified": "2026-09-20",
       "readMinutes": 5,
@@ -1323,7 +1323,7 @@
         "current research",
         "source checking"
       ],
-      "summary": "Keep public reaction separate from claims you verified in opened primary sources.",
+      "summary": "Get direct X links for a public topic, then check which posts deserve your attention.",
       "sequence": 209
     },
     {
@@ -1432,8 +1432,8 @@
     },
     {
       "slug": "manus-browser-workflow",
-      "title": "When does a Manus browser workflow make sense?",
-      "h1": "When does a Manus browser workflow make sense?",
+      "title": "Does Manus need your browser at all?",
+      "h1": "Does Manus need your browser at all?",
       "datePublished": "2026-09-20",
       "dateModified": "2026-09-20",
       "readMinutes": 6,
@@ -1754,11 +1754,11 @@
     },
     {
       "slug": "test-grok-repeated-image-edits",
-      "title": "How many times can you edit a Grok image before it changes the parts you approved?",
-      "h1": "How many times can you edit a Grok image before it changes the parts you approved?",
+      "title": "Can Grok edit one detail without changing the rest?",
+      "h1": "Can Grok edit one detail without changing the rest?",
       "datePublished": "2026-09-23",
       "dateModified": "2026-09-23",
-      "readMinutes": 6,
+      "readMinutes": 5,
       "cover": "/images/guides/test-grok-repeated-image-edits.webp",
       "track": "create",
       "status": "live",
@@ -1774,9 +1774,9 @@
       "tags": [
         "Grok",
         "image editing",
-        "version control"
+        "image review"
       ],
-      "summary": "Save a master image and test whether each one-detail edit preserves the approved parts.",
+      "summary": "Save the original, make one focused edit and check the whole result before using it.",
       "sequence": 225
     },
     {

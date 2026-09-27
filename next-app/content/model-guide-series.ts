@@ -490,17 +490,16 @@ Stop after this one brief. Do not repeat the search automatically.`,
 export const verifyGrokResearchGuide = makeGuide({
   slug: "verify-grok-current-research",
   promptMode: "as-written",
-  title: "Can Grok research a current topic without turning posts into facts?",
-  promise: "Use Grok to find the conversation, then separate public reaction from claims you verified in primary sources.",
+  title: "Can Grok Bot find the X posts worth your attention?",
+  promise: "Get a short brief with direct X links, then decide which posts deserve your attention.",
   coverAlt: "The Blue Princess tracing many speech bubbles back to one opened official document",
-  seoDescription: "Use Grok for current research while keeping social posts separate from verified facts.",
+  seoDescription: "Ask Grok Bot for current X posts with direct links, then separate public reaction from verified product facts.",
   sources: [
-    { label: "X: About Grok", url: "https://help.x.com/en/using-x/about-grok" },
-    { label: "xAI: Grok", url: "https://x.ai/grok" },
-    { label: "Meta: Introducing Muse", url: "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" },
+    { label: "xAI: Grok Bot now works with X", url: "https://x.ai/news/grok-bot-and-x" },
+    { label: "xAI: Introducing Grok 4.7", url: "https://x.ai/news/grok-4-7" },
   ],
   answer: [
-    "**Grok can surface fast-moving discussion, but repetition is not proof.** Keep every important source link and mark what you could not confirm.",
+    "**A post can show what people are asking or saying.** Open its direct link before you use it, and check product claims at the original source.",
   ],
   sections: [
     {
@@ -524,15 +523,15 @@ export const verifyGrokResearchGuide = makeGuide({
     },
   ],
   tryNow: {
-    heading: "Research one harmless current question",
-    introduction: "Avoid health, money, legal rights and personal safety for this first test.",
-    prompt: grokResearchPrompt("[WRITE ONE PUBLIC QUESTION]"),
-    check: "You are done when every confirmed claim has an opened source and social reaction remains separate from verified facts.",
+    heading: "Find the posts worth opening",
+    introduction: "Start with Grok 4.7, or enter a public topic relevant to your work.",
+    prompt: grokResearchPrompt("Grok 4.7"),
+    check: "Open two post links. Check their dates and words, and confirm any factual product claim with the original announcement.",
   },
-  finish: "You can now use Grok as a route into current discussion without treating the discussion itself as evidence.",
+  finish: "You can now spot the public posts worth reviewing without treating reactions as verified facts.",
   related: [
     promptGuide("review-grok-suggestions", "When should Grok Bot ask you first?", "Choose which Bot actions need your approval."),
-    promptGuide("get-better-professional-writing-from-grok", "Why is Grok’s professional writing too thin?", "Turn checked evidence into a structured draft."),
+    promptGuide("get-better-professional-writing-from-grok", "Can Grok Bot take one recurring check off your plate?", "Test a source-linked brief before repeating it."),
     existingGuide("what-is-a-prompt", "Write a prompt that gets a useful answer", "Build another instruction with a clear evidence check.", "/images/guides/what-is-a-prompt.webp"),
   ],
 });
@@ -693,7 +692,7 @@ export const manusCreditTestGuide = makeGuide({
 export const manusBrowserWorkflowGuide = makeGuide({
   slug: "manus-browser-workflow",
   promptMode: "as-written",
-  title: "When does a Manus browser workflow make sense?",
+  title: "Does Manus need your browser at all?",
   promise: "Use the cloud browser for public work, a connector for one supported service, and Browser Operator only when the task truly needs your signed-in browser.",
   coverAlt: "The Blue Princess choosing between a public cloud browser, one connector key and a guarded local browser door",
   seoDescription: "Choose the safest Manus browser route and test one controlled workflow before granting account access.",
@@ -725,7 +724,7 @@ export const manusBrowserWorkflowGuide = makeGuide({
         { title: "Turn on My Browser", body: "Open Manus connectors, enable **My Browser** and authorise the browser only when the task requests it." },
         { title: "Use a new task tab", body: "Watch the dedicated tab and confirm it opened the intended site and account." },
         { title: "Intervene when needed", body: "Click into the tab to take control. Close the task tab to stop the browser work immediately." },
-        { title: "Remove access afterwards", body: "Disable or remove the connector. Removing a connector clears its saved login information and credentials." },
+        { title: "Remove access afterwards", body: "When the job is done, close the task tab and review the access you granted in Manus and your browser. Remove any connection you no longer need." },
       ],
     },
     {

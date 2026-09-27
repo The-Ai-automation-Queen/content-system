@@ -91,13 +91,13 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "meta-ai") return <MetaMusePage guide={guide} />;
   if (slug === "test-meta-muse-money-saving-task") return <MetaMuseSavingPage guide={guide} />;
   if (slug === "what-is-a-prompt") return <PromptBuilderPage guide={guide} />;
-  if (slug === "verify-grok-current-research") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Separate current conversation from claims you can verify in opened sources. Enter your email to open the guide." variant="entry"><GrokResearchPage guide={guide} /></GuideAccessBoundary>;
+  if (slug === "verify-grok-current-research") return <GrokResearchPage guide={guide} />;
   if (slug === "get-better-professional-writing-from-grok") return <GrokWritingPage guide={guide} />;
   if (slug === "fix-deepseek-wall-of-text") return <DeepseekWallPage guide={guide} />;
   if (slug === "edit-long-writing-with-deepseek") return <DeepseekLongEditPage guide={guide} />;
   if (slug === "is-kimi-worth-paying-for") return <KimiValuePage guide={guide} />;
   if (slug === "make-work-tracker-with-kimi") return <KimiSheetsPage guide={guide} />;
-  if (slug === "manus-browser-workflow") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle={guide.title} guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Choose the least access Manus needs, then test the browser route safely if your job requires it. Enter your email to open the guide." variant="entry"><ManusBrowserPage guide={guide} /></GuideAccessBoundary>;
+  if (slug === "manus-browser-workflow") return <ManusBrowserPage guide={guide} />;
   if (slug === "what-is-an-ai-browser") return <AiBrowserPage guide={guide} />;
   if (slug === "connect-ai-to-email-files-calendar") return <AiConnectionsPage guide={guide} />;
   if (slug === "ai-skills-worth-learning-for-work") return <AiSkillsPage guide={guide} />;
@@ -106,7 +106,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "teach-claude-a-repeatable-workflow") return <ClaudeWorkflowPage guide={guide} />;
   if (slug === "protect-a-long-deepseek-project") return <DeepseekRecoveryPage guide={guide} />;
   if (slug === "test-deepseek-v4-document-work") return <DeepseekDocumentPage guide={guide} />;
-  if (slug === "test-grok-repeated-image-edits") return <GuideAccessBoundary guideSlug={guide.slug} guideTitle="Keep Grok image edits on track" guideCover={guide.cover} guideCoverAlt={guide.coverAlt} guidePromise="Test three one-detail Grok image edits against an approved master. Enter your email to open the guide." variant="entry"><GrokImageEditsPage guide={guide} /></GuideAccessBoundary>;
+  if (slug === "test-grok-repeated-image-edits") return <GrokImageEditsPage guide={guide} />;
   if (slug === "mistral-multilingual-research") return <MistralMultilingualPage guide={guide} />;
   if (legacyGuideSlugs.has(slug)) return <GuideReadingPage guide={guide} />;
   throw new Error(`Guide ${slug} needs an approved interactive Next.js composition before it can be built.`);
