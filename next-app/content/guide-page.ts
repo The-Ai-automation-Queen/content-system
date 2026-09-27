@@ -786,10 +786,9 @@ export const whichAiToolGuide = {
   sourceNotes: [
     { label: "OpenAI: What is ChatGPT?", url: "https://help.openai.com/en/articles/12677804-what-is-chatgpt-faq" },
     { label: "Anthropic: What can I use Claude for?", url: "https://support.anthropic.com/en/articles/7996845-what-are-some-things-i-can-use-claude-for" },
-    { label: "Google: Workspace with Gemini", url: "https://knowledge.workspace.google.com/admin/generative-ai/workspace-with-gemini/google-workspace-with-gemini" },
-    { label: "Microsoft: Microsoft 365 Copilot overview", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview" },
-    { label: "Perplexity: How Perplexity works", url: "https://www.perplexity.ai/help-center/en/articles/10352895-how-does-perplexity-work" },
-    { label: "Google: NotebookLM is now Gemini Notebook", url: "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/" },
+    { label: "Google: Using Workspace with Gemini", url: "https://support.google.com/a/users/answer/15146419?hl=en" },
+    { label: "Microsoft: Copilot Chat with and without a licence", url: "https://support.microsoft.com/en-us/microsoft-365-copilot/how-copilot-chat-works-with-and-without-a-microsoft-365-copilot-license" },
+    { label: "Perplexity: Pro Search and sources", url: "https://www.perplexity.ai/help-center/en/articles/10352903-what-is-pro-search" },
     { label: "xAI: Grok", url: "https://x.ai/grok" },
     { label: "DeepSeek", url: "https://www.deepseek.com/en/" },
     { label: "Kimi: product overview", url: "https://www.kimi.ai/help/getting-started/overview" },
@@ -811,19 +810,19 @@ export const whichAiToolGuide = {
       items: [
         {
           title: "Everyday writing and thinking",
-          body: "Start with **ChatGPT, Claude or Gemini**. All 3 can help you draft, explain, summarise, organise ideas and work with files. Test the same task in 2 of them and keep the answer that is easiest to use and check.",
+          body: "Start with a chat tool you already have. For a non-confidential note, run the same small request in two tools only if comparing them would help you choose.",
         },
         {
           title: "Work inside Microsoft 365",
-          body: "Look at **Microsoft Copilot** when your work already happens in Word, Excel, PowerPoint, Outlook and Teams.",
+          body: "Check **Microsoft Copilot Chat** in your work account. Access to work email, meetings, chats and files depends on your licence and permissions.",
         },
         {
           title: "Work inside Google Workspace",
-          body: "Look at **Gemini** when your work already lives in Gmail, Docs, Sheets, Slides and Drive.",
+          body: "Check **Gemini in Google Workspace** when your work is in Gmail or Docs. Your organisation may restrict the feature or its access to content.",
         },
         {
           title: "Research you need to verify",
-          body: "Use **Perplexity** for current web research with visible sources. Use **Gemini Notebook** when you want answers based on documents and sources you selected yourself.",
+          body: "Try **Perplexity** for public web research with source links you can open and check.",
         },
       ],
     },
@@ -864,104 +863,24 @@ export const whichAiToolGuide = {
         },
       ],
     },
-    {
-      kind: "prose",
-      heading: "What about Codex and Claude Code?",
-      paragraphs: [
-        "**Codex and Claude Code are advanced tools for working inside software projects.**",
-        "You do not need them to write an email, understand a document or research a topic. We will cover them properly in the ChatGPT and Claude guides.",
-      ],
-    },
-    {
-      kind: "steps",
-      heading: "Do not buy several subscriptions yet",
-      introduction: "Test the same real task before you make a decision.",
-      steps: [
-        {
-          title: "Choose one task you understand",
-          body: "Use work you already know well, so you can recognise a weak or wrong result.",
-        },
-        {
-          title: "Test no more than 2 tools",
-          body: "Give both tools the same information and ask for the same result.",
-        },
-        {
-          title: "Compare what matters",
-          body: "Check which answer was more useful, needed fewer corrections, was easier to work with and fitted the apps you already use.",
-        },
-        {
-          title: "Check the account before real work",
-          body: "Confirm that the tool and account are approved for the information you need to use.",
-        },
-      ],
-    },
-    {
-      kind: "steps",
-      heading: "Never used an AI chat tool? Start here",
-      introduction: "Use one free chat tool to create your shortlist. You do not need to subscribe first.",
-      steps: [
-        {
-          title: "Open one AI chat tool",
-          body: "Choose any one you can access.",
-          links: [
-            { label: "Open ChatGPT", href: "https://chatgpt.com/" },
-            { label: "Open Claude", href: "https://claude.ai/" },
-            { label: "Open Gemini", href: "https://gemini.google.com/" },
-          ],
-        },
-        {
-          title: "Start a new conversation",
-          body: "Choose **New chat**, the plus sign or the empty message box.",
-        },
-        {
-          title: "Copy the instruction below",
-          body: "Click **Copy**, paste it into the message box and replace the words inside square brackets.",
-        },
-        {
-          title: "Remove private information",
-          body: "Do not include names, customer details, passwords, confidential files or private conversations.",
-        },
-        {
-          title: "Send it",
-          body: "Answer the questions one at a time, then verify the recommendation on the provider’s official pages.",
-        },
-      ],
-    },
   ],
   tryNow: {
-    heading: "Try it now: build your shortlist",
-    introduction: "Copy this into one AI chat tool. You will finish with no more than 2 options to test.",
-    prompt: `Help me choose one AI tool for this job:
+    heading: "Try a small task before choosing a tool",
+    introduction: "Use this complete request in a chat tool you already have, then check the answer against your original note.",
+    prompt: `Turn the following non-confidential project note into a five-bullet update I can edit for my team.
 
-[Describe the task you want help with.]
+NOTE
+[Paste a short note you wrote yourself, or a made-up example. Remove private names, customer details and confidential information.]
 
-My work mainly lives in:
+Write exactly five bullets: progress, blocker, next action, owner and date. Use only the note. If the note does not name an owner or date, write "Not stated" for that bullet. Do not invent decisions, commitments or completed work.
 
-[Microsoft 365, Google Workspace or other tools.]
-
-The information involved is:
-
-[Public, internal or confidential.]
-
-Ask me up to 5 short questions, one at a time.
-
-Then recommend no more than 2 options from ChatGPT, Claude, Gemini, Microsoft Copilot, Perplexity, Gemini Notebook, Grok, DeepSeek, Kimi, Manus, Meta AI or Mistral Le Chat.
-
-For each option, explain:
-
-1. Why it fits this task.
-2. What I should test first.
-3. What information I should not share.
-4. What limitation I should watch for.
-5. Which official product, pricing and privacy pages I should check.
-
-Do not recommend a tool simply because it is popular.`,
-    check: "Treat the answer as a shortlist, not a final decision. Open the official links and check the current plan, privacy terms and availability before connecting files or paying.",
+After the five bullets, add one line headed "Check before sending" that names the facts I should compare with my original note. Keep the language plain and the whole update under 120 words.`,
+    check: "Compare each bullet with your original note. Keep the draft only after correcting missing facts and anything the tool invented.",
   },
   conclusion: {
-    heading: "You now have a shortlist",
+    heading: "Keep the tool that helped",
     paragraphs: [
-      "You have one real task, one tool to test, a reason it fits, a clear idea of what you will not share and a result you know how to check.",
+      "You have tried a tool on a task you understand and checked the result against the original.",
     ],
     finishLine: "Do not collect tools. Choose one, test it properly and keep it only if it makes the work easier to finish.",
   },

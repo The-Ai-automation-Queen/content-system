@@ -44,6 +44,11 @@ if (onlySlug && !approvedSlugs.has(onlySlug)) globalProblems.push(`Unknown appro
 
 const iconSource = read("next-app", "components", "guides", "guide-icon.tsx");
 if (iconSource.includes("m4 6 6 6-6 6 M13 18h7")) globalProblems.push("Old >_ prompt icon is still in the shared GuideIcon component.");
+const accessBoundarySource = read("next-app", "components", "guides", "guide-access-boundary.tsx");
+const accessBoundaryCss = read("next-app", "components", "guides", "guide-reading-page.module.css");
+if (/variant\s*===\s*["']entry["']|captureEntryTransition|role=["']dialog["']/.test(accessBoundarySource + accessBoundaryCss)) {
+  globalProblems.push("The former opening popup path still exists in the shared guide access component.");
+}
 
 const guideComponents = fromRoot("next-app", "components", "guides");
 for (const filename of fs.readdirSync(guideComponents)) {
@@ -164,6 +169,9 @@ for (const { slug, lumailTag } of approved) {
     else {
       const html = fs.readFileSync(htmlPath, "utf8");
       const publicHtml = html.replace(/<(?:script|style|noscript)\b[^>]*>[\s\S]*?<\/(?:script|style|noscript)>/gi, " ");
+      if (/\b(?:review mode|approved and unpublished|internal note|editorial note|placeholder copy|draft guide)\b/i.test(publicHtml)) {
+        problems.push("Internal production wording appears in reader-facing copy");
+      }
       if (!html.includes("data-guide-capture-boundary") && !stagedInlineForm) problems.push("Inline email form missing");
       if (html.includes("captureEntryTransition") || html.includes('role="dialog"') || html.includes("Free practical guide")) {
         problems.push("Old pre-guide popup still rendered");
