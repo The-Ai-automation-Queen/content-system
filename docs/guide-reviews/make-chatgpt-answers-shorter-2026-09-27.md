@@ -1,15 +1,10 @@
-# Why does ChatGPT keep giving you an essay? — editorial review
+# Why does ChatGPT keep giving you an essay? — review
 
-Status: held for review. The page is not in the live guide library.
+Status: Review. No publication approval was inferred from this edit.
 
-- Reader: a professional who needs shorter, accurate answers from ChatGPT.
-- Question: how do I ask for a short answer without losing an open decision or inventing a fact?
-- Useful result: a reusable length-and-format instruction, tested on an onboarding checklist example.
-- Level: beginner. The pre-capture section now shows the three source facts, an incorrect short sentence, and an accurate short sentence. The complete copyable prompt follows the inline form.
-- Current product instruction: open ChatGPT, start a new chat and paste the sample prompt. [OpenAI's prompting guidance](https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt) supports specifying the task, context and desired format, then reviewing and refining the answer.
-- Existing cover reused. The interactive vague-to-specific choices remain; the example now makes the consequence visible before asking for email. The page promises a reusable limit and structure, matching the full prompt it provides. The four result checks are a scannable reference rather than decorative click-to-complete controls.
-- Shared capture form: fixed first-name/last-name field alignment. Desktop and 390px phone layouts are readable with no horizontal overflow. Name, email and separate optional marketing consent remain.
-- Related cards now point to two approved, live guides with distinct reasons to read. There is no link to a held guide.
-- Technical checks: Next.js static build and guide validator passed; desktop, 768px tablet and 390px phone layouts inspected without horizontal overflow. The shared form's two name fields and email field align correctly. The complete prompt is visible in review mode, and its Copy button places the full prompt on the clipboard. A forced-gate preview shows the inline form and keeps the prompt hidden.
-
-Remaining before approval: test guide-specific Lumail delivery and emailed return link; perform final editorial review of the copy. Keep this page in review until these are resolved.
+- Reader and result: a busy professional turns rough project facts into a short meeting update, then checks that no approval, owner or date was invented.
+- Content change: replaced an arbitrary three-questions/two-decisions exercise with a 60-word, three-bullet status update. The public example uses the same facts as the complete prompt and appears before the form.
+- Source: OpenAI's current [prompting guidance](https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt) supports clear, specific requests and checking and refining the result. No paid plan or feature is required by this guide.
+- Capture: compact inline Lumail form appears after the example and before the complete prompt. It promises only the prompt, answer check and return link.
+- Browser: reviewed at desktop and 390 px phone width. The three comparison choices work on phone; the guide has no horizontal overflow. The complete prompt is visible in review mode, and Copy placed the complete revised prompt on the clipboard. The two related routes point to approved clean guide URLs.
+- Release state: keep in Review until the owner approves this revised copy and rendered page. No live form submission was made for this draft.
