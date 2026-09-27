@@ -255,28 +255,21 @@ export const aiSkillsGuide = {
     ] },
   ],
   tryNow: {
-    heading: "Build your learning plan",
-    introduction: "Use a list of everyday tasks from your work. Remove private names and details.",
-    prompt: `Here are tasks I regularly do at work:
+    heading: "Practise one useful skill",
+    introduction: "Start with one familiar task. Use a public, invented or non-confidential example.",
+    prompt: `I want to practise one AI skill on a task I already know how to do.
 
-[Paste 5 to 10 tasks]
+Task: [Describe one familiar task]
+Skill to practise: [Choose clearer instructions, better sources, checking results, protecting information or keeping the final decision].
 
-For each task, tell me:
-
-1. Where AI could save time.
-2. What information I would need to provide.
-3. What I would still need to check myself.
-4. What could go wrong.
-5. Which skill I should practise first: giving instructions, choosing sources, checking results, protecting information or making the final decision.
-
-Keep the advice practical. Do not recommend buying a tool.`,
+Give me one small exercise I can finish this week. Tell me what to prepare, what to ask the tool to do and how to compare the result with the original. Do not invent facts about my work or suggest that I buy a new tool. Use only public, invented or non-confidential material. Keep your answer to one exercise and one check. I will decide if the result is suitable for real work.`,
     instructions: [
-      { title: "List familiar tasks", body: "Use 5 to 10 tasks you already know how to complete and assess." },
-      { title: "Remove private details", body: "Replace names, customers and confidential information with general descriptions." },
-      { title: "Copy and paste", body: "Select **Copy**, paste the instruction into an AI chat and add your task list." },
-      { title: "Choose one practice", body: "Pick one skill and one task to practise this week." },
+      { title: "Choose a familiar task", body: "Pick one task you know well enough to judge." },
+      { title: "Choose one skill", body: "Use the part of that task that most often slows you down." },
+      { title: "Keep details safe", body: "Use public, invented or non-confidential material for the exercise." },
+      { title: "Check the result", body: "Compare the result with the original before using it at work." },
     ],
-    check: "A useful plan names one skill you can practise through real work, not a list of tools to buy.",
+    check: "The exercise should help with one familiar task and give you a way to judge the result.",
   },
   conclusion: {
     heading: "You have a learning plan that can survive the next update",
