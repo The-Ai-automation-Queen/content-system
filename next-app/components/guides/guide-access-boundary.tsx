@@ -112,7 +112,6 @@ export function GuideAccessBoundary({
               <span>Also send me new guides and updates (optional, unsubscribe anytime).</span>
             </label>
             <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Opening guide..." : (actionLabel || "Open the rest of the guide")}</button>
-            <small>We email you the link. <a href="/privacy.html">Privacy</a></small>
             {status === "error" && <strong role="alert">{message}</strong>}
           </form>
           </div>
