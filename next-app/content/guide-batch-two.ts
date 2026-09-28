@@ -12,8 +12,7 @@ const prompt4: BatchGuide = {
   level: "Beginner",
   minutes: 5,
   tool: "ChatGPT, Claude or Gemini",
-  hero: { title: "The 4-line prompt that works in", accent: "any AI.", line: "Four short lines. Paste them into ChatGPT, Claude or Gemini and get an answer you can use.", tool: "Any AI", art: { kind: "pose", src: "/images/mascot/pointing-right.webp", alt: "The blue robot mascot pointing to the right" } },
-  illustration: { src: "/images/guides/what-is-a-prompt.webp", alt: "The blue robot mascot turning a rough note into ordered shapes with a brass instruction press", caption: "The magic isn't the wording. It's the missing information.", afterSection: 1 },
+  hero: { title: "The 4-line prompt that works in", accent: "any AI.", line: "Four short lines. Paste them into ChatGPT, Claude or Gemini and get an answer you can use.", tool: "Any AI", art: { kind: "scene", src: "/images/guides/what-is-a-prompt.webp", alt: "The blue robot mascot turning a rough note into ordered shapes with a brass instruction press" } },
   leaveWith: "a 4-line prompt you can reuse for any task, a worked example, and one line that makes the AI ask you questions before it guesses.",
   howTo: "Read the 4 lines, look at the before-and-after, then try the full prompt with the example note. Swap in your own task once you've seen a good answer.",
   sections: [
@@ -86,8 +85,7 @@ const weeklyJob: BatchGuide = {
   level: "Intermediate",
   minutes: 20,
   tool: "Claude",
-  hero: { title: "Teach Claude a job once, reuse it", accent: "every week.", line: "Turn one weekly task into a saved instruction you test once and reuse.", tool: "Claude", art: { kind: "pose", src: "/images/mascot/wave-point.webp", alt: "The blue robot mascot waving and pointing" } },
-  illustration: { src: "/images/guides/teach-claude-a-repeatable-workflow.webp", alt: "The blue robot mascot feeding scattered notes into a machine that stacks them into neat pages", caption: "Same notes in, same clear update out, every week.", afterSection: 0 },
+  hero: { title: "Teach Claude a job once, reuse it", accent: "every week.", line: "Turn one weekly task into a saved instruction you test once and reuse.", tool: "Claude", art: { kind: "scene", src: "/images/guides/teach-claude-a-repeatable-workflow.webp", alt: "The blue robot mascot feeding scattered notes into a machine that stacks them into neat pages" } },
   leaveWith: "a tested weekly-update instruction, the 4-part template to build your own, and a 2-week test that proves it works.",
   howTo: "Run the example with last week's notes (remove anything confidential). Fix what goes wrong, test with a second week, and only then save it.",
   sections: [
@@ -164,8 +162,7 @@ const claudeProjectsBatch: BatchGuide = {
   level: "Beginner",
   minutes: 10,
   tool: "Claude",
-  hero: { title: "Stop retyping your instructions", accent: "to Claude.", line: "Save your instructions once in a Claude Project. Every chat inside it can use them.", tool: "Claude", art: { kind: "pose", src: "/images/mascot/seated.webp", alt: "The blue robot mascot sitting and smiling" } },
-  illustration: { src: "/images/guides/claude-projects.webp", alt: "The blue robot mascot filing a checked instruction card in a brass filing cabinet", caption: "File the instructions once. Bring only the new notes.", afterSection: 0 },
+  hero: { title: "Stop retyping your instructions", accent: "to Claude.", line: "Save your instructions once in a Claude Project. Every chat inside it can use them.", tool: "Claude", art: { kind: "scene", src: "/images/guides/claude-projects.webp", alt: "The blue robot mascot filing a checked instruction card in a brass filing cabinet" } },
   leaveWith: "a meeting-notes Project you can reuse, the instructions to paste into it, and a test note that shows it's working.",
   howTo: "Set up the example Project, run the test note, and check the reply uses your headings without you typing them. Then make a Project for your own repeated work.",
   sections: [
