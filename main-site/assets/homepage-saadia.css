@@ -179,3 +179,11 @@ body.home-saadia a:focus-visible,body.home-saadia button:focus-visible,body.home
   .sk-credentials .sk-credentials-intro h2{font-size:clamp(36px,9vw,52px)}
 }
 @media(prefers-reduced-motion:reduce){.sk-pill,.sk-book,.sk-header{transition:none}}
+
+/* Header (28/09): Home link first, links on the right in the brand nav style (Inter, uppercase, spaced). The MENU button is for small screens only. */
+.sk-desktop-nav{flex:0 1 auto;margin-left:auto;gap:clamp(18px,2.2vw,34px)}
+.sk-desktop-nav a{font:400 14px/1 Inter,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+@media(min-width:1051px){.sk-menu{display:none}}
+/* Secondary hero button: white outline instead of ink on the dark hero. */
+.sk-hero .sk-pill-ink{background:transparent;color:var(--white)!important;box-shadow:inset 0 0 0 2px var(--white)}
+.sk-hero .sk-pill-ink:hover{background:var(--white);color:var(--ink)!important}
