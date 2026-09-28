@@ -1,6 +1,8 @@
 // Batch 1 guide copy, approved from docs/copy/guides/batch-01-2026-09-28.md.
 // Inline marks: **bold**, *italic*, [label](https://link).
 
+import type { BatchIconName } from "@/components/guides/batch-icons";
+
 export type BatchBlock =
   | { kind: "p"; text: string }
   | { kind: "fields"; items: readonly { label: string; text: string }[] }
@@ -24,7 +26,9 @@ export type BatchGuide = {
   tool: string;
   leaveWith: string;
   howTo: string;
-  sections: readonly { title: string; blocks: readonly BatchBlock[] }[];
+  flow: readonly { icon: BatchIconName; label: string; note: string }[];
+  illustration: { src: string; alt: string; caption: string; afterSection: number };
+  sections: readonly { title: string; icon: BatchIconName; blocks: readonly BatchBlock[] }[];
   honest: string;
   gate: { promise: string; action: string };
   prompts: readonly BatchPrompt[];
@@ -46,9 +50,16 @@ const claude: BatchGuide = {
   tool: "Free Claude account",
   leaveWith: "3 prompts you can reuse every week, a worked example for each, and a 30-second check before you use the answer.",
   howTo: "Pick the job that annoys you most this week. Try it with the example first, so you can see what a good answer looks like. Then swap in your own material. Leave out anything confidential (see [The 3-Question Check Before You Paste Anything Into AI](/guides/what-should-you-never-share-with-ai/)).",
+  flow: [
+    { icon: "notes", label: "Your rough material", note: "Notes, a report or bullet points" },
+    { icon: "sparkle", label: "Claude drafts", note: "Using only what you gave it" },
+    { icon: "check", label: "You check", note: "30 seconds before you use it" },
+  ],
+  illustration: { src: "/images/guides/check-ai-answers.webp", alt: "The blue robot mascot checking a page under a brass magnifier", caption: "The draft is Claude's. The final say is yours.", afterSection: 2 },
   sections: [
     {
       title: "Job 1: Messy notes into clear actions",
+      icon: "notes",
       blocks: [
         { kind: "fields", items: [
           { label: "The job", text: "you have notes from a meeting and nobody knows who's doing what." },
@@ -65,6 +76,7 @@ const claude: BatchGuide = {
     },
     {
       title: "Job 2: Find the answer in a long document",
+      icon: "doc",
       blocks: [
         { kind: "fields", items: [
           { label: "The job", text: "a 30-page report and one question you need answered." },
@@ -76,6 +88,7 @@ const claude: BatchGuide = {
     },
     {
       title: "Job 3: Rough points into a short email",
+      icon: "mail",
       blocks: [
         { kind: "fields", items: [
           { label: "The job", text: "you know what you want to say but not how to say it." },
@@ -86,7 +99,7 @@ const claude: BatchGuide = {
     },
   ],
   honest: "Claude can still get a detail wrong, and it can sound sure while doing it. Before you use any answer, put it side by side with your notes or the document and check the names, dates and anything that sounds decided. If one line is wrong, fix that line (the correction prompt is below) rather than starting again.",
-  gate: { promise: "Get the 3 full prompts, the correction prompt and the 30-second check.", action: "Show me the prompts" },
+  gate: { promise: "The 3 prompts, the fix-one-line prompt and the 30-second check.", action: "Show me the prompts" },
   prompts: [
     { title: "Prompt 1: Notes into actions", text: "Turn these notes into decisions, an action table and open questions. Use only the notes. For each action, show the owner and deadline. Write \"Not agreed\" where a detail is missing. Keep suggestions separate from decisions.\n\nNotes: [paste your notes]" },
     { title: "Prompt 2: Answer from a document", text: "Answer my question using only the attached document. Quote the exact sentence you used and give the page or section. If the document doesn't answer it, say so instead of guessing.\n\nMy question: [your question]" },
@@ -113,9 +126,16 @@ const shorter: BatchGuide = {
   tool: "Any ChatGPT account",
   leaveWith: "a short-answer prompt you can reuse, plus a 4-point check.",
   howTo: "Read the example, try the prompt as it is, then swap in facts from your own work.",
+  flow: [
+    { icon: "list", label: "Name the parts", note: "Status, Waiting on, Next action" },
+    { icon: "compress", label: "Set the limit", note: "60 words or fewer" },
+    { icon: "check", label: "Check the facts", note: "Nothing rounded up" },
+  ],
+  illustration: { src: "/images/guides/make-ai-clear-and-concise.webp", alt: "The blue robot mascot pressing a long stack of pages into one short card", caption: "Shorter is only useful if it stays true.", afterSection: 0 },
   sections: [
     {
       title: "Say what \"short\" means",
+      icon: "target",
       blocks: [
         { kind: "contrast", items: [
           { label: "Instead of", text: "\"Make this shorter.\"" },
@@ -126,6 +146,7 @@ const shorter: BatchGuide = {
     },
     {
       title: "Short is only useful if it's still true",
+      icon: "check",
       blocks: [
         { kind: "example", label: "Your facts", text: "The onboarding checklist draft is ready. Team leads haven't reviewed it. No publication date has been agreed." },
         { kind: "contrast", items: [
@@ -137,7 +158,7 @@ const shorter: BatchGuide = {
     },
   ],
   honest: "When AI shortens, it tends to round things up: \"under review\" becomes \"approved\". The shorter the answer, the more carefully you check each word.",
-  gate: { promise: "Get the full short-answer prompt and the 4-point check.", action: "Show me the prompt" },
+  gate: { promise: "The short-answer prompt and the 4-point check.", action: "Show me the prompt" },
   prompts: [
     { title: "The short-answer prompt", text: "Write a short update using only these facts:\n[paste your facts]\n\nGive me exactly 3 bullets headed Status, Waiting on and Next action. Keep it to 60 words or fewer. No introduction or closing offer. Don't say anything is approved or decided unless my facts say so. If the next action isn't clear, say what still needs to be agreed." },
   ],
@@ -162,9 +183,16 @@ const forgetting: BatchGuide = {
   tool: "ChatGPT with Projects",
   leaveWith: "a working Project, the brief to paste into it, and a 2-chat test that proves it remembers.",
   howTo: "Use the example event first, so you can see whether the second chat keeps the brief without being reminded. Then build a Project for your real work.",
+  flow: [
+    { icon: "notes", label: "Write the brief once", note: "The facts that never change" },
+    { icon: "folder", label: "Save it in a Project", note: "Project settings, instructions" },
+    { icon: "chat", label: "Every chat uses it", note: "Test it with 2 chats" },
+  ],
+  illustration: { src: "/images/guides/claude-projects.webp", alt: "The blue robot mascot filing one checked card into a wooden cabinet", caption: "File the brief once. Stop pasting it into every chat.", afterSection: 0 },
   sections: [
     {
       title: "One question, or ongoing work?",
+      icon: "question",
       blocks: [
         { kind: "list", items: [
           "**One question:** a normal chat is fine.",
@@ -174,6 +202,7 @@ const forgetting: BatchGuide = {
     },
     {
       title: "The example: an event brief that stays the same",
+      icon: "folder",
       blocks: [
         { kind: "p", text: "You're planning a 60-minute online session for first-time managers. You need an event description today and an invitation next week. Both must use the same facts." },
         { kind: "list", ordered: true, items: [
@@ -185,7 +214,7 @@ const forgetting: BatchGuide = {
     },
   ],
   honest: "A Project keeps instructions, but it doesn't guarantee every answer follows them. That's why the guide ends with a test: if the second chat misses a fact, check that both chats are inside the same Project and that the instructions were saved.",
-  gate: { promise: "Get the Project brief and the 2 test messages.", action: "Show me the setup" },
+  gate: { promise: "The Project brief and the 2 test messages.", action: "Show me the setup" },
   prompts: [
     { title: "The Project brief (paste into Project settings)", text: "Project facts\n- The event is a 60-minute online session for first-time managers.\n- The goal is to help them run a clearer weekly team meeting.\n- The tone is practical and calm.\n- Do not promise a recording.\n\nFor every draft, separate confirmed facts from suggestions. If information is missing, write \"Not decided\"." },
     { title: "Test chat 1", text: "Write an event description in 80 words or fewer. Say who it's for, the format and what people will learn. Use only the Project facts. If a detail is missing, write \"Not decided\"." },
@@ -207,9 +236,16 @@ const privacy: BatchGuide = {
   tool: "Any AI tool",
   leaveWith: "the paste test, a keep-out / ask-first / fine list, and a prompt that checks a task without you sharing the real data.",
   howTo: "Read the 3 questions, sort what you were about to paste, then use the test prompt with categories only, never the real information.",
+  flow: [
+    { icon: "question", label: "Do I need it?", note: "Could it work without real details?" },
+    { icon: "key", label: "Am I allowed?", note: "Permission comes first" },
+    { icon: "shield", label: "Right tool?", note: "An account approved for work" },
+  ],
+  illustration: { src: "/images/guides/what-can-copilot-see-at-work.webp", alt: "The blue robot mascot looking through a telescope at three locked boxes", caption: "Before you paste, know what's in the box and who it belongs to.", afterSection: 0 },
   sections: [
     {
       title: "The paste test",
+      icon: "question",
       blocks: [
         { kind: "list", ordered: true, items: [
           "**Do I need it?** Could the task work without the real details?",
@@ -221,6 +257,7 @@ const privacy: BatchGuide = {
     },
     {
       title: "Keep out · Ask first · Fine",
+      icon: "lock",
       blocks: [
         { kind: "contrast", items: [
           { label: "Keep out", text: "Passwords, bank details, health information, anything under a confidentiality agreement." },
@@ -232,7 +269,7 @@ const privacy: BatchGuide = {
     },
   ],
   honest: "Turning off \"training\" in a tool's settings gives you more control, but it doesn't give you permission to share confidential work. Permission comes from your company, not from a setting.",
-  gate: { promise: "Get the test prompt and where to find the privacy settings in ChatGPT, Claude, Gemini and Copilot.", action: "Show me the prompt" },
+  gate: { promise: "The test prompt and the privacy settings for 4 tools.", action: "Show me the prompt" },
   prompts: [
     { title: "The safe test prompt (describe categories, not real data)", text: "I want to use AI for this task: [describe the task without names, files or private details].\n\nIt may involve these types of information: [categories only, for example customer emails, employee names, public web copy].\n\nDon't ask me to paste the real information. For each category tell me:\n1. Keep it out, ask permission, or fine to use?\n2. Why?\n3. What safer example could I use instead?\n4. Which account or privacy setting should I check?\nIf you can't know whether I have permission, tell me who to ask." },
   ],
@@ -261,9 +298,16 @@ const connections: BatchGuide = {
   tool: "ChatGPT, Claude, Gemini or Copilot",
   leaveWith: "a simple way to choose the smallest access, a prompt that explains any permission screen in plain words, and where to switch access off.",
   howTo: "Decide what the job needs, check the permission screen before you approve, and know where to disconnect.",
+  flow: [
+    { icon: "upload", label: "Upload one file", note: "Smallest access" },
+    { icon: "plug", label: "Connect one service", note: "Only when you search many items" },
+    { icon: "bolt", label: "Allow actions", note: "Last, and only if needed" },
+  ],
+  illustration: { src: "/images/guides/ai-words-connections.webp", alt: "The blue robot mascot inspecting cables that connect books, chat and a toolbox", caption: "Every cable is access. Plug in only what the job needs.", afterSection: 0 },
   sections: [
     {
       title: "Choose the smallest access",
+      icon: "upload",
       blocks: [
         { kind: "list", ordered: true, items: [
           "**Upload one file:** best for one document and one task. No connection needed.",
@@ -274,6 +318,7 @@ const connections: BatchGuide = {
     },
     {
       title: "Read the permission screen before you click",
+      icon: "eye",
       blocks: [
         { kind: "p", text: "Look for these words: *read, create, edit, delete, send, share*. Each one is a different level of access." },
         { kind: "p", text: "In ChatGPT, for example, **\"Allow read actions\"** means it can read from the connected app without asking each time, but it still asks before making changes." },
@@ -282,6 +327,7 @@ const connections: BatchGuide = {
     },
     {
       title: "Where to switch it off",
+      icon: "power",
       blocks: [
         { kind: "p", text: "ChatGPT: **Settings → Apps** (or **Plugins**, if shown), then choose the account to disconnect. The paths for Claude, Gemini and Copilot are in the full guide." },
         { kind: "p", text: "Turning a connector off for one chat may leave the account connected. Check the account connection too." },
@@ -289,7 +335,7 @@ const connections: BatchGuide = {
     },
   ],
   honest: "Always check the AI's explanation against the real permission screen. The screen decides what the tool can do, not the AI's summary of it.",
-  gate: { promise: "Get the permission-explainer prompt, the 3 checks before you approve, and the switch-off path for each tool.", action: "Show me the prompt" },
+  gate: { promise: "The permission prompt, 3 checks and the switch-off path for 4 tools.", action: "Show me the prompt" },
   prompts: [
     { title: "The permission-explainer prompt", text: "Explain these permissions in everyday language. For each one, tell me if the tool can read, create, edit, delete, send or share. Then tell me:\n1. What information this could expose.\n2. Which permission is the riskiest.\n3. Whether I could do my task with less access.\n4. What I should check before approving.\nDon't assume a permission that isn't in the text.\n\nPermission text: [paste the wording from the screen, without account details]" },
   ],

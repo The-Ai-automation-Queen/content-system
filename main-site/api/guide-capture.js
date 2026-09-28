@@ -55,8 +55,8 @@ module.exports = async function handler(request, response) {
   const guide = APPROVED_GUIDES.get(guideSlug) ||
     (allowPreview ? preview.guides.find((item) => item.slug === guideSlug) : undefined);
   if (!guide?.lumailTag) return response.status(400).json({ error: "This guide is not configured for email delivery." });
-  if (REBUILT_APPROVED_SLUGS.has(guideSlug) && (!givenName || !familyName)) {
-    return response.status(400).json({ error: "Enter your first and last name." });
+  if (REBUILT_APPROVED_SLUGS.has(guideSlug) && !givenName) {
+    return response.status(400).json({ error: "Enter your first name." });
   }
 
   const consentTimestamp = new Date().toISOString();

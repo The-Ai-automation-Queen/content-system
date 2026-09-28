@@ -159,8 +159,8 @@ for (const guide of rebuildPlan.guides.filter((item) => item.status !== "pending
 }
 if (!guideAccessSource.includes('fetch("/api/guide-capture"') ||
     !guideAccessSource.includes('hidden={!ready || !unlocked}') ||
-    !["firstName", "lastName", "email", "marketingConsent"].every((field) => guideAccessSource.includes(`name="${field}"`))) {
-  failures.push("The inline guide gate must unlock content after Lumail success and collect first name, last name, email and optional marketing consent.");
+    !["firstName", "email", "marketingConsent"].every((field) => guideAccessSource.includes(`name="${field}"`))) {
+  failures.push("The inline guide gate must unlock content after Lumail success and collect first name, email and optional marketing consent.");
 }
 if (!guideRouteSource.includes('slug === "instagram-content-dashboard"') ||
     !guideRouteSource.includes("<InstagramDashboardPage guide={guide} />") ||

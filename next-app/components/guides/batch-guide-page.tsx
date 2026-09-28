@@ -8,6 +8,7 @@ import { batchOneGuides, type BatchBlock, type BatchGuide } from "@/content/guid
 import { cleanLabel } from "./guide-icon";
 import { GuideRelatedLink } from "./guide-related-link";
 import { GuideAccessBoundary } from "./guide-access-boundary";
+import { BatchIcon, type BatchIconName } from "./batch-icons";
 import styles from "./batch-guide-page.module.css";
 
 // Inline marks: **bold**, *italic*, [label](href).
@@ -25,12 +26,18 @@ function Rich({ value }: { value: string }) {
   })}</>;
 }
 
+function fieldIcon(label: string): BatchIconName {
+  if (label === "The job") return "target";
+  if (label.startsWith("Why")) return "sparkle";
+  return "settings";
+}
+
 function Block({ block, guide }: { block: BatchBlock; guide: BatchGuide }) {
   switch (block.kind) {
     case "p":
       return <p><Rich value={block.text} /></p>;
     case "fields":
-      return <dl className={styles.fields}>{block.items.map((item) => <div key={item.label}><dt>{item.label}:</dt><dd><Rich value={item.text} /></dd></div>)}</dl>;
+      return <dl className={styles.fields}>{block.items.map((item) => <div key={item.label}><span className={styles.fieldIcon}><BatchIcon name={fieldIcon(item.label)} size={18} /></span><span><dt>{item.label}:</dt><dd><Rich value={item.text} /></dd></span></div>)}</dl>;
     case "example":
       return <div className={styles.example}><span>{block.label}</span><p><Rich value={block.text} /></p></div>;
     case "result":
@@ -44,7 +51,7 @@ function Block({ block, guide }: { block: BatchBlock; guide: BatchGuide }) {
     case "locked": {
       const preview = block.prompt === undefined ? "" : guide.prompts[block.prompt]?.text ?? "";
       return <a className={styles.locked} href="#full-guide">
-        <span className={styles.lockLabel}><span aria-hidden="true">🔒</span> {block.label}</span>
+        <span className={styles.lockLabel}><span className={styles.lockIcon}><BatchIcon name="lock" size={18} /></span>{block.label}</span>
         {preview && <span className={styles.lockPreview} aria-hidden="true">{preview.slice(0, 150)}</span>}
         <span className={styles.lockCta}>In the full guide below ↓</span>
       </a>;
@@ -88,27 +95,29 @@ export function BatchGuidePage({ guide }: { guide: GuidePage }) {
         <h1>{content.title}</h1>
         <p className={styles.question}>“{content.question}”</p>
         <p className={styles.answer}><Rich value={content.answer} /></p>
-        <p className={styles.meta}><span>{content.level}</span><span>{content.minutes} minutes</span><span>{content.tool}</span><span>By Fatiha Chikh</span></p>
-        <p className={styles.leaveWith}><strong>What you leave with:</strong> <Rich value={content.leaveWith} /></p>
+        <p className={styles.meta}><span><BatchIcon name="user" size={16} />{content.level}</span><span><BatchIcon name="clock" size={16} />{content.minutes} minutes</span><span><BatchIcon name="sparkle" size={16} />{content.tool}</span><span>By Fatiha Chikh | The AI Automation Queen</span></p>
+        <p className={styles.leaveWith}><span className={styles.leaveIcon}><BatchIcon name="gift" /></span><span><strong>What you leave with:</strong> <Rich value={content.leaveWith} /></span></p>
       </header>
 
       <section className={styles.section} aria-labelledby={`${content.slug}-how`}>
-        <h2 id={`${content.slug}-how`}><span>{number(1)}</span>How to use this guide</h2>
+        <h2 id={`${content.slug}-how`}><span className={styles.num}>{number(1)}</span><span className={styles.headIcon}><BatchIcon name="compass" /></span>How to use this guide</h2>
         <p><Rich value={content.howTo} /></p>
+        <ol className={styles.flow} aria-label="How it works">{content.flow.map((step, index) => <li key={step.label}><span className={styles.flowIcon}><BatchIcon name={step.icon} size={26} /></span><span className={styles.flowText}><strong>{step.label}</strong><small>{step.note}</small></span>{index < content.flow.length - 1 && <span className={styles.flowArrow} aria-hidden="true">→</span>}</li>)}</ol>
       </section>
 
-      {content.sections.map((section, index) => <section className={styles.section} key={section.title} aria-labelledby={`${content.slug}-s${index}`}>
-        <h2 id={`${content.slug}-s${index}`}><span>{number(firstJob + index)}</span>{section.title}</h2>
+      {content.sections.map((section, index) => <Fragment key={section.title}><section className={styles.section} aria-labelledby={`${content.slug}-s${index}`}>
+        <h2 id={`${content.slug}-s${index}`}><span className={styles.num}>{number(firstJob + index)}</span><span className={styles.headIcon}><BatchIcon name={section.icon} /></span>{section.title}</h2>
         {section.blocks.map((block, blockIndex) => <Block key={blockIndex} block={block} guide={content} />)}
-      </section>)}
+      </section>
+      {content.illustration.afterSection === index && <figure className={styles.illustration}><div><Image src={content.illustration.src} alt={content.illustration.alt} fill sizes="(max-width: 700px) 100vw, 760px" /></div><figcaption>{content.illustration.caption}</figcaption></figure>}</Fragment>)}
 
       <section className={`${styles.section} ${styles.honest}`} aria-labelledby={`${content.slug}-honest`}>
-        <h2 id={`${content.slug}-honest`}><span>{number(honestNumber)}</span>The honest part</h2>
+        <h2 id={`${content.slug}-honest`}><span className={styles.num}>{number(honestNumber)}</span><span className={styles.headIcon}><BatchIcon name="alert" /></span>The honest part</h2>
         <p><Rich value={content.honest} /></p>
       </section>
 
       <div id="full-guide" className={styles.gateWrap}>
-        <GuideAccessBoundary guideSlug={guide.slug} guideTitle={content.title} heading="The rest is yours." guidePromise={content.gate.promise} note="Free · no card · we'll email you the link so you can come back." actionLabel={content.gate.action} showWorkBridge={false}>
+        <GuideAccessBoundary guideSlug={guide.slug} guideTitle={content.title} heading="The rest is yours." guidePromise={content.gate.promise} note="Free · no card" actionLabel={content.gate.action} showWorkBridge={false}>
           <section className={styles.unlocked} aria-labelledby={`${content.slug}-full`}>
             <h2 id={`${content.slug}-full`}>Your full guide</h2>
             {content.prompts.map((prompt, index) => <PromptBox key={prompt.title} prompt={prompt} id={`${content.slug}-p${index}`} />)}
@@ -128,6 +137,7 @@ export function BatchGuidePage({ guide }: { guide: GuidePage }) {
           </section>
 
           <aside className={styles.kit} aria-labelledby={`${content.slug}-kit`}>
+            <span className={styles.kitIcon}><BatchIcon name="gift" size={28} /></span>
             <span className={styles.kitLabel}>Next step · Kit · Coming soon</span>
             <h2 id={`${content.slug}-kit`}>{content.kit.heading}</h2>
             <p><Rich value={content.kit.body} /></p>

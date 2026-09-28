@@ -223,3 +223,15 @@
 .workshopInvitation h2 {font-size:28px;line-height:1.2;}
 @media(max-width:700px){.workshopInvitation h2{font-size:23px;}}
 .captureBoundary > div > p.gateNote { margin-top: -10px; color: #1b2ea0; font-size: 14px; font-weight: 700; }
+
+/* Compact gate (28/09/2026): lock badge, one row of fields, short copy. */
+.captureBoundary { border: 1px solid #c8c1f0; border-radius: 16px; background: #fff; box-shadow: 0 12px 32px rgba(44, 75, 224, .10); }
+.gateLock { display: grid; place-items: center; width: 48px; height: 48px; margin: 0 auto 12px; border-radius: 50%; background: #ff007f; color: #fff; }
+.captureBoundary h2 { font: 900 clamp(28px, 4vw, 36px)/1.08 var(--font-ui), Inter, Arial, sans-serif; letter-spacing: -.03em; }
+.captureBoundary > div > p { margin-bottom: 8px; }
+.captureBoundary > div > p.gateNote { margin: 0 auto 18px; color: #1b2ea0; font-size: 14px; font-weight: 800; letter-spacing: .02em; }
+.nameFields input { border-color: #c8c1f0; border-radius: 10px; }
+.captureBoundary button { border-radius: 99px; background: #2c4be0; font-size: 15px; }
+.captureBoundary button:hover { background: #1b2ea0; }
+.captureBoundary small { text-align: center; }
+@media (max-width: 560px) { .nameFields { grid-template-columns: 1fr; } }

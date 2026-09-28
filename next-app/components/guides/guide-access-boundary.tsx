@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, type ReactNode, useEffect, useRef, useState } from "react";
+import { BatchIcon } from "./batch-icons";
 import styles from "./guide-reading-page.module.css";
 
 const ACCESS_KEY = "shift-lead-guide-access";
@@ -63,7 +64,6 @@ export function GuideAccessBoundary({
         body: JSON.stringify({
           email: form.get("email"),
           firstName: form.get("firstName"),
-          lastName: form.get("lastName"),
           website: form.get("website"),
           guideSlug,
           source: window.location.pathname,
@@ -97,23 +97,22 @@ export function GuideAccessBoundary({
       >
         <section className={styles.captureBoundary} aria-labelledby={`guide-gate-title-${guideSlug}`}>
           <div>
-          <span className={styles.gateLabel}>Continue this guide</span>
+          <span className={styles.gateLock}><BatchIcon name="lock" size={22} /></span>
           <h2 id={`guide-gate-title-${guideSlug}`}>{heading || "Get the next step"}</h2>
           <p>{guidePromise || `Get the next practical part of ${guideTitle} and a link to return to this guide.`}</p>
           {note && <p className={styles.gateNote}>{note}</p>}
           <form onSubmit={submit}>
             <div className={styles.nameFields}>
               <label htmlFor={`guide-first-name-${guideSlug}`}>First name<input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} required /></label>
-              <label htmlFor={`guide-last-name-${guideSlug}`}>Last name<input id={`guide-last-name-${guideSlug}`} name="lastName" type="text" autoComplete="family-name" maxLength={100} required /></label>
+              <label htmlFor={`guide-email-${guideSlug}`}>Email<input id={`guide-email-${guideSlug}`} name="email" type="email" autoComplete="email" required placeholder="you@example.com" /></label>
             </div>
-            <label className={styles.emailField} htmlFor={`guide-email-${guideSlug}`}>Email address (required)<input id={`guide-email-${guideSlug}`} name="email" type="email" autoComplete="email" required placeholder="you@example.com" /></label>
             <input className={styles.honeypot} name="website" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
             <label className={styles.consent}>
               <input name="marketingConsent" type="checkbox" />
-              <span>Also send me practical Shift &amp; Lead emails and product updates (optional). I can unsubscribe at any time.</span>
+              <span>Also send me new guides and updates (optional, unsubscribe anytime).</span>
             </label>
             <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Opening guide..." : (actionLabel || "Open the rest of the guide")}</button>
-            <small>Save the link we email you to return later. <a href="/privacy.html">Privacy notice</a>.</small>
+            <small>We email you the link. <a href="/privacy.html">Privacy</a></small>
             {status === "error" && <strong role="alert">{message}</strong>}
           </form>
           </div>

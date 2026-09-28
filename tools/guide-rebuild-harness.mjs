@@ -176,7 +176,7 @@ for (const { slug, lumailTag } of approved) {
       if (html.includes("captureEntryTransition") || html.includes('role="dialog"') || html.includes("Free practical guide")) {
         problems.push("Old pre-guide popup still rendered");
       }
-      for (const field of ['name="firstName"', 'name="lastName"', 'name="email"', 'name="marketingConsent"']) {
+      for (const field of ['name="firstName"', 'name="email"', 'name="marketingConsent"']) {
         if (!html.includes(field) && !stagedInlineForm) problems.push(`Gate field missing: ${field}`);
       }
       if (html.includes("guide-reading-page_page") || html.includes("data-guide-preview")) problems.push("Old static reading layout still rendered");
