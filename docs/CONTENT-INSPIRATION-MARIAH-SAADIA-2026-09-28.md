@@ -90,7 +90,7 @@ versions of the best performers.
 - Your experience, amplified → Profile Insight Report and workbooks
 - The honest check → email list and sponsorships
 
-## 5. Title rule: the reader's own question (owner decision, 28/09)
+## 5. Title rule (updated 28/09: titles use the high-scoring patterns in `copy/guides/batch-01-2026-09-28.md`; the reader's question below becomes the first line under the title)
 
 "How to…" titles read like Ruben Hassid and every other AI creator. Every title
 is now **the question or worry the reader already has, in their words**, taken
