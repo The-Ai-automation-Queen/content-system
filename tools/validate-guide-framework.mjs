@@ -235,6 +235,12 @@ if (!workWithFatiha.includes('href="/workbooks.html">See the workbooks</a>')) {
 if (!workWithFatiha.includes('Business and marketing transformation')) {
   failures.push("The Work with me page is missing its current offer framing.");
 }
+for (const { source, destination } of vercelConfig.redirects) {
+  const match = source.match(/^\/guides\/([a-z0-9-]+)(?:\/|\.html)?$/);
+  if (match && approvedSlugSet.has(match[1]) && destination !== `/guides/${match[1]}/`) {
+    failures.push(`Approved guide is redirected away from its own page: ${source} -> ${destination}`);
+  }
+}
 if (!vercelConfig.redirects.some(({ source, destination }) => source === "/build-sprint.html" && destination === "/work-with-fatiha/")) {
   failures.push("The legacy Build Sprint URL must redirect to Work with me.");
 }
