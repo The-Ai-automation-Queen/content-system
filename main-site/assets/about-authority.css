@@ -52,6 +52,8 @@ body.sk-subpage[data-page-kind="about"] .about-authority{overflow:hidden}
 .about-authority .aa-mark--shift{background:#fff}
 .about-authority .aa-mark--shift span{color:#2c4be0;font:italic 800 71px/.85 "Playfair Display",Georgia,serif;letter-spacing:-.1em;transform:translateX(-3px)}
 .about-authority .aa-career-name>p{margin:0 0 12px;color:#243fc3;font:800 11px/1.3 Inter,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.about-authority .aa-visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.about-authority .aa-career-row--tech .aa-company-marks{margin:0 0 13px}
 .about-authority .aa-career-name h3{margin:0 0 8px;color:#111529!important;font:900 clamp(28px,3vw,42px)/1 Impact,"Arial Narrow",Inter,sans-serif!important}
 .about-authority .aa-career-name>span{display:block;max-width:480px;color:#29345c;font:700 11px/1.5 Inter,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase}
 .about-authority .aa-career-takeaway{max-width:410px;margin:0;color:#171d3d;font:italic 700 clamp(18px,1.8vw,24px)/1.36 "Playfair Display",Georgia,serif}
@@ -122,10 +124,10 @@ body.sk-subpage[data-page-kind="about"] .about-authority{overflow:hidden}
   .about-authority .aa-mark--shift span{font-size:52px}
   .about-authority .aa-mark--years strong{font-size:25px}
   .about-authority .aa-mark--years span{font-size:8px}
-  .about-authority .aa-company-marks{gap:14px}
-  .about-authority .aa-company-marks>div:nth-child(1) img{width:104px}
-  .about-authority .aa-company-marks>div:nth-child(2) img{width:48px}
-  .about-authority .aa-company-marks>div:nth-child(3) img{width:102px}
+  .about-authority .aa-company-marks{gap:8px}
+  .about-authority .aa-company-marks>div:nth-child(1) img{width:96px}
+  .about-authority .aa-company-marks>div:nth-child(2) img{width:44px}
+  .about-authority .aa-company-marks>div:nth-child(3) img{width:96px}
   .about-authority .aa-career-name h3{font-size:clamp(26px,7vw,35px)!important}
   .about-authority .aa-career-takeaway{font-size:18px}
   .about-authority .aa-evidence-list article{gap:18px;min-height:0;padding:26px}
