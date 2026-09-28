@@ -90,18 +90,42 @@ versions of the best performers.
 - Your experience, amplified → Profile Insight Report and workbooks
 - The honest check → email list and sponsorships
 
-## 5. First 10 guides to propose (original titles, search wording)
+## 5. Title rule: the reader's own question (owner decision, 28/09)
 
-1. Which AI tool should you use for writing, research and design?
-2. How to stop AI making things up
-3. How to write a good AI prompt: a simple template
-4. How to make AI write like you
-5. How to turn your experience into LinkedIn posts with AI
-6. How to plan your week with AI in 30 minutes
-7. How to check if an AI tool is worth paying for
-8. How to use AI safely: what never to paste in
-9. How to find your strengths with AI
-10. How to plan family meals and shopping with AI
+"How to…" titles read like Ruben Hassid and every other AI creator. Every title
+is now **the question or worry the reader already has, in their words**, taken
+from what people post online (Reddit, Blind, forums and comments). The SEO
+keyword lives separately in the page title tag, URL and first paragraph, so the
+guide still ranks.
+
+Evidence of real phrasing (checked 28/09/2026): "Am I already too late to learn
+AI?", "Feeling left off in the AI era", "Overwhelmed by AI hype" (Blind); "ChatGPT
+is a big fat liar", "you're just using it wrong" (Substack, PBS); "Is it safe to
+use ChatGPT at work?" (Welcome to the Jungle); AI LinkedIn posts that "sound
+nothing like" the author (Windmill Growth, Medium).
+
+Rules: the title is a question or a first-person worry, up to about 10 words, in
+plain words. It does not start with "How to". The guide's first line answers it.
+Before writing a new guide, find 2–3 real posts asking that question and note
+them in the brief.
+
+| Reader's question (title) | SEO keyword (tag, URL, first line) |
+|---|---|
+| Am I too late to learn AI? | how to start learning ai |
+| AI keeps making things up | how to stop ai making things up |
+| I don't know what to type into AI | how to write a good ai prompt |
+| AI writing doesn't sound like me | how to make ai write like you |
+| My boss wants us to use AI. Can I paste work documents in? | is it safe to use chatgpt at work |
+| ChatGPT or Claude: which one is worth paying for? | chatgpt vs claude for work |
+| I'm drowning in admin. What can AI take off my plate? | ai workflows that save time |
+| I think I'm overpaying for things | how to save money with ai |
+| Is AI coming for my job? | will ai replace my job |
+| I never know what to cook this week | how to plan meals with ai |
+
+All 367 portfolio titles were rewritten in this style in
+`shift-and-lead-guide-portfolio-review_reader-questions.numbers`, delivered to
+Fatiha and kept out of this public repository because it contains the source
+library's text.
 
 ## Next step
 
