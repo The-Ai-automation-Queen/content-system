@@ -120,33 +120,20 @@ const weeklyJob: BatchGuide = {
   honest: "A saved instruction doesn't mean Claude remembers last week. Each run only knows what you paste in. That's a good thing: it can't carry old facts into this week's update.",
   gate: { promise: "The weekly update instruction.", action: "Unlock" },
   prompts: [
-    { title: "The weekly update instruction", text: `You are helping me prepare my weekly work update.
+    { title: "The weekly update instruction", text: `You're my weekly update assistant. Every Friday I'll paste my rough notes.
 
-INPUT I WILL PROVIDE
-- completed work;
-- work still in progress;
-- blockers;
-- decisions I need from other people.
+Turn them into an update with these 5 headings:
+Done this week · In progress · Blocked (and who can unblock it) · Decisions I need · Next week
 
-METHOD
-1. Use only the notes in my current message.
-2. Separate completed work from work still in progress.
-3. Turn each blocker into one clear question for the person who can resolve it.
-4. Keep suggestions separate from confirmed decisions.
-5. If an owner, date or fact is missing, write "Not provided". Do not infer it from an earlier week.
+Rules:
+- Use only this week's notes. If an owner or date is missing, write "Not provided".
+- Keep suggestions separate from decisions.
+- Bullets under 20 words. The whole update under [150] words.
+- Draft only. Don't send, post or create tasks.
 
-OUTPUT
-Use these headings in this order:
-1. Completed this week
-2. In progress
-3. Blockers and who can help
-4. Decisions needed
-5. Next week
+End with "Check before sending:" and the facts I should confirm.
 
-Use bullets of no more than 25 words. Keep the complete update under [word limit] words.
-
-STOP RULE
-Draft only. Do not send a message, update a project tool or create a task. End with a list called "Details to check" containing every missing or uncertain item.` },
+This week's notes: [paste]` },
   ],
   pass: "**Pass if:** two different weeks give the same useful structure, missing facts stay visible, and nothing is sent or created.",
   kit: { name: "AI workflows that save time", heading: "Want 10 of these ready to adapt?", body: "The *AI workflows that save time* kit has 10 workflows, plus a picker that shows which of your weekly tasks to hand off first." },
@@ -187,11 +174,11 @@ const claudeProjectsBatch: BatchGuide = {
           "Select **Set project instructions**, paste the instructions, then select **Save instructions**.",
           "Start a chat inside the Project and paste the test note.",
         ] },
-        { kind: "example", label: "The test note", text: "We agreed to test a shorter weekly team meeting for 2 weeks. Alex will send the new agenda by Friday. Someone needs to collect feedback, but we didn't choose who or set a deadline. Recording the meetings was suggested, not agreed." },
+        { kind: "example", label: "The test note", text: "We'll trial a 4-day content calendar next month. Priya drafts the first week by Thursday. Someone should check the budget, but nobody took it. Hiring a freelancer came up, but nothing was agreed." },
         { kind: "result", label: "A good reply", lines: [
-          "**Decisions:** test a shorter weekly meeting for 2 weeks.",
-          "**Who does what:** Alex · new agenda · Friday. Collect feedback · Not agreed · Not agreed.",
-          "**Questions to resolve:** who collects feedback, and by when? Should meetings be recorded?",
+          "**Decided:** trial a 4-day content calendar next month.",
+          "**Who does what:** Priya · first week · Thursday. Check the budget · Not agreed · Not agreed.",
+          "**Still open:** who checks the budget? Hire a freelancer?",
         ] },
         { kind: "locked", label: "The Project instructions", prompt: 0 },
       ],
@@ -200,16 +187,17 @@ const claudeProjectsBatch: BatchGuide = {
   honest: "A Project keeps instructions, not judgement. Read each reply against your notes, especially who does what and by when.",
   gate: { promise: "The Project instructions and the test note.", action: "Unlock" },
   prompts: [
-    { title: "The Project instructions (paste into Set project instructions)", text: `Turn my meeting notes into a short follow-up I can review.
-Use these 3 headings: Decisions, Who does what, Questions to resolve.
-Under Who does what, show a table with Task, Person and Due date.
-Use only the notes in my current message. Write "Not agreed" where a person or date is missing.
-Keep suggestions separate from agreed decisions. Don't carry facts over from other meetings.
-Use plain English. Don't send messages or create tasks in another app.` },
-    { title: "The test note (send it in a chat inside the Project)", text: `Please organise these meeting notes.
-We agreed to test a shorter weekly team meeting for 2 weeks. Alex will send the new agenda by Friday. Someone needs to collect feedback, but we didn't choose who or set a deadline. Recording the meetings was suggested, not agreed.` },
+    { title: "The Project instructions", text: `You turn my meeting notes into a follow-up I can check in 2 minutes.
+
+Always use 3 headings:
+1. Decided
+2. Who does what (a table: Task · Person · By when)
+3. Still open
+
+Use only the notes in my message. Write "Not agreed" where a person or date is missing. A suggestion is not a decision. Never carry facts over from another meeting. Don't send anything or create tasks.` },
+    { title: "The test note (send it in a chat inside the Project)", text: `Meeting notes: We'll trial a 4-day content calendar next month. Priya drafts the first week by Thursday. Someone should check the budget, but nobody took it. Hiring a freelancer came up, but nothing was agreed.` },
   ],
-  pass: "**Keep it if:** the reply used your headings and action table without you typing them. If not, adjust the instructions and test again.",
+  pass: "**Keep it if:** the reply used your headings and table without you typing them.",
   kit: { name: "Make AI remember you", heading: "Want AI to know you, not just one task?", body: "The *Make AI remember you* kit has an \"about me\" file, 5 ready-made Projects for Claude and ChatGPT, and a write-like-me setup." },
 };
 
@@ -258,25 +246,19 @@ const screenRecording: BatchGuide = {
   honest: "ChatGPT can miss a click or mishear the audio. Treat the recording as evidence and the draft as a first version. The real test is someone new following it.",
   gate: { promise: "The recording-to-guide prompt.", action: "Unlock" },
   prompts: [
-    { title: "The recording-to-guide prompt", text: `Create a process guide from the screen recording I attached.
+    { title: "The recording-to-guide prompt", text: `I've attached a screen recording of me doing a task. Turn it into a step-by-step guide for [who will use it], so they can [finished result] on their own.
 
-The guide is for [who will use it]. The result they need is [finished result].
+First, tell me if you can actually watch the video. If you can't, stop and ask me for a transcript and a few screenshots instead.
 
-First, tell me whether you can inspect the attached video. If you cannot, stop and ask for a corrected transcript and clean screenshots. Do not claim to have watched a video you could not inspect.
+Then write:
+- Before you start: what must be open or ready.
+- Numbered steps, one action each, using the exact button names you can see.
+- After each step, "You should see:" and the result.
+- "Needs checking" wherever you can't see or hear what happened. Don't guess.
 
-Before drafting, list the actions you can actually observe in order. Give a timestamp for each video action when possible. Mark anything you cannot see or hear as "Needs clarification". Ask me about missing decisions rather than guessing.
-
-Then write the process guide with:
-1. A short "Before you begin" checklist.
-2. Numbered steps in the order shown in the recording, one user action per step.
-3. The exact button, menu and field names you can verify from the source. If a label is unreadable, mark it "Needs clarification".
-4. "You should see:" after each step, naming the visible result.
-5. A timestamp or source screenshot beside the step it supports, where available.
-6. A 3-point final check that proves the process is complete.
-
-Use plain English. Do not invent a click, feature, result, shortcut or reason that the source does not support. At the end, list every step that still needs a human check.` },
+Finish with a 3-point check that proves the task is done.` },
   ],
-  pass: "**Keep it if:** someone who hasn't watched the recording can finish the task using only the guide, and what they see matches each \"You should see\" line.",
+  pass: "**Keep it if:** someone who hasn't watched the recording can finish the task using only the guide.",
   kit: { name: "AI workflows that save time", heading: "One of 10 workflows", body: "This is workflow 6 in the *AI workflows that save time* kit, alongside 9 others with prompts, examples and checks." },
 };
 

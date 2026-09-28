@@ -15,6 +15,7 @@ const pageSource = [
   read("next-app/content/guide-page.ts"),
   read("next-app/content/tool-guide-batch.ts"),
   read("next-app/content/guide-batch-three.ts"),
+  read("next-app/content/guide-batch-26-35-pages.ts"),
   read("next-app/content/claude-series.ts"),
   read("next-app/content/instagram-dashboard-guide.ts"),
   modelSeriesSource,

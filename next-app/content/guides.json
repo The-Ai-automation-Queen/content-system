@@ -211,11 +211,11 @@
     },
     {
       "slug": "ai-jargon-guide",
-      "title": "12 AI words you need to know",
-      "h1": "12 AI words you need to know",
+      "title": "Learn 6 AI Words by Watching Them Happen",
+      "h1": "Learn 6 AI Words by Watching Them Happen",
       "datePublished": "2026-06-10",
-      "dateModified": "2026-09-20",
-      "readMinutes": 7,
+      "dateModified": "2026-09-28",
+      "readMinutes": 10,
       "cover": "/images/guides/learn-master.webp",
       "track": "understand",
       "status": "live",
@@ -227,12 +227,12 @@
       ],
       "tags": [
         "AI terms",
-        "AI vocabulary",
-        "first AI task",
-        "AI basics",
-        "beginner AI"
+        "hallucination",
+        "context window",
+        "AI agent",
+        "connector"
       ],
-      "summary": "Learn the words you need to open an AI tool, give it one task and check what comes back.",
+      "summary": "Don't memorise a glossary. Run three 2-minute experiments and you'll never forget what these words mean.",
       "sequence": 20,
       "reviewStatus": "published"
     },
@@ -266,11 +266,11 @@
     },
     {
       "slug": "which-ai-tool-for-what",
-      "title": "Which AI tool should you use?",
-      "h1": "Which AI tool should you use?",
+      "title": "Stop Paying for Five AI Tools",
+      "h1": "Stop Paying for Five AI Tools",
       "datePublished": "2026-06-23",
-      "dateModified": "2026-09-20",
-      "readMinutes": 8,
+      "dateModified": "2026-09-28",
+      "readMinutes": 15,
       "cover": "/images/guides/which-ai-tool-for-what.webp",
       "track": "tools",
       "status": "live",
@@ -293,7 +293,7 @@
         "Meta AI",
         "Mistral"
       ],
-      "summary": "Choose one AI tool by the job, where your work lives and what information the tool is allowed to see.",
+      "summary": "Most people need one chat, plus the assistant already inside their work apps. Here's how to tell which.",
       "sequence": 55,
       "reviewStatus": "published"
     },
@@ -584,8 +584,8 @@
       "readMinutes": 6,
       "cover": "/images/guides/meta-muse.webp",
       "track": "tools",
-      "status": "live",
-      "reviewStatus": "published",
+      "status": "retired",
+      "reviewStatus": "rejected",
       "formatLabel": "GUIDE",
       "level": "Intermediate",
       "hub": "AI tools",
@@ -713,12 +713,12 @@
     },
     {
       "slug": "show-up-in-ai-search",
-      "title": "How to show up in AI search results",
-      "h1": "How to show up in AI search results",
-      "summary": "Make important public business facts clear, easy to verify and easier for AI search tools to find.",
+      "title": "Find Out What ChatGPT Says About Your Business",
+      "h1": "Find Out What ChatGPT Says About Your Business",
+      "summary": "Search like a client, see what AI knows about you, then fix the one page that matters most.",
       "datePublished": "2026-08-22",
-      "dateModified": "2026-09-20",
-      "readMinutes": 7,
+      "dateModified": "2026-09-28",
+      "readMinutes": 20,
       "cover": "/images/guides/show-up-in-ai-search.webp",
       "track": "create",
       "status": "live",
@@ -726,17 +726,16 @@
       "positioningLane": "Use AI at work",
       "reviewStatus": "published",
       "formatLabel": "GUIDE",
-      "level": "Intermediate",
+      "level": "Beginner",
       "hub": "Content and creative work",
       "outcomes": [
         "Create content"
       ],
       "tags": [
-        "AI search visibility",
-        "AI citations",
-        "public business facts",
-        "website crawl access",
-        "AI search source audit"
+        "AI search",
+        "ChatGPT",
+        "small business",
+        "services page"
       ],
       "sequence": 168
     },
@@ -850,12 +849,12 @@
     },
     {
       "slug": "what-is-an-ai-browser",
-      "title": "What can an AI browser actually do?",
-      "h1": "What can an AI browser actually do?",
-      "summary": "See the difference between reading a page and acting on it, then check a comparison against two public pages.",
+      "title": "3 Safe First Jobs to Give an AI Browser",
+      "h1": "3 Safe First Jobs to Give an AI Browser",
+      "summary": "Start with reading, then comparing, and only then let it touch a form. Stop before anything is sent.",
       "datePublished": "2026-08-24",
-      "dateModified": "2026-09-27",
-      "readMinutes": 6,
+      "dateModified": "2026-09-28",
+      "readMinutes": 15,
       "cover": "/images/guides/what-is-an-ai-browser.webp",
       "track": "tools",
       "status": "live",
@@ -909,12 +908,12 @@
     },
     {
       "slug": "ai-skills-worth-learning-for-work",
-      "title": "Which AI skill should you practise first?",
-      "h1": "Which AI skill should you practise first?",
-      "summary": "Choose one familiar work task, practise the skill that will help most and check the result yourself.",
+      "title": "3 AI Skills to Practise at Work This Week",
+      "h1": "3 AI Skills to Practise at Work This Week",
+      "summary": "Not tools, not tricks. Three habits that make your AI work better than your colleagues', whatever tool you use.",
       "datePublished": "2026-08-24",
-      "dateModified": "2026-09-27",
-      "readMinutes": 6,
+      "dateModified": "2026-09-28",
+      "readMinutes": 20,
       "cover": "/images/guides/ai-skills-worth-learning-for-work.webp",
       "track": "understand",
       "status": "live",
@@ -929,10 +928,10 @@
         "Get better answers"
       ],
       "tags": [
-        "AI skills 2026",
         "AI skills for work",
         "future of work",
-        "AI learning plan",
+        "prompting",
+        "checking AI",
         "human judgement"
       ],
       "sequence": 48
@@ -994,12 +993,12 @@
     },
     {
       "slug": "what-is-ai",
-      "title": "What AI actually is",
-      "h1": "What AI actually is",
-      "summary": "Understand what AI does, what it cannot know and where your judgment still matters.",
+      "title": "3 Things to Try With AI Before Lunch",
+      "h1": "3 Things to Try With AI Before Lunch",
+      "summary": "Skip the theory. Hand AI three small jobs you already do and see for yourself.",
       "datePublished": "2026-06-10",
-      "dateModified": "2026-09-20",
-      "readMinutes": 5,
+      "dateModified": "2026-09-28",
+      "readMinutes": 15,
       "cover": "/images/guides/what-is-ai.webp",
       "track": "understand",
       "status": "live",
@@ -1010,11 +1009,10 @@
         "Understand AI"
       ],
       "tags": [
-        "artificial intelligence",
+        "what is AI",
         "AI basics",
-        "machine learning",
-        "AI assistant",
-        "automation"
+        "first AI task",
+        "AI assistant"
       ],
       "sequence": 10,
       "reviewStatus": "published"
@@ -1144,18 +1142,18 @@
     },
     {
       "slug": "chatgpt-scheduled-tasks",
-      "title": "Can ChatGPT tell you when a public page changes?",
-      "h1": "Can ChatGPT tell you when a public page changes?",
+      "title": "Set Up 3 Check-Ins That ChatGPT Runs for You",
+      "h1": "Set Up 3 Check-Ins That ChatGPT Runs for You",
       "datePublished": "2026-09-20",
-      "dateModified": "2026-09-20",
-      "readMinutes": 5,
+      "dateModified": "2026-09-28",
+      "readMinutes": 15,
       "cover": "/images/guides/chatgpt-scheduled-tasks.webp",
       "track": "setup",
       "status": "live",
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Intermediate",
+      "level": "Beginner",
       "hub": "Workflows and automation",
       "outcomes": [
         "Automate a task"
@@ -1163,25 +1161,27 @@
       "tags": [
         "ChatGPT",
         "scheduled tasks",
-        "monitoring"
+        "weekly plan",
+        "news round-up",
+        "page alerts"
       ],
-      "summary": "Watch one public help-page section and get an alert only when the detail you care about changes.",
+      "summary": "A Monday plan, a Friday news round-up, and one alert you actually want. Set them once and let them arrive.",
       "sequence": 203
     },
     {
       "slug": "gemini-cannot-find-drive-file",
-      "title": "Why can’t Gemini see the file that is already in your Drive?",
-      "h1": "Why can’t Gemini see the file that is already in your Drive?",
+      "title": "Ask Gemini Questions About Your Own Google Docs",
+      "h1": "Ask Gemini Questions About Your Own Google Docs",
       "datePublished": "2026-09-20",
-      "dateModified": "2026-09-20",
-      "readMinutes": 5,
+      "dateModified": "2026-09-28",
+      "readMinutes": 10,
       "cover": "/images/guides/gemini-cannot-find-drive-file.webp",
       "track": "setup",
       "status": "live",
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Intermediate",
+      "level": "Beginner",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool",
@@ -1190,25 +1190,26 @@
       "tags": [
         "Gemini",
         "Google Drive",
-        "Connected Apps"
+        "Google Docs",
+        "find a file"
       ],
-      "summary": "Find whether the blocker is the account, app connection, administrator, file type or search wording.",
+      "summary": "Stop scrolling through folders. Name the file, ask the question, and get the answer with the line it came from.",
       "sequence": 204
     },
     {
       "slug": "gemini-google-tasks-limits",
-      "title": "Can Gemini see which Google Tasks list a task is in?",
-      "h1": "Can Gemini see which Google Tasks list a task is in?",
+      "title": "Plan Your Week in Google Tasks With Gemini",
+      "h1": "Plan Your Week in Google Tasks With Gemini",
       "datePublished": "2026-09-20",
-      "dateModified": "2026-09-20",
-      "readMinutes": 4,
+      "dateModified": "2026-09-28",
+      "readMinutes": 15,
       "cover": "/images/guides/gemini-google-tasks-limits.webp",
       "track": "tools",
       "status": "live",
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Intermediate",
+      "level": "Beginner",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool"
@@ -1216,25 +1217,26 @@
       "tags": [
         "Gemini",
         "Google Tasks",
-        "project lists"
+        "weekly planning",
+        "to-do list"
       ],
-      "summary": "Test whether Gemini preserves the Google Tasks list you use to separate projects.",
+      "summary": "Empty your head, let Gemini do the typing, and check the list before anything is added.",
       "sequence": 205
     },
     {
       "slug": "check-copilot-excel-edits",
-      "title": "Did Copilot change only the Excel cells you asked it to change?",
-      "h1": "Did Copilot change only the Excel cells you asked it to change?",
+      "title": "3 Excel Jobs for Copilot, and the Check for Each",
+      "h1": "3 Excel Jobs for Copilot, and the Check for Each",
       "datePublished": "2026-09-20",
-      "dateModified": "2026-09-20",
-      "readMinutes": 5,
+      "dateModified": "2026-09-28",
+      "readMinutes": 15,
       "cover": "/images/guides/check-copilot-excel-edits.webp",
       "track": "tools",
       "status": "live",
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Intermediate",
+      "level": "Beginner",
       "hub": "AI tools",
       "outcomes": [
         "Get better answers",
@@ -1243,9 +1245,10 @@
       "tags": [
         "Microsoft Copilot",
         "Excel",
-        "change history"
+        "formulas",
+        "checking AI edits"
       ],
-      "summary": "Make one small practice edit and check every cell, formula and total Copilot touched.",
+      "summary": "Tidy a column, add a formula, explain a sheet. Then spend one minute proving it's right.",
       "sequence": 206
     },
     {
@@ -1335,9 +1338,9 @@
       "readMinutes": 5,
       "cover": "/images/guides/is-kimi-worth-paying-for.webp",
       "track": "tools",
-      "status": "live",
+      "status": "retired",
       "access": "free",
-      "reviewStatus": "published",
+      "reviewStatus": "rejected",
       "formatLabel": "DECISION GUIDE",
       "level": "Beginner",
       "hub": "AI tools",
@@ -1379,11 +1382,11 @@
     },
     {
       "slug": "make-work-tracker-with-kimi",
-      "title": "Make a work tracker with Kimi",
-      "h1": "Make a work tracker with Kimi",
+      "title": "Let AI Build Your Excel Tracker, Then Try to Break It",
+      "h1": "Let AI Build Your Excel Tracker, Then Try to Break It",
       "datePublished": "2026-09-26",
-      "dateModified": "2026-09-26",
-      "readMinutes": 5,
+      "dateModified": "2026-09-28",
+      "readMinutes": 20,
       "cover": "/images/guides/make-work-tracker-with-kimi.webp",
       "track": "tools",
       "status": "live",
@@ -1397,10 +1400,11 @@
       ],
       "tags": [
         "Kimi",
-        "Kimi Sheets",
-        "task tracker"
+        "Excel",
+        "task tracker",
+        "team tracker"
       ],
-      "summary": "Turn 3 sample tasks into an editable Excel tracker with Kimi Sheets, then check the result.",
+      "summary": "Get AI to ask how your team works, build the file, and then test it with the mistakes real people make.",
       "sequence": 212
     },
     {
@@ -1538,11 +1542,11 @@
     },
     {
       "slug": "fix-deepseek-wall-of-text",
-      "title": "Why did DeepSeek turn your scene into a wall of text?",
-      "h1": "Why did DeepSeek turn your scene into a wall of text?",
+      "title": "Get DeepSeek to Write in Paragraphs You Can Actually Read",
+      "h1": "Get DeepSeek to Write in Paragraphs You Can Actually Read",
       "datePublished": "2026-09-20",
-      "dateModified": "2026-09-20",
-      "readMinutes": 4,
+      "dateModified": "2026-09-28",
+      "readMinutes": 10,
       "cover": "/images/guides/fix-deepseek-wall-of-text.webp",
       "track": "create",
       "status": "live",
@@ -1560,7 +1564,7 @@
         "creative writing",
         "editing"
       ],
-      "summary": "Repair paragraph and dialogue breaks without changing the facts, characters or tone.",
+      "summary": "Fix the block you have, stop it happening again, and prove nothing else changed.",
       "sequence": 217
     },
     {
@@ -1572,9 +1576,9 @@
       "readMinutes": 5,
       "cover": "/images/guides/edit-long-writing-with-deepseek.webp",
       "track": "create",
-      "status": "live",
+      "status": "retired",
       "access": "free",
-      "reviewStatus": "published",
+      "reviewStatus": "rejected",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Intermediate",
       "hub": "Content and creative work",
@@ -1619,11 +1623,11 @@
     },
     {
       "slug": "chatgpt-customer-research-with-evidence",
-      "title": "Find patterns in customer feedback with ChatGPT",
-      "h1": "Find patterns in customer feedback with ChatGPT",
+      "title": "Turn 50 Customer Comments Into 3 Decisions",
+      "h1": "Turn 50 Customer Comments Into 3 Decisions",
       "datePublished": "2026-09-23",
-      "dateModified": "2026-09-27",
-      "readMinutes": 6,
+      "dateModified": "2026-09-28",
+      "readMinutes": 20,
       "cover": "/images/guides/chatgpt-customer-research-with-evidence.webp",
       "track": "create",
       "status": "live",
@@ -1641,7 +1645,7 @@
         "customer research",
         "evidence"
       ],
-      "summary": "Group interview or survey notes into themes with supporting extracts, disagreements and gaps.",
+      "summary": "Clean the notes, find the patterns with proof, and leave with what to fix first.",
       "sequence": 220
     },
     {
@@ -1700,18 +1704,18 @@
     },
     {
       "slug": "what-can-copilot-see-at-work",
-      "title": "Get through your inbox with Copilot",
-      "h1": "Get through your inbox with Copilot",
+      "title": "Walk Into Every Meeting Prepared, With Copilot",
+      "h1": "Walk Into Every Meeting Prepared, With Copilot",
       "datePublished": "2026-09-23",
-      "dateModified": "2026-09-27",
-      "readMinutes": 6,
+      "dateModified": "2026-09-28",
+      "readMinutes": 15,
       "cover": "/images/guides/what-can-copilot-see-at-work.webp",
       "track": "tools",
       "status": "live",
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Intermediate",
+      "level": "Beginner",
       "hub": "AI tools",
       "outcomes": [
         "Automate a task",
@@ -1720,36 +1724,39 @@
       "tags": [
         "Copilot",
         "Microsoft 365",
+        "meeting prep",
         "Outlook"
       ],
-      "summary": "Set up a checked morning email brief, then schedule it if your work account supports it.",
+      "summary": "Catch up on the thread, prepare in five minutes, and have the follow-up drafted before you're back at your desk.",
       "sequence": 223
     },
     {
       "slug": "test-meta-muse-money-saving-task",
-      "title": "Can Muse find a better price without buying for you?",
-      "h1": "Can Muse find a better price without buying for you?",
+      "title": "Cut 3 Bills This Month With AI Doing the Legwork",
+      "h1": "Cut 3 Bills This Month With AI Doing the Legwork",
       "datePublished": "2026-09-23",
-      "dateModified": "2026-09-27",
-      "readMinutes": 6,
+      "dateModified": "2026-09-28",
+      "readMinutes": 20,
       "cover": "/images/guides/test-meta-muse-money-saving-task.webp",
       "track": "tools",
       "status": "live",
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Intermediate",
-      "hub": "AI agents",
+      "level": "Beginner",
+      "hub": "Workflows and automation",
       "outcomes": [
-        "Build an agent",
+        "Automate a task",
         "Use AI safely"
       ],
       "tags": [
-        "Meta Muse",
-        "shopping",
-        "money"
+        "save money",
+        "subscriptions",
+        "bills",
+        "renewals",
+        "Meta AI"
       ],
-      "summary": "Check the full cost behind two sample prices, then ask Muse for a sourced shortlist without handing over checkout.",
+      "summary": "Find the subscriptions you forgot, see the real cost of a renewal, and send the message you've been putting off.",
       "sequence": 224
     },
     {
@@ -1815,9 +1822,9 @@
       "readMinutes": 6,
       "cover": "/images/guides/protect-a-long-deepseek-project.webp",
       "track": "setup",
-      "status": "live",
+      "status": "retired",
       "access": "free",
-      "reviewStatus": "published",
+      "reviewStatus": "rejected",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Intermediate",
       "hub": "Workflows and automation",
@@ -1842,9 +1849,9 @@
       "readMinutes": 6,
       "cover": "/images/guides/mistral-multilingual-research.webp",
       "track": "tools",
-      "status": "live",
+      "status": "retired",
       "access": "free",
-      "reviewStatus": "published",
+      "reviewStatus": "rejected",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Intermediate",
       "hub": "AI tools",
@@ -1859,6 +1866,280 @@
       ],
       "summary": "Keep original wording, translations and direct links beside claims found in two languages.",
       "sequence": 228
+    },
+    {
+      "slug": "stop-ai-agreeing-with-you",
+      "title": "Stop AI Agreeing With Everything You Say",
+      "h1": "Stop AI Agreeing With Everything You Say",
+      "datePublished": "2026-09-28",
+      "dateModified": "2026-09-28",
+      "readMinutes": 10,
+      "cover": "/images/guides/stop-ai-agreeing-with-you.webp",
+      "track": "understand",
+      "status": "live",
+      "reviewStatus": "published",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "Better prompts and answers",
+      "outcomes": [
+        "Get better answers",
+        "Use AI safely"
+      ],
+      "tags": [
+        "AI feedback",
+        "honest AI",
+        "custom instructions",
+        "sycophancy"
+      ],
+      "summary": "Get honest feedback on your writing, a real stress test for your plans, and a standing rule that switches off the flattery.",
+      "sequence": 161,
+      "access": "free"
+    },
+    {
+      "slug": "catch-ai-making-things-up",
+      "title": "Catch AI Making Things Up in 30 Seconds",
+      "h1": "Catch AI Making Things Up in 30 Seconds",
+      "datePublished": "2026-09-28",
+      "dateModified": "2026-09-28",
+      "readMinutes": 10,
+      "cover": "/images/guides/catch-ai-making-things-up.webp",
+      "track": "understand",
+      "status": "live",
+      "reviewStatus": "published",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "AI essentials",
+      "outcomes": [
+        "Use AI safely",
+        "Get better answers"
+      ],
+      "tags": [
+        "hallucination",
+        "fact checking",
+        "AI sources",
+        "AI mistakes"
+      ],
+      "summary": "Three quick checks for the three places AI mistakes hide: numbers and names, sources, and the bits it's least sure of.",
+      "sequence": 45,
+      "access": "free"
+    },
+    {
+      "slug": "ai-quit-or-stay-decision",
+      "title": "Make a Quit-or-Stay Decision With 5 AI Advisors",
+      "h1": "Make a Quit-or-Stay Decision With 5 AI Advisors",
+      "datePublished": "2026-09-28",
+      "dateModified": "2026-09-28",
+      "readMinutes": 20,
+      "cover": "/images/guides/ai-quit-or-stay-decision.webp",
+      "track": "understand",
+      "status": "live",
+      "reviewStatus": "published",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "AI essentials",
+      "outcomes": [
+        "Get better answers"
+      ],
+      "tags": [
+        "career decision",
+        "quit my job",
+        "AI advisors",
+        "decision making"
+      ],
+      "summary": "Describe both options fairly, hear five very different advisors, and test the decision before you hand in any notice.",
+      "sequence": 191,
+      "access": "free"
+    },
+    {
+      "slug": "is-ai-coming-for-my-job",
+      "title": "Check How Exposed Your Job Is to AI in 5 Minutes",
+      "h1": "Check How Exposed Your Job Is to AI in 5 Minutes",
+      "datePublished": "2026-09-28",
+      "dateModified": "2026-09-28",
+      "readMinutes": 15,
+      "cover": "/images/guides/is-ai-coming-for-my-job.webp",
+      "track": "understand",
+      "status": "live",
+      "reviewStatus": "published",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "AI essentials",
+      "outcomes": [
+        "Understand AI"
+      ],
+      "tags": [
+        "AI and jobs",
+        "career",
+        "task audit",
+        "AI skills"
+      ],
+      "summary": "Not a scary score. A task-by-task look at your real week, and the one skill to build next.",
+      "sequence": 192,
+      "access": "free"
+    },
+    {
+      "slug": "ai-job-interview-practice",
+      "title": "Rehearse Any Job Interview With AI",
+      "h1": "Rehearse Any Job Interview With AI",
+      "datePublished": "2026-09-28",
+      "dateModified": "2026-09-28",
+      "readMinutes": 30,
+      "cover": "/images/guides/ai-job-interview-practice.webp",
+      "track": "understand",
+      "status": "live",
+      "reviewStatus": "published",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "AI essentials",
+      "outcomes": [
+        "Get better answers"
+      ],
+      "tags": [
+        "job interview",
+        "interview practice",
+        "career",
+        "mock interview"
+      ],
+      "summary": "Work out what they'll really test, practise one question at a time, and walk in with five stories ready.",
+      "sequence": 193,
+      "access": "free"
+    },
+    {
+      "slug": "weekend-projects-with-claude",
+      "title": "Weekend Projects: 7 Useful Things Claude Can Build",
+      "h1": "Weekend Projects: 7 Useful Things Claude Can Build",
+      "datePublished": "2026-09-28",
+      "dateModified": "2026-09-28",
+      "readMinutes": 20,
+      "cover": "/images/guides/weekend-projects-with-claude.webp",
+      "track": "tools",
+      "status": "live",
+      "reviewStatus": "published",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "AI tools",
+      "outcomes": [
+        "Choose an AI tool",
+        "Automate a task"
+      ],
+      "tags": [
+        "Claude",
+        "artifacts",
+        "weekend projects",
+        "no code"
+      ],
+      "summary": "Small tools for real life, each built from a single description. Nothing to install, and nothing private inside.",
+      "sequence": 73,
+      "access": "free"
+    },
+    {
+      "slug": "money-plan-with-ai",
+      "title": "Build a Money Plan From Your Payslip With AI",
+      "h1": "Build a Money Plan From Your Payslip With AI",
+      "datePublished": "2026-09-28",
+      "dateModified": "2026-09-28",
+      "readMinutes": 20,
+      "cover": "/images/guides/money-plan-with-ai.webp",
+      "track": "setup",
+      "status": "live",
+      "reviewStatus": "published",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "Workflows and automation",
+      "outcomes": [
+        "Automate a task"
+      ],
+      "tags": [
+        "budget",
+        "money plan",
+        "payslip",
+        "personal finance"
+      ],
+      "summary": "Understand every line on your payslip, split what's left into a plan you can live with, and check it once a month.",
+      "sequence": 220,
+      "access": "free"
+    },
+    {
+      "slug": "test-business-idea-with-ai",
+      "title": "Put Your Business Idea in Front of 5 AI Critics",
+      "h1": "Put Your Business Idea in Front of 5 AI Critics",
+      "datePublished": "2026-09-28",
+      "dateModified": "2026-09-28",
+      "readMinutes": 20,
+      "cover": "/images/guides/test-business-idea-with-ai.webp",
+      "track": "setup",
+      "status": "live",
+      "reviewStatus": "published",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "Business operations",
+      "outcomes": [
+        "Run business operations"
+      ],
+      "tags": [
+        "business idea",
+        "validation",
+        "small business",
+        "demand test"
+      ],
+      "summary": "Write the idea down in one paragraph, let five critics find the holes, and run a one-week test before you spend anything.",
+      "sequence": 210,
+      "access": "free"
+    },
+    {
+      "slug": "launch-your-product-in-30-days",
+      "title": "The 30-Day Checklist That Gets Your Product Out the Door",
+      "h1": "The 30-Day Checklist That Gets Your Product Out the Door",
+      "datePublished": "2026-09-28",
+      "dateModified": "2026-09-28",
+      "readMinutes": 15,
+      "cover": "/images/guides/launch-your-product-in-30-days.webp",
+      "track": "setup",
+      "status": "live",
+      "reviewStatus": "published",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "Business operations",
+      "outcomes": [
+        "Run business operations"
+      ],
+      "tags": [
+        "product launch",
+        "30-day plan",
+        "small business",
+        "planning"
+      ],
+      "summary": "Cut the product to its smallest useful version, plan 4 weeks backwards from launch day, and check every Friday what's blocking you.",
+      "sequence": 211,
+      "access": "free"
+    },
+    {
+      "slug": "marketing-emails-that-sell",
+      "title": "3 Email Rules That Make People Click Buy",
+      "h1": "3 Email Rules That Make People Click Buy",
+      "datePublished": "2026-09-28",
+      "dateModified": "2026-09-28",
+      "readMinutes": 15,
+      "cover": "/images/guides/marketing-emails-that-sell.webp",
+      "track": "create",
+      "status": "live",
+      "reviewStatus": "published",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "Business operations",
+      "outcomes": [
+        "Create content",
+        "Run business operations"
+      ],
+      "tags": [
+        "email marketing",
+        "sales emails",
+        "subject lines",
+        "small business"
+      ],
+      "summary": "Write to one person, make the subject line say what's inside, and let a real customer's words do the persuading.",
+      "sequence": 212,
+      "access": "free"
     }
   ]
 }

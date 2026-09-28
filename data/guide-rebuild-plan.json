@@ -85,12 +85,6 @@
       "component": "copilot-excel-page"
     },
     {
-      "slug": "meta-ai",
-      "pattern": "explorer",
-      "status": "approved",
-      "component": "meta-muse-page"
-    },
-    {
       "slug": "test-meta-business-agent-customer-replies",
       "pattern": "practice",
       "status": "pending"
@@ -118,18 +112,6 @@
       "pattern": "practice",
       "status": "approved",
       "component": "deepseek-wall-page"
-    },
-    {
-      "slug": "edit-long-writing-with-deepseek",
-      "pattern": "walkthrough",
-      "status": "approved",
-      "component": "deepseek-long-edit-page"
-    },
-    {
-      "slug": "is-kimi-worth-paying-for",
-      "pattern": "decision",
-      "status": "approved",
-      "component": "kimi-value-page"
     },
     {
       "slug": "make-work-tracker-with-kimi",
@@ -242,16 +224,64 @@
       "component": "deepseek-document-page"
     },
     {
-      "slug": "protect-a-long-deepseek-project",
-      "pattern": "audit",
-      "status": "approved",
-      "component": "deepseek-recovery-page"
-    },
-    {
-      "slug": "mistral-multilingual-research",
+      "slug": "stop-ai-agreeing-with-you",
       "pattern": "walkthrough",
       "status": "approved",
-      "component": "mistral-multilingual-page"
+      "component": "batch-guide-page"
+    },
+    {
+      "slug": "catch-ai-making-things-up",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "batch-guide-page"
+    },
+    {
+      "slug": "ai-quit-or-stay-decision",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "batch-guide-page"
+    },
+    {
+      "slug": "is-ai-coming-for-my-job",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "batch-guide-page"
+    },
+    {
+      "slug": "ai-job-interview-practice",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "batch-guide-page"
+    },
+    {
+      "slug": "weekend-projects-with-claude",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "batch-guide-page"
+    },
+    {
+      "slug": "money-plan-with-ai",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "batch-guide-page"
+    },
+    {
+      "slug": "test-business-idea-with-ai",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "batch-guide-page"
+    },
+    {
+      "slug": "launch-your-product-in-30-days",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "batch-guide-page"
+    },
+    {
+      "slug": "marketing-emails-that-sell",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "batch-guide-page"
     }
   ]
 }

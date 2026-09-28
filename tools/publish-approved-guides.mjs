@@ -18,7 +18,7 @@ if (notReady.length) {
   throw new Error(`Bulk publication stopped: ${notReady.length} guide pages remain in review or pending. Ship only individually approved rebuilt pages.`);
 }
 
-for (const guide of [...(publication.heldForReview ?? []), ...(publication.parkedPending ?? [])]) {
+for (const guide of [...(publication.heldForReview ?? []), ...(publication.parkedPending ?? []), ...(publication.retired ?? [])]) {
   await rm(path.join(root, "main-site", "guides", `${guide.slug}.html`), { force: true });
   await rm(path.join(root, "main-site", "guides", guide.slug), { recursive: true, force: true });
 }

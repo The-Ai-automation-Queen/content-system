@@ -375,7 +375,11 @@ const connections: BatchGuide = {
 };
 
 import { batchTwoGuides } from "./guide-batch-two";
+import { batchElevenFifteenGuides } from "./guide-batch-11-15";
+import { batchSixteenTwentyGuides } from "./guide-batch-16-20";
+import { batchTwentyOneTwentyFiveGuides } from "./guide-batch-21-25";
+import { batchTwentySixThirtyFiveGuides } from "./guide-batch-26-35";
 
 export const batchOneGuides: Record<string, BatchGuide> = Object.fromEntries(
-  [claude, shorter, forgetting, privacy, connections, ...batchTwoGuides].map((guide) => [guide.slug, guide]),
+  [claude, shorter, forgetting, privacy, connections, ...batchTwoGuides, ...batchElevenFifteenGuides, ...batchSixteenTwentyGuides, ...batchTwentyOneTwentyFiveGuides, ...batchTwentySixThirtyFiveGuides].map((guide) => [guide.slug, guide]),
 );

@@ -85,8 +85,8 @@
     },
     {
       "source": "/guides/kimi.html",
-      "destination": "/guides/is-kimi-worth-paying-for/",
-      "permanent": true
+      "destination": "/guides/",
+      "permanent": false
     },
     {
       "source": "/guides/control-kimi-code-changes",
@@ -195,8 +195,8 @@
     },
     {
       "source": "/guides/is-kimi-worth-paying-for.html",
-      "destination": "/guides/is-kimi-worth-paying-for/",
-      "permanent": true
+      "destination": "/guides/",
+      "permanent": false
     },
     {
       "source": "/guides/instagram-content-dashboard.html",
@@ -285,6 +285,76 @@
     },
     {
       "source": "/guides/fix-gemini-workspace-action.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/mistral-multilingual-research",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/mistral-multilingual-research/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/mistral-multilingual-research.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/protect-a-long-deepseek-project",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/protect-a-long-deepseek-project/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/protect-a-long-deepseek-project.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/edit-long-writing-with-deepseek",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/edit-long-writing-with-deepseek/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/edit-long-writing-with-deepseek.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/meta-ai",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/meta-ai/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/meta-ai.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/is-kimi-worth-paying-for",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/is-kimi-worth-paying-for/",
       "destination": "/guides/",
       "permanent": false
     }

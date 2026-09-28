@@ -5,6 +5,8 @@ import { copilotGuide, deepSeekGuide, grokGuide, kimiGuide, manusGuide, metaAiGu
 import { aiBrowserGuide, aiConnectionsGuide, aiSearchGuide, aiSkillsGuide, promptGuide } from "./guide-batch-three";
 import { modelSeriesGuides } from "./model-guide-series";
 import { researchGuideSeries } from "./research-guide-series";
+import { newGuidePages } from "./guide-batch-26-35-pages";
+import { batchOneGuides } from "./guide-batch-one";
 
 export type GuideStep = {
   title: string;
@@ -1149,48 +1151,53 @@ Notes:
   ],
 } as const satisfies GuidePage;
 
-export const guidePages = [instagramDashboardGuide, whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide, whichAiToolGuide, chatGptGuide, claudeGuide, claudeProjectsGuide, geminiGuide, copilotGuide, metaAiGuide, grokGuide, deepSeekGuide, kimiGuide, manusGuide, mistralGuide, promptGuide, aiBrowserGuide, aiConnectionsGuide, aiSkillsGuide, aiSearchGuide, ...modelSeriesGuides, ...researchGuideSeries] as const;
+export const guidePages = [instagramDashboardGuide, whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide, whichAiToolGuide, chatGptGuide, claudeGuide, claudeProjectsGuide, geminiGuide, copilotGuide, metaAiGuide, grokGuide, deepSeekGuide, kimiGuide, manusGuide, mistralGuide, promptGuide, aiBrowserGuide, aiConnectionsGuide, aiSkillsGuide, aiSearchGuide, ...modelSeriesGuides, ...researchGuideSeries, ...newGuidePages] as const;
 
 // Every public recommendation points to a currently approved guide. Review pages
 // retain their own draft recommendations until their individual editorial pass.
 export const approvedRelatedSelections: Record<string, readonly [string, string, string]> = {
-  "what-is-ai": ["ai-jargon-guide", "what-is-agentic", "what-should-you-never-share-with-ai"],
-  "ai-jargon-guide": ["what-is-ai", "what-is-agentic", "what-should-you-never-share-with-ai"],
+  "what-is-ai": ["what-is-a-prompt", "claude", "what-should-you-never-share-with-ai"],
+  "ai-jargon-guide": ["what-is-ai", "what-is-agentic", "connect-ai-to-email-files-calendar"],
   "what-is-agentic": ["connect-ai-to-email-files-calendar", "what-should-you-never-share-with-ai", "claude"],
   "what-should-you-never-share-with-ai": ["connect-ai-to-email-files-calendar", "what-is-agentic", "what-is-ai"],
-  "check-copilot-excel-edits": ["make-work-tracker-with-kimi", "connect-ai-to-email-files-calendar", "what-should-you-never-share-with-ai"],
+  "check-copilot-excel-edits": ["make-work-tracker-with-kimi", "what-is-a-prompt", "what-can-copilot-see-at-work"],
   "review-grok-suggestions": ["get-better-professional-writing-from-grok", "connect-ai-to-email-files-calendar", "what-should-you-never-share-with-ai"],
   "get-better-professional-writing-from-grok": ["review-grok-suggestions", "show-up-in-ai-search", "what-should-you-never-share-with-ai"],
-  "make-work-tracker-with-kimi": ["is-kimi-worth-paying-for", "check-copilot-excel-edits", "what-should-you-never-share-with-ai"],
-  "is-kimi-worth-paying-for": ["make-work-tracker-with-kimi", "check-copilot-excel-edits", "what-should-you-never-share-with-ai"],
+  "make-work-tracker-with-kimi": ["check-copilot-excel-edits", "teach-claude-a-repeatable-workflow", "claude"],
   "instagram-content-dashboard": ["what-should-you-never-share-with-ai", "what-is-agentic", "show-up-in-ai-search"],
   "connect-ai-to-email-files-calendar": ["what-should-you-never-share-with-ai", "what-is-agentic", "what-can-copilot-see-at-work"],
-  "show-up-in-ai-search": ["what-is-ai", "get-better-professional-writing-from-grok", "what-should-you-never-share-with-ai"],
-  "which-ai-tool-for-what": ["what-is-ai", "what-is-an-ai-browser", "what-should-you-never-share-with-ai"],
+  "show-up-in-ai-search": ["chatgpt-customer-research-with-evidence", "which-ai-tool-for-what", "what-is-a-prompt"],
+  "which-ai-tool-for-what": ["what-is-ai", "what-is-a-prompt", "connect-ai-to-email-files-calendar"],
   "make-chatgpt-answers-shorter": ["claude", "what-is-a-prompt", "what-is-ai"],
   "stop-chatgpt-forgetting-context": ["teach-claude-a-repeatable-workflow", "claude", "make-chatgpt-answers-shorter"],
-  "chatgpt-scheduled-tasks": ["teach-claude-a-repeatable-workflow", "get-better-professional-writing-from-grok", "what-should-you-never-share-with-ai"],
+  "chatgpt-scheduled-tasks": ["teach-claude-a-repeatable-workflow", "what-is-agentic", "what-can-copilot-see-at-work"],
   "chatgpt-screen-recording-to-process-guide": ["teach-claude-a-repeatable-workflow", "what-is-a-prompt", "make-chatgpt-answers-shorter"],
-  "chatgpt-customer-research-with-evidence": ["verify-grok-current-research", "show-up-in-ai-search", "what-should-you-never-share-with-ai"],
+  "chatgpt-customer-research-with-evidence": ["chatgpt-screen-recording-to-process-guide", "what-should-you-never-share-with-ai", "show-up-in-ai-search"],
   "claude": ["stop-chatgpt-forgetting-context", "make-chatgpt-answers-shorter", "what-is-a-prompt"],
   "claude-projects": ["stop-chatgpt-forgetting-context", "teach-claude-a-repeatable-workflow", "claude"],
   "teach-claude-a-repeatable-workflow": ["claude-projects", "claude", "chatgpt-screen-recording-to-process-guide"],
-  "gemini-cannot-find-drive-file": ["gemini-google-tasks-limits", "what-can-copilot-see-at-work", "what-should-you-never-share-with-ai"],
-  "gemini-google-tasks-limits": ["gemini-cannot-find-drive-file", "what-can-copilot-see-at-work", "connect-ai-to-email-files-calendar"],
-  "what-can-copilot-see-at-work": ["check-copilot-excel-edits", "connect-ai-to-email-files-calendar", "what-should-you-never-share-with-ai"],
-  "meta-ai": ["test-meta-muse-money-saving-task", "which-ai-tool-for-what", "what-should-you-never-share-with-ai"],
-  "test-meta-muse-money-saving-task": ["meta-ai", "is-kimi-worth-paying-for", "which-ai-tool-for-what"],
+  "gemini-cannot-find-drive-file": ["connect-ai-to-email-files-calendar", "claude", "gemini-google-tasks-limits"],
+  "gemini-google-tasks-limits": ["gemini-cannot-find-drive-file", "claude", "what-is-agentic"],
+  "what-can-copilot-see-at-work": ["connect-ai-to-email-files-calendar", "check-copilot-excel-edits", "teach-claude-a-repeatable-workflow"],
+  "test-meta-muse-money-saving-task": ["which-ai-tool-for-what", "what-should-you-never-share-with-ai", "what-is-an-ai-browser"],
   "verify-grok-current-research": ["get-better-professional-writing-from-grok", "chatgpt-customer-research-with-evidence", "what-is-an-ai-browser"],
   "test-grok-repeated-image-edits": ["get-better-professional-writing-from-grok", "what-is-a-prompt", "which-ai-tool-for-what"],
-  "fix-deepseek-wall-of-text": ["edit-long-writing-with-deepseek", "what-is-a-prompt", "what-is-ai"],
-  "edit-long-writing-with-deepseek": ["fix-deepseek-wall-of-text", "test-deepseek-v4-document-work", "protect-a-long-deepseek-project"],
-  "test-deepseek-v4-document-work": ["edit-long-writing-with-deepseek", "chatgpt-customer-research-with-evidence", "what-should-you-never-share-with-ai"],
-  "protect-a-long-deepseek-project": ["edit-long-writing-with-deepseek", "claude-projects", "what-should-you-never-share-with-ai"],
+  "fix-deepseek-wall-of-text": ["what-is-a-prompt", "make-chatgpt-answers-shorter", "stop-ai-agreeing-with-you"],
+  "test-deepseek-v4-document-work": ["fix-deepseek-wall-of-text", "chatgpt-customer-research-with-evidence", "what-should-you-never-share-with-ai"],
   "manus-browser-workflow": ["what-is-an-ai-browser", "connect-ai-to-email-files-calendar", "what-should-you-never-share-with-ai"],
-  "mistral-multilingual-research": ["chatgpt-customer-research-with-evidence", "verify-grok-current-research", "what-should-you-never-share-with-ai"],
   "what-is-a-prompt": ["make-chatgpt-answers-shorter", "claude", "what-should-you-never-share-with-ai"],
-  "what-is-an-ai-browser": ["manus-browser-workflow", "what-should-you-never-share-with-ai", "gemini-cannot-find-drive-file"],
-  "ai-skills-worth-learning-for-work": ["which-ai-tool-for-what", "claude", "what-is-a-prompt"],
+  "what-is-an-ai-browser": ["what-is-agentic", "connect-ai-to-email-files-calendar", "what-should-you-never-share-with-ai"],
+  "ai-skills-worth-learning-for-work": ["what-is-a-prompt", "what-is-agentic", "which-ai-tool-for-what"],
+  "stop-ai-agreeing-with-you": ["catch-ai-making-things-up", "test-business-idea-with-ai", "what-is-a-prompt"],
+  "catch-ai-making-things-up": ["stop-ai-agreeing-with-you", "ai-jargon-guide", "what-should-you-never-share-with-ai"],
+  "ai-quit-or-stay-decision": ["is-ai-coming-for-my-job", "stop-ai-agreeing-with-you", "ai-skills-worth-learning-for-work"],
+  "is-ai-coming-for-my-job": ["ai-skills-worth-learning-for-work", "ai-quit-or-stay-decision", "ai-job-interview-practice"],
+  "test-business-idea-with-ai": ["launch-your-product-in-30-days", "stop-ai-agreeing-with-you", "chatgpt-customer-research-with-evidence"],
+  "weekend-projects-with-claude": ["what-is-ai", "test-meta-muse-money-saving-task", "make-work-tracker-with-kimi"],
+  "money-plan-with-ai": ["test-meta-muse-money-saving-task", "what-should-you-never-share-with-ai", "catch-ai-making-things-up"],
+  "ai-job-interview-practice": ["is-ai-coming-for-my-job", "ai-quit-or-stay-decision", "ai-skills-worth-learning-for-work"],
+  "launch-your-product-in-30-days": ["test-business-idea-with-ai", "marketing-emails-that-sell", "chatgpt-customer-research-with-evidence"],
+  "marketing-emails-that-sell": ["launch-your-product-in-30-days", "test-business-idea-with-ai", "stop-ai-agreeing-with-you"],
 };
 
 export function getGuidePage(slug: string): GuidePage | undefined {
@@ -1201,7 +1208,8 @@ export function getGuidePage(slug: string): GuidePage | undefined {
   const related = selections.map((targetSlug) => {
     const target = guidePages.find((item) => item.slug === targetSlug) as GuidePage | undefined;
     if (!target) throw new Error(`Unknown related guide: ${targetSlug}`);
-    return { slug: target.slug, title: target.title, reason: target.promise, cover: target.cover };
+    const batch = batchOneGuides[target.slug];
+    return { slug: target.slug, title: batch?.title ?? target.title, reason: batch?.hero.line ?? target.promise, cover: target.cover };
   }) as [GuideRelated, GuideRelated, GuideRelated];
   return { ...guide, related };
 }
