@@ -190,44 +190,44 @@ body.home-saadia a:focus-visible,body.home-saadia button:focus-visible,body.home
 /* Hero line: keep it on the text side, never under the photo. */
 .sk-hero .sk-hero-content>p{max-width:32ch!important;text-wrap:balance}
 @media(max-width:700px){.sk-hero .sk-hero-content>p{max-width:none!important}}
-/* Kits (coming soon) with waitlist: same layout as the workbooks, electric blue. */
-.sk-kits{background:var(--blue);color:var(--white)}
-.sk-kits h2 em{color:var(--lilac)}
-.sk-kits ol{border-top-color:var(--white)}
-.sk-kits li{border-bottom-color:var(--white)}
-.sk-kits li label{display:flex;align-items:baseline;gap:20px;cursor:pointer;width:100%}
-.sk-kits li span{color:var(--lilac)}
+/* Kits (coming soon) with waitlist: same layout as the workbooks. */
+.sk-kits li label{display:flex;align-items:center;gap:20px;cursor:pointer;width:100%}
 .sk-kits li input{width:22px;height:22px;accent-color:var(--pink);align-self:center;flex:none}
 .sk-kit-form{margin-top:26px;max-width:470px}
 .sk-kit-form>div{display:grid;grid-template-columns:1fr 1.4fr;gap:10px}
-.sk-kit-form input[name=firstName],.sk-kit-form input[type=email]{min-width:0;height:50px;border:0;border-radius:0;padding:0 14px;font:400 15px Inter,Arial,sans-serif;color:var(--ink)}
+.sk-kit-form input[name=firstName],.sk-kit-form input[type=email]{min-width:0;height:52px;border:1px solid #b9bcc6;border-radius:0;padding:0 14px;font:400 15px Inter,Arial,sans-serif;color:var(--ink);background:var(--white)}
 .sk-kit-form .sk-consent{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:13px;line-height:1.4}
 .sk-kit-form .sk-pill{margin-top:18px;border:0;cursor:pointer}
 #sk-kit-status{margin-top:12px;font-weight:700}
 @media(max-width:700px){.sk-kit-form>div{grid-template-columns:1fr}}
-.sk-kits h2,.sk-kits p{color:var(--white)}
-body.home-saadia .sk-kits h2,body.home-saadia .sk-kits h2 span,body.home-saadia .sk-kits p:not(.sk-overline):not(#sk-kit-status){color:var(--white)!important}body.home-saadia .sk-kits h2 em{color:var(--lilac)!important}
 
-/* 28/09 review: bigger button text everywhere; one dark background for kits,
-   workbooks, work with me and the final band, with pictures in each. */
+/* 28/09 review 3: bigger button text; colours flow down the page through waves:
+   white guides, pale blue kits, lilac workbooks, electric-blue work with me, ink sign-up. */
 .sk-pill{font-size:16px;min-height:56px;padding:15px 28px}
 .sk-newsletter button{font-size:15px}
 body.home-saadia .sk-final h2 em{display:inline;margin-left:.18em}
-.sk-kits,.sk-workbooks,.sk-consulting,.sk-final{background:var(--ink);color:var(--white)}
-.sk-kits,.sk-workbooks,.sk-consulting{border-top:1px solid #ffffff26}
-body.home-saadia .sk-workbooks h2,body.home-saadia .sk-workbooks h2 span,body.home-saadia .sk-workbooks p:not(.sk-overline){color:var(--white)}
-body.home-saadia .sk-workbooks h2 em{color:var(--lilac)}
-.sk-workbooks .sk-overline{color:var(--lilac)}
-.sk-workbooks ol,.sk-kits ol{border-top-color:#ffffff4d}
-.sk-workbooks li,.sk-kits li{border-bottom-color:#ffffff4d;align-items:center;color:var(--white)}
-.sk-workbooks li span,.sk-kits li span{color:var(--lilac)}
-.sk-workbooks .sk-pill-ink{background:var(--white);color:var(--ink)!important}
-.sk-kits li label{align-items:center}
-.sk-thumb{width:84px;height:84px;flex:none;object-fit:contain;border-radius:50%;background:#EEF2FC;padding:6px}
-.sk-cover{width:72px;height:100px;flex:none;object-fit:cover}
+.sk-wave{display:block;height:clamp(60px,8vw,120px);background:var(--from);line-height:0}
+.sk-wave svg{display:block;width:100%;height:100%}
+.sk-wave path{fill:var(--to)}
+.sk-guides{padding-bottom:40px}
+.sk-kits{background:#EEF2FC;color:var(--ink);padding:40px 0 60px}
+body.home-saadia .sk-kits h2 em{color:var(--blue)}
+.sk-kits .sk-overline{color:var(--blue)}
+.sk-kits ol{border-top:1px solid var(--ink)}
+.sk-kits li{border-bottom:1px solid var(--ink)}
+.sk-kits li span{color:var(--blue)}
+.sk-workbooks:not(.sk-kits){background:var(--lilac);padding:40px 0 60px}
+.sk-workbooks li{align-items:center}
+.sk-consulting{background:var(--blue);padding:40px 0 60px}
+body.home-saadia .sk-consulting h2 em,.sk-consulting .sk-overline{color:var(--lilac)}
+.sk-consulting .sk-consulting-value{color:#eef0ff}
+.sk-consulting .sk-consulting-evidence{border-top:0;padding-top:0}
+.sk-final{background:var(--ink);padding:40px 0 110px}
+.sk-thumb{width:84px;height:84px;flex:none;object-fit:contain;border-radius:50%;background:var(--white);padding:6px}
+.sk-cover{width:72px;height:100px;flex:none;object-fit:cover;box-shadow:0 6px 18px #0d111733}
 .sk-consulting-photo{margin:0 0 26px}
 .sk-consulting-photo img{display:block;width:100%;max-width:400px;aspect-ratio:4/5;object-fit:cover;object-position:center 20%}
 .sk-news-mascot{width:120px;height:120px;object-fit:contain;display:block;margin-bottom:12px}
 .sk-newsletter{border-top:0;padding-top:0}
 @media(max-width:700px){.sk-thumb{width:60px;height:60px}.sk-cover{width:52px;height:72px}}
-.sk-final{border-top:1px solid #ffffff26}.sk-consulting .sk-consulting-evidence{border-top:0;padding-top:0}
+.sk-guides{padding-top:30px}
