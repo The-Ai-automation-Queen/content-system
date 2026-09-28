@@ -64,7 +64,7 @@ test("guide capture requires explicit consent", async () => {
   assert.equal(calls.length, 0);
 });
 
-test("approved guide capture requires first and last name", async () => {
+test("approved guide capture requires a first name", async () => {
   const { response, calls } = await invoke({
     firstName: " ",
     email: "amina@example.com",
@@ -74,7 +74,7 @@ test("approved guide capture requires first and last name", async () => {
   });
 
   assert.equal(response.statusCode, 400);
-  assert.equal(response.body.error, "Enter your first and last name.");
+  assert.equal(response.body.error, "Enter your first name.");
   assert.equal(calls.length, 0);
 });
 
@@ -123,17 +123,19 @@ test("entry guide capture sends both name fields and consent evidence without fo
   assert.match(emailPayload.markdown, /The AI Automation Queen/);
 });
 
-test("Instagram gate requires both name fields before sending to Lumail", async () => {
+test("Instagram gate accepts a first name without a last name", async () => {
   const { response, calls } = await invoke({ firstName: "Reader", email: "reader@example.com", consent: true, guideSlug: "instagram-content-dashboard" });
-  assert.equal(response.statusCode, 400);
-  assert.equal(response.body.error, "Enter your first and last name.");
-  assert.equal(calls.length, 0);
+  assert.equal(response.statusCode, 200);
+  const payload = JSON.parse(calls[0][1].body);
+  assert.equal(payload.name, "Reader");
+  assert.equal(payload.fields.first_name, "Reader");
+  assert.equal(payload.fields.last_name, undefined);
 });
 
-test("What AI entry gate requires both name fields before sending to Lumail", async () => {
-  const { response, calls } = await invoke({ firstName: "Reader", email: "reader@example.com", consent: true, guideSlug: "what-is-ai" });
+test("What AI entry gate still requires a first name", async () => {
+  const { response, calls } = await invoke({ firstName: " ", email: "reader@example.com", consent: true, guideSlug: "what-is-ai" });
   assert.equal(response.statusCode, 400);
-  assert.equal(response.body.error, "Enter your first and last name.");
+  assert.equal(response.body.error, "Enter your first name.");
   assert.equal(calls.length, 0);
 });
 

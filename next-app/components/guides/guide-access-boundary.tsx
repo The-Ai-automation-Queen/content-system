@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, type ReactNode, useEffect, useRef, useState } from "react";
+import { BatchIcon } from "./batch-icons";
 import styles from "./guide-reading-page.module.css";
 
 const ACCESS_KEY = "shift-lead-guide-access";
@@ -11,6 +12,11 @@ export function GuideAccessBoundary({
   guidePromise,
   heading,
   actionLabel,
+  note,
+  eyebrow,
+  headingAccent,
+  variant,
+  showWorkBridge = true,
   children,
 }: {
   guideSlug: string;
@@ -18,8 +24,12 @@ export function GuideAccessBoundary({
   guidePromise?: string;
   heading?: string;
   actionLabel?: string;
+  note?: string;
+  eyebrow?: string;
+  headingAccent?: string;
+  showWorkBridge?: boolean;
   children: ReactNode;
-  variant?: "unlock";
+  variant?: "unlock" | "band";
 }) {
   const [ready, setReady] = useState(false);
   const [unlocked, setUnlocked] = useState(false);
@@ -59,7 +69,6 @@ export function GuideAccessBoundary({
         body: JSON.stringify({
           email: form.get("email"),
           firstName: form.get("firstName"),
-          lastName: form.get("lastName"),
           website: form.get("website"),
           guideSlug,
           source: window.location.pathname,
@@ -87,28 +96,29 @@ export function GuideAccessBoundary({
   return (
     <>
       <div
-        className={styles.captureTransition}
+        className={variant === "band" ? `${styles.captureTransition} ${styles.bandGate}` : styles.captureTransition}
         data-guide-capture-boundary
         hidden={ready && unlocked}
       >
         <section className={styles.captureBoundary} aria-labelledby={`guide-gate-title-${guideSlug}`}>
           <div>
-          <span className={styles.gateLabel}>Continue this guide</span>
-          <h2 id={`guide-gate-title-${guideSlug}`}>{heading || "Get the next step"}</h2>
-          <p>{guidePromise || `Get the next practical part of ${guideTitle} and a link to return to this guide.`}</p>
+          {eyebrow
+            ? <span className={styles.gateEyebrow}><span aria-hidden="true">✦</span>{eyebrow}</span>
+            : <span className={styles.gateLock}><BatchIcon name="lock" size={22} /></span>}
+          <h2 id={`guide-gate-title-${guideSlug}`}>{heading || "Get the next step"}{headingAccent && <> <em>{headingAccent}</em></>}</h2>
+          {guidePromise !== "" && <p>{guidePromise || `Get the next practical part of ${guideTitle} and a link to return to this guide.`}</p>}
+          {note && <p className={styles.gateNote}>{note}</p>}
           <form onSubmit={submit}>
             <div className={styles.nameFields}>
               <label htmlFor={`guide-first-name-${guideSlug}`}>First name<input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} required /></label>
-              <label htmlFor={`guide-last-name-${guideSlug}`}>Last name<input id={`guide-last-name-${guideSlug}`} name="lastName" type="text" autoComplete="family-name" maxLength={100} required /></label>
+              <label htmlFor={`guide-email-${guideSlug}`}>Email<input id={`guide-email-${guideSlug}`} name="email" type="email" autoComplete="email" required placeholder="you@example.com" /></label>
             </div>
-            <label className={styles.emailField} htmlFor={`guide-email-${guideSlug}`}>Email address (required)<input id={`guide-email-${guideSlug}`} name="email" type="email" autoComplete="email" required placeholder="you@example.com" /></label>
             <input className={styles.honeypot} name="website" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
             <label className={styles.consent}>
               <input name="marketingConsent" type="checkbox" />
-              <span>Also send me practical Shift &amp; Lead emails and product updates (optional). I can unsubscribe at any time.</span>
+              <span>Also send me new guides and updates (optional, unsubscribe anytime).</span>
             </label>
             <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Opening guide..." : (actionLabel || "Open the rest of the guide")}</button>
-            <small>Save the link we email you to return later. <a href="/privacy.html">Privacy notice</a>.</small>
             {status === "error" && <strong role="alert">{message}</strong>}
           </form>
           </div>
@@ -121,6 +131,13 @@ export function GuideAccessBoundary({
         hidden={!ready || !unlocked}
       >
         {children}
+        {showWorkBridge && <aside className={styles.workBridge} aria-labelledby={`guide-work-bridge-${guideSlug}`}>
+          <div>
+            <h2 id={`guide-work-bridge-${guideSlug}`}>Want your team working like this?</h2>
+            <p>I run a practical AI programme for teams, adapted to your industry and built on your own work. I also help leaders decide what AI should change in their business and marketing.</p>
+          </div>
+          <a href="/work-with-fatiha/" data-track="guide_to_work_with_me">See how we can work together <span aria-hidden="true">→</span></a>
+        </aside>}
       </div>
     </>
   );

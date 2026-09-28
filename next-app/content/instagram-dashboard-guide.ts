@@ -399,7 +399,7 @@ export const instagramDashboardGuide = {
     },
     {
       "slug": "what-should-you-never-share-with-ai",
-      "title": "What should you never share with AI?",
+      "title": "The 3-Question Check Before You Paste Anything Into AI",
       "reason": "Check what stays private before working with account data or credentials.",
       "cover": "/images/guides/learn-master.webp"
     },

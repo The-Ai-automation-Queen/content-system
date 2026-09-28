@@ -88,8 +88,8 @@ export const existingGuide = (slug: string, title: string, reason: string, cover
 export const makeChatgptAnswersShorterGuide = makeGuide({
   slug: "make-chatgpt-answers-shorter",
   promptMode: "as-written",
-  title: "Why does ChatGPT keep giving you an essay?",
-  promise: "Turn a long ChatGPT answer into a short update you can use, without losing the facts or adding new ones.",
+  title: "Stop ChatGPT Writing You an Essay",
+  promise: "Tell ChatGPT the parts you need and a word limit, then check it didn't cut the truth.",
   coverAlt: "The small blue robot trimming an overflowing paper scroll into a compact work brief",
   seoDescription: "A practical test for making ChatGPT answers shorter without losing the useful parts.",
   sources: [
@@ -129,15 +129,15 @@ export const makeChatgptAnswersShorterGuide = makeGuide({
   finish: "For your next task, give ChatGPT the facts, the three parts you need and the length limit. Check the result before you use it.",
   related: [
     existingGuide("what-is-ai", "What AI actually is", "Try a small task and check what the answer got right.", "/images/guides/what-is-ai.webp"),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Know what to leave out before pasting work into a chat.", "/images/guides/learn-master.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Know what to leave out before pasting work into a chat.", "/images/guides/learn-master.webp"),
   ],
 });
 
 export const stopChatgptForgettingContextGuide = makeGuide({
   slug: "stop-chatgpt-forgetting-context",
   promptMode: "as-written",
-  title: "Why does ChatGPT forget what you already told it?",
-  promise: "Put the small set of facts that must stay stable in a Project, then test whether the next answer uses them without another correction.",
+  title: "Never Explain Your Project to ChatGPT Twice",
+  promise: "Put your brief in a ChatGPT Project once, and every chat inside that Project can use it.",
   coverAlt: "The small blue robot filing four fixed facts into a cabinet while loose chat pages drift away",
   seoDescription: "Use a ChatGPT Project to keep a short working brief available across related conversations.",
   sources: [{ label: "OpenAI: Projects in ChatGPT", url: "https://help.openai.com/en/articles/10169521-projects-in-chatgpt" }],
@@ -176,8 +176,8 @@ export const stopChatgptForgettingContextGuide = makeGuide({
   finish: "You can now judge whether a short Project brief reduces repeated corrections for work that continues.",
   related: [
     existingGuide("what-is-ai", "What AI actually is", "See why a convincing answer still needs a check against the source.", "/images/guides/what-is-ai.webp"),
-    existingGuide("connect-ai-to-email-files-calendar", "Should you let AI connect to your email, files and calendar?", "Understand access before you connect work tools to a Project.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Set the data boundary before adding real Project files.", "/images/guides/learn-master.webp"),
+    existingGuide("connect-ai-to-email-files-calendar", "Read This Before You Connect AI to Your Email", "Understand access before you connect work tools to a Project.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Set the data boundary before adding real Project files.", "/images/guides/learn-master.webp"),
   ],
 });
 
@@ -223,7 +223,7 @@ export const chatgptScheduledTasksGuide = makeGuide({
   related: [
     existingGuide("what-is-ai", "What AI actually is", "Know why an automated answer still needs checking.", "/images/guides/what-is-ai.webp"),
     existingGuide("what-is-agentic", "What AI agents actually do", "See when an agent makes sense instead of a scheduled check.", "/images/guides/what-is-agentic.webp"),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what the scheduled task may access.", "/images/guides/learn-master.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Check what the scheduled task may access.", "/images/guides/learn-master.webp"),
   ],
 });
 
@@ -270,8 +270,8 @@ export const geminiDriveFileGuide = makeGuide({
   },
   finish: "You now know whether to fix the account, connection, administrator setting, file type or search wording.",
   related: [
-    existingGuide("connect-ai-to-email-files-calendar", "Should you let AI connect to your email, files and calendar?", "Check the access Gemini needs before connecting a work account.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what belongs outside a connected chat.", "/images/guides/learn-master.webp"),
+    existingGuide("connect-ai-to-email-files-calendar", "Read This Before You Connect AI to Your Email", "Check the access Gemini needs before connecting a work account.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Check what belongs outside a connected chat.", "/images/guides/learn-master.webp"),
   ],
 });
 
@@ -316,8 +316,8 @@ export const geminiTasksGuide = makeGuide({
   },
   finish: "You can now keep Gemini for task retrieval or keep project organisation inside Google Tasks.",
   related: [
-    existingGuide("connect-ai-to-email-files-calendar", "Should you let AI connect to your email, files and calendar?", "Understand the access a connected tool receives.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Keep private task details outside an unapproved account.", "/images/guides/learn-master.webp"),
+    existingGuide("connect-ai-to-email-files-calendar", "Read This Before You Connect AI to Your Email", "Understand the access a connected tool receives.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Keep private task details outside an unapproved account.", "/images/guides/learn-master.webp"),
   ],
 });
 
@@ -364,7 +364,7 @@ export const copilotExcelGuide = makeGuide({
   related: [
     existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "Check when a spreadsheet task belongs in Copilot.", "/images/guides/which-ai-tool-for-what.webp"),
     existingGuide("what-is-a-prompt", "Write a prompt that gets a useful answer", "Give the tool a clearer job and a result you can check.", "/images/guides/what-is-a-prompt.webp"),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Protect workbook data before using connected tools.", "/images/guides/learn-master.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Protect workbook data before using connected tools.", "/images/guides/learn-master.webp"),
   ],
 });
 
@@ -417,7 +417,7 @@ Confirm these boundaries in one short list, then wait for my first task.`,
   finish: "The first useful boundary is simple: read and draft now, ask before connecting or acting.",
   related: [
     existingGuide("get-better-professional-writing-from-grok", "Can Grok Bot take one recurring check off your plate?", "Set up one Bot and give it a first job.", "/images/guides/grok.webp"),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Choose what stays out of a Bot's workspace.", "/images/guides/learn-master.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Choose what stays out of a Bot's workspace.", "/images/guides/learn-master.webp"),
     existingGuide("what-is-agentic", "When do you need an AI agent?", "Check if this task needs an agent at all.", "/images/guides/what-is-agentic.webp"),
   ],
 });
@@ -482,7 +482,7 @@ Stop after this one brief. Do not repeat the search automatically.`,
   finish: "If the posts are useful and the links check out, you can ask Grok Bot to search again when you need it.",
   related: [
     existingGuide("what-is-agentic", "When do you need an AI agent?", "See when a task needs an agent instead of a chat answer.", "/images/guides/what-is-agentic.webp"),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Choose what to keep out of your Bot’s workspace.", "/images/guides/learn-master.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Choose what to keep out of your Bot’s workspace.", "/images/guides/learn-master.webp"),
     existingGuide("what-is-a-prompt", "Write a prompt that gets a useful answer", "Give the Bot a clear job and a result you can check.", "/images/guides/what-is-a-prompt.webp"),
   ],
 });
@@ -583,7 +583,7 @@ export const kimiValueGuide = makeGuide({
   related: [
     promptGuide("make-work-tracker-with-kimi", "Make a work tracker with Kimi", "Follow the complete tracker exercise one step at a time."),
     existingGuide("which-ai-tool-for-what", "Which AI tool fits the job?", "See what else could handle the work you need done.", "/images/guides/which-ai-tool-for-what.webp"),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what work data can go into an AI tool.", "/images/guides/learn-master.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Check what work data can go into an AI tool.", "/images/guides/learn-master.webp"),
   ],
 });
 
@@ -634,7 +634,7 @@ export const kimiTaskTrackerGuide = makeGuide({
   related: [
     promptGuide("is-kimi-worth-paying-for", "Is Kimi worth paying for?", "Decide if you need it often enough to pay."),
     existingGuide("check-copilot-excel-edits", "Check Copilot's Excel edits", "Compare another way to work with a spreadsheet.", "/images/guides/check-copilot-excel-edits.webp"),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check which work data can go into an AI tool.", "/images/guides/learn-master.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Check which work data can go into an AI tool.", "/images/guides/learn-master.webp"),
   ],
 });
 
@@ -684,7 +684,7 @@ export const manusCreditTestGuide = makeGuide({
   finish: "You can now decide whether Manus deserves a larger task without guessing from an unfinished experiment.",
   related: [
     promptGuide("manus-browser-workflow", "When does a Manus browser workflow make sense?", "Choose whether a connected browser is justified."),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what belongs outside a connected task.", "/images/guides/learn-master.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Check what belongs outside a connected task.", "/images/guides/learn-master.webp"),
     promptGuide("is-kimi-worth-paying-for", "Is Kimi worth paying for?", "Compare value using completed work rather than features."),
   ],
 });
@@ -746,7 +746,7 @@ export const manusBrowserWorkflowGuide = makeGuide({
   related: [
     comingNextGuide("test-manus-without-burning-credits", "How do you test Manus without wasting credits?", "Prove one small result before connecting accounts."),
     existingGuide("what-is-an-ai-browser", "What is an AI browser?", "Understand what an AI browser can see and do.", "/images/guides/what-is-an-ai-browser.webp"),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what stays outside connected work.", "/images/guides/learn-master.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Check what stays outside connected work.", "/images/guides/learn-master.webp"),
   ],
 });
 
@@ -792,7 +792,7 @@ export const switchToMistralGuide = makeGuide({
   finish: "You can now choose a tool from the quality and effort of one real job rather than a general model ranking.",
   related: [
     promptGuide("is-mistral-pro-worth-it", "Is Mistral Pro worth paying for?", "Test whether a paid plan removes a real blocker."),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what is safe to use in either service.", "/images/guides/learn-master.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Check what is safe to use in either service.", "/images/guides/learn-master.webp"),
     existingGuide("which-ai-tool-for-what", "Which AI tool should you use for what?", "Choose a tool from the job rather than the brand.", "/images/guides/which-ai-tool-for-what.webp"),
   ],
 });
@@ -893,7 +893,7 @@ export const metaBusinessAgentGuide = makeGuide({
   finish: "You can now choose to keep replies paused, retest one chat or run a small monitored live test.",
   related: [
     existingGuide("meta-ai", "What is Meta Muse?", "Keep the consumer agent separate from the business reply tool.", "/images/guides/meta-muse.webp"),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Keep customer and staff information out of the training material.", "/images/guides/learn-master.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Keep customer and staff information out of the training material.", "/images/guides/learn-master.webp"),
     existingGuide("what-is-a-prompt", "Write a prompt that gets a useful answer", "Build another instruction with a visible human check.", "/images/guides/what-is-a-prompt.webp"),
   ],
 });

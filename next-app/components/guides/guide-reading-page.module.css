@@ -126,6 +126,12 @@
 .captureBoundary form > strong { color: #a12621; font: 600 13px/1.45 var(--font-ui), sans-serif; }
 .captureBoundary a { color: inherit; }
 .honeypot { position: absolute !important; width: 1px !important; height: 1px !important; opacity: 0; pointer-events: none; }
+.workBridge { box-sizing: border-box; display: flex; gap: 24px; align-items: center; justify-content: space-between; width: min(100% - 32px, 790px); margin: 40px auto 8px; padding: 24px 26px; border-left: 4px solid #ff007f; background: #0d1117; color: #fff; }
+.workBridge h2 { margin: 0 0 8px; color: #fff; font: 600 clamp(22px, 2.6vw, 28px)/1.15 var(--font-display), serif; letter-spacing: -.02em; }
+.workBridge p { max-width: 520px; margin: 0; color: #d6d9e6; font-size: 15px; line-height: 1.5; }
+.workBridge a { flex: none; padding: 12px 18px; border-radius: 99px; background: #ff007f; color: #fff; font-weight: 700; font-size: 14px; text-decoration: none; }
+.workBridge a:hover, .workBridge a:focus-visible { background: #c80077; }
+@media (max-width: 640px) { .workBridge { flex-direction: column; align-items: flex-start; padding: 20px 18px; } .workBridge a { width: 100%; text-align: center; } }
 
 @media (max-width: 760px) {
   .page { --guide-section-space: 38px; --guide-major-space: 40px; }
@@ -216,3 +222,38 @@
 
 .workshopInvitation h2 {font-size:28px;line-height:1.2;}
 @media(max-width:700px){.workshopInvitation h2{font-size:23px;}}
+.captureBoundary > div > p.gateNote { margin-top: -10px; color: #1b2ea0; font-size: 14px; font-weight: 700; }
+
+/* Compact gate (28/09/2026): lock badge, one row of fields, short copy. */
+.captureBoundary { border: 1px solid #c8c1f0; border-radius: 16px; background: #fff; box-shadow: 0 12px 32px rgba(44, 75, 224, .10); }
+.gateLock { display: grid; place-items: center; width: 48px; height: 48px; margin: 0 auto 12px; border-radius: 50%; background: #ff007f; color: #fff; }
+.captureBoundary h2 { font: 900 clamp(28px, 4vw, 36px)/1.08 var(--font-ui), Inter, Arial, sans-serif; letter-spacing: -.03em; }
+.captureBoundary > div > p { margin-bottom: 8px; }
+.captureBoundary > div > p.gateNote { margin: 0 auto 18px; color: #1b2ea0; font-size: 14px; font-weight: 800; letter-spacing: .02em; }
+.nameFields input { border-color: #c8c1f0; border-radius: 10px; }
+.captureBoundary button { border-radius: 99px; background: #2c4be0; font-size: 15px; }
+.captureBoundary button:hover { background: #1b2ea0; }
+.captureBoundary small { text-align: center; }
+@media (max-width: 560px) { .nameFields { grid-template-columns: 1fr; } }
+
+/* Full-width band version of the gate (batch 1 guides, 28/09/2026). */
+.bandGate { position: relative; margin: 0; padding: 96px 16px; overflow: hidden; background: #0d1117; }
+.bandGate::before { content: ""; position: absolute; left: 50%; top: -40%; width: 70%; height: 120%; transform: translateX(-50%); background: radial-gradient(closest-side, rgba(44, 75, 224, .45), transparent); pointer-events: none; }
+.bandGate .captureBoundary { width: min(100%, 680px); padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; color: #fff; }
+.bandGate .captureBoundary h2 { margin-bottom: 26px; color: #fff; font: 900 clamp(40px, 5vw, 62px)/1 var(--font-ui), Inter, Arial, sans-serif; letter-spacing: -.05em; }
+.bandGate .captureBoundary h2 em { color: #c8c1f0; font: italic 900 1.05em/1 var(--font-display), Georgia, serif; letter-spacing: -.02em; }
+.gateEyebrow { display: flex; justify-content: center; gap: 10px; margin-bottom: 16px; color: #c8c1f0; font: 800 12px/1.2 var(--font-ui), Inter, Arial, sans-serif; letter-spacing: .2em; text-transform: uppercase; }
+.gateEyebrow span { color: #ff007f; }
+.bandGate form { grid-template-columns: 1fr auto; align-items: end; }
+.bandGate .nameFields { grid-template-columns: 1fr 1.4fr; }
+.bandGate .nameFields label { color: #c8c1f0; }
+.bandGate .nameFields input { height: 52px; border: 0; border-radius: 99px; padding: 0 20px; }
+.bandGate button { min-height: 52px; padding: 0 28px; background: #ff007f; }
+.bandGate button:hover { background: #d9006c; }
+.bandGate .consent { justify-content: center; grid-template-columns: 20px auto; color: #cfd3e6; }
+.bandGate .consent input { accent-color: #ff007f; }
+.bandGate form > strong { color: #ffb3d6; text-align: center; }
+@media (max-width: 640px) { .bandGate { padding: 70px 16px; } .bandGate form, .bandGate .nameFields { grid-template-columns: 1fr; } }
+.bandGate .nameFields { grid-column: 1; grid-row: 1; }
+.bandGate button { grid-column: 2; grid-row: 1; }
+@media (max-width: 640px) { .bandGate .nameFields, .bandGate button { grid-column: 1; grid-row: auto; } }

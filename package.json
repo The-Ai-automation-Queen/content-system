@@ -12,10 +12,10 @@
     "guide:rebuild:check": "node tools/guide-rebuild-harness.mjs --strict",
     "guide:rebuild:release-check": "node tools/guide-rebuild-harness.mjs --strict --live",
     "guide:rebuild:links": "node tools/guide-rebuild-harness.mjs --live",
-    "build": "node tools/include.mjs && node tools/guides-finalize.mjs && node tools/site-repair.mjs && node tools/site-repair-final.mjs",
+    "build": "echo 'Retired 2026-09-28: this legacy pipeline rewrites published pages and crashes. main-site is served as committed. Publish guides with npm run publish:guides.' && exit 1",
     "publish:ai-jargon": "npm --prefix next-app run build && node tools/publish-next-guide.mjs ai-jargon-guide",
     "publish:guides": "npm --prefix next-app run build && node tools/publish-approved-guides.mjs",
     "guide:ship": "node tools/ship-approved-guide.mjs",
-    "ship": "npm run validate && npm run build && git add -A && git commit -m \"${MSG:-content update}\" && git push"
+    "ship": "echo 'Retired 2026-09-28: this legacy pipeline rewrites published pages and crashes. main-site is served as committed. Publish guides with npm run publish:guides.' && exit 1"
   }
 }

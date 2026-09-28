@@ -4,6 +4,26 @@
   "ignoreCommand": "git diff --quiet HEAD^ HEAD -- . ../tools ../shared ../data ../chrome",
   "redirects": [
     {
+      "source": "/quiz.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/work-with-fatiha/#apply",
+      "permanent": true
+    },
+    {
+      "source": "/how-i-can-help.html",
+      "destination": "/work-with-fatiha/",
+      "permanent": true
+    },
+    {
+      "source": "/workshops.html",
+      "destination": "/work-with-fatiha/",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
@@ -105,27 +125,27 @@
     },
     {
       "source": "/bootcamp.html",
-      "destination": "/workshops.html",
+      "destination": "/work-with-fatiha/",
       "permanent": true
     },
     {
       "source": "/masterclass.html",
-      "destination": "/workshops.html",
+      "destination": "/work-with-fatiha/",
       "permanent": true
     },
     {
       "source": "/store.html",
-      "destination": "/how-i-can-help.html",
+      "destination": "/work-with-fatiha/",
       "permanent": true
     },
     {
       "source": "/get-it-done.html",
-      "destination": "/how-i-can-help.html",
+      "destination": "/work-with-fatiha/",
       "permanent": true
     },
     {
       "source": "/coming-soon.html",
-      "destination": "/how-i-can-help.html",
+      "destination": "/work-with-fatiha/",
       "permanent": true
     },
     {

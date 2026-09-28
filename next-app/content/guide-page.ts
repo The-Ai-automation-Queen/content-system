@@ -225,7 +225,7 @@ Do not treat your answer as a final work decision.`,
     },
     {
       slug: "what-should-you-never-share-with-ai",
-      title: "What should you never share with AI?",
+      title: "The 3-Question Check Before You Paste Anything Into AI",
       reason: "See what must stay out and which privacy setting to check before you paste anything.",
       cover: "/images/guides/learn-master.webp",
     },
@@ -403,7 +403,7 @@ At the end, tell me how I can check the actual memory controls in ChatGPT so I c
     },
     {
       slug: "what-should-you-never-share-with-ai",
-      title: "What should you never share with AI?",
+      title: "The 3-Question Check Before You Paste Anything Into AI",
       reason: "See what stays out before linking a work account.",
       cover: "/images/guides/learn-master.webp",
     },
@@ -601,7 +601,7 @@ Use everyday language. Do not recommend a tool or design the complete system yet
     },
     {
       slug: "what-should-you-never-share-with-ai",
-      title: "What should you never share with AI?",
+      title: "The 3-Question Check Before You Paste Anything Into AI",
       reason: "Check what information and access must stay out before you connect an agent.",
       cover: "/images/guides/learn-master.webp",
     },
@@ -616,8 +616,8 @@ Use everyday language. Do not recommend a tool or design the complete system yet
 
 export const whatNotToShareWithAiGuide = {
   slug: "what-should-you-never-share-with-ai",
-  title: "What should you never share with AI?",
-  promise: "Know what must stay out, what needs permission and which privacy setting to change before you paste anything.",
+  title: "The 3-Question Check Before You Paste Anything Into AI",
+  promise: "Some things should never go in, some need permission first, and some are fine. Run the paste test first.",
   cover: "/images/guides/learn-master.webp",
   coverAlt: "The small blue robot mascot inspecting information beside an open book",
   seoDescription: "Learn what never to share with AI, what needs permission and how to change the privacy setting in ChatGPT, Claude, Gemini, Copilot, Grok, Meta AI and DeepSeek.",
@@ -887,7 +887,7 @@ After the five bullets, add one line headed "Check before sending" that names th
   related: [
     {
       slug: "what-should-you-never-share-with-ai",
-      title: "What should you never share with AI?",
+      title: "The 3-Question Check Before You Paste Anything Into AI",
       reason: "Check what information should stay out before testing any tool.",
       cover: "/images/guides/learn-master.webp",
     },
@@ -1019,9 +1019,9 @@ My notes:
     finishLine: "Keep ChatGPT if it makes useful work easier to finish without creating more risk or checking than it saves.",
   },
   related: [
-    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Know what must stay outside an AI tool before you connect files or accounts.", cover: "/images/guides/learn-master.webp" },
+    { slug: "what-should-you-never-share-with-ai", title: "The 3-Question Check Before You Paste Anything Into AI", reason: "Know what must stay outside an AI tool before you connect files or accounts.", cover: "/images/guides/learn-master.webp" },
     { slug: "which-ai-tool-for-what", title: "Which AI tool should you use?", reason: "Compare the main tools before deciding which one belongs in your everyday work.", cover: "/images/guides/which-ai-tool-for-what.webp" },
-    { slug: "claude", title: "Should you use Claude?", reason: "Compare ChatGPT with Claude before choosing your main everyday tool.", cover: "/images/guides/claude.webp" },
+    { slug: "claude", title: "3 Admin Jobs to Hand Claude This Week", reason: "Compare ChatGPT with Claude before choosing your main everyday tool.", cover: "/images/guides/claude.webp" },
   ],
 } as const satisfies GuidePage;
 
@@ -1143,9 +1143,9 @@ Notes:
     finishLine: "Keep Gemini if working closer to your Google tools saves more time than the connection and checking create.",
   },
   related: [
-    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Check what stays out before you connect Gmail, Drive or Calendar.", cover: "/images/guides/learn-master.webp" },
+    { slug: "what-should-you-never-share-with-ai", title: "The 3-Question Check Before You Paste Anything Into AI", reason: "Check what stays out before you connect Gmail, Drive or Calendar.", cover: "/images/guides/learn-master.webp" },
     { slug: "chatgpt", title: "Should you use ChatGPT?", reason: "Compare Gemini with a broader standalone assistant before choosing your main tool.", cover: "/images/guides/chatgpt.webp" },
-    { slug: "claude", title: "Should you use Claude?", reason: "See whether careful document work matters more than Google integration.", cover: "/images/guides/claude.webp" },
+    { slug: "claude", title: "3 Admin Jobs to Hand Claude This Week", reason: "See whether careful document work matters more than Google integration.", cover: "/images/guides/claude.webp" },
   ],
 } as const satisfies GuidePage;
 
@@ -1164,15 +1164,15 @@ export const approvedRelatedSelections: Record<string, readonly [string, string,
   "make-work-tracker-with-kimi": ["is-kimi-worth-paying-for", "check-copilot-excel-edits", "what-should-you-never-share-with-ai"],
   "is-kimi-worth-paying-for": ["make-work-tracker-with-kimi", "check-copilot-excel-edits", "what-should-you-never-share-with-ai"],
   "instagram-content-dashboard": ["what-should-you-never-share-with-ai", "what-is-agentic", "show-up-in-ai-search"],
-  "connect-ai-to-email-files-calendar": ["what-should-you-never-share-with-ai", "what-is-agentic", "review-grok-suggestions"],
+  "connect-ai-to-email-files-calendar": ["what-should-you-never-share-with-ai", "what-is-agentic", "what-can-copilot-see-at-work"],
   "show-up-in-ai-search": ["what-is-ai", "get-better-professional-writing-from-grok", "what-should-you-never-share-with-ai"],
   "which-ai-tool-for-what": ["what-is-ai", "what-is-an-ai-browser", "what-should-you-never-share-with-ai"],
-  "make-chatgpt-answers-shorter": ["what-is-a-prompt", "claude", "what-is-ai"],
-  "stop-chatgpt-forgetting-context": ["claude-projects", "teach-claude-a-repeatable-workflow", "protect-a-long-deepseek-project"],
+  "make-chatgpt-answers-shorter": ["claude", "what-is-a-prompt", "what-is-ai"],
+  "stop-chatgpt-forgetting-context": ["teach-claude-a-repeatable-workflow", "claude", "make-chatgpt-answers-shorter"],
   "chatgpt-scheduled-tasks": ["teach-claude-a-repeatable-workflow", "get-better-professional-writing-from-grok", "what-should-you-never-share-with-ai"],
   "chatgpt-screen-recording-to-process-guide": ["teach-claude-a-repeatable-workflow", "claude-projects", "ai-skills-worth-learning-for-work"],
   "chatgpt-customer-research-with-evidence": ["verify-grok-current-research", "show-up-in-ai-search", "what-should-you-never-share-with-ai"],
-  "claude": ["claude-projects", "teach-claude-a-repeatable-workflow", "what-is-a-prompt"],
+  "claude": ["stop-chatgpt-forgetting-context", "make-chatgpt-answers-shorter", "what-is-a-prompt"],
   "claude-projects": ["stop-chatgpt-forgetting-context", "teach-claude-a-repeatable-workflow", "protect-a-long-deepseek-project"],
   "teach-claude-a-repeatable-workflow": ["claude-projects", "chatgpt-scheduled-tasks", "chatgpt-screen-recording-to-process-guide"],
   "gemini-cannot-find-drive-file": ["gemini-google-tasks-limits", "what-can-copilot-see-at-work", "what-should-you-never-share-with-ai"],

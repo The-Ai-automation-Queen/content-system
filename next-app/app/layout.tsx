@@ -5,7 +5,10 @@ import { SiteFooter } from "@/components/chrome/site-footer";
 import Script from "next/script";
 import "./globals.css";
 
-const display = localFont({ src: "../public/fonts/playfair-display-latin.woff2", weight: "400 900", variable: "--font-display", display: "swap" });
+const display = localFont({ src: [
+  { path: "../public/fonts/playfair-display-latin.woff2", weight: "400 900", style: "normal" },
+  { path: "../public/fonts/playfair-display-italic-latin.woff2", weight: "400 900", style: "italic" },
+], variable: "--font-display", display: "swap" });
 const body = localFont({ src: "../public/fonts/source-serif-4-latin.woff2", weight: "200 900", variable: "--font-body", display: "swap" });
 const ui = localFont({ src: "../public/fonts/inter-latin.woff2", weight: "100 900", variable: "--font-ui", display: "swap" });
 const mono = localFont({ src: [
