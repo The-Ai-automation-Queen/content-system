@@ -323,3 +323,4 @@ body.home-saadia .sk-band h2 em{color:var(--lilac)}
 .sk-sheet-1 img{top:auto;bottom:12px;right:12px}
 .sk-sheet-2,.sk-sheet-3{padding-top:9px}
 .sk-kit-cover .sk-sheet-3{font-size:0}
+.sk-kit-note{margin:0 0 6px!important;font-size:14px!important;font-style:italic;color:var(--lilac)}
