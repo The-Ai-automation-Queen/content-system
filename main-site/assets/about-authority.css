@@ -58,6 +58,25 @@ body.sk-subpage[data-page-kind="about"] .about-authority{overflow:hidden}
 .about-authority .aa-career-name h3{margin:0 0 8px;color:#111529!important;font:900 clamp(28px,3vw,42px)/1 Impact,"Arial Narrow",Inter,sans-serif!important}
 .about-authority .aa-career-name>span{display:block;max-width:480px;color:#29345c;font:700 11px/1.5 Inter,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase}
 .about-authority .aa-career-takeaway{max-width:410px;margin:0;color:#171d3d;font:italic 700 clamp(18px,1.8vw,24px)/1.36 "Playfair Display",Georgia,serif}
+.about-authority .aa-nike-stories{margin-top:68px;padding:clamp(28px,4vw,54px);background:#eef0ff}
+.about-authority .aa-nike-stories-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:15px 30px;margin-bottom:30px}
+.about-authority .aa-nike-stories-head .aa-eyebrow{margin:0}
+.about-authority .aa-nike-stories-head h3{max-width:730px;margin:0;color:#111529;font:900 clamp(34px,4.1vw,58px)/1 Impact,"Arial Narrow",Inter,sans-serif}
+.about-authority .aa-nike-stories-head h3 em{color:#243fc3;font:italic 700 .77em/1.1 "Playfair Display",Georgia,serif}
+.about-authority .aa-nike-story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.about-authority .aa-nike-story{display:flex;flex-direction:column;min-width:0;min-height:280px;padding:clamp(22px,2.8vw,36px);background:#fff;border-bottom:4px solid #ff007f}
+.about-authority .aa-nike-story-number{color:#243fc3;font:800 11px/1.3 Inter,Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.about-authority .aa-nike-story h4{margin:15px 0 12px;color:#111529;font:700 clamp(25px,2.4vw,35px)/1.1 "Playfair Display",Georgia,serif}
+.about-authority .aa-nike-story p{max-width:55ch;margin:0 0 25px;color:#35405e;font:500 15px/1.55 Inter,Arial,sans-serif}
+.about-authority .aa-nike-story-links{display:flex;flex-wrap:wrap;gap:9px 20px;margin-top:auto}
+.about-authority .aa-nike-story-links a{color:#243fc3;font:800 12px/1.35 Inter,Arial,sans-serif;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px}
+.about-authority .aa-nike-story-links a:hover,.about-authority .aa-nike-story-links a:focus-visible{color:#b4005b}
+.about-authority .aa-nike-repair{display:grid;grid-template-columns:minmax(180px,.75fr) minmax(250px,1fr) auto;align-items:center;gap:20px 35px;margin-top:16px;padding:clamp(22px,2.8vw,36px);background:#202957;color:#fff}
+.about-authority .aa-nike-repair .aa-nike-story-number{color:#c8c1f0}
+.about-authority .aa-nike-repair h4{margin:10px 0 0;color:#fff;font:700 clamp(25px,2.4vw,35px)/1.1 "Playfair Display",Georgia,serif}
+.about-authority .aa-nike-repair p{margin:0;color:#fff;font:500 15px/1.55 Inter,Arial,sans-serif}
+.about-authority .aa-nike-repair a{justify-self:end;color:#fff;font:800 12px/1.35 Inter,Arial,sans-serif;text-decoration:none;border-bottom:1px solid #ff007f;padding-bottom:4px}
+.about-authority .aa-nike-repair a:hover,.about-authority .aa-nike-repair a:focus-visible{color:#c8c1f0}
 .about-authority .aa-small-link{display:inline-block;margin-top:29px;border-bottom:1px solid #243fc3;padding-bottom:5px;color:#111529;font:800 11px/1.3 Inter,Arial,sans-serif;letter-spacing:.08em;text-decoration:none;text-transform:uppercase}
 
 .about-authority .aa-evidence{padding:clamp(84px,9vw,135px) 0;background:#f0efff}
@@ -105,6 +124,8 @@ body.sk-subpage[data-page-kind="about"] .about-authority{overflow:hidden}
   .about-authority h1{font-size:clamp(54px,6.5vw,74px)!important}
   .about-authority .aa-hero-photo>img{height:480px}
   .about-authority .aa-career-row{grid-template-columns:80px minmax(0,1fr);gap:16px 24px}
+  .about-authority .aa-nike-repair{grid-template-columns:1fr 1fr}
+  .about-authority .aa-nike-repair a{grid-column:1/-1;justify-self:start}
   .about-authority .aa-mark{width:80px;height:80px}
   .about-authority .aa-career-takeaway{grid-column:2;max-width:680px}
   .about-authority .aa-stage-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -112,7 +133,9 @@ body.sk-subpage[data-page-kind="about"] .about-authority{overflow:hidden}
 @media(max-width:700px){
   .about-authority .aa-shell{width:calc(100% - 36px)}
   .about-authority .aa-hero{padding:64px 0 82px}
-  .about-authority .aa-hero-grid,.about-authority .aa-section-head,.about-authority .aa-evidence-list{grid-template-columns:1fr}
+  .about-authority .aa-hero-grid,.about-authority .aa-section-head,.about-authority .aa-evidence-list,.about-authority .aa-nike-story-grid{grid-template-columns:1fr}
+  .about-authority .aa-nike-repair{grid-template-columns:1fr}
+  .about-authority .aa-nike-repair a{grid-column:auto}
   .about-authority h1{font-size:clamp(49px,11vw,67px)!important}
   .about-authority h1 em{margin-top:10px}
   .about-authority .aa-hero-photo{max-width:420px;margin:23px 14px 0 0}
