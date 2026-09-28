@@ -190,7 +190,7 @@ Skill to practise: [Choose clearer instructions, better sources, checking result
 Give me one small exercise I can finish this week. Tell me what to prepare, what to ask the tool to do and how to compare the result with the original. Do not invent facts about my work or suggest that I buy a new tool. Use only public, invented or non-confidential material. Keep your answer to one exercise and one check. I will decide if the result is suitable for real work.` },
   ],
   pass: "**It worked if:** the exercise helped with one familiar task and gave you a way to judge the result.",
-  kit: { ...workflowsKit, heading: "Practise on your real week", body: "The *AI workflows that save time* kit gives you 10 workflows to practise these skills on, each with a check before you use the result." },
+  kit: { name: "AI for your career and job search", heading: "Want to use these skills for your career?", body: "The *AI for your career and job search* kit (coming soon) has CV, LinkedIn, interview and pay-rise prompts, including the Profile Insight Report." },
 };
 
 const customerThemes: BatchGuide = {
@@ -325,7 +325,7 @@ For each provider:
     "Save the date, tool, question, sources and anything missing or wrong.",
     "Fix the public page with the missing or wrong fact, then test again.",
   ] },
-  kit: { ...workflowsKit, heading: "Make it part of your month", body: "The *AI workflows that save time* kit includes a monthly visibility check alongside 9 other workflows, each with prompts, examples and checks." },
+  kit: { name: "AI for small business owners", heading: "Running a small business?", body: "The *AI for small business owners* kit (coming soon) covers the 10 business jobs to hand off first, including your public profile." },
 };
 
 export const batchSixteenTwentyGuides: readonly BatchGuide[] = [tenMinuteTest, toolChooser, fiveSkills, customerThemes, aiSearch];
