@@ -13,6 +13,9 @@ export function GuideAccessBoundary({
   heading,
   actionLabel,
   note,
+  eyebrow,
+  headingAccent,
+  variant,
   showWorkBridge = true,
   children,
 }: {
@@ -22,9 +25,11 @@ export function GuideAccessBoundary({
   heading?: string;
   actionLabel?: string;
   note?: string;
+  eyebrow?: string;
+  headingAccent?: string;
   showWorkBridge?: boolean;
   children: ReactNode;
-  variant?: "unlock";
+  variant?: "unlock" | "band";
 }) {
   const [ready, setReady] = useState(false);
   const [unlocked, setUnlocked] = useState(false);
@@ -91,15 +96,17 @@ export function GuideAccessBoundary({
   return (
     <>
       <div
-        className={styles.captureTransition}
+        className={variant === "band" ? `${styles.captureTransition} ${styles.bandGate}` : styles.captureTransition}
         data-guide-capture-boundary
         hidden={ready && unlocked}
       >
         <section className={styles.captureBoundary} aria-labelledby={`guide-gate-title-${guideSlug}`}>
           <div>
-          <span className={styles.gateLock}><BatchIcon name="lock" size={22} /></span>
-          <h2 id={`guide-gate-title-${guideSlug}`}>{heading || "Get the next step"}</h2>
-          <p>{guidePromise || `Get the next practical part of ${guideTitle} and a link to return to this guide.`}</p>
+          {eyebrow
+            ? <span className={styles.gateEyebrow}><span aria-hidden="true">✦</span>{eyebrow}</span>
+            : <span className={styles.gateLock}><BatchIcon name="lock" size={22} /></span>}
+          <h2 id={`guide-gate-title-${guideSlug}`}>{heading || "Get the next step"}{headingAccent && <> <em>{headingAccent}</em></>}</h2>
+          {guidePromise !== "" && <p>{guidePromise || `Get the next practical part of ${guideTitle} and a link to return to this guide.`}</p>}
           {note && <p className={styles.gateNote}>{note}</p>}
           <form onSubmit={submit}>
             <div className={styles.nameFields}>

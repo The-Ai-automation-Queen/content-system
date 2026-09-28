@@ -26,9 +26,12 @@ export type BatchGuide = {
   tool: string;
   leaveWith: string;
   howTo: string;
+  // Hero: short title with an italic accent ending, one line, and either a
+  // standing mascot pose or a full mascot scene card.
+  hero: { title: string; accent: string; line: string; tool: string; art: { kind: "pose" | "scene"; src: string; alt: string } };
   flow: readonly { icon: BatchIconName; label: string; note: string }[];
   illustration: { src: string; alt: string; caption: string; afterSection: number };
-  sections: readonly { title: string; icon: BatchIconName; blocks: readonly BatchBlock[] }[];
+  sections: readonly { title: string; accent?: string; icon: BatchIconName; blocks: readonly BatchBlock[] }[];
   honest: string;
   gate: { promise: string; action: string };
   prompts: readonly BatchPrompt[];
@@ -50,6 +53,7 @@ const claude: BatchGuide = {
   tool: "Free Claude account",
   leaveWith: "3 prompts you can reuse every week, a worked example for each, and a 30-second check before you use the answer.",
   howTo: "Pick the job that annoys you most this week. Try it with the example first, so you can see what a good answer looks like. Then swap in your own material. Leave out anything confidential (see [The 3-Question Check Before You Paste Anything Into AI](/guides/what-should-you-never-share-with-ai/)).",
+  hero: { title: "3 admin jobs to hand Claude", accent: "this week.", line: "Meeting notes, a long document and a rough email. One prompt for each.", tool: "Claude", art: { kind: "pose", src: "/images/mascot/planning.webp", alt: "The blue robot mascot holding a calendar and a checklist" } },
   flow: [
     { icon: "notes", label: "Your rough material", note: "Notes, a report or bullet points" },
     { icon: "sparkle", label: "Claude drafts", note: "Using only what you gave it" },
@@ -126,6 +130,7 @@ const shorter: BatchGuide = {
   tool: "Any ChatGPT account",
   leaveWith: "a short-answer prompt you can reuse, plus a 4-point check.",
   howTo: "Read the example, try the prompt as it is, then swap in facts from your own work.",
+  hero: { title: "Stop ChatGPT writing you", accent: "an essay.", line: "Tell it the parts you need and a word limit. Then check it's still true.", tool: "ChatGPT", art: { kind: "pose", src: "/images/mascot/explaining.webp", alt: "The blue robot mascot explaining a chart with a pointer" } },
   flow: [
     { icon: "list", label: "Name the parts", note: "Status, Waiting on, Next action" },
     { icon: "compress", label: "Set the limit", note: "60 words or fewer" },
@@ -135,6 +140,7 @@ const shorter: BatchGuide = {
   sections: [
     {
       title: "Say what \"short\" means",
+      accent: "Name the parts. Set a limit.",
       icon: "target",
       blocks: [
         { kind: "contrast", items: [
@@ -146,6 +152,7 @@ const shorter: BatchGuide = {
     },
     {
       title: "Short is only useful if it's still true",
+      accent: "Check what it cut.",
       icon: "check",
       blocks: [
         { kind: "example", label: "Your facts", text: "The onboarding checklist draft is ready. Team leads haven't reviewed it. No publication date has been agreed." },
@@ -183,6 +190,7 @@ const forgetting: BatchGuide = {
   tool: "ChatGPT with Projects",
   leaveWith: "a working Project, the brief to paste into it, and a 2-chat test that proves it remembers.",
   howTo: "Use the example event first, so you can see whether the second chat keeps the brief without being reminded. Then build a Project for your real work.",
+  hero: { title: "Never explain your project to ChatGPT", accent: "twice.", line: "Write your brief once in a ChatGPT Project. Every chat can use it.", tool: "ChatGPT", art: { kind: "pose", src: "/images/mascot/lightbulb.webp", alt: "The blue robot mascot celebrating under a lightbulb" } },
   flow: [
     { icon: "notes", label: "Write the brief once", note: "The facts that never change" },
     { icon: "folder", label: "Save it in a Project", note: "Project settings, instructions" },
@@ -192,6 +200,7 @@ const forgetting: BatchGuide = {
   sections: [
     {
       title: "One question, or ongoing work?",
+      accent: "Pick the right place.",
       icon: "question",
       blocks: [
         { kind: "list", items: [
@@ -236,6 +245,7 @@ const privacy: BatchGuide = {
   tool: "Any AI tool",
   leaveWith: "the paste test, a keep-out / ask-first / fine list, and a prompt that checks a task without you sharing the real data.",
   howTo: "Read the 3 questions, sort what you were about to paste, then use the test prompt with categories only, never the real information.",
+  hero: { title: "The 3-question check before you paste", accent: "anything into AI.", line: "Three questions to ask before you share anything with AI at work.", tool: "Any AI tool", art: { kind: "pose", src: "/images/mascot/warning.webp", alt: "The blue robot mascot thinking beside a warning sign" } },
   flow: [
     { icon: "question", label: "Do I need it?", note: "Could it work without real details?" },
     { icon: "key", label: "Am I allowed?", note: "Permission comes first" },
@@ -245,6 +255,7 @@ const privacy: BatchGuide = {
   sections: [
     {
       title: "The paste test",
+      accent: "Before anything goes in.",
       icon: "question",
       blocks: [
         { kind: "list", ordered: true, items: [
@@ -257,6 +268,7 @@ const privacy: BatchGuide = {
     },
     {
       title: "Keep out · Ask first · Fine",
+      accent: "Sort it first.",
       icon: "lock",
       blocks: [
         { kind: "contrast", items: [
@@ -298,6 +310,7 @@ const connections: BatchGuide = {
   tool: "ChatGPT, Claude, Gemini or Copilot",
   leaveWith: "a simple way to choose the smallest access, a prompt that explains any permission screen in plain words, and where to switch access off.",
   howTo: "Decide what the job needs, check the permission screen before you approve, and know where to disconnect.",
+  hero: { title: "Read this before you connect AI to", accent: "your email.", line: "Give AI only the access the job needs. Often one file is enough.", tool: "ChatGPT, Claude, Gemini, Copilot", art: { kind: "pose", src: "/images/mascot/email-sorting.webp", alt: "The blue robot mascot sorting envelopes into a box" } },
   flow: [
     { icon: "upload", label: "Upload one file", note: "Smallest access" },
     { icon: "plug", label: "Connect one service", note: "Only when you search many items" },
@@ -307,6 +320,7 @@ const connections: BatchGuide = {
   sections: [
     {
       title: "Choose the smallest access",
+      accent: "Start small.",
       icon: "upload",
       blocks: [
         { kind: "list", ordered: true, items: [
@@ -318,6 +332,7 @@ const connections: BatchGuide = {
     },
     {
       title: "Read the permission screen before you click",
+      accent: "Every word is a permission.",
       icon: "eye",
       blocks: [
         { kind: "p", text: "Look for these words: *read, create, edit, delete, send, share*. Each one is a different level of access." },
@@ -327,6 +342,7 @@ const connections: BatchGuide = {
     },
     {
       title: "Where to switch it off",
+      accent: "Know the way out.",
       icon: "power",
       blocks: [
         { kind: "p", text: "ChatGPT: **Settings → Apps** (or **Plugins**, if shown), then choose the account to disconnect. The paths for Claude, Gemini and Copilot are in the full guide." },

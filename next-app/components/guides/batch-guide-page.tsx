@@ -8,7 +8,6 @@ import { batchOneGuides, type BatchBlock, type BatchGuide } from "@/content/guid
 import { cleanLabel } from "./guide-icon";
 import { GuideRelatedLink } from "./guide-related-link";
 import { GuideAccessBoundary } from "./guide-access-boundary";
-import { BatchIcon, type BatchIconName } from "./batch-icons";
 import styles from "./batch-guide-page.module.css";
 
 // Inline marks: **bold**, *italic*, [label](href).
@@ -26,10 +25,37 @@ function Rich({ value }: { value: string }) {
   })}</>;
 }
 
-function fieldIcon(label: string): BatchIconName {
-  if (label === "The job") return "target";
-  if (label.startsWith("Why")) return "sparkle";
-  return "settings";
+// "Job 1: Messy notes into clear actions" → heading "Job 1", accent "Messy notes into clear actions."
+function splitTitle(title: string, accent?: string) {
+  const colon = title.indexOf(": ");
+  if (colon > 0) return { head: title.slice(0, colon), accent: `${title.slice(colon + 2)}.` };
+  return { head: title, accent };
+}
+
+function Heading({ id, num, title, accent }: { id: string; num: string; title: string; accent?: string }) {
+  return <div className={styles.sh}>
+    <span className={styles.tile} aria-hidden="true">{num}</span>
+    <h2 id={id}>{title}{accent && <em>{accent}</em>}</h2>
+  </div>;
+}
+
+function Blocks({ blocks, guide }: { blocks: readonly BatchBlock[]; guide: BatchGuide }) {
+  const out = [];
+  for (let index = 0; index < blocks.length; index++) {
+    const block = blocks[index];
+    const next = blocks[index + 1];
+    if (block.kind === "example" && next?.kind === "result") {
+      out.push(<div className={styles.papers} key={index}>
+        <div className={`${styles.paper} ${styles.paperLeft}`}><small>{block.label}</small><p><Rich value={block.text} /></p></div>
+        <span className={styles.arrow} aria-hidden="true">→</span>
+        <div className={`${styles.paper} ${styles.paperRight}`}><small>{next.label}</small>{next.lines.map((line) => <p key={line}><Rich value={line} /></p>)}</div>
+      </div>);
+      index++;
+      continue;
+    }
+    out.push(<Block key={index} block={block} guide={guide} />);
+  }
+  return <>{out}</>;
 }
 
 function Block({ block, guide }: { block: BatchBlock; guide: BatchGuide }) {
@@ -37,23 +63,23 @@ function Block({ block, guide }: { block: BatchBlock; guide: BatchGuide }) {
     case "p":
       return <p><Rich value={block.text} /></p>;
     case "fields":
-      return <dl className={styles.fields}>{block.items.map((item) => <div key={item.label}><span className={styles.fieldIcon}><BatchIcon name={fieldIcon(item.label)} size={18} /></span><span><dt>{item.label}:</dt><dd><Rich value={item.text} /></dd></span></div>)}</dl>;
+      return <dl className={styles.fields}>{block.items.map((item) => <div key={item.label}><dt>{item.label}:</dt> <dd><Rich value={item.text} /></dd></div>)}</dl>;
     case "example":
-      return <div className={styles.example}><span>{block.label}</span><p><Rich value={block.text} /></p></div>;
+      return <div className={`${styles.paper} ${styles.paperSolo}`}><small>{block.label}</small><p><Rich value={block.text} /></p></div>;
     case "result":
-      return <div className={styles.result}><span>{block.label}</span>{block.lines.map((line) => <p key={line}><Rich value={line} /></p>)}</div>;
+      return <div className={`${styles.paper} ${styles.paperRight}`}><small>{block.label}</small>{block.lines.map((line) => <p key={line}><Rich value={line} /></p>)}</div>;
     case "list": {
       const List = block.ordered ? "ol" : "ul";
       return <List className={styles.list}>{block.items.map((item) => <li key={item}><Rich value={item} /></li>)}</List>;
     }
     case "contrast":
-      return <div className={styles.contrast} data-count={block.items.length}>{block.items.map((item) => <div key={item.label} className={item.good ? styles.good : undefined}><span>{item.label}</span><p><Rich value={item.text} /></p>{item.note && <small><Rich value={item.note} /></small>}</div>)}</div>;
+      return <div className={styles.contrast} data-count={block.items.length}>{block.items.map((item) => <div key={item.label} className={item.good ? styles.good : undefined}><small>{item.label}</small><p><Rich value={item.text} /></p>{item.note && <span><Rich value={item.note} /></span>}</div>)}</div>;
     case "locked": {
       const preview = block.prompt === undefined ? "" : guide.prompts[block.prompt]?.text ?? "";
-      return <a className={styles.locked} href="#full-guide">
-        <span className={styles.lockLabel}><span className={styles.lockIcon}><BatchIcon name="lock" size={18} /></span>{block.label}</span>
-        {preview && <span className={styles.lockPreview} aria-hidden="true">{preview.slice(0, 150)}</span>}
-        <span className={styles.lockCta}>In the full guide below ↓</span>
+      return <a className={styles.teaser} href="#unlock">
+        <span className={styles.teaserTitle}>{block.label}</span>
+        <span className={styles.teaserCopy}>Copy the prompt ↓</span>
+        {preview && <span className={styles.teaserText} aria-hidden="true">{preview.slice(0, 180)}</span>}
       </a>;
     }
   }
@@ -74,7 +100,7 @@ function PromptBox({ prompt, id }: { prompt: { title: string; text: string }; id
     <h3 id={id}>{prompt.title}</h3>
     <div className={styles.prompt}>
       <pre>{prompt.text}</pre>
-      <button type="button" onClick={copy} aria-describedby={id}>{state === "copied" ? "Copied" : "Copy"}</button>
+      <button type="button" onClick={copy} aria-describedby={id}>{state === "copied" ? "Copied" : "Copy the prompt"}</button>
     </div>
     {state === "error" && <p role="alert" className={styles.copyError}>Copy failed. Select the text above instead.</p>}
   </div>;
@@ -86,40 +112,73 @@ export function BatchGuidePage({ guide }: { guide: GuidePage }) {
   const number = (index: number) => String(index).padStart(2, "0");
   const firstJob = 2;
   const honestNumber = firstJob + content.sections.length;
+  const promptWord = content.prompts.length > 1 ? `${content.prompts.length} prompts.` : "prompt.";
+  const toc = [
+    { id: `${content.slug}-how`, label: "How to use it" },
+    ...content.sections.map((section, index) => ({ id: `${content.slug}-s${index}`, label: splitTitle(section.title).head })),
+    { id: `${content.slug}-honest`, label: "The honest part" },
+    { id: "unlock", label: "The prompts" },
+  ];
 
   return <main className={styles.page}>
-    <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
-      <header className={styles.hero}>
-        <figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 560px" /></figure>
-        <h1>{content.title}</h1>
-        <p className={styles.question}>“{content.question}”</p>
-        <p className={styles.answer}><Rich value={content.answer} /></p>
-        <p className={styles.meta}><span><BatchIcon name="user" size={16} />{content.level}</span><span><BatchIcon name="clock" size={16} />{content.minutes} minutes</span><span><BatchIcon name="sparkle" size={16} />{content.tool}</span><span>By Fatiha Chikh | The AI Automation Queen</span></p>
-        <p className={styles.leaveWith}><span className={styles.leaveIcon}><BatchIcon name="gift" /></span><span><strong>What you leave with:</strong> <Rich value={content.leaveWith} /></span></p>
-      </header>
+    <header className={styles.hero}>
+      <div className={styles.heroInner}>
+        <div className={styles.heroText}>
+          <Link className={styles.back} href="/guides/">← All guides</Link>
+          <p className={styles.eyebrow}><span aria-hidden="true">✦</span>Free guide · {content.hero.tool} · {content.minutes} minutes</p>
+          <h1>{content.hero.title} <em>{content.hero.accent}</em></h1>
+          <p className={styles.heroLine}>{content.hero.line}</p>
+          <a className={styles.heroButton} href={`#${content.slug}-intro`}>Start the guide ↓</a>
+        </div>
+        {content.hero.art.kind === "pose"
+          ? <div className={styles.heroPose}><span className={styles.dot} aria-hidden="true" /><Image src={content.hero.art.src} alt={content.hero.art.alt} width={760} height={760} priority sizes="(max-width: 760px) 360px, 560px" /></div>
+          : <div className={styles.heroScene}><div><Image src={content.hero.art.src} alt={content.hero.art.alt} fill priority sizes="(max-width: 760px) 100vw, 600px" /></div></div>}
+      </div>
+    </header>
 
-      <section className={styles.section} aria-labelledby={`${content.slug}-how`}>
-        <h2 id={`${content.slug}-how`}><span className={styles.num}>{number(1)}</span><span className={styles.headIcon}><BatchIcon name="compass" /></span>How to use this guide</h2>
-        <p><Rich value={content.howTo} /></p>
-        <ol className={styles.flow} aria-label="How it works">{content.flow.map((step, index) => <li key={step.label}><span className={styles.flowIcon}><BatchIcon name={step.icon} size={26} /></span><span className={styles.flowText}><strong>{step.label}</strong><small>{step.note}</small></span>{index < content.flow.length - 1 && <span className={styles.flowArrow} aria-hidden="true">→</span>}</li>)}</ol>
-      </section>
+    <div className={styles.body}>
+      <nav className={styles.toc} aria-label="In this guide">
+        <span>In this guide</span>
+        <ol>{toc.map((item) => <li key={item.id}><a href={`#${item.id}`}>{item.label}</a></li>)}</ol>
+      </nav>
 
-      {content.sections.map((section, index) => <Fragment key={section.title}><section className={styles.section} aria-labelledby={`${content.slug}-s${index}`}>
-        <h2 id={`${content.slug}-s${index}`}><span className={styles.num}>{number(firstJob + index)}</span><span className={styles.headIcon}><BatchIcon name={section.icon} /></span>{section.title}</h2>
-        {section.blocks.map((block, blockIndex) => <Block key={blockIndex} block={block} guide={content} />)}
-      </section>
-      {content.illustration.afterSection === index && <figure className={styles.illustration}><div><Image src={content.illustration.src} alt={content.illustration.alt} fill sizes="(max-width: 700px) 100vw, 760px" /></div><figcaption>{content.illustration.caption}</figcaption></figure>}</Fragment>)}
+      <div className={styles.main}>
+        <section className={styles.intro} id={`${content.slug}-intro`} aria-labelledby={`${content.slug}-intro-title`}>
+          <h2 id={`${content.slug}-intro-title`}>Introduction</h2>
+          <p className={styles.meta}>{content.hero.tool} · {content.minutes} min read · {content.level}</p>
+          <p className={styles.lead}><Rich value={content.answer} /></p>
+          <p className={styles.byline}>A guide by <strong>Fatiha Chikh</strong> | The AI Automation Queen</p>
+          <p className={styles.leaveWith}><strong>What you leave with:</strong> <Rich value={content.leaveWith} /></p>
+        </section>
 
-      <section className={`${styles.section} ${styles.honest}`} aria-labelledby={`${content.slug}-honest`}>
-        <h2 id={`${content.slug}-honest`}><span className={styles.num}>{number(honestNumber)}</span><span className={styles.headIcon}><BatchIcon name="alert" /></span>The honest part</h2>
-        <p><Rich value={content.honest} /></p>
-      </section>
+        <section className={styles.section} aria-labelledby={`${content.slug}-how`}>
+          <Heading id={`${content.slug}-how`} num={number(1)} title="How to use this guide" accent="In 30 seconds." />
+          <p><Rich value={content.howTo} /></p>
+        </section>
 
-      <div id="full-guide" className={styles.gateWrap}>
-        <GuideAccessBoundary guideSlug={guide.slug} guideTitle={content.title} heading={content.prompts.length > 1 ? "Unlock the prompts." : "Unlock the prompt."} guidePromise={content.gate.promise} actionLabel={content.gate.action} showWorkBridge={false}>
+        {content.sections.map((section, index) => {
+          const title = splitTitle(section.title, section.accent);
+          return <Fragment key={section.title}>
+            <section className={styles.section} aria-labelledby={`${content.slug}-s${index}`}>
+              <Heading id={`${content.slug}-s${index}`} num={number(firstJob + index)} title={title.head} accent={title.accent} />
+              <Blocks blocks={section.blocks} guide={content} />
+            </section>
+            {content.illustration.afterSection === index && <figure className={styles.illustration}><div><Image src={content.illustration.src} alt={content.illustration.alt} fill sizes="(max-width: 760px) 100vw, 720px" /></div><figcaption>{content.illustration.caption}</figcaption></figure>}
+          </Fragment>;
+        })}
+
+        <section className={styles.honest} aria-labelledby={`${content.slug}-honest`}>
+          <Heading id={`${content.slug}-honest`} num={number(honestNumber)} title="The honest part" accent="Check before you use it." />
+          <p><Rich value={content.honest} /></p>
+        </section>
+      </div>
+    </div>
+
+    <div id="unlock" className={styles.gateWrap}>
+      <GuideAccessBoundary guideSlug={guide.slug} guideTitle={content.title} variant="band" eyebrow="Your turn" heading="Unlock the" headingAccent={promptWord} guidePromise="" actionLabel="Unlock" showWorkBridge={false}>
+        <div className={styles.unlockedWrap}>
           <section className={styles.unlocked} aria-labelledby={`${content.slug}-full`}>
-            <h2 id={`${content.slug}-full`}>Your full guide</h2>
+            <h2 id={`${content.slug}-full`}>Your prompts <em>ready to copy.</em></h2>
             {content.prompts.map((prompt, index) => <PromptBox key={prompt.title} prompt={prompt} id={`${content.slug}-p${index}`} />)}
             {content.pass && <p className={styles.pass}><Rich value={content.pass} /></p>}
             {content.checks && <div className={styles.checks}>
@@ -137,15 +196,17 @@ export function BatchGuidePage({ guide }: { guide: GuidePage }) {
           </section>
 
           <aside className={styles.kit} aria-labelledby={`${content.slug}-kit`}>
-            <span className={styles.kitIcon}><BatchIcon name="gift" size={28} /></span>
             <span className={styles.kitLabel}>Next step · Kit · Coming soon</span>
             <h2 id={`${content.slug}-kit`}>{content.kit.heading}</h2>
             <p><Rich value={content.kit.body} /></p>
           </aside>
-        </GuideAccessBoundary>
-      </div>
+        </div>
+      </GuideAccessBoundary>
     </div>
 
-    <section className={styles.related} aria-labelledby={`${content.slug}-related`}><div className={styles.relatedInner}><h2 id={`${content.slug}-related`}>Related guides</h2><div className={styles.relatedGrid}>{guide.related.map((item) => item.status === "coming-next" ? null : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 700px) 100vw, 250px" /></figure><div><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p><span>Start the guide →</span></div></GuideRelatedLink>)}</div></div></section>
+    <section className={styles.related} aria-labelledby={`${content.slug}-related`}>
+      <h2 id={`${content.slug}-related`}>Keep reading. <em>One job at a time.</em></h2>
+      <div className={styles.relatedGrid}>{guide.related.map((item) => item.status === "coming-next" ? null : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 760px) 100vw, 380px" /></figure><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p></GuideRelatedLink>)}</div>
+    </section>
   </main>;
 }
