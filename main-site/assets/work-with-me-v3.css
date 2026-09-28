@@ -13,7 +13,7 @@ body.wc-page{background:#f7f6f2;color:#121626}
 .wc-hero .wc-eyebrow{color:#c8c3ef}
 .wc-hero .wc-eyebrow::before{content:"✦";display:inline-block;margin-right:12px;color:#f00091;font-size:22px;line-height:0;vertical-align:-2px}
 .wc-hero h1{max-width:1120px;margin:0 0 16px;font-size:clamp(59px,7.5vw,100px);line-height:.92;color:#fff!important}
-.wc-hero h1 em{display:block;font:italic 700 .63em/1.07 Georgia,serif;text-transform:none;letter-spacing:-.05em;color:#d5cef8}
+.wc-hero h1 em{display:block;font:italic 700 .86em/1.05 Georgia,serif;text-transform:none;letter-spacing:-.05em;color:#d5cef8}
 .wc-hero p:not(.wc-eyebrow){max-width:750px;font-size:clamp(18px,2vw,22px);color:#f3f1fb}
 .wc-offers{padding:62px 0;background:#f7f6f2}
 .wc-offers h2{font-size:clamp(44px,5vw,68px);line-height:.95;margin-bottom:27px;color:#121626}
@@ -77,4 +77,4 @@ body.wc-page{background:#f7f6f2;color:#121626}
 .wc-page .wc-more a{color:#fff!important;text-underline-offset:4px}
 .wc-page .wc-more a:hover,.wc-page .wc-more a:focus-visible{color:#d9cffb!important}
 @media(max-width:850px){.wc-wrap{width:min(100% - 36px,1180px)}.wc-hero{padding:72px 0 57px}.wc-offer-grid,.wc-case-head,.wc-apply-grid{grid-template-columns:1fr}.wc-sessions-top,.wc-programme-head{display:block}.wc-picker{margin-top:20px}.wc-case-head{gap:15px}.wc-steps{grid-template-columns:repeat(3,1fr)}.wc-takeaway{flex-wrap:wrap}.wc-takeaway .wc-button{margin-left:0}.wc-offers,.wc-sessions,.wc-programme,.wc-apply{padding:52px 0}}
-@media(max-width:600px){.wc-hero h1{font-size:clamp(56px,13.8vw,80px)}.wc-example-grid,.wc-steps{grid-template-columns:1fr}.wc-example-grid>div,.wc-steps li{min-height:0}.wc-offer{grid-template-columns:46px 1fr;padding:20px;gap:14px}.wc-offer-number{width:43px;height:43px;font-size:20px}.wc-panel{padding:17px}.wc-page .apply-form{grid-template-columns:1fr}.wc-page .apply-form label,.wc-page .form-privacy-note{grid-column:1/-1}}
+@media(max-width:600px){.wc-hero h1{font-size:clamp(56px,13.8vw,80px)}.wc-hero h1 em{font-size:.74em}.wc-example-grid,.wc-steps{grid-template-columns:1fr}.wc-example-grid>div,.wc-steps li{min-height:0}.wc-offer{grid-template-columns:46px 1fr;padding:20px;gap:14px}.wc-offer-number{width:43px;height:43px;font-size:20px}.wc-panel{padding:17px}.wc-page .apply-form{grid-template-columns:1fr}.wc-page .apply-form label,.wc-page .form-privacy-note{grid-column:1/-1}}
