@@ -15,6 +15,26 @@ digest run overwrites it.
 
 ## Process sweeps log
 
+- 28/09/2026 (operator-requested `process` run, this run — end to end per
+  operator request; all three scheduled crons since 26/09 (`digest`
+  26/09–27/09–28/09 07:30, `process` 26/09–27/09 12:30/20:30) failed with
+  "You've hit your weekly limit · resets Sep 28, 10am (UTC)" per
+  `deploy/logs/`, so no digest or sweep actually ran between the 25/09
+  process sweep and this one) — `getUpdates` (no offset, none stored)
+  returned empty (`{"ok":true,"result":[]}`). Nothing to route: no card
+  decisions, no unblocker replies, no voice notes — 29th consecutive empty
+  sweep since the 14/09/2026 digest. `unblocker/ledger.md` checked — open
+  items (UNB-018–028) are pre-existing unblocker blockers, not
+  review-cockpit replies. Nothing applied to the vault (37 READY TO POST /
+  33 DRAFT / 6 STALE / 2 KILLED / 0 POSTED, recomputed directly from
+  `content-vault.md`'s `## ENTRY ... |` status suffixes and matching this
+  session's reality-check hook), decisions-log.md unchanged. All 9 cards
+  from the 25/09 digest (#1–#6, R1–R3) remain outstanding — no digest has
+  been served since 25/09 (the 26/09–28/09 07:30 crons all hit the weekly
+  limit before sending). Publishing stayed queue-only throughout
+  (`security.md` §3.1, `CLAUDE.md`) — no post released, no Blotato queue
+  touched. Confirmation sent to Telegram (message_id 1183), which also
+  flagged the cron outage to the operator.
 - 14/09/2026 ~20:30 GST — operator-requested sweep. `getUpdates` empty.
   Nothing to route, nothing applied to the vault, nothing added to
   decisions-log.md. All 9 cards from the 07:30 digest (#1–#6, R1–R3) remain
