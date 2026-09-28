@@ -3,7 +3,7 @@ const { validateRequest } = require("../lib/form-privacy");
 // Paid-work enquiries from /work-with-fatiha/. Lumail is the only form provider:
 // the enquiry is stored on the contact with enquiry tags so a Lumail workflow can
 // notify Fatiha. Marketing consent is not given here, so no marketing fields are set.
-const INTERESTS = new Set(["custom-project", "team-licence", "kit-request", "team-session", "not-sure"]);
+const INTERESTS = new Set(["custom-project", "team-licence", "kit-request", "sprint-waitlist", "team-session", "not-sure"]);
 
 function clean(value, max) {
   return typeof value === "string" ? value.trim().slice(0, max) : "";

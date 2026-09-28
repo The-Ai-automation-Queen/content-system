@@ -59,3 +59,17 @@
     });
   }
 })();
+
+// Field tabs drive the same selector, so the panels and the form's industry field stay in sync.
+(function () {
+  var selector = document.getElementById('offer-industry');
+  var tabs = document.querySelectorAll('.wc-field-tab');
+  if (!selector || !tabs.length) return;
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      selector.value = tab.getAttribute('data-field');
+      selector.dispatchEvent(new Event('change'));
+      tabs.forEach(function (other) { other.setAttribute('aria-pressed', other === tab ? 'true' : 'false'); });
+    });
+  });
+})();

@@ -137,3 +137,36 @@ body.wc-page{background:#f7f6f2;color:#121626}
 .wc-page .wc-offer-row h3,.wc-page .wc-panel h3{font-weight:700!important}
 body.wc-page .apply-form button[type=submit]{background:#eb008c!important;border-radius:99px!important;letter-spacing:0!important}
 @media(max-width:700px){.wc-leaders h2,.wc-offers h2,.wc-sessions h2,.wc-apply h2{font-size:clamp(30px,9vw,44px)!important;overflow-wrap:anywhere}}
+
+/* Field offers: tabs, then a kit and a live sprint for each field. */
+.wc-picker-hidden{display:none}
+.wc-field-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
+.wc-field-tab{min-height:48px;padding:0 20px;border:2px solid #0d1117;border-radius:99px;background:#fff;color:#0d1117;font:700 15px Inter,Arial,sans-serif;cursor:pointer}
+.wc-field-tab[aria-pressed=true]{background:#0d1117;color:#fff}
+.wc-field{background:#fff;padding:30px;box-shadow:10px 12px 0 #0d1117}
+.wc-field-head{display:grid;grid-template-columns:320px 1fr;gap:32px;align-items:start}
+.wc-field-head img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.wc-field-head h3{margin:0 0 10px;font:800 clamp(28px,2.8vw,40px)/1.05 "Playfair Display",Georgia,serif!important}
+.wc-field-head h3 small{display:block;margin-bottom:8px;font:700 15px/1 Inter,Arial,sans-serif;color:#eb008c}
+.wc-field-head>div>p{margin:0 0 16px;font-size:17px}
+.wc-field-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;border-top:1px solid #d8d6d2;padding-top:16px}
+.wc-field-steps span{display:block;font:800 13px/1 Inter,Arial,sans-serif;color:#2c4be0;margin-bottom:6px}
+.wc-field-steps strong{display:block;font:800 20px/1.15 "Playfair Display",Georgia,serif;margin-bottom:4px}
+.wc-field-steps p{margin:0;font-size:15px;line-height:1.4;color:#3f4452}
+.wc-field-offers{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:30px}
+.wc-field-offer{padding:26px 28px;color:#fff;background:#2c4be0;box-shadow:8px 10px 0 #0d1117}
+.wc-field-sprint{background:#eb008c}
+.wc-field-type{display:block;margin-bottom:10px;font:700 14px/1 Inter,Arial,sans-serif;opacity:.9}
+.wc-field-offer h4{margin:0 0 8px;font:800 clamp(24px,2.2vw,30px)/1.1 "Playfair Display",Georgia,serif;color:#fff}
+.wc-field-offer p{margin:0 0 12px;font-size:16px;line-height:1.45;color:#fff}
+.wc-field-offer ul{margin:0 0 14px;padding-left:20px;font-size:16px;line-height:1.6}
+.wc-field-leave{padding-top:12px;border-top:1px solid #ffffff66}
+.wc-button-white{background:#fff!important;color:#0d1117!important}
+.wc-field-free{margin:24px 0 0;font-size:16px}
+.wc-field-free a,.wc-field-more a{color:#2c4be0;text-decoration:underline;text-underline-offset:3px}
+.wc-field-more{margin:30px 0 0;font-size:17px}
+@media(max-width:900px){.wc-field-head,.wc-field-offers,.wc-field-steps{grid-template-columns:1fr}.wc-field{padding:20px}}
+body.wc-page .wc-field-offer h4{color:#fff!important;font-weight:800!important}
+body.wc-page .wc-field-offer .wc-button-white{background:#fff!important;color:#0d1117!important;font-weight:700}
+body.wc-page .wc-field-offer li{color:#fff}
+body.wc-page .wc-field-free{margin-top:36px}body.wc-page .wc-field-more{margin-top:44px}
