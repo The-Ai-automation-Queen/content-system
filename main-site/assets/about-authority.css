@@ -38,9 +38,12 @@ body.sk-subpage[data-page-kind="about"] .about-authority{overflow:hidden}
 .about-authority .aa-mark--years strong{font:900 31px/.95 Impact,"Arial Narrow",Inter,sans-serif}
 .about-authority .aa-mark--years span{font:800 10px/1.4 Inter,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
 .about-authority .aa-mark--first-ventures{background:#ff007f;color:#fff;font:900 24px/.9 Impact,"Arial Narrow",Inter,sans-serif;text-align:center;letter-spacing:.08em}
-.about-authority .aa-company-marks{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.about-authority .aa-company-marks>div{display:grid;place-items:center;width:145px;min-height:66px;padding:10px 14px;border-top:3px solid #ff007f;background:#fff}
-.about-authority .aa-company-marks img{display:block;max-width:100%;width:100%;height:38px;object-fit:contain}
+.about-authority .aa-company-marks{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:18px}
+.about-authority .aa-company-marks>div{display:flex;align-items:center;min-height:26px}
+.about-authority .aa-company-marks img{display:block;width:auto;max-width:100%;height:auto;object-fit:contain}
+.about-authority .aa-company-marks>div:nth-child(1) img{width:116px}
+.about-authority .aa-company-marks>div:nth-child(2) img{width:54px}
+.about-authority .aa-company-marks>div:nth-child(3) img{width:113px}
 .about-authority .aa-mark--photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
 .about-authority .aa-mark--symbol img{filter:invert(1)}
 .about-authority .aa-mark--brand img{display:block;width:82%;height:82%;object-fit:contain}
@@ -119,8 +122,10 @@ body.sk-subpage[data-page-kind="about"] .about-authority{overflow:hidden}
   .about-authority .aa-mark--shift span{font-size:52px}
   .about-authority .aa-mark--years strong{font-size:25px}
   .about-authority .aa-mark--years span{font-size:8px}
-  .about-authority .aa-company-marks>div{width:112px;min-height:56px;padding:8px 10px}
-  .about-authority .aa-company-marks img{height:32px}
+  .about-authority .aa-company-marks{gap:14px}
+  .about-authority .aa-company-marks>div:nth-child(1) img{width:104px}
+  .about-authority .aa-company-marks>div:nth-child(2) img{width:48px}
+  .about-authority .aa-company-marks>div:nth-child(3) img{width:102px}
   .about-authority .aa-career-name h3{font-size:clamp(26px,7vw,35px)!important}
   .about-authority .aa-career-takeaway{font-size:18px}
   .about-authority .aa-evidence-list article{gap:18px;min-height:0;padding:26px}
