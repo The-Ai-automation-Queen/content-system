@@ -190,3 +190,20 @@ body.home-saadia a:focus-visible,body.home-saadia button:focus-visible,body.home
 /* Hero line: keep it on the text side, never under the photo. */
 .sk-hero .sk-hero-content>p{max-width:32ch!important;text-wrap:balance}
 @media(max-width:700px){.sk-hero .sk-hero-content>p{max-width:none!important}}
+/* Kits (coming soon) with waitlist: same layout as the workbooks, electric blue. */
+.sk-kits{background:var(--blue);color:var(--white)}
+.sk-kits h2 em{color:var(--lilac)}
+.sk-kits ol{border-top-color:var(--white)}
+.sk-kits li{border-bottom-color:var(--white)}
+.sk-kits li label{display:flex;align-items:baseline;gap:20px;cursor:pointer;width:100%}
+.sk-kits li span{color:var(--lilac)}
+.sk-kits li input{width:22px;height:22px;accent-color:var(--pink);align-self:center;flex:none}
+.sk-kit-form{margin-top:26px;max-width:470px}
+.sk-kit-form>div{display:grid;grid-template-columns:1fr 1.4fr;gap:10px}
+.sk-kit-form input[name=firstName],.sk-kit-form input[type=email]{min-width:0;height:50px;border:0;border-radius:0;padding:0 14px;font:400 15px Inter,Arial,sans-serif;color:var(--ink)}
+.sk-kit-form .sk-consent{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:13px;line-height:1.4}
+.sk-kit-form .sk-pill{margin-top:18px;border:0;cursor:pointer}
+#sk-kit-status{margin-top:12px;font-weight:700}
+@media(max-width:700px){.sk-kit-form>div{grid-template-columns:1fr}}
+.sk-kits h2,.sk-kits p{color:var(--white)}
+body.home-saadia .sk-kits h2,body.home-saadia .sk-kits h2 span,body.home-saadia .sk-kits p:not(.sk-overline):not(#sk-kit-status){color:var(--white)!important}body.home-saadia .sk-kits h2 em{color:var(--lilac)!important}

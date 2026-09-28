@@ -83,3 +83,27 @@ test("newsletter reports Lumail failure without claiming signup succeeded", asyn
     else process.env.LUMAIL_API_TOKEN = previousToken;
   }
 });
+
+test("kit waitlist tags only the chosen, known kits and rejects an empty choice", async () => {
+  const previousToken = process.env.LUMAIL_API_TOKEN;
+  const previousFetch = global.fetch;
+  process.env.LUMAIL_API_TOKEN = "test";
+  let payload;
+  global.fetch = async (url, options) => { payload = JSON.parse(options.body); return { ok: true, status: 200 }; };
+  try {
+    const ok = response();
+    await handler(request({ email: "reader@example.com", firstName: "Ada", marketingConsent: true, kits: ["workflows", "safe-at-work", "workflows", "unknown"] }), ok);
+    assert.equal(ok.code, 200);
+    assert.deepEqual(payload.tags, ["shift-and-lead-kit-waitlist", "kit-waitlist-workflows", "kit-waitlist-safe-at-work"]);
+    assert.equal(payload.fields.source, "/#kits");
+    payload = undefined;
+    const empty = response();
+    await handler(request({ email: "reader@example.com", marketingConsent: true, kits: ["unknown"] }), empty);
+    assert.equal(empty.code, 400);
+    assert.equal(payload, undefined);
+  } finally {
+    global.fetch = previousFetch;
+    if (previousToken === undefined) delete process.env.LUMAIL_API_TOKEN;
+    else process.env.LUMAIL_API_TOKEN = previousToken;
+  }
+});
