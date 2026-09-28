@@ -239,3 +239,5 @@ body.home-saadia .sk-consulting h2 em{color:var(--lilac)}
 .sk-consulting li{border-bottom-color:#ffffff80;color:var(--white)}
 .sk-consulting li span{color:var(--lilac)}
 .sk-workbooks,.sk-consulting,.sk-kits,.sk-final{border-top:0!important}
+.sk-wave{position:relative;z-index:1;margin-bottom:-2px}
+.sk-wave{margin-bottom:0;overflow:visible}.sk-wave svg{height:calc(100% + 3px);margin-bottom:-3px}
