@@ -7,14 +7,30 @@ digest run overwrites it.
 ## Telegram offset
 
 - Last `getUpdates` consumed offset: still none pending — checked again
-  on 25/09/2026 (operator-requested `process` run, this run), queue
-  empty (`{"ok":true,"result":[]}`). No card replies, no unblocker replies,
-  no voice notes since the 14/09/2026 digest (28th consecutive empty sweep).
+  on 28/09/2026 (operator-requested `process` run, this run, second sweep
+  today), queue empty (`{"ok":true,"result":[]}`). No card replies, no
+  unblocker replies, no voice notes since the 14/09/2026 digest (30th
+  consecutive empty sweep).
 - Next `process` run should call `getUpdates` with no offset filter until a
   reply produces an `update_id` to anchor to.
 
 ## Process sweeps log
 
+- 28/09/2026, second sweep today (operator-requested `process` run, this
+  run — end to end per operator request, via `/review-cockpit process`)
+  — `getUpdates` (no offset, none stored) returned empty
+  (`{"ok":true,"result":[]}`). Nothing to route: no card decisions, no
+  unblocker replies, no voice notes — 30th consecutive empty sweep since
+  the 14/09/2026 digest. `unblocker/ledger.md` checked — 27 open items
+  (UNB-018–028 range) are pre-existing unblocker blockers, not
+  review-cockpit replies. Nothing applied to the vault (37 READY TO POST /
+  33 DRAFT / 6 STALE / 2 KILLED / 0 POSTED, recomputed directly from
+  `content-vault.md`'s `## ENTRY ... |` status suffixes and matching this
+  session's reality-check hook), decisions-log.md unchanged. All 9 cards
+  from the 25/09 digest (#1–#6, R1–R3) remain outstanding — no digest has
+  been served since 25/09. Publishing stayed queue-only throughout
+  (`security.md` §3.1, `CLAUDE.md`) — no post released, no Blotato queue
+  touched. Confirmation sent to Telegram (message_id 1184).
 - 28/09/2026 (operator-requested `process` run, this run — end to end per
   operator request; all three scheduled crons since 26/09 (`digest`
   26/09–27/09–28/09 07:30, `process` 26/09–27/09 12:30/20:30) failed with
