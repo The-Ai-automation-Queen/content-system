@@ -324,3 +324,6 @@ body.home-saadia .sk-band h2 em{color:var(--lilac)}
 .sk-sheet-2,.sk-sheet-3{padding-top:9px}
 .sk-kit-cover .sk-sheet-3{font-size:0}
 .sk-kit-note{margin:0 0 6px!important;font-size:14px!important;font-style:italic;color:var(--lilac)}
+.sk-proof .sk-shell{grid-template-columns:1fr auto}
+.sk-proof-voice{grid-column:1/-1;margin:0 0 8px;max-width:900px;font:700 italic clamp(24px,2.3vw,32px)/1.3 "Playfair Display",Georgia,serif;color:var(--ink)}
+.sk-proof-voice span{display:block;margin-top:10px;font:600 15px/1 Inter,Arial,sans-serif;font-style:normal;color:#3f4452}
