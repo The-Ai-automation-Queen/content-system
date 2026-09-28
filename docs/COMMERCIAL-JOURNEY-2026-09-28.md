@@ -1,5 +1,7 @@
 # Commercial journey — clean slate (28 September 2026)
 
+> **Superseded 28/09 by `COMMERCIAL-PATH-V2-2026-09-28.md`** (offers built from the reader's question).
+
 Replaces the site map in `BIG-PICTURE-2026-09-28.md`. It starts from the
 visitor's buying path, not from existing assets. It is modelled on the structure
 of saadiakaram.ai, not its words, adapted to Fatiha: online only, scalable,
