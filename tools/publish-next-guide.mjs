@@ -61,4 +61,9 @@ await cp(path.join(publicRoot, "images", "guides"), path.join(destinationRoot, "
   force: true,
 });
 
+await cp(path.join(publicRoot, "images", "mascot"), path.join(destinationRoot, "images", "mascot"), {
+  recursive: true,
+  force: true,
+});
+
 console.log(`Published ${slug} to main-site/guides/${slug}/ with a legacy .html copy for redirection`);
