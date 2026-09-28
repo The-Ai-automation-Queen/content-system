@@ -231,3 +231,11 @@ body.home-saadia .sk-consulting h2 em,.sk-consulting .sk-overline{color:var(--li
 .sk-newsletter{border-top:0;padding-top:0}
 @media(max-width:700px){.sk-thumb{width:60px;height:60px}.sk-cover{width:52px;height:72px}}
 .sk-guides{padding-top:30px}
+/* Work with me band: same layout as kits and workbooks, on electric blue. */
+.sk-workbooks.sk-consulting{background:var(--blue);color:var(--white);padding:40px 0 60px}
+body.home-saadia .sk-consulting h2,body.home-saadia .sk-consulting h2 span,body.home-saadia .sk-consulting p:not(.sk-overline){color:var(--white)}
+body.home-saadia .sk-consulting h2 em{color:var(--lilac)}
+.sk-consulting ol{border-top-color:#ffffff80}
+.sk-consulting li{border-bottom-color:#ffffff80;color:var(--white)}
+.sk-consulting li span{color:var(--lilac)}
+.sk-workbooks,.sk-consulting,.sk-kits,.sk-final{border-top:0!important}
