@@ -63,7 +63,7 @@ export const promptGuide = {
   },
   related: [
     { slug: "what-is-ai", title: "What AI actually is", reason: "See what an AI answer can help with, and what you still need to check.", cover: "/images/guides/what-is-ai.webp" },
-    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Know what to remove before you paste information into a prompt.", cover: "/images/guides/learn-master.webp" },
+    { slug: "what-should-you-never-share-with-ai", title: "The 3-Question Check Before You Paste Anything Into AI", reason: "Know what to remove before you paste information into a prompt.", cover: "/images/guides/learn-master.webp" },
     { slug: "check-copilot-excel-edits", title: "Did Copilot change only one cell?", reason: "Try a precise instruction in Excel and compare the result with the original.", cover: "/images/guides/check-copilot-excel-edits.webp" },
   ],
 } as const satisfies GuidePage;
@@ -129,15 +129,15 @@ For each finding, give a short exact quote and the page URL. Say "not found" whe
   },
   related: [
     { slug: "manus-browser-workflow", title: "When does a Manus browser workflow make sense?", reason: "See what changes when AI uses your browser.", cover: "/images/guides/manus-browser-workflow.webp" },
-    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "See which information must stay out of any AI tool.", cover: "/images/guides/learn-master.webp" },
+    { slug: "what-should-you-never-share-with-ai", title: "The 3-Question Check Before You Paste Anything Into AI", reason: "See which information must stay out of any AI tool.", cover: "/images/guides/learn-master.webp" },
     { slug: "what-is-agentic", title: "What AI agents actually do", reason: "Understand what changes when AI can take several steps and use tools.", cover: "/images/guides/what-is-agentic.webp" },
   ],
 } as const satisfies GuidePage;
 
 export const aiConnectionsGuide = {
   slug: "connect-ai-to-email-files-calendar",
-  title: "Should you let AI connect to your email, files and calendar?",
-  promise: "A connection can save time, but it also gives the AI access to information you did not paste into the chat. Connect only what you need and know how to remove it.",
+  title: "Read This Before You Connect AI to Your Email",
+  promise: "Only give AI the access the job needs. Often one uploaded file is enough.",
   cover: "/images/guides/connect-ai-to-email-files-calendar.webp",
   coverAlt: "The small blue robot mascot choosing one cable on an antique email, files and calendar switchboard",
   seoDescription: "Decide whether to connect AI to email, files and calendars, understand the permissions and learn where to disconnect ChatGPT, Claude, Gemini and Copilot.",
@@ -214,7 +214,7 @@ Permission text:
     finishLine: "You can always connect it later. Start with less access and add only what the work proves it needs.",
   },
   related: [
-    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Know which information should never enter a connected tool.", cover: "/images/guides/learn-master.webp" },
+    { slug: "what-should-you-never-share-with-ai", title: "The 3-Question Check Before You Paste Anything Into AI", reason: "Know which information should never enter a connected tool.", cover: "/images/guides/learn-master.webp" },
     { slug: "what-is-an-ai-browser", title: "What is an AI browser, and should you use one?", reason: "Check what browser-based AI may see while you work online.", cover: "/images/guides/what-is-an-ai-browser.webp" },
     { slug: "which-ai-tool-for-what", title: "Which AI tool should you use?", reason: "Choose the tool before granting another account access.", cover: "/images/guides/which-ai-tool-for-what.webp" },
   ],
@@ -284,7 +284,7 @@ Give me one small exercise I can finish this week. Tell me what to prepare, what
   },
   related: [
     { slug: "what-is-ai", title: "What AI actually is", reason: "See what the tool can and cannot know before you rely on an answer.", cover: "/images/guides/what-is-ai.webp" },
-    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Choose safe material for your first exercise.", cover: "/images/guides/learn-master.webp" },
+    { slug: "what-should-you-never-share-with-ai", title: "The 3-Question Check Before You Paste Anything Into AI", reason: "Choose safe material for your first exercise.", cover: "/images/guides/learn-master.webp" },
   ],
 } as const satisfies GuidePage;
 

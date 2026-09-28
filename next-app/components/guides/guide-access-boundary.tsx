@@ -11,6 +11,8 @@ export function GuideAccessBoundary({
   guidePromise,
   heading,
   actionLabel,
+  note,
+  showWorkBridge = true,
   children,
 }: {
   guideSlug: string;
@@ -18,6 +20,8 @@ export function GuideAccessBoundary({
   guidePromise?: string;
   heading?: string;
   actionLabel?: string;
+  note?: string;
+  showWorkBridge?: boolean;
   children: ReactNode;
   variant?: "unlock";
 }) {
@@ -96,6 +100,7 @@ export function GuideAccessBoundary({
           <span className={styles.gateLabel}>Continue this guide</span>
           <h2 id={`guide-gate-title-${guideSlug}`}>{heading || "Get the next step"}</h2>
           <p>{guidePromise || `Get the next practical part of ${guideTitle} and a link to return to this guide.`}</p>
+          {note && <p className={styles.gateNote}>{note}</p>}
           <form onSubmit={submit}>
             <div className={styles.nameFields}>
               <label htmlFor={`guide-first-name-${guideSlug}`}>First name<input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} required /></label>
@@ -121,13 +126,13 @@ export function GuideAccessBoundary({
         hidden={!ready || !unlocked}
       >
         {children}
-        <aside className={styles.workBridge} aria-labelledby={`guide-work-bridge-${guideSlug}`}>
+        {showWorkBridge && <aside className={styles.workBridge} aria-labelledby={`guide-work-bridge-${guideSlug}`}>
           <div>
             <h2 id={`guide-work-bridge-${guideSlug}`}>Want your team working like this?</h2>
             <p>I run a practical AI programme for teams, adapted to your industry and built on your own work. I also help leaders decide what AI should change in their business and marketing.</p>
           </div>
           <a href="/work-with-fatiha/" data-track="guide_to_work_with_me">See how we can work together <span aria-hidden="true">→</span></a>
-        </aside>
+        </aside>}
       </div>
     </>
   );

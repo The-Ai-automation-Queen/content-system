@@ -6,12 +6,8 @@ import { InstagramDashboardPage } from "@/components/guides/instagram-dashboard-
 import { WhatIsAiPage } from "@/components/guides/what-is-ai-page";
 import { AiJargonPage } from "@/components/guides/ai-jargon-page";
 import { AgenticPage } from "@/components/guides/agentic-page";
-import { PrivacyGuidePage } from "@/components/guides/privacy-guide-page";
 import { ToolChooserPage } from "@/components/guides/tool-chooser-page";
-import { ShortAnswerPage } from "@/components/guides/short-answer-page";
-import { ChatGptProjectPage } from "@/components/guides/chatgpt-project-page";
 import { ScheduledTaskPage } from "@/components/guides/scheduled-task-page";
-import { ClaudeTaskPage } from "@/components/guides/claude-task-page";
 import { ClaudeProjectsPage } from "@/components/guides/claude-projects-page";
 import { GeminiDrivePage } from "@/components/guides/gemini-drive-page";
 import { GeminiTasksPage } from "@/components/guides/gemini-tasks-page";
@@ -27,7 +23,6 @@ import { KimiValuePage } from "@/components/guides/kimi-value-page";
 import { KimiSheetsPage } from "@/components/guides/kimi-sheets-page";
 import { ManusBrowserPage } from "@/components/guides/manus-browser-page";
 import { AiBrowserPage } from "@/components/guides/ai-browser-page";
-import { AiConnectionsPage } from "@/components/guides/ai-connections-page";
 import { AiSkillsPage } from "@/components/guides/ai-skills-page";
 import { AiSearchPage } from "@/components/guides/ai-search-page";
 import { CustomerResearchPage } from "@/components/guides/customer-research-page";
@@ -40,6 +35,8 @@ import { MetaMuseSavingPage } from "@/components/guides/meta-muse-saving-page";
 import { ScreenRecordingPage } from "@/components/guides/screen-recording-page";
 import { MistralMultilingualPage } from "@/components/guides/mistral-multilingual-page";
 import { GuideAccessBoundary } from "@/components/guides/guide-access-boundary";
+import { BatchGuidePage } from "@/components/guides/batch-guide-page";
+import { batchOneGuides } from "@/content/guide-batch-one";
 import { getGuidePage, guidePages } from "@/content/guide-page";
 import { legacyGuideSlugs } from "@/content/legacy-guide-slugs";
 
@@ -52,14 +49,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const guide = getGuidePage(slug);
   if (!guide) return {};
   const canonical = `/guides/${guide.slug}/`;
+  const batch = batchOneGuides[slug];
   return {
-    title: guide.title,
+    title: batch?.seoTitle ?? guide.title,
     ...(approvedGuideSlugs.includes(slug) ? {} : { robots: { index: false, follow: false } }),
-    description: guide.seoDescription,
+    description: batch?.seoDescription ?? guide.seoDescription,
     alternates: { canonical },
     openGraph: {
-      title: guide.title,
-      description: guide.seoDescription,
+      title: batch?.title ?? guide.title,
+      description: batch?.seoDescription ?? guide.seoDescription,
       url: canonical,
       type: "article",
       images: [{ url: guide.cover, width: 1280, height: 721 }],
@@ -75,12 +73,12 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "what-is-ai") return <WhatIsAiPage guide={guide} />;
   if (slug === "ai-jargon-guide") return <AiJargonPage guide={guide} />;
   if (slug === "what-is-agentic") return <AgenticPage guide={guide} />;
-  if (slug === "what-should-you-never-share-with-ai") return <PrivacyGuidePage guide={guide} />;
+  if (slug === "what-should-you-never-share-with-ai") return <BatchGuidePage guide={guide} />;
   if (slug === "which-ai-tool-for-what") return <ToolChooserPage guide={guide} />;
-  if (slug === "make-chatgpt-answers-shorter") return <ShortAnswerPage guide={guide} />;
-  if (slug === "stop-chatgpt-forgetting-context") return <ChatGptProjectPage guide={guide} />;
+  if (slug === "make-chatgpt-answers-shorter") return <BatchGuidePage guide={guide} />;
+  if (slug === "stop-chatgpt-forgetting-context") return <BatchGuidePage guide={guide} />;
   if (slug === "chatgpt-scheduled-tasks") return <ScheduledTaskPage guide={guide} />;
-  if (slug === "claude") return <ClaudeTaskPage guide={guide} />;
+  if (slug === "claude") return <BatchGuidePage guide={guide} />;
   if (slug === "claude-projects") return <ClaudeProjectsPage guide={guide} />;
   if (slug === "gemini-cannot-find-drive-file") return <GeminiDrivePage guide={guide} />;
   if (slug === "gemini-google-tasks-limits") return <GeminiTasksPage guide={guide} />;
@@ -99,7 +97,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "make-work-tracker-with-kimi") return <KimiSheetsPage guide={guide} />;
   if (slug === "manus-browser-workflow") return <ManusBrowserPage guide={guide} />;
   if (slug === "what-is-an-ai-browser") return <AiBrowserPage guide={guide} />;
-  if (slug === "connect-ai-to-email-files-calendar") return <AiConnectionsPage guide={guide} />;
+  if (slug === "connect-ai-to-email-files-calendar") return <BatchGuidePage guide={guide} />;
   if (slug === "ai-skills-worth-learning-for-work") return <AiSkillsPage guide={guide} />;
   if (slug === "show-up-in-ai-search") return <AiSearchPage guide={guide} />;
   if (slug === "chatgpt-customer-research-with-evidence") return <CustomerResearchPage guide={guide} />;

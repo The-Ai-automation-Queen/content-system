@@ -69,7 +69,7 @@ Use plain English. Do not invent a click, feature, result, shortcut or reason th
   related: [
     promptGuide("chatgpt-customer-research-with-evidence", "Can ChatGPT group customer research without inventing themes?", "Use the same evidence-first method with interviews and survey notes."),
     existingGuide("what-is-a-prompt", "How to write an AI prompt that gets a useful answer", "Adapt a complete instruction without losing its checks.", "/images/guides/what-is-a-prompt.webp"),
-    promptGuide("make-chatgpt-answers-shorter", "Why does ChatGPT keep giving you an essay?", "Keep future process updates concise."),
+    promptGuide("make-chatgpt-answers-shorter", "Stop ChatGPT Writing You an Essay", "Keep future process updates concise."),
   ],
 });
 
@@ -138,7 +138,7 @@ After the table, propose 3 next research questions. Do not recommend a product d
   related: [
     promptGuide("chatgpt-screen-recording-to-process-guide", "Can ChatGPT turn a screen recording into a process guide?", "Turn observed work into checked instructions."),
     promptGuide("verify-grok-current-research", "How do you verify research from Grok?", "Separate discussion from confirmed sources."),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Remove personal and confidential information before uploading research.", "/images/guides/learn-master.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Remove personal and confidential information before uploading research.", "/images/guides/learn-master.webp"),
   ],
 });
 
@@ -213,7 +213,7 @@ Draft only. Do not send a message, update a project tool or create a task. End w
   finish: "You now have a tested workflow you can reuse, improve and save without rebuilding the instruction every week.",
   related: [
     promptGuide("claude-projects", "Stop repeating your instructions to Claude", "Store stable context for work that continues."),
-    existingGuide("claude", "What can you actually do with Claude at work?", "Practise with a smaller one-off task first.", "/images/guides/claude-first-task.webp"),
+    existingGuide("claude", "3 Admin Jobs to Hand Claude This Week", "Practise with a smaller one-off task first.", "/images/guides/claude-first-task.webp"),
     promptGuide("chatgpt-screen-recording-to-process-guide", "Turn a screen recording into a process guide", "Document the human version of a repeatable job."),
   ],
 });
@@ -338,7 +338,7 @@ End with the two messages I should check first and why. Do not invent facts, dat
   related: [
     promptGuide("check-copilot-excel-edits", "How do you know Copilot changed the right Excel cells?", "Check a visible Copilot edit."),
     existingGuide("connect-ai-to-email-files-calendar", "Should you connect AI to your accounts?", "Review account permissions and disconnection.", "/images/guides/connect-ai-to-email-files-calendar.webp"),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Set a boundary for sensitive work data.", "/images/guides/learn-master.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Set a boundary for sensitive work data.", "/images/guides/learn-master.webp"),
   ],
 });
 
@@ -400,7 +400,7 @@ Do not purchase, subscribe, book, add to a basket, sign in, contact a seller or 
   related: [
     existingGuide("meta-ai", "What can Meta’s Muse agent do for you?", "Understand the wider Muse workflow before connecting more services.", "/images/guides/meta-muse.webp"),
     comingNextGuide("test-meta-business-agent-customer-replies", "Should Meta Business Agent answer customers?", "Test a business use with a separate approval boundary."),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Check what stays out of a connected agent.", "/images/guides/learn-master.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Check what stays out of a connected agent.", "/images/guides/learn-master.webp"),
   ],
 });
 
@@ -588,7 +588,7 @@ Do not treat your own earlier suggestions as approved decisions. Mark any item w
   related: [
     promptGuide("test-deepseek-v4-document-work", "Can DeepSeek handle your document work?", "Compare tools with the same safe material."),
     promptGuide("edit-long-writing-with-deepseek", "Edit long DeepSeek writing without losing what worked", "Protect approved details during revision."),
-    existingGuide("what-should-you-never-share-with-ai", "What should you never share with AI?", "Keep the recovery pack within your organisation’s data rules.", "/images/guides/learn-master.webp"),
+    existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Keep the recovery pack within your organisation’s data rules.", "/images/guides/learn-master.webp"),
   ],
 });
 

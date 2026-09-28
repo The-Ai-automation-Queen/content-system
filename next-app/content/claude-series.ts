@@ -3,8 +3,8 @@ import type { GuidePage } from "./guide-page";
 export const claudeGuide = {
   "sections": [],
   "slug": "claude",
-  "title": "What can you actually do with Claude at work?",
-  "promise": "Choose meeting notes, a document question or an email. See the sample input and useful result before trying the prompt yourself.",
+  "title": "3 Admin Jobs to Hand Claude This Week",
+  "promise": "Three jobs you can hand to Claude today: messy meeting notes, a question about a long document, and a rough email.",
   "cover": "/images/guides/claude-first-task.webp",
   "coverAlt": "A small blue robot princess turning scattered notes into one finished document on an engraved wooden desk",
   "seoDescription": "See three complete Claude examples for work: sort meeting notes, answer a document question and draft an email. Try one and check the result.",
@@ -67,13 +67,13 @@ export const claudeGuide = {
   "related": [
     {
       "slug": "what-should-you-never-share-with-ai",
-      "title": "What should you never share with AI?",
+      "title": "The 3-Question Check Before You Paste Anything Into AI",
       "reason": "Check what belongs in a work chat before you use your own material.",
       "cover": "/images/guides/learn-master.webp"
     },
     {
       "slug": "connect-ai-to-email-files-calendar",
-      "title": "Should you let AI connect to your email, files and calendar?",
+      "title": "Read This Before You Connect AI to Your Email",
       "reason": "Know what access you are giving before you connect a work account.",
       "cover": "/images/guides/connect-ai-to-email-files-calendar.webp"
     }
@@ -118,13 +118,13 @@ export const claudeProjectsGuide = {
   "related": [
     {
       "slug": "what-should-you-never-share-with-ai",
-      "title": "What should you never share with AI?",
+      "title": "The 3-Question Check Before You Paste Anything Into AI",
       "reason": "Check what belongs in a Project before adding work material.",
       "cover": "/images/guides/learn-master.webp"
     },
     {
       "slug": "connect-ai-to-email-files-calendar",
-      "title": "Should you let AI connect to your email, files and calendar?",
+      "title": "Read This Before You Connect AI to Your Email",
       "reason": "Understand the permissions before connecting a work account.",
       "cover": "/images/guides/connect-ai-to-email-files-calendar.webp"
     }

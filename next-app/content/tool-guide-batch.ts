@@ -74,7 +74,7 @@ export const copilotGuide = {
   conclusion: { heading: "You now know which Copilot to open", paragraphs: ["Use general Copilot for everyday help, Microsoft 365 Copilot for approved work inside Microsoft apps and Copilot Studio only for a defined agent project."], finishLine: "Keep Copilot if working inside Microsoft saves more time than copying information into another tool." },
   related: [
     { slug: "gemini", title: "Should you use Gemini?", reason: "Compare Microsoft integration with the Google route.", cover: "/images/guides/gemini.webp" },
-    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Check the data boundary before connecting work accounts.", cover: "/images/guides/learn-master.webp" },
+    { slug: "what-should-you-never-share-with-ai", title: "The 3-Question Check Before You Paste Anything Into AI", reason: "Check the data boundary before connecting work accounts.", cover: "/images/guides/learn-master.webp" },
     { slug: "meta-ai", title: "Should you use Meta AI?", reason: "See how an assistant inside familiar apps changes the choice.", cover: "/images/guides/meta-ai.webp" },
   ],
 } as const satisfies GuidePage;
@@ -156,7 +156,7 @@ If a page requires a login, payment detail or form submission, skip it and find 
   related: [
     { slug: "test-meta-business-agent-customer-replies", title: "Should Meta Business Agent answer customers?", reason: "Test the separate WhatsApp Business reply product before using it live.", cover: "/images/guides/test-meta-business-agent-customer-replies.webp", status: "coming-next" },
     { slug: "what-is-an-ai-browser", title: "What is an AI browser?", reason: "Understand what changes when an agent can work inside a browser.", cover: "/images/guides/what-is-an-ai-browser.webp" },
-    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Check what stays out before giving Muse more access.", cover: "/images/guides/learn-master.webp" },
+    { slug: "what-should-you-never-share-with-ai", title: "The 3-Question Check Before You Paste Anything Into AI", reason: "Check what stays out before giving Muse more access.", cover: "/images/guides/learn-master.webp" },
   ],
 } as const satisfies GuidePage;
 
@@ -203,7 +203,7 @@ Do not treat likes, reposts or repetition as proof.`, instructions: [
   ], check: "A claim is usable only when you can trace it to a reliable original source outside the Grok summary." },
   conclusion: { heading: "You now know what Grok is for", paragraphs: ["Use Grok to inspect current conversation and find leads worth checking. Do not use it to turn social-media repetition into a fact."], finishLine: "Keep it if real-time X context matters to your work and you are willing to verify what you find." },
   related: [
-    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Protect private information before using social posts or outside sources.", cover: "/images/guides/learn-master.webp" },
+    { slug: "what-should-you-never-share-with-ai", title: "The 3-Question Check Before You Paste Anything Into AI", reason: "Protect private information before using social posts or outside sources.", cover: "/images/guides/learn-master.webp" },
     { slug: "meta-ai", title: "Should you use Meta AI?", reason: "Compare another assistant shaped by social platforms.", cover: "/images/guides/meta-ai.webp" },
     { slug: "deepseek", title: "Should you use DeepSeek?", reason: "Compare a social research tool with a technical model family.", cover: "/images/guides/deepseek.webp" },
   ],
@@ -245,7 +245,7 @@ export const deepSeekGuide = {
   ], check: "Keep DeepSeek only when its result is better for the task and the chosen data route meets your rules." },
   conclusion: { heading: "You now know the real DeepSeek decision", paragraphs: ["Choose between the public app, API, a third-party host or a controlled deployment. The same model name can sit behind very different data arrangements."], finishLine: "Decide on the data route first, then decide whether the model earns a place in your work." },
   related: [
-    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Set the information boundary before testing another provider.", cover: "/images/guides/learn-master.webp" },
+    { slug: "what-should-you-never-share-with-ai", title: "The 3-Question Check Before You Paste Anything Into AI", reason: "Set the information boundary before testing another provider.", cover: "/images/guides/learn-master.webp" },
     { slug: "mistral", title: "Should you use Mistral?", reason: "Compare another model family with deployment and control options.", cover: "/images/guides/mistral.webp" },
     { slug: "kimi", title: "Should you use Kimi?", reason: "Compare another open model family with an agent and coding route.", cover: "/images/guides/kimi.webp" },
   ],
@@ -362,7 +362,7 @@ Do not log in to any website, contact anyone, publish anything or spend money.`,
   conclusion: { heading: "You now know how to test an agent", paragraphs: ["Use Manus for a multi-step outcome you can inspect. Add browsers, logins and connectors only after the read-only version works."], finishLine: "Keep it when the completed deliverable saves more effort than supervising and checking the task." },
   related: [
     { slug: "what-is-agentic", title: "What AI agents actually do", reason: "Understand the parts of an agent before granting more access.", cover: "/images/guides/what-is-agentic.webp" },
-    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Set the data boundary before using connectors or saved logins.", cover: "/images/guides/learn-master.webp" },
+    { slug: "what-should-you-never-share-with-ai", title: "The 3-Question Check Before You Paste Anything Into AI", reason: "Set the data boundary before using connectors or saved logins.", cover: "/images/guides/learn-master.webp" },
     { slug: "kimi", title: "Should you use Kimi?", reason: "Compare another agent route before choosing a platform.", cover: "/images/guides/kimi.webp" },
   ],
 } as const satisfies GuidePage;
@@ -425,6 +425,6 @@ SOURCE TEXT:
   related: [
     { slug: "deepseek", title: "Should you use DeepSeek?", reason: "Compare another model family with open and hosted routes.", cover: "/images/guides/deepseek.webp" },
     { slug: "manus", title: "Should you use Manus?", reason: "Compare Vibe Work with a task-first agent platform.", cover: "/images/guides/manus.webp" },
-    { slug: "what-should-you-never-share-with-ai", title: "What should you never share with AI?", reason: "Check the data boundary before enabling memory or connectors.", cover: "/images/guides/learn-master.webp" },
+    { slug: "what-should-you-never-share-with-ai", title: "The 3-Question Check Before You Paste Anything Into AI", reason: "Check the data boundary before enabling memory or connectors.", cover: "/images/guides/learn-master.webp" },
   ],
 } as const satisfies GuidePage;
