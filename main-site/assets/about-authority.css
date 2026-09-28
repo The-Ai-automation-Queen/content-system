@@ -38,9 +38,9 @@ body.sk-subpage[data-page-kind="about"] .about-authority{overflow:hidden}
 .about-authority .aa-mark--years strong{font:900 31px/.95 Impact,"Arial Narrow",Inter,sans-serif}
 .about-authority .aa-mark--years span{font:800 10px/1.4 Inter,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
 .about-authority .aa-mark--first-ventures{background:#ff007f;color:#fff;font:900 24px/.9 Impact,"Arial Narrow",Inter,sans-serif;text-align:center;letter-spacing:.08em}
-.about-authority .aa-company-marks{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:18px}
+.about-authority .aa-company-marks{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:18px}
 .about-authority .aa-company-marks>div{display:flex;align-items:center;min-height:26px}
-.about-authority .aa-company-marks>div+div::before{content:"·";margin-right:10px;color:#243fc3;font:700 22px/1 Georgia,serif}
+.about-authority .aa-company-marks>div+div::before{content:"·";margin-right:18px;color:#243fc3;font:700 22px/1 Georgia,serif}
 .about-authority .aa-company-marks img{display:block;width:auto;max-width:100%;height:auto;object-fit:contain}
 .about-authority .aa-company-marks>div:nth-child(1) img{width:160px}
 .about-authority .aa-company-marks>div:nth-child(2) img{width:72px}
