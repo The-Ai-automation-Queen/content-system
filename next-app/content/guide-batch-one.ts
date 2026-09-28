@@ -59,7 +59,7 @@ const claude: BatchGuide = {
     { icon: "sparkle", label: "Claude drafts", note: "Using only what you gave it" },
     { icon: "check", label: "You check", note: "30 seconds before you use it" },
   ],
-  illustration: { src: "/images/guides/check-ai-answers.webp", alt: "The blue robot mascot checking a page under a brass magnifier", caption: "The draft is Claude's. The final say is yours.", afterSection: 2 },
+  illustration: { src: "/images/guides/claude-first-task.webp", alt: "The blue robot mascot turning scattered notes into one finished, approved document", caption: "The draft is Claude's. The final say is yours.", afterSection: 2 },
   sections: [
     {
       title: "Job 1: Messy notes into clear actions",
@@ -136,7 +136,7 @@ const shorter: BatchGuide = {
     { icon: "compress", label: "Set the limit", note: "60 words or fewer" },
     { icon: "check", label: "Check the facts", note: "Nothing rounded up" },
   ],
-  illustration: { src: "/images/guides/make-ai-clear-and-concise.webp", alt: "The blue robot mascot pressing a long stack of pages into one short card", caption: "Shorter is only useful if it stays true.", afterSection: 0 },
+  illustration: { src: "/images/guides/make-chatgpt-answers-shorter.webp", alt: "The blue robot mascot pressing a long paper scroll into short cards", caption: "Shorter is only useful if it stays true.", afterSection: 0 },
   sections: [
     {
       title: "Say what \"short\" means",
