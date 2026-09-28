@@ -25,10 +25,10 @@ module.exports = async function handler(request, response) {
   const token = process.env.LUMAIL_API_TOKEN;
   if (!token) return response.status(503).json({ error: "Email signup is not available right now." });
 
+  // Kits are optional: the one homepage sign-up adds a waitlist tag for each kit ticked.
   const kitTags = Array.isArray(kits) ? [...new Set(kits.filter((kit) => Object.hasOwn(KIT_TAGS, kit)).map((kit) => KIT_TAGS[kit]))] : [];
-  if (Array.isArray(kits) && !kitTags.length) return response.status(400).json({ error: "Choose at least one kit." });
   const waitlist = kitTags.length > 0;
-  const consentVersion = waitlist ? "homepage-kit-waitlist-v1-2026-09-28" : "homepage-newsletter-v1-2026-09-26";
+  const consentVersion = waitlist ? "homepage-signup-with-kits-v1-2026-09-28" : "homepage-newsletter-v1-2026-09-26";
 
   const timestamp = new Date().toISOString();
   const name = typeof firstName === "string" ? firstName.trim().slice(0, 100) : "";
@@ -40,9 +40,9 @@ module.exports = async function handler(request, response) {
       body: JSON.stringify({
         email: normalizedEmail,
         name,
-        tags: waitlist ? ["shift-and-lead-kit-waitlist", ...kitTags] : ["shift-and-lead-newsletter"],
+        tags: waitlist ? ["shift-and-lead-newsletter", "shift-and-lead-kit-waitlist", ...kitTags] : ["shift-and-lead-newsletter"],
         fields: {
-          source: waitlist ? "/#kits" : "/",
+          source: "/",
           consent: "true",
           consent_version: consentVersion,
           consent_timestamp: timestamp,

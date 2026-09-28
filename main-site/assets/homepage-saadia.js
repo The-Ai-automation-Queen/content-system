@@ -41,7 +41,9 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          firstName: form.querySelector('[name="firstName"]')?.value.trim() || '',
           email: email.value.trim(),
+          kits: [...form.querySelectorAll('[name="kits"]:checked')].map((box) => box.value),
           marketingConsent: true,
           website: form.querySelector('[name="website"]')?.value || '',
         }),
@@ -58,38 +60,11 @@
   });
 })();
 
-// Kit waitlist: the ticked kits become Lumail tags.
-(() => {
-  const form = document.getElementById('sk-kit-form');
-  const status = document.getElementById('sk-kit-status');
-  form?.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const kits = [...document.querySelectorAll('input[name="kits"][form="sk-kit-form"]:checked')].map((box) => box.value);
-    const name = form.querySelector('[name="firstName"]');
-    const email = form.querySelector('[name="email"]');
-    const consent = form.querySelector('[name="marketingConsent"]');
-    const button = form.querySelector('button[type="submit"]');
-    if (!kits.length) { status.textContent = 'Tick at least one kit.'; return; }
-    if (!name?.value.trim()) { status.textContent = 'Enter your first name.'; name?.focus(); return; }
-    if (!email?.validity.valid) { status.textContent = 'Enter a valid email address.'; email?.focus(); return; }
-    if (!consent?.checked) { status.textContent = 'Please tick the box so I can email you.'; consent?.focus(); return; }
-    button.disabled = true;
-    status.textContent = 'Adding you to the waitlist…';
-    try {
-      const response = await fetch('/api/newsletter', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ firstName: name.value.trim(), email: email.value.trim(), marketingConsent: true, kits, website: form.querySelector('[name="website"]')?.value || '' }),
-      });
-      const result = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(result.error || 'Please try again.');
-      status.textContent = 'You’re on the waitlist. You’ll hear first when your kit opens.';
-      form.reset();
-      document.querySelectorAll('input[name="kits"][form="sk-kit-form"]').forEach((box) => { box.checked = false; });
-    } catch (error) {
-      status.textContent = error.message || 'Please try again.';
-    } finally {
-      button.disabled = false;
-    }
+
+// Kit covers: clicking one ticks that kit in the sign-up form.
+document.querySelectorAll('.sk-kit-cover[data-kit]').forEach((cover) => {
+  cover.addEventListener('click', () => {
+    const box = document.querySelector(`#sk-newsletter-form input[name="kits"][value="${cover.dataset.kit}"]`);
+    if (box) box.checked = true;
   });
-})();
+});

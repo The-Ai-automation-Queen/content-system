@@ -241,3 +241,56 @@ body.home-saadia .sk-consulting h2 em{color:var(--lilac)}
 .sk-workbooks,.sk-consulting,.sk-kits,.sk-final{border-top:0!important}
 .sk-wave{position:relative;z-index:1;margin-bottom:-2px}
 .sk-wave{margin-bottom:0;overflow:visible}.sk-wave svg{height:calc(100% + 3px);margin-bottom:-3px}
+
+/* 28/09 review 4: kits as product covers, workbooks as covers, one wide
+   Work with me band, one sign-up form, no section labels or button arrows. */
+.sk-kits-head{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:end;margin-bottom:48px}
+.sk-kits-head p{font-size:18px;max-width:460px}
+.sk-kits-head .sk-pill{margin-top:22px}
+.sk-kits h2,.sk-workbooks h2,.sk-consulting h2{font-size:clamp(52px,5.4vw,86px)}
+.sk-kit-covers,.sk-book-covers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.sk-kit-cover{position:relative;display:flex;flex-direction:column;aspect-ratio:3/4;padding:26px 26px 24px;color:var(--white)!important;background:var(--blue);box-shadow:10px 12px 0 var(--ink);transition:transform .2s}
+.sk-kit-covers li:nth-child(2) .sk-kit-cover{background:var(--pink)}
+.sk-kit-covers li:nth-child(3) .sk-kit-cover{background:var(--ink)}
+.sk-kit-cover:hover{transform:translateY(-6px)}
+.sk-kit-top{font:700 14px/1 Inter,Arial,sans-serif;opacity:.85}
+.sk-kit-cover img{width:62%;margin:18px auto 14px;aspect-ratio:1;object-fit:contain;background:var(--white);border-radius:50%;padding:10px}
+.sk-kit-cover strong{font:800 clamp(26px,2.3vw,34px)/1.05 "Playfair Display",Georgia,serif;letter-spacing:-.02em}
+.sk-kit-line{margin-top:10px;font-size:16px;line-height:1.4;opacity:.92}
+.sk-kit-soon{margin-top:auto;padding-top:16px;font:700 15px/1.3 Inter,Arial,sans-serif;text-decoration:underline;text-underline-offset:4px}
+.sk-book-covers img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;box-shadow:10px 12px 0 var(--ink)}
+.sk-book-covers strong{display:block;margin-top:22px;font:800 clamp(22px,2vw,28px)/1.1 "Playfair Display",Georgia,serif;color:var(--ink)}
+.sk-workbooks{padding-bottom:80px!important}
+.sk-band-points{list-style:none;margin:0;padding:28px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;border-top:1px solid #ffffff80}
+.sk-band-points li{font:700 clamp(22px,2vw,28px)/1.2 "Playfair Display",Georgia,serif;color:var(--white)}
+.sk-band-points span{display:block;margin-bottom:8px;font:800 14px/1 Inter,Arial,sans-serif;color:var(--lilac)}
+body.home-saadia .sk-band h2,body.home-saadia .sk-band h2 span,body.home-saadia .sk-band p{color:var(--white)}
+body.home-saadia .sk-band h2 em{color:var(--lilac)}
+.sk-consulting.sk-band{padding:40px 0 80px}
+.sk-pill-outline{color:var(--white)!important;box-shadow:inset 0 0 0 2px var(--white);background:transparent}
+.sk-pill-outline:hover{background:var(--white);color:var(--ink)!important}
+.sk-pill{justify-content:center}
+/* Guide cards: six, colours cycling, no labels */
+.sk-book:nth-child(3n+1){background:var(--blue)}
+.sk-book:nth-child(3n+2){background:var(--pink);transform:translateY(-30px)}
+.sk-book:nth-child(3n+3){background:var(--ink);transform:none}
+.sk-book:nth-child(3n+2):hover{transform:translateY(-38px)}
+.sk-book b{font-size:15px;text-decoration:underline;text-underline-offset:4px}
+/* One sign-up form */
+.sk-newsletter>p{font-size:30px}
+.sk-signup-fields{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;background:none!important;min-height:0!important}
+.sk-signup-fields label{display:grid;gap:6px;font:600 14px/1.2 Inter,Arial,sans-serif}
+.sk-signup-fields input{height:52px;border:0;padding:0 14px;font:400 16px Inter,Arial,sans-serif;color:var(--ink)}
+.sk-kit-choices{border:0;margin:18px 0 0;padding:0;display:grid;gap:8px}
+.sk-kit-choices legend{margin-bottom:8px;font:600 15px/1.3 Inter,Arial,sans-serif}
+.sk-kit-choices label{display:flex;gap:10px;align-items:center;font-size:15px}
+.sk-kit-choices input{width:18px;height:18px;accent-color:var(--pink)}
+#sk-newsletter-form button[type=submit]{margin-top:18px;min-height:54px;padding:0 28px;border-radius:999px;font-size:16px}
+.sk-consent span{font-size:14px}
+@media(max-width:1050px){.sk-kits-head{grid-template-columns:1fr;gap:18px}}
+@media(max-width:700px){.sk-kit-covers,.sk-book-covers,.sk-band-points{grid-template-columns:1fr;gap:28px}.sk-kit-cover{aspect-ratio:auto;min-height:420px}.sk-book-covers{grid-template-columns:repeat(3,1fr);gap:12px}.sk-book-covers strong{font-size:15px;margin-top:10px}.sk-book-covers img{box-shadow:5px 6px 0 var(--ink)}.sk-signup-fields{grid-template-columns:1fr}.sk-book:nth-child(3n+2){transform:none}}
+.sk-kit-covers li,.sk-book-covers li,.sk-band-points li{display:block!important;border:0!important;padding:0!important;align-items:initial}
+.sk-kit-cover span,.sk-kit-cover strong{color:var(--white)!important}
+.sk-band-points li{padding:0!important}
+.sk-books{scroll-padding-inline:max(48px,calc((100vw - 1320px)/2))}@media(max-width:700px){.sk-books{scroll-padding-inline:18px}}
+.sk-hero-proof small{letter-spacing:0!important;text-transform:none!important;font-size:14px!important;font-weight:600!important}
