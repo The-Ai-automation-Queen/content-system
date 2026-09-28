@@ -117,7 +117,7 @@ export function BatchGuidePage({ guide }: { guide: GuidePage }) {
       </section>
 
       <div id="full-guide" className={styles.gateWrap}>
-        <GuideAccessBoundary guideSlug={guide.slug} guideTitle={content.title} heading="The rest is yours." guidePromise={content.gate.promise} note="Free · no card" actionLabel={content.gate.action} showWorkBridge={false}>
+        <GuideAccessBoundary guideSlug={guide.slug} guideTitle={content.title} heading={content.prompts.length > 1 ? "Unlock the prompts." : "Unlock the prompt."} guidePromise={content.gate.promise} actionLabel={content.gate.action} showWorkBridge={false}>
           <section className={styles.unlocked} aria-labelledby={`${content.slug}-full`}>
             <h2 id={`${content.slug}-full`}>Your full guide</h2>
             {content.prompts.map((prompt, index) => <PromptBox key={prompt.title} prompt={prompt} id={`${content.slug}-p${index}`} />)}
