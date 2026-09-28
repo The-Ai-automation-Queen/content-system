@@ -3,8 +3,8 @@ import { buildPrompt, promptExample } from "./prompt-builder-example";
 
 export const promptGuide = {
   slug: "what-is-a-prompt",
-  title: "How to write an AI prompt that gets a useful answer",
-  promise: "Stop guessing what to type. This guide shows you where a prompt goes, what to include and how to get an answer you can actually use.",
+  title: "The 4-Line Prompt That Works in Any AI",
+  promise: "Four short lines: the job, what it can use, what you want back and what to check.",
   cover: "/images/guides/what-is-a-prompt.webp",
   coverAlt: "The small blue robot mascot operating an antique instruction press that turns a rough note into an ordered result",
   seoDescription: "Learn how to write an AI prompt, where to paste it and what to include so ChatGPT, Claude or Gemini gives you a useful answer.",
@@ -130,7 +130,7 @@ For each finding, give a short exact quote and the page URL. Say "not found" whe
   related: [
     { slug: "manus-browser-workflow", title: "When does a Manus browser workflow make sense?", reason: "See what changes when AI uses your browser.", cover: "/images/guides/manus-browser-workflow.webp" },
     { slug: "what-should-you-never-share-with-ai", title: "The 3-Question Check Before You Paste Anything Into AI", reason: "See which information must stay out of any AI tool.", cover: "/images/guides/learn-master.webp" },
-    { slug: "what-is-agentic", title: "What AI agents actually do", reason: "Understand what changes when AI can take several steps and use tools.", cover: "/images/guides/what-is-agentic.webp" },
+    { slug: "what-is-agentic", title: "4 Limits to Set Before an AI Agent Works Alone", reason: "Understand what changes when AI can take several steps and use tools.", cover: "/images/guides/what-is-agentic.webp" },
   ],
 } as const satisfies GuidePage;
 
@@ -356,7 +356,7 @@ For each provider:
   },
   related: [
     { slug: "create-useful-content-without-losing-your-voice", title: "Create useful content without handing AI your voice", reason: "Turn clear expertise into useful pages without publishing generic AI copy.", cover: "/images/guides/show-up-in-ai-search.webp", status: "coming-next" },
-    { slug: "what-is-a-prompt", title: "How to write an AI prompt that gets a useful answer", reason: "Give a research task a clearer brief and require verifiable evidence.", cover: "/images/guides/what-is-a-prompt.webp" },
+    { slug: "what-is-a-prompt", title: "The 4-Line Prompt That Works in Any AI", reason: "Give a research task a clearer brief and require verifiable evidence.", cover: "/images/guides/what-is-a-prompt.webp" },
     { slug: "which-ai-tool-for-what", title: "Which AI tool should you use?", reason: "Choose a search-capable tool that fits the work you need to check.", cover: "/images/guides/which-ai-tool-for-what.webp" },
   ],
 } as const satisfies GuidePage;

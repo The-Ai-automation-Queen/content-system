@@ -83,8 +83,8 @@ export const claudeGuide = {
 export const claudeProjectsGuide = {
   "sections": [],
   "slug": "claude-projects",
-  "title": "Stop repeating your instructions to Claude",
-  "promise": "Meeting over, notes everywhere, and still no clear list of who does what? Save your instructions once so Claude can organise each meeting’s notes the same way.",
+  "title": "Stop Retyping Your Instructions to Claude",
+  "promise": "Save your instructions once in a Claude Project. Every chat inside it can use them.",
   "cover": "/images/guides/claude-projects.webp",
   "coverAlt": "A small blue robot princess arranging reusable instruction cards in an engraved brass filing cabinet",
   "seoDescription": "Turn meeting notes into decisions, assigned actions and unanswered questions. Save the instructions in a Claude Project and reuse them for the next meeting.",

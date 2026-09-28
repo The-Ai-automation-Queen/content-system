@@ -307,7 +307,7 @@ Source:
   related: [
     { slug: "deepseek", title: "Should you use DeepSeek?", reason: "Compare another technical and open-model route.", cover: "/images/guides/deepseek.webp" },
     { slug: "manus", title: "Should you use Manus?", reason: "Compare Kimi Agent with a task-first agent platform.", cover: "/images/guides/manus.webp" },
-    { slug: "what-is-agentic", title: "What AI agents actually do", reason: "Understand what changes when a chat tool begins completing several steps.", cover: "/images/guides/what-is-agentic.webp" },
+    { slug: "what-is-agentic", title: "4 Limits to Set Before an AI Agent Works Alone", reason: "Understand what changes when a chat tool begins completing several steps.", cover: "/images/guides/what-is-agentic.webp" },
   ],
 } as const satisfies GuidePage;
 
@@ -361,7 +361,7 @@ Do not log in to any website, contact anyone, publish anything or spend money.`,
   ], check: "The task is complete when the brief is accurate, sourced and no action occurred outside the agreed research boundary." },
   conclusion: { heading: "You now know how to test an agent", paragraphs: ["Use Manus for a multi-step outcome you can inspect. Add browsers, logins and connectors only after the read-only version works."], finishLine: "Keep it when the completed deliverable saves more effort than supervising and checking the task." },
   related: [
-    { slug: "what-is-agentic", title: "What AI agents actually do", reason: "Understand the parts of an agent before granting more access.", cover: "/images/guides/what-is-agentic.webp" },
+    { slug: "what-is-agentic", title: "4 Limits to Set Before an AI Agent Works Alone", reason: "Understand the parts of an agent before granting more access.", cover: "/images/guides/what-is-agentic.webp" },
     { slug: "what-should-you-never-share-with-ai", title: "The 3-Question Check Before You Paste Anything Into AI", reason: "Set the data boundary before using connectors or saved logins.", cover: "/images/guides/learn-master.webp" },
     { slug: "kimi", title: "Should you use Kimi?", reason: "Compare another agent route before choosing a platform.", cover: "/images/guides/kimi.webp" },
   ],

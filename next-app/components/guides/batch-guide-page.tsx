@@ -163,7 +163,7 @@ export function BatchGuidePage({ guide }: { guide: GuidePage }) {
               <Heading id={`${content.slug}-s${index}`} num={number(firstJob + index)} title={title.head} accent={title.accent} />
               <Blocks blocks={section.blocks} guide={content} />
             </section>
-            {content.illustration.afterSection === index && <figure className={styles.illustration}><div><Image src={content.illustration.src} alt={content.illustration.alt} fill sizes="(max-width: 760px) 100vw, 720px" /></div><figcaption>{content.illustration.caption}</figcaption></figure>}
+            {content.illustration?.afterSection === index && <figure className={styles.illustration}><div><Image src={content.illustration.src} alt={content.illustration.alt} fill sizes="(max-width: 760px) 100vw, 720px" /></div><figcaption>{content.illustration.caption}</figcaption></figure>}
           </Fragment>;
         })}
 

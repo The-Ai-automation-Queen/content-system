@@ -405,7 +405,7 @@ export const instagramDashboardGuide = {
     },
     {
       "slug": "what-is-a-prompt",
-      "title": "How to write an AI prompt that gets a useful answer",
+      "title": "The 4-Line Prompt That Works in Any AI",
       "reason": "Give your coding tool clearer follow-up instructions when you extend the dashboard.",
       "cover": "/images/guides/what-is-a-prompt.webp"
     }
