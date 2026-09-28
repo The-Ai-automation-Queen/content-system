@@ -76,6 +76,11 @@ Only context/current-context.json allowlisted context files are active knowledge
 
 ## Owner correction: archived workshops (20 September 2026)
 
+Superseded in part on 28 September 2026: Fatiha now wants an industry workshop
+series, built only from newly approved copy under
+`docs/COMMERCIAL-REBUILD-BRIEF-2026-09-28.md`. The old page stays retired
+(`/workshops.html` redirects to `/work-with-fatiha/`).
+
 The old public workshops section is archived. Do not restore it, link guides to
 `/workshops.html`, or reuse “Explore the workshops”. The owner explicitly allows
 a plain statement that workshops are available for companies. No booking link,

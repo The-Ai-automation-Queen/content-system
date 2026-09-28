@@ -1,38 +1,164 @@
 {
-  "homepage": {"status": "active", "path": "/"},
-  "guides": {"status": "active", "path": "/guides/"},
-  "workbooks": {"status": "active", "path": "/workbooks.html"},
-  "where-ai-fits": {"status": "unlisted", "path": "/ai-opportunity-map.html"},
-  "workbook-zone-of-genius": {"status": "active", "path": "/workbooks/find-your-zone-of-genius.html"},
-  "workbook-human-evidence": {"status": "active", "path": "/workbooks/your-human-evidence.html"},
-  "workbook-use-what-is-unique": {"status": "active", "path": "/workbooks/use-what-is-unique-about-you.html"},
-  "how-i-can-help": {"status": "active", "path": "/how-i-can-help.html"},
-  "work-with-fatiha": {"status": "active", "path": "/work-with-fatiha/"},
-  "ai-opportunity-map": {"status": "unlisted", "path": "/ai-opportunity-map.html"},
-  "workshops": {"status": "active", "path": "/workshops.html"},
-  "about": {"status": "active", "path": "/about.html"},
-  "contact": {"status": "active", "path": "/contact.html"},
-  "case-study-1": {"status": "retired", "path": "/case-study-1.html"},
-  "case-study-2": {"status": "retired", "path": "/case-study-2.html"},
-  "case-study-3": {"status": "retired", "path": "/case-study-3.html"},
-  "case-study-4": {"status": "redirected", "path": "/case-study-4.html", "destination": "/"},
-  "privacy": {"status": "active", "path": "/privacy.html"},
-  "terms": {"status": "active", "path": "/terms.html"},
-  "refunds": {"status": "active", "path": "/refund-policy.html"},
-  "licensing": {"status": "active", "path": "/licensing.html"},
-  "quiz": {"status": "unlisted", "path": "/quiz.html"},
-  "guide-opt-in": {"status": "redirected", "path": "/opt-in.html", "destination": "/guides/"},
-  "starter-kit": {"status": "redirected", "path": "/starter-kit.html", "destination": "/guides/"},
-  "research-to-content": {"status": "private-product-source", "path": "/guides/research-to-content-workflow.html", "destination": "/workbooks.html"},
-  "the99": {"status": "retired", "path": "/the-99.html"},
-  "newsletter": {"status": "retired", "path": "https://brief.shiftandlead.com"},
-  "fast-forward": {"status": "retired", "path": "/fast-forward.html"},
-  "bootcamp": {"status": "retired", "path": "/bootcamp.html"},
-  "masterclass": {"status": "retired", "path": "/masterclass.html"},
-  "store": {"status": "retired", "path": "/store.html"},
-  "get-it-done": {"status": "retired", "path": "/get-it-done.html"},
-  "coming-soon": {"status": "retired", "path": "/coming-soon.html"},
-  "legacy-build-sprint": {"status": "redirected", "path": "/build-sprint.html", "destination": "/work-with-fatiha/"},
-  "legacy-work-with-me": {"status": "redirected", "path": "/work-with-me.html", "destination": "/work-with-fatiha/"},
-  "legacy-work-with-fatiha": {"status": "redirected", "path": "/work-with-fatiha.html", "destination": "/work-with-fatiha/"}
+  "homepage": {
+    "status": "active",
+    "path": "/"
+  },
+  "guides": {
+    "status": "active",
+    "path": "/guides/"
+  },
+  "workbooks": {
+    "status": "active",
+    "path": "/workbooks.html"
+  },
+  "where-ai-fits": {
+    "status": "unlisted",
+    "path": "/ai-opportunity-map.html"
+  },
+  "workbook-zone-of-genius": {
+    "status": "active",
+    "path": "/workbooks/find-your-zone-of-genius.html"
+  },
+  "workbook-human-evidence": {
+    "status": "active",
+    "path": "/workbooks/your-human-evidence.html"
+  },
+  "workbook-use-what-is-unique": {
+    "status": "active",
+    "path": "/workbooks/use-what-is-unique-about-you.html"
+  },
+  "how-i-can-help": {
+    "status": "redirected",
+    "path": "/how-i-can-help.html",
+    "destination": "/work-with-fatiha/"
+  },
+  "work-with-fatiha": {
+    "status": "active",
+    "path": "/work-with-fatiha/"
+  },
+  "ai-opportunity-map": {
+    "status": "unlisted",
+    "path": "/ai-opportunity-map.html"
+  },
+  "workshops": {
+    "status": "redirected",
+    "path": "/workshops.html",
+    "destination": "/work-with-fatiha/"
+  },
+  "about": {
+    "status": "active",
+    "path": "/about.html"
+  },
+  "contact": {
+    "status": "redirected",
+    "path": "/contact.html",
+    "destination": "/work-with-fatiha/#apply"
+  },
+  "case-study-1": {
+    "status": "retired",
+    "path": "/case-study-1.html"
+  },
+  "case-study-2": {
+    "status": "retired",
+    "path": "/case-study-2.html"
+  },
+  "case-study-3": {
+    "status": "retired",
+    "path": "/case-study-3.html"
+  },
+  "case-study-4": {
+    "status": "redirected",
+    "path": "/case-study-4.html",
+    "destination": "/"
+  },
+  "privacy": {
+    "status": "active",
+    "path": "/privacy.html"
+  },
+  "terms": {
+    "status": "active",
+    "path": "/terms.html"
+  },
+  "refunds": {
+    "status": "active",
+    "path": "/refund-policy.html"
+  },
+  "licensing": {
+    "status": "active",
+    "path": "/licensing.html"
+  },
+  "quiz": {
+    "status": "redirected",
+    "path": "/quiz.html",
+    "destination": "/guides/"
+  },
+  "guide-opt-in": {
+    "status": "redirected",
+    "path": "/opt-in.html",
+    "destination": "/guides/"
+  },
+  "starter-kit": {
+    "status": "redirected",
+    "path": "/starter-kit.html",
+    "destination": "/guides/"
+  },
+  "research-to-content": {
+    "status": "private-product-source",
+    "path": "/guides/research-to-content-workflow.html",
+    "destination": "/workbooks.html"
+  },
+  "the99": {
+    "status": "retired",
+    "path": "/the-99.html",
+    "destination": "/guides/"
+  },
+  "newsletter": {
+    "status": "retired",
+    "path": "https://brief.shiftandlead.com"
+  },
+  "fast-forward": {
+    "status": "retired",
+    "path": "/fast-forward.html",
+    "destination": "/workbooks.html"
+  },
+  "bootcamp": {
+    "status": "retired",
+    "path": "/bootcamp.html",
+    "destination": "/work-with-fatiha/"
+  },
+  "masterclass": {
+    "status": "retired",
+    "path": "/masterclass.html",
+    "destination": "/work-with-fatiha/"
+  },
+  "store": {
+    "status": "retired",
+    "path": "/store.html",
+    "destination": "/work-with-fatiha/"
+  },
+  "get-it-done": {
+    "status": "retired",
+    "path": "/get-it-done.html",
+    "destination": "/work-with-fatiha/"
+  },
+  "coming-soon": {
+    "status": "retired",
+    "path": "/coming-soon.html",
+    "destination": "/work-with-fatiha/"
+  },
+  "legacy-build-sprint": {
+    "status": "redirected",
+    "path": "/build-sprint.html",
+    "destination": "/work-with-fatiha/"
+  },
+  "legacy-work-with-me": {
+    "status": "redirected",
+    "path": "/work-with-me.html",
+    "destination": "/work-with-fatiha/"
+  },
+  "legacy-work-with-fatiha": {
+    "status": "redirected",
+    "path": "/work-with-fatiha.html",
+    "destination": "/work-with-fatiha/"
+  }
 }

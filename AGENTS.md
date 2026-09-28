@@ -61,9 +61,14 @@ and selective services are supporting revenue, not the core promise.
 `Schedule approved content`, `Review Instagram performance`, `Build my funnel`, and
 `Create an affiliate campaign`.
 
-For current website and guide work, use `docs/shift-lead-website-and-guides-goal-2026-09-27.md`
+For current website, offer and guide work, start with
+`docs/COMMERCIAL-REBUILD-BRIEF-2026-09-28.md` (owner instruction of 28/09/2026:
+copy deck approved before any layout change, one brand system, workshop series,
+rebuilt guide content). Where it is silent, use
+`docs/shift-lead-website-and-guides-goal-2026-09-27.md`
 and `docs/GUIDE-COPY-STRUCTURE.md`
-and the latest owner instructions. The former `shift-lead-guide-builder` skill,
+and the latest owner instructions. Never run `npm run build` or `npm run ship`;
+they are retired. The former `shift-lead-guide-builder` skill,
 static reading layout and pre-guide popup are superseded. Each guide needs a
 content-specific interactive reading path with useful material before a compact
 inline Lumail form at the natural handoff. Keep complete prompts visible after
