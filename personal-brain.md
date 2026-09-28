@@ -9,6 +9,29 @@ reference real life — not generic AI content. Updated daily by `brain-manager`
 
 ---
 
+## Most recent (quick reference)
+
+> **28/09/2026 brain-manager run — no personal-brain update (deliberate):**
+> No owner-supplied corrections, stories or project facts were given this
+> session, and current `skills/brain-manager/SKILL.md` explicitly forbids
+> demanding a daily questionnaire or inferring strategy changes from saved
+> research — so nothing was invented to fill the gap. This supersedes the
+> old M00 design (`docs/machines/m00-brain-manager.md`, "ask good questions
+> via AskUserQuestion or Telegram"); that file is legacy, not executable
+> guidance. Refresh from the named upstream authority (queen-brain repo,
+> `The-Ai-automation-Queen/queen-brain` per `context/sources.md`) is
+> blocked: this session's reality-check hook confirms queen-brain is NOT in
+> this session, and no Notion connector or `gh` CLI is reachable (checked
+> via tool discovery — none registered). Same blocker content-engine has
+> logged daily since 17/09 (`content-vault.md` "Most recent"). Two
+> follow-ups flagged 2026-07-05 remain open and uncaptured: (1) the
+> corporate-exit trigger story (see Background & Career — the load-bearing
+> anecdote for the "left corporate" hook), and (2) the current
+> stage/next-milestone for "building the content/creator-OS system itself"
+> (see Current Projects). Neither is being chased with a questionnaire;
+> noted here for Fatiha to supply whenever she chooses. No recurring
+> message was sent and none is authorized by this run.
+
 ## Anecdotes
 
 
