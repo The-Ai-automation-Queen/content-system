@@ -187,3 +187,6 @@ body.home-saadia a:focus-visible,body.home-saadia button:focus-visible,body.home
 /* Secondary hero button: white outline instead of ink on the dark hero. */
 .sk-hero .sk-pill-ink{background:transparent;color:var(--white)!important;box-shadow:inset 0 0 0 2px var(--white)}
 .sk-hero .sk-pill-ink:hover{background:var(--white);color:var(--ink)!important}
+/* Hero line: keep it on the text side, never under the photo. */
+.sk-hero .sk-hero-content>p{max-width:32ch!important;text-wrap:balance}
+@media(max-width:700px){.sk-hero .sk-hero-content>p{max-width:none!important}}
