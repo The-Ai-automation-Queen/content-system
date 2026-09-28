@@ -1,5 +1,7 @@
 # Shift & Lead: the big picture (proposal, 28 September 2026)
 
+> **Superseded 28/09 by `COMMERCIAL-JOURNEY-2026-09-28.md`** (a clean-slate commercial path). Keep this file only for background.
+
 One page that explains how the business, the website and the products fit
 together. The detailed plans are `LAUNCH-PLAN-2026-09-28.md` and
 `POSITIONING-AND-OFFER-PROPOSAL-2026-09-28.md`. Internal document.
