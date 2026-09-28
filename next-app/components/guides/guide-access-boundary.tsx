@@ -121,6 +121,13 @@ export function GuideAccessBoundary({
         hidden={!ready || !unlocked}
       >
         {children}
+        <aside className={styles.workBridge} aria-labelledby={`guide-work-bridge-${guideSlug}`}>
+          <div>
+            <h2 id={`guide-work-bridge-${guideSlug}`}>Want your team working like this?</h2>
+            <p>I run a practical AI programme for teams, adapted to your industry and built on your own work. I also help leaders decide what AI should change in their business and marketing.</p>
+          </div>
+          <a href="/work-with-fatiha/" data-track="guide_to_work_with_me">See how we can work together <span aria-hidden="true">→</span></a>
+        </aside>
       </div>
     </>
   );
