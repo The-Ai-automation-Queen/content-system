@@ -16,7 +16,7 @@ Sample read in full: `/guides/claude/`, `/guides/which-ai-tool-for-what/`,
 | Specific numbers and names | 2 | 5 | She gives "5 tools", "60 seconds", "10 pages", "€0", "45 languages", and names the model ("Claude Sonnet 5"). You give "one small task", "a useful result". |
 | Author voice and opinion | 1 | 5 | She says "my 5 prompts" and "this is the right default". Your guides have no "I", no byline and no recommendation. |
 | Visible value before the form | 2 | 5 | She shows all of module 1 (the job, why this tool, the setup) and blurs only the prompt. Your content hides behind choosers and "+" buttons. |
-| Perceived value (feels like something to download) | 2 | 5 | Her guides have a book-cover mock-up, "the rest is yours", "free, no card". Yours read like help-centre pages. |
+| Perceived value (feels like something to download) | 2 | 5 | Her guides have a cover, "the rest is yours", "free, no card". Yours read like help-centre pages. Your mascot hero image is your cover: keep it and present it with the same confidence. |
 | Consistent skeleton | 2 | 5 | Every module of hers follows the same four parts: job, why, setup, prompt. Yours change shape from guide to guide. |
 | Pull of the email gate | 2 | 4 | Yours: 3 fields, "a link back to this guide". Hers: one account, "the rest is yours", free, and you can see the blurred prompt. |
 | Would a tool vendor share it? | 1 | 4 | Yours is cautious about each tool; hers explains why each tool is the right choice. |
@@ -53,7 +53,8 @@ Sample read in full: `/guides/claude/`, `/guides/which-ai-tool-for-what/`,
 ```
 TITLE          THE RESULT IN CAPS.            (3–5 words, a statement)
                Italic line with the twist.    ("One job each.")
-COVER          Book-style mock-up using the existing illustration
+HERO IMAGE     The existing mascot illustration, kept as-is (owner signature,
+               decision 28/09). Do not replace it with a book mock-up.
 INTRO          One paragraph: the exact result, the tools by name, what you get
                ("my 3 prompts, the setting to change first, the 30-second check")
 BYLINE         By Fatiha Chikh · date · read time
@@ -119,6 +120,11 @@ Guides that name a tool, explain why it is the right choice for a specific job
 and link to the official page are the kind vendors reshare, and they qualify
 for affiliate and partner programmes. Write each tool module so the vendor
 would be proud to share it, and put the honest limits in the one "honest note".
+
+## Owner decision (28/09)
+
+The hero image with the mascot is Fatiha's signature and stays on every guide.
+Everything else (copy, structure, layout around the image) can change.
 
 ## Recommendation
 

@@ -55,6 +55,8 @@ is built from Phase 1 copy.
   only. No n8n form anywhere. The enquiry form posts to `/api/enquiry` → Lumail.
 - Fatiha guides. **No custom build offer.** The AI twin is proof of her publishing
   method, **not** a product.
+- Guides keep their mascot hero illustration as the signature visual. Copy,
+  structure and the layout around it may change.
 - Offers follow the market pattern of Learn AI With Mariah, Allie K. Miller and
   Sabrina Ramonov, adapted to Fatiha. The proposal awaiting approval is
   `docs/POSITIONING-AND-OFFER-PROPOSAL-2026-09-28.md`. Phase 1 starts from it
