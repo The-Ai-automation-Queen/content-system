@@ -114,6 +114,8 @@ recommended, as it is the easiest start for newcomers.
 8. **Next step:** the matching paid product or industry kit, plus 3 related
    guides.
 
+> **Superseded 28/09:** Fatiha decided to restart the guides from scratch. The keep/merge/park list below is kept only as input for choosing which topics to cover again and which old addresses to redirect. See `BIG-PICTURE-2026-09-28.md`, section 6b.
+
 ### Library plan for the 37 published guides (proposal)
 
 **Keep and rewrite: core "use AI at work, keep your judgement" (15)**
