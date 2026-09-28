@@ -49,6 +49,17 @@ is built from Phase 1 copy.
 - Customer-facing text contains only what a visitor needs. No build notes,
   statuses, provider names or instructions to the site team.
 
+## Decisions recorded 28/09 (later the same day)
+
+- Email capture is **Option A** through the Lumail connector and server routes
+  only. No n8n form anywhere. The enquiry form posts to `/api/enquiry` → Lumail.
+- Fatiha guides. **No custom build offer.** The AI twin is proof of her publishing
+  method, **not** a product.
+- Offers follow the market pattern of Learn AI With Mariah, Allie K. Miller and
+  Sabrina Ramonov, adapted to Fatiha. The proposal awaiting approval is
+  `docs/POSITIONING-AND-OFFER-PROPOSAL-2026-09-28.md`. Phase 1 starts from it
+  once approved.
+
 ## Phase 0 — Offer decisions (Fatiha answers; the agent does not guess)
 
 Present this sheet and wait. Each answer feeds Phase 1.
