@@ -336,3 +336,15 @@ body.home-saadia .sk-band h2 em{color:var(--lilac)}
 .sk-book-covers li::before{content:"Workbook " counter(wb) " · Coming soon";counter-increment:wb;display:block;margin-bottom:14px;font:700 14px/1 Inter,Arial,sans-serif;color:var(--white);opacity:.9}
 .sk-book-covers{counter-reset:wb}
 @media(max-width:700px){.sk-book-covers li{padding:10px 10px 12px!important;box-shadow:5px 6px 0 var(--ink)}.sk-book-covers li::before{content:"0" counter(wb);font-size:12px;margin-bottom:8px}.sk-book-covers img{border-width:4px}}
+/* 29/09/2026: guides and kits as white cards with one colour line, no colour blocks */
+body.home-saadia .sk-book,body.home-saadia .sk-book:nth-child(n){background:#fff!important;color:#0D1117!important;box-shadow:none!important;border:1px solid #d9dce6;border-top:4px solid var(--blue);transform:none!important}
+body.home-saadia .sk-book:nth-child(3n+2){border-top-color:var(--pink)}
+body.home-saadia .sk-book:nth-child(3n+3){border-top-color:var(--ink)}
+body.home-saadia .sk-book:hover{transform:translateY(-4px)!important}
+body.home-saadia .sk-book strong,body.home-saadia .sk-book small,body.home-saadia .sk-book b,body.home-saadia .sk-book span{color:#0D1117!important}
+body.home-saadia .sk-kit-cover,body.home-saadia .sk-kit-covers li:nth-child(n) .sk-kit-cover{background:#fff!important;box-shadow:none!important;border:1px solid #d9dce6;border-top:4px solid var(--blue)}
+body.home-saadia .sk-kit-covers li:nth-child(2) .sk-kit-cover{border-top-color:var(--pink)}
+body.home-saadia .sk-kit-covers li:nth-child(3) .sk-kit-cover{border-top-color:var(--ink)}
+body.home-saadia .sk-kit-cover>span,body.home-saadia .sk-kit-cover>strong,body.home-saadia .sk-kit-cover .sk-kit-top,body.home-saadia .sk-kit-cover .sk-kit-line,body.home-saadia .sk-kit-cover .sk-kit-soon{color:#0D1117!important}
+body.home-saadia .sk-kit-cover .sk-sheet{box-shadow:0 1px 0 #d9dce6,0 6px 18px #0d11171a}
+body.home-saadia .sk-kit-covers li{display:flex!important}body.home-saadia .sk-kit-covers li .sk-kit-cover{flex:1}
