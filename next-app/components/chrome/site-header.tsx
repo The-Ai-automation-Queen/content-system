@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const links = [
-  ["Guides", "/guides/"],
-  ["Kits", "/#kits"],
-  ["Workbooks", "/workbooks.html"],
+  ["Home", "/"],
   ["Work with me", "/work-with-fatiha/"],
+  ["Guides", "/guides/"],
+  ["Workbooks", "/workbooks.html"],
   ["About", "/about.html"],
 ] as const;
 
@@ -16,9 +16,8 @@ export function SiteHeader() {
         <nav aria-label="Main navigation">
           {links.map(([label, href]) => <Link key={label} href={href}>{label}</Link>)}
         </nav>
-        <a className="site-header__cta" href="/#signup">Get the free guides</a>
         <details className="site-header__mobile">
-          <summary>Menu</summary>
+          <summary>MENU <span aria-hidden="true">☰</span></summary>
           <div>{links.map(([label, href]) => <Link key={label} href={href}>{label}</Link>)}</div>
         </details>
       </div>

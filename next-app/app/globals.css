@@ -21,8 +21,7 @@ button, input { font: inherit; }
 .site-header { height: 72px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); position: sticky; top: 0; z-index: 50; }
 .site-header__inner { width: 100%; max-width: var(--shell); height: 100%; margin: auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
 .wordmark { font-family: var(--font-display), serif; font-size: 21px; line-height: 1; font-weight: 400; text-decoration: none; letter-spacing: -.03em; }
-.site-header nav { display: flex; align-items: center; gap: 26px; margin-left: auto; font: 400 15px/1 var(--font-ui), sans-serif; letter-spacing: 0; text-transform: none; }
-.site-header__cta { flex: none; display: inline-flex; align-items: center; min-height: 42px; padding: 0 20px; border-radius: 999px; background: #FF007F; color: #fff!important; font: 700 15px/1 var(--font-ui), sans-serif; text-decoration: none; white-space: nowrap; }
+.site-header nav { display: flex; align-items: center; gap: 22px; font: 400 12px/1 var(--font-ui), sans-serif; letter-spacing: .08em; text-transform: uppercase; }
 .site-header nav a { text-decoration: none; }
 .site-header nav a:hover { color: var(--blue); }
 .nav-action { padding: 10px 15px; color: white!important; background: var(--blue); border-radius: 6px; }
@@ -183,7 +182,7 @@ button, input { font: inherit; }
 }
 
 @media (max-width: 900px) {
-  .site-header nav { display: none; } .site-header__cta { display: none; }
+  .site-header nav { display: none; }
   .site-header__mobile { display: block; }
 }
 
@@ -191,7 +190,7 @@ button, input { font: inherit; }
   .site-header { height: 64px; }
   .wordmark { font-size: 20px; }
   .site-header__inner { width: min(calc(100% - 36px), var(--shell)); }
-  .site-header nav { display: none; } .site-header__cta { display: none; }
+  .site-header nav { display: none; }
   .site-header__mobile { display: block; }
   .nav-action { padding: 10px 12px; }
   .site-footer { padding: 34px 18px 22px; }
@@ -658,6 +657,5 @@ button, input { font: inherit; }
 }
 
 /* Header (28/09): links on the right in the brand nav style, MENU button on small screens only. */
-.site-header nav{flex:0 1 auto;margin-left:auto;gap:clamp(18px,2.2vw,34px);font:400 15px/1 var(--font-ui),Arial,sans-serif;letter-spacing:0;text-transform:none}
-@media(max-width:1050px){.site-header__cta{display:none}}
+.site-header nav{flex:0 1 auto;margin-left:auto;gap:clamp(18px,2.2vw,34px);font:400 14px/1 var(--font-ui),Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
 @media(min-width:1051px){.site-header__mobile{display:none}}
