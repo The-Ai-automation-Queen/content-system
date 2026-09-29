@@ -103,10 +103,10 @@ Section order, each one a full-width band with a wave between:
 - **Headline:** FROM AI IDEAS *to real work.*
 - **Line:** "You know AI could help your business. I help you turn that into
   finished work: one to one, in a sprint for your field, or with your team."
-- **Buttons:** pink `Book a call` · outline `See the three ways`
+- **Buttons:** pink `Request your plan` · outline `See the three ways`
 - **Proof line** under the buttons: "20+ years taking new technology to
   market at Dell, Intel and Microsoft", with the logos.
-- **Visual on the right:** A3 plan document, or A7 workshop table (not a
+- **Visual on the right:** A3 plan document (the written plan is the product), or A7 workshop table (not a
   photo of you).
 
 ### 2 · Three ways to work with me (white)
@@ -116,7 +116,7 @@ visual:
 
 | Card | Visual | Status | Title | One line | Button |
 |---|---|---|---|---|---|
-| 1 | A3 plan document | By booking | One to one | "Business and marketing transformation: I study your business, we decide, you get a plan." | `See how it works` (#one-to-one) |
+| 1 | A3 plan document | On request | One to one, in writing | "Business and marketing transformation: I study your business and send you a written plan. No meetings." | `See how it works` (#one-to-one) |
 | 2 | A4 sprint table | Waitlist | AI Sprint for your field | "One live session on your own business. You leave with finished work and the kit." | `Choose your field` (#sprints) |
 | 3 | A8 stage / room | On request | Talks and team sessions | "For your event or your team: practical AI, with real examples from your field." | `Ask for a date` (#talks) |
 
@@ -125,19 +125,22 @@ visual:
 | | One to one | AI Sprint | Talks and team sessions |
 |---|---|---|---|
 | Who | You, the business owner | You and a small group from your field | Your audience or your whole team |
-| What happens | I study your business, then we decide what AI changes first | We do 3 real jobs of your field with AI, live | A talk or a hands-on session built for your people |
-| You leave with | A written 90-day plan | 3 finished pieces of work + the kit | `[FATIHA: e.g. slides, prompt pack, recording]` |
-| Format | `[FATIHA: prep hours · call length]` | `[FATIHA: online / in person · length · group size]` | `[FATIHA: 45 min talk / half day / full day]` |
+| What happens | You answer a questionnaire, I study your business and write the plan. No calls. | We do 3 real jobs of your field with AI, live | A talk or a hands-on session built for your people |
+| You leave with | A written 90-day plan + a recorded video walkthrough | 3 finished pieces of work + the kit | `[FATIHA: e.g. slides, prompt pack, recording]` |
+| Format | Written, delivered in `[FATIHA: e.g. 10 working days]` | `[FATIHA: online / in person · length · group size]` | `[FATIHA: 45 min talk / half day / full day]` |
 | Price | `[FATIHA or "On request"]` | `[FATIHA or "At launch"]` | On request |
-| Next step | Book a call | Join the waitlist | Ask for a date |
+| Next step | Request your plan | Join the waitlist | Ask for a date |
 
 ### 4 · One to one: business and marketing transformation (white, #one-to-one)
 
-- **Heading:** ONE TO ONE. *Your business, your plan.*
+- **Heading:** ONE TO ONE. *Your business, your plan, in writing.*
+- **Line:** "No calls, no meetings. You tell me about your business, I do the
+  thinking, you receive a plan you can act on."
 - **Numbers strip:**
-  - `[FATIHA: e.g. 4 h]` preparation on your business
-  - `[FATIHA: e.g. 90 min]` live session
+  - 1 questionnaire (`[FATIHA: e.g. 15 minutes]` to fill in)
+  - `[FATIHA: e.g. 10 working days]` to delivery
   - 1 written 90-day plan
+  - 1 recorded video walkthrough of your plan
 - **Left:** the large A3 visual. **Right:** "A plan you can act on." and
   three ruled lines:
   - The one priority to start with
@@ -148,11 +151,22 @@ visual:
   2. "Customers are finding me in new ways."
   3. "I use AI here and there, but nothing sticks."
   4. "I'm launching and want AI in from day one."
-- **How it works** (3 numbered steps, with the calendar embed on the right):
-  1. Book a date.
-  2. Send me a short questionnaire.
-  3. I prepare, we meet, you get the plan.
-- **Button:** pink `Book a call` `[FATIHA: booking link]`
+- **How it works** (4 numbered steps in a row, each with a small visual):
+  1. Request your plan.
+  2. Answer the questionnaire about your business.
+  3. I study it and write your plan.
+  4. You receive the plan and a recorded video walkthrough.
+- **Button:** pink `Request your plan`. It opens the questionnaire on its own
+  short page (`/work-with-fatiha/request/`), which sends to Lumail with the
+  tag `enquiry-custom-project`. I reply by email with the next step and the
+  payment link.
+- **Questionnaire** (5 questions, one per screen):
+  1. Your business in one line.
+  2. Who your customers are.
+  3. What is taking too much of your time.
+  4. What you have tried with AI so far.
+  5. Your email.
+  `[FATIHA: edit the questions]`
 
 ### 5 · AI Sprints for your field (lilac, #sprints)
 
@@ -188,7 +202,7 @@ visual:
     `[FATIHA: half day / full day, online or on site]`
 - **Proof:** events or stages you've spoken at `[FATIHA: list, only real
   ones]`.
-- **Button:** outline `Ask for a date` `[FATIHA: email or booking link]`
+- **Button:** outline `Ask for a date`, which goes to the same request page with "talk" or "team session" selected. I reply by email.
 
 ### 7 · Do it yourself (pale blue)
 
@@ -213,13 +227,14 @@ People's Choice, and the Dell · Intel · Microsoft logos.
 2. Do I need to know AI already?
 3. Is my business information safe?
 4. Which languages do you work in?
-5. How do payment and rescheduling work?
-6. Can you build it for me? `[FATIHA: your answer]`
+5. How does payment work?
+6. Will we ever need a call? (No: everything is in writing and on video.)
+7. Can you build it for me? `[FATIHA: your answer]`
 
 ### 10 · Closing band (ink)
 
 - **Heading:** "Let's turn your AI ideas into real work."
-- **Buttons:** pink `Book a call` · outline `Start free with the guides`
+- **Buttons:** pink `Request your plan` · outline `Start free with the guides`
 - **No form on the page.** The Apply box is removed. `/work-with-fatiha/#apply`
   now jumps to #one-to-one.
 
@@ -294,8 +309,8 @@ fields you'll run first `[FATIHA: which three?]` and hide the others behind
 
 ## Part 5 · What only you can fill in
 
-1. **One to one:** preparation hours, call length, price (or "On request"),
-   booking link.
+1. **One to one:** delivery time, price (or "On request"), and the
+   questionnaire questions.
 2. **Sprints:** length, online or in person, group size, price (or "At
    launch"), and which fields to open first.
 3. **Talks and team sessions:** 2 or 3 talk titles, formats and lengths, real
@@ -304,7 +319,7 @@ fields you'll run first `[FATIHA: which three?]` and hide the others behind
 5. **FAQ 6:** do you build it for them, or not?
 6. **Kit and membership prices** (or "price at launch").
 
-Nothing here gets invented. Any line you leave empty ships as "By booking",
+Nothing here gets invented. Any line you leave empty ships as "On request",
 "Waitlist" or "On request", with no number.
 
 ---
