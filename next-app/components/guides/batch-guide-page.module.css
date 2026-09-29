@@ -169,3 +169,10 @@ ul.list { list-style: disc; }
 }
 /* Italic inside running text stays in the body font; the display italic is for headings. */
 .main :is(p, li, dd) em, .kit p em, .unlockedWrap :is(p, li, dd) em { font-family: inherit; font-weight: inherit; letter-spacing: normal; }
+
+/* Interface screenshots inside a step */
+.shot { margin: 18px 0 24px; }
+.shot a { display: inline-block; max-width: 100%; border: 1px solid rgba(20, 28, 58, 0.14); border-radius: 12px; background: #fff; padding: 8px; box-shadow: 0 6px 18px rgba(20, 28, 58, 0.08); line-height: 0; }
+.shot a:hover, .shot a:focus-visible { border-color: var(--blue); }
+.shot img { display: block; height: auto; border-radius: 6px; }
+.shot figcaption { margin-top: 8px; font-size: 14px; line-height: 1.45; color: #57534e; }
