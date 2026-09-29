@@ -6,10 +6,10 @@
 
 ## Queue (next up, in order)
 
-1. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply)*
-2. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 23/09, 24/09 and 25/09 checks confirm still unanswered)*
-3. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 25/09 check confirms still unanswered, 11th morning)*
-4. UNB-028 — Review and prune stale branches *(open, unserved, 20/09; 92 branches now vs 87 on 20/09)*
+1. UNB-028 — Delete 14 already-merged stale branches (phase 1 of 2) *(served 29/09 — today's pick, fresh, satisfies variety rule)*
+2. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 29/09 check confirms still unanswered, 5th morning)*
+3. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 23/09–29/09 checks confirm still unanswered)*
+4. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 29/09 check confirms still unanswered, 13th morning)*
 
 > UNB-001 through UNB-024 (below) are the original 06/07/2026 seed batch, built
 > entirely from the pre-pivot offer model (Whop SKU checkouts, Fast Forward
@@ -347,6 +347,17 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   continuing yesterday's follow-up cycle). Put the kill/shrink/blocker
   question to Fatiha again in today's end-of-run briefing. `served_count`
   left at 3 pending her answer.
+- **29/09/2026 follow-up:** `content-vault.md` header confirms ENTRY
+  093/092/091 still `READY TO POST`, unchanged (13th morning running).
+  `review-cockpit/state.md` 29/09 pre-digest sweep confirms `getUpdates`
+  still empty — 31 consecutive empty sweeps since the 14/09 digest, no
+  reply to the 17/09 confrontation in twelve days. Same no-serve-4-rule
+  reasoning: did not re-send or escalate over Telegram. Today's single
+  serve went to UNB-028 (fresh, unserved, satisfies the variety rule —
+  three straight days of access/duplicate-dir asks made a repo-hygiene
+  task the right change of pace). Put the kill/shrink/blocker question to
+  Fatiha again in today's end-of-run briefing. `served_count` left at 3
+  pending her answer.
 
 ---
 
@@ -423,6 +434,15 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   22/09 confrontation yet (two days since, still not at a re-escalation
   point — no serve-4 rule). Did not re-send. Today's serve went to UNB-027
   serve 2 (continuing yesterday's follow-up cycle).
+- **29/09/2026 follow-up:** re-ran `git ls-remote` on all 5 repos live this
+  morning — identical `403 Write access to repository not granted` on
+  every one, unchanged from 20/09 through 24/09 (skipped 25/09–28/09 logs
+  show the same pattern held). Session reality-check banner still confirms
+  "canon: queen-brain NOT in this session." Not done, no reply to the
+  22/09 confrontation in a week — still no serve-4 rule, did not re-send.
+  Today's serve went to UNB-028 (fresh, unserved, variety rule).
+
+### UNB-027 — Decide fate of `content-system-DUPLICATE`
 - **why:** a full second git checkout of this repo, frozen at commit
   `a2e2bc1f` (2026-07-30) — 381 commits / 52 days behind `main` — with 2
   locally modified files (`.gitignore`, `deploy/crontab.example`) never
@@ -471,23 +491,47 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   "Most recent" note confirms content-engine again produced no new drafts
   this morning — queen-brain still absent from this session, same blocker
   as every run since 17/09).
+- **29/09/2026 follow-up:** `ls -ld ~/content-system-DUPLICATE` confirms
+  it's still there, unchanged, fifth morning running since the 25/09
+  confrontation. No reply. Per the skill's no-serve-4 rule, did not
+  re-send or escalate further. Today's single serve went to UNB-028
+  (fresh, unserved — three straight days of UNB-026/027 asks made a
+  different kind of task the right variety-rule pick).
 
-### UNB-028 — Review and prune stale branches (64 of 87, oldest 167 days)
-- **why:** `git branch -a` on `content-system` shows 64 non-main branches
-  last committed before 2026-08-21 (the 30-day cutoff for this run); oldest
-  is `origin/claude/html-plugin-system-9uohC` (2026-04-06, 167 days stale).
+### UNB-028 — Review and prune stale branches (74 of 136, oldest 176 days)
+- **why:** `git for-each-ref` on `content-system` shows 74 non-main remote
+  branches last committed before 2026-08-30 (30-day cutoff), up from 64 on
+  2026-09-20 — growing faster than it's being cleared. Oldest is
+  `origin/claude/html-plugin-system-9uohC` (2026-04-06, 176 days stale).
   Branch deletion is a guardrail-reserved human decision regardless, and
-  this session has no `gh` CLI to cross-check which of the 64 (if any) still
-  have open PRs attached, so the list needs a human pass either way.
+  this session has no `gh` CLI to cross-check which (if any) still have
+  open PRs attached, so the list needs a human pass either way.
 - **revenue_unlocked:** none direct; repo hygiene / reduces confusion about
-  which branch is live · **effort_min:** 20-30 (skim for unmerged intent,
-  bulk-delete the rest)
+  which branch is live · **effort_min:** 20-30 for the full 74 (skim for
+  unmerged intent, bulk-delete the rest) — split into two ≤15-min phases,
+  see 29/09 prep note
 - **depends_on:** — · **unblocks:** —
 - **source:** `reports/janitor-2026-09-20.md` JAN-04 (`git branch -a` +
-  per-branch `git log -1 --format=%cd`, run 2026-09-20)
-- **verify:** `git branch -a` no longer lists >30-day-stale branches without
-  an explicit keep-reason
-- **status:** open · added: 2026-09-20
+  per-branch `git log -1 --format=%cd`, run 2026-09-20); re-verified live
+  29/09/2026 via `git for-each-ref` + `git branch -r --merged origin/main`
+- **verify:** `git for-each-ref` no longer lists >30-day-stale branches
+  without an explicit keep-reason
+- **status:** served · served_count: 1 · added: 2026-09-20 · pack:
+  `packs/2026-09-29-UNB-028-delete-14-merged-branches.md`
+- **29/09/2026 prep note:** re-ran the stale-branch scan live (74 branches
+  committed before 2026-08-30, vs 64 on 20/09 — the pile is growing, not
+  shrinking). To fit the 15-minute window and keep this execute-only,
+  cross-checked all 74 against `git branch -r --merged origin/main`: 14 are
+  fully merged into `main` (zero risk, every commit already lives on
+  `main`) and 60 are stale but unmerged (old session/experiment branches
+  that need an actual skim before deletion — not zero-decision, so not
+  served today). Pack serves only the 14-branch safe slice as a single
+  `git push origin --delete ...` paste, ~3 minutes. The 60-branch skim is
+  flagged as phase 2, a future separate serve, not folded into today's ask.
+  Selected this over re-serving UNB-025/026/027 (all at serve-3 cap,
+  unanswered for 5-13 days, no serve-4 rule) — satisfies the variety rule
+  after three straight days of access/duplicate-dir asks. Delivered via
+  Telegram.
 
 ---
 
