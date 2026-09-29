@@ -12,7 +12,7 @@
     "path": "/workbooks.html"
   },
   "where-ai-fits": {
-    "status": "unlisted",
+    "status": "retired",
     "path": "/ai-opportunity-map.html"
   },
   "workbook-zone-of-genius": {
@@ -37,7 +37,7 @@
     "path": "/work-with-fatiha/"
   },
   "ai-opportunity-map": {
-    "status": "unlisted",
+    "status": "retired",
     "path": "/ai-opportunity-map.html"
   },
   "workshops": {
@@ -52,7 +52,7 @@
   "contact": {
     "status": "redirected",
     "path": "/contact.html",
-    "destination": "/work-with-fatiha/#apply"
+    "destination": "/work-with-fatiha/"
   },
   "case-study-1": {
     "status": "retired",

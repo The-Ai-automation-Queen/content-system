@@ -19,6 +19,11 @@
       "permanent": true
     },
     {
+      "source": "/ai-opportunity-map.html",
+      "destination": "/work-with-fatiha/",
+      "permanent": true
+    },
+    {
       "source": "/workshops.html",
       "destination": "/work-with-fatiha/",
       "permanent": true
