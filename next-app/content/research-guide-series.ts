@@ -2,8 +2,8 @@ import { comingNextGuide, existingGuide, makeGuide, promptGuide } from "./model-
 
 export const chatgptScreenRecordingGuide = makeGuide({
   slug: "chatgpt-screen-recording-to-process-guide",
-  title: "Can ChatGPT turn a screen recording into a usable process guide?",
-  promise: "Upload a short screen recording, turn what it actually shows into clear steps, then test whether someone else can follow them. A transcript and screenshots provide a fallback when video upload is unavailable.",
+  title: "Turn a Screen Recording Into a Step-by-Step Guide",
+  promise: "Record the task once. ChatGPT drafts the steps. Someone new tests them.",
   coverAlt: "The Blue Princess feeding a film reel and picture cards into a press that produces an ordered instruction booklet",
   seoDescription: "Upload a clean screen recording to ChatGPT, turn visible actions into a process guide, and test the steps with someone new.",
   sources: [
@@ -68,7 +68,7 @@ Use plain English. Do not invent a click, feature, result, shortcut or reason th
   finish: "You now have a repeatable way to turn a demonstration into instructions that can be followed and checked.",
   related: [
     promptGuide("chatgpt-customer-research-with-evidence", "Can ChatGPT group customer research without inventing themes?", "Use the same evidence-first method with interviews and survey notes."),
-    existingGuide("what-is-a-prompt", "How to write an AI prompt that gets a useful answer", "Adapt a complete instruction without losing its checks.", "/images/guides/what-is-a-prompt.webp"),
+    existingGuide("what-is-a-prompt", "The 4-Line Prompt That Works in Any AI", "Adapt a complete instruction without losing its checks.", "/images/guides/what-is-a-prompt.webp"),
     promptGuide("make-chatgpt-answers-shorter", "Stop ChatGPT Writing You an Essay", "Keep future process updates concise."),
   ],
 });
@@ -136,7 +136,7 @@ After the table, propose 3 next research questions. Do not recommend a product d
   },
   finish: "You can now use AI to organise customer research while keeping the final interpretation open to inspection.",
   related: [
-    promptGuide("chatgpt-screen-recording-to-process-guide", "Can ChatGPT turn a screen recording into a process guide?", "Turn observed work into checked instructions."),
+    promptGuide("chatgpt-screen-recording-to-process-guide", "Turn a Screen Recording Into a Step-by-Step Guide", "Turn observed work into checked instructions."),
     promptGuide("verify-grok-current-research", "How do you verify research from Grok?", "Separate discussion from confirmed sources."),
     existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Remove personal and confidential information before uploading research.", "/images/guides/learn-master.webp"),
   ],
@@ -145,8 +145,8 @@ After the table, propose 3 next research questions. Do not recommend a product d
 export const teachClaudeWorkflowGuide = makeGuide({
   slug: "teach-claude-a-repeatable-workflow",
   promptMode: "as-written",
-  title: "How do you teach Claude a job you repeat every week?",
-  promise: "Turn one weekly task into a saved instruction with a clear input, output, stop rule and quality check.",
+  title: "Teach Claude a Job Once, Reuse It Every Week",
+  promise: "Turn one weekly task into a saved instruction you test once and reuse.",
   coverAlt: "The Blue Princess teaching a clockwork apprentice to move one weekly task through four precise stations",
   seoDescription: "Teach Claude a repeatable weekly workflow with a complete instruction, test case and quality check.",
   sources: [
@@ -212,9 +212,9 @@ Draft only. Do not send a message, update a project tool or create a task. End w
   },
   finish: "You now have a tested workflow you can reuse, improve and save without rebuilding the instruction every week.",
   related: [
-    promptGuide("claude-projects", "Stop repeating your instructions to Claude", "Store stable context for work that continues."),
+    promptGuide("claude-projects", "Stop Retyping Your Instructions to Claude", "Store stable context for work that continues."),
     existingGuide("claude", "3 Admin Jobs to Hand Claude This Week", "Practise with a smaller one-off task first.", "/images/guides/claude-first-task.webp"),
-    promptGuide("chatgpt-screen-recording-to-process-guide", "Turn a screen recording into a process guide", "Document the human version of a repeatable job."),
+    promptGuide("chatgpt-screen-recording-to-process-guide", "Turn a Screen Recording Into a Step-by-Step Guide", "Document the human version of a repeatable job."),
   ],
 });
 

@@ -41,7 +41,9 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          firstName: form.querySelector('[name="firstName"]')?.value.trim() || '',
           email: email.value.trim(),
+          kits: [...form.querySelectorAll('[name="kits"]:checked')].map((box) => box.value),
           marketingConsent: true,
           website: form.querySelector('[name="website"]')?.value || '',
         }),
@@ -57,3 +59,12 @@
     }
   });
 })();
+
+
+// Kit covers: clicking one ticks that kit in the sign-up form.
+document.querySelectorAll('.sk-kit-cover[data-kit]').forEach((cover) => {
+  cover.addEventListener('click', () => {
+    const box = document.querySelector(`#sk-newsletter-form input[name="kits"][value="${cover.dataset.kit}"]`);
+    if (box) box.checked = true;
+  });
+});

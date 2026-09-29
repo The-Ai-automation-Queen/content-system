@@ -3,7 +3,7 @@ const { validateRequest } = require("../lib/form-privacy");
 // Paid-work enquiries from /work-with-fatiha/. Lumail is the only form provider:
 // the enquiry is stored on the contact with enquiry tags so a Lumail workflow can
 // notify Fatiha. Marketing consent is not given here, so no marketing fields are set.
-const INTERESTS = new Set(["custom-project", "team-session", "not-sure"]);
+const INTERESTS = new Set(["custom-project", "team-licence", "kit-request", "sprint-waitlist", "team-session", "not-sure"]);
 
 function clean(value, max) {
   return typeof value === "string" ? value.trim().slice(0, max) : "";
@@ -26,7 +26,7 @@ module.exports = async function handler(request, response) {
   const interest = INTERESTS.has(body.interest) ? body.interest : "not-sure";
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return response.status(400).json({ error: "Enter a valid email address." });
-  if (!name || !business || !task) return response.status(400).json({ error: "Please complete your name, business and what you are working on." });
+  if (!task) return response.status(400).json({ error: "Tell me in a line what is changing in your business." });
 
   const submittedAt = new Date().toISOString();
   try {

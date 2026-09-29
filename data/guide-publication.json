@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "rule": "A guide is public only after Fatiha explicitly approves its copy and complete page.",
-  "lastApprovedPublication": "2026-09-27",
+  "lastApprovedPublication": "2026-09-28",
   "shellReference": {
     "url": "https://www.shiftandlead.com/",
     "verifiedAt": "2026-08-24",
@@ -137,15 +137,9 @@
       "journeyOrder": 92
     },
     {
-      "slug": "meta-ai",
-      "lumailTag": "guide-meta-ai",
-      "section": "AI tools",
-      "journeyOrder": 100
-    },
-    {
       "slug": "test-meta-muse-money-saving-task",
       "lumailTag": "guide-test-meta-muse-money-saving-task",
-      "section": "AI agents",
+      "section": "Workflows and automation",
       "journeyOrder": 102
     },
     {
@@ -179,22 +173,10 @@
       "journeyOrder": 121
     },
     {
-      "slug": "edit-long-writing-with-deepseek",
-      "lumailTag": "guide-edit-long-writing-with-deepseek",
-      "section": "AI tools",
-      "journeyOrder": 122
-    },
-    {
       "slug": "test-deepseek-v4-document-work",
       "lumailTag": "guide-test-deepseek-v4-document-work",
       "section": "AI tools",
       "journeyOrder": 123
-    },
-    {
-      "slug": "protect-a-long-deepseek-project",
-      "lumailTag": "guide-protect-a-long-deepseek-project",
-      "section": "Workflows and automation",
-      "journeyOrder": 124
     },
     {
       "slug": "make-work-tracker-with-kimi",
@@ -203,22 +185,10 @@
       "journeyOrder": 131
     },
     {
-      "slug": "is-kimi-worth-paying-for",
-      "lumailTag": "guide-is-kimi-worth-paying-for",
-      "section": "AI tools",
-      "journeyOrder": 132
-    },
-    {
       "slug": "manus-browser-workflow",
       "lumailTag": "guide-manus-browser-workflow",
       "section": "AI tools",
       "journeyOrder": 142
-    },
-    {
-      "slug": "mistral-multilingual-research",
-      "lumailTag": "guide-mistral-multilingual-research",
-      "section": "AI tools",
-      "journeyOrder": 153
     },
     {
       "slug": "instagram-content-dashboard",
@@ -255,6 +225,66 @@
       "lumailTag": "guide-show-up-in-ai-search",
       "section": "Content and creative work",
       "journeyOrder": 200
+    },
+    {
+      "slug": "stop-ai-agreeing-with-you",
+      "lumailTag": "guide-stop-ai-agreeing-with-you",
+      "section": "Better prompts and answers",
+      "journeyOrder": 161
+    },
+    {
+      "slug": "catch-ai-making-things-up",
+      "lumailTag": "guide-catch-ai-making-things-up",
+      "section": "AI essentials",
+      "journeyOrder": 45
+    },
+    {
+      "slug": "ai-quit-or-stay-decision",
+      "lumailTag": "guide-ai-quit-or-stay-decision",
+      "section": "AI essentials",
+      "journeyOrder": 191
+    },
+    {
+      "slug": "is-ai-coming-for-my-job",
+      "lumailTag": "guide-is-ai-coming-for-my-job",
+      "section": "AI essentials",
+      "journeyOrder": 192
+    },
+    {
+      "slug": "ai-job-interview-practice",
+      "lumailTag": "guide-ai-job-interview-practice",
+      "section": "AI essentials",
+      "journeyOrder": 193
+    },
+    {
+      "slug": "weekend-projects-with-claude",
+      "lumailTag": "guide-weekend-projects-with-claude",
+      "section": "AI tools",
+      "journeyOrder": 73
+    },
+    {
+      "slug": "money-plan-with-ai",
+      "lumailTag": "guide-money-plan-with-ai",
+      "section": "Workflows and automation",
+      "journeyOrder": 220
+    },
+    {
+      "slug": "test-business-idea-with-ai",
+      "lumailTag": "guide-test-business-idea-with-ai",
+      "section": "Business operations",
+      "journeyOrder": 210
+    },
+    {
+      "slug": "launch-your-product-in-30-days",
+      "lumailTag": "guide-launch-your-product-in-30-days",
+      "section": "Business operations",
+      "journeyOrder": 211
+    },
+    {
+      "slug": "marketing-emails-that-sell",
+      "lumailTag": "guide-marketing-emails-that-sell",
+      "section": "Business operations",
+      "journeyOrder": 212
     }
   ],
   "retired": [
@@ -313,6 +343,26 @@
     {
       "slug": "mistral",
       "reason": "Replaced by practical task-specific guides in the public library on 2026-09-20."
+    },
+    {
+      "slug": "mistral-multilingual-research",
+      "reason": "Removed from the public library on 2026-09-28 at the owner's request; replaced by new guides from the portfolio sheet."
+    },
+    {
+      "slug": "protect-a-long-deepseek-project",
+      "reason": "Removed from the public library on 2026-09-28 at the owner's request; replaced by new guides from the portfolio sheet."
+    },
+    {
+      "slug": "edit-long-writing-with-deepseek",
+      "reason": "Removed from the public library on 2026-09-28 at the owner's request; replaced by new guides from the portfolio sheet."
+    },
+    {
+      "slug": "meta-ai",
+      "reason": "Removed from the public library on 2026-09-28 at the owner's request; replaced by new guides from the portfolio sheet."
+    },
+    {
+      "slug": "is-kimi-worth-paying-for",
+      "reason": "Removed from the public library on 2026-09-28 at the owner's request; replaced by new guides from the portfolio sheet."
     }
   ],
   "heldForReview": [],
@@ -348,5 +398,5 @@
       "journeyOrder": 83
     }
   ],
-  "approvalNote": "Owner explicitly approved publication of the Review guide group on 2026-09-27; Pending and parked guides remain excluded."
+  "approvalNote": "Owner approved guides 11 to 35 and the removal of the old Mistral, DeepSeek project, DeepSeek editing, Meta AI and Kimi guides on 2026-09-28. Pending and parked guides remain excluded."
 }

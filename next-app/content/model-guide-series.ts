@@ -222,7 +222,7 @@ export const chatgptScheduledTasksGuide = makeGuide({
   finish: "You can now decide whether the repeated check deserves a scheduled task or should stay manual.",
   related: [
     existingGuide("what-is-ai", "What AI actually is", "Know why an automated answer still needs checking.", "/images/guides/what-is-ai.webp"),
-    existingGuide("what-is-agentic", "What AI agents actually do", "See when an agent makes sense instead of a scheduled check.", "/images/guides/what-is-agentic.webp"),
+    existingGuide("what-is-agentic", "4 Limits to Set Before an AI Agent Works Alone", "See when an agent makes sense instead of a scheduled check.", "/images/guides/what-is-agentic.webp"),
     existingGuide("what-should-you-never-share-with-ai", "The 3-Question Check Before You Paste Anything Into AI", "Check what the scheduled task may access.", "/images/guides/learn-master.webp"),
   ],
 });
@@ -943,7 +943,7 @@ export const deepseekWallOfTextGuide = makeGuide({
   related: [
     promptGuide("edit-long-writing-with-deepseek", "How do you edit a long DeepSeek story safely?", "Protect approved facts while revising one passage."),
     promptGuide("review-grok-suggestions", "When should Grok Bot ask you first?", "Decide when a Bot needs to ask before acting."),
-    existingGuide("what-is-a-prompt", "How to write an AI prompt that gets a useful answer", "Make the edit boundary clearer.", "/images/guides/what-is-a-prompt.webp"),
+    existingGuide("what-is-a-prompt", "The 4-Line Prompt That Works in Any AI", "Make the edit boundary clearer.", "/images/guides/what-is-a-prompt.webp"),
   ],
 });
 

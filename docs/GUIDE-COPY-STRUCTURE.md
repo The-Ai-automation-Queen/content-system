@@ -33,3 +33,7 @@ Never paste this brief, a build prompt, a checklist for editors, or any instruct
 
 This also applies inside copyable prompts and emails. A reader may copy task instructions for an AI tool, but must never copy editorial, implementation, approval, testing or publishing directions meant for the site team.
 This applies to **all** text a visitor can encounter: hero, contents, examples, tooltips, form, error and success messages, copyable prompts, related cards, emails, and metadata. Before release, read the rendered page and the copied prompt as a visitor. Remove any sentence whose audience is an editor, builder, reviewer, or delivery team.
+
+## Copy decks for approval (owner rule, 28/09/2026)
+
+Every guide in a copy deck shows **each full prompt** in a copy block, exactly as the reader will copy it after sign-up, plus the check that proves it worked. Never summarise a prompt as "existing prompt, kept as is". The owner approves the prompt text, not a description of it. **Rebuild, never reuse:** write new copy, prompts and examples from the old guide's purpose; do not paste the live guide's wording back in. House prompt style: a clear job, the reader's details in [brackets], exactly what comes back, one or two safety rules and a built-in check, short enough to read at a glance. Keep the worked example and "what a good answer looks like" wherever the guide has one, so quality never drops between batches.

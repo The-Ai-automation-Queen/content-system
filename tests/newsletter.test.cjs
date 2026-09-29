@@ -83,3 +83,25 @@ test("newsletter reports Lumail failure without claiming signup succeeded", asyn
     else process.env.LUMAIL_API_TOKEN = previousToken;
   }
 });
+
+test("homepage sign-up adds a waitlist tag for each known kit ticked, and ignores unknown kits", async () => {
+  const previousToken = process.env.LUMAIL_API_TOKEN;
+  const previousFetch = global.fetch;
+  process.env.LUMAIL_API_TOKEN = "test";
+  let payload;
+  global.fetch = async (url, options) => { payload = JSON.parse(options.body); return { ok: true, status: 200 }; };
+  try {
+    const withKits = response();
+    await handler(request({ email: "reader@example.com", firstName: "Ada", marketingConsent: true, kits: ["content-agent", "admin-inbox-agent", "content-agent", "unknown"] }), withKits);
+    assert.equal(withKits.code, 200);
+    assert.deepEqual(payload.tags, ["shift-and-lead-newsletter", "shift-and-lead-kit-waitlist", "kit-waitlist-content-agent", "kit-waitlist-admin-inbox-agent"]);
+    const unknownOnly = response();
+    await handler(request({ email: "reader@example.com", marketingConsent: true, kits: ["unknown"] }), unknownOnly);
+    assert.equal(unknownOnly.code, 200);
+    assert.deepEqual(payload.tags, ["shift-and-lead-newsletter"]);
+  } finally {
+    global.fetch = previousFetch;
+    if (previousToken === undefined) delete process.env.LUMAIL_API_TOKEN;
+    else process.env.LUMAIL_API_TOKEN = previousToken;
+  }
+});

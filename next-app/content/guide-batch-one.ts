@@ -29,8 +29,8 @@ export type BatchGuide = {
   // Hero: short title with an italic accent ending, one line, and either a
   // standing mascot pose or a full mascot scene card.
   hero: { title: string; accent: string; line: string; tool: string; art: { kind: "pose" | "scene"; src: string; alt: string } };
-  flow: readonly { icon: BatchIconName; label: string; note: string }[];
-  illustration: { src: string; alt: string; caption: string; afterSection: number };
+  flow?: readonly { icon: BatchIconName; label: string; note: string }[];
+  illustration?: { src: string; alt: string; caption: string; afterSection: number };
   sections: readonly { title: string; accent?: string; icon: BatchIconName; blocks: readonly BatchBlock[] }[];
   honest: string;
   gate: { promise: string; action: string };
@@ -374,6 +374,12 @@ const connections: BatchGuide = {
   kit: { name: "Use AI safely at work", heading: "Connecting AI across a team?", body: "The *Use AI safely at work* kit has connection checklists for email, files and calendar, plus team guidelines." },
 };
 
+import { batchTwoGuides } from "./guide-batch-two";
+import { batchElevenFifteenGuides } from "./guide-batch-11-15";
+import { batchSixteenTwentyGuides } from "./guide-batch-16-20";
+import { batchTwentyOneTwentyFiveGuides } from "./guide-batch-21-25";
+import { batchTwentySixThirtyFiveGuides } from "./guide-batch-26-35";
+
 export const batchOneGuides: Record<string, BatchGuide> = Object.fromEntries(
-  [claude, shorter, forgetting, privacy, connections].map((guide) => [guide.slug, guide]),
+  [claude, shorter, forgetting, privacy, connections, ...batchTwoGuides, ...batchElevenFifteenGuides, ...batchSixteenTwentyGuides, ...batchTwentyOneTwentyFiveGuides, ...batchTwentySixThirtyFiveGuides].map((guide) => [guide.slug, guide]),
 );

@@ -655,3 +655,7 @@ button, input { font: inherit; }
   .guides-hero h1{font-size:clamp(47px,11vw,68px)}
   .guides-hero__copy>p:not(.eyebrow){font-size:17px}
 }
+
+/* Header (28/09): links on the right in the brand nav style, MENU button on small screens only. */
+.site-header nav{flex:0 1 auto;margin-left:auto;gap:clamp(18px,2.2vw,34px);font:400 14px/1 var(--font-ui),Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+@media(min-width:1051px){.site-header__mobile{display:none}}

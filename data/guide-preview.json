@@ -49,12 +49,6 @@
       "journeyOrder": 82
     },
     {
-      "slug": "meta-ai",
-      "lumailTag": "guide-meta-ai",
-      "section": "AI tools",
-      "journeyOrder": 100
-    },
-    {
       "slug": "verify-grok-current-research",
       "lumailTag": "guide-verify-grok-current-research",
       "section": "AI tools",
@@ -65,12 +59,6 @@
       "lumailTag": "guide-fix-deepseek-wall-of-text",
       "section": "AI tools",
       "journeyOrder": 121
-    },
-    {
-      "slug": "edit-long-writing-with-deepseek",
-      "lumailTag": "guide-edit-long-writing-with-deepseek",
-      "section": "AI tools",
-      "journeyOrder": 122
     },
     {
       "slug": "manus-browser-workflow",
@@ -137,18 +125,6 @@
       "lumailTag": "guide-test-deepseek-v4-document-work",
       "section": "AI tools",
       "journeyOrder": 123
-    },
-    {
-      "slug": "protect-a-long-deepseek-project",
-      "lumailTag": "guide-protect-a-long-deepseek-project",
-      "section": "Workflows and automation",
-      "journeyOrder": 124
-    },
-    {
-      "slug": "mistral-multilingual-research",
-      "lumailTag": "guide-mistral-multilingual-research",
-      "section": "AI tools",
-      "journeyOrder": 153
     }
   ]
 }

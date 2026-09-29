@@ -179,3 +179,182 @@ body.home-saadia a:focus-visible,body.home-saadia button:focus-visible,body.home
   .sk-credentials .sk-credentials-intro h2{font-size:clamp(36px,9vw,52px)}
 }
 @media(prefers-reduced-motion:reduce){.sk-pill,.sk-book,.sk-header{transition:none}}
+
+/* Header (28/09): Home link first, links on the right in the brand nav style (Inter, uppercase, spaced). The MENU button is for small screens only. */
+.sk-desktop-nav{flex:0 1 auto;margin-left:auto;gap:clamp(18px,2.2vw,34px)}
+.sk-desktop-nav a{font:400 14px/1 Inter,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+@media(min-width:1051px){.sk-menu{display:none}}
+/* Secondary hero button: white outline instead of ink on the dark hero. */
+.sk-hero .sk-pill-ink{background:transparent;color:var(--white)!important;box-shadow:inset 0 0 0 2px var(--white)}
+.sk-hero .sk-pill-ink:hover{background:var(--white);color:var(--ink)!important}
+/* Hero line: keep it on the text side, never under the photo. */
+.sk-hero .sk-hero-content>p{max-width:32ch!important;text-wrap:balance}
+@media(max-width:700px){.sk-hero .sk-hero-content>p{max-width:none!important}}
+/* Kits (coming soon) with waitlist: same layout as the workbooks. */
+.sk-kits li label{display:flex;align-items:center;gap:20px;cursor:pointer;width:100%}
+.sk-kits li input{width:22px;height:22px;accent-color:var(--pink);align-self:center;flex:none}
+.sk-kit-form{margin-top:26px;max-width:470px}
+.sk-kit-form>div{display:grid;grid-template-columns:1fr 1.4fr;gap:10px}
+.sk-kit-form input[name=firstName],.sk-kit-form input[type=email]{min-width:0;height:52px;border:1px solid #b9bcc6;border-radius:0;padding:0 14px;font:400 15px Inter,Arial,sans-serif;color:var(--ink);background:var(--white)}
+.sk-kit-form .sk-consent{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:13px;line-height:1.4}
+.sk-kit-form .sk-pill{margin-top:18px;border:0;cursor:pointer}
+#sk-kit-status{margin-top:12px;font-weight:700}
+@media(max-width:700px){.sk-kit-form>div{grid-template-columns:1fr}}
+
+/* 28/09 review 3: bigger button text; colours flow down the page through waves:
+   white guides, pale blue kits, lilac workbooks, electric-blue work with me, ink sign-up. */
+.sk-pill{font-size:16px;min-height:56px;padding:15px 28px}
+.sk-newsletter button{font-size:15px}
+body.home-saadia .sk-final h2 em{display:inline;margin-left:.18em}
+.sk-wave{display:block;height:clamp(60px,8vw,120px);background:var(--from);line-height:0}
+.sk-wave svg{display:block;width:100%;height:100%}
+.sk-wave path{fill:var(--to)}
+.sk-guides{padding-bottom:40px}
+.sk-kits{background:#EEF2FC;color:var(--ink);padding:40px 0 60px}
+body.home-saadia .sk-kits h2 em{color:var(--blue)}
+.sk-kits .sk-overline{color:var(--blue)}
+.sk-kits ol{border-top:1px solid var(--ink)}
+.sk-kits li{border-bottom:1px solid var(--ink)}
+.sk-kits li span{color:var(--blue)}
+.sk-workbooks:not(.sk-kits){background:var(--lilac);padding:40px 0 60px}
+.sk-workbooks li{align-items:center}
+.sk-consulting{background:var(--blue);padding:40px 0 60px}
+body.home-saadia .sk-consulting h2 em,.sk-consulting .sk-overline{color:var(--lilac)}
+.sk-consulting .sk-consulting-value{color:#eef0ff}
+.sk-consulting .sk-consulting-evidence{border-top:0;padding-top:0}
+.sk-final{background:var(--ink);padding:40px 0 110px}
+.sk-thumb{width:84px;height:84px;flex:none;object-fit:contain;border-radius:50%;background:var(--white);padding:6px}
+.sk-cover{width:72px;height:100px;flex:none;object-fit:cover;box-shadow:0 6px 18px #0d111733}
+.sk-consulting-photo{margin:0 0 26px}
+.sk-consulting-photo img{display:block;width:100%;max-width:400px;aspect-ratio:4/5;object-fit:cover;object-position:center 20%}
+.sk-news-mascot{width:120px;height:120px;object-fit:contain;display:block;margin-bottom:12px}
+.sk-newsletter{border-top:0;padding-top:0}
+@media(max-width:700px){.sk-thumb{width:60px;height:60px}.sk-cover{width:52px;height:72px}}
+.sk-guides{padding-top:30px}
+/* Work with me band: same layout as kits and workbooks, on electric blue. */
+.sk-workbooks.sk-consulting{background:var(--blue);color:var(--white);padding:40px 0 60px}
+body.home-saadia .sk-consulting h2,body.home-saadia .sk-consulting h2 span,body.home-saadia .sk-consulting p:not(.sk-overline){color:var(--white)}
+body.home-saadia .sk-consulting h2 em{color:var(--lilac)}
+.sk-consulting ol{border-top-color:#ffffff80}
+.sk-consulting li{border-bottom-color:#ffffff80;color:var(--white)}
+.sk-consulting li span{color:var(--lilac)}
+.sk-workbooks,.sk-consulting,.sk-kits,.sk-final{border-top:0!important}
+.sk-wave{position:relative;z-index:1;margin-bottom:-2px}
+.sk-wave{margin-bottom:0;overflow:visible}.sk-wave svg{height:calc(100% + 3px);margin-bottom:-3px}
+
+/* 28/09 review 4: kits as product covers, workbooks as covers, one wide
+   Work with me band, one sign-up form, no section labels or button arrows. */
+.sk-kits-head{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:end;margin-bottom:48px}
+.sk-kits-head p{font-size:18px;max-width:460px}
+.sk-kits-head .sk-pill{margin-top:22px}
+.sk-kits h2,.sk-workbooks h2,.sk-consulting h2{font-size:clamp(52px,5.4vw,86px)}
+.sk-kit-covers,.sk-book-covers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.sk-kit-cover{position:relative;display:flex;flex-direction:column;aspect-ratio:3/4;padding:26px 26px 24px;color:var(--white)!important;background:var(--blue);box-shadow:10px 12px 0 var(--ink);transition:transform .2s}
+.sk-kit-covers li:nth-child(2) .sk-kit-cover{background:var(--pink)}
+.sk-kit-covers li:nth-child(3) .sk-kit-cover{background:var(--ink)}
+.sk-kit-cover:hover{transform:translateY(-6px)}
+.sk-kit-top{font:700 14px/1 Inter,Arial,sans-serif;opacity:.85}
+.sk-kit-cover img{width:62%;margin:18px auto 14px;aspect-ratio:1;object-fit:contain;background:var(--white);border-radius:50%;padding:10px}
+.sk-kit-cover strong{font:800 clamp(26px,2.3vw,34px)/1.05 "Playfair Display",Georgia,serif;letter-spacing:-.02em}
+.sk-kit-line{margin-top:10px;font-size:16px;line-height:1.4;opacity:.92}
+.sk-kit-soon{margin-top:auto;padding-top:16px;font:700 15px/1.3 Inter,Arial,sans-serif;text-decoration:underline;text-underline-offset:4px}
+.sk-book-covers img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;box-shadow:10px 12px 0 var(--ink)}
+.sk-book-covers strong{display:block;margin-top:22px;font:800 clamp(22px,2vw,28px)/1.1 "Playfair Display",Georgia,serif;color:var(--ink)}
+.sk-workbooks{padding-bottom:80px!important}
+.sk-band-points{list-style:none;margin:0;padding:28px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;border-top:1px solid #ffffff80}
+.sk-band-points li{font:700 clamp(22px,2vw,28px)/1.2 "Playfair Display",Georgia,serif;color:var(--white)}
+.sk-band-points span{display:block;margin-bottom:8px;font:800 14px/1 Inter,Arial,sans-serif;color:var(--lilac)}
+body.home-saadia .sk-band h2,body.home-saadia .sk-band h2 span,body.home-saadia .sk-band p{color:var(--white)}
+body.home-saadia .sk-band h2 em{color:var(--lilac)}
+.sk-consulting.sk-band{padding:40px 0 80px}
+.sk-pill-outline{color:var(--white)!important;box-shadow:inset 0 0 0 2px var(--white);background:transparent}
+.sk-pill-outline:hover{background:var(--white);color:var(--ink)!important}
+.sk-pill{justify-content:center}
+/* Guide cards: six, colours cycling, no labels */
+.sk-book:nth-child(3n+1){background:var(--blue)}
+.sk-book:nth-child(3n+2){background:var(--pink);transform:translateY(-30px)}
+.sk-book:nth-child(3n+3){background:var(--ink);transform:none}
+.sk-book:nth-child(3n+2):hover{transform:translateY(-38px)}
+.sk-book b{font-size:15px;text-decoration:underline;text-underline-offset:4px}
+/* One sign-up form */
+.sk-newsletter>p{font-size:30px}
+.sk-signup-fields{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;background:none!important;min-height:0!important}
+.sk-signup-fields label{display:grid;gap:6px;font:600 14px/1.2 Inter,Arial,sans-serif}
+.sk-signup-fields input{height:52px;border:0;padding:0 14px;font:400 16px Inter,Arial,sans-serif;color:var(--ink)}
+.sk-kit-choices{border:0;margin:18px 0 0;padding:0;display:grid;gap:8px}
+.sk-kit-choices legend{margin-bottom:8px;font:600 15px/1.3 Inter,Arial,sans-serif}
+.sk-kit-choices label{display:flex;gap:10px;align-items:center;font-size:15px}
+.sk-kit-choices input{width:18px;height:18px;accent-color:var(--pink)}
+#sk-newsletter-form button[type=submit]{margin-top:18px;min-height:54px;padding:0 28px;border-radius:999px;font-size:16px}
+.sk-consent span{font-size:14px}
+@media(max-width:1050px){.sk-kits-head{grid-template-columns:1fr;gap:18px}}
+@media(max-width:700px){.sk-kit-covers,.sk-book-covers,.sk-band-points{grid-template-columns:1fr;gap:28px}.sk-kit-cover{aspect-ratio:auto;min-height:420px}.sk-book-covers{grid-template-columns:repeat(3,1fr);gap:12px}.sk-book-covers strong{font-size:15px;margin-top:10px}.sk-book-covers img{box-shadow:5px 6px 0 var(--ink)}.sk-signup-fields{grid-template-columns:1fr}.sk-book:nth-child(3n+2){transform:none}}
+.sk-kit-covers li,.sk-book-covers li,.sk-band-points li{display:block!important;border:0!important;padding:0!important;align-items:initial}
+.sk-kit-cover span,.sk-kit-cover strong{color:var(--white)!important}
+.sk-band-points li{padding:0!important}
+.sk-books{scroll-padding-inline:max(48px,calc((100vw - 1320px)/2))}@media(max-width:700px){.sk-books{scroll-padding-inline:18px}}
+.sk-hero-proof small{letter-spacing:0!important;text-transform:none!important;font-size:14px!important;font-weight:600!important}
+
+/* 28/09 review 5: smaller hero headline, proof strip, kit covers show what's inside. */
+.sk-hero h1,body.home-saadia .sk-hero h1{max-width:min(56vw,700px);font-size:clamp(52px,5.4vw,82px)}
+.sk-hero-content{padding-top:clamp(150px,19vh,210px)}
+.sk-proof{background:var(--white);padding:10px 0 70px}
+.sk-proof .sk-shell{border-top:1px solid #d8d6d2;padding-top:44px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+.sk-proof-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.sk-proof-list strong{display:block;font:800 clamp(30px,2.8vw,42px)/1.05 "Playfair Display",Georgia,serif;color:var(--blue);letter-spacing:-.02em}
+.sk-proof-list span{display:block;margin-top:8px;font-size:16px;line-height:1.4;color:#3f4452}
+.sk-proof-link{font:700 16px/1 Inter,Arial,sans-serif;color:var(--ink)!important;text-decoration:underline!important;text-underline-offset:5px;white-space:nowrap}
+.sk-kit-stack{position:relative;display:block;height:clamp(200px,17vw,250px);margin:16px 0 20px}
+.sk-sheet{position:absolute;display:block;background:var(--white);color:var(--ink)!important;box-shadow:0 8px 24px #0d111740;font:700 13px/1.2 Inter,Arial,sans-serif;padding:12px 14px}
+.sk-kit-cover .sk-sheet,.sk-kit-cover .sk-sheet *{color:var(--ink)!important}
+.sk-sheet-3{inset:0 6% 18% 22%;transform:rotate(5deg);background:#EEF2FC;text-align:right}
+.sk-sheet-2{inset:6% 14% 12% 12%;transform:rotate(-3deg);background:#fdf6fa}
+.sk-sheet-1{inset:16% 4% 0 4%;padding:16px 18px}
+.sk-sheet-1 b{display:block;font:800 18px/1.1 "Playfair Display",Georgia,serif;margin-bottom:10px;padding-right:54px}
+.sk-sheet-1 ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.sk-sheet-1 li{position:relative;padding:0 0 7px 18px;border-bottom:1px solid #e4e4ee;font:500 13px/1.3 Inter,Arial,sans-serif}
+.sk-sheet-1 li::before{content:"";position:absolute;left:0;top:3px;width:9px;height:9px;border:2px solid var(--blue)}
+.sk-sheet-1 img{position:absolute;top:-22px;right:10px;width:62px!important;height:62px;margin:0!important;padding:4px!important;background:var(--white)!important;border-radius:50%;box-shadow:0 4px 12px #0d111733;aspect-ratio:1}
+.sk-kit-cover{aspect-ratio:auto;min-height:0}
+@media(max-width:1050px){.sk-proof-list{grid-template-columns:repeat(2,1fr)}.sk-proof .sk-shell{grid-template-columns:1fr}}
+@media(max-width:700px){.sk-hero h1,body.home-saadia .sk-hero h1{font-size:clamp(44px,11vw,60px);max-width:100%}.sk-hero-content{padding-top:34vh}.sk-proof-list{grid-template-columns:1fr 1fr;gap:22px}.sk-kit-stack{height:230px}}
+.sk-kit-covers .sk-sheet-1 li{display:block!important;padding:0 0 7px 20px!important;border-bottom:1px solid #e4e4ee!important}
+.sk-sheet-1 b{padding-right:0}
+.sk-sheet-1 img{top:auto;bottom:12px;right:12px}
+.sk-sheet-2,.sk-sheet-3{padding-top:9px}
+.sk-kit-cover .sk-sheet-3{font-size:0}
+.sk-kit-note{margin:0 0 6px!important;font-size:14px!important;font-style:italic;color:var(--lilac)}
+.sk-proof .sk-shell{grid-template-columns:1fr auto}
+.sk-proof-voice{grid-column:1/-1;margin:0 0 8px;max-width:900px;font:700 italic clamp(24px,2.3vw,32px)/1.3 "Playfair Display",Georgia,serif;color:var(--ink)}
+.sk-proof-voice span{display:block;margin-top:10px;font:600 15px/1 Inter,Arial,sans-serif;font-style:normal;color:#3f4452}
+/* Workbook covers: brand colour cards around the artwork (pink, blue, ink). */
+.sk-book-covers li{padding:22px 22px 26px!important;background:var(--pink);box-shadow:10px 12px 0 var(--ink)}
+.sk-book-covers li:nth-child(2){background:var(--blue)}
+.sk-book-covers li:nth-child(3){background:var(--ink)}
+.sk-book-covers img{box-shadow:none;border:8px solid var(--white);aspect-ratio:4/5}
+.sk-book-covers strong{color:var(--white)!important;margin-top:18px}
+.sk-book-covers li::before{content:"Workbook " counter(wb) " · Coming soon";counter-increment:wb;display:block;margin-bottom:14px;font:700 14px/1 Inter,Arial,sans-serif;color:var(--white);opacity:.9}
+.sk-book-covers{counter-reset:wb}
+@media(max-width:700px){.sk-book-covers li{padding:10px 10px 12px!important;box-shadow:5px 6px 0 var(--ink)}.sk-book-covers li::before{content:"0" counter(wb);font-size:12px;margin-bottom:8px}.sk-book-covers img{border-width:4px}}
+/* 29/09/2026: guides and kits as white cards with one colour line, no colour blocks */
+body.home-saadia .sk-book,body.home-saadia .sk-book:nth-child(n){background:#fff!important;color:#0D1117!important;box-shadow:none!important;border:1px solid #d9dce6;border-top:4px solid var(--blue);transform:none!important}
+body.home-saadia .sk-book:nth-child(3n+2){border-top-color:var(--pink)}
+body.home-saadia .sk-book:nth-child(3n+3){border-top-color:var(--ink)}
+body.home-saadia .sk-book:hover{transform:translateY(-4px)!important}
+body.home-saadia .sk-book strong,body.home-saadia .sk-book small,body.home-saadia .sk-book b,body.home-saadia .sk-book span{color:#0D1117!important}
+body.home-saadia .sk-kit-cover,body.home-saadia .sk-kit-covers li:nth-child(n) .sk-kit-cover{background:#fff!important;box-shadow:none!important;border:1px solid #d9dce6;border-top:4px solid var(--blue)}
+body.home-saadia .sk-kit-covers li:nth-child(2) .sk-kit-cover{border-top-color:var(--pink)}
+body.home-saadia .sk-kit-covers li:nth-child(3) .sk-kit-cover{border-top-color:var(--ink)}
+body.home-saadia .sk-kit-cover>span,body.home-saadia .sk-kit-cover>strong,body.home-saadia .sk-kit-cover .sk-kit-top,body.home-saadia .sk-kit-cover .sk-kit-line,body.home-saadia .sk-kit-cover .sk-kit-soon{color:#0D1117!important}
+body.home-saadia .sk-kit-cover .sk-sheet{box-shadow:0 1px 0 #d9dce6,0 6px 18px #0d11171a}
+body.home-saadia .sk-kit-covers li{display:flex!important}body.home-saadia .sk-kit-covers li .sk-kit-cover{flex:1}
+body.home-saadia .sk-kit-stack{height:200px}
+/* 29/09/2026: workbook covers as white cards, like the Workbooks page */
+body.home-saadia .sk-book-covers li,body.home-saadia .sk-book-covers li:nth-child(n){background:#fff!important;padding:0 0 24px!important;box-shadow:8px 10px 0 #0D1117!important}
+body.home-saadia .sk-book-covers li:nth-child(2){box-shadow:8px 10px 0 var(--pink)!important}
+body.home-saadia .sk-book-covers img{border:0!important;aspect-ratio:4/3;margin:0}
+body.home-saadia .sk-book-covers li::before{order:2;margin:18px 22px 0!important;color:var(--blue)!important;opacity:1!important;font:700 13px/1 Inter,Arial,sans-serif!important;letter-spacing:.06em;text-transform:uppercase}
+body.home-saadia .sk-book-covers li{display:flex!important;flex-direction:column}
+body.home-saadia .sk-book-covers img{order:1}
+body.home-saadia .sk-book-covers strong{order:3;color:#0D1117!important;margin:12px 22px 0!important}
+.sk-proof-list strong{white-space:nowrap}

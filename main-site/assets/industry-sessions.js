@@ -47,12 +47,12 @@
         .then(function (res) { return res.json().catch(function () { return {}; }).then(function (body) { if (!res.ok) throw new Error(body.error || ''); }); })
         .then(function () {
           if (window.slTrack) window.slTrack('enquiry_submit', { interest: data.interest || '' });
-          form.innerHTML = '<div class="wc-form-done wc-wide" tabindex="-1"><strong>Thank you. Your enquiry has arrived.</strong><p>I read each one myself and will reply to ' + data.email.replace(/[<>&"]/g, '') + '.</p></div>';
+          form.innerHTML = '<div class="wc-form-done wc-wide" tabindex="-1"><strong>Thank you. Your application has arrived.</strong><p>I read each one myself and will reply to ' + data.email.replace(/[<>&"]/g, '') + '.</p></div>';
           form.querySelector('.wc-form-done').focus();
         })
         .catch(function (error) {
           button.disabled = false;
-          button.textContent = 'Send my enquiry';
+          button.textContent = 'Apply';
           status.textContent = (error && error.message) || 'Your enquiry did not send. Please try again.';
           status.hidden = false;
         });

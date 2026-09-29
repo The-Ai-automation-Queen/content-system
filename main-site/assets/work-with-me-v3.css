@@ -82,3 +82,112 @@ body.wc-page{background:#f7f6f2;color:#121626}
 .wc-page .wc-form-done{grid-column:1/-1;padding:8px 4px;outline:none}
 .wc-page .wc-form-done strong{display:block;margin-bottom:6px;color:#151929;font:800 20px/1.25 Inter,Arial,sans-serif}
 .wc-page .wc-form-done p{margin:0;color:#30374c}
+
+/* 28/09/2026: the whole offer path in one place, in the Home page style
+   (waves, brand colours, one button style, no section labels or arrows). */
+.wc-hero{background:#141c3a;padding:80px 0 60px}
+.wc-hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.wc-button{min-height:56px;padding:15px 28px;font-size:16px}
+.wc-button-outline{background:transparent!important;box-shadow:inset 0 0 0 2px #fff}
+.wc-button-outline:hover{background:#fff!important;color:#141c3a!important}
+.wc-button-ink{background:#0d1117!important}
+.wc-offers,.wc-apply{background:#fff}
+.wc-offers{padding:40px 0 70px}
+.wc-offers h2,.wc-sessions h2,.wc-leaders h2,.wc-apply h2{font:900 clamp(40px,4.6vw,68px)/1 Impact,"Arial Narrow",Inter,sans-serif;letter-spacing:-.02em;text-transform:uppercase;margin:0 0 34px}
+.wc-offers h2 em,.wc-sessions h2 em,.wc-leaders h2 em{display:block;font:800 italic .8em/1.05 "Playfair Display",Georgia,serif;text-transform:none;letter-spacing:-.04em;color:#2c4be0}
+.wc-offer-list{list-style:none;margin:0;padding:0;border-top:1px solid #0d1117}
+.wc-offer-row{display:grid;grid-template-columns:110px 1fr 150px 210px;gap:28px;align-items:center;padding:22px 0;border-bottom:1px solid #0d1117}
+.wc-offer-row img{width:110px;height:110px;object-fit:cover;background:#eef2fc}
+.wc-offer-kits img,.wc-offer-membership img,.wc-offer-team img{object-fit:contain;border-radius:50%;padding:6px}
+.wc-offer-row h3{margin:0 0 4px;font:800 clamp(24px,2.2vw,32px)/1.1 "Playfair Display",Georgia,serif}
+.wc-offer-row p{margin:0;font-size:17px;line-height:1.45;color:#3f4452}
+.wc-offer-row .wc-for{font-weight:700;color:#2c4be0}
+.wc-status{font:700 15px/1.2 Inter,Arial,sans-serif;color:#eb008c}
+.wc-offer-guides .wc-status{color:#128a4a}
+.wc-offer-row .wc-button{justify-self:end}
+.wc-offer-transform{background:#eef2fc;padding-left:20px;padding-right:20px}
+.wc-sessions{background:#eef2fc;padding:40px 0 70px}
+.wc-sessions-intro{font-size:18px;max-width:520px;margin:-18px 0 0}
+.wc-panel{background:#fff;border-radius:0;box-shadow:10px 12px 0 #0d1117}
+.wc-panel h3 small{display:block;margin-bottom:8px;font:700 15px/1 Inter,Arial,sans-serif;color:#eb008c}
+.wc-example-grid>div{background:#eef2fc!important;border:0!important}
+.wc-panel-next{display:grid;grid-template-columns:1fr 1fr auto;gap:28px;margin-top:26px;padding-top:22px;border-top:1px solid #d8d6d2;font-size:16px}
+.wc-panel-next strong{display:block;margin-bottom:8px}
+.wc-panel-next strong+span{display:none}
+.wc-panel-next ul{margin:0;padding-left:18px;line-height:1.6}
+.wc-panel-next a:not(.wc-button){color:#2c4be0;text-decoration:underline;text-underline-offset:3px}
+.wc-panel-next .wc-button{margin-top:4px}
+.wc-leaders{background:#c8c1f0;padding:40px 0 80px}
+.wc-leaders-head{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:end;margin-bottom:34px}
+.wc-leaders-head h2{margin:0}
+.wc-leaders-head p{font-size:18px}
+.wc-leaders-steps{list-style:none;margin:0;padding:26px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;border-top:1px solid #0d1117}
+.wc-leaders-steps span{display:block;font:800 14px/1 Inter,Arial,sans-serif;color:#2c4be0;margin-bottom:8px}
+.wc-leaders-steps strong{display:block;font:800 30px/1.1 "Playfair Display",Georgia,serif;margin-bottom:8px}
+.wc-leaders-steps p{margin:0;font-size:17px;line-height:1.45}
+.wc-fit{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:36px}
+.wc-fit p{margin:0;padding:22px;background:#fff;font-size:17px;line-height:1.5;box-shadow:8px 10px 0 #0d1117}
+.wc-apply{padding:40px 0 80px}
+.wc-apply h2{margin-bottom:14px}
+@media(max-width:900px){.wc-offer-row{grid-template-columns:80px 1fr;gap:16px}.wc-offer-row img{width:80px;height:80px}.wc-status,.wc-offer-row .wc-button{grid-column:2;justify-self:start}.wc-panel-next,.wc-leaders-head,.wc-leaders-steps,.wc-fit{grid-template-columns:1fr}}
+.wc-page h1,.wc-offers h2,.wc-sessions h2,.wc-leaders h2,.wc-apply h2{font-weight:900!important;text-transform:uppercase}
+.wc-page h1 em,.wc-page h2 em{font-weight:800!important}
+.apply-form button[type=submit]{min-height:56px;padding:0 30px;border-radius:99px;background:#eb008c!important;letter-spacing:0;font:700 16px Inter,Arial,sans-serif}
+.wc-case-head p b{letter-spacing:0;text-transform:none;font-size:14px}
+.wc-page .wc-offer-row h3,.wc-page .wc-panel h3{font-weight:700!important}
+body.wc-page .apply-form button[type=submit]{background:#eb008c!important;border-radius:99px!important;letter-spacing:0!important}
+@media(max-width:700px){.wc-leaders h2,.wc-offers h2,.wc-sessions h2,.wc-apply h2{font-size:clamp(30px,9vw,44px)!important;overflow-wrap:anywhere}}
+
+/* Field offers: tabs, then a kit and a live sprint for each field. */
+.wc-picker-hidden{display:none}
+.wc-field-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
+.wc-field-tab{min-height:48px;padding:0 20px;border:2px solid #0d1117;border-radius:99px;background:#fff;color:#0d1117;font:700 15px Inter,Arial,sans-serif;cursor:pointer}
+.wc-field-tab[aria-pressed=true]{background:#0d1117;color:#fff}
+.wc-field{background:#fff;padding:30px;box-shadow:10px 12px 0 #0d1117}
+.wc-field-head{display:grid;grid-template-columns:320px 1fr;gap:32px;align-items:start}
+.wc-field-head img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.wc-field-head h3{margin:0 0 10px;font:800 clamp(28px,2.8vw,40px)/1.05 "Playfair Display",Georgia,serif!important}
+.wc-field-head h3 small{display:block;margin-bottom:8px;font:700 15px/1 Inter,Arial,sans-serif;color:#eb008c}
+.wc-field-head>div>p{margin:0 0 16px;font-size:17px}
+.wc-field-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;border-top:1px solid #d8d6d2;padding-top:16px}
+.wc-field-steps span{display:block;font:800 13px/1 Inter,Arial,sans-serif;color:#2c4be0;margin-bottom:6px}
+.wc-field-steps strong{display:block;font:800 20px/1.15 "Playfair Display",Georgia,serif;margin-bottom:4px}
+.wc-field-steps p{margin:0;font-size:15px;line-height:1.4;color:#3f4452}
+.wc-field-offers{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:30px}
+.wc-field-offer{padding:26px 28px;color:#fff;background:#2c4be0;box-shadow:8px 10px 0 #0d1117}
+.wc-field-sprint{background:#eb008c}
+.wc-field-type{display:block;margin-bottom:10px;font:700 14px/1 Inter,Arial,sans-serif;opacity:.9}
+.wc-field-offer h4{margin:0 0 8px;font:800 clamp(24px,2.2vw,30px)/1.1 "Playfair Display",Georgia,serif;color:#fff}
+.wc-field-offer p{margin:0 0 12px;font-size:16px;line-height:1.45;color:#fff}
+.wc-field-offer ul{margin:0 0 14px;padding-left:20px;font-size:16px;line-height:1.6}
+.wc-field-leave{padding-top:12px;border-top:1px solid #ffffff66}
+.wc-button-white{background:#fff!important;color:#0d1117!important}
+.wc-field-free{margin:24px 0 0;font-size:16px}
+.wc-field-free a,.wc-field-more a{color:#2c4be0;text-decoration:underline;text-underline-offset:3px}
+.wc-field-more{margin:30px 0 0;font-size:17px}
+@media(max-width:900px){.wc-field-head,.wc-field-offers,.wc-field-steps{grid-template-columns:1fr}.wc-field{padding:20px}}
+body.wc-page .wc-field-offer h4{color:#fff!important;font-weight:800!important}
+body.wc-page .wc-field-offer .wc-button-white{background:#fff!important;color:#0d1117!important;font-weight:700}
+body.wc-page .wc-field-offer li{color:#fff}
+body.wc-page .wc-field-free{margin-top:36px}body.wc-page .wc-field-more{margin-top:44px}
+/* 29/09/2026: field dropdown, compact field cards, two-line apply */
+body.wc-page .wc-sessions-top{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:28px}
+body.wc-page .wc-picker label{font-size:14px;letter-spacing:0;text-transform:none;color:#0d1117}
+body.wc-page .wc-picker select{border:2px solid #0d1117;font:700 17px Inter,Arial,sans-serif}
+.wc-field-head{grid-template-columns:240px 1fr;align-items:center}
+.wc-field-head h3{margin-bottom:8px}
+.wc-field-jobs{margin:0;font-size:17px}
+.wc-field-offers{margin-top:24px}
+.wc-field-offer{display:flex;flex-direction:column;align-items:flex-start}
+.wc-field-offer p{flex:1}
+.wc-apply-inline{margin-top:44px;padding:30px;background:#fff;box-shadow:10px 12px 0 #0d1117}
+.wc-apply-inline h3{margin:0 0 6px;font:800 clamp(26px,2.6vw,34px)/1.1 "Playfair Display",Georgia,serif}
+.wc-apply-inline>p{margin:0 0 18px;font-size:17px}
+.wc-apply-inline .apply-form{display:grid;grid-template-columns:1fr 2fr auto;gap:14px;align-items:end}
+.wc-apply-inline label{display:block;font:700 14px Inter,Arial,sans-serif}
+.wc-apply-inline input[type=email],.wc-apply-inline input[type=text]{display:block;width:100%;margin-top:6px;padding:13px 16px;border:2px solid #0d1117;border-radius:30px;font:400 16px Inter,Arial,sans-serif;box-sizing:border-box}
+.wc-apply-inline .form-privacy-note,.wc-apply-inline .wc-form-status,.wc-apply-inline .wc-form-done{grid-column:1/-1;margin:0;font-size:14px}
+.wc-leaders{padding-bottom:60px}
+@media(max-width:900px){body.wc-page .wc-sessions-top{display:block}.wc-field-head{grid-template-columns:1fr}.wc-apply-inline .apply-form{grid-template-columns:1fr}.wc-apply-inline{padding:22px}}
+body.wc-page .wc-apply-inline .apply-form{max-width:none!important;margin:0!important;padding:0!important;background:none!important;box-shadow:none!important;grid-template-columns:1fr 2fr auto!important;gap:14px!important;align-items:end}
+@media(max-width:900px){body.wc-page .wc-apply-inline .apply-form{grid-template-columns:1fr!important}}

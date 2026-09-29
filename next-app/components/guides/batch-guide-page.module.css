@@ -167,3 +167,5 @@ ul.list { list-style: disc; }
   .honest { padding: 24px 20px 10px; }
   .unlockedWrap, .related { width: min(100% - 32px, 760px); }
 }
+/* Italic inside running text stays in the body font; the display italic is for headings. */
+.main :is(p, li, dd) em, .kit p em, .unlockedWrap :is(p, li, dd) em { font-family: inherit; font-weight: inherit; letter-spacing: normal; }
