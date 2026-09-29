@@ -211,7 +211,7 @@ if (!/\.wordmark\s*\{[^}]*font-weight:\s*400/.test(globalStyles)) {
   failures.push("The guide wordmark must use regular font weight.");
 }
 
-if (!/\.site-header nav\s*\{[^}]*font:\s*400\s+12px/.test(globalStyles)) {
+if (!/\.site-header nav\s*\{[^}]*font:\s*400\s+15px/.test(globalStyles)) {
   failures.push("The guide navigation must use regular font weight.");
 }
 
