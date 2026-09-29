@@ -349,3 +349,11 @@ body.home-saadia .sk-kit-cover>span,body.home-saadia .sk-kit-cover>strong,body.h
 body.home-saadia .sk-kit-cover .sk-sheet{box-shadow:0 1px 0 #d9dce6,0 6px 18px #0d11171a}
 body.home-saadia .sk-kit-covers li{display:flex!important}body.home-saadia .sk-kit-covers li .sk-kit-cover{flex:1}
 body.home-saadia .sk-kit-stack{height:200px}
+/* 29/09/2026: workbook covers as white cards, like the Workbooks page */
+body.home-saadia .sk-book-covers li,body.home-saadia .sk-book-covers li:nth-child(n){background:#fff!important;padding:0 0 24px!important;box-shadow:8px 10px 0 #0D1117!important}
+body.home-saadia .sk-book-covers li:nth-child(2){box-shadow:8px 10px 0 var(--pink)!important}
+body.home-saadia .sk-book-covers img{border:0!important;aspect-ratio:4/3;margin:0}
+body.home-saadia .sk-book-covers li::before{order:2;margin:18px 22px 0!important;color:var(--blue)!important;opacity:1!important;font:700 13px/1 Inter,Arial,sans-serif!important;letter-spacing:.06em;text-transform:uppercase}
+body.home-saadia .sk-book-covers li{display:flex!important;flex-direction:column}
+body.home-saadia .sk-book-covers img{order:1}
+body.home-saadia .sk-book-covers strong{order:3;color:#0D1117!important;margin:12px 22px 0!important}
