@@ -37,7 +37,6 @@ body.sk-subpage[data-page-kind="workbooks"] .workbook-next h2{color:#fff;font:90
 body.sk-subpage[data-page-kind="workbooks"] .workbook-next p{color:#dfe3f3}
 body.sk-subpage[data-page-kind="workbooks"] .workbook-next a{border-radius:999px;background:#ff007f}
 
-/* Where AI Fits */
 
 /* About */
 body.sk-subpage[data-page-kind="about"] .wrap{width:min(100% - 96px,1320px)}
@@ -118,7 +117,6 @@ body.sk-subpage[data-page-kind="workbooks"] .workbook-next .workbook-eyebrow{col
 body.sk-subpage[data-page-kind="workbooks"] .workbook-next p{font:500 18px/1.55 Inter,Arial,sans-serif}
 body.sk-subpage[data-page-kind="workbooks"] .workbook-next a{display:inline-flex;align-items:center;min-height:50px;padding:13px 23px;color:#fff;font:800 13px/1.3 Inter,Arial,sans-serif;text-decoration:none}
 
-/* Where AI Fits */
 
 /* About */
 body.sk-subpage[data-page-kind="about"] .story{max-width:1320px}
