@@ -160,3 +160,11 @@ body.wc-page .ww-field-head h3{font:800 clamp(30px,3.2vw,46px)/1.05 "Playfair Di
 .ww-cal-days b{font:700 12px/1 Inter,Arial,sans-serif;color:#6b7080;text-align:center;padding-bottom:4px}
 .ww-cal-days i{aspect-ratio:1;border-radius:8px;background:#EEF2FC}
 @media(max-width:900px){.ww-book-grid{grid-template-columns:1fr;gap:32px}}
+/* Field visual: one shared illustration, cropped to the object for each field */
+.ww-field-pic{width:100%;aspect-ratio:16/10;background:#EEF2FC url(/assets/practical-sessions-illustration-v2.webp) no-repeat}
+.ww-field[data-industry="content"] .ww-field-pic{background-size:234% auto;background-position:0% 96%}
+.ww-field[data-industry="beauty"] .ww-field-pic{background-size:405% auto;background-position:30% 20%}
+.ww-field[data-industry="jewellery"] .ww-field-pic{background-size:486% auto;background-position:42% 61%}
+.ww-field[data-industry="property"] .ww-field-pic{background-size:347% auto;background-position:100% 35%}
+.ww-field[data-industry="education"] .ww-field-pic{background-size:303% auto;background-position:91% 100%}
+.ww-field[data-industry="services"] .ww-field-pic{background-size:277% auto;background-position:68% 13%}
