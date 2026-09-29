@@ -8,8 +8,6 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (relativePath) => fs.readFileSync(path.join(root, relativePath), "utf8");
 const publication = JSON.parse(read("data/guide-publication.json"));
 const route = read("next-app/app/guides/[slug]/page.tsx");
-const instagramPage = read("next-app/components/guides/instagram-dashboard-page.tsx");
-const interactiveWalkthrough = read("next-app/components/guides/interactive-walkthrough.tsx");
 const kimiSheetsPage = read("next-app/components/guides/kimi-sheets-page.tsx");
 const accessForm = read("next-app/components/guides/guide-access-boundary.tsx");
 const framework = read("docs/GUIDE-PRODUCTION-FRAMEWORK.md");
@@ -26,9 +24,8 @@ for (const guide of publication.approved) {
     assert.match(html, /\/images\/guides\//, "guide artwork is missing");
     assert.match(html, /rel="canonical"/, "guide canonical URL is missing");
     if (guide.slug === "instagram-content-dashboard") {
-      assert.match(body, /What you will build/, "Instagram outcome cards are missing");
-      assert.match(body, /How would you like to build it\?/, "Instagram build choices are missing");
-      assert.match(body, /Walkthrough steps/, "Instagram step map is missing");
+      assert.match(body, /What you(’|'|&#x27;)ll build/, "Instagram outcome section is missing");
+      assert.match(body, /data-guide-capture-boundary/, "Instagram has no inline Lumail form");
       assert.doesNotMatch(body, /guide-reading-page_previewContent/, "legacy article preview returned to Instagram");
     } else if (guide.slug === "make-work-tracker-with-kimi") {
       assert.match(kimiSheetsPage, /GuideAccessBoundary[\s\S]*variant="unlock"/, "Kimi's selected step needs an inline form before its prompt");
@@ -39,10 +36,8 @@ for (const guide of publication.approved) {
   });
 }
 
-test("Instagram has its own page layout and an inline Lumail form before the full walkthrough", () => {
-  assert.match(route, /slug === "instagram-content-dashboard"[\s\S]*<InstagramDashboardPage guide=\{guide\}/);
-  assert.match(instagramPage, /variant="instagram"/);
-  assert.match(interactiveWalkthrough, /GuideAccessBoundary[\s\S]*variant="unlock"/);
+test("Instagram uses the shared batch guide design with an inline Lumail form before the prompts", () => {
+  assert.match(route, /slug === "instagram-content-dashboard"\) return <BatchGuidePage guide=\{guide\}/);
   assert.match(accessForm, /fetch\("\/api\/guide-capture"/);
   assert.match(framework, /The current static article renderer is legacy infrastructure, not the target layout/);
 });

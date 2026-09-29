@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { approvedGuideSlugs } from "@/content/guides";
 import { GuideReadingPage } from "@/components/guides/guide-reading-page";
-import { InstagramDashboardPage } from "@/components/guides/instagram-dashboard-page";
 import { GrokReviewPage } from "@/components/guides/grok-review-page";
 import { GrokResearchPage } from "@/components/guides/grok-research-page";
 import { GrokWritingPage } from "@/components/guides/grok-writing-page";
@@ -49,7 +48,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   const { slug } = await params;
   const guide = getGuidePage(slug);
   if (!guide) notFound();
-  if (slug === "instagram-content-dashboard") return <InstagramDashboardPage guide={guide} />;
+  if (slug === "instagram-content-dashboard") return <BatchGuidePage guide={guide} />;
   if (slug === "what-is-ai") return <BatchGuidePage guide={guide} />;
   if (slug === "ai-jargon-guide") return <BatchGuidePage guide={guide} />;
   if (slug === "what-is-agentic") return <BatchGuidePage guide={guide} />;

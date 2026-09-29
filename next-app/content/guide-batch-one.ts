@@ -379,7 +379,8 @@ import { batchElevenFifteenGuides } from "./guide-batch-11-15";
 import { batchSixteenTwentyGuides } from "./guide-batch-16-20";
 import { batchTwentyOneTwentyFiveGuides } from "./guide-batch-21-25";
 import { batchTwentySixThirtyFiveGuides } from "./guide-batch-26-35";
+import { convertedGuides } from "./guide-batch-converted";
 
 export const batchOneGuides: Record<string, BatchGuide> = Object.fromEntries(
-  [claude, shorter, forgetting, privacy, connections, ...batchTwoGuides, ...batchElevenFifteenGuides, ...batchSixteenTwentyGuides, ...batchTwentyOneTwentyFiveGuides, ...batchTwentySixThirtyFiveGuides].map((guide) => [guide.slug, guide]),
+  [claude, shorter, forgetting, privacy, connections, ...batchTwoGuides, ...batchElevenFifteenGuides, ...batchSixteenTwentyGuides, ...batchTwentyOneTwentyFiveGuides, ...batchTwentySixThirtyFiveGuides, ...convertedGuides].map((guide) => [guide.slug, guide]),
 );

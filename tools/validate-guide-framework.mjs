@@ -31,8 +31,6 @@ const footerSource = read("next-app/components/chrome/site-footer.tsx");
 const guideAccessSource = read("next-app/components/guides/guide-access-boundary.tsx");
 const guideRouteSource = read("next-app/app/guides/[slug]/page.tsx");
 const legacyGuideSlugsSource = read("next-app/content/legacy-guide-slugs.ts");
-const instagramPageSource = read("next-app/components/guides/instagram-dashboard-page.tsx");
-const interactiveWalkthroughSource = read("next-app/components/guides/interactive-walkthrough.tsx");
 const guideFormatsSource = read("next-app/content/guide-formats.ts");
 const guideComponentDir = path.join(root, "next-app/components/guides");
 const activeGuideStyles = fs.readdirSync(guideComponentDir)
@@ -163,14 +161,8 @@ if (!guideAccessSource.includes('fetch("/api/guide-capture"') ||
     !["firstName", "email", "marketingConsent"].every((field) => guideAccessSource.includes(`name="${field}"`))) {
   failures.push("The inline guide gate must unlock content after Lumail success and collect first name, email and optional marketing consent.");
 }
-if (!guideRouteSource.includes('slug === "instagram-content-dashboard"') ||
-    !guideRouteSource.includes("<InstagramDashboardPage guide={guide} />") ||
-    !instagramPageSource.includes('variant="instagram"') ||
-    !interactiveWalkthroughSource.includes('variant === "instagram" ? "agent" : null') ||
-    !interactiveWalkthroughSource.includes('variant !== "instagram" && saved') ||
-    instagramPageSource.includes('variant="save"') ||
-    interactiveWalkthroughSource.includes('afterSteps')) {
-  failures.push("The Instagram guide must retain its dedicated interactive Next.js walkthrough.");
+if (!guideRouteSource.includes('if (slug === "instagram-content-dashboard") return <BatchGuidePage guide={guide} />;')) {
+  failures.push("The Instagram guide must use the shared batch guide design.");
 }
 if (!guideRouteSource.includes("legacyGuideSlugs.has(slug)") ||
     !guideRouteSource.includes("needs an approved interactive Next.js composition") ||

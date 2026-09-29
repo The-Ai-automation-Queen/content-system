@@ -80,8 +80,8 @@
     },
     {
       "source": "/guides/grok.html",
-      "destination": "/guides/review-grok-suggestions/",
-      "permanent": true
+      "destination": "/guides/",
+      "permanent": false
     },
     {
       "source": "/guides/deepseek.html",
@@ -185,13 +185,13 @@
     },
     {
       "source": "/guides/review-grok-suggestions.html",
-      "destination": "/guides/review-grok-suggestions/",
-      "permanent": true
+      "destination": "/guides/",
+      "permanent": false
     },
     {
       "source": "/guides/get-better-professional-writing-from-grok.html",
-      "destination": "/guides/get-better-professional-writing-from-grok/",
-      "permanent": true
+      "destination": "/guides/",
+      "permanent": false
     },
     {
       "source": "/guides/make-work-tracker-with-kimi.html",
@@ -360,6 +360,86 @@
     },
     {
       "source": "/guides/is-kimi-worth-paying-for/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/review-grok-suggestions",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/review-grok-suggestions/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/get-better-professional-writing-from-grok",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/get-better-professional-writing-from-grok/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/verify-grok-current-research",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/verify-grok-current-research/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/verify-grok-current-research.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-grok-repeated-image-edits",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-grok-repeated-image-edits/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-grok-repeated-image-edits.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/fix-deepseek-wall-of-text",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/fix-deepseek-wall-of-text/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/fix-deepseek-wall-of-text.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-deepseek-v4-document-work",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-deepseek-v4-document-work/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/test-deepseek-v4-document-work.html",
       "destination": "/guides/",
       "permanent": false
     }
