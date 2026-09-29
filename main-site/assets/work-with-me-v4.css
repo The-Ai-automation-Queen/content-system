@@ -149,3 +149,14 @@ body.wc-page .ww-field-head h3{font:800 clamp(30px,3.2vw,46px)/1.05 "Playfair Di
 @media(max-width:900px){body.wc-page .ww-hero h1{font-size:clamp(46px,13vw,68px)!important}}
 @media(max-width:900px){.ww-hero .ww-plan{display:none}.ww-one .ww-plan{width:min(62%,260px)}}
 .ww-mail{margin:14px 0 0;font-size:16px}body.wc-page .ww-mail a{color:#2C4BE0;text-decoration:underline;text-underline-offset:3px}
+/* Booking block (calendar embed goes in .ww-cal) */
+.ww-book{padding:30px 0 80px}
+.ww-book-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.ww-cal{background:#fff;border:1px solid #d9dce6;border-top:4px solid #2C4BE0;border-radius:14px;padding:24px}
+.ww-cal-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+.ww-cal-head strong{font:800 20px/1.1 "Playfair Display",Georgia,serif;color:#0D1117}
+.ww-cal-head span{padding:6px 12px;border-radius:999px;background:#FF007F;color:#fff;font:700 13px/1 Inter,Arial,sans-serif}
+.ww-cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.ww-cal-days b{font:700 12px/1 Inter,Arial,sans-serif;color:#6b7080;text-align:center;padding-bottom:4px}
+.ww-cal-days i{aspect-ratio:1;border-radius:8px;background:#EEF2FC}
+@media(max-width:900px){.ww-book-grid{grid-template-columns:1fr;gap:32px}}

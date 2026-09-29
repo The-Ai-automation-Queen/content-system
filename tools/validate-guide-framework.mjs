@@ -230,7 +230,7 @@ if (vercelConfig.outputDirectory !== ".") {
 if (/AI Build Kit|Open the Starter Kit/i.test(workWithFatiha)) {
   failures.push("The retired AI Build Kit offer has returned to the Work with me page.");
 }
-if (!workWithFatiha.includes('href="/workbooks.html">See the workbooks</a>')) {
+if (!workWithFatiha.includes('href="/workbooks.html">Workbooks</a>')) {
   failures.push("The Work with me page is missing its Workbooks link.");
 }
 if (!workWithFatiha.includes('Business and marketing transformation')) {
