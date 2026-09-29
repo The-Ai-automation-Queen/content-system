@@ -10,7 +10,9 @@ export type BatchBlock =
   | { kind: "result"; label: string; lines: readonly string[] }
   | { kind: "list"; ordered?: boolean; items: readonly string[] }
   | { kind: "contrast"; items: readonly { label: string; text: string; note?: string; good?: boolean }[] }
-  | { kind: "locked"; label: string; prompt?: number };
+  | { kind: "locked"; label: string; prompt?: number }
+  // A real interface screenshot that belongs to the step above it.
+  | { kind: "shot"; src: string; alt: string; caption: string; width: number; height: number };
 
 export type BatchPrompt = { title: string; text: string };
 

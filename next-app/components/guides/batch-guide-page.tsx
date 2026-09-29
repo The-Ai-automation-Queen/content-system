@@ -74,6 +74,13 @@ function Block({ block, guide }: { block: BatchBlock; guide: BatchGuide }) {
     }
     case "contrast":
       return <div className={styles.contrast} data-count={block.items.length}>{block.items.map((item) => <div key={item.label} className={item.good ? styles.good : undefined}><small>{item.label}</small><p><Rich value={item.text} /></p>{item.note && <span><Rich value={item.note} /></span>}</div>)}</div>;
+    case "shot":
+      return <figure className={styles.shot}>
+        <a href={block.src} target="_blank" rel="noopener noreferrer" aria-label={`Open the screenshot full size: ${block.alt}`}>
+          <img src={block.src} alt={block.alt} width={block.width} height={block.height} loading="lazy" style={{ maxWidth: `min(100%, ${block.width}px)` }} />
+        </a>
+        <figcaption>{block.caption}</figcaption>
+      </figure>;
     case "locked": {
       const preview = block.prompt === undefined ? "" : guide.prompts[block.prompt]?.text ?? "";
       return <a className={styles.teaser} href="#unlock">
