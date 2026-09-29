@@ -2,9 +2,9 @@ const { validateRequest } = require("../lib/form-privacy");
 
 // Kit waitlist: each kit gets its own Lumail tag so launch emails reach only the people who asked.
 const KIT_TAGS = {
-  workflows: "kit-waitlist-workflows",
-  "remember-you": "kit-waitlist-remember-you",
-  "safe-at-work": "kit-waitlist-safe-at-work",
+  "content-agent": "kit-waitlist-content-agent",
+  "customer-reply-agent": "kit-waitlist-customer-reply-agent",
+  "admin-inbox-agent": "kit-waitlist-admin-inbox-agent",
 };
 
 module.exports = async function handler(request, response) {

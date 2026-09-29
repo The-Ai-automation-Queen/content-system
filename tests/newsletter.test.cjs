@@ -92,9 +92,9 @@ test("homepage sign-up adds a waitlist tag for each known kit ticked, and ignore
   global.fetch = async (url, options) => { payload = JSON.parse(options.body); return { ok: true, status: 200 }; };
   try {
     const withKits = response();
-    await handler(request({ email: "reader@example.com", firstName: "Ada", marketingConsent: true, kits: ["workflows", "safe-at-work", "workflows", "unknown"] }), withKits);
+    await handler(request({ email: "reader@example.com", firstName: "Ada", marketingConsent: true, kits: ["content-agent", "admin-inbox-agent", "content-agent", "unknown"] }), withKits);
     assert.equal(withKits.code, 200);
-    assert.deepEqual(payload.tags, ["shift-and-lead-newsletter", "shift-and-lead-kit-waitlist", "kit-waitlist-workflows", "kit-waitlist-safe-at-work"]);
+    assert.deepEqual(payload.tags, ["shift-and-lead-newsletter", "shift-and-lead-kit-waitlist", "kit-waitlist-content-agent", "kit-waitlist-admin-inbox-agent"]);
     const unknownOnly = response();
     await handler(request({ email: "reader@example.com", marketingConsent: true, kits: ["unknown"] }), unknownOnly);
     assert.equal(unknownOnly.code, 200);
