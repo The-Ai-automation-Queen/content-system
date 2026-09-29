@@ -357,3 +357,4 @@ body.home-saadia .sk-book-covers li::before{order:2;margin:18px 22px 0!important
 body.home-saadia .sk-book-covers li{display:flex!important;flex-direction:column}
 body.home-saadia .sk-book-covers img{order:1}
 body.home-saadia .sk-book-covers strong{order:3;color:#0D1117!important;margin:12px 22px 0!important}
+.sk-proof-list strong{white-space:nowrap}
