@@ -2,6 +2,58 @@
 
 ---
 
+## RESEARCH 052 — 2026-09-29 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `f08319b`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (positioning.md, per AGENTS.md's own strategic-decision text, unchanged since 24/08/2026):** experienced professionals, founders and consultants who feel overwhelmed by AI or struggle to turn their knowledge into visible, valuable work.
+**Internal tooling discoveries this run:** none. This entry is `shift-lead` (public-topic) evidence only.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority and recency were weighed.
+**Gap note:** the automated daily cron run has not produced a new entry since RESEARCH 051 (2026-09-25) — the 2026-09-26, 09-27, 09-28 and 09-29 02:00 UTC runs each hit a weekly usage limit before completing (see `deploy/logs/signal-harvester-2026-09-2[6-9]*.log`); this is an operator-requested manual run filling that 4-day gap.
+
+### Signals
+
+1. **Microsoft WorkLab — "2026 Work Trend Index: Agents, human agency, and the opportunity for every organization"** — published 2026-05-05 — https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization — direct WebFetch confirmed; Microsoft's flagship annual survey + analysis of 100,000+ anonymized Copilot chats, not previously logged in RESEARCH 044-051.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: the largest-scale source found to date naming quality control and critical thinking as the top two "increasingly important" human skills, and quantifying that AI users still treat AI output as preliminary rather than final — a direct, numeric answer to "what only you can bring" (pillar 2), distinct from the survey/RCT sources already logged in 047-051 because it is behavioral-usage data (chat analysis), not self-report sentiment alone.
+   - `supporting_source_excerpt`: "50%" of respondents rank quality control and "46%" rank critical thinking as increasingly important human skills; "86% treat AI output as preliminary rather than final, maintaining responsibility for the thinking involved"; among the most sophisticated 16% of users ("Frontier Professionals"), "80%" report producing work previously impossible, versus 58% among all AI users; only "19%" of AI users work in organizational conditions where individual capability and organizational support reinforce each other, and "just 26%" report leadership is "clearly and consistently aligned on AI."
+   - `possible_use`: the "you stay responsible for the thinking, AI output is a draft not an answer" framing is a clean, large-N-backed line for pillar 2; the Frontier-Professional 80%-vs-58% gap is also usable opportunity-side evidence for pillar 1/3 ("the gap isn't the tool, it's how you use it"). Age caveat: published May 2026, over four months old — use as a corroborating, established-authority anchor, not this week's news (same treatment as RESEARCH 050's IBM citation).
+   - `assessed_at`: 2026-09-29
+
+2. **Resume Now (Pollfish-fielded survey), reported by Trade and Industry Development — "Workplace Trust in AI: 97% of Workers Still Put Human Judgment First"** — survey published 2026-08-17 — https://www.tradeandindustrydev.com/industry/all-industries/workplace-trust-ai-97-workers-still-put-human-36199 — direct WebFetch confirmed; 1,006 employed U.S. adults surveyed via Pollfish in June 2026. A different Resume Now survey from the "AI-Whelmed Worker Report" already logged as RESEARCH 048 signal 2 (same vendor, distinct fielding and topic).
+   - `project_id`: shift-lead — `fit`: useful — `reason`: the most direct, source-attributable numeric evidence found to date for "human judgment still comes first, even for people who use AI" — a sharper complement to RESEARCH 048's "unsure where to start" framing and RESEARCH 051's NBER/patent-lawyer signal, this time from the worker's own stated decision process rather than an outcome measurement.
+   - `supporting_source_excerpt`: "97% rely on their own judgment or input from colleagues/managers as their first step when making work decisions" (74% own judgment, 23% human input from coworkers/managers); only "3%" default to AI tools or automated systems first; under high-stakes, time-sensitive conditions, "93%" still rely on themselves or other humans, and "72% would follow a coworker's judgment over conflicting AI output." Report conclusion: "workers do not want it to have the final say in workplace decisions."
+   - `possible_use`: a clean, quotable stat pair (97% human-first / 3% AI-first) for pillar 2 — pairs with RESEARCH 051's NBER RCT (causal) and this run's Microsoft WTI signal (behavioral usage data) as three independent evidentiary classes reaching the same conclusion. Vendor caveat: same commercial AI-resume vendor as RESEARCH 048's signal — attribute Resume Now by name if quoting exact percentages, per the same treatment applied there.
+   - `assessed_at`: 2026-09-29
+
+3. **CompTIA — "Workforce and Learning Trends 2026"** (via HR Dive) — published 2026-07-22 — https://www.hrdive.com/news/AI-skills-gap-training-comptia/825866/ — direct WebFetch confirmed; CompTIA survey of 1,000 business and technology professionals.
+   - `project_id`: shift-lead — `fit`: possible — `reason`: names a distinct mechanism not yet logged — a personal-use/business-confidence split, rather than the "unsure where to start" (RESEARCH 048) or "chaotic free-for-all" (RESEARCH 046) framings already on file — over 80% use AI tools personally several times a month, yet fewer than a third rate their own AI familiarity as high and "less than one-quarter" of that use ties to business activity.
+   - `supporting_source_excerpt`: "Less than one-quarter of artificial intelligence use by professionals is tied to business-related activities"; "more than 4 in 5 respondents use AI tools several times per month" but "fewer than one-third" describe themselves as having high-level AI familiarity. Quote — Seth Robinson, CompTIA VP of Research: "There can't be an assumption that, at an individual level, people are going to come in with sufficient AI knowledge that can be applied in the workforce."
+   - `possible_use`: a source-attributable answer to "if everyone's already using AI, why does it still feel unresolved at work" — the personal-use-outpacing-business-confidence gap is a distinct angle from prior overwhelm signals; treat as a secondary/corroborating stat rather than a headline, given it is now over two months old and one of several similar skills-gap surveys already partially covered by RESEARCH 048.
+   - `assessed_at`: 2026-09-29
+
+### Rejected this run
+
+- SHRM — "Navigating AI in the Workplace: 2026" full report — WebFetch returned only the site's navigation/gateway shell, not report content (likely member-gated); could not confirm any statistic against actual fetched text. Per security.md's "facts before hooks" rule, not logged — cut, not softened and kept.
+- RESIDENT magazine — "The Vast Army of Experience: Why AI Needs the Wisdom of Age" (2026-09-11) — confirmed via WebFetch to be an unsourced opinion essay (lifestyle magazine, single named columnist) with no cited data, statistics, or original research; excluded per research-policy.md's source-quality standard.
+- A cluster of solopreneur-economy blog posts (blog.mean.ceo, taskade.com, entrepreneurloop.com, prometai.app, solobusinesshub.com, widejournal.com, greyjournal.net) surfaced under a pillar-3 search — all SEO content-marketing roundups citing other outlets' numbers secondhand (one unverified claim — "41.8 million solopreneurs, $1.3 trillion economic contribution" — could not be traced to a fetched primary source). Excluded per research-policy.md's standard that a roundup of others' figures is not itself a verified source; same exclusion class as RESEARCH 047's webpronews.com rejection.
+- Fortune — "Solo founders are using AI to do the work of entire teams" (2026-05-18) — over four months old and general-interest framing with no new statistic beyond what Adriana Tica's "State of Solopreneurship" (already logged RESEARCH 050) covers; not logged.
+- Gensler "2026 Global Workplace Survey" and Glean "Work AI Index 2026" — surfaced in search results but not fetched this run; time budget spent verifying the three signals above and the SHRM/RESIDENT rejections instead. Flagging both as unchecked leads for a future run, not as rejected-on-merits.
+
+### Source health this run
+
+- Anthropic News (High): direct WebFetch worked; newest post is still "Claude discovers a novel enzyme system with CRISPR-like repeats" (Sep 23) — same item already checked and rejected for no audience-problem line in RESEARCH 050/051; no new post in the 6 days since. Not re-logged.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — 9th consecutive failed run (044 through 051, now 052), over six weeks on the same dead fetch path. Operator: repeating the standing recommendation from 047-051, now overdue — fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): checked this run — WebFetch worked; the ten most recent posts are pure ML-engineering/robotics topics (robotics benchmarking, a 1M-hour voice dataset, laptop-GPU pretraining, humanoid/robot tooling), consistent with every prior run's finding; nothing logged.
+- DeepMind blog (Medium), a16z AI (Medium), Lenny's Newsletter (Low): not checked this run — three non-RSS signals above already filled the run at a higher confirmed-fit rate; time budget allocated there instead, consistent with inventory.md's fallback order.
+- WebSearch: functional throughout; used to source and then verify (or reject) every signal and rejection above.
+- No signals were invented; every URL in the Signals section above is one actually returned by a fetch or search this run, and every quoted figure was confirmed inside directly fetched page text.
+
+### Historical-audience check
+
+Confirmed none of the above signals were forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only, consistent with security.md's queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 051 — 2026-09-25 | Signal harvest (current audience problem)
 
 **Status:** NOTED
