@@ -21,6 +21,41 @@
 
 ## Most recent (quick reference)
 
+> **29/09/2026 content-engine daily run — no new entries produced (deliberate):**
+> Fresh source material exists: `RESEARCH 052` (`research-notes.md`) landed
+> today via an operator-requested manual signal harvest (2026-09-29, filling a
+> 4-day gap where the 09-26/27/28/29 automated 02:00 UTC cron runs each hit a
+> weekly usage limit) with three shift-lead (public-eligible) signals — a
+> Microsoft WorkLab "2026 Work Trend Index" analysis of 100,000+ anonymized
+> Copilot chats (quality control and critical thinking as the top human
+> skills, 86% treat AI output as preliminary not final — a numeric anchor for
+> pillar 2), a Resume Now/Pollfish survey of 1,006 U.S. workers (97% rely on
+> their own judgment or human input first, only 3% default to AI — pairs with
+> RESEARCH 051's NBER RCT and this run's Microsoft signal as three independent
+> evidentiary classes), and a CompTIA "Workforce and Learning Trends 2026"
+> survey (over 80% personal AI use but under a third call their own AI
+> familiarity high, less than a quarter of use tied to business activity — a
+> secondary corroborating stat). Both blockers from every prior run since
+> 17/09 are unchanged today: (1) this session's reality-check hook again
+> states queen-brain is NOT in this session and repeats the explicit
+> instruction not to write price, tier, offer status or customer-facing copy
+> reconstructed from this repo's local mirror copies — content-engine's
+> entire output is customer-facing copy (multi-format public drafts), so that
+> instruction blocks drafting outright regardless of research availability;
+> (2) the release backlog is also unchanged: vault still holds 37 READY TO
+> POST (oldest 77+ days, since 14/07/2026), 33 DRAFT, 6 STALE, 2 KILLED, 0
+> POSTED — confirmed both by the reality-check hook and by a direct
+> `## ENTRY ... |` header-line tally (78 entries total). `review-cockpit/
+> state.md` confirms 30 consecutive empty `getUpdates` sweeps since the
+> 14/09/2026 digest as of 28/09 (second sweep that day), and
+> `decisions-log.md` shows no operator replies, approvals, or kills since
+> 14/07/2026 — so adding more DRAFT volume would still only crowd the
+> digest's top-6 rotation without moving any existing item toward release.
+> No Notion, Blotato, or queen-brain connector was reachable from this
+> session either (checked via tool discovery — no such MCP tools
+> registered). See the operator briefing in this session's chat for the
+> recommendation (same three options open since 18/09, still unanswered).
+
 > **25/09/2026 content-engine daily run — no new entries produced (deliberate):**
 > Fresh source material exists: `RESEARCH 051` (`research-notes.md`) landed
 > this morning via the autonomous signal-harvester run (2026-09-25T02:00
