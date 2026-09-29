@@ -148,3 +148,4 @@ body.wc-page .ww-field-head h3{font:800 clamp(30px,3.2vw,46px)/1.05 "Playfair Di
 .ww-plan-cover b{white-space:nowrap}
 @media(max-width:900px){body.wc-page .ww-hero h1{font-size:clamp(46px,13vw,68px)!important}}
 @media(max-width:900px){.ww-hero .ww-plan{display:none}.ww-one .ww-plan{width:min(62%,260px)}}
+.ww-mail{margin:14px 0 0;font-size:16px}body.wc-page .ww-mail a{color:#2C4BE0;text-decoration:underline;text-underline-offset:3px}
