@@ -26,7 +26,7 @@ module.exports = async function handler(request, response) {
   const interest = INTERESTS.has(body.interest) ? body.interest : "not-sure";
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return response.status(400).json({ error: "Enter a valid email address." });
-  if (!name || !business || !task) return response.status(400).json({ error: "Please complete your name, business and what you are working on." });
+  if (!task) return response.status(400).json({ error: "Tell me in a line what is changing in your business." });
 
   const submittedAt = new Date().toISOString();
   try {

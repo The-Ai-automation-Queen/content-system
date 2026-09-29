@@ -170,3 +170,24 @@ body.wc-page .wc-field-offer h4{color:#fff!important;font-weight:800!important}
 body.wc-page .wc-field-offer .wc-button-white{background:#fff!important;color:#0d1117!important;font-weight:700}
 body.wc-page .wc-field-offer li{color:#fff}
 body.wc-page .wc-field-free{margin-top:36px}body.wc-page .wc-field-more{margin-top:44px}
+/* 29/09/2026: field dropdown, compact field cards, two-line apply */
+body.wc-page .wc-sessions-top{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:28px}
+body.wc-page .wc-picker label{font-size:14px;letter-spacing:0;text-transform:none;color:#0d1117}
+body.wc-page .wc-picker select{border:2px solid #0d1117;font:700 17px Inter,Arial,sans-serif}
+.wc-field-head{grid-template-columns:240px 1fr;align-items:center}
+.wc-field-head h3{margin-bottom:8px}
+.wc-field-jobs{margin:0;font-size:17px}
+.wc-field-offers{margin-top:24px}
+.wc-field-offer{display:flex;flex-direction:column;align-items:flex-start}
+.wc-field-offer p{flex:1}
+.wc-apply-inline{margin-top:44px;padding:30px;background:#fff;box-shadow:10px 12px 0 #0d1117}
+.wc-apply-inline h3{margin:0 0 6px;font:800 clamp(26px,2.6vw,34px)/1.1 "Playfair Display",Georgia,serif}
+.wc-apply-inline>p{margin:0 0 18px;font-size:17px}
+.wc-apply-inline .apply-form{display:grid;grid-template-columns:1fr 2fr auto;gap:14px;align-items:end}
+.wc-apply-inline label{display:block;font:700 14px Inter,Arial,sans-serif}
+.wc-apply-inline input[type=email],.wc-apply-inline input[type=text]{display:block;width:100%;margin-top:6px;padding:13px 16px;border:2px solid #0d1117;border-radius:30px;font:400 16px Inter,Arial,sans-serif;box-sizing:border-box}
+.wc-apply-inline .form-privacy-note,.wc-apply-inline .wc-form-status,.wc-apply-inline .wc-form-done{grid-column:1/-1;margin:0;font-size:14px}
+.wc-leaders{padding-bottom:60px}
+@media(max-width:900px){body.wc-page .wc-sessions-top{display:block}.wc-field-head{grid-template-columns:1fr}.wc-apply-inline .apply-form{grid-template-columns:1fr}.wc-apply-inline{padding:22px}}
+body.wc-page .wc-apply-inline .apply-form{max-width:none!important;margin:0!important;padding:0!important;background:none!important;box-shadow:none!important;grid-template-columns:1fr 2fr auto!important;gap:14px!important;align-items:end}
+@media(max-width:900px){body.wc-page .wc-apply-inline .apply-form{grid-template-columns:1fr!important}}
