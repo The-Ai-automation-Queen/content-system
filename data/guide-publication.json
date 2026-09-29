@@ -143,42 +143,6 @@
       "journeyOrder": 102
     },
     {
-      "slug": "review-grok-suggestions",
-      "lumailTag": "guide-review-grok-suggestions",
-      "section": "AI tools",
-      "journeyOrder": 111
-    },
-    {
-      "slug": "get-better-professional-writing-from-grok",
-      "lumailTag": "guide-get-better-professional-writing-from-grok",
-      "section": "AI tools",
-      "journeyOrder": 112
-    },
-    {
-      "slug": "verify-grok-current-research",
-      "lumailTag": "guide-verify-grok-current-research",
-      "section": "AI tools",
-      "journeyOrder": 113
-    },
-    {
-      "slug": "test-grok-repeated-image-edits",
-      "lumailTag": "guide-test-grok-repeated-image-edits",
-      "section": "Content and creative work",
-      "journeyOrder": 114
-    },
-    {
-      "slug": "fix-deepseek-wall-of-text",
-      "lumailTag": "guide-fix-deepseek-wall-of-text",
-      "section": "AI tools",
-      "journeyOrder": 121
-    },
-    {
-      "slug": "test-deepseek-v4-document-work",
-      "lumailTag": "guide-test-deepseek-v4-document-work",
-      "section": "AI tools",
-      "journeyOrder": 123
-    },
-    {
       "slug": "make-work-tracker-with-kimi",
       "lumailTag": "guide-make-work-tracker-with-kimi",
       "section": "AI tools",
@@ -396,7 +360,43 @@
       "lumailTag": "guide-fix-gemini-workspace-action",
       "section": "AI tools",
       "journeyOrder": 83
+    },
+    {
+      "slug": "review-grok-suggestions",
+      "lumailTag": "guide-review-grok-suggestions",
+      "section": "AI tools",
+      "journeyOrder": 111
+    },
+    {
+      "slug": "get-better-professional-writing-from-grok",
+      "lumailTag": "guide-get-better-professional-writing-from-grok",
+      "section": "AI tools",
+      "journeyOrder": 112
+    },
+    {
+      "slug": "verify-grok-current-research",
+      "lumailTag": "guide-verify-grok-current-research",
+      "section": "AI tools",
+      "journeyOrder": 113
+    },
+    {
+      "slug": "test-grok-repeated-image-edits",
+      "lumailTag": "guide-test-grok-repeated-image-edits",
+      "section": "Content and creative work",
+      "journeyOrder": 114
+    },
+    {
+      "slug": "fix-deepseek-wall-of-text",
+      "lumailTag": "guide-fix-deepseek-wall-of-text",
+      "section": "AI tools",
+      "journeyOrder": 121
+    },
+    {
+      "slug": "test-deepseek-v4-document-work",
+      "lumailTag": "guide-test-deepseek-v4-document-work",
+      "section": "AI tools",
+      "journeyOrder": 123
     }
   ],
-  "approvalNote": "Owner approved guides 11 to 35 and the removal of the old Mistral, DeepSeek project, DeepSeek editing, Meta AI and Kimi guides on 2026-09-28. Pending and parked guides remain excluded."
+  "approvalNote": "Owner approved guides 11 to 35 and the removal of the old Mistral, DeepSeek project, DeepSeek editing, Meta AI and Kimi guides on 2026-09-28. Pending and parked guides remain excluded. On 2026-09-29 the owner parked the four Grok guides and the two DeepSeek guides (fix-deepseek-wall-of-text, test-deepseek-v4-document-work)."
 }

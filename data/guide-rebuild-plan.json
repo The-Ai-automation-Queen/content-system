@@ -92,25 +92,25 @@
     {
       "slug": "review-grok-suggestions",
       "pattern": "practice",
-      "status": "approved",
+      "status": "pending",
       "component": "grok-review-page"
     },
     {
       "slug": "get-better-professional-writing-from-grok",
       "pattern": "practice",
-      "status": "approved",
+      "status": "pending",
       "component": "grok-writing-page"
     },
     {
       "slug": "verify-grok-current-research",
       "pattern": "audit",
-      "status": "approved",
+      "status": "pending",
       "component": "grok-research-page"
     },
     {
       "slug": "fix-deepseek-wall-of-text",
       "pattern": "practice",
-      "status": "approved",
+      "status": "pending",
       "component": "deepseek-wall-page"
     },
     {
@@ -214,13 +214,13 @@
     {
       "slug": "test-grok-repeated-image-edits",
       "pattern": "walkthrough",
-      "status": "approved",
+      "status": "pending",
       "component": "grok-image-edits-page"
     },
     {
       "slug": "test-deepseek-v4-document-work",
       "pattern": "decision",
-      "status": "approved",
+      "status": "pending",
       "component": "deepseek-document-page"
     },
     {
