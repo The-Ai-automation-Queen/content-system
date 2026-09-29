@@ -8,8 +8,8 @@ that visitor thinks, not about taste.
 
 ## The verdict in five lines
 
-1. **The site sells nothing yet, and it shows.** I count 11 "Coming soon"
-   labels across Home and Work with me. A 20-year professional with nothing
+1. **The site sells nothing yet, and it shows.** I count 22 "Coming soon"
+   labels across Home (8) and Work with me (14). A 20-year professional with nothing
    to buy looks like a start-up still testing ideas.
 2. **Three promises, two audiences.**
    - The promises: "AI training & guidance" (Home), "From AI ideas to real
