@@ -7,4 +7,4 @@
 :HL["/_next/static/css/ea167ae43967d393.css","style"]
 :HL["/_next/static/css/07a850fa3ad46006.css","style"]
 :HL["/_next/static/css/6b5e171410aa81b1.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"guides","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"money-plan-with-ai","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"_dCM6Rwu9neohJdnMx9XN"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"guides","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"money-plan-with-ai","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"fav7hF4LZjKkWHlXTLq4O"}
