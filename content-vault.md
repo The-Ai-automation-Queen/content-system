@@ -21,6 +21,46 @@
 
 ## Most recent (quick reference)
 
+> **30/09/2026 content-engine daily run — no new entries produced (deliberate):**
+> Fresh source material exists: `RESEARCH 053` (`research-notes.md`) landed
+> today via an operator-requested manual signal harvest, filling a gap where
+> the 2026-09-30 02:00 UTC automated cron exited after the git sync step with
+> no harvest output and no error — a new, distinct failure shape from the
+> 09-26–09-29 "weekly usage limit" messages, flagged for the operator in
+> RESEARCH 053's own Source health note. Three shift-lead (public-eligible)
+> signals: a University of Konstanz survey of 1,105 employees (only 55% of
+> AI users had the tool officially introduced by their employer; in smaller
+> orgs only 11% report AI training and 10% report binding rules — a
+> structural companion to RESEARCH 052's Microsoft WTI signal), an APA
+> Monitor digest of five named studies (Microsoft/CMU: more AI confidence
+> correlates with less critical thinking; MIT: weaker neural connectivity in
+> LLM-assisted writers; a Polish clinical study: physicians' unassisted
+> polyp-detection accuracy fell from 28.4% to 22.4% after AI exposure — a
+> concrete, high-stakes de-skilling proof point for pillar 2), and a Lettuce
+> Financial solopreneur survey (top-earning solopreneurs use AI more heavily
+> yet 77% still prioritize in-person networking over self-promotion online —
+> complicates rather than confirms an "AI replaces relationships" framing).
+> Both blockers from every prior run since 17/09 are unchanged today: (1)
+> this session's reality-check hook again states queen-brain is NOT in this
+> session and repeats the explicit instruction not to write price, tier,
+> offer status or customer-facing copy reconstructed from this repo's local
+> mirror copies — content-engine's entire output is customer-facing copy
+> (multi-format public drafts), so that instruction blocks drafting outright
+> regardless of research availability; (2) the release backlog is also
+> unchanged: vault still holds 37 READY TO POST (oldest 78+ days, since
+> 14/07/2026), 33 DRAFT, 6 STALE, 2 KILLED, 0 POSTED — confirmed both by the
+> reality-check hook and by a direct `## ENTRY ... |` header-line tally (78
+> entries total). `review-cockpit/state.md` confirms the 29/09 digest's 9
+> cards (#1–#6, R1–R3) remain outstanding with three empty sweeps that day
+> and 31 consecutive empty `getUpdates` sweeps since the 14/09/2026 digest,
+> and `decisions-log.md` shows no operator replies, approvals, or kills since
+> 14/07/2026 — so adding more DRAFT volume would still only crowd the
+> digest's top-6 rotation without moving any existing item toward release.
+> No Notion, Blotato, or queen-brain/GitHub connector was reachable from this
+> session either (checked via ToolSearch — ` gh` not on PATH, no such MCP
+> tool registered). See the operator briefing in this session's chat for the
+> recommendation (same three options open since 18/09, still unanswered).
+
 > **29/09/2026 content-engine daily run — no new entries produced (deliberate):**
 > Fresh source material exists: `RESEARCH 052` (`research-notes.md`) landed
 > today via an operator-requested manual signal harvest (2026-09-29, filling a
