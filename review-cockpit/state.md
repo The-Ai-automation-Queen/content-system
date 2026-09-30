@@ -7,13 +7,30 @@ digest run overwrites it.
 ## Telegram offset
 
 - Last `getUpdates` consumed offset: still none pending — checked again
-  on 30/09/2026 (operator-requested `process` run, this run), queue empty
-  (`{"ok":true,"result":[]}`). No card replies, no unblocker replies, no
-  voice notes since the 14/09/2026 digest (35th consecutive empty sweep).
+  on 30/09/2026 (operator-requested `process` run, second sweep this
+  session), queue empty (`{"ok":true,"result":[]}`). No card replies, no
+  unblocker replies, no voice notes since the 14/09/2026 digest (36th
+  consecutive empty sweep).
 - Next `process` run should call `getUpdates` with no offset filter until a
   reply produces an `update_id` to anchor to.
 
 ## Process sweeps log
+
+- 30/09/2026, second sweep this session (operator-requested `process` run,
+  this run — run end to end per operator request via `/review-cockpit
+  process`, obeying `CLAUDE.md` and `security.md`). `getUpdates` (no
+  offset, none stored) returned empty (`{"ok":true,"result":[]}`). Nothing
+  to route: no card decisions, no unblocker replies, no voice notes — 36th
+  consecutive empty sweep since the 14/09/2026 digest. Vault counts
+  reconfirmed directly from `content-vault.md`'s `## ENTRY ... |` status
+  suffixes: 37 READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED / 0 POSTED —
+  matches this session's reality-check hook exactly. `unblocker/ledger.md`
+  checked — open items under `## Entries` are pre-existing unblocker
+  blockers awaiting a human pass, not review-cockpit replies; not touched
+  by this skill. Nothing applied to the vault, `decisions-log.md`
+  unchanged. Confirmation sent to Telegram (message_id 1212). Publishing
+  stayed queue-only throughout (`security.md` §3.1, `CLAUDE.md`) — no post
+  released, no Blotato queue touched.
 
 - 30/09/2026 — operator-requested `process` run, run end to end per
   operator request, via `/review-cockpit process`. `getUpdates` (no offset,
