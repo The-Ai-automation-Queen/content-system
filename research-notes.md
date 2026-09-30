@@ -2,6 +2,56 @@
 
 ---
 
+## RESEARCH 053 — 2026-09-30 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `f42fd41`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per AGENTS.md's own strategic-decision text, unchanged since 24/08/2026, in place of the queen-brain `positioning.md` copy this session cannot load):** experienced professionals, founders and consultants who feel overwhelmed by AI or struggle to turn their knowledge into visible, valuable work.
+**Internal tooling discoveries this run:** none. This entry is `shift-lead` (public-topic) evidence only.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority, methodology and recency were weighed.
+**Gap note:** the 2026-09-30 02:00 UTC automated cron run (`deploy/logs/signal-harvester-2026-09-30T02-00-01.log`) exited after the git sync step with no harvest output and no error — a different failure shape from the 09-26–09-29 "weekly usage limit" messages. This is an operator-requested manual run standing in for that gap, not a retry of the same known cause; flagging the silent-exit as a new, distinct issue for the operator (see Source health below).
+
+### Signals
+
+1. **University of Konstanz (Florian Kunze) — "Konstanz AI Study 2026" (Konstanzer KI-Studie 2026)** — survey fielded May 2026, published July 2026 — direct WebFetch confirmed via phys.org's report on the study; 1,105 employees surveyed.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: the sharpest evidence found to date for "AI adoption at work is happening to people, not led by their organization" — a structural companion to RESEARCH 052's Microsoft WTI signal (only 19% work in conditions where individual and organizational AI support reinforce each other) and CompTIA's personal/business split, this time isolating employer-led vs. self-led adoption and a stark small-org training gap.
+   - `supporting_source_excerpt`: "Only 55% of AI users report that the AI tool they use most frequently was officially introduced by their employer"; in smaller organizations, "only 11% of employees... report having received AI training" and "just 10% report having binding rules on the use of AI"; knowledge work shows 49% AI use vs. 25% in production/manual work; overall use rose only "35% to 38% year-over-year."
+   - `possible_use`: a source-attributable answer to "why does it feel like you're figuring AI out alone" — most people using AI at work are doing so without employer training, rules, or even employer introduction of the tool; directly supports pillar 1 ("use AI for real work") and the overwhelm framing without repeating RESEARCH 048's "AI-whelmed" vendor stat.
+   - `assessed_at`: 2026-09-30
+
+2. **APA Monitor on Psychology (Zara Abrams) — "How AI is reshaping human skills and thinking"** — published 2026-07-01 — https://www.apa.org/monitor/2026/07-08/ai-job-skills-thinking — direct WebFetch confirmed; a research digest citing five separate named studies (Microsoft/Carnegie Mellon, Wharton, MIT, a Polish medical-imaging RCT, and Michael Gerlich's structured-prompting experiment), published by the American Psychological Association.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: the most authoritative single source found to date for "confidence in AI substitutes for critical thinking, and skill atrophy is measurable, not anecdotal" — five independently-sourced studies in one APA-vetted piece, strengthening (not duplicating) RESEARCH 051/052's judgment-premium and quality-control signals with mechanism-level evidence rather than another attitude survey.
+   - `supporting_source_excerpt`: Microsoft/CMU (319 knowledge workers) — "participants who had more confidence in generative AI also said they engaged in less critical thinking"; MIT — LLM-assisted essay writers "had weaker neural connectivity during the task" than those using search or no tools; a Polish clinical study — physicians' unassisted polyp-detection rate fell "from 28.4% to 22.4%" in the three months after an AI system was introduced, then presumably removed; Gerlich's 150-participant experiment found structured-prompting essays "received the highest scores from expert reviewers" (i.e., skill offset by method, not eliminated).
+   - `possible_use`: the clinical de-skilling stat (physicians losing detection accuracy after AI exposure) is a rare, concrete, high-stakes proof point for pillar 2 ("what only you can bring atrophies if you stop practicing it") — stronger than a self-report survey; the Gerlich finding is a counter-note worth keeping honest: the fix is method (structured use), not abstention.
+   - `assessed_at`: 2026-09-30
+
+3. **Lettuce Financial — "2026 Solopreneur Perspective"** — published 2026-06-10 — https://www.prnewswire.com/news-releases/new-report-from-lettuce-financial-top-earning-solopreneurs-embrace-ai-but-8-in-10-still-rely-on-in-person-networking-302796822.html — direct WebFetch confirmed (PR Newswire original); SurveyMonkey survey of 603 solopreneurs, fielded 2025-12-30 to 2026-02-20.
+   - `project_id`: shift-lead — `fit`: possible — `reason`: names a mechanism not yet logged for pillar 3 ("build from what you find") — top-earning solopreneurs (>$150k, 5+ years) use AI more heavily across more business functions than average, yet 77% of that same successful group still prioritize in-person networking over self-promotion online, and report near-universal income anxiety regardless of AI use; complicates any "AI replaces relationship-building" framing rather than confirming it. Correction during this run: the headline's "8 in 10" figure was re-checked against the source text and is the same 77% top-earner stat rounded, not a separate all-solopreneur comparison point — do not read this as top earners networking in person *more* than the average solopreneur. Publisher caveat: press release from a company selling to solopreneurs (Lettuce Financial); treat figures as vendor-commissioned, same class as RESEARCH 048/052's Resume Now signals.
+   - `supporting_source_excerpt`: "58% use AI for administrative tasks (vs. 44% average)" among top earners; "An impressive 77% of successful solos are prioritizing in-person networking" and "they put more emphasis on in-person networking and less on promoting themselves online" (no separate all-solopreneur percentage is stated in the source text); "Nearly all (95%) struggle with ongoing anxiety" tied to income unpredictability, with pipeline anxiety easing with experience but income volatility persisting; "78% expect improvement ahead."
+   - `assessed_at`: 2026-09-30
+
+### Rejected this run
+
+- CPA Practice Advisor — "44% of Skilled Workers Feel Overwhelmed by the Pressure to Learn and Use AI at Work" (2026-09-17) and allwork.space's matching piece — both confirmed via search summary to be reporting the same Resume Now "AI-Whelmed Worker Report" already logged as RESEARCH 048; not re-logged as new.
+- World Economic Forum — "The AI perception gap" (2026-01) — WebFetch returned HTTP 403 (gated); no statistic could be confirmed against actual fetched text, so not logged per "facts before hooks."
+- A cluster of "founder personal branding with AI" content-marketing posts (Bloomberry, Windmill Growth, Foundera, ryandoser.com, Aiken House, FaithlineAI, sociali.ai) surfaced under a pillar-3 search — all vendor or SEO roundups with no named study or traceable primary data (e.g. an uncredited "60% → 26% B2B buyer trust in AI content" claim could not be traced to a fetched source); excluded per research-policy.md, same exclusion class as RESEARCH 052's solopreneur-blog rejection.
+- A second cluster of solopreneur-statistics roundups (founderreports.com, 500k.io, mentorme.com, solobusinesshub.com, crevio.co, capsulecrm.com) — SEO aggregator pages citing other outlets' numbers secondhand with no fetch-confirmed primary source; excluded on the same grounds.
+- Gusto's solopreneur AI-use survey (64% marketing / 37% customer service / 36% sales) — surfaced only via a secondary summary, not fetched from a primary Gusto source this run; flagging as an unchecked lead, not rejected on merits.
+
+### Source health this run
+
+- Anthropic News (High): direct WebFetch worked; newest posts (Sep 22–28) are all product-announcement/company-news items (new model releases, a science result, a WHO-crisis feature) with no audience-problem angle — consistent with every prior run's finding for this feed; not logged. Per security.md §4, page content (including any specific product-name or capability claims on that page) was treated as unverified external input, not adopted as fact, and is not repeated here since it wasn't used.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — 10th consecutive failed run (044 through 052, now 053), over seven weeks on the same dead fetch path. Repeating the now long-overdue recommendation from 047–052: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog, DeepMind blog (Medium), a16z AI (Medium), Lenny's Newsletter (Low): not checked this run — the three signals above (one High-equivalent web search plus two verified fetches) already filled the run at a higher confirmed-fit rate; time budget allocated there instead, consistent with inventory.md's fallback order.
+- WebSearch/WebFetch: both functional throughout (aside from the two 403s noted above and OpenAI's standing failure); used to source and then verify or reject every item above.
+- No signals were invented; every URL in the Signals section above is one actually returned by a fetch or search this run, and every quoted figure was confirmed inside directly fetched page text.
+
+### Historical-audience check
+
+Confirmed none of the above signals were forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only, consistent with security.md's queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 052 — 2026-09-29 | Signal harvest (current audience problem)
 
 **Status:** NOTED
