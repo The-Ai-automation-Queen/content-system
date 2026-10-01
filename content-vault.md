@@ -21,6 +21,45 @@
 
 ## Most recent (quick reference)
 
+> **01/10/2026 content-engine daily run — no new entries produced (deliberate):**
+> Fresh source material exists: `RESEARCH 054` (`research-notes.md`) landed
+> today via an operator-requested manual signal harvest, filling a gap where
+> the 2026-10-01 02:00 UTC automated cron again exited after the git sync
+> step with no harvest output and no error — the same silent-exit shape as
+> 30/09 (RESEARCH 053), now seen on two consecutive days, flagged in
+> RESEARCH 054's own Source health note as a distinct, newly recurring
+> failure mode separate from the 09-26–09-29 weekly-limit failures. Three
+> shift-lead (public-eligible) signals: an IBM Institute for Business Value
+> CHRO study of 1,500 CHROs + 8,800 employees across 21 geographies (71% of
+> CHROs rate "supervise, validate, override AI" as the top workforce skill,
+> only 29% of employees rank judgement as important — a judgement-gap angle
+> that is ahead of, not behind, RESEARCH 052/053's skill-erosion thread), a
+> Pipedrive survey of 1,000 professionals (51.1% credit personal judgement
+> for their success vs 15.1% crediting AI tools — a positive-proof-point
+> reframe for pillar 1 rather than an overwhelm angle), and a Branch/
+> Mastercard Solopreneur Report of 1,400+ solopreneurs (64% over 45, but 79%
+> earn under $100k and 55% under $50k — a demographic-precision upgrade on
+> RESEARCH 053's Lettuce Financial signal that complicates any uncritical
+> "just build from your expertise" framing for pillar 3). Both blockers from
+> every prior run since 17/09 are unchanged today: (1) this session's
+> reality-check hook again states queen-brain is NOT in this session and
+> repeats the explicit instruction not to write price, tier, offer status or
+> customer-facing copy reconstructed from this repo's local mirror copies —
+> content-engine's entire output is customer-facing copy (multi-format
+> public drafts), so that instruction blocks drafting outright regardless of
+> research availability; (2) the release backlog is also unchanged: vault
+> still holds 37 READY TO POST (oldest 79+ days, since 14/07/2026), 33
+> DRAFT, 6 STALE, 2 KILLED, 0 POSTED — confirmed both by the reality-check
+> hook and by a direct `## ENTRY ... |` header-line tally (78 entries
+> total). `review-cockpit/decisions-log.md` shows no operator replies,
+> approvals, or kills since 14/07/2026 — so adding more DRAFT volume would
+> still only crowd an already-unreleased backlog without moving any existing
+> item toward release. No Notion, Blotato, or queen-brain/GitHub connector
+> was reachable from this session either (checked via ToolSearch — no such
+> MCP tool registered). See the operator briefing in this session's chat
+> for the recommendation (same three options open since 18/09, still
+> unanswered).
+
 > **30/09/2026 content-engine daily run — no new entries produced (deliberate):**
 > Fresh source material exists: `RESEARCH 053` (`research-notes.md`) landed
 > today via an operator-requested manual signal harvest, filling a gap where
