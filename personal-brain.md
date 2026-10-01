@@ -11,6 +11,33 @@ reference real life — not generic AI content. Updated daily by `brain-manager`
 
 ## Most recent (quick reference)
 
+> **01/10/2026 brain-manager run — no personal-brain update (deliberate):**
+> User-triggered run (not autonomous cron; the 20:00 autonomous cron also ran
+> today per `deploy/logs/brain-manager-2026-10-01T20-00-03.log` — git sync
+> only, no brain write). Same outcome as 30/09, 29/09 and 28/09. No
+> owner-supplied corrections, stories or project facts were given this
+> session, so per `skills/brain-manager/SKILL.md` nothing was invented to
+> fill the two open follow-ups below. Context refresh from the named
+> upstream authority (`The-Ai-automation-Queen/queen-brain` per
+> `context/sources.md`) is still blocked: this session's reality-check hook
+> again states queen-brain is NOT in this session ("Ask for the repo
+> instead of reconstructing it from this one's copies"), and re-checking
+> this session found `git ls-remote` against queen-brain returns 403
+> ("Write access to repository not granted"), no Notion connector
+> (`ToolSearch` for "notion" — no match), no `gh` CLI (`gh: command not
+> found`), and this repo's own `git remote` points at
+> `The-Ai-automation-Queen/content-system`, not queen-brain — same blocker
+> content-engine has logged repeatedly (`content-vault.md` "Most recent").
+> The two follow-ups flagged 2026-07-05 remain open and uncaptured: (1) the
+> corporate-exit trigger story (Background & Career), and (2) the current
+> stage/next-milestone for "building the content/creator-OS system itself"
+> (Current Projects). Neither is being chased with a questionnaire — noted
+> here for Fatiha to supply whenever she chooses. DM responder remains
+> paused (14/09/2026); not reenabled. No publishing or scheduling action
+> was taken this run — publication stays queue-only and manual per
+> `security.md` and `CURRENT-WORKFLOW.md`. No recurring message was sent
+> and none is authorized by this run.
+
 > **30/09/2026 brain-manager run — no personal-brain update (deliberate):**
 > User-triggered run (not autonomous cron); same outcome as 29/09 and 28/09.
 > No owner-supplied corrections, stories or project facts were given this
