@@ -2,6 +2,57 @@
 
 ---
 
+## RESEARCH 054 — 2026-10-01 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `1f215f20`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per AGENTS.md's own strategic-decision text, unchanged since 24/08/2026, in place of the queen-brain `positioning.md` copy this session cannot load):** experienced professionals, founders and consultants who feel overwhelmed by AI or struggle to turn their knowledge into visible, valuable work.
+**Internal tooling discoveries this run:** none. This entry is `shift-lead` (public-topic) evidence only.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority, methodology and recency were weighed.
+**Gap note:** the 2026-10-01 02:00 UTC automated cron run (`deploy/logs/signal-harvester-2026-10-01T02-00-02.log`) exited after the git sync step with no harvest output and no error — the same silent-exit shape flagged as new in RESEARCH 053 (2026-09-30), now seen twice in a row, and distinct from the 09-26–09-29 "weekly usage limit" failures. This is an operator-requested manual run standing in for that gap. Operator: two consecutive silent post-sync exits (09-30, 10-01) point to a new recurring failure mode in the cron path itself, separate from the already-known weekly-limit issue — worth investigating directly rather than treating as the same cause.
+
+### Signals
+
+1. **IBM Institute for Business Value — "2026 CHRO Study: Designing the Thinking Organization"** — published 2026-09-21 — https://newsroom.ibm.com/2026-09-21-new-ibm-chro-study-ai-puts-critical-thinking-at-the-center-of-workforce-priorities — direct WebFetch confirmed on IBM's own newsroom; survey of 1,500 CHROs/senior workforce-strategy executives and 8,800 employees across 21 geographies and 23 industries, fielded April–June 2026. A distinct study from the IBM "Rewiring the C-suite" CEO study already logged in RESEARCH 050 (that one surveyed 2,000 CEOs about C-suite restructuring; this one is CHRO+employee data specifically on skill erosion).
+   - `project_id`: shift-lead — `fit`: useful — `reason`: the largest-N source yet found quantifying a gap between what employers already believe about judgment/oversight skills and what employees think matters — extends the skill-erosion thread from RESEARCH 052 (Microsoft WTI) and RESEARCH 053 (APA Monitor) with a new mechanism: employers are ahead of employees on valuing the "supervise/validate/override AI" skill, not behind them.
+   - `supporting_source_excerpt`: "60% of employees worry about skills erosion, with critical thinking cited most often as declining"; "49% of employees and 57% of CHROs say critical thinking and problem framing are among the skills that matter most in the AI era"; "While 71% of CHROs identify the ability to supervise, validate and override AI outputs as the workforce's most essential skill, only 29% of employees rank judgment as important."
+   - `possible_use`: a sharper, source-attributable hook than a generic overwhelm stat — "your employer already rates judgment as the top skill for the AI era; most employees haven't caught up to that yet" — usable for pillar 2 ("find what is uniquely yours") as a reason to treat judgment as career insurance, not just a nice-to-have.
+   - `assessed_at`: 2026-10-01
+
+2. **Pipedrive — "AI and Humanity at Work"** — published 2026-08-25 — survey of 1,000 professionals across industries, employment types and age groups — verification note: the original PDF (`pipedriveassets.com/documents/AI-and-Humanity-at-Work.pdf`) returned as unreadable binary via WebFetch and the BusinessWire release returned HTTP 403; confirmed instead via two independently fetched secondary summaries (hcamag.com and completeaitraining.com) quoting identical figures, which is a weaker provenance than a direct primary fetch and is flagged here rather than silently treated as equivalent.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: the cleanest evidence yet that professionals already believe pillar 2 (judgment over tooling) when asked directly about their own success, not just in the abstract — a success-attribution angle distinct from RESEARCH 052's Resume Now decision-process stat (what they'd follow) and this run's IBM signal (what employers value).
+   - `supporting_source_excerpt`: "51.1% pointed to personal experience and judgment. Only 15.1% credited advanced AI tools" when professionals were asked what drives their success; top AI use-cases were research (46.6%), writing/editing (35.1%) and brainstorming (32.4%), with workflow automation lowest at 16.3%; "more than half of all AI resistance in the survey comes from professionals aged 35 to 54."
+   - `possible_use`: "people already use AI as a thinking partner, not an autopilot, and already credit their own judgment for their results 3:1 over the tool" is a ready-made reframe for pillar 1 ("use AI for real work") that doesn't need an overwhelm angle at all — a positive-proof-point signal, a different register from most entries logged since RESEARCH 048.
+   - `assessed_at`: 2026-10-01
+
+3. **Branch and Mastercard — "Solopreneur Report"** — published 2026-01-22 — https://www.prnewswire.com/news-releases/branch-and-mastercard-research-finds-shifting-career-priorities-new-technology-fueling-a-solopreneur-boom-302667355.html — direct WebFetch confirmed (PR Newswire original); survey of 1,400+ solopreneurs across North America.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: the largest and most demographically precise source yet for the audience itself — "nearly two-thirds (64%) are over 45, led by Baby Boomers (31%) and Gen X (30%)," explicitly described as "seasoned professionals rather than early-career entrants" going independent — paired with a sobering income reality that complicates any uncritical "just build from your expertise" framing.
+   - `supporting_source_excerpt`: "79% earn under $100,000 annually, and more than half (55%) earn below $50,000," offered as evidence of "how most solopreneurs are still building financial stability"; 66% finance their business through personal capital.
+   - `possible_use`: a scale-and-precision upgrade on RESEARCH 053's Lettuce Financial signal (603 top-earner-skewed sample) — this is the mainstream solopreneur income picture, at over twice the N, and it names the exact "experienced professional going it alone" demographic this project serves; argues for pillar 3 content that treats going solo as needing a tested system rather than inspiration alone.
+   - `assessed_at`: 2026-10-01
+
+### Rejected this run
+
+- LinkedIn-sourced "84% of Indian professionals feel unprepared" hiring-readiness stat (via Careers360) — no publish date, sample size or methodology could be confirmed for the underlying LinkedIn research in the only source found; also a geography (India) and topic (job-search readiness) mismatch against this project's audience problem (turning existing knowledge into visible work, not job-hunting). Excluded per research-policy.md's source-quality standard.
+- GoTo/Workplace Intelligence "Pulse of Work in 2026" and Thomson Reuters "Future of Professionals 2026" resurfaced in this run's searches — both already logged (RESEARCH 049's rejection note and RESEARCH 048's signal 3, respectively); not re-logged. Flagging for a possible future reassessment pass, not this run: the Thomson Reuters report carries additional stats not captured in RESEARCH 048 (91% report a perceived-vs-actual AI value gap, one-third admit unsanctioned "shadow AI" use, ~3-in-10 mid-career professionals would change jobs over AI strategy failure) that could sharpen that entry's `possible_use` without changing its `fit`.
+- Influencer Marketing Factory 2026 Creator Economy Report and Epidemic Sound's Future of the Creator Economy Report 2026 — both surfaced under a pillar-3 search but describe the broad content-creator/influencer population, not the consultant/founder/expert audience this project serves; excluded as an audience mismatch rather than a source-quality failure.
+- A further cluster of solopreneur-statistics SEO roundups (founderreports.com, ideaproof.io, lonelyentrepreneur.com, goal-group.com, startupowl.com, 500k.io, solobusinesshub.com, crevio.co) — same exclusion class as RESEARCH 052/053's roundup rejections: secondhand figures with no traceable primary source.
+
+### Source health this run
+
+- Anthropic News (High): direct WebFetch worked; newest post is still "Claude discovers a novel enzyme system with CRISPR-like repeats" (Sep 23) — the same item already checked and rejected for no audience-problem angle in RESEARCH 050-053; over a week with no new post. Not re-logged.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — 11th consecutive failed run (044 through 053, now 054), over seven weeks on the same dead fetch path. Repeating the long-overdue recommendation from 047-053: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): checked this run — WebFetch worked; the twelve most recent posts are pure ML-engineering/robotics/open-model-release topics (an OpenAI Decisions API guide, bug-fixing-agent internals, a superconductor-discovery challenge, laptop-GPU pretraining, humanoid robotics, a voice dataset release), consistent with every prior run's finding; nothing logged.
+- Google DeepMind blog, a16z AI, Lenny's Newsletter (Medium/Low): not checked this run — the three confirmed signals above already filled the run at a higher confirmed-fit rate; time budget allocated there instead, consistent with inventory.md's fallback order.
+- WebSearch/WebFetch: both functional throughout, aside from OpenAI's standing 403 and a one-off 403 on BusinessWire's Pipedrive release (routed around via two independently fetched secondary summaries, noted in signal 2's provenance line above) and an unreadable-binary response on the original Pipedrive PDF.
+- No signals were invented; every URL in the Signals section above is one actually returned by a fetch or search this run, and every quoted figure was confirmed either in directly fetched primary-page text (IBM, Branch/Mastercard) or in two independently fetched secondary sources quoting matching figures from the same named primary report (Pipedrive), as disclosed above.
+
+### Historical-audience check
+
+Confirmed none of the above signals were forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only, consistent with security.md's queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 053 — 2026-09-30 | Signal harvest (current audience problem)
 
 **Status:** NOTED
