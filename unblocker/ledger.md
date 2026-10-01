@@ -6,10 +6,10 @@
 
 ## Queue (next up, in order)
 
-1. UNB-028 — Delete 5 already-merged stale branches (serve 2, shrunk from 14) *(served 30/09 — today's pick, follow-up cycle continues)*
-2. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 30/09 check confirms still unanswered, 6th morning)*
-3. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 23/09–30/09 checks confirm still unanswered)*
-4. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 30/09 check confirms still unanswered, 14th morning)*
+1. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; today's pick)*
+2. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 01/10 check confirms still unanswered, 7th morning)*
+3. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 23/09–01/10 checks confirm still unanswered)*
+4. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 01/10 check confirms still unanswered, 15th morning)*
 
 > UNB-001 through UNB-024 (below) are the original 06/07/2026 seed batch, built
 > entirely from the pre-pivot offer model (Whop SKU checkouts, Fast Forward
@@ -367,6 +367,17 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   UNB-028 (serve 2, follow-up on yesterday's fresh pick). Put the
   kill/shrink/blocker question to Fatiha again in today's end-of-run
   briefing. `served_count` left at 3 pending her answer.
+- **01/10/2026 follow-up:** `content-vault.md` header and `review-cockpit/
+  state.md`'s 01/10 pre-digest sweep (run this morning via `/review-cockpit
+  digest`, logged at `deploy/logs/review-cockpit digest-2026-10-01T07-30-02.log`)
+  both confirm ENTRY 093/092/091 still `READY TO POST`, unchanged (15th
+  morning running). `getUpdates` empty for the 37th consecutive sweep since
+  the 14/09 digest — no reply to the 17/09 confrontation in two weeks. Same
+  no-serve-4-rule reasoning: did not re-send or escalate over Telegram.
+  Today's single serve went to UNB-028 (serve 3, its own confrontation
+  point — see below). Put the kill/shrink/blocker question to Fatiha again
+  in today's end-of-run briefing. `served_count` left at 3 pending her
+  answer.
 
 ---
 
@@ -457,6 +468,13 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   the 22/09 confrontation in eight days — still no serve-4 rule, did not
   re-send. Today's serve went to UNB-028 (serve 2, follow-up on
   yesterday's fresh pick).
+- **01/10/2026 follow-up:** re-ran `git ls-remote` on all 5 repos live this
+  morning — identical `403 Write access to repository not granted` on
+  every one, unchanged since 20/09. Session reality-check banner still
+  confirms "canon: queen-brain NOT in this session." Not done, no reply to
+  the 22/09 confrontation in nine days — still no serve-4 rule, did not
+  re-send. Today's serve went to UNB-028 (serve 3, its own confrontation
+  point).
 
 ### UNB-027 — Decide fate of `content-system-DUPLICATE`
 - **why:** a full second git checkout of this repo, frozen at commit
@@ -518,6 +536,11 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   confrontation. No reply. Per the skill's no-serve-4 rule, did not re-send
   or escalate further. Today's single serve went to UNB-028 (serve 2,
   follow-up on yesterday's fresh pick).
+- **01/10/2026 follow-up:** `ls -ld ~/content-system-DUPLICATE` confirms
+  it's still there, unchanged, seventh morning running since the 25/09
+  confrontation. No reply. Per the skill's no-serve-4 rule, did not re-send
+  or escalate further. Today's single serve went to UNB-028 (serve 3, its
+  own confrontation point).
 
 ### UNB-028 — Review and prune stale branches (74 of 136, oldest 176 days)
 - **why:** `git for-each-ref` on `content-system` shows 74 non-main remote
@@ -537,9 +560,10 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   29/09/2026 via `git for-each-ref` + `git branch -r --merged origin/main`
 - **verify:** `git for-each-ref` no longer lists >30-day-stale branches
   without an explicit keep-reason
-- **status:** served · served_count: 2 · added: 2026-09-20 · pack:
+- **status:** served · served_count: 3 · added: 2026-09-20 · pack:
   `packs/2026-09-29-UNB-028-delete-14-merged-branches.md`,
-  `packs/2026-09-30-UNB-028-delete-5-branches.md`
+  `packs/2026-09-30-UNB-028-delete-5-branches.md`,
+  `packs/2026-10-01-UNB-028-serve-3-confrontation.md`
 - **29/09/2026 prep note:** re-ran the stale-branch scan live (74 branches
   committed before 2026-08-30, vs 64 on 20/09 — the pile is growing, not
   shrinking). To fit the 15-minute window and keep this execute-only,
@@ -562,6 +586,21 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   2026 commits), re-verified live as still fully merged into `main`, as a
   single paste under a minute. The remaining 9 of the 14 and the 60
   unmerged stale branches stay parked. Delivered via Telegram.
+- **01/10/2026 follow-up (serve 3):** `git fetch origin --prune` +
+  `git for-each-ref` this morning shows the pile has grown to 75 branches
+  committed before 2026-08-30 (up from 74 on 29/09 and 30/09) — the
+  5-branch command from yesterday's pack was not run. Not done, third
+  morning running. Per the skill's serve-3 rule, sent the gentle
+  confrontation (done / swap / smaller / not-doing-this-one) instead of
+  repeating the same 5-branch ask a third time; `deploy/telegram-notify.sh`
+  confirmed the send. Full estate scan this run (ROADMAP.md,
+  ACTION-PLAN-CASH-MACHINE.md, lead-magnets.csv, content-vault.md,
+  review-cockpit/state.md) found no new ledger-eligible item and no
+  completions among UNB-025–027 — all three remain unchanged and already
+  past their own serve-3 cap with no serve-4 rule, so none were re-sent.
+  `queen-brain` and the other 5 estate repos remain absent from this
+  session (identical 403s on every check since 20/09), so UNB-001–024 stay
+  out of scope per the 15/09 superseded-batch note.
 
 ---
 
