@@ -16,6 +16,24 @@ digest run overwrites it.
 
 ## Process sweeps log
 
+- 02/10/2026, second sweep today (operator-requested `process` run, this
+  run — run end to end per operator request via `/review-cockpit process`,
+  obeying `CLAUDE.md` and `security.md`) — `getUpdates` (no offset, none
+  stored) returned empty (`{"ok":true,"result":[]}`). Nothing to route: no
+  card decisions, no unblocker replies, no voice notes — 41st consecutive
+  empty sweep since the 14/09/2026 digest. Vault counts reconfirmed
+  directly from `content-vault.md`'s `## ENTRY ... |` status suffixes: 37
+  READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED / 0 POSTED (78 entries
+  total) — matches this session's reality-check hook exactly.
+  `unblocker/ledger.md` checked — open queue items (UNB-025, UNB-026,
+  UNB-027, UNB-028) are pre-existing unblocker blockers awaiting a human
+  pass, not review-cockpit replies; not touched by this skill. Nothing
+  applied to the vault, `decisions-log.md` unchanged. The 9 cards from the
+  02/10 digest (#1–#6, R1–R3, message_ids 1228–1236) remain outstanding.
+  Publishing stayed queue-only throughout (`security.md` §3.1, `CLAUDE.md`)
+  — no post released, no Blotato queue touched. Confirmation sent to
+  Telegram (message_id 1238).
+
 - 02/10/2026 — pre-digest sweep (operator-requested `digest` run, run
   end-to-end per operator request via `/review-cockpit digest`, obeying
   `CLAUDE.md` and `security.md`; today's scheduled 07:30 cron
