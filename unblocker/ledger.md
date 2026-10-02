@@ -378,6 +378,19 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   point — see below). Put the kill/shrink/blocker question to Fatiha again
   in today's end-of-run briefing. `served_count` left at 3 pending her
   answer.
+- **02/10/2026 follow-up (interactive run):** `content-vault.md` header
+  confirms ENTRY 093/092/091 still `READY TO POST`, unchanged — 16th morning
+  running, 37 READY TO POST / 0 POSTED per the session reality-check hook,
+  unchanged since the 22/06 vault reset. Live `getUpdates` this run returned
+  empty (`{"ok":true,"result":[]}`) — no reply to the 17/09 confrontation in
+  over two weeks. The 08:00 automated `/unblocker daily` cron also ran this
+  morning but produced no output beyond the git-pull step
+  (`deploy/logs/unblocker daily-2026-10-02T08-00-02.log`, 4 lines, no "done"
+  line) — the `claude -p` invocation itself appears to have failed; flagged
+  in today's briefing as a separate operational fact, not folded into this
+  entry. Same no-serve-4-rule reasoning: did not re-send over Telegram.
+  `served_count` left at 3 pending her answer — put to her directly in
+  today's briefing instead, since this run is interactive.
 
 ---
 
@@ -475,6 +488,13 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   the 22/09 confrontation in nine days — still no serve-4 rule, did not
   re-send. Today's serve went to UNB-028 (serve 3, its own confrontation
   point).
+- **02/10/2026 follow-up (interactive run):** re-ran `git ls-remote` on all
+  5 repos live this morning — identical `403 Write access to repository not
+  granted` on every one, unchanged since 20/09. Session reality-check
+  banner still confirms "canon: queen-brain NOT in this session." Not done,
+  no reply to the 22/09 confrontation in ten days — still no serve-4 rule,
+  did not re-send over Telegram. Put directly to Fatiha in today's briefing
+  instead, since this run is interactive.
 
 ### UNB-027 — Decide fate of `content-system-DUPLICATE`
 - **why:** a full second git checkout of this repo, frozen at commit
@@ -541,6 +561,11 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   confrontation. No reply. Per the skill's no-serve-4 rule, did not re-send
   or escalate further. Today's single serve went to UNB-028 (serve 3, its
   own confrontation point).
+- **02/10/2026 follow-up (interactive run):** `ls -ld ~/content-system-DUPLICATE`
+  confirms it's still there, unchanged, eighth morning running since the
+  25/09 confrontation. No reply. Per the skill's no-serve-4 rule, did not
+  re-send over Telegram — put directly to Fatiha in today's briefing
+  instead, since this run is interactive.
 
 ### UNB-028 — Review and prune stale branches (74 of 136, oldest 176 days)
 - **why:** `git for-each-ref` on `content-system` shows 74 non-main remote
@@ -601,6 +626,27 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   `queen-brain` and the other 5 estate repos remain absent from this
   session (identical 403s on every check since 20/09), so UNB-001–024 stay
   out of scope per the 15/09 superseded-batch note.
+- **02/10/2026 follow-up (interactive run):** `git fetch origin --prune` +
+  `git for-each-ref` this morning shows the pile has grown again, to 76
+  branches committed before 2026-08-30 (up from 75 on 01/10, 74 on
+  29/09–30/09, 64 on 20/09) — neither the 14-branch nor the 5-branch paste
+  from the earlier packs appears to have been run. `getUpdates` returned
+  empty — no reply to the 01/10 confrontation yet (second morning running,
+  not a re-escalation point). Did not re-send. This morning's automated
+  08:00 `/unblocker daily` cron produced no completed output (git-pull step
+  only, no "done" line) — see `deploy/logs/unblocker daily-2026-10-02T08-00-02.log`;
+  this interactive run is standing in for that failed cron slot. Full
+  estate scan (ROADMAP.md, ACTION-PLAN-CASH-MACHINE.md, lead-magnets.csv,
+  content-vault.md, `docs/COMMERCIAL-REBUILD-BRIEF-2026-09-28.md`) found no
+  new ledger-eligible item and no completions among UNB-025–027 — all three
+  remain unchanged and already past serve-3 with no serve-4 rule, so none
+  were re-sent. The site-rebuild work in `docs/COMMERCIAL-REBUILD-BRIEF-2026-09-28.md`
+  is active on other sessions' branches (per the session reality-check
+  banner's parallel-branches list), not stalled on Fatiha, so it is not a
+  ledger candidate today. All four queue items (UNB-025/026/027/028) are
+  now simultaneously past their own serve-3 confrontation with zero reply
+  across 1–16 days — put to Fatiha directly in today's briefing rather than
+  repeating any ask over Telegram, since this run is interactive.
 
 ---
 
