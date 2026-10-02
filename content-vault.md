@@ -21,6 +21,39 @@
 
 ## Most recent (quick reference)
 
+> **02/10/2026 content-engine daily run — no new entries produced (deliberate):**
+> Fresh source material exists: `reports/signal-harvest-2026-10-02.md` landed
+> today via the operator-requested signal-harvester run that is this session's
+> most recent commit, two shift-lead (public-eligible) signals not yet merged
+> into `research-notes.md` as a numbered RESEARCH entry — a PwC Global
+> Workforce Hopes and Fears Survey (49,364 workers, 48 countries: only 51% can
+> access the learning they need, down from 59% the prior year; the "engine
+> room" segment, 56% of the workforce, has the least access — a sharper,
+> larger-sample pillar-1 angle than anything logged in RESEARCH 054) and a
+> Resume Now/Pollfish Workplace Trust in AI report (1,006 US workers: 97%
+> default to their own or a coworker's judgment over AI, and the human share
+> rises under high-stakes pressure rather than falling — a measured-behavior
+> pillar-2 proof point, not an opinion piece). Pillar 3 is an open gap this
+> run (logged, not filled, per the report's own note). Both blockers from
+> every prior run since 17/09 are unchanged today: (1) this session's
+> reality-check hook again states queen-brain is NOT in this session and
+> repeats the explicit instruction not to write price, tier, offer status or
+> customer-facing copy reconstructed from this repo's local mirror copies —
+> content-engine's entire output is customer-facing copy (multi-format
+> public drafts), so that instruction blocks drafting outright regardless of
+> research availability; (2) the release backlog is also unchanged: vault
+> still holds 37 READY TO POST (oldest 80+ days, since 14/07/2026), 33
+> DRAFT, 6 STALE, 2 KILLED, 0 POSTED per the reality-check hook;
+> `review-cockpit/state.md` shows the 01/10 third sweep as the latest logged
+> sweep (39th consecutive empty sweep per that run's commit message), and
+> `review-cockpit/decisions-log.md` shows no operator replies, approvals, or
+> kills since 14/07/2026 — so adding more DRAFT volume would still only
+> crowd an already-unreleased backlog without moving any existing item
+> toward release. No Notion, Blotato, or queen-brain/GitHub connector was
+> reachable from this session either (checked via ToolSearch — no such MCP
+> tool registered). See the operator briefing in this session's chat for
+> the recommendation (same options open since 18/09, still unanswered).
+
 > **01/10/2026 content-engine daily run — no new entries produced (deliberate):**
 > Fresh source material exists: `RESEARCH 054` (`research-notes.md`) landed
 > today via an operator-requested manual signal harvest, filling a gap where
