@@ -6,10 +6,15 @@
 
 ## Queue (next up, in order)
 
-1. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; today's pick)*
-2. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 01/10 check confirms still unanswered, 7th morning)*
-3. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 23/09–01/10 checks confirm still unanswered)*
-4. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 01/10 check confirms still unanswered, 15th morning)*
+1. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 03/10 check confirms still unanswered, 3rd morning; stale-branch count ticked down 76→74)*
+2. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 03/10 check confirms still unanswered, 9th morning)*
+3. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 03/10 check confirms still unanswered, 11 days)*
+4. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 03/10 check confirms still unanswered, 17th morning)*
+
+> **03/10/2026:** all four queue items remain simultaneously past their own
+> serve-3 confrontation with zero reply (2–17 days) and no serve-4 rule —
+> no Telegram serve went out today; put directly to Fatiha in the
+> end-of-run briefing instead (interactive run), same as 02/10.
 
 > UNB-001 through UNB-024 (below) are the original 06/07/2026 seed batch, built
 > entirely from the pre-pivot offer model (Whop SKU checkouts, Fast Forward
@@ -391,6 +396,15 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   entry. Same no-serve-4-rule reasoning: did not re-send over Telegram.
   `served_count` left at 3 pending her answer — put to her directly in
   today's briefing instead, since this run is interactive.
+- **03/10/2026 follow-up (interactive run):** `content-vault.md` header
+  confirms ENTRY 093/092/091 still `READY TO POST`, unchanged — 17th
+  morning running, 37 READY TO POST / 0 POSTED, matching both the session
+  reality-check hook and `review-cockpit/state.md`'s 03/10 pre-digest sweep.
+  Live `getUpdates` this run returned empty (`{"ok":true,"result":[]}`,
+  review-cockpit's 43rd consecutive empty sweep since 14/09) — no reply to
+  the 17/09 confrontation in over two and a half weeks. Same
+  no-serve-4-rule reasoning: did not re-send over Telegram. `served_count`
+  left at 3 pending her answer — put to her directly in today's briefing.
 
 ---
 
@@ -495,6 +509,13 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   no reply to the 22/09 confrontation in ten days — still no serve-4 rule,
   did not re-send over Telegram. Put directly to Fatiha in today's briefing
   instead, since this run is interactive.
+- **03/10/2026 follow-up (interactive run):** re-ran `git ls-remote` over
+  HTTPS on all 5 repos live this morning — identical `403 Write access to
+  repository not granted` on every one, unchanged since 20/09 (14th day).
+  Session reality-check banner still confirms "canon: queen-brain NOT in
+  this session." Not done, no reply to the 22/09 confrontation in eleven
+  days — still no serve-4 rule, did not re-send over Telegram. Put
+  directly to Fatiha in today's briefing instead.
 
 ### UNB-027 — Decide fate of `content-system-DUPLICATE`
 - **why:** a full second git checkout of this repo, frozen at commit
@@ -566,6 +587,11 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   25/09 confrontation. No reply. Per the skill's no-serve-4 rule, did not
   re-send over Telegram — put directly to Fatiha in today's briefing
   instead, since this run is interactive.
+- **03/10/2026 follow-up (interactive run):** `ls -ld ~/content-system-DUPLICATE`
+  confirms it's still there, unchanged, ninth morning running since the
+  25/09 confrontation. No reply. Per the skill's no-serve-4 rule, did not
+  re-send over Telegram — put directly to Fatiha in today's briefing
+  instead.
 
 ### UNB-028 — Review and prune stale branches (74 of 136, oldest 176 days)
 - **why:** `git for-each-ref` on `content-system` shows 74 non-main remote
@@ -647,6 +673,23 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   now simultaneously past their own serve-3 confrontation with zero reply
   across 1–16 days — put to Fatiha directly in today's briefing rather than
   repeating any ask over Telegram, since this run is interactive.
+- **03/10/2026 follow-up (interactive run):** `git fetch origin --prune` +
+  `git for-each-ref` this morning shows 74 branches committed before
+  2026-08-30 — down from 76 on 02/10 (first drop since the count started
+  climbing on 20/09), though still neither the 14-branch nor the 5-branch
+  paste from the earlier packs appears to have been run deliberately; more
+  likely 2 branches were merged/deleted independently elsewhere than that
+  the ask was actioned. No reply to the 01/10 confrontation (third morning
+  running, still no serve-4 rule — did not re-send). Full estate scan
+  (ROADMAP.md, ACTION-PLAN-CASH-MACHINE.md, lead-magnets.csv,
+  content-vault.md, `docs/COMMERCIAL-REBUILD-BRIEF-2026-09-28.md`,
+  `review-cockpit/state.md`'s 03/10 digest) found no new ledger-eligible
+  item and no completions among UNB-025–027 — all three remain unchanged
+  and already past serve-3 with no serve-4 rule, so none were re-sent. All
+  four queue items (UNB-025/026/027/028) remain simultaneously past their
+  own serve-3 confrontation with zero reply across 2–17 days — put to
+  Fatiha directly in today's briefing rather than repeating any ask over
+  Telegram.
 
 ---
 
