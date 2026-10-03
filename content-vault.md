@@ -21,6 +21,46 @@
 
 ## Most recent (quick reference)
 
+> **03/10/2026 content-engine daily run — no new entries produced (deliberate):**
+> Fresh source material exists: `RESEARCH 055` (`research-notes.md`) landed
+> today via an operator-requested manual signal harvest, this time logged
+> correctly under the RESEARCH-NNN convention (the 02/10 run had broken it
+> by writing to `reports/signal-harvest-2026-10-02.md` instead — those two
+> findings, PwC and Resume Now/Pollfish, still sit outside the ledger,
+> unbackfilled, per RESEARCH 055's own gap note). RESEARCH 055 also flags
+> the automated 02:00 UTC harvest cron as now 4-for-4 silently failing
+> (09-30, 10-01, 10-02, 10-03), each requiring a separate manual run — a
+> cron-execution-path bug, not a research gap. Three shift-lead
+> (public-eligible) signals, all pillar 2 ("find what is uniquely yours"):
+> Anthropic's own "Claude Frontier Academy" announcement ($100M to train
+> 10,000 engineers, explicitly reasoning that technical AI skill alone
+> doesn't produce value without business-problem judgement — a named-lab
+> admission, not a third-party survey), a BCG survey of 70 C-suite leaders
+> (60%+ see de-skilling as a material threat within 3-5 years, only ~10%
+> have an organization-wide plan — a ready urgency hook: the gap is action,
+> not awareness), and a Robert Half survey of 1,300+ US workers (only 36%
+> think AI tool knowledge matters for early-career success vs. judgement
+> and accountability — the third leg of a now-triangulated claim alongside
+> RESEARCH 054's IBM and Pipedrive signals). Both blockers from every prior
+> run since 17/09 are unchanged today: (1) this session's reality-check
+> hook again states queen-brain is NOT in this session and repeats the
+> explicit instruction not to write price, tier, offer status or
+> customer-facing copy reconstructed from this repo's local mirror copies —
+> content-engine's entire output is customer-facing copy (multi-format
+> public drafts), so that instruction blocks drafting outright regardless
+> of research availability; (2) the release backlog is also unchanged:
+> vault still holds 37 READY TO POST (oldest 81+ days, since 14/07/2026),
+> 33 DRAFT, 6 STALE, 2 KILLED, 0 POSTED per the reality-check hook;
+> `review-cockpit/state.md`/the 02/10 commit message logs the 42nd
+> consecutive empty Telegram sweep, and `review-cockpit/decisions-log.md`
+> shows no operator replies, approvals, or kills since 14/07/2026 — so
+> adding more DRAFT volume would still only crowd an already-unreleased
+> backlog without moving any existing item toward release. No Notion,
+> Blotato, or queen-brain/GitHub connector was reachable from this session
+> either (checked via ToolSearch — no such MCP tool registered). See the
+> operator briefing in this session's chat for the recommendation (same
+> options open since 18/09, still unanswered).
+
 > **02/10/2026 content-engine daily run — no new entries produced (deliberate):**
 > Fresh source material exists: `reports/signal-harvest-2026-10-02.md` landed
 > today via the operator-requested signal-harvester run that is this session's
