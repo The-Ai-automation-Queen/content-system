@@ -2,6 +2,55 @@
 
 ---
 
+## RESEARCH 055 — 2026-10-03 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `c533dfc5`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per AGENTS.md's own strategic-decision text, unchanged since 24/08/2026, in place of the queen-brain `positioning.md` copy this session cannot load):** experienced professionals, founders and consultants who feel overwhelmed by AI or struggle to turn their knowledge into visible, valuable work.
+**Internal tooling discoveries this run:** none logged separately as internal-research; all three signals below are `shift-lead` (public-topic) evidence.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority, methodology and recency were weighed.
+**Gap note:** the automated 02:00 UTC cron again produced no harvest output today (`deploy/logs/signal-harvester-2026-10-03T02-00-03.log` — git sync only, nothing after). This is now the 4th consecutive day (09-30, 10-01, 10-02, 10-03) the cron has failed to complete a harvest unattended, each requiring a separate operator-requested manual run to actually produce signals — no longer worth re-flagging as "new" each time; the cron execution path itself needs a direct fix, not another workaround run. Separately: the 2026-10-02 operator-requested run (commit `0f5740e1`) broke the RESEARCH-NNN logging convention — it wrote `reports/signal-harvest-2026-10-02.md` instead of appending here, so its two confirmed findings (PwC's *Global Workforce Hopes and Fears 2026* and a Resume Now/Pollfish *Workplace Trust in AI* survey) sit outside this ledger, and the numbering above jumps from RESEARCH 053 (09-30) straight to RESEARCH 054 (10-01) with no 10-02 entry. Not backfilled here, to avoid misdating someone else's findings under today's run — operator's call whether to fold them in separately.
+
+### Signals
+
+1. **Anthropic — "Claude Frontier Academy: $100M to train 10,000 engineers"** — published 2026-10-02 — https://www.anthropic.com/news/claude-frontier-academy — direct WebFetch confirmed on Anthropic's own newsroom; corroborated by CNBC, Forkast and several other independent outlets reporting the same figures.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: Anthropic's own stated rationale for the program names the exact mechanism behind this project's pillar 2 ("find what is uniquely yours") — not a generic AI-adoption story.
+   - `supporting_source_excerpt`: "A small group of deeply skilled people drives an outsized share of what AI delivers"; "the people with the skills to make it work inside a real business have become the hardest talent to find"; the program targets practitioners who combine technical AI foundation with business-problem judgment, not theoretical AI knowledge alone.
+   - `possible_use`: a primary-source, named-lab admission that technical AI fluency alone doesn't produce value — contextual judgment does — directly supports "the AI skill gap isn't the tool, it's knowing what to point it at," a sharper framing than the HR-survey-based judgment signals logged in RESEARCH 052-054.
+   - `assessed_at`: 2026-10-03
+
+2. **Boston Consulting Group — "When Everyone Uses AI, Companies Risk Losing Critical Skills"** — published 2026-06-17 — https://www.bcg.com/publications/2026/when-everyone-uses-ai-companies-risk-critical-skills — direct WebFetch confirmed; global survey of 70 C-suite leaders and senior executives across multiple industries.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: a leadership-level (not just HR/employee-level) data point on the same de-skilling thread running since RESEARCH 052-054, with a concrete action-gap figure not yet logged: nearly all leaders see the risk, almost none have a plan.
+   - `supporting_source_excerpt`: "Half are already observing de-skilling in their organizations"; "More than 60% believe that de-skilling will pose a material threat to their organization within the next three to five years"; "Only one in ten companies has an organization-wide strategy or has launched targeted initiatives to address de-skilling"; at-risk skills named explicitly as "judgment and decision making, problem understanding and framing, creative thinking, analysis and causal reasoning, and solution generation and evaluation."
+   - `possible_use`: "60% of leaders see this coming, 10% have a plan" is a ready-made urgency hook for pillar 2 — the gap isn't awareness, it's action, which argues for a practical first-step angle rather than another "AI is eroding skills" headline.
+   - `assessed_at`: 2026-10-03
+
+3. **Robert Half — "Today's professionals share what early career workers need to succeed — beyond AI skills"** — published 2026-04-16 — https://press.roberthalf.com/2026-04-16-Robert-Half-survey-Todays-professionals-share-what-early-career-workers-need-to-succeed-beyond-AI-skills — direct WebFetch confirmed on Robert Half's own press site; survey of 1,300+ employed U.S. workers, fielded March 2026 by an independent research firm.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: a named-sample survey stating plainly that AI tool knowledge is now baseline, not differentiating — judgment and accountability are what's scarce — reinforcing the same claim RESEARCH 054's IBM/Pipedrive signals made, from a recruiting-industry source rather than an HR-research or vendor source.
+   - `supporting_source_excerpt`: "What will define early career success is how someone can apply judgment and accountability to their work"; only 36% think new workers need to demonstrate AI tool knowledge, while 37% actively warn against using AI to overstate skills or experience.
+   - `possible_use`: a three-way source triangulation now exists for "judgment, not AI fluency, is the scarce skill" (IBM CHRO study, Pipedrive, Robert Half) — strong enough to retire the overwhelm-only framing for this specific claim and write from the triangulated stat directly, citing at least two of the three.
+   - `assessed_at`: 2026-10-03
+
+### Rejected this run
+
+- **Zoom + Upwork "Small Business AI Report"** (cited via Zoom's "State of Solopreneurship in 2026" blog, published 2026-02-02) — the citing blog gives no sample size or methodology, and no search turned up the underlying primary report with disclosed methodology. Same exclusion class as RESEARCH 054's LinkedIn/Careers360 rejection: a real-sounding named report with unconfirmable sourcing. The 64%-growth and 91%-admin-reduction figures are widely re-quoted online but none trace to a verifiable sample.
+- Anthropic's own "Introducing Claude Sonnet 5.5" (2026-09-28), "Introducing Claude Opus 5.5" (2026-09-22), the Barclays deployment case study (2026-10-01) and the DRC Ebola "Situation Report" (2026-09-22) — all confirmed fresh via the same newsroom fetch, but rejected for this ledger: product-release and case-study news with no audience-problem angle, consistent with how generic model-release items have been excluded in every run since RESEARCH 050.
+- Hugging Face Blog's nine most recent posts (checked this run) — pure ML-engineering/robotics/dataset topics (llama.cpp decision models, MoE training infra, laptop-GPU pretraining, robotics benchmarking, voice datasets), same pattern flagged as a non-fit in every run since RESEARCH 050.
+
+### Source health this run
+
+- Anthropic News (High): WebFetch worked; five posts newer than RESEARCH 054's check (Oct 2 Claude Frontier Academy logged above; Oct 1 Barclays; Sep 28 Sonnet 5.5; Sep 22 Opus 5.5 and the DRC report) — the first genuinely new Anthropic News content in several runs.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — 12th consecutive failed run (044 through 054, now 055), over seven weeks on the same dead fetch path. Repeating the overdue recommendation from 047-054: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): checked this run — WebFetch worked; see Rejected section above; nothing logged, consistent with every prior run's finding.
+- Google DeepMind blog, a16z AI, Lenny's Newsletter (Medium/Low): not checked this run — the three confirmed signals above already filled the run at a higher confirmed-fit rate; time budget allocated there instead, consistent with inventory.md's fallback order.
+- WebSearch/WebFetch: both functional throughout, aside from OpenAI's standing 403. No signals were invented; every URL in the Signals section above is one actually returned by a fetch or search this run, and every quoted figure was confirmed in directly fetched primary-page text (Anthropic, BCG, Robert Half).
+
+### Historical-audience check
+
+Confirmed none of the above signals were forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only, consistent with security.md's queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 054 — 2026-10-01 | Signal harvest (current audience problem)
 
 **Status:** NOTED
