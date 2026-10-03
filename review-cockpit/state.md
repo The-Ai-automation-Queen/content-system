@@ -7,14 +7,38 @@ digest run overwrites it.
 ## Telegram offset
 
 - Last `getUpdates` consumed offset: still none pending — checked again
-  on 01/10/2026 (operator-requested `digest` run, pre-digest sweep), queue
+  on 03/10/2026 (operator-requested `digest` run, pre-digest sweep), queue
   empty (`{"ok":true,"result":[]}`). No card replies, no unblocker
-  replies, no voice notes since the 14/09/2026 digest (37th consecutive
+  replies, no voice notes since the 14/09/2026 digest (43rd consecutive
   empty sweep).
 - Next `process` run should call `getUpdates` with no offset filter until a
   reply produces an `update_id` to anchor to.
 
 ## Process sweeps log
+
+- 03/10/2026 — pre-digest sweep (operator-requested `digest` run, run
+  end-to-end per operator request via `/review-cockpit digest`, obeying
+  `CLAUDE.md` and `security.md`; today's scheduled 07:30 cron
+  (`deploy/logs/review-cockpit digest-2026-10-03T07-30-02.log`) only did a
+  git sync, no actual send — this is the first real send today).
+  `getUpdates` (no offset, none stored) returned empty
+  (`{"ok":true,"result":[]}`). Nothing to route: no card decisions, no
+  unblocker replies, no voice notes — 43rd consecutive empty sweep since
+  the 14/09/2026 digest. Vault counts reconfirmed directly from
+  `content-vault.md`'s `## ENTRY ... |` status suffixes: 37 READY TO POST /
+  33 DRAFT / 6 STALE / 2 KILLED / 0 POSTED (78 entries total) — matches
+  this session's reality-check hook exactly. `unblocker/ledger.md`
+  checked — open queue items (UNB-025–028) are pre-existing unblocker
+  blockers awaiting a human pass, not review-cockpit replies; not touched
+  by this skill. `lead-magnets.csv` reconfirmed: WORDS and TEAM both
+  `active=yes` — no CTA-BLOCKED needed for R1–R3. Nothing applied to the
+  vault, `decisions-log.md` unchanged. All 9 cards from the 02/10 digest
+  (#1–#6, R1–R3, message_ids 1228–1236) go stale as of this run, superseded
+  by the digest below. Digest send followed immediately (header message_id
+  1240, footer message_id 1250; no separate confirmation line — the digest
+  send itself is this run's output per skill step 3). Publishing stayed
+  queue-only throughout (`security.md` §3.1, `CLAUDE.md`) — no post
+  released, no Blotato queue touched.
 
 - 02/10/2026, third sweep today (operator-requested `process` run, this
   run — run end to end per operator request via `/review-cockpit process`,
@@ -582,6 +606,43 @@ digest run overwrites it.
   R1–R3) remain outstanding. Publishing stayed queue-only throughout
   (`security.md` §3.1, `CLAUDE.md`) — no post released, no Blotato queue
   touched. Confirmation sent to Telegram (message_id 1143).
+
+## Last digest served — 03/10/2026 (run on operator request)
+
+Header message_id: 1240
+Footer message_id: 1250
+
+| Card | ENTRY | message_id | Platform | Pillar | Critic | CTA |
+|---|---|---|---|---|---|---|
+| #1 | ENTRY 099 | 1241 | Instagram (carousel) | Use AI for real work | pending | reflective question, no offer |
+| #2 | ENTRY 098 | 1242 | LinkedIn (text post) | Find what is uniquely yours | pending | reflective question, no offer — flags "builder-and-watchdog" framing for explicit yes/no |
+| #3 | ENTRY 097 | 1243 | Instagram / LinkedIn (text post) | Use AI for real work | pending | reflective question, no offer — overlaps #2's theme |
+| #4 | ENTRY 096 | 1244 | Instagram Reel (~40s) | Find what is uniquely yours | pending | reflective question, no offer — needs timing check |
+| #5 | ENTRY 095 | 1245 | LinkedIn | Real Talk | pending | discussion (no keyword) |
+| #6 | ENTRY 094 | 1246 | LinkedIn | Build Once, Runs Forever | 7.2 | community tease — CTA-BLOCKED (VERIFY + PREP) |
+| R1 | ENTRY 047 | 1247 | LinkedIn | What's Worth It | n/a | WORDS (live) — READY since 14/07/2026 (81d) |
+| R2 | ENTRY 048 | 1248 | X/Twitter thread | The Freedom Business | n/a | TEAM (live) — READY since 14/07/2026 (81d) |
+| R3 | ENTRY 049 | 1249 | Short-form video | Build Once, Runs Forever | n/a | TEAM (live) — READY since 14/07/2026 (81d) |
+
+Notes:
+- Card set is identical to the 01/10–02/10 digests (same top-6 DRAFT
+  window, same Ready-shelf three) — content-engine's 03/10 run again
+  produced no new entries (see `content-vault.md` "Most recent" note):
+  queen-brain still not reachable this session, and the release backlog
+  (37 READY TO POST / 0 POSTED) is unchanged, so adding more DRAFT volume
+  would only crowd an already-unreleased backlog. This is the ninth
+  consecutive digest with zero operator replies in between (25/09 → 29/09
+  → 30/09 → 01/10 → 02/10 → 03/10, `getUpdates` empty every sweep — 43
+  consecutive empty sweeps total across digest + process runs).
+- DRAFT pool at digest time: 33 entries, unchanged since 16/09. Ready shelf:
+  37 READY TO POST, all 81+ days old (oldest batch 14/07/2026); shelf cap
+  of 3/digest means the other 34 wait for subsequent runs.
+- SCHEDULED count still unconfirmed: latest distribution report
+  (`reports/distribution-2026-07-20.md`) is 75 days stale.
+- Ready-shelf CTA keywords (WORDS, TEAM) confirmed `active=yes` in
+  `lead-magnets.csv` — no CTA-BLOCKED needed for R1–R3.
+- No replies processed this run (pre-digest `getUpdates` sweep was empty).
+  decisions-log.md unchanged.
 
 ## Last digest served — 02/10/2026 (run on operator request)
 
