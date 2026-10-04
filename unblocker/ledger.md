@@ -6,15 +6,19 @@
 
 ## Queue (next up, in order)
 
-1. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 03/10 check confirms still unanswered, 3rd morning; stale-branch count ticked down 76→74)*
-2. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 03/10 check confirms still unanswered, 9th morning)*
-3. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 03/10 check confirms still unanswered, 11 days)*
-4. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 03/10 check confirms still unanswered, 17th morning)*
+1. UNB-029 — Delete dead `main-site/assets/work-with-me-v3.css` *(served 04/10 — fresh, 2-minute task, pack delivered via Telegram)*
+2. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 04/10 check confirms still unanswered, 4th morning; stale-branch count unchanged at 74)*
+3. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 04/10 check confirms still unanswered, 10th morning)*
+4. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 04/10 check confirms still unanswered, 12 days)*
+5. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 04/10 check confirms still unanswered, 18th morning)*
 
-> **03/10/2026:** all four queue items remain simultaneously past their own
-> serve-3 confrontation with zero reply (2–17 days) and no serve-4 rule —
-> no Telegram serve went out today; put directly to Fatiha in the
-> end-of-run briefing instead (interactive run), same as 02/10.
+> **04/10/2026:** UNB-025/026/027/028 all remain simultaneously past their
+> own serve-3 confrontation with zero reply (3–18 days) and no serve-4 rule —
+> not re-served over Telegram, put directly to Fatiha in the end-of-run
+> briefing instead (interactive run), same as 02/10 and 03/10. Today's
+> single Telegram serve went to UNB-029 instead: fresh, unserved, 2-minute
+> effort, satisfies the variety rule after four straight access/duplicate/
+> branch asks.
 
 > UNB-001 through UNB-024 (below) are the original 06/07/2026 seed batch, built
 > entirely from the pre-pivot offer model (Whop SKU checkouts, Fast Forward
@@ -405,6 +409,15 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   the 17/09 confrontation in over two and a half weeks. Same
   no-serve-4-rule reasoning: did not re-send over Telegram. `served_count`
   left at 3 pending her answer — put to her directly in today's briefing.
+- **04/10/2026 follow-up (interactive run):** `content-vault.md` header and
+  session reality-check hook both confirm ENTRY 093/092/091 still `READY TO
+  POST`, unchanged — 18th morning running, 37 READY TO POST / 0 POSTED.
+  `review-cockpit/state.md`'s 04/10 pre-digest sweep confirms `getUpdates`
+  still empty (46th consecutive empty sweep since 14/09) — no reply to the
+  17/09 confrontation in nearly three weeks. Same no-serve-4-rule reasoning:
+  did not re-send over Telegram. Today's single serve went to UNB-029
+  (fresh, variety rule). `served_count` left at 3 pending her answer — put
+  to her directly in today's briefing.
 
 ---
 
@@ -516,6 +529,14 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   this session." Not done, no reply to the 22/09 confrontation in eleven
   days — still no serve-4 rule, did not re-send over Telegram. Put
   directly to Fatiha in today's briefing instead.
+- **04/10/2026 follow-up (interactive run):** re-ran `git ls-remote` over
+  HTTPS on all 5 repos live this morning — identical `403 Write access to
+  repository not granted` on every one, unchanged since 20/09 (15th day).
+  Session reality-check banner still confirms "canon: queen-brain NOT in
+  this session." Not done, no reply to the 22/09 confrontation in twelve
+  days — still no serve-4 rule, did not re-send over Telegram. Today's
+  serve went to UNB-029 (fresh, variety rule). Put UNB-026 directly to
+  Fatiha in today's briefing instead.
 
 ### UNB-027 — Decide fate of `content-system-DUPLICATE`
 - **why:** a full second git checkout of this repo, frozen at commit
@@ -703,6 +724,13 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   own serve-3 confrontation with zero reply across 2–17 days — put to
   Fatiha directly in today's briefing rather than repeating any ask over
   Telegram.
+- **04/10/2026 follow-up (interactive run):** `git fetch origin --prune` +
+  `git for-each-ref` this morning shows 74 branches committed before
+  2026-08-30 — unchanged from 03/10 (first flat day since the count started
+  moving on 20/09). No reply to the 01/10 confrontation (4th morning
+  running, still no serve-4 rule — did not re-send). Today's single serve
+  went to UNB-029 (fresh, variety rule) rather than a 4th repeat of this
+  ask. Put UNB-028 directly to Fatiha in today's briefing instead.
 
 ### UNB-029 — Delete dead `main-site/assets/work-with-me-v3.css`
 - **why:** the live work-with-me page (`main-site/work-with-fatiha/index.html:93-94`)
@@ -722,7 +750,15 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   `index.html:93-94` confirms v4 is what's actually loaded)
 - **verify:** `work-with-me-v3.css` no longer exists, or is confirmed to be
   loaded somewhere this scan missed and kept with a documented reason
-- **status:** new · served_count: 0 · added: 2026-10-04
+- **status:** served · served_count: 1 · added: 2026-10-04 · pack:
+  `packs/2026-10-04-UNB-029-delete-dead-v3-css.md`
+- **04/10/2026 prep note:** re-verified live before serving — grepped every
+  `.html`/`.css`/`.js` file in the repo for `work-with-me-v3`, zero live
+  hits; confirmed `main-site/work-with-fatiha/index.html:93-94` loads only
+  the v4 files. Pack gives the exact 3-line `git rm` / commit / push paste.
+  Selected over re-serving UNB-025/026/027/028 (all at serve-3 cap,
+  unanswered 3-18 days, no serve-4 rule) — satisfies the variety rule.
+  Delivered via Telegram.
 
 ---
 
