@@ -21,6 +21,45 @@
 
 ## Most recent (quick reference)
 
+> **04/10/2026 content-engine daily run — no new entries produced (deliberate):**
+> Fresh source material exists: `RESEARCH 056` (`research-notes.md`) landed
+> today via an operator-requested manual signal harvest, logged correctly
+> under the RESEARCH-NNN convention. RESEARCH 056 also flags the automated
+> 02:00 UTC harvest cron as now 5-for-5 silently failing (09-30 through
+> 10-04), each requiring a separate manual run — a cron-execution-path bug,
+> not a research gap, still unfixed. Three shift-lead (public-eligible)
+> signals, all extending the judgment-over-AI-fluency thread (RESEARCH
+> 052–055): a WGU/Centiment "Workforce Decoded" survey of 3,128 US hiring
+> professionals (60% say AI itself now makes evaluating candidates' real
+> skills *harder* — an evaluation/proof problem, not just a skill-demand
+> one, directly supporting the "Your Human Evidence" product direction), a
+> DataCamp/YouGov survey of 517 enterprise leaders (AI training is
+> widespread but doesn't close the gap, because the gap was never
+> technical — it's judgment: evaluating AI accuracy and translating
+> insights into decisions), and a Strada Institute survey of ~1,498
+> executives (critical thinking rated 4.3/5 importance vs. AI literacy at
+> 3.6/5 — the lowest-rated skill evaluated — plus over 40% report AI is
+> shifting entry-level work toward more judgment-based tasks, not
+> eliminating it). Both blockers from every prior run since 17/09 are
+> unchanged today: (1) this session's reality-check hook again states
+> queen-brain is NOT in this session and repeats the explicit instruction
+> not to write price, tier, offer status or customer-facing copy
+> reconstructed from this repo's local mirror copies — content-engine's
+> entire output is customer-facing copy (multi-format public drafts), so
+> that instruction blocks drafting outright regardless of research
+> availability; (2) the release backlog is also unchanged: vault still
+> holds 37 READY TO POST (oldest 82+ days, since 14/07/2026), 33 DRAFT, 6
+> STALE, 2 KILLED, 0 POSTED per the reality-check hook; `review-cockpit`'s
+> 03/10 second process sweep logged the 45th consecutive empty Telegram
+> sweep since the 14/09/2026 digest, and `review-cockpit/decisions-log.md`
+> shows no operator replies, approvals, or kills since 14/07/2026 — so
+> adding more DRAFT volume would still only crowd an already-unreleased
+> backlog without moving any existing item toward release. No Notion,
+> Blotato, or queen-brain/GitHub connector was reachable from this session
+> either (checked via ToolSearch — no such MCP tool registered). See the
+> operator briefing in this session's chat for the recommendation (same
+> options open since 18/09, still unanswered).
+
 > **03/10/2026 content-engine daily run — no new entries produced (deliberate):**
 > Fresh source material exists: `RESEARCH 055` (`research-notes.md`) landed
 > today via an operator-requested manual signal harvest, this time logged
