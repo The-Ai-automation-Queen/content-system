@@ -1,6 +1,6 @@
 # Taste File — compiled editorial-judgment map
 
-**Compiled:** 2026-09-20
+**Compiled:** 2026-10-04 (re-run; no new decisions since 2026-09-20 compile)
 **Decisions consumed:** 2 (of `review-cockpit/decisions-log.md`, full log)
 **Confidence:** 🔴 **LOW-CONFIDENCE** — 2 of 50 decisions required. This file is a
 preview, not authoritative training data. `content-engine`'s critic should treat
