@@ -592,6 +592,19 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   25/09 confrontation. No reply. Per the skill's no-serve-4 rule, did not
   re-send over Telegram — put directly to Fatiha in today's briefing
   instead.
+- **04/10/2026 follow-up (estate-janitor scan, interactive run):** still
+  there, now `a2e2bc1f..main` is 656 commits behind (was 381 on 20/09).
+  Closer look at the 2 uncommitted local edits this run found two concrete
+  footguns beyond "stale": `content-system-DUPLICATE/.gitignore` has an
+  unresolved git merge-conflict marker on disk (`<<<<<<< Updated upstream`
+  / `=======` / `>>>>>>> Stashed changes`, lines 3-7 and 52 — a stash pop
+  that was never finished), and `content-system-DUPLICATE/deploy/crontab.example`
+  line 64 still has the DM-responder cron line active/uncommented
+  (`*/5 * * * * /root/content-system/deploy/run-machine.sh "/dm-responder" 0 0`,
+  no `# PAUSED` prefix) — it predates the 14/09 DM-responder pause entirely,
+  so copying a crontab line from this checkout would re-enable paused
+  outbound DMs. Raises the stakes of this decision; still not actioned —
+  routed as evidence only, source `reports/janitor-2026-10-04.md` JAN-03.
 
 ### UNB-028 — Review and prune stale branches (74 of 136, oldest 176 days)
 - **why:** `git for-each-ref` on `content-system` shows 74 non-main remote
@@ -690,6 +703,26 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   own serve-3 confrontation with zero reply across 2–17 days — put to
   Fatiha directly in today's briefing rather than repeating any ask over
   Telegram.
+
+### UNB-029 — Delete dead `main-site/assets/work-with-me-v3.css`
+- **why:** the live work-with-me page (`main-site/work-with-fatiha/index.html:93-94`)
+  loads only `work-with-me-v4.css`/`work-with-me-v4.js`. `work-with-me-v3.css`
+  (17.5KB, same `Sep 29 12:30` timestamp as the v4 files) has zero live
+  references anywhere in the repo — the only hit for `work-with-me-v3` is a
+  changelog line in `docs/site-reviews/website-and-guides-fix-plan-2026-09-28.md:116`
+  describing a past edit, not a current include. Looks like a v3→v4 rename
+  that never deleted the old file. Low risk today (nothing points at it) but
+  it's a trap for the next person who edits "the CSS file" and picks the
+  wrong one.
+- **revenue_unlocked:** none direct; prevents a future wrong-file edit ·
+  **effort_min:** 2 (confirm v4 is correct, delete v3)
+- **depends_on:** — · **unblocks:** —
+- **source:** `reports/janitor-2026-10-04.md` JAN-08 (grep for
+  `work-with-me-v3` across `*.css`/`*.html`/`*.js`, zero live hits;
+  `index.html:93-94` confirms v4 is what's actually loaded)
+- **verify:** `work-with-me-v3.css` no longer exists, or is confirmed to be
+  loaded somewhere this scan missed and kept with a documented reason
+- **status:** new · served_count: 0 · added: 2026-10-04
 
 ---
 
