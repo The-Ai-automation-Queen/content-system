@@ -2,6 +2,56 @@
 
 ---
 
+## RESEARCH 056 — 2026-10-04 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `11d11d05`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per AGENTS.md's own strategic-decision text, unchanged since 24/08/2026, in place of the queen-brain `positioning.md` copy this session cannot load):** experienced professionals, founders and consultants who feel overwhelmed by AI or struggle to turn their knowledge into visible, valuable work.
+**Internal tooling discoveries this run:** none logged separately as internal-research; all three signals below are `shift-lead` (public-topic) evidence.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority, methodology and recency were weighed.
+**Gap note:** the automated 02:00 UTC cron again produced no harvest output today (`deploy/logs/signal-harvester-2026-10-04T02-00-03.log` — git sync only, nothing after). This is now the 5th consecutive day (09-30 through 10-04) the cron has failed to complete a harvest unattended, each requiring a separate operator-requested manual run — consistent with RESEARCH 055's note, not re-flagged as newly discovered; the cron execution path itself still needs a direct fix, not another workaround run.
+
+### Signals
+
+1. **Western Governors University (commissioned) / Centiment (fielded) — "Workforce Decoded" report** — published 2026-09-30 — https://www.globenewswire.com/news-release/2026/09/30/3372298/0/en/60-of-employers-say-ai-has-made-real-skills-harder-to-evaluate-wgu-workforce-decoded-report-finds.html — direct WebFetch confirmed on GlobeNewswire (WGU's own release); 3,128 U.S.-based hiring professionals directly involved in hiring decisions, fielded 2026-06-24 to 2026-07-07.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: the judgment/skill-erosion thread (RESEARCH 052–055: IBM, BCG, Pipedrive, Robert Half) has established that employers value judgment over AI fluency; this is the first signal found with a new mechanism — employers now say AI itself is making it *harder to verify whose judgment they're even looking at* at the hiring stage. That's an evaluation/proof problem, not just a skill-demand problem, and it's the largest sample (3,128) in this thread to date.
+   - `supporting_source_excerpt`: "60% of employers report AI makes evaluating candidates' real skills more challenging"; "32% struggle to assess AI skills effectively (doubled from 16% in 2025)"; "19% cite difficulty confirming whether they're interviewing humans versus AI"; among employers reporting increased evaluation difficulty, 54% reduced entry-level hiring; "AI is changing more than work; it is changing how employers identify and evaluate talent" — Scott Pulsipher, WGU president.
+   - `possible_use`: direct support for this project's "Your Human Evidence" direction — if employers can no longer tell human judgment from AI output at the point of hiring, documented, visible proof of your own thinking (not a tool-fluency claim, not a credential) becomes the actual differentiator; a sharper, source-attributable reason to "show your work" than a generic overwhelm hook.
+   - `assessed_at`: 2026-10-04
+
+2. **DataCamp (with YouGov) — "The AI Skills Gap in 2026: Why Most AI Training Isn't Translating to Workforce Capability"** — published 2026-03-12 — https://www.datacamp.com/blog/the-ai-skills-gap-in-2026-why-most-ai-training-isn-t-translating-to-workforce-capability — direct WebFetch confirmed on DataCamp's own blog; corroborated by independently fetched Yahoo Finance and BusinessWire coverage quoting matching figures; 517 enterprise leaders at organizations with 500+ employees, US/UK, fielded December 2025–February 2026.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: extends RESEARCH 054's "judgment, not AI fluency, is scarce" triangulation (IBM, Pipedrive, Robert Half) with a mechanism not yet logged: training itself is widespread (82% of leaders say their org offers some AI training) but doesn't close the gap, because the gap was never technical — it's "evaluating AI accuracy vs. misleading outputs" and "translating AI insights into sound decisions."
+   - `supporting_source_excerpt`: "The gap is about applied AI literacy in the broader workplace, not just hiring more technical specialists"; foundational gaps named are "evaluating AI accuracy vs. misleading outputs," "translating AI insights into sound decisions," and "distinguishing reliable information from hallucinations"; organizations with mature AI-literacy programs report 42% significant ROI vs. 21% overall.
+   - `possible_use`: a ready-made rebuttal to "I just need more AI training" — the data shows more training without judgment-building doesn't move the ROI number; supports pillar 1 ("use AI for real work") with a named mechanism (applied judgment, not tool literacy) rather than a repeat of the overwhelm framing.
+   - `assessed_at`: 2026-10-04
+
+3. **Strada Institute for the Future of Work (with Artemis Strategy Group) — "Entry-Level Hiring in the AI Era: What Employers Are Thinking (and Doing)"** — published 2026-05-19 — https://www.strada.org/news-insights/entry-level-hiring-in-the-ai-era-what-employers-are-thinking-and-doing — direct WebFetch confirmed on Strada's own site; ~1,498 executives and senior talent leaders across industries and firm sizes, fielded March 2026.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: a quantified, rated-scale version of the same claim RESEARCH 055's Robert Half signal made qualitatively — employers rate critical thinking at 4.3/5 importance versus AI literacy at 3.6/5, the lowest-rated skill evaluated — plus a distinct sub-finding not yet logged: AI is actively shifting entry-level work composition toward more judgment-based tasks, not just changing hiring preferences in the abstract.
+   - `supporting_source_excerpt`: critical thinking rated 4.3/5 importance (actual performance only 4.0); "AI literacy as the least important skill evaluated" at 3.6/5 — below communication (4.3); "over 40% of employers report that AI has increased analytical and judgment-based responsibilities" assigned to entry-level employees, shifting work away from routine tasks; work experience ranked above a 4.0 GPA with no work history.
+   - `possible_use`: the numeric importance gap (4.3 vs 3.6) is a cleaner, source-attributable stat than a percentage-based claim for the same point — "the skill employers rate lowest is the one most AI-overwhelm content tells you to chase" — and the work-composition finding supports a direct answer to "will AI take the entry-level job" with a named mechanism (the job changes, it doesn't disappear).
+   - `assessed_at`: 2026-10-04
+
+### Rejected this run
+
+- Protiviti / NC State Poole College of Management — "2026 Global Risk Survey" (Fortune/Yahoo Finance coverage of the 1,540 board-member/C-suite figure) — primary survey published 2025-12-12, over 10 months old, and the claim it supports ("critical thinking gap, not technical AI skill") is already covered with fresher, larger-sample sources above and in RESEARCH 052–055; excluded as redundant-and-stale rather than wrong.
+- The Deerborne Group's "AI reshapes consulting" release resurfaced in this run's searches — already excluded in RESEARCH 049 (self-issued, no disclosed sample size, life-sciences/oncology-executive population, not a general audience); not re-logged.
+- Anthropic News (checked): no post newer than the Oct 2 "Claude Frontier Academy" item already logged in RESEARCH 055; nothing new to assess.
+- Hugging Face Blog's ten most recent posts (checked this run): pure ML-engineering/robotics/dataset topics (llama.cpp decision models, a voice dataset, robotics-sim tooling, open-model training infra, a superconductor-discovery challenge), same pattern flagged as a non-fit in every run since RESEARCH 050.
+
+### Source health this run
+
+- Anthropic News (High): WebFetch worked; newest post unchanged since RESEARCH 055 (Oct 2); see Rejected above.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — 13th consecutive failed run (044 through 055, now 056), over eight weeks on the same dead fetch path. Repeating the long-overdue recommendation from 047–055: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): checked this run — WebFetch worked; see Rejected section above; nothing logged.
+- Google DeepMind blog, a16z AI, Lenny's Newsletter (Medium/Low): not checked this run — the three confirmed signals above already filled the run at a higher confirmed-fit rate; time budget allocated there instead, consistent with inventory.md's fallback order.
+- WebSearch/WebFetch: both functional throughout, aside from OpenAI's standing 403. No signals were invented; every URL in the Signals section above is one actually returned by a fetch or search this run, and every quoted figure was confirmed in directly fetched primary-page text (WGU/GlobeNewswire, DataCamp, Strada).
+
+### Historical-audience check
+
+Confirmed none of the above signals were forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only, consistent with security.md's queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 055 — 2026-10-03 | Signal harvest (current audience problem)
 
 **Status:** NOTED
