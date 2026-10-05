@@ -297,3 +297,5 @@ body.sk-subpage[data-page-kind="build"] .offer-handover{max-width:none;backgroun
   body.sk-subpage[data-page-kind="build"] .offer-programme .offer-step{min-height:0;padding:24px 0!important;border-right:0!important;border-bottom:1px solid #c2c9f0!important}
   body.sk-subpage[data-page-kind="build"] .offer-programme .offer-step h3{margin-top:22px}
 }
+/* 05/10/2026: the "AI can find a pattern" band stacks on tablets and phones. */
+@media(max-width:800px){body.sk-subpage[data-page-kind="workbooks"] .workbook-explain-inner{grid-template-columns:1fr;gap:20px;align-items:start}body.sk-subpage[data-page-kind="workbooks"] .workbook-explain p{max-width:none}}

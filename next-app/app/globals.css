@@ -659,3 +659,5 @@ button, input { font: inherit; }
 /* Header (28/09): links on the right in the brand nav style, MENU button on small screens only. */
 .site-header nav{flex:0 1 auto;margin-left:auto;gap:clamp(18px,2.2vw,34px);font:400 14px/1 var(--font-ui),Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
 @media(min-width:1051px){.site-header__mobile{display:none}}
+/* 05/10/2026: tablet library hero stacks so the search field has room. */
+@media(min-width:701px) and (max-width:900px){.guides-hero{grid-template-columns:1fr;min-height:0;padding:70px 32px 80px;gap:44px}.guides-hero__copy,.guides-hero__feature{max-width:620px}}
