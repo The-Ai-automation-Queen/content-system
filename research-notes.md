@@ -2,6 +2,48 @@
 
 ---
 
+## RESEARCH 058 — 2026-10-05 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `62b7c75a`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Internal tooling discoveries this run:** none logged separately as internal-research; the one signal below is `shift-lead` (public-topic) evidence.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority, methodology and recency were weighed.
+**Second run today:** RESEARCH 057 (earlier, same date, same cron-failure gap already on file) covered the morning cron's manual catch-up; this is a separate operator-requested run later the same day, checked against 057 and the full RESEARCH 052–057 thread before logging anything new to avoid duplicating either.
+
+### Signals
+
+1. **PwC — "2026 Global AI Jobs Barometer: AI reshapes global labour market into two distinct paths, rewarding human skills"** — published 2026-06-15 — https://www.prnewswire.com/news-releases/ai-reshapes-global-labour-market-into-two-distinct-paths-rewarding-human-skills-pwc-2026-global-ai-jobs-barometer-302798987.html — direct WebFetch confirmed on the PwC-issued PRNewswire release (PwC's own pwc.com/pwc.co.uk pages for this report returned HTTP 403 to WebFetch; the PRNewswire release is PwC's own distributed text, not third-party commentary); methodology disclosed as analysis of **more than one billion job advertisements across 27 countries and territories**, combined with labour-market, company-financial and occupational-task data; entry-level analysis drawn from 2.4 million US job postings.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: every source in the judgment/skill-erosion thread so far (RESEARCH 052–057: IBM, BCG, WGU, DataCamp, Strada, Pipedrive, Robert Half, Glean) is a *survey of opinions or self-reported behavior*. This is the first source in the thread built from actual labour-market transaction data (job ads and pay), not sentiment — it shows the judgment premium showing up in money and job growth, not just in what people say they value.
+   - `supporting_source_excerpt`: "the average compensation premium for workers possessing AI capabilities reached 62%, increasing from 57% the previous year" (as high as 118% in consumer markets, 16% in government); entry-level roles heavily exposed to AI are "seven times more likely to require traditionally senior-level 'human-intensive' skills like leadership, creativity or face-to-face interactions" and "expanded 35% since 2019 while other entry-level positions declined 10%"; "'professionalised' roles" — where AI automates routine work and human judgement is emphasised — "are seeing twice the growth in available jobs and 42% faster salary growth" than "democratised" roles made simpler by AI tools.
+   - `possible_use`: a money-denominated answer to "why bother protecting what's uniquely yours" (pillar 2) — a 62% pay premium and 2x job growth for judgment-centered roles, not a feeling; and the "professionalised vs. democratised" split gives pillar 3 a concrete, source-attributable test for "where AI belongs in a real business problem" — automate the part that's being democratised, keep and sharpen the part that's being professionalised — closer to answering the standing pillar-3 gap than anything logged in RESEARCH 052–057, though not a direct hit (it's labour-market-wide, not a how-a-founder-decided account).
+   - `assessed_at`: 2026-10-05
+   - **Age caveat:** published 2026-06-15, ~4 months old — same treatment class as RESEARCH 050's IBM citation, RESEARCH 054's Microsoft WorkLab citation and RESEARCH 057's Glean citation: a corroborating, established anchor, not this week's news.
+
+### Rejected this run
+
+- Resume Now (via Pollfish), "Workplace Trust in AI" — re-surfaced by search (via tradeandindustrydev.com and hcamag.com coverage, "97% of workers put human judgment first"); already captured with full source/methodology/quote detail in `reports/signal-harvest-2026-10-02.md` (S2), outside this ledger's numbering but on file — not re-logged as new.
+- `leadershipinchange.com`, "The AI Skills Gap Is a Judgment Gap: What 517 Leaders Said" — this is third-party commentary *on* the DataCamp/YouGov 517-leader survey already logged directly from DataCamp's own blog in RESEARCH 056; adds no new data, just restates it. Not used.
+- PwC, "Global Workforce Hopes and Fears Survey 2026" — surfaced again in search; this is a different PwC report from the one logged above (worker-sentiment survey, not job-ad/wage data) and is already captured in `reports/signal-harvest-2026-10-02.md` (S1). Not re-logged.
+- A broad sweep of solopreneur/founder "how to pick your first AI project" blog content (Felo.ai, Ready Solutions, aicofounderstack.com, widejournal.com, entrepreneurloop.com and others) specifically checked against the standing pillar-3 gap — all are advice/opinion content with no disclosed survey, sample or methodology behind the "start with your most time-consuming task" recommendation. Fails the sourcing bar same as every pillar-3 candidate rejected in RESEARCH 052–057. Pillar 3 remains open.
+- a16z AI (checked): current front page is VC/investor content (consumer-AI-apps roundup, founder interviews, infrastructure spend) — no publish dates exposed on the page itself, no audience-problem fit regardless. Nothing logged.
+- Lenny's Newsletter (checked): AI-related posts this run are PM/product-leadership-audience pieces (AI evals, AI-assisted design, PM leverage) — wrong audience (product managers inside companies, not solo professionals/founders). Nothing logged.
+
+### Source health this run
+
+- Anthropic News (High): WebFetch worked; newest items unchanged since RESEARCH 057 (Oct 2 Claude Frontier Academy, Oct 1 Barclays) — nothing new to assess.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — 15th consecutive failed run (044 through 058), over eight weeks on the same dead fetch path. Repeating the overdue recommendation from 047–057: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): WebFetch worked; same ML-engineering/dataset/robotics non-fit pattern as every run since RESEARCH 050. Nothing logged.
+- Google DeepMind blog (Medium): checked this run — WebFetch worked; all visible posts are product launches (Gemini 4 Argon, SynthID Bio, Gemini 3.8 Live variants, AlphaGenome Atlas, WeatherNext 3) — no audience-problem fit. Nothing logged.
+- a16z AI, Lenny's Newsletter (Medium/Low): checked this run — see Rejected section above.
+- WebSearch/WebFetch: both functional throughout, aside from OpenAI's standing 403 and PwC's own domains (pwc.com, pwc.co.uk, pwc.be) all returning 403 to WebFetch — the PwC Jobs Barometer figures above were confirmed via PwC's own PRNewswire-distributed release text, not a third-party summary. No signals were invented; every URL in the Signals section above is one actually returned by a fetch this run, and every quoted figure was confirmed in that directly fetched primary-source text.
+
+### Historical-audience check
+
+Confirmed the signal above was not forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 057 — 2026-10-05 | Signal harvest (current audience problem)
 
 **Status:** NOTED
