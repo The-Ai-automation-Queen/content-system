@@ -11,6 +11,38 @@ reference real life — not generic AI content. Updated daily by `brain-manager`
 
 ## Most recent (quick reference)
 
+> **05/10/2026 brain-manager run — no personal-brain update (deliberate):**
+> User-triggered run ("Run the /brain-manager skill end to end. Obey
+> CLAUDE.md and security.md... End with the operator briefing."). No
+> owner-supplied corrections, stories or project facts were given this
+> session, so per `skills/brain-manager/SKILL.md` nothing was invented to
+> fill the two open follow-ups below — no questionnaire was sent, per that
+> skill's explicit rule against demanding one. Context refresh from the
+> named upstream authority (`The-Ai-automation-Queen/queen-brain` per
+> `context/sources.md`) is still blocked: this session's reality-check hook
+> again states queen-brain is NOT in this session ("Ask for the repo
+> instead of reconstructing it from this one's copies"), and re-checking
+> this session found `git ls-remote` against queen-brain now returns
+> "Repository not found" (previously a 403 "Write access not granted" —
+> same net effect, no read access either way), no Notion connector
+> (`ToolSearch` for "notion" — no match), no `gh` CLI (`which gh` empty),
+> and this repo's own `git remote` still points at
+> `The-Ai-automation-Queen/content-system`, not queen-brain — same blocker
+> content-engine logged again today (`content-vault.md` "Most recent",
+> 05/10 entry, also flagging the 6th consecutive silent-failure day for the
+> 02:00 UTC signal-harvester cron). The two follow-ups flagged 2026-07-05
+> remain open and uncaptured: (1) the corporate-exit trigger story
+> (Background & Career — reinforced by the 14/07/2026 decisions-log kill
+> reasons for ENTRY 060/065, "no exit-story drafts until personal-brain
+> records the real moment"), and (2) the current stage/next-milestone for
+> "building the content/creator-OS system itself" (Current Projects).
+> Neither is being chased with a questionnaire — noted here for Fatiha to
+> supply whenever she chooses. DM responder remains paused (14/09/2026);
+> not reenabled. No publishing or scheduling action was taken this run —
+> publication stays queue-only and manual per `security.md` and
+> `CURRENT-WORKFLOW.md`. No recurring message was sent and none is
+> authorized by this run.
+
 > **04/10/2026 brain-manager run — no personal-brain update (deliberate):**
 > User-triggered run (not autonomous cron; the 20:00 autonomous cron also ran
 > today per `deploy/logs/brain-manager-2026-10-04T20-00-02.log` — git sync
