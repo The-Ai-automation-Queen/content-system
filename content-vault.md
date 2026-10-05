@@ -21,6 +21,38 @@
 
 ## Most recent (quick reference)
 
+> **05/10/2026 content-engine daily run (user-triggered, later same day) — no
+> new entries produced (deliberate):** Re-ran end to end per explicit operator
+> instruction ("Run the /content-engine daily skill end to end. Obey CLAUDE.md
+> and security.md."); `skills/content-engine/SKILL.md` not registered via the
+> Skill tool this session, so read and followed manually per the
+> `project-skills-not-registered` memory. Loaded `AGENTS.md`,
+> `CURRENT-WORKFLOW.md`, `context/current-context.json` and `security.md`
+> first, as both CLAUDE.md and the skill require. One new source landed since
+> this morning's content-engine entry below: `RESEARCH 058`
+> (`research-notes.md`, PwC "2026 Global AI Jobs Barometer") — logged by a
+> separate signal-harvester run at 22:03 UTC today, not by content-engine
+> itself; it is the first source in the judgment/skill-erosion thread
+> (RESEARCH 052–058) built from labour-market transaction data (1B+ job ads,
+> 27 countries) rather than a sentiment survey, and could sharpen a future
+> pillar-2 or pillar-3 draft once drafting is unblocked. Both standing
+> blockers are unchanged and independently reconfirmed this session: (1) this
+> session's reality-check hook again states canon: queen-brain NOT in this
+> session, and explicitly forbids writing price, tier, offer status or
+> customer-facing copy reconstructed from this repo's local mirror copies —
+> content-engine's entire output is customer-facing copy, so drafting stays
+> blocked regardless of how strong RESEARCH 058 is; (2) the release backlog is
+> also unchanged: vault still holds 37 READY TO POST (oldest since
+> 14/07/2026, 83+ days), 33 DRAFT, 6 STALE, 2 KILLED, 0 POSTED, and
+> `review-cockpit/state.md`'s latest sweep (05/10, second sweep) logged the
+> 53rd consecutive empty Telegram sweep since the 14/09/2026 digest with no
+> operator replies, approvals or kills since 14/07/2026 — adding more DRAFT
+> volume would still only crowd an already-unreleased backlog. No Notion,
+> Blotato, or queen-brain/GitHub connector was reachable from this session
+> (checked via ToolSearch — no such MCP tool registered). Operator briefing
+> given in this session's chat, same two open options as every run since
+> 18/09/2026, still unanswered.
+
 > **05/10/2026 content-engine daily run — no new entries produced (deliberate):**
 > Fresh source material exists: `RESEARCH 057` (`research-notes.md`) landed
 > today via an operator-requested manual signal harvest (the automated 02:00
