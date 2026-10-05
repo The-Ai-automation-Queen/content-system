@@ -3,60 +3,69 @@
 # 2) Install with:  crontab deploy/crontab.example
 # 3) Check with:    crontab -l
 #
-# CRON_TZ requires Debian/Ubuntu's cron (Vixie). Adjust the timezone if needed.
-CRON_TZ=Asia/Dubai
+# TIMEZONE (fixed 05/10/2026, unblocker UNB-030): Debian/Ubuntu's "cron"
+# package (3.0pl1, confirmed via `man 5 crontab` and live behavior on the
+# estate VPS) does NOT honor CRON_TZ as a scheduling offset — only "cronie"
+# does. CRON_TZ=Asia/Dubai was silently inert here: every job fired at its
+# literal clock number in the system's own timezone (UTC), 4 hours later
+# than every comment below's documented GST intent. The times below are now
+# the real UTC numbers for that same GST intent (UTC = GST − 4h); each
+# comment keeps stating the GST time a human should think in. If this repo
+# is ever installed on a host running "cronie" (which does honor CRON_TZ),
+# either keep these UTC numbers and drop CRON_TZ, or restore CRON_TZ=Asia/Dubai
+# and put the original GST numbers back — don't mix the two conventions.
 SHELL=/bin/bash
 
 # ── M00 — Brain Manager ──────────────────────────────────────
 # Daily @ 20:00 — asks the operator questions via Telegram, updates personal-brain.md.
 # This is the Cerveau Manager: the personal context layer that makes posts feel real.
-0 20 * * *   __REPO__/deploy/run-machine.sh "/brain-manager" 0 0
+0 16 * * *   __REPO__/deploy/run-machine.sh "/brain-manager" 0 0
 
 # ── Review Cockpit — the 5-minute morning ritual ─────────────
 # Daily @ 07:30 — sends the overnight drafts to Telegram as numbered cards
 # (approve / edit-by-voice-note / kill). Twice-daily process sweeps apply the
 # replies to the vault, route unblocker replies + brain voice notes, and log
 # every decision for the Taste Clone.
-30 7 * * *   __REPO__/deploy/run-machine.sh "/review-cockpit digest" 0 0
-30 12 * * *  __REPO__/deploy/run-machine.sh "/review-cockpit process" 0 0
-30 20 * * *  __REPO__/deploy/run-machine.sh "/review-cockpit process" 0 0
+30 3 * * *   __REPO__/deploy/run-machine.sh "/review-cockpit digest" 0 0
+30 8 * * *   __REPO__/deploy/run-machine.sh "/review-cockpit process" 0 0
+30 16 * * *  __REPO__/deploy/run-machine.sh "/review-cockpit process" 0 0
 
 # ── The Unblocker — AI Chief of Staff ────────────────────────
 # Daily @ 08:00 — scans the estate, picks ONE prepped 15-min unblock task,
 # delivers it via Telegram. Execution window 09:00-12:00. Follow-up +
 # status write-back happen inside the run.
-0 8 * * *    __REPO__/deploy/run-machine.sh "/unblocker daily" 0 0
+0 4 * * *    __REPO__/deploy/run-machine.sh "/unblocker daily" 0 0
 
 # ── M01 — Signal Harvest + Script Generation ─────────────────
 # Daily @ 02:00 — harvest 7 signals from the live web.
-0 2 * * *    __REPO__/deploy/run-machine.sh "/signal-harvester" 1 120
+0 22 * * *   __REPO__/deploy/run-machine.sh "/signal-harvester" 1 120
 
 # Daily @ 02:30 — generate 5 scripts (1 story, 2 news, 1 opinion, 1 edu).
 # Scripts are ready when the operator wakes up. Uses personal-brain.md + latest signals.
-30 2 * * *   __REPO__/deploy/run-machine.sh "/content-engine daily" 1 120
+30 22 * * *  __REPO__/deploy/run-machine.sh "/content-engine daily" 1 120
 
 # ── M06 — Performance Tracker ────────────────────────────────
 # Daily @ 03:00 — scrape engagement metrics, annotate vault entries.
-0 3 * * *    __REPO__/deploy/run-machine.sh "/performance-tracker" 0 0
+0 23 * * *   __REPO__/deploy/run-machine.sh "/performance-tracker" 0 0
 
 # ── Full weekly loop ─────────────────────────────────────────
 # Monday @ 06:00 — runs the full machine chain (signal → script → visual → queue).
-0 6 * * 1    __REPO__/deploy/run-machine.sh "/weekly-ops" 1 240
+0 2 * * 1    __REPO__/deploy/run-machine.sh "/weekly-ops" 1 240
 
 # ── Revenue Watchdog ─────────────────────────────────────────
 # Daily @ 03:30 — reconcile Whop/Stripe/GHL into revenue-log.md. Harmless
 # while dormant (no keys / no checkout yet): it just reports status.
-30 3 * * *   __REPO__/deploy/run-machine.sh "/revenue-watchdog daily" 0 0
+30 23 * * *  __REPO__/deploy/run-machine.sh "/revenue-watchdog daily" 0 0
 
 # ── Weekly intelligence + hygiene ────────────────────────────
 # Sunday 05:00 — distill the research-inbox week into a RESEARCH entry + brief.
-0 5 * * 0    __REPO__/deploy/run-machine.sh "/inbox-distiller weekly" 1 120
+0 1 * * 0    __REPO__/deploy/run-machine.sh "/inbox-distiller weekly" 1 120
 # Sunday 05:30 — recompile taste-file.md from the week's review decisions.
-30 5 * * 0   __REPO__/deploy/run-machine.sh "/taste-clone compile" 0 0
+30 1 * * 0   __REPO__/deploy/run-machine.sh "/taste-clone compile" 0 0
 # Sunday 06:30 — estate hygiene scan across the 8 repos.
-30 6 * * 0   __REPO__/deploy/run-machine.sh "/estate-janitor scan" 0 0
+30 2 * * 0   __REPO__/deploy/run-machine.sh "/estate-janitor scan" 0 0
 # Monday 05:30 — refresh the speaking pipeline (new events/targets this week).
-30 5 * * 1   __REPO__/deploy/run-machine.sh "/speaking-pipeline scan" 1 120
+30 1 * * 1   __REPO__/deploy/run-machine.sh "/speaking-pipeline scan" 1 120
 
 # ── M05 — DM/Lead Responder ─────────────────────────────────
 # Every 5 min — polls comments for keyword CTAs, sends DMs via GHL (IG) + Unipile

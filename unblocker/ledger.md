@@ -6,19 +6,24 @@
 
 ## Queue (next up, in order)
 
-1. UNB-029 — Delete dead `main-site/assets/work-with-me-v3.css` *(served 04/10 — fresh, 2-minute task, pack delivered via Telegram)*
-2. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 04/10 check confirms still unanswered, 4th morning; stale-branch count unchanged at 74)*
-3. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 04/10 check confirms still unanswered, 10th morning)*
-4. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 04/10 check confirms still unanswered, 12 days)*
-5. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 04/10 check confirms still unanswered, 18th morning)*
+1. UNB-031 — One reply (fee band + yes/no) unblocks 2 speaking pitches, 9 days to the events *(served 05/10 — fresh, time-critical, pack delivered via Telegram)*
+2. UNB-029 — Delete dead `main-site/assets/work-with-me-v3.css` *(served 04/10 — fresh, 2-minute task, pack delivered via Telegram; 05/10 check: not yet done)*
+3. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 05/10 check confirms still unanswered, 5th morning; stale-branch count unchanged at 74)*
+4. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 05/10 check confirms still unanswered, 11th morning)*
+5. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 05/10 check confirms still unanswered, 13 days)*
+6. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 05/10 check confirms still unanswered, 19th morning)*
 
-> **04/10/2026:** UNB-025/026/027/028 all remain simultaneously past their
-> own serve-3 confrontation with zero reply (3–18 days) and no serve-4 rule —
-> not re-served over Telegram, put directly to Fatiha in the end-of-run
-> briefing instead (interactive run), same as 02/10 and 03/10. Today's
-> single Telegram serve went to UNB-029 instead: fresh, unserved, 2-minute
-> effort, satisfies the variety rule after four straight access/duplicate/
-> branch asks.
+> **05/10/2026:** this run is the automated 08:00-GST cron slot itself (now
+> firing at 04:00 UTC — see UNB-030), not an interactive stand-in.
+> UNB-025/026/027/028 all remain simultaneously past their own serve-3
+> confrontation with zero reply (4–19 days) and no serve-4 rule — not
+> re-served over Telegram, put directly into today's operator briefing
+> instead, same as every run since 02/10. UNB-029 (served yesterday, not
+> yet done) was also not re-served: a genuinely time-critical fresh item
+> (UNB-031, 9 days to two speaking dates) outranked both a stale repeat and
+> a day-2 follow-up on a 2-minute task — variety + urgency rule. Also
+> resolved UNB-030 today (cron timezone bug, self-fixed, no human action
+> needed — see Entries below).
 
 > UNB-001 through UNB-024 (below) are the original 06/07/2026 seed batch, built
 > entirely from the pre-pivot offer model (Whop SKU checkouts, Fast Forward
@@ -418,6 +423,15 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   did not re-send over Telegram. Today's single serve went to UNB-029
   (fresh, variety rule). `served_count` left at 3 pending her answer — put
   to her directly in today's briefing.
+- **05/10/2026 follow-up (automated cron run):** `content-vault.md` ENTRY
+  093/092/091 still `READY TO POST`, unchanged — 19th morning running.
+  Live `getUpdates` this run returned empty — no reply to the 17/09
+  confrontation in over three weeks. Same no-serve-4-rule reasoning: did
+  not re-send. Today's single serve went to UNB-031 (fresh, time-critical,
+  9-day speaking-event deadline beats a repeat ask here). `served_count`
+  left at 3 pending her answer — put to her in today's briefing. This run
+  is the 08:00-GST automated cron slot itself, not an interactive
+  stand-in — see UNB-030, found and fixed this same run.
 
 ---
 
@@ -537,6 +551,14 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   days — still no serve-4 rule, did not re-send over Telegram. Today's
   serve went to UNB-029 (fresh, variety rule). Put UNB-026 directly to
   Fatiha in today's briefing instead.
+- **05/10/2026 follow-up (automated cron run):** re-ran `git ls-remote`
+  over HTTPS on all 5 repos live this morning — identical `403 Write
+  access to repository not granted` on every one, unchanged since 20/09
+  (16th day). Session reality-check banner still confirms "canon:
+  queen-brain NOT in this session." Not done, no reply to the 22/09
+  confrontation in thirteen days — still no serve-4 rule, did not re-send.
+  Today's serve went to UNB-031 (fresh, time-critical). Put UNB-026
+  directly to Fatiha in today's briefing instead.
 
 ### UNB-027 — Decide fate of `content-system-DUPLICATE`
 - **why:** a full second git checkout of this repo, frozen at commit
@@ -626,6 +648,10 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   so copying a crontab line from this checkout would re-enable paused
   outbound DMs. Raises the stakes of this decision; still not actioned —
   routed as evidence only, source `reports/janitor-2026-10-04.md` JAN-03.
+- **05/10/2026 follow-up (automated cron run):** `ls -ld ~/content-system-DUPLICATE`
+  confirms it's still there, unchanged, 11th morning since the 25/09
+  confrontation. No reply. Per the skill's no-serve-4 rule, did not
+  re-send. Today's serve went to UNB-031 (fresh, time-critical) instead.
 
 ### UNB-028 — Review and prune stale branches (74 of 136, oldest 176 days)
 - **why:** `git for-each-ref` on `content-system` shows 74 non-main remote
@@ -731,6 +757,12 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   running, still no serve-4 rule — did not re-send). Today's single serve
   went to UNB-029 (fresh, variety rule) rather than a 4th repeat of this
   ask. Put UNB-028 directly to Fatiha in today's briefing instead.
+- **05/10/2026 follow-up (automated cron run):** `git fetch origin --prune`
+  + `git for-each-ref` this morning shows 74 branches committed before
+  2026-08-30 — unchanged from 03/10 and 04/10. No reply to the 01/10
+  confrontation (5th morning running, still no serve-4 rule — did not
+  re-send). Today's single serve went to UNB-031 (fresh, time-critical).
+  Put UNB-028 directly to Fatiha in today's briefing instead.
 
 ### UNB-029 — Delete dead `main-site/assets/work-with-me-v3.css`
 - **why:** the live work-with-me page (`main-site/work-with-fatiha/index.html:93-94`)
@@ -759,6 +791,79 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   Selected over re-serving UNB-025/026/027/028 (all at serve-3 cap,
   unanswered 3-18 days, no serve-4 rule) — satisfies the variety rule.
   Delivered via Telegram.
+- **05/10/2026 follow-up (day 2, automated cron run):** `find` for
+  `work-with-me-v3.css` confirms it's still present, unchanged — the
+  3-line paste from yesterday's pack was not run. Not done, second morning.
+  Per the skill's serve-2 rule this would normally get a shrunk re-ask, but
+  a genuinely time-critical fresh item (UNB-031, 9-day speaking deadline)
+  took today's single serve slot instead — this is a deliberate skip, not
+  a forgotten follow-up; `served_count` stays at 1, re-serve candidate for
+  tomorrow if UNB-031 is answered by then.
+
+### UNB-030 — Fix: VPS cron was firing every job 4 hours later than its documented GST time
+- **why:** multiple runs (02/10–04/10) flagged "the cron ran but produced no
+  output beyond git pull" as an unresolved mystery for `/unblocker daily`
+  and `/performance-tracker`. Root-caused today: this VPS's cron package
+  (Debian/Ubuntu "cron" 3.0pl1, confirmed via `man 5 crontab` — not
+  "cronie") does not act on `CRON_TZ` as a scheduling offset; it only ever
+  exported `TZ` into each job's environment. Every job's 2026-10-05 log
+  timestamp matched its literal crontab number exactly in the system's own
+  UTC clock, with zero +4h shift — e.g. the unblocker's "0 8 * * *" (meant
+  to be 08:00 GST) fired at 08:00 UTC = 12:00 GST, brushing the end of its
+  own documented 09:00-12:00 GST execution window instead of opening it.
+  This likely also explains the "silent" cron entries flagged on prior
+  days: a long-running `claude -p` invocation checked an hour or more into
+  its real run can look like a bare git-pull if read mid-flight.
+- **revenue_unlocked:** indirect — every one of the 14 scheduled machines
+  was running up to 4 hours later than its documented intent; this was
+  silently degrading the whole estate's cadence, not just the Unblocker's
+  · **effort_min:** 0 (self-resolved, no human action needed)
+- **depends_on:** — · **unblocks:** correct, on-time delivery for all 14
+  cron machines going forward
+- **source:** live VPS crontab (`crontab -l`), `man 5 crontab` (no `CRON_TZ`
+  entry — confirms this cron build doesn't support it), `deploy/logs/*`
+  timestamps for every 2026-10-05 cron run, `unblocker/ledger.md`
+  02/10-04/10 follow-up notes (the original flagged mystery)
+- **verify:** tomorrow's cron logs land at the corrected UTC hour (e.g.
+  `unblocker daily-2026-10-06T04-00-*`, not `T08-00-*`)
+- **status:** done · served_count: 0 (no human serve needed) · added:
+  2026-10-05 · no pack (nothing for Fatiha to execute)
+- **05/10/2026 write-back:** backed up the live crontab to
+  `deploy/crontab-live-backup-2026-10-05.txt`, installed a corrected
+  crontab with every job's hour shifted to the true UTC equivalent of its
+  documented GST intent (UTC = GST − 4h; no day-of-week line needed
+  shifting since every GST hour was ≥4), and updated `deploy/crontab.example`
+  to match so the committed docs and the live VPS state agree. `CRON_TZ`
+  line removed from both (confirmed inert on this cron build) with a
+  comment explaining why, in case this repo is ever moved to a host running
+  "cronie" instead.
+
+### UNB-031 — One reply (fee band + yes/no) unblocks 2 speaking pitches, 9 days to the events
+- **why:** today's `/speaking-pipeline scan` found named contacts for two
+  targets stalled at `identified` since 21/09/2026 — both dated 14-15 Oct
+  2026, 9 days from this run: HRSE (Natalie Diaz, Informa Connect) and
+  CognitionX Emirates (Hazem Ali, founder). Pitch drafting is blocked on a
+  fee band from `queen-brain` (absent this session) and, regardless, a
+  speaking fee is a money decision that needs Fatiha's word per standing
+  law — not something to invent.
+- **revenue_unlocked:** $5-15k/booking per UNB-016's standing estimate for
+  a paid conference slot (HRSE); CognitionX value unconfirmed, possibly
+  unpaid community event · **effort_min:** 2 (one reply: a number/range +
+  a yes/no)
+- **depends_on:** — · **unblocks:** both pitches get drafted next run in
+  her voice, ready to send, inside the 9-day window
+- **source:** `reports/speaking-pipeline-scan-2026-10-05.md` ("Contact
+  research on stalled existing targets"); `speaking-pipeline.md` TARGET
+  002/003 histories (updated today with the named contacts)
+- **verify:** a reply with an HRSE fee figure/range and a CognitionX
+  yes/no, logged into `speaking-pipeline.md` TARGET 002/003 history
+- **status:** served · served_count: 1 · added: 2026-10-05 · pack:
+  `packs/2026-10-05-UNB-031-speaking-fee-reply.md`
+- **05/10/2026 prep note:** selected over re-serving UNB-025/026/027/028
+  (all past serve-3, unanswered 4-19 days, no serve-4 rule) and over a
+  day-2 follow-up on UNB-029 (served yesterday, not yet done, but no
+  deadline pressure) — this is the only queue item with a hard external
+  date. Delivered via Telegram.
 
 ---
 
@@ -773,6 +878,9 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   and write-back as UNB-009, found 19/09/2026.
 - **UNB-012** — PROMPT lead magnet hosted + active=yes. Same scan-gap
   pattern and write-back as UNB-009, found 19/09/2026.
+- **UNB-030** — VPS cron timezone bug fixed (self-resolved, 0 human
+  effort). Found and fixed 05/10/2026 — see its entry above for the full
+  root cause and the crontab diff.
 
 ## Killed
 

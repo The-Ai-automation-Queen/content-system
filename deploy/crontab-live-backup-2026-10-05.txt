@@ -1,0 +1,17 @@
+CRON_TZ=Asia/Dubai
+SHELL=/bin/bash
+0 20 * * *   /home/fatiha/content-system/deploy/run-machine.sh "/brain-manager" 0 0
+30 7 * * *   /home/fatiha/content-system/deploy/run-machine.sh "/review-cockpit digest" 0 0
+30 12 * * *  /home/fatiha/content-system/deploy/run-machine.sh "/review-cockpit process" 0 0
+30 20 * * *  /home/fatiha/content-system/deploy/run-machine.sh "/review-cockpit process" 0 0
+0 8 * * *    /home/fatiha/content-system/deploy/run-machine.sh "/unblocker daily" 0 0
+0 2 * * *    /home/fatiha/content-system/deploy/run-machine.sh "/signal-harvester" 1 120
+30 2 * * *   /home/fatiha/content-system/deploy/run-machine.sh "/content-engine daily" 1 120
+0 3 * * *    /home/fatiha/content-system/deploy/run-machine.sh "/performance-tracker" 0 0
+0 6 * * 1    /home/fatiha/content-system/deploy/run-machine.sh "/weekly-ops" 1 240
+30 3 * * *   /home/fatiha/content-system/deploy/run-machine.sh "/revenue-watchdog daily" 0 0
+0 5 * * 0    /home/fatiha/content-system/deploy/run-machine.sh "/inbox-distiller weekly" 1 120
+30 5 * * 0   /home/fatiha/content-system/deploy/run-machine.sh "/taste-clone compile" 0 0
+30 6 * * 0   /home/fatiha/content-system/deploy/run-machine.sh "/estate-janitor scan" 0 0
+30 5 * * 1   /home/fatiha/content-system/deploy/run-machine.sh "/speaking-pipeline scan" 1 120
+# These lines are NOT for the run-machine.sh estate loop above — they call
