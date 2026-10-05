@@ -168,3 +168,6 @@ body.wc-page .ww-field-head h3{font:800 clamp(30px,3.2vw,46px)/1.05 "Playfair Di
 .ww-field[data-industry="property"] .ww-field-pic{background-size:347% auto;background-position:100% 35%}
 .ww-field[data-industry="education"] .ww-field-pic{background-size:303% auto;background-position:91% 100%}
 .ww-field[data-industry="services"] .ww-field-pic{background-size:277% auto;background-position:68% 13%}
+
+/* 05/10/2026: wider side gutter on tablets, the 18px edge was too tight. */
+@media(min-width:701px) and (max-width:900px){.ww-wrap{width:calc(100% - 64px)}}

@@ -56,3 +56,6 @@ img{max-width:100%;height:auto;display:block}
 @media (max-width:600px){
   .nav-links{gap:12px;font-size:10px;justify-content:center}
 }
+
+/* 05/10/2026: centre the accent line under the centred title. */
+.hero-inner h1::after{margin-left:auto!important;margin-right:auto!important}
