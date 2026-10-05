@@ -451,3 +451,12 @@ body.home-saadia .sk-step:nth-child(2) h3{color:var(--pink)!important}
 body.home-saadia .sk-step:nth-child(3) h3{color:var(--ink)!important}
 body.home-saadia .sk-step-title{margin:0 0 14px!important;font:800 clamp(26px,2.4vw,34px)/1.1 "Playfair Display",Georgia,serif;color:var(--ink)}
 @media(max-width:900px){.sk-split-grid.sk-steps{grid-template-columns:1fr;max-width:560px}}
+/* 05/10/2026: proof as one voice, not a stats strip. */
+body.home-saadia .sk-voice{padding:clamp(70px,9vw,130px) 0}
+body.home-saadia .sk-voice .sk-shell{display:block;border-top:1px solid #d8d6d2;padding-top:clamp(60px,7vw,100px);text-align:center}
+body.home-saadia .sk-voice-quote{margin:0 auto;max-width:900px}
+body.home-saadia .sk-voice-quote p{margin:0;font:700 italic clamp(30px,3.6vw,52px)/1.2 "Playfair Display",Georgia,serif;color:var(--ink);letter-spacing:-.01em}
+body.home-saadia .sk-voice-quote footer{margin-top:22px;font:700 14px/1 Inter,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+body.home-saadia .sk-voice-facts{margin:34px auto 0;max-width:620px;font-size:17px;line-height:1.6;color:#3f4452}
+body.home-saadia .sk-voice .sk-proof-link{display:inline-block;margin-top:22px}
+@media(max-width:700px){body.home-saadia .sk-voice .sk-shell{text-align:left}body.home-saadia .sk-voice-quote p{font-size:clamp(26px,7vw,32px)}}
