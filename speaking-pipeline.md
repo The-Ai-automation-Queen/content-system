@@ -12,6 +12,19 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 
 ---
 
+### TARGET 005
+
+- **target:** Dubai Future Week 2026 (Dubai Future Foundation) — organizer contact not yet identified
+- **type:** conference (government-backed, open speaker registration)
+- **source:** https://dubaifutureweek.com/ (redirects from https://week.dub.ai/); dates 18-21 Nov 2026, Emirates Towers and the Museum of the Future, Dubai
+- **fit:** Organized by the Dubai Future Foundation, under the patronage of HH Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum. Theme centers human experience (work, relationships, choices) rather than pure tech, which matches her "use AI for real work, keep what's uniquely yours" positioning better than a vendor-AI event. Open "register to speak" portal exists but only a general inbox (humans@dubaifutureweek.com) is published — needs a named contact before a personalized pitch, same quality-bar gap as the other targets below.
+- **est_value:** pending — verify fee band against canon (queen-brain / Notion Product Hub) before pitching; note government/foundation events of this kind are sometimes unpaid-exposure slots rather than paid corporate-speaking fees — confirm before assuming Tier-5 value.
+- **stage:** identified
+- **history:**
+  - 2026-10-05 — identified via /speaking-pipeline scan. Next step: find a named Dubai Future Week programming contact (not just the general inbox) and confirm whether speaker slots are paid or exposure-only before considering `pitch`.
+
+---
+
 ### TARGET 004
 
 - **target:** GITEX Global 2026 (Dubai World Trade Centre / Expo City) — org contact not yet identified
@@ -35,6 +48,7 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 - **stage:** identified
 - **history:**
   - 2026-09-21 — identified via /speaking-pipeline scan. Next step: find the HRSE producer/programming contact at Informa Connect.
+  - 2026-10-05 — named contact found via /speaking-pipeline scan: Natalie Diaz, Speakers and Content, Informa Connect (natalie.diaz@informa.com, +971 4 407 2601; source: informaconnect.com/hr-summit-expo/contact/). Event is 14-15 Oct 2026 — 9 days out from this scan, so this target is now pitch-eligible on contact grounds but time-critical; est_value still pending canon verification before any pitch goes out.
 
 ---
 
@@ -48,6 +62,7 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 - **stage:** identified
 - **history:**
   - 2026-09-21 — identified via /speaking-pipeline scan. Next step: check whether CognitionX Emirates pays speakers (community events often don't) before treating this as a Tier-5-value target.
+  - 2026-10-05 — named contact found via /speaking-pipeline scan: Hazem Ali, founder/organizer, Microsoft AI MVP (reachable via LinkedIn linkedin.com/in/drhazemali; source: sessionize.com/cognitionx-emirates-2026/). Still unconfirmed whether this community event pays speakers — event is 14-15 Oct 2026, 9 days out from this scan, so time-critical if pursued.
 
 ---
 
