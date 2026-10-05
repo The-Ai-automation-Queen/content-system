@@ -517,3 +517,17 @@ body.home-saadia .sk-rooms-close{grid-column:1/-1;margin:clamp(10px,2vw,20px) 0 
 body.home-saadia .sk-rooms-close em{font:700 italic 1.08em/1.3 "Playfair Display",Georgia,serif;color:var(--lilac)}
 @media(max-width:900px){body.home-saadia .sk-rooms-grid{grid-template-columns:1fr;gap:44px}body.home-saadia .sk-rooms-head{position:static}}
 @media(max-width:480px){body.home-saadia .sk-rooms-list li{padding-left:26px!important}}
+/* 05/10/2026: authority as a short feature story with sources in the text. */
+body.home-saadia .sk-story{background:#0D1117;color:#fff;padding:clamp(40px,5vw,70px) 0 clamp(80px,9vw,130px)}
+body.home-saadia .sk-story h2{margin:0 auto;max-width:1040px;text-align:center;font:800 clamp(32px,3.6vw,56px)/1.12 "Playfair Display",Georgia,serif!important;letter-spacing:-.02em;color:#fff!important;text-transform:none;text-wrap:balance}
+body.home-saadia .sk-story h2 em{display:block;margin-top:10px;color:var(--lilac);font-style:italic}
+body.home-saadia .sk-story-body{max-width:720px;margin:clamp(44px,5vw,70px) auto 0}
+body.home-saadia .sk-story-body p{margin:0 0 24px;font:400 clamp(17px,1.4vw,20px)/1.7 Inter,Arial,sans-serif;color:#c9cdd8;text-wrap:pretty}
+body.home-saadia .sk-story-body .sk-story-lead{font:500 clamp(20px,1.7vw,24px)/1.6 Inter,Arial,sans-serif;color:#fff}
+body.home-saadia .sk-story-body .sk-story-lead::first-letter{float:left;margin:6px 12px 0 0;font:800 clamp(64px,6vw,88px)/.8 "Playfair Display",Georgia,serif;color:var(--pink)}
+body.home-saadia .sk-story-body a{color:#fff!important;text-decoration:underline;text-decoration-color:var(--lilac);text-decoration-thickness:2px;text-underline-offset:5px}
+body.home-saadia .sk-story-body a:hover{color:var(--lilac)!important}
+body.home-saadia .sk-story-body strong{color:#fff;font-weight:700}
+body.home-saadia .sk-story-proof{max-width:720px;margin:clamp(20px,3vw,36px) auto 0;padding-top:24px;border-top:1px solid #2b3140;font:600 15px/1.5 Inter,Arial,sans-serif;color:#9aa1b2}
+body.home-saadia .sk-story-proof a{margin-left:10px;color:var(--lilac)!important;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:700px){body.home-saadia .sk-story h2{text-align:left}}
