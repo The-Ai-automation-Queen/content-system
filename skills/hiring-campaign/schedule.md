@@ -41,6 +41,9 @@ real files in agent-os-company-dashboard/company/departments/.
 | 032 | Khalil | Proposal Writer | deals/deals-proposal-writer.md | PLAYBOOK | announced, playbook live 21/09/2026 | 2026-W39 |
 | 033 | Hana | SWOT Builder | intelligence/intelligence-swot-builder.md | PLAYBOOK | announced, playbook live 21/09/2026 | 2026-W39 |
 | 034 | Fadi | Status Updates | operations/operations-status-updates.md | PLAYBOOK | announced, playbook live 21/09/2026 | 2026-W39 |
+| 035 | Dalia | Vendor Payment Tracker | backoffice/backoffice-vendor-payment-tracker.md | PLAYBOOK | announced, playbook live 28/09/2026 | 2026-W40 |
+| 036 | Marwan | Referral Asker | sales/sales-referral-asker.md | PLAYBOOK | announced, playbook live 28/09/2026 | 2026-W40 |
+| 037 | Jana | Testimonial Collector | customer/customer-testimonial-collector.md | PLAYBOOK | announced, playbook live 28/09/2026 | 2026-W40 |
 
 Beyond #016: the campaign run picks the next 3 most audience-relevant
 roles from the departments roster (3 different departments per wave) and

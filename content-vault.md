@@ -13,6 +13,14 @@
 
 ## Most recent (quick reference)
 
+- 28/09/2026 | LinkedIn carousel | "A Client Said Something Kind Three Months Ago and You Never Wrote It Down Anywhere" — Jana, Testimonial Collector, Employee #037 | READY TO POST
+- 28/09/2026 | LinkedIn | "A Client Said Something Kind Three Months Ago and You Never Wrote It Down Anywhere" — Jana, Testimonial Collector, Employee #037 | READY TO POST
+- 28/09/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Dalia/Marwan/Jana | READY TO POST
+- 28/09/2026 | LinkedIn carousel | "You Did Great Work for a Client Last Month and Never Asked Who Else They Know" — Marwan, Referral Asker, Employee #036 | READY TO POST
+- 28/09/2026 | LinkedIn | "You Did Great Work for a Client Last Month and Never Asked Who Else They Know" — Marwan, Referral Asker, Employee #036 | READY TO POST
+- 28/09/2026 | LinkedIn | "Now Hiring: Three More AI Employees, Salary $0 Each" — wave announcement, Employees #35/#36/#37 | READY TO POST
+- 28/09/2026 | LinkedIn carousel | "You Have a Vendor Invoice Sitting in Your Inbox From Ten Days Ago, Unpaid, Not Even Flagged" — Dalia, Vendor Payment Tracker, Employee #035 | READY TO POST
+- 28/09/2026 | LinkedIn | "You Have a Vendor Invoice Sitting in Your Inbox From Ten Days Ago, Unpaid, Not Even Flagged" — Dalia, Vendor Payment Tracker, Employee #035 | READY TO POST
 - 21/09/2026 | LinkedIn carousel | "You Owe a Client a Status Update and It's Been Sitting in Your Drafts for Three Days" — Fadi, Status Updates, Employee #034 | READY TO POST
 - 21/09/2026 | LinkedIn | "You Owe a Client a Status Update and It's Been Sitting in Your Drafts for Three Days" — Fadi, Status Updates, Employee #034 | READY TO POST
 - 21/09/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Khalil/Hana/Fadi | READY TO POST
@@ -116,6 +124,259 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 182 — 28/09/2026 | LinkedIn carousel | A Client Said Something Kind Three Months Ago and You Never Wrote It Down Anywhere | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 181 (Jana, Employee #037, Testimonial Collector, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/jana/jana-testimonial-collector-01.png through -06.png
+Source HTML: skills/carousel-factory/out/jana-testimonial-collector.html
+**CTA keyword:** TESTIMONY, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "A client said something kind three months ago and you never wrote it down anywhere."
+Slide 2 (scene): "It was a good line, the kind that would sell the next client in a heartbeat. It's sitting buried in a DM you will never scroll back far enough to find."
+Slide 3 (role card): Jana, Testimonial Collector, Customer, Salary $0, never sleeps. "Jana is AI. The only job she took was mine: saving the good words before they get lost in the inbox."
+Slide 4 (how she works): 4-step list, give her the client's message, she pulls the quotable line out as written, drafts the permission ask, you review and send.
+Slide 5 (demo): "Built and tested pulling one real quote from one real client message. Setup about 10 minutes. She never publishes anything or rewrites a client's words."
+Slide 6 (CTA): "Want the free setup? Comment TESTIMONY."
+
+---
+
+## ENTRY 181 — 28/09/2026 | LinkedIn | A Client Said Something Kind Three Months Ago and You Never Wrote It Down Anywhere | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Thursday episode 3)
+**Topic:** Employee #037, Jana, Testimonial Collector. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/testimonial-collector-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard is not in this session's container this run (only content-system is present; confirmed via directory check, not assumed). Role summary taken from the schedule.md departments-roster convention and the felt-pain lens (money chasing, time leaks, follow-up) per the "beyond #016" rule, same as every pick since #020. Source gap logged honestly rather than fabricating a dashboard read. Fourth employee from the Customer department (after Ziad/Churn Watch, Amal/Feedback Digest, Dania/Renewal Reminder, Sara/NPS Analyst), a distinct angle: proactive testimonial capture, not churn, feedback themes, or renewal timing. Mode check: no receipt found anywhere for Jana. Confirmed PLAYBOOK.
+
+---
+A client said something kind three months ago and you never wrote it down anywhere.
+
+It was a good line, the kind that would sell the next client in a heartbeat. It's sitting buried in a DM you will never scroll back far enough to find.
+
+Meet Employee #037.
+
+Jana. Testimonial Collector. Customer.
+Salary: $0. Never sleeps.
+
+Jana is AI. The only job she took was mine: saving the good words before they get lost in the inbox.
+
+How she works:
+1. You give her the client's own words: a thank-you message, a nice comment, a kind email.
+2. She pulls the quotable line out, exactly as written, never rewritten.
+3. She drafts the short message asking permission to use it.
+4. You review it and send it yourself.
+
+The demo: built and tested pulling one real quote from one real client message with one AI tool. Setup time, about 10 minutes. She never sends or publishes anything, and never rewrites a client's words into something they didn't say.
+
+Red line: the quote stays exactly as given, a short real testimonial beats a polished invented one.
+
+Your first win, free, today: find one kind message a client sent you and paste it somewhere you won't lose it. That's Jana's first save.
+
+Comment TESTIMONY and I'll send you the full setup, free.
+
+#AIemployees #The99 #CustomerOps
+
+---
+
+## ENTRY 180 — 28/09/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** Talking-head reel (30-45s), captions required
+**Format:** Week's wave reel (Wednesday slot), three role-card cutaways + one screenshot cutaway
+**Topic:** Compresses all 3 of this week's hires (Dalia, Marwan, Jana) into one 45-second reel, per the hiring-campaign weekly slot map.
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur vendor name and amount on the tracked-invoice screenshot).
+**Source:** Assembled from ENTRY 175/178/181's role-card lines. No new claims.
+
+---
+[0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
+
+[0:03-0:12] Role card cutaway 1, Dalia: "Dalia tracks every vendor bill against its due date, so I'm never the one who's late."
+
+[0:12-0:21] Role card cutaway 2, Marwan: "Marwan writes the referral ask I keep meaning to send, while the work is still fresh."
+
+[0:21-0:30] Role card cutaway 3, Jana: "Jana saves a client's kind words before they get lost in the inbox."
+
+[0:30-0:38] Screenshot cutaway: Dalia's tracked invoice list, real setup, vendor name and amount blurred (redaction modeled).
+
+[0:38-0:45] Closing line, spoken + on-screen: "None of them act without me. Comment TEAM and I'll send you how to hire your first one."
+
+---
+
+## ENTRY 179 — 28/09/2026 | LinkedIn carousel | You Did Great Work for a Client Last Month and Never Asked Who Else They Know | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 178 (Marwan, Employee #036, Referral Asker, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/marwan/marwan-referral-asker-01.png through -06.png
+Source HTML: skills/carousel-factory/out/marwan-referral-asker.html
+**CTA keyword:** REFER, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You did great work for a client last month and never asked who else they know."
+Slide 2 (scene): "The project wrapped, the client was happy, and the window to ask closed the moment you got heads-down on the next thing."
+Slide 3 (role card): Marwan, Referral Asker, Sales, Salary $0, never sleeps. "Marwan is AI. The only job he took was mine: asking for the referral I keep meaning to send."
+Slide 4 (how he works): 4-step list, tell him a project wrapped well, he writes one short ask in your voice, you review and send.
+Slide 5 (demo): "Built and tested writing one real referral ask after one real project. Setup about 10 minutes. He never sends anything or invents a client's words."
+Slide 6 (CTA): "Want the free setup? Comment REFER."
+
+---
+
+## ENTRY 178 — 28/09/2026 | LinkedIn | You Did Great Work for a Client Last Month and Never Asked Who Else They Know | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Wednesday episode 2)
+**Topic:** Employee #036, Marwan, Referral Asker. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/referral-asker-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard is not in this session's container this run (only content-system is present; confirmed via directory check, not assumed). Role summary taken from the schedule.md departments-roster convention and the felt-pain lens per the "beyond #016" rule. Source gap logged honestly rather than fabricating a dashboard read. Fourth employee from the Sales department (after Nassim/Reactivation Writer, Samir/Follow-Up Nudger, Mona/Lead Scorer), a distinct angle: proactive referral asking, not reactivation, nudging, or scoring. Mode check: no receipt found anywhere for Marwan. Confirmed PLAYBOOK.
+
+---
+You did great work for a client last month and never asked who else they know.
+
+The project wrapped, the client was happy, and the window to ask closed the moment you got heads-down on the next thing.
+
+Meet Employee #036.
+
+Marwan. Referral Asker. Sales.
+Salary: $0. Never sleeps.
+
+Marwan is AI. The only job he took was mine: asking for the referral I keep meaning to send.
+
+How he works:
+1. You tell him a project wrapped well: client, what you did, anything good they said.
+2. He writes one short referral ask, timed to the moment the work is fresh.
+3. He drafts it in your voice, not a template voice.
+4. You review it and send it yourself.
+
+The demo: built and tested writing one real referral ask after one real project with one AI tool. Setup time, about 10 minutes. He never sends anything, and never invents a quote or compliment the client didn't give.
+
+Red line: if the client didn't say it, it doesn't go in the ask, a plain honest ask beats a flattering invented one.
+
+Your first win, free, today: write three lines right now about a project that went well: client, what you did, anything good they said. That's Marwan's first draft.
+
+Comment REFER and I'll send you the full setup, free.
+
+#AIemployees #The99 #SalesOps
+
+---
+
+## ENTRY 177 — 28/09/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Hiring-post ritual (job-ad parody), Monday wave announcement
+**Topic:** Introduces this wave's 3 openings (Employees #035, #036, #037).
+**Pattern used:** Job-ad parody + serial-cliffhanger opener
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — value-first series opener, comment-keyword capture, no promo.
+**Source:** schedule.md had no remaining "planned" rows this wave (confirmed via full read at wave start); three picks made per the "beyond #016" rule from the departments roster, Backoffice, Sales, Customer, 3 distinct, none reused from last wave (Deals, Intelligence, Operations). agent-os-company-dashboard is not in this session's container this run (only content-system present, confirmed via directory check); role descriptions below are drawn from the felt-pain lens (money chasing, time leaks, follow-up), not a dashboard read, and that gap is logged here rather than fabricated.
+
+---
+Now hiring. Three more AI employees. Salary: $0 each.
+
+Employee #035: Vendor Payment Tracker.
+Tracks every vendor bill against its due date, so you're never the one who's late.
+
+Employee #036: Referral Asker.
+Writes the referral ask you keep meaning to send, while the work is still fresh.
+
+Employee #037: Testimonial Collector.
+Saves a happy client's own words before they're lost, and turns them into proof.
+
+None of them sleep. None of them ask for a raise. None of them act without me seeing it first.
+
+That is Employee #35, #36, and #37 of 99. The full team, hired one at a time, in public.
+
+See who is already on the floor. The scoreboard is live, updated only when there is a real receipt to show.
+
+Want to build your own first hire? Comment TEAM and I will send you the free 5-step framework.
+
+#AIemployees #Solopreneur #The99
+
+---
+
+## ENTRY 176 — 28/09/2026 | LinkedIn carousel | You Have a Vendor Invoice Sitting in Your Inbox From Ten Days Ago, Unpaid, Not Even Flagged | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 175 (Dalia, Employee #035, Vendor Payment Tracker, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/dalia/dalia-vendor-payment-tracker-01.png through -06.png
+Source HTML: skills/carousel-factory/out/dalia-vendor-payment-tracker.html
+**CTA keyword:** VENDOR, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You have a vendor invoice sitting in your inbox from ten days ago, unpaid, not even flagged."
+Slide 2 (scene): "It's buried under forty other emails. You don't notice until the vendor follows up, politely asking if everything's okay over there."
+Slide 3 (role card): Dalia, Vendor Payment Tracker, Back Office, Salary $0, never sleeps. "Dalia is AI. The only job she took was mine: tracking which bill is due before I'm the one who's late."
+Slide 4 (how she works): 4-step list, give her the invoice, she checks the due date against today, flags anything due soon, you review and pay.
+Slide 5 (demo): "Built and tested tracking one real invoice to its due date. Setup about 10 minutes. She never pays anything or moves money."
+Slide 6 (CTA): "Want the free setup? Comment VENDOR."
+
+---
+
+## ENTRY 175 — 28/09/2026 | LinkedIn | You Have a Vendor Invoice Sitting in Your Inbox From Ten Days Ago, Unpaid, Not Even Flagged | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Tuesday episode 1)
+**Topic:** Employee #035, Dalia, Vendor Payment Tracker. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/vendor-payment-tracker-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard is not in this session's container this run (confirmed via directory check: only content-system is present). Role summary taken from the schedule.md departments-roster convention and the felt-pain lens (money chasing, time leaks, follow-up) per the "beyond #016" rule, same approach used for every pick since #020. Source gap logged honestly rather than fabricating a dashboard read. Fifth employee from the Back Office department (after Omar/Receipt Processor, Tariq/Invoice Builder, Rami/Subscription Auditor, Bilal/Expense Coding), a distinct angle: outbound bill tracking, not inbound receipts, invoicing, or subscriptions. Mode check: no receipt found anywhere for Dalia. Confirmed PLAYBOOK.
+
+---
+You have a vendor invoice sitting in your inbox from ten days ago, unpaid, not even flagged.
+
+It's buried under forty other emails. You don't notice until the vendor follows up, politely asking if everything's okay over there.
+
+Meet Employee #035.
+
+Dalia. Vendor Payment Tracker. Back Office.
+Salary: $0. Never sleeps.
+
+Dalia is AI. The only job she took was mine: tracking which bill is due before I'm the one who's late.
+
+How she works:
+1. You give her the invoice: amount, due date, who it's to.
+2. She checks the due date against today, every time you update the list.
+3. She flags anything due in the next three days.
+4. You review it and pay it yourself.
+
+The demo: built and tested tracking one real invoice to its due date with one AI tool. Setup time, about 10 minutes. She never pays anything, and never touches your bank or a payment method.
+
+Red line: she tracks, I pay, no AI employee in this system ever touches money directly.
+
+Your first win, free, today: pull every open vendor invoice into one list, who, how much, due when. That's Dalia's first tracker.
+
+Comment VENDOR and I'll send you the full setup, free.
+
+#AIemployees #The99 #BackOfficeOps
 
 ---
 
