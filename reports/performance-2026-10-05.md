@@ -101,3 +101,19 @@ machine anything new to measure.
 Release 3–5 of the 37 READY TO POST entries through Blotato — queue-only,
 you release (per `security.md` §3.1). This unblocks both distribution and
 measurement at once; nothing else this run can move either number.
+
+---
+
+## Addendum — later same day (2026-10-05 23:01 UTC, interactive re-run)
+
+Re-checked every env var and tool path directly: `META_ACCESS_TOKEN`,
+`IG_BUSINESS_ID`, `FB_PAGE_ID`, `APIFY_TOKEN` still unset; `yt-dlp` still
+missing; no Apify or Blotato MCP tools resolve via `ToolSearch`. Nothing
+changed since the 03:00 UTC entry above — same blockers, same vault counts
+(37 READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED / 0 POSTED).
+
+The one thing an interactive session can do that a bare cron slot can't:
+LinkedIn and Twitter/X manual-paste numbers were solicited live from the
+operator this run. See `performance-log.md`'s "2026-10-05 (later same day)"
+entry and the chat for whether an answer landed before this report was
+written. No other finding to add.
