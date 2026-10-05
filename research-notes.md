@@ -2,6 +2,47 @@
 
 ---
 
+## RESEARCH 057 — 2026-10-05 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `578b21cb`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`, loaded this session):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Internal tooling discoveries this run:** none logged separately as internal-research; the one signal below is `shift-lead` (public-topic) evidence.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority, methodology and recency were weighed.
+**Gap note:** the automated 02:00 UTC cron again produced no harvest output today (`deploy/logs/signal-harvester-2026-10-05T02-00-02.log` — git sync only ["Already up to date"], nothing after). This is now the 6th consecutive day (09-30 through 10-05) the cron has failed to complete a harvest unattended, each requiring a separate operator-requested manual run — consistent with RESEARCH 055/056's note, not re-flagged as newly discovered; the cron execution path itself still needs a direct fix, not another workaround run.
+
+### Signals
+
+1. **Glean Work AI Institute — "Work AI Index 2026"** — published 2026-06-10 — https://www.glean.com/work-ai-institute/reports/work-ai-index — direct WebFetch confirmed on Glean's own report page, corroborated by Glean's own press release and independent CIO Dive coverage quoting matching figures; 6,000 full-time digital workers (US n=3,000, UK n=1,500, Australia n=1,500), nationally representative by age/gender/income, fielded December 2025–January 2026, developed with researchers from Stanford, UC Berkeley and Harvard.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: a previously-flagged-but-unchecked lead (noted in an earlier run as surfaced in search but not yet fetched) now directly verified; it gives pillars 1/2 a new, named mechanism distinct from the judgment/skill-erosion thread already logged (RESEARCH 052–056: IBM, WGU, DataCamp, Strada, Pipedrive, Robert Half) — those sources measure what employers believe is scarce; this one measures what AI actually costs the people using it day to day: workers spend more time supervising/fixing AI output than the widely-quoted time-savings number implies, and most don't verify what they ship.
+   - `supporting_source_excerpt`: "87% of digital workers use AI at work... 75% say it makes them more productive... workers report saving roughly 11 hours each per week... yet only 13% say their organization is performing significantly better"; "Workers spend 6.4 hours a week botsitting... feeding AI context, supervising outputs, debugging errors, cleaning up AI-generated work, and switching between tools" (37% of total AI-interaction time); "69% of AI users admit to botshitting at work" — delivering work "they haven't verified, don't fully understand, or can't confidently stand behind"; 41% deliver work they "couldn't explain if asked"; heavy users are 64% more likely to "botshit" than light users.
+   - `possible_use`: a sharper, source-attributable version of "AI doesn't remove the work, it changes what the work is" than a generic overwhelm hook — the 11-hours-saved figure is the number marketers quote; the 6.4-hours-botsitting and 69%-botshitting figures are the uncomfortable rest of the same report, and they land directly on pillar 2 (own your judgment, don't ship what you can't stand behind) with a number attached instead of a feeling.
+   - `assessed_at`: 2026-10-05
+   - **Age caveat:** field dates Dec 2025–Jan 2026, published 2026-06-10 — roughly four months old at publication, longer from the field midpoint; treat as a corroborating, established anchor (same treatment class as RESEARCH 050's IBM citation and RESEARCH 054's Microsoft WorkLab citation), not this week's news.
+
+### Rejected this run
+
+- ZipRecruiter Economic Research — "More Jobs, Higher Bar: The 2026 AI Employer Report" (published 2026-07-29, n=1,000+ hiring professionals, fielded June 2026) — redundant with the already-established judgment/AI-fluency hiring-demand thread (IBM, WGU, DataCamp, Strada, Pipedrive, Robert Half, RESEARCH 052–056); its added nuance (AI-skill requirements and critical-thinking importance rising together, not one replacing the other) doesn't change the thread's existing framing enough to justify a fourth-plus near-duplicate citation; excluded as redundant-and-stale rather than wrong, consistent with RESEARCH 056's Protiviti rejection.
+- UMass Isenberg/WayUp blog, "Why 'Critical Thinking' Is Suddenly on Every Entry-Level Job Posting" (2026-09-21) — cites an unattributed "survey of 1,600 global talent leaders" with no named research organization, no publication date for the underlying survey, and no disclosed methodology; fails the sourcing bar (`security.md` "facts before hooks" / `research-policy.md`'s source-quality separation from relevance) regardless of how well the 73% figure fits the thread.
+- SBE Council, "Small Business Technology Use Survey" (fielded 2026-02-17 to 02-23, n=517, published March 2026) — checked specifically for pillar 3 ("how owners chose their first AI use case/test"); direct WebFetch confirmed the underlying article does not address this question at all — it offers prescriptive how-to-start guidance, not data on what surveyed owners actually did. Pillar 3 remains an open, unfilled gap this run, same standing flag as RESEARCH 052–056 — not forced closed with a non-answering source.
+- Deloitte, "The State of AI in the Enterprise" 2026 (fielded August–September 2025, n=3,235 senior leaders across 24 countries) — checked for the same pillar-3 gap; its "Deep Transformers / Process Redesigners / Surface Users" framing is enterprise-transformation-maturity data, not evidence of how an individual professional or small-business owner picks a first test; also 13+ months old on field dates. Not used.
+- Figma/NewtonX, "State of the Designer 2026" (fielded September–October 2025, n=906 designers, published 2026) — its "AI fluency isn't the finish line" framing and 90%+/93% "AI skills essential" figures echo the already-logged judgment thread, but the sample is designers specifically, not this project's general professional/founder audience; too narrow a population to log as a shift-lead signal on its own. Flagging as an unchecked-but-narrow lead, not a rejection on data quality.
+
+### Source health this run
+
+- Anthropic News (High): WebFetch worked; newest posts (Oct 2 "Claude Frontier Academy," Oct 1 "Barclays scales Claude") unchanged since RESEARCH 055/056 — the Barclays item is already logged as internal-research in the standalone `reports/signal-harvest-2026-10-02.md` (R1); nothing new to assess this run.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — 14th consecutive failed run (044 through 057), over eight weeks on the same dead fetch path. Repeating the long-overdue recommendation from 047–056: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): WebFetch worked; all visible posts this run are ML-engineering/dataset/robotics topics (llama.cpp decision models, autotrust/JEV-27B, YODAS v3 voice dataset, Olmo-core 3, DGX Spark handbook) — same non-fit pattern flagged in every run since RESEARCH 050; nothing logged.
+- a16z AI (Medium): checked this run — current front page is VC deal-announcement content (crypto, manufacturing, infra investments), not AI-workforce or audience-problem material; nothing logged.
+- Google DeepMind blog, Lenny's Newsletter (Medium/Low): not checked this run — time budget spent verifying the Glean signal and the five rejected candidates above instead, consistent with `inventory.md`'s fallback order.
+- WebSearch/WebFetch: both functional throughout, aside from OpenAI's standing 403. No signals were invented; the one URL in the Signals section above is one actually returned by a fetch this run, and every quoted figure was confirmed in directly fetched primary-page text (Glean's own report page) or a same-report press release/independent-coverage match, per the standard set in RESEARCH 052–056.
+
+### Historical-audience check
+
+Confirmed the signal above was not forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 056 — 2026-10-04 | Signal harvest (current audience problem)
 
 **Status:** NOTED
