@@ -441,3 +441,5 @@ body.home-saadia .sk-split h2{margin-bottom:clamp(30px,4vw,48px)!important}
   body.home-saadia .sk-hero h1,body.home-saadia .sk-hero-content>p{text-shadow:0 2px 18px rgba(13,17,23,.55)}
 }
 @media(min-width:901px) and (max-width:1050px){body.home-saadia .sk-hero-photo{width:82%}}
+/* 05/10/2026: "Nobody else has you." larger, close to the headline size. */
+body.home-saadia .sk-hero h1 em{font-size:.88em!important;line-height:1.05;margin-top:10px}
