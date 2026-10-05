@@ -230,7 +230,7 @@ for (const redirect of vercel.redirects ?? []) {
 
 const guideHeader = guideLibrary.match(/<header class="site-header">([\s\S]*?)<\/header>/i)?.[1] || '';
 for (const [label, href] of [
-  ['Guides', '/guides/'],
+  ['Free guides', '/guides/'],
   ['Workbooks', '/workbooks.html'],
   ['About', '/about.html'],
 ]) {

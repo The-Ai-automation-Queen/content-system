@@ -188,7 +188,7 @@ if (!librarySource.includes('import publication from "../../data/guide-publicati
 }
 
 const expectedNav = [
-  ["Guides", "/guides/"],
+  ["Free guides", "/guides/"],
   ["Workbooks", "/workbooks.html"],
   ["About", "/about.html"],
 ];
