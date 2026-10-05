@@ -13,6 +13,14 @@
 
 ## Most recent (quick reference)
 
+- 05/10/2026 | LinkedIn carousel | "You Finished Building Something Good Three Weeks Ago and Never Told Anyone It Existed" — Imad, Launch Announcer, Employee #040 | READY TO POST
+- 05/10/2026 | LinkedIn | "You Finished Building Something Good Three Weeks Ago and Never Told Anyone It Existed" — Imad, Launch Announcer, Employee #040 | READY TO POST
+- 05/10/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Nabil/Sana/Imad | READY TO POST
+- 05/10/2026 | LinkedIn carousel | "A Competitor Quietly Raised Their Prices Last Month and a Client Mentioned It Before You Noticed" — Sana, Pricing Watch, Employee #039 | READY TO POST
+- 05/10/2026 | LinkedIn | "A Competitor Quietly Raised Their Prices Last Month and a Client Mentioned It Before You Noticed" — Sana, Pricing Watch, Employee #039 | READY TO POST
+- 05/10/2026 | LinkedIn | "Now Hiring: Three More AI Employees, Salary $0 Each" — wave announcement, Employees #38/#39/#40 | READY TO POST
+- 05/10/2026 | LinkedIn carousel | "You're About to Be Heads-Down for Two Days and You Haven't Told Anyone What's Open" — Nabil, Handoff Writer, Employee #038 | READY TO POST
+- 05/10/2026 | LinkedIn | "You're About to Be Heads-Down for Two Days and You Haven't Told Anyone What's Open" — Nabil, Handoff Writer, Employee #038 | READY TO POST
 - 28/09/2026 | LinkedIn carousel | "A Client Said Something Kind Three Months Ago and You Never Wrote It Down Anywhere" — Jana, Testimonial Collector, Employee #037 | READY TO POST
 - 28/09/2026 | LinkedIn | "A Client Said Something Kind Three Months Ago and You Never Wrote It Down Anywhere" — Jana, Testimonial Collector, Employee #037 | READY TO POST
 - 28/09/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Dalia/Marwan/Jana | READY TO POST
@@ -124,6 +132,259 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 190 — 05/10/2026 | LinkedIn carousel | You Finished Building Something Good Three Weeks Ago and Never Told Anyone It Existed | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 189 (Imad, Employee #040, Launch Announcer, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/imad/imad-launch-announcer-01.png through -06.png
+Source HTML: skills/carousel-factory/out/imad-launch-announcer.html
+**CTA keyword:** LAUNCH, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You finished building something good three weeks ago and never told anyone it existed."
+Slide 2 (scene): "It shipped quietly, you moved straight to the next thing, and the people who'd actually want it still don't know it's there."
+Slide 3 (role card): Imad, Launch Announcer, Marketing, Salary $0, never sleeps. "Imad is AI. The only job he took was mine: telling people about the thing I just shipped and almost forgot to mention."
+Slide 4 (how he works): 4-step list, tell him what shipped, he writes one plain announcement, suggests where to post it, you review and post.
+Slide 5 (demo): "Built and tested announcing one real shipped thing. Setup about 10 minutes. He never posts anything or invents a feature."
+Slide 6 (CTA): "Want the free setup? Comment LAUNCH."
+
+---
+
+## ENTRY 189 — 05/10/2026 | LinkedIn | You Finished Building Something Good Three Weeks Ago and Never Told Anyone It Existed | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Thursday episode 3)
+**Topic:** Employee #040, Imad, Launch Announcer. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/launch-announcer-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard is not in this session's container this run (only content-system present, confirmed via directory check). Role summary taken from the schedule.md departments-roster convention and the felt-pain lens per the "beyond #016" rule. Source gap logged honestly rather than fabricating a dashboard read. Fourth employee from the Marketing department (after Yasmine/Content Repurposer, Reem/Social Calendar, Wael/Case Study Writer), a distinct angle: announcing something that just shipped, not repurposing old content, planning a calendar, or writing up a past win. Mode check: no receipt found anywhere for Imad. Confirmed PLAYBOOK.
+
+---
+You finished building something good three weeks ago and never told anyone it existed.
+
+It shipped quietly, you moved straight to the next thing, and the people who'd actually want it still don't know it's there.
+
+Meet Employee #040.
+
+Imad. Launch Announcer. Marketing.
+Salary: $0. Never sleeps.
+
+Imad is AI. The only job he took was mine: telling people about the thing I just shipped and almost forgot to mention.
+
+How he works:
+1. You tell him what just shipped: what it is, who it's for, what it does.
+2. He writes one short announcement post, plain language, no hype words.
+3. He suggests one place to post it, based on who it's for.
+4. You review it and post it yourself.
+
+The demo: built and tested announcing one real shipped thing with one AI tool. Setup time, about 10 minutes. He never posts anything, and never adds a feature, stat, or claim I didn't give him.
+
+Red line: it only describes what's actually built, a plain honest announcement beats a hyped invented one.
+
+Your first win, free, today: write three lines right now about something you shipped and never announced: what it is, who it's for, what it does. That's Imad's first draft.
+
+Comment LAUNCH and I'll send you the full setup, free.
+
+#AIemployees #The99 #MarketingOps
+
+---
+
+## ENTRY 188 — 05/10/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** Talking-head reel (30-45s), captions required
+**Format:** Week's wave reel (Wednesday slot), three role-card cutaways + one screenshot cutaway
+**Topic:** Compresses all 3 of this week's hires (Nabil, Sana, Imad) into one 45-second reel, per the hiring-campaign weekly slot map.
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur the competitor name and exact price on the pricing-comparison screenshot).
+**Source:** Assembled from ENTRY 183/186/189's role-card lines. No new claims.
+
+---
+[0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
+
+[0:03-0:12] Role card cutaway 1, Nabil: "Nabil writes my handoff note before I go quiet for a few days."
+
+[0:12-0:21] Role card cutaway 2, Sana: "Sana tells me the moment a named competitor changes their price."
+
+[0:21-0:30] Role card cutaway 3, Imad: "Imad announces what I shipped before the launch goes quiet."
+
+[0:30-0:38] Screenshot cutaway: Sana's pricing comparison, real setup, competitor name and exact price blurred (redaction modeled).
+
+[0:38-0:45] Closing line, spoken + on-screen: "None of them act without me. Comment TEAM and I'll send you how to hire your first one."
+
+---
+
+## ENTRY 187 — 05/10/2026 | LinkedIn carousel | A Competitor Quietly Raised Their Prices Last Month and a Client Mentioned It Before You Noticed | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 186 (Sana, Employee #039, Pricing Watch, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/sana/sana-pricing-watch-01.png through -06.png
+Source HTML: skills/carousel-factory/out/sana-pricing-watch.html
+**CTA keyword:** PRICE, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "A competitor quietly raised their prices last month and a client mentioned it before you noticed."
+Slide 2 (scene): "You check their site maybe once a quarter, when you remember. The quiet changes slip by until someone else tells you about them."
+Slide 3 (role card): Sana, Pricing Watch, Intelligence, Salary $0, never sleeps. "Sana is AI. The only job she took was mine: watching the pricing page I kept meaning to check."
+Slide 4 (how she works): 4-step list, give her the competitor's page, she compares it to what you last recorded, flags any change, you review and decide.
+Slide 5 (demo): "Built and tested comparing one real pricing page to a prior snapshot. Setup about 10 minutes. She never invents a price or reacts on her own."
+Slide 6 (CTA): "Want the free setup? Comment PRICE."
+
+---
+
+## ENTRY 186 — 05/10/2026 | LinkedIn | A Competitor Quietly Raised Their Prices Last Month and a Client Mentioned It Before You Noticed | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Wednesday episode 2)
+**Topic:** Employee #039, Sana, Pricing Watch. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/pricing-watch-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard is not in this session's container this run (only content-system present, confirmed via directory check). Role summary taken from the schedule.md departments-roster convention and the felt-pain lens per the "beyond #016" rule. Source gap logged honestly rather than fabricating a dashboard read. Sixth employee from the Intelligence department (after Yara/Competitor Watch, Maya/News Digest, Hind/Social Listener, Rania/Review Miner, Hana/SWOT Builder), a distinct angle: one specific, named metric (price) tracked against a prior snapshot, not general competitor moves, news, social chatter, reviews, or internal decision-support. Mode check: no receipt found anywhere for Sana. Confirmed PLAYBOOK.
+
+---
+A competitor quietly raised their prices last month and a client mentioned it before you noticed.
+
+You check their site maybe once a quarter, when you remember. The quiet changes slip by until someone else tells you about them.
+
+Meet Employee #039.
+
+Sana. Pricing Watch. Intelligence.
+Salary: $0. Never sleeps.
+
+Sana is AI. The only job she took was mine: watching the pricing page I kept meaning to check.
+
+How she works:
+1. You give her the competitor's pricing page and today's prices.
+2. She compares it against what you last recorded.
+3. She writes one line if anything changed: what, from what, to what.
+4. You review it and decide what to do.
+
+The demo: built and tested comparing one real pricing page to a prior snapshot with one AI tool. Setup time, about 10 minutes. She never visits a page I didn't name, and never invents a price.
+
+Red line: no price gets reported unless it's actually on the page, a quiet week beats an invented change.
+
+Your first win, free, today: pick one named competitor and write down their current prices, tier by tier, with today's date. That's Sana's first snapshot.
+
+Comment PRICE and I'll send you the full setup, free.
+
+#AIemployees #The99 #IntelligenceOps
+
+---
+
+## ENTRY 185 — 05/10/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Hiring-post ritual (job-ad parody), Monday wave announcement
+**Topic:** Introduces this wave's 3 openings (Employees #038, #039, #040).
+**Pattern used:** Job-ad parody + serial-cliffhanger opener
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — value-first series opener, comment-keyword capture, no promo.
+**Source:** schedule.md had no remaining "planned" rows this wave (confirmed via full read at wave start); three picks made per the "beyond #016" rule from the departments roster, Operations, Intelligence, Marketing, 3 distinct, none reused from last wave (Back Office, Sales, Customer). These three are also the three least-used departments overall (2 prior hires each, versus 3 each for the other four), a cleaner tie-break than recency alone this time. agent-os-company-dashboard is not in this session's container this run (only content-system present, confirmed via directory check); role descriptions below are drawn from the felt-pain lens (money chasing, time leaks, follow-up), not a dashboard read, and that gap is logged here rather than fabricated.
+
+---
+Now hiring. Three more AI employees. Salary: $0 each.
+
+Employee #038: Handoff Writer.
+Turns what's in your head into a clean handoff note before you step away.
+
+Employee #039: Pricing Watch.
+Tells you the moment a named competitor changes their pricing page.
+
+Employee #040: Launch Announcer.
+Writes the announcement the moment something new ships, before it goes quiet.
+
+None of them sleep. None of them ask for a raise. None of them act without me seeing it first.
+
+That is Employee #38, #39, and #40 of 99. The full team, hired one at a time, in public.
+
+See who is already on the floor. The scoreboard is live, updated only when there is a real receipt to show.
+
+Want to build your own first hire? Comment TEAM and I will send you the free 5-step framework.
+
+#AIemployees #Solopreneur #The99
+
+---
+
+## ENTRY 184 — 05/10/2026 | LinkedIn carousel | You're About to Be Heads-Down for Two Days and You Haven't Told Anyone What's Open | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 183 (Nabil, Employee #038, Handoff Writer, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/nabil/nabil-handoff-writer-01.png through -06.png
+Source HTML: skills/carousel-factory/out/nabil-handoff-writer.html
+**CTA keyword:** HANDOFF, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You're about to be heads-down for two days and you haven't told anyone what's open."
+Slide 2 (scene): "The list is all in your head: what's due, who's waiting, what could go wrong. None of it is written down anywhere someone else could find it."
+Slide 3 (role card): Nabil, Handoff Writer, Operations, Salary $0, never sleeps. "Nabil is AI. The only job he took was mine: writing the handoff note I kept meaning to send before I went quiet."
+Slide 4 (how he works): 4-step list, tell him what's open and due, he writes one clean handoff note, flags urgent deadlines, you review and send.
+Slide 5 (demo): "Built and tested writing one real handoff note before one real stretch away. Setup about 10 minutes. He never sends anything or invents a task."
+Slide 6 (CTA): "Want the free setup? Comment HANDOFF."
+
+---
+
+## ENTRY 183 — 05/10/2026 | LinkedIn | You're About to Be Heads-Down for Two Days and You Haven't Told Anyone What's Open | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Tuesday episode 1)
+**Topic:** Employee #038, Nabil, Handoff Writer. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/handoff-writer-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard is not in this session's container this run (confirmed via directory check: only content-system present). Role summary taken from the schedule.md departments-roster convention and the felt-pain lens per the "beyond #016" rule. Source gap logged honestly rather than fabricating a dashboard read. Sixth employee from the Operations department (after Nadia/task-router, Lina/meeting-scheduler, Idris/SOP writer, Salma/client onboarding, Layla/time digest, Fadi/status updates), a distinct angle: a one-time handoff note before stepping away, not recurring comms, scheduling, onboarding, or SOPs. Mode check: no receipt found anywhere for Nabil. Confirmed PLAYBOOK.
+
+---
+You're about to be heads-down for two days and you haven't told anyone what's open.
+
+The list is all in your head: what's due, who's waiting, what could go wrong. None of it is written down anywhere someone else could find it.
+
+Meet Employee #038.
+
+Nabil. Handoff Writer. Operations.
+Salary: $0. Never sleeps.
+
+Nabil is AI. The only job he took was mine: writing the handoff note I kept meaning to send before I went quiet.
+
+How he works:
+1. You tell him what's open, due, and who to watch.
+2. He writes one clean handoff note: open items, due dates, who needs what.
+3. He flags anything with a deadline while you're away.
+4. You review it and send it yourself.
+
+The demo: built and tested writing one real handoff note before one real stretch away with one AI tool. Setup time, about 10 minutes. He never sends anything, and never invents a task, a deadline, or a name I didn't give him.
+
+Red line: if I didn't list it, it's not in the handoff, a short honest handoff beats a padded invented one.
+
+Your first win, free, today: write three lines right now, what's open, what's due while you're away, who needs to be kept in the loop. That's Nabil's first handoff.
+
+Comment HANDOFF and I'll send you the full setup, free.
+
+#AIemployees #The99 #OperationsOps
 
 ---
 
