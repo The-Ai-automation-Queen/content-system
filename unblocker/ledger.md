@@ -6,24 +6,26 @@
 
 ## Queue (next up, in order)
 
-1. UNB-031 — One reply (fee band + yes/no) unblocks 2 speaking pitches, 9 days to the events *(served 05/10 — fresh, time-critical, pack delivered via Telegram)*
-2. UNB-029 — Delete dead `main-site/assets/work-with-me-v3.css` *(served 04/10 — fresh, 2-minute task, pack delivered via Telegram; 05/10 check: not yet done)*
-3. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 05/10 check confirms still unanswered, 5th morning; stale-branch count unchanged at 74)*
-4. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 05/10 check confirms still unanswered, 11th morning)*
-5. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 05/10 check confirms still unanswered, 13 days)*
-6. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 05/10 check confirms still unanswered, 19th morning)*
+1. UNB-031 — CognitionX yes/no only (HRSE fee parked) *(served 06/10, serve 2 shrunk — pack delivered via Telegram)*
+2. UNB-029 — Delete dead `main-site/assets/work-with-me-v3.css` *(served 04/10 — fresh, 2-minute task, pack delivered via Telegram; 06/10 check: still not done, 3rd morning)*
+3. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 06/10 check confirms still unanswered, 6th morning; stale-branch count unchanged at 74)*
+4. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 06/10 check confirms still unanswered, 12th morning)*
+5. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 06/10 check confirms still unanswered, 14 days)*
+6. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 06/10 check confirms still unanswered, 20th morning)*
 
-> **05/10/2026:** this run is the automated 08:00-GST cron slot itself (now
-> firing at 04:00 UTC — see UNB-030), not an interactive stand-in.
-> UNB-025/026/027/028 all remain simultaneously past their own serve-3
-> confrontation with zero reply (4–19 days) and no serve-4 rule — not
-> re-served over Telegram, put directly into today's operator briefing
-> instead, same as every run since 02/10. UNB-029 (served yesterday, not
-> yet done) was also not re-served: a genuinely time-critical fresh item
-> (UNB-031, 9 days to two speaking dates) outranked both a stale repeat and
-> a day-2 follow-up on a 2-minute task — variety + urgency rule. Also
-> resolved UNB-030 today (cron timezone bug, self-fixed, no human action
-> needed — see Entries below).
+> **06/10/2026:** automated 08:00-GST cron slot (04:00 UTC, confirmed
+> correct timing — UNB-030's fix held for a second day). No reply landed
+> on yesterday's UNB-031 two-part ask (`speaking-pipeline.md` TARGET
+> 002/003 unchanged; `review-cockpit/state.md`'s same-morning digest
+> confirms 54 consecutive empty Telegram sweeps). Events are now 8 days
+> out, so UNB-031 stays today's single serve but shrunk per the serve-2
+> rule: split into the CognitionX yes/no (no money decision) alone,
+> parking the HRSE fee question (the actual friction) for a future
+> suggested-range ask. UNB-025/026/027/028 all remain simultaneously past
+> their own serve-3 confrontation with zero reply (6–20 days) and no
+> serve-4 rule — not re-served, put directly into today's operator
+> briefing instead. UNB-029 (day 3, still not done) was deliberately
+> skipped again for the same urgency reason as 05/10.
 
 > UNB-001 through UNB-024 (below) are the original 06/07/2026 seed batch, built
 > entirely from the pre-pivot offer model (Whop SKU checkouts, Fast Forward
@@ -432,6 +434,14 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   left at 3 pending her answer — put to her in today's briefing. This run
   is the 08:00-GST automated cron slot itself, not an interactive
   stand-in — see UNB-030, found and fixed this same run.
+- **06/10/2026 follow-up (automated cron run):** `content-vault.md` header
+  confirms ENTRY 093/092/091 still `READY TO POST`, unchanged — 20th
+  morning running, 37 READY/0 POSTED matching both the session
+  reality-check hook and this morning's `review-cockpit digest` log
+  (54 consecutive empty `getUpdates` sweeps since 14/09). Same
+  no-serve-4-rule reasoning: did not re-send. Today's single serve went to
+  UNB-031 (serve 2, shrunk). `served_count` left at 3 pending her answer —
+  put to her in today's briefing.
 
 ---
 
@@ -559,6 +569,14 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   confrontation in thirteen days — still no serve-4 rule, did not re-send.
   Today's serve went to UNB-031 (fresh, time-critical). Put UNB-026
   directly to Fatiha in today's briefing instead.
+- **06/10/2026 follow-up (automated cron run):** re-ran `git ls-remote`
+  over HTTPS on all 5 repos live this morning — identical `403 Write
+  access to repository not granted` on every one, unchanged since 20/09
+  (17th day). Session reality-check banner still confirms "canon:
+  queen-brain NOT in this session." Not done, no reply to the 22/09
+  confrontation in fourteen days — still no serve-4 rule, did not re-send.
+  Today's serve went to UNB-031 (serve 2, shrunk). Put UNB-026 directly to
+  Fatiha in today's briefing instead.
 
 ### UNB-027 — Decide fate of `content-system-DUPLICATE`
 - **why:** a full second git checkout of this repo, frozen at commit
@@ -652,6 +670,10 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   confirms it's still there, unchanged, 11th morning since the 25/09
   confrontation. No reply. Per the skill's no-serve-4 rule, did not
   re-send. Today's serve went to UNB-031 (fresh, time-critical) instead.
+- **06/10/2026 follow-up (automated cron run):** `ls -ld ~/content-system-DUPLICATE`
+  confirms it's still there, unchanged, 12th morning since the 25/09
+  confrontation. No reply. Per the skill's no-serve-4 rule, did not
+  re-send. Today's serve went to UNB-031 (serve 2, shrunk) instead.
 
 ### UNB-028 — Review and prune stale branches (74 of 136, oldest 176 days)
 - **why:** `git for-each-ref` on `content-system` shows 74 non-main remote
@@ -763,6 +785,12 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   confrontation (5th morning running, still no serve-4 rule — did not
   re-send). Today's single serve went to UNB-031 (fresh, time-critical).
   Put UNB-028 directly to Fatiha in today's briefing instead.
+- **06/10/2026 follow-up (automated cron run):** `git fetch origin --prune`
+  + `git for-each-ref` this morning shows 74 branches committed before
+  2026-08-30 — unchanged for a third straight day. No reply to the 01/10
+  confrontation (6th morning running, still no serve-4 rule — did not
+  re-send). Today's single serve went to UNB-031 (serve 2, shrunk).
+  Put UNB-028 directly to Fatiha in today's briefing instead.
 
 ### UNB-029 — Delete dead `main-site/assets/work-with-me-v3.css`
 - **why:** the live work-with-me page (`main-site/work-with-fatiha/index.html:93-94`)
@@ -799,6 +827,12 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   took today's single serve slot instead — this is a deliberate skip, not
   a forgotten follow-up; `served_count` stays at 1, re-serve candidate for
   tomorrow if UNB-031 is answered by then.
+- **06/10/2026 follow-up (day 3, automated cron run):** `find` for
+  `work-with-me-v3.css` confirms it's still present, unchanged. Not done,
+  third morning. UNB-031 was still unanswered as of this morning (the
+  05/10 note's stated condition for re-serving this one), and UNB-031's
+  8-day deadline makes it the higher-urgency pick again today — same
+  deliberate-skip reasoning as yesterday, `served_count` stays at 1.
 
 ### UNB-030 — Fix: VPS cron was firing every job 4 hours later than its documented GST time
 - **why:** multiple runs (02/10–04/10) flagged "the cron ran but produced no
@@ -856,14 +890,24 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   research on stalled existing targets"); `speaking-pipeline.md` TARGET
   002/003 histories (updated today with the named contacts)
 - **verify:** a reply with an HRSE fee figure/range and a CognitionX
-  yes/no, logged into `speaking-pipeline.md` TARGET 002/003 history
-- **status:** served · served_count: 1 · added: 2026-10-05 · pack:
-  `packs/2026-10-05-UNB-031-speaking-fee-reply.md`
+  yes/no, logged into `speaking-pipeline.md` TARGET 002/003 history (now
+  split — see 06/10 note; CognitionX yes/no alone satisfies this entry's
+  first half)
+- **status:** served · served_count: 2 · added: 2026-10-05 · pack:
+  `packs/2026-10-05-UNB-031-speaking-fee-reply.md`,
+  `packs/2026-10-06-UNB-031-cognitionx-yesno-only.md`
 - **05/10/2026 prep note:** selected over re-serving UNB-025/026/027/028
   (all past serve-3, unanswered 4-19 days, no serve-4 rule) and over a
   day-2 follow-up on UNB-029 (served yesterday, not yet done, but no
   deadline pressure) — this is the only queue item with a hard external
   date. Delivered via Telegram.
+- **06/10/2026 follow-up (serve 2, automated cron run):** `speaking-pipeline.md`
+  TARGET 002/003 history unchanged — no reply to yesterday's two-part ask.
+  Events now 8 days out. Per the serve-2 rule, shrunk rather than repeated:
+  split the ask into CognitionX's yes/no alone (no money decision) and
+  parked the HRSE fee question (the likely actual friction — it asks her
+  to invent a number from scratch) for a future ask that brings a
+  suggested range instead. Delivered via Telegram.
 
 ---
 
