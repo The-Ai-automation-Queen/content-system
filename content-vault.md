@@ -21,6 +21,39 @@
 
 ## Most recent (quick reference)
 
+> **06/10/2026 content-engine daily run — no new entries produced (deliberate):**
+> Run end to end per explicit operator instruction ("Run the /content-engine
+> daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
+> queue-only — never post instantly. End with the operator briefing.");
+> `skills/content-engine/SKILL.md` not registered via the Skill tool this
+> session, so read and followed manually per the
+> `project-skills-not-registered` memory. Loaded `AGENTS.md`,
+> `CURRENT-WORKFLOW.md`, `context/current-context.json` and `security.md`
+> first, as both CLAUDE.md and the skill require. No new source material
+> since yesterday's RESEARCH 058: `RESEARCH 059` (`research-notes.md`,
+> 2026-10-06 signal harvest) explicitly found no new qualifying signal, so
+> RESEARCH 058 (PwC "2026 Global AI Jobs Barometer") remains the newest
+> unused source, still queued for the judgment/skill-erosion thread
+> (RESEARCH 052–058) once drafting is unblocked. Both standing blockers are
+> unchanged and independently reconfirmed this session: (1) this session's
+> reality-check hook again states canon: queen-brain NOT in this session,
+> and explicitly forbids writing price, tier, offer status or
+> customer-facing copy reconstructed from this repo's local mirror copies —
+> content-engine's entire output is customer-facing copy, so drafting stays
+> blocked regardless of available research; confirmed independently via
+> `git ls-remote` against `The-Ai-automation-Queen/queen-brain`, which
+> returned "Repository not found" from this session's git credentials; (2)
+> the release backlog is also unchanged: vault still holds 37 READY TO POST
+> (oldest since 14/07/2026, 84+ days), 33 DRAFT, 6 STALE, 2 KILLED, 0
+> POSTED, and `review-cockpit/state.md`'s latest sweep (06/10, second sweep)
+> logged the 56th consecutive empty Telegram sweep since the 14/09/2026
+> digest with no operator replies, approvals or kills since 14/07/2026 —
+> adding more DRAFT volume would still only crowd an already-unreleased
+> backlog. No Notion, Blotato, or queen-brain/GitHub connector was reachable
+> from this session (checked via ToolSearch and `git ls-remote`). Operator
+> briefing given in this session's chat, same two open options as every run
+> since 18/09/2026, still unanswered.
+
 > **05/10/2026 content-engine daily run (user-triggered, later same day) — no
 > new entries produced (deliberate):** Re-ran end to end per explicit operator
 > instruction ("Run the /content-engine daily skill end to end. Obey CLAUDE.md
