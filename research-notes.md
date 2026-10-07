@@ -2,6 +2,41 @@
 
 ---
 
+## RESEARCH 060 — 2026-10-07 | Signal harvest (current audience problem) — no new qualifying signal
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `45db01fa`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Internal tooling discoveries this run:** none — nothing surfaced that was internal-research-only; all candidates checked below are shift-lead (public-topic) or rejected outright.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority, methodology and recency were weighed.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` for both before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current (post-rebuild) harvest shape.
+
+### No new signal logged this run
+
+A full sweep (all 6 `inventory.md` feeds plus targeted web search on all three pillars, including the standing pillar-3 gap) found nothing that clears the bar as a genuinely new, dated, primary-sourced, audience-fit signal beyond what RESEARCH 044–059 already have on file. Per `research-policy.md`, a gap is logged as a gap rather than filled with a weaker source.
+
+### Rejected this run
+
+- **METR, "Measuring the Self-Reported Impact of Early-2026 AI on Technical Worker Productivity"** (published 2026-05-11, https://metr.org/blog/2026-05-11-ai-usage-survey/) — checked directly via WebFetch for a founder-specific angle (the sample includes 48 "founders and managers" out of 349 technical workers surveyed February–April 2026). Confirmed the report contains **no role-specific breakdown** for that subgroup — the only disclosed subgroup pattern is by AI-tool-usage intensity, not by role. Does not clear the pillar-1/3 bar; logged as checked-and-rejected rather than re-surfaced on a future run.
+- **Grant Thornton, "2026 AI Impact Survey Report"** (survey of 950 business leaders, Feb 23–Mar 18 2026, https://www.grantthornton.com/services/advisory-services/artificial-intelligence/2026-ai-impact-survey) — checked directly via WebFetch. Wrong audience: respondents are C-suite/senior leaders across 10 industries at 100-respondent-per-sector scale (390 operations, 313 finance, 234 IT) — enterprise organizational-integration data (e.g. "58% vs 15% revenue growth for fully-integrated vs piloting orgs"), not solo professionals or founders deciding where AI belongs in their own work. Same treatment as every previously-rejected enterprise/C-suite source (RESEARCH 048's Accenture item, RESEARCH 059's Claude Frontier Academy item).
+- A repeat sweep for a disclosed-methodology "how a founder decided what to automate first" account (search terms covering founder case studies, solo-consultant AI surveys, and October 2026 solopreneur-AI news) surfaced only advice/opinion blog content (mindstudio.ai, taskade.com, aismartventures.com, mymobilelyfe.com, prometai.app, blog.mean.ceo) with no disclosed survey, sample or methodology behind their claims — same sourcing-bar failure as every pillar-3 candidate rejected in RESEARCH 052–059. Pillar 3 remains open, now an 8th consecutive run (052–060) without a qualifying source.
+
+### Source health this run
+
+- Anthropic News (High): WebFetch worked; newest items are Oct 7 ("Introducing Claude Haiku 5.5") and Oct 6 ("Expanding the Cyber Verification Program," already on file RESEARCH 059) — the Oct 7 item is a small-model cost/speed announcement, no audience-problem fit.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — now the **17th consecutive failed run** (044 through 060), over ten weeks on the same dead fetch path. Repeating the overdue recommendation from 047–059: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): WebFetch worked; all visible posts are ML-engineering/model-release content (Falcon-Emirati, Falcon OCR Arabic, GRPO alignment guide, llama.cpp decision models) — same non-fit pattern as every run since RESEARCH 050.
+- Google DeepMind blog (Medium): WebFetch worked; all visible posts are product launches (Gemini 4 Argon, EmbeddingGemma 2, SynthID Bio, Gemini 3.8 variants) — unchanged from RESEARCH 059, no audience-problem fit.
+- a16z AI (Medium): WebFetch worked; current posts are VC/infra/consumer-AI-market content (Top 100 Gen AI Consumer Apps 7th edition, $1T AI buildout, AI agent security roundtable) — no audience-problem fit.
+- Lenny's Newsletter (Low): WebFetch worked; newest AI-flagged post is still Sep 22 ("Advanced evals") — unchanged since prior runs, PM/product-leadership audience, not solo professionals/founders.
+- WebSearch/WebFetch: both functional throughout, aside from OpenAI's standing 403. No signals were invented; every claim above was independently verified by a direct fetch or search this run.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 059 — 2026-10-06 | Signal harvest (current audience problem) — no new qualifying signal
 
 **Status:** NOTED
