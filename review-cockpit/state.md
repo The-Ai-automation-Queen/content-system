@@ -7,9 +7,9 @@ digest run overwrites it.
 ## Telegram offset
 
 - Last `getUpdates` consumed offset: still none pending — checked again
-  on 07/10/2026 (operator-requested `digest` run, pre-digest sweep), queue
+  on 07/10/2026 (operator-requested `process` run, interactive), queue
   empty (`{"ok":true,"result":[]}`). No card replies, no unblocker
-  replies, no voice notes since the 14/09/2026 digest (57th consecutive
+  replies, no voice notes since the 14/09/2026 digest (58th consecutive
   empty sweep).
 - Next `process` run should call `getUpdates` with no offset filter until a
   reply produces an `update_id` to anchor to.
@@ -31,6 +31,36 @@ digest run overwrites it.
 (header message_id 1295, footer message_id 1305 — no offset recorded yet since no reply has ever anchored one.)
 
 ## Process sweeps log
+
+- 07/10/2026 — interactive sweep (operator-requested `process` run, run
+  end-to-end per operator request via `/review-cockpit process`, obeying
+  `CLAUDE.md` and `security.md`; skill not registered via the Skill tool
+  this session, so `SKILL.md` was read and followed manually per the
+  `project-skills-not-registered` memory; Telegram auth followed the
+  `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, not `deploy/.env`). Today's 08:30-GST scheduled
+  `process` cron only did a git sync (see
+  `deploy/logs/review-cockpit process-2026-10-07T08-30-03.log`), no
+  actual sweep — this interactive run is the real sweep since this
+  morning's digest. `getUpdates` (no offset, none stored) returned empty
+  (`{"ok":true,"result":[]}`). Nothing to route: no card decisions, no
+  unblocker replies, no voice notes — 58th consecutive empty sweep since
+  the 14/09/2026 digest. Vault counts reconfirmed directly from
+  `content-vault.md`'s `## ENTRY ... |` status suffixes: 37 READY TO POST
+  / 33 DRAFT / 6 STALE / 2 KILLED (78 entries total) — matches this
+  session's reality-check hook exactly. `unblocker/ledger.md` checked —
+  open queue items (UNB-025–029, 031) are pre-existing unblocker blockers
+  awaiting a human pass (UNB-031 served serve-3 today with the
+  CognitionX confrontation; the others past serve-3 cap with no serve-4
+  rule; UNB-029 day-4 skipped again), not review-cockpit replies; not
+  touched by this skill. `lead-magnets.csv` reconfirmed: WORDS and TEAM
+  both `active=yes` — no CTA-BLOCKED needed for R1–R3. `decisions-log.md`
+  tail checked, unchanged (last entries are the 14/07 exit-story kills).
+  Nothing applied to the vault. All 9 cards from this morning's digest
+  (#1–#6, R1–R3, message_ids 1296–1304) remain outstanding. Publishing
+  stayed queue-only throughout (`security.md` §3.1, `CLAUDE.md`) — no
+  post released, no Blotato queue touched. Confirmed in Telegram: "Done:
+  0 ready, 0 killed, 0 edited. 9 waiting on you." (message_id 1308).
 
 - 07/10/2026 — pre-digest sweep (operator-requested `digest` run, run
   end-to-end per operator request via `/review-cockpit digest`, obeying
