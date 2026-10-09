@@ -425,3 +425,27 @@ body.hero-light:has(.sk-hero-fade) .sk-header{background:#F4F2FDF2;box-shadow:0 
 .sk-proof-why{grid-column:1;margin:0;max-width:62ch;font-size:17px;line-height:1.55;color:#3a3f4b}
 .sk-proof-why a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
 .sk-proof-list span a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+
+/* 09/10: centred hero. Smaller photo in the middle, fading on every side; the title sits over its lower part. */
+.sk-hero-center .sk-hero-photo,body.home-saadia .sk-hero-center .sk-hero-photo{inset:clamp(74px,9vh,96px) auto auto 50%;transform:translateX(-50%);width:min(380px,30vw);height:auto;aspect-ratio:1122/1402;object-fit:cover;object-position:center 30%;opacity:1;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 42%,#000 52%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 42%,#000 52%,transparent 100%)}
+.sk-hero-center .sk-hero-colour{display:block;inset:0;width:100%;height:100%;opacity:1;background:linear-gradient(180deg,#F4F2FD00 0,#F4F2FD00 34%,#F4F2FDB3 46%,#F4F2FD00 72%)}
+.sk-hero-center .sk-hero-content{text-align:center;padding-top:calc(clamp(74px,9vh,96px) + min(380px,30vw)*.92);padding-bottom:70px}
+.sk-hero-center h1,body.home-saadia .sk-hero-center h1{max-width:none;margin-inline:auto}
+.sk-hero-center h1::before{margin-inline:auto}
+.sk-hero-center h1 em{margin-inline:auto}
+.sk-hero.sk-hero-center .sk-hero-content>p{max-width:46ch!important;margin-inline:auto}
+.sk-hero-center .sk-hero-actions,.sk-hero-center .sk-hero-proof{justify-content:center}
+@media(max-width:700px){
+  .sk-hero-center .sk-hero-photo,body.home-saadia .sk-hero-center .sk-hero-photo{top:70px;width:72vw}
+  .sk-hero-center .sk-hero-content{padding-top:calc(70px + 72vw*.95);padding-bottom:30px}
+  .sk-hero-center .sk-hero-actions{justify-items:stretch}
+}
+.sk-hero-center .sk-hero-photo,body.home-saadia .sk-hero-center .sk-hero-photo{top:clamp(64px,7vh,80px);width:min(440px,34vw);-webkit-mask-image:radial-gradient(closest-side at 50% 46%,#000 35%,rgba(0,0,0,.6) 65%,transparent 100%);mask-image:radial-gradient(closest-side at 50% 46%,#000 35%,rgba(0,0,0,.6) 65%,transparent 100%)}
+.sk-hero-center .sk-hero-content{padding-top:calc(clamp(64px,7vh,80px) + min(440px,34vw)*.78)}
+.sk-hero-center .sk-hero-colour{background:radial-gradient(ellipse 60% 22% at 50% calc(clamp(64px,7vh,80px) + min(440px,34vw)*1.05),#F4F2FDCC 0,#F4F2FD00 100%)}
+.sk-hero-center h1 em{max-width:none}
+@media(max-width:700px){
+  .sk-hero-center .sk-hero-photo,body.home-saadia .sk-hero-center .sk-hero-photo{top:62px;width:86vw}
+  .sk-hero-center .sk-hero-content{padding-top:calc(62px + 86vw*.86)}
+  .sk-hero-center .sk-hero-colour{background:radial-gradient(ellipse 80% 16% at 50% calc(62px + 86vw*1.1),#F4F2FDD9 0,#F4F2FD00 100%)}
+}
