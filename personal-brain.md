@@ -11,6 +11,41 @@ reference real life — not generic AI content. Updated daily by `brain-manager`
 
 ## Most recent (quick reference)
 
+> **09/10/2026 brain-manager run — no personal-brain update (deliberate):**
+> User-triggered run ("Run the /brain-manager skill end to end. Obey
+> CLAUDE.md and security.md. Publishing is queue-only — never post
+> instantly. End with the operator briefing."). `skills/brain-manager/
+> SKILL.md` was not registered via the Skill tool this session (`Unknown
+> skill`), so read and followed manually per `project-skills-not-registered`.
+> No owner-supplied corrections, stories or project facts were given this
+> session, so per the skill's explicit rule nothing was invented to fill
+> the two open follow-ups below and no questionnaire was sent. Context
+> refresh from the named upstream authority (`The-Ai-automation-Queen/
+> queen-brain` per `context/sources.md`) is still blocked: this session's
+> reality-check hook again states "canon: queen-brain NOT in this session"
+> ("Ask for the repo instead of reconstructing it from this one's
+> copies"), re-checked fresh this run — `git ls-remote` against queen-brain
+> again returned "Write access to repository not granted" / 403, no
+> Notion connector (`ToolSearch` for "notion" — no match), no `gh` CLI
+> (`which gh` empty), and this repo's own `git remote` still points at
+> `content-system`, not `queen-brain`. Same blocker, 12th consecutive day
+> since 28/09. The two follow-ups flagged 2026-07-05 remain open and
+> uncaptured: (1) the corporate-exit trigger story (Background & Career —
+> reinforced by the 14/07/2026 decisions-log kill reasons for ENTRY
+> 060/065), and (2) the current stage/next-milestone for "building the
+> content/creator-OS system itself" (Current Projects). Neither is being
+> chased with a questionnaire — noted here for Fatiha to supply whenever
+> she chooses. DM responder remains paused (14/09/2026); not reenabled.
+> No publishing or scheduling action was taken this run — publication
+> stays queue-only and manual per `security.md` and `CURRENT-WORKFLOW.md`.
+> No recurring message was sent and none is authorized by this run.
+> Separately noted: vault is 37 READY TO POST / 0 POSTED per this
+> session's reality-check hook, oldest READY item now 87 days
+> (14/07/2026), and `review-cockpit/state.md` shows the 14/09/2026
+> Telegram digest's 64th consecutive empty sweep as of 09/10/2026 (after
+> this morning's digest+process runs) — release, not production, remains
+> the bottleneck.
+
 > **08/10/2026 brain-manager run — no personal-brain update (deliberate):**
 > User-triggered run ("Run the /brain-manager skill end to end. Obey
 > CLAUDE.md and security.md. Publishing is queue-only — never post
