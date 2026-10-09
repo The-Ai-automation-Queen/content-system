@@ -421,3 +421,7 @@ body.hero-light:has(.sk-hero-fade) .sk-header{background:#F4F2FDF2;box-shadow:0 
   .sk-hero-bg .sk-hero-colour{background:linear-gradient(180deg,#F4F2FDF0 0,#F4F2FD00 90px),linear-gradient(180deg,#F4F2FD00 30%,#F4F2FDE6 48%,#F4F2FD 60%)}
   .sk-hero-bg .sk-hero-content{padding-top:42vh}
 }
+/* 09/10: why the work matters, under the proof numbers. */
+.sk-proof-why{grid-column:1;margin:0;max-width:62ch;font-size:17px;line-height:1.55;color:#3a3f4b}
+.sk-proof-why a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.sk-proof-list span a{color:inherit;text-decoration:underline;text-underline-offset:3px}
