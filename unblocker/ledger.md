@@ -6,12 +6,12 @@
 
 ## Queue (next up, in order)
 
-1. UNB-031 — CognitionX yes/no only (HRSE fee parked) *(serve 3, 07/10 — gentle confrontation sent, awaiting reply; 08/10 check: still unanswered, 4th morning, event now 6-7 days out; not re-sent, no serve-4 rule)*
-2. UNB-029 — One reply, I run it myself (delete dead `work-with-me-v3.css`) *(serve 2, 08/10 — shrunk to a single ✅/❌ reply with an offer to execute myself; pack delivered via Telegram)*
-3. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 08/10 check confirms still unanswered, 8th morning; stale-branch count unchanged at 74)*
-4. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 08/10 check confirms still unanswered, 14th morning)*
-5. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 08/10 check confirms still unanswered, 16 days)*
-6. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 08/10 check confirms still unanswered, 22nd morning)*
+1. UNB-029 — Delete dead `work-with-me-v3.css` *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; ask already at floor, offer to execute myself on a ✅ still open)*
+2. UNB-031 — CognitionX yes/no only (HRSE fee parked) *(serve 3, 07/10 — gentle confrontation sent, awaiting reply; 09/10 check: still unanswered, 5th morning, event now 5-6 days out; not re-sent, no serve-4 rule)*
+3. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 09/10 check confirms still unanswered, 9th morning; stale-branch count unchanged at 74)*
+4. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 09/10 check confirms still unanswered, 15th morning)*
+5. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 09/10 check confirms still unanswered, 17 days)*
+6. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 09/10 check confirms still unanswered, 23rd morning)*
 
 > **08/10/2026 (interactive run, standing in for a cron slot that only
 > git-pulled):** the automated 04:00 UTC cron fired on time
@@ -63,6 +63,32 @@
 > literal text "--get-updates" to the operator's Telegram before this was
 > caught — harmless content, but a real unintended send; flagged in the
 > briefing for transparency.
+
+> **09/10/2026 (interactive run, operator-requested `/unblocker daily`):**
+> full re-scan this morning — `content-vault.md` header, `review-cockpit/
+> state.md` (09/10 digest already run, oldest ready item 87 days), `git
+> fetch origin --prune` + `git for-each-ref` (74 stale branches, unchanged),
+> `ls -ld ~/content-system-DUPLICATE` (still present, unchanged),
+> `find`/grep for `work-with-me-v3.css` (still present, zero live
+> references, unchanged), `speaking-pipeline.md` TARGET 002/003 (unchanged,
+> events now 5-6 days out), `git ls-remote` on all 7 absent estate repos
+> (identical 403/404s, unchanged), `ROADMAP.md`/`ACTION-PLAN-CASH-MACHINE.md`
+> (last touched 19/09, no new Priority-0 items), `lead-magnets.csv` (all
+> active flags unchanged from prior scans). Live `getUpdates` confirmed
+> empty (`{"ok":true,"result":[]}`) — no reply to any open confrontation.
+> No new ledger-eligible item found; no completion among UNB-025–029/031.
+> Per the no-serve-4 rule, UNB-025/026/027/028/031 were not re-sent (all
+> past their own serve-3 confrontation, 5-23 days unanswered) — summarized
+> in today's briefing instead. That freed today's single serve for UNB-029,
+> which had not yet reached its own serve-3 point: sent its gentle
+> confrontation (pack `packs/2026-10-09-UNB-029-serve-3-confrontation.md`),
+> keeping the same ✅-go-ahead/❌-keep-it/🤔-something-else framing from
+> serve 2 since the ask was already at its floor. Sent via direct Telegram
+> `sendMessage` using ambient `TELEGRAM_BOT_TOKEN`/`TELEGRAM_CHAT_ID` (per
+> the `review-cockpit-telegram-env` memory — `deploy/.env`'s Telegram rows
+> are blank and would clobber the ambient vars if sourced), message_id 1336.
+> No publish/send/pay action taken beyond this one Telegram message; no
+> file was deleted or repo state changed without a reply.
 
 > UNB-001 through UNB-024 (below) are the original 06/07/2026 seed batch, built
 > entirely from the pre-pivot offer model (Whop SKU checkouts, Fast Forward
@@ -488,6 +514,14 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   not re-send. Today's single serve went to UNB-031 (serve 3, its own
   confrontation point). `served_count` left at 3 pending her answer — put
   to her in today's briefing.
+- **09/10/2026 follow-up (interactive run):** `content-vault.md` header and
+  `review-cockpit/state.md`'s 09/10 digest both confirm ENTRY 093/092/091
+  still `READY TO POST`, unchanged — 23rd morning running, oldest ready
+  item now 87 days per the digest. Live `getUpdates` returned empty — no
+  reply to the 17/09 confrontation in over three weeks. Same
+  no-serve-4-rule reasoning: did not re-send. Today's single serve went to
+  UNB-029 (serve 3, its own confrontation point, see below). `served_count`
+  left at 3 pending her answer — put to her in today's briefing.
 
 ---
 
@@ -631,6 +665,15 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   days — still no serve-4 rule, did not re-send. Today's serve went to
   UNB-031 (serve 3, confrontation). Put UNB-026 directly to Fatiha in
   today's briefing instead.
+- **09/10/2026 follow-up (interactive run):** re-ran `git ls-remote` over
+  HTTPS on all 7 absent estate repos live this morning — identical `403
+  Write access to repository not granted` (5 repos) / `404 Repository not
+  found` (`agent-os-dashboard`) on every one, unchanged since 20/09 (19th
+  day). Session reality-check banner still confirms "canon: queen-brain NOT
+  in this session." Not done, no reply to the 22/09 confrontation in
+  seventeen days — still no serve-4 rule, did not re-send. Today's serve
+  went to UNB-029 (serve 3, confrontation). Put UNB-026 directly to Fatiha
+  in today's briefing instead.
 
 ### UNB-027 — Decide fate of `content-system-DUPLICATE`
 - **why:** a full second git checkout of this repo, frozen at commit
@@ -732,6 +775,10 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   confirms it's still there, unchanged, 13th morning since the 25/09
   confrontation. No reply. Per the skill's no-serve-4 rule, did not
   re-send. Today's serve went to UNB-031 (serve 3, confrontation) instead.
+- **09/10/2026 follow-up (interactive run):** `ls -ld ~/content-system-DUPLICATE`
+  confirms it's still there, unchanged, 15th morning since the 25/09
+  confrontation. No reply. Per the skill's no-serve-4 rule, did not
+  re-send. Today's serve went to UNB-029 (serve 3, confrontation) instead.
 
 ### UNB-028 — Review and prune stale branches (74 of 136, oldest 176 days)
 - **why:** `git for-each-ref` on `content-system` shows 74 non-main remote
@@ -855,6 +902,12 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   confrontation (7th morning running, still no serve-4 rule — did not
   re-send). Today's single serve went to UNB-031 (serve 3, confrontation).
   Put UNB-028 directly to Fatiha in today's briefing instead.
+- **09/10/2026 follow-up (interactive run):** `git fetch origin --prune` +
+  `git for-each-ref` this morning shows 74 branches committed before
+  2026-08-30 — unchanged for a sixth straight day. No reply to the 01/10
+  confrontation (9th morning running, still no serve-4 rule — did not
+  re-send). Today's single serve went to UNB-029 (serve 3, confrontation).
+  Put UNB-028 directly to Fatiha in today's briefing instead.
 
 ### UNB-029 — Delete dead `main-site/assets/work-with-me-v3.css`
 - **why:** the live work-with-me page (`main-site/work-with-fatiha/index.html:93-94`)
@@ -874,9 +927,10 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   `index.html:93-94` confirms v4 is what's actually loaded)
 - **verify:** `work-with-me-v3.css` no longer exists, or is confirmed to be
   loaded somewhere this scan missed and kept with a documented reason
-- **status:** served · served_count: 2 · added: 2026-10-04 · pack:
+- **status:** served · served_count: 3 · added: 2026-10-04 · pack:
   `packs/2026-10-04-UNB-029-delete-dead-v3-css.md`,
-  `packs/2026-10-08-UNB-029-one-reply-i-run-it.md`
+  `packs/2026-10-08-UNB-029-one-reply-i-run-it.md`,
+  `packs/2026-10-09-UNB-029-serve-3-confrontation.md`
 - **04/10/2026 prep note:** re-verified live before serving — grepped every
   `.html`/`.css`/`.js` file in the repo for `work-with-me-v3`, zero live
   hits; confirmed `main-site/work-with-fatiha/index.html:93-94` loads only
@@ -917,6 +971,24 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   part from "paste 3 lines" to "tap one emoji." Pack:
   `packs/2026-10-08-UNB-029-one-reply-i-run-it.md`. Delivered via Telegram,
   send confirmed.
+- **09/10/2026 follow-up (serve 3, interactive run):** re-grepped live —
+  `work-with-me-v3.css` still present, still zero live references, v4
+  still confirmed as what's actually loaded. Not done, sixth morning, and
+  the ask was already shrunk to its floor yesterday (one emoji, with an
+  offer to execute it myself). Nothing left to shrink, so per the skill's
+  serve-3 rule this became UNB-029's own gentle confrontation
+  (go-ahead / keep-it / something-else) rather than a fourth repeat of the
+  identical ask. This is the task that took today's single serve slot —
+  UNB-025/026/027/028/031 are all simultaneously past their own serve-3
+  confrontation with zero reply (5-23 days) and no serve-4 rule, so none
+  of them were re-sent; see each entry's own 09/10 note. Pack:
+  `packs/2026-10-09-UNB-029-serve-3-confrontation.md`. Delivered via direct
+  Telegram `sendMessage` using ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID` (per the `review-cockpit-telegram-env` memory —
+  `deploy/.env`'s Telegram rows are blank and would clobber the ambient
+  vars if sourced through `telegram-notify.sh`), message_id 1336 confirmed
+  sent. No file deleted, no repo state changed — still awaiting a reply
+  before acting on the ✅ offer.
 
 ### UNB-030 — Fix: VPS cron was firing every job 4 hours later than its documented GST time
 - **why:** multiple runs (02/10–04/10) flagged "the cron ran but produced no
@@ -1018,6 +1090,14 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   directly to Fatiha in today's briefing instead. Today's single serve went
   to UNB-029 (serve 2, variety + the confrontation-freed-the-slot logic
   from 07/10's note).
+- **09/10/2026 follow-up (interactive run):** `speaking-pipeline.md` TARGET
+  002/003 history unchanged — no reply to the 07/10 confrontation. Live
+  `getUpdates` returned empty. Events now **5-6 days out**, fifth morning
+  running since the ask was shrunk to its floor on 06/10. Per the skill's
+  no-serve-4 rule, did not re-send or escalate further over Telegram — put
+  directly to Fatiha in today's briefing instead, flagging the tightening
+  deadline explicitly. Today's single serve went to UNB-029 (serve 3, its
+  own confrontation point).
 
 ---
 
