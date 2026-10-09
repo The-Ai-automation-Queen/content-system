@@ -7,30 +7,58 @@ digest run overwrites it.
 ## Telegram offset
 
 - Last `getUpdates` consumed offset: still none pending — checked again
-  on 08/10/2026 (operator-requested `process` run, interactive, third
-  sweep today), queue empty (`{"ok":true,"result":[]}`). No card replies,
-  no unblocker replies, no voice notes since the 14/09/2026 digest (62nd
-  consecutive empty sweep).
+  on 09/10/2026 (operator-requested `digest` run, pre-digest sweep),
+  queue empty (`{"ok":true,"result":[]}`). No card replies, no unblocker
+  replies, no voice notes since the 14/09/2026 digest (63rd consecutive
+  empty sweep).
 - Next `process` run should call `getUpdates` with no offset filter until a
   reply produces an `update_id` to anchor to.
 
-## Current digest card mapping (08/10/2026)
+## Current digest card mapping (09/10/2026)
 
 | Card | Vault entry | Telegram msg_id | Platform | Pillar | Critic | Notes |
 |---|---|---|---|---|---|---|
-| #1 | ENTRY 099 | 1311 | Instagram (carousel) | Use AI for real work | pending | reflective question, no offer |
-| #2 | ENTRY 098 | 1312 | LinkedIn (text post) | Find what is uniquely yours | pending | reflective question, no offer — flags "builder-and-watchdog" framing for explicit yes/no |
-| #3 | ENTRY 097 | 1313 | Instagram / LinkedIn (text post) | Use AI for real work | pending | reflective question, no offer — overlaps #2's theme |
-| #4 | ENTRY 096 | 1314 | Instagram Reel (~40s) | Find what is uniquely yours | pending | reflective question, no offer — needs timing check |
-| #5 | ENTRY 095 | 1315 | LinkedIn | Real Talk | pending | discussion (no keyword) |
-| #6 | ENTRY 094 | 1316 | LinkedIn | Build Once, Runs Forever | 7.2 | community tease — CTA-BLOCKED (VERIFY + PREP) |
-| R1 | ENTRY 047 | 1317 | LinkedIn | What's Worth It | n/a | WORDS (live) — READY since 14/07/2026 (86d) |
-| R2 | ENTRY 048 | 1318 | X/Twitter thread | The Freedom Business | n/a | TEAM (live) — READY since 14/07/2026 (86d) |
-| R3 | ENTRY 049 | 1319 | Short-form video | Build Once, Runs Forever | n/a | TEAM (live) — READY since 14/07/2026 (86d) |
+| #1 | ENTRY 099 | 1326 | Instagram (carousel) | Use AI for real work | pending | reflective question, no offer |
+| #2 | ENTRY 098 | 1327 | LinkedIn (text post) | Find what is uniquely yours | pending | reflective question, no offer — flags "builder-and-watchdog" framing for explicit yes/no |
+| #3 | ENTRY 097 | 1328 | Instagram / LinkedIn (text post) | Use AI for real work | pending | reflective question, no offer — overlaps #2's theme |
+| #4 | ENTRY 096 | 1329 | Instagram Reel (~40s) | Find what is uniquely yours | pending | reflective question, no offer — needs timing check |
+| #5 | ENTRY 095 | 1330 | LinkedIn | Real Talk | pending | discussion (no keyword) |
+| #6 | ENTRY 094 | 1331 | LinkedIn | Build Once, Runs Forever | 7.2 | community tease — CTA-BLOCKED (VERIFY + PREP) |
+| R1 | ENTRY 047 | 1332 | LinkedIn | What's Worth It | n/a | WORDS (live) — READY since 14/07/2026 (87d) |
+| R2 | ENTRY 048 | 1333 | X/Twitter thread | The Freedom Business | n/a | TEAM (live) — READY since 14/07/2026 (87d) |
+| R3 | ENTRY 049 | 1334 | Short-form video | Build Once, Runs Forever | n/a | TEAM (live) — READY since 14/07/2026 (87d) |
 
-(header message_id 1310, footer message_id 1320 — no offset recorded yet since no reply has ever anchored one.)
+(header message_id 1325, footer message_id 1335 — no offset recorded yet since no reply has ever anchored one.)
 
 ## Process sweeps log
+
+- 09/10/2026, digest run (operator-requested `digest` run, run end-to-end
+  per operator request via `/review-cockpit digest`, obeying `CLAUDE.md`
+  and `security.md`; skill not registered via the Skill tool this
+  session, so `SKILL.md` was read and followed manually per the
+  `project-skills-not-registered` memory; Telegram auth followed the
+  `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, length-checked only, never printed, never sourced
+  from `deploy/.env`). Pre-digest `getUpdates` (no offset, none stored)
+  returned empty (`{"ok":true,"result":[]}`) — 63rd consecutive empty
+  sweep since the 14/09/2026 digest; nothing to route, nothing applied to
+  the vault, `decisions-log.md` unchanged. Vault counts reconfirmed
+  directly from `content-vault.md`'s `## ENTRY ... |` status suffixes: 37
+  READY TO POST / 33 DRAFT (matching this session's reality-check hook).
+  Card set unchanged from 08/10/2026 — no new content-engine DRAFT entries
+  landed (top-6 newest DRAFT by date still 099/098/097/096/095/094) and no
+  operator decisions moved the Ready shelf (still 047/048/049, now 87d).
+  `lead-magnets.csv` reconfirmed: WORDS and TEAM both `active=yes` — no
+  CTA-BLOCKED needed for R1–R3. Sent one Telegram thread via direct
+  `sendMessage` (HTML mode, not `telegram-notify.sh`): header (1325),
+  cards #1–#6 (1326–1331), Ready-shelf cards R1–R3 (1332–1334), footer
+  with reply protocol (1335). Publishing stayed queue-only throughout
+  (`security.md` §3.1, `CLAUDE.md`) — no post released, no Blotato queue
+  touched. Canon (queen-brain) was NOT reachable this session per the
+  startup reality-check — no price, tier, offer status or customer-facing
+  copy was written or reconstructed. All 9 cards from the 08/10 digest
+  (message_ids 1311–1319) still went unanswered before being superseded by
+  this run's cards.
 
 - 08/10/2026, third sweep today (operator-requested `process` run, run
   end-to-end per operator request via `/review-cockpit process`, obeying
@@ -1056,6 +1084,36 @@ digest run overwrites it.
   R1–R3) remain outstanding. Publishing stayed queue-only throughout
   (`security.md` §3.1, `CLAUDE.md`) — no post released, no Blotato queue
   touched. Confirmation sent to Telegram (message_id 1143).
+
+## Last digest served — 08/10/2026 (run on operator request)
+
+Header message_id: 1310
+Footer message_id: 1320
+
+| Card | ENTRY | message_id | Platform | Pillar | Critic | CTA |
+|---|---|---|---|---|---|---|
+| #1 | ENTRY 099 | 1311 | Instagram (carousel) | Use AI for real work | pending | reflective question, no offer |
+| #2 | ENTRY 098 | 1312 | LinkedIn (text post) | Find what is uniquely yours | pending | reflective question, no offer — flags "builder-and-watchdog" framing for explicit yes/no |
+| #3 | ENTRY 097 | 1313 | Instagram / LinkedIn (text post) | Use AI for real work | pending | reflective question, no offer — overlaps #2's theme |
+| #4 | ENTRY 096 | 1314 | Instagram Reel (~40s) | Find what is uniquely yours | pending | reflective question, no offer — needs timing check |
+| #5 | ENTRY 095 | 1315 | LinkedIn | Real Talk | pending | discussion (no keyword) |
+| #6 | ENTRY 094 | 1316 | LinkedIn | Build Once, Runs Forever | 7.2 | community tease — CTA-BLOCKED (VERIFY + PREP) |
+| R1 | ENTRY 047 | 1317 | LinkedIn | What's Worth It | n/a | WORDS (live) — READY since 14/07/2026 (86d) |
+| R2 | ENTRY 048 | 1318 | X/Twitter thread | The Freedom Business | n/a | TEAM (live) — READY since 14/07/2026 (86d) |
+| R3 | ENTRY 049 | 1319 | Short-form video | Build Once, Runs Forever | n/a | TEAM (live) — READY since 14/07/2026 (86d) |
+
+Notes:
+- Card set identical to every digest since 16/09 (same top-6 DRAFT window,
+  same Ready-shelf three) — no new content-engine entries landed and no
+  operator decisions moved anything. Three process sweeps that same day
+  (message_ids 1321, 1323, 1324) all found `getUpdates` empty.
+- DRAFT pool at digest time: 33 entries, unchanged. Ready shelf: 37 READY
+  TO POST, all 86+ days old (oldest batch 14/07/2026); shelf cap of
+  3/digest means the other 34 wait for subsequent runs.
+- Ready-shelf CTA keywords (WORDS, TEAM) confirmed `active=yes` in
+  `lead-magnets.csv` — no CTA-BLOCKED needed for R1–R3.
+- No replies processed this run (pre-digest `getUpdates` sweep was empty).
+  decisions-log.md unchanged.
 
 ## Last digest served — 05/10/2026 (run on operator request)
 
