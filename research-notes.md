@@ -2,6 +2,161 @@
 
 ---
 
+## RESEARCH 061 — 2026-10-08 | Signal harvest (current audience problem) — no new qualifying signal
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `91a19803`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Internal tooling discoveries this run:** none — nothing surfaced that was internal-research-only; all candidates checked below are shift-lead (public-topic) or rejected outright.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority, methodology and recency were weighed.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` for both before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current (post-rebuild) harvest shape.
+
+### No new signal logged this run
+
+A full sweep (all 6 `inventory.md` feeds plus targeted web search on all three pillars, including the standing pillar-3 gap) found nothing that clears the bar as a genuinely new, dated, primary-sourced, audience-fit signal beyond what RESEARCH 044–060 already have on file. Per `research-policy.md`, a gap is logged as a gap rather than filled with a weaker source.
+
+### Rejected this run
+
+- **Anthropic, "Introducing the Anthropic Cyber Mission"** (published 2026-10-08, https://www.anthropic.com/news/anthropic-cyber-mission) — checked directly via WebFetch. Wrong audience: Critical Infrastructure Defense Program and OSS Scanner are aimed at enterprise security providers, critical-infrastructure operators and open-source maintainers, not solo professionals or founders deciding where AI belongs in their own work.
+- **Anthropic, "2026 Usage Policy update"** and **"Building on our commitment to American scientific discovery"** (both published 2026-10-08) — checked via WebFetch/search. The policy update is a platform-wide acceptable-use revision (deceptive campaigns, weapons, surveillance, high-risk oversight) relevant to all Claude users in the abstract but not a dated, audience-specific signal; the scientific-discovery item's own URL 404'd on direct fetch and the title-level topic (research-institution partnership) does not fit the audience problem. Neither logged.
+- **Thomson Reuters Institute, "2026 AI in Professional Services Report"** (org-wide AI usage nearly doubling to 40% in 2026 vs 22% in 2025; 15% of organizations adopted agentic AI) — already on file (RESEARCH 044 area, line ~735) under the same publisher's existing thread; re-surfaced on today's search, not re-logged.
+- IBM's CHRO "Designing the Thinking Organization" judgment/skill-erosion figures (60% of employees worry about skill erosion; 71% of CHROs vs. a minority of employees rank judgment-supervision as essential) re-surfaced on a fresh search — already logged and triangulated across RESEARCH 052–057; no new figure or mechanism found beyond what's on file.
+- A repeat sweep for a disclosed-methodology "how a founder actually decided what to automate first" account (search terms covering founder case studies, solo-consultant AI surveys, and October 2026 solopreneur-AI news) surfaced only advice/opinion blog and vendor-case-study content (blog.mean.ceo, taskade.com, mindstudio.ai, blackcubelabs.com, omega.ac, UiPath community) with no disclosed survey, sample or methodology behind their claims — same sourcing-bar failure as every pillar-3 candidate rejected in RESEARCH 052–060. Pillar 3 remains open, now a 9th consecutive run (052–061) without a qualifying source.
+
+### Source health this run
+
+- Anthropic News (High): WebFetch worked; three new items landed today (Oct 8) — all checked and rejected above (wrong audience or dead link).
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — now the **18th consecutive failed run** (044 through 061), over ten weeks on the same dead fetch path. Repeating the overdue recommendation from 047–060: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): WebFetch worked; all visible posts are ML-engineering/model-release content (OCR models, judge-calibration research, gene-finding, dialect LLMs, GRPO alignment, game modding, llama.cpp) — same non-fit pattern as every run since RESEARCH 050.
+- Google DeepMind blog (Medium): WebFetch worked; newest item is EmbeddingGemma 2 (Oct), rest Sept product launches (Gemini 4 Argon, SynthID Bio, Gemini 3.8 variants) — no audience-problem fit.
+- a16z AI (Medium): WebFetch worked; current posts are VC/infra/consumer content ("You Need a New CFO," preference-model investing, Texas data centers, general medicine investing, Top 100 Gen AI Consumer Apps) — no audience-problem fit; page did not expose explicit publish dates, only "new" badges.
+- Lenny's Newsletter (Low): WebFetch worked; no post since Sep 29 ("Lenny & Friends Summit talks"); newest AI-flagged post still Sep 22 ("Advanced evals") — unchanged since RESEARCH 059/060, PM/product-leadership audience, not solo professionals/founders.
+- WebSearch/WebFetch: both functional throughout, aside from OpenAI's standing 403 and one dead Anthropic URL. No signals were invented; every claim above was independently verified by a direct fetch or search this run.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
+## RESEARCH 060 — 2026-10-07 | Signal harvest (current audience problem) — no new qualifying signal
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `45db01fa`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Internal tooling discoveries this run:** none — nothing surfaced that was internal-research-only; all candidates checked below are shift-lead (public-topic) or rejected outright.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority, methodology and recency were weighed.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` for both before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current (post-rebuild) harvest shape.
+
+### No new signal logged this run
+
+A full sweep (all 6 `inventory.md` feeds plus targeted web search on all three pillars, including the standing pillar-3 gap) found nothing that clears the bar as a genuinely new, dated, primary-sourced, audience-fit signal beyond what RESEARCH 044–059 already have on file. Per `research-policy.md`, a gap is logged as a gap rather than filled with a weaker source.
+
+### Rejected this run
+
+- **METR, "Measuring the Self-Reported Impact of Early-2026 AI on Technical Worker Productivity"** (published 2026-05-11, https://metr.org/blog/2026-05-11-ai-usage-survey/) — checked directly via WebFetch for a founder-specific angle (the sample includes 48 "founders and managers" out of 349 technical workers surveyed February–April 2026). Confirmed the report contains **no role-specific breakdown** for that subgroup — the only disclosed subgroup pattern is by AI-tool-usage intensity, not by role. Does not clear the pillar-1/3 bar; logged as checked-and-rejected rather than re-surfaced on a future run.
+- **Grant Thornton, "2026 AI Impact Survey Report"** (survey of 950 business leaders, Feb 23–Mar 18 2026, https://www.grantthornton.com/services/advisory-services/artificial-intelligence/2026-ai-impact-survey) — checked directly via WebFetch. Wrong audience: respondents are C-suite/senior leaders across 10 industries at 100-respondent-per-sector scale (390 operations, 313 finance, 234 IT) — enterprise organizational-integration data (e.g. "58% vs 15% revenue growth for fully-integrated vs piloting orgs"), not solo professionals or founders deciding where AI belongs in their own work. Same treatment as every previously-rejected enterprise/C-suite source (RESEARCH 048's Accenture item, RESEARCH 059's Claude Frontier Academy item).
+- A repeat sweep for a disclosed-methodology "how a founder decided what to automate first" account (search terms covering founder case studies, solo-consultant AI surveys, and October 2026 solopreneur-AI news) surfaced only advice/opinion blog content (mindstudio.ai, taskade.com, aismartventures.com, mymobilelyfe.com, prometai.app, blog.mean.ceo) with no disclosed survey, sample or methodology behind their claims — same sourcing-bar failure as every pillar-3 candidate rejected in RESEARCH 052–059. Pillar 3 remains open, now an 8th consecutive run (052–060) without a qualifying source.
+
+### Source health this run
+
+- Anthropic News (High): WebFetch worked; newest items are Oct 7 ("Introducing Claude Haiku 5.5") and Oct 6 ("Expanding the Cyber Verification Program," already on file RESEARCH 059) — the Oct 7 item is a small-model cost/speed announcement, no audience-problem fit.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — now the **17th consecutive failed run** (044 through 060), over ten weeks on the same dead fetch path. Repeating the overdue recommendation from 047–059: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): WebFetch worked; all visible posts are ML-engineering/model-release content (Falcon-Emirati, Falcon OCR Arabic, GRPO alignment guide, llama.cpp decision models) — same non-fit pattern as every run since RESEARCH 050.
+- Google DeepMind blog (Medium): WebFetch worked; all visible posts are product launches (Gemini 4 Argon, EmbeddingGemma 2, SynthID Bio, Gemini 3.8 variants) — unchanged from RESEARCH 059, no audience-problem fit.
+- a16z AI (Medium): WebFetch worked; current posts are VC/infra/consumer-AI-market content (Top 100 Gen AI Consumer Apps 7th edition, $1T AI buildout, AI agent security roundtable) — no audience-problem fit.
+- Lenny's Newsletter (Low): WebFetch worked; newest AI-flagged post is still Sep 22 ("Advanced evals") — unchanged since prior runs, PM/product-leadership audience, not solo professionals/founders.
+- WebSearch/WebFetch: both functional throughout, aside from OpenAI's standing 403. No signals were invented; every claim above was independently verified by a direct fetch or search this run.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
+## RESEARCH 059 — 2026-10-06 | Signal harvest (current audience problem) — no new qualifying signal
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `74f4d9a6`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Internal tooling discoveries this run:** none — nothing surfaced that was internal-research-only; all candidates checked below are shift-lead (public-topic) or rejected outright.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority, methodology and recency were weighed.
+**Cron gap note:** no `deploy/logs/signal-harvester-2026-10-06T02-00-02.log` exists at all today — not even the git-sync-only partial log seen on prior failed days. This is worse than the pattern flagged in RESEARCH 057 (6 consecutive incomplete-but-logged cron runs, 09-30 through 10-05): today the scheduled run appears not to have fired at all. The 22:00 UTC run (`signal-harvester-2026-10-06T22-00-02.log`) did fire but only completed the git-sync step ("Already up to date") with no further output — this operator-requested session is what actually produced today's harvest.
+
+### No new signal logged this run
+
+A full sweep (all 6 `inventory.md` feeds + targeted web search on all three pillars, including the standing pillar-3 gap) found nothing that clears the bar as a genuinely new, dated, primary-sourced, audience-fit signal beyond what RESEARCH 044–058 already have on file. Per `research-policy.md`, a gap is logged as a gap rather than filled with a weaker source.
+
+### Additional detail on already-logged sources (not re-logged as new signals)
+
+- **Thomson Reuters Institute, "Future of Professionals Report 2026"** (already logged RESEARCH 044/048, re-verified today via direct WebFetch of `institute.thomsonreuters.com` — confirmed methodology: 1,816 professionals, March–April 2026, 62 countries, published 2026-06-22) carries a detail not captured in either prior entry: **legal professionals expect the timeline to trusted AI-assisted judgment to *extend* by ~1.7 years; tax professionals expect it to *accelerate* by ~1.0 year** — the same technology producing opposite judgment-pipeline effects by profession. Report quote: "The same technology is producing two different pipeline problems, and neither shows up in adoption metrics until the damage is done." This sharpens pillar 2 from "judgment is at risk" to "the risk/speed direction depends on the domain" — worth a reassessment pass, not logged as a new source since the report itself is already on file three times over.
+- **SmarterX, "2026 State of AI for Business Report"** (already logged 2026-09-20, superseded twice since as smaller/older) also carries a founder-specific split not previously captured: CEOs/founders rate AI "critically important" to their success at 89% vs. 74% for professionals generally, and 65% of CEOs/founders report being personally in the "Integration or Transformation" phase of adoption — i.e., founders are running ahead of their own organizations. Possible pillar-1/3 use (founders adopt faster than they can institutionalize) if a fresher primary source doesn't arrive first; not logged as new given the source's already-superseded status.
+
+### Rejected this run
+
+- **Anthropic, "Claude Frontier Academy"** (published 2026-10-02, verified via search after the direct `anthropic.com/news/100-million-ai-fluency` URL 404'd) — $100M to train 10,000 "Frontier Deployed Engineers" by end of 2027, first cohorts from Accenture, Bain, Capgemini, Deloitte, McKinsey, Morgan Stanley. Real and dated, but wrong audience: this is Anthropic's own enterprise-consulting-firm engineering-talent pipeline, not solo professionals/founders deciding where AI belongs in their own work. Same treatment as RESEARCH 048's Accenture-evaluation item — industry-credibility context, not audience-problem evidence.
+- **Lenny's Newsletter, "The Base44 bootstrapped startup success story" (Maor Shlomo)** — surfaced as a possible pillar-3 "how a founder actually decided" account (solo founder, $80M exit in 6 months). Checked directly: published 2025-07-06 (15+ months old), and the fetched content did not contain the actual decision process/order Shlomo used to pick what to automate first — only a general mention that he "tracked where his time went." Without the concrete process, it doesn't clear the pillar-3 bar any better than prior rejected anecdotes.
+- **500k.io, "Solopreneur statistics 2026"** and **yoursolobusiness.com, "2026 Trends in Solopreneurship"** — both surfaced on a direct pillar-2/3 search (differentiation-via-judgment, execution-to-decision-making shift) and both checked directly for methodology: 500k.io mixes named external datasets (Stripe Atlas, US Census, Indie Hackers) with the author's own undisclosed-methodology n=14 tracking sample without demarcating which claim comes from which; yoursolobusiness.com (published 2026-02-12) discloses no methodology at all and is commentary citing other sources rather than original research. Both fail the same source-quality bar as every previously-rejected pillar-3 candidate (RESEARCH 052–058).
+- A repeat of the "which AI task to automate first" vendor/blog sweep (causo.ai, kagool.com, blackcubelabs.com, alicelabs.ai, biz4group.com, mindstudio.ai) — all advice/framework content with no disclosed survey or methodology behind their prioritization rubrics. Pillar 3 remains open.
+
+### Source health this run
+
+- Anthropic News (High): WebFetch worked; newest items are Oct 6 ("Expanding the Cyber Verification Program") and Oct 2 (Claude Frontier Academy, see Rejected) — neither is audience-problem evidence.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — now the 16th consecutive failed run (044 through 059), over nine weeks on the same dead fetch path. Repeating the overdue recommendation from 047–058: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): WebFetch worked; all visible posts are ML-engineering/dataset/robotics/model-release content — same non-fit pattern as every run since RESEARCH 050.
+- Google DeepMind blog (Medium): WebFetch worked; all visible posts are product launches (Gemini 4 Argon, EmbeddingGemma 2, SynthID Bio, Gemini 3.8 variants) — no audience-problem fit.
+- a16z AI (Medium): WebFetch worked; current posts are VC/infra/consumer-AI-market content (General Medicine investing, Top 100 Gen AI Consumer Apps, $1T AI buildout) — no audience-problem fit.
+- Lenny's Newsletter (Low): checked via the Base44 piece above (see Rejected) — no current audience-fit post found.
+- WebSearch/WebFetch: both functional throughout, aside from OpenAI's standing 403 and one dead Anthropic URL (corrected via search). No signals were invented; every claim above was independently verified by a direct fetch this run.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
+## RESEARCH 058 — 2026-10-05 | Signal harvest (current audience problem)
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `62b7c75a`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Internal tooling discoveries this run:** none logged separately as internal-research; the one signal below is `shift-lead` (public-topic) evidence.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority, methodology and recency were weighed.
+**Second run today:** RESEARCH 057 (earlier, same date, same cron-failure gap already on file) covered the morning cron's manual catch-up; this is a separate operator-requested run later the same day, checked against 057 and the full RESEARCH 052–057 thread before logging anything new to avoid duplicating either.
+
+### Signals
+
+1. **PwC — "2026 Global AI Jobs Barometer: AI reshapes global labour market into two distinct paths, rewarding human skills"** — published 2026-06-15 — https://www.prnewswire.com/news-releases/ai-reshapes-global-labour-market-into-two-distinct-paths-rewarding-human-skills-pwc-2026-global-ai-jobs-barometer-302798987.html — direct WebFetch confirmed on the PwC-issued PRNewswire release (PwC's own pwc.com/pwc.co.uk pages for this report returned HTTP 403 to WebFetch; the PRNewswire release is PwC's own distributed text, not third-party commentary); methodology disclosed as analysis of **more than one billion job advertisements across 27 countries and territories**, combined with labour-market, company-financial and occupational-task data; entry-level analysis drawn from 2.4 million US job postings.
+   - `project_id`: shift-lead — `fit`: useful — `reason`: every source in the judgment/skill-erosion thread so far (RESEARCH 052–057: IBM, BCG, WGU, DataCamp, Strada, Pipedrive, Robert Half, Glean) is a *survey of opinions or self-reported behavior*. This is the first source in the thread built from actual labour-market transaction data (job ads and pay), not sentiment — it shows the judgment premium showing up in money and job growth, not just in what people say they value.
+   - `supporting_source_excerpt`: "the average compensation premium for workers possessing AI capabilities reached 62%, increasing from 57% the previous year" (as high as 118% in consumer markets, 16% in government); entry-level roles heavily exposed to AI are "seven times more likely to require traditionally senior-level 'human-intensive' skills like leadership, creativity or face-to-face interactions" and "expanded 35% since 2019 while other entry-level positions declined 10%"; "'professionalised' roles" — where AI automates routine work and human judgement is emphasised — "are seeing twice the growth in available jobs and 42% faster salary growth" than "democratised" roles made simpler by AI tools.
+   - `possible_use`: a money-denominated answer to "why bother protecting what's uniquely yours" (pillar 2) — a 62% pay premium and 2x job growth for judgment-centered roles, not a feeling; and the "professionalised vs. democratised" split gives pillar 3 a concrete, source-attributable test for "where AI belongs in a real business problem" — automate the part that's being democratised, keep and sharpen the part that's being professionalised — closer to answering the standing pillar-3 gap than anything logged in RESEARCH 052–057, though not a direct hit (it's labour-market-wide, not a how-a-founder-decided account).
+   - `assessed_at`: 2026-10-05
+   - **Age caveat:** published 2026-06-15, ~4 months old — same treatment class as RESEARCH 050's IBM citation, RESEARCH 054's Microsoft WorkLab citation and RESEARCH 057's Glean citation: a corroborating, established anchor, not this week's news.
+
+### Rejected this run
+
+- Resume Now (via Pollfish), "Workplace Trust in AI" — re-surfaced by search (via tradeandindustrydev.com and hcamag.com coverage, "97% of workers put human judgment first"); already captured with full source/methodology/quote detail in `reports/signal-harvest-2026-10-02.md` (S2), outside this ledger's numbering but on file — not re-logged as new.
+- `leadershipinchange.com`, "The AI Skills Gap Is a Judgment Gap: What 517 Leaders Said" — this is third-party commentary *on* the DataCamp/YouGov 517-leader survey already logged directly from DataCamp's own blog in RESEARCH 056; adds no new data, just restates it. Not used.
+- PwC, "Global Workforce Hopes and Fears Survey 2026" — surfaced again in search; this is a different PwC report from the one logged above (worker-sentiment survey, not job-ad/wage data) and is already captured in `reports/signal-harvest-2026-10-02.md` (S1). Not re-logged.
+- A broad sweep of solopreneur/founder "how to pick your first AI project" blog content (Felo.ai, Ready Solutions, aicofounderstack.com, widejournal.com, entrepreneurloop.com and others) specifically checked against the standing pillar-3 gap — all are advice/opinion content with no disclosed survey, sample or methodology behind the "start with your most time-consuming task" recommendation. Fails the sourcing bar same as every pillar-3 candidate rejected in RESEARCH 052–057. Pillar 3 remains open.
+- a16z AI (checked): current front page is VC/investor content (consumer-AI-apps roundup, founder interviews, infrastructure spend) — no publish dates exposed on the page itself, no audience-problem fit regardless. Nothing logged.
+- Lenny's Newsletter (checked): AI-related posts this run are PM/product-leadership-audience pieces (AI evals, AI-assisted design, PM leverage) — wrong audience (product managers inside companies, not solo professionals/founders). Nothing logged.
+
+### Source health this run
+
+- Anthropic News (High): WebFetch worked; newest items unchanged since RESEARCH 057 (Oct 2 Claude Frontier Academy, Oct 1 Barclays) — nothing new to assess.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — 15th consecutive failed run (044 through 058), over eight weeks on the same dead fetch path. Repeating the overdue recommendation from 047–057: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): WebFetch worked; same ML-engineering/dataset/robotics non-fit pattern as every run since RESEARCH 050. Nothing logged.
+- Google DeepMind blog (Medium): checked this run — WebFetch worked; all visible posts are product launches (Gemini 4 Argon, SynthID Bio, Gemini 3.8 Live variants, AlphaGenome Atlas, WeatherNext 3) — no audience-problem fit. Nothing logged.
+- a16z AI, Lenny's Newsletter (Medium/Low): checked this run — see Rejected section above.
+- WebSearch/WebFetch: both functional throughout, aside from OpenAI's standing 403 and PwC's own domains (pwc.com, pwc.co.uk, pwc.be) all returning 403 to WebFetch — the PwC Jobs Barometer figures above were confirmed via PwC's own PRNewswire-distributed release text, not a third-party summary. No signals were invented; every URL in the Signals section above is one actually returned by a fetch this run, and every quoted figure was confirmed in that directly fetched primary-source text.
+
+### Historical-audience check
+
+Confirmed the signal above was not forced into the retired July corporate-escape framing, lead-magnet keyword system (STACK/TEAM/etc.), or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`. No drafting, scheduling or publishing occurred in this run — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 057 — 2026-10-05 | Signal harvest (current audience problem)
 
 **Status:** NOTED

@@ -1,12 +1,12 @@
-# Performance Report — 2026-10-05
+# Performance Report — 2026-10-07
 
 **Machine:** M06 Performance Tracker
-**Run date:** 2026-10-05 (interactive, operator-requested via `/performance-tracker`)
-**Run number:** eighteenth append since the 2026-07-24 → 2026-09-15 gap.
+**Run date:** 2026-10-07 (operator-requested via `/performance-tracker`)
+**Run number:** 21st consecutive blocked entry since the 2026-09-15 restart.
 
 ---
 
-## Status: ALL AUTOMATED SCRAPERS BLOCKED; MANUAL PASTE SOLICITED LIVE
+## Status: ALL AUTOMATED SCRAPERS STILL BLOCKED; MANUAL PASTE SOLICITED LIVE
 
 No live metrics were retrieved via automation this run. Every automated route
 is closed in this session, unchanged since the 2026-09-15 restart.
@@ -15,7 +15,7 @@ is closed in this session, unchanged since the 2026-09-15 restart.
 |---|---|
 | Meta Graph API (Instagram/Facebook/Threads) | BLOCKED — no `META_ACCESS_TOKEN` / `IG_BUSINESS_ID` / `FB_PAGE_ID` |
 | Apify MCP | BLOCKED — no Apify tools resolve in this session |
-| Apify REST API fallback | BLOCKED — no `APIFY_TOKEN` in env |
+| Apify REST API fallback | BLOCKED — no `APIFY_TOKEN` in env (this is the designed skip, not a failure, but it removes the only paid fallback) |
 | YouTube (`yt-dlp`) | BLOCKED — not installed on this host |
 | Blotato MCP | BLOCKED — no Blotato tools resolve in this session |
 | LinkedIn manual paste | SOLICITED this run — see operator briefing, reply to fill in |
@@ -25,15 +25,10 @@ is closed in this session, unchanged since the 2026-09-15 restart.
 Same wiring state as every run since 2026-09-15 — no scraper newly failed
 this run; nothing has been fixed since either.
 
-**Five bare cron slots now:** the 2026-10-05 03:00 UTC cron log
-(`deploy/logs/performance-tracker-2026-10-05T03-00-02.log`) is the same bare
-shape as 2026-10-02, 2026-10-03, and 2026-10-04 — `git fetch` plus "Already
-up to date," no scrape output, no briefing, no commit. 2026-10-01's log was
-the last to carry a full run (it even pushed 5 commits). Five slots in a row
-confirms a standing fault in the cron invocation itself — distinct from the
-credential gap — and still warrants direct investigation of the cron entry
-(working directory, argument, trigger condition) rather than another day of
-re-logging the same symptom.
+The day's own 23:00 UTC cron slot (`deploy/logs/performance-tracker-2026-10-07T23-00-02.log`)
+was another bare 4-line `git fetch` + "Already up to date." — no scrape, no
+briefing, no commit. Same shape as every cron slot since 2026-10-01's last
+full run.
 
 ---
 
@@ -44,7 +39,7 @@ re-logging the same symptom.
 | Instagram | 636 | 04/07/2026 | inventory.md |
 | Facebook / YouTube / LinkedIn / Twitter / Threads | unknown | pre-rebrand | — |
 
-Last reliable scraped data: **2026-06-27** — 100 days ago.
+Last reliable scraped data: **2026-06-27** — 102 days ago.
 
 ---
 
@@ -58,19 +53,19 @@ Last reliable scraped data: **2026-06-27** — 100 days ago.
 - POSTED: **0**
 
 Confirmed against this session's own startup reality-check hook, and
-independently by a direct tally of every `## ENTRY` header status in
-`content-vault.md`. Unchanged since at least 2026-09-25 — the backlog has
-not moved in either direction across the entire window this report covers.
-Even with every scraper wired today, there is nothing live to measure. The
-release step (manual, by design per `security.md` §3.1 — queue-only,
-operator-released) has not happened since the rebrand.
+independently by counting every `## ENTRY` header's trailing status.
+Unchanged since at least 2026-09-25 — the backlog has not moved in either
+direction across the entire window this report covers. Even with every
+scraper wired today, there is nothing live to measure. The release step
+(manual, by design per `security.md` §3.1 — queue-only, operator-released)
+has not happened since the rebrand.
 
 ---
 
 ## What is working
 
 Nothing measurable in the current window. The only data point on record is
-the pre-rebrand finding from 2026-06-27 (100 days stale, directional only):
+the pre-rebrand finding from 2026-06-27 (102 days stale, directional only):
 personal narrative / face-voice-story format ran ~4–8x the engagement rate of
 generic AI-explainer/glossary content across 12 posts. This has never been
 validated against the current brand and should not be treated as current
@@ -80,10 +75,9 @@ guidance.
 
 - Every automated metrics route (Meta Graph API, Apify, yt-dlp, Blotato) is
   closed in this session — a wiring/credential gap, not a scraper failure.
-- Five consecutive 03:00 UTC cron slots (2026-10-01 through 2026-10-05, minus
-  the one full run on 10-01 itself) have produced little to no scrape
-  output — a confirmed standing fault in the cron invocation, separate from
-  the credential gap, worth operator investigation on its own.
+- The cron's own daily slot is still landing bare (fetch-only, no scrape) —
+  a standing fault in the cron invocation itself, separate from the
+  credential gap, unresolved since it was first flagged around 2026-10-02.
 - The pipeline's actual bottleneck is upstream of measurement: 37 entries
   are ready to post and zero have been released.
 - This machine cannot produce a genuinely new number until either (a) a
@@ -101,19 +95,3 @@ machine anything new to measure.
 Release 3–5 of the 37 READY TO POST entries through Blotato — queue-only,
 you release (per `security.md` §3.1). This unblocks both distribution and
 measurement at once; nothing else this run can move either number.
-
----
-
-## Addendum — later same day (2026-10-05 23:01 UTC, interactive re-run)
-
-Re-checked every env var and tool path directly: `META_ACCESS_TOKEN`,
-`IG_BUSINESS_ID`, `FB_PAGE_ID`, `APIFY_TOKEN` still unset; `yt-dlp` still
-missing; no Apify or Blotato MCP tools resolve via `ToolSearch`. Nothing
-changed since the 03:00 UTC entry above — same blockers, same vault counts
-(37 READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED / 0 POSTED).
-
-The one thing an interactive session can do that a bare cron slot can't:
-LinkedIn and Twitter/X manual-paste numbers were solicited live from the
-operator this run. See `performance-log.md`'s "2026-10-05 (later same day)"
-entry and the chat for whether an answer landed before this report was
-written. No other finding to add.

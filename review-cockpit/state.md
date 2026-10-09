@@ -7,14 +7,366 @@ digest run overwrites it.
 ## Telegram offset
 
 - Last `getUpdates` consumed offset: still none pending — checked again
-  on 05/10/2026 (operator-requested `process` run, this sweep), queue
-  empty (`{"ok":true,"result":[]}`). No card replies, no unblocker
-  replies, no voice notes since the 14/09/2026 digest (52nd consecutive
+  on 09/10/2026 (operator-requested `digest` run, pre-digest sweep),
+  queue empty (`{"ok":true,"result":[]}`). No card replies, no unblocker
+  replies, no voice notes since the 14/09/2026 digest (63rd consecutive
   empty sweep).
 - Next `process` run should call `getUpdates` with no offset filter until a
   reply produces an `update_id` to anchor to.
 
+## Current digest card mapping (09/10/2026)
+
+| Card | Vault entry | Telegram msg_id | Platform | Pillar | Critic | Notes |
+|---|---|---|---|---|---|---|
+| #1 | ENTRY 099 | 1326 | Instagram (carousel) | Use AI for real work | pending | reflective question, no offer |
+| #2 | ENTRY 098 | 1327 | LinkedIn (text post) | Find what is uniquely yours | pending | reflective question, no offer — flags "builder-and-watchdog" framing for explicit yes/no |
+| #3 | ENTRY 097 | 1328 | Instagram / LinkedIn (text post) | Use AI for real work | pending | reflective question, no offer — overlaps #2's theme |
+| #4 | ENTRY 096 | 1329 | Instagram Reel (~40s) | Find what is uniquely yours | pending | reflective question, no offer — needs timing check |
+| #5 | ENTRY 095 | 1330 | LinkedIn | Real Talk | pending | discussion (no keyword) |
+| #6 | ENTRY 094 | 1331 | LinkedIn | Build Once, Runs Forever | 7.2 | community tease — CTA-BLOCKED (VERIFY + PREP) |
+| R1 | ENTRY 047 | 1332 | LinkedIn | What's Worth It | n/a | WORDS (live) — READY since 14/07/2026 (87d) |
+| R2 | ENTRY 048 | 1333 | X/Twitter thread | The Freedom Business | n/a | TEAM (live) — READY since 14/07/2026 (87d) |
+| R3 | ENTRY 049 | 1334 | Short-form video | Build Once, Runs Forever | n/a | TEAM (live) — READY since 14/07/2026 (87d) |
+
+(header message_id 1325, footer message_id 1335 — no offset recorded yet since no reply has ever anchored one.)
+
 ## Process sweeps log
+
+- 09/10/2026, sweep after this morning's digest (operator-requested
+  `process` run, run end-to-end per operator request via `/review-cockpit
+  process`, obeying `CLAUDE.md` and `security.md`; skill not registered via
+  the Skill tool this session, so `SKILL.md` was read and followed manually
+  per the `project-skills-not-registered` memory; Telegram auth followed the
+  `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, length-checked only via `${#VAR}`, never printed, never
+  sourced from `deploy/.env`). `getUpdates` (no offset, none stored) returned
+  empty (`{"ok":true,"result":[]}`) — 64th consecutive empty sweep since the
+  14/09/2026 digest. Nothing to route: no card decisions, no unblocker
+  replies, no voice notes. Cross-checked against today's earlier `unblocker
+  daily` run, which independently confirmed the same empty inbox this
+  morning. Vault counts reconfirmed directly from `content-vault.md`'s
+  `## ENTRY ... |` status suffixes: 37 READY TO POST / 33 DRAFT / 6 STALE /
+  2 KILLED (78 entries total) — matches this session's reality-check hook
+  exactly. `unblocker/ledger.md` checked — open queue items (UNB-025–029,
+  031) are pre-existing unblocker blockers awaiting a human pass (all past
+  serve-3 with no serve-4 rule, per today's own `unblocker daily` run), not
+  review-cockpit replies; not touched by this skill. `lead-magnets.csv`
+  reconfirmed: WORDS and TEAM both `active=yes` — no CTA-BLOCKED needed for
+  R1–R3. `decisions-log.md` tail checked, unchanged (last entries are the
+  14/07 exit-story kills). Nothing applied to the vault. All 9 cards from
+  this morning's digest (#1–#6, R1–R3, message_ids 1326–1334) remain
+  outstanding. Publishing stayed queue-only throughout (`security.md` §3.1,
+  `CLAUDE.md`) — no post released, no Blotato queue touched. Canon
+  (queen-brain) was NOT reachable this session per the startup
+  reality-check — no price, tier, offer status or customer-facing copy was
+  written or reconstructed. Confirmed in Telegram: "Done: 0 ready, 0
+  killed, 0 edited. 9 waiting on you." (message_id 1337).
+
+- 09/10/2026, digest run (operator-requested `digest` run, run end-to-end
+  per operator request via `/review-cockpit digest`, obeying `CLAUDE.md`
+  and `security.md`; skill not registered via the Skill tool this
+  session, so `SKILL.md` was read and followed manually per the
+  `project-skills-not-registered` memory; Telegram auth followed the
+  `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, length-checked only, never printed, never sourced
+  from `deploy/.env`). Pre-digest `getUpdates` (no offset, none stored)
+  returned empty (`{"ok":true,"result":[]}`) — 63rd consecutive empty
+  sweep since the 14/09/2026 digest; nothing to route, nothing applied to
+  the vault, `decisions-log.md` unchanged. Vault counts reconfirmed
+  directly from `content-vault.md`'s `## ENTRY ... |` status suffixes: 37
+  READY TO POST / 33 DRAFT (matching this session's reality-check hook).
+  Card set unchanged from 08/10/2026 — no new content-engine DRAFT entries
+  landed (top-6 newest DRAFT by date still 099/098/097/096/095/094) and no
+  operator decisions moved the Ready shelf (still 047/048/049, now 87d).
+  `lead-magnets.csv` reconfirmed: WORDS and TEAM both `active=yes` — no
+  CTA-BLOCKED needed for R1–R3. Sent one Telegram thread via direct
+  `sendMessage` (HTML mode, not `telegram-notify.sh`): header (1325),
+  cards #1–#6 (1326–1331), Ready-shelf cards R1–R3 (1332–1334), footer
+  with reply protocol (1335). Publishing stayed queue-only throughout
+  (`security.md` §3.1, `CLAUDE.md`) — no post released, no Blotato queue
+  touched. Canon (queen-brain) was NOT reachable this session per the
+  startup reality-check — no price, tier, offer status or customer-facing
+  copy was written or reconstructed. All 9 cards from the 08/10 digest
+  (message_ids 1311–1319) still went unanswered before being superseded by
+  this run's cards.
+
+- 08/10/2026, third sweep today (operator-requested `process` run, run
+  end-to-end per operator request via `/review-cockpit process`, obeying
+  `CLAUDE.md` and `security.md`; skill not registered via the Skill tool
+  this session, so `SKILL.md` was read and followed manually per the
+  `project-skills-not-registered` memory; Telegram auth followed the
+  `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, never printed, never sourced from `deploy/.env`).
+  `getUpdates` (no offset, none stored) returned empty
+  (`{"ok":true,"result":[]}`). Nothing to route: no card decisions, no
+  unblocker replies, no voice notes — 62nd consecutive empty sweep since
+  the 14/09/2026 digest. Vault counts reconfirmed directly from
+  `content-vault.md`'s `## ENTRY ... |` status suffixes: 37 READY TO POST /
+  33 DRAFT / 6 STALE / 2 KILLED (78 entries total) — matches this session's
+  reality-check hook exactly. `unblocker/ledger.md` checked — open queue
+  items (UNB-022–031) are pre-existing unblocker blockers awaiting a human
+  pass, not review-cockpit replies; not touched by this skill.
+  `lead-magnets.csv` reconfirmed: WORDS and TEAM both `active=yes` — no
+  CTA-BLOCKED needed for R1–R3. `decisions-log.md` tail checked, unchanged
+  (last entries are the 14/07 exit-story kills). Nothing applied to the
+  vault. All 9 cards from this morning's digest (#1–#6, R1–R3, message_ids
+  1311–1319) remain outstanding. Publishing stayed queue-only throughout
+  (`security.md` §3.1, `CLAUDE.md`) — no post released, no Blotato queue
+  touched. Canon (queen-brain) was NOT reachable this session per the
+  startup reality-check — no price, tier, offer status or customer-facing
+  copy was written or reconstructed. Confirmed in Telegram: "Done: 0 ready,
+  0 killed, 0 edited. 9 waiting on you." (message_id 1324).
+
+- 08/10/2026, second sweep today (operator-requested `process` run, run
+  end-to-end per operator request via `/review-cockpit process`, obeying
+  `CLAUDE.md` and `security.md`; skill not registered via the Skill tool
+  this session, so `SKILL.md` was read and followed manually per the
+  `project-skills-not-registered` memory; Telegram auth followed the
+  `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, length-checked via `${#VAR}` rather than `env | grep`,
+  never sourced from `deploy/.env`). `getUpdates` (no offset, none stored)
+  returned empty (`{"ok":true,"result":[]}`). Nothing to route: no card
+  decisions, no unblocker replies, no voice notes — 61st consecutive empty
+  sweep since the 14/09/2026 digest. Vault counts reconfirmed directly from
+  `content-vault.md`'s `## ENTRY ... |` status suffixes: 37 READY TO POST /
+  33 DRAFT / 6 STALE / 2 KILLED (78 entries total) — matches this session's
+  reality-check hook exactly. `unblocker/ledger.md` checked — open queue
+  items (UNB-025–029, 031) are pre-existing unblocker blockers awaiting a
+  human pass, not review-cockpit replies; not touched by this skill.
+  `lead-magnets.csv` reconfirmed: WORDS and TEAM both `active=yes` — no
+  CTA-BLOCKED needed for R1–R3. `decisions-log.md` tail checked, unchanged
+  (last entries are the 14/07 exit-story kills). Nothing applied to the
+  vault. All 9 cards from this morning's digest (#1–#6, R1–R3, message_ids
+  1311–1319) remain outstanding. Publishing stayed queue-only throughout
+  (`security.md` §3.1, `CLAUDE.md`) — no post released, no Blotato queue
+  touched. Confirmed in Telegram: "Done: 0 ready, 0 killed, 0 edited. 9
+  waiting on you." (message_id 1323).
+
+- 08/10/2026 — pre-digest sweep (operator-requested `digest` run, run
+  end-to-end per operator request via `/review-cockpit digest`, obeying
+  `CLAUDE.md` and `security.md`; skill not registered via the Skill tool
+  this session, so `SKILL.md` was read and followed manually per the
+  `project-skills-not-registered` memory; Telegram auth followed the
+  `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, never printed, never sourced from `deploy/.env`).
+  `getUpdates` (no offset, none stored) returned empty
+  (`{"ok":true,"result":[]}`). Nothing to route: no card decisions, no
+  unblocker replies, no voice notes — 60th consecutive empty sweep since
+  the 14/09/2026 digest. Vault counts reconfirmed directly from
+  `content-vault.md`'s `## ENTRY ... |` status suffixes: 37 READY TO POST /
+  33 DRAFT / 6 STALE / 2 KILLED (78 entries total) — matches this session's
+  reality-check hook exactly. `unblocker/ledger.md` checked — queue items
+  under `## Queue`/`## Entries` are pre-existing unblocker blockers, not
+  review-cockpit replies; not touched by this skill. `lead-magnets.csv`
+  reconfirmed: WORDS and TEAM both `active=yes` — no CTA-BLOCKED needed for
+  R1–R3. `decisions-log.md` tail checked, unchanged (last entries are the
+  14/07 exit-story kills). Nothing applied to the vault. All 9 cards from
+  yesterday's digest (#1–#6, R1–R3, message_ids 1296–1304) go stale as of
+  this run, superseded by the digest below. Digest send followed
+  immediately (header message_id 1310, cards 1311–1319, footer message_id
+  1320; no separate confirmation line — the digest send itself is this
+  run's output per skill step 3). Footer carried the queue-state line: 37
+  READY TO POST / 0 SCHEDULED (latest `reports/distribution-*.md` is
+  20/07/2026 — none since), 86 days since the oldest ready item (ENTRY 047,
+  14/07/2026) was approved with nothing released. Canon (queen-brain) was
+  NOT reachable this session per the startup reality-check — no price,
+  tier, offer status or customer-facing copy was written; card summaries
+  describe existing draft/ready vault content only. Publishing stayed
+  queue-only throughout (`security.md` §3.1, `CLAUDE.md`) — no post
+  released, no Blotato queue touched.
+
+- 07/10/2026 — second interactive sweep today (operator-requested `process`
+  run, run end-to-end per operator request via `/review-cockpit process`,
+  obeying `CLAUDE.md` and `security.md`; skill not registered via the
+  Skill tool this session, so `SKILL.md` was read and followed manually
+  per the `project-skills-not-registered` memory; Telegram auth followed
+  the `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, not `deploy/.env`). Note: this run's own diagnostic
+  check (`env | grep -i telegram`, run before consulting the memory file)
+  printed the live bot token and chat ID into this session's transcript —
+  exactly the exposure the `review-cockpit-telegram-env` memory warns
+  against; flagged to the operator in the briefing, not repeated for the
+  rest of this run. Today's 16:30-GST scheduled `process` cron also only
+  did a git sync (see `deploy/logs/review-cockpit
+  process-2026-10-07T16-30-01.log`), no actual sweep — this interactive
+  run is the real sweep since the prior interactive sweep (message_id
+  1308) earlier today. `getUpdates` (no offset, none stored) returned
+  empty (`{"ok":true,"result":[]}`). Nothing to route: no card decisions,
+  no unblocker replies, no voice notes — 59th consecutive empty sweep
+  since the 14/09/2026 digest. Vault counts reconfirmed directly from
+  `content-vault.md`'s `## ENTRY ... |` status suffixes: 37 READY TO POST
+  / 33 DRAFT / 6 STALE / 2 KILLED (78 entries total) — matches this
+  session's reality-check hook exactly. `unblocker/ledger.md` checked —
+  open queue items (UNB-025–029, 031) are pre-existing unblocker blockers
+  awaiting a human pass, not review-cockpit replies; not touched by this
+  skill. `lead-magnets.csv` reconfirmed: WORDS and TEAM both `active=yes`
+  — no CTA-BLOCKED needed for R1–R3. `decisions-log.md` tail checked,
+  unchanged (last entries are the 14/07 exit-story kills). Nothing
+  applied to the vault. All 9 cards from this morning's digest (#1–#6,
+  R1–R3, message_ids 1296–1304) remain outstanding. Publishing stayed
+  queue-only throughout (`security.md` §3.1, `CLAUDE.md`) — no post
+  released, no Blotato queue touched. Confirmed in Telegram: "Done: 0
+  ready, 0 killed, 0 edited. 9 waiting on you." (message_id 1309).
+
+- 07/10/2026 — interactive sweep (operator-requested `process` run, run
+  end-to-end per operator request via `/review-cockpit process`, obeying
+  `CLAUDE.md` and `security.md`; skill not registered via the Skill tool
+  this session, so `SKILL.md` was read and followed manually per the
+  `project-skills-not-registered` memory; Telegram auth followed the
+  `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, not `deploy/.env`). Today's 08:30-GST scheduled
+  `process` cron only did a git sync (see
+  `deploy/logs/review-cockpit process-2026-10-07T08-30-03.log`), no
+  actual sweep — this interactive run is the real sweep since this
+  morning's digest. `getUpdates` (no offset, none stored) returned empty
+  (`{"ok":true,"result":[]}`). Nothing to route: no card decisions, no
+  unblocker replies, no voice notes — 58th consecutive empty sweep since
+  the 14/09/2026 digest. Vault counts reconfirmed directly from
+  `content-vault.md`'s `## ENTRY ... |` status suffixes: 37 READY TO POST
+  / 33 DRAFT / 6 STALE / 2 KILLED (78 entries total) — matches this
+  session's reality-check hook exactly. `unblocker/ledger.md` checked —
+  open queue items (UNB-025–029, 031) are pre-existing unblocker blockers
+  awaiting a human pass (UNB-031 served serve-3 today with the
+  CognitionX confrontation; the others past serve-3 cap with no serve-4
+  rule; UNB-029 day-4 skipped again), not review-cockpit replies; not
+  touched by this skill. `lead-magnets.csv` reconfirmed: WORDS and TEAM
+  both `active=yes` — no CTA-BLOCKED needed for R1–R3. `decisions-log.md`
+  tail checked, unchanged (last entries are the 14/07 exit-story kills).
+  Nothing applied to the vault. All 9 cards from this morning's digest
+  (#1–#6, R1–R3, message_ids 1296–1304) remain outstanding. Publishing
+  stayed queue-only throughout (`security.md` §3.1, `CLAUDE.md`) — no
+  post released, no Blotato queue touched. Confirmed in Telegram: "Done:
+  0 ready, 0 killed, 0 edited. 9 waiting on you." (message_id 1308).
+
+- 07/10/2026 — pre-digest sweep (operator-requested `digest` run, run
+  end-to-end per operator request via `/review-cockpit digest`, obeying
+  `CLAUDE.md` and `security.md`; skill not registered via the Skill tool
+  this session, so `SKILL.md` was read and followed manually per the
+  `project-skills-not-registered` memory; Telegram auth followed the
+  `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, not `deploy/.env`). `getUpdates` (no offset, none
+  stored) returned empty (`{"ok":true,"result":[]}`). Nothing to route: no
+  card decisions, no unblocker replies, no voice notes — 57th consecutive
+  empty sweep since the 14/09/2026 digest. Vault counts reconfirmed
+  directly from `content-vault.md`'s `## ENTRY ... |` status suffixes: 37
+  READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED (78 entries total) —
+  matches this session's reality-check hook exactly. `unblocker/ledger.md`
+  checked — open queue items (UNB-025–029, 031) are pre-existing unblocker
+  blockers awaiting a human pass, not review-cockpit replies; not touched
+  by this skill. `lead-magnets.csv` reconfirmed: WORDS and TEAM both
+  `active=yes` — no CTA-BLOCKED needed for R1–R3. `decisions-log.md` tail
+  checked, unchanged (last entries are the 14/07 exit-story kills). Nothing
+  applied to the vault. All 9 cards from yesterday's digest (#1–#6, R1–R3,
+  message_ids 1282–1290) go stale as of this run, superseded by the digest
+  below. Digest send followed immediately (header message_id 1295, cards
+  1296–1304, footer message_id 1305; no separate confirmation line — the
+  digest send itself is this run's output per skill step 3). Footer carried
+  the queue-state line: 37 READY TO POST / 0 SCHEDULED (latest
+  `reports/distribution-*.md` is 20/07/2026 — none since), 85 days since
+  the oldest ready item (ENTRY 047, 14/07/2026) was approved with nothing
+  released. Publishing stayed queue-only throughout (`security.md` §3.1,
+  `CLAUDE.md`) — no post released, no Blotato queue touched.
+
+- 06/10/2026, second sweep after this morning's digest (operator-requested
+  `process` run, run end to end per operator request via `/review-cockpit
+  process`, obeying `CLAUDE.md` and `security.md`; skill not registered via
+  the Skill tool this session, so `SKILL.md` was read and followed manually
+  per the `project-skills-not-registered` memory; Telegram auth followed
+  the `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, not `deploy/.env`). `getUpdates` (no offset, none
+  stored) returned empty (`{"ok":true,"result":[]}`). Nothing to route: no
+  card decisions, no unblocker replies, no voice notes — 56th consecutive
+  empty sweep since the 14/09/2026 digest. Vault counts reconfirmed
+  directly from `content-vault.md`'s `## ENTRY ... |` status suffixes: 37
+  READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED (78 entries total) —
+  matches this session's reality-check hook exactly. `unblocker/ledger.md`
+  checked — open queue items (UNB-025–029, 031) are pre-existing unblocker
+  blockers awaiting a human pass (UNB-031 served serve-2 this morning; the
+  others past serve-3 with no serve-4 rule), not review-cockpit replies;
+  not touched by this skill. `lead-magnets.csv` reconfirmed: WORDS and TEAM
+  both `active=yes` — no CTA-BLOCKED needed for R1–R3. `decisions-log.md`
+  tail checked, unchanged (last entries are the 14/07 exit-story kills).
+  Nothing applied to the vault. All 9 cards from this morning's digest
+  (#1–#6, R1–R3, message_ids 1282–1290) remain outstanding. Publishing
+  stayed queue-only throughout (`security.md` §3.1, `CLAUDE.md`) — no post
+  released, no Blotato queue touched. Confirmation sent to Telegram
+  (message_id 1294).
+
+- 06/10/2026 — sweep after this morning's digest (operator-requested
+  `process` run, run end to end per operator request via `/review-cockpit
+  process`, obeying `CLAUDE.md` and `security.md`; skill not registered via
+  the Skill tool this session, so `SKILL.md` was read and followed manually
+  per the `project-skills-not-registered` memory; Telegram auth followed
+  the `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, not `deploy/.env`). `getUpdates` (no offset, none
+  stored) returned empty (`{"ok":true,"result":[]}`). Nothing to route: no
+  card decisions, no unblocker replies, no voice notes — 55th consecutive
+  empty sweep since the 14/09/2026 digest. Vault counts reconfirmed
+  directly from `content-vault.md`'s `## ENTRY ... |` status suffixes: 37
+  READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED (78 entries total) —
+  matches this session's reality-check hook exactly. `unblocker/ledger.md`
+  checked — open queue items (UNB-025–029, 031) are pre-existing unblocker
+  blockers awaiting a human pass, not review-cockpit replies; not touched
+  by this skill. `lead-magnets.csv` reconfirmed: WORDS and TEAM both
+  `active=yes` — no CTA-BLOCKED needed for R1–R3. `decisions-log.md` tail
+  checked, unchanged (last entries are the 14/07 exit-story kills). Nothing
+  applied to the vault. All 9 cards from this morning's digest (#1–#6,
+  R1–R3, message_ids 1282–1290) remain outstanding. Publishing stayed
+  queue-only throughout (`security.md` §3.1, `CLAUDE.md`) — no post
+  released, no Blotato queue touched. Confirmation sent to Telegram
+  (message_id 1293).
+
+- 06/10/2026 — pre-digest sweep (operator-requested `digest` run, run
+  end-to-end per operator request via `/review-cockpit digest`, obeying
+  `CLAUDE.md` and `security.md`; skill not registered via the Skill tool
+  this session, so `SKILL.md` was read and followed manually per the
+  `project-skills-not-registered` memory). `getUpdates` (no offset, none
+  stored) returned empty (`{"ok":true,"result":[]}`). Nothing to route: no
+  card decisions, no unblocker replies, no voice notes — 54th consecutive
+  empty sweep since the 14/09/2026 digest. Vault counts reconfirmed
+  directly from `content-vault.md`'s `## ENTRY ... |` status suffixes: 37
+  READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED (78 entries total) —
+  matches this session's reality-check hook exactly. `unblocker/ledger.md`
+  checked — open queue items (UNB-025–028, 031) are pre-existing unblocker
+  blockers awaiting a human pass, not review-cockpit replies; not touched
+  by this skill. `lead-magnets.csv` reconfirmed: WORDS and TEAM both
+  `active=yes` — no CTA-BLOCKED needed for R1–R3. `decisions-log.md` tail
+  checked, unchanged (last entries are the 14/07 exit-story kills). Nothing
+  applied to the vault. All 9 cards from the 05/10 digest (#1–#6, R1–R3,
+  message_ids 1268–1276) go stale as of this run, superseded by the digest
+  below. Digest send followed immediately (header message_id 1281, cards
+  1282–1290, footer message_id 1291; no separate confirmation line — the
+  digest send itself is this run's output per skill step 3). Footer also
+  carried the queue-state line: 37 READY TO POST / 0 SCHEDULED (latest
+  `reports/distribution-*.md` is 20/07/2026 — none since), 84 days since
+  the oldest ready item (ENTRY 047, 14/07/2026) was approved with nothing
+  released. Publishing stayed queue-only throughout (`security.md` §3.1,
+  `CLAUDE.md`) — no post released, no Blotato queue touched.
+
+- 05/10/2026, second sweep after this morning's digest (operator-requested
+  `process` run, run end to end per operator request via `/review-cockpit
+  process`, obeying `CLAUDE.md` and `security.md`; skill not registered via
+  the Skill tool this session, so `SKILL.md` was read and followed manually
+  per the `project-skills-not-registered` memory). Note: the scheduled
+  16:30-GST cron slot (`deploy/logs/review-cockpit
+  process-2026-10-05T16-30-02.log`) only did a git sync, no actual sweep —
+  this is the real sweep for that slot. `getUpdates` (no offset, none
+  stored) returned empty (`{"ok":true,"result":[]}`). Nothing to route: no
+  card decisions, no unblocker replies, no voice notes — 53rd consecutive
+  empty sweep since the 14/09/2026 digest. Vault counts reconfirmed
+  directly from `content-vault.md`'s `## ENTRY ... |` status suffixes: 37
+  READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED (78 entries total) —
+  matches this session's reality-check hook exactly. `unblocker/ledger.md`
+  checked — open UNB queue items (UNB-025–031) are pre-existing unblocker
+  blockers awaiting a human pass, not review-cockpit replies; not touched
+  by this skill. `lead-magnets.csv` reconfirmed: WORDS and TEAM both
+  `active=yes` — no CTA-BLOCKED needed for R1–R3. `decisions-log.md` tail
+  checked, unchanged (last entries are the 14/07 exit-story kills). Nothing
+  applied to the vault. All 9 cards from this morning's digest (#1–#6,
+  R1–R3, message_ids 1268–1276) remain outstanding. Publishing stayed
+  queue-only throughout (`security.md` §3.1, `CLAUDE.md`) — no post
+  released, no Blotato queue touched. Confirmation sent to Telegram
+  (message_id 1280).
 
 - 05/10/2026, sweep after this morning's digest (operator-requested
   `process` run, run end to end per operator request via `/review-cockpit
@@ -762,6 +1114,36 @@ digest run overwrites it.
   R1–R3) remain outstanding. Publishing stayed queue-only throughout
   (`security.md` §3.1, `CLAUDE.md`) — no post released, no Blotato queue
   touched. Confirmation sent to Telegram (message_id 1143).
+
+## Last digest served — 08/10/2026 (run on operator request)
+
+Header message_id: 1310
+Footer message_id: 1320
+
+| Card | ENTRY | message_id | Platform | Pillar | Critic | CTA |
+|---|---|---|---|---|---|---|
+| #1 | ENTRY 099 | 1311 | Instagram (carousel) | Use AI for real work | pending | reflective question, no offer |
+| #2 | ENTRY 098 | 1312 | LinkedIn (text post) | Find what is uniquely yours | pending | reflective question, no offer — flags "builder-and-watchdog" framing for explicit yes/no |
+| #3 | ENTRY 097 | 1313 | Instagram / LinkedIn (text post) | Use AI for real work | pending | reflective question, no offer — overlaps #2's theme |
+| #4 | ENTRY 096 | 1314 | Instagram Reel (~40s) | Find what is uniquely yours | pending | reflective question, no offer — needs timing check |
+| #5 | ENTRY 095 | 1315 | LinkedIn | Real Talk | pending | discussion (no keyword) |
+| #6 | ENTRY 094 | 1316 | LinkedIn | Build Once, Runs Forever | 7.2 | community tease — CTA-BLOCKED (VERIFY + PREP) |
+| R1 | ENTRY 047 | 1317 | LinkedIn | What's Worth It | n/a | WORDS (live) — READY since 14/07/2026 (86d) |
+| R2 | ENTRY 048 | 1318 | X/Twitter thread | The Freedom Business | n/a | TEAM (live) — READY since 14/07/2026 (86d) |
+| R3 | ENTRY 049 | 1319 | Short-form video | Build Once, Runs Forever | n/a | TEAM (live) — READY since 14/07/2026 (86d) |
+
+Notes:
+- Card set identical to every digest since 16/09 (same top-6 DRAFT window,
+  same Ready-shelf three) — no new content-engine entries landed and no
+  operator decisions moved anything. Three process sweeps that same day
+  (message_ids 1321, 1323, 1324) all found `getUpdates` empty.
+- DRAFT pool at digest time: 33 entries, unchanged. Ready shelf: 37 READY
+  TO POST, all 86+ days old (oldest batch 14/07/2026); shelf cap of
+  3/digest means the other 34 wait for subsequent runs.
+- Ready-shelf CTA keywords (WORDS, TEAM) confirmed `active=yes` in
+  `lead-magnets.csv` — no CTA-BLOCKED needed for R1–R3.
+- No replies processed this run (pre-digest `getUpdates` sweep was empty).
+  decisions-log.md unchanged.
 
 ## Last digest served — 05/10/2026 (run on operator request)
 
