@@ -449,3 +449,27 @@ body.hero-light:has(.sk-hero-fade) .sk-header{background:#F4F2FDF2;box-shadow:0 
   .sk-hero-center .sk-hero-content{padding-top:calc(62px + 86vw*.86)}
   .sk-hero-center .sk-hero-colour{background:radial-gradient(ellipse 80% 16% at 50% calc(62px + 86vw*1.1),#F4F2FDD9 0,#F4F2FD00 100%)}
 }
+
+/* 09/10: landing structure. Kicker lines carry the search terms; problem, offers and FAQ sections. */
+.sk-kicker{margin:0 0 14px;font:800 12px/1.3 Inter,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--pink)}
+.sk-hero-eyebrow{margin:0 0 18px!important;font:800 12px/1.3 Inter,Arial,sans-serif!important;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.sk-problem{padding:20px 0 70px;background:var(--white)}
+.sk-problem h2,.sk-offers h2,.sk-faq h2{margin:0 0 28px;font-size:clamp(44px,5.4vw,78px)}
+.sk-problem-list{list-style:none;margin:0 0 26px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sk-problem-list li{padding:22px 24px;border-top:4px solid var(--blue);background:#F4F2FD;font:700 italic clamp(20px,1.8vw,26px)/1.3 "Playfair Display",Georgia,serif;color:var(--ink)}
+.sk-problem-turn{margin:0;font-size:clamp(18px,1.6vw,22px);font-weight:600;color:var(--ink)}
+.sk-offers{padding:70px 0 80px;background:#EEF2FC}
+.sk-offer-cards{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.sk-offer-cards li{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:28px;background:var(--white);border-top:6px solid var(--pink);box-shadow:0 10px 30px #0d11170f}
+.sk-offer-cards li:nth-child(2){border-top-color:var(--blue)}.sk-offer-cards li:nth-child(3){border-top-color:var(--ink)}
+.sk-offer-tag{font:800 11px/1 Inter,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#5a5f6b}
+.sk-offer-cards h3{margin:0;font:800 clamp(24px,2.2vw,30px)/1.15 "Playfair Display",Georgia,serif;color:var(--ink)}
+.sk-offer-cards p{margin:0 0 8px;flex:1;font-size:17px;line-height:1.5;color:#3a3f4b}
+.sk-faq{padding:10px 0 70px;background:var(--lilac)}
+.sk-faq details{border-top:1px solid #0d111733;padding:18px 0}
+.sk-faq details:last-child{border-bottom:1px solid #0d111733}
+.sk-faq summary{cursor:pointer;font:700 clamp(19px,1.7vw,23px)/1.3 "Playfair Display",Georgia,serif;color:var(--ink)}
+.sk-faq details p{margin:10px 0 0;max-width:70ch;font-size:17px;line-height:1.55;color:var(--ink)}
+.sk-faq a{color:var(--blue);text-decoration:underline}
+@media(max-width:900px){.sk-problem-list,.sk-offer-cards{grid-template-columns:1fr}}
+@media(max-width:700px){.sk-problem h2,.sk-offers h2,.sk-faq h2{font-size:clamp(40px,11vw,56px)}.sk-offer-cards .sk-pill{width:100%}}
