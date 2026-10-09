@@ -2,6 +2,46 @@
 
 ---
 
+## RESEARCH 062 — 2026-10-09 | Signal harvest (current audience problem) — no new qualifying signal
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `cc379ec4`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Internal tooling discoveries this run:** none — nothing surfaced that was internal-research-only; all candidates checked below are shift-lead (public-topic) or rejected outright.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority, methodology and recency were weighed.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` for both before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current (post-rebuild) harvest shape.
+
+### No new signal logged this run — one promising candidate blocked on direct verification
+
+A full sweep (all 6 `inventory.md` feeds plus targeted web search on all three pillars, including the standing pillar-3 gap) found nothing that clears the bar as a genuinely new, dated, primary-sourced, audience-fit signal beyond what RESEARCH 044–061 already have on file. Per `research-policy.md`, a gap is logged as a gap rather than filled with a weaker source.
+
+One candidate — a **FOUNDRS/Werksy survey of 50 independent founders and freelancers (4 in-depth interviews)** on solo-entrepreneur AI adoption — is the closest pillar-3 fit found in any run since the gap opened at RESEARCH 052, but is **not logged as a confirmed signal** because the only locatable write-up (Elite Business Magazine, "Could solo entrepreneurs fall behind on AI?") returned HTTP 403 to WebFetch on two attempts (plain and `http://` variants), and no original FOUNDRS/Werksy report page could be located via search. Per `research-policy.md`'s "capture first" / traceability standard and this ledger's own practice of only logging a `supporting_source_excerpt` pulled from a direct fetch, a `WebSearch` tool's own paraphrase of the article is not an independently verified excerpt — it is one step removed from the source and is not used as one here. See Rejected below for what is known about it; flagged for retry with a working fetch path.
+
+### Rejected this run
+
+- **FOUNDRS/Werksy, "[solo entrepreneurship survey, 2026]"** (via Elite Business Magazine writeup, elitebusinessmagazine.co.uk/analysis/item/could-solo-entrepreneurs-fall-behind-on-ai) — described consistently across three independent `WebSearch` queries as: survey of 50 independent founders/freelancers + 4 in-depth interviews; respondents rank marketing/finding customers, finance/tax, motivation/energy, legal/admin and lack of community as top challenges; only 6 of 50 use AI for finance/admin despite it ranking #2; >80% use general-purpose tools (ChatGPT-class) vs <15% using a task-specific tool; conclusion is that narrow, general-purpose-only AI adoption risks leaving solo entrepreneurs behind better-resourced competitors. Not logged as a signal — direct WebFetch of the source 403'd twice and no primary FOUNDRS/Werksy report page was found; paraphrase-of-paraphrase is not a traceable excerpt. **Action for a future run: retry the WebFetch (the 403 may be bot-blocking rather than permanent), or ask the operator for direct access to the FOUNDRS/Werksy report itself** — if confirmed, this is a strong, disclosed-methodology pillar-3 source after 10 consecutive gap runs (052–061).
+- **Channel V Media, "The State of AI Adoption in America" (2026)** (published 2026-10-08, fielded by Prosper Insights & Analytics, June 2026, n=7,675 US adults, nationally representative) — wrong audience: general US consumer population (agentic-AI awareness/comfort, e.g. "7.7% use agentic AI today," "60% worry about AI"), not solo professionals/founders deciding where AI belongs in their own work. No methodology detail beyond sample size disclosed in available coverage (no margin of error or question wording). Not logged.
+- **WRITER, "2026 Enterprise AI Survey"** (79% of organizations face AI-adoption challenges; 54% of C-suite say AI is "tearing their company apart") — wrong audience: enterprise C-suite/organizational adoption, same treatment as every previously-rejected enterprise/C-suite source (RESEARCH 048, 059, 060). Not logged.
+- **Riverbed, "Global Survey on Autonomous IT Operations"** (published 2026-10-06, 1,200 business decision-makers/IT leaders across seven countries) — wrong audience: enterprise IT operations leaders, not solo professionals/founders. Not logged.
+- **McKinsey, "The State of AI: Global Survey 2026"** (44% of organizations report AI scaling across the enterprise, up from 38% a year ago; 23% scaling an agentic system in at least one function) — already-familiar enterprise-scaling framing, wrong audience for this project; McKinsey's own State of AI series is not newly dated to this run. Not logged.
+- A repeat sweep for a disclosed-methodology "how a founder actually decided what to automate first" account, beyond the FOUNDRS/Werksy candidate above, surfaced only advice/opinion blog content (blog.mean.ceo, under30ceo.com, macmdviewer.com, onepc.org, careeraheadonline.com, founden.ai) with no disclosed survey, sample or methodology behind their claims — same sourcing-bar failure as every pillar-3 candidate rejected in RESEARCH 052–061.
+
+### Source health this run
+
+- Anthropic News (High): WebFetch worked; newest items unchanged since RESEARCH 061 (Oct 8 "2026 Usage Policy update," "Building on our commitment to American scientific discovery," "Introducing the Anthropic Cyber Mission" — all three already checked and rejected there as platform-wide policy or wrong-audience enterprise/infrastructure content). Nothing new to assess.
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — now the **19th consecutive failed run** (044 through 062), over eleven weeks on the same dead fetch path. Repeating the overdue recommendation from 047–061: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): WebFetch worked; all visible posts are ML-engineering/model-release content (benchmark leaderboard posts, gene-finding, OCR, dialect LLMs, video diffusion for hand motion, GRPO alignment, game modding, llama.cpp) — same non-fit pattern as every run since RESEARCH 050.
+- Google DeepMind blog (Medium): WebFetch worked; newest items unchanged since RESEARCH 061 (EmbeddingGemma 2, Gemini 4 Argon, SynthID Bio, Gemini 3.8 variants) — no audience-problem fit.
+- a16z AI (Medium): WebFetch worked; current posts are VC/infra/consumer-AI content (Top 100 Gen AI Consumer Apps, $1T AI buildout, agent security roundtable, "AI Can Write Code. Why Isn't Software Better?") — no audience-problem fit; page still exposes no explicit publish dates.
+- Lenny's Newsletter (Low): WebFetch worked; no post since Sep 29 ("Lenny & Friends Summit talks"); newest AI-flagged post still Sep 22 ("Advanced evals") — unchanged since RESEARCH 059–061, PM/product-leadership audience, not solo professionals/founders.
+- WebSearch/WebFetch: both functional throughout, aside from OpenAI's standing 403 and the Elite Business Magazine 403 noted above. No signals were invented; every claim logged above (Rejected section) was independently verified by a direct fetch, except the flagged FOUNDRS/Werksy candidate, which is explicitly marked as search-paraphrase-only and not logged as a signal for that reason.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 061 — 2026-10-08 | Signal harvest (current audience problem) — no new qualifying signal
 
 **Status:** NOTED
