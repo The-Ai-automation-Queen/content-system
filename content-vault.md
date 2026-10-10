@@ -21,6 +21,46 @@
 
 ## Most recent (quick reference)
 
+> **10/10/2026 content-engine daily run — no new entries produced (deliberate):**
+> Run end to end per explicit operator instruction ("Run the /content-engine
+> daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
+> queue-only — never post instantly. End with the operator briefing.");
+> `skills/content-engine/SKILL.md` not registered via the Skill tool this
+> session, so read and followed manually per the
+> `project-skills-not-registered` memory. Loaded `AGENTS.md`,
+> `CURRENT-WORKFLOW.md`, `context/current-context.json` and `security.md`
+> first, as both CLAUDE.md and the skill require. No new source material
+> since the prior run: `RESEARCH 063` (`research-notes.md`, 2026-10-10
+> signal harvest, logged earlier today by a separate signal-harvester run)
+> again found no new qualifying signal across all 6 inventory feeds; the
+> pillar-3 gap is now 11 consecutive runs unfilled (RESEARCH 052–063), and
+> this run's harvester caught and rejected a `WebSearch`-synthesized
+> "Oaken AI adoption survey" attribution that does not actually appear in
+> the source page it was paraphrased from — flagged there as a
+> trust-but-verify lesson, not logged as a signal. RESEARCH 058 (PwC "2026
+> Global AI Jobs Barometer") remains the newest fully-landed unused source,
+> still queued for the judgment/skill-erosion thread once drafting is
+> unblocked. Both standing blockers are unchanged and independently
+> reconfirmed this session: (1) this session's reality-check hook again
+> states canon: queen-brain NOT in this session, and explicitly forbids
+> writing price, tier, offer status or customer-facing copy reconstructed
+> from this repo's local mirror copies — content-engine's entire output is
+> customer-facing copy, so drafting stays blocked regardless of available
+> research; reconfirmed independently via `git ls-remote` against
+> `The-Ai-automation-Queen/queen-brain`, which again returned "Write access
+> to repository not granted" / 403 from this session's git credentials;
+> (2) the release backlog is also unchanged: vault still holds 37 READY TO
+> POST (oldest since 14/07/2026, 88 days), 33 DRAFT, 6 STALE, 2 KILLED, 0
+> POSTED, and `review-cockpit/decisions-log.md`'s last entry is still
+> 14/07/2026 — no operator replies, approvals or kills since then, and
+> `review-cockpit/state.md` logs the 68th consecutive empty Telegram
+> `getUpdates` sweep today — so adding more DRAFT volume would still only
+> crowd an already-unreleased backlog. No Notion, Blotato, or
+> queen-brain/GitHub write connector was reachable from this session
+> (checked via `ToolSearch` and `git ls-remote`; `gh` is not installed
+> here). Operator briefing given in this session's chat, same two open
+> options as every run since 18/09/2026, still unanswered.
+
 > **09/10/2026 content-engine daily run — no new entries produced (deliberate):**
 > Run end to end per explicit operator instruction ("Run the /content-engine
 > daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
