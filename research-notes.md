@@ -2,6 +2,45 @@
 
 ---
 
+## RESEARCH 063 — 2026-10-10 | Signal harvest (current audience problem) — no new qualifying signal
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `9e0430ed`; source (queen-brain) commit `3092c78d` — not reconstructed this session per the session's own reality-check ("canon: queen-brain NOT in this session"); not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Internal tooling discoveries this run:** none — nothing surfaced that was internal-research-only; all candidates checked below are shift-lead (public-topic) or rejected outright.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority, methodology and recency were weighed.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` for both before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current (post-rebuild) harvest shape.
+**Cron gap note:** `deploy/logs/signal-harvester-2026-10-10T22-00-02.log` again contains only the git-sync step ("Current branch main is up to date") with no harvest output — the unattended cron has not completed an actual harvest since the pattern first flagged at RESEARCH 057 (09-30 onward). This operator-requested session is what produced today's sweep.
+
+### No new signal logged this run
+
+A full sweep (all 6 `inventory.md` feeds plus targeted web search on all three pillars, including the standing pillar-3 gap) found nothing that clears the bar as a genuinely new, dated, primary-sourced, audience-fit signal beyond what RESEARCH 044–062 already have on file. Per `research-policy.md`, a gap is logged as a gap rather than filled with a weaker source.
+
+### Rejected this run
+
+- **emlyon business school, "1st Consulting & AI Barometer"** — resurfaced on a fresh search for the consultants/judgment angle; direct WebFetch confirmed it is the **same report already logged at RESEARCH 046** (line ~710, "epistemic calibration" / 11% stat). Not re-logged — checked to rule out a second edition, none found.
+- **"Oaken AI adoption survey"** (claimed: "the number one blocker for small business owners is not knowing where to start," 50%+) — traced the claim back through `WebSearch`'s own paraphrase to its actual source, `heartcoregrowth.com`'s blog post. Direct `WebFetch` of that page shows **no "Oaken" survey exists in the source text at all** — the real citation is an unattributed "survey of 230+ business owners" with no organization name, no methodology, and no publication date. The "Oaken" attribution appears to be a `WebSearch`-summary fabrication, not something present in any fetched page. Flagging this explicitly: a future run should not trust a named-source attribution from `WebSearch`'s synthesized answer without confirming the name appears in a directly fetched page — it did not here. Not logged, on both the fabricated-attribution issue and the underlying claim's own lack of disclosed methodology.
+- **Federal Reserve Bank of New York — Liberty Street Economics, "AI Adoption and Employment Expectations: Evidence from a Survey of Small Business Owners"** (published 2026-10-08, 2025 Small Business Credit Survey, 5,248 employer firms, fielded Sept–Nov 2025) — checked directly via WebFetch. Strong methodology but wrong angle for this project: it measures employment/revenue *expectations* of employer firms that already use AI, not the audience problem of a solo professional or founder deciding where AI belongs or feeling overwhelmed. Distinct from the already-logged RESEARCH 051 companion piece from the same Fed blog (same outlet, different survey wave, same audience-fit gap). Not logged.
+- **Intuit QuickBooks, "AI-assisted entrepreneurship" survey** (published 2026-08-20, 3,000+ US adults plus 1,500 each in Canada/UK/Australia) — checked directly via WebFetch. Wrong audience/angle: measures which launch tasks (branding, websites, market research) *aspiring* entrepreneurs plan to use AI for, not the lived-experience/judgment problem this project's audience already has. Not logged.
+- **Nirit Cohen (Substack/Forbes), "AI Is Creating A New Imposter Syndrome At Work"** (originally Forbes, 2026-02-09) — checked directly via WebFetch for its underlying evidence. Cites Korn Ferry's "Workforce 2025" survey (15,000+ professionals, 43% of senior execs report imposter syndrome) and a Toptal labor-market report — both already over a year old relative to this run and sourced only through a secondary commentary piece rather than a direct fetch of either primary report. Does not clear the traceability bar used throughout this ledger. Not logged.
+- **FOUNDRS/Werksy solo-entrepreneur survey** (the standing pillar-3 candidate flagged at RESEARCH 062) — retried `WebFetch` on the Elite Business Magazine write-up: still returns HTTP 403. A fresh search surfaced no primary FOUNDRS/Werksy report page, only the same paraphrase repeated across secondary sites (one new figure seen only in secondary paraphrase, not a direct fetch: "28% of 0-9-employee businesses use at least one AI technology vs. 49% of businesses with 250+ employees," attributed inconsistently — some secondary pages tie it to this survey, at least one ties a similar figure to a different report). Given today's Oaken fabrication catch above, this inconsistency is treated as a reason for *more* caution, not less — still not logged. Pillar 3 remains open, now an 11th consecutive run (052–063) without a qualifying source.
+
+### Source health this run
+
+- Anthropic News (High): WebFetch worked; no item newer than Oct 8 (unchanged since RESEARCH 062); all three Oct 8 items already checked and rejected there (policy update, scientific-discovery partnership, Cyber Mission — wrong audience/not dated-specific).
+- OpenAI Blog (High): direct WebFetch still returns HTTP 403 — now the **20th consecutive failed run** (044 through 063), over eleven weeks on the same dead fetch path. Repeating the overdue recommendation from 047–062: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): WebFetch worked; all visible posts are ML-engineering/model-release content (OCR, gene-finding, decision-model benchmarks, dialect LLMs) — same non-fit pattern as every run since RESEARCH 050.
+- Google DeepMind blog (Medium): WebFetch worked; newest item unchanged since RESEARCH 062 (EmbeddingGemma 2) — no audience-problem fit.
+- a16z AI (Medium): WebFetch worked; current posts are VC/infra/consumer content ("You Need a New CFO," preference-model investing, Texas data centers, general medicine investing, Top 100 Gen AI Consumer Apps) — no audience-problem fit; page still exposes no explicit publish dates.
+- Lenny's Newsletter (Low): WebFetch worked; no post since Sep 29 — unchanged since RESEARCH 062, PM/product-leadership audience, not solo professionals/founders.
+- WebSearch/WebFetch: both functional throughout, aside from OpenAI's standing 403 and the Elite Business Magazine 403. No signals were invented in the Signals sense (none logged this run); the one near-miss is documented above (Oaken) specifically because `WebSearch`'s synthesized answer attributed a claim to a source name absent from the actual fetched page — caught before logging, not after.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 062 — 2026-10-09 | Signal harvest (current audience problem) — no new qualifying signal
 
 **Status:** NOTED
