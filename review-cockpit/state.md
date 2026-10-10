@@ -1903,3 +1903,29 @@ Notes:
   describe existing draft/ready vault content only. All 9 cards from the
   09/10 digest (#1–#6, R1–R3, message_ids 1326–1334) go stale as of this
   run, superseded by the digest above.
+
+- **10/10/2026, process sweep (operator-requested `process` run, run
+  end-to-end per operator request via `/review-cockpit process`, obeying
+  `CLAUDE.md` and `security.md`; skill not registered via the Skill tool
+  this session, so `SKILL.md` was read and followed manually per the
+  `project-skills-not-registered` memory; Telegram auth followed the
+  `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, length-checked only via `${#VAR}`, never printed,
+  never sourced from `deploy/.env`).** `getUpdates` (no offset, none
+  stored) returned empty (`{"ok":true,"result":[]}`) — 67th consecutive
+  empty sweep since the 14/09/2026 digest restart. Nothing to route: no
+  card decisions, no unblocker replies, no voice notes. All 9 cards from
+  this morning's digest (header 1339, cards #1–#6 1340–1345, R1–R3
+  1346–1348, footer 1349) remain outstanding. `unblocker/ledger.md`
+  reconfirmed — its own 10/10 interactive run already found `getUpdates`
+  empty too; not a review-cockpit reply, not touched here. Vault
+  unchanged: 37 READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED, matching
+  the session's reality-check hook; `decisions-log.md` unchanged (last
+  entries are the 14/07 exit-story kills). Publishing stayed queue-only
+  throughout (`security.md` §3.1) — no post released, no Blotato queue
+  touched. Canon (queen-brain) NOT reachable this session — no price,
+  tier, offer status or customer-facing copy was written or touched.
+  Confirmation sent to Telegram (message_id 1350): "Process sweep (10/10,
+  interactive): inbox empty — nothing to route, nothing changed in the
+  vault. 9 cards from this morning's digest (#1–#6, R1–R3) still waiting
+  on you."
