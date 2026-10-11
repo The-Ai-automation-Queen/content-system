@@ -844,6 +844,22 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   confirms it's still there, unchanged, 16th morning. No reply, no
   eligible serve slot existed today at all (see Queue-list note) — did not
   re-send. Put to Fatiha again in today's briefing.
+- **11/10/2026 note (estate-janitor scan, interactive run):** re-ran the
+  checks the 04/10 scan did (the five `ls -ld`-only follow-ups since
+  didn't re-measure commits or re-grep the file). `a2e2bc1f..origin/main`
+  is now **723** commits behind (was 656 on 04/10, 381 on 20/09 — still
+  worsening). The merge-conflict marker flagged 04/10 in
+  `content-system-DUPLICATE/.gitignore` (`<<<<<<< Updated upstream` /
+  `=======` / `>>>>>>> Stashed changes`) is **no longer present** — `git
+  diff .gitignore` now shows a clean 43-line addition (the VPS-security-
+  managed block) with no conflict markers, so that specific footgun
+  appears resolved on disk since 04/10 (not via this repo's git history —
+  the duplicate checkout has no new commits — so likely someone edited
+  the file directly in that checkout). The other footgun from 04/10 is
+  **unchanged**: `deploy/crontab.example` line 64 still has the
+  DM-responder cron line active/uncommented, no `# PAUSED` prefix. Evidence
+  only, no file touched here — source `reports/janitor-2026-10-11.md`
+  JAN-03.
 
 ### UNB-028 — Review and prune stale branches (74 of 136, oldest 176 days)
 - **why:** `git for-each-ref` on `content-system` shows 74 non-main remote
