@@ -6,6 +6,44 @@
 
 ---
 
+## PERFORMANCE 2026-10-11
+
+**Run date:** 2026-10-11 (operator-requested run via `/performance-tracker`; `skills/performance-tracker/SKILL.md` not registered via the Skill tool this session, so read and followed manually per the `project-skills-not-registered` memory; the day's own 23:00 UTC cron slot — `deploy/logs/performance-tracker-2026-10-11T23-00-01.log` — was again a bare 4-line `git fetch` with no scrape, same shape as every cron slot since 2026-10-01)
+**Sources scraped:** Instagram (FAILED — no route open), Facebook (FAILED — no route open), YouTube (FAILED — `yt-dlp` not installed), LinkedIn (no `linkedin-update` argument passed this run; asked live — see operator briefing), Twitter/X (no automated route by design; asked live — see operator briefing), Threads (FAILED — no route open), TikTok (NOT CONNECTED), Blotato (FAILED — MCP not reachable this session)
+**Data path:** Unchanged from every entry since the 2026-09-15 restart — this is the 25th consecutive blocked entry in that streak.
+- `META_ACCESS_TOKEN` / `IG_BUSINESS_ID` / `FB_PAGE_ID` / `APIFY_TOKEN` — re-checked directly with `[ -n "$VAR" ]`: all unset this session. Meta Graph API and every Apify paid fallback skipped (designed behavior for a missing `APIFY_TOKEN`, not a failure — but Meta Graph API being unset *is* the real gap per the skill's own framing).
+- `ToolSearch` for Apify and Blotato MCP tools returns no matches this session → neither the paid fallback nor the Blotato queue cross-reference (step 2) is reachable, independent of any token.
+- `command -v yt-dlp` → not found. YouTube's free, keyless path remains unavailable.
+- TikTok: still not connected to Blotato (pre-existing `inventory.md` gap).
+
+> **Vault status** — confirmed by this session's startup reality-check hook and independently by counting every `## ENTRY` header's trailing status in `content-vault.md`: 78 entries total, **37 READY TO POST, 33 DRAFT, 6 STALE, 2 KILLED, 0 POSTED**. Unchanged since at least 2026-09-25. Release, not measurement, remains the bottleneck — this run (like every run since the restart) has nothing live to measure. Per the skill's own rule ("Only write `**Performance:**` on entries with status `POSTED`"), step B (updating vault entries with metrics) is a no-op this run.
+
+### Profile snapshot
+
+| Platform | Handle | Followers | Delta | Posts/Videos | Other |
+|---|---|---|---|---|---|
+| Instagram | @thefatihachikh | (no data — last baseline: 636 on 04/07/2026 per inventory.md) | (no data — 99+ days since baseline) | (no data) | No `META_ACCESS_TOKEN`; no Apify route |
+| Facebook | AI Automation Queen | (no data) | — | — | No Meta token; no Apify route |
+| YouTube | @AI-Automation-Queen | (no data) | — | — | `yt-dlp` not installed; no Apify route |
+| LinkedIn | Fatiha Chikh | (pending — asked operator live this run) | — | — | Reply in chat with the weekly analytics block to fill this in |
+| Twitter/X | @aiautomatik | (pending — asked operator live this run) | — | — | Reply in chat with follower/tweet numbers to fill this in |
+| Threads | @thefatihachikh | (no data) | — | — | No `META_ACCESS_TOKEN` scoped route |
+| TikTok | — | NOT CONNECTED | — | — | Connect TikTok to Blotato first (inventory.md gap) |
+
+### Top posts by engagement (last 12 posts per platform)
+
+> **(no data returned this run)** — no scraper produced results, and vault has 0 POSTED entries to cross-reference regardless. Nothing to rank.
+
+### Blotato queue status
+
+> **(scrape failed — Blotato MCP not reachable this session)**. Last known state carried from 2026-06-27: 14 published, 0 scheduled, 5 failed. Current queue health unknown.
+
+### Lessons — repeatable patterns
+
+> Insufficient data this run — 0 posts scraped, 0 POSTED vault entries. No ranking possible. The only data point on record is the pre-rebrand 2026-06-27 finding (105+ days stale, directional only, never validated against the current brand): personal narrative/face-voice-story content ran ~4–8x the engagement rate of generic AI-explainer/glossary content across 12 posts. Carrying this forward as unvalidated, not as a current lesson.
+
+---
+
 ## PERFORMANCE 2026-10-10
 
 **Run date:** 2026-10-10 (operator-requested run via `/performance-tracker`; `skills/performance-tracker/SKILL.md` not registered via the Skill tool this session, so read and followed manually per the `project-skills-not-registered` memory; the day's own 23:00 UTC cron slot — `deploy/logs/performance-tracker-2026-10-10T23-00-02.log` — was again a bare 4-line `git fetch` with no scrape, same shape as every cron slot since 2026-10-01)
