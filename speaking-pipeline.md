@@ -12,6 +12,45 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 
 ---
 
+### TARGET 008
+
+- **target:** Dubai AI Festival 2026 (Dubai AI Campus / DIFC, managed by Terrapinn) — organizer contact not yet identified
+- **type:** conference (government-backed, no open CFP found)
+- **source:** https://dubaiaifestival.com/ ; dates 26-27 Oct 2026, Dubai World Trade Centre
+- **fit:** Held under the directives of HH Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum; organised by Dubai AI Campus in partnership with DIFC. Program includes fireside chats, workshops and roundtables (not just vendor keynotes), which fits her "AI for real work" positioning. No dedicated speaker-application page found, only a general enquiry form (dubaiaifestival.com/general-enquiry) — needs a named contact before a personalized pitch, same gap as TARGET 005 (Dubai Future Week).
+- **est_value:** pending — verify fee band against canon before pitching; government/foundation-run events of this kind are sometimes unpaid-exposure slots — confirm before assuming Tier-5 value.
+- **stage:** identified
+- **history:**
+  - 2026-10-12 — identified via /speaking-pipeline scan. Event is 2 weeks out from this scan date — time-sensitive. Next step: find a named Dubai AI Campus / Terrapinn programming contact before this can move to `pitch`.
+
+---
+
+### TARGET 007
+
+- **target:** World AI Technology Expo Dubai / AI Conference Dubai (Golden Tree Events LLC) — org contact identified (general), named organizer not yet identified
+- **type:** conference (open call for speakers)
+- **source:** https://worldaiexpo.io/ (speaker-registration page); organizer's own site confirms the Dubai edition runs 07-09 Apr 2027, resolving the date conflict flagged in the 2026-10-05 scan (aggregator sites had wrongly listed 17-19 Nov 2026)
+- **fit:** Corporate, business-focused AI event ("move from AI curiosity to AI results") — matches her practical-AI positioning. Active "Apply to speak" page exists, a stronger lead than TARGET 004/005/008's general-inbox-only status, but the event itself is ~6 months out, so it is a lower urgency / longer-runway target than this scan's other finds.
+- **est_value:** pending — verify fee band against canon before pitching
+- **stage:** identified
+- **history:**
+  - 2026-10-12 — identified via /speaking-pipeline scan. Contact: events@goldentreeevent.com, +971 58 587 2014, Golden Tree Events LLC, Dubai. Next step: find a named programming contact (not just the general events inbox) via the speaker-registration portal before considering `pitch`; low time pressure given the Apr 2027 date.
+
+---
+
+### TARGET 006
+
+- **target:** AINext Awards & Conference Dubai 2026 (Next Business Media) — named contact identified: Anas Jawed, CEO
+- **type:** conference (open call for speakers)
+- **source:** https://ainextconference.com/ ; https://dubai.ainextconference.com/ (redirects to same); dates 22 Oct 2026, Crowne Plaza Dubai – Deira
+- **fit:** AI leaders/innovators/decision-makers conference covering agentic AI, AI governance, responsible AI and enterprise transformation — close match to her "use AI for real work" pillar and Dell/Intel/Microsoft enterprise background. Site has an active "Apply to speak" button and a named organizer (Anas Jawed, CEO, Next Business Media), the strongest contact-completeness of any target added this scan.
+- **est_value:** pending — verify fee band against canon before pitching
+- **stage:** identified
+- **history:**
+  - 2026-10-12 — identified via /speaking-pipeline scan. Contact: Anas Jawed (CEO, Next Business Media), contact@nextbusinessmedia.com, +1 437 450 2198. Event is 10 days out from this scan date — highly time-critical if pursued; contact-complete and pitch-eligible on that basis, but `scan` mode does not draft pitches. See operator briefing.
+
+---
+
 ### TARGET 005
 
 - **target:** Dubai Future Week 2026 (Dubai Future Foundation) — organizer contact not yet identified
@@ -49,6 +88,7 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 - **history:**
   - 2026-09-21 — identified via /speaking-pipeline scan. Next step: find the HRSE producer/programming contact at Informa Connect.
   - 2026-10-05 — named contact found via /speaking-pipeline scan: Natalie Diaz, Speakers and Content, Informa Connect (natalie.diaz@informa.com, +971 4 407 2601; source: informaconnect.com/hr-summit-expo/contact/). Event is 14-15 Oct 2026 — 9 days out from this scan, so this target is now pitch-eligible on contact grounds but time-critical; est_value still pending canon verification before any pitch goes out.
+  - 2026-10-12 — /speaking-pipeline scan: no new information, stage unchanged. Event is now 2-3 days out — this target has sat contact-complete at `identified` for two scans (7 days) with no pitch sent. Flagged as near-expired in this scan's operator briefing; either serve a pitch immediately or mark `dead` (event-passed) at the next scan.
 
 ---
 
@@ -63,6 +103,7 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 - **history:**
   - 2026-09-21 — identified via /speaking-pipeline scan. Next step: check whether CognitionX Emirates pays speakers (community events often don't) before treating this as a Tier-5-value target.
   - 2026-10-05 — named contact found via /speaking-pipeline scan: Hazem Ali, founder/organizer, Microsoft AI MVP (reachable via LinkedIn linkedin.com/in/drhazemali; source: sessionize.com/cognitionx-emirates-2026/). Still unconfirmed whether this community event pays speakers — event is 14-15 Oct 2026, 9 days out from this scan, so time-critical if pursued.
+  - 2026-10-12 — /speaking-pipeline scan: no new information, stage unchanged. Event is now 2-3 days out — this target has sat contact-complete at `identified` for two scans (7 days) with no pitch sent, and the unpaid/expenses-only question was never resolved. Flagged as near-expired in this scan's operator briefing; either serve a pitch immediately or mark `dead` (event-passed) at the next scan.
 
 ---
 
