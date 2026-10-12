@@ -7,32 +7,70 @@ digest run overwrites it.
 ## Telegram offset
 
 - Last `getUpdates` consumed offset: still none pending — checked again
-  on 11/10/2026 (operator-requested `digest` run, pre-digest sweep),
+  on 12/10/2026 (operator-requested `digest` run, pre-digest sweep),
   queue empty (`{"ok":true,"result":[]}`). No card replies, no unblocker
-  replies, no voice notes since the 14/09/2026 digest (69th consecutive
+  replies, no voice notes since the 14/09/2026 digest (72nd consecutive
   empty sweep).
 - Next `process` run should call `getUpdates` with no offset filter until a
   reply produces an `update_id` to anchor to.
 
-## Current digest card mapping (11/10/2026)
+## Current digest card mapping (12/10/2026)
 
 | Card | Vault entry | Telegram msg_id | Platform | Pillar | Critic | Notes |
 |---|---|---|---|---|---|---|
-| #1 | ENTRY 099 | 1353 | Instagram (carousel) | Use AI for real work | pending | reflective question, no offer |
-| #2 | ENTRY 098 | 1354 | LinkedIn (text post) | Find what is uniquely yours | pending | reflective question, no offer — flags "builder-and-watchdog" framing for explicit yes/no |
-| #3 | ENTRY 097 | 1355 | Instagram / LinkedIn (text post) | Use AI for real work | pending | reflective question, no offer — overlaps #2's theme |
-| #4 | ENTRY 096 | 1356 | Instagram Reel (~40s) | Find what is uniquely yours | pending | reflective question, no offer — needs timing check |
-| #5 | ENTRY 095 | 1357 | LinkedIn | Real Talk | pending | discussion (no keyword) |
-| #6 | ENTRY 094 | 1358 | LinkedIn | Build Once, Runs Forever | 7.2 | community tease — CTA-BLOCKED (VERIFY + PREP) |
-| R1 | ENTRY 047 | 1359 | LinkedIn | What's Worth It | n/a | WORDS (live) — READY since 14/07/2026 (89d) |
-| R2 | ENTRY 048 | 1360 | X/Twitter thread | The Freedom Business | n/a | TEAM (live) — READY since 14/07/2026 (89d) |
-| R3 | ENTRY 049 | 1361 | Short-form video | Build Once, Runs Forever | n/a | TEAM (live) — READY since 14/07/2026 (89d) |
+| #1 | ENTRY 099 | 1366 | Instagram (carousel) | Use AI for real work | pending | reflective question, no offer |
+| #2 | ENTRY 098 | 1367 | LinkedIn (text post) | Find what is uniquely yours | pending | reflective question, no offer — flags "builder-and-watchdog" framing for explicit yes/no |
+| #3 | ENTRY 097 | 1368 | Instagram / LinkedIn (text post) | Use AI for real work | pending | reflective question, no offer — overlaps #2's theme |
+| #4 | ENTRY 096 | 1369 | Instagram Reel (~40s) | Find what is uniquely yours | pending | reflective question, no offer — needs timing check |
+| #5 | ENTRY 095 | 1370 | LinkedIn | Real Talk | pending | discussion (no keyword) |
+| #6 | ENTRY 094 | 1371 | LinkedIn | Build Once, Runs Forever | 7.2 | community tease — CTA-BLOCKED (VERIFY + PREP) |
+| R1 | ENTRY 047 | 1372 | LinkedIn | What's Worth It | n/a | WORDS (live) — READY since 14/07/2026 (90d) |
+| R2 | ENTRY 048 | 1373 | X/Twitter thread | The Freedom Business | n/a | TEAM (live) — READY since 14/07/2026 (90d) |
+| R3 | ENTRY 049 | 1374 | Short-form video | Build Once, Runs Forever | n/a | TEAM (live) — READY since 14/07/2026 (90d) |
 
-Header message_id: 1352. Footer message_id: 1362.
+Header message_id: 1365. Footer message_id: 1375.
 
-(header message_id 1339, footer message_id 1349 — no offset recorded yet since no reply has ever anchored one.)
+(Prior header/footer pairs had no offset recorded since no reply has ever anchored one.)
 
 ## Process sweeps log
+
+- 12/10/2026 — pre-digest sweep (operator-requested `digest` run, run
+  end-to-end per operator request via `/review-cockpit digest`, obeying
+  `CLAUDE.md` and `security.md`; skill not registered via the Skill tool
+  this session, so `SKILL.md` was read and followed manually per the
+  `project-skills-not-registered` memory; Telegram auth followed the
+  `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID` read only inside a Python process via `os.environ`,
+  never printed, never sourced from `deploy/.env`). `getUpdates` (no
+  offset, none stored) returned empty (`{"ok":true,"result":[]}`) — 72nd
+  consecutive empty sweep since the 14/09/2026 digest. Nothing to route:
+  no card decisions, no unblocker replies, no voice notes. Vault counts
+  reconfirmed directly from `content-vault.md`'s `## ENTRY ... |` status
+  suffixes: 37 READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED (78 entries
+  total) — matches this session's startup reality-check hook exactly.
+  Confirmed newest DRAFT is still ENTRY 099 (16/09/2026) — no new
+  content-engine output landed since the last digest, so the top-6 card
+  set is unchanged (099/098/097/096/095/094). `lead-magnets.csv`
+  reconfirmed: WORDS and TEAM both `active=yes` — no CTA-BLOCKED needed
+  for R1–R3; ENTRY 094 (#6) stays CTA-BLOCKED on its own VERIFY/PREP
+  flags. `unblocker/ledger.md` checked — open items are pre-existing
+  unblocker blockers, not review-cockpit replies; not touched by this
+  skill. `decisions-log.md` tail checked, unchanged (last entries are the
+  14/07 exit-story kills). Nothing applied to the vault. Canon
+  (queen-brain) was NOT reachable this session per the startup
+  reality-check — no price, tier, offer status or customer-facing copy
+  was written or reconstructed; card summaries describe existing
+  draft/ready vault content only. Digest send followed immediately
+  (header message_id 1365, cards 1366–1371, Ready-shelf cards R1–R3
+  1372–1374, footer message_id 1375; no separate confirmation line — the
+  digest send itself is this run's output per skill step 3). Footer
+  carried the queue-state line: 37 READY TO POST / 0 SCHEDULED (latest
+  `reports/distribution-*.md` is still 20/07/2026 — none since), 90 days
+  since the oldest ready item (ENTRY 047, 14/07/2026) was approved with
+  nothing released. All 9 cards from the 11/10 digest (#1–#6, R1–R3,
+  message_ids 1353–1361) went unanswered before being superseded by this
+  run's cards. Publishing stayed queue-only throughout (`security.md`
+  §3.1, `CLAUDE.md`) — no post released, no Blotato queue touched.
 
 - 11/10/2026, second interactive sweep today (operator-requested `process`
   run, run end-to-end per operator request via `/review-cockpit process`,
