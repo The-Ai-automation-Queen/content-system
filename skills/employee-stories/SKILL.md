@@ -200,6 +200,9 @@ permanent. Assigned so far:
 | 038 | Nabil | Handoff Writer (interviewing) | Operations |
 | 039 | Sana | Pricing Watch (interviewing) | Intelligence |
 | 040 | Imad | Launch Announcer (interviewing) | Marketing |
+| 041 | Rayan | Call Prep (interviewing) | Deals |
+| 042 | Samar | Tax Deadline Tracker (interviewing) | Back Office |
+| 043 | Hiba | Check-In Writer (interviewing) | Customer |
 
 New names: short, warm, easy to say in English and French, no name
 reuse, never the name of a real client or contact. Log new assignments

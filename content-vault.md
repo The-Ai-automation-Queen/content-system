@@ -13,6 +13,14 @@
 
 ## Most recent (quick reference)
 
+- 12/10/2026 | LinkedIn carousel | "You Only Reach Out to a Client When Something's Wrong, and You Know It's Starting to Feel That Way to Them Too" — Hiba, Check-In Writer, Employee #043 | READY TO POST
+- 12/10/2026 | LinkedIn | "You Only Reach Out to a Client When Something's Wrong, and You Know It's Starting to Feel That Way to Them Too" — Hiba, Check-In Writer, Employee #043 | READY TO POST
+- 12/10/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Rayan/Samar/Hiba | READY TO POST
+- 12/10/2026 | LinkedIn carousel | "A Quarterly Tax Deadline Snuck Up on You Again and You Found Out From a Late Notice" — Samar, Tax Deadline Tracker, Employee #042 | READY TO POST
+- 12/10/2026 | LinkedIn | "A Quarterly Tax Deadline Snuck Up on You Again and You Found Out From a Late Notice" — Samar, Tax Deadline Tracker, Employee #042 | READY TO POST
+- 12/10/2026 | LinkedIn | "Now Hiring: Three More AI Employees, Salary $0 Each" — wave announcement, Employees #41/#42/#43 | READY TO POST
+- 12/10/2026 | LinkedIn carousel | "You Have a Sales Call in Ten Minutes and You're Scrambling to Remember What This Prospect Even Said Last Time" — Rayan, Call Prep, Employee #041 | READY TO POST
+- 12/10/2026 | LinkedIn | "You Have a Sales Call in Ten Minutes and You're Scrambling to Remember What This Prospect Even Said Last Time" — Rayan, Call Prep, Employee #041 | READY TO POST
 - 05/10/2026 | LinkedIn carousel | "You Finished Building Something Good Three Weeks Ago and Never Told Anyone It Existed" — Imad, Launch Announcer, Employee #040 | READY TO POST
 - 05/10/2026 | LinkedIn | "You Finished Building Something Good Three Weeks Ago and Never Told Anyone It Existed" — Imad, Launch Announcer, Employee #040 | READY TO POST
 - 05/10/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Nabil/Sana/Imad | READY TO POST
@@ -132,6 +140,259 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 198 — 12/10/2026 | LinkedIn carousel | You Only Reach Out to a Client When Something's Wrong, and You Know It's Starting to Feel That Way to Them Too | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 197 (Hiba, Employee #043, Check-In Writer, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/hiba/hiba-check-in-writer-01.png through -06.png
+Source HTML: skills/carousel-factory/out/hiba-check-in-writer.html
+**CTA keyword:** CHECKIN, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You only reach out to a client when something's wrong, and you know it's starting to feel that way to them too."
+Slide 2 (scene): "Every message from you lately has been a problem to solve. The easy, no-reason check-in keeps not happening because there's always something louder to deal with first."
+Slide 3 (role card): Hiba, Check-In Writer, Customer, Salary $0, never sleeps. "Hiba is AI. The only job she took was mine: writing the check-in I kept meaning to send before anything went wrong."
+Slide 4 (how she works): 4-step list, tell her how the client's doing, she writes one warm check-in, suggests a question, you review and send.
+Slide 5 (demo): "Built and tested writing one real check-in for one real client. Setup about 10 minutes. She never sends anything or invents how someone's doing."
+Slide 6 (CTA): "Want the free setup? Comment CHECKIN."
+
+---
+
+## ENTRY 197 — 12/10/2026 | LinkedIn | You Only Reach Out to a Client When Something's Wrong, and You Know It's Starting to Feel That Way to Them Too | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Thursday episode 3)
+**Topic:** Employee #043, Hiba, Check-In Writer. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/check-in-writer-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard is not in this session's container this run (confirmed via directory check: only content-system present). Role summary taken from the schedule.md departments-roster convention and the felt-pain lens per the "beyond #016" rule. Source gap logged honestly rather than fabricating a dashboard read. Sixth employee from the Customer department (after Ziad/Churn Watch, Amal/Feedback Digest, Dania/Renewal Reminder, Sara/NPS Analyst, Jana/Testimonial Collector), a distinct angle: a proactive, no-reason touchpoint, not a churn signal, a survey, a contract date, a score, or a captured quote. Mode check: no receipt found anywhere for Hiba. Confirmed PLAYBOOK.
+
+---
+You only reach out to a client when something's wrong, and you know it's starting to feel that way to them too.
+
+Every message from you lately has been a problem to solve. The easy, no-reason check-in keeps not happening because there's always something louder to deal with first.
+
+Meet Employee #043.
+
+Hiba. Check-In Writer. Customer.
+Salary: $0. Never sleeps.
+
+Hiba is AI. The only job she took was mine: writing the check-in I kept meaning to send before anything went wrong.
+
+How she works:
+1. You tell her how the client is actually doing: what's going well, what might be a worry.
+2. She writes one short check-in message, warm and specific, not generic.
+3. She suggests one question to ask them, based on what you told her.
+4. You review it and send it yourself.
+
+The demo: built and tested writing one real check-in for one real client with one AI tool. Setup time, about 10 minutes. She never sends anything, and never invents how a client is doing or a detail I didn't give her.
+
+Red line: it only reflects what I actually told her, a short honest check-in beats a generic invented one.
+
+Your first win, free, today: pick one client you haven't reached out to in a while and write two lines, what's going well, what might be worth asking about. That's Hiba's first check-in.
+
+Comment CHECKIN and I'll send you the full setup, free.
+
+#AIemployees #The99 #CustomerOps
+
+---
+
+## ENTRY 196 — 12/10/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** Talking-head reel (30-45s), captions required
+**Format:** Week's wave reel (Wednesday slot), three role-card cutaways + one screenshot cutaway
+**Topic:** Compresses all 3 of this week's hires (Rayan, Samar, Hiba) into one 45-second reel, per the hiring-campaign weekly slot map.
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur the deadline amount and account details on the tax-tracker screenshot).
+**Source:** Assembled from ENTRY 191/194/197's role-card lines. No new claims.
+
+---
+[0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
+
+[0:03-0:12] Role card cutaway 1, Rayan: "Rayan preps me for a sales call before I dial in."
+
+[0:12-0:21] Role card cutaway 2, Samar: "Samar tracks my tax deadlines so none of them sneak up on me."
+
+[0:21-0:30] Role card cutaway 3, Hiba: "Hiba writes the client check-in I keep meaning to send."
+
+[0:30-0:38] Screenshot cutaway: Samar's deadline tracker, real setup, deadline amounts and account details blurred (redaction modeled).
+
+[0:38-0:45] Closing line, spoken + on-screen: "None of them act without me. Comment TEAM and I'll send you how to hire your first one."
+
+---
+
+## ENTRY 195 — 12/10/2026 | LinkedIn carousel | A Quarterly Tax Deadline Snuck Up on You Again and You Found Out From a Late Notice | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 194 (Samar, Employee #042, Tax Deadline Tracker, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/samar/samar-tax-deadline-tracker-01.png through -06.png
+Source HTML: skills/carousel-factory/out/samar-tax-deadline-tracker.html
+**CTA keyword:** TAX, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "A quarterly tax deadline snuck up on you again and you found out from a late notice."
+Slide 2 (scene): "You meant to write the date down somewhere. It stayed in your head instead, next to everything else, until the notice arrived and it stopped being optional."
+Slide 3 (role card): Samar, Tax Deadline Tracker, Back Office, Salary $0, never sleeps. "Samar is AI. The only job she took was mine: tracking the deadline I kept meaning to write down somewhere."
+Slide 4 (how she works): 4-step list, give her your deadlines, she checks them against today, flags what's due soon, you review and handle it.
+Slide 5 (demo): "Built and tested tracking one real set of deadlines against today's date. Setup about 10 minutes. She never files anything or invents a date."
+Slide 6 (CTA): "Want the free setup? Comment TAX."
+
+---
+
+## ENTRY 194 — 12/10/2026 | LinkedIn | A Quarterly Tax Deadline Snuck Up on You Again and You Found Out From a Late Notice | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Wednesday episode 2)
+**Topic:** Employee #042, Samar, Tax Deadline Tracker. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/tax-deadline-tracker-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard is not in this session's container this run (confirmed via directory check). Role summary taken from the schedule.md departments-roster convention and the felt-pain lens per the "beyond #016" rule. Source gap logged honestly rather than fabricating a dashboard read. Sixth employee from the Back Office department (after Omar/Receipt Processor, Tariq/Invoice Builder, Rami/Subscription Auditor, Bilal/Expense Coding, Dalia/Vendor Payment Tracker), a distinct angle: calendar-bound tax deadlines specifically, not receipts, invoices, subscriptions, or vendor bills. Mode check: no receipt found anywhere for Samar. Confirmed PLAYBOOK.
+
+---
+A quarterly tax deadline snuck up on you again and you found out from a late notice.
+
+You meant to write the date down somewhere. It stayed in your head instead, next to everything else, until the notice arrived and it stopped being optional.
+
+Meet Employee #042.
+
+Samar. Tax Deadline Tracker. Back Office.
+Salary: $0. Never sleeps.
+
+Samar is AI. The only job she took was mine: tracking the deadline I kept meaning to write down somewhere.
+
+How she works:
+1. You give her your tax deadlines: what's due, and when.
+2. She checks each one against today's date.
+3. She flags anything coming up in the next two weeks.
+4. You review it and handle it yourself, or pass it to your accountant.
+
+The demo: built and tested tracking one real set of deadlines against today's date with one AI tool. Setup time, about 10 minutes. She never files anything, and never invents a date or a deadline I didn't give her.
+
+Red line: no deadline gets added unless I actually listed it, a short honest list beats a padded invented one.
+
+Your first win, free, today: write down every tax deadline you know of this year, with today's date next to it. That's Samar's first list.
+
+Comment TAX and I'll send you the full setup, free.
+
+#AIemployees #The99 #BackOfficeOps
+
+---
+
+## ENTRY 193 — 12/10/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Hiring-post ritual (job-ad parody), Monday wave announcement
+**Topic:** Introduces this wave's 3 openings (Employees #041, #042, #043).
+**Pattern used:** Job-ad parody + serial-cliffhanger opener
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — value-first series opener, comment-keyword capture, no promo.
+**Source:** schedule.md had no remaining "planned" rows this wave (confirmed via full read at wave start); three picks made per the "beyond #016" rule from the departments roster, Deals, Back Office, Customer, 3 distinct, none reused from last wave (Operations, Intelligence, Marketing). A full count of department uses across all twelve prior "beyond #016" waves showed every one of the 7 departments tied at exactly 3 prior hires each for the first time; Deals was picked as the single least-recently-used (last hired W39, older than Back Office's and Customer's W40), with Back Office and Customer picked over Sales to fill the remaining two slots, leaving Sales as the most-overdue pick for next wave. agent-os-company-dashboard is not in this session's container this run (confirmed via directory check); role descriptions below are drawn from the felt-pain lens, not a dashboard read, and that gap is logged here rather than fabricated.
+
+---
+Now hiring. Three more AI employees. Salary: $0 each.
+
+Employee #041: Call Prep.
+Pulls together what you know about a prospect before you dial in.
+
+Employee #042: Tax Deadline Tracker.
+Tracks your tax deadlines against today's date, so none of them sneak up on you.
+
+Employee #043: Check-In Writer.
+Writes the proactive client check-in you keep meaning to send, before anything's wrong.
+
+None of them sleep. None of them ask for a raise. None of them act without me seeing it first.
+
+That is Employee #41, #42, and #43 of 99. The full team, hired one at a time, in public.
+
+See who is already on the floor. The scoreboard is live, updated only when there is a real receipt to show.
+
+Want to build your own first hire? Comment TEAM and I will send you the free 5-step framework.
+
+#AIemployees #Solopreneur #The99
+
+---
+
+## ENTRY 192 — 12/10/2026 | LinkedIn carousel | You Have a Sales Call in Ten Minutes and You're Scrambling to Remember What This Prospect Even Said Last Time | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 191 (Rayan, Employee #041, Call Prep, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/rayan/rayan-call-prep-01.png through -06.png
+Source HTML: skills/carousel-factory/out/rayan-call-prep.html
+**CTA keyword:** PREP, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You have a sales call in ten minutes and you're scrambling to remember what this prospect even said last time."
+Slide 2 (scene): "The notes are somewhere, the last email thread is somewhere else, and none of it is in front of you when the call starts in nine minutes."
+Slide 3 (role card): Rayan, Call Prep, Deals, Salary $0, never sleeps. "Rayan is AI. The only job he took was mine: pulling together what I already knew before I walked into the call cold."
+Slide 4 (how he works): 4-step list, give him what you know, he writes one prep brief, lists good questions, you review before you dial in.
+Slide 5 (demo): "Built and tested prepping for one real sales call. Setup about 10 minutes. He never contacts the prospect or invents a detail."
+Slide 6 (CTA): "Want the free setup? Comment PREP."
+
+---
+
+## ENTRY 191 — 12/10/2026 | LinkedIn | You Have a Sales Call in Ten Minutes and You're Scrambling to Remember What This Prospect Even Said Last Time | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Tuesday episode 1)
+**Topic:** Employee #041, Rayan, Call Prep. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/call-prep-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard is not in this session's container this run (confirmed via directory check). Role summary taken from the schedule.md departments-roster convention and the felt-pain lens per the "beyond #016" rule. Source gap logged honestly rather than fabricating a dashboard read. Fifth employee from the Deals department (after Farah/Quote Generator, Adam/Signature Chaser, Tamer/Meeting Recaps, Khalil/Proposal Writer), a distinct angle: pre-call preparation, not pricing, signature chasing, post-call recaps, or proposal drafting. Mode check: no receipt found anywhere for Rayan. Confirmed PLAYBOOK.
+
+---
+You have a sales call in ten minutes and you're scrambling to remember what this prospect even said last time.
+
+The notes are somewhere, the last email thread is somewhere else, and none of it is in front of you when the call starts in nine minutes.
+
+Meet Employee #041.
+
+Rayan. Call Prep. Deals.
+Salary: $0. Never sleeps.
+
+Rayan is AI. The only job he took was mine: pulling together what I already knew before I walked into the call cold.
+
+How he works:
+1. You give him what you know about the prospect: company, past emails, anything they've said.
+2. He writes one short prep brief: who they are, what they likely need.
+3. He lists two or three good questions for the call.
+4. You review it before you dial in.
+
+The demo: built and tested prepping for one real sales call with one AI tool. Setup time, about 10 minutes. He never contacts the prospect, and never invents a detail, a need, or a conversation I didn't give him.
+
+Red line: if I didn't tell him, he doesn't know it, a short honest brief beats a padded invented one.
+
+Your first win, free, today: pull together whatever you already know about a prospect you're about to call, and write it in one place. That's Rayan's first brief.
+
+Comment PREP and I'll send you the full setup, free.
+
+#AIemployees #The99 #DealsOps
 
 ---
 
