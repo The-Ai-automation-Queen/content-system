@@ -89,7 +89,7 @@ export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: G
         <div className="outcome-nav__head">
           <p className="eyebrow">{listedGuides.length} guides, grouped by where you are</p>
           <h2 id="journey-title">Where are you right now?</h2>
-          <p>Pick the one that sounds like you. You can come back for the next one later.</p>
+          <p>New to AI? Start at step 1 and go in order. Already using it? Jump to the step you need. Every guide ends with a link to the next one, so you always know what to do after.</p>
         </div>
         <div className="outcome-nav__grid">
           {stages.map((stage, index) => (
