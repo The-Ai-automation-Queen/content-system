@@ -98,7 +98,7 @@ module.exports = async function handler(request, response) {
         guideSlug,
 
       });
-      return response.status(502).json({ error: "We could not open the guide. Please try again." });
+      return response.status(502).json({ error: `We could not open the guide. Please try again. (ref S${lumailResponse.status})` });
     }
     const guideUrl = `${GUIDE_ORIGIN}/guides/${guideSlug}/`;
     const guideDetails = GUIDE_DETAILS.get(guideSlug);
@@ -132,12 +132,13 @@ The AI Automation Queen`;
       }),
     });
     if (!emailResponse.ok) {
+      // The reader is already subscribed: open the guide on screen anyway.
       console.error("Lumail guide email failed", { status: emailResponse.status, guideSlug });
-      return response.status(502).json({ error: "We could not open the guide. Please try again." });
+      return response.status(200).json({ success: true, emailSent: false });
     }
-    return response.status(200).json({ success: true });
+    return response.status(200).json({ success: true, emailSent: true });
   } catch (error) {
-    console.error("Lumail guide capture request failed", { guideSlug });
-    return response.status(502).json({ error: "We could not open the guide. Please try again." });
+    console.error("Lumail guide capture request failed", { guideSlug, message: error?.message });
+    return response.status(502).json({ error: "We could not open the guide. Please try again. (ref N)" });
   }
 };
