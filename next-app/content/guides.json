@@ -336,7 +336,7 @@
       "status": "live",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool",
@@ -753,7 +753,7 @@
       "positioningLane": "Use AI at work",
       "reviewStatus": "published",
       "formatLabel": "GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Content and creative work",
       "outcomes": [
         "Create content"
@@ -889,7 +889,7 @@
       "positioningLane": "Use AI at work",
       "reviewStatus": "published",
       "formatLabel": "GUIDE",
-      "level": "Beginner",
+      "level": "Expert",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool",
@@ -919,7 +919,7 @@
       "positioningLane": "Use AI at work",
       "reviewStatus": "published",
       "formatLabel": "GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI essentials",
       "outcomes": [
         "Use AI safely"
@@ -975,7 +975,7 @@
       "track": "understand",
       "status": "live",
       "formatLabel": "FREE GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI agents",
       "outcomes": [
         "Understand AI",
@@ -1154,7 +1154,7 @@
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Better prompts and answers",
       "outcomes": [
         "Get better answers"
@@ -1180,7 +1180,7 @@
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Workflows and automation",
       "outcomes": [
         "Automate a task"
@@ -1208,7 +1208,7 @@
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool",
@@ -1236,7 +1236,7 @@
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool"
@@ -1420,7 +1420,7 @@
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
         "Run business operations"
@@ -2043,7 +2043,7 @@
       "status": "live",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool",
@@ -2098,7 +2098,7 @@
       "status": "live",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Business operations",
       "outcomes": [
         "Run business operations"
@@ -2125,7 +2125,7 @@
       "status": "live",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Business operations",
       "outcomes": [
         "Run business operations"
@@ -2152,7 +2152,7 @@
       "status": "live",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Business operations",
       "outcomes": [
         "Create content",
@@ -2180,7 +2180,7 @@
       "status": "live",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Business operations",
       "outcomes": [
         "Create content",
