@@ -52,3 +52,14 @@ search phrase), minutes.
    file has no U+2014 or U+2013.
 4. Report per guide: the failures you found, what the reader now makes, the step titles, and any
    menu path you are unsure of. Do not build, do not commit, do not edit other files.
+
+## Owner's latest instruction (13/10/2026, overrides anything softer above)
+- Use the simplest words possible. Write for a reader who struggles with reading. Most sentences
+  under 12 words. No word a 10-year-old would not know; if a tool word is needed, explain it in
+  brackets the first time.
+- Every guide uses the same structure as the model guides, no older layouts: intro story, "What you
+  end up with", "Before you start", numbered action steps (A, B, C parts when needed), example and
+  result blocks around every prompt, a check-it-yourself table, an honest block, the checklist,
+  and the next-guide CTA.
+- After rewriting, read every sentence once more and make it simpler.
+- No guide is skipped.

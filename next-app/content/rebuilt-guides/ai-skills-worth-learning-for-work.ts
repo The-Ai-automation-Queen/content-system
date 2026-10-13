@@ -147,6 +147,11 @@ For each one, make a table with 3 columns:
 Fact | The exact words from my notes that it comes from | Found in my notes? (Yes / No)
 
 If a fact is not in my notes, write No. Do not fix anything yet.` },
+      { kind: "result", label: "What a good answer looks like", lines: [
+        "Tuesday | \"call Tues\" | Yes",
+        "Onboarding emails first | \"start w/ onboarding emails\" | Yes",
+        "Draft by Friday | (not in notes) | No",
+      ] },
       { kind: "h3", text: "B. Check it yourself" },
       { kind: "list", ordered: true, items: [
         "Look at the last column. Find every **No**.",
