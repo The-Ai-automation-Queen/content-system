@@ -66,146 +66,167 @@ export type CardGuide = {
 
 export const cardGuides: readonly CardGuide[] = [
   {
-    // Owner-approved plan and title (13/10/2026); copy in docs/copy/guides/guide-01-start-using-ai-2026-10-13.md.
+    // Rebuilt 13/10/2026 on the Brand Brain model at the owner's request.
     slug: "start-using-ai-in-your-business",
     lumailTag: "guide-start-using-ai",
     title: "How to Start Using AI in Your Business When You Don't Know Where to Begin",
     cover: "/images/guides/start-using-ai-in-your-business.webp",
     coverAlt: "The Shift & Lead mascot laying blocks across a gap to build a bridge, one block at a time.",
-    seoDescription: "Don't know where to start with AI? Pick one task, open one tool and finish it today. Step by step, with the prompts to copy.",
-    tool: "ChatGPT (free)",
+    seoDescription: "Don't know where to start with AI? Set ChatGPT up for your business in 6 steps: a business profile, your AI task map and your first assistant.",
+    tool: "ChatGPT",
     minutes: 60,
     h1: { title: "How to Start Using AI", accent: "in Your Business" },
     hero: {
       kind: "scene",
       src: "/images/guides/start-using-ai-in-your-business.webp",
       alt: "The Shift & Lead mascot laying blocks across a gap to build a bridge, one block at a time.",
-      line: "Pick one task, open one tool, and get it done today.",
+      line: "Set ChatGPT up for your business once, find the jobs worth handing over, and build your first assistant.",
     },
     intro: {
-      heading: "I keep hearing I should use AI. I don't know where to start.",
-      lead: "Start with one task you already do every week. Not ten tools. Not a course. One task, one tool. By the end of this guide you will have done that task with AI, checked it, and saved the prompt so next time takes two minutes.",
+      heading: "Your AI starter kit, built in one sitting",
+      lead: "Most people try AI once, get a generic answer and give up. The problem is not the tool: it knows nothing about your business. This guide sets ChatGPT up for your business first, then shows you which jobs to hand over and builds your first assistant for one of them.",
       blocks: [
-        { kind: "p", text: "**Why it matters:** every week you wait, you keep doing work AI could draft for you, and the tools you already pay for sit unused." },
         { kind: "h3", text: "What you end up with" },
         { kind: "list", items: [
-          "One real task done with AI, checked by you",
-          "A prompt you can reuse every week",
-          "A list of your next 3 tasks to hand to AI",
+          "ChatGPT set up safely, with your chats kept out of training and 3 rules for what never goes in",
+          "A **Business Profile** that ChatGPT reads before every answer, so it stops giving generic advice",
+          "Your **AI task map**: the 5 jobs in your week worth handing over, ranked by time saved and risk",
+          "Your **first assistant**: saved instructions for job number 1 that you reuse every week",
+          "One real piece of work done with it, and checked by you",
         ] },
-        { kind: "tip", text: "You need a free ChatGPT account. Every prompt in this guide can be copied and pasted. Replace the parts in [square brackets] with your own details." },
+        { kind: "tip", text: "You need a ChatGPT account. The free plan works. Every prompt below can be copied and pasted as it is; replace the parts in [square brackets]." },
       ],
     },
-    openSteps: 2,
+    openSteps: 1,
     gate: {
       heading: "Get the",
-      accent: "3 prompts.",
+      accent: "AI Starter Kit.",
       promise: "Enter your name and email. The rest of the guide opens straight away, and I'll email you the link so you can come back to it later.",
       action: "Open the rest of the guide",
     },
     steps: [
-      { num: "01", title: "Open one tool", accent: "Just one.", blocks: [
-        { kind: "p", text: "You only need one AI tool to start. Use ChatGPT. If you already pay for Claude or Gemini, use that instead. Don't sign up for anything new today." },
+      { num: "01", title: "Set up ChatGPT safely", accent: "Before anything goes in.", blocks: [
+        { kind: "p", text: "Do this once. It protects your clients and your business in every chat after it." },
         { kind: "list", ordered: true, items: [
-          "Go to [chatgpt.com](https://chatgpt.com) and click **Sign up**. A free account is enough.",
-          "Once you're in, you see a box at the bottom of the screen where you type your message.",
-          "That box is where you paste every prompt in this guide. Press **Enter** to send.",
+          "Go to [chatgpt.com](https://chatgpt.com) and sign in or create a free account.",
+          "Click your name or profile picture, then **Settings**.",
+          "Open **Data Controls** and switch off **Improve the model for everyone**. Your chats are no longer used to train the model.",
+          "Menu names change. If you can't find it, search \"data controls\" on [OpenAI's help pages](https://help.openai.com/en/articles/7730893-chatgpt-data-controls-faq).",
         ] },
-        { kind: "tip", text: "**What AI is, in one line:** a tool that writes a first draft from what you give it. The more you give it, the better the draft. You always check it before you use it." },
-      ] },
-      { num: "02", title: "Pick your one task", accent: "The one that annoys you most.", blocks: [
-        { kind: "p", text: "Pick a task you do every week. It should take you 15 to 60 minutes, and you should be able to tell if the result is good. Use this table to find it." },
-        { kind: "table", head: ["If this annoys you", "Your first task"], rows: [
-          ["Emails sit in your inbox because they need a careful reply", "Reply to one client email"],
-          ["You finish a call and the follow-up takes forever", "Write the follow-up email after a call"],
-          ["Proposals take you a whole evening", "Draft one proposal from your call notes"],
-          ["You answer the same questions again and again", "Write answers to your 5 most common questions"],
-          ["You never know what to post", "Turn one client question into a post"],
-          ["Long documents pile up unread", "Get the 3 key points from one document"],
+        { kind: "p", text: "Then keep these 3 rules every time you paste something in." },
+        { kind: "table", head: ["Never paste", "Ask first", "Fine to paste"], rows: [
+          ["Passwords, card and bank details", "A client's emails or documents", "Your own notes, with names removed"],
+          ["Health or personal information about anyone", "Contracts and proposals with names in them", "Your website and sales page text"],
+          ["Anything under a confidentiality agreement", "Details about your team or freelancers", "Invented examples"],
         ] },
-        { kind: "honest", text: "**Don't pick** anything with passwords, bank details or private client information. Remove names before you paste anything. The guide [Is It Safe to Put Client Information Into ChatGPT?](/guides/what-should-you-never-share-with-ai/) shows you how." },
-        { kind: "example", label: "Example task", text: "Writing the follow-up email after a discovery call." },
-        { kind: "result", label: "What a good result looks like", lines: ["A short email that thanks the client, repeats what they need in their own words, says what you'll send and when, and asks one clear question. Under 150 words. Ready for you to check and send."] },
+        { kind: "tip", text: "Swap real details for brackets before you paste: [client], [price], [date]. You put the real ones back in the final version." },
       ] },
-      { num: "03", title: "Give AI the task", accent: "Tell it everything.", blocks: [
-        { kind: "p", text: "AI doesn't know your business. Tell it who you are, what the task is, and what you want back. Copy this prompt, fill in the brackets, and paste your material at the end." },
-        { kind: "prompt", label: "Your first task", text: `I run [what your business does] for [who your clients are].
+      { num: "02", title: "Write your Business Profile", accent: "What ChatGPT needs to know.", blocks: [
+        { kind: "p", text: "Your Business Profile tells ChatGPT who you are, who you help and how you like to work. Without it, every answer is generic." },
+        { kind: "p", text: "Start a new chat and paste this prompt. Answer each question in a sentence or two." },
+        { kind: "prompt", label: "Interview me for my Business Profile", text: `Interview me to write my Business Profile.
 
-My task: [the task, for example: write the follow-up email after a discovery call].
+Ask me these one at a time and wait for each answer:
+1. What does my business do, in one sentence?
+2. Who are my clients, and what do they usually need help with?
+3. What do I sell, and what does a typical project or package include?
+4. How do I like to communicate: tone, words I use, words I never use?
+5. What do I spend most of my week on?
 
-What I want back: [format and length, for example: one email under 150 words].
+Then write my Business Profile in two short parts:
+Part 1: What you should know about me and my business (under 1,000 characters)
+Part 2: How you should respond to me (under 1,000 characters)
 
-Rules:
-- Use only the information I give you below.
-- If something is missing, write [CHECK] instead of guessing.
-- Write in plain, friendly English.
-
-Here is my material:
-[paste your notes, the email, or the document, with names removed]` },
-        { kind: "p", text: "**What you see next:** a first draft, usually in a few seconds. It won't be perfect. That's normal. Step 04 shows you what to check." },
-      ] },
-      { num: "04", title: "Check it", accent: "Two minutes.", blocks: [
-        { kind: "p", text: "Read the draft once, slowly. Check these 4 things before you use it." },
+Use only what I tell you. Plain English, no em dashes.` },
+        { kind: "p", text: "Read it, correct anything that's off, then save it where ChatGPT reads it before every chat:" },
         { kind: "list", ordered: true, items: [
-          "**Names, numbers and dates.** Is every one of them in your notes? If not, fix it or delete it.",
-          "**Promises.** Did it promise anything you didn't agree to? Delete it.",
+          "Click your name or profile picture, then **Settings**, then **Personalization**.",
+          "Open **Custom instructions**.",
+          "Paste Part 1 into the box about you, and Part 2 into the box about how ChatGPT should respond. Save.",
+        ] },
+        { kind: "p", text: "**Test it:** start a new chat and ask \"What do you know about my business?\" If the answer matches your profile, it worked." },
+        { kind: "tip", text: "**Can't find Custom instructions?** Keep the profile in your notes and paste it as the first message of any chat about your business." },
+      ] },
+      { num: "03", title: "Map your week", accent: "Find the jobs worth handing over.", blocks: [
+        { kind: "p", text: "Don't guess what to use AI for. Let it interview you about your week, then rank the jobs by how much time they take and how risky a mistake would be." },
+        { kind: "prompt", label: "Build my AI task map", text: `Using my Business Profile, interview me about my working week.
+
+Ask me one question at a time, up to 8 questions, about:
+- the tasks I repeat every week
+- how long each one takes
+- which ones I put off or dread
+
+Then give me a table with these columns:
+Task | Hours per week | What AI could draft or prepare | What I must still do myself | Risk if AI gets it wrong (low, medium, high)
+
+Rank the table: most hours saved and lowest risk first.
+Under the table, name the one task I should hand over first, and why, in two sentences.` },
+        { kind: "table", head: ["Good first tasks (low risk)", "Leave for later (higher risk)"], rows: [
+          ["Follow-up emails after calls", "Anything you sign: contracts, invoices"],
+          ["First drafts of proposals from your notes", "Advice to a client on legal, money or health"],
+          ["Answers to your most common questions", "Messages sent without you reading them"],
+          ["Summaries of long documents", "Decisions about people: hiring, pricing a client"],
+        ] },
+        { kind: "p", text: "Save the table in your notes. It is your plan for the next few weeks: one new task per week." },
+      ] },
+      { num: "04", title: "Build your first assistant", accent: "Task number 1, set up once.", blocks: [
+        { kind: "p", text: "An assistant is a set of instructions for one job. You write them once, then reuse them every time the job comes round, so you never start from a blank chat." },
+        { kind: "prompt", label: "Write my assistant instructions", text: `Write instructions for an assistant that does this task for me: [task number 1 from my task map].
+
+Use my Business Profile. The instructions must say:
+1. What I will paste in each time (for example: call notes, a client email, a document)
+2. The steps to follow, in order
+3. Exactly what to give back: format, length, tone
+4. Rules: use only what I paste; write [CHECK] where information is missing instead of guessing; never invent names, prices, dates or promises
+
+Keep it under 1,500 characters, written as instructions to the assistant.` },
+        { kind: "p", text: "Now save the instructions so you can reuse them:" },
+        { kind: "list", ordered: true, items: [
+          "**If you see Projects in the left sidebar:** click **New project**, name it after the task (for example **Follow-up emails**), open the project's instructions and paste them in. Every chat inside the project uses them.",
+          "**If you don't:** save the instructions in your notes with the task name, and paste them as the first message whenever you do this job.",
+        ] },
+      ] },
+      { num: "05", title: "Run it on real work", accent: "Then check it.", blocks: [
+        { kind: "p", text: "Open your project (or a new chat with the instructions pasted in) and paste this week's real material for the task, with names swapped for brackets." },
+        { kind: "p", text: "Before you use what comes back, check these 4 things:" },
+        { kind: "list", ordered: true, items: [
+          "**Names, numbers and dates.** Every one must be in what you pasted. If not, fix it or delete it.",
+          "**Promises.** Delete anything you didn't agree to.",
           "**[CHECK] marks.** Fill in every one yourself.",
-          "**Does it sound like you?** Would you send this with your name on it?",
+          "**Your voice.** Would you send this with your name on it?",
         ] },
-        { kind: "tip", text: "For a deeper check, see [How to Check if ChatGPT Is Wrong Before You Send It to a Client](/guides/catch-ai-making-things-up/)." },
-      ] },
-      { num: "05", title: "Fix it, don't start again", accent: "One line at a time.", blocks: [
-        { kind: "p", text: "If one part is wrong, don't start a new chat. Tell it exactly what to change, in the same chat." },
+        { kind: "p", text: "If one part is wrong, don't start again. Tell it what to change, in the same chat:" },
         { kind: "prompt", label: "Fix one part", text: `Change this part: [paste the line].
 Why it's wrong: [what's actually true].
 Keep everything else the same.` },
-        { kind: "p", text: "Do this as many times as you need. Then copy the final version and use it." },
+        { kind: "tip", text: "**The same fix twice?** Add it to the assistant's instructions as a new rule, so you never have to correct it again." },
       ] },
-      { num: "06", title: "Save it", accent: "So next time takes two minutes.", blocks: [
-        { kind: "p", text: "You'll do this task again next week. Save the prompt so you don't start from zero." },
-        { kind: "list", ordered: true, items: [
-          "Copy your filled-in prompt from step 03, without the material at the end.",
-          "Paste it into your notes app. Give it a name, for example **Follow-up email prompt**.",
-          "Next week: copy it, paste it into ChatGPT, add the new material, send.",
-        ] },
-        { kind: "tip", text: "Tired of pasting it every time? [How to Stop Explaining My Business to ChatGPT Every Time](/guides/stop-chatgpt-forgetting-context/) shows you how to save it inside ChatGPT." },
-      ] },
-      { num: "07", title: "Find your next 3 tasks", accent: "Let AI interview you.", blocks: [
-        { kind: "p", text: "You've done one task. Now find the next ones. This prompt asks you questions about your week, then gives you a list." },
-        { kind: "prompt", label: "Find my next 3 tasks", text: `I run [what your business does] for [who your clients are].
-
-Ask me 5 questions about how I spend my working week. Ask one question at a time and wait for my answer.
-
-Then give me a list of the 3 tasks AI could help with first. For each task:
-- what AI would do
-- what I would still do myself
-- how risky it is if AI gets it wrong (low, medium or high)
-
-Start with the low-risk tasks.` },
-        { kind: "p", text: "**What you get:** your next 3 tasks, in order, with what stays with you. Do one per week, using steps 03 to 06." },
+      { num: "06", title: "Add one task a week", accent: "Small, checked, repeated.", blocks: [
+        { kind: "p", text: "Go back to your task map each week and build the next assistant with step 04. Five weeks from now, the five jobs that ate your week each have an assistant." },
         { kind: "honest", text: "**The honest part:** AI won't run your business, and it won't know your clients the way you do. It drafts. You check, decide and send. That is why it works." },
       ] },
-      { num: "✓", title: "You're done when", accent: "Tick all four.", blocks: [
+      { num: "✓", title: "Your checklist", accent: "Tick as you go.", blocks: [
         { kind: "checklist", items: [
-          "You did one real task with AI",
-          "You checked it with the 4 checks in step 04",
-          "Your prompt is saved in your notes",
-          "You have your next 3 tasks",
+          "Training switched off in Data Controls",
+          "Business Profile saved in Custom instructions",
+          "AI task map saved in your notes",
+          "First assistant saved in a project or in your notes",
+          "One real piece of work done and checked",
         ] },
       ] },
     ],
     cta: {
-      eyebrow: "Free AI guides",
-      heading: "One task done.",
-      accent: "Pick the next one.",
-      body: "Every guide in the library answers one question and gives you the steps and prompts to copy. Pick the next one from your list in step 07.",
-      label: "Browse the free guides →",
-      href: "/guides/",
+      eyebrow: "Next step",
+      heading: "ChatGPT knows your business.",
+      accent: "Now teach AI your brand.",
+      body: "The Brand Brain guide builds the next layer: your brand kit, your voice rules and your Brand DNA, so everything AI writes for you sounds like you.",
+      label: "Build your Brand Brain →",
+      href: "/guides/brand-brain-guide/",
     },
     conclusion: {
-      heading: "One task a week",
-      paragraph: "Do one task per week with the same four steps: give it the task, check it, fix one part at a time, save the prompt.",
-      finishLine: "Small and checked beats big and risky.",
+      heading: "Keep it working",
+      paragraph: "Update your Business Profile when something changes, add every repeated fix to the assistant's instructions, and build one new assistant a week from your task map.",
+      finishLine: "Set it up once, then let it get better every week.",
     },
   },
   {
