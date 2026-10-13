@@ -86,13 +86,17 @@ Pick a `slug` (lowercase, hyphens) and `lumailTag: "guide-<short-name>"`.
 Then add the slug to `buildGuideSlugs` in
 `next-app/components/guides/guide-library.tsx` so it shows in "Step-by-step builds".
 
-## 3. Cover
+## 3. Cover and hero scene
 
-`next-app/public/images/guides/<slug>.webp`, 1280x720, under 200 KB.
-Use the image she drops in if there is one (convert to WebP). If not, make a
-temporary typographic cover like `brand-brain-guide.webp` (white cards on the
-pale lilac wash, Inter 900 title, Playfair italic accent, numbered tiles) and
-say in the PR that it is temporary.
+`next-app/public/images/guides/<slug>.webp`, 1280x720, under 200 KB. The same
+file is the library card and the `hero` scene (`kind: "scene"`, `src` = cover).
+1. Use the image she drops in if there is one (convert to WebP).
+2. Otherwise reuse one of her mascot illustrations in that folder that fits the
+   job and is not the cover of a live guide (check `guides.json` covers of the
+   slugs in `guide-publication.json` `approved`). Copy it to `<slug>.webp`.
+   Show her which one you picked in the PR.
+3. Only if nothing fits, use a mascot `pose` for the hero and say the cover
+   needs an illustration.
 
 ## 4. Build, ship, check
 
