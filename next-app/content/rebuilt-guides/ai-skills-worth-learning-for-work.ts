@@ -147,7 +147,7 @@ Answer: [paste the draft]
 Source: [paste your notes, email or document]` },
       { kind: "result", label: "What a good answer looks like", lines: [
         "Thank you for your time on Tuesday | Supported | \"Call with [client], Tuesday\"",
-        "We'll start on 3 November | Not supported | (no sentence)",
+        "We'll start next Monday | Not supported | (no sentence)",
         "The fee is [price] | Supported | \"Quoted [price] for the full project\"",
       ] },
       { kind: "h3", text: "B. Check it yourself" },
