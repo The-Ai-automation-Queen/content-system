@@ -13,7 +13,7 @@ to one field in `next-app/content/card-guides.ts`.
 **Subtitle:** Pick one task, open one tool, and get it done in one hour.
 **Browser title:** How to Start Using AI in Your Business When You Don't Know Where to Begin | Shift & Lead
 **Google description:** Don't know where to start with AI? Pick one task, open one tool, and finish it in one hour. Step by step, with the prompts to copy.
-**Info row:** Free guide · ChatGPT (free) · 60 minutes
+**Info row:** Free guide · ChatGPT (free)
 **Hero image:** existing mascot scene (I'll pick one not used by another live guide and show you)
 
 # How to start using AI *in your business.*

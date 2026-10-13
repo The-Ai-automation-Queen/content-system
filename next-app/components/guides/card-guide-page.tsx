@@ -118,7 +118,7 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
   const stepId = (index: number) => `${card.slug}-step-${index + 1}`;
 
   const titleBlock = <>
-    <p className={card.hero ? batch.eyebrow : styles.eyebrow}><span aria-hidden="true">✦</span>Free guide · {card.tool} · {card.minutes} minutes</p>
+    <p className={card.hero ? batch.eyebrow : styles.eyebrow}><span aria-hidden="true">✦</span>Free guide · {card.tool}</p>
     <h1>{card.h1.title} <em>{card.h1.accent}</em></h1>
   </>;
 
@@ -142,7 +142,7 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
       <div className={styles.author}>
         <img src="/fatiha-avatar-96.webp" alt="" width={46} height={46} />
         <div>
-          <div className={styles.name}>Fatiha Chikh <span className={styles.badge}>Free guide</span></div>
+          <div className={styles.name}>Fatiha Chikh | The AI Automation Queen <span className={styles.badge}>Free guide</span></div>
           <div className={styles.meta}>Shift &amp; Lead</div>
         </div>
       </div>

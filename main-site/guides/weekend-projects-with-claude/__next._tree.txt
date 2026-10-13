@@ -7,4 +7,4 @@
 :HL["/_next/static/css/d199a283072b421a.css","style"]
 :HL["/_next/static/css/87a2355983418400.css","style"]
 :HL["/_next/static/css/c9d53a5723aac2a3.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"guides","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"weekend-projects-with-claude","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"UVkGAPLeILpUiMuAYty_-"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"guides","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"weekend-projects-with-claude","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"7gelmknDZudDUT26bIBgS"}
