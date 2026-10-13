@@ -61,7 +61,7 @@ export const guide: CardGuide = {
         "Pick a day near there when you will be at your desk all day. Then you can answer questions as they come in.",
         "Avoid holidays and days you already have client work booked all day.",
         "Go back to your sheet. Click the first box at the top left (it is called A1).",
-        "Type **Launch date:** and the date, for example **Launch date: Tuesday 18 November**. Press Enter.",
+        "Type **Launch date:** and the date, for example **Launch date: Tuesday 17 November**. Press Enter.",
       ] },
       { kind: "h3", text: "C. Write down your real time" },
       { kind: "list", ordered: true, items: [
@@ -69,7 +69,7 @@ export const guide: CardGuide = {
         "Click the box under that (A3). Type the days you can't work on it. For example **Saturdays, Sundays, 5 November**.",
         "Click the box under that (A4). Type what you are launching, in one line.",
       ] },
-      { kind: "example", label: "What your sheet looks like", text: "Launch date: Tuesday 18 November. 45 minutes a day. Not on Saturdays, Sundays or 5 November. Launching: [your offer, in one line]." },
+      { kind: "example", label: "What your sheet looks like", text: "Launch date: Tuesday 17 November. 45 minutes a day. Not on Saturdays, Sundays or 5 November. Launching: [your offer, in one line]." },
       { kind: "h3", text: "D. Learn the 4 weeks" },
       { kind: "p", text: "Every launch in this guide uses the same 4 weeks. Copy this table into your sheet, under your notes. ChatGPT uses it in step 03." },
       { kind: "table", head: ["Week", "What it is for", "Done means"], rows: [
@@ -159,12 +159,12 @@ Rules:
 - Leave one free day each week to catch up.
 - Write [CHECK] where you need details I haven't given. Don't add tasks for things that aren't in version 1.` },
       { kind: "result", label: "What a good answer looks like", lines: [
-        "Mon 20 Oct | Monday | Week 1 | Write the version 1 list in one sentence each | 30 min |",
-        "Tue 21 Oct | Tuesday | Week 1 | Write the one result clients get, in one line | 20 min |",
-        "Wed 22 Oct | Wednesday | Week 1 | Free day to catch up | 0 min |",
+        "Mon 19 Oct | Monday | Week 1 | Write the version 1 list in one sentence each | 30 min |",
+        "Tue 20 Oct | Tuesday | Week 1 | Write the one result clients get, in one line | 20 min |",
+        "Wed 21 Oct | Wednesday | Week 1 | Free day to catch up | 0 min |",
       ] },
       { kind: "h3", text: "B. Check the dates yourself" },
-      { kind: "p", text: "ChatGPT often gets weekdays wrong. A wrong date can wreck a plan. This check takes 5 minutes." },
+      { kind: "p", text: "ChatGPT can get a weekday or a date wrong. One wrong date can break the plan. This check takes 5 minutes." },
       { kind: "list", ordered: true, items: [
         "Open your calendar next to ChatGPT.",
         "Take the first row. Find that date in your calendar. Is it really that day of the week?",
