@@ -81,7 +81,6 @@ export function batchToCard(guide: BatchGuide): CardGuide {
       label: "Browse the free guides →",
       href: "/guides/",
     },
-    kit: { heading: guide.kit.heading, body: guide.kit.body },
     conclusion: { heading: "The honest part", paragraph: guide.honest, finishLine: "" },
   };
 }
