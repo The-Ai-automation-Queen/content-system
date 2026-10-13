@@ -1174,8 +1174,7 @@ export const approvedRelatedSelections: Record<string, readonly [string, string,
   "chatgpt-screen-recording-to-process-guide": ["teach-claude-a-repeatable-workflow", "what-is-a-prompt", "make-chatgpt-answers-shorter"],
   "chatgpt-customer-research-with-evidence": ["chatgpt-screen-recording-to-process-guide", "what-should-you-never-share-with-ai", "show-up-in-ai-search"],
   "claude": ["stop-chatgpt-forgetting-context", "make-chatgpt-answers-shorter", "what-is-a-prompt"],
-  "claude-projects": ["stop-chatgpt-forgetting-context", "teach-claude-a-repeatable-workflow", "claude"],
-  "teach-claude-a-repeatable-workflow": ["claude-projects", "claude", "chatgpt-screen-recording-to-process-guide"],
+  "teach-claude-a-repeatable-workflow": ["brand-brain-guide", "claude", "chatgpt-screen-recording-to-process-guide"],
   "gemini-cannot-find-drive-file": ["connect-ai-to-email-files-calendar", "claude", "gemini-google-tasks-limits"],
   "gemini-google-tasks-limits": ["gemini-cannot-find-drive-file", "claude", "what-is-agentic"],
   "test-meta-muse-money-saving-task": ["which-ai-tool-for-what", "what-should-you-never-share-with-ai", "what-is-an-ai-browser"],
@@ -1192,7 +1191,7 @@ export const approvedRelatedSelections: Record<string, readonly [string, string,
   "weekend-projects-with-claude": ["what-is-ai", "test-meta-muse-money-saving-task", "make-work-tracker-with-kimi"],
   "launch-your-product-in-30-days": ["test-business-idea-with-ai", "marketing-emails-that-sell", "chatgpt-customer-research-with-evidence"],
   "marketing-emails-that-sell": ["launch-your-product-in-30-days", "test-business-idea-with-ai", "stop-ai-agreeing-with-you"],
-  "brand-brain-guide": ["claude-projects", "teach-claude-a-repeatable-workflow", "marketing-emails-that-sell"],
+  "brand-brain-guide": ["stop-chatgpt-forgetting-context", "teach-claude-a-repeatable-workflow", "marketing-emails-that-sell"],
 };
 
 export function getGuidePage(slug: string): GuidePage | undefined {

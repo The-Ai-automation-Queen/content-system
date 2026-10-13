@@ -542,6 +542,21 @@
       "source": "/guides/money-plan-with-ai.html",
       "destination": "/guides/",
       "permanent": false
+    },
+    {
+      "source": "/guides/claude-projects",
+      "destination": "/guides/brand-brain-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/claude-projects/",
+      "destination": "/guides/brand-brain-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/claude-projects.html",
+      "destination": "/guides/brand-brain-guide/",
+      "permanent": true
     }
   ],
   "buildCommand": "cd .. && node tools/verify-publish-source.mjs",

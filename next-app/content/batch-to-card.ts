@@ -1,3 +1,4 @@
+import { guideTitles, splitH1 } from "./guide-titles";
 import type { BatchBlock, BatchGuide } from "./guide-batch-one";
 import type { CardBlock, CardGuide, CardStep } from "./card-guides";
 
@@ -52,14 +53,14 @@ export function batchToCard(guide: BatchGuide): CardGuide {
   return {
     slug: guide.slug,
     lumailTag: "",
-    title: guide.title,
+    title: guideTitles[guide.slug]?.title ?? guide.title,
     cover: guide.hero.art.src,
     coverAlt: guide.hero.art.alt,
     seoDescription: guide.seoDescription,
     tool: guide.hero.tool,
     minutes: guide.minutes,
-    h1: { title: guide.hero.title, accent: guide.hero.accent },
-    hero: { kind: guide.hero.art.kind, src: guide.hero.art.src, alt: guide.hero.art.alt, line: guide.hero.line },
+    h1: guideTitles[guide.slug] ? splitH1(guideTitles[guide.slug].title) : { title: guide.hero.title, accent: guide.hero.accent },
+    hero: { kind: guide.hero.art.kind, src: guide.hero.art.src, alt: guide.hero.art.alt, line: guideTitles[guide.slug]?.subtitle ?? guide.hero.line },
     intro: {
       heading: guide.question,
       lead: guide.answer,

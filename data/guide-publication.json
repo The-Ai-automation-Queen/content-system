@@ -101,12 +101,6 @@
       "journeyOrder": 240
     },
     {
-      "slug": "claude-projects",
-      "lumailTag": "guide-claude-projects",
-      "section": "AI tools",
-      "journeyOrder": 250
-    },
-    {
       "slug": "gemini-cannot-find-drive-file",
       "lumailTag": "guide-gemini-cannot-find-drive-file",
       "section": "AI tools",
@@ -291,6 +285,10 @@
     {
       "slug": "is-kimi-worth-paying-for",
       "reason": "Removed from the public library on 2026-09-28 at the owner's request; replaced by new guides from the portfolio sheet."
+    },
+    {
+      "slug": "claude-projects",
+      "reason": "Folded into brand-brain-guide on 13/10/2026 at the owner's request; same lesson (save your instructions once in a Claude Project). Old URLs redirect to /guides/brand-brain-guide/."
     }
   ],
   "heldForReview": [],
@@ -404,5 +402,5 @@
       "journeyOrder": 220
     }
   ],
-  "approvalNote": "Owner approved guides 11 to 35 and the removal of the old Mistral, DeepSeek project, DeepSeek editing, Meta AI and Kimi guides on 2026-09-28. Pending and parked guides remain excluded. On 2026-09-29 the owner parked the four Grok guides and the two DeepSeek guides (fix-deepseek-wall-of-text, test-deepseek-v4-document-work). On 2026-10-13 the owner supplied and approved the Brand Brain guide copy, the card layout and an email gate after Step 1. On 2026-10-13 the owner approved the solopreneur journey review: parked manus-browser-workflow, check-copilot-excel-edits, what-can-copilot-see-at-work, ai-quit-or-stay-decision, is-ai-coming-for-my-job, ai-job-interview-practice, money-plan-with-ai; retitled ai-skills-worth-learning-for-work and marketing-emails-that-sell; reordered the library into five stages (start safely, set up your tools, brand and content, sell and launch, run and automate); and moved the batch guides to the card layout."
+  "approvalNote": "Owner approved guides 11 to 35 and the removal of the old Mistral, DeepSeek project, DeepSeek editing, Meta AI and Kimi guides on 2026-09-28. Pending and parked guides remain excluded. On 2026-09-29 the owner parked the four Grok guides and the two DeepSeek guides (fix-deepseek-wall-of-text, test-deepseek-v4-document-work). On 2026-10-13 the owner supplied and approved the Brand Brain guide copy, the card layout and an email gate after Step 1. On 2026-10-13 the owner approved the solopreneur journey review: parked manus-browser-workflow, check-copilot-excel-edits, what-can-copilot-see-at-work, ai-quit-or-stay-decision, is-ai-coming-for-my-job, ai-job-interview-practice, money-plan-with-ai; retitled ai-skills-worth-learning-for-work and marketing-emails-that-sell; reordered the library into five stages (start safely, set up your tools, brand and content, sell and launch, run and automate); and moved the batch guides to the card layout. On 13/10/2026 the owner approved plain question-style titles for every guide (next-app/content/guide-titles.ts) and folded claude-projects into brand-brain-guide."
 }

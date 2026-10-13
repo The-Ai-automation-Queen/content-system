@@ -61,12 +61,6 @@
       "component": "claude-task-page"
     },
     {
-      "slug": "claude-projects",
-      "pattern": "walkthrough",
-      "status": "approved",
-      "component": "claude-projects-page"
-    },
-    {
       "slug": "gemini-cannot-find-drive-file",
       "pattern": "walkthrough",
       "status": "approved",

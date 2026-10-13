@@ -69,18 +69,18 @@ export const cardGuides: readonly CardGuide[] = [
     // Copy supplied and approved by the owner on 13/10/2026.
     slug: "brand-brain-guide",
     lumailTag: "guide-brand-brain",
-    title: "The Brand Brain Guide: build yours in Claude in 5 steps",
+    title: "How to Teach Claude About My Business So I Stop Repeating Myself",
     cover: "/images/guides/brand-brain-guide.webp",
     coverAlt: "The Shift & Lead mascot beside a pen, compass, brush and a stack of pages: the tools of a brand kit.",
     seoDescription: "Build a Brand Brain in Claude in 5 steps: one project with your brand kit, voice rules and Brand DNA, so ads, pages, posts and emails come back on brand.",
     tool: "Claude",
     minutes: 30,
-    h1: { title: "The Brand Brain Guide: build yours", accent: "in Claude in 5 steps." },
+    h1: { title: "How to Teach Claude About My Business", accent: "So I Stop Repeating Myself" },
     hero: {
       kind: "scene",
       src: "/images/guides/brand-brain-guide.webp",
       alt: "The Shift & Lead mascot beside a pen, compass, brush and a stack of pages: the tools of a brand kit.",
-      line: "One Claude project that holds your brand kit, your voice rules and your Brand DNA.",
+      line: "Set it up once, in 5 steps. One Claude project that holds your brand kit, your voice rules and your Brand DNA.",
     },
     intro: {
       heading: "One project that knows your brand",

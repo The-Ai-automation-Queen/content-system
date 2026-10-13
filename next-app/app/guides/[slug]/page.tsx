@@ -17,6 +17,7 @@ import { GuideAccessBoundary } from "@/components/guides/guide-access-boundary";
 import { CardGuidePage } from "@/components/guides/card-guide-page";
 import { batchOneGuides } from "@/content/guide-batch-one";
 import { getGuidePage, guidePages } from "@/content/guide-page";
+import { guideTitles } from "@/content/guide-titles";
 import { legacyGuideSlugs } from "@/content/legacy-guide-slugs";
 
 export function generateStaticParams() {
@@ -30,12 +31,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const canonical = `/guides/${guide.slug}/`;
   const batch = batchOneGuides[slug];
   return {
-    title: batch?.seoTitle ?? guide.title,
+    title: guideTitles[slug]?.title ?? batch?.seoTitle ?? guide.title,
     ...(approvedGuideSlugs.includes(slug) ? {} : { robots: { index: false, follow: false } }),
     description: batch?.seoDescription ?? guide.seoDescription,
     alternates: { canonical },
     openGraph: {
-      title: batch?.title ?? guide.title,
+      title: guideTitles[slug]?.title ?? batch?.title ?? guide.title,
       description: batch?.seoDescription ?? guide.seoDescription,
       url: canonical,
       type: "article",
@@ -58,7 +59,6 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "stop-chatgpt-forgetting-context") return <CardGuidePage guide={guide} />;
   if (slug === "chatgpt-scheduled-tasks") return <CardGuidePage guide={guide} />;
   if (slug === "claude") return <CardGuidePage guide={guide} />;
-  if (slug === "claude-projects") return <CardGuidePage guide={guide} />;
   if (slug === "gemini-cannot-find-drive-file") return <CardGuidePage guide={guide} />;
   if (slug === "gemini-google-tasks-limits") return <CardGuidePage guide={guide} />;
   if (slug === "review-grok-suggestions") return <GrokReviewPage guide={guide} />;
@@ -96,6 +96,8 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "launch-your-product-in-30-days") return <CardGuidePage guide={guide} />;
   if (slug === "marketing-emails-that-sell") return <CardGuidePage guide={guide} />;
   if (slug === "brand-brain-guide") return <CardGuidePage guide={guide} />;
+  // Retired into brand-brain-guide; still built (noindex) so the redirect source compiles.
+  if (slug === "claude-projects") return <CardGuidePage guide={guide} />;
   if (legacyGuideSlugs.has(slug)) return <GuideReadingPage guide={guide} />;
   throw new Error(`Guide ${slug} needs an approved interactive Next.js composition before it can be built.`);
 }
