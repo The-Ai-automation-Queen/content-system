@@ -6,7 +6,7 @@ export const guide: CardGuide = {
   title: "How to Get ChatGPT to Tell Me What's Wrong With My Idea",
   cover: "/images/guides/stop-ai-agreeing-with-you.webp",
   coverAlt: "The blue robot mascot checking pages with a magnifier and a red stamp",
-  seoDescription: "How to get ChatGPT to tell you what's wrong with your idea: save a no-flattery rule and a critic assistant that tests your offers, pages and plans.",
+  seoDescription: "How to get ChatGPT to tell you what's wrong with your idea: save one honest answers rule and a critic that checks your offers, pages and plans.",
   tool: "ChatGPT",
   minutes: 30,
   h1: { title: "How to Get ChatGPT to Tell Me", accent: "What's Wrong With My Idea" },
@@ -14,62 +14,62 @@ export const guide: CardGuide = {
     kind: "scene",
     src: "/images/guides/stop-ai-agreeing-with-you.webp",
     alt: "The blue robot mascot checking pages with a magnifier and a red stamp",
-    line: "Stop it agreeing with everything you say. Save one rule and one critic, and get the problems first.",
+    line: "Stop AI saying yes to everything. Save one rule and one critic. Get the problems first.",
   },
   intro: {
-    heading: "Feedback you can use, before your clients give it",
-    lead: "Ask AI what it thinks of your offer and it will usually tell you it's great. That feels good and teaches you nothing. This guide saves a no-flattery rule in your settings, gives you two prompts that find the problems in an offer, page or plan, and ends with a saved critic you can reuse every time.",
+    heading: "Honest feedback, before your clients give it",
+    lead: "Ask AI about your offer and it will often say it's great. That feels nice, but you learn nothing. This guide saves one honest answers rule, two prompts that find problems, and a critic you can use again.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
-        "A **no-flattery rule** saved in your settings, so every chat starts honest",
-        "A **problems-first feedback** prompt that reads your offer or sales page as your client would",
-        "A **stress test** prompt that imagines your plan failed and works out why",
-        "**Your honest critic**: a saved assistant that runs both checks on any offer, page or plan",
+        "An **honest answers rule** saved in your settings",
+        "A **problems first** prompt that reads your offer as your client would",
+        "A **what could go wrong** prompt that finds risks in your plan",
+        "**Your honest critic**: a saved helper that runs both checks",
         "A short list of weak spots to check with real clients",
       ] },
-      { kind: "tip", text: "You need ChatGPT, Claude or Gemini. The free plans work. Have one real offer, sales page or plan ready to test. Every prompt below can be copied and pasted as it is; replace the parts in [square brackets]." },
+      { kind: "tip", text: "You need ChatGPT, Claude or Gemini. The free plans work. Have one real offer, sales page or plan ready. Copy and paste each prompt below. Change the parts in [square brackets]." },
     ],
   },
   openSteps: 1,
   gate: {
     heading: "Get",
     accent: "your honest critic.",
-    promise: "Enter your name and email. The rest of the guide opens straight away, and I'll email you the link so you can come back to it later.",
+    promise: "Enter your name and email. The rest of the guide opens right away. I'll also email you the link, so you can come back later.",
     action: "Open the rest of the guide",
   },
   steps: [
     { num: "01", title: "Know why it agrees", accent: "And where to fix it.", blocks: [
-      { kind: "p", text: "AI tools are trained to give answers people like. People like being agreed with. So when you share your idea and sound excited, the tool tends to praise it, soften any problems and tell you what you hoped to hear." },
-      { kind: "p", text: "You fix this with standing instructions (text the tool reads before every chat, so you don't have to repeat it). Find where they live in your tool now. You will paste your rule there in step 02." },
-      { kind: "table", head: ["Tool", "Where standing instructions live", "If you can't find it"], rows: [
-        ["ChatGPT", "Click your name or profile picture, then **Settings**, then **Personalization**, then **Custom instructions**.", "Search \"custom instructions\" on [OpenAI's help pages](https://help.openai.com/)."],
-        ["Claude", "Click your name, then **Settings**, then **Profile**. Look for the box about personal preferences Claude should consider.", "Search \"personal preferences\" on [Anthropic's help pages](https://support.claude.com/)."],
-        ["Gemini", "Open **Settings & help**, then **Saved info** (it may be called **Personal context** or **Instructions for Gemini**).", "Search \"saved info\" on [Google's Gemini help pages](https://support.google.com/gemini/)."],
+      { kind: "p", text: "AI tools learn to give answers people like. People like it when you agree with them. So when you sound excited, the tool praises your idea. It hides problems and says what you hoped to hear." },
+      { kind: "p", text: "You fix this with standing rules. These are words the tool reads before every chat, so you don't repeat them. Find where they go in your tool now. You will paste your rule there in step 02." },
+      { kind: "table", head: ["Tool", "Where standing rules go", "If you can't find it"], rows: [
+        ["ChatGPT", "Click your name or picture. Then **Settings**, **Personalization**, **Custom instructions**.", "Search \"custom instructions\" on [OpenAI's help pages](https://help.openai.com/)."],
+        ["Claude", "Click your name. Then **Settings**, **Profile**. Find the box about personal preferences.", "Search \"personal preferences\" on [Anthropic's help pages](https://support.claude.com/)."],
+        ["Gemini", "Open **Settings & help**, then **Saved info**. It may say **Personal context** or **Instructions for Gemini**.", "Search \"saved info\" on [Google's Gemini help pages](https://support.google.com/gemini/)."],
       ] },
-      { kind: "tip", text: "**No standing instructions on your plan?** You can still do everything in this guide. Keep the rule from step 02 in your notes and paste it as the first message of any chat where you want honest feedback." },
-      { kind: "p", text: "Also watch how you ask. \"Is this good?\" invites a yes. \"What's wrong with this?\" invites an answer." },
+      { kind: "tip", text: "**Your plan has no standing rules?** You can still do this whole guide. Keep the rule from step 02 in your notes. Paste it as the first message of the chat." },
+      { kind: "p", text: "Also watch how you ask. \"Is this good?\" asks for a yes. \"What's wrong with this?\" asks for a real answer." },
     ] },
-    { num: "02", title: "Save the no-flattery rule", accent: "Once, in your settings.", blocks: [
-      { kind: "p", text: "This rule tells the tool to put problems first, say when it disagrees, and stop praising work that hasn't earned it." },
+    { num: "02", title: "Save the honest answers rule", accent: "Once, in your settings.", blocks: [
+      { kind: "p", text: "This rule tells the tool to put problems first. It must say when it disagrees. It must not praise work for no reason." },
       { kind: "list", ordered: true, items: [
-        "Open the standing instructions box you found in step 01.",
-        "If there is already text in it (for example a business profile), add this at the end. Don't replace what's there.",
-        "Paste the rule below and save.",
+        "Open the standing rules box from step 01.",
+        "Is there text in it already? Add the rule at the end. Don't delete what's there.",
+        "Paste the rule below and click save.",
       ] },
-      { kind: "prompt", label: "No-flattery rule", text: `When I share an idea, offer, page or plan:
+      { kind: "prompt", label: "Honest answers rule", text: `When I share an idea, offer, page or plan:
 - Start with the problems, most serious first. Then what works.
 - Don't praise it unless you can say exactly why it works.
 - If you disagree with me, say so plainly and explain why.
 - If something is missing, say what is missing.
 - Tell me what my client would doubt or object to.
 - Don't soften feedback to protect my feelings.
-- If you're not sure, say so. Never invent facts, figures or examples to make a point.` },
-      { kind: "p", text: "**Test it:** start a new chat and type \"I'm thinking of raising my prices next month. Good idea?\" If the answer starts with questions or risks instead of \"Great idea!\", the rule is working." },
+- If you're not sure, say so. Never make up facts, figures or examples to make a point.` },
+      { kind: "p", text: "**Test it:** start a new chat. Type \"I'm thinking of raising my prices next month. Good idea?\" Does the answer start with questions or risks, not \"Great idea!\"? Then the rule works." },
     ] },
-    { num: "03", title: "Get problems-first feedback", accent: "Read it as your client would.", blocks: [
-      { kind: "p", text: "This prompt asks the AI to read your offer or sales page as the person you want to buy it, and to tell you where they would stop, doubt or leave." },
-      { kind: "prompt", label: "Problems-first feedback", text: `Read this as my ideal client: [describe them, for example "a coach with 5 years' experience who has tried two other programmes and was disappointed"].
+    { num: "03", title: "Get problems first", accent: "Read it as your client would.", blocks: [
+      { kind: "p", text: "This prompt asks the AI to read your offer as your buyer. It tells you where they would stop, doubt or leave." },
+      { kind: "prompt", label: "Problems first", text: `Read this as my ideal client: [describe them, for example "a coach with 5 years' experience who has tried two other programmes and was disappointed"].
 
 What I am testing (offer, sales page or email):
 [paste it, with client names and private details swapped for brackets]
@@ -83,13 +83,13 @@ Give me three sections:
 Rules:
 - Problems first, always.
 - Quote the exact line for every point.
-- Use only what I gave you. Don't invent facts about my business or my clients. Write [CHECK] if you need information you don't have.` },
-      { kind: "p", text: "Copy the PROBLEMS and QUESTIONS sections into your notes. These are your weak spots. Fix the ones you agree with. For the ones you don't, write one line on why, so you can check them with clients in step 05." },
+- Use only what I gave you. Don't make up facts about my business or my clients. Write [CHECK] if you need details you don't have.` },
+      { kind: "p", text: "Copy the PROBLEMS and QUESTIONS parts into your notes. These are your weak spots. Fix the ones you agree with. For the others, write one line on why. You will check them with clients in step 05." },
       { kind: "tip", text: "**Still too kind?** Reply in the same chat: \"You're being too polite. What would make this client close the page?\"" },
     ] },
-    { num: "04", title: "Stress-test the plan", accent: "Imagine it already failed.", blocks: [
-      { kind: "p", text: "For a launch, a new offer or a big decision, ask the AI to imagine it went wrong and work backwards. This finds risks that ordinary feedback misses." },
-      { kind: "prompt", label: "Stress test", text: `Imagine it is [3 or 6] months from now and this plan has failed.
+    { num: "04", title: "Find what could go wrong", accent: "Imagine it already failed.", blocks: [
+      { kind: "p", text: "Use this for a launch, a new offer or a big choice. Ask the AI to imagine it failed. Then it works back to find out why. This finds risks that normal feedback misses." },
+      { kind: "prompt", label: "What could go wrong", text: `Imagine it is [3 or 6] months from now and this plan has failed.
 
 The plan:
 [describe the launch, offer or decision, with dates, price range and who it is for]
@@ -98,16 +98,16 @@ What I know so far:
 [what has worked before, what clients have said, what time and money I have]
 
 Give me:
-1. The 5 most likely reasons it failed, most likely first. For each: what went wrong, the early warning sign I could watch for, and one thing I could do now to prevent it.
-2. The one assumption in my plan that, if wrong, breaks everything.
-3. The cheapest way to test that assumption in the next 2 weeks, before I commit.
+1. The 5 most likely reasons it failed, most likely first. For each: what went wrong, the early warning sign I could watch for, and one thing I could do now to stop it.
+2. The one guess in my plan that, if wrong, breaks everything.
+3. The cheapest way to test that guess in the next 2 weeks, before I commit.
 
-Use only what I gave you. Don't invent figures, results or client stories. If you need information, ask me first.` },
-      { kind: "p", text: "Add the early warning signs to your calendar or plan. Do the 2-week test before you spend more time or money on the plan." },
+Use only what I gave you. Don't make up figures, results or client stories. If you need details, ask me first.` },
+      { kind: "p", text: "Put the warning signs in your calendar or plan. Run the 2-week test first. Then spend more time or money." },
     ] },
     { num: "05", title: "Save your honest critic", accent: "Both checks, every time.", blocks: [
-      { kind: "p", text: "Your honest critic is a saved assistant that runs the feedback and the stress test whenever you paste something in, so you don't have to find the prompts each time." },
-      { kind: "prompt", label: "Honest critic instructions", text: `You are my honest critic for [business name], which sells [what you sell] to [who your clients are].
+      { kind: "p", text: "Your honest critic is a saved helper. Paste something in, and it runs both checks. You don't need to find the prompts each time." },
+      { kind: "prompt", label: "Honest critic rules", text: `You are my honest critic for [business name], which sells [what you sell] to [who your clients are].
 
 When I paste an offer, page, email or plan:
 1. Read it as my ideal client: [describe them].
@@ -119,29 +119,29 @@ When I paste an offer, page, email or plan:
 Rules:
 - Problems first. No praise without a reason.
 - Say plainly when you disagree with me.
-- Use only what I give you. Write [CHECK] where information is missing. Never invent facts, figures, names or client stories.
+- Use only what I give you. Write [CHECK] where details are missing. Never make up facts, figures, names or client stories.
 - Finish with the one change that would make the biggest difference.` },
       { kind: "list", ordered: true, items: [
-        "**If you see Projects in ChatGPT or Claude:** create a project called **Honest critic** and paste the instructions into its instructions box. Paste your offers, pages and plans into chats inside it.",
-        "**In Gemini:** if you see **Gems**, create a new Gem called **Honest critic** and paste the instructions in.",
-        "**If you see neither:** save the instructions in your notes as **Honest critic** and paste them as the first message of a new chat.",
+        "**You see Projects in ChatGPT or Claude** (a folder that keeps its own rules)? Make one called **Honest critic**. Paste the rules into its instructions box. Paste your work into chats inside it.",
+        "**In Gemini:** do you see **Gems** (saved helpers)? Make a new Gem called **Honest critic**. Paste the rules in.",
+        "**You see neither?** Save the rules in your notes as **Honest critic**. Paste them as the first message of a new chat.",
       ] },
       { kind: "h3", text: "Then check with real clients" },
-      { kind: "p", text: "The critic gives you a list of possible weak spots. Only your clients can tell you which ones are real. Pick the 2 or 3 that worry you most and check them:" },
+      { kind: "p", text: "The critic gives you a list of possible weak spots. Only your clients know which ones are real. Pick the 2 or 3 that worry you most. Check them like this:" },
       { kind: "list", items: [
-        "Ask two or three past clients one question each, for example: \"When you first saw this offer, what made you hesitate?\"",
-        "On your next sales calls, listen for the questions from the QUESTIONS section.",
-        "Keep what clients say in your notes, and paste it into the critic next time as \"What clients have said\".",
+        "Ask two or three past clients one question. For example: \"When you first saw this offer, what made you unsure?\"",
+        "On sales calls, listen for the questions from the QUESTIONS part.",
+        "Write down what clients say. Paste it into the critic next time as \"What clients have said\".",
       ] },
-      { kind: "honest", text: "**The honest part:** the critic has never met your clients. It can spot unclear lines, missing answers and risky assumptions, and it can also be wrong. Treat its list as questions to check. What clients say and do decides." },
+      { kind: "honest", text: "**The honest part:** the critic has never met your clients. It can find unclear lines, missing answers and risky guesses. It can also be wrong. Treat its list as questions to check. What clients say and do decides." },
     ] },
     { num: "✓", title: "Your checklist", accent: "Tick as you go.", blocks: [
       { kind: "checklist", items: [
-        "Found where standing instructions live in your tool",
-        "No-flattery rule saved and tested",
-        "Problems-first feedback run on one real offer or page",
-        "Stress test run on one real plan",
-        "Honest critic saved in a project, a Gem or your notes",
+        "Found where standing rules go in your tool",
+        "Honest answers rule saved and tested",
+        "Problems first prompt run on one real offer or page",
+        "What could go wrong prompt run on one real plan",
+        "Honest critic saved in a Project, a Gem or your notes",
         "Two or three weak spots checked with real clients",
       ] },
     ] },
@@ -150,13 +150,13 @@ Rules:
     eyebrow: "Next step",
     heading: "You get honest answers now.",
     accent: "Pick the right tool for each job.",
-    body: "ChatGPT, Claude, Gemini and Copilot are good at different things. The next guide shows which one to use for which job in your business.",
+    body: "ChatGPT, Claude, Gemini and Copilot are good at different things. The next guide shows which one to use for each job.",
     label: "Choose the right AI tool →",
     href: "/guides/which-ai-tool-for-what/",
   },
   conclusion: {
     heading: "Keep it honest",
-    paragraph: "Run the critic on every new offer, page and plan, add what clients tell you to its instructions, and tighten the rule if the praise creeps back.",
-    finishLine: "Hear the problems from AI first, then check them with your clients.",
+    paragraph: "Run the critic on every new offer, page and plan. Add what clients tell you to its rules. If the praise comes back, make the rule stronger.",
+    finishLine: "Hear the problems from AI first. Then check them with your clients.",
   },
 };

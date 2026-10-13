@@ -6,7 +6,7 @@ export const guide: CardGuide = {
   title: "How to Make ChatGPT Do a Task for Me Every Week",
   cover: "/images/guides/chatgpt-scheduled-tasks.webp",
   coverAlt: "The blue robot mascot setting a clockwork lookout beside a public noticeboard",
-  seoDescription: "Make ChatGPT do a task every week with scheduled tasks: a Monday plan, a Friday industry round-up with sources and a watch on one public page.",
+  seoDescription: "Make ChatGPT do a task every week with scheduled tasks: a Monday plan, a Friday news round-up with sources, and a check on one public page.",
   tool: "ChatGPT",
   minutes: 30,
   h1: { title: "How to Make ChatGPT Do a Task", accent: "for Me Every Week" },
@@ -14,55 +14,55 @@ export const guide: CardGuide = {
     kind: "scene",
     src: "/images/guides/chatgpt-scheduled-tasks.webp",
     alt: "The blue robot mascot setting a clockwork lookout beside a public noticeboard",
-    line: "Set it once and it runs on its own. Three weekly tasks that arrive without you asking.",
+    line: "Set it up once. It runs by itself. Three weekly tasks that arrive without you asking.",
   },
   intro: {
     heading: "Three tasks that run while you work",
-    lead: "ChatGPT can run a prompt for you on a schedule: every Monday morning, every Friday afternoon, every weekday at 9:00. This guide sets up three small tasks for your business, each with a clear job and a clear stop point, then shows you how to decide which ones to keep.",
+    lead: "ChatGPT can run a prompt for you at set times. For example, every Monday morning or every weekday at 9:00. This guide sets up 3 small tasks for your business. Each has one job and a clear end. Then you decide which ones to keep.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
-        "A **Monday plan** task that asks you 3 questions and turns your answers into the week's priorities",
-        "A **Friday industry round-up** task: up to 3 stories from your field, each with a source and a date",
-        "A **page watch** task that checks one public page (for example a competitor's pricing page) and only messages you when it changes",
-        "Know how to pause, edit or delete any task",
-        "A **keep or stop rule** you use after 2 weeks, so no task runs longer than it's useful",
+        "A **Monday plan** task: 3 questions that turn into your top jobs for the week",
+        "A **Friday news round-up** task: up to 3 stories from your field, each with a source and date",
+        "A **page watch** task: it checks one public page and tells you only when it changes",
+        "How to pause, change or delete any task",
+        "A **keep or stop rule** for after 2 weeks, so no task runs when it stops helping",
       ] },
-      { kind: "tip", text: "You need a ChatGPT account. Scheduled tasks may not be on every plan; step 01 shows you how to check and what to do if you don't have them. Every prompt below can be copied and pasted as it is; replace the parts in [square brackets]." },
+      { kind: "tip", text: "You need a ChatGPT account. Some plans may not have scheduled tasks. Step 01 shows how to check, and what to do if you don't have them. You can copy and paste every prompt below. Change the parts in [square brackets]." },
     ],
   },
   openSteps: 1,
   gate: {
     heading: "Get the",
     accent: "3 weekly tasks.",
-    promise: "Enter your name and email. The rest of the guide opens straight away, and I'll email you the link so you can come back to it later.",
+    promise: "Enter your name and email. The rest of the guide opens right away. I'll also email you the link, so you can come back later.",
     action: "Open the rest of the guide",
   },
   steps: [
     { num: "01", title: "Know what tasks can do", accent: "Before you set one up.", blocks: [
-      { kind: "p", text: "A scheduled task is a prompt ChatGPT runs at a time you choose, once or on repeat. When it runs, you get a notification and the answer appears in a chat." },
+      { kind: "p", text: "A scheduled task is a prompt ChatGPT runs at a time you pick. It can run once or again and again. When it runs, you get an alert. The answer shows up in a chat." },
       { kind: "list", ordered: true, items: [
         "Go to [chatgpt.com](https://chatgpt.com) and sign in.",
-        "Click your name or profile picture. **If you see Tasks** in the menu, you have scheduled tasks. Click it to see the list of your tasks (it is empty for now).",
-        "**If you don't see Tasks,** check the model picker at the top of a chat for an option that mentions scheduled tasks, or search \"scheduled tasks\" on [OpenAI's help pages](https://help.openai.com/) to see which plans include them.",
-        "**If your plan doesn't have them:** save each prompt in this guide in your notes, set a weekly reminder in your calendar, and paste the prompt into a new chat when the reminder goes off. It takes 1 minute and does the same job.",
+        "Click your name or picture. **Do you see Tasks** in the menu? Then you have scheduled tasks. Click it to see your task list. It is empty for now.",
+        "**No Tasks?** Look at the model picker (the menu at the top of a chat). Look for an option about scheduled tasks. Or search \"scheduled tasks\" on [OpenAI's help pages](https://help.openai.com/) to see which plans have them.",
+        "**Your plan does not have them?** Save each prompt from this guide in your notes. Set a weekly reminder in your calendar. When it goes off, paste the prompt into a new chat. It takes 1 minute and does the same job.",
       ] },
-      { kind: "p", text: "Then know the limits. A task can search the web and read public pages. It cannot open your inbox, your calendar, your bank or your client folders unless you have connected those apps to ChatGPT yourself. It also cannot send emails, post or pay for anything on its own." },
+      { kind: "p", text: "Now know the limits. A task can search the web and read public pages. It cannot open your inbox, calendar, bank or client folders. The only exception is apps you connected to ChatGPT yourself. It also cannot send emails, post or pay for anything by itself." },
       { kind: "table", head: ["Good weekly tasks", "Bad weekly tasks"], rows: [
-        ["Ask you planning questions every Monday", "\"Plan my week\" with nothing to go on"],
-        ["Find up to 3 news stories on one narrow topic, with links", "\"Tell me everything about AI\""],
-        ["Check one public page for one exact change", "Watch a page behind a login"],
+        ["Ask you planning questions every Monday", "\"Plan my week\" with no details"],
+        ["Find up to 3 news stories on one small topic, with links", "\"Tell me everything about AI\""],
+        ["Check one public page for one exact change", "Watch a page that needs a login"],
         ["Remind you to chase unpaid invoices", "Chase clients for you"],
-        ["Draft a weekly post idea from a topic you give it", "Publish anything without you reading it"],
+        ["Write a weekly post idea from your topic", "Post anything before you read it"],
       ] },
-      { kind: "tip", text: "One task, one job, one stop point. If you can't say in one sentence what the task gives you, it's too big." },
+      { kind: "tip", text: "One task, one job, one end point. Can't say in one sentence what the task gives you? Then it is too big." },
     ] },
     { num: "02", title: "Set up the Monday plan", accent: "The week starts on purpose.", blocks: [
-      { kind: "p", text: "This task doesn't plan your week for you. It asks you three questions at the same time every Monday, then turns your answers into a short plan." },
+      { kind: "p", text: "This task does not plan your week for you. Every Monday it asks you 3 questions. Then it turns your answers into a short plan." },
       { kind: "list", ordered: true, items: [
-        "Start a new chat. If you see a model or mode option for scheduled tasks, choose it.",
-        "Paste the prompt below and change the time in brackets.",
-        "ChatGPT replies with the task it has created and when it will run. Check the day, time and time zone are right. If not, tell it: \"Change the time to [time].\"",
+        "Start a new chat. If you see a model or mode for scheduled tasks, pick it.",
+        "Paste the prompt below. Change the time in brackets.",
+        "ChatGPT replies with the task and when it will run. Check the day, time and time zone. Wrong? Tell it: \"Change the time to [time].\"",
       ] },
       { kind: "prompt", label: "The Monday plan task", text: `Create a scheduled task that runs every Monday at [8:00].
 
@@ -72,19 +72,19 @@ When it runs, ask me these 3 questions:
 3. What can wait until next week?
 
 When I answer, turn my answers into a short plan with 3 parts:
-- 3 priorities for the week, most important first
+- 3 top jobs for the week, most important first
 - 2 follow-ups to send, with who they go to written as [client]
 - 1 thing I'm choosing not to do this week
 
 Rules: use only what I tell you. Never invent clients, deadlines or tasks. If something is unclear, write [CHECK] instead of guessing. Keep the whole plan under 120 words.` },
-      { kind: "p", text: "On Monday, answer the three questions in the chat the task opens. Copy the plan into wherever you keep your week (notes, calendar, paper)." },
-      { kind: "tip", text: "**No reply from the task on Monday?** Open **Tasks** from your profile menu and check it shows as active, with the right day and time zone." },
+      { kind: "p", text: "On Monday, answer the 3 questions in the chat the task opens. Copy the plan to where you keep your week: notes, calendar or paper." },
+      { kind: "tip", text: "**No message from the task on Monday?** Open **Tasks** from your profile menu. Check it is on, with the right day and time zone." },
     ] },
     { num: "03", title: "Set up the Friday round-up", accent: "Your field, with sources.", blocks: [
-      { kind: "p", text: "This task keeps you up to date on one narrow topic your clients care about, without you reading everything. Narrow matters: \"AI rules for UK recruiters\" works, \"AI news\" doesn't." },
+      { kind: "p", text: "This task keeps you up to date on one small topic your clients care about. You don't have to read everything. Keep the topic small. \"AI rules for UK recruiters\" works. \"AI news\" does not." },
       { kind: "list", ordered: true, items: [
         "Pick one topic your clients ask you about. Write it in one line.",
-        "Start a new chat and paste the prompt below with your topic and time.",
+        "Start a new chat. Paste the prompt below with your topic and time.",
         "Check the reply shows Friday, the right time and your time zone.",
       ] },
       { kind: "prompt", label: "The Friday round-up task", text: `Create a scheduled task that runs every Friday at [16:00].
@@ -102,15 +102,15 @@ Rules:
 - Only stories published in the last 7 days. If you can't find a date, leave the story out.
 - Only use what the source says. Never invent numbers, quotes or names.
 - If there is nothing new, write "Nothing new this week" and stop. Don't fill space.` },
-      { kind: "p", text: "When it arrives, open the links before you repeat anything to a client or in a post. The summary is a pointer to the source, not the source." },
-      { kind: "tip", text: "**Round-up too broad?** Tell the task: \"Only include stories about [narrower topic].\" Fewer, better stories beat a long list." },
+      { kind: "p", text: "When it arrives, open the links. Do this before you tell a client or post about it. The summary only points to the source. It is not the source." },
+      { kind: "tip", text: "**Round-up too wide?** Tell the task: \"Only include stories about [narrower topic].\" A few good stories are better than a long list." },
     ] },
     { num: "04", title: "Set up the page watch", accent: "Silence until it changes.", blocks: [
-      { kind: "p", text: "This task checks one public page for one exact change, like a competitor changing their prices or a conference opening speaker applications. Most days you hear nothing. That's the point." },
+      { kind: "p", text: "This task checks one public page for one exact change. For example, a competitor changes their prices. Or an event opens speaker sign-ups. Most days you hear nothing. That is how it should be." },
       { kind: "list", ordered: true, items: [
-        "Open the page in your browser and copy its link. It must open without a login.",
-        "Write the exact change you want to know about, for example: \"the price of the [package name] package changes\".",
-        "Start a new chat and paste the prompt below with your link, change and end date.",
+        "Open the page in your browser. Copy its link. It must open without a login.",
+        "Write the exact change you want to know about. For example: \"the price of the [package name] package changes\".",
+        "Start a new chat. Paste the prompt below with your link, change and end date.",
       ] },
       { kind: "prompt", label: "The page watch task", text: `Create a scheduled task that runs every weekday at [9:00].
 
@@ -127,36 +127,36 @@ Rules:
 - If nothing changed, say only "No change".
 - If you can't open the page or you aren't sure what changed, say so. Don't guess.
 - Stop this task on [end date, for example 3 months from today].` },
-      { kind: "honest", text: "**A page watch can miss a change** or misread a page that loads slowly. Check the page yourself now and then, and never make a pricing decision from the task's message alone. Open the page first." },
+      { kind: "honest", text: "**A page watch can miss a change.** It can also misread a slow page. Check the page yourself now and then. Never change your prices from the task's message alone. Open the page first." },
     ] },
     { num: "05", title: "Pause, edit or delete", accent: "You stay in charge.", blocks: [
-      { kind: "p", text: "Tasks keep running until you stop them. Know where the controls are before you need them." },
+      { kind: "p", text: "Tasks keep running until you stop them. Find the controls before you need them." },
       { kind: "list", ordered: true, items: [
-        "Click your name or profile picture, then **Tasks**. You see every task, when it runs next and whether it's active.",
-        "Click a task to open it. From there you can pause it, change the time or the prompt, or delete it.",
-        "You can also change a task from the chat it runs in: type \"Change this task to run at [time]\" or \"Stop this task\".",
-        "Menu names change. If you can't find the task list, search \"scheduled tasks\" on [OpenAI's help pages](https://help.openai.com/).",
+        "Click your name or picture, then **Tasks**. You see every task, when it runs next and if it is on.",
+        "Click a task to open it. You can pause it, change the time or prompt, or delete it.",
+        "You can also change a task in the chat it runs in. Type \"Change this task to run at [time]\" or \"Stop this task\".",
+        "Menu names change. Can't find the task list? Search \"scheduled tasks\" on [OpenAI's help pages](https://help.openai.com/).",
       ] },
-      { kind: "tip", text: "Going on holiday? Pause the Monday plan instead of deleting it, and switch it back on when you return." },
+      { kind: "tip", text: "Going on holiday? Pause the Monday plan. Don't delete it. Turn it back on when you come back." },
     ] },
     { num: "06", title: "Keep or stop", accent: "After 2 weeks.", blocks: [
-      { kind: "p", text: "A task that nobody reads is noise. After each task has run twice, ask yourself three questions about it." },
+      { kind: "p", text: "A task nobody reads is just noise. After each task runs twice, ask yourself 3 questions about it." },
       { kind: "table", head: ["Question", "If yes", "If no"], rows: [
-        ["Did I read it when it arrived?", "Keep going", "Move it to a better time or day"],
-        ["Did I do something because of it?", "Keep it", "Make the prompt narrower"],
+        ["Did I read it when it came?", "Keep going", "Move it to a better time or day"],
+        ["Did I do something because of it?", "Keep it", "Make the topic smaller"],
         ["Would I miss it if it stopped?", "Keep it", "Delete it"],
       ] },
-      { kind: "p", text: "Two or more \"no\" answers: pause or delete the task. Then add one new task only when the ones you have are earning their place." },
-      { kind: "honest", text: "**The honest part:** a scheduled task saves you remembering, not thinking. It won't know your clients, it can get a date or a page wrong, and it never replaces you checking the source. You read, decide and act." },
+      { kind: "p", text: "Two or more \"no\" answers? Pause or delete the task. Add a new task only when the ones you have are helping." },
+      { kind: "honest", text: "**The honest part:** a scheduled task saves you remembering. It does not do your thinking. It does not know your clients. It can get a date or a page wrong. Always check the source. You read, decide and act." },
     ] },
     { num: "✓", title: "Your checklist", accent: "Tick as you go.", blocks: [
       { kind: "checklist", items: [
-        "Checked you have Tasks (or set up the calendar reminder fallback)",
+        "Checked you have Tasks (or set a calendar reminder instead)",
         "Monday plan task running",
-        "Friday round-up task running on one narrow topic",
+        "Friday round-up task running on one small topic",
         "Page watch task running, with an end date",
-        "Found where to pause, edit and delete tasks",
-        "Keep or stop check booked for 2 weeks from today",
+        "Found where to pause, change and delete tasks",
+        "Keep or stop check in your calendar for 2 weeks from today",
       ] },
     ] },
   ],
@@ -164,13 +164,13 @@ Rules:
     eyebrow: "Next step",
     heading: "ChatGPT runs your weekly check-ins.",
     accent: "Now teach Claude a weekly job.",
-    body: "The next guide turns one task you repeat every week, like your client update, into saved steps Claude follows without you explaining it again.",
-    label: "Teach Claude a repeatable workflow →",
+    body: "Pick one job you do every week, like your client update. The next guide turns it into saved steps. Claude follows them without you explaining again.",
+    label: "Teach Claude steps you repeat →",
     href: "/guides/teach-claude-a-repeatable-workflow/",
   },
   conclusion: {
     heading: "Keep it working",
-    paragraph: "Give every task one job and one stop point, check the sources before you use them, and run the keep or stop check every few weeks.",
-    finishLine: "Set it once, then keep only what earns its place.",
+    paragraph: "Give every task one job and one end point. Check the sources before you use them. Do the keep or stop check every few weeks.",
+    finishLine: "Set it up once. Keep only what helps.",
   },
 };
