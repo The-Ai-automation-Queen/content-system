@@ -53,7 +53,7 @@ export const guide: CardGuide = {
         ["Stop point", "What Claude must leave to you", "Draft only. I check dates and promises, and I send it"],
       ] },
       { kind: "tip", text: "**Can't fill in the Steps row?** Next time you do the job, write down what you do as you do it. That list is your Steps row." },
-      { kind: "p", text: "Keep the reader's data safe from the start: in your notes, swap client names for [client] and amounts for [amount]. You put the real ones back in the final version." },
+      { kind: "p", text: "Keep your clients' details safe from the start: in your notes, swap client names for [client] and amounts for [amount]. You put the real ones back in the final version." },
     ] },
     { num: "02", title: "Let Claude interview you", accent: "It writes the instructions.", blocks: [
       { kind: "p", text: "You know the job; Claude is good at turning what you know into clear instructions. Let it ask the questions." },
