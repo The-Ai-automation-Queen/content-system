@@ -18,6 +18,7 @@ import { CardGuidePage } from "@/components/guides/card-guide-page";
 import { batchOneGuides } from "@/content/guide-batch-one";
 import { getGuidePage, guidePages } from "@/content/guide-page";
 import { guideTitles } from "@/content/guide-titles";
+import { getCardGuide } from "@/content/card-guides";
 import { legacyGuideSlugs } from "@/content/legacy-guide-slugs";
 
 export function generateStaticParams() {
@@ -33,11 +34,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: guideTitles[slug]?.title ?? batch?.seoTitle ?? guide.title,
     ...(approvedGuideSlugs.includes(slug) ? {} : { robots: { index: false, follow: false } }),
-    description: batch?.seoDescription ?? guide.seoDescription,
+    description: getCardGuide(slug)?.seoDescription ?? batch?.seoDescription ?? guide.seoDescription,
     alternates: { canonical },
     openGraph: {
       title: guideTitles[slug]?.title ?? batch?.title ?? guide.title,
-      description: batch?.seoDescription ?? guide.seoDescription,
+      description: getCardGuide(slug)?.seoDescription ?? batch?.seoDescription ?? guide.seoDescription,
       url: canonical,
       type: "article",
       images: [{ url: guide.cover, width: 1280, height: 721 }],

@@ -1,4 +1,5 @@
 import type { GuidePage, WalkthroughBlock } from "./guide-page";
+import { rebuiltGuides } from "./rebuilt-guides";
 
 /*
  * Card-format guides: numbered step cards, copyable prompts and a sign-up card
@@ -447,5 +448,5 @@ export const cardGuidePages: readonly GuidePage[] = cardGuides.map((card) => ({
 }));
 
 export function getCardGuide(slug: string): CardGuide | undefined {
-  return cardGuides.find((guide) => guide.slug === slug);
+  return cardGuides.find((guide) => guide.slug === slug) ?? rebuiltGuides[slug];
 }
