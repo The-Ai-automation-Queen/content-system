@@ -67,7 +67,7 @@ export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: G
         <div className="guides-hero__copy">
           <p className="eyebrow">Free AI guides for business owners</p>
           <h1 id="guides-title">Learn to use AI in your business, <em>step by step.</em></h1>
-          <p>Pick a guide. Follow the steps one by one. Copy the prompts into ChatGPT or Claude.</p>
+          <p>Pick a guide. Follow the steps one by one. Copy the prompts into ChatGPT, Claude, or your preferred AI.</p>
           <form className="hero-search" role="search" onSubmit={submitSearch}>
             <label htmlFor="guide-search" className="visually-hidden">Search the guides</label>
             <span className="hero-search__field">
