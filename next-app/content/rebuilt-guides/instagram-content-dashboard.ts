@@ -1,0 +1,121 @@
+import type { CardGuide } from "../card-guides";
+
+export const guide: CardGuide = {
+  slug: "instagram-content-dashboard",
+  lumailTag: "guide-instagram-content-dashboard",
+  title: "How to See My Instagram Numbers for Free",
+  cover: "/images/guides/instagram-content-dashboard.webp",
+  coverAlt: "The blue robot princess feeds a post card into an engraved brass console displaying content performance charts",
+  seoDescription: "How to see my Instagram numbers for free: Claude Code connects to Instagram and builds your own reach, saves and watch time dashboard. 6 steps.",
+  tool: "Claude Code",
+  minutes: 45,
+  h1: { title: "How to See My Instagram Numbers", accent: "for Free" },
+  hero: {
+    kind: "scene",
+    src: "/images/guides/instagram-content-dashboard.webp",
+    alt: "The blue robot princess feeds a post card into an engraved brass console displaying content performance charts",
+    line: "Your reach, saves, shares and watch time on one page, free.",
+  },
+  intro: {
+    heading: "See your real Instagram numbers",
+    lead: "Seeing your real numbers usually means paying for a tool. This guide has Claude Code build your own dashboard instead. It takes 45 minutes.",
+    blocks: [
+      { kind: "h3", text: "What you end up with" },
+      { kind: "list", items: [
+        "**A live dashboard** of your reach, saves, shares and watch time",
+        "**Your best days and times** to post, from your own posts",
+        "**Your top and bottom posts** side by side",
+        "**A token that refreshes itself** every 58 days",
+      ] },
+      { kind: "tip", text: "You need an Instagram Creator or Business account (free: **Settings**, **Account**, **Switch to Professional Account**), plus Claude Code, Node.js and Python 3 installed. Copy each prompt as it is and change the [brackets]." },
+    ],
+  },
+  openSteps: 1,
+  gate: {
+    heading: "Get the",
+    accent: "dashboard prompts.",
+    promise: "Enter your name and email. The rest of the guide opens right away. I'll also email you the link, so you can come back later.",
+    action: "Open the rest of the guide",
+  },
+  steps: [
+    { num: "01", title: "Create your Meta app", accent: "About 8 minutes.", blocks: [
+      { kind: "p", text: "A Meta developer app lets Claude Code read your Instagram numbers. You make it once." },
+      { kind: "list", ordered: true, items: [
+        "Go to [developers.facebook.com](https://developers.facebook.com/) and log in with Facebook.",
+        "Click **My Apps**, then **Create App**.",
+        "Filter by **All**, pick **Manage messaging & content on Instagram**, then click **Next**.",
+        "No business portfolio? Choose \"I don't want to connect a business portfolio yet\". Click **Next**.",
+        "Click **Next**, then **Create App**.",
+      ] },
+      { kind: "shot", src: "/images/guides/instagram-steps/meta-app-setup.png", alt: "The Create an app screen in Meta for Developers, on the App details step", caption: "Create an app in Meta for Developers. You go through App details, Use cases, Business and Requirements. Personal details removed.", width: 994, height: 400 },
+      { kind: "p", text: "Now add yourself as a tester. Without this, nothing connects." },
+      { kind: "list", ordered: true, items: [
+        "In your app, go to **App roles**, then **Roles**.",
+        "Click **Add People**, choose **Instagram Tester**, add your username and send it.",
+        "In Instagram, go to **Settings**, **Website permissions**, **Tester invites**, and accept.",
+      ] },
+      { kind: "shot", src: "/images/guides/instagram-steps/meta-instagram-use-case.png", alt: "The Use cases panel with Manage messaging and content on Instagram and a Customize button", caption: "Your app dashboard, under Use cases. Click Customize next to Manage messaging & content on Instagram.", width: 825, height: 170 },
+      { kind: "list", ordered: true, items: [
+        "Open **Use cases** and click **Customize** next to **Manage messaging & content on Instagram**.",
+        "Open **API setup with Instagram business login**.",
+        "Under **Generate access tokens**, click **Add account** and log in to Instagram.",
+        "Click **Generate token** and copy it. It lasts 60 days.",
+        "Copy your **Instagram app ID** and **Instagram app secret** from the same page.",
+      ] },
+      { kind: "shot", src: "/images/guides/instagram-steps/meta-generate-token.png", alt: "The Token column with a Generate token link", caption: "The Generate token link sits in the Token column, next to the account you added.", width: 157, height: 119 },
+      { kind: "tip", text: "Can't find it? Meta renames these menus. Look for **API setup with Instagram business login** on [developers.facebook.com](https://developers.facebook.com/)." },
+    ] },
+    { num: "02", title: "Check the connection", accent: "Two browser addresses.", blocks: [
+      { kind: "p", text: "Paste each address into your browser with your token. The first gives your user ID. The second lists your posts." },
+      { kind: "prompt", label: "The browser addresses and the four values", text: "1. Check your token and get your user ID:\nhttps://graph.instagram.com/v21.0/me?fields=id,username&access_token=YOUR_TOKEN\n\n2. Test pulling your posts:\nhttps://graph.instagram.com/v21.0/me/media?fields=id,caption,media_type,timestamp,like_count,comments_count&access_token=YOUR_TOKEN\n\nSave these four values for step 3:\nIG_ACCESS_TOKEN=your_token\nIG_USER_ID=your_id_from_address_1\nIG_APP_ID=your_instagram_app_id\nIG_APP_SECRET=your_instagram_app_secret" },
+      { kind: "p", text: "See a list of posts? It works. Save the four values in a private note." },
+    ] },
+    { num: "03", title: "Set up the project", accent: "Claude Code writes it.", blocks: [
+      { kind: "p", text: "Open Claude Code. These two prompts make the folder and a small server (it fetches your numbers from Instagram)." },
+      { kind: "prompt", label: "Prompt 1: the project folder", text: "Create a folder called ig-dashboard in my current directory. Inside it, create a .env file with these four variables:\n\nIG_ACCESS_TOKEN=\nIG_USER_ID=\nIG_APP_ID=\nIG_APP_SECRET=\n\nLeave the values blank. I'll fill them in." },
+      { kind: "p", text: "Open the .env file yourself and paste your four values. On a Mac, press **Command + Shift + .** to see hidden files." },
+      { kind: "prompt", label: "Prompt 2: the server", text: "Inside the ig-dashboard folder, create a Node.js file called proxy.js that:\n\n- Serves static HTML files from the same directory on port 3001\n- Loads IG_ACCESS_TOKEN and IG_USER_ID from the .env file in the same folder\n- Has a GET /api/ig/account endpoint that calls https://graph.instagram.com/me with fields: id, username, biography, followers_count, media_count, profile_picture_url\n- Has a GET /api/ig/media endpoint that fetches the last 50 posts with fields: id, caption, media_type, timestamp, like_count, comments_count, media_url, thumbnail_url, permalink, then for each post fetches insights from /{id}/insights. For VIDEO posts use metrics: reach,saved,views,shares,total_interactions,ig_reels_avg_watch_time,ig_reels_video_view_total_time. For IMAGE and CAROUSEL_ALBUM posts use metrics: views,reach,saved,shares,total_interactions\n- Uses only built-in Node.js modules, no npm installs\n- Adds CORS headers to all responses" },
+      { kind: "p", text: "Do not change the metrics. Photos and reels need different ones." },
+    ] },
+    { num: "04", title: "Build the dashboard", accent: "One long prompt.", blocks: [
+      { kind: "p", text: "This prompt writes the whole page. Paste it as it is, in one go." },
+      { kind: "prompt", label: "Prompt 3: the full dashboard", text: "Create a file called content-dashboard.html in the ig-dashboard folder. It fetches from http://localhost:3001/api/ig/account and http://localhost:3001/api/ig/media on load. Pure HTML, CSS, JavaScript, no external libraries.\n\nDesign:\nCSS variables: --bg #FFFFFF, --bg2 #FAF7F2, --bg3 #F2F4FF, --bg4 #E8EDFF, --accent #2C4BE0, --green #18794E, --blue #2C4BE0, --purple #6547A5, --text #24211D, --text2 #57534E, --text3 #78716C, --border rgba(36,33,29,0.16). Load Playfair Display, Source Serif 4, Inter and Space Mono from Google Fonts. Use Playfair Display for headings, Source Serif 4 for reading text, Inter for controls and Space Mono for compact labels. Use #FF5733 for heading accents.\n\nLayout:\nSticky left sidebar (200px) + scrollable main content. Sidebar has a logo mark, section labels, nav links with active state (cobalt left border + cobalt text) driven by IntersectionObserver scroll-spy. Refresh Data button and last-updated timestamp at the bottom of the sidebar.\n\nEngagement rate formula: (likes + comments + saves + shares) / reach x 100. Use reach for every post, and views as the fallback when reach is missing. Color tiers: ≥5% green, ≥2% cobalt, below grey.\n\nSection 1: Profile bar (id=\"overview\"):\nAvatar image (or 📸 placeholder), @username in large bold, biography, then 3 stat blocks: Followers, Posts, Reach Rate (avgReach / followers x 100 shown as %).\n\nSection 2: Summary Stats:\n6 stat cards in one row: Avg Likes (color #FF5733), Avg Comments (blue), Avg Reach (purple), Avg Saves (green), Avg Engagement Rate (cobalt, 2 decimal places), Total Reel Views. Each shows \"per post\" or relevant subtext.\n\nSection 3: Reel Watch Time (id=\"watchtime\", only if VIDEO posts have ig_reels_avg_watch_time data):\n4 cards with colored top borders: Avg Watch Time in seconds (purple), ig_reels_avg_watch_time is in ms so divide by 1000, Total Watch Time in minutes (cobalt), sum ig_reels_video_view_total_time / 60000, Total Views (green), Best Watch Time (blue) showing the reel with highest avg watch time and first 28 chars of its caption.\n\nSection 4: Algorithm Signals (id=\"signals\"):\n2 large cards side by side. Saves Rate: total saves / total reach x 100 in green, show \"X total saves · Y% of likes become saves\", note \"Saves = strongest signal to the algorithm. Anything above 2% is solid.\" Shares Rate: total shares / total reach x 100 in blue, show total shares count, note \"Shares push content beyond your audience. 1%+ on reach is strong.\"\n\nSection 5: Top & Bottom Performers (id=\"best\"):\nTwo columns. Left: Top 3 (cobalt header). Right: Bottom 3 (grey header). Each row: rank number, thumbnail (or emoji placeholder), caption truncated to one line, time ago + post type below, like count and engagement rate on the right.\n\nSection 6: Engagement Over Time (id=\"timeline\"):\nBar chart of the last 20 posts in chronological order. Each bar = likes + comments. Bar gradient from cobalt (#2C4BE0) at top to transparent at bottom. Show value above bar, date (M/D) below. Height proportional to max value, minimum 3px.\n\nSection 7: Best Time to Post (id=\"timing\"):\nTwo side-by-side horizontal bar charts. Left: By Day of week, cobalt bars, best day highlighted green with bold label. Right: By Time bucket (6 to 9am, 9 to 12pm, 12 to 3pm, 3 to 6pm, 6 to 9pm, 9pm+, Late 0 to 5am), blue bars, best time highlighted green. Each row shows avg engagement % and post count. Only show time buckets that have at least 1 post.\n\nSection 8: Hashtag Performance (id=\"hashtags\", only if any hashtag used 2+ times):\nCard with header row (Tag / Uses / Avg Eng / Avg Likes). Each hashtag row: tag name in blue, proportional bar, use count, avg engagement %, avg likes. Sorted by avg engagement descending. Max 12 tags.\n\nSection 9: All Posts Grid (id=\"allposts\"):\nSort pills: Likes, Comments, Reach, Eng, Saves, Views, Recent. Grid of cards, auto-fill columns min 220px. Each card: thumbnail image (or emoji placeholder), post type badge (Reel=purple, Photo=blue, Carousel=orange), caption with 2-line clamp, 4 metric chips (Likes in #FF5733, Comments in blue, Reach in purple, 4th chip = Views in cobalt for VIDEO or Saves in green for IMAGE/CAROUSEL). For reels with watch time: show avg watch time and saves below metrics. Footer: engagement rate pill (colored by tier), time ago, link to open post on Instagram. Top 3 cards (after current sort) get a cobalt border. Clicking the card opens the post permalink in a new tab." },
+      { kind: "p", text: "Want changes? Ask in plain words, like \"Change the accent colour to blue.\"" },
+    ] },
+    { num: "05", title: "Refresh the token", accent: "Do not skip this.", blocks: [
+      { kind: "p", text: "Your token stops working after 60 days. This script renews it every 58 days." },
+      { kind: "prompt", label: "Prompt 4: the refresh script", text: "Inside the ig-dashboard folder, create a Python script called refresh_token.py that:\n\n- Reads IG_ACCESS_TOKEN from the .env file in the same directory\n- Calls https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=CURRENT_TOKEN\n- Gets the new token from the JSON response\n- Overwrites the IG_ACCESS_TOKEN value in the .env file with the new token\n- Logs each refresh with a timestamp to token_refresh.log in the same folder\n- If the refresh fails: logs a FAILED entry AND sends a macOS desktop notification using osascript\n- Uses only Python standard library, no pip installs" },
+      { kind: "prompt", label: "Prompt 5: the schedule", text: "Set up a cron job that runs refresh_token.py every 58 days at 9am. Use the absolute path to Python (from `which python3`) and the absolute path to the script. Verify the cron entry was created and show it to me." },
+      { kind: "p", text: "Test it the next day. Meta only renews a token at least 24 hours old." },
+      { kind: "tip", text: "On a Mac, if the schedule cannot run, go to **System Settings**, **Privacy & Security**, **Full Disk Access**, and add /usr/sbin/cron." },
+    ] },
+    { num: "06", title: "Run it", accent: "Your numbers, live.", blocks: [
+      { kind: "p", text: "Start the server, then open the page in your browser." },
+      { kind: "prompt", label: "The commands", text: "Find your Python path (before prompt 5):\nwhich python3\n\nTest the refresh (at least 24 hours after you generated the token):\npython3 /absolute/path/to/ig-dashboard/refresh_token.py\n\nStart your dashboard:\ncd ig-dashboard\nnode proxy.js\n\nThen open this in your browser:\nhttp://localhost:3001/content-dashboard.html" },
+      { kind: "p", text: "Click any post to open it on Instagram. Use the sort buttons to rank your posts." },
+      { kind: "honest", text: "**The honest part:** your token and app secret open your account. Keep them in the .env file only. Never paste them into a chat, and never share the folder." },
+    ] },
+    { num: "✓", title: "Checklist", accent: "Five boxes.", blocks: [
+      { kind: "checklist", items: [
+        "Meta app made, and you are a tester",
+        "Token, user ID, app ID and app secret in .env",
+        "Dashboard built by Claude Code",
+        "Token refresh scheduled and tested",
+        "Dashboard open with your real numbers",
+      ] },
+    ] },
+  ],
+  cta: {
+    eyebrow: "Next step",
+    heading: "Your numbers are on one page.",
+    accent: "Now see what else AI can do.",
+    body: "Claude Code just took actions for you. The next guide explains what agentic AI means, in plain words.",
+    label: "See what agentic means →",
+    href: "/guides/what-is-agentic/",
+  },
+  conclusion: {
+    heading: "Keep it simple",
+    paragraph: "Connect your account once. Let Claude Code build the page. Keep your token private.",
+    finishLine: "Your numbers. Your page. No fee.",
+  },
+};
