@@ -47,7 +47,7 @@ export const guide: CardGuide = {
   },
   steps: [
     { num: "01", title: "Protect your clients and collect their words", accent: "20 minutes, done once.", blocks: [
-      { kind: "p", text: "First you stop ChatGPT learning from your chats. Then you copy real client comments into one document. Then you remove their names. No AI yet: this step is all yours." },
+      { kind: "p", text: "First you stop ChatGPT learning from your chats. Then you copy real client comments into one document. Then you remove their names. You don't ask ChatGPT anything yet." },
       { kind: "h3", text: "A. Switch off model training" },
       { kind: "p", text: "Model training is a setting that lets OpenAI (the company behind ChatGPT) use your chats to improve its AI. Switch it off before you paste anything about clients." },
       { kind: "list", ordered: true, items: [
