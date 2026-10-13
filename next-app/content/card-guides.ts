@@ -73,7 +73,7 @@ export const cardGuides: readonly CardGuide[] = [
     title: "How to Start Using AI in Your Business When You Don't Know Where to Begin",
     cover: "/images/guides/start-using-ai-in-your-business.webp",
     coverAlt: "The Shift & Lead mascot laying blocks across a gap to build a bridge, one block at a time.",
-    seoDescription: "Don't know where to start with AI? Set ChatGPT up for your business in 6 steps: a business profile, a list of jobs to hand over and your first AI helper.",
+    seoDescription: "Don't know where to start with AI? Set ChatGPT up for your business in 6 steps: a business profile, a list of jobs to hand over and your first AI assistant.",
     tool: "ChatGPT",
     minutes: 60,
     h1: { title: "How to Start Using AI", accent: "in Your Business" },
@@ -81,18 +81,18 @@ export const cardGuides: readonly CardGuide[] = [
       kind: "scene",
       src: "/images/guides/start-using-ai-in-your-business.webp",
       alt: "The Shift & Lead mascot laying blocks across a gap to build a bridge, one block at a time.",
-      line: "Set ChatGPT up for your business once. Find the jobs worth handing over. Then build your first AI helper.",
+      line: "Set ChatGPT up for your business once. Find the jobs worth handing over. Then build your first AI assistant.",
     },
     intro: {
       heading: "Set up AI for your business in about an hour",
-      lead: "Most people try AI once, get a vague answer and give up. That happens because the AI knows nothing about their business. This guide sets ChatGPT up for you, finds the jobs to hand over, and builds your first helper.",
+      lead: "Most people try AI once, get a vague answer and give up. That happens because the AI knows nothing about their business. This guide sets ChatGPT up for you, finds the jobs to hand over, and builds your first assistant.",
       blocks: [
         { kind: "h3", text: "What you end up with" },
         { kind: "list", items: [
           "ChatGPT set up safely: your chats kept out of training, and 3 rules for what never goes in",
           "A **Business Profile** (a short note about your business) that ChatGPT reads before every answer, so its advice fits you",
           "Your **AI task list**: the 5 jobs in your week worth handing over, ranked by time saved and risk",
-          "Your **first AI helper**: saved rules for job number 1 that you use again every week",
+          "Your **first AI assistant**: saved rules for job number 1 that you use again every week",
           "One real piece of work done with it, and checked by you",
         ] },
         { kind: "tip", text: "You need a ChatGPT account. The free plan works. You can copy and paste every prompt below. Change the parts in [square brackets]." },
@@ -170,9 +170,9 @@ Under the table, name the one task I should hand over first, and why, in two sen
         ] },
         { kind: "p", text: "Save the table in your notes. It is your plan for the next few weeks: one new task per week." },
       ] },
-      { num: "04", title: "Build your first AI helper", accent: "Task number 1, set up once.", blocks: [
-        { kind: "p", text: "An AI helper is a set of rules for one job. You write them once. Then you use them every time the job comes up, so you never start from an empty chat." },
-        { kind: "prompt", label: "Write my helper's instructions", text: `Write instructions for an assistant that does this task for me: [task number 1 from my task list].
+      { num: "04", title: "Build your first AI assistant", accent: "Task number 1, set up once.", blocks: [
+        { kind: "p", text: "An AI assistant is a set of rules for one job. You write them once. Then you use them every time the job comes up, so you never start from an empty chat." },
+        { kind: "prompt", label: "Write my assistant's instructions", text: `Write instructions for an assistant that does this task for me: [task number 1 from my task list].
 
 Use my Business Profile. The instructions must say:
 1. What I will paste in each time (for example: call notes, a client email, a document)
@@ -200,10 +200,10 @@ Keep it under 1,500 characters, written as instructions to the assistant.` },
         { kind: "prompt", label: "Fix one part", text: `Change this part: [paste the line].
 Why it's wrong: [what's actually true].
 Keep everything else the same.` },
-        { kind: "tip", text: "**Same fix twice?** Add it to the helper's instructions as a new rule. Then you never have to fix it again." },
+        { kind: "tip", text: "**Same fix twice?** Add it to the assistant's instructions as a new rule. Then you never have to fix it again." },
       ] },
       { num: "06", title: "Add one task a week", accent: "Small, checked, repeated.", blocks: [
-        { kind: "p", text: "Each week, go back to your task list. Build the next helper with step 04. In five weeks, your five biggest weekly jobs will each have a helper." },
+        { kind: "p", text: "Each week, go back to your task list. Build the next assistant with step 04. In five weeks, your five biggest weekly jobs will each have an assistant." },
         { kind: "honest", text: "**The honest part:** AI won't run your business. It won't know your clients the way you do. It writes first drafts. You check, decide and send. That is why it works." },
       ] },
       { num: "✓", title: "Your checklist", accent: "Tick as you go.", blocks: [
@@ -211,7 +211,7 @@ Keep everything else the same.` },
           "Training turned off in Data Controls",
           "Business Profile saved in Custom instructions",
           "AI task list saved in your notes",
-          "First helper saved in a project or in your notes",
+          "First assistant saved in a project or in your notes",
           "One real piece of work done and checked",
         ] },
       ] },
@@ -226,7 +226,7 @@ Keep everything else the same.` },
     },
     conclusion: {
       heading: "Keep it working",
-      paragraph: "Update your Business Profile when something changes. Add every repeated fix to your helper's instructions. Build one new helper a week from your task list.",
+      paragraph: "Update your Business Profile when something changes. Add every repeated fix to your assistant's instructions. Build one new assistant a week from your task list.",
       finishLine: "Set it up once, then let it get better every week.",
     },
   },

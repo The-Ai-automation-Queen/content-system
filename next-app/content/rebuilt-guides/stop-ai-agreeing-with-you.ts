@@ -25,7 +25,7 @@ export const guide: CardGuide = {
         "An **honest answers rule** saved in your settings",
         "A **problems first** prompt that reads your offer as your client would",
         "A **what could go wrong** prompt that finds risks in your plan",
-        "**Your honest critic**: a saved helper that runs both checks",
+        "**Your honest critic**: a saved assistant that runs both checks",
         "A short list of weak spots to check with real clients",
       ] },
       { kind: "tip", text: "You need ChatGPT, Claude or Gemini. The free plans work. Have one real offer, sales page or plan ready. Copy and paste each prompt below. Change the parts in [square brackets]." },
@@ -106,7 +106,7 @@ Use only what I gave you. Don't make up figures, results or client stories. If y
       { kind: "p", text: "Put the warning signs in your calendar or plan. Run the 2-week test first. Then spend more time or money." },
     ] },
     { num: "05", title: "Save your honest critic", accent: "Both checks, every time.", blocks: [
-      { kind: "p", text: "Your honest critic is a saved helper. Paste something in, and it runs both checks. You don't need to find the prompts each time." },
+      { kind: "p", text: "Your honest critic is a saved assistant. Paste something in, and it runs both checks. You don't need to find the prompts each time." },
       { kind: "prompt", label: "Honest critic rules", text: `You are my honest critic for [business name], which sells [what you sell] to [who your clients are].
 
 When I paste an offer, page, email or plan:
@@ -123,7 +123,7 @@ Rules:
 - Finish with the one change that would make the biggest difference.` },
       { kind: "list", ordered: true, items: [
         "**You see Projects in ChatGPT or Claude** (a folder that keeps its own rules)? Make one called **Honest critic**. Paste the rules into its instructions box. Paste your work into chats inside it.",
-        "**In Gemini:** do you see **Gems** (saved helpers)? Make a new Gem called **Honest critic**. Paste the rules in.",
+        "**In Gemini:** do you see **Gems** (saved assistants)? Make a new Gem called **Honest critic**. Paste the rules in.",
         "**You see neither?** Save the rules in your notes as **Honest critic**. Paste them as the first message of a new chat.",
       ] },
       { kind: "h3", text: "Then check with real clients" },

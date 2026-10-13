@@ -52,7 +52,7 @@ export const guide: CardGuide = {
         ["Writing and thinking: proposals, emails, posts, planning", "ChatGPT or Claude", "Both are good all-round chat tools. Your test decides which suits you"],
         ["Research you will quote to a client or in a post", "A search tool such as Perplexity", "It shows links to its sources, so you can open and check them"],
       ] },
-      { kind: "p", text: "Then check what you already pay for. Your Google Workspace or Microsoft 365 plan may already include an AI helper. If it does, test that before you buy anything new." },
+      { kind: "p", text: "Then check what you already pay for. Your Google Workspace or Microsoft 365 plan may already include an AI assistant. If it does, test that before you buy anything new." },
       { kind: "tip", text: "**Not sure what your plan includes?** Prices and plans change often. Check the official pricing pages: [ChatGPT](https://openai.com/chatgpt/pricing/), [Claude](https://claude.com/pricing), [Gemini for Google Workspace](https://workspace.google.com/pricing) and [Microsoft 365 Copilot](https://www.microsoft.com/microsoft-365/copilot). Don't trust a price you read in a blog post." },
     ] },
     { num: "02", title: "List what you pay for", accent: "Every subscription, in one place.", blocks: [
@@ -164,7 +164,7 @@ Rules: use only what I give you. Do not make up prices or tools. Write [CHECK] w
   },
   conclusion: {
     heading: "Keep it simple",
-    paragraph: "Keep one main tool. Use the AI helper already inside your work apps. Only run the side-by-side test again when a new tool says it does your job better.",
+    paragraph: "Keep one main tool. Use the AI assistant already inside your work apps. Only run the side-by-side test again when a new tool says it does your job better.",
     finishLine: "Pay only for the tool that helps you most each week.",
   },
 };

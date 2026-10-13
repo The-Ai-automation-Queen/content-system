@@ -148,7 +148,7 @@ Use only what I've given you. Write [CHECK] where a limit is unclear instead of 
     eyebrow: "Next step",
     heading: "You know what your task needs.",
     accent: "Now set AI up for your business.",
-    body: "Most jobs start with a chat that knows your business. The starter guide sets up ChatGPT with your Business Profile. Then it builds your first AI helper for your biggest weekly job.",
+    body: "Most jobs start with a chat that knows your business. The starter guide sets up ChatGPT with your Business Profile. Then it builds your first AI assistant for your biggest weekly job.",
     label: "Start using AI in your business →",
     href: "/guides/start-using-ai-in-your-business/",
   },

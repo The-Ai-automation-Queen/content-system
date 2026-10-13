@@ -153,7 +153,7 @@ Change nothing else. Show me the full updated instructions, then list the rules 
     eyebrow: "Next step",
     heading: "Claude does your weekly job.",
     accent: "Now write down how you do the rest.",
-    body: "The next guide turns a screen recording of a task into written steps. Then a helper or freelancer can do the task for you.",
+    body: "The next guide turns a screen recording of a task into written steps. Then an assistant or freelancer can do the task for you.",
     label: "Turn a recording into instructions →",
     href: "/guides/chatgpt-screen-recording-to-process-guide/",
   },

@@ -6,7 +6,7 @@ export const guide: CardGuide = {
   title: "What Is an AI Browser and Should I Use One?",
   cover: "/images/guides/what-is-an-ai-browser.webp",
   coverAlt: "The blue robot mascot at an antique viewing instrument, closing a privacy shutter",
-  seoDescription: "What is an AI browser? A web browser with an AI helper that reads pages and can click and type. Set up a safe test space and try 3 business jobs.",
+  seoDescription: "What is an AI browser? A web browser with an AI assistant that reads pages and can click and type. Set up a safe test space and try 3 business jobs.",
   tool: "An AI browser (for example ChatGPT Atlas, Comet or Gemini in Chrome)",
   minutes: 30,
   h1: { title: "What Is an AI Browser", accent: "and Should I Use One?" },
@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Try it without risking a client account",
-    lead: "An AI browser is a web browser with an AI helper built in. The helper reads the page you're on. Some can also click and type for you. That helps with research. It is risky near your email, bank or client accounts. This guide sets up a safe place to test one. Then you try 3 business jobs, from safest to riskiest.",
+    lead: "An AI browser is a web browser with an AI assistant built in. The assistant reads the page you're on. Some can also click and type for you. That helps with research. It is risky near your email, bank or client accounts. This guide sets up a safe place to test one. Then you try 3 business jobs, from safest to riskiest.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
@@ -27,7 +27,7 @@ export const guide: CardGuide = {
         "**3 tested jobs**: sum up a rival's page, compare two supplier pages, fill a practice form",
         "Your **AI browser rules**: one page on what it may and may not do for you",
       ] },
-      { kind: "tip", text: "You need an AI browser, or an AI helper built into the browser you already use. You can copy and paste every prompt below as it is. Replace the parts in [square brackets]." },
+      { kind: "tip", text: "You need an AI browser, or an AI assistant built into the browser you already use. You can copy and paste every prompt below as it is. Replace the parts in [square brackets]." },
     ],
   },
   openSteps: 1,
@@ -48,11 +48,11 @@ export const guide: CardGuide = {
         ["Type into a form, then stop", "Fill a practice form without sending it", "Medium: you watch every step"],
         ["Act while signed in", "Send an email, book, buy, reply to a client", "High: mistakes are real and hard to undo"],
       ] },
-      { kind: "honest", text: "**Why the risk is real:** a web page can hide orders written for the AI, not for you. Is the helper signed in to your email or client tools? Then a page could push it to do something you didn't ask for. So every job in this guide runs signed out, in a separate profile." },
+      { kind: "honest", text: "**Why the risk is real:** a web page can hide orders written for the AI, not for you. Is the assistant signed in to your email or client tools? Then a page could push it to do something you didn't ask for. So every job in this guide runs signed out, in a separate profile." },
       { kind: "tip", text: "**Should you use one?** For reading and comparing pages, it can save you time. For anything that sends, buys or replies, not yet. Test it with the steps below. Then decide for yourself." },
     ] },
     { num: "02", title: "Set up a test profile", accent: "Nothing to lose in it.", blocks: [
-      { kind: "p", text: "A browser profile is a separate space in your browser. It has its own logins, history and saved passwords. Your test profile has none of these. So the helper can't reach anything that matters." },
+      { kind: "p", text: "A browser profile is a separate space in your browser. It has its own logins, history and saved passwords. Your test profile has none of these. So the assistant can't reach anything that matters." },
       { kind: "list", ordered: true, items: [
         "Open your AI browser. Find the profile menu. It is usually your picture or first letter in a top corner.",
         "Choose **Add profile** or **New profile**. Name it **AI test**. Don't sign in to it with your main account.",
@@ -64,10 +64,10 @@ export const guide: CardGuide = {
       { kind: "tip", text: "**Can't make a separate profile?** Use a private or incognito window (a window that saves nothing). Stay signed out of everything for every job below." },
     ] },
     { num: "03", title: "Job 1: Read a page", accent: "A rival's page, summed up.", blocks: [
-      { kind: "p", text: "Reading is the safest job. The helper only looks at the page you're on." },
+      { kind: "p", text: "Reading is the safest job. The assistant only looks at the page you're on." },
       { kind: "list", ordered: true, items: [
         "In your **AI test** profile, open a rival's services or pricing page.",
-        "Open the helper panel. Paste the prompt below.",
+        "Open the assistant panel. Paste the prompt below.",
       ] },
       { kind: "prompt", label: "Sum up this page", text: `Read this page only. I run [what your business does] for [who your clients are].
 
@@ -81,13 +81,13 @@ Rules:
 - Use only what is on this page. Write "Not on the page" where something is missing.
 - Never make up names, prices, dates or promises.
 - Don't click anything or open other pages.` },
-      { kind: "p", text: "Pick two of the quotes. Find them on the page yourself (press Ctrl+F or Cmd+F). Is a quote not there? Then the helper guessed. Now you know how far to trust it." },
+      { kind: "p", text: "Pick two of the quotes. Find them on the page yourself (press Ctrl+F or Cmd+F). Is a quote not there? Then the assistant guessed. Now you know how far to trust it." },
     ] },
     { num: "04", title: "Job 2: Compare two pages", accent: "Two suppliers, one table.", blocks: [
       { kind: "p", text: "Comparing saves you jumping between tabs. You still check the quotes." },
       { kind: "list", ordered: true, items: [
         "In your **AI test** profile, open two supplier pages side by side. For example, two booking tools or two printers for client work.",
-        "Paste the prompt below into the helper panel.",
+        "Paste the prompt below into the assistant panel.",
       ] },
       { kind: "prompt", label: "Compare two pages in a table", text: `Compare the two pages I have open.
 
@@ -103,11 +103,11 @@ Rules:
       { kind: "p", text: "Check every \"Not on the page\" yourself. It may be on another page of their site. Then you decide." },
     ] },
     { num: "05", title: "Job 3: Fill a practice form", accent: "Stop before submit.", blocks: [
-      { kind: "p", text: "In this job the helper acts for the first time. You use a form you made yourself. So nothing real can happen." },
+      { kind: "p", text: "In this job the assistant acts for the first time. You use a form you made yourself. So nothing real can happen." },
       { kind: "list", ordered: true, items: [
         "In your main browser, go to [forms.google.com](https://forms.google.com). Make a new blank form called **Practice enquiry**. Give it three questions: Name, Email, Message.",
         "Click the **Preview** icon (an eye) at the top of the form. A new page opens. Copy its address and paste it into your **AI test** profile. Can't find Preview? Click **Send**, choose the link icon and copy the link.",
-        "Check that the helper can act in this browser. Some only can on certain plans, or with a setting switched on. No option to let it act? Skip to step 06.",
+        "Check that the assistant can act in this browser. Some only can on certain plans, or with a setting switched on. No option to let it act? Skip to step 06.",
         "Paste the prompt below. Watch every step.",
       ] },
       { kind: "prompt", label: "Fill the practice form", text: `Fill in the form on this page with these made-up details:
@@ -162,7 +162,7 @@ Use only what I tell you. Write [CHECK] where I haven't given an answer. Plain E
   },
   conclusion: {
     heading: "Keep it safe",
-    paragraph: "Run every new job in your test profile first. Check the quotes before you use an answer. Each time the helper surprises you, add a line to your rules.",
+    paragraph: "Run every new job in your test profile first. Check the quotes before you use an answer. Each time the assistant surprises you, add a line to your rules.",
     finishLine: "Let it read. You decide and you press send.",
   },
 };

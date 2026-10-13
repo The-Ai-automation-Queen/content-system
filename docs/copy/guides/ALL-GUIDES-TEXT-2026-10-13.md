@@ -7,18 +7,18 @@ Guide 1 and Brand Brain come first, then the other guides A to Z. Text in grey b
 
 # How to Start Using AI in Your Business When You Don't Know Where to Begin
 
-*Set ChatGPT up for your business once. Find the jobs worth handing over. Then build your first AI helper.*
+*Set ChatGPT up for your business once. Find the jobs worth handing over. Then build your first AI assistant.*
 
 ## Set up AI for your business in about an hour
 
-Most people try AI once, get a vague answer and give up. That happens because the AI knows nothing about their business. This guide sets ChatGPT up for you, finds the jobs to hand over, and builds your first helper.
+Most people try AI once, get a vague answer and give up. That happens because the AI knows nothing about their business. This guide sets ChatGPT up for you, finds the jobs to hand over, and builds your first assistant.
 
 ### What you end up with
 
 - ChatGPT set up safely: your chats kept out of training, and 3 rules for what never goes in
 - A **Business Profile** (a short note about your business) that ChatGPT reads before every answer, so its advice fits you
 - Your **AI task list**: the 5 jobs in your week worth handing over, ranked by time saved and risk
-- Your **first AI helper**: saved rules for job number 1 that you use again every week
+- Your **first AI assistant**: saved rules for job number 1 that you use again every week
 - One real piece of work done with it, and checked by you
 
 > **Tip:** You need a ChatGPT account. The free plan works. You can copy and paste every prompt below. Change the parts in [square brackets].
@@ -110,11 +110,11 @@ Under the table, name the one task I should hand over first, and why, in two sen
 
 Save the table in your notes. It is your plan for the next few weeks: one new task per week.
 
-## 04 Build your first AI helper: Task number 1, set up once.
+## 04 Build your first AI assistant: Task number 1, set up once.
 
-An AI helper is a set of rules for one job. You write them once. Then you use them every time the job comes up, so you never start from an empty chat.
+An AI assistant is a set of rules for one job. You write them once. Then you use them every time the job comes up, so you never start from an empty chat.
 
-**Prompt: Write my helper's instructions**
+**Prompt: Write my assistant's instructions**
 
 ```
 Write instructions for an assistant that does this task for me: [task number 1 from my task list].
@@ -154,11 +154,11 @@ Why it's wrong: [what's actually true].
 Keep everything else the same.
 ```
 
-> **Tip:** **Same fix twice?** Add it to the helper's instructions as a new rule. Then you never have to fix it again.
+> **Tip:** **Same fix twice?** Add it to the assistant's instructions as a new rule. Then you never have to fix it again.
 
 ## 06 Add one task a week: Small, checked, repeated.
 
-Each week, go back to your task list. Build the next helper with step 04. In five weeks, your five biggest weekly jobs will each have a helper.
+Each week, go back to your task list. Build the next assistant with step 04. In five weeks, your five biggest weekly jobs will each have an assistant.
 
 > **Honest note:** **The honest part:** AI won't run your business. It won't know your clients the way you do. It writes first drafts. You check, decide and send. That is why it works.
 
@@ -167,7 +167,7 @@ Each week, go back to your task list. Build the next helper with step 04. In fiv
 - [ ] Training turned off in Data Controls
 - [ ] Business Profile saved in Custom instructions
 - [ ] AI task list saved in your notes
-- [ ] First helper saved in a project or in your notes
+- [ ] First assistant saved in a project or in your notes
 - [ ] One real piece of work done and checked
 
 ## ChatGPT knows your business. Now teach AI your brand.
@@ -178,7 +178,7 @@ The Brand Brain guide is the next step. It sets up your brand kit, your voice ru
 
 ## Keep it working
 
-Update your Business Profile when something changes. Add every repeated fix to your helper's instructions. Build one new helper a week from your task list.
+Update your Business Profile when something changes. Add every repeated fix to your assistant's instructions. Build one new assistant a week from your task list.
 
 Set it up once, then let it get better every week.
 
@@ -3062,7 +3062,7 @@ Ask AI about your offer and it will often say it's great. That feels nice, but y
 - An **honest answers rule** saved in your settings
 - A **problems first** prompt that reads your offer as your client would
 - A **what could go wrong** prompt that finds risks in your plan
-- **Your honest critic**: a saved helper that runs both checks
+- **Your honest critic**: a saved assistant that runs both checks
 - A short list of weak spots to check with real clients
 
 > **Tip:** You need ChatGPT, Claude or Gemini. The free plans work. Have one real offer, sales page or plan ready. Copy and paste each prompt below. Change the parts in [square brackets].
@@ -3164,7 +3164,7 @@ Put the warning signs in your calendar or plan. Run the 2-week test first. Then 
 
 ## 05 Save your honest critic: Both checks, every time.
 
-Your honest critic is a saved helper. Paste something in, and it runs both checks. You don't need to find the prompts each time.
+Your honest critic is a saved assistant. Paste something in, and it runs both checks. You don't need to find the prompts each time.
 
 **Prompt: Honest critic rules**
 
@@ -3186,7 +3186,7 @@ Rules:
 ```
 
 1. **You see Projects in ChatGPT or Claude** (a folder that keeps its own rules)? Make one called **Honest critic**. Paste the rules into its instructions box. Paste your work into chats inside it.
-2. **In Gemini:** do you see **Gems** (saved helpers)? Make a new Gem called **Honest critic**. Paste the rules in.
+2. **In Gemini:** do you see **Gems** (saved assistants)? Make a new Gem called **Honest critic**. Paste the rules in.
 3. **You see neither?** Save the rules in your notes as **Honest critic**. Paste them as the first message of a new chat.
 
 ### Then check with real clients
@@ -3527,7 +3527,7 @@ Check your rules end with a line like this. If not, add it: "Stop after the draf
 
 ## Claude does your weekly job. Now write down how you do the rest.
 
-The next guide turns a screen recording of a task into written steps. Then a helper or freelancer can do the task for you.
+The next guide turns a screen recording of a task into written steps. Then an assistant or freelancer can do the task for you.
 
 **Turn a recording into instructions →**
 
@@ -4467,7 +4467,7 @@ Even when an agent fits, don't let it act alone on day one. Move up one stage at
 
 ## You know what your task needs. Now set AI up for your business.
 
-Most jobs start with a chat that knows your business. The starter guide sets up ChatGPT with your Business Profile. Then it builds your first AI helper for your biggest weekly job.
+Most jobs start with a chat that knows your business. The starter guide sets up ChatGPT with your Business Profile. Then it builds your first AI assistant for your biggest weekly job.
 
 **Start using AI in your business →**
 
@@ -4659,7 +4659,7 @@ One job a week, prepared by AI and checked by you.
 
 ## Try it without risking a client account
 
-An AI browser is a web browser with an AI helper built in. The helper reads the page you're on. Some can also click and type for you. That helps with research. It is risky near your email, bank or client accounts. This guide sets up a safe place to test one. Then you try 3 business jobs, from safest to riskiest.
+An AI browser is a web browser with an AI assistant built in. The assistant reads the page you're on. Some can also click and type for you. That helps with research. It is risky near your email, bank or client accounts. This guide sets up a safe place to test one. Then you try 3 business jobs, from safest to riskiest.
 
 ### What you end up with
 
@@ -4668,7 +4668,7 @@ An AI browser is a web browser with an AI helper built in. The helper reads the 
 - **3 tested jobs**: sum up a rival's page, compare two supplier pages, fill a practice form
 - Your **AI browser rules**: one page on what it may and may not do for you
 
-> **Tip:** You need an AI browser, or an AI helper built into the browser you already use. You can copy and paste every prompt below as it is. Replace the parts in [square brackets].
+> **Tip:** You need an AI browser, or an AI assistant built into the browser you already use. You can copy and paste every prompt below as it is. Replace the parts in [square brackets].
 
 ## 01 What an AI browser is: Reads, and sometimes acts.
 
@@ -4685,7 +4685,7 @@ You may have heard of these: **ChatGPT Atlas** (from OpenAI), **Comet** (from Pe
 | Type into a form, then stop | Fill a practice form without sending it | Medium: you watch every step |
 | Act while signed in | Send an email, book, buy, reply to a client | High: mistakes are real and hard to undo |
 
-> **Honest note:** **Why the risk is real:** a web page can hide orders written for the AI, not for you. Is the helper signed in to your email or client tools? Then a page could push it to do something you didn't ask for. So every job in this guide runs signed out, in a separate profile.
+> **Honest note:** **Why the risk is real:** a web page can hide orders written for the AI, not for you. Is the assistant signed in to your email or client tools? Then a page could push it to do something you didn't ask for. So every job in this guide runs signed out, in a separate profile.
 
 > **Tip:** **Should you use one?** For reading and comparing pages, it can save you time. For anything that sends, buys or replies, not yet. Test it with the steps below. Then decide for yourself.
 
@@ -4694,7 +4694,7 @@ You may have heard of these: **ChatGPT Atlas** (from OpenAI), **Comet** (from Pe
 
 ## 02 Set up a test profile: Nothing to lose in it.
 
-A browser profile is a separate space in your browser. It has its own logins, history and saved passwords. Your test profile has none of these. So the helper can't reach anything that matters.
+A browser profile is a separate space in your browser. It has its own logins, history and saved passwords. Your test profile has none of these. So the assistant can't reach anything that matters.
 
 1. Open your AI browser. Find the profile menu. It is usually your picture or first letter in a top corner.
 2. Choose **Add profile** or **New profile**. Name it **AI test**. Don't sign in to it with your main account.
@@ -4707,10 +4707,10 @@ A browser profile is a separate space in your browser. It has its own logins, hi
 
 ## 03 Job 1: Read a page: A rival's page, summed up.
 
-Reading is the safest job. The helper only looks at the page you're on.
+Reading is the safest job. The assistant only looks at the page you're on.
 
 1. In your **AI test** profile, open a rival's services or pricing page.
-2. Open the helper panel. Paste the prompt below.
+2. Open the assistant panel. Paste the prompt below.
 
 **Prompt: Sum up this page**
 
@@ -4729,14 +4729,14 @@ Rules:
 - Don't click anything or open other pages.
 ```
 
-Pick two of the quotes. Find them on the page yourself (press Ctrl+F or Cmd+F). Is a quote not there? Then the helper guessed. Now you know how far to trust it.
+Pick two of the quotes. Find them on the page yourself (press Ctrl+F or Cmd+F). Is a quote not there? Then the assistant guessed. Now you know how far to trust it.
 
 ## 04 Job 2: Compare two pages: Two suppliers, one table.
 
 Comparing saves you jumping between tabs. You still check the quotes.
 
 1. In your **AI test** profile, open two supplier pages side by side. For example, two booking tools or two printers for client work.
-2. Paste the prompt below into the helper panel.
+2. Paste the prompt below into the assistant panel.
 
 **Prompt: Compare two pages in a table**
 
@@ -4758,11 +4758,11 @@ Check every "Not on the page" yourself. It may be on another page of their site.
 
 ## 05 Job 3: Fill a practice form: Stop before submit.
 
-In this job the helper acts for the first time. You use a form you made yourself. So nothing real can happen.
+In this job the assistant acts for the first time. You use a form you made yourself. So nothing real can happen.
 
 1. In your main browser, go to [forms.google.com](https://forms.google.com). Make a new blank form called **Practice enquiry**. Give it three questions: Name, Email, Message.
 2. Click the **Preview** icon (an eye) at the top of the form. A new page opens. Copy its address and paste it into your **AI test** profile. Can't find Preview? Click **Send**, choose the link icon and copy the link.
-3. Check that the helper can act in this browser. Some only can on certain plans, or with a setting switched on. No option to let it act? Skip to step 06.
+3. Check that the assistant can act in this browser. Some only can on certain plans, or with a setting switched on. No option to let it act? Skip to step 06.
 4. Paste the prompt below. Watch every step.
 
 **Prompt: Fill the practice form**
@@ -4827,7 +4827,7 @@ The Brand Brain guide sets up one Claude project (a folder that remembers your f
 
 ## Keep it safe
 
-Run every new job in your test profile first. Check the quotes before you use an answer. Each time the helper surprises you, add a line to your rules.
+Run every new job in your test profile first. Check the quotes before you use an answer. Each time the assistant surprises you, add a line to your rules.
 
 Let it read. You decide and you press send.
 
@@ -5033,7 +5033,7 @@ The best tool is usually the one closest to your email, documents and calendar. 
 | Writing and thinking: proposals, emails, posts, planning | ChatGPT or Claude | Both are good all-round chat tools. Your test decides which suits you |
 | Research you will quote to a client or in a post | A search tool such as Perplexity | It shows links to its sources, so you can open and check them |
 
-Then check what you already pay for. Your Google Workspace or Microsoft 365 plan may already include an AI helper. If it does, test that before you buy anything new.
+Then check what you already pay for. Your Google Workspace or Microsoft 365 plan may already include an AI assistant. If it does, test that before you buy anything new.
 
 > **Tip:** **Not sure what your plan includes?** Prices and plans change often. Check the official pricing pages: [ChatGPT](https://openai.com/chatgpt/pricing/), [Claude](https://claude.com/pricing), [Gemini for Google Workspace](https://workspace.google.com/pricing) and [Microsoft 365 Copilot](https://www.microsoft.com/microsoft-365/copilot). Don't trust a price you read in a blog post.
 
@@ -5169,6 +5169,6 @@ The Brand Brain guide sets up one project with your look, your voice rules and y
 
 ## Keep it simple
 
-Keep one main tool. Use the AI helper already inside your work apps. Only run the side-by-side test again when a new tool says it does your job better.
+Keep one main tool. Use the AI assistant already inside your work apps. Only run the side-by-side test again when a new tool says it does your job better.
 
 Pay only for the tool that helps you most each week.
