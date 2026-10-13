@@ -78,7 +78,7 @@ export const guide: CardGuide = {
         "Is the long document private, like a contract with bank details? Pick a less private one for your first test.",
       ] },
       { kind: "contrast", items: [
-        { label: "Don't paste", text: "Called Sarah Jones on 07700 900123, card ending 4421, wants to go ahead", good: false },
+        { label: "Don't paste", text: "Called [client's real full name] on [their mobile number], card ending [4 digits], wants to go ahead", good: false },
         { label: "Fine to paste", text: "Called [client], wants to go ahead with the website rewrite", good: true },
       ] },
     ] },
@@ -185,9 +185,9 @@ Keep the instructions under 2,000 characters, written as instructions to you.` }
 Quote the exact sentence you used and give the page or section.` },
       { kind: "example", label: "Example question", text: "What is the notice period if I want to end this contract?" },
       { kind: "result", label: "What a good answer looks like", lines: [
-        "\"Either party may end this agreement by giving 30 days' written notice.\"",
+        "\"Either party may end this agreement by giving [number] days' written notice.\"",
         "Section 9, Ending the agreement, page 4.",
-        "Answer: you need to give 30 days' notice in writing.",
+        "Answer: you need to give [number] days' notice in writing.",
       ] },
       { kind: "h3", text: "C. Check the sentence is really there" },
       { kind: "list", ordered: true, items: [

@@ -81,7 +81,7 @@ export const guide: CardGuide = {
         "12/08 | [booking tool] | $[amount]",
       ] },
       { kind: "contrast", items: [
-        { label: "Not clean yet", text: "03/07 CARD 4921 **** [design app] REF 88213 [your address]", good: false },
+        { label: "Not clean yet", text: "03/07 CARD 4921 xxxx [design app] REF 88213 [your address]", good: false },
         { label: "Clean", text: "03/07 | [design app] | $[amount]", good: true },
       ] },
       { kind: "tip", text: "**No AI tool needs your bank login for this.** If an app or chat asks for it, stop and close it." },
