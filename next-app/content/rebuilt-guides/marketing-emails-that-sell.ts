@@ -17,7 +17,7 @@ export const guide: CardGuide = {
     line: "Write to one real client, with proof instead of promises. ChatGPT drafts; you bring the client and the proof.",
   },
   intro: {
-    heading: "Your sales email kit, in your own voice",
+    heading: "Your sales email set, in your own voice",
     lead: "Most sales emails talk to everyone, hide what they're about and make big promises. ChatGPT makes that worse when it writes from nothing. This guide builds what it needs first: a profile of one real client, a bank of the proof you actually have, and your voice. Then it drafts a launch email you'd be happy to send with your name on it.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
@@ -34,7 +34,7 @@ export const guide: CardGuide = {
   openSteps: 1,
   gate: {
     heading: "Get the",
-    accent: "Sales Email Kit.",
+    accent: "Sales Email Set.",
     promise: "Enter your name and email. The rest of the guide opens straight away, and I'll email you the link so you can come back to it later.",
     action: "Open the rest of the guide",
   },
@@ -48,7 +48,7 @@ export const guide: CardGuide = {
       ] },
       { kind: "list", ordered: true, items: [
         "Pick one offer and one email you're about to send, such as the email that opens your next launch.",
-        "Open a new document called **Sales email kit**. You'll save each part in it as you go.",
+        "Open a new document called **Sales email set**. You'll save each part in it as you go.",
         "Read your last sales email against the 3 rules and note which one it breaks. That's the one to watch in step 04.",
       ] },
       { kind: "tip", text: "**No sales email to compare?** Use the last post or message you wrote about one of your services. The rules apply the same way." },
@@ -74,7 +74,7 @@ Ask me these one at a time and wait for each answer:
 Then write the profile under these headings: Who they are, Their problem in their words, What they tried, What holds them back, What they want. Under 200 words.
 
 Use only what I tell you. Write [CHECK] where information is missing instead of guessing. Never invent quotes.` },
-      { kind: "p", text: "Read it and correct anything that doesn't sound like your client. Save it in your Sales email kit as **One-reader profile**." },
+      { kind: "p", text: "Read it and correct anything that doesn't sound like your client. Save it in your Sales email set as **One-reader profile**." },
     ] },
     { num: "03", title: "Build your proof bank", accent: "Only what's real.", blocks: [
       { kind: "p", text: "Proof is what makes a reader believe you. ChatGPT can't create it, so this step gathers what you already have." },
@@ -133,7 +133,7 @@ Each one must say exactly what's inside. No teasers, no "you won't believe", no 
 Use only what is in the email. Never add a deadline, discount or number that isn't there.
 
 Email: [paste]` },
-      { kind: "p", text: "Pick the one you'd open if you were the reader in your profile. Save the email and the subject line in your Sales email kit." },
+      { kind: "p", text: "Pick the one you'd open if you were the reader in your profile. Save the email and the subject line in your Sales email set." },
       { kind: "tip", text: "**Test it:** read the subject line on its own. Could your reader guess what's in the email? If not, pick another one." },
     ] },
     { num: "06", title: "Check it sounds like you", accent: "Before you press send.", blocks: [
