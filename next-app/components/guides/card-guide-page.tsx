@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { GuideImage } from "./guide-image";
 import Link from "next/link";
 import { Fragment, useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
@@ -98,14 +99,14 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
         </div>
         {card.hero.kind === "pose"
           ? <div className={hero.heroPose}><span className={hero.dot} aria-hidden="true" /><Image src={card.hero.src} alt={card.hero.alt} width={760} height={760} priority sizes="(max-width: 760px) 360px, 560px" /></div>
-          : <div className={hero.heroScene}><div><Image src={card.hero.src} alt={card.hero.alt} fill priority sizes="(max-width: 760px) 100vw, 600px" /></div></div>}
+          : <div className={hero.heroScene}><div><GuideImage src={card.hero.src} alt={card.hero.alt} fill priority sizes="(max-width: 760px) 100vw, 600px" /></div></div>}
       </div>
     </header>}
     <div className={styles.column}>
       {!card.hero && <Link className={styles.back} href="/guides/">← All guides</Link>}
 
       <div className={styles.author}>
-        <img src="/fatiha-hero-portrait.webp" alt="" width={46} height={46} />
+        <img src="/fatiha-avatar-96.webp" alt="" width={46} height={46} />
         <div>
           <div className={styles.name}>Fatiha Chikh <span className={styles.badge}>Free guide</span></div>
           <div className={styles.meta}>Shift &amp; Lead</div>
@@ -155,7 +156,7 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
 
     {guide.related.length > 0 && <section className={styles.related} aria-labelledby={`${card.slug}-related`}>
       <h2 id={`${card.slug}-related`}>Keep reading. <em>One job at a time.</em></h2>
-      <div className={styles.relatedGrid}>{guide.related.map((item) => <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 760px) 100vw, 380px" /></figure><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p></GuideRelatedLink>)}</div>
+      <div className={styles.relatedGrid}>{guide.related.map((item) => <GuideRelatedLink key={item.slug} slug={item.slug}><figure><GuideImage src={item.cover} alt="" fill sizes="(max-width: 760px) 100vw, 380px" /></figure><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p></GuideRelatedLink>)}</div>
     </section>}
   </main>;
 }

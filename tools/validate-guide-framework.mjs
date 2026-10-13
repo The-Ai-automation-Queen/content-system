@@ -135,6 +135,8 @@ for (const cover of structuredCovers) {
   } else if (fs.statSync(coverFile).size > 200 * 1024) {
     failures.push(`Structured guide cover exceeds 200 KB: ${cover}`);
   }
+  const phoneFile = coverFile.replace(/\.webp$/i, "-640.webp");
+  if (!fs.existsSync(phoneFile)) failures.push(`Structured guide cover has no 640px phone version: ${cover.replace(/\.webp$/i, "-640.webp")}`);
 }
 
 if (!guideCaptureApi.includes('require("../../data/guide-publication.json")')) {

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { GuideImage } from "./guide-image";
 import type { Guide } from "@/content/guides";
 import { guideHref } from "@/content/guide-url";
 
@@ -10,7 +10,7 @@ export function GuideCard({ guide, featured = false, reviewMode = false }: { gui
       aria-label={`Open guide: ${guide.title}`}
     >
       <div className="guide-card__art">
-        <Image
+        <GuideImage
           src={guide.cover}
           alt=""
           fill

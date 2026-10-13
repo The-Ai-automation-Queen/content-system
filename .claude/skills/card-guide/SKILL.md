@@ -98,6 +98,17 @@ file is the library card and the `hero` scene (`kind: "scene"`, `src` = cover).
 3. Only if nothing fits, use a mascot `pose` for the hero and say the cover
    needs an illustration.
 
+Every guide image needs a phone copy next to it: `<slug>-640.webp` (640px
+wide, WebP quality 80). Phones load it instead of the 1280px file, and
+`validate:guides` fails without it. Make it with either:
+
+```bash
+python3 -c "from PIL import Image as I;im=I.open('next-app/public/images/guides/<slug>.webp');im.resize((640,round(im.height*640/im.width)),I.LANCZOS).save('next-app/public/images/guides/<slug>-640.webp','WEBP',quality=80,method=6)"
+ffmpeg -i next-app/public/images/guides/<slug>.webp -vf scale=640:-1 -quality 80 next-app/public/images/guides/<slug>-640.webp
+```
+
+Never pick a `-640.webp` file as a cover; use the full-size name.
+
 ## 4. Build, ship, check
 
 ```bash
