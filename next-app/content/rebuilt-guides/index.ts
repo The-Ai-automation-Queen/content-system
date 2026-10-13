@@ -9,6 +9,7 @@ import { guide as claude } from "./claude";
 import { guide as connectAiToEmailFilesCalendar } from "./connect-ai-to-email-files-calendar";
 import { guide as geminiCannotFindDriveFile } from "./gemini-cannot-find-drive-file";
 import { guide as geminiGoogleTasksLimits } from "./gemini-google-tasks-limits";
+import { guide as instagramContentDashboard } from "./instagram-content-dashboard";
 import { guide as launchYourProductIn30Days } from "./launch-your-product-in-30-days";
 import { guide as makeChatgptAnswersShorter } from "./make-chatgpt-answers-shorter";
 import { guide as makeWorkTrackerWithKimi } from "./make-work-tracker-with-kimi";
@@ -28,5 +29,5 @@ import { guide as whatShouldYouNeverShareWithAi } from "./what-should-you-never-
 import { guide as whichAiToolForWhat } from "./which-ai-tool-for-what";
 
 export const rebuiltGuides: Record<string, CardGuide> = Object.fromEntries(
-  [aiJargonGuide, aiSkillsWorthLearningForWork, catchAiMakingThingsUp, chatgptCustomerResearchWithEvidence, chatgptScheduledTasks, chatgptScreenRecordingToProcessGuide, claude, connectAiToEmailFilesCalendar, geminiCannotFindDriveFile, geminiGoogleTasksLimits, launchYourProductIn30Days, makeChatgptAnswersShorter, makeWorkTrackerWithKimi, marketingEmailsThatSell, showUpInAiSearch, stopAiAgreeingWithYou, stopChatgptForgettingContext, teachClaudeARepeatableWorkflow, testBusinessIdeaWithAi, testMetaMuseMoneySavingTask, weekendProjectsWithClaude, whatIsAPrompt, whatIsAgentic, whatIsAi, whatIsAnAiBrowser, whatShouldYouNeverShareWithAi, whichAiToolForWhat].map((guide) => [guide.slug, guide]),
+  [aiJargonGuide, aiSkillsWorthLearningForWork, catchAiMakingThingsUp, chatgptCustomerResearchWithEvidence, chatgptScheduledTasks, chatgptScreenRecordingToProcessGuide, claude, connectAiToEmailFilesCalendar, geminiCannotFindDriveFile, geminiGoogleTasksLimits, instagramContentDashboard, launchYourProductIn30Days, makeChatgptAnswersShorter, makeWorkTrackerWithKimi, marketingEmailsThatSell, showUpInAiSearch, stopAiAgreeingWithYou, stopChatgptForgettingContext, teachClaudeARepeatableWorkflow, testBusinessIdeaWithAi, testMetaMuseMoneySavingTask, weekendProjectsWithClaude, whatIsAPrompt, whatIsAgentic, whatIsAi, whatIsAnAiBrowser, whatShouldYouNeverShareWithAi, whichAiToolForWhat].map((guide) => [guide.slug, guide]),
 );
