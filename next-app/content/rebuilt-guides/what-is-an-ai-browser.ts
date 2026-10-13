@@ -106,7 +106,7 @@ Rules:
       { kind: "p", text: "This is the first job where the assistant acts. You do it on a form you made yourself, so nothing real can happen." },
       { kind: "list", ordered: true, items: [
         "In your main browser, go to [forms.google.com](https://forms.google.com) and make a new blank form called **Practice enquiry** with three questions: Name, Email, Message.",
-        "Click **Send** in the form editor, copy the link (not to anyone, just the link) and open it in your **AI test** profile.",
+        "Click the **Preview** icon (an eye) at the top of the form editor, copy the address of the page that opens and paste it into your **AI test** profile. If you can't find Preview, click **Send**, choose the link icon and copy the link instead.",
         "Check the assistant can act in this browser. Some only do this on certain plans or with a setting switched on. If you don't see an option to let it act, skip to step 06.",
         "Paste the prompt below and watch every step.",
       ] },
