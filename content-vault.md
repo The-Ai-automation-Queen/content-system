@@ -21,6 +21,50 @@
 
 ## Most recent (quick reference)
 
+> **13/10/2026 content-engine daily run — no new entries produced (deliberate):**
+> Run end to end per explicit operator instruction ("Run the /content-engine
+> daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
+> queue-only — never post instantly. End with the operator briefing.");
+> `skills/content-engine/SKILL.md` not registered via the Skill tool this
+> session, so read and followed manually per the
+> `project-skills-not-registered` memory. Loaded `AGENTS.md`,
+> `CURRENT-WORKFLOW.md`, `context/current-context.json` and `security.md`
+> first, as both CLAUDE.md and the skill require. New source material landed
+> today and, unlike the last several runs, is now properly ledgered:
+> `research-notes.md`'s `RESEARCH 065` (2026-10-13, logged by this session's
+> signal-harvester run) carries one new qualifying pillar-3 signal — Kim,
+> Kang & Song (Seoul National University), arXiv:2605.10291v1, a
+> 160,143-launch Product Hunt study showing solo entrepreneurial entry rose
+> ~90% more than team entry post-ChatGPT, but ~97% of solo launches show no
+> update within 12 months and team ventures still hold 53% of top-10
+> rankings — AI lowers the barrier to start without closing the gap to a
+> sustained, high-quality outcome. A genuinely usable angle for "decide where
+> AI belongs ... and choose a first test" (pillar 3), and pillar 1 is still
+> flagged open (standing on the 2026-10-02 PwC source, now 11 days old).
+> Even with a fresh, ledgered signal in hand, both standing blockers are
+> unchanged and independently reconfirmed this session: (1) this session's
+> reality-check hook again states canon: queen-brain NOT in this session,
+> and explicitly forbids writing price, tier, offer status or
+> customer-facing copy reconstructed from this repo's local mirror copies —
+> content-engine's entire output is customer-facing copy, so drafting stays
+> blocked regardless of available research; reconfirmed independently via
+> `git ls-remote` against `The-Ai-automation-Queen/queen-brain`, which again
+> returned "Write access to repository not granted" / 403 from this
+> session's git credentials, and `gh` is not installed in this session
+> either; (2) the release backlog is also unchanged: vault still holds 37
+> READY TO POST (oldest since 14/07/2026, 91 days), 33 DRAFT, 6 STALE, 2
+> KILLED, 0 POSTED (recounted directly from this file's `## ENTRY` headers —
+> 78 total, matching this session's startup reality-check hook exactly),
+> and `review-cockpit/decisions-log.md`'s last entry is still 14/07/2026 — no
+> operator replies, approvals or kills since then, and
+> `review-cockpit/state.md` logs a 77th consecutive empty Telegram
+> `getUpdates` sweep today (second interactive sweep today per that
+> session's own log) — so adding more DRAFT volume would still only crowd an
+> already-unreleased backlog. No Notion, Blotato, or queen-brain/GitHub
+> write connector was reachable from this session (checked via `ToolSearch`
+> and `git ls-remote`). Operator briefing given in this session's chat, same
+> two open options as every run since 18/09/2026, still unanswered.
+
 > **12/10/2026 content-engine daily run — no new entries produced (deliberate):**
 > Run end to end per explicit operator instruction ("Run the /content-engine
 > daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
