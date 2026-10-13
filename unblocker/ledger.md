@@ -6,12 +6,49 @@
 
 ## Queue (next up, in order)
 
-1. UNB-031 — CognitionX yes/no only (HRSE fee parked) *(serve 3, 07/10 — gentle confrontation sent, awaiting reply; 11/10 check: still unanswered, 7th morning since the floor-ask, event now **3-4 days out** — tightest clock in the queue; not re-sent, no serve-4 rule)*
-2. UNB-029 — Delete dead `work-with-me-v3.css` *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; 11/10 check: still unanswered, 3rd morning since the confrontation; ask already at floor, offer to execute myself on a ✅ still open; not re-sent, no serve-4 rule)*
-3. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 11/10 check: still unanswered, 11th morning; stale-branch count flat at 79 of 137 (30-day cutoff))*
-4. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 11/10 check confirms still unanswered, 17th morning; now 723 commits behind main)*
-5. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 11/10 check confirms still unanswered, 19 days)*
-6. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 11/10 check confirms still unanswered, 25th morning)*
+1. UNB-031 — CognitionX yes/no only (HRSE fee parked) *(serve 3, 07/10 — gentle confrontation sent, awaiting reply; 13/10 check: still unanswered, 9th morning since the floor-ask, event now **1-2 days out** — functionally expired; not re-sent, no serve-4 rule)*
+2. UNB-029 — Delete dead `work-with-me-v3.css` *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; 13/10 check: still unanswered, 5th morning since the confrontation; ask already at floor, offer to execute myself on a ✅ still open; not re-sent, no serve-4 rule)*
+3. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 13/10 check: still unanswered, 13th morning; stale-branch count now 79 of 138 (30-day cutoff))*
+4. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 13/10 check confirms still unanswered, 19th morning; now 744 commits behind main)*
+5. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 13/10 check confirms still unanswered, 21 days)*
+6. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 13/10 check confirms still unanswered, 27th morning)*
+
+> **13/10/2026 — queue still fully stalled, fourth consecutive no-serve
+> day.** Full re-scan (`content-vault.md` header + today's already-run
+> `review-cockpit digest` card mapping, `git fetch --prune` + `git
+> for-each-ref`, `git -C content-system-DUPLICATE rev-parse HEAD` + `git
+> log a2e2bc1f..origin/main`, `find`/grep for `work-with-me-v3.css`,
+> `speaking-pipeline.md` TARGET 002/003, `git ls-remote` on all 7 absent
+> estate repos, `ROADMAP.md`/`ACTION-PLAN-CASH-MACHINE.md`/
+> `lead-magnets.csv` mtimes, `review-cockpit/state.md`'s live 13/10
+> `getUpdates` sweep, `review-cockpit/decisions-log.md`, `personal-brain.md`)
+> confirms every metric unchanged from 12/10 except two that got strictly
+> worse again: `content-system-DUPLICATE` is now **744** commits behind
+> (was 736 on 12/10, 723 on 11/10 — worsening every time it's checked, now
+> a fourth consecutive worsening), and total non-main branches grew to 138
+> (from 137), holding the 30-day-stale count at 79. The HRSE/CognitionX
+> event window is now **1-2 days out** (14-15 Oct, today 13/10) with zero
+> reply since the 07/10 confrontation — ninth morning since the floor-ask;
+> `speaking-pipeline.md`'s own 12/10 scan already flagged both targets as
+> near-expired ("either serve a pitch immediately or mark dead at the next
+> scan") and nothing has changed since, so both bookings are now
+> functionally timed out regardless of any reply that lands today.
+> `review-cockpit/state.md`'s 13/10 digest run (already completed this
+> morning, separate session) logged the 75th consecutive empty `getUpdates`
+> sweep since 14/09/2026 and reconfirmed `decisions-log.md`'s last entry is
+> still 14/07/2026 — no operator reply, approval, or kill of any kind in
+> three months. No new ledger-eligible item found (`ROADMAP.md` unchanged
+> since 08/07, `ACTION-PLAN-CASH-MACHINE.md` since 19/09, `lead-magnets.csv`
+> since 21/07); no completion among UNB-025/026/027/028/029/031. All six
+> queue items remain simultaneously past their own serve-3 confirmation
+> with zero reply, now for a fourth straight day. Per the no-serve-4 rule
+> and "never repeat the identical message" guardrail, nothing was
+> re-sent — **no Telegram message was sent today**, the fourth such day
+> running, extending the longest fully-stalled stretch since the ledger's
+> 06/07/2026 seed. See the end-of-run briefing for the escalation this
+> deserves — in particular, UNB-031's speaking opportunities are the first
+> queue item to cross from "time-critical" into "missed" while sitting
+> unanswered.
 
 > **12/10/2026 — queue still fully stalled, third consecutive no-serve
 > day.** Full re-scan (`content-vault.md` header + "Most recent" note,
@@ -636,6 +673,13 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   (matches today's session reality-check hook). Live `getUpdates` returned
   empty. No eligible serve slot existed today either — did not re-send.
   `served_count` left at 3, put to her again in today's briefing.
+- **13/10/2026 follow-up (interactive run):** `content-vault.md` header
+  reconfirms 37 READY TO POST / 0 POSTED, unchanged — 27th morning running
+  (matches today's session reality-check hook and today's already-completed
+  `review-cockpit digest` card mapping). `review-cockpit/state.md`'s live
+  13/10 `getUpdates` sweep (75th consecutive) returned empty. No eligible
+  serve slot existed today either — did not re-send. `served_count` left
+  at 3, put to her again in today's briefing.
 
 ---
 
@@ -807,6 +851,13 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   day). Session reality-check banner still confirms "canon: queen-brain NOT
   in this session." No reply, no eligible serve slot existed today either —
   did not re-send. Put to Fatiha again in today's briefing.
+- **13/10/2026 follow-up (interactive run):** re-ran `git ls-remote` over
+  HTTPS on all 7 absent estate repos live this morning — identical `403
+  Write access to repository not granted` (6 repos) / `404 Repository not
+  found` (`agent-os-dashboard`) on every one, unchanged since 20/09 (21st
+  day). Session reality-check banner still confirms "canon: queen-brain NOT
+  in this session." No reply, no eligible serve slot existed today either —
+  did not re-send. Put to Fatiha again in today's briefing.
 
 ### UNB-027 — Decide fate of `content-system-DUPLICATE`
 - **why:** a full second git checkout of this repo, frozen at commit
@@ -941,6 +992,14 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   confrontation, 18th morning running. Per the no-serve-4 rule, did not
   re-send — no eligible serve slot existed today either. Put to Fatiha
   again in today's briefing.
+- **13/10/2026 follow-up (interactive run):** re-measured directly —
+  `git -C content-system-DUPLICATE rev-parse HEAD` is still `a2e2bc1f`,
+  and `git log a2e2bc1f..origin/main | wc -l` is now **744** commits behind
+  (was 736 on 12/10, 723 on 11/10, 656 on 04/10, 381 on 20/09 — worsening
+  every time this is measured, now four straight worsenings). No reply to
+  the 25/09 confrontation, 19th morning running. Per the no-serve-4 rule,
+  did not re-send — no eligible serve slot existed today either. Put to
+  Fatiha again in today's briefing.
 
 ### UNB-028 — Review and prune stale branches (74 of 136, oldest 176 days)
 - **why:** `git for-each-ref` on `content-system` shows 74 non-main remote
@@ -1088,6 +1147,12 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   branches stale, flat for a third straight day. Oldest unchanged, now 189
   days. No reply (12th morning), no eligible serve slot existed today
   either — did not re-send. Put to Fatiha again in today's briefing.
+- **13/10/2026 follow-up (interactive run):** `git fetch origin --prune` +
+  `git for-each-ref` this morning, cutoff 2026-09-13 — **79 of 138**
+  branches stale (total branch count grew by one; the 30-day-stale count
+  held flat). Oldest unchanged, now 190 days. No reply (13th morning), no
+  eligible serve slot existed today either — did not re-send. Put to
+  Fatiha again in today's briefing.
 
 ### UNB-029 — Delete dead `main-site/assets/work-with-me-v3.css`
 - **why:** the live work-with-me page (`main-site/work-with-fatiha/index.html:93-94`)
@@ -1185,6 +1250,12 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
 - **12/10/2026 follow-up (interactive run):** re-grepped live —
   `work-with-me-v3.css` still present, zero live references, unchanged,
   4th morning since the 09/10 confrontation. No reply to the ✅/❌ offer.
+  Per the no-serve-4 rule, did not re-send — no eligible serve slot existed
+  today either. The ✅ offer to execute the delete myself remains open and
+  unactioned.
+- **13/10/2026 follow-up (interactive run):** re-grepped live —
+  `work-with-me-v3.css` still present, zero live references, unchanged,
+  5th morning since the 09/10 confrontation. No reply to the ✅/❌ offer.
   Per the no-serve-4 rule, did not re-send — no eligible serve slot existed
   today either. The ✅ offer to execute the delete myself remains open and
   unactioned.
@@ -1323,6 +1394,21 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   for HRSE/CognitionX 2026 regardless of what she eventually decides —
   there is no longer enough runway to draft, review and send a pitch before
   the 14-15 Oct dates even with an immediate reply.
+- **13/10/2026 follow-up (interactive run):** `speaking-pipeline.md` TARGET
+  002/003 history still unchanged — no new entry since the 12/10 scan,
+  which already logged both targets as near-expired on its own ("either
+  serve a pitch immediately or mark dead at the next scan"). No reply to
+  the 07/10 confrontation. `review-cockpit/state.md`'s 13/10 digest
+  (already completed this morning) confirms the 75th consecutive empty
+  `getUpdates` sweep. Events are now **1-2 days out** (14-15 Oct, today
+  13/10), ninth morning running since the floor-ask, with zero reply
+  throughout. Both pitches have now crossed from time-critical into
+  effectively missed — recommend the next `/speaking-pipeline scan` mark
+  TARGET 002/003 `dead` (event-passed) rather than carrying them forward as
+  live queue items, since no reply has landed and no reply from this point
+  leaves enough runway to draft, review and send a pitch. No eligible serve
+  slot existed today either — did not re-send, escalated plainly in
+  today's operator briefing instead.
 
 ---
 
