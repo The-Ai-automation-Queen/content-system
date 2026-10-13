@@ -48,6 +48,12 @@ Only write what is missing, and keep it short:
 - `cta`: copy the reference guide's Free AI guides block, adjusting the heading
   to this guide's outcome.
 - `seoDescription` (under 160 characters), `coverAlt`, `tool`, `minutes`.
+- `hero` (mascot banner, like the other guides): `kind: "pose"` with a
+  transparent mascot from `next-app/public/images/mascot/` (`email-sorting`,
+  `explaining`, `lightbulb`, `planning`, `warning`), or `kind: "scene"` with a
+  16:9 illustration. `line` is one sentence taken from her intro. Pick the pose
+  that fits the job; if she names one or drops a new image, use hers. Leave
+  `hero` out only if she asks for the plain card header.
 
 Voice check on everything you wrote and everything she wrote: no em dashes, no
 "It is not X. It is Y.", no invented numbers or claims, redaction shown in

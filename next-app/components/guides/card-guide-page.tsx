@@ -9,6 +9,7 @@ import { cleanLabel } from "./guide-icon";
 import { GuideAccessBoundary } from "./guide-access-boundary";
 import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./card-guide-page.module.css";
+import hero from "./batch-guide-page.module.css";
 
 // Inline marks: **bold**, *italic*, [label](href).
 function Rich({ value }: { value: string }) {
@@ -81,9 +82,27 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
   const preview = gated[0];
   const stepId = (index: number) => `${card.slug}-step-${index + 1}`;
 
+  const titleBlock = <>
+    <p className={card.hero ? hero.eyebrow : styles.eyebrow}><span aria-hidden="true">✦</span>Free guide · {card.tool} · {card.minutes} minutes</p>
+    <h1>{card.h1.title} <em>{card.h1.accent}</em></h1>
+  </>;
+
   return <main className={styles.page}>
+    {card.hero && <header className={hero.hero}>
+      <div className={hero.heroInner}>
+        <div className={hero.heroText}>
+          <Link className={hero.back} href="/guides/">← All guides</Link>
+          {titleBlock}
+          <p className={hero.heroLine}>{card.hero.line}</p>
+          <a className={hero.heroButton} href={`#${card.slug}-intro`}>Start the guide ↓</a>
+        </div>
+        {card.hero.kind === "pose"
+          ? <div className={hero.heroPose}><span className={hero.dot} aria-hidden="true" /><Image src={card.hero.src} alt={card.hero.alt} width={760} height={760} priority sizes="(max-width: 760px) 360px, 560px" /></div>
+          : <div className={hero.heroScene}><div><Image src={card.hero.src} alt={card.hero.alt} fill priority sizes="(max-width: 760px) 100vw, 600px" /></div></div>}
+      </div>
+    </header>}
     <div className={styles.column}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      {!card.hero && <Link className={styles.back} href="/guides/">← All guides</Link>}
 
       <div className={styles.author}>
         <img src="/fatiha-hero-portrait.webp" alt="" width={46} height={46} />
@@ -93,8 +112,7 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
         </div>
       </div>
 
-      <p className={styles.eyebrow}><span aria-hidden="true">✦</span>Free guide · {card.tool} · {card.minutes} minutes</p>
-      <h1>{card.h1.title} <em>{card.h1.accent}</em></h1>
+      {!card.hero && titleBlock}
 
       <section className={`${styles.card} ${styles.intro}`} aria-labelledby={`${card.slug}-intro`}>
         <h2 id={`${card.slug}-intro`}>{card.intro.heading}</h2>

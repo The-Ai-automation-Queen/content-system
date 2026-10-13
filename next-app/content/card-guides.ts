@@ -36,6 +36,11 @@ export type CardGuide = {
   tool: string;
   minutes: number;
   h1: { title: string; accent: string };
+  /**
+   * Optional hero banner, same as the other guides: "pose" is a transparent
+   * mascot from /images/mascot/, "scene" a 16:9 illustration with the pink offset.
+   */
+  hero?: { kind: "pose" | "scene"; src: string; alt: string; line: string };
   intro: { heading: string; lead: string; blocks: readonly CardBlock[] };
   /** How many steps stay open before the sign-up card. */
   openSteps: number;
@@ -57,6 +62,12 @@ export const cardGuides: readonly CardGuide[] = [
     tool: "Claude",
     minutes: 30,
     h1: { title: "The Brand Brain Guide: build yours", accent: "in Claude in 5 steps." },
+    hero: {
+      kind: "pose",
+      src: "/images/mascot/explaining.webp",
+      alt: "The Shift & Lead mascot pointing at three cards: an idea, a chart and a graph.",
+      line: "One Claude project that holds your brand kit, your voice rules and your Brand DNA.",
+    },
     intro: {
       heading: "One project that knows your brand",
       lead: "A Brand Brain is one Claude project that holds your brand kit, your voice rules and your Brand DNA, so everything Claude makes for your business matches your brand. It takes five steps and about 30 minutes the first time.",
