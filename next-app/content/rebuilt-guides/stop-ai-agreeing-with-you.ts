@@ -113,7 +113,7 @@ export const guide: CardGuide = {
       ] },
       { kind: "example", label: "What you type", text: "I'm thinking of raising my prices next month. Good idea?" },
       { kind: "result", label: "What a good answer looks like", lines: [
-        "\"It depends on a few things I don't know yet. What do clients say about your price now? How many would you lose if 1 in 5 left?\"",
+        "\"It depends on a few things I don't know yet. What do clients say about your price now? How many clients could you afford to lose?\"",
         "Then the risks, then what could work. No \"Great idea!\" at the start.",
       ] },
       { kind: "p", text: "Still starts with praise? Open the box again and check the rule saved. Then try in a new chat." },
