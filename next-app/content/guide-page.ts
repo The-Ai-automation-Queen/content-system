@@ -7,6 +7,7 @@ import { modelSeriesGuides } from "./model-guide-series";
 import { researchGuideSeries } from "./research-guide-series";
 import { newGuidePages } from "./guide-batch-26-35-pages";
 import { batchOneGuides } from "./guide-batch-one";
+import { brandBrainGuide } from "./brand-brain-guide";
 
 export type GuideStep = {
   title: string;
@@ -1151,7 +1152,7 @@ Notes:
   ],
 } as const satisfies GuidePage;
 
-export const guidePages = [instagramDashboardGuide, whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide, whichAiToolGuide, chatGptGuide, claudeGuide, claudeProjectsGuide, geminiGuide, copilotGuide, metaAiGuide, grokGuide, deepSeekGuide, kimiGuide, manusGuide, mistralGuide, promptGuide, aiBrowserGuide, aiConnectionsGuide, aiSkillsGuide, aiSearchGuide, ...modelSeriesGuides, ...researchGuideSeries, ...newGuidePages] as const;
+export const guidePages = [instagramDashboardGuide, whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide, whichAiToolGuide, chatGptGuide, claudeGuide, claudeProjectsGuide, geminiGuide, copilotGuide, metaAiGuide, grokGuide, deepSeekGuide, kimiGuide, manusGuide, mistralGuide, promptGuide, aiBrowserGuide, aiConnectionsGuide, aiSkillsGuide, aiSearchGuide, ...modelSeriesGuides, ...researchGuideSeries, ...newGuidePages, brandBrainGuide] as const;
 
 // Every public recommendation points to a currently approved guide. Review pages
 // retain their own draft recommendations until their individual editorial pass.
@@ -1198,6 +1199,7 @@ export const approvedRelatedSelections: Record<string, readonly [string, string,
   "ai-job-interview-practice": ["is-ai-coming-for-my-job", "ai-quit-or-stay-decision", "ai-skills-worth-learning-for-work"],
   "launch-your-product-in-30-days": ["test-business-idea-with-ai", "marketing-emails-that-sell", "chatgpt-customer-research-with-evidence"],
   "marketing-emails-that-sell": ["launch-your-product-in-30-days", "test-business-idea-with-ai", "stop-ai-agreeing-with-you"],
+  "brand-brain-guide": ["claude-projects", "teach-claude-a-repeatable-workflow", "marketing-emails-that-sell"],
 };
 
 export function getGuidePage(slug: string): GuidePage | undefined {

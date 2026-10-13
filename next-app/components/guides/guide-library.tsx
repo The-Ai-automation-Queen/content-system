@@ -26,6 +26,8 @@ const outcomeDescriptions: Record<GuideOutcome, string> = {
 };
 
 const foundationSlugs = ["what-is-ai", "ai-jargon-guide"];
+// Step-by-step build guides in the card format, shown first. Add new ones here.
+const buildGuideSlugs = ["brand-brain-guide"];
 
 function scrollToLibrary() {
   window.requestAnimationFrame(() => {
@@ -54,6 +56,9 @@ export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: G
 
   const featured = listedGuides.find((guide) => guide.slug === "what-should-you-never-share-with-ai") ?? listedGuides[0];
   const foundations = foundationSlugs
+    .map((slug) => listedGuides.find((guide) => guide.slug === slug))
+    .filter((guide): guide is Guide => Boolean(guide));
+  const buildGuides = buildGuideSlugs
     .map((slug) => listedGuides.find((guide) => guide.slug === slug))
     .filter((guide): guide is Guide => Boolean(guide));
   const availableOutcomes = guideOutcomes.filter((item) =>
@@ -132,6 +137,21 @@ export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: G
           </div>
         )}
       </section>
+
+      {buildGuides.length > 0 && (
+        <section className="library build-guides" aria-labelledby="build-title">
+          <div className="library__head">
+            <div>
+              <p className="eyebrow">New · Build it with Claude</p>
+              <h2 id="build-title">Step-by-step builds.</h2>
+              <p>Follow the steps, copy the prompts and finish with something you keep using.</p>
+            </div>
+          </div>
+          <div className="guide-grid">
+            {buildGuides.map((guide) => <GuideCard key={guide.slug} guide={guide} reviewMode={reviewMode} />)}
+          </div>
+        </section>
+      )}
 
       <section className="outcome-nav" aria-labelledby="outcome-title">
         <div className="outcome-nav__head">

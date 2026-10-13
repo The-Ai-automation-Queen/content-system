@@ -18,6 +18,7 @@ const pageSource = [
   read("next-app/content/guide-batch-26-35-pages.ts"),
   read("next-app/content/claude-series.ts"),
   read("next-app/content/instagram-dashboard-guide.ts"),
+  read("next-app/content/brand-brain-guide.ts"),
   modelSeriesSource,
   researchSeriesSource,
 ].join("\n");

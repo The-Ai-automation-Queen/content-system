@@ -282,6 +282,12 @@
       "pattern": "walkthrough",
       "status": "approved",
       "component": "batch-guide-page"
+    },
+    {
+      "slug": "brand-brain-guide",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "brand-brain-page"
     }
   ]
 }

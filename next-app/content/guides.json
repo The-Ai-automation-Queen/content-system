@@ -2140,6 +2140,35 @@
       "summary": "Write to one person, make the subject line say what's inside, and let a real customer's words do the persuading.",
       "sequence": 212,
       "access": "free"
+    },
+    {
+      "slug": "brand-brain-guide",
+      "title": "Build Your Brand Brain in Claude in 5 Steps",
+      "h1": "The Brand Brain Guide: build yours in Claude in 5 steps",
+      "datePublished": "2026-10-13",
+      "dateModified": "2026-10-13",
+      "readMinutes": 30,
+      "cover": "/images/guides/brand-brain-guide.webp",
+      "track": "setup",
+      "status": "live",
+      "reviewStatus": "published",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "Business operations",
+      "outcomes": [
+        "Create content",
+        "Run business operations"
+      ],
+      "tags": [
+        "Claude",
+        "Claude Projects",
+        "brand voice",
+        "brand kit",
+        "small business"
+      ],
+      "summary": "One Claude project with your brand kit, voice rules and Brand DNA, so ads, pages, posts and emails come back on brand.",
+      "sequence": 213,
+      "access": "free"
     }
   ]
 }

@@ -15,6 +15,7 @@ import { MetaMusePage } from "@/components/guides/meta-muse-page";
 import { MistralMultilingualPage } from "@/components/guides/mistral-multilingual-page";
 import { GuideAccessBoundary } from "@/components/guides/guide-access-boundary";
 import { BatchGuidePage } from "@/components/guides/batch-guide-page";
+import { BrandBrainPage } from "@/components/guides/brand-brain-page";
 import { batchOneGuides } from "@/content/guide-batch-one";
 import { getGuidePage, guidePages } from "@/content/guide-page";
 import { legacyGuideSlugs } from "@/content/legacy-guide-slugs";
@@ -95,6 +96,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "ai-job-interview-practice") return <BatchGuidePage guide={guide} />;
   if (slug === "launch-your-product-in-30-days") return <BatchGuidePage guide={guide} />;
   if (slug === "marketing-emails-that-sell") return <BatchGuidePage guide={guide} />;
+  if (slug === "brand-brain-guide") return <BrandBrainPage guide={guide} />;
   if (legacyGuideSlugs.has(slug)) return <GuideReadingPage guide={guide} />;
   throw new Error(`Guide ${slug} needs an approved interactive Next.js composition before it can be built.`);
 }

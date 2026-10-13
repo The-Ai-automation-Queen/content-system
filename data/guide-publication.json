@@ -249,6 +249,12 @@
       "lumailTag": "guide-marketing-emails-that-sell",
       "section": "Business operations",
       "journeyOrder": 212
+    },
+    {
+      "slug": "brand-brain-guide",
+      "lumailTag": "guide-brand-brain",
+      "section": "Business operations",
+      "journeyOrder": 213
     }
   ],
   "retired": [
@@ -398,5 +404,5 @@
       "journeyOrder": 123
     }
   ],
-  "approvalNote": "Owner approved guides 11 to 35 and the removal of the old Mistral, DeepSeek project, DeepSeek editing, Meta AI and Kimi guides on 2026-09-28. Pending and parked guides remain excluded. On 2026-09-29 the owner parked the four Grok guides and the two DeepSeek guides (fix-deepseek-wall-of-text, test-deepseek-v4-document-work)."
+  "approvalNote": "Owner approved guides 11 to 35 and the removal of the old Mistral, DeepSeek project, DeepSeek editing, Meta AI and Kimi guides on 2026-09-28. Pending and parked guides remain excluded. On 2026-09-29 the owner parked the four Grok guides and the two DeepSeek guides (fix-deepseek-wall-of-text, test-deepseek-v4-document-work). On 2026-10-13 the owner supplied and approved the Brand Brain guide copy, the card layout and an email gate after Step 1."
 }
