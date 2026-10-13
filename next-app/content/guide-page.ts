@@ -7,7 +7,7 @@ import { modelSeriesGuides } from "./model-guide-series";
 import { researchGuideSeries } from "./research-guide-series";
 import { newGuidePages } from "./guide-batch-26-35-pages";
 import { batchOneGuides } from "./guide-batch-one";
-import { brandBrainGuide } from "./brand-brain-guide";
+import { cardGuidePages } from "./card-guides";
 
 export type GuideStep = {
   title: string;
@@ -1152,7 +1152,7 @@ Notes:
   ],
 } as const satisfies GuidePage;
 
-export const guidePages = [instagramDashboardGuide, whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide, whichAiToolGuide, chatGptGuide, claudeGuide, claudeProjectsGuide, geminiGuide, copilotGuide, metaAiGuide, grokGuide, deepSeekGuide, kimiGuide, manusGuide, mistralGuide, promptGuide, aiBrowserGuide, aiConnectionsGuide, aiSkillsGuide, aiSearchGuide, ...modelSeriesGuides, ...researchGuideSeries, ...newGuidePages, brandBrainGuide] as const;
+export const guidePages = [instagramDashboardGuide, whatIsAiGuide, aiJargonGuidePage, whatIsAgenticGuide, whatNotToShareWithAiGuide, whichAiToolGuide, chatGptGuide, claudeGuide, claudeProjectsGuide, geminiGuide, copilotGuide, metaAiGuide, grokGuide, deepSeekGuide, kimiGuide, manusGuide, mistralGuide, promptGuide, aiBrowserGuide, aiConnectionsGuide, aiSkillsGuide, aiSearchGuide, ...modelSeriesGuides, ...researchGuideSeries, ...newGuidePages, ...cardGuidePages] as const;
 
 // Every public recommendation points to a currently approved guide. Review pages
 // retain their own draft recommendations until their individual editorial pass.
