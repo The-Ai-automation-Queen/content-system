@@ -66,15 +66,15 @@ export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: G
       <section className="guides-hero" aria-labelledby="guides-title">
         <div className="guides-hero__copy">
           <p className="eyebrow">Free AI guides for business owners</p>
-          <h1 id="guides-title">Use AI for real work. Keep the decisions that need <em>you.</em></h1>
-          <p>Find your question below. Every guide gives you the steps to follow and the prompts to copy.</p>
+          <h1 id="guides-title">Learn to use AI in your business, <em>step by step.</em></h1>
+          <p>Pick a guide. Follow the steps one by one. Copy the prompts into ChatGPT or Claude.</p>
           <form className="hero-search" role="search" onSubmit={submitSearch}>
-            <label htmlFor="guide-search">Looking for something specific?</label>
+            <label htmlFor="guide-search" className="visually-hidden">Search the guides</label>
             <span className="hero-search__field">
-              <input id="guide-search" name="guide-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Try proposal, client data or Gemini" autoComplete="off" />
-              <button type="submit">Search guides</button>
+              <input id="guide-search" name="guide-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search: proposal, client data, Gemini" autoComplete="off" />
+              <button type="submit">Search</button>
             </span>
-            <span className="hero-search__status" role="status" aria-live="polite">{searching ? `${results.length} matching ${results.length === 1 ? "guide" : "guides"}` : "Search titles, topics and guide instructions."}</span>
+            <span className="hero-search__status" role="status" aria-live="polite">{searching ? `${results.length} matching ${results.length === 1 ? "guide" : "guides"}` : ""}</span>
           </form>
         </div>
         {startHere && (
