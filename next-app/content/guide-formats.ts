@@ -33,4 +33,5 @@ export const guideFormats: Record<string, LearningFormat> = {
   "launch-your-product-in-30-days": "walkthrough",
   "marketing-emails-that-sell": "walkthrough",
   "brand-brain-guide": "walkthrough",
+  "start-using-ai-in-your-business": "walkthrough",
 };

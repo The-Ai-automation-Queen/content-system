@@ -96,7 +96,7 @@ ol.list { list-style: decimal; }
 .relatedGrid > a:nth-child(2) figure { transform: rotate(1.2deg); }
 .relatedGrid > a:hover figure, .relatedGrid > a:focus-visible figure { transform: translateY(-4px); }
 .relatedGrid img { object-fit: cover; }
-.relatedGrid h3 { margin: 18px 0 8px; font: italic 900 21px/1.2 var(--font-display), Georgia, serif; }
+.relatedGrid h3 { margin: 18px 0 8px; font: 700 21px/1.2 var(--font-display), Georgia, serif; }
 .relatedGrid p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.45; }
 
 @media (max-width: 760px) {

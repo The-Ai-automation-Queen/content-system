@@ -1,6 +1,33 @@
 {
   "guides": [
     {
+      "slug": "start-using-ai-in-your-business",
+      "title": "How to Start Using AI in Your Business When You Don't Know Where to Begin",
+      "h1": "How to Start Using AI in Your Business When You Don't Know Where to Begin",
+      "datePublished": "2026-10-13",
+      "dateModified": "2026-10-13",
+      "readMinutes": 15,
+      "cover": "/images/guides/start-using-ai-in-your-business.webp",
+      "track": "understand",
+      "status": "live",
+      "reviewStatus": "published",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "AI essentials",
+      "outcomes": [
+        "Understand AI"
+      ],
+      "tags": [
+        "what is AI",
+        "AI basics",
+        "first AI task",
+        "AI assistant"
+      ],
+      "summary": "Pick one task, open one tool, and get it done today.",
+      "sequence": 105,
+      "access": "free"
+    },
+    {
       "slug": "ai-essentials",
       "title": "Start using AI without learning everything",
       "h1": "Start using AI without learning everything",

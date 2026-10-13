@@ -282,6 +282,12 @@
       "pattern": "walkthrough",
       "status": "approved",
       "component": "card-guide-page"
+    },
+    {
+      "slug": "start-using-ai-in-your-business",
+      "pattern": "walkthrough",
+      "status": "approved",
+      "component": "card-guide-page"
     }
   ]
 }

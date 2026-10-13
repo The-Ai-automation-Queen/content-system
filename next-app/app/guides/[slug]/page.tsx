@@ -95,6 +95,7 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   if (slug === "ai-job-interview-practice") return <CardGuidePage guide={guide} />;
   if (slug === "launch-your-product-in-30-days") return <CardGuidePage guide={guide} />;
   if (slug === "marketing-emails-that-sell") return <CardGuidePage guide={guide} />;
+  if (slug === "start-using-ai-in-your-business") return <CardGuidePage guide={guide} />;
   if (slug === "brand-brain-guide") return <CardGuidePage guide={guide} />;
   // Retired into brand-brain-guide; still built (noindex) so the redirect source compiles.
   if (slug === "claude-projects") return <CardGuidePage guide={guide} />;

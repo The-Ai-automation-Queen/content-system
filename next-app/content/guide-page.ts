@@ -7,6 +7,7 @@ import { modelSeriesGuides } from "./model-guide-series";
 import { researchGuideSeries } from "./research-guide-series";
 import { newGuidePages } from "./guide-batch-26-35-pages";
 import { batchOneGuides } from "./guide-batch-one";
+import { guideTitles } from "./guide-titles";
 import { cardGuidePages } from "./card-guides";
 
 export type GuideStep = {
@@ -1191,6 +1192,7 @@ export const approvedRelatedSelections: Record<string, readonly [string, string,
   "weekend-projects-with-claude": ["what-is-ai", "test-meta-muse-money-saving-task", "make-work-tracker-with-kimi"],
   "launch-your-product-in-30-days": ["test-business-idea-with-ai", "marketing-emails-that-sell", "chatgpt-customer-research-with-evidence"],
   "marketing-emails-that-sell": ["launch-your-product-in-30-days", "test-business-idea-with-ai", "stop-ai-agreeing-with-you"],
+  "start-using-ai-in-your-business": ["what-is-ai", "what-should-you-never-share-with-ai", "catch-ai-making-things-up"],
   "brand-brain-guide": ["stop-chatgpt-forgetting-context", "teach-claude-a-repeatable-workflow", "marketing-emails-that-sell"],
 };
 
@@ -1203,7 +1205,8 @@ export function getGuidePage(slug: string): GuidePage | undefined {
     const target = guidePages.find((item) => item.slug === targetSlug) as GuidePage | undefined;
     if (!target) throw new Error(`Unknown related guide: ${targetSlug}`);
     const batch = batchOneGuides[target.slug];
-    return { slug: target.slug, title: batch?.title ?? target.title, reason: batch?.hero.line ?? target.promise, cover: target.cover };
+    const named = guideTitles[target.slug];
+    return { slug: target.slug, title: named?.title ?? batch?.title ?? target.title, reason: named?.subtitle ?? batch?.hero.line ?? target.promise, cover: target.cover };
   }) as [GuideRelated, GuideRelated, GuideRelated];
   return { ...guide, related };
 }

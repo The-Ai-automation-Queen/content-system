@@ -7,14 +7,14 @@ import type { Guide } from "@/content/guides";
 // The library follows a business owner's journey: each stage is a question they
 // already have, in the order they usually have it. Every approved guide sits in one stage.
 const journey = [
-  { id: "new-to-ai", label: "I'm new to AI", heading: "I'm new to AI. Where do I start?", intro: "Start here if you have barely used AI. Plain words, one first task, nothing to install.", slugs: ["what-is-ai", "ai-jargon-guide", "what-is-a-prompt", "ai-skills-worth-learning-for-work"] },
+  { id: "new-to-ai", label: "I'm new to AI", heading: "I'm new to AI. Where do I start?", intro: "Start here if you have barely used AI. Plain words, one first task, nothing to install.", slugs: ["start-using-ai-in-your-business", "what-is-ai", "ai-jargon-guide", "what-is-a-prompt", "ai-skills-worth-learning-for-work"] },
   { id: "safe", label: "Is it safe?", heading: "Is it safe? Can I trust what it says?", intro: "What you can share with AI, what you can't, and how to check its answers before a client sees them.", slugs: ["what-should-you-never-share-with-ai", "catch-ai-making-things-up", "connect-ai-to-email-files-calendar", "stop-ai-agreeing-with-you"] },
   { id: "tools", label: "Pick and set up my tools", heading: "Which tool should I use, and how do I set it up?", intro: "Choose one tool, then set it up so it knows your business and stops wasting your time.", slugs: ["which-ai-tool-for-what", "brand-brain-guide", "stop-chatgpt-forgetting-context", "make-chatgpt-answers-shorter", "claude", "gemini-cannot-find-drive-file", "gemini-google-tasks-limits", "what-is-an-ai-browser"] },
   { id: "grow", label: "Get clients and grow", heading: "How do I use AI to get clients and grow?", intro: "Get found, understand what your clients want, test ideas and sell without sounding like a robot.", slugs: ["show-up-in-ai-search", "chatgpt-customer-research-with-evidence", "test-business-idea-with-ai", "marketing-emails-that-sell", "launch-your-product-in-30-days", "instagram-content-dashboard"] },
   { id: "save-time", label: "Save time on repeat work", heading: "How do I get AI to do the work I repeat?", intro: "Hand over weekly tasks, write down how you work, and decide if you need an agent at all.", slugs: ["chatgpt-scheduled-tasks", "teach-claude-a-repeatable-workflow", "chatgpt-screen-recording-to-process-guide", "make-work-tracker-with-kimi", "weekend-projects-with-claude", "test-meta-muse-money-saving-task", "what-is-agentic"] },
 ] as const;
 
-const startHereSlug = "what-is-ai";
+const startHereSlug = "start-using-ai-in-your-business";
 
 function track(name: string, detail: Record<string, string>) {
   (window as Window & { slTrack?: (event: string, data?: Record<string, string>) => void }).slTrack?.(name, detail);

@@ -66,6 +66,149 @@ export type CardGuide = {
 
 export const cardGuides: readonly CardGuide[] = [
   {
+    // Owner-approved plan and title (13/10/2026); copy in docs/copy/guides/guide-01-start-using-ai-2026-10-13.md.
+    slug: "start-using-ai-in-your-business",
+    lumailTag: "guide-start-using-ai",
+    title: "How to Start Using AI in Your Business When You Don't Know Where to Begin",
+    cover: "/images/guides/start-using-ai-in-your-business.webp",
+    coverAlt: "The Shift & Lead mascot laying blocks across a gap to build a bridge, one block at a time.",
+    seoDescription: "Don't know where to start with AI? Pick one task, open one tool and finish it today. Step by step, with the prompts to copy.",
+    tool: "ChatGPT (free)",
+    minutes: 60,
+    h1: { title: "How to Start Using AI", accent: "in Your Business" },
+    hero: {
+      kind: "scene",
+      src: "/images/guides/start-using-ai-in-your-business.webp",
+      alt: "The Shift & Lead mascot laying blocks across a gap to build a bridge, one block at a time.",
+      line: "Pick one task, open one tool, and get it done today.",
+    },
+    intro: {
+      heading: "I keep hearing I should use AI. I don't know where to start.",
+      lead: "Start with one task you already do every week. Not ten tools. Not a course. One task, one tool. By the end of this guide you will have done that task with AI, checked it, and saved the prompt so next time takes two minutes.",
+      blocks: [
+        { kind: "p", text: "**Why it matters:** every week you wait, you keep doing work AI could draft for you, and the tools you already pay for sit unused." },
+        { kind: "h3", text: "What you end up with" },
+        { kind: "list", items: [
+          "One real task done with AI, checked by you",
+          "A prompt you can reuse every week",
+          "A list of your next 3 tasks to hand to AI",
+        ] },
+        { kind: "tip", text: "You need a free ChatGPT account. Every prompt in this guide can be copied and pasted. Replace the parts in [square brackets] with your own details." },
+      ],
+    },
+    openSteps: 2,
+    gate: {
+      heading: "Get the",
+      accent: "3 prompts.",
+      promise: "Enter your name and email. The rest of the guide opens straight away, and I'll email you the link so you can come back to it later.",
+      action: "Open the rest of the guide",
+    },
+    steps: [
+      { num: "01", title: "Open one tool", accent: "Just one.", blocks: [
+        { kind: "p", text: "You only need one AI tool to start. Use ChatGPT. If you already pay for Claude or Gemini, use that instead. Don't sign up for anything new today." },
+        { kind: "list", ordered: true, items: [
+          "Go to [chatgpt.com](https://chatgpt.com) and click **Sign up**. A free account is enough.",
+          "Once you're in, you see a box at the bottom of the screen where you type your message.",
+          "That box is where you paste every prompt in this guide. Press **Enter** to send.",
+        ] },
+        { kind: "tip", text: "**What AI is, in one line:** a tool that writes a first draft from what you give it. The more you give it, the better the draft. You always check it before you use it." },
+      ] },
+      { num: "02", title: "Pick your one task", accent: "The one that annoys you most.", blocks: [
+        { kind: "p", text: "Pick a task you do every week. It should take you 15 to 60 minutes, and you should be able to tell if the result is good. Use this table to find it." },
+        { kind: "table", head: ["If this annoys you", "Your first task"], rows: [
+          ["Emails sit in your inbox because they need a careful reply", "Reply to one client email"],
+          ["You finish a call and the follow-up takes forever", "Write the follow-up email after a call"],
+          ["Proposals take you a whole evening", "Draft one proposal from your call notes"],
+          ["You answer the same questions again and again", "Write answers to your 5 most common questions"],
+          ["You never know what to post", "Turn one client question into a post"],
+          ["Long documents pile up unread", "Get the 3 key points from one document"],
+        ] },
+        { kind: "honest", text: "**Don't pick** anything with passwords, bank details or private client information. Remove names before you paste anything. The guide [Is It Safe to Put Client Information Into ChatGPT?](/guides/what-should-you-never-share-with-ai/) shows you how." },
+        { kind: "example", label: "Example task", text: "Writing the follow-up email after a discovery call." },
+        { kind: "result", label: "What a good result looks like", lines: ["A short email that thanks the client, repeats what they need in their own words, says what you'll send and when, and asks one clear question. Under 150 words. Ready for you to check and send."] },
+      ] },
+      { num: "03", title: "Give AI the task", accent: "Tell it everything.", blocks: [
+        { kind: "p", text: "AI doesn't know your business. Tell it who you are, what the task is, and what you want back. Copy this prompt, fill in the brackets, and paste your material at the end." },
+        { kind: "prompt", label: "Your first task", text: `I run [what your business does] for [who your clients are].
+
+My task: [the task, for example: write the follow-up email after a discovery call].
+
+What I want back: [format and length, for example: one email under 150 words].
+
+Rules:
+- Use only the information I give you below.
+- If something is missing, write [CHECK] instead of guessing.
+- Write in plain, friendly English.
+
+Here is my material:
+[paste your notes, the email, or the document, with names removed]` },
+        { kind: "p", text: "**What you see next:** a first draft, usually in a few seconds. It won't be perfect. That's normal. Step 04 shows you what to check." },
+      ] },
+      { num: "04", title: "Check it", accent: "Two minutes.", blocks: [
+        { kind: "p", text: "Read the draft once, slowly. Check these 4 things before you use it." },
+        { kind: "list", ordered: true, items: [
+          "**Names, numbers and dates.** Is every one of them in your notes? If not, fix it or delete it.",
+          "**Promises.** Did it promise anything you didn't agree to? Delete it.",
+          "**[CHECK] marks.** Fill in every one yourself.",
+          "**Does it sound like you?** Would you send this with your name on it?",
+        ] },
+        { kind: "tip", text: "For a deeper check, see [How to Check if ChatGPT Is Wrong Before You Send It to a Client](/guides/catch-ai-making-things-up/)." },
+      ] },
+      { num: "05", title: "Fix it, don't start again", accent: "One line at a time.", blocks: [
+        { kind: "p", text: "If one part is wrong, don't start a new chat. Tell it exactly what to change, in the same chat." },
+        { kind: "prompt", label: "Fix one part", text: `Change this part: [paste the line].
+Why it's wrong: [what's actually true].
+Keep everything else the same.` },
+        { kind: "p", text: "Do this as many times as you need. Then copy the final version and use it." },
+      ] },
+      { num: "06", title: "Save it", accent: "So next time takes two minutes.", blocks: [
+        { kind: "p", text: "You'll do this task again next week. Save the prompt so you don't start from zero." },
+        { kind: "list", ordered: true, items: [
+          "Copy your filled-in prompt from step 03, without the material at the end.",
+          "Paste it into your notes app. Give it a name, for example **Follow-up email prompt**.",
+          "Next week: copy it, paste it into ChatGPT, add the new material, send.",
+        ] },
+        { kind: "tip", text: "Tired of pasting it every time? [How to Stop Explaining My Business to ChatGPT Every Time](/guides/stop-chatgpt-forgetting-context/) shows you how to save it inside ChatGPT." },
+      ] },
+      { num: "07", title: "Find your next 3 tasks", accent: "Let AI interview you.", blocks: [
+        { kind: "p", text: "You've done one task. Now find the next ones. This prompt asks you questions about your week, then gives you a list." },
+        { kind: "prompt", label: "Find my next 3 tasks", text: `I run [what your business does] for [who your clients are].
+
+Ask me 5 questions about how I spend my working week. Ask one question at a time and wait for my answer.
+
+Then give me a list of the 3 tasks AI could help with first. For each task:
+- what AI would do
+- what I would still do myself
+- how risky it is if AI gets it wrong (low, medium or high)
+
+Start with the low-risk tasks.` },
+        { kind: "p", text: "**What you get:** your next 3 tasks, in order, with what stays with you. Do one per week, using steps 03 to 06." },
+        { kind: "honest", text: "**The honest part:** AI won't run your business, and it won't know your clients the way you do. It drafts. You check, decide and send. That is why it works." },
+      ] },
+      { num: "✓", title: "You're done when", accent: "Tick all four.", blocks: [
+        { kind: "checklist", items: [
+          "You did one real task with AI",
+          "You checked it with the 4 checks in step 04",
+          "Your prompt is saved in your notes",
+          "You have your next 3 tasks",
+        ] },
+      ] },
+    ],
+    cta: {
+      eyebrow: "Free AI guides",
+      heading: "One task done.",
+      accent: "Pick the next one.",
+      body: "Every guide in the library answers one question and gives you the steps and prompts to copy. Pick the next one from your list in step 07.",
+      label: "Browse the free guides →",
+      href: "/guides/",
+    },
+    conclusion: {
+      heading: "One task a week",
+      paragraph: "Do one task per week with the same four steps: give it the task, check it, fix one part at a time, save the prompt.",
+      finishLine: "Small and checked beats big and risky.",
+    },
+  },
+  {
     // Copy supplied and approved by the owner on 13/10/2026.
     slug: "brand-brain-guide",
     lumailTag: "guide-brand-brain",
