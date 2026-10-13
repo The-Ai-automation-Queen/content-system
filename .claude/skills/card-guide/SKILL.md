@@ -12,6 +12,12 @@ Merging publishes it (Vercel serves `main-site/`). Never merge it yourself.
 Reference guide: `brand-brain-guide` in `next-app/content/card-guides.ts`.
 Layout: `next-app/components/guides/card-guide-page.tsx`. Copy its shape.
 
+Older guides (the `guide-batch-*.ts` files) render through the same layout:
+`next-app/content/batch-to-card.ts` converts them on the fly. Edit their copy in
+the batch files; do not move them into `card-guides.ts`. New guides go in
+`card-guides.ts`. Journey order (5 stages) lives in `journeyOrder` in
+`data/guide-publication.json` and `sequence` in `guides.json` (stage*100 + position*10).
+
 ## 0. Before you start
 
 - Read `AGENTS.md` and `CURRENT-WORKFLOW.md` (guide and CTA rules).

@@ -164,8 +164,8 @@ if (!guideAccessSource.includes('fetch("/api/guide-capture"') ||
     !["firstName", "email", "marketingConsent"].every((field) => guideAccessSource.includes(`name="${field}"`))) {
   failures.push("The inline guide gate must unlock content after Lumail success and collect first name, email and optional marketing consent.");
 }
-if (!guideRouteSource.includes('if (slug === "instagram-content-dashboard") return <BatchGuidePage guide={guide} />;')) {
-  failures.push("The Instagram guide must use the shared batch guide design.");
+if (!guideRouteSource.includes('if (slug === "instagram-content-dashboard") return <CardGuidePage guide={guide} />;')) {
+  failures.push("The Instagram guide must use the shared card guide design.");
 }
 if (!guideRouteSource.includes("legacyGuideSlugs.has(slug)") ||
     !guideRouteSource.includes("needs an approved interactive Next.js composition") ||

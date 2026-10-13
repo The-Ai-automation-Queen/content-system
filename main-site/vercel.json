@@ -75,8 +75,8 @@
     },
     {
       "source": "/guides/copilot.html",
-      "destination": "/guides/check-copilot-excel-edits/",
-      "permanent": true
+      "destination": "/guides/",
+      "permanent": false
     },
     {
       "source": "/guides/grok.html",
@@ -180,8 +180,8 @@
     },
     {
       "source": "/guides/check-copilot-excel-edits.html",
-      "destination": "/guides/check-copilot-excel-edits/",
-      "permanent": true
+      "destination": "/guides/",
+      "permanent": false
     },
     {
       "source": "/guides/review-grok-suggestions.html",
@@ -440,6 +440,106 @@
     },
     {
       "source": "/guides/test-deepseek-v4-document-work.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/manus-browser-workflow",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/manus-browser-workflow/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/manus-browser-workflow.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/check-copilot-excel-edits",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/check-copilot-excel-edits/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/what-can-copilot-see-at-work",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/what-can-copilot-see-at-work/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/what-can-copilot-see-at-work.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/ai-quit-or-stay-decision",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/ai-quit-or-stay-decision/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/ai-quit-or-stay-decision.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/is-ai-coming-for-my-job",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/is-ai-coming-for-my-job/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/is-ai-coming-for-my-job.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/ai-job-interview-practice",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/ai-job-interview-practice/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/ai-job-interview-practice.html",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/money-plan-with-ai",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/money-plan-with-ai/",
+      "destination": "/guides/",
+      "permanent": false
+    },
+    {
+      "source": "/guides/money-plan-with-ai.html",
       "destination": "/guides/",
       "permanent": false
     }

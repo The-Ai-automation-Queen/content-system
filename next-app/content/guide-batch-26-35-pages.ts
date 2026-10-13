@@ -123,7 +123,7 @@ export const newGuidePages: readonly GuidePage[] = [
   },
   {
     slug: "marketing-emails-that-sell",
-    title: "3 Email Rules That Make People Click Buy",
+    title: "Write Sales Emails That Sound Like You, in 3 Rules",
     promise: "Write to one person, make the subject line say what's inside, and let a real customer's words do the persuading.",
     cover: "/images/guides/marketing-emails-that-sell.webp",
     coverAlt: "The blue robot mascot sending envelopes through a line of brass pipes",

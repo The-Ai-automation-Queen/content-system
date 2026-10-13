@@ -6,11 +6,13 @@ import Link from "next/link";
 import { Fragment, useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
 import { getCardGuide, type CardBlock, type CardStep } from "@/content/card-guides";
+import { batchOneGuides } from "@/content/guide-batch-one";
+import { batchToCard } from "@/content/batch-to-card";
 import { cleanLabel } from "./guide-icon";
 import { GuideAccessBoundary } from "./guide-access-boundary";
 import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./card-guide-page.module.css";
-import hero from "./batch-guide-page.module.css";
+import batch from "./batch-guide-page.module.css";
 
 // Inline marks: **bold**, *italic*, [label](href).
 function Rich({ value }: { value: string }) {
@@ -62,6 +64,37 @@ function Block({ block }: { block: CardBlock }) {
     </table></div>;
     case "requests": return <ul className={styles.requests}>{block.items.map((item) => <li key={item.want}><strong>{item.want}</strong><Prompt text={item.prompt} label={item.want} /></li>)}</ul>;
     case "checklist": return <ul className={styles.checklist}>{block.items.map((item) => <li key={item}><label><input type="checkbox" /> {item}</label></li>)}</ul>;
+    case "fields": return <dl className={batch.fields}>{block.items.map((item) => <div key={item.label}><dt>{item.label}:</dt> <dd><Rich value={item.text} /></dd></div>)}</dl>;
+    case "papers": return <div className={batch.papers}>
+      <div className={`${batch.paper} ${batch.paperLeft}`}><small>{block.left.label}</small><p><Rich value={block.left.text} /></p></div>
+      <span className={batch.arrow} aria-hidden="true">→</span>
+      <div className={`${batch.paper} ${batch.paperRight}`}><small>{block.right.label}</small>{block.right.lines.map((line) => <p key={line}><Rich value={line} /></p>)}</div>
+    </div>;
+    case "example": return <div className={`${batch.paper} ${batch.paperSolo}`}><small>{block.label}</small><p><Rich value={block.text} /></p></div>;
+    case "result": return <div className={`${batch.paper} ${batch.paperRight}`}><small>{block.label}</small>{block.lines.map((line) => <p key={line}><Rich value={line} /></p>)}</div>;
+    case "contrast": return <div className={batch.contrast} data-count={block.items.length}>{block.items.map((item) => <div key={item.label} className={item.good ? batch.good : undefined}><small>{item.label}</small><p><Rich value={item.text} /></p>{item.note && <span><Rich value={item.note} /></span>}</div>)}</div>;
+    case "shot": return <figure className={batch.shot}>
+      <a href={block.src} target="_blank" rel="noopener noreferrer" aria-label={`Open the screenshot full size: ${block.alt}`}>
+        <img src={block.src} alt={block.alt} width={block.width} height={block.height} loading="lazy" style={{ maxWidth: `min(100%, ${block.width}px)` }} />
+      </a>
+      <figcaption>{block.caption}</figcaption>
+    </figure>;
+    case "image": return <figure className={batch.illustration}><div><GuideImage src={block.src} alt={block.alt} fill sizes="(max-width: 760px) 100vw, 720px" /></div><figcaption>{block.caption}</figcaption></figure>;
+    case "teaser": return <a className={batch.teaser} href="#unlock">
+      <span className={batch.teaserTitle}>{block.label}</span>
+      <span className={batch.teaserCopy}>Copy the prompt ↓</span>
+      {block.preview && <span className={batch.teaserText} aria-hidden="true">{block.preview}</span>}
+    </a>;
+    case "pass": return <p className={batch.pass}><Rich value={block.text} /></p>;
+    case "checks": return <div className={batch.checks}><h3>{block.title}</h3>{block.ordered
+      ? <ol>{block.items.map((item) => <li key={item}>{item}</li>)}</ol>
+      : <ul>{block.items.map((item) => <li key={item}>{item}</li>)}</ul>}</div>;
+    case "paths": return <div className={batch.paths}>
+      <h3>{block.title}</h3>
+      {block.intro && <p>{block.intro}</p>}
+      <dl>{block.items.map((item) => <div key={item.tool}><dt>{item.tool}</dt><dd><Rich value={item.text} /> <a href={item.href} target="_blank" rel="noopener noreferrer">Official page ↗</a></dd></div>)}</dl>
+      {block.note && <p>{block.note}</p>}
+    </div>;
   }
 }
 
@@ -76,7 +109,8 @@ function Step({ step, id }: { step: CardStep; id: string }) {
 }
 
 export function CardGuidePage({ guide }: { guide: GuidePage }) {
-  const card = getCardGuide(guide.slug);
+  const legacy = batchOneGuides[guide.slug];
+  const card = getCardGuide(guide.slug) ?? (legacy ? batchToCard(legacy) : undefined);
   if (!card) return null;
   const open = card.steps.slice(0, card.openSteps);
   const gated = card.steps.slice(card.openSteps);
@@ -84,22 +118,22 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
   const stepId = (index: number) => `${card.slug}-step-${index + 1}`;
 
   const titleBlock = <>
-    <p className={card.hero ? hero.eyebrow : styles.eyebrow}><span aria-hidden="true">✦</span>Free guide · {card.tool} · {card.minutes} minutes</p>
+    <p className={card.hero ? batch.eyebrow : styles.eyebrow}><span aria-hidden="true">✦</span>Free guide · {card.tool} · {card.minutes} minutes</p>
     <h1>{card.h1.title} <em>{card.h1.accent}</em></h1>
   </>;
 
   return <main className={styles.page}>
-    {card.hero && <header className={hero.hero}>
-      <div className={hero.heroInner}>
-        <div className={hero.heroText}>
-          <Link className={hero.back} href="/guides/">← All guides</Link>
+    {card.hero && <header className={batch.hero}>
+      <div className={batch.heroInner}>
+        <div className={batch.heroText}>
+          <Link className={batch.back} href="/guides/">← All guides</Link>
           {titleBlock}
-          <p className={hero.heroLine}>{card.hero.line}</p>
-          <a className={hero.heroButton} href={`#${card.slug}-intro`}>Start the guide ↓</a>
+          <p className={batch.heroLine}>{card.hero.line}</p>
+          <a className={batch.heroButton} href={`#${card.slug}-intro`}>Start the guide ↓</a>
         </div>
         {card.hero.kind === "pose"
-          ? <div className={hero.heroPose}><span className={hero.dot} aria-hidden="true" /><Image src={card.hero.src} alt={card.hero.alt} width={760} height={760} priority sizes="(max-width: 760px) 360px, 560px" /></div>
-          : <div className={hero.heroScene}><div><GuideImage src={card.hero.src} alt={card.hero.alt} fill priority sizes="(max-width: 760px) 100vw, 600px" /></div></div>}
+          ? <div className={batch.heroPose}><span className={batch.dot} aria-hidden="true" /><Image src={card.hero.src} alt={card.hero.alt} width={760} height={760} priority sizes="(max-width: 760px) 360px, 560px" /></div>
+          : <div className={batch.heroScene}><div><GuideImage src={card.hero.src} alt={card.hero.alt} fill priority sizes="(max-width: 760px) 100vw, 600px" /></div></div>}
       </div>
     </header>}
     <div className={styles.column}>
@@ -123,7 +157,7 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
 
       {open.map((step, index) => <Step key={step.title} step={step} id={stepId(index)} />)}
 
-      <div className={styles.gateStage}>
+      <div className={styles.gateStage} id="unlock">
         {preview && <div className={styles.preview} aria-hidden="true">
           <section className={styles.card}>
             <div className={styles.sh}><span className={styles.tile}>{preview.num}</span><h2>{preview.title} <em>{preview.accent}</em></h2></div>
@@ -143,6 +177,11 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
           showWorkBridge={false}
         >
           {gated.map((step, index) => <Step key={step.title} step={step} id={stepId(card.openSteps + index)} />)}
+          {card.kit && <aside className={batch.kit} aria-labelledby={`${card.slug}-kit`}>
+            <span className={batch.kitLabel}>Next step · Kit · Coming soon</span>
+            <h2 id={`${card.slug}-kit`}>{card.kit.heading}</h2>
+            <p><Rich value={card.kit.body} /></p>
+          </aside>}
         </GuideAccessBoundary>
       </div>
 

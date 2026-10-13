@@ -15,7 +15,19 @@ export type CardBlock =
   | { kind: "prompt"; label: string; text: string }
   | { kind: "table"; head: readonly string[]; rows: readonly (readonly string[])[] }
   | { kind: "requests"; items: readonly { want: string; prompt: string }[] }
-  | { kind: "checklist"; items: readonly string[] };
+  | { kind: "checklist"; items: readonly string[] }
+  // Blocks used by guides converted from the earlier layout (batch-to-card.ts).
+  | { kind: "fields"; items: readonly { label: string; text: string }[] }
+  | { kind: "papers"; left: { label: string; text: string }; right: { label: string; lines: readonly string[] } }
+  | { kind: "example"; label: string; text: string }
+  | { kind: "result"; label: string; lines: readonly string[] }
+  | { kind: "contrast"; items: readonly { label: string; text: string; note?: string; good?: boolean }[] }
+  | { kind: "shot"; src: string; alt: string; caption: string; width: number; height: number }
+  | { kind: "image"; src: string; alt: string; caption: string }
+  | { kind: "teaser"; label: string; preview: string }
+  | { kind: "checks"; title: string; items: readonly string[]; ordered?: boolean }
+  | { kind: "paths"; title: string; intro?: string; items: readonly { tool: string; text: string; href: string }[]; note?: string }
+  | { kind: "pass"; text: string };
 
 export type CardStep = {
   /** Tile text, e.g. "01" or "✓". */
@@ -47,6 +59,8 @@ export type CardGuide = {
   gate: { heading: string; accent: string; promise: string; action: string };
   steps: readonly CardStep[];
   cta: { eyebrow: string; heading: string; accent: string; body: string; label: string; href: string };
+  /** Optional "Next step" card shown after the unlocked steps. */
+  kit?: { heading: string; body: string };
   conclusion: { heading: string; paragraph: string; finishLine: string };
 };
 
@@ -236,6 +250,15 @@ function toWalkthrough(block: CardBlock): WalkthroughBlock[] {
     case "prompt": return [{ kind: "code", label: block.label, text: block.text }];
     case "table": return [{ kind: "table", rows: [block.head, ...block.rows] }];
     case "requests": return [{ kind: "list", items: block.items.map((item) => `${item.want}: ${item.prompt}`) }];
+    case "fields": return [{ kind: "list", items: block.items.map((item) => `${item.label}: ${plain(item.text)}`) }];
+    case "papers": return [{ kind: "paragraph", text: plain(block.left.text) }, { kind: "list", items: block.right.lines.map(plain) }];
+    case "example": case "pass": return [{ kind: "paragraph", text: plain(block.text) }];
+    case "result": return [{ kind: "list", items: block.lines.map(plain) }];
+    case "contrast": return [{ kind: "list", items: block.items.map((item) => `${item.label}: ${plain(item.text)}`) }];
+    case "shot": case "image": return [{ kind: "paragraph", text: block.caption }];
+    case "teaser": return [{ kind: "paragraph", text: block.label }];
+    case "checks": return [{ kind: "list", items: block.items.map(plain) }];
+    case "paths": return [{ kind: "list", items: block.items.map((item) => `${item.tool}: ${plain(item.text)}`) }];
   }
 }
 

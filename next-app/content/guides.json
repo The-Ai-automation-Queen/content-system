@@ -233,7 +233,7 @@
         "connector"
       ],
       "summary": "Don't memorise a glossary. Run three 2-minute experiments and you'll never forget what these words mean.",
-      "sequence": 20,
+      "sequence": 120,
       "reviewStatus": "published"
     },
     {
@@ -294,7 +294,7 @@
         "Mistral"
       ],
       "summary": "Most people need one chat, plus the assistant already inside their work apps. Here's how to tell which.",
-      "sequence": 55,
+      "sequence": 210,
       "reviewStatus": "published"
     },
     {
@@ -323,7 +323,7 @@
         "email drafts"
       ],
       "summary": "Hand Claude three admin jobs this week: meeting notes into actions, answers from a long document, and rough points into an email. Prompts and a 30-second check.",
-      "sequence": 70,
+      "sequence": 240,
       "access": "free"
     },
     {
@@ -737,7 +737,7 @@
         "small business",
         "services page"
       ],
-      "sequence": 168
+      "sequence": 320
     },
     {
       "slug": "what-is-a-prompt",
@@ -767,7 +767,7 @@
         "instructions",
         "better AI answers"
       ],
-      "sequence": 30
+      "sequence": 150
     },
     {
       "slug": "check-ai-answers",
@@ -875,7 +875,7 @@
         "AI browsing",
         "browser memory"
       ],
-      "sequence": 46
+      "sequence": 290
     },
     {
       "slug": "connect-ai-to-email-files-calendar",
@@ -904,12 +904,12 @@
         "file permissions",
         "disconnect AI apps"
       ],
-      "sequence": 47
+      "sequence": 280
     },
     {
       "slug": "ai-skills-worth-learning-for-work",
-      "title": "3 AI Skills to Practise at Work This Week",
-      "h1": "3 AI Skills to Practise at Work This Week",
+      "title": "3 AI Habits That Make Every Tool Work Better",
+      "h1": "3 AI Habits That Make Every Tool Work Better",
       "summary": "Not tools, not tricks. Three habits that make your AI work better than your colleagues', whatever tool you use.",
       "datePublished": "2026-08-24",
       "dateModified": "2026-09-28",
@@ -934,7 +934,7 @@
         "checking AI",
         "human judgement"
       ],
-      "sequence": 48
+      "sequence": 170
     },
     {
       "slug": "what-is-agentic",
@@ -961,7 +961,7 @@
         "permissions",
         "human approval"
       ],
-      "sequence": 40,
+      "sequence": 550,
       "reviewStatus": "published"
     },
     {
@@ -988,7 +988,7 @@
         "data settings",
         "safe AI use"
       ],
-      "sequence": 45,
+      "sequence": 130,
       "reviewStatus": "published"
     },
     {
@@ -1014,7 +1014,7 @@
         "first AI task",
         "AI assistant"
       ],
-      "sequence": 10,
+      "sequence": 110,
       "reviewStatus": "published"
     },
     {
@@ -1042,7 +1042,7 @@
         "content dashboard"
       ],
       "summary": "Build a private dashboard for your own Instagram account and verify its numbers before choosing a content experiment.",
-      "sequence": 156,
+      "sequence": 330,
       "readerJob": "Build and verify an own-account Instagram content dashboard",
       "journey": [
         {
@@ -1085,7 +1085,7 @@
         "coding"
       ],
       "summary": "Save your instructions once in a Claude Project and turn every meeting's notes into decisions and actions.",
-      "sequence": 71,
+      "sequence": 250,
       "access": "free"
     },
     {
@@ -1112,7 +1112,7 @@
         "Custom Instructions"
       ],
       "summary": "Tell ChatGPT the parts you need and a word limit, then check the short answer is still true. One reusable prompt and a 4-point check.",
-      "sequence": 201
+      "sequence": 220
     },
     {
       "slug": "stop-chatgpt-forgetting-context",
@@ -1138,7 +1138,7 @@
         "context"
       ],
       "summary": "Put your brief in a ChatGPT Project once, then run a 2-chat test that proves it remembers.",
-      "sequence": 202
+      "sequence": 230
     },
     {
       "slug": "chatgpt-scheduled-tasks",
@@ -1166,7 +1166,7 @@
         "page alerts"
       ],
       "summary": "A Monday plan, a Friday news round-up, and one alert you actually want. Set them once and let them arrive.",
-      "sequence": 203
+      "sequence": 510
     },
     {
       "slug": "gemini-cannot-find-drive-file",
@@ -1194,7 +1194,7 @@
         "find a file"
       ],
       "summary": "Stop scrolling through folders. Name the file, ask the question, and get the answer with the line it came from.",
-      "sequence": 204
+      "sequence": 260
     },
     {
       "slug": "gemini-google-tasks-limits",
@@ -1221,7 +1221,7 @@
         "to-do list"
       ],
       "summary": "Empty your head, let Gemini do the typing, and check the list before anything is added.",
-      "sequence": 205
+      "sequence": 270
     },
     {
       "slug": "check-copilot-excel-edits",
@@ -1234,7 +1234,7 @@
       "track": "tools",
       "status": "live",
       "access": "free",
-      "reviewStatus": "published",
+      "reviewStatus": "parked",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Beginner",
       "hub": "AI tools",
@@ -1405,7 +1405,7 @@
         "team tracker"
       ],
       "summary": "Get AI to ask how your team works, build the file, and then test it with the mistakes real people make.",
-      "sequence": 212
+      "sequence": 540
     },
     {
       "slug": "test-manus-without-burning-credits",
@@ -1445,7 +1445,7 @@
       "track": "setup",
       "status": "live",
       "access": "free",
-      "reviewStatus": "published",
+      "reviewStatus": "parked",
       "formatLabel": "DECISION GUIDE",
       "level": "Intermediate",
       "hub": "AI agents",
@@ -1619,7 +1619,7 @@
         "screen recording"
       ],
       "summary": "Record one task, let ChatGPT draft only the steps it can see, then have someone new test them.",
-      "sequence": 219
+      "sequence": 530
     },
     {
       "slug": "chatgpt-customer-research-with-evidence",
@@ -1646,7 +1646,7 @@
         "evidence"
       ],
       "summary": "Clean the notes, find the patterns with proof, and leave with what to fix first.",
-      "sequence": 220
+      "sequence": 340
     },
     {
       "slug": "teach-claude-a-repeatable-workflow",
@@ -1673,7 +1673,7 @@
         "repeatable task"
       ],
       "summary": "Write a weekly task down once, test it on two weeks of notes, then save it in a Claude Project.",
-      "sequence": 221
+      "sequence": 520
     },
     {
       "slug": "fix-gemini-workspace-action",
@@ -1713,7 +1713,7 @@
       "track": "tools",
       "status": "live",
       "access": "free",
-      "reviewStatus": "published",
+      "reviewStatus": "parked",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Beginner",
       "hub": "AI tools",
@@ -1757,7 +1757,7 @@
         "Meta AI"
       ],
       "summary": "Find the subscriptions you forgot, see the real cost of a renewal, and send the message you've been putting off.",
-      "sequence": 224
+      "sequence": 560
     },
     {
       "slug": "test-grok-repeated-image-edits",
@@ -1892,7 +1892,7 @@
         "sycophancy"
       ],
       "summary": "Get honest feedback on your writing, a real stress test for your plans, and a standing rule that switches off the flattery.",
-      "sequence": 161,
+      "sequence": 160,
       "access": "free"
     },
     {
@@ -1920,7 +1920,7 @@
         "AI mistakes"
       ],
       "summary": "Three quick checks for the three places AI mistakes hide: numbers and names, sources, and the bits it's least sure of.",
-      "sequence": 45,
+      "sequence": 140,
       "access": "free"
     },
     {
@@ -1933,7 +1933,7 @@
       "cover": "/images/guides/ai-quit-or-stay-decision.webp",
       "track": "understand",
       "status": "live",
-      "reviewStatus": "published",
+      "reviewStatus": "parked",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Beginner",
       "hub": "AI essentials",
@@ -1960,7 +1960,7 @@
       "cover": "/images/guides/is-ai-coming-for-my-job.webp",
       "track": "understand",
       "status": "live",
-      "reviewStatus": "published",
+      "reviewStatus": "parked",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Beginner",
       "hub": "AI essentials",
@@ -1987,7 +1987,7 @@
       "cover": "/images/guides/ai-job-interview-practice.webp",
       "track": "understand",
       "status": "live",
-      "reviewStatus": "published",
+      "reviewStatus": "parked",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Beginner",
       "hub": "AI essentials",
@@ -2029,7 +2029,7 @@
         "no code"
       ],
       "summary": "Small tools for real life, each built from a single description. Nothing to install, and nothing private inside.",
-      "sequence": 73,
+      "sequence": 300,
       "access": "free"
     },
     {
@@ -2042,7 +2042,7 @@
       "cover": "/images/guides/money-plan-with-ai.webp",
       "track": "setup",
       "status": "live",
-      "reviewStatus": "published",
+      "reviewStatus": "parked",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Beginner",
       "hub": "Workflows and automation",
@@ -2083,7 +2083,7 @@
         "demand test"
       ],
       "summary": "Write the idea down in one paragraph, let five critics find the holes, and run a one-week test before you spend anything.",
-      "sequence": 210,
+      "sequence": 410,
       "access": "free"
     },
     {
@@ -2110,13 +2110,13 @@
         "planning"
       ],
       "summary": "Cut the product to its smallest useful version, plan 4 weeks backwards from launch day, and check every Friday what's blocking you.",
-      "sequence": 211,
+      "sequence": 420,
       "access": "free"
     },
     {
       "slug": "marketing-emails-that-sell",
-      "title": "3 Email Rules That Make People Click Buy",
-      "h1": "3 Email Rules That Make People Click Buy",
+      "title": "Write Sales Emails That Sound Like You, in 3 Rules",
+      "h1": "Write Sales Emails That Sound Like You, in 3 Rules",
       "datePublished": "2026-09-28",
       "dateModified": "2026-09-28",
       "readMinutes": 15,
@@ -2138,7 +2138,7 @@
         "small business"
       ],
       "summary": "Write to one person, make the subject line say what's inside, and let a real customer's words do the persuading.",
-      "sequence": 212,
+      "sequence": 430,
       "access": "free"
     },
     {
@@ -2167,7 +2167,7 @@
         "small business"
       ],
       "summary": "One Claude project with your brand kit, voice rules and Brand DNA, so ads, pages, posts and emails come back on brand.",
-      "sequence": 213,
+      "sequence": 310,
       "access": "free"
     }
   ]

@@ -81,7 +81,7 @@
     {
       "slug": "check-copilot-excel-edits",
       "pattern": "audit",
-      "status": "approved",
+      "status": "pending",
       "component": "copilot-excel-page"
     },
     {
@@ -127,7 +127,7 @@
     {
       "slug": "manus-browser-workflow",
       "pattern": "decision",
-      "status": "approved",
+      "status": "pending",
       "component": "manus-browser-page"
     },
     {
@@ -202,7 +202,7 @@
     {
       "slug": "what-can-copilot-see-at-work",
       "pattern": "audit",
-      "status": "approved",
+      "status": "pending",
       "component": "copilot-visibility-page"
     },
     {
@@ -227,61 +227,61 @@
       "slug": "stop-ai-agreeing-with-you",
       "pattern": "walkthrough",
       "status": "approved",
-      "component": "batch-guide-page"
+      "component": "card-guide-page"
     },
     {
       "slug": "catch-ai-making-things-up",
       "pattern": "walkthrough",
       "status": "approved",
-      "component": "batch-guide-page"
+      "component": "card-guide-page"
     },
     {
       "slug": "ai-quit-or-stay-decision",
       "pattern": "walkthrough",
-      "status": "approved",
+      "status": "pending",
       "component": "batch-guide-page"
     },
     {
       "slug": "is-ai-coming-for-my-job",
       "pattern": "walkthrough",
-      "status": "approved",
+      "status": "pending",
       "component": "batch-guide-page"
     },
     {
       "slug": "ai-job-interview-practice",
       "pattern": "walkthrough",
-      "status": "approved",
+      "status": "pending",
       "component": "batch-guide-page"
     },
     {
       "slug": "weekend-projects-with-claude",
       "pattern": "walkthrough",
       "status": "approved",
-      "component": "batch-guide-page"
+      "component": "card-guide-page"
     },
     {
       "slug": "money-plan-with-ai",
       "pattern": "walkthrough",
-      "status": "approved",
+      "status": "pending",
       "component": "batch-guide-page"
     },
     {
       "slug": "test-business-idea-with-ai",
       "pattern": "walkthrough",
       "status": "approved",
-      "component": "batch-guide-page"
+      "component": "card-guide-page"
     },
     {
       "slug": "launch-your-product-in-30-days",
       "pattern": "walkthrough",
       "status": "approved",
-      "component": "batch-guide-page"
+      "component": "card-guide-page"
     },
     {
       "slug": "marketing-emails-that-sell",
       "pattern": "walkthrough",
       "status": "approved",
-      "component": "batch-guide-page"
+      "component": "card-guide-page"
     },
     {
       "slug": "brand-brain-guide",
