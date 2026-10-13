@@ -6,7 +6,7 @@ export const guide: CardGuide = {
   title: "How to Get Gemini to Find Things in My Google Drive",
   cover: "/images/guides/gemini-cannot-find-drive-file.webp",
   coverAlt: "The blue robot mascot tracing one document through account keys and file drawers",
-  seoDescription: "Get Gemini to find things in your Google Drive: connect Workspace, name client files clearly and use 3 saved prompts that quote the exact line.",
+  seoDescription: "Get Gemini to find things in your Google Drive: switch on the connection, pick the file, and get the answer with the exact sentence it came from.",
   tool: "Gemini",
   minutes: 30,
   h1: { title: "How to Get Gemini to Find Things", accent: "in My Google Drive" },
@@ -14,21 +14,27 @@ export const guide: CardGuide = {
     kind: "scene",
     src: "/images/guides/gemini-cannot-find-drive-file.webp",
     alt: "The blue robot mascot tracing one document through account keys and file drawers",
-    line: "Ask a question. Get the answer and the exact line it came from. No more digging through client folders.",
+    line: "Type a question. Gemini opens your file, gives you the answer, and copies the exact sentence so you can check it.",
   },
   intro: {
-    heading: "Search your Drive in plain English",
-    lead: "The answer is in a proposal or call note somewhere in Drive. But you can't remember which one. Gemini can open your files and answer from them. It needs three things: the right account, clear file names, and a question that makes it show where the answer came from. This guide sets up all three.",
+    heading: "Stop opening 20 files to find one answer",
+    lead: "Here is the problem. A client asks, \"What did we agree about the deposit?\" You know the answer is in a proposal or in your call notes. But you don't remember which file, so you open one after another. Gemini (Google's AI chat) can do that search for you. You type the question. It opens the file, writes the answer, and copies the sentence it found, so you can check it in 10 seconds.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
-        "Gemini **connected to Google Workspace** (Google's work apps: Gmail, Drive, Docs) on the account that holds your client files",
-        "A **naming rule for client files**, so you and Gemini can find any file by name",
-        "A **find-the-file prompt** that checks the file before it tells you anything",
-        "An **answer-with-the-line prompt** that quotes the sentence its answer comes from",
-        "A **couldn't-find-it prompt** that tells you if the problem is the file or the connection",
+        "**Gemini switched on for your Google Drive**, on the account where your client files are",
+        "**A way to point Gemini at one exact file**, so it can't answer from the wrong one",
+        "**3 questions saved in a Doc**: find a file, answer from a file, test the connection. You copy and paste them each time.",
+        "**A simple way to name client files**, so you and Gemini can find any file in seconds",
+        "**A 2-minute test** for the day Gemini says \"I can't find that\"",
       ] },
-      { kind: "tip", text: "You need a Google account with your files in Google Drive. You also need Gemini at gemini.google.com. You can copy and paste every prompt below. Change the parts in [square brackets]." },
+      { kind: "h3", text: "Before you start" },
+      { kind: "list", items: [
+        "A computer. These steps are for a web browser, like Chrome.",
+        "Your Google account that has your client files in Google Drive.",
+        "One file you opened this week, like a proposal or call notes. Pick a file where you already know an answer. Then you can see if Gemini gets it right.",
+      ] },
+      { kind: "tip", text: "Every question below can be copied and pasted as it is. Change the parts in [square brackets] to your own details." },
     ],
   },
   openSteps: 1,
@@ -39,83 +45,148 @@ export const guide: CardGuide = {
     action: "Open the rest of the guide",
   },
   steps: [
-    { num: "01", title: "Connect Gemini to Drive", accent: "The right account, switched on.", blocks: [
-      { kind: "p", text: "Gemini can only search files it is allowed to open. This step makes sure it looks in the right place." },
+    { num: "01", title: "Switch on Drive in Gemini", accent: "5 minutes, done once.", blocks: [
+      { kind: "p", text: "Gemini can't see your files until you let it. First you check you are in the right Google account. Then you switch on the connection to Drive." },
+      { kind: "h3", text: "A. Check the account" },
       { kind: "list", ordered: true, items: [
-        "Go to [gemini.google.com](https://gemini.google.com). Look at the profile picture in the top right corner. It must be the Google account that holds your client files. If not, click it and switch account.",
-        "Open **Settings** (the menu or gear icon), then **Apps**. On some accounts this is still called **Extensions**.",
-        "Find **Google Workspace** and turn it on. It covers Gmail, Drive and Docs.",
-        "Menus change. Can't find it? Search \"Google Workspace\" on [Google's Gemini help pages](https://support.google.com/gemini).",
+        "Open [gemini.google.com](https://gemini.google.com) in your browser.",
+        "Look at the top right corner. You will see a small round picture or a letter. That is your Google account.",
+        "Click it. A box opens with an email address. Is it the email where your client files are? If yes, close the box and go to B.",
+        "If it is the wrong email, click the right account in that box. If the right one is not there, click **Add another account** and sign in.",
       ] },
-      { kind: "p", text: "When Gemini says \"I couldn't find that\", it is nearly always one of these reasons." },
-      { kind: "table", head: ["Reason", "What it looks like", "What to do"], rows: [
-        ["The file isn't shared with this account", "A client shared it with your other email", "Ask them to share it with this account, or save a copy to your own Drive"],
-        ["You're signed in to the wrong account", "Gemini finds nothing, or finds your personal files", "Switch account in the top right corner and try again"],
-        ["The file type is hard to read", "A scanned PDF or a photo of a page", "Open it in Google Docs to turn it into text, or ask about a typed copy"],
-        ["The question is not clear", "\"The budget doc\" matches ten files, or none", "Use the exact file or folder name (steps 02 and 03)"],
-        ["Your workplace has turned it off", "On a work account, the Workspace option is missing or grey", "Ask the person who runs your Google Workspace account"],
+      { kind: "tip", text: "**Why this matters:** many people have two Google accounts, one personal and one for work. Gemini only searches the account you are signed in to. This is the number 1 reason it \"can't find\" a file." },
+      { kind: "h3", text: "B. Switch on the connection to Drive" },
+      { kind: "list", ordered: true, items: [
+        "On the left side of Gemini, near the bottom, click **Settings & help**. On a small window, click the menu button (three lines, top left) first.",
+        "Click **Apps**. On some accounts this is still called **Extensions**.",
+        "You will see a list of Google apps. Find **Google Workspace** (it covers Gmail, Drive and Docs).",
+        "Click the switch next to it so it turns on. On most screens it turns blue.",
+        "Can't find **Settings & help** or **Apps**? Google moves these menus. Search \"connected apps\" on [Google's Gemini help pages](https://support.google.com/gemini) for today's steps.",
       ] },
-      { kind: "tip", text: "**Quick check:** ask Gemini \"Can you see my Google Drive?\" If it says no, go through the list above before anything else." },
-    ] },
-    { num: "02", title: "Name your client files", accent: "One rule, every file.", blocks: [
-      { kind: "p", text: "Gemini searches by file name first. It can't find a file called \"Untitled document (3)\". It can easily find \"[client] - Proposal - 2026-10\"." },
-      { kind: "p", text: "Use this rule for every new file: **Client - Type - Date**." },
-      { kind: "table", head: ["Part", "What goes there", "Example"], rows: [
-        ["Client", "The client or project name, spelled the same each time", "[client]"],
-        ["Type", "One word from a short list: Proposal, Contract, Call notes, Invoice, Brief", "Call notes"],
-        ["Date", "Year and month, so files sort in order", "2026-10"],
+      { kind: "h3", text: "C. Test it in 10 seconds" },
+      { kind: "p", text: "Go back to the chat box. Type this short question and press Enter." },
+      { kind: "example", label: "What you type", text: "Can you see my Google Drive? Answer yes or no, then name 3 file names you can see." },
+      { kind: "result", label: "What you should see", lines: [
+        "Yes, and 3 real file names from your Drive. Now you are ready for the next steps.",
+        "If it says no, or names files you don't recognise, go back to A and check the account.",
       ] },
-      { kind: "p", text: "You don't need to rename everything today. To plan it, open a new chat in Gemini. Paste this prompt with a list of your folder and file names. Type them out, or copy them from Drive." },
-      { kind: "prompt", label: "Plan my folders and file names", text: `Help me organise my Google Drive for client work.
-
-Here is a list of my current folders and file names:
-[paste the list, with client names swapped for [client 1], [client 2] and so on]
-
-My naming rule is: Client - Type - Date (Date as YYYY-MM).
-My file types are: Proposal, Contract, Call notes, Invoice, Brief.
-
-Give me:
-1. A simple folder plan: one folder per client, and what goes inside
-2. A table with these columns: Current name | New name | Folder
-3. Any file you can't place, marked [CHECK] instead of guessing
-
-Use only the names I give you. Don't move or rename anything yourself.` },
-      { kind: "p", text: "First rename the 10 files you open most. From today, name every new file with the rule." },
-      { kind: "tip", text: "**Tip:** put the naming rule on the first line of a Doc called \"Drive rules\". Then you don't have to remember it." },
+      { kind: "tip", text: "**On a work account and the switch is missing or grey?** The person who runs your company's Google account may have turned it off. Ask them. Don't look for a way round it." },
     ] },
-    { num: "03", title: "Find the right file", accent: "Confirm it before you trust it.", blocks: [
-      { kind: "p", text: "This prompt makes Gemini show you which file it opened before it answers. So you never trust an answer from the wrong file." },
-      { kind: "prompt", label: "Find the file", text: `Find my Google Drive file called "[exact file name]" (or: the most recent file in the folder "[folder name]").
+    { num: "02", title: "Point Gemini at one file", accent: "The surest way to get the right answer.", blocks: [
+      { kind: "p", text: "When you know which file has the answer, pick the file yourself. Then Gemini reads only that file. It can't mix it up with an older version or a similar name." },
+      { kind: "list", ordered: true, items: [
+        "Click in the chat box at the bottom of Gemini.",
+        "Click the **+** button on the left side of the box.",
+        "Click **Add from Drive** (on some screens it just says **Drive**). Your Drive files open in a window.",
+        "Type part of the file name in the search bar at the top of that window. Click the file. Then click **Insert** (or **Select**).",
+        "You will see the file name as a small card above the chat box. That means Gemini will read it.",
+        "No **+** button? Type **@** in the chat box instead. A list appears. Click **Google Drive** (or **Workspace**), then type the file name.",
+      ] },
+      { kind: "p", text: "Now ask your question with the prompt below. It makes Gemini copy the exact sentence it used. You use that sentence in step 04 to check the answer." },
+      { kind: "prompt", label: "Answer from this file, with the sentence", text: `Use only the file I attached. Answer this question: [your question, for example: what did we agree about the deposit?]
 
-Before you tell me anything from it, confirm:
-- the exact file name you found
-- when it was last edited
-- a link to it
-
-If more than one file matches, list them all and ask me which one I mean.
-If nothing matches, say "No match" and don't guess.` },
-      { kind: "p", text: "Click the link. Check it is the file you meant. If Gemini lists several, reply with the number of the right one." },
-      { kind: "tip", text: "**Don't know the exact name?** Give the folder and the type. For example: \"the Call notes file in the [client] folder from October\". This works because of the naming rule from step 02." },
-    ] },
-    { num: "04", title: "Get the answer with its line", accent: "Proof you can check.", blocks: [
-      { kind: "p", text: "Make Gemini quote the sentence it used. Then you can see if it really read the file, or made something up." },
-      { kind: "prompt", label: "Answer with the exact line", text: `From my file "[exact file name]", answer this: [your question, for example: what did we agree about the deposit?]
-
-Start with the exact sentence from the file that answers it, in quotation marks, and the heading it sits under.
-Then give me the answer in one line.
+Reply in this order:
+1. The exact sentence from the file that answers it, copied word for word, in quotation marks.
+2. The heading or section it sits under.
+3. The answer in one short line.
 
 Rules:
-- Use only this file. Don't use other files or general knowledge.
-- If the file doesn't answer it, say "Not in this file".
+- Use only this file. Do not use other files or general knowledge.
+- If the file does not answer the question, write "Not in this file" and stop.
 - Never make up names, prices, dates or promises.` },
-      { kind: "p", text: "Before you use the answer, open the file. Find the quoted sentence: press Ctrl+F (or Cmd+F on a Mac) and paste a few words of it. If it isn't there, don't use the answer." },
+      { kind: "example", label: "Example question", text: "What did we agree about the deposit?" },
+      { kind: "result", label: "What a good answer looks like", lines: [
+        "1. \"Half of the fee is paid as a deposit when the contract is signed.\"",
+        "2. Under the heading: Payment terms",
+        "3. Half the fee is due when the contract is signed.",
+      ] },
+      { kind: "tip", text: "**It said \"Not in this file\"?** That is good news. It means Gemini did not guess. Try another file, or use step 03 to search for it." },
     ] },
-    { num: "05", title: "When it can't find it", accent: "File or connection?", blocks: [
-      { kind: "p", text: "This step tells you if the problem is the file or the connection. It takes about two minutes." },
+    { num: "03", title: "Let Gemini search for the file", accent: "When you don't know which file it is.", blocks: [
+      { kind: "p", text: "Sometimes you don't know which file has the answer. Then Gemini can search your Drive for it. But first it must show you which file it found. Otherwise you might trust an answer from the wrong file." },
       { kind: "list", ordered: true, items: [
-        "Go to [docs.google.com](https://docs.google.com) and make a new Doc.",
-        "Name it **Gemini test note**. Type one line: \"The colour of the week is teal.\"",
-        "Go back to Gemini and paste the prompt below.",
+        "Start a new chat. Click **New chat** at the top left.",
+        "Copy the prompt below and paste it in the chat box.",
+        "Change the part in [square brackets]. Give the client name and what kind of file it is, for example \"the call notes for [client] from October\".",
+        "Press Enter.",
+      ] },
+      { kind: "prompt", label: "Find the file first", text: `Search my Google Drive for: [describe the file, for example: the call notes for [client] from October].
+
+Do not answer anything from the file yet. First show me a list of the files that match, with:
+- the exact file name
+- the date it was last changed
+- a link to open it
+
+Number the list. If nothing matches, write "No match" and do not guess.
+Then wait. I will tell you which number is the right file.` },
+      { kind: "result", label: "What a good answer looks like", lines: [
+        "1. [client] - Call notes - 2026-10, changed 9 October, with a link",
+        "2. [client] - Call notes - 2026-09, changed 14 September, with a link",
+      ] },
+      { kind: "list", ordered: true, items: [
+        "Click the link of the file you think is right. Check it opens the file you meant.",
+        "Go back to Gemini. Type the number, for example: \"Number 1. Now use the answer prompt from step 02 on this file.\" Then paste your question.",
+      ] },
+      { kind: "tip", text: "**Gemini found nothing, or the wrong files?** Most of the time the file name is the problem. Step 05 fixes that." },
+    ] },
+    { num: "04", title: "Check the answer yourself", accent: "10 seconds, every time.", blocks: [
+      { kind: "p", text: "AI can be wrong, even when it sounds sure. So before you send anything to a client, check the sentence is really in the file. Here is how." },
+      { kind: "list", ordered: true, items: [
+        "In Gemini's answer, copy 4 or 5 words from the quoted sentence.",
+        "Open the file. Click the link Gemini gave you, or open it from Drive.",
+        "Press **Ctrl + F** on Windows, or **Cmd + F** on a Mac. A small search box opens.",
+        "Paste the words and press Enter. The words light up in yellow in the file.",
+        "Read the whole sentence and the lines around it. Does it say what Gemini said?",
+      ] },
+      { kind: "table", head: ["What you see", "What it means", "What to do"], rows: [
+        ["The words light up and say the same thing", "The answer is right", "Use it"],
+        ["The words light up, but the lines around them change the meaning", "Gemini took it out of context", "Use what the file says, not what Gemini said"],
+        ["Nothing lights up", "Gemini made up the sentence", "Don't use the answer. Ask again, or read the file yourself"],
+      ] },
+      { kind: "honest", text: "**The honest part:** Gemini finds and quotes. You check and decide. It can miss a file, misread a scanned page, or mix up two versions. The check above takes 10 seconds and protects you from telling a client the wrong thing." },
+    ] },
+    { num: "05", title: "Name your files so they can be found", accent: "One simple rule.", blocks: [
+      { kind: "p", text: "Gemini searches by file name first. It can't find \"Untitled document (3)\". It finds \"[client] - Proposal - 2026-10\" right away. So give every client file a name with three parts." },
+      { kind: "table", head: ["Part", "What you write", "Example"], rows: [
+        ["1. Client", "The client's name, written the same way every time", "[client]"],
+        ["2. Type of file", "One word from a short list: Proposal, Contract, Call notes, Invoice, Brief", "Call notes"],
+        ["3. Date", "Year, then month, as numbers", "2026-10"],
+      ] },
+      { kind: "contrast", items: [
+        { label: "Hard to find", text: "notes final v2, Untitled document, proposal NEW", good: false },
+        { label: "Easy to find", text: "[client] - Call notes - 2026-10, [client] - Proposal - 2026-09", good: true },
+      ] },
+      { kind: "h3", text: "Rename your files the quick way" },
+      { kind: "list", ordered: true, items: [
+        "Open [drive.google.com](https://drive.google.com). Write down the names of your 10 most-used client files. Or select them and copy the names.",
+        "In the list, swap real client names for [client 1], [client 2] and so on. This keeps their names out of the AI.",
+        "Paste the list into the prompt below, in a new Gemini chat.",
+      ] },
+      { kind: "prompt", label: "Give me new file names", text: `Help me rename my client files in Google Drive.
+
+Here are my current file names:
+[paste your list here]
+
+My naming rule is: Client - Type - Date
+- Type is one of: Proposal, Contract, Call notes, Invoice, Brief
+- Date is written as YYYY-MM, for example 2026-10
+
+Give me a table with 3 columns: Current name | New name | Which client folder it goes in.
+If you can't tell the type or the date of a file, write [CHECK] instead of guessing.
+Use only the names I give you. Do not rename or move anything yourself.` },
+      { kind: "list", ordered: true, items: [
+        "In Drive, right-click each file, click **Rename**, and type the new name from the table.",
+        "From today, name every new client file with the rule.",
+      ] },
+      { kind: "tip", text: "**Make it easy to remember:** create a Google Doc called **Drive rules**. Type the naming rule on the first line. Then paste the 3 prompts from steps 02, 03 and 06 under it. Next time, you open this Doc and copy." },
+    ] },
+    { num: "06", title: "When it says \"I can't find it\"", accent: "Find out why in 2 minutes.", blocks: [
+      { kind: "p", text: "There are only two possible problems. Either the connection is broken, or something is wrong with that one file. This test tells you which." },
+      { kind: "list", ordered: true, items: [
+        "Open [docs.google.com](https://docs.google.com) and click **Blank document** to make a new Doc.",
+        "Click **Untitled document** at the top left and type the name **Gemini test note**. Press Enter.",
+        "In the page, type one line: The colour of the week is teal.",
+        "Wait 1 minute. Then go back to Gemini, start a **New chat** and paste the prompt below.",
       ] },
       { kind: "prompt", label: "Test the connection", text: `Find my Google Doc called "Gemini test note" and tell me the colour of the week it mentions.
 
@@ -123,22 +194,27 @@ If you can't find it, tell me:
 - which Google account you are searching
 - whether you can see my Google Drive at all
 
-Don't guess the colour.` },
-      { kind: "table", head: ["What happens", "What it means", "What to do"], rows: [
-        ["It says teal", "The connection works", "The problem is the first file. Check its name, type and who it is shared with (table in step 01)"],
-        ["It can't find the test note", "The connection is not working", "Check the account in the top right corner. Check Google Workspace is on (step 01)"],
+Do not guess the colour.` },
+      { kind: "table", head: ["What Gemini says", "What it means", "What to do"], rows: [
+        ["Teal", "The connection works. The problem is the first file.", "Check the reasons in the table below"],
+        ["It can't find the test note", "The connection is broken", "Do step 01 again: check the account, then check Google Workspace is switched on"],
       ] },
-      { kind: "p", text: "Save the three prompts from steps 03, 04 and 05 in your \"Drive rules\" Doc, under the naming rule. That Doc is now your Drive search rules." },
-      { kind: "honest", text: "**The honest part:** Gemini can only see what your signed-in account can open. It can miss files. It can misread a scanned page. Gemini finds and quotes. You open the file, check the line, and decide what to tell your client." },
+      { kind: "h3", text: "Why one file can't be found" },
+      { kind: "table", head: ["Reason", "How you can tell", "What to do"], rows: [
+        ["It was shared with your other email", "The client sent it to a different address", "Ask them to share it with this account. Or open it and click File, then Make a copy, to save it in your own Drive."],
+        ["It is a scan or a photo", "A PDF made by a scanner, or a picture of a page", "Gemini may not read it well. Use the typed version if you have one."],
+        ["The name is too vague", "Many files have a similar name, or the name says nothing", "Rename it with the rule from step 05"],
+        ["You asked in a vague way", "\"The budget doc\" could be 10 files", "Pick the file with + (step 02), or give the client and type (step 03)"],
+      ] },
     ] },
     { num: "✓", title: "Your checklist", accent: "Tick as you go.", blocks: [
       { kind: "checklist", items: [
-        "Signed in to Gemini with the account that holds your client files",
-        "Google Workspace turned on in Gemini",
-        "Naming rule saved in your \"Drive rules\" Doc",
-        "Your 10 most-used files renamed",
-        "Find-the-file, answer-with-the-line and test prompts saved",
-        "One real answer found and checked in the file",
+        "Signed in to Gemini with the account where your client files are",
+        "Google Workspace switched on in Gemini, and the 10-second test said yes",
+        "One real question answered from a file you picked with +",
+        "The quoted sentence found in the file with Ctrl + F (or Cmd + F)",
+        "Your 10 most-used files renamed with the rule",
+        "A Doc called Drive rules with the naming rule and the 3 prompts",
       ] },
     ] },
   ],
@@ -146,13 +222,13 @@ Don't guess the colour.` },
     eyebrow: "Next step",
     heading: "Gemini can find your files.",
     accent: "Now plan your week with it.",
-    body: "The next guide uses the same Gemini connection. It turns your messy to-do list into Google Tasks with dates. You get a Monday plan and a Friday reset.",
+    body: "The next guide uses the same Gemini connection. It turns your messy to-do list into Google Tasks with dates. You get a plan for Monday and a quick reset on Friday.",
     label: "Plan your week with Gemini →",
     href: "/guides/gemini-google-tasks-limits/",
   },
   conclusion: {
-    heading: "Keep it findable",
-    paragraph: "Name every new file with the rule. Ask for the exact line behind every answer. Run the test note when Gemini says it can't find something.",
+    heading: "Keep it simple",
+    paragraph: "Pick the file with + when you know it. Ask Gemini to search when you don't. Check the sentence with Ctrl + F every time. Name every new file with the rule.",
     finishLine: "Clear names in. Checked answers out.",
   },
 };
