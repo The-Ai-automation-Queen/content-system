@@ -157,9 +157,9 @@ Start with the low-risk tasks.
 - [ ] You have your next 3 tasks
 
 ### Next step (CTA)
-**Eyebrow:** Where AI fits in your business
-**Heading:** One task done. *Now see the whole picture.*
-**Body:** The Where AI Fits Map helps you look at your whole business, decide where AI belongs and what should stay yours, and choose your next test. It's being developed now. Register your interest and you'll hear first.
-**Button:** Register your interest → [VERIFY: link to the live Where AI Fits Map page]
+**Eyebrow:** Free AI guides
+**Heading:** One task done. *Pick the next one.*
+**Body:** Every guide in the library answers one question and gives you the steps and prompts to copy. Pick the next one from your list in step 07.
+**Button:** Browse the free guides → /guides/
 
 **Keep reading:** What Can I Use AI For in My Business? · Is It Safe to Put Client Information Into ChatGPT? · How to Check if ChatGPT Is Wrong Before You Send It to a Client

@@ -2,38 +2,19 @@
 
 import { type FormEvent, useEffect, useMemo, useState } from "react";
 import { GuideCard } from "./guide-card";
-import { guideHref } from "@/content/guide-url";
-import {
-  guideLevels,
-  guideOutcomes,
-  type Guide,
-  type GuideLevel,
-  type GuideOutcome,
-} from "@/content/guides";
+import type { Guide } from "@/content/guides";
 
-type LevelFilter = "all" | GuideLevel;
-type OutcomeFilter = "all" | GuideOutcome;
+// The library follows a business owner's journey: each stage is a question they
+// already have, in the order they usually have it. Every approved guide sits in one stage.
+const journey = [
+  { id: "new-to-ai", label: "I'm new to AI", heading: "I'm new to AI. Where do I start?", intro: "Start here if you have barely used AI. Plain words, one first task, nothing to install.", slugs: ["what-is-ai", "ai-jargon-guide", "what-is-a-prompt", "ai-skills-worth-learning-for-work"] },
+  { id: "safe", label: "Is it safe?", heading: "Is it safe? Can I trust what it says?", intro: "What you can share with AI, what you can't, and how to check its answers before a client sees them.", slugs: ["what-should-you-never-share-with-ai", "catch-ai-making-things-up", "connect-ai-to-email-files-calendar", "stop-ai-agreeing-with-you"] },
+  { id: "tools", label: "Pick and set up my tools", heading: "Which tool should I use, and how do I set it up?", intro: "Choose one tool, then set it up so it knows your business and stops wasting your time.", slugs: ["which-ai-tool-for-what", "brand-brain-guide", "stop-chatgpt-forgetting-context", "make-chatgpt-answers-shorter", "claude", "gemini-cannot-find-drive-file", "gemini-google-tasks-limits", "what-is-an-ai-browser"] },
+  { id: "grow", label: "Get clients and grow", heading: "How do I use AI to get clients and grow?", intro: "Get found, understand what your clients want, test ideas and sell without sounding like a robot.", slugs: ["show-up-in-ai-search", "chatgpt-customer-research-with-evidence", "test-business-idea-with-ai", "marketing-emails-that-sell", "launch-your-product-in-30-days", "instagram-content-dashboard"] },
+  { id: "save-time", label: "Save time on repeat work", heading: "How do I get AI to do the work I repeat?", intro: "Hand over weekly tasks, write down how you work, and decide if you need an agent at all.", slugs: ["chatgpt-scheduled-tasks", "teach-claude-a-repeatable-workflow", "chatgpt-screen-recording-to-process-guide", "make-work-tracker-with-kimi", "weekend-projects-with-claude", "test-meta-muse-money-saving-task", "what-is-agentic"] },
+] as const;
 
-const outcomeDescriptions: Record<GuideOutcome, string> = {
-  "Understand AI": "Get the few ideas and words that make the rest easier.",
-  "Use AI safely": "Know what stays out, which settings matter and what to check.",
-  "Choose an AI tool": "Match the job to a tool before you add another subscription.",
-  "Get better answers": "Give clearer instructions and judge what comes back.",
-  "Create content": "Use AI without losing your facts, point of view or final say.",
-  "Automate a task": "Connect repeatable steps and remove avoidable manual work.",
-  "Build an agent": "Set the job, limits and approvals before you automate.",
-  "Run business operations": "Keep routine work moving without giving up control.",
-};
-
-const foundationSlugs = ["what-is-ai", "ai-jargon-guide"];
-// Step-by-step build guides in the card format, shown first. Add new ones here.
-const buildGuideSlugs = ["brand-brain-guide"];
-
-function scrollToLibrary() {
-  window.requestAnimationFrame(() => {
-    document.getElementById("all-guides")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-}
+const startHereSlug = "what-is-ai";
 
 function track(name: string, detail: Record<string, string>) {
   (window as Window & { slTrack?: (event: string, data?: Record<string, string>) => void }).slTrack?.(name, detail);
@@ -45,8 +26,6 @@ function normalise(value: string) {
 
 export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: Guide[]; previewGuides?: Guide[]; searchIndex: Record<string, string> }) {
   const [reviewMode, setReviewMode] = useState(false);
-  const [level, setLevel] = useState<LevelFilter>("all");
-  const [outcome, setOutcome] = useState<OutcomeFilter>("all");
   const [query, setQuery] = useState("");
   const listedGuides = reviewMode && previewGuides ? previewGuides : guides;
 
@@ -54,19 +33,16 @@ export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: G
     setReviewMode(Boolean(previewGuides) && new URLSearchParams(window.location.search).get("review") === "1");
   }, [previewGuides]);
 
-  const featured = listedGuides.find((guide) => guide.slug === "what-should-you-never-share-with-ai") ?? listedGuides[0];
-  const foundations = foundationSlugs
-    .map((slug) => listedGuides.find((guide) => guide.slug === slug))
-    .filter((guide): guide is Guide => Boolean(guide));
-  const buildGuides = buildGuideSlugs
-    .map((slug) => listedGuides.find((guide) => guide.slug === slug))
-    .filter((guide): guide is Guide => Boolean(guide));
-  const availableOutcomes = guideOutcomes.filter((item) =>
-    listedGuides.some((guide) => guide.outcomes.includes(item)),
-  );
+  const bySlug = useMemo(() => new Map(listedGuides.map((guide) => [guide.slug, guide])), [listedGuides]);
+  const startHere = bySlug.get(startHereSlug) ?? listedGuides[0];
+  const stages = journey.map((stage) => ({ ...stage, guides: stage.slugs.map((slug) => bySlug.get(slug)).filter((guide): guide is Guide => Boolean(guide)) }));
+  // Anything approved but not yet placed in a stage still shows, at the end.
+  const placed = new Set<string>(journey.flatMap((stage) => [...stage.slugs]));
+  const unplaced = listedGuides.filter((guide) => !placed.has(guide.slug));
 
-  const visible = useMemo(() => {
+  const results = useMemo(() => {
     const terms = normalise(query).split(" ").filter(Boolean);
+    if (!terms.length) return [];
     return listedGuides.map((guide, order) => {
       const title = normalise(guide.title);
       const tags = normalise([guide.hub, guide.level, ...guide.outcomes, ...guide.tags].join(" "));
@@ -74,171 +50,99 @@ export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: G
       const body = normalise(searchIndex[guide.slug] ?? "");
       const searchable = `${title} ${tags} ${summary} ${body}`;
       const score = terms.reduce((total, term) => total + (title.includes(term) ? 8 : 0) + (tags.includes(term) ? 5 : 0) + (summary.includes(term) ? 3 : 0) + (body.includes(term) ? 1 : 0), 0);
-      return { guide, order, matchesSearch: terms.every((term) => searchable.includes(term)), score };
-    }).filter(({ guide, matchesSearch }) => {
-      const matchesLevel = level === "all" || guide.level === level;
-      const matchesOutcome = outcome === "all" || guide.outcomes.includes(outcome);
-      return matchesLevel && matchesOutcome && matchesSearch;
-    }).sort((a, b) => b.score - a.score || a.order - b.order).map(({ guide }) => guide);
-  }, [listedGuides, searchIndex, level, outcome, query]);
-
-  const resultLabel = query.trim() ? `Search results for “${query.trim()}”` : outcome !== "all"
-    ? outcome
-    : level !== "all" ? `${level} guides` : "All guides";
-
-  function chooseOutcome(value: OutcomeFilter) {
-    setOutcome(value);
-    setLevel("all");
-    setQuery("");
-    track("guide_outcome", { outcome: value });
-    scrollToLibrary();
-  }
-
-  function chooseLevel(value: LevelFilter) {
-    setLevel(value);
-    track("guide_level", { level: value });
-  }
-
-  function resetFilters() {
-    setLevel("all");
-    setOutcome("all");
-    setQuery("");
-  }
+      return { guide, order, matches: terms.every((term) => searchable.includes(term)), score };
+    }).filter(({ matches }) => matches).sort((a, b) => b.score - a.score || a.order - b.order).map(({ guide }) => guide);
+  }, [listedGuides, searchIndex, query]);
+  const searching = query.trim().length > 0;
 
   function submitSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    track("guide_search_submit", { query: query.trim(), results: String(visible.length) });
-    scrollToLibrary();
+    track("guide_search_submit", { query: query.trim(), results: String(results.length) });
+    window.requestAnimationFrame(() => document.getElementById("all-guides")?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }
 
   return (
     <>
       <section className="guides-hero" aria-labelledby="guides-title">
         <div className="guides-hero__copy">
-          <p className="eyebrow">Free AI guides</p>
+          <p className="eyebrow">Free AI guides for business owners</p>
           <h1 id="guides-title">Use AI for real work. Keep the decisions that need <em>you.</em></h1>
-          <p>Pick the task you want done. I will show you which tool fits, what to give it, what to keep private and what you still need to check.</p>
+          <p>Find your question below. Every guide gives you the steps to follow and the prompts to copy.</p>
           <form className="hero-search" role="search" onSubmit={submitSearch}>
-            <label htmlFor="guide-search">What do you need help with?</label>
+            <label htmlFor="guide-search">Looking for something specific?</label>
             <span className="hero-search__field">
-              <input id="guide-search" name="guide-search" type="search" value={query} onChange={(event) => {
-                setQuery(event.target.value);
-                setLevel("all");
-                setOutcome("all");
-              }} placeholder="Try privacy or a task at work" autoComplete="off" />
+              <input id="guide-search" name="guide-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Try proposal, client data or Gemini" autoComplete="off" />
               <button type="submit">Search guides</button>
             </span>
-            <span className="hero-search__status" role="status" aria-live="polite">{query.trim() ? `${visible.length} matching ${visible.length === 1 ? "guide" : "guides"}` : "Search titles, topics and guide instructions."}</span>
+            <span className="hero-search__status" role="status" aria-live="polite">{searching ? `${results.length} matching ${results.length === 1 ? "guide" : "guides"}` : "Search titles, topics and guide instructions."}</span>
           </form>
         </div>
-        {featured && (
-          <div className="guides-hero__feature" aria-label="Featured guide">
-            <GuideCard guide={featured} featured reviewMode={reviewMode} />
+        {startHere && (
+          <div className="guides-hero__feature" aria-label="Start here">
+            <p className="eyebrow">New to AI? Start here</p>
+            <GuideCard guide={startHere} featured reviewMode={reviewMode} />
           </div>
         )}
       </section>
 
-      {buildGuides.length > 0 && (
-        <section className="library build-guides" aria-labelledby="build-title">
-          <div className="library__head">
-            <div>
-              <p className="eyebrow">New · Build it with Claude</p>
-              <h2 id="build-title">Step-by-step builds.</h2>
-              <p>Follow the steps, copy the prompts and finish with something you keep using.</p>
-            </div>
-          </div>
-          <div className="guide-grid">
-            {buildGuides.map((guide) => <GuideCard key={guide.slug} guide={guide} reviewMode={reviewMode} />)}
-          </div>
-        </section>
-      )}
-
-      <section className="outcome-nav" aria-labelledby="outcome-title">
+      <nav className="outcome-nav journey-nav" aria-labelledby="journey-title">
         <div className="outcome-nav__head">
-          <p className="eyebrow">Start with the result</p>
-          <h2 id="outcome-title">What are you trying to do?</h2>
-          <p>Choose one. You will see only the guides that help with that job.</p>
+          <p className="eyebrow">{listedGuides.length} guides, grouped by where you are</p>
+          <h2 id="journey-title">Where are you right now?</h2>
+          <p>Pick the one that sounds like you. You can come back for the next one later.</p>
         </div>
-        <div className="outcome-nav__grid" role="group" aria-label="Filter guides by outcome">
-          {availableOutcomes.map((item) => {
-            const count = listedGuides.filter((guide) => guide.outcomes.includes(item)).length;
-            return (
-              <button
-                key={item}
-                type="button"
-                aria-pressed={outcome === item}
-                onClick={() => chooseOutcome(item)}
-              >
-                <span className="outcome-nav__title">{item}</span>
-                <span>{outcomeDescriptions[item]}</span>
-                <strong>{count} {count === 1 ? "guide" : "guides"} <span aria-hidden="true">→</span></strong>
-              </button>
-            );
-          })}
-        </div>
-      </section>
-
-      {foundations.length > 0 && (
-        <section className="foundation-links" aria-labelledby="foundation-title">
-          <div>
-            <p className="eyebrow">New to AI?</p>
-            <h2 id="foundation-title">Start with the essentials.</h2>
-          </div>
-          <ol>
-            {foundations.map((guide, index) => (
-              <li key={guide.slug}>
-                <a href={guideHref(guide.slug, reviewMode)}>
-                  <span>0{index + 1}</span>
-                  <strong>{guide.title}</strong>
-                  <span aria-hidden="true">→</span>
-                </a>
-              </li>
-            ))}
-          </ol>
-        </section>
-      )}
-
-      <section className="library" id="all-guides" aria-labelledby="library-title">
-        <div className="library__head">
-          <div>
-            <p className="eyebrow">Browse when you need to</p>
-            <h2 id="library-title">{resultLabel}</h2>
-            <p>Open any card. Every guide answers one question and gives you a useful next step.</p>
-          </div>
-          <button
-            className="library__reset"
-            type="button"
-            onClick={resetFilters}
-            disabled={level === "all" && outcome === "all" && !query}
-          >
-            Show all guides
-          </button>
-        </div>
-
-        <div className="library__active-filters" aria-label="Filter guides by level">
-          <button type="button" aria-pressed={level === "all"} onClick={() => chooseLevel("all")}>All levels</button>
-          {guideLevels.map((item) => (
-            <button key={item} type="button" aria-pressed={level === item} onClick={() => chooseLevel(item)}>
-              {item}
-            </button>
+        <div className="outcome-nav__grid">
+          {stages.map((stage, index) => (
+            <a key={stage.id} href={`#${stage.id}`} onClick={() => { setQuery(""); track("guide_stage", { stage: stage.id }); }}>
+              <span className="outcome-nav__title">{stage.label}</span>
+              <span>Step {index + 1} of {stages.length}</span>
+              <strong>{stage.guides.length} {stage.guides.length === 1 ? "guide" : "guides"} <span aria-hidden="true">↓</span></strong>
+            </a>
           ))}
         </div>
+      </nav>
 
-        <p className="result-count" aria-live="polite">
-          {visible.length} {visible.length === 1 ? "guide" : "guides"}
-        </p>
-        <div className="guide-grid">
-          {visible.map((guide) => <GuideCard key={guide.slug} guide={guide} reviewMode={reviewMode} />)}
-        </div>
-        {visible.length === 0 && (
-          <div className="empty-state">
-            <p>{query.trim() ? `No guide matches “${query.trim()}”. Try another word or browse by outcome.` : level === "Expert" && outcome === "all"
-              ? "No Expert guides match right now. Try Intermediate or choose another topic."
-              : "No guide matches those filters yet."}</p>
-            <button type="button" onClick={resetFilters}>Show all guides</button>
-          </div>
+      <div id="all-guides">
+        {searching ? (
+          <section className="library" aria-labelledby="results-title">
+            <div className="library__head">
+              <div>
+                <p className="eyebrow">Search</p>
+                <h2 id="results-title">Guides about “{query.trim()}”</h2>
+              </div>
+              <button className="library__reset" type="button" onClick={() => setQuery("")}>Show all guides</button>
+            </div>
+            <div className="guide-grid">{results.map((guide) => <GuideCard key={guide.slug} guide={guide} reviewMode={reviewMode} />)}</div>
+            {results.length === 0 && (
+              <div className="empty-state">
+                <p>No guide matches “{query.trim()}”. Try another word, or pick where you are above.</p>
+                <button type="button" onClick={() => setQuery("")}>Show all guides</button>
+              </div>
+            )}
+          </section>
+        ) : (
+          <>
+            {stages.filter((stage) => stage.guides.length > 0).map((stage, index) => (
+              <section key={stage.id} id={stage.id} className="library journey-stage" aria-labelledby={`${stage.id}-title`}>
+                <div className="library__head">
+                  <div>
+                    <p className="eyebrow">Step {index + 1}</p>
+                    <h2 id={`${stage.id}-title`}>{stage.heading}</h2>
+                    <p>{stage.intro}</p>
+                  </div>
+                </div>
+                <div className="guide-grid">{stage.guides.map((guide) => <GuideCard key={guide.slug} guide={guide} reviewMode={reviewMode} />)}</div>
+              </section>
+            ))}
+            {unplaced.length > 0 && (
+              <section className="library journey-stage" aria-labelledby="more-title">
+                <div className="library__head"><div><h2 id="more-title">More guides</h2></div></div>
+                <div className="guide-grid">{unplaced.map((guide) => <GuideCard key={guide.slug} guide={guide} reviewMode={reviewMode} />)}</div>
+              </section>
+            )}
+          </>
         )}
-      </section>
+      </div>
     </>
   );
 }
