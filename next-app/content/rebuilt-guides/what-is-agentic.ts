@@ -72,8 +72,13 @@ export const guide: CardGuide = {
         "**Does it need thought, and are you happy to check each answer yourself?** If yes, a chat does the job.",
         "**Does it need thought across many apps, many times a week?** Only if yes, look at an agent.",
       ] },
-      { kind: "example", label: "Example in your Doc", text: "My task: Reply to new enquiries from my website form with my free call times.\n1. Same steps every time? No, each enquiry is different.\n2. Needs thought, and I'm happy to check? Yes.\n3. Thought across many apps, many times a week? Maybe, about 5 a week." },
-      { kind: "result", label: "What your first answer looks like", lines: [
+      { kind: "result", label: "Example in your Doc", lines: [
+        "My task: Reply to new enquiries from my website form with my free call times.",
+        "1. Same steps every time? No, each enquiry is different.",
+        "2. Needs thought, and I'm happy to check? Yes.",
+        "3. Thought across many apps, many times a week? Maybe, about 5 a week.",
+      ] },
+      { kind: "result", label: "What it tells you", lines: [
         "Question 2 is yes. So a chat is the first thing to try.",
         "Question 3 is maybe. So an agent might fit later. Steps 02 to 06 test that.",
       ] },
@@ -133,7 +138,12 @@ If the simpler option would do the job, recommend it. Do not recommend any paid 
         ["3. Your yes first", "Anything sent, paid or deleted waits for your yes.", "[what waits for me]"],
         ["4. How to stop it", "How you pause it, where you see what it did, and how you undo a change.", "[how I pause it] / [where I check]"],
       ] },
-      { kind: "example", label: "Example answers", text: "1. Draft replies to new website enquiries.\n2. Can see: the enquiry inbox and my calendar. Can change: nothing.\n3. Every reply waits for my yes before it is sent.\n4. Pause: switch it off in the tool. Check: its list of drafts each morning." },
+      { kind: "result", label: "Example answers", lines: [
+        "1. Draft replies to new website enquiries.",
+        "2. Can see: the enquiry inbox and my calendar. Can change: nothing.",
+        "3. Every reply waits for my yes before it is sent.",
+        "4. Pause: switch it off in the tool. Check: its list of drafts each morning.",
+      ] },
       { kind: "contrast", items: [
         { label: "Not a real limit", text: "I wrote \"please ask me first\" in its rules.", good: false },
         { label: "A real limit", text: "The tool's own setting says it must ask before it sends. I switched it on.", good: true },

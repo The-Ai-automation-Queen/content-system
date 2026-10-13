@@ -75,7 +75,7 @@ export const guide: CardGuide = {
         { label: "Vague (example)", text: "AI help for small businesses.", good: false },
         { label: "Exact (example)", text: "A half-day online session for solo accountants who want to draft client emails with ChatGPT, for a fixed fee of [price].", good: true },
       ] },
-      { kind: "example", label: "What a filled-in row looks like", text: "Who | Who exactly is it for? | Solo accountants with 10 to 30 clients, who write every client email by hand and run out of time in tax season." },
+      { kind: "example", label: "What a filled-in row looks like", text: "Who | Who exactly is it for? | Solo accountants who write every client email by hand and run out of time in tax season." },
       { kind: "tip", text: "**Can't fill in \"Why you\"?** That's good to know now. Write [CHECK]. Come back to it after the critics in step 03." },
     ] },
     { num: "02", title: "Turn it into a one-page brief", accent: "ChatGPT asks, you answer.", blocks: [
