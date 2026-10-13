@@ -117,7 +117,7 @@ The steps and any copyable instructions are together on the page. Start with the
 
 Keep this email so you can return to the guide. If you opened it on your phone, use the same link on your laptop when you’re ready to try the steps.
 
-The AI Automation Queen`;
+Fatiha`;
     const emailResponse = await fetch("https://lumail.io/api/v2/emails", {
       method: "POST",
       headers: {
