@@ -34,7 +34,7 @@ export const guide: CardGuide = {
   openSteps: 1,
   gate: {
     heading: "Get the",
-    accent: "Drive Search Kit.",
+    accent: "Drive search rules.",
     promise: "Enter your name and email. The rest of the guide opens straight away, and I'll email you the link so you can come back to it later.",
     action: "Open the rest of the guide",
   },
@@ -128,7 +128,7 @@ Don't guess the colour.` },
         ["It says teal", "The connection works", "The problem is the original file: check its name, its type and who it is shared with (table in step 01)"],
         ["It can't find the test note", "The connection isn't working", "Check the account in the top right corner and that Google Workspace is switched on (step 01)"],
       ] },
-      { kind: "p", text: "Save the three prompts from steps 03, 04 and 05 in your \"Drive rules\" Doc, under the naming rule. That Doc is your Drive search kit." },
+      { kind: "p", text: "Save the three prompts from steps 03, 04 and 05 in your \"Drive rules\" Doc, under the naming rule. That Doc is your Drive search rules." },
       { kind: "honest", text: "**The honest part:** Gemini can only see what your signed-in account can open, and it can miss files or misread a scanned page. It finds and quotes. You open the file, check the line and decide what to tell your client." },
     ] },
     { num: "✓", title: "Your checklist", accent: "Tick as you go.", blocks: [

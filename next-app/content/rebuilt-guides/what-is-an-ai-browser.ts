@@ -156,7 +156,7 @@ Use only what I tell you. Write [CHECK] where I haven't given an answer. Plain E
     eyebrow: "Next step",
     heading: "You know where AI is safe to help.",
     accent: "Now teach it your brand.",
-    body: "The Brand Brain guide sets up one Claude project with your brand kit, voice rules and Brand DNA, so everything AI writes for you sounds like you.",
+    body: "The Brand Brain guide sets up one Claude project with your brand look, voice rules and Brand DNA, so everything AI writes for you sounds like you.",
     label: "Build your Brand Brain →",
     href: "/guides/brand-brain-guide/",
   },

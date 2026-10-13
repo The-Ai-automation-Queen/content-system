@@ -165,6 +165,6 @@ Rules: use only what I give you. Do not invent prices or features. Write [CHECK]
   conclusion: {
     heading: "Keep it simple",
     paragraph: "Keep one main tool, use the assistant already inside your work apps, and run the side-by-side test again only when a new tool claims to do your job better.",
-    finishLine: "Pay for the tool you use, not the one you read about.",
+    finishLine: "Pay only for the tool that earned its place in your week.",
   },
 };

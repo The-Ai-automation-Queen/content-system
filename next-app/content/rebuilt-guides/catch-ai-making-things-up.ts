@@ -44,7 +44,7 @@ export const guide: CardGuide = {
       { kind: "p", text: "The mistakes show up in the same places every time:" },
       { kind: "list", items: [
         "**Details you didn't give it:** a price, a date, a client's job title.",
-        "**Details you did give it, changed:** £1,500 becomes £1,200, Tuesday becomes Thursday.",
+        "**Details you did give it, changed:** for example, the £1,500 you quoted becomes £1,200, or Tuesday becomes Thursday.",
         "**Facts and figures about the world:** statistics, laws, what a tool can do.",
         "**Sources:** articles, studies and links that don't exist or don't say what it claims.",
         "**Promises:** a delivery date or an extra you never agreed to.",

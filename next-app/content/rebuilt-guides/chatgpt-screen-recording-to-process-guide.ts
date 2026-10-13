@@ -33,8 +33,8 @@ export const guide: CardGuide = {
   },
   openSteps: 1,
   gate: {
-    heading: "Get",
-    accent: "your first SOP.",
+    heading: "Get the",
+    accent: "screen recording SOP.",
     promise: "Enter your name and email. The rest of the guide opens straight away, and I'll email you the link so you can come back to it later.",
     action: "Open the rest of the guide",
   },
