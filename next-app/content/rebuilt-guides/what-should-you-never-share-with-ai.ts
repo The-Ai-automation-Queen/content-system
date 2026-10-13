@@ -71,7 +71,7 @@ export const guide: CardGuide = {
       ] },
       { kind: "h3", text: "Example" },
       { kind: "table", head: ["Before (do not paste this)", "After (safe to paste)"], rows: [
-        ["Hi Sarah, following our call on 4 March, here is the proposal for Brightside Dental at £3,200.", "Hi [contact], following our call on [date], here is the proposal for [client company] at [price]."],
+        ["Hi Sarah, following our call on 4 March, here is the proposal for Brightside Dental at $3,200.", "Hi [contact], following our call on [date], here is the proposal for [client company] at [price]."],
         ["The launch in Leeds is planned for the week of 12 May.", "The launch in [city] is planned for the week of [date 2]."],
       ] },
       { kind: "p", text: "The names and figures in this example are made up." },

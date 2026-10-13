@@ -7,4 +7,4 @@
 :HL["/_next/static/css/b25a23bd6562f8fd.css","style"]
 :HL["/_next/static/css/541acde301c29131.css","style"]
 :HL["/_next/static/css/c9d53a5723aac2a3.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"guides","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"brand-brain-guide","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"LtqT6A4OoeTLCf1njJC6M"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"guides","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"brand-brain-guide","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"Xo__jcUFHzIC2n-UDrHEG"}
