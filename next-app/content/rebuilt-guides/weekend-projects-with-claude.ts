@@ -118,7 +118,7 @@ Start it empty. Do not connect to any outside website.` },
         "Post gone? Ask for a **Download as spreadsheet** button in step 05.",
       ] },
     ] },
-    { num: "05", title: "Fix one thing at a time", accent: "Test after each change.", blocks: [
+    { num: "05", title: "Fix one thing", accent: "Test after each change.", blocks: [
       { kind: "p", text: "Five changes at once can break what works. Ask for one, then test it." },
       { kind: "prompt", label: "Change one thing", text: `Change one thing in this tool: [the change].
 Why: [what happens now, and what should happen].

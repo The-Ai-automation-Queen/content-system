@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "A clear answer for one task",
-    lead: "Everyone is selling AI agents. Most tasks need less. This guide sorts one task and sets 4 limits first. It takes 25 minutes.",
+    lead: "Most tasks need less than an AI agent. This guide sorts one task and sets 4 limits first. It takes 25 minutes.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
