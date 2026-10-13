@@ -125,7 +125,8 @@ The AI Automation Queen`;
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "fatiha@email.shiftandlead.com",
+        // Sender is set in Vercel (GUIDE_EMAIL_FROM); it must be a sender verified in Lumail.
+        from: process.env.GUIDE_EMAIL_FROM || "fatiha@email.shiftandlead.com",
         to: normalizedEmail,
         subject: `Your guide: ${title}`,
         markdown: guideEmail,
