@@ -33,6 +33,7 @@ module.exports = async function handler(request, response) {
     lastName,
     guideSlug,
     marketingConsent,
+    returning,
     source,
     timestamp,
     website,
@@ -55,6 +56,28 @@ module.exports = async function handler(request, response) {
   const guide = APPROVED_GUIDES.get(guideSlug) ||
     (allowPreview ? preview.guides.find((item) => item.slug === guideSlug) : undefined);
   if (!guide?.lumailTag) return response.status(400).json({ error: "This guide is not configured for email delivery." });
+  // A reader who already signed up on another guide opens this one straight away.
+  // Only add this guide's tag so Lumail knows what they read; no form, no second email.
+  if (returning === true) {
+    try {
+      const tagResponse = await fetch("https://lumail.io/api/v1/subscribers", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: normalizedEmail,
+          tags: ["shift-and-lead-guide", guide.lumailTag],
+          replaceTags: false,
+          resubscribe: false,
+          triggerWorkflows: true,
+        }),
+      });
+      if (!tagResponse.ok) console.error("Lumail guide tag failed", { status: tagResponse.status, guideSlug });
+      return response.status(200).json({ success: tagResponse.ok, tagged: tagResponse.ok });
+    } catch (error) {
+      console.error("Lumail guide tag request failed", { guideSlug, message: error?.message });
+      return response.status(200).json({ success: false, tagged: false });
+    }
+  }
   if (REBUILT_APPROVED_SLUGS.has(guideSlug) && !givenName) {
     return response.status(400).json({ error: "Enter your first name." });
   }

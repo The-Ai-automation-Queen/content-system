@@ -5,6 +5,30 @@ import { BatchIcon } from "./batch-icons";
 import styles from "./guide-reading-page.module.css";
 
 const ACCESS_KEY = "shift-lead-guide-access";
+// Readers enter their email once. Later guides open straight away and only add that guide's tag.
+const READER_KEY = "shift-lead-guide-reader";
+const taggedKey = (slug: string) => `shift-lead-guide-tagged:${slug}`;
+
+function tagReturningReader(guideSlug: string) {
+  try {
+    const email = window.localStorage.getItem(READER_KEY);
+    if (!email || window.localStorage.getItem(taggedKey(guideSlug)) === "true") return;
+    fetch("/api/guide-capture", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, guideSlug, returning: true, consent: true }),
+    })
+      .then((response) => response.json())
+      .then((result: { tagged?: boolean }) => {
+        if (result.tagged) window.localStorage.setItem(taggedKey(guideSlug), "true");
+      })
+      .catch(() => {
+        // Tagging is a bonus: the guide stays open either way.
+      });
+  } catch {
+    // Storage can be unavailable in privacy-restricted browsing modes.
+  }
+}
 
 export function GuideAccessBoundary({
   guideSlug,
@@ -49,6 +73,7 @@ export function GuideAccessBoundary({
       // Storage can be unavailable in privacy-restricted browsing modes.
     }
     setUnlocked(!forceGate && (review || hasAccess));
+    if (hasAccess && !review && !forceGate) tagReturningReader(guideSlug);
     setReady(true);
     const tracker = (window as Window & { slTrack?: (name: string, data?: Record<string, string>) => void }).slTrack;
     tracker?.((review || hasAccess) && !forceGate ? "guide_open" : "guide_gate_view", { guide_slug: guideSlug, source_page: window.location.pathname });
@@ -84,6 +109,8 @@ export function GuideAccessBoundary({
       }
       try {
         window.localStorage.setItem(ACCESS_KEY, "true");
+        window.localStorage.setItem(READER_KEY, String(form.get("email") || "").trim().toLowerCase());
+        window.localStorage.setItem(taggedKey(guideSlug), "true");
       } catch {
         // A successful request still grants access for the current page view.
       }
