@@ -209,7 +209,7 @@ export function GuideReadingPage({ guide }: { guide: GuidePage }) {
       />
       <article>
         <div className={styles.shell}>
-          <Link className={styles.back} href="/guides/">← All guides</Link>
+          <Link className={styles.back} href="/guides/">← All Guides</Link>
           <figure className={styles.cover}>
             <Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 820px) 100vw, 1160px" />
           </figure>

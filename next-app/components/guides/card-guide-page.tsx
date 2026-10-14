@@ -126,7 +126,7 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
     {card.hero && <header className={batch.hero}>
       <div className={batch.heroInner}>
         <div className={batch.heroText}>
-          <Link className={batch.back} href="/guides/">← All guides</Link>
+          <Link className={batch.back} href="/guides/">← All Guides</Link>
           {titleBlock}
           <p className={batch.heroLine}>{card.hero.line}</p>
           <a className={batch.heroButton} href={`#${card.slug}-intro`}>Start the guide ↓</a>
@@ -137,7 +137,7 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
       </div>
     </header>}
     <div className={styles.column}>
-      {!card.hero && <Link className={styles.back} href="/guides/">← All guides</Link>}
+      {!card.hero && <Link className={styles.back} href="/guides/">← All Guides</Link>}
 
       <div className={styles.author}>
         <img src="/fatiha-avatar-96.webp" alt="" width={46} height={46} />

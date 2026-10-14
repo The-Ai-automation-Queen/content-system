@@ -32,7 +32,7 @@ export function AiBrowserPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>What can an AI browser <span>actually do?</span></h1><p>Use it to read a public page with you. Learn when it can take action, what it may see, and how to check its answer before you rely on it.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <nav className={styles.contents} aria-label="In this guide"><strong>In this guide</strong><a href="#browser-use-title">Read or act?</a><a href="#browser-privacy-title">Check access</a><a href="#browser-test-title">Try it on public pages</a></nav>

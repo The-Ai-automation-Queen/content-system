@@ -132,7 +132,7 @@ export function BatchGuidePage({ guide }: { guide: GuidePage }) {
     <header className={styles.hero}>
       <div className={styles.heroInner}>
         <div className={styles.heroText}>
-          <Link className={styles.back} href="/guides/">← All guides</Link>
+          <Link className={styles.back} href="/guides/">← All Guides</Link>
           <p className={styles.eyebrow}><span aria-hidden="true">✦</span>Free guide · {content.hero.tool} · {content.minutes} minutes</p>
           <h1>{content.hero.title} <em>{content.hero.accent}</em></h1>
           <p className={styles.heroLine}>{content.hero.line}</p>

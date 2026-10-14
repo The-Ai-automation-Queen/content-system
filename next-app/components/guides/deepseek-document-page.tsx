@@ -66,7 +66,7 @@ export function DeepseekDocumentPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>Can DeepSeek handle your document work <span>as well as your current tool?</span></h1><p>Give both tools the same document and instruction. Check the facts, missing details and time spent fixing each result.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <nav className={styles.contents} aria-label="In this guide"><strong>In this guide</strong><a href="#doc-example-title">See an example</a><a href="#doc-test-title">Set up the test</a><a href="#doc-prompt-title">Get the instruction</a><a href="#doc-score-title">Compare the results</a></nav>

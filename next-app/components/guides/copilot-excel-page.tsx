@@ -58,7 +58,7 @@ export function CopilotExcelPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}>
         <h1>Did Copilot change <span>only one cell?</span></h1>
         <p>Make a tiny practice sheet, request one edit, then compare the cells before trusting the result.</p>

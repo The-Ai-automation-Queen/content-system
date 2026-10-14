@@ -7,4 +7,4 @@
 :HL["/_next/static/css/d7e5a82cec403cc8.css","style"]
 :HL["/_next/static/css/c30e4cabe04241e7.css","style"]
 :HL["/_next/static/css/c9d53a5723aac2a3.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"guides","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"what-is-an-ai-browser","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"bluV_5BxoeZ8bln2JC3C3"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"guides","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"what-is-an-ai-browser","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"TB1uoIDmiI4KVfb_tywG8"}

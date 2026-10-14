@@ -85,7 +85,7 @@ export function MistralMultilingualPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}>
         <h1>Can Mistral research in two languages <span>without losing the source?</span></h1>
         <p>Keep the original wording, a careful translation and the direct link together. Then check each claim yourself.</p>
