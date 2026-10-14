@@ -69,13 +69,13 @@ ol.list { list-style: decimal; }
 .gateStage { position: relative; }
 .preview { min-height: 640px; filter: blur(6px); opacity: .75; pointer-events: none; user-select: none; }
 .gateStage:has(> [data-guide-capture-boundary][hidden]) .preview { display: none; }
-.gateStage > :global([data-guide-capture-boundary]:not([hidden])) { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; padding: 16px 0; }
+.gateStage > :global([data-guide-capture-boundary]) { display: grid; place-items: center; padding: 16px 0; }
 .gateStage > :global([data-guide-capture-boundary]) > section { width: min(100%, 480px); padding: 34px 30px 28px; border: 0; border-radius: 22px; box-shadow: 0 30px 80px rgba(13,17,33,.25), 10px 10px 0 -2px var(--lilac); }
 .gateStage > :global([data-guide-capture-boundary]) h2 em { color: var(--blue); }
 .gateStage > :global([data-guide-capture-boundary]) form > div { grid-template-columns: 1fr; }
 .gateStage > :global([data-guide-capture-boundary]) input:not([type="checkbox"]) { height: 50px; border-radius: 99px; padding: 0 18px; }
-.gateStage > :global([data-guide-capture-boundary]) button { min-height: 52px; background: var(--pink); font-size: 16px; }
-.gateStage > :global([data-guide-capture-boundary]) button:hover { background: #d9006c; }
+.gateStage > :global([data-guide-capture-boundary]) button { min-height: 52px; background: var(--ink, #0B0D12); font-size: 16px; }
+.gateStage > :global([data-guide-capture-boundary]) button:hover { background: var(--blue); }
 
 .cta { position: relative; overflow: hidden; margin-top: 56px; padding: 48px 32px; border-radius: 22px; background: var(--ink); color: #fff; }
 .cta::before { content: ""; position: absolute; right: -20%; top: -50%; width: 80%; height: 130%; background: radial-gradient(closest-side, rgba(44,75,224,.5), transparent); pointer-events: none; }

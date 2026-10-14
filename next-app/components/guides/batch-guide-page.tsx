@@ -155,7 +155,7 @@ export function BatchGuidePage({ guide }: { guide: GuidePage }) {
           <h2 id={`${content.slug}-intro-title`}>Introduction</h2>
           <p className={styles.meta}>{content.hero.tool} · {content.minutes} min read · {content.level}</p>
           <p className={styles.lead}><Rich value={content.answer} /></p>
-          <p className={styles.byline}>A guide by <strong>Fatiha Chikh</strong> | The AI Automation Queen</p>
+          <p className={styles.byline}>A guide by <strong>Fatiha Chikh</strong> · Shift &amp; Lead</p>
           <p className={styles.leaveWith}><strong>What you leave with:</strong> <Rich value={content.leaveWith} /></p>
         </section>
 

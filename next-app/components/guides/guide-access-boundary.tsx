@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, type ReactNode, useEffect, useRef, useState } from "react";
+import { FormEvent, type ReactNode, useEffect, useState } from "react";
 import { BatchIcon } from "./batch-icons";
 import styles from "./guide-reading-page.module.css";
 
@@ -59,7 +59,6 @@ export function GuideAccessBoundary({
   const [unlocked, setUnlocked] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
   const [message, setMessage] = useState("");
-  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -105,40 +104,45 @@ export function GuideAccessBoundary({
       if (!response.ok) {
         // Show the server's reason (bad email, not configured, refused) so a failure can be diagnosed.
         const result = await response.json().catch(() => ({})) as { error?: string };
-        throw new Error(result.error || `We could not open the guide. Please try again. (${response.status})`);
+        throw new Error(result.error || `That did not send. Please try again. (${response.status})`);
       }
       try {
         window.localStorage.setItem(ACCESS_KEY, "true");
         window.localStorage.setItem(READER_KEY, String(form.get("email") || "").trim().toLowerCase());
         window.localStorage.setItem(taggedKey(guideSlug), "true");
       } catch {
-        // A successful request still grants access for the current page view.
+        // The thank-you still shows for this page view.
       }
       setUnlocked(true);
       setStatus("idle");
       tracker?.("guide_unlock", { guide_slug: guideSlug, source_page: window.location.pathname });
-      window.requestAnimationFrame(() => contentRef.current?.focus());
     } catch (error) {
       setStatus("error");
-      setMessage(error instanceof Error && error.message !== "Failed to fetch" ? error.message : "We could not open the guide. Please check your connection and try again.");
+      setMessage(error instanceof Error && error.message !== "Failed to fetch" ? error.message : "That did not send. Please check your connection and try again.");
     }
   };
 
+  // Option B (owner decision 14/10/2026): the whole guide is free to read. The email
+  // ask comes after the content, so the reader gets their first win before the form.
+  const subscribed = ready && unlocked;
   return (
     <>
+      <div className="guide-gated-content">
+        {children}
+      </div>
       <div
         className={variant === "band" ? `${styles.captureTransition} ${styles.bandGate}` : styles.captureTransition}
         data-guide-capture-boundary
-        hidden={ready && unlocked}
       >
         <section className={styles.captureBoundary} aria-labelledby={`guide-gate-title-${guideSlug}`}>
-          <div>
+          {subscribed ? <div>
+            <h2 id={`guide-gate-title-${guideSlug}`}>You&rsquo;re on the list. <em>The next guide is on its way.</em></h2>
+          </div> : <div>
           {eyebrow
             ? <span className={styles.gateEyebrow}><span aria-hidden="true">✦</span>{eyebrow}</span>
-            : <span className={styles.gateLock}><BatchIcon name="lock" size={22} /></span>}
-          <h2 id={`guide-gate-title-${guideSlug}`}>{heading || "Get the next step"}{headingAccent && <> <em>{headingAccent}</em></>}</h2>
-          {guidePromise !== "" && <p>{guidePromise || `Get the next practical part of ${guideTitle} and a link to return to this guide.`}</p>}
-          {note && <p className={styles.gateNote}>{note}</p>}
+            : <span className={styles.gateLock}><BatchIcon name="mail" size={22} /></span>}
+          <h2 id={`guide-gate-title-${guideSlug}`}>Did this help? <em>Get the next guide by email.</em></h2>
+          <p>One short, practical AI guide at a time. Plain words, no jargon.</p>
           <form onSubmit={submit}>
             <div className={styles.nameFields}>
               <label htmlFor={`guide-first-name-${guideSlug}`}>First name<input id={`guide-first-name-${guideSlug}`} name="firstName" type="text" autoComplete="given-name" maxLength={100} required /></label>
@@ -146,30 +150,22 @@ export function GuideAccessBoundary({
             </div>
             <input className={styles.honeypot} name="website" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
             <label className={styles.consent}>
-              <input name="marketingConsent" type="checkbox" />
-              <span>Also send me new guides and updates (optional, unsubscribe anytime).</span>
+              <input name="marketingConsent" type="checkbox" required />
+              <span>Yes, email me new guides and updates. Unsubscribe anytime.</span>
             </label>
-            <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Opening guide..." : (actionLabel || "Open the rest of the guide")}</button>
+            <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Sending..." : "Send me the next guide"}</button>
             {status === "error" && <strong role="alert">{message}</strong>}
           </form>
-          </div>
+          </div>}
         </section>
       </div>
-      <div
-        className="guide-gated-content"
-        ref={contentRef}
-        tabIndex={-1}
-        hidden={!ready || !unlocked}
-      >
-        {children}
-        {showWorkBridge && <aside className={styles.workBridge} aria-labelledby={`guide-work-bridge-${guideSlug}`}>
-          <div>
-            <h2 id={`guide-work-bridge-${guideSlug}`}>Want your team working like this?</h2>
-            <p>I run a practical AI programme for teams, adapted to your industry and built on your own work. I also help leaders decide what AI should change in their business and marketing.</p>
-          </div>
-          <a href="/work-with-fatiha/" data-track="guide_to_work_with_me">See how we can work together <span aria-hidden="true">→</span></a>
-        </aside>}
-      </div>
+      {showWorkBridge && <aside className={styles.workBridge} aria-labelledby={`guide-work-bridge-${guideSlug}`}>
+        <div>
+          <h2 id={`guide-work-bridge-${guideSlug}`}>Want AI set up in your business?</h2>
+          <p>I work 1:1 with a few business owners at a time. We find where AI saves you time first, and set it up together.</p>
+        </div>
+        <a href="/work-with-fatiha/" data-track="guide_to_work_with_me">Work with me <span aria-hidden="true">→</span></a>
+      </aside>}
     </>
   );
 }
