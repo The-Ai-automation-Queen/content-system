@@ -219,3 +219,12 @@ body.v3 .v3-hero-photo .v3-frame,body.v3 .v3-hero-photo img{height:100%}
 body.v3 .v3-apply .v3-btn-pink{background:var(--pink);color:#fff}
 body.v3 .v3-apply .v3-btn-pink:hover{background:#fff;color:var(--ink)}
 @media(max-width:960px){.v3-fit-grid,.v3-apply-steps{grid-template-columns:1fr}.v3-fit-grid>div:first-child{border-right:0;border-bottom:2px solid var(--ink)}.v3-fit-grid>div{padding:30px 24px}}
+/* Zoomed-out hero photo: show the whole square, anchored bottom-right */
+@media(min-width:961px){
+  body.v3 .v3-hero-photo{width:48%;display:flex;align-items:flex-end}
+  body.v3 .v3-hero-photo .v3-frame{height:auto;width:100%;position:relative}
+  body.v3 .v3-hero-photo .v3-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--blue) 0%,#2C4BE000 22%),linear-gradient(180deg,var(--blue) 0%,#2C4BE000 30%)}
+  body.v3 .v3-hero-photo img{height:auto;aspect-ratio:1/1;object-position:center}
+  body.v3 .v3-hero-photo::after{display:none}
+}
+@media(max-width:960px){body.v3 .v3-hero-photo img{object-position:center}}
