@@ -212,3 +212,61 @@ body.v5 .v5-tier h3{margin-bottom:12px;font:400 30px/1.1 "Playfair Display",Geor
 .v5-tier-paid li::before{color:var(--blue)}
 body.v5 .v5-tier-paid li{color:var(--ink)!important}
 @media(max-width:900px){.v5-tiers{grid-template-columns:1fr}}
+
+/* 2026-10-14g: solid blue only in the hero. Elsewhere light backgrounds, blue as accent. */
+body.v5 .sk-launch{background:var(--mist);color:var(--ink)}
+body.v5 .sk-launch h2,body.v5 .sk-launch h2 span,body.v5 .sk-launch p,body.v5 .sk-launch strong{color:var(--ink)}
+body.v5 .sk-launch h2 em{color:var(--blue)!important}
+body.v5 .sk-launch .v5-kicker{color:var(--blue)}
+body.v5 .sk-launch-grid>div>p{color:var(--grey)}
+body.v5 .sk-launch .sk-pill-pink{background:var(--ink);color:#fff!important}
+body.v5 .sk-launch .sk-pill-pink:hover{background:var(--blue);color:#fff!important}
+body.v5 .sk-launch-note{color:var(--grey)!important}
+.v5-tier{background:#fff;border:1px solid #0B0D121F;color:var(--ink)}
+body.v5 .v5-tier li{color:var(--ink)!important}
+.v5-tier li::before{color:var(--blue)}
+.v5-tier-paid{border:2px solid var(--blue)}
+
+/* Inside the community: a small classroom card instead of an empty box */
+.v5-classroom{margin:0;align-self:center;border-radius:18px;background:#fff;box-shadow:0 1px 0 #0B0D1214,0 24px 50px -28px #2C4BE066;overflow:hidden}
+.v5-classroom-bar{display:flex;align-items:center;gap:6px;padding:14px 18px;border-bottom:1px solid #0B0D1214;font:400 13px/1 "Space Mono",ui-monospace,monospace;color:var(--grey)}
+.v5-classroom-bar i{width:10px;height:10px;border-radius:50%;background:#0B0D121F}
+.v5-classroom-bar span{margin-left:10px}
+.v5-classroom ol{margin:0;padding:8px 10px 12px;list-style:none}
+.v5-classroom li{display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:12px;padding:12px 10px;border-radius:10px;font-size:16px}
+.v5-classroom li+li{border-top:1px solid #0B0D120F}
+.v5-classroom b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--mist);color:var(--blue);font:700 13px/1 Inter,system-ui,sans-serif}
+.v5-classroom em{font:700 11px/1 Inter,system-ui,sans-serif;font-style:normal;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:#CAFF00;color:var(--ink)}
+.v5-classroom .v5-lock{background:var(--mist)}
+.v5-classroom .v5-lock em{background:var(--blue);color:#fff}
+
+/* Option cards: mini classroom + photo */
+.v5-door-class{display:flex;align-items:center;padding:18px}
+.v5-door-class ol{width:100%;margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.v5-door-class li{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:#fff;font-size:14px;box-shadow:0 1px 0 #0B0D1214}
+.v5-door-class b{display:grid;place-items:center;flex:0 0 24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;font-size:12px}
+body.v5 .v5-door-photo{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+body.v5 .v5-buy{order:4;margin:12px 22px 0;font-weight:700;color:var(--blue)!important}
+
+/* Proof: award card white with a blue frame */
+.v5-receipt-award{background:#fff!important;color:var(--ink);box-shadow:inset 0 0 0 2px var(--blue)!important}
+.v5-receipt-award .v5-laurel{color:var(--blue);opacity:.35}
+.v5-receipt-award .v5-src{color:var(--blue)}
+.v5-receipt-award p{color:var(--ink)!important}
+.v5-receipt-award a{color:var(--ink)!important}
+
+/* Final sign-up: light */
+body.v5 .sk-final{background:var(--mist);color:var(--ink)}
+body.v5 .sk-final h2,body.v5 .sk-final h2 span{color:var(--ink)!important}
+body.v5 .sk-final h2 em{color:var(--blue)!important}
+body.v5 .sk-final p{color:var(--grey)}
+body.v5 .v5-sign{color:var(--blue)}
+body.v5 .sk-newsletter,body.v5 .sk-newsletter label,body.v5 .sk-newsletter p{color:var(--ink)}
+body.v5 .sk-newsletter input[type=email],body.v5 .sk-newsletter input[name=firstName]{border:1.5px solid #0B0D1233}
+body.v5 .sk-consent span{color:var(--grey)}
+
+/* Phones: lighter proof (credential rows only) */
+@media(max-width:700px){.v5-receipts{display:none}.v5-proof-grid{grid-template-columns:1fr}}
+body.v5 .sk-workbooks{background:#fff}
+body.v5 .sk-final .v5-sign{color:var(--blue)}
+body.v5 .sk-book-covers .v5-buy{font:700 15px/1.2 Inter,system-ui,sans-serif;margin:12px 22px 0}
