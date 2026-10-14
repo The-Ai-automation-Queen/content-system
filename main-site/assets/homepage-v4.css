@@ -190,3 +190,32 @@ body.v3 .v3-hero-photo .v3-frame,body.v3 .v3-hero-photo img{height:100%}
 .v3-hero-grid{position:static}
 .v3-hero-grid>div:first-child{position:relative;z-index:2}
 @media(max-width:960px){.v3-hero-photo{margin-top:40px;width:calc(100% + 36px);margin-left:-18px}}
+/* Copy v5 sections */
+.v3-press{background:var(--ink);color:#FFFFFFB3;padding:26px 0}
+.v3-press .v3-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:14px 40px}
+.v3-press span{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--pink)}
+.v3-press ul{display:flex;flex-wrap:wrap;gap:12px 36px;margin:0;padding:0;list-style:none;font-size:16px;font-weight:800;letter-spacing:-.01em;color:#fff}
+.v3-familiar h2 em{color:var(--blue)}
+.v3-note{font-size:20px!important;font-weight:700;color:var(--ink)!important}
+.v3-belief p:last-child{font-size:24px;font-style:italic;color:#fff;max-width:56ch}
+.v3-path .v3-step{font-size:15px;letter-spacing:0;text-transform:none;font-style:italic;font-weight:700}
+.v3-fit{padding:100px 0;background:#fff}
+.v3-fit-grid{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--ink)}
+.v3-fit-grid>div{padding:44px}
+.v3-fit-grid>div:first-child{border-right:2px solid var(--ink)}
+.v3-fit h3{font-size:28px;text-transform:uppercase;margin-bottom:22px}
+.v3-fit ul{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.v3-fit li{padding-left:30px;position:relative;font-size:18px}
+.v3-fit-grid>div:first-child li::before{content:"✓";position:absolute;left:0;color:var(--blue);font-weight:900}
+.v3-fit-grid>div:last-child li::before{content:"✕";position:absolute;left:0;color:var(--pink);font-weight:900}
+.v3-apply{background:var(--ink);color:#fff}
+.v3-apply .v3-tag{color:var(--pink)}
+.v3-apply .v3-head h2{color:#fff}
+.v3-apply-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin:0 0 56px;padding:0;list-style:none}
+.v3-apply-steps li{padding-top:24px;border-top:2px solid #FFFFFF40}
+.v3-apply-steps b{display:block;font-size:72px;font-weight:900;letter-spacing:-.05em;line-height:1;color:var(--blue)}
+.v3-apply-steps h3{margin:14px 0 8px;font-size:28px}
+.v3-apply-steps p{margin:0;color:#FFFFFFB3}
+body.v3 .v3-apply .v3-btn-pink{background:var(--pink);color:#fff}
+body.v3 .v3-apply .v3-btn-pink:hover{background:#fff;color:var(--ink)}
+@media(max-width:960px){.v3-fit-grid,.v3-apply-steps{grid-template-columns:1fr}.v3-fit-grid>div:first-child{border-right:0;border-bottom:2px solid var(--ink)}.v3-fit-grid>div{padding:30px 24px}}
