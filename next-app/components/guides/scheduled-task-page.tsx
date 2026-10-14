@@ -51,7 +51,7 @@ export function ScheduledTaskPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}>
         <h1>Can ChatGPT tell you <span>when a public page changes?</span></h1>
         <p>Set one public page to check each weekday. Ask for an alert only when the detail you care about changes.</p>

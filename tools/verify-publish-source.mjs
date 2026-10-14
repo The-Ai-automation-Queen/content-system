@@ -89,7 +89,7 @@ const vercel = JSON.parse(read('main-site/vercel.json'));
 if (!/<title>[^<]+<\/title>/i.test(homepage)) failures.push('Homepage is missing a title');
 if (!/<h1\b/i.test(homepage)) failures.push('Homepage is missing an H1');
 if (!/href=["']\/guides\//i.test(homepage)) failures.push('Homepage no longer links to the guides');
-if (!/Use AI for real work\./i.test(guideLibrary) || !/Keep the decisions that need\s*<em>you\.<\/em>/i.test(guideLibrary)) {
+if (!/Learn to use AI in your business,\s*<em>step by step\.<\/em>/i.test(guideLibrary)) {
   failures.push('Guide library is not the current outcome-led implementation');
 }
 const approvedGuideSlugs = guidePublication.approved.map((guide) => guide.slug);

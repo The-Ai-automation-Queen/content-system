@@ -77,7 +77,11 @@ export function GuideAccessBoundary({
           timestamp: new Date().toISOString(),
         }),
       });
-      if (!response.ok) throw new Error("We could not open the guide. Please try again.");
+      if (!response.ok) {
+        // Show the server's reason (bad email, not configured, refused) so a failure can be diagnosed.
+        const result = await response.json().catch(() => ({})) as { error?: string };
+        throw new Error(result.error || `We could not open the guide. Please try again. (${response.status})`);
+      }
       try {
         window.localStorage.setItem(ACCESS_KEY, "true");
       } catch {
@@ -87,9 +91,9 @@ export function GuideAccessBoundary({
       setStatus("idle");
       tracker?.("guide_unlock", { guide_slug: guideSlug, source_page: window.location.pathname });
       window.requestAnimationFrame(() => contentRef.current?.focus());
-    } catch {
+    } catch (error) {
       setStatus("error");
-      setMessage("We could not open the guide. Please try again.");
+      setMessage(error instanceof Error && error.message !== "Failed to fetch" ? error.message : "We could not open the guide. Please check your connection and try again.");
     }
   };
 

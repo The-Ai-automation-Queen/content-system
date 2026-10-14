@@ -43,7 +43,7 @@ export function KimiSheetsPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>Too many tasks in too many places? <span>Make one tracker with Kimi.</span></h1><p>Give Kimi 3 sample tasks. Leave with an Excel file you can check and reuse.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <nav className={styles.stageNav} aria-label="Guide steps">{instructions.steps.map((item, index) => <button key={item.title} type="button" aria-current={!showAll && step === index ? "step" : undefined} onClick={() => { setShowAll(false); goTo(index); }}><span>{index + 1}</span>{item.title}</button>)}</nav>

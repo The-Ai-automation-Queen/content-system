@@ -40,7 +40,7 @@ export function GeminiDrivePage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>Why can’t Gemini see the file <span>in your Drive?</span></h1><p>Test one made-up document. Find out if the problem is your account, the connection, the search or the file.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
       <nav className={styles.contents} aria-label="In this guide"><strong>IN THIS GUIDE</strong><a href="#gemini-demo-title">01 · Make a test document</a><a href="#gemini-checks-title">02 · Find the blocker</a><a href="#gemini-related-title">03 · What to try next</a></nav>
       <p className={styles.promise}>You will know which check failed and have a safe test request to try again.</p>

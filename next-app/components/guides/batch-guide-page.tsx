@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { GuideImage } from "./guide-image";
 import Link from "next/link";
 import { Fragment, useState } from "react";
 import type { GuidePage } from "@/content/guide-page";
@@ -131,7 +132,7 @@ export function BatchGuidePage({ guide }: { guide: GuidePage }) {
     <header className={styles.hero}>
       <div className={styles.heroInner}>
         <div className={styles.heroText}>
-          <Link className={styles.back} href="/guides/">← All guides</Link>
+          <Link className={styles.back} href="/guides/">← All Guides</Link>
           <p className={styles.eyebrow}><span aria-hidden="true">✦</span>Free guide · {content.hero.tool} · {content.minutes} minutes</p>
           <h1>{content.hero.title} <em>{content.hero.accent}</em></h1>
           <p className={styles.heroLine}>{content.hero.line}</p>
@@ -139,7 +140,7 @@ export function BatchGuidePage({ guide }: { guide: GuidePage }) {
         </div>
         {content.hero.art.kind === "pose"
           ? <div className={styles.heroPose}><span className={styles.dot} aria-hidden="true" /><Image src={content.hero.art.src} alt={content.hero.art.alt} width={760} height={760} priority sizes="(max-width: 760px) 360px, 560px" /></div>
-          : <div className={styles.heroScene}><div><Image src={content.hero.art.src} alt={content.hero.art.alt} fill priority sizes="(max-width: 760px) 100vw, 600px" /></div></div>}
+          : <div className={styles.heroScene}><div><GuideImage src={content.hero.art.src} alt={content.hero.art.alt} fill priority sizes="(max-width: 760px) 100vw, 600px" /></div></div>}
       </div>
     </header>
 
@@ -170,7 +171,7 @@ export function BatchGuidePage({ guide }: { guide: GuidePage }) {
               <Heading id={`${content.slug}-s${index}`} num={number(firstJob + index)} title={title.head} accent={title.accent} />
               <Blocks blocks={section.blocks} guide={content} />
             </section>
-            {content.illustration?.afterSection === index && <figure className={styles.illustration}><div><Image src={content.illustration.src} alt={content.illustration.alt} fill sizes="(max-width: 760px) 100vw, 720px" /></div><figcaption>{content.illustration.caption}</figcaption></figure>}
+            {content.illustration?.afterSection === index && <figure className={styles.illustration}><div><GuideImage src={content.illustration.src} alt={content.illustration.alt} fill sizes="(max-width: 760px) 100vw, 720px" /></div><figcaption>{content.illustration.caption}</figcaption></figure>}
           </Fragment>;
         })}
 
@@ -213,7 +214,7 @@ export function BatchGuidePage({ guide }: { guide: GuidePage }) {
 
     <section className={styles.related} aria-labelledby={`${content.slug}-related`}>
       <h2 id={`${content.slug}-related`}>Keep reading. <em>One job at a time.</em></h2>
-      <div className={styles.relatedGrid}>{guide.related.map((item) => item.status === "coming-next" ? null : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><Image src={item.cover} alt="" fill sizes="(max-width: 760px) 100vw, 380px" /></figure><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p></GuideRelatedLink>)}</div>
+      <div className={styles.relatedGrid}>{guide.related.map((item) => item.status === "coming-next" ? null : <GuideRelatedLink key={item.slug} slug={item.slug}><figure><GuideImage src={item.cover} alt="" fill sizes="(max-width: 760px) 100vw, 380px" /></figure><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p></GuideRelatedLink>)}</div>
     </section>
   </main>;
 }

@@ -98,7 +98,7 @@ module.exports = async function handler(request, response) {
         guideSlug,
 
       });
-      return response.status(502).json({ error: "We could not open the guide. Please try again." });
+      return response.status(502).json({ error: `We could not open the guide. Please try again. (ref S${lumailResponse.status})` });
     }
     const guideUrl = `${GUIDE_ORIGIN}/guides/${guideSlug}/`;
     const guideDetails = GUIDE_DETAILS.get(guideSlug);
@@ -117,7 +117,7 @@ The steps and any copyable instructions are together on the page. Start with the
 
 Keep this email so you can return to the guide. If you opened it on your phone, use the same link on your laptop when you’re ready to try the steps.
 
-The AI Automation Queen`;
+Fatiha`;
     const emailResponse = await fetch("https://lumail.io/api/v2/emails", {
       method: "POST",
       headers: {
@@ -125,19 +125,21 @@ The AI Automation Queen`;
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "fatiha@email.shiftandlead.com",
+        // Sender is set in Vercel (GUIDE_EMAIL_FROM); it must be a sender verified in Lumail.
+        from: process.env.GUIDE_EMAIL_FROM || "fatiha@email.shiftandlead.com",
         to: normalizedEmail,
         subject: `Your guide: ${title}`,
         markdown: guideEmail,
       }),
     });
     if (!emailResponse.ok) {
+      // The reader is already subscribed: open the guide on screen anyway.
       console.error("Lumail guide email failed", { status: emailResponse.status, guideSlug });
-      return response.status(502).json({ error: "We could not open the guide. Please try again." });
+      return response.status(200).json({ success: true, emailSent: false });
     }
-    return response.status(200).json({ success: true });
+    return response.status(200).json({ success: true, emailSent: true });
   } catch (error) {
-    console.error("Lumail guide capture request failed", { guideSlug });
-    return response.status(502).json({ error: "We could not open the guide. Please try again." });
+    console.error("Lumail guide capture request failed", { guideSlug, message: error?.message });
+    return response.status(502).json({ error: "We could not open the guide. Please try again. (ref N)" });
   }
 };

@@ -35,7 +35,7 @@ export function GeminiTasksPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>Can Gemini see which Google Tasks list <span>a task is in?</span></h1><p>Use 3 pretend tasks in 2 lists. Ask Gemini for the list names, then compare its reply with Google Tasks.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
       <nav className={styles.contents} aria-label="In this guide"><strong>IN THIS GUIDE</strong><a href="#gemini-tasks-exercise-title">01 · Make two demo lists</a><a href="#gemini-tasks-request-title">02 · Ask Gemini</a><a href="#gemini-tasks-check-title">03 · Check the result</a></nav>
       <p className={styles.promise}>You will see if Gemini returns each task with the right project list, or if you should keep organising directly in Google Tasks.</p>

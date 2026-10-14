@@ -1,6 +1,33 @@
 {
   "guides": [
     {
+      "slug": "start-using-ai-in-your-business",
+      "title": "How to Start Using AI in Your Business When You Don't Know Where to Begin",
+      "h1": "How to Start Using AI in Your Business When You Don't Know Where to Begin",
+      "datePublished": "2026-10-13",
+      "dateModified": "2026-10-13",
+      "readMinutes": 15,
+      "cover": "/images/guides/start-using-ai-in-your-business.webp",
+      "track": "understand",
+      "status": "live",
+      "reviewStatus": "published",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Beginner",
+      "hub": "AI essentials",
+      "outcomes": [
+        "Understand AI"
+      ],
+      "tags": [
+        "what is AI",
+        "AI basics",
+        "first AI task",
+        "AI assistant"
+      ],
+      "summary": "Set ChatGPT up for your business, find the jobs to hand over, and build your first assistant.",
+      "sequence": 105,
+      "access": "free"
+    },
+    {
       "slug": "ai-essentials",
       "title": "Start using AI without learning everything",
       "h1": "Start using AI without learning everything",
@@ -211,8 +238,8 @@
     },
     {
       "slug": "ai-jargon-guide",
-      "title": "Learn 6 AI Words by Watching Them Happen",
-      "h1": "Learn 6 AI Words by Watching Them Happen",
+      "title": "What Do AI Words Like \"Agent\" and \"Hallucination\" Mean?",
+      "h1": "What Do AI Words Like \"Agent\" and \"Hallucination\" Mean?",
       "datePublished": "2026-06-10",
       "dateModified": "2026-09-28",
       "readMinutes": 10,
@@ -232,8 +259,8 @@
         "AI agent",
         "connector"
       ],
-      "summary": "Don't memorise a glossary. Run three 2-minute experiments and you'll never forget what these words mean.",
-      "sequence": 20,
+      "summary": "6 words in plain English, and what each one means for your business.",
+      "sequence": 120,
       "reviewStatus": "published"
     },
     {
@@ -266,8 +293,8 @@
     },
     {
       "slug": "which-ai-tool-for-what",
-      "title": "Stop Paying for Five AI Tools",
-      "h1": "Stop Paying for Five AI Tools",
+      "title": "ChatGPT, Claude or Gemini: Which One Should I Pay For?",
+      "h1": "ChatGPT, Claude or Gemini: Which One Should I Pay For?",
       "datePublished": "2026-06-23",
       "dateModified": "2026-09-28",
       "readMinutes": 15,
@@ -293,14 +320,14 @@
         "Meta AI",
         "Mistral"
       ],
-      "summary": "Most people need one chat, plus the assistant already inside their work apps. Here's how to tell which.",
-      "sequence": 55,
+      "summary": "How to pick one and cancel the others.",
+      "sequence": 210,
       "reviewStatus": "published"
     },
     {
       "slug": "claude",
-      "title": "3 Admin Jobs to Hand Claude This Week",
-      "h1": "3 Admin Jobs to Hand Claude This Week",
+      "title": "How to Use Claude to Do My Admin",
+      "h1": "How to Use Claude to Do My Admin",
       "datePublished": "2026-07-08",
       "dateModified": "2026-09-28",
       "readMinutes": 10,
@@ -309,7 +336,7 @@
       "status": "live",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool",
@@ -322,8 +349,8 @@
         "document questions",
         "email drafts"
       ],
-      "summary": "Hand Claude three admin jobs this week: meeting notes into actions, answers from a long document, and rough points into an email. Prompts and a 30-second check.",
-      "sequence": 70,
+      "summary": "Meeting notes, long documents and emails, one prompt each.",
+      "sequence": 240,
       "access": "free"
     },
     {
@@ -713,9 +740,9 @@
     },
     {
       "slug": "show-up-in-ai-search",
-      "title": "Find Out What ChatGPT Says About Your Business",
-      "h1": "Find Out What ChatGPT Says About Your Business",
-      "summary": "Search like a client, see what AI knows about you, then fix the one page that matters most.",
+      "title": "How to Get ChatGPT to Recommend My Business",
+      "h1": "How to Get ChatGPT to Recommend My Business",
+      "summary": "Check what it says about you and fix it.",
       "datePublished": "2026-08-22",
       "dateModified": "2026-09-28",
       "readMinutes": 20,
@@ -726,7 +753,7 @@
       "positioningLane": "Use AI at work",
       "reviewStatus": "published",
       "formatLabel": "GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Content and creative work",
       "outcomes": [
         "Create content"
@@ -737,13 +764,13 @@
         "small business",
         "services page"
       ],
-      "sequence": 168
+      "sequence": 320
     },
     {
       "slug": "what-is-a-prompt",
-      "title": "The 4-Line Prompt That Works in Any AI",
-      "h1": "The 4-Line Prompt That Works in Any AI",
-      "summary": "A reusable 4-line prompt for ChatGPT, Claude or Gemini: the job, what it can use, what you want back and what to check.",
+      "title": "What Do I Type Into ChatGPT?",
+      "h1": "What Do I Type Into ChatGPT?",
+      "summary": "A fill-in-the-blanks template that works for any task.",
       "datePublished": "2026-06-10",
       "dateModified": "2026-09-28",
       "readMinutes": 5,
@@ -767,7 +794,7 @@
         "instructions",
         "better AI answers"
       ],
-      "sequence": 30
+      "sequence": 150
     },
     {
       "slug": "check-ai-answers",
@@ -849,9 +876,9 @@
     },
     {
       "slug": "what-is-an-ai-browser",
-      "title": "3 Safe First Jobs to Give an AI Browser",
-      "h1": "3 Safe First Jobs to Give an AI Browser",
-      "summary": "Start with reading, then comparing, and only then let it touch a form. Stop before anything is sent.",
+      "title": "What Is an AI Browser and Should I Use One?",
+      "h1": "What Is an AI Browser and Should I Use One?",
+      "summary": "What it does, and 3 safe ways to try it.",
       "datePublished": "2026-08-24",
       "dateModified": "2026-09-28",
       "readMinutes": 15,
@@ -862,7 +889,7 @@
       "positioningLane": "Use AI at work",
       "reviewStatus": "published",
       "formatLabel": "GUIDE",
-      "level": "Beginner",
+      "level": "Expert",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool",
@@ -875,13 +902,13 @@
         "AI browsing",
         "browser memory"
       ],
-      "sequence": 46
+      "sequence": 290
     },
     {
       "slug": "connect-ai-to-email-files-calendar",
-      "title": "Read This Before You Connect AI to Your Email",
-      "h1": "Read This Before You Connect AI to Your Email",
-      "summary": "Choose the smallest access, read the permission screen in plain words and know where to switch AI off in each tool.",
+      "title": "Is It Safe to Connect ChatGPT to My Gmail?",
+      "h1": "Is It Safe to Connect ChatGPT to My Gmail?",
+      "summary": "What it can see, and how to give it as little access as possible.",
       "datePublished": "2026-08-24",
       "dateModified": "2026-09-28",
       "readMinutes": 10,
@@ -892,7 +919,7 @@
       "positioningLane": "Use AI at work",
       "reviewStatus": "published",
       "formatLabel": "GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI essentials",
       "outcomes": [
         "Use AI safely"
@@ -904,13 +931,13 @@
         "file permissions",
         "disconnect AI apps"
       ],
-      "sequence": 47
+      "sequence": 280
     },
     {
       "slug": "ai-skills-worth-learning-for-work",
-      "title": "3 AI Skills to Practise at Work This Week",
-      "h1": "3 AI Skills to Practise at Work This Week",
-      "summary": "Not tools, not tricks. Three habits that make your AI work better than your colleagues', whatever tool you use.",
+      "title": "Why Are My ChatGPT Answers So Average?",
+      "h1": "Why Are My ChatGPT Answers So Average?",
+      "summary": "The 3 things to do differently to get better answers.",
       "datePublished": "2026-08-24",
       "dateModified": "2026-09-28",
       "readMinutes": 20,
@@ -934,13 +961,13 @@
         "checking AI",
         "human judgement"
       ],
-      "sequence": 48
+      "sequence": 170
     },
     {
       "slug": "what-is-agentic",
-      "title": "4 Limits to Set Before an AI Agent Works Alone",
-      "h1": "4 Limits to Set Before an AI Agent Works Alone",
-      "summary": "What an AI agent is, and the 4 limits to set before one works alone.",
+      "title": "Do I Need an AI Agent for My Business?",
+      "h1": "Do I Need an AI Agent for My Business?",
+      "summary": "What an agent is, and how to know if you need one.",
       "datePublished": "2026-06-10",
       "dateModified": "2026-09-28",
       "readMinutes": 10,
@@ -948,7 +975,7 @@
       "track": "understand",
       "status": "live",
       "formatLabel": "FREE GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI agents",
       "outcomes": [
         "Understand AI",
@@ -961,14 +988,14 @@
         "permissions",
         "human approval"
       ],
-      "sequence": 40,
+      "sequence": 550,
       "reviewStatus": "published"
     },
     {
       "slug": "what-should-you-never-share-with-ai",
-      "title": "The 3-Question Check Before You Paste Anything Into AI",
-      "h1": "The 3-Question Check Before You Paste Anything Into AI",
-      "summary": "Run the 3-question paste test, sort what stays out, what needs permission and what is fine, and find each tool's privacy settings.",
+      "title": "Is It Safe to Put Client Information Into ChatGPT?",
+      "h1": "Is It Safe to Put Client Information Into ChatGPT?",
+      "summary": "What you can paste, what you can't, and the setting to turn off.",
       "datePublished": "2026-08-24",
       "dateModified": "2026-09-28",
       "readMinutes": 5,
@@ -988,14 +1015,14 @@
         "data settings",
         "safe AI use"
       ],
-      "sequence": 45,
+      "sequence": 130,
       "reviewStatus": "published"
     },
     {
       "slug": "what-is-ai",
-      "title": "3 Things to Try With AI Before Lunch",
-      "h1": "3 Things to Try With AI Before Lunch",
-      "summary": "Skip the theory. Hand AI three small jobs you already do and see for yourself.",
+      "title": "What Can I Use AI For in My Business?",
+      "h1": "What Can I Use AI For in My Business?",
+      "summary": "A list of the jobs AI can do for you, and the 3 to try first.",
       "datePublished": "2026-06-10",
       "dateModified": "2026-09-28",
       "readMinutes": 15,
@@ -1014,13 +1041,13 @@
         "first AI task",
         "AI assistant"
       ],
-      "sequence": 10,
+      "sequence": 110,
       "reviewStatus": "published"
     },
     {
       "slug": "instagram-content-dashboard",
-      "title": "Build Your Own Instagram Dashboard",
-      "h1": "Build Your Own Instagram Dashboard",
+      "title": "How to See My Instagram Numbers for Free",
+      "h1": "How to See My Instagram Numbers for Free",
       "datePublished": "2026-09-20",
       "dateModified": "2026-09-20",
       "readMinutes": 15,
@@ -1041,8 +1068,8 @@
         "Next.js",
         "content dashboard"
       ],
-      "summary": "Build a private dashboard for your own Instagram account and verify its numbers before choosing a content experiment.",
-      "sequence": 156,
+      "summary": "Build your own dashboard with Claude Code. Advanced.",
+      "sequence": 330,
       "readerJob": "Build and verify an own-account Instagram content dashboard",
       "journey": [
         {
@@ -1068,8 +1095,8 @@
       "readMinutes": 10,
       "cover": "/images/guides/claude-projects.webp",
       "track": "tools",
-      "status": "live",
-      "reviewStatus": "published",
+      "status": "retired",
+      "reviewStatus": "rejected",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Beginner",
       "hub": "AI tools",
@@ -1085,13 +1112,13 @@
         "coding"
       ],
       "summary": "Save your instructions once in a Claude Project and turn every meeting's notes into decisions and actions.",
-      "sequence": 71,
+      "sequence": 250,
       "access": "free"
     },
     {
       "slug": "make-chatgpt-answers-shorter",
-      "title": "Stop ChatGPT Writing You an Essay",
-      "h1": "Stop ChatGPT Writing You an Essay",
+      "title": "How to Make ChatGPT Give Shorter Answers",
+      "h1": "How to Make ChatGPT Give Shorter Answers",
       "datePublished": "2026-09-20",
       "dateModified": "2026-09-28",
       "readMinutes": 5,
@@ -1111,13 +1138,13 @@
         "concise answers",
         "Custom Instructions"
       ],
-      "summary": "Tell ChatGPT the parts you need and a word limit, then check the short answer is still true. One reusable prompt and a 4-point check.",
-      "sequence": 201
+      "summary": "One instruction, saved once, so it stops writing essays.",
+      "sequence": 220
     },
     {
       "slug": "stop-chatgpt-forgetting-context",
-      "title": "Never Explain Your Project to ChatGPT Twice",
-      "h1": "Never Explain Your Project to ChatGPT Twice",
+      "title": "How to Stop Explaining My Business to ChatGPT Every Time",
+      "h1": "How to Stop Explaining My Business to ChatGPT Every Time",
       "datePublished": "2026-09-20",
       "dateModified": "2026-09-28",
       "readMinutes": 15,
@@ -1127,7 +1154,7 @@
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Better prompts and answers",
       "outcomes": [
         "Get better answers"
@@ -1137,13 +1164,13 @@
         "Projects",
         "context"
       ],
-      "summary": "Put your brief in a ChatGPT Project once, then run a 2-chat test that proves it remembers.",
-      "sequence": 202
+      "summary": "Save your details once in a ChatGPT Project.",
+      "sequence": 230
     },
     {
       "slug": "chatgpt-scheduled-tasks",
-      "title": "Set Up 3 Check-Ins That ChatGPT Runs for You",
-      "h1": "Set Up 3 Check-Ins That ChatGPT Runs for You",
+      "title": "How to Make ChatGPT Do a Task for Me Every Week",
+      "h1": "How to Make ChatGPT Do a Task for Me Every Week",
       "datePublished": "2026-09-20",
       "dateModified": "2026-09-28",
       "readMinutes": 15,
@@ -1153,7 +1180,7 @@
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Workflows and automation",
       "outcomes": [
         "Automate a task"
@@ -1165,13 +1192,13 @@
         "news round-up",
         "page alerts"
       ],
-      "summary": "A Monday plan, a Friday news round-up, and one alert you actually want. Set them once and let them arrive.",
-      "sequence": 203
+      "summary": "Set it once and it runs on its own.",
+      "sequence": 510
     },
     {
       "slug": "gemini-cannot-find-drive-file",
-      "title": "Ask Gemini Questions About Your Own Google Docs",
-      "h1": "Ask Gemini Questions About Your Own Google Docs",
+      "title": "How to Get Gemini to Find Things in My Google Drive",
+      "h1": "How to Get Gemini to Find Things in My Google Drive",
       "datePublished": "2026-09-20",
       "dateModified": "2026-09-28",
       "readMinutes": 10,
@@ -1181,7 +1208,7 @@
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool",
@@ -1193,13 +1220,13 @@
         "Google Docs",
         "find a file"
       ],
-      "summary": "Stop scrolling through folders. Name the file, ask the question, and get the answer with the line it came from.",
-      "sequence": 204
+      "summary": "Ask a question and get the answer with the exact line it came from.",
+      "sequence": 260
     },
     {
       "slug": "gemini-google-tasks-limits",
-      "title": "Plan Your Week in Google Tasks With Gemini",
-      "h1": "Plan Your Week in Google Tasks With Gemini",
+      "title": "How to Plan My Week With Gemini",
+      "h1": "How to Plan My Week With Gemini",
       "datePublished": "2026-09-20",
       "dateModified": "2026-09-28",
       "readMinutes": 15,
@@ -1209,7 +1236,7 @@
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool"
@@ -1220,8 +1247,8 @@
         "weekly planning",
         "to-do list"
       ],
-      "summary": "Empty your head, let Gemini do the typing, and check the list before anything is added.",
-      "sequence": 205
+      "summary": "Turn a messy to-do list into tasks with dates.",
+      "sequence": 270
     },
     {
       "slug": "check-copilot-excel-edits",
@@ -1234,7 +1261,7 @@
       "track": "tools",
       "status": "live",
       "access": "free",
-      "reviewStatus": "published",
+      "reviewStatus": "parked",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Beginner",
       "hub": "AI tools",
@@ -1382,8 +1409,8 @@
     },
     {
       "slug": "make-work-tracker-with-kimi",
-      "title": "Let AI Build Your Excel Tracker, Then Try to Break It",
-      "h1": "Let AI Build Your Excel Tracker, Then Try to Break It",
+      "title": "How to Make a Client Tracker in Excel With AI",
+      "h1": "How to Make a Client Tracker in Excel With AI",
       "datePublished": "2026-09-26",
       "dateModified": "2026-09-28",
       "readMinutes": 20,
@@ -1393,7 +1420,7 @@
       "access": "free",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
         "Run business operations"
@@ -1404,8 +1431,8 @@
         "task tracker",
         "team tracker"
       ],
-      "summary": "Get AI to ask how your team works, build the file, and then test it with the mistakes real people make.",
-      "sequence": 212
+      "summary": "AI builds the spreadsheet, then you test it with real mistakes.",
+      "sequence": 540
     },
     {
       "slug": "test-manus-without-burning-credits",
@@ -1445,7 +1472,7 @@
       "track": "setup",
       "status": "live",
       "access": "free",
-      "reviewStatus": "published",
+      "reviewStatus": "parked",
       "formatLabel": "DECISION GUIDE",
       "level": "Intermediate",
       "hub": "AI agents",
@@ -1596,8 +1623,8 @@
     },
     {
       "slug": "chatgpt-screen-recording-to-process-guide",
-      "title": "Turn a Screen Recording Into a Step-by-Step Guide",
-      "h1": "Turn a Screen Recording Into a Step-by-Step Guide",
+      "title": "How to Turn a Screen Recording Into Step-by-Step Instructions With ChatGPT",
+      "h1": "How to Turn a Screen Recording Into Step-by-Step Instructions With ChatGPT",
       "datePublished": "2026-09-23",
       "dateModified": "2026-09-28",
       "readMinutes": 20,
@@ -1618,13 +1645,13 @@
         "process guide",
         "screen recording"
       ],
-      "summary": "Record one task, let ChatGPT draft only the steps it can see, then have someone new test them.",
-      "sequence": 219
+      "summary": "Record a task once and get instructions someone else can follow.",
+      "sequence": 530
     },
     {
       "slug": "chatgpt-customer-research-with-evidence",
-      "title": "Turn 50 Customer Comments Into 3 Decisions",
-      "h1": "Turn 50 Customer Comments Into 3 Decisions",
+      "title": "How to Use ChatGPT to Understand What My Clients Want",
+      "h1": "How to Use ChatGPT to Understand What My Clients Want",
       "datePublished": "2026-09-23",
       "dateModified": "2026-09-28",
       "readMinutes": 20,
@@ -1645,13 +1672,13 @@
         "customer research",
         "evidence"
       ],
-      "summary": "Clean the notes, find the patterns with proof, and leave with what to fix first.",
-      "sequence": 220
+      "summary": "Turn reviews, messages and survey answers into clear decisions.",
+      "sequence": 340
     },
     {
       "slug": "teach-claude-a-repeatable-workflow",
-      "title": "Teach Claude a Job Once, Reuse It Every Week",
-      "h1": "Teach Claude a Job Once, Reuse It Every Week",
+      "title": "How to Get Claude to Do the Same Weekly Task Without Explaining It Again",
+      "h1": "How to Get Claude to Do the Same Weekly Task Without Explaining It Again",
       "datePublished": "2026-09-23",
       "dateModified": "2026-09-28",
       "readMinutes": 20,
@@ -1672,8 +1699,8 @@
         "workflow",
         "repeatable task"
       ],
-      "summary": "Write a weekly task down once, test it on two weeks of notes, then save it in a Claude Project.",
-      "sequence": 221
+      "summary": "Write the steps once, test them, save them.",
+      "sequence": 520
     },
     {
       "slug": "fix-gemini-workspace-action",
@@ -1713,7 +1740,7 @@
       "track": "tools",
       "status": "live",
       "access": "free",
-      "reviewStatus": "published",
+      "reviewStatus": "parked",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Beginner",
       "hub": "AI tools",
@@ -1732,8 +1759,8 @@
     },
     {
       "slug": "test-meta-muse-money-saving-task",
-      "title": "Cut 3 Bills This Month With AI Doing the Legwork",
-      "h1": "Cut 3 Bills This Month With AI Doing the Legwork",
+      "title": "How to Find and Cancel Business Subscriptions I Don't Use",
+      "h1": "How to Find and Cancel Business Subscriptions I Don't Use",
       "datePublished": "2026-09-23",
       "dateModified": "2026-09-28",
       "readMinutes": 20,
@@ -1756,8 +1783,8 @@
         "renewals",
         "Meta AI"
       ],
-      "summary": "Find the subscriptions you forgot, see the real cost of a renewal, and send the message you've been putting off.",
-      "sequence": 224
+      "summary": "AI finds the repeat payments; you decide what to cancel.",
+      "sequence": 560
     },
     {
       "slug": "test-grok-repeated-image-edits",
@@ -1869,8 +1896,8 @@
     },
     {
       "slug": "stop-ai-agreeing-with-you",
-      "title": "Stop AI Agreeing With Everything You Say",
-      "h1": "Stop AI Agreeing With Everything You Say",
+      "title": "How to Get ChatGPT to Tell Me What's Wrong With My Idea",
+      "h1": "How to Get ChatGPT to Tell Me What's Wrong With My Idea",
       "datePublished": "2026-09-28",
       "dateModified": "2026-09-28",
       "readMinutes": 10,
@@ -1891,14 +1918,14 @@
         "custom instructions",
         "sycophancy"
       ],
-      "summary": "Get honest feedback on your writing, a real stress test for your plans, and a standing rule that switches off the flattery.",
-      "sequence": 161,
+      "summary": "Stop it agreeing with everything you say.",
+      "sequence": 160,
       "access": "free"
     },
     {
       "slug": "catch-ai-making-things-up",
-      "title": "Catch AI Making Things Up in 30 Seconds",
-      "h1": "Catch AI Making Things Up in 30 Seconds",
+      "title": "How to Check if ChatGPT Is Wrong Before You Send It to a Client",
+      "h1": "How to Check if ChatGPT Is Wrong Before You Send It to a Client",
       "datePublished": "2026-09-28",
       "dateModified": "2026-09-28",
       "readMinutes": 10,
@@ -1919,8 +1946,8 @@
         "AI sources",
         "AI mistakes"
       ],
-      "summary": "Three quick checks for the three places AI mistakes hide: numbers and names, sources, and the bits it's least sure of.",
-      "sequence": 45,
+      "summary": "A 2-minute check for names, numbers and facts.",
+      "sequence": 140,
       "access": "free"
     },
     {
@@ -1933,7 +1960,7 @@
       "cover": "/images/guides/ai-quit-or-stay-decision.webp",
       "track": "understand",
       "status": "live",
-      "reviewStatus": "published",
+      "reviewStatus": "parked",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Beginner",
       "hub": "AI essentials",
@@ -1960,7 +1987,7 @@
       "cover": "/images/guides/is-ai-coming-for-my-job.webp",
       "track": "understand",
       "status": "live",
-      "reviewStatus": "published",
+      "reviewStatus": "parked",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Beginner",
       "hub": "AI essentials",
@@ -1987,7 +2014,7 @@
       "cover": "/images/guides/ai-job-interview-practice.webp",
       "track": "understand",
       "status": "live",
-      "reviewStatus": "published",
+      "reviewStatus": "parked",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Beginner",
       "hub": "AI essentials",
@@ -2006,8 +2033,8 @@
     },
     {
       "slug": "weekend-projects-with-claude",
-      "title": "Weekend Projects: 7 Useful Things Claude Can Build",
-      "h1": "Weekend Projects: 7 Useful Things Claude Can Build",
+      "title": "How to Build Simple Tools for My Business With Claude (No Coding)",
+      "h1": "How to Build Simple Tools for My Business With Claude (No Coding)",
       "datePublished": "2026-09-28",
       "dateModified": "2026-09-28",
       "readMinutes": 20,
@@ -2016,7 +2043,7 @@
       "status": "live",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "AI tools",
       "outcomes": [
         "Choose an AI tool",
@@ -2028,8 +2055,8 @@
         "weekend projects",
         "no code"
       ],
-      "summary": "Small tools for real life, each built from a single description. Nothing to install, and nothing private inside.",
-      "sequence": 73,
+      "summary": "A client checklist, a price calculator, a content calendar and more.",
+      "sequence": 300,
       "access": "free"
     },
     {
@@ -2042,7 +2069,7 @@
       "cover": "/images/guides/money-plan-with-ai.webp",
       "track": "setup",
       "status": "live",
-      "reviewStatus": "published",
+      "reviewStatus": "parked",
       "formatLabel": "PRACTICAL GUIDE",
       "level": "Beginner",
       "hub": "Workflows and automation",
@@ -2061,8 +2088,8 @@
     },
     {
       "slug": "test-business-idea-with-ai",
-      "title": "Put Your Business Idea in Front of 5 AI Critics",
-      "h1": "Put Your Business Idea in Front of 5 AI Critics",
+      "title": "How to Test My Business Idea With ChatGPT Before I Build It",
+      "h1": "How to Test My Business Idea With ChatGPT Before I Build It",
       "datePublished": "2026-09-28",
       "dateModified": "2026-09-28",
       "readMinutes": 20,
@@ -2071,7 +2098,7 @@
       "status": "live",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Business operations",
       "outcomes": [
         "Run business operations"
@@ -2082,14 +2109,14 @@
         "small business",
         "demand test"
       ],
-      "summary": "Write the idea down in one paragraph, let five critics find the holes, and run a one-week test before you spend anything.",
-      "sequence": 210,
+      "summary": "Find the problems early and check if people will pay.",
+      "sequence": 410,
       "access": "free"
     },
     {
       "slug": "launch-your-product-in-30-days",
-      "title": "The 30-Day Checklist That Gets Your Product Out the Door",
-      "h1": "The 30-Day Checklist That Gets Your Product Out the Door",
+      "title": "How to Launch My Product in 30 Days",
+      "h1": "How to Launch My Product in 30 Days",
       "datePublished": "2026-09-28",
       "dateModified": "2026-09-28",
       "readMinutes": 15,
@@ -2098,7 +2125,7 @@
       "status": "live",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Business operations",
       "outcomes": [
         "Run business operations"
@@ -2109,14 +2136,14 @@
         "small business",
         "planning"
       ],
-      "summary": "Cut the product to its smallest useful version, plan 4 weeks backwards from launch day, and check every Friday what's blocking you.",
-      "sequence": 211,
+      "summary": "A day-by-day checklist, with AI doing the planning.",
+      "sequence": 420,
       "access": "free"
     },
     {
       "slug": "marketing-emails-that-sell",
-      "title": "3 Email Rules That Make People Click Buy",
-      "h1": "3 Email Rules That Make People Click Buy",
+      "title": "How to Write Sales Emails With ChatGPT That Don't Sound Like AI",
+      "h1": "How to Write Sales Emails With ChatGPT That Don't Sound Like AI",
       "datePublished": "2026-09-28",
       "dateModified": "2026-09-28",
       "readMinutes": 15,
@@ -2125,7 +2152,7 @@
       "status": "live",
       "reviewStatus": "published",
       "formatLabel": "PRACTICAL GUIDE",
-      "level": "Beginner",
+      "level": "Intermediate",
       "hub": "Business operations",
       "outcomes": [
         "Create content",
@@ -2137,8 +2164,37 @@
         "subject lines",
         "small business"
       ],
-      "summary": "Write to one person, make the subject line say what's inside, and let a real customer's words do the persuading.",
-      "sequence": 212,
+      "summary": "Write to one real client, with proof instead of promises.",
+      "sequence": 430,
+      "access": "free"
+    },
+    {
+      "slug": "brand-brain-guide",
+      "title": "How to Teach Claude About My Business So I Stop Repeating Myself",
+      "h1": "How to Teach Claude About My Business So I Stop Repeating Myself",
+      "datePublished": "2026-10-13",
+      "dateModified": "2026-10-13",
+      "readMinutes": 30,
+      "cover": "/images/guides/brand-brain-guide.webp",
+      "track": "setup",
+      "status": "live",
+      "reviewStatus": "published",
+      "formatLabel": "PRACTICAL GUIDE",
+      "level": "Intermediate",
+      "hub": "Business operations",
+      "outcomes": [
+        "Create content",
+        "Run business operations"
+      ],
+      "tags": [
+        "Claude",
+        "Claude Projects",
+        "brand voice",
+        "brand kit",
+        "small business"
+      ],
+      "summary": "Set it up once, in 5 steps.",
+      "sequence": 310,
       "access": "free"
     }
   ]

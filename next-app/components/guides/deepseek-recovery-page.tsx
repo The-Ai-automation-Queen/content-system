@@ -37,7 +37,7 @@ export function DeepseekRecoveryPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>Could you continue a DeepSeek project <span>without its chat?</span></h1><p>Save the decisions, source material and latest approved work you would need to pick up where you left off.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <nav className={styles.contents} aria-label="In this guide"><strong>In this guide</strong><a href="#recovery-pack-title">What to keep</a><a href="#recovery-example-title">See an example</a><a href="#recovery-prompt-title">Get the restart instruction</a><a href="#recovery-test-title">Test the handover</a></nav>

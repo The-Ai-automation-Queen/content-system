@@ -30,7 +30,7 @@ export function GrokImageEditsPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>Can Grok edit one detail <span>without changing the rest?</span></h1><p>Save the original, request one clear change and compare the whole result before using it.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <section className={styles.activity} aria-labelledby="image-master-title"><div className={styles.sectionHead}><span>See the test</span><h2 id="image-master-title">Change the background. Keep the product.</h2></div><p className={styles.intro}>Imagine a product photo of a blue notebook on a white desk. You want a softer blue background for a campaign, while the notebook, logo and lighting stay the same.</p><div className={styles.exampleFlow}><div><strong>Master image</strong><p>Blue notebook, white background, readable logo.</p></div><span aria-hidden="true">→</span><div><strong>One requested edit</strong><p>Change the background to soft blue.</p></div><span aria-hidden="true">→</span><div><strong>Check the result</strong><p>Compare the notebook, logo, angle and shadow with the master.</p></div></div><p className={styles.exampleNote}>If the logo or notebook changes, go back to the saved master. Do not build the next edit on a version that has already drifted.</p></section>

@@ -15,42 +15,36 @@ Workshops are available for companies.
 
 ## Public guide library
 
-- Learn 6 AI Words by Watching Them Happen: https://www.shiftandlead.com/guides/ai-jargon-guide/
-- Stop Paying for Five AI Tools: https://www.shiftandlead.com/guides/which-ai-tool-for-what/
-- 3 Admin Jobs to Hand Claude This Week: https://www.shiftandlead.com/guides/claude/
-- Find Out What ChatGPT Says About Your Business: https://www.shiftandlead.com/guides/show-up-in-ai-search/
-- The 4-Line Prompt That Works in Any AI: https://www.shiftandlead.com/guides/what-is-a-prompt/
-- 3 Safe First Jobs to Give an AI Browser: https://www.shiftandlead.com/guides/what-is-an-ai-browser/
-- Read This Before You Connect AI to Your Email: https://www.shiftandlead.com/guides/connect-ai-to-email-files-calendar/
-- 3 AI Skills to Practise at Work This Week: https://www.shiftandlead.com/guides/ai-skills-worth-learning-for-work/
-- 4 Limits to Set Before an AI Agent Works Alone: https://www.shiftandlead.com/guides/what-is-agentic/
-- The 3-Question Check Before You Paste Anything Into AI: https://www.shiftandlead.com/guides/what-should-you-never-share-with-ai/
-- 3 Things to Try With AI Before Lunch: https://www.shiftandlead.com/guides/what-is-ai/
-- Build Your Own Instagram Dashboard: https://www.shiftandlead.com/guides/instagram-content-dashboard/
-- Stop Retyping Your Instructions to Claude: https://www.shiftandlead.com/guides/claude-projects/
-- Stop ChatGPT Writing You an Essay: https://www.shiftandlead.com/guides/make-chatgpt-answers-shorter/
-- Never Explain Your Project to ChatGPT Twice: https://www.shiftandlead.com/guides/stop-chatgpt-forgetting-context/
-- Set Up 3 Check-Ins That ChatGPT Runs for You: https://www.shiftandlead.com/guides/chatgpt-scheduled-tasks/
-- Ask Gemini Questions About Your Own Google Docs: https://www.shiftandlead.com/guides/gemini-cannot-find-drive-file/
-- Plan Your Week in Google Tasks With Gemini: https://www.shiftandlead.com/guides/gemini-google-tasks-limits/
-- 3 Excel Jobs for Copilot, and the Check for Each: https://www.shiftandlead.com/guides/check-copilot-excel-edits/
-- Let AI Build Your Excel Tracker, Then Try to Break It: https://www.shiftandlead.com/guides/make-work-tracker-with-kimi/
-- Does Manus need your browser at all?: https://www.shiftandlead.com/guides/manus-browser-workflow/
-- Turn a Screen Recording Into a Step-by-Step Guide: https://www.shiftandlead.com/guides/chatgpt-screen-recording-to-process-guide/
-- Turn 50 Customer Comments Into 3 Decisions: https://www.shiftandlead.com/guides/chatgpt-customer-research-with-evidence/
-- Teach Claude a Job Once, Reuse It Every Week: https://www.shiftandlead.com/guides/teach-claude-a-repeatable-workflow/
-- Walk Into Every Meeting Prepared, With Copilot: https://www.shiftandlead.com/guides/what-can-copilot-see-at-work/
-- Cut 3 Bills This Month With AI Doing the Legwork: https://www.shiftandlead.com/guides/test-meta-muse-money-saving-task/
-- Stop AI Agreeing With Everything You Say: https://www.shiftandlead.com/guides/stop-ai-agreeing-with-you/
-- Catch AI Making Things Up in 30 Seconds: https://www.shiftandlead.com/guides/catch-ai-making-things-up/
-- Make a Quit-or-Stay Decision With 5 AI Advisors: https://www.shiftandlead.com/guides/ai-quit-or-stay-decision/
-- Check How Exposed Your Job Is to AI in 5 Minutes: https://www.shiftandlead.com/guides/is-ai-coming-for-my-job/
-- Rehearse Any Job Interview With AI: https://www.shiftandlead.com/guides/ai-job-interview-practice/
-- Weekend Projects: 7 Useful Things Claude Can Build: https://www.shiftandlead.com/guides/weekend-projects-with-claude/
-- Build a Money Plan From Your Payslip With AI: https://www.shiftandlead.com/guides/money-plan-with-ai/
-- Put Your Business Idea in Front of 5 AI Critics: https://www.shiftandlead.com/guides/test-business-idea-with-ai/
-- The 30-Day Checklist That Gets Your Product Out the Door: https://www.shiftandlead.com/guides/launch-your-product-in-30-days/
-- 3 Email Rules That Make People Click Buy: https://www.shiftandlead.com/guides/marketing-emails-that-sell/
+- What Do AI Words Like "Agent" and "Hallucination" Mean?: https://www.shiftandlead.com/guides/ai-jargon-guide/
+- ChatGPT, Claude or Gemini: Which One Should I Pay For?: https://www.shiftandlead.com/guides/which-ai-tool-for-what/
+- How to Use Claude to Do My Admin: https://www.shiftandlead.com/guides/claude/
+- How to Get ChatGPT to Recommend My Business: https://www.shiftandlead.com/guides/show-up-in-ai-search/
+- What Do I Type Into ChatGPT?: https://www.shiftandlead.com/guides/what-is-a-prompt/
+- What Is an AI Browser and Should I Use One?: https://www.shiftandlead.com/guides/what-is-an-ai-browser/
+- Is It Safe to Connect ChatGPT to My Gmail?: https://www.shiftandlead.com/guides/connect-ai-to-email-files-calendar/
+- Why Are My ChatGPT Answers So Average?: https://www.shiftandlead.com/guides/ai-skills-worth-learning-for-work/
+- Do I Need an AI Agent for My Business?: https://www.shiftandlead.com/guides/what-is-agentic/
+- Is It Safe to Put Client Information Into ChatGPT?: https://www.shiftandlead.com/guides/what-should-you-never-share-with-ai/
+- What Can I Use AI For in My Business?: https://www.shiftandlead.com/guides/what-is-ai/
+- How to See My Instagram Numbers for Free: https://www.shiftandlead.com/guides/instagram-content-dashboard/
+- How to Make ChatGPT Give Shorter Answers: https://www.shiftandlead.com/guides/make-chatgpt-answers-shorter/
+- How to Stop Explaining My Business to ChatGPT Every Time: https://www.shiftandlead.com/guides/stop-chatgpt-forgetting-context/
+- How to Make ChatGPT Do a Task for Me Every Week: https://www.shiftandlead.com/guides/chatgpt-scheduled-tasks/
+- How to Get Gemini to Find Things in My Google Drive: https://www.shiftandlead.com/guides/gemini-cannot-find-drive-file/
+- How to Plan My Week With Gemini: https://www.shiftandlead.com/guides/gemini-google-tasks-limits/
+- How to Make a Client Tracker in Excel With AI: https://www.shiftandlead.com/guides/make-work-tracker-with-kimi/
+- How to Turn a Screen Recording Into Step-by-Step Instructions With ChatGPT: https://www.shiftandlead.com/guides/chatgpt-screen-recording-to-process-guide/
+- How to Use ChatGPT to Understand What My Clients Want: https://www.shiftandlead.com/guides/chatgpt-customer-research-with-evidence/
+- How to Get Claude to Do the Same Weekly Task Without Explaining It Again: https://www.shiftandlead.com/guides/teach-claude-a-repeatable-workflow/
+- How to Find and Cancel Business Subscriptions I Don't Use: https://www.shiftandlead.com/guides/test-meta-muse-money-saving-task/
+- How to Get ChatGPT to Tell Me What's Wrong With My Idea: https://www.shiftandlead.com/guides/stop-ai-agreeing-with-you/
+- How to Check if ChatGPT Is Wrong Before You Send It to a Client: https://www.shiftandlead.com/guides/catch-ai-making-things-up/
+- How to Build Simple Tools for My Business With Claude (No Coding): https://www.shiftandlead.com/guides/weekend-projects-with-claude/
+- How to Test My Business Idea With ChatGPT Before I Build It: https://www.shiftandlead.com/guides/test-business-idea-with-ai/
+- How to Launch My Product in 30 Days: https://www.shiftandlead.com/guides/launch-your-product-in-30-days/
+- How to Write Sales Emails With ChatGPT That Don't Sound Like AI: https://www.shiftandlead.com/guides/marketing-emails-that-sell/
+- How to Teach Claude About My Business So I Stop Repeating Myself: https://www.shiftandlead.com/guides/brand-brain-guide/
+- How to Start Using AI in Your Business When You Don't Know Where to Begin: https://www.shiftandlead.com/guides/start-using-ai-in-your-business/
 
 ## Editorial approach
 
