@@ -113,3 +113,5 @@ body.v5 .sk-newsletter input{border-radius:8px}
 body.v5 .sk-final h2{font-size:clamp(42px,5vw,78px)!important}
 body.v5 .sk-final h2 em{display:block;margin-left:0}
 body.v5 .v5-door h3{font-weight:700}
+body.v5 .v5-sign{margin-top:14px;font:italic 400 30px/1 "Playfair Display",Georgia,serif;color:#fff}
+body.v5 .sk-proof-list strong{white-space:nowrap}
