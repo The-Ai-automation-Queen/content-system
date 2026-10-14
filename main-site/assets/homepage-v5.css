@@ -336,3 +336,14 @@ body.v5 .sk-hero{background:#0B0D12}
 body.v5 .sk-hero .sk-pill-pink:hover{background:var(--blue);color:#fff!important}
 body.v5 .sk-hero .sk-pill-ink:hover{background:#ffffff1a}
 body.v5 .sk-header:not(.is-scrolled) .v5-nav-cta:hover{background:var(--blue);color:#fff!important}
+/* Speaking row: short intro + photos with captions below */
+.v5-stage-row{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,3fr);gap:28px;align-items:start;padding-top:8px}
+.v5-stage-intro{padding-top:6px}
+body.v5 .v5-stage-intro h3{font:400 28px/1.15 "Playfair Display",Georgia,serif;color:var(--ink);margin-bottom:12px}
+.v5-stage-intro p{font-size:15px;line-height:1.5;color:var(--grey)}
+.v5-stages a{aspect-ratio:auto;border-radius:0;overflow:visible;color:var(--ink)!important}
+body.v5 .v5-stages img{aspect-ratio:4/3;border-radius:16px;height:auto}
+.v5-stages a:hover img{transform:none;opacity:.92}
+.v5-stages span{position:static;display:block;margin-top:10px;padding:0;background:none;border-radius:0;font:500 17px/1.25 "Playfair Display",Georgia,serif}
+@media(max-width:900px){.v5-stage-row{grid-template-columns:1fr;gap:16px}}
+@media(max-width:700px){body.v5 .v5-brands,body.v5 .v5-stages{padding:4px 18px 18px;scroll-padding-inline:18px}}
