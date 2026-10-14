@@ -271,3 +271,27 @@ body.v3 .v3-press img{filter:brightness(0);opacity:.82}
 .v3-apply-steps li{border-top-color:#0B0D1226}
 .v3-apply-steps p{color:var(--grey)}
 .v3-press ul{color:var(--ink)}
+
+/* 2026-10-14d: tighter section rhythm, less scrolling */
+body.v3 .v3-sec{padding:84px 0}
+body.v3 .v3-fit{padding:24px 0 72px}
+.v3-head{margin-bottom:40px}
+.v3-quotes{margin-top:40px}
+.v3-note{margin-top:32px}
+.v3-story h2{margin-bottom:28px}
+.v3-gets{margin-top:36px}
+.v3-apply-steps{margin-bottom:40px}
+@media(max-width:960px){body.v3 .v3-sec{padding:56px 0}body.v3 .v3-fit{padding:8px 0 56px}}
+
+/* 2026-10-14e: personal sign-up with her photo */
+.v3-final-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:center}
+.v3-final-photo{margin:0}
+body.v3 .v3-final-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+.v3-final-body h2{font-size:clamp(40px,4.4vw,68px)}
+.v3-final-body>p{max-width:52ch;margin:24px 0 0}
+.v3-sign{margin:16px 0 32px!important;font-family:"Playfair Display",Georgia,serif;font-style:italic;font-size:30px!important;color:var(--blue)!important}
+.v3-final .v3-form{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px}
+.v3-final .v3-consent,.v3-final .v3-form button,.v3-final #sk-newsletter-status{grid-column:1/-1}
+.v3-final .v3-form button{justify-self:start}
+.v3-consent span{font-family:Inter,system-ui,sans-serif}
+@media(max-width:960px){.v3-final-grid{grid-template-columns:1fr;gap:36px}body.v3 .v3-final-photo img{aspect-ratio:1/1}.v3-final .v3-form{grid-template-columns:1fr}}
