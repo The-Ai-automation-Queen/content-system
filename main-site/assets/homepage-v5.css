@@ -57,9 +57,7 @@ body.v5 .sk-doors h2 em{color:var(--blue)}
 .v5-door p{font-size:15px;line-height:1.5;color:var(--grey)}
 .v5-door-meta{margin-top:auto;padding-top:8px;font:500 22px/1.1 "Playfair Display",Georgia,serif}
 .v5-door-cta{font-size:14px;font-weight:700}
-.v5-door-main>a{background:var(--blue);border-color:var(--blue);color:#fff!important}
-.v5-door-main .v5-door-tag,.v5-door-main p{color:#ffffffd9}
-.v5-door-main .v5-ph-img{background:#ffffff1f;border-bottom-color:#ffffff66}
+.v5-door-main>a{border:2px solid var(--blue)}
 
 /* Guides carousel and proof strip: lighter, smaller */
 body.v5 .sk-guides h2{font-size:clamp(42px,5vw,78px)}
