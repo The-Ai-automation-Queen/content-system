@@ -1,0 +1,117 @@
+/* Homepage v5 (2026-10-14): the original Saadia layout, recoloured to the brand
+   blue / white / light-blue system with Playfair Display + Inter + Space Mono.
+   Loaded after homepage-saadia.css; every rule is scoped to body.v5. */
+body.home-saadia.v5{--blue:#2C4BE0;--pink:#FF007F;--ink:#0B0D12;--mist:#EEF2FD;--grey:#5A5F6E;--lilac:#C9D3FA;--ease:cubic-bezier(.32,.72,0,1);font-size:17px}
+
+/* Type: Playfair headlines in sentence case, italic second line */
+body.v5 h1,body.v5 h2{font-family:"Playfair Display",Georgia,serif!important;font-weight:400!important;text-transform:none!important;letter-spacing:-.025em!important;line-height:1.02!important;text-wrap:balance}
+body.v5 h1 span,body.v5 h2 span{display:block}
+body.v5 h1 em,body.v5 h2 em{font-weight:400!important;font-style:italic;letter-spacing:-.02em!important;font-size:1em!important;margin-top:0!important}
+body.v5 h3{font-family:Inter,system-ui,sans-serif}
+body.v5 .sk-logo,body.v5 .sk-footer-logo{font:400 21px/1 "Playfair Display",Georgia,serif;letter-spacing:-.03em}
+body.v5 .sk-logo span,body.v5 .sk-footer-logo span{font-style:italic;font-weight:700;color:var(--pink)}
+body.v5 .sk-desktop-nav a{font:400 12px/1 Inter,system-ui,sans-serif;letter-spacing:.08em}
+body.v5 .sk-desktop-nav a:hover{color:var(--lilac)!important}
+body.v5 .sk-header.is-scrolled .sk-desktop-nav a:hover{color:var(--blue)!important}
+
+/* Buttons: ink on light sections, white on blue sections */
+body.v5 .sk-pill{border-radius:999px;font-weight:700}
+body.v5 .sk-pill-pink{background:var(--ink)}
+body.v5 .sk-pill-pink:hover{background:var(--pink)}
+body.v5 .sk-hero .sk-pill-pink,body.v5 .sk-launch .sk-pill-pink{background:#fff;color:var(--ink)!important}
+body.v5 .sk-hero .sk-pill-pink:hover,body.v5 .sk-launch .sk-pill-pink:hover{background:var(--pink);color:#fff!important}
+
+/* Hero: brand blue, whole photo anchored bottom-right, fading into the blue */
+body.v5 .sk-hero{background:var(--blue)}
+body.v5 .sk-hero-photo{inset:auto 0 0 auto;width:min(50%,780px);height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center;opacity:1;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26%),linear-gradient(180deg,transparent 0,#000 22%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 26%),linear-gradient(180deg,transparent 0,#000 22%);mask-composite:intersect}
+body.v5 .sk-hero h1{font-size:clamp(46px,5.4vw,86px)!important;max-width:min(52vw,680px)}
+body.v5 .sk-hero h1 em{color:var(--ink)!important}
+body.v5 .sk-hero-content>p{max-width:46ch;margin-top:26px;font-size:19px;line-height:1.55;color:#ffffffe6}
+body.v5 .sk-hero-proof small{font:400 13px/1.3 "Space Mono",ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:#ffffffcc}
+
+/* Placeholders: obvious, so nothing unfinished goes live by accident */
+body.v5 .sk-ph{display:inline-block;padding:4px 10px;border:1.5px dashed #C98A00;border-radius:6px;background:#FFF6DB;color:#5C4300;font:400 13px/1.4 "Space Mono",ui-monospace,monospace;font-style:normal;letter-spacing:0;text-transform:none}
+body.v5 .v5-ph-img{display:grid;place-items:center;margin:0;padding:20px;background:var(--mist);border:1.5px dashed #9AA6D8;text-align:center}
+
+/* Where are you right now: 4 image cards */
+body.v5 .sk-doors{padding:72px 0 24px}
+body.v5 .sk-doors h2{font-size:clamp(42px,5vw,78px);margin-bottom:40px}
+body.v5 .sk-doors h2 em{color:var(--blue)}
+.v5-doors{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:0;padding:0;list-style:none}
+.v5-door>a{display:flex;flex-direction:column;height:100%;overflow:hidden;border:1px solid #0B0D121F;border-radius:16px;background:#fff;color:var(--ink)!important;transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.v5-door>a:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px #2C4BE055}
+.v5-door-img{position:relative;height:190px;margin:0;overflow:hidden;background:var(--mist)}
+.v5-collage img{position:absolute;width:56%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;box-shadow:0 8px 20px -8px #0B0D1266}
+.v5-collage img:nth-child(1){left:6%;top:14%;transform:rotate(-4deg)}
+.v5-collage img:nth-child(2){left:38%;top:8%;transform:rotate(3deg)}
+.v5-collage img:nth-child(3){left:24%;top:42%;z-index:2}
+.v5-fan{display:flex;justify-content:center;align-items:flex-end;padding-top:18px}
+.v5-fan img{width:30%;aspect-ratio:3/4;object-fit:cover;border-radius:6px;margin:0 -4%;box-shadow:0 8px 20px -8px #0B0D1266}
+.v5-fan img:nth-child(1){transform:rotate(-8deg) translateY(10px)}
+.v5-fan img:nth-child(2){position:relative;z-index:2;transform:translateY(-6px)}
+.v5-fan img:nth-child(3){transform:rotate(8deg) translateY(10px)}
+.v5-door .v5-ph-img{height:190px;border:0;border-bottom:1.5px dashed #9AA6D8}
+.v5-door-body{display:flex;flex:1;flex-direction:column;gap:10px;padding:22px}
+.v5-door-tag{font:italic 400 15px/1.35 "Playfair Display",Georgia,serif;color:var(--blue)}
+.v5-door h3{font-size:22px;font-weight:700;letter-spacing:-.02em}
+.v5-door p{font-size:15px;line-height:1.5;color:var(--grey)}
+.v5-door-meta{margin-top:auto;padding-top:8px;font:500 22px/1.1 "Playfair Display",Georgia,serif}
+.v5-door-cta{font-size:14px;font-weight:700}
+.v5-door-main>a{background:var(--blue);border-color:var(--blue);color:#fff!important}
+.v5-door-main .v5-door-tag,.v5-door-main p{color:#ffffffd9}
+.v5-door-main .v5-ph-img{background:#ffffff1f;border-bottom-color:#ffffff66}
+
+/* Guides carousel and proof strip: lighter, smaller */
+body.v5 .sk-guides h2{font-size:clamp(42px,5vw,78px)}
+body.v5 .sk-guides h2 em{color:var(--blue)}
+body.v5 .sk-proof{padding:0 0 56px}
+body.v5 .sk-proof-voice{font-weight:400;font-size:clamp(22px,2vw,28px)}
+body.v5 .sk-proof-list strong{font-weight:500;color:var(--blue)}
+
+/* What people say: placeholders until real quotes exist */
+.v5-voices{padding:24px 0 72px;background:#fff}
+.v5-voices h2{font-size:clamp(36px,4vw,60px);margin-bottom:28px}
+.v5-voices h2 em{color:var(--blue)}
+.v5-quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:0;padding:0;list-style:none}
+.v5-quotes li{display:grid;gap:14px;padding:26px;border-radius:16px;background:var(--mist)}
+
+/* Launch With AI: blue block */
+body.v5 .sk-launch{padding:64px 0 80px;background:var(--blue)}
+body.v5 .sk-launch h2{font-size:clamp(40px,4.4vw,68px)}
+body.v5 .sk-launch h2 em{color:var(--ink)!important}
+.v5-kicker{display:block;margin-bottom:18px;font:400 14px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#ffffffcc}
+.v5-launch-img{min-height:320px;border-radius:16px;background:#ffffff1f;border-color:#ffffff80}
+body.v5 .sk-launch-steps{grid-column:1/-1;grid-template-columns:repeat(3,1fr)}
+body.v5 .sk-launch-steps li{border-color:#ffffff59;border-radius:12px}
+body.v5 .sk-launch-steps b{color:#fff;opacity:.75;font:400 13px/1.3 "Space Mono",ui-monospace,monospace}
+body.v5 .sk-launch-steps strong{font:400 26px/1.1 "Playfair Display",Georgia,serif}
+body.v5 .sk-launch-gets li::before{color:#fff}
+
+/* Workbooks: light blue, covers with a buy line */
+body.v5 .sk-workbooks{background:var(--mist);padding:64px 0 80px!important}
+body.v5 .sk-workbooks h2 em{color:var(--blue)}
+body.v5 .sk-book-covers li:nth-child(2){box-shadow:8px 10px 0 var(--blue)!important}
+body.v5 .v5-buy{order:4;margin:12px 22px 0}
+
+/* Final sign-up: blue */
+body.v5 .sk-final{background:var(--blue);padding:40px 0 90px}
+body.v5 .sk-final h2 em{color:var(--ink)!important}
+body.v5 .sk-final p{color:#ffffffe6;font-size:18px;max-width:44ch;margin-top:20px}
+body.v5 .sk-newsletter button{background:var(--ink);border-radius:999px;padding:14px 26px}
+body.v5 .sk-newsletter button:hover{background:var(--pink)}
+body.v5 .sk-newsletter input{border-radius:8px}
+
+@media(max-width:1100px){.v5-doors{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){
+  body.v5 .sk-launch-steps,.v5-quotes{grid-template-columns:1fr}
+  .v5-launch-img{min-height:200px}
+}
+@media(max-width:700px){
+  body.v5 .sk-hero-photo{inset:auto 0 0 0;width:100%;opacity:.32;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 40%);mask-image:linear-gradient(180deg,transparent 0,#000 40%)}
+  body.v5 .sk-hero h1{max-width:none}
+  .v5-doors{grid-template-columns:1fr}
+  body.v5 .sk-doors{padding-top:48px}
+}
+body.v5 .sk-final h2{font-size:clamp(42px,5vw,78px)!important}
+body.v5 .sk-final h2 em{display:block;margin-left:0}
+body.v5 .v5-door h3{font-weight:700}
