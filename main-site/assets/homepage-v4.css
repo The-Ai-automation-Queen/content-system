@@ -256,3 +256,18 @@ body.v3 .v3-press .v3-mark-nike{height:38px}body.v3 .v3-press .v3-mark-lelab{hei
 .v3-press-psg{font-weight:700;font-size:17px;letter-spacing:.02em}
 @media(max-width:960px){.v3-press-grid{grid-template-columns:1fr}body.v3 .v3-press img{height:24px}body.v3 .v3-press .v3-mark-nike{height:30px}body.v3 .v3-press .v3-mark-lelab{height:32px}body.v3 .v3-press img[alt=Intel]{height:28px}}
 .v3 h1,.v3 h2{text-wrap:balance}
+
+/* 2026-10-14c: no black blocks. Light story, light logo band, light join steps (footer stays ink). */
+body.v3{--mist:#EEF2FD}
+.v3-press{background:#fff;color:var(--ink);border-bottom:1px solid #0B0D121F}
+.v3-press span{color:var(--blue)}
+body.v3 .v3-press img{filter:brightness(0);opacity:.82}
+.v3-story{background:var(--mist);color:var(--ink)}
+.v3-story-intro,.v3-timeline p{color:var(--grey)}
+.v3-timeline li{border-top-color:#0B0D1226}
+.v3-timeline b{color:var(--ink)}
+.v3-apply{background:var(--mist);color:var(--ink)}
+.v3-apply .v3-head h2{color:var(--ink)}
+.v3-apply-steps li{border-top-color:#0B0D1226}
+.v3-apply-steps p{color:var(--grey)}
+.v3-press ul{color:var(--ink)}
