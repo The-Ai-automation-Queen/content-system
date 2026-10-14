@@ -314,3 +314,19 @@ body.v5 .v5-stage-more{margin-top:20px}
 .v5-award-list a{font-size:14px;font-weight:700;color:var(--ink)!important;text-decoration:underline;text-underline-offset:4px}
 .v5-awards-col{flex-direction:column;align-items:flex-start!important}
 .v5-award-list a{text-decoration:underline!important}
+
+/* 2026-10-14i: balanced proof cards, swipe on phones, 1:1 crop */
+.v5-brand-more{display:block;font-size:14px;line-height:1.45;color:var(--grey)}
+.v5-award-list{gap:7px}
+.v5-award-list li{position:relative;padding-left:20px}
+.v5-award-list li::before{content:"";position:absolute;left:0;top:.45em;width:9px;height:9px;border-radius:50%;background:#CAFF00;box-shadow:0 0 0 2px var(--blue)}
+body.v5 .v5-award-list a{font:600 14px/1.35 Inter,system-ui,sans-serif;text-decoration:none!important;color:var(--ink)!important}
+body.v5 .v5-award-list a:hover{color:var(--blue)!important}
+body.v5 .v5-door-photo{object-position:50% 8%}
+@media(max-width:700px){
+  .v5-brands,.v5-stages{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-left:-18px;margin-right:-18px;padding:4px 18px 18px;scrollbar-width:none}
+  .v5-brands::-webkit-scrollbar,.v5-stages::-webkit-scrollbar{display:none}
+  .v5-brands>li,.v5-stages>li{flex:0 0 82%;scroll-snap-align:start}
+  .v5-brands{margin-bottom:18px}
+}
+body.v5 .v5-door-photo{object-position:50% 32%}
