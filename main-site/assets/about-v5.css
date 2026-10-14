@@ -51,3 +51,10 @@ body.about-v5 .ab-h2,body.about-v5 .ab-path h2,body.about-v5 .ab-stage h2{margin
 body.about-v5 .ab-final .sk-pill-pink{background:#fff;color:var(--ink)!important}
 body.about-v5 .ab-final .sk-pill-ink{background:transparent;color:#fff!important;box-shadow:inset 0 0 0 2px #fff}
 body.about-v5 .ab-final .sk-pill:hover{background:var(--ink);color:#fff!important}
+/* light closing section, consistent with the homepage */
+body.about-v5 .ab-final .sk-pill-pink{background:var(--ink);color:#fff!important}
+body.about-v5 .ab-final .sk-pill-ink{background:transparent;color:var(--ink)!important;box-shadow:inset 0 0 0 2px var(--ink)}
+body.about-v5 .ab-final .sk-pill:hover{background:var(--blue);color:#fff!important;box-shadow:none}
+.ab-work-feature a{background:#fff;color:var(--ink)!important;box-shadow:inset 0 0 0 2px var(--blue)}
+.ab-work-feature .ab-tag{color:var(--blue)}
+.ab-work-feature small{color:var(--grey)}

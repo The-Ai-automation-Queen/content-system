@@ -270,3 +270,42 @@ body.v5 .sk-consent span{color:var(--grey)}
 body.v5 .sk-workbooks{background:#fff}
 body.v5 .sk-final .v5-sign{color:var(--blue)}
 body.v5 .sk-book-covers .v5-buy{font:700 15px/1.2 Inter,system-ui,sans-serif;margin:12px 22px 0}
+
+/* 2026-10-14h: visual proof. Brand cards + real event photos. */
+.v5-brands{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:0 0 40px;padding:0;list-style:none}
+.v5-brand>a{display:flex;flex-direction:column;height:100%;overflow:hidden;border-radius:20px;background:#fff;color:var(--ink)!important;box-shadow:0 1px 0 #0B0D1214,0 22px 44px -28px #0B0D1266;transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.v5-brand>a:hover{transform:translateY(-6px);box-shadow:0 1px 0 #0B0D1214,0 30px 60px -28px #0B0D1288}
+.v5-brand-art{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;height:210px;overflow:hidden;text-align:center}
+.v5-brand-body{display:flex;flex:1;flex-direction:column;gap:10px;padding:22px 24px 24px}
+.v5-brand-tag{align-self:flex-start;padding:5px 11px;border-radius:999px;background:var(--mist);color:var(--blue);font:700 11px/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.v5-brand-body p{font:400 20px/1.3 "Playfair Display",Georgia,serif;color:var(--ink)}
+.v5-brand-body b{margin-top:auto;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+/* Nike: black, white swoosh */
+.v5-brand-nike .v5-brand-art{background:#111}
+body.v5 .v5-brand-nike .v5-brand-art img{width:62%;height:auto;filter:invert(1)}
+/* PSG: navy with the red band */
+.v5-brand-psg .v5-brand-art{background:linear-gradient(90deg,#0B1F4D 0 43%,#DA291C 43% 57%,#0B1F4D 57%);color:#fff}
+.v5-psg-word{position:relative;padding:10px 16px;background:#0B1F4D;font:800 26px/1 Inter,system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase}
+.v5-psg-x{display:inline-flex;align-items:center;gap:8px;padding:4px 12px;background:#0B1F4D;font:600 16px/1 Inter,system-ui,sans-serif}
+body.v5 .v5-psg-x img{height:16px;width:auto;filter:invert(1)}
+.v5-vogue-mark{position:absolute;left:0;right:0;bottom:0;padding:9px;background:#fff;color:var(--ink);font:400 12px/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.v5-vogue-mark i{font:400 18px/1 "Playfair Display",Georgia,serif;font-style:normal;letter-spacing:.18em;margin-left:6px;vertical-align:-2px}
+/* Award: light with a big laurel */
+.v5-brand-award .v5-brand-art{background:radial-gradient(circle at 50% 40%,#F6FFD6 0,#EEF2FD 70%);color:var(--blue)}
+.v5-brand-award .v5-laurel{width:84px;height:84px;opacity:1;position:static}
+.v5-award-word{font:500 24px/1.05 "Playfair Display",Georgia,serif;color:var(--ink)}
+/* On stage: photo strip */
+.v5-stage-head{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.v5-stage-head span{font:400 13px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.v5-stage-head::after{content:"";flex:1;height:1px;background:#0B0D1226}
+.v5-stages{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0;padding:0;list-style:none}
+.v5-stages a{position:relative;display:block;overflow:hidden;border-radius:18px;aspect-ratio:4/3}
+body.v5 .v5-stages img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.v5-stages a:hover img{transform:scale(1.04)}
+.v5-stages span{position:absolute;left:12px;right:12px;bottom:12px;padding:10px 14px;border-radius:12px;background:#ffffffee;color:var(--ink);font:500 17px/1.2 "Playfair Display",Georgia,serif}
+.v5-stages b{display:block;margin-bottom:3px;font:400 11px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.v5-stage-more{margin-top:16px;font-size:15px;color:var(--grey)}
+.v5-stage-more a{color:var(--ink)!important;font-weight:600;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:900px){.v5-brands,.v5-stages{grid-template-columns:1fr}.v5-brand-art{height:170px}}
+.v5-stage-more{margin-top:20px}
+body.v5 .v5-stage-more{margin-top:20px}
