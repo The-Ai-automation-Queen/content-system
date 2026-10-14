@@ -228,7 +228,7 @@ if (/AI Build Kit|Open the Starter Kit/i.test(workWithFatiha)) {
 if (!workWithFatiha.includes('href="/workbooks.html">Workbooks</a>')) {
   failures.push("The Work with me page is missing its Workbooks link.");
 }
-if (!workWithFatiha.includes('Business and marketing transformation')) {
+if (!workWithFatiha.includes('by application')) {
   failures.push("The Work with me page is missing its current offer framing.");
 }
 for (const { source, destination } of vercelConfig.redirects) {
