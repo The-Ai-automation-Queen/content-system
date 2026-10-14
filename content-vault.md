@@ -21,6 +21,61 @@
 
 ## Most recent (quick reference)
 
+> **14/10/2026 content-engine daily run — no new entries produced (deliberate):**
+> Run end to end per explicit operator instruction ("Run the /content-engine
+> daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
+> queue-only — never post instantly. End with the operator briefing.");
+> `skills/content-engine/SKILL.md` not registered via the Skill tool this
+> session, so read and followed manually per the
+> `project-skills-not-registered` memory. Loaded `AGENTS.md`,
+> `CURRENT-WORKFLOW.md`, `context/current-context.json` and `security.md`
+> first, as both CLAUDE.md and the skill require. Note: today's autonomous
+> `content-engine daily` cron (`deploy/logs/content-engine
+> daily-2026-10-14T22-30-02.log`) only ran the git-sync step ("Already up to
+> date") and did not execute the skill itself — this interactive run is the
+> first full end-to-end execution of the skill today.
+>
+> New source material landed today via `reports/signal-harvest-2026-10-14.md`
+> (this session's own signal-harvester run, not yet ledgered as a numbered
+> `research-notes.md` RESEARCH entry — same split-ledger bookkeeping gap
+> `RESEARCH 065` flagged for the 2026-10-12 report, now recurring, raised
+> again for the operator rather than silently reconciled). Three shift-lead
+> candidates logged: S1 (IBM CHRO study, 2,500+ respondents) — 71% of CHROs
+> name supervising/validating AI output the top human capability, but only
+> 29% of employees rank judgment as important, a disconnect angle for pillar
+> 2; S2 (Hostinger, 640 solo founders) — the best audience-matched pillar-3
+> source on file yet: founders already draw a consistent line (AI for
+> content/ops, never pricing or customer relationships); S3 (Elon University
+> poll, fielded by SSRS, 1,158 adults, 1 day old) — dread/meaning-of-work
+> register, narrows but doesn't close the pillar-1 gap PwC (2026-10-02) still
+> fills most directly. A fourth finding, R1 (BenchJack benchmark-gaming
+> paper), is internal-research only per `positioning.md`'s private-subjects
+> rule and not eligible for a shift-lead draft.
+>
+> Even with usable fresh signal in hand, both standing blockers are
+> unchanged and independently reconfirmed this session: (1) this session's
+> reality-check hook again states canon: queen-brain NOT in this session,
+> and explicitly forbids writing price, tier, offer status or
+> customer-facing copy reconstructed from this repo's local mirror copies —
+> content-engine's entire output is customer-facing copy, so drafting stays
+> blocked regardless of available research; reconfirmed independently via
+> `git ls-remote` against `The-Ai-automation-Queen/queen-brain`, which again
+> returned "Write access to repository not granted" / 403 from this
+> session's git credentials, and `gh` is not installed in this session
+> either; (2) the release backlog is also unchanged: vault still holds 37
+> READY TO POST (oldest since 14/07/2026, 92 days), 33 DRAFT, 6 STALE, 2
+> KILLED, 0 POSTED (recounted directly from this file's `## ENTRY` headers —
+> 78 total, matching this session's startup reality-check hook exactly),
+> and `review-cockpit/decisions-log.md`'s last entry is still 14/07/2026 — no
+> operator replies, approvals or kills since then, and
+> `review-cockpit/state.md` logs an 81st consecutive empty Telegram
+> `getUpdates` sweep today (second interactive sweep today per that
+> session's own log) — so adding more DRAFT volume would still only crowd an
+> already-unreleased backlog. No Notion, Blotato, or queen-brain/GitHub
+> write connector was reachable from this session (checked via `ToolSearch`
+> and `git ls-remote`). Operator briefing given in this session's chat, same
+> two open options as every run since 18/09/2026, still unanswered.
+
 > **13/10/2026 content-engine daily run — no new entries produced (deliberate):**
 > Run end to end per explicit operator instruction ("Run the /content-engine
 > daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
