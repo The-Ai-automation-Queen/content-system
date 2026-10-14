@@ -42,7 +42,7 @@ export function MetaMusePage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>What can Meta Muse <span>actually do for you?</span></h1><p>See the difference between Muse and Meta AI. Then try one public research task and check that Muse stops before it acts for you.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <nav className={styles.contents} aria-label="In this guide"><strong>In this guide</strong><a href="#muse-name-title">Know what you are opening</a><a href="#muse-example-title">See a task</a><a href="#muse-access-title">Choose the limit</a><a href="#muse-test-title">Try Muse</a></nav>

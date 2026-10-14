@@ -20,7 +20,7 @@ export function InstagramDashboardPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}>
         <div className={styles.heroCopy}>
           <h1>Build Your Own <span>Instagram Dashboard</span></h1>

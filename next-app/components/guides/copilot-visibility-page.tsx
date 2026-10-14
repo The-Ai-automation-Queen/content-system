@@ -63,7 +63,7 @@ export function CopilotVisibilityPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>Get through your inbox <span>with Copilot</span></h1><p>Build a morning email brief you can check, then schedule it if your work account supports it. Copilot drafts; you decide and send.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <nav className={styles.contents} aria-label="In this guide"><strong>In this guide</strong><a href="#copilot-example-title">See a morning brief</a><a href="#copilot-tab-0" onClick={() => setActive(0)}>Set up your instruction</a><a href="#copilot-tab-1" onClick={() => setActive(1)}>Test the result</a><a href="#copilot-tab-2" onClick={() => setActive(2)}>Schedule if available</a></nav>

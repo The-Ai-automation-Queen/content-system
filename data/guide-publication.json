@@ -35,220 +35,184 @@
   ],
   "approved": [
     {
+      "slug": "start-using-ai-in-your-business",
+      "lumailTag": "guide-start-using-ai",
+      "section": "AI essentials",
+      "journeyOrder": 105
+    },
+    {
       "slug": "what-is-ai",
       "lumailTag": "guide-what-is-ai",
       "section": "AI essentials",
-      "journeyOrder": 10
+      "journeyOrder": 110
     },
     {
       "slug": "ai-jargon-guide",
       "lumailTag": "guide-ai-jargon",
       "section": "AI essentials",
-      "journeyOrder": 20
-    },
-    {
-      "slug": "what-is-agentic",
-      "lumailTag": "guide-what-is-agentic",
-      "section": "AI agents",
-      "journeyOrder": 30
+      "journeyOrder": 120
     },
     {
       "slug": "what-should-you-never-share-with-ai",
       "lumailTag": "guide-what-not-to-share-with-ai",
       "section": "AI essentials",
-      "journeyOrder": 40
-    },
-    {
-      "slug": "which-ai-tool-for-what",
-      "lumailTag": "guide-which-ai-tool-for-what",
-      "section": "AI tools",
-      "journeyOrder": 50
-    },
-    {
-      "slug": "make-chatgpt-answers-shorter",
-      "lumailTag": "guide-make-chatgpt-answers-shorter",
-      "section": "AI tools",
-      "journeyOrder": 61
-    },
-    {
-      "slug": "stop-chatgpt-forgetting-context",
-      "lumailTag": "guide-stop-chatgpt-forgetting-context",
-      "section": "AI tools",
-      "journeyOrder": 62
-    },
-    {
-      "slug": "chatgpt-scheduled-tasks",
-      "lumailTag": "guide-chatgpt-scheduled-tasks",
-      "section": "AI tools",
-      "journeyOrder": 63
-    },
-    {
-      "slug": "chatgpt-screen-recording-to-process-guide",
-      "lumailTag": "guide-chatgpt-screen-recording-to-process-guide",
-      "section": "Workflows and automation",
-      "journeyOrder": 64
-    },
-    {
-      "slug": "chatgpt-customer-research-with-evidence",
-      "lumailTag": "guide-chatgpt-customer-research-with-evidence",
-      "section": "Business operations",
-      "journeyOrder": 65
-    },
-    {
-      "slug": "claude",
-      "lumailTag": "guide-claude",
-      "section": "AI tools",
-      "journeyOrder": 70
-    },
-    {
-      "slug": "claude-projects",
-      "lumailTag": "guide-claude-projects",
-      "section": "AI tools",
-      "journeyOrder": 71
-    },
-    {
-      "slug": "teach-claude-a-repeatable-workflow",
-      "lumailTag": "guide-teach-claude-a-repeatable-workflow",
-      "section": "Workflows and automation",
-      "journeyOrder": 72
-    },
-    {
-      "slug": "gemini-cannot-find-drive-file",
-      "lumailTag": "guide-gemini-cannot-find-drive-file",
-      "section": "AI tools",
-      "journeyOrder": 81
-    },
-    {
-      "slug": "gemini-google-tasks-limits",
-      "lumailTag": "guide-gemini-google-tasks-limits",
-      "section": "AI tools",
-      "journeyOrder": 82
-    },
-    {
-      "slug": "check-copilot-excel-edits",
-      "lumailTag": "guide-check-copilot-excel-edits",
-      "section": "AI tools",
-      "journeyOrder": 91
-    },
-    {
-      "slug": "what-can-copilot-see-at-work",
-      "lumailTag": "guide-what-can-copilot-see-at-work",
-      "section": "AI tools",
-      "journeyOrder": 92
-    },
-    {
-      "slug": "test-meta-muse-money-saving-task",
-      "lumailTag": "guide-test-meta-muse-money-saving-task",
-      "section": "Workflows and automation",
-      "journeyOrder": 102
-    },
-    {
-      "slug": "make-work-tracker-with-kimi",
-      "lumailTag": "guide-make-work-tracker-with-kimi",
-      "section": "AI tools",
-      "journeyOrder": 131
-    },
-    {
-      "slug": "manus-browser-workflow",
-      "lumailTag": "guide-manus-browser-workflow",
-      "section": "AI tools",
-      "journeyOrder": 142
-    },
-    {
-      "slug": "instagram-content-dashboard",
-      "lumailTag": "guide-instagram-content-dashboard",
-      "section": "Content and creative work",
-      "journeyOrder": 156
-    },
-    {
-      "slug": "what-is-a-prompt",
-      "lumailTag": "guide-what-is-a-prompt",
-      "section": "Better prompts and answers",
-      "journeyOrder": 160
-    },
-    {
-      "slug": "what-is-an-ai-browser",
-      "lumailTag": "guide-what-is-an-ai-browser",
-      "section": "AI tools",
-      "journeyOrder": 170
-    },
-    {
-      "slug": "connect-ai-to-email-files-calendar",
-      "lumailTag": "guide-connect-ai-to-email-files-calendar",
-      "section": "AI essentials",
-      "journeyOrder": 180
-    },
-    {
-      "slug": "ai-skills-worth-learning-for-work",
-      "lumailTag": "guide-ai-skills-worth-learning-for-work",
-      "section": "AI essentials",
-      "journeyOrder": 190
-    },
-    {
-      "slug": "show-up-in-ai-search",
-      "lumailTag": "guide-show-up-in-ai-search",
-      "section": "Content and creative work",
-      "journeyOrder": 200
-    },
-    {
-      "slug": "stop-ai-agreeing-with-you",
-      "lumailTag": "guide-stop-ai-agreeing-with-you",
-      "section": "Better prompts and answers",
-      "journeyOrder": 161
+      "journeyOrder": 130
     },
     {
       "slug": "catch-ai-making-things-up",
       "lumailTag": "guide-catch-ai-making-things-up",
       "section": "AI essentials",
-      "journeyOrder": 45
+      "journeyOrder": 140
     },
     {
-      "slug": "ai-quit-or-stay-decision",
-      "lumailTag": "guide-ai-quit-or-stay-decision",
-      "section": "AI essentials",
-      "journeyOrder": 191
+      "slug": "what-is-a-prompt",
+      "lumailTag": "guide-what-is-a-prompt",
+      "section": "Better prompts and answers",
+      "journeyOrder": 150
     },
     {
-      "slug": "is-ai-coming-for-my-job",
-      "lumailTag": "guide-is-ai-coming-for-my-job",
-      "section": "AI essentials",
-      "journeyOrder": 192
+      "slug": "stop-ai-agreeing-with-you",
+      "lumailTag": "guide-stop-ai-agreeing-with-you",
+      "section": "Better prompts and answers",
+      "journeyOrder": 160
     },
     {
-      "slug": "ai-job-interview-practice",
-      "lumailTag": "guide-ai-job-interview-practice",
+      "slug": "ai-skills-worth-learning-for-work",
+      "lumailTag": "guide-ai-skills-worth-learning-for-work",
       "section": "AI essentials",
-      "journeyOrder": 193
+      "journeyOrder": 170
+    },
+    {
+      "slug": "which-ai-tool-for-what",
+      "lumailTag": "guide-which-ai-tool-for-what",
+      "section": "AI tools",
+      "journeyOrder": 210
+    },
+    {
+      "slug": "make-chatgpt-answers-shorter",
+      "lumailTag": "guide-make-chatgpt-answers-shorter",
+      "section": "AI tools",
+      "journeyOrder": 220
+    },
+    {
+      "slug": "stop-chatgpt-forgetting-context",
+      "lumailTag": "guide-stop-chatgpt-forgetting-context",
+      "section": "AI tools",
+      "journeyOrder": 230
+    },
+    {
+      "slug": "claude",
+      "lumailTag": "guide-claude",
+      "section": "AI tools",
+      "journeyOrder": 240
+    },
+    {
+      "slug": "gemini-cannot-find-drive-file",
+      "lumailTag": "guide-gemini-cannot-find-drive-file",
+      "section": "AI tools",
+      "journeyOrder": 260
+    },
+    {
+      "slug": "gemini-google-tasks-limits",
+      "lumailTag": "guide-gemini-google-tasks-limits",
+      "section": "AI tools",
+      "journeyOrder": 270
+    },
+    {
+      "slug": "connect-ai-to-email-files-calendar",
+      "lumailTag": "guide-connect-ai-to-email-files-calendar",
+      "section": "AI essentials",
+      "journeyOrder": 280
+    },
+    {
+      "slug": "what-is-an-ai-browser",
+      "lumailTag": "guide-what-is-an-ai-browser",
+      "section": "AI tools",
+      "journeyOrder": 290
     },
     {
       "slug": "weekend-projects-with-claude",
       "lumailTag": "guide-weekend-projects-with-claude",
       "section": "AI tools",
-      "journeyOrder": 73
+      "journeyOrder": 300
     },
     {
-      "slug": "money-plan-with-ai",
-      "lumailTag": "guide-money-plan-with-ai",
-      "section": "Workflows and automation",
-      "journeyOrder": 220
+      "slug": "brand-brain-guide",
+      "lumailTag": "guide-brand-brain",
+      "section": "Business operations",
+      "journeyOrder": 310
+    },
+    {
+      "slug": "show-up-in-ai-search",
+      "lumailTag": "guide-show-up-in-ai-search",
+      "section": "Content and creative work",
+      "journeyOrder": 320
+    },
+    {
+      "slug": "instagram-content-dashboard",
+      "lumailTag": "guide-instagram-content-dashboard",
+      "section": "Content and creative work",
+      "journeyOrder": 330
+    },
+    {
+      "slug": "chatgpt-customer-research-with-evidence",
+      "lumailTag": "guide-chatgpt-customer-research-with-evidence",
+      "section": "Business operations",
+      "journeyOrder": 340
     },
     {
       "slug": "test-business-idea-with-ai",
       "lumailTag": "guide-test-business-idea-with-ai",
       "section": "Business operations",
-      "journeyOrder": 210
+      "journeyOrder": 410
     },
     {
       "slug": "launch-your-product-in-30-days",
       "lumailTag": "guide-launch-your-product-in-30-days",
       "section": "Business operations",
-      "journeyOrder": 211
+      "journeyOrder": 420
     },
     {
       "slug": "marketing-emails-that-sell",
       "lumailTag": "guide-marketing-emails-that-sell",
       "section": "Business operations",
-      "journeyOrder": 212
+      "journeyOrder": 430
+    },
+    {
+      "slug": "chatgpt-scheduled-tasks",
+      "lumailTag": "guide-chatgpt-scheduled-tasks",
+      "section": "AI tools",
+      "journeyOrder": 510
+    },
+    {
+      "slug": "teach-claude-a-repeatable-workflow",
+      "lumailTag": "guide-teach-claude-a-repeatable-workflow",
+      "section": "Workflows and automation",
+      "journeyOrder": 520
+    },
+    {
+      "slug": "chatgpt-screen-recording-to-process-guide",
+      "lumailTag": "guide-chatgpt-screen-recording-to-process-guide",
+      "section": "Workflows and automation",
+      "journeyOrder": 530
+    },
+    {
+      "slug": "make-work-tracker-with-kimi",
+      "lumailTag": "guide-make-work-tracker-with-kimi",
+      "section": "AI tools",
+      "journeyOrder": 540
+    },
+    {
+      "slug": "what-is-agentic",
+      "lumailTag": "guide-what-is-agentic",
+      "section": "AI agents",
+      "journeyOrder": 550
+    },
+    {
+      "slug": "test-meta-muse-money-saving-task",
+      "lumailTag": "guide-test-meta-muse-money-saving-task",
+      "section": "Workflows and automation",
+      "journeyOrder": 560
     }
   ],
   "retired": [
@@ -327,6 +291,10 @@
     {
       "slug": "is-kimi-worth-paying-for",
       "reason": "Removed from the public library on 2026-09-28 at the owner's request; replaced by new guides from the portfolio sheet."
+    },
+    {
+      "slug": "claude-projects",
+      "reason": "Folded into brand-brain-guide on 13/10/2026 at the owner's request; same lesson (save your instructions once in a Claude Project). Old URLs redirect to /guides/brand-brain-guide/."
     }
   ],
   "heldForReview": [],
@@ -396,7 +364,49 @@
       "lumailTag": "guide-test-deepseek-v4-document-work",
       "section": "AI tools",
       "journeyOrder": 123
+    },
+    {
+      "slug": "check-copilot-excel-edits",
+      "lumailTag": "guide-check-copilot-excel-edits",
+      "section": "AI tools",
+      "journeyOrder": 91
+    },
+    {
+      "slug": "what-can-copilot-see-at-work",
+      "lumailTag": "guide-what-can-copilot-see-at-work",
+      "section": "AI tools",
+      "journeyOrder": 92
+    },
+    {
+      "slug": "manus-browser-workflow",
+      "lumailTag": "guide-manus-browser-workflow",
+      "section": "AI tools",
+      "journeyOrder": 142
+    },
+    {
+      "slug": "ai-quit-or-stay-decision",
+      "lumailTag": "guide-ai-quit-or-stay-decision",
+      "section": "AI essentials",
+      "journeyOrder": 191
+    },
+    {
+      "slug": "is-ai-coming-for-my-job",
+      "lumailTag": "guide-is-ai-coming-for-my-job",
+      "section": "AI essentials",
+      "journeyOrder": 192
+    },
+    {
+      "slug": "ai-job-interview-practice",
+      "lumailTag": "guide-ai-job-interview-practice",
+      "section": "AI essentials",
+      "journeyOrder": 193
+    },
+    {
+      "slug": "money-plan-with-ai",
+      "lumailTag": "guide-money-plan-with-ai",
+      "section": "Workflows and automation",
+      "journeyOrder": 220
     }
   ],
-  "approvalNote": "Owner approved guides 11 to 35 and the removal of the old Mistral, DeepSeek project, DeepSeek editing, Meta AI and Kimi guides on 2026-09-28. Pending and parked guides remain excluded. On 2026-09-29 the owner parked the four Grok guides and the two DeepSeek guides (fix-deepseek-wall-of-text, test-deepseek-v4-document-work)."
+  "approvalNote": "Owner approved guides 11 to 35 and the removal of the old Mistral, DeepSeek project, DeepSeek editing, Meta AI and Kimi guides on 2026-09-28. Pending and parked guides remain excluded. On 2026-09-29 the owner parked the four Grok guides and the two DeepSeek guides (fix-deepseek-wall-of-text, test-deepseek-v4-document-work). On 2026-10-13 the owner supplied and approved the Brand Brain guide copy, the card layout and an email gate after Step 1. On 2026-10-13 the owner approved the solopreneur journey review: parked manus-browser-workflow, check-copilot-excel-edits, what-can-copilot-see-at-work, ai-quit-or-stay-decision, is-ai-coming-for-my-job, ai-job-interview-practice, money-plan-with-ai; retitled ai-skills-worth-learning-for-work and marketing-emails-that-sell; reordered the library into five stages (start safely, set up your tools, brand and content, sell and launch, run and automate); and moved the batch guides to the card layout. On 13/10/2026 the owner approved plain question-style titles for every guide (next-app/content/guide-titles.ts) and folded claude-projects into brand-brain-guide. On 13/10/2026 the owner approved building guide 1, start-using-ai-in-your-business, before launch."
 }

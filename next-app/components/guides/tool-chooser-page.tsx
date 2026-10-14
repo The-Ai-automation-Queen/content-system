@@ -128,7 +128,7 @@ export function ToolChooserPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}>
         <h1>Which AI tool <span>should you try first?</span></h1>
         <p>Pick the work you need done. Try the matching tool on a small task before you pay for anything.</p>

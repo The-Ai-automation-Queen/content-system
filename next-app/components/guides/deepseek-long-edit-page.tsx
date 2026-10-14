@@ -62,7 +62,7 @@ export function DeepseekLongEditPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>Keep the story you like. <span>Edit only what is weak.</span></h1><p>Give DeepSeek one passage, the facts to protect and one problem to fix. Compare its revision with your original before you keep it.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <nav className={styles.contents} aria-label="In this guide"><strong>In this guide</strong><a href="#long-example-title">See a filled brief</a><a href="#long-adapt-title">Make it yours</a><a href="#long-check-title">Check the edit</a></nav>

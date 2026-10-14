@@ -30,7 +30,7 @@ export function CustomerResearchPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>Find patterns in customer feedback. <span>Keep the proof.</span></h1><p>Turn interview or survey notes into a table of themes, quotes and disagreements you can check before you make a decision.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <nav className={styles.contents} aria-label="In this guide"><strong>In this guide</strong><a href="#research-example-title">See an example</a><a href="#research-ready-title">Prepare your notes</a><a href="#research-prompt-title">Get the instruction</a><a href="#research-check-title">Check the result</a></nav>

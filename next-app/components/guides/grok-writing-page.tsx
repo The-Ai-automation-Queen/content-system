@@ -42,7 +42,7 @@ export function GrokWritingPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}>
         <h1>Can Grok Bot do <span>one useful job</span> for you?</h1>
         <p>Give one Bot a public signal to track. Check its first brief and usage before asking it to work again.</p>

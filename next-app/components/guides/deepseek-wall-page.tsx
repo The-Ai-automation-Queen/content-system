@@ -53,7 +53,7 @@ export function DeepseekWallPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>DeepSeek made your scene <span>hard to read?</span></h1><p>Fix the paragraph breaks without letting it change the story you already like.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <nav className={styles.contents} aria-label="In this guide"><strong>In this guide</strong><a href="#wall-example-title">See the difference</a><a href="#wall-prompt-title">Try it and check</a></nav>

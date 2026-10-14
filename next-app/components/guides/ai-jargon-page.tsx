@@ -66,7 +66,7 @@ export function AiJargonPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}>
         <h1>12 AI words <span>you need to know</span></h1>
         <p>Hear an AI term in a meeting or sales pitch? Find out what it means and what to ask next.</p>

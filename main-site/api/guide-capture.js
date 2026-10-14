@@ -33,6 +33,7 @@ module.exports = async function handler(request, response) {
     lastName,
     guideSlug,
     marketingConsent,
+    returning,
     source,
     timestamp,
     website,
@@ -55,6 +56,28 @@ module.exports = async function handler(request, response) {
   const guide = APPROVED_GUIDES.get(guideSlug) ||
     (allowPreview ? preview.guides.find((item) => item.slug === guideSlug) : undefined);
   if (!guide?.lumailTag) return response.status(400).json({ error: "This guide is not configured for email delivery." });
+  // A reader who already signed up on another guide opens this one straight away.
+  // Only add this guide's tag so Lumail knows what they read; no form, no second email.
+  if (returning === true) {
+    try {
+      const tagResponse = await fetch("https://lumail.io/api/v1/subscribers", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: normalizedEmail,
+          tags: ["shift-and-lead-guide", guide.lumailTag],
+          replaceTags: false,
+          resubscribe: false,
+          triggerWorkflows: true,
+        }),
+      });
+      if (!tagResponse.ok) console.error("Lumail guide tag failed", { status: tagResponse.status, guideSlug });
+      return response.status(200).json({ success: tagResponse.ok, tagged: tagResponse.ok });
+    } catch (error) {
+      console.error("Lumail guide tag request failed", { guideSlug, message: error?.message });
+      return response.status(200).json({ success: false, tagged: false });
+    }
+  }
   if (REBUILT_APPROVED_SLUGS.has(guideSlug) && !givenName) {
     return response.status(400).json({ error: "Enter your first name." });
   }
@@ -98,7 +121,7 @@ module.exports = async function handler(request, response) {
         guideSlug,
 
       });
-      return response.status(502).json({ error: "We could not open the guide. Please try again." });
+      return response.status(502).json({ error: `We could not open the guide. Please try again. (ref S${lumailResponse.status})` });
     }
     const guideUrl = `${GUIDE_ORIGIN}/guides/${guideSlug}/`;
     const guideDetails = GUIDE_DETAILS.get(guideSlug);
@@ -117,7 +140,7 @@ The steps and any copyable instructions are together on the page. Start with the
 
 Keep this email so you can return to the guide. If you opened it on your phone, use the same link on your laptop when you’re ready to try the steps.
 
-The AI Automation Queen`;
+Fatiha`;
     const emailResponse = await fetch("https://lumail.io/api/v2/emails", {
       method: "POST",
       headers: {
@@ -125,19 +148,21 @@ The AI Automation Queen`;
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "fatiha@email.shiftandlead.com",
+        // Sender is set in Vercel (GUIDE_EMAIL_FROM); it must be a sender verified in Lumail.
+        from: process.env.GUIDE_EMAIL_FROM || "fatiha@email.shiftandlead.com",
         to: normalizedEmail,
         subject: `Your guide: ${title}`,
         markdown: guideEmail,
       }),
     });
     if (!emailResponse.ok) {
+      // The reader is already subscribed: open the guide on screen anyway.
       console.error("Lumail guide email failed", { status: emailResponse.status, guideSlug });
-      return response.status(502).json({ error: "We could not open the guide. Please try again." });
+      return response.status(200).json({ success: true, emailSent: false });
     }
-    return response.status(200).json({ success: true });
+    return response.status(200).json({ success: true, emailSent: true });
   } catch (error) {
-    console.error("Lumail guide capture request failed", { guideSlug });
-    return response.status(502).json({ error: "We could not open the guide. Please try again." });
+    console.error("Lumail guide capture request failed", { guideSlug, message: error?.message });
+    return response.status(502).json({ error: "We could not open the guide. Please try again. (ref N)" });
   }
 };

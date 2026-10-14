@@ -42,7 +42,7 @@ export function AiSkillsPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>Which AI skill is worth learning <span>for your work?</span></h1><p>You do not need to learn every tool. Find the part of a task that slows you down, then practise one skill on work you already understand.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <nav className={styles.contents} aria-label="In this guide"><strong>In this guide</strong><a href="#skills-example-title">See a real task</a><a href="#skills-pick-title">Find your skill</a><a href="#skills-task-title">Try one exercise</a></nav>

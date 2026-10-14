@@ -56,7 +56,7 @@ export function ManusBrowserPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>Does Manus need <span>your browser at all?</span></h1><p>Choose the smallest route that can finish the job. Use your signed-in browser only when public pages or a connector cannot do it.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <section className={styles.activity} aria-labelledby="manus-example-title"><div className={styles.sectionHead}><span>See the choice</span><h2 id="manus-example-title">A public page does not need your signed-in browser</h2></div><p>To compare Manus’s browser options, start with its public <a href="https://manus.im/blog/manus-browser-operator" target="_blank" rel="noopener noreferrer">Browser Operator announcement ↗</a>. Ask what the cloud browser can do, when your signed-in browser is needed and how you can stop its work. The cloud browser can read that page without your website login.</p><div className={styles.exampleFlow}><span>Public page</span><span aria-hidden="true">→</span><span>Cloud browser</span><span aria-hidden="true">→</span><span>Access decision with sources</span></div></section>

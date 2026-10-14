@@ -35,7 +35,7 @@ export function GrokReviewPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>When should Grok Bot <span>ask you first?</span></h1><p>Give it one public-post job, set the boundary before it starts, and keep the final decision with you.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <nav className={styles.contents} aria-label="In this guide"><strong>In this guide</strong><a href="#grok-start-title">Set the job</a><a href="#grok-example-title">See the boundary</a><a href="#grok-sort-title">Make three decisions</a><a href="#grok-action-title">Get the instruction</a></nav>

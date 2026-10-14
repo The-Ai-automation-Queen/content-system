@@ -52,7 +52,7 @@ export function MetaMuseSavingPage({ guide }: { guide: GuidePage }) {
 
   return <main className={styles.page}>
     <div className={styles.shell}>
-      <Link className={styles.back} href="/guides/">← All guides</Link>
+      <Link className={styles.back} href="/guides/">← All Guides</Link>
       <header className={styles.hero}><h1>Can Muse find a better price <span>without buying for you?</span></h1><p>Compare the full cost of the same item from different sellers. Keep checkout and the final decision in your hands.</p><figure><Image src={guide.cover} alt={guide.coverAlt} fill priority sizes="(max-width: 700px) 100vw, 440px" /></figure></header>
 
       <nav className={styles.contents} aria-label="In this guide"><strong>In this guide</strong><a href="#muse-cost-title">What cheaper means</a><a href="#muse-example-title">Try a price check</a><a href="#muse-shortlist-title">Ask Muse</a><a href="#muse-price-check-title">Check the shortlist</a></nav>

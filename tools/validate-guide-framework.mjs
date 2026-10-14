@@ -18,6 +18,7 @@ const pageSource = [
   read("next-app/content/guide-batch-26-35-pages.ts"),
   read("next-app/content/claude-series.ts"),
   read("next-app/content/instagram-dashboard-guide.ts"),
+  read("next-app/content/card-guides.ts"),
   modelSeriesSource,
   researchSeriesSource,
 ].join("\n");
@@ -134,6 +135,8 @@ for (const cover of structuredCovers) {
   } else if (fs.statSync(coverFile).size > 200 * 1024) {
     failures.push(`Structured guide cover exceeds 200 KB: ${cover}`);
   }
+  const phoneFile = coverFile.replace(/\.webp$/i, "-640.webp");
+  if (!fs.existsSync(phoneFile)) failures.push(`Structured guide cover has no 640px phone version: ${cover.replace(/\.webp$/i, "-640.webp")}`);
 }
 
 if (!guideCaptureApi.includes('require("../../data/guide-publication.json")')) {
@@ -161,8 +164,8 @@ if (!guideAccessSource.includes('fetch("/api/guide-capture"') ||
     !["firstName", "email", "marketingConsent"].every((field) => guideAccessSource.includes(`name="${field}"`))) {
   failures.push("The inline guide gate must unlock content after Lumail success and collect first name, email and optional marketing consent.");
 }
-if (!guideRouteSource.includes('if (slug === "instagram-content-dashboard") return <BatchGuidePage guide={guide} />;')) {
-  failures.push("The Instagram guide must use the shared batch guide design.");
+if (!guideRouteSource.includes('if (slug === "instagram-content-dashboard") return <CardGuidePage guide={guide} />;')) {
+  failures.push("The Instagram guide must use the shared card guide design.");
 }
 if (!guideRouteSource.includes("legacyGuideSlugs.has(slug)") ||
     !guideRouteSource.includes("needs an approved interactive Next.js composition") ||
