@@ -309,3 +309,8 @@ body.v5 .v5-stages img{width:100%;height:100%;object-fit:cover;transition:transf
 @media(max-width:900px){.v5-brands,.v5-stages{grid-template-columns:1fr}.v5-brand-art{height:170px}}
 .v5-stage-more{margin-top:20px}
 body.v5 .v5-stage-more{margin-top:20px}
+.v5-brand-card{display:flex;flex-direction:column;height:100%;overflow:hidden;border-radius:20px;background:#fff;box-shadow:0 1px 0 #0B0D1214,0 22px 44px -28px #0B0D1266}
+.v5-award-list{display:grid;gap:8px;margin:auto 0 0;padding:6px 0 0;list-style:none}
+.v5-award-list a{font-size:14px;font-weight:700;color:var(--ink)!important;text-decoration:underline;text-underline-offset:4px}
+.v5-awards-col{flex-direction:column;align-items:flex-start!important}
+.v5-award-list a{text-decoration:underline!important}
