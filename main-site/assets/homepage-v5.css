@@ -330,3 +330,9 @@ body.v5 .v5-door-photo{object-position:50% 8%}
   .v5-brands{margin-bottom:18px}
 }
 body.v5 .v5-door-photo{object-position:50% 32%}
+
+/* 2026-10-14j: hero on deep black; photo fades into it */
+body.v5 .sk-hero{background:#0B0D12}
+body.v5 .sk-hero .sk-pill-pink:hover{background:var(--blue);color:#fff!important}
+body.v5 .sk-hero .sk-pill-ink:hover{background:#ffffff1a}
+body.v5 .sk-header:not(.is-scrolled) .v5-nav-cta:hover{background:var(--blue);color:#fff!important}
