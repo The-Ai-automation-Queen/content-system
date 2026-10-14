@@ -228,3 +228,31 @@ body.v3 .v3-apply .v3-btn-pink:hover{background:#fff;color:var(--ink)}
   body.v3 .v3-hero-photo::after{display:none}
 }
 @media(max-width:960px){body.v3 .v3-hero-photo img{object-position:center}}
+
+/* 2026-10-14b: brand fonts (BRAND-GUIDELINES.md) + logo band */
+.v3 h1,.v3 h2{font-family:"Playfair Display",Georgia,serif;font-weight:400;text-transform:none;letter-spacing:-.025em;line-height:1.02}
+.v3 h1 em,.v3 h2 em{font-style:italic}
+.v3 h3{font-family:Inter,system-ui,sans-serif;font-weight:700}
+body.v3 .v3-hero h1{font-size:clamp(42px,4.9vw,80px)}
+.v3-head h2,.v3-familiar h2,.v3-final h2{font-size:clamp(44px,5.4vw,84px)}
+.v3-comm-left h2{font-size:clamp(40px,4.4vw,68px)}
+.v3-months h3{font-family:"Playfair Display",Georgia,serif;font-weight:400;text-transform:none;letter-spacing:-.02em}
+.v3-timeline b,.v3-pricebox strong,.v3-price,.v3-hero-photo figcaption b,.v3-apply-steps b{font-family:"Playfair Display",Georgia,serif;font-weight:500;letter-spacing:-.03em}
+.v3-quotes p{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-style:italic;letter-spacing:-.01em}
+.v3-logo{font-family:"Playfair Display",Georgia,serif;font-size:21px;line-height:1;font-weight:400;letter-spacing:-.03em;text-transform:none}
+.v3-logo span{font-style:italic;font-weight:700}
+.v3-nav nav{font-size:12px;font-weight:400;letter-spacing:.08em;line-height:1}
+.v3-tag,.v3-step,.v3-months span,.v3-form label,.v3-press span{font-family:"Space Mono",ui-monospace,monospace;font-weight:400;letter-spacing:.08em}
+.v3-tag,.v3-step,.v3-months span{font-size:14px}
+.v3-story-intro{max-width:40ch;margin:-24px 0 40px;font-size:19px;color:#FFFFFFB3}
+.v3-gets{font-size:17px;text-transform:none;letter-spacing:0;font-weight:600}
+.v3-press{padding:40px 0}
+.v3-press-grid{display:grid;grid-template-columns:auto auto 1fr;gap:28px 72px;align-items:start}
+.v3-press span{display:block;margin-bottom:18px;font-size:13px}
+.v3-press ul{align-items:center;gap:20px 44px;font-size:20px}
+body.v3 .v3-press img{height:30px;width:auto;filter:brightness(0) invert(1);opacity:.9}
+body.v3 .v3-press .v3-mark-nike{height:38px}body.v3 .v3-press .v3-mark-lelab{height:40px}body.v3 .v3-press img[alt=Intel]{height:34px}
+.v3-press-vogue{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:26px;letter-spacing:.06em;text-transform:uppercase}
+.v3-press-psg{font-weight:700;font-size:17px;letter-spacing:.02em}
+@media(max-width:960px){.v3-press-grid{grid-template-columns:1fr}body.v3 .v3-press img{height:24px}body.v3 .v3-press .v3-mark-nike{height:30px}body.v3 .v3-press .v3-mark-lelab{height:32px}body.v3 .v3-press img[alt=Intel]{height:28px}}
+.v3 h1,.v3 h2{text-wrap:balance}
