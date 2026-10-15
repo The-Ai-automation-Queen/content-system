@@ -143,6 +143,16 @@ export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: G
           </>
         )}
       </div>
+      <section className="library-close" aria-labelledby="library-close-title">
+        <img src="/assets/mascot/waving-720.webp" alt="" width="575" height="720" loading="lazy" />
+        <div>
+          <h2 id="library-close-title">Want help with the next step? <em>Pick your way in.</em></h2>
+          <div className="library-close__actions">
+            <a href="https://www.skool.com/simple-ai-for-non-tech-8652" target="_blank" rel="noopener noreferrer">Join the community (free)</a>
+            <a href="/work-with-fatiha/#apply">Work with me 1:1</a>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

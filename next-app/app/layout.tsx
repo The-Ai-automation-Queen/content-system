@@ -30,6 +30,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <SiteFooter />
         <Script src="/assets/events.js" strategy="afterInteractive" />
+        <Script src="/_vercel/insights/script.js" strategy="afterInteractive" />
       </body>
     </html>
   );

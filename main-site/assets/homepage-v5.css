@@ -414,3 +414,27 @@ body.v5 .v5-comm img.v5-comm-mascot{position:relative;width:min(78%,380px);heigh
 .v5-comm-chips{left:22px;bottom:22px}
 @media(prefers-reduced-motion:reduce){body.v5 .v5-comm img.v5-comm-mascot{animation:none}}
 @media(max-width:700px){.v5-comm{min-height:400px}body.v5 .v5-comm img.v5-comm-mascot{width:62%;margin:30px 0 120px 30%}}
+
+/* 2026-10-15c: robot panel on white, smaller robot; email line under the closing cards */
+.v5-comm{background:#fff;box-shadow:0 1px 0 #0B0D1214,0 30px 70px -40px #2C4BE077}
+.v5-comm-bg{background:radial-gradient(55% 50% at 68% 38%,#E3E8FD 0%,transparent 72%),radial-gradient(35% 35% at 18% 82%,#CAFF0040 0%,transparent 70%)}
+body.v5 .v5-comm img.v5-comm-mascot{width:min(52%,250px);margin:36px 0 96px 26%}
+.v5-comm-chips li{background:var(--ink);color:#fff}
+.v5-comm-chips li::before{background:#CAFF00}
+@media(max-width:700px){body.v5 .v5-comm img.v5-comm-mascot{width:46%;margin:26px 0 150px 36%}}
+.v5-close-email{grid-column:1/-1;display:grid;gap:10px;margin-top:8px;padding-top:22px;border-top:1px solid #0B0D121A}
+.v5-close-email label:first-child{font-weight:600;font-size:15px;color:var(--ink)}
+.v5-close-email>div{display:flex;gap:10px;flex-wrap:wrap}
+.v5-close-email input[type=email]{flex:1 1 220px;padding:13px 16px;border:1px solid #0B0D1233;border-radius:999px;font:inherit;font-size:15px;background:#fff}
+.v5-close-email button{padding:13px 22px;border:0;border-radius:999px;background:var(--ink);color:#fff;font:700 14px Inter,system-ui,sans-serif;cursor:pointer}
+.v5-close-email button:hover{background:var(--blue)}
+.v5-close-consent{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--grey)}
+.v5-close-email [role=status]{min-height:1.2em;font-size:14px;color:var(--blue)}
+/* Work with me: proof strip */
+.pg-proof{padding:28px 0;background:#fff}
+.pg-proof-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px 42px;padding:22px 0;border-top:1px solid #0B0D121A;border-bottom:1px solid #0B0D121A}
+.pg-proof-row>p{margin:0;font:400 12px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--grey)}
+.pg-proof-item{display:grid;gap:4px;font:600 18px/1.1 "Playfair Display",Georgia,serif;color:var(--ink)}
+body.v5 .pg-proof-item img{height:22px;width:auto;filter:brightness(0)}
+.pg-proof-item i{font-style:normal;letter-spacing:.18em}
+.pg-proof-item small{font:400 11px/1 Inter,system-ui,sans-serif;color:var(--grey);letter-spacing:.04em}

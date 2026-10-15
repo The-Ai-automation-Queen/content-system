@@ -4,6 +4,7 @@ const links = [
   ["Home", "/"],
   ["Free guides", "/guides/"],
   ["Workbooks", "/workbooks.html"],
+  ["Community", "/#community"],
   ["Work with me", "/work-with-fatiha/"],
   ["About", "/about.html"],
 ] as const;

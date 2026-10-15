@@ -1,6 +1,6 @@
 /* Card-format guide (author strip, numbered step cards, copyable prompts),
    in the shared guide tokens from batch-guide-page.module.css. */
-.page { --blue: #2c4be0; --blue-deep: #1b2ea0; --pink: #ff007f; --lilac: #c8c1f0; --ink: #0d1117; --tint: #eef0ff; --muted: #4a5068;
+.page { --blue: #2c4be0; --blue-deep: #1b2ea0; --pink: #2c4be0; --lilac: #c8c1f0; --ink: #0d1117; --tint: #eef0ff; --muted: #4a5068;
   position: relative; overflow: hidden; color: var(--ink); font-family: var(--font-ui), Inter, Arial, sans-serif;
   background: #fff linear-gradient(180deg, #f4f5ff 0, var(--tint) 420px, #fff 900px) no-repeat; }
 .page::before { content: ""; position: absolute; left: -15%; top: -120px; width: 55%; height: 560px; background: radial-gradient(closest-side, rgba(200,193,240,.7), transparent); pointer-events: none; }
