@@ -438,3 +438,15 @@ body.v5 .v5-comm img.v5-comm-mascot{width:min(52%,250px);margin:36px 0 96px 26%}
 body.v5 .pg-proof-item img{height:22px;width:auto;filter:brightness(0)}
 .pg-proof-item i{font-style:normal;letter-spacing:.18em}
 .pg-proof-item small{font:400 11px/1 Inter,system-ui,sans-serif;color:var(--grey);letter-spacing:.04em}
+/* 2026-10-15d: speaking gets its own section, on black */
+.v5-speak{padding:72px 0 88px;background:var(--ink);color:#fff}
+.v5-speak-head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:36px}
+body.v5 .v5-speak h2{color:#fff}
+body.v5 .v5-speak h2 em{color:#CAFF00}
+body.v5 .v5-speak-head p{max-width:440px;color:#C9CDD8;font-size:18px}
+.v5-speak .v5-stages a{aspect-ratio:4/5}
+@media(max-width:900px){.v5-speak-head{grid-template-columns:1fr;gap:16px}.v5-speak .v5-stages a{aspect-ratio:4/3}}
+body.v5 .v5-speak h2{font-size:clamp(40px,4.6vw,68px);line-height:1.02}
+body.v5 .v5-speak .v5-stages span,body.v5 .v5-speak .v5-stages span *{color:#fff!important}
+body.v5 .v5-speak .v5-stages b{color:#CAFF00!important}
+.v5-speak{padding:64px 0 56px}
