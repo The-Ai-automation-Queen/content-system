@@ -407,3 +407,10 @@ body.v5 .v5-comm img{width:100%;aspect-ratio:4/5;max-height:560px;object-fit:cov
 body.v5 .sk-book-covers li,body.v5 .sk-book-covers li:nth-child(n){border:0!important;border-radius:20px!important;overflow:hidden;background:#fff;box-shadow:0 1px 0 #0B0D1214,0 22px 50px -32px #2C4BE088!important;outline:0!important}
 .v5-soon{display:inline-block;margin:4px 0 2px;padding:5px 10px;border-radius:999px;background:var(--mist);color:var(--grey);font:400 11px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase}
 body.v5 .sk-book-covers li::before{content:"Workbook " counter(wb) " · Coming soon"!important}
+/* community visual: guide robot on a brand panel */
+.v5-comm{display:grid;place-items:center;min-height:460px;border-radius:28px;overflow:hidden;background:var(--blue)}
+.v5-comm-bg{position:absolute;inset:0;background:radial-gradient(60% 55% at 70% 30%,#5B74F0 0%,transparent 70%),radial-gradient(40% 40% at 15% 85%,#CAFF0033 0%,transparent 70%)}
+body.v5 .v5-comm img.v5-comm-mascot{position:relative;width:min(78%,380px);height:auto;aspect-ratio:auto;max-height:none;object-fit:contain;border-radius:0;box-shadow:none;margin:40px 0 70px 18%;filter:drop-shadow(0 24px 30px #0B0D1255);animation:v5float 7s var(--ease) infinite}
+.v5-comm-chips{left:22px;bottom:22px}
+@media(prefers-reduced-motion:reduce){body.v5 .v5-comm img.v5-comm-mascot{animation:none}}
+@media(max-width:700px){.v5-comm{min-height:400px}body.v5 .v5-comm img.v5-comm-mascot{width:62%;margin:30px 0 120px 30%}}
