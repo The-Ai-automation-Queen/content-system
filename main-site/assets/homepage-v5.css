@@ -1,7 +1,7 @@
 /* Homepage v5 (2026-10-14): the original Saadia layout, recoloured to the brand
    blue / white / light-blue system with Playfair Display + Inter + Space Mono.
    Loaded after homepage-saadia.css; every rule is scoped to body.v5. */
-body.home-saadia.v5{--blue:#2C4BE0;--pink:#FF007F;--ink:#0B0D12;--mist:#EEF2FD;--grey:#5A5F6E;--lilac:#C9D3FA;--ease:cubic-bezier(.32,.72,0,1);font-size:17px}
+body.home-saadia.v5{--blue:#2C4BE0;--pink:#FF007F;--ink:#0B0D12;--mist:#F3F3F4;--grey:#5A5F6E;--lilac:#C9D3FA;--ease:cubic-bezier(.32,.72,0,1);font-size:17px}
 
 /* Type: Playfair headlines in sentence case, italic second line */
 body.v5 h1,body.v5 h2{font-family:"Playfair Display",Georgia,serif!important;font-weight:400!important;text-transform:none!important;letter-spacing:-.025em!important;line-height:1.02!important;text-wrap:balance}
@@ -291,7 +291,7 @@ body.v5 .v5-psg-x img{height:16px;width:auto;filter:invert(1)}
 .v5-vogue-mark{position:absolute;left:0;right:0;bottom:0;padding:9px;background:#fff;color:var(--ink);font:400 12px/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
 .v5-vogue-mark i{font:400 18px/1 "Playfair Display",Georgia,serif;font-style:normal;letter-spacing:.18em;margin-left:6px;vertical-align:-2px}
 /* Award: light with a big laurel */
-.v5-brand-award .v5-brand-art{background:radial-gradient(circle at 50% 40%,#F6FFD6 0,#EEF2FD 70%);color:var(--blue)}
+.v5-brand-award .v5-brand-art{background:radial-gradient(circle at 50% 40%,#F6FFD6 0,#F3F3F4 70%);color:var(--blue)}
 .v5-brand-award .v5-laurel{width:84px;height:84px;opacity:1;position:static}
 .v5-award-word{font:500 24px/1.05 "Playfair Display",Georgia,serif;color:var(--ink)}
 /* On stage: photo strip */
@@ -365,3 +365,25 @@ body.v5 .gb-card img{width:100%;height:112%;object-fit:cover;display:block;trans
 .gb-body b{margin-top:auto;font-size:14px;font-weight:700;color:var(--blue)}
 @media(max-width:900px){.gb-grid{grid-template-columns:1fr 1fr}.gb-big{grid-column:1/-1;grid-row:auto}.gb-big figure{min-height:240px}}
 @media(max-width:560px){.gb-grid{grid-template-columns:1fr;gap:16px}.gb-card figure,.gb-big figure{aspect-ratio:16/9;min-height:0}}
+
+/* 2026-10-15: 3 guides, one per stage; closing section = community or 1:1 */
+.gb-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.v5-close{padding:96px 0!important}
+.v5-close-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+body.v5 .v5-close-note img{width:72px;height:72px;border-radius:50%;object-fit:cover;margin-bottom:22px}
+body.v5 .v5-close h2{color:var(--ink)}
+body.v5 .v5-close-note p{margin-top:20px;max-width:440px;font-size:18px;color:var(--grey)}
+.v5-close-paths{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.v5-path{display:flex;flex-direction:column;gap:12px;padding:28px;border-radius:22px;background:#fff;color:var(--ink)!important;box-shadow:0 1px 0 #0B0D1214,0 22px 50px -34px #0B0D1255;transition:transform .6s var(--ease)}
+.v5-path:hover,.v5-path:focus-visible{transform:translateY(-5px)}
+.v5-path:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.v5-path-tag{align-self:flex-start;padding:5px 10px;border-radius:999px;background:var(--mist);color:var(--blue);font:400 11px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase}
+body.v5 .v5-path h3{font:500 26px/1.15 "Playfair Display",Georgia,serif}
+body.v5 .v5-path p{font-size:16px;color:var(--grey)}
+.v5-path b{margin-top:auto;padding-top:8px;font-size:15px;font-weight:700;color:var(--blue)}
+.v5-path-dark{background:var(--ink);color:#fff!important}
+body.v5 .v5-path-dark p{color:#C9CDD8}
+.v5-path-dark .v5-path-tag{background:#ffffff1a;color:#CAFF00}
+.v5-path-dark b{color:#CAFF00}
+@media(max-width:900px){.v5-close-grid,.v5-close-paths{grid-template-columns:1fr;gap:28px}.gb-grid{grid-template-columns:1fr}}
+body.v5 .v5-path-dark h3{color:#fff}
