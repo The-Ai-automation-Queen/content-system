@@ -347,3 +347,21 @@ body.v5 .v5-stages img{aspect-ratio:4/3;border-radius:16px;height:auto}
 .v5-stages span{position:static;display:block;margin-top:10px;padding:0;background:none;border-radius:0;font:500 17px/1.25 "Playfair Display",Georgia,serif}
 @media(max-width:900px){.v5-stage-row{grid-template-columns:1fr;gap:16px}}
 @media(max-width:700px){body.v5 .v5-brands,body.v5 .v5-stages{padding:4px 18px 18px;scroll-padding-inline:18px}}
+
+/* 2026-10-15: guides as a bento grid (replaces the swipe row). GSAP adds the scroll reveal. */
+.gb-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(0,auto);gap:22px;margin:40px 0 0;padding:0;list-style:none}
+.gb-big{grid-column:span 2;grid-row:span 2}
+.gb-card a{position:relative;display:flex;flex-direction:column;height:100%;border-radius:22px;overflow:hidden;background:#fff;color:var(--ink)!important;box-shadow:0 1px 0 #0B0D1214,0 22px 50px -32px #2C4BE088;transition:transform .7s var(--ease),box-shadow .7s var(--ease)}
+.gb-card a:hover,.gb-card a:focus-visible{transform:translateY(-6px);box-shadow:0 1px 0 #0B0D1214,0 34px 70px -34px #2C4BE0AA}
+.gb-card a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.gb-card figure{margin:0;overflow:hidden;aspect-ratio:16/10;background:var(--blue)}
+.gb-big figure{flex:1;aspect-ratio:auto;min-height:340px}
+body.v5 .gb-card img{width:100%;height:112%;object-fit:cover;display:block;transition:transform 1s var(--ease)}
+.gb-card a:hover img{transform:scale(1.04)}
+.gb-body{display:flex;flex-direction:column;gap:10px;padding:20px 22px 22px}
+.gb-tag{align-self:flex-start;padding:5px 10px;border-radius:999px;background:var(--mist);color:var(--blue);font:400 11px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase}
+.gb-body strong{font:500 21px/1.2 "Playfair Display",Georgia,serif;text-wrap:balance}
+.gb-big .gb-body strong{font-size:clamp(26px,2.6vw,36px)}
+.gb-body b{margin-top:auto;font-size:14px;font-weight:700;color:var(--blue)}
+@media(max-width:900px){.gb-grid{grid-template-columns:1fr 1fr}.gb-big{grid-column:1/-1;grid-row:auto}.gb-big figure{min-height:240px}}
+@media(max-width:560px){.gb-grid{grid-template-columns:1fr;gap:16px}.gb-card figure,.gb-big figure{aspect-ratio:16/9;min-height:0}}
