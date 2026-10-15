@@ -2,6 +2,47 @@
 
 ---
 
+## RESEARCH 066 — 2026-10-15 | Signal harvest (current audience problem) — no new qualifying signal
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `54531836`; source (queen-brain) commit not reconstructed this session — per this session's own reality-check ("canon: queen-brain NOT in this session"), not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Internal tooling discoveries this run:** none — nothing surfaced that was internal-research-only; all candidates checked below are shift-lead (public-topic) or rejected outright.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority, methodology and recency were weighed.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` for both before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current harvest shape.
+**Gap since last run:** last `research-notes.md`-numbered entry was RESEARCH 065 (2026-10-13) — a 2-day gap, consistent with the standing unattended-cron pattern (no evidence checked this run of an intervening cron harvest; this operator-requested session is what produced today's sweep).
+
+### No new signal logged this run
+
+A full sweep (all 6 `inventory.md` feeds plus targeted web search on all three pillars, including the standing pillar-3 FOUNDRS/Werksy lead) found nothing that clears the bar as a genuinely new, dated, primary-sourced, audience-fit signal beyond what RESEARCH 044–065 already have on file. Per `research-policy.md`, a gap is logged as a gap rather than filled with a weaker source. Pillar 3 is not currently an open gap — RESEARCH 065's Kim/Kang/Song (Product Hunt launch-behavior) source still stands as today's best pillar-3 evidence.
+
+### Rejected this run
+
+- **FOUNDRS/Werksy solo-entrepreneur survey** (standing pillar-3 candidate since RESEARCH 062) — retried `WebFetch` on the Elite Business Magazine write-up directly: still HTTP 403. A fresh targeted search surfaced the same consistent paraphrase (50 founders/freelancers + 4 interviews; marketing/finance/motivation/legal/community as top challenges; only 6 of 50 use AI for finance/admin). Still not logged — `WebSearch` paraphrase is not a verified excerpt. Now a **14th consecutive run (052–066)** with this lead unverified.
+- **ZenBusiness, "37% of Entrepreneurs Are Running Their Business Solo, and AI Is What's Making It Possible"** (PR Newswire, 2026) — checked directly via `WebFetch`: confirmed disclosed methodology, 2,000 respondents across two 1,000-person surveys of US-based aspiring/current entrepreneurs and small business owners, fielded January–July 2026. Findings (37% solo, 47% say AI is doing co-founder-equivalent work, 75% have used AI for core business functions, 23% say AI is the only reason they can compete with larger companies) measure **adoption rate and impact, not the where-to-start/decision-paralysis problem** this project's audience lives in — the report does not address confusion about where to start or how to decide AI's fit. Same wrong-angle pattern as the already-rejected FPSB, Intuit QuickBooks and Riverbed surveys (RESEARCH 062–064). Not logged.
+- **IZA Discussion Paper No. 17055, Fossen, McLemore & Sorgner, "Artificial Intelligence and Entrepreneurship"** — confirmed via search (direct `WebFetch` of the PDF failed to parse as text); published **June 2024** — over two years old, well outside this ledger's recency bar. Also wrong population: German Socio-Economic Panel data comparing entrepreneurs' vs. employees' AI-use *frequency*, not the lived overwhelm/first-test decision problem. Not logged.
+- **Fortune, "Solo founders are using AI to do the work of entire teams—but going it alone has limits"** (2026-05-18) — checked directly via `WebFetch`. The only disclosed-methodology figures cited are a year-old (2022) US Census Bureau non-employer-business count and an undocumented NYU Stern/Microsoft MBA classroom exercise; the overwhelm/limits framing itself is carried entirely by anecdotal founder interviews, not primary research. Does not clear the traceability bar. Not logged.
+- **"Zone of genius" / protect-your-expertise cluster (pillar 2)** — repeat sweep surfaced only opinion/advice content with no disclosed survey: a Forbes Technology Council post (2026-03-27), a Conscious Leadership Group blog post, and an NYT/dnyuz.com feature (2026-07-19, confirmed via direct `WebFetch` to contain zero cited statistics — pure anecdote plus cultural observation). Same sourcing-bar failure as every opinion-only pillar-2 candidate rejected in prior runs. Not logged.
+- **KPMG, "AI Quarterly Pulse Survey Q4 2025"** — wrong audience (enterprise leaders across asset management/banking/TMT, not solo professionals/founders) — same pattern as the already-rejected WRITER and McKinsey State of AI sources. Separately: a `WebSearch` answer attributed an "analytical thinking is the most-sought skill, 7 in 10 companies" statistic to this survey; that figure could not be confirmed in the search-returned KPMG content (the direct PDF fetch errored out) and reads like a conflation with WEF's Future of Jobs series rather than something confirmed in KPMG's own report. Flagging this as a second-category near-miss (an attribution that may not actually belong to the named source) — not logged either way, pending a clean direct fetch.
+- **Forbes, "How AI Solopreneurs Run Businesses Without Staff"** (Rahul Dogra, 2026-10-14 — one day old) — direct `WebFetch` returned HTTP 403, so its methodology (if any) could not be verified this run. Not logged; flagged for retry.
+- A repeat sweep for pillar 1 ("understand AI and know where to begin") surfaced only already-logged or already-rejected sources (Thomson Reuters Future of Professionals, PwC AI Jobs Barometer, Simplilearn's self-reported "Professional Sentiment Survey" press release with no disclosed sample/methodology beyond the headline stat). No fresh qualifying source found; left as an open gap. PwC remains the best-standing evidence for this pillar.
+
+### Source health this run
+
+- Anthropic News (High): `WebFetch` worked; three items newer than RESEARCH 065 ("An update on independent evaluators," Oct 15; "Preparing for the 2026 US midterms," Oct 14; "Anthropic opens Singapore office," Oct 14) — all policy/corporate-ops announcements, no audience-problem fit (no survey, no lived-experience data). Not logged.
+- OpenAI Blog (High): direct `WebFetch` still returns HTTP 403 — now the **23rd consecutive failed run** (044 through 066). Repeating the overdue recommendation from 047–065: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Hugging Face Blog (High): `WebFetch` worked; all new posts (tokenization speed, long-context/belief-revision, agent self-improvement, a new 27B model, encoder benchmarks, ASR fine-tuning, embeddings, expressive-speech dataset) are ML-engineering/model-release content — same non-fit pattern as every run since RESEARCH 050.
+- Google DeepMind blog (Medium): `WebFetch` worked; unchanged since RESEARCH 065 (Gemini 4 Argon cluster, EmbeddingGemma 2, SynthID Bio) — frontier-model-capability announcements, no audience-problem fit.
+- a16z AI (Medium): `WebFetch` worked; new items since RESEARCH 065 ("Securing America's Infrastructure Foundation," "speedrun SR008 applications open," "Winning the Relay Race: Long-Running Agents," a personnel-welcome post) — infra/policy/VC-program content, no pillar fit; page still exposes no explicit publish dates.
+- Lenny's Newsletter (Low): `WebFetch` worked; newest post unchanged since RESEARCH 065 ("How to tell if a startup has a moat," Oct 13) — PM/startup-strategy audience, not this project's solo-professional/founder angle.
+- WebSearch/WebFetch: both functional throughout, aside from OpenAI's standing 403, the Elite Business Magazine 403, the Forbes 2026-10-14 piece's 403, and one PDF (IZA) that fetched but did not parse as text. No signal was logged on an unverified `WebSearch` paraphrase alone; the KPMG attribution near-miss above was caught before logging, consistent with the standing caution since RESEARCH 063's "Oaken" incident.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 065 — 2026-10-13 | Signal harvest (current audience problem) — one new qualifying signal (pillar 3)
 
 **Status:** LOGGED
