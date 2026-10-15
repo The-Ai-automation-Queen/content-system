@@ -387,3 +387,23 @@ body.v5 .v5-path-dark p{color:#C9CDD8}
 .v5-path-dark b{color:#CAFF00}
 @media(max-width:900px){.v5-close-grid,.v5-close-paths{grid-template-columns:1fr;gap:28px}.gb-grid{grid-template-columns:1fr}}
 body.v5 .v5-path-dark h3{color:#fff}
+
+/* 2026-10-15b: short hero lead on phones, community visual, softer workbook cards */
+.v5-lead-short{display:none}
+@media(max-width:700px){body.v5 .sk-hero .v5-lead-long{display:none}body.v5 .sk-hero .v5-lead-short{display:block}}
+.v5-comm{position:relative;margin:0;align-self:center}
+body.v5 .v5-comm img{width:100%;aspect-ratio:4/5;max-height:560px;object-fit:cover;object-position:50% 25%;border-radius:24px;box-shadow:0 30px 70px -40px #0B0D1299}
+.v5-comm-badge{position:absolute;top:18px;left:18px;padding:8px 14px;border-radius:999px;background:#CAFF00;color:var(--ink);font:700 13px/1 Inter,system-ui,sans-serif}
+.v5-comm-chips{position:absolute;left:-18px;bottom:28px;display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.v5-comm-chips li{justify-self:start;padding:11px 16px 11px 38px;border-radius:999px;background:#fff;color:var(--ink);font:600 14px/1 Inter,system-ui,sans-serif;box-shadow:0 14px 30px -18px #0B0D1288;position:relative;animation:v5float 6s var(--ease) infinite}
+.v5-comm-chips li::before{content:"";position:absolute;left:14px;top:50%;width:14px;height:14px;margin-top:-7px;border-radius:50%;background:var(--blue)}
+.v5-comm-chips li:nth-child(2){margin-left:28px;animation-delay:-1.5s}
+.v5-comm-chips li:nth-child(3){margin-left:10px;animation-delay:-3s}
+.v5-comm-chips li:nth-child(4){margin-left:38px;animation-delay:-4.5s}
+@keyframes v5float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media(prefers-reduced-motion:reduce){.v5-comm-chips li{animation:none}}
+@media(max-width:700px){.v5-comm-chips{left:12px;bottom:16px}.v5-comm-chips li{font-size:13px}}
+/* workbook cards: soft shadow like the rest of the page */
+body.v5 .sk-book-covers li,body.v5 .sk-book-covers li:nth-child(n){border:0!important;border-radius:20px!important;overflow:hidden;background:#fff;box-shadow:0 1px 0 #0B0D1214,0 22px 50px -32px #2C4BE088!important;outline:0!important}
+.v5-soon{display:inline-block;margin:4px 0 2px;padding:5px 10px;border-radius:999px;background:var(--mist);color:var(--grey);font:400 11px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase}
+body.v5 .sk-book-covers li::before{content:"Workbook " counter(wb) " · Coming soon"!important}
