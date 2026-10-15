@@ -49,3 +49,17 @@ Allow: /
 
 User-agent: PerplexityBot
 Allow: /
+
+# 2026-10-14 (owner decision): AI search and answer bots may read the site so they can
+# recommend and link to it. The training bots above stay blocked.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /

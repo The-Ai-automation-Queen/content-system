@@ -114,7 +114,6 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
   if (!card) return null;
   const open = card.steps.slice(0, card.openSteps);
   const gated = card.steps.slice(card.openSteps);
-  const preview = gated[0];
   const stepId = (index: number) => `${card.slug}-step-${index + 1}`;
 
   const titleBlock = <>
@@ -140,9 +139,9 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
       {!card.hero && <Link className={styles.back} href="/guides/">← All Guides</Link>}
 
       <div className={styles.author}>
-        <img src="/fatiha-avatar-96.webp" alt="" width={46} height={46} />
+        <img src="/fatiha-avatar-colour-96.webp" alt="" width={46} height={46} />
         <div>
-          <div className={styles.name}>Fatiha Chikh | The AI Automation Queen <span className={styles.badge}>Free guide</span></div>
+          <div className={styles.name}>Fatiha Chikh <span className={styles.badge}>Free guide</span></div>
           <div className={styles.meta}>Shift &amp; Lead</div>
         </div>
       </div>
@@ -158,15 +157,6 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
       {open.map((step, index) => <Step key={step.title} step={step} id={stepId(index)} />)}
 
       <div className={styles.gateStage} id="unlock">
-        {preview && <div className={styles.preview} aria-hidden="true">
-          <section className={styles.card}>
-            <div className={styles.sh}><span className={styles.tile}>{preview.num}</span><h2>{preview.title} <em>{preview.accent}</em></h2></div>
-            {preview.blocks.slice(0, 4).map((block, index) => block.kind === "prompt"
-              ? <div key={index} className={styles.prompt}><pre>{block.text}</pre></div>
-              : <Block key={index} block={block} />)}
-          </section>
-        </div>}
-
         <GuideAccessBoundary
           guideSlug={card.slug}
           guideTitle={card.title}

@@ -160,9 +160,9 @@ for (const guide of rebuildPlan.guides.filter((item) => item.status !== "pending
   if (!entryRouteSlugs.has(guide.slug) && !directRouteSlugs.has(guide.slug)) failures.push(`Rebuilt guide lacks a dedicated Next.js page: ${guide.slug}`);
 }
 if (!guideAccessSource.includes('fetch("/api/guide-capture"') ||
-    !guideAccessSource.includes('hidden={!ready || !unlocked}') ||
+    guideAccessSource.includes('hidden={!ready || !unlocked}') ||
     !["firstName", "email", "marketingConsent"].every((field) => guideAccessSource.includes(`name="${field}"`))) {
-  failures.push("The inline guide gate must unlock content after Lumail success and collect first name, email and optional marketing consent.");
+  failures.push("The guide sign-up must leave the whole guide readable (option B, 14/10/2026), send to Lumail and collect first name, email and marketing consent.");
 }
 if (!guideRouteSource.includes('if (slug === "instagram-content-dashboard") return <CardGuidePage guide={guide} />;')) {
   failures.push("The Instagram guide must use the shared card guide design.");
@@ -228,7 +228,7 @@ if (/AI Build Kit|Open the Starter Kit/i.test(workWithFatiha)) {
 if (!workWithFatiha.includes('href="/workbooks.html">Workbooks</a>')) {
   failures.push("The Work with me page is missing its Workbooks link.");
 }
-if (!workWithFatiha.includes('Business and marketing transformation')) {
+if (!workWithFatiha.includes('by application')) {
   failures.push("The Work with me page is missing its current offer framing.");
 }
 for (const { source, destination } of vercelConfig.redirects) {
