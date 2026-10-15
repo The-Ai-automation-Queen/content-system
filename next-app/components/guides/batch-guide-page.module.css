@@ -1,4 +1,4 @@
-.page { --blue: #2c4be0; --blue-deep: #1b2ea0; --pink: #ff007f; --lilac: #c8c1f0; --ink: #0d1117; --tint: #eef0ff; --muted: #4a5068; background: #fff; color: var(--ink); font-family: var(--font-ui), Inter, Arial, sans-serif; }
+.page { --blue: #2c4be0; --blue-deep: #1b2ea0; --pink: #2c4be0; --lilac: #c8c1f0; --ink: #0d1117; --tint: #eef0ff; --muted: #4a5068; background: #fff; color: var(--ink); font-family: var(--font-ui), Inter, Arial, sans-serif; }
 .page em { font-family: var(--font-display), Georgia, serif; font-style: italic; font-weight: 900; letter-spacing: -.02em; }
 
 /* Hero: light version of the site hero, with the full mascot. */

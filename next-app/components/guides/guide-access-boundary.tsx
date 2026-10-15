@@ -159,6 +159,15 @@ export function GuideAccessBoundary({
           </div>}
         </section>
       </div>
+      <aside className="guide-community" aria-labelledby={`guide-community-${guideSlug}`}>
+        <img src="/assets/mascot/waving-720.webp" alt="" width="575" height="720" loading="lazy" />
+        <div>
+          <span className="guide-community__tag">Free to join</span>
+          <h2 id={`guide-community-${guideSlug}`}>Learn AI with people like you.</h2>
+          <p>Join Simple AI for Non-Techies, my community on Skool. Simple lessons, real questions, and help from me.</p>
+          <a href="https://www.skool.com/simple-ai-for-non-tech-8652" target="_blank" rel="noopener noreferrer" data-track="guide_to_community">Join the community <span aria-hidden="true">→</span></a>
+        </div>
+      </aside>
       {showWorkBridge && <aside className={styles.workBridge} aria-labelledby={`guide-work-bridge-${guideSlug}`}>
         <div>
           <h2 id={`guide-work-bridge-${guideSlug}`}>Want AI set up in your business?</h2>

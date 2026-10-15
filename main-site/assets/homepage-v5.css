@@ -1,7 +1,7 @@
 /* Homepage v5 (2026-10-14): the original Saadia layout, recoloured to the brand
    blue / white / light-blue system with Playfair Display + Inter + Space Mono.
    Loaded after homepage-saadia.css; every rule is scoped to body.v5. */
-body.home-saadia.v5{--blue:#2C4BE0;--pink:#FF007F;--ink:#0B0D12;--mist:#EEF2FD;--grey:#5A5F6E;--lilac:#C9D3FA;--ease:cubic-bezier(.32,.72,0,1);font-size:17px}
+body.home-saadia.v5{--blue:#2C4BE0;--pink:#FF007F;--ink:#0B0D12;--mist:#F3F3F4;--grey:#5A5F6E;--lilac:#C9D3FA;--ease:cubic-bezier(.32,.72,0,1);font-size:17px}
 
 /* Type: Playfair headlines in sentence case, italic second line */
 body.v5 h1,body.v5 h2{font-family:"Playfair Display",Georgia,serif!important;font-weight:400!important;text-transform:none!important;letter-spacing:-.025em!important;line-height:1.02!important;text-wrap:balance}
@@ -291,7 +291,7 @@ body.v5 .v5-psg-x img{height:16px;width:auto;filter:invert(1)}
 .v5-vogue-mark{position:absolute;left:0;right:0;bottom:0;padding:9px;background:#fff;color:var(--ink);font:400 12px/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
 .v5-vogue-mark i{font:400 18px/1 "Playfair Display",Georgia,serif;font-style:normal;letter-spacing:.18em;margin-left:6px;vertical-align:-2px}
 /* Award: light with a big laurel */
-.v5-brand-award .v5-brand-art{background:radial-gradient(circle at 50% 40%,#F6FFD6 0,#EEF2FD 70%);color:var(--blue)}
+.v5-brand-award .v5-brand-art{background:radial-gradient(circle at 50% 40%,#F6FFD6 0,#F3F3F4 70%);color:var(--blue)}
 .v5-brand-award .v5-laurel{width:84px;height:84px;opacity:1;position:static}
 .v5-award-word{font:500 24px/1.05 "Playfair Display",Georgia,serif;color:var(--ink)}
 /* On stage: photo strip */
@@ -347,3 +347,106 @@ body.v5 .v5-stages img{aspect-ratio:4/3;border-radius:16px;height:auto}
 .v5-stages span{position:static;display:block;margin-top:10px;padding:0;background:none;border-radius:0;font:500 17px/1.25 "Playfair Display",Georgia,serif}
 @media(max-width:900px){.v5-stage-row{grid-template-columns:1fr;gap:16px}}
 @media(max-width:700px){body.v5 .v5-brands,body.v5 .v5-stages{padding:4px 18px 18px;scroll-padding-inline:18px}}
+
+/* 2026-10-15: guides as a bento grid (replaces the swipe row). GSAP adds the scroll reveal. */
+.gb-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(0,auto);gap:22px;margin:40px 0 0;padding:0;list-style:none}
+.gb-big{grid-column:span 2;grid-row:span 2}
+.gb-card a{position:relative;display:flex;flex-direction:column;height:100%;border-radius:22px;overflow:hidden;background:#fff;color:var(--ink)!important;box-shadow:0 1px 0 #0B0D1214,0 22px 50px -32px #2C4BE088;transition:transform .7s var(--ease),box-shadow .7s var(--ease)}
+.gb-card a:hover,.gb-card a:focus-visible{transform:translateY(-6px);box-shadow:0 1px 0 #0B0D1214,0 34px 70px -34px #2C4BE0AA}
+.gb-card a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.gb-card figure{margin:0;overflow:hidden;aspect-ratio:16/10;background:var(--blue)}
+.gb-big figure{flex:1;aspect-ratio:auto;min-height:340px}
+body.v5 .gb-card img{width:100%;height:112%;object-fit:cover;display:block;transition:transform 1s var(--ease)}
+.gb-card a:hover img{transform:scale(1.04)}
+.gb-body{display:flex;flex-direction:column;gap:10px;padding:20px 22px 22px}
+.gb-tag{align-self:flex-start;padding:5px 10px;border-radius:999px;background:var(--mist);color:var(--blue);font:400 11px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase}
+.gb-body strong{font:500 21px/1.2 "Playfair Display",Georgia,serif;text-wrap:balance}
+.gb-big .gb-body strong{font-size:clamp(26px,2.6vw,36px)}
+.gb-body b{margin-top:auto;font-size:14px;font-weight:700;color:var(--blue)}
+@media(max-width:900px){.gb-grid{grid-template-columns:1fr 1fr}.gb-big{grid-column:1/-1;grid-row:auto}.gb-big figure{min-height:240px}}
+@media(max-width:560px){.gb-grid{grid-template-columns:1fr;gap:16px}.gb-card figure,.gb-big figure{aspect-ratio:16/9;min-height:0}}
+
+/* 2026-10-15: 3 guides, one per stage; closing section = community or 1:1 */
+.gb-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.v5-close{padding:96px 0!important}
+.v5-close-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+body.v5 .v5-close-note img{width:72px;height:72px;border-radius:50%;object-fit:cover;margin-bottom:22px}
+body.v5 .v5-close h2{color:var(--ink)}
+body.v5 .v5-close-note p{margin-top:20px;max-width:440px;font-size:18px;color:var(--grey)}
+.v5-close-paths{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.v5-path{display:flex;flex-direction:column;gap:12px;padding:28px;border-radius:22px;background:#fff;color:var(--ink)!important;box-shadow:0 1px 0 #0B0D1214,0 22px 50px -34px #0B0D1255;transition:transform .6s var(--ease)}
+.v5-path:hover,.v5-path:focus-visible{transform:translateY(-5px)}
+.v5-path:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.v5-path-tag{align-self:flex-start;padding:5px 10px;border-radius:999px;background:var(--mist);color:var(--blue);font:400 11px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase}
+body.v5 .v5-path h3{font:500 26px/1.15 "Playfair Display",Georgia,serif}
+body.v5 .v5-path p{font-size:16px;color:var(--grey)}
+.v5-path b{margin-top:auto;padding-top:8px;font-size:15px;font-weight:700;color:var(--blue)}
+.v5-path-dark{background:var(--ink);color:#fff!important}
+body.v5 .v5-path-dark p{color:#C9CDD8}
+.v5-path-dark .v5-path-tag{background:#ffffff1a;color:#CAFF00}
+.v5-path-dark b{color:#CAFF00}
+@media(max-width:900px){.v5-close-grid,.v5-close-paths{grid-template-columns:1fr;gap:28px}.gb-grid{grid-template-columns:1fr}}
+body.v5 .v5-path-dark h3{color:#fff}
+
+/* 2026-10-15b: short hero lead on phones, community visual, softer workbook cards */
+.v5-lead-short{display:none}
+@media(max-width:700px){body.v5 .sk-hero .v5-lead-long{display:none}body.v5 .sk-hero .v5-lead-short{display:block}}
+.v5-comm{position:relative;margin:0;align-self:center}
+body.v5 .v5-comm img{width:100%;aspect-ratio:4/5;max-height:560px;object-fit:cover;object-position:50% 25%;border-radius:24px;box-shadow:0 30px 70px -40px #0B0D1299}
+.v5-comm-badge{position:absolute;top:18px;left:18px;padding:8px 14px;border-radius:999px;background:#CAFF00;color:var(--ink);font:700 13px/1 Inter,system-ui,sans-serif}
+.v5-comm-chips{position:absolute;left:-18px;bottom:28px;display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.v5-comm-chips li{justify-self:start;padding:11px 16px 11px 38px;border-radius:999px;background:#fff;color:var(--ink);font:600 14px/1 Inter,system-ui,sans-serif;box-shadow:0 14px 30px -18px #0B0D1288;position:relative;animation:v5float 6s var(--ease) infinite}
+.v5-comm-chips li::before{content:"";position:absolute;left:14px;top:50%;width:14px;height:14px;margin-top:-7px;border-radius:50%;background:var(--blue)}
+.v5-comm-chips li:nth-child(2){margin-left:28px;animation-delay:-1.5s}
+.v5-comm-chips li:nth-child(3){margin-left:10px;animation-delay:-3s}
+.v5-comm-chips li:nth-child(4){margin-left:38px;animation-delay:-4.5s}
+@keyframes v5float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media(prefers-reduced-motion:reduce){.v5-comm-chips li{animation:none}}
+@media(max-width:700px){.v5-comm-chips{left:12px;bottom:16px}.v5-comm-chips li{font-size:13px}}
+/* workbook cards: soft shadow like the rest of the page */
+body.v5 .sk-book-covers li,body.v5 .sk-book-covers li:nth-child(n){border:0!important;border-radius:20px!important;overflow:hidden;background:#fff;box-shadow:0 1px 0 #0B0D1214,0 22px 50px -32px #2C4BE088!important;outline:0!important}
+.v5-soon{display:inline-block;margin:4px 0 2px;padding:5px 10px;border-radius:999px;background:var(--mist);color:var(--grey);font:400 11px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase}
+body.v5 .sk-book-covers li::before{content:"Workbook " counter(wb) " · Coming soon"!important}
+/* community visual: guide robot on a brand panel */
+.v5-comm{display:grid;place-items:center;min-height:460px;border-radius:28px;overflow:hidden;background:var(--blue)}
+.v5-comm-bg{position:absolute;inset:0;background:radial-gradient(60% 55% at 70% 30%,#5B74F0 0%,transparent 70%),radial-gradient(40% 40% at 15% 85%,#CAFF0033 0%,transparent 70%)}
+body.v5 .v5-comm img.v5-comm-mascot{position:relative;width:min(78%,380px);height:auto;aspect-ratio:auto;max-height:none;object-fit:contain;border-radius:0;box-shadow:none;margin:40px 0 70px 18%;filter:drop-shadow(0 24px 30px #0B0D1255);animation:v5float 7s var(--ease) infinite}
+.v5-comm-chips{left:22px;bottom:22px}
+@media(prefers-reduced-motion:reduce){body.v5 .v5-comm img.v5-comm-mascot{animation:none}}
+@media(max-width:700px){.v5-comm{min-height:400px}body.v5 .v5-comm img.v5-comm-mascot{width:62%;margin:30px 0 120px 30%}}
+
+/* 2026-10-15c: robot panel on white, smaller robot; email line under the closing cards */
+.v5-comm{background:#fff;box-shadow:0 1px 0 #0B0D1214,0 30px 70px -40px #2C4BE077}
+.v5-comm-bg{background:radial-gradient(55% 50% at 68% 38%,#E3E8FD 0%,transparent 72%),radial-gradient(35% 35% at 18% 82%,#CAFF0040 0%,transparent 70%)}
+body.v5 .v5-comm img.v5-comm-mascot{width:min(52%,250px);margin:36px 0 96px 26%}
+.v5-comm-chips li{background:var(--ink);color:#fff}
+.v5-comm-chips li::before{background:#CAFF00}
+@media(max-width:700px){body.v5 .v5-comm img.v5-comm-mascot{width:46%;margin:26px 0 150px 36%}}
+.v5-close-email{grid-column:1/-1;display:grid;gap:10px;margin-top:8px;padding-top:22px;border-top:1px solid #0B0D121A}
+.v5-close-email label:first-child{font-weight:600;font-size:15px;color:var(--ink)}
+.v5-close-email>div{display:flex;gap:10px;flex-wrap:wrap}
+.v5-close-email input[type=email]{flex:1 1 220px;padding:13px 16px;border:1px solid #0B0D1233;border-radius:999px;font:inherit;font-size:15px;background:#fff}
+.v5-close-email button{padding:13px 22px;border:0;border-radius:999px;background:var(--ink);color:#fff;font:700 14px Inter,system-ui,sans-serif;cursor:pointer}
+.v5-close-email button:hover{background:var(--blue)}
+.v5-close-consent{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--grey)}
+.v5-close-email [role=status]{min-height:1.2em;font-size:14px;color:var(--blue)}
+/* Work with me: proof strip */
+.pg-proof{padding:28px 0;background:#fff}
+.pg-proof-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px 42px;padding:22px 0;border-top:1px solid #0B0D121A;border-bottom:1px solid #0B0D121A}
+.pg-proof-row>p{margin:0;font:400 12px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--grey)}
+.pg-proof-item{display:grid;gap:4px;font:600 18px/1.1 "Playfair Display",Georgia,serif;color:var(--ink)}
+body.v5 .pg-proof-item img{height:22px;width:auto;filter:brightness(0)}
+.pg-proof-item i{font-style:normal;letter-spacing:.18em}
+.pg-proof-item small{font:400 11px/1 Inter,system-ui,sans-serif;color:var(--grey);letter-spacing:.04em}
+/* 2026-10-15d: speaking gets its own section, on black */
+.v5-speak{padding:72px 0 88px;background:var(--ink);color:#fff}
+.v5-speak-head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:36px}
+body.v5 .v5-speak h2{color:#fff}
+body.v5 .v5-speak h2 em{color:#CAFF00}
+body.v5 .v5-speak-head p{max-width:440px;color:#C9CDD8;font-size:18px}
+.v5-speak .v5-stages a{aspect-ratio:4/5}
+@media(max-width:900px){.v5-speak-head{grid-template-columns:1fr;gap:16px}.v5-speak .v5-stages a{aspect-ratio:4/3}}
+body.v5 .v5-speak h2{font-size:clamp(40px,4.6vw,68px);line-height:1.02}
+body.v5 .v5-speak .v5-stages span,body.v5 .v5-speak .v5-stages span *{color:#fff!important}
+body.v5 .v5-speak .v5-stages b{color:#CAFF00!important}
+.v5-speak{padding:64px 0 56px}
