@@ -6,12 +6,42 @@
 
 ## Queue (next up, in order)
 
-1. UNB-029 — Delete dead `work-with-me-v3.css` *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; 16/10 check: still unanswered, 8th morning since the confrontation; ask already at floor, offer to execute myself on a ✅ still open; not re-sent, no serve-4 rule)*
-2. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 16/10 check: still unanswered, 16th morning; stale-branch count unchanged at 82 of 142 (30-day cutoff))*
-3. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 16/10 check confirms still unanswered, 22nd morning; now 893 commits behind main, 7th consecutive worsening)*
-4. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 16/10 check confirms still unanswered, 24 days)*
-5. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 16/10 check confirms still unanswered, 30th morning)*
-6. UNB-031 — CognitionX yes/no only (HRSE fee parked) *(serve 3, 07/10 — gentle confrontation sent, awaiting reply; 16/10 check: still unanswered, 12th morning since the floor-ask; events were 14-15 Oct 2026 — **both dates have now fully passed, not just "final day"** — both bookings are definitively missed regardless of any reply; revenue_unlocked ~0, last place in queue order; not re-sent, no serve-4 rule)*
+1. UNB-029 — Delete dead `work-with-me-v3.css` *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; 17/10 check: still unanswered, 9th morning since the confrontation; ask already at floor, offer to execute myself on a ✅ still open; not re-sent, no serve-4 rule)*
+2. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 17/10 check: still unanswered, 17th morning; stale-branch count unchanged at 82, total branches now 143 (30-day cutoff))*
+3. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 17/10 check confirms still unanswered, 23rd morning; now 900 commits behind main, 8th consecutive worsening)*
+4. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 17/10 check confirms still unanswered, 25 days)*
+5. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 17/10 check confirms still unanswered, 31st morning)*
+6. UNB-031 — CognitionX yes/no only (HRSE fee parked) *(serve 3, 07/10 — gentle confrontation sent, awaiting reply; 17/10 check: still unanswered, 13th morning since the floor-ask; events were 14-15 Oct 2026, both now fully passed — both bookings definitively missed regardless of any reply; revenue_unlocked ~0, last place in queue order; not re-sent, no serve-4 rule)*
+
+> **17/10/2026 — queue still fully stalled, eighth consecutive no-serve
+> day.** This morning's automated 04:00 GST cron run (`deploy/logs/unblocker
+> daily-2026-10-17T04-00-02.log`) again produced no output beyond the
+> `git fetch`/pull step (`Current branch main is up to date.`) — this
+> interactive run is today's actual `/unblocker daily` execution. Full
+> re-scan (`content-vault.md` header — vault counts unchanged at 37 READY
+> TO POST / 33 DRAFT / 6 STALE / 2 KILLED, matching this session's own
+> startup reality-check hook; `personal-brain.md` — last entry is
+> yesterday's `brain-manager` run, nothing new; `git fetch --prune` +
+> `git for-each-ref` branch count with a 2026-09-17 cutoff — 143 total
+> (was 142), 82 stale (unchanged, first day total grew without stale
+> growing); `git -C ~/content-system-DUPLICATE rev-parse HEAD` + `git log
+> a2e2bc1f..origin/main` against freshly fetched `origin/main` — **900**
+> commits behind (was 893 on 16/10, an eighth consecutive worsening);
+> `find` for `work-with-me-v3.css` — still present; `lead-magnets.csv` —
+> all flags unchanged; fresh `git ls-remote` on queen-brain/fast-forward/
+> agent-os-company-dashboard — all three still "Repository not found";
+> `ROADMAP.md`/`ACTION-PLAN-CASH-MACHINE.md` mtimes unchanged since
+> 08/07 and 19/09 respectively; a live `getUpdates` call — empty,
+> `{"ok":true,"result":[]}`; `review-cockpit/decisions-log.md` unchanged)
+> confirms no new ledger-eligible item and no completion among
+> UNB-025/026/027/028/029/031. All six queue items remain past their own
+> serve-3 confirmation with zero reply, now for an eighth straight day.
+> Per the no-serve-4 rule and "never repeat the identical message"
+> guardrail, nothing was re-sent — **no Telegram message was sent for the
+> queue today**, extending the longest fully-stalled stretch since the
+> ledger's 06/07/2026 seed. Canon (queen-brain) remained unreachable this
+> session — no price, tier, offer status or customer-facing copy was
+> written or reconstructed.
 
 > **16/10/2026 — queue still fully stalled, seventh consecutive no-serve
 > day.** This morning's automated 04:00 GST cron run (`deploy/logs/unblocker
