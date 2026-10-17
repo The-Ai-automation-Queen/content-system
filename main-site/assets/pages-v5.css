@@ -155,3 +155,4 @@ body.v5 .wb-next p{font-size:18px;color:var(--grey)}
 /* 17/10/2026 phone fixes */
 .sk-consent input[type=checkbox]{width:22px;height:22px;flex:none}
 @media(max-width:900px){.wb-next-links{align-items:flex-start}.wb-next{text-align:left}}
+body.v5 .pg-book img{object-position:50% 25%}
