@@ -152,3 +152,6 @@ body.v5 .wb-next p{font-size:18px;color:var(--grey)}
 .wb-next-links{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
 @media(max-width:900px){.wb-cover{justify-self:center;max-width:260px}.wb-pages{grid-template-columns:repeat(2,1fr)}.wb-next{grid-template-columns:1fr}}
 @media(max-width:560px){.wb-buy{grid-template-columns:1fr;padding:22px;gap:20px}body.v5 .wb-buy img{max-width:160px}}
+/* 17/10/2026 phone fixes */
+.sk-consent input[type=checkbox]{width:22px;height:22px;flex:none}
+@media(max-width:900px){.wb-next-links{align-items:flex-start}.wb-next{text-align:left}}
