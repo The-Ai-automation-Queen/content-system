@@ -109,3 +109,16 @@ ol.list { list-style: decimal; }
   .relatedGrid { grid-template-columns: 1fr; }
 }
 .author + .card { margin-top: 24px; }
+
+/* 17/10/2026 phone fixes: stacked tables, steady checkboxes, readable labels, aligned community card */
+.checklist input { flex: none; }
+.honest strong { color: #CAFF00; }
+.column h1 { line-height: 1.06; }
+.gateStage :global(.guide-community) { width: 100%; }
+@media (max-width: 600px) {
+  .tableWrap thead { display: none; }
+  .tableWrap table, .tableWrap tbody, .tableWrap tr, .tableWrap td { display: block; width: 100%; }
+  .tableWrap tr { margin-bottom: 12px; padding: 14px 16px; border: 1px solid #e6e6ee; border-radius: 12px; background: #fff; }
+  .tableWrap td { padding: 2px 0; border: 0; }
+  .tableWrap td + td { margin-top: 4px; }
+}

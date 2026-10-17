@@ -20,6 +20,7 @@ import { getGuidePage, guidePages } from "@/content/guide-page";
 import { guideTitles } from "@/content/guide-titles";
 import { getCardGuide } from "@/content/card-guides";
 import { legacyGuideSlugs } from "@/content/legacy-guide-slugs";
+import { WorkbookCta } from "@/components/guides/workbook-cta";
 
 export function generateStaticParams() {
   return guidePages.map((guide) => ({ slug: guide.slug }));
@@ -50,6 +51,10 @@ export default async function GuideArticlePage({ params }: { params: Promise<{ s
   const { slug } = await params;
   const guide = getGuidePage(slug);
   if (!guide) notFound();
+  return <>{guideBody(slug, guide)}<WorkbookCta slug={slug} /></>;
+}
+
+function guideBody(slug: string, guide: NonNullable<ReturnType<typeof getGuidePage>>) {
   if (slug === "instagram-content-dashboard") return <CardGuidePage guide={guide} />;
   if (slug === "what-is-ai") return <CardGuidePage guide={guide} />;
   if (slug === "ai-jargon-guide") return <CardGuidePage guide={guide} />;
