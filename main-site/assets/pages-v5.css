@@ -95,3 +95,28 @@ body.v5 .pg-hero .sk-hero-proof small{font:400 13px/1.3 "Space Mono",ui-monospac
 .pg-pop-circle{position:absolute;width:62%;aspect-ratio:1;right:-14%;top:-12%;border-radius:50%;background:#CAFF00;opacity:.95}
 body.v5 .pg-photo-pop img{position:relative;border-radius:20px;aspect-ratio:4/5;object-position:50% 20%}
 .pg-pop-tag{position:absolute;left:34px;bottom:34px;padding:9px 14px;border-radius:999px;background:#fff;color:var(--ink);font:700 13px/1 Inter,system-ui,sans-serif;box-shadow:0 10px 24px -12px #0008}
+/* 17/10/2026 thank-you page after a Stripe purchase */
+.ty{padding-top:150px;background:var(--ink);color:#fff}
+body.v5 .ty .pg-h2{color:#fff}
+body.v5 .ty .pg-h2 em{color:#CAFF00}
+.ty .ty-lead{font-size:19px;line-height:1.5;color:#D9DCE6;max-width:620px}
+.ty-downloads li{color:var(--ink)}
+.ty-downloads{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:14px;max-width:720px}
+.ty-downloads li{display:flex;align-items:center;justify-content:space-between;gap:16px;background:#fff;border-radius:20px;padding:18px 18px 18px 26px;box-shadow:0 18px 40px -28px #0B0D1255}
+.ty-downloads li > span{font:500 22px/1.2 "Playfair Display",serif}
+.ty-note{margin-top:18px;font-size:15px;color:#C9CCD6}
+.ty-tips{margin-top:36px;max-width:620px}
+.ty-tips h2{font:600 15px Inter,sans-serif;margin-bottom:10px}
+.ty-tips ol{padding-left:20px;line-height:1.7;color:#D9DCE6}
+body.v5 .ty .ty-tips h2{color:#fff}
+.ty-next{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
+.ty-next p{font-size:18px;line-height:1.5;color:var(--grey);max-width:520px}
+@media (max-width:760px){.ty{padding-top:120px}.ty-downloads li{flex-direction:column;align-items:flex-start}.ty-next{grid-template-columns:1fr}}
+/* 17/10/2026 bundle card on the Workbooks page */
+.pg-bundle{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;margin-top:28px;padding:28px;border-radius:24px;background:#fff;box-shadow:0 1px 0 #0B0D120F,0 24px 50px -34px #2C4BE077}
+.pg-bundle figure{margin:0;border-radius:16px;overflow:hidden;background:var(--mist)}
+body.v5 .pg-bundle img{width:100%;height:auto;display:block}
+.pg-bundle > div{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+body.v5 .pg-bundle h3{font-size:clamp(28px,3vw,40px)}
+body.v5 .pg-bundle p{font-size:17px;color:var(--grey);max-width:440px}
+@media (max-width:760px){.pg-bundle{grid-template-columns:1fr;padding:18px;gap:20px}}
