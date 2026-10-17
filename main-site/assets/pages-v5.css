@@ -120,3 +120,35 @@ body.v5 .pg-bundle img{width:100%;height:auto;display:block}
 body.v5 .pg-bundle h3{font-size:clamp(28px,3vw,40px)}
 body.v5 .pg-bundle p{font-size:17px;color:var(--grey);max-width:440px}
 @media (max-width:760px){.pg-bundle{grid-template-columns:1fr;padding:18px;gap:20px}}
+/* 17/10/2026 workbook detail pages: real cover, sample pages, buy box */
+.wb-hero .sk-shell{align-items:center}
+body.v5 .wb-hero h1{font-size:clamp(42px,5vw,76px)}
+body.v5 .wb-hero p.wb-facts{font-size:16px;color:#fff;margin-top:18px}
+body.v5 .wb-hero p.wb-facts b{font:600 22px/1 "Playfair Display",Georgia,serif;color:#CAFF00}
+body.v5 .wb-hero p.wb-small{margin-top:14px;font-size:14px;color:#ffffffb3}
+.wb-cover{justify-self:end;width:100%;max-width:380px;margin:0}
+body.v5 .wb-cover img{width:100%;height:auto;border-radius:6px;box-shadow:0 40px 80px -30px #000,0 0 0 1px #ffffff1a;transform:rotate(2deg)}
+body.v5 .wb-note{margin-top:22px;font-size:16px;color:var(--grey)}
+.wb-pages{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.wb-pages figure{margin:0}
+body.v5 .wb-pages img{width:100%;height:auto;border-radius:6px;box-shadow:0 1px 0 #0B0D120F,0 18px 40px -24px #2C4BE077;transition:transform .5s var(--ease)}
+.wb-pages a:hover img{transform:translateY(-4px)}
+.wb-pages figcaption{margin-top:10px;font-size:14px;line-height:1.4;color:var(--grey)}
+.wb-parts{margin-top:40px;max-width:640px}
+body.v5 .wb-parts h3{font-size:22px;margin-bottom:12px}
+.wb-parts ol{margin:0;padding-left:22px;display:grid;gap:8px;font-size:17px}
+.wb-buy{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:center;padding:32px;border-radius:24px;background:#fff;box-shadow:0 1px 0 #0B0D120F,0 24px 50px -34px #2C4BE077;max-width:860px}
+body.v5 .wb-buy img{width:100%;height:auto;border-radius:6px;box-shadow:0 18px 40px -20px #0B0D1277}
+.wb-buy > div{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+body.v5 .wb-buy h2{font-size:clamp(28px,3vw,40px)}
+body.v5 .wb-buy p{font-size:16px;color:var(--grey)}
+body.v5 .wb-buy p.wb-facts b{font:600 26px/1 "Playfair Display",Georgia,serif;color:var(--ink)}
+body.v5 .wb-buy .pg-buy{padding:16px 30px;font-size:16px}
+body.v5 .wb-buy a:not(.pg-buy){color:var(--blue)!important;text-decoration:underline;text-underline-offset:3px}
+body.v5 .wb-buy p.wb-small{font-size:14px}
+.wb-next{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+body.v5 .wb-next .pg-h2{margin-bottom:12px}
+body.v5 .wb-next p{font-size:18px;color:var(--grey)}
+.wb-next-links{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+@media(max-width:900px){.wb-cover{justify-self:center;max-width:260px}.wb-pages{grid-template-columns:repeat(2,1fr)}.wb-next{grid-template-columns:1fr}}
+@media(max-width:560px){.wb-buy{grid-template-columns:1fr;padding:22px;gap:20px}body.v5 .wb-buy img{max-width:160px}}
