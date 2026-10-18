@@ -154,12 +154,6 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
         </GuideAccessBoundary>
       </div>
 
-      <section className={styles.cta} aria-labelledby={`${card.slug}-next`}>
-        <p className={styles.ctaEyebrow}><span aria-hidden="true">✦</span>{card.cta.eyebrow}</p>
-        <h2 id={`${card.slug}-next`}>{card.cta.heading} <em>{card.cta.accent}</em></h2>
-        <p>{card.cta.body}</p>
-        <Link className={styles.btn} href={card.cta.href}>{card.cta.label}</Link>
-      </section>
     </div>
 
   </main>;

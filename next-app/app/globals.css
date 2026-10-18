@@ -744,3 +744,4 @@ button, input { font: inherit; }
 
 /* 2026-10-18: guide ending is one next step, the matching workbook */
 .guide-choice__grid--one{grid-template-columns:minmax(0,560px)}
+@media(max-width:700px){.site-footer nav{gap:4px 18px}.site-footer nav a{display:inline-block;padding:7px 0}}

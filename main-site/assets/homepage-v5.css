@@ -528,3 +528,11 @@ body.v5 .v5-step-one p{color:#C9CDD8}
 body.v5 .v5-step-one h3{color:#fff}
 .v5-speak-cta{justify-self:start;align-self:start;width:auto}
 .v5-path-strip{padding-bottom:40px}
+/* Grill 18/10: tidy phones */
+.v5-nowrap{white-space:nowrap}
+@media(max-width:700px){
+  .v5-brands{align-items:flex-start}
+  .v5-close{padding:56px 0 48px!important}
+  .sk-footer nav{gap:4px 18px}
+  .sk-footer nav a{display:inline-block;padding:7px 0}
+}
