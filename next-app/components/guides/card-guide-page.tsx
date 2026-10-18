@@ -1,9 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import { GuideImage } from "./guide-image";
 import Link from "next/link";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
+import { Prompt } from "./card-prompt";
 import type { GuidePage } from "@/content/guide-page";
 import { getCardGuide, type CardBlock, type CardStep } from "@/content/card-guides";
 import { batchOneGuides } from "@/content/guide-batch-one";
@@ -25,24 +24,6 @@ function Rich({ value }: { value: string }) {
     }
     return <Fragment key={index}>{part}</Fragment>;
   })}</>;
-}
-
-function Prompt({ text, label }: { text: string; label: string }) {
-  const [state, setState] = useState<"idle" | "copied" | "error">("idle");
-  async function copy() {
-    try {
-      await navigator.clipboard.writeText(text);
-      setState("copied");
-      window.setTimeout(() => setState("idle"), 2000);
-    } catch {
-      setState("error");
-    }
-  }
-  return <div className={styles.prompt}>
-    <button type="button" onClick={copy} aria-label={`Copy the prompt: ${label}`}>{state === "copied" ? "Copied" : "Copy prompt"}</button>
-    <pre>{text}</pre>
-    {state === "error" && <p role="alert" className={styles.copyError}>Copy failed. Select the text above instead.</p>}
-  </div>;
 }
 
 function Block({ block }: { block: CardBlock }) {
