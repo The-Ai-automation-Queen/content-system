@@ -182,8 +182,9 @@ body.v5 .sk-book b{color:var(--blue)}
   .v5-cred{grid-template-columns:1fr}.v5-cred>div+div{padding-left:0;border-left:0;padding-top:16px;border-top:1px solid #0B0D121F}
   /* Face visible on phones: photo on top, text below */
   body.v5 .sk-hero{display:flex;flex-direction:column;min-height:0}
-  body.v5 .sk-hero-photo{position:relative;inset:auto;order:-1;width:100%;height:auto;aspect-ratio:1/1;max-height:62vh;object-position:50% 30%;opacity:1;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent 100%);mask-image:linear-gradient(180deg,#000 70%,transparent 100%)}
-  body.v5 .sk-hero-content{padding-top:0;margin-top:-40px}
+  body.v5 .sk-hero-photo{position:relative;inset:auto;order:-1;width:100%;height:auto;aspect-ratio:1/1;max-height:36vh;object-position:50% 18%;opacity:1;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent 100%);mask-image:linear-gradient(180deg,#000 70%,transparent 100%)}
+  body.v5 .sk-hero-content{padding-top:0;margin-top:-28px}
+  body.v5 .sk-hero-proof{margin-top:22px}
 }
 .v5-receipt-award .v5-src{padding-right:64px}
 body.v5 .sk-launch-note{opacity:1!important;color:#E6EBFF!important}
