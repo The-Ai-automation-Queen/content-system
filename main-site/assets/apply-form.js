@@ -26,7 +26,8 @@
       });
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || 'Your application did not send. Please try again.');
-      status.textContent = 'Thank you. I’ll reply by email.';
+      status.textContent = 'Thank you. I’ll reply by email within 48 hours.';
+      window.slTrack?.('application_sent');
       form.reset();
     } catch (error) {
       status.textContent = error.message || 'Your application did not send. Please try again.';
