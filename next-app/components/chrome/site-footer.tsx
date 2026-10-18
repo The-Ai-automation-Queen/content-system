@@ -1,9 +1,4 @@
 const links = [
-  ["Work with me", "/work-with-fatiha/"],
-  ["Free guides", "/guides/"],
-  ["Workbooks", "/workbooks.html"],
-  ["Community", "https://www.skool.com/simple-ai-for-non-tech-8652"],
-  ["About", "/about.html"],
   ["Instagram", "https://www.instagram.com/thefatihachikh"],
   ["LinkedIn", "https://www.linkedin.com/in/fatihachikh"],
   ["Privacy", "/privacy.html"],
