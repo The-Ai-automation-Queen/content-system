@@ -1,6 +1,6 @@
 ---
 name: card-guide
-description: Turn copy that Fatiha pastes or drops in into a published card-format guide on www.shiftandlead.com/guides (numbered step cards, copyable prompts, sign-up card after the first steps). Use when she says "make this a guide", "new guide", "publish this guide", pastes guide copy, or runs /card-guide.
+description: Turn copy that Fatiha pastes or drops in into a published card-format guide on www.shiftandlead.com/guides (numbered step cards, first prompt free, later prompts unlock with the email). Use when she says "make this a guide", "new guide", "publish this guide", pastes guide copy, or runs /card-guide.
 ---
 
 # Card guide: from pasted copy to a guide ready to publish
@@ -49,10 +49,14 @@ Only write what is missing, and keep it short:
 - `accent` subtitles under each step (2 to 5 words, full stop), e.g. "The container."
 - `gate` text: `heading: "Get the"`, `accent: "<Guide name>."`, the promise line
   from the reference guide, `action: "Open the rest of the guide"`.
-- `openSteps`: usually `1`. Teaching first, then the card, before the first
-  full prompt (AGENTS.md rule).
-- `cta`: copy the reference guide's Free AI guides block, adjusting the heading
-  to this guide's outcome.
+- `openSteps`: usually `1`. Every step stays readable either way.
+- Email capture is automatic (owner decision 18/10/2026): the first prompt in the
+  guide is free to copy; every later prompt renders locked (first lines faded,
+  "Get this prompt free") and asks for the email inline. One sign-up opens every
+  prompt on every guide. Put the guide's quick win in the first prompt. Do not add
+  a gate of your own.
+- `cta`: still required by the type, but no longer rendered (guides end on the
+  matching workbook card). Keep it short.
 - `seoDescription` (under 160 characters), `coverAlt`, `tool`, `minutes`.
 - `hero` (mascot banner, like the other guides): `kind: "pose"` with a
   transparent mascot from `next-app/public/images/mascot/` (`email-sorting`,
@@ -132,10 +136,11 @@ Add the new URL by hand, sorted, without re-dating other pages:
 Then `npm run validate:guides` must print both "passed" lines.
 
 Browser check: serve `main-site/` (`python3 -m http.server`), open
-`/guides/<slug>/?gate=1` and `/guides/`. Confirm at 1280px and 390px: no
-sideways scroll, intro and open steps visible, sign-up card over a blurred
-preview, later steps hidden; with `/api/guide-capture` mocked to 200, submitting
-reveals every step and prompt; the guide appears under "Step-by-step builds".
+`/guides/<slug>/` in a fresh browser (no saved sign-up) and `/guides/`. Confirm at
+1280px and 390px: no sideways scroll, every step readable, exactly one prompt
+copyable and the rest locked with "Get this prompt free"; with
+`/api/guide-capture` mocked to 200, submitting one locked prompt's form opens
+every prompt; the guide appears in the guide library.
 Screenshot the guide and send it to her.
 
 ## 5. Hand over
