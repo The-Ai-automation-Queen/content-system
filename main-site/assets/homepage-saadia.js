@@ -51,6 +51,7 @@
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || 'Please try again.');
       status.textContent = 'You’re on the list. Look out for the next guide.';
+      window.slTrack?.('newsletter_signup');
       form.reset();
     } catch (error) {
       status.textContent = error.message || 'Please try again.';
