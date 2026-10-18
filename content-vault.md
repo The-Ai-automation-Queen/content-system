@@ -21,6 +21,52 @@
 
 ## Most recent (quick reference)
 
+> **18/10/2026 content-engine daily run — no new entries produced (deliberate):**
+> Run end to end per explicit operator instruction ("Run the /content-engine
+> daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
+> queue-only — never post instantly. End with the operator briefing.");
+> `skills/content-engine/SKILL.md` not registered via the Skill tool this
+> session, so read and followed manually per the
+> `project-skills-not-registered` memory. Loaded `AGENTS.md`,
+> `CURRENT-WORKFLOW.md`, `context/current-context.json` and `security.md`
+> first, as both CLAUDE.md and the skill require.
+>
+> This session's own signal-harvester already ran autonomously tonight
+> (`deploy/logs/signal-harvester-2026-10-18T22-00-02.log`, committed
+> `ea62d7ab`) and produced `reports/signal-harvest-2026-10-18.md` with
+> fresh, qualifying material: S1 (shift-lead, public-eligible) — Federal
+> Reserve Bank of New York / Liberty Street Economics survey finding a
+> 10-point employment-growth edge for small-business AI adopters over
+> non-adopters, even controlling for firm characteristics (pillar 3); R1
+> (internal-research, private) — a new paper showing a single reward-function
+> defect in an agent-evaluation benchmark dropped measured success rate from
+> 94.3% to 65.5% across the same 4,320 episodes. Neither is yet a numbered
+> `RESEARCH` entry in `research-notes.md` (latest is still RESEARCH 067,
+> 2026-10-17) — same split-ledger gap as 2026-10-16, signal-harvester's own
+> backfill step, not content-engine's.
+>
+> Both standing blockers reconfirmed independently this session, fresh
+> signal notwithstanding: (1) this session's reality-check hook again states
+> canon: queen-brain NOT in this session, and explicitly forbids writing
+> price, tier, offer status or customer-facing copy reconstructed from this
+> repo's local mirror copies — content-engine's entire output *is*
+> customer-facing copy, so drafting stays blocked regardless of available
+> research; reconfirmed independently via `git ls-remote` against
+> `The-Ai-automation-Queen/queen-brain`, which again returned "Write access
+> to repository not granted" / 403 from this session's git credentials, and
+> no Notion or Blotato connector is reachable either (checked via
+> `ToolSearch`); (2) the release backlog is unchanged: vault still holds 37
+> READY TO POST (oldest since 14/07/2026, 96 days), 33 DRAFT, 6 STALE, 2
+> KILLED, 0 POSTED (78 total `## ENTRY` headers — matching this session's
+> startup reality-check hook exactly), and `review-cockpit/decisions-log.md`'s
+> last entry is still 14/07/2026 — no operator replies, approvals or kills
+> since then. `review-cockpit/state.md` logs a 93rd consecutive empty
+> Telegram `getUpdates` sweep as of today's second interactive sweep — so
+> even with fresh signal, adding more DRAFT volume would only crowd an
+> already-unreleased backlog. Operator briefing given in this session's
+> chat, same two open options as every run since 18/09/2026, still
+> unanswered.
+
 > **17/10/2026 content-engine daily run — no new entries produced (deliberate):**
 > Run end to end per explicit operator instruction ("Run the /content-engine
 > daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
