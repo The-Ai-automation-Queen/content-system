@@ -6,12 +6,57 @@
 
 ## Queue (next up, in order)
 
-1. UNB-029 — Delete dead `work-with-me-v3.css` *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; 17/10 check: still unanswered, 9th morning since the confrontation; ask already at floor, offer to execute myself on a ✅ still open; not re-sent, no serve-4 rule)*
-2. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 17/10 check: still unanswered, 17th morning; stale-branch count unchanged at 82, total branches now 143 (30-day cutoff))*
-3. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 17/10 check confirms still unanswered, 23rd morning; now 900 commits behind main, 8th consecutive worsening)*
-4. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 17/10 check confirms still unanswered, 25 days)*
-5. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 17/10 check confirms still unanswered, 31st morning)*
-6. UNB-031 — CognitionX yes/no only (HRSE fee parked) *(serve 3, 07/10 — gentle confrontation sent, awaiting reply; 17/10 check: still unanswered, 13th morning since the floor-ask; events were 14-15 Oct 2026, both now fully passed — both bookings definitively missed regardless of any reply; revenue_unlocked ~0, last place in queue order; not re-sent, no serve-4 rule)*
+1. UNB-029 — Delete dead `work-with-me-v3.css` (scope now v3+v4.css+v4.js, see JAN-08) *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; 18/10 check: still unanswered, 10th morning since the confrontation; ask already at floor, offer to execute myself on a ✅ still open; not re-sent, no serve-4 rule)*
+2. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 18/10 check: still unanswered, 18th morning; stale-branch count unchanged at 82, total branches now 151 (30-day cutoff))*
+3. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 18/10 check confirms still unanswered, 24th morning; now 925 commits behind main, 9th consecutive worsening)*
+4. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 18/10 check confirms still unanswered, 26 days)*
+5. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 18/10 check confirms still unanswered, 32nd morning)*
+6. UNB-031 — CognitionX yes/no only (HRSE fee parked) *(serve 3, 07/10 — gentle confrontation sent, awaiting reply; 18/10 check: both events now 3 days fully in the past — definitively missed regardless of any reply; revenue_unlocked $0; recommend next `/speaking-pipeline scan` mark TARGET 002/003 `dead`; last place in queue order; not re-sent, no serve-4 rule)*
+
+> **18/10/2026 — queue still fully stalled, ninth consecutive no-serve
+> day.** This morning's automated 04:00 GST cron run (`deploy/logs/unblocker
+> daily-2026-10-18T04-00-01.log`) only fast-forwarded the git pull (10 files,
+> site/workbook changes) — no "done" line, same pattern as every prior
+> silent-cron day; this interactive run (operator-requested) is today's
+> actual `/unblocker daily` execution. Full re-scan (`content-vault.md`
+> header — vault unchanged 37 READY TO POST / 33 DRAFT / 6 STALE / 2
+> KILLED, matching this session's own startup reality-check hook and
+> today's already-completed `review-cockpit digest` commit, Ready-shelf
+> trio now 96 days with nothing released; `git fetch --prune` + branch
+> count with a 2026-09-18 cutoff — 151 total branches (was 143 on 17/10,
+> +8), 82 stale >30d (unchanged — a second day flat on this metric);
+> `git -C ~/content-system-DUPLICATE rev-parse HEAD` (unchanged `a2e2bc1f`)
+> + `git log a2e2bc1f..origin/main` against freshly fetched `origin/main`
+> — **925** commits behind (was 900 on 17/10, a ninth consecutive
+> worsening); `find`/grep for `work-with-me-v3.css` — still present, zero
+> live references, unchanged, but today's independent `/estate-janitor
+> scan` (JAN-08) found the live page's 10/17 rewrite onto a `*-v5` asset
+> family also orphaned `work-with-me-v4.css`/`.js` — UNB-029's scope
+> widened from one dead file to three, noted on its own entry, not
+> re-ledgered; `lead-magnets.csv` — all flags unchanged; fresh `git
+> ls-remote` on queen-brain/fast-forward/agent-os-company-dashboard — all
+> three still "Repository not found"/403; `ROADMAP.md`/
+> `ACTION-PLAN-CASH-MACHINE.md` mtimes unchanged since 08/07 and 19/09
+> respectively; a live `getUpdates` call — empty, `{"ok":true,"result":[]}`,
+> consistent with `review-cockpit/state.md`'s own 91st consecutive empty
+> sweep logged this morning; `review-cockpit/decisions-log.md` unchanged,
+> last entry still 14/07/2026; `speaking-pipeline.md` TARGET 002/003 —
+> unchanged since 12/10, and both events (14-15 Oct) are now **3 days
+> fully in the past** — UNB-031's revenue_unlocked drops to $0, see its
+> own entry) confirms no new ledger-eligible item (JAN-09/JAN-08 from
+> today's janitor run are routed as PROPOSE/scope-notes, not new
+> HUMAN-DECISION entries) and no completion among
+> UNB-025/026/027/028/029/031. All six queue items remain past their own
+> serve-3 confirmation with zero reply, now for a ninth straight day. Per
+> the no-serve-4 rule and "never repeat the identical message" guardrail,
+> nothing was re-sent — **no Telegram message was sent for the queue
+> today**, extending the longest fully-stalled stretch since the ledger's
+> 06/07/2026 seed. Because this run is interactive, the kill/split/smaller/
+> real-blocker question for all six items, plus the UNB-031 dead-mark
+> recommendation, is put to Fatiha directly in this session's operator
+> briefing instead of over Telegram. Canon (queen-brain) remained
+> unreachable this session — no price, tier, offer status or
+> customer-facing copy was written or reconstructed.
 
 > **17/10/2026 — queue still fully stalled, eighth consecutive no-serve
 > day.** This morning's automated 04:00 GST cron run (`deploy/logs/unblocker
@@ -1519,6 +1564,13 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   dead `work-with-me` assets); not re-ledgered as a new entry per janitor
   guardrail 5. See `reports/janitor-2026-10-18.md` JAN-08 for full
   evidence.
+- **18/10/2026 follow-up (interactive run):** re-grepped live —
+  `work-with-me-v3.css` still present, zero live references, unchanged,
+  9th morning since the 09/10 confrontation. No reply to the ✅/❌ offer.
+  Per the no-serve-4 rule, did not re-send — no eligible serve slot
+  existed today either. The ✅ offer to execute the delete myself remains
+  open and unactioned; per today's JAN-08 scope widening (above), that
+  offer would now cover all three orphaned files, not just this one.
 
 ### UNB-030 — Fix: VPS cron was firing every job 4 hours later than its documented GST time
 - **why:** multiple runs (02/10–04/10) flagged "the cron ran but produced no
@@ -1709,6 +1761,16 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   only because the skill records this as evidence, not because it remains
   actionable. No eligible serve slot existed today either — did not
   re-send, escalated plainly in today's operator briefing instead.
+- **18/10/2026 follow-up (interactive run):** `speaking-pipeline.md`
+  TARGET 002/003 history still unchanged — no new entry since 12/10, no
+  reply to the 07/10 confrontation. An independent live `getUpdates` call
+  returned empty, matching `review-cockpit/state.md`'s own 91st
+  consecutive empty sweep logged this morning. Both events (14-15 Oct
+  2026) are now **3 days fully in the past** — restating the standing
+  recommendation for the next `/speaking-pipeline scan`: mark TARGET
+  002/003 `dead` (event-passed). No eligible serve slot existed today
+  either — did not re-send, escalated plainly in today's operator
+  briefing instead.
 
 ---
 
