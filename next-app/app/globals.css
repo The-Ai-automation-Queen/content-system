@@ -741,3 +741,6 @@ button, input { font: inherit; }
 /* 2026-10-18: bigger tap area on the logo, no change in layout */
 .wordmark{position:relative}
 .wordmark::after{content:"";position:absolute;inset:-12px -6px}
+
+/* 2026-10-18: guide ending is one next step, the matching workbook */
+.guide-choice__grid--one{grid-template-columns:minmax(0,560px)}
