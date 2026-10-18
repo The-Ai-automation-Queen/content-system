@@ -54,7 +54,7 @@ export function GuideLibrary({ guides, previewGuides }: { guides: Guide[]; previ
       <nav className="outcome-nav journey-nav" aria-labelledby="journey-title">
         <div className="outcome-nav__head">
           <h2 id="journey-title">Where are you right now?</h2>
-          <p>{listedGuides.length} guides, grouped by where you are. New to AI? Start at step 1 and go in order. Already using it? Jump to the step you need. Every guide ends with a link to the next one, so you always know what to do after.</p>
+          <p>{listedGuides.length} guides, grouped by where you are. New to AI? Start at step 1 and go in order. Already using it? Jump to the step you need. Every guide ends with your next step.</p>
         </div>
         <div className="outcome-nav__grid">
           {stages.map((stage, index) => (

@@ -539,3 +539,10 @@ body.v5 .v5-step-one h3{color:#fff}
 body .sk-pill,body .v5-nav-cta,body .pg-buy,body .sk-menu summary,body form button[type=submit]{height:32px!important;min-height:32px!important;padding:0 14px!important;border-radius:10px!important;align-items:center;justify-content:center;font-size:14px!important;line-height:1!important}
 body .sk-menu summary{font-size:11px!important}
 body a.v5-nav-cta{line-height:32px!important}
+/* Review 18/10: even proof strip, serif step titles, bigger tap links, square form boxes */
+.pg-proof-row{display:grid;grid-template-columns:repeat(4,1fr);align-items:end;gap:22px 24px}
+.pg-proof-item{align-content:end;min-height:44px}
+@media(max-width:700px){.pg-proof-row{grid-template-columns:1fr 1fr}}
+body.v5 .pg-steps h3{font:500 22px/1.15 "Playfair Display",Georgia,serif!important}
+body .v5-buy,body .v5-award-list a{display:inline-block;padding:6px 0}
+body form input:not([type=checkbox]):not([type=radio]),body form textarea,body form select{border-radius:10px!important}
