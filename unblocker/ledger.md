@@ -1508,6 +1508,17 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   confrontation. No reply to the ✅/❌ offer. Per the no-serve-4 rule, did
   not re-send — no eligible serve slot existed today either. The ✅ offer
   to execute the delete myself remains open and unactioned.
+- **18/10/2026 scope-note (`/estate-janitor scan`, JAN-08):** the live
+  `main-site/work-with-fatiha/index.html` was rewritten 10-17 (commit
+  `df1821f8`) onto a new `*-v5` asset family (`homepage-v5.css`,
+  `pages-v5.css`, etc.) and no longer loads `work-with-me-v4.css` or
+  `work-with-me-v4.js` either — the two files this entry's own "why"
+  cited as "what's actually loaded" are now also orphaned, alongside
+  `work-with-me-v3.css`. Scope widens from one dead file to three
+  (17,579 + 12,874 + 452 bytes). Underlying decision unchanged (delete
+  dead `work-with-me` assets); not re-ledgered as a new entry per janitor
+  guardrail 5. See `reports/janitor-2026-10-18.md` JAN-08 for full
+  evidence.
 
 ### UNB-030 — Fix: VPS cron was firing every job 4 hours later than its documented GST time
 - **why:** multiple runs (02/10–04/10) flagged "the cron ran but produced no

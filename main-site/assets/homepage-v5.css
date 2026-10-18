@@ -183,8 +183,9 @@ body.v5 .sk-book b{color:var(--blue)}
   .v5-cred{grid-template-columns:1fr}.v5-cred>div+div{padding-left:0;border-left:0;padding-top:16px;border-top:1px solid #0B0D121F}
   /* Face visible on phones: photo on top, text below */
   body.v5 .sk-hero{display:flex;flex-direction:column;min-height:0}
-  body.v5 .sk-hero-photo{position:relative;inset:auto;order:-1;width:100%;height:auto;aspect-ratio:1/1;max-height:62vh;object-position:50% 30%;opacity:1;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent 100%);mask-image:linear-gradient(180deg,#000 70%,transparent 100%)}
-  body.v5 .sk-hero-content{padding-top:0;margin-top:-40px}
+  body.v5 .sk-hero-photo{position:relative;inset:auto;order:-1;width:100%;height:auto;aspect-ratio:1/1;max-height:36vh;object-position:50% 18%;opacity:1;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent 100%);mask-image:linear-gradient(180deg,#000 70%,transparent 100%)}
+  body.v5 .sk-hero-content{padding-top:0;margin-top:-28px}
+  body.v5 .sk-hero-proof{margin-top:22px}
 }
 .v5-receipt-award .v5-src{padding-right:64px}
 body.v5 .sk-launch-note{opacity:1!important;color:#E6EBFF!important}
@@ -211,6 +212,7 @@ body.v5 .v5-tier h3{margin-bottom:12px;font:400 30px/1.1 "Playfair Display",Geor
 .v5-tier li{position:relative;padding-left:26px;font-size:17px;line-height:1.4}
 .v5-tier li::before{content:"\2713";position:absolute;left:0;font-weight:700;color:#CAFF00}
 .v5-tier-paid li::before{color:var(--blue)}
+.v5-tier-cta{display:inline-block;margin-top:18px;font-weight:700;color:var(--blue)!important}
 body.v5 .v5-tier-paid li{color:var(--ink)!important}
 @media(max-width:900px){.v5-tiers{grid-template-columns:1fr}}
 
@@ -375,6 +377,7 @@ body.v5 .v5-close-note img{width:72px;height:72px;border-radius:50%;object-fit:c
 body.v5 .v5-close h2{color:var(--ink)}
 body.v5 .v5-close-note p{margin-top:20px;max-width:440px;font-size:18px;color:var(--grey)}
 .v5-close-paths{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.v5-close-paths .v5-path-dark{grid-column:1/-1}
 .v5-path{display:flex;flex-direction:column;gap:12px;padding:28px;border-radius:22px;background:#fff;color:var(--ink)!important;box-shadow:0 1px 0 #0B0D1214,0 22px 50px -34px #0B0D1255;transition:transform .6s var(--ease)}
 .v5-path:hover,.v5-path:focus-visible{transform:translateY(-5px)}
 .v5-path:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
@@ -453,3 +456,27 @@ body.v5 .v5-speak .v5-stages b{color:#CAFF00!important}
 .v5-speak{padding:64px 0 56px}
 /* 17/10/2026 workbook cards on phones: price link sits under the title, not squeezed under the image */
 @media(max-width:700px){body.v5 .sk-book-covers li img{grid-row:1/4}body.v5 .sk-book-covers .v5-buy{grid-column:2;grid-row:3;align-self:start;margin:8px 16px 18px 0}}
+/* Workbook cards: show the whole cover, never crop the title */
+body.v5 .sk-book-covers img{object-fit:contain;padding:22px 0;background:#F3F1EC;filter:drop-shadow(0 14px 18px #0B0D1233)}
+@media(max-width:700px){body.v5 .sk-book-covers img{padding:10px;object-fit:contain}}
+/* Work with me 1:1 section */
+.v5-one{padding:90px 0 70px;background:#fff}
+.v5-one-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
+.v5-one-intro>p{margin-top:22px;max-width:44ch;font-size:19px;line-height:1.55;color:var(--grey)}
+.v5-one-intro .sk-pill{margin-top:28px}
+.v5-one-intro .v5-one-note{margin-top:14px;font-size:15px}
+.v5-one-steps{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.v5-one-steps li{display:flex;gap:18px;padding:22px 24px;border-radius:18px;background:#F3F3F4}
+.v5-one-steps b{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;font:700 17px/1 Inter,system-ui,sans-serif}
+body.v5 .v5-one-steps h3{font:500 22px/1.2 "Playfair Display",Georgia,serif;color:var(--ink)}
+.v5-one-steps p{margin-top:6px;font-size:16px;line-height:1.5;color:var(--grey)}
+.v5-one-fit{margin-top:22px;padding:22px 24px;border:1.5px solid var(--blue);border-radius:18px}
+body.v5 .v5-one-fit h3{font:700 15px/1 Inter,system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:var(--blue)}
+.v5-one-fit ul{display:grid;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+.v5-one-fit li{position:relative;padding-left:26px;font-size:16px;line-height:1.45}
+.v5-one-fit li::before{content:"\2713";position:absolute;left:0;font-weight:700;color:var(--blue)}
+@media(max-width:900px){.v5-one{padding:56px 0 40px}.v5-one-grid{grid-template-columns:1fr;gap:32px}}
+body.v5 .v5-one h2{margin:0;font:400 clamp(40px,4.4vw,68px)/.98 "Playfair Display",Georgia,serif;letter-spacing:-.02em;color:var(--ink)}
+.v5-one h2 span,.v5-one h2 em{display:block}
+body.v5 .v5-one h2 em{color:var(--blue);font-style:italic;font-size:.62em;margin-top:10px;line-height:1.1}
+body.v5 .v5-one-intro>p:first-of-type{margin-top:26px!important}
