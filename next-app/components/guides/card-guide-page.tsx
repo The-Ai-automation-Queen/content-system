@@ -26,13 +26,17 @@ function Rich({ value }: { value: string }) {
   })}</>;
 }
 
-function Block({ block }: { block: CardBlock }) {
+// The first prompt in a guide is free; the rest ask for the email once.
+type Gate = { slug: string; freePrompt?: string };
+
+function Block({ block, gate }: { block: CardBlock; gate: Gate }) {
+  const lock = (text: string) => ({ locked: text !== gate.freePrompt, guideSlug: gate.slug });
   switch (block.kind) {
     case "p": return <p><Rich value={block.text} /></p>;
     case "h3": return <h3>{block.text}</h3>;
     case "tip": return <p className={styles.tip}><Rich value={block.text} /></p>;
     case "honest": return <p className={styles.honest}><Rich value={block.text} /></p>;
-    case "prompt": return <Prompt text={block.text} label={block.label} />;
+    case "prompt": return <Prompt text={block.text} label={block.label} {...lock(block.text)} />;
     case "list": {
       const List = block.ordered ? "ol" : "ul";
       return <List className={styles.list}>{block.items.map((item) => <li key={item}><Rich value={item} /></li>)}</List>;
@@ -41,7 +45,7 @@ function Block({ block }: { block: CardBlock }) {
       <thead><tr>{block.head.map((cell) => <th key={cell} scope="col">{cell}</th>)}</tr></thead>
       <tbody>{block.rows.map((row) => <tr key={row.join("|")}>{row.map((cell, index) => <td key={index}><Rich value={cell} /></td>)}</tr>)}</tbody>
     </table></div>;
-    case "requests": return <ul className={styles.requests}>{block.items.map((item) => <li key={item.want}><strong>{item.want}</strong><Prompt text={item.prompt} label={item.want} /></li>)}</ul>;
+    case "requests": return <ul className={styles.requests}>{block.items.map((item) => <li key={item.want}><strong>{item.want}</strong><Prompt text={item.prompt} label={item.want} {...lock(item.prompt)} /></li>)}</ul>;
     case "checklist": return <ul className={styles.checklist}>{block.items.map((item) => <li key={item}><label><input type="checkbox" /> {item}</label></li>)}</ul>;
     case "fields": return <dl className={batch.fields}>{block.items.map((item) => <div key={item.label}><dt>{item.label}:</dt> <dd><Rich value={item.text} /></dd></div>)}</dl>;
     case "papers": return <div className={batch.papers}>
@@ -77,13 +81,13 @@ function Block({ block }: { block: CardBlock }) {
   }
 }
 
-function Step({ step, id }: { step: CardStep; id: string }) {
+function Step({ step, id, gate }: { step: CardStep; id: string; gate: Gate }) {
   return <section className={styles.card} aria-labelledby={id}>
     <div className={styles.sh}>
       <span className={styles.tile} aria-hidden="true">{step.num}</span>
       <h2 id={id}>{step.title} <em>{step.accent}</em></h2>
     </div>
-    {step.blocks.map((block, index) => <Block key={index} block={block} />)}
+    {step.blocks.map((block, index) => <Block key={index} block={block} gate={gate} />)}
   </section>;
 }
 
@@ -94,6 +98,8 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
   const open = card.steps.slice(0, card.openSteps);
   const gated = card.steps.slice(card.openSteps);
   const stepId = (index: number) => `${card.slug}-step-${index + 1}`;
+  const firstBlock = card.steps.flatMap((step) => step.blocks).find((block) => block.kind === "prompt" || block.kind === "requests");
+  const gate: Gate = { slug: card.slug, freePrompt: firstBlock?.kind === "prompt" ? firstBlock.text : firstBlock?.kind === "requests" ? firstBlock.items[0]?.prompt : undefined };
 
   const titleBlock = <>
     <p className={card.hero ? batch.eyebrow : styles.eyebrow}><span aria-hidden="true">✦</span>Free guide · {card.tool}</p>
@@ -130,10 +136,10 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
       <section className={`${styles.card} ${styles.intro}`} aria-labelledby={`${card.slug}-intro`}>
         <h2 id={`${card.slug}-intro`}>{card.intro.heading}</h2>
         <p className={styles.lead}><Rich value={card.intro.lead} /></p>
-        {card.intro.blocks.map((block, index) => <Block key={index} block={block} />)}
+        {card.intro.blocks.map((block, index) => <Block key={index} block={block} gate={gate} />)}
       </section>
 
-      {open.map((step, index) => <Step key={step.title} step={step} id={stepId(index)} />)}
+      {open.map((step, index) => <Step key={step.title} step={step} id={stepId(index)} gate={gate} />)}
 
       <div className={styles.gateStage} id="unlock">
         <GuideAccessBoundary
@@ -145,7 +151,7 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
           actionLabel={card.gate.action}
           showWorkBridge={false}
         >
-          {gated.map((step, index) => <Step key={step.title} step={step} id={stepId(card.openSteps + index)} />)}
+          {gated.map((step, index) => <Step key={step.title} step={step} id={stepId(card.openSteps + index)} gate={gate} />)}
           {card.kit && <aside className={batch.kit} aria-labelledby={`${card.slug}-kit`}>
             <span className={batch.kitLabel}>Next step · Kit · Coming soon</span>
             <h2 id={`${card.slug}-kit`}>{card.kit.heading}</h2>

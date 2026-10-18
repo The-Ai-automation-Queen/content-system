@@ -115,3 +115,11 @@ ol.list { list-style: decimal; }
   .tableWrap td { padding: 2px 0; border: 0; }
   .tableWrap td + td { margin-top: 4px; }
 }
+/* Locked prompt: first lines fade out, one button asks for the email. */
+.lockedPrompt pre { position: relative; max-height: 132px; overflow: hidden; user-select: none; -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent 100%); mask-image: linear-gradient(180deg, #000 30%, transparent 100%); padding-top: 18px; }
+.prompt .unlockButton { position: static; display: inline-flex; align-items: center; margin-top: 10px; background: var(--blue, #2C4BE0); }
+.lockForm { display: grid; gap: 12px; margin-top: 12px; padding: 20px; border-radius: 14px; background: #fff; box-shadow: 0 1px 0 #0B0D1214, 0 22px 50px -34px #2C4BE077; }
+.lockForm p { margin: 0; font-size: 15px; line-height: 1.5; color: #34312d; }
+.lockForm input:not([type="checkbox"]) { border-color: #c8c1f0; border-radius: 10px; }
+.prompt .lockForm button { position: static; justify-self: start; }
+.lockForm strong[role="alert"] { color: #a12621; font: 600 13px/1.45 var(--font-ui), sans-serif; }

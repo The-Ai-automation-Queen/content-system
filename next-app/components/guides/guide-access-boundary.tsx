@@ -3,11 +3,9 @@
 import { FormEvent, type ReactNode, useEffect, useState } from "react";
 import { BatchIcon } from "./batch-icons";
 import styles from "./guide-reading-page.module.css";
+import { ACCESS_KEY, READER_KEY, UNLOCK_EVENT, submitGuideSignup, taggedKey } from "./guide-signup";
 
-const ACCESS_KEY = "shift-lead-guide-access";
 // Readers enter their email once. Later guides open straight away and only add that guide's tag.
-const READER_KEY = "shift-lead-guide-reader";
-const taggedKey = (slug: string) => `shift-lead-guide-tagged:${slug}`;
 
 function tagReturningReader(guideSlug: string) {
   try {
@@ -91,48 +89,25 @@ export function GuideAccessBoundary({
     event.preventDefault();
     setStatus("sending");
     setMessage("");
-    const form = new FormData(event.currentTarget);
-    const tracker = (window as Window & { slTrack?: (name: string, data?: Record<string, string>) => void }).slTrack;
-    tracker?.("guide_gate_submit", { guide_slug: guideSlug, source_page: window.location.pathname });
-
     try {
-      const response = await fetch("/api/guide-capture", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: form.get("email"),
-          firstName: form.get("firstName"),
-          website: form.get("website"),
-          guideSlug,
-          source: window.location.pathname,
-          consent: true,
-          marketingConsent: form.get("marketingConsent") === "on",
-          timestamp: new Date().toISOString(),
-        }),
-      });
-      if (!response.ok) {
-        // Show the server's reason (bad email, not configured, refused) so a failure can be diagnosed.
-        const result = await response.json().catch(() => ({})) as { error?: string };
-        throw new Error(result.error || `That did not send. Please try again. (${response.status})`);
-      }
-      try {
-        window.localStorage.setItem(ACCESS_KEY, "true");
-        window.localStorage.setItem(READER_KEY, String(form.get("email") || "").trim().toLowerCase());
-        window.localStorage.setItem(taggedKey(guideSlug), "true");
-      } catch {
-        // The thank-you still shows for this page view.
-      }
+      await submitGuideSignup(new FormData(event.currentTarget), guideSlug);
       setUnlocked(true);
       setStatus("idle");
-      tracker?.("guide_unlock", { guide_slug: guideSlug, source_page: window.location.pathname });
     } catch (error) {
       setStatus("error");
-      setMessage(error instanceof Error && error.message !== "Failed to fetch" ? error.message : "That did not send. Please check your connection and try again.");
+      setMessage(error instanceof Error ? error.message : "That did not send. Please try again.");
     }
   };
 
-  // Option B (owner decision 14/10/2026): the whole guide is free to read. The email
-  // ask comes after the content, so the reader gets their first win before the form.
+  // A locked prompt elsewhere on the page can unlock the reader too.
+  useEffect(() => {
+    const onUnlock = () => setUnlocked(true);
+    window.addEventListener(UNLOCK_EVENT, onUnlock);
+    return () => window.removeEventListener(UNLOCK_EVENT, onUnlock);
+  }, []);
+
+  // Owner decision 18/10/2026: every step is readable and the first prompt is free;
+  // later prompts ask for the email (see card-prompt.tsx). This form closes the guide.
   const subscribed = ready && unlocked;
   return (
     <>
