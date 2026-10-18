@@ -1,4 +1,4 @@
-# Simple AI for Non-Techies: welcome message, prompts of the week, paid pages
+# The AI Business Architecture: welcome message, prompts of the week, paid pages
 
 Draft for Fatiha, 14/10/2026. Not published. Matches the free "Start here" plan (6 lessons, weekly Wednesday "Prompt of the week").
 
@@ -8,7 +8,7 @@ Anything marked [CONFIRM: ...] needs your yes or no before it goes live.
 
 ## 1. Welcome message (Skool sends this to new members)
 
-> Hi [FIRST NAME], welcome to Simple AI for Non-Techies. I'm really glad you're here.
+> Hi [FIRST NAME], welcome to The AI Business Architecture. I'm really glad you're here.
 >
 > Nobody here needs to be techy. We keep things simple and practical.
 >
