@@ -1,8 +1,13 @@
 (() => {
   const header = document.getElementById('site-header');
-  const updateHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 48);
+  // Read the position every way browsers report it, and re-check after load,
+  // back/forward cache restores and resizes, so the header never shows the wrong state.
+  const updateHeader = () => {
+    const y = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+    header?.classList.toggle('is-scrolled', y > 24);
+  };
   updateHeader();
-  window.addEventListener('scroll', updateHeader, { passive: true });
+  ['scroll', 'resize', 'load', 'pageshow', 'orientationchange'].forEach((name) => window.addEventListener(name, updateHeader, { passive: true }));
 
   const shelf = document.getElementById('sk-books');
   document.querySelectorAll('[data-book-scroll]').forEach((button) => {

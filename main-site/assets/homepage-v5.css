@@ -497,3 +497,31 @@ body.v5 .sk-guides{padding-top:64px}
 /* 2026-10-18: bigger tap areas on small links, no change in layout */
 .sk-logo,.v5-story-link,.v5-tier-cta,.v5-buy,.pg-more{position:relative}
 .sk-logo::after,.v5-story-link::after,.v5-tier-cta::after,.v5-buy::after,.pg-more::after{content:"";position:absolute;inset:-12px -6px}
+
+/* 2026-10-18: "Your path with me" strip, 5 steps with prices */
+.v5-path-strip{padding:8px 0 72px;background:#F3F3F4}
+body.v5 .v5-path-strip h2{font-size:clamp(34px,3.8vw,56px);margin-bottom:26px}
+body.v5 .v5-path-strip h2 em{color:var(--blue)}
+.v5-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
+.v5-steps a{position:relative;display:flex;flex-direction:column;gap:8px;height:100%;padding:20px 18px;border-radius:18px;background:#fff;color:var(--ink)!important;box-shadow:0 1px 0 #0B0D1214,0 18px 40px -30px #2C4BE088;transition:transform .5s var(--ease)}
+.v5-steps a:hover,.v5-steps a:focus-visible{transform:translateY(-4px)}
+.v5-steps b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;font:700 14px/1 Inter,system-ui,sans-serif}
+body.v5 .v5-steps h3{font:500 21px/1.15 "Playfair Display",Georgia,serif;margin:4px 0 0}
+body.v5 .v5-steps p{font-size:14px;line-height:1.45;color:var(--grey);margin:0}
+.v5-step-price{margin-top:auto;padding-top:6px;font:700 15px/1.2 Inter,system-ui,sans-serif;color:var(--blue)}
+.v5-step-one a{background:var(--ink);color:#fff!important}
+body.v5 .v5-step-one p{color:#C9CDD8}
+.v5-step-one b{background:#CAFF00;color:var(--ink)}
+.v5-step-one .v5-step-price{color:#CAFF00}
+@media(max-width:1000px){.v5-steps{grid-template-columns:1fr 1fr}.v5-step-one{grid-column:1/-1}}
+@media(max-width:560px){.v5-steps{grid-template-columns:1fr}}
+.v5-tier-next{display:inline-block;margin-top:12px;font-weight:700;color:var(--ink)!important;text-decoration:underline!important;text-underline-offset:4px}
+.v5-speak-cta{margin-top:18px;background:#CAFF00!important;color:var(--ink)!important}
+.v5-speak-cta:hover{background:#fff!important}
+.v5-wb-next{margin-top:8px;grid-template-columns:minmax(0,560px)}
+
+/* 2026-10-18: dark header on phones until scrolled, so the logo never sits over page text */
+@media(max-width:700px){body.v5 .sk-header:not(.is-scrolled){background:#0B0D12}}
+body.v5 .v5-step-one h3{color:#fff}
+.v5-speak-cta{justify-self:start;align-self:start;width:auto}
+.v5-path-strip{padding-bottom:40px}

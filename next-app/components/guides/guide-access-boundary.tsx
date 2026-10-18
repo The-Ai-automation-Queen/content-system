@@ -30,6 +30,15 @@ function tagReturningReader(guideSlug: string) {
   }
 }
 
+// Each guide ends on the next step of the path: the workbook that fits it best.
+const sellGuides = new Set(["show-up-in-ai-search", "chatgpt-customer-research-with-evidence", "test-business-idea-with-ai", "marketing-emails-that-sell", "launch-your-product-in-30-days", "instagram-content-dashboard"]);
+const storyGuides = new Set(["brand-brain-guide", "stop-chatgpt-forgetting-context", "teach-claude-a-repeatable-workflow"]);
+function workbookFor(slug: string) {
+  if (sellGuides.has(slug)) return { title: "Find What You Can Sell", line: "This workbook helps you turn what you know into something to sell.", href: "/workbooks/use-what-is-unique-about-you.html" };
+  if (storyGuides.has(slug)) return { title: "Put Your Experience Into Words", line: "This workbook helps you write down your story, so AI can use it.", href: "/workbooks/your-human-evidence.html" };
+  return { title: "Find the Strengths You Overlook", line: "This workbook helps you find what you are good at.", href: "/workbooks/find-your-zone-of-genius.html" };
+}
+
 export function GuideAccessBoundary({
   guideSlug,
   guideTitle,
@@ -54,6 +63,7 @@ export function GuideAccessBoundary({
   children: ReactNode;
   variant?: "unlock" | "band";
 }) {
+  const workbook = workbookFor(guideSlug);
   const [ready, setReady] = useState(false);
   const [unlocked, setUnlocked] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
@@ -159,19 +169,13 @@ export function GuideAccessBoundary({
         </section>
       </div>
       <aside className="guide-choice" aria-labelledby={`guide-choice-${guideSlug}`}>
-        <h2 id={`guide-choice-${guideSlug}`}>Want more help with AI?</h2>
-        <div className="guide-choice__grid">
+        <h2 id={`guide-choice-${guideSlug}`}>Your next step.</h2>
+        <div className="guide-choice__grid guide-choice__grid--one">
           <div className="guide-choice__card">
-            <span className="guide-choice__tag">Free to join</span>
-            <h3>Learn with people like you</h3>
-            <p>Join the AI Business Architecture, my community on Skool. Simple lessons and real questions answered.</p>
-            <a href="https://www.skool.com/simple-ai-for-non-tech-8652" target="_blank" rel="noopener noreferrer" data-track="guide_to_community">Join the community <span aria-hidden="true">&rarr;</span></a>
-          </div>
-          <div className="guide-choice__card guide-choice__card--dark">
-            <span className="guide-choice__tag">1:1 &middot; By application</span>
-            <h3>Get my help for your business</h3>
-            <p>I work 1:1 with a few business owners at a time. I show you where AI saves you time and how to set it up.</p>
-            <a href="/work-with-fatiha/" data-track="guide_to_work_with_me">Work with me <span aria-hidden="true">&rarr;</span></a>
+            <span className="guide-choice__tag">Workbook &middot; $27</span>
+            <h3>{workbook.title}</h3>
+            <p>AI makes everything look the same. Your strengths, your story and your judgement are what make you different. {workbook.line}</p>
+            <a href={workbook.href} data-track="guide_to_workbook">See the workbook <span aria-hidden="true">&rarr;</span></a>
           </div>
         </div>
       </aside>
