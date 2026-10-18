@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const links = [
   ["Work with me", "/work-with-fatiha/"],
   ["Free guides", "/guides/"],
@@ -14,5 +12,5 @@ const links = [
 ] as const;
 
 export function SiteFooter() {
-  return <footer className="site-footer"><div className="site-footer__inner"><Link className="site-footer__wordmark" href="/">Shift <span>&amp;</span> Lead</Link><nav aria-label="Footer">{links.map(([label, href]) => <Link key={label} href={href}>{label}</Link>)}</nav><p>© 2026 Shift &amp; Lead</p></div></footer>;
+  return <footer className="site-footer"><div className="site-footer__inner"><a className="site-footer__wordmark" href="/">Shift <span>&amp;</span> Lead</a><nav aria-label="Footer">{links.map(([label, href]) => <a key={label} href={href}>{label}</a>)}</nav><p>© 2026 Shift &amp; Lead</p></div></footer>;
 }
