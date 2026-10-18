@@ -455,3 +455,6 @@ body.v5 .v5-speak .v5-stages b{color:#CAFF00!important}
 .v5-speak{padding:64px 0 56px}
 /* 17/10/2026 workbook cards on phones: price link sits under the title, not squeezed under the image */
 @media(max-width:700px){body.v5 .sk-book-covers li img{grid-row:1/4}body.v5 .sk-book-covers .v5-buy{grid-column:2;grid-row:3;align-self:start;margin:8px 16px 18px 0}}
+/* Workbook cards: show the whole cover, never crop the title */
+body.v5 .sk-book-covers img{object-fit:contain;padding:22px 0;background:#F3F1EC;filter:drop-shadow(0 14px 18px #0B0D1233)}
+@media(max-width:700px){body.v5 .sk-book-covers img{padding:10px;object-fit:contain}}
