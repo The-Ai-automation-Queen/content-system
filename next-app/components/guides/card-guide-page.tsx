@@ -8,9 +8,7 @@ import type { GuidePage } from "@/content/guide-page";
 import { getCardGuide, type CardBlock, type CardStep } from "@/content/card-guides";
 import { batchOneGuides } from "@/content/guide-batch-one";
 import { batchToCard } from "@/content/batch-to-card";
-import { cleanLabel } from "./guide-icon";
 import { GuideAccessBoundary } from "./guide-access-boundary";
-import { GuideRelatedLink } from "./guide-related-link";
 import styles from "./card-guide-page.module.css";
 import batch from "./batch-guide-page.module.css";
 
@@ -183,9 +181,5 @@ export function CardGuidePage({ guide }: { guide: GuidePage }) {
       </section>
     </div>
 
-    {guide.related.length > 0 && <section className={styles.related} aria-labelledby={`${card.slug}-related`}>
-      <h2 id={`${card.slug}-related`}>Keep reading. <em>One job at a time.</em></h2>
-      <div className={styles.relatedGrid}>{guide.related.map((item) => <GuideRelatedLink key={item.slug} slug={item.slug}><figure><GuideImage src={item.cover} alt="" fill sizes="(max-width: 760px) 100vw, 380px" /></figure><h3>{cleanLabel(item.title)}</h3><p>{item.reason}</p></GuideRelatedLink>)}</div>
-    </section>}
   </main>;
 }
