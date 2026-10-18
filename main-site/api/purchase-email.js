@@ -28,7 +28,7 @@ Keep this email. The ${several ? "links work" : "link works"} whenever you need 
 
 You can print the pages or fill them in on screen. Take your time: one exercise at a time is enough.
 
-Want to work through it with others? Join my free community: [Simple AI for Non-Techies](https://www.skool.com/simple-ai-for-non-tech-8652)
+Want to work through it with others? Join my free community: [The AI Business Architecture](https://www.skool.com/simple-ai-for-non-tech-8652)
 
 Fatiha`;
 

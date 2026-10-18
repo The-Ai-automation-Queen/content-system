@@ -1,4 +1,4 @@
-# Simple AI for Non-Techies: the free "Start here" section
+# The AI Business Architecture: the free "Start here" section
 
 Draft for Fatiha, 14/10/2026.
 
@@ -25,7 +25,7 @@ You already have the guides for lessons 2 to 5, so you only need to **record 1 v
 
 ## Lesson 1: welcome video script (about 2 minutes)
 
-> Hi, I'm Fatiha. Welcome to Simple AI for Non-Techies.
+> Hi, I'm Fatiha. Welcome to The AI Business Architecture.
 >
 > If AI feels confusing, or you tried it and it didn't help, you're in the right place. Here, nobody needs to be techy.
 >

@@ -164,7 +164,7 @@ export function GuideAccessBoundary({
           <div className="guide-choice__card">
             <span className="guide-choice__tag">Free to join</span>
             <h3>Learn with people like you</h3>
-            <p>Join Simple AI for Non-Techies, my community on Skool. Simple lessons and real questions answered.</p>
+            <p>Join the AI Business Architecture, my community on Skool. Simple lessons and real questions answered.</p>
             <a href="https://www.skool.com/simple-ai-for-non-tech-8652" target="_blank" rel="noopener noreferrer" data-track="guide_to_community">Join the community <span aria-hidden="true">&rarr;</span></a>
           </div>
           <div className="guide-choice__card guide-choice__card--dark">
