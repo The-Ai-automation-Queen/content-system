@@ -486,3 +486,10 @@ body.v5 .v5-one-intro>p:first-of-type{margin-top:26px!important}
 .v5-speak{padding:56px 0 40px}
 .v5-speak .v5-stages a{aspect-ratio:16/10}
 body.v5 .sk-guides{padding-top:64px}
+
+/* 2026-10-18: shorter phone scroll; guides and workbooks swipe sideways */
+@media(max-width:700px){
+  body.v5 .gb-grid,body.v5 .sk-book-covers{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-left:-18px;margin-right:-18px;padding:4px 18px 18px;scroll-padding-inline:18px;scrollbar-width:none}
+  body.v5 .gb-grid::-webkit-scrollbar,body.v5 .sk-book-covers::-webkit-scrollbar{display:none}
+  body.v5 .gb-grid>li,body.v5 .sk-book-covers>li{flex:0 0 78%;scroll-snap-align:start}
+}
