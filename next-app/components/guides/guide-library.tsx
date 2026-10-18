@@ -1,6 +1,6 @@
 "use client";
 
-import { type FormEvent, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { GuideCard } from "./guide-card";
 import type { Guide } from "@/content/guides";
 
@@ -20,13 +20,9 @@ function track(name: string, detail: Record<string, string>) {
   (window as Window & { slTrack?: (event: string, data?: Record<string, string>) => void }).slTrack?.(name, detail);
 }
 
-function normalise(value: string) {
-  return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[’']/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-}
 
-export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: Guide[]; previewGuides?: Guide[]; searchIndex: Record<string, string> }) {
+export function GuideLibrary({ guides, previewGuides }: { guides: Guide[]; previewGuides?: Guide[] }) {
   const [reviewMode, setReviewMode] = useState(false);
-  const [query, setQuery] = useState("");
   const listedGuides = reviewMode && previewGuides ? previewGuides : guides;
 
   useEffect(() => {
@@ -40,46 +36,16 @@ export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: G
   const placed = new Set<string>(journey.flatMap((stage) => [...stage.slugs]));
   const unplaced = listedGuides.filter((guide) => !placed.has(guide.slug));
 
-  const results = useMemo(() => {
-    const terms = normalise(query).split(" ").filter(Boolean);
-    if (!terms.length) return [];
-    return listedGuides.map((guide, order) => {
-      const title = normalise(guide.title);
-      const tags = normalise([guide.hub, guide.level, ...guide.outcomes, ...guide.tags].join(" "));
-      const summary = normalise(guide.summary);
-      const body = normalise(searchIndex[guide.slug] ?? "");
-      const searchable = `${title} ${tags} ${summary} ${body}`;
-      const score = terms.reduce((total, term) => total + (title.includes(term) ? 8 : 0) + (tags.includes(term) ? 5 : 0) + (summary.includes(term) ? 3 : 0) + (body.includes(term) ? 1 : 0), 0);
-      return { guide, order, matches: terms.every((term) => searchable.includes(term)), score };
-    }).filter(({ matches }) => matches).sort((a, b) => b.score - a.score || a.order - b.order).map(({ guide }) => guide);
-  }, [listedGuides, searchIndex, query]);
-  const searching = query.trim().length > 0;
-
-  function submitSearch(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    track("guide_search_submit", { query: query.trim(), results: String(results.length) });
-    window.requestAnimationFrame(() => document.getElementById("all-guides")?.scrollIntoView({ behavior: "smooth", block: "start" }));
-  }
 
   return (
     <>
       <section className="guides-hero" aria-labelledby="guides-title">
         <div className="guides-hero__copy">
-          <p className="eyebrow">Free AI guides for business owners</p>
           <h1 id="guides-title">Learn to use AI in your business, <em>step by step.</em></h1>
           <p>Pick a guide. Follow the steps one by one. Copy the prompts into ChatGPT, Claude, or your preferred AI.</p>
-          <form className="hero-search" role="search" onSubmit={submitSearch}>
-            <label htmlFor="guide-search" className="visually-hidden">Search the guides</label>
-            <span className="hero-search__field">
-              <input id="guide-search" name="guide-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search: proposal, client data, Gemini" autoComplete="off" />
-              <button type="submit">Search</button>
-            </span>
-            <span className="hero-search__status" role="status" aria-live="polite">{searching ? `${results.length} matching ${results.length === 1 ? "guide" : "guides"}` : ""}</span>
-          </form>
         </div>
         {startHere && (
           <div className="guides-hero__feature" aria-label="Start here">
-            <p className="eyebrow">New to AI? Start here</p>
             <GuideCard guide={startHere} featured reviewMode={reviewMode} />
           </div>
         )}
@@ -87,13 +53,12 @@ export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: G
 
       <nav className="outcome-nav journey-nav" aria-labelledby="journey-title">
         <div className="outcome-nav__head">
-          <p className="eyebrow">{listedGuides.length} guides, grouped by where you are</p>
           <h2 id="journey-title">Where are you right now?</h2>
-          <p>New to AI? Start at step 1 and go in order. Already using it? Jump to the step you need. Every guide ends with a link to the next one, so you always know what to do after.</p>
+          <p>{listedGuides.length} guides, grouped by where you are. New to AI? Start at step 1 and go in order. Already using it? Jump to the step you need. Every guide ends with a link to the next one, so you always know what to do after.</p>
         </div>
         <div className="outcome-nav__grid">
           {stages.map((stage, index) => (
-            <a key={stage.id} href={`#${stage.id}`} onClick={() => { setQuery(""); track("guide_stage", { stage: stage.id }); }}>
+            <a key={stage.id} href={`#${stage.id}`} onClick={() => track("guide_stage", { stage: stage.id })}>
               <span className="outcome-nav__title">{stage.label}</span>
               <span>Step {index + 1} of {stages.length}</span>
               <strong>{stage.guides.length} {stage.guides.length === 1 ? "guide" : "guides"} <span aria-hidden="true">↓</span></strong>
@@ -103,30 +68,11 @@ export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: G
       </nav>
 
       <div id="all-guides">
-        {searching ? (
-          <section className="library" aria-labelledby="results-title">
-            <div className="library__head">
-              <div>
-                <p className="eyebrow">Search</p>
-                <h2 id="results-title">Guides about “{query.trim()}”</h2>
-              </div>
-              <button className="library__reset" type="button" onClick={() => setQuery("")}>Show all guides</button>
-            </div>
-            <div className="guide-grid">{results.map((guide) => <GuideCard key={guide.slug} guide={guide} reviewMode={reviewMode} />)}</div>
-            {results.length === 0 && (
-              <div className="empty-state">
-                <p>No guide matches “{query.trim()}”. Try another word, or pick where you are above.</p>
-                <button type="button" onClick={() => setQuery("")}>Show all guides</button>
-              </div>
-            )}
-          </section>
-        ) : (
-          <>
+        <>
             {stages.filter((stage) => stage.guides.length > 0).map((stage, index) => (
               <section key={stage.id} id={stage.id} className="library journey-stage" aria-labelledby={`${stage.id}-title`}>
                 <div className="library__head">
                   <div>
-                    <p className="eyebrow">Step {index + 1}</p>
                     <h2 id={`${stage.id}-title`}>{stage.heading}</h2>
                     <p>{stage.intro}</p>
                   </div>
@@ -140,8 +86,7 @@ export function GuideLibrary({ guides, previewGuides, searchIndex }: { guides: G
                 <div className="guide-grid">{unplaced.map((guide) => <GuideCard key={guide.slug} guide={guide} reviewMode={reviewMode} />)}</div>
               </section>
             )}
-          </>
-        )}
+        </>
       </div>
       <section className="library-close" aria-labelledby="library-close-title">
         <img src="/assets/mascot/waving-720.webp" alt="" width="575" height="720" loading="lazy" />
