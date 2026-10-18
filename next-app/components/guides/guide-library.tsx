@@ -60,7 +60,7 @@ export function GuideLibrary({ guides, previewGuides }: { guides: Guide[]; previ
           {stages.map((stage, index) => (
             <a key={stage.id} href={`#${stage.id}`} onClick={() => track("guide_stage", { stage: stage.id })}>
               <span className="outcome-nav__title">{stage.label}</span>
-              <span>Step {index + 1} of {stages.length}</span>
+              <span>Step {index + 1}/{stages.length}</span>
               <strong>{stage.guides.length} {stage.guides.length === 1 ? "guide" : "guides"} <span aria-hidden="true">↓</span></strong>
             </a>
           ))}
