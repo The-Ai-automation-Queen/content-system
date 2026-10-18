@@ -40,7 +40,6 @@ export function GuideAccessBoundary({
   eyebrow,
   headingAccent,
   variant,
-  showWorkBridge = true,
   children,
 }: {
   guideSlug: string;
@@ -159,22 +158,23 @@ export function GuideAccessBoundary({
           </div>}
         </section>
       </div>
-      <aside className="guide-community" aria-labelledby={`guide-community-${guideSlug}`}>
-        <img src="/assets/mascot/waving-720.webp" alt="" width="575" height="720" loading="lazy" />
-        <div>
-          <span className="guide-community__tag">Free to join</span>
-          <h2 id={`guide-community-${guideSlug}`}>Learn AI with people like you.</h2>
-          <p>Join Simple AI for Non-Techies, my community on Skool. Simple lessons, real questions, and help from me.</p>
-          <a href="https://www.skool.com/simple-ai-for-non-tech-8652" target="_blank" rel="noopener noreferrer" data-track="guide_to_community">Join the community <span aria-hidden="true">→</span></a>
+      <aside className="guide-choice" aria-labelledby={`guide-choice-${guideSlug}`}>
+        <h2 id={`guide-choice-${guideSlug}`}>Want more help with AI?</h2>
+        <div className="guide-choice__grid">
+          <div className="guide-choice__card">
+            <span className="guide-choice__tag">Free to join</span>
+            <h3>Learn with people like you</h3>
+            <p>Join Simple AI for Non-Techies, my community on Skool. Simple lessons and real questions answered.</p>
+            <a href="https://www.skool.com/simple-ai-for-non-tech-8652" target="_blank" rel="noopener noreferrer" data-track="guide_to_community">Join the community <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <div className="guide-choice__card guide-choice__card--dark">
+            <span className="guide-choice__tag">1:1 &middot; By application</span>
+            <h3>Get my help for your business</h3>
+            <p>I work 1:1 with a few business owners at a time. I show you where AI saves you time and how to set it up.</p>
+            <a href="/work-with-fatiha/" data-track="guide_to_work_with_me">Work with me <span aria-hidden="true">&rarr;</span></a>
+          </div>
         </div>
       </aside>
-      {showWorkBridge && <aside className={styles.workBridge} aria-labelledby={`guide-work-bridge-${guideSlug}`}>
-        <div>
-          <h2 id={`guide-work-bridge-${guideSlug}`}>Want AI set up in your business?</h2>
-          <p>I work 1:1 with a few business owners at a time. We find where AI saves you time first, and set it up together.</p>
-        </div>
-        <a href="/work-with-fatiha/" data-track="guide_to_work_with_me">Work with me <span aria-hidden="true">→</span></a>
-      </aside>}
     </>
   );
 }
