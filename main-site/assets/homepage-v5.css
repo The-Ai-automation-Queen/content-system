@@ -493,3 +493,7 @@ body.v5 .sk-guides{padding-top:64px}
   body.v5 .gb-grid::-webkit-scrollbar,body.v5 .sk-book-covers::-webkit-scrollbar{display:none}
   body.v5 .gb-grid>li,body.v5 .sk-book-covers>li{flex:0 0 78%;scroll-snap-align:start}
 }
+
+/* 2026-10-18: bigger tap areas on small links, no change in layout */
+.sk-logo,.v5-story-link,.v5-tier-cta,.v5-buy,.pg-more{position:relative}
+.sk-logo::after,.v5-story-link::after,.v5-tier-cta::after,.v5-buy::after,.pg-more::after{content:"";position:absolute;inset:-12px -6px}
