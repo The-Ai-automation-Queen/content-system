@@ -480,3 +480,7 @@ body.v5 .v5-one h2{margin:0;font:400 clamp(40px,4.4vw,68px)/.98 "Playfair Displa
 .v5-one h2 span,.v5-one h2 em{display:block}
 body.v5 .v5-one h2 em{color:var(--blue);font-style:italic;font-size:.62em;margin-top:10px;line-height:1.1}
 body.v5 .v5-one-intro>p:first-of-type{margin-top:26px!important}
+/* Shorter page: compact speaking strip, guides after workbooks */
+.v5-speak{padding:56px 0 40px}
+.v5-speak .v5-stages a{aspect-ratio:16/10}
+body.v5 .sk-guides{padding-top:64px}
