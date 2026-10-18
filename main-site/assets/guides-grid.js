@@ -1,4 +1,5 @@
-// Guides grid: cards rise in as they enter, images drift slightly on scroll.
+// Guides grid: images drift slightly on scroll. Cards are never hidden,
+// so a fast scroll or a slow phone can't leave blank spaces.
 // Without GSAP or with reduced motion, the grid simply shows as is.
 (() => {
   if (!window.gsap || !window.ScrollTrigger) return;
@@ -6,12 +7,6 @@
   gsap.registerPlugin(ScrollTrigger);
   const cards = gsap.utils.toArray('.gb-card');
   if (!cards.length) return;
-  gsap.set(cards, { y: 48, opacity: 0 });
-  ScrollTrigger.batch(cards, {
-    start: 'top 88%',
-    once: true,
-    onEnter: (batch) => gsap.to(batch, { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out', stagger: 0.12, overwrite: true }),
-  });
   cards.forEach((card) => {
     const img = card.querySelector('img');
     if (!img) return;
