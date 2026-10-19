@@ -12,6 +12,32 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 
 ---
 
+### TARGET 010
+
+- **target:** ATD Saudi Arabia Conference (ATD KSA, Riyadh) — organized by QnA International, organizer contact identified (general): nancy@atdksa.com — named programming contact not yet identified
+- **type:** conference (L&D / HR capability-building, AI-focused theme) + corporate certificate programs
+- **source:** https://atdksa.com/ ; https://atdksa.com/certificate-programs/ ; 2026 theme "CAPABILITY 2030: Building Saudi Capability for an AI-Powered Future"
+- **fit:** Direct hit on the L&D/HR-tech audience lane named in this skill's scope — the whole 2026 theme is AI capability-building for talent-development professionals, closer to her "use AI for real work" positioning than a generic tech-vendor AI conference. Same organizing group (QnA International) also runs ATD Middle East (Dubai, atdme.com) — worth revisiting if that event's own 2026/2027 Dubai date firms up.
+- **est_value:** pending — verify fee band against canon before pitching
+- **stage:** identified
+- **history:**
+  - 2026-10-19 — identified via /speaking-pipeline scan. Flag: the site's own pages show conflicting dates for the "2026" conference (one section references 16-20 Nov 2025 agenda detail, another references Dec 7-8) — resolve the actual 2026 conference date with the organizer before treating this as time-sensitive. Next step: find a named ATD KSA programming contact (not just the general nancy@atdksa.com inbox) and confirm which date is current.
+
+---
+
+### TARGET 009
+
+- **target:** Global AI Show Abu Dhabi 2026 (Space42 Arena) — organized by VAP Group, powered by TimeofAI — organizer contact identified (general): speaker@globalaishow.com — named programming contact not yet identified
+- **type:** conference (open call for speakers)
+- **source:** https://www.globalaishow.com/abu-dhabi/ ; https://globalaishow.com/abu-dhabi/speakers/ ; dates 18-19 Nov 2026, Space42 Arena, Abu Dhabi
+- **fit:** Active, dedicated "Become a Speaker" pathway with its own intake email (team states a 24-hour routing commitment) — a more structured CFP than most targets already in this pipeline. Abu Dhabi is in-scope per this skill's Dubai/GCC remit. Program includes a "Women in AI: Architecting the Future Talent Workforce" session, matching the warm audience-fit pattern already used for TARGET 006/008 (women-in-AI programming tracks).
+- **est_value:** pending — verify fee band against canon before pitching
+- **stage:** identified
+- **history:**
+  - 2026-10-19 — identified via /speaking-pipeline scan. Event is 30 days out from this scan date. Next step: email speaker@globalaishow.com to find a named programming contact before considering `pitch`.
+
+---
+
 ### TARGET 008
 
 - **target:** Dubai AI Festival 2026 (Dubai AI Campus / DIFC, managed by Terrapinn) — organizer contact not yet identified
@@ -74,6 +100,7 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 - **stage:** identified
 - **history:**
   - 2026-09-21 — identified via /speaking-pipeline scan. Next step: research GITEX Scale Summit or AI track organizer contact before this can move to `pitch`.
+  - 2026-10-19 — /speaking-pipeline scan: open self-serve speaker application form found (organizer DWTC) at https://mktg.gitex.com/GITEX2026SpeakerInterest, covering an "AI for Developers" track in Hall 26. Still no named individual programming contact — the form itself is the only channel. Event is Dec 7-11, 2026, ~7 weeks out; not yet time-critical.
 
 ---
 
@@ -84,11 +111,12 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 - **source:** https://informaconnect.com/hr-summit-expo/ ; https://10times.com/middle-east-summit (dates: 14-15 Oct 2026)
 - **fit:** MENA's largest HR conference (5,500+ HR professionals); prior editions feature AI/upskilling content streams. Matches the L&D/HR-tech audience lane and her practical-AI-for-teams positioning. No open call-for-speakers found — program appears curated, so this needs a named contact (Informa Connect producer) before pitching.
 - **est_value:** pending — verify fee band against canon before pitching
-- **stage:** identified
+- **stage:** dead (event passed)
 - **history:**
   - 2026-09-21 — identified via /speaking-pipeline scan. Next step: find the HRSE producer/programming contact at Informa Connect.
   - 2026-10-05 — named contact found via /speaking-pipeline scan: Natalie Diaz, Speakers and Content, Informa Connect (natalie.diaz@informa.com, +971 4 407 2601; source: informaconnect.com/hr-summit-expo/contact/). Event is 14-15 Oct 2026 — 9 days out from this scan, so this target is now pitch-eligible on contact grounds but time-critical; est_value still pending canon verification before any pitch goes out.
   - 2026-10-12 — /speaking-pipeline scan: no new information, stage unchanged. Event is now 2-3 days out — this target has sat contact-complete at `identified` for two scans (7 days) with no pitch sent. Flagged as near-expired in this scan's operator briefing; either serve a pitch immediately or mark `dead` (event-passed) at the next scan.
+  - 2026-10-19 — /speaking-pipeline scan: marked `dead` (event passed). The 14-15 Oct 2026 event has now passed with no pitch ever served across three scans (09-21, 10-05, 10-12) despite a contact-complete window of 14 days. A no is data; leaving as a flagged lesson rather than deleting.
 
 ---
 
@@ -99,11 +127,12 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 - **source:** https://sessionize.com/cognitionx-emirates-2026/ ; https://callforpaper.org/cfp/call-for-papers-cognitionx-emirates-2026 (dates: 14-15 Oct 2026)
 - **fit:** Open CFP, practical/production-AI focus (Azure AI, Copilot, M365, engineering) — squarely in her Dell/Intel/Microsoft background and the "make AI practical" positioning. Community-run, so a direct Sessionize submission may work without a named contact, but a human contact should still be found for a personalized pitch rather than a cold form submission.
 - **est_value:** pending — verify fee band against canon before pitching
-- **stage:** identified
+- **stage:** dead (event passed)
 - **history:**
   - 2026-09-21 — identified via /speaking-pipeline scan. Next step: check whether CognitionX Emirates pays speakers (community events often don't) before treating this as a Tier-5-value target.
   - 2026-10-05 — named contact found via /speaking-pipeline scan: Hazem Ali, founder/organizer, Microsoft AI MVP (reachable via LinkedIn linkedin.com/in/drhazemali; source: sessionize.com/cognitionx-emirates-2026/). Still unconfirmed whether this community event pays speakers — event is 14-15 Oct 2026, 9 days out from this scan, so time-critical if pursued.
   - 2026-10-12 — /speaking-pipeline scan: no new information, stage unchanged. Event is now 2-3 days out — this target has sat contact-complete at `identified` for two scans (7 days) with no pitch sent, and the unpaid/expenses-only question was never resolved. Flagged as near-expired in this scan's operator briefing; either serve a pitch immediately or mark `dead` (event-passed) at the next scan.
+  - 2026-10-19 — /speaking-pipeline scan: marked `dead` (event passed). The 14-15 Oct 2026 event has now passed with no pitch ever served across three scans (09-21, 10-05, 10-12); the unpaid/expenses-only question was also never resolved. A no is data; leaving as a flagged lesson rather than deleting.
 
 ---
 
