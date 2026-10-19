@@ -6,12 +6,59 @@
 
 ## Queue (next up, in order)
 
-1. UNB-029 — Delete dead `work-with-me-v3.css` (scope now v3+v4.css+v4.js, see JAN-08) *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; 18/10 check: still unanswered, 10th morning since the confrontation; ask already at floor, offer to execute myself on a ✅ still open; not re-sent, no serve-4 rule)*
-2. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 18/10 check: still unanswered, 18th morning; stale-branch count unchanged at 82, total branches now 151 (30-day cutoff))*
-3. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 18/10 check confirms still unanswered, 24th morning; now 925 commits behind main, 9th consecutive worsening)*
-4. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 18/10 check confirms still unanswered, 26 days)*
-5. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 18/10 check confirms still unanswered, 32nd morning)*
-6. UNB-031 — CognitionX yes/no only (HRSE fee parked) *(serve 3, 07/10 — gentle confrontation sent, awaiting reply; 18/10 check: both events now 3 days fully in the past — definitively missed regardless of any reply; revenue_unlocked $0; recommend next `/speaking-pipeline scan` mark TARGET 002/003 `dead`; last place in queue order; not re-sent, no serve-4 rule)*
+1. UNB-029 — Delete dead `work-with-me-v3.css` (scope now v3+v4.css+v4.js, see JAN-08) *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; 19/10 check: still unanswered, 11th morning since the confrontation; ask already at floor, offer to execute myself on a ✅ still open; not re-sent, no serve-4 rule)*
+2. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 19/10 check: still unanswered, 19th morning; stale-branch count now 83 (was 82), total branches now 176 (was 151, +25 — mostly fresh parallel-session branches, not stale growth; 30-day cutoff))*
+3. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 19/10 check confirms still unanswered, 25th morning; now 954 commits behind main (was 925), 10th consecutive worsening, largest single-day jump yet)*
+4. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 19/10 check confirms still unanswered, 27 days)*
+5. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 19/10 check confirms still unanswered, 33rd morning)*
+
+> **19/10/2026 — queue still fully stalled, tenth consecutive no-serve
+> day; UNB-031 closed out (event passed, killed).** This morning's
+> automated 04:00 GST cron run (`deploy/logs/unblocker
+> daily-2026-10-19T04-00-01.log`) again only fast-forwarded the git pull —
+> no "done" line, same silent-cron pattern as every prior day since
+> 02/10; this interactive run (operator-requested, "Run the /unblocker
+> daily skill end to end") is today's actual `/unblocker daily` execution.
+> Full re-scan: `content-vault.md` header/startup hook — vault unchanged
+> 37 READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED, Ready-shelf trio now
+> 97 days with nothing released; `git fetch --prune` + `git for-each-ref`
+> with a 2026-09-19 cutoff — **176** total branches (was 151 on 18/10,
+> +25) and **83** stale >30d (was 82, +1) — the jump is almost entirely
+> fresh parallel-session branches visible in this session's own startup
+> hook (`card-guide-skill-gate`, `prompt-gate`, `step-slash`, `review-four`,
+> plus others), not stale decay; `git -C ~/content-system-DUPLICATE
+> rev-parse HEAD` (unchanged `a2e2bc1f`) + fresh `git log
+> a2e2bc1f..origin/main` after an explicit `git fetch origin main` —
+> **954** commits behind (was 925 on 18/10), a tenth consecutive
+> worsening and the largest single-day jump yet (+29), consistent with
+> yesterday's website/workbooks Stripe build landing outside vault scope;
+> confirmed DUPLICATE's HEAD is still a clean ancestor of `origin/main`
+> (no history rewrite, the jump is real new commits); `find` for
+> `work-with-me-v3.css`/`v4.css`/`v4.js` — all three still present in
+> `main-site/assets/`, zero live references, unchanged (UNB-029's scope
+> stays three files per JAN-08); `speaking-pipeline.md` TARGET 002/003 —
+> **both now marked `dead` (event passed)** per yesterday's
+> (2026-10-19) `/speaking-pipeline` scan, closing the question this
+> ledger has flagged as inevitable since 13/10; see UNB-031's own entry
+> for the resulting status change; `ROADMAP.md`/`ACTION-PLAN-CASH-MACHINE.md`
+> mtimes unchanged since 08/07 and 19/09; `lead-magnets.csv` unchanged
+> since 21/07; `personal-brain.md` last touched 18/10 22:00 (yesterday's
+> `brain-manager` run) with nothing new ledger-eligible; a live
+> `getUpdates` call — empty, `{"ok":true,"result":[]}`, consistent with
+> `review-cockpit/state.md`'s own long empty-sweep streak; fresh `git
+> ls-remote` on queen-brain/fast-forward/agent-os-company-dashboard — all
+> three still "Repository not found". Confirms no new ledger-eligible item
+> and no completion among UNB-025/026/027/028/029. All five remaining
+> queue items are past their own serve-3 confirmation with zero reply, now
+> for a tenth straight day. Per the no-serve-4 rule and "never repeat the
+> identical message" guardrail, nothing was re-sent — **no Telegram
+> message was sent for the queue today**, extending the longest
+> fully-stalled stretch since the ledger's 06/07/2026 seed. UNB-031 is
+> closed this run (see its entry) rather than carried forward, since both
+> underlying events are now independently confirmed dead and it had
+> dropped to $0 recoverable revenue. Canon (queen-brain) remained
+> unreachable this session — no price, tier, offer status or
+> customer-facing copy was written or reconstructed.
 
 > **18/10/2026 — queue still fully stalled, ninth consecutive no-serve
 > day.** This morning's automated 04:00 GST cron run (`deploy/logs/unblocker
@@ -1631,7 +1678,8 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   yes/no, logged into `speaking-pipeline.md` TARGET 002/003 history (now
   split — see 06/10 note; CognitionX yes/no alone satisfies this entry's
   first half)
-- **status:** served · served_count: 3 · added: 2026-10-05 · pack:
+- **status:** killed (event passed, $0 recoverable) · served_count: 3 ·
+  added: 2026-10-05 · killed: 2026-10-19 · pack:
   `packs/2026-10-05-UNB-031-speaking-fee-reply.md`,
   `packs/2026-10-06-UNB-031-cognitionx-yesno-only.md`,
   `packs/2026-10-07-UNB-031-serve-3-confrontation.md`
@@ -1771,6 +1819,17 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   002/003 `dead` (event-passed). No eligible serve slot existed today
   either — did not re-send, escalated plainly in today's operator
   briefing instead.
+- **19/10/2026 closing note (interactive run):** yesterday's
+  `/speaking-pipeline` scan (2026-10-19) marked both TARGET 002
+  (CognitionX) and TARGET 003 (HRSE) `dead` (event passed) in
+  `speaking-pipeline.md`, fulfilling the standing recommendation this
+  entry has carried since 13/10. With both underlying events closed and
+  `revenue_unlocked` at $0, there is no scenario left in which serving
+  this again produces anything — closing the entry as **killed** rather
+  than carrying it forward as a queue item. No reply to the 07/10
+  confrontation was ever received; this is a fact-based close on the
+  external deadline, not an operator decision. Nothing was served or
+  re-sent for this entry today.
 
 ---
 
@@ -1792,3 +1851,9 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
 ## Killed
 
 *(deliberate no's live here; a decision is a ship too)*
+
+- **UNB-031** — CognitionX/HRSE speaking pitches. Both underlying events
+  (14-15 Oct 2026) passed with zero pitch ever sent across three serves;
+  closed 19/10/2026 once `/speaking-pipeline`'s 19/10 scan independently
+  marked TARGET 002/003 `dead` — see its entry above for the full
+  11-follow-up history.
