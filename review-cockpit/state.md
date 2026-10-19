@@ -7,36 +7,79 @@ digest run overwrites it.
 ## Telegram offset
 
 - Last `getUpdates` consumed offset: still none pending — checked again
-  on 18/10/2026 (operator-requested `digest` run, pre-digest sweep), queue
+  on 19/10/2026 (operator-requested `digest` run, pre-digest sweep), queue
   empty (`{"ok":true,"result":[]}`). No card replies, no unblocker
-  replies, no voice notes since the 14/09/2026 digest (91st consecutive
+  replies, no voice notes since the 14/09/2026 digest (94th consecutive
   empty sweep).
 - Next `process` run should call `getUpdates` with no offset filter until a
   reply produces an `update_id` to anchor to.
 
-## Current digest card mapping (18/10/2026)
+## Current digest card mapping (19/10/2026)
 
 | Card | Vault entry | Telegram msg_id | Platform | Pillar | Critic | Notes |
 |---|---|---|---|---|---|---|
-| #1 | ENTRY 099 | 1448 | Instagram (carousel) | Use AI for real work | pending | reflective question, no offer |
-| #2 | ENTRY 098 | 1449 | LinkedIn (text post) | Find what is uniquely yours | pending | reflective question, no offer — flags "builder-and-watchdog" framing for explicit yes/no |
-| #3 | ENTRY 097 | 1450 | Instagram / LinkedIn (text post) | Use AI for real work | pending | reflective question, no offer — overlaps #2's theme |
-| #4 | ENTRY 096 | 1451 | Instagram Reel (~40s) | Find what is uniquely yours | pending | reflective question, no offer — needs timing check |
-| #5 | ENTRY 095 | 1452 | LinkedIn | Real Talk | pending | discussion (no keyword) |
-| #6 | ENTRY 094 | 1453 | LinkedIn | Build Once, Runs Forever | 7.2 | community tease — CTA-BLOCKED (VERIFY + PREP) |
-| R1 | ENTRY 047 | 1454 | LinkedIn | What's Worth It | n/a | WORDS (live) — READY since 14/07/2026 (96d) |
-| R2 | ENTRY 048 | 1455 | X/Twitter thread | The Freedom Business | n/a | TEAM (live) — READY since 14/07/2026 (96d) |
-| R3 | ENTRY 049 | 1456 | Short-form video | Build Once, Runs Forever | n/a | TEAM (live) — READY since 14/07/2026 (96d) |
+| #1 | ENTRY 099 | 1461 | Instagram (carousel) | Use AI for real work | pending | reflective question, no offer |
+| #2 | ENTRY 098 | 1462 | LinkedIn (text post) | Find what is uniquely yours | pending | reflective question, no offer — flags "builder-and-watchdog" framing for explicit yes/no |
+| #3 | ENTRY 097 | 1463 | Instagram / LinkedIn (text post) | Use AI for real work | pending | reflective question, no offer — overlaps #2's theme |
+| #4 | ENTRY 096 | 1464 | Instagram Reel (~40s) | Find what is uniquely yours | pending | reflective question, no offer — needs timing check |
+| #5 | ENTRY 095 | 1465 | LinkedIn | Real Talk | pending | discussion (no keyword) |
+| #6 | ENTRY 094 | 1466 | LinkedIn | Build Once, Runs Forever | 7.2 | community tease — CTA-BLOCKED (VERIFY + PREP) |
+| R1 | ENTRY 047 | 1467 | LinkedIn | What's Worth It | n/a | WORDS (live) — READY since 14/07/2026 (97d) |
+| R2 | ENTRY 048 | 1468 | X/Twitter thread | The Freedom Business | n/a | TEAM (live) — READY since 14/07/2026 (97d) |
+| R3 | ENTRY 049 | 1469 | Short-form video | Build Once, Runs Forever | n/a | TEAM (live) — READY since 14/07/2026 (97d) |
 
-Header message_id: 1447. Footer message_id: 1457.
+Header message_id: 1460. Footer message_id: 1470.
 
-Previous digest (17/10/2026, header 1434, #1–#6 1435–1440, R1–R3 1441–1443,
-footer 1444) went fully unanswered across both its process sweeps; superseded
+Previous digest (18/10/2026, header 1447, #1–#6 1448–1453, R1–R3 1454–1456,
+footer 1457) went fully unanswered across both its process sweeps; superseded
 by this run's cards.
 
 (Prior header/footer pairs had no offset recorded since no reply has ever anchored one.)
 
 ## Process sweeps log
+
+- **19/10/2026 — pre-digest sweep (operator-requested `digest` run, run
+  end-to-end per operator request via `/review-cockpit digest`, obeying
+  `CLAUDE.md` and `security.md`; skill not registered via the Skill tool
+  this session, so `SKILL.md` was read and followed manually per the
+  `project-skills-not-registered` memory; Telegram auth followed the
+  `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, length-checked only via `${#VAR}`, never printed,
+  never sourced from `deploy/.env`).** Note: today's 03:30 GST cron
+  (`deploy/logs/review-cockpit digest-2026-10-19T03-30-02.log`) only did a
+  git fetch/fast-forward check — no actual digest sweep, same recurring
+  pattern as prior days; this interactive run is the real digest for
+  today. `getUpdates` (no offset, none stored) returned empty
+  (`{"ok":true,"result":[]}`) — 94th consecutive empty sweep since the
+  14/09/2026 digest restart. Nothing to route: no card decisions, no
+  unblocker replies, no voice notes; yesterday's digest (header 1447,
+  #1–#6 1448–1453, R1–R3 1454–1456, footer 1457) and both of its process
+  sweeps went fully unanswered. Vault counts reconfirmed directly from
+  `content-vault.md`'s `^## ENTRY` header-line status suffixes: 37 READY
+  TO POST / 33 DRAFT / 6 STALE / 2 KILLED (78 entries total) — matches
+  this session's startup reality-check hook exactly. Confirmed newest
+  DRAFT set unchanged (099/098/097/096/095/094) and Ready-shelf trio
+  unchanged (047/048/049, now 97 days READY). `lead-magnets.csv`
+  reconfirmed: WORDS and TEAM both `active=yes` — no CTA-BLOCKED needed
+  for R1–R3; ENTRY 094 (#6) stays CTA-BLOCKED on its own pre-existing
+  VERIFY+PREP flags. `unblocker/ledger.md` tail checked — no new entries
+  dated 19/10; today's weekly-ops run (commit be28bc03) routed its six
+  open queue items directly to the operator through that skill's own
+  channel, not through review-cockpit. `decisions-log.md` tail checked,
+  unchanged (last entries are the 14/07 exit-story kills). Nothing
+  applied to the vault. Canon (queen-brain) NOT reachable this session per
+  the startup reality-check — no price, tier, offer status or
+  customer-facing copy was written or touched; card summaries describe
+  existing draft/ready vault content only. Digest send followed
+  immediately (header message_id 1460, cards 1461–1466, Ready-shelf cards
+  R1–R3 1467–1469, footer message_id 1470; no separate confirmation line —
+  the digest send itself is this run's output per skill step 3). Footer
+  carried the queue-state line: 37 READY TO POST / 0 SCHEDULED (latest
+  `reports/distribution-*.md` is still 20/07/2026 — 91 days stale, none
+  since), 97 days since the oldest ready item (ENTRY 047, 14/07/2026) was
+  approved with nothing released. Publishing stayed queue-only throughout
+  (`security.md` §3.1, `CLAUDE.md`) — no post released, no Blotato queue
+  touched.
 
 - **18/10/2026, second interactive sweep today (operator-requested
   `process` run, new session, run end-to-end per operator request via
