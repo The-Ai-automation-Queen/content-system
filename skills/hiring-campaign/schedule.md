@@ -50,6 +50,9 @@ real files in agent-os-company-dashboard/company/departments/.
 | 041 | Rayan | Call Prep | deals/deals-call-prep.md | PLAYBOOK | announced, playbook live 12/10/2026 | 2026-W42 |
 | 042 | Samar | Tax Deadline Tracker | backoffice/backoffice-tax-deadline-tracker.md | PLAYBOOK | announced, playbook live 12/10/2026 | 2026-W42 |
 | 043 | Hiba | Check-In Writer | customer/customer-check-in-writer.md | PLAYBOOK | announced, playbook live 12/10/2026 | 2026-W42 |
+| 044 | Nizar | No-Show Rebooker | sales/sales-no-show-rebooker.md | PLAYBOOK | announced, playbook live 19/10/2026 | 2026-W43 |
+| 045 | Mariam | Action Item Tracker | operations/operations-action-item-tracker.md | PLAYBOOK | announced, playbook live 19/10/2026 | 2026-W43 |
+| 046 | Souad | Question Collector | marketing/marketing-question-collector.md | PLAYBOOK | announced, playbook live 19/10/2026 | 2026-W43 |
 
 Beyond #016: the campaign run picks the next 3 most audience-relevant
 roles from the departments roster (3 different departments per wave) and

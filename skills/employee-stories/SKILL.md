@@ -203,6 +203,9 @@ permanent. Assigned so far:
 | 041 | Rayan | Call Prep (interviewing) | Deals |
 | 042 | Samar | Tax Deadline Tracker (interviewing) | Back Office |
 | 043 | Hiba | Check-In Writer (interviewing) | Customer |
+| 044 | Nizar | No-Show Rebooker (interviewing) | Sales |
+| 045 | Mariam | Action Item Tracker (interviewing) | Operations |
+| 046 | Souad | Question Collector (interviewing) | Marketing |
 
 New names: short, warm, easy to say in English and French, no name
 reuse, never the name of a real client or contact. Log new assignments

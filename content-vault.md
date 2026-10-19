@@ -13,6 +13,14 @@
 
 ## Most recent (quick reference)
 
+- 19/10/2026 | LinkedIn carousel | "You've Been Asked the Same Question Five Times This Month and Never Once Turned It Into a Post" — Souad, Question Collector, Employee #046 | READY TO POST
+- 19/10/2026 | LinkedIn | "You've Been Asked the Same Question Five Times This Month and Never Once Turned It Into a Post" — Souad, Question Collector, Employee #046 | READY TO POST
+- 19/10/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Nizar/Mariam/Souad | READY TO POST
+- 19/10/2026 | LinkedIn carousel | "You Had a Great Meeting Last Week and Can't Actually Name What Anyone Agreed to Do" — Mariam, Action Item Tracker, Employee #045 | READY TO POST
+- 19/10/2026 | LinkedIn | "You Had a Great Meeting Last Week and Can't Actually Name What Anyone Agreed to Do" — Mariam, Action Item Tracker, Employee #045 | READY TO POST
+- 19/10/2026 | LinkedIn | "Now Hiring: Three More AI Employees, Salary $0 Each" — wave announcement, Employees #44/#45/#46 | READY TO POST
+- 19/10/2026 | LinkedIn carousel | "A Prospect No-Showed Your Call Two Weeks Ago and You Still Haven't Reached Back Out" — Nizar, No-Show Rebooker, Employee #044 | READY TO POST
+- 19/10/2026 | LinkedIn | "A Prospect No-Showed Your Call Two Weeks Ago and You Still Haven't Reached Back Out" — Nizar, No-Show Rebooker, Employee #044 | READY TO POST
 - 12/10/2026 | LinkedIn carousel | "You Only Reach Out to a Client When Something's Wrong, and You Know It's Starting to Feel That Way to Them Too" — Hiba, Check-In Writer, Employee #043 | READY TO POST
 - 12/10/2026 | LinkedIn | "You Only Reach Out to a Client When Something's Wrong, and You Know It's Starting to Feel That Way to Them Too" — Hiba, Check-In Writer, Employee #043 | READY TO POST
 - 12/10/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Rayan/Samar/Hiba | READY TO POST
@@ -140,6 +148,259 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 206 — 19/10/2026 | LinkedIn carousel | You've Been Asked the Same Question Five Times This Month and Never Once Turned It Into a Post | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 205 (Souad, Employee #046, Question Collector, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/souad/souad-question-collector-01.png through -06.png
+Source HTML: skills/carousel-factory/out/souad-question-collector.html
+**CTA keyword:** QUESTIONS, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You've been asked the same question five times this month and never once turned it into a post."
+Slide 2 (scene): "Each time it lands in a DM or a comment, you answer it, move on, and forget it was ever asked. The content idea was sitting right there the whole time."
+Slide 3 (role card): Souad, Question Collector, Marketing, Salary $0, never sleeps. "Souad is AI. The only job she took was mine: noticing the question I'd already been asked five times and never written down."
+Slide 4 (how she works): 4-step list, give her the questions, she groups the repeats, turns each into a content idea, you write from it.
+Slide 5 (demo): "Built and tested grouping one real batch of questions into content ideas. Setup about 10 minutes. She never posts anything or invents a question."
+Slide 6 (CTA): "Want the free setup? Comment QUESTIONS."
+
+---
+
+## ENTRY 205 — 19/10/2026 | LinkedIn | You've Been Asked the Same Question Five Times This Month and Never Once Turned It Into a Post | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Thursday episode 3)
+**Topic:** Employee #046, Souad, Question Collector. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/question-collector-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard is not in this session's container this run (confirmed via directory check: only content-system present). Role summary taken from the schedule.md departments-roster convention and the felt-pain lens per the "beyond #016" rule. Source gap logged honestly rather than fabricating a dashboard read. Fifth employee from the Marketing department (after Yasmine/Content Repurposer, Reem/Social Calendar, Wael/Case Study Writer, Imad/Launch Announcer), a distinct angle: turning audience questions into content ideas, not repurposing old content, planning a calendar, writing up a past win, or announcing a launch. Mode check: no receipt found anywhere for Souad. Confirmed PLAYBOOK.
+
+---
+You've been asked the same question five times this month and never once turned it into a post.
+
+Each time it lands in a DM or a comment, you answer it, move on, and forget it was ever asked. The content idea was sitting right there the whole time.
+
+Meet Employee #046.
+
+Souad. Question Collector. Marketing.
+Salary: $0. Never sleeps.
+
+Souad is AI. The only job she took was mine: noticing the question I'd already been asked five times and never written down.
+
+How she works:
+1. You give her the questions you've been asked: in comments, DMs, calls, emails.
+2. She groups the repeats so you see the pattern.
+3. She turns each group into one content idea, titled and ready to write.
+4. You review the list and write from it yourself.
+
+The demo: built and tested grouping one real batch of questions into content ideas with one AI tool. Setup time, about 10 minutes. She never posts anything, and never invents a question nobody actually asked.
+
+Red line: every idea traces to a real question, a short honest list beats a padded invented one.
+
+Your first win, free, today: pull five to ten questions you've actually been asked recently and paste them into one place. That's Souad's first batch.
+
+Comment QUESTIONS and I'll send you the full setup, free.
+
+#AIemployees #The99 #MarketingOps
+
+---
+
+## ENTRY 204 — 19/10/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** Talking-head reel (30-45s), captions required
+**Format:** Week's wave reel (Wednesday slot), three role-card cutaways + one screenshot cutaway
+**Topic:** Compresses all 3 of this week's hires (Nizar, Mariam, Souad) into one 45-second reel, per the hiring-campaign weekly slot map.
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur the client name and meeting owner names on the action-list screenshot).
+**Source:** Assembled from ENTRY 199/202/205's role-card lines. No new claims.
+
+---
+[0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
+
+[0:03-0:12] Role card cutaway 1, Nizar: "Nizar sends the rebook message before a no-show turns into a dead lead."
+
+[0:12-0:21] Role card cutaway 2, Mariam: "Mariam writes down what the meeting actually agreed before everyone forgets."
+
+[0:21-0:30] Role card cutaway 3, Souad: "Souad turns the question I keep getting asked into my next post."
+
+[0:30-0:38] Screenshot cutaway: Mariam's action list, real setup, client name and owner names blurred (redaction modeled).
+
+[0:38-0:45] Closing line, spoken + on-screen: "None of them act without me. Comment TEAM and I'll send you how to hire your first one."
+
+---
+
+## ENTRY 203 — 19/10/2026 | LinkedIn carousel | You Had a Great Meeting Last Week and Can't Actually Name What Anyone Agreed to Do | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 202 (Mariam, Employee #045, Action Item Tracker, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/mariam/mariam-action-item-tracker-01.png through -06.png
+Source HTML: skills/carousel-factory/out/mariam-action-item-tracker.html
+**CTA keyword:** ACTION, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You had a great meeting last week and can't actually name what anyone agreed to do."
+Slide 2 (scene): "Everyone nodded, the call ended on a good note, and a week later nobody can point to a single task that actually got written down."
+Slide 3 (role card): Mariam, Action Item Tracker, Operations, Salary $0, never sleeps. "Mariam is AI. The only job she took was mine: writing down what the meeting actually agreed before everyone forgot."
+Slide 4 (how she works): 4-step list, tell her what was agreed, she writes one action list, flags unowned items, you review and send.
+Slide 5 (demo): "Built and tested writing one real action list from one real meeting. Setup about 10 minutes. She never assigns a task or invents an agreement."
+Slide 6 (CTA): "Want the free setup? Comment ACTION."
+
+---
+
+## ENTRY 202 — 19/10/2026 | LinkedIn | You Had a Great Meeting Last Week and Can't Actually Name What Anyone Agreed to Do | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Wednesday episode 2)
+**Topic:** Employee #045, Mariam, Action Item Tracker. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/action-item-tracker-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard is not in this session's container this run (confirmed via directory check). Role summary taken from the schedule.md departments-roster convention and the felt-pain lens per the "beyond #016" rule. Source gap logged honestly rather than fabricating a dashboard read. Seventh employee from the Operations department (after Nadia, Lina, Idris/SOP writer, Salma/client onboarding, Layla/time digest, Fadi/status updates, Nabil/handoff writer), a distinct angle: turning a meeting's loose agreements into an owned list immediately after, not recurring comms, scheduling, onboarding, SOPs, time tracking, or a pre-absence handoff. Mode check: no receipt found anywhere for Mariam. Confirmed PLAYBOOK.
+
+---
+You had a great meeting last week and can't actually name what anyone agreed to do.
+
+Everyone nodded, the call ended on a good note, and a week later nobody can point to a single task that actually got written down.
+
+Meet Employee #045.
+
+Mariam. Action Item Tracker. Operations.
+Salary: $0. Never sleeps.
+
+Mariam is AI. The only job she took was mine: writing down what the meeting actually agreed before everyone forgot.
+
+How she works:
+1. You tell her what was agreed in the meeting: who said they'd do what.
+2. She writes one clean action list: task, owner, rough timing.
+3. She flags anything with no clear owner.
+4. You review it and send it yourself.
+
+The demo: built and tested writing one real action list from one real meeting with one AI tool. Setup time, about 10 minutes. She never assigns anything, and never invents an agreement, an owner, or a deadline that wasn't actually discussed.
+
+Red line: if it wasn't actually agreed, it doesn't go on the list, a short honest list beats a padded invented one.
+
+Your first win, free, today: right after your next meeting, write down every task that came up and who said they'd handle it. That's Mariam's first list.
+
+Comment ACTION and I'll send you the full setup, free.
+
+#AIemployees #The99 #OperationsOps
+
+---
+
+## ENTRY 201 — 19/10/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Hiring-post ritual (job-ad parody), Monday wave announcement
+**Topic:** Introduces this wave's 3 openings (Employees #044, #045, #046).
+**Pattern used:** Job-ad parody + serial-cliffhanger opener
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — value-first series opener, comment-keyword capture, no promo.
+**Source:** schedule.md had no remaining "planned" rows this wave (confirmed via full read at wave start); three picks made per the "beyond #016" rule from the departments roster, Sales, Operations, Marketing, 3 distinct, none reused from last wave (Deals, Back Office, Customer). A full department-usage recount across all thirteen prior "beyond #016" waves showed Back Office, Deals, and Customer now at 4 prior hires each (most used), with Operations, Intelligence, Sales, and Marketing tied at 3 each. Sales was the single least-recently-used of that group (last hired W40, older than Operations/Intelligence/Marketing's W41); Operations and Marketing were picked over Intelligence to fill the remaining two slots, leaving Intelligence as next wave's most-overdue pick. agent-os-company-dashboard is not in this session's container this run (confirmed via directory check); role descriptions below are drawn from the felt-pain lens, not a dashboard read, and that gap is logged here rather than fabricated.
+
+---
+Now hiring. Three more AI employees. Salary: $0 each.
+
+Employee #044: No-Show Rebooker.
+Writes the rebooking message the same day a prospect misses a call.
+
+Employee #045: Action Item Tracker.
+Turns a meeting's loose agreements into a clean, owned action list.
+
+Employee #046: Question Collector.
+Groups the questions you keep getting asked into ready content ideas.
+
+None of them sleep. None of them ask for a raise. None of them act without me seeing it first.
+
+That is Employee #44, #45, and #46 of 99. The full team, hired one at a time, in public.
+
+See who is already on the floor. The scoreboard is live, updated only when there is a real receipt to show.
+
+Want to build your own first hire? Comment TEAM and I will send you the free 5-step framework.
+
+#AIemployees #Solopreneur #The99
+
+---
+
+## ENTRY 200 — 19/10/2026 | LinkedIn carousel | A Prospect No-Showed Your Call Two Weeks Ago and You Still Haven't Reached Back Out | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 199 (Nizar, Employee #044, No-Show Rebooker, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/nizar/nizar-no-show-rebooker-01.png through -06.png
+Source HTML: skills/carousel-factory/out/nizar-no-show-rebooker.html
+**CTA keyword:** REBOOK, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "A prospect no-showed your call two weeks ago and you still haven't reached back out."
+Slide 2 (scene): "It felt awkward the day it happened, so you let it sit. Two weeks later it feels even more awkward, and the lead has gone quiet for good."
+Slide 3 (role card): Nizar, No-Show Rebooker, Sales, Salary $0, never sleeps. "Nizar is AI. The only job he took was mine: sending the rebook message before the lead went cold from silence."
+Slide 4 (how he works): 4-step list, tell him who no-showed, he writes one no-blame message, suggests a time, you review and send.
+Slide 5 (demo): "Built and tested rebooking one real no-show. Setup about 10 minutes. He never sends anything or invents a reason for the miss."
+Slide 6 (CTA): "Want the free setup? Comment REBOOK."
+
+---
+
+## ENTRY 199 — 19/10/2026 | LinkedIn | A Prospect No-Showed Your Call Two Weeks Ago and You Still Haven't Reached Back Out | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Tuesday episode 1)
+**Topic:** Employee #044, Nizar, No-Show Rebooker. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/no-show-rebooker-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard is not in this session's container this run (confirmed via directory check). Role summary taken from the schedule.md departments-roster convention and the felt-pain lens per the "beyond #016" rule. Source gap logged honestly rather than fabricating a dashboard read. Fifth employee from the Sales department (after Nassim/Reactivation Writer, Samir/Follow-Up Nudger, Mona/Lead Scorer, Marwan/Referral Asker), a distinct angle: rebooking a specific missed call, not reviving cold leads generally, nudging unanswered messages, scoring a pile of leads, or asking for referrals. Mode check: no receipt found anywhere for Nizar. Confirmed PLAYBOOK.
+
+---
+A prospect no-showed your call two weeks ago and you still haven't reached back out.
+
+It felt awkward the day it happened, so you let it sit. Two weeks later it feels even more awkward, and the lead has gone quiet for good.
+
+Meet Employee #044.
+
+Nizar. No-Show Rebooker. Sales.
+Salary: $0. Never sleeps.
+
+Nizar is AI. The only job he took was mine: sending the rebook message before the lead went cold from silence.
+
+How he works:
+1. You tell him who no-showed and what the call was about.
+2. He writes one short, no-blame rebooking message.
+3. He suggests a time window to offer, based on what you tell him.
+4. You review it and send it yourself.
+
+The demo: built and tested rebooking one real no-show with one AI tool. Setup time, about 10 minutes. He never sends anything, and never invents a reason, an apology on the prospect's behalf, or a guilt-trip line.
+
+Red line: no blame, ever, a short neutral rebook beats a passive-aggressive one every time.
+
+Your first win, free, today: write down who missed your last call and two or three times you could offer instead. That's Nizar's first rebook.
+
+Comment REBOOK and I'll send you the full setup, free.
+
+#AIemployees #The99 #SalesOps
 
 ---
 
