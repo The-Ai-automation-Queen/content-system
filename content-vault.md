@@ -21,6 +21,55 @@
 
 ## Most recent (quick reference)
 
+> **19/10/2026 content-engine daily run — no new entries produced (deliberate):**
+> Run end to end per explicit operator instruction ("Run the /content-engine
+> daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
+> queue-only — never post instantly. End with the operator briefing.");
+> `skills/content-engine/SKILL.md` not registered via the Skill tool this
+> session, so read and followed manually per the
+> `project-skills-not-registered` memory. Loaded `AGENTS.md`,
+> `CURRENT-WORKFLOW.md`, `context/current-context.json` and `security.md`
+> first, as both CLAUDE.md and the skill require.
+>
+> This session's own signal-harvester already ran today, interactively
+> (`reports/signal-harvest-2026-10-19.md`, committed `6145e490`), one day
+> after the 10/18 run, and logged 4 fresh, qualifying findings: 3 shift-lead
+> (Meta/YouGov APAC small-business survey, n=3,983, on the productivity-
+> vs-guidance gap; Homebase Main Street AI Gap Report on the 54%/81%
+> revenue-tier adoption split; WSU Vancouver Occupational Health Science
+> study on AI-replacement fear driving moral disengagement) and 1
+> internal-research (SIx Harness agent-memory reliability telemetry,
+> deliberately chosen over a 4th consecutive benchmark-integrity paper per
+> the 10/18 report's own flag against repeating that angle). None is yet a
+> numbered `RESEARCH` entry in `research-notes.md` (latest is still RESEARCH
+> 067, 2026-10-17) — the same split-ledger gap flagged on prior runs,
+> signal-harvester's backfill step, not content-engine's. Separately, that
+> commit flags tonight's scheduled 22:00 signal-harvester cron attempt
+> stopped after `git fetch` with no report, commit or error — an operator
+> infrastructure question, noted here for visibility only.
+>
+> Both standing blockers reconfirmed independently this session, fresh
+> signal notwithstanding: (1) this session's reality-check hook again states
+> canon: queen-brain NOT in this session — today's `brain-manager` run
+> (`8d3a5d07`) independently confirms the 22nd consecutive blocked day (403
+> over HTTPS, repository-not-found over SSH, no Notion connector, no `gh`
+> CLI) — and explicitly forbids writing price, tier, offer status or
+> customer-facing copy reconstructed from this repo's local mirror copies;
+> content-engine's entire output *is* customer-facing copy, so drafting
+> stays blocked regardless of available research, however strong; (2) the
+> release backlog is unchanged: vault still holds 37 READY TO POST (oldest
+> since 14/07/2026, 97 days), 33 DRAFT, 6 STALE, 2 KILLED, 0 POSTED (78
+> total `## ENTRY` headers — matching this session's startup reality-check
+> hook exactly), `review-cockpit/decisions-log.md`'s last entry is still
+> 14/07/2026 — no operator replies, approvals or kills since then — and
+> `review-cockpit/state.md` logs a 96th consecutive empty Telegram
+> `getUpdates` sweep as of today's second interactive sweep, with the
+> Ready-shelf cards (047/048/049) unchanged at 97 days served with no
+> release. Adding more DRAFT volume today would only crowd an already-
+> unreleased backlog that isn't being read. Operator briefing given in this
+> session's chat, same two open options as every run since 18/09/2026, still
+> unanswered.
+
 > **18/10/2026 content-engine daily run — no new entries produced (deliberate):**
 > Run end to end per explicit operator instruction ("Run the /content-engine
 > daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
