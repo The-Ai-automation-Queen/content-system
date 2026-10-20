@@ -21,6 +21,47 @@
 
 ## Most recent (quick reference)
 
+> **20/10/2026 content-engine daily run — no new entries produced (deliberate):**
+> Run end to end per explicit operator instruction ("Run the /content-engine
+> daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
+> queue-only — never post instantly. End with the operator briefing.");
+> `skills/content-engine/SKILL.md` not registered via the Skill tool this
+> session, so read and followed manually per the
+> `project-skills-not-registered` memory. Loaded `AGENTS.md`,
+> `CURRENT-WORKFLOW.md`, `context/current-context.json` and `security.md`
+> first, as both CLAUDE.md and the skill require.
+>
+> Both standing blockers independently reconfirmed this session rather than
+> trusted from memory: (1) canon — this session's startup hook already
+> states `queen-brain NOT in this session`; re-verified directly with
+> `git ls-remote` over HTTPS (403, "Write access to repository not granted")
+> and SSH ("Repository not found"), and no `gh` CLI is present — the 23rd
+> consecutive blocked day, matching today's earlier `brain-manager` run
+> (`3e7b8499`). content-engine's output is customer-facing copy, so drafting
+> stays forbidden regardless of available research; (2) release backlog —
+> `content-vault.md` reconfirmed directly by counting `## ENTRY` status
+> suffixes: 37 READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED / 0 POSTED (78
+> total headers, matching the startup hook exactly). Oldest ready items
+> (ENTRY 047/048/049, all dated 14/07/2026) have now sat **98 days**.
+> `review-cockpit/decisions-log.md` is unchanged since 14/07/2026 — no
+> operator replies, approvals or kills since then.
+>
+> This session's own signal-harvester already ran earlier today
+> (`reports/signal-harvest-2026-10-20.md`, logged as RESEARCH 068 in
+> `research-notes.md`) and found no new qualifying shift-lead signal (7
+> candidates named and rejected) plus one internal-research find (Jarmak
+> coding-agent-reliability monograph, arXiv:2608.13867, distinct from the
+> standing memory-reliability and eval-integrity threads). Fresh research
+> notwithstanding, the canon block makes the point moot for drafting today.
+> That same run also flagged tonight's scheduled 22:00 signal-harvester cron
+> stopping silently after `git fetch` with no output — an operator
+> infrastructure question, not something content-engine fixes, noted here
+> for visibility only.
+>
+> No new entries produced. Queue-only publishing held throughout — no
+> customer-facing copy was drafted, queued or scheduled. Same two open
+> options as every run since 18/09/2026, still unanswered by the operator.
+
 > **19/10/2026 content-engine daily run — no new entries produced (deliberate):**
 > Run end to end per explicit operator instruction ("Run the /content-engine
 > daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
