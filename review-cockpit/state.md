@@ -38,6 +38,38 @@ by this run's cards.
 
 ## Process sweeps log
 
+- **20/10/2026, second interactive sweep today (operator-requested
+  `process` run, run end-to-end per operator request via `/review-cockpit
+  process`, obeying `CLAUDE.md` and `security.md`; skill not registered via
+  the Skill tool this session, so `SKILL.md` was read and followed manually
+  per the `project-skills-not-registered` memory; Telegram auth followed
+  the `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, length-checked only via `${#VAR}` in its own turn
+  before touching any other command, never printed, never sourced from
+  `deploy/.env`).** This is the sweep after the prior interactive sweep
+  logged below (message_id 1484, 98th consecutive empty). `getUpdates` (no
+  offset, none stored) returned empty (`{"ok":true,"result":[]}`) — 99th
+  consecutive empty sweep since the 14/09/2026 digest restart. Nothing to
+  route: no card decisions, no unblocker replies, no voice notes; all 9
+  cards from this morning's digest (header 1473, #1–#6 1474–1479, R1–R3
+  1480–1482, footer 1483) remain outstanding. Vault reconfirmed directly
+  from `content-vault.md`'s `^## ENTRY` header-line status suffixes: 37
+  READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED (78 entries total) —
+  matches this session's startup reality-check hook exactly. `lead-magnets.csv`
+  reconfirmed: WORDS and TEAM both `active=yes` — no CTA-BLOCKED needed for
+  R1–R3; ENTRY 094 (#6) keeps its own pre-existing VERIFY+PREP flags.
+  `unblocker/ledger.md` tail checked — unchanged, still closes at UNB-031
+  (19/10/2026); not a review-cockpit reply, not touched here.
+  `decisions-log.md` tail checked, unchanged (last entries are the 14/07
+  exit-story kills). Nothing applied to the vault. Publishing stayed
+  queue-only throughout (`security.md` §3.1, `CLAUDE.md`) — no post
+  released, no Blotato queue touched. Canon (queen-brain) NOT reachable
+  this session per the startup reality-check — no price, tier, offer
+  status or customer-facing copy was written or touched. Confirmation sent
+  to Telegram (message_id 1485): "Process sweep (20/10, interactive #2):
+  inbox empty — nothing to route, nothing changed in the vault. 9 cards
+  from this morning's digest (#1–#6, R1–R3) still waiting on you."
+
 - **20/10/2026, interactive sweep (operator-requested `process` run, run
   end-to-end per operator request via `/review-cockpit process`, obeying
   `CLAUDE.md` and `security.md`; skill not registered via the Skill tool
