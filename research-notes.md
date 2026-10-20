@@ -2,6 +2,37 @@
 
 ---
 
+## RESEARCH 068 — 2026-10-20 | Signal harvest (current audience problem) — no new shift-lead signal; one internal-research find
+
+**Status:** NOTED
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `50e62a87`; source (queen-brain) commit not reconstructed this session — per this session's own reality-check ("canon: queen-brain NOT in this session"), not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Internal tooling discoveries this run:** one — an arXiv coding-agent-reliability monograph (see below), logged as internal-research only, not for public content.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only source authority, methodology and recency were weighed.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` for both before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current harvest shape.
+**Gap since last run:** last numbered entry was RESEARCH 067 (2026-10-17) — a 3-day gap. Checked the intervening dated `signal-harvest-*.md` reports: 2026-10-18 and 2026-10-19 both exist and cover that gap at the report level; this is the first `research-notes.md`-numbered entry since 067. Today's own scheduled `deploy/logs/signal-harvester-2026-10-20T22-00-02.log` again stopped after the git-fetch step with no harvest output — same unattended-cron gap pattern flagged since RESEARCH 057.
+
+### No new shift-lead signal logged this run
+
+A full sweep (all 6 `inventory.md` feeds plus targeted `WebSearch` on all three pillars) found nothing that clears the bar as a genuinely new, dated, primary-sourced, audience-fit signal beyond what RESEARCH 044–067 and the dated `signal-harvest-*.md` reports already have on file. Per `research-policy.md`, a gap is logged as a gap rather than filled with a weaker source. Full detail, including seven named-and-rejected candidates (NBER patent-drafting RCT — already RESEARCH 051; Henley Business School overwhelm tracker — already checked and rejected; CSC restructuring survey — wrong population; seresa.io blended-survey aggregator; getaibrief.com stale aggregator; MBO Partners via theusefuldaily.com — stale primary source; Hostinger solo-founder survey — already logged in a prior report; Forbes/Rahul Dogra — third consecutive HTTP 403), is in `reports/signal-harvest-2026-10-20.md`.
+
+### Internal-research finding this run
+
+**Stephanie Jarmak, "Engineering Reliable Coding Agents: Evaluating and Operating the System Around the Model"** (arXiv:2608.13867, submitted 2026-08-14) — single-author monograph synthesizing 164 scholarly works, 100 practitioner records, 29 benchmark records and 17 author-run case studies into a 206-item reliability catalog, concluding many apparent "model failures" actually originate in the harness, retrieval, state management, permissions or observability layers around the model. Directly relevant to this repository's own agent-run pipeline (e.g. diagnosing today's silent cron failure as a harness/observability question before assuming a model problem). Full detail and caveats in `reports/signal-harvest-2026-10-20.md`.
+
+### Source health this run
+
+- Anthropic News, Hugging Face Blog, Google DeepMind blog, a16z AI, Lenny's Newsletter: all `WebFetch`-reachable; none surfaced an audience-problem fit (model-release/policy/ML-engineering/infra/VC/PM-startup content), same non-fit pattern as every run since RESEARCH 050.
+- OpenAI Blog: still HTTP 403 — now well past 24 consecutive failed runs (044 through 068). Standing recommendation unchanged: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Forbes (Rahul Dogra, 2026-10-14 solopreneur piece): retried direct `WebFetch`, still HTTP 403 — third consecutive failed run (2026-10-14, 2026-10-17, 2026-10-20).
+- `WebSearch`/`WebFetch` both functional throughout otherwise; no signal was logged on an unverified `WebSearch` paraphrase alone — every candidate was either directly `WebFetch`-confirmed or rejected for failing to confirm.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 067 — 2026-10-17 | Signal harvest (current audience problem) — no new qualifying signal
 
 **Status:** NOTED
