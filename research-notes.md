@@ -2,6 +2,42 @@
 
 ---
 
+## RESEARCH 069 — 2026-10-21 | Signal harvest (current audience problem) — 2 new shift-lead signals, both pillar 2; no new internal-research find
+
+**Status:** NOTED
+**Report:** [reports/signal-harvest-2026-10-21.md](reports/signal-harvest-2026-10-21.md)
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `250b09bc`; source (queen-brain) commit not reconstructed this session — per this session's own reality-check ("canon: queen-brain NOT in this session"), not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current harvest shape.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only study design, source authority and recency were weighed.
+
+### Two new shift-lead signals, both pillar 2 — "protect what's uniquely yours"
+
+**S1 — RCT (N=1,222): AI assistance boosts immediate performance but reduces persistence and hurts independent problem-solving once removed.** Grace Liu, Brian Christian, Tsvetomira Dumbalska, Michiel A. Bakker, Rachit Dubey (CMU/UC Berkeley CHCAI/MIT/Oxford/UCLA), "AI Assistance Reduces Persistence and Hurts Independent Performance," arXiv:2604.04721 (submitted 2026-04-06, revised 2026-10-13, media pickup ~2026-10-09). Three randomized trials on arithmetic and reading comprehension: participants given ChatGPT through problem 12, then cut off, "perform significantly worse without AI and are more likely to give up" than a no-AI control. A causal, controlled-experiment version of the pillar-2 "AI quietly erodes what's yours" thread — most prior sources here (RESEARCH 052–056, Glean Work AI Index) are self-report; this is a measured behavioral effect. Directly `WebFetch`-confirmed on the arXiv abstract page. Full detail and caveats in the dated report.
+
+**S2 — Academic panel synthesis: AI expands execution while eroding two distinct forms of judgment needed to oversee it.** Matthew Grimes, Dev Jennings, Jennifer S. Mueller, Yen-Ting (Daniel) Lin, "Blind Overseers: AI and the Erosion of Judgment," Berkeley Economics Review, published 2026-10-21 (today). Names "evaluative judgment erosion" (accepting AI output unchecked, accumulating "cognitive debt," citing an MIT Media Lab essay-writing study on weaker neural connectivity/recall/originality) and "generative judgment erosion" (organizations converging on similar AI-suggested solutions, losing diversity). Pairs with S1 as the oversight-side framing of the same mechanism. Directly `WebFetch`-confirmed; caveat that it synthesizes other researchers' cited data rather than presenting the panel's own primary study. Full detail in the dated report.
+
+### Rejected this run (6 named)
+
+Frontiers in Digital Health clinical-reasoning review (same theme, wrong population — clinicians, not this audience); launchready.ai small-business AI piece (blends three undated/stale secondary surveys, no primary source fetched); getaibrief.com 65%-of-founders survey (already rejected 2026-10-20, stale redirect); FreshBooks solopreneur survey (already logged, resurfaced via a fresh republish); IBM CHRO critical-thinking study (already logged); Rikunabi/Recruit Holdings HBS case study (not dated to this run's window). Full detail and reasoning for each in the dated report.
+
+### No new internal-research finding this run
+
+The one fresh-looking candidate (arXiv:2610.16067, "When Agent Evaluation Becomes Unreliable...") is already logged in the 2026-10-18 report — confirmed via direct `grep` before being set aside. Per `research-policy.md`, logged as a gap rather than re-cited as new.
+
+### Source health this run
+
+- Anthropic News, Hugging Face Blog, Google DeepMind blog, a16z AI, Lenny's Newsletter: all `WebFetch`-reachable; none surfaced an audience-problem fit, same non-fit pattern as every run since RESEARCH 050.
+- OpenAI Blog: still HTTP 403 — now past 25 consecutive failed runs (044 through 069). Standing recommendation unchanged and still unactioned: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- news.berkeley.edu (S1's own university press release) returned HTTP 403; worked around by fetching the arXiv abstract page directly for primary confirmation instead, which gave a cleaner read than the press release would have.
+- Dedup checked two layers: (1) `grep -h "URL:" reports/signal-harvest-*.md` across all twelve prior dated reports, and (2) a direct `grep` of each candidate's source/author/study name against `content-vault.md` and `research-notes.md` — this caught three repeats (FreshBooks, IBM CHRO, arXiv:2610.16067) that a report-only URL grep would have missed for the first two.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 068 — 2026-10-20 | Signal harvest (current audience problem) — no new shift-lead signal; one internal-research find
 
 **Status:** NOTED
