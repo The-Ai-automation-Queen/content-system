@@ -2,6 +2,40 @@
 
 ---
 
+## RESEARCH 070 — 2026-10-22 | Signal harvest (current audience problem) — 1 new shift-lead signal (pillar 2); 1 new internal-research signal
+
+**Status:** NOTED
+**Report:** [reports/signal-harvest-2026-10-22.md](reports/signal-harvest-2026-10-22.md)
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `b092917f`; source (queen-brain) commit not reconstructed this session — per this session's own reality-check ("canon: queen-brain NOT in this session"), not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current harvest shape.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only study design, source authority and recency were weighed.
+
+### One new shift-lead signal — pillar 2, "protect what's uniquely yours"
+
+**S1 — Conceptual framework: AI adoption can deplete the shared "cognitive commons" professions need to keep producing experts able to oversee AI at all.** Nolan Lovett, "The Tragedy of the Cognitive Commons: How AI Could Disrupt the Regeneration of Professional Expertise," arXiv:2607.29380 (submitted 2026-07-31). Introduces "Internalized Mastery" vs. "Distributed Mastery" and the "Validation Tether" — effective AI oversight depends on the expertise AI adoption may undermine. A systems/generational framing distinct from the individual-judgment thread already on file (RESEARCH 052–057, 2026-10-21's S1/S2): the risk here is the pipeline producing future experts, not one person's judgment. Caveat: ~3 months old (corroborating-anchor treatment, not breaking news), conceptual paper with asserted-not-verified "early evidence." Directly `WebFetch`-confirmed on the arXiv abstract page. Full detail in the dated report.
+
+### One new internal-research signal
+
+**I1 — "Emerging Trends in AI Agent Evaluation"** — Felix Chen, Stephan Rabanser, Sayash Kapoor, Arvind Narayanan et al. (Princeton/Stanford/UK AISI/Brookings), published 2026-10-19. 33-trend survey naming: evaluation cost barriers (tens of thousands of dollars per benchmark run) concentrating power in well-funded labs; the shift from outcome-only to trajectory-based grading (agents can take shortcuts output-only scoring misses); a cited METR finding that agent tools *increased* real-world dev time despite lab demonstrations; and shrinking independent access to raw chain-of-thought traces. Extends the standing benchmark-integrity thread (behind the 2026-10-14/-16/-18/-19/-20 reports) with a system-level explanation for why single-study reliability problems keep recurring. Caveat: primary PDF was not text-fetchable (binary/compressed stream); corroborated instead via the authors' own announcement thread and one secondary write-up (normaltech.ai) — flag as not-yet-primary-verified if used beyond internal orientation. Full detail in the dated report.
+
+### Rejected this run (9 named)
+
+Chapman University 2026 Fear Study (fresh, but general-population political/economic dread, not this audience's relationship to AI in their own work); CNBC/IBM chief talent officer piece (same IBM CHRO survey already logged); BCG "Companies Risk Losing Critical Skills" (already logged verbatim); Gartner 40%-of-CIOs stat (already logged); Thomson Reuters Future of Professionals Report (already logged); FreshBooks solopreneur survey (already logged, resurfaced again); Advisor Perspectives "skill fades" piece (403, unverifiable, narrow trade-blog audience); system7.ai cognitive-atrophy post (unsourced vendor blog); five generic "first AI pilot" SEO posts (no named source or dated evidence). Full detail and reasoning for each in the dated report.
+
+### Source health this run
+
+- Anthropic News, Hugging Face Blog, Google DeepMind blog, a16z AI, Lenny's Newsletter: all `WebFetch`-reachable; none surfaced an audience-problem fit, same non-fit pattern as every run since RESEARCH 050.
+- OpenAI Blog: still HTTP 403 — now past 26 consecutive failed runs (044 through 070). Standing recommendation unchanged and still unactioned: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- globenewswire.com (Chapman Fear Study's own release) and advisorperspectives.com both returned HTTP 403; worked around for the former via phys.org's independent write-up, could not work around for the latter (candidate not logged as a result).
+- Dedup checked `grep -rli` (name/author/study-title based, not just URL string matching) across all thirteen prior dated reports plus `research-notes.md` and `content-vault.md` — caught six repeat candidates that a URL-only grep would have missed.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 069 — 2026-10-21 | Signal harvest (current audience problem) — 2 new shift-lead signals, both pillar 2; no new internal-research find
 
 **Status:** NOTED
