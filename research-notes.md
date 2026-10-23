@@ -2,6 +2,44 @@
 
 ---
 
+## RESEARCH 071 — 2026-10-23 | Signal harvest (current audience problem) — 2 new shift-lead signals (pillar 2); 1 new internal-research signal
+
+**Status:** NOTED
+**Report:** [reports/signal-harvest-2026-10-23.md](reports/signal-harvest-2026-10-23.md)
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `3bcebcd7`; source (queen-brain) commit not reconstructed this session — per this session's own reality-check ("canon: queen-brain NOT in this session"), not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current harvest shape.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only study design, source authority and recency were weighed.
+
+### Two new shift-lead signals, both pillar 2 — "protect what's uniquely yours"
+
+**S1 — Academy of Management Review process model: AI use splits into "epistemic de-skilling" (outsourcing thinking under time pressure) vs. "epistemic up-skilling" (AI strengthens judgment under reflection/accountability).** Dirk Lindebaum (Bath), Natarajan Balasubramanian (Ohio State), Mehreen Ashraf (Cardiff), Patrick Haack (Lausanne), "A Process Model of Managerial Phronesis in the Age of Generative AI," *Academy of Management Review* (press release ~2026-09-04). Names the exact behavioral switch that predicts which path a manager is on — a usable instruction ("build in the accountability step"), not another erosion statistic. Caveat: ~7 weeks old, peer-reviewed top-tier journal (higher evidentiary bar than most prior pillar-2 vendor surveys). Directly `WebFetch`-confirmed via eurekalert, cross-checked against phys.org and the AMR DOI record.
+
+**S2 — KPMG/UT Austin field study (n=523): among near-identically-skilled early-career professionals, AI-collaboration *behavior*, not capability, splits outcomes into three groups — "AI Amplifiers" (50.1%, beat the AI baseline), "AI Delegators" (25.8%, matched it), "AI Apprentices" (24.1%, fell below it).** Agarwal, Barua, Puvvada, Song, Wen (UT Austin McCombs/KPMG US), *Harvard Business Review*, published 2026-07-23. Amplifiers won by "orchestrating workflows, framing problems strategically, applying domain expertise, and refining results iteratively." Traditional capability measures did not predict group membership. Pairs with S1: S1 names the condition (accountability vs. time pressure), S2 names the winning behaviors. Caveat: 3 months old (corroborating-anchor treatment); subjects are large-firm early-career employees, a proximate not identical population to this audience. Directly `WebFetch`-confirmed on the primary KPMG page, numbers cross-matched against an independent WebSearch result before citing.
+
+### One new internal-research signal
+
+**I1 — SkillForgeBench** — Zhengxi Li, Junyi Zhou, Qiyuan Zhang, Chuhan Wu, Fuyuan Lyu, Le Tian, Xiao Zhou, Chen Ma, Yufei Wang, arXiv:2610.14918, submitted 2026-10-10. 842-task sandboxed benchmark across five professional domains built on agent "skill specifications." Best agent (Opus 4.8) clears only 40.9% strict-completion despite 70–86% individual-rubric pass rates — a quantified version of the trajectory-vs-outcome blind spot the Princeton SAgE survey (RESEARCH 070's I1) named conceptually. Genuinely fresh (13 days), directly `WebFetch`-confirmed on its own abstract page, no secondary-source reliance needed. Extends the standing benchmark-integrity thread (2026-10-14 through -22 reports).
+
+### Rejected this run (named)
+
+Wharton judgment-erosion study via TheStreet (still 403, unverifiable secondary — same rejection as 2026-10-19); IBM CHRO study, BCG "Companies Risk Losing Critical Skills," Blind Overseers, Thomson Reuters Future of Professionals, Gartner 40%-of-CIOs stat (all already logged, resurfaced via fresh search); FreshBooks solopreneur survey (already logged repeatedly); getaibrief.com 65%-of-founders survey (already rejected, stale redirect); lonelyentrepreneur.com/macmdviewer.com/crevio.co/widejournal.com solo-founder statistics roundups (no disclosed methodology, same category rejected 2026-10-14/-16/-18); alleged COLM 2026 SAT-performance study (still unlocatable, same rejection as 2026-10-19); DataCamp/YouGov AI-literacy report (wrong population — enterprise leaders at 500+-employee orgs); "AI Calibracy" MDPI framework paper (conceptual, no data, SkillForgeBench chosen instead); generic AI-automation "case study" vendor content (HVAC/dental-practice ROI pieces, no named primary source); 758-knowledge-worker study (the older BCG/Harvard "jagged frontier" study, already extensively covered, not new). Full detail and reasoning for each in the dated report.
+
+### Source health this run
+
+- Anthropic News, Hugging Face Blog, Google DeepMind blog, Lenny's Newsletter: all `WebFetch`-reachable; none surfaced an audience-problem fit within the 7-day window, same non-fit pattern as every run since RESEARCH 050.
+- a16z AI: `WebFetch` succeeded, still exposes no explicit publish dates; content was VC-program/infra/policy, no pillar fit.
+- OpenAI Blog: still HTTP 403 — now past **27 consecutive failed runs** (044 through 071). Standing recommendation unchanged and still unactioned: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- thestreet.com (Wharton candidate) returned HTTP 403 again; candidate not logged as a result.
+- Two WebSearch-synthesized claims were independently re-verified against a primary/publisher-direct source before any citation or rejection decision, per the standing caution against laundering a search paraphrase as a confirmed source (the "Oaken"/`ivyleagueresume.com` near-misses from earlier reports): the Wharton attribution (confirmed unreachable, rejected) and the KPMG/UT Austin numbers (confirmed via KPMG's own page, logged as S2).
+- Dedup checked `grep -rli` (name/author/study-title based, not just URL string matching) across all fourteen prior dated reports plus `research-notes.md` and `content-vault.md` — caught the repeat candidates named above that a URL-only grep would have missed for several of them.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 070 — 2026-10-22 | Signal harvest (current audience problem) — 1 new shift-lead signal (pillar 2); 1 new internal-research signal
 
 **Status:** NOTED
