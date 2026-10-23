@@ -21,6 +21,46 @@
 
 ## Most recent (quick reference)
 
+> **23/10/2026 content-engine daily run — no new entries produced (deliberate):**
+> Run end to end per explicit operator instruction ("Run the /content-engine
+> daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
+> queue-only — never post instantly. End with the operator briefing.");
+> `skills/content-engine/SKILL.md` not registered via the Skill tool this
+> session, so read and followed manually per the
+> `project-skills-not-registered` memory. Loaded `AGENTS.md`,
+> `CURRENT-WORKFLOW.md`, `context/current-context.json` and `security.md`
+> first, as both CLAUDE.md and the skill require.
+>
+> Both standing blockers independently reconfirmed this session rather than
+> trusted from memory: (1) canon — this session's startup hook already
+> states `queen-brain NOT in this session`; re-verified directly with
+> `git ls-remote` both ways — HTTPS gave 403 "Write access to repository
+> not granted", SSH gave "Repository not found" (same alternating-error
+> pattern as prior sessions) — and no `gh` CLI is present. 26th consecutive
+> blocked day, matching today's earlier `brain-manager` run. content-engine's
+> output is customer-facing copy, so drafting stays forbidden regardless of
+> available research; (2) release backlog — `content-vault.md` reconfirmed
+> directly by counting `## ENTRY` headers: 78 total (37 READY TO POST / 33
+> DRAFT / 6 STALE / 2 KILLED / 0 POSTED), matching today's startup hook
+> exactly. Oldest ready items (ENTRY 047/048/049/050/051, all dated
+> 14/07/2026) have now sat **101 days**. `review-cockpit/decisions-log.md` is
+> unchanged since 14/07/2026 — no operator replies, approvals or kills since
+> then, consistent with today's review-cockpit runs logging their 106th and
+> 107th consecutive empty sweeps.
+>
+> This session's own signal-harvester already ran earlier today
+> (`reports/signal-harvest-2026-10-23.md`, logged as RESEARCH 071 in
+> `research-notes.md`) and found 2 new qualifying shift-lead signals (both
+> pillar 2: Lindebaum/Bath-AMR epistemic de-skilling process model, and the
+> KPMG/UT Austin 523-person field study splitting AI-collaboration outcomes
+> into Amplifiers/Delegators/Apprentices) and 1 new internal-research signal
+> (SkillForgeBench). Fresh research notwithstanding, the canon block makes
+> the point moot for drafting today.
+>
+> No new entries produced. Queue-only publishing held throughout — no
+> customer-facing copy was drafted, queued or scheduled. Same two open
+> options as every run since 18/09/2026, still unanswered by the operator.
+
 > **22/10/2026 content-engine daily run — no new entries produced (deliberate):**
 > Run end to end per explicit operator instruction ("Run the /content-engine
 > daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
