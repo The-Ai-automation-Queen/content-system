@@ -2,6 +2,40 @@
 
 ---
 
+## RESEARCH 072 — 2026-10-24 | Signal harvest (current audience problem) — 1 new shift-lead signal (pillar 2); 1 new internal-research signal
+
+**Status:** NOTED
+**Report:** [reports/signal-harvest-2026-10-24.md](reports/signal-harvest-2026-10-24.md)
+**Context loaded:** `context_version` shift-lead-2026-09-12; source (queen-brain) commit not reconstructed this session — per this session's own reality-check ("canon: queen-brain NOT in this session"), not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current harvest shape.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only study design, source authority and recency were weighed.
+
+### One new shift-lead signal — pillar 2, "protect what's uniquely yours"
+
+**S1 — Interview study: generative AI is "absorbing" the entry-level tasks junior software engineers used to learn from, erasing the "productive struggle" that built senior-level judgment.** Sumin Yu, Taesup Moon, "Who Will Become the Next Senior? How Generative AI Erodes the Development Pathway in Software Engineering," arXiv:2607.17067 (submitted 2026-07-19, revised 2026-08-25). Names three mechanisms: "Absorption" (GenAI redirects junior-level tasks into senior workflows), university AI-use norms that structurally perpetuate the loss, and a "perceptual asymmetry" between experience levels that prevents self-correction. A concrete, named-mechanism complement to the more abstract systems-level framing already on file (Lovett's "Tragedy of the Cognitive Commons," RESEARCH 070 S1) — gives a specific "here's exactly how it happens" angle rather than a generational abstraction. Caveat: ~3 months old (corroborating-anchor treatment), South Korean software-engineer interview sample (proximate, not identical, population), qualitative not causal. Directly `WebFetch`-confirmed on the arXiv abstract page.
+
+### One new internal-research signal
+
+**I1 — Bayesian variance-decomposition analysis of 22 agent benchmarks finds that adding more evaluation tasks doesn't reliably fix noisy agent leaderboards — scaffold/harness choice often matters more than task count.** Michael Hardy, Ruhana Azam, Anka Reuel, Mykel Kochenderfer, Sanmi Koyejo, "Agent Evaluation Reliability: More Tasks Won't (Always) Fix An Agent Leaderboard," arXiv:2610.00651 (submitted 2026-09-30). Extends the standing benchmark-integrity thread (SkillForgeBench, RESEARCH 071 I1; the Princeton/Stanford/UK AISI/Brookings 33-trend survey, RESEARCH 070 I1) with a quantitative mechanism for why leaderboards are noisy — directly relevant to how this repository's own agent-run pipeline should be evaluated. Caveat: ~3.5 weeks old; internal-research only per `positioning.md` (agent-evaluation mechanics are a private operating subject). Directly `WebFetch`-confirmed on the arXiv abstract page.
+
+### Rejected this run (named)
+
+IBM CHRO study (already logged repeatedly, resurfaced via fresh republish); TheStreet/Wharton judgment-erosion study (still HTTP 403, same unverifiable-secondary rejection since 2026-10-19); Thomson Reuters Future of Professionals Report and Gartner 40%-of-CIOs stat (both already logged, resurfaced via fresh search); "Blind Overseers" and Lovett's "Tragedy of the Cognitive Commons" (both already logged, RESEARCH 069/070); digidai.github.io CHRO-skill-erosion piece (unsourced aggregator of the same IBM study); arXiv:2608.04276 "The Fallback as Signal" and arXiv:2606.29111 "Managing the Human Fallback" (pure game-theoretic economics papers, no empirical data, same conceptual-no-data category as the previously-rejected "AI Calibracy" framework); Skeptic.com's Tsipursky piece on a PNAS high-school-math RCT (fresh, 4 days old, but wrong population — students, not working professionals — and a secondary synthesis, not the primary PNAS source); Annals of Internal Medicine clinical-deskilling study (wrong population, clinicians); FreshBooks/lonelyentrepreneur.com/Forbes-Rahul-Dogra/getaibrief.com/widejournal.com/500k.io/autofaceless.ai solopreneur-survey roundups (all already logged repeatedly); arXiv:2610.16067 and arXiv:2610.07003 (both already logged in prior reports, confirmed via direct `grep` before being set aside). Full detail and reasoning for each in the dated report.
+
+### Source health this run
+
+- Anthropic News, Hugging Face Blog, Google DeepMind, a16z AI, Lenny's Newsletter: all `WebFetch`-reachable; none surfaced an audience-problem fit, same non-fit pattern as every run since RESEARCH 050.
+- OpenAI Blog: still HTTP 403 — now past **28 consecutive failed runs** (044 through 072). Standing recommendation unchanged and still unactioned: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- thestreet.com: HTTP 403 again, same as every check since 2026-10-19.
+- Dedup checked `grep -rli` (name/author/study-title based, not just URL string matching) across all fifteen prior dated reports plus `research-notes.md` and `content-vault.md` — this caught the two already-logged arXiv repeats (2610.16067, 2610.07003) and confirmed both new finds were genuinely unlogged.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 071 — 2026-10-23 | Signal harvest (current audience problem) — 2 new shift-lead signals (pillar 2); 1 new internal-research signal
 
 **Status:** NOTED
