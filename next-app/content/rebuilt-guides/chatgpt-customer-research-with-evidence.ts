@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "See what your clients keep saying",
-    lead: "Client comments sit in many places, so you guess. This guide sorts them into themes with real quotes. It takes 45 minutes.",
+    lead: "Client comments sit in many places, so you guess. This guide sorts them into themes with real quotes.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
@@ -94,7 +94,7 @@ Rules:
 Then list "Disagreements": where some clients want the opposite of others, with their IDs.` },
       { kind: "p", text: "Paste the answer into a new document called **Client insight table**. Add today's date." },
     ] },
-    { num: "05", title: "Check every quote", accent: "2 minutes per theme.", blocks: [
+    { num: "05", title: "Check every quote", accent: "One theme at a time.", blocks: [
       { kind: "p", text: "ChatGPT can change a quote or mix up clients. Check before you trust it." },
       { kind: "list", ordered: true, items: [
         "Copy 4 or 5 words from a quote in your insight table.",

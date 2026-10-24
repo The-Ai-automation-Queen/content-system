@@ -86,7 +86,7 @@ export const cardGuides: readonly CardGuide[] = [
     },
     intro: {
       heading: "ChatGPT that knows your business",
-      lead: "ChatGPT gives vague answers when it knows nothing about you. This guide teaches it your business and builds your first AI assistant. It takes about 45 minutes.",
+      lead: "ChatGPT gives vague answers when it knows nothing about you. This guide teaches it your business and builds your first AI assistant.",
       blocks: [
         { kind: "h3", text: "What you end up with" },
         { kind: "list", items: [
@@ -249,7 +249,7 @@ Keep everything else the same.` },
     },
     intro: {
       heading: "One project that knows your brand",
-      lead: "A Brand Brain is one Claude project with three files about your brand. Everything Claude makes then matches you. It takes about 30 minutes.",
+      lead: "A Brand Brain is one Claude project with three files about your brand. Everything Claude makes then matches you.",
       blocks: [
         { kind: "h3", text: "What you end up with" },
         { kind: "list", items: [
@@ -318,7 +318,7 @@ Turn it into a Voice Rules document with these sections:
 
 Only use what is in my writing. If something is unclear, ask me.` },
         { kind: "p", text: "Fix what comes back. Add every word that makes you cringe to the “never say” list. Save it as **Voice Rules**." },
-        { kind: "tip", text: "**No writing yet?** Record yourself talking about your business for two minutes. Paste the words in and run the same prompt." },
+        { kind: "tip", text: "**No writing yet?** Record yourself talking about your business. Paste the words in and run the same prompt." },
       ] },
       { num: "04", title: "Write your Brand DNA", accent: "The step that matters most.", blocks: [
         { kind: "p", text: "Brand DNA is one page: who you help, their problem and why you. Fill in the brackets and save it as **Brand DNA**." },

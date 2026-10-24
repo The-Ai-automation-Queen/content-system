@@ -60,13 +60,13 @@ export const instagramDashboardGuide = {
   ],
   "gateTeaser": {
     "heading": "Create Your Meta Developer App",
-    "body": "This gives you access to Instagram’s API. You’ll create an app, add yourself as a test user, and generate a long-lived access token. Takes about 8 minutes."
+    "body": "This gives you access to Instagram’s API. You’ll create an app, add yourself as a test user, and generate a long-lived access token."
   },
   "tutorial": [
     {
       "kind": "walkthrough",
       "heading": "1. Create Your Meta Developer App",
-      "introduction": "This gives you access to Instagram’s API. You’ll create an app, add yourself as a test user, and generate a long-lived access token. Takes about 8 minutes.",
+      "introduction": "This gives you access to Instagram’s API. You’ll create an app, add yourself as a test user, and generate a long-lived access token.",
       "blocks": [
         {
           "kind": "heading",
@@ -274,7 +274,7 @@ export const instagramDashboardGuide = {
       "blocks": [
         {
           "kind": "note",
-          "text": "Don’t skip this. In 60 days your dashboard returns \"Invalid OAuth 2.0 Access Token\" and you have to regenerate everything. Takes 2 minutes now.",
+          "text": "Don’t skip this. In 60 days your dashboard returns \"Invalid OAuth 2.0 Access Token\" and you have to regenerate everything.",
           "icon": "⚠️"
         },
         {

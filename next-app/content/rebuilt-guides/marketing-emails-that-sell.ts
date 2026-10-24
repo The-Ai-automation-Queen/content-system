@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Write a sales email that sounds like you",
-    lead: "Sales emails to everyone read like adverts. This guide helps you write to one real client, with real proof. It takes 40 minutes.",
+    lead: "Sales emails to everyone read like adverts. This guide helps you write to one real client, with real proof.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [

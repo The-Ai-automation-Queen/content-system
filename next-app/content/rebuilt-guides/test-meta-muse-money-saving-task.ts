@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Every subscription in one table",
-    lead: "Forgotten apps keep charging your business card. This guide finds every repeat payment and its cost for a year. It takes 30 minutes.",
+    lead: "Forgotten apps keep charging your business card. This guide finds every repeat payment and its cost for a year.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [

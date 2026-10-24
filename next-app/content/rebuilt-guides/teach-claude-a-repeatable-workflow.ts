@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Explain your weekly job once",
-    lead: "You explain the same weekly job to Claude every time. This guide saves your rules once, so you just paste your notes. It takes 30 minutes.",
+    lead: "You explain the same weekly job to Claude every time. This guide saves your rules once, so you just paste your notes.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [

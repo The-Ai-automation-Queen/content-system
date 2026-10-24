@@ -1275,7 +1275,7 @@
         "formulas",
         "checking AI edits"
       ],
-      "summary": "Tidy a column, add a formula, explain a sheet. Then spend one minute proving it's right.",
+      "summary": "Tidy a column, add a formula, explain a sheet. Then prove it's right.",
       "sequence": 206
     },
     {
@@ -1754,7 +1754,7 @@
         "meeting prep",
         "Outlook"
       ],
-      "summary": "Catch up on the thread, prepare in five minutes, and have the follow-up drafted before you're back at your desk.",
+      "summary": "Catch up on the thread, prepare for the meeting, and have the follow-up drafted before you're back at your desk.",
       "sequence": 223
     },
     {
@@ -1946,7 +1946,7 @@
         "AI sources",
         "AI mistakes"
       ],
-      "summary": "A 2-minute check for names, numbers and facts.",
+      "summary": "A check for names, numbers and facts before you send.",
       "sequence": 140,
       "access": "free"
     },
@@ -1979,8 +1979,8 @@
     },
     {
       "slug": "is-ai-coming-for-my-job",
-      "title": "Check How Exposed Your Job Is to AI in 5 Minutes",
-      "h1": "Check How Exposed Your Job Is to AI in 5 Minutes",
+      "title": "Check How Exposed Your Job Is to AI",
+      "h1": "Check How Exposed Your Job Is to AI",
       "datePublished": "2026-09-28",
       "dateModified": "2026-09-28",
       "readMinutes": 15,

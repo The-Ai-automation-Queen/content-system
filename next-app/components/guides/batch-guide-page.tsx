@@ -160,7 +160,7 @@ export function BatchGuidePage({ guide }: { guide: GuidePage }) {
         </section>
 
         <section className={styles.section} aria-labelledby={`${content.slug}-how`}>
-          <Heading id={`${content.slug}-how`} num={number(1)} title="How to use this guide" accent="In 30 seconds." />
+          <Heading id={`${content.slug}-how`} num={number(1)} title="How to use this guide" accent="Before you start." />
           <p><Rich value={content.howTo} /></p>
         </section>
 

@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Short answers without asking",
-    lead: "ChatGPT writes long because it does not know what short means to you. This guide saves your lengths once. It takes 20 minutes.",
+    lead: "ChatGPT writes long because it does not know what short means to you. This guide saves your lengths once.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [

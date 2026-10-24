@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Get a ChatGPT answer you can send",
-    lead: "ChatGPT gives average answers when it has to guess. This guide shows you what to give it instead. It takes 20 minutes.",
+    lead: "ChatGPT gives average answers when it has to guess. This guide shows you what to give it instead.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
@@ -80,7 +80,7 @@ Write a follow-up email from me to [client].
 Use only what is in my notes. If something is missing, write [CHECK].` },
       { kind: "p", text: "Copy the email into your email app. Do not send it yet." },
     ] },
-    { num: "04", title: "Check it before you send", accent: "2 minutes.", blocks: [
+    { num: "04", title: "Check it before you send", accent: "Every time.", blocks: [
       { kind: "p", text: "ChatGPT can still get a detail wrong. Find it before your client does." },
       { kind: "prompt", label: "List every fact", text: `List every name, date, price and promise in the email you wrote.
 For each one, show the words from my notes it comes from.

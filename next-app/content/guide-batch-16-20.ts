@@ -16,7 +16,7 @@ export const batchSixteenTwentyGuides: readonly BatchGuide[] = [
     tool: "ChatGPT, Claude or Gemini",
     hero: { title: "3 things to try with AI", accent: "before lunch.", line: "Skip the theory. Hand AI three small jobs you already do and see for yourself.", tool: "Any AI", art: { kind: "scene", src: "/images/guides/what-is-ai.webp", alt: "The blue robot mascot at a loom that turns shapes into an ordered pattern" } },
     leaveWith: "3 prompts for jobs you do every week, a worked example for each, and the one habit that stops AI embarrassing you.",
-    howTo: "Open any free AI chat. Do job 1 with the example, then with a real email of your own (remove names first). Jobs 2 and 3 take five minutes each.",
+    howTo: "Open any free AI chat. Do job 1 with the example, then with a real email of your own (remove names first).",
     sections: [
       { title: "Job 1: The reply you keep putting off", icon: "target", blocks: [
         { kind: "fields", items: [{ label: "The job", text: "an email that needs a careful answer, and you don't know where to start." }, { label: "Why it works", text: "AI is good at structure and tone. You bring the facts and the decision." }] },
@@ -25,7 +25,7 @@ export const batchSixteenTwentyGuides: readonly BatchGuide[] = [
         { kind: "locked", label: "The reply prompt", prompt: 0 },
       ] },
       { title: "Job 2: The 3 points that matter", icon: "check", blocks: [
-        { kind: "fields", items: [{ label: "The job", text: "a long article or report you should have read before a meeting." }, { label: "Why it works", text: "AI can find the key points in seconds, and it can show you the exact sentence each one came from, so you can check it." }] },
+        { kind: "fields", items: [{ label: "The job", text: "a long article or report you should have read before a meeting." }, { label: "Why it works", text: "AI can find the key points, and it can show you the exact sentence each one came from, so you can check it." }] },
         { kind: "example", label: "What you paste", text: "Any public article or report of up to 2 pages." },
         { kind: "result", label: "What a good answer looks like", lines: ["3 points, each with the sentence it came from, and one line on what the article *doesn't* say."] },
         { kind: "locked", label: "The 3-point prompt", prompt: 1 },
@@ -125,7 +125,7 @@ Answer in 5 bullet points or fewer. Give a source link for every claim. If sourc
     minutes: 20,
     tool: "Any AI tool",
     hero: { title: "3 AI habits that make", accent: "every tool work better.", line: "Not tools, not tricks. Three habits that make your AI work better than your colleagues', whatever tool you use.", tool: "Any AI", art: { kind: "scene", src: "/images/guides/ai-skills-worth-learning-for-work.webp", alt: "The blue robot mascot carrying a compass, magnifier, key and gauge past changing machines" } },
-    leaveWith: "3 skills with a 10-minute exercise each, a prompt for each exercise, and a way to show the result to your manager.",
+    leaveWith: "3 skills with an exercise each, a prompt for each exercise, and a way to show the result to your manager.",
     howTo: "Pick one task you do every week. Use it for all three exercises, so you can see the difference each skill makes.",
     sections: [
       { title: "Skill 1: Brief it", icon: "target", blocks: [

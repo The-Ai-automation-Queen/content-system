@@ -14,7 +14,7 @@ export const batchTwentyOneTwentyFiveGuides: readonly BatchGuide[] = [
     level: "Beginner",
     minutes: 10,
     tool: "Any free AI chat",
-    hero: { title: "Learn 6 AI words", accent: "by watching them happen.", line: "Don't memorise a glossary. Run three 2-minute experiments and you'll never forget what these words mean.", tool: "Any AI", art: { kind: "scene", src: "/images/guides/learn-master.webp", alt: "The blue robot mascot shining a brass lens on an open book, turning words into clear shapes" } },
+    hero: { title: "Learn 6 AI words", accent: "by watching them happen.", line: "Don't memorise a glossary. Run three small experiments and you'll never forget what these words mean.", tool: "Any AI", art: { kind: "scene", src: "/images/guides/learn-master.webp", alt: "The blue robot mascot shining a brass lens on an open book, turning words into clear shapes" } },
     leaveWith: "3 experiments, 6 words you can explain to a colleague, and the one habit each word should give you.",
     howTo: "Open any free AI chat. Run each experiment exactly as written, then read what happened. The words make sense after you've seen them.",
     sections: [
@@ -191,7 +191,7 @@ Stop before you press Submit, Send or any button that finishes the form. Tell me
         { kind: "locked", label: "The renewal cost prompt", prompt: 1 },
       ] },
       { title: "Job 3: The message you've been putting off", icon: "sparkle", blocks: [
-        { kind: "fields", items: [{ label: "The job", text: "the cancellation or \"can you do better?\" email." }, { label: "Why it works", text: "AI writes a clear, polite, firm message in seconds. You decide what you're asking for." }] },
+        { kind: "fields", items: [{ label: "The job", text: "the cancellation or \"can you do better?\" email." }, { label: "Why it works", text: "AI writes a clear, polite, firm message. You decide what you're asking for." }] },
         { kind: "example", label: "Your facts", text: "Customer for 3 years · the new price is 32 · you've seen 25 elsewhere · you'll leave if they can't match." },
         { kind: "result", label: "What a good message looks like", lines: ["Under 100 words, your facts only, one clear ask, a date you need a reply by."] },
         { kind: "locked", label: "The cancel-or-negotiate prompt", prompt: 2 },
@@ -232,7 +232,7 @@ Polite and firm, under 100 words, one clear ask, and ask for a reply by [date]. 
     minutes: 20,
     tool: "Kimi, ChatGPT or Claude (any AI that can make an .xlsx file)",
     hero: { title: "Let AI build your Excel tracker,", accent: "then try to break it.", line: "Get AI to ask how your team works, build the file, and then test it with the mistakes real people make.", tool: "Kimi or any AI", art: { kind: "scene", src: "/images/guides/make-work-tracker-with-kimi.webp", alt: "The blue robot mascot checking one organised set of work files" } },
-    leaveWith: "a prompt that designs the tracker around your team, a build prompt, and a 5-minute break test to run before anyone else sees it.",
+    leaveWith: "a prompt that designs the tracker around your team, a build prompt, and a break test to run before anyone else sees it.",
     howTo: "Use made-up tasks first. Only move real tasks in once the tracker has passed the break test.",
     sections: [
       { title: "Job 1: Let it interview you", icon: "target", blocks: [

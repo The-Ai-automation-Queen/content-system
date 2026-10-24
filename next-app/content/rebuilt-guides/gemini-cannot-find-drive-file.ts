@@ -18,14 +18,14 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Find any answer in your Drive",
-    lead: "You open file after file to find one answer. This guide gets Gemini (Google's AI assistant) to find it and quote it. It takes 25 minutes.",
+    lead: "You open file after file to find one answer. This guide gets Gemini (Google's AI assistant) to find it and quote it.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
         "**Gemini connected** to the right Google Drive",
         "**One answer** from a file, with the exact sentence",
         "**Your 10 main files** renamed so they are easy to find",
-        "**A 2-minute test** for when Gemini can't find a file",
+        "**A quick test** for when Gemini can't find a file",
       ] },
       { kind: "tip", text: "You need the Google account that holds your client files. Copy each prompt as it is and change the [brackets]." },
     ],
@@ -70,7 +70,7 @@ Never make up names, prices, dates or promises.` },
         "Open the file and press **Ctrl + F** (or **Cmd + F** on a Mac).",
         "Paste the words. Nothing found? Do not use the answer.",
       ] },
-      { kind: "honest", text: "**The honest part:** Gemini can miss a file or misread a scan. The 10-second check keeps you from telling a client the wrong thing." },
+      { kind: "honest", text: "**The honest part:** Gemini can miss a file or misread a scan. The quick check keeps you from telling a client the wrong thing." },
     ] },
     { num: "03", title: "Search for the file", accent: "When you don't know which.", blocks: [
       { kind: "p", text: "Gemini can search your Drive. Make it show the file before it answers." },
@@ -101,7 +101,7 @@ Give me a table: Current name | New name.
 Use only what I give you. If you can't tell the type or date, write [CHECK].` },
       { kind: "p", text: "In [Drive](https://drive.google.com), right-click each file, click **Rename** and type the new name." },
     ] },
-    { num: "05", title: "Test when it fails", accent: "2 minutes.", blocks: [
+    { num: "05", title: "Test when it fails", accent: "If it can't find a file.", blocks: [
       { kind: "p", text: "Either the connection is broken or one file is the problem. This test tells you which." },
       { kind: "list", ordered: true, items: [
         "Make a new Google Doc called **Gemini test note**.",

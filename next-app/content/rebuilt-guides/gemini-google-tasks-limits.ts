@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Your week on one list",
-    lead: "Half your week lives in your head. This guide puts it in Google Tasks with real dates. It takes 25 minutes.",
+    lead: "Half your week lives in your head. This guide puts it in Google Tasks with real dates.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
@@ -79,7 +79,7 @@ My list:
 It should be: [right name, date or list].
 Change only this task. Then tell me exactly what you changed.` },
     ] },
-    { num: "04", title: "See this week", accent: "Any morning, 2 minutes.", blocks: [
+    { num: "04", title: "See this week", accent: "Any morning.", blocks: [
       { kind: "p", text: "See the whole week without opening every list." },
       { kind: "prompt", label: "Show what's due this week", text: `Show my Google Tasks due between today and Sunday.
 
@@ -91,7 +91,7 @@ Change only this task. Then tell me exactly what you changed.` },
 Use only what is in my Google Tasks. Change, add or complete nothing.` },
       { kind: "p", text: "Pick 2 tasks from your **Tasks** panel. Check both are in the answer." },
     ] },
-    { num: "05", title: "Clear late tasks", accent: "Friday, 5 minutes.", blocks: [
+    { num: "05", title: "Clear late tasks", accent: "Every Friday.", blocks: [
       { kind: "p", text: "Late tasks make you feel behind. Gemini suggests. You choose." },
       { kind: "prompt", label: "Clear my late tasks", text: `Show my overdue Google Tasks and any task due today that is still open.
 

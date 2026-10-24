@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Use AI and keep clients safe",
-    lead: "Client details can leak into AI tools. This guide shows what to switch off, what to keep out and how to tell clients. It takes 25 minutes.",
+    lead: "Client details can leak into AI tools. This guide shows what to switch off, what to keep out and how to tell clients.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [

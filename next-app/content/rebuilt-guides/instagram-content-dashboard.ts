@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "See your real Instagram numbers",
-    lead: "Seeing your real numbers usually means paying for a tool. This guide has Claude Code build your own dashboard instead. It takes 45 minutes.",
+    lead: "Seeing your real numbers usually means paying for a tool. This guide has Claude Code build your own dashboard instead.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
@@ -38,7 +38,7 @@ export const guide: CardGuide = {
     action: "Open the rest of the guide",
   },
   steps: [
-    { num: "01", title: "Create your Meta app", accent: "About 8 minutes.", blocks: [
+    { num: "01", title: "Create your Meta app", accent: "Do it once.", blocks: [
       { kind: "p", text: "A Meta developer app lets Claude Code read your Instagram numbers. You make it once." },
       { kind: "list", ordered: true, items: [
         "Go to [developers.facebook.com](https://developers.facebook.com/) and log in with Facebook.",

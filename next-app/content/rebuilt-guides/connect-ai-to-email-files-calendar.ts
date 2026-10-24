@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Give AI only what it needs",
-    lead: "Connecting Gmail lets AI see your whole inbox. This guide shows how little access each job needs, and how to remove old links. It takes 25 minutes.",
+    lead: "Connecting Gmail lets AI see your whole inbox. This guide shows how little access each job needs, and how to remove old links.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [

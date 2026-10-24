@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Six AI words, made plain",
-    lead: "People say agent and hallucination, and you nod along. This guide explains 6 words and shows each one in a chat. It takes 20 minutes.",
+    lead: "People say agent and hallucination, and you nod along. This guide explains 6 words and shows each one in a chat.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [

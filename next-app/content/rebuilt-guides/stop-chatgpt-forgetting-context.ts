@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Explain each client only once",
-    lead: "You explain the same client to ChatGPT every day. This guide saves those details in a Project (a folder that keeps chats, files and rules together). It takes 30 minutes.",
+    lead: "You explain the same client to ChatGPT every day. This guide saves those details in a Project (a folder that keeps chats, files and rules together).",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [

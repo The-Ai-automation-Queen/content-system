@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Hand Claude your weekly admin",
-    lead: "Call notes, long documents and replies eat your week. This guide sets up Claude (an AI assistant) to draft all three. It takes 30 minutes.",
+    lead: "Call notes, long documents and replies eat your week. This guide sets up Claude (an AI assistant) to draft all three.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
@@ -97,7 +97,7 @@ Keep it under 2,000 characters.` },
       ] },
     ] },
     { num: "05", title: "Ask a document", accent: "With the exact sentence.", blocks: [
-      { kind: "p", text: "Claude quotes the sentence it used. You check it in seconds." },
+      { kind: "p", text: "Claude quotes the sentence it used. You can check it against the source." },
       { kind: "list", ordered: true, items: [
         "Start a new chat in the Admin project.",
         "Click the **paperclip** or **+** and pick your document.",

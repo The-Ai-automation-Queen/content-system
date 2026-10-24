@@ -5,7 +5,7 @@ export const guideTitles: Record<string, { title: string; subtitle: string }> = 
   "start-using-ai-in-your-business": { title: "How to Start Using AI in Your Business When You Don't Know Where to Begin", subtitle: "Set ChatGPT up for your business, find the jobs to hand over, and build your first assistant." },
   "what-is-ai": { title: "What Can I Use AI For in My Business?", subtitle: "A list of the jobs AI can do for you, and the 3 to try first." },
   "what-should-you-never-share-with-ai": { title: "Is It Safe to Put Client Information Into ChatGPT?", subtitle: "What you can paste, what you can't, and the setting to turn off." },
-  "catch-ai-making-things-up": { title: "How to Check if ChatGPT Is Wrong Before You Send It to a Client", subtitle: "A 2-minute check for names, numbers and facts." },
+  "catch-ai-making-things-up": { title: "How to Check if ChatGPT Is Wrong Before You Send It to a Client", subtitle: "A check for names, numbers and facts before you send." },
   "which-ai-tool-for-what": { title: "ChatGPT, Claude or Gemini: Which One Should I Pay For?", subtitle: "How to pick one and cancel the others." },
   "what-is-agentic": { title: "Do I Need an AI Agent for My Business?", subtitle: "What an agent is, and how to know if you need one." },
   "show-up-in-ai-search": { title: "How to Get ChatGPT to Recommend My Business", subtitle: "Check what it says about you and fix it." },

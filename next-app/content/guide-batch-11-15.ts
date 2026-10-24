@@ -15,7 +15,7 @@ export const batchElevenFifteenGuides: readonly BatchGuide[] = [
     minutes: 10,
     tool: "Gemini with Google Drive",
     hero: { title: "Ask Gemini about", accent: "your own Google Docs.", line: "Stop scrolling through folders. Name the file, ask the question, and get the answer with the line it came from.", tool: "Gemini", art: { kind: "scene", src: "/images/guides/gemini-cannot-find-drive-file.webp", alt: "The blue robot mascot tracing one document through account keys and file drawers" } },
-    leaveWith: "a way to point Gemini at the right file, a question prompt that always shows its source, and a 2-minute test for when Gemini says it can't find anything.",
+    leaveWith: "a way to point Gemini at the right file, a question prompt that always shows its source, and a test for when Gemini says it can't find anything.",
     howTo: "Open Gemini while signed in to the Google account that owns your files. Try job 1 with a Doc you opened this week, so you know what the right answer is.",
     sections: [
       { title: "Job 1: Point it at the right file", icon: "target", blocks: [
@@ -127,8 +127,8 @@ Don't change, move or delete anything. Wait for my decision on each one.` },
     level: "Beginner",
     minutes: 15,
     tool: "Copilot in Excel",
-    hero: { title: "3 Excel jobs for Copilot,", accent: "and the check for each.", line: "Tidy a column, add a formula, explain a sheet. Then spend one minute proving it's right.", tool: "Copilot in Excel", art: { kind: "scene", src: "/images/guides/check-copilot-excel-edits.webp", alt: "The blue robot mascot inspecting one changed cell through a brass magnifier" } },
-    leaveWith: "3 jobs worth handing to Copilot, a one-minute check for each, and a prompt that makes Copilot tell you exactly what it touched.",
+    hero: { title: "3 Excel jobs for Copilot,", accent: "and the check for each.", line: "Tidy a column, add a formula, explain a sheet. Then prove it's right.", tool: "Copilot in Excel", art: { kind: "scene", src: "/images/guides/check-copilot-excel-edits.webp", alt: "The blue robot mascot inspecting one changed cell through a brass magnifier" } },
+    leaveWith: "3 jobs worth handing to Copilot, a check for each, and a prompt that makes Copilot tell you exactly what it touched.",
     howTo: "Make a copy of a real sheet, or use the example below. Never try a new job on the only copy of a file people rely on.",
     sections: [
       { title: "Job 1: Tidy a messy column", icon: "target", blocks: [
@@ -144,13 +144,13 @@ Don't change, move or delete anything. Wait for my decision on each one.` },
         { kind: "locked", label: "The formula prompt", prompt: 1 },
       ] },
       { title: "Job 3: Explain what the sheet shows", icon: "sparkle", blocks: [
-        { kind: "fields", items: [{ label: "The job", text: "a quick read of the numbers before a meeting." }, { label: "Why it works", text: "a summary sounds convincing even when it's wrong. Asking for the cells behind each point lets you check in seconds." }] },
+        { kind: "fields", items: [{ label: "The job", text: "a quick read of the numbers before a meeting." }, { label: "Why it works", text: "a summary sounds convincing even when it's wrong. Asking for the cells behind each point lets you check each one." }] },
         { kind: "example", label: "Copilot says", text: "Sales grew every month this quarter." },
         { kind: "result", label: "What checking finds", lines: ["The cells it names show April 12, May 15, June 11. June went down. The sentence was wrong; the numbers were right there."] },
         { kind: "locked", label: "The explain-with-cells prompt", prompt: 2 },
       ] },
     ],
-    honest: "Copilot can change more than you asked for, and a confident summary can be wrong. Work on a copy, one job at a time, and don't share the file until your one-minute check is done.",
+    honest: "Copilot can change more than you asked for, and a confident summary can be wrong. Work on a copy, one job at a time, and don't share the file until your check is done.",
     gate: { promise: "3 prompts.", action: "Unlock" },
     prompts: [
       { title: "Job 1: The tidy-up prompt", text: `In column [letter], make every name "First Last" with capital first letters, and remove extra spaces.
@@ -167,7 +167,7 @@ Don't change any existing column.` },
 
 For each one, name the exact cells or range you used. If the data doesn't clearly show something, say so rather than guess a trend.` },
     ],
-    pass: "**The one-minute check:** row count the same · one row checked by hand · every claim matches the cells it names.",
+    pass: "**The check:** row count the same · one row checked by hand · every claim matches the cells it names.",
     kit: { name: "AI workflows that save time", heading: "Want more jobs like these, ready for your week?", body: "The *AI workflows that save time* kit includes a messy-list-to-tracker workflow with the same check-before-you-trust step." },
   },
   {
@@ -180,8 +180,8 @@ For each one, name the exact cells or range you used. If the data doesn't clearl
     level: "Beginner",
     minutes: 15,
     tool: "Microsoft 365 Copilot",
-    hero: { title: "Walk into every meeting", accent: "prepared, with Copilot.", line: "Catch up on the thread, prepare in five minutes, and have the follow-up drafted before you're back at your desk.", tool: "Microsoft 365 Copilot", art: { kind: "scene", src: "/images/guides/what-can-copilot-see-at-work.webp", alt: "The blue robot mascot using a brass viewing scope on three locked cabinets for mail, files and meetings" } },
-    leaveWith: "a catch-up prompt for threads you were copied into, a 5-minute meeting prep, and a follow-up draft you check before sending.",
+    hero: { title: "Walk into every meeting", accent: "prepared, with Copilot.", line: "Catch up on the thread, prepare for the meeting, and have the follow-up drafted before you're back at your desk.", tool: "Microsoft 365 Copilot", art: { kind: "scene", src: "/images/guides/what-can-copilot-see-at-work.webp", alt: "The blue robot mascot using a brass viewing scope on three locked cabinets for mail, files and meetings" } },
+    leaveWith: "a catch-up prompt for threads you were copied into, a meeting prep prompt, and a follow-up draft you check before sending.",
     howTo: "Pick one meeting on tomorrow's calendar. Run all three jobs for that one meeting.",
     sections: [
       { title: "Job 1: Catch up on the thread", icon: "target", blocks: [
@@ -190,7 +190,7 @@ For each one, name the exact cells or range you used. If the data doesn't clearl
         { kind: "result", label: "What a good answer looks like", lines: ["The new date being proposed · who's for and against · the one open question · a link to each email it used."] },
         { kind: "locked", label: "The catch-up prompt", prompt: 0 },
       ] },
-      { title: "Job 2: Prepare in 5 minutes", icon: "check", blocks: [
+      { title: "Job 2: Prepare for the meeting", icon: "check", blocks: [
         { kind: "fields", items: [{ label: "The job", text: "knowing who's in the room, what was said last time and what you need to get out of it." }, { label: "Why it works", text: "Copilot can pull the last meeting's notes and the files people shared. You decide your one goal." }] },
         { kind: "example", label: "The meeting", text: "Launch check-in, Thursday 10:00, 5 people." },
         { kind: "result", label: "A good prep card", lines: ["What happened last time · 2 files you should skim · the decision on the table · 2 questions you could ask."] },
