@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Get steps someone else can follow",
-    lead: "The steps for your jobs live only in your head. This guide turns one screen recording into written steps. It takes 30 minutes.",
+    lead: "The steps for your jobs live only in your head. This guide turns one screen recording into written steps.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
@@ -38,7 +38,7 @@ export const guide: CardGuide = {
     action: "Open the rest of the guide",
   },
   steps: [
-    { num: "01", title: "Record one job", accent: "Under 5 minutes.", blocks: [
+    { num: "01", title: "Record one job", accent: "Keep it short.", blocks: [
       { kind: "p", text: "Pick a job you do often, like sending an invoice. Say each click out loud as you go." },
       { kind: "list", ordered: true, items: [
         "Close email, chat apps and other clients' files. Use a test client if you can.",

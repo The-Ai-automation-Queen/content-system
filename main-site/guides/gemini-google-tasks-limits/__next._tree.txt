@@ -8,4 +8,4 @@
 :HL["/_next/static/css/a5fd40e18f83eb45.css","style"]
 :HL["/_next/static/css/c9d53a5723aac2a3.css","style"]
 :HL["/fatiha-avatar-colour-96.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"guides","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"gemini-google-tasks-limits","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"dBxVgZti40htgPts-JLJg"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"guides","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"gemini-google-tasks-limits","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"uGvVx9QSSUTs0p5p-aOss"}

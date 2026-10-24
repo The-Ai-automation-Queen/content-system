@@ -46,20 +46,20 @@ export type BatchGuide = {
 const claude: BatchGuide = {
   slug: "claude",
   seoTitle: "How to use Claude at work: 3 jobs to hand off today",
-  seoDescription: "How to use Claude at work: three admin jobs to hand off today (meeting notes, long documents and rough emails), with the prompt for each and a 30-second check.",
+  seoDescription: "How to use Claude at work: three admin jobs to hand off today (meeting notes, long documents and rough emails), with the prompt for each and a final check.",
   title: "3 Admin Jobs to Hand Claude This Week",
   question: "I'm drowning in admin. What can Claude actually take off my plate?",
   answer: "Three jobs you can hand to Claude today: messy meeting notes, a question about a long document, and a rough email. Here's the prompt for each, and the one check that keeps you safe.",
   level: "Beginner",
   minutes: 10,
   tool: "Free Claude account",
-  leaveWith: "3 prompts you can reuse every week, a worked example for each, and a 30-second check before you use the answer.",
+  leaveWith: "3 prompts you can reuse every week, a worked example for each, and a final check before you use the answer.",
   howTo: "Pick the job that annoys you most this week. Try it with the example first, so you can see what a good answer looks like. Then swap in your own material. Leave out anything confidential (see [The 3-Question Check Before You Paste Anything Into AI](/guides/what-should-you-never-share-with-ai/)).",
   hero: { title: "3 admin jobs to hand Claude", accent: "this week.", line: "Meeting notes, a long document and a rough email. One prompt for each.", tool: "Claude", art: { kind: "pose", src: "/images/mascot/planning.webp", alt: "The blue robot mascot holding a calendar and a checklist" } },
   flow: [
     { icon: "notes", label: "Your rough material", note: "Notes, a report or bullet points" },
     { icon: "sparkle", label: "Claude drafts", note: "Using only what you gave it" },
-    { icon: "check", label: "You check", note: "30 seconds before you use it" },
+    { icon: "check", label: "You check", note: "before you use it" },
   ],
   illustration: { src: "/images/guides/claude-first-task.webp", alt: "The blue robot mascot turning scattered notes into one finished, approved document", caption: "The draft is Claude's. The final say is yours.", afterSection: 2 },
   sections: [
@@ -105,14 +105,14 @@ const claude: BatchGuide = {
     },
   ],
   honest: "Claude can still get a detail wrong, and it can sound sure while doing it. Before you use any answer, put it side by side with your notes or the document and check the names, dates and anything that sounds decided. If one line is wrong, fix that line (the correction prompt is below) rather than starting again.",
-  gate: { promise: "The 3 prompts, the fix-one-line prompt and the 30-second check.", action: "Show me the prompts" },
+  gate: { promise: "The 3 prompts, the fix-one-line prompt and the final check.", action: "Show me the prompts" },
   prompts: [
     { title: "Prompt 1: Notes into actions", text: "Turn these notes into decisions, an action table and open questions. Use only the notes. For each action, show the owner and deadline. Write \"Not agreed\" where a detail is missing. Keep suggestions separate from decisions.\n\nNotes: [paste your notes]" },
     { title: "Prompt 2: Answer from a document", text: "Answer my question using only the attached document. Quote the exact sentence you used and give the page or section. If the document doesn't answer it, say so instead of guessing.\n\nMy question: [your question]" },
     { title: "Prompt 3: Rough points into an email", text: "Turn these points into a short email to [who]. Keep it under 120 words, friendly and direct. Don't add promises, dates or details that aren't in my points.\n\nMy points: [paste]" },
     { title: "Correction prompt (when one line is wrong)", text: "Correct this line: \"[the wrong line]\". Use this information instead: [the right fact]. Keep everything else unchanged. If anything is still unclear, say so instead of guessing." },
   ],
-  checks: { title: "The 30-second check", ordered: true, items: [
+  checks: { title: "The final check", ordered: true, items: [
     "Every name, date and number is in your original material.",
     "Nothing \"suggested\" has become \"decided\".",
     "No promise you didn't make.",

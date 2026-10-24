@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Try an AI browser safely",
-    lead: "An AI browser reads pages and clicks for you, which is risky near your email. This guide sets up a safe space and tries 3 jobs. It takes 30 minutes.",
+    lead: "An AI browser reads pages and clicks for you, which is risky near your email. This guide sets up a safe space and tries 3 jobs.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [

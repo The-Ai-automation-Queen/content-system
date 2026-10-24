@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Keep one tool, cancel the rest",
-    lead: "You may pay for more AI tools than you use. This guide tests two on your real work, then helps you cancel the rest. It takes 30 minutes.",
+    lead: "You may pay for more AI tools than you use. This guide tests two on your real work, then helps you cancel the rest.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [

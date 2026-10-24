@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Get one file for client work",
-    lead: "Client work hides in your inbox, notes and head. This guide has AI build one Excel tracker you test yourself. It takes 30 minutes.",
+    lead: "Client work hides in your inbox, notes and head. This guide has AI build one Excel tracker you test yourself.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
@@ -119,7 +119,7 @@ Tell me what you changed for each one, then give me the new .xlsx file.` },
         "When every test passes, delete the 3 practice rows.",
         "Add your real projects, one row each. Save it in your **Clients** folder.",
       ] },
-      { kind: "honest", text: "**The honest part:** the tracker won't update itself or chase a client. Check it for 10 minutes each week and send every invoice the Summary counts." },
+      { kind: "honest", text: "**The honest part:** the tracker won't update itself or chase a client. Check it each week and send every invoice the Summary counts." },
     ] },
     { num: "✓", title: "Checklist", accent: "Five boxes.", blocks: [
       { kind: "checklist", items: [

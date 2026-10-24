@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Test your idea before you build",
-    lead: "Ask ChatGPT if your idea is good and it says yes. This guide makes it find the weak spots instead. It takes 40 minutes, then one week.",
+    lead: "Ask ChatGPT if your idea is good and it says yes. This guide makes it find the weak spots instead.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [

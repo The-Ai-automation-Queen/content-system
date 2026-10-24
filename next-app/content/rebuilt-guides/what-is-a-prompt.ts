@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Four lines for any task",
-    lead: "A short request makes ChatGPT guess. This guide gives you 4 lines that tell it what it needs. It takes 20 minutes.",
+    lead: "A short request makes ChatGPT guess. This guide gives you 4 lines that tell it what it needs.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [

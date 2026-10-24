@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Launch on a date that holds",
-    lead: "Your launch keeps slipping because the product keeps growing. Here you fix the date, make the product small and let ChatGPT plan every task. It takes 30 minutes.",
+    lead: "Your launch keeps slipping because the product keeps growing. Here you fix the date, make the product small and let ChatGPT plan every task.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
@@ -108,7 +108,7 @@ Rules:
       { kind: "p", text: "Some weeks go badly. Then you cut something and keep the date." },
       { kind: "list", ordered: true, items: [
         "Open [Google Calendar](https://calendar.google.com) and click **Create**, then **Event**.",
-        "Call it **Friday launch check**, 15 minutes this Friday.",
+        "Call it **Friday launch check**, this Friday.",
         "Click **Does not repeat** and pick **Weekly on Friday**. Click **Save**.",
         "Each Friday, type **yes** next to every task you finished in your sheet.",
         "Go back to your launch chat and paste the prompt below.",

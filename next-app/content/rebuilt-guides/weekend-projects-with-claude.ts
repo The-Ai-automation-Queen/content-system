@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Build the tools you keep wishing for",
-    lead: "Small jobs slip when you do them by hand. Here Claude builds a checklist, a calculator and a calendar, with no code from you. It takes 45 minutes.",
+    lead: "Small jobs slip when you do them by hand. Here Claude builds a checklist, a calculator and a calendar, with no code from you.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [

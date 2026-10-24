@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Get your week planned for you",
-    lead: "Monday starts in your inbox, with no plan. This guide sets up three weekly tasks that ChatGPT runs on its own. It takes 25 minutes.",
+    lead: "Monday starts in your inbox, with no plan. This guide sets up three weekly tasks that ChatGPT runs on its own.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
@@ -38,7 +38,7 @@ export const guide: CardGuide = {
     action: "Open the rest of the guide",
   },
   steps: [
-    { num: "01", title: "Check you have tasks", accent: "A 5-minute test.", blocks: [
+    { num: "01", title: "Check you have tasks", accent: "Test it first.", blocks: [
       { kind: "p", text: "A scheduled task (a request ChatGPT runs at a set time) works like an alarm with a job. It can search the web. It can't send, post or pay." },
       { kind: "list", ordered: true, items: [
         "Open [ChatGPT](https://chatgpt.com) and click your name or picture.",

@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "See what AI tells clients",
-    lead: "A client asks ChatGPT who can help, and you are not named. This guide shows what AI finds about you and how to fix it. It takes 45 minutes.",
+    lead: "A client asks ChatGPT who can help, and you are not named. This guide shows what AI finds about you and how to fix it.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [

@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Catch mistakes before you send",
-    lead: "ChatGPT sounds just as sure when it is wrong. This guide shows you how to check every detail before a client sees it. It takes 30 minutes.",
+    lead: "ChatGPT sounds just as sure when it is wrong. This guide shows you how to check every detail before a client sees it.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
@@ -141,6 +141,6 @@ Never make up names, prices, dates, sources or links.` },
   conclusion: {
     heading: "Keep checking",
     paragraph: "Run Check before send on every client draft. Open every link. Read it once more yourself.",
-    finishLine: "Two minutes before you send. No sorry email after.",
+    finishLine: "Check before you send. No sorry email after.",
   },
 };

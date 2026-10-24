@@ -14,7 +14,7 @@ const instagramDashboard: BatchGuide = {
   minutes: 15,
   tool: "Claude Code",
   leaveWith: "a live dashboard of your own Instagram account (reach, saves, shares, watch time, best times and hashtags), the 5 prompts that build it, and a token that refreshes itself.",
-  howTo: "Work through the steps in order. Step 1 happens in Meta's developer dashboard and takes about 8 minutes. Steps 2 to 5 happen in Claude Code: you paste the prompts and it writes the code. Keep your tokens and App Secret out of any chat (see [The 3-Question Check Before You Paste Anything Into AI](/guides/what-should-you-never-share-with-ai/)).",
+  howTo: "Work through the steps in order. Step 1 happens in Meta's developer dashboard. Steps 2 to 5 happen in Claude Code: you paste the prompts and it writes the code. Keep your tokens and App Secret out of any chat (see [The 3-Question Check Before You Paste Anything Into AI](/guides/what-should-you-never-share-with-ai/)).",
   hero: { title: "Build your own Instagram", accent: "dashboard.", line: "Connect Claude Code to Instagram's API and see your reach, saves, shares and watch time on one page, for free.", tool: "Claude Code", art: { kind: "scene", src: "/images/guides/instagram-content-dashboard.webp", alt: "The blue robot princess feeds a post card into an engraved brass console displaying content performance charts" } },
   flow: [
     { icon: "key", label: "Connect Instagram", note: "A Meta developer app and a token" },
@@ -42,7 +42,7 @@ const instagramDashboard: BatchGuide = {
       title: "Step 1: Create your Meta developer app",
       icon: "key",
       blocks: [
-        { kind: "p", text: "This gives you access to Instagram's API. You'll create an app, add yourself as a tester, and generate an access token that lasts 60 days. It takes about 8 minutes." },
+        { kind: "p", text: "This gives you access to Instagram's API. You'll create an app, add yourself as a tester, and generate an access token that lasts 60 days." },
         { kind: "p", text: "**Create the app**" },
         { kind: "list", ordered: true, items: [
           "Go to [developers.facebook.com](https://developers.facebook.com/) and log in with your Facebook account.",
@@ -103,7 +103,7 @@ const instagramDashboard: BatchGuide = {
       title: "Step 4: Refresh the token automatically",
       icon: "clock",
       blocks: [
-        { kind: "p", text: "Instagram tokens expire after 60 days. Don't skip this step: without it, in 60 days your dashboard shows \"Invalid OAuth 2.0 Access Token\" and you have to set everything up again. It takes 2 minutes now." },
+        { kind: "p", text: "Instagram tokens expire after 60 days. Don't skip this step: without it, in 60 days your dashboard shows \"Invalid OAuth 2.0 Access Token\" and you have to set everything up again." },
         { kind: "locked", label: "Prompt 4: the token refresh script", prompt: 4 },
         { kind: "p", text: "Then set up a cron job that runs the script every 58 days. Find your Python path first, then paste prompt 5, then test the refresh once. Meta only refreshes a token that is at least 24 hours old, so run the test the day after you generated it. You should see a log entry with the time, confirming the token was refreshed and .env was updated." },
         { kind: "locked", label: "Prompt 5: the cron job", prompt: 5 },

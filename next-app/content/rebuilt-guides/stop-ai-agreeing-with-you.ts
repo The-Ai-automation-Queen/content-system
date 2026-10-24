@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Get honest feedback first",
-    lead: "ChatGPT tends to praise whatever you show it. This guide makes it show you the problems first. It takes 30 minutes.",
+    lead: "ChatGPT tends to praise whatever you show it. This guide makes it show you the problems first.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [

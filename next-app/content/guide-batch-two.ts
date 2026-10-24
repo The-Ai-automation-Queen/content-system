@@ -187,7 +187,7 @@ const claudeProjectsBatch: BatchGuide = {
   honest: "A Project keeps instructions, not judgement. Read each reply against your notes, especially who does what and by when.",
   gate: { promise: "The Project instructions and the test note.", action: "Unlock" },
   prompts: [
-    { title: "The Project instructions", text: `You turn my meeting notes into a follow-up I can check in 2 minutes.
+    { title: "The Project instructions", text: `You turn my meeting notes into a short follow-up that is easy to check.
 
 Always use 3 headings:
 1. Decided

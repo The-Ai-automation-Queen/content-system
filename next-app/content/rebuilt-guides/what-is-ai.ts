@@ -18,7 +18,7 @@ export const guide: CardGuide = {
   },
   intro: {
     heading: "Find the jobs AI can do",
-    lead: "You hear AI can help, but not with which jobs. This guide finds them in your week and gives you a prompt for each. It takes 25 minutes.",
+    lead: "You hear AI can help, but not with which jobs. This guide finds them in your week and gives you a prompt for each.",
     blocks: [
       { kind: "h3", text: "What you end up with" },
       { kind: "list", items: [
@@ -114,7 +114,7 @@ Why it is wrong: [what is true].
 Keep everything else the same.` },
       { kind: "p", text: "Made the same fix twice? Add it to that job's prompt in your note." },
     ] },
-    { num: "05", title: "Check it before you send", accent: "2 minutes.", blocks: [
+    { num: "05", title: "Check it before you send", accent: "Every time.", blocks: [
       { kind: "p", text: "AI sounds just as sure when it is wrong. Find the mistake before your client does." },
       { kind: "prompt", label: "List every fact", text: `List every name, date, price and promise in the draft you wrote.
 For each one, show the words from my notes it comes from.
