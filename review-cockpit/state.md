@@ -3411,3 +3411,39 @@ Notes:
   interactive, 3rd touch today): inbox empty — nothing to route, nothing
   changed in the vault. 9 cards from this morning's digest (#1–#6, R1–R3)
   still waiting on you."
+
+- **24/10/2026 — `/review-cockpit process` (operator-requested, run
+  end-to-end per operator request, obeying `CLAUDE.md` and `security.md`;
+  skill not registered via the Skill tool this session, so `SKILL.md` was
+  read and followed manually per the `project-skills-not-registered`
+  memory; Telegram auth followed the `review-cockpit-telegram-env` memory
+  — ambient `TELEGRAM_BOT_TOKEN`/`TELEGRAM_CHAT_ID`, length-checked only
+  via `${#VAR}`, never printed, never sourced from `deploy/.env`).** This
+  morning's 03:30 GST digest cron already ran its pre-digest sweep (108th
+  consecutive empty sweep, commit `c26d3ff9`, 9 cards sent: #1–#6 +
+  R1–R3). The 08:30 GST scheduled `process` cron fired but only fetched
+  (`git fetch` / "Already up to date" — no skill body executed, no
+  commit). This is therefore the first actual process touch of the day.
+  `getUpdates` (no offset, none stored) returned empty
+  (`{"ok":true,"result":[]}`) — 109th consecutive empty sweep since the
+  14/09/2026 restart. Nothing to route: no card decisions, no unblocker
+  replies, no voice notes. Vault reconfirmed by counting `## ENTRY ... |`
+  status suffixes directly in `content-vault.md`: 37 READY TO POST / 33
+  DRAFT / 6 STALE / 2 KILLED (78 entries total) — matches this session's
+  startup reality-check hook exactly. All 9 cards from this morning's
+  digest (cards #1–#6, msg ids 1526–1531; Ready-shelf R1–R3, msg ids
+  1532–1534) remain outstanding — entries 099/098/097/096/095/094
+  (DRAFT) and the Ready-shelf 047/048/049 (now 102 days READY, zero
+  released). `unblocker/ledger.md` checked — its most recent entry
+  (UNB-031, closed 19/10/2026) predates this run and was handled by
+  today's separate `/unblocker` run (commit `ee52232c`); no new
+  unblocker reply was present to route here. `decisions-log.md`
+  unchanged (last entries are the 14/07 exit-story kills). Publishing
+  stayed queue-only throughout (`security.md` §3.1, `CLAUDE.md`) — no
+  post released, no Blotato queue touched. Canon (queen-brain) was NOT
+  reachable this session per the startup reality-check — no price, tier,
+  offer status or customer-facing copy was written or reconstructed.
+  Sent one confirmation line to Telegram (message_id 1537): "Process
+  sweep (24/10, interactive): inbox empty — nothing to route, nothing
+  changed in the vault. 9 cards from this morning's digest (#1–#6,
+  R1–R3) still waiting on you."
