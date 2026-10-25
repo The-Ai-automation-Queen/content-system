@@ -2,6 +2,44 @@
 
 ---
 
+## RESEARCH 073 — 2026-10-25 | Signal harvest (current audience problem) — 1 new shift-lead signal (pillar 2); 1 new internal-research signal
+
+**Status:** NOTED
+**Report:** [reports/signal-harvest-2026-10-25.md](reports/signal-harvest-2026-10-25.md)
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `d8152e9b`; source (queen-brain) commit not reconstructed this session — per this session's own reality-check ("canon: queen-brain NOT in this session"), not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current harvest shape.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only study design, source authority and recency were weighed.
+
+### One new shift-lead signal — pillar 2, "protect what's uniquely yours"
+
+**S1 — Experimental study: knowledge workers are far more reluctant to authorize AI systems to reuse their domain expertise than to authorize another human to reuse the same content, driven by AI-specific anxieties (loss of control, replacement, downstream governance) rather than the prosocial concerns that govern human-to-human sharing.** Tianqi Song, Zicheng Zhu, Hancheng Cao, Yi-Chieh Lee, "When My Skill Becomes Agent Skill: How Knowledge Workers Share Their Expertise with AI Systems," arXiv:2610.09608 (submitted 2026-10-07). A different mechanism than the already-logged "Absorption" entry-level-task erosion angle (RESEARCH 072 S1) or the generational-pipeline "Cognitive Commons" framing (RESEARCH 070 S1) — this is specifically about the consent/ownership layer of sharing expertise with AI, mapping directly onto this audience's "protect what's uniquely yours" problem. Caveat: 18 days old, experimental/lab-task design, knowledge-workers-generally population (close but not identical to this audience). Directly `WebFetch`-confirmed on the arXiv abstract page.
+
+### One new internal-research signal
+
+**I1 — Proposed three-tier "Agent Reliability Profile" assurance framework (Asserted/Validated/Verified) for certifying AI agent reliability in regulated financial-services deployments.** Mike Hsu, Medha Bankhwal, Béatrice Moissinac, Kevin Werbach, Lukasz Szpruch, Bennett Hillenbrand, "Agent Reliability Profiles in Financial Services," arXiv:2610.04123 (submitted 2026-10-02). A governance/assurance framing — how to build and certify trust in a deployed agent over time — distinct from the standing benchmark-measurement-validity thread (Hardy et al., RESEARCH 072 I1; SkillForgeBench, RESEARCH 071 I1; Princeton/Stanford/UK AISI/Brookings survey, RESEARCH 070 I1), and relevant to how this repository's own agent pipeline could eventually be staged toward higher assurance. Caveat: 23 days old; internal-research only per `positioning.md`. Directly `WebFetch`-confirmed on the arXiv abstract page.
+
+### Rejected this run (named)
+
+Liberty Street Economics/NY Fed small-business AI survey and the "46% of employer firms use AI" figure (both already logged, confirmed same survey via grep); Bluehost/ListenLabs study (already logged/rejected); GTIA SMB study (520 respondents, ~2 months old, duplicates already-logged adoption surveys); Cornerstone Research "Judgment Is the New Bottleneck" interview (fresh but no data, narrow litigation-support population); "The Augmentation Trap" (arXiv:2604.03501, theoretical model, no empirical data, ~4 months old); "Measurement Without Validity" (arXiv:2608.00794, real finding but ~6 weeks old and same narrow sub-thread as three already-logged internal-research signals — set aside in favor of the fresher financial-services paper); a Microsoft CHI-2025/Anthropic-RCT pairing surfaced only via unverified WebSearch synthesis and 9+ months to 1+ year old (not pursued); pillar-1/pillar-3 searches surfaced only already-logged sources or unsourced marketing-aggregator content (automatonagency.com, swfte.com, blackcubelabs.com, primeai.solutions). Full detail and reasoning for each in the dated report.
+
+### Source health this run
+
+- Anthropic News, Hugging Face Blog, Google DeepMind, a16z AI, Lenny's Newsletter: all `WebFetch`-reachable; none surfaced an audience-problem fit, same non-fit pattern as every run since RESEARCH 050.
+- OpenAI Blog: still HTTP 403 — now past **29 consecutive failed runs** (044 through 073). Standing recommendation unchanged and still unactioned: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- thestreet.com: HTTP 403 again, same as every check since 2026-10-19.
+- Dedup checked via `grep -rli` across all sixteen prior dated reports plus `research-notes.md` and `content-vault.md` — caught the Liberty Street/Fed and Bluehost/ListenLabs repeats, confirmed both new finds genuinely unlogged.
+
+### Pillar balance flag
+
+Six consecutive runs (069–073, this run) have logged new shift-lead signals only on pillar 2. Pillar 1 and pillar 3 have each gone multiple runs without a new qualifying signal — not from under-searching, but because that lane's search results keep surfacing either already-logged surveys or unsourced marketing content. Flagged for the operator rather than silently over-indexing on pillar 2.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 072 — 2026-10-24 | Signal harvest (current audience problem) — 1 new shift-lead signal (pillar 2); 1 new internal-research signal
 
 **Status:** NOTED
