@@ -2047,6 +2047,37 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
   external deadline, not an operator decision. Nothing was served or
   re-sent for this entry today.
 
+### UNB-032 — Check the VPS cron runner: two different skills' crons now truncate after `git fetch`
+- **why:** `/performance-tracker`'s 23:00 slot has shown a fetch-only cron
+  log (no scrape logic reached) every day since 2026-10-02 — 12
+  consecutive dated logs per `reports/performance-2026-10-24.md`. Today's
+  `/estate-janitor scan` 02:30 slot showed the identical shape for the
+  first time: `deploy/logs/estate-janitor scan-2026-10-25T02-30-02.log`
+  is just `git fetch` + "Current branch main is up to date." — no scan,
+  no report write, no `== done` trailer, unlike every weekly log before
+  it (09-20 through 10-18), which all completed and pushed. Same-day logs
+  for the other two 2026-10-25 slots (`inbox-distiller weekly`, `taste-clone
+  compile`) both ran to completion, so it is not a today-wide outage —
+  it's now two distinct machines/slots showing the same truncation,
+  which points at the cron-invocation path itself rather than a
+  single skill's code.
+- **revenue_unlocked:** indirect — unblocks the automation these two
+  skills were meant to provide without a human re-running them
+  interactively every time · **effort_min:** unknown, needs someone with
+  VPS/cron-runner access to look at the invocation wrapper, not a file
+  edit in this repo
+- **depends_on:** VPS access · **unblocks:** `/performance-tracker` and
+  `/estate-janitor` (and possibly other slots not yet checked) running
+  unattended as scheduled, instead of silently no-op'ing until an
+  operator notices and re-runs interactively
+- **source:** `reports/janitor-2026-10-25.md` JAN-10;
+  `reports/performance-2026-10-24.md` (cron-fault precedent, standing
+  since 2026-10-02)
+- **verify:** a future dated log for either slot shows the full skill
+  body running (report written, `== done` trailer) without an
+  interactive re-run forcing it
+- **status:** open · served_count: 0 · added: 2026-10-25
+
 ---
 
 ## Done
