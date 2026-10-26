@@ -12,6 +12,19 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 
 ---
 
+### TARGET 011
+
+- **target:** HR Transformation MENA Summit 2027 (Pronovea Events LLC-FZ) — named contact identified (first name only): Ashish, ashish@pronovea.com
+- **type:** conference (GCC HR/L&D, AI-driven HR transformation theme) + corporate/CHRO audience
+- **source:** https://hr-mena.com/ ; speaker registration form on-site; dates 19-20 Jan 2027, Dubai, UAE (Meydan Grandstand)
+- **fit:** Direct hit on the L&D/HR-tech audience lane this skill names explicitly — senior HR leaders, CHROs, Talent Acquisition Heads, L&D leaders and People Strategy executives across the GCC, themed on AI-driven HR transformation. Open "Become a speaker" registration form (fields: name, title, organization, business email, LinkedIn, proposed presentation title, bio) rather than just a general inbox, a stronger lead than most targets already in the pipeline. Contact is a first name only (Ashish) at a role-unclear address, not yet a confirmed programming lead's full name.
+- **est_value:** pending — verify fee band against canon before pitching
+- **stage:** identified
+- **history:**
+  - 2026-10-26 — identified via /speaking-pipeline scan. Note: search results also surfaced an older "Pronovea HR Transformation MENA Summit 2026" (27-28 Jan, Abu Dhabi) — a prior edition, now effectively past; this target is specifically the 19-20 Jan 2027 Dubai edition per the organizer's current live site. Next step: confirm Ashish's full name/role (or find a more senior named programming contact) before considering `pitch`; low time pressure, event is ~3 months out.
+
+---
+
 ### TARGET 010
 
 - **target:** ATD Saudi Arabia Conference (ATD KSA, Riyadh) — organized by QnA International, organizer contact identified (general): nancy@atdksa.com — named programming contact not yet identified
@@ -22,6 +35,7 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 - **stage:** identified
 - **history:**
   - 2026-10-19 — identified via /speaking-pipeline scan. Flag: the site's own pages show conflicting dates for the "2026" conference (one section references 16-20 Nov 2025 agenda detail, another references Dec 7-8) — resolve the actual 2026 conference date with the organizer before treating this as time-sensitive. Next step: find a named ATD KSA programming contact (not just the general nancy@atdksa.com inbox) and confirm which date is current.
+  - 2026-10-26 — /speaking-pipeline scan: date conflict resolved. The organizer's own agenda page (atdksa.com/agenda/) now confirms Conference & Expo is 7-8 Dec 2026, Riyadh, with an AI Workshop on 6 Dec and a Certificate Program 9-10 Dec. Event is ~6 weeks out from this scan date, not yet time-critical. No named programming contact found beyond nancy@atdksa.com; stage unchanged.
 
 ---
 
@@ -35,6 +49,7 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 - **stage:** identified
 - **history:**
   - 2026-10-19 — identified via /speaking-pipeline scan. Event is 30 days out from this scan date. Next step: email speaker@globalaishow.com to find a named programming contact before considering `pitch`.
+  - 2026-10-26 — /speaking-pipeline scan: organizer's own site confirms a second Global AI Show Abu Dhabi edition at 23-24 Mar 2027 (same venue, Space42 Arena; same contact, speaker@globalaishow.com). Noted here rather than opened as a separate thin target — revisit as a longer-runway backup if the 18-19 Nov 2026 edition in this target closes without a pitch. Stage unchanged; this edition (18-19 Nov) is now 23 days out.
 
 ---
 
@@ -45,9 +60,10 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 - **source:** https://dubaiaifestival.com/ ; dates 26-27 Oct 2026, Dubai World Trade Centre
 - **fit:** Held under the directives of HH Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum; organised by Dubai AI Campus in partnership with DIFC. Program includes fireside chats, workshops and roundtables (not just vendor keynotes), which fits her "AI for real work" positioning. No dedicated speaker-application page found, only a general enquiry form (dubaiaifestival.com/general-enquiry) — needs a named contact before a personalized pitch, same gap as TARGET 005 (Dubai Future Week).
 - **est_value:** pending — verify fee band against canon before pitching; government/foundation-run events of this kind are sometimes unpaid-exposure slots — confirm before assuming Tier-5 value.
-- **stage:** identified
+- **stage:** dead (event passed)
 - **history:**
   - 2026-10-12 — identified via /speaking-pipeline scan. Event is 2 weeks out from this scan date — time-sensitive. Next step: find a named Dubai AI Campus / Terrapinn programming contact before this can move to `pitch`.
+  - 2026-10-26 — /speaking-pipeline scan: marked `dead` (event passed/underway). The 26-27 Oct 2026 event starts today. Across three scans (10-12, 10-19, 10-26) only a media-enquiries contact was ever found (Burson/DIFC, rasha.mezher@difc.ae) — no speaker-programming contact surfaced. No pitch was ever served. A no is data; leaving as a flagged lesson rather than deleting.
 
 ---
 
@@ -71,9 +87,10 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 - **source:** https://ainextconference.com/ ; https://dubai.ainextconference.com/ (redirects to same); dates 22 Oct 2026, Crowne Plaza Dubai – Deira
 - **fit:** AI leaders/innovators/decision-makers conference covering agentic AI, AI governance, responsible AI and enterprise transformation — close match to her "use AI for real work" pillar and Dell/Intel/Microsoft enterprise background. Site has an active "Apply to speak" button and a named organizer (Anas Jawed, CEO, Next Business Media), the strongest contact-completeness of any target added this scan.
 - **est_value:** pending — verify fee band against canon before pitching
-- **stage:** identified
+- **stage:** dead (event passed)
 - **history:**
   - 2026-10-12 — identified via /speaking-pipeline scan. Contact: Anas Jawed (CEO, Next Business Media), contact@nextbusinessmedia.com, +1 437 450 2198. Event is 10 days out from this scan date — highly time-critical if pursued; contact-complete and pitch-eligible on that basis, but `scan` mode does not draft pitches. See operator briefing.
+  - 2026-10-26 — /speaking-pipeline scan: marked `dead` (event passed). The 22 Oct 2026 event ran as scheduled. This was the pipeline's strongest contact-complete target (named CEO, direct email and phone) across the 10-12 and 10-19 scans, flagged time-critical both times, and no pitch was ever served. A no is data; leaving as a flagged lesson rather than deleting.
 
 ---
 
@@ -146,3 +163,4 @@ Product Hub — do not reconstruct it from this repo's local copies (`inventory.
 - **stage:** identified
 - **history:**
   - 2026-09-21 — identified via /speaking-pipeline scan. Next step: find the Experts Live Emirates organizing committee contact (Sessionize profile or expertslive.ae team page).
+  - 2026-10-26 — /speaking-pipeline scan: named team found via expertslive.ae/our-team/ — Mahmoud A. Atallah, Founder & Community Lead (Solutions Lead at Bespin Global, Microsoft MVP), plus Hatim Nagarwala (Logistics), Hany Sayed (Marketing), Ahmed Abdel Razek (Volunteer Lead), Saleh Elnagar (Dev Lead), Ahmad Uzair (Founder TechZoetic). No team member is explicitly tagged as owning the "Call for Speakers" process; Atallah is the most senior/likely contact. General channel: contact@expertslive.ae. Event is 11-12 Nov 2026, 17 days out — contact-complete enough to consider for the next `pitch` serving. See operator briefing.
