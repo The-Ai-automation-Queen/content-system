@@ -2,6 +2,48 @@
 
 ---
 
+## RESEARCH 074 — 2026-10-26 | Signal harvest (current audience problem) — 1 new shift-lead signal (pillar 1, breaks pillar-2-only streak); 1 new shift-lead signal (pillar 2); 1 new internal-research signal
+
+**Status:** NOTED
+**Report:** [reports/signal-harvest-2026-10-26.md](reports/signal-harvest-2026-10-26.md)
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `31a7eeb5`; source (queen-brain) commit not reconstructed this session — per this session's own reality-check ("canon: queen-brain NOT in this session"), not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current harvest shape.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only study design, source authority, disclosed methodology and recency were weighed.
+
+### One new shift-lead signal — pillar 1, "understand AI and know where to begin" (breaks the pillar-2-only streak)
+
+**S1 — Primary research report, disclosed methodology (1,017 assessments, 634 fully calibrated, independent-evaluator scoring, not self-report): 49% of professionals are "AI Literate" (regular users with real gaps) while 44% cannot explain how AI actually works at a functional level.** AISA Research, "AI Literacy Report 2026: What 1,017 Assessments Reveal," published 2026-06-18, fielded February–June 2026. First dedicated pillar-1 pick in many runs — the prior six (069–073) landed exclusively on pillar 2. Directly names this audience's starting problem: confident daily AI use sitting on top of a measured, not just felt, understanding gap. Caveat: ~130 days old — older than the usual corroborating-anchor window; logged as a foundational anchor citation, not fresh news, because it is the first methodologically disclosed primary source to clear the pillar-1 bar after a long run of marketing-aggregator rejects. Directly `WebFetch`-confirmed on the report's own page.
+
+### One new shift-lead signal — pillar 2, "protect what's uniquely yours"
+
+**S2 — Freelance/gig knowledge workers are being shifted from production toward validation work (reviewing/correcting AI output), eroding the informal skill-building pathway they rely on in place of employer-run upskilling.** Nakul Rajpal, "From Producing to Validating: How AI Is Deskilling Freelancers," arXiv:2608.26089 (submitted 2026-08-26). A production-to-validation task-shift angle, distinct from the already-logged consent/ownership framing (RESEARCH 073 S1) and the entry-level "Absorption" framing (RESEARCH 072 S1). Caveat: ~2 months old (corroborating-anchor treatment); population is freelance/gig workers — proximate, not identical, to this audience, though the "no institutional safety net" angle fits founders/independents especially well. Directly `WebFetch`-confirmed on the arXiv abstract page.
+
+### One new internal-research signal
+
+**I1 — Proposes a "Three-Pillar" governance model (transparency, accountability, trustworthiness) under which an AI agent earns autonomy incrementally through progressive validation and auditable oversight, rather than being granted a fixed autonomy level up front.** Edward C. Cheng, Jeshua Cheng, Alice Siu, "A Three-Pillar Governance Framework for Safe and Trustworthy AI Agents," arXiv:2610.30445 (submitted 2026-10-21). Extends the standing agent-governance/assurance thread (Agent Reliability Profiles, RESEARCH 073 I1) with an incremental-autonomy mechanism relevant to how this repository's own agent pipeline could be staged over time. Caveat: 5 days old; internal-research only per `positioning.md`. Directly `WebFetch`-confirmed on the arXiv abstract page.
+
+### Rejected this run (named)
+
+aihub.org/The Conversation "AI is creating jobs as well as erasing them" (today, but synthesis-only, no primary study — same rejection category as the Cornerstone Research interview); Enigmatica "State of AI Literacy" (explicit secondary synthesis of McKinsey/BCG/HBS/Gartner/LinkedIn/Stack Overflow/GitHub, no disclosed sample — AISA's disclosed-methodology report chosen instead); University of Bath "epistemic deskilling" study (already logged RESEARCH 071 S1, resurfaced via fresh search, confirmed via grep); Microsoft 319-knowledge-worker study (already logged and already rejected once, resurfaced again); full agent-evaluation-reliability WebSearch sweep — SkillForgeBench, "Rater Effects, Drift..." (2610.07003), Princeton/Stanford/UK AISI/Brookings trends survey, Hardy et al. (2610.00651), "Towards a Science of AI Agent Reliability" (2602.16666), "Messier" (2607.25891) — all confirmed already logged via grep, none new; pillar-1 AI-learning-roadmap search (course/bootcamp marketing only, no study); pillar-3 AI-pilot-decision-framework search (consulting-firm marketing only, no named study — pillar 3 remains unfilled since RESEARCH 065). Full detail and reasoning for each in the dated report.
+
+### Source health this run
+
+- Anthropic News, Hugging Face Blog, Google DeepMind, a16z AI: all `WebFetch`-reachable; none surfaced an audience-problem fit, same non-fit pattern as every run since RESEARCH 050.
+- OpenAI Blog: still HTTP 403 — now past **30 consecutive failed runs** (044 through 074). Standing recommendation unchanged and still unactioned: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- thestreet.com: HTTP 403 again, same as every check since 2026-10-19.
+- Dedup checked via `grep -rli` across all seventeen prior dated reports plus `research-notes.md` and `content-vault.md` — caught the Bath/Lindebaum and Microsoft-319 repeats, confirmed all three new finds (AISA, Rajpal, Cheng/Cheng/Siu) were genuinely unlogged.
+
+### Pillar balance flag
+
+This run breaks the six-run pillar-2-only streak (069–073) by logging a pillar-1 signal for the first time in that stretch, but S1 is an older anchor citation (~130 days), not fresh news — treat it as foundational, not a trend update. Pillar 3 remains the standing open gap: last filled at RESEARCH 065 (2026-10-13); today's dedicated pillar-3 sweep again surfaced only unsourced marketing content.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 073 — 2026-10-25 | Signal harvest (current audience problem) — 1 new shift-lead signal (pillar 2); 1 new internal-research signal
 
 **Status:** NOTED
