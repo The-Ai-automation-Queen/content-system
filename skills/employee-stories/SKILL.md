@@ -206,6 +206,9 @@ permanent. Assigned so far:
 | 044 | Nizar | No-Show Rebooker (interviewing) | Sales |
 | 045 | Mariam | Action Item Tracker (interviewing) | Operations |
 | 046 | Souad | Question Collector (interviewing) | Marketing |
+| 047 | Lamia | Report Summarizer (interviewing) | Intelligence |
+| 048 | Ghassan | Deal Debriefer (interviewing) | Deals |
+| 049 | Warda | Contract Renewal Tracker (interviewing) | Back Office |
 
 New names: short, warm, easy to say in English and French, no name
 reuse, never the name of a real client or contact. Log new assignments

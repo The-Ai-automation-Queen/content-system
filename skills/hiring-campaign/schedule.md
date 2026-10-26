@@ -53,6 +53,9 @@ real files in agent-os-company-dashboard/company/departments/.
 | 044 | Nizar | No-Show Rebooker | sales/sales-no-show-rebooker.md | PLAYBOOK | announced, playbook live 19/10/2026 | 2026-W43 |
 | 045 | Mariam | Action Item Tracker | operations/operations-action-item-tracker.md | PLAYBOOK | announced, playbook live 19/10/2026 | 2026-W43 |
 | 046 | Souad | Question Collector | marketing/marketing-question-collector.md | PLAYBOOK | announced, playbook live 19/10/2026 | 2026-W43 |
+| 047 | Lamia | Report Summarizer | intelligence/intelligence-report-summarizer.md | PLAYBOOK | announced, playbook live 26/10/2026 | 2026-W44 |
+| 048 | Ghassan | Deal Debriefer | deals/deals-deal-debriefer.md | PLAYBOOK | announced, playbook live 26/10/2026 | 2026-W44 |
+| 049 | Warda | Contract Renewal Tracker | backoffice/backoffice-contract-renewal-tracker.md | PLAYBOOK | announced, playbook live 26/10/2026 | 2026-W44 |
 
 Beyond #016: the campaign run picks the next 3 most audience-relevant
 roles from the departments roster (3 different departments per wave) and

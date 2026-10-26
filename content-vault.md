@@ -13,6 +13,14 @@
 
 ## Most recent (quick reference)
 
+- 26/10/2026 | LinkedIn carousel | "A Software Contract Auto-Renewed Last Week and You Missed the Cancel Window by Two Days" — Warda, Contract Renewal Tracker, Employee #049 | READY TO POST
+- 26/10/2026 | LinkedIn | "A Software Contract Auto-Renewed Last Week and You Missed the Cancel Window by Two Days" — Warda, Contract Renewal Tracker, Employee #049 | READY TO POST
+- 26/10/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Lamia/Ghassan/Warda | READY TO POST
+- 26/10/2026 | LinkedIn carousel | "You Lost a Deal Last Month and Still Can't Say Exactly Why" — Ghassan, Deal Debriefer, Employee #048 | READY TO POST
+- 26/10/2026 | LinkedIn | "You Lost a Deal Last Month and Still Can't Say Exactly Why" — Ghassan, Deal Debriefer, Employee #048 | READY TO POST
+- 26/10/2026 | LinkedIn | "Now Hiring: Three More AI Employees, Salary $0 Each" — wave announcement, Employees #47/#48/#49 | READY TO POST
+- 26/10/2026 | LinkedIn carousel | "An Industry Report Has Been Sitting in a Browser Tab for Two Weeks and You Still Haven't Read It" — Lamia, Report Summarizer, Employee #047 | READY TO POST
+- 26/10/2026 | LinkedIn | "An Industry Report Has Been Sitting in a Browser Tab for Two Weeks and You Still Haven't Read It" — Lamia, Report Summarizer, Employee #047 | READY TO POST
 - 19/10/2026 | LinkedIn carousel | "You've Been Asked the Same Question Five Times This Month and Never Once Turned It Into a Post" — Souad, Question Collector, Employee #046 | READY TO POST
 - 19/10/2026 | LinkedIn | "You've Been Asked the Same Question Five Times This Month and Never Once Turned It Into a Post" — Souad, Question Collector, Employee #046 | READY TO POST
 - 19/10/2026 | Short-form video (Reel) | "Three More AI Employees Joined This Week" — wave reel, Nizar/Mariam/Souad | READY TO POST
@@ -148,6 +156,259 @@
 - 23/06/2026 | Short-form video | "I Haven't Built a Slide Deck in 9 Months" — let AI draft the busywork | READY TO POST
 - 23/06/2026 | LinkedIn | "Stop Doing Robot Work With Human Hands" — automate the boring stuff | READY TO POST
 - 23/06/2026 | LinkedIn | "The Sunday Night Test" — corporate-exit story | READY TO POST
+
+---
+
+## ENTRY 214 — 26/10/2026 | LinkedIn carousel | A Software Contract Auto-Renewed Last Week and You Missed the Cancel Window by Two Days | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 213 (Warda, Employee #049, Contract Renewal Tracker, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/warda/warda-contract-renewal-tracker-01.png through -06.png
+Source HTML: skills/carousel-factory/out/warda-contract-renewal-tracker.html
+**CTA keyword:** CONTRACT, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "A software contract auto-renewed last week and you missed the cancel window by two days."
+Slide 2 (scene): "You meant to check the renewal terms when you signed it. Months later the charge hits, and the window to cancel closed before you even thought to look."
+Slide 3 (role card): Warda, Contract Renewal Tracker, Back Office, Salary $0, never sleeps. "Warda is AI. The only job she took was mine: tracking the cancel window before it quietly closed on me."
+Slide 4 (how she works): 4-step list, give her your vendor contracts, she checks them against today, flags upcoming windows, you review and decide.
+Slide 5 (demo): "Built and tested tracking one real set of vendor contracts. Setup about 10 minutes. She never cancels anything or invents a date."
+Slide 6 (CTA): "Want the free setup? Comment CONTRACT."
+
+---
+
+## ENTRY 213 — 26/10/2026 | LinkedIn | A Software Contract Auto-Renewed Last Week and You Missed the Cancel Window by Two Days | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Thursday episode 3)
+**Topic:** Employee #049, Warda, Contract Renewal Tracker. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/contract-renewal-tracker-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard is not in this session's container this run (confirmed via directory check: only content-system present). Role summary taken from the schedule.md departments-roster convention and the felt-pain lens per the "beyond #016" rule. Source gap logged honestly rather than fabricating a dashboard read. Seventh employee from the Back Office department (after Omar/Receipt Processor, Tariq/Invoice Builder, Rami/Subscription Auditor, Bilal/Expense Coding, Dalia/Vendor Payment Tracker, Samar/Tax Deadline Tracker), a distinct angle: vendor contract cancel-windows specifically, not receipts, invoicing, a current-subscription audit, bills already due, or tax dates. Mode check: no receipt found anywhere for Warda. Confirmed PLAYBOOK.
+
+---
+A software contract auto-renewed last week and you missed the cancel window by two days.
+
+You meant to check the renewal terms when you signed it. Months later the charge hits, and the window to cancel closed before you even thought to look.
+
+Meet Employee #049.
+
+Warda. Contract Renewal Tracker. Back Office.
+Salary: $0. Never sleeps.
+
+Warda is AI. The only job she took was mine: tracking the cancel window before it quietly closed on me.
+
+How she works:
+1. You give her your vendor contracts: who, renewal date, cancel-by date if there is one.
+2. She checks each one against today's date.
+3. She flags anything with a cancel window coming up.
+4. You review it and decide yourself, cancel or let it renew.
+
+The demo: built and tested tracking one real set of vendor contracts with one AI tool. Setup time, about 10 minutes. She never cancels anything, and never invents a renewal date or a cancel window I didn't give her.
+
+Red line: no date gets added unless I actually listed it, a short honest list beats a padded invented one.
+
+Your first win, free, today: write down every vendor contract you can think of, who, renewal date, cancel-by date if you know it. That's Warda's first list.
+
+Comment CONTRACT and I'll send you the full setup, free.
+
+#AIemployees #The99 #BackOfficeOps
+
+---
+
+## ENTRY 212 — 26/10/2026 | Short-form video (Reel / TikTok / YouTube Short) | Three More AI Employees Joined This Week | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** Talking-head reel (30-45s), captions required
+**Format:** Week's wave reel (Wednesday slot), three role-card cutaways + one screenshot cutaway
+**Topic:** Compresses all 3 of this week's hires (Lamia, Ghassan, Warda) into one 45-second reel, per the hiring-campaign weekly slot map.
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Notes:** Captions pass required (captions skill, full burn-in). Screenshot cutaway must model redaction per M02 law (blur the vendor name and contract amount on the renewal-tracker screenshot).
+**Source:** Assembled from ENTRY 207/210/213's role-card lines. No new claims.
+
+---
+[0:00-0:03] HOOK, on-screen text + spoken: "Three more AI employees joined this week."
+
+[0:03-0:12] Role card cutaway 1, Lamia: "Lamia pulls the three findings that matter out of a report I never got around to reading."
+
+[0:12-0:21] Role card cutaway 2, Ghassan: "Ghassan writes down why the deal really went the way it did."
+
+[0:21-0:30] Role card cutaway 3, Warda: "Warda catches a contract's cancel window before it closes on me."
+
+[0:30-0:38] Screenshot cutaway: Warda's contract tracker, real setup, vendor name and amount blurred (redaction modeled).
+
+[0:38-0:45] Closing line, spoken + on-screen: "None of them act without me. Comment TEAM and I'll send you how to hire your first one."
+
+---
+
+## ENTRY 211 — 26/10/2026 | LinkedIn carousel | You Lost a Deal Last Month and Still Can't Say Exactly Why | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-he-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 210 (Ghassan, Employee #048, Deal Debriefer, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/ghassan/ghassan-deal-debriefer-01.png through -06.png
+Source HTML: skills/carousel-factory/out/ghassan-deal-debriefer.html
+**CTA keyword:** DEBRIEF, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "You lost a deal last month and still can't say exactly why."
+Slide 2 (scene): "It stung for a day, you moved on to the next lead, and the honest reason it fell apart never got written down anywhere you'll ever look again."
+Slide 3 (role card): Ghassan, Deal Debriefer, Deals, Salary $0, never sleeps. "Ghassan is AI. The only job he took was mine: writing down why the deal really went the way it did before I quietly forgot."
+Slide 4 (how he works): 4-step list, tell him what happened, he writes one clean debrief, flags a pattern if one shows up, you review and file.
+Slide 5 (demo): "Built and tested debriefing one real deal. Setup about 10 minutes. He never contacts the client or invents a reason."
+Slide 6 (CTA): "Want the free setup? Comment DEBRIEF."
+
+---
+
+## ENTRY 210 — 26/10/2026 | LinkedIn | You Lost a Deal Last Month and Still Can't Say Exactly Why | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Wednesday episode 2)
+**Topic:** Employee #048, Ghassan, Deal Debriefer. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/deal-debriefer-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard is not in this session's container this run (confirmed via directory check). Role summary taken from the schedule.md departments-roster convention and the felt-pain lens per the "beyond #016" rule. Source gap logged honestly rather than fabricating a dashboard read. Sixth employee from the Deals department (after Farah/Quote Generator, Adam/Signature Chaser, Tamer/Meeting Recaps, Khalil/Proposal Writer, Rayan/Call Prep), a distinct angle: an honest post-deal reflection, not pricing, signature chasing, per-meeting recaps, proposal drafting, or pre-call prep. Mode check: no receipt found anywhere for Ghassan. Confirmed PLAYBOOK.
+
+---
+You lost a deal last month and still can't say exactly why.
+
+It stung for a day, you moved on to the next lead, and the honest reason it fell apart never got written down anywhere you'll ever look again.
+
+Meet Employee #048.
+
+Ghassan. Deal Debriefer. Deals.
+Salary: $0. Never sleeps.
+
+Ghassan is AI. The only job he took was mine: writing down why the deal really went the way it did before I quietly forgot.
+
+How he works:
+1. You tell him what happened: won or lost, and why, as best you know it.
+2. He writes one clean debrief: what worked, what didn't, one thing to try differently.
+3. He flags any pattern if it echoes something you've told him before.
+4. You review it and file it yourself.
+
+The demo: built and tested debriefing one real deal with one AI tool. Setup time, about 10 minutes. He never contacts the client, and never invents a reason I didn't actually give him.
+
+Red line: "I'm not sure why" is a valid answer, a short honest debrief beats a confident invented one.
+
+Your first win, free, today: right after your next deal closes or dies, write three lines, won or lost, why as best you know it, what you'd do differently. That's Ghassan's first debrief.
+
+Comment DEBRIEF and I'll send you the full setup, free.
+
+#AIemployees #The99 #DealsOps
+
+---
+
+## ENTRY 209 — 26/10/2026 | LinkedIn | Now Hiring: Three More AI Employees, Salary $0 Each | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Hiring-post ritual (job-ad parody), Monday wave announcement
+**Topic:** Introduces this wave's 3 openings (Employees #047, #048, #049).
+**Pattern used:** Job-ad parody + serial-cliffhanger opener
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — value-first series opener, comment-keyword capture, no promo.
+**Source:** schedule.md had no remaining "planned" rows this wave (confirmed via full read at wave start); three picks made per the "beyond #016" rule from the departments roster, Intelligence, Deals, Back Office, 3 distinct, none reused from last wave (Sales, Operations, Marketing). A full department-usage recount across all fourteen prior "beyond #016" waves showed Intelligence as the sole least-used department (3 prior hires, versus 4 each for the other six); Deals and Back Office were picked to fill the remaining two slots as the two departments whose second-most-recent prior use was oldest among the four not used last wave. agent-os-company-dashboard is not in this session's container this run (confirmed via directory check); role descriptions below are drawn from the felt-pain lens, not a dashboard read, and that gap is logged here rather than fabricated.
+
+---
+Now hiring. Three more AI employees. Salary: $0 each.
+
+Employee #047: Report Summarizer.
+Pulls the three findings that matter out of a report you never got around to reading.
+
+Employee #048: Deal Debriefer.
+Writes down why a deal was won or lost while it's still fresh.
+
+Employee #049: Contract Renewal Tracker.
+Catches a vendor contract's cancel window before it quietly closes.
+
+None of them sleep. None of them ask for a raise. None of them act without me seeing it first.
+
+That is Employee #47, #48, and #49 of 99. The full team, hired one at a time, in public.
+
+See who is already on the floor. The scoreboard is live, updated only when there is a real receipt to show.
+
+Want to build your own first hire? Comment TEAM and I will send you the free 5-step framework.
+
+#AIemployees #Solopreneur #The99
+
+---
+
+## ENTRY 208 — 26/10/2026 | LinkedIn carousel | An Industry Report Has Been Sitting in a Browser Tab for Two Weeks and You Still Haven't Read It | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn / Instagram carousel (6 slides, 1080x1350)
+**Format:** hook / scene / role card / how-she-works list / demo / CTA (carousel-factory)
+**Topic:** Visual companion to ENTRY 207 (Lamia, Employee #047, Report Summarizer, PLAYBOOK).
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A
+**Rendered assets (inspected, no overflow, electric used once per slide):**
+skills/carousel-factory/out/lamia/lamia-report-summarizer-01.png through -06.png
+Source HTML: skills/carousel-factory/out/lamia-report-summarizer.html
+**CTA keyword:** REPORT, verified ACTIVE in lead-magnets.csv this run.
+
+---
+Slide 1 (hook): "An industry report has been sitting in a browser tab for two weeks and you still haven't read it."
+Slide 2 (scene): "You know there's probably something useful in there. The tab just sits open, a quiet reminder of something you keep meaning to get to and never do."
+Slide 3 (role card): Lamia, Report Summarizer, Intelligence, Salary $0, never sleeps. "Lamia is AI. The only job she took was mine: reading the report so I didn't have to pretend I already had."
+Slide 4 (how she works): 4-step list, give her the report, she pulls the three findings that matter, writes one plain line each, you decide what to act on.
+Slide 5 (demo): "Built and tested summarizing one real report. Setup about 10 minutes. She never claims a finding the report doesn't contain."
+Slide 6 (CTA): "Want the free setup? Comment REPORT."
+
+---
+
+## ENTRY 207 — 26/10/2026 | LinkedIn | An Industry Report Has Been Sitting in a Browser Tab for Two Weeks and You Still Haven't Read It | READY TO POST
+
+**Status:** READY TO POST
+**Platform:** LinkedIn (text post)
+**Format:** Employee-stories skeleton (Tuesday episode 1)
+**Topic:** Employee #047, Lamia, Report Summarizer. PLAYBOOK mode: no real instance running yet, demo built and tested once. Free playbook ships the same run (see lead-magnets/report-summarizer-setup.md).
+**Pattern used:** Felt-problem hook + role card + demo + Traffic Light safety line + first win + keyword CTA
+**Pillar:** Stop Doing That by Hand (The 99 series)
+**ACP stage:** A — playbook value post, comment-keyword capture.
+**Source:** agent-os-company-dashboard is not in this session's container this run (confirmed via directory check). Role summary taken from the schedule.md departments-roster convention and the felt-pain lens per the "beyond #016" rule. Source gap logged honestly rather than fabricating a dashboard read. Sixth employee from the Intelligence department (after Yara/Competitor Watch, Maya/News Digest, Hind/Social Listener, Rania/Review Miner, Hana/SWOT Builder, Sana/Pricing Watch), a distinct angle: long-form report summarization, not ongoing competitor or news monitoring, social chatter, reviews, internal decision-support, or a single named pricing page. Mode check: no receipt found anywhere for Lamia. Confirmed PLAYBOOK.
+
+---
+An industry report has been sitting in a browser tab for two weeks and you still haven't read it.
+
+You know there's probably something useful in there. The tab just sits open, a quiet reminder of something you keep meaning to get to and never do.
+
+Meet Employee #047.
+
+Lamia. Report Summarizer. Intelligence.
+Salary: $0. Never sleeps.
+
+Lamia is AI. The only job she took was mine: reading the report so I didn't have to pretend I already had.
+
+How she works:
+1. You give her the report: pasted text, a link's content, or the key sections.
+2. She pulls out the three most relevant findings for your business specifically.
+3. She writes one plain-language line per finding.
+4. You review it and decide what, if anything, to act on.
+
+The demo: built and tested summarizing one real report with one AI tool. Setup time, about 10 minutes. She never claims a finding the report doesn't contain, and never acts on anything or publishes a summary publicly.
+
+Red line: every finding traces back to the actual report, a short honest summary beats a padded invented one.
+
+Your first win, free, today: pick one report that's been sitting unread and copy the sections that look most relevant to your business. That's Lamia's first read.
+
+Comment REPORT and I'll send you the full setup, free.
+
+#AIemployees #The99 #IntelligenceOps
 
 ---
 
