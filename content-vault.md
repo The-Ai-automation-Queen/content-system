@@ -21,6 +21,50 @@
 
 ## Most recent (quick reference)
 
+> **26/10/2026 content-engine daily run — no new entries produced (deliberate):**
+> Run end to end per explicit operator instruction ("Run the /content-engine
+> daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
+> queue-only — never post instantly. End with the operator briefing.");
+> `skills/content-engine/SKILL.md` not registered via the Skill tool this
+> session, so read and followed manually per the
+> `project-skills-not-registered` memory. Loaded `AGENTS.md`,
+> `CURRENT-WORKFLOW.md`, `context/current-context.json` and `security.md`
+> first, as both CLAUDE.md and the skill require.
+>
+> Both standing blockers independently reconfirmed this session rather than
+> trusted from memory: (1) canon — this session's startup hook already
+> states `queen-brain NOT in this session`; re-verified directly with
+> `git ls-remote` both ways — HTTPS gave 403 "Write access to repository
+> not granted", SSH gave "Repository not found" (same alternating-error
+> pattern as prior sessions) — and no `gh` CLI is present. 29th consecutive
+> blocked day, matching today's earlier `brain-manager` run. content-engine's
+> output is customer-facing copy, so drafting stays forbidden regardless of
+> available research; (2) release backlog — `content-vault.md` reconfirmed
+> directly by counting `## ENTRY` headers: 78 total (37 READY TO POST / 33
+> DRAFT / 6 STALE / 2 KILLED / 0 POSTED), matching today's startup hook
+> exactly. Oldest ready items (ENTRY 047/048/049, all dated 14/07/2026) have
+> now sat **104 days**. `review-cockpit/state.md` shows its 116th
+> consecutive empty sweep today (two interactive sweeps run, the 115th and
+> 116th), with all 9 cards from today's digest (header 1552, #1–#6
+> 1553–1558, R1–R3 1559–1561, footer 1562) still outstanding, and
+> `decisions-log.md` unchanged since 14/07/2026 — no operator replies,
+> approvals or kills since then.
+>
+> This session's own signal-harvester already ran earlier today
+> (`reports/signal-harvest-2026-10-26.md`, logged as RESEARCH 074 in
+> `research-notes.md`) and found 1 new qualifying shift-lead signal (pillar
+> 1: AISA AI Literacy Report, a disclosed-methodology 1,017-assessment
+> study — breaking the six-run pillar-2-only streak) and 1 new shift-lead
+> signal (pillar 2: Rajpal freelancer production-to-validation deskilling,
+> arXiv:2608.26089), plus 1 new internal-research signal (Three-Pillar
+> incremental-autonomy agent-governance framework, arXiv:2610.30445).
+> Pillar 3 remains unfilled since RESEARCH 065 (13/10/2026). Fresh research
+> notwithstanding, the canon block makes the point moot for drafting today.
+>
+> No new entries produced. Queue-only publishing held throughout — no
+> customer-facing copy was drafted, queued or scheduled. Same two open
+> options as every run since 18/09/2026, still unanswered by the operator.
+
 > **25/10/2026 content-engine daily run — no new entries produced (deliberate):**
 > Run end to end per explicit operator instruction ("Run the /content-engine
 > daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
