@@ -6,11 +6,69 @@
 
 ## Queue (next up, in order)
 
-1. UNB-029 — Delete dead `work-with-me-v3.css` (scope now v3+v4.css+v4.js, see JAN-08) *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; 25/10 check: still unanswered, 17th morning since the confrontation; ask already at floor, offer to execute myself on a ✅ still open; not re-sent, no serve-4 rule)*
-2. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 25/10 check: still unanswered, 25th morning; stale-branch count now 86 (+1, cutoff rolled to 2026-09-25), total branches now 178 (+1 from 24/10))*
-3. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 25/10 check confirms still unanswered, 31st morning; now 1012 commits behind main (was 999), 16th consecutive worsening)*
-4. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 25/10 check confirms still unanswered, 33 days)*
-5. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 25/10 check confirms still unanswered, 39th morning)*
+1. UNB-032 — Check the VPS cron runner (git-fetch-only truncation) *(SERVED 26/10 — fresh zero-serve item, outranks the stalled items below on dependency weight; see today's note and the entry's own prep note)*
+2. UNB-029 — Delete dead `work-with-me-v3.css` (scope now v3+v4.css+v4.js, see JAN-08) *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; 26/10 check: still unanswered, 18th morning since the confrontation; ask already at floor, offer to execute myself on a ✅ still open; not re-sent, no serve-4 rule)*
+3. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 26/10 check: still unanswered, 26th morning; stale-branch count now 93 (+7, cutoff rolled to 2026-09-26), total branches now 178 (flat))*
+4. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 26/10 check confirms still unanswered, 32nd morning; now 1014 commits behind main (was 1012), 17th consecutive worsening)*
+5. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 26/10 check confirms still unanswered, 34 days)*
+6. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 26/10 check confirms still unanswered, 40th morning)*
+7. UNB-033 — Decide fate of 3 Instagram drafts (096/097/099) *(new today, zero-serve, next candidate if UNB-032 resolves or for tomorrow's variety pick)*
+
+> **26/10/2026 — streak broken: UNB-032 served, a fresh zero-serve item,
+> correcting yesterday's scoring miss.** Operator-requested interactive run
+> ("Run the /unblocker daily skill end to end. Obey CLAUDE.md and
+> security.md. Publishing is queue-only — never post instantly. End with
+> the operator briefing."), skill not registered via the Skill tool this
+> session (confirmed directly — `Skill({skill:"unblocker"})` returned
+> "Unknown skill") — read `skills/unblocker/SKILL.md` and followed manually
+> per the `project-skills-not-registered` memory. Today's automated 04:00
+> GST cron (`deploy/logs/unblocker daily-2026-10-26T04-00-02.log`) again
+> only fast-forwarded the git pull — 3 lines, no `claude -p` output, no
+> "done" trailer — the identical truncation shape UNB-032 itself tracks;
+> this interactive run is today's actual execution. Full re-scan:
+> `content-vault.md` recounted directly from `## ENTRY` header suffixes
+> (37 READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED / 0 POSTED, 78 total)
+> — unchanged, matching this session's own startup reality-check hook and
+> today's already-completed `review-cockpit digest` (114th consecutive
+> empty sweep) and `weekly-ops` run, Ready-shelf trio now **104 days** with
+> nothing released; `git fetch --prune` + `git for-each-ref` with a
+> 2026-09-26 cutoff — **178** total branches (flat) and **93** stale >30d
+> (was 86 on 25/10, +7, cutoff roll plus a cluster of branches crossing the
+> 30-day line together); `git -C ~/content-system-DUPLICATE rev-parse HEAD`
+> (unchanged `a2e2bc1f`) + fresh `git fetch origin main` + `git log
+> HEAD..origin/main` — **1014** commits behind (was 1012 on 25/10), a
+> seventeenth consecutive worsening; `git merge-base --is-ancestor` confirms
+> DUPLICATE's HEAD is still a clean ancestor of `origin/main`; `find` for
+> `work-with-me-v3.css`/`v4.css`/`v4.js` — all three still present, zero
+> live references, unchanged; `ROADMAP.md`/`ACTION-PLAN-CASH-MACHINE.md`/
+> `lead-magnets.csv` mtimes unchanged; `personal-brain.md` last touched
+> 25/10 (`brain-manager` run) with nothing new ledger-eligible; a live
+> `getUpdates` call — empty, `{"ok":true,"result":[]}`, matching every
+> prior day's sweep; fresh `git ls-remote` on queen-brain/fast-forward/
+> agent-os-company-dashboard — all three still 403.
+>
+> **Three new findings this run, folded into the ledger:** (1) `site/
+> store.html` is now a dead redirect to `/guides/` (moved in the August
+> site-merge) with zero live `whop.com` references anywhere on the site —
+> UNB-002/004/005's own `verify` targets no longer exist as pages; noted on
+> each entry, flagged for an operator strategy call rather than killed
+> unilaterally. (2) Today's own `/weekly-ops` and `/speaking-pipeline scan`
+> runs surfaced `vault-audit`'s Instagram-zero-READY finding (the primary
+> growth channel has 0 READY content and 0 posts ever) — opened as new
+> entry **UNB-033** (the 3 Instagram drafts, 096/097/099, 40 days DRAFT).
+> (3) UNB-032 itself, added yesterday by `/estate-janitor scan`, was never
+> actually served on 25/10 — yesterday's run logged it as evidence only and
+> sent no Telegram message at all. That was a miss: it's a zero-serve item,
+> not one of the five items genuinely stuck behind the no-serve-4 rule, and
+> per the dependency-weight-outranks-raw-revenue rule it should have taken
+> the slot. Corrected today — see UNB-032's own prep note for the full
+> selection reasoning and `run-machine.sh` read-through.
+>
+> UNB-025/026/027/028/029 (the five serve-3-capped items) remain unchanged
+> with zero reply, now an eighteenth-to-fortieth consecutive morning
+> depending on entry; per the no-serve-4 rule none were re-sent. Canon
+> (queen-brain) remained unreachable this session — no price, tier, offer
+> status or customer-facing copy was written or reconstructed.
 
 > **25/10/2026 — queue still fully stalled, sixteenth consecutive no-serve
 > day.** Operator-requested interactive run ("Run the /unblocker daily
@@ -778,6 +836,18 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
 - **source:** queen-brain/STATUS.md §Products ("Remaining before money: SHE creates Whop/Stripe products and pastes links") + §ONLY FATIHA item 1
 - **verify:** `site/store.html` PRODUCTS entry for The Judge's Prompts has a non-empty `url`
 - **status:** open · served_count: 0 · added: 2026-07-06 · pack: `packs/2026-07-07-UNB-002-whop-judges-prompts.md`
+- **26/10/2026 scan note:** `site/store.html` is now a 10-line redirect to
+  `https://www.shiftandlead.com/guides/` (moved by `be209577`/`380caf4a`,
+  Aug 2026 "Blueprint execution" merge) — this entry's own `verify` target
+  no longer exists as a page. `grep -rl whop.com main-site/` finds zero
+  hits anywhere on the live site. `AGENTS.md`'s current strategic decision
+  (approved 24/08/2026) also states historical offers "are not active CTAs
+  unless Product Hub explicitly reactivates them." Not marking `killed`
+  unilaterally — this is a strategy call (is a Whop-checkout SKU still the
+  intended money path, or has it been superseded by the guides+Lumail
+  capture model?), not a verified completion or a fact as clean as
+  "event passed." Flagging for an explicit operator decision; see UNB-004,
+  UNB-005 (same pattern, same root finding).
 
 ### UNB-003 — VPS pull to take the new site + store live
 - **why:** 16 guides, the store, and the reframed opt-in are in the repo but not deployed; after UNB-002 the store goes live with a working Buy button
@@ -794,6 +864,9 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
 - **source:** queen-brain/STATUS.md §Products (READY TO SELL)
 - **verify:** store.html PRODUCTS url non-empty for The Prompt Menu
 - **status:** open · served_count: 0 · added: 2026-07-06
+- **26/10/2026 scan note:** same finding as UNB-002 — `site/store.html` is
+  now a redirect to `/guides/`, zero `whop.com` references on the live
+  site. See UNB-002's note for the full citation; not re-stating here.
 
 ### UNB-005 — Whop checkout: The AI Time Audit ($47), paste link
 - **why:** third SKU live, completes the money rails hour
@@ -802,6 +875,9 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
 - **source:** queen-brain/STATUS.md §Products (READY TO SELL); ACTION-PLAN Phase 5
 - **verify:** store.html PRODUCTS url non-empty for The AI Time Audit
 - **status:** open · served_count: 0 · added: 2026-07-06
+- **26/10/2026 scan note:** same finding as UNB-002 — `site/store.html` is
+  now a redirect to `/guides/`, zero `whop.com` references on the live
+  site. See UNB-002's note for the full citation; not re-stating here.
 
 ### UNB-006 — Seed personal-brain, part 1 (15 min of the interview)
 - **why:** the brain has 2 entries; every draft the engine writes is generic until this exists; fixes output quality across ALL machines
@@ -2125,7 +2201,53 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
 - **verify:** a future dated log for either slot shows the full skill
   body running (report written, `== done` trailer) without an
   interactive re-run forcing it
-- **status:** open · served_count: 0 · added: 2026-10-25
+- **status:** served · served_count: 1 · added: 2026-10-25 · pack:
+  `packs/2026-10-26-UNB-032-cron-truncation-diagnostic.md`
+- **26/10/2026 prep note:** added yesterday (25/10) by `/estate-janitor
+  scan` but never actually served — yesterday's `/unblocker daily` run
+  logged it as "evidence, not re-added" and sent no Telegram message at
+  all, treating the day as fully stalled because UNB-025/026/027/028/029
+  are all past serve-3 with no reply. That was a scoring miss: this entry
+  is a fresh, zero-serve item, not one of the five stalled ones, and it
+  should have taken the serve slot yesterday. Correcting today — this is
+  the only open item not blocked by the no-serve-4 rule, and it unblocks
+  two (likely more) skills' unattended automation, which outranks the
+  stalled items' raw revenue per the skill's dependency-weight rule.
+  `run-machine.sh` read in full this run: the wrapper logs `git pull`
+  output via `tee`, then calls `claude -p "..." --dangerously-skip-permissions`
+  redirected into the same log with no explicit `timeout`. Both known
+  truncations stop immediately after the git-pull lines with zero output
+  from the `claude -p` call itself — consistent with the process being
+  killed (OOM, an external timeout, or a VPS-level resource limit) before
+  its buffered stdout flushes, not with `claude` printing and exiting
+  cleanly. Pack gives a single SSH diagnostic block (journalctl/dmesg/free
+  around the 04:00 and 02:30 UTC kill times, live crontab vs. the example,
+  disk space) that should surface the actual kill reason without any
+  research or decision from the operator. Delivered via Telegram.
+
+---
+
+### UNB-033 — Decide fate of the 3 Instagram drafts (096/097/099): advance to READY or kill
+- **why:** `vault-audit`'s 10-25 report found Instagram — this system's own
+  documented primary growth channel (`AGENTS.md` non-negotiable rules) —
+  has **zero READY TO POST entries and zero posts ever**, while 31 of 37
+  READY items are LinkedIn. The three Instagram-tagged drafts (ENTRY 096
+  Reel, 097 Instagram/LinkedIn text post, 099 carousel) are the only
+  Instagram-format content in the vault and have sat at DRAFT since
+  16/09/2026 — 40 days — with `critic pending` on 096. Nothing advances the
+  channel until one of these two paths is taken.
+- **revenue_unlocked:** indirect — unblocks the primary-channel content gap,
+  not just the general release backlog · **effort_min:** 15 (read 3 short
+  drafts, reply keep-and-finish-critic vs. kill-and-recommission per entry)
+- **depends_on:** — · **unblocks:** first-ever Instagram READY item; closes
+  the gap `vault-audit` flagged as a precondition before commissioning more
+  content
+- **source:** `reports/vault-audit-2026-10-25.md`; `content-vault.md` ENTRY
+  096/097/099 (dated 16/09/2026, confirmed DRAFT this run)
+- **verify:** ENTRY 096/097/099 each show a status change (READY TO POST or
+  KILLED) in `content-vault.md`, or an explicit operator note recorded
+  against each
+- **status:** open · served_count: 0 · added: 2026-10-26
 
 ---
 
