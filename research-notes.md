@@ -2,6 +2,44 @@
 
 ---
 
+## RESEARCH 075 — 2026-10-27 | Signal harvest (current audience problem) — 1 new shift-lead signal (pillar 1, second consecutive pillar-1 run); 1 new internal-research signal
+
+**Status:** NOTED
+**Report:** [reports/signal-harvest-2026-10-27.md](reports/signal-harvest-2026-10-27.md)
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `7085b0bd`; source (queen-brain) commit not reconstructed this session — per this session's own reality-check ("canon: queen-brain NOT in this session"), not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current harvest shape.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only study design, source authority, disclosed methodology and recency were weighed.
+
+### One new shift-lead signal — pillar 1, "understand AI and know where to begin"
+
+**S1 — Pre-registered RCT: 487 management consultants given ChatGPT access/training on data-science tasks outside their skill set scored higher than controls while using the tool, but showed no measured gain answering technical questions once the tool was removed — demonstrated capability while using AI did not translate into retained understanding.** Emma Wiles, Lisa Krayer, Mohamed Abbadi, Urvi Awasthi, Ryan Kennedy, Pamela Mishkin, Daniel Sack, François Candelon, "GenAI as an Exoskeleton: Experimental Evidence on Knowledge Workers Using GenAI on New Skills," *Nature Human Behaviour*, 2026-10-26. Sharpest available primary-source statement of the pillar-1 problem to date — names the exact gap between feeling capable (while using the tool) and being capable (without it) — and an independent experimental complement to the already-logged MIT/NBER patent-drafting RCT (RESEARCH 051), same output-vs-durable-skill tradeoff in a different population/task. Caveat: `nature.com` paywalled, redirected to auth on direct `WebFetch`; confirmed via two independent `WebSearch` passes and the paper's SSRN preprint listing (same author list) instead — logged as `WebSearch`-confirmed, not `WebFetch`-confirmed.
+
+### One new internal-research signal
+
+**I1 — Proposes a "contestable governance" framework where AI agents propose metadata decisions with scored evidence, a human steward reviews via four structured options (accept/reject/modify/add-argument), and the full evidence/intervention record is preserved — explicitly against both silent error propagation and "perfunctory approval" that leaves no record of what was checked.** Humza Akhtar, Brian Freeman, "Contestable Agents for Data Governance: Recording Human Stewardship of AI-Generated Metadata Across Structured and Unstructured Systems," arXiv:2610.31553 (submitted 2026-10-22). Extends the standing agent-governance thread (Three-Pillar framework, RESEARCH 074 I1; Agent Reliability Profiles, RESEARCH 073 I1) with a concrete review-workflow mechanism directly relevant to this repository's own human-in-the-loop checkpoints (review-cockpit card/approval pattern) — the paper's "perfunctory approval" failure mode is a live operating risk here, not hypothetical. Caveat: 5 days old; internal-research only per `positioning.md`. Directly `WebFetch`-confirmed on the arXiv abstract page.
+
+### Rejected this run (named)
+
+MIT/NBER patent-drafting RCT Oct 7 PDF reissue (already logged RESEARCH 051, confirmed via grep); Adaptavist/Attest "Human Cost of Digital Transformation" knowledge-withholding survey (actual publish date 2025-11-05, ~1 year old despite recent secondary write-ups, also vendor-commissioned self-report — rejected on age); Li/Liao/Tsai/Wu "From Synergy to Strain" knowledge-hiding study (*Behavioral Sciences*, 348 China-based employees, real peer-reviewed/disclosed methodology but published 2025-12-20, ~10 months old, no pillar-balance justification to stretch freshness that far — rejected on age); BCG Institute "When Everyone Uses AI, Companies Risk Critical Skills" (no disclosed sample size/methodology in secondary coverage); Al-Futtaim GCC AI-confidence study (disclosed 1,143-respondent sample but vendor-commissioned and scoped to GCC consumer-economy sectors — weaker fit than S1, same pillar-1 slot); Graphite "AI Now Writes as Many Online Articles as Humans" Common Crawl study (strong disclosed methodology but actual publish date 2026-05-15, over five months old); pillar-3 sweep (blog/marketing content only, no named study — pillar 3 remains unfilled since RESEARCH 065); agent-governance sweep beyond I1 (Three-Pillar framework already logged; Praxa/Sapien surfaced as titles only, not pursued once I1 filled the slot). Full detail and reasoning for each in the dated report.
+
+### Source health this run
+
+- Anthropic News, Hugging Face Blog, Google DeepMind, a16z AI, Lenny's Newsletter: all `WebFetch`-reachable; none surfaced an audience-problem fit, same non-fit pattern as every run since RESEARCH 050.
+- OpenAI Blog: still HTTP 403 — now past **31 consecutive failed runs** (044 through 075). Standing recommendation unchanged and still unactioned: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- `nature.com` and `papers.ssrn.com`: both paywalled/403 on direct `WebFetch` — new observations this run, not previously logged as source-health items since neither had been pursued as a primary source before.
+- Dedup checked via `grep -rli` across all eighteen prior dated reports plus `research-notes.md` and `content-vault.md` — caught the Autor et al. repeat, confirmed both new finds (Wiles et al., Akhtar/Freeman) genuinely unlogged.
+
+### Pillar balance flag
+
+Pillar 1 has now logged a new signal in two consecutive runs (074, 075), following the six-run pillar-2-only streak (069–073) before that. Pillar 2 had no new qualifying signal today despite three candidates investigated in depth — all rejected on dedup or age, not from under-searching. Pillar 3 remains the standing open gap: last filled at RESEARCH 065 (2026-10-13), now six dated reports running (10-20 through 10-27) with nothing to add — the one lane that has gone over two weeks without a disclosed-methodology primary source.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 074 — 2026-10-26 | Signal harvest (current audience problem) — 1 new shift-lead signal (pillar 1, breaks pillar-2-only streak); 1 new shift-lead signal (pillar 2); 1 new internal-research signal
 
 **Status:** NOTED
