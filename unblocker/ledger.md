@@ -6,7 +6,7 @@
 
 ## Queue (next up, in order)
 
-1. UNB-032 — Check the VPS cron runner (git-fetch-only truncation) *(SERVED 26/10 — fresh zero-serve item, outranks the stalled items below on dependency weight; see today's note and the entry's own prep note)*
+1. UNB-032 — Check the VPS cron runner (git-fetch-only truncation) *(SERVED 27/10, serve 2/3 — shrunk to one command after serve 1 drew no reply; see today's note and the entry's own prep note)*
 2. UNB-029 — Delete dead `work-with-me-v3.css` (scope now v3+v4.css+v4.js, see JAN-08) *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; 26/10 check: still unanswered, 18th morning since the confrontation; ask already at floor, offer to execute myself on a ✅ still open; not re-sent, no serve-4 rule)*
 3. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 26/10 check: still unanswered, 26th morning; stale-branch count now 93 (+7, cutoff rolled to 2026-09-26), total branches now 178 (flat))*
 4. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 26/10 check confirms still unanswered, 32nd morning; now 1014 commits behind main (was 1012), 17th consecutive worsening)*
@@ -14,6 +14,55 @@
 6. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 26/10 check confirms still unanswered, 40th morning)*
 7. UNB-033 — Decide fate of 3 Instagram drafts (096/097/099) *(new today, zero-serve, next candidate if UNB-032 resolves or for tomorrow's variety pick)*
 
+> **27/10/2026 — UNB-032 served again (serve 2/3), shrunk to one command;
+> queue otherwise unchanged.** Operator-requested interactive run ("Run
+> the /unblocker daily skill end to end. Obey CLAUDE.md and security.md.
+> Publishing is queue-only — never post instantly. End with the operator
+> briefing."), skill not registered via the Skill tool this session
+> (confirmed directly — `Skill({skill:"unblocker"})` returned "Unknown
+> skill") — read `skills/unblocker/SKILL.md` and followed manually per the
+> `project-skills-not-registered` memory. Today's automated 04:00 GST cron
+> (`deploy/logs/unblocker daily-2026-10-27T04-00-03.log`) again only
+> fast-forwarded the git pull — 4 lines, file timestamp 6 seconds after
+> the cron fired, the identical near-instant-kill shape UNB-032 tracks;
+> this interactive run is today's actual execution. Full re-scan:
+> `content-vault.md` recounted directly from `## ENTRY` header suffixes
+> (37 READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED / 0 POSTED, 78 total)
+> — unchanged, matching this session's own startup reality-check hook and
+> today's already-completed `review-cockpit digest` (commit `1a85eb82`,
+> 117th consecutive empty pre-digest sweep), Ready-shelf trio now **105
+> days** with nothing released; `git fetch --prune` + `git for-each-ref`
+> with a 2026-09-27 cutoff — **180** total branches (+2 from 26/10) and
+> **96** stale >30d (was 93, +3); `git -C ~/content-system-DUPLICATE
+> rev-parse HEAD` (unchanged `a2e2bc1f`) + fresh `git fetch origin main` +
+> `git log HEAD..origin/main` — **1024** commits behind (was 1014 on
+> 26/10), an eighteenth consecutive worsening; `git merge-base
+> --is-ancestor` confirms DUPLICATE's HEAD is still a clean ancestor of
+> `origin/main`; `ROADMAP.md`/`ACTION-PLAN-CASH-MACHINE.md`/
+> `lead-magnets.csv` mtimes unchanged; `content-vault.md` ENTRY 096/097/099
+> (UNB-033) rechecked directly — all three still `DRAFT`, unchanged, now
+> 41 days old; `personal-brain.md` last touched 26/10 (`brain-manager` run)
+> with nothing new ledger-eligible; a live `getUpdates` call — empty,
+> `{"ok":true,"result":[]}`, confirming zero reply to yesterday's UNB-032
+> serve 1 (7-step diagnostic, message_id 1563) before today's serve 2 went
+> out; fresh `git ls-remote` on queen-brain/fast-forward/
+> agent-os-company-dashboard — all three still unreachable ("Please make
+> sure you have the correct access rights").
+>
+> **Served today: UNB-032, serve 2/3.** Serve 1 drew no reply at all, so
+> per the skill's serve-2 rule the ask was shrunk from the full 7-step SSH
+> block to a single copy-paste line (`dmesg | grep oom` + `free -h`) —
+> see the entry's own 27/10 prep note and
+> `packs/2026-10-27-UNB-032-one-command-oom-check.md`. Sent via direct
+> Telegram `sendMessage`, message_id 1577. UNB-025/026/027/028/029 (the
+> five serve-3-capped items) remain unchanged with zero reply, now a
+> nineteenth-to-forty-first consecutive morning depending on entry; per
+> the no-serve-4 rule none were re-sent, summarized in today's briefing
+> instead. UNB-033 (the 3 Instagram drafts) stays at zero serves, next
+> candidate once UNB-032 resolves or for tomorrow's variety pick. Canon
+> (queen-brain) remained unreachable this session — no price, tier, offer
+> status or customer-facing copy was written or reconstructed.
+>
 > **26/10/2026 — streak broken: UNB-032 served, a fresh zero-serve item,
 > correcting yesterday's scoring miss.** Operator-requested interactive run
 > ("Run the /unblocker daily skill end to end. Obey CLAUDE.md and
@@ -2201,8 +2250,21 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
 - **verify:** a future dated log for either slot shows the full skill
   body running (report written, `== done` trailer) without an
   interactive re-run forcing it
-- **status:** served · served_count: 1 · added: 2026-10-25 · pack:
-  `packs/2026-10-26-UNB-032-cron-truncation-diagnostic.md`
+- **status:** served · served_count: 2 · added: 2026-10-25 · pack:
+  `packs/2026-10-27-UNB-032-one-command-oom-check.md`
+- **27/10/2026 prep note:** serve 1 (26/10) drew no reply at all (live
+  `getUpdates` confirmed empty this run). Today's own 04:00 GST cron log
+  (`deploy/logs/unblocker daily-2026-10-27T04-00-03.log`) truncated again
+  — 4 lines, file timestamp 6 seconds after the cron fired, the same
+  near-instant-kill shape as every prior day — so the fault is confirmed
+  still live, not self-resolved. Per the skill's serve-2 rule ("same task,
+  different angle: shrink it"), today's ask drops from the full 7-step SSH
+  block to the single highest-signal line (`dmesg | grep oom` + `free -h`),
+  on the theory that a 7-step paste was too much friction for a 1-minute
+  slot. Sent via direct Telegram `sendMessage` using ambient
+  `TELEGRAM_BOT_TOKEN`/`TELEGRAM_CHAT_ID` (`review-cockpit-telegram-env`
+  memory), message_id 1577. One serve left before the serve-3 gentle
+  confrontation.
 - **26/10/2026 prep note:** added yesterday (25/10) by `/estate-janitor
   scan` but never actually served — yesterday's `/unblocker daily` run
   logged it as "evidence, not re-added" and sent no Telegram message at
