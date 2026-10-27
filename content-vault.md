@@ -21,6 +21,50 @@
 
 ## Most recent (quick reference)
 
+> **27/10/2026 content-engine daily run — no new entries produced (deliberate):**
+> Run end to end per explicit operator instruction ("Run the /content-engine
+> daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
+> queue-only — never post instantly. End with the operator briefing.");
+> `skills/content-engine/SKILL.md` not registered via the Skill tool this
+> session, so read and followed manually per the
+> `project-skills-not-registered` memory. Loaded `AGENTS.md`,
+> `CURRENT-WORKFLOW.md`, `context/current-context.json` and `security.md`
+> first, as both CLAUDE.md and the skill require.
+>
+> Both standing blockers independently reconfirmed this session rather than
+> trusted from memory: (1) canon — this session's startup hook already
+> states `queen-brain NOT in this session`; re-verified directly with
+> `git ls-remote` both ways — HTTPS gave 403 "Write access to repository
+> not granted", SSH gave "Repository not found" (same alternating-error
+> pattern as prior sessions) — and no `gh` CLI is present. 30th consecutive
+> blocked day, matching today's earlier `brain-manager`/`review-cockpit`
+> runs (commits ac3b18be, 7085b0bd, 1938a300). content-engine's output is
+> customer-facing copy, so drafting stays forbidden regardless of available
+> research; (2) release backlog — `content-vault.md` reconfirmed directly by
+> counting `## ENTRY` header-line status suffixes: 78 total (37 READY TO
+> POST / 33 DRAFT / 6 STALE / 2 KILLED / 0 POSTED), matching today's startup
+> reality-check hook exactly. Oldest ready items (ENTRY 047/048/049, all
+> dated 14/07/2026) have now sat **105 days**. `review-cockpit/state.md`
+> shows its 119th consecutive empty sweep today (second process touch today,
+> per commit 7085b0bd), with all 9 cards from today's digest still
+> outstanding, and `decisions-log.md` unchanged since 14/07/2026 — no
+> operator replies, approvals or kills since then. `unblocker/ledger.md`
+> still open at UNB-032/UNB-033, unrelated to this blocker.
+>
+> This session's own signal-harvester already ran earlier today
+> (`reports/signal-harvest-2026-10-27.md`, logged as RESEARCH 075 in
+> `research-notes.md`) and found 1 new qualifying shift-lead signal (pillar
+> 1: Wiles et al. *Nature Human Behaviour* "GenAI as an Exoskeleton" RCT,
+> N=487 consultants — second consecutive pillar-1 run after 074) and 1 new
+> internal-research signal (arXiv:2610.31553 contestable-governance
+> human-steward review framework). Pillar 3 remains unfilled since RESEARCH
+> 065 (13/10/2026), now six dated reports running. Fresh research
+> notwithstanding, the canon block makes the point moot for drafting today.
+>
+> No new entries produced. Queue-only publishing held throughout — no
+> customer-facing copy was drafted, queued or scheduled. Same two open
+> options as every run since 18/09/2026, still unanswered by the operator.
+
 > **26/10/2026 content-engine daily run — no new entries produced (deliberate):**
 > Run end to end per explicit operator instruction ("Run the /content-engine
 > daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
