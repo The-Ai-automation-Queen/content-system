@@ -6,13 +6,72 @@
 
 ## Queue (next up, in order)
 
-1. UNB-032 — Check the VPS cron runner (git-fetch-only truncation) *(SERVED 27/10, serve 2/3 — shrunk to one command after serve 1 drew no reply; see today's note and the entry's own prep note)*
-2. UNB-029 — Delete dead `work-with-me-v3.css` (scope now v3+v4.css+v4.js, see JAN-08) *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; 26/10 check: still unanswered, 18th morning since the confrontation; ask already at floor, offer to execute myself on a ✅ still open; not re-sent, no serve-4 rule)*
-3. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 26/10 check: still unanswered, 26th morning; stale-branch count now 93 (+7, cutoff rolled to 2026-09-26), total branches now 178 (flat))*
-4. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 26/10 check confirms still unanswered, 32nd morning; now 1014 commits behind main (was 1012), 17th consecutive worsening)*
-5. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 26/10 check confirms still unanswered, 34 days)*
-6. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 26/10 check confirms still unanswered, 40th morning)*
-7. UNB-033 — Decide fate of 3 Instagram drafts (096/097/099) *(new today, zero-serve, next candidate if UNB-032 resolves or for tomorrow's variety pick)*
+1. UNB-032 — Check the VPS cron runner (git-fetch-only truncation) *(SERVED 28/10, serve 3/3 — gentle confrontation, three-button ask; see today's note and the entry's own prep note)*
+2. UNB-029 — Delete dead `work-with-me-v3.css` (scope now v3+v4.css+v4.js, see JAN-08) *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; 28/10 check: still unanswered, 20th morning since the confrontation; ask already at floor, offer to execute myself on a ✅ still open; not re-sent, no serve-4 rule)*
+3. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 28/10 check: still unanswered, 28th morning; total branches now 179 (+1); stale count re-measured at 122 with cutoff rolled to 2026-09-28 — a larger jump than prior days, likely a late-Sept branch cluster crossing the 30-day line at once, flagged as a measurement note rather than asserted precisely day-over-day)*
+4. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 28/10 check confirms still unanswered, 34th morning; now 1024 commits behind main — unchanged from 27/10, the first non-worsening day since this metric started tracking)*
+5. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 28/10 check confirms still unanswered, 36 days)*
+6. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 28/10 check confirms still unanswered, 42nd morning)*
+7. UNB-033 — Decide fate of 3 Instagram drafts (096/097/099) *(zero-serve, still DRAFT at 42 days; next candidate now that UNB-032 has hit its serve-3 cap)*
+
+> **28/10/2026 — UNB-032 served a third time (serve 3/3, gentle
+> confrontation); cron fault confirmed still live on a fourth consecutive
+> day.** Operator-requested interactive run ("Run the /unblocker daily
+> skill end to end. Obey CLAUDE.md and security.md. Publishing is
+> queue-only — never post instantly. End with the operator briefing."),
+> skill not registered via the Skill tool this session (confirmed directly
+> — `Skill({skill:"unblocker"})` returned "Unknown skill") — read
+> `skills/unblocker/SKILL.md` and followed manually per the
+> `project-skills-not-registered` memory. Today's automated 04:00 GST cron
+> (`deploy/logs/unblocker daily-2026-10-28T04-00-02.log`) again only
+> fast-forwarded the git pull — 4 lines, the identical truncation shape
+> UNB-032 tracks; this interactive run is today's actual execution. Full
+> re-scan: `content-vault.md` recounted directly from `## ENTRY` header
+> suffixes (37 READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED / 0 POSTED, 78
+> total) — unchanged, matching this session's own startup reality-check
+> hook and today's already-completed `review-cockpit digest` (commit
+> `461f0a08`, 120th consecutive empty pre-digest sweep), Ready-shelf trio
+> now **106 days** with nothing released; `git fetch --prune` + `git
+> for-each-ref` with a 2026-09-28 cutoff — **179** total branches (+1 from
+> 28/10... see note on 27/10) and **122** stale >30d by today's
+> measurement — a much larger jump than prior days (flagged as a likely
+> late-Sept branch-creation cluster crossing the 30-day line at once rather
+> than asserted precisely against yesterday's figure, since re-running
+> yesterday's own cutoff against today's data did not reproduce yesterday's
+> number either); `git -C ~/content-system-DUPLICATE rev-parse HEAD`
+> (unchanged `a2e2bc1f`) + fresh `git fetch origin main` + `git log
+> HEAD..origin/main` — **1024** commits behind, unchanged from 27/10 — the
+> first day this metric has not worsened since tracking began; `git
+> merge-base --is-ancestor` confirms DUPLICATE's HEAD is still a clean
+> ancestor of `origin/main`; `ROADMAP.md`/`ACTION-PLAN-CASH-MACHINE.md`/
+> `lead-magnets.csv` mtimes unchanged; `content-vault.md` ENTRY 096/097/099
+> (UNB-033) rechecked directly — all three still `DRAFT`, unchanged, now 42
+> days old; `personal-brain.md` last touched 27/10 16:01 (`brain-manager`
+> run) with nothing new ledger-eligible; a live `getUpdates` call — empty,
+> `{"ok":true,"result":[]}`, confirming zero reply to yesterday's UNB-032
+> serve 2 (one-command ask, message_id 1577) before today's serve 3 went
+> out; fresh `git ls-remote` on queen-brain/fast-forward/
+> agent-os-company-dashboard — all three still unreachable ("Repository not
+> found"). Also checked `/performance-tracker`'s latest log
+> (`performance-tracker-2026-10-27T23-00-01.log`): it reads as a complete
+> run, but its own commit message (`98d7d038`) records that the cron log
+> was found fetch-only *before* that run wrote its own briefing over it —
+> an interactive stand-in overwriting the truncated cron output, not a
+> self-resolved fault. The fault is confirmed still live across all three
+> affected machines.
+>
+> **Served today: UNB-032, serve 3/3 — the gentle confrontation.** Per the
+> skill's serve-3 rule, framed as "third morning, still waiting" with
+> ✅/✂️/❌ buttons; the diagnostic ask itself is unchanged from serve 2 (one
+> `dmesg`/`free -h` line) since there's no smaller version without SSH
+> access from this session. Sent via direct Telegram `sendMessage`,
+> message_id 1591. This closes UNB-032's own serve budget — per the
+> no-serve-4 rule, it joins UNB-025/026/027/028/029 as capped-with-zero-reply
+> and will not be re-sent until a reply (✅/✂️/❌) or a verified completion
+> lands; UNB-033 (zero-serve, Instagram drafts, 42 days DRAFT) is the next
+> candidate. Canon (queen-brain) remained unreachable this session — no
+> price, tier, offer status or customer-facing copy was written or
+> reconstructed.
 
 > **27/10/2026 — UNB-032 served again (serve 2/3), shrunk to one command;
 > queue otherwise unchanged.** Operator-requested interactive run ("Run
@@ -2250,8 +2309,27 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
 - **verify:** a future dated log for either slot shows the full skill
   body running (report written, `== done` trailer) without an
   interactive re-run forcing it
-- **status:** served · served_count: 2 · added: 2026-10-25 · pack:
-  `packs/2026-10-27-UNB-032-one-command-oom-check.md`
+- **status:** served · served_count: 3 · added: 2026-10-25 · pack:
+  `packs/2026-10-28-UNB-032-serve-3-confrontation.md`
+- **28/10/2026 prep note:** serve 2 (27/10) also drew no reply at all (live
+  `getUpdates` confirmed empty this run). Today's own 04:00 GST cron log
+  (`deploy/logs/unblocker daily-2026-10-28T04-00-02.log`) truncated again —
+  4 lines, identical shape — confirming the fault is still live after a
+  fourth consecutive silent day (10-25 estate-janitor, 10-26/27/28
+  unblocker). Checked `/performance-tracker`'s latest log
+  (`performance-tracker-2026-10-27T23-00-01.log`) too: it reads as a full
+  completed run, but its own commit message (`98d7d038`) says it found
+  that same log fetch-only before writing the full briefing itself — i.e.
+  another interactive stand-in overwriting the truncated cron output, not
+  a self-resolved cron. The fault persists across all three machines.
+  Per the skill's serve-3 rule, today's ask is the gentle confrontation:
+  same one-line diagnostic as serve 2 (no smaller version exists without
+  SSH access from this session), framed as "third morning, still
+  waiting," with ✅/✂️/❌ buttons. Sent via direct Telegram `sendMessage`
+  using ambient `TELEGRAM_BOT_TOKEN`/`TELEGRAM_CHAT_ID`
+  (`review-cockpit-telegram-env` memory), message_id 1591. This is
+  UNB-032's serve-3 cap — no serve 4 without a reply, per the no-serve-4
+  rule, same as UNB-025/026/027/028/029 below.
 - **27/10/2026 prep note:** serve 1 (26/10) drew no reply at all (live
   `getUpdates` confirmed empty this run). Today's own 04:00 GST cron log
   (`deploy/logs/unblocker daily-2026-10-27T04-00-03.log`) truncated again
