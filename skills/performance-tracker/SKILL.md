@@ -272,22 +272,23 @@ Extract: `subscriberCount`, `videoCount`, `viewCount` (lifetime).
 If that actor is unavailable, try:
 
 ```
-Actor: bernardo/youtube-scraper
-Input: { "searchKeywords": "AI-Automation-Queen", "maxResults": 1 }
+Actor: johnvc/youtube-shorts-api
+Input: { "channels": ["@AI-Automation-Queen"], "maxResultsShorts": 10 }
 ```
+
+Extract from the first row: `numberOfSubscribers`, `channelTotalVideos`,
+`channelTotalViews` (lifetime). It returns Shorts only; no rows means no
+channel stats this run.
 
 **Recent videos:**
 
 ```
-Actor: bernardo/youtube-scraper
-Input: {
-  "channelUrls": ["https://www.youtube.com/@AI-Automation-Queen"],
-  "maxResults": 10,
-  "sortBy": "date"
-}
+Actor: johnvc/YoutubeTranscripts
+Input: { "channel": "@AI-Automation-Queen", "max_videos": 10 }
 ```
 
-Extract per video: `title`, `url`, `viewCount`, `likes`, `date`.
+Extract per video: `title`, `url`, `view_count` (rounded). Rows come newest
+first and carry no likes or date.
 
 ---
 
