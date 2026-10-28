@@ -1,26 +1,13 @@
-# Queen Brain: current shared context
+# Business facts: read the Business OS
 
-Refreshed 12 September 2026 from the live Shift & Lead website and current
-Content Factory. Start with `current-context.json` and `sources.md`.
+Fatiha's business facts (who she is, offers and prices, ideal customer, voice,
+values, goals) live in one place: her Business OS.
 
-This repository carries the current reference used by agents. Notion and the
-live website remain authoritative for their respective subjects. GitHub
-`research-inbox` is the working capture library; it is not the brand authority.
+- On her Mac: `Claude Cowork/My Business OS/` (start with "Read me first.md")
+- Online: the private queen-brain repo (being moved there)
 
-| Need | File |
-|---|---|
-| Audience, message, public-topic boundaries | positioning.md |
-| Writing and spoken voice | voice.md |
-| Offers, availability, CTA rules | offers.md |
-| Visual direction | brand.md |
-| Current project goals and technical status | GOALS.md, STATUS.md |
-| Research interpretation | research-policy.md |
-| Evidence and personal material | proof.md, personal-brain.md |
-| Format selection | program.md |
+The Business OS wins over anything in this repo. If a file here disagrees with
+it, the file here is out of date.
 
-The dated archive preserves the previous files verbatim and records their
-hashes. It is excluded from ordinary agent context. Do not load every Markdown
-file recursively. Consumers must read the active-file allowlist.
-
-Updating this GitHub repository does not prove that a VPS service has pulled
-it or reloaded its prompt. Record the version actually loaded by each consumer.
+The old files from this folder (September 2026) are kept in
+`archive/2026-10-28-old-context/`. They are history, not instructions.

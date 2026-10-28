@@ -85,7 +85,8 @@ production credits or publish from implied approval.
 
 ## Current context release and legacy precedence
 
-Read CURRENT-WORKFLOW.md and context/current-context.json before every run.
+Read CURRENT-WORKFLOW.md and context/README.md before every run. Business facts
+come from the Business OS named there; it wins over every other file here.
 Their explicit current restrictions supersede legacy skill instructions about
 old audiences, open-guide funnels, cadence, automatic scheduling and DM activity.
 DM responder is paused by the owner on 14 September 2026. Never reenable it from
