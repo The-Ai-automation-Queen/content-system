@@ -2,6 +2,48 @@
 
 ---
 
+## RESEARCH 076 — 2026-10-28 | Signal harvest (current audience problem) — 1 new shift-lead signal (pillar 3, breaks 15-day gap); 1 new shift-lead signal (pillar 2); 1 new internal-research signal
+
+**Status:** NOTED
+**Report:** [reports/signal-harvest-2026-10-28.md](reports/signal-harvest-2026-10-28.md)
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `40cd5b57`; source (queen-brain) commit not reconstructed this session — per this session's own reality-check ("canon: queen-brain NOT in this session"), not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current harvest shape.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only study design, source authority, disclosed methodology and recency were weighed.
+
+### One new shift-lead signal — pillar 3, "decide where AI belongs in a real business problem and choose a first test" (breaks a 15-day, six-report gap)
+
+**S1 — Self-reported survey of 72 leaders (54% founders/CEOs/sole operators), recruited via PR-quote-aggregation platforms: 61% named workflow redesign (not model choice, data or budget) as the #1 factor moving a first AI pilot into production; leading blocker was data-quality cleanup (58%); 96% kept human-in-the-loop review on anything customer-facing or compliance-sensitive.** SumatoSoft, "AI Readiness: How Companies Move from AI Pilots to Production in 2026," fielded ~21 days, published 2026-04-29 (reviewed 2026-10-07). First candidate with any disclosed sample/methodology to clear the pillar-3 bar since RESEARCH 065 (2026-10-13) — accepted on the same "first-to-clear-the-bar-after-a-drought" logic as the AISA report (RESEARCH 074), with the same proportionate caveat: ~6 months old, self-report, and PR-aggregation recruitment structurally tilts toward success stories, not a representative sample. Logged as the best pillar-3 evidence found in 15 days, not as strong evidence in absolute terms. Directly `WebFetch`-confirmed on SumatoSoft's own page.
+
+### One new shift-lead signal — pillar 2, "protect what's uniquely yours"
+
+**S2 — Think-aloud study, 20 professionals of varying data-science expertise, same AI agent, same hiring-assessment task: higher delegation produced more completed work but significantly more flawed solutions; more expert participants more often resisted the tradeoff, sacrificing speed to scrutinize the agent's output themselves.** Qianou Ma, Pranav Khape, Rock Pang, Ken Koedinger, Tongshuang Wu, Siddarth Suri, Shamsi Iqbal, "Impact of Expertise and Trust on AI-assisted Work," arXiv:2610.14660 (submitted 2026-10-10). Names the mechanism behind pillar 2: existing expertise, not a tool setting, is what catches AI's mistakes before they ship — a direct companion to the already-logged exoskeleton RCT (RESEARCH 075 S1, Wiles et al.), which showed capability-while-using doesn't transfer to retained understanding. Caveat: small N (20), qualitative/directional, academic (CMU/Microsoft-affiliated), not vendor-commissioned. Directly `WebFetch`-confirmed on the arXiv abstract page.
+
+### One new internal-research signal
+
+**I1 — Systematic review of 63 agentic-AI-oversight artifacts: monitoring/tool-mediation traces are well-documented (40+ sources) but the accountability mechanisms that actually matter — checkpoint placement, validator independence, contestability — appear in fewer than 6 sources each. Argues observability can substitute for accountability once verification happens only after intervention is no longer possible.** Hanjing Shi, Dominic DiFranzo, "When Agents Act Unwatched: The Reduced-Supervision Paradox in Agentic AI," arXiv:2609.29547 (submitted 2026-08-28). Sharpens the standing agent-governance thread (Three-Pillar framework, RESEARCH 074 I1; Contestable Agents, RESEARCH 075 I1) with a named distinction — seeing what an agent did is not the same as having a checkpoint where a "no" still changes the outcome — directly relevant to this repository's own review-cockpit pattern, where after-the-fact logging without an earlier real stop point is exactly the failure mode described. Caveat: ~2 months old, older than the ~5-day-old papers the two prior entries used; logged anyway for naming a mechanism neither prior entry named. Directly `WebFetch`-confirmed on the arXiv abstract page.
+
+### Rejected this run (named)
+
+Stack Overflow 2026 Developer Survey via Entrepreneur.com (30,903 respondents, real sample, wrong population — software developers — and no finding addressing this audience's overwhelm/expertise/first-test questions); Nielsen/Monday.com survey via TechCrunch (1,700 directors/senior managers, undisclosed field dates/selection beyond basic parameters, wrong level of analysis — managers evaluating others' AI-assisted work, not a solo professional's own problem); Hubstaff/Pollfish research via PR Newswire (1,068 US workers, genuinely well-disclosed methodology with stated margin of error — best-disclosed source rejected this run, but an org-capacity/productivity-economics finding with no pillar fit); Axios "executives trust AI over themselves" (HTTP 403, not pursued further); Resume Now/Henley/CPA Practice Advisor overwhelm figures and arXiv:2610.09608 (Tianqi Song et al.) — all confirmed already logged via `grep`; Thomson Reuters Future of Professionals Report and SHRM AI Aptitude survey — confirmed already logged and assessed in prior reports; Fan "Stock-Formation Gap" (arXiv:2605.16283) — a measurement-methodology critique, not a new empirical finding or an internal-tooling/governance subject, rejected as out-of-lane rather than on age. Full detail and reasoning for each in the dated report.
+
+### Source health this run
+
+- Anthropic News, Hugging Face Blog, Google DeepMind, a16z AI, Lenny's Newsletter: all `WebFetch`-reachable; none surfaced an audience-problem fit, same non-fit pattern as every run since RESEARCH 050.
+- OpenAI Blog: still HTTP 403 — now past **32 consecutive failed runs** (044 through 076). Standing recommendation unchanged and still unactioned: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- `axios.com`: HTTP 403 on direct `WebFetch` — new observation this run.
+- Dedup checked via `grep -rli` across all nineteen prior dated reports plus `research-notes.md` and `content-vault.md` — confirmed all three new finds genuinely unlogged and caught the Tianqi Song et al. and Thomson Reuters/SHRM repeats before re-logging them.
+
+### Pillar balance flag
+
+Pillar 3 breaks a 15-day, six-report gap (last filled RESEARCH 065, 2026-10-13) with S1 above, logged with its rigor caveats intact rather than treated as equivalent to the ledger's stronger entries. Pillar 2 gets its first new signal since RESEARCH 074 (2026-10-26). Pillar 1 gets no new signal today (one-run gap, last filled RESEARCH 075) — every pillar-1 candidate searched was either wrong-population or already logged.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 075 — 2026-10-27 | Signal harvest (current audience problem) — 1 new shift-lead signal (pillar 1, second consecutive pillar-1 run); 1 new internal-research signal
 
 **Status:** NOTED
