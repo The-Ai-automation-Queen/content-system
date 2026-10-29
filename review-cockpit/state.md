@@ -3969,3 +3969,38 @@ Notes:
   14/07/2026) was approved with nothing released. Publishing stayed
   queue-only throughout (`security.md` §3.1, `CLAUDE.md`) — no post
   released, no Blotato queue touched.
+
+- **29/10/2026 — interactive `process` sweep (operator-requested, run
+  end-to-end via `/review-cockpit process`, obeying `CLAUDE.md` and
+  `security.md`; skill not registered via the Skill tool this session,
+  so `SKILL.md` was read and followed manually per the
+  `project-skills-not-registered` memory; Telegram auth followed the
+  `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, length-checked only via `${#VAR}`, never printed,
+  never sourced from `deploy/.env`).** This morning's own 08:30 cron
+  `process` log (`deploy/logs/review-cockpit process-2026-10-29T08-30-03.log`)
+  only ran `git fetch`/`Already up to date` — no actual sweep executed,
+  consistent with the standing cron-invocation truncation (UNB-032, 4th
+  day running per this session's startup check). This run is the first
+  real sweep for 29/10. `getUpdates` (no offset, none stored) returned
+  empty (`{"ok":true,"result":[]}`) — 124th consecutive empty sweep since
+  the 14/09/2026 digest restart, building on this morning's digest
+  pre-sweep (123rd). Nothing to route: no card decisions, no unblocker
+  replies, no voice notes. Nothing applied to the vault — `content-vault.md`
+  still 37 READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED (78 entries),
+  card set still 099/098/097/096/095/094 (DRAFT) and Ready-shelf 047/048/049
+  (now 108 days READY, zero released). `lead-magnets.csv` reconfirmed:
+  WORDS and TEAM both `active=yes` — no CTA-BLOCKED needed for R1–R3.
+  `unblocker/ledger.md` tail checked — unchanged, UNB-032 (open, cron
+  truncation) and UNB-033 (open, ENTRY 096/097/099 fate) still outstanding;
+  neither is a review-cockpit reply, not touched here. `decisions-log.md`
+  tail checked, unchanged (last entries are the 14/07 exit-story kills).
+  `git fetch origin main` confirmed branch in sync (0 ahead/0 behind)
+  before this run. Publishing stayed queue-only throughout (`security.md`
+  §3.1, `CLAUDE.md`) — no post released, no Blotato queue touched. Canon
+  (queen-brain) was NOT reachable this session per the startup
+  reality-check — no price, tier, offer status or customer-facing copy
+  was written or reconstructed. Sent one confirmation line to Telegram
+  (message_id 1606): "Process sweep (29/10, interactive, operator-requested):
+  inbox empty — nothing to route, nothing changed in the vault. This
+  morning's digest cards (#1-#6, R1-R3) still waiting on you."
