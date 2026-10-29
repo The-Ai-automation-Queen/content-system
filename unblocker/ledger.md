@@ -2387,7 +2387,59 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
 - **verify:** ENTRY 096/097/099 each show a status change (READY TO POST or
   KILLED) in `content-vault.md`, or an explicit operator note recorded
   against each
-- **status:** open · served_count: 0 · added: 2026-10-26
+- **status:** served · served_count: 1 · added: 2026-10-26 · pack:
+  `packs/2026-10-29-UNB-033-instagram-drafts-keep-or-kill.md`
+- **29/10/2026 prep note (interactive run):** this is the only open,
+  non-capped item — UNB-025/026/027/028/029/032 are all past serve-3
+  awaiting a reply that live `getUpdates` confirms still hasn't arrived
+  (checked this run: empty result set). Did the two checks the vault
+  flagged as outstanding so the operator doesn't have to: counted
+  ENTRY 096's voiceover at 162 words, which reads as ~62-65s at a natural
+  150-160wpm pace against its ~40s label (flagged as keep-with-trim vs.
+  relabel, not a blocker to the keep/kill call itself); confirmed ENTRY
+  099's 5 panels are within normal carousel length, nothing to trim. Pack
+  asks for one keep/kill reply per entry; a "keep" flips vault status to
+  READY TO POST (within existing write authority) but explicitly does
+  **not** queue to Blotato — per UNB-025, no agent has Blotato write scope
+  this session, so that stays a separate manual step for Fatiha.
+
+### UNB-032 — further confirmation, no re-serve (serve-3 cap already hit)
+- **29/10/2026 note (interactive run):** today's own 04:00 GST cron log
+  (`deploy/logs/unblocker daily-2026-10-29T04-00-02.log`) truncated again —
+  4 lines, `git fetch` only, identical shape to 10-26/27/28 — a 4th
+  consecutive silent day for this skill's slot alone. Live `getUpdates`
+  this run returned an empty result set: no reply to any of the three
+  serves, including the 10-28 serve-3 confrontation (message_id 1591).
+  Per the skill's no-serve-4 rule this stays capped, not re-served; logged
+  here only as evidence the fault (and the silence) are both still live.
+  This run is itself an operator-requested interactive invocation,
+  consistent with the pattern of the automated slot continuing to no-op.
+
+### Reconciliation notes (interactive run, 29/10/2026)
+- **UNB-008 vs UNB-025 — same blocker, two entries.** UNB-008 ("Release the
+  11 READY posts via Blotato", added 06/07/2026) has never been served
+  once (`served_count: 0`) in 115 days. Re-reading it against UNB-025
+  ("Queue 3 clean READY TO POST vault entries into Blotato", added
+  15/09/2026): both are the identical ask — get vault-ready content into
+  Blotato — and UNB-025 is the one that actually carries the current,
+  correct diagnosis (`distribution` lost Blotato write scope in the
+  14/09 context refresh, PR #131; only Fatiha can queue manually). Serving
+  UNB-008 today would have repeated UNB-025's already-stalled serve-3 ask
+  under a different ID. Not re-served; not killed either, since the
+  underlying blocker (37 READY, 0 posted) is real and current — leaving
+  open as a duplicate pointer to UNB-025 pending the operator's reply
+  there. No ledger renumbering per the skill's own rule.
+- **store.html no longer a store.** `site/store.html` is now a 10-line
+  redirect stub to `https://www.shiftandlead.com/guides/` — it does not
+  contain a `PRODUCTS` config or any checkout URLs. UNB-002/004/005 (Whop
+  checkout links for The Judge's Prompts / The Prompt Menu / The AI Time
+  Audit, all added 06/07/2026, all `served_count: 0`) each instruct
+  "paste the link into store.html", which is no longer a valid target —
+  the task as written can't be executed as-is. This is a flag only: per
+  this session's queen-brain/Product Hub lockout (canon not reachable),
+  I'm not rewriting these entries' destination, price, or offer status
+  myself — that needs the actual Product Hub record, not a reconstruction
+  from this repo's copies. Left open, unserved, with this note attached.
 
 ---
 
