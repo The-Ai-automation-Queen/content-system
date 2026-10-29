@@ -4004,3 +4004,40 @@ Notes:
   (message_id 1606): "Process sweep (29/10, interactive, operator-requested):
   inbox empty — nothing to route, nothing changed in the vault. This
   morning's digest cards (#1-#6, R1-R3) still waiting on you."
+
+- **29/10/2026 — second interactive `process` sweep (operator-requested,
+  run end-to-end via `/review-cockpit process`, obeying `CLAUDE.md` and
+  `security.md`; skill not registered via the Skill tool this session,
+  so `SKILL.md` was read and followed manually per the
+  `project-skills-not-registered` memory; Telegram auth followed the
+  `review-cockpit-telegram-env` memory — ambient `TELEGRAM_BOT_TOKEN`/
+  `TELEGRAM_CHAT_ID`, length-checked only via `${#VAR}`, never printed,
+  never sourced from `deploy/.env`).** `getUpdates` (no offset, none
+  stored) returned empty (`{"ok":true,"result":[]}`) — 125th consecutive
+  empty sweep since the 14/09/2026 digest restart, following this
+  morning's digest pre-sweep (123rd) and the first interactive process
+  sweep (124th, commit `bbac258d`, which also confirmed the 08:30 cron
+  `process` slot only ran `git fetch`/`Already up to date` — no real
+  sweep — the UNB-032 truncation's 4th day). Nothing to route: no card
+  decisions, no unblocker replies, no voice notes. Nothing applied to
+  the vault — `content-vault.md` still 37 READY TO POST / 33 DRAFT / 6
+  STALE / 2 KILLED (78 entries), card set still 099/098/097/096/095/094
+  (DRAFT) and Ready-shelf 047/048/049 (107 days READY since 14/07/2026,
+  zero released). `lead-magnets.csv` reconfirmed: WORDS and TEAM both
+  `active=yes` — no CTA-BLOCKED needed for R1–R3. `unblocker/ledger.md`
+  tail checked — unchanged, UNB-032 (open, cron truncation, 4th day) and
+  UNB-033 (open, ENTRY 096/097/099 fate) still outstanding, plus this
+  session's own reconciliation notes flagging UNB-008/UNB-025 as a
+  duplicate blocker and `store.html` as no longer a valid target for
+  UNB-002/004/005 — none of these are review-cockpit replies, not
+  touched here. `decisions-log.md` tail checked, unchanged (last entries
+  are the 14/07 exit-story kills). `git fetch origin main` confirmed
+  branch in sync (0 ahead/0 behind) before this run. Publishing stayed
+  queue-only throughout (`security.md` §3.1, `CLAUDE.md`) — no post
+  released, no Blotato queue touched. Canon (queen-brain) was NOT
+  reachable this session per the startup reality-check — no price,
+  tier, offer status or customer-facing copy was written or
+  reconstructed. Sent one confirmation line to Telegram (message_id
+  1607): "Process sweep (29/10, interactive, operator-requested): inbox
+  empty — nothing to route, nothing changed in the vault. This
+  morning's digest cards (#1-#6, R1-R3) still waiting on you."
