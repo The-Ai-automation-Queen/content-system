@@ -2,6 +2,47 @@
 
 ---
 
+## RESEARCH 077 — 2026-10-29 | Signal harvest (current audience problem) — 1 new shift-lead signal (pillar 1); 1 new shift-lead signal (pillar 2, strongest pillar-2 evidence logged to date); 1 new internal-research signal
+
+**Status:** NOTED
+**Report:** [reports/signal-harvest-2026-10-29.md](reports/signal-harvest-2026-10-29.md)
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `76c40954`; source (queen-brain) commit not reconstructed this session — per this session's own reality-check ("canon: queen-brain NOT in this session"), not needed, since this run is discovery-only and touches no price, tier, offer status or customer-facing copy.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current harvest shape.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only study design, source authority, disclosed methodology and recency were weighed.
+
+### One new shift-lead signal — pillar 1, "understand AI and know where to begin"
+
+**S1 — Nationally representative survey, 1,500+ verified US workers (PureSpectrum panel), fielded 2026-09-08 to 2026-09-21: 82.5% report some AI use, but 39.3% say their employer actively encourages AI use versus only 28.9% who get "extensive" training, leaving 37.2% to self-teach entirely (54.7% of entry-level workers, 45.4% of women).** ZipRecruiter Economic Research, "Better Work, More to Learn: The 2026 AI Worker Report," published 2026-10-26 (3 days old at capture). Worker-side companion to the already-rejected-as-redundant ZipRecruiter Employer Report (hiring side, June 2026) — distinct survey, distinct sample, distinct field dates. Names the exact mechanism behind pillar 1: employers push AI adoption faster than they support it, leaving over a third of workers to self-teach. Also disclosed: 44.6% say AI is accelerating their own technical-skill obsolescence; workers split on wanting more (20.4%) vs. less (30.5%) AI involvement. Caveat: general US workforce, not this audience's specific professional/founder population — cite for mechanism and emotional register, not as population-matched data. Directly `WebFetch`-confirmed on ZipRecruiter's own report page.
+
+### One new shift-lead signal — pillar 2, "protect what's uniquely yours" (strongest evidence logged to date for this pillar)
+
+**S2 — RCT by Anthropic's own research team: 50 analysts (of 61 recruited; 90% self-rated proficient/expert in observational causal inference; 65% hold a master's/doctorate or 6+ years' experience) used Claude Code on an identical causal-inference task. A coin flip secretly assigned, for each of four key analytical decisions, which of two equally defensible options the agent would argue for (via a hidden system-prompt instruction); analysts were not told.** Analysts picked the agent's secretly-assigned side 86% of the time across the four decisions (81–92% per decision); when an analyst had already stated a preference before the agent weighed in, they switched away from it 60% of the time if the agent disagreed; 77% repeated the agent's arguments in their own written justification afterward, but only 15% credited the agent as the source. Amaç Herdağdelen, Hailey Joren, Alex Tamkin, "How AI agents shape experts' judgment calls," anthropic.com/research/agents-judgment-calls, published 2026-10-27. Unlike the mostly self-report survey evidence this pillar has run on since RESEARCH 065, this is a controlled experiment with a hidden manipulation on genuinely expert analysts, doing their own real analytical work — direct causal evidence, not correlation or stated preference, for the exact risk pillar 2 names. Authors' own stated limitations logged in full: they "deliberately strengthened the agent's lean" to measure the effect, and studied "one task, in one field, with one model," noting real-world experts would likely know the field better and hold stronger views of their own. Directly `WebFetch`-confirmed on Anthropic's own research page, cross-checked against two independent syndications (Al Jazeera, Unite.AI).
+
+### One new internal-research signal
+
+**I1 — Two-phase study (formative N=12, then controlled within-subject experiment N=36): participants did programming tasks while an AI agent produced correct outputs, silent defects, or visible failures, with interaction logs, gaze, physiological signals and self-reports collected.** Dinithi Dissanayake, Yasith Samaradivakara, Hyung Woon Lee, Yadeesha Weerasinghe, Sanjay Saha, Pattie Maes, Suranga Nanayakkara, "Looks Fine to Me: Understanding Oversight in Agentic Interactions," arXiv:2610.27801 (submitted 2026-10-20). Participants showed high confidence while missing silent defects, ran only generic (not diagnostic) checks, and sometimes misread defect evidence in the agent's favor — failures surfaced only in hindsight. Sharpens the standing agent-governance thread (Three-Pillar framework, RESEARCH 074 I1; Contestable Agents, RESEARCH 075 I1; Reduced-Supervision Paradox, RESEARCH 076 I1) by showing concretely *why* a review checkpoint fails even with a human looking right at it — a silent defect simply looks fine, directly relevant to this repository's own after-the-fact review-cockpit pattern. Caveat: small N (36+12), one domain (programming), lab-controlled — directional, not a population estimate. Directly `WebFetch`-confirmed on the arXiv abstract page.
+
+### Rejected this run (named)
+
+"Distilling Expert Judgment at Scale" (arXiv:2610.33233) — well-disclosed methodology but builds automated evaluators that encode expert reasoning at scale (wrong direction of the pillar-2 claim, wrong population — media/editorial evaluation); Elon University/SSRS "hollow out the meaning of work" poll — confirmed already logged (2026-10-14 report); Pave shadow-IT survey, Gallup AI survey, Workday Global Workforce Report — org-capacity/enterprise-skills-gap thread, set aside once S1/S2 filled pillars 1–2; Shibumi "AI Fatigue Statistics" — confirmed already rejected as a vendor roll-up blog; O'Reilly security-professionals survey — wrong population (infosec professionals, org threat-preparedness); Hostinger, FreshBooks/Wakefield, Clarify Capital solo-founder surveys — confirmed already logged; four solo-founder-AI-tools listicles — no disclosed study underneath, rejected on inspection of search snippets. Full detail and reasoning for each in the dated report.
+
+### Source health this run
+
+- Anthropic News, Hugging Face Blog, Google DeepMind, a16z AI, Lenny's Newsletter: all `WebFetch`-reachable; none of the curated RSS feeds surfaced a pillar fit — both new shift-lead signals this run came from `WebSearch`, not the inventory list.
+- OpenAI Blog: still HTTP 403 — now past **33 consecutive failed runs** (044 through 077). Standing recommendation unchanged and still unactioned: fix the fetch method or drop OpenAI Blog from the High-priority row in `skills/signal-harvester/inventory.md`.
+- Dedup checked via `grep -rli` across all reports in `reports/` plus `research-notes.md` and `content-vault.md` — confirmed all three new finds genuinely unlogged and caught the Elon University poll, Shibumi roll-up, and solo-founder surveys as repeats before re-logging them.
+
+### Pillar balance flag
+
+Pillar 1 breaks a two-run gap (last filled RESEARCH 075, 2026-10-27). Pillar 2 gets a markedly stronger signal than any prior entry on this pillar — a hidden-manipulation RCT on genuinely expert analysts, versus the mostly self-report survey data run on since RESEARCH 065. Pillar 3 gets no new signal today (one-run gap, last filled RESEARCH 076, 2026-10-28) — every pillar-3-shaped candidate searched was either an undisclosed-methodology listicle, a near-duplicate, or set aside once pillars 1–2 were adequately filled.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 076 — 2026-10-28 | Signal harvest (current audience problem) — 1 new shift-lead signal (pillar 3, breaks 15-day gap); 1 new shift-lead signal (pillar 2); 1 new internal-research signal
 
 **Status:** NOTED
