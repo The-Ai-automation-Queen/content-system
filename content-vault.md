@@ -21,6 +21,56 @@
 
 ## Most recent (quick reference)
 
+> **29/10/2026 content-engine daily run — no new entries produced (deliberate):**
+> Run end to end per explicit operator instruction ("Run the /content-engine
+> daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
+> queue-only — never post instantly. End with the operator briefing.");
+> `skills/content-engine/SKILL.md` not registered via the Skill tool this
+> session, so read and followed manually per the
+> `project-skills-not-registered` memory. Loaded `AGENTS.md`,
+> `CURRENT-WORKFLOW.md`, `context/current-context.json` and `security.md`
+> first, as both CLAUDE.md and the skill require.
+>
+> Both standing blockers independently reconfirmed this session rather than
+> trusted from memory: (1) canon — this session's startup hook already
+> states `queen-brain NOT in this session`; re-verified directly with
+> `git ls-remote` both ways — HTTPS gave 403 "Write access to repository
+> not granted", SSH gave "Repository not found" (same alternating-error
+> pattern as prior sessions) — and no `gh` CLI/Notion connector is present.
+> 32nd consecutive blocked day, matching today's earlier
+> `signal-harvester`/`review-cockpit`/`brain-manager` runs (commits
+> 623b7921, 76c40954, e731cde3, bbac258d, 0bb95817). content-engine's output
+> is customer-facing copy, so drafting stays forbidden regardless of
+> available research; (2) release backlog — `content-vault.md` reconfirmed
+> directly by counting `## ENTRY` header-line status suffixes: 78 total (37
+> READY TO POST / 33 DRAFT / 6 STALE / 2 KILLED / 0 POSTED), matching
+> today's startup reality-check hook exactly. Oldest ready items (ENTRY
+> 047/048/049, all dated 14/07/2026) have now sat **107 days**. Today's two
+> `review-cockpit process` sweeps (commits 76c40954, bbac258d) put today at
+> the 125th consecutive empty Telegram sweep, with this morning's digest
+> cards (#1-#6, R1-R3, card set 099/098/097/096/095/094 DRAFT) still
+> outstanding, and `decisions-log.md` tail unchanged since 14/07/2026 — no
+> operator replies, approvals or kills since then. `unblocker/ledger.md`
+> logged a new UNB-033 serve today (Instagram drafts keep/kill decision)
+> and reconfirmed UNB-032 (cron truncation, 4th consecutive day) and a
+> newly flagged UNB-008/UNB-025 duplicate-blocker + invalid `store.html`
+> target for UNB-002/004/005 — all unrelated to this blocker.
+>
+> This session's own signal-harvester already ran earlier today
+> (`reports/signal-harvest-2026-10-29.md`, logged as RESEARCH 077 in
+> `research-notes.md`) and found 1 new shift-lead signal (pillar 1:
+> ZipRecruiter "2026 AI Worker Report", N=1,500+, breaking a 2-day pillar-1
+> gap since RESEARCH 075), 1 new shift-lead signal (pillar 2: Anthropic's
+> own RCT on AI agents shaping expert judgment calls, N=50, the strongest
+> pillar-2 evidence logged to date), and 1 new internal-research signal
+> (arXiv:2610.27801 "Looks Fine to Me" on human-oversight failure). Fresh
+> research notwithstanding, the canon block makes the point moot for
+> drafting today.
+>
+> No new entries produced. Queue-only publishing held throughout — no
+> customer-facing copy was drafted, queued or scheduled. Same two open
+> options as every run since 18/09/2026, still unanswered by the operator.
+
 > **28/10/2026 content-engine daily run — no new entries produced (deliberate):**
 > Run end to end per explicit operator instruction ("Run the /content-engine
 > daily skill end to end. Obey CLAUDE.md and security.md. Publishing is
