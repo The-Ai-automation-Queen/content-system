@@ -11,6 +11,45 @@ reference real life — not generic AI content. Updated daily by `brain-manager`
 
 ## Most recent (quick reference)
 
+> **29/10/2026 brain-manager run — no personal-brain update (deliberate):**
+> User-triggered run ("Run the /brain-manager skill end to end. Obey
+> CLAUDE.md and security.md. Publishing is queue-only — never post
+> instantly. End with the operator briefing."). `skills/brain-manager/
+> SKILL.md` was not registered via the Skill tool this session, so read
+> and followed manually per `project-skills-not-registered`. No
+> owner-supplied corrections, stories or project facts were given this
+> session, so per the skill's explicit rule nothing was invented to fill
+> the two open follow-ups below and no questionnaire was sent. Context
+> refresh from the named upstream authority (`The-Ai-automation-Queen/
+> queen-brain` per `context/sources.md`) is still blocked: this session's
+> reality-check hook again states "canon: queen-brain NOT in this
+> session", re-checked fresh this run — `git ls-remote` over HTTPS against
+> queen-brain again returned "Write access to repository not granted" /
+> 403 (SSH not retried, HTTPS alone confirms the same net blocker), no
+> Notion connector (`ToolSearch` for "notion" — no match), no `gh` CLI
+> (`which gh` exit 1). Same blocker, 32nd consecutive day since 28/09. The
+> two follow-ups flagged 2026-07-05 remain open and uncaptured: (1) the
+> corporate-exit trigger story (Background & Career — reinforced by the
+> 14/07/2026 decisions-log kill reasons for ENTRY 060/065), and (2) the
+> current stage/next-milestone for "building the content/creator-OS
+> system itself" (Current Projects). Neither is being chased with a
+> questionnaire — noted here for Fatiha to supply whenever she chooses.
+> DM responder remains paused (14/09/2026); not reenabled. No publishing
+> or scheduling action was taken this run — publication stays queue-only
+> and manual per `security.md` and `CURRENT-WORKFLOW.md`. No recurring
+> message was sent and none is authorized by this run. Separately noted:
+> vault reconfirmed via this session's reality-check hook at 37 READY TO
+> POST / 33 DRAFT / 6 STALE / 2 KILLED / 0 POSTED (unchanged), Ready-shelf
+> trio (ENTRY 047/048/049) now 108 days (since 14/07/2026) with nothing
+> released, and today's earlier ops commits already logged the day's
+> state: the review-cockpit digest (123rd consecutive empty pre-digest
+> sweep), the unblocker daily (UNB-033 served, UNB-032 cron truncation
+> 4th day), and the review-cockpit process sweep (124th consecutive empty
+> sweep). `review-cockpit/decisions-log.md` tail checked, unchanged (last
+> entries still the 14/07/2026 exit-story kills for ENTRY 060/065). Branch
+> confirmed 0 ahead / 0 behind `origin/main` at session start. Release,
+> not production, remains the bottleneck.
+
 > **28/10/2026 brain-manager run — no personal-brain update (deliberate):**
 > User-triggered run ("Run the /brain-manager skill end to end. Obey
 > CLAUDE.md and security.md. Publishing is queue-only — never post
