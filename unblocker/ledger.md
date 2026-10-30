@@ -2387,8 +2387,25 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
 - **verify:** ENTRY 096/097/099 each show a status change (READY TO POST or
   KILLED) in `content-vault.md`, or an explicit operator note recorded
   against each
-- **status:** served · served_count: 1 · added: 2026-10-26 · pack:
-  `packs/2026-10-29-UNB-033-instagram-drafts-keep-or-kill.md`
+- **status:** served · served_count: 2 · added: 2026-10-26 · pack:
+  `packs/2026-10-30-UNB-033-serve-2-one-entry-only.md`
+- **30/10/2026 prep note (interactive run):** serve 1 (29/10) drew no reply
+  at all — live Telegram `getUpdates` checked this run, empty result set,
+  same as every other open item's check today. Per the skill's serve-2 rule
+  ("same task, different angle: shrink it"), today's ask drops from all
+  three entries to just ENTRY 099 (the cleanest of the three, nothing
+  flagged against it) — one word, keep or kill — leaving 096 (timing
+  mismatch) and 097 (overlap note) parked rather than repeating yesterday's
+  three-decision message verbatim. Sent via direct Telegram `sendMessage`
+  using ambient `TELEGRAM_BOT_TOKEN`/`TELEGRAM_CHAT_ID`
+  (`review-cockpit-telegram-env` memory). One serve left before the serve-3
+  gentle confrontation. Reconfirmed this run: `../queen-brain` is absent
+  from the filesystem entirely (not just inaccessible — `ls ..` shows no
+  such directory), so the full 8-repo scan sources beyond this repo
+  (STATUS.md, GOALS.md, fast-forward, agent-os-company-dashboard) could not
+  be read; relied on this repo's own ROADMAP.md, ACTION-PLAN-CASH-MACHINE.md,
+  lead-magnets.csv, content-vault.md and site/store.html instead, all
+  unchanged since 29/10's run.
 - **29/10/2026 prep note (interactive run):** this is the only open,
   non-capped item — UNB-025/026/027/028/029/032 are all past serve-3
   awaiting a reply that live `getUpdates` confirms still hasn't arrived
