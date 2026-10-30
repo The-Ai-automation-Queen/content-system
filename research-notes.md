@@ -2,6 +2,43 @@
 
 ---
 
+## RESEARCH 078 — 2026-10-30 | Signal harvest (current audience problem) — no new shift-lead signal (any pillar); no new internal-research signal; two on-topic candidates rejected on undisclosed methodology
+
+**Status:** NOTED
+**Report:** [reports/signal-harvest-2026-10-30.md](reports/signal-harvest-2026-10-30.md)
+**Context loaded:** `context_version` shift-lead-2026-09-12; content-system commit `5468ee9e`; `queen-brain` canon NOT loaded this session, per this session's own reality-check. Not needed: discovery-only run, no price/tier/offer/customer-facing copy touched.
+**Audience problem worked (per `context/positioning.md`):** experienced professionals and founders with useful knowledge and lived experience who feel overwhelmed by AI or struggle to turn that knowledge into visible, valuable work. Three starting points: (1) understand AI and know where to begin, (2) recognise and protect what's uniquely yours, (3) decide where AI belongs in a real business problem and choose a first test.
+**Tool availability this run:** no Tavily or Apify MCP tool was registered this session (checked via `ToolSearch` before starting); only `WebSearch`/`WebFetch` were available, same constraint as every run since the social-scrape slots were dropped from the current harvest shape.
+**Engagement note:** no like/view/follower counts were used as a signal of truth or priority below — only study design, source authority, disclosed methodology and recency were weighed.
+
+### No new shift-lead or internal-research signal this run
+
+Two on-topic candidates were found and checked, both rejected on undisclosed methodology (the same bar this series applied to reject Nielsen/Monday.com at RESEARCH 076):
+
+- **Use.AI "expertise recession" survey** (64% of 15,428 adults more confident challenging professional advice after AI use; 46% say credentials carry less weight), syndicated via Digital Journal/TechRadar/TechSpot, published 2026-10-17 — directly on-topic for pillar 2, but no field dates, sampling frame or recruitment method disclosed across four independent write-ups, and Use.AI is an AI vendor with a direct commercial interest in framing AI-assisted second-guessing of professionals as empowerment. Rejected on undisclosed methodology plus vendor self-interest.
+- **OutSystems AI agent governance report** (850+ IT decision-makers; 82% believe they can keep pace governing agents vs. only 26% prepared to resolve agent conflicts), published 2026-10-16/20 with CIO Dive/KPMG — would otherwise extend the standing agent-governance thread (074–077), but field dates/recruitment undisclosed, and OutSystems sells the governance tooling its own report recommends. Rejected on the same ground.
+
+### Rejected this run (named)
+
+NBER w35720 patent-drafting RCT (Autor et al.) and Hubstaff/Pollfish research — both confirmed via `grep` as already logged/rejected (RESEARCH 051, RESEARCH 076 respectively); arXiv:2610.31553 "Contestable Agents" and arXiv:2610.27801 "Looks Fine to Me" — confirmed already logged (RESEARCH 075, RESEARCH 077); Elon University/SSRS poll — confirmed already logged; Zapier AI-pilot-stall survey (84% of pilots never reach production, no named research firm or field dates) — confirmed already logged (2026-10-12 report); NC Newsline worker-sentiment survey — HTTP 403, not pursued; "44% AI-whelmed" figure — confirmed standing evidence since RESEARCH ~063–065; a Stanford Digital Economy Lab stat cited only inside a stale (2026-08-18) listicle with no traceable primary source; Canva/Harris Poll CIO survey, 2025 AI Technostress Survey, 2024 worker-productivity survey — wrong population or stale year; a scatter of solo-founder "AI roadmap" vendor/affiliate blog content with no disclosed study underneath. Full detail and reasoning for each in the dated report.
+
+### Source health this run
+
+- Anthropic News, Hugging Face Blog, Google DeepMind, a16z AI, Lenny's Newsletter: all `WebFetch`-reachable; none surfaced a pillar fit, same pattern as every run since RESEARCH 050.
+- OpenAI Blog: still HTTP 403 — now past **34 consecutive failed runs**. Standing recommendation unchanged and still unactioned.
+- NC Newsline: new HTTP 403 this run (first attempt at this URL, not a repeat failure).
+- Dedup checked via `grep -rli` across all reports in `reports/`, plus `research-notes.md` and `content-vault.md` — confirmed five candidates as genuine repeats before ruling them out; no false negatives this run.
+
+### Pillar balance flag
+
+No pillar received a new signal today. Pillar 1 and pillar 2 were both last filled RESEARCH 077 (2026-10-29) — one-run gaps, not yet standing; today's pillar-2 candidate (Use.AI) was rejected on methodology, not from lack of searching. Pillar 3 was last filled RESEARCH 076 (2026-10-28) — now a **two-run gap**, worth watching at RESEARCH 079. The internal-research agent-governance thread (074–077) also got no new entry; today's only governance-shaped candidate (OutSystems) was rejected on the same undisclosed-methodology ground as the pillar-2 candidate, not for lack of thread relevance.
+
+### Historical-audience check
+
+Confirmed nothing above was forced into the retired July corporate-escape framing, lead-magnet keyword system, comment-to-DM mechanic, or any other retired default named in `AGENTS.md`/`CURRENT-WORKFLOW.md`/`positioning.md`. No drafting, scheduling or publishing occurred — discovery only, consistent with `security.md`'s queue-only publishing rule (not implicated, since nothing was published or queued).
+
+---
+
 ## RESEARCH 077 — 2026-10-29 | Signal harvest (current audience problem) — 1 new shift-lead signal (pillar 1); 1 new shift-lead signal (pillar 2, strongest pillar-2 evidence logged to date); 1 new internal-research signal
 
 **Status:** NOTED
