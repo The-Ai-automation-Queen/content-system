@@ -51,7 +51,8 @@ and selective services are supporting revenue, not the core promise.
 - Lumail is the only active email capture provider. Website forms must use server-side `/api/*` routes with `LUMAIL_API_TOKEN`; historical infrastructure notes must never be used to wire a form.
 - After a successful external action, log its ID, URL, timestamp, status, and errors in Notion.
 - Historical offers, keywords, and reports are evidence only. `BUILD`, `TWIN`, AI Readiness
-  Audit, Voice Anchor, Fast Forward, Always-On Content System, the old community ladder,
+  Audit, Voice Anchor, Legacy Fast Forward (the old $499 course; the Club's Fast Forward tier is a
+  different, current offer), Always-On Content System, the old community ladder,
   and the old Business OS ladder are not active CTAs unless Product Hub explicitly reactivates them.
 
 ## Recognised commands

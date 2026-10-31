@@ -83,7 +83,7 @@ the ACP funnel rules, CTA map, and the full conversion flow.
 | 3 | **AI Time Audit** (10-page fillable worksheet) | $47 | Whop | ✅ Built + sales page — awaiting checkout link; free quiz funnels into it |
 | 4 | **Business OS Starter Kit** | $97 | Whop | 🔴 Spec-only (next factory run) |
 | 5 | **AI Automation Queen Community** | $27/month founding (20 spots, locked) → $47/month, or $397/year | Whop (Skool sunset 05/07) | 🔴 Not launched — waitlist capture live on guides site |
-| 6 | **Fast Forward** (54-lesson curriculum + Whop kit) | $499 | Whop | 🟡 Consolidated — awaiting her identity assets ("the twin") + Whop product |
+| 6 | **Legacy Fast Forward** (old 54-lesson curriculum + Whop kit; not the Club's Fast Forward tier) | $499 | Whop | 🟡 Consolidated — awaiting her identity assets ("the twin") + Whop product |
 | 7 | **Business OS Bootcamp** | $997 per cohort | Whop + GHL | 🔴 Waitlist not open |
 | 8 | **Corporate Speaking / Workshop** | $5,000–$15,000 | Direct / LinkedIn DM | 🟡 One-pager not sent |
 | 9 | **Done-With-You Intensive** (bespoke, quoted; never the default CTA) | Quoted per scope | Direct | 🟡 Case studies reframed to this tier on the .com site |
