@@ -6,13 +6,66 @@
 
 ## Queue (next up, in order)
 
-1. UNB-032 — Check the VPS cron runner (git-fetch-only truncation) *(SERVED 28/10, serve 3/3 — gentle confrontation, three-button ask; see today's note and the entry's own prep note)*
-2. UNB-029 — Delete dead `work-with-me-v3.css` (scope now v3+v4.css+v4.js, see JAN-08) *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; 28/10 check: still unanswered, 20th morning since the confrontation; ask already at floor, offer to execute myself on a ✅ still open; not re-sent, no serve-4 rule)*
-3. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 28/10 check: still unanswered, 28th morning; total branches now 179 (+1); stale count re-measured at 122 with cutoff rolled to 2026-09-28 — a larger jump than prior days, likely a late-Sept branch cluster crossing the 30-day line at once, flagged as a measurement note rather than asserted precisely day-over-day)*
-4. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 28/10 check confirms still unanswered, 34th morning; now 1024 commits behind main — unchanged from 27/10, the first non-worsening day since this metric started tracking)*
-5. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 28/10 check confirms still unanswered, 36 days)*
-6. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 28/10 check confirms still unanswered, 42nd morning)*
-7. UNB-033 — Decide fate of 3 Instagram drafts (096/097/099) *(zero-serve, still DRAFT at 42 days; next candidate now that UNB-032 has hit its serve-3 cap)*
+1. UNB-033 — Decide fate of the Instagram carousel draft (ENTRY 099) *(SERVED 31/10, serve 3/3 — gentle confrontation, one-word ask; see today's note and the entry's own prep note)*
+2. UNB-032 — Check the VPS cron runner (git-fetch-only truncation) *(serve-3 cap hit 28/10; still unanswered, fault still live per 30/10's performance-tracker run; no serve-4 without a reply)*
+3. UNB-029 — Delete dead `work-with-me-v3.css` (scope now v3+v4.css+v4.js, see JAN-08) *(serve 3, 09/10 — own gentle confrontation sent, awaiting reply; 31/10 check: still unanswered, 23rd morning since the confrontation; ask already at floor, offer to execute myself on a ✅ still open; not re-sent, no serve-4 rule)*
+4. UNB-028 — Review and prune stale branches *(serve 3, 01/10 — gentle confrontation sent, awaiting reply; 31/10 check: still unanswered, 31st morning; total branches now 180 (+1 from 28/10); stale count re-measured at 133 with cutoff rolled to 2026-10-01 — a further jump, consistent with the late-Sept branch cluster continuing to cross the 30-day line as days roll forward)*
+5. UNB-027 — Decide fate of `content-system-DUPLICATE` *(serve 3, 25/09 — gentle confrontation sent, awaiting reply; 31/10 check confirms still unanswered, 37th morning; now 1064 commits behind main — up from 1024 on 28/10 (+40), resuming the worsening trend after 28/10's single flat day)*
+6. UNB-026 — Restore estate-repo access for this session *(serve 3, 22/09 — gentle confrontation sent, awaiting reply; 31/10 check confirms still unanswered, 39 days)*
+7. UNB-025 — Queue 1 clean READY TO POST entry into Blotato yourself *(serve 3, 17/09 — gentle confrontation sent, awaiting reply; not re-served since; 31/10 check confirms still unanswered, 45th morning)*
+
+> **31/10/2026 — UNB-033 served a third time (serve 3/3, gentle
+> confrontation); every other open item is now past its own serve-3 cap
+> too.** Operator-requested interactive run ("Run the /unblocker daily
+> skill end to end. Obey CLAUDE.md and security.md. Publishing is
+> queue-only — never post instantly. End with the operator briefing."),
+> skill not registered via the Skill tool this session (confirmed
+> directly — `Skill({skill:"unblocker"})` returned "Unknown skill") — read
+> `skills/unblocker/SKILL.md` and followed manually per the
+> `project-skills-not-registered` memory. Today's automated 04:00 GST cron
+> (`deploy/logs/unblocker daily-2026-10-31T04-00-02.log`) again only
+> fast-forwarded the git pull — 3 lines, no `claude -p` output — the
+> identical truncation shape UNB-032 tracks; this interactive run is
+> today's actual execution. Full re-scan: `content-vault.md` recounted
+> directly from `## ENTRY` header suffixes (37 READY TO POST / 33 DRAFT /
+> 6 STALE / 2 KILLED / 0 POSTED, 78 total) — unchanged, matching this
+> session's own startup reality-check hook and today's already-completed
+> `review-cockpit digest` (commit `f878b9e3`), Ready-shelf trio now **109
+> days** with nothing released; `git fetch --prune` + `git for-each-ref`
+> with a 2026-10-01 cutoff — **180** total branches (unchanged from 28/10)
+> and **133** stale >30d (was 122 on 28/10 with a 2026-09-28 cutoff, a
+> further jump consistent with the late-Sept branch cluster continuing to
+> cross the 30-day line as the cutoff rolls forward); `git -C
+> ~/content-system-DUPLICATE rev-parse HEAD` (unchanged `a2e2bc1f`) + fresh
+> `git fetch origin main` + `git log HEAD..origin/main` — **1064** commits
+> behind, up from 1024 on 28/10 (+40) — the worsening trend resumed after
+> 28/10's single flat day; `ROADMAP.md`/`ACTION-PLAN-CASH-MACHINE.md`/
+> `lead-magnets.csv` mtimes unchanged; `content-vault.md` ENTRY 099
+> (UNB-033) rechecked directly — still `DRAFT`, unchanged, now 45 days old;
+> `personal-brain.md` last touched 30/10 16:01 (`brain-manager` run) with
+> nothing new ledger-eligible; a live `getUpdates` call — empty,
+> `{"ok":true,"result":[]}`, confirming zero reply to any open serve,
+> including yesterday's UNB-033 serve 2 (message_id not recorded in this
+> session, see 30/10's own prep note) before today's serve 3 went out;
+> fresh `git ls-remote` on queen-brain/fast-forward/
+> agent-os-company-dashboard — all three still unreachable (403, "Write
+> access to repository not granted"), and `../queen-brain` still absent
+> from the local filesystem entirely.
+>
+> **Served today: UNB-033, serve 3/3 — the gentle confrontation.** Per the
+> skill's serve-3 rule, framed as "third morning, still waiting" with
+> explicit buttons; the ask itself is unchanged from serve 2 (one word on
+> ENTRY 099) since there's no smaller version without losing the actual
+> decision. Sent via direct Telegram `sendMessage`, message_id 1633. This
+> closes UNB-033's own serve budget — per the no-serve-4 rule, it joins
+> UNB-025/026/027/028/029/032 as capped-with-zero-reply. **With this, every
+> item currently in the queue has now hit its serve-3 cap with zero reply**
+> — there is no non-capped item left for tomorrow's run to serve fresh;
+> the next `/unblocker scan` should prioritize finding a genuinely new
+> ledger-eligible item, since the existing seven are all waiting on the
+> same thing: one operator reply, to any of them. Canon (queen-brain)
+> remained unreachable this session — no price, tier, offer status or
+> customer-facing copy was written or reconstructed.
 
 > **28/10/2026 — UNB-032 served a third time (serve 3/3, gentle
 > confrontation); cron fault confirmed still live on a fourth consecutive
@@ -2387,8 +2440,30 @@ Product Hub / Brand Strategy) and re-adding it as a fresh, dated entry.
 - **verify:** ENTRY 096/097/099 each show a status change (READY TO POST or
   KILLED) in `content-vault.md`, or an explicit operator note recorded
   against each
-- **status:** served · served_count: 2 · added: 2026-10-26 · pack:
-  `packs/2026-10-30-UNB-033-serve-2-one-entry-only.md`
+- **status:** served · served_count: 3 · added: 2026-10-26 · pack:
+  `packs/2026-10-31-UNB-033-serve-3-confrontation.md`
+- **31/10/2026 prep note (interactive run):** serve 2 (30/10) drew no reply
+  at all — live `getUpdates` checked this run, empty result set, same as
+  every other open item's check today. ENTRY 099 reconfirmed still `DRAFT`
+  in `content-vault.md` (vault totals unchanged: 37 READY TO POST / 33
+  DRAFT / 6 STALE / 2 KILLED / 0 POSTED). Per the skill's serve-3 rule,
+  today's ask is the gentle confrontation — same one-word ask as serve 2
+  (there's no smaller version left), framed as "third morning, still
+  waiting" with explicit buttons. Sent via direct Telegram `sendMessage`
+  using ambient `TELEGRAM_BOT_TOKEN`/`TELEGRAM_CHAT_ID`
+  (`review-cockpit-telegram-env` memory), message_id 1633. This closes
+  UNB-033's serve-3 cap — per the no-serve-4 rule it joins
+  UNB-025/026/027/028/029/032 as capped-with-zero-reply and will not be
+  re-sent until a reply (✅/✂️/❌) or a verified completion lands. This was
+  also the day's only serve: every other open item is already past its own
+  serve-3 cap with zero reply, so once UNB-033 hits its own cap there is no
+  non-capped item left in the queue for tomorrow's run to serve fresh.
+  Reconfirmed this run: `../queen-brain` (and `fast-forward`,
+  `agent-os-company-dashboard`) still absent locally and still 403 over
+  `git ls-remote`; `ROADMAP.md`/`ACTION-PLAN-CASH-MACHINE.md`/
+  `lead-magnets.csv` mtimes unchanged; `personal-brain.md` last touched
+  30/10 16:01 (`brain-manager` run) with nothing new ledger-eligible (same
+  standing corporate-exit-story flag).
 - **30/10/2026 prep note (interactive run):** serve 1 (29/10) drew no reply
   at all — live Telegram `getUpdates` checked this run, empty result set,
   same as every other open item's check today. Per the skill's serve-2 rule
