@@ -1,7 +1,8 @@
 # Current content workflow
 
-Current source release: shift-lead-2026-09-12. Refreshed against live website and
-Notion Brand Strategy/Foundation on 14 September 2026.
+Current source release: shift-lead-2026-10-31. Context refreshed against live Notion
+(Brand Foundation, Product Hub, Instagram Audit) on 31 October 2026. Workflow
+rules below were last reviewed 14 September 2026.
 
 ## Authority and storage
 

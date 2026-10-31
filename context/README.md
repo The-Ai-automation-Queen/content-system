@@ -1,7 +1,7 @@
 # Queen Brain: current shared context
 
-Refreshed 12 September 2026 from the live Shift & Lead website and current
-Content Factory. Start with `current-context.json` and `sources.md`.
+Refreshed 31 October 2026 from live Notion (previous refresh 12 September from the website and
+Content Factory). Start with `current-context.json` and `sources.md`.
 
 This repository carries the current reference used by agents. Notion and the
 live website remain authoritative for their respective subjects. GitHub

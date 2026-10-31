@@ -1,6 +1,6 @@
 # Current voice
 
-Version: `shift-lead-2026-09-12`. Authority: Content Factory Brand Foundation.
+Version: `shift-lead-2026-10-31`. Authority: Content Factory Brand Foundation.
 
 Clear, warm, intelligent, direct and practical. Speak to one capable person
 using everyday words, connected thoughts and concrete examples. Explain only
