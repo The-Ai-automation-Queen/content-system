@@ -1,11 +1,15 @@
 # Current content workflow
 
+> 28 October 2026: business facts (offers, prices, voice, positioning) now come
+> from Fatiha's Business OS. See context/README.md. Where this file disagrees,
+> the Business OS wins.
+
 Current source release: shift-lead-2026-09-12. Refreshed against live website and
 Notion Brand Strategy/Foundation on 14 September 2026.
 
 ## Authority and storage
 
-Read AGENTS.md and context/current-context.json. The approved Queen Brain release
+Read AGENTS.md and context/README.md. The approved Queen Brain release
 is the shared agent reference. Website controls public descriptions; Notion Brand
 Strategy/Foundation controls editorial rules; Product Hub/Brand Deals controls
 campaign eligibility; Content Library is the production ledger. Verify the named
@@ -72,7 +76,7 @@ Product Hub approval and working destination evidence control each conversion.
 
 archive/, _archive/, reports/, old vault entries and archived queue decisions are
 historical evidence. Do not recursively concatenate them into a system prompt.
-Only context/current-context.json allowlisted context files are active knowledge.
+Only the Business OS named in context/README.md is active business knowledge.
 
 ## Owner correction: archived workshops (20 September 2026)
 
