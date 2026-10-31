@@ -8,7 +8,7 @@ source for volatile decisions.
 | Audience, one-liner, voice, authority, sales stack, True North | Brand Foundation https://app.notion.com/p/895f86a9c7e64c44a5a586d4f8c68ba6 | Core Customer and One-Liner approved 5 Oct; True North first run 31 Oct; page edited 31 Oct |
 | Editorial strategy | Brand Strategy https://app.notion.com/p/37ede643072c81869e71e02ad50d6a51 | Not re-read; last edited 8 Sep |
 | Offer readiness | Digital Product Hub https://app.notion.com/p/e9b44c2aaddd4f6c92d792d22dc6bc7d | All non-retired rows, Last Verified 31 Oct |
-| Business OS and Fast Forward pricing | Fatiha, chat instruction 31/10/2026 | "Being priced"; overrides the Product Hub price fields until corrected |
+| Business OS and Fast Forward pricing | Fatiha, chat confirmation 31/10/2026 | Ready to sell at the Product Hub prices |
 | Instagram performance | Instagram Audit https://app.notion.com/p/37dde643072c813e942bd762c3c36947 | Apify public scrape, 60 posts, 31 Oct |
 | Content OS template | https://app.notion.com/p/3d7de643072c8164a162d5edad2fa852 | v2.0, 31 Oct |
 | Client work | Codex repo `output/money-bee-*`, `reports/2026-10-31-content-os-audit.md` | Commits 20 to 31 Oct |

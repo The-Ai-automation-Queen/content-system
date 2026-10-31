@@ -4,7 +4,7 @@ Updated 31 October 2026. Each observation has a limited scope.
 
 | Component | Evidence (31/10/2026 unless stated) | Remaining |
 |---|---|---|
-| Offers | Product Hub rows updated today; owner says Business OS and Fast Forward are being priced | Final prices, checkout, test purchase, campaign approval; correct the "Ready to sell" rows |
+| Offers | Product Hub rows updated today; owner confirms Business OS Setup ($97) and Fast Forward ($97/month first 50, then $147) are ready to sell | Funnel URL, Destination Tested and campaign approval for both |
 | Email capture | Free AI Guides is the only active campaign; owner-confirmed delivery | Destination Tested still false |
 | Content OS | Template v2.0 published in Notion with START HERE, Command Menu and Strategy & Offers | Owner Content Library: 7 content rows, none scheduled or published (Codex `reports/2026-10-31-content-os-audit.md`) |
 | Instagram | Public-data audit of 60 posts written to Notion Instagram Audit | No saves, reach or follower delta: Meta Graph API token not connected |

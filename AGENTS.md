@@ -23,8 +23,9 @@ campaign.
   you. I help you catch up, one real task at a time, and keep what only you can bring."
 - Product Hub now also lists Business OS (free 5-day start, Setup kit), Fast
   Forward (Skool Premium), a free Skool club, 1:1 by application, Gulf team
-  workshops and an Instagram Audit service. Fatiha, 31/10: Business OS and Fast
-  Forward are being priced. No price, checkout or CTA for them until approved.
+  workshops and an Instagram Audit service. Fatiha, 31/10: Business OS Setup
+  ($97) and Fast Forward ($97/month first 50, then $147) are ready to sell at
+  those prices. CTAs still need an active Product Hub campaign and a tested destination.
 - Free AI Guides remains the only active conversion campaign.
 - Current detail: `context/offers.md`, `context/positioning.md`, `context/sources.md`.
 

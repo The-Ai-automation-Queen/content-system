@@ -4,15 +4,16 @@ Refreshed 31 October 2026 from the live Notion Digital Product Hub plus
 Fatiha's instruction of the same day. Product Hub controls readiness; this is
 a reference, not a replacement ledger. Recheck Product Hub before any CTA.
 
-## Owner instruction, 31/10/2026
+## Owner confirmation, 31/10/2026
 
-Business OS and Fast Forward are being priced. Until Fatiha approves final
-prices, checkout and a campaign, do not state a price, quote "first 50
-members", link a checkout or use them as a conversion CTA.
+Business OS Setup and Fast Forward are ready to sell at the Product Hub prices:
+- Business OS Setup (plugin + kit): $97 one-off.
+- Fast Forward (Skool Premium): $97 a month for the first 50 members, then
+  $147 a month; the price stays locked while a member stays.
 
-**Known drift:** Product Hub currently shows Business OS Setup and Fast
-Forward as "Ready to sell" with $97 prices. The owner instruction above wins
-until those rows are corrected.
+These prices may be stated. A conversion CTA still needs the Product Hub row
+to have Active Campaign on, a recorded Funnel URL and Destination Tested
+checked. On 31/10/2026 all three are missing for both offers.
 
 ## Offers
 
@@ -21,8 +22,8 @@ until those rows are corrected.
 | Free AI Guides Library | Lead magnet | Active campaign, owner-confirmed delivery; Destination Tested still false | The one approved conversion CTA: send to the guide that fits the problem |
 | Business OS: free 5-day start | Lead magnet | Defined, not active | No CTA yet |
 | Simple AI for Non-Techies Club (Skool free tier) | Community | Not an active campaign | No CTA until approved |
-| Business OS Setup (plugin + kit) | Paid download | Being priced | No price, no CTA |
-| Fast Forward membership (Skool Premium) | Membership | Being priced | No price, no CTA |
+| Business OS Setup (plugin + kit) | Paid download | Ready to sell, $97 (owner confirmed 31/10); no funnel URL, not tested, campaign not active | Price may be stated; no CTA until campaign is active |
+| Fast Forward membership (Skool Premium) | Membership | Ready to sell, $97/month first 50 then $147 (owner confirmed 31/10); campaign approval needed | Same |
 | 1:1 with Fatiha (by application) | 1:1 | Invitation only; price and duration not set | No CTA |
 | Workshops for teams (Gulf B2B) | Workshop | Format, length and price not set | No CTA |
 | Instagram Audit & Growth Plan | Service | Defined; price and delivery time not set | No CTA |

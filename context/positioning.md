@@ -37,7 +37,7 @@ workshops) speak to the "running something" group. Free content may serve both.
 ## Customer path
 
 1. Get unstuck: free guides.
-2. Put it to work: agent kits, one to one, group sessions (being priced / coming soon).
+2. Put it to work: Business OS Setup and Fast Forward (ready to sell), one to one, team workshops.
 3. Keep what is yours: workbooks (coming soon).
 
 See `offers.md` for readiness. Visibility is not readiness.
@@ -88,5 +88,5 @@ The AI twin is one optional production route, not the brand's purpose.
 Do not revive the July corporate-escape audience, freedom-first promise, six
 fixed ROI/watchdog pillars, 137-agent headline, BUILD/TWIN keywords or the
 July Fast Forward presale as current strategy. Business OS and Fast Forward
-exist again as products being priced (owner, 31/10/2026); that does not
-reactivate any old copy, price, page or launch date.
+exist again as products ready to sell at current Product Hub prices (owner,
+31/10/2026); that does not reactivate any old July copy, page or launch date.

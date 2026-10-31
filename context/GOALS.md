@@ -7,7 +7,7 @@ and the current Content Factory.
 - Keep Telegram captures accessible through GitHub and the existing Obsidian vault.
 - Keep this context in step with live Notion and the website.
 - Produce useful content in several formats, with the AI twin as one option.
-- Price and prepare Business OS and Fast Forward (in progress, 31/10/2026).
+- Launch Business OS Setup and Fast Forward (ready to sell at Product Hub prices, 31/10/2026): tested checkout and an approved campaign are outstanding.
 - Build toward Telegram-operated automation with clear state, correction memory
   and a publishing policy that Fatiha selects.
 
