@@ -4166,3 +4166,45 @@ Notes:
   1607): "Process sweep (29/10, interactive, operator-requested): inbox
   empty — nothing to route, nothing changed in the vault. This
   morning's digest cards (#1-#6, R1-R3) still waiting on you."
+
+== /review-cockpit digest @ 2026-10-31 (interactive, operator-requested, run end-to-end via /review-cockpit digest; skill not registered via the Skill tool this session, so SKILL.md was read and followed manually per the project-skills-not-registered memory; Telegram auth followed the review-cockpit-telegram-env memory — ambient TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID, length-checked only via ${#VAR}, never printed, never sourced from deploy/.env) ==
+
+Pre-digest process sweep: getUpdates (no offset, none stored) returned
+{"ok":true,"result":[]} — 129th consecutive empty sweep since the
+14/09/2026 digest restart. Nothing to route: no card decisions, no
+unblocker replies, no voice notes. Nothing applied to the vault.
+
+Vault state at digest time: 37 READY TO POST / 33 DRAFT / 6 STALE /
+2 KILLED (78 entries), 0 POSTED (per startup reality-check hook).
+
+Digest sent: 11 Telegram messages (header + 6 draft cards + 3
+Ready-shelf cards + footer), direct sendMessage, HTML mode, chat_id
+from ambient TELEGRAM_CHAT_ID.
+
+Card -> vault ENTRY mapping (message_id):
+  header  -> 1622
+  #1 -> ENTRY 099 (Instagram carousel, Use AI for real work, critic pending) -> 1623
+  #2 -> ENTRY 098 (LinkedIn text post, Find what is uniquely yours, critic pending) -> 1624
+  #3 -> ENTRY 097 (Instagram/LinkedIn text post, Use AI for real work, critic pending) -> 1625
+  #4 -> ENTRY 096 (Instagram Reel faceless ~40s, Find what is uniquely yours, critic pending) -> 1626
+  #5 -> ENTRY 095 (LinkedIn, Real Talk, critic pending) -> 1627
+  #6 -> ENTRY 094 (LinkedIn, Build Once Runs Forever, critic 7.2, VERIFY+PREP flags) -> 1628
+  R1 -> ENTRY 047 (LinkedIn, What's Worth It, CTA WORDS, READY since 14/07/2026, 109 days) -> 1629
+  R2 -> ENTRY 048 (X/Twitter thread, The Freedom Business, CTA TEAM, READY since 14/07/2026, 109 days) -> 1630
+  R3 -> ENTRY 049 (Short-form video, Build Once Runs Forever, CTA TEAM, READY since 14/07/2026, 109 days) -> 1631
+  footer -> 1632
+
+getUpdates offset: none stored (no updates ever returned to advance
+it against); next process sweep should call getUpdates with no
+offset again, same as every prior sweep.
+
+Lead-magnet check for R1-R3 CTAs: lead-magnets.csv confirms WORDS and
+TEAM both active=yes — no CTA-BLOCKED note needed, all three Ready-shelf
+cards queued as normal cards.
+
+Publishing stayed queue-only throughout (security.md §3.1, CLAUDE.md) —
+no post released, no Blotato queue touched, no card auto-approved.
+Canon (queen-brain) was NOT reachable this session per the startup
+reality-check — no price, tier, offer status or customer-facing copy
+was written or reconstructed; card summaries quote/paraphrase only the
+vault's own existing draft text.
