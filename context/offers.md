@@ -1,29 +1,47 @@
 # Current offers and campaign boundaries
 
-Refreshed 12 September 2026. Authority: live website for public descriptions;
-Content Factory Product Hub / Brand Deals for campaign readiness and approval.
-This is a reference, not a replacement readiness ledger.
+Refreshed 31 October 2026 from the live Notion Digital Product Hub plus
+Fatiha's instruction of the same day. Product Hub controls readiness; this is
+a reference, not a replacement ledger. Recheck Product Hub before any CTA.
 
-| Item | Observed / recorded state | Content use |
-|---|---|---|
-| Free AI Guides Library | Current public library; Product Hub records an active always-on email-acquisition campaign with owner approval dated 30 August | Relevant guide CTA, subject to its current route and delivery evidence |
-| Find Your Zone of Genius | Visible workbook; Foundation records workbooks in production | Explain the topic or link the public page without implying purchase readiness |
-| Your Human Evidence | Visible workbook; same readiness boundary | Same |
-| Use What Is Unique About You | Visible workbook; same readiness boundary | Same |
-| Where AI Fits, self-guided Map | Live page explicitly says being developed; register-interest form visible | A public interest route exists; campaign activation still requires Product Hub evidence |
-| The AI Decision Lab | Facilitated version for a founder, decision-maker or leadership team; being developed | Same activation boundary |
-| AI Twin Content System / customer Content Factory | Owner workflow passed; customer release still parked pending acceptance and commercial decisions | No purchase CTA or claim of released customer product |
+## Owner confirmation, 31/10/2026
 
-The Free AI Guides record includes owner-confirmed delivery evidence but its
-`Destination Tested` checkbox is false. Do not claim this audit submitted or
-tested the form. Recheck a changed route before promoting that changed version.
+Business OS Setup and Fast Forward are ready to sell at the Product Hub prices:
+- Business OS Setup (plugin + kit): $97 one-off.
+- Fast Forward (Skool Premium): $97 a month for the first 50 members, then
+  $147 a month; the price stays locked while a member stays.
 
-Multiple campaigns may coexist when individually approved and ready. Each
-content item selects one matching campaign and CTA. If none fits, use a useful
-non-conversion next step: save, share, follow or conversation.
+These prices may be stated. A conversion CTA still needs the Product Hub row
+to have Active Campaign on, a recorded Funnel URL and Destination Tested
+checked. On 31/10/2026 all three are missing for both offers.
 
-No old price, free/paid template quota, universal offer ladder, community
-launch, Fast Forward presale or event deadline is active by inheritance.
-Do not invent rates for the Map, Lab, workbooks, speaking or consulting.
-Public visibility is not payment readiness. No price or checkout was established
-by this context refresh. Consult live records for new campaign work.
+## Offers
+
+| Item | Type | State (31/10/2026) | Content use |
+|---|---|---|---|
+| Free AI Guides Library | Lead magnet | Active campaign, owner-confirmed delivery; Destination Tested still false | The one approved conversion CTA: send to the guide that fits the problem |
+| Business OS: free 5-day start | Lead magnet | Defined, not active | No CTA yet |
+| Simple AI for Non-Techies Club (Skool free tier) | Community | Not an active campaign | No CTA until approved |
+| Business OS Setup (plugin + kit) | Paid download | Ready to sell, $97 (owner confirmed 31/10); no funnel URL, not tested, campaign not active | Price may be stated; no CTA until campaign is active |
+| Fast Forward membership (Skool Premium) | Membership | Ready to sell, $97/month first 50 then $147 (owner confirmed 31/10); campaign approval needed | Same |
+| 1:1 with Fatiha (by application) | 1:1 | Invitation only; price and duration not set | No CTA |
+| Workshops for teams (Gulf B2B) | Workshop | Format, length and price not set | No CTA |
+| Instagram Audit & Growth Plan | Service | Defined; price and delivery time not set | No CTA |
+| Find Your Zone of Genius | Workbook | In production; checkout, terms and test purchase outstanding | Teach the idea; no purchase CTA |
+| Your Human Evidence | Workbook | In production | Same |
+| Use What Is Unique About You | Workbook | In production | Same |
+| Where AI Fits, self-guided Map | Download | Waitlist; form not tested, campaign not approved | No CTA until Product Hub activates it |
+| The AI Decision Lab | Workshop | Waitlist; same boundary | Same |
+| AI Twin Content System, Guided Build | Workshop | Parked | Show build evidence only; do not sell |
+
+Product Hub lists draft $27 prices for the three workbooks. They are not
+approved for public use.
+
+## CTA rule
+
+One piece of content has one next step that continues its problem. Link only
+to a working destination recorded in Product Hub or Brand Deals with an active,
+approved campaign. If none fits, use save, share, follow or conversation.
+
+No old price, community launch, presale or event deadline is active by
+inheritance. Do not invent rates for any item above.

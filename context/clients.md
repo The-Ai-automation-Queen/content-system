@@ -1,9 +1,14 @@
 # Client context
 
-The former registry contained a DemoBrand test row, not verified current client
-evidence. It is preserved in the dated archive. Do not count it as a paying
-client or use it as a testimonial.
+Refreshed 31 October 2026.
 
-For client work, retrieve that client's current authorized brief. Keep client
-information and results scoped to that client; do not mix them with Fatiha's
-public projects. No live client registry was synchronized by this refresh.
+| Client | Work | Where | Status |
+|---|---|---|---|
+| Cocco Mie Reneeh (Cocco M.), pricing and self-worth coach for beauty pros | Money Bee content strategy, 90 scripts, captions, video tracker and monitor | Codex repo `output/money-bee-*`, PRs #9 to #13 | Active; results not yet measured |
+
+Cocco's audience, offers, prices and keywords belong to her project only.
+Never use them in a Shift & Lead draft. Her approved testimonial is in
+`proof/cocco-m-testimonial.md`.
+
+The former DemoBrand row was a test, archived, and is not a client.
+For any other client, retrieve that client's current authorised brief first.

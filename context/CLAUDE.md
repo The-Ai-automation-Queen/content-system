@@ -1,8 +1,8 @@
 # Queen Brain operating instructions
 
-Context version: `shift-lead-2026-09-12`.
+Context version: `shift-lead-2026-10-31`.
 
-Fatiha requested this refresh on 12 September 2026 to replace stale guidance
+Fatiha requested a refresh on 12 September 2026 and again on 31 October 2026, to replace stale guidance
 with the current Content Factory and live website. Queen Brain is their
 maintained reference for agents. It does not override those sources.
 
