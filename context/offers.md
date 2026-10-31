@@ -23,7 +23,8 @@ content item selects one matching campaign and CTA. If none fits, use a useful
 non-conversion next step: save, share, follow or conversation.
 
 No old price, free/paid template quota, universal offer ladder, community
-launch, Fast Forward presale or event deadline is active by inheritance.
+launch, Legacy Fast Forward presale (the old course, not the Club's Fast Forward
+tier) or event deadline is active by inheritance.
 Do not invent rates for the Map, Lab, workbooks, speaking or consulting.
 Public visibility is not payment readiness. No price or checkout was established
 by this context refresh. Consult live records for new campaign work.
